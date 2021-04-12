@@ -1,0 +1,20 @@
+<html><head><script src="/requestbuilder/htmlpartials/loyalty/loyaltySelectionHandlers.js"></script>
+</head><body><form id="loyalty">
+    <div>
+        <p>
+            <b>Select request type</b>
+        </p>
+        <div class="requestypebullets" id="loyaltyrequestypebullets"><label for="paymentloyalty"><input type="radio" name="requesttype" value="Payment" id="paymentloyalty" checked="checked"> Payment</label><label for="authorizeloyalty"><input type="radio" name="requesttype" value="Authorize" id="authorizeloyalty"> Authorize</label><label for="captureloyalty"><input type="radio" name="requesttype" value="Capture" id="captureloyalty"> Capture</label><label for="chargeloyalty"><input type="radio" name="requesttype" value="Charge" id="chargeloyalty"> Charge</label><label for="refundloyalty"><input type="radio" name="requesttype" value="Refund" id="refundloyalty"> Refund</label></div>
+    </div>
+</form>
+<form>
+    <div class="radiobuttons-providers-container">
+        <p class="selectproviders">
+            <b>Select providers</b>
+        </p>
+        <p>
+            </p><div class="providercolumns" id="loyaltyproviders"><label for="payuindialoy"><input type="radio" id="payuindialoy" class=" PayU India" name="provider" value="payuindia"> PayU India</label><br><label for="payusouthafricaloy"><input type="radio" id="payusouthafricaloy" class=" PayU South Africa" name="provider" value="payusouthafrica"> PayU South Africa</label><br></div>
+        <p></p>
+    </div>
+    <div class="loyaltypaymentmethods" style="display:none"><p class="selectpaymentmethods"><b>Select payment method</b></p><div id="loyaltypayuindia" class=" providercolumns" style="display:none"><label for="citibankrewardpoints"><input type="radio" id="citibankrewardpoints" class=" Citibank Reward Points" name=" loyaltypaymentmethod" +="" value="citibankrewardpoints"> Citibank Reward Points</label><br></div><div id="loyaltypayusouthafrica" class=" providercolumns" style="display:none"><label for="DISCOVERYMILES"><input type="radio" id="DISCOVERYMILES" class=" DISCOVERYMILES" name=" loyaltypaymentmethod" +="" value="DISCOVERYMILES"> DISCOVERYMILES</label><br><label for="EBUCKS"><input type="radio" id="EBUCKS" class=" EBUCKS" name=" loyaltypaymentmethod" +="" value="EBUCKS"> EBUCKS</label><br></div></div>
+</form></body></html>
