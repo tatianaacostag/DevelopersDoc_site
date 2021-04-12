@@ -1,0 +1,445 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation – Online Payments</title>
+    <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs.html</link>
+    <description>Recent content in Online Payments on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Payment Request</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-request.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:26:46 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-request.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To receive payments with this solution, all you need is an active account in PayU.&lt;/p&gt;
+&lt;p&gt;You can choose to receive a total payment or send your customers a detailed description of the sale. You can send your request via email or generate a link to share it in chat rooms or social networks. Once your customer receives it, they can make the payment through our secure payment system.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Responde Codes and Variables</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/test-your-solution/responde-codes-and-variables.html</link>
+      <pubDate>Tue, 06 Apr 2021 15:33:35 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/test-your-solution/responde-codes-and-variables.html</guid>
+      <description>
+        
+        
+        &lt;details&gt;
+&lt;summary&gt;Response codes for transactions&lt;/summary&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Response code&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ERROR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;General error&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;APPROVED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The transaction was approved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ANTIFRAUD_REJECTED&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The transaction was rejected by the anti-fraud system.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/details&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Create a PayU Account</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/create-an-account.html</link>
+      <pubDate>Tue, 06 Apr 2021 11:40:29 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/create-an-account.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;The first step to start using PayU services is create an account. This topic shows you the benefits of choosing PayU to receive payments online.&lt;/p&gt;
+&lt;h2 id=&#34;payu-benefits&#34;&gt;PayU benefits&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Competitive rate&lt;/li&gt;
+&lt;li&gt;More than 400 payment methods&lt;/li&gt;
+&lt;li&gt;Sell with or without a website&lt;/li&gt;
+&lt;li&gt;Security&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-create-an-account&#34;&gt;How to create an Account?&lt;/h2&gt;
+&lt;p&gt;Contact us to support you through the process.&lt;/p&gt;
+&lt;p&gt;After you have created an account, you and your customers receive a notification for each payment made. The money is then credited to your PayU account.&lt;/p&gt;
+&lt;p&gt;Finally, transfer the balance from your PayU account to your bank account whenever you want.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/payments.html</link>
+      <pubDate>Thu, 25 Mar 2021 14:28:20 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/payments.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;this site has content&lt;/p&gt;
+&lt;h2 id=&#34;step-1&#34;&gt;Step 1&lt;/h2&gt;
+&lt;p&gt;this is the step 1&lt;/p&gt;
+&lt;h2 id=&#34;step-2&#34;&gt;Step 2&lt;/h2&gt;
+&lt;p&gt;this is the step 2&lt;/p&gt;
+&lt;h2 id=&#34;step-3&#34;&gt;Step 3&lt;/h2&gt;
+&lt;p&gt;this is the step 3&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Button</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-button.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:26:50 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-button.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To receive payments with this solution, all you need is an active account in PayU.&lt;/p&gt;
+&lt;p&gt;With this button, your customers can make payments for products or services with a unique value, such as course payments, donations, temporary promotions, affiliation fees, etc.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Select Your Integration</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/select-your-integration.html</link>
+      <pubDate>Tue, 06 Apr 2021 16:59:57 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/select-your-integration.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;According to your business needs you can use the integration services or the PayU tools.&lt;/p&gt;
+&lt;h2 id=&#34;integrations&#34;&gt;Integrations&lt;/h2&gt;
+&lt;p&gt;Implement PayU with the aggregator model or gateway, using PayU’s financial agreements or your own&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;p&gt;&lt;img src=&#34;http://developers.payulatam.com/images/checkout.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Checkout integration&lt;/h4&gt;
+      &lt;p&gt;PayU Checkout is an integration that allows you to collect through a PayU web form from any device in a simple, fast and secure way.
+        &lt;ul&gt;
+          &lt;li&gt;PayU manages the payment system&lt;/li&gt;
+          &lt;li&gt;Easier integration, equally secure&lt;/li&gt;
+          &lt;li&gt;Since PayU manages the payment platform, it is easier to get PCI DSS certification&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/p&gt;
+      &lt;div onclick=&#34;location.href=&#39;./integrations/webcheckout-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about WebCheckout integration&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;p&gt;&lt;img src=&#34;http://developers.payulatam.com/images/api.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;API or SDK integration&lt;/h4&gt;
+      &lt;p&gt;Through API or SDK integrations, you can receive payments securely from anywhere you like, on your website or mobile app.
+        &lt;ul&gt;
+          &lt;li&gt;Design your own checkout and manage the payment system of your website.&lt;/li&gt;
+          &lt;li&gt;Access to additional services such as Tokenization or Recurring payments&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/p&gt;
+      &lt;div style=&#34;&#34;&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34; onclick=&#34;location.href=&#39;./integrations/api-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about API integration&lt;/a&gt;&lt;/div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34; onclick=&#34;location.href=&#39;./integrations/sdk-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about SDK integration&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;payu-tools&#34;&gt;PayU Tools&lt;/h2&gt;
+&lt;p&gt;Any of the following tools give you more options to sell and receive payments online.&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;img src=&#34;http://developers.payulatam.com/images/payment-request.png&#34; alt=&#34;Payment requests&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Payment request&lt;/h4&gt;
+      &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;img src=&#34;http://developers.payulatam.com/images/payment-button.png&#34; alt=&#34;Payment button&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Payment button&lt;/h4&gt;
+      &lt;p&gt;Create an HTML button and insert it easily in your web page.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;img src=&#34;http://developers.payulatam.com/images/shopping-carts.png&#34; alt=&#34;Shopping cart plugins&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Shopping cart plugins&lt;/h4&gt;
+      &lt;p&gt;Integrate your shopping cart solution with any of our available plugins.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;img src=&#34;http://developers.payulatam.com/images/administrative-module.png&#34; alt=&#34;PayU Module&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;PayU module&lt;/h4&gt;
+      &lt;p&gt;Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;img src=&#34;http://developers.payulatam.com/images/tokenization.png&#34; alt=&#34;Tokenization&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Disputes&lt;/h4&gt;
+      &lt;p&gt;Store safely the credit card’s information of your clients.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;img src=&#34;http://developers.payulatam.com/images/payment-coupon.png&#34; alt=&#34;Payment coupons&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Payment coupons&lt;/h4&gt;
+      &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Queries and reports</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/queries.html</link>
+      <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/queries.html</guid>
+      <description>
+        
+        
+        &lt;!--To integrate with Queries API, target the requests to the following URLs:
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;https://api.payulatam.com/reports-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+--&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Disputes</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/disputes.html</link>
+      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/disputes.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
+&lt;p&gt;Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
+&lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
+&lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Select Your Payment Method</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/select-your-payment-method.html</link>
+      <pubDate>Wed, 07 Apr 2021 16:17:14 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/select-your-payment-method.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;The following list shows the payment methods supported per country and provides some considerations.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Tokenization</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/tokenization.html</link>
+      <pubDate>Fri, 26 Mar 2021 09:34:59 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/tokenization.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To use the tokenization feature, you need to enable it in your PayU account. To do so, contact &lt;a href=&#34;mailto:sac@payulatam.com&#34;&gt;sac@payulatam.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tokenization includes two separated processes.&lt;/p&gt;
+&lt;p&gt;[IMG]&lt;/p&gt;
+&lt;!--To integrate with Tokenization, target the requests to the following URLs:
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: ``&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: ``&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+--&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Shopping Cart Plugins</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/shopping-cart-plugins.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/shopping-cart-plugins.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;pre-integrated-solutions&#34;&gt;Pre-integrated solutions&lt;/h2&gt;
+&lt;p&gt;Some online stores are already integrated with PayU. You just need to activate the PayU option as your payment platform.&lt;/p&gt;
+&lt;p&gt;Available solutions:&lt;/p&gt;
+&lt;h2 id=&#34;plugins-for-modules&#34;&gt;Plugins for modules&lt;/h2&gt;
+&lt;p&gt;If you use an open source shopping cart, download and use the plugins we developed to ease your integration process with its payment system.&lt;/p&gt;
+&lt;p&gt;Available plugins:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Recurring Payments</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/recurringpayments.html</link>
+      <pubDate>Fri, 26 Mar 2021 09:46:32 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/recurringpayments.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;[Recurring payment flow image]&lt;/p&gt;
+&lt;p&gt;Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, &lt;strong&gt;Peru&lt;/strong&gt; and &lt;strong&gt;Mexico&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PayU Module</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payu-module.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:23 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payu-module.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To use the PayU module, go to &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Deploy to Production</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/deploy-to-production.html</link>
+      <pubDate>Wed, 07 Apr 2021 08:24:15 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/deploy-to-production.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To do this, &amp;hellip;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Installments and Promotions</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/promotions.html</link>
+      <pubDate>Fri, 26 Mar 2021 14:02:05 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/promotions.html</guid>
+      <description>
+        
+        
+        &lt;!--
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+As this is a RESTful service, we strongly recommend you do not validate the scheme.
+If the schema is not validated, the integration is not affected, and you only need to perform small changes have to implement the new features when an update is added to the Web Service.
+&lt;/div&gt;
+
+
+To integrate with Promotions API, target the requests to the following URLs:
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;GET https://sandbox.api.payulatam.com/payments-api/rest/v4.3/pricing&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;GET https://api.payulatam.com/payments-api/rest/v4.3/pricing&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+--&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Coupons</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-coupons.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:50 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-coupons.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.&lt;/p&gt;
+&lt;p&gt;You can receive payments without any technical knowledge. You just need to send an email where your client can download the coupon and makes the respective payment.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Demo</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/demo.html</link>
+      <pubDate>Wed, 07 Apr 2021 08:31:14 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/getting-started/demo.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;This example can be either using your account or the PayU&amp;rsquo;s test account.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Refunds</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/refunds.html</link>
+      <pubDate>Fri, 26 Mar 2021 15:09:39 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/refunds.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;You can create the refund request using the &lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny the request if it does not meet the requirements.
+Additionally, you can check the status of your refund request using the &lt;a href=&#34;http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/services/queries.html&#34; title=&#34;Query API&#34;&gt;Query API&lt;/a&gt; available for that purpose.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

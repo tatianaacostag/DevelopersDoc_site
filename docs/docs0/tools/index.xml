@@ -1,0 +1,113 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation – Tools</title>
+    <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools.html</link>
+    <description>Recent content in Tools on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 07 Apr 2021 09:25:41 -0500</lastBuildDate>
+    
+	  <atom:link href="http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Payment Request</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-request.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:26:46 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-request.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To receive payments with this solution, all you need is an active account in PayU.&lt;/p&gt;
+&lt;p&gt;You can choose to receive a total payment or send your customers a detailed description of the sale. You can send your request via email or generate a link to share it in chat rooms or social networks. Once your customer receives it, they can make the payment through our secure payment system.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Button</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-button.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:26:50 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-button.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To receive payments with this solution, all you need is an active account in PayU.&lt;/p&gt;
+&lt;p&gt;With this button, your customers can make payments for products or services with a unique value, such as course payments, donations, temporary promotions, affiliation fees, etc.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Disputes</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/disputes.html</link>
+      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/disputes.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
+&lt;p&gt;Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
+&lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
+&lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Shopping Cart Plugins</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/shopping-cart-plugins.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/shopping-cart-plugins.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;pre-integrated-solutions&#34;&gt;Pre-integrated solutions&lt;/h2&gt;
+&lt;p&gt;Some online stores are already integrated with PayU. You just need to activate the PayU option as your payment platform.&lt;/p&gt;
+&lt;p&gt;Available solutions:&lt;/p&gt;
+&lt;h2 id=&#34;plugins-for-modules&#34;&gt;Plugins for modules&lt;/h2&gt;
+&lt;p&gt;If you use an open source shopping cart, download and use the plugins we developed to ease your integration process with its payment system.&lt;/p&gt;
+&lt;p&gt;Available plugins:&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PayU Module</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payu-module.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:23 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payu-module.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To use the PayU module, go to &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Coupons</title>
+      <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-coupons.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:50 -0500</pubDate>
+      
+      <guid>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/tools/payment-coupons.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.&lt;/p&gt;
+&lt;p&gt;You can receive payments without any technical knowledge. You just need to send an email where your client can download the coupon and makes the respective payment.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

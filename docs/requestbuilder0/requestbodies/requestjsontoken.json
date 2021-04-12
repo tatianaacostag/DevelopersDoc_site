@@ -1,0 +1,43 @@
+{
+  "additional_details": {
+    "card_vendor_name": "Cabal"
+  },
+  "billing_address": {
+    "country": "USA",
+    "email": "John.Doe@email.com",
+    "first_name": "John",
+    "last_name": "Adams",
+    "line1": "10705 Old Mill Rd",
+    "state": "TX",
+    "zip_code": "75402-3435"
+  },
+  "card_number": "4111111111111111",
+  "configuration_id": "38ac3b50-50da-4c02-b3a7-2b3f7f59f889",
+  "description": "Monthly subscription to music service",
+  "credit_card_cvv": "123",
+  "expiration_date": "12/2019",
+  "holder_name": "John Doe",
+  "identity_document": {
+    "number": "5415668464654",
+    "type": "PP"
+  },
+  "merchant_site_url": "http://www.mygreatsite.com",
+  "name": "My billing agreement",
+  "provider_specific_data": {
+    "immutable_shipping_address": true,
+    "merchant_custom_data": "My billing agreement info."
+  },
+  "shipping_address": {
+    "city": "Greenville",
+    "country": "USA",
+    "email": "john.travolta@email.com",
+    "first_name": "John",
+    "last_name": "Travolta",
+    "line1": "10705 Old Mill Rd",
+    "line2": "10706 Young Mill Rd",
+    "phone": "23645963",
+    "state": "TX",
+    "title": "Dr",
+    "zip_code": "75402-3435"
+  }
+}

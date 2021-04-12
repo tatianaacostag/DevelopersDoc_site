@@ -1,0 +1,51 @@
+{
+  "additional_details": {
+    "is_final_capture": "true"
+  },
+  "amount": 3000,
+  "level_2_3": {
+    "discount_amount": 2000,
+    "duty_amount": 1000,
+    "from_shipping_zip_code": "string",
+    "line_items": [
+      {
+        "commodity_code": "8507800090",
+        "discount_amount": 0,
+        "discount_percentage": 0,
+        "id": "675EG",
+        "name": "Lithium polymer battery",
+        "quantity": 4,
+        "sub_total": 4000,
+        "tax_amount": 0,
+        "tax_percentage": 0,
+        "unit_of_measure": "count",
+        "unit_price": 1000
+      }
+    ],
+    "order_id": 233503,
+    "shipping_address": {
+      "city": "Greenville",
+      "country": "USA",
+      "first_name": "John",
+      "last_name": "Travolta",
+      "line1": "10705 Old Mill Rd",
+      "line2": "11605 Young Mill Rd",
+      "state": "TX",
+      "zip_code": "75402-3435"
+    },
+    "shipping_amount": 4000,
+    "tax_amount": 0,
+    "tax_mode": "not_included"
+  },
+  "provider_specific_data": {
+    "chasepaymentech": {
+      "additional_details": {
+        "AMEXTranAdvAddn1": "addn1",
+        "AMEXTranAdvAddn2": "addn2",
+        "AMEXTranAdvAddn3": "addn3",
+        "AMEXTranAdvAddn4": "addn4"
+      }
+    }
+  },
+  "reconciliation_id": "a4076234234234234323"
+}
