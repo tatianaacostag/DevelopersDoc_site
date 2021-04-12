@@ -1,0 +1,21 @@
+{
+  "provider_specific_data": {
+    "chasepaymentech": {
+      "additional_details": {
+        "onlineReversalIndicator": "N"
+      }
+    },
+    "shva": {
+      "additional_details": {
+        "addendum1": "free text",
+        "addendum1settl": "free text",
+        "addendum2": "A003Tr1B304Ash8",
+        "addendum2settl": "B100102222222222",
+        "addendum3settl": "free text",
+        "addendum4settl": "free text",
+        "addendum5settl": "free text",
+        "remove_from_batch":"true"
+      }
+    }
+  }
+}
