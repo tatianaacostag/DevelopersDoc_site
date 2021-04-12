@@ -1,0 +1,105 @@
+
+@font-face {
+    font-family: AmpleSoft;
+    src: url('AmpleSoftPro-Light.woff'), url('AmpleSoftPro-Light.woff') format('woff');
+    font-style: normal;
+    font-weight: 200;
+    font-display: fallback;
+}
+@font-face {
+    font-family: AmpleSoft;
+    src: url('AmpleSoftPro-Regular.woff'), url('AmpleSoftPro-Regular.woff') format('woff');
+    /* src: url('http://127.0.0.1:1313/AmpleSoftPro-Regular.woff'), url('http://127.0.0.1:1313/AmpleSoftPro-Regular.woff') format('woff'); */
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+}
+@font-face {
+    font-family: AmpleSoft;
+    src: url('AmpleSoftPro-Medium.woff'), url('AmpleSoftPro-Medium.woff') format('woff');
+    font-style: normal;
+    font-weight: 500;
+    font-display: fallback;
+}
+@font-face {
+    font-family: AmpleSoft;
+    src: url('AmpleSoftPro-Bold.woff'), url('/AmpleSoftPro-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+    font-display: fallback;
+}
+
+* {
+    font-family: "AmpleSoft" !important;
+}
+
+ol, ul, dl {
+    padding-left: 1rem;
+}
+
+.alert {
+    padding-bottom: 1px;
+}
+.alert ul li:not(:last-child){
+    padding-bottom: 1rem;
+}
+
+.alert ol li:not(:last-child){
+    padding-bottom: 1rem;
+}
+
+.navblock-title {
+    color: hsl(69, 93%, 40%)
+}
+
+.td-content .alert:not(:first-child) {
+    color: hsl(0, 0%, 50%);
+    font-weight: 400;
+}
+
+.getting-started {
+    cursor: pointer;
+    background: hsl(0, 0%, 100%) !important;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
+    text-align: center;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+
+@media only screen and (min-width: 767px) {
+    .getting-started {
+        cursor: pointer;
+        background: hsl(0, 0%, 100%) !important;
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
+        text-align: center;
+        flex-grow: 1;
+        box-sizing: border-box;
+        padding: 5px;
+        max-width: 49%;
+        margin-bottom: 10px;
+        margin: 1px 10px 10px 10px;
+        padding: 15px;
+        height: auto;
+    }
+    
+    .container.overview-topic {
+        max-width: 80%;
+        margin: 0;
+    }
+
+}   
+
+
+
+@media only screen and (max-width: 360px) {
+    .container.overview-topic {
+        max-width: 100%;
+    }
+    .getting-started {
+        max-width: 100%;
+    }
+}
