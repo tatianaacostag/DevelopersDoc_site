@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – Getting Started</title>
-    <link>localhost:1313/docs/getting-started.html</link>
+    <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started.html</link>
     <description>Recent content in Getting Started on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 31 Mar 2021 08:28:16 -0500</lastBuildDate>
     
-	  <atom:link href="localhost:1313/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: Create a PayU Account</title>
-      <link>localhost:1313/docs/getting-started/create-an-account.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/create-an-account.html</link>
       <pubDate>Tue, 06 Apr 2021 11:40:29 -0500</pubDate>
       
-      <guid>localhost:1313/docs/getting-started/create-an-account.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/create-an-account.html</guid>
       <description>
         
         
@@ -41,10 +41,10 @@
     
     <item>
       <title>Docs: Select Your Integration</title>
-      <link>localhost:1313/docs/getting-started/select-your-integration.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/select-your-integration.html</link>
       <pubDate>Tue, 06 Apr 2021 16:59:57 -0500</pubDate>
       
-      <guid>localhost:1313/docs/getting-started/select-your-integration.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/select-your-integration.html</guid>
       <description>
         
         
@@ -125,10 +125,10 @@
     
     <item>
       <title>Docs: Select Your Payment Method</title>
-      <link>localhost:1313/docs/getting-started/select-your-payment-method.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/select-your-payment-method.html</link>
       <pubDate>Wed, 07 Apr 2021 16:17:14 -0500</pubDate>
       
-      <guid>localhost:1313/docs/getting-started/select-your-payment-method.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/select-your-payment-method.html</guid>
       <description>
         
         
@@ -139,10 +139,10 @@
     
     <item>
       <title>Docs: Test Your Solution</title>
-      <link>localhost:1313/docs/getting-started/test-your-solution.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/test-your-solution.html</link>
       <pubDate>Tue, 06 Apr 2021 15:34:20 -0500</pubDate>
       
-      <guid>localhost:1313/docs/getting-started/test-your-solution.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/test-your-solution.html</guid>
       <description>
         
         
@@ -197,10 +197,10 @@
     
     <item>
       <title>Docs: Deploy to Production</title>
-      <link>localhost:1313/docs/getting-started/deploy-to-production.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/deploy-to-production.html</link>
       <pubDate>Wed, 07 Apr 2021 08:24:15 -0500</pubDate>
       
-      <guid>localhost:1313/docs/getting-started/deploy-to-production.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/deploy-to-production.html</guid>
       <description>
         
         
@@ -211,10 +211,10 @@
     
     <item>
       <title>Docs: Demo</title>
-      <link>localhost:1313/docs/getting-started/demo.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/demo.html</link>
       <pubDate>Wed, 07 Apr 2021 08:31:14 -0500</pubDate>
       
-      <guid>localhost:1313/docs/getting-started/demo.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/demo.html</guid>
       <description>
         
         

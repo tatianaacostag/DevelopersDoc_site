@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – Services</title>
-    <link>localhost:1313/docs/services.html</link>
+    <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services.html</link>
     <description>Recent content in Services on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 31 Mar 2021 08:19:46 -0500</lastBuildDate>
     
-	  <atom:link href="localhost:1313/docs/services/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jorger1986.github.io/DevelopersDoc_site/docs/services/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: Payments</title>
-      <link>localhost:1313/docs/services/payments.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/payments.html</link>
       <pubDate>Thu, 25 Mar 2021 14:28:20 -0500</pubDate>
       
-      <guid>localhost:1313/docs/services/payments.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/payments.html</guid>
       <description>
         
         
@@ -36,10 +36,10 @@
     
     <item>
       <title>Docs: Queries and reports</title>
-      <link>localhost:1313/docs/services/queries.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/queries.html</link>
       <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
       
-      <guid>localhost:1313/docs/services/queries.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/queries.html</guid>
       <description>
         
         
@@ -62,10 +62,10 @@
     
     <item>
       <title>Docs: Tokenization</title>
-      <link>localhost:1313/docs/services/tokenization.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/tokenization.html</link>
       <pubDate>Fri, 26 Mar 2021 09:34:59 -0500</pubDate>
       
-      <guid>localhost:1313/docs/services/tokenization.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/tokenization.html</guid>
       <description>
         
         
@@ -91,10 +91,10 @@
     
     <item>
       <title>Docs: Recurring Payments</title>
-      <link>localhost:1313/docs/services/recurringpayments.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/recurringpayments.html</link>
       <pubDate>Fri, 26 Mar 2021 09:46:32 -0500</pubDate>
       
-      <guid>localhost:1313/docs/services/recurringpayments.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/recurringpayments.html</guid>
       <description>
         
         
@@ -107,10 +107,10 @@
     
     <item>
       <title>Docs: Installments and Promotions</title>
-      <link>localhost:1313/docs/services/promotions.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/promotions.html</link>
       <pubDate>Fri, 26 Mar 2021 14:02:05 -0500</pubDate>
       
-      <guid>localhost:1313/docs/services/promotions.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/promotions.html</guid>
       <description>
         
         
@@ -144,15 +144,15 @@ To integrate with Promotions API, target the requests to the following URLs:
     
     <item>
       <title>Docs: Refunds</title>
-      <link>localhost:1313/docs/services/refunds.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/refunds.html</link>
       <pubDate>Fri, 26 Mar 2021 15:09:39 -0500</pubDate>
       
-      <guid>localhost:1313/docs/services/refunds.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/refunds.html</guid>
       <description>
         
         
         &lt;p&gt;You can create the refund request using the &lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny the request if it does not meet the requirements.
-Additionally, you can check the status of your refund request using the &lt;a href=&#34;localhost:1313/docs/services/queries.html&#34; title=&#34;Query API&#34;&gt;Query API&lt;/a&gt; available for that purpose.&lt;/p&gt;
+Additionally, you can check the status of your refund request using the &lt;a href=&#34;https://jorger1986.github.io/DevelopersDoc_site/docs/services/queries.html&#34; title=&#34;Query API&#34;&gt;Query API&lt;/a&gt; available for that purpose.&lt;/p&gt;
 
       </description>
     </item>
