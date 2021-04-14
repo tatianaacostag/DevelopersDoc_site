@@ -1,4 +1,4 @@
-baseURL = "/"
+baseuURL = "/DevelopersDoc_site"
 # baseURL = "localhost:1313"
 title = "PayU Developers documentation"
 
