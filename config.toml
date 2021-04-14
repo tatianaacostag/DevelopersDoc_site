@@ -1,5 +1,6 @@
 baseuURL = "https://jorger1986.github.io/DevelopersDoc_site/"
 # baseURL = "localhost:1313"
+canonifyurls=false
 title = "PayU Developers documentation"
 
 # Enable local search
