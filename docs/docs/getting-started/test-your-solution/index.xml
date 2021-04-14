@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – Test Your Solution</title>
-    <link>https://jorger1986.github.io/docs/getting-started/test-your-solution.html</link>
+    <link>/docs/getting-started/test-your-solution.html</link>
     <description>Recent content in Test Your Solution on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 06 Apr 2021 15:34:20 -0500</lastBuildDate>
     
-	  <atom:link href="https://jorger1986.github.io/docs/getting-started/test-your-solution/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/getting-started/test-your-solution/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: Responde Codes and Variables</title>
-      <link>https://jorger1986.github.io/docs/getting-started/test-your-solution/responde-codes-and-variables.html</link>
+      <link>/docs/getting-started/test-your-solution/responde-codes-and-variables.html</link>
       <pubDate>Tue, 06 Apr 2021 15:33:35 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/getting-started/test-your-solution/responde-codes-and-variables.html</guid>
+      <guid>/docs/getting-started/test-your-solution/responde-codes-and-variables.html</guid>
       <description>
         
         
