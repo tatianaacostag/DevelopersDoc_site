@@ -14,7 +14,7 @@ function createObserver() {
         entries.forEach(entry => {
             const id = entry.target.getAttribute('id');
             if (document.querySelector(`nav li a[href="#${id}"]`) == null){
-              alert(${id});
+              alert(id);
             }
             if (entry.intersectionRatio > 0) {
                 document.querySelector(`nav li a[href="#${id}"]`).classList.add('activeToc');
