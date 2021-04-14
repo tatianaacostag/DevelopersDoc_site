@@ -13,8 +13,7 @@ function createObserver() {
     observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             const id = entry.target.getAttribute('id');
-            alert(document.querySelector(`nav li a[href="#${id}"]`));
-            alert(document.querySelector(`nav li a[href="''#${id}''"]`));
+            alert(document.querySelector(`nav li a[href="#${id}"]`).classList);
             if (entry.intersectionRatio > 0) {
                 document.querySelector(`nav li a[href="#${id}"]`).classList.add('activeToc');
             } else {
