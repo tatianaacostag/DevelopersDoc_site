@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – Integrations</title>
-    <link>https://jorger1986.github.io/docs/integrations.html</link>
+    <link>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations.html</link>
     <description>Recent content in Integrations on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 07 Apr 2021 10:01:55 -0500</lastBuildDate>
     
-	  <atom:link href="https://jorger1986.github.io/docs/integrations/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: WebCheckout integration</title>
-      <link>https://jorger1986.github.io/docs/integrations/webcheckout-integration.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/webcheckout-integration.html</link>
       <pubDate>Mon, 29 Mar 2021 11:52:52 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/integrations/webcheckout-integration.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/webcheckout-integration.html</guid>
       <description>
         
         
@@ -60,10 +60,10 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
     
     <item>
       <title>Docs: API Integration</title>
-      <link>https://jorger1986.github.io/docs/integrations/api-integration.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/api-integration.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/integrations/api-integration.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/api-integration.html</guid>
       <description>
         
         
@@ -199,10 +199,10 @@ Content-Length: length
     
     <item>
       <title>Docs: SDK Integration</title>
-      <link>https://jorger1986.github.io/docs/integrations/sdk-integration.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/sdk-integration.html</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/integrations/sdk-integration.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/sdk-integration.html</guid>
       <description>
         
         

@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – API Integration</title>
-    <link>https://jorger1986.github.io/docs/integrations/api-integration.html</link>
+    <link>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/api-integration.html</link>
     <description>Recent content in API Integration on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://jorger1986.github.io/docs/integrations/api-integration/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/api-integration/index.xml" rel="self" type="application/rss+xml" />
     
     
       

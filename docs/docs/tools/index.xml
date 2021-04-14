@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – Tools</title>
-    <link>https://jorger1986.github.io/docs/tools.html</link>
+    <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools.html</link>
     <description>Recent content in Tools on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 07 Apr 2021 09:25:41 -0500</lastBuildDate>
     
-	  <atom:link href="https://jorger1986.github.io/docs/tools/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jorger1986.github.io/DevelopersDoc_site/docs/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: Payment Request</title>
-      <link>https://jorger1986.github.io/docs/tools/payment-request.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-request.html</link>
       <pubDate>Wed, 07 Apr 2021 09:26:46 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/payment-request.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-request.html</guid>
       <description>
         
         
@@ -31,10 +31,10 @@
     
     <item>
       <title>Docs: Payment Button</title>
-      <link>https://jorger1986.github.io/docs/tools/payment-button.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-button.html</link>
       <pubDate>Wed, 07 Apr 2021 09:26:50 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/payment-button.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-button.html</guid>
       <description>
         
         
@@ -46,10 +46,10 @@
     
     <item>
       <title>Docs: Disputes</title>
-      <link>https://jorger1986.github.io/docs/tools/disputes.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/disputes.html</link>
       <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/disputes.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/disputes.html</guid>
       <description>
         
         
@@ -63,10 +63,10 @@
     
     <item>
       <title>Docs: Shopping Cart Plugins</title>
-      <link>https://jorger1986.github.io/docs/tools/shopping-cart-plugins.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/shopping-cart-plugins.html</link>
       <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/shopping-cart-plugins.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/shopping-cart-plugins.html</guid>
       <description>
         
         
@@ -82,10 +82,10 @@
     
     <item>
       <title>Docs: PayU Module</title>
-      <link>https://jorger1986.github.io/docs/tools/payu-module.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payu-module.html</link>
       <pubDate>Wed, 07 Apr 2021 09:27:23 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/payu-module.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payu-module.html</guid>
       <description>
         
         
@@ -96,10 +96,10 @@
     
     <item>
       <title>Docs: Payment Coupons</title>
-      <link>https://jorger1986.github.io/docs/tools/payment-coupons.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-coupons.html</link>
       <pubDate>Wed, 07 Apr 2021 09:27:50 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/payment-coupons.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-coupons.html</guid>
       <description>
         
         

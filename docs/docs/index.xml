@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – Online Payments</title>
-    <link>https://jorger1986.github.io/docs.html</link>
+    <link>https://jorger1986.github.io/DevelopersDoc_site/docs.html</link>
     <description>Recent content in Online Payments on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://jorger1986.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jorger1986.github.io/DevelopersDoc_site/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: Payment Request</title>
-      <link>https://jorger1986.github.io/docs/tools/payment-request.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-request.html</link>
       <pubDate>Wed, 07 Apr 2021 09:26:46 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/payment-request.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-request.html</guid>
       <description>
         
         
@@ -31,10 +31,10 @@
     
     <item>
       <title>Docs: Responde Codes and Variables</title>
-      <link>https://jorger1986.github.io/docs/getting-started/test-your-solution/responde-codes-and-variables.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/test-your-solution/responde-codes-and-variables.html</link>
       <pubDate>Tue, 06 Apr 2021 15:33:35 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/getting-started/test-your-solution/responde-codes-and-variables.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/test-your-solution/responde-codes-and-variables.html</guid>
       <description>
         
         
@@ -69,10 +69,10 @@
     
     <item>
       <title>Docs: Create a PayU Account</title>
-      <link>https://jorger1986.github.io/docs/getting-started/create-an-account.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/create-an-account.html</link>
       <pubDate>Tue, 06 Apr 2021 11:40:29 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/getting-started/create-an-account.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/create-an-account.html</guid>
       <description>
         
         
@@ -94,10 +94,10 @@
     
     <item>
       <title>Docs: Payments</title>
-      <link>https://jorger1986.github.io/docs/services/payments.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/payments.html</link>
       <pubDate>Thu, 25 Mar 2021 14:28:20 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/services/payments.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/payments.html</guid>
       <description>
         
         
@@ -114,10 +114,10 @@
     
     <item>
       <title>Docs: Payment Button</title>
-      <link>https://jorger1986.github.io/docs/tools/payment-button.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-button.html</link>
       <pubDate>Wed, 07 Apr 2021 09:26:50 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/payment-button.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-button.html</guid>
       <description>
         
         
@@ -129,10 +129,10 @@
     
     <item>
       <title>Docs: Select Your Integration</title>
-      <link>https://jorger1986.github.io/docs/getting-started/select-your-integration.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/select-your-integration.html</link>
       <pubDate>Tue, 06 Apr 2021 16:59:57 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/getting-started/select-your-integration.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/select-your-integration.html</guid>
       <description>
         
         
@@ -213,10 +213,10 @@
     
     <item>
       <title>Docs: Queries and reports</title>
-      <link>https://jorger1986.github.io/docs/services/queries.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/queries.html</link>
       <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/services/queries.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/queries.html</guid>
       <description>
         
         
@@ -239,10 +239,10 @@
     
     <item>
       <title>Docs: Disputes</title>
-      <link>https://jorger1986.github.io/docs/tools/disputes.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/disputes.html</link>
       <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/disputes.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/disputes.html</guid>
       <description>
         
         
@@ -256,10 +256,10 @@
     
     <item>
       <title>Docs: Select Your Payment Method</title>
-      <link>https://jorger1986.github.io/docs/getting-started/select-your-payment-method.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/select-your-payment-method.html</link>
       <pubDate>Wed, 07 Apr 2021 16:17:14 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/getting-started/select-your-payment-method.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/select-your-payment-method.html</guid>
       <description>
         
         
@@ -270,10 +270,10 @@
     
     <item>
       <title>Docs: Tokenization</title>
-      <link>https://jorger1986.github.io/docs/services/tokenization.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/tokenization.html</link>
       <pubDate>Fri, 26 Mar 2021 09:34:59 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/services/tokenization.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/tokenization.html</guid>
       <description>
         
         
@@ -299,10 +299,10 @@
     
     <item>
       <title>Docs: Shopping Cart Plugins</title>
-      <link>https://jorger1986.github.io/docs/tools/shopping-cart-plugins.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/shopping-cart-plugins.html</link>
       <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/shopping-cart-plugins.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/shopping-cart-plugins.html</guid>
       <description>
         
         
@@ -318,10 +318,10 @@
     
     <item>
       <title>Docs: Recurring Payments</title>
-      <link>https://jorger1986.github.io/docs/services/recurringpayments.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/recurringpayments.html</link>
       <pubDate>Fri, 26 Mar 2021 09:46:32 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/services/recurringpayments.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/recurringpayments.html</guid>
       <description>
         
         
@@ -334,10 +334,10 @@
     
     <item>
       <title>Docs: PayU Module</title>
-      <link>https://jorger1986.github.io/docs/tools/payu-module.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payu-module.html</link>
       <pubDate>Wed, 07 Apr 2021 09:27:23 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/payu-module.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payu-module.html</guid>
       <description>
         
         
@@ -348,10 +348,10 @@
     
     <item>
       <title>Docs: Deploy to Production</title>
-      <link>https://jorger1986.github.io/docs/getting-started/deploy-to-production.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/deploy-to-production.html</link>
       <pubDate>Wed, 07 Apr 2021 08:24:15 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/getting-started/deploy-to-production.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/deploy-to-production.html</guid>
       <description>
         
         
@@ -362,10 +362,10 @@
     
     <item>
       <title>Docs: Installments and Promotions</title>
-      <link>https://jorger1986.github.io/docs/services/promotions.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/promotions.html</link>
       <pubDate>Fri, 26 Mar 2021 14:02:05 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/services/promotions.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/promotions.html</guid>
       <description>
         
         
@@ -399,10 +399,10 @@ To integrate with Promotions API, target the requests to the following URLs:
     
     <item>
       <title>Docs: Payment Coupons</title>
-      <link>https://jorger1986.github.io/docs/tools/payment-coupons.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-coupons.html</link>
       <pubDate>Wed, 07 Apr 2021 09:27:50 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/tools/payment-coupons.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/tools/payment-coupons.html</guid>
       <description>
         
         
@@ -414,10 +414,10 @@ To integrate with Promotions API, target the requests to the following URLs:
     
     <item>
       <title>Docs: Demo</title>
-      <link>https://jorger1986.github.io/docs/getting-started/demo.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/demo.html</link>
       <pubDate>Wed, 07 Apr 2021 08:31:14 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/getting-started/demo.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/getting-started/demo.html</guid>
       <description>
         
         
@@ -428,15 +428,15 @@ To integrate with Promotions API, target the requests to the following URLs:
     
     <item>
       <title>Docs: Refunds</title>
-      <link>https://jorger1986.github.io/docs/services/refunds.html</link>
+      <link>https://jorger1986.github.io/DevelopersDoc_site/docs/services/refunds.html</link>
       <pubDate>Fri, 26 Mar 2021 15:09:39 -0500</pubDate>
       
-      <guid>https://jorger1986.github.io/docs/services/refunds.html</guid>
+      <guid>https://jorger1986.github.io/DevelopersDoc_site/docs/services/refunds.html</guid>
       <description>
         
         
         &lt;p&gt;You can create the refund request using the &lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny the request if it does not meet the requirements.
-Additionally, you can check the status of your refund request using the &lt;a href=&#34;https://jorger1986.github.io/docs/services/queries.html&#34; title=&#34;Query API&#34;&gt;Query API&lt;/a&gt; available for that purpose.&lt;/p&gt;
+Additionally, you can check the status of your refund request using the &lt;a href=&#34;https://jorger1986.github.io/DevelopersDoc_site/docs/services/queries.html&#34; title=&#34;Query API&#34;&gt;Query API&lt;/a&gt; available for that purpose.&lt;/p&gt;
 
       </description>
     </item>
