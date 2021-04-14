@@ -1,4 +1,4 @@
-baseuURL = "./"
+baseuURL = "https://jorger1986.github.io/DevelopersDoc_site/"
 # baseURL = "localhost:1313"
 title = "PayU Developers documentation"
 
@@ -16,7 +16,7 @@ uglyURLs = true
 SourceRelativeLinksEval = true
 
 # Will give values to .Lastmod etc.
-enableGitInfo = false
+enableGitInfo = true
 
 # Language settings
 contentDir = "content/en"
