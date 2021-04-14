@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – WebCheckout integration</title>
-    <link>https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/webcheckout-integration.html</link>
+    <link>https://jorger1986.github.io/docs/integrations/webcheckout-integration.html</link>
     <description>Recent content in WebCheckout integration on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 29 Mar 2021 11:52:52 -0500</lastBuildDate>
     
-	  <atom:link href="https://jorger1986.github.io/DevelopersDoc_site/docs/integrations/webcheckout-integration/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jorger1986.github.io/docs/integrations/webcheckout-integration/index.xml" rel="self" type="application/rss+xml" />
     
     
       
