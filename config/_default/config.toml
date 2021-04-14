@@ -1,6 +1,6 @@
-baseURL = "http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com"
-# baseURL = "localhost:1313"
-title = "PaymentsOS Documentation"
+# baseURL = "https://jorger1986.github.io/DevelopersDoc_site/"
+baseURL = "localhost:1313"
+title = "PayU Developers documentation"
 
 # Enable local search
 offlineSearch = true

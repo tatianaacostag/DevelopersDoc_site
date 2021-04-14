@@ -23,5 +23,5 @@ env HUGO_ENV=production
 # env HUGO_ENV="production"
 ls
 cp -r robots.txt public
-curl --silent "http://www.google.com/ping?sitemap=http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/en/sitemap.xml" 
+curl --silent "http://www.google.com/ping?sitemap=https://jorger1986.github.io/DevelopersDoc_site/sitemap.xml" 
 env

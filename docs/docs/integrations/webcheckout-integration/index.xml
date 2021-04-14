@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation – WebCheckout integration</title>
-    <link>http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/integrations/webcheckout-integration.html</link>
+    <link>localhost:1313/docs/integrations/webcheckout-integration.html</link>
     <description>Recent content in WebCheckout integration on Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 29 Mar 2021 11:52:52 -0500</lastBuildDate>
     
-	  <atom:link href="http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/docs/integrations/webcheckout-integration/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="localhost:1313/docs/integrations/webcheckout-integration/index.xml" rel="self" type="application/rss+xml" />
     
     
       

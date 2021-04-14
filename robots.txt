@@ -6,4 +6,4 @@
 # Allow crawling of all content
 User-agent: *
 Disallow:
-Sitemap: http://developer-docs-int.paymentsos.com.s3-website.eu-central-1.amazonaws.com/sitemap.xml
+Sitemap: https://jorger1986.github.io/DevelopersDoc_site/sitemap.xml
