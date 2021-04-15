@@ -61,51 +61,6 @@
     </item>
     
     <item>
-      <title>Docs: Tokenization</title>
-      <link>/docs/services/tokenization.html</link>
-      <pubDate>Fri, 26 Mar 2021 09:34:59 -0500</pubDate>
-      
-      <guid>/docs/services/tokenization.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;To use the tokenization feature, you need to enable it in your PayU account. To do so, contact &lt;a href=&#34;mailto:sac@payulatam.com&#34;&gt;sac@payulatam.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Tokenization includes two separated processes.&lt;/p&gt;
-&lt;p&gt;[IMG]&lt;/p&gt;
-&lt;!--To integrate with Tokenization, target the requests to the following URLs:
-
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: ``&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: ``&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
---&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Recurring Payments</title>
-      <link>/docs/services/recurringpayments.html</link>
-      <pubDate>Fri, 26 Mar 2021 09:46:32 -0500</pubDate>
-      
-      <guid>/docs/services/recurringpayments.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;[Recurring payment flow image]&lt;/p&gt;
-&lt;p&gt;Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, &lt;strong&gt;Peru&lt;/strong&gt; and &lt;strong&gt;Mexico&lt;/strong&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Installments and Promotions</title>
       <link>/docs/services/promotions.html</link>
       <pubDate>Fri, 26 Mar 2021 14:02:05 -0500</pubDate>
