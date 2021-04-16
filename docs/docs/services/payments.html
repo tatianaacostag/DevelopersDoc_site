@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments feature lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-03-25T14:28:20-05:00" />
 <meta itemprop="dateModified" content="2021-04-12T15:26:58-05:00" />
-<meta itemprop="wordCount" content="25">
+<meta itemprop="wordCount" content="268">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments"/>
 <meta name="twitter:description" content="Payments feature lets your shop process different transaction types with multiple payment methods.
@@ -78,7 +78,7 @@
 				
 				
 				
-				<a class="nav-link active" href="../../docs.html" ><span class="active">Online Payments</span></a>
+				<a class="nav-link active" href="../../docs.html" ><span class="active">Online payments</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -88,7 +88,7 @@
 				
 				
 				
-				<a class="nav-link" href="../../merchant-panel.html" ><span>Merchant Panel</span></a>
+				<a class="nav-link" href="../../payu-module-documentation.html" ><span>PayU Module guide</span></a>
 			</li>
 			
 			
@@ -122,7 +122,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.1599bb09e4210db851fdada86513d2a4c120302b4b9330381471c4a3bc6579c369d6963926f3ec871e3ba0f877c8b9541baa39076b818d77899a44035a419736.json"
+  data-offline-search-index-json-src="../../offline-search-index.d9e7f92f245e35d82a77d0acd105c19bf27c471f42187b7957396a56b8493ba5d2f71d3a927ed815eee767bd545f61afb64511e5f37d603dc880ca69073e889a.json"
   data-offline-search-base-href="../../"
 >
 
@@ -506,6 +506,17 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#transaction-processing">Transaction processing</a>
+      <ul>
+        <li><a href="#payment-methods">Payment methods</a></li>
+      </ul>
+    </li>
+    <li><a href="#whats-next">What&rsquo;s next?</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -552,13 +563,32 @@
 	<h1>Payments</h1>
     <div class="lead">Payments feature lets your shop process different transaction types with multiple payment methods.</div>
 	       
-	<p>this site has content</p>
-<h2 id="step-1">Step 1</h2>
-<p>this is the step 1</p>
-<h2 id="step-2">Step 2</h2>
-<p>this is the step 2</p>
-<h2 id="step-3">Step 3</h2>
-<p>this is the step 3</p>
+	<p>Regardless of the <a href="../../docs/integrations.html">integration type</a> you choose, PayU provides operations to process ypur transactions. The following section explains these methods.</p>
+<h2 id="transaction-processing">Transaction processing</h2>
+<p>PayU provides different operations to process your payments:</p>
+<p><img src="../../assets/Payments/autorizacionycaptura-en.png" alt="Payments"></p>
+<ul>
+<li><em>Authorization</em>: this operation is used to verify if the credit card used to pay is active, has funds, etc. The transaction is not complete until a transaction capture is sent. </br>
+For Example, when you use a transportation app, after you request the service, the app sends an <em>Authorization</em> to reserve the amount of the trip and verify that your card is valid (active and with enough founds). Nevertheless, the charge is not performed in your card yet.</li>
+<li><em>Capture</em>: this operation terminates a previously authorized transaction, namely, at this point, the account makes a debit to the card.</br>
+Back in the transportation app example, once your service has finished, the apps charges the total amount of your trip and terminates the transaction.</li>
+<li><em>Authorization and capture</em>: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.</li>
+<li><em>Cancellation</em>: this operation reverses a previously authorized transaction. (only available for accounts in Brazil).</li>
+<li><em>Refund</em>: this operation reverses a previously captured transaction.</li>
+</ul>
+<h3 id="payment-methods">Payment methods</h3>
+<p>The available payment methods used to process transactions are:</p>
+<ul>
+<li>Credit cards.</li>
+<li>Cash payments.</li>
+<li>Bank transfers. <em>Only available for transactions in Colombia</em></li>
+</ul>
+<h2 id="whats-next">What&rsquo;s next?</h2>
+<p>The integration with this service depends on the country of your transactions, the operation selected and the payment method.</p>
+<ul>
+<li><a href="../../docs/integrations/api-integration.html">For API integrations, refer to this topic</a></li>
+<li><a href="../../docs/integrations/sdk-integration.html">For SDK integrations, refer to this topic</a></li>
+</ul>
 
 	
 	

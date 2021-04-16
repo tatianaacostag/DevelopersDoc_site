@@ -23,13 +23,32 @@
       <description>
         
         
-        &lt;p&gt;this site has content&lt;/p&gt;
-&lt;h2 id=&#34;step-1&#34;&gt;Step 1&lt;/h2&gt;
-&lt;p&gt;this is the step 1&lt;/p&gt;
-&lt;h2 id=&#34;step-2&#34;&gt;Step 2&lt;/h2&gt;
-&lt;p&gt;this is the step 2&lt;/p&gt;
-&lt;h2 id=&#34;step-3&#34;&gt;Step 3&lt;/h2&gt;
-&lt;p&gt;this is the step 3&lt;/p&gt;
+        &lt;p&gt;Regardless of the &lt;a href=&#34;../../docs/integrations.html&#34;&gt;integration type&lt;/a&gt; you choose, PayU provides operations to process ypur transactions. The following section explains these methods.&lt;/p&gt;
+&lt;h2 id=&#34;transaction-processing&#34;&gt;Transaction processing&lt;/h2&gt;
+&lt;p&gt;PayU provides different operations to process your payments:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Payments/autorizacionycaptura-en.png&#34; alt=&#34;Payments&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Authorization&lt;/em&gt;: this operation is used to verify if the credit card used to pay is active, has funds, etc. The transaction is not complete until a transaction capture is sent. &lt;/br&gt;
+For Example, when you use a transportation app, after you request the service, the app sends an &lt;em&gt;Authorization&lt;/em&gt; to reserve the amount of the trip and verify that your card is valid (active and with enough founds). Nevertheless, the charge is not performed in your card yet.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Capture&lt;/em&gt;: this operation terminates a previously authorized transaction, namely, at this point, the account makes a debit to the card.&lt;/br&gt;
+Back in the transportation app example, once your service has finished, the apps charges the total amount of your trip and terminates the transaction.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Authorization and capture&lt;/em&gt;: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Cancellation&lt;/em&gt;: this operation reverses a previously authorized transaction. (only available for accounts in Brazil).&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Refund&lt;/em&gt;: this operation reverses a previously captured transaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;payment-methods&#34;&gt;Payment methods&lt;/h3&gt;
+&lt;p&gt;The available payment methods used to process transactions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Credit cards.&lt;/li&gt;
+&lt;li&gt;Cash payments.&lt;/li&gt;
+&lt;li&gt;Bank transfers. &lt;em&gt;Only available for transactions in Colombia&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this service depends on the country of your transactions, the operation selected and the payment method.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>

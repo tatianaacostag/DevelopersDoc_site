@@ -3,12 +3,14 @@ title: "Online Payments"
 linkTitle: "Home"
 date: 2017-01-05
 description: >
-  Receive online payments made with credit cards, bank transfers, cash and more.
+  With PayU, you can receive online payments made with credit cards, bank transfers, cash and more.
 menu:
   main:
-    name: Online Payments
+    name: Online payments
     weight: 20     
 ---
+
+We provide a set of services and tools to let you receive payments, download reports, manage disputes and more.
 
 Ideally suited for
 
