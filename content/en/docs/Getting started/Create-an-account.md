@@ -15,7 +15,15 @@ The first step to start using PayU services is create an account. This topic sho
 * Security
 
 ## How to create an Account?
-Contact us to support you through the process.
+Regardless of the size of your business, the procedure to create an account is as follows:
+
+
+1. Contact us.
+If you want to start using PayU services and tools to integrate your shop and start receiving online payments, contact us through our [web page](https://www.payu.com).
+
+Or you can call us:
+
+
 
 After you have created an account, you and your customers receive a notification for each payment made. The money is then credited to your PayU account.
 
