@@ -31,7 +31,7 @@ Or you can call us:
 * PER: (+51 1) 708-5381
 
 {{% alert title="Note" color="info"%}}
-If you are in Colombia and sell les than 100 million/month, you can create your account using this [link](https://colombia.payu.com/abre-tu-cuenta/)
+If you are in Colombia and sell less than 100 million/month, you can create your account using this [link](https://colombia.payu.com/abre-tu-cuenta/)
 {{% /alert %}}
 
 Review our terms and conditions [here](#).
