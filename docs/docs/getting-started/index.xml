@@ -32,8 +32,46 @@
 &lt;li&gt;Security&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;how-to-create-an-account&#34;&gt;How to create an Account?&lt;/h2&gt;
-&lt;p&gt;Contact us to support you through the process.&lt;/p&gt;
-&lt;p&gt;After you have created an account, you and your customers receive a notification for each payment made. The money is then credited to your PayU account.&lt;/p&gt;
+&lt;p&gt;Regardless of the size of your business, the procedure to create an account is as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Contact us.
+If you want to start using PayU services and tools to integrate your shop and start receiving online payments, contact us through our &lt;a href=&#34;https://www.payu.com&#34;&gt;web page&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Or you can call us:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ARG: (+54 11) 5984-2132&lt;/li&gt;
+&lt;li&gt;BRA: (+55 11) 4130-5311&lt;/li&gt;
+&lt;li&gt;CHI: (+56 2) 258-13949&lt;/li&gt;
+&lt;li&gt;COL: (+57 1) 654-0721&lt;/li&gt;
+&lt;li&gt;MEX: (+52 55) 474-11439&lt;/li&gt;
+&lt;li&gt;PAN: (+50 7) 836-5577&lt;/li&gt;
+&lt;li&gt;PER: (+51 1) 708-5381&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+If you are in Colombia and sell les than 100 million/month, you can create your account using this &lt;a href=&#34;https://colombia.payu.com/abre-tu-cuenta/&#34;&gt;link&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Review our terms and conditions &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Validation of your account.
+Once we received your account request, our agents will validate your risk and bank score.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Review the Prohibited, Restricted or Forbidden Activities &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Activate your account.
+After opening your PayU account, you will receive an email to confirm your email and enter the PayU Module for the first time. At this point, your account is already activated to receive payments on the Internet with all available payment methods.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To validate your account, you should:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Have completed the documentation and registration in the administrative module.&lt;/li&gt;
+&lt;li&gt;Have a successful transaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;After you have created an account, you and your customers receive a notification for each payment they made. The money is then credited to your PayU account.&lt;/p&gt;
+&lt;p&gt;According to your business needs, select how to integrate your shop with the PayU services and tools. For more information, refer to &lt;a href=&#34;../../docs/integrations.html&#34;&gt;Integrations&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Finally, transfer the balance from your PayU account to your bank account whenever you want.&lt;/p&gt;
 
       </description>

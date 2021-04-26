@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;p&gt;Regardless of the &lt;a href=&#34;../../docs/integrations.html&#34;&gt;integration type&lt;/a&gt; you choose, PayU provides operations to process ypur transactions. The following section explains these methods.&lt;/p&gt;
+        &lt;p&gt;Regardless of the &lt;a href=&#34;../../docs/integrations.html&#34;&gt;integration type&lt;/a&gt; you choose, PayU provides operations to process your transactions. The following section explains these methods.&lt;/p&gt;
 &lt;h2 id=&#34;transaction-processing&#34;&gt;Transaction processing&lt;/h2&gt;
 &lt;p&gt;PayU provides different operations to process your payments:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Payments/autorizacionycaptura-en.png&#34; alt=&#34;Payments&#34;&gt;&lt;/p&gt;
