@@ -7,7 +7,7 @@ description: >
 weight: 10
 ---
 
-Regardless of the [integration type]({{< ref "integrations" >}}) you choose, PayU provides operations to process ypur transactions. The following section explains these methods.
+Regardless of the [integration type]({{< ref "integrations" >}}) you choose, PayU provides operations to process your transactions. The following section explains these methods.
 
 ## Transaction processing
 PayU provides different operations to process your payments:
