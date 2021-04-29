@@ -4,7 +4,7 @@ linkTitle: "Shopping Cart Plugins"
 date: 2021-04-07T09:27:04-05:00
 Description: >
   This tool let you integrate your shopping cart solution with any of our available plugins.
-weight: 40
+weight: 30
 ---
 
 ## Pre-integrated solutions

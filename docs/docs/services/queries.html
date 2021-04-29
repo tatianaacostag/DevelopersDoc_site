@@ -21,22 +21,22 @@
 <link rel="icon" type="image/png" href="../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Queries and reports | Documentation</title><meta property="og:title" content="Queries and reports" />
-<meta property="og:description" content="Queries feature lets you check the status of the transactions generated from placed orders.
+<title>Queries for transactions | Documentation</title><meta property="og:title" content="Queries for transactions" />
+<meta property="og:description" content="Using the Queries feature, you can check the status of the transactions generated from placed orders. Furthermore, you can get information related to the payment flow such as the available payment methods. 
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/services/queries.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-26T09:12:41-05:00" />
 <meta property="article:modified_time" content="2021-04-12T15:26:58-05:00" /><meta property="og:site_name" content="Documentation" />
 
-<meta itemprop="name" content="Queries and reports">
-<meta itemprop="description" content="Queries feature lets you check the status of the transactions generated from placed orders.
+<meta itemprop="name" content="Queries for transactions">
+<meta itemprop="description" content="Using the Queries feature, you can check the status of the transactions generated from placed orders. Furthermore, you can get information related to the payment flow such as the available payment methods. 
 "><meta itemprop="datePublished" content="2021-03-26T09:12:41-05:00" />
 <meta itemprop="dateModified" content="2021-04-12T15:26:58-05:00" />
-<meta itemprop="wordCount" content="6">
+<meta itemprop="wordCount" content="94">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Queries and reports"/>
-<meta name="twitter:description" content="Queries feature lets you check the status of the transactions generated from placed orders.
+<meta name="twitter:title" content="Queries for transactions"/>
+<meta name="twitter:description" content="Using the Queries feature, you can check the status of the transactions generated from placed orders. Furthermore, you can get information related to the payment flow such as the available payment methods. 
 "/>
 
 
@@ -122,7 +122,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.e596b20915679b3b36400093adc1733be95fff7fc3232bdf5e52908e0a68bf8c86e85376cc4d30eda0a64bb8582206b1a7228bc200487253046ca1622ee04d8b.json"
+  data-offline-search-index-json-src="../../offline-search-index.a4f648bf4aad822e75671e3bb5bcf32f86a0e6680f4826ab4e48ffcd6a009e2af6ea8e310fb7cf380ee669eabfa8f74e222a8453a888ae4f790098dafbad2f6c.json"
   data-offline-search-base-href="../../"
 >
 
@@ -265,7 +265,7 @@
       
       
       
-        <a id="/docs/services/queries.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-docsservicesquerieshtml" href="../../docs/services/queries.html">Queries and reports</a>
+        <a id="/docs/services/queries.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-docsservicesquerieshtml" href="../../docs/services/queries.html">Queries for transactions</a>
       
       
       
@@ -320,12 +320,6 @@
       
       
       
-        <a id="/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsdisputeshtml" href="../../docs/tools/disputes.html">Disputes</a>
-      
-      
-      
-      
-      
         <a id="/docs/tools/shopping-cart-plugins.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsshopping-cart-pluginshtml" href="../../docs/tools/shopping-cart-plugins.html">Shopping Cart Plugins</a>
       
       
@@ -333,6 +327,18 @@
       
       
         <a id="/docs/tools/payu-module.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolspayu-modulehtml" href="../../docs/tools/payu-module.html">PayU Module</a>
+      
+      
+      
+      
+      
+        <a id="/docs/tools/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsreportshtml" href="../../docs/tools/reports.html">Reports</a>
+      
+      
+      
+      
+      
+        <a id="/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsdisputeshtml" href="../../docs/tools/disputes.html">Disputes</a>
       
       
       
@@ -541,7 +547,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../docs/services/queries.html">Queries and reports</a>
+	<a href="../../docs/services/queries.html">Queries for transactions</a>
 </li>
 
 	</ol>
@@ -549,22 +555,19 @@
 
             
 <div class="td-content">
-	<h1>Queries and reports</h1>
-    <div class="lead">Queries feature lets you check the status of the transactions generated from placed orders.</div>
+	<h1>Queries for transactions</h1>
+    <div class="lead">Using the Queries feature, you can check the status of the transactions generated from placed orders. Furthermore, you can get information related to the payment flow such as the available payment methods.</div>
 	       
-	<!--To integrate with Queries API, target the requests to the following URLs:
-
-
-
-<div class="alert alert-info" role="alert">
-<h4 class="alert-heading">API</h4>
+	<h2 id="considerations">Considerations</h2>
+<p>Before using the <em>Queries</em> feature, take into account the following considerations:</p>
 <ul>
-<li><em><strong>Tests</strong></em>: <code>https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi</code></li>
-<li><em><strong>Production</strong></em>: <code>https://api.payulatam.com/reports-api/4.0/service.cgi</code></li>
+<li>It is recommended to use <em>Queries</em> for transactions in <code>PENDING</code> state.</li>
+<li>According to the payment method, the time to perform the query may vary. Nevertheless, it is recommended to perform the first query seven minutes after the transaction is created.</li>
+<li>Do not retry a query of a transaction when PayU indicates that the transaction does not exist.</li>
+<li>Bank transfer transactions are only available every ten minutes.</li>
 </ul>
-
-</div>
--->
+<h2 id="query-criteria">Query criteria</h2>
+<p>To query transactions, PayU allows you to search by any of the following criteria.</p>
 
 	
 	

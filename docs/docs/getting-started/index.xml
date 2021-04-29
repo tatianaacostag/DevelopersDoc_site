@@ -27,7 +27,7 @@
 &lt;h2 id=&#34;payu-benefits&#34;&gt;PayU benefits&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Competitive rate&lt;/li&gt;
-&lt;li&gt;More than 400 payment methods&lt;/li&gt;
+&lt;li&gt;Multiple payment methods&lt;/li&gt;
 &lt;li&gt;Sell with or without a website&lt;/li&gt;
 &lt;li&gt;Security&lt;/li&gt;
 &lt;/ul&gt;
@@ -35,36 +35,43 @@
 &lt;p&gt;Regardless of the size of your business, the procedure to create an account is as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Contact us.
-If you want to start using PayU services and tools to integrate your shop and start receiving online payments, contact us through our &lt;a href=&#34;https://www.payu.com&#34;&gt;web page&lt;/a&gt;.&lt;/li&gt;
+If you want to start using PayU services and tools to integrate your shop and start receiving online payments, contact us through our &lt;a href=&#34;https://www.payu.com&#34;&gt;web page&lt;/a&gt;.&lt;br&gt;
+&lt;br&gt;
+Or you can call us:
+&lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Or you can call us:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;ARG: (+54 11) 5984-2132&lt;/li&gt;
-&lt;li&gt;BRA: (+55 11) 4130-5311&lt;/li&gt;
-&lt;li&gt;CHI: (+56 2) 258-13949&lt;/li&gt;
-&lt;li&gt;COL: (+57 1) 654-0721&lt;/li&gt;
-&lt;li&gt;MEX: (+52 55) 474-11439&lt;/li&gt;
-&lt;li&gt;PAN: (+50 7) 836-5577&lt;/li&gt;
-&lt;li&gt;PER: (+51 1) 708-5381&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;img src=&#34;../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; (+54 11) 5984-2132&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; (+55 11) 4130-5311&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; (+56 2) 258-13949&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; (+57 1) 654-0721&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; (+52 55) 474-11439&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; (+50 7) 836-5577&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; (+51 1) 708-5381
+&lt;br&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-If you are in Colombia and sell less than 100 million/month, you can create your account using this &lt;a href=&#34;https://colombia.payu.com/abre-tu-cuenta/&#34;&gt;link&lt;/a&gt;
+If you are in Colombia and sell less than 100 million COP/month, you can create your account using this &lt;a href=&#34;https://colombia.payu.com/abre-tu-cuenta/&#34;&gt;link&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Review our terms and conditions &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+Review our terms and conditions &lt;a href=&#34;https://legal.payulatam.com/EN/terms_conditions_merchants.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Validation of your account.
-Once we received your account request, our agents will validate your risk and bank score.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Validation of your account.&lt;br&gt;
+Once we received your account request, our agents will validate your risk and bank score. &lt;br&gt;
+&lt;br&gt;
+Review the Prohibited, Restricted or Forbidden Activities &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Activate your account.&lt;br&gt;
+After opening your PayU account, you will receive an email to confirm your email and enter the PayU Module for the first time. At this point, your account is already activated to receive payments on the Internet with all available payment methods.
+&lt;br&gt;&lt;br&gt;
+To activate your account, you should:&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Review the Prohibited, Restricted or Forbidden Activities &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Activate your account.
-After opening your PayU account, you will receive an email to confirm your email and enter the PayU Module for the first time. At this point, your account is already activated to receive payments on the Internet with all available payment methods.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;To validate your account, you should:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Have completed the documentation and registration in the administrative module.&lt;/li&gt;
 &lt;li&gt;Have a successful transaction.&lt;/li&gt;
@@ -125,32 +132,37 @@ After opening your PayU account, you will receive an email to confirm your email
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-request.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../assets/payment-request.png&#34; alt=&#34;Payment requests&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../../assets/SVG/money-flowing.svg&#34; alt=&#34;Payment requests&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment request&lt;/h4&gt;
       &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-button.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../assets/payment-button.png&#34; alt=&#34;Payment button&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../../assets/SVG/money-digital-device.svg&#34; alt=&#34;Payment button&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment button&lt;/h4&gt;
       &lt;p&gt;Create an HTML button and insert it easily in your web page.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../assets/shopping-carts.png&#34; alt=&#34;Shopping cart plugins&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Shopping cart plugins&lt;/h4&gt;
       &lt;p&gt;Integrate your shopping cart solution with any of our available plugins.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payu-module.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../assets/administrative-module.png&#34; alt=&#34;PayU Module&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../../assets/PayULogo.png&#34; alt=&#34;PayU Module&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;PayU module&lt;/h4&gt;
       &lt;p&gt;Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.&lt;/p&gt;
     &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/reports.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../assets/SVG/growing-line-graph.svg&#34; alt=&#34;Reports&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Reports&lt;/h4&gt;
+      &lt;p&gt;See the overview of your account including, your sales, your financial statement, and your custom reports.&lt;/p&gt;
+    &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/disputes.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../assets/tokenization.png&#34; alt=&#34;Tokenization&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../../assets/SVG/bank.svg&#34; alt=&#34;Disputes&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputes&lt;/h4&gt;
       &lt;p&gt;Manage the dispute processes generated in your PayU account.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-coupons.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../assets/payment-coupon.png&#34; alt=&#34;Payment coupons&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../../assets/SVG/hand-with-icon.svg&#34; alt=&#34;Payment coupons&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment coupons&lt;/h4&gt;
       &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
     &lt;/div&gt;

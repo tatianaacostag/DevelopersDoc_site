@@ -80,7 +80,7 @@
 &lt;h2 id=&#34;payu-benefits&#34;&gt;PayU benefits&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Competitive rate&lt;/li&gt;
-&lt;li&gt;More than 400 payment methods&lt;/li&gt;
+&lt;li&gt;Multiple payment methods&lt;/li&gt;
 &lt;li&gt;Sell with or without a website&lt;/li&gt;
 &lt;li&gt;Security&lt;/li&gt;
 &lt;/ul&gt;
@@ -88,36 +88,43 @@
 &lt;p&gt;Regardless of the size of your business, the procedure to create an account is as follows:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Contact us.
-If you want to start using PayU services and tools to integrate your shop and start receiving online payments, contact us through our &lt;a href=&#34;https://www.payu.com&#34;&gt;web page&lt;/a&gt;.&lt;/li&gt;
+If you want to start using PayU services and tools to integrate your shop and start receiving online payments, contact us through our &lt;a href=&#34;https://www.payu.com&#34;&gt;web page&lt;/a&gt;.&lt;br&gt;
+&lt;br&gt;
+Or you can call us:
+&lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Or you can call us:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;ARG: (+54 11) 5984-2132&lt;/li&gt;
-&lt;li&gt;BRA: (+55 11) 4130-5311&lt;/li&gt;
-&lt;li&gt;CHI: (+56 2) 258-13949&lt;/li&gt;
-&lt;li&gt;COL: (+57 1) 654-0721&lt;/li&gt;
-&lt;li&gt;MEX: (+52 55) 474-11439&lt;/li&gt;
-&lt;li&gt;PAN: (+50 7) 836-5577&lt;/li&gt;
-&lt;li&gt;PER: (+51 1) 708-5381&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;img src=&#34;../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; (+54 11) 5984-2132&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; (+55 11) 4130-5311&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; (+56 2) 258-13949&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; (+57 1) 654-0721&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; (+52 55) 474-11439&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; (+50 7) 836-5577&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; (+51 1) 708-5381
+&lt;br&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-If you are in Colombia and sell less than 100 million/month, you can create your account using this &lt;a href=&#34;https://colombia.payu.com/abre-tu-cuenta/&#34;&gt;link&lt;/a&gt;
+If you are in Colombia and sell less than 100 million COP/month, you can create your account using this &lt;a href=&#34;https://colombia.payu.com/abre-tu-cuenta/&#34;&gt;link&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Review our terms and conditions &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+Review our terms and conditions &lt;a href=&#34;https://legal.payulatam.com/EN/terms_conditions_merchants.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Validation of your account.
-Once we received your account request, our agents will validate your risk and bank score.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Validation of your account.&lt;br&gt;
+Once we received your account request, our agents will validate your risk and bank score. &lt;br&gt;
+&lt;br&gt;
+Review the Prohibited, Restricted or Forbidden Activities &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Activate your account.&lt;br&gt;
+After opening your PayU account, you will receive an email to confirm your email and enter the PayU Module for the first time. At this point, your account is already activated to receive payments on the Internet with all available payment methods.
+&lt;br&gt;&lt;br&gt;
+To activate your account, you should:&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Review the Prohibited, Restricted or Forbidden Activities &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Activate your account.
-After opening your PayU account, you will receive an email to confirm your email and enter the PayU Module for the first time. At this point, your account is already activated to receive payments on the Internet with all available payment methods.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;To validate your account, you should:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Have completed the documentation and registration in the administrative module.&lt;/li&gt;
 &lt;li&gt;Have a successful transaction.&lt;/li&gt;
@@ -232,32 +239,37 @@ Back in the transportation app example, once your service has finished, the apps
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-request.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/payment-request.png&#34; alt=&#34;Payment requests&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/money-flowing.svg&#34; alt=&#34;Payment requests&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment request&lt;/h4&gt;
       &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-button.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/payment-button.png&#34; alt=&#34;Payment button&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/money-digital-device.svg&#34; alt=&#34;Payment button&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment button&lt;/h4&gt;
       &lt;p&gt;Create an HTML button and insert it easily in your web page.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/shopping-carts.png&#34; alt=&#34;Shopping cart plugins&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Shopping cart plugins&lt;/h4&gt;
       &lt;p&gt;Integrate your shopping cart solution with any of our available plugins.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payu-module.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/administrative-module.png&#34; alt=&#34;PayU Module&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../assets/PayULogo.png&#34; alt=&#34;PayU Module&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;PayU module&lt;/h4&gt;
       &lt;p&gt;Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.&lt;/p&gt;
     &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/reports.html&#39;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/growing-line-graph.svg&#34; alt=&#34;Reports&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Reports&lt;/h4&gt;
+      &lt;p&gt;See the overview of your account including, your sales, your financial statement, and your custom reports.&lt;/p&gt;
+    &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/disputes.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/tokenization.png&#34; alt=&#34;Tokenization&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/bank.svg&#34; alt=&#34;Disputes&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputes&lt;/h4&gt;
       &lt;p&gt;Manage the dispute processes generated in your PayU account.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-coupons.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/payment-coupon.png&#34; alt=&#34;Payment coupons&#34; style=&#34;border:1px solid #CCCCCC;border-radius: 10px;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/hand-with-icon.svg&#34; alt=&#34;Payment coupons&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment coupons&lt;/h4&gt;
       &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
     &lt;/div&gt;
@@ -269,7 +281,7 @@ Back in the transportation app example, once your service has finished, the apps
     </item>
     
     <item>
-      <title>Docs: Queries and reports</title>
+      <title>Docs: Queries for transactions</title>
       <link>/docs/services/queries.html</link>
       <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
       
@@ -277,36 +289,16 @@ Back in the transportation app example, once your service has finished, the apps
       <description>
         
         
-        &lt;!--To integrate with Queries API, target the requests to the following URLs:
-
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
+        &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;p&gt;Before using the &lt;em&gt;Queries&lt;/em&gt; feature, take into account the following considerations:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;https://api.payulatam.com/reports-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;It is recommended to use &lt;em&gt;Queries&lt;/em&gt; for transactions in &lt;code&gt;PENDING&lt;/code&gt; state.&lt;/li&gt;
+&lt;li&gt;According to the payment method, the time to perform the query may vary. Nevertheless, it is recommended to perform the first query seven minutes after the transaction is created.&lt;/li&gt;
+&lt;li&gt;Do not retry a query of a transaction when PayU indicates that the transaction does not exist.&lt;/li&gt;
+&lt;li&gt;Bank transfer transactions are only available every ten minutes.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;/div&gt;
---&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Disputes</title>
-      <link>/docs/tools/disputes.html</link>
-      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
-      
-      <guid>/docs/tools/disputes.html</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
-&lt;p&gt;Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
-&lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
-&lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;/p&gt;
+&lt;h2 id=&#34;query-criteria&#34;&gt;Query criteria&lt;/h2&gt;
+&lt;p&gt;To query transactions, PayU allows you to search by any of the following criteria.&lt;/p&gt;
 
       </description>
     </item>
@@ -355,6 +347,19 @@ Back in the transportation app example, once your service has finished, the apps
         
         &lt;p&gt;To use the PayU module, go to &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;.&lt;/p&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Reports</title>
+      <link>/docs/tools/reports.html</link>
+      <pubDate>Wed, 28 Apr 2021 14:14:14 -0500</pubDate>
+      
+      <guid>/docs/tools/reports.html</guid>
+      <description>
+        
+        
+        
       </description>
     </item>
     
@@ -410,16 +415,18 @@ To integrate with Promotions API, target the requests to the following URLs:
     </item>
     
     <item>
-      <title>Docs: Payment Coupons</title>
-      <link>/docs/tools/payment-coupons.html</link>
-      <pubDate>Wed, 07 Apr 2021 09:27:50 -0500</pubDate>
+      <title>Docs: Disputes</title>
+      <link>/docs/tools/disputes.html</link>
+      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
       
-      <guid>/docs/tools/payment-coupons.html</guid>
+      <guid>/docs/tools/disputes.html</guid>
       <description>
         
         
-        &lt;p&gt;This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.&lt;/p&gt;
-&lt;p&gt;You can receive payments without any technical knowledge. You just need to send an email where your client can download the coupon and makes the respective payment.&lt;/p&gt;
+        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
+&lt;p&gt;Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
+&lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
+&lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;/p&gt;
 
       </description>
     </item>
@@ -449,6 +456,21 @@ To integrate with Promotions API, target the requests to the following URLs:
         
         &lt;p&gt;You can create the refund request using the &lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny the request if it does not meet the requirements.
 Additionally, you can check the status of your refund request using the &lt;a href=&#34;../docs/services/queries.html&#34; title=&#34;Query API&#34;&gt;Query API&lt;/a&gt; available for that purpose.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Coupons</title>
+      <link>/docs/tools/payment-coupons.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:50 -0500</pubDate>
+      
+      <guid>/docs/tools/payment-coupons.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.&lt;/p&gt;
+&lt;p&gt;You can receive payments without any technical knowledge. You just need to send an email where your client can download the coupon and makes the respective payment.&lt;/p&gt;
 
       </description>
     </item>

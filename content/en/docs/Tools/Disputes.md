@@ -4,7 +4,7 @@ linkTitle: "Disputes"
 date: 2021-04-12T08:34:58-05:00
 description: >
   Using this tool, you can manage the dispute processes generated in your PayU account.
-weight: 30
+weight: 60
 ---
 
 ## What is a Dispute?

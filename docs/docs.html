@@ -118,7 +118,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="./offline-search-index.e596b20915679b3b36400093adc1733be95fff7fc3232bdf5e52908e0a68bf8c86e85376cc4d30eda0a64bb8582206b1a7228bc200487253046ca1622ee04d8b.json"
+  data-offline-search-index-json-src="./offline-search-index.a4f648bf4aad822e75671e3bb5bcf32f86a0e6680f4826ab4e48ffcd6a009e2af6ea8e310fb7cf380ee669eabfa8f74e222a8453a888ae4f790098dafbad2f6c.json"
   data-offline-search-base-href="./"
 >
 
@@ -261,7 +261,7 @@
       
       
       
-        <a id="/docs/services/queries.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsservicesquerieshtml" href="./docs/services/queries.html">Queries and reports</a>
+        <a id="/docs/services/queries.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsservicesquerieshtml" href="./docs/services/queries.html">Queries for transactions</a>
       
       
       
@@ -316,12 +316,6 @@
       
       
       
-        <a id="/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsdisputeshtml" href="./docs/tools/disputes.html">Disputes</a>
-      
-      
-      
-      
-      
         <a id="/docs/tools/shopping-cart-plugins.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsshopping-cart-pluginshtml" href="./docs/tools/shopping-cart-plugins.html">Shopping Cart Plugins</a>
       
       
@@ -329,6 +323,18 @@
       
       
         <a id="/docs/tools/payu-module.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolspayu-modulehtml" href="./docs/tools/payu-module.html">PayU Module</a>
+      
+      
+      
+      
+      
+        <a id="/docs/tools/reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsreportshtml" href="./docs/tools/reports.html">Reports</a>
+      
+      
+      
+      
+      
+        <a id="/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsdisputeshtml" href="./docs/tools/disputes.html">Disputes</a>
       
       
       
@@ -505,7 +511,8 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#benefits-of-online-payments">Benefits of online payments</a></li>
-    <li><a href="#how-does-payu-work">How does PayU work?</a>
+    <li><a href="#how-does-payu-work">How does PayU work?</a></li>
+    <li><a href="#how-to-start-using-payu">How to start using PayU?</a>
       <ul>
         <li><a href="#1-create-a-payu-account">1. Create a PayU account</a></li>
         <li><a href="#2-select-how-you-want-to-integrate-with-payu-services-and-tools">2. Select how you want to integrate with PayU services and tools.</a></li>
@@ -568,6 +575,15 @@ We are integrated with all processing networks, which can increase your approval
 </li>
 </ul>
 <h2 id="how-does-payu-work">How does PayU work?</h2>
+<p>To understand how PayU processes, it is important to understand two main concepts:</p>
+<ul>
+<li>Order: an order in PayU is defined as the set of movements related to an online payment.</li>
+<li>Transaction: any movement related to an order such as charges, retries, refunds, disputes, etc.</li>
+</ul>
+<p>The following image illustrates these concepts.</p>
+<p><em>Insertar imagen acá</em></p>
+<p>According to the image above, an <em>Order</em> can be interpreted as the set of steps from the beginning to the end, and the <em>Transaction</em> are interpreted as a step.</p>
+<h2 id="how-to-start-using-payu">How to start using PayU?</h2>
 <p>When you want to integrate your commerce with PayU services and tools, you need to consider the following steps.</p>
 <h3 id="1-create-a-payu-account">1. Create a PayU account</h3>
 <p>Create your PayU account free of charge. Contact us to support you through the process.</p>
@@ -606,32 +622,37 @@ We are integrated with all processing networks, which can increase your approval
 <div class="container overview-topic" align="center">
   <div class="row">
     <div class="col-sm-4 getting-started" onclick="location.href='./docs/tools/payment-request.html'">
-      <img src="./assets/payment-request.png" alt="Payment requests" style="border:1px solid #CCCCCC;border-radius: 10px;">
+      <img src="./assets/SVG/money-flowing.svg" alt="Payment requests" width="118" height="118">
       <h4 class="navblock-title" style="margin-top:15px;">Payment request</h4>
       <p>Receive payments even if you don't have a web page.</p>
     </div>
     <div class="col-sm-4 getting-started" onclick="location.href='./docs/tools/payment-button.html'">
-      <img src="./assets/payment-button.png" alt="Payment button" style="border:1px solid #CCCCCC;border-radius: 10px;">
+      <img src="./assets/SVG/money-digital-device.svg" alt="Payment button" width="118" height="118">
       <h4 class="navblock-title" style="margin-top:15px;">Payment button</h4>
       <p>Create an HTML button and insert it easily in your web page.</p>
     </div>
     <div class="col-sm-4 getting-started" onclick="location.href='./docs/tools/shopping-cart-plugins.html'">
-      <img src="./assets/shopping-carts.png" alt="Shopping cart plugins" style="border:1px solid #CCCCCC;border-radius: 10px;">
+      <img src="./assets/SVG/shopping.svg" alt="Shopping cart plugins" width="118" height="118">
       <h4 class="navblock-title" style="margin-top:15px;">Shopping cart plugins</h4>
       <p>Integrate your shopping cart solution with any of our available plugins.</p>
     </div>
     <div class="col-sm-4 getting-started" onclick="location.href='./docs/tools/payu-module.html'">
-      <img src="./assets/administrative-module.png" alt="PayU Module" style="border:1px solid #CCCCCC;border-radius: 10px;">
+      <img src="./assets/PayULogo.png" alt="PayU Module">
       <h4 class="navblock-title" style="margin-top:15px;">PayU module</h4>
       <p>Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.</p>
     </div>
+    <div class="col-sm-4 getting-started" onclick="location.href='./docs/tools/reports.html'">
+      <img src="./assets/SVG/growing-line-graph.svg" alt="Reports" width="118" height="118">
+      <h4 class="navblock-title" style="margin-top:15px;">Reports</h4>
+      <p>See the overview of your account including, your sales, your financial statement, and your custom reports.</p>
+    </div>
     <div class="col-sm-4 getting-started" onclick="location.href='./docs/tools/disputes.html'">
-      <img src="./assets/tokenization.png" alt="Tokenization" style="border:1px solid #CCCCCC;border-radius: 10px;">
+      <img src="./assets/SVG/bank.svg" alt="Disputes" width="118" height="118">
       <h4 class="navblock-title" style="margin-top:15px;">Disputes</h4>
       <p>Manage the dispute processes generated in your PayU account.</p>
     </div>
     <div class="col-sm-4 getting-started" onclick="location.href='./docs/tools/payment-coupons.html'">
-      <img src="./assets/payment-coupon.png" alt="Payment coupons" style="border:1px solid #CCCCCC;border-radius: 10px;">
+      <img src="./assets/SVG/hand-with-icon.svg" alt="Payment coupons" width="118" height="118">
       <h4 class="navblock-title" style="margin-top:15px;">Payment coupons</h4>
       <p>Send payment coupons to your customers, they can pay in the cash branches available.</p>
     </div>
@@ -759,6 +780,8 @@ Implement PayU with the aggregator model or gateway, using PayU’s financial ag
                     </h5>
                     <p>Know the current status of PayU Latam</p>
                 </div>
+            
+        
             
         
             

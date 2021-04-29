@@ -54,7 +54,7 @@ Back in the transportation app example, once your service has finished, the apps
     </item>
     
     <item>
-      <title>Docs: Queries and reports</title>
+      <title>Docs: Queries for transactions</title>
       <link>/docs/services/queries.html</link>
       <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
       
@@ -62,19 +62,16 @@ Back in the transportation app example, once your service has finished, the apps
       <description>
         
         
-        &lt;!--To integrate with Queries API, target the requests to the following URLs:
-
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
+        &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;p&gt;Before using the &lt;em&gt;Queries&lt;/em&gt; feature, take into account the following considerations:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;https://api.payulatam.com/reports-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;It is recommended to use &lt;em&gt;Queries&lt;/em&gt; for transactions in &lt;code&gt;PENDING&lt;/code&gt; state.&lt;/li&gt;
+&lt;li&gt;According to the payment method, the time to perform the query may vary. Nevertheless, it is recommended to perform the first query seven minutes after the transaction is created.&lt;/li&gt;
+&lt;li&gt;Do not retry a query of a transaction when PayU indicates that the transaction does not exist.&lt;/li&gt;
+&lt;li&gt;Bank transfer transactions are only available every ten minutes.&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;/div&gt;
---&gt;
+&lt;h2 id=&#34;query-criteria&#34;&gt;Query criteria&lt;/h2&gt;
+&lt;p&gt;To query transactions, PayU allows you to search by any of the following criteria.&lt;/p&gt;
 
       </description>
     </item>

@@ -45,23 +45,6 @@
     </item>
     
     <item>
-      <title>Docs: Disputes</title>
-      <link>/docs/tools/disputes.html</link>
-      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
-      
-      <guid>/docs/tools/disputes.html</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
-&lt;p&gt;Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
-&lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
-&lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Shopping Cart Plugins</title>
       <link>/docs/tools/shopping-cart-plugins.html</link>
       <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
@@ -90,6 +73,36 @@
         
         
         &lt;p&gt;To use the PayU module, go to &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Reports</title>
+      <link>/docs/tools/reports.html</link>
+      <pubDate>Wed, 28 Apr 2021 14:14:14 -0500</pubDate>
+      
+      <guid>/docs/tools/reports.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Disputes</title>
+      <link>/docs/tools/disputes.html</link>
+      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
+      
+      <guid>/docs/tools/disputes.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
+&lt;p&gt;Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
+&lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
+&lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;/p&gt;
 
       </description>
     </item>
