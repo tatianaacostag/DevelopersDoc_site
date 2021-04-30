@@ -27,7 +27,7 @@ The available payment methods used to process transactions are:
 
 * Credit cards.
 * Cash payments.
-* Bank transfers. _Only available for transactions in Colombia_
+* Bank transfers.
 
 ## What's next?
 The integration with this service depends on the country of your transactions, the operation selected and the payment method.

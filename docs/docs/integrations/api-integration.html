@@ -39,14 +39,16 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.d6bea7f8d99f1eab6e5bb3e7c7adf7bc25e81fc558dc0639b814e7cdfd3f0102.css" as="style">
-<link href="../../scss/main.min.d6bea7f8d99f1eab6e5bb3e7c7adf7bc25e81fc558dc0639b814e7cdfd3f0102.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.e55767e35b0e32b976ee553c488f5f828b602c6310b63d19e2cf277061a0b763.css" as="style">
+<link href="../../scss/main.min.e55767e35b0e32b976ee553c488f5f828b602c6310b63d19e2cf277061a0b763.css" rel="stylesheet" integrity="">
+<link rel="stylesheet" href="../../css/add-on.css">
 
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script defer language="javascript" type="text/javascript"  src="../../js/add-on.js"></script>
 
 <script
   src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
@@ -118,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.a4f648bf4aad822e75671e3bb5bcf32f86a0e6680f4826ab4e48ffcd6a009e2af6ea8e310fb7cf380ee669eabfa8f74e222a8453a888ae4f790098dafbad2f6c.json"
+  data-offline-search-index-json-src="../../offline-search-index.9023065bc9b696585d41ac6a93fcb2d81ca17b03b475f3f39f1357e8ea94d3600be337a4341149e45ae98c2f7e1416ab2af3f08c18222042db095bf096f49c27.json"
   data-offline-search-base-href="../../"
 >
 
@@ -412,6 +414,12 @@
       
       
       
+      
+      
+      
+        <a id="/docs/integrations/api-integration/queries-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationqueries-apihtml" href="../../docs/integrations/api-integration/queries-api.html">Queries API</a>
+      
+      
     </li>
   </ul>
   
@@ -554,7 +562,7 @@
 <p><img src="../../assets/api1-en.png" alt="API integration"></p>
 <h2 id="initial-settings">Initial settings</h2>
 <p>PayU allows you to integrate with the transactional gateway, available payment tools and Queries by developing a HTTPS client to send the transaction information through SSL. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow <a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf">PCI DSS’ best practices</a> (Payment Card Industry Data Security Standard).</p>
-<p>The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop&rsquo;s server our payment Gateway. The exchange of messages is done via XML or JSON strings and operations are distinguished by a command that is included in the request. Check out the following XML and JSON examples:</p>
+<p>The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop&rsquo;s server our payment Gateway. The exchange of messages is done via JSON or XML strings and operations are distinguished by a command that is included in the request. Check out the following JSON and XML examples:</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -568,7 +576,7 @@
 		
 
 		<a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#tab11" role="tab"
-		   aria-controls="nav-home" aria-selected="true">XML</a>
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
 		
@@ -580,7 +588,7 @@
 		
 
 		<a class="nav-item nav-link" id="nav-1" data-toggle="tab" href="#tab12" role="tab"
-		   aria-controls="nav-home" aria-selected="false">JSON</a>
+		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
 		
@@ -599,20 +607,20 @@
 
 <div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">POST /payments-api/4.0/service.cgi HTTP/1.1
-Host: sandbox.api.payulatam.com
-Content-Type: application/xml; charset=utf-8
-Accept: application/xml
-Content-Length: length
-<span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
-   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
-   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
-   <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
-      <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>xxxxxxxxxxxxx<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
-      <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>xxxxxxxxxxxxx<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
-   <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
-   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
-<span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#a40000">POST</span> <span style="color:#a40000">/payments-api/</span><span style="color:#0000cf;font-weight:bold">4.0</span><span style="color:#a40000">/service.cgi</span> <span style="color:#a40000">HTTP/</span><span style="color:#0000cf;font-weight:bold">1.1</span>
+<span style="color:#a40000">Host:</span> <span style="color:#a40000">sandbox.api.payulatam.com</span>
+<span style="color:#a40000">Content-Type:</span> <span style="color:#a40000">application/json;</span> <span style="color:#a40000">charset=utf</span><span style="color:#0000cf;font-weight:bold">-8</span>
+<span style="color:#a40000">Accept:</span> <span style="color:#a40000">application/json</span>
+<span style="color:#a40000">Content-Length:</span> <span style="color:#a40000">length</span>
+<span style="color:#000;font-weight:bold">{</span>
+   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;GET_PAYMENT_METHODS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;xxxxxxxxxxxxx&#34;</span><span style="color:#000;font-weight:bold">,</span>
+      <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;xxxxxxxxxxxxx&#34;</span>
+   <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
 </div>
@@ -628,20 +636,20 @@ Content-Length: length
 
 <div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#a40000">POST</span> <span style="color:#a40000">/payments-api/</span><span style="color:#0000cf;font-weight:bold">4.0</span><span style="color:#a40000">/service.cgi</span> <span style="color:#a40000">HTTP/</span><span style="color:#0000cf;font-weight:bold">1.1</span>
-<span style="color:#a40000">Host:</span> <span style="color:#a40000">sandbox.api.payulatam.com</span>
-<span style="color:#a40000">Content-Type:</span> <span style="color:#a40000">application/json;</span> <span style="color:#a40000">charset=utf</span><span style="color:#0000cf;font-weight:bold">-8</span>
-<span style="color:#a40000">Accept:</span> <span style="color:#a40000">application/json</span>
-<span style="color:#a40000">Content-Length:</span> <span style="color:#a40000">length</span>
-<span style="color:#000;font-weight:bold">{</span>
-   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
-   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
-   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;GET_PAYMENT_METHODS&#34;</span><span style="color:#000;font-weight:bold">,</span>
-   <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
-      <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;xxxxxxxxxxxxx&#34;</span><span style="color:#000;font-weight:bold">,</span>
-      <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;xxxxxxxxxxxxx&#34;</span>
-   <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">POST /payments-api/4.0/service.cgi HTTP/1.1
+Host: sandbox.api.payulatam.com
+Content-Type: application/xml; charset=utf-8
+Accept: application/xml
+Content-Length: length
+<span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+      <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>xxxxxxxxxxxxx<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+      <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>xxxxxxxxxxxxx<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
+<span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </code></pre></div>
 
 </div>
@@ -694,6 +702,15 @@ Content-Length: length
         
             
         
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="../../docs/integrations/api-integration/queries-api.html">Queries API</a>
+                    </h5>
+                    <p></p>
+                </div>
             
         
             

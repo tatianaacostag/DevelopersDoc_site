@@ -19,31 +19,10 @@ Access multiple payment methods (varies per country), including credit cards, ba
 
 PayU allows you to integrate with the transactional gateway, available payment tools and Queries by developing a HTTPS client to send the transaction information through SSL. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow [PCI DSS’ best practices](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).  
 
-The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop's server our payment Gateway. The exchange of messages is done via XML or JSON strings and operations are distinguished by a command that is included in the request. Check out the following XML and JSON examples:  
+The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop's server our payment Gateway. The exchange of messages is done via JSON or XML strings and operations are distinguished by a command that is included in the request. Check out the following JSON and XML examples:  
 
-{{< tabs tabTotal="2" tabID="1" tabName1="XML" tabName2="JSON" >}}
+{{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
-
-```XML
-POST /payments-api/4.0/service.cgi HTTP/1.1
-Host: sandbox.api.payulatam.com
-Content-Type: application/xml; charset=utf-8
-Accept: application/xml
-Content-Length: length
-<request>
-   <language>en</language>
-   <command>GET_PAYMENT_METHODS</command>
-   <merchant>
-      <apiLogin>xxxxxxxxxxxxx</apiLogin>
-      <apiKey>xxxxxxxxxxxxx</apiKey>
-   </merchant>
-   <isTest>false</isTest>
-</request>
-```
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
 
 ```JSON
 POST /payments-api/4.0/service.cgi HTTP/1.1
@@ -60,6 +39,27 @@ Content-Length: length
       "apiKey": "xxxxxxxxxxxxx"
    }
 }
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+
+```XML
+POST /payments-api/4.0/service.cgi HTTP/1.1
+Host: sandbox.api.payulatam.com
+Content-Type: application/xml; charset=utf-8
+Accept: application/xml
+Content-Length: length
+<request>
+   <language>en</language>
+   <command>GET_PAYMENT_METHODS</command>
+   <merchant>
+      <apiLogin>xxxxxxxxxxxxx</apiLogin>
+      <apiKey>xxxxxxxxxxxxx</apiKey>
+   </merchant>
+   <isTest>false</isTest>
+</request>
 ```
 
 {{< /tab >}}
