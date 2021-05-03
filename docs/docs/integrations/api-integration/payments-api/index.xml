@@ -1,0 +1,31 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation – Payments API</title>
+    <link>/docs/integrations/api-integration/payments-api.html</link>
+    <description>Recent content in Payments API on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 03 May 2021 15:48:08 -0500</lastBuildDate>
+    
+	  <atom:link href="/docs/integrations/api-integration/payments-api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Argentina</title>
+      <link>/docs/integrations/api-integration/payments-api/argentina.html</link>
+      <pubDate>Mon, 03 May 2021 15:54:14 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api/argentina.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

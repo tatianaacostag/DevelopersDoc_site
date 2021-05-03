@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.9023065bc9b696585d41ac6a93fcb2d81ca17b03b475f3f39f1357e8ea94d3600be337a4341149e45ae98c2f7e1416ab2af3f08c18222042db095bf096f49c27.json"
+  data-offline-search-index-json-src="../../offline-search-index.e1417d119acd9791a5888d84c2988ccc4164a5bae1a1ba7b3d0bb17a231943bde213283df209bba1f56eeba42d68b6ca03c48bb0a5ec2a61d4f30ef182f56025.json"
   data-offline-search-base-href="../../"
 >
 
@@ -416,6 +416,37 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/integrations/api-integration/payments-api.html" href="../../docs/integrations/api-integration/payments-api.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__page ">Payments API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docsintegrationsapi-integrationpayments-apihtml">
+      
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/api-integration/payments-api/argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-apiargentinahtml" href="../../docs/integrations/api-integration/payments-api/argentina.html">Argentina</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
       
         <a id="/docs/integrations/api-integration/queries-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationqueries-apihtml" href="../../docs/integrations/api-integration/queries-api.html">Queries API</a>
       
@@ -563,7 +594,7 @@
 <h2 id="initial-settings">Initial settings</h2>
 <p>PayU allows you to integrate with the transactional gateway, available payment tools and Queries by developing a HTTPS client to send the transaction information through SSL. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow <a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf">PCI DSS’ best practices</a> (Payment Card Industry Data Security Standard).</p>
 <p>The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop&rsquo;s server our payment Gateway. The exchange of messages is done via JSON or XML strings and operations are distinguished by a command that is included in the request. Check out the following JSON and XML examples:</p>
-<nav>
+<p><nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
 		
@@ -659,6 +690,7 @@ Content-Length: length
 
 
 </div>
+<br></p>
 <p>You can set the language you want to use in the request through the <code>Content-type</code> and <code>Accept</code> HTTP headers. You can use all possible combinations:</p>
 
 
@@ -695,6 +727,17 @@ Content-Length: length
             
         
             
+                <div class="entry">
+                    <h5>
+                        <a href="../../docs/integrations/api-integration/payments-api.html">Payments API</a>
+                    </h5>
+                    <p>Payments API lets your shop process different transaction types with multiple payment methods.</p>
+                </div>
+            
+        
+            
+        
+            
         
             
         
@@ -709,7 +752,7 @@ Content-Length: length
                     <h5>
                         <a href="../../docs/integrations/api-integration/queries-api.html">Queries API</a>
                     </h5>
-                    <p></p>
+                    <p>Queries API lets you check the status of the placed orders along with their transactions.</p>
                 </div>
             
         
@@ -760,7 +803,7 @@ Content-Length: length
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 12, 2021: <a  href="../../commit/01fead6b0bd6b68a857421f23aeb341112cae101">First commit (01fead6)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 30, 2021: <a  href="../../commit/1a1dc29494ffa5d7128873d165f9c7aa403acd96">Queries API. Copy button included (1a1dc29)</a>
 </div>
 </div>
 

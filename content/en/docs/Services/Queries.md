@@ -3,7 +3,7 @@ title: "Queries for transactions"
 linkTitle: "Queries for transactions"
 date: 2021-03-26T09:12:41-05:00
 description: >
-  Using the Queries feature, you can check the status of the transactions generated from placed orders. Furthermore, you can get information related to the payment flow such as the available payment methods. 
+  Using the Queries feature, you can check the status of the placed orders along with their transactions. 
 weight: 20
 ---
 

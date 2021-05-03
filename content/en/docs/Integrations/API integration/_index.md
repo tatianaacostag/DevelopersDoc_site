@@ -64,6 +64,7 @@ Content-Length: length
 
 {{< /tab >}}
 {{< /tabs >}}
+<br>
 
 You can set the language you want to use in the request through the `Content-type` and `Accept` HTTP headers. You can use all possible combinations:
 
