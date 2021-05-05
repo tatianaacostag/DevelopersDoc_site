@@ -21,22 +21,22 @@
 <link rel="icon" type="image/png" href="../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Refunds | Documentation</title><meta property="og:title" content="Refunds" />
-<meta property="og:description" content="This feature allows you to request the cancellation and refund of the transactions paid with credit cards. A buyer requests a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.
+<title>Voids and Refunds | Documentation</title><meta property="og:title" content="Voids and Refunds" />
+<meta property="og:description" content="This feature allows you to request the cancellation or the refund of the transactions paid with credit cards. A buyer may request a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/services/refunds.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-26T15:09:39-05:00" />
 <meta property="article:modified_time" content="2021-04-12T15:26:58-05:00" /><meta property="og:site_name" content="Documentation" />
 
-<meta itemprop="name" content="Refunds">
-<meta itemprop="description" content="This feature allows you to request the cancellation and refund of the transactions paid with credit cards. A buyer requests a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.
+<meta itemprop="name" content="Voids and Refunds">
+<meta itemprop="description" content="This feature allows you to request the cancellation or the refund of the transactions paid with credit cards. A buyer may request a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.
 "><meta itemprop="datePublished" content="2021-03-26T15:09:39-05:00" />
 <meta itemprop="dateModified" content="2021-04-12T15:26:58-05:00" />
-<meta itemprop="wordCount" content="68">
+<meta itemprop="wordCount" content="405">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Refunds"/>
-<meta name="twitter:description" content="This feature allows you to request the cancellation and refund of the transactions paid with credit cards. A buyer requests a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.
+<meta name="twitter:title" content="Voids and Refunds"/>
+<meta name="twitter:description" content="This feature allows you to request the cancellation or the refund of the transactions paid with credit cards. A buyer may request a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.
 "/>
 
 
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.e1417d119acd9791a5888d84c2988ccc4164a5bae1a1ba7b3d0bb17a231943bde213283df209bba1f56eeba42d68b6ca03c48bb0a5ec2a61d4f30ef182f56025.json"
+  data-offline-search-index-json-src="../../offline-search-index.f96bda4fca20f8de6352c2489e76c1742102a6408a4639b2f95cb5af940682ab0bb60e95b7c1d0cd7bcc238a3a0e3641f025f96ee5de876047afde2404787bb1.json"
   data-offline-search-base-href="../../"
 >
 
@@ -279,7 +279,7 @@
       
       
       
-        <a id="/docs/services/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-docsservicesrefundshtml" href="../../docs/services/refunds.html">Refunds</a>
+        <a id="/docs/services/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-docsservicesrefundshtml" href="../../docs/services/refunds.html">Void and Refunds</a>
       
       
     </li>
@@ -420,33 +420,8 @@
       
       
       
-
-
-
-
-
-
-
-
-
-<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
-    <a id="/docs/integrations/api-integration/payments-api.html" href="../../docs/integrations/api-integration/payments-api.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Payments API</a>
-  </li>
-  <ul class="side-main">
-    <li class="" id="docsintegrationsapi-integrationpayments-apihtml">
       
-      
-      
-      
-      
-      
-        <a id="/docs/integrations/api-integration/payments-api/argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-apiargentinahtml" href="../../docs/integrations/api-integration/payments-api/argentina.html">Argentina</a>
-      
-      
-    </li>
-  </ul>
-  
-
+        <a id="/docs/integrations/api-integration/payments-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-apihtml" href="../../docs/integrations/api-integration/payments-api.html">Payments API</a>
       
       
       
@@ -551,6 +526,17 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#understanding-concepts">Understanding concepts</a>
+      <ul>
+        <li><a href="#void">Void</a></li>
+        <li><a href="#refund">Refund</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -586,7 +572,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../docs/services/refunds.html">Refunds</a>
+	<a href="../../docs/services/refunds.html">Void and Refunds</a>
 </li>
 
 	</ol>
@@ -594,11 +580,43 @@
 
             
 <div class="td-content">
-	<h1>Refunds</h1>
-    <div class="lead">This feature allows you to request the cancellation and refund of the transactions paid with credit cards. A buyer requests a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.</div>
+	<h1>Voids and Refunds</h1>
+    <div class="lead">This feature allows you to request the cancellation or the refund of the transactions paid with credit cards. A buyer may request a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.</div>
 	       
-	<p>You can create the refund request using the <em>Refund</em> or <em>Void</em> method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny the request if it does not meet the requirements.
-Additionally, you can check the status of your refund request using the <a href="../../docs/services/queries.html" title="Query API">Query API</a> available for that purpose.</p>
+	<p>You can create the refund request using the <em>Refund</em> or <em>Void</em> method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny it if it does not meet the requirements.
+Additionally, you can check the status of your refund request using the <a href="../../docs/services/queries.html" title="Query Service">Queries service</a> available for that purpose.</p>
+<h2 id="understanding-concepts">Understanding concepts</h2>
+<p>Before moving on, let&rsquo;s explain the following concepts:</p>
+<ul>
+<li>
+<p><em>Void</em>: this operation reverses a previously authorized transaction.</p>
+</li>
+<li>
+<p><em>Refund</em>: this operation requests the reversal of a previously captured transaction. Refunds can be requested by the total or partial amount.</p>
+</li>
+</ul>
+<h3 id="void">Void</h3>
+<p>The <code>VOID</code> method cancels a previously authorized transaction. The void of an order can be total or partial depending on if the acquirer supports partial voids.</p>
+<p>Void is automatic procedure. As soon as you send the <code>VOID</code> request, it does not follow any approval flow, and the transaction is not charged to the card holder.</p>
+<p><code>VOID</code> method is available for .</p>
+<h3 id="refund">Refund</h3>
+<p>A refund is requested when a shop decides to voluntarily return the money spent by the shopper due to dissatisfaction reasons or when the shop does not have enough stock of the product purchased. The <code>REFUND</code> method request the reversal of a previously captured transaction.</p>
+<p>Unlike the <code>VOID</code> method, this method requires an approval. The refund procedure is explained below:</p>
+<ol>
+<li>
+<p>When a refund is requested by your customer, you need to request it using the API or SDK integration. The request requires the <em>Order Id</em>, and a refund reason.</p>
+</li>
+<li>
+<p>Once you send the request, PayU reviews the request and approves or rejects it in one to three business days.</p>
+</li>
+</ol>
+<p>The <code>REFUND</code> has three states:</p>
+<ul>
+<li><code>UNRESOLVED</code>: the transaction has been sent to PayU to approval. At this point, no transaction has been added to the order and when you consult it using the <a href="../../docs/services/queries.html" title="Query Service">Queries service</a>, the response only shows the transaction of the payment approval.</li>
+<li><code>APPROVED</code>:  the request has been approved by a PayU&rsquo;s customer service agent. At this point the order has changed its state to <code>CANCELLED</code> or <code>REFUNDED</code>state and a PayU adds a <code>REFUND</code> transaction to the order with approved state.</li>
+<li><code>DECLINED</code>: the request does not meet the policies defined by PayU and was cancelled by an agent. when the refund is declined, PayU adds a <code>REFUND</code> transaction to the order with declined state.</li>
+</ul>
+<p>For more information about authorized and captured transactions, refer to <a href="../../docs/services/payments.html#transaction-processing">Payments</a>.</p>
 
 	
 	

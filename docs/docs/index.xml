@@ -15,11 +15,11 @@
     
     
     <item>
-      <title>Docs: Argentina</title>
-      <link>/docs/integrations/api-integration/payments-api/argentina.html</link>
-      <pubDate>Mon, 03 May 2021 15:54:14 -0500</pubDate>
+      <title>Docs: Payments API</title>
+      <link>/docs/integrations/api-integration/payments-api.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
       
-      <guid>/docs/integrations/api-integration/payments-api/argentina.html</guid>
+      <guid>/docs/integrations/api-integration/payments-api.html</guid>
       <description>
         
         
@@ -1745,7 +1745,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;ping&#34;&gt;Ping&lt;/h3&gt;
-&lt;p&gt;The following are the request and response examples for this method.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;PING&lt;/code&gt; method lets you verify the connection to our platform. The following are the request and response examples for this method.&lt;/p&gt;
 &lt;p&gt;&lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -2139,7 +2139,7 @@ To integrate with Promotions API, target the requests to the following URLs:
     </item>
     
     <item>
-      <title>Docs: Refunds</title>
+      <title>Docs: Voids and Refunds</title>
       <link>/docs/services/refunds.html</link>
       <pubDate>Fri, 26 Mar 2021 15:09:39 -0500</pubDate>
       
@@ -2147,8 +2147,40 @@ To integrate with Promotions API, target the requests to the following URLs:
       <description>
         
         
-        &lt;p&gt;You can create the refund request using the &lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny the request if it does not meet the requirements.
-Additionally, you can check the status of your refund request using the &lt;a href=&#34;../docs/services/queries.html&#34; title=&#34;Query API&#34;&gt;Query API&lt;/a&gt; available for that purpose.&lt;/p&gt;
+        &lt;p&gt;You can create the refund request using the &lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny it if it does not meet the requirements.
+Additionally, you can check the status of your refund request using the &lt;a href=&#34;../docs/services/queries.html&#34; title=&#34;Query Service&#34;&gt;Queries service&lt;/a&gt; available for that purpose.&lt;/p&gt;
+&lt;h2 id=&#34;understanding-concepts&#34;&gt;Understanding concepts&lt;/h2&gt;
+&lt;p&gt;Before moving on, let&amp;rsquo;s explain the following concepts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Void&lt;/em&gt;: this operation reverses a previously authorized transaction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Refund&lt;/em&gt;: this operation requests the reversal of a previously captured transaction. Refunds can be requested by the total or partial amount.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;void&#34;&gt;Void&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;VOID&lt;/code&gt; method cancels a previously authorized transaction. The void of an order can be total or partial depending on if the acquirer supports partial voids.&lt;/p&gt;
+&lt;p&gt;Void is automatic procedure. As soon as you send the &lt;code&gt;VOID&lt;/code&gt; request, it does not follow any approval flow, and the transaction is not charged to the card holder.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VOID&lt;/code&gt; method is available for .&lt;/p&gt;
+&lt;h3 id=&#34;refund&#34;&gt;Refund&lt;/h3&gt;
+&lt;p&gt;A refund is requested when a shop decides to voluntarily return the money spent by the shopper due to dissatisfaction reasons or when the shop does not have enough stock of the product purchased. The &lt;code&gt;REFUND&lt;/code&gt; method request the reversal of a previously captured transaction.&lt;/p&gt;
+&lt;p&gt;Unlike the &lt;code&gt;VOID&lt;/code&gt; method, this method requires an approval. The refund procedure is explained below:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;When a refund is requested by your customer, you need to request it using the API or SDK integration. The request requires the &lt;em&gt;Order Id&lt;/em&gt;, and a refund reason.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Once you send the request, PayU reviews the request and approves or rejects it in one to three business days.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The &lt;code&gt;REFUND&lt;/code&gt; has three states:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;UNRESOLVED&lt;/code&gt;: the transaction has been sent to PayU to approval. At this point, no transaction has been added to the order and when you consult it using the &lt;a href=&#34;../docs/services/queries.html&#34; title=&#34;Query Service&#34;&gt;Queries service&lt;/a&gt;, the response only shows the transaction of the payment approval.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;APPROVED&lt;/code&gt;:  the request has been approved by a PayU&amp;rsquo;s customer service agent. At this point the order has changed its state to &lt;code&gt;CANCELLED&lt;/code&gt; or &lt;code&gt;REFUNDED&lt;/code&gt;state and a PayU adds a &lt;code&gt;REFUND&lt;/code&gt; transaction to the order with approved state.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DECLINED&lt;/code&gt;: the request does not meet the policies defined by PayU and was cancelled by an agent. when the refund is declined, PayU adds a &lt;code&gt;REFUND&lt;/code&gt; transaction to the order with declined state.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more information about authorized and captured transactions, refer to &lt;a href=&#34;../docs/services/payments.html#transaction-processing&#34;&gt;Payments&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>

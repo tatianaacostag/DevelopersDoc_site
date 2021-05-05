@@ -1415,8 +1415,7 @@ Response example:
 
 
 ### Ping
-
-The following are the request and response examples for this method.
+The ```PING``` method lets you verify the connection to our platform. The following are the request and response examples for this method.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
