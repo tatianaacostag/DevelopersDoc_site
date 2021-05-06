@@ -9,19 +9,17 @@ tags: ["parenttopic"]
 
 If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:  
 
-* _merchantId_: ```508029```
-* _API Login_: ```pRRXKOl8ikMmt9u```
-* _API Key_: ```4Vj8eK4rloUd272L48hsrarnUA```
+{{< testaccounts/accounts >}}
 
-| accountId | Country   |
-|-----------|-----------|
-| 512322    | Argentina |
-| 512325    | Chile     |
-| 512321    | Colombia  |
-| 512324    | Mexico    |
-| 512326    | Panama    |
-| 512323    | Peru      |
-| 512327    | Brazil    |
+<!--| Merchant ID |    API Login    |           API Key          | accountId | Country   |
+|-------------|-----------------|----------------------------|-----------|-----------|
+| 508029      | pRRXKOl8ikMmt9u | 4Vj8eK4rloUd272L48hsrarnUA | 512322    | Argentina |
+|             |                 |                            | 512325    | Chile     |
+|             |                 |                            | 512321    | Colombia  |
+|             |                 |                            | 512324    | Mexico    |
+|             |                 |                            | 512326    | Panama    |
+|             |                 |                            | 512323    | Peru      |
+|             |                 |                            | 512327    | Brazil    |-->
 
 The test environment does not replicate data from your production account.
 

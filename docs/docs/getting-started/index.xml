@@ -197,49 +197,60 @@ To activate your account, you should:&lt;/p&gt;
         
         
         &lt;p&gt;If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;merchantId&lt;/em&gt;: &lt;code&gt;508029&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;API Login&lt;/em&gt;: &lt;code&gt;pRRXKOl8ikMmt9u&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;API Key&lt;/em&gt;: &lt;code&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;accountId&lt;/th&gt;
-&lt;th&gt;Country&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;512322&lt;/td&gt;
-&lt;td&gt;Argentina&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;512325&lt;/td&gt;
-&lt;td&gt;Chile&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;512321&lt;/td&gt;
-&lt;td&gt;Colombia&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;512324&lt;/td&gt;
-&lt;td&gt;Mexico&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;512326&lt;/td&gt;
-&lt;td&gt;Panama&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;512323&lt;/td&gt;
-&lt;td&gt;Peru&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;512327&lt;/td&gt;
-&lt;td&gt;Brazil&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Merchant ID&lt;/th&gt;
+        &lt;th&gt;API Login&lt;/th&gt;
+        &lt;th&gt;API Key&lt;/th&gt;
+        &lt;th&gt;accountId&lt;/th&gt;
+        &lt;th&gt;Country&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td rowspan=&#34;7&#34;&gt;508029&lt;/td&gt;
+        &lt;td rowspan=&#34;7&#34;&gt;pRRXKOl8ikMmt9u&lt;/td&gt;
+        &lt;td rowspan=&#34;7&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/td&gt;
+        &lt;td&gt;512322&lt;/td&gt;
+        &lt;td&gt;Argentina&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;512327&lt;/td&gt;
+        &lt;td&gt;Brazil&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;512325&lt;/td&gt;
+        &lt;td&gt;Chile&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;512321&lt;/td&gt;
+        &lt;td&gt;Colombia&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;512324&lt;/td&gt;
+        &lt;td&gt;Mexico&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;512326&lt;/td&gt;
+        &lt;td&gt;Panama&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;512323&lt;/td&gt;
+        &lt;td&gt;Peru&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;!--| Merchant ID |    API Login    |           API Key          | accountId | Country   |
+|-------------|-----------------|----------------------------|-----------|-----------|
+| 508029      | pRRXKOl8ikMmt9u | 4Vj8eK4rloUd272L48hsrarnUA | 512322    | Argentina |
+|             |                 |                            | 512325    | Chile     |
+|             |                 |                            | 512321    | Colombia  |
+|             |                 |                            | 512324    | Mexico    |
+|             |                 |                            | 512326    | Panama    |
+|             |                 |                            | 512323    | Peru      |
+|             |                 |                            | 512327    | Brazil    |--&gt;
 &lt;p&gt;The test environment does not replicate data from your production account.&lt;/p&gt;
 &lt;h2 id=&#34;test-cards&#34;&gt;Test cards&lt;/h2&gt;
 &lt;p&gt;You can use the following cards for testing:&lt;/p&gt;

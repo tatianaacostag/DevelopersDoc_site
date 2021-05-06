@@ -314,6 +314,10 @@ details > summary {
   outline: none;
   margin: 10px 0; }
 
+details > table {
+  margin-left: initial !important;
+  margin-right: initial !important; }
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
@@ -1079,7 +1083,6 @@ details > table,
   .td-content > table thead th,
   .td-box .row.section > table thead th {
     vertical-align: center;
-    text-align: center;
     border-bottom: 2px solid #dee2e6; }
   details > table tbody + tbody,
   .table tbody + tbody,
@@ -1125,7 +1128,6 @@ details > table tbody tr:nth-of-type(odd),
 .td-box .row.section > table tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.05); }
 
-details > table tbody tr:hover,
 .table-hover tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.075); }
 
@@ -1261,7 +1263,7 @@ details > table .thead-light th,
 @media (max-width: 575.98px) {
   details > table-sm,
   .table-responsive-sm {
-    display: inline-table;
+    display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1273,7 +1275,7 @@ details > table .thead-light th,
 @media (max-width: 767.98px) {
   details > table-md,
   .table-responsive-md {
-    display: inline-table;
+    display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1285,7 +1287,7 @@ details > table .thead-light th,
 @media (max-width: 991.98px) {
   details > table-lg,
   .table-responsive-lg {
-    display: inline-table;
+    display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1297,7 +1299,7 @@ details > table .thead-light th,
 @media (max-width: 1199.98px) {
   details > table-xl,
   .table-responsive-xl {
-    display: inline-table;
+    display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1310,7 +1312,7 @@ details > table,
 .table-responsive,
 .td-content > table,
 .td-box .row.section > table {
-  display: inline-table;
+  display: block;
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;

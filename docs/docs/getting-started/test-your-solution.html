@@ -36,8 +36,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.1f26dbbc430e07b5727233635084cfe12abd179903b12a04fcb2ca15adeb8d75.css" as="style">
-<link href="../../scss/main.min.1f26dbbc430e07b5727233635084cfe12abd179903b12a04fcb2ca15adeb8d75.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.8e9f3294256376931f37b27aa502c1916b9d45d3e1710641a4354f12c0c9a348.css" as="style">
+<link href="../../scss/main.min.8e9f3294256376931f37b27aa502c1916b9d45d3e1710641a4354f12c0c9a348.css" rel="stylesheet" integrity="">
 <link rel="stylesheet" href="../../css/add-on.css">
 
 
@@ -117,7 +117,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.f96bda4fca20f8de6352c2489e76c1742102a6408a4639b2f95cb5af940682ab0bb60e95b7c1d0cd7bcc238a3a0e3641f025f96ee5de876047afde2404787bb1.json"
+  data-offline-search-index-json-src="../../offline-search-index.d8eeb0fc959cc55897b6c5e5f2b47e7a33c3be665d27104f22eecea531a45ec7a03a771b2dc367c5ee325e2c65a83bbcf27d7e7b37f1596e558ef20057558a14.json"
   data-offline-search-base-href="../../"
 >
 
@@ -566,49 +566,60 @@
         <div class="lead">PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.</div>
 	
 	<p>If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:</p>
-<ul>
-<li><em>merchantId</em>: <code>508029</code></li>
-<li><em>API Login</em>: <code>pRRXKOl8ikMmt9u</code></li>
-<li><em>API Key</em>: <code>4Vj8eK4rloUd272L48hsrarnUA</code></li>
-</ul>
 <table>
-<thead>
-<tr>
-<th>accountId</th>
-<th>Country</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>512322</td>
-<td>Argentina</td>
-</tr>
-<tr>
-<td>512325</td>
-<td>Chile</td>
-</tr>
-<tr>
-<td>512321</td>
-<td>Colombia</td>
-</tr>
-<tr>
-<td>512324</td>
-<td>Mexico</td>
-</tr>
-<tr>
-<td>512326</td>
-<td>Panama</td>
-</tr>
-<tr>
-<td>512323</td>
-<td>Peru</td>
-</tr>
-<tr>
-<td>512327</td>
-<td>Brazil</td>
-</tr>
-</tbody>
+    <thead>
+    <tr>
+        <th>Merchant ID</th>
+        <th>API Login</th>
+        <th>API Key</th>
+        <th>accountId</th>
+        <th>Country</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td rowspan="7">508029</td>
+        <td rowspan="7">pRRXKOl8ikMmt9u</td>
+        <td rowspan="7">4Vj8eK4rloUd272L48hsrarnUA</td>
+        <td>512322</td>
+        <td>Argentina</td>
+    </tr>
+    <tr>
+        <td>512327</td>
+        <td>Brazil</td>
+    </tr>
+    <tr>
+        <td>512325</td>
+        <td>Chile</td>
+    </tr>
+    <tr>
+        <td>512321</td>
+        <td>Colombia</td>
+    </tr>
+    <tr>
+        <td>512324</td>
+        <td>Mexico</td>
+    </tr>
+    <tr>
+        <td>512326</td>
+        <td>Panama</td>
+    </tr>
+    <tr>
+        <td>512323</td>
+        <td>Peru</td>
+    </tr>
+    </tbody>
 </table>
+
+<!--| Merchant ID |    API Login    |           API Key          | accountId | Country   |
+|-------------|-----------------|----------------------------|-----------|-----------|
+| 508029      | pRRXKOl8ikMmt9u | 4Vj8eK4rloUd272L48hsrarnUA | 512322    | Argentina |
+|             |                 |                            | 512325    | Chile     |
+|             |                 |                            | 512321    | Colombia  |
+|             |                 |                            | 512324    | Mexico    |
+|             |                 |                            | 512326    | Panama    |
+|             |                 |                            | 512323    | Peru      |
+|             |                 |                            | 512327    | Brazil    |-->
 <p>The test environment does not replicate data from your production account.</p>
 <h2 id="test-cards">Test cards</h2>
 <p>You can use the following cards for testing:</p>
