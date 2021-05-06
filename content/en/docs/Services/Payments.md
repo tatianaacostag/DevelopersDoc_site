@@ -28,7 +28,7 @@ The available payment methods used to process transactions are:
 * Bank transfers.
 
 ## What's next?
-The integration with this service depends on the country of your transactions, the operation selected and the payment method.
+The integration with this feature depends on the country of your transactions, the operation selected and the payment method.
 
 * [For API integrations, refer to this topic]({{< ref "API Integration" >}})
 * [For SDK integrations, refer to this topic]({{< ref "SDK Integration" >}})

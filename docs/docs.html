@@ -39,8 +39,8 @@
 
 
 
-<link rel="preload" href="./scss/main.min.8e9f3294256376931f37b27aa502c1916b9d45d3e1710641a4354f12c0c9a348.css" as="style">
-<link href="./scss/main.min.8e9f3294256376931f37b27aa502c1916b9d45d3e1710641a4354f12c0c9a348.css" rel="stylesheet" integrity="">
+<link rel="preload" href="./scss/main.min.3cb7f9d64affb438a0c111d5523810d6d6e03b56a6b547d9734752123471b854.css" as="style">
+<link href="./scss/main.min.3cb7f9d64affb438a0c111d5523810d6d6e03b56a6b547d9734752123471b854.css" rel="stylesheet" integrity="">
 <link rel="stylesheet" href="./css/add-on.css">
 
 
@@ -120,7 +120,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="./offline-search-index.1b3ad6f483db44721b51376c3683c98b7f0cbb90cab51a60e64c5374fec8646f0e9608622bc76ede900a2b246c631183ca5e7506d6a0d0da59128566d46b7f49.json"
+  data-offline-search-index-json-src="./offline-search-index.f1c2818a1aa141ed9114eb7a8ede8575350f92d73da8aada890c71221deaad90e949ebee0ce00c76561c8394e7d46dd938586ff207ee05530879cc4a39d9529a.json"
   data-offline-search-base-href="./"
 >
 
@@ -589,14 +589,19 @@ We are integrated with all processing networks, which can increase your approval
 </li>
 </ul>
 <h2 id="how-does-payu-work">How does PayU work?</h2>
-<p>To understand how PayU processes, it is important to understand two main concepts:</p>
+<p>To understand how PayU processes payments, it is important to understand two main concepts:</p>
 <ul>
 <li>Order: an order in PayU is defined as the set of movements related to an online payment.</li>
 <li>Transaction: any movement related to an order such as charges, retries, refunds, disputes, etc.</li>
 </ul>
-<p>The following image illustrates these concepts.</p>
-<p><em>Insertar imagen acá</em></p>
-<p>According to the image above, an <em>Order</em> can be interpreted as the set of steps from the beginning to the end, and the <em>Transaction</em> are interpreted as a step.</p>
+<!--
+The following image illustrates these concepts.
+
+_Insertar imagen acá_
+
+According to the image above, an _Order_ can be interpreted as the set of steps from the beginning to the end, and the _Transaction_ are interpreted as a step. -->
+<p>For example, a customer purchase a product using the your web page, the customer pays using their credit card and the payment is approved and accepted by the customer&rsquo;s bank; Then, the shop finds that they don&rsquo;t have enough stock of this product and request a refund to PayU. PayU, approves the refund and the money is returned to the customer.
+In this case, the order was the purchase of the product and this order has many transactions such as, the accept of the payment, the charge, the refund approval.</p>
 <h2 id="how-to-start-using-payu">How to start using PayU?</h2>
 <p>When you want to integrate your commerce with PayU services and tools, you need to consider the following steps.</p>
 <h3 id="1-create-a-payu-account">1. Create a PayU account</h3>
