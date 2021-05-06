@@ -2,11 +2,14 @@
 // Basic Bootstrap table
 //
 
+details > table,
 .table {
   width: 100%;
   margin-bottom: $spacer;
   background-color: $table-bg; // Reset for nesting within parents with `background-color`.
 
+  details > th, 
+  details > td,
   th,
   td {
     padding: $table-cell-padding;
@@ -15,7 +18,8 @@
   }
 
   thead th {
-    vertical-align: bottom;
+    vertical-align: center;
+    text-align: center;
     border-bottom: (2 * $table-border-width) solid $table-border-color;
   }
 
@@ -73,7 +77,7 @@
 // Zebra-striping
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
-
+details > table,
 .table-striped {
   tbody tr:nth-of-type(#{$table-striped-order}) {
     background-color: $table-accent-bg;
@@ -84,7 +88,7 @@
 // Hover effect
 //
 // Placed here since it has to come after the potential zebra striping
-
+details > table,
 .table-hover {
   tbody tr {
     @include hover {
@@ -111,6 +115,7 @@
 // Same table markup, but inverted color scheme: dark background and light text.
 
 // stylelint-disable-next-line no-duplicate-selectors
+details > table,
 .table {
   .thead-dark {
     th {
@@ -163,7 +168,7 @@
 //
 // Generate series of `.table-responsive-*` classes for configuring the screen
 // size of where your table will overflow.
-
+details > table,
 .table-responsive {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
@@ -171,7 +176,7 @@
 
     &#{$infix} {
       @include media-breakpoint-down($breakpoint) {
-        display: block;
+        display: inline-table;
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
