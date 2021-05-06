@@ -169,8 +169,6 @@ For Example, when you use a transportation app, after you request the service, t
 &lt;li&gt;&lt;em&gt;Capture&lt;/em&gt;: this operation terminates a previously authorized transaction, namely, at this point, the account makes a debit to the card.&lt;/br&gt;
 Back in the transportation app example, once your service has finished, the apps charges the total amount of your trip and terminates the transaction.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Authorization and capture&lt;/em&gt;: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Cancellation&lt;/em&gt;: this operation reverses a previously authorized transaction. (only available for accounts in Brazil).&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Refund&lt;/em&gt;: this operation reverses a previously captured transaction.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;payment-methods&#34;&gt;Payment methods&lt;/h3&gt;
 &lt;p&gt;The available payment methods used to process transactions are:&lt;/p&gt;
