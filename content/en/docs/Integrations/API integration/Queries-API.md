@@ -4,7 +4,7 @@ linkTitle: "Queries API"
 date: 2021-04-30T08:51:22-05:00
 description: >
   Queries API lets you check the status of the placed orders along with their transactions.
-weight: 20
+weight: 30
 tags: ["subtopic"]
 ---
 To integrate with Queries API, target your request to the following URLs according to your environment.

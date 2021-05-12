@@ -15,19 +15,6 @@
     
     
     <item>
-      <title>Docs: Payments API</title>
-      <link>/docs/integrations/api-integration/payments-api.html</link>
-      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
-      
-      <guid>/docs/integrations/api-integration/payments-api.html</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Payment Request</title>
       <link>/docs/tools/payment-request.html</link>
       <pubDate>Wed, 07 Apr 2021 09:26:46 -0500</pubDate>
@@ -181,6 +168,161 @@ Back in the transportation app example, once your service has finished, the apps
 &lt;p&gt;The integration with this feature depends on the country of your transactions, the operation selected and the payment method.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API</title>
+      <link>/docs/integrations/api-integration/payments-api.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Button</title>
+      <link>/docs/tools/payment-button.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:26:50 -0500</pubDate>
+      
+      <guid>/docs/tools/payment-button.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To receive payments with this solution, all you need is an active account in PayU.&lt;/p&gt;
+&lt;p&gt;With this button, your customers can make payments for products or services with a unique value, such as course payments, donations, temporary promotions, affiliation fees, etc.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Select Your Integration</title>
+      <link>/docs/getting-started/select-your-integration.html</link>
+      <pubDate>Tue, 06 Apr 2021 16:59:57 -0500</pubDate>
+      
+      <guid>/docs/getting-started/select-your-integration.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;According to your business needs you can use the integration services or the PayU tools.&lt;/p&gt;
+&lt;h2 id=&#34;integrations&#34;&gt;Integrations&lt;/h2&gt;
+&lt;p&gt;Implement PayU with the aggregator model or gateway, using PayU’s financial agreements or your own&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;p&gt;&lt;img src=&#34;../assets/checkout.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Checkout integration&lt;/h4&gt;
+      &lt;p&gt;PayU Checkout is an integration that allows you to collect through a PayU web form from any device in a simple, fast and secure way.
+        &lt;ul&gt;
+          &lt;li&gt;PayU manages the payment system&lt;/li&gt;
+          &lt;li&gt;Easier integration, equally secure&lt;/li&gt;
+          &lt;li&gt;Since PayU manages the payment platform, it is easier to get PCI DSS certification&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/p&gt;
+      &lt;div onclick=&#34;location.href=&#39;./integrations/webcheckout-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about WebCheckout integration&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
+      &lt;p&gt;&lt;img src=&#34;../assets/api.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;API or SDK integration&lt;/h4&gt;
+      &lt;p&gt;Through API or SDK integrations, you can receive payments securely from anywhere you like, on your website or mobile app.
+        &lt;ul&gt;
+          &lt;li&gt;Design your own checkout and manage the payment system of your website.&lt;/li&gt;
+          &lt;li&gt;Access to additional services such as Tokenization or Recurring payments&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/p&gt;
+      &lt;div style=&#34;&#34;&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34; onclick=&#34;location.href=&#39;./integrations/api-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about API integration&lt;/a&gt;&lt;/div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34; onclick=&#34;location.href=&#39;./integrations/sdk-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about SDK integration&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;payu-tools&#34;&gt;PayU Tools&lt;/h2&gt;
+&lt;p&gt;Any of the following tools give you more options to sell and receive payments online.&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-request.html&#39;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/money-flowing.svg&#34; alt=&#34;Payment requests&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment request&lt;/h4&gt;
+      &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-button.html&#39;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/money-digital-device.svg&#34; alt=&#34;Payment button&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment button&lt;/h4&gt;
+      &lt;p&gt;Create an HTML button and insert it easily in your web page.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Shopping cart plugins&lt;/h4&gt;
+      &lt;p&gt;Integrate your shopping cart solution with any of our available plugins.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payu-module.html&#39;&#34;&gt;
+      &lt;img src=&#34;../assets/PayULogo.png&#34; alt=&#34;PayU Module&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;PayU module&lt;/h4&gt;
+      &lt;p&gt;Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/reports.html&#39;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/growing-line-graph.svg&#34; alt=&#34;Reports&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Reports&lt;/h4&gt;
+      &lt;p&gt;See the overview of your account including, your sales, your financial statement, and your custom reports.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/disputes.html&#39;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/bank.svg&#34; alt=&#34;Disputes&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputes&lt;/h4&gt;
+      &lt;p&gt;Manage the dispute processes generated in your PayU account.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-coupons.html&#39;&#34;&gt;
+      &lt;img src=&#34;../assets/SVG/hand-with-icon.svg&#34; alt=&#34;Payment coupons&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment coupons&lt;/h4&gt;
+      &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;cursor:default;box-shadow:initial&#34;&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;&lt;/h4&gt;
+      &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Queries for transactions</title>
+      <link>/docs/services/queries.html</link>
+      <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
+      
+      <guid>/docs/services/queries.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;p&gt;Before using the &lt;em&gt;Queries&lt;/em&gt; feature, take into account the following considerations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It is recommended to use &lt;em&gt;Queries&lt;/em&gt; for transactions in &lt;code&gt;PENDING&lt;/code&gt; state.&lt;/li&gt;
+&lt;li&gt;According to the payment method, the time to perform the query may vary. Nevertheless, it is recommended to perform the first query seven minutes after the transaction is created.&lt;/li&gt;
+&lt;li&gt;Do not retry a query of a transaction when PayU indicates that the transaction does not exist.&lt;/li&gt;
+&lt;li&gt;Bank transfer transactions are only available every ten minutes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;query-criteria&#34;&gt;Query criteria&lt;/h2&gt;
+&lt;p&gt;To query transactions, PayU allows you to search by any of the following criteria:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Order Id&lt;/em&gt;: it is generated by PayU. Identifies the order in PayU system and it the main element where any movement is recorded (charges, retries, refunds, etc)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Transaction Id&lt;/em&gt;: PayU generates this identifier per each movement associated with an order (Order ID).&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Reference Number&lt;/em&gt;: it is generated by the shop. Identifies the order or purchase in your system, PayU saves this value as you send it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1857,148 +1999,6 @@ The following are the request and response examples for this method.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: Payment Button</title>
-      <link>/docs/tools/payment-button.html</link>
-      <pubDate>Wed, 07 Apr 2021 09:26:50 -0500</pubDate>
-      
-      <guid>/docs/tools/payment-button.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;To receive payments with this solution, all you need is an active account in PayU.&lt;/p&gt;
-&lt;p&gt;With this button, your customers can make payments for products or services with a unique value, such as course payments, donations, temporary promotions, affiliation fees, etc.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Select Your Integration</title>
-      <link>/docs/getting-started/select-your-integration.html</link>
-      <pubDate>Tue, 06 Apr 2021 16:59:57 -0500</pubDate>
-      
-      <guid>/docs/getting-started/select-your-integration.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;According to your business needs you can use the integration services or the PayU tools.&lt;/p&gt;
-&lt;h2 id=&#34;integrations&#34;&gt;Integrations&lt;/h2&gt;
-&lt;p&gt;Implement PayU with the aggregator model or gateway, using PayU’s financial agreements or your own&lt;/p&gt;
-&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
-  &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
-      &lt;p&gt;&lt;img src=&#34;../assets/checkout.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-      &lt;h4 class=&#34;navblock-title&#34;&gt;Checkout integration&lt;/h4&gt;
-      &lt;p&gt;PayU Checkout is an integration that allows you to collect through a PayU web form from any device in a simple, fast and secure way.
-        &lt;ul&gt;
-          &lt;li&gt;PayU manages the payment system&lt;/li&gt;
-          &lt;li&gt;Easier integration, equally secure&lt;/li&gt;
-          &lt;li&gt;Since PayU manages the payment platform, it is easier to get PCI DSS certification&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/p&gt;
-      &lt;div onclick=&#34;location.href=&#39;./integrations/webcheckout-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about WebCheckout integration&lt;/a&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34;&gt;
-      &lt;p&gt;&lt;img src=&#34;../assets/api.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-      &lt;h4 class=&#34;navblock-title&#34;&gt;API or SDK integration&lt;/h4&gt;
-      &lt;p&gt;Through API or SDK integrations, you can receive payments securely from anywhere you like, on your website or mobile app.
-        &lt;ul&gt;
-          &lt;li&gt;Design your own checkout and manage the payment system of your website.&lt;/li&gt;
-          &lt;li&gt;Access to additional services such as Tokenization or Recurring payments&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/p&gt;
-      &lt;div style=&#34;&#34;&gt;
-        &lt;div style=&#34;float: left;width: 50%;&#34; onclick=&#34;location.href=&#39;./integrations/api-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about API integration&lt;/a&gt;&lt;/div&gt;
-        &lt;div style=&#34;float: left;width: 50%;&#34; onclick=&#34;location.href=&#39;./integrations/sdk-integration.html&#39;&#34;&gt;&lt;a&gt;Learn more about SDK integration&lt;/a&gt;&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;payu-tools&#34;&gt;PayU Tools&lt;/h2&gt;
-&lt;p&gt;Any of the following tools give you more options to sell and receive payments online.&lt;/p&gt;
-&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
-  &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-request.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/SVG/money-flowing.svg&#34; alt=&#34;Payment requests&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment request&lt;/h4&gt;
-      &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-button.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/SVG/money-digital-device.svg&#34; alt=&#34;Payment button&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment button&lt;/h4&gt;
-      &lt;p&gt;Create an HTML button and insert it easily in your web page.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Shopping cart plugins&lt;/h4&gt;
-      &lt;p&gt;Integrate your shopping cart solution with any of our available plugins.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payu-module.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/PayULogo.png&#34; alt=&#34;PayU Module&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;PayU module&lt;/h4&gt;
-      &lt;p&gt;Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/reports.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/SVG/growing-line-graph.svg&#34; alt=&#34;Reports&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Reports&lt;/h4&gt;
-      &lt;p&gt;See the overview of your account including, your sales, your financial statement, and your custom reports.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/disputes.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/SVG/bank.svg&#34; alt=&#34;Disputes&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputes&lt;/h4&gt;
-      &lt;p&gt;Manage the dispute processes generated in your PayU account.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-coupons.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/SVG/hand-with-icon.svg&#34; alt=&#34;Payment coupons&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment coupons&lt;/h4&gt;
-      &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;cursor:default;box-shadow:initial&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34;&gt;&lt;/h4&gt;
-      &lt;p&gt;&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Queries for transactions</title>
-      <link>/docs/services/queries.html</link>
-      <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
-      
-      <guid>/docs/services/queries.html</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
-&lt;p&gt;Before using the &lt;em&gt;Queries&lt;/em&gt; feature, take into account the following considerations:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;It is recommended to use &lt;em&gt;Queries&lt;/em&gt; for transactions in &lt;code&gt;PENDING&lt;/code&gt; state.&lt;/li&gt;
-&lt;li&gt;According to the payment method, the time to perform the query may vary. Nevertheless, it is recommended to perform the first query seven minutes after the transaction is created.&lt;/li&gt;
-&lt;li&gt;Do not retry a query of a transaction when PayU indicates that the transaction does not exist.&lt;/li&gt;
-&lt;li&gt;Bank transfer transactions are only available every ten minutes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;query-criteria&#34;&gt;Query criteria&lt;/h2&gt;
-&lt;p&gt;To query transactions, PayU allows you to search by any of the following criteria:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Order Id&lt;/em&gt;: it is generated by PayU. Identifies the order in PayU system and it the main element where any movement is recorded (charges, retries, refunds, etc)&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Transaction Id&lt;/em&gt;: PayU generates this identifier per each movement associated with an order (Order ID).&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Reference Number&lt;/em&gt;: it is generated by the shop. Identifies the order or purchase in your system, PayU saves this value as you send it.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
-&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Select Your Payment Method</title>
       <link>/docs/getting-started/select-your-payment-method.html</link>
       <pubDate>Wed, 07 Apr 2021 16:17:14 -0500</pubDate>
@@ -2061,23 +2061,17 @@ The following are the request and response examples for this method.&lt;/p&gt;
 &lt;p&gt;Tokenization includes two separated processes:&lt;/p&gt;
 &lt;h3 id=&#34;generate-token&#34;&gt;Generate token&lt;/h3&gt;
 &lt;p&gt;The first process lets you save the information of a credit card. This information is transformed into a token to let you use it later.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../assets/Tokenization/tokenizacion1-en.png&#34; alt=&#34;Tokenization 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/Tokenization/tokenizacion1-en.png&#34; alt=&#34;Tokenization&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;make-charges&#34;&gt;Make charges&lt;/h3&gt;
 &lt;p&gt;After you have the information of a credit card stored in a token, you can use it to perform charges periodically according to your need and your customer does not have to provide the information of their credit cards whenever you require a payment.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../assets/Tokenization/tokenizacion2-en.png&#34; alt=&#34;Tokenization 2&#34;&gt;&lt;/p&gt;
-&lt;!--To integrate with Tokenization, target the requests to the following URLs:
-
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/Tokenization/tokenizacion2-en.png&#34; alt=&#34;Tokenization&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Furthermore, the tokenization feature lets you store, remove or charge several credit carts by sending an file coded in Base64.&lt;/p&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: ``&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: ``&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;/div&gt;
---&gt;
 
       </description>
     </item>
@@ -2132,7 +2126,49 @@ The following are the request and response examples for this method.&lt;/p&gt;
       <description>
         
         
-        &lt;!--
+        &lt;h2 id=&#34;how-does-promotions-and-installments-works-in-payu&#34;&gt;How does Promotions and Installments works in PayU&lt;/h2&gt;
+&lt;p&gt;To use promotions, you need to first consult the available promotions for your shop, then select one and finally, send the payment request along with the promotion Id selected.&lt;/p&gt;
+&lt;p&gt;The following sequence of events explains better the promotions flow.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/Promotions/PromotionsFlow.png&#34; alt=&#34;Promotions Flow&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;authentication-for-promotions&#34;&gt;Authentication for Promotions&lt;/h2&gt;
+&lt;p&gt;For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your &lt;code&gt;MerchantPublicKey&lt;/code&gt;, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Public Key&lt;/em&gt;&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/Promotions/PublicKey.png&#34; alt=&#34;PublicKey&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h3&gt;
+&lt;p&gt;You must include in the &lt;code&gt;Authorization&lt;/code&gt; in the header, this header follows this structure:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hmac&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MerchantPublicKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Where &lt;code&gt;Signature&lt;/code&gt; is created as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Base64&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HMAC&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SHA256&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;MerchantApiKey&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ContentToSign&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;))&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;And &lt;code&gt;ContentToSign&lt;/code&gt; corresponds to:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HTTP&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Verb&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Date&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;URI&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+It is mandatory to include the three line breaks (&lt;code&gt;\n&lt;/code&gt;) after the &lt;code&gt;HTTP-Verb&lt;/code&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The following examples shows how to create the Authentication header using the following test values:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ContentToSign&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt; 
+    
+
+&lt;span style=&#34;color:#000&#34;&gt;Fri&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;28&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Apr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2017&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;32&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;01&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v4&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pricing&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;MerchantApiKey&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;MerchantPublicKey&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Crypt the &lt;code&gt;ContentToSign&lt;/code&gt; using &lt;code&gt;MerchantApiKey&lt;/code&gt; as passphrase. Then, concatenate the result with the &lt;code&gt;MerchantPublicKey&lt;/code&gt;as explained before, the result is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Hmac&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sIxh54sANfKaxO0ugX6QwhPmZRS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TGy8gmdCwr3kjP0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!--
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;

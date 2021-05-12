@@ -69,6 +69,9 @@ ol, ul, dl {
     height: auto;
 }
 
+img[alt=Tokenization] { 
+    max-width: 80% !important; 
+}
 
 @media only screen and (min-width: 767px) {
     .getting-started {

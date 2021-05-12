@@ -115,23 +115,17 @@ Back in the transportation app example, once your service has finished, the apps
 &lt;p&gt;Tokenization includes two separated processes:&lt;/p&gt;
 &lt;h3 id=&#34;generate-token&#34;&gt;Generate token&lt;/h3&gt;
 &lt;p&gt;The first process lets you save the information of a credit card. This information is transformed into a token to let you use it later.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../assets/Tokenization/tokenizacion1-en.png&#34; alt=&#34;Tokenization 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Tokenization/tokenizacion1-en.png&#34; alt=&#34;Tokenization&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;make-charges&#34;&gt;Make charges&lt;/h3&gt;
 &lt;p&gt;After you have the information of a credit card stored in a token, you can use it to perform charges periodically according to your need and your customer does not have to provide the information of their credit cards whenever you require a payment.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../assets/Tokenization/tokenizacion2-en.png&#34; alt=&#34;Tokenization 2&#34;&gt;&lt;/p&gt;
-&lt;!--To integrate with Tokenization, target the requests to the following URLs:
-
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Tokenization/tokenizacion2-en.png&#34; alt=&#34;Tokenization&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Furthermore, the tokenization feature lets you store, remove or charge several credit carts by sending an file coded in Base64.&lt;/p&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: ``&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: ``&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;/div&gt;
---&gt;
 
       </description>
     </item>
@@ -145,7 +139,49 @@ Back in the transportation app example, once your service has finished, the apps
       <description>
         
         
-        &lt;!--
+        &lt;h2 id=&#34;how-does-promotions-and-installments-works-in-payu&#34;&gt;How does Promotions and Installments works in PayU&lt;/h2&gt;
+&lt;p&gt;To use promotions, you need to first consult the available promotions for your shop, then select one and finally, send the payment request along with the promotion Id selected.&lt;/p&gt;
+&lt;p&gt;The following sequence of events explains better the promotions flow.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PromotionsFlow.png&#34; alt=&#34;Promotions Flow&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;authentication-for-promotions&#34;&gt;Authentication for Promotions&lt;/h2&gt;
+&lt;p&gt;For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your &lt;code&gt;MerchantPublicKey&lt;/code&gt;, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Public Key&lt;/em&gt;&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PublicKey.png&#34; alt=&#34;PublicKey&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h3&gt;
+&lt;p&gt;You must include in the &lt;code&gt;Authorization&lt;/code&gt; in the header, this header follows this structure:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hmac&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MerchantPublicKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Where &lt;code&gt;Signature&lt;/code&gt; is created as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Base64&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HMAC&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SHA256&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;MerchantApiKey&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ContentToSign&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;))&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;And &lt;code&gt;ContentToSign&lt;/code&gt; corresponds to:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HTTP&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Verb&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Date&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;URI&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+It is mandatory to include the three line breaks (&lt;code&gt;\n&lt;/code&gt;) after the &lt;code&gt;HTTP-Verb&lt;/code&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The following examples shows how to create the Authentication header using the following test values:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ContentToSign&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt; 
+    
+
+&lt;span style=&#34;color:#000&#34;&gt;Fri&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;28&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Apr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2017&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;32&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;01&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v4&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pricing&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;MerchantApiKey&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;MerchantPublicKey&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Crypt the &lt;code&gt;ContentToSign&lt;/code&gt; using &lt;code&gt;MerchantApiKey&lt;/code&gt; as passphrase. Then, concatenate the result with the &lt;code&gt;MerchantPublicKey&lt;/code&gt;as explained before, the result is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Hmac&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sIxh54sANfKaxO0ugX6QwhPmZRS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TGy8gmdCwr3kjP0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!--
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;

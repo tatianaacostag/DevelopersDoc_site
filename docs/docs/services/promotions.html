@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina.
 "><meta itemprop="datePublished" content="2021-03-26T14:02:05-05:00" />
 <meta itemprop="dateModified" content="2021-04-12T15:26:58-05:00" />
-<meta itemprop="wordCount" content="70">
+<meta itemprop="wordCount" content="282">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Installments and Promotions"/>
 <meta name="twitter:description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina.
@@ -43,8 +43,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.3cb7f9d64affb438a0c111d5523810d6d6e03b56a6b547d9734752123471b854.css" as="style">
-<link href="../../scss/main.min.3cb7f9d64affb438a0c111d5523810d6d6e03b56a6b547d9734752123471b854.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.b1d414a3e2e255c562d60e044958bfb17d2d9f0801acb58be11fc9a658fbe707.css" as="style">
+<link href="../../scss/main.min.b1d414a3e2e255c562d60e044958bfb17d2d9f0801acb58be11fc9a658fbe707.css" rel="stylesheet" integrity="">
 <link rel="stylesheet" href="../../css/add-on.css">
 
 
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.4dc6cb3fed4695b4236ea3b6afc2f85a2a446ecd6802ad251658b70018421a8f99a6f3d7d8c2b4d391705399a02c54c25778f4744ec9a6a3813be39093c0f972.json"
+  data-offline-search-index-json-src="../../offline-search-index.b4208489015aa63eba6fa49b0bb2c754154a7ff4a948cb21b615586b4a50a024b75068821dd5f5378d5813a4938451b888f2d2545fb9f9884e6c21ddd2e7b9ca.json"
   data-offline-search-base-href="../../"
 >
 
@@ -532,6 +532,17 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-does-promotions-and-installments-works-in-payu">How does Promotions and Installments works in PayU</a></li>
+    <li><a href="#authentication-for-promotions">Authentication for Promotions</a>
+      <ul>
+        <li><a href="#configuring-the-authentication">Configuring the authentication</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -578,7 +589,49 @@
 	<h1>Installments and Promotions</h1>
     <div class="lead">Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina.</div>
 	       
-	<!--
+	<h2 id="how-does-promotions-and-installments-works-in-payu">How does Promotions and Installments works in PayU</h2>
+<p>To use promotions, you need to first consult the available promotions for your shop, then select one and finally, send the payment request along with the promotion Id selected.</p>
+<p>The following sequence of events explains better the promotions flow.</p>
+<p><img src="../../assets/Promotions/PromotionsFlow.png" alt="Promotions Flow"></p>
+<h2 id="authentication-for-promotions">Authentication for Promotions</h2>
+<p>For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your <code>MerchantPublicKey</code>, you can get this information in your PayU Module (<strong><em>Settings</em></strong> &gt; <strong><em>Technical configuration</em></strong> &gt; <strong><em>Public Key</em></strong>).</p>
+<p><img src="../../assets/Promotions/PublicKey.png" alt="PublicKey"></p>
+<h3 id="configuring-the-authentication">Configuring the authentication</h3>
+<p>You must include in the <code>Authorization</code> in the header, this header follows this structure:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#4e9a06">&#34;Hmac&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34; &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">MerchantPublicKey</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;:&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">Signature</span>
+</code></pre></div><br>
+<p>Where <code>Signature</code> is created as follows:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">Signature</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Base64</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">HMAC</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">SHA256</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">MerchantApiKey</span><span style="color:#ce5c00;font-weight:bold">,</span><span style="color:#000">ContentToSign</span><span style="color:#ce5c00;font-weight:bold">))</span> 
+</code></pre></div><br>
+<p>And <code>ContentToSign</code> corresponds to:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">HTTP</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">Verb</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;\n&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;\n&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;\n&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span>
+<span style="color:#000">Date</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;\n&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span>
+<span style="color:#000">URI</span>
+</code></pre></div>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+It is mandatory to include the three line breaks (<code>\n</code>) after the <code>HTTP-Verb</code>
+</div>
+
+<p>The following examples shows how to create the Authentication header using the following test values:</p>
+<p><strong>ContentToSign</strong>:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">GET</span> 
+    
+
+<span style="color:#000">Fri</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">28</span> <span style="color:#000">Apr</span> <span style="color:#000">2017</span> <span style="color:#000">18</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">32</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">01</span> <span style="color:#000">GMT</span>
+<span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">payments</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">rest</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">v4</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">9</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">pricing</span>
+</code></pre></div><br>
+<p><strong>MerchantApiKey</strong>:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">4Vj8eK4rloUd272L48hsrarnUA</span>
+</code></pre></div><br>
+<p><strong>MerchantPublicKey</strong>:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">PKaC6H4cEDJD919n705L544kSU</span>
+</code></pre></div><br>
+<p>Crypt the <code>ContentToSign</code> using <code>MerchantApiKey</code> as passphrase. Then, concatenate the result with the <code>MerchantPublicKey</code>as explained before, the result is as follows:</p>
+<p><strong>Authorization</strong></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">Hmac</span> <span style="color:#000">PKaC6H4cEDJD919n705L544kSU</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">sIxh54sANfKaxO0ugX6QwhPmZRS</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">TGy8gmdCwr3kjP0</span><span style="color:#ce5c00;font-weight:bold">=</span> 
+</code></pre></div><!--
 
 
 <div class="alert alert-info" role="alert">

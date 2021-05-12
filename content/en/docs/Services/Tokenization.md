@@ -32,18 +32,17 @@ Tokenization includes two separated processes:
 ### Generate token
 The first process lets you save the information of a credit card. This information is transformed into a token to let you use it later.
 
-![Tokenization 1](/assets/Tokenization/tokenizacion1-en.png)
+![Tokenization](/assets/Tokenization/tokenizacion1-en.png)
 
 ### Make charges
 After you have the information of a credit card stored in a token, you can use it to perform charges periodically according to your need and your customer does not have to provide the information of their credit cards whenever you require a payment.
 
-![Tokenization 2](/assets/Tokenization/tokenizacion2-en.png)
+![Tokenization](/assets/Tokenization/tokenizacion2-en.png)
 
-<!--To integrate with Tokenization, target the requests to the following URLs:
+Furthermore, the tokenization feature lets you store, remove or charge several credit carts by sending an file coded in Base64.
 
-{{% alert title="API" color="info"%}}
+## What's next?
+The integration with this feature can be performed using one of our integration types:
 
-* _**Tests**_: ``
-* _**Production**_: ``
-
-{{% /alert %}}-->
+* [For API integrations, refer to this topic]({{< ref "API Integration" >}})
+* [For SDK integrations, refer to this topic]({{< ref "SDK Integration" >}})
