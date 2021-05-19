@@ -3,12 +3,17 @@ title: "Installments and Promotions"
 linkTitle: "Installments and Promotions"
 date: 2021-03-26T14:02:05-05:00
 description: >
-    Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina.
+    Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico.
 weight: 50
 ---
 
+## What are Installments and Promotions
+With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments. Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.
+
+To perform the configuration of Installments and Promotions based on the agreements you have with bank entities, contact your sales representative.
+
 ## How does Promotions and Installments works in PayU
-To use promotions, you need to first consult the available promotions for your shop, then select one and finally, send the payment request along with the promotion Id selected.
+To use promotions, you need to first consult the available promotions for your shop; then, select the promotion that fits to your needs and finally, send the payment request along with the promotion Id selected and the number of installments.
 
 The following sequence of events explains better the promotions flow.
 
@@ -78,6 +83,36 @@ Crypt the ```ContentToSign``` using ```MerchantApiKey``` as passphrase. Then, co
 ```java
 Hmac PKaC6H4cEDJD919n705L544kSU:sIxh54sANfKaxO0ugX6QwhPmZRS+TGy8gmdCwr3kjP0= 
 ```
+<br>
+
+To avoid replay attacks, send the header ```Date``` following this format:
+
+**Date**
+```java
+Mon, 11 May 2015 21:14:41 GMT
+```
+<br>
+
+Due to some restrictions in REST clients, you can also send the the ```x-hmac-date``` header to meet security requirements, this header follows the same format used in ```Date```:
+
+**x-hmac-date**
+```java
+Mon, 11 May 2015 21:14:41 GMT
+```
+<br>
+
+## What's next?
+The integration with this feature can be performed using one of our integration types:
+
+{{% alert title="Note" color="info"%}}
+
+Promotions API is not included in SDK integration. Nevertheless, we have developed some examples of how to invoke the API using _Java_ or _PHP_.
+
+{{% /alert %}}
+
+* [For API integrations, refer to this topic]({{< ref "Queries-API.md" >}})
+* [For SDK integrations, refer to this topic]({{< ref "SDK Integration" >}})
+
 
 <!--
 {{% alert title="Note" color="info"%}}

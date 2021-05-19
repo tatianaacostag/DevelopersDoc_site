@@ -26,6 +26,13 @@ The available payment methods used to process transactions are:
 * Credit cards.
 * Cash payments.
 * Bank transfers.
+* Bank payments.
+
+{{% alert title="Note" color="info"%}}
+
+Refer to [this article]({{< ref "Select-your-payment-method.md" >}}) to know the Payment methods available to shoppers per country.
+
+{{% /alert %}}
 
 ## What's next?
 The integration with this feature depends on the country of your transactions, the operation selected and the payment method.

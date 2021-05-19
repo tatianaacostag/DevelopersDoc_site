@@ -40,7 +40,15 @@ Back in the transportation app example, once your service has finished, the apps
 &lt;li&gt;Credit cards.&lt;/li&gt;
 &lt;li&gt;Cash payments.&lt;/li&gt;
 &lt;li&gt;Bank transfers.&lt;/li&gt;
+&lt;li&gt;Bank payments.&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.html&#34;&gt;this article&lt;/a&gt; to know the Payment methods available to shoppers per country.
+&lt;/div&gt;
+
 &lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
 &lt;p&gt;The integration with this feature depends on the country of your transactions, the operation selected and the payment method.&lt;/p&gt;
 &lt;ul&gt;
@@ -139,8 +147,11 @@ Back in the transportation app example, once your service has finished, the apps
       <description>
         
         
-        &lt;h2 id=&#34;how-does-promotions-and-installments-works-in-payu&#34;&gt;How does Promotions and Installments works in PayU&lt;/h2&gt;
-&lt;p&gt;To use promotions, you need to first consult the available promotions for your shop, then select one and finally, send the payment request along with the promotion Id selected.&lt;/p&gt;
+        &lt;h2 id=&#34;what-are-installments-and-promotions&#34;&gt;What are Installments and Promotions&lt;/h2&gt;
+&lt;p&gt;With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments. Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.&lt;/p&gt;
+&lt;p&gt;To perform the configuration of Installments and Promotions based on the agreements you have with bank entities, contact your sales representative.&lt;/p&gt;
+&lt;h2 id=&#34;how-does-promotions-and-installments-works-in-payu&#34;&gt;How does Promotions and Installments works in PayU&lt;/h2&gt;
+&lt;p&gt;To use promotions, you need to first consult the available promotions for your shop; then, select the promotion that fits to your needs and finally, send the payment request along with the promotion Id selected and the number of installments.&lt;/p&gt;
 &lt;p&gt;The following sequence of events explains better the promotions flow.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PromotionsFlow.png&#34; alt=&#34;Promotions Flow&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;authentication-for-promotions&#34;&gt;Authentication for Promotions&lt;/h2&gt;
@@ -181,7 +192,29 @@ It is mandatory to include the three line breaks (&lt;code&gt;\n&lt;/code&gt;) a
 &lt;p&gt;Crypt the &lt;code&gt;ContentToSign&lt;/code&gt; using &lt;code&gt;MerchantApiKey&lt;/code&gt; as passphrase. Then, concatenate the result with the &lt;code&gt;MerchantPublicKey&lt;/code&gt;as explained before, the result is as follows:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Hmac&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sIxh54sANfKaxO0ugX6QwhPmZRS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TGy8gmdCwr3kjP0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!--
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;To avoid replay attacks, send the header &lt;code&gt;Date&lt;/code&gt; following this format:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Due to some restrictions in REST clients, you can also send the the &lt;code&gt;x-hmac-date&lt;/code&gt; header to meet security requirements, this header follows the same format used in &lt;code&gt;Date&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;x-hmac-date&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Promotions API is not included in SDK integration. Nevertheless, we have developed some examples of how to invoke the API using &lt;em&gt;Java&lt;/em&gt; or &lt;em&gt;PHP&lt;/em&gt;.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;

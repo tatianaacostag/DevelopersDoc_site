@@ -23,8 +23,84 @@
       <description>
         
         
-        &lt;p&gt;To receive payments with this solution, all you need is an active account in PayU.&lt;/p&gt;
-&lt;p&gt;You can choose to receive a total payment or send your customers a detailed description of the sale. You can send your request via email or generate a link to share it in chat rooms or social networks. Once your customer receives it, they can make the payment through our secure payment system.&lt;/p&gt;
+        &lt;p&gt;You can choose to receive a total payment or send your customers a detailed description of the sale. You can send your payment request via email or generate a link to share it in chat rooms or social networks. Once your customer receives it, they can make the payment through our secure payment system.&lt;/p&gt;
+&lt;p&gt;With the Payment Request, you have the following benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sell online regardless if you don&amp;rsquo;t have a website using email, social networks or, message exchange platforms.&lt;/li&gt;
+&lt;li&gt;Offer several payment methods.&lt;/li&gt;
+&lt;li&gt;Discriminate the payments you receive so you can know who pays what and when.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-does-the-payment-request-work&#34;&gt;How does the Payment request work?&lt;/h2&gt;
+&lt;p&gt;The Payment request follows a simple flow to let your customers buy your products or services using the secure PayU platform:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Generate the Payment request through the PayU module. For a basic payment request, you only need to provide what you want to sell, its price, and decide whether your payment includes taxes or an expiration date. If you want to include additional information such as shipping, payment reference, comments, and more, you can create a Custom payment request.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Once the link has been generated, you can share it with your customers either by email, posting the link on social networks, or including this link in your website (if you have one).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When your customers use the link, they are redirected to the PayU&amp;rsquo;s checkout page, where they can pay using any of the &lt;a href=&#34;../docs/getting-started/select-your-payment-method.html&#34;&gt;available payment methods&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Every time a customer pays using the link, you receive a confirmation message and the amount of the purchase&lt;sup&gt;*&lt;/sup&gt; is transferred to your PayU account, where you can transfer it to your bank account.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;The value transferred corresponds to the amount paid by your customer minus the PayU fee.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creating-payment-requests&#34;&gt;Creating payment requests&lt;/h2&gt;
+&lt;p&gt;According to your business needs, you can create  two types of Payment requests: Basic and Custom.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;Basic Payment Request&lt;/em&gt; lets you create a link just by providing the product&amp;rsquo;s name and price; furthermore, you can decide whether you need to include taxes or whether the link may expire in the future. The &lt;em&gt;Custom Payment Request&lt;/em&gt; is a payment link with extra information such as shipping information, payment reference, response pages, comments or narrow down the available payment methods.&lt;/p&gt;
+&lt;h3 id=&#34;create-a-basic-payment-request&#34;&gt;Create a Basic Payment Request&lt;/h3&gt;
+&lt;p&gt;Follow the next procedure to create a Basic Payment Request and share it with your customers.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Log in to &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; and click the login option located at the top of the page. Alternatively, you can log in to &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Expand the &lt;strong&gt;Sell with PayU option&lt;/strong&gt; and then, select &lt;strong&gt;Sell on the internet&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Provide the following information:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;What are you going to sell?&lt;/strong&gt;: description of the product you want to sell using this payment request.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;What is the price?&lt;/strong&gt;: provide the amount of the product and select the currency.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Do you charge tax?&lt;/strong&gt;: choose if the product price includes taxes. If so, select the percentage or fixed amount of the taxes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payment deadline&lt;/strong&gt;: choose if the Payment request expires in a given time. If so, select the date and time when the Payment request expires.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Click &lt;strong&gt;Generate Link&lt;/strong&gt;. Once the Payment request is created, a confirmation page appears where you can perform the following actions:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Share on social media with a link&lt;/em&gt;&lt;/strong&gt;: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several email addresses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+When selecting Facebook or Twitter, you will be prompted to provide the credentials of the account where you want to publish the link.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Publish a button in my webpage&lt;/em&gt;&lt;/strong&gt;: if you have a webpage and you want to include the generated link, PayU lets you create a button which you can added somewhere in your page. You can use any of the preloaded images provided by PayU or upload one using the &lt;em&gt;Custom image&lt;/em&gt; option.&lt;br&gt;
+Then, click &lt;em&gt;Copy HTML&lt;/em&gt; to copy the button code in your clipboard.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;br&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -163,7 +239,15 @@ Back in the transportation app example, once your service has finished, the apps
 &lt;li&gt;Credit cards.&lt;/li&gt;
 &lt;li&gt;Cash payments.&lt;/li&gt;
 &lt;li&gt;Bank transfers.&lt;/li&gt;
+&lt;li&gt;Bank payments.&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Refer to &lt;a href=&#34;../docs/getting-started/select-your-payment-method.html&#34;&gt;this article&lt;/a&gt; to know the Payment methods available to shoppers per country.
+&lt;/div&gt;
+
 &lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
 &lt;p&gt;The integration with this feature depends on the country of your transactions, the operation selected and the payment method.&lt;/p&gt;
 &lt;ul&gt;
@@ -2126,8 +2210,11 @@ The following are the request and response examples for this method.&lt;/p&gt;
       <description>
         
         
-        &lt;h2 id=&#34;how-does-promotions-and-installments-works-in-payu&#34;&gt;How does Promotions and Installments works in PayU&lt;/h2&gt;
-&lt;p&gt;To use promotions, you need to first consult the available promotions for your shop, then select one and finally, send the payment request along with the promotion Id selected.&lt;/p&gt;
+        &lt;h2 id=&#34;what-are-installments-and-promotions&#34;&gt;What are Installments and Promotions&lt;/h2&gt;
+&lt;p&gt;With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments. Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.&lt;/p&gt;
+&lt;p&gt;To perform the configuration of Installments and Promotions based on the agreements you have with bank entities, contact your sales representative.&lt;/p&gt;
+&lt;h2 id=&#34;how-does-promotions-and-installments-works-in-payu&#34;&gt;How does Promotions and Installments works in PayU&lt;/h2&gt;
+&lt;p&gt;To use promotions, you need to first consult the available promotions for your shop; then, select the promotion that fits to your needs and finally, send the payment request along with the promotion Id selected and the number of installments.&lt;/p&gt;
 &lt;p&gt;The following sequence of events explains better the promotions flow.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Promotions/PromotionsFlow.png&#34; alt=&#34;Promotions Flow&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;authentication-for-promotions&#34;&gt;Authentication for Promotions&lt;/h2&gt;
@@ -2168,7 +2255,29 @@ It is mandatory to include the three line breaks (&lt;code&gt;\n&lt;/code&gt;) a
 &lt;p&gt;Crypt the &lt;code&gt;ContentToSign&lt;/code&gt; using &lt;code&gt;MerchantApiKey&lt;/code&gt; as passphrase. Then, concatenate the result with the &lt;code&gt;MerchantPublicKey&lt;/code&gt;as explained before, the result is as follows:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Hmac&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sIxh54sANfKaxO0ugX6QwhPmZRS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TGy8gmdCwr3kjP0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!--
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;To avoid replay attacks, send the header &lt;code&gt;Date&lt;/code&gt; following this format:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Due to some restrictions in REST clients, you can also send the the &lt;code&gt;x-hmac-date&lt;/code&gt; header to meet security requirements, this header follows the same format used in &lt;code&gt;Date&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;x-hmac-date&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Promotions API is not included in SDK integration. Nevertheless, we have developed some examples of how to invoke the API using &lt;em&gt;Java&lt;/em&gt; or &lt;em&gt;PHP&lt;/em&gt;.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!--
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
