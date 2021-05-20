@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/tools/payment-request.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-07T09:26:46-05:00" />
-<meta property="article:modified_time" content="2021-04-12T15:26:58-05:00" /><meta property="og:site_name" content="Documentation" />
+<meta property="article:modified_time" content="2021-05-19T17:35:33-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="Payment Request">
 <meta itemprop="description" content="With payment requests generated from your PayU module, you can charge to your customers without having a website. To receive payments with this solution, all you need is an active account in PayU.
 "><meta itemprop="datePublished" content="2021-04-07T09:26:46-05:00" />
-<meta itemprop="dateModified" content="2021-04-12T15:26:58-05:00" />
-<meta itemprop="wordCount" content="653">
+<meta itemprop="dateModified" content="2021-05-19T17:35:33-05:00" />
+<meta itemprop="wordCount" content="1064">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payment Request"/>
 <meta name="twitter:description" content="With payment requests generated from your PayU module, you can charge to your customers without having a website. To receive payments with this solution, all you need is an active account in PayU.
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.d3ff9eb37bbd88eca433506b34952d416899bf912168b6bf2047b8d30be18e4ae7f096bff985d80a1d7bb35f8f24af4a1249468bc603fb2b9a1d29fc004789a9.json"
+  data-offline-search-index-json-src="../../offline-search-index.64176da9db61547a38dd1866c5e396fc71587af08b9e4a557aade27bf5021837aff4aa883aeaeebd57d460e76eadf0ebaec860e5279cf0f9c0bdb23cceb50046.json"
   data-offline-search-base-href="../../"
 >
 
@@ -538,8 +538,11 @@
     <li><a href="#creating-payment-requests">Creating payment requests</a>
       <ul>
         <li><a href="#create-a-basic-payment-request">Create a Basic Payment Request</a></li>
+        <li><a href="#create-a-custom-payment-request">Create a Custom Payment Request</a></li>
       </ul>
     </li>
+    <li><a href="#sharing-the-payment-request">Sharing the Payment request</a></li>
+    <li><a href="#creating-multiple-payment-requests">Creating multiple Payment requests</a></li>
   </ul>
 </nav>
 
@@ -649,8 +652,46 @@
 </li>
 </ul>
 <ol start="4">
-<li>Click <strong>Generate Link</strong>. Once the Payment request is created, a confirmation page appears where you can perform the following actions:</li>
+<li>Click <strong>Generate Link</strong>.</li>
 </ol>
+<h3 id="create-a-custom-payment-request">Create a Custom Payment Request</h3>
+<p>Follow the next procedure to create a Basic Payment Request and share it with your customers.</p>
+<ol>
+<li>
+<p>Follow steps 1 to 3 of the <a href="#create-a-basic-payment-request">Create a Basic Payment Request</a> procedure.</p>
+</li>
+<li>
+<p>Click <strong>I want to customize my link</strong> option. The advanced options appears where you can provide the following information</p>
+</li>
+</ol>
+<p><img src="../../assets/PaymentRequest/PaymentRequest_08.png" alt="PrintScreen"></p>
+<ul>
+<li><strong>Do you ship your products</strong>: this option lets you select whether the shipping information of the product is included in the link. When selecting <strong>YES</strong>, you can set a fixed shipping amount, and select if the customer must provide the shipping address.</li>
+</ul>
+<p><img src="../../assets/PaymentRequest/PaymentRequest_09.png" alt="PrintScreen"></p>
+<ul>
+<li><strong>Payment reference</strong>: this option lets you decide if you want to set a specific Payment reference for the link.</li>
+</ul>
+<p><img src="../../assets/PaymentRequest/PaymentRequest_12.png" alt="PrintScreen"></p>
+<ul>
+<li><strong>Transaction redirects</strong>: in this option you can set the URLs of the customized response pages you have when a transaction is approved, declined or pending. These fields are not mandatory and if you don&rsquo;t set a URL, the transaction is redirected to the default PayU&rsquo;s response pages.</li>
+</ul>
+<p><img src="../../assets/PaymentRequest/PaymentRequest_10.png" alt="PrintScreen"></p>
+<ul>
+<li><strong>Buyer comments</strong>: this option allows the buyer to add comments related to the purchase. The field where the buyer can add comments can be set in English, Spanish or Portuguese.<br>
+For example, you can configure this field to let the customer specify a particular description of the product.</li>
+</ul>
+<p><img src="../../assets/PaymentRequest/PaymentRequest_11.png" alt="PrintScreen"></p>
+<ul>
+<li><strong>Select the available payment methods</strong>: this option lets you include or exclude the available payment methods according to your country. For example, if you only want to receive payments through credit cards.<br>
+By default, all the available payment methods of your country are selected.</li>
+</ul>
+<p><img src="../../assets/PaymentRequest/PaymentRequest_13.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Click <strong>Generate Link</strong>.</li>
+</ol>
+<h2 id="sharing-the-payment-request">Sharing the Payment request</h2>
+<p>After you have configured and generated the Payment request, a confirmation page appears where you can perform the following actions:</p>
 <ul>
 <li><strong><em>Share on social media with a link</em></strong>: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several email addresses.</li>
 </ul>
@@ -666,11 +707,63 @@ When selecting Facebook or Twitter, you will be prompted to provide the credenti
 <li><strong><em>Publish a button in my webpage</em></strong>: if you have a webpage and you want to include the generated link, PayU lets you create a button which you can added somewhere in your page. You can use any of the preloaded images provided by PayU or upload one using the <em>Custom image</em> option.<br>
 Then, click <em>Copy HTML</em> to copy the button code in your clipboard.</li>
 </ul>
-<p><img src="../../assets/PaymentRequest/PaymentRequest_07.png" alt="PrintScreen"><br></p>
+<p><img src="../../assets/PaymentRequest/PaymentRequest_07.png" alt="PrintScreen"></p>
+<h2 id="creating-multiple-payment-requests">Creating multiple Payment requests</h2>
+<p>The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via Email.</p>
+<p>To create multiple payment links, expand the <strong>Sell with PayU option</strong> and then, select <strong>Sell on the internet</strong>. Then, select the option <strong>Create multiple payment links</strong>.</p>
+<p><img src="../../assets/PaymentRequest/PaymentRequest_13.png" alt="PrintScreen"></p>
+<p>To create multiple payment links at once, you just need to upload a <em>.csv</em> file with all the information of each product you want to sell. You can download an example of how PayU expects the information by clicking <strong>Download format</strong>.</p>
+<p>The Excel file downloaded is by default in Spanish, the following table explains each column in it. Recall that the columns marked with asterisk are mandatory.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buyer&rsquo;s email</td>
+<td>A</td>
+<td>The email address to which the Payment link will be sent.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 12, 2021: <a  href="../../commit/01fead6b0bd6b68a857421f23aeb341112cae101">First commit (01fead6)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 19, 2021: <a  href="../../commit/941bbfbc1e6fd9314342212f29199242e5b46c48">Added the topic Payment Request (941bbfb)</a>
 </div>
 </div>
 

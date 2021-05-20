@@ -58,7 +58,43 @@ Follow the next procedure to create a Basic Payment Request and share it with yo
 
   ![PrintScreen](/assets/PaymentRequest/PaymentRequest_05.png)
 
-4. Click **Generate Link**. Once the Payment request is created, a confirmation page appears where you can perform the following actions:
+4. Click **Generate Link**.
+
+  ### Create a Custom Payment Request
+  Follow the next procedure to create a Basic Payment Request and share it with your customers.
+
+  1. Follow steps 1 to 3 of the [Create a Basic Payment Request]({{< ref "#create-a-basic-payment-request" >}}) procedure.
+
+  2. Click **I want to customize my link** option. The advanced options appears where you can provide the following information
+
+  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_08.png)
+
+  * **Do you ship your products**: this option lets you select whether the shipping information of the product is included in the link. When selecting **YES**, you can set a fixed shipping amount, and select if the customer must provide the shipping address.
+
+  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_09.png)
+
+  * **Payment reference**: this option lets you decide if you want to set a specific Payment reference for the link.
+
+  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_12.png)
+
+  * **Transaction redirects**: in this option you can set the URLs of the customized response pages you have when a transaction is approved, declined or pending. These fields are not mandatory and if you don't set a URL, the transaction is redirected to the default PayU's response pages.  
+
+  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_10.png)
+
+  * **Buyer comments**: this option allows the buyer to add comments related to the purchase. The field where the buyer can add comments can be set in English, Spanish or Portuguese.<br>
+  For example, you can configure this field to let the customer specify a particular description of the product.
+
+  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_11.png)
+
+  * **Select the available payment methods**: this option lets you include or exclude the available payment methods according to your country. For example, if you only want to receive payments through credit cards.<br>
+  By default, all the available payment methods of your country are selected.
+
+  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_13.png)
+
+3. Click **Generate Link**. 
+
+## Sharing the Payment request
+After you have configured and generated the Payment request, a confirmation page appears where you can perform the following actions:
 
   * **_Share on social media with a link_**: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several email addresses.
 
@@ -73,5 +109,25 @@ Follow the next procedure to create a Basic Payment Request and share it with yo
   * **_Publish a button in my webpage_**: if you have a webpage and you want to include the generated link, PayU lets you create a button which you can added somewhere in your page. You can use any of the preloaded images provided by PayU or upload one using the _Custom image_ option.<br>
   Then, click _Copy HTML_ to copy the button code in your clipboard.
 
-  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_07.png)<br>
-  
+  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_07.png)
+
+## Creating multiple Payment requests
+The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via Email.
+
+To create multiple payment links, expand the **Sell with PayU option** and then, select **Sell on the internet**. Then, select the option **Create multiple payment links**.
+
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_13.png)
+
+To create multiple payment links at once, you just need to upload a _.csv_ file with all the information of each product you want to sell. You can download an example of how PayU expects the information by clicking **Download format**.
+
+The Excel file downloaded is by default in Spanish, the following table explains each column in it. Recall that the columns marked with asterisk are mandatory.
+
+| Name          | Column | Description                                               |
+|---------------|--------|-----------------------------------------------------------|
+| Buyer's email |    A   | The email address to which the Payment link will be sent. |
+|               |        |                                                           |
+|               |        |                                                           |
+|               |        |                                                           |
+|               |        |                                                           |
+|               |        |                                                           |
+|               |        |                                                           |
