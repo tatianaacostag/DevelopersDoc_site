@@ -116,15 +116,15 @@ The PayU module allows you to create multiple payment request at one time so you
 
 To create multiple payment links, expand the **Sell with PayU option** and then, select **Sell on the internet**. Then, select the option **Create multiple payment links**.
 
-![PrintScreen](/assets/PaymentRequest/PaymentRequest_13.png)
-
 To create multiple payment links at once, you just need to upload a _.csv_ file with all the information of each product you want to sell. You can download an example of how PayU expects the information by clicking **Download format**.
+
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_13.png)
 
 The Excel file downloaded is by default in Spanish, the following table explains each column in it. Recall that the columns marked with asterisk are mandatory.
 
 | Name          | Column | Description                                               |
 |---------------|--------|-----------------------------------------------------------|
-| Buyer's email |    A   | The email address to which the Payment link will be sent. |
+| Buyer's email | A      | The email address to which the Payment link will be sent. |
 |               |        |                                                           |
 |               |        |                                                           |
 |               |        |                                                           |
