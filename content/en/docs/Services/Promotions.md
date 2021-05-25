@@ -22,7 +22,7 @@ The following sequence of events explains better the promotions flow.
 ## Authentication for Promotions
 For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your ```MerchantPublicKey```, you can get this information in your PayU Module (**_Settings_** > **_Technical configuration_** > **_Public Key_**).
 
-![PublicKey](/assets/Promotions/PublicKey.png)
+![PrintScreen](/assets/Promotions/PublicKey.png)
 
 ### Configuring the authentication
 You must include in the ```Authorization``` in the header, this header follows this structure:

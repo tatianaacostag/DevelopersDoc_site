@@ -120,14 +120,34 @@ To create multiple payment links at once, you just need to upload a _.csv_ file 
 
 ![PrintScreen](/assets/PaymentRequest/PaymentRequest_13.png)
 
-The Excel file downloaded is by default in Spanish, the following table explains each column in it. Recall that the columns marked with asterisk are mandatory.
+The Excel file downloaded is by default in Spanish and each row corresponds to a link. The following table explains each column in it. Recall that the columns marked with asterisk are mandatory and if you leave empty a column, this property is not included in the link.
 
-| Name          | Column | Description                                               |
-|---------------|--------|-----------------------------------------------------------|
-| Buyer's email | A      | The email address to which the Payment link will be sent. |
-|               |        |                                                           |
-|               |        |                                                           |
-|               |        |                                                           |
-|               |        |                                                           |
-|               |        |                                                           |
-|               |        |                                                           |
+| Name                        | Column | Description                                                                            |
+|-----------------------------|--------|----------------------------------------------------------------------------------------|
+| Buyer's email               | A      | The email address to which the Payment link will be sent.                              |
+| What are you going to sell? | B      | Name or description of the product you want to sell.                                   |
+| What does the product cost? | C      | Price of the product you offer.                                                        |
+| Currency                    | D      | Currency of the product's amount.<br>Possible values: COP, USD, PEN, ARS, BRL, and MXN |
+| Tax type                    | E      | Let's you define if you include taxes in your product.<ul style="margin-bottom: initial;"><li>Set ```Fijo``` to add a fixed value.</li><li>Set ```Porcentaje``` to add a percentage value.</li></ul>                    |
+| Tax value                   | F      | Value of the tax according to the tax type specified.                                  |
+| Due date                    | G      | Set the due date of the link using the format ```dd/MM/yy HH:mm```.                    |
+| Redirect on success         | H      | Set the URL to which you customers will be redirected when the transaction is successful.                                                                                                                     |
+| Redirect on failure         | I      | Set the URL to which you customers will be redirected when the transaction fails.      |
+| Redirect on pending         | J      | Set the URL to which you customers will be redirected when the transaction is pending. |
+| Ask for shipping address    | K      | Set ```Si``` to request delivery address to the payer. Otherwise, set ```No``` or leave it empty.                                                                                                                       |
+| Shipping value              | L      | Set a fixed value for shipping in the same currency of the product price.              |
+| Let payers add comments     | M      | Set ```Si``` to let the payers add comments. Otherwise, set ```No``` or leave it empty.|
+| Label for payer's comments (ES)| N   | Set the label for the payer's comments field in Spanish.                               |
+| Label for payer's comments (EN)| O   | Set the label for the payer's comments field in English.                               |
+| Label for payer's comments (PT)| P   | Set the label for the payer's comments field in Portuguese.                            |
+| Extra 1                     | Q      | Set any additional string data to be included in the link. This column cannot exceed 120 characters.                                                                                                                 |
+| Extra 2                     | R      | Set any additional string data to be included in the link. This column cannot exceed 120 characters.                                                                                                                 |
+| Select payment methods.     | S      | <ul style="margin-bottom: initial;"><li>If you leave this column empty, all the payment methods active for the account will be included.</li><li>To include some payment methods, set the payment methods separated by commas.<br>Example: ```LENDING,VISA,BANK_REFERENCED,AMEX```.<br>Furthermore, you can define what installments to submit for credit card, to do this, enter the payment methods and indicate the installments you want to be available separated by hyphens.<br>Example: ```VISA-1-2-3,AMEX```.</li></ul> |
+
+{{% alert title="Note" color="info"%}}
+
+You can create up to 1000 links per file.
+
+{{% /alert %}}  
+
+Once you have completed the Excel file, upload it to the PayU Module and click **Send payment links**.

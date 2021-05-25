@@ -15,6 +15,19 @@
     
     
     <item>
+      <title>Docs: Shopify</title>
+      <link>/docs/tools/shopping-cart-plugins/shopify.html</link>
+      <pubDate>Tue, 25 May 2021 10:30:35 -0500</pubDate>
+      
+      <guid>/docs/tools/shopping-cart-plugins/shopify.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Payment Request</title>
       <link>/docs/tools/payment-request.html</link>
       <pubDate>Wed, 07 Apr 2021 09:26:46 -0500</pubDate>
@@ -142,9 +155,9 @@ Then, click &lt;em&gt;Copy HTML&lt;/em&gt; to copy the button code in your clipb
 &lt;h2 id=&#34;creating-multiple-payment-requests&#34;&gt;Creating multiple Payment requests&lt;/h2&gt;
 &lt;p&gt;The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via Email.&lt;/p&gt;
 &lt;p&gt;To create multiple payment links, expand the &lt;strong&gt;Sell with PayU option&lt;/strong&gt; and then, select &lt;strong&gt;Sell on the internet&lt;/strong&gt;. Then, select the option &lt;strong&gt;Create multiple payment links&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_13.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;To create multiple payment links at once, you just need to upload a &lt;em&gt;.csv&lt;/em&gt; file with all the information of each product you want to sell. You can download an example of how PayU expects the information by clicking &lt;strong&gt;Download format&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;The Excel file downloaded is by default in Spanish, the following table explains each column in it. Recall that the columns marked with asterisk are mandatory.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/PaymentRequest/PaymentRequest_13.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Excel file downloaded is by default in Spanish and each row corresponds to a link. The following table explains each column in it. Recall that the columns marked with asterisk are mandatory and if you leave empty a column, this property is not included in the link.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -160,37 +173,105 @@ Then, click &lt;em&gt;Copy HTML&lt;/em&gt; to copy the button code in your clipb
 &lt;td&gt;The email address to which the Payment link will be sent.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;What are you going to sell?&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;Name or description of the product you want to sell.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;What does the product cost?&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;Price of the product you offer.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Currency&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;Currency of the product&amp;rsquo;s amount.&lt;br&gt;Possible values: COP, USD, PEN, ARS, BRL, and MXN&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Tax type&lt;/td&gt;
+&lt;td&gt;E&lt;/td&gt;
+&lt;td&gt;Let&amp;rsquo;s you define if you include taxes in your product.&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Set &lt;code&gt;Fijo&lt;/code&gt; to add a fixed value.&lt;/li&gt;&lt;li&gt;Set &lt;code&gt;Porcentaje&lt;/code&gt; to add a percentage value.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Tax value&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;Value of the tax according to the tax type specified.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Due date&lt;/td&gt;
+&lt;td&gt;G&lt;/td&gt;
+&lt;td&gt;Set the due date of the link using the format &lt;code&gt;dd/MM/yy HH:mm&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirect on success&lt;/td&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;td&gt;Set the URL to which you customers will be redirected when the transaction is successful.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirect on failure&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;Set the URL to which you customers will be redirected when the transaction fails.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirect on pending&lt;/td&gt;
+&lt;td&gt;J&lt;/td&gt;
+&lt;td&gt;Set the URL to which you customers will be redirected when the transaction is pending.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ask for shipping address&lt;/td&gt;
+&lt;td&gt;K&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;Si&lt;/code&gt; to request delivery address to the payer. Otherwise, set &lt;code&gt;No&lt;/code&gt; or leave it empty.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Shipping value&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;td&gt;Set a fixed value for shipping in the same currency of the product price.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Let payers add comments&lt;/td&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;Si&lt;/code&gt; to let the payers add comments. Otherwise, set &lt;code&gt;No&lt;/code&gt; or leave it empty.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Label for payer&amp;rsquo;s comments (ES)&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;Set the label for the payer&amp;rsquo;s comments field in Spanish.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Label for payer&amp;rsquo;s comments (EN)&lt;/td&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;Set the label for the payer&amp;rsquo;s comments field in English.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Label for payer&amp;rsquo;s comments (PT)&lt;/td&gt;
+&lt;td&gt;P&lt;/td&gt;
+&lt;td&gt;Set the label for the payer&amp;rsquo;s comments field in Portuguese.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Extra 1&lt;/td&gt;
+&lt;td&gt;Q&lt;/td&gt;
+&lt;td&gt;Set any additional string data to be included in the link. This column cannot exceed 120 characters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Extra 2&lt;/td&gt;
+&lt;td&gt;R&lt;/td&gt;
+&lt;td&gt;Set any additional string data to be included in the link. This column cannot exceed 120 characters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Select payment methods.&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;If you leave this column empty, all the payment methods active for the account will be included.&lt;/li&gt;&lt;li&gt;To include some payment methods, set the payment methods separated by commas.&lt;br&gt;Example: &lt;code&gt;LENDING,VISA,BANK_REFERENCED,AMEX&lt;/code&gt;.&lt;br&gt;Furthermore, you can define what installments to submit for credit card, to do this, enter the payment methods and indicate the installments you want to be available separated by hyphens.&lt;br&gt;Example: &lt;code&gt;VISA-1-2-3,AMEX&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+You can create up to 1000 links per file.
+&lt;/div&gt;
+
+&lt;p&gt;Once you have completed the Excel file, upload it to the PayU Module and click &lt;strong&gt;Send payment links&lt;/strong&gt;.&lt;/p&gt;
 
       </description>
     </item>
@@ -362,21 +443,6 @@ Refer to &lt;a href=&#34;../docs/getting-started/select-your-payment-method.html
     </item>
     
     <item>
-      <title>Docs: Payment Button</title>
-      <link>/docs/tools/payment-button.html</link>
-      <pubDate>Wed, 07 Apr 2021 09:26:50 -0500</pubDate>
-      
-      <guid>/docs/tools/payment-button.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;To receive payments with this solution, all you need is an active account in PayU.&lt;/p&gt;
-&lt;p&gt;With this button, your customers can make payments for products or services with a unique value, such as course payments, donations, temporary promotions, affiliation fees, etc.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Select Your Integration</title>
       <link>/docs/getting-started/select-your-integration.html</link>
       <pubDate>Tue, 06 Apr 2021 16:59:57 -0500</pubDate>
@@ -428,11 +494,6 @@ Refer to &lt;a href=&#34;../docs/getting-started/select-your-payment-method.html
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment request&lt;/h4&gt;
       &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-button.html&#39;&#34;&gt;
-      &lt;img src=&#34;../assets/SVG/money-digital-device.svg&#34; alt=&#34;Payment button&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment button&lt;/h4&gt;
-      &lt;p&gt;Create an HTML button and insert it easily in your web page.&lt;/p&gt;
-    &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
       &lt;img src=&#34;../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Shopping cart plugins&lt;/h4&gt;
@@ -458,10 +519,7 @@ Refer to &lt;a href=&#34;../docs/getting-started/select-your-payment-method.html
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment coupons&lt;/h4&gt;
       &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;cursor:default;box-shadow:initial&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34;&gt;&lt;/h4&gt;
-      &lt;p&gt;&lt;/p&gt;
-    &lt;/div&gt;
+    
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -2187,25 +2245,6 @@ The following are the request and response examples for this method.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: Shopping Cart Plugins</title>
-      <link>/docs/tools/shopping-cart-plugins.html</link>
-      <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
-      
-      <guid>/docs/tools/shopping-cart-plugins.html</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;pre-integrated-solutions&#34;&gt;Pre-integrated solutions&lt;/h2&gt;
-&lt;p&gt;Some online stores are already integrated with PayU. You just need to activate the PayU option as your payment platform.&lt;/p&gt;
-&lt;p&gt;Available solutions:&lt;/p&gt;
-&lt;h2 id=&#34;plugins-for-modules&#34;&gt;Plugins for modules&lt;/h2&gt;
-&lt;p&gt;If you use an open source shopping cart, download and use the plugins we developed to ease your integration process with its payment system.&lt;/p&gt;
-&lt;p&gt;Available plugins:&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Tokenization</title>
       <link>/docs/services/tokenization.html</link>
       <pubDate>Fri, 26 Mar 2021 09:34:59 -0500</pubDate>
@@ -2309,7 +2348,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../assets/Promotions/PromotionsFlow.png&#34; alt=&#34;Promotions Flow&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;authentication-for-promotions&#34;&gt;Authentication for Promotions&lt;/h2&gt;
 &lt;p&gt;For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your &lt;code&gt;MerchantPublicKey&lt;/code&gt;, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Public Key&lt;/em&gt;&lt;/strong&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../assets/Promotions/PublicKey.png&#34; alt=&#34;PublicKey&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/Promotions/PublicKey.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h3&gt;
 &lt;p&gt;You must include in the &lt;code&gt;Authorization&lt;/code&gt; in the header, this header follows this structure:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hmac&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MerchantPublicKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt;

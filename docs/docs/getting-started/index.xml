@@ -136,11 +136,6 @@ To activate your account, you should:&lt;/p&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment request&lt;/h4&gt;
       &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/payment-button.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../assets/SVG/money-digital-device.svg&#34; alt=&#34;Payment button&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment button&lt;/h4&gt;
-      &lt;p&gt;Create an HTML button and insert it easily in your web page.&lt;/p&gt;
-    &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
       &lt;img src=&#34;../../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Shopping cart plugins&lt;/h4&gt;
@@ -166,10 +161,7 @@ To activate your account, you should:&lt;/p&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment coupons&lt;/h4&gt;
       &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
     &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;cursor:default;box-shadow:initial&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34;&gt;&lt;/h4&gt;
-      &lt;p&gt;&lt;/p&gt;
-    &lt;/div&gt;
+    
   &lt;/div&gt;
 &lt;/div&gt;
 

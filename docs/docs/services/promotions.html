@@ -43,8 +43,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.21e8f900236b114ba377913bbc403911672f5f8c74b8be0ddeba51c82db2f547.css" as="style">
-<link href="../../scss/main.min.21e8f900236b114ba377913bbc403911672f5f8c74b8be0ddeba51c82db2f547.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.f52b16ea88a52c9240227c7c5006930ad75c3aafdbc08d013e6093b7135ed5cb.css" as="style">
+<link href="../../scss/main.min.f52b16ea88a52c9240227c7c5006930ad75c3aafdbc08d013e6093b7135ed5cb.css" rel="stylesheet" integrity="">
 <link rel="stylesheet" href="../../css/add-on.css">
 
 
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.64176da9db61547a38dd1866c5e396fc71587af08b9e4a557aade27bf5021837aff4aa883aeaeebd57d460e76eadf0ebaec860e5279cf0f9c0bdb23cceb50046.json"
+  data-offline-search-index-json-src="../../offline-search-index.1066f9e86f0dfba1d8fe16d2d65393b1f89addf62013856a8d19c02bbd3eb8fbc15672a5a5096d19e807b04ecdd1b32159739276a6324afe6d365f5ca88e07f6.json"
   data-offline-search-base-href="../../"
 >
 
@@ -321,14 +321,33 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/docs/tools/shopping-cart-plugins.html" href="../../docs/tools/shopping-cart-plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Shopping Cart Plugins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="docstoolsshopping-cart-pluginshtml">
       
-        <a id="/docs/tools/payment-button.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolspayment-buttonhtml" href="../../docs/tools/payment-button.html">Payment Button</a>
       
       
       
       
       
-        <a id="/docs/tools/shopping-cart-plugins.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsshopping-cart-pluginshtml" href="../../docs/tools/shopping-cart-plugins.html">Shopping Cart Plugins</a>
+        <a id="/docs/tools/shopping-cart-plugins/shopify.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docstoolsshopping-cart-pluginsshopifyhtml" href="../../docs/tools/shopping-cart-plugins/shopify.html">Shopify</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -600,7 +619,7 @@
 <p><img src="../../assets/Promotions/PromotionsFlow.png" alt="Promotions Flow"></p>
 <h2 id="authentication-for-promotions">Authentication for Promotions</h2>
 <p>For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your <code>MerchantPublicKey</code>, you can get this information in your PayU Module (<strong><em>Settings</em></strong> &gt; <strong><em>Technical configuration</em></strong> &gt; <strong><em>Public Key</em></strong>).</p>
-<p><img src="../../assets/Promotions/PublicKey.png" alt="PublicKey"></p>
+<p><img src="../../assets/Promotions/PublicKey.png" alt="PrintScreen"></p>
 <h3 id="configuring-the-authentication">Configuring the authentication</h3>
 <p>You must include in the <code>Authorization</code> in the header, this header follows this structure:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#4e9a06">&#34;Hmac&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34; &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">MerchantPublicKey</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;:&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">Signature</span>
