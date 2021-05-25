@@ -294,7 +294,6 @@ You can create up to 1000 links per file.
       &lt;/div&gt;
       &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;https://ayuda.alegra.com/es/recibe-los-pagos-de-tus-facturas-de-venta-desde-alegra-colombia-con-payu&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
         &lt;img src=&#34;../../assets/ShoppingCartLogos/alegra.webp&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #00b19d;;border: 3px solid #00b19d;;&#34;&gt;
-        
       &lt;/div&gt;
       
     &lt;/div&gt;
