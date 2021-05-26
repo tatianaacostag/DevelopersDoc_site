@@ -37,6 +37,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/docs/tools/shopping-cart-plugins/magento.html</loc>
+    <lastmod>2021-05-26T08:38:26-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/docs/integrations/api-integration/payments-api.html</loc>
     <lastmod>2021-05-12T18:01:50-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -59,6 +64,11 @@
   </url><url>
     <loc>/docs/integrations/api-integration.html</loc>
     <lastmod>2021-05-03T17:05:31-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/tools/shopping-cart-plugins/drupal.html</loc>
+    <lastmod>2021-05-26T08:38:45-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -92,6 +102,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/docs/tools/shopping-cart-plugins/virtuemart.html</loc>
+    <lastmod>2021-05-26T08:39:05-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/docs/integrations.html</loc>
     <lastmod>2021-04-12T15:26:58-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -104,6 +119,11 @@
   </url><url>
     <loc>/docs/getting-started/test-your-solution.html</loc>
     <lastmod>2021-05-06T09:46:36-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/tools/shopping-cart-plugins/oscommerce.html</loc>
+    <lastmod>2021-05-26T08:39:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -127,6 +147,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/docs/tools/shopping-cart-plugins/woocommerce.html</loc>
+    <lastmod>2021-05-26T08:40:03-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/docs/tools/disputes.html</loc>
     <lastmod>2021-04-29T16:51:06-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -139,6 +164,11 @@
   </url><url>
     <loc>/docs/services/refunds.html</loc>
     <lastmod>2021-05-06T15:02:55-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/tools/shopping-cart-plugins/opencart.html</loc>
+    <lastmod>2021-05-26T08:40:11-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

@@ -1,28 +1,43 @@
+// debugger;
+
 function createCopyButton(highlightDiv) {
-  const button = document.createElement("button");
-  button.className = "copy-code-button";
-  button.type = "button";
-  button.innerText = "Copy";
+
+  const copyBtnDiv = document.createElement('div');
+
+  copyBtnDiv.setAttribute("class", "copy-btn-container")
+
+  const copyBtnText = document.createElement('span');
+  copyBtnText.setAttribute("class", "copy-btn-txt")
+  copyBtnText.innerHTML = "Copy"
+  copyBtnDiv.appendChild(copyBtnText);
+
+  const button = document.createElement('i');
+  button.className = "far fa-copy";
+  copyBtnDiv.appendChild(button);
+
   button.addEventListener("click", () =>
-    copyCodeToClipboard(button, highlightDiv)
+      copyCodeToClipboard(copyBtnText, highlightDiv)
   );
-  addCopyButtonToDom(button, highlightDiv);
+  addCopyButtonToDom(copyBtnDiv, highlightDiv);
 }
 
-async function copyCodeToClipboard(button, highlightDiv) {
+
+
+
+async function copyCodeToClipboard(copyCodeToClipboard, highlightDiv) {
   const codeToCopy = highlightDiv.querySelector(":last-child > code")
-    .innerText;
+      .innerText;
   try {
-    result = await navigator.permissions.query({ name: "clipboard-write" });
-    if (result.state == "granted" || result.state == "prompt") {
-      await navigator.clipboard.writeText(codeToCopy);
-    } else {
-      copyCodeBlockExecCommand(codeToCopy, highlightDiv);
-    }
+      result = await navigator.permissions.query({ name: "clipboard-write" });
+      if (result.state == "granted" || result.state == "prompt") {
+          await navigator.clipboard.writeText(codeToCopy);
+      } else {
+          copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+      }
   } catch (_) {
-    copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+      copyCodeBlockExecCommand(codeToCopy, highlightDiv);
   } finally {
-    codeWasCopied(button);
+      codeWasCopied(copyCodeToClipboard);
   }
 }
 
@@ -43,11 +58,11 @@ function copyCodeBlockExecCommand(codeToCopy, highlightDiv) {
   highlightDiv.removeChild(textArea);
 }
 
-function codeWasCopied(button) {
-  button.blur();
-  button.innerText = "Copied!";
-  setTimeout(function () {
-    button.innerText = "Copy";
+function codeWasCopied(codeWasCopied) {
+  // button.blur();
+  codeWasCopied.innerHTML = "Copied!";
+  setTimeout(function() {
+      codeWasCopied.innerHTML = "Copy";
   }, 2000);
 }
 

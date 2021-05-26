@@ -277,22 +277,22 @@ You can create up to 1000 links per file.
 &lt;p&gt;Available solutions:&lt;/p&gt;
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
     &lt;div class=&#34;row&#34;&gt;
-      &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;https://www.tiendanube.com/blog/como-cobrar-online-con-dinero-mail-by-payu/&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://www.tiendanube.com/blog/como-cobrar-online-con-dinero-mail-by-payu/&#39;&#34;&gt;
         &lt;img src=&#34;../../assets/ShoppingCartLogos/tiendanube.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
       &lt;/div&gt;
-      &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;https://help.vtex.com/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://help.vtex.com/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q&#39;&#34;&gt;
         &lt;img src=&#34;../../assets/ShoppingCartLogos/vtex.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
       &lt;/div&gt;
-      &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;https://addons.prestashop.com/en/payment-card-wallet/6631-payu-latam.html&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://addons.prestashop.com/en/payment-card-wallet/6631-payu-latam.html&#39;&#34;&gt;
         &lt;img src=&#34;../../assets/ShoppingCartLogos/prestashop.svg&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #353535;border: 3px solid #353535;&#34;&gt;
       &lt;/div&gt;
-      &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34;&gt;
         &lt;img src=&#34;../../assets/ShoppingCartLogos/shopify.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
       &lt;/div&gt;
-      &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;https://jumpseller.com/support/payu/&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://jumpseller.com/support/payu/&#39;&#34;&gt;
         &lt;img src=&#34;../../assets/ShoppingCartLogos/jumpseller.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
       &lt;/div&gt;
-      &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;https://ayuda.alegra.com/es/recibe-los-pagos-de-tus-facturas-de-venta-desde-alegra-colombia-con-payu&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://ayuda.alegra.com/es/recibe-los-pagos-de-tus-facturas-de-venta-desde-alegra-colombia-con-payu&#39;&#34;&gt;
         &lt;img src=&#34;../../assets/ShoppingCartLogos/alegra.webp&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #00b19d;;border: 3px solid #00b19d;;&#34;&gt;
       &lt;/div&gt;
       
@@ -311,22 +311,22 @@ Some of the links above may appear in Spanish.
 &lt;p&gt;Available plugins:&lt;/p&gt;
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34; style=&#34;max-width: 29%; display: flex; align-items: center;&#34;&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/magento.html&#39;&#34;&gt;
       &lt;img src=&#34;../../assets/ShoppingCartLogos/Magento.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
     &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34; style=&#34;max-width: 29%; display: flex; align-items: center;&#34;&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/drupal.html&#39;&#34;&gt;
       &lt;img src=&#34;../../assets/ShoppingCartLogos/drupal.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
     &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/virtuemart.html&#39;&#34;&gt;
       &lt;img src=&#34;../../assets/ShoppingCartLogos/vm-logo-220.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
     &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
-      &lt;img src=&#34;../../assets/ShoppingCartLogos/oscommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/woocommerce.html&#39;&#34;&gt;
       &lt;img src=&#34;../../assets/ShoppingCartLogos/woocommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
     &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34; style=&#34;max-width: 29%;&#34;&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/oscommerce.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../assets/ShoppingCartLogos/oscommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/opencart.html&#39;&#34;&gt;
       &lt;img src=&#34;../../assets/ShoppingCartLogos/opencart.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
     &lt;/div&gt;
     
@@ -335,6 +335,49 @@ Some of the links above may appear in Spanish.
 
 
 
+&lt;h3 id=&#34;plugin-files&#34;&gt;Plugin files&lt;/h3&gt;
+&lt;p&gt;Find the latest version of the plugin in the following table&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+       &lt;tr&gt;
+          &lt;th width=&#34;20%&#34;&gt;Shopping cart&lt;/th&gt;
+          &lt;th&gt;Plugin&lt;/th&gt;
+          &lt;th&gt;Considerations&lt;/th&gt;
+       &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../assets/ShoppingCartLogos/Magento.svg&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;../../assets/plugins/Plugin_PayU_Magento-1.3.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Available for versions from 1.7.x to 1.9.x.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../assets/ShoppingCartLogos/drupal.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;../../assets/plugins/commerce_payulatam_1.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../assets/ShoppingCartLogos/vm-logo-220.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;../../assets/plugins/plugin-joomla-virtuemart2.6.7.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;You need:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Joomla 2.5 with MySQL 5.1 or higher.&lt;/li&gt;&lt;li&gt;Virtuemart version 2.0.22e to version 2.0.26d&lt;/ul&gt;&lt;/li&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../assets/ShoppingCartLogos/woocommerce.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;../../assets/plugins/woocommerce-payu-latam-2.1.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;You need:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;WordPress 3.8 or higher.&lt;/li&gt;&lt;li&gt;WooCommerce version 2.0 or higher installed on the WordPress site.&lt;/ul&gt;&lt;/li&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../assets/ShoppingCartLogos/oscommerce.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;../../assets/plugins/plugin-oscommerce.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Available for version 2.3.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../assets/ShoppingCartLogos/opencart.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Version 1.5.5.1 or 1.5.6.4&lt;br&gt;&lt;a href=&#34;../../assets/plugins/plugin-opencart.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;br&gt;Version 2.0.x.x to 2.1.x.x&lt;br&gt;&lt;a href=&#34;../../assets/plugins/plugin-opencart-2.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+    &lt;/tbody&gt;
+ &lt;/table&gt;
 
       </description>
     </item>

@@ -430,6 +430,19 @@ Refer to &lt;a href=&#34;../docs/getting-started/select-your-payment-method.html
     </item>
     
     <item>
+      <title>Docs: Magento</title>
+      <link>/docs/tools/shopping-cart-plugins/magento.html</link>
+      <pubDate>Wed, 26 May 2021 08:38:26 -0500</pubDate>
+      
+      <guid>/docs/tools/shopping-cart-plugins/magento.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Payments API</title>
       <link>/docs/integrations/api-integration/payments-api.html</link>
       <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
@@ -558,6 +571,19 @@ Refer to &lt;a href=&#34;../docs/getting-started/select-your-payment-method.html
 &lt;li&gt;&lt;a href=&#34;../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Drupal</title>
+      <link>/docs/tools/shopping-cart-plugins/drupal.html</link>
+      <pubDate>Wed, 26 May 2021 08:38:45 -0500</pubDate>
+      
+      <guid>/docs/tools/shopping-cart-plugins/drupal.html</guid>
+      <description>
+        
+        
+        
       </description>
     </item>
     
@@ -2290,6 +2316,42 @@ The following are the request and response examples for this method.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: VirtueMart</title>
+      <link>/docs/tools/shopping-cart-plugins/virtuemart.html</link>
+      <pubDate>Wed, 26 May 2021 08:39:05 -0500</pubDate>
+      
+      <guid>/docs/tools/shopping-cart-plugins/virtuemart.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;system-requirements&#34;&gt;System Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Having the PayU&amp;rsquo;s VirtueMart plugin downloaded and stored in an accessible location. Click &lt;a href=&#34;../../assets/plugins/plugin-joomla-virtuemart2.6.7.zip&#34;&gt;here&lt;/a&gt; to download it.&lt;/li&gt;
+&lt;li&gt;Having VirtueMart version 2 or higher installed. Refer to &lt;a href=&#34;https://virtuemart.net/download&#34;&gt;VirtueMart official website&lt;/a&gt; for more information.&lt;/li&gt;
+&lt;li&gt;Your VirtueMart website must be installed on &lt;a href=&#34;https://joomla.org/&#34;&gt;Joomla!®&lt;/a&gt; 2.5 or higher.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;install-the-plugin&#34;&gt;Install the plugin&lt;/h2&gt;
+&lt;p&gt;Follow the next procedure to install the plugin on your website.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the &lt;em&gt;Joomla!® Administrator Console&lt;/em&gt; and select the &lt;em&gt;&lt;strong&gt;Extension Manager&lt;/strong&gt;&lt;/em&gt; option located in the &lt;em&gt;&lt;strong&gt;Extension&lt;/strong&gt;&lt;/em&gt; menu.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/VirtueMart/VirtueMart_01.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;In the &lt;em&gt;&lt;strong&gt;Upload Package File&lt;/strong&gt;&lt;/em&gt; section, click &lt;em&gt;&lt;strong&gt;Browse&lt;/strong&gt;&lt;/em&gt; and locate the &lt;em&gt;.zip&lt;/em&gt; file of the PayU plugin downloaded.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/VirtueMart/VirtueMart_02.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Once the installation procedure completes, a message appears to inform that the installation was successful.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/VirtueMart/VirtueMart_03.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configure-the-plugin&#34;&gt;Configure the plugin&lt;/h2&gt;
+&lt;p&gt;Expand the option Shop in the &lt;em&gt;&lt;strong&gt;VirtueMart&lt;/strong&gt;&lt;/em&gt; menu and select &lt;em&gt;&lt;strong&gt;Payment methods&lt;/strong&gt;&lt;/em&gt;. Then, click &lt;em&gt;&lt;strong&gt;New&lt;/strong&gt;&lt;/em&gt; at the top right of the screen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../assets/VirtueMart/VirtueMart_04.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;!-- ![PrintScreen](/assets/PaymentRequest/PaymentRequest_01.png) --&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: PayU Module</title>
       <link>/docs/tools/payu-module.html</link>
       <pubDate>Wed, 07 Apr 2021 09:27:23 -0500</pubDate>
@@ -2300,6 +2362,19 @@ The following are the request and response examples for this method.&lt;/p&gt;
         
         &lt;p&gt;To use the PayU module, go to &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;.&lt;/p&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: osCommerce</title>
+      <link>/docs/tools/shopping-cart-plugins/oscommerce.html</link>
+      <pubDate>Wed, 26 May 2021 08:39:47 -0500</pubDate>
+      
+      <guid>/docs/tools/shopping-cart-plugins/oscommerce.html</guid>
+      <description>
+        
+        
+        
       </description>
     </item>
     
@@ -2435,6 +2510,19 @@ To integrate with Promotions API, target the requests to the following URLs:
     </item>
     
     <item>
+      <title>Docs: WooCommerce</title>
+      <link>/docs/tools/shopping-cart-plugins/woocommerce.html</link>
+      <pubDate>Wed, 26 May 2021 08:40:03 -0500</pubDate>
+      
+      <guid>/docs/tools/shopping-cart-plugins/woocommerce.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Disputes</title>
       <link>/docs/tools/disputes.html</link>
       <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
@@ -2536,6 +2624,19 @@ Additionally, you can check the status of your refund request using the &lt;a hr
 &lt;li&gt;&lt;a href=&#34;../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: OpenCart</title>
+      <link>/docs/tools/shopping-cart-plugins/opencart.html</link>
+      <pubDate>Wed, 26 May 2021 08:40:11 -0500</pubDate>
+      
+      <guid>/docs/tools/shopping-cart-plugins/opencart.html</guid>
+      <description>
+        
+        
+        
       </description>
     </item>
     

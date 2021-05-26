@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: AmpleSoft;
     src: url('AmpleSoftPro-Light.woff'), url('AmpleSoftPro-Light.woff') format('woff');
@@ -6,6 +5,7 @@
     font-weight: 200;
     font-display: fallback;
 }
+
 @font-face {
     font-family: AmpleSoft;
     src: url('AmpleSoftPro-Regular.woff'), url('AmpleSoftPro-Regular.woff') format('woff');
@@ -14,6 +14,7 @@
     font-weight: 400;
     font-display: fallback;
 }
+
 @font-face {
     font-family: AmpleSoft;
     src: url('AmpleSoftPro-Medium.woff'), url('AmpleSoftPro-Medium.woff') format('woff');
@@ -21,6 +22,7 @@
     font-weight: 500;
     font-display: fallback;
 }
+
 @font-face {
     font-family: AmpleSoft;
     src: url('AmpleSoftPro-Bold.woff'), url('/AmpleSoftPro-Bold.woff') format('woff');
@@ -40,11 +42,12 @@ ol, ul, dl {
 .alert {
     padding-bottom: 1px;
 }
-.alert ul li:not(:last-child){
+
+.alert ul li:not(:last-child) {
     padding-bottom: 1rem;
 }
 
-.alert ol li:not(:last-child){
+.alert ol li:not(:last-child) {
     padding-bottom: 1rem;
 }
 
@@ -69,6 +72,21 @@ ol, ul, dl {
     height: auto;
 }
 
+.shopping-carts {
+    cursor: pointer;
+    background: hsl(0, 0%, 100%) !important;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
+    text-align: center;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 10px;
+    height: auto;
+    display: flex; 
+    align-items: center;
+    float: left;
+}
+
 img[alt=Tokenization] { 
     max-width: 80% !important; 
 }
@@ -80,6 +98,45 @@ img[alt=PrintScreen] {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+img[alt=ShoppingCartLogos] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.payu-btn-green {
+    font-weight: 600;
+    border-radius: 36px;
+    padding: 15px 40px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #262626;
+    margin: 2px 2px 2px 0;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
+    border: 2px solid #A6C307;
+    background-color: #fff;
+}
+
+a:hover.payu-btn-green {
+    background-color: #A6C307;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
+}
+
+.td-content ul li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #004852;
+    border-radius: 50%;
+    top: 6px;
+    left: 0;
 }
 
 @media only screen and (min-width: 767px) {
@@ -96,8 +153,26 @@ img[alt=PrintScreen] {
         margin: 1px 10px 10px 10px;
         padding: 15px;
         height: auto;
+        float: left;
     }
     
+    .shopping-carts {
+        cursor: pointer;
+        background: hsl(0, 0%, 100%) !important;
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
+        text-align: center;
+        flex-grow: 1;
+        box-sizing: border-box;
+        padding: 5px;
+        max-width: 29%;
+        margin-bottom: 10px;
+        margin: 1px 10px 10px 10px;
+        padding: 15px;
+        height: auto;
+        display: flex; 
+        align-items: center;
+    }
+
     .container.overview-topic {
         max-width: 80%;
         margin: 0;
@@ -111,7 +186,124 @@ img[alt=PrintScreen] {
     .container.overview-topic {
         max-width: 100%;
     }
-    .getting-started {
+    .shopping-carts,.getting-started {
         max-width: 100%;
     }
+}
+
+
+/* CSS for Copy Code Samples Button */
+
+.fa,
+.far,
+.fas {
+    font-family: "Font Awesome 5 Free" !important;
+}
+
+highlight-wrapper {
+    display: block;
+}
+
+.highlight {
+    position: relative;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+}
+
+.highlight>.chroma {
+    color: #D0D0D0;
+    background-color: #212121;
+    position: static;
+    z-index: 1;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.chroma {
+    overflow: auto;
+}
+
+.chroma .lntable {
+    display: table;
+    width: 100%;
+    padding: 0 0 5px;
+    margin: 0;
+    border-spacing: 0;
+    border: 0;
+    overflow: auto;
+}
+
+.chroma .lntd:first-child {
+    padding: 7px 7px 7px 10px;
+    margin: 0;
+}
+
+.chroma .lntd:last-child {
+    padding: 7px 10px 7px 7px;
+    margin: 0;
+}
+
+.fa-copy {
+    z-index: 2;
+    top: 2;
+}
+
+.fa-copy:hover {
+    cursor: pointer;
+}
+
+.copy-btn-container {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 2;
+    padding-right: 1%;
+    background-color: red;
+}
+
+.copyable-text-area {
+    position: absolute;
+    height: 0;
+    z-index: -1;
+    opacity: 0.01;
+}
+
+
+/* Tooltip text */
+
+.copy-btn-txt {
+    visibility: hidden;
+    width: 70px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    display: inline;
+    position: absolute;
+    top: -40px;
+    left: 10;
+    right: 0;
+    text-align: center;
+}
+
+.copy-btn-txt::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 75%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+
+/* Show the tooltip text when you mouse over the tooltip container */
+
+.copy-btn-container:hover .copy-btn-txt {
+    visibility: visible;
 }
