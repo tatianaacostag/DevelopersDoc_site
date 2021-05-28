@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/tools/shopping-cart-plugins/woocommerce.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-26T08:40:03-05:00" />
-<meta property="article:modified_time" content="2021-05-26T08:40:03-05:00" /><meta property="og:site_name" content="Documentation" />
+<meta property="article:modified_time" content="2021-05-26T17:10:08-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="WooCommerce">
 <meta itemprop="description" content="This article shows you the procedure to enable PayU on your WooCommerce website."><meta itemprop="datePublished" content="2021-05-26T08:40:03-05:00" />
-<meta itemprop="dateModified" content="2021-05-26T08:40:03-05:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2021-05-26T17:10:08-05:00" />
+<meta itemprop="wordCount" content="434">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WooCommerce"/>
 <meta name="twitter:description" content="This article shows you the procedure to enable PayU on your WooCommerce website."/>
@@ -121,7 +121,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1c260089510ec846da05e1165608296d2c982a555bbd789ad7778a19d9358ed27ff034a4692703f81ef348e5d5a30e54f896e258bdcef4dd448589d610682e6e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5cd5238fe95fcf47a1ab6c2c589910bf9fdd71c0954360b722120179397f38f48edd1ca4bad8ef17e1bf6ed3ec94d9d5f6b0f827610cc1cfbc6cf4fbda2cab8e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -362,13 +362,13 @@
       
       
       
-        <a id="/docs/tools/shopping-cart-plugins/oscommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docstoolsshopping-cart-pluginsoscommercehtml" href="../../../docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
-      
-      
-      
-      
-      
         <a id="/docs/tools/shopping-cart-plugins/woocommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-docstoolsshopping-cart-pluginswoocommercehtml" href="../../../docs/tools/shopping-cart-plugins/woocommerce.html">WooCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/docs/tools/shopping-cart-plugins/oscommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docstoolsshopping-cart-pluginsoscommercehtml" href="../../../docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
       
       
       
@@ -584,6 +584,14 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -640,10 +648,118 @@
 	<h1>WooCommerce</h1>
     <div class="lead">This article shows you the procedure to enable PayU on your WooCommerce website.</div>
 	       
+	<p>WooCommerce is a Wordpress plugin that ease the creation of an integrated online store. To let your <strong>clients</strong> pay with PayU from your website, you need to install the plugin for WooCommerce, which integrates PayU Latam as a valid payment gateway. For more information about WooCommerce, refer to their <a href="https://woocommerce.com/">official website</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>You need an active account in PayU Latam.</li>
+<li>Having installed <a href="https://wordpress.com/en">WordPress 3.8</a> or higher.</li>
+<li>Having installed WooCommerce 2.0 or higher in the Wordpress website.</li>
+<li>Having the PayU&rsquo;s WooCommerce plugin downloaded and stored in an accessible location. Click <a href="../../../assets/plugins/woocommerce-payu-latam-2.1.zip">here</a> to download it.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Follow the next procedure to install the plugin on your website.</p>
+<ol>
+<li>
+<p>Log in to your WordPress site as an administrator.</p>
+</li>
+<li>
+<p>In the Dashboard, expand the <em><strong>Plugins</strong></em> menu in the left panel and click <em><strong>Add New</strong></em>.</p>
+</li>
+</ol>
+<p><img src="../../../assets/WooCommerce/WooCommerce_01.jpg" alt="PrintScreen"></p>
+<ol start="3">
+<li>Go to the <em><strong>Upload</strong></em> option and choose the <em>.zip</em> file of the WooCommerce plugin downloaded.<br>
+Then, click <em><strong>Install Now</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/WooCommerce/WooCommerce_02.jpg" alt="PrintScreen"></p>
+<ol start="4">
+<li>Provide the data of the connection via FTP and click <em><strong>Proceed</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/WooCommerce/WooCommerce_03.jpg" alt="PrintScreen"></p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+This step depends on the initial configuration of WordPress. The installation of the plugin is not affected if you don&rsquo;t see this screen.
+</div>
+
+<ol start="5">
+<li>Finally, activate the plugin you have installed by clicking the <em><strong>Activate Plugin</strong></em> link.</li>
+</ol>
+<p><img src="../../../assets/WooCommerce/WooCommerce_04.jpg" alt="PrintScreen"></p>
+<h2 id="configuration">Configuration</h2>
+<ol>
+<li>Back in the Dashboard, expand the <em><strong>WooCommerce</strong></em> menu in the left panel and click <em><strong>Settings</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/WooCommerce/WooCommerce_05.jpg" alt="PrintScreen"></p>
+<ol start="2">
+<li>Go to the <em><strong>Checkout</strong></em> tab.</li>
+</ol>
+<p><img src="../../../assets/WooCommerce/WooCommerce_06.jpg" alt="PrintScreen"></p>
+<ol start="3">
+<li>Scroll down to <em><strong>Payment Gateways</strong></em> table. Then, find <em>PayU Latam</em> and drag and drop to the top of the table.<br>
+Click the radio of the <em><strong>Default</strong></em> column.</li>
+</ol>
+<p><img src="../../../assets/WooCommerce/WooCommerce_07.jpg" alt="PrintScreen"></p>
+<p>Save the changes.</p>
+<ol start="4">
+<li>Click the <em>PayU Latam</em> link at the top of the tab and configure the data of your PayU account.</li>
+</ol>
+<p><img src="../../../assets/WooCommerce/WooCommerce_09.jpg" alt="PrintScreen"></p>
+<p>The following table explains the values:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable / Disable</td>
+<td>Mark this checkbox to enable the WooCommerce payment gateway.</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title displayed for the Payment Method. The default value is <em>PayU Latam</em>.</td>
+</tr>
+<tr>
+<td>Merchant ID</td>
+<td>ID of your commerce in PayU Latam</td>
+</tr>
+<tr>
+<td>Account ID</td>
+<td>ID of the PayU account according to the country where you want to sell.</td>
+</tr>
+<tr>
+<td>API key</td>
+<td>Unique key of your commerce, you can find this key in the PayU module.</td>
+</tr>
+<tr>
+<td>Gateway URL</td>
+<td>Gateway URL.<br>For test, you can use <a href="https://sandbox.gateway.payulatam.com/ppp-web-gateway">https://sandbox.gateway.payulatam.com/ppp-web-gateway</a> and for production <a href="https://gateway.payulatam.com/ppp-web-gateway/">https://gateway.payulatam.com/ppp-web-gateway/</a></td>
+</tr>
+<tr>
+<td>Transaction in test mode</td>
+<td>Mark this checkbox to make transactions the test mode.</td>
+</tr>
+<tr>
+<td>Response page</td>
+<td>URL of the response page.<br>By default, the URL is <a href="http://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php,">http://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php,</a> you must replace <a href="http://your.domain.com">http://your.domain.com</a> with your site&rsquo;s domain.</td>
+</tr>
+<tr>
+<td>Confirmation page</td>
+<td>URL of the confirmation page.<br>By default, the URL is hhttp://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php, you must replace <a href="http://your.domain.com">http://your.domain.com</a> with your site&rsquo;s domain.</td>
+</tr>
+</tbody>
+</table>
+<ol start="5">
+<li>Finally, click <em><strong>Save changes</strong></em> button. At this point, your customers can pay with PayU Latam when they do the checkout in the WooCommerce&rsquo;s shopping cart.</li>
+</ol>
+
 	
 	
-	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified May 26, 2021
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 26, 2021: <a  href="../../../commit/069a5d873ab190ff222fc41377d609eb26eac5fa">VirtueMart article created along with other shopping cart pluggins (069a5d8)</a>
 </div>
 </div>
 

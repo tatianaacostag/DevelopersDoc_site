@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/tools/shopping-cart-plugins/opencart.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-26T08:40:11-05:00" />
-<meta property="article:modified_time" content="2021-05-26T08:40:11-05:00" /><meta property="og:site_name" content="Documentation" />
+<meta property="article:modified_time" content="2021-05-26T17:10:08-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="OpenCart">
 <meta itemprop="description" content="This article shows you the procedure to enable PayU on your OpenCart website."><meta itemprop="datePublished" content="2021-05-26T08:40:11-05:00" />
-<meta itemprop="dateModified" content="2021-05-26T08:40:11-05:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2021-05-26T17:10:08-05:00" />
+<meta itemprop="wordCount" content="493">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenCart"/>
 <meta name="twitter:description" content="This article shows you the procedure to enable PayU on your OpenCart website."/>
@@ -121,7 +121,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1c260089510ec846da05e1165608296d2c982a555bbd789ad7778a19d9358ed27ff034a4692703f81ef348e5d5a30e54f896e258bdcef4dd448589d610682e6e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.5cd5238fe95fcf47a1ab6c2c589910bf9fdd71c0954360b722120179397f38f48edd1ca4bad8ef17e1bf6ed3ec94d9d5f6b0f827610cc1cfbc6cf4fbda2cab8e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -362,13 +362,13 @@
       
       
       
-        <a id="/docs/tools/shopping-cart-plugins/oscommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docstoolsshopping-cart-pluginsoscommercehtml" href="../../../docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
-      
-      
-      
-      
-      
         <a id="/docs/tools/shopping-cart-plugins/woocommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docstoolsshopping-cart-pluginswoocommercehtml" href="../../../docs/tools/shopping-cart-plugins/woocommerce.html">WooCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/docs/tools/shopping-cart-plugins/oscommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docstoolsshopping-cart-pluginsoscommercehtml" href="../../../docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
       
       
       
@@ -581,11 +581,6 @@
 
 
 
-<p>On this Page</p>
-
-
-
-
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             
@@ -640,10 +635,115 @@
 	<h1>OpenCart</h1>
     <div class="lead">This article shows you the procedure to enable PayU on your OpenCart website.</div>
 	       
+	<p>OpenCart is a free platform developed in PHP to create online stores. OpenCart provides a professional and reliable base to build an online store. This base uses a wide variety of users such as web developers looking for a user-friendly interface or store owners who want to launch their online business for the first time. OpenCart has many features that give you great control over your store&rsquo;s customization.For more information about WooCommerce, refer to their <a href="https://www.opencart.com/">official website</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The OpenCart plugin is available for version 1.5 and 2.0 and you need to meet the following prerequisites:</p>
+<ul>
+<li>You need an active account in PayU Latam.</li>
+<li>For OpenCart version 1.5:
+<ul>
+<li>Having the PayU&rsquo;s OpenCart v1.5 plugin downloaded and stored in an accessible location. Click <a href="../../../assets/plugins/plugin-opencart.zip">here</a> to download it.</li>
+<li>Having VirtueMart version 1.5.5.1 - 1.5.6.X installed.</li>
+</ul>
+</li>
+<li>For OpenCart version 2.0:
+<ul>
+<li>Having the PayU&rsquo;s OpenCart v2.0 plugin downloaded and stored in an accessible location. Click <a href="../../../assets/plugins/plugin-opencart-2.0.zip">here</a> to download it.</li>
+<li>Having VirtueMart version 2.0.1.0 or 2.0.1.1 installed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="installation-and-configuration">Installation and configuration</h2>
+<p>The procedure to install OpenCart plugin is the same for version 1.5 or 2.0. The only difference is the look and feel of the versions and this is highlighted during this article.<br>
+Follow the next procedure to install the plugin on your website.</p>
+<ol>
+<li>Unzip the plugin file in a location of your choice. Then, using an FTP client, go to the location where you unzipped the plugin.<br>
+Then, upload the folders <strong>admin</strong> and <strong>catalog</strong> to the root folder of the OpenCart installation in your server.</li>
+</ol>
+<p><img src="../../../assets/OpenCart/OpenCart_01.jpg" alt="PrintScreen"></p>
+<p>This action add the plugin files to your OpenCart server in the right locations. To validate whether the procedure was correct, search the following files in their corresponding locations.</p>
+<p><img src="../../../assets/OpenCart/OpenCart_02.jpg" alt="PrintScreen"></p>
+<ol start="2">
+<li>In the administration console of your OpenCart shop, open the <em><strong>Extensions</strong></em> menu and click <em><strong>Payments</strong></em>.</li>
+</ol>
+<p><strong>OpenCart v1.5</strong></p>
+<p><img src="../../../assets/OpenCart/OpenCart_03.jpg" alt="PrintScreen"></p>
+<p><strong>OpenCart v2.0</strong></p>
+<p><img src="../../../assets/OpenCart/OpenCart_04.jpg" alt="PrintScreen"></p>
+<ol start="3">
+<li>In the <em><strong>Payment</strong></em> table, find the <em>PayuLatam</em> payment method. Then, click <em><strong>Install</strong></em>.</li>
+</ol>
+<p><strong>OpenCart v1.5</strong></p>
+<p><img src="../../../assets/OpenCart/OpenCart_05.jpg" alt="PrintScreen"></p>
+<p><strong>OpenCart v2.0</strong></p>
+<p><img src="../../../assets/OpenCart/OpenCart_06.jpg" alt="PrintScreen"></p>
+<ol start="4">
+<li>When the plugin has been installed, click <em><strong>Edit</strong></em>.</li>
+</ol>
+<p><strong>OpenCart v1.5</strong></p>
+<p><img src="../../../assets/OpenCart/OpenCart_07.jpg" alt="PrintScreen"></p>
+<p><strong>OpenCart v2.0</strong></p>
+<p><img src="../../../assets/OpenCart/OpenCart_08.jpg" alt="PrintScreen"></p>
+<ol start="5">
+<li>Configure the payment method using the data of your PayU account as follows.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Production Url</td>
+<td>PayU Latam&rsquo;s URL in production <a href="https://gateway.payulatam.com/ppp-web-gateway/">https://gateway.payulatam.com/ppp-web-gateway/</a></td>
+</tr>
+<tr>
+<td>Test Url</td>
+<td>PayU Latam&rsquo;s URL in test <a href="https://sandbox.gateway.payulatam.com/ppp-web-gateway">https://sandbox.gateway.payulatam.com/ppp-web-gateway</a></td>
+</tr>
+<tr>
+<td>Test Mode?</td>
+<td>Set <strong>Yes</strong> to make transactions in the test environment and <strong>No</strong> for the production environment.</td>
+</tr>
+<tr>
+<td>Merchant ID</td>
+<td>ID of your commerce in PayU Latam</td>
+</tr>
+<tr>
+<td>Account ID</td>
+<td>ID of the PayU account according to the country where you want to sell.</td>
+</tr>
+<tr>
+<td>API key</td>
+<td>Unique key of your commerce, you can find this key in the PayU module.</td>
+</tr>
+<tr>
+<td>Approved Transaction</td>
+<td>Order status in the OpenCart shop when PayU Latam approves the transaction.</td>
+</tr>
+<tr>
+<td>Pending Transaction</td>
+<td>Order status in the OpenCart shop when the transaction is pending in PayU Latam.</td>
+</tr>
+<tr>
+<td>Declined Transaction</td>
+<td>Order status in the OpenCart shop when PayU Latam declines the transaction.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Select <em><strong>Enable</strong></em> to activate this payment method in OpenCart.</td>
+</tr>
+</tbody>
+</table>
+<ol start="6">
+<li>Finally, save the changes. At this point, your customers can pay with PayU Latam when they do the checkout in the OpenCart&rsquo;s shopping cart.</li>
+</ol>
+
 	
 	
-	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified May 26, 2021
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 26, 2021: <a  href="../../../commit/069a5d873ab190ff222fc41377d609eb26eac5fa">VirtueMart article created along with other shopping cart pluggins (069a5d8)</a>
 </div>
 </div>
 
