@@ -13481,15 +13481,6 @@ a.payu-btn-green:hover {
   color: #fff;
   transition: background-color 0.2s ease 0s, color 0.2s ease 0s; }
 
-.td-content ul li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background-color: #004852;
-  border-radius: 50%;
-  top: 6px;
-  left: 0; }
-
 @media only screen and (min-width: 767px) {
   .getting-started {
     cursor: pointer;

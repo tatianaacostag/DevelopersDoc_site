@@ -31,7 +31,7 @@
 <meta itemprop="name" content="Drupal">
 <meta itemprop="description" content="This article shows you the procedure to enable PayU in your Drupal website."><meta itemprop="datePublished" content="2021-05-26T08:38:45-05:00" />
 <meta itemprop="dateModified" content="2021-05-26T17:10:08-05:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="394">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Drupal"/>
 <meta name="twitter:description" content="This article shows you the procedure to enable PayU in your Drupal website."/>
@@ -40,8 +40,8 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.30612dd541a143c9baab48f1230a8142211ae3d5b19823ef0c6a161e991abcb4.css" as="style">
-<link href="../../../scss/main.min.30612dd541a143c9baab48f1230a8142211ae3d5b19823ef0c6a161e991abcb4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.175a71119f2ed68291bb16ad506b2e152fbd2b155835b044666fab8a8fb852a9.css" as="style">
+<link href="../../../scss/main.min.175a71119f2ed68291bb16ad506b2e152fbd2b155835b044666fab8a8fb852a9.css" rel="stylesheet" integrity="">
 <link rel="stylesheet" href="../../../css/add-on.css">
 
 
@@ -121,7 +121,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5cd5238fe95fcf47a1ab6c2c589910bf9fdd71c0954360b722120179397f38f48edd1ca4bad8ef17e1bf6ed3ec94d9d5f6b0f827610cc1cfbc6cf4fbda2cab8e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.884a09a0e33016a7fc1b0dbb263917a448bb6c877fa914431980048500dcde29766adaa20d3696aa768dae436e25ac00e53c17a3eaa1d49fdc0a1f95b01652fc.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -584,6 +584,14 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -640,7 +648,62 @@
 	<h1>Drupal</h1>
     <div class="lead">This article shows you the procedure to enable PayU in your Drupal website.</div>
 	       
-	
+	<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>You need an active account in PayU Latam.</li>
+<li>Having installed <a href="https://www.drupal.org/project/commerce_kickstart">Drupal Commerce Kickstart 7.xx</a>.</li>
+<li>Having the PayU&rsquo;s Drupal plugin downloaded and stored in an accessible location. Click <a href="../../../assets/plugins/commerce_payulatam_1.0.zip">here</a> to download it.</li>
+<li>Having access to the Drupal installation folder.</li>
+<li>Having access to the Drupal backend.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>The process to install the plugin in the Drupal server only requires to unzip the plugin in path <em><strong>\sites\all\modules</strong></em>. The unzipped folder has the following structure:</p>
+<p><img src="../../../assets/Drupal/Drupal_01.png" alt="PrintScreen"></p>
+<h2 id="configuration">Configuration</h2>
+<ol>
+<li>Log in to the Drupal&rsquo;s administration panel. Open the <em><strong>Site settings</strong></em> menu and click <em><strong>Modules</strong></em> option inside the <em><strong>Advanced settings</strong></em> section.</li>
+</ol>
+<p><img src="../../../assets/Drupal/Drupal_02.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>Locate and activate the module <em><strong>Payment Payulatam</strong></em>. YOu can use the search filter to find it easier.<br>
+Once finish, click <em><strong>Save configuration</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/Drupal/Drupal_03.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Back in the Drupal&rsquo;s administration panel. Open the <em><strong>Store settings</strong></em> menu and click <em><strong>Payment methods</strong></em>.<br>
+Find <em><strong>Payment gateway PayuLatam</strong></em> in the <em><strong>Disabled payment method rules</strong></em> list and click <em><strong>enable</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/Drupal/Drupal_04.png" alt="PrintScreen"></p>
+<p>If the activation was successful, Drupal shows the following message</p>
+<p><img src="../../../assets/Drupal/Drupal_05.png" alt="PrintScreen"></p>
+<ol start="4">
+<li>Now, click <em><strong>edit</strong></em> link in the recently enabled method.<br>
+Then, locate the <em><strong>Actions</strong></em> section and click <em><strong>edit</strong></em> next to the action <em><strong>Enable payment method: PayuLatam</strong></em>. Here, configure the plugin using your PayU account.</li>
+</ol>
+<p><img src="../../../assets/Drupal/Drupal_06.png" alt="PrintScreen"></p>
+<ul>
+<li><strong>API KEY</strong>: Unique key of your commerce, you can get this information in your PayU Module (<strong><em>Settings</em></strong> &gt; <strong><em>Technical configuration</em></strong> &gt; <strong><em>API Key</em></strong>).</li>
+<li><strong>Merchant Id</strong>: ID of your commerce in PayU Latam.</li>
+<li><strong>Account Id</strong>: ID of the PayU account according to the country where you want to sell.</li>
+<li><strong>Test Enabled</strong>: Set <code>No</code> if you want to process in the Production environment. Otherwise, set <code>Yes</code>.</li>
+</ul>
+<p>Leave the other fields with their pre-configured values.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+<p>For testing purposes, you can use the <strong>Merchant ID</strong>, <strong>APIKey</strong>, and <strong>Account ID</strong> available in <a href="../../getting-started/test-your-solution.html">Test Your Solution</a>.</p>
+<p>Once you are in the credit card payment form, and ensuring that you have the message at the top of the gateway <em>Transaction in test mode</em>, you must:</p>
+<ul>
+<li>Enter the text <code>APPROVED</code> in the Full Name field if you want the transaction to be approved, <code>REJECTED</code> if you want it to be rejected or <code>PENDING</code> if you want it to be pending.</li>
+<li>You must enter a valid card number in the Card Number field according to the selected franchise. For this, you can use an online credit card generator.</li>
+<li>All other fields can be random.</li>
+</ul>
+
+</div>
+
+<p>At this point, your customers can pay with PayU Latam when they do the checkout in the Drupal&rsquo;s shopping cart.</p>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified May 26, 2021: <a  href="../../../commit/069a5d873ab190ff222fc41377d609eb26eac5fa">VirtueMart article created along with other shopping cart pluggins (069a5d8)</a>

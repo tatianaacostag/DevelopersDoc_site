@@ -23,7 +23,76 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need an active account in PayU Latam. Checkout is not available in Trial plans.&lt;/li&gt;
+&lt;li&gt;You need a valid &lt;a href=&#34;https://www.shopify.com/pricing&#34;&gt;plan&lt;/a&gt; in Shopify.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;order-management-in-shopify&#34;&gt;Order management in Shopify&lt;/h2&gt;
+&lt;p&gt;Take into account the following when managing orders in Shopify:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;All orders&lt;/strong&gt;: are the orders with state &lt;em&gt;&lt;strong&gt;Approved&lt;/strong&gt;&lt;/em&gt; (fully or partially paid) and &lt;em&gt;&lt;strong&gt;Pending&lt;/strong&gt;&lt;/em&gt; (while the payer backs to the store after processing the payment in the gateway).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Abandoned checkouts&lt;/strong&gt;: are payment procedures which meet any of the following criteria:
+&lt;ol&gt;
+&lt;li&gt;Uncompleted checkouts.&lt;/li&gt;
+&lt;li&gt;Checkouts abandoned during the payment process.&lt;/li&gt;
+&lt;li&gt;Transactions with &lt;em&gt;&lt;strong&gt;Rejected&lt;/strong&gt;&lt;/em&gt; state.&lt;/li&gt;
+&lt;li&gt;Transactions with &lt;em&gt;&lt;strong&gt;Pending&lt;/strong&gt;&lt;/em&gt; state as long as the payer does not return to the store after processing the payment in the gateway:&lt;br&gt;
+4.1. Cash Payments (always return &lt;em&gt;&lt;strong&gt;Pending&lt;/strong&gt;&lt;/em&gt; state).&lt;br&gt;
+4.2. Credit Card payments that are subject to fraud analysis.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;enable-payu-as-payment-gateway&#34;&gt;Enable PayU as Payment gateway&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter to your &lt;em&gt;Shopify&lt;/em&gt; admin site. Click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; and then, select &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Go to the &lt;em&gt;&lt;strong&gt;Third-party providers&lt;/strong&gt;&lt;/em&gt; section and click &lt;em&gt;&lt;strong&gt;Choose third-party provider&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;In the list, find and click the &lt;em&gt;PayU Latam&lt;/em&gt; gateway.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Provide the following information of your PayU account:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Account Id (1)&lt;/strong&gt;: ID of the PayU account according to the country where you want to sell.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Api Key (2)&lt;/strong&gt;: Unique key of your commerce, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;API Key&lt;/em&gt;&lt;/strong&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Finally, click &lt;em&gt;&lt;strong&gt;Activate PayU Latam button&lt;/strong&gt;&lt;/em&gt; at the bottom of the page.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Open the PayU module and go to the &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt; options (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt;). Then, disable the validation of unique reference for all states, to avoid issues at the moment of processing your payments.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;At this point, your customers can make payments through the PayU Checkout. They are able to pay using payment options including cash, credit cards and bank transfers, depending on the country where you are selling.&lt;/p&gt;
+&lt;h2 id=&#34;payment-flow-in-shopify&#34;&gt;Payment flow in Shopify.&lt;/h2&gt;
+&lt;p&gt;When you configure PayU as payment gateway in platform, your customer can pay using PayU platform as explained below.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Your customer selects the product or service they want to buy and add it to their shopping cart.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;In the shopping cart, you customer proceeds to the check out.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_09.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Once your customer provides their information, they can click &lt;em&gt;&lt;strong&gt;Complete order&lt;/strong&gt;&lt;/em&gt; to be redirected to PayU Latam to complete the payment.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_10.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;When they are in our payment gateway, they can see the sale description and the available payment methods according to the selected country.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Shopify/Shopify_11.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
       </description>
     </item>
     
@@ -36,7 +105,82 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need an active account in PayU Latam.&lt;/li&gt;
+&lt;li&gt;Having installed Magento version 1.7.x to 1.9.x.&lt;/li&gt;
+&lt;li&gt;Having the PayU&amp;rsquo;s osCommerce plugin downloaded and stored in an accessible location. Click &lt;a href=&#34;../../../assets/plugins/Plugin_PayU_Magento-1.3.zip&#34;&gt;here&lt;/a&gt; to download it.&lt;/li&gt;
+&lt;li&gt;You need access to the folders where Magento is installed.&lt;/li&gt;
+&lt;li&gt;You need access to the Magento Admin Panel.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Approved payments appear with &lt;em&gt;Processing&lt;/em&gt; status in the orders report.&lt;/li&gt;
+&lt;li&gt;Once the payment is received correctly, Magento creates an invoice with the associated order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Follow the next procedure to install the plugin on your website.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Log in to your Magento admin panel. Then, expand the &lt;em&gt;&lt;strong&gt;System&lt;/strong&gt;&lt;/em&gt; menu at the top and click &lt;em&gt;&lt;strong&gt;Cache Management&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;
+In the new window, click &lt;em&gt;&lt;strong&gt;Flush Magento Cache&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Magento/Magento_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Unzip the plugin. The plugin folder is called &lt;code&gt;app&lt;/code&gt; and it has the following structure:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Magento/Magento_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Navigate to &lt;em&gt;&lt;strong&gt;[PluginFolder]\app\code\local&lt;/strong&gt;&lt;/em&gt; and copy the &lt;strong&gt;Gfgrisales&lt;/strong&gt; folder into the &lt;em&gt;&lt;strong&gt;\app\code\local&lt;/strong&gt;&lt;/em&gt; folder in the root of the Magento installation folder.&lt;br&gt;
+If this structure does not exist in your installation, create it with read and write permissions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Magento/Magento_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Navigate to &lt;em&gt;&lt;strong&gt;[PluginFolder]\app\design\frontend\base\default\template&lt;/strong&gt;&lt;/em&gt; and copy the &lt;strong&gt;payu&lt;/strong&gt; folder into the &lt;em&gt;&lt;strong&gt;\app\design\frontend\base\default\template&lt;/strong&gt;&lt;/em&gt; folder in the root of the Magento installation folder.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Magento/Magento_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Navigate to &lt;em&gt;&lt;strong&gt;[PluginFolder]\app\etc\modules&lt;/strong&gt;&lt;/em&gt; and copy the &lt;strong&gt;Gfgrisales_Payu.xml&lt;/strong&gt; file into the &lt;em&gt;&lt;strong&gt;\app\etc\modules&lt;/strong&gt;&lt;/em&gt; folder in the root of the Magento installation folder.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Magento/Magento_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Back in your Magento admin panel, expand the &lt;em&gt;&lt;strong&gt;System&lt;/strong&gt;&lt;/em&gt; menu and click &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt;. Then, expand &lt;em&gt;&lt;strong&gt;Advanced&lt;/strong&gt;&lt;/em&gt; section in the menu displayed on the left panel and click &lt;em&gt;&lt;strong&gt;Advanced&lt;/strong&gt;&lt;/em&gt; option.&lt;br&gt;
+Click &lt;em&gt;&lt;strong&gt;Disable Modules Output&lt;/strong&gt;&lt;/em&gt; and check that the PayU extension called &lt;em&gt;Gfgrisales_Payu&lt;/em&gt; is enabled.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Magento/Magento_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;In the &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt; menu on the left panel, expand &lt;em&gt;&lt;strong&gt;Sales&lt;/strong&gt;&lt;/em&gt; section in the menu displayed on the left panel and click &lt;em&gt;&lt;strong&gt;Payment methods&lt;/strong&gt;&lt;/em&gt; option.&lt;br&gt;
+Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; method and provide the information of your PayU Account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Magento/Magento_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Merchant ID&lt;/strong&gt;: ID of your commerce in PayU Latam.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;APIKey&lt;/strong&gt;: Unique key of your commerce, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;API Key&lt;/em&gt;&lt;/strong&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Account ID&lt;/strong&gt;: ID of the PayU account according to the country where you want to sell.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gateway URL&lt;/strong&gt;: Gateway URL.
+&lt;ul&gt;
+&lt;li&gt;For test, use &lt;a href=&#34;https://sandbox.gateway.payulatam.com/ppp-web-gateway&#34;&gt;https://sandbox.gateway.payulatam.com/ppp-web-gateway&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For production, use &lt;a href=&#34;https://gateway.payulatam.com/ppp-web-gateway/&#34;&gt;https://gateway.payulatam.com/ppp-web-gateway/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+&lt;p&gt;For testing purposes, you can use the &lt;strong&gt;Merchant ID&lt;/strong&gt;, &lt;strong&gt;APIKey&lt;/strong&gt;, and &lt;strong&gt;Account ID&lt;/strong&gt; available in &lt;a href=&#34;../../getting-started/test-your-solution.html&#34;&gt;Test Your Solution&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once you are in the credit card payment form, and ensuring that you have the message at the top of the gateway &lt;em&gt;Transaction in test mode&lt;/em&gt;, you must:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enter the text &lt;code&gt;APPROVED&lt;/code&gt; in the Full Name field if you want the transaction to be approved, &lt;code&gt;REJECTED&lt;/code&gt; if you want it to be rejected or &lt;code&gt;PENDING&lt;/code&gt; if you want it to be pending.&lt;/li&gt;
+&lt;li&gt;You must enter a valid card number in the Card Number field according to the selected franchise. For this, you can use an online credit card generator.&lt;/li&gt;
+&lt;li&gt;All other fields can be random.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Once finish, click &lt;em&gt;&lt;strong&gt;Save Config&lt;/strong&gt;&lt;/em&gt; to apply changes.&lt;/p&gt;
+&lt;p&gt;At this point, your customers can pay with PayU Latam when they do the checkout in the Magento&amp;rsquo;s shopping cart.&lt;/p&gt;
+
       </description>
     </item>
     
@@ -49,7 +193,62 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need an active account in PayU Latam.&lt;/li&gt;
+&lt;li&gt;Having installed &lt;a href=&#34;https://www.drupal.org/project/commerce_kickstart&#34;&gt;Drupal Commerce Kickstart 7.xx&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Having the PayU&amp;rsquo;s Drupal plugin downloaded and stored in an accessible location. Click &lt;a href=&#34;../../../assets/plugins/commerce_payulatam_1.0.zip&#34;&gt;here&lt;/a&gt; to download it.&lt;/li&gt;
+&lt;li&gt;Having access to the Drupal installation folder.&lt;/li&gt;
+&lt;li&gt;Having access to the Drupal backend.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;The process to install the plugin in the Drupal server only requires to unzip the plugin in path &lt;em&gt;&lt;strong&gt;\sites\all\modules&lt;/strong&gt;&lt;/em&gt;. The unzipped folder has the following structure:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Drupal/Drupal_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Log in to the Drupal&amp;rsquo;s administration panel. Open the &lt;em&gt;&lt;strong&gt;Site settings&lt;/strong&gt;&lt;/em&gt; menu and click &lt;em&gt;&lt;strong&gt;Modules&lt;/strong&gt;&lt;/em&gt; option inside the &lt;em&gt;&lt;strong&gt;Advanced settings&lt;/strong&gt;&lt;/em&gt; section.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Drupal/Drupal_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Locate and activate the module &lt;em&gt;&lt;strong&gt;Payment Payulatam&lt;/strong&gt;&lt;/em&gt;. YOu can use the search filter to find it easier.&lt;br&gt;
+Once finish, click &lt;em&gt;&lt;strong&gt;Save configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Drupal/Drupal_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Back in the Drupal&amp;rsquo;s administration panel. Open the &lt;em&gt;&lt;strong&gt;Store settings&lt;/strong&gt;&lt;/em&gt; menu and click &lt;em&gt;&lt;strong&gt;Payment methods&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;
+Find &lt;em&gt;&lt;strong&gt;Payment gateway PayuLatam&lt;/strong&gt;&lt;/em&gt; in the &lt;em&gt;&lt;strong&gt;Disabled payment method rules&lt;/strong&gt;&lt;/em&gt; list and click &lt;em&gt;&lt;strong&gt;enable&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Drupal/Drupal_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If the activation was successful, Drupal shows the following message&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Drupal/Drupal_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Now, click &lt;em&gt;&lt;strong&gt;edit&lt;/strong&gt;&lt;/em&gt; link in the recently enabled method.&lt;br&gt;
+Then, locate the &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/em&gt; section and click &lt;em&gt;&lt;strong&gt;edit&lt;/strong&gt;&lt;/em&gt; next to the action &lt;em&gt;&lt;strong&gt;Enable payment method: PayuLatam&lt;/strong&gt;&lt;/em&gt;. Here, configure the plugin using your PayU account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Drupal/Drupal_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;API KEY&lt;/strong&gt;: Unique key of your commerce, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;API Key&lt;/em&gt;&lt;/strong&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Merchant Id&lt;/strong&gt;: ID of your commerce in PayU Latam.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Account Id&lt;/strong&gt;: ID of the PayU account according to the country where you want to sell.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Enabled&lt;/strong&gt;: Set &lt;code&gt;No&lt;/code&gt; if you want to process in the Production environment. Otherwise, set &lt;code&gt;Yes&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Leave the other fields with their pre-configured values.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+&lt;p&gt;For testing purposes, you can use the &lt;strong&gt;Merchant ID&lt;/strong&gt;, &lt;strong&gt;APIKey&lt;/strong&gt;, and &lt;strong&gt;Account ID&lt;/strong&gt; available in &lt;a href=&#34;../../getting-started/test-your-solution.html&#34;&gt;Test Your Solution&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once you are in the credit card payment form, and ensuring that you have the message at the top of the gateway &lt;em&gt;Transaction in test mode&lt;/em&gt;, you must:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enter the text &lt;code&gt;APPROVED&lt;/code&gt; in the Full Name field if you want the transaction to be approved, &lt;code&gt;REJECTED&lt;/code&gt; if you want it to be rejected or &lt;code&gt;PENDING&lt;/code&gt; if you want it to be pending.&lt;/li&gt;
+&lt;li&gt;You must enter a valid card number in the Card Number field according to the selected franchise. For this, you can use an online credit card generator.&lt;/li&gt;
+&lt;li&gt;All other fields can be random.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;At this point, your customers can pay with PayU Latam when they do the checkout in the Drupal&amp;rsquo;s shopping cart.&lt;/p&gt;
+
       </description>
     </item>
     

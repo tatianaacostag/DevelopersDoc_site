@@ -31,7 +31,7 @@
 <meta itemprop="name" content="Shopify">
 <meta itemprop="description" content="This article shows you the procedure to enable PayU on your Shopify website."><meta itemprop="datePublished" content="2021-05-25T10:30:35-05:00" />
 <meta itemprop="dateModified" content="2021-05-26T17:10:08-05:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="392">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shopify"/>
 <meta name="twitter:description" content="This article shows you the procedure to enable PayU on your Shopify website."/>
@@ -40,8 +40,8 @@
 
 
 
-<link rel="preload" href="../../../scss/main.min.30612dd541a143c9baab48f1230a8142211ae3d5b19823ef0c6a161e991abcb4.css" as="style">
-<link href="../../../scss/main.min.30612dd541a143c9baab48f1230a8142211ae3d5b19823ef0c6a161e991abcb4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../scss/main.min.175a71119f2ed68291bb16ad506b2e152fbd2b155835b044666fab8a8fb852a9.css" as="style">
+<link href="../../../scss/main.min.175a71119f2ed68291bb16ad506b2e152fbd2b155835b044666fab8a8fb852a9.css" rel="stylesheet" integrity="">
 <link rel="stylesheet" href="../../../css/add-on.css">
 
 
@@ -121,7 +121,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.5cd5238fe95fcf47a1ab6c2c589910bf9fdd71c0954360b722120179397f38f48edd1ca4bad8ef17e1bf6ed3ec94d9d5f6b0f827610cc1cfbc6cf4fbda2cab8e.json"
+  data-offline-search-index-json-src="../../../offline-search-index.884a09a0e33016a7fc1b0dbb263917a448bb6c877fa914431980048500dcde29766adaa20d3696aa768dae436e25ac00e53c17a3eaa1d49fdc0a1f95b01652fc.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -584,6 +584,15 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#order-management-in-shopify">Order management in Shopify</a></li>
+    <li><a href="#enable-payu-as-payment-gateway">Enable PayU as Payment gateway</a></li>
+    <li><a href="#payment-flow-in-shopify">Payment flow in Shopify.</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -640,7 +649,76 @@
 	<h1>Shopify</h1>
     <div class="lead">This article shows you the procedure to enable PayU on your Shopify website.</div>
 	       
-	
+	<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>You need an active account in PayU Latam. Checkout is not available in Trial plans.</li>
+<li>You need a valid <a href="https://www.shopify.com/pricing">plan</a> in Shopify.</li>
+</ul>
+<h2 id="order-management-in-shopify">Order management in Shopify</h2>
+<p>Take into account the following when managing orders in Shopify:</p>
+<ul>
+<li><strong>All orders</strong>: are the orders with state <em><strong>Approved</strong></em> (fully or partially paid) and <em><strong>Pending</strong></em> (while the payer backs to the store after processing the payment in the gateway).</li>
+<li><strong>Abandoned checkouts</strong>: are payment procedures which meet any of the following criteria:
+<ol>
+<li>Uncompleted checkouts.</li>
+<li>Checkouts abandoned during the payment process.</li>
+<li>Transactions with <em><strong>Rejected</strong></em> state.</li>
+<li>Transactions with <em><strong>Pending</strong></em> state as long as the payer does not return to the store after processing the payment in the gateway:<br>
+4.1. Cash Payments (always return <em><strong>Pending</strong></em> state).<br>
+4.2. Credit Card payments that are subject to fraud analysis.</li>
+</ol>
+</li>
+</ul>
+<h2 id="enable-payu-as-payment-gateway">Enable PayU as Payment gateway</h2>
+<ol>
+<li>Enter to your <em>Shopify</em> admin site. Click <em><strong>Settings</strong></em> and then, select <em><strong>Payments</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_01.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>Go to the <em><strong>Third-party providers</strong></em> section and click <em><strong>Choose third-party provider</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_02.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>In the list, find and click the <em>PayU Latam</em> gateway.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_03.png" alt="PrintScreen"></p>
+<ol start="4">
+<li>Provide the following information of your PayU account:</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_04.png" alt="PrintScreen"></p>
+<ul>
+<li><strong>Account Id (1)</strong>: ID of the PayU account according to the country where you want to sell.</li>
+<li><strong>Api Key (2)</strong>: Unique key of your commerce, you can get this information in your PayU Module (<strong><em>Settings</em></strong> &gt; <strong><em>Technical configuration</em></strong> &gt; <strong><em>API Key</em></strong>).</li>
+</ul>
+<p><img src="../../../assets/Shopify/Shopify_05.png" alt="PrintScreen"></p>
+<ol start="5">
+<li>Finally, click <em><strong>Activate PayU Latam button</strong></em> at the bottom of the page.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_06.png" alt="PrintScreen"></p>
+<ol start="6">
+<li>Open the PayU module and go to the <em><strong>Configuration</strong></em> options (<strong><em>Settings</em></strong> &gt; <strong><em>Technical configuration</em></strong>). Then, disable the validation of unique reference for all states, to avoid issues at the moment of processing your payments.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_07.png" alt="PrintScreen"></p>
+<p>At this point, your customers can make payments through the PayU Checkout. They are able to pay using payment options including cash, credit cards and bank transfers, depending on the country where you are selling.</p>
+<h2 id="payment-flow-in-shopify">Payment flow in Shopify.</h2>
+<p>When you configure PayU as payment gateway in platform, your customer can pay using PayU platform as explained below.</p>
+<ol>
+<li>Your customer selects the product or service they want to buy and add it to their shopping cart.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_08.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>In the shopping cart, you customer proceeds to the check out.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_09.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Once your customer provides their information, they can click <em><strong>Complete order</strong></em> to be redirected to PayU Latam to complete the payment.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_10.png" alt="PrintScreen"></p>
+<ol start="4">
+<li>When they are in our payment gateway, they can see the sale description and the available payment methods according to the selected country.</li>
+</ol>
+<p><img src="../../../assets/Shopify/Shopify_11.png" alt="PrintScreen"></p>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified May 26, 2021: <a  href="../../../commit/069a5d873ab190ff222fc41377d609eb26eac5fa">VirtueMart article created along with other shopping cart pluggins (069a5d8)</a>

@@ -354,7 +354,7 @@ Some of the links above may appear in Spanish.
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../assets/ShoppingCartLogos/drupal.png&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;../../assets/plugins/commerce_payulatam_1.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;You need &lt;a href=&#34;https://www.drupal.org/project/commerce_kickstart&#34; target=&#34;_blank&#34;&gt;Drupal Commerce Kickstart 7.xx&lt;/a&gt;&lt;/td&gt;
        &lt;/tr&gt;
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../assets/ShoppingCartLogos/vm-logo-220.png&#34;&gt;&lt;/td&gt;
