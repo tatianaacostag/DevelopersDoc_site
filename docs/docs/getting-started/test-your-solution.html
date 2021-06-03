@@ -36,8 +36,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.175a71119f2ed68291bb16ad506b2e152fbd2b155835b044666fab8a8fb852a9.css" as="style">
-<link href="../../scss/main.min.175a71119f2ed68291bb16ad506b2e152fbd2b155835b044666fab8a8fb852a9.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.min.3e87e3fd124ba727d41639fb5529f1dc2ac9cfdec5010a688e5fdbeebe9513cb.css" as="style">
+<link href="../../scss/main.min.3e87e3fd124ba727d41639fb5529f1dc2ac9cfdec5010a688e5fdbeebe9513cb.css" rel="stylesheet" integrity="">
 <link rel="stylesheet" href="../../css/add-on.css">
 
 
@@ -117,7 +117,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.884a09a0e33016a7fc1b0dbb263917a448bb6c877fa914431980048500dcde29766adaa20d3696aa768dae436e25ac00e53c17a3eaa1d49fdc0a1f95b01652fc.json"
+  data-offline-search-index-json-src="../../offline-search-index.fbd71885c613fe4697772c216449fd95d13ea5cb762ea301af920dd2fc7c6764ad87e3808a15cbbf45c6b73727bdee30b150a5c0200a99da3faba54f83a26925.json"
   data-offline-search-base-href="../../"
 >
 
@@ -218,12 +218,6 @@
       
       
         <a id="/docs/getting-started/deploy-to-production.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-starteddeploy-to-productionhtml" href="../../docs/getting-started/deploy-to-production.html">Deploy to Production</a>
-      
-      
-      
-      
-      
-        <a id="/docs/getting-started/demo.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docsgetting-starteddemohtml" href="../../docs/getting-started/demo.html">Demo</a>
       
       
     </li>
@@ -475,7 +469,43 @@
       
       
       
-        <a id="/docs/integrations/api-integration/payments-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-apihtml" href="../../docs/integrations/api-integration/payments-api.html">Payments API</a>
+        <a id="/docs/integrations/api-integration/payments-api-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-api-argentinahtml" href="../../docs/integrations/api-integration/payments-api-argentina.html">Payments API - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/api-integration/payments-api-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-api-brazilhtml" href="../../docs/integrations/api-integration/payments-api-brazil.html">Payments API - Brazil</a>
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/api-integration/payments-api-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-api-chilehtml" href="../../docs/integrations/api-integration/payments-api-chile.html">Payments API - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/api-integration/payments-api-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-api-colombiahtml" href="../../docs/integrations/api-integration/payments-api-colombia.html">Payments API - Colombia</a>
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/api-integration/payments-api-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-api-mexicohtml" href="../../docs/integrations/api-integration/payments-api-mexico.html">Payments API - Mexico</a>
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/api-integration/payments-api-panama.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-api-panamahtml" href="../../docs/integrations/api-integration/payments-api-panama.html">Payments API - Panama</a>
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/api-integration/payments-api-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayments-api-peruhtml" href="../../docs/integrations/api-integration/payments-api-peru.html">Payments API - Peru</a>
       
       
       
@@ -580,6 +610,19 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#test-cards">Test cards</a></li>
+    <li><a href="#importing-the-collection">Importing the Collection</a>
+      <ul>
+        <li><a href="#setting-your-environment-variables">Setting your Environment Variables</a></li>
+        <li><a href="#importing-globals">Importing globals</a></li>
+        <li><a href="#running-the-requests-in-the-correct-order">Running the Requests in the Correct Order</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -672,15 +715,6 @@
     </tbody>
 </table>
 
-<!--| Merchant ID |    API Login    |           API Key          | accountId | Country   |
-|-------------|-----------------|----------------------------|-----------|-----------|
-| 508029      | pRRXKOl8ikMmt9u | 4Vj8eK4rloUd272L48hsrarnUA | 512322    | Argentina |
-|             |                 |                            | 512325    | Chile     |
-|             |                 |                            | 512321    | Colombia  |
-|             |                 |                            | 512324    | Mexico    |
-|             |                 |                            | 512326    | Panama    |
-|             |                 |                            | 512323    | Peru      |
-|             |                 |                            | 512327    | Brazil    |-->
 <p>The test environment does not replicate data from your production account.</p>
 <h2 id="test-cards">Test cards</h2>
 <p>You can use the following cards for testing:</p>
@@ -931,6 +965,44 @@
 </tbody>
 </table>
 </details>
+<h2 id="importing-the-collection">Importing the Collection</h2>
+<p>Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you. Note that we create a new environment each time you import the collection.</p>
+<p><div class="postman-run-button"
+data-postman-action="collection/import"
+data-postman-var-1="0912c6fdb7442f3a1baa"
+data-postman-param="env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52IiwidmFsdWUiOiJzYW5kYm94LmFwaSIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXBpX2tleSIsInZhbHVlIjoiNFZqOGVLNHJsb1VkMjcyTDQ4aHNyYXJuVUEiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFwaV9sb2dpbiIsInZhbHVlIjoicFJSWEtPbDhpa01tdDl1IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJtZXJjaGFudF9pZCIsInZhbHVlIjoiNTA4MDI5IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2NvdW50X2NvIiwidmFsdWUiOiI1MTIzMjEiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfbXgiLCJ2YWx1ZSI6IjUxMjMyNCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYWNjb3VudF9jbCIsInZhbHVlIjoiNTEyMzI1IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2NvdW50X3BlIiwidmFsdWUiOiI1MTIzMjMiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfcGEiLCJ2YWx1ZSI6IjUxMjMyNiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYWNjb3VudF9hciIsInZhbHVlIjoiNTEyMzIyIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2NvdW50X2JyIiwidmFsdWUiOiI1MTIzMjciLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfcGVfdXNkIiwidmFsdWUiOiI1MTQzOTMiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InBzZV90ZXN0X2JhbmsiLCJ2YWx1ZSI6IjEwMjIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InB1YmxpY19rZXkiLCJ2YWx1ZSI6IlBLYUM2SDRjRURKRDkxOW43MDVMNTQ0a1NVIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJkZXZpY2VGaW5nZXJwcmludCIsInZhbHVlIjoiZTI5NGZiNjJhOThjYjQ0YzI5ZGVlNDIxMmQ0Mjk4MjQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InJlY29uY2lsaWF0aW9uSWQiLCJ2YWx1ZSI6IjIwMTgxMjA0MTE1OTQ2LjA2OCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoicGF5ZXJFbWFpbEFkZHJlc3MiLCJ2YWx1ZSI6InRlc3RAcGF5dWxhdGFtLmNvbSIsImVuYWJsZWQiOnRydWV9XQ=="></div>
+<script type="text/javascript">
+  (function (p,o,s,t,m,a,n) {
+    !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+    !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+      (n = o.createElement("script")),
+      (n.id = s+t), (n.async = 1), (n.src = m), n
+    ));
+  }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+</script>
+<br></p>
+<p>After you run the collection, you need to set the environment variables and the globals.</p>
+<h3 id="setting-your-environment-variables">Setting your Environment Variables</h3>
+<p>Our collection has one environment named <code>PayU API Sandbox</code>. We recommend you invoke the collection’s API requests in a Sandbox environment only.</p>
+<p>If you want to change the PayU&rsquo;s testing accounts, configure the <code>api_key</code>, <code>api_login</code>, <code>merchant_id</code> and <code>account-[country]</code> variables. You can leave all the other variables unchanged.</p>
+<h3 id="importing-globals">Importing globals</h3>
+<p>Globals are the variables required to process transactions in our Payment gateway such as currency, transaction amount, confirmation and response pages and more.</p>
+<p>Import the globals for the collection to configure the values sent to the requests.</p>
+<ol>
+<li>
+<p>Download the globals file <a href="../../assets/globals/PayU%20Latam.postman_globals.json" download>here</a>.</p>
+</li>
+<li>
+<p>In the Postman collection, click <em><strong>Import</strong></em> next to your workspace name and locate the json file recently downloaded.</p>
+</li>
+<li>
+<p>When finish, click <em><strong>Import</strong></em>.</p>
+</li>
+</ol>
+<p>To change the amount of a transaction, update the value for the <code>tx_value_[Country]</code> according to the country you want to test.</p>
+<h3 id="running-the-requests-in-the-correct-order">Running the Requests in the Correct Order</h3>
+<p>Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next.</p>
+
 		<div class="section-index">
     <hr class="panel-line">
     <h4>Topics in this Section</h4>
@@ -950,6 +1022,16 @@
                     </h5>
                     <p>In this section, you find relevant data used during the integration process, such as the variable tables, languages, and currencies admitted in the PayU’s platform.</p>
                 </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
             
         
             

@@ -14,15 +14,514 @@
     
     
     <item>
-      <title>Docs: Payments API</title>
-      <link>/docs/integrations/api-integration/payments-api.html</link>
+      <title>Docs: Payments API - Argentina</title>
+      <link>/docs/integrations/api-integration/payments-api-argentina.html</link>
       <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
       
-      <guid>/docs/integrations/api-integration/payments-api.html</guid>
+      <guid>/docs/integrations/api-integration/payments-api-argentina.html</guid>
       <description>
         
         
+        &lt;p&gt;To integrate with Payments API Argentina, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-argentina.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-argentina.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-argentina.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-argentina.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;p&gt;This method lets you process the payments performed by your customers using credit cards. For Argentina, you can perform the transactions Authorization, Capture, and Authorization and Capture.&lt;/p&gt;
+&lt;h3 id=&#34;autorization&#34;&gt;Autorization&lt;/h3&gt;
+&lt;p&gt;Use this method to perform the authorization of a transaction. The following are the request and response examples for this transaction type.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;capture&#34;&gt;Capture&lt;/h3&gt;
+&lt;p&gt;Use this method to perform the capture of a transaction. The following are the request and response examples for this transaction type.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;authorization-and-capture&#34;&gt;Authorization and Capture&lt;/h3&gt;
+&lt;p&gt;Use this method to perform the autorization and capture in one step of a transaction. The following are the request and response examples for this transaction type.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Brazil</title>
+      <link>/docs/integrations/api-integration/payments-api-brazil.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-brazil.html</guid>
+      <description>
         
+        
+        &lt;p&gt;To integrate with Payments API Brazil, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-brazil.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-brazil.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Chile</title>
+      <link>/docs/integrations/api-integration/payments-api-chile.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-chile.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Chile, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Colombia</title>
+      <link>/docs/integrations/api-integration/payments-api-colombia.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-colombia.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Colombia, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse&#34;&gt;Bank List - PSE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/h2&gt;
+&lt;h2 id=&#34;bank-list---pse&#34;&gt;Bank List - PSE&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;PING&lt;/code&gt; method lets you verify the connection to our platform. The following are the request and response examples for this method.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Mexico</title>
+      <link>/docs/integrations/api-integration/payments-api-mexico.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-mexico.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Mexico, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-mexico.html#bank-list---pse&#34;&gt;Bank List - PSE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-mexico.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-mexico.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;PING&lt;/code&gt; method lets you verify the connection to our platform. The following are the request and response examples for this method.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Panama</title>
+      <link>/docs/integrations/api-integration/payments-api-panama.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-panama.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Panama, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-panama.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-panama.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-panama.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Peru</title>
+      <link>/docs/integrations/api-integration/payments-api-peru.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-peru.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Peru, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-peru.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-peru.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-peru.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-peru.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
       </description>
     </item>
     
@@ -55,7 +554,7 @@
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/queries-api.html#query-by-reference-id&#34;&gt;Query by Reference Id&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/queries-api.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;query-by-order-id&#34;&gt;Query by Order Id&lt;/h3&gt;
+&lt;h2 id=&#34;query-by-order-id&#34;&gt;Query by Order Id&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Order Id&lt;/em&gt; is a value generated by PayU to identify all the transactions generated for a payment request performed by your customer. You can use the &lt;code&gt;ORDER_DETAIL&lt;/code&gt; command to consult the status of an Order by its identifier.&lt;/p&gt;
 &lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
 &lt;p&gt;&lt;nav&gt;
@@ -721,7 +1220,7 @@
 
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;h3 id=&#34;query-by-transaction-id&#34;&gt;Query by Transaction Id&lt;/h3&gt;
+&lt;h2 id=&#34;query-by-transaction-id&#34;&gt;Query by Transaction Id&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Transaction Id&lt;/em&gt; is a value generated by PayU to identify one transaction generated for an order.
 You can use the &lt;code&gt;TRANSACTION_RESPONSE_DETAIL&lt;/code&gt; command to consult the information of a given transaction.&lt;/p&gt;
 &lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
@@ -864,7 +1363,7 @@ You can use the &lt;code&gt;TRANSACTION_RESPONSE_DETAIL&lt;/code&gt; command to 
 
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;h3 id=&#34;query-by-reference-id&#34;&gt;Query by Reference Id&lt;/h3&gt;
+&lt;h2 id=&#34;query-by-reference-id&#34;&gt;Query by Reference Id&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Reference Id&lt;/em&gt; is a value generated by your commerce to identify an order.
 You can use the &lt;code&gt;ORDER_DETAIL_BY_REFERENCE_CODE&lt;/code&gt; to consult the status of an Order by your own order identifier (reference).
 The following are the request and response examples for this method.&lt;/p&gt;
@@ -1581,7 +2080,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;h3 id=&#34;ping&#34;&gt;Ping&lt;/h3&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;PING&lt;/code&gt; method lets you verify the connection to our platform. The following are the request and response examples for this method.&lt;/p&gt;
 &lt;p&gt;&lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;

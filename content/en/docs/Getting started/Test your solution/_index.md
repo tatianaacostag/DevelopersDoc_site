@@ -11,16 +11,6 @@ If you want to perform tests through PayU, you need to use the following credent
 
 {{< testaccounts/accounts >}}
 
-<!--| Merchant ID |    API Login    |           API Key          | accountId | Country   |
-|-------------|-----------------|----------------------------|-----------|-----------|
-| 508029      | pRRXKOl8ikMmt9u | 4Vj8eK4rloUd272L48hsrarnUA | 512322    | Argentina |
-|             |                 |                            | 512325    | Chile     |
-|             |                 |                            | 512321    | Colombia  |
-|             |                 |                            | 512324    | Mexico    |
-|             |                 |                            | 512326    | Panama    |
-|             |                 |                            | 512323    | Peru      |
-|             |                 |                            | 512327    | Brazil    |-->
-
 The test environment does not replicate data from your production account.
 
 ## Test cards
@@ -111,3 +101,33 @@ You can use the following cards for testing:
 | **VISA Credit Card**    | 4907840000000005 - 4634010000000005  |
 | **VISA Debit Card**     | 4557880000000000                     |
 </details>
+
+## Importing the Collection
+
+Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you. Note that we create a new environment each time you import the collection.
+
+{{< postman/postman_flow_collection >}}
+<br>
+
+After you run the collection, you need to set the environment variables and the globals.
+
+### Setting your Environment Variables
+Our collection has one environment named `PayU API Sandbox`. We recommend you invoke the collection’s API requests in a Sandbox environment only.
+
+If you want to change the PayU's testing accounts, configure the `api_key`, `api_login`, `merchant_id` and `account-[country]` variables. You can leave all the other variables unchanged.
+
+### Importing globals
+Globals are the variables required to process transactions in our Payment gateway such as currency, transaction amount, confirmation and response pages and more.
+
+Import the globals for the collection to configure the values sent to the requests. 
+
+1. Download the globals file <a href="/assets/globals/PayU%20Latam.postman_globals.json" download>here</a>.
+
+2. In the Postman collection, click _**Import**_ next to your workspace name and locate the json file recently downloaded.
+
+3. When finish, click _**Import**_.
+
+To change the amount of a transaction, update the value for the `tx_value_[Country]` according to the country you want to test.
+
+### Running the Requests in the Correct Order
+Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next. 

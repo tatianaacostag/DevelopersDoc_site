@@ -38,9 +38,8 @@ Back in the transportation app example, once your service has finished, the apps
 &lt;p&gt;The available payment methods used to process transactions are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Credit cards.&lt;/li&gt;
-&lt;li&gt;Cash payments.&lt;/li&gt;
+&lt;li&gt;Cash or bank payments.&lt;/li&gt;
 &lt;li&gt;Bank transfers.&lt;/li&gt;
-&lt;li&gt;Bank payments.&lt;/li&gt;
 &lt;/ul&gt;
 
 

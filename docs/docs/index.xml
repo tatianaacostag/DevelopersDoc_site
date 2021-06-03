@@ -477,9 +477,8 @@ Back in the transportation app example, once your service has finished, the apps
 &lt;p&gt;The available payment methods used to process transactions are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Credit cards.&lt;/li&gt;
-&lt;li&gt;Cash payments.&lt;/li&gt;
+&lt;li&gt;Cash or bank payments.&lt;/li&gt;
 &lt;li&gt;Bank transfers.&lt;/li&gt;
-&lt;li&gt;Bank payments.&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -587,15 +586,514 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
     </item>
     
     <item>
-      <title>Docs: Payments API</title>
-      <link>/docs/integrations/api-integration/payments-api.html</link>
+      <title>Docs: Payments API - Argentina</title>
+      <link>/docs/integrations/api-integration/payments-api-argentina.html</link>
       <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
       
-      <guid>/docs/integrations/api-integration/payments-api.html</guid>
+      <guid>/docs/integrations/api-integration/payments-api-argentina.html</guid>
       <description>
         
         
+        &lt;p&gt;To integrate with Payments API Argentina, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-argentina.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-argentina.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-argentina.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-argentina.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;p&gt;This method lets you process the payments performed by your customers using credit cards. For Argentina, you can perform the transactions Authorization, Capture, and Authorization and Capture.&lt;/p&gt;
+&lt;h3 id=&#34;autorization&#34;&gt;Autorization&lt;/h3&gt;
+&lt;p&gt;Use this method to perform the authorization of a transaction. The following are the request and response examples for this transaction type.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;capture&#34;&gt;Capture&lt;/h3&gt;
+&lt;p&gt;Use this method to perform the capture of a transaction. The following are the request and response examples for this transaction type.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;authorization-and-capture&#34;&gt;Authorization and Capture&lt;/h3&gt;
+&lt;p&gt;Use this method to perform the autorization and capture in one step of a transaction. The following are the request and response examples for this transaction type.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Brazil</title>
+      <link>/docs/integrations/api-integration/payments-api-brazil.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-brazil.html</guid>
+      <description>
         
+        
+        &lt;p&gt;To integrate with Payments API Brazil, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-brazil.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-brazil.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Chile</title>
+      <link>/docs/integrations/api-integration/payments-api-chile.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-chile.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Chile, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-chile.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-chile.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Colombia</title>
+      <link>/docs/integrations/api-integration/payments-api-colombia.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-colombia.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Colombia, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse&#34;&gt;Bank List - PSE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-colombia.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-colombia.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/h2&gt;
+&lt;h2 id=&#34;bank-list---pse&#34;&gt;Bank List - PSE&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;PING&lt;/code&gt; method lets you verify the connection to our platform. The following are the request and response examples for this method.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Mexico</title>
+      <link>/docs/integrations/api-integration/payments-api-mexico.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-mexico.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Mexico, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-mexico.html#bank-list---pse&#34;&gt;Bank List - PSE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-mexico.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-mexico.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;PING&lt;/code&gt; method lets you verify the connection to our platform. The following are the request and response examples for this method.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Panama</title>
+      <link>/docs/integrations/api-integration/payments-api-panama.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-panama.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Panama, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-panama.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-panama.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-panama.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payments API - Peru</title>
+      <link>/docs/integrations/api-integration/payments-api-peru.html</link>
+      <pubDate>Mon, 03 May 2021 15:48:08 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payments-api-peru.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To integrate with Payments API Peru, target your request to the following URLs according to your environment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;URL&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Production: &lt;code&gt;https://api.payulatam.com/payments-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-peru.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-peru.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-peru.html#active-payment-methods-query&#34;&gt;Active payment methods query&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/payments-api-peru.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
+&lt;h2 id=&#34;active-payment-methods-query&#34;&gt;Active payment methods query&lt;/h2&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
+
       </description>
     </item>
     
@@ -815,7 +1313,7 @@ Then, locate the &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/em&gt; secti
 &lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/queries-api.html#query-by-reference-id&#34;&gt;Query by Reference Id&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../docs/integrations/api-integration/queries-api.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;query-by-order-id&#34;&gt;Query by Order Id&lt;/h3&gt;
+&lt;h2 id=&#34;query-by-order-id&#34;&gt;Query by Order Id&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Order Id&lt;/em&gt; is a value generated by PayU to identify all the transactions generated for a payment request performed by your customer. You can use the &lt;code&gt;ORDER_DETAIL&lt;/code&gt; command to consult the status of an Order by its identifier.&lt;/p&gt;
 &lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
 &lt;p&gt;&lt;nav&gt;
@@ -1481,7 +1979,7 @@ Then, locate the &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/em&gt; secti
 
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;h3 id=&#34;query-by-transaction-id&#34;&gt;Query by Transaction Id&lt;/h3&gt;
+&lt;h2 id=&#34;query-by-transaction-id&#34;&gt;Query by Transaction Id&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Transaction Id&lt;/em&gt; is a value generated by PayU to identify one transaction generated for an order.
 You can use the &lt;code&gt;TRANSACTION_RESPONSE_DETAIL&lt;/code&gt; command to consult the information of a given transaction.&lt;/p&gt;
 &lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
@@ -1624,7 +2122,7 @@ You can use the &lt;code&gt;TRANSACTION_RESPONSE_DETAIL&lt;/code&gt; command to 
 
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;h3 id=&#34;query-by-reference-id&#34;&gt;Query by Reference Id&lt;/h3&gt;
+&lt;h2 id=&#34;query-by-reference-id&#34;&gt;Query by Reference Id&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;Reference Id&lt;/em&gt; is a value generated by your commerce to identify an order.
 You can use the &lt;code&gt;ORDER_DETAIL_BY_REFERENCE_CODE&lt;/code&gt; to consult the status of an Order by your own order identifier (reference).
 The following are the request and response examples for this method.&lt;/p&gt;
@@ -2341,7 +2839,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
-&lt;h3 id=&#34;ping&#34;&gt;Ping&lt;/h3&gt;
+&lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;PING&lt;/code&gt; method lets you verify the connection to our platform. The following are the request and response examples for this method.&lt;/p&gt;
 &lt;p&gt;&lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
@@ -2464,7 +2962,452 @@ The following are the request and response examples for this method.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;The following list shows the payment methods supported per country and provides some considerations.&lt;/p&gt;
+        &lt;p&gt;The following section shows the payment methods supported per country and provides some considerations.&lt;/p&gt;
+&lt;h2 id=&#34;img-srcassetsargentinapng-width25px-argentina&#34;&gt;&lt;img src=&#34;../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; Argentina&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Payment Method&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/american.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;American Express&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/argencard.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Argencard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/cabal.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Cabal&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/cencosud.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Cencosud&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/cobro-express.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Cobro Express&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/diners.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Diners&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/naranja.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Naranja&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/pago-facil.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;PAGOFACIL&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/rapi-pago.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;RAPIPAGO&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/shopping.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Shopping&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Debit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;img-srcassetsbrasilpng-width25px-brazil&#34;&gt;&lt;img src=&#34;../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; Brazil&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Payment Method&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/american.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;American Express&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/boleto-bancario.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Boleto Bancario&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;Does not conciliate at weekends or holidays&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/diners.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Diners&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/elo.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Elo&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/hipercard.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Hipercard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;img-srcassetschilepng-width25px-chile&#34;&gt;&lt;img src=&#34;../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; Chile&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Payment Method&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/american.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;American Express&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/diners.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Diners&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Debit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/multicaja.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Klap (FKA Multicaja)&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/red-compra.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Redcompra&lt;/td&gt;
+&lt;td&gt;Bank Transfer&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Debit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;img-srcassetscolombiapng-width25px-colombia&#34;&gt;&lt;img src=&#34;../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; Colombia&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Payment Method&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/american.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;American Express&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/viabaloto.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Baloto&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/banco-de-bogota.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Banco de Bogotá&lt;/td&gt;
+&lt;td&gt;Bank Reference&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/bancolombia.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Bancolombia&lt;/td&gt;
+&lt;td&gt;Bank Reference&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/davivienda.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Davivienda&lt;/td&gt;
+&lt;td&gt;Bank Reference&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/diners.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Diners&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/efecty.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Efecty&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/pse_logo.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;PSE&lt;/td&gt;
+&lt;td&gt;Bank Transfer&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/su-red.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Su Red&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;Payment offices: PagaTodo,&lt;br&gt;Gana Gana, Gana, Acertemos,&lt;br&gt;Apuestas Cúcuta 75,&lt;br&gt;Su Chance, La Perla, Apuestas&lt;br&gt;Unidas, JER.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;img-srcassetsmexicopng-width25px-mexico&#34;&gt;&lt;img src=&#34;../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; Mexico&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Payment Method&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/american.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;American Express&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/bbva.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;BBVA Bancomer&lt;/td&gt;
+&lt;td&gt;Bank Reference&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/farmaciabenavides.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Farmacias Benavides&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/farmaciasahorro.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Farmacias del Ahorro&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Debit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/oxxo.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Oxxo&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/7eleven.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Seven Eleven&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/spei.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;SPEI&lt;/td&gt;
+&lt;td&gt;Bank Transfer&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Debit  Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;img-srcassetspanamapng-width25px-panama&#34;&gt;&lt;img src=&#34;../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; Panama&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Payment Method&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;img-srcassetsperupng-width25px-peru&#34;&gt;&lt;img src=&#34;../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; Peru&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Payment Method&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Comments&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/american.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;American Express&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/diners.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Diners&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Mastercard&lt;/td&gt;
+&lt;td&gt;Debit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/pago-efectivo.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;PAGOEFECTIVO&lt;/td&gt;
+&lt;td&gt;Cash&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Credit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;VISA&lt;/td&gt;
+&lt;td&gt;Debit Cards&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
       </description>
     </item>
@@ -3116,20 +4059,6 @@ If you don&amp;rsquo;t have any of the languages mentioned before, the states do
 &lt;p&gt;Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
 &lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
 &lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Demo</title>
-      <link>/docs/getting-started/demo.html</link>
-      <pubDate>Wed, 07 Apr 2021 08:31:14 -0500</pubDate>
-      
-      <guid>/docs/getting-started/demo.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;This example can be either using your account or the PayU&amp;rsquo;s test account.&lt;/p&gt;
 
       </description>
     </item>

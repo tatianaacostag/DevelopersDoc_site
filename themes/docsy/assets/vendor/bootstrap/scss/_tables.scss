@@ -175,7 +175,6 @@ details > table,
 
     &#{$infix} {
       @include media-breakpoint-down($breakpoint) {
-        display: block;
         width:80%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;

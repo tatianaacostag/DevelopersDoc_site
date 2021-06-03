@@ -1259,7 +1259,6 @@ details > table .thead-light th,
 @media (max-width: 575.98px) {
   details > table-sm,
   .table-responsive-sm {
-    display: block;
     width: 80%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1271,7 +1270,6 @@ details > table .thead-light th,
 @media (max-width: 767.98px) {
   details > table-md,
   .table-responsive-md {
-    display: block;
     width: 80%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1283,7 +1281,6 @@ details > table .thead-light th,
 @media (max-width: 991.98px) {
   details > table-lg,
   .table-responsive-lg {
-    display: block;
     width: 80%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1295,7 +1292,6 @@ details > table .thead-light th,
 @media (max-width: 1199.98px) {
   details > table-xl,
   .table-responsive-xl {
-    display: block;
     width: 80%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1308,7 +1304,6 @@ details > table,
 .table-responsive,
 .td-content > table,
 .td-box .row.section > table {
-  display: block;
   width: 80%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
