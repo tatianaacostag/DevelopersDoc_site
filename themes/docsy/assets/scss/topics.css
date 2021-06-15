@@ -129,6 +129,20 @@ a:hover.payu-btn-green {
     transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
 }
 
+div.paymentMethods + table,
+div.variables + table {
+    width: 100% !important;
+}
+
+div.paymentMethods + table td,
+div.variables + table td {
+    vertical-align: middle !important;
+}
+
+div.paymentMethods + table td {
+    width: 20%;
+}
+
 @media only screen and (min-width: 767px) {
     .getting-started {
         cursor: pointer;

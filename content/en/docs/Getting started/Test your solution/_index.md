@@ -2,7 +2,8 @@
 title: "Test Your Solution"
 linkTitle: "Test Your Solution"
 date: 2021-04-06T15:34:20-05:00
-description: PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.
+description: >
+  PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.
 weight: 40
 tags: ["parenttopic"]
 ---
@@ -129,5 +130,5 @@ Import the globals for the collection to configure the values sent to the reques
 
 To change the amount of a transaction, update the value for the `tx_value_[Country]` according to the country you want to test.
 
-### Running the Requests in the Correct Order
+## Running the Requests in the Correct Order
 Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next. 

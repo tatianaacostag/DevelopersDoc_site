@@ -7,98 +7,106 @@ Description: >
 weight: 30
 ---
 
-The following section shows the payment methods supported per country and provides some considerations.
+The following section shows the payment methods supported per country and provides some considerations. Refer to the `paymentMethod` column to know the value to be sent as Payment Method while using API or SDK integrations.
 
 ## <img src="/assets/Argentina.png" width="25px"/> Argentina
+<div class="paymentMethods"></div>
 
-|                                                   | Payment Method   | Type         | Comments                     |
-|---------------------------------------------------|------------------|--------------|------------------------------|
-| ![Logo](/assets/PaymentMethods/american.png)      | American Express | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/argencard.png)     | Argencard        | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/cabal.png)         | Cabal            | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/cencosud.png)      | Cencosud         | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/cobro-express.png) | Cobro Express    | Cash         |                              |
-| ![Logo](/assets/PaymentMethods/diners.png)        | Diners           | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard       | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/naranja.png)       | Naranja          | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/pago-facil.png)    | PAGOFACIL        | Cash         |                              |
-| ![Logo](/assets/PaymentMethods/rapi-pago.png)     | RAPIPAGO         | Cash         |                              |
-| ![Logo](/assets/PaymentMethods/shopping.png)      | Shopping         | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | Debit Cards  |                              |
+|                                                   | Payment Method   | paymentMethod | Type         | Comments             |
+|:-------------------------------------------------:|------------------|---------------|--------------|----------------------|
+| ![Logo](/assets/PaymentMethods/american.png)      | American Express | AMEX          | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/argencard.png)     | Argencard        | ARGENCARD     | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/cabal.png)         | Cabal            | CABAL         | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/cencosud.png)      | Cencosud         | CENCOSUD      | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/cobro-express.png) | Cobro Express    | COBRO_EXPRESS | Cash         |                      |
+| ![Logo](/assets/PaymentMethods/diners.png)        | Diners           | DINERS        | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard       | MASTERCARD    | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/naranja.png)       | Naranja          | NARANJA       | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/pago-facil.png)    | PAGOFACIL        | PAGOFACIL     | Cash         |                      |
+| ![Logo](/assets/PaymentMethods/rapi-pago.png)     | RAPIPAGO         | RAPIPAGO      | Cash         |                      |
+| ![Logo](/assets/PaymentMethods/shopping.png)      | Shopping         | SHOPPING      | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | VISA          | Credit Cards |                      |
+| ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | VISA_DEBIT    | Debit Cards  |                      |
 
 ## <img src="/assets/Brasil.png" width="25px"/> Brazil
+<div class="paymentMethods"></div>
 
-|                                                     | Payment Method   | Type         | Comments                     |
-|-----------------------------------------------------|------------------|--------------|------------------------------|
-| ![Logo](/assets/PaymentMethods/american.png)        | American Express | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario  | Cash         | Does not conciliate at weekends or holidays |
-| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/elo.png)             | Elo              | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/hipercard.png)       | Hipercard        | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | Credit Cards |                              |
+|                                                     | Payment Method   | paymentMethod   | Type         | Comments            |
+|:---------------------------------------------------:|------------------|-----------------|--------------|---------------------|
+| ![Logo](/assets/PaymentMethods/american.png)        | American Express | AMEX            | Credit Cards |                     |
+| ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario  | BOLETO_BANCARIO | Cash         | Does not conciliate at weekends or holidays |
+| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS          | Credit Cards |                     |
+| ![Logo](/assets/PaymentMethods/elo.png)             | Elo              | ELO             | Credit Cards |                     |
+| ![Logo](/assets/PaymentMethods/hipercard.png)       | Hipercard        | HIPERCARD       | Credit Cards |                     |
+| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD      | Credit Cards |                     |
+| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA            | Credit Cards |                     |
 
 ## <img src="/assets/Chile.png" width="25px"/> Chile
+<div class="paymentMethods"></div>
 
-|                                                   | Payment Method       | Type          | Comments                     |
-|---------------------------------------------------|----------------------|---------------|------------------------------|
-| ![Logo](/assets/PaymentMethods/american.png)      | American Express     | Credit Cards  |                              |
-| ![Logo](/assets/PaymentMethods/diners.png)        | Diners               | Credit Cards  |                              |
-| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard           | Credit Cards  |                              |
-| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard           | Debit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/multicaja.png)     | Klap (FKA Multicaja) | Cash          |                              |
-| ![Logo](/assets/PaymentMethods/red-compra.png)    | Redcompra            | Bank Transfer |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)          | VISA                 | Credit Cards  |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)          | VISA                 | Debit Cards   |                              |
+|                                                   | Payment Method       | paymentMethod    | Type          | Comments        |
+|:-------------------------------------------------:|----------------------|------------------|---------------|-----------------|
+| ![Logo](/assets/PaymentMethods/american.png)      | American Express     | AMEX             | Credit Cards  |                 |
+| ![Logo](/assets/PaymentMethods/diners.png)        | Diners               | DINERS           | Credit Cards  |                 |
+| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard           | MASTERCARD       | Credit Cards  |                 |
+| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard           | MASTERCARD_DEBIT | Debit Cards   |                 |
+| ![Logo](/assets/PaymentMethods/multicaja.png)     | Klap (FKA Multicaja) | MULTICAJA        | Cash          |                 |
+| ![Logo](/assets/PaymentMethods/red-compra.png)    | Redcompra            | TRANSBANK_DEBIT  | Bank Transfer |                 |
+| ![Logo](/assets/PaymentMethods/visa.png)          | VISA                 | VISA             | Credit Cards  |                 |
+| ![Logo](/assets/PaymentMethods/visa.png)          | VISA                 | VISA_DEBIT       | Debit Cards   |                 |
 
 ## <img src="/assets/Colombia.png" width="25px"/> Colombia
+<div class="paymentMethods"></div>
 
-|                                                     | Payment Method   | Type           | Comments                     |
-|-----------------------------------------------------|------------------|----------------|------------------------------|
-| ![Logo](/assets/PaymentMethods/american.png)        | American Express | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/viabaloto.png)       | Baloto           | Cash           |                              |
-| ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá  | Bank Reference |                              |
-| ![Logo](/assets/PaymentMethods/bancolombia.png)     | Bancolombia      | Bank Reference |                              |
-| ![Logo](/assets/PaymentMethods/davivienda.png)      | Davivienda       | Bank Reference |                              |
-| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/efecty.png)          | Efecty           | Cash           |                              |
-| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/pse_logo.png)        | PSE              | Bank Transfer  |                              |
-| ![Logo](/assets/PaymentMethods/su-red.png)          | Su Red           | Cash           | Payment offices: PagaTodo,<br>Gana Gana, Gana, Acertemos,<br>Apuestas Cúcuta 75,<br>Su Chance, La Perla, Apuestas<br>Unidas, JER. |
-| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | Credit Cards   |                              |
+|                                                     | Payment Method   | paymentMethod    | Type           | Comments         |
+|:---------------------------------------------------:|------------------|------------------|----------------|------------------|
+| ![Logo](/assets/PaymentMethods/american.png)        | American Express | AMEX             | Credit Cards   |                  |
+| ![Logo](/assets/PaymentMethods/viabaloto.png)       | Baloto           | BALOTO           | Cash           |                  |
+| ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá  | BANK_REFERENCED  | Bank Reference |                  |
+| ![Logo](/assets/PaymentMethods/bancolombia.png)     | Bancolombia      | BANK_REFERENCED  | Bank Reference |                  |
+| ![Logo](/assets/PaymentMethods/codensa.png)         | Codensa          | CODENSA          | Credit Cards   |                  |
+| ![Logo](/assets/PaymentMethods/davivienda.png)      | Davivienda       | BANK_REFERENCED  | Bank Reference |                  |
+| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS           | Credit Cards   |                  |
+| ![Logo](/assets/PaymentMethods/efecty.png)          | Efecty           | EFECTY           | Cash           |                  |
+| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD       | Credit Cards   |                  |
+| ![Logo](/assets/PaymentMethods/pse_logo.png)        | PSE              | PSE              | Bank Transfer  |                  |
+| ![Logo](/assets/PaymentMethods/su-red.png)          | Su Red           | OTHER_CASH       | Cash           | Payment offices: PagaTodo,<br>Gana Gana, Gana, Acertemos,<br>Apuestas Cúcuta 75,<br>Su Chance, La Perla, Apuestas<br>Unidas, JER. |
+| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA             | Credit Cards   |                  |
 
 ## <img src="/assets/Mexico.png" width="25px"/> Mexico
+<div class="paymentMethods"></div>
 
-|                                                       | Payment Method       | Type           | Comments                     |
-|-------------------------------------------------------|----------------------|----------------|------------------------------|
-| ![Logo](/assets/PaymentMethods/american.png)          | American Express     | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/bbva.png)              | BBVA Bancomer        | Bank Reference |                              |
-| ![Logo](/assets/PaymentMethods/farmaciabenavides.png) | Farmacias Benavides  | Cash           |                              |
-| ![Logo](/assets/PaymentMethods/farmaciasahorro.png)   | Farmacias del Ahorro | Cash           |                              |
-| ![Logo](/assets/PaymentMethods/master.png)            | Mastercard           | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/master.png)            | Mastercard           | Debit Cards    |                              |
-| ![Logo](/assets/PaymentMethods/oxxo.png)              | Oxxo                 | Cash           |                              |
-| ![Logo](/assets/PaymentMethods/7eleven.png)           | Seven Eleven         | Cash           |                              |
-| ![Logo](/assets/PaymentMethods/spei.png)              | SPEI                 | Bank Transfer  |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)              | VISA                 | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)              | VISA                 | Debit  Cards   |                              |
+|                                                       | Payment Method       | paymentMethod    | Type           | Comments   |
+|:-----------------------------------------------------:|----------------------|------------------|----------------|------------|
+| ![Logo](/assets/PaymentMethods/american.png)          | American Express     | AMEX             | Credit Cards   |            |
+| ![Logo](/assets/PaymentMethods/bbva.png)              | BBVA Bancomer        | BANK_REFERENCED  | Bank Reference |            |
+| ![Logo](/assets/PaymentMethods/farmaciabenavides.png) | Farmacias Benavides  | OTHERS_CASH_MX   | Cash           |            |
+| ![Logo](/assets/PaymentMethods/farmaciasahorro.png)   | Farmacias del Ahorro | OTHERS_CASH_MX   | Cash           |            |
+| ![Logo](/assets/PaymentMethods/master.png)            | Mastercard           | MASTERCARD       | Credit Cards   |            |
+| ![Logo](/assets/PaymentMethods/master.png)            | Mastercard           | MASTERCARD_DEBIT | Debit Cards    |            |
+| ![Logo](/assets/PaymentMethods/oxxo.png)              | Oxxo                 | OXXO             | Cash           |            |
+| ![Logo](/assets/PaymentMethods/7eleven.png)           | Seven Eleven         | SEVEN_ELEVEN     | Cash           |            |
+| ![Logo](/assets/PaymentMethods/spei.png)              | SPEI                 | SPEI             | Bank Transfer  |            |
+| ![Logo](/assets/PaymentMethods/visa.png)              | VISA                 | VISA             | Credit Cards   |            |
+| ![Logo](/assets/PaymentMethods/visa.png)              | VISA                 | VISA_DEBIT       | Debit Cards    |            |
 
 ## <img src="/assets/Panama.png" width="25px"/> Panama
+<div class="paymentMethods"></div>
 
-|                                                   | Payment Method   | Type         | Comments                     |
-|---------------------------------------------------|------------------|--------------|------------------------------|
-| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard       | Credit Cards |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | Credit Cards |                              |
+|                                                   | Payment Method   | paymentMethod | Type         | Comments                |
+|:-------------------------------------------------:|------------------|---------------|--------------|-------------------------|
+| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard       | MASTERCARD    | Credit Cards |                         |
+| ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | VISA          | Credit Cards |                         |
 
 ## <img src="/assets/Peru.png" width="25px"/> Peru
+<div class="paymentMethods"></div>
 
-|                                                     | Payment Method   | Type           | Comments                     |
-|-----------------------------------------------------|------------------|----------------|------------------------------|
-| ![Logo](/assets/PaymentMethods/american.png)        | American Express | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | Debit Cards    |                              |
-| ![Logo](/assets/PaymentMethods/pago-efectivo.png)   | PAGOEFECTIVO     | Cash           |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | Credit Cards   |                              |
-| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | Debit Cards    |                              |
+|                                                     | Payment Method   | paymentMethod    | Type         | Comments           |
+|:---------------------------------------------------:|------------------|------------------|--------------|--------------------|
+| ![Logo](/assets/PaymentMethods/american.png)        | American Express | AMEX             | Credit Cards |                    |
+| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS           | Credit Cards |                    |
+| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD       | Credit Cards |                    |
+| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD_DEBIT | Debit Cards  |                    |
+| ![Logo](/assets/PaymentMethods/pago-efectivo.png)   | PAGOEFECTIVO     | PAGOEFECTIVO     | Cash         |                    |
+| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA             | Credit Cards |                    |
+| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA_DEBIT       | Debit Cards  |                    |

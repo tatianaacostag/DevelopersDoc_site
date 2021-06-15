@@ -80,15 +80,4 @@ You can set the language you want to use in the request through the `Content-typ
 * It is important to validate the length and numbers of credit cards by franchise, together with the security codes.
 {{% /alert %}}
 
-## How to get variables for API integration.
-
-### API key and API Login
-
-
-### Authentication signature
-
-
-### _deviceSessionId_ variable
-
-
 ## Available features
