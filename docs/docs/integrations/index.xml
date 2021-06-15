@@ -189,10 +189,6 @@ Content-Length: length
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;how-to-get-variables-for-api-integration&#34;&gt;How to get variables for API integration.&lt;/h2&gt;
-&lt;h3 id=&#34;api-key-and-api-login&#34;&gt;API key and API Login&lt;/h3&gt;
-&lt;h3 id=&#34;authentication-signature&#34;&gt;Authentication signature&lt;/h3&gt;
-&lt;h3 id=&#34;_devicesessionid_-variable&#34;&gt;&lt;em&gt;deviceSessionId&lt;/em&gt; variable&lt;/h3&gt;
 &lt;h2 id=&#34;available-features&#34;&gt;Available features&lt;/h2&gt;
 
       </description>
