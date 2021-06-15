@@ -20,7 +20,7 @@ Payments API includes the following methods:
 
 * [Submit transaction with credit or debit card]({{< ref "Payments-API-Argentina.md#submit-transaction-with-credit-or-debit-card" >}})
 * [Submit transaction with cash]({{< ref "Payments-API-Argentina.md#submit-transaction-with-cash" >}})
-* [Active payment methods query]({{< ref "Payments-API-Argentina.md#active-payment-methods-query" >}})
+* [Available payment methods query]({{< ref "Payments-API-Argentina.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Argentina.md#ping" >}})
 
 {{% alert title="Note" color="info"%}}
@@ -147,17 +147,18 @@ This method lets you process the payments performed by your customers using cred
 #### Considerations
 * For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
 * Promotions feature is only available for **Authorization and Capture** transactions in one step.
-* Bay default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
+* For payments with credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization.md" >}}).
+* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.
 
 ### Authorization
-Use this method to perform the authorization of a transaction. The following are the request and response examples for this transaction type.
+Use this method to perform the authorization of a transaction. The following are the request and response bodys for this transaction type.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request body:
 ```JSON
 {
    "language": "es",
@@ -244,7 +245,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```JSON
 {
     "code": "SUCCESS",
@@ -277,7 +278,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request body:
 ```XML
 <request>
    <language>es</language>
@@ -370,7 +371,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -397,15 +398,15 @@ Response example:
 {{< /tabs >}}
 
 ### Capture
-Use this method to perform the capture of a transaction. The following are the request and response examples for this transaction type.
+Use this method to perform the capture of a transaction. The following are the request and response bodies for this transaction type.
 
-Only the parameters displayed in the request example are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
+Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request body:
 ```JSON
 {
    "language": "es",
@@ -426,7 +427,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```JSON
 {
     "code": "SUCCESS",
@@ -458,7 +459,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request body:
 ```XML
 <request>
    <language>es</language>
@@ -479,7 +480,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -497,13 +498,13 @@ Response example:
 {{< /tabs >}}
 
 ### Authorization and Capture
-Use this method to perform the authorization and capture in one step of a transaction. The following are the request and response examples for this transaction type.
+Use this method to perform the authorization and capture in one step of a transaction. The following are the request and response bodies for this transaction type.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request body:
 ```JSON
 {
    "language": "es",
@@ -590,7 +591,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```JSON
 {
     "code": "SUCCESS",
@@ -624,7 +625,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request body:
 ```XML
 <request>
    <language>es</language>
@@ -718,7 +719,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -878,14 +879,14 @@ The parameter `transactionResponse.extraParameters` has the following parameters
 * **URL_PAYMENT_RECEIPT_HTML**: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment. 
 * **URL_PAYMENT_RECEIPT_PDF**: payment receipt in PDF format.
 
-### Method invocation
-The following are the examples of the request and response of this payment method.
+### API call
+The following are the bodies of the request and response of this payment method.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request body:
 ```JSON
 {
    "language": "es",
@@ -961,7 +962,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```JSON
 {
     "code": "SUCCESS",
@@ -999,7 +1000,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request body:
 ```XML
 <request>
    <language>es</language>
@@ -1078,7 +1079,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1154,14 +1155,14 @@ This method returns a list of the payment methods available in all countries.
 
 </details>
 
-### Method invocation
-The following are the examples of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
+### API call
+The following are the bodies of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request body:
 ```JSON
 {
    "test": false,
@@ -1175,7 +1176,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1204,7 +1205,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request body:
 ```XML
 <request>
    <language>en</language>
@@ -1218,7 +1219,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -1274,14 +1275,14 @@ The ```PING``` method lets you verify the connection to our platform.
 | transactionResponse | transactionResponse | Max: 2048 | The response of the PING method if an error ocurred. |
 </details>
 
-### Method invocation
-The following are the examples of the request and response of this method.
+### Api call
+The following are the bodies of the request and response of this method.
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request body:
 ```JSON
 {
    "test": false,
@@ -1295,7 +1296,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1309,7 +1310,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request body:
 ```XML
 <request>
    <language>en</language>
@@ -1323,7 +1324,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response body:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>

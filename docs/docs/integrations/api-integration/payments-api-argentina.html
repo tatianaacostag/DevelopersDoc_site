@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
 <meta itemprop="dateModified" content="2021-06-15T11:45:39-05:00" />
-<meta itemprop="wordCount" content="4936">
+<meta itemprop="wordCount" content="4960">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Argentina"/>
 <meta name="twitter:description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1a3bb86fd43eb7db00c692a7a8dee666976f84bd3613de13bd49656fa8c8d50a720d92af03ef1f86a28d460f287ad6610e4e251a88c8902648b105bb352b0e86.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d11131ea0fad953009317d5a393189ae92819ec727dc10fff492189d1b5ccad72e892023bfca7172d89c6471bdff0fe65a697f32e48641e1cb14ab669a135ad0.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -632,19 +632,19 @@
     <li><a href="#submit-transaction-with-cash">Submit transaction with cash</a>
       <ul>
         <li><a href="#variables-for-request-and-response-1">Variables for request and response</a></li>
-        <li><a href="#method-invocation">Method invocation</a></li>
+        <li><a href="#api-call">API call</a></li>
       </ul>
     </li>
     <li><a href="#available-payment-methods-query">Available payment methods query</a>
       <ul>
         <li><a href="#variables-for-request-and-response-2">Variables for request and response</a></li>
-        <li><a href="#method-invocation-1">Method invocation</a></li>
+        <li><a href="#api-call-1">API call</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
         <li><a href="#variables-for-request-and-response-3">Variables for request and response</a></li>
-        <li><a href="#method-invocation-2">Method invocation</a></li>
+        <li><a href="#api-call-2">Api call</a></li>
       </ul>
     </li>
   </ul>
@@ -723,7 +723,7 @@
 <ul>
 <li><a href="../../../docs/integrations/api-integration/payments-api-argentina.html#submit-transaction-with-credit-or-debit-card">Submit transaction with credit or debit card</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-argentina.html#submit-transaction-with-cash">Submit transaction with cash</a></li>
-<li><a href="../../../docs/integrations/api-integration/payments-api-argentina.html#active-payment-methods-query">Active payment methods query</a></li>
+<li><a href="../../../docs/integrations/api-integration/payments-api-argentina.html#available-payment-methods-query">Available payment methods query</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-argentina.html#ping">Ping</a></li>
 </ul>
 
@@ -1319,11 +1319,12 @@
 <ul>
 <li>For payments with Promotions, send the parameters <code>INSTALLMENTS_NUMBER</code> and <code>PROMOTION_ID</code> with the number of installments selected and the Id of the promotion. Refer to <a href="../../../docs/services/promotions.html">Promotions API</a> for more information.</li>
 <li>Promotions feature is only available for <strong>Authorization and Capture</strong> transactions in one step.</li>
-<li>Bay default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
+<li>For payments with credit card tokens, include the parameter <code>transaction.creditCardTokenId</code> replacing the information of the credit card. For more information, refer to <a href="../../../docs/services/tokenization.html">Tokenization API</a>.</li>
+<li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
 <li>When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.</li>
 </ul>
 <h3 id="authorization">Authorization</h3>
-<p>Use this method to perform the authorization of a transaction. The following are the request and response examples for this transaction type.</p>
+<p>Use this method to perform the authorization of a transaction. The following are the request and response bodys for this transaction type.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1369,7 +1370,7 @@
 <div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1453,7 +1454,7 @@
    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
     <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1494,7 +1495,7 @@
 <div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1584,7 +1585,7 @@
    <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 <span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -1615,8 +1616,8 @@
 
 </div>
 <h3 id="capture">Capture</h3>
-<p>Use this method to perform the capture of a transaction. The following are the request and response examples for this transaction type.</p>
-<p>Only the parameters displayed in the request example are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</p>
+<p>Use this method to perform the capture of a transaction. The following are the request and response bodies for this transaction type.</p>
+<p>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1662,7 +1663,7 @@
 <div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1680,7 +1681,7 @@
    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
     <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1720,7 +1721,7 @@
 <div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1738,7 +1739,7 @@
    <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 <span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -1760,7 +1761,7 @@
 
 </div>
 <h3 id="authorization-and-capture">Authorization and Capture</h3>
-<p>Use this method to perform the authorization and capture in one step of a transaction. The following are the request and response examples for this transaction type.</p>
+<p>Use this method to perform the authorization and capture in one step of a transaction. The following are the request and response bodies for this transaction type.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1806,7 +1807,7 @@
 <div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1890,7 +1891,7 @@
    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
     <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1932,7 +1933,7 @@
 <div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2023,7 +2024,7 @@
 <span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2606,8 +2607,8 @@
 <li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment.</li>
 <li><strong>URL_PAYMENT_RECEIPT_PDF</strong>: payment receipt in PDF format.</li>
 </ul>
-<h3 id="method-invocation">Method invocation</h3>
-<p>The following are the examples of the request and response of this payment method.</p>
+<h3 id="api-call">API call</h3>
+<p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -2653,7 +2654,7 @@
 <div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2726,7 +2727,7 @@
    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
     <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2772,7 +2773,7 @@
 <div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2848,7 +2849,7 @@
    <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 <span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -3005,8 +3006,8 @@
 </tbody>
 </table>
 </details>
-<h3 id="method-invocation-1">Method invocation</h3>
-<p>The following are the examples of the request and response of this method. For the sake of the example, the request and response here show two payment methods.</p>
+<h3 id="api-call-1">API call</h3>
+<p>The following are the bodies of the request and response of this method. For the sake of the example, the request and response here show two payment methods.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -3052,7 +3053,7 @@
 <div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -3063,7 +3064,7 @@
    <span style="color:#000;font-weight:bold">}</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
     <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -3100,7 +3101,7 @@
 <div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -3111,7 +3112,7 @@
    <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 <span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentMethodsResponse&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;paymentMethods&gt;</span>
@@ -3229,8 +3230,8 @@
 </tbody>
 </table>
 </details>
-<h3 id="method-invocation-2">Method invocation</h3>
-<p>The following are the examples of the request and response of this method.</p>
+<h3 id="api-call-2">Api call</h3>
+<p>The following are the bodies of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -3276,7 +3277,7 @@
 <div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -3287,7 +3288,7 @@
    <span style="color:#000;font-weight:bold">}</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
     <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -3309,7 +3310,7 @@
 <div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
    <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>PING<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -3320,7 +3321,7 @@
    <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 <span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </code></pre></div><br>
-<p>Response example:</p>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
     <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 <span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
