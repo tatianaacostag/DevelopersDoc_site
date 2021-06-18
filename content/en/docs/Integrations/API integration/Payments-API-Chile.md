@@ -31,7 +31,7 @@ To confirm the status of a transaction, you can use one of the following options
 {{% /alert %}}
 
 ## Submit transaction with credit cards
-This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform the transaction **Authorization and Capture** in one step.
+This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Variables for request and response
 
@@ -148,7 +148,7 @@ This method lets you process the payments performed by your customers using cred
 #### Considerations
 * For payments with credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
-* Transactions with credit card (Authorization and Capture in one step) are only available for single i nstallment payments.
+* Transactions with credit card (One-step flows: Authorization and Capture) are only available for single installment payments.
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
 
 ### API call

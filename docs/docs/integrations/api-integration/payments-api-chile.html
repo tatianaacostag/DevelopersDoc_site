@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.80404fdb1b591c9eecfd0ac75203bc46e6fd256517c48ca9260f1232aedccf71bb1adcab89d96b53874eb37b1edb8027de0ed10fef3ef6187a19cd0684a45ccd.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f157e9cd6a1e724cdbd1f2ec607c366ce9a81c82a5349d8806c4e7bbfa3348b0b26463bc9ae48072b7672776b7605663aa03036eac737384beaccfad128b8ee3.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -743,7 +743,7 @@
 </div>
 
 <h2 id="submit-transaction-with-credit-cards">Submit transaction with credit cards</h2>
-<p>This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform the transaction <strong>Authorization and Capture</strong> in one step.</p>
+<p>This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../docs/services/payments.html#payment-flows">Payment flows</a>.</p>
 <h3 id="variables-for-request-and-response">Variables for request and response</h3>
 <details>
 <summary>Request</summary>
@@ -1323,7 +1323,7 @@
 <ul>
 <li>For payments with credit card tokens, include the parameter <code>transaction.creditCardTokenId</code> replacing the information of the credit card. For more information, refer to <a href="../../../docs/services/tokenization.html">Tokenization API</a>.</li>
 <li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
-<li>Transactions with credit card (Authorization and Capture in one step) are only available for single i nstallment payments.</li>
+<li>Transactions with credit card (One-step flows: Authorization and Capture) are only available for single installment payments.</li>
 <li>Transactions in CHILEAN PESOS with decimal amounts are not allowed.</li>
 </ul>
 <h3 id="api-call">API call</h3>

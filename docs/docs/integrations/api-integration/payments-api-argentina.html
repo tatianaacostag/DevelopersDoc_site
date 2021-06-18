@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
 <meta itemprop="dateModified" content="2021-06-16T17:52:33-05:00" />
-<meta itemprop="wordCount" content="4987">
+<meta itemprop="wordCount" content="5115">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Argentina"/>
 <meta name="twitter:description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.80404fdb1b591c9eecfd0ac75203bc46e6fd256517c48ca9260f1232aedccf71bb1adcab89d96b53874eb37b1edb8027de0ed10fef3ef6187a19cd0684a45ccd.json"
+  data-offline-search-index-json-src="../../../offline-search-index.f157e9cd6a1e724cdbd1f2ec607c366ce9a81c82a5349d8806c4e7bbfa3348b0b26463bc9ae48072b7672776b7605663aa03036eac737384beaccfad128b8ee3.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -625,7 +625,7 @@
         <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
         <li><a href="#authorization">Authorization</a></li>
         <li><a href="#capture">Capture</a></li>
-        <li><a href="#authorization-and-capture">Authorization and Capture</a></li>
+        <li><a href="#charge">Charge</a></li>
         <li><a href="#installments">Installments</a></li>
       </ul>
     </li>
@@ -739,7 +739,7 @@
 </div>
 
 <h2 id="submit-transaction-with-credit-or-debit-card">Submit transaction with credit or debit card</h2>
-<p>This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the transactions <strong>Authorization</strong>, <strong>Capture</strong>, and <strong>Authorization and Capture</strong>.</p>
+<p>This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the two-step flows (<strong>Authorization</strong>, <strong>Capture</strong>), and one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../docs/services/payments.html#payment-flows">Payment flows</a>.</p>
 <h3 id="variables-for-request-and-response">Variables for request and response</h3>
 <details>
 <summary>Request</summary>
@@ -1167,7 +1167,7 @@
 <td>transaction &gt; type</td>
 <td>Alphanumeric</td>
 <td>32</td>
-<td>Set this value according to the transaction you want: <code>AUTHORIZATION</code>, <code>CAPTURE</code>, or <code>AUTHORIZATION_AND_CAPTURE</code></td>
+<td>Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li><code>AUTHORIZATION</code></li><li><code>CAPTURE</code></li><li><code>AUTHORIZATION_AND_CAPTURE</code> for one-step flows.</li></ul></td>
 </tr>
 <tr>
 <td>transaction &gt; paymentMethod</td>
@@ -1318,13 +1318,13 @@
 <h4 id="considerations">Considerations</h4>
 <ul>
 <li>For payments with Promotions, send the parameters <code>INSTALLMENTS_NUMBER</code> and <code>PROMOTION_ID</code> with the number of installments selected and the Id of the promotion. Refer to <a href="../../../docs/services/promotions.html">Promotions API</a> for more information.</li>
-<li>Promotions feature is only available for <strong>Authorization and Capture</strong> transactions in one step.</li>
+<li>Promotions feature is only available for <a href="../../../docs/services/payments.html#payment-flows">one-step flows</a>.</li>
 <li>For payments with credit card tokens, include the parameter <code>transaction.creditCardTokenId</code> replacing the information of the credit card. For more information, refer to <a href="../../../docs/services/tokenization.html">Tokenization API</a>.</li>
 <li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
 <li>When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.</li>
 </ul>
 <h3 id="authorization">Authorization</h3>
-<p>Use this method to perform the authorization of a transaction. The following are the request and response bodys for this transaction type.</p>
+<p>Use this method to perform the <strong>Authorization</strong> step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you <a href="../../../docs/integrations/api-integration/payments-api-argentina.html#capture">capture</a> the funds.<br>The following are the request and response bodies for this transaction type.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1616,8 +1616,15 @@
 
 </div>
 <h3 id="capture">Capture</h3>
-<p>Use this method to perform the capture of a transaction. The following are the request and response bodies for this transaction type.</p>
-<p>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</p>
+<p>Use this method to perform the <strong>Capture</strong> step of a two-step flow. In this step, you capture the funds previously <a href="../../../docs/integrations/api-integration/payments-api-argentina.html#authorization">Authorized</a> to transfer them to your PayU account.</p>
+<h4 id="considerations-1">Considerations</h4>
+<p>Take into account the following considerations for capture.</p>
+<ul>
+<li>The maximum time to capture an approved transaction is 14 days. After this time, the transaction is auto voided.</li>
+<li>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</li>
+<li>You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter <code>transaction.order.additionalValues.TX_VALUE</code> with its value (as sent during the Authorization) and set <code>PARTIAL_CAPTURE</code> for <code>transaction.type</code>.</li>
+</ul>
+<p>The following are the request and response bodies for this transaction type.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1760,8 +1767,9 @@
 
 
 </div>
-<h3 id="authorization-and-capture">Authorization and Capture</h3>
-<p>Use this method to perform the authorization and capture in one step of a transaction. The following are the request and response bodies for this transaction type.</p>
+<h3 id="charge">Charge</h3>
+<p>Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:</p>
+<p>The following are the request and response bodies for this transaction type.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1953,7 +1961,7 @@
             <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>TX_VALUE<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;additionalValue&gt;</span>
-                  <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>100<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+                  <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>1000<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
                   <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>ARS<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;/additionalValue&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
@@ -2598,9 +2606,9 @@
 </tbody>
 </table>
 </details>
-<h4 id="considerations-1">Considerations</h4>
+<h4 id="considerations-2">Considerations</h4>
 <ul>
-<li>The parameter <code>transaction.expirationDate</code> is not mandatory. If you don&rsquo;t send this parameter, its default value for is 90 days after the current date at 12:00 pm.</li>
+<li>The parameter <code>transaction.expirationDate</code> is not mandatory. If you don&rsquo;t send this parameter, its default value for is 15 days after the current date.</li>
 <li>The parameter <code>transactionResponse.extraParameters</code> has the following parameters related to the transaction:
 <ul>
 <li><strong>REFERENCE</strong>: internal payment reference generated by PayU.</li>

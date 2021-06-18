@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments feature lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-03-25T14:28:20-05:00" />
 <meta itemprop="dateModified" content="2021-06-03T15:32:45-05:00" />
-<meta itemprop="wordCount" content="257">
+<meta itemprop="wordCount" content="337">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments"/>
 <meta name="twitter:description" content="Payments feature lets your shop process different transaction types with multiple payment methods.
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.80404fdb1b591c9eecfd0ac75203bc46e6fd256517c48ca9260f1232aedccf71bb1adcab89d96b53874eb37b1edb8027de0ed10fef3ef6187a19cd0684a45ccd.json"
+  data-offline-search-index-json-src="../../offline-search-index.f157e9cd6a1e724cdbd1f2ec607c366ce9a81c82a5349d8806c4e7bbfa3348b0b26463bc9ae48072b7672776b7605663aa03036eac737384beaccfad128b8ee3.json"
   data-offline-search-base-href="../../"
 >
 
@@ -619,7 +619,7 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#transaction-processing">Transaction processing</a>
+    <li><a href="#payment-flows">Payment flows</a>
       <ul>
         <li><a href="#payment-methods">Payment methods</a></li>
       </ul>
@@ -675,15 +675,25 @@
     <div class="lead">Payments feature lets your shop process different transaction types with multiple payment methods.</div>
 	       
 	<p>Regardless of the <a href="../../docs/integrations.html">integration type</a> you choose, PayU provides operations to process your transactions. The following section explains these methods.</p>
-<h2 id="transaction-processing">Transaction processing</h2>
-<p>PayU provides different operations to process your payments:</p>
+<h2 id="payment-flows">Payment flows</h2>
+<p>PayU can process the payments using two types of Payment flows: two-step and one-step.</p>
 <p><img src="../../assets/Payments/autorizacionycaptura-en.png" alt="Payments"></p>
 <ul>
-<li><em>Authorization</em>: this operation is used to verify if the credit card used to pay is active, has funds, etc. The transaction is not complete until a transaction capture is sent. </br>
+<li>
+<p>In the two-step flow, first you need to authorize and place a hold on the customer&rsquo;s funds. Then, complete the transaction to transfer the authorized funds to your PayU account. The steps in this flow are:</p>
+<ul>
+<li><em><strong>Authorization</strong></em>: this operation is used to verify if the card used to pay is active, has funds, etc. The transaction is not complete until a transaction capture is sent. </br>
 For Example, when you use a transportation app, after you request the service, the app sends an <em>Authorization</em> to reserve the amount of the trip and verify that your card is valid (active and with enough founds). Nevertheless, the charge is not performed in your card yet.</li>
-<li><em>Capture</em>: this operation terminates a previously authorized transaction, namely, at this point, the account makes a debit to the card.</br>
+<li><em><strong>Capture</strong></em>: this operation terminates a previously authorized transaction, namely, at this point, the account makes a debit to the card.</br>
 Back in the transportation app example, once your service has finished, the apps charges the total amount of your trip and terminates the transaction.</li>
-<li><em>Authorization and capture</em>: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.</li>
+</ul>
+</li>
+<li>
+<p>In the one-step flow, combines the <em><strong>Authorization</strong></em> and <em><strong>Capture</strong></em> steps into a single transaction. Funds are transferred from your customer&rsquo;s account to your PayU account when the payment has been authorized. The unique step in this flow are:</p>
+<ul>
+<li><em><strong>Charge (Authorization and capture)</strong></em>: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.</li>
+</ul>
+</li>
 </ul>
 <h3 id="payment-methods">Payment methods</h3>
 <p>The available payment methods used to process transactions are:</p>

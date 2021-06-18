@@ -30,7 +30,7 @@ To confirm the status of a transaction, you can use one of the following options
 {{% /alert %}}
 
 ## Submit transaction with credit or debit card
-This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the transactions **Authorization**, **Capture**, and **Authorization and Capture**.
+This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Variables for request and response
 
@@ -109,7 +109,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > contactPhone | Alphanumeric | Max: 20 | Buyer's phone number. |
 | transaction > payer > dniNumber | Alphanumeric | Max: 20 | Identification number of the buyer. |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "responde-codes-and-variables.html#document-types" >}}). |
-| transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want: `AUTHORIZATION`, `CAPTURE`, or `AUTHORIZATION_AND_CAPTURE` |
+| transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` for one-step flows.</li></ul> |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit or Debit card Payment Method. [See the available Payment Methods for Argentina]({{< ref "select-your-payment-method.html#img-srcassetsargentinapng-width25px-argentina" >}}). |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `AR` for Argentina. |
 | transaction > deviceSessionId | Alphanumeric | Max: 255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). |
@@ -146,13 +146,13 @@ This method lets you process the payments performed by your customers using cred
 
 #### Considerations
 * For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
-* Promotions feature is only available for **Authorization and Capture** transactions in one step.
+* Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
 * For payments with credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.
 
 ### Authorization
-Use this method to perform the authorization of a transaction. The following are the request and response bodys for this transaction type.
+Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-api-argentina.md#capture" >}}) the funds.<br>The following are the request and response bodies for this transaction type.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -398,9 +398,15 @@ Response body:
 {{< /tabs >}}
 
 ### Capture
-Use this method to perform the capture of a transaction. The following are the request and response bodies for this transaction type.
+Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-argentina.md#authorization" >}}) to transfer them to your PayU account.
 
-Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
+#### Considerations
+Take into account the following considerations for capture.
+* The maximum time to capture an approved transaction is 14 days. After this time, the transaction is auto voided.
+* Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
+* You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter `transaction.order.additionalValues.TX_VALUE` with its value (as sent during the Authorization) and set `PARTIAL_CAPTURE` for `transaction.type`.
+
+The following are the request and response bodies for this transaction type.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -497,8 +503,10 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Authorization and Capture
-Use this method to perform the authorization and capture in one step of a transaction. The following are the request and response bodies for this transaction type.
+### Charge
+Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
+
+The following are the request and response bodies for this transaction type.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -646,7 +654,7 @@ Request body:
             <entry>
                <string>TX_VALUE</string>
                <additionalValue>
-                  <value>100</value>
+                  <value>1000</value>
                   <currency>ARS</currency>
                </additionalValue>
             </entry>
@@ -872,7 +880,7 @@ This method lets you process the payments in cash of your customers. To integrat
 </details>
 
 #### Considerations
-* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is 90 days after the current date at 12:00 pm.
+* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is 15 days after the current date.
 * The parameter `transactionResponse.extraParameters` has the following parameters related to the transaction:
    - **REFERENCE**: internal payment reference generated by PayU.
    - **EXPIRATION_DATE**: maximum term for the payer to perform the payment.
