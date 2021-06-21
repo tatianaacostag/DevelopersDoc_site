@@ -299,7 +299,7 @@ Request body:
             <entry>
                <string>TX_VALUE</string>
                <additionalValue>
-                  <value>100</value>
+                  <value>1000</value>
                   <currency>ARS</currency>
                </additionalValue>
             </entry>

@@ -849,9 +849,10 @@ This method lets you process the payments in cash of your customers. To integrat
 
 #### Considerations
 * The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.
+* The payment is reflected in the next business day.
 * The parameter `transactionResponse.extraParameters` has the following parameters related to the transaction:
    - **URL_PAYMENT_RECEIPT_HTML**: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment. 
-   - **URL_BOLETO_BANCARIO**: .
+   - **URL_BOLETO_BANCARIO**: payment receipt in printable format.
    - **EXPIRATION_DATE**: maximum term for the payer to perform the payment.
    - **BAR_CODE**: barcode which lets the payer perform the payment. 
 
@@ -925,7 +926,32 @@ Request body:
 
 Response body:
 ```JSON
-
+{
+  "code": "SUCCESS",
+  "error": null,
+  "transactionResponse": {
+    "orderId": 43626780,
+    "transactionId": "63091676-673d-46bf-a283-54e686ba0238",
+    "state": "PENDING",
+    "paymentNetworkResponseCode": null,
+    "paymentNetworkResponseErrorMessage": null,
+    "trazabilityCode": null,
+    "authorizationCode": null,
+    "pendingReason": "AWAITING_NOTIFICATION",
+    "responseCode": "PENDING_TRANSACTION_CONFIRMATION",
+    "errorCode": null,
+    "responseMessage": null,
+    "transactionDate": null,
+    "transactionTime": null,
+    "operationDate": null,
+    "extraParameters": {
+      "URL_PAYMENT_RECEIPT_HTML": "https://gateway.payulatam.com/ppp-web-gateway/bl.zul?transactionId=63091676-673d-46bf-a283-54e686ba0238&orderId=43626780&signature=647b061ddef2a25fd19cb362860e1d21ef59e16a",
+      "EXPIRATION_DATE": 1399507200000,
+      "URL_BOLETO_BANCARIO": "https://gateway.payulatam.com/ppp-web-gateway/bl.zul?transactionId=63091676-673d-46bf-a283-54e686ba0238&orderId=43626780&signature=647b061ddef2a25fd19cb362860e1d21ef59e16a",
+      "BAR_CODE": "34191.75389 38894.912930 81898.480009 9 60560000010000"
+    }
+  }
+}
 ```
 
 {{< /tab >}}
@@ -999,7 +1025,34 @@ Request body:
 
 Response body:
 ```XML
-
+<paymentResponse>
+   <code>SUCCESS</code>
+   <transactionResponse>
+      <orderId>43625300</orderId>
+      <transactionId>89ff03a7-9f86-4193-a25d-94b758c135bb</transactionId>
+      <state>PENDING</state>
+      <pendingReason>AWAITING_NOTIFICATION</pendingReason>
+      <responseCode>PENDING_TRANSACTION_CONFIRMATION</responseCode>
+      <extraParameters>
+         <entry>
+            <string>URL_PAYMENT_RECEIPT_HTML</string>
+            <string>https://gateway.payulatam.com/ppp-web-gateway/bl.zul?transactionId=89ff03a7-9f86-4193-a25d-94b758c135bb&orderId=43625300&signature=e9e89a2cd8d9d2d79d637eac84debae9012584de</string>
+         </entry>
+         <entry>
+            <string>EXPIRATION_DATE</string>
+            <date>2014-05-08T00:00:00</date>
+         </entry>
+         <entry>
+            <string>URL_BOLETO_BANCARIO</string>
+            <string>https://gateway.payulatam.com/ppp-web-gateway/bl.zul?transactionId=89ff03a7-9f86-4193-a25d-94b758c135bb&orderId=43625300&signature=e9e89a2cd8d9d2d79d637eac84debae9012584de</string>
+         </entry>
+         <entry>
+            <string>BAR_CODE</string>
+            <string>34191.75389 38894.752930 81898.480009 3 60570000010000</string>
+         </entry>
+      </extraParameters>
+   </transactionResponse>
+</paymentResponse>
 ```
 {{< /tab >}}
 {{< /tabs >}}

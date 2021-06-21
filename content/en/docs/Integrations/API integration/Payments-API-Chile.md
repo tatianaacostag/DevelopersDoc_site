@@ -18,7 +18,7 @@ To integrate with Payments API Chile, target your request to the following URLs 
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transaction with credit card]({{< ref "Payments-API-Chile.md#submit-transaction-with-credit-cards" >}})
+* [Submit transaction with credit or debit cards]({{< ref "Payments-API-Chile.md#submit-transaction-with-credit-or-debit-cards" >}})
 * [Submit transaction with cash]({{< ref "Payments-API-Chile.md#submit-transaction-with-cash" >}})
 * [Submit transaction with bank transfer]({{< ref "Payments-API-Chile.md#submit-transaction-with-bank-transfer" >}})
 * [Active payment methods query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
@@ -30,7 +30,7 @@ To confirm the status of a transaction, you can use one of the following options
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit cards
+## Submit transaction with credit or debit cards
 This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Variables for request and response
