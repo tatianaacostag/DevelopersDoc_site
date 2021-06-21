@@ -436,6 +436,28 @@ Request body:
 
 Response body:
 ```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 1400443382,
+        "transactionId": "e82d47b3-72cf-42f0-ae30-3eeb42575cc7",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "00",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "10140044338210c",
+        "authorizationCode": "APPROVED",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": null,
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1624279912864,
+        "referenceQuestionnaire": null,
+        "additionalInfo": null
+    }
+}
 
 ```
 
@@ -712,7 +734,26 @@ Request body:
 
 Response body:
 ```XML
-
+<paymentResponse>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>1400443759</orderId>
+        <transactionId>d7af220a-d427-486f-b35d-c363e12430e2</transactionId>
+        <state>APPROVED</state>
+        <paymentNetworkResponseCode>000</paymentNetworkResponseCode>
+        <trazabilityCode>77821</trazabilityCode>
+        <authorizationCode>170921</authorizationCode>
+        <responseCode>APPROVED</responseCode>
+        <responseMessage>Aprobado y completado con exito</responseMessage>
+        <operationDate>2021-06-21T10:49:30</operationDate>
+        <extraParameters>
+            <entry>
+                <string>BANK_REFERENCED_CODE</string>
+                <string>CREDIT</string>
+            </entry>
+        </extraParameters>
+    </transactionResponse>
+</paymentResponse>
 ```
 {{< /tab >}}
 {{< /tabs >}}
