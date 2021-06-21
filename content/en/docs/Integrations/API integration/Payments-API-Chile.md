@@ -110,7 +110,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > contactPhone | Alphanumeric | Max: 20 | Buyer's phone number. |
 | transaction > payer > dniNumber | Alphanumeric | Max: 20 | Identification number of the buyer. |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "responde-codes-and-variables.html#document-types" >}}). |
-| transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want: `AUTHORIZATION`, `CAPTURE`, or `AUTHORIZATION_AND_CAPTURE` |
+| transaction > type | Alphanumeric | 32 | Set this value according to the transaction. For Chile, set `AUTHORIZATION_AND_CAPTURE` |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit or Debit card Payment Method. [See the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#img-srcassetschilepng-width25px-chile" >}}). |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CL` for Chile. |
 | transaction > deviceSessionId | Alphanumeric | Max: 255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). |

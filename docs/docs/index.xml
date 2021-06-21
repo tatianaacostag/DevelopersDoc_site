@@ -6561,7 +6561,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Set this value according to the transaction you want: &lt;code&gt;AUTHORIZATION&lt;/code&gt;, &lt;code&gt;CAPTURE&lt;/code&gt;, or &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Set this value according to the transaction. For Chile, set &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
