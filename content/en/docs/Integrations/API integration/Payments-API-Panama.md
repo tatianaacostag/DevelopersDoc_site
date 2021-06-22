@@ -434,7 +434,7 @@ This method returns a list of the payment methods available in all countries.
 ### API call
 The following are the examples of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -554,7 +554,7 @@ The ```PING``` method lets you verify the connection to our platform.
 ### API call
 The following are the examples of the request and response of this method.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 

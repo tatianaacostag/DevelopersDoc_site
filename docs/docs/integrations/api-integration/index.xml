@@ -11390,7 +11390,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab41&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab21&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -11402,7 +11402,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab42&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab22&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -11411,7 +11411,7 @@ Two-step flows are only supported for Mastercard and Visa.
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;4&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;2&#34;&gt;
 
 
 
@@ -11420,7 +11420,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab41&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab21&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -11468,7 +11468,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab42&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab22&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -11621,7 +11621,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab31&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -11633,7 +11633,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab32&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -11642,7 +11642,7 @@ Two-step flows are only supported for Mastercard and Visa.
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;3&#34;&gt;
 
 
 
@@ -11651,7 +11651,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab31&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -11684,7 +11684,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab32&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
