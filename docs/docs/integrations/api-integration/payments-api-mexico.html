@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments API Mexico lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
 <meta itemprop="dateModified" content="2021-06-03T15:32:45-05:00" />
-<meta itemprop="wordCount" content="94">
+<meta itemprop="wordCount" content="2697">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Mexico"/>
 <meta name="twitter:description" content="Payments API Mexico lets your shop process different transaction types with multiple payment methods.
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6fbf6f95bbe2c9ca344364275a3a341383d814fcdcbdf51108c9ce0b397b6b62f9ef22413a23be0a7a12ce5d33484e998a25728cbee94e64efb1cc8541871189.json"
+  data-offline-search-index-json-src="../../../offline-search-index.1e09b881138ae1ee23a15a43d10f657cf438ddecd6e77b83047f5774c5de16aeb2a08cb3b50ee04fb005d55e1a012669eabb6494505f6b4d6ace3864610ee790.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -620,11 +620,28 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#available-methods">Available methods</a></li>
-    <li><a href="#submit-transaction-with-credit-cards">Submit transaction with credit cards</a></li>
+    <li><a href="#submit-transaction-with-credit-or-debit-card">Submit transaction with credit or debit card</a>
+      <ul>
+        <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
+        <li><a href="#authorization">Authorization</a></li>
+        <li><a href="#capture">Capture</a></li>
+        <li><a href="#charge">Charge</a></li>
+      </ul>
+    </li>
     <li><a href="#submit-transaction-with-cash">Submit transaction with cash</a></li>
     <li><a href="#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a></li>
-    <li><a href="#active-payment-methods-query">Active payment methods query</a></li>
-    <li><a href="#ping">Ping</a></li>
+    <li><a href="#available-payment-methods-query">Available payment methods query</a>
+      <ul>
+        <li><a href="#variables-for-request-and-response-1">Variables for request and response</a></li>
+        <li><a href="#api-call">API call</a></li>
+      </ul>
+    </li>
+    <li><a href="#ping">Ping</a>
+      <ul>
+        <li><a href="#variables-for-request-and-response-2">Variables for request and response</a></li>
+        <li><a href="#api-call-1">Api call</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -699,19 +716,1432 @@
 <h2 id="available-methods">Available methods</h2>
 <p>Payments API includes the following methods:</p>
 <ul>
-<li><a href="../../../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-credit-cards">Submit transaction with credit card</a></li>
+<li><a href="../../../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-credit-or-debit-card">Submit transaction with credit or debit cards</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-cash">Submit transaction with cash</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a></li>
-<li><a href="../../../docs/integrations/api-integration/payments-api-mexico.html#bank-list---pse">Bank List - PSE</a></li>
-<li><a href="../../../docs/integrations/api-integration/payments-api-mexico.html#active-payment-methods-query">Active payment methods query</a></li>
+<li><a href="../../../docs/integrations/api-integration/payments-api-mexico.html#available-payment-methods-query">Available payment methods query</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-mexico.html#ping">Ping</a></li>
 </ul>
-<h2 id="submit-transaction-with-credit-cards">Submit transaction with credit cards</h2>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+<p>To confirm the status of a transaction, you can use one of the following options:</p>
+<ul>
+<li>Navigate to the the URL set in the <code>transaction.notifyUrl</code> variable or the <em><strong>Confirmation URL</strong></em> option located in the PayU Module in <em><strong>Settings</strong></em> &gt; <em><strong>Technical configuration</strong></em>.</li>
+<li>Use the <a href="../../../docs/services/queries.html">Queries API or SDK</a>.</li>
+</ul>
+
+</div>
+
+<h2 id="submit-transaction-with-credit-or-debit-card">Submit transaction with credit or debit card</h2>
+<p>This method lets you process the payments performed by your customers using credit or debit cards. For Mexico, you can perform the two-step flows (<strong>Authorization</strong>, <strong>Capture</strong>), and one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../docs/services/payments.html#payment-flows">Payment flows</a>.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+Two-step flows are only supported for Mastercard and Visa.
+</div>
+
+<h3 id="variables-for-request-and-response">Variables for request and response</h3>
+<details>
+<summary>Request</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Language used in the request, this language is used to display the error messages generated. <a href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages">See supported languages</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Set <code>SUBMIT_TRANSACTION</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>test (JSON)<hr>isTest (XML)</td>
+<td>Boolean</td>
+<td></td>
+<td>Set <code>true</code> if the request is in test mode. Otherwise, set <code>false</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant</td>
+<td></td>
+<td></td>
+<td>This object has the authentication data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiLogin</td>
+<td>Alphanumeric</td>
+<td>Min:12 Max:32</td>
+<td>User or login provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiKey</td>
+<td>Alphanumeric</td>
+<td>Min:6 Max:32</td>
+<td>Password provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction</td>
+<td></td>
+<td></td>
+<td>This object has the transaction data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order</td>
+<td></td>
+<td></td>
+<td>This object has the order data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; accountId</td>
+<td>Number</td>
+<td></td>
+<td>Identifier of your account.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; referenceCode</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:255</td>
+<td>Represents the identifier of the order in your system.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; description</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:255</td>
+<td>Description of the order.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; language</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Language used in emails sent to the buyer and the seller.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; notifyUrl</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>Confirmation URL of the order.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; partnerId</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Partner ID in PayU.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; signature</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>The signature associated to the form. For more information refer <a href="../../../docs/integrations.html#authentication-signature">Authentication signature</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress</td>
+<td></td>
+<td></td>
+<td>Shipping address.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; street1</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Address Line 1.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; street2</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Address Line 2.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; city</td>
+<td>Alphanumeric</td>
+<td>Max:50</td>
+<td>Address city.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:40</td>
+<td>Address State.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Address country.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; postalCode</td>
+<td>Alphanumeric</td>
+<td>Max:8</td>
+<td>Address Zip code.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; phone</td>
+<td>Alphanumeric</td>
+<td>Max:11</td>
+<td>Phone number associated to the address.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer</td>
+<td></td>
+<td></td>
+<td>Buyer information.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; merchantBuyerId</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Buyer ID in your system.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; fullName</td>
+<td>Alphanumeric</td>
+<td>Max:150</td>
+<td>Full name of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; emailAddress</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>E-mail of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; contactPhone</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Phone number of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; dniNumber</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Identification number of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Shipping address of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; street1</td>
+<td>Alphanumeric</td>
+<td>Max:150</td>
+<td>Buyer&rsquo;s shipping address Line 1.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; city</td>
+<td>Alphanumeric</td>
+<td>Max:50</td>
+<td>Buyer&rsquo;s shipping address city.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:40</td>
+<td>Buyer&rsquo;s shipping address state.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Buyer&rsquo;s shipping address country in format ISO 3166 alpha-2.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; postalCode</td>
+<td>Number</td>
+<td>Max:20</td>
+<td>Buyer&rsquo;s shipping address zip code.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; phone</td>
+<td>Number</td>
+<td>Max:20</td>
+<td>Buyer&rsquo;s shipping address phone number.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt;</td>
+<td></td>
+<td>64</td>
+<td>Amount of the order or its associated values.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE</td>
+<td>Alphanumeric</td>
+<td>64</td>
+<td>Amount of the transaction.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
+<td>Number</td>
+<td>19, 2</td>
+<td>Specifies the amount of the transaction, this value may have two decimal digits (Ex. <code>10000.00</code> or <code>10000</code>).</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; currency</td>
+<td>Alphanumeric</td>
+<td>3</td>
+<td>ISO code of the currency. <a href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies">See accepted currencies</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCardTokenId</td>
+<td></td>
+<td></td>
+<td>Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to <a href="../../../docs/services/tokenization.html">Tokenization API</a></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard</td>
+<td></td>
+<td></td>
+<td>Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; number</td>
+<td>Alphanumeric</td>
+<td>Min:13 Max:20</td>
+<td>Credit card number.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; securityCode</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:4</td>
+<td>Credit card security code (CVC2, CVV2, CID).</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; expirationDate</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>Credit card expiration date. Format <code>YYYY/MM</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; name</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:255</td>
+<td>Holder&rsquo;s name displayed in the credit card.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; processWithoutCvv2</td>
+<td>Boolean</td>
+<td>Max:255</td>
+<td>Allows you to process transactions without including the credit card security code. Your commerce requires PayU&rsquo;s authorization before using this feature.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; debitCard</td>
+<td></td>
+<td></td>
+<td>Debit card information. This object and its parameters are mandatory when the payment is performed using debit card.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; debitCard &gt; number</td>
+<td>Alphanumeric</td>
+<td>Min:13 Max:20</td>
+<td>Debit card number.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; debitCard &gt; securityCode</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:4</td>
+<td>Debit card security code (CVC2, CVV2, CID).</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; debitCard &gt; expirationDate</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>Debit card expiration date. Format <code>YYYY/MM</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; debitCard &gt; name</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:255</td>
+<td>Holder&rsquo;s name displayed in the debit card.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer</td>
+<td></td>
+<td></td>
+<td>Payer information. Due to Tax regulations, it is mandatory to send the parameters <code>payer.billingAddress.state</code> and <code>payer.dnitype</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; emailAddress</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Payer e-mail address.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; merchantPayerId</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Identifier of the payer in your system.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; fullName</td>
+<td>Alphanumeric</td>
+<td>Max:150</td>
+<td>Name of the payer which must meet the name sent in the parameter <code>creditCard.name</code> for credit card payments.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress</td>
+<td></td>
+<td></td>
+<td>Billing address.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; street1</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Billing Address Line 1.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; street2</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Billing Address Line 2.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; city</td>
+<td>Alphanumeric</td>
+<td>Max:50</td>
+<td>Billing address city.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:40</td>
+<td>Billing address state.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Billing address country in format ISO 3166 Alpha-2.</td>
+<td></td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; postalCode</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Billing address zip code.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; phone</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Billing address phone number.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; birthdate</td>
+<td>Alphanumeric</td>
+<td>Max:10</td>
+<td>Buyer&rsquo;s date of birth.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; contactPhone</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Buyer&rsquo;s phone number.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; dniNumber</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Identification number of the buyer.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; dniType</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Identification type of the buyer. <a href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types">See Document types</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; type</td>
+<td>Alphanumeric</td>
+<td>32</td>
+<td>Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li><code>AUTHORIZATION</code></li><li><code>CAPTURE</code></li><li><code>AUTHORIZATION_AND_CAPTURE</code> for one-step flows.</li></ul></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; paymentMethod</td>
+<td>Alphanumeric</td>
+<td>32</td>
+<td>Select a valid Credit or Debit card Payment Method. <a href="../../../docs/getting-started/select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico">See the available Payment Methods for Mexico</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; paymentCountry</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Set <code>MX</code> for Mexico.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; deviceSessionId</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Session identifier of the device where the customer performs the transaction. For mor information, refer to <a href="../../../docs/integrations.html#_devicesessionid_-variable">this topic</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; ipAddress</td>
+<td>Alphanumeric</td>
+<td>Max:39</td>
+<td>IP address of the device where the customer performs the transaction.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; cookie</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Cookie stored by the device where the customer performs the transaction.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; userAgent</td>
+<td>Alphanumeric</td>
+<td>Max:1024</td>
+<td>The User agent of the browser where the customer performs the transaction.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; extraParameters</td>
+<td></td>
+<td></td>
+<td>Additional parameters or data associated with the request. The maximum size of each <em>extraParameters</em> name is 64 characters.<br>In JSON, the <em>extraParameters</em> parameter follows this structure: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;INSTALLMENTS_NUMBER&quot;: 1</code><br><code>}</code><br><br>In XML, the <em>extraParameters</em> parameter follows this structure: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;INSTALLMENTS_NUMBER&lt;/string&gt;</code><br>  <code>&lt;string&gt;1&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; monthsWithoutInterest &gt; months</td>
+<td>Number</td>
+<td>Max:2</td>
+<td>Number of interest-free months for the purchase. The available values are 3, 6, 9, or 12.<br>This parameter is mandatory when you want to use <a href="../../../docs/services/promotions.html">Interest-free months (Meses Sin Intereses - MSI) feature</a>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; monthsWithoutInterest &gt; bank</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Issuing bank of the credit card used to pay the purchase using interest-free months.<br>This parameter is mandatory when you want to use <a href="../../../docs/services/promotions.html">Interest-free months (Meses Sin Intereses - MSI) feature</a>.</td>
+<td style="text-align:center">No</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>The response code of the transaction. Possible values are <code>ERROR</code> and <code>SUCCESS</code>.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>The error message associated when the response code is <code>ERROR</code>.</td>
+</tr>
+<tr>
+<td>transactionResponse</td>
+<td></td>
+<td></td>
+<td>The response data.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; orderId</td>
+<td>Number</td>
+<td></td>
+<td>The generated or existing order Id in PayU.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; transactionId</td>
+<td>Alphanumeric</td>
+<td>36</td>
+<td>The identifier of the transaction in PayU.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>The status of the transaction.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; responseCode</td>
+<td>Alphanumeric</td>
+<td>Max:64</td>
+<td>The response code associated with the status.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; paymentNetworkResponseCode</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>The response code returned by the financial network.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; paymentNetworkResponseErrorMessage</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>The error message returned by the financial network.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; trazabilityCode</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>The traceability code returned by the financial network.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; authorizationCode</td>
+<td>Alphanumeric</td>
+<td>Max:12</td>
+<td>The authorization code returned by the financial network.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; responseMessage</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>Message associated with the response code.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; operationDate</td>
+<td>Date</td>
+<td></td>
+<td>Creation date of the response in the PayU´s system.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; extraParameters</td>
+<td></td>
+<td></td>
+<td>Additional parameters or data associated with the response. <br>In JSON, the <em>extraParameters</em> parameter follows this structure: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;BANK_REFERENCED_CODE&quot;: &quot;CREDIT&quot;</code><br><code>}</code><br><br>In XML, the <em>extraParameters</em> parameter follows this structure: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;BANK_REFERENCED_CODE&lt;/string&gt;</code><br>  <code>&lt;string&gt;CREDIT&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h4 id="considerations">Considerations</h4>
+<ul>
+<li>Two-step flows are only available for Mastercard and Visa.</li>
+<li>For payments with Interest-free months (Meses Sin Intereses - MSI), send the parameters <code>transaction.monthsWithoutInterest.months</code> with the number of installments and <code>transaction.monthsWithoutInterest.bank</code> with the name of the issuer bank of the credit card. Refer to <a href="../../../docs/services/promotions.html">MSI</a> (also known as Promotions) for more information.</li>
+<li>The available banks for MSI are: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer</li>
+<li>When using MSI or apply installments, always display the phrase <strong>&ldquo;PAGOS DIFERIDOS&rdquo;</strong> during the payment process.</li>
+<li>When installments applied (fees assumed by the payer), display the original amount of the transaction, the total amount after the fees, the number of installments, and the amount per installment including the extra fee.</li>
+<li>Promotions feature is only available for <a href="../../../docs/services/payments.html#payment-flows">one-step flows</a>.</li>
+<li>For payments with credit card tokens, include the parameter <code>transaction.creditCardTokenId</code> replacing the information of the credit card. For more information, refer to <a href="../../../docs/services/tokenization.html">Tokenization API</a>.</li>
+<li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
+</ul>
+<h3 id="authorization">Authorization</h3>
+<p>Use this method to perform the <strong>Authorization</strong> step of a two-step flow using Mastercard or Visa. In this step, you authorize the payment but the amount is not debited until you <a href="../../../docs/integrations/api-integration/payments-api-mexico.html#capture">capture</a> the funds.<br>The following are the request and response bodies for this transaction type.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#tab11" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-1" data-toggle="tab" href="#tab12" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="1">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h3 id="capture">Capture</h3>
+<p>Use this method to perform the <strong>Capture</strong> step of a two-step flow for mastercard and visa. In this step, you capture the funds previously <a href="../../../docs/integrations/api-integration/payments-api-mexico.html#authorization">Authorized</a> to transfer them to your PayU account.</p>
+<h4 id="considerations-1">Considerations</h4>
+<p>Take into account the following considerations for capture.</p>
+<ul>
+<li>The maximum time to capture an approved transaction is 14 days. After this time, the transaction is auto voided.</li>
+<li>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</li>
+<li>You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter <code>transaction.order.additionalValues.TX_VALUE</code> with its value (as sent during the Authorization) and set <code>PARTIAL_CAPTURE</code> for <code>transaction.type</code>.</li>
+</ul>
+<p>The following are the request and response bodies for this transaction type.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="2">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h3 id="charge">Charge</h3>
+<p>Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:</p>
+<p>The following are the request and response bodies for this transaction type.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-3" data-toggle="tab" href="#tab31" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-3" data-toggle="tab" href="#tab32" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="3">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
 <h2 id="submit-transaction-with-cash">Submit transaction with cash</h2>
 <h2 id="submit-transaction-with-bank-transfer">Submit transaction with bank transfer</h2>
-<h2 id="active-payment-methods-query">Active payment methods query</h2>
+<h2 id="available-payment-methods-query">Available payment methods query</h2>
+<p>This method returns a list of the payment methods available in all countries.</p>
+<h3 id="variables-for-request-and-response-1">Variables for request and response</h3>
+<details>
+<summary>Request</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Language used in the request, this language is used to display the error messages generated. <a href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages">See supported languages</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Set <code>GET_PAYMENT_METHODS</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>test (JSON)<hr>isTest (XML)</td>
+<td>Boolean</td>
+<td></td>
+<td>Set <code>true</code> if the request is in test mode. Otherwise, set <code>false</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant</td>
+<td></td>
+<td></td>
+<td>This object has the authentication data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiLogin</td>
+<td>Alphanumeric</td>
+<td>Min:12 Max:32</td>
+<td>User or login provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiKey</td>
+<td>Alphanumeric</td>
+<td>Min:6 Max:32</td>
+<td>Password provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>The response code of the transaction. Possible values are <code>ERROR</code> and <code>SUCCESS</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>The error message associated when the response code is <code>ERROR</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>paymentMethods</td>
+<td></td>
+<td></td>
+<td>List of the payment methods.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>paymentMethods &gt; paymentMethodComplete</td>
+<td></td>
+<td></td>
+<td>This object has the information of a payment method.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>paymentMethods &gt; paymentMethodComplete &gt; id</td>
+<td>Numeric</td>
+<td></td>
+<td>Payment method identifier.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>paymentMethods &gt; paymentMethodComplete &gt; description</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Payment method name.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>paymentMethods &gt; paymentMethodComplete &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>ISO code of the Payment method country.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="api-call">API call</h3>
+<p>The following are the bodies of the request and response of this method. For the sake of the example, the request and response here show two payment methods.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="5">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;GET_PAYMENT_METHODS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span><span style="color:#000;font-weight:bold">,</span>
+      <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span>
+   <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#204a87;font-weight:bold">&#34;paymentMethods&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+        <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;299&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OTHERS_CASH_MX&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MX&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+        <span style="color:#000;font-weight:bold">},</span>
+        <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;139&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AMEX&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MX&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+        <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+      <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+      <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
+<span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentMethodsResponse&gt;</span>
+    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+    <span style="color:#204a87;font-weight:bold">&lt;paymentMethods&gt;</span>
+        <span style="color:#204a87;font-weight:bold">&lt;paymentMethodComplete&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;id&gt;</span>299<span style="color:#204a87;font-weight:bold">&lt;/id&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>OTHERS_CASH_MX<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>MX<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;enabled&gt;</span>true<span style="color:#204a87;font-weight:bold">&lt;/enabled&gt;</span>
+        <span style="color:#204a87;font-weight:bold">&lt;/paymentMethodComplete&gt;</span>
+        <span style="color:#204a87;font-weight:bold">&lt;paymentMethodComplete&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;id&gt;</span>139<span style="color:#204a87;font-weight:bold">&lt;/id&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>AMEX<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>MX<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;enabled&gt;</span>true<span style="color:#204a87;font-weight:bold">&lt;/enabled&gt;</span>
+        <span style="color:#204a87;font-weight:bold">&lt;/paymentMethodComplete&gt;</span>
+    <span style="color:#204a87;font-weight:bold">&lt;/paymentMethods&gt;</span>
+<span style="color:#204a87;font-weight:bold">&lt;/paymentMethodsResponse&gt;</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
 <h2 id="ping">Ping</h2>
-<p>The <code>PING</code> method lets you verify the connection to our platform. The following are the request and response examples for this method.</p>
+<p>The <code>PING</code> method lets you verify the connection to our platform.</p>
+<h3 id="variables-for-request-and-response-2">Variables for request and response</h3>
+<details>
+<summary>Request</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Language used in the request, this language is used to display the error messages generated. <a href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages">See supported languages</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Set <code>PING</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>test (JSON)<hr>isTest (XML)</td>
+<td>Boolean</td>
+<td></td>
+<td>Set <code>true</code> if the request is in test mode. Otherwise, set <code>false</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant</td>
+<td></td>
+<td></td>
+<td>This object has the authentication data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiLogin</td>
+<td>Alphanumeric</td>
+<td>Min:12 Max:32</td>
+<td>User or login provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiKey</td>
+<td>Alphanumeric</td>
+<td>Min:6 Max:32</td>
+<td>Password provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>The response code of the transaction.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>The error message associated if an error ocurred.</td>
+</tr>
+<tr>
+<td>transactionResponse</td>
+<td>transactionResponse</td>
+<td>Max:2048</td>
+<td>The response of the PING method if an error ocurred.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="api-call-1">Api call</h3>
+<p>The following are the bodies of the request and response of this method.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-6" data-toggle="tab" href="#tab61" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-6" data-toggle="tab" href="#tab62" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="6">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PING&#34;</span><span style="color:#000;font-weight:bold">,</span>
+   <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span><span style="color:#000;font-weight:bold">,</span>
+      <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span>
+   <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#204a87;font-weight:bold">&#34;transactionResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>PING<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+      <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+      <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
+<span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
+    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+<span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
 
 	
 	

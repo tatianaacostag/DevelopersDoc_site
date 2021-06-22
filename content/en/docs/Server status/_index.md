@@ -7,4 +7,4 @@ Description: >
 weight: 50
 nosidetoc: true
 ---
-<iframe src="//status.payulatam.com/" style="width:100%;height:450px"></iframe>
+<iframe src="https://googleweblight.com/i?u=http://status.payulatam.com/" style="width:100%;height:450px"></iframe>
