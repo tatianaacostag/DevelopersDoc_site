@@ -96,15 +96,15 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > billingAddress > country | Alphanumeric | 2 | Billing address country in format ISO 3166 Alpha-2. | No |
 | transaction > payer > billingAddress > postalCode | Alphanumeric | Max:20 | Billing address zip code. For Brazil, use the format `XXXXX-XXX` or ´. Example: `09210-710` or `09210710`. | No |
 | transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > payer > birthdate | Alphanumeric | Max:10 |Buyer's date of birth. | No |
-| transaction > payer > contactPhone | Alphanumeric | Max:20 | Buyer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
+| transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
+| transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "responde-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want: `AUTHORIZATION`, `CAPTURE`, or `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit card Payment Method. [See the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#img-srcassetsbrazilpng-width25px-brazil" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `BR` for Brazil. | Yes |
-| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
+| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
@@ -811,8 +811,8 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > payer > billingAddress > country | Alphanumeric | 2 | Billing address country in format ISO 3166 Alpha-2. | No |
 | transaction > payer > billingAddress > postalCode | Alphanumeric | Max:20 | Billing address zip code. For Brazil, use the format `XXXXX-XXX` or ´. Example: `09210-710` or `09210710`. | No |
 | transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > payer > birthdate | Alphanumeric | Max:10 |Buyer's date of birth. | No |
-| transaction > payer > contactPhone | Alphanumeric | Max:20 | Buyer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
+| transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
+| transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "responde-codes-and-variables.html#document-types" >}}). | No |

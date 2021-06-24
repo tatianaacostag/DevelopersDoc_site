@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments API Chile lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
 <meta itemprop="dateModified" content="2021-06-22T12:45:29-05:00" />
-<meta itemprop="wordCount" content="6331">
+<meta itemprop="wordCount" content="6149">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Chile"/>
 <meta name="twitter:description" content="Payments API Chile lets your shop process different transaction types with multiple payment methods.
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.0eab9250b817c43015335ddbb2f832a77d034a603e50065a892db68b9ae66ef75aad674ed4f7924cb3ad9d256b363569ea13e532daedfbeb9e5fa8bc8b28c6f7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a39121b3f5f2fb6f55e0b06d3b8e602116814525023c75bff506013b91c9e36df3ddf55a498550cb7cc08d7acaa527f4fb32285a4d6bd5294c2d921bb2aa706b.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -770,7 +770,7 @@
 <tr>
 <td>command</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>Set <code>SUBMIT_TRANSACTION</code>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -791,14 +791,14 @@
 <tr>
 <td>merchant &gt; apiLogin</td>
 <td>Alphanumeric</td>
-<td>Min: 12 Max: 32</td>
+<td>Min:12 Max:32</td>
 <td>User or login provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>merchant &gt; apiKey</td>
 <td>Alphanumeric</td>
-<td>Min: 6 Max: 32</td>
+<td>Min:6 Max:32</td>
 <td>Password provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -826,14 +826,14 @@
 <tr>
 <td>transaction &gt; order &gt; referenceCode</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 255</td>
+<td>Min:1 Max:255</td>
 <td>Represents the identifier of the order in your system.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; description</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 255</td>
+<td>Min:1 Max:255</td>
 <td>Description of the order.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -847,21 +847,21 @@
 <tr>
 <td>transaction &gt; order &gt; notifyUrl</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>Confirmation URL of the order.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; partnerId</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Partner ID in PayU.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; signature</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The signature associated to the form. For more information refer <a href="../../../docs/integrations.html#authentication-signature">Authentication signature</a>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -875,28 +875,28 @@
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Address Line 1.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; street2</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Address Line 2.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Address city.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Address State.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -910,14 +910,14 @@
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; postalCode</td>
 <td>Alphanumeric</td>
-<td>Max: 8</td>
+<td>Max:8</td>
 <td>Address Zip code.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; phone</td>
 <td>Alphanumeric</td>
-<td>Max: 11</td>
+<td>Max:11</td>
 <td>Phone number associated to the address.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -931,35 +931,35 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; merchantBuyerId</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Buyer ID in your system.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; fullName</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Full name of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; emailAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>E-mail of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; contactPhone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Phone number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; dniNumber</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Identification number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -973,21 +973,21 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Buyer&rsquo;s shipping address Line 1.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Buyer&rsquo;s shipping address city.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Buyer&rsquo;s shipping address state.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1001,14 +1001,14 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; postalCode</td>
 <td>Number</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Buyer&rsquo;s shipping address zip code.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; phone</td>
 <td>Number</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Buyer&rsquo;s shipping address phone number.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1057,14 +1057,14 @@
 <tr>
 <td>transaction &gt; creditCard &gt; number</td>
 <td>Alphanumeric</td>
-<td>Min: 13 Max: 20</td>
+<td>Min:13 Max:20</td>
 <td>Credit card number.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; creditCard &gt; securityCode</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 4</td>
+<td>Min:1 Max:4</td>
 <td>Credit card security code (CVC2, CVV2, CID).</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1078,14 +1078,14 @@
 <tr>
 <td>transaction &gt; creditCard &gt; name</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 255</td>
+<td>Min:1 Max:255</td>
 <td>Holder&rsquo;s name displayed in the credit card.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; creditCard &gt; processWithoutCvv2</td>
 <td>Boolean</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Allows you to process transactions without including the credit card security code. Your commerce requires PayU&rsquo;s authorization before using this feature.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1099,14 +1099,14 @@
 <tr>
 <td>transaction &gt; debitCard &gt; number</td>
 <td>Alphanumeric</td>
-<td>Min: 13 Max: 20</td>
+<td>Min:13 Max:20</td>
 <td>Debit card number.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; debitCard &gt; securityCode</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 4</td>
+<td>Min:1 Max:4</td>
 <td>Debit card security code (CVC2, CVV2, CID).</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1120,7 +1120,7 @@
 <tr>
 <td>transaction &gt; debitCard &gt; name</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 255</td>
+<td>Min:1 Max:255</td>
 <td>Holder&rsquo;s name displayed in the debit card.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1134,21 +1134,21 @@
 <tr>
 <td>transaction &gt; payer &gt; emailAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Payer e-mail address.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; merchantPayerId</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Identifier of the payer in your system.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; fullName</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Name of the payer which must meet the name sent in the parameter &gt; creditCard &gt; name for credit card payments.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1162,28 +1162,28 @@
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Billing Address Line 1.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; street2</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Billing Address Line 2.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Billing address city.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Billing address state.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1197,35 +1197,35 @@
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; postalCode</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Billing address zip code.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; phone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Billing address phone number.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; birthdate</td>
 <td>Alphanumeric</td>
-<td>Max: 10</td>
-<td>Buyer&rsquo;s date of birth.</td>
+<td>Max:10</td>
+<td>Payer&rsquo;s date of birth.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; contactPhone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
-<td>Buyer&rsquo;s phone number.</td>
+<td>Max:20</td>
+<td>Payer&rsquo;s phone number.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; dniNumber</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Identification number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1260,28 +1260,28 @@
 <tr>
 <td>transaction &gt; deviceSessionId</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Session identifier of the device where the customer performs the transaction. For mor information, refer to <a href="../../../docs/integrations.html#_devicesessionid_-variable">this topic</a>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; ipAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 39</td>
+<td>Max:39</td>
 <td>IP address of the device where the customer performs the transaction.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; cookie</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Cookie stored by the device where the customer performs the transaction.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; userAgent</td>
 <td>Alphanumeric</td>
-<td>Max: 1024</td>
+<td>Max:1024</td>
 <td>The User agent of the browser where the customer performs the transaction.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1318,7 +1318,7 @@
 <tr>
 <td>error</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>The error message associated when the response code is <code>ERROR</code>.</td>
 </tr>
 <tr>
@@ -1342,43 +1342,43 @@
 <tr>
 <td>transactionResponse &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>The status of the transaction.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; responseCode</td>
 <td>Alphanumeric</td>
-<td>Max: 64</td>
+<td>Max:64</td>
 <td>The response code associated with the status.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; paymentNetworkResponseCode</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The response code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; paymentNetworkResponseErrorMessage</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The error message returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; trazabilityCode</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>The traceability code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; authorizationCode</td>
 <td>Alphanumeric</td>
-<td>Max: 12</td>
+<td>Max:12</td>
 <td>The authorization code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; responseMessage</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>Message associated with the response code.</td>
 </tr>
 <tr>
@@ -1732,7 +1732,7 @@
 <tr>
 <td>command</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>Set <code>SUBMIT_TRANSACTION</code>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1753,14 +1753,14 @@
 <tr>
 <td>merchant &gt; apiLogin</td>
 <td>Alphanumeric</td>
-<td>Min: 12 Max: 32</td>
+<td>Min:12 Max:32</td>
 <td>User or login provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>merchant &gt; apiKey</td>
 <td>Alphanumeric</td>
-<td>Min: 6 Max: 32</td>
+<td>Min:6 Max:32</td>
 <td>Password provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1788,14 +1788,14 @@
 <tr>
 <td>transaction &gt; order &gt; referenceCode</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 255</td>
+<td>Min:1 Max:255</td>
 <td>Represents the identifier of the order in your system.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; description</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 255</td>
+<td>Min:1 Max:255</td>
 <td>Description of the order.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1809,21 +1809,21 @@
 <tr>
 <td>transaction &gt; order &gt; notifyUrl</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>Confirmation URL of the order.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; partnerId</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Partner ID in PayU.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; signature</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The signature associated to the form. For more information refer <a href="../../../docs/integrations.html#authentication-signature">Authentication signature</a>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1837,28 +1837,28 @@
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Address Line 1.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; street2</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Address Line 2.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Address city.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Address State.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1872,14 +1872,14 @@
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; postalCode</td>
 <td>Alphanumeric</td>
-<td>Max: 8</td>
+<td>Max:8</td>
 <td>Address Zip code.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; phone</td>
 <td>Alphanumeric</td>
-<td>Max: 11</td>
+<td>Max:11</td>
 <td>Phone number associated to the address.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1893,35 +1893,35 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; merchantBuyerId</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Buyer ID in your system.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; fullName</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Full name of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; emailAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>E-mail of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; contactPhone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Phone number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; dniNumber</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Identification number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1935,21 +1935,21 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Buyer&rsquo;s shipping address Line 1.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Buyer&rsquo;s shipping address city.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Buyer&rsquo;s shipping address state.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -1963,14 +1963,14 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; postalCode</td>
 <td>Number</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Buyer&rsquo;s shipping address zip code.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; phone</td>
 <td>Number</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Buyer&rsquo;s shipping address phone number.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2012,21 +2012,21 @@
 <tr>
 <td>transaction &gt; payer &gt; emailAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Payer e-mail address.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; merchantPayerId</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Identifier of the payer in your system.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; fullName</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Name of the payer which must meet the name sent in the parameter <code>creditCard.name</code> for credit card payments.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2040,28 +2040,28 @@
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Billing Address Line 1.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; street2</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Billing Address Line 2.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Billing address city.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Billing address state.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -2075,35 +2075,35 @@
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; postalCode</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Billing address zip code.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; phone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Billing address phone number.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; birthdate</td>
 <td>Alphanumeric</td>
-<td>Max: 10</td>
-<td>Buyer&rsquo;s date of birth.</td>
+<td>Max:10</td>
+<td>Payer&rsquo;s date of birth.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; contactPhone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
-<td>Buyer&rsquo;s phone number.</td>
+<td>Max:20</td>
+<td>Payer&rsquo;s phone number.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; dniNumber</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Identification number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2145,7 +2145,7 @@
 <tr>
 <td>transaction &gt; ipAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 39</td>
+<td>Max:39</td>
 <td>IP address of the device where the customer performs the transaction.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2182,7 +2182,7 @@
 <tr>
 <td>error</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>The error message associated when the response code is <code>ERROR</code>.</td>
 </tr>
 <tr>
@@ -2206,49 +2206,49 @@
 <tr>
 <td>transactionResponse &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>The status of the transaction. As the payment is performed by the user in a physical office, the state for a successful transaction is <code>PENDING</code></td>
 </tr>
 <tr>
 <td>transactionResponse &gt; paymentNetworkResponseCode</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The response code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; paymentNetworkResponseErrorMessage</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The error message returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; trazabilityCode</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>The traceability code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; authorizationCode</td>
 <td>Alphanumeric</td>
-<td>Max: 12</td>
+<td>Max:12</td>
 <td>The authorization code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; pendingReason</td>
 <td>Alphanumeric</td>
-<td>Max: 21</td>
+<td>Max:21</td>
 <td>The reason code associated with the status, as mentioned in <code>transactionResponse &gt; state</code>, the transaction is waiting for the payment.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; responseCode</td>
 <td>Alphanumeric</td>
-<td>Max: 64</td>
+<td>Max:64</td>
 <td>The response code associated with the status. In this case, for successful transactions is <code>PENDING_TRANSACTION_CONFIRMATION</code>.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; responseMessage</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>Message associated with the response code.</td>
 </tr>
 <tr>
@@ -2584,7 +2584,7 @@
 <tr>
 <td>command</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>Set <code>SUBMIT_TRANSACTION</code>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2605,14 +2605,14 @@
 <tr>
 <td>merchant &gt; apiLogin</td>
 <td>Alphanumeric</td>
-<td>Min: 12 Max: 32</td>
+<td>Min:12 Max:32</td>
 <td>User or login provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>merchant &gt; apiKey</td>
 <td>Alphanumeric</td>
-<td>Min: 6 Max: 32</td>
+<td>Min:6 Max:32</td>
 <td>Password provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2640,14 +2640,14 @@
 <tr>
 <td>transaction &gt; order &gt; referenceCode</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 255</td>
+<td>Min:1 Max:255</td>
 <td>Represents the identifier of the order in your system.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; description</td>
 <td>Alphanumeric</td>
-<td>Min: 1 Max: 255</td>
+<td>Min:1 Max:255</td>
 <td>Description of the order.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2661,21 +2661,21 @@
 <tr>
 <td>transaction &gt; order &gt; notifyUrl</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>Confirmation URL of the order.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; partnerId</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Partner ID in PayU.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; signature</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The signature associated to the form. For more information refer <a href="../../../docs/integrations.html#authentication-signature">Authentication signature</a>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2689,28 +2689,28 @@
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Address Line 1.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; street2</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Address Line 2.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Address city.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Address State.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -2724,14 +2724,14 @@
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; postalCode</td>
 <td>Alphanumeric</td>
-<td>Max: 8</td>
+<td>Max:8</td>
 <td>Address Zip code.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress &gt; phone</td>
 <td>Alphanumeric</td>
-<td>Max: 11</td>
+<td>Max:11</td>
 <td>Phone number associated to the address.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -2745,35 +2745,35 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; merchantBuyerId</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Buyer ID in your system.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; fullName</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Full name of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; emailAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>E-mail of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; contactPhone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Phone number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; dniNumber</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Identification number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2787,21 +2787,21 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Buyer&rsquo;s shipping address Line 1.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Buyer&rsquo;s shipping address city.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Buyer&rsquo;s shipping address state.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2815,14 +2815,14 @@
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; postalCode</td>
 <td>Number</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Buyer&rsquo;s shipping address zip code.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; phone</td>
 <td>Number</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Buyer&rsquo;s shipping address phone number.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2864,21 +2864,21 @@
 <tr>
 <td>transaction &gt; payer &gt; emailAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Payer e-mail address.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; merchantPayerId</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Identifier of the payer in your system.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; fullName</td>
 <td>Alphanumeric</td>
-<td>Max: 150</td>
+<td>Max:150</td>
 <td>Name of the payer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2892,28 +2892,28 @@
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; street1</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Billing Address Line 1.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; street2</td>
 <td>Alphanumeric</td>
-<td>Max: 100</td>
+<td>Max:100</td>
 <td>Billing Address Line 2.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; city</td>
 <td>Alphanumeric</td>
-<td>Max: 50</td>
+<td>Max:50</td>
 <td>Billing address city.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 40</td>
+<td>Max:40</td>
 <td>Billing address state.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -2927,35 +2927,35 @@
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; postalCode</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Billing address zip code.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress &gt; phone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Billing address phone number.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; birthdate</td>
 <td>Alphanumeric</td>
-<td>Max: 10</td>
-<td>Buyer&rsquo;s date of birth.</td>
+<td>Max:10</td>
+<td>Payer&rsquo;s date of birth.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; contactPhone</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
-<td>Buyer&rsquo;s phone number.</td>
+<td>Max:20</td>
+<td>Payer&rsquo;s phone number.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; dniNumber</td>
 <td>Alphanumeric</td>
-<td>Max: 20</td>
+<td>Max:20</td>
 <td>Identification number of the buyer.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -2990,28 +2990,28 @@
 <tr>
 <td>transaction &gt; deviceSessionId</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Session identifier of the device where the customer performs the transaction. For mor information, refer to <a href="../../../docs/integrations.html#_devicesessionid_-variable">this topic</a>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; ipAddress</td>
 <td>Alphanumeric</td>
-<td>Max: 39</td>
+<td>Max:39</td>
 <td>IP address of the device where the customer performs the transaction.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; cookie</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>Cookie stored by the device where the customer performs the transaction.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; userAgent</td>
 <td>Alphanumeric</td>
-<td>Max: 1024</td>
+<td>Max:1024</td>
 <td>The User agent of the browser where the customer performs the transaction.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -3048,7 +3048,7 @@
 <tr>
 <td>error</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>The error message associated when the response code is <code>ERROR</code>.</td>
 </tr>
 <tr>
@@ -3072,49 +3072,49 @@
 <tr>
 <td>transactionResponse &gt; state</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>The status of the transaction. As the payment is performed by the user in a physical office, the state for a successful transaction is <code>PENDING</code></td>
 </tr>
 <tr>
 <td>transactionResponse &gt; paymentNetworkResponseCode</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The response code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; paymentNetworkResponseErrorMessage</td>
 <td>Alphanumeric</td>
-<td>Max: 255</td>
+<td>Max:255</td>
 <td>The error message returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; trazabilityCode</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>The traceability code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; authorizationCode</td>
 <td>Alphanumeric</td>
-<td>Max: 12</td>
+<td>Max:12</td>
 <td>The authorization code returned by the financial network.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; pendingReason</td>
 <td>Alphanumeric</td>
-<td>Max: 21</td>
+<td>Max:21</td>
 <td>The reason code associated with the status, as mentioned in <code>transactionResponse &gt; state</code>, the transaction is waiting for the payment.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; responseCode</td>
 <td>Alphanumeric</td>
-<td>Max: 64</td>
+<td>Max:64</td>
 <td>The response code associated with the status. In this case, for successful transactions is <code>PENDING_PAYMENT_IN_ENTITY</code>.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; responseMessage</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>Message associated with the response code.</td>
 </tr>
 <tr>
@@ -3492,7 +3492,7 @@
 <tr>
 <td>command</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>Set <code>GET_PAYMENT_METHODS</code>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -3513,14 +3513,14 @@
 <tr>
 <td>merchant &gt; apiLogin</td>
 <td>Alphanumeric</td>
-<td>Min: 12 Max: 32</td>
+<td>Min:12 Max:32</td>
 <td>User or login provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>merchant &gt; apiKey</td>
 <td>Alphanumeric</td>
-<td>Min: 6 Max: 32</td>
+<td>Min:6 Max:32</td>
 <td>Password provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -3550,7 +3550,7 @@
 <tr>
 <td>error</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>The error message associated when the response code is <code>ERROR</code>.</td>
 </tr>
 <tr>
@@ -3574,7 +3574,7 @@
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete &gt; description</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>Payment method name.</td>
 </tr>
 <tr>
@@ -3747,7 +3747,7 @@
 <tr>
 <td>command</td>
 <td>Alphanumeric</td>
-<td>Max: 32</td>
+<td>Max:32</td>
 <td>Set <code>PING</code>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -3768,14 +3768,14 @@
 <tr>
 <td>merchant &gt; apiLogin</td>
 <td>Alphanumeric</td>
-<td>Min: 12 Max: 32</td>
+<td>Min:12 Max:32</td>
 <td>User or login provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>merchant &gt; apiKey</td>
 <td>Alphanumeric</td>
-<td>Min: 6 Max: 32</td>
+<td>Min:6 Max:32</td>
 <td>Password provided by PayU. <a href="../../../docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
 <td style="text-align:center">Yes</td>
 </tr>
@@ -3807,14 +3807,14 @@
 <tr>
 <td>error</td>
 <td>Alphanumeric</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>The error message associated if an error ocurred.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transactionResponse</td>
 <td>transactionResponse</td>
-<td>Max: 2048</td>
+<td>Max:2048</td>
 <td>The response of the PING method if an error ocurred.</td>
 <td style="text-align:center">Yes</td>
 </tr>
