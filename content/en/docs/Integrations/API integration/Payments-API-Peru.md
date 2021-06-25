@@ -81,7 +81,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. |
 | transaction > order > additionalValues > TX_VALUE > value | Number | 19, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). |
 | transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "responde-codes-and-variables.html#accepted-currencies" >}}). |
-| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization.md" >}}) |
+| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) |
 | transaction > creditCard |  |  | Credit card information. If you process using debit card, do not send this parameter|
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). |
@@ -145,7 +145,7 @@ This method lets you process the payments performed by your customers using cred
 </details>
 
 #### Considerations
-* For payments with credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization.md" >}}).
+* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * In Peru, you can select 0 or 2 to 36 installments when paying with credit card. If you select one (1) installment, PayU sends zero (0) as default value.
 

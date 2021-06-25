@@ -9,18 +9,19 @@ weight: 30
 
 To use the tokenization feature, you need to enable it in your PayU account. To do so, contact your sales representative:
 
-<div>
+<div style="display: flex;">
   <div style="float: left;width: 50%;">
     <ul>
       <li><img src="/assets/Argentina.png" width="25px"/> <a href="comercios.ar@payu.com">comercios.ar@payu.com</a></li>
       <li><img src="/assets/Brasil.png" width="25px"/> <a href="comercios.br@payu.com">comercios.br@payu.com</a></li>
       <li><img src="/assets/Chile.png" width="25px"/> <a href="comercios.cl@payu.com">comercios.cl@payu.com</a></li>
+      <li><img src="/assets/Colombia.png" width="25px"/> <a href="comercios.co@payu.com">comercios.co@payu.com</a></li>
     </ul>
   </div>
   <div style="float: left;width: 50%;">
     <ul>
-      <li><img src="/assets/Colombia.png" width="25px"/> <a href="comercios.co@payu.com">comercios.co@payu.com</a></li>
       <li><img src="/assets/Mexico.png" width="25px"/> <a href="comercios.mx@payu.com">comercios.mx@payu.com</a></li>
+      <li><img src="/assets/Panama.png" width="25px"/> <a href="comercios.pa@payu.com">comercios.pa@payu.com</a></li>
       <li><img src="/assets/Peru.png" width="25px"/> <a href="comercios.pe@payu.com">comercios.pe@payu.com</a></li>
     </ul>
   </div>
@@ -44,5 +45,5 @@ Furthermore, the tokenization feature lets you store, remove or charge several c
 ## What's next?
 The integration with this feature can be performed using one of our integration types:
 
-* [For API integrations, refer to this topic]({{< ref "API Integration" >}})
+* [For API integrations, refer to this topic]({{< ref "Tokenization-API.md" >}})
 * [For SDK integrations, refer to this topic]({{< ref "SDK Integration" >}})
