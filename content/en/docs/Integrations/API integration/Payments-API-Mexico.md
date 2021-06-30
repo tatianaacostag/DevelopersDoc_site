@@ -123,8 +123,8 @@ Two-step flows are only supported for Mastercard and Visa.
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
 | transaction > extraParameters |  |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
-| transaction > monthsWithoutInterest > months | Number | Max:2 | Number of interest-free months for the purchase. The available values are 3, 6, 9, or 12.<br>This parameter is mandatory when you want to use [Interest-free months (Meses Sin Intereses - MSI) feature]({{< ref "Promotions.md" >}}). | No |
-| transaction > monthsWithoutInterest > bank | Alphanumeric | Max:255 | Issuing bank of the credit card used to pay the purchase using interest-free months.<br>This parameter is mandatory when you want to use [Interest-free months (Meses Sin Intereses - MSI) feature]({{< ref "Promotions.md" >}}). | No |
+| transaction > monthsWithoutInterest > months | Number | Max:2 | Number of Months Without Interests for the purchase. The available values are 3, 6, 9, or 12.<br>This parameter is mandatory when you want to use [Months Without Interests (Meses Sin Intereses - MSI) feature]({{< ref "Promotions.md" >}}). | No |
+| transaction > monthsWithoutInterest > bank | Alphanumeric | Max:255 | Issuing bank of the credit card used to pay the purchase using Months Without Interests.<br>This parameter is mandatory when you want to use [Months Without Interests (Meses Sin Intereses - MSI) feature]({{< ref "Promotions.md" >}}). | No |
 
 </details>
 
@@ -155,9 +155,10 @@ Two-step flows are only supported for Mastercard and Visa.
 
 #### Considerations
 * Two-step flows are only available for Mastercard and Visa.
-* For payments with Interest-free months (Meses Sin Intereses - MSI), send the parameters `transaction.monthsWithoutInterest.months` with the number of installments and `transaction.monthsWithoutInterest.bank` with the name of the issuer bank of the credit card. Refer to [MSI]({{< ref "Promotions.md" >}}) (also known as Promotions) for more information.
+* For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
+* For payments with Months Without Interests (Meses Sin Intereses - MSI), send the parameters `transaction.monthsWithoutInterest.months` with the number of installments and `transaction.monthsWithoutInterest.bank` with the name of the issuer bank of the credit card. Refer to [MSI]({{< ref "Promotions.md#months-without-interest-msi---meses-sin-intereses" >}}) for more information.
 * The available banks for MSI are: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer
-* When using MSI or apply installments, always display the phrase **"PAGOS DIFERIDOS"** during the payment process.
+* When using MSI, promotions or apply installments, always display the phrase **"PAGOS DIFERIDOS"** during the payment process.
 * When installments applied (fees assumed by the payer), display the original amount of the transaction, the total amount after the fees, the number of installments, and the amount per installment including the extra fee.
 * Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).

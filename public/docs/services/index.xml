@@ -1,0 +1,319 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation – Services</title>
+    <link>/docs/services.html</link>
+    <description>Recent content in Services on Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 31 Mar 2021 08:19:46 -0500</lastBuildDate>
+    
+	  <atom:link href="/docs/services/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Payments</title>
+      <link>/docs/services/payments.html</link>
+      <pubDate>Thu, 25 Mar 2021 14:28:20 -0500</pubDate>
+      
+      <guid>/docs/services/payments.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Regardless of the &lt;a href=&#34;../../docs/integrations.html&#34;&gt;integration type&lt;/a&gt; you choose, PayU provides operations to process your transactions. The following section explains these methods.&lt;/p&gt;
+&lt;h2 id=&#34;payment-flows&#34;&gt;Payment flows&lt;/h2&gt;
+&lt;p&gt;PayU can process the payments using two types of Payment flows: two-step and one-step.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Payments/autorizacionycaptura-en.png&#34; alt=&#34;Payments&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In the two-step flow, first you need to authorize and place a hold on the customer&amp;rsquo;s funds. Then, complete the transaction to transfer the authorized funds to your PayU account. The steps in this flow are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt;: this operation is used to verify if the card used to pay is active, has funds, etc. The transaction is not complete until a transaction capture is sent. &lt;/br&gt;
+For Example, when you use a transportation app, after you request the service, the app sends an &lt;em&gt;Authorization&lt;/em&gt; to reserve the amount of the trip and verify that your card is valid (active and with enough founds). Nevertheless, the charge is not performed in your card yet.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/em&gt;: this operation terminates a previously authorized transaction, namely, at this point, the account makes a debit to the card.&lt;/br&gt;
+Back in the transportation app example, once your service has finished, the apps charges the total amount of your trip and terminates the transaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the one-step flow, combines the &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/em&gt; steps into a single transaction. Funds are transferred from your customer&amp;rsquo;s account to your PayU account when the payment has been authorized. The unique step in this flow are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Charge (Authorization and capture)&lt;/strong&gt;&lt;/em&gt;: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;payment-methods&#34;&gt;Payment methods&lt;/h3&gt;
+&lt;p&gt;The available payment methods used to process transactions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Credit cards.&lt;/li&gt;
+&lt;li&gt;Cash or bank payments.&lt;/li&gt;
+&lt;li&gt;Bank transfers.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.html&#34;&gt;this article&lt;/a&gt; to know the Payment methods available to shoppers per country.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature depends on the country of your transactions, the operation selected and the payment method.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Queries for transactions</title>
+      <link>/docs/services/queries.html</link>
+      <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
+      
+      <guid>/docs/services/queries.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;p&gt;Before using the &lt;em&gt;Queries&lt;/em&gt; feature, take into account the following considerations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It is recommended to use &lt;em&gt;Queries&lt;/em&gt; for transactions in &lt;code&gt;PENDING&lt;/code&gt; state.&lt;/li&gt;
+&lt;li&gt;According to the payment method, the time to perform the query may vary. Nevertheless, it is recommended to perform the first query seven minutes after the transaction is created.&lt;/li&gt;
+&lt;li&gt;Do not retry a query of a transaction when PayU indicates that the transaction does not exist.&lt;/li&gt;
+&lt;li&gt;Bank transfer transactions are only available every ten minutes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;query-criteria&#34;&gt;Query criteria&lt;/h2&gt;
+&lt;p&gt;To query transactions, PayU allows you to search by any of the following criteria:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Order Id&lt;/em&gt;: it is generated by PayU. Identifies the order in PayU system and it the main element where any movement is recorded (charges, retries, refunds, etc)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Transaction Id&lt;/em&gt;: PayU generates this identifier per each movement associated with an order (Order ID).&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Reference Number&lt;/em&gt;: it is generated by the shop. Identifies the order or purchase in your system, PayU saves this value as you send it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Tokenization</title>
+      <link>/docs/services/tokenization.html</link>
+      <pubDate>Fri, 26 Mar 2021 09:34:59 -0500</pubDate>
+      
+      <guid>/docs/services/tokenization.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To use the tokenization feature, you need to enable it in your PayU account. To do so, contact your sales representative:&lt;/p&gt;
+&lt;div style=&#34;display: flex;&#34;&gt;
+  &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&#34;../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.ar@payu.com&#34;&gt;comercios.ar@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.br@payu.com&#34;&gt;comercios.br@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.cl@payu.com&#34;&gt;comercios.cl@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.co@payu.com&#34;&gt;comercios.co@payu.com&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&#34;../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.mx@payu.com&#34;&gt;comercios.mx@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.pa@payu.com&#34;&gt;comercios.pa@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.pe@payu.com&#34;&gt;comercios.pe@payu.com&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;how-does-tokenization-work&#34;&gt;How does Tokenization work?&lt;/h2&gt;
+&lt;p&gt;Tokenization includes two separated processes:&lt;/p&gt;
+&lt;h3 id=&#34;generate-token&#34;&gt;Generate token&lt;/h3&gt;
+&lt;p&gt;The first process lets you save the information of a credit card. This information is transformed into a token to let you use it later.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Tokenization/tokenizacion1-en.png&#34; alt=&#34;Tokenization&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;make-charges&#34;&gt;Make charges&lt;/h3&gt;
+&lt;p&gt;After you have the information of a credit card stored in a token, you can use it to perform charges periodically according to your need and your customer does not have to provide the information of their credit cards whenever you require a payment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Tokenization/tokenizacion2-en.png&#34; alt=&#34;Tokenization&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Furthermore, the tokenization feature lets you store, remove or charge several credit carts by sending an file coded in Base64.&lt;/p&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/tokenization-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Installments and Promotions - Argentina and Mexico</title>
+      <link>/docs/services/promotions.html</link>
+      <pubDate>Fri, 26 Mar 2021 14:02:05 -0500</pubDate>
+      
+      <guid>/docs/services/promotions.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;what-are-installments-and-promotions&#34;&gt;What are Installments and Promotions&lt;/h2&gt;
+&lt;p&gt;With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments with a partial or full reduction in the interest rate.&lt;/p&gt;
+&lt;p&gt;Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.&lt;/p&gt;
+&lt;p&gt;To perform the configuration of Installments and Promotions based on the agreements you have with bank entities, contact your sales representative.&lt;/p&gt;
+&lt;h2 id=&#34;how-does-installments-and-promotions-works-in-payu&#34;&gt;How does Installments and Promotions works in PayU&lt;/h2&gt;
+&lt;p&gt;To use promotions, you need to first consult the available promotions for your shop; then, select the promotion that fits to your needs and finally, send the payment request along with the promotion Id selected and the number of installments.&lt;/p&gt;
+&lt;p&gt;The following sequence of events explains better the promotions flow.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PromotionsFlow.png&#34; alt=&#34;Promotions Flow&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;authentication-for-promotions&#34;&gt;Authentication for Promotions&lt;/h2&gt;
+&lt;p&gt;For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your &lt;code&gt;MerchantPublicKey&lt;/code&gt;, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Public Key&lt;/em&gt;&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PublicKey.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h3&gt;
+&lt;p&gt;You must include in the &lt;code&gt;Authorization&lt;/code&gt; in the header, this header follows this structure:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hmac&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MerchantPublicKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Where &lt;code&gt;Signature&lt;/code&gt; is created as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Base64&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HMAC&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SHA256&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;MerchantApiKey&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ContentToSign&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;))&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;And &lt;code&gt;ContentToSign&lt;/code&gt; corresponds to:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HTTP&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Verb&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Date&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;URI&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+It is mandatory to include the three line breaks (&lt;code&gt;\n&lt;/code&gt;) after the &lt;code&gt;HTTP-Verb&lt;/code&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The following examples shows how to create the Authentication header using the following test values:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ContentToSign&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt; 
+    
+
+&lt;span style=&#34;color:#000&#34;&gt;Fri&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;28&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Apr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2017&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;32&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;01&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v4&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pricing&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;MerchantApiKey&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;MerchantPublicKey&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Crypt the &lt;code&gt;ContentToSign&lt;/code&gt; using &lt;code&gt;MerchantApiKey&lt;/code&gt; as passphrase. Then, concatenate the result with the &lt;code&gt;MerchantPublicKey&lt;/code&gt;as explained before, the result is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Hmac&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sIxh54sANfKaxO0ugX6QwhPmZRS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TGy8gmdCwr3kjP0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;To avoid replay attacks, send the header &lt;code&gt;Date&lt;/code&gt; following this format:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Due to some restrictions in REST clients, you can also send the the &lt;code&gt;x-hmac-date&lt;/code&gt; header to meet security requirements, this header follows the same format used in &lt;code&gt;Date&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;x-hmac-date&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using the &lt;a href=&#34;../../docs/integrations/api-integration.html&#34;&gt;API integration&lt;/a&gt;.&lt;/p&gt;
+&lt;!--
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+As this is a RESTful service, we strongly recommend you do not validate the scheme.
+If the schema is not validated, the integration is not affected, and you only need to perform small changes have to implement the new features when an update is added to the Web Service.
+&lt;/div&gt;
+
+
+To integrate with Promotions API, target the requests to the following URLs:
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;API&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Tests&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;GET https://sandbox.api.payulatam.com/payments-api/rest/v4.3/pricing&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Production&lt;/strong&gt;&lt;/em&gt;: &lt;code&gt;GET https://api.payulatam.com/payments-api/rest/v4.3/pricing&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+--&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Voids and Refunds</title>
+      <link>/docs/services/refunds.html</link>
+      <pubDate>Fri, 26 Mar 2021 15:09:39 -0500</pubDate>
+      
+      <guid>/docs/services/refunds.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;understanding-concepts&#34;&gt;Understanding concepts&lt;/h2&gt;
+&lt;p&gt;Before moving on, let&amp;rsquo;s explain the following concepts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Void&lt;/em&gt;: this operation reverses a previously authorized transaction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Refund&lt;/em&gt;: this operation requests the reversal of a previously captured transaction. Refunds can be requested by the total or the partial amount. A buyer may request a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;void&#34;&gt;Void&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;VOID&lt;/code&gt; method cancels a previously authorized transaction. Void is automatic procedure, as soon as you send the &lt;code&gt;VOID&lt;/code&gt; request, it does not follow any approval flow, and the transaction is not charged to the card holder.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+&lt;code&gt;VOID&lt;/code&gt; method is not available in Colombia and Panama.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;refund&#34;&gt;Refund&lt;/h3&gt;
+&lt;p&gt;A refund is requested when a shop decides to voluntarily return the money spent by the shopper due to dissatisfaction reasons or when the shop does not have enough stock of the product purchased. The &lt;code&gt;REFUND&lt;/code&gt; method request the reversal of a previously captured transaction.&lt;/p&gt;
+&lt;p&gt;Unlike the &lt;code&gt;VOID&lt;/code&gt; method, this method requires an approval. The refund procedure is explained below:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;When a refund is requested by your customer, you need to request it using the PayU module or the API or SDK integration. The request requires the &lt;em&gt;Order Id&lt;/em&gt;, and a refund reason.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Once you send the request, PayU reviews the request and approves or rejects it in one to three business days.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The &lt;code&gt;REFUND&lt;/code&gt; has three states:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;UNRESOLVED&lt;/code&gt;: the request has been sent to PayU for approval. At this point, no transaction has been added to the order and when you consult it using the &lt;a href=&#34;../../docs/services/queries.html&#34; title=&#34;Query Service&#34;&gt;Queries service&lt;/a&gt;, the response only shows the transaction of the payment approval.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;APPROVED&lt;/code&gt;:  the request has been approved by a PayU&amp;rsquo;s customer service agent. At this point the order has changed its state to &lt;code&gt;CANCELLED&lt;/code&gt; or &lt;code&gt;REFUNDED&lt;/code&gt;state and a PayU adds a &lt;code&gt;REFUND&lt;/code&gt; transaction to the order with approved state.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DECLINED&lt;/code&gt;: the request does not meet the policies defined by PayU and was cancelled by an agent. when the refund is declined, PayU adds a &lt;code&gt;REFUND&lt;/code&gt; transaction to the order with declined state.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For more information about authorized and captured transactions, refer to &lt;a href=&#34;../../docs/services/payments.html#payment-flows&#34;&gt;Payments&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;p&gt;Before using either &lt;em&gt;VOID&lt;/em&gt; or &lt;em&gt;REFUND&lt;/em&gt; feature, take into account the following considerations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method are only available for transactions made with a credit card. If the request refers to a different payment means such as cash payment means, bank transfer; the request is declined by PayU´s customer service agent.&lt;/li&gt;
+&lt;li&gt;PayU only creates one application for each refund request, if a request is repeatedly posted for the same transaction, PayU indicates that the request is already registered.&lt;/li&gt;
+&lt;li&gt;PayU only accepts refund requests of captured transactions.&lt;/li&gt;
+&lt;li&gt;You can retry the refund request if this was previously declined.&lt;/li&gt;
+&lt;li&gt;Once you make the request, the transaction amount becomes part of the Frozen Balance of your PayU account until it is processed.
+&lt;ul&gt;
+&lt;li&gt;If your refund request is &lt;code&gt;APPROVED&lt;/code&gt;, the amount is refunded to the card holder.&lt;/li&gt;
+&lt;li&gt;If your refund request is &lt;code&gt;DECLINED&lt;/code&gt;, the amount is released from the Frozen Balance and returns to the available Balance of your PayU account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Once the refund is approved, this will be reflected in the payer&amp;rsquo;s credit card when the bank make it effective.&lt;/li&gt;
+&lt;li&gt;To check the status of your refund request using the &lt;a href=&#34;../../docs/services/queries.html&#34; title=&#34;Query Service&#34;&gt;Queries service&lt;/a&gt; available for that purpose.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;According to the processing country, some special conditions may apply to be able to execute voids or refunds. These conditions are explained in the selected integration type.&lt;/p&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/refunds-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

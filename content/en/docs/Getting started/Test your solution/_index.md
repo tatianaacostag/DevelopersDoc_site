@@ -103,8 +103,17 @@ You can use the following cards for testing:
 | **VISA Debit Card**     | 4557880000000000                     |
 </details>
 
-## Importing the Collection
+### Testing status
+When using the Payments, you must send in the request:
+* The `test` parameter as `true`.
+* Set **777** in the CVV of the card (for AMEX, use **7777**).
+* Send the name of the transaction status in the name of the cardholder.
+    - For approved transactions, send **APPROVED** value.
+    - For rejected transactions, send **REJECTED** value.
+    - For pending transactions, send **PENDING** value.
+* For the card number you must enter a valid card number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes.
 
+## Importing the Collection
 Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you. Note that we create a new environment each time you import the collection.
 
 {{< postman/postman_flow_collection >}}

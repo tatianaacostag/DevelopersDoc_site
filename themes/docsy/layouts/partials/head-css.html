@@ -8,5 +8,4 @@
 {{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
 <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
 <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
-<link rel="stylesheet" href="{{ "/css/add-on.css" | urlize | relURL }}">
 {{ end }}

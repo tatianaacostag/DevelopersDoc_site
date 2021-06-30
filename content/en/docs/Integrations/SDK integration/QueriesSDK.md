@@ -1,11 +1,11 @@
 ---
-title: "Queries"
-linkTitle: "Queries"
-date: 2021-03-29T08:15:19-05:00
+title: "Queries SDK"
+linkTitle: "Queries SDK"
+date: 2021-04-30T08:51:22-05:00
 description: >
-  Queries API lets you check the status of the transactions generated from placed orders.
-weight: 20
-draft: true
+  Queries SDK lets you check the status of the placed orders along with their transactions.
+weight: 30
+tags: ["subtopic"]
 ---
 
 To integrate with Queries SDK, target the requests to the following URLs:
@@ -14,7 +14,9 @@ To integrate with Queries SDK, target the requests to the following URLs:
 {{< tab tabNum="1" >}}
 
 ```Java
+// URL for test: https://sandbox.api.payulatam.com/payments-api/
 PayU.paymentsUrl = “https://api.payulatam.com/payments-api/”;
+// URL for test: https://sandbox.api.payulatam.com/reports-api/
 PayU.reportsUrl = “https://api.payulatam.com/reports-api/”;
 ```
 
@@ -23,9 +25,10 @@ PayU.reportsUrl = “https://api.payulatam.com/reports-api/”;
 {{< tab tabNum="2" >}}
 
 ```PHP
+// URL for test: https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi
 Environment::setPaymentsCustomUrl(“https://api.payulatam.com/payments-api/4.0/service.cgi”);
+// URL for test: https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi
 Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/service.cgi”);
-Environment::setSubscriptionsCustomUrl(“https://api.payulatam.com/payments-api/rest/v4.9/”);
 ```
 
 {{< /tab >}}

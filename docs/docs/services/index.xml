@@ -149,7 +149,7 @@ Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.h
     </item>
     
     <item>
-      <title>Docs: Installments and Promotions</title>
+      <title>Docs: Installments and Promotions - Argentina and Mexico</title>
       <link>/docs/services/promotions.html</link>
       <pubDate>Fri, 26 Mar 2021 14:02:05 -0500</pubDate>
       
@@ -158,72 +158,39 @@ Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.h
         
         
         &lt;h2 id=&#34;what-are-installments-and-promotions&#34;&gt;What are Installments and Promotions&lt;/h2&gt;
-&lt;p&gt;With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments. Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.&lt;/p&gt;
+&lt;p&gt;With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments with a reduced interest rate. Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.&lt;/p&gt;
 &lt;p&gt;To perform the configuration of Installments and Promotions based on the agreements you have with bank entities, contact your sales representative.&lt;/p&gt;
-&lt;h2 id=&#34;how-does-promotions-and-installments-works-in-payu&#34;&gt;How does Promotions and Installments works in PayU&lt;/h2&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+For Mexico, you can use &lt;a href=&#34;../../docs/services/promotions.html#months-without-interests-msi---meses-sin-intereses&#34;&gt;Months Without Interests (MSI - Meses sin intereses)&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;how-does-installments-and-promotions-works-in-payu&#34;&gt;How does Installments and Promotions works in PayU&lt;/h2&gt;
 &lt;p&gt;To use promotions, you need to first consult the available promotions for your shop; then, select the promotion that fits to your needs and finally, send the payment request along with the promotion Id selected and the number of installments.&lt;/p&gt;
 &lt;p&gt;The following sequence of events explains better the promotions flow.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PromotionsFlow.png&#34; alt=&#34;Promotions Flow&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;authentication-for-promotions&#34;&gt;Authentication for Promotions&lt;/h2&gt;
-&lt;p&gt;For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your &lt;code&gt;MerchantPublicKey&lt;/code&gt;, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Public Key&lt;/em&gt;&lt;/strong&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PublicKey.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h3&gt;
-&lt;p&gt;You must include in the &lt;code&gt;Authorization&lt;/code&gt; in the header, this header follows this structure:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hmac&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MerchantPublicKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where &lt;code&gt;Signature&lt;/code&gt; is created as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Base64&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HMAC&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SHA256&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;MerchantApiKey&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ContentToSign&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;))&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;And &lt;code&gt;ContentToSign&lt;/code&gt; corresponds to:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HTTP&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Verb&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;Date&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;URI&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-It is mandatory to include the three line breaks (&lt;code&gt;\n&lt;/code&gt;) after the &lt;code&gt;HTTP-Verb&lt;/code&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The following examples shows how to create the Authentication header using the following test values:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;ContentToSign&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt; 
-    
-
-&lt;span style=&#34;color:#000&#34;&gt;Fri&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;28&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Apr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2017&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;32&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;01&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
-&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v4&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pricing&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;&lt;strong&gt;MerchantApiKey&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;&lt;strong&gt;MerchantPublicKey&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Crypt the &lt;code&gt;ContentToSign&lt;/code&gt; using &lt;code&gt;MerchantApiKey&lt;/code&gt; as passphrase. Then, concatenate the result with the &lt;code&gt;MerchantPublicKey&lt;/code&gt;as explained before, the result is as follows:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Hmac&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sIxh54sANfKaxO0ugX6QwhPmZRS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TGy8gmdCwr3kjP0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;To avoid replay attacks, send the header &lt;code&gt;Date&lt;/code&gt; following this format:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Due to some restrictions in REST clients, you can also send the the &lt;code&gt;x-hmac-date&lt;/code&gt; header to meet security requirements, this header follows the same format used in &lt;code&gt;Date&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;x-hmac-date&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
-&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
+&lt;h2 id=&#34;months-without-interests-msi---meses-sin-intereses&#34;&gt;Months Without Interests (MSI - Meses sin intereses)&lt;/h2&gt;
+&lt;p&gt;Months Without Interests (known in Mexico as &lt;em&gt;Meses sin intereses&lt;/em&gt;) lets you offer to your customers the possibility to pay in a defined number of interest-free installments (3, 6, 9, 12, or 18). Unlike the promotions model, when using MSI you don&amp;rsquo;t need to query the promotion id.&lt;/p&gt;
+&lt;p&gt;To request the usage of MSI, contact your sales representative.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-Promotions API is not included in SDK integration. Nevertheless, we have developed some examples of how to invoke the API using &lt;em&gt;Java&lt;/em&gt; or &lt;em&gt;PHP&lt;/em&gt;.
-&lt;/div&gt;
-
+&lt;p&gt;The minimum values for MSI depends on the number of installments selected:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;3 &amp;gt; $300 MXN&lt;/li&gt;
+&lt;li&gt;6 &amp;gt; $600 MXN&lt;/li&gt;
+&lt;li&gt;9 &amp;gt; $900 MXN&lt;/li&gt;
+&lt;li&gt;12 &amp;gt; $1200 MXN&lt;/li&gt;
+&lt;li&gt;18 &amp;gt; $1800 MXN&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using the &lt;a href=&#34;../../docs/integrations/api-integration/promotions-api.html&#34;&gt;Promotions API&lt;/a&gt;. To learn how to integrate with MSI, refer to this &lt;a href=&#34;../../docs/integrations/api-integration/promotions-api.html#months-without-installments-msi---meses-sin-intereses&#34;&gt;section&lt;/a&gt;.&lt;/p&gt;
 &lt;!--
 
 
@@ -261,21 +228,18 @@ To integrate with Promotions API, target the requests to the following URLs:
       <description>
         
         
-        &lt;p&gt;You can create the refund request using the &lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method. Once you have created the request, a PayU customer service agent validates the information and the justification of the request to approve it and perform the refund, or deny it if it does not meet the requirements.
-Additionally, you can check the status of your refund request using the &lt;a href=&#34;../../docs/services/queries.html&#34; title=&#34;Query Service&#34;&gt;Queries service&lt;/a&gt; available for that purpose.&lt;/p&gt;
-&lt;h2 id=&#34;understanding-concepts&#34;&gt;Understanding concepts&lt;/h2&gt;
+        &lt;h2 id=&#34;understanding-concepts&#34;&gt;Understanding concepts&lt;/h2&gt;
 &lt;p&gt;Before moving on, let&amp;rsquo;s explain the following concepts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;em&gt;Void&lt;/em&gt;: this operation reverses a previously authorized transaction.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;Refund&lt;/em&gt;: this operation requests the reversal of a previously captured transaction. Refunds can be requested by the total or the partial amount.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Refund&lt;/em&gt;: this operation requests the reversal of a previously captured transaction. Refunds can be requested by the total or the partial amount. A buyer may request a refund when they are not satisfied with the purchase, the purchase has multiple charges, or the buyer did not receive the product or service.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;void&#34;&gt;Void&lt;/h3&gt;
-&lt;p&gt;The &lt;code&gt;VOID&lt;/code&gt; method cancels a previously authorized transaction. The void of an order can be total or partial depending on if the acquirer supports partial voids.&lt;/p&gt;
-&lt;p&gt;Void is automatic procedure. As soon as you send the &lt;code&gt;VOID&lt;/code&gt; request, it does not follow any approval flow, and the transaction is not charged to the card holder.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;VOID&lt;/code&gt; method cancels a previously authorized transaction. Void is automatic procedure, as soon as you send the &lt;code&gt;VOID&lt;/code&gt; request, it does not follow any approval flow, and the transaction is not charged to the card holder.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -300,13 +264,13 @@ Additionally, you can check the status of your refund request using the &lt;a hr
 &lt;li&gt;&lt;code&gt;APPROVED&lt;/code&gt;:  the request has been approved by a PayU&amp;rsquo;s customer service agent. At this point the order has changed its state to &lt;code&gt;CANCELLED&lt;/code&gt; or &lt;code&gt;REFUNDED&lt;/code&gt;state and a PayU adds a &lt;code&gt;REFUND&lt;/code&gt; transaction to the order with approved state.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;DECLINED&lt;/code&gt;: the request does not meet the policies defined by PayU and was cancelled by an agent. when the refund is declined, PayU adds a &lt;code&gt;REFUND&lt;/code&gt; transaction to the order with declined state.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;For more information about authorized and captured transactions, refer to &lt;a href=&#34;../../docs/services/payments.html#transaction-processing&#34;&gt;Payments&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more information about authorized and captured transactions, refer to &lt;a href=&#34;../../docs/services/payments.html#payment-flows&#34;&gt;Payments&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
 &lt;p&gt;Before using either &lt;em&gt;VOID&lt;/em&gt; or &lt;em&gt;REFUND&lt;/em&gt; feature, take into account the following considerations:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Refund&lt;/em&gt; or &lt;em&gt;Void&lt;/em&gt; method are only available for transactions made with a credit card. If the request refers to a different payment means such as cash payment means, bank transfer; the request is declined by PayU´s customer service agent.&lt;/li&gt;
 &lt;li&gt;PayU only creates one application for each refund request, if a request is repeatedly posted for the same transaction, PayU indicates that the request is already registered.&lt;/li&gt;
-&lt;li&gt;PayU only accepts refund requests of transactions in the &lt;code&gt;Captured&lt;/code&gt; state.&lt;/li&gt;
+&lt;li&gt;PayU only accepts refund requests of captured transactions.&lt;/li&gt;
 &lt;li&gt;You can retry the refund request if this was previously declined.&lt;/li&gt;
 &lt;li&gt;Once you make the request, the transaction amount becomes part of the Frozen Balance of your PayU account until it is processed.
 &lt;ul&gt;
@@ -315,11 +279,13 @@ Additionally, you can check the status of your refund request using the &lt;a hr
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Once the refund is approved, this will be reflected in the payer&amp;rsquo;s credit card when the bank make it effective.&lt;/li&gt;
+&lt;li&gt;To check the status of your refund request using the &lt;a href=&#34;../../docs/services/queries.html&#34; title=&#34;Query Service&#34;&gt;Queries service&lt;/a&gt; available for that purpose.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;According to the processing country, some special conditions may apply to be able to execute voids or refunds. These conditions are explained in the selected integration type.&lt;/p&gt;
 &lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/refunds-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 

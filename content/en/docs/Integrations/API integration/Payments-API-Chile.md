@@ -31,7 +31,11 @@ To confirm the status of a transaction, you can use one of the following options
 {{% /alert %}}
 
 ## Submit transaction with credit or debit cards
-This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+
+{{% alert title="Note" color="info"%}}
+Transactions with credit card using two-step flows are available under demand. Contact your Sales representative for more information.
+{{% /alert %}}
 
 ### Variables for request and response
 
@@ -110,7 +114,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. | Yes |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "responde-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alphanumeric | 32 | Set this value according to the transaction. For Chile, set `AUTHORIZATION_AND_CAPTURE` | Yes |
+| transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` for one-step flows.</li></ul> | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit or Debit card Payment Method. [See the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#img-srcassetschilepng-width25px-chile" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CL` for Chile. | Yes |
 | transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
@@ -147,14 +151,388 @@ This method lets you process the payments performed by your customers using cred
 
 #### Considerations
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
-* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
-* Transactions with credit card (One-step flows: Authorization and Capture) are only available for single installment payments.
+* International debit cards are not supported.
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
+* Two-step flows are not supported for debit and international credit cards.
+* Transactions with credit card using two-step flows are available under demand and for single installment payments. Contact your Sales representative for more information.
+* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 
-### API call
-The following are the examples of the request and response of this payment method.
+### Authorization
+Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-api-chile.md#capture" >}}) the funds.<br>The following are the request and response bodies for this transaction type.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "accountId": "512325",
+         "referenceCode": "PRODUCT_TEST_2021-06-25T16:33:48.512Z",
+         "description": "Payment test description",
+         "language": "es",
+         "signature": "77d72fb91eb43f9b15fb300d5f173da3",
+         "notifyUrl": "http://www.payu.com/notify",
+         "additionalValues": {
+            "TX_VALUE": {
+               "value": 10000,
+               "currency": "CLP"
+         }
+         },
+         "buyer": {
+            "merchantBuyerId": "1",
+            "fullName": "First name and second buyer name",
+            "emailAddress": "buyer_test@test.com",
+            "contactPhone": "7563126",
+            "dniNumber": "123456789",
+            "shippingAddress": {
+               "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
+               "street2": "5555487",
+               "city": "RM",
+               "state": "Talagante",
+               "country": "CL",
+               "postalCode": "000000",
+               "phone": "7563126"
+            }
+         },
+         "shippingAddress": {
+            "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
+            "street2": "5555487",
+            "city": "RM",
+            "state": "Talagante",
+            "country": "CL",
+            "postalCode": "0000000",
+            "phone": "7563126"
+         }
+      },
+      "payer": {
+         "merchantPayerId": "1",
+         "fullName": "First name and second payer name",
+         "emailAddress": "payer_test@test.com",
+         "contactPhone": "7563126",
+         "dniNumber": "5415668464654",
+         "billingAddress": {
+            "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
+            "street2": "125544",
+            "city": "RM",
+            "state": "Talagante",
+            "country": "CL",
+            "postalCode": "000000",
+            "phone": "7563126"
+         }
+      },
+      "creditCard": {
+         "number": "4097440000000004",
+         "securityCode": "777",
+         "expirationDate": "2022/12",
+         "name": "APPROVED"
+      },
+      "extraParameters": {
+         "INSTALLMENTS_NUMBER": 1
+      },
+      "type": "AUTHORIZATION",
+      "paymentMethod": "VISA",
+      "paymentCountry": "CL",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": false
+}
+```
+<br>
+
+Response body:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 1400455722,
+        "transactionId": "49cb24d9-eda6-43de-aad9-a17ffa9e5fb8",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "195569",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "49cb24d9-eda6-43de-aad9-a17ffa9e5fb8",
+        "authorizationCode": "195569",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": "Approved transaction",
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1624616739664,
+        "referenceQuestionnaire": null,
+        "extraParameters": {
+            "BANK_REFERENCED_CODE": "CREDIT",
+            "TRANSBANK_DIRECT_TOKEN": "01ab3984007f3010d2adb6c02d104f85b8268ccf4b95da4b56f3abdb339e1c52"
+        },
+        "additionalInfo": null
+    }
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <accountId>512325</accountId>
+         <referenceCode>PRODUCT_TEST_2021-06-25T16:33:48.512ZZ</referenceCode>
+         <description>Payment test description</description>
+         <language>es</language>
+         <signature>77d72fb91eb43f9b15fb300d5f173da3</signature>
+         <notifyUrl>http://www.payu.com/notify</notifyUrl>
+         <additionalValues>
+            <entry>
+               <string>TX_VALUE</string>
+               <additionalValue>
+                  <value>10000</value>
+                  <currency>CLP</currency>
+               </additionalValue>
+            </entry>
+         </additionalValues>
+         <buyer>
+            <merchantBuyerId>1</merchantBuyerId>
+            <fullName>First name and second buyer name</fullName>
+            <emailAddress>buyer_test@test.com</emailAddress>
+            <contactPhone>7563126</contactPhone>
+            <dniNumber>123456789</dniNumber>
+            <shippingAddress>
+               <street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
+               <street2>5555487</street2>
+               <city>RM</city>
+               <state>Talagante</state>
+               <country>CL</country>
+               <postalCode>000000</postalCode>
+               <phone>7563126</phone>
+            </shippingAddress>
+         </buyer>
+         <shippingAddress>
+            <street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
+            <street2>5555487</street2>
+            <city>RM</city>
+            <state>Talagante</state>
+            <country>CL</country>
+            <postalCode>0000000</postalCode>
+            <phone>7563126</phone>
+         </shippingAddress>
+      </order>
+      <payer>
+         <merchantPayerId>1</merchantPayerId>
+         <fullName>First name and second payer name</fullName>
+         <emailAddress>payer_test@test.com</emailAddress>
+         <contactPhone>7563126</contactPhone>
+         <dniNumber>5415668464654</dniNumber>
+         <billingAddress>
+            <street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
+            <street2>5555487</street2>
+            <city>RM</city>
+            <state>Talagante</state>
+            <country>CL</country>
+            <postalCode>000000</postalCode>
+            <phone>7563126</phone>
+         </billingAddress>
+      </payer>
+      <creditCard>
+         <number>4097440000000004</number>
+         <securityCode>777</securityCode>
+         <expirationDate>2022/12</expirationDate>
+         <name>APPROVED</name>
+      </creditCard>
+      <extraParameters>
+         <entry>
+            <string>INSTALLMENTS_NUMBER</string>
+            <string>1</string>
+         </entry>
+      </extraParameters>
+      <type>AUTHORIZATION</type>
+      <paymentMethod>VISA</paymentMethod>
+      <paymentCountry>CL</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+```
+<br>
+
+Response body:
+```XML
+<paymentResponse>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>1400455931</orderId>
+        <transactionId>56f77e02-447a-4c98-a04b-9a8f3f92f3e7</transactionId>
+        <state>APPROVED</state>
+        <paymentNetworkResponseCode>363838</paymentNetworkResponseCode>
+        <trazabilityCode>56f77e02-447a-4c98-a04b-9a8f3f92f3e7</trazabilityCode>
+        <authorizationCode>363838</authorizationCode>
+        <responseCode>APPROVED</responseCode>
+        <responseMessage>Approved transaction</responseMessage>
+        <operationDate>2021-06-25T06:33:55</operationDate>
+        <extraParameters>
+            <entry>
+                <string>BANK_REFERENCED_CODE</string>
+                <string>CREDIT</string>
+            </entry>
+            <entry>
+                <string>TRANSBANK_DIRECT_TOKEN</string>
+                <string>01ab79a6030063a6b4039a64a8cf7de471d7ad02390c118fbd7d66cfd1af9864</string>
+            </entry>
+        </extraParameters>
+    </transactionResponse>
+</paymentResponse>
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+### Capture
+Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-chile.md#authorization" >}}) to transfer them to your PayU account.
+
+#### Considerations
+Take into account the following considerations for capture.
+* The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.
+* Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
+* You can perform only one partial capture over an authorized amount. To do this, you need to send in the request the parameter `transaction.order.additionalValues.TX_VALUE` with its value (as sent during the Authorization) and set `PARTIAL_CAPTURE` for `transaction.type`.<br>The minimum amount is 50 CLP.
+* Captures are only allowed for transactions in one installment.
+
+The following are the request and response bodies for this transaction type.
+
+{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiLogin": "pRRXKOl8ikMmt9u",
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+   },
+   "transaction": {
+      "order": {
+         "id": "1400421560"
+      },
+      "type": "CAPTURE",
+      "parentTransactionId": "db9d9d7f-b62c-4ed2-a3b9-d146d33bdaf5"
+   },
+   "test": false
+}
+```
+<br>
+
+Response body:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 1400455931,
+        "transactionId": "da91c0ec-632b-44e3-883d-b85821390519",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "0",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "da91c0ec-632b-44e3-883d-b85821390519",
+        "authorizationCode": "169018",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": "Approved transaction",
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1624629865424,
+        "referenceQuestionnaire": null,
+        "extraParameters": {
+            "TRANSBANK_DIRECT_TOKEN": "01ab5a10f3c1bdd401ac86d7c21e4347a7b848171fad7830157abcaac0373c7e"
+        },
+        "additionalInfo": null
+    }
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <id>1400456250</id>
+      </order>
+      <type>CAPTURE</type>
+      <parentTransactionId>ead41073-a03a-45aa-9e83-23d4b03197f0</parentTransactionId>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+```
+<br>
+
+Response body:
+```XML
+<paymentResponse>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>1400456250</orderId>
+        <transactionId>9c4d12c4-277d-4936-9d15-735e21dd5a19</transactionId>
+        <state>APPROVED</state>
+        <paymentNetworkResponseCode>0</paymentNetworkResponseCode>
+        <trazabilityCode>9c4d12c4-277d-4936-9d15-735e21dd5a19</trazabilityCode>
+        <authorizationCode>698999</authorizationCode>
+        <responseCode>APPROVED</responseCode>
+        <responseMessage>Approved transaction</responseMessage>
+        <operationDate>2021-06-25T09:08:16</operationDate>
+        <extraParameters>
+            <entry>
+                <string>TRANSBANK_DIRECT_TOKEN</string>
+                <string>01ab6ddef1f9350f7b970d33b9766db9b0d52c6b9cb353618ddc8cd58d076b59</string>
+            </entry>
+        </extraParameters>
+    </transactionResponse>
+</paymentResponse>
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+### Charge
+Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
+
+The following are the request and response bodies for this transaction type.
+
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -517,7 +895,7 @@ This method lets you process the payments in cash of your customers. To integrat
 ### API call
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -877,7 +1255,7 @@ The variables above are sent via GET.
 ### API call
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1159,7 +1537,7 @@ This method returns a list of the payment methods available in all countries.
 ### API call
 The following are the examples of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1279,7 +1657,7 @@ The ```PING``` method lets you verify the connection to our platform.
 ### API call
 The following are the examples of the request and response of this method.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
