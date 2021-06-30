@@ -1081,7 +1081,7 @@ If your account is in Mexico, you can offer to your customers the option to pay 
 ### Variables for MSI
 To use MSI, you need to include the number of months and the card issuer bank in the `transaction.monthsWithoutInterest` parameter in the request:
 
-{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 "monthsWithoutInterest": {
