@@ -46,4 +46,4 @@ Furthermore, the tokenization feature lets you store, remove or charge several c
 The integration with this feature can be performed using one of our integration types:
 
 * [For API integrations, refer to this topic]({{< ref "Tokenization-API.md" >}})
-* [For SDK integrations, refer to this topic]({{< ref "SDK Integration" >}})
+* [For SDK integrations, refer to this topic]({{< ref "TokenizationSDK.md" >}})

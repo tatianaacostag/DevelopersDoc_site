@@ -56,4 +56,4 @@ According to the processing country, some special conditions may apply to be abl
 The integration with this feature can be performed using one of our integration types:
 
 * [For API integrations, refer to this topic]({{< ref "Refunds-API.md" >}})
-* [For SDK integrations, refer to this topic]({{< ref "SDK Integration" >}})
+* [For SDK integrations, refer to this topic]({{< ref "RefundsSDK.md" >}})

@@ -32,7 +32,7 @@ To confirm the status of a transaction, you can use one of the following options
 {{% /alert %}}
 
 ## Submit transaction with credit cards
-This method lets you process the payments performed by your customers using credit or debit cards. For Colombia, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+This method lets you process the payments performed by your customers using credit cards. For Colombia, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Variables for request and response
 
@@ -96,7 +96,6 @@ This method lets you process the payments performed by your customers using cred
 | transaction > creditCard > expirationDate | Alphanumeric | 7 | Credit card expiration date. Format `YYYY/MM`. | No |
 | transaction > creditCard > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card. | No |
 | transaction > creditCard > processWithoutCvv2 | Boolean | Max:255 | Allows you to process transactions without including the credit card security code. Your commerce requires PayU's authorization before using this feature. | No |
-| transaction > debitCard |  |  | Debit card information. This object and its parameters are mandatory when the payment is performed using debit card. | No |
 | transaction > payer |  |  | Payer information. | Yes |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | Yes |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
@@ -114,7 +113,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "responde-codes-and-variables.html#document-types" >}}). This value is mandatory when the payment method is `CODENSA`. | No |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction. For Colombia, set `AUTHORIZATION_AND_CAPTURE` | Yes |
-| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit or Debit card Payment Method. [See the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia" >}}). | Yes |
+| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit card Payment Method. [See the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CO` for Colombia. | Yes |
 | transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |

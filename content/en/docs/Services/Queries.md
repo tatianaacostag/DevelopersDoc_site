@@ -26,4 +26,4 @@ To query transactions, PayU allows you to search by any of the following criteri
 The integration with this feature can be performed using one of our integration types:
 
 * [For API integrations, refer to this topic]({{< ref "Queries-API.md" >}})
-* [For SDK integrations, refer to this topic]({{< ref "SDK Integration" >}})
+* [For SDK integrations, refer to this topic]({{< ref "QueriesSDK.md" >}})

@@ -776,7 +776,7 @@ For specific details about how to perform payments, refer to the respective arti
   </div>
   <div style="float: left;width: 50%;">
     <ul>
-      <img src="/assets/Mexico.png" width="25px"/> <a href="{{< ref "Payments-API-Mexico.md" >}}.html">Mexico</a><br>
+      <img src="/assets/Mexico.png" width="25px"/> <a href="{{< ref "Payments-API-Mexico.md" >}}">Mexico</a><br>
       <img src="/assets/Panama.png" width="25px"/> <a href="{{< ref "Payments-API-Panama.md" >}}">Panama</a><br>
       <img src="/assets/Peru.png" width="25px"/> <a href="{{< ref "Payments-API-Peru.md" >}}">Peru</a>
     </ul>

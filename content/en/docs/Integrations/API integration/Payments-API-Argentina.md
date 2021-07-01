@@ -272,6 +272,7 @@ Response body:
         },
         "additionalInfo": null
     }
+}
 ```
 
 {{< /tab >}}

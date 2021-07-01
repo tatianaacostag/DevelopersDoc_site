@@ -1,6 +1,6 @@
 ---
-title: "Responde Codes and Variables"
-linkTitle: "Responde Codes and Variables"
+title: "Response Codes and Variables"
+linkTitle: "Response Codes and Variables"
 date: 2021-04-06T15:33:35-05:00
 description:
   In this section, you find relevant data used during the integration process, such as the variable tables, languages, and currencies admitted in the PayU’s platform.

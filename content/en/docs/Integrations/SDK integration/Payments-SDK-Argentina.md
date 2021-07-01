@@ -1,14 +1,14 @@
 ---
-title: "Payments API - Argentina"
-linkTitle: "Payments API - Argentina"
+title: "Payments SDK - Argentina"
+linkTitle: "Payments SDK - Argentina"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  Payments API Argentina lets your shop process different transaction types with multiple payment methods.
-weight: 20
+  Payments SDK Argentina lets your shop process different transaction types with multiple payment methods.
+weight: 10
 tags: ["subtopic"]
 ---
 
-To integrate with Payments SDK, target the requests to the following URLs:
+To integrate with Payments SDK Argentina, target the requests to the following URLs:
 
 {{< tabs tabTotal="2" tabID="1" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -36,19 +36,20 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transaction with credit or debit card]({{< ref "Payments-API-Argentina.md#submit-transaction-with-credit-or-debit-card" >}})
-* [Submit transaction with cash]({{< ref "Payments-API-Argentina.md#submit-transaction-with-cash" >}})
-* [Available payment methods query]({{< ref "Payments-API-Argentina.md#available-payment-methods-query" >}})
-* [Ping]({{< ref "Payments-API-Argentina.md#ping" >}})
+* [Submit transaction with credit card]({{< ref "Payments-SDK-Argentina.md#submit-transaction-with-credit-card" >}})
+* [Submit transaction with cash]({{< ref "Payments-SDK-Argentina.md#submit-transaction-with-cash" >}})
+* [Available payment methods query]({{< ref "Payments-SDK-Argentina.md#available-payment-methods-query" >}})
+* [Ping]({{< ref "Payments-SDK-Argentina.md#ping" >}})
 
 {{% alert title="Note" color="info"%}}
 To confirm the status of a transaction, you can use the [Queries SDK]({{< ref "QueriesSDK.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit or debit card
-This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+## Submit transaction with credit card
+This method lets you process the payments performed by your customers using credit cards. For Argentina, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
-#### Considerations
+### Considerations
+* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Argentina]({{< ref "select-your-payment-method.html#img-srcassetsargentinapng-width25px-argentina" >}}).
 * For payments with Promotions, set the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
 * Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
 * For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
@@ -57,7 +58,7 @@ This method lets you process the payments performed by your customers using cred
 * Due to Tax regulations, it is mandatory to set the parameters `PAYER_STATE` and `PAYER_DNI_TYPE`.
 
 ### Authorization
-Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-argentina.md#capture" >}}) the funds.<br>The following examples shows how to call the method for this transaction type according to the programming language.
+Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-argentina.md#capture" >}}) the funds.<br>The following examples show how to call the method for this transaction type according to the programming language.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -157,18 +158,17 @@ TransactionResponse response = PayUPayments.doAuthorization(parameters);
 // You can obtain the properties in the response
 if(response != null){
 	response.getOrderId();
-        response.getTransactionId();
-        response.getState();
-        if(response.getState().toString().equalsIgnoreCase("PENDING")){
-                response.getPendingReason();
-        }
-        response.getPaymentNetworkResponseCode();
-        response.getPaymentNetworkResponseErrorMessage();
-        response.getTrazabilityCode();
-        response.getResponseCode();
-        response.getResponseMessage();
+    response.getTransactionId();
+    response.getState();
+    if(response.getState().toString().equalsIgnoreCase("PENDING")){
+    	response.getPendingReason();
+    }
+    response.getPaymentNetworkResponseCode();
+    response.getPaymentNetworkResponseErrorMessage();
+    response.getTrazabilityCode();
+    response.getResponseCode();
+    response.getResponseMessage();
 }
-
 ```
 {{< /tab >}}
 
@@ -225,7 +225,7 @@ $parameters = array(
 	//Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "5415668464654",
 	// Enter the payer's DNI type here
-	PayUParameters::PARAMETERS.PAYER_DNI_TYPE => "DNI"
+	PayUParameters::PARAMETERS.PAYER_DNI_TYPE => "DNI",
 	//Enter the payer's address here.
 	PayUParameters::PAYER_STREET => "Av Centenario 837",
 	PayUParameters::PAYER_STREET_2 => "5555487",
@@ -278,20 +278,19 @@ if ($response) {
 	$response->transactionResponse->responseMessage;
 
 }
-
 ```
 {{< /tab >}}
 {{< /tabs >}}
 
 ### Capture
-Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-argentina.md#authorization" >}}) to transfer them to your PayU account.
+Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-sdk-argentina.md#authorization" >}}) to transfer them to your PayU account.
 
 #### Considerations
 Take into account the following considerations for capture.
 * The maximum time to capture an approved transaction is 14 days. After this time, the transaction is auto voided.
 * Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
 
-The following examples shows how to call the method for this transaction type according to the programming language.
+The following examples show how to call the method for this transaction type according to the programming language.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -352,7 +351,7 @@ if ($response) {
 ### Charge
 Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
 
-The following examples shows how to call the method for this transaction type according to the programming language.
+The following examples show how to call the method for this transaction type according to the programming language.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -518,7 +517,7 @@ $parameters = array(
 	//Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "5415668464654",
 	// Enter the payer's DNI type here
-	PayUParameters::PARAMETERS.PAYER_DNI_TYPE => "DNI"
+	PayUParameters::PARAMETERS.PAYER_DNI_TYPE => "DNI",
 	//Enter the payer's address here.
 	PayUParameters::PAYER_STREET => "Av Centenario 837",
 	PayUParameters::PAYER_STREET_2 => "5555487",
@@ -603,7 +602,8 @@ This method lets you process the payments in cash of your customers. To integrat
 
 <img src="/assets/Payments/CashReceiptAR.png" alt="PrintScreen" width="50%">
 
-#### Considerations
+### Considerations
+* Send a valid cash Payment Method in the request, [see the available Payment Methods for Argentina]({{< ref "select-your-payment-method.html#img-srcassetsargentinapng-width25px-argentina" >}}).
 * The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is 15 days after the current date.
 * The response returns the following extra parameters related to the transaction:
    - **REFERENCE**: internal payment reference generated by PayU.
@@ -614,7 +614,7 @@ This method lets you process the payments in cash of your customers. To integrat
 Refer to the examples
 
 ### Method call
-The following examples shows how to call the method for this transaction type according to the programming language.
+The following examples show how to call the method for this transaction type according to the programming language.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -683,8 +683,11 @@ parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, "AR");
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "000000");
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "7563126");
 
-//Enter the cash payment method name here.
+// Enter the cash payment method name here.
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "PAGOFACIL");
+
+// Enter the payment due date
+parameters.put(PayU.PARAMETERS.EXPIRATION_DATE, "2021-07-01T20:00:00");
 
 // Enter the name of the country here.
 parameters.put(PayU.PARAMETERS.COUNTRY, PaymentCountry.AR.name());
@@ -772,7 +775,7 @@ $parameters = array(
 	//Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "5415668464654",
 	// Enter the payer's DNI type here
-	PayUParameters::PARAMETERS.PAYER_DNI_TYPE => "DNI"
+	PayUParameters::PARAMETERS.PAYER_DNI_TYPE => "DNI",
 	//Enter the payer's address here.
 	PayUParameters::PAYER_STREET => "Av Centenario 837",
 	PayUParameters::PAYER_STREET_2 => "5555487",
@@ -783,13 +786,16 @@ $parameters = array(
 	PayUParameters::PAYER_PHONE => "7563126",
 
 	//Enter the cash payment method name here.
-	PayUParameters::PAYMENT_METHOD => "COBRO_EXPRESS",
+	PayUParameters::PAYMENT_METHOD => "PAGOFACIL",
+
+	// Enter the payment due date
+	PayUParameters::EXPIRATION_DATE => "2021-07-01T20:00:00",
 
 	// Enter the name of the country here.
 	PayUParameters::COUNTRY => PayUCountries::AR,
 
 	// Payer IP
-	PayUParameters::IP_ADDRESS => "127.0.0.1",
+	PayUParameters::IP_ADDRESS => "127.0.0.1"
 
 );
 
@@ -826,7 +832,7 @@ if ($response) {
 This method returns a list of the payment methods available in all countries.
 
 ### Method call
-The following examples shows how to call the method for this transaction type according to the programming language. For the sake of the example, the request and response here show two payment methods. 
+The following examples show how to call the method for this transaction type according to the programming language.
 
 {{< tabs tabTotal="2" tabID="6" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -853,7 +859,7 @@ foreach ($payment_methods as $payment_method){
 The ```PING``` method lets you verify the connection to our platform. 
 
 ### Method call
-The following examples shows how to call the method for this transaction type according to the programming language.
+The following examples show how to call the method for this transaction type according to the programming language.
 
 {{< tabs tabTotal="2" tabID="7" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}

@@ -31,7 +31,7 @@ To confirm the status of a transaction, you can use one of the following options
 {{% /alert %}}
 
 ## Submit transaction with credit or debit cards
-This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Note" color="info"%}}
 Transactions with credit card using two-step flows are available under demand. Contact your Sales representative for more information.
@@ -1239,7 +1239,7 @@ This method lets you process the bank transfer payments of your customers. To in
 * If you don't send the `RESPONSE_URL` parameter in `transaction.extraParameters`, the API took the value from the _**Response URL**_ variable in your PayU Module (_**Settings**_ > _**Technical configuration**_).
 * When you process bank transfer payment, you must redirect the customer to the URL found in the `URL_PAYMENT_REDIRECT` extra parameter concatenated with the `TRANSBANK_DIRECT_TOKEN` extra parameter as follows: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
 * If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_PAYMENT_IN_ENTITY`; this is because the payer is redirected to the selected bank to complete the payment.
-* The responde page must have the following variables:
+* The response page must have the following variables:
 
 | Variable          | Description                                                   |
 |-------------------|---------------------------------------------------------------|

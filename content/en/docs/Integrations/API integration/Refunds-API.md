@@ -60,14 +60,14 @@ Before using Voids and Refunds API, take into account the following consideratio
 * When a refund is approved, the payer gets the money back in maximum 8 working days.
 
 ### Peru
-* The maximum days to Void an Authorizations are: 
+* The maximum days to void an authorization are: 
     - Visa: 21 days. If no void or capture is sent after this time, the transaction is auto-captured.
     - Mastercard: 28 days. If no void or capture is sent after this time, the transaction is auto-captured.
     - American Express: 30 days. If no void or capture is sent after this time, the transaction is auto-voided.
     - Diners: 11 days. If no void or capture is sent after this time, the transaction is auto-voided.
 * The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days.
 * Partial refunds are supported for transactions without installments. Recall that transactions with one installment are considered as without installments.
-* Partial refunds with visanet must be send it after one day.
+* Partial refunds with visanet must be sent after one day.
 * When a refund is approved, the payer gets the money back in 15 to 25 working days.
 * Minimum amount to send the Refund is 1 USD or 1 PEN.
 
