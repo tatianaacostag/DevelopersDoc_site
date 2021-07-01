@@ -873,6 +873,7 @@
         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;additionalInfo&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
     &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -5612,7 +5613,7 @@
 &lt;/div&gt;
 
 &lt;h2 id=&#34;submit-transaction-with-credit-or-debit-cards&#34;&gt;Submit transaction with credit or debit cards&lt;/h2&gt;
-&lt;p&gt;This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the two-step flows (&lt;strong&gt;Authorization&lt;/strong&gt;, &lt;strong&gt;Capture&lt;/strong&gt;), and one-step flows (&lt;strong&gt;Charge&lt;/strong&gt;). For more information, refer to &lt;a href=&#34;../../../docs/services/payments.html#payment-flows&#34;&gt;Payment flows&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform the two-step flows (&lt;strong&gt;Authorization&lt;/strong&gt;, &lt;strong&gt;Capture&lt;/strong&gt;), and one-step flows (&lt;strong&gt;Charge&lt;/strong&gt;). For more information, refer to &lt;a href=&#34;../../../docs/services/payments.html#payment-flows&#34;&gt;Payment flows&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -8478,7 +8479,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;li&gt;If you don&amp;rsquo;t send the &lt;code&gt;RESPONSE_URL&lt;/code&gt; parameter in &lt;code&gt;transaction.extraParameters&lt;/code&gt;, the API took the value from the &lt;em&gt;&lt;strong&gt;Response URL&lt;/strong&gt;&lt;/em&gt; variable in your PayU Module (&lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt;).&lt;/li&gt;
 &lt;li&gt;When you process bank transfer payment, you must redirect the customer to the URL found in the &lt;code&gt;URL_PAYMENT_REDIRECT&lt;/code&gt; extra parameter concatenated with the &lt;code&gt;TRANSBANK_DIRECT_TOKEN&lt;/code&gt; extra parameter as follows: &lt;br&gt; &lt;code&gt;URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;If the payment request is successful, the transaction has state &lt;code&gt;PENDING&lt;/code&gt; and responseCode &lt;code&gt;PENDING_PAYMENT_IN_ENTITY&lt;/code&gt;; this is because the payer is redirected to the selected bank to complete the payment.&lt;/li&gt;
-&lt;li&gt;The responde page must have the following variables:&lt;/li&gt;
+&lt;li&gt;The response page must have the following variables:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -9314,7 +9315,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;/div&gt;
 
 &lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
-&lt;p&gt;This method lets you process the payments performed by your customers using credit or debit cards. For Colombia, you can perform one-step flows (&lt;strong&gt;Charge&lt;/strong&gt;). For more information, refer to &lt;a href=&#34;../../../docs/services/payments.html#payment-flows&#34;&gt;Payment flows&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This method lets you process the payments performed by your customers using credit cards. For Colombia, you can perform one-step flows (&lt;strong&gt;Charge&lt;/strong&gt;). For more information, refer to &lt;a href=&#34;../../../docs/services/payments.html#payment-flows&#34;&gt;Payment flows&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variables for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
@@ -9703,13 +9704,6 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;transaction &amp;gt; debitCard&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Debit card information. This object and its parameters are mandatory when the payment is performed using debit card.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -9832,7 +9826,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Credit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -14251,17 +14245,24 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; monthsWithoutInterest&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Information when paying the purchase using Months Without Interests.&lt;br&gt;This parameter is mandatory when you want to use &lt;a href=&#34;../../../docs/services/promotions.html#months-without-interest-msi---meses-sin-intereses&#34;&gt;Months Without Interests (Meses Sin Intereses - MSI) feature&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; monthsWithoutInterest &amp;gt; months&lt;/td&gt;
 &lt;td&gt;Number&lt;/td&gt;
 &lt;td&gt;Max:2&lt;/td&gt;
-&lt;td&gt;Number of Months Without Interests for the purchase. The available values are 3, 6, 9, or 12.&lt;br&gt;This parameter is mandatory when you want to use &lt;a href=&#34;../../../docs/services/promotions.html&#34;&gt;Months Without Interests (Meses Sin Intereses - MSI) feature&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Number of Months Without Interests for the purchase. The available values are 3, 6, 9, or 12.&lt;br&gt;This parameter is mandatory when you want to use &lt;a href=&#34;../../../docs/services/promotions.html#months-without-interest-msi---meses-sin-intereses&#34;&gt;Months Without Interests (Meses Sin Intereses - MSI) feature&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; monthsWithoutInterest &amp;gt; bank&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;Max:255&lt;/td&gt;
-&lt;td&gt;Issuing bank of the credit card used to pay the purchase using Months Without Interests.&lt;br&gt;This parameter is mandatory when you want to use &lt;a href=&#34;../../../docs/services/promotions.html&#34;&gt;Months Without Interests (Meses Sin Intereses - MSI) feature&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Issuing bank of the credit card used to pay the purchase using Months Without Interests.&lt;br&gt;This parameter is mandatory when you want to use &lt;a href=&#34;../../../docs/services/promotions.html#months-without-interest-msi---meses-sin-intereses&#34;&gt;Months Without Interests (Meses Sin Intereses - MSI) feature&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -14379,7 +14380,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;li&gt;Two-step flows are only available for Mastercard and Visa.&lt;/li&gt;
 &lt;li&gt;For payments with Promotions, send the parameters &lt;code&gt;INSTALLMENTS_NUMBER&lt;/code&gt; and &lt;code&gt;PROMOTION_ID&lt;/code&gt; with the number of installments selected and the Id of the promotion. Refer to &lt;a href=&#34;../../../docs/services/promotions.html&#34;&gt;Promotions API&lt;/a&gt; for more information.&lt;/li&gt;
 &lt;li&gt;For payments with Months Without Interests (Meses Sin Intereses - MSI), send the parameters &lt;code&gt;transaction.monthsWithoutInterest.months&lt;/code&gt; with the number of installments and &lt;code&gt;transaction.monthsWithoutInterest.bank&lt;/code&gt; with the name of the issuer bank of the credit card. Refer to &lt;a href=&#34;../../../docs/services/promotions.html#months-without-interest-msi---meses-sin-intereses&#34;&gt;MSI&lt;/a&gt; for more information.&lt;/li&gt;
-&lt;li&gt;The available banks for MSI are: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer&lt;/li&gt;
+&lt;li&gt;The available banks for MSI are: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer.&lt;/li&gt;
 &lt;li&gt;When using MSI, promotions or apply installments, always display the phrase &lt;strong&gt;&amp;ldquo;PAGOS DIFERIDOS&amp;rdquo;&lt;/strong&gt; during the payment process.&lt;/li&gt;
 &lt;li&gt;When installments applied (fees assumed by the payer), display the original amount of the transaction, the total amount after the fees, the number of installments, and the amount per installment including the extra fee.&lt;/li&gt;
 &lt;li&gt;Promotions feature is only available for &lt;a href=&#34;../../../docs/services/payments.html#payment-flows&#34;&gt;one-step flows&lt;/a&gt;.&lt;/li&gt;
@@ -17555,7 +17556,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: internal payment reference generated by PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: maximum term for the payer to perform the payment.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: barcode which lets the payer perform the payment.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects bank reference payment.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: payment receipt in PDF format.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -21615,7 +21616,6 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;h4 id=&#34;considerations-2&#34;&gt;Considerations&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;The parameter &lt;code&gt;transaction.expirationDate&lt;/code&gt; is not mandatory. If you don&amp;rsquo;t send this parameter, its default value for is seven (7) days after the current date.&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;li&gt;The parameter &lt;code&gt;transactionResponse.extraParameters&lt;/code&gt; has the following parameters related to the transaction:
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: internal payment reference generated by PayU.&lt;/li&gt;
@@ -25591,7 +25591,7 @@ By default, processing credit cards without security code is not enabled. If you
   &lt;/div&gt;
   &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
     &lt;ul&gt;
-      &lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-mexico.html.html&#34;&gt;Mexico&lt;/a&gt;&lt;br&gt;
+      &lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-mexico.html&#34;&gt;Mexico&lt;/a&gt;&lt;br&gt;
       &lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-panama.html&#34;&gt;Panama&lt;/a&gt;&lt;br&gt;
       &lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-peru.html&#34;&gt;Peru&lt;/a&gt;
     &lt;/ul&gt;
@@ -27293,7 +27293,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;/ul&gt;
 &lt;h3 id=&#34;peru&#34;&gt;Peru&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;The maximum days to Void an Authorizations are:
+&lt;li&gt;The maximum days to void an authorization are:
 &lt;ul&gt;
 &lt;li&gt;Visa: 21 days. If no void or capture is sent after this time, the transaction is auto-captured.&lt;/li&gt;
 &lt;li&gt;Mastercard: 28 days. If no void or capture is sent after this time, the transaction is auto-captured.&lt;/li&gt;
@@ -27303,7 +27303,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;/li&gt;
 &lt;li&gt;The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days.&lt;/li&gt;
 &lt;li&gt;Partial refunds are supported for transactions without installments. Recall that transactions with one installment are considered as without installments.&lt;/li&gt;
-&lt;li&gt;Partial refunds with visanet must be send it after one day.&lt;/li&gt;
+&lt;li&gt;Partial refunds with visanet must be sent after one day.&lt;/li&gt;
 &lt;li&gt;When a refund is approved, the payer gets the money back in 15 to 25 working days.&lt;/li&gt;
 &lt;li&gt;Minimum amount to send the Refund is 1 USD or 1 PEN.&lt;/li&gt;
 &lt;/ul&gt;

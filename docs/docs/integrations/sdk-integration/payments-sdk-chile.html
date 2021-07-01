@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/integrations/sdk-integration/payments-sdk-chile.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-06-29T20:27:18-05:00" /><meta property="og:site_name" content="Documentation" />
+<meta property="article:modified_time" content="2021-06-30T22:58:54-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="Payments SDK - Chile">
 <meta itemprop="description" content="Payments SDK Chile lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-06-29T20:27:18-05:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2021-06-30T22:58:54-05:00" />
+<meta itemprop="wordCount" content="2673">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments SDK - Chile"/>
 <meta name="twitter:description" content="Payments SDK Chile lets your shop process different transaction types with multiple payment methods.
@@ -123,7 +123,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7a4a5a66942ec0e17422a1c635e04067b45f39979f7227366cc8bfb398563f8452419e213b0a983c48195b8802325ccb7008af6acd5ca10eedd24adb415a0f3d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e37e6f9875c7a7fc56a8da4eaef67427bf0676a6cc422215727fc7b56b6597281985d696ebfcaf73bb8e0d8e7afa1e50e72e7d79cc6be7e1ed5fc2ce72cfcbf4.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -211,7 +211,7 @@
       
       
       
-        <a id="/docs/getting-started/test-your-solution/responde-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsgetting-startedtest-your-solutionresponde-codes-and-variableshtml" href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html">Responde Codes and Variables</a>
+        <a id="/docs/getting-started/test-your-solution/responde-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsgetting-startedtest-your-solutionresponde-codes-and-variableshtml" href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html">Response Codes and Variables</a>
       
       
     </li>
@@ -566,7 +566,7 @@
       
       
       
-        <a id="/docs/integrations/sdk-integration/payments-sdk-argentina.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../docs/integrations/sdk-integration/payments-sdk-argentina.html">Payments API - Argentina</a>
+        <a id="/docs/integrations/sdk-integration/payments-sdk-argentina.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../docs/integrations/sdk-integration/payments-sdk-argentina.html">Payments SDK - Argentina</a>
       
       
       
@@ -596,7 +596,7 @@
       
       
       
-        <a id="/docs/integrations/sdk-integration/payments-sdk-panama.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationpayments-sdk-panamahtml" href="../../../docs/integrations/sdk-integration/payments-sdk-panama.html">Payments SDK - Panama</a>
+        <a id="/docs/integrations/sdk-integration/payments-sdk-peru.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationpayments-sdk-peruhtml" href="../../../docs/integrations/sdk-integration/payments-sdk-peru.html">Payments SDK - Peru</a>
       
       
       
@@ -609,6 +609,12 @@
       
       
         <a id="/docs/integrations/sdk-integration/tokenizationsdk.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationtokenizationsdkhtml" href="../../../docs/integrations/sdk-integration/tokenizationsdk.html">Tokenization SDK</a>
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/sdk-integration/refundssdk.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationrefundssdkhtml" href="../../../docs/integrations/sdk-integration/refundssdk.html">Voids and Refunds SDK</a>
       
       
     </li>
@@ -682,6 +688,30 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#available-methods">Available methods</a></li>
+    <li><a href="#submit-transaction-with-credit-cards">Submit transaction with credit cards</a>
+      <ul>
+        <li><a href="#considerations">Considerations</a></li>
+        <li><a href="#authorization">Authorization</a></li>
+        <li><a href="#capture">Capture</a></li>
+        <li><a href="#charge">Charge</a></li>
+      </ul>
+    </li>
+    <li><a href="#available-payment-methods-query">Available payment methods query</a>
+      <ul>
+        <li><a href="#method-call">Method call</a></li>
+      </ul>
+    </li>
+    <li><a href="#ping">Ping</a>
+      <ul>
+        <li><a href="#method-call-1">Method call</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -738,10 +768,1072 @@
 	<h1>Payments SDK - Chile</h1>
     <div class="lead">Payments SDK Chile lets your shop process different transaction types with multiple payment methods.</div>
 	       
+	<p>To integrate with Payments SDK Chile, target the requests to the following URLs:</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#tab11" role="tab"
+		   aria-controls="nav-home" aria-selected="true">Java</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-1" data-toggle="tab" href="#tab12" role="tab"
+		   aria-controls="nav-home" aria-selected="false">PHP</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="1">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#8f5902;font-style:italic">// URL for test: https://sandbox.api.payulatam.com/payments-api/
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">paymentsUrl</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">“</span><span style="color:#000">https</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#8f5902;font-style:italic">//api.payulatam.com/payments-api/”;
+</span><span style="color:#8f5902;font-style:italic">// URL for test: https://sandbox.api.payulatam.com/reports-api/
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">reportsUrl</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">“</span><span style="color:#000">https</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#8f5902;font-style:italic">//api.payulatam.com/reports-api/”;
+</span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#8f5902;font-style:italic">// URL for test: https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">Environment</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">setPaymentsCustomUrl</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">“https</span><span style="color:#ce5c00;font-weight:bold">://</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">payulatam</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">com</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">payments</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">4.0</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">service</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">cgi”</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// URL for test: https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">Environment</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">setReportsCustomUrl</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">“https</span><span style="color:#ce5c00;font-weight:bold">://</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">payulatam</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">com</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">reports</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">4.0</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">service</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">cgi”</span><span style="color:#000;font-weight:bold">);</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h2 id="available-methods">Available methods</h2>
+<p>Payments API includes the following methods:</p>
+<ul>
+<li><a href="../../../docs/integrations/sdk-integration/payments-sdk-chile.html#submit-transaction-with-credit-cards">Submit transaction with credit cards</a></li>
+<li><a href="../../../docs/integrations/sdk-integration/payments-sdk-chile.html#available-payment-methods-query">Available payment methods query</a></li>
+<li><a href="../../../docs/integrations/sdk-integration/payments-sdk-chile.html#ping">Ping</a></li>
+</ul>
+<!-- * [Submit transaction with cash](/docs/integrations/sdk-integration/payments-sdk-chile.html#submit-transaction-with-cash) -->
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+To confirm the status of a transaction, you can use the <a href="../../../docs/integrations/sdk-integration/queriessdk.html">Queries SDK</a>.
+</div>
+
+<h2 id="submit-transaction-with-credit-cards">Submit transaction with credit cards</h2>
+<p>This method lets you process the payments performed by your customers using credit cards. For Chile, you can perform the two-step flows (<strong>Authorization</strong>, <strong>Capture</strong>), and one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../docs/services/payments.html#payment-flows">Payment flows</a>.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+Transactions with credit card using two-step flows are available under demand. Contact your Sales representative for more information.
+</div>
+
+<h3 id="considerations">Considerations</h3>
+<ul>
+<li>Send a valid Credit card Payment Method in the request, <a href="../../../docs/getting-started/select-your-payment-method.html#img-srcassetschilepng-width25px-chile">see the available Payment Methods for Chile</a>.</li>
+<li>For payments with credit card tokens, include the parameters <code>TOKEN_ID</code> and <code>CREDIT_CARD_SECURITY_CODE</code> replacing the information of the credit card (if you process with security code). For more information, refer to <a href="../../../docs/integrations/sdk-integration/tokenizationsdk.html">Tokenization SDK</a>.</li>
+<li>Transactions in CHILEAN PESOS with decimal amounts are not allowed.</li>
+<li>Two-step flows are not supported for international credit cards.</li>
+<li>Transactions with credit card using two-step flows are available under demand and for single installment payments. Contact your Sales representative for more information.</li>
+<li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>PROCESS_WITHOUT_CVV2</code> as true and remove the variable <code>CREDIT_CARD_SECURITY_CODE</code>.</li>
+</ul>
+<h3 id="authorization">Authorization</h3>
+<p>Use this method to perform the <strong>Authorization</strong> step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you <a href="../../../docs/integrations/sdk-integration/payments-sdk-chile.html#capture">capture</a> the funds.<br>The following examples show how to call the method for this transaction type according to the programming language.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
+		   aria-controls="nav-home" aria-selected="true">Java</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
+		   aria-controls="nav-home" aria-selected="false">PHP</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="2">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">String</span> <span style="color:#000">reference</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;payment_test_00000001&#34;</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<span style="color:#000">String</span> <span style="color:#000">value</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1000&#34;</span><span style="color:#ce5c00;font-weight:bold">;</span>
+
+<span style="color:#000">Map</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;();</span>
+
+<span style="color:#8f5902;font-style:italic">// Enter the account’s identifier here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">ACCOUNT_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;512325&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the reference code here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">REFERENCE_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">reference</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the description here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">DESCRIPTION</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;payment test&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the transaction language here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">LANGUAGE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Language.es&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// -- Values --
+</span><span style="color:#8f5902;font-style:italic">// Enter the value here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">VALUE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">value</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the currency here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CURRENCY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">Currency</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CLP</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">());</span>
+
+<span style="color:#8f5902;font-style:italic">// -- Buyer --
+</span><span style="color:#8f5902;font-style:italic">//Enter the buyer Id here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s name here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_NAME</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;First name and second buyer name&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s email here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_EMAIL</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;buyer_test@test.com&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s contact phone here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_CONTACT_PHONE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s contact document here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_DNI</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;123456789&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s address here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_STREET</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Autopista Del Sol, 0 - Km.43 Costado Sur&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_STREET_2</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_CITY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;RM&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_STATE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Talagante&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_COUNTRY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_POSTAL_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_PHONE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+
+<span style="color:#8f5902;font-style:italic">// -- Payer --
+</span><span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s ID here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s name here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_NAME</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;First name and second payer name&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s email here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_EMAIL</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;payer_test@test.com&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s contact phone here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_CONTACT_PHONE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s contact document here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_DNI</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;5415668464654&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s address here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_STREET</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Autopista Del Sol, 0 - Km.43 Costado Sur&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_STREET_2</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_CITY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;RM&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_STATE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Talagante&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_COUNTRY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_POSTAL_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_PHONE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// -- Credit card data --
+</span><span style="color:#8f5902;font-style:italic">// Enter the number of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CREDIT_CARD_NUMBER</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;4097440000000004&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter expiration date of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CREDIT_CARD_EXPIRATION_DATE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;2022/12&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the security code of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CREDIT_CARD_SECURITY_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;777&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the name of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYMENT_METHOD</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// Enter the number of installments here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">INSTALLMENTS_NUMBER</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the name of the country here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">COUNTRY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">PaymentCountry</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CL</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">());</span>
+
+
+<span style="color:#8f5902;font-style:italic">// Device Session ID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">DEVICE_SESSION_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;vghs6tvkcle931686k1900o6e1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Payer IP
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">IP_ADDRESS</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;127.0.0.1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Cookie of the current session.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">COOKIE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;pt1t38347bs6jc9ruv2ecpv7o2&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// User agent of the current session.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">USER_AGENT</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// Authorization request
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">TransactionResponse</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">doAuthorization</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// You can obtain the properties in the response
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">if</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#ce5c00;font-weight:bold">){</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getOrderId</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getTransactionId</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getState</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getState</span><span style="color:#ce5c00;font-weight:bold">().</span><span style="color:#c4a000">toString</span><span style="color:#ce5c00;font-weight:bold">().</span><span style="color:#c4a000">equalsIgnoreCase</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;PENDING&#34;</span><span style="color:#ce5c00;font-weight:bold">)){</span>
+    	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPendingReason</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#ce5c00;font-weight:bold">}</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPaymentNetworkResponseCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPaymentNetworkResponseErrorMessage</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getTrazabilityCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getResponseCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getResponseMessage</span><span style="color:#ce5c00;font-weight:bold">();</span>
+<span style="color:#ce5c00;font-weight:bold">}</span>
+
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#000">$reference</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;payment_test_00000001&#34;</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000">$value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1000&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#000">$parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">array</span><span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the account’s identifier here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">ACCOUNT_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;512325&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the reference code here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">REFERENCE_CODE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#000">$reference</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the description here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">DESCRIPTION</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;payment test&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// -- Values --
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// Enter the value here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">VALUE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#000">$value</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the currency here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CURRENCY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// -- Buyer --
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#8f5902;font-style:italic">//Enter the buyer Id here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s name here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_NAME</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;First name and second buyer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s email here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_EMAIL</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;buyer_test@test.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s contact phone here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_CONTACT_PHONE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s contact document here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_DNI</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;5415668464654&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s address here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_STREET</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Autopista Del Sol, 0 - Km.43 Costado Sur&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_STREET_2</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_CITY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;RM&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_STATE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Talagante&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_COUNTRY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_POSTAL_CODE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_PHONE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+
+	<span style="color:#8f5902;font-style:italic">// -- Payer --
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s ID here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PAYER_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#8f5902;font-style:italic">///Enter the payer&#39;s name here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_NAME</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;First name and second payer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s email here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_EMAIL</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;payer_test@test.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s contact phone here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_CONTACT_PHONE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s contact document here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_DNI</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;5415668464654&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s address here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_STREET</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Autopista Del Sol, 0 - Km.43 Costado Sur&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_STREET_2</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_CITY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;RM&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_STATE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Talagante&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_COUNTRY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_POSTAL_CODE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_PHONE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// -- Credit card data --
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// Enter the number of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CREDIT_CARD_NUMBER</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;4097440000000004&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter expiration date of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CREDIT_CARD_EXPIRATION_DATE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;2022/12&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the security code of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CREDIT_CARD_SECURITY_CODE</span><span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;777&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the name of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYMENT_METHOD</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// Enter the number of installments here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">INSTALLMENTS_NUMBER</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the name of the country here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">COUNTRY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#000">PayUCountries</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CL</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// Device Session ID
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">DEVICE_SESSION_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;vghs6tvkcle931686k1900o6e1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Payer IP
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">IP_ADDRESS</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;127.0.0.1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Cookie of the current session
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_COOKIE</span><span style="color:#ce5c00;font-weight:bold">=&gt;</span><span style="color:#4e9a06">&#34;pt1t38347bs6jc9ruv2ecpv7o2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// User agent of the current session
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">USER_AGENT</span><span style="color:#ce5c00;font-weight:bold">=&gt;</span><span style="color:#4e9a06">&#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&#34;</span>
+	<span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// Authorization request
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">$response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">doAuthorization</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">$parameters</span><span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// You can obtain the properties in the response
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">$response</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">orderId</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionId</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">state</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">state</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#4e9a06">&#34;PENDING&#34;</span><span style="color:#000;font-weight:bold">){</span>
+		<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">pendingReason</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">paymentNetworkResponseCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">paymentNetworkResponseErrorMessage</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">trazabilityCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">responseCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">responseMessage</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#000;font-weight:bold">}</span>
+
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h3 id="capture">Capture</h3>
+<p>Use this method to perform the <strong>Capture</strong> step of a two-step flow. In this step, you capture the funds previously <a href="../../../docs/integrations/sdk-integration/payments-sdk-chile.html#authorization">Authorized</a> to transfer them to your PayU account.</p>
+<h4 id="considerations-1">Considerations</h4>
+<p>Take into account the following considerations for capture.</p>
+<ul>
+<li>The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.</li>
+<li>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</li>
+<li>Captures are only allowed for transactions in one installment.</li>
+</ul>
+<p>The following examples show how to call the method for this transaction type according to the programming language.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-3" data-toggle="tab" href="#tab31" role="tab"
+		   aria-controls="nav-home" aria-selected="true">Java</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-3" data-toggle="tab" href="#tab32" role="tab"
+		   aria-controls="nav-home" aria-selected="false">PHP</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="3">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">Map</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;();</span>
+
+<span style="color:#8f5902;font-style:italic">//Enter the order identifier here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">ORDER_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;1400468293&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the transaction identifier here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">TRANSACTION_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;ad6940f1-cf8b-474a-a69d-00382084d16c&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the transaction language here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">LANGUAGE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Language.es&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">//Capture Request
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">TransactionResponse</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">doCapture</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">//Response
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">if</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#ce5c00;font-weight:bold">){</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getOrderId</span><span style="color:#ce5c00;font-weight:bold">();</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getTransactionId</span><span style="color:#ce5c00;font-weight:bold">();</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getState</span><span style="color:#ce5c00;font-weight:bold">();</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPaymentNetworkResponseCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPaymentNetworkResponseErrorMessage</span><span style="color:#ce5c00;font-weight:bold">();</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getTrazabilityCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getResponseCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getResponseMessage</span><span style="color:#ce5c00;font-weight:bold">();</span>
+<span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#000">$parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">array</span><span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the account’s identifier here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">ACCOUNT_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;512327&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the order identifier here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">ORDER_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1400468293&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the transaction identifier here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">TRANSACTION_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;ad6940f1-cf8b-474a-a69d-00382084d16c&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#000">$response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">doCapture</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">$parameters</span><span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">$response</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">orderId</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionId</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">state</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">paymentNetworkResponseCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">paymentNetworkResponseErrorMessage</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">trazabilityCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">responseCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">responseMessage</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h3 id="charge">Charge</h3>
+<p>Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:</p>
+<p>The following examples show how to call the method for this transaction type according to the programming language.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-4" data-toggle="tab" href="#tab41" role="tab"
+		   aria-controls="nav-home" aria-selected="true">Java</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-4" data-toggle="tab" href="#tab42" role="tab"
+		   aria-controls="nav-home" aria-selected="false">PHP</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="4">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">String</span> <span style="color:#000">reference</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;payment_test_00000001&#34;</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<span style="color:#000">String</span> <span style="color:#000">value</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1000&#34;</span><span style="color:#ce5c00;font-weight:bold">;</span>
+
+<span style="color:#000">Map</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;();</span>
+
+<span style="color:#8f5902;font-style:italic">// Enter the account’s identifier here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">ACCOUNT_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;512325&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the reference code here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">REFERENCE_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">reference</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the description here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">DESCRIPTION</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;payment test&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the transaction language here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">LANGUAGE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Language.es&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// -- Values --
+</span><span style="color:#8f5902;font-style:italic">// Enter the value here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">VALUE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">value</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the currency here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CURRENCY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">Currency</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CLP</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">());</span>
+
+<span style="color:#8f5902;font-style:italic">// -- Buyer --
+</span><span style="color:#8f5902;font-style:italic">//Enter the buyer Id here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s name here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_NAME</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;First name and second buyer name&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s email here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_EMAIL</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;buyer_test@test.com&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s contact phone here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_CONTACT_PHONE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s contact document here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_DNI</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;123456789&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s address here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_STREET</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Autopista Del Sol, 0 - Km.43 Costado Sur&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_STREET_2</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_CITY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;RM&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_STATE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Talagante&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_COUNTRY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_POSTAL_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">BUYER_PHONE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+
+<span style="color:#8f5902;font-style:italic">// -- Payer --
+</span><span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s ID here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s name here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_NAME</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;First name and second payer name&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s email here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_EMAIL</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;payer_test@test.com&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s contact phone here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_CONTACT_PHONE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s contact document here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_DNI</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;5415668464654&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s address here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_STREET</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Autopista Del Sol, 0 - Km.43 Costado Sur&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_STREET_2</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_CITY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;RM&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_STATE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Talagante&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_COUNTRY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_POSTAL_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_PHONE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// -- Credit card data --
+</span><span style="color:#8f5902;font-style:italic">// Enter the number of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CREDIT_CARD_NUMBER</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;4037997623271984&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter expiration date of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CREDIT_CARD_EXPIRATION_DATE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;2030/12&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the security code of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CREDIT_CARD_SECURITY_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;321&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//Enter the name of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYMENT_METHOD</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// Enter the number of installments here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">INSTALLMENTS_NUMBER</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Enter the name of the country here.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">COUNTRY</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">PaymentCountry</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CL</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">());</span>
+
+
+<span style="color:#8f5902;font-style:italic">// Device Session ID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">DEVICE_SESSION_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;vghs6tvkcle931686k1900o6e1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Payer IP
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">IP_ADDRESS</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;127.0.0.1&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// Cookie of the current session.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">COOKIE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;pt1t38347bs6jc9ruv2ecpv7o2&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// User agent of the current session.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">USER_AGENT</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// Authorization request
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">TransactionResponse</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">doAuthorizationAndCapture</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// You can obtain the properties in the response
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">if</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#ce5c00;font-weight:bold">){</span>
+	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getOrderId</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getTransactionId</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getState</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getState</span><span style="color:#ce5c00;font-weight:bold">().</span><span style="color:#c4a000">toString</span><span style="color:#ce5c00;font-weight:bold">().</span><span style="color:#c4a000">equalsIgnoreCase</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;PENDING&#34;</span><span style="color:#ce5c00;font-weight:bold">)){</span>
+    	<span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPendingReason</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#ce5c00;font-weight:bold">}</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPaymentNetworkResponseCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPaymentNetworkResponseErrorMessage</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getTrazabilityCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getResponseCode</span><span style="color:#ce5c00;font-weight:bold">();</span>
+    <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getResponseMessage</span><span style="color:#ce5c00;font-weight:bold">();</span>
+<span style="color:#ce5c00;font-weight:bold">}</span>
+
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#000">$reference</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;payment_test_00000001&#34;</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000">$value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;1000&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#000">$parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">array</span><span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the account’s identifier here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">ACCOUNT_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;512325&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the reference code here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">REFERENCE_CODE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#000">$reference</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the description here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">DESCRIPTION</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;payment test&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// -- Values --
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// Enter the value here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">VALUE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#000">$value</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the currency here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CURRENCY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;CLP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// -- Buyer --
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#8f5902;font-style:italic">//Enter the buyer Id here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s name here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_NAME</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;First name and second buyer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s email here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_EMAIL</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;buyer_test@test.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s contact phone here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_CONTACT_PHONE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s contact document here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_DNI</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;5415668464654&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the buyer&#39;s address here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_STREET</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Autopista Del Sol, 0 - Km.43 Costado Sur&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_STREET_2</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_CITY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;RM&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_STATE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Talagante&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_COUNTRY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_POSTAL_CODE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">BUYER_PHONE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+
+	<span style="color:#8f5902;font-style:italic">// -- Payer --
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s ID here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PAYER_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#8f5902;font-style:italic">///Enter the payer&#39;s name here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_NAME</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;First name and second payer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s email here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_EMAIL</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;payer_test@test.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s contact phone here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_CONTACT_PHONE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s contact document here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_DNI</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;5415668464654&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the payer&#39;s address here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_STREET</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Autopista Del Sol, 0 - Km.43 Costado Sur&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_STREET_2</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_CITY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;RM&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_STATE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Talagante&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_COUNTRY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;CL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_POSTAL_CODE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_PHONE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// -- Credit card data --
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// Enter the number of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CREDIT_CARD_NUMBER</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;4037997623271984&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter expiration date of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CREDIT_CARD_EXPIRATION_DATE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;2030/12&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the security code of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CREDIT_CARD_SECURITY_CODE</span><span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;321&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//Enter the name of the credit card here
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYMENT_METHOD</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// Enter the number of installments here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">INSTALLMENTS_NUMBER</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Enter the name of the country here.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">COUNTRY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#000">PayUCountries</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CL</span><span style="color:#000;font-weight:bold">,</span>
+
+	<span style="color:#8f5902;font-style:italic">// Device Session ID
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">DEVICE_SESSION_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;vghs6tvkcle931686k1900o6e1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Payer IP
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">IP_ADDRESS</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;127.0.0.1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Cookie of the current session
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_COOKIE</span><span style="color:#ce5c00;font-weight:bold">=&gt;</span><span style="color:#4e9a06">&#34;pt1t38347bs6jc9ruv2ecpv7o2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// User agent of the current session
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">USER_AGENT</span><span style="color:#ce5c00;font-weight:bold">=&gt;</span><span style="color:#4e9a06">&#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&#34;</span>
+	<span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// Authorization request
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">$response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">doAuthorizationAndCapture</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">$parameters</span><span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// You can obtain the properties in the response
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">$response</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">orderId</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionId</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">state</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">state</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#4e9a06">&#34;PENDING&#34;</span><span style="color:#000;font-weight:bold">){</span>
+		<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">pendingReason</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">paymentNetworkResponseCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">paymentNetworkResponseErrorMessage</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">trazabilityCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">responseCode</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">transactionResponse</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">responseMessage</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#000;font-weight:bold">}</span>
+
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<!--
+## Submit transaction with cash
+This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.
+
+<img src="../../../assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
+
+### Considerations
+* The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven days after the current date at 12:00 pm.
+* You must set a response URL in the parameter `NETWORK_CALLBACK_URL` in the request; this URL redirects the user back to your page after they finish the online payment procedure.
+* You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the `BANK_URL` parameter in the response.
+
+### Method call
+The following are the bodies of the request and response of this payment method.
+
+Map<String, String> parameters = new HashMap<String, String>();
+
+        // Enter the account’s identifier here.
+        parameters.put(PayU.PARAMETERS.ACCOUNT_ID, "512325");
+        // Enter the reference code here.
+        parameters.put(PayU.PARAMETERS.REFERENCE_CODE, ""+reference);
+        // Enter the description here.
+        parameters.put(PayU.PARAMETERS.DESCRIPTION, "payment test");
+        // Enter the transaction language here.
+        parameters.put(PayU.PARAMETERS.LANGUAGE, "Language.es");
+
+        // -- Values --
+        // Enter the value here.
+        parameters.put(PayU.PARAMETERS.VALUE, ""+value);
+        // Enter the currency here.
+        parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.CLP.name());
+
+        // -- Buyer --
+        //Enter the buyer Id here.
+        parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
+        //Enter the buyer's name here.
+        parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer  name");
+        //Enter the buyer's email here
+        parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
+        //Enter the buyer's contact phone here.
+        parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "7563126");
+        //Enter the buyer's contact document here.
+        parameters.put(PayU.PARAMETERS.BUYER_DNI, "123456789");
+
+        //Enter the buyer's address here.
+        parameters.put(PayU.PARAMETERS.BUYER_STREET, "Autopista Del Sol, 0 - Km.43 Costado Sur");
+        parameters.put(PayU.PARAMETERS.BUYER_STREET_2, "5555487");
+        parameters.put(PayU.PARAMETERS.BUYER_CITY, "RM");
+        parameters.put(PayU.PARAMETERS.BUYER_STATE, "Talagante");
+        parameters.put(PayU.PARAMETERS.BUYER_COUNTRY, "CL");
+        parameters.put(PayU.PARAMETERS.BUYER_POSTAL_CODE, "000000");
+        parameters.put(PayU.PARAMETERS.BUYER_PHONE, "7563126");
+
+
+        // -- Payer --
+        //Enter the payer's ID here.
+        parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
+        //Enter the payer's name here.
+        parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second payer name");
+        //Enter the payer's email here.
+        parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "payer_test@test.com");
+        //Enter the payer's contact phone here.
+        parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "7563126");
+        //Enter the payer's contact document here.
+        parameters.put(PayU.PARAMETERS.PAYER_DNI, "5415668464654");
+        //Enter the payer's address here.
+        parameters.put(PayU.PARAMETERS.PAYER_STREET, "Autopista Del Sol, 0 - Km.43 Costado Sur");
+        parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "5555487");
+        parameters.put(PayU.PARAMETERS.PAYER_CITY, "RM");
+        parameters.put(PayU.PARAMETERS.PAYER_STATE, "Talagante");
+        parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, "CL");
+        parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "000000");
+        parameters.put(PayU.PARAMETERS.PAYER_PHONE, "7563126");
+
+        // Enter the network callback URL here.
+        parameters.put(PayU.PARAMETERS.NETWORK_CALLBACK_URL, "1");
+        // Enter the name of the country here.
+        parameters.put(PayU.PARAMETERS.COUNTRY, PaymentCountry.CL.name());
+
+        // Enter the cash payment method name here.
+        parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "MULTICAJA");
+
+        // Enter the payment due date
+        parameters.put(PayU.PARAMETERS.EXPIRATION_DATE, "2021-07-01T20:00:00");
+        
+        // Payer IP
+        parameters.put(PayU.PARAMETERS.IP_ADDRESS, "127.0.0.1");
+        
+        // Authorization request
+        TransactionResponse response = PayUPayments.doAuthorizationAndCapture(parameters);
+
+
+## Submit transaction with bank transfer
+This method lets you process the bank transfer payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
+
+<img src="../../../assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
+
+### Considerations
+* If you don't send the `RESPONSE_URL` parameter in the extra parameters, the API took the value from the _**Response URL**_ variable in your PayU Module (_**Settings**_ > _**Technical configuration**_).
+* When you process bank transfer payment, you must redirect the customer to the URL found in the `URL_PAYMENT_REDIRECT` extra parameter concatenated with the `TRANSBANK_DIRECT_TOKEN` extra parameter as follows: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
+* If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_PAYMENT_IN_ENTITY`; this is because the payer is redirected to the selected bank to complete the payment.
+* The response page must have the following variables:
+
+| Variable          | Description                                                   |
+|-------------------|---------------------------------------------------------------|
+| transactionState  | State of the transaction.                                     |
+| reference_pol     | Reference code to identify a transaction in PayU.             |
+| TX_VALUE          | Transaction amount.                                           |
+| authorizationCode | Authorization code of the transaction.                        |
+| processingDate    | Transaction date.                                             |
+| cc_number         | Visible number of the card used in the transaction.           |
+
+The variables above are sent via GET.
+
+### Method call
+The following are the bodies of the request and response of this payment method.
+
+
+-->
+<h2 id="available-payment-methods-query">Available payment methods query</h2>
+<p>This method returns a list of the payment methods available in all countries.</p>
+<h3 id="method-call">Method call</h3>
+<p>The following examples show how to call the method for this transaction type according to the programming language.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
+		   aria-controls="nav-home" aria-selected="true">Java</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
+		   aria-controls="nav-home" aria-selected="false">PHP</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="5">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">List</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">PaymentMethodComplete</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getPaymentMethods</span><span style="color:#ce5c00;font-weight:bold">();</span>
+<span style="color:#000">LoggerUtil</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">info</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;{0}&#34;</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">);</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#000">$array</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">getPaymentMethods</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000">$payment_methods</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">$array</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">paymentMethods</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">foreach</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">$payment_methods</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">$payment_method</span><span style="color:#000;font-weight:bold">){</span>
+	<span style="color:#000">$payment_method</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">country</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$payment_method</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">description</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000">$payment_method</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">id</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h2 id="ping">Ping</h2>
+<p>The <code>PING</code> method lets you verify the connection to our platform.</p>
+<h3 id="method-call-1">Method call</h3>
+<p>The following examples show how to call the method for this transaction type according to the programming language.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-6" data-toggle="tab" href="#tab61" role="tab"
+		   aria-controls="nav-home" aria-selected="true">Java</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-6" data-toggle="tab" href="#tab62" role="tab"
+		   aria-controls="nav-home" aria-selected="false">PHP</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="6">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#204a87;font-weight:bold">boolean</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">doPing</span><span style="color:#ce5c00;font-weight:bold">();</span>
+<span style="color:#000">LoggerUtil</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">info</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;{0}&#34;</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">);</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#000">$response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">doPing</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">code</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+
 	
 	
-	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 29, 2021: <a  href="../../../commit/c307dafc470cfaca4db401d1a33932968516d583">Promotios API added (c307daf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 30, 2021: <a  href="../../../commit/9a333e3a12a89d698e3f00c15e2b3681d42be466">API and SDK completed (9a333e3)</a>
 </div>
 </div>
 

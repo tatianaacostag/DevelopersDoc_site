@@ -7,13 +7,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/docs/integrations/sdk-integration/payments-sdk-argentina.html</loc>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/docs/tools/payment-request.html</loc>
     <lastmod>2021-05-25T14:03:25-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/getting-started/test-your-solution/responde-codes-and-variables.html</loc>
-    <lastmod>2021-06-15T11:45:39-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -43,12 +48,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-argentina.html</loc>
-    <lastmod>2021-06-25T09:25:03-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/docs/integrations/sdk-integration/payments-sdk-argentina.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -58,17 +58,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-chile.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-colombia.html</loc>
-    <lastmod>2021-06-25T09:25:03-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-mexico.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -78,32 +78,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-peru.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration/payments-sdk-brazil.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/docs/integrations/sdk-integration/payments-sdk-chile.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/docs/integrations/sdk-integration/payments-sdk-colombia.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/docs/integrations/sdk-integration/payments-sdk-mexico.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/docs/integrations/sdk-integration/payments-sdk-panama.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -118,7 +98,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/services/queries.html</loc>
-    <lastmod>2021-05-06T15:02:55-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -132,13 +112,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/docs/integrations/api-integration/queries-api.html</loc>
-    <lastmod>2021-06-03T15:32:45-05:00</lastmod>
+    <loc>/docs/integrations/sdk-integration/payments-sdk-chile.html</loc>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/docs/integrations/sdk-integration/queriessdk.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <loc>/docs/integrations/api-integration/queries-api.html</loc>
+    <lastmod>2021-06-03T15:32:45-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -157,13 +137,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/docs/integrations/sdk-integration/tokenizationsdk.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>/docs/services/tokenization.html</loc>
-    <lastmod>2021-06-25T09:25:03-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -173,12 +148,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/tokenization-api.html</loc>
-    <lastmod>2021-06-25T09:25:03-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/tools/shopping-cart-plugins/virtuemart.html</loc>
     <lastmod>2021-05-28T17:29:43-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/integrations/sdk-integration/payments-sdk-colombia.html</loc>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -198,17 +178,22 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/promotions-api.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-06-29T20:30:01-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/refunds-api.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/tools/shopping-cart-plugins/woocommerce.html</loc>
     <lastmod>2021-05-28T17:29:43-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/integrations/sdk-integration/payments-sdk-mexico.html</loc>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -243,7 +228,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/services/refunds.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/integrations/sdk-integration/payments-sdk-peru.html</loc>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -254,6 +244,21 @@
   </url><url>
     <loc>/docs/tools/payment-coupons.html</loc>
     <lastmod>2021-04-29T16:51:06-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/integrations/sdk-integration/queriessdk.html</loc>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/integrations/sdk-integration/tokenizationsdk.html</loc>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/docs/integrations/sdk-integration/refundssdk.html</loc>
+    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/integrations/api-integration/payments-api-mexico.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-06-29T20:27:18-05:00" /><meta property="og:site_name" content="Documentation" />
+<meta property="article:modified_time" content="2021-06-30T22:58:54-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="Payments API - Mexico">
 <meta itemprop="description" content="Payments API Mexico lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-06-29T20:27:18-05:00" />
-<meta itemprop="wordCount" content="9025">
+<meta itemprop="dateModified" content="2021-06-30T22:58:54-05:00" />
+<meta itemprop="wordCount" content="9057">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Mexico"/>
 <meta name="twitter:description" content="Payments API Mexico lets your shop process different transaction types with multiple payment methods.
@@ -123,7 +123,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.7a4a5a66942ec0e17422a1c635e04067b45f39979f7227366cc8bfb398563f8452419e213b0a983c48195b8802325ccb7008af6acd5ca10eedd24adb415a0f3d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e37e6f9875c7a7fc56a8da4eaef67427bf0676a6cc422215727fc7b56b6597281985d696ebfcaf73bb8e0d8e7afa1e50e72e7d79cc6be7e1ed5fc2ce72cfcbf4.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -211,7 +211,7 @@
       
       
       
-        <a id="/docs/getting-started/test-your-solution/responde-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsgetting-startedtest-your-solutionresponde-codes-and-variableshtml" href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html">Responde Codes and Variables</a>
+        <a id="/docs/getting-started/test-your-solution/responde-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsgetting-startedtest-your-solutionresponde-codes-and-variableshtml" href="../../../docs/getting-started/test-your-solution/responde-codes-and-variables.html">Response Codes and Variables</a>
       
       
     </li>
@@ -566,7 +566,7 @@
       
       
       
-        <a id="/docs/integrations/sdk-integration/payments-sdk-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../docs/integrations/sdk-integration/payments-sdk-argentina.html">Payments API - Argentina</a>
+        <a id="/docs/integrations/sdk-integration/payments-sdk-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../docs/integrations/sdk-integration/payments-sdk-argentina.html">Payments SDK - Argentina</a>
       
       
       
@@ -596,7 +596,7 @@
       
       
       
-        <a id="/docs/integrations/sdk-integration/payments-sdk-panama.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationpayments-sdk-panamahtml" href="../../../docs/integrations/sdk-integration/payments-sdk-panama.html">Payments SDK - Panama</a>
+        <a id="/docs/integrations/sdk-integration/payments-sdk-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationpayments-sdk-peruhtml" href="../../../docs/integrations/sdk-integration/payments-sdk-peru.html">Payments SDK - Peru</a>
       
       
       
@@ -609,6 +609,12 @@
       
       
         <a id="/docs/integrations/sdk-integration/tokenizationsdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationtokenizationsdkhtml" href="../../../docs/integrations/sdk-integration/tokenizationsdk.html">Tokenization SDK</a>
+      
+      
+      
+      
+      
+        <a id="/docs/integrations/sdk-integration/refundssdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationssdk-integrationrefundssdkhtml" href="../../../docs/integrations/sdk-integration/refundssdk.html">Voids and Refunds SDK</a>
       
       
     </li>
@@ -1374,17 +1380,24 @@ Two-step flows are only supported for Mastercard and Visa.
 <td style="text-align:center">No</td>
 </tr>
 <tr>
+<td>transaction &gt; monthsWithoutInterest</td>
+<td></td>
+<td></td>
+<td>Information when paying the purchase using Months Without Interests.<br>This parameter is mandatory when you want to use <a href="../../../docs/services/promotions.html#months-without-interest-msi---meses-sin-intereses">Months Without Interests (Meses Sin Intereses - MSI) feature</a>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
 <td>transaction &gt; monthsWithoutInterest &gt; months</td>
 <td>Number</td>
 <td>Max:2</td>
-<td>Number of Months Without Interests for the purchase. The available values are 3, 6, 9, or 12.<br>This parameter is mandatory when you want to use <a href="../../../docs/services/promotions.html">Months Without Interests (Meses Sin Intereses - MSI) feature</a>.</td>
+<td>Number of Months Without Interests for the purchase. The available values are 3, 6, 9, or 12.<br>This parameter is mandatory when you want to use <a href="../../../docs/services/promotions.html#months-without-interest-msi---meses-sin-intereses">Months Without Interests (Meses Sin Intereses - MSI) feature</a>.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; monthsWithoutInterest &gt; bank</td>
 <td>Alphanumeric</td>
 <td>Max:255</td>
-<td>Issuing bank of the credit card used to pay the purchase using Months Without Interests.<br>This parameter is mandatory when you want to use <a href="../../../docs/services/promotions.html">Months Without Interests (Meses Sin Intereses - MSI) feature</a>.</td>
+<td>Issuing bank of the credit card used to pay the purchase using Months Without Interests.<br>This parameter is mandatory when you want to use <a href="../../../docs/services/promotions.html#months-without-interest-msi---meses-sin-intereses">Months Without Interests (Meses Sin Intereses - MSI) feature</a>.</td>
 <td style="text-align:center">No</td>
 </tr>
 </tbody>
@@ -1502,7 +1515,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <li>Two-step flows are only available for Mastercard and Visa.</li>
 <li>For payments with Promotions, send the parameters <code>INSTALLMENTS_NUMBER</code> and <code>PROMOTION_ID</code> with the number of installments selected and the Id of the promotion. Refer to <a href="../../../docs/services/promotions.html">Promotions API</a> for more information.</li>
 <li>For payments with Months Without Interests (Meses Sin Intereses - MSI), send the parameters <code>transaction.monthsWithoutInterest.months</code> with the number of installments and <code>transaction.monthsWithoutInterest.bank</code> with the name of the issuer bank of the credit card. Refer to <a href="../../../docs/services/promotions.html#months-without-interest-msi---meses-sin-intereses">MSI</a> for more information.</li>
-<li>The available banks for MSI are: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer</li>
+<li>The available banks for MSI are: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer.</li>
 <li>When using MSI, promotions or apply installments, always display the phrase <strong>&ldquo;PAGOS DIFERIDOS&rdquo;</strong> during the payment process.</li>
 <li>When installments applied (fees assumed by the payer), display the original amount of the transaction, the total amount after the fees, the number of installments, and the amount per installment including the extra fee.</li>
 <li>Promotions feature is only available for <a href="../../../docs/services/payments.html#payment-flows">one-step flows</a>.</li>
@@ -4678,7 +4691,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <li><strong>REFERENCE</strong>: internal payment reference generated by PayU.</li>
 <li><strong>EXPIRATION_DATE</strong>: maximum term for the payer to perform the payment.</li>
 <li><strong>BAR_CODE</strong>: barcode which lets the payer perform the payment.</li>
-<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment.</li>
+<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects bank reference payment.</li>
 <li><strong>URL_PAYMENT_RECEIPT_PDF</strong>: payment receipt in PDF format.</li>
 </ul>
 </li>
@@ -5449,7 +5462,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 29, 2021: <a  href="../../../commit/c307dafc470cfaca4db401d1a33932968516d583">Promotios API added (c307daf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 30, 2021: <a  href="../../../commit/9a333e3a12a89d698e3f00c15e2b3681d42be466">API and SDK completed (9a333e3)</a>
 </div>
 </div>
 

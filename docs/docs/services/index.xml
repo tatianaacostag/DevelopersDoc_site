@@ -96,7 +96,7 @@ Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.h
 &lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration/queriessdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -142,7 +142,7 @@ Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.h
 &lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/tokenization-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -286,7 +286,7 @@ To integrate with Promotions API, target the requests to the following URLs:
 &lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/refunds-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration/refundssdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
