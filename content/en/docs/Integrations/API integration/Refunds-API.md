@@ -83,7 +83,7 @@ The `VOID` method cancels a previously authorized transaction. Void is automatic
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "responde-codes-and-variables.html#supported-languages" >}}). | Yes |
+| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
 | merchant |  |  | This object has the authentication data. | Yes |
@@ -237,7 +237,7 @@ Refunds can be requested by the total or the partial amount (`PARTIAL REFUND`).
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "responde-codes-and-variables.html#supported-languages" >}}). | Yes |
+| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
 | merchant |  |  | This object has the authentication data. | Yes |
@@ -247,7 +247,7 @@ Refunds can be requested by the total or the partial amount (`PARTIAL REFUND`).
 | transaction > additionalValues > |  | 64 | Amount of the partial refund. This parameter and its values are mandatory when you want to perform a partial refund | No |
 | transaction > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. Mandatory for partial refunds | No |
 | transaction > additionalValues > TX_VALUE > value | Number | 19 | Specifies the amount of the transaction. Mandatory for partial refunds | No |
-| transaction > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "responde-codes-and-variables.html#accepted-currencies" >}}). Mandatory for partial refunds | No |
+| transaction > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). Mandatory for partial refunds | No |
 | transaction > order |  |  | This object has the order data. | Yes |
 | transaction > order > id | Number |  | Identifier of the order to be refunded. | Yes |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`REFUND`</li><li>`PARTIAL_REFUND` for partial refunds (if supported).</li></ul> | Yes |

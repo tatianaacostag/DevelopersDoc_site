@@ -1,0 +1,86 @@
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+<script src={{ "/js/jquery-validate.bootstrap-tooltip.min.js" | urlize | relURL }}></script>
+<script src={{ "/js/bootstrap.js" | urlize | relURL }}></script>
+<script src={{ "/js/signature-generator/validations.js" | urlize | relURL }}></script>
+<script src={{ "/js/signature-generator/md5.js" | urlize | relURL }}></script>
+<script src={{ "/js/signature-generator/sha1.js" | urlize | relURL }}></script>
+<script src={{ "/js/signature-generator/sha256.js" | urlize | relURL }}></script>
+<script src={{ "/js/signature-generator/signature-generator.js" | urlize | relURL }}></script>
+<script>
+
+    var errApiKeyReq = "Please enter the ApiKey"
+    var errApiKeyMin = "Please enter more than 5 digits"
+    var errApiKeyMax = "Please enter less than 32 digits"
+    var errMerchantReq = "Please enter the Merchant Id"
+    var errMerchantMin = "Please enter more than 5 digits"
+    var errMerchantMax = "Please enter less than 7 digits"
+    var errMerchantPosi = "Please enter a positive number"
+    var errMerchantNum = "Please enter just numbers"
+    var errReferenceReq = "Please enter the Reference Code"
+    var errReferenceMin = "Please enter the Reference Code"
+    var errReferenceMax = "Please enter less than 255 digits"
+    var errAmountReq = "Please enter the Amount"
+    var errAmountMin = "Please enter the Amount"
+    var errAmountMax = "Please enter less than 14 digits"
+    var errAmountPosi = "Please enter a positive number"
+    var errAmountNum = "Please enter just numbers"
+    var errCurrReq = "Please enter a valid Currency in format ISO 4217"
+    var errCurrMin = "Please enter more than 3 digits"
+    var errCurrMax = "Please enter less than 3 digits"
+    var errTsReq = "Please enter the transaction code"
+    var errTsMin = "Please enter the transaction code"
+    var errTsMax = "Please enter the transaction code less than 3 digits"
+    var errSpReq = "Please enter the transaction code"
+    var errSpMin = "Please enter the transaction code"
+    var errSpMax = "Please enter the transaction code less than 1 digit"
+
+</script>
+
+<div id="blue-box">
+<span class="grey-text-13">
+<div>
+<form method="POST" id="signature_form_confirmation_page" >
+    <table>
+        <span class="blue-text-13"><b>Algorithm: &nbsp;</b></span>
+        <select id = "signature_algorithm_confirmation_page" class="calc_selector form_control">
+            <option  value="md5">MD5</option>
+            <option  value="sha1">SHA1</option>
+            <option  value="sha256">SHA256</option>
+        </select>
+        <br>
+        <br>
+        <span class="calc_text">&nbsp;(</span>
+        <input class="form_control" type="text"  id ="signature_apikey_confirmation_page" name = "signature_apikey_confirmation_page" placeholder="ApiKey" maxlength="26"> ~
+        <input class="form_control number" type="text"  id ="signature_merchanId_confirmation_page" name = "signature_merchanId_confirmation_page" placeholder="MerchantId" maxlength="7"> ~
+        <input class="form_control" type="text"  id ="signature_referenceCode_confirmation_page" name = "signature_referenceCode_confirmation_page" placeholder="Reference" maxlength="255"> ~
+        <input class="form_control  number" type="text" id ="signature_amount_confirmation_page" name = "signature_amount_confirmation_page" placeholder="Amount" maxlength="14"> ~
+        <select id = "signature_currency_confirmation_page" class="calc_selector form_control" >
+            <option  value="USD">USD</option>
+            <option  value="COP">COP</option>
+            <option  value="MXN">MXN</option>
+            <option  value="ARS">ARS</option>
+            <option  value="PEN">PEN</option>
+            <option  value="BRL">BRL</option>
+            <option  value="CLP">CLP</option>
+        </select> ~
+        <select id = "signature_state_pol_confirmation_page" class="calc_selector form_control" >
+            <option  value="4">4 (Approved)</option>
+            <option  value="6">6 (Declined)</option>
+            <option  value="5">5 (Expired)</option>
+        </select>
+        <span class="calc_text">)</span>
+        <br>
+        <br>
+        <br>
+        <span class="blue-text-13"><b>Result:&nbsp;</b></span><input class="form_control" id ="signature_generated_confirmation_page" name = "signature_generated_confirmation_page" value = ""  readonly />
+    </table>
+    <br>
+    <table width="50%"  border="0" cellspacing="2" cellpadding="2">
+        <input type="button" name="signature_generate_confirmation_page" id="signature_generate_confirmation_page" value="Generate signature" >
+        <input type="button" name="signature_generate_again_confirmation_page" id="signature_generate_again_confirmation_page" value="Generate new signature" >
+    </table>
+</form>
+</div>
+</span>
+</div>

@@ -346,11 +346,11 @@ You can create up to 1000 links per file.
     </item>
     
     <item>
-      <title>Docs: Responde Codes and Variables</title>
-      <link>/docs/getting-started/test-your-solution/responde-codes-and-variables.html</link>
+      <title>Docs: response Codes and Variables</title>
+      <link>/docs/getting-started/test-your-solution/response-codes-and-variables.html</link>
       <pubDate>Tue, 06 Apr 2021 15:33:35 -0500</pubDate>
       
-      <guid>/docs/getting-started/test-your-solution/responde-codes-and-variables.html</guid>
+      <guid>/docs/getting-started/test-your-solution/response-codes-and-variables.html</guid>
       <description>
         
         
@@ -920,7 +920,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1193,7 +1193,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1389,7 +1389,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -2373,7 +2373,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -2646,7 +2646,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -2758,7 +2758,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -3225,7 +3225,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -3488,7 +3488,7 @@ Find and expand the &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; metho
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -5009,7 +5009,7 @@ Refer to the examples&lt;/li&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -5289,7 +5289,7 @@ Refer to the examples&lt;/li&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -5457,7 +5457,7 @@ Refer to the examples&lt;/li&gt;
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -6431,7 +6431,7 @@ Refer to the examples&lt;/li&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -6711,7 +6711,7 @@ Refer to the examples&lt;/li&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -6830,7 +6830,7 @@ Refer to the examples&lt;/li&gt;
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -7260,7 +7260,7 @@ Refer to the examples&lt;/li&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -7515,7 +7515,7 @@ Refer to the examples&lt;/li&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -7770,7 +7770,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -8043,7 +8043,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -8239,7 +8239,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -9197,7 +9197,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -9470,7 +9470,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -9582,7 +9582,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10049,7 +10049,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10322,7 +10322,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10434,7 +10434,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10608,7 +10608,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;li&gt;If you don&amp;rsquo;t send the &lt;code&gt;RESPONSE_URL&lt;/code&gt; parameter in &lt;code&gt;transaction.extraParameters&lt;/code&gt;, the API took the value from the &lt;em&gt;&lt;strong&gt;Response URL&lt;/strong&gt;&lt;/em&gt; variable in your PayU Module (&lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt;).&lt;/li&gt;
 &lt;li&gt;When you process bank transfer payment, you must redirect the customer to the URL found in the &lt;code&gt;URL_PAYMENT_REDIRECT&lt;/code&gt; extra parameter concatenated with the &lt;code&gt;TRANSBANK_DIRECT_TOKEN&lt;/code&gt; extra parameter as follows: &lt;br&gt; &lt;code&gt;URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;If the payment request is successful, the transaction has state &lt;code&gt;PENDING&lt;/code&gt; and responseCode &lt;code&gt;PENDING_PAYMENT_IN_ENTITY&lt;/code&gt;; this is because the payer is redirected to the selected bank to complete the payment.&lt;/li&gt;
-&lt;li&gt;The responde page must have the following variables:&lt;/li&gt;
+&lt;li&gt;The response page must have the following variables:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -10957,7 +10957,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -11212,7 +11212,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -11465,7 +11465,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -11738,7 +11738,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -11759,7 +11759,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -11780,7 +11780,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -11948,7 +11948,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;. This value is mandatory when the payment method is &lt;code&gt;CODENSA&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;. This value is mandatory when the payment method is &lt;code&gt;CODENSA&lt;/code&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12564,7 +12564,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12837,7 +12837,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12858,7 +12858,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12879,7 +12879,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12991,7 +12991,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -13566,7 +13566,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -13839,7 +13839,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -13951,7 +13951,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -14519,7 +14519,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -15341,7 +15341,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -15596,7 +15596,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -15852,7 +15852,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -16125,7 +16125,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -16321,7 +16321,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -17350,7 +17350,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -17623,7 +17623,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -17735,7 +17735,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -18238,7 +18238,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -18511,7 +18511,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -18623,7 +18623,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -19144,7 +19144,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -19417,7 +19417,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -19529,7 +19529,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20009,7 +20009,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20272,7 +20272,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20518,7 +20518,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20791,7 +20791,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20952,7 +20952,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -21438,7 +21438,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -21693,7 +21693,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -21939,7 +21939,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;command&lt;/td&gt;
@@ -22173,7 +22173,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; creditCardTokenId&lt;/td&gt;
@@ -22341,7 +22341,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
@@ -23269,7 +23269,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;command&lt;/td&gt;
@@ -23503,7 +23503,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer&lt;/td&gt;
@@ -23599,7 +23599,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
@@ -24064,7 +24064,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;command&lt;/td&gt;
@@ -24312,7 +24312,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;command&lt;/td&gt;
@@ -27165,7 +27165,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -27494,7 +27494,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -27697,7 +27697,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -27987,7 +27987,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -28190,7 +28190,7 @@ The following are the request and response examples for this method.&lt;/p&gt;
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -28680,11 +28680,11 @@ By default, processing credit cards without security code is not enabled. If you
 &lt;li&gt;Sale reference&lt;/li&gt;
 &lt;li&gt;Sale description&lt;/li&gt;
 &lt;li&gt;Buyer&amp;rsquo;s email&lt;/li&gt;
-&lt;li&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Total amount including taxes&lt;/li&gt;
 &lt;li&gt;Base value of reimbursement&lt;/li&gt;
 &lt;li&gt;Additional value&lt;/li&gt;
-&lt;li&gt;Language used in emails sent to the buyer and the seller. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language used in emails sent to the buyer and the seller. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;The file must not have header.&lt;/li&gt;
@@ -28711,7 +28711,7 @@ By default, processing credit cards without security code is not enabled. If you
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -29205,7 +29205,7 @@ By default, processing credit cards without security code is not enabled. If you
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -29554,7 +29554,7 @@ By default, processing credit cards without security code is not enabled. If you
 &lt;td&gt;language&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display the error messages generated. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#supported-languages&#34;&gt;See supported languages&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -29624,7 +29624,7 @@ By default, processing credit cards without security code is not enabled. If you
 &lt;td&gt;transaction &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/responde-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;. Mandatory for partial refunds&lt;/td&gt;
+&lt;td&gt;ISO code of the currency. &lt;a href=&#34;../docs/getting-started/test-your-solution/response-codes-and-variables.html#accepted-currencies&#34;&gt;See accepted currencies&lt;/a&gt;. Mandatory for partial refunds&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;

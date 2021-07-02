@@ -12930,6 +12930,19 @@ button#analyze {
 table {
   width: 100%; }
 
+#blue-box, .blue-box {
+  float: left;
+  background-color: #EDF2F2;
+  border: 1px solid;
+  border-color: #d4d6d6;
+  width: 100%;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  behavior: url(border.htc);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0; }
+
 #td-cover-block-0 {
   color: #A6C307;
   font-weight: 100; }
@@ -13622,6 +13635,258 @@ highlight-wrapper {
 /* Show the tooltip text when you mouse over the tooltip container */
 .copy-btn-container:hover .copy-btn-txt {
   visibility: visible; }
+
+.blue-box {
+  float: left;
+  background-color: #f8f9fa;
+  border: 1px solid;
+  border-color: #d4d6d6;
+  width: 100%;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  behavior: url(border.htc);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0; }
+
+.form_control {
+  height: 38px !important;
+  font-size: 12px !important; }
+
+#signature_algorithm {
+  max-width: 18%; }
+
+#signature_algorithm_response_page {
+  max-width: 18%; }
+
+#signature_algorithm_confirmation_page {
+  max-width: 18%; }
+
+#signature_apikey {
+  width: 28%; }
+
+#signature_apikey_response_page {
+  width: 28%; }
+
+#signature_apikey_confirmation_page {
+  width: 28%; }
+
+#signature_merchanId {
+  width: 12%;
+  color: #000 !important;
+  font-weight: 100 !important;
+  letter-spacing: 0em !important; }
+
+#signature_merchanId_response_page {
+  width: 12%;
+  color: #000 !important;
+  font-weight: 100 !important;
+  letter-spacing: 0em !important; }
+
+#signature_merchanId_confirmation_page {
+  width: 12%;
+  color: #000 !important;
+  font-weight: 100 !important;
+  letter-spacing: 0em !important; }
+
+#signature_referenceCode {
+  width: 11%; }
+
+#signature_referenceCode_response_page {
+  width: 11%; }
+
+#signature_referenceCode_confirmation_page {
+  width: 11%; }
+
+#signature_amount {
+  width: 11%;
+  color: #000 !important;
+  font-weight: 100 !important;
+  letter-spacing: 0em !important; }
+
+#signature_amount_response_page {
+  width: 11%;
+  color: #000 !important;
+  font-weight: 100 !important;
+  letter-spacing: 0em !important; }
+
+#signature_amount_confirmation_page {
+  width: 11%;
+  color: #000 !important;
+  font-weight: 100 !important;
+  letter-spacing: 0em !important; }
+
+#signature_currency {
+  max-width: 11%; }
+
+#signature_currency_response_page {
+  max-width: 11%; }
+
+#signature_currency_confirmation_page {
+  max-width: 11%; }
+
+#signature_generated {
+  padding: 9px 12px;
+  width: 70%;
+  margin-left: 1.5%; }
+
+#signature_generated_response_page {
+  padding: 9px 12px;
+  width: 70%;
+  margin-left: 1.5%; }
+
+#signature_generated_confirmation_page {
+  padding: 9px 12px;
+  width: 70%;
+  margin-left: 1.5%; }
+
+#signature_transaction_state_response_page {
+  max-width: 15%; }
+
+#signature_state_pol_confirmation_page {
+  max-width: 15%; }
+
+.calc_text {
+  font-size: 21px;
+  vertical-align: sub; }
+
+.calc_selector {
+  background-image: url(../assets/calc-selector-arrow.png) !important;
+  background-position: center right;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #ccc;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  text-indent: 4px;
+  text-overflow: "";
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding-top: 1px !important;
+  box-shadow: none; }
+
+#signature_generate {
+  background: #A6C307;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  min-width: 120px;
+  padding: 7px 30px;
+  border: solid; }
+
+#signature_generate_response_page {
+  background: #A6C307;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  min-width: 120px;
+  padding: 7px 30px;
+  border: solid; }
+
+#signature_generate_confirmation_page {
+  background: #A6C307;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  min-width: 120px;
+  padding: 7px 30px;
+  border: solid; }
+
+#signature_generate_again {
+  background: #A6C307;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  min-width: 120px;
+  padding: 7px 30px;
+  border: solid; }
+
+#signature_generate_again_response_page {
+  background: #A6C307;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  min-width: 120px;
+  padding: 7px 30px;
+  border: solid; }
+
+#signature_generate_again_confirmation_page {
+  background: #A6C307;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: left;
+  color: white;
+  min-width: 120px;
+  padding: 7px 30px;
+  border: solid; }
+
+#signature_generate_again {
+  visibility: hidden; }
+
+#signature_generate_again_response_page {
+  visibility: hidden; }
+
+#signature_generate_again_confirmation_page {
+  visibility: hidden; }
+
+#signature_generate:hover {
+  background: #438f29;
+  color: white; }
+
+#signature_generate_response_page:hover {
+  background: #438f29;
+  color: white; }
+
+#signature_generate_confirmation_page:hover {
+  background: #438f29;
+  color: white; }
+
+#signature_generate_again:hover {
+  background: #438f29;
+  color: white; }
+
+#signature_generate_again_response_page:hover {
+  background: #438f29;
+  color: white; }
+
+#signature_generate_again_confirmation_page:hover {
+  background: #438f29;
+  color: white; }
 
 /* table.customtable {
     width: 80%;
