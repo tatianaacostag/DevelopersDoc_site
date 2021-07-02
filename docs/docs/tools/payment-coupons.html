@@ -22,7 +22,7 @@
 <link rel="icon" type="image/png" href="../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Payment Coupons | Documentation</title><meta property="og:title" content="Payment Coupons" />
-<meta property="og:description" content="Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your customers make cash payments as many times as they need in the available payment points.
+<meta property="og:description" content="Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your clients make cash payments as many times as they need in the available payment points.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/tools/payment-coupons.html" /><meta property="article:section" content="docs" />
@@ -30,13 +30,13 @@
 <meta property="article:modified_time" content="2021-04-29T16:51:06-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="Payment Coupons">
-<meta itemprop="description" content="Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your customers make cash payments as many times as they need in the available payment points.
+<meta itemprop="description" content="Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your clients make cash payments as many times as they need in the available payment points.
 "><meta itemprop="datePublished" content="2021-04-07T09:27:50-05:00" />
 <meta itemprop="dateModified" content="2021-04-29T16:51:06-05:00" />
-<meta itemprop="wordCount" content="54">
+<meta itemprop="wordCount" content="963">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payment Coupons"/>
-<meta name="twitter:description" content="Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your customers make cash payments as many times as they need in the available payment points.
+<meta name="twitter:description" content="Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your clients make cash payments as many times as they need in the available payment points.
 "/>
 
 
@@ -123,7 +123,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.e19072c1231c9010f6b3e53274f5891c2201fce2872bcd3f445073949731029de7ee03f428bb49cbbffdafff7e67369839ed2e967d8db60d3b1526be0b00280e.json"
+  data-offline-search-index-json-src="../../offline-search-index.3c0d4c16c6c4e5ee2c31ff64a998b5eb65193395149b59cc5b510060deacb088feb8355de6522d686fb9bc45687bb452d610c3fe2125a0f1083d81aac50a8713.json"
   data-offline-search-base-href="../../"
 >
 
@@ -364,12 +364,6 @@
       
       
         <a id="/docs/tools/payu-module.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolspayu-modulehtml" href="../../docs/tools/payu-module.html">PayU Module</a>
-      
-      
-      
-      
-      
-        <a id="/docs/tools/reports.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-docstoolsreportshtml" href="../../docs/tools/reports.html">Reports</a>
       
       
       
@@ -687,6 +681,20 @@
 <p>On this Page</p>
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#creating-payment-coups">Creating payment coups</a></li>
+    <li><a href="#sharing-the-payment-request">Sharing the Payment request</a>
+      <ul>
+        <li><a href="#send-via-email">Send via email</a></li>
+        <li><a href="#print-the-coupons">Print the coupons</a></li>
+        <li><a href="#generate-payment-references">Generate Payment references</a></li>
+        <li><a href="#create-collection-cards">Create collection cards</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -731,10 +739,103 @@
             
 <div class="td-content">
 	<h1>Payment Coupons</h1>
-    <div class="lead">Through the <em>cash charges</em> module, you can generate payment coupons with the necessary information to let your customers make cash payments as many times as they need in the available payment points.</div>
+    <div class="lead">Through the <em>cash charges</em> module, you can generate payment coupons with the necessary information to let your clients make cash payments as many times as they need in the available payment points.</div>
 	       
 	<p>This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.</p>
 <p>You can receive payments without any technical knowledge. You just need to send an email where your client can download the coupon and makes the respective payment.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+Payment coupons are available for Argentina and Colombia.
+</div>
+
+<h1 id="how-does-the-payment-coupons-work">How does the Payment coupons work?</h1>
+<p>The Payment coupon follows a simple flow to let your clients regular cash payments as many times as they need:</p>
+<ol>
+<li>
+<p><strong>Configure the Payment coupon through the PayU module</strong>.<br>You only need to provide how many payments per client you want to receive, decide if the payment amount is fixed or your client decides the amount, decide the payment deadline, and the payment reference.</p>
+</li>
+<li>
+<p><strong>Decide the delivery of the coupon</strong><br>Decide if you want to deliver the coupons by email, by generating PDF, by payment references or collection cards (Available only for Argentina).</p>
+</li>
+<li>
+<p><strong>Use the Payment coupons</strong><br>When your clients receive the coupon, they can make the payment using any of the available cash payment offices in their countries.<br>Every time a client pays using the coupon, you receive a confirmation message and the amount of the purchase<sup>*</sup> is transferred to your PayU account, where you can transfer it to your bank account.</p>
+</li>
+</ol>
+<p><sup>*</sup><em>The value transferred corresponds to the amount paid by your client minus the PayU fee.</em></p>
+<h2 id="creating-payment-coups">Creating payment coups</h2>
+<p>According to your business needs, you can configure the options to receive payments using coupons. Follow the next procedure to create Payment coupons and delivery them to your clients.</p>
+<ol>
+<li>
+<p>Log in to <a href="payu.com">PayU.com</a> and click the login option located at the top of the page. Alternatively, you can log in to <a href="https://merchants.payulatam.com/">https://merchants.payulatam.com/</a>.</p>
+</li>
+<li>
+<p>Expand the <strong>Sell with PayU option</strong> and then, select <strong>Cash Payment</strong>.</p>
+</li>
+</ol>
+<p><img src="../../assets/PaymentCoupons/PaymentCoupons.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Configure the following information:</li>
+</ol>
+<p><img src="../../assets/PaymentCoupons/PaymentCoupons_01.png" alt="PrintScreen"></p>
+<ul>
+<li>
+<p><strong>How many payments do you expect to receive for each client?</strong>: select how many times a client can use the coupon. Select <em>Unique</em> if you want to let your client pay once. Otherwise, select <em>Multiple</em> for several payments while the coupon is available. The default value is <em>Multiple</em>.</p>
+</li>
+<li>
+<p><strong>Will you charge a specific amount?</strong>: select the payment amount of the coupon. If you select <em>No</em>, your client decides the value to pay at the payment office. The default value is <em>No</em>.</p>
+</li>
+<li>
+<p><strong>Payment deadline</strong>: decide whether the payment coupon expires in a given date. The date specified is fixed, tt is not supported to provide a specific day of the month or other custom configuration. If you select <em>No</em>, the coupon will not have a due date. The default value is <em>No</em>.</p>
+</li>
+<li>
+<p><strong>Do you want to define the payment reference?</strong>: if you select <em>Yes</em> you need to provide the payment references for the coupon. Otherwise, PayU defines and sets an automatic reference. The default value is <em>No</em>.</p>
+</li>
+</ul>
+<h2 id="sharing-the-payment-request">Sharing the Payment request</h2>
+<p>After you have configured the Payment coupons, decide how you want to deliver them to your client.<br>You have available the following options:</p>
+<h3 id="send-via-email">Send via email</h3>
+<p>This option lets you send the Payment coupon via email. The clients receive the email and print the coupon to let them pay in cash in the available offices</p>
+<p><img src="../../assets/PaymentCoupons/PaymentCoupons_02.png" alt="PrintScreen"></p>
+<p>To add the clients one by one, provide the following information:</p>
+<ul>
+<li>Email: email of the client who receives the coupon.</li>
+<li>Payer name: name of the client.</li>
+<li>Payment description: description of the payment.</li>
+<li>Amount: this field is available when you define the amount payed by your client and takes the defined value.</li>
+<li>Expiration date: this field is available when you define an expiration date of the coupon.</li>
+<li>Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.</li>
+</ul>
+<p>Click <em><strong>Add</strong></em> button to save the clients data and add an extra client if required.</p>
+<p>To add multiple clients, click <strong>Add multiple payers from one file</strong> and download the sample file by clicking <strong>Download format</strong>.</p>
+<p>The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the PayU module.</p>
+<p>Regardless of the option selected, click <strong>Continue</strong>.</p>
+<p>A new window appears showing the resume of the emails to be sent.</p>
+<p><img src="../../assets/PaymentCoupons/PaymentCoupons_03.png" alt="PrintScreen"></p>
+<p>If you want to edit the information of the issuer and the email, click Edit link displayed in the top right corner of each section.</p>
+<p>Finally, click <strong>Send email</strong>. Each client receive an Email with the coupon.</p>
+<h3 id="print-the-coupons">Print the coupons</h3>
+<p>This option lets you generate coupons in PDF format.</p>
+<p><img src="../../assets/PaymentCoupons/PaymentCoupons_04.png" alt="PrintScreen"></p>
+<p>To add the clients one by one, provide the following information:</p>
+<ul>
+<li>Payer name: name of the client.</li>
+<li>Payment description: description of the payment.</li>
+<li>Amount: this field is available when you define the amount payed by your client and takes the defined value.</li>
+<li>Expiration date: this field is available when you define an expiration date of the coupon.</li>
+<li>Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.</li>
+</ul>
+<p>Click <em><strong>Add</strong></em> button to save the clients data and add an extra client if required.</p>
+<p>To add multiple clients, click <strong>Add multiple payers from one file</strong> and download the sample file by clicking <strong>Download format</strong>.</p>
+<p>The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the PayU module.</p>
+<p>Regardless of the option selected, click <strong>Continue</strong>.</p>
+<p>A new window appears showing the resume of the PDF to be generated.</p>
+<p><img src="../../assets/PaymentCoupons/PaymentCoupons_05.png" alt="PrintScreen"></p>
+<p>If you want to edit the information of the issuer, click Edit link displayed in the top right corner of the issuer section section.</p>
+<p>Finally, click <strong>Generate coupons in PDF</strong>. A PDF file is downloaded, each page has the coupon generated per each client.</p>
+<h3 id="generate-payment-references">Generate Payment references</h3>
+<h3 id="create-collection-cards">Create collection cards</h3>
 
 	
 	

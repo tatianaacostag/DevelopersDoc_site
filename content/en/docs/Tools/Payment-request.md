@@ -60,36 +60,36 @@ Follow the next procedure to create a Basic Payment Request and share it with yo
 
 4. Click **Generate Link**.
 
-  ### Create a Custom Payment Request
-  Follow the next procedure to create a Basic Payment Request and share it with your customers.
+### Create a Custom Payment Request
+Follow the next procedure to create a Basic Payment Request and share it with your customers.
 
-  1. Follow steps 1 to 3 of the [Create a Basic Payment Request]({{< ref "#create-a-basic-payment-request" >}}) procedure.
+1. Follow steps 1 to 3 of the [Create a Basic Payment Request]({{< ref "#create-a-basic-payment-request" >}}) procedure.
 
-  2. Click **I want to customize my link** option. The advanced options appears where you can provide the following information
+2. Click **I want to customize my link** option. The advanced options appears where you can provide the following information
 
-  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_08.png)
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_08.png)
 
-  * **Do you ship your products**: this option lets you select whether the shipping information of the product is included in the link. When selecting **YES**, you can set a fixed shipping amount, and select if the customer must provide the shipping address.
+* **Do you ship your products**: this option lets you select whether the shipping information of the product is included in the link. When selecting **YES**, you can set a fixed shipping amount, and select if the customer must provide the shipping address.
 
-  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_09.png)
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_09.png)
 
-  * **Payment reference**: this option lets you decide if you want to set a specific Payment reference for the link.
+* **Payment reference**: this option lets you decide if you want to set a specific Payment reference for the link.
 
-  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_12.png)
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_12.png)
 
-  * **Transaction redirects**: in this option you can set the URLs of the customized response pages you have when a transaction is approved, declined or pending. These fields are not mandatory and if you don't set a URL, the transaction is redirected to the default PayU's response pages.  
+* **Transaction redirects**: in this option you can set the URLs of the customized response pages you have when a transaction is approved, declined or pending. These fields are not mandatory and if you don't set a URL, the transaction is redirected to the default PayU's response pages.  
 
-  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_10.png)
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_10.png)
 
-  * **Buyer comments**: this option allows the buyer to add comments related to the purchase. The field where the buyer can add comments can be set in English, Spanish or Portuguese.<br>
-  For example, you can configure this field to let the customer specify a particular description of the product.
+* **Buyer comments**: this option allows the buyer to add comments related to the purchase. The field where the buyer can add comments can be set in English, Spanish or Portuguese.<br>
+For example, you can configure this field to let the customer specify a particular description of the product.
 
-  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_11.png)
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_11.png)
 
-  * **Select the available payment methods**: this option lets you include or exclude the available payment methods according to your country. For example, if you only want to receive payments through credit cards.<br>
-  By default, all the available payment methods of your country are selected.
+* **Select the available payment methods**: this option lets you include or exclude the available payment methods according to your country. For example, if you only want to receive payments through credit cards.<br>
+By default, all the available payment methods of your country are selected.
 
-  ![PrintScreen](/assets/PaymentRequest/PaymentRequest_13.png)
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_13.png)
 
 3. Click **Generate Link**. 
 

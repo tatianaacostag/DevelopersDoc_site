@@ -3,10 +3,116 @@ title: "Payment Coupons"
 linkTitle: "Payment Coupons"
 date: 2021-04-07T09:27:50-05:00
 Description: >
-  Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your customers make cash payments as many times as they need in the available payment points.
+  Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your clients make cash payments as many times as they need in the available payment points.
 weight: 70
 ---
 
 This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.
 
 You can receive payments without any technical knowledge. You just need to send an email where your client can download the coupon and makes the respective payment.
+
+{{% alert title="Note" color="info"%}}
+
+Payment coupons are available for Argentina and Colombia.
+
+{{% /alert %}}  
+
+# How does the Payment coupons work?
+The Payment coupon follows a simple flow to let your clients regular cash payments as many times as they need:
+
+1. **Configure the Payment coupon through the PayU module**.<br>You only need to provide how many payments per client you want to receive, decide if the payment amount is fixed or your client decides the amount, decide the payment deadline, and the payment reference.
+
+2. **Decide the delivery of the coupon**<br>Decide if you want to deliver the coupons by email, by generating PDF, by payment references or collection cards (Available only for Argentina). 
+
+3. **Use the Payment coupons**<br>When your clients receive the coupon, they can make the payment using any of the available cash payment offices in their countries.<br>Every time a client pays using the coupon, you receive a confirmation message and the amount of the purchase<sup>*</sup> is transferred to your PayU account, where you can transfer it to your bank account.
+
+<sup>*</sup>_The value transferred corresponds to the amount paid by your client minus the PayU fee._
+
+## Creating payment coups
+According to your business needs, you can configure the options to receive payments using coupons. Follow the next procedure to create Payment coupons and delivery them to your clients.
+
+1. Log in to [PayU.com](payu.com) and click the login option located at the top of the page. Alternatively, you can log in to https://merchants.payulatam.com/.
+
+2. Expand the **Sell with PayU option** and then, select **Cash Payment**.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons.png)
+
+3. Configure the following information:
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_01.png)
+
+* **How many payments do you expect to receive for each client?**: select how many times a client can use the coupon. Select _Unique_ if you want to let your client pay once. Otherwise, select _Multiple_ for several payments while the coupon is available. The default value is _Multiple_.
+
+* **Will you charge a specific amount?**: select the payment amount of the coupon. If you select _No_, your client decides the value to pay at the payment office. The default value is _No_.
+
+* **Payment deadline**: decide whether the payment coupon expires in a given date. The date specified is fixed, tt is not supported to provide a specific day of the month or other custom configuration. If you select _No_, the coupon will not have a due date. The default value is _No_.
+
+* **Do you want to define the payment reference?**: if you select _Yes_ you need to provide the payment references for the coupon. Otherwise, PayU defines and sets an automatic reference. The default value is _No_. 
+
+## Sharing the Payment request
+After you have configured the Payment coupons, decide how you want to deliver them to your client.<br>You have available the following options:
+
+### Send via email 
+This option lets you send the Payment coupon via email. The clients receive the email and print the coupon to let them pay in cash in the available offices
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_02.png)
+
+To add the clients one by one, provide the following information:
+
+* Email: email of the client who receives the coupon.
+* Payer name: name of the client.
+* Payment description: description of the payment.
+* Amount: this field is available when you define the amount payed by your client and takes the defined value.
+* Expiration date: this field is available when you define an expiration date of the coupon.
+* Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.
+
+Click _**Add**_ button to save the clients data and add an extra client if required.
+
+To add multiple clients, click **Add multiple payers from one file** and download the sample file by clicking **Download format**.
+
+The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the PayU module.
+
+Regardless of the option selected, click **Continue**.
+
+A new window appears showing the resume of the emails to be sent.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_03.png)
+
+If you want to edit the information of the issuer and the email, click Edit link displayed in the top right corner of each section.
+
+Finally, click **Send email**. Each client receive an Email with the coupon.
+
+### Print the coupons
+This option lets you generate coupons in PDF format.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_04.png)
+
+To add the clients one by one, provide the following information:
+
+* Payer name: name of the client.
+* Payment description: description of the payment.
+* Amount: this field is available when you define the amount payed by your client and takes the defined value.
+* Expiration date: this field is available when you define an expiration date of the coupon.
+* Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.
+
+Click _**Add**_ button to save the clients data and add an extra client if required.
+
+To add multiple clients, click **Add multiple payers from one file** and download the sample file by clicking **Download format**.
+
+The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the PayU module.
+
+Regardless of the option selected, click **Continue**.
+
+A new window appears showing the resume of the PDF to be generated.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_05.png)
+
+If you want to edit the information of the issuer, click Edit link displayed in the top right corner of the issuer section section.
+
+Finally, click **Generate coupons in PDF**. A PDF file is downloaded, each page has the coupon generated per each client.
+
+### Generate Payment references
+
+
+
+### Create collection cards

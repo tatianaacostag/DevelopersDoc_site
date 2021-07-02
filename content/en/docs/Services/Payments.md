@@ -39,5 +39,4 @@ Refer to [this article]({{< ref "Select-your-payment-method.md" >}}) to know the
 ## What's next?
 The integration with this feature depends on the country of your transactions, the operation selected and the payment method.
 
-* [For API integrations, refer to this topic]({{< ref "API Integration" >}})
-* [For SDK integrations, refer to this topic]({{< ref "SDK Integration" >}})
+{{< payments/countries >}}
