@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments API Chile lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
 <meta itemprop="dateModified" content="2021-07-01T21:44:03-05:00" />
-<meta itemprop="wordCount" content="6962">
+<meta itemprop="wordCount" content="7026">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Chile"/>
 <meta name="twitter:description" content="Payments API Chile lets your shop process different transaction types with multiple payment methods.
@@ -123,7 +123,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3c0d4c16c6c4e5ee2c31ff64a998b5eb65193395149b59cc5b510060deacb088feb8355de6522d686fb9bc45687bb452d610c3fe2125a0f1083d81aac50a8713.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d7ae855a31489699a7512c2da73a3d924776bd3a8b1b400f7992a30d16ab365e2cac732fc7000aa600130b17430c689a6e9589de059a3fce3473175169b178e8.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -698,7 +698,7 @@
         <li><a href="#api-call">API call</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a>
+    <li><a href="#submit-transaction-with-debit-and-prepaid-cards">Submit transaction with debit and prepaid cards</a>
       <ul>
         <li><a href="#variables-for-request-and-response-2">Variables for request and response</a></li>
         <li><a href="#api-call-1">API call</a></li>
@@ -792,7 +792,7 @@
 <ul>
 <li><a href="../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-credit-or-debit-cards">Submit transaction with credit or debit cards</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-cash">Submit transaction with cash</a></li>
-<li><a href="../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a></li>
+<li><a href="../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-debit-and-prepaid-cards">Submit transaction with debit and prepaid cards</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-chile.html#available-payment-methods-query">Available payment methods query</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-chile.html#ping">Ping</a></li>
 </ul>
@@ -1474,8 +1474,8 @@ Transactions with credit card using two-step flows are available under demand. C
 <li>For payments with credit card tokens, include the parameters <code>transaction.creditCardTokenId</code> and <code>transaction.creditCard.securityCode</code> replacing the information of the credit card (if you process with security code). For more information, refer to <a href="../../../docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</li>
 <li>International debit cards are not supported.</li>
 <li>Transactions in CHILEAN PESOS with decimal amounts are not allowed.</li>
-<li>Two-step flows are not supported for debit and international credit cards.</li>
-<li>Transactions with credit card using two-step flows are available under demand and for single installment payments. Contact your Sales representative for more information.</li>
+<li>Two-step flows are not supported for debit, prepaid and international credit cards.</li>
+<li>Transactions with credit card using two-step flows are available for single installment payments. If you send a two-step transaction with more two installments or more, this transaction is automatically rejected by the acquirer.<br>Two-step flow is available under request, contact your Sales representative for more information.</li>
 <li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
 </ul>
 <h3 id="authorization">Authorization</h3>
@@ -1784,6 +1784,7 @@ Transactions with credit card using two-step flows are available under demand. C
 <li>The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.</li>
 <li>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</li>
 <li>You can perform only one partial capture over an authorized amount. To do this, you need to send in the request the parameter <code>transaction.order.additionalValues.TX_VALUE</code> with its value (as sent during the Authorization) and set <code>PARTIAL_CAPTURE</code> for <code>transaction.type</code>.<br>The minimum amount is 50 CLP.</li>
+<li>It is not allowed to capture a higher amount than the amount previously authorized.</li>
 <li>Captures are only allowed for transactions in one installment.</li>
 </ul>
 <p>The following are the request and response bodies for this transaction type.</p>
@@ -2244,6 +2245,13 @@ Transactions with credit card using two-step flows are available under demand. C
 <h2 id="submit-transaction-with-cash">Submit transaction with cash</h2>
 <p>This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.</p>
 <img src="../../../assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+Klap is formerly known as MULTICAJA. You can still see elements or configurations related to MULTICAJA.
+</div>
+
 <h3 id="variables-for-request-and-response-1">Variables for request and response</h3>
 <details>
 <summary>Request</summary>
@@ -3093,8 +3101,8 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 </div>
-<h2 id="submit-transaction-with-bank-transfer">Submit transaction with bank transfer</h2>
-<p>This method lets you process the bank transfer payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.</p>
+<h2 id="submit-transaction-with-debit-and-prepaid-cards">Submit transaction with debit and prepaid cards</h2>
+<p>This method lets you process the bank debit and prepaid card payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.</p>
 <img src="../../../assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
 <h3 id="variables-for-request-and-response-2">Variables for request and response</h3>
 <details>
@@ -3515,7 +3523,7 @@ Transactions with credit card using two-step flows are available under demand. C
 <td>transaction &gt; paymentMethod</td>
 <td>Alphanumeric</td>
 <td>32</td>
-<td>Select a valid Payment Method in Bank transfer. <a href="../../../docs/getting-started/select-your-payment-method.html#img-srcassetschilepng-width25px-chile">See the available Payment Methods for Chile</a>.</td>
+<td>Select a valid Payment Method for Debit and prepaid cards. <a href="../../../docs/getting-started/select-your-payment-method.html#img-srcassetschilepng-width25px-chile">See the available Payment Methods for Chile</a>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>

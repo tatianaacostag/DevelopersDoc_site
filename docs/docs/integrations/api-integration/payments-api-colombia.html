@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments API Colombia lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
 <meta itemprop="dateModified" content="2021-07-01T21:44:03-05:00" />
-<meta itemprop="wordCount" content="8270">
+<meta itemprop="wordCount" content="8459">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Colombia"/>
 <meta name="twitter:description" content="Payments API Colombia lets your shop process different transaction types with multiple payment methods.
@@ -123,7 +123,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.3c0d4c16c6c4e5ee2c31ff64a998b5eb65193395149b59cc5b510060deacb088feb8355de6522d686fb9bc45687bb452d610c3fe2125a0f1083d81aac50a8713.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d7ae855a31489699a7512c2da73a3d924776bd3a8b1b400f7992a30d16ab365e2cac732fc7000aa600130b17430c689a6e9589de059a3fce3473175169b178e8.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -697,7 +697,7 @@
         <li><a href="#api-call-1">API call</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a>
+    <li><a href="#submit-transaction-with-bank-transfer-pse">Submit transaction with bank transfer (PSE)</a>
       <ul>
         <li><a href="#variables-for-request-and-response-2">Variables for request and response</a></li>
         <li><a href="#api-call-2">API call</a></li>
@@ -797,7 +797,7 @@
 <ul>
 <li><a href="../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-credit-cards">Submit transaction with credit card</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-cash-or-bank-reference">Submit transaction with cash or Bank reference</a></li>
-<li><a href="../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a></li>
+<li><a href="../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer-pse">Submit transaction with bank transfer (PSE)</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse">Bank List - PSE</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-colombia.html#available-payment-methods-query">Available payment methods query</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-colombia.html#ping">Ping</a></li>
@@ -1562,7 +1562,7 @@
 </tr>
 <tr>
 <td style="text-align:center">IDC</td>
-<td>Client´s unique identifier, in the case of unique customer / utility consumer ID&rsquo;s.</td>
+<td>Customer´s unique identifier, in the case of unique customer / utility consumer ID&rsquo;s.</td>
 </tr>
 <tr>
 <td style="text-align:center">CEL</td>
@@ -2840,11 +2840,30 @@
 
 
 </div>
-<h2 id="submit-transaction-with-bank-transfer">Submit transaction with bank transfer</h2>
-<p>This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to follow these steps:</p>
+<h2 id="submit-transaction-with-bank-transfer-pse">Submit transaction with bank transfer (PSE)</h2>
+<p>This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to create a Payment form following these steps:</p>
 <ol>
+<li>Include a PSE button making clear that your customer will use <em>Proveedor de Servicios Electrónicos PSE</em>.</li>
+</ol>
+<ul>
+<li>You can use the following names in Spanish:
+<ul>
+<li>Débito desde cuenta corrient/ahorros</li>
+<li>Debito bancario PSE</li>
+<li>PSE</li>
+</ul>
+</li>
+<li>Do no use any of the following names
+<ul>
+<li>Transferencia bancaria</li>
+<li>Débito de cuenta</li>
+<li>Tarjeta débito</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
 <li>
-<p>Query the available bank list to show them to the payer. To query the bank list, refer to <a href="../../../docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse">this method</a>.</p>
+<p>Query the available bank list to show them to the payer. To query the bank list, refer to <a href="../../../docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse">this method</a>.<br>You must update the the bank list in your system once a day.</p>
 </li>
 <li>
 <p>Show the list of banks as displayed below:</p>
@@ -2852,11 +2871,11 @@
 </ol>
 <p><img src="../../../assets/Payments/PSEBankList_EN.png" alt="PrintScreen" width="50%"><br></p>
 <p>When the payer selects a bank, you must send the parameter <code>pseCode</code> of the selection in the extra parameter <code>FINANCIAL_INSTITUTION_CODE</code> in the request.</p>
-<ol start="3">
+<ol start="4">
 <li>Show a list to let the payer choose whether they are a <em>Natural</em> (N) or <em>Legal</em> (J) person. Depending on what the payer choose, you must send the value in the extra parameter <code>USER_TYPE</code> in the request. The list must be displayed as follows:</li>
 </ol>
 <p><img src="../../../assets/Payments/PSEPersonList_EN.png" alt="PrintScreen" width="50%"><br></p>
-<ol start="4">
+<ol start="5">
 <li>Show a list to let the payer choose their identification type. You must send the ISO code of the value selected in the extra parameter <code>PSE_REFERENCE2</code> in the request. The list must be displayed as follows:</li>
 </ol>
 <p><img src="../../../assets/Payments/PSEDocType_EN.png" alt="PrintScreen" width="50%"><br></p>
@@ -2891,7 +2910,7 @@
 </tr>
 <tr>
 <td style="text-align:center">IDC</td>
-<td>Client´s unique identifier, in the case of unique customer / utility consumer ID&rsquo;s.</td>
+<td>Customer´s unique identifier, in the case of unique customer / utility consumer ID&rsquo;s.</td>
 </tr>
 <tr>
 <td style="text-align:center">CEL</td>
@@ -2907,7 +2926,7 @@
 </tr>
 </tbody>
 </table>
-<ol start="5">
+<ol start="6">
 <li>You must send the payer identification number in the extra parameter <code>PSE_REFERENCE3</code> in the request.</li>
 </ol>
 <h3 id="variables-for-request-and-response-2">Variables for request and response</h3>
@@ -3486,8 +3505,13 @@
 </details>
 <h4 id="considerations-2">Considerations</h4>
 <ul>
+<li>To test PSE bank transfers in the PayU Sandbox environment, see the <a href="../../../assets/pse-test-guide-v5.pdf">PSE Test Guide (PDF)</a>.</li>
+<li>All the payment process values must be formatted in thousands (i.e., 1,200.00 or 1,200) without exception.</li>
 <li>If the payment request is successful, the transaction has state <code>PENDING</code> and responseCode <code>PENDING_TRANSACTION_CONFIRMATION</code>; this is because the payer is redirected to the selected bank to complete the payment; you must redirect the payer to the URL returned in the extra parameter <code>BANK_URL</code>.</li>
 <li>The URL returned in the extra parameter <code>BANK_URL</code> is configured in the PayU Module and must show the following information:<br><br><img src="../../../assets/Payments/PSEresponse-en.png" alt="PrintScreen"><br>Parameters starting with $ symbol are sent via <code>GET</code>.</li>
+<li>Once the client click the Pay button, this must be disabled to avoid sending a new request over the same payment.</li>
+<li>It is recommended to display a wait message while your customer is redirected.</li>
+<li>Do not show the bank site in containers (frames, panel, iframes, etc). The payment process must be fluid. Furthermore, avoid opening the bank site in a new tab nor a new browser window. If you need to use a new tab or window, block the origin page to avoid sending a new request over the same payment.</li>
 <li>You must add in the response page the options to retry the payment, finish the transaction and print the receipt.</li>
 <li>The status displayed in the response page can be any of the following:</li>
 </ul>

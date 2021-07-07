@@ -5596,7 +5596,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-credit-or-debit-cards&#34;&gt;Submit transaction with credit or debit cards&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-debit-and-prepaid-cards&#34;&gt;Submit transaction with debit and prepaid cards&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#available-payment-methods-query&#34;&gt;Available payment methods query&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-chile.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -6278,8 +6278,8 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;li&gt;For payments with credit card tokens, include the parameters &lt;code&gt;transaction.creditCardTokenId&lt;/code&gt; and &lt;code&gt;transaction.creditCard.securityCode&lt;/code&gt; replacing the information of the credit card (if you process with security code). For more information, refer to &lt;a href=&#34;../../../docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;International debit cards are not supported.&lt;/li&gt;
 &lt;li&gt;Transactions in CHILEAN PESOS with decimal amounts are not allowed.&lt;/li&gt;
-&lt;li&gt;Two-step flows are not supported for debit and international credit cards.&lt;/li&gt;
-&lt;li&gt;Transactions with credit card using two-step flows are available under demand and for single installment payments. Contact your Sales representative for more information.&lt;/li&gt;
+&lt;li&gt;Two-step flows are not supported for debit, prepaid and international credit cards.&lt;/li&gt;
+&lt;li&gt;Transactions with credit card using two-step flows are available for single installment payments. If you send a two-step transaction with more two installments or more, this transaction is automatically rejected by the acquirer.&lt;br&gt;Two-step flow is available under request, contact your Sales representative for more information.&lt;/li&gt;
 &lt;li&gt;By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; as true and remove the variable &lt;code&gt;creditCard.securityCode&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;authorization&#34;&gt;Authorization&lt;/h3&gt;
@@ -6588,6 +6588,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;li&gt;The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.&lt;/li&gt;
 &lt;li&gt;Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.&lt;/li&gt;
 &lt;li&gt;You can perform only one partial capture over an authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization) and set &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; for &lt;code&gt;transaction.type&lt;/code&gt;.&lt;br&gt;The minimum amount is 50 CLP.&lt;/li&gt;
+&lt;li&gt;It is not allowed to capture a higher amount than the amount previously authorized.&lt;/li&gt;
 &lt;li&gt;Captures are only allowed for transactions in one installment.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The following are the request and response bodies for this transaction type.&lt;/p&gt;
@@ -7048,6 +7049,13 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Submit transaction with cash&lt;/h2&gt;
 &lt;p&gt;This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.&lt;/p&gt;
 &lt;img src=&#34;../../../assets/Payments/CashReceiptCL.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Klap is formerly known as MULTICAJA. You can still see elements or configurations related to MULTICAJA.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;variables-for-request-and-response-1&#34;&gt;Variables for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
@@ -7897,8 +7905,8 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/h2&gt;
-&lt;p&gt;This method lets you process the bank transfer payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.&lt;/p&gt;
+&lt;h2 id=&#34;submit-transaction-with-debit-and-prepaid-cards&#34;&gt;Submit transaction with debit and prepaid cards&lt;/h2&gt;
+&lt;p&gt;This method lets you process the bank debit and prepaid card payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.&lt;/p&gt;
 &lt;img src=&#34;../../../assets/Payments/BankTransferReceiptCL.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-2&#34;&gt;Variables for request and response&lt;/h3&gt;
 &lt;details&gt;
@@ -8319,7 +8327,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in Bank transfer. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetschilepng-width25px-chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method for Debit and prepaid cards. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetschilepng-width25px-chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -9297,7 +9305,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-cash-or-bank-reference&#34;&gt;Submit transaction with cash or Bank reference&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer-pse&#34;&gt;Submit transaction with bank transfer (PSE)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse&#34;&gt;Bank List - PSE&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#available-payment-methods-query&#34;&gt;Available payment methods query&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
@@ -10062,7 +10070,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;IDC&lt;/td&gt;
-&lt;td&gt;Client´s unique identifier, in the case of unique customer / utility consumer ID&amp;rsquo;s.&lt;/td&gt;
+&lt;td&gt;Customer´s unique identifier, in the case of unique customer / utility consumer ID&amp;rsquo;s.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;CEL&lt;/td&gt;
@@ -11340,11 +11348,30 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Submit transaction with bank transfer&lt;/h2&gt;
-&lt;p&gt;This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to follow these steps:&lt;/p&gt;
+&lt;h2 id=&#34;submit-transaction-with-bank-transfer-pse&#34;&gt;Submit transaction with bank transfer (PSE)&lt;/h2&gt;
+&lt;p&gt;This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to create a Payment form following these steps:&lt;/p&gt;
 &lt;ol&gt;
+&lt;li&gt;Include a PSE button making clear that your customer will use &lt;em&gt;Proveedor de Servicios Electrónicos PSE&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;You can use the following names in Spanish:
+&lt;ul&gt;
+&lt;li&gt;Débito desde cuenta corrient/ahorros&lt;/li&gt;
+&lt;li&gt;Debito bancario PSE&lt;/li&gt;
+&lt;li&gt;PSE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Do no use any of the following names
+&lt;ul&gt;
+&lt;li&gt;Transferencia bancaria&lt;/li&gt;
+&lt;li&gt;Débito de cuenta&lt;/li&gt;
+&lt;li&gt;Tarjeta débito&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Query the available bank list to show them to the payer. To query the bank list, refer to &lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse&#34;&gt;this method&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Query the available bank list to show them to the payer. To query the bank list, refer to &lt;a href=&#34;../../../docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse&#34;&gt;this method&lt;/a&gt;.&lt;br&gt;You must update the the bank list in your system once a day.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Show the list of banks as displayed below:&lt;/p&gt;
@@ -11352,11 +11379,11 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payments/PSEBankList_EN.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;When the payer selects a bank, you must send the parameter &lt;code&gt;pseCode&lt;/code&gt; of the selection in the extra parameter &lt;code&gt;FINANCIAL_INSTITUTION_CODE&lt;/code&gt; in the request.&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
+&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Show a list to let the payer choose whether they are a &lt;em&gt;Natural&lt;/em&gt; (N) or &lt;em&gt;Legal&lt;/em&gt; (J) person. Depending on what the payer choose, you must send the value in the extra parameter &lt;code&gt;USER_TYPE&lt;/code&gt; in the request. The list must be displayed as follows:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payments/PSEPersonList_EN.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;&lt;br&gt;&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
+&lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Show a list to let the payer choose their identification type. You must send the ISO code of the value selected in the extra parameter &lt;code&gt;PSE_REFERENCE2&lt;/code&gt; in the request. The list must be displayed as follows:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payments/PSEDocType_EN.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;&lt;br&gt;&lt;/p&gt;
@@ -11391,7 +11418,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;IDC&lt;/td&gt;
-&lt;td&gt;Client´s unique identifier, in the case of unique customer / utility consumer ID&amp;rsquo;s.&lt;/td&gt;
+&lt;td&gt;Customer´s unique identifier, in the case of unique customer / utility consumer ID&amp;rsquo;s.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;CEL&lt;/td&gt;
@@ -11407,7 +11434,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;ol start=&#34;5&#34;&gt;
+&lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;You must send the payer identification number in the extra parameter &lt;code&gt;PSE_REFERENCE3&lt;/code&gt; in the request.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-2&#34;&gt;Variables for request and response&lt;/h3&gt;
@@ -11986,8 +12013,13 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;/details&gt;
 &lt;h4 id=&#34;considerations-2&#34;&gt;Considerations&lt;/h4&gt;
 &lt;ul&gt;
+&lt;li&gt;To test PSE bank transfers in the PayU Sandbox environment, see the &lt;a href=&#34;../../../assets/pse-test-guide-v5.pdf&#34;&gt;PSE Test Guide (PDF)&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;All the payment process values must be formatted in thousands (i.e., 1,200.00 or 1,200) without exception.&lt;/li&gt;
 &lt;li&gt;If the payment request is successful, the transaction has state &lt;code&gt;PENDING&lt;/code&gt; and responseCode &lt;code&gt;PENDING_TRANSACTION_CONFIRMATION&lt;/code&gt;; this is because the payer is redirected to the selected bank to complete the payment; you must redirect the payer to the URL returned in the extra parameter &lt;code&gt;BANK_URL&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;The URL returned in the extra parameter &lt;code&gt;BANK_URL&lt;/code&gt; is configured in the PayU Module and must show the following information:&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Payments/PSEresponse-en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;br&gt;Parameters starting with $ symbol are sent via &lt;code&gt;GET&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Once the client click the Pay button, this must be disabled to avoid sending a new request over the same payment.&lt;/li&gt;
+&lt;li&gt;It is recommended to display a wait message while your customer is redirected.&lt;/li&gt;
+&lt;li&gt;Do not show the bank site in containers (frames, panel, iframes, etc). The payment process must be fluid. Furthermore, avoid opening the bank site in a new tab nor a new browser window. If you need to use a new tab or window, block the origin page to avoid sending a new request over the same payment.&lt;/li&gt;
 &lt;li&gt;You must add in the response page the options to retry the payment, finish the transaction and print the receipt.&lt;/li&gt;
 &lt;li&gt;The status displayed in the response page can be any of the following:&lt;/li&gt;
 &lt;/ul&gt;

@@ -111,6 +111,7 @@ When using the Payments, you must send in the request:
     - For rejected transactions, send **REJECTED** value.
     - For pending transactions, send **PENDING** value.
 * For the card number you must enter a valid card number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes.
+* To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
 
 ## Importing the Collection
 Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you. Note that we create a new environment each time you import the collection.

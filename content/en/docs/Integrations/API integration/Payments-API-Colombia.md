@@ -20,7 +20,7 @@ Payments API includes the following methods:
 
 * [Submit transaction with credit card]({{< ref "Payments-API-Colombia.md#submit-transaction-with-credit-cards" >}})
 * [Submit transaction with cash or Bank reference]({{< ref "Payments-API-Colombia.md#submit-transaction-with-cash-or-bank-reference" >}})
-* [Submit transaction with bank transfer]({{< ref "Payments-API-Colombia.md#submit-transaction-with-bank-transfer" >}})
+* [Submit transaction with bank transfer (PSE)]({{< ref "Payments-API-Colombia.md#submit-transaction-with-bank-transfer-pse" >}})
 * [Bank List - PSE]({{< ref "Payments-API-Colombia.md#bank-list---pse" >}})
 * [Available payment methods query]({{< ref "Payments-API-Colombia.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Colombia.md#ping" >}})
@@ -169,7 +169,7 @@ This method lets you process the payments performed by your customers using cred
 | NIT | Tax identification number (Companies).                                              |
 |  TI | Identity Card.                                                                      |
 |  PP | Passport.                                                                           |
-| IDC | Client´s unique identifier, in the case of unique customer / utility consumer ID's. |
+| IDC | Customer´s unique identifier, in the case of unique customer / utility consumer ID's. |
 | CEL | When identified by the mobile line.                                                 |
 |  RC | Birth certificate.                                                                  |
 |  DE | Foreign identification document.                                                    |
@@ -845,22 +845,32 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with bank transfer
-This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to follow these steps:
+## Submit transaction with bank transfer (PSE)
+This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to create a Payment form following these steps:
 
-1. Query the available bank list to show them to the payer. To query the bank list, refer to [this method]({{< ref "Payments-API-Colombia.md#bank-list---pse" >}}).
+1. Include a PSE button making clear that your customer will use _Proveedor de Servicios Electrónicos PSE_.
+* You can use the following names in Spanish:
+    - Débito desde cuenta corrient/ahorros
+    - Debito bancario PSE
+    - PSE
+* Do no use any of the following names
+    - Transferencia bancaria
+    - Débito de cuenta
+    - Tarjeta débito
 
-2. Show the list of banks as displayed below:
+2. Query the available bank list to show them to the payer. To query the bank list, refer to [this method]({{< ref "Payments-API-Colombia.md#bank-list---pse" >}}).<br>You must update the the bank list in your system once a day.
+
+3. Show the list of banks as displayed below:
 
 <img src="/assets/Payments/PSEBankList_EN.png" alt="PrintScreen" width="50%"><br>
 
 When the payer selects a bank, you must send the parameter `pseCode` of the selection in the extra parameter `FINANCIAL_INSTITUTION_CODE` in the request.
 
-3. Show a list to let the payer choose whether they are a _Natural_ (N) or _Legal_ (J) person. Depending on what the payer choose, you must send the value in the extra parameter `USER_TYPE` in the request. The list must be displayed as follows:
+4. Show a list to let the payer choose whether they are a _Natural_ (N) or _Legal_ (J) person. Depending on what the payer choose, you must send the value in the extra parameter `USER_TYPE` in the request. The list must be displayed as follows:
 
 <img src="/assets/Payments/PSEPersonList_EN.png" alt="PrintScreen" width="50%"><br>
 
-4. Show a list to let the payer choose their identification type. You must send the ISO code of the value selected in the extra parameter `PSE_REFERENCE2` in the request. The list must be displayed as follows:
+5. Show a list to let the payer choose their identification type. You must send the ISO code of the value selected in the extra parameter `PSE_REFERENCE2` in the request. The list must be displayed as follows:
 
 <img src="/assets/Payments/PSEDocType_EN.png" alt="PrintScreen" width="50%"><br>
 
@@ -873,12 +883,12 @@ The list of available documents is:
 | NIT | Tax identification number (Companies).                                              |
 |  TI | Identity Card.                                                                      |
 |  PP | Passport.                                                                           |
-| IDC | Client´s unique identifier, in the case of unique customer / utility consumer ID's. |
+| IDC | Customer´s unique identifier, in the case of unique customer / utility consumer ID's. |
 | CEL | When identified by the mobile line.                                                 |
 |  RC | Birth certificate.                                                                  |
 |  DE | Foreign identification document.                                                    |
 
-5. You must send the payer identification number in the extra parameter `PSE_REFERENCE3` in the request.
+6. You must send the payer identification number in the extra parameter `PSE_REFERENCE3` in the request.
 
 ### Variables for request and response
 
@@ -982,8 +992,13 @@ The list of available documents is:
 </details>
 
 #### Considerations
+* To test PSE bank transfers in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
+* All the payment process values must be formatted in thousands (i.e., 1,200.00 or 1,200) without exception.
 * If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_TRANSACTION_CONFIRMATION`; this is because the payer is redirected to the selected bank to complete the payment; you must redirect the payer to the URL returned in the extra parameter `BANK_URL`.
 * The URL returned in the extra parameter `BANK_URL` is configured in the PayU Module and must show the following information:<br><br>![PrintScreen](/assets/Payments/PSEresponse-en.png)<br>Parameters starting with $ symbol are sent via `GET`.
+* Once the client click the Pay button, this must be disabled to avoid sending a new request over the same payment.
+* It is recommended to display a wait message while your customer is redirected.
+* Do not show the bank site in containers (frames, panel, iframes, etc). The payment process must be fluid. Furthermore, avoid opening the bank site in a new tab nor a new browser window. If you need to use a new tab or window, block the origin page to avoid sending a new request over the same payment.
 * You must add in the response page the options to retry the payment, finish the transaction and print the receipt.
 * The status displayed in the response page can be any of the following:
 

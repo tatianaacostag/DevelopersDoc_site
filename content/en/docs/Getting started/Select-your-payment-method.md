@@ -51,7 +51,7 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/master.png)     | Mastercard           | MASTERCARD              | Credit Cards  |             |
 | ![Logo](/assets/PaymentMethods/master.png)     | Mastercard           | MASTERCARD_DEBIT        | Debit Cards   |             |
 | ![Logo](/assets/PaymentMethods/multicaja.png)  | Klap (FKA Multicaja) | MULTICAJA               | Cash          |             |
-| ![Logo](/assets/PaymentMethods/red-compra.png) | Redcompra            | TRANSBANK_DEBIT         | Bank Transfer |             |
+| ![Logo](/assets/PaymentMethods/red-compra.png) | Redcompra            | TRANSBANK_DEBIT         | Debit and Prepaid Cards |   |
 | ![Logo](/assets/PaymentMethods/visa.png)       | VISA                 | VISA                    | Credit Cards  |             |
 | ![Logo](/assets/PaymentMethods/visa.png)       | VISA                 | VISA_DEBIT              | Debit Cards   |             |
 

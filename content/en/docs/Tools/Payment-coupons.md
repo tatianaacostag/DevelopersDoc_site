@@ -112,7 +112,77 @@ If you want to edit the information of the issuer, click Edit link displayed in 
 Finally, click **Generate coupons in PDF**. A PDF file is downloaded, each page has the coupon generated per each client.
 
 ### Generate Payment references
+This option lets you generate an Excel file with the coupons requested.
 
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_06.png)
 
+To add the clients one by one, provide the following information:
+
+* Payer name: name of the client.
+* Payment description: description of the payment.
+* Amount: this field is available when you define the amount payed by your client and takes the defined value.
+* Expiration date: this field is available when you define an expiration date of the coupon.
+* Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.
+
+Click _**Add**_ button to save the clients data and add an extra client if required.
+
+To add multiple clients, click **Add multiple payers from one file** and download the sample file by clicking **Download format**.
+
+The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the PayU module.
+
+Regardless of the option selected, click **Generate references in Excel**.
+
+The download starts immediately. Furthermore, a new window appears showing the number of references generated, in this windows, you can also send the Excel file to whoever you need.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_07.png)
 
 ### Create collection cards
+This option lets you generate cards with the information required to let your clients to be able to make cash payments at the available payment points every time they need to.<br>
+This option is available when you don't set a fixed payment amount nor a payment deadline.
+
+{{% alert title="Note" color="info"%}}
+
+<img src="/assets/Argentina.png" width="25px"/> **Available only for Argentina.**
+
+{{% /alert %}}  
+
+Collection cards are plastic cards associated to your PayU account; they have a bar code and you can include a reference code printed on them.
+
+Once your card have been generated, deliver them to your customers and they can pay the amount in cash they wish and without any expiration date.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_08.png)
+
+To request the cards, you need to provide the following information:
+
+* Design of your collection cards: choose a predefined or custom design for your cards. Custom cards are available from 1000 cards.
+* How many cards do you want to request?: select the number of cards you want to generate according to the design you choose.
+* Delivery address: Click edit link at the top right corner of this panel to provide the address where you want to receive the cards.
+* Payment summary: we calculate the cost of your order depending on the quantity of cards requested and the design you choose.
+
+{{% alert title="Note" color="warning"%}}
+
+This order will be debited from your PayU account and you must have an available balance.
+
+{{% /alert %}} 
+
+Click _**Request cards**_ to continue. A confirmation window appears to let you validate the information of your request.
+
+<img src="/assets/PaymentCoupons/PaymentCoupons_09.png" alt="PrintScreen" width="60%"/>
+
+## Consult the created coupons
+When you have created coupons of collection cards, you can consult their information to see the received payments or enable or download the coupon.
+
+1. In the PayU Module, expand the **Sell with PayU option** and then, select **My tools**.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_10.png)
+
+2. Select either _**Collection by cash**_ or _**Collection cards tab according**_ to your needs.
+
+3. You can use the Advanced filter option to find a specific set of coupons.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_11.png)
+
+4. Each coupon present the options to disable or download the coupon. Once the coupon is disabled, it cannot receive more payments.<br>Find these options in the three dot menu in the _**status**_ column.
+
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_12.png)
+

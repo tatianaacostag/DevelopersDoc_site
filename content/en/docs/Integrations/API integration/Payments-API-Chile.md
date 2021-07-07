@@ -20,7 +20,7 @@ Payments API includes the following methods:
 
 * [Submit transaction with credit or debit cards]({{< ref "Payments-API-Chile.md#submit-transaction-with-credit-or-debit-cards" >}})
 * [Submit transaction with cash]({{< ref "Payments-API-Chile.md#submit-transaction-with-cash" >}})
-* [Submit transaction with bank transfer]({{< ref "Payments-API-Chile.md#submit-transaction-with-bank-transfer" >}})
+* [Submit transaction with debit and prepaid cards]({{< ref "Payments-API-Chile.md#submit-transaction-with-debit-and-prepaid-cards" >}})
 * [Available payment methods query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Chile.md#ping" >}})
 
@@ -153,8 +153,8 @@ Transactions with credit card using two-step flows are available under demand. C
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * International debit cards are not supported.
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
-* Two-step flows are not supported for debit and international credit cards.
-* Transactions with credit card using two-step flows are available under demand and for single installment payments. Contact your Sales representative for more information.
+* Two-step flows are not supported for debit, prepaid and international credit cards.
+* Transactions with credit card using two-step flows are available for single installment payments. If you send a two-step transaction with more two installments or more, this transaction is automatically rejected by the acquirer.<br>Two-step flow is available under request, contact your Sales representative for more information.
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 
 ### Authorization
@@ -417,6 +417,7 @@ Take into account the following considerations for capture.
 * The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.
 * Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
 * You can perform only one partial capture over an authorized amount. To do this, you need to send in the request the parameter `transaction.order.additionalValues.TX_VALUE` with its value (as sent during the Authorization) and set `PARTIAL_CAPTURE` for `transaction.type`.<br>The minimum amount is 50 CLP.
+* It is not allowed to capture a higher amount than the amount previously authorized. 
 * Captures are only allowed for transactions in one installment.
 
 The following are the request and response bodies for this transaction type.
@@ -788,6 +789,10 @@ This method lets you process the payments in cash of your customers. To integrat
 
 <img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
 
+{{% alert title="Note" color="info"%}}
+Klap is formerly known as MULTICAJA. You can still see elements or configurations related to MULTICAJA.
+{{% /alert %}}
+
 ### Variables for request and response
 
 <details>
@@ -1129,8 +1134,8 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with bank transfer
-This method lets you process the bank transfer payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
+## Submit transaction with debit and prepaid cards
+This method lets you process the bank debit and prepaid card payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
 
 <img src="/assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
 
@@ -1200,7 +1205,7 @@ This method lets you process the bank transfer payments of your customers. To in
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
-| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method in Bank transfer. [See the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#img-srcassetschilepng-width25px-chile" >}}). | Yes |
+| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method for Debit and prepaid cards. [See the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#img-srcassetschilepng-width25px-chile" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CL` for Chile. | Yes |
 | transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
