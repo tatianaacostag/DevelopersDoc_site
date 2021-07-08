@@ -1,14 +1,14 @@
 @font-face {
-    font-family: AmpleSoft;
-    src: url('AmpleSoftPro-Light.woff'), url('AmpleSoftPro-Light.woff') format('woff');
+    /* font-family: AmpleSoft;
+    src: url('AmpleSoftPro-Light.woff'), url('AmpleSoftPro-Light.woff') format('woff'); */
     font-style: normal;
     font-weight: 200;
     font-display: fallback;
 }
 
 @font-face {
-    font-family: AmpleSoft;
-    src: url('AmpleSoftPro-Regular.woff'), url('AmpleSoftPro-Regular.woff') format('woff');
+    /*font-family: AmpleSoft;
+    src: url('AmpleSoftPro-Regular.woff'), url('AmpleSoftPro-Regular.woff') format('woff'); */
     /* src: url('http://127.0.0.1:1313/AmpleSoftPro-Regular.woff'), url('http://127.0.0.1:1313/AmpleSoftPro-Regular.woff') format('woff'); */
     font-style: normal;
     font-weight: 400;
@@ -16,23 +16,23 @@
 }
 
 @font-face {
-    font-family: AmpleSoft;
-    src: url('AmpleSoftPro-Medium.woff'), url('AmpleSoftPro-Medium.woff') format('woff');
+    /* font-family: AmpleSoft;
+    src: url('AmpleSoftPro-Medium.woff'), url('AmpleSoftPro-Medium.woff') format('woff'); */
     font-style: normal;
     font-weight: 500;
     font-display: fallback;
 }
 
 @font-face {
-    font-family: AmpleSoft;
-    src: url('AmpleSoftPro-Bold.woff'), url('/AmpleSoftPro-Bold.woff') format('woff');
+    /*font-family: AmpleSoft;
+    src: url('AmpleSoftPro-Bold.woff'), url('/AmpleSoftPro-Bold.woff') format('woff'); */
     font-style: normal;
     font-weight: 700;
     font-display: fallback;
 }
 
 * {
-    font-family: "AmpleSoft" !important;
+    /* font-family: "AmpleSoft" !important; */
 }
 
 ol, ul, dl {
