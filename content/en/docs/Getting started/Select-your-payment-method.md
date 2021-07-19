@@ -20,26 +20,27 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/cencosud.png)      | Cencosud         | CENCOSUD                | Credit Cards |               |
 | ![Logo](/assets/PaymentMethods/cobro-express.png) | Cobro Express    | COBRO_EXPRESS           | Cash         |               |
 | ![Logo](/assets/PaymentMethods/diners.png)        | Diners           | DINERS                  | Credit Cards |               |
-| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard       | MASTERCARD              | Credit Cards |               |
+| ![Logo](/assets/PaymentMethods/master.png)        | Mastercard       | MASTERCARD              | Credit Cards | **Supported cards**: CRM Falabella, Nativa, Cordial, Cordobesa, and Nexo. |
 | ![Logo](/assets/PaymentMethods/naranja.png)       | Naranja          | NARANJA                 | Credit Cards |               |
 | ![Logo](/assets/PaymentMethods/pago-facil.png)    | PAGOFACIL        | PAGOFACIL               | Cash         |               |
 | ![Logo](/assets/PaymentMethods/rapi-pago.png)     | RAPIPAGO         | RAPIPAGO                | Cash         |               |
 | ![Logo](/assets/PaymentMethods/shopping.png)      | Shopping         | SHOPPING                | Credit Cards |               |
-| ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | VISA                    | Credit Cards |               |
+| ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | VISA                    | Credit Cards | **Supported cards**: Shopping, Nativa, Credimas, and Nevada. |
 | ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | VISA_DEBIT              | Debit Cards  |               |
 
 ## <img src="/assets/Brasil.png" width="25px"/> Brazil
 <div class="paymentMethods"></div>
 
-|                                                     | Payment Method   | paymentMethod parameter | Type         | Comments    |
-|:---------------------------------------------------:|------------------|-------------------------|--------------|-------------|
-| ![Logo](/assets/PaymentMethods/american.png)        | American Express | AMEX                    | Credit Cards |             |
-| ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario  | BOLETO_BANCARIO         | Cash         | Does not conciliate at weekends or holidays |
-| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS                  | Credit Cards |             |
-| ![Logo](/assets/PaymentMethods/elo.png)             | Elo              | ELO                     | Credit Cards |             |
-| ![Logo](/assets/PaymentMethods/hipercard.png)       | Hipercard        | HIPERCARD               | Credit Cards |             |
-| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards |             |
-| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards |             |
+|                                                     | Payment Method   | paymentMethod parameter | Type          | Comments    |
+|:---------------------------------------------------:|------------------|-------------------------|---------------|------------|
+| ![Logo](/assets/PaymentMethods/american.png)        | American Express | AMEX                    | Credit Cards  |            |
+| ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario  | BOLETO_BANCARIO         | Cash          | Does not conciliate at weekends or holidays |
+| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS                  | Credit Cards  |            |
+| ![Logo](/assets/PaymentMethods/elo.png)             | Elo              | ELO                     | Credit Cards  |            |
+| ![Logo](/assets/PaymentMethods/hipercard.png)       | Hipercard        | HIPERCARD               | Credit Cards  |            |
+| ![Logo](/assets/PaymentMethods/itau.png)            | TEF Itaú         | ITAU                    | Bank Transfer | Only available for Itaú accounts. |
+| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards  |            |
+| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards  |            |
 
 ## <img src="/assets/Chile.png" width="25px"/> Chile
 <div class="paymentMethods"></div>
@@ -56,6 +57,8 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/visa.png)       | VISA                 | VISA_DEBIT              | Debit Cards   |             |
 
 ## <img src="/assets/Colombia.png" width="25px"/> Colombia
+PayU in Colombia allows you to integrate with most of the cash payments methods in Colombia. Furthermore, we support Codensa and Falabella.
+
 <div class="paymentMethods"></div>
 
 |                                                     | Payment Method   | paymentMethod parameter | Type           | Comments  |
@@ -69,11 +72,13 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS                  | Credit Cards   |           |
 | ![Logo](/assets/PaymentMethods/efecty.png)          | Efecty           | EFECTY                  | Cash           |           |
 | ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards   |           |
-| ![Logo](/assets/PaymentMethods/pse_logo.png)        | PSE              | PSE                     | Bank Transfer  |           |
+| ![Logo](/assets/PaymentMethods/pse_logo.png)        | PSE              | PSE                     | Bank Transfer  | PSE lets your customers pay using Nequi and Daviplata. |
 | ![Logo](/assets/PaymentMethods/su-red.png)          | Su Red           | OTHER_CASH              | Cash           | Payment offices: PagaTodo,<br>Gana Gana, Gana, Acertemos,<br>Apuestas Cúcuta 75,<br>Su Chance, La Perla, Apuestas<br>Unidas, JER. |
 | ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards   |           |
 
 ## <img src="/assets/Mexico.png" width="25px"/> Mexico
+For México, we support both MSI, and Installments and Promotions, refer to this [article]({{< ref "Promotions.md" >}}) for more information.
+
 <div class="paymentMethods"></div>
 
 |                                                  | Payment Method       | paymentMethod parameter | Type           | Comments |

@@ -86,7 +86,7 @@ Once the evidence is provided, we send the documents to the issuing bank or the 
 
 When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.
 
-### Dispute states
+## Dispute states
 When a dispute is reported, a dispute entity for the associated transaction is created. The dispute status changes according to the step where the dispute is within the course of the process.
 
 | State | Description |
@@ -95,4 +95,4 @@ When a dispute is reported, a dispute entity for the associated transaction is c
 | In review | When the shop provides evidence for a dispute through the PayU module and the dispute is reviewed by the bank. |
 | Lost | The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost. |
 | Won | The dispute process is resolved in favor of the shop, there are no deductions of any kind. |
-| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. |
+| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. To resolve a dispute as refund you have to request it to **disputas@payu.com** |

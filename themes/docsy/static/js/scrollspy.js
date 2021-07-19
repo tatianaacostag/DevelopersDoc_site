@@ -19,7 +19,7 @@ function createObserver() {
                 document.querySelector(`nav li a[href="#${id}"]`).classList.remove('activeToc');
             }
         });
-
+        
     },options);
         document.querySelectorAll('h2[id], h3[id]').forEach((section) => {
             observer.observe(section);
