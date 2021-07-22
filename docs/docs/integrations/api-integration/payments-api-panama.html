@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Payments API Panama lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
 <meta itemprop="dateModified" content="2021-07-01T21:44:03-05:00" />
-<meta itemprop="wordCount" content="2459">
+<meta itemprop="wordCount" content="2587">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Panama"/>
 <meta name="twitter:description" content="Payments API Panama lets your shop process different transaction types with multiple payment methods.
@@ -122,7 +122,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.b0d46c762cdb056f7395eae2bbb5fc116a694ce1e3c770d30a9879f216c5e56ec87b6948497bdb507506c04d5dd20eb0e5779d1889c59750b1cd3bea6cd62ccf.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c355bc0b688032add06ec03d8b0999db494dde2aa476559ace19d645d63c127db77cebc2a82e0f599a51bb53235db47c95559881bf01d4226d3188bec5b8ee55.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -259,12 +259,6 @@
       
       
         <a id="/docs/services/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsservicesrefundshtml" href="../../../docs/services/refunds.html">Void and Refunds</a>
-      
-      
-      
-      
-      
-        <a id="/docs/services/pushpayments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsservicespushpaymentshtml" href="../../../docs/services/pushpayments.html">Push Payments</a>
       
       
     </li>
@@ -1094,6 +1088,48 @@
 <td>3</td>
 <td>ISO code of the currency. <a href="../../../docs/getting-started/response-codes-and-variables.html#accepted-currencies">See accepted currencies</a>.</td>
 <td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX</td>
+<td>Alphanumeric</td>
+<td>64</td>
+<td>Amount of the Value Added Tax (VAT).</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
+<td>Number</td>
+<td>19, 2</td>
+<td>Specifies the amount of the VAT.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; currency</td>
+<td>Alphanumeric</td>
+<td>3</td>
+<td>ISO code of the currency. <a href="../../../docs/getting-started/response-codes-and-variables.html#accepted-currencies">See accepted currencies</a>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE</td>
+<td>Alphanumeric</td>
+<td>64</td>
+<td>Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
+<td>Number</td>
+<td>19, 2</td>
+<td>Specifies the base amount of the transaction.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; currency</td>
+<td>Alphanumeric</td>
+<td>3</td>
+<td>ISO code of the currency. <a href="../../../docs/getting-started/response-codes-and-variables.html#accepted-currencies">See accepted currencies</a>.</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; creditCardTokenId</td>
