@@ -28,19 +28,26 @@
 &lt;p&gt;PayU can process the payments using two types of Payment flows: two-step and one-step.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Payments/autorizacionycaptura-en.png&#34; alt=&#34;Payments&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;In the two-step flow, first you need to authorize and place a hold on the customer&amp;rsquo;s funds. Then, complete the transaction to transfer the authorized funds to your PayU account. The steps in this flow are:&lt;/p&gt;
+&lt;li&gt;In the one-step flow, combines the &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/em&gt; steps into a single transaction. Funds are transferred from your customer&amp;rsquo;s account to your PayU account when the payment has been authorized. The unique step in this flow are:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Charge (Authorization and capture)&lt;/strong&gt;&lt;/em&gt;: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+One-step flow is not supported for Colombia and Panama. For Chile, this flow is available under request only, contact your sales representative.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In the two-step flow, first you need to authorize and place a hold on the customer&amp;rsquo;s funds. Then, complete the transaction to transfer the authorized funds to your PayU account. The steps in this flow are:
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt;: this operation is used to verify if the card used to pay is active, has funds, etc. The transaction is not complete until a transaction capture is sent. &lt;/br&gt;
 For Example, when you use a transportation app, after you request the service, the app sends an &lt;em&gt;Authorization&lt;/em&gt; to reserve the amount of the trip and verify that your card is valid (active and with enough founds). Nevertheless, the charge is not performed in your card yet.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/em&gt;: this operation terminates a previously authorized transaction, namely, at this point, the account makes a debit to the card.&lt;/br&gt;
 Back in the transportation app example, once your service has finished, the apps charges the total amount of your trip and terminates the transaction.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;In the one-step flow, combines the &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/em&gt; steps into a single transaction. Funds are transferred from your customer&amp;rsquo;s account to your PayU account when the payment has been authorized. The unique step in this flow are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Charge (Authorization and capture)&lt;/strong&gt;&lt;/em&gt;: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -60,10 +67,77 @@ Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.h
 
 &lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
 &lt;p&gt;The integration with this feature depends on the country of your transactions, the operation selected and the payment method.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%&#34;&gt;
+      &lt;img src=&#34;../../assets/Argentina.png&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/api-integration/payments-api-argentina.html&#39;&gt;API&lt;/a&gt;&lt;/div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/sdk-integration/payments-sdk-argentina.html&#39;&gt;SDK&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%&#34;&gt;
+      &lt;img src=&#34;../../assets/Brasil.png&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/api-integration/payments-api-brazil.html&#39;&gt;API&lt;/a&gt;&lt;/div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/sdk-integration/payments-sdk-brazil.html&#39;&gt;SDK&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%&#34;&gt;
+      &lt;img src=&#34;../../assets/Chile.png&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/api-integration/payments-api-chile.html&#39;&gt;API&lt;/a&gt;&lt;/div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/sdk-integration/payments-sdk-chile.html&#39;&gt;SDK&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%&#34;&gt;
+      &lt;img src=&#34;../../assets/Colombia.png&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/api-integration/payments-api-colombia.html&#39;&gt;API&lt;/a&gt;&lt;/div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/sdk-integration/payments-sdk-colombia.html&#39;&gt;SDK&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%&#34;&gt;
+      &lt;img src=&#34;../../assets/Mexico.png&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/api-integration/payments-api-mexico.html&#39;&gt;API&lt;/a&gt;&lt;/div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/sdk-integration/payments-sdk-mexico.html&#39;&gt;SDK&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%&#34;&gt;
+      &lt;img src=&#34;../../assets/Panama.png&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;
+        &lt;div&gt;&lt;a href=&#39;../integrations/api-integration/payments-api-panama.html&#39;&gt;API&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%;cursor:default;box-shadow:initial&#34;&gt;
+      &lt;img src=&#34;&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;display:none&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%&#34;&gt;
+      &lt;img src=&#34;../../assets/Peru.png&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/api-integration/payments-api-peru.html&#39;&gt;API&lt;/a&gt;&lt;/div&gt;
+        &lt;div style=&#34;float: left;width: 50%;&#34;&gt;&lt;a href=&#39;../integrations/sdk-integration/payments-sdk-peru.html&#39;&gt;SDK&lt;/a&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%;cursor:default;box-shadow:initial&#34;&gt;
+      &lt;img src=&#34;&#34; width=&#34;40px&#34; style=&#34;padding-bottom: 14px;display:none&#34;&gt;
+      &lt;br&gt;
+      &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
 
       </description>
     </item>
@@ -96,7 +170,7 @@ Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.h
 &lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration/queriessdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -142,7 +216,7 @@ Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.h
 &lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/tokenization-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -158,62 +232,39 @@ Refer to &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.h
         
         
         &lt;h2 id=&#34;what-are-installments-and-promotions&#34;&gt;What are Installments and Promotions&lt;/h2&gt;
-&lt;p&gt;With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments with a partial or full reduction in the interest rate.&lt;/p&gt;
-&lt;p&gt;Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.&lt;/p&gt;
+&lt;p&gt;With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments with a reduced interest rate. Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.&lt;/p&gt;
 &lt;p&gt;To perform the configuration of Installments and Promotions based on the agreements you have with bank entities, contact your sales representative.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+For Mexico, you can use &lt;a href=&#34;../../docs/services/promotions.html#months-without-interests-msi---meses-sin-intereses&#34;&gt;Months Without Interests (MSI - Meses sin intereses)&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&#34;how-does-installments-and-promotions-works-in-payu&#34;&gt;How does Installments and Promotions works in PayU&lt;/h2&gt;
 &lt;p&gt;To use promotions, you need to first consult the available promotions for your shop; then, select the promotion that fits to your needs and finally, send the payment request along with the promotion Id selected and the number of installments.&lt;/p&gt;
 &lt;p&gt;The following sequence of events explains better the promotions flow.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PromotionsFlow.png&#34; alt=&#34;Promotions Flow&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;authentication-for-promotions&#34;&gt;Authentication for Promotions&lt;/h2&gt;
-&lt;p&gt;For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your &lt;code&gt;MerchantPublicKey&lt;/code&gt;, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Public Key&lt;/em&gt;&lt;/strong&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../assets/Promotions/PublicKey.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h3&gt;
-&lt;p&gt;You must include in the &lt;code&gt;Authorization&lt;/code&gt; in the header, this header follows this structure:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hmac&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MerchantPublicKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where &lt;code&gt;Signature&lt;/code&gt; is created as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Base64&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HMAC&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SHA256&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;MerchantApiKey&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ContentToSign&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;))&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;And &lt;code&gt;ContentToSign&lt;/code&gt; corresponds to:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HTTP&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Verb&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;Date&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;URI&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;months-without-interests-msi---meses-sin-intereses&#34;&gt;Months Without Interests (MSI - Meses sin intereses)&lt;/h2&gt;
+&lt;p&gt;Months Without Interests (known in Mexico as &lt;em&gt;Meses sin intereses&lt;/em&gt;) lets you offer to your customers the possibility to pay in a defined number of interest-free installments (3, 6, 9, 12, or 18). Unlike the promotions model, when using MSI you don&amp;rsquo;t need to query the promotion id.&lt;/p&gt;
+&lt;p&gt;To request the usage of MSI, contact your sales representative.&lt;/p&gt;
+
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-It is mandatory to include the three line breaks (&lt;code&gt;\n&lt;/code&gt;) after the &lt;code&gt;HTTP-Verb&lt;/code&gt;
+&lt;p&gt;The minimum values for MSI depends on the number of installments selected:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3 &amp;gt; $300 MXN&lt;/li&gt;
+&lt;li&gt;6 &amp;gt; $600 MXN&lt;/li&gt;
+&lt;li&gt;9 &amp;gt; $900 MXN&lt;/li&gt;
+&lt;li&gt;12 &amp;gt; $1200 MXN&lt;/li&gt;
+&lt;li&gt;18 &amp;gt; $1800 MXN&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;/div&gt;
 
-&lt;p&gt;The following examples shows how to create the Authentication header using the following test values:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;ContentToSign&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt; 
-    
-
-&lt;span style=&#34;color:#000&#34;&gt;Fri&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;28&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Apr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2017&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;32&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;01&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
-&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;rest&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;v4&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pricing&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;&lt;strong&gt;MerchantApiKey&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;&lt;strong&gt;MerchantPublicKey&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Crypt the &lt;code&gt;ContentToSign&lt;/code&gt; using &lt;code&gt;MerchantApiKey&lt;/code&gt; as passphrase. Then, concatenate the result with the &lt;code&gt;MerchantPublicKey&lt;/code&gt;as explained before, the result is as follows:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Hmac&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sIxh54sANfKaxO0ugX6QwhPmZRS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TGy8gmdCwr3kjP0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;To avoid replay attacks, send the header &lt;code&gt;Date&lt;/code&gt; following this format:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Date&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Due to some restrictions in REST clients, you can also send the the &lt;code&gt;x-hmac-date&lt;/code&gt; header to meet security requirements, this header follows the same format used in &lt;code&gt;Date&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;x-hmac-date&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Mon&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;11&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;May&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;2015&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;GMT&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
-&lt;p&gt;The integration with this feature can be performed using the &lt;a href=&#34;../../docs/integrations/api-integration.html&#34;&gt;API integration&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The integration with this feature can be performed using the &lt;a href=&#34;../../docs/integrations/api-integration/promotions-api.html&#34;&gt;Promotions API&lt;/a&gt;. To learn how to integrate with MSI, refer to this &lt;a href=&#34;../../docs/integrations/api-integration/promotions-api.html#months-without-installments-msi---meses-sin-intereses&#34;&gt;section&lt;/a&gt;.&lt;/p&gt;
 &lt;!--
 
 
@@ -309,8 +360,60 @@ To integrate with Promotions API, target the requests to the following URLs:
 &lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../docs/integrations/api-integration/refunds-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../docs/integrations/sdk-integration/refundssdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Push Payments</title>
+      <link>/docs/services/pushpayments.html</link>
+      <pubDate>Fri, 16 Jul 2021 11:32:55 -0500</pubDate>
+      
+      <guid>/docs/services/pushpayments.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Push Payments is available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Currently, Push Payment is available in Colombia, Argentina, and Mexico.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;how-do-push-payments-work&#34;&gt;How do Push Payments work?&lt;/h2&gt;
+&lt;p&gt;Through Push payments, you can request many payouts to many users easily. You only need to provide the amount to pay along with the information of each third party (such as name, identification, bank information, etc.), and PayU transfers the requested amount after validations.&lt;/p&gt;
+&lt;img src=&#34;../../assets/PushPayments/PushPayments.png&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;
+&lt;p&gt;Let’s explain Push payments using an example. A merchant offers products and services available for delivery; this merchant uses PayU as their payment platform and has an account where they collect the money paid from their customers. This merchant has many couriers to whom, they pay a fixed amount per delivery they made.&lt;/p&gt;
+&lt;p&gt;Each week, the merchant pays the amount earned to each courier. To do this, they can use push payments to pay directly from their PayU account instead of managing the payouts on their own, in which case, the merchants must transfer the money to their accounts or use funds from other sources.&lt;/p&gt;
+&lt;p&gt;To request the pay, the merchant sends the list of third parties they want to pay along with the amount of each one, PayU validates these third parties and schedules the payout. Once the payouts are processed (approved or denied) you and the third parties receive a notification about the status.&lt;/p&gt;
+&lt;p&gt;The amount of each payout plus the processing fee is deducted from your account. COntact your sale representative to know the processing fee to use this service.&lt;/p&gt;
+&lt;h3 id=&#34;push-payment-status&#34;&gt;Push payment status&lt;/h3&gt;
+&lt;p&gt;As every transaction in PayU, a push payment moves between the following status:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;REQUEST_BY_THE_MERCHANT&lt;/strong&gt;: this is the initial state of the transaction, once you send the list of third parties to be paid, the transaction takes this status.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IN_VALIDATION&lt;/strong&gt;: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn&amp;rsquo;t meet the policies is rejected.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IN_PAYU_PROCESS&lt;/strong&gt;: this state indicates that PayU has started the process payment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWAITING_BANK_SENT&lt;/strong&gt;: this state indicates that PayU has started the transfer of the amount to the third party.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IN_BANKING_PROCESS&lt;/strong&gt;: this state indicates that the payment is being processed in the third party bank account.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CONFIRMED_BY_THE_BANK&lt;/strong&gt;: this state indicates that the third part has received the transferred amount.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;REJECTED&lt;/strong&gt;: this state indicates that the transaction has been rejected either by PayU (due to policy breach) or the Bank (due to errors in the bank information).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following diagram illustrates the status changing:&lt;/p&gt;
+&lt;img src=&#34;../../assets/PushPayments/PushPaymentsSteps.png&#34; width=&#34;60%&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;p&gt;Take into account the following considerations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Push payment allows local payouts only. The merchant may be international (under security and risk analysis) but they can only request local payouts using the funds collected in the processing country.&lt;br&gt;For example, if the merchant &lt;em&gt;ABC&lt;/em&gt; processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.&lt;/li&gt;
+&lt;li&gt;The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.&lt;/li&gt;
+&lt;li&gt;For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;querying-push-payment-status-and-notifications&#34;&gt;Querying Push payment status and Notifications&lt;/h2&gt;
+&lt;p&gt;When using Push Payments, you can create a Web Hook for both to configure notifications on status changing and to query the status of a payment. It is recommended to configure the web hook before sending the Push Payment request when configuring notifications.&lt;/p&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature fo is performed using &lt;a href=&#34;&#34;&gt;API integrations&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>

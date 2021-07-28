@@ -391,21 +391,30 @@ Some of the links above may appear in Spanish.
       <description>
         
         
-        &lt;p&gt;To use the PayU module, go to &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;PayU module is ideal for business that need to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep control of their stocks and sales performed through PayU.&lt;/li&gt;
+&lt;li&gt;Be updated with the information of their financial movements of their account.&lt;/li&gt;
+&lt;li&gt;Make requests to the support team about issues in their account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;benefits-of-the-payu-module&#34;&gt;Benefits of the PayU Module&lt;/h2&gt;
+&lt;p&gt;PayU module provides the following benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Keep track of your sales&lt;/strong&gt;&lt;br&gt;Find relevant information about your sales, the most used payment methods, and the hours with higher transaction rates.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Know your transactions&lt;/strong&gt;.&lt;br&gt;You can consult the movements in your accounts, generate statements and reports.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;You don&amp;rsquo;t need a Web page&lt;/strong&gt;&lt;br&gt;You can use the tools to receive payments even if you don&amp;rsquo;t have a web page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-access-the-payu-module&#34;&gt;How to access the PayU module?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Log in our web page&lt;/strong&gt;&lt;br&gt;Log into &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;, at the top right corner, you find the option to log in. For merchants in Colombia, this option is called &lt;em&gt;PayU Login&lt;/em&gt;.&lt;br&gt;Alternatively, you can go directly to &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Login1_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Enter the PayU module&lt;/strong&gt;.&lt;br&gt;Provide your credentials and enter your account. Here, you can use all the available options to manage your account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Login2_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;For more information about how to use the PayU Module, refer to this &lt;a href=&#34;https://ecommerce.payulatam.com/manual-secure/manual.html&#34;&gt;section&lt;/a&gt;.&lt;/p&gt;
 
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Reports</title>
-      <link>/docs/tools/reports.html</link>
-      <pubDate>Wed, 28 Apr 2021 14:14:14 -0500</pubDate>
-      
-      <guid>/docs/tools/reports.html</guid>
-      <description>
-        
-        
-        
       </description>
     </item>
     
@@ -421,7 +430,131 @@ Some of the links above may appear in Spanish.
         &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
 &lt;p&gt;Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
 &lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
-&lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;/p&gt;
+&lt;p&gt;A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;br&gt;
+The reasons for starting a dispute process may vary, some of them are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fraud&lt;/strong&gt;: disputes are classified as fraud when an unauthorized person makes purchases with a credit card. These type of dispute can happen if the card was lost or stolen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not acknowledging payment&lt;/strong&gt;: the brand or shop name which appears in the credit card statement is not recognized by the cardholder.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Product not delivered&lt;/strong&gt;: the cardholder states that they don&amp;rsquo;t received the product or service covered by the charges made to the credit card.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Product not acceptable&lt;/strong&gt;: the cardholder claims not to have received the product or service under the expected conditions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Duplicate&lt;/strong&gt;: the cardholder indicates that the charge made for the purchase of a product or service was applied more than once to his credit card.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amount does not match&lt;/strong&gt;: the charge to the credit card does not match with the value of the purchase.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not reported by the entity&lt;/strong&gt;: the bank or processing network initiates a dispute process without a specific reason.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Attention&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Recall that PayU acts as an intermediary to let your commerce provide evidence in the dispute process between you and the bank entity. PayU has no interference on the result of the dispute, this decision depends on the issuing bank.&lt;/li&gt;
+&lt;li&gt;Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance; therefore, you cannot transfer funds from this balance to your bank account until the dispute is resolved.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;how-does-the-disputes-process-works-in-payu&#34;&gt;How does the disputes process works in PayU?&lt;/h2&gt;
+&lt;p&gt;The disputes process follows a simple flow:&lt;/p&gt;
+&lt;h3 id=&#34;1-dispute-notification&#34;&gt;1. Dispute notification&lt;/h3&gt;
+&lt;p&gt;When a bank notifies PayU about a dispute, both you and your customer receives an email notifying the start of the dispute process.&lt;/p&gt;
+&lt;p&gt;We also send a &lt;code&gt;POST&lt;/code&gt; with all the information of the dispute to the URL you set in your PayU module. This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.&lt;/p&gt;
+&lt;p&gt;You can configure the URL where we make the notification in the PayU module. Log in to &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; and click the login option located at the top of the page. Alternatively, you can log in to &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; and then select &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/IntegrationVariables_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this window, go to &lt;em&gt;&lt;strong&gt;Disputes&lt;/strong&gt;&lt;/em&gt; tab and define the dispute notification url and enable the notification box in the &lt;em&gt;&lt;strong&gt;Automatic notification URL&lt;/strong&gt;&lt;/em&gt; field.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Disputes/Disputes_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Once you configured this, you automatically receive a POST with all the information of the started dispute process. Furthermore, You also receive a notification POST each time the dispute process has an update, so you can be aware of the progress and completion of this process.&lt;/p&gt;
+&lt;h3 id=&#34;2-queries-through-the-administrative-module&#34;&gt;2. Queries through the Administrative module&lt;/h3&gt;
+&lt;p&gt;You can view and manage your dispute processes from your PayU module, in the &lt;em&gt;&lt;strong&gt;Dispute&lt;/strong&gt;&lt;/em&gt; option inside the &lt;em&gt;&lt;strong&gt;Transactions&lt;/strong&gt;&lt;/em&gt; menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/Disputes/Disputes_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-provide-evidence&#34;&gt;3. Provide evidence&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s important to always respond a dispute by providing evidence before the &lt;a href=&#34;../../docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;deadline stipulated by the bank&lt;/a&gt;. After the deadline date, you cannot upload the corresponding evidence for a dispute.&lt;/p&gt;
+&lt;p&gt;To upload evidence that help us to handle the difference with the bank or the processing network, click the dispute to display the details of the process. Click &lt;em&gt;&lt;strong&gt;Upload evidence&lt;/strong&gt;&lt;/em&gt; and select the files you think can be useful to process the dispute and click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;what-information-can-be-useful&#34;&gt;What information can be useful?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Full information of your customer (full name, identification number, email, shipping address, visible credit card number, etc.)&lt;/li&gt;
+&lt;li&gt;Proof of delivery of the product or service signed by the cardholder.&lt;/li&gt;
+&lt;li&gt;Bill of sale of the product or service.&lt;/li&gt;
+&lt;li&gt;Acceptance letter of the payment signed by the cardholder attaching their identification document.&lt;/li&gt;
+&lt;li&gt;Cancellation and refund policy.&lt;/li&gt;
+&lt;li&gt;Acceptance of terms and conditions.&lt;/li&gt;
+&lt;li&gt;Transactional history of your customer (if any).&lt;/li&gt;
+&lt;li&gt;Other supports that validate the purchase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;maximum-days-to-provide-evidence&#34;&gt;Maximum days to provide evidence&lt;/h4&gt;
+&lt;p&gt;Recall that the maximum days to provide evidence for each country are:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Country&lt;/th&gt;
+&lt;th&gt;Days to provide evidences&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Argentina&lt;/td&gt;
+&lt;td&gt;5 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brazil&lt;/td&gt;
+&lt;td&gt;5 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chile&lt;/td&gt;
+&lt;td&gt;5 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Colombia&lt;/td&gt;
+&lt;td&gt;2 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mexico&lt;/td&gt;
+&lt;td&gt;5 calendar days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Panama&lt;/td&gt;
+&lt;td&gt;8 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Peru&lt;/td&gt;
+&lt;td&gt;2 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;5-final-decision-on-dispute-status&#34;&gt;5. Final decision on dispute status.&lt;/h3&gt;
+&lt;p&gt;Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refund. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.&lt;/p&gt;
+&lt;p&gt;When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.&lt;/p&gt;
+&lt;h2 id=&#34;dispute-states&#34;&gt;Dispute states&lt;/h2&gt;
+&lt;p&gt;When a dispute is reported, a dispute entity for the associated transaction is created. The dispute status changes according to the step where the dispute is within the course of the process.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;State&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Notified&lt;/td&gt;
+&lt;td&gt;When the dispute process begins, you must upload the evidence for the dispute.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;In review&lt;/td&gt;
+&lt;td&gt;When the shop provides evidence for a dispute through the PayU module and the dispute is reviewed by the bank.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lost&lt;/td&gt;
+&lt;td&gt;The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Won&lt;/td&gt;
+&lt;td&gt;The dispute process is resolved in favor of the shop, there are no deductions of any kind.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Refunded&lt;/td&gt;
+&lt;td&gt;This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. To resolve a dispute as refund you have to request it to &lt;strong&gt;&lt;a href=&#34;mailto:disputas@payu.com&#34;&gt;disputas@payu.com&lt;/a&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
       </description>
     </item>
@@ -437,6 +570,162 @@ Some of the links above may appear in Spanish.
         
         &lt;p&gt;This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.&lt;/p&gt;
 &lt;p&gt;You can receive payments without any technical knowledge. You just need to send an email where your client can download the coupon and makes the respective payment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Payment coupons are available for Argentina and Colombia.
+&lt;/div&gt;
+
+&lt;h1 id=&#34;how-does-the-payment-coupons-work&#34;&gt;How does the Payment coupons work?&lt;/h1&gt;
+&lt;p&gt;The Payment coupon follows a simple flow to let your clients regular cash payments as many times as they need:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure the Payment coupon through the PayU module&lt;/strong&gt;.&lt;br&gt;You only need to provide how many payments per client you want to receive, decide if the payment amount is fixed or your client decides the amount, decide the payment deadline, and the payment reference.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Decide the delivery of the coupon&lt;/strong&gt;&lt;br&gt;Decide if you want to deliver the coupons by email, by generating PDF, by payment references or collection cards (Available only for Argentina).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Use the Payment coupons&lt;/strong&gt;&lt;br&gt;When your clients receive the coupon, they can make the payment using any of the available cash payment offices in their countries.&lt;br&gt;Every time a client pays using the coupon, you receive a confirmation message and the amount of the purchase&lt;sup&gt;*&lt;/sup&gt; is transferred to your PayU account, where you can transfer it to your bank account.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;The value transferred corresponds to the amount paid by your client minus the PayU fee.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creating-payment-coups&#34;&gt;Creating payment coups&lt;/h2&gt;
+&lt;p&gt;According to your business needs, you can configure the options to receive payments using coupons. Follow the next procedure to create Payment coupons and delivery them to your clients.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Log in to &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; and click the login option located at the top of the page. Alternatively, you can log in to &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Expand the &lt;strong&gt;Sell with PayU option&lt;/strong&gt; and then, select &lt;strong&gt;Cash Payment&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Configure the following information:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;How many payments do you expect to receive for each client?&lt;/strong&gt;: select how many times a client can use the coupon. Select &lt;em&gt;Unique&lt;/em&gt; if you want to let your client pay once. Otherwise, select &lt;em&gt;Multiple&lt;/em&gt; for several payments while the coupon is available. The default value is &lt;em&gt;Multiple&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Will you charge a specific amount?&lt;/strong&gt;: select the payment amount of the coupon. If you select &lt;em&gt;No&lt;/em&gt;, your client decides the value to pay at the payment office. The default value is &lt;em&gt;No&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payment deadline&lt;/strong&gt;: decide whether the payment coupon expires in a given date. The date specified is fixed, tt is not supported to provide a specific day of the month or other custom configuration. If you select &lt;em&gt;No&lt;/em&gt;, the coupon will not have a due date. The default value is &lt;em&gt;No&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Do you want to define the payment reference?&lt;/strong&gt;: if you select &lt;em&gt;Yes&lt;/em&gt; you need to provide the payment references for the coupon. Otherwise, PayU defines and sets an automatic reference. The default value is &lt;em&gt;No&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sharing-the-payment-request&#34;&gt;Sharing the Payment request&lt;/h2&gt;
+&lt;p&gt;After you have configured the Payment coupons, decide how you want to deliver them to your client.&lt;br&gt;You have available the following options:&lt;/p&gt;
+&lt;h3 id=&#34;send-via-email&#34;&gt;Send via email&lt;/h3&gt;
+&lt;p&gt;This option lets you send the Payment coupon via email. The clients receive the email and print the coupon to let them pay in cash in the available offices&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To add the clients one by one, provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: email of the client who receives the coupon.&lt;/li&gt;
+&lt;li&gt;Payer name: name of the client.&lt;/li&gt;
+&lt;li&gt;Payment description: description of the payment.&lt;/li&gt;
+&lt;li&gt;Amount: this field is available when you define the amount payed by your client and takes the defined value.&lt;/li&gt;
+&lt;li&gt;Expiration date: this field is available when you define an expiration date of the coupon.&lt;/li&gt;
+&lt;li&gt;Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/em&gt; button to save the clients data and add an extra client if required.&lt;/p&gt;
+&lt;p&gt;To add multiple clients, click &lt;strong&gt;Add multiple payers from one file&lt;/strong&gt; and download the sample file by clicking &lt;strong&gt;Download format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the PayU module.&lt;/p&gt;
+&lt;p&gt;Regardless of the option selected, click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A new window appears showing the resume of the emails to be sent.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you want to edit the information of the issuer and the email, click Edit link displayed in the top right corner of each section.&lt;/p&gt;
+&lt;p&gt;Finally, click &lt;strong&gt;Send email&lt;/strong&gt;. Each client receive an Email with the coupon.&lt;/p&gt;
+&lt;h3 id=&#34;print-the-coupons&#34;&gt;Print the coupons&lt;/h3&gt;
+&lt;p&gt;This option lets you generate coupons in PDF format.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To add the clients one by one, provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Payer name: name of the client.&lt;/li&gt;
+&lt;li&gt;Payment description: description of the payment.&lt;/li&gt;
+&lt;li&gt;Amount: this field is available when you define the amount payed by your client and takes the defined value.&lt;/li&gt;
+&lt;li&gt;Expiration date: this field is available when you define an expiration date of the coupon.&lt;/li&gt;
+&lt;li&gt;Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/em&gt; button to save the clients data and add an extra client if required.&lt;/p&gt;
+&lt;p&gt;To add multiple clients, click &lt;strong&gt;Add multiple payers from one file&lt;/strong&gt; and download the sample file by clicking &lt;strong&gt;Download format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the PayU module.&lt;/p&gt;
+&lt;p&gt;Regardless of the option selected, click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A new window appears showing the resume of the PDF to be generated.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you want to edit the information of the issuer, click Edit link displayed in the top right corner of the issuer section section.&lt;/p&gt;
+&lt;p&gt;Finally, click &lt;strong&gt;Generate coupons in PDF&lt;/strong&gt;. A PDF file is downloaded, each page has the coupon generated per each client.&lt;/p&gt;
+&lt;h3 id=&#34;generate-payment-references&#34;&gt;Generate Payment references&lt;/h3&gt;
+&lt;p&gt;This option lets you generate an Excel file with the coupons requested.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To add the clients one by one, provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Payer name: name of the client.&lt;/li&gt;
+&lt;li&gt;Payment description: description of the payment.&lt;/li&gt;
+&lt;li&gt;Amount: this field is available when you define the amount payed by your client and takes the defined value.&lt;/li&gt;
+&lt;li&gt;Expiration date: this field is available when you define an expiration date of the coupon.&lt;/li&gt;
+&lt;li&gt;Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/em&gt; button to save the clients data and add an extra client if required.&lt;/p&gt;
+&lt;p&gt;To add multiple clients, click &lt;strong&gt;Add multiple payers from one file&lt;/strong&gt; and download the sample file by clicking &lt;strong&gt;Download format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the PayU module.&lt;/p&gt;
+&lt;p&gt;Regardless of the option selected, click &lt;strong&gt;Generate references in Excel&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The download starts immediately. Furthermore, a new window appears showing the number of references generated, in this windows, you can also send the Excel file to whoever you need.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-collection-cards&#34;&gt;Create collection cards&lt;/h3&gt;
+&lt;p&gt;This option lets you generate cards with the information required to let your clients to be able to make cash payments at the available payment points every time they need to.&lt;br&gt;
+This option is available when you don&amp;rsquo;t set a fixed payment amount nor a payment deadline.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+&lt;img src=&#34;../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; &lt;strong&gt;Available only for Argentina.&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Collection cards are plastic cards associated to your PayU account; they have a bar code and you can include a reference code printed on them.&lt;/p&gt;
+&lt;p&gt;Once your card have been generated, deliver them to your customers and they can pay the amount in cash they wish and without any expiration date.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To request the cards, you need to provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Design of your collection cards: choose a predefined or custom design for your cards. Custom cards are available from 1000 cards.&lt;/li&gt;
+&lt;li&gt;How many cards do you want to request?: select the number of cards you want to generate according to the design you choose.&lt;/li&gt;
+&lt;li&gt;Delivery address: Click edit link at the top right corner of this panel to provide the address where you want to receive the cards.&lt;/li&gt;
+&lt;li&gt;Payment summary: we calculate the cost of your order depending on the quantity of cards requested and the design you choose.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+This order will be debited from your PayU account and you must have an available balance.
+&lt;/div&gt;
+
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Request cards&lt;/strong&gt;&lt;/em&gt; to continue. A confirmation window appears to let you validate the information of your request.&lt;/p&gt;
+&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_09.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;
+&lt;h2 id=&#34;consult-the-created-coupons&#34;&gt;Consult the created coupons&lt;/h2&gt;
+&lt;p&gt;When you have created coupons of collection cards, you can consult their information to see the received payments or enable or download the coupon.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the PayU Module, expand the &lt;strong&gt;Sell with PayU option&lt;/strong&gt; and then, select &lt;strong&gt;My tools&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_10.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Select either &lt;em&gt;&lt;strong&gt;Collection by cash&lt;/strong&gt;&lt;/em&gt; or &lt;em&gt;&lt;strong&gt;Collection cards tab according&lt;/strong&gt;&lt;/em&gt; to your needs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can use the Advanced filter option to find a specific set of coupons.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_11.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Each coupon present the options to disable or download the coupon. Once the coupon is disabled, it cannot receive more payments.&lt;br&gt;Find these options in the three dot menu in the &lt;em&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/em&gt; column.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/PaymentCoupons/PaymentCoupons_12.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

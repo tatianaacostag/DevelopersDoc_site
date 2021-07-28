@@ -23,7 +23,8 @@
       <description>
         
         
-        &lt;p&gt;You can include your company logo in our payment gateway, sending it via HTTP POST method.&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&#34;../../assets/Checkout1-en.png&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You can include your company logo in our payment gateway, sending it via HTTP POST method.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -31,29 +32,37 @@
 The person in charge of integrating your shop with our Payment gateway (WebCheckout) must have strong knowledge in integration with dynamic programming languages such as PHP or Java.
 &lt;/div&gt;
 
+&lt;h2 id=&#34;how-does-the-webcheckout-integration-work&#34;&gt;How does the WebCheckout integration work?&lt;/h2&gt;
+&lt;p&gt;The procedure to let your shoppers pay using PayU services is simple.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Your customer navigates your site and selects the products or services they want to purchase. Your systems updates the purchase amount and sends to our system the payment form with the purchase information.&lt;br&gt;Your system must send this information via &lt;code&gt;HTTP POST&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/paso1-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;For the payment process, your customer is redirected to our Checkout where they can select the payment method.&lt;br&gt;PayU supports many payment methods that fits to your customers needs according to the country where you process the purchase, &lt;a href=&#34;../../docs/getting-started/select-your-payment-method.html&#34;&gt;see the available Payment Methods&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/paso2-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;PayU processes the transaction and shows the result in our response page.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/paso3-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;When you customer back to your page after the payment process, PayU redirects them to you Response page and sends the transaction results via &lt;code&gt;HTTP GET&lt;/code&gt;. You need to process the response and show its information to your customer.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/paso4-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;In parallel, PayU notifies the status of the transaction  to the confirmation page via &lt;code&gt;HTTP POST&lt;/code&gt;. Furthermore, PayU notifies to you and your customer the result of the transaction via email.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/paso5-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
-&lt;p&gt;Take into account the following considerations when using WebCheckout&lt;/p&gt;
-&lt;details&gt;
-&lt;summary&gt;Argentina&lt;/summary&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;Brazil&lt;/summary&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;Chile&lt;/summary&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;Colombia&lt;/summary&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;Mexico&lt;/summary&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;Panama&lt;/summary&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;Peru&lt;/summary&gt;
-&lt;/details&gt;
+&lt;ul&gt;
+&lt;li&gt;The coding of your page must be &lt;code&gt;UTF-8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The WebCheckout page should not be included in an iframe&lt;/li&gt;
+&lt;li&gt;Do not mask the URL during the checkout process&lt;/li&gt;
+&lt;li&gt;Do not use security certificates elliptic curve or those who have the suite of encryption &lt;code&gt;TLS_ECDHE_ECDSA_WITH_RC4_128_SHA&lt;/code&gt; on your confirmation page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;integration-components&#34;&gt;Integration components&lt;/h2&gt;
+&lt;p&gt;Refer to the following sections to learn how to integrate using WebCheckout integration.&lt;/p&gt;
 
       </description>
     </item>
