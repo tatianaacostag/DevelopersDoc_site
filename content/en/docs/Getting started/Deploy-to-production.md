@@ -80,5 +80,3 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 ```
 {{< /tab >}}
 {{< /tabs >}}
-
-✔
