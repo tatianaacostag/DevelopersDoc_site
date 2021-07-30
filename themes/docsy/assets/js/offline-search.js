@@ -1,10 +1,12 @@
 // Adapted from code by Matt Walters https://www.mattwalters.net/posts/hugo-and-lunr/
 
-(function ($) {
+(function($) {
     'use strict';
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         const $searchInput = $('.td-search-input');
+
+        console.log($searchInput)
 
         //
         // Options for popover
@@ -28,9 +30,9 @@
             // $searchInput.blur();
         });
 
-        $searchInput.keyup(function(event){
+        $searchInput.keyup(function(event) {
             render($(event.target));
-          });
+        });
 
         // Prevent reloading page by enter key on sidebar search.
         $searchInput.closest('form').on('submit', () => {
@@ -47,7 +49,7 @@
         // Set up for an Ajax call to request the JSON data file that is created by Hugo's build process
         $.ajax($searchInput.data('offline-search-index-json-src')).then(
             (data) => {
-                idx = lunr(function () {
+                idx = lunr(function() {
                     this.ref('ref');
                     this.field('title', { boost: 2 });
                     this.field('body');
@@ -60,7 +62,7 @@
                             body: _.truncate(doc.body, {
                                 'length': 800,
                                 'separator': ' '
-                              })
+                            })
                         });
                     });
                 });
@@ -72,10 +74,10 @@
         const render = ($targetSearchInput) => {
             // Dispose the previous result
             $targetSearchInput.popover('dispose');
-            if ( $targetSearchInput.val() === '') {
+            if ($targetSearchInput.val() === '') {
                 $targetSearchInput.popover('hide');
             }
-           
+
 
             //
             // Search
@@ -100,8 +102,7 @@
                             boost: 100,
                         });
                         q.term(queryString, {
-                            wildcard:
-                                lunr.Query.wildcard.LEADING |
+                            wildcard: lunr.Query.wildcard.LEADING |
                                 lunr.Query.wildcard.TRAILING,
                             boost: 10,
                         });
@@ -120,23 +121,23 @@
 
             $html.append(
                 $('<div>')
+                .css({
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    marginBottom: '1em',
+                })
+                .append(
+                    $('<span>')
+                    .text('Search results')
+                    .css({ fontWeight: 'bold' })
+                )
+                .append(
+                    $('<i>')
+                    .addClass('fas fa-times search-result-close-button')
                     .css({
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        marginBottom: '1em',
+                        cursor: 'pointer',
                     })
-                    .append(
-                        $('<span>')
-                            .text('Search results')
-                            .css({ fontWeight: 'bold' })
-                    )
-                    .append(
-                        $('<i>')
-                            .addClass('fas fa-times search-result-close-button')
-                            .css({
-                                cursor: 'pointer',
-                            })
-                    )
+                )
             );
 
             const $searchResultBody = $('<div>').css({
@@ -168,8 +169,8 @@
                     const $cardBody = $('<div>').addClass('card-body');
                     $cardBody.append(
                         $('<p>')
-                            .addClass('card-text text-muted')
-                            .text(doc.body)
+                        .addClass('card-text text-muted')
+                        .text(doc.body)
                     );
 
                     const $card = $('<div>').addClass('card');
@@ -183,7 +184,7 @@
                 $('.search-result-close-button').on('click', () => {
                     $targetSearchInput.val('');
                     $(".popover-body").hide();
-                    
+
                 });
             });
 
