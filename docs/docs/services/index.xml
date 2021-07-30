@@ -414,6 +414,52 @@ Currently, Push Payment is available in Colombia, Argentina, and Mexico.
 &lt;li&gt;The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.&lt;/li&gt;
 &lt;li&gt;For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;transaction-processing&#34;&gt;Transaction processing&lt;/h2&gt;
+&lt;p&gt;Push payments uses ACH (&lt;strong&gt;A&lt;/strong&gt;utomated &lt;strong&gt;C&lt;/strong&gt;learing &lt;strong&gt;H&lt;/strong&gt;ouse) transfers to send the payouts to the beneficiaries, this means that the transactions are processed in batch during the day. The time when the transaction will be processed is explained in the following table:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;em&gt;IN_BANKING_PROCESS&lt;/em&gt; state time&lt;/th&gt;
+&lt;th&gt;ACH process time&lt;/th&gt;
+&lt;th&gt;Estimated time of response&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;05:31 p.m. - 07:20 a.m.&lt;/td&gt;
+&lt;td&gt;9:00 a.m.&lt;/td&gt;
+&lt;td&gt;7:55 p.m.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;07:21 a.m. - 09:45 a.m.&lt;/td&gt;
+&lt;td&gt;11:30 a.m.&lt;/td&gt;
+&lt;td&gt;10:40 a.m.&lt;br&gt;&lt;em&gt;Next working day&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;09:46 a.m. - 12:30 p.m.&lt;/td&gt;
+&lt;td&gt;2:00 p.m.&lt;/td&gt;
+&lt;td&gt;1:45 p.m.&lt;br&gt;&lt;em&gt;Next working day&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;12:31 p.m. - 02:50 p.m.&lt;/td&gt;
+&lt;td&gt;4:00 p.m.&lt;/td&gt;
+&lt;td&gt;4:40 p.m.&lt;br&gt;&lt;em&gt;Next working day&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;02:59 p.m. - 04:20 p.m.&lt;/td&gt;
+&lt;td&gt;6:00 p.m.&lt;/td&gt;
+&lt;td&gt;6:20 p.m.&lt;br&gt;&lt;em&gt;Next working day&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;em&gt;Transactions that reaches &lt;strong&gt;IN_BANKING_PROCESS&lt;/strong&gt; state after 4:20 p.m. will be processed in the next working day.&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Payout requests may not be in &lt;strong&gt;IN_BANKING_PROCESS&lt;/strong&gt; state after you sent them, and depending on the validation of the beneficiary, it may take up to &lt;em&gt;24&lt;/em&gt; hours.
+&lt;/div&gt;
+
 &lt;h2 id=&#34;notifications&#34;&gt;Notifications&lt;/h2&gt;
 &lt;p&gt;When using Push Payments, you can create a WebHook to configure notifications on status changes. It is recommended to configure the WebHook before sending the Push Payment request when configuring notifications.&lt;/p&gt;
 &lt;p&gt;You can configure a WebHook for one of the following events:&lt;/p&gt;
