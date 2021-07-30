@@ -5,7 +5,6 @@ date: 2021-07-16T11:32:55-05:00
 description: >
   This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 weight: 70
-draft: true
 ---
 
 Push Payments is available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.
@@ -25,22 +24,30 @@ Each week, the merchant pays the amount earned to each courier. To do this, they
 
 To request the pay, the merchant sends the list of third parties they want to pay along with the amount of each one, PayU validates these third parties and schedules the payout. Once the payouts are processed (approved or denied) you and the third parties receive a notification about the status.
 
-The amount of each payout plus the processing fee is deducted from your account. COntact your sale representative to know the processing fee to use this service.
+The amount of each payout plus the processing fee is deducted from your account. Contact your sales representative to know the processing fee to use this service.
+
 
 ### Push payment status
-As every transaction in PayU, a push payment moves between the following status:
+As with every transaction in PayU, a push payment moves between the following states:
 
 * **REQUEST_BY_THE_MERCHANT**: this is the initial state of the transaction, once you send the list of third parties to be paid, the transaction takes this status.
 * **IN_VALIDATION**: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn't meet the policies is rejected.
 * **IN_PAYU_PROCESS**: this state indicates that PayU has started the process payment.
 * **AWAITING_BANK_SENT**: this state indicates that PayU has started the transfer of the amount to the third party.
-* **IN_BANKING_PROCESS**: this state indicates that the payment is being processed in the third party bank account.
-* **CONFIRMED_BY_THE_BANK**: this state indicates that the third part has received the transferred amount.
+* **IN_BANKING_PROCESS**: this state indicates that the payment is being processed in the third party's bank account.
+* **CONFIRMED_BY_THE_BANK**: this state indicates that the third party has received the transferred amount.
 * **REJECTED**: this state indicates that the transaction has been rejected either by PayU (due to policy breach) or the Bank (due to errors in the bank information).
 
 The following diagram illustrates the status changing:
 
 <img src="/assets/PushPayments/PushPaymentsSteps.png" width="60%" style="display: block;margin-left: auto;margin-right: auto;"/>
+
+### Transaction validation
+Every payment request is validated to verify that the person who will receive the money is not included in restricted lists. This validation may take up to 24 hours which may delay the payment procedure.
+
+When a person must be verified, PayU checks first in the validation cache, so a person is only validated once during the cache frame.
+
+If a person does not approve the validation, the payout is not performed and you are notified if you have configured the notifications of validation results.
 
 ## Considerations
 Take into account the following considerations:
@@ -49,8 +56,13 @@ Take into account the following considerations:
 * The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.
 * For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize.
 
-## Querying Push payment status and Notifications
-When using Push Payments, you can create a Web Hook for both to configure notifications on status changing and to query the status of a payment. It is recommended to configure the web hook before sending the Push Payment request when configuring notifications.
+## Notifications
+When using Push Payments, you can create a WebHook to configure notifications on status changes. It is recommended to configure the WebHook before sending the Push Payment request when configuring notifications.
+
+You can configure a WebHook for one of the following events:
+* **Transfer creation**: sends a notification when a payout request is created.
+* **Transfer update**: sends a notification when an update is requested for an existing payout.
+* **Validation result**: sends a notification when the validation is completed with its result.
 
 ## What's next?
 The integration with this feature fo is performed using [API integrations]({{< ref "#" >}}).
