@@ -56,6 +56,25 @@ Take into account the following considerations:
 * The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.
 * For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize.
 
+## Transaction processing
+Push payments uses ACH (**A**utomated **C**learing **H**ouse) transfers to send the payouts to the beneficiaries, this means that the transactions are processed in batch during the day. The time when the transaction will be processed is explained in the following table:
+
+| *IN_BANKING_PROCESS* state time | ACH process time | Estimated time of response        |
+|-----------------------------------|------------------|-----------------------------------|
+| 05:31 p.m. - 07:20 a.m.           | 9:00 a.m.        | 7:55 p.m.                         |
+| 07:21 a.m. - 09:45 a.m.           | 11:30 a.m.       | 10:40 a.m.<br>*Next working day*. |
+| 09:46 a.m. - 12:30 p.m.           | 2:00 p.m.        | 1:45 p.m.<br>*Next working day*.  |
+| 12:31 p.m. - 02:50 p.m.           | 4:00 p.m.        | 4:40 p.m.<br>*Next working day*.  |
+| 02:59 p.m. - 04:20 p.m.           | 6:00 p.m.        | 6:20 p.m.<br>*Next working day*.  |
+
+*Transactions that reaches **IN_BANKING_PROCESS** state after 4:20 p.m. will be processed in the next working day.*
+
+{{% alert title="Note" color="info"%}}
+
+Payout requests may not be in **IN_BANKING_PROCESS** state after you sent them, and depending on the validation of the beneficiary, it may take up to *24* hours.
+
+{{% /alert %}}
+
 ## Notifications
 When using Push Payments, you can create a WebHook to configure notifications on status changes. It is recommended to configure the WebHook before sending the Push Payment request when configuring notifications.
 
