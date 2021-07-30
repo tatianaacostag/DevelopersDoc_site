@@ -10,9 +10,9 @@ menu:
     name: PayU Module guide
     weight: 40     
 ---
-some title here
-<!--<script language="javascript">
+<!--some title here-->
+<script language="javascript">
 
 window.location.href = "https://ecommerce.payulatam.com/manual-secure/manual.html"
 
-</script>-->
+</script>
