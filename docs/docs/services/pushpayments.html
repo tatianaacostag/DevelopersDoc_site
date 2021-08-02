@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/services/pushpayments.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-07-16T11:32:55-05:00" />
-<meta property="article:modified_time" content="2021-07-30T12:50:38-05:00" /><meta property="og:site_name" content="Documentation" />
+<meta property="article:modified_time" content="2021-08-02T10:34:56-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="Push Payments">
 <meta itemprop="description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 "><meta itemprop="datePublished" content="2021-07-16T11:32:55-05:00" />
-<meta itemprop="dateModified" content="2021-07-30T12:50:38-05:00" />
-<meta itemprop="wordCount" content="898">
+<meta itemprop="dateModified" content="2021-08-02T10:34:56-05:00" />
+<meta itemprop="wordCount" content="1316">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Push Payments"/>
 <meta name="twitter:description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
@@ -123,7 +123,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.33b8e4424a69f05ad0dee8deb78f85b4745c02cc6720cd413206c221aa3783f49128aac2fdfe1a92cdc19f411064b11ec86385b31b87df3a140a8546d719e793.json"
+  data-offline-search-index-json-src="../../offline-search-index.47421271a9f41b81b175fead381c48becec304bcd05e89314b8d1e801cf1efe06e7025f15ddcb7c542ba4815f658392465312c3cd3c05d9284e645aa23511478.json"
   data-offline-search-base-href="../../"
 >
 
@@ -666,7 +666,7 @@
   <ul>
     <li><a href="#how-do-push-payments-work">How do Push Payments work?</a>
       <ul>
-        <li><a href="#push-payment-status">Push payment status</a></li>
+        <li><a href="#push-payment-states">Push payment states</a></li>
         <li><a href="#transaction-validation">Transaction validation</a></li>
       </ul>
     </li>
@@ -728,7 +728,7 @@
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Note</h4>
-Currently, Push Payment is available in Colombia, Argentina, and Mexico.
+Currently, Push Payment is available in Colombia.
 </div>
 
 <h2 id="how-do-push-payments-work">How do Push Payments work?</h2>
@@ -738,18 +738,40 @@ Currently, Push Payment is available in Colombia, Argentina, and Mexico.
 <p>Each week, the merchant pays the amount earned to each courier. To do this, they can use push payments to pay directly from their PayU account instead of managing the payouts on their own, in which case, the merchants must transfer the money to their accounts or use funds from other sources.</p>
 <p>To request the pay, the merchant sends the list of third parties they want to pay along with the amount of each one, PayU validates these third parties and schedules the payout. Once the payouts are processed (approved or denied) you and the third parties receive a notification about the status.</p>
 <p>The amount of each payout plus the processing fee is deducted from your account. Contact your sales representative to know the processing fee to use this service.</p>
-<h3 id="push-payment-status">Push payment status</h3>
-<p>As with every transaction in PayU, a push payment moves between the following states:</p>
+<h3 id="push-payment-states">Push payment states</h3>
+<p>Push payments are performed in two main steps: the first step is when you request the payout to a third party. The second one is when the request has been approved and moves to the transfer of the funds.</p>
+<p>The transactional procedure of Push Payments has the following states.</p>
 <ul>
-<li><strong>REQUEST_BY_THE_MERCHANT</strong>: this is the initial state of the transaction, once you send the list of third parties to be paid, the transaction takes this status.</li>
+<li><strong>AWAITING SANCTION SCREENING</strong>: this state indicates that the third party to whom the payment will be made is subject to validation of restricted lists and further PayU policies related to risk analysis. If a third party does not pass this validation, the payment is automatically rejected.</li>
+<li><strong>AWAITING TO SEND</strong>: if the third party passes the validation or is not subject to it, this state indicates that the request is ready to be processed. In this state, the communication with the service has not been performed.</li>
+<li><strong>SENT TO CREATE</strong>: this state indicates that the communication with the service has been completed and the Push payment request is in creation process.</li>
+<li><strong>CREATED</strong>: this state indicates that the request has been created and has become into a payout. When the request becomes a payout, it moves between the states explained in <a href="../../docs/services/pushpayments.html#payout-states">Payout states</a>. The next state depends on the result of the payout process.</li>
+<li><strong>REJECTED</strong>: this state indicates that the request has been rejected. A request can be rejected when:
+<ul>
+<li>The validation of the third party fails.</li>
+<li>The creation of the payout fails.</li>
+<li>You request the cancellation of the Push payment request and it has been approved.</li>
+</ul>
+</li>
+<li><strong>PROCESSING COMPLETED</strong>: this state indicates that the payout process has been completed.</li>
+<li><strong>AWAITING TO CANCEL</strong>: this state indicates that you have requested the cancellation of a Push payment request. Take into account that you can request the cancellation of a request when this is not in Banking process.<br>In this state, the communication with the service has not been performed.</li>
+<li><strong>SENT FOR CANCELLATION</strong>: this state indicates that the communication with the service has been completed and the Push payment request is in cancellation process.</li>
+<li><strong>CANCELLATION FAILED</strong>: this state indicates that the request of cancellation cannot be executed due to PayU policies or because the request is not being processed by PayU.</li>
+</ul>
+<p>The following diagram illustrates the state changes:</p>
+<img src="../../assets/PushPayments/PushPaymentsStates.png" width="80%" style="display: block;margin-left: auto;margin-right: auto;"/>
+<h4 id="payout-states">Payout states</h4>
+<p>Once the push payment has been approved, it is transformed into a payment order. The</p>
+<ul>
+<li><strong>REQUEST_BY_THE_MERCHANT</strong>: this is the initial state of the transaction, once you send the list of third parties to be paid and the third parties are approved, the transaction takes this state.</li>
 <li><strong>IN_VALIDATION</strong>: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn&rsquo;t meet the policies is rejected.</li>
-<li><strong>IN_PAYU_PROCESS</strong>: this state indicates that PayU has started the process payment.</li>
+<li><strong>IN_PAYU_PROCESS</strong>: this state indicates that PayU has started the process payment. This is the latest state where you can request a cancellation or update the request.</li>
 <li><strong>AWAITING_BANK_SENT</strong>: this state indicates that PayU has started the transfer of the amount to the third party.</li>
 <li><strong>IN_BANKING_PROCESS</strong>: this state indicates that the payment is being processed in the third party&rsquo;s bank account.</li>
 <li><strong>CONFIRMED_BY_THE_BANK</strong>: this state indicates that the third party has received the transferred amount.</li>
 <li><strong>REJECTED</strong>: this state indicates that the transaction has been rejected either by PayU (due to policy breach) or the Bank (due to errors in the bank information).</li>
 </ul>
-<p>The following diagram illustrates the status changing:</p>
+<p>The following diagram illustrates the state changes:</p>
 <img src="../../assets/PushPayments/PushPaymentsSteps.png" width="60%" style="display: block;margin-left: auto;margin-right: auto;"/>
 <h3 id="transaction-validation">Transaction validation</h3>
 <p>Every payment request is validated to verify that the person who will receive the money is not included in restricted lists. This validation may take up to 24 hours which may delay the payment procedure.</p>
@@ -758,6 +780,7 @@ Currently, Push Payment is available in Colombia, Argentina, and Mexico.
 <h2 id="considerations">Considerations</h2>
 <p>Take into account the following considerations:</p>
 <ul>
+<li>Push payment is not a services included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.</li>
 <li>Push payment allows local payouts only. The merchant may be international (under security and risk analysis) but they can only request local payouts using the funds collected in the processing country.<br>For example, if the merchant <em>ABC</em> processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.</li>
 <li>The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.</li>
 <li>For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize.</li>
@@ -767,36 +790,36 @@ Currently, Push Payment is available in Colombia, Argentina, and Mexico.
 <table>
 <thead>
 <tr>
-<th><em>IN_BANKING_PROCESS</em> state time</th>
-<th>ACH process time</th>
-<th>Estimated time of response</th>
+<th style="text-align:center"><em>IN_BANKING_PROCESS</em> state time</th>
+<th style="text-align:center">ACH process time</th>
+<th style="text-align:center">Estimated time of response</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>05:31 p.m. - 07:20 a.m.</td>
-<td>9:00 a.m.</td>
-<td>7:55 p.m.</td>
+<td style="text-align:center">05:31 p.m. - 07:20 a.m.</td>
+<td style="text-align:center">9:00 a.m.</td>
+<td style="text-align:center">7:55 p.m.</td>
 </tr>
 <tr>
-<td>07:21 a.m. - 09:45 a.m.</td>
-<td>11:30 a.m.</td>
-<td>10:40 a.m.<br><em>Next working day</em>.</td>
+<td style="text-align:center">07:21 a.m. - 09:45 a.m.</td>
+<td style="text-align:center">11:30 a.m.</td>
+<td style="text-align:center">10:40 a.m.<br><em>Next working day</em>.</td>
 </tr>
 <tr>
-<td>09:46 a.m. - 12:30 p.m.</td>
-<td>2:00 p.m.</td>
-<td>1:45 p.m.<br><em>Next working day</em>.</td>
+<td style="text-align:center">09:46 a.m. - 12:30 p.m.</td>
+<td style="text-align:center">2:00 p.m.</td>
+<td style="text-align:center">1:45 p.m.<br><em>Next working day</em>.</td>
 </tr>
 <tr>
-<td>12:31 p.m. - 02:50 p.m.</td>
-<td>4:00 p.m.</td>
-<td>4:40 p.m.<br><em>Next working day</em>.</td>
+<td style="text-align:center">12:31 p.m. - 02:50 p.m.</td>
+<td style="text-align:center">4:00 p.m.</td>
+<td style="text-align:center">4:40 p.m.<br><em>Next working day</em>.</td>
 </tr>
 <tr>
-<td>02:59 p.m. - 04:20 p.m.</td>
-<td>6:00 p.m.</td>
-<td>6:20 p.m.<br><em>Next working day</em>.</td>
+<td style="text-align:center">02:59 p.m. - 04:20 p.m.</td>
+<td style="text-align:center">6:00 p.m.</td>
+<td style="text-align:center">6:20 p.m.<br><em>Next working day</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -821,7 +844,7 @@ Payout requests may not be in <strong>IN_BANKING_PROCESS</strong> state after yo
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified July 30, 2021: <a  href="../../commit/f5c92f456a817957e46ed2e3c5c07106b77ae05b">Update PushPayments.md (f5c92f4)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 2, 2021: <a  href="../../commit/e007254c3322b45e6b28284b94d5458b9228863d">Ajustes de push payments (e007254)</a>
 </div>
 </div>
 
