@@ -10,7 +10,7 @@ weight: 70
 Push Payments is available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.
 
 {{% alert title="Note" color="info"%}}
-Currently, Push Payment is available in Colombia, Argentina, and Mexico.
+Currently, Push Payment is available in Colombia.
 {{% /alert %}}
 
 ## How do Push Payments work?
@@ -26,19 +26,40 @@ To request the pay, the merchant sends the list of third parties they want to pa
 
 The amount of each payout plus the processing fee is deducted from your account. Contact your sales representative to know the processing fee to use this service.
 
+### Push payment states
+Push payments are performed in two main steps: the first step is when you request the payout to a third party. The second one is when the request has been approved and moves to the transfer of the funds.
 
-### Push payment status
-As with every transaction in PayU, a push payment moves between the following states:
+The transactional procedure of Push Payments has the following states.
 
-* **REQUEST_BY_THE_MERCHANT**: this is the initial state of the transaction, once you send the list of third parties to be paid, the transaction takes this status.
+* **AWAITING SANCTION SCREENING**: this state indicates that the third party to whom the payment will be made is subject to validation of restricted lists and further PayU policies related to risk analysis. If a third party does not pass this validation, the payment is automatically rejected.
+* **AWAITING TO SEND**: if the third party passes the validation or is not subject to it, this state indicates that the request is ready to be processed. In this state, the communication with the service has not been performed.
+* **SENT TO CREATE**: this state indicates that the communication with the service has been completed and the Push payment request is in creation process.
+* **CREATED**: this state indicates that the request has been created and has become into a payout. When the request becomes a payout, it moves between the states explained in [Payout states]({{< ref "pushpayments.md#payout-states" >}}). The next state depends on the result of the payout process.
+* **REJECTED**: this state indicates that the request has been rejected. A request can be rejected when:
+  - The validation of the third party fails.
+  - The creation of the payout fails.
+  - You request the cancellation of the Push payment request and it has been approved. 
+* **PROCESSING COMPLETED**: this state indicates that the payout process has been completed.
+* **AWAITING TO CANCEL**: this state indicates that you have requested the cancellation of a Push payment request. Take into account that you can request the cancellation of a request when this is not in Banking process.<br>In this state, the communication with the service has not been performed.
+* **SENT FOR CANCELLATION**: this state indicates that the communication with the service has been completed and the Push payment request is in cancellation process.
+* **CANCELLATION FAILED**: this state indicates that the request of cancellation cannot be executed due to PayU policies or because the request is not being processed by PayU.
+
+The following diagram illustrates the state changes:
+
+<img src="/assets/PushPayments/PushPaymentsStates.png" width="80%" style="display: block;margin-left: auto;margin-right: auto;"/>
+
+#### Payout states
+Once the push payment has been approved, it is transformed into a payment order. The 
+
+* **REQUEST_BY_THE_MERCHANT**: this is the initial state of the transaction, once you send the list of third parties to be paid and the third parties are approved, the transaction takes this state.
 * **IN_VALIDATION**: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn't meet the policies is rejected.
-* **IN_PAYU_PROCESS**: this state indicates that PayU has started the process payment.
+* **IN_PAYU_PROCESS**: this state indicates that PayU has started the process payment. This is the latest state where you can request a cancellation or update the request.
 * **AWAITING_BANK_SENT**: this state indicates that PayU has started the transfer of the amount to the third party.
 * **IN_BANKING_PROCESS**: this state indicates that the payment is being processed in the third party's bank account.
 * **CONFIRMED_BY_THE_BANK**: this state indicates that the third party has received the transferred amount.
 * **REJECTED**: this state indicates that the transaction has been rejected either by PayU (due to policy breach) or the Bank (due to errors in the bank information).
 
-The following diagram illustrates the status changing:
+The following diagram illustrates the state changes:
 
 <img src="/assets/PushPayments/PushPaymentsSteps.png" width="60%" style="display: block;margin-left: auto;margin-right: auto;"/>
 
@@ -52,6 +73,7 @@ If a person does not approve the validation, the payout is not performed and you
 ## Considerations
 Take into account the following considerations:
 
+* Push payment is not a services included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.
 * Push payment allows local payouts only. The merchant may be international (under security and risk analysis) but they can only request local payouts using the funds collected in the processing country.<br>For example, if the merchant _ABC_ processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.
 * The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.
 * For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize.
@@ -59,8 +81,8 @@ Take into account the following considerations:
 ## Transaction processing
 Push payments uses ACH (**A**utomated **C**learing **H**ouse) transfers to send the payouts to the beneficiaries, this means that the transactions are processed in batch during the day. The time when the transaction will be processed is explained in the following table:
 
-| *IN_BANKING_PROCESS* state time | ACH process time | Estimated time of response        |
-|-----------------------------------|------------------|-----------------------------------|
+| *IN_BANKING_PROCESS* state time   | ACH process time | Estimated time of response        |
+|:---------------------------------:|:----------------:|:---------------------------------:|
 | 05:31 p.m. - 07:20 a.m.           | 9:00 a.m.        | 7:55 p.m.                         |
 | 07:21 a.m. - 09:45 a.m.           | 11:30 a.m.       | 10:40 a.m.<br>*Next working day*. |
 | 09:46 a.m. - 12:30 p.m.           | 2:00 p.m.        | 1:45 p.m.<br>*Next working day*.  |
