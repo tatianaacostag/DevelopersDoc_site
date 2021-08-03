@@ -18,7 +18,7 @@ A Promotion has the payment method, the payment method, the days of the week whe
 ### Authentication for Promotions
 For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your ```MerchantPublicKey```, you can get this information in your PayU Module (**_Settings_** > **_Technical configuration_** > **_Public Key_**).
 
-![PrintScreen](/assets/Promotions/PublicKey > png)
+![PrintScreen](/assets/Promotions/PublicKey.png)
 
 ### Configuring the authentication
 You must include in the ```Authorization``` in the header, this header follows this structure:
@@ -100,8 +100,8 @@ Mon, 11 May 2015 21:14:41 GMT
 To consult the promotions available with Promotions API, target your request to the following URLs according to your environment.
 
 {{% alert title="URL" color="info"%}}
-* Test: ```GET https://sandbox.api > payulatam > com/payments-api/rest/v4.9/pricing```
-* Production: ```GET https://api > payulatam > com/payments-api/rest/v4.9/pricing```
+* Test: ```GET https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing```
+* Production: ```GET https://api.payulatam.com/payments-api/rest/v4.9/pricing```
 {{% /alert %}}
 
 As this is a RESTful service, we strongly recommend you do not validate the scheme.
@@ -165,14 +165,14 @@ To consult the available promotions, send the request as follows:
 
 ```JAVA
 GET
-https://{env-api} > payulatam > com/payments-api/rest/v4.9/pricing?accountId={accountId}currency={currency}&amount={amount}&paymentMethod={paymentMethod}
+https://{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accountId}currency={currency}&amount={amount}&paymentMethod={paymentMethod}
 ```
 <br>
 
  The value for the variable `{env-api}` displayed above is `sandbox.api` for testing and `api` for production mode. Furthermore, the `paymentMethod` parameter is optional if you want to filter by a given payment method. Example:
 
 ```JAVA
-GET https://sandbox.api > payulatam > com/payments-api/rest/v4.9/pricing?accountId=512322&currency=ARS&amount=1000
+GET https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=512322&currency=ARS&amount=1000
 ```
 <br>
 
