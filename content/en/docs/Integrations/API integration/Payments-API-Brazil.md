@@ -762,7 +762,7 @@ In the end, your customer sees a checkout page like this.
 ## Submit transaction with cash
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.
 
-<img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen">
+
 
 ### Variables for request and response
 
