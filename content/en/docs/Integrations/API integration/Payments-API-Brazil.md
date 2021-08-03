@@ -18,7 +18,8 @@ To integrate with Payments API Brazil, target your request to the following URLs
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transaction with credit card]({{< ref "Payments-API-Brazil.md#submit-transaction-with-credit-cards" >}})
+* [Submit transaction with credit cards]({{< ref "Payments-API-Brazil.md#submit-transaction-with-credit-cards" >}})
+* [Submit transaction with PIX]
 * [Submit transaction with cash]({{< ref "Payments-API-Brazil.md#submit-transaction-with-cash" >}})
 * [Submit transaction with bank transfer]({{< ref "Payments-API-Brazil.md#submit-transaction-with-bank-transfer" >}})
 * [Available payment methods query]({{< ref "Payments-API-Brazil.md#available-payment-methods-query" >}})
@@ -751,10 +752,17 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
+## Submit transaction with PIX
+This method lets you process payments using PIX. To integrate with PIX you need to show in your checkout page a QR code so your customer can read it using their smartphone to perform the payment.
+
+In the end, your customer sees a checkout page like this.
+
+<img src="/assets/Payments/PixCheckout.png" alt="PrintScreen" width="50%">
+
 ## Submit transaction with cash
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.
 
-<img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
+<img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen">
 
 ### Variables for request and response
 

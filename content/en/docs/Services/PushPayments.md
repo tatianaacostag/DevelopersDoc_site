@@ -22,7 +22,7 @@ Let’s explain Push payments using an example. A merchant offers products and s
 
 Each week, the merchant pays the amount earned to each courier. To do this, they can use push payments to pay directly from their PayU account instead of managing the payouts on their own, in which case, the merchants must transfer the money to their accounts or use funds from other sources.
 
-To request the pay, the merchant sends the list of third parties they want to pay along with the amount of each one, PayU validates these third parties and schedules the payout. Once the payouts are processed (approved or denied) you and the third parties receive a notification about the status.
+To request the pay, the merchant sends the list of third parties they want to pay along with the amount of each one, PayU validates these third parties and schedules the payout.
 
 The amount of each payout plus the processing fee is deducted from your account. Contact your sales representative to know the processing fee to use this service.
 
@@ -76,7 +76,7 @@ Take into account the following considerations:
 * Push payment is not a services included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.
 * Push payment allows local payouts only. The merchant may be international (under security and risk analysis) but they can only request local payouts using the funds collected in the processing country.<br>For example, if the merchant _ABC_ processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.
 * The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.
-* For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize.
+<!-- * For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. -->
 
 ## Transaction processing
 Push payments uses ACH (**A**utomated **C**learing **H**ouse) transfers to send the payouts to the beneficiaries, this means that the transactions are processed in batch during the day. The time when the transaction will be processed is explained in the following table:
