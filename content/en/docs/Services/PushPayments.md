@@ -53,9 +53,9 @@ Once the push payment has been approved, it is transformed into a payment order.
 
 * **REQUEST_BY_THE_MERCHANT**: this is the initial state of the transaction, once you send the list of third parties to be paid and the third parties are approved, the transaction takes this state.
 * **IN_VALIDATION**: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn't meet the policies is rejected.
-* **IN_PAYU_PROCESS**: this state indicates that PayU has started the process payment. This is the latest state where you can request a cancellation or update the request.
+* **IN_PAYU_PROCESS**: this state indicates that PayU has started the process payment.
 * **AWAITING_BANK_SENT**: this state indicates that PayU has started the transfer of the amount to the third party.
-* **IN_BANKING_PROCESS**: this state indicates that the payment is being processed in the third party's bank account.
+* **IN_BANKING_PROCESS**: this state indicates that the payment is being processed in the third party's bank account. At this point you cannot cancel the request nor update it.
 * **CONFIRMED_BY_THE_BANK**: this state indicates that the third party has received the transferred amount.
 * **REJECTED**: this state indicates that the transaction has been rejected either by PayU (due to policy breach) or the Bank (due to errors in the bank information).
 
@@ -74,7 +74,9 @@ If a person does not approve the validation, the payout is not performed and you
 Take into account the following considerations:
 
 * Push payment is not a services included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.
+* Merchants are responsible for the integrity and the correctness of the third-party data. PayU does not validate that the data provided by the merchant is complete and correct. Furthermore, the update of data must be requested by the merchants.<br>PayU is not responsible for unsuccessful transactions due to wrong data.
 * Push payment allows local payouts only. The merchant may be international (under security and risk analysis) but they can only request local payouts using the funds collected in the processing country.<br>For example, if the merchant _ABC_ processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.
+* Once the payout is created, it takes the regular flow in PayU. This means that you can see the payout created in your PayU module. 
 * The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.
 <!-- * For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. -->
 

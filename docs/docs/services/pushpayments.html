@@ -33,7 +33,7 @@
 <meta itemprop="description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 "><meta itemprop="datePublished" content="2021-07-16T11:32:55-05:00" />
 <meta itemprop="dateModified" content="2021-08-03T10:45:45-05:00" />
-<meta itemprop="wordCount" content="1273">
+<meta itemprop="wordCount" content="1344">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Push Payments"/>
 <meta name="twitter:description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
@@ -123,7 +123,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.9e47a684a60cdff4985eb0d404b0ec6daf09d9dd5ba8ad38685d6aea2eb4b28f58a8ea07c40386d7cd6a1e278042451266eb339babd76b64e45f072d890cf4d6.json"
+  data-offline-search-index-json-src="../../offline-search-index.ddba5d5dffdd80b1db4a99f7e02b58a64235f1ec465b367c6933c7fa61876907cf1322068f0be02f2ced32d974ffbd4d8be36a0c79fb1e4db3470ee5421379df.json"
   data-offline-search-base-href="../../"
 >
 
@@ -765,9 +765,9 @@ Currently, Push Payment is available in Colombia.
 <ul>
 <li><strong>REQUEST_BY_THE_MERCHANT</strong>: this is the initial state of the transaction, once you send the list of third parties to be paid and the third parties are approved, the transaction takes this state.</li>
 <li><strong>IN_VALIDATION</strong>: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn&rsquo;t meet the policies is rejected.</li>
-<li><strong>IN_PAYU_PROCESS</strong>: this state indicates that PayU has started the process payment. This is the latest state where you can request a cancellation or update the request.</li>
+<li><strong>IN_PAYU_PROCESS</strong>: this state indicates that PayU has started the process payment.</li>
 <li><strong>AWAITING_BANK_SENT</strong>: this state indicates that PayU has started the transfer of the amount to the third party.</li>
-<li><strong>IN_BANKING_PROCESS</strong>: this state indicates that the payment is being processed in the third party&rsquo;s bank account.</li>
+<li><strong>IN_BANKING_PROCESS</strong>: this state indicates that the payment is being processed in the third party&rsquo;s bank account. At this point you cannot cancel the request nor update it.</li>
 <li><strong>CONFIRMED_BY_THE_BANK</strong>: this state indicates that the third party has received the transferred amount.</li>
 <li><strong>REJECTED</strong>: this state indicates that the transaction has been rejected either by PayU (due to policy breach) or the Bank (due to errors in the bank information).</li>
 </ul>
@@ -781,7 +781,9 @@ Currently, Push Payment is available in Colombia.
 <p>Take into account the following considerations:</p>
 <ul>
 <li>Push payment is not a services included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.</li>
+<li>Merchants are responsible for the integrity and the correctness of the third-party data. PayU does not validate that the data provided by the merchant is complete and correct. Furthermore, the update of data must be requested by the merchants.<br>PayU is not responsible for unsuccessful transactions due to wrong data.</li>
 <li>Push payment allows local payouts only. The merchant may be international (under security and risk analysis) but they can only request local payouts using the funds collected in the processing country.<br>For example, if the merchant <em>ABC</em> processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.</li>
+<li>Once the payout is created, it takes the regular flow in PayU. This means that you can see the payout created in your PayU module.</li>
 <li>The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.</li>
 </ul>
 <!-- * For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. -->
