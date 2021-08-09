@@ -21,7 +21,7 @@ For Promotions, you need to authenticate and authorize the petitions received by
 ![PrintScreen](/assets/Promotions/PublicKey.png)
 
 ### Configuring the authentication
-You must include in the ```Authorization``` in the header, this header follows this structure:
+You must include the headers ```Authorization``` and ```Date```. The ```Authorization``` header follows this structure:
 
 ```java
 "Hmac" + " " + MerchantPublicKey + ":" + Signature
@@ -165,7 +165,7 @@ To consult the available promotions, send the request as follows:
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accountId}currency={currency}&amount={amount}&paymentMethod={paymentMethod}
+https://{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accountId}&currency={currency}&amount={amount}&paymentMethod={paymentMethod}
 ```
 <br>
 
