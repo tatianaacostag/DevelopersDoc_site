@@ -28,9 +28,6 @@ Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2Vy
 Payouts API includes the following methods:
 
 * [Authentication]({{< ref "Payouts-API.md#authentication" >}})
-* [Create third parties]({{< ref "Payouts-API.md#create-third-parties" >}})
-* [Delete a third party]({{< ref "Payouts-API.md#delete-a-third-party" >}})
-* [Find a third party]({{< ref "Payouts-API.md#find-a-third-party" >}})
 * [Request payout]({{< ref "Payouts-API.md#request-payout" >}})
 * [Update payout request]({{< ref "Payouts-API.md#update-payout-request" >}})
 * [Cancel payout request]({{< ref "Payouts-API.md#cancel-payout-request" >}})
@@ -43,31 +40,6 @@ The first step regardless of the method you want to request is to authenticate y
 
 The _authentication_ method logs in the merchant returning the JWT Token generated to use the services exposed by Payouts. This token is available during 10 minutes after its creation.
 
-### Variables for request and response
-
-<details>
-<summary>Request parameters</summary>
-<br>
-<div class="variables"></div>
-
-| Parameter     | Description                                                              | Mandatory |
-|---------------|--------------------------------------------------------------------------|:---------:|
-| apiKey        | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
-| apiLogin      | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
-
-</details>
-
-<details>
-<summary>Response</summary>
-<br>
-<div class="variables"></div>
-
-| Field name | Format | Size | Description |
-|-|-|-|-|
-| token | Alphanumeric |  | Token generated to use the Payouts methods exposed by the service. |
-
-</details>
-
 ### API Call
 To authenticate, send the request as follows:
 
@@ -78,6 +50,11 @@ https://{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiL
 <br>
 
  The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
+
+| Parameter     | Description                                                              | Mandatory |
+|---------------|--------------------------------------------------------------------------|:---------:|
+| apiKey        | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
+| apiLogin      | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
 
 **Response example:**
 
@@ -96,10 +73,15 @@ https://{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiL
 ```
 {{< /tab >}}
 {{< /tabs >}}
-<br>
 
-## Create third parties
-Before requesting payouts, you can create the third parties to whom you want to create the payment order. Nevertheless, you can request a Payout sending the information of the third party.
+## Request payout
+This method lets you create one or multiple Payouts request for third parties which can be new or existing. As soon as you create the request, this moves along the [available states]({{< ref "payouts.html#payout-states" >}}) for Payouts.
+
+{{% alert title="Note" color="info"%}}
+
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+
+{{% /alert %}}
 
 ### Variables for request and response
 
@@ -108,9 +90,25 @@ Before requesting payouts, you can create the third parties to whom you want to 
 <br>
 <div class="variables"></div>
 
-| Parameter     | Description                                                              | Mandatory |
-|---------------|--------------------------------------------------------------------------|:---------:|
-|       |  |        |
+| Field name | Format | Size | Description | Mandatory |
+|---|---|---|---|:-:|
+| transfers |  |  | All the details of the Payout request you want to create. | Yes |
+| transfer > value | Numeric | | Amount to be transfer from yor funds. The currency of this amount is the one configured in your PayU account | Yes |
+| transfer > bankAccount | | | This object has the information of the bank account of the third party that will receive the payment.<br>The third party can be existing or new. | Yes |
+| transfer > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
+| transfer > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > bankCode | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > documentNumber | Alphanumeric | | Identification number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. Format `YYYY/MM/DD`<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > fullName | Alphanumeric |  | Full name of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. Format `YYYY/MM/DD`<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > state| Alphanumeric |  | State of the Bank account. Set `ACTIVE` when you are creating a new third party. | No |
+| transfer > bankAccount > merchantId | Numeric | | Internal identifier in your system of the third party. | No |
+| transfer > description | Alphanumeric | | Additional information of the payout. | No |
+<!--additionalData-->
 
 </details>
 
@@ -121,17 +119,20 @@ Before requesting payouts, you can create the third parties to whom you want to 
 
 | Field name | Format | Size | Description |
 |-|-|-|-|
-| token | Alphanumeric |  | Token generated to use the Payouts methods exposed by the service. |
+| totalSuccessful | Numeric |  | Number of payouts successfully created. |
+| totalFailed | Numeric |  |  | Number of payments that could not be created. |
+| failedItems | List |  | List of items that failed during processing. |
+| successfulItems | List |  | List of items that were successfully processed. This list includes the Payout ID and the Third party Id when you create a new one. |
 
 </details>
 
+{{% alert title="Note" color="info"%}}
 
-## Delete a third party
+If you want to update the information of a third party when sending the request, send the `transfer.bankAccount.id` along with the information you want to update. Otherwise, you need to use the method to update the [payout request]({{< ref "Payouts-API.md#update-payout-request" >}}).
 
-## Find a third party
+{{% /alert %}}
 
-## Request payout
-
+### API Call
 The following are the request and response examples for this operation.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
@@ -140,15 +141,52 @@ The following are the request and response examples for this operation.
 
 Response example:
 ```JSON
-
+{
+  "transfers": [
+    {
+      "value": 100000,
+      "bankAccount": {
+        "supplierType": "RELATED_THIRD_PARTY",
+        "accountNumber": 18075486100238,
+        "bankCode": 45,
+        "accountType": "CC",
+        "country": "CO",
+        "documentNumber": 1020730722,
+        "documentType": "CC",
+        "expeditionDate": "1996-05-17",
+        "fullName": "Nicolas Contreras",
+        "birthDate": "1996-05-17",
+        "state": "ACTIVE",
+        "merchantId": 358
+      },
+      "description": "Information of the request"
+    }
+  ]
+}
 ```
+<br>
 
+Response body:
+```JSON
+{
+  "totalSuccessful": 0,
+  "totalFailed": 0,
+  "failedItems": [],
+  "successfulItems": []
+}
+```
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
 <br>
 
-Response example:
+Request body:
+```XML
+
+```
+<br>
+
+Response body:
 ```XML
 
 ```
@@ -160,7 +198,6 @@ Response example:
 
 
 ## Cancel payout request
-
 
 
 ## Create a WebHook
@@ -175,13 +212,24 @@ Response example:
 ```JSON
 
 ```
+<br>
 
+Response body:
+```JSON
+
+```
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
 <br>
 
-Response example:
+Request body:
+```XML
+
+```
+<br>
+
+Response body:
 ```XML
 
 ```
