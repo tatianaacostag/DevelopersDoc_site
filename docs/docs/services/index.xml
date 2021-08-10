@@ -28,21 +28,14 @@
 &lt;p&gt;PayU can process the payments using two types of Payment flows: two-step and one-step.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Payments/autorizacionycaptura-en.png&#34; alt=&#34;Payments&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;In the one-step flow, combines the &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/em&gt; steps into a single transaction. Funds are transferred from your customer&amp;rsquo;s account to your PayU account when the payment has been authorized. The unique step in this flow are:
+&lt;li&gt;
+&lt;p&gt;In the one-step flow, combines the &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Capture&lt;/strong&gt;&lt;/em&gt; steps into a single transaction. Funds are transferred from your customer&amp;rsquo;s account to your PayU account when the payment has been authorized. The unique step in this flow are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Charge (Authorization and capture)&lt;/strong&gt;&lt;/em&gt;: this operation sends the amount of the transactions to validate (Authorization) and if it is approved, the amount is debited from the card immediately (capture). This is the most common method to process transactions.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-One-step flow is not supported for Colombia and Panama. For Chile, this flow is available under request only, contact your sales representative.
-&lt;/div&gt;
-
-&lt;ul&gt;
-&lt;li&gt;In the two-step flow, first you need to authorize and place a hold on the customer&amp;rsquo;s funds. Then, complete the transaction to transfer the authorized funds to your PayU account. The steps in this flow are:
+&lt;li&gt;
+&lt;p&gt;In the two-step flow, first you need to authorize and place a hold on the customer&amp;rsquo;s funds. Then, complete the transaction to transfer the authorized funds to your PayU account. The steps in this flow are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt;: this operation is used to verify if the card used to pay is active, has funds, etc. The transaction is not complete until a transaction capture is sent. &lt;/br&gt;
 For Example, when you use a transportation app, after you request the service, the app sends an &lt;em&gt;Authorization&lt;/em&gt; to reserve the amount of the trip and verify that your card is valid (active and with enough founds). Nevertheless, the charge is not performed in your card yet.&lt;/li&gt;
@@ -51,6 +44,13 @@ Back in the transportation app example, once your service has finished, the apps
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Two-step flow is not supported for Colombia and Panama. For Chile, this flow is available under request only, contact your sales representative.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;payment-methods&#34;&gt;Payment methods&lt;/h3&gt;
 &lt;p&gt;The available payment methods used to process transactions are:&lt;/p&gt;
 &lt;ul&gt;
@@ -367,53 +367,53 @@ To integrate with Promotions API, target the requests to the following URLs:
     </item>
     
     <item>
-      <title>Docs: Push Payments</title>
-      <link>/docs/services/pushpayments.html</link>
+      <title>Docs: Payouts</title>
+      <link>/docs/services/payouts.html</link>
       <pubDate>Fri, 16 Jul 2021 11:32:55 -0500</pubDate>
       
-      <guid>/docs/services/pushpayments.html</guid>
+      <guid>/docs/services/payouts.html</guid>
       <description>
         
         
-        &lt;p&gt;Push Payments is available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.&lt;/p&gt;
+        &lt;p&gt;Payouts is available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-Currently, Push Payment is available in Colombia.
+Currently, Payout is available in Colombia.
 &lt;/div&gt;
 
-&lt;h2 id=&#34;how-do-push-payments-work&#34;&gt;How do Push Payments work?&lt;/h2&gt;
-&lt;p&gt;Through Push payments, you can request many payouts to many users easily. You only need to provide the amount to pay along with the information of each third party (such as name, identification, bank information, etc.), and PayU transfers the requested amount after validations.&lt;/p&gt;
+&lt;h2 id=&#34;how-do-payouts-work&#34;&gt;How do Payouts work?&lt;/h2&gt;
+&lt;p&gt;Through Payouts, you can request many payments to many users easily. You only need to provide the amount to pay along with the information of each third party (such as name, identification, bank information, etc.), and PayU transfers the requested amount after validations.&lt;/p&gt;
 &lt;img src=&#34;../../assets/PushPayments/PushPayments.png&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;
-&lt;p&gt;Let’s explain Push payments using an example. A merchant offers products and services available for delivery; this merchant uses PayU as their payment platform and has an account where they collect the money paid from their customers. This merchant has many couriers to whom, they pay a fixed amount per delivery they made.&lt;/p&gt;
-&lt;p&gt;Each week, the merchant pays the amount earned to each courier. To do this, they can use push payments to pay directly from their PayU account instead of managing the payouts on their own, in which case, the merchants must transfer the money to their accounts or use funds from other sources.&lt;/p&gt;
+&lt;p&gt;Let’s explain Payouts using an example. A merchant offers products and services available for delivery; this merchant uses PayU as their online payment platform and has an account where they collect the money paid from their customers. This merchant has many couriers to whom, they pay a fixed amount per delivery they made.&lt;/p&gt;
+&lt;p&gt;Each week, the merchant pays the amount earned to each courier. To do this, they can use Payouts to pay directly from their PayU account instead of managing the payments on their own, in which case, the merchants must transfer the money to their accounts or use funds from other sources.&lt;/p&gt;
 &lt;p&gt;To request the pay, the merchant sends the list of third parties they want to pay along with the amount of each one, PayU validates these third parties and schedules the payout.&lt;/p&gt;
 &lt;p&gt;The amount of each payout plus the processing fee is deducted from your account. Contact your sales representative to know the processing fee to use this service.&lt;/p&gt;
-&lt;h3 id=&#34;push-payment-states&#34;&gt;Push payment states&lt;/h3&gt;
-&lt;p&gt;Push payments are performed in two main steps: the first step is when you request the payout to a third party. The second one is when the request has been approved and moves to the transfer of the funds.&lt;/p&gt;
-&lt;p&gt;The transactional procedure of Push Payments has the following states.&lt;/p&gt;
+&lt;h3 id=&#34;payout-states&#34;&gt;Payout states&lt;/h3&gt;
+&lt;p&gt;Payouts are performed in two main steps: the first step is when you request the payment to a third party. The second one is when the request has been approved and moves to the transfer of the funds.&lt;/p&gt;
+&lt;p&gt;The transactional procedure of Payouts has the following states.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;AWAITING SANCTION SCREENING&lt;/strong&gt;: this state indicates that the third party to whom the payment will be made is subject to validation of restricted lists and further PayU policies related to risk analysis. If a third party does not pass this validation, the payment is automatically rejected.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;AWAITING TO SEND&lt;/strong&gt;: if the third party passes the validation or is not subject to it, this state indicates that the request is ready to be processed. In this state, the communication with the service has not been performed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SENT TO CREATE&lt;/strong&gt;: this state indicates that the communication with the service has been completed and the Push payment request is in creation process.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CREATED&lt;/strong&gt;: this state indicates that the request has been created and has become into a payout. When the request becomes a payout, it moves between the states explained in &lt;a href=&#34;../../docs/services/pushpayments.html#payout-states&#34;&gt;Payout states&lt;/a&gt;. The next state depends on the result of the payout process.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SENT TO CREATE&lt;/strong&gt;: this state indicates that the communication with the service has been completed and the Payout request is in creation process.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CREATED&lt;/strong&gt;: this state indicates that the request has been created and has become into a payout. When the request becomes a payout, it moves between the states explained in &lt;a href=&#34;../../docs/services/payouts.html#payout-states&#34;&gt;Payout states&lt;/a&gt;. The next state depends on the result of the payout process.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;REJECTED&lt;/strong&gt;: this state indicates that the request has been rejected. A request can be rejected when:
 &lt;ul&gt;
 &lt;li&gt;The validation of the third party fails.&lt;/li&gt;
-&lt;li&gt;The creation of the payout fails.&lt;/li&gt;
-&lt;li&gt;You request the cancellation of the Push payment request and it has been approved.&lt;/li&gt;
+&lt;li&gt;The creation of the payout was failed.&lt;/li&gt;
+&lt;li&gt;You request the cancellation of the Payout request and it has been approved.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PROCESSING COMPLETED&lt;/strong&gt;: this state indicates that the payout process has been completed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AWAITING TO CANCEL&lt;/strong&gt;: this state indicates that you have requested the cancellation of a Push payment request. Take into account that you can request the cancellation of a request when this is not in Banking process.&lt;br&gt;In this state, the communication with the service has not been performed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SENT FOR CANCELLATION&lt;/strong&gt;: this state indicates that the communication with the service has been completed and the Push payment request is in cancellation process.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PROCESSING COMPLETED&lt;/strong&gt;: this state indicates that the Payout process has been completed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWAITING TO CANCEL&lt;/strong&gt;: this state indicates that you have requested the cancellation of a Payout request. Take into account that you can request the cancellation of a Payout request when this is not in Banking process.&lt;br&gt;In this state, the communication with the service has not been performed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SENT FOR CANCELLATION&lt;/strong&gt;: this state indicates that the communication with the service has been completed and the Payout request is in cancellation process.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;CANCELLATION FAILED&lt;/strong&gt;: this state indicates that the request of cancellation cannot be executed due to PayU policies or because the request is not being processed by PayU.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The following diagram illustrates the state changes:&lt;/p&gt;
 &lt;img src=&#34;../../assets/PushPayments/PushPaymentsStates.png&#34; width=&#34;80%&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;
-&lt;h4 id=&#34;payout-states&#34;&gt;Payout states&lt;/h4&gt;
-&lt;p&gt;Once the push payment has been approved, it is transformed into a payment order. The&lt;/p&gt;
+&lt;h4 id=&#34;payout-states-1&#34;&gt;Payout states&lt;/h4&gt;
+&lt;p&gt;Once the Payout has been approved, it is transformed into a payment order. The following are the states of a payment order.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;REQUEST_BY_THE_MERCHANT&lt;/strong&gt;: this is the initial state of the transaction, once you send the list of third parties to be paid and the third parties are approved, the transaction takes this state.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;IN_VALIDATION&lt;/strong&gt;: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn&amp;rsquo;t meet the policies is rejected.&lt;/li&gt;
@@ -426,21 +426,21 @@ Currently, Push Payment is available in Colombia.
 &lt;p&gt;The following diagram illustrates the state changes:&lt;/p&gt;
 &lt;img src=&#34;../../assets/PushPayments/PushPaymentsSteps.png&#34; width=&#34;60%&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;
 &lt;h3 id=&#34;transaction-validation&#34;&gt;Transaction validation&lt;/h3&gt;
-&lt;p&gt;Every payment request is validated to verify that the person who will receive the money is not included in restricted lists. This validation may take up to 24 hours which may delay the payment procedure.&lt;/p&gt;
+&lt;p&gt;Every Payout request is validated to verify that the person who will receive the money is not included in restricted lists. This validation may take up to 24 hours which may delay the payment procedure.&lt;/p&gt;
 &lt;p&gt;When a person must be verified, PayU checks first in the validation cache, so a person is only validated once during the cache frame.&lt;/p&gt;
-&lt;p&gt;If a person does not approve the validation, the payout is not performed and you are notified if you have configured the notifications of validation results.&lt;/p&gt;
+&lt;p&gt;If a person does not approve the validation, the Payout is not performed and you are notified if you have configured the notifications of validation results.&lt;/p&gt;
 &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
 &lt;p&gt;Take into account the following considerations:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Push payment is not a services included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.&lt;/li&gt;
+&lt;li&gt;Payout is not a service included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.&lt;/li&gt;
 &lt;li&gt;Merchants are responsible for the integrity and the correctness of the third-party data. PayU does not validate that the data provided by the merchant is complete and correct. Furthermore, the update of data must be requested by the merchants.&lt;br&gt;PayU is not responsible for unsuccessful transactions due to wrong data.&lt;/li&gt;
-&lt;li&gt;Push payment allows local payouts only. The merchant may be international (under security and risk analysis) but they can only request local payouts using the funds collected in the processing country.&lt;br&gt;For example, if the merchant &lt;em&gt;ABC&lt;/em&gt; processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.&lt;/li&gt;
+&lt;li&gt;Payouts allows local payments only. The merchant may be international (under security and risk analysis) but they can only request payouts using the funds collected in the processing country.&lt;br&gt;For example, if the merchant &lt;em&gt;ABC&lt;/em&gt; processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.&lt;/li&gt;
 &lt;li&gt;Once the payout is created, it takes the regular flow in PayU. This means that you can see the payout created in your PayU module.&lt;/li&gt;
 &lt;li&gt;The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- * For Gambling commerces, Push payments cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. --&gt;
+&lt;!-- * For Gambling commerces, Payouts cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. --&gt;
 &lt;h2 id=&#34;transaction-processing&#34;&gt;Transaction processing&lt;/h2&gt;
-&lt;p&gt;Push payments uses ACH (&lt;strong&gt;A&lt;/strong&gt;utomated &lt;strong&gt;C&lt;/strong&gt;learing &lt;strong&gt;H&lt;/strong&gt;ouse) transfers to send the payouts to the beneficiaries, this means that the transactions are processed in batch during the day. The time when the transaction will be processed is explained in the following table:&lt;/p&gt;
+&lt;p&gt;Payouts uses ACH (&lt;strong&gt;A&lt;/strong&gt;utomated &lt;strong&gt;C&lt;/strong&gt;learing &lt;strong&gt;H&lt;/strong&gt;ouse) transfers to send the payouts to the beneficiaries, this means that the transactions are processed in batch during the day. The time when the transaction will be processed is explained in the following table:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -486,7 +486,7 @@ Payout requests may not be in &lt;strong&gt;IN_BANKING_PROCESS&lt;/strong&gt; st
 &lt;/div&gt;
 
 &lt;h2 id=&#34;notifications&#34;&gt;Notifications&lt;/h2&gt;
-&lt;p&gt;When using Push Payments, you can create a WebHook to configure notifications on status changes. It is recommended to configure the WebHook before sending the Push Payment request when configuring notifications.&lt;/p&gt;
+&lt;p&gt;When using Payouts, you can create a WebHook to configure notifications on status changes. It is recommended to configure the WebHook before sending the Payout request when configuring notifications.&lt;/p&gt;
 &lt;p&gt;You can configure a WebHook for one of the following events:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Transfer creation&lt;/strong&gt;: sends a notification when a payout request is created.&lt;/li&gt;
@@ -494,7 +494,7 @@ Payout requests may not be in &lt;strong&gt;IN_BANKING_PROCESS&lt;/strong&gt; st
 &lt;li&gt;&lt;strong&gt;Validation result&lt;/strong&gt;: sends a notification when the validation is completed with its result.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
-&lt;p&gt;The integration with this feature fo is performed using &lt;a href=&#34;&#34;&gt;API integrations&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The integration with this feature fo is performed using &lt;a href=&#34;../../docs/integrations/api-integration/payouts-api.html&#34;&gt;API integrations&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>

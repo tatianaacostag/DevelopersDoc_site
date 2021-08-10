@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/integrations/api-integration/promotions-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-06-29T12:38:41-05:00" />
-<meta property="article:modified_time" content="2021-08-03T10:45:45-05:00" /><meta property="og:site_name" content="Documentation" />
+<meta property="article:modified_time" content="2021-08-09T17:53:18-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="Promotions API for Argentina and Mexico">
 <meta itemprop="description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico (MSI - Meses Sin Intereses).
 "><meta itemprop="datePublished" content="2021-06-29T12:38:41-05:00" />
-<meta itemprop="dateModified" content="2021-08-03T10:45:45-05:00" />
+<meta itemprop="dateModified" content="2021-08-09T17:53:18-05:00" />
 <meta itemprop="wordCount" content="2361">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Promotions API for Argentina and Mexico"/>
@@ -47,6 +47,7 @@
 <link href="../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" rel="stylesheet" integrity="">
 
 
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -123,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.ddba5d5dffdd80b1db4a99f7e02b58a64235f1ec465b367c6933c7fa61876907cf1322068f0be02f2ced32d974ffbd4d8be36a0c79fb1e4db3470ee5421379df.json"
+  data-offline-search-index-json-src="../../../offline-search-index.15cad2609ee2a7397e560c5e0391d2ab414f0122b720b614e086558e773c5b21f68541ce7d48eaa27f93e7289a37fd21007d7fa1c25d1d7d0585b1de42179129.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -265,7 +266,7 @@
       
       
       
-        <a id="/docs/services/pushpayments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsservicespushpaymentshtml" href="../../../docs/services/pushpayments.html">Push Payments</a>
+        <a id="/docs/services/payouts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-docsservicespayoutshtml" href="../../../docs/services/payouts.html">Payouts</a>
       
       
     </li>
@@ -537,6 +538,12 @@
         <a id="/docs/integrations/api-integration/refunds-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationrefunds-apihtml" href="../../../docs/integrations/api-integration/refunds-api.html">Voids and Refunds API</a>
       
       
+      
+      
+      
+        <a id="/docs/integrations/api-integration/payouts-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-docsintegrationsapi-integrationpayouts-apihtml" href="../../../docs/integrations/api-integration/payouts-api.html">Payouts API</a>
+      
+      
     </li>
   </ul>
   
@@ -745,7 +752,7 @@
 <p>For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your <code>MerchantPublicKey</code>, you can get this information in your PayU Module (<strong><em>Settings</em></strong> &gt; <strong><em>Technical configuration</em></strong> &gt; <strong><em>Public Key</em></strong>).</p>
 <p><img src="../../../assets/Promotions/PublicKey.png" alt="PrintScreen"></p>
 <h3 id="configuring-the-authentication">Configuring the authentication</h3>
-<p>You must include in the <code>Authorization</code> in the header, this header follows this structure:</p>
+<p>You must include the headers <code>Authorization</code> and <code>Date</code>. The <code>Authorization</code> header follows this structure:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#4e9a06">&#34;Hmac&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34; &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">MerchantPublicKey</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;:&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">Signature</span>
 </code></pre></div><br>
 <p>Where <code>Signature</code> is created as follows:</p>
@@ -1021,7 +1028,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 <h4 id="api-call">API Call</h4>
 <p>To consult the available promotions, send the request as follows:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">GET</span>
-<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accountId}currency={currency}&amp;amount={amount}&amp;paymentMethod={paymentMethod}
+<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accountId}&amp;currency={currency}&amp;amount={amount}&amp;paymentMethod={paymentMethod}
 </span></code></pre></div><br>
 <p>The value for the variable <code>{env-api}</code> displayed above is <code>sandbox.api</code> for testing and <code>api</code> for production mode. Furthermore, the <code>paymentMethod</code> parameter is optional if you want to filter by a given payment method. Example:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">GET</span> <span style="color:#000">https</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#8f5902;font-style:italic">//sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=512322&amp;currency=ARS&amp;amount=1000
@@ -2122,7 +2129,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 3, 2021: <a  href="../../../commit/c24e66e801b7eb59a4ebcc315f0b69a03ec5a9cb">Fixes in Promotions and new section for PIX (c24e66e)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 9, 2021: <a  href="../../../commit/76f9462401eaacef7bf7f4c8e6a6ac56a2f78cf6">Fix in payments and technical configuration for Payouts (76f9462)</a>
 </div>
 </div>
 

@@ -28202,7 +28202,7 @@ By default, processing credit cards without security code is not enabled. If you
 &lt;p&gt;For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your &lt;code&gt;MerchantPublicKey&lt;/code&gt;, you can get this information in your PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Public Key&lt;/em&gt;&lt;/strong&gt;).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Promotions/PublicKey.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h3&gt;
-&lt;p&gt;You must include in the &lt;code&gt;Authorization&lt;/code&gt; in the header, this header follows this structure:&lt;/p&gt;
+&lt;p&gt;You must include the headers &lt;code&gt;Authorization&lt;/code&gt; and &lt;code&gt;Date&lt;/code&gt;. The &lt;code&gt;Authorization&lt;/code&gt; header follows this structure:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hmac&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MerchantPublicKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Signature&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;p&gt;Where &lt;code&gt;Signature&lt;/code&gt; is created as follows:&lt;/p&gt;
@@ -28478,7 +28478,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;h4 id=&#34;api-call&#34;&gt;API Call&lt;/h4&gt;
 &lt;p&gt;To consult the available promotions, send the request as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt;
-&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accountId}currency={currency}&amp;amp;amount={amount}&amp;amp;paymentMethod={paymentMethod}
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accountId}&amp;amp;currency={currency}&amp;amp;amount={amount}&amp;amp;paymentMethod={paymentMethod}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; displayed above is &lt;code&gt;sandbox.api&lt;/code&gt; for testing and &lt;code&gt;api&lt;/code&gt; for production mode. Furthermore, the &lt;code&gt;paymentMethod&lt;/code&gt; parameter is optional if you want to filter by a given payment method. Example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=512322&amp;amp;currency=ARS&amp;amp;amount=1000
@@ -30463,6 +30463,760 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;li&gt;&lt;strong&gt;Approved&lt;/strong&gt;: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in &lt;code&gt;REFUNDED&lt;/code&gt; status (parameter &lt;code&gt;result.payload.status&lt;/code&gt; in the response), the first transaction type is &lt;code&gt;REFUND&lt;/code&gt; (parameter &lt;code&gt;result.transactions.type&lt;/code&gt; in the response) and the first transaction status is &lt;code&gt;APPROVED&lt;/code&gt; (First parameter &lt;code&gt;result.transactions.transactionResponse.state&lt;/code&gt; in the response).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Declined&lt;/strong&gt;: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in &lt;code&gt;CAPTURED&lt;/code&gt; status (parameter &lt;code&gt;result.payload.status&lt;/code&gt; in the response), the first transaction type is &lt;code&gt;REFUND&lt;/code&gt; (parameter &lt;code&gt;result.transactions.type&lt;/code&gt; in the response) and the first transaction status is &lt;code&gt;DECLINED&lt;/code&gt; (First parameter &lt;code&gt;result.transactions.transactionResponse.state&lt;/code&gt; in the response).&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payouts API</title>
+      <link>/docs/integrations/api-integration/payouts-api.html</link>
+      <pubDate>Mon, 09 Aug 2021 14:58:45 -0500</pubDate>
+      
+      <guid>/docs/integrations/api-integration/payouts-api.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;For introductory terms, how to request this service and more information, refer to &lt;a href=&#34;../../../docs/services/payouts.html&#34;&gt;Payouts&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h2&gt;
+&lt;p&gt;To use the methods to manage Payouts or WebHooks exposed by the Payouts service, you must include the &lt;code&gt;Authorization&lt;/code&gt; and &lt;code&gt;PublicKey&lt;/code&gt; headers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To configure the &lt;code&gt;Authorization&lt;/code&gt; header, concatenate &lt;code&gt;Bearer&lt;/code&gt;, space, and the response of the &lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#authentication&#34;&gt;authentication method&lt;/a&gt; provided by the Payouts service. &lt;br&gt;Example:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTYyODU0ODE2NywiaWF0IjoxNjI4NTQ4MTY3fQ.jrO3u5ramYKOvoNNb0TNfBuZkbYg1EvPmCDDYXFEO4c 
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;To configure the &lt;code&gt;PublicKey&lt;/code&gt; header, use your Public Key which can be found in the PayU Module (&lt;strong&gt;&lt;em&gt;Settings&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Technical configuration&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Public Key&lt;/em&gt;&lt;/strong&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Promotions/PublicKey.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
+&lt;p&gt;Payouts API includes the following methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#authentication&#34;&gt;Authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#request-payout&#34;&gt;Request payout&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#update-payout-request&#34;&gt;Update payout request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#cancel-payout-request&#34;&gt;Cancel payout request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#create-a-webhook&#34;&gt;Create a WebHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#delete-a-webhook&#34;&gt;Delete a WebHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#query-webhooks&#34;&gt;Query WebHooks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;authentication&#34;&gt;Authentication&lt;/h2&gt;
+&lt;p&gt;The first step regardless of the method you want to request is to authenticate your account using the credentials provided by PayU.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;authentication&lt;/em&gt; method logs in the merchant returning the JWT Token generated to use the services exposed by Payouts. This token is available during 10 minutes after its creation.&lt;/p&gt;
+&lt;h3 id=&#34;api-call&#34;&gt;API Call&lt;/h3&gt;
+&lt;p&gt;To authenticate, send the request as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt;
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&amp;amp;apiLogin={apiLogin}
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; displayed above is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;apiKey&lt;/td&gt;
+&lt;td&gt;Password provided by PayU. &lt;a href=&#34;../../../docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Key&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;apiLogin&lt;/td&gt;
+&lt;td&gt;User or login provided by PayU. &lt;a href=&#34;../../../docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Response example:&lt;/strong&gt;&lt;/p&gt;
+&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;token&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTYyODU0ODE2NywiaWF0IjoxNjI4NTQ4MTY3fQ.jrO3u5ramYKOvoNNb0TNfBuZkbYg1EvPmCDDYXFEO4c&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;h2 id=&#34;request-payout&#34;&gt;Request payout&lt;/h2&gt;
+&lt;p&gt;This method lets you create one or multiple Payouts request for third parties which can be new or existing. As soon as you create the request, this moves along the &lt;a href=&#34;../../../docs/services/payouts.html#payout-states&#34;&gt;available states&lt;/a&gt; for Payouts.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+You need to include two headers to use this method, refer to &lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variables for request and response&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;Request parameters&lt;/summary&gt;
+&lt;br&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field name&lt;/th&gt;
+&lt;th&gt;Format&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;transfers&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;All the details of the Payout request you want to create.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; value&lt;/td&gt;
+&lt;td&gt;Numeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Amount to be transfer from yor funds. The currency of this amount is the one configured in your PayU account&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;This object has the information of the bank account of the third party that will receive the payment.&lt;br&gt;The third party can be existing or new.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; id&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;36&lt;/td&gt;
+&lt;td&gt;Identifier of the Bank account of the third-party.&lt;br&gt;Send this parameter when you want to request a Payout for an existing third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; supplierType&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Min:11 Max:16&lt;/td&gt;
+&lt;td&gt;Relationship type between you and your third party. You can choose one of the following values: &lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;&lt;code&gt;SUBMERCHANT&lt;/code&gt;: select this relation if the third party is a related merchant.&lt;/li&gt;&lt;li&gt;&lt;code&gt;RELATED_PROVIDER&lt;/code&gt;: select this relation if the third party is a provider&lt;/li&gt;&lt;li&gt;&lt;code&gt;RELATED_THIRD_PARTY&lt;/code&gt;: select this type if the third party is a customer, an employee, or any user of your services.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; accountNumber&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;Bank account number of the third party.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; bankCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;CC&lt;/code&gt; for Current account and &lt;code&gt;CA&lt;/code&gt; for Saving account.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; country&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Country of the bank account in format ISO 3166 Alpha-2.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; documentNumber&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Identification number of the third party.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; documentType&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Identification type of the third party. &lt;a href=&#34;../../../docs/getting-started/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; expeditionDate&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;Expedition date of the identity document of the third party. Format &lt;code&gt;YYYY/MM/DD&lt;/code&gt;&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; fullName&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Full name of the third party.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; birthDate&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;Birth date of the third party. Format &lt;code&gt;YYYY/MM/DD&lt;/code&gt;&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; state&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;State of the Bank account. Set &lt;code&gt;ACTIVE&lt;/code&gt; when you are creating a new third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; bankAccount &amp;gt; merchantId&lt;/td&gt;
+&lt;td&gt;Numeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Internal identifier in your system of the third party.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transfer &amp;gt; description&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Additional information of the payout.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;!--additionalData--&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;Response&lt;/summary&gt;
+&lt;br&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field name&lt;/th&gt;
+&lt;th&gt;Format&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;totalSuccessful&lt;/td&gt;
+&lt;td&gt;Numeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Number of payouts successfully created.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;totalFailed&lt;/td&gt;
+&lt;td&gt;Numeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;failedItems&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;List of items that failed during processing.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;successfulItems&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;List of items that were successfully processed. This list includes the Payout ID and the Third party Id when you create a new one.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/details&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+If you want to update the information of a third party when sending the request, send the &lt;code&gt;transfer.bankAccount.id&lt;/code&gt; along with the information you want to update. Otherwise, you need to use the method to update the &lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#update-payout-request&#34;&gt;payout request&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;api-call-1&#34;&gt;API Call&lt;/h3&gt;
+&lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab21&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab22&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;2&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab21&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transfers&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;bankAccount&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;supplierType&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;RELATED_THIRD_PARTY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;accountNumber&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;18075486100238&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;bankCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;45&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;accountType&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CC&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;documentNumber&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1020730722&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;documentType&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CC&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;expeditionDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1996-05-17&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;fullName&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Nicolas Contreras&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;birthDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1996-05-17&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;state&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ACTIVE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchantId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;358&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Information of the request&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;totalSuccessful&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;totalFailed&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;failedItems&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[],&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;successfulItems&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab22&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;update-payout-request&#34;&gt;Update payout request&lt;/h2&gt;
+&lt;h2 id=&#34;cancel-payout-request&#34;&gt;Cancel payout request&lt;/h2&gt;
+&lt;h2 id=&#34;create-a-webhook&#34;&gt;Create a WebHook&lt;/h2&gt;
+&lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab31&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab32&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;3&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab31&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab32&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;delete-a-webhook&#34;&gt;Delete a WebHook&lt;/h2&gt;
+&lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab41&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab42&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;4&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab41&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab42&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;query-webhooks&#34;&gt;Query WebHooks&lt;/h2&gt;
+&lt;h3 id=&#34;query-webhooks-by-id&#34;&gt;Query webhooks by Id&lt;/h3&gt;
+&lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;query-webhooks-by-account&#34;&gt;Query webhooks by account&lt;/h3&gt;
+&lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab61&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab62&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;6&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab61&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab62&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
 
       </description>
     </item>

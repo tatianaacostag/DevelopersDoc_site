@@ -48,7 +48,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/services/payments.html</loc>
-    <lastmod>2021-07-07T18:34:28-05:00</lastmod>
+    <lastmod>2021-08-09T17:53:18-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -208,7 +208,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/promotions-api.html</loc>
-    <lastmod>2021-08-03T10:45:45-05:00</lastmod>
+    <lastmod>2021-08-09T17:53:18-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -242,6 +242,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/docs/integrations/api-integration/payouts-api.html</loc>
+    <lastmod>2021-08-10T11:47:10-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/docs/tools/shopping-cart-plugins/oscommerce.html</loc>
     <lastmod>2021-05-28T17:29:43-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -257,8 +262,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/docs/services/pushpayments.html</loc>
-    <lastmod>2021-08-03T10:45:45-05:00</lastmod>
+    <loc>/docs/services/payouts.html</loc>
+    <lastmod>2021-08-09T17:53:18-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
