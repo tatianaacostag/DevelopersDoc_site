@@ -44,7 +44,7 @@ The _authentication_ method logs in the merchant returning the JWT Token generat
 To authenticate, send the request as follows:
 
 ```JAVA
-GET
+POST
 https://{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiLogin}
 ```
 <br>
@@ -83,6 +83,24 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 {{% /alert %}}
 
+### API Call
+To create a Payout request, use the following URL:
+
+```JAVA
+POST
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
+```
+<br>
+
+ The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
+
+| Parameter     | Description                                                           | Mandatory |
+|---------------|-----------------------------------------------------------------------|:---------:|
+| merchantId    | Merchant’s ID number in PayU’s system.                                |    Yes    |
+| accountId     | ID of the user account for each country associated with the merchant. |    Yes    |
+
+Both parameters can be found in your PayU module.
+
 ### Variables for request and response
 
 <details>
@@ -92,13 +110,12 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| transfers |  |  | All the details of the Payout request you want to create. | Yes |
 | transfer > value | Numeric | | Amount to be transfer from yor funds. The currency of this amount is the one configured in your PayU account | Yes |
 | transfer > bankAccount | | | This object has the information of the bank account of the third party that will receive the payment.<br>The third party can be existing or new. | Yes |
 | transfer > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
 | transfer > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfer > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > bankCode | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > bankCode | Numeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfer > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfer > bankAccount > documentNumber | Alphanumeric | | Identification number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfer > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
@@ -131,9 +148,6 @@ You need to include two headers to use this method, refer to [Configuring authen
 If you want to update the information of a third party when sending the request, send the `transfer.bankAccount.id` along with the information you want to update. Otherwise, you need to use the method to update the [payout request]({{< ref "Payouts-API.md#update-payout-request" >}}).
 
 {{% /alert %}}
-
-### API Call
-The following are the request and response examples for this operation.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -169,7 +183,7 @@ Response example:
 Response body:
 ```JSON
 {
-  "totalSuccessful": 0,
+  "totalSuccessful": 1,
   "totalFailed": 0,
   "failedItems": [],
   "successfulItems": []
@@ -192,19 +206,207 @@ Response body:
 ```
 {{< /tab >}}
 {{< /tabs >}}
-<br>
 
 ## Update payout request
+This method lets you request the update of the bank information of a third party on a running payout request. For example, this method is useful to change the bank account number when the third party changes their bank account.
 
+You can only request the update of the information of a third party for when the Payout status is in `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
+
+{{% alert title="Note" color="info"%}}
+
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+
+{{% /alert %}}
+
+### API Call
+To create a Payout request, use the following URL:
+
+```JAVA
+PUT
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/bank-account/{bankAccountId}
+```
+<br>
+
+Where:
+* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+* The value for the variable `{bankAccountId}` is the third party Id returned by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
+
+### Variables for request and response
+
+<details>
+<summary>Request parameters</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description | Mandatory |
+|---|---|---|---|:-:|
+| id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes | 
+| supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul> | No |
+| accountNumber | Alphanumeric | 15 | Bank account number of the third party. | No |
+| bankCode | Numeric | 2 | Set `CC` for Current account and `CA` for Saving account. | No |
+| country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2. | No |
+| documentNumber | Alphanumeric | | Identification number of the third party. | No |
+| documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. Format `YYYY/MM/DD` | No |
+| fullName | Alphanumeric |  | Full name of the third party. | No |
+| birthDate | Alphanumeric | 10 | Birth date of the third party. Format `YYYY/MM/DD` | No |
+| merchantId | Numeric | | Internal identifier in your system of the third party. | No |
+<!--additionalData-->
+
+</details>
+
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description |
+|-|-|-|-|
+| totalSuccessful | Numeric |  | Number of payouts successfully processed. |
+| totalFailed | Numeric |  |  | Number of payments that could not be proccessed. |
+| failedItems | List |  | List of items that failed during processing. |
+| successfulItems | List |  | List of items that were successfully processed. |
+
+</details>
+<br>
+
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Response example:
+```JSON
+{
+  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
+  "accountNumber": 18075486100238,
+  "bankCode": 35
+}
+```
+<br>
+
+Response body:
+```JSON
+{
+  "totalSuccessful": 1,
+  "totalFailed": 0,
+  "failedItems": [],
+  "successfulItems": []
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+
+```
+<br>
+
+Response body:
+```XML
+
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Cancel payout request
+This method lets you request the cancellation of a payout request. YYou can only request the cancellation of a Payout when its status is `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
 
+{{% alert title="Note" color="info"%}}
+
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+
+{{% /alert %}}
+
+### API Call
+To create a Payout request, use the following URL:
+
+```JAVA
+DELETE
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/{paymentOrderId}
+```
+<br>
+
+Where:
+* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+* The value for the variable `{paymentOrderId}` is the Payout id generated when the order was created by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
+
+### Variables for request and response
+
+<details>
+<summary>Request parameters</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description | Mandatory |
+|---|---|---|---|:-:|
+| comments | Alphanumeric | | Reason to cancel the Payout request. | No |
+| pushPaymentId | Alphanumeric | | Payout ID of the request to be cancelled. | No |
+
+</details>
+
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description |
+|-|-|-|-|
+| totalSuccessful | Numeric |  | Number of payouts successfully processed. |
+| totalFailed | Numeric |  |  | Number of payments that could not be processed. |
+| failedItems | List |  | List of items that failed during processing. |
+| successfulItems | List |  | List of items that were successfully processed. |
+
+</details>
+<br>
+
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Response example:
+```JSON
+{
+  "comments": "Request cancellation for payout",
+  "pushPaymentId": "1f92a225-9559-4b7f-9739-e6bb27b8b838"
+}
+```
+<br>
+
+Response body:
+```JSON
+{
+  "totalSuccessful": 1,
+  "totalFailed": 0,
+  "failedItems": [],
+  "successfulItems": []
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+
+```
+<br>
+
+Response body:
+```XML
+
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Create a WebHook
 
 The following are the request and response examples for this operation.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -241,7 +443,7 @@ Response body:
 
 The following are the request and response examples for this operation.
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -269,7 +471,7 @@ Response example:
 ### Query webhooks by Id
 The following are the request and response examples for this operation.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -294,7 +496,7 @@ Response example:
 ### Query webhooks by account
 The following are the request and response examples for this operation.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
