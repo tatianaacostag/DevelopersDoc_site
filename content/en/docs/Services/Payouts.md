@@ -102,10 +102,12 @@ Payout requests may not be in **IN_BANKING_PROCESS** state after you sent them, 
 ## Notifications
 When using Payouts, you can create a WebHook to configure notifications on status changes. It is recommended to configure the WebHook before sending the Payout request when configuring notifications.
 
-You can configure a WebHook for one of the following events:
+You can configure a WebHook for one or more of the following events:
 * **Transfer creation**: sends a notification when a payout request is created.
 * **Transfer update**: sends a notification when an update is requested for an existing payout.
 * **Validation result**: sends a notification when the validation is completed with its result.
+
+To learn how to create WebHooks, refer to [this article]({{< ref "payouts-api.md#create-a-webhook" >}}).
 
 ## What's next?
 The integration with this feature fo is performed using [API integrations]({{< ref "payouts-api.html" >}}).

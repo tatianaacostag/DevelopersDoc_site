@@ -31,7 +31,7 @@ Payouts API includes the following methods:
 * [Request payout]({{< ref "Payouts-API.md#request-payout" >}})
 * [Update payout request]({{< ref "Payouts-API.md#update-payout-request" >}})
 * [Cancel payout request]({{< ref "Payouts-API.md#cancel-payout-request" >}})
-* [Create a WebHook]({{< ref "Payouts-API.md#create-a-webhook" >}})
+* [Create or update a WebHook]({{< ref "Payouts-API.md#create-or-update-a-webhook" >}})
 * [Delete a WebHook]({{< ref "Payouts-API.md#delete-a-webhook" >}})
 * [Query WebHooks]({{< ref "Payouts-API.md#query-webhooks" >}})
 
@@ -153,7 +153,7 @@ If you want to update the information of a third party when sending the request,
 {{< tab tabNum="1" >}}
 <br>
 
-Response example:
+Request body:
 ```JSON
 {
   "transfers": [
@@ -219,7 +219,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 {{% /alert %}}
 
 ### API Call
-To create a Payout request, use the following URL:
+To update a Payout request, use the following URL:
 
 ```JAVA
 PUT
@@ -274,7 +274,7 @@ Where:
 {{< tab tabNum="1" >}}
 <br>
 
-Response example:
+Request body:
 ```JSON
 {
   "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
@@ -312,7 +312,7 @@ Response body:
 {{< /tabs >}}
 
 ## Cancel payout request
-This method lets you request the cancellation of a payout request. YYou can only request the cancellation of a Payout when its status is `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
+This method lets you request the cancellation of a payout request. You can only request the cancellation of a Payout when its status is `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
 
 {{% alert title="Note" color="info"%}}
 
@@ -321,7 +321,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 {{% /alert %}}
 
 ### API Call
-To create a Payout request, use the following URL:
+To cancel a Payout request, use the following URL:
 
 ```JAVA
 DELETE
@@ -362,11 +362,11 @@ Where:
 </details>
 <br>
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Response example:
+Request body:
 ```JSON
 {
   "comments": "Request cancellation for payout",
@@ -402,15 +402,191 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Create a WebHook
+## Create or Update a WebHook
+This method lets you create or update a WebHook that allows you to configure a URL where PayU notifies states of a Payout via `POST`.
 
-The following are the request and response examples for this operation.
+You can configure a WebHook for the following events:
+* **Transfer creation**: sends a notification when a payout request is created. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
+* **Transfer update**: sends a notification when an update is requested for an existing payout. To enable these notifications, include the `TRANSFER_CREATION` value in the list parameter `enabledEvents`.
+* **Validation result**: sends a notification when the validation is completed with its result. To enable these notifications, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
+
+{{% alert title="Note" color="info"%}}
+
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+
+{{% /alert %}}
+
+### API Call
+To create or update a WebHook, use the following URL:
+
+```JAVA
+POST
+https://{env-api}.payulatam.com//v1.0/webhooks
+```
+
+### Variables for request and response
+
+<details>
+<summary>Request parameters</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description | Mandatory |
+|---|---|---|---|:-:|
+| id | Alphanumeric |  | Id of the WebHook you want to update. Do not send this parameter when creating a WebHook | No |
+| accountId | Numeric | | ID of the user account for each country associated with the merchant. | Yes |
+| callbackUrl | Alphanumeric | | URL used to receive the `POST` notifications sent by PayU according to the events selected. | Yes |
+| description | Alphanumeric | | Description of the WebHook you want to create. | Yes |
+| enabledEvents | List | Max:3 | List of the events that will launch a notification to the configured URL when they occur. At least one event must be selected.<br>Possibles values are: `TRANSFER_UPDATE`, `TRANSFER_CREATION`, `VALIDATION_RESULT`. | Yes |
+
+</details>
+
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description |
+|-|-|-|-|
+| id | Alphanumeric |  | Id of the WebHook created. |
+| created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
+| accountId | Numeric | | ID of the user account for each country associated with the merchant. |
+| callbackUrl | Alphanumeric | | URL used that will receive the `POST` notifications according to the events selected. |
+| description | Alphanumeric | | Description of the WebHook created. |
+| enabledEvents | List | Max:3 | List of the events selected. |
+| status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
+| processingStatus | Alphanumeric | 7 | State of the last notification sent. By default, this state is `SUCCESS`. |
+
+</details>
+
+{{% alert title="Note" color="info"%}}
+
+To update a WebHook, send the `id` parameter and the values to be changed only.
+
+{{% /alert %}}
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Response example:
+Request body:
+```JSON
+{
+  "accountId": 1,
+  "callbackUrl": "https://wwww.callbackurltest.com/",
+  "description": "Web Hook For Test Swagger",
+  "enabledEvents": [
+    "TRANSFER_UPDATE",
+    "TRANSFER_CREATION",
+    "VALIDATION_RESULT"
+  ]
+}
+```
+<br>
+
+Response body:
+```JSON
+{
+  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
+  "created": "2020-11-13 12:40:45",
+  "accountId": 1,
+  "callbackUrl": "https://wwww.callbackurltest.com/",
+  "description": "Web Hook For Test Swagger",
+  "enabledEvents": [
+    "TRANSFER_UPDATE",
+    "TRANSFER_CREATION",
+    "VALIDATION_RESULT"
+  ],
+  "status": "ENABLED",
+  "processingStatus": "SUCCESS",
+  "failureCode": "",
+  "failureMessages": []
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+
+```
+<br>
+
+Response body:
+```XML
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+## Delete a WebHook
+This method lets you delete a WebHook previously created. As soon as you delete a WebHook, you stop receiving notifications.
+
+{{% alert title="Note" color="info"%}}
+
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+
+{{% /alert %}}
+
+### API Call
+To delete a WebHook, use the following URL:
+
+```JAVA
+DELETE
+https://{env-api}.payulatam.com/v1.0/webhooks/{id}
+```
+<br>
+
+Where `{id}` is the id of the WebHook you want to delete.
+
+**Response example**
+
+<details>
+<summary>Response variables</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description |
+|-|-|-|-|
+| id | Alphanumeric |  | Id of the WebHook deleted. |
+| created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
+| accountId | Numeric | | ID of the user account for each country associated with the merchant. |
+| callbackUrl | Alphanumeric | | URL used that will receive the `POST` notifications according to the events selected. |
+| description | Alphanumeric | | Description of the WebHook created. |
+| enabledEvents | List | Max:3 | List of the events selected. |
+| status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
+| processingStatus | Alphanumeric | 7 | State of the last notification sent. By default, this state is `SUCCESS`. |
+
+</details>
+<br>
+
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+```JSON
+
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+```XML
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+## Query WebHooks
+
+
+### Query webhooks by Id
+The following are the request and response examples for this operation.
+
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
 ```JSON
 
 ```
@@ -437,83 +613,38 @@ Response body:
 ```
 {{< /tab >}}
 {{< /tabs >}}
-<br>
-
-## Delete a WebHook
-
-The following are the request and response examples for this operation.
-
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-Response example:
-```JSON
-
-```
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-<br>
-
-Response example:
-```XML
-
-```
-{{< /tab >}}
-{{< /tabs >}}
-<br>
-
-## Query WebHooks
-
-
-### Query webhooks by Id
-The following are the request and response examples for this operation.
-
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-Response example:
-```JSON
-
-```
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-<br>
-
-Response example:
-```XML
-
-```
-{{< /tab >}}
-{{< /tabs >}}
-<br>
 
 ### Query webhooks by account
 The following are the request and response examples for this operation.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Response example:
+Request body:
 ```JSON
 
 ```
+<br>
 
+Response body:
+```JSON
+
+```
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
 <br>
 
-Response example:
+Request body:
+```XML
+
+```
+<br>
+
+Response body:
 ```XML
 
 ```
 {{< /tab >}}
 {{< /tabs >}}
-<br>
