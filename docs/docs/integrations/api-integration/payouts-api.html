@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/integrations/api-integration/payouts-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-08-09T14:58:45-05:00" />
-<meta property="article:modified_time" content="2021-08-10T11:47:10-05:00" /><meta property="og:site_name" content="Documentation" />
+<meta property="article:modified_time" content="2021-08-11T17:07:02-05:00" /><meta property="og:site_name" content="Documentation" />
 
 <meta itemprop="name" content="Payouts API">
 <meta itemprop="description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 "><meta itemprop="datePublished" content="2021-08-09T14:58:45-05:00" />
-<meta itemprop="dateModified" content="2021-08-10T11:47:10-05:00" />
-<meta itemprop="wordCount" content="1060">
+<meta itemprop="dateModified" content="2021-08-11T17:07:02-05:00" />
+<meta itemprop="wordCount" content="2329">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts API"/>
 <meta name="twitter:description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.15cad2609ee2a7397e560c5e0391d2ab414f0122b720b614e086558e773c5b21f68541ce7d48eaa27f93e7289a37fd21007d7fa1c25d1d7d0585b1de42179129.json"
+  data-offline-search-index-json-src="../../../offline-search-index.717571657e43031adfef1c215ef145ba978ce3c37e8a4909b466a2c3b5f777e56576f60ce51106dffccd10e443800b54cd938eb569589ef7903e5d55a69e495c.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -680,14 +680,33 @@
     </li>
     <li><a href="#request-payout">Request payout</a>
       <ul>
-        <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
         <li><a href="#api-call-1">API Call</a></li>
+        <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
       </ul>
     </li>
-    <li><a href="#update-payout-request">Update payout request</a></li>
-    <li><a href="#cancel-payout-request">Cancel payout request</a></li>
-    <li><a href="#create-a-webhook">Create a WebHook</a></li>
-    <li><a href="#delete-a-webhook">Delete a WebHook</a></li>
+    <li><a href="#update-payout-request">Update payout request</a>
+      <ul>
+        <li><a href="#api-call-2">API Call</a></li>
+        <li><a href="#variables-for-request-and-response-1">Variables for request and response</a></li>
+      </ul>
+    </li>
+    <li><a href="#cancel-payout-request">Cancel payout request</a>
+      <ul>
+        <li><a href="#api-call-3">API Call</a></li>
+        <li><a href="#variables-for-request-and-response-2">Variables for request and response</a></li>
+      </ul>
+    </li>
+    <li><a href="#create-or-update-a-webhook">Create or Update a WebHook</a>
+      <ul>
+        <li><a href="#api-call-4">API Call</a></li>
+        <li><a href="#variables-for-request-and-response-3">Variables for request and response</a></li>
+      </ul>
+    </li>
+    <li><a href="#delete-a-webhook">Delete a WebHook</a>
+      <ul>
+        <li><a href="#api-call-5">API Call</a></li>
+      </ul>
+    </li>
     <li><a href="#query-webhooks">Query WebHooks</a>
       <ul>
         <li><a href="#query-webhooks-by-id">Query webhooks by Id</a></li>
@@ -772,7 +791,7 @@
 <li><a href="../../../docs/integrations/api-integration/payouts-api.html#request-payout">Request payout</a></li>
 <li><a href="../../../docs/integrations/api-integration/payouts-api.html#update-payout-request">Update payout request</a></li>
 <li><a href="../../../docs/integrations/api-integration/payouts-api.html#cancel-payout-request">Cancel payout request</a></li>
-<li><a href="../../../docs/integrations/api-integration/payouts-api.html#create-a-webhook">Create a WebHook</a></li>
+<li><a href="../../../docs/integrations/api-integration/payouts-api.html#create-or-update-a-webhook">Create or update a WebHook</a></li>
 <li><a href="../../../docs/integrations/api-integration/payouts-api.html#delete-a-webhook">Delete a WebHook</a></li>
 <li><a href="../../../docs/integrations/api-integration/payouts-api.html#query-webhooks">Query WebHooks</a></li>
 </ul>
@@ -781,7 +800,7 @@
 <p>The <em>authentication</em> method logs in the merchant returning the JWT Token generated to use the services exposed by Payouts. This token is available during 10 minutes after its creation.</p>
 <h3 id="api-call">API Call</h3>
 <p>To authenticate, send the request as follows:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">GET</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">POST</span>
 <span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&amp;apiLogin={apiLogin}
 </span></code></pre></div><br>
 <p>The value for the variable <code>{env-api}</code> displayed above is <code>sandbox-transfers</code> for testing and <code>transfers</code> for production mode.</p>
@@ -888,6 +907,34 @@
 You need to include two headers to use this method, refer to <a href="../../../docs/integrations/api-integration/payouts-api.html#configuring-the-authentication">Configuring authentication</a> for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 </div>
 
+<h3 id="api-call-1">API Call</h3>
+<p>To create a Payout request, use the following URL:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">POST</span>
+<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
+</span></code></pre></div><br>
+<p>The value for the variable <code>{env-api}</code> displayed above is <code>sandbox-transfers</code> for testing and <code>transfers</code> for production mode.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>merchantId</td>
+<td>Merchant’s ID number in PayU’s system.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>ID of the user account for each country associated with the merchant.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Both parameters can be found in your PayU module.</p>
 <h3 id="variables-for-request-and-response">Variables for request and response</h3>
 <details>
 <summary>Request parameters</summary>
@@ -904,13 +951,6 @@ You need to include two headers to use this method, refer to <a href="../../../d
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>transfers</td>
-<td></td>
-<td></td>
-<td>All the details of the Payout request you want to create.</td>
-<td style="text-align:center">Yes</td>
-</tr>
 <tr>
 <td>transfer &gt; value</td>
 <td>Numeric</td>
@@ -948,7 +988,7 @@ You need to include two headers to use this method, refer to <a href="../../../d
 </tr>
 <tr>
 <td>transfer &gt; bankAccount &gt; bankCode</td>
-<td>Alphanumeric</td>
+<td>Numeric</td>
 <td>2</td>
 <td>Set <code>CC</code> for Current account and <code>CA</code> for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
 <td style="text-align:center">No</td>
@@ -1068,9 +1108,7 @@ You need to include two headers to use this method, refer to <a href="../../../d
 If you want to update the information of a third party when sending the request, send the <code>transfer.bankAccount.id</code> along with the information you want to update. Otherwise, you need to use the method to update the <a href="../../../docs/integrations/api-integration/payouts-api.html#update-payout-request">payout request</a>.
 </div>
 
-<h3 id="api-call-1">API Call</h3>
-<p>The following are the request and response examples for this operation.</p>
-<p><nav>
+<nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
 		
@@ -1115,7 +1153,7 @@ If you want to update the information of a third party when sending the request,
 <div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Response example:</p>
+<p>Request body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
   <span style="color:#204a87;font-weight:bold">&#34;transfers&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
     <span style="color:#000;font-weight:bold">{</span>
@@ -1141,7 +1179,7 @@ If you want to update the information of a third party when sending the request,
 </code></pre></div><br>
 <p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#204a87;font-weight:bold">&#34;totalSuccessful&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;totalSuccessful&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
   <span style="color:#204a87;font-weight:bold">&#34;totalFailed&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
   <span style="color:#204a87;font-weight:bold">&#34;failedItems&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[],</span>
   <span style="color:#204a87;font-weight:bold">&#34;successfulItems&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
@@ -1176,12 +1214,166 @@ If you want to update the information of a third party when sending the request,
 
 
 </div>
-<br></p>
 <h2 id="update-payout-request">Update payout request</h2>
-<h2 id="cancel-payout-request">Cancel payout request</h2>
-<h2 id="create-a-webhook">Create a WebHook</h2>
-<p>The following are the request and response examples for this operation.</p>
-<p><nav>
+<p>This method lets you request the update of the bank information of a third party on a running payout request. For example, this method is useful to change the bank account number when the third party changes their bank account.</p>
+<p>You can only request the update of the information of a third party for when the Payout status is in <code>IN_PAYU_PROCESS</code> or earlier. Refer to <a href="../../../docs/services/payouts.html#payout-states">Payout states</a> for more information.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+You need to include two headers to use this method, refer to <a href="../../../docs/integrations/api-integration/payouts-api.html#configuring-the-authentication">Configuring authentication</a> for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+</div>
+
+<h3 id="api-call-2">API Call</h3>
+<p>To update a Payout request, use the following URL:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">PUT</span>
+<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/v1.0/supplier-transfers/bank-account/{bankAccountId}
+</span></code></pre></div><br>
+<p>Where:</p>
+<ul>
+<li>The value for the variable <code>{env-api}</code> is <code>sandbox-transfers</code> for testing and <code>transfers</code> for production mode.</li>
+<li>The value for the variable <code>{bankAccountId}</code> is the third party Id returned by the <a href="../../../docs/integrations/api-integration/payouts-api.html#request-payout">Request payout service</a></li>
+</ul>
+<h3 id="variables-for-request-and-response-1">Variables for request and response</h3>
+<details>
+<summary>Request parameters</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Alphanumeric</td>
+<td>36</td>
+<td>Identifier of the Bank account of the third-party.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>supplierType</td>
+<td>Alphanumeric</td>
+<td>Min:11 Max:16</td>
+<td>Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li><code>SUBMERCHANT</code>: select this relation if the third party is a related merchant.</li><li><code>RELATED_PROVIDER</code>: select this relation if the third party is a provider</li><li><code>RELATED_THIRD_PARTY</code>: select this type if the third party is a customer, an employee, or any user of your services.</li></ul></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>accountNumber</td>
+<td>Alphanumeric</td>
+<td>15</td>
+<td>Bank account number of the third party.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>bankCode</td>
+<td>Numeric</td>
+<td>2</td>
+<td>Set <code>CC</code> for Current account and <code>CA</code> for Saving account.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Country of the bank account in format ISO 3166 Alpha-2.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>documentNumber</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Identification number of the third party.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>documentType</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Identification type of the third party. <a href="../../../docs/getting-started/response-codes-and-variables.html#document-types">See Document types</a>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>expeditionDate</td>
+<td>Alphanumeric</td>
+<td>10</td>
+<td>Expedition date of the identity document of the third party. Format <code>YYYY/MM/DD</code></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>fullName</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Full name of the third party.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>birthDate</td>
+<td>Alphanumeric</td>
+<td>10</td>
+<td>Birth date of the third party. Format <code>YYYY/MM/DD</code></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>merchantId</td>
+<td>Numeric</td>
+<td></td>
+<td>Internal identifier in your system of the third party.</td>
+<td style="text-align:center">No</td>
+</tr>
+</tbody>
+</table>
+<!--additionalData-->
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>totalSuccessful</td>
+<td>Numeric</td>
+<td></td>
+<td>Number of payouts successfully processed.</td>
+</tr>
+<tr>
+<td>totalFailed</td>
+<td>Numeric</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>failedItems</td>
+<td>List</td>
+<td></td>
+<td>List of items that failed during processing.</td>
+</tr>
+<tr>
+<td>successfulItems</td>
+<td>List</td>
+<td></td>
+<td>List of items that were successfully processed.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<br>
+<nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
 		
@@ -1226,11 +1418,20 @@ If you want to update the information of a third party when sending the request,
 <div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Response example:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;accountNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">18075486100238</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;bankCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">35</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><br>
 <p>Response body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;totalSuccessful&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;totalFailed&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failedItems&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[],</span>
+  <span style="color:#204a87;font-weight:bold">&#34;successfulItems&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
 </div>
@@ -1261,10 +1462,101 @@ If you want to update the information of a third party when sending the request,
 
 
 </div>
-<br></p>
-<h2 id="delete-a-webhook">Delete a WebHook</h2>
-<p>The following are the request and response examples for this operation.</p>
-<p><nav>
+<h2 id="cancel-payout-request">Cancel payout request</h2>
+<p>This method lets you request the cancellation of a payout request. You can only request the cancellation of a Payout when its status is <code>IN_PAYU_PROCESS</code> or earlier. Refer to <a href="../../../docs/services/payouts.html#payout-states">Payout states</a> for more information.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+You need to include two headers to use this method, refer to <a href="../../../docs/integrations/api-integration/payouts-api.html#configuring-the-authentication">Configuring authentication</a> for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+</div>
+
+<h3 id="api-call-3">API Call</h3>
+<p>To cancel a Payout request, use the following URL:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">DELETE</span>
+<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/v1.0/supplier-transfers/{paymentOrderId}
+</span></code></pre></div><br>
+<p>Where:</p>
+<ul>
+<li>The value for the variable <code>{env-api}</code> is <code>sandbox-transfers</code> for testing and <code>transfers</code> for production mode.</li>
+<li>The value for the variable <code>{paymentOrderId}</code> is the Payout id generated when the order was created by the <a href="../../../docs/integrations/api-integration/payouts-api.html#request-payout">Request payout service</a></li>
+</ul>
+<h3 id="variables-for-request-and-response-2">Variables for request and response</h3>
+<details>
+<summary>Request parameters</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>comments</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Reason to cancel the Payout request.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>pushPaymentId</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Payout ID of the request to be cancelled.</td>
+<td style="text-align:center">No</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>totalSuccessful</td>
+<td>Numeric</td>
+<td></td>
+<td>Number of payouts successfully processed.</td>
+</tr>
+<tr>
+<td>totalFailed</td>
+<td>Numeric</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>failedItems</td>
+<td>List</td>
+<td></td>
+<td>List of items that failed during processing.</td>
+</tr>
+<tr>
+<td>successfulItems</td>
+<td>List</td>
+<td></td>
+<td>List of items that were successfully processed.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<br>
+<nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
 		
@@ -1309,8 +1601,19 @@ If you want to update the information of a third party when sending the request,
 <div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Response example:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;comments&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Request cancellation for payout&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;pushPaymentId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&#34;</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;totalSuccessful&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;totalFailed&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failedItems&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[],</span>
+  <span style="color:#204a87;font-weight:bold">&#34;successfulItems&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
 </div>
@@ -1327,7 +1630,10 @@ If you want to update the information of a third party when sending the request,
 <div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Response example:</p>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div><br>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
 </code></pre></div>
 
@@ -1338,11 +1644,152 @@ If you want to update the information of a third party when sending the request,
 
 
 </div>
-<br></p>
-<h2 id="query-webhooks">Query WebHooks</h2>
-<h3 id="query-webhooks-by-id">Query webhooks by Id</h3>
-<p>The following are the request and response examples for this operation.</p>
-<p><nav>
+<h2 id="create-or-update-a-webhook">Create or Update a WebHook</h2>
+<p>This method lets you create or update a WebHook that allows you to configure a URL where PayU notifies states of a Payout via <code>POST</code>.</p>
+<p>You can configure a WebHook for the following events:</p>
+<ul>
+<li><strong>Transfer creation</strong>: sends a notification when a payout request is created. To enable these notifications, include the <code>TRANSFER_UPDATE</code> value in the list parameter <code>enabledEvents</code>.</li>
+<li><strong>Transfer update</strong>: sends a notification when an update is requested for an existing payout. To enable these notifications, include the <code>TRANSFER_CREATION</code> value in the list parameter <code>enabledEvents</code>.</li>
+<li><strong>Validation result</strong>: sends a notification when the validation is completed with its result. To enable these notifications, include the <code>VALIDATION_RESULT</code> value in the list parameter <code>enabledEvents</code>.</li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+You need to include two headers to use this method, refer to <a href="../../../docs/integrations/api-integration/payouts-api.html#configuring-the-authentication">Configuring authentication</a> for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+</div>
+
+<h3 id="api-call-4">API Call</h3>
+<p>To create or update a WebHook, use the following URL:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">POST</span>
+<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com//v1.0/webhooks
+</span></code></pre></div><h3 id="variables-for-request-and-response-3">Variables for request and response</h3>
+<details>
+<summary>Request parameters</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Id of the WebHook you want to update. Do not send this parameter when creating a WebHook</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>Numeric</td>
+<td></td>
+<td>ID of the user account for each country associated with the merchant.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>callbackUrl</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>URL used to receive the <code>POST</code> notifications sent by PayU according to the events selected.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Description of the WebHook you want to create.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>enabledEvents</td>
+<td>List</td>
+<td>Max:3</td>
+<td>List of the events that will launch a notification to the configured URL when they occur. At least one event must be selected.<br>Possibles values are: <code>TRANSFER_UPDATE</code>, <code>TRANSFER_CREATION</code>, <code>VALIDATION_RESULT</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Id of the WebHook created.</td>
+</tr>
+<tr>
+<td>created</td>
+<td>Date</td>
+<td></td>
+<td>Creation date of the WebHook. Format <code>YYYY-DD-MM hh:mm:ss</code>.</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>Numeric</td>
+<td></td>
+<td>ID of the user account for each country associated with the merchant.</td>
+</tr>
+<tr>
+<td>callbackUrl</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>URL used that will receive the <code>POST</code> notifications according to the events selected.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Description of the WebHook created.</td>
+</tr>
+<tr>
+<td>enabledEvents</td>
+<td>List</td>
+<td>Max:3</td>
+<td>List of the events selected.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>State of the WebHook. By default, the state of the new WebHook is <code>ENABLED</code>.</td>
+</tr>
+<tr>
+<td>processingStatus</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>State of the last notification sent. By default, this state is <code>SUCCESS</code>.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+To update a WebHook, send the <code>id</code> parameter and the values to be changed only.
+</div>
+
+<nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
 		
@@ -1387,8 +1834,35 @@ If you want to update the information of a third party when sending the request,
 <div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Response example:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;accountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;callbackUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://wwww.callbackurltest.com/&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Web Hook For Test Swagger&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;enabledEvents&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_UPDATE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_CREATION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;VALIDATION_RESULT&#34;</span>
+  <span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2020-11-13 12:40:45&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;accountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;callbackUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://wwww.callbackurltest.com/&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Web Hook For Test Swagger&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;enabledEvents&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_UPDATE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_CREATION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;VALIDATION_RESULT&#34;</span>
+  <span style="color:#000;font-weight:bold">],</span>
+  <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ENABLED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;processingStatus&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failureCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failureMessages&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[]</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
 </div>
@@ -1405,7 +1879,10 @@ If you want to update the information of a third party when sending the request,
 <div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Response example:</p>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div><br>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
 </code></pre></div>
 
@@ -1416,10 +1893,89 @@ If you want to update the information of a third party when sending the request,
 
 
 </div>
-<br></p>
-<h3 id="query-webhooks-by-account">Query webhooks by account</h3>
-<p>The following are the request and response examples for this operation.</p>
-<p><nav>
+<h2 id="delete-a-webhook">Delete a WebHook</h2>
+<p>This method lets you delete a WebHook previously created. As soon as you delete a WebHook, you stop receiving notifications.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+You need to include two headers to use this method, refer to <a href="../../../docs/integrations/api-integration/payouts-api.html#configuring-the-authentication">Configuring authentication</a> for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+</div>
+
+<h3 id="api-call-5">API Call</h3>
+<p>To delete a WebHook, use the following URL:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">DELETE</span>
+<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/v1.0/webhooks/{id}
+</span></code></pre></div><br>
+<p>Where <code>{id}</code> is the id of the WebHook you want to delete.</p>
+<p><strong>Response example</strong></p>
+<details>
+<summary>Response variables</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Id of the WebHook deleted.</td>
+</tr>
+<tr>
+<td>created</td>
+<td>Date</td>
+<td></td>
+<td>Creation date of the WebHook. Format <code>YYYY-DD-MM hh:mm:ss</code>.</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>Numeric</td>
+<td></td>
+<td>ID of the user account for each country associated with the merchant.</td>
+</tr>
+<tr>
+<td>callbackUrl</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>URL used that will receive the <code>POST</code> notifications according to the events selected.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Description of the WebHook created.</td>
+</tr>
+<tr>
+<td>enabledEvents</td>
+<td>List</td>
+<td>Max:3</td>
+<td>List of the events selected.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>State of the WebHook. By default, the state of the new WebHook is <code>ENABLED</code>.</td>
+</tr>
+<tr>
+<td>processingStatus</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>State of the last notification sent. By default, this state is <code>SUCCESS</code>.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<br>
+<nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
 		
@@ -1463,9 +2019,7 @@ If you want to update the information of a third party when sending the request,
 
 <div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
-	<br>
-<p>Response example:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
 </code></pre></div>
 
 </div>
@@ -1481,8 +2035,89 @@ If you want to update the information of a third party when sending the request,
 
 <div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
 
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h2 id="query-webhooks">Query WebHooks</h2>
+<h3 id="query-webhooks-by-id">Query webhooks by Id</h3>
+<p>The following are the request and response examples for this operation.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-7" data-toggle="tab" href="#tab71" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-7" data-toggle="tab" href="#tab72" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="7">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
+
 	<br>
-<p>Response example:</p>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div><br>
+<p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
 </code></pre></div>
 
@@ -1493,11 +2128,92 @@ If you want to update the information of a third party when sending the request,
 
 
 </div>
-<br></p>
+<h3 id="query-webhooks-by-account">Query webhooks by account</h3>
+<p>The following are the request and response examples for this operation.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-8" data-toggle="tab" href="#tab81" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-8" data-toggle="tab" href="#tab82" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="8">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab81" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab82" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 10, 2021: <a  href="../../../commit/e7d5614fbd563483259ba4221a31ec41e875e90e">Update Payouts-API.md (e7d5614)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 11, 2021: <a  href="../../../commit/5b9b4f9fc489437c888c42f31c3288bacf45e525">Payouts adjustments (5b9b4f9)</a>
 </div>
 </div>
 
