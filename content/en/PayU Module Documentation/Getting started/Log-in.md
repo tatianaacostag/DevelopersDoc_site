@@ -10,7 +10,8 @@ weight: 10
 nosidetoc: true
 ---
 
-## How to access the PayU module?
+Follow the next steps to log in your PayU account.
+
 1. Log into www.payu.com, at the top right corner, you find the option to log in. For merchants in Colombia, this option is called _PayU Login_.<br>Alternatively, you can go directly to https://merchants.payulatam.com/.
 
 ![PrintScreen](/assets/Login1_en.png)
@@ -19,6 +20,6 @@ nosidetoc: true
 
 ![PrintScreen](/assets/Login3_en.png)
 
-Here, you can use all the available options to manage your account.
+3. As soon as you log in, you can use all the available options to manage your account.
 
 ![PrintScreen](/assets/Login2_en.png)

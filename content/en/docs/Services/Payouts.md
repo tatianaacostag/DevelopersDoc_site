@@ -16,7 +16,7 @@ Currently, Payout is available in Colombia.
 ## How do Payouts work?
 Through Payouts, you can request many payments to many users easily. You only need to provide the amount to pay along with the information of each third party (such as name, identification, bank information, etc.), and PayU transfers the requested amount after validations.
 
-<img src="/assets/PushPayments/PushPayments.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+<img src="/assets/PushPayments/PushPayments.png" width="70%" style="display: block;margin-left: auto;margin-right: auto;"/>
 
 Let’s explain Payouts using an example. A merchant offers products and services available for delivery; this merchant uses PayU as their online payment platform and has an account where they collect the money paid from their customers. This merchant has many couriers to whom, they pay a fixed amount per delivery they made.
 
