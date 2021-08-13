@@ -116,7 +116,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` for one-step flows.</li></ul> |
-| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit or Debit card Payment Method. [See the available Payment Methods for Peru]({{< ref "select-your-payment-method.html#img-srcassetsperupng-width25px-peru" >}}). |
+| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit or Debit card Payment Method. [See the available Payment Methods for Peru]({{< ref "select-your-payment-method.html#Peru" >}}). |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `PE` for Peru. |
 | transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. |
@@ -848,7 +848,7 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). |
 | transaction > type | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` |
-| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method in cash. [See the available Payment Methods for Peru]({{< ref "select-your-payment-method.html#img-srcassetsperupng-width25px-peru" >}}). |
+| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method in cash. [See the available Payment Methods for Peru]({{< ref "select-your-payment-method.html#Peru" >}}). |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `PE` for Peru. |
 | transaction > expirationDate | Alphanumeric | 23 | Maximum date and time that the payer has to make the payment. Format `YYYY-MM-DDTHH:MM:SS`, for example `2021-06-12T16:07:11.586`. |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. |

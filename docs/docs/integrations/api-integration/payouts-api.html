@@ -33,7 +33,7 @@
 <meta itemprop="description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 "><meta itemprop="datePublished" content="2021-08-09T14:58:45-05:00" />
 <meta itemprop="dateModified" content="2021-08-11T17:07:02-05:00" />
-<meta itemprop="wordCount" content="2329">
+<meta itemprop="wordCount" content="2808">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts API"/>
 <meta name="twitter:description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
@@ -124,7 +124,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.717571657e43031adfef1c215ef145ba978ce3c37e8a4909b466a2c3b5f777e56576f60ce51106dffccd10e443800b54cd938eb569589ef7903e5d55a69e495c.json"
+  data-offline-search-index-json-src="../../../offline-search-index.7318474a00d214fdce0cb10b4021b1d3d43f03208d8479b2cb7c29ef55b906e7ca8cfad1068d216a3f43e53e180ded6210428459071f08505a739361a91f33cf.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -709,7 +709,7 @@
     </li>
     <li><a href="#query-webhooks">Query WebHooks</a>
       <ul>
-        <li><a href="#query-webhooks-by-id">Query webhooks by Id</a></li>
+        <li><a href="#query-webhooks-by-id">Query WebHooks by Id</a></li>
         <li><a href="#query-webhooks-by-account">Query webhooks by account</a></li>
       </ul>
     </li>
@@ -2019,7 +2019,26 @@ You need to include two headers to use this method, refer to <a href="../../../d
 
 <div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2020-11-13 12:40:45&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;accountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;callbackUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://wwww.callbackurltest.com/&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Web Hook For Test Swagger&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;enabledEvents&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_UPDATE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_CREATION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;VALIDATION_RESULT&#34;</span>
+  <span style="color:#000;font-weight:bold">],</span>
+  <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ENABLED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;processingStatus&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failureCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;bank_not_supported&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failureMessages&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#204a87;font-weight:bold">&#34;There is no registered bank with code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span>
+    <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
 </div>
@@ -2046,8 +2065,99 @@ You need to include two headers to use this method, refer to <a href="../../../d
 
 </div>
 <h2 id="query-webhooks">Query WebHooks</h2>
-<h3 id="query-webhooks-by-id">Query webhooks by Id</h3>
-<p>The following are the request and response examples for this operation.</p>
+<p>You can consult WebHooks related to your account either by their id or by the account id. Both methods are explained below.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+You need to include two headers to use this method, refer to <a href="../../../docs/integrations/api-integration/payouts-api.html#configuring-the-authentication">Configuring authentication</a> for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+</div>
+
+<h3 id="query-webhooks-by-id">Query WebHooks by Id</h3>
+<p>This method lets you consult the information of a specific WebHook using its id. To query a WebHook, use the following URL:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">GET</span>
+<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/v1.0/webhooks/{id}
+</span></code></pre></div><br>
+<p>Where <code>{id}</code> is the id of the WebHook you want to consult.</p>
+<p><strong>Response example</strong></p>
+<details>
+<summary>Response variables</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Id of the WebHook deleted.</td>
+</tr>
+<tr>
+<td>created</td>
+<td>Date</td>
+<td></td>
+<td>Creation date of the WebHook. Format <code>YYYY-DD-MM hh:mm:ss</code>.</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>Numeric</td>
+<td></td>
+<td>ID of the user account for each country associated with the merchant.</td>
+</tr>
+<tr>
+<td>callbackUrl</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>URL used that will receive the <code>POST</code> notifications according to the events selected.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Description of the WebHook created.</td>
+</tr>
+<tr>
+<td>enabledEvents</td>
+<td>List</td>
+<td>Max:3</td>
+<td>List of the events selected.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>State of the WebHook. By default, the state of the new WebHook is <code>ENABLED</code>.</td>
+</tr>
+<tr>
+<td>processingStatus</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>State of the last notification sent. By default, this state is <code>SUCCESS</code>.</td>
+</tr>
+<tr>
+<td>failureCode</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Code of the error presented in the last invocation of the WebHook.</td>
+</tr>
+<tr>
+<td>failureMessages</td>
+<td>List</td>
+<td></td>
+<td>Error messages related the error presented in the last invocation of the WebHook.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<br>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -2092,12 +2202,26 @@ You need to include two headers to use this method, refer to <a href="../../../d
 
 <div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
 
-	<br>
-<p>Request body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
-</code></pre></div><br>
-<p>Response body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2020-11-13 12:40:45&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;accountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;callbackUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://wwww.callbackurltest.com/&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Web Hook For Test Swagger&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;enabledEvents&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_UPDATE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_CREATION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;VALIDATION_RESULT&#34;</span>
+  <span style="color:#000;font-weight:bold">],</span>
+  <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ENABLED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;processingStatus&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failureCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;bank_not_supported&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failureMessages&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#204a87;font-weight:bold">&#34;There is no registered bank with code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span>
+    <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
 </div>
@@ -2113,12 +2237,7 @@ You need to include two headers to use this method, refer to <a href="../../../d
 
 <div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
 
-	<br>
-<p>Request body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
-</code></pre></div><br>
-<p>Response body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
 </code></pre></div>
 
 </div>
@@ -2129,7 +2248,90 @@ You need to include two headers to use this method, refer to <a href="../../../d
 
 </div>
 <h3 id="query-webhooks-by-account">Query webhooks by account</h3>
-<p>The following are the request and response examples for this operation.</p>
+<p>This method lets you consult the information of all the WebHooks created in your account. To query the WebHook list, use the following URL:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">GET</span>
+<span style="color:#f57900">https:</span><span style="color:#8f5902;font-style:italic">//{env-api}.payulatam.com/v1.0/webhooks/account/{accountId}
+</span></code></pre></div><br>
+<p>Where <code>{accountId}</code> is the id of your account.</p>
+<p><strong>Response example</strong></p>
+<details>
+<summary>Response variables</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Id of the WebHook deleted.</td>
+</tr>
+<tr>
+<td>created</td>
+<td>Date</td>
+<td></td>
+<td>Creation date of the WebHook. Format <code>YYYY-DD-MM hh:mm:ss</code>.</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>Numeric</td>
+<td></td>
+<td>ID of the user account for each country associated with the merchant.</td>
+</tr>
+<tr>
+<td>callbackUrl</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>URL used that will receive the <code>POST</code> notifications according to the events selected.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Description of the WebHook created.</td>
+</tr>
+<tr>
+<td>enabledEvents</td>
+<td>List</td>
+<td>Max:3</td>
+<td>List of the events selected.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>State of the WebHook. By default, the state of the new WebHook is <code>ENABLED</code>.</td>
+</tr>
+<tr>
+<td>processingStatus</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>State of the last notification sent. By default, this state is <code>SUCCESS</code>.</td>
+</tr>
+<tr>
+<td>failureCode</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Code of the error presented in the last invocation of the WebHook.</td>
+</tr>
+<tr>
+<td>failureMessages</td>
+<td>List</td>
+<td></td>
+<td>Error messages related the error presented in the last invocation of the WebHook.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<br>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -2174,12 +2376,26 @@ You need to include two headers to use this method, refer to <a href="../../../d
 
 <div class="tab-pane fade show active" id="tab81" role="tabpanel" aria-labelledby="nav-tabName1">
 
-	<br>
-<p>Request body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
-</code></pre></div><br>
-<p>Response body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;created&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2020-11-13 12:40:45&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;accountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;callbackUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://wwww.callbackurltest.com/&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Web Hook For Test Swagger&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;enabledEvents&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_UPDATE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;TRANSFER_CREATION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#4e9a06">&#34;VALIDATION_RESULT&#34;</span>
+  <span style="color:#000;font-weight:bold">],</span>
+  <span style="color:#204a87;font-weight:bold">&#34;status&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ENABLED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;processingStatus&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failureCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;bank_not_supported&#34;</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">&#34;failureMessages&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+    <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#204a87;font-weight:bold">&#34;There is no registered bank with code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span>
+    <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
 </div>
@@ -2195,12 +2411,7 @@ You need to include two headers to use this method, refer to <a href="../../../d
 
 <div class="tab-pane fade" id="tab82" role="tabpanel" aria-labelledby="nav-tabName2">
 
-	<br>
-<p>Request body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
-</code></pre></div><br>
-<p>Response body:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML">
 </code></pre></div>
 
 </div>

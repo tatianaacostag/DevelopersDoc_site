@@ -9,7 +9,7 @@ weight: 30
 
 The following section shows the payment methods supported per country and provides some considerations. Refer to the `paymentMethod` parameter to know the value to be sent as Payment Method while using API or SDK integrations.
 
-## <img src="/assets/Argentina.png" width="25px"/> Argentina
+## <img src="/assets/Argentina.png" width="25px"/> Argentina {#Argentina}
 <div class="paymentMethods"></div>
 
 |                                                   | Payment Method   | paymentMethod parameter | Type         | Comments      |
@@ -28,7 +28,7 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | VISA                    | Credit Cards | **Supported cards**: Shopping, Nativa, Credimas, and Nevada. |
 | ![Logo](/assets/PaymentMethods/visa.png)          | VISA             | VISA_DEBIT              | Debit Cards  |               |
 
-## <img src="/assets/Brasil.png" width="25px"/> Brazil
+## <img src="/assets/Brasil.png" width="25px"/> Brazil {#Brazil}
 <div class="paymentMethods"></div>
 
 |                                                     | Payment Method   | paymentMethod parameter | Type          | Comments    |
@@ -42,7 +42,7 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards  |            |
 | ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards  |            |
 
-## <img src="/assets/Chile.png" width="25px"/> Chile
+## <img src="/assets/Chile.png" width="25px"/> Chile {#Chile}
 <div class="paymentMethods"></div>
 
 |                                                | Payment Method       | paymentMethod parameter | Type          | Comments    |
@@ -56,7 +56,7 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/visa.png)       | VISA                 | VISA                    | Credit Cards  |             |
 | ![Logo](/assets/PaymentMethods/visa.png)       | VISA                 | VISA_DEBIT              | Debit Cards   |             |
 
-## <img src="/assets/Colombia.png" width="25px"/> Colombia
+## <img src="/assets/Colombia.png" width="25px"/> Colombia {#Colombia}
 PayU in Colombia allows you to integrate with most of the cash payments methods in Colombia. Furthermore, we support Codensa and Falabella.
 
 <div class="paymentMethods"></div>
@@ -76,7 +76,7 @@ PayU in Colombia allows you to integrate with most of the cash payments methods 
 | ![Logo](/assets/PaymentMethods/su-red.png)          | Su Red           | OTHER_CASH              | Cash           | Payment offices: PagaTodo,<br>Gana Gana, Gana, Acertemos,<br>Apuestas Cúcuta 75,<br>Su Chance, La Perla, Apuestas<br>Unidas, JER. |
 | ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards   |           |
 
-## <img src="/assets/Mexico.png" width="25px"/> Mexico
+## <img src="/assets/Mexico.png" width="25px"/> Mexico {#Mexico}
 For México, we support both MSI, and Installments and Promotions, refer to this [article]({{< ref "Promotions.md" >}}) for more information.
 
 <div class="paymentMethods"></div>
@@ -95,7 +95,7 @@ For México, we support both MSI, and Installments and Promotions, refer to this
 | ![Logo](/assets/PaymentMethods/visa.png)         | VISA                 | VISA                    | Credit Cards   |          |
 | ![Logo](/assets/PaymentMethods/visa.png)         | VISA                 | VISA_DEBIT              | Debit Cards    |          |
 
-## <img src="/assets/Panama.png" width="25px"/> Panama
+## <img src="/assets/Panama.png" width="25px"/> Panama {#Panama}
 <div class="paymentMethods"></div>
 
 |                                            | Payment Method   | paymentMethod parameter | Type         | Comments             |
@@ -103,7 +103,7 @@ For México, we support both MSI, and Installments and Promotions, refer to this
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard       | MASTERCARD              | Credit Cards |                      |
 | ![Logo](/assets/PaymentMethods/visa.png)   | VISA             | VISA                    | Credit Cards |                      |
 
-## <img src="/assets/Peru.png" width="25px"/> Peru
+## <img src="/assets/Peru.png" width="25px"/> Peru {#Peru}
 <div class="paymentMethods"></div>
 
 |                                                   | Payment Method   | paymentMethod parameter    | Type         | Comments   |

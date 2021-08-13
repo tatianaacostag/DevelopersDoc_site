@@ -601,7 +601,7 @@
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsargentinapng-width25px-argentina&#34;&gt;See the available Payment Methods for Argentina&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Argentina&#34;&gt;See the available Payment Methods for Argentina&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -2013,7 +2013,7 @@
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsargentinapng-width25px-argentina&#34;&gt;See the available Payment Methods for Argentina&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Argentina&#34;&gt;See the available Payment Methods for Argentina&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -3470,7 +3470,7 @@
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Credit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsbrasilpng-width25px-brazil&#34;&gt;See the available Payment Methods for Brazil&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Credit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;See the available Payment Methods for Brazil&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -4911,7 +4911,7 @@
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Set &lt;code&gt;PIX&lt;/code&gt; for this payment method. If you want to see other payment method, refer to &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsbrasilpng-width25px-brazil&#34;&gt;Payment Methods for Brazil&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;PIX&lt;/code&gt; for this payment method. If you want to see other payment method, refer to &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Payment Methods for Brazil&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -5708,7 +5708,7 @@
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsbrasilpng-width25px-brazil&#34;&gt;See the available Payment Methods for Brazil&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;See the available Payment Methods for Brazil&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -6574,7 +6574,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in Bank transfer. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsbrasilpng-width25px-brazil&#34;&gt;See the available Payment Methods for Brazil&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in Bank transfer. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;See the available Payment Methods for Brazil&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -8048,7 +8048,7 @@ Transactions with credit card using two-step flows are available under demand. C
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetschilepng-width25px-chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -9441,7 +9441,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetschilepng-width25px-chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10335,7 +10335,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method for Debit and prepaid cards. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetschilepng-width25px-chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method for Debit and prepaid cards. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -11842,7 +11842,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Credit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Credit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12885,7 +12885,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in cash or Bank Reference. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in cash or Bank Reference. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -13864,7 +13864,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in Bank transfer. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in Bank transfer. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -16281,7 +16281,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico&#34;&gt;See the available Payment Methods for Mexico&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;See the available Payment Methods for Mexico&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -17745,7 +17745,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico&#34;&gt;See the available Payment Methods for Mexico&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;See the available Payment Methods for Mexico&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -18675,7 +18675,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in Bank transfer. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico&#34;&gt;See the available Payment Methods for Mexico&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in Bank transfer. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;See the available Payment Methods for Mexico&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -19623,7 +19623,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Bank reference Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico&#34;&gt;See the available Payment Methods for Mexico&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Bank reference Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;See the available Payment Methods for Mexico&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -21088,7 +21088,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Credit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetspanamapng-width25px-panama&#34;&gt;See the available Payment Methods for Panama&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Credit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#panama&#34;&gt;See the available Payment Methods for Panama&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -22511,7 +22511,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsperupng-width25px-peru&#34;&gt;See the available Payment Methods for Peru&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Credit or Debit card Payment Method. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Peru&#34;&gt;See the available Payment Methods for Peru&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; paymentCountry&lt;/td&gt;
@@ -23841,7 +23841,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#img-srcassetsperupng-width25px-peru&#34;&gt;See the available Payment Methods for Peru&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in cash. &lt;a href=&#34;../../../docs/getting-started/select-your-payment-method.html#Peru&#34;&gt;See the available Payment Methods for Peru&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; paymentCountry&lt;/td&gt;
@@ -31723,7 +31723,26 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab61&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
-	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;created&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2020-11-13 12:40:45&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;accountId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;callbackUrl&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://wwww.callbackurltest.com/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Web Hook For Test Swagger&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;enabledEvents&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;TRANSFER_UPDATE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;TRANSFER_CREATION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;VALIDATION_RESULT&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ENABLED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;processingStatus&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;failureCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;bank_not_supported&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;failureMessages&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;There is no registered bank with code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -31750,8 +31769,99 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;/div&gt;
 &lt;h2 id=&#34;query-webhooks&#34;&gt;Query WebHooks&lt;/h2&gt;
-&lt;h3 id=&#34;query-webhooks-by-id&#34;&gt;Query webhooks by Id&lt;/h3&gt;
-&lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
+&lt;p&gt;You can consult WebHooks related to your account either by their id or by the account id. Both methods are explained below.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+You need to include two headers to use this method, refer to &lt;a href=&#34;../../../docs/integrations/api-integration/payouts-api.html#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;query-webhooks-by-id&#34;&gt;Query WebHooks by Id&lt;/h3&gt;
+&lt;p&gt;This method lets you consult the information of a specific WebHook using its id. To query a WebHook, use the following URL:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt;
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/v1.0/webhooks/{id}
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Where &lt;code&gt;{id}&lt;/code&gt; is the id of the WebHook you want to consult.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Response example&lt;/strong&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Response variables&lt;/summary&gt;
+&lt;br&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field name&lt;/th&gt;
+&lt;th&gt;Format&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Id of the WebHook deleted.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;created&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Creation date of the WebHook. Format &lt;code&gt;YYYY-DD-MM hh:mm:ss&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;Numeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;ID of the user account for each country associated with the merchant.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;callbackUrl&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;URL used that will receive the &lt;code&gt;POST&lt;/code&gt; notifications according to the events selected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Description of the WebHook created.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;enabledEvents&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;td&gt;Max:3&lt;/td&gt;
+&lt;td&gt;List of the events selected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;status&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;State of the WebHook. By default, the state of the new WebHook is &lt;code&gt;ENABLED&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;processingStatus&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;State of the last notification sent. By default, this state is &lt;code&gt;SUCCESS&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;failureCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Code of the error presented in the last invocation of the WebHook.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;failureMessages&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Error messages related the error presented in the last invocation of the WebHook.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/details&gt;
+&lt;br&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -31796,12 +31906,26 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab71&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
-	&lt;br&gt;
-&lt;p&gt;Request body:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Response body:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;created&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2020-11-13 12:40:45&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;accountId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;callbackUrl&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://wwww.callbackurltest.com/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Web Hook For Test Swagger&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;enabledEvents&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;TRANSFER_UPDATE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;TRANSFER_CREATION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;VALIDATION_RESULT&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ENABLED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;processingStatus&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;failureCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;bank_not_supported&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;failureMessages&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;There is no registered bank with code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -31817,12 +31941,7 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;tab-pane fade&#34; id=&#34;tab72&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
-	&lt;br&gt;
-&lt;p&gt;Request body:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Response body:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -31833,7 +31952,90 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;/div&gt;
 &lt;h3 id=&#34;query-webhooks-by-account&#34;&gt;Query webhooks by account&lt;/h3&gt;
-&lt;p&gt;The following are the request and response examples for this operation.&lt;/p&gt;
+&lt;p&gt;This method lets you consult the information of all the WebHooks created in your account. To query the WebHook list, use the following URL:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt;
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/v1.0/webhooks/account/{accountId}
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Where &lt;code&gt;{accountId}&lt;/code&gt; is the id of your account.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Response example&lt;/strong&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Response variables&lt;/summary&gt;
+&lt;br&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field name&lt;/th&gt;
+&lt;th&gt;Format&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Id of the WebHook deleted.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;created&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Creation date of the WebHook. Format &lt;code&gt;YYYY-DD-MM hh:mm:ss&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;Numeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;ID of the user account for each country associated with the merchant.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;callbackUrl&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;URL used that will receive the &lt;code&gt;POST&lt;/code&gt; notifications according to the events selected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Description of the WebHook created.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;enabledEvents&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;td&gt;Max:3&lt;/td&gt;
+&lt;td&gt;List of the events selected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;status&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;State of the WebHook. By default, the state of the new WebHook is &lt;code&gt;ENABLED&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;processingStatus&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;State of the last notification sent. By default, this state is &lt;code&gt;SUCCESS&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;failureCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Code of the error presented in the last invocation of the WebHook.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;failureMessages&lt;/td&gt;
+&lt;td&gt;List&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Error messages related the error presented in the last invocation of the WebHook.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/details&gt;
+&lt;br&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -31878,12 +32080,26 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab81&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
-	&lt;br&gt;
-&lt;p&gt;Request body:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Response body:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1f92a225-9559-4b7f-9739-e6bb27b8b838&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;created&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2020-11-13 12:40:45&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;accountId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;callbackUrl&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://wwww.callbackurltest.com/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Web Hook For Test Swagger&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;enabledEvents&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;TRANSFER_UPDATE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;TRANSFER_CREATION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;VALIDATION_RESULT&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;status&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ENABLED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;processingStatus&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;failureCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;bank_not_supported&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;failureMessages&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;There is no registered bank with code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -31899,12 +32115,7 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;tab-pane fade&#34; id=&#34;tab82&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
-	&lt;br&gt;
-&lt;p&gt;Request body:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Response body:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;

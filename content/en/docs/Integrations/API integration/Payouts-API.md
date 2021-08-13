@@ -565,7 +565,26 @@ Where `{id}` is the id of the WebHook you want to delete.
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
-
+{
+  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
+  "created": "2020-11-13 12:40:45",
+  "accountId": 1,
+  "callbackUrl": "https://wwww.callbackurltest.com/",
+  "description": "Web Hook For Test Swagger",
+  "enabledEvents": [
+    "TRANSFER_UPDATE",
+    "TRANSFER_CREATION",
+    "VALIDATION_RESULT"
+  ],
+  "status": "ENABLED",
+  "processingStatus": "SUCCESS",
+  "failureCode": "bank_not_supported",
+  "failureMessages": [
+    {
+      "There is no registered bank with code": 1
+    }
+  ]
+}
 ```
 {{< /tab >}}
 
@@ -577,37 +596,75 @@ Where `{id}` is the id of the WebHook you want to delete.
 {{< /tabs >}}
 
 ## Query WebHooks
+You can consult WebHooks related to your account either by their id or by the account id. Both methods are explained below. 
 
+{{% alert title="Note" color="info"%}}
 
-### Query webhooks by Id
-The following are the request and response examples for this operation.
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
+{{% /alert %}}
 
-Request body:
-```JSON
+### Query WebHooks by Id
+This method lets you consult the information of a specific WebHook using its id. To query a WebHook, use the following URL:
 
+```JAVA
+GET
+https://{env-api}.payulatam.com/v1.0/webhooks/{id}
 ```
 <br>
 
-Response body:
-```JSON
+Where `{id}` is the id of the WebHook you want to consult.
 
+**Response example**
+
+<details>
+<summary>Response variables</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description |
+|-|-|-|-|
+| id | Alphanumeric |  | Id of the WebHook deleted. |
+| created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
+| accountId | Numeric | | ID of the user account for each country associated with the merchant. |
+| callbackUrl | Alphanumeric | | URL used that will receive the `POST` notifications according to the events selected. |
+| description | Alphanumeric | | Description of the WebHook created. |
+| enabledEvents | List | Max:3 | List of the events selected. |
+| status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
+| processingStatus | Alphanumeric | 7 | State of the last notification sent. By default, this state is `SUCCESS`. |
+| failureCode | Alphanumeric | | Code of the error presented in the last invocation of the WebHook. |
+| failureMessages | List | | Error messages related the error presented in the last invocation of the WebHook. |
+
+</details>
+<br>
+
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+```JSON
+{
+  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
+  "created": "2020-11-13 12:40:45",
+  "accountId": 1,
+  "callbackUrl": "https://wwww.callbackurltest.com/",
+  "description": "Web Hook For Test Swagger",
+  "enabledEvents": [
+    "TRANSFER_UPDATE",
+    "TRANSFER_CREATION",
+    "VALIDATION_RESULT"
+  ],
+  "status": "ENABLED",
+  "processingStatus": "SUCCESS",
+  "failureCode": "bank_not_supported",
+  "failureMessages": [
+    {
+      "There is no registered bank with code": 1
+    }
+  ]
+}
 ```
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
-<br>
-
-Request body:
-```XML
-
-```
-<br>
-
-Response body:
 ```XML
 
 ```
@@ -615,34 +672,66 @@ Response body:
 {{< /tabs >}}
 
 ### Query webhooks by account
-The following are the request and response examples for this operation.
+This method lets you consult the information of all the WebHooks created in your account. To query the WebHook list, use the following URL:
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-Request body:
-```JSON
-
+```JAVA
+GET
+https://{env-api}.payulatam.com/v1.0/webhooks/account/{accountId}
 ```
 <br>
 
-Response body:
-```JSON
+Where `{accountId}` is the id of your account.
 
+**Response example**
+
+<details>
+<summary>Response variables</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description |
+|-|-|-|-|
+| id | Alphanumeric |  | Id of the WebHook deleted. |
+| created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
+| accountId | Numeric | | ID of the user account for each country associated with the merchant. |
+| callbackUrl | Alphanumeric | | URL used that will receive the `POST` notifications according to the events selected. |
+| description | Alphanumeric | | Description of the WebHook created. |
+| enabledEvents | List | Max:3 | List of the events selected. |
+| status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
+| processingStatus | Alphanumeric | 7 | State of the last notification sent. By default, this state is `SUCCESS`. |
+| failureCode | Alphanumeric | | Code of the error presented in the last invocation of the WebHook. |
+| failureMessages | List | | Error messages related the error presented in the last invocation of the WebHook. |
+
+</details>
+<br>
+
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+```JSON
+{
+  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
+  "created": "2020-11-13 12:40:45",
+  "accountId": 1,
+  "callbackUrl": "https://wwww.callbackurltest.com/",
+  "description": "Web Hook For Test Swagger",
+  "enabledEvents": [
+    "TRANSFER_UPDATE",
+    "TRANSFER_CREATION",
+    "VALIDATION_RESULT"
+  ],
+  "status": "ENABLED",
+  "processingStatus": "SUCCESS",
+  "failureCode": "bank_not_supported",
+  "failureMessages": [
+    {
+      "There is no registered bank with code": 1
+    }
+  ]
+}
 ```
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
-<br>
-
-Request body:
-```XML
-
-```
-<br>
-
-Response body:
 ```XML
 
 ```
