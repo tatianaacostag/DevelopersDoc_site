@@ -10,6 +10,12 @@ tags: ["subtopic"]
 
 For introductory terms, how to request this service and more information, refer to [Payouts]({{< ref "payouts.html" >}}).
 
+{{% alert title="Note" color="warning"%}}
+
+Service URL displayed here are not in sandbox or production environment yet. If you need to know when they will be available, contact your sales representative.
+
+{{% /alert %}}
+
 ## Configuring the authentication
 To use the methods to manage Payouts or WebHooks exposed by the Payouts service, you must include the `Authorization` and `PublicKey` headers:
 
@@ -58,7 +64,7 @@ https://{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiL
 
 **Response example:**
 
-{{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="1" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 {
@@ -67,11 +73,11 @@ https://{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiL
 ```
 {{< /tab >}}
 
-{{< tab tabNum="2" >}}
+<!--{{< tab tabNum="2" >}}
 ```XML
 
 ```
-{{< /tab >}}
+{{< /tab >}}-->
 {{< /tabs >}}
 
 ## Request payout
@@ -137,7 +143,7 @@ Both parameters can be found in your PayU module.
 | Field name | Format | Size | Description |
 |-|-|-|-|
 | totalSuccessful | Numeric |  | Number of payouts successfully created. |
-| totalFailed | Numeric |  |  | Number of payments that could not be created. |
+| totalFailed | Numeric |  | Number of payments that could not be created. |
 | failedItems | List |  | List of items that failed during processing. |
 | successfulItems | List |  | List of items that were successfully processed. This list includes the Payout ID and the Third party Id when you create a new one. |
 
@@ -149,7 +155,7 @@ If you want to update the information of a third party when sending the request,
 
 {{% /alert %}}
 
-{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="1" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -191,7 +197,7 @@ Response body:
 ```
 {{< /tab >}}
 
-{{< tab tabNum="2" >}}
+<!--{{< tab tabNum="2" >}}
 <br>
 
 Request body:
@@ -204,7 +210,7 @@ Response body:
 ```XML
 
 ```
-{{< /tab >}}
+{{< /tab >}}-->
 {{< /tabs >}}
 
 ## Update payout request
@@ -263,14 +269,14 @@ Where:
 | Field name | Format | Size | Description |
 |-|-|-|-|
 | totalSuccessful | Numeric |  | Number of payouts successfully processed. |
-| totalFailed | Numeric |  |  | Number of payments that could not be proccessed. |
+| totalFailed | Numeric |  | Number of payments that could not be processed. |
 | failedItems | List |  | List of items that failed during processing. |
 | successfulItems | List |  | List of items that were successfully processed. |
 
 </details>
 <br>
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="1" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -295,7 +301,7 @@ Response body:
 ```
 {{< /tab >}}
 
-{{< tab tabNum="2" >}}
+<!--{{< tab tabNum="2" >}}
 <br>
 
 Request body:
@@ -308,7 +314,7 @@ Response body:
 ```XML
 
 ```
-{{< /tab >}}
+{{< /tab >}}-->
 {{< /tabs >}}
 
 ## Cancel payout request
@@ -355,14 +361,14 @@ Where:
 | Field name | Format | Size | Description |
 |-|-|-|-|
 | totalSuccessful | Numeric |  | Number of payouts successfully processed. |
-| totalFailed | Numeric |  |  | Number of payments that could not be processed. |
+| totalFailed | Numeric |  | Number of payments that could not be processed. |
 | failedItems | List |  | List of items that failed during processing. |
 | successfulItems | List |  | List of items that were successfully processed. |
 
 </details>
 <br>
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="1" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -386,7 +392,7 @@ Response body:
 ```
 {{< /tab >}}
 
-{{< tab tabNum="2" >}}
+<!--{{< tab tabNum="2" >}}
 <br>
 
 Request body:
@@ -399,7 +405,7 @@ Response body:
 ```XML
 
 ```
-{{< /tab >}}
+{{< /tab >}}-->
 {{< /tabs >}}
 
 ## Create or Update a WebHook
@@ -455,7 +461,7 @@ https://{env-api}.payulatam.com//v1.0/webhooks
 | description | Alphanumeric | | Description of the WebHook created. |
 | enabledEvents | List | Max:3 | List of the events selected. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
-| processingStatus | Alphanumeric | 7 | State of the last notification sent. By default, this state is `SUCCESS`. |
+| processingStatus | Alphanumeric | 7 | State of creation or update of the WebHook. By default, this state is `SUCCESS`. |
 
 </details>
 
@@ -465,7 +471,7 @@ To update a WebHook, send the `id` parameter and the values to be changed only.
 
 {{% /alert %}}
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="1" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -505,7 +511,7 @@ Response body:
 ```
 {{< /tab >}}
 
-{{< tab tabNum="2" >}}
+<!--{{< tab tabNum="2" >}}
 <br>
 
 Request body:
@@ -518,7 +524,7 @@ Response body:
 ```XML
 
 ```
-{{< /tab >}}
+{{< /tab >}}-->
 {{< /tabs >}}
 
 ## Delete a WebHook
@@ -557,12 +563,12 @@ Where `{id}` is the id of the WebHook you want to delete.
 | description | Alphanumeric | | Description of the WebHook created. |
 | enabledEvents | List | Max:3 | List of the events selected. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
-| processingStatus | Alphanumeric | 7 | State of the last notification sent. By default, this state is `SUCCESS`. |
+| processingStatus | Alphanumeric | 7 | State of deletion of the WebHook. By default, this state is `SUCCESS`. |
 
 </details>
 <br>
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="1" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 {
@@ -588,11 +594,11 @@ Where `{id}` is the id of the WebHook you want to delete.
 ```
 {{< /tab >}}
 
-{{< tab tabNum="2" >}}
+<!--{{< tab tabNum="2" >}}
 ```XML
 
 ```
-{{< /tab >}}
+{{< /tab >}}-->
 {{< /tabs >}}
 
 ## Query WebHooks
@@ -631,14 +637,14 @@ Where `{id}` is the id of the WebHook you want to consult.
 | description | Alphanumeric | | Description of the WebHook created. |
 | enabledEvents | List | Max:3 | List of the events selected. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
-| processingStatus | Alphanumeric | 7 | State of the last notification sent. By default, this state is `SUCCESS`. |
-| failureCode | Alphanumeric | | Code of the error presented in the last invocation of the WebHook. |
-| failureMessages | List | | Error messages related the error presented in the last invocation of the WebHook. |
+| processingStatus | Alphanumeric | 7 | State of query. By default, this state is `SUCCESS`. |
+| failureCode | Alphanumeric | | Code of the error presented during the query of a WebHook. |
+| failureMessages | List | | Error messages related the error presented during the query of a WebHook. |
 
 </details>
 <br>
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="1" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 {
@@ -664,11 +670,11 @@ Where `{id}` is the id of the WebHook you want to consult.
 ```
 {{< /tab >}}
 
-{{< tab tabNum="2" >}}
+<!--{{< tab tabNum="2" >}}
 ```XML
 
 ```
-{{< /tab >}}
+{{< /tab >}}-->
 {{< /tabs >}}
 
 ### Query webhooks by account
@@ -698,14 +704,14 @@ Where `{accountId}` is the id of your account.
 | description | Alphanumeric | | Description of the WebHook created. |
 | enabledEvents | List | Max:3 | List of the events selected. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
-| processingStatus | Alphanumeric | 7 | State of the last notification sent. By default, this state is `SUCCESS`. |
-| failureCode | Alphanumeric | | Code of the error presented in the last invocation of the WebHook. |
-| failureMessages | List | | Error messages related the error presented in the last invocation of the WebHook. |
+| processingStatus | Alphanumeric | 7 | State of query. By default, this state is `SUCCESS`. |
+| failureCode | Alphanumeric | | Code of the error presented during the query of a WebHook. |
+| failureMessages | List | | Error messages related the error presented during the query of a WebHook. |
 
 </details>
 <br>
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="1" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 {
@@ -731,9 +737,9 @@ Where `{accountId}` is the id of your account.
 ```
 {{< /tab >}}
 
-{{< tab tabNum="2" >}}
+<!--{{< tab tabNum="2" >}}
 ```XML
 
 ```
-{{< /tab >}}
+{{< /tab >}}-->
 {{< /tabs >}}
