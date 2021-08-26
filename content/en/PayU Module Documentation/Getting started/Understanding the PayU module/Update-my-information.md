@@ -1,0 +1,95 @@
+---
+title: "Update my information"
+linkTitle: "Update my information"
+date: 2021-07-22T15:30:25-05:00
+type: docs
+Description: >
+   Learn how to change your password, update your user preferences, and request the change of your Bank information
+weight: 10
+tags: ["subtopic"]
+---
+{{% alert title="Note" color="info"%}}
+Once your account has been validated and activated, your contact, business, and sales information cannot be updated using the PayU module. If you need to update this information, contact sac@payu.com.
+{{% /alert %}}
+
+## Change password
+Follow these steps to change your current password.
+
+1. At the top right corner, click the **▾** symbol next to your email address to display the available user settings.<br>Click _**My profile**_.
+
+![PrintScreen](/assets/UserPreferences/UserPreferences_01.png)
+
+2. In the _**My profile**_ screen, click _**Change password**_.
+
+![PrintScreen](/assets/UserPreferences/UserPreferences_02.png)
+
+3. The _**Change password**_ panel appears. You must enter here the current password and enter the new password twice.
+
+![PrintScreen](/assets/UserPreferences/UserPreferences_03.png)
+
+4. Once finish, click _**Save changes**_ at the footer of the section. Otherwise, click _**Discard changes**_ to close the _**Change password**_ panel and discard the change of your password.
+
+## Update your user preferences
+In this section, you can change the display settings of the information displayed in your module, such as the date format, time zone of your country, the currency format and the display language.
+
+To do this, click the **▾** symbol next to your email address to display the available user settings. Then, click _**My profile**_.
+
+![PrintScreen](/assets/UserPreferences/UserPreferences_01.png)
+
+In the _**My profile**_ screen, locate the _**Preferences**_ panel.
+
+<img src="/assets/UserPreferences/UserPreferences_04.png" alt="PrintScreen" width="40%"/><br>
+
+At the top of the panel, you see an example of the current date and time of the time zone selected and displayed in the format your choose.
+
+### Date format
+Change the format in which you want to display the dates in your PayU Module,
+
+<img src="/assets/UserPreferences/UserPreferences_05.png" alt="PrintScreen" width="40%"/><br>
+
+You can use any of the following formats:
+
+| Format      | English Format | Example<br>_August 24, 2021_ |
+|-------------|----------------|------------------------------|
+| dd/mm/aaaa  | dd/mm/yyyy     | 24/08/2021                   |
+| mm/dd/aaaa  | mm/dd/yyyy     | 08/24/2021                   |
+| aaaa/mm/dd  | yyyy/mm/dd     | 2021/08/24                   |
+| aaaa/mmm/dd | yyyy/mmm/dd    | 2021/Aug/24                  |
+| dd-mm-aaaa  | dd-mm-yyyy     | 24-08-2021                   |
+| mm-dd-aaaa  | mm-dd-yyyy     | 08-24-2021                   |
+| aaaa-mm-dd  | yyyy-mm-dd     | 2021-08-24                   |
+| aaaa-mmm-dd | yyyy-mmm-dd    | 2021-Aug-24                  |
+
+### Time Zone 
+Change the time zone of the country in which you want to display the transaction’s information.
+
+<img src="/assets/UserPreferences/UserPreferences_06.png" alt="PrintScreen" width="40%"/>
+
+### Currency format
+Change the display format of the currency values shown in your PayU module.
+
+<img src="/assets/UserPreferences/UserPreferences_07.png" alt="PrintScreen" width="40%"/>
+
+### Language
+Change the language of your PayU module.
+
+<img src="/assets/UserPreferences/UserPreferences_08.png" alt="PrintScreen" width="40%"/>
+
+{{% alert title="Note" color="info"%}}
+After changing any of the user settings, do not forget to click _**Save changes**_ button at the footer of the section to apply the changes.
+{{% /alert %}}
+
+<!--## Update business and sales information-->
+
+## Request the change of your bank account 
+Once your account has been verified by our Risk team, you can request the update of your bank information. Due to security reasons, the update of bank information must be verified again as when you create the account.
+
+To request the update of your Bank account, expand _**Transfers**_ option at the left menu. Then, select _**Edit bank details**_.
+
+![PrintScreen](/assets/BankInformation/BankInformation_01.png)
+
+The _**Bank information option**_ opens, click the _**Edit**_ link to enable the fields of the bank account.
+
+![PrintScreen](/assets/BankInformation/BankInformation_02.png)
+
+
