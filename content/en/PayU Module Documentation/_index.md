@@ -85,4 +85,4 @@ This is the most common case when using the PayU module. A shop is legally const
 
 <img src="/assets/MerchantPanel/MerchantPanel_Concepts3.png" width="50%"/><br>
 
-* The PayU module for this shop has a single account and a single merchant, where all their users can access according to the profile they have.
+* The PayU module for this shop has a single account and a single merchant, where all its users can access according to the profile they have.
