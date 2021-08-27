@@ -92,4 +92,27 @@ The _**Bank information option**_ opens, click the _**Edit**_ link to enable the
 
 ![PrintScreen](/assets/BankInformation/BankInformation_02.png)
 
+Provide the information related to your Bank Account such as: country, bank, account number, etc. 
 
+![PrintScreen](/assets/BankInformation/BankInformation_03.png)
+
+{{% alert title="Considerations" color="info"%}}
+* The information available depends on the country of your account.
+* If the Bank account is foreign, you must provide the information of the **Intermediary bank** such as its name, the _ABA code_, and the _Swift code_.
+{{% /alert %}}
+
+Along with the information you provide, you need to attach a certification issued by your bank to proof the veracity and authenticity of the information. 
+
+![PrintScreen](/assets/BankInformation/BankInformation_04.png)
+
+When finish, click _**Save changes**_. When the information is submitted, you are prompted about the result of the operation.
+
+<img src="/assets/BankInformation/BankInformation_05.png" alt="PrintScreen" width="50%"/><br>
+
+Furthermore, you receive an email informing the request and providing a ticket number.
+
+The procedure to validate your account take up two working days. In the meantime, the information you provide is loaded in the **_Bank account under analysis_** panel.
+
+![PrintScreen](/assets/BankInformation/BankInformation_06.png)
+
+As soon as your bank account information has been validated by our Risk team, you can transfer to it the funds collected in your PayU account. While the new account is under validation, the transfers you make are sent to the former bank account.

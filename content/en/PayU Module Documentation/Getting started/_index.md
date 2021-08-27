@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+linkTitle: "Getting Started"
 date: 2021-03-31T08:28:16-05:00
 type: docs
 Description: >
