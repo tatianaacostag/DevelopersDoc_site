@@ -3,7 +3,7 @@ title: "Payment Coupons"
 linkTitle: "Payment Coupons"
 date: 2021-04-07T09:27:50-05:00
 Description: >
-  Through the _cash charges_ module, you can generate payment coupons with the necessary information to let your clients make cash payments as many times as they need in the available payment points.
+  Through the _Cash charges_ module, you can generate payment coupons with the necessary information to let your clients make cash payments as many times as they need in the available payment points.
 weight: 70
 ---
 

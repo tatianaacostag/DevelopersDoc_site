@@ -8,8 +8,7 @@ weight: 70
 ---
 
 {{% alert title="Important" color="warning"%}}
-PayU offers the Payouts service as an integration via API. It is not supported to register Payouts nor Third parties using the PayU module.
-Currently, Payouts is available in Colombia.
+PayU offers the Payouts service as an integration via API. It is not supported to register Payouts nor Third parties using the PayU module. Currently, Payouts is available in Colombia.
 {{% /alert %}}
 
 Payouts is an integration service available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.
