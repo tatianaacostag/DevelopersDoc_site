@@ -2,8 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/payu-module-documentation/user-and-profile-management/user-management.html</loc>
+    <lastmod>2021-09-01T11:45:31-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html</loc>
+    <lastmod>2021-08-27T09:28:52-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/payu-module-documentation/getting-started/log-in.html</loc>
-    <lastmod>2021-08-13T15:33:36-05:00</lastmod>
+    <lastmod>2021-08-26T08:32:18-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -33,7 +43,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/payu-module-documentation/getting-started.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-08-27T09:28:52-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -49,6 +59,21 @@
   </url><url>
     <loc>/docs/services/payments.html</loc>
     <lastmod>2021-08-09T17:53:18-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html</loc>
+    <lastmod>2021-09-01T11:45:31-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/user-and-profile-management.html</loc>
+    <lastmod>2021-08-30T10:41:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html</loc>
+    <lastmod>2021-08-30T10:41:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -68,7 +93,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-brazil.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-08-27T09:28:52-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -127,8 +152,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/payu-module-documentation/getting-started/update-my-information.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <loc>/payu-module-documentation/getting-started/understanding-the-payu-module.html</loc>
+    <lastmod>2021-09-01T11:45:31-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -243,7 +268,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payouts-api.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-08-19T11:25:16-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -263,7 +288,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/services/payouts.html</loc>
-    <lastmod>2021-08-13T15:33:36-05:00</lastmod>
+    <lastmod>2021-08-30T10:41:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -278,7 +303,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/tools/payment-coupons.html</loc>
-    <lastmod>2021-07-07T18:34:28-05:00</lastmod>
+    <lastmod>2021-08-26T08:32:18-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -303,7 +328,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/payu-module-documentation.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-08-26T08:33:11-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
