@@ -905,7 +905,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </details>
 
 #### Considerations
-* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is seven days after the current date at 12:00 pm.
+* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is seven days after the current date at 12:00 pm.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * You must set a response URL in the parameter `NETWORK_CALLBACK_URL` inside `transaction.extraParameters`; this URL redirects the user back to your page after they finish the online payment procedure.
 * You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the `BANK_URL` parameter in the response.
 
