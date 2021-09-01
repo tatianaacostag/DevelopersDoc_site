@@ -198,7 +198,7 @@ Request body:
                "street1": "Av Centenario 837",
                "street2": "5555487",
                "city": "San Isidro",
-               "state": "Buenos Aires",
+               "state": "AR-B",
                "country": "AR",
                "postalCode": "000000",
                "phone": "7563126"
@@ -208,7 +208,7 @@ Request body:
             "street1": "Av Centenario 837",
             "street2": "5555487",
             "city": "San Isidro",
-            "state": "Buenos Aires",
+            "state": "AR-B",
             "country": "AR",
             "postalCode": "0000000",
             "phone": "7563126"
@@ -224,7 +224,7 @@ Request body:
             "street1": "Av Centenario 837",
             "street2": "125544",
             "city": "San Isidro",
-            "state": "Buenos Aires",
+            "state": "AR-B",
             "country": "AR",
             "postalCode": "000000",
             "phone": "7563126"
@@ -322,7 +322,7 @@ Request body:
                <street1>Av Centenario 837</street1>
                <street2>5555487</street2>
                <city>San Isidro</city>
-               <state>Buenos Aires</state>
+               <state>AR-B</state>
                <country>AR</country>
                <postalCode>000000</postalCode>
                <phone>7563126</phone>
@@ -332,7 +332,7 @@ Request body:
             <street1>Av Centenario 837</street1>
             <street2>5555487</street2>
             <city>San Isidro</city>
-            <state>Buenos Aires</state>
+            <state>AR-B</state>
             <country>AR</country>
             <postalCode>0000000</postalCode>
             <phone>7563126</phone>
@@ -348,7 +348,7 @@ Request body:
             <street1>Av Centenario 837</street1>
             <street2>5555487</street2>
             <city>San Isidro</city>
-            <state>Buenos Aires</state>
+            <state>AR-B</state>
             <country>AR</country>
             <postalCode>000000</postalCode>
             <phone>7563126</phone>
@@ -553,7 +553,7 @@ Request body:
                "street1": "Av Centenario 837",
                "street2": "5555487",
                "city": "San Isidro",
-               "state": "Buenos Aires",
+               "state": "AR-B",
                "country": "AR",
                "postalCode": "000000",
                "phone": "7563126"
@@ -563,7 +563,7 @@ Request body:
             "street1": "Av Centenario 837",
             "street2": "5555487",
             "city": "San Isidro",
-            "state": "Buenos Aires",
+            "state": "AR-B",
             "country": "AR",
             "postalCode": "0000000",
             "phone": "7563126"
@@ -579,7 +579,7 @@ Request body:
             "street1": "Av Centenario 837",
             "street2": "5555487",
             "city": "San Isidro",
-            "state": "Buenos Aires",
+            "state": "AR-B",
             "country": "AR",
             "postalCode": "000000",
             "phone": "7563126"
@@ -677,7 +677,7 @@ Request body:
                <street1>Av Centenario 837</street1>
                <street2>5555487</street2>
                <city>San Isidro</city>
-               <state>Buenos Aires</state>
+               <state>AR-B</state>
                <country>AR</country>
                <postalCode>000000</postalCode>
                <phone>7563126</phone>
@@ -687,7 +687,7 @@ Request body:
             <street1>Av Centenario 837</street1>
             <street2>5555487</street2>
             <city>San Isidro</city>
-            <state>Buenos Aires</state>
+            <state>AR-B</state>
             <country>AR</country>
             <postalCode>0000000</postalCode>
             <phone>7563126</phone>
@@ -703,7 +703,7 @@ Request body:
             <street1>Av Centenario 837</street1>
             <street2>5555487</street2>
             <city>San Isidro</city>
-            <state>Buenos Aires</state>
+            <state>AR-B</state>
             <country>AR</country>
             <postalCode>000000</postalCode>
             <phone>7563126</phone>
@@ -942,7 +942,7 @@ Request body:
                "street1": "Av Centenario 837",
                "street2": "5555487",
                "city": "San Isidro",
-               "state": "Buenos Aires",
+               "state": "AR-B",
                "country": "AR",
                "postalCode": "000000",
                "phone": "7563126"
@@ -952,7 +952,7 @@ Request body:
             "street1": "Av Centenario 837",
             "street2": "5555487",
             "city": "San Isidro",
-            "state": "Buenos Aires",
+            "state": "AR-B",
             "country": "AR",
             "postalCode": "0000000",
             "phone": "7563126"
@@ -968,7 +968,7 @@ Request body:
             "street1": "Av Centenario 837",
             "street2": "125544",
             "city": "San Isidro",
-            "state": "Buenos Aires",
+            "state": "AR-B",
             "country": "AR",
             "postalCode": "000000",
             "phone": "7563126"
@@ -1059,7 +1059,7 @@ Request body:
                <street1>Av Centenario 837</street1>
                <street2>5555487</street2>            
                <city>San Isidro</city>
-               <state>Buenos Aires</state>               
+               <state>AR-B</state>               
                <country>AR</country>
                 <postalCode>000000</postalCode>
                <phone>7563126</phone>
@@ -1069,7 +1069,7 @@ Request body:
             <street1>Av Centenario 837</street1>
                <street2>5555487</street2>            
                <city>San Isidro</city>
-               <state>Buenos Aires</state>               
+               <state>AR-B</state>               
                <country>AR</country>
                 <postalCode>000000</postalCode>
                <phone>7563126</phone>
@@ -1080,7 +1080,7 @@ Request body:
             <street1>Av Centenario 837</street1>
             <street2>5555487</street2>            
             <city>San Isidro</city>
-            <state>Buenos Aires</state>               
+            <state>AR-B</state>               
             <country>AR</country>
             <postalCode>000000</postalCode>
             <phone>7563126</phone>
