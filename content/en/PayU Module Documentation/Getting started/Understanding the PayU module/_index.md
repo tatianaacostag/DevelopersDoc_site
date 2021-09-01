@@ -24,6 +24,10 @@ PayU module is divided in four main groups:
 
 ![PrintScreen](/assets/MerchantPanel/MerchantPanel_01.png)
 
+{{% alert title="Note" color="info"%}}
+The options displayed in this article depends on the profile you have to access each account.
+{{% /alert %}}
+
 ### 1. Account options 
 This panel has the options required to manage the accounts associated to the current merchant. In this panel you find the following options:
 
@@ -32,10 +36,11 @@ This panel has the options required to manage the accounts associated to the cur
 | Option | Sub option | Available in | Description |
 |---|---|:---:|---|
 | Merchant ID |  | <img src="/assets/World.png" width="20px"/> | ID number of your shop in PayU’s system. This ID is required when you want to use [Integrations](/docs/integrations.html).  |
-| Account | Account information | <img src="/assets/World.png" width="20px"/> | Displays the name and ID of the selected account.<br>This option also lets you to change the account and perform operations related to it. Click the **▾** symbol to find these options or change the account.<br><br><img src="/assets/MerchantPanel/MerchantPanel_02.png" alt="PrintScreen" width="40%"/> |
+| Account | Account information | <img src="/assets/World.png" width="20px"/> | Displays the name and ID of the selected account.<br>This option also lets you to change the account and perform operations related to it. Click the **▾** symbol to find these options or switch the account.<br><br><img src="/assets/MerchantPanel/MerchantPanel_02.png" alt="PrintScreen" width="40%"/> |
 |  | My business information | <img src="/assets/World.png" width="20px"/> | Shows the location, main contact information of your business. Also, this option shows the people associated with your business. |
 |  | Your sales information | <img src="/assets/World.png" width="20px"/> | Shows the information of how you make your sales, what you sell, the logo of your shop, delivery information, how you offer your products or services and how your clients can contact you. |
 |  | Bank information | <img src="/assets/World.png" width="20px"/> | Shows the bank account and the Intermediary bank where you want to transfers the funds collected for this account. |
+|  | Accounts created | <img src="/assets/World.png" width="20px"/> | Shows the list of account available in your merchant. |
 | Balance available | | <img src="/assets/World.png" width="20px"/> | Displays the balance available in the selected account. |
 | Home | | <img src="/assets/World.png" width="20px"/> | Displays the welcome page of the PayU module. For more information, refer to [Home]({{< ref "#home-page" >}}) page. |
 | Transactions | Sales report | <img src="/assets/World.png" width="20px"/> | Review the details of payments received, including the most used payment methods and frequent clients. |
@@ -62,9 +67,9 @@ This option allows you to manage users, permissions, profiles and the technical 
 | Option | Available in | Description |
 |---|:---:|---|
 | Asobancaria | <img src="/assets/Colombia.png" width="20px"/> | Allows you to configure how Payu generates your Asobancaria reports are generated to facilitate reconciliation with your banks.  |
-| User management | <img src="/assets/World.png" width="20px"/> | Allows you to grant access to your team members so they can collect payments online or check information about your payments.  |
-| Permissions and profiles | <img src="/assets/World.png" width="20px"/> | Allows you to create custom profiles with specific permissions.<br>In this section, you can also query the default permission included in the PayU Module. |
-| Technical configuration | <img src="/assets/World.png" width="20px"/> | In this option, you can find the variables required to integrate PayU with your Web page. Furthermore, you can configure the notifications of processed payments and Disputes. For more information, refer to [Technical configuration]({{< ref"Technical-configuration.md" >}}) |
+| User management | <img src="/assets/World.png" width="20px"/> | Allows you to grant access to your team members so they can collect payments online or check information about your payments. For more information, refer to [User management]({{< ref"User-management.md" >}}). |
+| Permissions and profiles | <img src="/assets/World.png" width="20px"/> | Allows you to create custom profiles with specific permissions.<br>In this section, you can also query the default permission included in the PayU Module. For more information, refer to [Profile and permission management]({{< ref"Profile-and-permissions-management.md" >}}). |
+| Technical configuration | <img src="/assets/World.png" width="20px"/> | In this option, you can find the variables required to integrate PayU with your Web page. Furthermore, you can configure the notifications of processed payments and Disputes. For more information, refer to [Technical configuration]({{< ref"Technical-configuration.md" >}}). |
 
 #### User settings
 This option allows you to manage your profile. In the main view of this option, you find your email, your current profile in the PayU module (for the current account) and the account Id; click the **▾** symbol to display the available user settings.
@@ -100,10 +105,10 @@ The footer provides the phone number to contact us and the link to the _**terms 
 
 The following are the phone numbers and contact time:
 
-* <img src="/assets/Argentina.png" width="25px"/> (+5411) 598-42132 > Mon - Fri 09:00 - 22:00 (UTC -3:00)
-* <img src="/assets/Brasil.png" width="25px"/> (+5511) 4130-5311 > Mon - Fri 09h to 18h / Sat 09h to 15h - Brasilia Time Zone (UTC -3:00)
+* <img src="/assets/Argentina.png" width="25px"/> (+5411) 598 42132 > Mon - Fri 09:00 - 22:00 (UTC -3:00)
+* <img src="/assets/Brasil.png" width="25px"/> (+5511) 4130 5311 > Mon - Fri 09h to 18h / Sat 09h to 15h - Brasilia Time Zone (UTC -3:00)
 * <img src="/assets/Chile.png" width="25px"/> (+562) 258-13949 > Mon - Fri 8:00 - 21:00 Chilean time
-* <img src="/assets/Colombia.png" width="25px"/> (+571) 654-0721 > Mon - Fri 7:00 - 20:00 Colombian time (UTC -5:00)
+* <img src="/assets/Colombia.png" width="25px"/> (+57) 601 654 0721 > Mon - Fri 7:00 - 20:00 Colombian time (UTC -5:00)
 * <img src="/assets/Mexico.png" width="25px"/> (+5255) 474 11439 > Mon - Fri 7:00 - 20:00 CDMX time
-* <img src="/assets/Panama.png" width="25px"/> (+507) 836-5577 > Mon - Fri 7:00 - 20:00 Colombian time (UTC -5:00)
-* <img src="/assets/Peru.png" width="25px"/> (+511) 708-5381 > Mon - Fri 7:00 - 20:00 Peruvian time (UTC -5:00)
+* <img src="/assets/Panama.png" width="25px"/> (+507) 836 5577 > Mon - Fri 7:00 - 20:00 Colombian time (UTC -5:00)
+* <img src="/assets/Peru.png" width="25px"/> (+511) 708 5381 > Mon - Fri 7:00 - 20:00 Peruvian time (UTC -5:00)

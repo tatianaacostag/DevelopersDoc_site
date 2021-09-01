@@ -55,6 +55,11 @@ ol, ul, dl {
     color: hsl(69, 93%, 40%)
 }
 
+::marker {
+   color: #A6C307;
+   font-weight: bold;
+}
+
 .td-content .alert:not(:first-child) {
     color: hsl(0, 0%, 50%);
     font-weight: 400;
