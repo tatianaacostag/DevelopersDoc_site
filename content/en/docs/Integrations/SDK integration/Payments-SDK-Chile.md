@@ -581,7 +581,7 @@ This method lets you process the payments in cash of your customers. To integrat
 <img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
 
 ### Considerations
-* The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven days after the current date at 12:00 pm.
+* The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven days after the current date at 12:00 pm.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * You must set a response URL in the parameter `NETWORK_CALLBACK_URL` in the request; this URL redirects the user back to your page after they finish the online payment procedure.
 * You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the `BANK_URL` parameter in the response.
 
