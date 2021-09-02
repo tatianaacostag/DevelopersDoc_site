@@ -8,7 +8,7 @@ weight: 50
 tags: ["subtopic"]
 ---
 
-This sections explains how to integrate using [Promotions]({{< ref"Promotions-API#promotions" >}}) or using [MSI]({{< ref "Promotions-API#months-without-installments-msi---meses-sin-intereses" >}})(Only Available for Mexico).
+This sections explains how to integrate using [Promotions]({{< ref"Promotions-API#promotions" >}}) or using [MSI]({{< ref "Promotions-API#msi" >}}) (Only Available for Mexico).
 
 ## Promotions
 This feature lets you consult via API, the promotions in force, their characteristics and further information you want to present to the customers.
@@ -1064,7 +1064,7 @@ Once you have selected the transaction, you need to include the promotion ID an 
 
 To learn how to include these extra parameters, refer to the Payments API for [Argentina]({{< ref "Payments-API-Argentina.md#submit-transaction-with-credit-or-debit-card" >}}) and [Mexico]({{< ref "Payments-API-Mexico.md#submit-transaction-with-credit-or-debit-card" >}}).
 
-## Months Without Installments (MSI - Meses Sin Intereses)
+## Months Without Interests (MSI - Meses Sin Intereses){#msi}
 If your account is in Mexico, you can offer to your customers the option to pay in a determined number of interest-free installments. If you want to enable this feature, contact your sale representative.
 
 ### Considerations
@@ -1079,14 +1079,13 @@ If your account is in Mexico, you can offer to your customers the option to pay 
 * When using MSI, always display the phrase **"PAGOS DIFERIDOS"** during the payment process.
 
 ### Variables for MSI
-To use MSI, you need to include the number of months and the card issuer bank in the `transaction.monthsWithoutInterest` parameter in the request:
+To use MSI, you need to include the number of months as an extra parameter:
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
-"monthsWithoutInterest": {
-    "months": "Number of months",
-    "bank": "Card issuer bank"
+"extraParameters": {
+    "INSTALLMENTS_NUMBER": (Number of months)
 }
 ```
 
@@ -1094,10 +1093,12 @@ To use MSI, you need to include the number of months and the card issuer bank in
 
 {{< tab tabNum="2" >}}
 ```XML
-<monthsWithoutInterest>
-    <months>Number of months</months>
-    <bank>Card issuer bank</bank>
-</monthsWithoutInterest>
+<extraParameters>
+    <entry>
+        <string>INSTALLMENTS_NUMBER</string>
+        <string>Number of months</string>
+    </entry>
+</extraParameters>
 ```
 {{< /tab >}}
 {{< /tabs >}}
