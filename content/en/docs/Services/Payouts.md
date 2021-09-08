@@ -107,7 +107,7 @@ You can configure a WebHook for one or more of the following events:
 * **Transfer update**: sends a notification when an update is requested for an existing payout.
 * **Validation result**: sends a notification when the validation is completed with its result.
 
-To learn how to create WebHooks, refer to [this article]({{< ref "payouts-api.md#create-a-webhook" >}}).
+To learn how to create WebHooks, refer to [this article]({{< ref "payouts-api.md#create-or-update-a-webhook" >}}).
 
 ## What's next?
 The integration with this feature fo is performed using [API integrations]({{< ref "payouts-api.html" >}}).

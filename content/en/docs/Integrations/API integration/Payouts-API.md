@@ -121,7 +121,8 @@ Both parameters can be found in your PayU module.
 | transfer > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
 | transfer > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfer > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > bankCode | Numeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfer > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. | No |
+| transfer > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfer > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfer > bankAccount > documentNumber | Alphanumeric | | Identification number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfer > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
@@ -249,7 +250,8 @@ Where:
 | id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes | 
 | supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul> | No |
 | accountNumber | Alphanumeric | 15 | Bank account number of the third party. | No |
-| bankCode | Numeric | 2 | Set `CC` for Current account and `CA` for Saving account. | No |
+| bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. | No |
+| accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account. | No |
 | country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2. | No |
 | documentNumber | Alphanumeric | | Identification number of the third party. | No |
 | documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
