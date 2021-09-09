@@ -116,22 +116,23 @@ Both parameters can be found in your PayU module.
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| transfer > value | Numeric | | Amount to be transfer from yor funds. The currency of this amount is the one configured in your PayU account | Yes |
-| transfer > bankAccount | | | This object has the information of the bank account of the third party that will receive the payment.<br>The third party can be existing or new. | Yes |
-| transfer > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
-| transfer > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. | No |
-| transfer > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > documentNumber | Alphanumeric | | Identification number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. Format `YYYY/MM/DD`<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > fullName | Alphanumeric |  | Full name of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. Format `YYYY/MM/DD`<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfer > bankAccount > state| Alphanumeric |  | State of the Bank account. Set `ACTIVE` when you are creating a new third party. | No |
-| transfer > bankAccount > merchantId | Numeric | | Internal identifier in your system of the third party. | No |
-| transfer > description | Alphanumeric | | Additional information of the payout. | No |
+| transfers | List | | List of the transfers you want to create. | Yes |
+| transfers[n] > value | Numeric | | Amount to be transfer from yor funds. The currency of this amount is the one configured in your PayU account | Yes |
+| transfers[n] > bankAccount | | | This object has the information of the bank account of the third party that will receive the payment.<br>The third party can be existing or new. | Yes |
+| transfers[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
+| transfers[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. | No |
+| transfers[n] > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. Format `YYYY/MM/DD`<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. Format `YYYY/MM/DD`<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. Set `ACTIVE` when you are creating a new third party. | No |
+| transfers[n] > bankAccount > merchantId | Numeric | | Internal identifier in your system of the third party. | No |
+| transfers[n] > description | Alphanumeric | | Additional information of the payout. | No |
 <!--additionalData-->
 
 </details>
@@ -145,16 +146,39 @@ Both parameters can be found in your PayU module.
 |-|-|-|-|
 | totalSuccessful | Numeric |  | Number of payouts successfully created. |
 | totalFailed | Numeric |  | Number of payments that could not be created. |
+| successfulItems | List |  | List of items that were successfully processed. |
+| successfulItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For successful transactions, the value is ´SUCCESS´ |
+| successfulItems[n] > paymentOrderId | Alphanumeric | 36 | Id generated for the payout request. Use this id to either update or cancel the request. |
+| successfulItems[n] > value | Numeric | | Amount of the request. |
+| successfulItems[n] > bankAccount | | | This object has the information of the bank account that will receive the payment. |
+| successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. For successful registrations, the value is ´SUCCESS´. |
+| successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
+| successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the third party. |
+| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party. |
+| successfulItems[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. |
+| successfulItems[n] > bankAccount > bankName | Alphanumeric | | Bank name of the third party. |
+| successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the third party. |
+| successfulItems[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account. |
+| successfulItems[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party. |
+| successfulItems[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. |
+| successfulItems[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. |
+| successfulItems[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party. |
+| successfulItems[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. |
+| successfulItems[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. |
+| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
 | failedItems | List |  | List of items that failed during processing. |
-| successfulItems | List |  | List of items that were successfully processed. This list includes the Payout ID and the Third party Id when you create a new one. |
+| failedItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For failed transactions, the value is ´FAILED´. |
+| failedItems[n] > failureMessages | List | | List of error messages that generated the failure. |
+| failedItems[n] > value | Numeric | | Amount of the request. |
+| failedItems[n] > bankAccount | | | This object has the information of the bank account that failed. This element has the same parameters than the object `successfulItems[n].bankAccount`. |
+| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
 
 </details>
+<br>
 
-{{% alert title="Note" color="info"%}}
-
-If you want to update the information of a third party when sending the request, send the `transfer.bankAccount.id` along with the information you want to update. Otherwise, you need to use the method to update the [payout request]({{< ref "Payouts-API.md#update-payout-request" >}}).
-
-{{% /alert %}}
+The following request sends three payouts: 
+* The first and the second payout are requested for unregistered third parties. The second one fails because the parameter `bankCode` has an invalid value.
+* The third payout is for a registered third party.
 
 {{< tabs tabTotal="1" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -165,22 +189,45 @@ Request body:
 {
   "transfers": [
     {
-      "value": 100000,
+      "value": 1500000,
       "bankAccount": {
         "supplierType": "RELATED_THIRD_PARTY",
-        "accountNumber": 18075486100238,
-        "bankCode": 45,
+        "accountNumber": 2198922910000,
+        "bankCode": 7,
         "accountType": "CC",
         "country": "CO",
-        "documentNumber": 1020730722,
+        "documentNumber": 1026304116,
         "documentType": "CC",
         "expeditionDate": "1996-05-17",
-        "fullName": "Nicolas Contreras",
-        "birthDate": "1996-05-17",
-        "state": "ACTIVE",
-        "merchantId": 358
+        "fullName": "Santiago Romero Pineda",
+        "birthDate": "1975-03-07",
+        "merchantId": 510608
       },
-      "description": "Information of the request"
+      "description": "First Payment"
+    },
+    {
+      "value": 2000000,
+      "bankAccount": {
+        "supplierType": "RELATED_PROVIDER",
+        "accountNumber": 2198922910330,
+        "bankCode": 8,
+        "accountType": "CA",
+        "country": "CO",
+        "documentNumber": 102688116,
+        "documentType": "CC",
+        "expeditionDate": "2001-05-17",
+        "fullName": "Juan Perez",
+        "birthDate": "1985-04-17",
+        "merchantId": 510608
+      },
+      "description": "Payment of supplies"
+    },
+    {
+      "value": 4500000,
+      "bankAccount": {
+        "id": "e202507e-5551-4b67-be2a-a2a834bf1438"
+      },
+      "description": "Registered supplier payment"
     }
   ]
 }
@@ -190,10 +237,77 @@ Request body:
 Response body:
 ```JSON
 {
-  "totalSuccessful": 1,
-  "totalFailed": 0,
-  "failedItems": [],
-  "successfulItems": []
+    "totalSuccessful": 2,
+    "totalFailed": 1,
+    "successfulItems": [
+        {
+            "processingStatus": "SUCCESS",
+            "paymentOrderId": "7202a9a7-ef51-4202-bd23-e604f9cbb25b",
+            "value": 1500000.00,
+            "bankAccount": {
+                "processingStatus": "SUCCESS",
+                "id": "e202507e-5551-4b67-be2a-a2a834bf1438",
+                "supplierType": "RELATED_THIRD_PARTY",
+                "accountNumber": "2198922910000",
+                "bankCode": "7",
+                "bankName": "BANCOLOMBIA",
+                "accountType": "CC",
+                "country": "CO",
+                "documentNumber": "1026304116",
+                "documentType": "CC",
+                "expeditionDate": "1996-05-16T05:00:00.000+00:00",
+                "fullName": "Santiago Romero Pineda",
+                "birthDate": "1975-03-06T05:00:00.000+00:00",
+                "state": "ACTIVE"
+            },
+            "description": "First Payment"
+        },
+        {
+            "processingStatus": "SUCCESS",
+            "paymentOrderId": "32740b81-5ecc-466c-bc09-699e6e5ceefb",
+            "value": 4500000.00,
+            "bankAccount": {
+                "processingStatus": "SUCCESS",
+                "id": "8f425a79-3f15-4e64-a1bf-2f7c087587ec",
+                "supplierType": "RELATED_THIRD_PARTY",
+                "accountNumber": "0200005555",
+                "bankCode": "13",
+                "bankName": "BBVA COLOMBIA",
+                "accountType": "CA",
+                "country": "CO",
+                "documentNumber": "81856522",
+                "documentType": "CC",
+                "expeditionDate": "2002-02-17T05:00:00.000+00:00",
+                "fullName": "Jorge Gutierrez",
+                "birthDate": "1986-02-11T05:00:00.000+00:00",
+                "state": "ACTIVE"
+            },
+            "description": "Registered supplier payment"
+        }
+    ],
+    "failedItems": [
+        {
+            "processingStatus": "FAILED",
+            "failureMessages": [
+                "There is no registered bank with code: 8"
+            ],
+            "value": 2000000,
+            "bankAccount": {
+                "processingStatus": "FAILED",
+                "supplierType": "RELATED_PROVIDER",
+                "accountNumber": "2198922910330",
+                "bankCode": "8",
+                "accountType": "CA",
+                "country": "CO",
+                "documentNumber": "102688116",
+                "documentType": "CC",
+                "expeditionDate": "2001-05-17T00:00:00.000+00:00",
+                "fullName": "Juan Perez",
+                "birthDate": "1985-04-17T00:00:00.000+00:00"
+            },
+            "description": "Payment of supplies"
+        }
+    ]
 }
 ```
 {{< /tab >}}
@@ -215,7 +329,7 @@ Response body:
 {{< /tabs >}}
 
 ## Update payout request
-This method lets you request the update of the bank information of a third party on a running payout request. For example, this method is useful to change the bank account number when the third party changes their bank account.
+This method lets you request the update of the bank information of a third party on a running payout request. For example, this method is useful to change the bank account number of the third party.
 
 You can only request the update of the information of a third party for when the Payout status is in `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
 
@@ -248,17 +362,7 @@ Where:
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes | 
-| supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul> | No |
-| accountNumber | Alphanumeric | 15 | Bank account number of the third party. | No |
-| bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. | No |
-| accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account. | No |
-| country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2. | No |
-| documentNumber | Alphanumeric | | Identification number of the third party. | No |
-| documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. Format `YYYY/MM/DD` | No |
-| fullName | Alphanumeric |  | Full name of the third party. | No |
-| birthDate | Alphanumeric | 10 | Birth date of the third party. Format `YYYY/MM/DD` | No |
-| merchantId | Numeric | | Internal identifier in your system of the third party. | No |
+| accountNumber | Alphanumeric | 15 | Bank account number of the third party. | Yes |
 <!--additionalData-->
 
 </details>
@@ -272,8 +376,32 @@ Where:
 |-|-|-|-|
 | totalSuccessful | Numeric |  | Number of payouts successfully processed. |
 | totalFailed | Numeric |  | Number of payments that could not be processed. |
-| failedItems | List |  | List of items that failed during processing. |
 | successfulItems | List |  | List of items that were successfully processed. |
+| successfulItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For successful transactions, the value is ´SUCCESS´ |
+| successfulItems[n] > paymentOrderId | Alphanumeric | 36 | Id of the payout request. |
+| successfulItems[n] > value | Numeric | | Amount of the request. |
+| successfulItems[n] > bankAccount | | | This object has the information of the bank account of the third party. |
+| successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. |
+| successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
+| successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the third party. |
+| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party. |
+| successfulItems[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. |
+| successfulItems[n] > bankAccount > bankName | Alphanumeric | | Bank name of the third party. |
+| successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the third party. |
+| successfulItems[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account. |
+| successfulItems[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party. |
+| successfulItems[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. |
+| successfulItems[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. |
+| successfulItems[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party. |
+| successfulItems[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. |
+| successfulItems[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. |
+| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
+| failedItems | List |  | List of items that failed during processing. |
+| failedItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For failed transactions, the value is ´FAILED´. |
+| failedItems[n] > failureMessages | List | | List of error messages that generated the failure. |
+| failedItems[n] > value | Numeric | | Amount of the request. |
+| failedItems[n] > bankAccount | | | This object has the information of the bank account that failed. This element has the same parameters than the object `successfulItems[n].bankAccount`. |
+| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
 
 </details>
 <br>
@@ -286,8 +414,7 @@ Request body:
 ```JSON
 {
   "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
-  "accountNumber": 18075486100238,
-  "bankCode": 35
+  "accountNumber": 2198922910031
 }
 ```
 <br>
@@ -297,8 +424,31 @@ Response body:
 {
   "totalSuccessful": 1,
   "totalFailed": 0,
-  "failedItems": [],
-  "successfulItems": []
+  "successfulItems": [
+        {
+            "processingStatus": "SUCCESS",
+            "paymentOrderId": "706a6863-5075-46cf-b486-c7b3997f5dfc",
+            "value": 1500000.00,
+            "bankAccount": {
+                "processingStatus": "SUCCESS",
+                "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
+                "supplierType": "RELATED_THIRD_PARTY",
+                "accountNumber": "2198922910031",
+                "bankCode": "7",
+                "bankName": "BANCOLOMBIA",
+                "accountType": "CC",
+                "country": "CO",
+                "documentNumber": "1040658331",
+                "documentType": "CC",
+                "expeditionDate": "1996-01-16T05:00:00.000+00:00",
+                "fullName": "Carlos Franco",
+                "birthDate": "1975-12-22T05:00:00.000+00:00",
+                "state": "ACTIVE"
+            },
+            "description": "Test Payment"
+        }
+    ],
+  "failedItems": []
 }
 ```
 {{< /tab >}}
@@ -495,20 +645,18 @@ Request body:
 Response body:
 ```JSON
 {
-  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
-  "created": "2020-11-13 12:40:45",
-  "accountId": 1,
-  "callbackUrl": "https://wwww.callbackurltest.com/",
-  "description": "Web Hook For Test Swagger",
-  "enabledEvents": [
-    "TRANSFER_UPDATE",
-    "TRANSFER_CREATION",
-    "VALIDATION_RESULT"
-  ],
-  "status": "ENABLED",
-  "processingStatus": "SUCCESS",
-  "failureCode": "",
-  "failureMessages": []
+    "processingStatus": "SUCCESS",
+    "id": "256dd74e-9187-4efb-8238-fa29bf8f587a",
+    "created": "2021-08-27T21:57:28.874+00:00",
+    "accountId": 1,
+    "callbackUrl": "https://wwww.callbackurltest.com/",
+    "description": "Web Hook For Test Swagger",
+    "enabledEvents": [
+        "TRANSFER_UPDATE",
+        "TRANSFER_CREATION",
+        "VALIDATION_RESULT"
+    ],
+    "status": "ENABLED"
 }
 ```
 {{< /tab >}}
@@ -558,14 +706,9 @@ Where `{id}` is the id of the WebHook you want to delete.
 
 | Field name | Format | Size | Description |
 |-|-|-|-|
-| id | Alphanumeric |  | Id of the WebHook deleted. |
-| created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
-| accountId | Numeric | | ID of the user account for each country associated with the merchant. |
-| callbackUrl | Alphanumeric | | URL used that will receive the `POST` notifications according to the events selected. |
-| description | Alphanumeric | | Description of the WebHook created. |
-| enabledEvents | List | Max:3 | List of the events selected. |
-| status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
 | processingStatus | Alphanumeric | 7 | State of deletion of the WebHook. By default, this state is `SUCCESS`. |
+| id | Alphanumeric |  | Id of the WebHook deleted. |
+| status | Alphanumeric | 7 | State of the WebHook. By default, the state of the deleted WebHook is `DELETED`. |
 
 </details>
 <br>
@@ -574,24 +717,9 @@ Where `{id}` is the id of the WebHook you want to delete.
 {{< tab tabNum="1" >}}
 ```JSON
 {
-  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
-  "created": "2020-11-13 12:40:45",
-  "accountId": 1,
-  "callbackUrl": "https://wwww.callbackurltest.com/",
-  "description": "Web Hook For Test Swagger",
-  "enabledEvents": [
-    "TRANSFER_UPDATE",
-    "TRANSFER_CREATION",
-    "VALIDATION_RESULT"
-  ],
-  "status": "ENABLED",
-  "processingStatus": "SUCCESS",
-  "failureCode": "bank_not_supported",
-  "failureMessages": [
-    {
-      "There is no registered bank with code": 1
-    }
-  ]
+    "processingStatus": "SUCCESS",
+    "id": "054e0fc5-a025-4a00-b666-95673c11dee1",
+    "status": "DELETED"
 }
 ```
 {{< /tab >}}
@@ -632,6 +760,7 @@ Where `{id}` is the id of the WebHook you want to consult.
 
 | Field name | Format | Size | Description |
 |-|-|-|-|
+| processingStatus | Alphanumeric | 7 | State of query. By default, this state is `SUCCESS`. |
 | id | Alphanumeric |  | Id of the WebHook deleted. |
 | created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
 | accountId | Numeric | | ID of the user account for each country associated with the merchant. |
@@ -639,9 +768,6 @@ Where `{id}` is the id of the WebHook you want to consult.
 | description | Alphanumeric | | Description of the WebHook created. |
 | enabledEvents | List | Max:3 | List of the events selected. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
-| processingStatus | Alphanumeric | 7 | State of query. By default, this state is `SUCCESS`. |
-| failureCode | Alphanumeric | | Code of the error presented during the query of a WebHook. |
-| failureMessages | List | | Error messages related the error presented during the query of a WebHook. |
 
 </details>
 <br>
@@ -650,24 +776,18 @@ Where `{id}` is the id of the WebHook you want to consult.
 {{< tab tabNum="1" >}}
 ```JSON
 {
-  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
-  "created": "2020-11-13 12:40:45",
-  "accountId": 1,
-  "callbackUrl": "https://wwww.callbackurltest.com/",
-  "description": "Web Hook For Test Swagger",
-  "enabledEvents": [
-    "TRANSFER_UPDATE",
-    "TRANSFER_CREATION",
-    "VALIDATION_RESULT"
-  ],
-  "status": "ENABLED",
-  "processingStatus": "SUCCESS",
-  "failureCode": "bank_not_supported",
-  "failureMessages": [
-    {
-      "There is no registered bank with code": 1
-    }
-  ]
+    "processingStatus": "SUCCESS",
+    "id": "9628b74d-e2fb-40cc-b137-b156d1401641",
+    "created": "2021-08-28T00:52:26.206+00:00",
+    "accountId": 515058,
+    "callbackUrl": "https://wwww.callbackurltest.com/",
+    "description": "Web Hook For Test Swagger",
+    "enabledEvents": [
+        "TRANSFER_UPDATE",
+        "TRANSFER_CREATION",
+        "VALIDATION_RESULT"
+    ],
+    "status": "ENABLED"
 }
 ```
 {{< /tab >}}
@@ -699,6 +819,7 @@ Where `{accountId}` is the id of your account.
 
 | Field name | Format | Size | Description |
 |-|-|-|-|
+| processingStatus | Alphanumeric | 7 | State of query. By default, this state is `SUCCESS`. |
 | id | Alphanumeric |  | Id of the WebHook deleted. |
 | created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
 | accountId | Numeric | | ID of the user account for each country associated with the merchant. |
@@ -706,9 +827,6 @@ Where `{accountId}` is the id of your account.
 | description | Alphanumeric | | Description of the WebHook created. |
 | enabledEvents | List | Max:3 | List of the events selected. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
-| processingStatus | Alphanumeric | 7 | State of query. By default, this state is `SUCCESS`. |
-| failureCode | Alphanumeric | | Code of the error presented during the query of a WebHook. |
-| failureMessages | List | | Error messages related the error presented during the query of a WebHook. |
 
 </details>
 <br>
@@ -716,26 +834,22 @@ Where `{accountId}` is the id of your account.
 {{< tabs tabTotal="1" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
-{
-  "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
-  "created": "2020-11-13 12:40:45",
-  "accountId": 1,
-  "callbackUrl": "https://wwww.callbackurltest.com/",
-  "description": "Web Hook For Test Swagger",
-  "enabledEvents": [
-    "TRANSFER_UPDATE",
-    "TRANSFER_CREATION",
-    "VALIDATION_RESULT"
-  ],
-  "status": "ENABLED",
-  "processingStatus": "SUCCESS",
-  "failureCode": "bank_not_supported",
-  "failureMessages": [
+[
     {
-      "There is no registered bank with code": 1
+        "processingStatus": "SUCCESS",
+        "id": "9628b74d-e2fb-40cc-b137-b156d1401641",
+        "created": "2021-08-28T00:52:26.206+00:00",
+        "accountId": 515058,
+        "callbackUrl": "https://wwww.callbackurltest.com.co/",
+        "description": "Web Hook For Test Swagger",
+        "enabledEvents": [
+            "TRANSFER_UPDATE",
+            "TRANSFER_CREATION",
+            "VALIDATION_RESULT"
+        ],
+        "status": "ENABLED"
     }
-  ]
-}
+]
 ```
 {{< /tab >}}
 
