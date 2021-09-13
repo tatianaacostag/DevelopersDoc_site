@@ -30,8 +30,7 @@ async function copyCodeToClipboard(copyCodeToClipboard, highlightDiv) {
   try {
       result = await navigator.permissions.query({ name: "clipboard-write" });
       if (result.state == "granted" || result.state == "prompt") {
-          //await navigator.clipboard.writeText(codeToCopy);
-          copyCodeBlockExecCommand(codeToCopy, highlightDiv);
+          await navigator.clipboard.writeText(codeToCopy);
       } else {
           copyCodeBlockExecCommand(codeToCopy, highlightDiv);
       }

@@ -77,7 +77,7 @@ Send the following variables to the response page.
 | action_code_description | Alphanumeric | 255 | VISANET response code description. | VISANET Peru |
 | cc_holder | Alphanumeric | 150 | Name of cardholder. | VISANET Peru |
 | cc_number | Alphanumeric | — | Credit card number. PAN | VISANET Peru |
-| processing_date_time | Date(YYYY-MM-DD HH:mm:ss) | — | Date and time of the sale’s processing. | VISANET Peru |
+| processing_date_time | Date (YYYY-MM-DD) | — | Date of the sale’s processing. | VISANET Peru |
 | request_number | Alphanumeric | 9 | Order Number + transaction identifier | VISANET Peru |
 
 </details>
