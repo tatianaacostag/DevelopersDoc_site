@@ -27,6 +27,29 @@ Payments API includes the following methods:
 ## Submit transaction with credit cards
 This method lets you process the payments performed by your customers using credit cards. For Brazil, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
+### Adding Payment Facilitators
+Merchants can be considered as Payment Processor by franchises and the Central Bank. A payment processor is a legal entity that has money from sub-merchants. In the case of merchant bankruptcy and tax management, the Brazilian Central Bank wants to know the business's beneficiary.
+
+To include the information of the sub-merchant, you need to include it in the request of the **Authorization**,  and **Charge** flows using the `submerchant` object.
+
+#### What is a Payment Facilitator?
+A payment facilitator is a company that offers an alternative to contracting with a traditional payment organization by assuming responsibility for the flow of funds in a buyer-seller relationship.
+
+Many merchants are choosing to work with payment facilitators because the payment facilitator possesses and manages the master account, thus assuming a risk. Merchants also choose a payment facilitator due the simplicity of setting up an account, typically occurring through a short application and underwriting evaluation.
+
+#### What information is required?
+You need to send the following information:
+
+* Sub-merchant's internal identification (optional)
+* Sub-merchant's Name (optional)
+* Sub-merchant's ID Number (mandatory) _*Individuals or Legal Entities_
+* Sub-merchant's Address (optional)
+* Sub-merchant's State (mandatory)
+* Sub-merchant's Postal Code (mandatory)
+* Sub-merchant's Country (mandatory)
+
+Find the description of these fields in the next section.
+
 ### Variables for request and response
 
 <details>
@@ -83,6 +106,20 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 19, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > order > submerchant |  |  | Information of the sub-merchant. if you don't send this parameter, PayU configures your merchant as sub-merchant. | No |
+| transaction > order > submerchant > id | Alphanumeric | Max:15 | Internal ID of the sub-merchant if you use one to identify it. | No |
+| transaction > order > submerchant > fullName | Alphanumeric | Max:150 | Full name of the sub-merchant. | No |
+| transaction > order > submerchant > address |  |  | Sub-merchant address. The fields `state`, `country`, and `postalCode`are mandatory when sending this object. | No |
+| transaction > order > submerchant > address > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
+| transaction > order > submerchant > address > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
+| transaction > order > submerchant > address > street3 | Alphanumeric | Max:100 | Address Line 3. | No |
+| transaction > order > submerchant > address > city | Alphanumeric | Max:50 | Address city. | No |
+| transaction > order > submerchant > address > state | Alphanumeric | Max:40 | Address State. For Brazil, only send two characters, For example, set `SP` for São Paulo. | Yes |
+| transaction > order > submerchant > address > country | Alphanumeric | 2 | Address country. | Yes |
+| transaction > order > submerchant > address > postalCode | Alphanumeric | Max:8 | Address Zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | Yes |
+| transaction > order > submerchant > address > phone | Alphanumeric | Max:11 | Phone number associated to the address. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
+| transaction > order > submerchant > identification | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
+| transaction > order > submerchant > identificationType | Alphanumeric | Max:4 | Identification type of the sub-merchant. The possible values are `cnpj` or `cpf`. | No |
 | transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | No | 
 | transaction > creditCard |  |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
@@ -151,6 +188,7 @@ This method lets you process the payments performed by your customers using cred
 
 #### Considerations
 * If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`) when using [Authorization]({{< ref "payments-api-brazil.md#authorization" >}}) or [Charge]({{< ref "payments-api-brazil.md#charge" >}}).
+* If you don't send any information for the sub-merchants, PayU configures your merchant as sub-merchant.
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * The extra parameter `CIELO_TID` identifies the transaction, this parameter is needed when you want to process voids.
@@ -187,6 +225,21 @@ Request body:
                "currency": "BRL"
             }
          },
+         "submerchant": {
+            "fullName": "ROBSON BATISTA DE OLIVEIRA",
+            "address": {
+               "street1": "Rua Alsácia",
+               "street2": null,
+               "street3": null,
+               "city": "São Paulo",
+               "state": "SP",
+               "country": "BR",
+               "postalCode": "04630010",
+               "phone": null
+            },
+            "identification": "17126661851",
+            "identificationType": "CNPJ"
+        },
          "buyer": {
             "merchantBuyerId": "1",
             "fullName": "First name and second buyer name",
@@ -304,6 +357,18 @@ Request body:
                </additionalValue>
             </entry>
          </additionalValues>
+         <submerchant>
+            <address>
+               <city>São Paulo</city>
+               <country>BR</country>
+               <postalCode>04630010</postalCode>
+               <state>SP</state>
+               <street1>Rua Alsácia</street1>
+            </address>
+            <fullName>ROBSON BATISTA DE OLIVEIRA</fullName>
+            <identification>17126661851</identification>
+            <identificationType>cnpj</identificationType>
+         </submerchant>
          <buyer>
             <merchantBuyerId>1</merchantBuyerId>
             <fullName>First name and second buyer name</fullName>
@@ -545,6 +610,21 @@ Request body:
                "currency": "BRL"
             }
          },
+         "submerchant": {
+            "fullName": "ROBSON BATISTA DE OLIVEIRA",
+            "address": {
+               "street1": "Rua Alsácia",
+               "street2": null,
+               "street3": null,
+               "city": "São Paulo",
+               "state": "SP",
+               "country": "BR",
+               "postalCode": "04630010",
+               "phone": null
+            },
+            "identification": "17126661851",
+            "identificationType": "CNPJ"
+        },
          "buyer": {
             "merchantBuyerId": "1",
             "fullName": "First name and second buyer name",
@@ -598,7 +678,6 @@ Request body:
    },
    "test": false
 }
-
 ```
 <br>
 
@@ -663,6 +742,18 @@ Request body:
                </additionalValue>
             </entry>
          </additionalValues>
+         <submerchant>
+            <address>
+               <city>São Paulo</city>
+               <country>BR</country>
+               <postalCode>04630010</postalCode>
+               <state>SP</state>
+               <street1>Rua Alsácia</street1>
+            </address>
+            <fullName>ROBSON BATISTA DE OLIVEIRA</fullName>
+            <identification>17126661851</identification>
+            <identificationType>cnpj</identificationType>
+         </submerchant>
          <buyer>
             <merchantBuyerId>1</merchantBuyerId>
             <fullName>First name and second buyer name</fullName>
