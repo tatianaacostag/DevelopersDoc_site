@@ -4,7 +4,7 @@ linkTitle: "Update my information"
 date: 2021-07-22T15:30:25-05:00
 type: docs
 Description: >
-   Learn how to change your password, update your user preferences, and request the change of your Bank information
+   Learn how to change your password, update your user preferences, change the merchant's logo and request the change of your Bank information
 weight: 10
 tags: ["subtopic"]
 ---
@@ -79,7 +79,27 @@ Change the language of your PayU module.
 After changing any of the user settings, do not forget to click _**Save changes**_ button at the footer of the section to apply the changes.
 {{% /alert %}}
 
-<!--## Update business and sales information-->
+## Change your logo
+Using the PayU module, you can upload the logo of your merchant so it can be displayed in our Web checkout.
+
+![PrintScreen](/assets/Logo/Logo_01.png)
+
+To upload or update your logo, follow these steps.
+
+1. In the account options, expand the current account using the the **▾** symbol. Then, select .
+
+<img src="/assets/Logo/Logo_02.png" alt="PrintScreen" width="30%"/><br>
+
+2. In the _**Your sales information**_ window, find the _Merchant logo_ field.<br>If you have not uploaded a logo yet, click the _**Select your logo**_ link. Otherwise, use the _**Change logo**_ link.
+
+![PrintScreen](/assets/Logo/Logo_03.png)
+![PrintScreen](/assets/Logo/Logo_04.png)
+
+3. The upload panel appears, locate the image of your logo in your local machine. 
+
+4. The maximum size allowed for your logo is 350x90 pixels, if the selected image is bigger than this size, you can crop it using the upload panel. Furthermore, this panel provides options to zoom in or rotate the image.<br>When finish, click _**Save**_.
+
+<img src="/assets/Logo/Logo_05.png" alt="PrintScreen" width="50%"/>
 
 ## Request the change of your bank account 
 Once your account has been verified by our Risk team, you can request the update of your bank information. Due to security reasons, the update of bank information must be verified again as when you create the account.
