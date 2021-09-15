@@ -73,7 +73,7 @@ PayU in Colombia allows you to integrate with most of the cash payments methods 
 | ![Logo](/assets/PaymentMethods/efecty.png)          | Efecty           | EFECTY                  | Cash           |           |
 | ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards   |           |
 | ![Logo](/assets/PaymentMethods/pse_logo.png)        | PSE              | PSE                     | Bank Transfer  | PSE lets your customers pay using Nequi and Daviplata. |
-| ![Logo](/assets/PaymentMethods/su-red.png)          | Su Red           | OTHER_CASH              | Cash           | Payment offices: PagaTodo,<br>Gana Gana, Gana, Acertemos,<br>Apuestas Cúcuta 75,<br>Su Chance, La Perla, Apuestas<br>Unidas, JER. |
+| ![Logo](/assets/PaymentMethods/su-red.png)          | Su Red           | OTHERS_CASH              | Cash           | Payment offices: PagaTodo,<br>Gana Gana, Gana, Acertemos,<br>Apuestas Cúcuta 75,<br>Su Chance, La Perla, Apuestas<br>Unidas, JER. |
 | ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards   |           |
 
 ## <img src="/assets/Mexico.png" width="25px"/> Mexico {#Mexico}
