@@ -575,10 +575,18 @@ You need to include two headers to use this method, refer to [Configuring authen
 {{% /alert %}}
 
 ### API Call
-To create or update a WebHook, use the following URL:
+* To create a WebHook, use:
 
 ```JAVA
 POST
+https://{env-api}.payulatam.com//v1.0/webhooks
+```
+<br>
+
+* To update a WebHook, use:
+
+```JAVA
+PUT
 https://{env-api}.payulatam.com//v1.0/webhooks
 ```
 
@@ -593,7 +601,7 @@ https://{env-api}.payulatam.com//v1.0/webhooks
 |---|---|---|---|:-:|
 | id | Alphanumeric |  | Id of the WebHook you want to update. Do not send this parameter when creating a WebHook | No |
 | accountId | Numeric | | ID of the user account for each country associated with the merchant. | Yes |
-| callbackUrl | Alphanumeric | | URL used to receive the `POST` notifications sent by PayU according to the events selected. | Yes |
+| callbackUrl | Alphanumeric | | URL used to receive the `POST` notifications sent by PayU according to the events selected. This URL must be unique per WebHook. | Yes |
 | description | Alphanumeric | | Description of the WebHook you want to create. | Yes |
 | enabledEvents | List | Max:3 | List of the events that will launch a notification to the configured URL when they occur. At least one event must be selected.<br>Possibles values are: `TRANSFER_UPDATE`, `TRANSFER_CREATION`, `VALIDATION_RESULT`. | Yes |
 
@@ -845,6 +853,19 @@ Where `{accountId}` is the id of your account.
         "enabledEvents": [
             "TRANSFER_UPDATE",
             "TRANSFER_CREATION",
+            "VALIDATION_RESULT"
+        ],
+        "status": "ENABLED"
+    },
+    {
+        "processingStatus": "SUCCESS",
+        "id": "672497c2-00f8-4787-a396-4024042eaa20",
+        "created": "2021-09-15T16:04:49.131+00:00",
+        "accountId": 515058,
+        "callbackUrl": "https://wwww.callbackurltest.com.co/",
+        "description": "Web Hook For Test Swagger",
+        "enabledEvents": [
+            "TRANSFER_UPDATE",
             "VALIDATION_RESULT"
         ],
         "status": "ENABLED"

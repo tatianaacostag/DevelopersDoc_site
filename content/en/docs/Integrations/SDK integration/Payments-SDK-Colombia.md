@@ -316,7 +316,7 @@ This method lets you process the payments of your customers in cash or using a B
 <img src="/assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
 
 ### Considerations
-* Send a valid cash Payment Method in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia" >}}). `OTHER_CASH` method is not supported.
+* Send a valid cash Payment Method in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia" >}}). `OTHERS_CASH` method is not supported.
 * The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * For `BALOTO` and `EFECTY`, the confirmation of the payment takes 15 minutes. For `BANK_REFERENCED`, the confirmation is online.
 * The minimum and maximum values for `BALOTO` and `EFECTY` are:
