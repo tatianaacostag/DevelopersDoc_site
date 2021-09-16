@@ -8,4 +8,9 @@ Description: >
 weight: 20
 ---
 
-In the _Transfers_ module, you 
+In the _Transfers_ module, you can fin the options to transfer the funds collected in your virtual PayU account to your main bank account registered.
+
+## Considerations
+Keep in mind the following considerations before transferring funds to your bank account.
+
+* You must have your bank information updated and validated. When you request the update 
