@@ -111,7 +111,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. | Yes |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
-| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). This value is mandatory when the payment method is `CODENSA`. | No |
+| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction. For Colombia, set `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit card Payment Method. [See the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CO` for Colombia. | Yes |
@@ -160,19 +160,19 @@ This method lets you process the payments performed by your customers using cred
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
 * The variable `transaction.threeDomainSecure` corresponds to a _Pass Through_ scenario where the commerce performs the authentication by their own.
 * For Crédito Fácil Codensa card, the number of installments supported are 1 to 12, 18, 24, 36 and 48.
-* For Crédito Fácil Codensa card, the variable `transaction.payer.dniType`is mandatory. The payer can choose any of the following document types:
+* For Crédito Fácil Codensa card, the payer can choose any of the following document types for the variable `transaction.payer.dniType`:
 
-| ISO | Description                                                                         |
-|:---:|-------------------------------------------------------------------------------------|
-|  CC | Citizenship card.                                                                   |
-|  CE | Foreign citizenship card.                                                           |
-| NIT | Tax identification number (Companies).                                              |
-|  TI | Identity Card.                                                                      |
-|  PP | Passport.                                                                           |
+| ISO | Description                                                                           |
+|:---:|---------------------------------------------------------------------------------------|
+|  CC | Citizenship card.                                                                     |
+|  CE | Foreign citizenship card.                                                             |
+| NIT | Tax identification number (Companies).                                                |
+|  TI | Identity Card.                                                                        |
+|  PP | Passport.                                                                             |
 | IDC | Customer´s unique identifier, in the case of unique customer / utility consumer ID's. |
-| CEL | When identified by the mobile line.                                                 |
-|  RC | Birth certificate.                                                                  |
-|  DE | Foreign identification document.                                                    |
+| CEL | When identified by the mobile line.                                                   |
+|  RC | Birth certificate.                                                                    |
+|  DE | Foreign identification document.                                                      |
 
 ### API call
 The following are the examples of the request and response of this payment method.

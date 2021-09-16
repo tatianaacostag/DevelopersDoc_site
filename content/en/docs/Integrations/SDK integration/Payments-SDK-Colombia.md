@@ -55,7 +55,7 @@ This method lets you process the payments performed by your customers using cred
 * For payments with credit card tokens, include the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `PROCESS_WITHOUT_CVV2` as true and remove the variable `CREDIT_CARD_SECURITY_CODE`.
 * For Crédito Fácil Codensa card, the number of installments supported are 1 to 12, 18, 24, 36 and 48.
-* For Crédito Fácil Codensa card, the variable `PAYER_DNI_TYPE` is mandatory. The payer can choose any of the following document types:
+* For Crédito Fácil Codensa card, the payer can choose any of the following document types for the variable `PAYER_DNI_TYPE`:
 
 | ISO | Description                                                                         |
 |:---:|-------------------------------------------------------------------------------------|
