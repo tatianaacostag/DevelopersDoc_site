@@ -131,7 +131,7 @@ Both parameters can be found in your PayU module.
 | transfers[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. Format `YYYY/MM/DD`<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. Set `ACTIVE` when you are creating a new third party. | No |
-| transfers[n] > bankAccount > merchantId | Numeric | | Internal identifier in your system of the third party. | No |
+| transfers[n] > bankAccount > merchantId | Numeric | | Identifier of your commerce in PayU. | No |
 | transfers[n] > description | Alphanumeric | | Additional information of the payout. | No |
 <!--additionalData-->
 
@@ -344,12 +344,13 @@ To update a Payout request, use the following URL:
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{bankAccountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{bankAccountId}
 ```
 <br>
 
 Where:
 * The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
 * The value for the variable `{bankAccountId}` is the third party Id returned by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
 ### Variables for request and response
@@ -483,12 +484,13 @@ To cancel a Payout request, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{paymentOrderId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{paymentOrderId}
 ```
 <br>
 
 Where:
 * The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
 * The value for the variable `{paymentOrderId}` is the Payout id generated when the order was created by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
 ### Variables for request and response
