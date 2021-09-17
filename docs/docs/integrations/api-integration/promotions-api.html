@@ -21,19 +21,19 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Promotions API for Argentina and Mexico | </title><meta property="og:title" content="Promotions API for Argentina and Mexico" />
+<title>Promotions API for Argentina and Mexico | PayU Latam</title><meta property="og:title" content="Promotions API for Argentina and Mexico" />
 <meta property="og:description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico (MSI - Meses Sin Intereses).
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/integrations/api-integration/promotions-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-06-29T12:38:41-05:00" />
-<meta property="article:modified_time" content="2021-08-09T17:53:18-05:00" />
+<meta property="article:modified_time" content="2021-09-08T07:58:14-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Promotions API for Argentina and Mexico">
 <meta itemprop="description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico (MSI - Meses Sin Intereses).
 "><meta itemprop="datePublished" content="2021-06-29T12:38:41-05:00" />
-<meta itemprop="dateModified" content="2021-08-09T17:53:18-05:00" />
-<meta itemprop="wordCount" content="2361">
+<meta itemprop="dateModified" content="2021-09-08T07:58:14-05:00" />
+<meta itemprop="wordCount" content="2350">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Promotions API for Argentina and Mexico"/>
 <meta name="twitter:description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico (MSI - Meses Sin Intereses).
@@ -47,6 +47,7 @@
 <link href="../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" rel="stylesheet" integrity="">
 
 
+<link href="../../../css/custom.css" rel="stylesheet">
 <script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script
@@ -125,7 +126,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e91731158635ae07cb45413af7e8e7aa9868aa7ae74493008b668b810d5c1eeed3accc59fc0f98f97328b989c6f5c46f52da8dece59a3afb4d207c7cc6f6b3b0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.bf09ba26f039c1893d4f8078d89562ede81a0220ccd8f27159999e3c825b6f5faa1c7654e11c2ae5613830ebb996c37ff590306be73577df67daf4a810a00c91.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -680,7 +681,7 @@
         <li><a href="#execute-a-transaction-with-promotions">Execute a transaction with Promotions</a></li>
       </ul>
     </li>
-    <li><a href="#months-without-installments-msi---meses-sin-intereses">Months Without Installments (MSI - Meses Sin Intereses)</a>
+    <li><a href="#msi">Months Without Interests (MSI - Meses Sin Intereses)</a>
       <ul>
         <li><a href="#considerations">Considerations</a></li>
         <li><a href="#variables-for-msi">Variables for MSI</a></li>
@@ -745,7 +746,7 @@
 	<h1>Promotions API for Argentina and Mexico</h1>
     <div class="lead">Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico (MSI - Meses Sin Intereses).</div>
 	       
-	<p>This sections explains how to integrate using <a href="../../../docs/integrations/api-integration/promotions-api.html#promotions">Promotions</a> or using <a href="../../../docs/integrations/api-integration/promotions-api.html#months-without-installments-msi---meses-sin-intereses">MSI</a>(Only Available for Mexico).</p>
+	<p>This sections explains how to integrate using <a href="../../../docs/integrations/api-integration/promotions-api.html#promotions">Promotions</a> or using <a href="../../../docs/integrations/api-integration/promotions-api.html#msi">MSI</a> (Only Available for Mexico).</p>
 <h2 id="promotions">Promotions</h2>
 <p>This feature lets you consult via API, the promotions in force, their characteristics and further information you want to present to the customers.</p>
 <p>A Promotion has the payment method, the payment method, the days of the week when it applies, the list of banks, and the start and end date when the promotion applies.</p>
@@ -2030,7 +2031,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 </div>
 <br></p>
 <p>To learn how to include these extra parameters, refer to the Payments API for <a href="../../../docs/integrations/api-integration/payments-api-argentina.html#submit-transaction-with-credit-or-debit-card">Argentina</a> and <a href="../../../docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-credit-or-debit-card">Mexico</a>.</p>
-<h2 id="months-without-installments-msi---meses-sin-intereses">Months Without Installments (MSI - Meses Sin Intereses)</h2>
+<h2 id="msi">Months Without Interests (MSI - Meses Sin Intereses)</h2>
 <p>If your account is in Mexico, you can offer to your customers the option to pay in a determined number of interest-free installments. If you want to enable this feature, contact your sale representative.</p>
 <h3 id="considerations">Considerations</h3>
 <ul>
@@ -2048,7 +2049,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 <li>When using MSI, always display the phrase <strong>&ldquo;PAGOS DIFERIDOS&rdquo;</strong> during the payment process.</li>
 </ul>
 <h3 id="variables-for-msi">Variables for MSI</h3>
-<p>To use MSI, you need to include the number of months and the card issuer bank in the <code>transaction.monthsWithoutInterest</code> parameter in the request:</p>
+<p>To use MSI, you need to include the number of months as an extra parameter:</p>
 <p><nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -2093,9 +2094,8 @@ If the schema is not validated, the integration is not affected, and you only ne
 
 <div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#4e9a06">&#34;monthsWithoutInterest&#34;</span><span style="color:#a40000">:</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#204a87;font-weight:bold">&#34;months&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Number of months&#34;</span><span style="color:#000;font-weight:bold">,</span>
-    <span style="color:#204a87;font-weight:bold">&#34;bank&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Card issuer bank&#34;</span>
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#4e9a06">&#34;extraParameters&#34;</span><span style="color:#a40000">:</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">&#34;INSTALLMENTS_NUMBER&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#a40000">(Number</span> <span style="color:#a40000">of</span> <span style="color:#a40000">months)</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
@@ -2112,10 +2112,12 @@ If the schema is not validated, the integration is not affected, and you only ne
 
 <div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;monthsWithoutInterest&gt;</span>
-    <span style="color:#204a87;font-weight:bold">&lt;months&gt;</span>Number of months<span style="color:#204a87;font-weight:bold">&lt;/months&gt;</span>
-    <span style="color:#204a87;font-weight:bold">&lt;bank&gt;</span>Card issuer bank<span style="color:#204a87;font-weight:bold">&lt;/bank&gt;</span>
-<span style="color:#204a87;font-weight:bold">&lt;/monthsWithoutInterest&gt;</span>
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;extraParameters&gt;</span>
+    <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+        <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>INSTALLMENTS_NUMBER<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+        <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>Number of months<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+    <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+<span style="color:#204a87;font-weight:bold">&lt;/extraParameters&gt;</span>
 </code></pre></div>
 
 </div>
@@ -2130,7 +2132,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 9, 2021: <a  href="../../../commit/76f9462401eaacef7bf7f4c8e6a6ac56a2f78cf6">Fix in payments and technical configuration for Payouts (76f9462)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 8, 2021: <a  href="../../../commit/3fa5f224043c3a9003bb4ce8d1039611edd820e5">Updates in Payouts, Promotions and Administrative Module (3fa5f22)</a>
 </div>
 </div>
 

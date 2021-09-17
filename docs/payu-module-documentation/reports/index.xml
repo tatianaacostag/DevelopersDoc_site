@@ -1,0 +1,83 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – Reports</title>
+    <link>/payu-module-documentation/reports.html</link>
+    <description>Recent content in Reports on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Sep 2021 16:29:25 -0500</lastBuildDate>
+    
+	  <atom:link href="/payu-module-documentation/reports/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>PayU Module Documentation: Sales Report</title>
+      <link>/payu-module-documentation/reports/sales-report.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:45:07 -0500</pubDate>
+      
+      <guid>/payu-module-documentation/reports/sales-report.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Transfer Report</title>
+      <link>/payu-module-documentation/reports/transfer-report.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:46:15 -0500</pubDate>
+      
+      <guid>/payu-module-documentation/reports/transfer-report.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Financial Statement</title>
+      <link>/payu-module-documentation/reports/financial-statement.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:45:26 -0500</pubDate>
+      
+      <guid>/payu-module-documentation/reports/financial-statement.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Witholding Certificate</title>
+      <link>/payu-module-documentation/reports/witholding-certificate.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:45:45 -0500</pubDate>
+      
+      <guid>/payu-module-documentation/reports/witholding-certificate.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Asobancaria Reports</title>
+      <link>/payu-module-documentation/reports/asobancaria-reports.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:46:35 -0500</pubDate>
+      
+      <guid>/payu-module-documentation/reports/asobancaria-reports.html</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – Getting Started</title>
+    <title>PayU Latam – Getting Started</title>
     <link>/payu-module-documentation/getting-started.html</link>
-    <description>Recent content in Getting Started on </description>
+    <description>Recent content in Getting Started on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 31 Mar 2021 08:28:16 -0500</lastBuildDate>
     
@@ -185,13 +185,13 @@ The options displayed in this article depends on the profile you have to access 
 &lt;td&gt;Transfers&lt;/td&gt;
 &lt;td&gt;Transfers&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Chile.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Panama.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Peru.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
-&lt;td&gt;Allows you to send the funds collected in your PayU account to your Bank account.&lt;/td&gt;
+&lt;td&gt;Allows you to send the funds collected in your PayU account to your Bank account. For more information, refer to &lt;a href=&#34;../../payu-module-documentation/payu-operations/transfers.html&#34;&gt;Transfers&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Schedule Transfers&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Chile.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Panama.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../assets/Peru.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
-&lt;td&gt;Allows you create transfer on a daily, weekly, monthly basis. Furthermore, you can configure custom transfers as you need.&lt;/td&gt;
+&lt;td&gt;Allows you create transfer on a daily, weekly, monthly basis. Furthermore, you can configure custom transfers as you need. For more information, refer to &lt;a href=&#34;../../payu-module-documentation/payu-operations/transfers.html#schedule-transfers&#34;&gt;Schedule transfers&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;/td&gt;

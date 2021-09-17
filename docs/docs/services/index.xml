@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title> – Services</title>
+    <title>PayU Latam – Services</title>
     <link>/docs/services.html</link>
-    <description>Recent content in Services on </description>
+    <description>Recent content in Services on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 31 Mar 2021 08:19:46 -0500</lastBuildDate>
     
@@ -493,7 +493,7 @@ Payout requests may not be in &lt;strong&gt;IN_BANKING_PROCESS&lt;/strong&gt; st
 &lt;li&gt;&lt;strong&gt;Transfer update&lt;/strong&gt;: sends a notification when an update is requested for an existing payout.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Validation result&lt;/strong&gt;: sends a notification when the validation is completed with its result.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To learn how to create WebHooks, refer to &lt;a href=&#34;../../docs/integrations/api-integration/payouts-api.html#create-a-webhook&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To learn how to create WebHooks, refer to &lt;a href=&#34;../../docs/integrations/api-integration/payouts-api.html#create-or-update-a-webhook&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
 &lt;p&gt;The integration with this feature fo is performed using &lt;a href=&#34;../../docs/integrations/api-integration/payouts-api.html&#34;&gt;API integrations&lt;/a&gt;.&lt;/p&gt;
 

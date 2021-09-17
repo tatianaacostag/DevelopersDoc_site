@@ -2,13 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/payu-module-documentation/reports/sales-report.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/payu-operations/sell-with-payu.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/payu-module-documentation/user-and-profile-management/user-management.html</loc>
     <lastmod>2021-09-01T11:45:31-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html</loc>
-    <lastmod>2021-08-27T09:28:52-05:00</lastmod>
+    <lastmod>2021-09-14T08:32:48-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -23,7 +33,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration/payments-sdk-argentina.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -62,6 +72,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/payu-module-documentation/reports/transfer-report.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/payu-operations/transfers.html</loc>
+    <lastmod>2021-09-17T08:47:13-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/payu-operations/refunds-mp.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html</loc>
     <lastmod>2021-09-01T11:45:31-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -88,27 +113,27 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-argentina.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-brazil.html</loc>
-    <lastmod>2021-08-27T09:28:52-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-chile.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-colombia.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-mexico.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -118,12 +143,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-peru.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration/payments-sdk-brazil.html</loc>
-    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -138,7 +163,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/webcheckout-integration/response-page.html</loc>
-    <lastmod>2021-07-01T21:44:03-05:00</lastmod>
+    <lastmod>2021-09-13T11:44:42-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -152,8 +177,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/payu-module-documentation/reports/financial-statement.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/payu-module-documentation/getting-started/understanding-the-payu-module.html</loc>
-    <lastmod>2021-09-01T11:45:31-05:00</lastmod>
+    <lastmod>2021-09-17T08:47:13-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -163,7 +193,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration/payments-sdk-chile.html</loc>
-    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -202,6 +232,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/payu-module-documentation/reports/witholding-certificate.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/payu-operations/disputes-mp.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/payu-operations.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/docs/integrations/api-integration/tokenization-api.html</loc>
     <lastmod>2021-07-01T21:44:03-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -213,7 +258,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration/payments-sdk-colombia.html</loc>
-    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <lastmod>2021-09-16T11:02:12-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -232,8 +277,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>/payu-module-documentation/reports/asobancaria-reports.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/payu-module-documentation/reports.html</loc>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/docs/integrations/api-integration/promotions-api.html</loc>
-    <lastmod>2021-08-09T17:53:18-05:00</lastmod>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -248,7 +303,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration/payments-sdk-mexico.html</loc>
-    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -268,7 +323,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payouts-api.html</loc>
-    <lastmod>2021-08-19T11:25:16-05:00</lastmod>
+    <lastmod>2021-09-16T11:02:12-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -288,12 +343,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/services/payouts.html</loc>
-    <lastmod>2021-08-30T10:41:44-05:00</lastmod>
+    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration/payments-sdk-peru.html</loc>
-    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

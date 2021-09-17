@@ -21,19 +21,19 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Payments API - Argentina | </title><meta property="og:title" content="Payments API - Argentina" />
+<title>Payments API - Argentina | PayU Latam</title><meta property="og:title" content="Payments API - Argentina" />
 <meta property="og:description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/integrations/api-integration/payments-api-argentina.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-08-13T12:40:17-05:00" />
+<meta property="article:modified_time" content="2021-09-02T16:02:10-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payments API - Argentina">
 <meta itemprop="description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-08-13T12:40:17-05:00" />
-<meta itemprop="wordCount" content="5446">
+<meta itemprop="dateModified" content="2021-09-02T16:02:10-05:00" />
+<meta itemprop="wordCount" content="5463">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Argentina"/>
 <meta name="twitter:description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
@@ -47,6 +47,7 @@
 <link href="../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" rel="stylesheet" integrity="">
 
 
+<link href="../../../css/custom.css" rel="stylesheet">
 <script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 <script
@@ -125,7 +126,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.e91731158635ae07cb45413af7e8e7aa9868aa7ae74493008b668b810d5c1eeed3accc59fc0f98f97328b989c6f5c46f52da8dece59a3afb4d207c7cc6f6b3b0.json"
+  data-offline-search-index-json-src="../../../offline-search-index.bf09ba26f039c1893d4f8078d89562ede81a0220ccd8f27159999e3c825b6f5faa1c7654e11c2ae5613830ebb996c37ff590306be73577df67daf4a810a00c91.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -1275,7 +1276,7 @@
 <td>transaction &gt; payer &gt; billingAddress &gt; state</td>
 <td>Alphanumeric</td>
 <td>Max:40</td>
-<td>Billing address state.</td>
+<td>Billing address state. Format <a href="https://www.iso.org/obp/ui/#iso:code:3166:AR">ISO 3166-2 ARG official</a>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
@@ -1494,7 +1495,7 @@
 <li>For payments with credit card tokens, include the parameters <code>transaction.creditCardTokenId</code> and <code>transaction.creditCard.securityCode</code> replacing the information of the credit card (if you process with security code). For more information, refer to <a href="../../../docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</li>
 <li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
 <li>When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.</li>
-<li>Due to Tax regulations, it is mandatory to send the parameters <code>payer.billingAddress.state</code> and <code>payer.dnitype</code>.</li>
+<li>Due to Tax regulations, it is mandatory to send the parameters <code>payer.billingAddress.state</code> using format <a href="https://www.iso.org/obp/ui/#iso:code:3166:AR">ISO 3166-2 ARG official</a> and <code>payer.dnitype</code>.</li>
 </ul>
 <h3 id="authorization">Authorization</h3>
 <p>Use this method to perform the <strong>Authorization</strong> step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you <a href="../../../docs/integrations/api-integration/payments-api-argentina.html#capture">capture</a> the funds.<br>The following are the request and response bodies for this transaction type.</p>
@@ -1575,7 +1576,7 @@
                <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -1585,7 +1586,7 @@
             <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -1601,7 +1602,7 @@
             <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;125544&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -1704,7 +1705,7 @@
                <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -1714,7 +1715,7 @@
             <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>0000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -1730,7 +1731,7 @@
             <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -2021,7 +2022,7 @@
                <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -2031,7 +2032,7 @@
             <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -2047,7 +2048,7 @@
             <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -2150,7 +2151,7 @@
                <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -2160,7 +2161,7 @@
             <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>0000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -2176,7 +2177,7 @@
             <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -2886,7 +2887,7 @@
 </details>
 <h4 id="considerations-2">Considerations</h4>
 <ul>
-<li>The parameter <code>transaction.expirationDate</code> is not mandatory. If you don&rsquo;t send this parameter, its default value for is 15 days after the current date.</li>
+<li>The parameter <code>transaction.expirationDate</code> is not mandatory. If you don&rsquo;t send this parameter, its default value is 15 days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.</li>
 <li>The parameter <code>transactionResponse.extraParameters</code> has the following parameters related to the transaction:
 <ul>
 <li><strong>REFERENCE</strong>: internal payment reference generated by PayU.</li>
@@ -2976,7 +2977,7 @@
                <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
                <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -2986,7 +2987,7 @@
             <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -3002,7 +3003,7 @@
             <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av Centenario 837&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;125544&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;San Isidro&#34;</span><span style="color:#000;font-weight:bold">,</span>
-            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Buenos Aires&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR-B&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
@@ -3098,7 +3099,7 @@
                <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>            
                <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>               
+               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>               
                <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
                 <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -3108,7 +3109,7 @@
             <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>            
                <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>               
+               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>               
                <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
                 <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
                <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -3119,7 +3120,7 @@
             <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Av Centenario 837<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>            
             <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>San Isidro<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
-            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Buenos Aires<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>               
+            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>AR-B<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>               
             <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>AR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
@@ -3649,7 +3650,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 13, 2021: <a  href="../../../commit/858dbfa3f571063db0d0c44ea30e281d562e6d15">Fixes for payment methods and Payouts (858dbfa)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 2, 2021: <a  href="../../../commit/3779a80785e078690faca5838fd4407deadff4c8">Changes for cash payment methods (3779a80)</a>
 </div>
 </div>
 
