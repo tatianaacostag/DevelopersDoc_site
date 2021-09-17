@@ -51,7 +51,7 @@ To authenticate, send the request as follows:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiLogin}
+https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiLogin}
 ```
 <br>
 
@@ -94,11 +94,11 @@ To create a Payout request, use the following URL:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}
 ```
 <br>
 
- The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
+ The value for the variable `{env-api}` displayed above is `sandbox-web` for testing and `web` for production mode.
 
 | Parameter     | Description                                                           | Mandatory |
 |---------------|-----------------------------------------------------------------------|:---------:|
@@ -344,12 +344,12 @@ To update a Payout request, use the following URL:
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/v1.0/supplier-transfers/bank-account/{bankAccountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{bankAccountId}
 ```
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
 * The value for the variable `{bankAccountId}` is the third party Id returned by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
 ### Variables for request and response
@@ -483,12 +483,12 @@ To cancel a Payout request, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/v1.0/supplier-transfers/{paymentOrderId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{paymentOrderId}
 ```
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
 * The value for the variable `{paymentOrderId}` is the Payout id generated when the order was created by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
 ### Variables for request and response
@@ -579,7 +579,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com//v1.0/webhooks
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks
 ```
 <br>
 
@@ -587,8 +587,12 @@ https://{env-api}.payulatam.com//v1.0/webhooks
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com//v1.0/webhooks
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks
 ```
+<br>
+
+Where:
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
 
 ### Variables for request and response
 
@@ -699,11 +703,13 @@ To delete a WebHook, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/v1.0/webhooks/{id}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
 ```
 <br>
 
-Where `{id}` is the id of the WebHook you want to delete.
+Where:
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* `{id}` is the id of the WebHook you want to delete.
 
 **Response example**
 
@@ -753,11 +759,13 @@ This method lets you consult the information of a specific WebHook using its id.
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/v1.0/webhooks/{id}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
 ```
 <br>
 
-Where `{id}` is the id of the WebHook you want to consult.
+Where:
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* `{id}` is the id of the WebHook you want to consult.
 
 **Response example**
 
@@ -812,11 +820,13 @@ This method lets you consult the information of all the WebHooks created in your
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/v1.0/webhooks/account/{accountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{accountId}
 ```
 <br>
 
-Where `{accountId}` is the id of your account.
+Where:
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* `{accountId}` is the id of your account.
 
 **Response example**
 
