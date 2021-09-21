@@ -7,3 +7,4 @@ Description: >
 weight: 40
 ---
 
+For introductory terms about a dispute refer to this [article]({{< ref "disputes.md" >}}).

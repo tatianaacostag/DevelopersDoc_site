@@ -29,7 +29,7 @@ The times and amounts explained here apply only for local transfer (into the sam
 {{% /alert %}}
 
 ## Permission required
-To have access to this module , you need to have a profile with the following permission enabled:
+To have access to this module, you need to have a profile with the following permission enabled:
 
 * _Transfers_ > _Review_
 * _Transfers_ > _Manage_<br>This permission allows you to perform transfers.	

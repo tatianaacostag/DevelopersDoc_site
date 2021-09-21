@@ -22,7 +22,7 @@ Before using Voids and Refunds API, take into account the following consideratio
 
 ### Argentina
 * The maximum time to send a void is 14 days. If no void or capture is sent after this time, the transaction is auto-voided.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days.
+* The minimum time to send a refund is 10 minutes after the approval and the maximum is 365 days and 180 days for partial refunds.
 * Refunds with decimals are not supported.
 * When a refund is approved, the payer gets the money back in maximum 30 working days.
 

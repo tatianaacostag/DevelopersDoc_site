@@ -25,15 +25,15 @@ A refund is requested when a shop decides to voluntarily return the money spent 
 
 Unlike the `VOID` method, this method requires an approval. The refund procedure is explained below:
 
-1. When a refund is requested by your customer, you need to request it using the PayU module or the API or SDK integration. The request requires the _Order Id_, and a refund reason.
+1. When a refund is requested by your customer, you need to request it using the [PayU module]({{< ref "Refunds-MP.md">}}) or our integrations. The request requires the _Order Id_, and a refund reason.
 
 2. Once you send the request, PayU reviews the request and approves or rejects it in one to three business days.
 
 The `REFUND` has three states:
 
 - `UNRESOLVED`: the request has been sent to PayU for approval. At this point, no transaction has been added to the order and when you consult it using the [Queries service]({{< ref "queries" >}} "Query Service"), the response only shows the transaction of the payment approval.
-- `APPROVED`:  the request has been approved by a PayU's customer service agent. At this point the order has changed its state to `CANCELLED` or `REFUNDED`state and a PayU adds a `REFUND` transaction to the order with approved state.
-- `DECLINED`: the request does not meet the policies defined by PayU and was cancelled by an agent. when the refund is declined, PayU adds a `REFUND` transaction to the order with declined state.
+- `APPROVED`:  the request has been approved by a PayU's customer service agent. At this point the order has changed its state to `CANCELLED` or `REFUNDED` state and a PayU adds a `REFUND` transaction to the order with approved state.
+- `DECLINED`: the request does not meet the policies defined by PayU and was cancelled by an agent. When the refund is declined, PayU adds a `REFUND` transaction to the order with declined state.
 
 For more information about authorized and captured transactions, refer to [Payments]({{< ref "payments#payment-flows" >}}).
 
