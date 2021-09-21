@@ -62,7 +62,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?apiKey={apiKey}&a
 | apiKey        | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
 | apiLogin      | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
 
-**Response example:**
+#### Response example
 
 {{< tabs tabTotal="1" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -138,7 +138,7 @@ Both parameters can be found in your PayU module.
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
@@ -176,7 +176,7 @@ Both parameters can be found in your PayU module.
 </details>
 <br>
 
-The following request sends three payouts: 
+The following request example sends three payouts: 
 * The first and the second payout are requested for unregistered third parties. The second one fails because the parameter `bankCode` has an invalid value.
 * The third payout is for a registered third party.
 
@@ -353,11 +353,8 @@ Where:
 * The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
 * The value for the variable `{bankAccountId}` is the third party Id returned by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
-### Variables for request and response
+### Variables for request
 
-<details>
-<summary>Request parameters</summary>
-<br>
 <div class="variables"></div>
 
 | Field name | Format | Size | Description | Mandatory |
@@ -366,46 +363,7 @@ Where:
 | accountNumber | Alphanumeric | 15 | Bank account number of the third party. | Yes |
 <!--additionalData-->
 
-</details>
-
-<details>
-<summary>Response</summary>
-<br>
-<div class="variables"></div>
-
-| Field name | Format | Size | Description |
-|-|-|-|-|
-| totalSuccessful | Numeric |  | Number of payouts successfully processed. |
-| totalFailed | Numeric |  | Number of payments that could not be processed. |
-| successfulItems | List |  | List of items that were successfully processed. |
-| successfulItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For successful transactions, the value is ´SUCCESS´ |
-| successfulItems[n] > paymentOrderId | Alphanumeric | 36 | Id of the payout request. |
-| successfulItems[n] > value | Numeric | | Amount of the request. |
-| successfulItems[n] > bankAccount | | | This object has the information of the bank account of the third party. |
-| successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. |
-| successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
-| successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the third party. |
-| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party. |
-| successfulItems[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. |
-| successfulItems[n] > bankAccount > bankName | Alphanumeric | | Bank name of the third party. |
-| successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the third party. |
-| successfulItems[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account. |
-| successfulItems[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party. |
-| successfulItems[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. |
-| successfulItems[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. |
-| successfulItems[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party. |
-| successfulItems[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. |
-| successfulItems[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. |
-| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
-| failedItems | List |  | List of items that failed during processing. |
-| failedItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For failed transactions, the value is ´FAILED´. |
-| failedItems[n] > failureMessages | List | | List of error messages that generated the failure. |
-| failedItems[n] > value | Numeric | | Amount of the request. |
-| failedItems[n] > bankAccount | | | This object has the information of the bank account that failed. This element has the same parameters than the object `successfulItems[n].bankAccount`. |
-| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
-
-</details>
-<br>
+The following are the request and response bodies for this method.
 
 {{< tabs tabTotal="1" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -423,33 +381,7 @@ Request body:
 Response body:
 ```JSON
 {
-  "totalSuccessful": 1,
-  "totalFailed": 0,
-  "successfulItems": [
-        {
-            "processingStatus": "SUCCESS",
-            "paymentOrderId": "706a6863-5075-46cf-b486-c7b3997f5dfc",
-            "value": 1500000.00,
-            "bankAccount": {
-                "processingStatus": "SUCCESS",
-                "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
-                "supplierType": "RELATED_THIRD_PARTY",
-                "accountNumber": "2198922910031",
-                "bankCode": "7",
-                "bankName": "BANCOLOMBIA",
-                "accountType": "CC",
-                "country": "CO",
-                "documentNumber": "1040658331",
-                "documentType": "CC",
-                "expeditionDate": "1996-01-16T05:00:00.000+00:00",
-                "fullName": "Carlos Franco",
-                "birthDate": "1975-12-22T05:00:00.000+00:00",
-                "state": "ACTIVE"
-            },
-            "description": "Test Payment"
-        }
-    ],
-  "failedItems": []
+    "message": "Update received"
 }
 ```
 {{< /tab >}}
@@ -493,11 +425,8 @@ Where:
 * The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
 * The value for the variable `{paymentOrderId}` is the Payout id generated when the order was created by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
-### Variables for request and response
+### Variables for request
 
-<details>
-<summary>Request parameters</summary>
-<br>
 <div class="variables"></div>
 
 | Field name | Format | Size | Description | Mandatory |
@@ -505,22 +434,7 @@ Where:
 | comments | Alphanumeric | | Reason to cancel the Payout request. | No |
 | pushPaymentId | Alphanumeric | | Payout ID of the request to be cancelled. | No |
 
-</details>
-
-<details>
-<summary>Response</summary>
-<br>
-<div class="variables"></div>
-
-| Field name | Format | Size | Description |
-|-|-|-|-|
-| totalSuccessful | Numeric |  | Number of payouts successfully processed. |
-| totalFailed | Numeric |  | Number of payments that could not be processed. |
-| failedItems | List |  | List of items that failed during processing. |
-| successfulItems | List |  | List of items that were successfully processed. |
-
-</details>
-<br>
+The following are the request and response bodies for this method.
 
 {{< tabs tabTotal="1" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -538,10 +452,7 @@ Request body:
 Response body:
 ```JSON
 {
-  "totalSuccessful": 1,
-  "totalFailed": 0,
-  "failedItems": [],
-  "successfulItems": []
+    "message": "Cancellation request received"
 }
 ```
 {{< /tab >}}
@@ -605,7 +516,7 @@ Where:
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| id | Alphanumeric |  | Id of the WebHook you want to update. Do not send this parameter when creating a WebHook | No |
+| id | Alphanumeric |  | Id of the WebHook you want to update. This parameter is mandatory when updating a WebHook | No |
 | accountId | Numeric | | ID of the user account for each country associated with the merchant. | Yes |
 | callbackUrl | Alphanumeric | | URL used to receive the `POST` notifications sent by PayU according to the events selected. This URL must be unique per WebHook. | Yes |
 | description | Alphanumeric | | Description of the WebHook you want to create. | Yes |
@@ -614,7 +525,7 @@ Where:
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
@@ -631,11 +542,9 @@ Where:
 
 </details>
 
-{{% alert title="Note" color="info"%}}
+<br>
 
-To update a WebHook, send the `id` parameter and the values to be changed only.
-
-{{% /alert %}}
+The following are the request and response bodies for this method.
 
 {{< tabs tabTotal="1" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -713,11 +622,8 @@ Where:
 * The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
 * `{id}` is the id of the WebHook you want to delete.
 
-**Response example**
+#### Response example
 
-<details>
-<summary>Response variables</summary>
-<br>
 <div class="variables"></div>
 
 | Field name | Format | Size | Description |
@@ -725,9 +631,6 @@ Where:
 | processingStatus | Alphanumeric | 7 | State of deletion of the WebHook. By default, this state is `SUCCESS`. |
 | id | Alphanumeric |  | Id of the WebHook deleted. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the deleted WebHook is `DELETED`. |
-
-</details>
-<br>
 
 {{< tabs tabTotal="1" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -769,10 +672,10 @@ Where:
 * The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
 * `{id}` is the id of the WebHook you want to consult.
 
-**Response example**
+#### Response example
 
 <details>
-<summary>Response variables</summary>
+<summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
@@ -830,10 +733,10 @@ Where:
 * The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
 * `{accountId}` is the id of your account.
 
-**Response example**
+#### Response example
 
 <details>
-<summary>Response variables</summary>
+<summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
