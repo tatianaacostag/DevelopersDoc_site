@@ -86,6 +86,6 @@ To request a refund, the transaction must be approved and without any pending di
 
 <img src="/assets/Refunds/Refunds_en_09.png" alt="PrintScreen" width="50%"/><br>
 
-7. Once teh request has been approved, the status appears in the sale.
+7. Once the request has been approved, the status appears in the sale.
 
 <img src="/assets/Refunds/Refunds_en_10.png" alt="PrintScreen" width="50%"/><br>
