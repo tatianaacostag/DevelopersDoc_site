@@ -75,7 +75,7 @@ The following table explains the values:
 | API key                   | Unique key of your commerce, you can find this key in the PayU module.                     |
 | Gateway URL               | Gateway URL.<br>For test, you can use https://sandbox.gateway.payulatam.com/ppp-web-gateway and for production https://gateway.payulatam.com/ppp-web-gateway/                                                            |
 | Transaction in test mode  | Mark this checkbox to make transactions the test mode.                                     |
-| Response page             | URL of the response page.<br>By default, the URL is http://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php, you must replace http://your.domain.com with your site's domain.                    |
-| Confirmation page         | URL of the confirmation page.<br>By default, the URL is hhttp://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php, you must replace http://your.domain.com with your site's domain.                |
+| Response page             | URL of the response page.<br>By default, the URL is https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php, you must replace https://your.domain.com with your site's domain.                    |
+| Confirmation page         | URL of the confirmation page.<br>By default, the URL is https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php, you must replace https://your.domain.com with your site's domain.                |
 
 5. Finally, click _**Save changes**_ button. At this point, your customers can pay with PayU Latam when they do the checkout in the WooCommerce's shopping cart. 
