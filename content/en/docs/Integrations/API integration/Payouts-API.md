@@ -121,7 +121,7 @@ Both parameters can be found in your PayU module.
 | transfers[n] > bankAccount | | | This object has the information of the bank account of the third party that will receive the payment.<br>The third party can be existing or new. | Yes |
 | transfers[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
 | transfers[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > accountNumber | Alphanumeric | CC:13 CA:14 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party.<br>_This length is under validation._ | No |
 | transfers[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. | No |
 | transfers[n] > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
@@ -154,7 +154,7 @@ Both parameters can be found in your PayU module.
 | successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. For successful registrations, the value is ´SUCCESS´. |
 | successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
 | successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the third party. |
-| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party. |
+| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the third party. |
 | successfulItems[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. |
 | successfulItems[n] > bankAccount > bankName | Alphanumeric | | Bank name of the third party. |
 | successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the third party. |
@@ -359,8 +359,8 @@ Where:
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes | 
-| accountNumber | Alphanumeric | 15 | Bank account number of the third party. | Yes |
+| id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes |
+| accountNumber | Alphanumeric | CC:13<br>CA:14 | Bank account number of the third party.<br>_This length is under validation._ | Yes |
 <!--additionalData-->
 
 The following are the request and response bodies for this method.
@@ -477,9 +477,11 @@ Response body:
 This method lets you create or update a WebHook that allows you to configure a URL where PayU notifies states of a Payout via `POST`.
 
 You can configure a WebHook for the following events:
-* **Transfer creation**: sends a notification when a payout request is created. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
-* **Transfer update**: sends a notification when an update is requested for an existing payout. To enable these notifications, include the `TRANSFER_CREATION` value in the list parameter `enabledEvents`.
-* **Validation result**: sends a notification when the validation is completed with its result. To enable these notifications, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
+* **Transfer creation**: sends a notification when a payout request is created. To enable these notifications, include the `TRANSFER_CREATION` value in the list parameter `enabledEvents`.
+* **Transfer update**: sends a notification when the sanction screening validation rejects the third party. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
+* **Validation result**: sends a notification when third party has approved the sanction screening validation and when the transfer has been rejected by the bank, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
+
+[Click here to know the variables in the notifications]({{< ref "payouts.md#variables-in-the-notifications" >}}).
 
 {{% alert title="Note" color="info"%}}
 
