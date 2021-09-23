@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-09-02T16:02:10-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-09-23T08:27:55-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payments API - Brazil">
 <meta itemprop="description" content="Payments API Brazil lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-09-02T16:02:10-05:00" />
-<meta itemprop="wordCount" content="9810">
+<meta itemprop="dateModified" content="2021-09-23T08:27:55-05:00" />
+<meta itemprop="wordCount" content="10438">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Brazil"/>
 <meta name="twitter:description" content="Payments API Brazil lets your shop process different transaction types with multiple payment methods.
@@ -126,7 +126,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.bf09ba26f039c1893d4f8078d89562ede81a0220ccd8f27159999e3c825b6f5faa1c7654e11c2ae5613830ebb996c37ff590306be73577df67daf4a810a00c91.json"
+  data-offline-search-index-json-src="../../../offline-search-index.eceed9271b7a3c0b5156af0b4b82180dcd3be8c07d98f1a9b3ab5b1c40890ebe339d7de2b2e1856b073e3e50ef2f9c50e18d637834288f5a7cfed75abd832474.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -676,6 +676,7 @@
     <li><a href="#available-methods">Available methods</a></li>
     <li><a href="#submit-transaction-with-credit-cards">Submit transaction with credit cards</a>
       <ul>
+        <li><a href="#adding-payment-facilitators">Adding Payment Facilitators</a></li>
         <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
         <li><a href="#authorization">Authorization</a></li>
         <li><a href="#capture">Capture</a></li>
@@ -787,7 +788,7 @@
 <h2 id="available-methods">Available methods</h2>
 <p>Payments API includes the following methods:</p>
 <ul>
-<li><a href="../../../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-credit-cards">Submit transaction with credit cards</a></li>
+<li><a href="../../../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-credit-cards">Submit transaction with credit card</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-pix">Submit transaction with PIX</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-cash">Submit transaction with cash</a></li>
 <li><a href="../../../docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a></li>
@@ -796,6 +797,24 @@
 </ul>
 <h2 id="submit-transaction-with-credit-cards">Submit transaction with credit cards</h2>
 <p>This method lets you process the payments performed by your customers using credit cards. For Brazil, you can perform the two-step flows (<strong>Authorization</strong>, <strong>Capture</strong>), and one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../docs/services/payments.html#payment-flows">Payment flows</a>.</p>
+<h3 id="adding-payment-facilitators">Adding Payment Facilitators</h3>
+<p>Merchants can be considered as Payment Processor by franchises and the Central Bank. A payment processor is a legal entity that has money from sub-merchants. In the case of merchant bankruptcy and tax management, the Brazilian Central Bank wants to know the business&rsquo;s beneficiary.</p>
+<p>To include the information of the sub-merchant, you need to include it in the request of the <strong>Authorization</strong>,  and <strong>Charge</strong> flows using the <code>submerchant</code> object.</p>
+<h4 id="what-is-a-payment-facilitator">What is a Payment Facilitator?</h4>
+<p>A payment facilitator is a company that offers an alternative to contracting with a traditional payment organization by assuming responsibility for the flow of funds in a buyer-seller relationship.</p>
+<p>Many merchants are choosing to work with payment facilitators because the payment facilitator possesses and manages the master account, thus assuming a risk. Merchants also choose a payment facilitator due the simplicity of setting up an account, typically occurring through a short application and underwriting evaluation.</p>
+<h4 id="what-information-is-required">What information is required?</h4>
+<p>You need to send the following information:</p>
+<ul>
+<li>Sub-merchant&rsquo;s internal identification (optional)</li>
+<li>Sub-merchant&rsquo;s Name (optional)</li>
+<li>Sub-merchant&rsquo;s ID Number (mandatory) <em>*Individuals or Legal Entities</em></li>
+<li>Sub-merchant&rsquo;s Address (optional)</li>
+<li>Sub-merchant&rsquo;s State (mandatory)</li>
+<li>Sub-merchant&rsquo;s Postal Code (mandatory)</li>
+<li>Sub-merchant&rsquo;s Country (mandatory)</li>
+</ul>
+<p>Find the description of these fields in the next section.</p>
 <h3 id="variables-for-request-and-response">Variables for request and response</h3>
 <details>
 <summary>Request</summary>
@@ -1142,10 +1161,108 @@
 <td style="text-align:center">No</td>
 </tr>
 <tr>
+<td>transaction &gt; order &gt; submerchant</td>
+<td></td>
+<td></td>
+<td>Information of the sub-merchant. if you don&rsquo;t send this parameter, PayU configures your merchant as sub-merchant.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; id</td>
+<td>Alphanumeric</td>
+<td>Max:15</td>
+<td>Internal ID of the sub-merchant if you use one to identify it.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; fullName</td>
+<td>Alphanumeric</td>
+<td>Max:150</td>
+<td>Full name of the sub-merchant.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address</td>
+<td></td>
+<td></td>
+<td>Sub-merchant address. The fields <code>state</code>, <code>country</code>, and <code>postalCode</code>are mandatory when sending this object.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address &gt; street1</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Address Line 1.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address &gt; street2</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Address Line 2.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address &gt; street3</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Address Line 3.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address &gt; city</td>
+<td>Alphanumeric</td>
+<td>Max:50</td>
+<td>Address city.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:40</td>
+<td>Address State. For Brazil, only send two characters, For example, set <code>SP</code> for São Paulo.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Address country.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address &gt; postalCode</td>
+<td>Alphanumeric</td>
+<td>Max:8</td>
+<td>Address Zip code. For Brazil, use the format <code>XXXXX-XXX</code> or <code>XXXXXXXX</code>. Example: <code>09210-710</code> or <code>09210710</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; address &gt; phone</td>
+<td>Alphanumeric</td>
+<td>Max:11</td>
+<td>Phone number associated to the address. For Brazil, use the format <code>ddd(2)+number(7-9)</code>. Example: <code>(11)756312633</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; identification</td>
+<td>Alphanumeric</td>
+<td>Max:14</td>
+<td>Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format <code>XXXXXXXXXXXXXX</code>. Example: <code>32593371000110</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; submerchant &gt; identificationType</td>
+<td>Alphanumeric</td>
+<td>Max:4</td>
+<td>Identification type of the sub-merchant. The possible values are <code>cnpj</code> or <code>cpf</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
 <td>transaction &gt; creditCardTokenId</td>
 <td></td>
 <td></td>
-<td>Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to <a href="../../../docs/integrations/api-integration/tokenization-api.html">Tokenization API</a></td>
+<td>Include this parameter when the transaction is done using a tokenized card; moreover, it is mandatory to also send the parameter <code>transaction.creditCard.expirationDate</code>.<br>For more information, refer to <a href="../../../docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
@@ -1173,7 +1290,7 @@
 <td>transaction &gt; creditCard &gt; expirationDate</td>
 <td>Alphanumeric</td>
 <td>7</td>
-<td>Credit card expiration date. Format <code>YYYY/MM</code>.</td>
+<td>Credit card expiration date. Format <code>YYYY/MM</code>. This parameter is mandatory when the payment is performed using a tokenized credit card.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
@@ -1521,7 +1638,8 @@
 <h4 id="considerations">Considerations</h4>
 <ul>
 <li>If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter <code>transaction.[payer|buyer].dniNumber</code>) or the CNPJ (parameter <code>transaction.[payer|buyer].cnpj</code>) when using <a href="../../../docs/integrations/api-integration/payments-api-brazil.html#authorization">Authorization</a> or <a href="../../../docs/integrations/api-integration/payments-api-brazil.html#charge">Charge</a>.</li>
-<li>For payments with credit card tokens, include the parameters <code>transaction.creditCardTokenId</code> and <code>transaction.creditCard.securityCode</code> replacing the information of the credit card (if you process with security code). For more information, refer to <a href="../../../docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</li>
+<li>If you don&rsquo;t send any information for the sub-merchants, PayU configures your merchant as sub-merchant.</li>
+<li>For payments with credit card tokens, include the parameters <code>transaction.creditCardTokenId</code>, <code>transaction.creditCard.expirationDate</code>, and <code>transaction.creditCard.securityCode</code> replacing the information of the credit card (if you process with security code). For more information, refer to <a href="../../../docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</li>
 <li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
 <li>The extra parameter <code>CIELO_TID</code> identifies the transaction, this parameter is needed when you want to process voids.</li>
 <li>The variable <code>transaction.threeDomainSecure</code> does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.</li>
@@ -1596,6 +1714,21 @@
                <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span>
             <span style="color:#000;font-weight:bold">}</span>
          <span style="color:#000;font-weight:bold">},</span>
+         <span style="color:#204a87;font-weight:bold">&#34;submerchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ROBSON BATISTA DE OLIVEIRA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+               <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rua Alsácia&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;street3&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;São Paulo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;04630010&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+            <span style="color:#000;font-weight:bold">},</span>
+            <span style="color:#204a87;font-weight:bold">&#34;identification&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;17126661851&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;identificationType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CNPJ&#34;</span>
+        <span style="color:#000;font-weight:bold">},</span>
          <span style="color:#204a87;font-weight:bold">&#34;buyer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
             <span style="color:#204a87;font-weight:bold">&#34;merchantBuyerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;First name and second buyer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1718,6 +1851,18 @@
                <span style="color:#204a87;font-weight:bold">&lt;/additionalValue&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
          <span style="color:#204a87;font-weight:bold">&lt;/additionalValues&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;submerchant&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;address&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>São Paulo<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>BR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>04630010<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>SP<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Rua Alsácia<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;/address&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>ROBSON BATISTA DE OLIVEIRA<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;identification&gt;</span>17126661851<span style="color:#204a87;font-weight:bold">&lt;/identification&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;identificationType&gt;</span>cnpj<span style="color:#204a87;font-weight:bold">&lt;/identificationType&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;/submerchant&gt;</span>
          <span style="color:#204a87;font-weight:bold">&lt;buyer&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;merchantBuyerId&gt;</span>1<span style="color:#204a87;font-weight:bold">&lt;/merchantBuyerId&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>First name and second buyer name<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
@@ -2045,6 +2190,21 @@
                <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span>
             <span style="color:#000;font-weight:bold">}</span>
          <span style="color:#000;font-weight:bold">},</span>
+         <span style="color:#204a87;font-weight:bold">&#34;submerchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ROBSON BATISTA DE OLIVEIRA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;address&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+               <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Rua Alsácia&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;street3&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;São Paulo&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;04630010&#34;</span><span style="color:#000;font-weight:bold">,</span>
+               <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+            <span style="color:#000;font-weight:bold">},</span>
+            <span style="color:#204a87;font-weight:bold">&#34;identification&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;17126661851&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;identificationType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CNPJ&#34;</span>
+        <span style="color:#000;font-weight:bold">},</span>
          <span style="color:#204a87;font-weight:bold">&#34;buyer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
             <span style="color:#204a87;font-weight:bold">&#34;merchantBuyerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
             <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;First name and second buyer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2098,7 +2258,6 @@
    <span style="color:#000;font-weight:bold">},</span>
    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 <span style="color:#000;font-weight:bold">}</span>
-
 </code></pre></div><br>
 <p>Response body:</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
@@ -2168,6 +2327,18 @@
                <span style="color:#204a87;font-weight:bold">&lt;/additionalValue&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
          <span style="color:#204a87;font-weight:bold">&lt;/additionalValues&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;submerchant&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;address&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>São Paulo<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>BR<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>04630010<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>SP<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+               <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Rua Alsácia<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;/address&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>ROBSON BATISTA DE OLIVEIRA<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;identification&gt;</span>17126661851<span style="color:#204a87;font-weight:bold">&lt;/identification&gt;</span>
+            <span style="color:#204a87;font-weight:bold">&lt;identificationType&gt;</span>cnpj<span style="color:#204a87;font-weight:bold">&lt;/identificationType&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;/submerchant&gt;</span>
          <span style="color:#204a87;font-weight:bold">&lt;buyer&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;merchantBuyerId&gt;</span>1<span style="color:#204a87;font-weight:bold">&lt;/merchantBuyerId&gt;</span>
             <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>First name and second buyer name<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
@@ -5305,7 +5476,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 2, 2021: <a  href="../../../commit/3779a80785e078690faca5838fd4407deadff4c8">Changes for cash payment methods (3779a80)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 23, 2021: <a  href="../../../commit/ed2d03bf31cdb3331df228deb47d2032aedcd13e">New articles for Refunds and Disputes (ed2d03b)</a>
 </div>
 </div>
 

@@ -256,7 +256,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;disputes&#34;&gt;Disputes&lt;/h3&gt;
-&lt;p&gt;In this tab, you can configure the following information of the &lt;a href=&#34;#Disputes.md&#34;&gt;dispute&lt;/a&gt; process.&lt;/p&gt;
+&lt;p&gt;In this tab, you can configure the following information of the &lt;a href=&#34;../../../payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;dispute&lt;/a&gt; process.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/TechnicalInformation/TechnicalInformation_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;

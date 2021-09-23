@@ -78,12 +78,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/payu-module-documentation/payu-operations/transfers.html</loc>
-    <lastmod>2021-09-17T08:47:13-05:00</lastmod>
+    <lastmod>2021-09-21T11:48:28-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/payu-module-documentation/payu-operations/refunds-mp.html</loc>
-    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <lastmod>2021-09-21T11:49:35-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -98,7 +98,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html</loc>
-    <lastmod>2021-08-30T10:41:44-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -118,7 +118,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-brazil.html</loc>
-    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -128,7 +128,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payments-api-colombia.html</loc>
-    <lastmod>2021-09-02T16:02:10-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -203,7 +203,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/getting-started/select-your-payment-method.html</loc>
-    <lastmod>2021-08-13T12:40:17-05:00</lastmod>
+    <lastmod>2021-09-17T08:52:50-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -228,17 +228,17 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration.html</loc>
-    <lastmod>2021-06-29T20:27:18-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/payu-module-documentation/reports/witholding-certificate.html</loc>
-    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <loc>/payu-module-documentation/reports/withholding-certificate.html</loc>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/payu-module-documentation/payu-operations/disputes-mp.html</loc>
-    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -258,7 +258,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/sdk-integration/payments-sdk-colombia.html</loc>
-    <lastmod>2021-09-16T11:02:12-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -293,12 +293,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/refunds-api.html</loc>
-    <lastmod>2021-07-01T21:44:03-05:00</lastmod>
+    <lastmod>2021-09-21T11:48:28-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/tools/shopping-cart-plugins/woocommerce.html</loc>
-    <lastmod>2021-05-28T17:29:43-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -323,7 +323,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/integrations/api-integration/payouts-api.html</loc>
-    <lastmod>2021-09-16T11:02:12-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -338,12 +338,12 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/services/refunds.html</loc>
-    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>/docs/services/payouts.html</loc>
-    <lastmod>2021-09-08T07:58:14-05:00</lastmod>
+    <lastmod>2021-09-23T08:27:55-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
