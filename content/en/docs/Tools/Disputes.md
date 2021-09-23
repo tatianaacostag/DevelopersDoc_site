@@ -74,12 +74,12 @@ Recall that the maximum days to provide evidence for each country are:
 | Country   | Days to provide evidences |
 |-----------|---------------------------|
 | Argentina | 5 working days            |
-| Brazil    | 5 working days            |
+| Brazil    | 12 working days           |
 | Chile     | 5 working days            |
 | Colombia  | 2 working days            |
-| Mexico    | 5 calendar days           |
+| Mexico    | 12 calendar days          |
 | Panama    | 8 working days            |
-| Peru      | 2 working days            |
+| Peru      | 6 working days            |
 
 ### 5. Final decision on dispute status.
 Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refund. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.
@@ -92,7 +92,8 @@ When a dispute is reported, a dispute entity for the associated transaction is c
 | State | Description |
 |-|-|
 | Notified | When the dispute process begins, you must upload the evidence for the dispute. |
-| In review | When the shop provides evidence for a dispute through the PayU module and the dispute is reviewed by the bank. |
+| On Payment Network Review | When the shop provides evidence for a dispute through the PayU module and the dispute is reviewed by the bank or network. |
 | Lost | The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost. |
 | Won | The dispute process is resolved in favor of the shop, there are no deductions of any kind. |
-| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. To resolve a dispute as refund you have to request it to **disputas@payu.com** |
+| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. |
+| Expired | After past 120 days without a response from the bank, the amount is set to available for the merchant. |
