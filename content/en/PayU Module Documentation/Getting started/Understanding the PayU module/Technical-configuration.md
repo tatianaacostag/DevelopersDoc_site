@@ -65,7 +65,7 @@ In this tab, you can configure the following information.
 | Notifications of processed payments | This option lets you enable the send of an email to the payer or to you when the payment was approved or rejected. |
 
 ### Disputes
-In this tab, you can configure the following information of the [dispute]({{< ref "#Disputes.md" >}}) process.
+In this tab, you can configure the following information of the [dispute]({{< ref "Disputes-MP.md" >}}) process.
 
 ![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_03.png)
 

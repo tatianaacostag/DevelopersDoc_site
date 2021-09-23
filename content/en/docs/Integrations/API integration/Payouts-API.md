@@ -51,7 +51,7 @@ To authenticate, send the request as follows:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiLogin}
+https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiLogin}
 ```
 <br>
 
@@ -62,7 +62,7 @@ https://{env-api}.payulatam.com/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiL
 | apiKey        | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
 | apiLogin      | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
 
-**Response example:**
+#### Response example
 
 {{< tabs tabTotal="1" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -94,11 +94,11 @@ To create a Payout request, use the following URL:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}
 ```
 <br>
 
- The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
+ The value for the variable `{env-api}` displayed above is `sandbox-web` for testing and `web` for production mode.
 
 | Parameter     | Description                                                           | Mandatory |
 |---------------|-----------------------------------------------------------------------|:---------:|
@@ -121,7 +121,7 @@ Both parameters can be found in your PayU module.
 | transfers[n] > bankAccount | | | This object has the information of the bank account of the third party that will receive the payment.<br>The third party can be existing or new. | Yes |
 | transfers[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
 | transfers[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
+| transfers[n] > bankAccount > accountNumber | Alphanumeric | CC:13 CA:14 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party.<br>_This length is under validation._ | No |
 | transfers[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. | No |
 | transfers[n] > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
@@ -131,14 +131,14 @@ Both parameters can be found in your PayU module.
 | transfers[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. Format `YYYY/MM/DD`<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. Set `ACTIVE` when you are creating a new third party. | No |
-| transfers[n] > bankAccount > merchantId | Numeric | | Internal identifier in your system of the third party. | No |
+| transfers[n] > bankAccount > merchantId | Numeric | | Identifier of your commerce in PayU. | No |
 | transfers[n] > description | Alphanumeric | | Additional information of the payout. | No |
 <!--additionalData-->
 
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
@@ -154,7 +154,7 @@ Both parameters can be found in your PayU module.
 | successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. For successful registrations, the value is ´SUCCESS´. |
 | successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
 | successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the third party. |
-| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party. |
+| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the third party. |
 | successfulItems[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. |
 | successfulItems[n] > bankAccount > bankName | Alphanumeric | | Bank name of the third party. |
 | successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the third party. |
@@ -176,7 +176,7 @@ Both parameters can be found in your PayU module.
 </details>
 <br>
 
-The following request sends three payouts: 
+The following request example sends three payouts: 
 * The first and the second payout are requested for unregistered third parties. The second one fails because the parameter `bankCode` has an invalid value.
 * The third payout is for a registered third party.
 
@@ -344,67 +344,26 @@ To update a Payout request, use the following URL:
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/v1.0/supplier-transfers/bank-account/{bankAccountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{bankAccountId}
 ```
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
 * The value for the variable `{bankAccountId}` is the third party Id returned by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
-### Variables for request and response
+### Variables for request
 
-<details>
-<summary>Request parameters</summary>
-<br>
 <div class="variables"></div>
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes | 
-| accountNumber | Alphanumeric | 15 | Bank account number of the third party. | Yes |
+| id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes |
+| accountNumber | Alphanumeric | CC:13<br>CA:14 | Bank account number of the third party.<br>_This length is under validation._ | Yes |
 <!--additionalData-->
 
-</details>
-
-<details>
-<summary>Response</summary>
-<br>
-<div class="variables"></div>
-
-| Field name | Format | Size | Description |
-|-|-|-|-|
-| totalSuccessful | Numeric |  | Number of payouts successfully processed. |
-| totalFailed | Numeric |  | Number of payments that could not be processed. |
-| successfulItems | List |  | List of items that were successfully processed. |
-| successfulItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For successful transactions, the value is ´SUCCESS´ |
-| successfulItems[n] > paymentOrderId | Alphanumeric | 36 | Id of the payout request. |
-| successfulItems[n] > value | Numeric | | Amount of the request. |
-| successfulItems[n] > bankAccount | | | This object has the information of the bank account of the third party. |
-| successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. |
-| successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
-| successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the third party. |
-| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | 15 | Bank account number of the third party. |
-| successfulItems[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. |
-| successfulItems[n] > bankAccount > bankName | Alphanumeric | | Bank name of the third party. |
-| successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the third party. |
-| successfulItems[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account. |
-| successfulItems[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party. |
-| successfulItems[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. |
-| successfulItems[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. |
-| successfulItems[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party. |
-| successfulItems[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. |
-| successfulItems[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. |
-| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
-| failedItems | List |  | List of items that failed during processing. |
-| failedItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For failed transactions, the value is ´FAILED´. |
-| failedItems[n] > failureMessages | List | | List of error messages that generated the failure. |
-| failedItems[n] > value | Numeric | | Amount of the request. |
-| failedItems[n] > bankAccount | | | This object has the information of the bank account that failed. This element has the same parameters than the object `successfulItems[n].bankAccount`. |
-| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
-
-</details>
-<br>
+The following are the request and response bodies for this method.
 
 {{< tabs tabTotal="1" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -422,33 +381,7 @@ Request body:
 Response body:
 ```JSON
 {
-  "totalSuccessful": 1,
-  "totalFailed": 0,
-  "successfulItems": [
-        {
-            "processingStatus": "SUCCESS",
-            "paymentOrderId": "706a6863-5075-46cf-b486-c7b3997f5dfc",
-            "value": 1500000.00,
-            "bankAccount": {
-                "processingStatus": "SUCCESS",
-                "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
-                "supplierType": "RELATED_THIRD_PARTY",
-                "accountNumber": "2198922910031",
-                "bankCode": "7",
-                "bankName": "BANCOLOMBIA",
-                "accountType": "CC",
-                "country": "CO",
-                "documentNumber": "1040658331",
-                "documentType": "CC",
-                "expeditionDate": "1996-01-16T05:00:00.000+00:00",
-                "fullName": "Carlos Franco",
-                "birthDate": "1975-12-22T05:00:00.000+00:00",
-                "state": "ACTIVE"
-            },
-            "description": "Test Payment"
-        }
-    ],
-  "failedItems": []
+    "message": "Update received"
 }
 ```
 {{< /tab >}}
@@ -483,19 +416,17 @@ To cancel a Payout request, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/v1.0/supplier-transfers/{paymentOrderId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{paymentOrderId}
 ```
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
 * The value for the variable `{paymentOrderId}` is the Payout id generated when the order was created by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
-### Variables for request and response
+### Variables for request
 
-<details>
-<summary>Request parameters</summary>
-<br>
 <div class="variables"></div>
 
 | Field name | Format | Size | Description | Mandatory |
@@ -503,22 +434,7 @@ Where:
 | comments | Alphanumeric | | Reason to cancel the Payout request. | No |
 | pushPaymentId | Alphanumeric | | Payout ID of the request to be cancelled. | No |
 
-</details>
-
-<details>
-<summary>Response</summary>
-<br>
-<div class="variables"></div>
-
-| Field name | Format | Size | Description |
-|-|-|-|-|
-| totalSuccessful | Numeric |  | Number of payouts successfully processed. |
-| totalFailed | Numeric |  | Number of payments that could not be processed. |
-| failedItems | List |  | List of items that failed during processing. |
-| successfulItems | List |  | List of items that were successfully processed. |
-
-</details>
-<br>
+The following are the request and response bodies for this method.
 
 {{< tabs tabTotal="1" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -536,10 +452,7 @@ Request body:
 Response body:
 ```JSON
 {
-  "totalSuccessful": 1,
-  "totalFailed": 0,
-  "failedItems": [],
-  "successfulItems": []
+    "message": "Cancellation request received"
 }
 ```
 {{< /tab >}}
@@ -564,9 +477,11 @@ Response body:
 This method lets you create or update a WebHook that allows you to configure a URL where PayU notifies states of a Payout via `POST`.
 
 You can configure a WebHook for the following events:
-* **Transfer creation**: sends a notification when a payout request is created. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
-* **Transfer update**: sends a notification when an update is requested for an existing payout. To enable these notifications, include the `TRANSFER_CREATION` value in the list parameter `enabledEvents`.
-* **Validation result**: sends a notification when the validation is completed with its result. To enable these notifications, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
+* **Transfer creation**: sends a notification when a payout request is created. To enable these notifications, include the `TRANSFER_CREATION` value in the list parameter `enabledEvents`.
+* **Transfer update**: sends a notification when the sanction screening validation rejects the third party. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
+* **Validation result**: sends a notification when third party has approved the sanction screening validation and when the transfer has been rejected by the bank, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
+
+[Click here to know the variables in the notifications]({{< ref "payouts.md#variables-in-the-notifications" >}}).
 
 {{% alert title="Note" color="info"%}}
 
@@ -579,7 +494,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com//v1.0/webhooks
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks
 ```
 <br>
 
@@ -587,8 +502,12 @@ https://{env-api}.payulatam.com//v1.0/webhooks
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com//v1.0/webhooks
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks
 ```
+<br>
+
+Where:
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
 
 ### Variables for request and response
 
@@ -599,7 +518,7 @@ https://{env-api}.payulatam.com//v1.0/webhooks
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| id | Alphanumeric |  | Id of the WebHook you want to update. Do not send this parameter when creating a WebHook | No |
+| id | Alphanumeric |  | Id of the WebHook you want to update. This parameter is mandatory when updating a WebHook | No |
 | accountId | Numeric | | ID of the user account for each country associated with the merchant. | Yes |
 | callbackUrl | Alphanumeric | | URL used to receive the `POST` notifications sent by PayU according to the events selected. This URL must be unique per WebHook. | Yes |
 | description | Alphanumeric | | Description of the WebHook you want to create. | Yes |
@@ -608,7 +527,7 @@ https://{env-api}.payulatam.com//v1.0/webhooks
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
@@ -625,11 +544,9 @@ https://{env-api}.payulatam.com//v1.0/webhooks
 
 </details>
 
-{{% alert title="Note" color="info"%}}
+<br>
 
-To update a WebHook, send the `id` parameter and the values to be changed only.
-
-{{% /alert %}}
+The following are the request and response bodies for this method.
 
 {{< tabs tabTotal="1" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -699,17 +616,16 @@ To delete a WebHook, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/v1.0/webhooks/{id}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
 ```
 <br>
 
-Where `{id}` is the id of the WebHook you want to delete.
+Where:
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* `{id}` is the id of the WebHook you want to delete.
 
-**Response example**
+#### Response example
 
-<details>
-<summary>Response variables</summary>
-<br>
 <div class="variables"></div>
 
 | Field name | Format | Size | Description |
@@ -717,9 +633,6 @@ Where `{id}` is the id of the WebHook you want to delete.
 | processingStatus | Alphanumeric | 7 | State of deletion of the WebHook. By default, this state is `SUCCESS`. |
 | id | Alphanumeric |  | Id of the WebHook deleted. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the deleted WebHook is `DELETED`. |
-
-</details>
-<br>
 
 {{< tabs tabTotal="1" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -753,16 +666,18 @@ This method lets you consult the information of a specific WebHook using its id.
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/v1.0/webhooks/{id}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
 ```
 <br>
 
-Where `{id}` is the id of the WebHook you want to consult.
+Where:
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* `{id}` is the id of the WebHook you want to consult.
 
-**Response example**
+#### Response example
 
 <details>
-<summary>Response variables</summary>
+<summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
@@ -812,16 +727,18 @@ This method lets you consult the information of all the WebHooks created in your
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/v1.0/webhooks/account/{accountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{accountId}
 ```
 <br>
 
-Where `{accountId}` is the id of your account.
+Where:
+* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* `{accountId}` is the id of your account.
 
-**Response example**
+#### Response example
 
 <details>
-<summary>Response variables</summary>
+<summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 

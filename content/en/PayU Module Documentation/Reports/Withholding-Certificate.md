@@ -1,6 +1,6 @@
 ---
-title: "Witholding Certificate"
-linkTitle: "Witholding Certificate"
+title: "Withholding Certificate"
+linkTitle: "Withholding Certificate"
 date: 2021-09-03T16:45:45-05:00
 type: docs
 Description: >
