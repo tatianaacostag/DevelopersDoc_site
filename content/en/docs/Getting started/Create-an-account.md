@@ -41,7 +41,7 @@ Once we received your account request, our agents will validate your risk and ba
 Review the Prohibited, Restricted or Forbidden Activities [here](#).
 
 3. Activate your account.<br>
-After opening your PayU account, you will receive an email to confirm your email and enter the PayU Module for the first time. At this point, your account is already activated to receive payments on the Internet with all available payment methods.
+After opening your PayU account, you receive an e-mail to confirm its address and enter the PayU Module for the first time. At this point, your account is already activated to receive payments on the Internet with all available payment methods.
 <br><br>
 To activate your account, you should:
 - Have completed the documentation and registration in the administrative module.

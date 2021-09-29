@@ -6,5 +6,6 @@ type: docs
 Description: >
   Configure how you want to generate the Asobancaria reports to facilitate reconciliation with your banks. This feature is available for accounts in Colombia.
 weight: 50
+draft: true
 ---
 

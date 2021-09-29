@@ -3,6 +3,16 @@ title = "TechOS"
 linkTitle = "TechOS"
 
 +++
+<script language="javascript"> 
+window.onload = function () {
+	var url = document.referrer;
+	if(url.includes("/payu-module-documentation")) {
+		window.location.href = "/payu-module-documentation.html";
+	} else {
+		window.location.href = "/docs.html";
+	}
+};
+</script>
 
 {{< blocks/cover title="PayU Developers documentation" image_anchor="top" height="full" color="dark" >}}
 <div class="container">

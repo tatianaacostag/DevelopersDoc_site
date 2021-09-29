@@ -85,7 +85,7 @@ parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.BRL.name());
 parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
 //Enter the buyer's name here.
 parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer name");
-//Enter the buyer's email here
+//Enter the buyer's e-mail here
 parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
 //Enter the buyer's contact phone here.
 parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "(11)756312633");
@@ -108,7 +108,7 @@ parameters.put(PayU.PARAMETERS.BUYER_PHONE, "(11)756312633");
 parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
 //Enter the Payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second buyer name");
-//Enter the Payer's email here
+//Enter the Payer's e-mail here
 parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "buyer_test@test.com");
 //Enter the Payer's contact phone here.
 parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "(11)756312633");
@@ -197,7 +197,7 @@ $parameters = array(
 	PayUParameters::BUYER_ID => "1",
 	//Enter the buyer's name here.
 	PayUParameters::BUYER_NAME => "First name and second buyer  name",
-	//Enter the buyer's email here.
+	//Enter the buyer's e-mail here.
 	PayUParameters::BUYER_EMAIL => "buyer_test@test.com",
 	//Enter the buyer's contact phone here.
 	PayUParameters::BUYER_CONTACT_PHONE => "(11)756312633",
@@ -219,7 +219,7 @@ $parameters = array(
   PayUParameters::PAYER_ID => "1",
   //Enter the Payer's name here.
   PayUParameters::PAYER_NAME => "First name and second buyer name",
-  //Enter the Payer's email here
+  //Enter the Payer's e-mail here
   PayUParameters::PAYER_EMAIL => "buyer_test@test.com",
   //Enter the Payer's contact phone here.
   PayUParameters::PAYER_CONTACT_PHONE => "(11)756312633",
@@ -384,7 +384,7 @@ parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.BRL.name());
 parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
 //Enter the buyer's name here.
 parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer name");
-//Enter the buyer's email here
+//Enter the buyer's e-mail here
 parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
 //Enter the buyer's contact phone here.
 parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "(11)756312633");
@@ -407,7 +407,7 @@ parameters.put(PayU.PARAMETERS.BUYER_PHONE, "(11)756312633");
 parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
 //Enter the Payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second buyer name");
-//Enter the Payer's email here
+//Enter the Payer's e-mail here
 parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "buyer_test@test.com");
 //Enter the Payer's contact phone here.
 parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "(11)756312633");
@@ -496,7 +496,7 @@ $parameters = array(
 	PayUParameters::BUYER_ID => "1",
 	//Enter the buyer's name here.
 	PayUParameters::BUYER_NAME => "First name and second buyer  name",
-	//Enter the buyer's email here.
+	//Enter the buyer's e-mail here.
 	PayUParameters::BUYER_EMAIL => "buyer_test@test.com",
 	//Enter the buyer's contact phone here.
 	PayUParameters::BUYER_CONTACT_PHONE => "(11)756312633",
@@ -518,7 +518,7 @@ $parameters = array(
   PayUParameters::PAYER_ID => "1",
   //Enter the Payer's name here.
   PayUParameters::PAYER_NAME => "First name and second buyer name",
-  //Enter the Payer's email here
+  //Enter the Payer's e-mail here
   PayUParameters::PAYER_EMAIL => "buyer_test@test.com",
   //Enter the Payer's contact phone here.
   PayUParameters::PAYER_CONTACT_PHONE => "(11)756312633",
@@ -630,7 +630,7 @@ parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.BRL.name());
 parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
 //Enter the buyer's name here.
 parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer  name");
-//Enter the buyer's email here
+//Enter the buyer's e-mail here
 parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
 //Enter the buyer's contact phone here.
 parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "(11)756312633");
@@ -653,7 +653,7 @@ parameters.put(PayU.PARAMETERS.BUYER_PHONE, "(11)756312633");
 parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
 //Enter the Payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second buyer name");
-//Enter the Payer's email here
+//Enter the Payer's e-mail here
 parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "buyer_test@test.com");
 //Enter the Payer's contact phone here.
 parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "(11)756312633");
@@ -733,7 +733,7 @@ $parameters = array(
 	PayUParameters::BUYER_ID => "1",
 	//Enter the buyer's name here.
 	PayUParameters::BUYER_NAME => "First name and second buyer  name",
-	//Enter the buyer's email here.
+	//Enter the buyer's e-mail here.
 	PayUParameters::BUYER_EMAIL => "buyer_test@test.com",
 	//Enter the buyer's contact phone here.
 	PayUParameters::BUYER_CONTACT_PHONE => "(11)756312633",
@@ -755,7 +755,7 @@ $parameters = array(
   PayUParameters::PAYER_ID => "1",
   //Enter the Payer's name here.
   PayUParameters::PAYER_NAME => "First name and second buyer name",
-  //Enter the Payer's email here
+  //Enter the Payer's e-mail here
   PayUParameters::PAYER_EMAIL => "buyer_test@test.com",
   //Enter the Payer's contact phone here.
   PayUParameters::PAYER_CONTACT_PHONE => "(11)756312633",

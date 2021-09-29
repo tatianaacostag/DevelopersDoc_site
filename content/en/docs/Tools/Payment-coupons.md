@@ -9,7 +9,7 @@ weight: 70
 
 This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.
 
-You can receive payments without any technical knowledge. You just need to send an email where your client can download the coupon and makes the respective payment.
+You can receive payments without any technical knowledge. You just need to send an e-mail where your client can download the coupon and makes the respective payment.
 
 {{% alert title="Note" color="info"%}}
 
@@ -17,18 +17,18 @@ Payment coupons are available for Argentina and Colombia.
 
 {{% /alert %}}  
 
-# How does the Payment coupons work?
+## How does the Payment coupons work?
 The Payment coupon follows a simple flow to let your clients regular cash payments as many times as they need:
 
 1. **Configure the Payment coupon through the PayU module**.<br>You only need to provide how many payments per client you want to receive, decide if the payment amount is fixed or your client decides the amount, decide the payment deadline, and the payment reference.
 
-2. **Decide the delivery of the coupon**<br>Decide if you want to deliver the coupons by email, by generating PDF, by payment references or collection cards (Available only for Argentina). 
+2. **Decide the delivery of the coupon**<br>Decide if you want to deliver the coupons by e-mail, by generating PDF, by payment references or collection cards (Available only for Argentina). 
 
 3. **Use the Payment coupons**<br>When your clients receive the coupon, they can make the payment using any of the available cash payment offices in their countries.<br>Every time a client pays using the coupon, you receive a confirmation message and the amount of the purchase<sup>*</sup> is transferred to your PayU account, where you can transfer it to your bank account.
 
 <sup>*</sup>_The value transferred corresponds to the amount paid by your client minus the PayU fee._
 
-## Creating payment coups
+## Creating payment coupons
 According to your business needs, you can configure the options to receive payments using coupons. Follow the next procedure to create Payment coupons and delivery them to your clients.
 
 1. Log in to [PayU.com](payu.com) and click the login option located at the top of the page. Alternatively, you can log in to https://merchants.payulatam.com/.
@@ -52,14 +52,14 @@ According to your business needs, you can configure the options to receive payme
 ## Sharing the Payment request
 After you have configured the Payment coupons, decide how you want to deliver them to your client.<br>You have available the following options:
 
-### Send via email 
-This option lets you send the Payment coupon via email. The clients receive the email and print the coupon to let them pay in cash in the available offices
+### Send via e-mail 
+This option lets you send the Payment coupon via e-mail. The clients receive the e-mail and print the coupon to let them pay in cash in the available offices
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_02.png)
 
 To add the clients one by one, provide the following information:
 
-* Email: email of the client who receives the coupon.
+* Email: e-mail of the client who receives the coupon.
 * Payer name: name of the client.
 * Payment description: description of the payment.
 * Amount: this field is available when you define the amount payed by your client and takes the defined value.
@@ -78,9 +78,9 @@ A new window appears showing the resume of the emails to be sent.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_03.png)
 
-If you want to edit the information of the issuer and the email, click Edit link displayed in the top right corner of each section.
+If you want to edit the information of the issuer and the e-mail, click Edit link displayed in the top right corner of each section.
 
-Finally, click **Send email**. Each client receive an Email with the coupon.
+Finally, click **Send email**. Each client receive an e-mail with the coupon.
 
 ### Print the coupons
 This option lets you generate coupons in PDF format.

@@ -38,7 +38,7 @@ The users marked with a green star (<img src="/assets/UserManagement/UserManagem
 {{% /alert %}}
 
 ### Add users
-You can create a user using their email address or providing a username. Follow the steps below to create a new user.
+You can create a user using their e-mail address or providing a username. Follow the steps below to create a new user.
 
 1. In the _**User management**_ module, click _**Add user**_.
 
@@ -52,7 +52,7 @@ You can create a user using their email address or providing a username. Follow 
 
 * **E-mail**: E-mail address of the new user. PayU sends the login information to this e-mail address, make sure it is valid and the user has access to it.<br>Alternatively, you can create a user without using an e-mail address. This is useful specially when the user you want to create is attached to a role and not to a specific person. To do this, click _**Don't have an e-mail?**_ and provide the following information:
    - _User_: username used to log in. This user name cannot have numbers nor special characters.
-   - _E-mail (Admin)_: provide the email of the admin user to which, PayU send the options to generate or recover the password for this user.
+   - _E-mail (Admin)_: provide the e-mail of the admin user to which, PayU send the options to generate or recover the password for this user.
 * **Full name**: name of the user you want to create.
 * **Status**: set if the user you want to create is _Active_ or _Inactive_.
 
@@ -85,7 +85,7 @@ You can use any of the following formats:
 
 * **Language**: change the language of your PayU module.
 
-<img src="/assets/UserPreferences/UserPreferences_08.png" alt="PrintScreen" width="40%"/>
+<img src="/assets/UserPreferences/UserPreferences_08.png" alt="PrintScreen" width="40%"/><br>
 
 5. At the bottom of the screen, all the profiles created (both default and custom) loads along with the accounts of the current merchant. Configure the access for each account setting a profile, if you don't want to enable access to an account, don't select a profile.
 
@@ -101,7 +101,7 @@ If you want to assign a custom profile, you must create it first.
 
 7. At this point, you have added the new user! We sent an e-mail to user address so they can access the PayU module.<br>The new user has to activate the account using the _**Activate your account**_ button in the e-mail.
 
-<img src="/assets/UserManagement/UserManagement_09.png" alt="PrintScreen" width="40%"/><br>
+<img src="/assets/UserManagement/UserManagement_09.png" alt="PrintScreen" width="40%"/>
 
 {{% alert title="Note" color="info"%}}
 If the user was created without using e-mail, the instructions to activate the account are sent to the Admin e-mail you defined.

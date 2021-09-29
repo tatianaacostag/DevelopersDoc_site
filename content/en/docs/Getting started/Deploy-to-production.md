@@ -25,7 +25,7 @@ Include the following parameters in your payment forms:
 | currency      | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
 | signature     | The signature is a unique way to validate payments made through the platform, ensuring its authenticity.    |
 | test          | Set `0` for productions processed in the Production environment.                                             |
-| buyerEmail    | Email address of the buyer.                                                                                 |
+| buyerEmail    | E-mail address of the buyer.                                                                                 |
 
 Target your request to the following URL:
 

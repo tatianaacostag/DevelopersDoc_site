@@ -7,10 +7,10 @@ Description: >
 weight: 10
 ---
 
-You can choose to receive a total payment or send your customers a detailed description of the sale. You can send your payment request via email or generate a link to share it in chat rooms or social networks. Once your customer receives it, they can make the payment through our secure payment system.
+You can choose to receive a total payment or send your customers a detailed description of the sale. You can send your payment request via e-mail or generate a link to share it in chat rooms or social networks. Once your customer receives it, they can make the payment through our secure payment system.
 
 With the Payment Request, you have the following benefits:
-* Sell online regardless if you don't have a website using email, social networks or, message exchange platforms.
+* Sell online regardless if you don't have a website using e-mail, social networks or, message exchange platforms.
 * Offer several payment methods.
 * Discriminate the payments you receive so you can know who pays what and when.
 
@@ -19,7 +19,7 @@ The Payment request follows a simple flow to let your customers buy your product
 
 1. Generate the Payment request through the PayU module. For a basic payment request, you only need to provide what you want to sell, its price, and decide whether your payment includes taxes or an expiration date. If you want to include additional information such as shipping, payment reference, comments, and more, you can create a Custom payment request.
 
-2. Once the link has been generated, you can share it with your customers either by email, posting the link on social networks, or including this link in your website (if you have one).
+2. Once the link has been generated, you can share it with your customers either by e-mail, posting the link on social networks, or including this link in your website (if you have one).
 
 3. When your customers use the link, they are redirected to the PayU's checkout page, where they can pay using any of the [available payment methods]({{< ref "Select-your-payment-method.md" >}}).
 
@@ -96,7 +96,7 @@ By default, all the available payment methods of your country are selected.
 ## Sharing the Payment request
 After you have configured and generated the Payment request, a confirmation page appears where you can perform the following actions:
 
-  * **_Share on social media with a link_**: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several email addresses.
+  * **_Share on social media with a link_**: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several e-mail addresses.
 
   ![PrintScreen](/assets/PaymentRequest/PaymentRequest_06.png) 
 
@@ -112,7 +112,7 @@ After you have configured and generated the Payment request, a confirmation page
   ![PrintScreen](/assets/PaymentRequest/PaymentRequest_07.png)
 
 ## Creating multiple Payment requests
-The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via Email.
+The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via e-mail.
 
 To create multiple payment links, expand the **Sell with PayU option** and then, select **Sell on the internet**. Then, select the option **Create multiple payment links**.
 
@@ -124,7 +124,7 @@ The Excel file downloaded is by default in Spanish and each row corresponds to a
 
 | Name                        | Column | Description                                                                            |
 |-----------------------------|--------|----------------------------------------------------------------------------------------|
-| Buyer's email               | A      | The email address to which the Payment link will be sent.                              |
+| Buyer's e-mail              | A      | The e-mail address to which the Payment link will be sent.                             |
 | What are you going to sell? | B      | Name or description of the product you want to sell.                                   |
 | What does the product cost? | C      | Price of the product you offer.                                                        |
 | Currency                    | D      | Currency of the product's amount.<br>Possible values: COP, USD, PEN, ARS, BRL, and MXN |

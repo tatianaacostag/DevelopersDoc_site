@@ -37,7 +37,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 ## Configuring technical information
 In this section, you can configure the technical properties of each active account, such as:
 * URL settings for confirmation and response pages.
-* Enable the send emails to the buyer and to your store when a sale takes place.
+* Enable the send e-mails to the buyer and to your store when a sale takes place.
 * Enable notifications for Disputes process.
 * Select if your payments are processed in test mode or live.
 
@@ -62,7 +62,7 @@ In this tab, you can configure the following information.
 | Response URL | The page to which the buyer is direct once the transaction in PayU ends. This page displays the status of the transaction. |
 | Confirmation URL | The page to which PayU sends the payment confirmation to your system. This is useful when you want to update stocks and database once the transaction reaches its final state.<br>This parameter is not mandatory. |
 | Control duplicate payments | When enabling this option, We validate that each payment reference sent to our system is unique. Otherwise, you can send the same reference for all your sales. |
-| Notifications of processed payments | This option lets you enable the send of an email to the payer or to you when the payment was approved or rejected. |
+| Notifications of processed payments | This option lets you enable the send of an e-mail to the payer or to you when the payment was approved or rejected. |
 
 ### Disputes
 In this tab, you can configure the following information of the [dispute]({{< ref "Disputes-MP.md" >}}) process.
@@ -73,7 +73,7 @@ In this tab, you can configure the following information of the [dispute]({{< re
 
 | Parameter | Description |
 |---|---|
-| Notification e-mails | Set the email addresses to be notified when a dispute process has been started. |
+| Notification e-mails | Set the e-mail addresses to be notified when a dispute process has been started. |
 | Automatic notification URL | If you enable this option, you can set the URL to which PayU sends the notification of a dispute process. |
 
 {{% alert title="Note" color="info"%}}

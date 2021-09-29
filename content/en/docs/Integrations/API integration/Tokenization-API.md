@@ -796,7 +796,7 @@ Using this feature, you can perform payments using several tokens stored in a _*
     - Number of installments
     - Sale reference
     - Sale description
-    - Buyer's email
+    - Buyer's e-mail
     - ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}})
     - Total amount including taxes
     - Base value of reimbursement

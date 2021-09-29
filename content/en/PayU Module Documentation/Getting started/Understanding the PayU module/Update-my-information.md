@@ -4,7 +4,7 @@ linkTitle: "Update my information"
 date: 2021-07-22T15:30:25-05:00
 type: docs
 Description: >
-   Learn how to change your password, update your user preferences, change the merchant's logo and request the change of your Bank information
+   Learn how to change your password, update your user preferences, change the merchant's logo and request the change of your Bank information.
 weight: 10
 tags: ["subtopic"]
 ---
@@ -15,7 +15,7 @@ Once your account has been validated and activated, your contact, business, and 
 ## Change password
 Follow these steps to change your current password.
 
-1. At the top right corner, click the **▾** symbol next to your email address to display the available user settings.<br>Click _**My profile**_.
+1. At the top right corner, click the **▾** symbol next to your e-mail address to display the available user settings.<br>Click _**My profile**_.
 
 ![PrintScreen](/assets/UserPreferences/UserPreferences_01.png)
 
@@ -32,7 +32,7 @@ Follow these steps to change your current password.
 ## Update your user preferences
 In this section, you can change the display settings of the information displayed in your module, such as the date format, time zone of your country, the currency format and the display language.
 
-To do this, click the **▾** symbol next to your email address to display the available user settings. Then, click _**My profile**_.
+To do this, click the **▾** symbol next to your e-mail address to display the available user settings. Then, click _**My profile**_.
 
 ![PrintScreen](/assets/UserPreferences/UserPreferences_01.png)
 
@@ -129,7 +129,7 @@ When finish, click _**Save changes**_. When the information is submitted, you ar
 
 <img src="/assets/BankInformation/BankInformation_05.png" alt="PrintScreen" width="50%"/><br>
 
-Furthermore, you receive an email informing the request and providing a ticket number.
+Furthermore, you receive an e-mail informing the request and providing a ticket number.
 
 The procedure to validate your account take up two working days. In the meantime, the information you provide is loaded in the **_Bank account under analysis_** panel.
 

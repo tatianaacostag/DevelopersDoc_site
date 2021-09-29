@@ -43,11 +43,11 @@ You can transfer up to the total amount in your PayU account to the registered b
 
 ![PrintScreen](/assets/Transfers/Transfers_01.png)
 
-2. Complete the value to transfer or select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.
+2. Complete the value to transfer or select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don't have free transactions, this panel also displayed the value or the transaction along with the taxes.
 
 ![PrintScreen](/assets/Transfers/Transfers_02.png)
 
-3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred and the target account.<br>Click _**OK**_ to confirm it or _**Reject**_ to discard it.
+3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account, and the target account.<br>Click _**OK**_ to confirm it or _**Reject**_ to discard it.
 
 <img src="/assets/Transfers/Transfers_03.png" alt="PrintScreen" width="50%"/><br>
 
