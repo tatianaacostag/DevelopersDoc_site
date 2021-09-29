@@ -33,7 +33,7 @@ Once your account has been validated and activated, your contact, business, and 
 &lt;h2 id=&#34;change-password&#34;&gt;Change password&lt;/h2&gt;
 &lt;p&gt;Follow these steps to change your current password.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;At the top right corner, click the &lt;strong&gt;▾&lt;/strong&gt; symbol next to your email address to display the available user settings.&lt;br&gt;Click &lt;em&gt;&lt;strong&gt;My profile&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;At the top right corner, click the &lt;strong&gt;▾&lt;/strong&gt; symbol next to your e-mail address to display the available user settings.&lt;br&gt;Click &lt;em&gt;&lt;strong&gt;My profile&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/UserPreferences/UserPreferences_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
@@ -49,7 +49,7 @@ Once your account has been validated and activated, your contact, business, and 
 &lt;/ol&gt;
 &lt;h2 id=&#34;update-your-user-preferences&#34;&gt;Update your user preferences&lt;/h2&gt;
 &lt;p&gt;In this section, you can change the display settings of the information displayed in your module, such as the date format, time zone of your country, the currency format and the display language.&lt;/p&gt;
-&lt;p&gt;To do this, click the &lt;strong&gt;▾&lt;/strong&gt; symbol next to your email address to display the available user settings. Then, click &lt;em&gt;&lt;strong&gt;My profile&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To do this, click the &lt;strong&gt;▾&lt;/strong&gt; symbol next to your e-mail address to display the available user settings. Then, click &lt;em&gt;&lt;strong&gt;My profile&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/UserPreferences/UserPreferences_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In the &lt;em&gt;&lt;strong&gt;My profile&lt;/strong&gt;&lt;/em&gt; screen, locate the &lt;em&gt;&lt;strong&gt;Preferences&lt;/strong&gt;&lt;/em&gt; panel.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/UserPreferences/UserPreferences_04.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
@@ -170,7 +170,7 @@ After changing any of the user settings, do not forget to click &lt;em&gt;&lt;st
 &lt;p&gt;&lt;img src=&#34;../../../assets/BankInformation/BankInformation_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;When finish, click &lt;em&gt;&lt;strong&gt;Save changes&lt;/strong&gt;&lt;/em&gt;. When the information is submitted, you are prompted about the result of the operation.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/BankInformation/BankInformation_05.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Furthermore, you receive an email informing the request and providing a ticket number.&lt;/p&gt;
+&lt;p&gt;Furthermore, you receive an e-mail informing the request and providing a ticket number.&lt;/p&gt;
 &lt;p&gt;The procedure to validate your account take up two working days. In the meantime, the information you provide is loaded in the &lt;strong&gt;&lt;em&gt;Bank account under analysis&lt;/em&gt;&lt;/strong&gt; panel.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/BankInformation/BankInformation_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As soon as your bank account information has been validated by our Risk team, you can transfer to it the funds collected in your PayU account. While the new account is under validation, the transfers you make are sent to the former bank account.&lt;/p&gt;
@@ -213,7 +213,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 &lt;p&gt;In this section, you can configure the technical properties of each active account, such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;URL settings for confirmation and response pages.&lt;/li&gt;
-&lt;li&gt;Enable the send emails to the buyer and to your store when a sale takes place.&lt;/li&gt;
+&lt;li&gt;Enable the send e-mails to the buyer and to your store when a sale takes place.&lt;/li&gt;
 &lt;li&gt;Enable notifications for Disputes process.&lt;/li&gt;
 &lt;li&gt;Select if your payments are processed in test mode or live.&lt;/li&gt;
 &lt;/ul&gt;
@@ -251,7 +251,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Notifications of processed payments&lt;/td&gt;
-&lt;td&gt;This option lets you enable the send of an email to the payer or to you when the payment was approved or rejected.&lt;/td&gt;
+&lt;td&gt;This option lets you enable the send of an e-mail to the payer or to you when the payment was approved or rejected.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -269,7 +269,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Notification e-mails&lt;/td&gt;
-&lt;td&gt;Set the email addresses to be notified when a dispute process has been started.&lt;/td&gt;
+&lt;td&gt;Set the e-mail addresses to be notified when a dispute process has been started.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Automatic notification URL&lt;/td&gt;

@@ -50,7 +50,7 @@ The users marked with a green star (&lt;img src=&#34;../../assets/UserManagement
 &lt;/div&gt;
 
 &lt;h3 id=&#34;add-users&#34;&gt;Add users&lt;/h3&gt;
-&lt;p&gt;You can create a user using their email address or providing a username. Follow the steps below to create a new user.&lt;/p&gt;
+&lt;p&gt;You can create a user using their e-mail address or providing a username. Follow the steps below to create a new user.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;In the &lt;em&gt;&lt;strong&gt;User management&lt;/strong&gt;&lt;/em&gt; module, click &lt;em&gt;&lt;strong&gt;Add user&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
@@ -66,7 +66,7 @@ The users marked with a green star (&lt;img src=&#34;../../assets/UserManagement
 &lt;li&gt;&lt;strong&gt;E-mail&lt;/strong&gt;: E-mail address of the new user. PayU sends the login information to this e-mail address, make sure it is valid and the user has access to it.&lt;br&gt;Alternatively, you can create a user without using an e-mail address. This is useful specially when the user you want to create is attached to a role and not to a specific person. To do this, click &lt;em&gt;&lt;strong&gt;Don&amp;rsquo;t have an e-mail?&lt;/strong&gt;&lt;/em&gt; and provide the following information:
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;User&lt;/em&gt;: username used to log in. This user name cannot have numbers nor special characters.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;E-mail (Admin)&lt;/em&gt;: provide the email of the admin user to which, PayU send the options to generate or recover the password for this user.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;E-mail (Admin)&lt;/em&gt;: provide the e-mail of the admin user to which, PayU send the options to generate or recover the password for this user.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Full name&lt;/strong&gt;: name of the user you want to create.&lt;/li&gt;
@@ -142,7 +142,7 @@ The users marked with a green star (&lt;img src=&#34;../../assets/UserManagement
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Language&lt;/strong&gt;: change the language of your PayU module.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;../../assets/UserPreferences/UserPreferences_08.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;
+&lt;p&gt;&lt;img src=&#34;../../assets/UserPreferences/UserPreferences_08.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;At the bottom of the screen, all the profiles created (both default and custom) loads along with the accounts of the current merchant. Configure the access for each account setting a profile, if you don&amp;rsquo;t want to enable access to an account, don&amp;rsquo;t select a profile.&lt;/li&gt;
 &lt;/ol&gt;
@@ -161,7 +161,7 @@ If you want to assign a custom profile, you must create it first.
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;At this point, you have added the new user! We sent an e-mail to user address so they can access the PayU module.&lt;br&gt;The new user has to activate the account using the &lt;em&gt;&lt;strong&gt;Activate your account&lt;/strong&gt;&lt;/em&gt; button in the e-mail.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../assets/UserManagement/UserManagement_09.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;img src=&#34;../../assets/UserManagement/UserManagement_09.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
