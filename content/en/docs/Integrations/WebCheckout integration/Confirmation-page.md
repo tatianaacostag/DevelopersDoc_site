@@ -45,7 +45,7 @@ In the confirmation page, you must capture the data you want to store in the dat
 | additional_value | Numeric | 14,2 | Non commissionaire Additional Value. |
 | transaction_date | Date(YYYY-MM-DD HH:mm:ss) | — | The date the transaction was made. |
 | currency | Alphanumeric | 3 | The currency in which the payment is made.<br>[See the accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
-| e-mail_buyer | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the transaction’s result by e-mail. It's recommended to validate it when the data is taken from a form. |
+| email_buyer | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the transaction’s result by email. It's recommended to validate it when the data is taken from a form. |
 | cus | Alphanumeric | 64 | The cus (unique tracking code) is the payment’s reference within the Bank, it applies only to payments with PSE |
 | pse_bank | Alphanumeric | 255 | The name of the bank, applies only to payments with PSE. |
 | test | Boolean (true, false) | — | Variable to identify whether the operation was a test. |
@@ -109,7 +109,7 @@ value=100.00
 administrative_fee=0.00
 payment_method_type=2
 office_phone=
-e-mail_buyer=test@payulatam.com
+email_buyer=test@payulatam.com
 response_message_pol=ENTITY_DECLINED
 error_message_bank=
 shipping_city=
