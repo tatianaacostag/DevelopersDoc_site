@@ -1256,10 +1256,10 @@ signature = 779f163be9347a691bcdb25064644795
 &lt;td&gt;The currency in which the payment is made.&lt;br&gt;&lt;a href=&#34;../../../docs/getting-started/response-codes-and-variables.html#accepted-currencies&#34;&gt;See the accepted currencies&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;e-mail_buyer&lt;/td&gt;
+&lt;td&gt;email_buyer&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;255&lt;/td&gt;
-&lt;td&gt;Field that contains the buyer’s e-mail to notify the transaction’s result by e-mail. It&amp;rsquo;s recommended to validate it when the data is taken from a form.&lt;/td&gt;
+&lt;td&gt;Field that contains the buyer’s e-mail address to notify the transaction’s result. It&amp;rsquo;s recommended to validate it when the data is taken from a form.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;cus&lt;/td&gt;
@@ -1522,7 +1522,7 @@ value=100.00
 administrative_fee=0.00
 payment_method_type=2
 office_phone=
-e-mail_buyer=test@payulatam.com
+email_buyer=test@payulatam.com
 response_message_pol=ENTITY_DECLINED
 error_message_bank=
 shipping_city=
