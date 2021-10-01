@@ -1,35 +1,40 @@
 ---
-title: "Online Payments"
-linkTitle: "Home"
+title: "Pagos en línea"
+linkTitle: "Inicio"
 date: 2017-01-05
 description: >
-  With PayU, you can receive online payments made with credit cards, bank transfers, cash and more.
+  Con PayU, puedes recibir pagos realizados con tarjetas de crédito, transferencias bancarias, efectivo y más.
 menu:
   main:
     name: Online payments
     weight: 20     
 ---
 
-We provide a set of services and tools to let you receive payments, download reports, manage disputes and more.
+Proveemos un conjunto de servicios y herramientas que te permiten recibir pagos en línea, descargar reportes, administrar disputas y más.
 
-Ideally suited for
+Ideal para negocios y personas:
 
-* All types and size of payments
-* Products and services across all categories
-* Businesses of any size or stage
+* De todos los tamaños y distintas actividades económicas.
+* Que ofrecen productos y servicios en todas las categorías.
+* Que están en etapa de emprendimiento o llevan años en el mercado.
 
-## Benefits of online payments
-* **Increase your sales**</br>
-Expand the scope of your business by offering various payment methods.
+## Beneficios de los pagos en línea {#benefits-of-online-payments}
+* **Aumenta tus ventas**</br>
+Expande el alcancxe de tu negocio ofreciendo varios métodos de pago.
 
-* **Accept payments faster**</br>
-See an overview of all your transactions in our system. Consolidate and monitor your sales in the [PayU module](en/payu-module-documentation.html).
+* **Acepta pagos más rápido**</br>
+Mira un resumen de todas las transacciones en nuestro sistema. Consolida y monitorea tus ventas en el [Módulo PayU]().
 
-* **Multi-acquisition**</br>
-We are integrated with all processing networks, which can increase your approval rate by up to 5%.
+* **Multiadquirencia**</br>
+Estamos integrados con todas las redes procesadoras, lo cual puede aumentar hasta 5% tu tasa de aprobación.
 
-## How does PayU work?
-To understand how PayU processes payments, it is important to understand two main concepts:
+## ¿Cómo funciona PayU? {}
+Para entender cómo PayU procesa pagos, es importante entender dos conceptos principales:
+
+* Orden: una orden en PayU es definida como un conjunto de movimientos relacionados a un pago en línea.
+* Transacción: cualquier movimiento relacionado con una orden como cobros, reintentos, reembolsos, disputas, etc.
+<!--
+
 
 * Order: an order in PayU is defined as the set of movements related to an online payment.
 * Transaction: any movement related to an order such as charges, retries, refunds, disputes, etc.
@@ -62,10 +67,4 @@ PayU provides the following tools to give you more options to sell and receive p
 
  {{< overview/tools >}}
 
-<!--
-## Select your Integration
-Implement PayU with the aggregator model or gateway, using PayU’s financial agreements or your own. Select the integration that fits bets with your needs:
-
-{{< overview/navblocks >}}
--->
-## What's next?
+## What's next?-->

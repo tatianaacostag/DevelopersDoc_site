@@ -1,6 +1,6 @@
 ---
-title: "Understanding the PayU module"
-linkTitle: "Understanding the PayU module"
+title: "Getting to know the PayU module"
+linkTitle: "Getting to know the PayU module"
 date: 2021-08-17T14:47:21-05:00
 type: docs
 Description: > 
@@ -12,7 +12,7 @@ tags: ["parenttopic"]
 ## Prerequisites
 Before moving on with the explanation of how the PayU module is organized, you need the following:
 * Have a user in PayU module. Learn how to create one [here]({{< ref "create-an-account.md" >}}).
-* Have read and understand the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
+* Have read and understand the [concepts behind the PayU Module](en/payu-module-documentation.html#payu-module-concepts).
 
 ## PayU Module web application
 PayU module is divided in four main groups:

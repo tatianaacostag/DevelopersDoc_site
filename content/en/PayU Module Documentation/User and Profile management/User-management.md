@@ -14,7 +14,7 @@ Before moving on, let's recap some key terms:
 * A _**profile**_ is a set of permissions to access an account. 
 * A user can have one or multiple profiles, this means that a user can access multiple _**accounts**_ and multiple _**merchants**_.
 
-For further information, read the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
+For further information, read the [concepts behind the PayU Module](en/payu-module-documentation.html#payu-module-concepts).
 
 ## Permission required
 To have access to this module, you need to have a profile with the following permission enabled:
