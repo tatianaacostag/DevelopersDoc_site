@@ -146,7 +146,6 @@ To activate your account, you should:&lt;/p&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;PayU module&lt;/h4&gt;
       &lt;p&gt;Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.&lt;/p&gt;
     &lt;/div&gt;
-    
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;./docs/tools/disputes.html&#39;&#34;&gt;
       &lt;img src=&#34;../../assets/SVG/bank.svg&#34; alt=&#34;Disputes&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputes&lt;/h4&gt;

@@ -413,7 +413,7 @@ Some of the links above may appear in Spanish.
 &lt;li&gt;&lt;strong&gt;Enter the PayU module&lt;/strong&gt;.&lt;br&gt;Provide your credentials and enter your account. Here, you can use all the available options to manage your account.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Login2_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;For more information about how to use the PayU Module, refer to this &lt;a href=&#34;https://ecommerce.payulatam.com/manual-secure/manual.html&#34;&gt;section&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more information about how to use the PayU Module, refer to this &lt;a href=&#34;../../payu-module-documentation.html&#34;&gt;section&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
@@ -468,7 +468,7 @@ The reasons for starting a dispute process may vary, some of them are:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../assets/Disputes/Disputes_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3-provide-evidence&#34;&gt;3. Provide evidence&lt;/h3&gt;
 &lt;p&gt;It&amp;rsquo;s important to always respond a dispute by providing evidence before the &lt;a href=&#34;../../docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;deadline stipulated by the bank&lt;/a&gt;. After the deadline date, you cannot upload the corresponding evidence for a dispute.&lt;/p&gt;
-&lt;p&gt;To upload evidence that help us to handle the difference with the bank or the processing network, click the dispute to display the details of the process. Click &lt;em&gt;&lt;strong&gt;Upload evidence&lt;/strong&gt;&lt;/em&gt; and select the files you think can be useful to process the dispute and click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To learn how to upload evidence to resolve the dispute, refer to the &lt;a href=&#34;../../payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;PayU module&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;what-information-can-be-useful&#34;&gt;What information can be useful?&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Full information of your customer (full name, identification number, e-mail, shipping address, visible credit card number, etc.)&lt;/li&gt;
