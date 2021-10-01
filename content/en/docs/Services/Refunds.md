@@ -25,7 +25,7 @@ A refund is requested when a shop decides to voluntarily return the money spent 
 
 Unlike the `VOID` method, this method requires an approval. The refund procedure is explained below:
 
-1. When a refund is requested by your customer, you need to request it using the PayU module or the API or SDK integration. The request requires the _Order Id_, and a refund reason.
+1. When a refund is requested by your customer, you need to request it using the [PayU module]({{< ref "Refunds-MP.md">}}) or our integrations. The request requires the _Order Id_, and a refund reason.
 
 2. Once you send the request, PayU reviews the request and approves or rejects it in one to three business days.
 

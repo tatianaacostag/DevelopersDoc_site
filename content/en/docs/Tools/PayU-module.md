@@ -29,4 +29,4 @@ PayU module provides the following benefits:
 
 ![PrintScreen](/assets/Login2_en.png)
 
-For more information about how to use the PayU Module, refer to this [section](https://ecommerce.payulatam.com/manual-secure/manual.html).
+For more information about how to use the PayU Module, refer to this [section](/payu-module-documentation.html).

@@ -56,7 +56,7 @@ You can view and manage your dispute processes from your PayU module, in the _**
 ### 3. Provide evidence
 It's important to always respond a dispute by providing evidence before the [deadline stipulated by the bank]({{< ref"disputes.md#maximum-days-to-provide-evidence" >}}). After the deadline date, you cannot upload the corresponding evidence for a dispute.
 
-To upload evidence that help us to handle the difference with the bank or the processing network, click the dispute to display the details of the process. Click _**Upload evidence**_ and select the files you think can be useful to process the dispute and click _**Save**_.
+To learn how to upload evidence to resolve the dispute, refer to the [PayU module]({{< ref"Disputes-MP.md" >}}).
 
 #### What information can be useful?
 * Full information of your customer (full name, identification number, e-mail, shipping address, visible credit card number, etc.)
