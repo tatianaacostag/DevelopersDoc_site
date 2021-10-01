@@ -32,7 +32,7 @@ The reasons for starting a dispute process may vary, some of them are:
 The disputes process follows a simple flow:
 
 ### 1. Dispute notification
-When a bank notifies PayU about a dispute, both you and your customer receives an email notifying the start of the dispute process.
+When a bank notifies PayU about a dispute, both you and your customer receives an e-mail notifying the start of the dispute process.
 
 We also send a `POST` with all the information of the dispute to the URL you set in your PayU module. This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.
 
@@ -59,7 +59,7 @@ It's important to always respond a dispute by providing evidence before the [dea
 To upload evidence that help us to handle the difference with the bank or the processing network, click the dispute to display the details of the process. Click _**Upload evidence**_ and select the files you think can be useful to process the dispute and click _**Save**_.
 
 #### What information can be useful?
-* Full information of your customer (full name, identification number, email, shipping address, visible credit card number, etc.)
+* Full information of your customer (full name, identification number, e-mail, shipping address, visible credit card number, etc.)
 * Proof of delivery of the product or service signed by the cardholder.
 * Bill of sale of the product or service.
 * Acceptance letter of the payment signed by the cardholder attaching their identification document.
@@ -81,8 +81,8 @@ Recall that the maximum days to provide evidence for each country are:
 | Panama    | 8 working days            |
 | Peru      | 6 working days            |
 
-### 5. Final decision on dispute status.
-Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refund. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.
+### 4. Final decision on dispute status.
+Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refunded. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.
 
 When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.
 

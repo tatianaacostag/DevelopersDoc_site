@@ -33,12 +33,6 @@ To understand how PayU processes payments, it is important to understand two mai
 
 * Order: an order in PayU is defined as the set of movements related to an online payment.
 * Transaction: any movement related to an order such as charges, retries, refunds, disputes, etc.
-<!--
-The following image illustrates these concepts.
-
-_Insertar imagen acá_
-
-According to the image above, an _Order_ can be interpreted as the set of steps from the beginning to the end, and the _Transaction_ are interpreted as a step. -->
 
 For example, a customer purchase a product using the your web page, the customer pays using their credit card and the payment is approved and accepted by the customer's bank; Then, the shop finds that they don't have enough stock of this product and request a refund to PayU. PayU, approves the refund and the money is returned to the customer.
 In this case, the order was the purchase of the product and this order has many transactions such as, the accept of the payment, the charge, the refund approval. 

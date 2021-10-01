@@ -35,7 +35,7 @@ The procedure to let your shoppers pay using PayU services is simple.
 
 ![WebCheckout integration](/assets/paso4-en.jpeg)
 
-5. In parallel, PayU notifies the status of the transaction  to the confirmation page via `HTTP POST`. Furthermore, PayU notifies to you and your customer the result of the transaction via email.
+5. In parallel, PayU notifies the status of the transaction to the confirmation page via `HTTP POST`. Furthermore, PayU notifies to you and your customer the result of the transaction via e-mail.
 
 ![WebCheckout integration](/assets/paso5-en.jpeg)
 

@@ -29,7 +29,7 @@ The following variables can be included in the Payment form.
 | Field | Type | Size | Description | Mandatory |
 |-|-|-|-|:-:|
 | amount | Number | 14 | Total amount of the transaction. It can contain two decimal digits. Example 10000.00 or 10000. | ✓ |
-| merchantId | Number | 12 | ID number of your shop in PayU’s system, you will find this number in the account creation email. | ✓ |
+| merchantId | Number | 12 | ID number of your shop in PayU’s system, you will find this number in the account creation e-mail. | ✓ |
 | referenceCode | Alphanumeric | 255 | Reference of the sale or order. It must be unique for each transaction that is sent to the system. Usually, this is a way to identify the requests sent to the payment gateway. | ✓ |
 | accountId | Number | 6 | ID of the user account for each country associated with the shop. This variable is used to display the available payment methods for this country. | ✓ |
 | description | Alphanumeric | 255 | Sale’s description. | ✓ |
@@ -37,7 +37,7 @@ The following variables can be included in the Payment form.
 | taxReturnBase | Number | 14,2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0`to this variable. | ✓ |
 | signature | Alphanumeric | 255 | Digital signature created for each transaction. Refer to [Signature for Payment form]({{< ref "payment-form.md#signature-for-payment-form" >}}) to learn how to generate it. | ✓ |
 | currency | Alpha numeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in pesos at the representative rate of the day.<br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ |
-| buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s email to notify the result of the transaction by email. It is recommended to validate if this field has been provided in the form. | ✓ |
+| buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the result of the transaction by e-mail. It is recommended to validate if this field has been provided in the form. | ✓ |
 | telephone | Alphanumeric | 50 | The buyer’s residence phone. | ✓ |
 | buyerFullName | Alphanumeric | 150 | The buyer’s full name. | ✓ |
 | test | Number | 1 | Indicates whether the transaction is in test or production mode. Set `1`for test and `0`for production. | — |
@@ -59,7 +59,7 @@ The following variables can be included in the Payment form.
 | billingCity | Alphanumeric | 50 | City associated with the billing address. | — |
 | zipCode | Alphanumeric | 20 | Postal code. | — |
 | billingCountry | Alphanumeric | 2 | The ISO country code associated with the billing address. | — |
-| payerEmail | Alphanumeric | 255 | The payer’s email. | — |
+| payerEmail | Alphanumeric | 255 | The payer’s e-mail. | — |
 | payerPhone | Alphanumeric | 20 | The payer’s phone number. | — |
 | payerOfficePhone | Alphanumeric | 20 | The payer’s workplace phone number. | — |
 | payerMobilePhone | Alphanumeric | 20 | The payer’s mobile phone number. | — |

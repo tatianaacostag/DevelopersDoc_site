@@ -44,7 +44,7 @@ Send the following variables to the response page.
 | installmentsNumber | Numeric | 2 | Number of installments in which the credit card payment was deferred. | — |
 | TX_VALUE | Numeric | 14,2 | Total amount of the transaction. It can contain two decimal digits. For example 10000.00 or 10000 | — |
 | TX_TAX | Numeric | 14,2 | Value of the VAT of the transaction, if no VAT is sent, the system applies 19% automatically.<br>It can contain two decimal digits, for example 19000.00.<br>In case you have no VAT you should fill out 0. | — |
-| buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s email to notify the result of the transaction by email. It is recommended to validate it when the data is taken on a form | — |
+| buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the result of the transaction. It is recommended to validate it when the data is taken on a form | — |
 | processingDate | Date (YYYY-MM-DD HH:mm:ss) | — | The date the transaction was made. | — |
 | currency | Alphanumeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in pesos at the representative rate of the day. | — |
 | cus | Alphanumeric | 255 | The CUS, unique tracking code, is the payment’s reference within the Bank, it applies only to payments with PSE. | PSE Colombia. |
