@@ -12,7 +12,7 @@ tags: ["parenttopic"]
 ## Prerequisites
 Before moving on with the explanation of how the PayU module is organized, you need the following:
 * Have a user in PayU module. Learn how to create one [here]({{< ref "create-an-account.md" >}}).
-* Have read and understand the [concepts behind the PayU Module](en/payu-module-documentation.html#payu-module-concepts).
+* Have read and understand the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
 
 ## PayU Module web application
 PayU module is divided in four main groups:

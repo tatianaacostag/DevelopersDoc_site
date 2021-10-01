@@ -10,7 +10,7 @@ weight: 20
 
 A _Profile_ is a set of permissions that allows a user to access to a feature of an _account_. A _user_ using a _profile_ can access to as many account there are in each merchant.
 
-For further information about merchants, accounts, and more, read the [concepts behind the PayU Module](en/payu-module-documentation.html#payu-module-concepts).
+For further information about merchants, accounts, and more, read the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
 
 ## Permission required
 To have access to this module, you need to have a profile with the following permission enabled:
