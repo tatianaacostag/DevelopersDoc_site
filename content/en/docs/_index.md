@@ -23,7 +23,7 @@ Ideally suited for
 Expand the scope of your business by offering various payment methods.
 
 * **Accept payments faster**</br>
-See an overview of all your transactions in our system. Consolidate and monitor your sales in the [PayU module](en/payu-module-documentation.html).
+See an overview of all your transactions in our system. Consolidate and monitor your sales in the [PayU module](/payu-module-documentation.html).
 
 * **Multi-acquisition**</br>
 We are integrated with all processing networks, which can increase your approval rate by up to 5%.
