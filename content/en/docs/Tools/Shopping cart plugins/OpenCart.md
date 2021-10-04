@@ -16,10 +16,10 @@ The OpenCart plugin is available for version 1.5 and 2.0 and you need to meet th
 
 * You need an active account in PayU Latam.
 * For OpenCart version 1.5:
-  * Having the PayU's OpenCart v1.5 plugin downloaded and stored in an accessible location. Click [here](/assets/plugins/plugin-opencart.zip) to download it.
+  * Having the PayU's OpenCart v1.5 plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-opencart.zip) to download it.
   * Having VirtueMart version 1.5.5.1 - 1.5.6.X installed.
 * For OpenCart version 2.0:
-  * Having the PayU's OpenCart v2.0 plugin downloaded and stored in an accessible location. Click [here](/assets/plugins/plugin-opencart-2.0.zip) to download it.
+  * Having the PayU's OpenCart v2.0 plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-opencart-2.0.zip) to download it.
   * Having VirtueMart version 2.0.1.0 or 2.0.1.1 installed.
 
 ## Installation and configuration
