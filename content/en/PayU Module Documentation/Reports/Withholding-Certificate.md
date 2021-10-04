@@ -6,6 +6,7 @@ type: docs
 Description: >
   Learn how to download your Withholding Certificate according to the requested period of time. This feature is available for accounts in Colombia.
 weight: 40
+nosidetoc: true
 ---
 
 For transactions in Colombia paid with credit cards, the intermediary financial entities make retentions of **Rent Withholding**, **ICA Withholding**, and **IVA Withholding**. According to this, PayU delivers for merchants, a certificate with the total of the withholdings applied during a monthly period.

@@ -55,7 +55,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?apiKey={apiKey}&a
 ```
 <br>
 
- The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
+ The value for the variable `{env-api}` displayed above is `sandbox-web` for testing and `web` for production mode.
 
 | Parameter     | Description                                                              | Mandatory |
 |---------------|--------------------------------------------------------------------------|:---------:|
