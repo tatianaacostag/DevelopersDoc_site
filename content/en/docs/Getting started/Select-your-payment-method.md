@@ -7,7 +7,7 @@ Description: >
 weight: 30
 ---
 
-The following section shows the payment methods supported per country and provides some considerations. Refer to the `paymentMethod` parameter to know the value to be sent as Payment Method while using API or SDK integrations.
+The following section shows the payment methods supported per country and provides some considerations. Refer to the `paymentMethod parameter` column to know the value to be sent as Payment Method while using API or SDK integrations.
 
 ## <img src="/assets/Argentina.png" width="25px"/> Argentina {#Argentina}
 <div class="paymentMethods"></div>
@@ -73,11 +73,11 @@ PayU in Colombia allows you to integrate with most of the cash payments methods 
 | ![Logo](/assets/PaymentMethods/efecty.png)          | Efecty           | EFECTY                  | Cash           |           |
 | ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards   |           |
 | ![Logo](/assets/PaymentMethods/pse_logo.png)        | PSE              | PSE                     | Bank Transfer  | PSE lets your customers pay using Nequi and Daviplata. |
-| ![Logo](/assets/PaymentMethods/su-red.png)          | Su Red           | OTHERS_CASH              | Cash           | Payment offices: PagaTodo,<br>Gana Gana, Gana, Acertemos,<br>Apuestas Cúcuta 75,<br>Su Chance, La Perla, Apuestas<br>Unidas, JER. |
+| ![Logo](/assets/PaymentMethods/su-red.png)          | Su Red           | OTHERS_CASH              | Cash           | **Payment offices**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. |
 | ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards   |           |
 
 ## <img src="/assets/Mexico.png" width="25px"/> Mexico {#Mexico}
-For México, we support both MSI, and Installments and Promotions, refer to this [article]({{< ref "Promotions.md" >}}) for more information.
+For Mexico, we support both MSI, and Installments and Promotions, refer to this [article]({{< ref "Promotions.md" >}}) for more information.
 
 <div class="paymentMethods"></div>
 
