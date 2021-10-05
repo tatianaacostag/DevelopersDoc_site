@@ -9,7 +9,7 @@ weight: 40
 
 If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:  
 
-{{< testaccounts/accounts >}}
+{{< testaccounts/accounts_es >}}
 
 The test environment does not replicate data from your production account.
 
