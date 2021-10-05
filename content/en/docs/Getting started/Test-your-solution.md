@@ -109,14 +109,14 @@ You can use the following cards for testing:
 </details>
 
 ### Testing status
-When using the Payments, you must send in the request:
+When testing Payments, you must send in the request:
 * The `test` parameter as `true`.
 * Set **777** in the CVV of the card (for AMEX, use **7777**).
 * Send the name of the transaction status in the name of the cardholder.
     - For approved transactions, send **APPROVED** value.
     - For rejected transactions, send **REJECTED** value.
     - For pending transactions, send **PENDING** value.
-* For the card number you must enter a valid card number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes.
+* For the card number you must enter a valid number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes or use one of the cards available for your country mentioned before.
 * To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
 
 ## Importing the Collection
@@ -146,4 +146,4 @@ Import the globals for the collection to configure the values sent to the reques
 To change the amount of a transaction, update the value for the `tx_value_[Country]` according to the country you want to test.
 
 ## Running the Requests in the Correct Order
-Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next. 
+Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next invocation. 

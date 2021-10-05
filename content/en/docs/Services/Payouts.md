@@ -5,6 +5,7 @@ date: 2021-07-16T11:32:55-05:00
 description: >
   This feature allows you to create multiple and secure third party payouts (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 weight: 70
+draft: true
 ---
 
 {{% alert title="Important" color="warning"%}}

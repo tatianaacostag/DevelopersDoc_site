@@ -6,6 +6,7 @@ description: >
   This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 weight: 60
 tags: ["subtopic"]
+draft: true
 ---
 
 For introductory terms, how to request this service and more information, refer to [Payouts]({{< ref "payouts.html" >}}).
