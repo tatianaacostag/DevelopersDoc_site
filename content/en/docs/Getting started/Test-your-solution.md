@@ -120,7 +120,7 @@ When using the Payments, you must send in the request:
 * To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
 
 ## Importing the Collection
-Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you. Note that we create a new environment each time you import the collection.
+Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you). Note that we create a new environment each time you import the collection.
 
 {{< postman/postman_flow_collection >}}
 <br>

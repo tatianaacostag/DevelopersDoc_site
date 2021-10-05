@@ -6,7 +6,7 @@ description: >
   Con PayU, puedes recibir pagos realizados con tarjetas de crédito, transferencias bancarias, efectivo y más.
 menu:
   main:
-    name: Online payments
+    name: Pagos en línea
     weight: 20     
 ---
 
@@ -20,7 +20,7 @@ Ideal para negocios y personas:
 
 ## Beneficios de los pagos en línea {#benefits-of-online-payments}
 * **Aumenta tus ventas**</br>
-Expande el alcancxe de tu negocio ofreciendo varios métodos de pago.
+Expande el alcance de tu negocio ofreciendo varios métodos de pago.
 
 * **Acepta pagos más rápido**</br>
 Mira un resumen de todas las transacciones en nuestro sistema. Consolida y monitorea tus ventas en el [Módulo PayU]().
@@ -28,43 +28,32 @@ Mira un resumen de todas las transacciones en nuestro sistema. Consolida y monit
 * **Multiadquirencia**</br>
 Estamos integrados con todas las redes procesadoras, lo cual puede aumentar hasta 5% tu tasa de aprobación.
 
-## ¿Cómo funciona PayU? {}
+## ¿Cómo funciona PayU? {#how-does-payu-work}
 Para entender cómo PayU procesa pagos, es importante entender dos conceptos principales:
 
 * Orden: una orden en PayU es definida como un conjunto de movimientos relacionados a un pago en línea.
 * Transacción: cualquier movimiento relacionado con una orden como cobros, reintentos, reembolsos, disputas, etc.
-<!--
 
+Por ejemplo, un cliente compra un producto utilizando tu página web, el cliente paga utilizando su tarjeta de crédito y el pago es aprobado y aceptado por su banco; luego, la tienda se da cuenta que no tiene suficiente inventario del producto y solicita un reembolso en PayU. PayU aprueba el reembolso y el dinero es regresado al cliente. En este caso, la orden fue la compra del producto y esta orden tiene muchas transacciones como la aceptación del pago, el cobro y el reembolso.
 
-* Order: an order in PayU is defined as the set of movements related to an online payment.
-* Transaction: any movement related to an order such as charges, retries, refunds, disputes, etc.
+## ¿Cómo empezar a utiliza PayU? {#how-to-start-using-payu}
+Cuando quieres integrar tu negocio con los servicios y herramientas de PayU, necesitas realizar los siguientes pasos.
 
-For example, a customer purchase a product using the your web page, the customer pays using their credit card and the payment is approved and accepted by the customer's bank; Then, the shop finds that they don't have enough stock of this product and request a refund to PayU. PayU, approves the refund and the money is returned to the customer.
-In this case, the order was the purchase of the product and this order has many transactions such as, the accept of the payment, the charge, the refund approval. 
+### 1. Crea una cuenta de PayU. {#1-create-a-payu-account}
+Crea tu cuenta de PayU gratis. Contáctanos para guiarte en el proceso.
 
-## How to start using PayU?
-When you want to integrate your commerce with PayU services and tools, you need to consider the following steps.
+### 2. Selecciona cómo quieres integrarte con los servicios y herramientas de PayU. {#2-select-how-you-want-to-integrate-with-payu-services-and-tools}
+De acuerdo con las necesidades de tu negocio, selecciona cómo integrar tu tienda con los servicios y herramientas de PayU.
 
-### 1. Create a PayU account
-Create your PayU account free of charge. Contact us to support you through the process.
+### 3. Realiza las pruebas {#3-perform-tests}
+Verifica que tu integración funcione como lo esperas.
 
-### 2. Select how you want to integrate with PayU services and tools.
-According to your business needs, select how to integrate your shop with the PayU services and tools.
+### 4. Despliega a producción {#4-deploy-to-production}
+Luego de que realices todas las pruebas del sistema y hayas verificado que todo está funcionado correctamente, puedes moverte al servidor de producción; donde se procesan las transacciones reales.
 
-### 3. Perform tests
-Verify that your integration works as expected.
+## Servicios {#services}
+PayU ofrece los siguientes servicios.
 
-### 4. Deploy to production
-After you perform all the system testing and you have verified that everything is working properly, you can change to the production server; where the actual transactions are processed.
+{{< overview/services_es >}}
 
-## Services
-PayU provides the following services.
-
-{{< overview/services >}}
-
-## PayU Tools
-PayU provides the following tools to give you more options to sell and receive payments online.
-
- {{< overview/tools >}}
-
-## What's next?-->
+## ¿Qué sigue?
