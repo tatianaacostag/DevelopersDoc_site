@@ -7,14 +7,14 @@ description: >
 weight: 40
 ---
 
-If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:  
+Si deseas hace pruebas con PayU, necesitas utilizar las siguientes credenciales en el request, dependiendo del país de tu cuenta:  
 
 {{< testaccounts/accounts_es >}}
 
-The test environment does not replicate data from your production account.
+El ambiente de pruebas no replica los datos de tu cuenta de producción.
 
 ## Tarjetas de prueba {#test-cards}
-You can use the following cards for testing:
+Puedes utilizar las siguientes tarjetas de prueba:
 
 <details>
 <summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
@@ -108,42 +108,42 @@ You can use the following cards for testing:
 
 </details>
 
-### Testing status
-When using the Payments, you must send in the request:
-* The `test` parameter as `true`.
-* Set **777** in the CVV of the card (for AMEX, use **7777**).
-* Send the name of the transaction status in the name of the cardholder.
-    - For approved transactions, send **APPROVED** value.
-    - For rejected transactions, send **REJECTED** value.
-    - For pending transactions, send **PENDING** value.
-* For the card Número you must enter a valid card Número, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes.
-* To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
+### Probar estados {#testing-status}
+Cuando pruebas los Pagos, debes enviar en el request:
+* El parámetro `test` como `true`.
+* Asigna **777** en el CVV de la tarjeta (para AMEX, utilice **7777**).
+* Envía el nombre del estado de la transacción en el nombre del tarjetahabiente.
+    - Para transacciones aprobadas, envía el valor **APPROVED**.
+    - Para transacciones rechazadas, envía el valor **REJECTED**.
+    - Para transacciones en estado pendiente, envía el valor **PENDING**.
+* Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia enviada en el request. Puedes utilizar un generador en línea de tarjetas de crédito o una de las  correspondientes a tu país mencionadas anteriormente.
+* Para probar transferencias bancarias por PSE (Disponible en Colombia) en el ambiente de Sandbox de PayU, consulta la [Guía de pruebas PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
 
-## Importing the Collection
-Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you). Note that we create a new environment each time you import the collection.
+## Importar la colección {#importing-the-collection}
+Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona). Ten en cuenta que creamos un ambiente cada vez que importas la colección.
 
 {{< postman/postman_flow_collection >}}
 <br>
 
-After you run the collection, you need to set the environment variables and the globals.
+Luego de ejecutar la colección, necesitas configurar las variables de ambiente y los globales.
 
-### Setting your Environment Variables
-Our collection has one environment named `PayU API Sandbox`. We recommend you invoke the collection’s API requests in a Sandbox environment only.
+### Configurar sus variables de ambiente {#setting-your-environment-variables}
+Nuestra colección tiene un ambiente llamado `PayU API Sandbox`. Recomendamos que invoques el request del API de la colección únicamente en el ambiente de Sandbox.
 
-If you want to change the PayU's testing accounts, configure the `api_key`, `api_login`, `merchant_id` and `account-[country]` variables. You can leave all the other variables unchanged.
+Si quieres cambiar las cuentas de prueba de PayU, configura las variables `api_key`, `api_login`, `merchant_id` y `account-[country]`. Puedes dejar las demás variables con sus valores por defecto.
 
-### Importing globals
-Globals are the variables required to process transactions in our Payment gateway such as currency, transaction amount, confirmation and response pages and more.
+### Importar los globals {#importing-globals}
+Los globales (Globals) son las variables que se necesitan para procesar las transacciones en nuestra pasarela de pagos como moneda (_currency_), valor de la transacción (_transaction amount_), página de confirmación (_confirmation page_), página de respuesta (_response pages_) y más.
 
-Import the globals for the collection to configure the values sent to the requests. 
+Importa los globales de la colección para configurar las valores enviados en el requests. 
 
-1. Download the globals file <a href="/assets/globals/PayU%20Latam.postman_globals.json" download>here</a>.
+1. Descarga el archivo de globales <a href="/assets/globals/PayU%20Latam.postman_globals.json" download>aquí</a>.
 
-2. In the Postman collection, click _**Import**_ next to your workspace name and locate the json file recently downloaded.
+2. En la colección de Postman, haz clic en _**Import**_ junto al nombre de tu workspace y busca el archivo json descargado recientemente.
 
-3. When finish, click _**Import**_.
+3. Cuando termines, haz clic en _**Import**_.
 
-To change the amount of a transaction, update the value for the `tx_value_[Country]` according to the country you want to test.
+Para cambiar el monto de la transacción, actualiza el valor de `tx_value_[País]` dependiendo del país donde quieras probar.
 
-## Running the Requests in the Correct Order
-Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next. 
+## Ejecuta la colección en el orden correcto {#running-the-requests-in-the-correct-order}
+Ten en cuenta que el orden en el que ejecutes los requests es importante, debido a que algunos de los datos retornados por el request pueden ser utilizados en la siguiente invocación. 

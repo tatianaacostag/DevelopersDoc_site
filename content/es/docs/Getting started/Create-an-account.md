@@ -30,7 +30,7 @@ O puedes llamarnos:
 * <img src="/assets/Panama.png" width="25px"/> (+50 7) 836-5577
 * <img src="/assets/Peru.png" width="25px"/> (+51 1) 708-5381
 <br>
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Si te encuentras en Colombia y vendes menos de 100 millones COP al month, puedes crear tu cuenta utilizando el siguiente [enlace](https://colombia.payu.com/abre-tu-cuenta/)
 {{% /alert %}}
 Revisa nuestros términos y condiciones [aquí](https://legal.payulatam.com/ES/terminos_y_condiciones_comercios.html).
@@ -47,7 +47,7 @@ Para activar tu cuenta debes:
 - Haber completado la documentación y el registro en el módulo administrativo.
 - Tener una transacción exitosa.
 
-## ¿Qué sigue?
+## ¿Qué sigue? {#whats-next}
 Luego de haber creado la cuenta, tú y tus clientes recibirán una notificación por cada pago que realicen. El dinero es acreditado en tu cuenta de PayU.
 
 De acuerdo con las necesidades de tu negocio, selecciona cómo quieres integrar tu tienda con los servicios y herramientas de PayU. Consulta [Integraciones]({{< ref "integrations" >}}) para más información.
