@@ -32,15 +32,15 @@ Unlike the `VOID` method, this method requires an approval. The refund procedure
 The `REFUND` has three states:
 
 - `UNRESOLVED`: the request has been sent to PayU for approval. At this point, no transaction has been added to the order and when you consult it using the [Queries service]({{< ref "queries" >}} "Query Service"), the response only shows the transaction of the payment approval.
-- `APPROVED`: the request has been approved by a PayU's customer service agent. At this point the order has changed its state to `CANCELLED` or `REFUNDED`state and a PayU adds a `REFUND` transaction to the order with approved state.
-- `DECLINED`: the request does not meet the policies defined by PayU and was cancelled by an agent. when the refund is declined, PayU adds a `REFUND` transaction to the order with declined state.
+- `APPROVED`: the request has been approved by a PayU's customer service agent. At this point the order has changed its state to `REFUNDED` state and PayU adds an approved `REFUND` transaction to the order.
+- `DECLINED`: the request does not meet the policies defined by PayU and was rejected. When the refund is declined, PayU adds a declined `REFUND` transaction to the order.
 
 For more information about authorized and captured transactions, refer to [Payments]({{< ref "payments#payment-flows" >}}).
 
 ## Considerations
 Before using either _VOID_ or _REFUND_ feature, take into account the following considerations:
 
-* _Refund_ or _Void_ method are only available for transactions made with a credit card. If the request refers to a different payment means such as cash payment means, bank transfer; the request is declined by PayU´s customer service agent.
+* _Refund_ or _Void_ method are only available for transactions made with a credit card. If the request refers to a different payment means such as cash payment means, bank transfer; the request is declined by PayU.
 * PayU only creates one application for each refund request, if a request is repeatedly posted for the same transaction, PayU indicates that the request is already registered.
 * PayU only accepts refund requests of captured transactions.
 * You can retry the refund request if this was previously declined.

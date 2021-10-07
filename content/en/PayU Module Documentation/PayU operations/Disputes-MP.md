@@ -72,4 +72,8 @@ When finish, click _**Send for review**_.
 8. At this point, we send the documents to the issuing bank or the network that processed the transaction, from whom the resolution of the case depends.<br><br>
 The dispute case may result in won (no chargeback), Lost (chargeback) or refunded. In the case of refunds, the trade is who makes the return to the buyer and the bank does not generate the chargeback. Refer to [dispute states]({{< ref "Disputes.md#dispute-states" >}}) to know all the states of a dispute.
 
+{{% alert title="Note" color="info"%}}
+If you have activated [Anti-fraud Guarantee]({{< ref"Antifraud-Guarantee.md" >}}), when the chargeback is subject to be covered by the guarantee, PayU assumes the values debited from your account. In this case, the status of this dispute is _Chargeback_ (Lost) _With antifraud guarantee_. 
+{{% /alert %}}
+
 When the financial entity communicates the result of the dispute, the case is automatically updated in the PayU Module.
