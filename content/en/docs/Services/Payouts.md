@@ -20,7 +20,7 @@ Through Payouts, you can request many payments to many users easily. You only ne
 
 Let’s explain Payouts using an example. A merchant offers products and services available for delivery; this merchant uses PayU as their online payment platform and has an account where they collect the money paid from their customers. This merchant has many couriers to whom, they pay a fixed amount per delivery they made.
 
-Each week, the merchant pays the amount earned to each courier. To do this, they can use Payouts to pay directly from their PayU account instead of managing the payments on their own, in which case, the merchants must transfer the money to their accounts or use funds from other sources.
+Each week, the merchant pays the amount earned to each courier. To do this, they can use Payouts to pay directly from their PayU account instead of managing the payments on their own, in which case, the merchant must transfer the money to their accounts or use funds from other sources.
 
 To request the pay, the merchant sends the list of third parties they want to pay along with the amount of each one, PayU validates these third parties and schedules the payout.
 
@@ -34,7 +34,7 @@ The transactional procedure of Payouts has the following states.
 * **AWAITING SANCTION SCREENING**: this state indicates that the third party to whom the payment will be made is subject to validation of restricted lists and further PayU policies related to risk analysis. If a third party does not pass this validation, the payment is automatically rejected.
 * **AWAITING FOR SENT**: if the third party passes the validation or is not subject to it, this state indicates that the request is ready to be processed. In this state, the communication with the service has not been performed.
 * **SENT TO CREATE**: this state indicates that the communication with the service has been completed and the Payout request is in creation process.
-* **CREATED**: this state indicates that the request has been created and has become into a payout. When the request becomes a payout, it moves between the states explained in [Payout states]({{< ref "payouts.md#payout-states" >}}). The next state depends on the result of the payout process.
+* **CREATED**: this state indicates that the request has been created and has become into a payment order. When the request becomes a payment order, it moves between the states explained in [Payment order states]({{< ref "#payment-order-states" >}}). The next state depends on the result of the payment order process.
 * **REJECTED**: this state indicates that the request has been rejected. A request can be rejected when:
   - The validation of the third party fails.
   - The creation of the payout was failed.
@@ -48,7 +48,7 @@ The following diagram illustrates the state changes:
 
 <img src="/assets/PushPayments/PushPaymentsStates.png" width="80%" style="display: block;margin-left: auto;margin-right: auto;"/>
 
-#### Payment order states
+### Payment order states
 Once the Payout has been approved, it is transformed into a payment order. The following are the states of a payment order.
 
 * **REQUEST_BY_THE_MERCHANT**: this is the initial state of the transaction, once you send the list of third parties to be paid and the third parties are approved, the transaction takes this state.
@@ -73,7 +73,7 @@ If a person does not approve the validation, the Payout is not performed and you
 ## Considerations
 Take into account the following considerations:
 
-* Payout is not a service included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.
+* Payouts is not a service included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.
 * Merchants are responsible for the integrity and the correctness of the third-party data. PayU does not validate that the data provided by the merchant is complete and correct. Furthermore, the update of data must be requested by the merchants.<br>PayU is not responsible for unsuccessful transactions due to wrong data.
 * Payouts allows local payments only. The merchant may be international (under security and risk analysis) but they can only request payouts using the funds collected in the processing country.<br>For example, if the merchant _ABC_ processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.
 * Once the payout is created, it takes the regular flow in PayU. This means that you can see the payout created in your PayU module. 
@@ -110,7 +110,7 @@ You can configure a WebHook for one or more of the following events:
 To learn how to create WebHooks, refer to [this article]({{< ref "payouts-api.md#create-or-update-a-webhook" >}}).
 
 ### Variables in the notifications
-The following variables are sent to the WebHook when third party has been rejected by the sanction screening validation.
+The following variables are sent to the WebHook when any of the events explained before occurs.
 
 | Variable                  | Format       | Description                                                           |
 |---------------------------|--------------|-----------------------------------------------------------------------|

@@ -1,6 +1,7 @@
+{{ if not .Params.notopicssection }}
 <div class="section-index">
     <hr class="panel-line">
-    <h4>Topics in this Section</h4>
+    <h4>{{ i18n "topics_in_this_section" }}</h4>
     {{ $pages := (where .Site.Pages "Section" .Section).ByWeight }}
     {{ $parent := .Page }}
     {{ if $parent.Params.no_list }}
@@ -28,3 +29,4 @@
         {{ end }}
     {{ end }}
 </div>
+{{ end }}

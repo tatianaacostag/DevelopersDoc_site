@@ -6,6 +6,7 @@ Description: >
   Know the current status of PayU Latam
 weight: 50
 nosidetoc: true
+notopicssection: true
 ---
 <!--<script language="javascript"> 
 window.onload = function () {

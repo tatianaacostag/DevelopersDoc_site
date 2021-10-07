@@ -14,7 +14,7 @@ other = "Buscar en este sitio…"
 
 # Used in sentences such as "Posted in News"
 [ui_in]
-other = "en"
+other = "es"
 
 # Footer text
 [footer_all_rights_reserved]
@@ -39,3 +39,36 @@ other = "Create documentation issue"
 other = "Create project issue"
 [post_posts_in]
 other = "Posts in"
+
+# Content Section
+[on_this_page]
+other = "En esta página"
+
+[topics_in_this_section]
+other = "Temas en esta sección"
+
+# Dates
+[January]
+other = "enero"
+[February]
+other = "febrero"
+[March]
+other = "marzo"
+[April]
+other = "abril"
+[May]
+other = "mayo"
+[June]
+other = "junio"
+[July]
+other = "julio"
+[August]
+other = "agosto"
+[September]
+other = "septiembre"
+[October]
+other = "octubre"
+[November]
+other = "noviembre"
+[December]
+other = "diciembre"

@@ -1,6 +1,6 @@
 {{ partial "page-meta-links.html" . }}
 {{ if not .Params.nosidetoc }}
-<p>On this Page</p>
+<p>{{ i18n "on_this_page" }}</p>
 {{ with .TableOfContents }}
 {{ if ge (len .) 200 }}
 {{ . }}
