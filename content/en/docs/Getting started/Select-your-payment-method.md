@@ -31,16 +31,16 @@ The following section shows the payment methods supported per country and provid
 ## <img src="/assets/Brasil.png" width="25px"/> Brazil {#Brazil}
 <div class="paymentMethods"></div>
 
-|                                                     | Payment Method   | paymentMethod parameter | Type          | Comments    |
-|:---------------------------------------------------:|------------------|-------------------------|---------------|------------|
-| ![Logo](/assets/PaymentMethods/american.png)        | American Express | AMEX                    | Credit Cards  |            |
-| ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario  | BOLETO_BANCARIO         | Cash          | Does not conciliate at weekends or holidays |
-| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS                  | Credit Cards  |            |
-| ![Logo](/assets/PaymentMethods/elo.png)             | Elo              | ELO                     | Credit Cards  |            |
-| ![Logo](/assets/PaymentMethods/hipercard.png)       | Hipercard        | HIPERCARD               | Credit Cards  |            |
-| ![Logo](/assets/PaymentMethods/itau.png)            | TEF Itaú         | ITAU                    | Bank Transfer | Only available for Itaú accounts. |
-| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards  |            |
-| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards  |            |
+|                                                     | Payment Method   | paymentMethod parameter | Type            | Comments  |
+|:---------------------------------------------------:|------------------|-------------------------|-----------------|-----------|
+| ![Logo](/assets/PaymentMethods/american.png)        | American Express | AMEX                    | Credit Cards    |           |
+| ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario  | BOLETO_BANCARIO         | Cash            | Does not conciliate at weekends or holidays |
+| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS                  | Credit Cards    |           |
+| ![Logo](/assets/PaymentMethods/elo.png)             | Elo              | ELO                     | Credit Cards    |           |
+| ![Logo](/assets/PaymentMethods/hipercard.png)       | Hipercard        | HIPERCARD               | Credit Cards    |           |
+| ![Logo](/assets/PaymentMethods/itau.png)            | TEF Itaú         | ITAU                    | Bank Transfer   | Only available for Itaú accounts. |
+| ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards    |           |
+| ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards    |           |
 
 ## <img src="/assets/Chile.png" width="25px"/> Chile {#Chile}
 <div class="paymentMethods"></div>
