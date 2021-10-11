@@ -365,7 +365,7 @@ PayU ofrece el servicio de Payouts como una integración via API. No está sopor
 &lt;p&gt;Expliquemos Payouts a través de un ejemplo. Un comercio ofrece productos y servicios a domicilio; este comercio utiliza PayU como su plataforma de pagos y tiene una cuenta donde recauda el dinero pagado por sus clients. Este comercio tiene varios repartidores a quienes paga un monto fijo por cada domicilio que realicen.&lt;/p&gt;
 &lt;p&gt;Cada semana, el comercio paga el monto obtenido por cada repartidor. Para esto, ellos pueden utilizar Payouts para pagar directamente desde su cuenta de PayU en lugar de administrar los pagos por su cuenta, en cuyo caso, el comercio debe transferir el dinero a sus cuentas bancarias o utilizar los fondos recolectados de otras fuentes.&lt;/p&gt;
 &lt;p&gt;Para solicitar el pago, el comercio envía la lista de terceros a los que desea pagar junto con el monto de cada uno. PayU valida estos terceros y programa el pago.&lt;/p&gt;
-&lt;p&gt;El valor de cada pago más la cuota de procesamiento es debitada de la cuenta. Contacta a tu Represente de Ventas para saber el valor de la cuota de procesamiento para utilizar este servicio.&lt;/p&gt;
+&lt;p&gt;El valor de cada pago más la tarifa de procesamiento es debitada de la cuenta. Contacta a tu Represente de Ventas para saber el valor de la tarifa de procesamiento para utilizar este servicio.&lt;/p&gt;
 &lt;h3 id=&#34;payout-states&#34;&gt;Estados de los Payouts&lt;/h3&gt;
 &lt;p&gt;Los Payouts se ejecutan en dos pasos principales: el primer paso es cuando se solicita el pago al tercero y el segundo, es cuando la solicitud ha sido aprobada y pasa a la transferencia de los fondos.&lt;/p&gt;
 &lt;p&gt;El procedimiento transaccional de Payouts tiene los siguientes estados.&lt;/p&gt;
@@ -408,7 +408,7 @@ PayU ofrece el servicio de Payouts como una integración via API. No está sopor
 &lt;h2 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h2&gt;
 &lt;p&gt;Ten en cuentas las siguientes consideraciones:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Payouts no es un servicio incluido de forma predeterminada. Debes solicitarlo y firmar un anexo al contrato para acordar el valor de la cuota de procesamiento y demás condiciones. Contacta a tu Key Account Manager para contratar este servicio.&lt;/li&gt;
+&lt;li&gt;Payouts no es un servicio incluido de forma predeterminada. Debes solicitarlo y firmar un anexo al contrato para acordar el valor de la tarifa de procesamiento y demás condiciones. Contacta a tu Key Account Manager para contratar este servicio.&lt;/li&gt;
 &lt;li&gt;Los comercios son los responsables de la integridad y la veracidad de la información de los terceros. PayU no valida que la información entregada sea completa y correcta. Además, la actualización de la información debe ser solicitada por los comercios.&lt;br&gt;PayU no es responsable por transacciones no exitosas debido a información incorrecta.&lt;/li&gt;
 &lt;li&gt;Payouts solo permite pagos locales. El comercio puede ser internacional (bajo análisis de seguridad y riesgo) pero solo pueden solicitar Payouts utilizando los fondos obtenidos en el país de procesamiento.&lt;br&gt;Por ejemplo, si el comercio &lt;em&gt;ABC&lt;/em&gt; procesa en Colombia y Perú, puede solicitar payouts a terceros en Colombia utilizando los fondos recaudados en Colombia; no pueden solicitar pagos a terceros en Perú utilizando los fondos recaudados en Colombia.&lt;/li&gt;
 &lt;li&gt;Una vez se ha creado el Payout, toma el flujo regular en PayU. Esto significa que puedes ver el payout creado en el módulo PayU.&lt;/li&gt;
