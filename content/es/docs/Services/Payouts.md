@@ -24,7 +24,7 @@ Cada semana, el comercio paga el monto obtenido por cada repartidor. Para esto, 
 
 Para solicitar el pago, el comercio envía la lista de terceros a los que desea pagar junto con el monto de cada uno. PayU valida estos terceros y programa el pago.
 
-El valor de cada pago más la cuota de procesamiento es debitada de la cuenta. Contacta a tu Represente de Ventas para saber el valor de la cuota de procesamiento para utilizar este servicio.
+El valor de cada pago más la tarifa de procesamiento es debitada de la cuenta. Contacta a tu Represente de Ventas para saber el valor de la tarifa de procesamiento para utilizar este servicio.
 
 ### Estados de los Payouts {#payout-states}
 Los Payouts se ejecutan en dos pasos principales: el primer paso es cuando se solicita el pago al tercero y el segundo, es cuando la solicitud ha sido aprobada y pasa a la transferencia de los fondos.
@@ -73,7 +73,7 @@ Si una persona no aprueba la validación, el Pago no se realiza y se te envía u
 ## Consideraciones {#considerations}
 Ten en cuentas las siguientes consideraciones:
 
-* Payouts no es un servicio incluido de forma predeterminada. Debes solicitarlo y firmar un anexo al contrato para acordar el valor de la cuota de procesamiento y demás condiciones. Contacta a tu Key Account Manager para contratar este servicio.
+* Payouts no es un servicio incluido de forma predeterminada. Debes solicitarlo y firmar un anexo al contrato para acordar el valor de la tarifa de procesamiento y demás condiciones. Contacta a tu Key Account Manager para contratar este servicio.
 * Los comercios son los responsables de la integridad y la veracidad de la información de los terceros. PayU no valida que la información entregada sea completa y correcta. Además, la actualización de la información debe ser solicitada por los comercios.<br>PayU no es responsable por transacciones no exitosas debido a información incorrecta.
 * Payouts solo permite pagos locales. El comercio puede ser internacional (bajo análisis de seguridad y riesgo) pero solo pueden solicitar Payouts utilizando los fondos obtenidos en el país de procesamiento.<br>Por ejemplo, si el comercio _ABC_ procesa en Colombia y Perú, puede solicitar payouts a terceros en Colombia utilizando los fondos recaudados en Colombia; no pueden solicitar pagos a terceros en Perú utilizando los fondos recaudados en Colombia.
 * Una vez se ha creado el Payout, toma el flujo regular en PayU. Esto significa que puedes ver el payout creado en el módulo PayU. 
