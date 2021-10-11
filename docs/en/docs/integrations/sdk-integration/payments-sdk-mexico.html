@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/sdk-integration/payments-sdk-mexico.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-09-29T17:40:24-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-10-11T15:27:49-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payments SDK - Mexico">
 <meta itemprop="description" content="Payments SDK Mexico lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-09-29T17:40:24-05:00" />
+<meta itemprop="dateModified" content="2021-10-11T15:27:49-05:00" />
 <meta itemprop="wordCount" content="4832">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments SDK - Mexico"/>
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.786685428e22deddbaddf2de77de9fdcc045b93c79df05076b9ca9695de5a3c44348f70ee16cb3a6eb9b17733aff54eb854155ff66dfdb92e1ea85f846a20f44.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.0a3ec4e8241b30ceecab7d695438dab95f4e3cadcaef51a77e956de365d8f4f5dffaf7b220bc32f04ec6a5d306e7c770ba3ff9a8138502d9fe86d5cc5bbbd022.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -931,7 +931,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 <h3 id="considerations">Considerations</h3>
 <ul>
-<li>Send a valid credit card Payment Method in the request, <a href="../../../../en/docs/getting-started/select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico">see the available Payment Methods for Mexico</a>.</li>
+<li>Send a valid credit card Payment Method in the request, <a href="../../../../en/docs/getting-started/select-your-payment-method.html#Mexico">see the available Payment Methods for Mexico</a>.</li>
 <li>Two-step flows are only available for Mastercard and Visa.</li>
 <li>For payments with Promotions, send the parameters <code>INSTALLMENTS_NUMBER</code> and <code>PROMOTION_ID</code> with the number of installments selected and the Id of the promotion. Refer to <a href="../../../../en/docs/services/promotions.html">Promotions API</a> for more information.</li>
 <li>When using promotions or apply installments, always display the phrase <strong>&ldquo;PAGOS DIFERIDOS&rdquo;</strong> during the payment process.</li>
@@ -1627,7 +1627,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <img src="../../../../assets/Payments/CashReceiptMX.png" alt="PrintScreen" width="50%">
 <h3 id="considerations-2">Considerations</h3>
 <ul>
-<li>Send a valid cash Payment Method in the request, <a href="../../../../en/docs/getting-started/select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico">see the available Payment Methods for Mexico</a>.</li>
+<li>Send a valid cash Payment Method in the request, <a href="../../../../en/docs/getting-started/select-your-payment-method.html#Mexico">see the available Payment Methods for Mexico</a>.</li>
 <li>The parameter <code>EXPIRATION_DATE</code> is not mandatory. If you don&rsquo;t send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.</li>
 <li>When the payment method is <code>OXXO</code>, the confirmation of the payment will be one day after the payment. For other cash payment methods, the confirmation is online.</li>
 <li>The extra parameters has the following data related to the transaction:
@@ -2666,9 +2666,9 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-September 29, 2021:
+October 11, 2021:
 
- <b>Final articles for Merchant Panel and Anti-fraud guarantee (487ae3c)</b>
+ <b>Changes from PRD environment (0a9b936)</b>
 </div>
 </div>
 
