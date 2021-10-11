@@ -20,7 +20,7 @@ Payments API includes the following methods:
 
 * [Submit transaction with credit or debit cards]({{< ref "Payments-API-Chile.md#submit-transaction-with-credit-or-debit-cards" >}})
 * [Submit transaction with cash]({{< ref "Payments-API-Chile.md#submit-transaction-with-cash" >}})
-* [Submit transaction with debit and prepaid cards using webpay]({{< ref "Payments-API-Chile.md#submit-transaction-with-debit-and-prepaid-cards" >}})
+* [Submit transaction with debit and prepaid cards using WebPay Plus ]({{< ref "Payments-API-Chile.md#submit-transaction-with-debit-and-prepaid-cards" >}})
 * [Available payment methods query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Chile.md#ping" >}})
 
@@ -1146,7 +1146,7 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with debit and prepaid cards using webpay {#submit-transaction-with-debit-and-prepaid-cards}
+## Submit transaction with debit and prepaid cards using WebPay Plus {#submit-transaction-with-debit-and-prepaid-cards}
 This method lets you process the bank debit and prepaid card payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
 
 <img src="/assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
