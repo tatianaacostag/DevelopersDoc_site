@@ -1,0 +1,18 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – Integraciones</title>
+    <link>/es/docs/integrations.html</link>
+    <description>Recent content in Integraciones on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 07 Apr 2021 10:01:55 -0500</lastBuildDate>
+    
+	  <atom:link href="/es/docs/integrations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>

@@ -34,7 +34,7 @@
 &lt;h2 id=&#34;how-to-create-an-account&#34;&gt;How to create an Account?&lt;/h2&gt;
 &lt;p&gt;Regardless of the size of your business, the procedure to create an account is as follows:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Contact us.
+&lt;li&gt;Contact us.&lt;br&gt;
 If you want to start using PayU services and tools to integrate your shop and start receiving online payments, contact us through our &lt;a href=&#34;https://www.payu.com&#34;&gt;web page&lt;/a&gt;.&lt;br&gt;
 &lt;br&gt;
 Or you can call us:
@@ -44,7 +44,7 @@ Or you can call us:
 &lt;li&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; (+54 11) 5984-2132&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; (+55 11) 4130-5311&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; (+56 2) 258-13949&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; (+57 1) 654-0721&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; (+57) 601 654-0721&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; (+52 55) 474-11439&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; (+50 7) 836-5577&lt;/li&gt;
 &lt;li&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; (+51 1) 708-5381
@@ -63,7 +63,7 @@ Review our terms and conditions &lt;a href=&#34;https://legal.payulatam.com/EN/t
 &lt;p&gt;Validation of your account.&lt;br&gt;
 Once we received your account request, our agents will validate your risk and bank score. &lt;br&gt;
 &lt;br&gt;
-Review the Prohibited, Restricted or Forbidden Activities &lt;a href=&#34;#&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+Review the Prohibited, Restricted or Forbidden Activities &lt;a href=&#34;https://legal.payulatam.com/ES/actividades_restringidas_y_prohibidas.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Activate your account.&lt;br&gt;
@@ -116,7 +116,7 @@ To activate your account, you should:&lt;/p&gt;
       &lt;p&gt;Through API or SDK integrations, you can receive payments securely from anywhere you like, on your website or mobile app.
         &lt;ul&gt;
           &lt;li&gt;Design your checkout and manage the payment system of your website.&lt;/li&gt;
-          &lt;li&gt;Access to additional services such as Tokenization or Recurring payments&lt;/li&gt;
+          &lt;li&gt;Access to additional services such as Tokenization.&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/p&gt;
       &lt;div style=&#34;cursor:pointer !important&#34;&gt;
@@ -178,7 +178,7 @@ To activate your account, you should:&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;The following section shows the payment methods supported per country and provides some considerations. Refer to the &lt;code&gt;paymentMethod&lt;/code&gt; parameter to know the value to be sent as Payment Method while using API or SDK integrations.&lt;/p&gt;
+        &lt;p&gt;The following section shows the payment methods supported per country and provides some considerations. Refer to the &lt;code&gt;paymentMethod parameter&lt;/code&gt; column to know the value to be sent as Payment Method while using API or SDK integrations.&lt;/p&gt;
 &lt;h2 id=&#34;Argentina&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; Argentina&lt;/h2&gt;
 &lt;div class=&#34;paymentMethods&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -339,6 +339,13 @@ To activate your account, you should:&lt;/p&gt;
 &lt;td&gt;ITAU&lt;/td&gt;
 &lt;td&gt;Bank Transfer&lt;/td&gt;
 &lt;td&gt;Only available for Itaú accounts.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/pix.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;PIX&lt;/td&gt;
+&lt;td&gt;PIX&lt;/td&gt;
+&lt;td&gt;Instant Payment&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
@@ -516,7 +523,7 @@ To activate your account, you should:&lt;/p&gt;
 &lt;td&gt;Su Red&lt;/td&gt;
 &lt;td&gt;OTHERS_CASH&lt;/td&gt;
 &lt;td&gt;Cash&lt;/td&gt;
-&lt;td&gt;Payment offices: PagaTodo,&lt;br&gt;Gana Gana, Gana, Acertemos,&lt;br&gt;Apuestas Cúcuta 75,&lt;br&gt;Su Chance, La Perla, Apuestas&lt;br&gt;Unidas, JER.&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Payment offices&lt;/strong&gt;: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
@@ -528,7 +535,7 @@ To activate your account, you should:&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;Mexico&#34;&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; Mexico&lt;/h2&gt;
-&lt;p&gt;For México, we support both MSI, and Installments and Promotions, refer to this &lt;a href=&#34;../../../en/docs/services/promotions.html&#34;&gt;article&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;For Mexico, we support both MSI, and Installments and Promotions, refer to this &lt;a href=&#34;../../../en/docs/services/promotions.html&#34;&gt;article&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;div class=&#34;paymentMethods&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1035,7 +1042,7 @@ To activate your account, you should:&lt;/p&gt;
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;testing-status&#34;&gt;Testing status&lt;/h3&gt;
-&lt;p&gt;When using the Payments, you must send in the request:&lt;/p&gt;
+&lt;p&gt;When testing Payments, you must send in the request:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The &lt;code&gt;test&lt;/code&gt; parameter as &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Set &lt;strong&gt;777&lt;/strong&gt; in the CVV of the card (for AMEX, use &lt;strong&gt;7777&lt;/strong&gt;).&lt;/li&gt;
@@ -1046,11 +1053,11 @@ To activate your account, you should:&lt;/p&gt;
 &lt;li&gt;For pending transactions, send &lt;strong&gt;PENDING&lt;/strong&gt; value.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;For the card number you must enter a valid card number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes.&lt;/li&gt;
+&lt;li&gt;For the card number you must enter a valid number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes or use one of the cards available for your country mentioned before.&lt;/li&gt;
 &lt;li&gt;To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the &lt;a href=&#34;../../../assets/pse-test-guide-v5.pdf&#34;&gt;PSE Test Guide (PDF)&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;importing-the-collection&#34;&gt;Importing the Collection&lt;/h2&gt;
-&lt;p&gt;Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you. Note that we create a new environment each time you import the collection.&lt;/p&gt;
+&lt;p&gt;Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you). Note that we create a new environment each time you import the collection.&lt;/p&gt;
 &lt;p&gt;&lt;div class=&#34;postman-run-button&#34;
 data-postman-action=&#34;collection/import&#34;
 data-postman-var-1=&#34;0912c6fdb7442f3a1baa&#34;
@@ -1085,7 +1092,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/ol&gt;
 &lt;p&gt;To change the amount of a transaction, update the value for the &lt;code&gt;tx_value_[Country]&lt;/code&gt; according to the country you want to test.&lt;/p&gt;
 &lt;h2 id=&#34;running-the-requests-in-the-correct-order&#34;&gt;Running the Requests in the Correct Order&lt;/h2&gt;
-&lt;p&gt;Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next.&lt;/p&gt;
+&lt;p&gt;Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next invocation.&lt;/p&gt;
 
       </description>
     </item>
@@ -1120,7 +1127,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;referenceCode&lt;/td&gt;
-&lt;td&gt;Unique sale reference of the sale for each transaction. This value is generated by you.&lt;/td&gt;
+&lt;td&gt;Unique sale reference for each transaction. This value is generated by you.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;accountId&lt;/td&gt;
@@ -1148,11 +1155,11 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;signature&lt;/td&gt;
-&lt;td&gt;The signature is a unique way to validate payments made through the platform, ensuring its authenticity.&lt;/td&gt;
+&lt;td&gt;The signature is a unique way to validate payments made through the platform, ensuring its authenticity. &lt;br&gt;For more information refer &lt;a href=&#34;../../../en/docs/integrations.html#authentication-signature&#34;&gt;Authentication signature&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;test&lt;/td&gt;
-&lt;td&gt;Set &lt;code&gt;0&lt;/code&gt; for productions processed in the Production environment.&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;0&lt;/code&gt; for transactions processed in the Production environment.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;buyerEmail&lt;/td&gt;
@@ -1194,7 +1201,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;test&lt;/td&gt;
-&lt;td&gt;Set &lt;code&gt;false&lt;/code&gt; for productions processed in the Production environment.&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;false&lt;/code&gt; for transactions processed in the Production environment.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1229,7 +1236,7 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;test&lt;/td&gt;
-&lt;td&gt;Set &lt;code&gt;false&lt;/code&gt; for productions processed in the Production environment.&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;false&lt;/code&gt; for transactions processed in the Production environment.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

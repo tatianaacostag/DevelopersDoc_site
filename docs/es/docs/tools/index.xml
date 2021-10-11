@@ -1,0 +1,263 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – Herramientas</title>
+    <link>/es/docs/tools.html</link>
+    <description>Recent content in Herramientas on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 07 Apr 2021 09:25:41 -0500</lastBuildDate>
+    
+	  <atom:link href="/es/docs/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Solicitud de pago</title>
+      <link>/es/docs/tools/payment-request.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:26:46 -0500</pubDate>
+      
+      <guid>/es/docs/tools/payment-request.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Puedes enviar tu solicitud de pago a través de correo electrónico o generar un link que puedes compartir en salas de chats o redes sociales. Una vez tu cliente recibe tu Solicitud de pago, puede hacer el pago a través de nuestros sistemas de pago seguros.&lt;/p&gt;
+&lt;p&gt;Con la Solicitud de pago, tienes los siguientes beneficios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vendes en línea sin importar si tienes página web utilizando correo electrónico, redes sociales o plataformas de mensajería.&lt;/li&gt;
+&lt;li&gt;Ofreces varios medios de pago.&lt;/li&gt;
+&lt;li&gt;Discriminas los pagos que recibes para que sepas quién pagó qué y cuándo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-does-the-payment-request-work&#34;&gt;¿Cómo funciona la Solicitud de pago?&lt;/h2&gt;
+&lt;p&gt;La Solicitud de pago siguen un flujo simple que le permite a tus clientes comprar tus productos o servicios utilizando la plataforma segura de PayU:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Genera la Solicitud de pago a través del Módulo PayU. Para una Solicitud de pago básica, solo necesitas ingresar lo que vas a vender, su precio y decidir si tu pago incluye impuestos o fecha de expiración. Si quieres incluid información adicional como envío, referencia de pago, comentarios y más, puedes crear una Solicitud de pago personalizada.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Una vez haya sido generado el link, puedes compartirlo con tus clientes ya sea por correo electrónico, redes sociales o incluyéndolo en tu página web como un botón (si tienes una).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cuando tus clientes utilicen el link, serán redirigidos a la página de checkout de PayU, donde pueden pagar utilizando cualquiera de nuestros &lt;a href=&#34;../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;medios de pago disponibles&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cada vez que un cliente pague utilizando el link, recibes un mensaje de confirmación y el monto de la compra&lt;sup&gt;*&lt;/sup&gt; se transfiere a tu cuenta PayU, donde puedes transferirla a tu cuenta bancaria.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;El valor transferido corresponde a la cantidad pagada por el cliente menos la tarifa de PayU.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creating-payment-requests&#34;&gt;Crear Solicitudes de pago&lt;/h2&gt;
+&lt;p&gt;De acuerdo con las necesidades de negocio, puedes crear dos tipos de Solicitudes de pago: Básica y Personalizada.&lt;/p&gt;
+&lt;p&gt;Una &lt;em&gt;Solicitud de Pago Básica&lt;/em&gt; te permite crear un link solo con ingresar el nombre del producto y el precio; además, puedes decidir si necesitas incluir los impuestos o si deseas que el link expire en el futuro. La &lt;em&gt;Solicitud de Pago Personalizada&lt;/em&gt; es un link de pago con información adicional como los datos del envío, referencia de pago, página de respuesta, comentarios o acotación de los medios de pago.&lt;/p&gt;
+&lt;h3 id=&#34;create-a-basic-payment-request&#34;&gt;Crear Solicitud de Pago Básica&lt;/h3&gt;
+&lt;p&gt;Sigue este procedimiento para crear una Solicitud de Pago básica y compartirla con tus clientes.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Ingresa a &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; y haz clic en la opción de log in en a parte superior de la página. Alternativamente, puedes ingresar a &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Expande la opción &lt;strong&gt;Cobra con PayU&lt;/strong&gt; y luego, selecciona &lt;strong&gt;Cobra en internet&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_01_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Ingresa la siguiente información:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_02_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What are you going to sell?&lt;/strong&gt;: description of the product you want to sell using this payment request.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What is the price?&lt;/strong&gt;: provide the amount of the product and select the currency.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_03.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Do you charge tax?&lt;/strong&gt;: choose if the product price includes taxes. If so, select the percentage or fixed amount of the taxes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_04.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Payment deadline&lt;/strong&gt;: choose if the Payment request expires in a given time. If so, select the date and time when the Payment request expires.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_05.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Click &lt;strong&gt;Generate Link&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;create-a-custom-payment-request&#34;&gt;Crear Solicitud de Pago Personalizada&lt;/h3&gt;
+&lt;p&gt;Sigue este procedimiento para crear una Solicitud de Pago Personalizada y compartirla con tus clientes.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Follow steps 1 to 3 of the &lt;a href=&#34;#create-a-basic-payment-request&#34;&gt;Create a Basic Payment Request&lt;/a&gt; procedure.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;strong&gt;I want to customize my link&lt;/strong&gt; option. The advanced options appears where you can provide the following information&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_08.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Do you ship your products&lt;/strong&gt;: this option lets you select whether the shipping information of the product is included in the link. When selecting &lt;strong&gt;YES&lt;/strong&gt;, you can set a fixed shipping amount, and select if the customer must provide the shipping address.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_09.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Payment reference&lt;/strong&gt;: this option lets you decide if you want to set a specific Payment reference for the link.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_12.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Transaction redirects&lt;/strong&gt;: in this option you can set the URLs of the customized response pages you have when a transaction is approved, declined or pending. These fields are not mandatory and if you don&amp;rsquo;t set a URL, the transaction is redirected to the default PayU&amp;rsquo;s response pages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_10.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Buyer comments&lt;/strong&gt;: this option allows the buyer to add comments related to the purchase. The field where the buyer can add comments can be set in English, Spanish or Portuguese.&lt;br&gt;
+For example, you can configure this field to let the customer specify a particular description of the product.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Select the available payment methods&lt;/strong&gt;: this option lets you include or exclude the available payment methods according to your country. For example, if you only want to receive payments through credit cards.&lt;br&gt;
+By default, all the available payment methods of your country are selected.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_13.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Click &lt;strong&gt;Generate Link&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;sharing-the-payment-request&#34;&gt;Sharing the Payment request&lt;/h2&gt;
+&lt;p&gt;After you have configured and generated the Payment request, a confirmation page appears where you can perform the following actions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Share on social media with a link&lt;/em&gt;&lt;/strong&gt;: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several e-mail addresses.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_06.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+When selecting Facebook or Twitter, you will be prompted to provide the credentials of the account where you want to publish the link.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Publish a button in my webpage&lt;/em&gt;&lt;/strong&gt;: if you have a webpage and you want to include the generated link, PayU lets you create a button which you can added somewhere in your page. You can use any of the preloaded images provided by PayU or upload one using the &lt;em&gt;Custom image&lt;/em&gt; option.&lt;br&gt;
+Then, click &lt;em&gt;Copy HTML&lt;/em&gt; to copy the button code in your clipboard.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_07.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creating-multiple-payment-requests&#34;&gt;Creating multiple Payment requests&lt;/h2&gt;
+&lt;p&gt;The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via e-mail.&lt;/p&gt;
+&lt;p&gt;To create multiple payment links, expand the &lt;strong&gt;Sell with PayU option&lt;/strong&gt; and then, select &lt;strong&gt;Sell on the internet&lt;/strong&gt;. Then, select the option &lt;strong&gt;Create multiple payment links&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;To create multiple payment links at once, you just need to upload a &lt;em&gt;.csv&lt;/em&gt; file with all the information of each product you want to sell. You can download an example of how PayU expects the information by clicking &lt;strong&gt;Download format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_14.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Excel file downloaded is by default in Spanish and each row corresponds to a link. The following table explains each column in it. Recall that the columns marked with asterisk are mandatory and if you leave empty a column, this property is not included in the link.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Column&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Buyer&amp;rsquo;s e-mail&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;The e-mail address to which the Payment link will be sent.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;What are you going to sell?&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;Name or description of the product you want to sell.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;What does the product cost?&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;Price of the product you offer.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Currency&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;Currency of the product&amp;rsquo;s amount.&lt;br&gt;Possible values: COP, USD, PEN, ARS, BRL, and MXN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tax type&lt;/td&gt;
+&lt;td&gt;E&lt;/td&gt;
+&lt;td&gt;Let&amp;rsquo;s you define if you include taxes in your product.&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Set &lt;code&gt;Fijo&lt;/code&gt; to add a fixed value.&lt;/li&gt;&lt;li&gt;Set &lt;code&gt;Porcentaje&lt;/code&gt; to add a percentage value.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tax value&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;Value of the tax according to the tax type specified.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Due date&lt;/td&gt;
+&lt;td&gt;G&lt;/td&gt;
+&lt;td&gt;Set the due date of the link using the format &lt;code&gt;dd/MM/yy HH:mm&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirect on success&lt;/td&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;td&gt;Set the URL to which you customers will be redirected when the transaction is successful.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirect on failure&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;Set the URL to which you customers will be redirected when the transaction fails.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirect on pending&lt;/td&gt;
+&lt;td&gt;J&lt;/td&gt;
+&lt;td&gt;Set the URL to which you customers will be redirected when the transaction is pending.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ask for shipping address&lt;/td&gt;
+&lt;td&gt;K&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;Si&lt;/code&gt; to request delivery address to the payer. Otherwise, set &lt;code&gt;No&lt;/code&gt; or leave it empty.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Shipping value&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;td&gt;Set a fixed value for shipping in the same currency of the product price.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Let payers add comments&lt;/td&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;Si&lt;/code&gt; to let the payers add comments. Otherwise, set &lt;code&gt;No&lt;/code&gt; or leave it empty.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Label for payer&amp;rsquo;s comments (ES)&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;Set the label for the payer&amp;rsquo;s comments field in Spanish.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Label for payer&amp;rsquo;s comments (EN)&lt;/td&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;Set the label for the payer&amp;rsquo;s comments field in English.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Label for payer&amp;rsquo;s comments (PT)&lt;/td&gt;
+&lt;td&gt;P&lt;/td&gt;
+&lt;td&gt;Set the label for the payer&amp;rsquo;s comments field in Portuguese.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Extra 1&lt;/td&gt;
+&lt;td&gt;Q&lt;/td&gt;
+&lt;td&gt;Set any additional string data to be included in the link. This column cannot exceed 120 characters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Extra 2&lt;/td&gt;
+&lt;td&gt;R&lt;/td&gt;
+&lt;td&gt;Set any additional string data to be included in the link. This column cannot exceed 120 characters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Select payment methods.&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;If you leave this column empty, all the payment methods active for the account will be included.&lt;/li&gt;&lt;li&gt;To include some payment methods, set the payment methods separated by commas.&lt;br&gt;Example: &lt;code&gt;LENDING,VISA,BANK_REFERENCED,AMEX&lt;/code&gt;.&lt;br&gt;Furthermore, you can define what installments to submit for credit card, to do this, enter the payment methods and indicate the installments you want to be available separated by hyphens.&lt;br&gt;Example: &lt;code&gt;VISA-1-2-3,AMEX&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+You can create up to 1000 links per file.
+&lt;/div&gt;
+
+&lt;p&gt;Once you have completed the Excel file, upload it to the PayU Module and click &lt;strong&gt;Send payment links&lt;/strong&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.84.2" />
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Solicitud de pago | PayU Latam</title><meta property="og:title" content="Solicitud de pago" />
+<meta property="og:description" content="Con las solicitudes de pago desde el módulo PayU, puedes cobrarle a tus clientes sin tener una página web. Para recibir pagos con esta solución, todo lo que necesitas en una cuenta activa en PayU.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/docs/tools/payment-request.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-04-07T09:26:46-05:00" />
+<meta property="article:modified_time" content="2021-10-11T10:05:51-05:00" /><meta property="og:site_name" content="PayU Latam" />
+
+<meta itemprop="name" content="Solicitud de pago">
+<meta itemprop="description" content="Con las solicitudes de pago desde el módulo PayU, puedes cobrarle a tus clientes sin tener una página web. Para recibir pagos con esta solución, todo lo que necesitas en una cuenta activa en PayU.
+"><meta itemprop="datePublished" content="2021-04-07T09:26:46-05:00" />
+<meta itemprop="dateModified" content="2021-10-11T10:05:51-05:00" />
+<meta itemprop="wordCount" content="1483">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Solicitud de pago"/>
+<meta name="twitter:description" content="Con las solicitudes de pago desde el módulo PayU, puedes cobrarle a tus clientes sin tener una página web. Para recibir pagos con esta solución, todo lo que necesitas en una cuenta activa en PayU.
+"/>
+
+
+
+
+
+<link rel="preload" href="../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" as="style">
+<link href="../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" rel="stylesheet" integrity="">
+
+
+<link href="../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../es/">
+			
+			
+			<span class="navbar-logo"><img src="../../../assets/PayULatam.png"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../es/docs.html" ><span class="active">Pagos en línea</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../en/docs/tools/payment-request.html">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Buscar en este sitio…"
+  aria-label="Buscar en este sitio…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.f1e97d3673e7f28612253f6012e249187b11b5d354f2c3b06bb354f5cc2900bc83ff1c0d8320a769e1554cda713d6d1ca321a97764bca88cdd48685687b0de65.json"
+  data-offline-search-base-href="../../../"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../en/docs/tools/payment-request.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs.html" href="../../../es/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Inicio</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/getting-started.html" href="../../../es/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Empezando...</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedcreate-an-accounthtml" href="../../../es/docs/getting-started/create-an-account.html">Crear una cuenta de PayU</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/select-your-integration.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedselect-your-integrationhtml" href="../../../es/docs/getting-started/select-your-integration.html">Seleccionar tu integración</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/select-your-payment-method.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedselect-your-payment-methodhtml" href="../../../es/docs/getting-started/select-your-payment-method.html">Seleccionar tu medio de Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-your-solutionhtml" href="../../../es/docs/getting-started/test-your-solution.html">Probar tu solución</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/deploy-to-production.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-starteddeploy-to-productionhtml" href="../../../es/docs/getting-started/deploy-to-production.html">Desplegar a Producción</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedresponse-codes-and-variableshtml" href="../../../es/docs/getting-started/response-codes-and-variables.html">Códigos de respuesta y Variables</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/services.html" href="../../../es/docs/services.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Servicios</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsserviceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/payments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespaymentshtml" href="../../../es/docs/services/payments.html">Pagos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/queries.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicesquerieshtml" href="../../../es/docs/services/queries.html">Consulta de transacciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicestokenizationhtml" href="../../../es/docs/services/tokenization.html">Tokenización</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/promotions.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespromotionshtml" href="../../../es/docs/services/promotions.html">Cuotas y Promociones - Argentina y México</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicesrefundshtml" href="../../../es/docs/services/refunds.html">Anulaciones y Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/payouts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespayoutshtml" href="../../../es/docs/services/payouts.html">Payouts</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/tools.html" href="../../../es/docs/tools.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Herramientas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocstoolshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/payment-request.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-esdocstoolspayment-requesthtml" href="../../../es/docs/tools/payment-request.html">Solicitud de pago</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/integrations.html" href="../../../es/docs/integrations.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Integraciones</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsintegrationshtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p>En esta página</p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-does-the-payment-request-work">¿Cómo funciona la Solicitud de pago?</a></li>
+    <li><a href="#creating-payment-requests">Crear Solicitudes de pago</a>
+      <ul>
+        <li><a href="#create-a-basic-payment-request">Crear Solicitud de Pago Básica</a></li>
+        <li><a href="#create-a-custom-payment-request">Crear Solicitud de Pago Personalizada</a></li>
+      </ul>
+    </li>
+    <li><a href="#sharing-the-payment-request">Sharing the Payment request</a></li>
+    <li><a href="#creating-multiple-payment-requests">Creating multiple Payment requests</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../es/docs.html">Inicio</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../es/docs/tools.html">Herramientas</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../es/docs/tools/payment-request.html">Solicitud de pago</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Solicitud de pago</h1>
+    <div class="lead">Con las solicitudes de pago desde el módulo PayU, puedes cobrarle a tus clientes sin tener una página web. Para recibir pagos con esta solución, todo lo que necesitas en una cuenta activa en PayU.</div>
+	       
+	<p>Puedes enviar tu solicitud de pago a través de correo electrónico o generar un link que puedes compartir en salas de chats o redes sociales. Una vez tu cliente recibe tu Solicitud de pago, puede hacer el pago a través de nuestros sistemas de pago seguros.</p>
+<p>Con la Solicitud de pago, tienes los siguientes beneficios:</p>
+<ul>
+<li>Vendes en línea sin importar si tienes página web utilizando correo electrónico, redes sociales o plataformas de mensajería.</li>
+<li>Ofreces varios medios de pago.</li>
+<li>Discriminas los pagos que recibes para que sepas quién pagó qué y cuándo.</li>
+</ul>
+<h2 id="how-does-the-payment-request-work">¿Cómo funciona la Solicitud de pago?</h2>
+<p>La Solicitud de pago siguen un flujo simple que le permite a tus clientes comprar tus productos o servicios utilizando la plataforma segura de PayU:</p>
+<ol>
+<li>
+<p>Genera la Solicitud de pago a través del Módulo PayU. Para una Solicitud de pago básica, solo necesitas ingresar lo que vas a vender, su precio y decidir si tu pago incluye impuestos o fecha de expiración. Si quieres incluid información adicional como envío, referencia de pago, comentarios y más, puedes crear una Solicitud de pago personalizada.</p>
+</li>
+<li>
+<p>Una vez haya sido generado el link, puedes compartirlo con tus clientes ya sea por correo electrónico, redes sociales o incluyéndolo en tu página web como un botón (si tienes una).</p>
+</li>
+<li>
+<p>Cuando tus clientes utilicen el link, serán redirigidos a la página de checkout de PayU, donde pueden pagar utilizando cualquiera de nuestros <a href="../../../es/docs/getting-started/select-your-payment-method.html">medios de pago disponibles</a>.</p>
+</li>
+<li>
+<p>Cada vez que un cliente pague utilizando el link, recibes un mensaje de confirmación y el monto de la compra<sup>*</sup> se transfiere a tu cuenta PayU, donde puedes transferirla a tu cuenta bancaria.</p>
+</li>
+</ol>
+<p><sup>*</sup><em>El valor transferido corresponde a la cantidad pagada por el cliente menos la tarifa de PayU.</em></p>
+<h2 id="creating-payment-requests">Crear Solicitudes de pago</h2>
+<p>De acuerdo con las necesidades de negocio, puedes crear dos tipos de Solicitudes de pago: Básica y Personalizada.</p>
+<p>Una <em>Solicitud de Pago Básica</em> te permite crear un link solo con ingresar el nombre del producto y el precio; además, puedes decidir si necesitas incluir los impuestos o si deseas que el link expire en el futuro. La <em>Solicitud de Pago Personalizada</em> es un link de pago con información adicional como los datos del envío, referencia de pago, página de respuesta, comentarios o acotación de los medios de pago.</p>
+<h3 id="create-a-basic-payment-request">Crear Solicitud de Pago Básica</h3>
+<p>Sigue este procedimiento para crear una Solicitud de Pago básica y compartirla con tus clientes.</p>
+<ol>
+<li>
+<p>Ingresa a <a href="payu.com">PayU.com</a> y haz clic en la opción de log in en a parte superior de la página. Alternativamente, puedes ingresar a <a href="https://merchants.payulatam.com/">https://merchants.payulatam.com/</a>.</p>
+</li>
+<li>
+<p>Expande la opción <strong>Cobra con PayU</strong> y luego, selecciona <strong>Cobra en internet</strong>.</p>
+</li>
+</ol>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_01_es.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Ingresa la siguiente información:</li>
+</ol>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_02_es.png" alt="PrintScreen"></p>
+<ul>
+<li><strong>What are you going to sell?</strong>: description of the product you want to sell using this payment request.</li>
+<li><strong>What is the price?</strong>: provide the amount of the product and select the currency.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_03.png" alt="PrintScreen" width="60%"/><br></p>
+<ul>
+<li><strong>Do you charge tax?</strong>: choose if the product price includes taxes. If so, select the percentage or fixed amount of the taxes.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_04.png" alt="PrintScreen" width="60%"/><br></p>
+<ul>
+<li><strong>Payment deadline</strong>: choose if the Payment request expires in a given time. If so, select the date and time when the Payment request expires.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_05.png" alt="PrintScreen" width="60%"/><br></p>
+<ol start="4">
+<li>Click <strong>Generate Link</strong>.</li>
+</ol>
+<h3 id="create-a-custom-payment-request">Crear Solicitud de Pago Personalizada</h3>
+<p>Sigue este procedimiento para crear una Solicitud de Pago Personalizada y compartirla con tus clientes.</p>
+<ol>
+<li>
+<p>Follow steps 1 to 3 of the <a href="#create-a-basic-payment-request">Create a Basic Payment Request</a> procedure.</p>
+</li>
+<li>
+<p>Click <strong>I want to customize my link</strong> option. The advanced options appears where you can provide the following information</p>
+</li>
+</ol>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_08.png" alt="PrintScreen" width="60%"/><br></p>
+<ul>
+<li><strong>Do you ship your products</strong>: this option lets you select whether the shipping information of the product is included in the link. When selecting <strong>YES</strong>, you can set a fixed shipping amount, and select if the customer must provide the shipping address.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_09.png" alt="PrintScreen" width="60%"/><br></p>
+<ul>
+<li><strong>Payment reference</strong>: this option lets you decide if you want to set a specific Payment reference for the link.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_12.png" alt="PrintScreen" width="60%"/><br></p>
+<ul>
+<li><strong>Transaction redirects</strong>: in this option you can set the URLs of the customized response pages you have when a transaction is approved, declined or pending. These fields are not mandatory and if you don&rsquo;t set a URL, the transaction is redirected to the default PayU&rsquo;s response pages.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_10.png" alt="PrintScreen" width="60%"/><br></p>
+<ul>
+<li><strong>Buyer comments</strong>: this option allows the buyer to add comments related to the purchase. The field where the buyer can add comments can be set in English, Spanish or Portuguese.<br>
+For example, you can configure this field to let the customer specify a particular description of the product.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_11.png" alt="PrintScreen" width="60%"/><br></p>
+<ul>
+<li><strong>Select the available payment methods</strong>: this option lets you include or exclude the available payment methods according to your country. For example, if you only want to receive payments through credit cards.<br>
+By default, all the available payment methods of your country are selected.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_13.png" alt="PrintScreen" width="60%"/><br></p>
+<ol start="3">
+<li>Click <strong>Generate Link</strong>.</li>
+</ol>
+<h2 id="sharing-the-payment-request">Sharing the Payment request</h2>
+<p>After you have configured and generated the Payment request, a confirmation page appears where you can perform the following actions:</p>
+<ul>
+<li><strong><em>Share on social media with a link</em></strong>: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several e-mail addresses.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_06.png" alt="PrintScreen" width="60%"/><br></p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+When selecting Facebook or Twitter, you will be prompted to provide the credentials of the account where you want to publish the link.
+</div>
+
+<ul>
+<li><strong><em>Publish a button in my webpage</em></strong>: if you have a webpage and you want to include the generated link, PayU lets you create a button which you can added somewhere in your page. You can use any of the preloaded images provided by PayU or upload one using the <em>Custom image</em> option.<br>
+Then, click <em>Copy HTML</em> to copy the button code in your clipboard.</li>
+</ul>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_07.png" alt="PrintScreen" width="60%"/><br></p>
+<h2 id="creating-multiple-payment-requests">Creating multiple Payment requests</h2>
+<p>The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via e-mail.</p>
+<p>To create multiple payment links, expand the <strong>Sell with PayU option</strong> and then, select <strong>Sell on the internet</strong>. Then, select the option <strong>Create multiple payment links</strong>.</p>
+<p>To create multiple payment links at once, you just need to upload a <em>.csv</em> file with all the information of each product you want to sell. You can download an example of how PayU expects the information by clicking <strong>Download format</strong>.</p>
+<p><img src="../../../assets/PaymentRequest/PaymentRequest_14.png" alt="PrintScreen"></p>
+<p>The Excel file downloaded is by default in Spanish and each row corresponds to a link. The following table explains each column in it. Recall that the columns marked with asterisk are mandatory and if you leave empty a column, this property is not included in the link.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buyer&rsquo;s e-mail</td>
+<td>A</td>
+<td>The e-mail address to which the Payment link will be sent.</td>
+</tr>
+<tr>
+<td>What are you going to sell?</td>
+<td>B</td>
+<td>Name or description of the product you want to sell.</td>
+</tr>
+<tr>
+<td>What does the product cost?</td>
+<td>C</td>
+<td>Price of the product you offer.</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>D</td>
+<td>Currency of the product&rsquo;s amount.<br>Possible values: COP, USD, PEN, ARS, BRL, and MXN</td>
+</tr>
+<tr>
+<td>Tax type</td>
+<td>E</td>
+<td>Let&rsquo;s you define if you include taxes in your product.<ul style="margin-bottom: initial;"><li>Set <code>Fijo</code> to add a fixed value.</li><li>Set <code>Porcentaje</code> to add a percentage value.</li></ul></td>
+</tr>
+<tr>
+<td>Tax value</td>
+<td>F</td>
+<td>Value of the tax according to the tax type specified.</td>
+</tr>
+<tr>
+<td>Due date</td>
+<td>G</td>
+<td>Set the due date of the link using the format <code>dd/MM/yy HH:mm</code>.</td>
+</tr>
+<tr>
+<td>Redirect on success</td>
+<td>H</td>
+<td>Set the URL to which you customers will be redirected when the transaction is successful.</td>
+</tr>
+<tr>
+<td>Redirect on failure</td>
+<td>I</td>
+<td>Set the URL to which you customers will be redirected when the transaction fails.</td>
+</tr>
+<tr>
+<td>Redirect on pending</td>
+<td>J</td>
+<td>Set the URL to which you customers will be redirected when the transaction is pending.</td>
+</tr>
+<tr>
+<td>Ask for shipping address</td>
+<td>K</td>
+<td>Set <code>Si</code> to request delivery address to the payer. Otherwise, set <code>No</code> or leave it empty.</td>
+</tr>
+<tr>
+<td>Shipping value</td>
+<td>L</td>
+<td>Set a fixed value for shipping in the same currency of the product price.</td>
+</tr>
+<tr>
+<td>Let payers add comments</td>
+<td>M</td>
+<td>Set <code>Si</code> to let the payers add comments. Otherwise, set <code>No</code> or leave it empty.</td>
+</tr>
+<tr>
+<td>Label for payer&rsquo;s comments (ES)</td>
+<td>N</td>
+<td>Set the label for the payer&rsquo;s comments field in Spanish.</td>
+</tr>
+<tr>
+<td>Label for payer&rsquo;s comments (EN)</td>
+<td>O</td>
+<td>Set the label for the payer&rsquo;s comments field in English.</td>
+</tr>
+<tr>
+<td>Label for payer&rsquo;s comments (PT)</td>
+<td>P</td>
+<td>Set the label for the payer&rsquo;s comments field in Portuguese.</td>
+</tr>
+<tr>
+<td>Extra 1</td>
+<td>Q</td>
+<td>Set any additional string data to be included in the link. This column cannot exceed 120 characters.</td>
+</tr>
+<tr>
+<td>Extra 2</td>
+<td>R</td>
+<td>Set any additional string data to be included in the link. This column cannot exceed 120 characters.</td>
+</tr>
+<tr>
+<td>Select payment methods.</td>
+<td>S</td>
+<td><ul style="margin-bottom: initial;"><li>If you leave this column empty, all the payment methods active for the account will be included.</li><li>To include some payment methods, set the payment methods separated by commas.<br>Example: <code>LENDING,VISA,BANK_REFERENCED,AMEX</code>.<br>Furthermore, you can define what installments to submit for credit card, to do this, enter the payment methods and indicate the installments you want to be available separated by hyphens.<br>Example: <code>VISA-1-2-3,AMEX</code>.</li></ul></td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+You can create up to 1000 links per file.
+</div>
+
+<p>Once you have completed the Excel file, upload it to the PayU Module and click <strong>Send payment links</strong>.</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+Última modificación
+
+11 de octubre de 2021:
+
+ <b>Include PIX as a payment method and translations (30f913f)</b>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.8c865aba183c7b45657c96d592a977547887a44cf70782e8996d3c3687a50bc5.js" integrity="sha256-jIZauhg8e0VlfJbVkql3VHiHpEz3B4LomW08NoelC8U=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>
