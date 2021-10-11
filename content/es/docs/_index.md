@@ -56,4 +56,9 @@ PayU ofrece los siguientes servicios.
 
 {{< overview/services_es >}}
 
+## Herramientas de PayU {#payu-tools}
+PayU ofrece las siguientes herramientas para darte más opciones para vender y recibir pagos en línea.
+
+ {{< overview/tools_es >}}
+
 ## ¿Qué sigue?
