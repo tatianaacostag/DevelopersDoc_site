@@ -55,7 +55,7 @@ Two-step flows are only supported for Mastercard and Visa.
 {{% /alert %}}
 
 ### Considerations
-* Send a valid credit card Payment Method in the request, [see the available Payment Methods for Mexico]({{< ref "select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico" >}}).
+* Send a valid credit card Payment Method in the request, [see the available Payment Methods for Mexico]({{< ref "select-your-payment-method.html#Mexico" >}}).
 * Two-step flows are only available for Mastercard and Visa.
 * For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
 * When using promotions or apply installments, always display the phrase **"PAGOS DIFERIDOS"** during the payment process.
@@ -588,7 +588,7 @@ This method lets you process the payments in cash of your customers. To integrat
 <img src="/assets/Payments/CashReceiptMX.png" alt="PrintScreen" width="50%">
 
 ### Considerations
-* Send a valid cash Payment Method in the request, [see the available Payment Methods for Mexico]({{< ref "select-your-payment-method.html#img-srcassetsmexicopng-width25px-mexico" >}}).
+* Send a valid cash Payment Method in the request, [see the available Payment Methods for Mexico]({{< ref "select-your-payment-method.html#Mexico" >}}).
 * The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * When the payment method is `OXXO`, the confirmation of the payment will be one day after the payment. For other cash payment methods, the confirmation is online.
 * The extra parameters has the following data related to the transaction:
