@@ -49,7 +49,7 @@ To confirm the status of a transaction, you can use the [Queries SDK]({{< ref "Q
 This method lets you process the payments performed by your customers using credit cards. For Brazil, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Considerations
-* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#img-srcassetsbrazilpng-width25px-brazil" >}}).
+* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}).
 * For payments with credit card tokens, include the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
 * The extra parameter `CIELO_TID` identifies the transaction, this parameter is needed when you want to process voids.
@@ -590,7 +590,7 @@ This method lets you process the payments in cash of your customers. To integrat
 <img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
 
 ### Considerations
-* Send a valid cash Payment Method in the request, [see the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#img-srcassetsbrazilpng-width25px-brazil" >}}).
+* Send a valid cash Payment Method in the request, [see the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}).
 * The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * The payment is reflected in the next business day.
 * The response returns the following extra parameters related to the transaction
