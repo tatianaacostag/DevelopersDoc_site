@@ -992,7 +992,7 @@ The following are the bodies of the request and response of this payment method.
 Request body:
 ```JSON
 {
-   "language": "es",
+   "language": "pt",
    "command": "SUBMIT_TRANSACTION",
    "merchant": {
       "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
@@ -1003,7 +1003,7 @@ Request body:
          "accountId": "512327",
          "referenceCode": "PRODUCT_TEST_2021-06-17T19:11:57.179Z",
          "description": "Payment test description",
-         "language": "es",
+         "language": "pt",
          "signature": "fbc089272288edc52c332395d9566f4c",
          "notifyUrl": "http://www.payu.com/notify",
          "additionalValues": {
@@ -1039,9 +1039,12 @@ Request body:
             "phone": "(11)756312633"
          }
       },
-      "extraParameters": {
-         "CURRENCY": "BRL",
-         "ACCOUNT_ID": "3"
+      "payer": {
+         "fullName":"Payer Name",
+         "emailAddress": "buyer_test@test.com",
+         "contactPhone": "55 12345678901",
+         "dniType": "CPF",
+         "dniNumber": "653.098.319-83"
       },
       "type": "AUTHORIZATION_AND_CAPTURE",
       "paymentMethod": "PIX",
@@ -1050,7 +1053,7 @@ Request body:
       "ipAddress": "127.0.0.1"
     },
     "test": false
- }
+}
 ```
 <br>
 
@@ -1092,12 +1095,106 @@ Response body:
 
 Request body:
 ```XML
+<request>
+   <language>pt</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <accountId>512327</accountId>
+         <referenceCode>PRODUCT_TEST_2021-06-17T19:11:57.179Z</referenceCode>
+         <description>payment test</description>
+         <language>pt</language>
+         <signature>fbc089272288edc52c332395d9566f4c</signature>
+         <notifyUrl>http://www.payu.com/notify</notifyUrl>
+         <additionalValues>
+            <entry>
+               <string>TX_VALUE</string>
+               <additionalValue>
+                  <value>1000</value>
+                  <currency>BRL</currency>
+               </additionalValue>
+            </entry>
+         </additionalValues>
+         <buyer>
+            <contactPhone>7563126</contactPhone>
+            <dniNumber>811.807.405-64</dniNumber>
+            <cnpj>32593371000110</cnpj>
+            <emailAddress>buyer_test@test.com</emailAddress>
+            <fullName>First name and second buyer name</fullName>
+            <merchantBuyerId>1</merchantBuyerId>
+            <shippingAddress>
+               <street1>Quadra QNP 34 Conjunto G 780</street1>
+               <street2>5555487</street2>            
+               <city>Manaos</city>
+               <state>SP</state>               
+               <country>BR</country>
+               <postalCode>10012545</postalCode>
+               <phone>7563126</phone>
+            </shippingAddress>
+         </buyer>
+         <shippingAddress>
+            <street1>Quadra QNP 34 Conjunto G 780</street1>
+               <street2>5555487</street2>            
+               <city>Manaos</city>
+               <state>SP</state>               
+               <country>BR</country>
+                <postalCode>10012545</postalCode>
+               <phone>7563126</phone>
+         </shippingAddress>
+      </order>
+      <payer>
+         <contactPhone>55 12345678901</contactPhone>
+         <dniNumber>653.098.319-83</dniNumber>
+         <dniType>CPF</dniType>
+         <emailAddress>buyer_test@test.com</emailAddress>
+         <fullName>Payer Name</fullName>
+      </payer>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>PIX</paymentMethod>
+      <paymentCountry>BR</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
 
 ```
 <br>
 
 Response body:
 ```XML
+<paymentResponse>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>1181965893</orderId>
+        <transactionId>8397992b-3717-49c5-92ee-345a65ff13cf</transactionId>
+        <state>PENDING</state>
+        <trazabilityCode>e0a52a20-6ae2-4970-9b81-47f208bbf40e</trazabilityCode>
+        <pendingReason>AWAITING_NOTIFICATION</pendingReason>
+        <responseCode>PENDING_TRANSACTION_CONFIRMATION</responseCode>
+        <operationDate>2021-10-08T12:14:15</operationDate>
+        <extraParameters>
+            <entry>
+                <string>EXPIRATION_DATE</string>
+                <date>2021-10-08T18:14:13</date>
+            </entry>
+            <entry>
+                <string>QRCODE_EMV</string>
+                <string>00020101021226770014BR.GOV.BCB.PIX2555api.itau/pix/qr/v2/8ccd84ae-0c8d-4f71-8abf-b676a666bf9f5204000053039865802BR5911PAYU BRASIL6009SAO PAULO62070503***6304E404</string>
+            </entry>
+            <entry>
+                <string>QRCODE_IMAGE_BASE64</string>
+                <string>iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AQAAAACgl2eQAAAC0ElEQVR4Xu2XW27cMAxFpY1I+99FlyJtRO45VFIrUyDoR8z+DDEPj3QMMCTvlVOu7+NXeV15iTew4w3seAM7/g0YpdTJ92p1lTpKveY1XUwE2JyT3TnnqF6WFnd4UxowKq/R56qrldZH68uVfIDc+mqktyBb/w/A6vSMXtms0kePxUyAl79t2AVKyWYsJgIxtK/x11S/xs8CH0GOrJEh7+WmkQWMPpjW3aWYFybY8b3/iucBqtLwjn4txsWSIRs13BMB80E2zqrqoUyle08qQFV6zK0UqfpuXiYC5OQu9sXqMmGRW7wJwBykMxCuWdosb6Fcf5JMAJAMFo5e9HFHZtvaXagEYG7n4kDzHMHRi656NCsBcErJLIQLZc56+t2sDECJ+IF1TWNtI7uTfB64LEswJQR8sYV4j24+Dww9nCeLzzpFo0LHeQCIBO8aEtZYQ0KJgJ4pwsB4qpic2rGFaYC9Kj5k9Rk1o2DSIxMgIxdCL2SMlTq+425WBjCqZ5idwkb57ZeLiYBaoVlLH9lDIzcPdT8PRJkUSkiG3OJ4+9KsxwH2PE/YVi+OjeI5DpQEYDgmJQ73poThMNR1NOt5YKqZmFObxMfSQ5RPHsCkVPfYIMsisLwjE2BqL/eKeZmxvZqHeBOAuX8iGZKjT1g5rTqb9TzADu5hTvYo3ItUj2YlAGywHk3D08ltWKuzks8DeNfSwxwUL6NSX9X9PIBtqBpey+cM9snbtTzg2koZrkz/K3OM19ms5wHr08JM9fHqR+vx+J0IOKXTXTanQ4yU0dGVCAwFa5rVR4zlBb/5SAQMc3R6PelXqGee4n0cMKHl814Ixvy63j4yAdKbnufD2iiYj/M1FRjhGaGd4qMO8/qlWUlAjE1MK7BCqldEJqBfUCwa5NV0fpZMGhDNas2xwTlIUU87zDwBiMZooFZIIYsq4UTgu3gDO97Ajjew4weA30GD9ELLE47fAAAAAElFTkSuQmC</string>
+            </entry>
+        </extraParameters>
+    </transactionResponse>
+</paymentResponse>
 
 ```
 {{< /tab >}}

@@ -49,7 +49,7 @@ To confirm the status of a transaction, you can use the [Queries SDK]({{< ref "Q
 This method lets you process the payments performed by your customers using credit cards. For Peru, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Considerations
-* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Peru]({{< ref "select-your-payment-method.html#img-srcassetsperupng-width25px-peru" >}}).
+* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Peru]({{< ref "select-your-payment-method.html#Peru" >}}).
 * For payments with credit card tokens, include the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `PROCESS_WITHOUT_CVV2` as true and remove the variable `CREDIT_CARD_SECURITY_CODE`.
 * In Peru, you can select 0 or 2 to 36 installments when paying with credit card. If you select one (1) installment, PayU sends zero (0) as default value.

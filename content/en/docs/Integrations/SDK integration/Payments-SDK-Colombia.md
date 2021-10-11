@@ -51,7 +51,7 @@ To confirm the status of a transaction, you can use the [Queries SDK]({{< ref "Q
 This method lets you process the payments performed by your customers using credit cards. For Colombia, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Considerations
-* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia" >}}).
+* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}).
 * For payments with credit card tokens, include the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `PROCESS_WITHOUT_CVV2` as true and remove the variable `CREDIT_CARD_SECURITY_CODE`.
 * For Crédito Fácil Codensa card, the number of installments supported are 1 to 12, 18, 24, 36 and 48.
@@ -316,7 +316,7 @@ This method lets you process the payments of your customers in cash or using a B
 <img src="/assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
 
 ### Considerations
-* Send a valid cash Payment Method in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#img-srcassetscolombiapng-width25px-colombia" >}}). `OTHERS_CASH` method is not supported.
+* Send a valid cash Payment Method in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}). `OTHERS_CASH` method is not supported.
 * The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * For `BALOTO` and `EFECTY`, the confirmation of the payment takes 15 minutes. For `BANK_REFERENCED`, the confirmation is online.
 * The minimum and maximum values for `BALOTO` and `EFECTY` are:

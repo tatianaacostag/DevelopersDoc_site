@@ -53,7 +53,7 @@ Transactions with credit card using two-step flows are available under demand. C
 {{% /alert %}}
 
 ### Considerations
-* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#img-srcassetschilepng-width25px-chile" >}}).
+* Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
 * For payments with credit card tokens, include the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
 * Two-step flows are not supported for international credit cards.
