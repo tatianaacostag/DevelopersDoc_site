@@ -17,7 +17,7 @@ Con la Solicitud de pago, tienes los siguientes beneficios:
 ## ¿Cómo funciona la Solicitud de pago? {#how-does-the-payment-request-work}
 La Solicitud de pago siguen un flujo simple que le permite a tus clientes comprar tus productos o servicios utilizando la plataforma segura de PayU:
 
-1. Genera la Solicitud de pago a través del Módulo PayU. Para una Solicitud de pago básica, solo necesitas ingresar lo que vas a vender, su precio y decidir si tu pago incluye impuestos o fecha de expiración. Si quieres incluid información adicional como envío, referencia de pago, comentarios y más, puedes crear una Solicitud de pago personalizada.
+1. Genera la Solicitud de pago a través del Módulo PayU. Para una Solicitud de pago básica, solo necesitas ingresar lo que vas a vender, su precio y decidir si tu pago incluye impuestos o fecha de expiración. Si quieres incluir información adicional como envío, referencia de pago, comentarios y más, puedes crear una Solicitud de pago personalizada.
 
 2. Una vez haya sido generado el link, puedes compartirlo con tus clientes ya sea por correo electrónico, redes sociales o incluyéndolo en tu página web como un botón (si tienes una).
 
@@ -45,109 +45,109 @@ Sigue este procedimiento para crear una Solicitud de Pago básica y compartirla 
 
 ![PrintScreen](/assets/PaymentRequest/PaymentRequest_02_es.png)
 
-* **What are you going to sell?**: description of the product you want to sell using this payment request.
-* **What is the price?**: provide the amount of the product and select the currency.
+* **¿Qué vas a cobrar?**: descripción del producto o servicio que deseas vender utilizando esta solicitud de pago.
+* **¿Cuánto vale?**: ingresa el valor del producto o servicio y selecciona la moneda.
 
-<img src="/assets/PaymentRequest/PaymentRequest_03.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_03_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **Do you charge tax?**: choose if the product price includes taxes. If so, select the percentage or fixed amount of the taxes.
+* **¿Cobras impuestos?**: selecciona si el precio del producto incluye impuestos. Si los incluye, selecciona el porcentaje o el monto de los impuestos.
 
-<img src="/assets/PaymentRequest/PaymentRequest_04.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_04_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **Payment deadline**: choose if the Payment request expires in a given time. If so, select the date and time when the Payment request expires.
+* **¿Tiene límite de pago?**: selecciona si la Solicitud de pago vence en una fecha y hora determinada. De ser así, selecciona la fecha y la hora en la cual expira la Solicitud de pago.
 
-<img src="/assets/PaymentRequest/PaymentRequest_05.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_05_es.png" alt="PrintScreen" width="60%"/><br>
 
-4. Click **Generate Link**.
+4. Haz clic en **Generar link**.
 
 ### Crear Solicitud de Pago Personalizada {#create-a-custom-payment-request}
 Sigue este procedimiento para crear una Solicitud de Pago Personalizada y compartirla con tus clientes.
 
-1. Follow steps 1 to 3 of the [Create a Basic Payment Request]({{< ref "#create-a-basic-payment-request" >}}) procedure.
+1. Sigue los pasos 1 al 3 del procedimiento para [Crear una Solicitud de Pago Básica]({{< ref "#create-a-basic-payment-request" >}}).
 
-2. Click **I want to customize my link** option. The advanced options appears where you can provide the following information
+2. Haz clic en la opción **Deseo personalizar mi link**. Aparecen las opciones avanzadas donde puedes ingresar la siguiente información.
 
-<img src="/assets/PaymentRequest/PaymentRequest_08.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_08_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **Do you ship your products**: this option lets you select whether the shipping information of the product is included in the link. When selecting **YES**, you can set a fixed shipping amount, and select if the customer must provide the shipping address.
+* **¿Envías tus productos?**: esta opción te permite seleccionar si se incluye la información del envío en el link. Cuando seleccionas **SÍ**, puedes fijar un valor de envío y seleccionar si el cliente debe ingresar la dirección de envío.
 
-<img src="/assets/PaymentRequest/PaymentRequest_09.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_09_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **Payment reference**: this option lets you decide if you want to set a specific Payment reference for the link.
+* **Referencia de pago**: esta opción te permite decidir si quieres asignar una referencia de pago específica al link.
 
-<img src="/assets/PaymentRequest/PaymentRequest_12.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_12_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **Transaction redirects**: in this option you can set the URLs of the customized response pages you have when a transaction is approved, declined or pending. These fields are not mandatory and if you don't set a URL, the transaction is redirected to the default PayU's response pages.  
+* **Redirecciones de la Transacción**: en esta opción, puedes configurar las URLs de las páginas de respuesta personalizadas para cuando una transacción es aprobada, declinada o pendiente. Estos campos no son obligatorios y si no especificas una URL, se redirecciona a la página de respuesta por defecto de PayU.  
 
-<img src="/assets/PaymentRequest/PaymentRequest_10.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_10_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **Buyer comments**: this option allows the buyer to add comments related to the purchase. The field where the buyer can add comments can be set in English, Spanish or Portuguese.<br>
-For example, you can configure this field to let the customer specify a particular description of the product.
+* **Comentarios del comprador**: esta opción le permite al comprador agregar comentarios relacionados con la compra. El campo en el que el comprador puede agregar comentarios puede ser creado en inglés, español o portugués.<br>
+Por ejemplo, puedes configurar este campo para que el comprador ingrese una descripción particular del producto.
 
-<img src="/assets/PaymentRequest/PaymentRequest_11.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_11_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **Select the available payment methods**: this option lets you include or exclude the available payment methods according to your country. For example, if you only want to receive payments through credit cards.<br>
-By default, all the available payment methods of your country are selected.
+* **Selecciona los medios de pago disponibles**: esta opción te permite incluir o excluir los medios de pago disponibles de acuerdo con tu país. Por ejemplo, si solo quieres recibir pagos con tarjetas de crédito.<br>
+Por defecto, todos los medios de pago disponibles para tu país están disponibles.
 
-<img src="/assets/PaymentRequest/PaymentRequest_13.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentRequest/PaymentRequest_13_es.png" alt="PrintScreen" width="60%"/><br>
 
-3. Click **Generate Link**. 
+3. Haz clic en **Generar link**.
 
-## Sharing the Payment request
-After you have configured and generated the Payment request, a confirmation page appears where you can perform the following actions:
+## Compartir la Solicitud de pago {#sharing-the-payment-request} 
+Luego de que hayas configurado y generado la Solicitud de pago, aparece una página de confirmación donde puedes realizar las siguiente acciones:
 
-  * **_Share on social media with a link_**: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several e-mail addresses.
+  * **_Compartir en redes sociales con un link_**: utilizando esta opción, puedes copiar el link previamente generado, postearlo en Facebook, publicarlo en un trino de Twitter o enviarlo a varias direcciones de correo electrónico.
 
-  <img src="/assets/PaymentRequest/PaymentRequest_06.png" alt="PrintScreen" width="60%"/><br>
+  <img src="/assets/PaymentRequest/PaymentRequest_06_es.png" alt="PrintScreen" width="60%"/><br>
 
-  {{% alert title="Note" color="info"%}}
+  {{% alert title="Nota" color="info"%}}
 
-  When selecting Facebook or Twitter, you will be prompted to provide the credentials of the account where you want to publish the link.
+  Cuando selecciones Facebook o Twitter, se te pedirán las credenciales de la cuenta donde quieres publicar el link.
 
   {{% /alert %}}  
 
-  * **_Publish a button in my webpage_**: if you have a webpage and you want to include the generated link, PayU lets you create a button which you can added somewhere in your page. You can use any of the preloaded images provided by PayU or upload one using the _Custom image_ option.<br>
-  Then, click _Copy HTML_ to copy the button code in your clipboard.
+  * **_Publicar un botón en mi página web_**: si tienes una página web y quieres incluir el link generado, PayU te permite crear un botón el cual puede ser agregado en cualquier lugar de tu página. Puedes utilizar las imágenes disponibles o cargar una utilizando la opción _Imagen personalizada_.<br>
+  Luego, haz clic en _Copiar HTML_, para copiar el código del botón en el portapapeles.
 
-  <img src="/assets/PaymentRequest/PaymentRequest_07.png" alt="PrintScreen" width="60%"/><br>
+  <img src="/assets/PaymentRequest/PaymentRequest_07_es.png" alt="PrintScreen" width="60%"/><br>
 
-## Creating multiple Payment requests
-The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via e-mail.
+## Crear múltiples Solicitudes de pago {#creating-multiple-payment-requests}
+El modulo PayU te permite crear múltiples solicitudes de pago a la vez para que puedas incluir varios productos en tu tienda. Los links creados utilizando module allows you to create multiple payment request at one time so you can easily include several products in your shop. Los links creados utilizando esta funcionalidad, solo pueden ser enviados a través de correo electrónico.
 
-To create multiple payment links, expand the **Sell with PayU option** and then, select **Sell on the internet**. Then, select the option **Create multiple payment links**.
+Para crear múltiples links de pago, expande la opción **Cobra con PayU** y luego, selecciona **Cobra en internet**. Luego, selecciona la opción **Crear varios links de cobro**.
 
-To create multiple payment links at once, you just need to upload a _.csv_ file with all the information of each product you want to sell. You can download an example of how PayU expects the information by clicking **Download format**.
+Para crear múltiples links de pago a la vez, solo necesitas cargar un archivo _.csv_ con toda la información de cada producto o servicio que deseas vender. Puedes descargar un ejemplo de cómo PayU espera la información haciendo clic en **Descargar formato**.
 
-![PrintScreen](/assets/PaymentRequest/PaymentRequest_14.png)
+![PrintScreen](/assets/PaymentRequest/PaymentRequest_14_es.png)
 
-The Excel file downloaded is by default in Spanish and each row corresponds to a link. The following table explains each column in it. Recall that the columns marked with asterisk are mandatory and if you leave empty a column, this property is not included in the link.
+Cada fila del archivo corresponde a un link. La siguiente tabla explica cada columna en él. Recuerda que las columnas marcadas con asterisco son obligatorias y que si dejas vacía una columna, no se incluye dicha propiedad en el link.
 
-| Name                        | Column | Description                                                                            |
-|-----------------------------|--------|----------------------------------------------------------------------------------------|
-| Buyer's e-mail              | A      | The e-mail address to which the Payment link will be sent.                             |
-| What are you going to sell? | B      | Name or description of the product you want to sell.                                   |
-| What does the product cost? | C      | Price of the product you offer.                                                        |
-| Currency                    | D      | Currency of the product's amount.<br>Possible values: COP, USD, PEN, ARS, BRL, and MXN |
-| Tax type                    | E      | Let's you define if you include taxes in your product.<ul style="margin-bottom: initial;"><li>Set ```Fijo``` to add a fixed value.</li><li>Set ```Porcentaje``` to add a percentage value.</li></ul>                    |
-| Tax value                   | F      | Value of the tax according to the tax type specified.                                  |
-| Due date                    | G      | Set the due date of the link using the format ```dd/MM/yy HH:mm```.                    |
-| Redirect on success         | H      | Set the URL to which you customers will be redirected when the transaction is successful.                                                                                                                     |
-| Redirect on failure         | I      | Set the URL to which you customers will be redirected when the transaction fails.      |
-| Redirect on pending         | J      | Set the URL to which you customers will be redirected when the transaction is pending. |
-| Ask for shipping address    | K      | Set ```Si``` to request delivery address to the payer. Otherwise, set ```No``` or leave it empty.                                                                                                                       |
-| Shipping value              | L      | Set a fixed value for shipping in the same currency of the product price.              |
-| Let payers add comments     | M      | Set ```Si``` to let the payers add comments. Otherwise, set ```No``` or leave it empty.|
-| Label for payer's comments (ES)| N   | Set the label for the payer's comments field in Spanish.                               |
-| Label for payer's comments (EN)| O   | Set the label for the payer's comments field in English.                               |
-| Label for payer's comments (PT)| P   | Set the label for the payer's comments field in Portuguese.                            |
-| Extra 1                     | Q      | Set any additional string data to be included in the link. This column cannot exceed 120 characters.                                                                                                                 |
-| Extra 2                     | R      | Set any additional string data to be included in the link. This column cannot exceed 120 characters.                                                                                                                 |
-| Select payment methods.     | S      | <ul style="margin-bottom: initial;"><li>If you leave this column empty, all the payment methods active for the account will be included.</li><li>To include some payment methods, set the payment methods separated by commas.<br>Example: ```LENDING,VISA,BANK_REFERENCED,AMEX```.<br>Furthermore, you can define what installments to submit for credit card, to do this, enter the payment methods and indicate the installments you want to be available separated by hyphens.<br>Example: ```VISA-1-2-3,AMEX```.</li></ul> |
+| Nombre                      | Descripción                                                                                     |
+|-----------------------------|-------------------------------------------------------------------------------------------------|
+| Correo del comprador        | Dirección de correo electrónico a donde se enviará el link de pago.                             |
+| ¿Qué vas a cobrar?          | Nombre o descripción de producto que deseas vender.                                             |
+| ¿Cuánto vale?               | Precio del producto que ofreces.                                                                |
+| Moneda                      | Moneda del valor del producto.<br>Los posibles valores son: COP, USD, PEN, ARS, BRL y  MXN      |
+| Tipo de impuesto            | Te permite definir si deseas incluir impuestos en tu producto.<ul style="margin-bottom: initial;"><li>Ingresa `Fijo` para asignar un valor fijo.</li><li>Ingresa `Porcentaje` para asignar un porcentaje.</li></ul>             |
+| Valor del impuesto          | Valor del impuesto de acuerdo al tipo especificado.                                             |
+| Fecha límite de pago        | Ingresa la fecha de expiración del link utilizando el formato `dd/MM/aa HH:mm`.                 |
+| Si la compra es exitosa, tus clientes serán dirigidos a: | Ingresa la URL a la que serán redirigidos tus clientes cuando la transacción sea exitosa. |
+| Si la compra no es exitosa serán dirigidos a: | Ingresa la URL a la que serán redirigidos tus clientes cuando la transacción no sea exitosa. |
+| Si la compra queda pendiente serán dirigidos a: | Ingresa la URL a la que serán redirigidos tus clientes cuando la transacción queda pendiente. |
+| Pedir dirección de entrega  | Ingresa `Si` para solicitar la dirección de envío al pagador. En caso contrario, ingresa `No` o déjala en blanco. |
+| Valor del envío             | Ingresa un valor fijo para el envío en la misma moneda del precio del producto.                |
+| ¿Quieres que tus compradores puedan incluir un comentario cuando estén pagando? | Ingresa ```Si``` para dejar que los pagadores ingresen comentarios. En caso contrario, ingresa `No` o déjala en blanco. |
+| Etiqueta para los comentarios del pagador (En español) | Ingresa la etiqueta del campo para los comentarios pagador en español. |
+| Etiqueta para los comentarios del pagador (En inglés) | Ingresa la etiqueta del campo para los comentarios pagador en inglés. |
+| Etiqueta para los comentarios del pagador (En portugués) | Ingresa la etiqueta del campo para los comentarios pagador en portugués. |
+| Extra 1                     | Ingresa cualquier dato adicional que quieras incluir en el link. Esta columna no puede exceder los 120 caracteres. |
+| Extra 2                     | Ingresa cualquier dato adicional que quieras incluir en el link. Esta columna no puede exceder los 120 caracteres. |
+| Personalizar los medios de pago disponibles | <ul style="margin-bottom: initial;"><li>Si dejas esta columna en blanco, se incluirán todos los medios de pago activos para la cuenta.</li><li>Para incluir algunos medios de pago, ingrésalos separados por comas.<br>Ejemplo: `LENDING,VISA,BANK_REFERENCED,AMEX`.<br>Además, puedes definir el número de cuotas que puede ingresar con la tarjeta de crédito, para esto, ingresa los medios de pago e indica las cuotas que vas a dejar disponible separadas por guiones, <br>Ejemplo: `VISA-1-2-3,AMEX`.</li></ul> |
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 
-You can create up to 1000 links per file.
+Puedes crear hasta 1000 links por archivo.
 
 {{% /alert %}}  
 
-Once you have completed the Excel file, upload it to the PayU Module and click **Send payment links**.
+Una vez hayas completado el archivo de Excel, cargalo al módulo PayU y haz clic en **Enviar links de cobro**.

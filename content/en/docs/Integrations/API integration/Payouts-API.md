@@ -122,7 +122,7 @@ Both parameters can be found in your PayU module.
 | transfers[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
 | transfers[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > accountNumber | Alphanumeric | CC:13 CA:14 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party.<br>_This length is under validation._ | No |
-| transfers[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. | No |
+| transfers[n] > bankAccount > bankCode | Numeric | Min:3 Max:4 | Code of the bank who issued the account of the third party. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | No |
 | transfers[n] > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
 | transfers[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
@@ -155,8 +155,8 @@ Both parameters can be found in your PayU module.
 | successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
 | successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the third party. |
 | successfulItems[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the third party. |
-| successfulItems[n] > bankAccount > bankCode | Numeric | 2 | Code of the bank who issued the account of the third party. |
-| successfulItems[n] > bankAccount > bankName | Alphanumeric | | Bank name of the third party. |
+| successfulItems[n] > bankAccount > bankCode | Numeric | Min:3 Max:4 | Code of the bank who issued the account of the third party. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). |
+| successfulItems[n] > bankAccount > bankName | Alphanumeric |  | Bank name of the third party. |
 | successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the third party. |
 | successfulItems[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account. |
 | successfulItems[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party. |
@@ -193,7 +193,7 @@ Request body:
       "bankAccount": {
         "supplierType": "RELATED_THIRD_PARTY",
         "accountNumber": 2198922910000,
-        "bankCode": 7,
+        "bankCode": "007",
         "accountType": "CC",
         "country": "CO",
         "documentNumber": 1026304116,
@@ -210,7 +210,7 @@ Request body:
       "bankAccount": {
         "supplierType": "RELATED_PROVIDER",
         "accountNumber": 2198922910330,
-        "bankCode": 8,
+        "bankCode": "8",
         "accountType": "CA",
         "country": "CO",
         "documentNumber": 102688116,
@@ -249,7 +249,7 @@ Response body:
                 "id": "e202507e-5551-4b67-be2a-a2a834bf1438",
                 "supplierType": "RELATED_THIRD_PARTY",
                 "accountNumber": "2198922910000",
-                "bankCode": "7",
+                "bankCode": "007",
                 "bankName": "BANCOLOMBIA",
                 "accountType": "CC",
                 "country": "CO",
@@ -271,7 +271,7 @@ Response body:
                 "id": "8f425a79-3f15-4e64-a1bf-2f7c087587ec",
                 "supplierType": "RELATED_THIRD_PARTY",
                 "accountNumber": "0200005555",
-                "bankCode": "13",
+                "bankCode": "013",
                 "bankName": "BBVA COLOMBIA",
                 "accountType": "CA",
                 "country": "CO",
