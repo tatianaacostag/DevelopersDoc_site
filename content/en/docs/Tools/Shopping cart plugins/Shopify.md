@@ -9,8 +9,8 @@ tags: ["subtopic"]
 ---
 
 ## Prerequisites
-* You need an active account in PayU Latam. Checkout is not available in Trial plans.
-* You need a valid [plan](https://www.shopify.com/pricing) in Shopify.
+* You need an active account in PayU Latam.
+* You need a valid [plan](https://www.shopify.com/pricing) in Shopify. Checkout is not available in Trial plans.
 
 ## Order management in Shopify
 Take into account the following when managing orders in Shopify:
@@ -20,8 +20,13 @@ Take into account the following when managing orders in Shopify:
   2. Checkouts abandoned during the payment process.
   3. Transactions with _**Rejected**_ state.
   4. Transactions with _**Pending**_ state as long as the payer does not return to the store after processing the payment in the gateway:<br>
-    4.1. Cash Payments (always return _**Pending**_ state).<br>
-    4.2. Credit Card payments that are subject to fraud analysis.
+    <span style="color: #A6C307;font-weight: bold;">4.1.</span> Cash Payments (always return _**Pending**_ state).<br>
+    <span style="color: #A6C307;font-weight: bold;">4.2.</span> Credit Card payments that are subject to fraud analysis.
+
+{{% alert title="Note" color="info"%}}
+* Shopify **DOES NOT** make any stock reservation or for any of these two cases.
+* Shopify creates the order for these two cases when the final state of the transaction is _**Approved**_.
+{{% /alert %}}
 
 ## Enable PayU as Payment gateway
 1. Enter to your _Shopify_ admin site. Click _**Settings**_ and then, select _**Payments**_.
@@ -45,7 +50,7 @@ Take into account the following when managing orders in Shopify:
 
 ![PrintScreen](/assets/Shopify/Shopify_05.png)
 
-5. Finally, click _**Activate PayU Latam button**_ at the bottom of the page.
+5. Finally, click _**Activate PayU Latam**_ button at the bottom of the page.
 
 ![PrintScreen](/assets/Shopify/Shopify_06.png)
 
@@ -55,8 +60,8 @@ Take into account the following when managing orders in Shopify:
 
 At this point, your customers can make payments through the PayU Checkout. They are able to pay using payment options including cash, credit cards and bank transfers, depending on the country where you are selling.
 
-## Payment flow in Shopify.
-When you configure PayU as payment gateway in platform, your customer can pay using PayU platform as explained below.
+## Payment flow in Shopify
+When you configure PayU as payment gateway in platform, your customer can pay as explained below.
 
 1. Your customer selects the product or service they want to buy and add it to their shopping cart.
 
@@ -70,6 +75,6 @@ When you configure PayU as payment gateway in platform, your customer can pay us
 
 ![PrintScreen](/assets/Shopify/Shopify_10.png)
 
-4. When they are in our payment gateway, they can see the sale description and the available payment methods according to the selected country.
+4. When they are in our payment gateway, they can see the sale description and the available payment methods for your country.
 
 ![PrintScreen](/assets/Shopify/Shopify_11.png)

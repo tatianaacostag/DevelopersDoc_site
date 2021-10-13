@@ -45,8 +45,8 @@ Follow the next procedure to create a Basic Payment Request and share it with yo
 
 ![PrintScreen](/assets/PaymentRequest/PaymentRequest_02.png)
 
-* **What are you going to sell?**: description of the product you want to sell using this payment request.
-* **What is the price?**: provide the amount of the product and select the currency.
+* **What are you going to sell?**: description of the product or service you want to sell using this payment request.
+* **What is the price?**: provide the amount of the product or service and select the currency.
 
 <img src="/assets/PaymentRequest/PaymentRequest_03.png" alt="PrintScreen" width="60%"/><br>
 
@@ -65,7 +65,7 @@ Follow the next procedure to create a Basic Payment Request and share it with yo
 
 1. Follow steps 1 to 3 of the [Create a Basic Payment Request]({{< ref "#create-a-basic-payment-request" >}}) procedure.
 
-2. Click **I want to customize my link** option. The advanced options appears where you can provide the following information
+2. Click **I want to customize my link** option. The advanced options appears where you can provide the following information.
 
 <img src="/assets/PaymentRequest/PaymentRequest_08.png" alt="PrintScreen" width="60%"/><br>
 
@@ -96,7 +96,7 @@ By default, all the available payment methods of your country are selected.
 ## Sharing the Payment request
 After you have configured and generated the Payment request, a confirmation page appears where you can perform the following actions:
 
-  * **_Share on social media with a link_**: using this option, you can copy the recently generated link, post an update on Facebook, publishing a tweet on Twitter or send it to several e-mail addresses.
+  * **_Share on social media with a link_**: using this option, you can copy the recently generated link, post it on Facebook, tweet it on Twitter or send it to several e-mail addresses.
 
   <img src="/assets/PaymentRequest/PaymentRequest_06.png" alt="PrintScreen" width="60%"/><br>
 
@@ -112,7 +112,7 @@ After you have configured and generated the Payment request, a confirmation page
   <img src="/assets/PaymentRequest/PaymentRequest_07.png" alt="PrintScreen" width="60%"/><br>
 
 ## Creating multiple Payment requests
-The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using these features can only be sent via e-mail.
+The PayU module allows you to create multiple payment request at one time so you can easily include several products in your shop. Links created using this feature can only be sent via e-mail.
 
 To create multiple payment links, expand the **Sell with PayU option** and then, select **Sell on the internet**. Then, select the option **Create multiple payment links**.
 

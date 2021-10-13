@@ -251,7 +251,6 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 | `es`           | Spanish    |
 | `pt`           | Portuguese |
 
-
 ## Document types
 
 | ISO  | Description                                                                         | Country                |
