@@ -25,7 +25,7 @@ The process to install the plugin in the Drupal server only requires to unzip th
 
 ![PrintScreen](/assets/Drupal/Drupal_02.png)
 
-2. Locate and activate the module _**Payment Payulatam**_. YOu can use the search filter to find it easier.<br>
+2. Locate and activate the module _**Payment Payulatam**_. You can use the search filter to find it easier.<br>
 Once finish, click _**Save configuration**_.
 
 ![PrintScreen](/assets/Drupal/Drupal_03.png)
@@ -53,7 +53,7 @@ Leave the other fields with their pre-configured values.
 
 {{% alert title="Note" color="info"%}}
 
-For testing purposes, you can use the **Merchant ID**, **APIKey**, and **Account ID** available in [Test Your Solution](../../getting-started/test-your-solution.html).
+For testing purposes, you can use the **Merchant ID**, **APIKey**, and **Account ID** available in [Test Your Solution]({{< ref "Test-your-solution.md" >}}).
 
 Once you are in the credit card payment form, and ensuring that you have the message at the top of the gateway _Transaction in test mode_, you must:
 

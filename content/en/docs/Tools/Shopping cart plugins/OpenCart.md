@@ -9,7 +9,7 @@ tags: ["subtopic"]
 nosidetoc: true
 ---
 
-OpenCart is a free platform developed in PHP to create online stores. OpenCart provides a professional and reliable base to build an online store. This base uses a wide variety of users such as web developers looking for a user-friendly interface or store owners who want to launch their online business for the first time. OpenCart has many features that give you great control over your store's customization.For more information about WooCommerce, refer to their [official website](https://www.opencart.com/). 
+OpenCart is a free platform developed in PHP to create online stores. OpenCart provides a professional and reliable base to build an online store. This base uses a wide variety of users such as web developers looking for a user-friendly interface or store owners who want to launch their online business for the first time. OpenCart has many features that give you great control over your store's customization. For more information about OpenCart, refer to their [official website](https://www.opencart.com/). 
 
 ## Prerequisites
 The OpenCart plugin is available for version 1.5 and 2.0 and you need to meet the following prerequisites:
@@ -20,7 +20,6 @@ The OpenCart plugin is available for version 1.5 and 2.0 and you need to meet th
   * Having VirtueMart version 1.5.5.1 - 1.5.6.X installed.
 * For OpenCart version 2.0:
   * Having the PayU's OpenCart v2.0 plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-opencart-2.0.zip) to download it.
-  * Having VirtueMart version 2.0.1.0 or 2.0.1.1 installed.
 
 ## Installation and configuration
 The procedure to install OpenCart plugin is the same for version 1.5 or 2.0. The only difference is the look and feel of the versions and this is highlighted during this article.<br>
