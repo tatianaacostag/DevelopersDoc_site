@@ -8,73 +8,73 @@ weight: 20
 tags: ["subtopic"]
 ---
 
-## Prerequisites
-* You need an active account in PayU Latam.
-* Having installed Magento version 1.7.x to 1.9.x.
-* Having the PayU's osCommerce plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/Plugin_PayU_Magento-1.3.zip) to download it.
-* You need access to the folders where Magento is installed.
-* You need access to the Magento Admin Panel.
+## Prerrequisitos {#prerequisites}
+* Necesitas una cuenta activa en PayU Latam.
+* Tener instalado Magento versión 1.7.x a la 1.9.x.
+* Haber descargado el plugin de Magento de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](http://developers.payulatam.com/plugins/Plugin_PayU_Magento-1.3.zip) para descargarlo.
+* Tener acceso a las carpetas donde se encuentra instalado Magento.
+* Tener acceso al Admin Panel de Magento.
 
-## Considerations
-* Approved payments appear with _Processing_ status in the orders report.
-* Once the payment is received correctly, Magento creates an invoice with the associated order.
+## Consideraciones {#considerations}
+* Los pagos aprobados aparecen con estado _Processing_ en el reporte de órdenes.
+* Una vez el pago es recibido correctamente, Magento crea una factura con la orden asociada.
 
-## Installation
-Follow the next procedure to install the plugin on your website.
+## Instalación {#installation}
+Sigue este procedimiento para instalar el plugin en tu página web.
 
-1. Log in to your Magento admin panel. Then, expand the _**System**_ menu at the top and click _**Cache Management**_.<br>
-In the new window, click _**Flush Magento Cache**_.
+1. Ingresa a tu Admin panel de Log in to your Magento admin panel. Luego, expande el menú _**System**_ en la parte superior y haz clic en _**Cache Management**_.<br>
+En la nueva ventana, haz clic en _**Flush Magento Cache**_.
 
 ![PrintScreen](/assets/Magento/Magento_01.png)
 
-2. Unzip the plugin. The plugin folder is called ```app``` and it has the following structure:
+2. Descomprime el plugin. La carpeta del plugin se llama `app` y tiene la siguente estructura:
 
 ![PrintScreen](/assets/Magento/Magento_02.png)
 
-3. Navigate to ***[PluginFolder]\app\code\local*** and copy the **Gfgrisales** folder into the ***\app\code\local*** folder in the root of the Magento installation folder.<br>
-If this structure does not exist in your installation, create it with read and write permissions.
+3. Navega a ***[CarpetaPlugin]\app\code\local*** y copia la carpeta **Gfgrisales** en la carpeta ***\app\code\local*** en la ruta de instalación de Magento.<br>
+Si esta estructura no existe, créala con permisos de lectura y escritura.
 
 ![PrintScreen](/assets/Magento/Magento_03.png)
 
-4. Navigate to ***[PluginFolder]\app\design\frontend\base\default\template*** and copy the **payu** folder into the ***\app\design\frontend\base\default\template*** folder in the root of the Magento installation folder.
+4. Navega a ***[CarpetaPlugin]\app\design\frontend\base\default\template*** y copia la carpeta **payu** en la carpeta ***\app\design\frontend\base\default\template*** en la ruta de instalación de Magento.
 
 ![PrintScreen](/assets/Magento/Magento_04.png)
 
-5. Navigate to ***[PluginFolder]\app\etc\modules*** and copy the **Gfgrisales_Payu.xml** file into the ***\app\etc\modules*** folder in the root of the Magento installation folder.
+5. Navega a ***[CarpetaPlugin]\app\etc\modules*** y copia el archivo **Gfgrisales_Payu.xml** en la carpeta ***\app\etc\modules*** en la raíz de la ruta de instalación de Magento.
 
 ![PrintScreen](/assets/Magento/Magento_05.png)
 
-## Configuration
-1. Back in your Magento admin panel, expand the _**System**_ menu and click _**Configuration**_. Then, expand _**Advanced**_ section in the menu displayed on the left panel and click _**Advanced**_ option.<br>
-Click _**Disable Modules Output**_ and check that the PayU extension called *Gfgrisales_Payu* is enabled.
+## Configuración {#configuration}
+1. Regresa al Admin panel de Magento, expande el menú _**System**_ y haz clic en _**Configuration**_. Luego, expande la sección _**Advanced**_ en el menú mostrado en el panel izquierdo y haz clic en la opción _**Advanced**_.<br>
+Has clic en _**Disable Modules Output**_ y verifica que está habilitada (Enable) la extensión llamada *Gfgrisales_Payu*.
 
 ![PrintScreen](/assets/Magento/Magento_06.png)
 
-2. In the _**Configuration**_ menu on the left panel, expand _**Sales**_ section in the menu displayed on the left panel and click _**Payment methods**_ option.<br>
-Find and expand the _**PayU**_ method and provide the information of your PayU Account.
+2. En el menú _**Configuration**_ en el panel de la izquierda, expande la sección _**Sales**_ en el menú mostrado en el panel izquierdo y haz clic en la opción _**Payment methods**_.<br>
+Localiza y expande el método _**PayU**_ e ingresa la siguiente información de tu cuenta PayU.
 
 ![PrintScreen](/assets/Magento/Magento_07.png)
 
-* **Merchant ID**: ID of your commerce in PayU Latam.
-* **APIKey**: Unique key of your commerce, you can get this information in your PayU Module (**_Settings_** > **_Technical configuration_** > **_API Key_**).
-* **Account ID**: ID of the PayU account according to the country where you want to sell.
-* **Gateway URL**: Gateway URL.
-  * For test, use https://sandbox.gateway.payulatam.com/ppp-web-gateway
-  * For production, use https://gateway.payulatam.com/ppp-web-gateway/
+* **Merchant ID**: Identificador de tu comercio en PayU Latam.
+* **APIKey**: Llave única de tu comercio, puedes obtener esta información en tu Módulo Payu (**_Configuración_** > **_Configuración técnica_** > **_API Key_**).
+* **Account ID**: Identificador de la cuenta PayU de acuerdo con el país en el que quieres vender.
+* **Gateway URL**: URL de la pasarela.
+  * Para pruebas, utiliza https://sandbox.gateway.payulatam.com/ppp-web-gateway
+  * Para producción, utiliza https://gateway.payulatam.com/ppp-web-gateway/
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 
-For testing purposes, you can use the **Merchant ID**, **APIKey**, and **Account ID** available in [Test Your Solution](../../getting-started/test-your-solution.html).
+Para pruebas, puedes utilizar los valores de **Merchant ID**, **APIKey** y **Account ID** disponibles en [Probar tu solución]({{< ref "Test-your-solution.md" >}}).
 
-Once you are in the credit card payment form, and ensuring that you have the message at the top of the gateway _Transaction in test mode_, you must:
+Una vez estén en el formulario de pago con tarjeta de crédito y asegurandote de que en la parte superior de la pasarela se muestre el mensaje _Transacción en modo de prueba_, debes:
 
-* Enter the text ```APPROVED``` in the Full Name field if you want the transaction to be approved, ```REJECTED``` if you want it to be rejected or ```PENDING``` if you want it to be pending.
-* You must enter a valid card number in the Card Number field according to the selected franchise. For this, you can use an online credit card generator.
-* All other fields can be random.
+* Ingresar el texto `APPROVED` en el campo Nombre completo si quieres que la transacción sea aprobada, `REJECTED` si quieres que la transacción sea rechazada o `PENDING` si quieres que la transacción quede pendiente.
+* Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia seleccionada. Puedes utilizar un generador en línea de tarjetas de crédito.
+* Los demás campos pueden ser aleatorios.
 
 {{% /alert %}}  
 
-Once finish, click _**Save Config**_ to apply changes.
+Una vez termines, haz clic en _**Save Config**_ para guardar los cambios.
 
-At this point, your customers can pay with PayU Latam when they do the checkout in the Magento's shopping cart. 
+En este punto, tus clientes pueden pagar con PayU Latam en el carrito de compras de Magento. 
 

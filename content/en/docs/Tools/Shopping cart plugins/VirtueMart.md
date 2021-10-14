@@ -37,7 +37,7 @@ Follow the next procedure to install and configure the plugin on your website.
 ![PrintScreen](/assets/VirtueMart/VirtueMart_03.jpg)
 
 ### Configuration
-1. Expand the option Shop in the _**VirtueMart**_ menu and select _**Payment methods**_. Then, click _**New**_ at the top right of the screen.
+1. Expand the option _**Shop**_ in the _**VirtueMart**_ menu and select _**Payment methods**_. Then, click _**New**_ at the top right of the screen.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_04.jpg)
 
@@ -45,7 +45,7 @@ Follow the next procedure to install and configure the plugin on your website.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_05.jpg)
 
-3. Go to the _**Configuration**_ tab and provide the information of your account and your merchant key. 
+3. Go to the _**Configuration**_ tab and provide the information of your account and your API key. 
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_06.jpg)
 
@@ -99,7 +99,7 @@ A message appears informing that you have enabled the plugin. Furthermore, the i
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_11.jpg)
 
-5. Go to the _**Configuration**_ tab and provide the information of your account and your merchant key. 
+5. Go to the _**Configuration**_ tab and provide the information of your account and your API key. 
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_13.jpg)
 
@@ -112,7 +112,7 @@ The URLs for test and production environments are:
 6. Finally, click _**Save**_ or _**Save & Close**_ button. At this point, your customers can pay with PayU Latam using the VirtueMart shopping cart. 
 
 ## Configuration variables
-Regardless of the VirtueMart version you use, set ands configure the following variables in your plugin:
+Regardless of the VirtueMart version you use, set and configure the following variables in your plugin:
 
 | Field                                | Value                                                                                 |
 |--------------------------------------|---------------------------------------------------------------------------------------|
@@ -125,5 +125,5 @@ Regardless of the VirtueMart version you use, set ands configure the following v
 | API Key                              | Unique key of your commerce, you can find this key in the PayU module.                |
 | Section **ORDER STATUS PARAMS**<br><ul style="margin-bottom: initial;"><li>Approved Transactions</li><li>Pending Transactions</li><li>Declined Transactions</li></ul> | Defines the order state in VirtueMart according to the transaction state returned by PayU. We suggest to keep the default states; nevertheless, you can configure them according to your business needs.            |
 | Currency                             | Set USD. Also, you can configure the currency of the Account ID country.              |
-| Minimum Value / Maximum value        | The total value of an order must be within this range in order to activate the **PayuLatam** payment method.                                                                                                  |
-| Tax                                  | To use this option, configure the corresponding Virtuemart rule to the associated tax. For example, IVA for Colombia.                                                                                                 |
+| Minimum Value / Maximum value        | The total value of an order must be within this range in to activate the **PayuLatam** payment method.                                                                                                  |
+| Tax                                  | To use this option, configure the corresponding VirtueMart rule to the associated tax. For example, IVA for Colombia.                                                                                                 |

@@ -8,122 +8,122 @@ weight: 40
 tags: ["subtopic"]
 ---
 
-## Prerequisites
-* You need an active account in PayU Latam.
-* For VirtueMart version 2 or higher:
-  * Having the PayU's VirtueMart plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-joomla-virtuemart2.6.7.zip) to download it.
-  * Having VirtueMart version 2 or higher installed.
-  * Your VirtueMart website must be installed on [Joomla!®](https://joomla.org/) 2.5 or higher with MySQL 5.1 or higher.
-* For VirtueMart version 3.0.6:
-  * Having the PayU's VirtueMart plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-joomla-virtuemart3.0.6.zip) to download it. 
-  * Having VirtueMart version 3.0.6 installed.
-  * Your VirtueMart website must be installed on [Joomla!®](https://joomla.org/) versions 3.3.6, 2.5.28 or 2.5.27.
+## Prerrequisitos {#prerequisites}
+* Necesitas una cuenta activa en PayU Latam.
+* Para VirtueMart versión 2 o superior:
+  * Haber descargado el plugin de VirtueMart de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](http://developers.payulatam.com/plugins/plugin-joomla-virtuemart2.6.7.zip) para descargarlo.
+  * Tener instalado VirtueMart versión 2 o superior.
+  * Tu página web de VirtueMart website debe estar instalada en [Joomla!®](https://joomla.org/) 2.5 o superior con MySQL 5.1 o superior.
+* Para VirtueMart versión 3.0.6:
+  * Haber descargado el plugin de VirtueMart de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](http://developers.payulatam.com/plugins/plugin-joomla-virtuemart3.0.6.zip) para descargarlo. 
+  * Tener instalado VirtueMart versión 3.0.6.
+  * Tu página web de VirtueMart website debe estar instalada en [Joomla!®](https://joomla.org/) versions 3.3.6, 2.5.28 o 2.5.27.
 
-## Plugin for VirtueMart 2 or higher
-Follow the next procedure to install and configure the plugin on your website.
+## Plugin para VirtueMart 2 o superior {#plugin-for-virtuemart-2-or-higher}
+Sigue este procedimiento para instalar y configurar el plugin en tu página web.
 
-### Installation
+### Instalación {#installation}
 
-1. Open the _Joomla!® Administrator Console_ and select the _**Extension Manager**_ option located in the _**Extension**_ menu.
+1. Ingresa a la _Consola de Administrador de Joomla!®_ y selecciona la opción _**Extension Manager**_ que se encuentra en el menú _**Extension**_.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_01.jpg)
 
-2. In the _**Upload Package File**_ section, click _**Browse**_ and locate the _.zip_ file of the PayU plugin downloaded.
+2. En la sección _**Upload Package File**_, Haz clic en _**Browse**_ y ubica el archivo _.zip_ del plugin de Payu descargado.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_02.jpg)
 
-3. Once the installation procedure completes, a message appears to inform that the installation was successful.
+3. Una vez termine el proceso de instalación, aparece un mensaje para informar que la instalación fue exitosa.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_03.jpg)
 
-### Configuration
-1. Expand the option Shop in the _**VirtueMart**_ menu and select _**Payment methods**_. Then, click _**New**_ at the top right of the screen.
+### Configuración {#configuration}
+1. Expande la opción _**Shop**_ en el menú de _**VirtueMart**_ y selecciona _**Payment methods**_. Luego, haz clic en _**New**_ en la parte superior derecha de la pantalla.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_04.jpg)
 
-2. In the _**Payment Method Information**_ tab, set _Payulatam_ as _**Payment Name**_ and select ```PayuLatam``` in the _**Payment Method**_ field.
+2. En la pestaña _**Payment Method Information**_, Ingresa _Payulatam_ como nombre (_**Payment Name**_) y selecciona `PayuLatam` en el campo _**Payment Method**_.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_05.jpg)
 
-3. Go to the _**Configuration**_ tab and provide the information of your account and your merchant key. 
+3. Ve a la pestaña _**Configuration**_ e ingresa la información de tu cuenta y tu API key. 
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart_06.jpg)
 
-Furthermore, provide the connection URL to the gateway and the configuration variables explained in the [Configuration variables]({{< ref "#configuration-variables" >}}) section.
+Además, ingresa la URL de conexión a la pasarela y las variables de configuración explicadas en la sección [Variables de Configuración]({{< ref "#configuration-variables" >}}).
 
-The URLs for test and production environments are:
-* Test: ```https://sandbox.gateway.payulatam.com/ppp-web-gateway```
-* Production: ```https://gateway.payulatam.com/ppp-web-gateway/```
+Las URLs para los ambientes de pruebas y producción son:
+* Pruebas: `https://sandbox.gateway.payulatam.com/ppp-web-gateway`
+* Producción: `https://gateway.payulatam.com/ppp-web-gateway/`
 
-4. Finally, click _**Save**_ or _**Save & Close**_ button. At this point, your customers can pay with PayU Latam using the VirtueMart shopping cart. 
+4. Por último, Haz clic en el botón _**Save**_ o _**Save & Close**_. En este punto, tus clientes pueden pagar con PayU Latam en el carrito de compras de VirtueMart. 
 
-## Plugin for VirtueMart 3.0.6
-Follow the next procedure to install and configure the plugin on your website.
+## Plugin para VirtueMart 3.0.6 {#plugin-for-virtuemart-306}
+Sigue este procedimiento para instalar y configurar el plugin en tu página web.
 
-### Installation
+### Instalación {#installation-1}
 
-1. Open the _Joomla!® Administrator Console_ and select the option _**Extension Manager**_ inside the _**Extensions**_ menu.
+1. Ingresa a la _Consola de Administrador de Joomla!®_ y selecciona la opción _**Extension Manager**_ que se encuentra en el menú _**Extensions**_.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_02.jpg)
 
-2. In the _**Extension package file**_ field, choose the previously downloaded _.zip_ file. 
+2. En el campo _**Extension package file**_, selecciona el archivo _.zip_ previamente descargado. 
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_03.jpg)
 
-3. Once the _.zip_ file is loaded, click _**Upload & Install**_.
+3. Una vez se haya cargado el archivo _.zip_ file is loaded, click _**Upload & Install**_.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_05.jpg)
 
-4. Once the installation procedure completes, a message appears to inform that the installation was successful.
+4. Una vez termine el proceso de instalación, aparece un mensaje para informar que la instalación fue exitosa.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_06.jpg)
 
-### Configuration
-1. In the left menu, click _**Manage**_. Find and enable the ```PayuLatam``` plugin.
+### Configuración {#configuration-1}
+1. En el menú de la izquierda, haz clic en _**Manage**_. Ubica y activa el plugin `PayuLatam`.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_07.jpg)
 
-A message appears informing that you have enabled the plugin. Furthermore, the icon changes to a check mark.
+Aparece un mensaje informado que has activado el plugin. Además, el ícono cambia a una marca de verificación.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_08.jpg)
 
-2. Open the _**Components**_ menu and expand the _**Virtuemart**_ option. Then, select _**Payment Methods**_.
+2. Abre el menú de _**Components**_ y expande la opción _**Virtuemart**_. Luego, selecciona _**Payment Methods**_.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_09.jpg)
 
-3. In the opened window, click _**New**_ to create a payment method using the ```PayuLatam``` plugin.
+3. En la ventana que se abre, haz clic en _**New**_ para crear el medio de pago utilizando el plugin `PayuLatam`.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_10.jpg)
 
-4. In the _**Payment Method Information**_ tab, set _Payulatam_ as _**Payment Name**_ and select ```PayuLatam``` in the _**Payment Method**_ field.
+4. En la pestaña _**Payment Method Information**_, Ingresa _Payulatam_ como nombre (_**Payment Name**_) y selecciona `PayuLatam` en el campo _**Payment Method**_.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_11.jpg)
 
-5. Go to the _**Configuration**_ tab and provide the information of your account and your merchant key. 
+5. Ve a la pestaña _**Configuration**_ e ingresa la información de tu cuenta y tu API key.  
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_13.jpg)
 
-Furthermore, provide the connection URL to the gateway and the configuration variables explained in the [Configuration variables]({{< ref "#configuration-variables" >}}) section.
+Además, ingresa la URL de conexión a la pasarela y las variables de configuración explicadas en la sección [Variables de Configuración]({{< ref "#configuration-variables" >}}).
 
-The URLs for test and production environments are:
-* Test: ```https://sandbox.gateway.payulatam.com/ppp-web-gateway```
-* Production: ```https://gateway.payulatam.com/ppp-web-gateway/```
+Las URLs para los ambientes de pruebas y producción son:
+* Pruebas: `https://sandbox.gateway.payulatam.com/ppp-web-gateway`
+* Producción: `https://gateway.payulatam.com/ppp-web-gateway/`
 
-6. Finally, click _**Save**_ or _**Save & Close**_ button. At this point, your customers can pay with PayU Latam using the VirtueMart shopping cart. 
+6. Por último, Haz clic en el botón _**Save**_ o _**Save & Close**_. En este punto, tus clientes pueden pagar con PayU Latam en el carrito de compras de VirtueMart. 
 
-## Configuration variables
-Regardless of the VirtueMart version you use, set ands configure the following variables in your plugin:
+## Variables de Configuración {#configuration-variables}
+Independiente de la versión de VirtueMart que utilices, configura las siguientes variables en tu plugin:
 
-| Field                                | Value                                                                                 |
+| Campo                                | Valor                                                                                 |
 |--------------------------------------|---------------------------------------------------------------------------------------|
-| Logo                                 | Logo displayed for the **PayuLatam** payment method.                                  |
-| Test URL                             | Gateway URL for test: ```https://sandbox.gateway.payulatam.com/ppp-web-gateway```.    |
-| Production URL                       | Gateway URL for production: ```https://gateway.payulatam.com/ppp-web-gateway```.      |
-| Test Mode                            | Select **Yes** if you want to make transactions in the test environment. When you enable this option, VirtueMart uses the URL configured in the **Test URL** variable                                            |
-| Merchant ID                          | ID of your commerce in PayU Latam.                                                    |
-| Account ID                           | ID of the PayU account according to the country where you want to sell.               |
-| API Key                              | Unique key of your commerce, you can find this key in the PayU module.                |
-| Section **ORDER STATUS PARAMS**<br><ul style="margin-bottom: initial;"><li>Approved Transactions</li><li>Pending Transactions</li><li>Declined Transactions</li></ul> | Defines the order state in VirtueMart according to the transaction state returned by PayU. We suggest to keep the default states; nevertheless, you can configure them according to your business needs.            |
-| Currency                             | Set USD. Also, you can configure the currency of the Account ID country.              |
-| Minimum Value / Maximum value        | The total value of an order must be within this range in order to activate the **PayuLatam** payment method.                                                                                                  |
-| Tax                                  | To use this option, configure the corresponding Virtuemart rule to the associated tax. For example, IVA for Colombia.                                                                                                 |
+| Logo                                 | Logo mostrado para el medio de pago **PayuLatam**.                                    |
+| Test URL                             | URL de la pasarela para Pruebas: `https://sandbox.gateway.payulatam.com/ppp-web-gateway`. |
+| Production URL                       | URL de la pasarela para Producción: `https://gateway.payulatam.com/ppp-web-gateway`.  |
+| Test Mode                            | Selecciona **Yes** si quieres hacer transacciones en el ambiente de pruebas. Cuando activas esta opción, VirtueMart utiliza la URL configurada en la variable **Test URL**.                                        |
+| Merchant ID                          | Identificador de tu comercio en PayU Latam.                                           |
+| Account ID                           | Identificador de la cuenta PayU de acuerdo con el país en el que quieres vender.      |
+| API Key                              | Llave única de tu comercio, puedes obtener esta información en tu Módulo PayU.        |
+| Sección **ORDER STATUS PARAMS**<br><ul style="margin-bottom: initial;"><li>Approved Transactions</li><li>Pending Transactions</li><li>Declined Transactions</li></ul> | Define el estado de la orden en VirtueMart de acuerdo con el estado de la transacción retornado por PayU. Sugerimos dejar los estados predeterminados; sin embargo, puedes configurarlos de acuerdo a tu necesidades.            |
+| Currency                             | Configura USD. También, puedes configurar la moneda del país de tu Account ID.        |
+| Minimum Value / Maximum value        | El valor total de la orden debe estar en este rango para activar el medio de pago **PayuLatam**. |
+| Tax                                  | Para utilizar esta opción, configura la regla correspondiente de VirtueMart asociada al impuesto. Por ejemplo, el IVA en Colombia. |

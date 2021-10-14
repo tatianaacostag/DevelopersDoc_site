@@ -11,7 +11,7 @@ tags: ["subtopic"]
 ## Prerequisites
 * You need an active account in PayU Latam.
 * Having installed Magento version 1.7.x to 1.9.x.
-* Having the PayU's osCommerce plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/Plugin_PayU_Magento-1.3.zip) to download it.
+* Having the PayU's Magento plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/Plugin_PayU_Magento-1.3.zip) to download it.
 * You need access to the folders where Magento is installed.
 * You need access to the Magento Admin Panel.
 
@@ -27,7 +27,7 @@ In the new window, click _**Flush Magento Cache**_.
 
 ![PrintScreen](/assets/Magento/Magento_01.png)
 
-2. Unzip the plugin. The plugin folder is called ```app``` and it has the following structure:
+2. Unzip the plugin. The plugin folder is called `app` and it has the following structure:
 
 ![PrintScreen](/assets/Magento/Magento_02.png)
 
@@ -64,11 +64,11 @@ Find and expand the _**PayU**_ method and provide the information of your PayU A
 
 {{% alert title="Note" color="info"%}}
 
-For testing purposes, you can use the **Merchant ID**, **APIKey**, and **Account ID** available in [Test Your Solution](../../getting-started/test-your-solution.html).
+For testing purposes, you can use the **Merchant ID**, **APIKey**, and **Account ID** available in [Test Your Solution]({{< ref "Test-your-solution.md" >}}).
 
 Once you are in the credit card payment form, and ensuring that you have the message at the top of the gateway _Transaction in test mode_, you must:
 
-* Enter the text ```APPROVED``` in the Full Name field if you want the transaction to be approved, ```REJECTED``` if you want it to be rejected or ```PENDING``` if you want it to be pending.
+* Enter the text `APPROVED` in the Full Name field if you want the transaction to be approved, `REJECTED` if you want it to be rejected or `PENDING` if you want it to be pending.
 * You must enter a valid card number in the Card Number field according to the selected franchise. For this, you can use an online credit card generator.
 * All other fields can be random.
 

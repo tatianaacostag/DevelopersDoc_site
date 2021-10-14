@@ -8,60 +8,60 @@ weight: 30
 tags: ["subtopic"]
 ---
 
-## Prerequisites
-* You need an active account in PayU Latam.
-* Having installed [Drupal Commerce Kickstart 7.xx](https://www.drupal.org/project/commerce_kickstart).
-* Having the PayU's Drupal plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/commerce_payulatam_1.0.zip) to download it.
-* Having access to the Drupal installation folder.
-* Having access to the Drupal backend.
+## Prerrequisitos {#prerequisites}
+* Necesitas una cuenta activa en PayU Latam.
+* Tener instalado [Drupal Commerce Kickstart 7.xx](https://www.drupal.org/project/commerce_kickstart).
+* Haber descargado el plugin de Drupal de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](http://developers.payulatam.com/plugins/commerce_payulatam_1.0.zip) para descargarlo.
+* Tener acceso a la carpeta de instalación de Drupal.
+* Tener acceso al backend de Drupal.
 
-## Installation
-The process to install the plugin in the Drupal server only requires to unzip the plugin in path ***\sites\all\modules***. The unzipped folder has the following structure:
+## Instalación {#installation}
+El proceso de instalación para instalar el plugin en el servidor de Drupa solo requiere descomprimir el plugin en la ruta ***\sites\all\modules***. La carpeta descomprimida tiene la siguiente estructura:
 
 ![PrintScreen](/assets/Drupal/Drupal_01.png)
 
-## Configuration
-1. Log in to the Drupal's administration panel. Open the _**Site settings**_ menu and click _**Modules**_ option inside the _**Advanced settings**_ section.
+## Configuración {#configuration}
+1. Ingresa al panel de administración de Drupal. Abre el menú _**Site settings**_ y haz clic en la opción _**Modules**_ dentro de la sección _**Advanced settings**_.
 
 ![PrintScreen](/assets/Drupal/Drupal_02.png)
 
-2. Locate and activate the module _**Payment Payulatam**_. YOu can use the search filter to find it easier.<br>
-Once finish, click _**Save configuration**_.
+2. Localiza y activa el módulo _**Payment Payulatam**_. Puedes utilizar la búsqueda para encontrarlo más fácil.<br>
+Cuando termines, haz clic en _**Save configuration**_.
 
 ![PrintScreen](/assets/Drupal/Drupal_03.png)
 
-3. Back in the Drupal's administration panel. Open the _**Store settings**_ menu and click _**Payment methods**_.<br>
-Find _**Payment gateway PayuLatam**_ in the _**Disabled payment method rules**_ list and click _**enable**_.
+3. De vuelta en el panel de administración de Drupal. Abre el menú _**Store settings**_ y haz clic en _**Payment methods**_.<br>
+Busca _**Payment gateway PayuLatam**_ en la lista _**Disabled payment method rules**_ y haz clic en _**enable**_.
 
 ![PrintScreen](/assets/Drupal/Drupal_04.png)
 
-If the activation was successful, Drupal shows the following message
+Si la activación fue exitosa, Drupal muestra el siguiente mensaje
 
 ![PrintScreen](/assets/Drupal/Drupal_05.png)
 
-4. Now, click _**edit**_ link in the recently enabled method.<br>
-Then, locate the _**Actions**_ section and click _**edit**_ next to the action _**Enable payment method: PayuLatam**_. Here, configure the plugin using your PayU account.
+4. Ahora, haz clic en el enlace _**edit**_ en el método recientemente activado.<br>
+Luego, localiza la sección _**Actions**_ y haz clic en _**edit**_ junto a la acción _**Enable payment method: PayuLatam**_. Aquí, configura el plugin utilizando tu cuenta de PayU.
 
 ![PrintScreen](/assets/Drupal/Drupal_06.png)
 
-* **API KEY**: Unique key of your commerce, you can get this information in your PayU Module (**_Settings_** > **_Technical configuration_** > **_API Key_**).
-* **Merchant Id**: ID of your commerce in PayU Latam.
-* **Account Id**: ID of the PayU account according to the country where you want to sell.
-* **Test Enabled**: Set ```No``` if you want to process in the Production environment. Otherwise, set ```Yes```.
+* **API KEY**: Llave única de tu comercio, puedes obtener esta información en tu Módulo PayU (**_Configuración_** > **_Configuración técnica_** > **_API Key_**).
+* **Merchant Id**: Identificador de tu comercio en PayU Latam.
+* **Account Id**: Identificador de la cuenta PayU de acuerdo con el país en el que quieres vender.
+* **Test Enabled**: Asigna `No` si quieres procesar el el ambiente de producción. Si no, asigna `Yes`.
 
-Leave the other fields with their pre-configured values.
+Deja los demás campos con su valor predeterminado.
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 
-For testing purposes, you can use the **Merchant ID**, **APIKey**, and **Account ID** available in [Test Your Solution](../../getting-started/test-your-solution.html).
+Para pruebas, puedes utilizar los valores de **Merchant ID**, **APIKey** y **Account ID** disponibles en [Probar tu solución]({{< ref "Test-your-solution.md" >}}).
 
-Once you are in the credit card payment form, and ensuring that you have the message at the top of the gateway _Transaction in test mode_, you must:
+Una vez estén en el formulario de pago con tarjeta de crédito y asegurandote de que en la parte superior de la pasarela se muestre el mensaje _Transacción en modo de prueba_, debes:
 
-* Enter the text ```APPROVED``` in the Full Name field if you want the transaction to be approved, ```REJECTED``` if you want it to be rejected or ```PENDING``` if you want it to be pending.
-* You must enter a valid card number in the Card Number field according to the selected franchise. For this, you can use an online credit card generator.
-* All other fields can be random.
+* Ingresar el texto `APPROVED` en el campo Nombre completo si quieres que la transacción sea aprobada, `REJECTED` si quieres que la transacción sea rechazada o `PENDING` si quieres que la transacción quede pendiente.
+* Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia seleccionada. Puedes utilizar un generador en línea de tarjetas de crédito.
+* Los demás campos pueden ser aleatorios.
 
 {{% /alert %}}  
 
-At this point, your customers can pay with PayU Latam when they do the checkout in the Drupal's shopping cart. 
+En este punto, tus clientes pueden pagar con PayU Latam en el carrito de compras de Drupal. 
 

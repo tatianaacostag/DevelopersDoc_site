@@ -295,7 +295,7 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 | TI   | Identity Card.                                                                      | Colombia               |
 
 ## Banks for Payouts
-Send the exacto value displayed in the `Code` column in the variable `transfers[n].bankAccount.bankCode`. Refer to [Payouts]({{< ref "Payouts-API.md" >}}) for more information.
+Send the exact value displayed in the `Code` column in the variable `transfers[n].bankAccount.bankCode`. Refer to [Payouts]({{< ref "Payouts-API.md" >}}) for more information.
 
 ### Colombia
 

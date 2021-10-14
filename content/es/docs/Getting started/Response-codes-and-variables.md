@@ -251,7 +251,6 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 | `es`           | Español    |
 | `pt`           | Portugués  |
 
-
 ## Tipos de documento {#document-types}
 
 | ISO  | Descripción                                                                         | País                   |
@@ -294,3 +293,69 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 | SIEM | Sistema de Información Empresarial Mexicano.                                        | México                 |
 | SSN  | Número de Seguridad Social.                                                         |                        |
 | TI   | Tarjeta de Identidad.                                                               | Colombia               |
+
+## Bancos para Payouts
+Envía el valor exacto mostrado en la columna `Código` en la variable `transfers[n].bankAccount.bankCode`. Consulta [Payouts]({{< ref "" >}}) para más información.
+
+### Colombia
+
+| Código    | Nombre del banco                                  |
+|-----------|---------------------------------------------------|
+| `001`     | BOGOTA                                            |
+| `002`     | POPULAR                                           |
+| `006`     | ITAU CORPBANCA                                    |
+| `007`     | BANCOLOMBIA                                       |
+| `009`     | CITIBANK COLOMBIA                                 |
+| `012`     | GNB SUDAMERIS                                     |
+| `014`     | ITAU                                              |
+| `013`     | BBVA                                              |
+| `019`     | SCOTIABANK                                        |
+| `023`     | BANCO DE OCCIDENTE                                |
+| `031`     | BANCOLDEX                                         |
+| `032`     | BCSC                                              |
+| `040`     | BANCO AGRARIO                                     | 
+| `041`     | JPMORGAN                                          |
+| `042`     | BNP PARIBAS                                       |
+| `047`     | MUNDOMUJER                                        |
+| `051`     | DAVIVIENDA                                        |
+| `052`     | AV VILLAS                                         |
+| `059`     | BANCAMIA                                          |
+| `060`     | PICHINCHA                                         |
+| `061`     | BANCOOMEVA                                        |
+| `062`     | FALABELLA                                         |
+| `063`     | FINANDINA                                         |
+| `065`     | BCO SANTANDER DE NEGOCIOS                         |
+| `066`     | COOPCENTRAL                                       |
+| `067`     | COOMPARTIR                                        |
+| `069`     | BANCO SERFINANZA                                  |
+| `070`     | LULO BANK                                         |
+| `071`     | BANCO JP MORGAN COLOMBIA                          |
+| `083`     | COMPENSAR                                         |
+| `084`     | APORTES EN LINEA                                  |
+| `086`     | ASOPAGOS                                          |
+| `087`     | FEDECAJAS                                         |
+| `088`     | SIMPLE                                            |
+| `089`     | ENLACE OPERATIVO                                  |
+| `090`     | CORFICOLOMBIANA                                   |
+| `121`     | JURISCOOP                                         |
+| `151`     | RAPPIPAY                                          |
+| `283`     | COOP FIN DE ANTIOQUIA                             |
+| `289`     | COTRAFA                                           |
+| `292`     | CONFIAR                                           |
+| `342`     | SERFINANSA                                        |
+| `370`     | COLTEFINANCIERA S.A. - COMPANIA DE FINANCIAMIENTO |
+| `637`     | IRIS                                              |
+| `550`     | DECEVAL                                           |
+| `507`     | NEQUI                                             |
+| `683`     | DGCPTN                                            |
+| `685`     | DGCPTN-REGALIAS                                   |
+| `801`     | MOVII                                             |
+| `1053`    | BANCO WWB                                         |
+| `1062`    | BANCO FALABELLA S.A.                              |
+| `1063`    | BANCO FINANDINA S.A.                              |
+| `1069`    | BANCO SERFINANZA S.A.                             |
+| `1283`    | COOPERATIVA FINANCIERA DE ANTIOQUIA               |
+| `1291`    | COOFINEP                                          |
+| `1292`    | CONFIAR COOPERATIVA FINANCIERA                    |
+| `1303`    | GIROS Y FINANZAS                                  |
+| `1558`    | CREDIFINANCIERA S.A.                              |

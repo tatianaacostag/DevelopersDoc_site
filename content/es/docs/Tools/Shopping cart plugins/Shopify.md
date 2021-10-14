@@ -12,9 +12,9 @@ tags: ["subtopic"]
 * Necesitas una cuenta activa en PayU Latam.
 * Necesitas un [plan](https://es.shopify.com/precios) válido en Shopify. El Checkout no está disponible para cuentas Trial.
 
-## Gestión de ordenes en Shopify {#order-management-in-shopify}
+## Gestión de órdenes en Shopify {#order-management-in-shopify}
 Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
-* **All orders**: son las ordenes con estado _**Aprobado**_ (con pago completo o parcial) y _**Pendiente**_ (siempre y cuando el pagador regrese a la tienda luego del procesamiento del pago en la pasarela).
+* **All orders**: son las órdenes con estado _**Aprobado**_ (con pago completo o parcial) y _**Pendiente**_ (siempre y cuando el pagador regrese a la tienda luego del procesamiento del pago en la pasarela).
 * **Abandoned checkouts**: son procesos de pago que cumplen con uno de los siguientes criterios:
   1. No fueron completados.
   2. Fueron abandonados durante el proceso de pago.
@@ -25,7 +25,7 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
 
 {{% alert title="Nota" color="info"%}}
 * Shopify **NO** realiza ningún tipo de reserva de inventarios para los casos anteriores.
-* Shopify crea ordenes para estos casos cuando el estado final de la transacción es _**Aprobado**_.
+* Shopify crea órdenes para estos casos cuando el estado final de la transacción es _**Aprobado**_.
 {{% /alert %}}
 
 ## Configurar PayU como pasarela de pagos {#enable-payu-as-payment-gateway}

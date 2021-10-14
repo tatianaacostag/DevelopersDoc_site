@@ -8,74 +8,74 @@ weight: 50
 tags: ["subtopic"]
 ---
 
-WooCommerce is a Wordpress plugin that ease the creation of an integrated online store. To let your **clients** pay with PayU from your website, you need to install the plugin for WooCommerce, which integrates PayU Latam as a valid payment gateway. For more information about WooCommerce, refer to their [official website](https://woocommerce.com/). 
+WooCommerce es uin plugin de WordPress que facilita la creación de una tienda en línea integrada. Para permitirle a tus **clientes** pagar con PayU desde tu página web, necesitas instalar el plugin para WooCommerce, el cual integra a PayU Latam como pasarela válida de pago. Para más información sobre WooCommerce, consulta su [página web oficial](https://woocommerce.com/). 
 
-## Prerequisites
-* You need an active account in PayU Latam.
-* Having installed [WordPress 3.8](https://wordpress.com/en) or higher.
-* Having installed WooCommerce 2.0 or higher in the Wordpress website.
-* Having the PayU's WooCommerce plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/woocommerce-payu-latam-2.1.zip) to download it.
+## Prerrequisitos {#prerequisites}
+* Necesitas una cuenta activa en PayU Latam.
+* Tener instalado [WordPress 3.8](https://wordpress.com/es) o superior.
+* Tener instalado WooCommerce 2.0 o superior in the WordPress website.
+* Haber descargado el plugin de WooCommerce de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](http://developers.payulatam.com/plugins/woocommerce-payu-latam-2.1.zip) para descargarlo.
 
-## Installation
-Follow the next procedure to install the plugin on your website.
+## Instalación {#installation}
+Sigue este procedimiento para instalar el plugin en tu página web.
 
-1. Log in to your WordPress site as an administrator.
+1. Ingresa a tu sitio WordPress como administrador.
 
-2. In the Dashboard, expand the _**Plugins**_ menu in the left panel and click _**Add New**_.
+2. En el escritorio de administrador, expande el menú _**Plugins**_ en el panel izquierdo y haz clic en _**Añadir nuevo**_.
 
 ![PrintScreen](/assets/WooCommerce/WooCommerce_01.jpg)
 
-3. Go to the _**Upload**_ option and choose the _.zip_ file of the WooCommerce plugin downloaded.<br>
-Then, click _**Install Now**_.
+3. Ve a la opción _**Subir**_ y selecciona el archivo _.zip_ del plugin de WooCommerce descargado.<br>
+Luego, haz clic en _**Instalar ahora**_.
 
 ![PrintScreen](/assets/WooCommerce/WooCommerce_02.jpg)
 
-4. Provide the data of the connection via FTP and click _**Proceed**_.
+4. Ingresa los datos de la conexión via FTP y haz clic en _**Ejecutar**_.
 
 ![PrintScreen](/assets/WooCommerce/WooCommerce_03.jpg)
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 
-This step depends on the initial configuration of WordPress. The installation of the plugin is not affected if you don't see this screen.
+La ejecución de este paso depende de la configuración Inicial de WordPress. La instalación del plugin no se afecta si no ves esta pantalla.
 
 {{% /alert %}}  
 
-5. Finally, activate the plugin you have installed by clicking the _**Activate Plugin**_ link.
+5. Por último, activa el plugin que instalaste haciendo clic en el enlace _**Activar Plugin**_.
 
 ![PrintScreen](/assets/WooCommerce/WooCommerce_04.jpg)
 
-## Configuration
-1. Back in the Dashboard, expand the _**WooCommerce**_ menu in the left panel and click _**Settings**_.
+## Configuración {#configuration}
+1. De vuelta en el escritorio de administrador, expande el menú _**WooCommerce**_ en el panel de la derecha y selecciona _**Ajustes**_.
 
 ![PrintScreen](/assets/WooCommerce/WooCommerce_05.jpg)
 
-2. Go to the _**Checkout**_ tab.
+2. Ingresa a la pestaña _**Checkout**_.
 
 ![PrintScreen](/assets/WooCommerce/WooCommerce_06.jpg)
 
-3. Scroll down to _**Payment Gateways**_ table. Then, find _PayU Latam_ and drag and drop to the top of the table.<br>
-Click the radio of the _**Default**_ column.
+3. Desplázate hacia la tabla _**Pasarelas de Pago**_. Luego, localiza _PayU Latam_ y arrástrala a la parte superior de la tabla.<br>
+Haz clic en el radio de la columna _**Predeterminado**_.
 
 ![PrintScreen](/assets/WooCommerce/WooCommerce_07.jpg)
 
-Save the changes. 
+Guarda los cambios. 
 
-4. Click the _PayU Latam_ link at the top of the tab and configure the data of your PayU account.
+4. Haz clic en el enlace _PayU Latam_ en la parte superior de la pestaña y configura los datos de tu cuenta PayU.
 
 ![PrintScreen](/assets/WooCommerce/WooCommerce_09.jpg)
 
-The following table explains the values:
+La siguiente tabla explica los valores:
 
-| Field                     | Value                                                                                      |
-|---------------------------|--------------------------------------------------------------------------------------------|
-| Enable / Disable          | Mark this checkbox to enable the WooCommerce payment gateway.                              |
-| Title                     | Title displayed for the Payment Method. The default value is _PayU Latam_.                 |
-| Merchant ID               | ID of your commerce in PayU Latam                                                          |
-| Account ID                | ID of the PayU account according to the country where you want to sell.                    |
-| API key                   | Unique key of your commerce, you can find this key in the PayU module.                     |
-| Gateway URL               | Gateway URL.<br>For test, you can use https://sandbox.gateway.payulatam.com/ppp-web-gateway and for production https://gateway.payulatam.com/ppp-web-gateway/                                                            |
-| Transaction in test mode  | Mark this checkbox to make transactions the test mode.                                     |
-| Response page             | URL of the response page.<br>By default, the URL is https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php, you must replace https://your.domain.com with your site's domain.                    |
-| Confirmation page         | URL of the confirmation page.<br>By default, the URL is https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php, you must replace https://your.domain.com with your site's domain.                |
+| Campo                            | Valor                                                                                      |
+|----------------------------------|--------------------------------------------------------------------------------------------|
+| Habilitar / Deshabilitar         | Marca esta casilla para activar la pasarela de pago en WooCommerce.                        |
+| Título                           | Titulo mostrado para el Medio de Pago. El valor por defecto es _PayU Latam_.               |
+| Merchant ID                      | Identificador de tu comercio en PayU Latam.                                                |
+| Account ID                       | Identificador de la cuenta PayU de acuerdo con el país en el que quieres vender.           |
+| API key                          | Llave única de tu comercio, puedes obtener esta información en tu Módulo PayU.             |
+| Gateway URL                      | URL de la pasarela de pago.<br>Para pruebas, utiliza https://sandbox.gateway.payulatam.com/ppp-web-gateway y para producción https://gateway.payulatam.com/ppp-web-gateway/                                                |
+| Transacciones en modo de prueba  | Marca esta casilla para hacer transacciones de prueba.                                     |
+| Página de respuesta              | URL de la página de respuesta.<br>Por defecto, la URL es https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/response.php, debes reemplazar https://tu.dominio.com con el dominio de tu sitio.                |
+| Página de confirmación           | URL de la página de confirmación.<br>Por defecto, la URL es https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php, debes reemplazar https://tu.dominio.com con el dominio de tu sitio. |
 
-5. Finally, click _**Save changes**_ button. At this point, your customers can pay with PayU Latam when they do the checkout in the WooCommerce's shopping cart. 
+5. Por último, haz clic en el botón _**Guardar cambios**_. En este punto, tus clientes pueden pagar con PayU Latam en el carrito de compras de WooCommerce. 

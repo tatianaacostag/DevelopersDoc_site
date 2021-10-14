@@ -31,7 +31,7 @@ In this path, you find the folder ```oscommerce-plugin-1.0```.
 
 * In the server path ```/[server]/apache/[publication_path]/oscommerce/catalog/includes/languages/english/modules/```, copy the plugin file ```‘payu_latam.php``` located in the path ```[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\languages\english\modules\payment```.<br><br>
 ![PrintScreen](/assets/oscommerce/oscommerce_03.png)<br>
-  Repeat this step for Spanish and English if you have them installed in your osCommerce website. These files are located in the paths:<br>
+  Repeat this step for Spanish and Portuguese if you have them installed in your osCommerce website. These files are located in the paths:<br>
   - ES: ```[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\languages\espanol\modules\payment```
   - PT: ```[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\languages\portugues\modules\payment```
 {{% alert title="Note" color="info"%}}
@@ -40,7 +40,7 @@ PayU Latam plugin for osCommerce is only available for English, Spanish and Port
 
 {{% /alert %}}  
 
-* In the server path ```/[server]/apache/[publication_path]/oscommerce/catalog/includes/modules/payment/```, copy the plugin file ```‘payu_latam.php``` located in the path ```[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\modules\payment```. This file is not the same file thn the one mentioned before.
+* In the server path ```/[server]/apache/[publication_path]/oscommerce/catalog/includes/modules/payment/```, copy the plugin file ```‘payu_latam.php``` located in the path ```[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\modules\payment```. This file is not the same file than the one mentioned before.
 
 ![PrintScreen](/assets/oscommerce/oscommerce_04.png)
 
@@ -74,7 +74,7 @@ Configure it using the information of your PayU account as follows:
 
 | Field             | Value                                                                                      |
 |-------------------|--------------------------------------------------------------------------------------------|
-| Enable / Disable  | Select **True** to enable the osCommerce payment gateway.                                  |
+| Enable / Disable  | Select **True** to enable the payment gateway in osCommerce .                              |
 | Merchant ID       | ID of your commerce in PayU Latam                                                          |
 | Account ID        | ID of the PayU account according to the country where you want to sell.                    |
 | API key           | Unique key of your commerce, you can find this key in the PayU module.                     |

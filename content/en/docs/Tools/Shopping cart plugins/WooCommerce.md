@@ -8,12 +8,12 @@ weight: 50
 tags: ["subtopic"]
 ---
 
-WooCommerce is a Wordpress plugin that ease the creation of an integrated online store. To let your **clients** pay with PayU from your website, you need to install the plugin for WooCommerce, which integrates PayU Latam as a valid payment gateway. For more information about WooCommerce, refer to their [official website](https://woocommerce.com/). 
+WooCommerce is a WordPress plugin that ease the creation of an integrated online store. To let your **clients** pay with PayU from your website, you need to install the plugin for WooCommerce, which integrates PayU Latam as a valid payment gateway. For more information about WooCommerce, refer to their [official website](https://woocommerce.com/). 
 
 ## Prerequisites
 * You need an active account in PayU Latam.
 * Having installed [WordPress 3.8](https://wordpress.com/en) or higher.
-* Having installed WooCommerce 2.0 or higher in the Wordpress website.
+* Having installed WooCommerce 2.0 or higher in the WordPress website.
 * Having the PayU's WooCommerce plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/woocommerce-payu-latam-2.1.zip) to download it.
 
 ## Installation
@@ -68,7 +68,7 @@ The following table explains the values:
 
 | Field                     | Value                                                                                      |
 |---------------------------|--------------------------------------------------------------------------------------------|
-| Enable / Disable          | Mark this checkbox to enable the WooCommerce payment gateway.                              |
+| Enable / Disable          | Mark this checkbox to enable the payment gateway in WooCommerce.                           |
 | Title                     | Title displayed for the Payment Method. The default value is _PayU Latam_.                 |
 | Merchant ID               | ID of your commerce in PayU Latam                                                          |
 | Account ID                | ID of the PayU account according to the country where you want to sell.                    |
