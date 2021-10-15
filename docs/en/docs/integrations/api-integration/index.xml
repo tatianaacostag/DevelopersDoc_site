@@ -30974,7 +30974,7 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;td&gt;transfers[n] &amp;gt; bankAccount &amp;gt; documentNumber&lt;/td&gt;
 &lt;td&gt;Numeric&lt;/td&gt;
 &lt;td&gt;50&lt;/td&gt;
-&lt;td&gt;Identification number of the third party.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td&gt;Identification number of the third party. If the &lt;code&gt;documentType&lt;/code&gt; is &lt;code&gt;NIT&lt;/code&gt;, send the check digit.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -30988,7 +30988,7 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;td&gt;transfers[n] &amp;gt; bankAccount &amp;gt; expeditionDate&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;Expedition date of the identity document of the third party. Format &lt;code&gt;YYYY/MM/DD&lt;/code&gt;&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td&gt;Expedition date of the identity document of the third party. Format &lt;code&gt;YYYY/MM/DD&lt;/code&gt;. For legal person, send any valid date.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -31002,7 +31002,7 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;td&gt;transfers[n] &amp;gt; bankAccount &amp;gt; birthDate&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;Birth date of the third party. Format &lt;code&gt;YYYY/MM/DD&lt;/code&gt;&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td&gt;Birth date of the third party. Format &lt;code&gt;YYYY/MM/DD&lt;/code&gt;. For legal person, send any valid date.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;

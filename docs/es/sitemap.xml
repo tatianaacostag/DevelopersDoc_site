@@ -242,6 +242,21 @@
                 href="/es/docs/integrations.html"
                 />
   </url><url>
+    <loc>/es/docs/tools/payu-module.html</loc>
+    <lastmod>2021-04-07T09:27:23-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/payu-module.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/payu-module.html"
+                />
+  </url><url>
     <loc>/es/docs/getting-started/test-your-solution.html</loc>
     <lastmod>2021-10-05T15:57:19-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -332,6 +347,21 @@
                 href="/es/docs/tools/shopping-cart-plugins/oscommerce.html"
                 />
   </url><url>
+    <loc>/es/docs/tools/disputes.html</loc>
+    <lastmod>2021-04-12T08:34:58-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/disputes.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/disputes.html"
+                />
+  </url><url>
     <loc>/es/docs/services/refunds.html</loc>
     <lastmod>2021-10-07T15:19:39-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -390,6 +420,21 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs.html"
+                />
+  </url><url>
+    <loc>/es/payu-module-documentation.html</loc>
+    <lastmod>2017-01-05T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/payu-module-documentation.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/payu-module-documentation.html"
                 />
   </url><url>
     <loc>/es/index.json</loc>

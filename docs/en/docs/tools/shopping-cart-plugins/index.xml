@@ -426,7 +426,7 @@ Then, locate the &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/em&gt; secti
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Minimum Value / Maximum value&lt;/td&gt;
-&lt;td&gt;The total value of an order must be within this range in to activate the &lt;strong&gt;PayuLatam&lt;/strong&gt; payment method.&lt;/td&gt;
+&lt;td&gt;The total value of an order must be within this range to activate the &lt;strong&gt;PayuLatam&lt;/strong&gt; payment method.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Tax&lt;/td&gt;
@@ -648,7 +648,7 @@ PayU Latam plugin for osCommerce is only available for English, Spanish and Port
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Enable / Disable&lt;/td&gt;
-&lt;td&gt;Select &lt;strong&gt;True&lt;/strong&gt; to enable the payment gateway in osCommerce .&lt;/td&gt;
+&lt;td&gt;Select &lt;strong&gt;True&lt;/strong&gt; to enable the payment gateway in osCommerce.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Merchant ID&lt;/td&gt;
