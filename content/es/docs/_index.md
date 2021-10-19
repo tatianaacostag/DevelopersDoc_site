@@ -49,7 +49,7 @@ De acuerdo con las necesidades de tu negocio, selecciona cómo integrar tu tiend
 Verifica que tu integración funcione como lo esperas.
 
 ### 4. Despliega a producción {#4-deploy-to-production}
-Luego de que realices todas las pruebas del sistema y hayas verificado que todo está funcionado correctamente, puedes moverte al servidor de producción; donde se procesan las transacciones reales.
+Luego de que realices todas las pruebas del sistema y hayas verificado que todo está funcionado correctamente, puedes moverte al servidor de producción, donde se procesan las transacciones reales.
 
 ## Servicios {#services}
 PayU ofrece los siguientes servicios.

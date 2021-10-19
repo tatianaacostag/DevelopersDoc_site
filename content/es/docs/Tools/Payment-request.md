@@ -150,4 +150,4 @@ Puedes crear hasta 1000 links por archivo.
 
 {{% /alert %}}  
 
-Una vez hayas completado el archivo de Excel, cargalo al módulo PayU y haz clic en **Enviar links de cobro**.
+Una vez hayas completado el archivo de Excel, cárgalo al módulo PayU y haz clic en **Enviar links de cobro**.

@@ -44,7 +44,7 @@ Haz clic en _**Configuración**_ y luego selecciona _**Configuración técnica**
 
 ![PrintScreen](/assets/IntegrationVariables_01_es.png)
 
-In this window, go to _**Disputes**_ tab and define the dispute notification url and enable the notification box in the _**Automatic notification URL**_ field.
+En esta ventana, ve a la pestaña _**Disputas**_. Define la URL de notificación de disputas y habilita el campo de notificación en el campo _**URL de notificación automática**_.
 
 ![PrintScreen](/assets/Disputes/Disputes_01_es.png)
 
