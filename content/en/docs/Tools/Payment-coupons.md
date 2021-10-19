@@ -13,11 +13,11 @@ You can receive payments without any technical knowledge. You just need to send 
 
 {{% alert title="Note" color="info"%}}
 
-Payment coupons are available for Argentina and Colombia.
+Payment coupons are available for Argentina using _**RAPIPAGO**_ and _**PAGOFACIL**_, and for Colombia using _**BALOTO**_ and _**EFECTY**_.
 
 {{% /alert %}}  
 
-## How does the Payment coupons work?
+## How Payment coupons work?
 The Payment coupon follows a simple flow to let your clients regular cash payments as many times as they need:
 
 1. **Configure the Payment coupon through the PayU module**.<br>You only need to provide how many payments per client you want to receive, decide if the payment amount is fixed or your client decides the amount, decide the payment deadline, and the payment reference.
@@ -33,7 +33,7 @@ According to your business needs, you can configure the options to receive payme
 
 1. Log in to [PayU.com](payu.com) and click the login option located at the top of the page. Alternatively, you can log in to https://merchants.payulatam.com/.
 
-2. Expand the **Sell with PayU option** and then, select **Cash Payment**.
+2. Expand the **Sell with PayU** option and then, select **Cash Payment**.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons.png)
 
@@ -45,15 +45,15 @@ According to your business needs, you can configure the options to receive payme
 
 * **Will you charge a specific amount?**: select the payment amount of the coupon. If you select _No_, your client decides the value to pay at the payment office. The default value is _No_.
 
-* **Payment deadline**: decide whether the payment coupon expires in a given date. The date specified is fixed, tt is not supported to provide a specific day of the month or other custom configuration. If you select _No_, the coupon will not have a due date. The default value is _No_.
+* **Payment deadline**: decide whether the payment coupon expires in a given date. The date specified is fixed, it is not supported to provide a specific day of the month or other custom configuration. If you select _No_, the coupon will not have a due date. The default value is _No_.
 
 * **Do you want to define the payment reference?**: if you select _Yes_ you need to provide the payment references for the coupon. Otherwise, PayU defines and sets an automatic reference. The default value is _No_. 
 
-## Sharing the Payment request
+## Sharing the Payment coupon
 After you have configured the Payment coupons, decide how you want to deliver them to your client.<br>You have available the following options:
 
 ### Send via e-mail 
-This option lets you send the Payment coupon via e-mail. The clients receive the e-mail and print the coupon to let them pay in cash in the available offices
+This option lets you send the Payment coupon via e-mail. The clients receive the e-mail and print the coupon to let them pay in cash in the available offices.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_02.png)
 
@@ -64,7 +64,7 @@ To add the clients one by one, provide the following information:
 * Payment description: description of the payment.
 * Amount: this field is available when you define the amount payed by your client and takes the defined value.
 * Expiration date: this field is available when you define an expiration date of the coupon.
-* Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.
+* Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
 
 Click _**Add**_ button to save the clients data and add an extra client if required.
 
@@ -93,7 +93,7 @@ To add the clients one by one, provide the following information:
 * Payment description: description of the payment.
 * Amount: this field is available when you define the amount payed by your client and takes the defined value.
 * Expiration date: this field is available when you define an expiration date of the coupon.
-* Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.
+* Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
 
 Click _**Add**_ button to save the clients data and add an extra client if required.
 
@@ -105,9 +105,9 @@ Regardless of the option selected, click **Continue**.
 
 A new window appears showing the resume of the PDF to be generated.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_05.png)
+<img src="/assets/PaymentCoupons/PaymentCoupons_05.png" alt="PrintScreen" width="60%"/><br>
 
-If you want to edit the information of the issuer, click Edit link displayed in the top right corner of the issuer section section.
+If you want to edit the information of the issuer, click _**Edit**_ link displayed in the top right corner of the issuer section section.
 
 Finally, click **Generate coupons in PDF**. A PDF file is downloaded, each page has the coupon generated per each client.
 
@@ -122,7 +122,7 @@ To add the clients one by one, provide the following information:
 * Payment description: description of the payment.
 * Amount: this field is available when you define the amount payed by your client and takes the defined value.
 * Expiration date: this field is available when you define an expiration date of the coupon.
-* Payment reference: this field is available when you define that ypu want to set your own payment reference for the coupon.
+* Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
 
 Click _**Add**_ button to save the clients data and add an extra client if required.
 
@@ -132,12 +132,13 @@ The Excel file downloaded is by default in Spanish and each row corresponds to a
 
 Regardless of the option selected, click **Generate references in Excel**.
 
-The download starts immediately. Furthermore, a new window appears showing the number of references generated, in this windows, you can also send the Excel file to whoever you need.
+The download starts immediately. Furthermore, a new window appears showing the number of references generated. In this window, you can also send the Excel file to whoever you need.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_07.png)
 
 ### Create collection cards
-This option lets you generate cards with the information required to let your clients to be able to make cash payments at the available payment points every time they need to.<br>
+This option lets you generate cards with the information required to let your clients to be able to make cash payments at the available payment points every time they need to.
+
 This option is available when you don't set a fixed payment amount nor a payment deadline.
 
 {{% alert title="Note" color="info"%}}
@@ -148,7 +149,7 @@ This option is available when you don't set a fixed payment amount nor a payment
 
 Collection cards are plastic cards associated to your PayU account; they have a bar code and you can include a reference code printed on them.
 
-Once your card have been generated, deliver them to your customers and they can pay the amount in cash they wish and without any expiration date.
+Once your cards have been generated, deliver them to your customers and they can pay the amount in cash they wish and without any expiration date.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_08.png)
 
@@ -156,7 +157,7 @@ To request the cards, you need to provide the following information:
 
 * Design of your collection cards: choose a predefined or custom design for your cards. Custom cards are available from 1000 cards.
 * How many cards do you want to request?: select the number of cards you want to generate according to the design you choose.
-* Delivery address: Click edit link at the top right corner of this panel to provide the address where you want to receive the cards.
+* Delivery address: Click _**Edit**_ at the top right corner of this panel to provide the address where you want to receive the cards.
 * Payment summary: we calculate the cost of your order depending on the quantity of cards requested and the design you choose.
 
 {{% alert title="Note" color="warning"%}}
@@ -170,19 +171,19 @@ Click _**Request cards**_ to continue. A confirmation window appears to let you 
 <img src="/assets/PaymentCoupons/PaymentCoupons_09.png" alt="PrintScreen" width="60%"/>
 
 ## Consult the created coupons
-When you have created coupons of collection cards, you can consult their information to see the received payments or enable or download the coupon.
+When you have created coupons or collection cards, you can consult their information to see the received payments, enable, disable, or download the coupon or card.
 
 1. In the PayU Module, expand the **Sell with PayU option** and then, select **My tools**.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_10.png)
+<img src="/assets/PaymentCoupons/PaymentCoupons_10.png" alt="PrintScreen" width="60%"/><br>
 
-2. Select either _**Collection by cash**_ or _**Collection cards tab according**_ to your needs.
+2. Select either _**Collection by cash**_ or _**Collection cards**_  tab according to your needs.
 
 3. You can use the Advanced filter option to find a specific set of coupons.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_11.png)
+<img src="/assets/PaymentCoupons/PaymentCoupons_11.png" alt="PrintScreen" width="60%"/><br>
 
-4. Each coupon present the options to disable or download the coupon. Once the coupon is disabled, it cannot receive more payments.<br>Find these options in the three dot menu in the _**status**_ column.
+4. Each coupon present the options to disable/enable or download the coupon. Once the coupon is disabled, it cannot receive more payments.<br>Find these options in the three dot menu in the _**status**_ column.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_12.png)
 

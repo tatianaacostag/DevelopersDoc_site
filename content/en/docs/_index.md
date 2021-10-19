@@ -34,8 +34,8 @@ To understand how PayU processes payments, it is important to understand two mai
 * Order: an order in PayU is defined as the set of movements related to an online payment.
 * Transaction: any movement related to an order such as charges, retries, refunds, disputes, etc.
 
-For example, a customer purchase a product using your web page, the customer pays using their credit card and the payment is approved and accepted by the customer's bank; Then, the shop finds that they don't have enough stock of this product and request a refund to PayU. PayU, approves the refund and the money is returned to the customer.
-In this case, the order was the purchase of the product and this order has many transactions such as, the accept of the payment, the charge, the refund approval. 
+For example, a customer purchases a product using your web page, the customer pays using their credit card and the payment is approved and accepted by the customer's bank; Then, the shop finds that they don't have enough stock of this product and request a refund to PayU. PayU, approves the refund and the money is returned to the customer.
+In this case, the order was the purchase of the product, and this order has many transactions such as, the accept of the payment, the charge, the refund approval. 
 
 ## How to start using PayU?
 When you want to integrate your commerce with PayU services and tools, you need to consider the following steps.
@@ -50,7 +50,7 @@ According to your business needs, select how to integrate your shop with the Pay
 Verify that your integration works as expected.
 
 ### 4. Deploy to production
-After you perform all the system testing and you have verified that everything is working properly, you can change to the production server; where the actual transactions are processed.
+After you perform all the system testing and you have verified that everything is working properly, you can change to the production server, where the actual transactions are processed.
 
 ## Services
 PayU provides the following services.
