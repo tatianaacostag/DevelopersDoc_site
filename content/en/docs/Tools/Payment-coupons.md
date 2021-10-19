@@ -13,7 +13,7 @@ You can receive payments without any technical knowledge. You just need to send 
 
 {{% alert title="Note" color="info"%}}
 
-LOS CUPONES Payment coupons are available for Argentina using _**RAPIPAGO**_ and _**PAGOFACIL**_, and for Colombia using _**BALOTO**_ and _**EFECTY**_.
+Payment coupons are available for Argentina using _**RAPIPAGO**_ and _**PAGOFACIL**_, and for Colombia using _**BALOTO**_ and _**EFECTY**_.
 
 {{% /alert %}}  
 
