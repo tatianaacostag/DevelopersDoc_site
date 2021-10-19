@@ -30945,8 +30945,8 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;tr&gt;
 &lt;td&gt;transfers[n] &amp;gt; bankAccount &amp;gt; accountNumber&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
-&lt;td&gt;CC:13 CA:14&lt;/td&gt;
-&lt;td&gt;Bank account number of the third party.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;br&gt;&lt;em&gt;This length is under validation.&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;Max:17&lt;/td&gt;
+&lt;td&gt;Bank account number of the third party.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -30960,7 +30960,7 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;td&gt;transfers[n] &amp;gt; bankAccount &amp;gt; accountType&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Set &lt;code&gt;CC&lt;/code&gt; for Current account and &lt;code&gt;CA&lt;/code&gt; for Saving account.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;CC&lt;/code&gt; for Current account and &lt;code&gt;CA&lt;/code&gt; for Saving account or &lt;code&gt;Nequi&lt;/code&gt;&lt;sup&gt;*&lt;/sup&gt;.&lt;br&gt;This parameter is mandatory when you are creating a payout request for a new third party.&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Nequi is available in Colombia&lt;/em&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -31449,8 +31449,8 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;tr&gt;
 &lt;td&gt;accountNumber&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
-&lt;td&gt;CC:13&lt;br&gt;CA:14&lt;/td&gt;
-&lt;td&gt;Bank account number of the third party.&lt;br&gt;&lt;em&gt;This length is under validation.&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;Max:17&lt;/td&gt;
+&lt;td&gt;Bank account number of the third party.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
