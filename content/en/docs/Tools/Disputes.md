@@ -7,17 +7,19 @@ description: >
 weight: 60
 ---
 
+![Concepts](/assets/Disputes/Disputes_en.png)
+
 ## What is a Dispute?
-Your buyers can present a claim to its card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.
+Your buyers can present a claim to their card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.
 
 ## Why a dispute happens?
-A buyer can claim to its card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.<br>
+A buyer can claim to their card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.<br>
 The reasons for starting a dispute process may vary, some of them are:
 * **Fraud**: disputes are classified as fraud when an unauthorized person makes purchases with a credit card. These type of dispute can happen if the card was lost or stolen.
 * **Not acknowledging payment**: the brand or shop name which appears in the credit card statement is not recognized by the cardholder.
 * **Product not delivered**: the cardholder states that they don't received the product or service covered by the charges made to the credit card.
 * **Product not acceptable**: the cardholder claims not to have received the product or service under the expected conditions.
-* **Duplicate**: the cardholder indicates that the charge made for the purchase of a product or service was applied more than once to his credit card.
+* **Duplicate**: the cardholder indicates that the charge made for the purchase of a product or service was applied more than once to their credit card.
 * **Amount does not match**: the charge to the credit card does not match with the value of the purchase.
 * **Not reported by the entity**: the bank or processing network initiates a dispute process without a specific reason.
 
@@ -34,7 +36,7 @@ The disputes process follows a simple flow:
 ### 1. Dispute notification
 When a bank notifies PayU about a dispute, both you and your customer receives an e-mail notifying the start of the dispute process.
 
-We also send a `POST` with all the information of the dispute to the URL you set in your PayU module. This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.
+We also send a `POST` with all the information of the dispute to the URL you set in your [PayU module]({{< ref "Technical-configuration.md#disputes" >}}). This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.
 
 You can configure the URL where we make the notification in the PayU module. Log in to [PayU.com](payu.com) and click the login option located at the top of the page. Alternatively, you can log in to https://merchants.payulatam.com/.
 
@@ -48,7 +50,7 @@ In this window, go to _**Disputes**_ tab and define the dispute notification url
 
 Once you configured this, you automatically receive a POST with all the information of the started dispute process. Furthermore, You also receive a notification POST each time the dispute process has an update, so you can be aware of the progress and completion of this process.
 
-### 2. Queries through the Administrative module
+### 2. Query through the PayU module
 You can view and manage your dispute processes from your PayU module, in the _**Dispute**_ option inside the _**Transactions**_ menu.
 
 ![PrintScreen](/assets/Disputes/Disputes_02.png)
@@ -81,7 +83,7 @@ Recall that the maximum days to provide evidence for each country are:
 | Panama    | 8 working days            |
 | Peru      | 6 working days            |
 
-### 4. Final decision on dispute status.
+### 4. Final decision on dispute status
 Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refunded. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.
 
 When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.

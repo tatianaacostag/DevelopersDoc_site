@@ -74,7 +74,7 @@ Configure it using the information of your PayU account as follows:
 
 | Field             | Value                                                                                      |
 |-------------------|--------------------------------------------------------------------------------------------|
-| Enable / Disable  | Select **True** to enable the payment gateway in osCommerce .                              |
+| Enable / Disable  | Select **True** to enable the payment gateway in osCommerce.                              |
 | Merchant ID       | ID of your commerce in PayU Latam                                                          |
 | Account ID        | ID of the PayU account according to the country where you want to sell.                    |
 | API key           | Unique key of your commerce, you can find this key in the PayU module.                     |
