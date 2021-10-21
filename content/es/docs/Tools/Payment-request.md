@@ -35,7 +35,7 @@ Una _Solicitud de Pago Básica_ te permite crear un link solo con ingresar el no
 ### Crear Solicitud de Pago Básica {#create-a-basic-payment-request}
 Sigue este procedimiento para crear una Solicitud de Pago básica y compartirla con tus clientes.
 
-1. Ingresa a [PayU.com](payu.com) y haz clic en la opción de log in en a parte superior de la página. Alternativamente, puedes ingresar a https://merchants.payulatam.com/.
+1. Ingresa a [PayU.com](payu.com) y haz clic en la opción de log in en a parte superior de la página. O si lo prefieres, puedes ingresar a https://merchants.payulatam.com/.
 
 2. Expande la opción **Cobra con PayU** y luego, selecciona **Cobra en internet**.
 

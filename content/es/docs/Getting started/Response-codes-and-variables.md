@@ -209,6 +209,7 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 | `CANCELLED`   | El último estado de la orden es una cancelación aprobada.       |
 | `DECLINED`    | El último estado de la orden fue declinada.                     |
 | `REFUNDED`    | El último estado de la orden es un reembolso aprobado.          |
+| `CHARGEBACK`  | El último estado de la orden es un Contracargo. Es decir, corresponde a una [Dispute]({{< ref "Disputes.md" >}}) perdida.      |
 
 ## Estados de la transacción {#transaction-states}
 

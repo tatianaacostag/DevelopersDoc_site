@@ -127,7 +127,7 @@ Cuando ocurre un evento de los mencionados anterior mente, se envían al WebHook
 | `documentNumber`          | Numérico     | Número de documento del tercero beneficiario del Payout.                  |
 | `country`                 | Alfanumérico | País del tercero beneficiario del Payout.                                 |
 | `validationState`         | Alfanumérico | Resultado de la validación realizada por PayU.                            |
-| `dateOfTheNextValidation` | Numérico     | Fecha en la que eel tercero será validado por sanction screening.<br>Esta fecha está en milisegundos. |
+| `dateOfTheNextValidation` | Numérico     | Fecha en la que el tercero será validado por sanction screening.<br>Esta fecha está en milisegundos. |
 
 ## ¿Qué sigue? {#whats-next}
 La integración con esta funcionalidad se realiza utilizando el [API de integraciones]({{< ref "" >}}).

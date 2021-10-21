@@ -209,6 +209,7 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 | `CANCELLED`   | The last transaction of the order is an approved cancellation.  |
 | `DECLINED`    | The last transaction of the order is declined.                  |
 | `REFUNDED`    | The last transaction of the order is an approved refund.        |
+| `CHARGEBACK`  | The last transaction of the order is a Chargeback. Namely, corresponds to a lost [Dispute]({{< ref "Disputes.md" >}}).       |
 
 ## Transaction states
 
