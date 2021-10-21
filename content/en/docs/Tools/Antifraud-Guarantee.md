@@ -7,7 +7,7 @@ Description: >
 weight: 80
 ---
 
-PayU assumes the fraud or supplantation of the card holders when a [Dispute]({{< ref "Disputes.md" >}}) process has been started by a customer. To request the activation of the _**Anti-fraud Guarantee**_ for your customer, contact your sales representative.
+PayU assumes the fraud or supplantation of the cardholders when a [Dispute]({{< ref "Disputes.md" >}}) process has been started by a customer. To request the activation of the _**Anti-fraud Guarantee**_, contact your sales representative.
 
 ## Considerations
 Before using the _**Anti-fraud Guarantee**_, take into account the following:

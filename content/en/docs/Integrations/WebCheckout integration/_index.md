@@ -41,8 +41,8 @@ The procedure to let your shoppers pay using PayU services is simple.
 
 ## Considerations
 * The coding of your page must be `UTF-8`.
-* The WebCheckout page should not be included in an iframe
-* Do not mask the URL during the checkout process
+* The WebCheckout page should not be included in an iframe.
+* Do not mask the URL during the checkout process.
 * Do not use security certificates elliptic curve or those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` on your confirmation page.
 
 ## Integration components
