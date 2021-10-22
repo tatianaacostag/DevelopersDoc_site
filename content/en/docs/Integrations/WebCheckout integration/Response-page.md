@@ -13,7 +13,7 @@ tags: ["subtopic"]
 * Some hosting providers have settings that do not allow sending URLs as parameter values. Example: `&merchant_url=http%3A%2F%2Fwww.myshop.com`
 * For Brazil accounts, there is no redirection to the response page.
 * Do not depend on the response page to update your database or execute processes, users may not return to it. Use the confirmation page.
-* •	If you want to display information related to the transaction, we suggest showing at least the following: status, reference value, currency, and date.
+* If you want to display information related to the transaction, we suggest showing at least the following: status, reference value, currency, and date.
 * It is recommended to send the `responseUrl` parameter in the payment form or set PayU Module; it has priority the one sent in the parameter. If PayU does not find any, the payment process ends at the Webcheckout.
 
 {{% alert title="Important" color="warning"%}}
@@ -212,7 +212,7 @@ To validate the signature in the response page, you should consider:
 ```
 <br>
 
-#### Examples:
+Examples:
 
 **First decimal is an even number and the second is 5**
 

@@ -120,7 +120,7 @@ To add the clients one by one, provide the following information:
 
 * Payer name: name of the client.
 * Payment description: description of the payment.
-* Amount: this field is available when you define the amount pais by your client and takes the defined value.
+* Amount: this field is available when you define the amount paid by your client and takes the defined value.
 * Expiration date: this field is available when you define an expiration date of the coupon.
 * Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
 

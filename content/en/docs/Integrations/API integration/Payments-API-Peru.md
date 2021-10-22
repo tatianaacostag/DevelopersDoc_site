@@ -772,7 +772,7 @@ This method lets you process the payments in cash of your customers. To integrat
 
 ### Variables for request and response
 
-<details open>
+<details>
 <summary>Request</summary>
 <br>
 <div class="variables"></div>
