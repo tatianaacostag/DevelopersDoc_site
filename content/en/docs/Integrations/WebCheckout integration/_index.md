@@ -19,11 +19,11 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
 ## How does the WebCheckout integration work?
 The procedure to let your shoppers pay using PayU services is simple.
 
-1. Your customer navigates your site and selects the products or services they want to purchase. Your systems updates the purchase amount and sends to our system the payment form with the purchase information.<br>Your system must send this information via `HTTP POST`.
+1. Your customer navigates your site and selects the products or services they want to purchase. Your system updates the purchase amount and sends to our system the payment form with the purchase information.<br>Your system must send this information via `HTTP POST`.
 
 ![WebCheckout integration](/assets/paso1-en.jpeg)
 
-2. For the payment process, your customer is redirected to our Checkout where they can select the payment method.<br>PayU supports many payment methods that fits to your customers needs according to the country where you process the purchase, [see the available Payment Methods]({{< ref "select-your-payment-method.html" >}}).
+2. For the payment process, your customer is redirected to our Checkout where they can select the payment method.<br>PayU supports many payment methods that fits to your customers' needs according to the country where you process the purchase, [see the available Payment Methods]({{< ref "select-your-payment-method.html" >}}).
 
 ![WebCheckout integration](/assets/paso2-en.jpeg)
 

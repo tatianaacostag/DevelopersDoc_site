@@ -14,9 +14,9 @@ In this topic, you find how to send data from one transaction to the PayU paymen
 ## Considerations
 * Make sure you have the right `merchantId`, `accountId`, and `apiKey`.
 * Use a different payment reference per payment.
-* Do not include spaces in parameter values
-* Do not include values with more than two decimal places
-* Do not include special characters in the ```referenceCode```parameter
+* Do not include spaces in parameter values.
+* Do not include values with more than two decimal places.
+* Do not include special characters in the `referenceCode` parameter.
 
 ## Variables
 The following variables can be included in the Payment form.
@@ -34,20 +34,20 @@ The following variables can be included in the Payment form.
 | accountId | Number | 6 | ID of the user account for each country associated with the shop. This variable is used to display the available payment methods for this country. | ✓ |
 | description | Alphanumeric | 255 | Sale’s description. | ✓ |
 | tax | Number | 14,2 | Value of the VAT of the transaction.<br>In Colombia, if no VAT is sent, the system applies 19% automatically. It can contain two decimal digits, for example 19000.00.<br>If the product or service is VAT exempt, assign `0` to this variable. | ✓ |
-| taxReturnBase | Number | 14,2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0`to this variable. | ✓ |
+| taxReturnBase | Number | 14,2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0` to this variable. | ✓ |
 | signature | Alphanumeric | 255 | Digital signature created for each transaction. Refer to [Signature for Payment form]({{< ref "payment-form.md#signature-for-payment-form" >}}) to learn how to generate it. | ✓ |
-| currency | Alpha numeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in pesos at the representative rate of the day.<br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ |
+| currency | Alpha numeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in Colombian pesos at the representative rate of the day.<br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ |
 | buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the result of the transaction by e-mail. It is recommended to validate if this field has been provided in the form. | ✓ |
 | telephone | Alphanumeric | 50 | The buyer’s residence phone. | ✓ |
 | buyerFullName | Alphanumeric | 150 | The buyer’s full name. | ✓ |
-| test | Number | 1 | Indicates whether the transaction is in test or production mode. Set `1`for test and `0`for production. | — |
+| test | Number | 1 | Indicates whether the transaction is in test or production mode. Set `1` for test and `0` for production. | — |
 | lng | Alphanumeric | 3 | Language in which the payment gateway is wished to be displayed.<br>[See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | — |
-| shippingCity | Alphanumeric | 50 | The delivery City of the merchandise<br><sup>*</sup> Mandatory if your shop ships the product. | ✓* |
-| shippingCountry | Alphanumeric | 2 | The delivery ISO country code for the merchandise.<br><sup>*</sup> Mandatory if your shop ships the product.<br>[See processing countries]({{< ref "response-codes-and-variables.html#processing-countries" >}}) | ✓* |
-| shippingAddress | Alphanumeric | 255 | The delivery address of the merchandise.<br><sup>*</sup> Mandatory if your shop ships the product. | ✓* |
+| shippingCity | Alphanumeric | 50 | The delivery City of the merchandise<br><sup>\*</sup> Mandatory if your shop ships the product. | ✓* |
+| shippingCountry | Alphanumeric | 2 | The delivery ISO country code for the merchandise.<br><sup>\*</sup> Mandatory if your shop ships the product.<br>[See processing countries]({{< ref "response-codes-and-variables.html#processing-countries" >}}).| ✓* |
+| shippingAddress | Alphanumeric | 255 | The delivery address of the merchandise.<br><sup>\*</sup> Mandatory if your shop ships the product. | ✓* |
 | extra1 | Alphanumeric | 255 | Additional field to send information about the purchase. | — |
 | extra2 | Alphanumeric | 255 | Additional field to send information about the purchase. | — |
-| extra3 | Alphanumeric | 255 | Additional field to send information about the purchase. For example, internal codes of the products. | — |
+| extra3 | Alphanumeric | 255 | Additional field to send information about the purchase. | — |
 | responseUrl | Alphanumeric | 255 | The URL of the response page. | — |
 | confirmationUrl | Alphanumeric | 255 | The URL of the confirmation page. | — |
 | payerFullName | Alphanumeric | 50 | The payer’s name. This value will be taken to fill out the credit card form. | — |
@@ -101,7 +101,7 @@ The following is an example of a basic Payment form using only the mandatory fie
   <input name="buyerEmail"      type="hidden"  value="test@test.com" >
   <input name="responseUrl"     type="hidden"  value="http://www.test.com/response" >
   <input name="confirmationUrl" type="hidden"  value="http://www.test.com/confirmation" >
-  <input name="Submit"          type="submit"  value="Enviar" >
+  <input name="Submit"          type="submit"  value="Send" >
 </form>
 ```
 <br>
@@ -130,7 +130,7 @@ The signature is a method to validate payments made through the platform and ens
 ```
 <br>
 
-For example, with the following dat:
+For example, with the following data:
 
 ```HTML
 merchantId: 508029

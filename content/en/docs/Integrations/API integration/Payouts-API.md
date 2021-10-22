@@ -11,12 +11,6 @@ draft: true
 
 For introductory terms, how to request this service and more information, refer to [Payouts]({{< ref "payouts.html" >}}).
 
-{{% alert title="Note" color="warning"%}}
-
-Service URL displayed here are not in sandbox or production environment yet. If you need to know when they will be available, contact your sales representative.
-
-{{% /alert %}}
-
 ## Configuring the authentication
 To use the methods to manage Payouts or WebHooks exposed by the Payouts service, you must include the `Authorization` and `PublicKey` headers:
 

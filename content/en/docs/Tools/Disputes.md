@@ -73,7 +73,7 @@ To learn how to upload evidence to resolve the dispute, refer to the [PayU modul
 #### Maximum days to provide evidence
 Recall that the maximum days to provide evidence for each country are: 
 
-| Country   | Days to provide evidences |
+| Country   | Days to provide evidence  |
 |-----------|---------------------------|
 | Argentina | 5 working days            |
 | Brazil    | 12 working days           |

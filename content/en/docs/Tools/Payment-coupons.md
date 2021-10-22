@@ -62,7 +62,7 @@ To add the clients one by one, provide the following information:
 * Email: e-mail of the client who receives the coupon.
 * Payer name: name of the client.
 * Payment description: description of the payment.
-* Amount: this field is available when you define the amount payed by your client and takes the defined value.
+* Amount: this field is available when you define the amount paid by your client and takes the defined value.
 * Expiration date: this field is available when you define an expiration date of the coupon.
 * Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
 
@@ -91,7 +91,7 @@ To add the clients one by one, provide the following information:
 
 * Payer name: name of the client.
 * Payment description: description of the payment.
-* Amount: this field is available when you define the amount payed by your client and takes the defined value.
+* Amount: this field is available when you define the amount paid by your client and takes the defined value.
 * Expiration date: this field is available when you define an expiration date of the coupon.
 * Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
 
@@ -120,7 +120,7 @@ To add the clients one by one, provide the following information:
 
 * Payer name: name of the client.
 * Payment description: description of the payment.
-* Amount: this field is available when you define the amount payed by your client and takes the defined value.
+* Amount: this field is available when you define the amount paid by your client and takes the defined value.
 * Expiration date: this field is available when you define an expiration date of the coupon.
 * Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
 
@@ -183,7 +183,7 @@ When you have created coupons or collection cards, you can consult their informa
 
 <img src="/assets/PaymentCoupons/PaymentCoupons_11.png" alt="PrintScreen" width="60%"/><br>
 
-4. Each coupon present the options to disable/enable or download the coupon. Once the coupon is disabled, it cannot receive more payments.<br>Find these options in the three dot menu in the _**status**_ column.
+4. Each coupon presents the options to disable/enable or download the coupon. Once the coupon is disabled, it cannot receive more payments.<br>Find these options in the three-dot menu in the _**status**_ column.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_12.png)
 
