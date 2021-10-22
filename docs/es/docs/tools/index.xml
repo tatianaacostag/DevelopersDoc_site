@@ -54,7 +54,7 @@
 &lt;p&gt;Sigue este procedimiento para crear una Solicitud de Pago básica y compartirla con tus clientes.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Ingresa a &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; y haz clic en la opción de log in en a parte superior de la página. Alternativamente, puedes ingresar a &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ingresa a &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; y haz clic en la opción de log in en a parte superior de la página. O si lo prefieres, puedes ingresar a &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Expande la opción &lt;strong&gt;Cobra con PayU&lt;/strong&gt; y luego, selecciona &lt;strong&gt;Cobra en internet&lt;/strong&gt;.&lt;/p&gt;
@@ -707,6 +707,47 @@ El valor de la orden será descontado de tu cuenta PayU y debes tener saldo disp
 &lt;li&gt;Cada cupon presenta las opciones para desactivar/activar o descargar el cupon. Una vez se desactiva el cupón, no puede recibir más pagos.&lt;br&gt;Encuentra estas opciones en el menú de los tres puntos de la columna &lt;em&gt;&lt;strong&gt;estado&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_12_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Garantía Antifraude</title>
+      <link>/es/docs/tools/antifraud-guarantee.html</link>
+      <pubDate>Wed, 29 Sep 2021 15:51:04 -0500</pubDate>
+      
+      <guid>/es/docs/tools/antifraud-guarantee.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;PayU asume el fraude o la suplantación del los titulares de las tarjetas de crédito cuando se inicia un proceso de &lt;a href=&#34;../../../es/docs/tools/disputes.html&#34;&gt;Disputa&lt;/a&gt; por parte de un cliente. Para solicitar la activación de la &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt;, contacta a tu representante de ventas.&lt;/p&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h2&gt;
+&lt;p&gt;Antes de utilizar &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt;, ten en cuenta lo siguiente:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; no se ofrece de forma predeterminada. Los comercios deben solicitarla y firmar un documento donde se expresen las condiciones de la garantía.&lt;/li&gt;
+&lt;li&gt;La activación de la &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; depende de tu actividad económica. &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; no cubre la venta de servicios, así como música, videos, MP3, libros electrónicos, productos ofrecidos en tiendas o páginas para adultos, vouchers, tarjetas regalo; no otros bienes o mecanismos a través de los cuales se puedan adquirir los productos mencionados.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; aplica solo para transacciones realizadas con tarjeta de crédito.&lt;/li&gt;
+&lt;li&gt;PayU valida la evidencia del proceso de disputa y determina si el contracargo aplica para &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Si no presentas evidencia de la &lt;em&gt;disputa&lt;/em&gt; en los &lt;a href=&#34;../../../es/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;tiempos especificados&lt;/a&gt;, el resultado de la misma será &lt;em&gt;Perdida&lt;/em&gt; y no aplicará la &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; no aplica para disputas solicitadas debido a insatisfacción del cliente con el producto adquirido.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-does-the-anti-fraud-guarantee-work&#34;&gt;¿Cómo funciona la Garantía Antifraude?&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; se aplica siguiente este flujo.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Una vez PayU te notifica sobre una &lt;a href=&#34;../../../es/docs/tools/disputes.html&#34;&gt;Disputa&lt;/a&gt;, debes presentar la evidencia para responderla en los &lt;a href=&#34;../../../es/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;tiempos establecidos&lt;/a&gt; para tu país. Si no presentas evidencia, perderás la disputa y los fundos de esta venta serán debitados de tu cuenta y no aplicará la &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; .&lt;br&gt;Aprende &lt;a href=&#34;../../../es/docs/tools/disputes.html#what-information-can-be-useful&#34;&gt;aquí&lt;/a&gt; qué evidencia puedes presentar para resolver una disputa.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Luego de que presentes la evidencia para resolver la disputa, PayU valida si el contra cargo puede ser cubierto por la &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Si aplica, PayU regresa los fundos a tu cuenta virtual a través de movimientos discrecionales.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;El resultado del proceso de &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; puede ser consultado en el &lt;a href=&#34;&#34;&gt;Módulo de Disputas&lt;/a&gt;.&lt;!--ref &#34;Disputes-MP.md&#34;--&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_08_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Además, puedes consultar los movimientos discrecionales en tu &lt;a href=&#34;&#34;&gt;Balance financiero&lt;/a&gt;. &lt;!-- ref &#34;Financial-Statement.md&#34; --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_09_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

@@ -101,7 +101,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../es/docs/integrations/webcheckout-integration.html">Español</a>
 	
 </div>
 			</li>
@@ -135,7 +135,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.9c2e77424fdcf159fd27f2fbcf479b81ade39998949fc921f55627f67967254c5bf7b747917188a0bdd2004d30062cb06e1760035f0c53f65aaaa23d07e187d7.json"
+  data-offline-search-index-json-src="../../../offline-search-index.743531e27a218c0851b0abffe0ba0a42beb05422b999e198ae8477511302108a997c816b509a423e6ccef058ac5d3324c9100a830579fc724c2b74c9465dfb31.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -154,7 +154,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../es/docs/integrations/webcheckout-integration.html">Español</a>
 	
 </div>
     </div>
@@ -790,11 +790,11 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
 <h2 id="how-does-the-webcheckout-integration-work">How does the WebCheckout integration work?</h2>
 <p>The procedure to let your shoppers pay using PayU services is simple.</p>
 <ol>
-<li>Your customer navigates your site and selects the products or services they want to purchase. Your systems updates the purchase amount and sends to our system the payment form with the purchase information.<br>Your system must send this information via <code>HTTP POST</code>.</li>
+<li>Your customer navigates your site and selects the products or services they want to purchase. Your system updates the purchase amount and sends to our system the payment form with the purchase information.<br>Your system must send this information via <code>HTTP POST</code>.</li>
 </ol>
 <p><img src="../../../assets/paso1-en.jpeg" alt="WebCheckout integration"></p>
 <ol start="2">
-<li>For the payment process, your customer is redirected to our Checkout where they can select the payment method.<br>PayU supports many payment methods that fits to your customers needs according to the country where you process the purchase, <a href="../../../en/docs/getting-started/select-your-payment-method.html">see the available Payment Methods</a>.</li>
+<li>For the payment process, your customer is redirected to our Checkout where they can select the payment method.<br>PayU supports many payment methods that fits to your customers' needs according to the country where you process the purchase, <a href="../../../en/docs/getting-started/select-your-payment-method.html">see the available Payment Methods</a>.</li>
 </ol>
 <p><img src="../../../assets/paso2-en.jpeg" alt="WebCheckout integration"></p>
 <ol start="3">
@@ -812,8 +812,8 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
 <h2 id="considerations">Considerations</h2>
 <ul>
 <li>The coding of your page must be <code>UTF-8</code>.</li>
-<li>The WebCheckout page should not be included in an iframe</li>
-<li>Do not mask the URL during the checkout process</li>
+<li>The WebCheckout page should not be included in an iframe.</li>
+<li>Do not mask the URL during the checkout process.</li>
 <li>Do not use security certificates elliptic curve or those who have the suite of encryption <code>TLS_ECDHE_ECDSA_WITH_RC4_128_SHA</code> on your confirmation page.</li>
 </ul>
 <h2 id="integration-components">Integration components</h2>
@@ -878,7 +878,7 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
                     <h5>
                         <a href="../../../en/docs/integrations/webcheckout-integration/response-page.html">Response Page</a>
                     </h5>
-                    <p>The Response page is a mandatory page and lets you show the result of the transaction to the payer. Our system redirects the payer to this page once the transaction has been performed. The data with the payment results is sent to your system via HTTP GET method </br>This page is invoked for all the transaction states: approved, rejected, in validation, awaiting payment (for cash), etc.</p>
+                    <p>The Response page is a mandatory page and lets you show the result of the transaction to the payer. Our system redirects the payer to this page once the transaction has been performed. The data with the payment results is sent to your system via HTTP GET method.</br>This page is invoked for all the transaction states: approved, rejected, in validation, awaiting payment (for cash), etc.</p>
                 </div>
             
         
@@ -974,9 +974,9 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-September 29, 2021:
+October 22, 2021:
 
- <b>Fixes for grammar errors (2529c02)</b>
+ <b>Update mandatory parameters for Cash payments in Peru (0706ac71)</b>
 </div>
 </div>
 

@@ -549,7 +549,7 @@ Puede que las solicitudes de Payouts no queden en el estado &lt;strong&gt;IN_BAN
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;dateOfTheNextValidation&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;Fecha en la que eel tercero será validado por sanction screening.&lt;br&gt;Esta fecha está en milisegundos.&lt;/td&gt;
+&lt;td&gt;Fecha en la que el tercero será validado por sanction screening.&lt;br&gt;Esta fecha está en milisegundos.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

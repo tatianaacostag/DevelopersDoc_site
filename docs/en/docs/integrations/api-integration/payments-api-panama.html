@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-panama.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-08-13T12:40:17-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-10-22T09:51:36-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payments API - Panama">
 <meta itemprop="description" content="Payments API Panama lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-08-13T12:40:17-05:00" />
-<meta itemprop="wordCount" content="2587">
+<meta itemprop="dateModified" content="2021-10-22T09:51:36-05:00" />
+<meta itemprop="wordCount" content="2580">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Panama"/>
 <meta name="twitter:description" content="Payments API Panama lets your shop process different transaction types with multiple payment methods.
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9c2e77424fdcf159fd27f2fbcf479b81ade39998949fc921f55627f67967254c5bf7b747917188a0bdd2004d30062cb06e1760035f0c53f65aaaa23d07e187d7.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.743531e27a218c0851b0abffe0ba0a42beb05422b999e198ae8477511302108a997c816b509a423e6ccef058ac5d3324c9100a830579fc724c2b74c9465dfb31.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1253,7 +1253,7 @@
 <td>transaction &gt; payer &gt; fullName</td>
 <td>Alphanumeric</td>
 <td>Max:150</td>
-<td>Name of the payer which must meet the name sent in the parameter &gt; creditCard &gt; name for credit card payments.</td>
+<td>Name of the payer which must meet the name sent in the parameter <code>transaction.creditCard.name</code>.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
@@ -2264,9 +2264,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-August 13, 2021:
+October 22, 2021:
 
- <b>Fixes for payment methods and Payouts (858dbfa)</b>
+ <b>Update mandatory parameters for Cash payments in Peru (0706ac71)</b>
 </div>
 </div>
 

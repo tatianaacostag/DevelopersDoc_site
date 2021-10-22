@@ -178,7 +178,7 @@ Para activar tu cuenta debes:&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;La siguiente sección muestra los medios de pago disponibles por país y brinda algunas consideraciones. Consulte la columna &lt;code&gt;Parámetro paymentMethod&lt;/code&gt; para saber el valor que se enviar como Medio de Pago cuando utilice la integración API o SDK.&lt;/p&gt;
+        &lt;p&gt;La siguiente sección muestra los medios de pago disponibles por país y brinda algunas consideraciones. Consulta la columna &lt;code&gt;Parámetro paymentMethod&lt;/code&gt; para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.&lt;/p&gt;
 &lt;h2 id=&#34;Argentina&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; Argentina&lt;/h2&gt;
 &lt;div class=&#34;paymentMethods&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -2339,6 +2339,10 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;REFUNDED&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;El último estado de la orden es un reembolso aprobado.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CHARGEBACK&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;El último estado de la orden es un Contracargo. Es decir, corresponde a una &lt;a href=&#34;../../../es/docs/tools/disputes.html&#34;&gt;Dispute&lt;/a&gt; perdida.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
