@@ -1,34 +1,34 @@
 ---
-title: "Response Page"
-linkTitle: "Response Page"
+title: "Página de Respuesta"
+linkTitle: "Página de Respuesta"
 date: 2021-03-29T12:15:39-05:00
 description: >
-  The Response page is a mandatory page and lets you show the result of the transaction to the payer. Our system redirects the payer to this page once the transaction has been performed. The data with the payment results is sent to your system via HTTP GET method.</br>This page is invoked for all the transaction states: approved, rejected, in validation, awaiting payment (for cash), etc.
+  La Página de Respuesta es una página obligatoria que te permite mostrar el resultado de la transacción al pagador. Nuestro sistema redirecciona al pagador a esta página una vez la transacción haya sido realizada. La información de los resultados del pago es enviada a tu sistema a través del método HTTP GET. </br>Esta página es invocada para todos los estados de la transacción: aprobada, rechazada, en validación, esperando el pago (para pagos en efectivo), etc.
 
 weight: 20
 tags: ["subtopic"]
 ---
 
-## Considerations
-* Some hosting providers have settings that do not allow sending URLs as parameter values. Example: `&merchant_url=http%3A%2F%2Fwww.myshop.com`
-* For Brazil accounts, there is no redirection to the response page.
-* Do not depend on the response page to update your database or execute processes, users may not return to it. Use the confirmation page.
-* •	If you want to display information related to the transaction, we suggest showing at least the following: status, reference value, currency, and date.
-* It is recommended to send the `responseUrl` parameter in the payment form or set PayU Module; it has priority the one sent in the parameter. If PayU does not find any, the payment process ends at the Webcheckout.
+## Consideraciones {#considerations}
+* Algunos proveedores de hosting tienen configuraciones que no permite enviar URLs como valores de parámetros. Por ejemplo: `&merchant_url=http%3A%2F%2Fwww.mitienda.com`
+* Para cuentas de Brasil, no hay redirección a la página de respuesta.
+* No dependas de la página de respuesta para actualizar tu base de datos o ejecutar procesos ya que es posible que el usuario no regrese a la misma; utiliza la página de confirmación.
+* Si quieres mostrar información relacionada con la transacción, te sugerimos mostrar como mínimo lo siguiente: estado, referencia, valor, moneda y fecha.
+* Se recomienda enviar el parámetro `responseUrl` en el formulario de pago o configurarlo en el Módulo PayU; tiene mayor prioridad el enviado como parámetro. Si PayU no encuentra ninguno, el proceso de pago finaliza en el Webcheckout.
 
-{{% alert title="Important" color="warning"%}}
+{{% alert title="Importante" color="warning"%}}
 If you want that PayU always shows the transaction information, do not send any value in the `responseUrl` parameter of the payment form, and leave it blank in PayU Module. In this case, the buyer cannot return to your website.
 {{% /alert %}}
 
 ## Variables
-Variables sent to the response page.
+Variables enviadas a la Página de respuesta.
 
-<details>
-<summary>Variables to be sent to the response page</summary>
+<details open>
+<summary>Variables enviadas a la Página de respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Field | Type | Size | Description | Applies to |
+| Campo | Tipo | Tamaño | Descripción | Aplica para |
 |-|-|-|-|:-:|
 | merchantId | Numeric | 12 | Merchant’s ID number in PayU’s system, you find this number in the account creation mail. | — |
 | transactionState | Numeric | 2 | Indicates the transaction’s status in the system.<br>[See the transaction states in the given column]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
@@ -212,7 +212,7 @@ To validate the signature in the response page, you should consider:
 ```
 <br>
 
-#### Examples:
+Examples:
 
 **First decimal is an even number and the second is 5**
 

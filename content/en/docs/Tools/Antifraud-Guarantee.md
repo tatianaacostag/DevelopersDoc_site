@@ -13,7 +13,7 @@ PayU assumes the fraud or supplantation of the cardholders when a [Dispute]({{< 
 Before using the _**Anti-fraud Guarantee**_, take into account the following:
 
 * _**Anti-fraud Guarantee**_ is not offered by default. Merchants must request it and sign a document where the condition of the guarantees are reflected.
-* The activation of _**Anti-fraud Guarantee**_ depends on your economical activity. _**Anti-fraud Guarantee**_ does not cover the sale of services, as well as music, videos, MP3, electronic books, products offered in stores or adult websites, vouchers, gift cards; nor other goods or mechanisms through which the aforementioned products can be acquired.
+* The activation of _**Anti-fraud Guarantee**_ depends on your economic activity. _**Anti-fraud Guarantee**_ does not cover the sale of services, as well as music, videos, MP3, electronic books, products offered in stores or adult websites, vouchers, gift cards; nor other goods or mechanisms through which the aforementioned products can be acquired.
 * _**Anti-fraud Guarantee**_ applies only for transactions performed with credit card.
 * PayU validates the evidence of the dispute process and determines whether the chargeback is applies to _**Anti-fraud Guarantee**_.
 * If you don't provide evidence of the _dispute_ in the [specified times]({{< ref "Disputes.md#maximum-days-to-provide-evidence" >}}), the result of this will be _Lost_ and the _**Anti-fraud Guarantee**_ will not apply.

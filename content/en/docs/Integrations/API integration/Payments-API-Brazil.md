@@ -131,7 +131,7 @@ Find the description of these fields in the next section.
 | transaction > payer |  |  | Payer information. | No |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
-| transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter > creditCard > name for credit card payments. | No |
+| transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `transaction.creditCard.name` for credit card payments. | No |
 | transaction > payer > billingAddress |  |  | Billing address. | No |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
@@ -925,7 +925,7 @@ Pix has two parts:
 | transaction > payer |  |  | Payer information. | Yes |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
-| transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter > creditCard > name for credit card payments. | Yes |
+| transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer. | Yes |
 | transaction > payer > billingAddress |  |  | Billing address. | No |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
@@ -1264,7 +1264,7 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > payer |  |  | Payer information. This information is optional. | No |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
-| transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter > creditCard > name for credit card payments. | No |
+| transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer. | No |
 | transaction > payer > billingAddress |  |  | Billing address. | No |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |

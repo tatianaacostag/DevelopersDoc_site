@@ -21,7 +21,7 @@ Regardless of the integration selected, you may require any of the following var
 
 ![PrintScreen](/assets/IntegrationVariables_01.png)
 
-3. In this window, you find both the API key and API Login which allows you to authenticate you commerce during the integration procedure.
+3. In this window, you find both the API key and API Login which allows you to authenticate your commerce during the integration procedure.
 
 ![PrintScreen](/assets/IntegrationVariables_02.png)
 

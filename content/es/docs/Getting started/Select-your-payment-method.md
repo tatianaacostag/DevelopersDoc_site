@@ -7,7 +7,7 @@ Description: >
 weight: 30
 ---
 
-La siguiente sección muestra los medios de pago disponibles por país y brinda algunas consideraciones. Consulte la columna `Parámetro paymentMethod` para saber el valor que se enviar como Medio de Pago cuando utilice la integración API o SDK.
+La siguiente sección muestra los medios de pago disponibles por país y brinda algunas consideraciones. Consulta la columna `Parámetro paymentMethod` para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.
 
 ## <img src="/assets/Argentina.png" width="25px"/> Argentina {#Argentina}
 <div class="paymentMethods"></div>
