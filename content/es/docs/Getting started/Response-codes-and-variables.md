@@ -351,6 +351,7 @@ Envía el valor exacto mostrado en la columna `Código` en la variable `transfer
 | `683`     | DGCPTN                                            |
 | `685`     | DGCPTN-REGALIAS                                   |
 | `801`     | MOVII                                             |
+| `0551`    | DAVIPLATA                                         |
 | `1053`    | BANCO WWB                                         |
 | `1062`    | BANCO FALABELLA S.A.                              |
 | `1063`    | BANCO FINANDINA S.A.                              |

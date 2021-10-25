@@ -9,7 +9,7 @@ weight: 70
 
 Payouts is an integration service available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.
 
-<img src="/assets/PushPayments/PushPayments.png" width="70%" alt="Concepts"/>
+<img src="/assets/PushPayments/PushPayments.png" width="70%" alt="Concepts"/><br>
 
 Let’s explain Payouts using an example. A merchant offers products and services available for delivery; this merchant uses PayU as their online payment platform and has an account where they collect the money paid from their customers. This merchant has many couriers to whom, they pay a fixed amount per delivery they made.
 
@@ -28,7 +28,7 @@ The amount of each payout plus the processing fee is deducted from your account.
 * **Better manage account funds and balance**.<br>You can cancel payment orders before the payout is sent to the bank. Payouts feature helps you to better manage your account funds and balance. 
 * **Customizable  notifications**.<br>Any changes in the payment order status are updated through our solution. You can customize the update notifications you receive. 
 
-## How do Payouts work?
+## How does the Payouts feature work?
 Through Payouts, you can send multiple and secure payouts such as fund disbursement to employees, sub-merchants, suppliers or customers, using the funds you have in your PayU Account. 
 
 You only need to provide the amount to pay along with the information of each payee (such as name, identification, bank information, etc.), and PayU transfers the requested amount after validations.

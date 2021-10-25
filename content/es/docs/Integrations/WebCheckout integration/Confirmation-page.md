@@ -21,13 +21,14 @@ En la página de confirmación, debes capturar los datos que desear guardar en l
 * Si tienes restringido el sitio con _basic access authentication_ o similar, desactívalo para la URL de confirmación.
 * La IP asociada con la URL de confirmación debe ser pública; no utilice URL que se accedan por intranet o localhost.
 * Si utilizas HTTPS, debes tener un certificado válido.
-* DNo utilices certificados de seguridad de curva elíptica o aquellos que cuenten con la suite de encriptación `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` en tu página de confirmación.
+* El formato de tu página de confirmación debe ser `x-www-form-urlencoded`.
+* No utilices certificados de seguridad de curva elíptica o aquellos que cuenten con la suite de encriptación `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` en tu página de confirmación.
 * PayU asume que la página de confirmación es reportada correctamente cuando recibe el código HTTP 200; en caso contrario, PayU realiza un máximo de nueve (9) intentos de enviar la página de confirmación a tu sistema. Si luego de estos intentos no se recibe el código HTTP 200, PayU envía una alerta por correo electrónico.
 * PayU reporta la página de confirmación una vez la transacción tenga un estado final, ed decir, cuando se aprueba, se rechaza o se vence. Si una transacción está en proceso (esperando pago o análisis), PayU no reporta hasta que la transacción tenga un estado final.
  
 ## Variables enviadas con la página de confirmación {#variables-sent-with-the-confirmation-page}
 
-<details open>
+<details>
 <summary>Variables en la página de confirmación</summary>
 <br>
 <div class="variables"></div>
@@ -45,7 +46,7 @@ En la página de confirmación, debes capturar los datos que desear guardar en l
 | extra2 | Alphanumeric | 255 | Campo adicional para enviar información relacionada con la compra. |
 | payment_method | Numérico | — | Identificador interno utilizado por los medios de pago.<br>[Ver los códigos de los medios de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
 | payment_method_type | Numérico | — | Medio de pago utilizado. |
-| installments_number | Numérico | — | Number of installments in which the credit card payment was deferred. |
+| installments_number | Numérico | — | Número de cuotas en las cuales se difirió el pago con tarjeta crédito. |
 | value | Numérico | 14,2 | Valor total de la transacción. Puede contener dos dígitos decimales. Por ejemplo 10000.00 o 10000.|
 | tax | Numérico | 14,2 | Valor del IVA de la transacción, si no se envió IVA, el sistema aplica el 19% automáticamente. Puede contener dos dígitos decimales. Por ejemplo 19000.00. En caso de que no tenga IVA, debe enviarse 0. |
 | additional_value | Numérico | 14,2 | 	Valor Adicional no comisionable. |
@@ -57,46 +58,46 @@ En la página de confirmación, debes capturar los datos que desear guardar en l
 | test | Booleano (true, false) | — | Variable para identificar si la operación fue en modo pruebas. |
 | description | Alfanumérico | 255 | Descripción de al venta. |
 | billing_address | Alfanumérico | 255 | Dirección de facturación. |
-| shipping_address | Alfanumérico | 50 | The delivery address for the merchandise. |
-| phone | Alfanumérico | 20 | The buyer’s residence phone. |
-| office_phone | Alfanumérico | 20 | The buyer’s daytime phone. |
-| account_number_ach | Alfanumérico | 36 | The transaction’s identifier. |
-| account_type_ach | Alfanumérico | 36 | The transaction’s identifier. |
-| administrative_fee | Decimal (#.00) | — | Value of the administrative fee |
-| administrative_fee_base | Decimal (#.00) | — | Base value of the administrative fee |
-| administrative_fee_tax | Decimal (#.00) | — | Tax value of the administrative fee |
-| airline_code | Alfanumérico | 4 | Airline code |
-| attempts | Numérico | — | Number of attempts of sending the confirmation. |
-| authorization_code | Alfanumérico | 12 | Sale’s authorization code |
-| bank_id | Alfanumérico | 255 | Bank identifier |
-| billing_city | Alfanumérico | 255 | The billing city. |
-| billing_country | Alfanumérico | 2 | The ISO code of the country associated with the billing address. |
-| commision_pol | Decimal (#.00) | — | Value of the commission. |
-| commision_pol_currency | Alfanumérico | 3 | Currency of the commission |
-| customer_number | Numérico | — | Customer number. |
-| date | Fecha (AAAA-MM-DD HH:mm:ss) | — | Fecha of the operation. |
-| error_code_bank | Alfanumérico | 255 | Error code of the bank. |
-| error_message_bank | Alfanumérico | 255 | Error message of the bank |
-| exchange_rate | Decimal (#.00) | — | Value of the exchange rate. |
-| ip | Alfanumérico | 39 | The IP address from which the transaction was made. |
-| nickname_buyer | Alfanumérico | 150 | Short name of the buyer. |
-| nickname_seller | Alfanumérico | 150 | Short name of the seller. |
-| payment_method_id | Numérico | — | Identifier of payment methods.<br>[See the codes of the payment methods]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
-| payment_request_state | Alfanumérico | 32 | Status of the payment request. |
+| shipping_address | Alfanumérico | 50 | Dirección de la mercancía. |
+| phone | Alfanumérico | 20 | Teléfono de residencia del comprador. |
+| office_phone | Alfanumérico | 20 | Teléfono diurno del comprador. |
+| account_number_ach | Alfanumérico | 36 | Identificador de la transacción. |
+| account_type_ach | Alfanumérico | 36 | Tipo de la transacción. |
+| administrative_fee | Decimal (#.00) | — | Valor de la tarifa administrativa. |
+| administrative_fee_base | Decimal (#.00) | — | Valor base de la tarifa administrativa. |
+| administrative_fee_tax | Decimal (#.00) | — | Valor del impuesto de la tarifa administrativa. |
+| airline_code | Alfanumérico | 4 | Código de la aerolínea. |
+| attempts | Numérico | — | Número de intentos de enviar la confirmación. |
+| authorization_code | Alfanumérico | 12 | Código de autorización de la venta. |
+| bank_id | Alfanumérico | 255 | Identificador del banco. |
+| billing_city | Alfanumérico | 255 | Ciudad de facturación. |
+| billing_country | Alfanumérico | 2 | Código ISO del país asociado a la dirección de facturación. |
+| commision_pol | Decimal (#.00) | — | Valor de la comisión. |
+| commision_pol_currency | Alfanumérico | 3 | Moneda  de la comisión. |
+| customer_number | Numérico | — | Número personalizado. |
+| date | Fecha (AAAA-MM-DD HH:mm:ss) | — | Fecha de la operación. |
+| error_code_bank | Alfanumérico | 255 | Código de error del banco. |
+| error_message_bank | Alfanumérico | 255 | Mensaje de error del banco. |
+| exchange_rate | Decimal (#.00) | — | Valor de la tasa de cambio. |
+| ip | Alfanumérico | 39 | Dirección IP desde donde se realizó la transacción. |
+| nickname_buyer | Alfanumérico | 150 | Nombre corto del comprador. |
+| nickname_seller | Alfanumérico | 150 | Nombre corto del vendedor. |
+| payment_method_id | Numérico | — | Identificador del medio de pago.<br>[Ver los códigos de los medios de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
+| payment_request_state | Alfanumérico | 32 | Estado de la solicitud de pago. |
 | pseReference1 | Alfanumérico | 255 | Referencia no. 1 para pagos PSE. |
 | pseReference2 | Alfanumérico | 255 | Referencia no. 2 para pagos PSE. |
 | pseReference3 | Alfanumérico | 255 | Referencia no. 3 para pagos PSE. |
-| response_message_pol | Alfanumérico | 255 | PayU’s response message.<br>[See the response messages in the given column]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
-| shipping_city | Alfanumérico | 50 | The city where the merchandise is delivered. |
-| shipping_country | Alfanumérico | 2 | The ISO code associated with the country where the merchandise is delivered. |
-| transaction_bank_id | Alfanumérico | 255 | ID of the transaction in the bank's system. |
-| transaction_id | Alfanumérico | 36 | Transaction identifier. |
-| payment_method_name | Alfa Numérico | 255 | Payment method used in the payment, for example VISA. |
+| response_message_pol | Alfanumérico | 255 | Mensaje de respuesta de PayU.<br>[Ver los mensajes de respuesta en la columna correspondiente]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
+| shipping_city | Alfanumérico | 50 | Ciudad donde se entrega la mercancía. |
+| shipping_country | Alfanumérico | 2 | Código ISO del país donde se entrega la mercancía. |
+| transaction_bank_id | Alfanumérico | 255 | Identificador de la transacción en el sistema del banco. |
+| transaction_id | Alfanumérico | 36 | Identificador de la transacción. |
+| payment_method_name | Alfa Numérico | 255 | Medio de pago utilizado, por ejemplo VISA. |
 
 </details>
 
 ## Ejemplo POST enviado a página de confirmación {#post-example-send-to-the-confirmation-page}
-The following is a basic example of the variables sent to the response page via POST:
+El siguiente es un ejemplo básico de las variables enviadas a la página de confirmación vía POST:
 
 ```HTML
 response_code_pol=5
@@ -159,24 +160,24 @@ pse_reference2=
 ```
 
 ## Validación de la firma {#signature-validation}
-The signature validation allows you to check the data integrity, you must generate the signature with the information you find in the confirmation page and compare it with the information from the signature parameter.
+La validación de la firma te permite comprobar la integridad de los datos, debes generar la firma con los datos que encuentras en la página de confirmación y compararla con la información del parámetro signature.
 
-To validate the signature in the confirmation page, you should consider:
+Para validar la firma en la página de respuesta debes tener en cuenta:
 
-* If the second decimal is zero, the `new_value` to generate the signature must have one decimal. Example (`150.00` -> `150.0`).
-* If the second decimal is not zero, the `new_value` to generate the signature must keep the same two decimals. Example (`150.26` -> `150.26`).
-* Get the parameters to generate the signature (`merchant_id`, `reference_sale`, `value`, `currency`, and `state_pol`) from the confirmation page, do not get them from your database. 
-* You must store your ApiKey safely.
-* Create the signature as follows:
+* Si el segundo decimal es cero, el valor de `new_value` para generar la firma debe tener un decimal. Ejemplo (`150.00` -> `150.0`).
+* Si el segundo decimal no es cero, el valor de `new_value` para generar la firma debe mantener los dos decimales. Ejemplo (`150.26` -> `150.26`).
+* Obten los parámetros para generar la firma (`merchantId`, `referenceCode`, `TX_VALUE`, `currency` y `transactionState`) de la página de respuesta, no de la base de datos. 
+* Debes guardar tu ApiKey de forma segura.
+* Crea la firma así:
 
 ```HTML
 "ApiKey~merchant_id~reference_sale~new_value~currency~state_pol"
 ```
 <br>
 
-Example
+Ejemplo
 
-**With one decimal**
+**Con un decimal**
 
 ```
 Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
@@ -193,7 +194,7 @@ MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU04~150.0~USD~6) = b607a2c2fa100e09
 sign = b607a2c2fa100e0947b206d41864fb86
 ```
 
-**With two decimals**
+**Con dos decimales**
 
 ```
 Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
@@ -218,7 +219,7 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
 <div>
 <form method="POST" id="signature_form_confirmation_page" >
     <table>
-        <span class="blue-text-13"><b>Algorithm: &nbsp;</b></span>
+        <span class="blue-text-13"><b>Algoritmo: &nbsp;</b></span>
         <select id = "signature_algorithm_confirmation_page" class="calc_selector form_control">
             <option  value="md5">MD5</option>
             <option  value="sha1">SHA1</option>
@@ -229,8 +230,8 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
         <span class="calc_text">&nbsp;(</span>
         <input class="form_control" type="text"  id ="signature_apikey_confirmation_page" name = "signature_apikey_confirmation_page" placeholder="ApiKey" maxlength="26"> ~
         <input class="form_control number" type="text"  id ="signature_merchanId_confirmation_page" name = "signature_merchanId_confirmation_page" placeholder="MerchantId" maxlength="7"> ~
-        <input class="form_control" type="text"  id ="signature_referenceCode_confirmation_page" name = "signature_referenceCode_confirmation_page" placeholder="Reference" maxlength="255"> ~
-        <input class="form_control  number" type="text" id ="signature_amount_confirmation_page" name = "signature_amount_confirmation_page" placeholder="Amount" maxlength="14"> ~
+        <input class="form_control" type="text"  id ="signature_referenceCode_confirmation_page" name = "signature_referenceCode_confirmation_page" placeholder="Referencia" maxlength="255"> ~
+        <input class="form_control  number" type="text" id ="signature_amount_confirmation_page" name = "signature_amount_confirmation_page" placeholder="Monto" maxlength="14"> ~
         <select id = "signature_currency_confirmation_page" class="calc_selector form_control" >
             <option  value="USD">USD</option>
             <option  value="COP">COP</option>
@@ -241,9 +242,9 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
             <option  value="CLP">CLP</option>
         </select> ~
         <select id = "signature_state_pol_confirmation_page" class="calc_selector form_control" >
-            <option  value="4">4 (Approved)</option>
-            <option  value="6">6 (Declined)</option>
-            <option  value="5">5 (Expired)</option>
+            <option  value="4">4 (Aprobada)</option>
+            <option  value="6">6 (Rechazada)</option>
+            <option  value="5">5 (Expirada)</option>
         </select>
         <span class="calc_text">)</span>
         <br>
@@ -253,8 +254,8 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
     </table>
     <br>
     <table width="50%"  border="0" cellspacing="2" cellpadding="2">
-        <input type="button" name="signature_generate_confirmation_page" id="signature_generate_confirmation_page" value="Generate signature" >
-        <input type="button" name="signature_generate_again_confirmation_page" id="signature_generate_again_confirmation_page" value="Generate new signature" >
+        <input type="button" name="signature_generate_confirmation_page" id="signature_generate_confirmation_page" value="Generar firma" >
+        <input type="button" name="signature_generate_again_confirmation_page" id="signature_generate_again_confirmation_page" value="Generar nueva firma" >
     </table>
 </form>
 </div>
@@ -265,11 +266,11 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
 Esta calculadora te permite generar la firma utilizando alguno de los métodos de cifrado disponibles.
 
 ## Reintentos de pago {#payment-retries}
-When a transaction is rejected, the payer has the option to retry the payment using the same payment method or another. Keep in mind that for each attempt, PayU makes the call to the confirmation page with the corresponding transaction status.
+Cuando se rechaza una transacción, el pagador tiene la opción de reintentar el pago utilizando el mismo u otro medio de pago. Ten en cuenta que por cada intento, PayU hace el llamado de la página de confirmación con su estado de transacción correspondiente.
 
-Each of these calls are made with the same payment reference (`reference_sale`), the same order identifier (`reference_pol`) but with different transaction identifier (`transaction_id`). Therefore, you can receive several calls to the confirmation page for the same sale.
+Cada uno de estos llamados se hacen con la misma referencia de pago (`reference_sale`), el mismo identificador de la orden (`reference_pol`) pero diferente identificador de transacción (`transaction_id`). Por lo tanto, puedes recibir varios llamados a la página de confirmación para la misma venta.
 
-Below, you find an example of a rejected attempt and its approved retry:
+A continuación, encontrarás un ejemplo e un intento rechazado y su reintento aprobado:
 
 ````
 reference_sale=2015-05-27 13:04:37
@@ -283,4 +284,4 @@ transaction_id=01cfdce8-68d5-4a4c-aabf-d89370a0b92f
 state_pol=4
 ````
 
-Note that if one of those calls to the confirmation page indicates that a payment reference (`reference_sale`) was approved, you can be certain that you will not receive any report to the same reference.
+Observa que si uno de los llamados a la página de confirmación indica que una referencia de pago (`reference_sale`) fue aprobada, puedes estar seguro de que no recibirás ningún reporte a la misma referencia.

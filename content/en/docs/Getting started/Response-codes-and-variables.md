@@ -347,10 +347,11 @@ Send the exact value displayed in the `Code` column in the variable `transfers[n
 | `370`     | COLTEFINANCIERA S.A. - COMPANIA DE FINANCIAMIENTO |
 | `637`     | IRIS                                              |
 | `550`     | DECEVAL                                           |
-| `507`     | NEQUI                                             |
+| `551`     | DAVIPLATA                                         |
 | `683`     | DGCPTN                                            |
 | `685`     | DGCPTN-REGALIAS                                   |
 | `801`     | MOVII                                             |
+| `0551`    | DAVIPLATA                                         |
 | `1053`    | BANCO WWB                                         |
 | `1062`    | BANCO FALABELLA S.A.                              |
 | `1063`    | BANCO FINANDINA S.A.                              |
