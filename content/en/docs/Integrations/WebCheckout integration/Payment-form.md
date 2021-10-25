@@ -42,7 +42,7 @@ The following variables can be included in the Payment form.
 | tax | Number | 14,2 | Value of the VAT of the transaction.<br>In Colombia, if no VAT is sent, the system applies 19% automatically. It can contain two decimal digits, for example 19000.00.<br>If the product or service is VAT exempt, assign `0` to this variable. | ✓ |
 | taxReturnBase | Number | 14,2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0` to this variable. | ✓ |
 | signature | Alphanumeric | 255 | Digital signature created for each transaction. Refer to [Signature for Payment form]({{< ref "payment-form.md#signature-for-payment-form" >}}) to learn how to generate it. | ✓ |
-| currency | Alpha numeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in Colombian pesos at the representative rate of the day.<br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ |
+| currency | Alphanumeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in Colombian pesos at the representative rate of the day.<br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ |
 | buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the result of the transaction by e-mail. It is recommended to validate if this field has been provided in the form. | ✓ |
 | telephone | Alphanumeric | 50 | The buyer’s residence phone. | ✓ |
 | buyerFullName | Alphanumeric | 150 | The buyer’s full name. | ✓ |

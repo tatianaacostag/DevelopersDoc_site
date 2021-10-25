@@ -32,7 +32,7 @@ Before using Voids and Refunds API, take into account the following consideratio
 * When a refund is approved, the payer gets the money back in maximum 15 working days.
 
 ### Chile
-* The minimum time to send a void is three (3) hours after the authorization and the maximum is seven (7) days. If no void or capture is sent after this time, the transaction is auto-voided.
+* Due to network restrictions, void can be authorized within the first three hours after the authorization. If the void is not accepted or no capture is sent after seven (7) days, the transaction is auto-voided.
 * The minimum time to send a refund is 10 minutes after the approval and the maximum is 90 days.
 * Refunds for [transactions processed by WebPay Plus]({{< ref "Payments-API-chile.md#submit-transaction-with-debit-and-prepaid-cards" >}}) are not supported.
 * For transactions prepaid cards not processed by WebPay Plus, Refunds requested during the first hour after their charge can be approved or rejected by the financial network. After the first hour, all the refund for transactions with prepaid cards are rejected.
