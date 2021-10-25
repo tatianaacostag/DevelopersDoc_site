@@ -155,7 +155,7 @@ weight: 50
 | 5 (Expirada) | EXPIRED_TRANSACTION | 20 | Transacción expirada |
 
 ## Códigos de los medios de pago {#codes-of-the-payment-methods}
-Los siguientes códigos aplican para `payment_method_type` (Página de confirmación), `payment_method_id` (CPágina de confirmación) y `polPaymentMethodType` (Página de respuesta).
+Los siguientes códigos aplican para `payment_method_type` (Página de confirmación), `payment_method_id` (Página de confirmación) y `polPaymentMethodType` (Página de respuesta).
 
 | Código | lapPaymentMethodType<br>(Página de respuesta) | Descripción                   |
 |:------:|-----------------------------------------------|-------------------------------|

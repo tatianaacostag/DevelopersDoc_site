@@ -8,8 +8,14 @@ description: >
 weight: 10
 tags: ["subtopic"]
 ---
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+<script src="/js/signature-generator/md5.js"></script>
+<script src="/js/signature-generator/sha1.js"></script>
+<script src="/js/signature-generator/sha256.js"></script>
+<script src="/js/signature-generator/signature-generator.js"></script>
 
-In this topic, you find how to send data from one transaction to the PayU payment gateway. To do so, You must generate an HTML form with the transaction data using the HTTP POST method and pointing it to our system.
+En este artículo, encuentras cómo enviar la información de una transacción a la pasarela de pagos de PayU. Para esto, debes generar un formulario HTML con los datos de la transacción utilizando el método HTTP POST y apuntando a nuestro sistema.
 
 ## Consideraciones {#considerations}
 * Asegúrate de tener los valores correctos de las variables `merchantId`, `accountId` y `apiKey`.
@@ -35,7 +41,7 @@ Puedes incluir las siguientes variables en el Formulario de pago.
 | description | Alfanumérico | 255 | Descripción de la venta. | ✓ |
 | tax | Numérico | 14,2 | Valor del impuesto al valor agregado de la transacción.<br>En Colombia, si no se envía el IVA. el sistema aplica automáticamente el 19%. Puede tener dos dígitos decimales, por ejemplo 19000.00.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne `0` a esta variable. | ✓ |
 | signature | Alfanumérico | 255 | Firma digital creada por cada transacción. Consulta [Firma para el formulario de pago]({{< ref "payment-form.md#signature-for-payment-form" >}}) para aprender a generarla. | ✓ |
-| currency | Alpha numeric | 3 | Moneda respectiva en la que se hace el pago. El proceso de conciliación se realiza en pesos colombianos a la tasa representativa del día..<br>[Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ |
+| currency | Alfanumérico | 3 | Moneda respectiva en la que se hace el pago. El proceso de conciliación se realiza en pesos colombianos a la tasa representativa del día.<br>[Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ |
 | buyerEmail | Alfanumérico | 255 | Campo que contiene el correo electrónico del comprador para notificar el resultado de la transacción por medio de correo electrónico. Se recomienda validar que se haya ingresado este campo en el formulario. | ✓ |
 | telephone | Alfanumérico | 50 | Teléfono de residencia del comprador. | ✓ |
 | buyerFullName | Alfanumérico | 150 | Nombre completo del comprador. | ✓ |
@@ -171,6 +177,50 @@ Encriptada utilizando `SHA256`:
 
 ### Compara tu firma {#compare-your-signature}
 
-{{< signaturegenerator/paymentform_es >}}
+<!-- Generador de firmas pagina de respuesta -->
+<div id="blue-box">
+<span class="grey-text-13">
+<div id = "div_generador" >
 
-Esta calculadora te permite generar la firma utilizando alguno de los métodos de encriptación disponibles.
+<form method="POST" id="signature_form" >
+    <table>
+        <span class="blue-text-13"><b>Algoritmo: &nbsp;</b></span>
+        <select id = "signature_algorithm" class="calc_selector form_control">
+            <option  value="md5">MD5</option>
+            <option  value="sha1">SHA1</option>
+            <option  value="sha256">SHA256</option>
+        </select>
+        <br>
+        <br>
+        <span class="calc_text">&nbsp;(</span>
+        <input class="form_control" type="text"  id ="signature_apikey" name = "signature_apikey" placeholder="ApiKey" maxlength="26"> ~
+        <input class="form_control number" type="text"  id ="signature_merchanId" name = "signature_merchanId" placeholder="MerchantId" maxlength="7"> ~
+        <input class="form_control" type="text"  id ="signature_referenceCode" name = "signature_referenceCode" placeholder="Referencia" maxlength="255"> ~
+        <input class="form_control  number" type="text" id ="signature_amount" name = "signature_amount" placeholder="Monto" maxlength="14"> ~
+        <select id = "signature_currency" class="calc_selector form_control" >
+            <option  value="USD">USD</option>
+            <option  value="COP">COP</option>
+            <option  value="MXN">MXN</option>
+            <option  value="ARS">ARS</option>
+            <option  value="PEN">PEN</option>
+            <option  value="BRL">BRL</option>
+            <option  value="CLP">CLP</option>
+        </select>
+        <span class="calc_text">)</span>
+        <br>
+        <br>
+        <br>
+        <span class="blue-text-13"><b>Resultado:&nbsp;</b></span><input class="form_control" id ="signature_generated" name = "signature_generated" value = ""  readonly />
+    </table>
+    <br>
+    <table width="50%"  border="0" cellspacing="2" cellpadding="2">
+        <input type="button" name="signature_generate" id="signature_generate" value="Generar firma" >
+        <input type="button" name="signature_generate_again" id="signature_generate_again" value="Generar nueva firma" >
+    </table>
+</form>
+</div>
+</span>
+</div>
+<!-- Fin del generador de firmas pagina de respuesta-->
+
+Esta calculadora te permite generar la firma utilizando alguno de los métodos de cifrado disponibles.
