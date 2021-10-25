@@ -21,6 +21,7 @@ In the confirmation page, you must capture the data you want to store in the dat
 * If your site is restricted with _basic access authentication_ or similar, disable it for the confirmation url.
 * The IP associated with the confirmation URL should be public; do not use URL accessible from intranet or localhost.
 * If you're using HTTPS, you must have a valid certificate.
+* The format of your confirmation page must be `x-www-form-urlencoded`.
 * Do not use security certificates elliptic curve or those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` on your confirmation page.
 * PayU assumes that the confirmation page is reported correctly when receives the HTTP 200 code; otherwise, PayU makes a maximum of nine (9) attempts to send the confirmation page to your system. If after these attempts, HTTP 200 code is not received, PayU sends an e-mail alert.
 * PayU reports the confirmation page once the transaction has a final status for example, when approved, rejected or expired. If a transaction is in progress (waiting for payment or analysis), PayU does not report until the transaction has a final status.
