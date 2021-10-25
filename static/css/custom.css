@@ -17,3 +17,7 @@ img[alt=Concepts] {
 #signature_apikey_confirmation_page {
     width: 27% !important;
 }
+
+.calc_selector {
+    background-position: 100% !important;
+} 
