@@ -3,7 +3,7 @@ title: "Payouts API"
 linkTitle: "Payouts API"
 date: 2021-08-09T14:58:45-05:00
 description: >
-  This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
+  This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 weight: 60
 tags: ["subtopic"]
 draft: true
@@ -76,7 +76,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?apiKey={apiKey}&a
 {{< /tabs >}}
 
 ## Request payout
-This method lets you create one or multiple Payouts request for third parties which can be new or existing. As soon as you create the request, this moves along the [available states]({{< ref "payouts.html#payout-states" >}}) for Payouts.
+This method lets you create one or multiple Payouts request for payees which can be new or existing. As soon as you create the request, this moves along the [available states]({{< ref "payouts.html#payout-states" >}}) for Payouts.
 
 {{% alert title="Note" color="info"%}}
 
@@ -113,19 +113,19 @@ Both parameters can be found in your PayU module.
 |---|---|---|---|:-:|
 | transfers | List | | List of the transfers you want to create. | Yes |
 | transfers[n] > value | Numeric | | Amount to be transfer from yor funds. The currency of this amount is the one configured in your PayU account | Yes |
-| transfers[n] > bankAccount | | | This object has the information of the bank account of the third party that will receive the payment.<br>The third party can be existing or new. | Yes |
-| transfers[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party. | No | 
-| transfers[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the third party is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the third party is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > bankCode | Numeric | Min:3 Max:4 | Code of the bank who issued the account of the third party. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | No |
-| transfers[n] > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account or `Nequi`<sup>\*</sup>.<br>This parameter is mandatory when you are creating a payout request for a new third party.<br><sup>\*</sup>_Nequi is available in Colombia_. | No |
-| transfers[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party. If the `documentType` is `NIT`, send the check digit.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. Format `YYYY/MM/DD`. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. Format `YYYY/MM/DD`. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new third party. | No |
-| transfers[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. Set `ACTIVE` when you are creating a new third party. | No |
+| transfers[n] > bankAccount | | | This object has the information of the bank account of the payee that will receive the payment.<br>The payee can be existing or new. | Yes |
+| transfers[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing payee. | No | 
+| transfers[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your payee. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the payee is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the payee is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the payee is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the payee.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > bankCode | Numeric | Min:3 Max:4 | Code of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | No |
+| transfers[n] > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account or `Nequi`<sup>\*</sup>.<br>This parameter is mandatory when you are creating a payout request for a new payee.<br><sup>\*</sup>_Nequi is available in Colombia_. | No |
+| transfers[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the payee. If the `documentType` is `NIT`, send the check digit.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the payee. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the payee. Format `YYYY/MM/DD`. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > fullName | Alphanumeric |  | Full name of the payee.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the payee. Format `YYYY/MM/DD`. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. Set `ACTIVE` when you are creating a new payee. | No |
 | transfers[n] > bankAccount > merchantId | Numeric | | Identifier of your commerce in PayU. | No |
 | transfers[n] > description | Alphanumeric | | Additional information of the payout. | No |
 <!--additionalData-->
@@ -148,17 +148,17 @@ Both parameters can be found in your PayU module.
 | successfulItems[n] > bankAccount | | | This object has the information of the bank account that will receive the payment. |
 | successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. For successful registrations, the value is ´SUCCESS´. |
 | successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
-| successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the third party. |
-| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the third party. |
-| successfulItems[n] > bankAccount > bankCode | Numeric | Min:3 Max:4 | Code of the bank who issued the account of the third party. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). |
-| successfulItems[n] > bankAccount > bankName | Alphanumeric |  | Bank name of the third party. |
-| successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the third party. |
+| successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the payee. |
+| successfulItems[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the payee. |
+| successfulItems[n] > bankAccount > bankCode | Numeric | Min:3 Max:4 | Code of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). |
+| successfulItems[n] > bankAccount > bankName | Alphanumeric |  | Bank name of the payee. |
+| successfulItems[n] > bankAccount > accountType | Alphanumeric | 2 | Account type of the of the payee. |
 | successfulItems[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account. |
-| successfulItems[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the third party. |
-| successfulItems[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the third party. |
-| successfulItems[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the third party. |
-| successfulItems[n] > bankAccount > fullName | Alphanumeric |  | Full name of the third party. |
-| successfulItems[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the third party. |
+| successfulItems[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the payee. |
+| successfulItems[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the payee. |
+| successfulItems[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the payee. |
+| successfulItems[n] > bankAccount > fullName | Alphanumeric |  | Full name of the payee. |
+| successfulItems[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the payee. |
 | successfulItems[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. |
 | successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
 | failedItems | List |  | List of items that failed during processing. |
@@ -172,8 +172,8 @@ Both parameters can be found in your PayU module.
 <br>
 
 The following request example sends three payouts: 
-* The first and the second payout are requested for unregistered third parties. The second one fails because the parameter `bankCode` has an invalid value.
-* The third payout is for a registered third party.
+* The first and the second payout are requested for unregistered payees. The second one fails because the parameter `bankCode` has an invalid value.
+* The third payout is for a registered payee.
 
 {{< tabs tabTotal="1" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -324,9 +324,9 @@ Response body:
 {{< /tabs >}}
 
 ## Update payout request
-This method lets you request the update of the bank information of a third party on a running payout request. For example, this method is useful to change the bank account number of the third party.
+This method lets you request the update of the bank information of a payee on a running payout request. For example, this method is useful to change the bank account number of the payee.
 
-You can only request the update of the information of a third party for when the Payout status is in `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
+You can only request the update of the information of a payee for when the Payout status is in `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
 
 {{% alert title="Note" color="info"%}}
 
@@ -346,7 +346,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-accoun
 Where:
 * The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
 * The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
-* The value for the variable `{bankAccountId}` is the third party Id returned by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
+* The value for the variable `{bankAccountId}` is the payee Id returned by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
 
 ### Variables for request
 
@@ -355,7 +355,7 @@ Where:
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes |
-| accountNumber | Alphanumeric | Max:17 | Bank account number of the third party. | Yes |
+| accountNumber | Alphanumeric | Max:17 | Bank account number of the payee. | Yes |
 <!--additionalData-->
 
 The following are the request and response bodies for this method.
@@ -473,8 +473,8 @@ This method lets you create or update a WebHook that allows you to configure a U
 
 You can configure a WebHook for the following events:
 * **Transfer creation**: sends a notification when a payout request is created. To enable these notifications, include the `TRANSFER_CREATION` value in the list parameter `enabledEvents`.
-* **Transfer update**: sends a notification when the sanction screening validation rejects the third party. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
-* **Validation result**: sends a notification when third party has approved the sanction screening validation and when the transfer has been rejected by the bank, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
+* **Transfer update**: sends a notification when the sanction screening validation rejects the payee. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
+* **Validation result**: sends a notification when payee has approved the sanction screening validation and when the transfer has been rejected by the bank, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
 
 [Click here to know the variables in the notifications]({{< ref "payouts.md#variables-in-the-notifications" >}}).
 

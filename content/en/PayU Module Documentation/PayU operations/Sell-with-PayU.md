@@ -24,7 +24,7 @@ There are two options to create payments using the PayU Module:
 {{< overview/paymentrequests >}}
 
 {{% alert title="Note" color="info"%}}
-Review [Integrations](/docs/integrations.html) if you already have a web page and you want to integrate with the PayU services.
+Review [Integrations]({{< ref "integrations" >}}) if you already have a web page and you want to integrate with the PayU services.
 {{% /alert %}}
 
 

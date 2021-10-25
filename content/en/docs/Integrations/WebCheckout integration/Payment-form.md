@@ -8,6 +8,12 @@ description: >
 weight: 10
 tags: ["subtopic"]
 ---
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+<script src="/js/signature-generator/md5.js"></script>
+<script src="/js/signature-generator/sha1.js"></script>
+<script src="/js/signature-generator/sha256.js"></script>
+<script src="/js/signature-generator/signature-generator.js"></script>
 
 In this topic, you find how to send data from one transaction to the PayU payment gateway. To do so, You must generate an HTML form with the transaction data using the HTTP POST method and pointing it to our system.
 
@@ -172,6 +178,50 @@ Encrypted using `SHA256`:
 
 ### Compare your signature
 
-{{< signaturegenerator/paymentform >}}
+<!-- Signature generator -->
+<div id="blue-box">
+<span class="grey-text-13">
+<div id = "div_generador" >
+
+<form method="POST" id="signature_form" >
+    <table>
+        <span class="blue-text-13"><b>Algorithm: &nbsp;</b></span>
+        <select id = "signature_algorithm" class="calc_selector form_control">
+            <option  value="md5">MD5</option>
+            <option  value="sha1">SHA1</option>
+            <option  value="sha256">SHA256</option>
+        </select>
+        <br>
+        <br>
+        <span class="calc_text">&nbsp;(</span>
+        <input class="form_control" type="text"  id ="signature_apikey" name = "signature_apikey" placeholder="ApiKey" maxlength="26"> ~
+        <input class="form_control number" type="text"  id ="signature_merchanId" name = "signature_merchanId" placeholder="MerchantId" maxlength="7"> ~
+        <input class="form_control" type="text"  id ="signature_referenceCode" name = "signature_referenceCode" placeholder="Reference" maxlength="255"> ~
+        <input class="form_control  number" type="text" id ="signature_amount" name = "signature_amount" placeholder="Amount" maxlength="14"> ~
+        <select id = "signature_currency" class="calc_selector form_control" >
+            <option  value="USD">USD</option>
+            <option  value="COP">COP</option>
+            <option  value="MXN">MXN</option>
+            <option  value="ARS">ARS</option>
+            <option  value="PEN">PEN</option>
+            <option  value="BRL">BRL</option>
+            <option  value="CLP">CLP</option>
+        </select>
+        <span class="calc_text">)</span>
+        <br>
+        <br>
+        <br>
+        <span class="blue-text-13"><b>Result:&nbsp;</b></span><input class="form_control" id ="signature_generated" name = "signature_generated" value = ""  readonly />
+    </table>
+    <br>
+    <table width="50%"  border="0" cellspacing="2" cellpadding="2">
+        <input type="button" name="signature_generate" id="signature_generate" value="Generate signature" >
+        <input type="button" name="signature_generate_again" id="signature_generate_again" value="Generate new signature" >
+    </table>
+</form>
+</div>
+</span>
+</div>
+<!-- End of signature generator -->
 
 This calculator lets you generate the signature using any of the available encryption methods.
