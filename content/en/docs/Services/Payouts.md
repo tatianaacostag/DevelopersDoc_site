@@ -36,7 +36,7 @@ You only need to provide the amount to pay along with the information of each pa
 <img src="/assets/PushPayments/PushPaymentsFlow.png" alt="Concepts"/><br>
 
 1. **Payout request**: you send an API request with the list of payees you want to send funds to, along with the amount for each transaction and their payment information. 
-2. **Payee validation**: payees are validated through our solution (sanction screening process) and payouts are scheduled. 
+2. **Payee validation**: payees are validated through our solution (Sanction Screening process) and payouts are scheduled. 
 3. **Funds deduction**: each payout along with the processing fee are deducted from your PayU virtual account.
 4. **Confirmation process**: The bank processes the payment according to [ACH process]{{< ref "#transaction-processing" >}}. You can customize notifications to receive changes in the payment status. 
 
