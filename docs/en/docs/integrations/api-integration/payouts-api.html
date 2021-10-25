@@ -22,21 +22,21 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Payouts API | PayU Latam</title><meta property="og:title" content="Payouts API" />
-<meta property="og:description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
+<meta property="og:description" content="This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payouts-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-08-09T14:58:45-05:00" />
-<meta property="article:modified_time" content="2021-10-22T09:51:36-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-10-25T09:32:47-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payouts API">
-<meta itemprop="description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
+<meta itemprop="description" content="This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 "><meta itemprop="datePublished" content="2021-08-09T14:58:45-05:00" />
-<meta itemprop="dateModified" content="2021-10-22T09:51:36-05:00" />
-<meta itemprop="wordCount" content="3104">
+<meta itemprop="dateModified" content="2021-10-25T09:32:47-05:00" />
+<meta itemprop="wordCount" content="3060">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts API"/>
-<meta name="twitter:description" content="This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
+<meta name="twitter:description" content="This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 "/>
 
 
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.743531e27a218c0851b0abffe0ba0a42beb05422b999e198ae8477511302108a997c816b509a423e6ccef058ac5d3324c9100a830579fc724c2b74c9465dfb31.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.42c9deded547fb20d973ed8152266d14057dbd05d0433b6a54df000a4b362734109f34ac3aa90adbfc531adfb611feba15b3c0e7029034fef7f0b799ba51d2e1.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -829,7 +829,7 @@
             
 <div class="td-content">
 	<h1>Payouts API</h1>
-    <div class="lead">This feature allows you to create multiple and secure payments for third parties (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.</div>
+    <div class="lead">This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.</div>
 	       
 	<p>For introductory terms, how to request this service and more information, refer to <a href="../../../../en/docs/services/payouts.html">Payouts</a>.</p>
 <h2 id="configuring-the-authentication">Configuring the authentication</h2>
@@ -946,7 +946,7 @@
 
 </div>
 <h2 id="request-payout">Request payout</h2>
-<p>This method lets you create one or multiple Payouts request for third parties which can be new or existing. As soon as you create the request, this moves along the <a href="../../../../en/docs/services/payouts.html#payout-states">available states</a> for Payouts.</p>
+<p>This method lets you create one or multiple Payouts request for payees which can be new or existing. As soon as you create the request, this moves along the <a href="../../../../en/docs/services/payouts.html#payout-states">available states</a> for Payouts.</p>
 
 
 <div class="alert alert-info" role="alert">
@@ -1016,91 +1016,91 @@ You need to include two headers to use this method, refer to <a href="../../../.
 <td>transfers[n] &gt; bankAccount</td>
 <td></td>
 <td></td>
-<td>This object has the information of the bank account of the third party that will receive the payment.<br>The third party can be existing or new.</td>
+<td>This object has the information of the bank account of the payee that will receive the payment.<br>The payee can be existing or new.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; id</td>
 <td>Alphanumeric</td>
 <td>36</td>
-<td>Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing third party.</td>
+<td>Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; supplierType</td>
 <td>Alphanumeric</td>
 <td>Min:11 Max:16</td>
-<td>Relationship type between you and your third party. You can choose one of the following values: <ul style="margin-bottom: initial;"><li><code>SUBMERCHANT</code>: select this relation if the third party is a related merchant.</li><li><code>RELATED_PROVIDER</code>: select this relation if the third party is a provider</li><li><code>RELATED_THIRD_PARTY</code>: select this type if the third party is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
+<td>Relationship type between you and your payee. You can choose one of the following values: <ul style="margin-bottom: initial;"><li><code>SUBMERCHANT</code>: select this relation if the payee is a related merchant.</li><li><code>RELATED_PROVIDER</code>: select this relation if the payee is a provider</li><li><code>RELATED_THIRD_PARTY</code>: select this type if the payee is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; accountNumber</td>
 <td>Alphanumeric</td>
 <td>Max:17</td>
-<td>Bank account number of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
+<td>Bank account number of the payee.<br>This parameter is mandatory when you are creating a payout request for a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; bankCode</td>
 <td>Numeric</td>
 <td>Min:3 Max:4</td>
-<td>Code of the bank who issued the account of the third party. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#banks-for-payouts">See Bank codes</a>.</td>
+<td>Code of the bank who issued the account of the payee. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#banks-for-payouts">See Bank codes</a>.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; accountType</td>
 <td>Alphanumeric</td>
 <td>2</td>
-<td>Set <code>CC</code> for Current account and <code>CA</code> for Saving account or <code>Nequi</code><sup>*</sup>.<br>This parameter is mandatory when you are creating a payout request for a new third party.<br><sup>*</sup><em>Nequi is available in Colombia</em>.</td>
+<td>Set <code>CC</code> for Current account and <code>CA</code> for Saving account or <code>Nequi</code><sup>*</sup>.<br>This parameter is mandatory when you are creating a payout request for a new payee.<br><sup>*</sup><em>Nequi is available in Colombia</em>.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; country</td>
 <td>Alphanumeric</td>
 <td>2</td>
-<td>Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
+<td>Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; documentNumber</td>
 <td>Numeric</td>
 <td>50</td>
-<td>Identification number of the third party. If the <code>documentType</code> is <code>NIT</code>, send the check digit.<br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
+<td>Identification number of the payee. If the <code>documentType</code> is <code>NIT</code>, send the check digit.<br>This parameter is mandatory when you are creating a payout request for a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; documentType</td>
 <td>Alphanumeric</td>
 <td>2</td>
-<td>Identification type of the third party. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#document-types">See Document types</a>.<br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
+<td>Identification type of the payee. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#document-types">See Document types</a>.<br>This parameter is mandatory when you are creating a payout request for a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; expeditionDate</td>
 <td>Alphanumeric</td>
 <td>10</td>
-<td>Expedition date of the identity document of the third party. Format <code>YYYY/MM/DD</code>. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
+<td>Expedition date of the identity document of the payee. Format <code>YYYY/MM/DD</code>. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; fullName</td>
 <td>Alphanumeric</td>
 <td></td>
-<td>Full name of the third party.<br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
+<td>Full name of the payee.<br>This parameter is mandatory when you are creating a payout request for a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; birthDate</td>
 <td>Alphanumeric</td>
 <td>10</td>
-<td>Birth date of the third party. Format <code>YYYY/MM/DD</code>. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new third party.</td>
+<td>Birth date of the payee. Format <code>YYYY/MM/DD</code>. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transfers[n] &gt; bankAccount &gt; state</td>
 <td>Alphanumeric</td>
 <td></td>
-<td>State of the Bank account. Set <code>ACTIVE</code> when you are creating a new third party.</td>
+<td>State of the Bank account. Set <code>ACTIVE</code> when you are creating a new payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
@@ -1193,31 +1193,31 @@ You need to include two headers to use this method, refer to <a href="../../../.
 <td>successfulItems[n] &gt; bankAccount &gt; supplierType</td>
 <td>Alphanumeric</td>
 <td>Min:11 Max:16</td>
-<td>Relationship type selected for the third party.</td>
+<td>Relationship type selected for the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; accountNumber</td>
 <td>Alphanumeric</td>
 <td>Max:17</td>
-<td>Bank account number of the third party.</td>
+<td>Bank account number of the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; bankCode</td>
 <td>Numeric</td>
 <td>Min:3 Max:4</td>
-<td>Code of the bank who issued the account of the third party. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#banks-for-payouts">See Bank codes</a>.</td>
+<td>Code of the bank who issued the account of the payee. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#banks-for-payouts">See Bank codes</a>.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; bankName</td>
 <td>Alphanumeric</td>
 <td></td>
-<td>Bank name of the third party.</td>
+<td>Bank name of the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; accountType</td>
 <td>Alphanumeric</td>
 <td>2</td>
-<td>Account type of the of the third party.</td>
+<td>Account type of the of the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; country</td>
@@ -1229,31 +1229,31 @@ You need to include two headers to use this method, refer to <a href="../../../.
 <td>successfulItems[n] &gt; bankAccount &gt; documentNumber</td>
 <td>Numeric</td>
 <td>50</td>
-<td>Identification number of the third party.</td>
+<td>Identification number of the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; documentType</td>
 <td>Alphanumeric</td>
 <td>2</td>
-<td>Identification type of the third party.</td>
+<td>Identification type of the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; expeditionDate</td>
 <td>Alphanumeric</td>
 <td>10</td>
-<td>Expedition date of the identity document of the third party.</td>
+<td>Expedition date of the identity document of the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; fullName</td>
 <td>Alphanumeric</td>
 <td></td>
-<td>Full name of the third party.</td>
+<td>Full name of the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; birthDate</td>
 <td>Alphanumeric</td>
 <td>10</td>
-<td>Birth date of the third party.</td>
+<td>Birth date of the payee.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; state</td>
@@ -1309,8 +1309,8 @@ You need to include two headers to use this method, refer to <a href="../../../.
 <br>
 <p>The following request example sends three payouts:</p>
 <ul>
-<li>The first and the second payout are requested for unregistered third parties. The second one fails because the parameter <code>bankCode</code> has an invalid value.</li>
-<li>The third payout is for a registered third party.</li>
+<li>The first and the second payout are requested for unregistered payees. The second one fails because the parameter <code>bankCode</code> has an invalid value.</li>
+<li>The third payout is for a registered payee.</li>
 </ul>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -1497,8 +1497,8 @@ You need to include two headers to use this method, refer to <a href="../../../.
 
 </div>
 <h2 id="update-payout-request">Update payout request</h2>
-<p>This method lets you request the update of the bank information of a third party on a running payout request. For example, this method is useful to change the bank account number of the third party.</p>
-<p>You can only request the update of the information of a third party for when the Payout status is in <code>IN_PAYU_PROCESS</code> or earlier. Refer to <a href="../../../../en/docs/services/payouts.html#payout-states">Payout states</a> for more information.</p>
+<p>This method lets you request the update of the bank information of a payee on a running payout request. For example, this method is useful to change the bank account number of the payee.</p>
+<p>You can only request the update of the information of a payee for when the Payout status is in <code>IN_PAYU_PROCESS</code> or earlier. Refer to <a href="../../../../en/docs/services/payouts.html#payout-states">Payout states</a> for more information.</p>
 
 
 <div class="alert alert-info" role="alert">
@@ -1515,7 +1515,7 @@ You need to include two headers to use this method, refer to <a href="../../../.
 <ul>
 <li>The value for the variable <code>{env-api}</code> is <code>sandbox-web</code> for testing and <code>web</code> for production mode.</li>
 <li>The value for the variable <code>{merchantId}</code> is the identifier of your commerce in PayU.</li>
-<li>The value for the variable <code>{bankAccountId}</code> is the third party Id returned by the <a href="../../../../en/docs/integrations/api-integration/payouts-api.html#request-payout">Request payout service</a></li>
+<li>The value for the variable <code>{bankAccountId}</code> is the payee Id returned by the <a href="../../../../en/docs/integrations/api-integration/payouts-api.html#request-payout">Request payout service</a></li>
 </ul>
 <h3 id="variables-for-request">Variables for request</h3>
 <div class="variables"></div>
@@ -1541,7 +1541,7 @@ You need to include two headers to use this method, refer to <a href="../../../.
 <td>accountNumber</td>
 <td>Alphanumeric</td>
 <td>Max:17</td>
-<td>Bank account number of the third party.</td>
+<td>Bank account number of the payee.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 </tbody>
@@ -1749,8 +1749,8 @@ You need to include two headers to use this method, refer to <a href="../../../.
 <p>You can configure a WebHook for the following events:</p>
 <ul>
 <li><strong>Transfer creation</strong>: sends a notification when a payout request is created. To enable these notifications, include the <code>TRANSFER_CREATION</code> value in the list parameter <code>enabledEvents</code>.</li>
-<li><strong>Transfer update</strong>: sends a notification when the sanction screening validation rejects the third party. To enable these notifications, include the <code>TRANSFER_UPDATE</code> value in the list parameter <code>enabledEvents</code>.</li>
-<li><strong>Validation result</strong>: sends a notification when third party has approved the sanction screening validation and when the transfer has been rejected by the bank, include the <code>VALIDATION_RESULT</code> value in the list parameter <code>enabledEvents</code>.</li>
+<li><strong>Transfer update</strong>: sends a notification when the sanction screening validation rejects the payee. To enable these notifications, include the <code>TRANSFER_UPDATE</code> value in the list parameter <code>enabledEvents</code>.</li>
+<li><strong>Validation result</strong>: sends a notification when payee has approved the sanction screening validation and when the transfer has been rejected by the bank, include the <code>VALIDATION_RESULT</code> value in the list parameter <code>enabledEvents</code>.</li>
 </ul>
 <p><a href="../../../../en/docs/services/payouts.html#variables-in-the-notifications">Click here to know the variables in the notifications</a>.</p>
 
@@ -2427,9 +2427,9 @@ You need to include two headers to use this method, refer to <a href="../../../.
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 22, 2021:
+October 25, 2021:
 
- <b>Update mandatory parameters for Cash payments in Peru (0706ac71)</b>
+ <b>Push payments adjustments (89b6f56d)</b>
 </div>
 </div>
 

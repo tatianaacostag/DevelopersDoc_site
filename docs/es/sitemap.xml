@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/webcheckout-integration/payment-form.html</loc>
-    <lastmod>2021-10-22T09:51:36-05:00</lastmod>
+    <lastmod>2021-10-25T08:45:45-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -153,7 +153,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/webcheckout-integration/response-page.html</loc>
-    <lastmod>2021-10-22T09:51:36-05:00</lastmod>
+    <lastmod>2021-10-25T08:45:45-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -240,6 +240,21 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/webcheckout-integration/confirmation-page.html</loc>
+    <lastmod>2021-10-25T08:45:45-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/webcheckout-integration/confirmation-page.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/webcheckout-integration/confirmation-page.html"
                 />
   </url><url>
     <loc>/es/docs/services/tokenization.html</loc>
@@ -348,7 +363,7 @@
                 />
   </url><url>
     <loc>/es/docs/getting-started/response-codes-and-variables.html</loc>
-    <lastmod>2021-10-21T10:47:47-05:00</lastmod>
+    <lastmod>2021-10-25T08:45:45-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link

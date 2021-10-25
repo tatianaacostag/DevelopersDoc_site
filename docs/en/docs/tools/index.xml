@@ -676,7 +676,7 @@ Payment coupons are available for Argentina using &lt;em&gt;&lt;strong&gt;RAPIPA
 &lt;ul&gt;
 &lt;li&gt;Payer name: name of the client.&lt;/li&gt;
 &lt;li&gt;Payment description: description of the payment.&lt;/li&gt;
-&lt;li&gt;Amount: this field is available when you define the amount pais by your client and takes the defined value.&lt;/li&gt;
+&lt;li&gt;Amount: this field is available when you define the amount paid by your client and takes the defined value.&lt;/li&gt;
 &lt;li&gt;Expiration date: this field is available when you define an expiration date of the coupon.&lt;/li&gt;
 &lt;li&gt;Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.&lt;/li&gt;
 &lt;/ul&gt;

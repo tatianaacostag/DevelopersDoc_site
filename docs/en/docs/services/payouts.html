@@ -22,21 +22,21 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Payouts | PayU Latam</title><meta property="og:title" content="Payouts" />
-<meta property="og:description" content="This feature allows you to create multiple and secure third party payouts (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
+<meta property="og:description" content="Payouts is an API solution that helps you easily send multiple and secure payouts to different types of payees (users, merchants, providers, customers, etc.) and is functionally tailored to LATAM market specifics.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/services/payouts.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-07-16T11:32:55-05:00" />
-<meta property="article:modified_time" content="2021-10-07T15:19:39-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-10-25T09:32:47-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payouts">
-<meta itemprop="description" content="This feature allows you to create multiple and secure third party payouts (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
+<meta itemprop="description" content="Payouts is an API solution that helps you easily send multiple and secure payouts to different types of payees (users, merchants, providers, customers, etc.) and is functionally tailored to LATAM market specifics.
 "><meta itemprop="datePublished" content="2021-07-16T11:32:55-05:00" />
-<meta itemprop="dateModified" content="2021-10-07T15:19:39-05:00" />
-<meta itemprop="wordCount" content="1554">
+<meta itemprop="dateModified" content="2021-10-25T09:32:47-05:00" />
+<meta itemprop="wordCount" content="1757">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts"/>
-<meta name="twitter:description" content="This feature allows you to create multiple and secure third party payouts (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
+<meta name="twitter:description" content="Payouts is an API solution that helps you easily send multiple and secure payouts to different types of payees (users, merchants, providers, customers, etc.) and is functionally tailored to LATAM market specifics.
 "/>
 
 
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.743531e27a218c0851b0abffe0ba0a42beb05422b999e198ae8477511302108a997c816b509a423e6ccef058ac5d3324c9100a830579fc724c2b74c9465dfb31.json"
+  data-offline-search-index-json-src="../../../offline-search-index.42c9deded547fb20d973ed8152266d14057dbd05d0433b6a54df000a4b362734109f34ac3aa90adbfc531adfb611feba15b3c0e7029034fef7f0b799ba51d2e1.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -730,6 +730,7 @@
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#benefits">Benefits</a></li>
     <li><a href="#how-do-payouts-work">How do Payouts work?</a>
       <ul>
         <li><a href="#payout-states">Payout states</a></li>
@@ -792,34 +793,44 @@
             
 <div class="td-content">
 	<h1>Payouts</h1>
-    <div class="lead">This feature allows you to create multiple and secure third party payouts (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.</div>
+    <div class="lead">Payouts is an API solution that helps you easily send multiple and secure payouts to different types of payees (users, merchants, providers, customers, etc.) and is functionally tailored to LATAM market specifics.</div>
 	       
-	
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Important</h4>
-PayU offers the Payouts service as an integration via API. It is not supported to register Payouts nor Third parties using the PayU module. Currently, Payouts is available in Colombia.
-</div>
-
-<p>Payouts is an integration service available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.</p>
-<h2 id="how-do-payouts-work">How do Payouts work?</h2>
-<p>Through Payouts, you can request many payments to many users easily. You only need to provide the amount to pay along with the information of each third party (such as name, identification, bank information, etc.), and PayU transfers the requested amount after validations.</p>
-<img src="../../../assets/PushPayments/PushPayments.png" width="70%" style="display: block;margin-left: auto;margin-right: auto;"/>
+	<p>Payouts is an integration service available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.</p>
+<img src="../../../assets/PushPayments/PushPayments.png" width="70%" alt="Concepts"/>
 <p>Let’s explain Payouts using an example. A merchant offers products and services available for delivery; this merchant uses PayU as their online payment platform and has an account where they collect the money paid from their customers. This merchant has many couriers to whom, they pay a fixed amount per delivery they made.</p>
 <p>Each week, the merchant pays the amount earned to each courier. To do this, they can use Payouts to pay directly from their PayU account instead of managing the payments on their own, in which case, the merchant must transfer the money to their accounts or use funds from other sources.</p>
-<p>To request the pay, the merchant sends the list of third parties they want to pay along with the amount of each one, PayU validates these third parties and schedules the payout.</p>
+<p>To request the pay, the merchant sends the list of payees they want to pay along with the amount of each one, PayU validates these payees and schedules the payout.</p>
 <p>The amount of each payout plus the processing fee is deducted from your account. Contact your sales representative to know the processing fee to use this service.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Leverage regional capabilities</strong>.<br>A complete and easy-to-use API to make payments to any bank in the processing country<sup>*</sup>.<br><sup>*</sup><em>Available for now in Colombia, with other markets coming soon.</em></li>
+<li><strong>One or multiple payouts</strong>.<br>The API is flexible. You can create one or multiple requests which can be new or existing. There is no restriction for the number of records.</li>
+<li><strong>Save time and costs</strong>.<br>You can save operational costs and time managing all payment operations in just one place.</li>
+<li><strong>Payment flexibility</strong>.<br>You can make updates to the payment order any time before it’s sent to the bank.<br>This feature is useful when the payee changes their bank account.</li>
+<li><strong>Better manage account funds and balance</strong>.<br>You can cancel payment orders before the payout is sent to the bank. Payouts feature helps you to better manage your account funds and balance.</li>
+<li><strong>Customizable  notifications</strong>.<br>Any changes in the payment order status are updated through our solution. You can customize the update notifications you receive.</li>
+</ul>
+<h2 id="how-do-payouts-work">How do Payouts work?</h2>
+<p>Through Payouts, you can send multiple and secure payouts such as fund disbursement to employees, sub-merchants, suppliers or customers, using the funds you have in your PayU Account.</p>
+<p>You only need to provide the amount to pay along with the information of each payee (such as name, identification, bank information, etc.), and PayU transfers the requested amount after validations.</p>
+<p><img src="../../../assets/PushPayments/PushPaymentsFlow.png" alt="Concepts"/><br></p>
+<ol>
+<li><strong>Payout request</strong>: you send an API request with the list of payees you want to send funds to, along with the amount for each transaction and their payment information.</li>
+<li><strong>Payee validation</strong>: payees are validated through our solution (sanction screening process) and payouts are scheduled.</li>
+<li><strong>Funds deduction</strong>: each payout along with the processing fee are deducted from your PayU virtual account.</li>
+<li><strong>Confirmation process</strong>: The bank processes the payment according to [ACH process]#transaction-processing. You can customize notifications to receive changes in the payment status.</li>
+</ol>
 <h3 id="payout-states">Payout states</h3>
-<p>Payouts are performed in two main steps: the first step is when you request the payment to a third party. The second one is when the request has been approved and moves to the transfer of the funds.</p>
+<p>Payouts are performed in two main steps: the first step is when you request the payment to a payee. The second one is when the request has been approved and moves to the transfer of the funds.</p>
 <p>The transactional procedure of Payouts has the following states.</p>
 <ul>
-<li><strong>AWAITING SANCTION SCREENING</strong>: this state indicates that the third party to whom the payment will be made is subject to validation of restricted lists and further PayU policies related to risk analysis. If a third party does not pass this validation, the payment is automatically rejected.</li>
-<li><strong>AWAITING FOR SENT</strong>: if the third party passes the validation or is not subject to it, this state indicates that the request is ready to be processed. In this state, the communication with the service has not been performed.</li>
+<li><strong>AWAITING SANCTION SCREENING</strong>: this state indicates that the payee to whom the payment will be made is subject to validation of restricted lists and further PayU policies related to risk analysis. If a payee does not pass this validation, the payment is automatically rejected.</li>
+<li><strong>AWAITING FOR SENT</strong>: if the payee passes the validation or is not subject to it, this state indicates that the request is ready to be processed. In this state, the communication with the service has not been performed.</li>
 <li><strong>SENT TO CREATE</strong>: this state indicates that the communication with the service has been completed and the Payout request is in creation process.</li>
 <li><strong>CREATED</strong>: this state indicates that the request has been created and has become into a payment order. When the request becomes a payment order, it moves between the states explained in <a href="#payment-order-states">Payment order states</a>. The next state depends on the result of the payment order process.</li>
 <li><strong>REJECTED</strong>: this state indicates that the request has been rejected. A request can be rejected when:
 <ul>
-<li>The validation of the third party fails.</li>
+<li>The validation of the payee fails.</li>
 <li>The creation of the payout was failed.</li>
 <li>You request the cancellation of the Payout request and it has been approved.</li>
 </ul>
@@ -830,20 +841,20 @@ PayU offers the Payouts service as an integration via API. It is not supported t
 <li><strong>CANCELLATION FAILED</strong>: this state indicates that the request of cancellation cannot be executed due to PayU policies or because the request is not being processed by PayU.</li>
 </ul>
 <p>The following diagram illustrates the state changes:</p>
-<img src="../../../assets/PushPayments/PushPaymentsStates.png" width="80%" style="display: block;margin-left: auto;margin-right: auto;"/>
+<img src="../../../assets/PushPayments/PushPaymentsStates.png" width="80%" alt="Concepts"/>
 <h3 id="payment-order-states">Payment order states</h3>
 <p>Once the Payout has been approved, it is transformed into a payment order. The following are the states of a payment order.</p>
 <ul>
-<li><strong>REQUEST_BY_THE_MERCHANT</strong>: this is the initial state of the transaction, once you send the list of third parties to be paid and the third parties are approved, the transaction takes this state.</li>
+<li><strong>REQUEST_BY_THE_MERCHANT</strong>: this is the initial state of the transaction, once you send the list of payees to be paid and they are approved, the transaction takes this state.</li>
 <li><strong>IN_VALIDATION</strong>: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn&rsquo;t meet the policies is rejected.</li>
 <li><strong>IN_PAYU_PROCESS</strong>: this state indicates that PayU has started the process payment.</li>
-<li><strong>AWAITING_BANK_SENT</strong>: this state indicates that PayU has started the transfer of the amount to the third party.</li>
-<li><strong>IN_BANKING_PROCESS</strong>: this state indicates that the payment is being processed in the third party&rsquo;s bank account. At this point you cannot cancel the request nor update it.</li>
-<li><strong>CONFIRMED_BY_THE_BANK</strong>: this state indicates that the third party has received the transferred amount.</li>
+<li><strong>AWAITING_BANK_SENT</strong>: this state indicates that PayU has started the transfer of the amount to the payee.</li>
+<li><strong>IN_BANKING_PROCESS</strong>: this state indicates that the payment is being processed in the payee&rsquo;s bank account. At this point you cannot cancel the request nor update it.</li>
+<li><strong>CONFIRMED_BY_THE_BANK</strong>: this state indicates that the payee has received the transferred amount.</li>
 <li><strong>REJECTED</strong>: this state indicates that the transaction has been rejected either by PayU (due to policy breach) or the Bank (due to errors in the bank information).</li>
 </ul>
 <p>The following diagram illustrates the state changes:</p>
-<img src="../../../assets/PushPayments/PushPaymentsSteps.png" width="60%" style="display: block;margin-left: auto;margin-right: auto;"/>
+<img src="../../../assets/PushPayments/PushPaymentsSteps.png" width="60%" alt="Concepts"/>
 <h3 id="transaction-validation">Transaction validation</h3>
 <p>Every Payout request is validated to verify that the person who will receive the money is not included in restricted lists. This validation may take up to 24 hours which may delay the payment procedure.</p>
 <p>When a person must be verified, PayU checks first in the validation cache, so a person is only validated once during the cache frame.</p>
@@ -852,10 +863,10 @@ PayU offers the Payouts service as an integration via API. It is not supported t
 <p>Take into account the following considerations:</p>
 <ul>
 <li>Payouts is not a service included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.</li>
-<li>Merchants are responsible for the integrity and the correctness of the third-party data. PayU does not validate that the data provided by the merchant is complete and correct. Furthermore, the update of data must be requested by the merchants.<br>PayU is not responsible for unsuccessful transactions due to wrong data.</li>
-<li>Payouts allows local payments only. The merchant may be international (under security and risk analysis) but they can only request payouts using the funds collected in the processing country.<br>For example, if the merchant <em>ABC</em> processes in Colombia and Peru, they can request payouts to third parties in Colombia using the funds collected in Colombia; they cannot request payouts to third parties in Peru using the funds collected in Colombia.</li>
+<li>Merchants are responsible for the integrity and the correctness of the payee&rsquo;s data. PayU does not validate that the data provided by the merchant is complete and correct. Furthermore, the update of data must be requested by the merchants.<br>PayU is not responsible for unsuccessful transactions due to wrong data.</li>
+<li>Payouts allows local payments only. The merchant may be international (under security and risk analysis) but they can only request payouts using the funds collected in the processing country.<br>For example, if the merchant <em>ABC</em> processes in Colombia and Peru, they can request payouts to payees in Colombia using the funds collected in Colombia; they cannot request payouts to payees in Peru using the funds collected in Colombia.</li>
 <li>Once the payout is created, it takes the regular flow in PayU. This means that you can see the payout created in your PayU module.</li>
-<li>The merchant must prove the relationship between them and their third parties to guarantee that the transaction is legit.</li>
+<li>The merchant must prove the relationship between them and their payees to guarantee that the transaction is legit.</li>
 </ul>
 <!-- * For Gambling commerces, Payouts cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. -->
 <h2 id="transaction-processing">Transaction processing</h2>
@@ -909,8 +920,8 @@ Payout requests may not be in <strong>IN_BANKING_PROCESS</strong> state after yo
 <p>You can configure a WebHook for one or more of the following events:</p>
 <ul>
 <li><strong>Transfer creation</strong>: sends a notification when a payout request is created.</li>
-<li><strong>Transfer update</strong>: sends a notification when the sanction screening validation rejects the third party.</li>
-<li><strong>Validation result</strong>: sends a notification when the third party has approved the sanction screening validation and when the transfer has been rejected by the bank.</li>
+<li><strong>Transfer update</strong>: sends a notification when the sanction screening validation rejects the payee.</li>
+<li><strong>Validation result</strong>: sends a notification when the payee has approved the sanction screening validation and when the transfer has been rejected by the bank.</li>
 </ul>
 <p>To learn how to create WebHooks, refer to <a href="../../../en/docs/integrations/api-integration/payouts-api.html#create-or-update-a-webhook">this article</a>.</p>
 <h3 id="variables-in-the-notifications">Variables in the notifications</h3>
@@ -937,7 +948,7 @@ Payout requests may not be in <strong>IN_BANKING_PROCESS</strong> state after yo
 <tr>
 <td><code>value</code></td>
 <td>Numeric</td>
-<td>Amount requested to be transferred to the third party.</td>
+<td>Amount requested to be transferred to the payee.</td>
 </tr>
 <tr>
 <td><code>currency</code></td>
@@ -967,22 +978,22 @@ Payout requests may not be in <strong>IN_BANKING_PROCESS</strong> state after yo
 <tr>
 <td><code>supplierBankAccountId</code></td>
 <td>Alphanumeric</td>
-<td>Id of the third party&rsquo;s bank account generated by the payout request.</td>
+<td>Id of the payee&rsquo;s bank account generated by the payout request.</td>
 </tr>
 <tr>
 <td><code>fullName</code></td>
 <td>Alphanumeric</td>
-<td>Name of the third party of the payout.</td>
+<td>Name of the payee of the payout.</td>
 </tr>
 <tr>
 <td><code>documentNumber</code></td>
 <td>Numeric</td>
-<td>Document number of the third party of the payout.</td>
+<td>Document number of the payee of the payout.</td>
 </tr>
 <tr>
 <td><code>country</code></td>
 <td>Alphanumeric</td>
-<td>Country of the third party of the payout.</td>
+<td>Country of the payee of the payout.</td>
 </tr>
 <tr>
 <td><code>validationState</code></td>
@@ -992,7 +1003,7 @@ Payout requests may not be in <strong>IN_BANKING_PROCESS</strong> state after yo
 <tr>
 <td><code>dateOfTheNextValidation</code></td>
 <td>Numeric</td>
-<td>Date when the third party will be validated by sanction screening.<br>This date is in milliseconds.</td>
+<td>Date when the payee will be validated by sanction screening.<br>This date is in milliseconds.</td>
 </tr>
 </tbody>
 </table>
@@ -1004,9 +1015,9 @@ Payout requests may not be in <strong>IN_BANKING_PROCESS</strong> state after yo
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 7, 2021:
+October 25, 2021:
 
- <b>Translations to Spanish (fd7afd7e)</b>
+ <b>Push payments adjustments (89b6f56d)</b>
 </div>
 </div>
 

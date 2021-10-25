@@ -2158,7 +2158,7 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;codes-of-the-payment-methods&#34;&gt;Códigos de los medios de pago&lt;/h2&gt;
-&lt;p&gt;Los siguientes códigos aplican para &lt;code&gt;payment_method_type&lt;/code&gt; (Página de confirmación), &lt;code&gt;payment_method_id&lt;/code&gt; (CPágina de confirmación) y &lt;code&gt;polPaymentMethodType&lt;/code&gt; (Página de respuesta).&lt;/p&gt;
+&lt;p&gt;Los siguientes códigos aplican para &lt;code&gt;payment_method_type&lt;/code&gt; (Página de confirmación), &lt;code&gt;payment_method_id&lt;/code&gt; (Página de confirmación) y &lt;code&gt;polPaymentMethodType&lt;/code&gt; (Página de respuesta).&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;

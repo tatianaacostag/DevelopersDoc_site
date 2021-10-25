@@ -34,8 +34,8 @@ In the confirmation page, you must capture the data you want to store in the dat
 
 | Field | Type | Size | Description |
 |-|-|-|-|
-| merchant_id | Numérico | 12 | Merchant’s ID number in PayU’s system, you find this number in the account creation mail. |
-| state_pol | Alfanumérico | 32 | Indicates the status of the transaction in the system.<br>[See the transaction status in the given column]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
+| merchant_id | Numeric | 12 | Merchant’s ID number in PayU’s system, you find this number in the account creation mail. |
+| state_pol | Alphanumeric | 32 | Indicates the status of the transaction in the system.<br>[See the transaction status in the given column]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
 | risk | Decimal (#.00) | — | Risk associated with the transaction. Values between 0 and 1.<br>The higher value, the greater the risk.<br>Format `###.00`. |
 | response_code_pol | Alphanumeric | 255 | PayU’s response code.<br>[See the response codes in the given column]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
 | reference_sale | Alphanumeric | 255 | Reference of the sale or order. It must be unique for each transaction that is sent to the system. |
