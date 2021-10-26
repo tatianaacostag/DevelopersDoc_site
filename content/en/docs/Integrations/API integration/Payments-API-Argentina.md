@@ -153,7 +153,7 @@ This method lets you process the payments performed by your customers using cred
 #### Considerations
 * For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
 * Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
-* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
+* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.
 * Due to Tax regulations, it is mandatory to send the parameters `payer.billingAddress.state` using format [ISO 3166-2 ARG official](https://www.iso.org/obp/ui/#iso:code:3166:AR) and `payer.dnitype`.
@@ -512,7 +512,7 @@ Response body:
 {{< /tabs >}}
 
 ### Charge
-Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
+Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved.
 
 The following are the request and response bodies for this transaction type.
 
@@ -1179,7 +1179,7 @@ This method returns a list of the payment methods available in all countries.
 </details>
 
 ### API call
-The following are the bodies of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
+The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

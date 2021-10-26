@@ -9,7 +9,7 @@ weight: 10
 
 Independiente del [tipo de integración]({{< ref "integrations" >}}) que escojas, PayU provee operaciones para procesar tus transacciones. La siguiente sección explica estos métodos.
 
-## Flujos de pago
+## Flujos de pago {#payment-flows}
 PayU puede procesar pagos utilizando dos tipos de flujos: de dos pasos y de un paso.
 
 ![Payments](/assets/Payments/autorizacionycaptura-es.png)

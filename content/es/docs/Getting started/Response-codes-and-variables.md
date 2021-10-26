@@ -352,6 +352,7 @@ Envía el valor exacto mostrado en la columna `Código` en la variable `transfer
 | `685`     | DGCPTN-REGALIAS                                   |
 | `801`     | MOVII                                             |
 | `0551`    | DAVIPLATA                                         |
+| `0558`    | CREDIFINANCIERA S.A.                              |
 | `1053`    | BANCO WWB                                         |
 | `1062`    | BANCO FALABELLA S.A.                              |
 | `1063`    | BANCO FINANDINA S.A.                              |
@@ -360,4 +361,3 @@ Envía el valor exacto mostrado en la columna `Código` en la variable `transfer
 | `1291`    | COOFINEP                                          |
 | `1292`    | CONFIAR COOPERATIVA FINANCIERA                    |
 | `1303`    | GIROS Y FINANZAS                                  |
-| `1558`    | CREDIFINANCIERA S.A.                              |

@@ -38,6 +38,7 @@ Solo necesitas proporcionar la cantidad a pagar junto con la información de cad
 1. **Solicitud del Payout**: envías una solicitud API con la lista de los beneficiarios a los que quieres enviarles los fondos, junto con la cantidad de cada transacción y su información de pago. 
 2. **Validación de beneficiarios**: los beneficiarios son validados a través de nuestra solución (proceso de Sanction Screening) y se programan los pagos. 
 3. **Débito de fondos**: el valor de cada Payout junto con la tarifa de procesamiento son debitados de tu cuenta virtual de PayU.
+4. **Confirmación del proceso**: el banco procesa el pago de acuerdo con el [proceso de ACH]({{< ref "#transaction-processing" >}}). Puedes personalizar las notificaciones para recibir cambios en los estados del pago. 
 
 ### Estados de los Payouts {#payout-states}
 Los Payouts se ejecutan en dos pasos principales: el primer paso es cuando se solicita el pago al beneficiario y el segundo, es cuando la solicitud ha sido aprobada y pasa a la transferencia de los fondos.
