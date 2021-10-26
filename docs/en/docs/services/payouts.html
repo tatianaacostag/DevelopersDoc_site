@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/services/payouts.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-07-16T11:32:55-05:00" />
-<meta property="article:modified_time" content="2021-10-25T09:32:47-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-10-26T09:38:57-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payouts">
 <meta itemprop="description" content="Payouts is an API solution that helps you easily send multiple and secure payouts to different types of payees (users, merchants, providers, customers, etc.) and is functionally tailored to LATAM market specifics.
 "><meta itemprop="datePublished" content="2021-07-16T11:32:55-05:00" />
-<meta itemprop="dateModified" content="2021-10-25T09:32:47-05:00" />
-<meta itemprop="wordCount" content="1757">
+<meta itemprop="dateModified" content="2021-10-26T09:38:57-05:00" />
+<meta itemprop="wordCount" content="1759">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts"/>
 <meta name="twitter:description" content="Payouts is an API solution that helps you easily send multiple and secure payouts to different types of payees (users, merchants, providers, customers, etc.) and is functionally tailored to LATAM market specifics.
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.42c9deded547fb20d973ed8152266d14057dbd05d0433b6a54df000a4b362734109f34ac3aa90adbfc531adfb611feba15b3c0e7029034fef7f0b799ba51d2e1.json"
+  data-offline-search-index-json-src="../../../offline-search-index.902fc58b94ba4cc68d1f3325f509005b543eacc6be85f7a4cb9ff804a6f0b318e0500dae05879eea6d4d24f65f366c234e28180b482d04f67805ebb855fd746b.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -731,7 +731,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#benefits">Benefits</a></li>
-    <li><a href="#how-do-payouts-work">How do Payouts work?</a>
+    <li><a href="#how-does-the-payouts-feature-work">How does the Payouts feature work?</a>
       <ul>
         <li><a href="#payout-states">Payout states</a></li>
         <li><a href="#payment-order-states">Payment order states</a></li>
@@ -796,7 +796,7 @@
     <div class="lead">Payouts is an API solution that helps you easily send multiple and secure payouts to different types of payees (users, merchants, providers, customers, etc.) and is functionally tailored to LATAM market specifics.</div>
 	       
 	<p>Payouts is an integration service available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.</p>
-<img src="../../../assets/PushPayments/PushPayments.png" width="70%" alt="Concepts"/>
+<p><img src="../../../assets/PushPayments/PushPayments.png" width="70%" alt="Concepts"/><br></p>
 <p>Let’s explain Payouts using an example. A merchant offers products and services available for delivery; this merchant uses PayU as their online payment platform and has an account where they collect the money paid from their customers. This merchant has many couriers to whom, they pay a fixed amount per delivery they made.</p>
 <p>Each week, the merchant pays the amount earned to each courier. To do this, they can use Payouts to pay directly from their PayU account instead of managing the payments on their own, in which case, the merchant must transfer the money to their accounts or use funds from other sources.</p>
 <p>To request the pay, the merchant sends the list of payees they want to pay along with the amount of each one, PayU validates these payees and schedules the payout.</p>
@@ -810,15 +810,15 @@
 <li><strong>Better manage account funds and balance</strong>.<br>You can cancel payment orders before the payout is sent to the bank. Payouts feature helps you to better manage your account funds and balance.</li>
 <li><strong>Customizable  notifications</strong>.<br>Any changes in the payment order status are updated through our solution. You can customize the update notifications you receive.</li>
 </ul>
-<h2 id="how-do-payouts-work">How do Payouts work?</h2>
+<h2 id="how-does-the-payouts-feature-work">How does the Payouts feature work?</h2>
 <p>Through Payouts, you can send multiple and secure payouts such as fund disbursement to employees, sub-merchants, suppliers or customers, using the funds you have in your PayU Account.</p>
 <p>You only need to provide the amount to pay along with the information of each payee (such as name, identification, bank information, etc.), and PayU transfers the requested amount after validations.</p>
 <p><img src="../../../assets/PushPayments/PushPaymentsFlow.png" alt="Concepts"/><br></p>
 <ol>
 <li><strong>Payout request</strong>: you send an API request with the list of payees you want to send funds to, along with the amount for each transaction and their payment information.</li>
-<li><strong>Payee validation</strong>: payees are validated through our solution (sanction screening process) and payouts are scheduled.</li>
+<li><strong>Payee validation</strong>: payees are validated through our solution (Sanction Screening process) and payouts are scheduled.</li>
 <li><strong>Funds deduction</strong>: each payout along with the processing fee are deducted from your PayU virtual account.</li>
-<li><strong>Confirmation process</strong>: The bank processes the payment according to [ACH process]#transaction-processing. You can customize notifications to receive changes in the payment status.</li>
+<li><strong>Confirmation process</strong>: the bank processes the payment according to <a href="#transaction-processing">ACH process</a>. You can customize notifications to receive changes in the payment status.</li>
 </ol>
 <h3 id="payout-states">Payout states</h3>
 <p>Payouts are performed in two main steps: the first step is when you request the payment to a payee. The second one is when the request has been approved and moves to the transfer of the funds.</p>
@@ -1015,9 +1015,9 @@ Payout requests may not be in <strong>IN_BANKING_PROCESS</strong> state after yo
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 25, 2021:
+October 26, 2021:
 
- <b>Push payments adjustments (89b6f56d)</b>
+ <b>Traducciones a Español (0dc69092)</b>
 </div>
 </div>
 

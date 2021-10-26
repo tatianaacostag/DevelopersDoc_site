@@ -93,7 +93,7 @@
                 />
   </url><url>
     <loc>/es/docs/services/payments.html</loc>
-    <lastmod>2021-10-05T15:57:19-05:00</lastmod>
+    <lastmod>2021-10-26T09:38:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -120,6 +120,36 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/shopping-cart-plugins/magento.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration/payments-api-argentina.html</loc>
+    <lastmod>2021-10-26T09:38:57-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/payments-api-argentina.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/payments-api-argentina.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration/payments-api-brazil.html</loc>
+    <lastmod>2021-10-26T09:38:57-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/payments-api-brazil.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/payments-api-brazil.html"
                 />
   </url><url>
     <loc>/es/docs/getting-started/select-your-integration.html</loc>
@@ -180,6 +210,21 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/services/queries.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration.html</loc>
+    <lastmod>2021-10-25T15:33:30-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration.html"
                 />
   </url><url>
     <loc>/es/docs/tools/shopping-cart-plugins/drupal.html</loc>
@@ -243,7 +288,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/webcheckout-integration/confirmation-page.html</loc>
-    <lastmod>2021-10-25T08:45:45-05:00</lastmod>
+    <lastmod>2021-10-25T15:33:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -270,6 +315,21 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/services/tokenization.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration/tokenization-api.html</loc>
+    <lastmod>2021-10-25T15:33:30-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/tokenization-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/tokenization-api.html"
                 />
   </url><url>
     <loc>/es/docs/tools/shopping-cart-plugins/virtuemart.html</loc>
@@ -363,7 +423,7 @@
                 />
   </url><url>
     <loc>/es/docs/getting-started/response-codes-and-variables.html</loc>
-    <lastmod>2021-10-25T08:45:45-05:00</lastmod>
+    <lastmod>2021-10-26T09:38:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -438,7 +498,7 @@
                 />
   </url><url>
     <loc>/es/docs/services/payouts.html</loc>
-    <lastmod>2021-10-21T10:47:47-05:00</lastmod>
+    <lastmod>2021-10-26T09:38:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link

@@ -24,7 +24,7 @@
         
         
         &lt;p&gt;Independiente del &lt;a href=&#34;../../../es/docs/integrations.html&#34;&gt;tipo de integración&lt;/a&gt; que escojas, PayU provee operaciones para procesar tus transacciones. La siguiente sección explica estos métodos.&lt;/p&gt;
-&lt;h2 id=&#34;flujos-de-pago&#34;&gt;Flujos de pago&lt;/h2&gt;
+&lt;h2 id=&#34;payment-flows&#34;&gt;Flujos de pago&lt;/h2&gt;
 &lt;p&gt;PayU puede procesar pagos utilizando dos tipos de flujos: de dos pasos y de un paso.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Payments/autorizacionycaptura-es.png&#34; alt=&#34;Payments&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -351,32 +351,42 @@ El método &lt;code&gt;VOID&lt;/code&gt; no está disponible en Colombia ni en P
       <description>
         
         
-        
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
-PayU ofrece el servicio de Payouts como una integración via API. No está soportado registrar pagos o terceros utilizando el módulo PayU. Actualmente, Payouts está disponible en Colombia.
-&lt;/div&gt;
-
-&lt;p&gt;Payouts ies un servicio de integración disponible bajo demanda y su activación depende de un análisis de riesgo y seguridad. Para más información o para solicitar este servicio, comunícate con tu Representante de Ventas.&lt;/p&gt;
-&lt;h2 id=&#34;how-do-payouts-work&#34;&gt;¿Cómo funciona Payouts?&lt;/h2&gt;
-&lt;p&gt;A través de Payouts, puedes solicitar varios pagos a varios usuarios fácilmente. Solo necesitas proporcionar la cantidad a pagar junto con la información de cada tercero (como nombre, identificación, información bancaria, etc.) y PayU transfiere la cantidad solicitada luego de realizar algunas validaciones.&lt;/p&gt;
-&lt;img src=&#34;../../../assets/PushPayments/PushPayments_es.png&#34; width=&#34;70%&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;
+        &lt;p&gt;Payouts es un servicio de integración disponible bajo demanda y su activación depende de un análisis de riesgo y seguridad. Para más información o para solicitar este servicio, comunícate con tu Representante de Ventas.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PushPayments/PushPayments_es.png&#34; width=&#34;70%&#34; alt=&#34;Concepts&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Expliquemos Payouts a través de un ejemplo. Un comercio ofrece productos y servicios a domicilio; este comercio utiliza PayU como su plataforma de pagos y tiene una cuenta donde recauda el dinero pagado por sus clients. Este comercio tiene varios repartidores a quienes paga un monto fijo por cada domicilio que realicen.&lt;/p&gt;
 &lt;p&gt;Cada semana, el comercio paga el monto obtenido por cada repartidor. Para esto, ellos pueden utilizar Payouts para pagar directamente desde su cuenta de PayU en lugar de administrar los pagos por su cuenta, en cuyo caso, el comercio debe transferir el dinero a sus cuentas bancarias o utilizar los fondos recolectados de otras fuentes.&lt;/p&gt;
-&lt;p&gt;Para solicitar el pago, el comercio envía la lista de terceros a los que desea pagar junto con el monto de cada uno. PayU valida estos terceros y programa el pago.&lt;/p&gt;
-&lt;p&gt;El valor de cada pago más la tarifa de procesamiento es debitada de la cuenta. Contacta a tu Represente de Ventas para saber el valor de la tarifa de procesamiento para utilizar este servicio.&lt;/p&gt;
+&lt;p&gt;Para solicitar el pago, el comercio envía la lista de beneficiarios a los que desea pagar junto con el monto de cada uno. PayU valida estos beneficiarios y programa el pago.&lt;/p&gt;
+&lt;p&gt;El valor de cada pago más la tarifa de procesamiento es debitado de la cuenta. Contacta a tu Represente de Ventas para saber el valor de la tarifa de procesamiento para utilizar este servicio.&lt;/p&gt;
+&lt;h2 id=&#34;benefits&#34;&gt;Beneficios&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Aprovecha las capacidades regionales&lt;/strong&gt;.&lt;br&gt;Payouts es una API completa y fácil de utilizar para realizar pagos a cualquier banco en el país de procesamiento&lt;sup&gt;*&lt;/sup&gt;.&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Disponible por ahora en Colombia, próximamente en otros mercados.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Uno or múltiples pagos&lt;/strong&gt;.&lt;br&gt;La API es flexible. Puedes crear uno o múltiples solicitudes de pago para beneficiarios nuevos o existentes. No hay restricción en el número de registros.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ahorra tiempo y costos&lt;/strong&gt;.&lt;br&gt;Puedes ahorrar costos operacionales y tiempo gestionando todas las operaciones de pago en un solo lugar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flexibilidad de pago&lt;/strong&gt;.&lt;br&gt;Puedes hacer actualizaciones a las órdenes de pago en cualquier momento antes de que sean enviadas al banco.&lt;br&gt;Esto es útil cuando el beneficiario cambia su cuenta bancaria.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Administra mejor los fondos y el saldo de la cuenta&lt;/strong&gt;.&lt;br&gt;Puedes cancelar órdenes de pago antes de que sean enviadas al banco. Payouts te ayuda a manejar mejor los fondos y el saldo de tu cuenta.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notificaciones personalizadas&lt;/strong&gt;.&lt;br&gt;Cualquier cambio en la orden de pago es actualizado por nuestra solución. Puedes personalizar las notificaciones que recibes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-does-the-payouts-feature-work&#34;&gt;¿Cómo funciona Payouts?&lt;/h2&gt;
+&lt;p&gt;A través de Payouts, puedes enviar múltiples pagos seguros como en una distribución de fondos a empleados, comercios asociados, proveedores o clientes utilizando los fondos que tienes en tu cuenta de PayU.&lt;/p&gt;
+&lt;p&gt;Solo necesitas proporcionar la cantidad a pagar junto con la información de cada beneficiario (como nombre, identificación, información bancaria, etc.) y PayU transfiere la cantidad solicitada luego de realizar algunas validaciones.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PushPayments/PushPaymentsFlow_es.png&#34; alt=&#34;Concepts&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Solicitud del Payout&lt;/strong&gt;: envías una solicitud API con la lista de los beneficiarios a los que quieres enviarles los fondos, junto con la cantidad de cada transacción y su información de pago.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validación de beneficiarios&lt;/strong&gt;: los beneficiarios son validados a través de nuestra solución (proceso de Sanction Screening) y se programan los pagos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Débito de fondos&lt;/strong&gt;: el valor de cada Payout junto con la tarifa de procesamiento son debitados de tu cuenta virtual de PayU.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Confirmación del proceso&lt;/strong&gt;: el banco procesa el pago de acuerdo con el &lt;a href=&#34;#transaction-processing&#34;&gt;proceso de ACH&lt;/a&gt;. Puedes personalizar las notificaciones para recibir cambios en los estados del pago.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;payout-states&#34;&gt;Estados de los Payouts&lt;/h3&gt;
-&lt;p&gt;Los Payouts se ejecutan en dos pasos principales: el primer paso es cuando se solicita el pago al tercero y el segundo, es cuando la solicitud ha sido aprobada y pasa a la transferencia de los fondos.&lt;/p&gt;
+&lt;p&gt;Los Payouts se ejecutan en dos pasos principales: el primer paso es cuando se solicita el pago al beneficiario y el segundo, es cuando la solicitud ha sido aprobada y pasa a la transferencia de los fondos.&lt;/p&gt;
 &lt;p&gt;El procedimiento transaccional de Payouts tiene los siguientes estados.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;AWAITING SANCTION SCREENING&lt;/strong&gt;: este estado indica que el tercero a quien se le hará el pago es objeto de validación en listas restrictivas y demás políticas de PayU relacionadas con análisis de riesgo. Si un tercero no aprueba esta validación, el pago es rechazado automáticamente.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AWAITING FOR SENT&lt;/strong&gt;: si el tercero pasa la validación o no es sujeto a ella, este estado indica que la solicitud está lista para ser procesada. En este estado, no se ha realizado la comunicación con servicio.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWAITING SANCTION SCREENING&lt;/strong&gt;: este estado indica que el beneficiario a quien se le hará el pago es objeto de validación en listas restrictivas y demás políticas de PayU relacionadas con análisis de riesgo. Si un beneficiario no aprueba esta validación, el pago es rechazado automáticamente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWAITING FOR SENT&lt;/strong&gt;: si el beneficiario pasa la validación o no es sujeto a ella, este estado indica que la solicitud está lista para ser procesada. En este estado, no se ha realizado la comunicación con servicio.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;SENT TO CREATE&lt;/strong&gt;: este estado indica que se ha completado la comunicación con el servicio y la solicitud de Payout está en proceso de creación.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;CREATED&lt;/strong&gt;: este estado indica que se ha creado la solicitud y se ha convertido en una orden de pago. Cuando la solicitud se convierte e una orden de pago, se mueve en los estados explicados en &lt;a href=&#34;#payment-order-states&#34;&gt;estados de la orden de pago&lt;/a&gt;. El siguiente estado depende del resultado del proceso de la orden.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;REJECTED&lt;/strong&gt;: este estado indica que la solicitud ha sido rechazada. Una solicitud puede ser rechazada cuando:
 &lt;ul&gt;
-&lt;li&gt;Falla la validación del tercero.&lt;/li&gt;
+&lt;li&gt;Falla la validación del beneficiario.&lt;/li&gt;
 &lt;li&gt;Falla la creación del Payout.&lt;/li&gt;
 &lt;li&gt;Solicitaste la cancelación del Payout y dicha cancelación fue aprobada.&lt;/li&gt;
 &lt;/ul&gt;
@@ -387,20 +397,20 @@ PayU ofrece el servicio de Payouts como una integración via API. No está sopor
 &lt;li&gt;&lt;strong&gt;CANCELLATION FAILED&lt;/strong&gt;: este estado indica que la solicitud de cancelación no pudo ser ejecutada debido a políticas de PayU o porque no está siendo procesada por PayU.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;El siguiente diagrama ilustra el cambio de estados:&lt;/p&gt;
-&lt;img src=&#34;../../../assets/PushPayments/PushPaymentsStates_es.png&#34; width=&#34;80%&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;
+&lt;img src=&#34;../../../assets/PushPayments/PushPaymentsStates_es.png&#34; width=&#34;80%&#34; alt=&#34;Concepts&#34;/&gt;
 &lt;h3 id=&#34;payment-order-states&#34;&gt;Estados de la orden de pago&lt;/h3&gt;
 &lt;p&gt;Una vez el Payout ha sido aprobado, es transformado en una orden de pago. Los siguientes son los estados de una orden de pago.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;REQUEST_BY_THE_MERCHANT&lt;/strong&gt;: este es el estado inicial de la transacción, una vez envías la lista de terceros a pagar y son aprobados, la orden toma este estado.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;REQUEST_BY_THE_MERCHANT&lt;/strong&gt;: este es el estado inicial de la transacción, una vez envías la lista de beneficiarios a pagar y son aprobados, la orden toma este estado.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;IN_VALIDATION&lt;/strong&gt;: debido a políticas de PayU, cada pago puede estar sujeto a una validación. Este estado indica que tu solicitud debe ser revisada bajo nuestras políticas internas. Si la validación falla, el pago que no cumplió con las políticas es rechazado.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;IN_PAYU_PROCESS&lt;/strong&gt;: este estado indica que PayU ha iniciado el proceso del pago.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;AWAITING_BANK_SENT&lt;/strong&gt;: este estado indica que PayU ha iniciado la transferencia del monto al tercero.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;IN_BANKING_PROCESS&lt;/strong&gt;: este estado indica que el pago está siendo procesado por la cuenta bancaria del tercero. En este punto, no puedes solicitar su cancelación ni actualizarla.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;CONFIRMED_BY_THE_BANK&lt;/strong&gt;: este estado indica que el tercero ha recibido el monto de la transferencia.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWAITING_BANK_SENT&lt;/strong&gt;: este estado indica que PayU ha iniciado la transferencia del monto al beneficiario.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IN_BANKING_PROCESS&lt;/strong&gt;: este estado indica que el pago está siendo procesado por la cuenta bancaria del beneficiario. En este punto, no puedes solicitar su cancelación ni actualizarla.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CONFIRMED_BY_THE_BANK&lt;/strong&gt;: este estado indica que el beneficiario ha recibido el monto de la transferencia.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;REJECTED&lt;/strong&gt;: este estado indica que la transacción ha sido rechazada por PayU (debido a incumplimiento de políticas) o por el Banco (debido a errores en la información bancaria).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;El siguiente diagrama ilustra el cambio de estados:&lt;/p&gt;
-&lt;img src=&#34;../../../assets/PushPayments/PushPaymentsSteps_es.png&#34; width=&#34;60%&#34; style=&#34;display: block;margin-left: auto;margin-right: auto;&#34;/&gt;
+&lt;img src=&#34;../../../assets/PushPayments/PushPaymentsSteps_es.png&#34; width=&#34;60%&#34; alt=&#34;Concepts&#34;/&gt;
 &lt;h3 id=&#34;transaction-validation&#34;&gt;Validación de la transacción&lt;/h3&gt;
 &lt;p&gt;Cada solicitud de Payout es validada para verificar que la persona que recibirá el dinero no está incluida en listas restrictivas. Esta validación puede tomar hasta 24 horas, lo que podría demorar el pago&lt;/p&gt;
 &lt;p&gt;Cuando una persona debe ser verificada, PayU verifica primero en el caché de la validación de tal forma que solo sea consultada una vez durante la franja del caché.&lt;/p&gt;
@@ -409,10 +419,10 @@ PayU ofrece el servicio de Payouts como una integración via API. No está sopor
 &lt;p&gt;Ten en cuentas las siguientes consideraciones:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Payouts no es un servicio incluido de forma predeterminada. Debes solicitarlo y firmar un anexo al contrato para acordar el valor de la tarifa de procesamiento y demás condiciones. Contacta a tu Key Account Manager para contratar este servicio.&lt;/li&gt;
-&lt;li&gt;Los comercios son los responsables de la integridad y la veracidad de la información de los terceros. PayU no valida que la información entregada sea completa y correcta. Además, la actualización de la información debe ser solicitada por los comercios.&lt;br&gt;PayU no es responsable por transacciones no exitosas debido a información incorrecta.&lt;/li&gt;
-&lt;li&gt;Payouts solo permite pagos locales. El comercio puede ser internacional (bajo análisis de seguridad y riesgo) pero solo pueden solicitar Payouts utilizando los fondos obtenidos en el país de procesamiento.&lt;br&gt;Por ejemplo, si el comercio &lt;em&gt;ABC&lt;/em&gt; procesa en Colombia y Perú, puede solicitar payouts a terceros en Colombia utilizando los fondos recaudados en Colombia; no pueden solicitar pagos a terceros en Perú utilizando los fondos recaudados en Colombia.&lt;/li&gt;
+&lt;li&gt;Los comercios son los responsables de la integridad y la veracidad de la información de los beneficiarios. PayU no valida que la información entregada sea completa y correcta. Además, la actualización de la información debe ser solicitada por los comercios.&lt;br&gt;PayU no es responsable por transacciones no exitosas debido a información incorrecta.&lt;/li&gt;
+&lt;li&gt;Payouts solo permite pagos locales. El comercio puede ser internacional (bajo análisis de seguridad y riesgo) pero solo pueden solicitar Payouts utilizando los fondos obtenidos en el país de procesamiento.&lt;br&gt;Por ejemplo, si el comercio &lt;em&gt;ABC&lt;/em&gt; procesa en Colombia y Perú, puede solicitar payouts a beneficiarios en Colombia utilizando los fondos recaudados en Colombia; no pueden solicitar pagos a beneficiarios en Perú utilizando los fondos recaudados en Colombia.&lt;/li&gt;
 &lt;li&gt;Una vez se ha creado el Payout, toma el flujo regular en PayU. Esto significa que puedes ver el payout creado en el módulo PayU.&lt;/li&gt;
-&lt;li&gt;El comercio debe probar la relación entre él y sus terceros para garantizar que la transacción es legítima.&lt;/li&gt;
+&lt;li&gt;El comercio debe probar la relación entre él y sus beneficiarios para garantizar que la transacción es legítima.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- * Para comercios de apuestas, no se puede utilizar Payouts parra hacer reembolsos. Por lo tanto es necesario garantizar que el comercio está pagando un premio. --&gt;
 &lt;h2 id=&#34;transaction-processing&#34;&gt;Procesamiento de transacciones&lt;/h2&gt;
@@ -466,8 +476,8 @@ Puede que las solicitudes de Payouts no queden en el estado &lt;strong&gt;IN_BAN
 &lt;p&gt;Puedes configurar un WebHook por uno o varios de los siguientes eventos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Creación de la transferencia&lt;/strong&gt;: envía una notificación cuando se crea la solicitud de payout.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Actualización de la transferencia&lt;/strong&gt;: envía una notificación cuando la validación de Sanction Screening rechaza al tercero.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Resultado de la validación&lt;/strong&gt;: envía una notificación cuando el tercero ha aprobado la validación y cuando la transferencia ha sido rechazada por el banco.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Actualización de la transferencia&lt;/strong&gt;: envía una notificación cuando la validación de Sanction Screening rechaza al beneficiario.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Resultado de la validación&lt;/strong&gt;: envía una notificación cuando el beneficiario ha aprobado la validación y cuando la transferencia ha sido rechazada por el banco.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Consulta &lt;a href=&#34;&#34;&gt;este artículo&lt;/a&gt; para aprender a crear WebHooks. &lt;!-- payouts-api.md#create-or-update-a-webhook --&gt;&lt;/p&gt;
 &lt;h3 id=&#34;variables-in-the-notifications&#34;&gt;Variables en las notificaciones&lt;/h3&gt;
@@ -494,7 +504,7 @@ Puede que las solicitudes de Payouts no queden en el estado &lt;strong&gt;IN_BAN
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;value&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;Cantidad solicitada para ser transferida al tercero.&lt;/td&gt;
+&lt;td&gt;Cantidad solicitada para ser transferida al beneficiario.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;currency&lt;/code&gt;&lt;/td&gt;
@@ -524,22 +534,22 @@ Puede que las solicitudes de Payouts no queden en el estado &lt;strong&gt;IN_BAN
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;supplierBankAccountId&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;Id de la cuenta bancaria del tercero generado por la solicitud de payout.&lt;/td&gt;
+&lt;td&gt;Id de la cuenta bancaria del beneficiario generado por la solicitud de payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;fullName&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;Nombre del tercero beneficiario del Payout.&lt;/td&gt;
+&lt;td&gt;Nombre del beneficiario beneficiario del Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;documentNumber&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;Número de documento del tercero beneficiario del Payout.&lt;/td&gt;
+&lt;td&gt;Número de documento del beneficiario beneficiario del Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;country&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;País del tercero beneficiario del Payout.&lt;/td&gt;
+&lt;td&gt;País del beneficiario beneficiario del Payout.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;validationState&lt;/code&gt;&lt;/td&gt;
@@ -549,7 +559,7 @@ Puede que las solicitudes de Payouts no queden en el estado &lt;strong&gt;IN_BAN
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;dateOfTheNextValidation&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;Fecha en la que el tercero será validado por sanction screening.&lt;br&gt;Esta fecha está en milisegundos.&lt;/td&gt;
+&lt;td&gt;Fecha en la que el beneficiario será validado por sanction screening.&lt;br&gt;Esta fecha está en milisegundos.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

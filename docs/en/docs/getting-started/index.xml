@@ -2884,6 +2884,14 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;td&gt;MOVII&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;0551&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;DAVIPLATA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;0558&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;CREDIFINANCIERA S.A.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;1053&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;BANCO WWB&lt;/td&gt;
 &lt;/tr&gt;
@@ -2914,10 +2922,6 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;1303&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;GIROS Y FINANZAS&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;1558&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;CREDIFINANCIERA S.A.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

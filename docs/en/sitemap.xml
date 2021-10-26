@@ -198,14 +198,34 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-argentina.html</loc>
-    <lastmod>2021-10-22T09:51:36-05:00</lastmod>
+    <lastmod>2021-10-26T09:38:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/payments-api-argentina.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/payments-api-argentina.html"
+                />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-brazil.html</loc>
     <lastmod>2021-10-22T09:51:36-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/payments-api-brazil.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/payments-api-brazil.html"
+                />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-chile.html</loc>
     <lastmod>2021-10-22T09:51:36-05:00</lastmod>
@@ -301,6 +321,16 @@
     <lastmod>2021-06-29T20:27:18-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration.html"
+                />
   </url><url>
     <loc>/en/payu-module-documentation/reports/financial-statement.html</loc>
     <lastmod>2021-09-29T17:40:24-05:00</lastmod>
@@ -383,7 +413,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/webcheckout-integration/confirmation-page.html</loc>
-    <lastmod>2021-10-25T08:45:45-05:00</lastmod>
+    <lastmod>2021-10-25T15:33:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -436,6 +466,16 @@
     <lastmod>2021-09-29T17:40:24-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/tokenization-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/tokenization-api.html"
+                />
   </url><url>
     <loc>/en/docs/tools/shopping-cart-plugins/virtuemart.html</loc>
     <lastmod>2021-10-22T09:51:36-05:00</lastmod>
@@ -513,7 +553,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/en/docs/integrations/api-integration/refunds-api.html</loc>
-    <lastmod>2021-10-13T11:14:26-05:00</lastmod>
+    <lastmod>2021-10-25T15:33:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -553,7 +593,7 @@
                 />
   </url><url>
     <loc>/en/docs/getting-started/response-codes-and-variables.html</loc>
-    <lastmod>2021-10-21T10:47:47-05:00</lastmod>
+    <lastmod>2021-10-26T09:38:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -638,7 +678,7 @@
                 />
   </url><url>
     <loc>/en/docs/services/payouts.html</loc>
-    <lastmod>2021-10-25T09:32:47-05:00</lastmod>
+    <lastmod>2021-10-26T09:38:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -713,7 +753,7 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/en/docs/integrations/sdk-integration/refundssdk.html</loc>
-    <lastmod>2021-06-30T22:58:54-05:00</lastmod>
+    <lastmod>2021-10-25T15:33:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

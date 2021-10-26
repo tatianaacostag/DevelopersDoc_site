@@ -754,7 +754,7 @@
 &lt;ul&gt;
 &lt;li&gt;For payments with Promotions, send the parameters &lt;code&gt;INSTALLMENTS_NUMBER&lt;/code&gt; and &lt;code&gt;PROMOTION_ID&lt;/code&gt; with the number of installments selected and the Id of the promotion. Refer to &lt;a href=&#34;../../../../en/docs/services/promotions.html&#34;&gt;Promotions API&lt;/a&gt; for more information.&lt;/li&gt;
 &lt;li&gt;Promotions feature is only available for &lt;a href=&#34;../../../../en/docs/services/payments.html#payment-flows&#34;&gt;one-step flows&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;For payments with credit card tokens, include the parameters &lt;code&gt;transaction.creditCardTokenId&lt;/code&gt; and &lt;code&gt;transaction.creditCard.securityCode&lt;/code&gt; replacing the information of the credit card (if you process with security code). For more information, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;For payments with credit card tokens, include the parameters &lt;code&gt;transaction.creditCardTokenId&lt;/code&gt; and &lt;code&gt;transaction.creditCard.securityCode&lt;/code&gt; (if you process with security code) replacing the information of the credit card. For more information, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; as true and remove the variable &lt;code&gt;creditCard.securityCode&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.&lt;/li&gt;
 &lt;li&gt;Due to Tax regulations, it is mandatory to send the parameters &lt;code&gt;payer.billingAddress.state&lt;/code&gt; using format &lt;a href=&#34;https://www.iso.org/obp/ui/#iso:code:3166:AR&#34;&gt;ISO 3166-2 ARG official&lt;/a&gt; and &lt;code&gt;payer.dnitype&lt;/code&gt;.&lt;/li&gt;
@@ -1205,7 +1205,7 @@
 
 &lt;/div&gt;
 &lt;h3 id=&#34;charge&#34;&gt;Charge&lt;/h3&gt;
-&lt;p&gt;Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:&lt;/p&gt;
+&lt;p&gt;Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved.&lt;/p&gt;
 &lt;p&gt;The following are the request and response bodies for this transaction type.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
@@ -2575,7 +2575,7 @@
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-1&#34;&gt;API call&lt;/h3&gt;
-&lt;p&gt;The following are the bodies of the request and response of this method. For the sake of the example, the request and response here show two payment methods.&lt;/p&gt;
+&lt;p&gt;The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -29996,7 +29996,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;/ul&gt;
 &lt;h3 id=&#34;chile&#34;&gt;Chile&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;The minimum time to send a void is three (3) hours after the authorization and the maximum is seven (7) days. If no void or capture is sent after this time, the transaction is auto-voided.&lt;/li&gt;
+&lt;li&gt;Due to network restrictions, void can be authorized within the first three hours after the authorization. If the void is not accepted or no capture is sent after seven (7) days, the transaction is auto-voided.&lt;/li&gt;
 &lt;li&gt;The minimum time to send a refund is 10 minutes after the approval and the maximum is 90 days.&lt;/li&gt;
 &lt;li&gt;Refunds for &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-debit-and-prepaid-cards&#34;&gt;transactions processed by WebPay Plus&lt;/a&gt; are not supported.&lt;/li&gt;
 &lt;li&gt;For transactions prepaid cards not processed by WebPay Plus, Refunds requested during the first hour after their charge can be approved or rejected by the financial network. After the first hour, all the refund for transactions with prepaid cards are rejected.&lt;/li&gt;
