@@ -1276,7 +1276,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 Las variables anteriores se envía a través de GET.
 
 ### Llamado del API {#api-call-1}
-The following are the bodies of the request and response of this payment method.
+Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
