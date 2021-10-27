@@ -25,13 +25,19 @@ Payments API includes the following methods:
 * [Available payment methods query]({{< ref "Payments-API-Brazil.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Brazil.md#ping" >}})
 
+{{% alert title="Note" color="info"%}}
+To confirm the status of a transaction, you can use one of the following options:
+* Navigate to the the URL set in the `transaction.notifyUrl` variable or the _**Confirmation URL**_ option located in the PayU Module in _**Settings**_ > _**Technical configuration**_.
+* Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
+{{% /alert %}}
+
 ## Submit transaction with credit cards
 This method lets you process the payments performed by your customers using credit cards. For Brazil, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Adding Payment Facilitators
 Merchants can be considered as Payment Processor by franchises and the Central Bank. A payment processor is a legal entity that has money from sub-merchants. In the case of merchant bankruptcy and tax management, the Brazilian Central Bank wants to know the business's beneficiary.
 
-To include the information of the sub-merchant, you need to include it in the request of the **Authorization**,  and **Charge** flows using the `submerchant` object.
+To include the information of the sub-merchant, you need to include it in the request of the **Authorization**, and **Charge** flows using the `submerchant` object.
 
 #### What is a Payment Facilitator?
 A payment facilitator is a company that offers an alternative to contracting with a traditional payment organization by assuming responsibility for the flow of funds in a buyer-seller relationship.
@@ -107,7 +113,7 @@ Find the description of these fields in the next section.
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 19, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > order > submerchant |  |  | Information of the sub-merchant. if you don't send this parameter, PayU configures your merchant as sub-merchant. | No |
+| transaction > order > submerchant |  |  | Information of the sub-merchant. If you don't send this parameter, PayU configures your merchant as sub-merchant. | No |
 | transaction > order > submerchant > id | Alphanumeric | Max:15 | Internal ID of the sub-merchant if you use one to identify it. | No |
 | transaction > order > submerchant > fullName | Alphanumeric | Max:150 | Full name of the sub-merchant. | No |
 | transaction > order > submerchant > address |  |  | Sub-merchant address. The fields `state`, `country`, and `postalCode`are mandatory when sending this object. | No |
@@ -156,7 +162,7 @@ Find the description of these fields in the next section.
 | transaction > termsAndConditionsAcepted | Boolean | | PayU terms and conditions that the payers must accept. *This parameter is only mandatory if your Brazilian PayU account is associated to a foreign bank account. | No* |
 | transaction > threeDomainSecure |  |  | This object contains the information of 3DS 2.0. | No |
 | transaction > threeDomainSecure > embedded | Boolean |  | Set `true` if you want to use and embedded MPI for the Authorization process. By default, this value is set as `false`. | No |
-| transaction > threeDomainSecure > eci | Number | Max:2 | Eletronic Commerce Indicator.<br>Value returned by the directory servers showing the authentication attempt.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` and `transaction.threeDomainSecure.xid` has been set. | No |
+| transaction > threeDomainSecure > eci | Number | Max:2 | Electronic Commerce Indicator.<br>Value returned by the directory servers showing the authentication attempt.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` and `transaction.threeDomainSecure.xid` has been set. | No |
 | transaction > threeDomainSecure > cavv | Alphanumeric | Max:28 | Cardholder Authentication Verification Value.<br>Code of the cryptogram used in the transaction authentication in Base64.<br>Depending on the specific ECI codes established by the process network, this value may be optional. | No |
 | transaction > threeDomainSecure > xid | Alphanumeric | Max:28 | Transaction ID sent by the MPI in Base64.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` and `transaction.threeDomainSecure.eci` has been set. | No |
 | transaction > threeDomainSecure > directoryServerTransactionId | Alphanumeric | Max:36 | Transaction ID generated by the Directory Server during the Authentication. | No |
@@ -175,7 +181,7 @@ Find the description of these fields in the next section.
 | transactionResponse |  |  | The response data. |
 | transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
 | transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
-| transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. For Brazil, only send two characters, For example, set `SP` for São Paulo. |
+| transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. |
 | transactionResponse > responseCode | Alphanumeric | Max:64 | The response code associated with the status. |
 | transactionResponse > paymentNetworkResponseCode | Alphanumeric | Max:255 | The response code returned by the financial network. |
 | transactionResponse > paymentNetworkResponseErrorMessage | Alphanumeric | Max:255 | The error message returned by the financial network. |
@@ -190,7 +196,7 @@ Find the description of these fields in the next section.
 #### Considerations
 * If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`) when using [Authorization]({{< ref "payments-api-brazil.md#authorization" >}}) or [Charge]({{< ref "payments-api-brazil.md#charge" >}}).
 * If you don't send any information for the sub-merchants, PayU configures your merchant as sub-merchant.
-* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId`, `transaction.creditCard.expirationDate`, and `transaction.creditCard.securityCode` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
+* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * The extra parameter `CIELO_TID` identifies the transaction, this parameter is needed when you want to process voids.
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
@@ -960,7 +966,7 @@ Pix has two parts:
 | transactionResponse |  |  | The response data. |
 | transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
 | transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
-| transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. As the payment is performed by the user in a physical office, the state for a successful transaction is `PENDING` |
+| transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. As the payment is performed by the user in their phone, the state for a successful transaction is `PENDING` |
 | transactionResponse > paymentNetworkResponseCode | Alphanumeric | Max:255 | The response code returned by the financial network. |
 | transactionResponse > paymentNetworkResponseErrorMessage | Alphanumeric | Max:255 | The error message returned by the financial network. |
 | transactionResponse > trazabilityCode | Alphanumeric | Max:32 | The traceability code returned by the financial network. |
@@ -974,7 +980,7 @@ Pix has two parts:
 </details>
 
 #### Considerations
-* If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`) when using [Authorization]({{< ref "payments-api-brazil.md#authorization" >}}) or [Charge]({{< ref "payments-api-brazil.md#charge" >}}).
+* If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`.
 * The parameter `transaction.payer.fullName` is mandatory to create the request.
 * The QR code and the PIX key used to receive payments is generated by PayU, it is not supported to configure your own QR code nor PIX key. Nevertheless, the total of the transaction minus the commission fee is transferred to your PayU account.
 * The parameter `transactionResponse.extraParameters` has the following parameters related to the transaction:
@@ -1278,7 +1284,7 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
+| transaction > type | Alphanumeric | 32 | As Bank transfers payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method in cash. [See the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `BR` for Brazil. | Yes |
 | transaction > expirationDate | Alphanumeric | 23 | Maximum date and time that the payer has to make the payment. Format `YYYY-MM-DDTHH:MM:SS`, for example `2021-06-12T16:07:11.586`. | No |

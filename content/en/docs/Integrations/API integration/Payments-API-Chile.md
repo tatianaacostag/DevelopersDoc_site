@@ -20,7 +20,7 @@ Payments API includes the following methods:
 
 * [Submit transaction with credit or debit cards]({{< ref "Payments-API-Chile.md#submit-transaction-with-credit-or-debit-cards" >}})
 * [Submit transaction with cash]({{< ref "Payments-API-Chile.md#submit-transaction-with-cash" >}})
-* [Submit transaction with debit and prepaid cards using WebPay Plus ]({{< ref "Payments-API-Chile.md#submit-transaction-with-debit-and-prepaid-cards" >}})
+* [Submit transaction with debit and prepaid cards using WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transaction-with-debit-and-prepaid-cards" >}})
 * [Available payment methods query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Chile.md#ping" >}})
 
@@ -123,7 +123,7 @@ Transactions with credit card using two-step flows are available under demand. C
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` for one-step flows.</li></ul> | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit or Debit card Payment Method. [See the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CL` for Chile. | Yes |
-| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
+| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
@@ -156,7 +156,7 @@ Transactions with credit card using two-step flows are available under demand. C
 </details>
 
 #### Considerations
-* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
+* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * International debit cards are not supported.
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
 * Two-step flows are not supported for debit, prepaid and international credit cards.
@@ -1222,10 +1222,10 @@ This method lets you process the bank debit and prepaid card payments of your cu
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. | Yes |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
-| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method for Debit and prepaid cards. [See the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Yes |
+| transaction > type | Alphanumeric | 32 | Como los pagos con tarjetas débito y prepago se realizan en la página web de WebPay Plus, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Yes |
+| transaction > paymentMethod | Alphanumeric | 32 | Seleccione un medio de pago válido para tarjetas débito y prepago. [Ver los medios de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CL` for Chile. | Yes |
-| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
+| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
