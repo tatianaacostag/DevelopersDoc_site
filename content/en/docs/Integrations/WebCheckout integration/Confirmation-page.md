@@ -62,7 +62,7 @@ In the confirmation page, you must capture the data you want to store in the dat
 | phone | Alphanumeric | 20 | The buyer’s residence phone. |
 | office_phone | Alphanumeric | 20 | The buyer’s daytime phone. |
 | account_number_ach | Alphanumeric | 36 | The transaction’s identifier. |
-| account_type_ach | Alphanumeric | 36 | The transaction’s type. |
+| account_type_ach | Alphanumeric | 36 | The transaction’s identifier. |
 | administrative_fee | Decimal (#.00) | — | Value of the administrative fee |
 | administrative_fee_base | Decimal (#.00) | — | Base value of the administrative fee |
 | administrative_fee_tax | Decimal (#.00) | — | Tax value of the administrative fee |
@@ -84,9 +84,9 @@ In the confirmation page, you must capture the data you want to store in the dat
 | nickname_seller | Alphanumeric | 150 | Short name of the seller. |
 | payment_method_id | Numeric | — | Identifier of payment methods.<br>[See the codes of the payment methods]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
 | payment_request_state | Alphanumeric | 32 | Status of the payment request. |
-| pseReference1 | Alphanumeric | 255 | Reference no. 1 for PSE payments. |
-| pseReference2 | Alphanumeric | 255 | Reference no. 2 for PSE payments. |
-| pseReference3 | Alphanumeric | 255 | Reference no. 3 for PSE payments. |
+| pse_reference1 | Alphanumeric | 255 | Reference no. 1 for PSE payments. |
+| pse_reference2 | Alphanumeric | 255 | Reference no. 2 for PSE payments. |
+| pse_reference3 | Alphanumeric | 255 | Reference no. 3 for PSE payments. |
 | response_message_pol | Alphanumeric | 255 | PayU’s response message.<br>[See the response messages in the given column]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
 | shipping_city | Alphanumeric | 50 | The city where the merchandise is delivered. |
 | shipping_country | Alphanumeric | 2 | The ISO code associated with the country where the merchandise is delivered. |

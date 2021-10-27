@@ -76,8 +76,8 @@ Variables sent to the response page.
 | transactionId | Alphanumeric | 36 | Transaction identifier. | — |
 | trazabilityCode | Alphanumeric | 64 | Traceability Code of the sale on the merchant's site. | — |
 | TX_ADMINISTRATIVE_FEE | Decimal (#.00) | — | Value of the administrative fee. | — |
-| TX_TAX_ADMINISTRATIVE _FEE | Decimal (#.00) | — | Value of the tax of the administrative fee. | — |
-| TX_TAX_ADMINISTRATIVE _FEE_RETURN_BASE | Decimal (#.00) | — | Base value of the administrative fee for the tax refund. | — |
+| TX_TAX_ADMINISTRATIVE_FEE | Decimal (#.00) | — | Value of the tax of the administrative fee. | — |
+| TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE | Decimal (#.00) | — | Base value of the administrative fee for the tax refund. | — |
 | action_code_description | Alphanumeric | 255 | VISANET response code description. | VISANET Peru |
 | cc_holder | Alphanumeric | 150 | Name of cardholder. | VISANET Peru |
 | cc_number | Alphanumeric | — | Credit card number. | VISANET Peru |

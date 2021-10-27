@@ -1222,7 +1222,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 | transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. | Sí |
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alfanumérico | 32 | Como los pagos se realizan en , el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
+| transaction > type | Alfanumérico | 32 | Como los pagos se realizan en la página de WebPay plus, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
 | transaction > paymentMethod | Alfanumérico | 32 | Seleccione un medio de pago válido para Tarjetas Débito y prepago. [Ver los medios de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `CL` para Chile. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
