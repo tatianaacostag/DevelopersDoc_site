@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-peru.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-10-22T10:04:39-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-10-27T09:30:46-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payments API - Peru">
 <meta itemprop="description" content="Payments API Peru lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-10-22T10:04:39-05:00" />
+<meta itemprop="dateModified" content="2021-10-27T09:30:46-05:00" />
 <meta itemprop="wordCount" content="5299">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Peru"/>
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.902fc58b94ba4cc68d1f3325f509005b543eacc6be85f7a4cb9ff804a6f0b318e0500dae05879eea6d4d24f65f366c234e28180b482d04f67805ebb855fd746b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.918482975f893ff1ccc62686933b3dea58600e346378c48bd8d80ade71bd54ddc79832de6e9d1cd37353f10e2eb8bfacfafe36b4224d7db12aa4c03f97ee303f.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1546,7 +1546,7 @@
 </details>
 <h4 id="considerations">Considerations</h4>
 <ul>
-<li>For payments with credit card tokens, include the parameters <code>transaction.creditCardTokenId</code> and <code>transaction.creditCard.securityCode</code> replacing the information of the credit card (if you process with security code). For more information, refer to <a href="../../../../en/docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</li>
+<li>For payments with credit card tokens, include the parameters <code>transaction.creditCardTokenId</code> and <code>transaction.creditCard.securityCode</code> (if you process with security code) replacing the information of the credit card. For more information, refer to <a href="../../../../en/docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</li>
 <li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
 <li>In Peru, you can select 0 or 2 to 36 installments when paying with credit card. If you select one (1) installment, PayU sends zero (0) as default value.</li>
 </ul>
@@ -3651,9 +3651,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 22, 2021:
+October 27, 2021:
 
- <b>Update mandatory parameters for Cash payments in Peru (75a58f14)</b>
+ <b>Translations to Spanish (527b21b4)</b>
 </div>
 </div>
 
