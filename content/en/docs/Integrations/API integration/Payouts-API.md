@@ -339,14 +339,17 @@ To update a Payout request, use the following URL:
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{bankAccountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{accountId}/{bankAccountId}
 ```
 <br>
 
-Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
-* The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
-* The value for the variable `{bankAccountId}` is the payee Id returned by the [Request payout service]({{< ref "#request-payout" >}})
+The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+
+| Parameter     | Description                                                                 | Mandatory |
+|---------------|-----------------------------------------------------------------------------|:---------:|
+| merchantId    | Merchant’s ID number in PayU’s system.                                      |    Yes    |
+| accountId     | ID of the user account for each country associated with the merchant.       |    Yes    |
+| bankAccountId | ID returned by the [Request payout service]({{< ref "#request-payout" >}}). |    Yes    |
 
 ### Variables for request
 
@@ -411,14 +414,17 @@ To cancel a Payout request, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{paymentOrderId}
+https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}/{paymentOrderId}
 ```
 <br>
 
-Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
-* The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
-* The value for the variable `{paymentOrderId}` is the Payout id generated when the order was created by the [Request payout service]({{< ref "#request-payout" >}})
+The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+
+| Parameter      | Description                                                                 | Mandatory |
+|----------------|-----------------------------------------------------------------------------|:---------:|
+| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Yes    |
+| accountId      | ID of the user account for each country associated with the merchant.       |    Yes    |
+| paymentOrderId | Payout ID generated when the order was created by the [Request payout service]({{< ref "#request-payout" >}}). |    Yes    |
 
 ### Variables for request
 
@@ -489,7 +495,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
@@ -497,12 +503,16 @@ https://{env-api}.payulatam.com/push-payment/v1.0/webhooks
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
-Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+
+| Parameter      | Description                                                                 | Mandatory |
+|----------------|-----------------------------------------------------------------------------|:---------:|
+| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Yes    |
+| accountId      | ID of the user account for each country associated with the merchant.       |    Yes    |
 
 ### Variables for request and response
 
@@ -611,13 +621,17 @@ To delete a WebHook, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
-Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
-* `{id}` is the id of the WebHook you want to delete.
+The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+
+| Parameter      | Description                                                                 | Mandatory |
+|----------------|-----------------------------------------------------------------------------|:---------:|
+| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Yes    |
+| accountId      | ID of the user account for each country associated with the merchant.       |    Yes    |
+| id             | ID the WebHook you want to delete.                                          |    Yes    |
 
 #### Response example
 
@@ -661,13 +675,17 @@ This method lets you consult the information of a specific WebHook using its id.
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
-Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
-* `{id}` is the id of the WebHook you want to consult.
+The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+
+| Parameter      | Description                                                                 | Mandatory |
+|----------------|-----------------------------------------------------------------------------|:---------:|
+| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Yes    |
+| accountId      | ID of the user account for each country associated with the merchant.       |    Yes    |
+| id             | ID the WebHook you want to query.                                           |    Yes    |
 
 #### Response example
 
@@ -722,13 +740,16 @@ This method lets you consult the information of all the WebHooks created in your
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{accountId}
+https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{merchantId}/{accountId}
 ```
 <br>
 
-Where:
-* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
-* `{accountId}` is the id of your account.
+The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+
+| Parameter      | Description                                                                 | Mandatory |
+|----------------|-----------------------------------------------------------------------------|:---------:|
+| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Yes    |
+| accountId      | ID of the user account for each country associated with the merchant.       |    Yes    |
 
 #### Response example
 
