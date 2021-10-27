@@ -18,7 +18,7 @@ The confirmation page lets you update the databases in your system; hence, this 
 In the confirmation page, you must capture the data you want to store in the database. This capture depends on the programming language you use.
 
 ## Considerations
-* If your site is restricted with _basic access authentication_ or similar, disable it for the confirmation url.
+* If your site is restricted with _basic access authentication_ or similar, disable it for the confirmation URL.
 * The IP associated with the confirmation URL should be public; do not use URL accessible from intranet or localhost.
 * If you're using HTTPS, you must have a valid certificate.
 * The format of your confirmation page must be `x-www-form-urlencoded`.
@@ -62,7 +62,7 @@ In the confirmation page, you must capture the data you want to store in the dat
 | phone | Alphanumeric | 20 | The buyer’s residence phone. |
 | office_phone | Alphanumeric | 20 | The buyer’s daytime phone. |
 | account_number_ach | Alphanumeric | 36 | The transaction’s identifier. |
-| account_type_ach | Alphanumeric | 36 | The transaction’s identifier. |
+| account_type_ach | Alphanumeric | 36 | The transaction’s type. |
 | administrative_fee | Decimal (#.00) | — | Value of the administrative fee |
 | administrative_fee_base | Decimal (#.00) | — | Base value of the administrative fee |
 | administrative_fee_tax | Decimal (#.00) | — | Tax value of the administrative fee |
@@ -97,7 +97,7 @@ In the confirmation page, you must capture the data you want to store in the dat
 </details>
 
 ## POST example send to the confirmation page
-The following is a basic example of the variables sent to the response page via POST:
+The following is a basic example of the variables sent to the confirmation page via POST:
 
 ```HTML
 response_code_pol=5
