@@ -5,7 +5,6 @@ date: 2021-07-16T11:32:55-05:00
 description: >
   Payouts is an API solution that helps you easily send multiple and secure payouts to different types of payees (users, merchants, providers, customers, etc.) and is functionally tailored to LATAM market specifics.
 weight: 70
-draft: true
 ---
 
 Payouts is an integration service available under demand, and its activation depends on a security and risk analysis. For more information or requesting this service, contact your Sales Representative.
@@ -39,7 +38,7 @@ You only need to provide the amount to pay along with the information of each pa
 1. **Payout request**: you send an API request with the list of payees you want to send funds to, along with the amount for each transaction and their payment information. 
 2. **Payee validation**: payees are validated through our solution (Sanction Screening process) and payouts are scheduled. 
 3. **Funds deduction**: each payout along with the processing fee are deducted from your PayU virtual account.
-4. **Confirmation process**: The bank processes the payment according to [ACH process]{{< ref "#transaction-processing" >}}. You can customize notifications to receive changes in the payment status. 
+4. **Confirmation process**: the bank processes the payment according to [ACH process]({{< ref "#transaction-processing" >}}). You can customize notifications to receive changes in the payment status. 
 
 
 ### Payout states

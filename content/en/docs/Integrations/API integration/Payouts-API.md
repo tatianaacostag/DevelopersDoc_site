@@ -6,7 +6,6 @@ description: >
   This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 weight: 60
 tags: ["subtopic"]
-draft: true
 ---
 
 For introductory terms, how to request this service and more information, refer to [Payouts]({{< ref "payouts.html" >}}).
@@ -46,7 +45,7 @@ To authenticate, send the request as follows:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?apiKey={apiKey}&apiLogin={apiLogin}
+https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?accountId={accountId}&apiKey={apiKey}&apiLogin={apiLogin}
 ```
 <br>
 
@@ -54,6 +53,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?apiKey={apiKey}&a
 
 | Parameter     | Description                                                              | Mandatory |
 |---------------|--------------------------------------------------------------------------|:---------:|
+| accountId     | ID of the user account for each country associated with the merchant.    |    Yes    |
 | apiKey        | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
 | apiLogin      | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Yes    |
 
@@ -120,11 +120,11 @@ Both parameters can be found in your PayU module.
 | transfers[n] > bankAccount > bankCode | Numeric | Min:3 Max:4 | Code of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | No |
 | transfers[n] > bankAccount > accountType | Alphanumeric | 2 | Set `CC` for Current account and `CA` for Saving account or `Nequi`<sup>\*</sup>.<br>This parameter is mandatory when you are creating a payout request for a new payee.<br><sup>\*</sup>_Nequi is available in Colombia_. | No |
 | transfers[n] > bankAccount > country | Alphanumeric | 2 | Country of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
-| transfers[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the payee. If the `documentType` is `NIT`, send the check digit.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > documentNumber | Numeric | 50 | Identification number of the payee. If the `documentType` is `NIT`, the document number must have a hyphen (`-`) and the check digit. Example: `830140299-6`.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
 | transfers[n] > bankAccount > documentType | Alphanumeric | 2 | Identification type of the payee. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
-| transfers[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the payee. Format `YYYY/MM/DD`. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > expeditionDate | Alphanumeric | 10 | Expedition date of the identity document of the payee. Format `YYYY/MM/DD`. | No |
 | transfers[n] > bankAccount > fullName | Alphanumeric |  | Full name of the payee.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
-| transfers[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the payee. Format `YYYY/MM/DD`. For legal person, send any valid date.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
+| transfers[n] > bankAccount > birthDate | Alphanumeric | 10 | Birth date of the payee. Format `YYYY/MM/DD`. | No |
 | transfers[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. Set `ACTIVE` when you are creating a new payee. | No |
 | transfers[n] > bankAccount > merchantId | Numeric | | Identifier of your commerce in PayU. | No |
 | transfers[n] > description | Alphanumeric | | Additional information of the payout. | No |
