@@ -13,7 +13,7 @@ For introductory terms, how to request this service and more information, refer 
 ## Configuring the authentication
 To use the methods to manage Payouts or WebHooks exposed by the Payouts service, you must include the `Authorization` and `PublicKey` headers:
 
-* To configure the `Authorization` header, call the [authentication method]({{< ref "Payouts-API.md#authentication" >}}) provided by the Payouts service. <br>Example:
+* To configure the `Authorization` header, call the [authentication method]({{< ref "#authentication" >}}) provided by the Payouts service. <br>Example:
 
 ```
 Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTYyODU0ODE2NywiaWF0IjoxNjI4NTQ4MTY3fQ.jrO3u5ramYKOvoNNb0TNfBuZkbYg1EvPmCDDYXFEO4c 
@@ -27,13 +27,13 @@ Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2Vy
 ## Available methods
 Payouts API includes the following methods:
 
-* [Authentication]({{< ref "Payouts-API.md#authentication" >}})
-* [Request payout]({{< ref "Payouts-API.md#request-payout" >}})
-* [Update payout request]({{< ref "Payouts-API.md#update-payout-request" >}})
-* [Cancel payout request]({{< ref "Payouts-API.md#cancel-payout-request" >}})
-* [Create or update a WebHook]({{< ref "Payouts-API.md#create-or-update-a-webhook" >}})
-* [Delete a WebHook]({{< ref "Payouts-API.md#delete-a-webhook" >}})
-* [Query WebHooks]({{< ref "Payouts-API.md#query-webhooks" >}})
+* [Authentication]({{< ref "#authentication" >}})
+* [Request payout]({{< ref "#request-payout" >}})
+* [Update payout request]({{< ref "#update-payout-request" >}})
+* [Cancel payout request]({{< ref "#cancel-payout-request" >}})
+* [Create or update a WebHook]({{< ref "#create-or-update-a-transfershook" >}})
+* [Delete a WebHook]({{< ref "#delete-a-transfershook" >}})
+* [Query WebHooks]({{< ref "#query-transfershooks" >}})
 
 ## Authentication
 The first step regardless of the method you want to request is to authenticate your account using the credentials provided by PayU.
@@ -49,7 +49,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?accountId={accoun
 ```
 <br>
 
- The value for the variable `{env-api}` displayed above is `sandbox-web` for testing and `web` for production mode.
+ The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
 
 | Parameter     | Description                                                              | Mandatory |
 |---------------|--------------------------------------------------------------------------|:---------:|
@@ -80,7 +80,7 @@ This method lets you create one or multiple Payouts request for payees which can
 
 {{% alert title="Note" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 
 {{% /alert %}}
 
@@ -93,7 +93,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId
 ```
 <br>
 
- The value for the variable `{env-api}` displayed above is `sandbox-web` for testing and `web` for production mode.
+ The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
 
 | Parameter     | Description                                                           | Mandatory |
 |---------------|-----------------------------------------------------------------------|:---------:|
@@ -330,7 +330,7 @@ You can only request the update of the information of a payee for when the Payou
 
 {{% alert title="Note" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 
 {{% /alert %}}
 
@@ -344,9 +344,9 @@ https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-accoun
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
 * The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
-* The value for the variable `{bankAccountId}` is the payee Id returned by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
+* The value for the variable `{bankAccountId}` is the payee Id returned by the [Request payout service]({{< ref "#request-payout" >}})
 
 ### Variables for request
 
@@ -402,7 +402,7 @@ This method lets you request the cancellation of a payout request. You can only 
 
 {{% alert title="Note" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 
 {{% /alert %}}
 
@@ -416,9 +416,9 @@ https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
 * The value for the variable `{merchantId}` is the identifier of your commerce in PayU.
-* The value for the variable `{paymentOrderId}` is the Payout id generated when the order was created by the [Request payout service]({{< ref "Payouts-API.md#request-payout" >}})
+* The value for the variable `{paymentOrderId}` is the Payout id generated when the order was created by the [Request payout service]({{< ref "#request-payout" >}})
 
 ### Variables for request
 
@@ -480,7 +480,7 @@ You can configure a WebHook for the following events:
 
 {{% alert title="Note" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 
 {{% /alert %}}
 
@@ -502,7 +502,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/webhooks
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
 
 ### Variables for request and response
 
@@ -602,7 +602,7 @@ This method lets you delete a WebHook previously created. As soon as you delete 
 
 {{% alert title="Note" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 
 {{% /alert %}}
 
@@ -616,7 +616,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
 * `{id}` is the id of the WebHook you want to delete.
 
 #### Response example
@@ -652,7 +652,7 @@ You can consult WebHooks related to your account either by their id or by the ac
 
 {{% alert title="Note" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "Payouts-API.md#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 
 {{% /alert %}}
 
@@ -666,7 +666,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
 * `{id}` is the id of the WebHook you want to consult.
 
 #### Response example
@@ -727,7 +727,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{accountId}
 <br>
 
 Where:
-* The value for the variable `{env-api}` is `sandbox-web` for testing and `web` for production mode.
+* The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
 * `{accountId}` is the id of your account.
 
 #### Response example
