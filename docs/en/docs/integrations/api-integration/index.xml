@@ -3136,7 +3136,7 @@ By default, processing credit cards without security code is not enabled. If you
 
 &lt;/div&gt;
 &lt;h4 id=&#34;pay-with-mdes-or-vts-tokens&#34;&gt;Pay with MDES or VTS tokens&lt;/h4&gt;
-&lt;p&gt;If ypu are already tokenizing your customer&amp;rsquo;s credit cards, you can configure the information of the token in the parameter &lt;code&gt;transaction.networkToken&lt;/code&gt; replacing the information of the credit card and send the parameter &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; as true.&lt;br&gt;By default, processing credit cards without security code is not enabled, contact your Sales representative to enable it.&lt;/p&gt;
+&lt;p&gt;If you are tokenizing your customer&amp;rsquo;s credit cards using MDES or VTS, you can configure the information of the token in the parameter &lt;code&gt;transaction.networkToken&lt;/code&gt; replacing the information of the credit card and send the parameter &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; as true.&lt;br&gt;By default, processing credit cards without security code is not enabled, contact your Sales representative to enable it.&lt;/p&gt;
 &lt;p&gt;The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.&lt;/p&gt;
 &lt;p&gt;&lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
@@ -3913,7 +3913,7 @@ By default, processing credit cards without security code is not enabled. If you
 &lt;td&gt;transaction &amp;gt; networkToken &amp;gt; expiry&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;Expiration date of the token.&lt;/td&gt;
+&lt;td&gt;Expiration date of the token. Format &lt;code&gt;YYYY/MM&lt;/code&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;

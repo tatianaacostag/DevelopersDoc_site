@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-10-29T11:10:45-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-10-29T11:27:18-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de Pagos - Brasil">
 <meta itemprop="description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-10-29T11:10:45-05:00" />
-<meta itemprop="wordCount" content="11592">
+<meta itemprop="dateModified" content="2021-10-29T11:27:18-05:00" />
+<meta itemprop="wordCount" content="11752">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Pagos - Brasil"/>
 <meta name="twitter:description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
@@ -139,7 +139,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.edf2eed4d7a9726063b5890570927920c02cdd1996f5f31e1e70a884a232a0e6604b30aef80d4b2ea762f295a98ed99fc0df3560fccfb42ab93207732687e191.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.870e6082dc2a1bff1601f69057cc72e3ba0b0299e3317e2c855e83850c03f1b84e47c6b6f18d515e46119b3f92fe497d789b7286899f34a50a3f14a3aa393b30.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -772,7 +772,7 @@
 </li>
 </ul>
 <h4 id="pay-with-payu-tokens">Pagar con tokens PayU</h4>
-<p>Para pagos con tókenes de tarjeta de crédito de PayU, incluye el parámetro <code>transaction.creditCardTokenId</code> reemplazando la información de la tarjeta de crédito. El siguiente ejemplo muestra el cuerpo de la petición a alto nivcl de un flujo de un paso, no se muestran los detalles de la petición.</p>
+<p>Para pagos con tókenes de tarjeta de crédito de PayU, incluye el parámetro <code>transaction.creditCardTokenId</code> reemplazando la información de la tarjeta de crédito. El siguiente ejemplo muestra el cuerpo de la petición a alto nivel de un flujo de un paso, no se muestran los detalles de la petición.</p>
 
 
 <div class="alert alert-info" role="alert">
@@ -916,9 +916,9 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 </div>
-<h4 id="pay-with-mdes-or-vts-tokens">Pay with MDES or VTS tokens</h4>
-<p>If ypu are already tokenizing your customer&rsquo;s credit cards, you can configure the information of the token in the parameter <code>transaction.networkToken</code> replacing the information of the credit card and send the parameter <code>creditCard.processWithoutCvv2</code> as true.<br>By default, processing credit cards without security code is not enabled, contact your Sales representative to enable it.</p>
-<p>El siguiente ejemplo muestra el cuerpo de la petición a alto nivle de un flujo de un paso, no se muestran los detalles de la petición.</p>
+<h4 id="pay-with-mdes-or-vts-tokens">Pagar con tokens MDES o VTS</h4>
+<p>Si estás tokenizando las tarjetas de crédito de tus clientes, puedes configurar la información del token en el parámetro <code>transaction.networkToken</code> reemplazando la información de la tarjeta de crédito y enviando el parámetro <code>creditCard.processWithoutCvv2</code> en true.<br>Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas</p>
+<p>El siguiente ejemplo muestra el cuerpo de la petición a alto nivel de un flujo de un paso, no se muestran los detalles de la petición.</p>
 <p><nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1505,7 +1505,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <td>transaction &gt; creditCardTokenId</td>
 <td></td>
 <td></td>
-<td>Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada reemplazando la información de la tarjeta de crédito. Para más información, consulta <a href="../../../../es/docs/integrations/api-integration/tokenization-api.html">API de Tokenización</a>.</td>
+<td>Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada utilizando la tokenización de PayU reemplazando la información de tu tarjeta de crédito; además, es obligatorio enviar el parámetro <code>transaction.creditCard.expirationDate</code>. Para más información, consulta <a href="../../../../es/docs/integrations/api-integration/tokenization-api.html">API de Tokenización</a>.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
@@ -1668,6 +1668,34 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <td>2</td>
 <td>Tipo de identificación del pagador. <a href="../../../../es/docs/getting-started/response-codes-and-variables.html#document-types">Ver tipos de documentos</a>.</td>
 <td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; networkToken</td>
+<td></td>
+<td></td>
+<td>Información del token. Incluye este parámetro cuando la transacción se realice con una tarjeta tokenizada utilizando la tokenización de VTS o MDES. Para más información, consulta <a href="#pay-with-mdes-or-vts-tokens">Pagar con tókenes de MDES o VTS</a>. <br><sup>*</sup>Cuando envíes este objeto, todos sus parámetros son obligatorios.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; networkToken &gt; tokenPan</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Número del token generado por MDES o VTS.</td>
+<td style="text-align:center">Sí<sup>*</sup></td>
+</tr>
+<tr>
+<td>transaction &gt; networkToken &gt; cryptogram</td>
+<td>Alphanumeric</td>
+<td>Max:28</td>
+<td>Llave única generada por MDES o VTS para descifrar la información de la tarjeta de crédito.</td>
+<td style="text-align:center">Sí<sup>*</sup></td>
+</tr>
+<tr>
+<td>transaction &gt; networkToken &gt; expiry</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>Fecha de expiración del token. Formato <code>YYYY/MM</code>.</td>
+<td style="text-align:center">Sí<sup>*</sup></td>
 </tr>
 <tr>
 <td>transaction &gt; type</td>
@@ -1882,8 +1910,9 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <ul>
 <li>Si tu comercio no tiene una entidad local, es obligatorio enviar tanto el CPF (parámetro <code>transaction.[payer|buyer].dniNumber</code>) o el CNPJ (parámetro <code>transaction.[payer|buyer].cnpj</code>) cuando utilices <a href="#authorization">Autorización</a> o <a href="#charge">Cobro</a>.</li>
 <li>Si no envías información del subcomercio. PayU configura a tu comercio como subcomercio.</li>
-<li>Para pagos con tókenes de tarjetas de crédito, incluye los parámetros <code>transaction.creditCardTokenId</code> y <code>transaction.creditCard.securityCode</code> (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito . Para más información, consulta el <a href="../../../../es/docs/integrations/api-integration/tokenization-api.html">API de Tokenización</a>.</li>
-<li>Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable <code>creditCard.processWithoutCvv2</code> con valor true y elimina la variable <code>creditCard.securityCode</code>.</li>
+<li>Para pagos con tókenes de tarjetas de crédito generador por PayU, incluye los parámetros <code>transaction.creditCardTokenId</code> y <code>transaction.creditCard.securityCode</code> (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el <a href="../../../../es/docs/integrations/api-integration/tokenization-api.html">API de Tokenización</a>.</li>
+<li>Para pagos con tókenes de tarjetas de crédito generador por MDES o VTS, incluye el objeto <code>transaction.networkToken</code> y sus parámetros.</li>
+<li>Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable <code>creditCard.processWithoutCvv2</code> con valor true y elimina la variable <code>creditCard.securityCode</code>.<br>Es obligatorio tener activa esta funcionalidad cuando utilices tókenes de tarjetas de crédito generados utilizando MDES o VTS.</li>
 <li>El extra parámetro <code>CIELO_TID</code> identifica la transacción, se necesita este parámetro para procesar anulaciones (voids).</li>
 <li>La variable <code>transaction.threeDomainSecure</code> no reemplaza la información de la tarjeta o ninguno de los campos obligatorios de la transacción. Este objeto es adicional y no es obligatorio.</li>
 <li>La variable <code>transaction.threeDomainSecure</code> corresponde a un escenario <em>Pass Through</em> donde el comercio realiza la autenticación por su cuenta.</li>
@@ -5815,7 +5844,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 29 de octubre de 2021:
 
- <b>Fixes found during the translation process (2921d91e)</b>
+ <b>MDES &amp; VTS tokens for Payments (a14baf3f)</b>
 </div>
 </div>
 
