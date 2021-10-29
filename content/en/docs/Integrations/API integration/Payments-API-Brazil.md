@@ -388,7 +388,6 @@ Find the description of the object `transaction.networkToken` and its parameters
 
 </details>
 
-
 #### Considerations
 * If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`) when using [Authorization]({{< ref "payments-api-brazil.md#authorization" >}}) or [Charge]({{< ref "payments-api-brazil.md#charge" >}}).
 * If you don't send any information for the sub-merchants, PayU configures your merchant as sub-merchant.
