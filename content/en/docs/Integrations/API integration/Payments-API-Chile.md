@@ -166,7 +166,7 @@ Transactions with credit card using two-step flows are available under demand. C
 ### Authorization
 Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-api-chile.md#capture" >}}) the funds.<br>The following are the request and response bodies for this transaction type.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -428,7 +428,7 @@ Take into account the following considerations for capture.
 
 The following are the request and response bodies for this transaction type.
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -539,7 +539,7 @@ Use this method to perform a one-step flow, namely a charge. In this step, both 
 
 The following are the request and response bodies for this transaction type.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -912,7 +912,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 ### API call
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1278,7 +1278,7 @@ The variables above are sent via GET.
 ### API call
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1560,7 +1560,7 @@ This method returns a list of the payment methods available in all countries.
 ### API call
 The following are the examples of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1680,7 +1680,7 @@ The ```PING``` method lets you verify the connection to our platform.
 ### API call
 The following are the examples of the request and response of this method.
 
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
