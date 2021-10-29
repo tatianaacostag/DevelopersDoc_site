@@ -55,7 +55,198 @@ Necesitas enviar la siguiente información:
 * Código postal del subcomercio(obligatorio)
 * País del subcomercio (obligatorio)
 
-Encuentra la descripción de estos campos en la siguiente secciónFind the description of these fields in the next section.
+Encuentra la descripción de estos campos en la sección [Variables]({{< ref "#variables-for-request-and-response" >}}).
+
+### Utilizar tarjetas tokenizadas {#using-tokenized-cards}
+PayU soporta pagos con tus tarjetas tokenizadas para que puedas realizar pagos regulares con una tarjeta almacenada en un token. Un token de tarjeta de crédito substituye la información sensible de una tarjeta de crédito y te permite guardarla siguiendo los estándares de seguridad de PCI DSS (Payment Card Industry Data Security Standard).
+
+PayU puede procesar pagos con los siguientes servicios:
+
+* **Tokenización de PayU**.<br>Proveemos nuestro propio servicio para tokenizar tus tarjetas de crédito bajo petición. Este servicio te permite tokenizar la información de las tarjetas de crédito de tus clientes (independiente de su franquicia) utilizando la integración API o SDK.<br>Para más información, consulta [Tokenización PayU]({{< ref "Tokenization.md" >}}).
+
+* **MasterCard Digital Enablement Service - MDES**.<br>Servicio de tokenización de Mastercard. Este servicio le permite tokenizar el número de cuenta primario de las tarjetas de crédito MasterCard para poder hacer pagos regular o implementar funcionalidades de pago a un clic.<br>Para más información, consulta [MasterCard Digital Enablement Service (MDES) en inglés](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
+
+* **Visa Token Service - VTS**.<br>Servicio de tokenización de Visa. Este servicio le permite almacenar la información sensible de una tarjeta de crédito Visa para poder hacer pagos regular o implementar funcionalidades de pago a un clic.<br>Para más información, consulta [Visa Token Service (VTS)](https://www.visa.com.co/asociandose-con-nosotros/tecnologia-de-pago/visa-token-service.html).
+
+#### Pagar con tokens PayU {#pay-with-payu-tokens}
+Para pagos con tókenes de tarjeta de crédito de PayU, incluye el parámetro `transaction.creditCardTokenId` reemplazando la información de la tarjeta de crédito. El siguiente ejemplo muestra el cuerpo de la petición a alto nivcl de un flujo de un paso, no se muestran los detalles de la petición.
+
+{{% alert title="Nota" color="info"%}}
+Para procesar sin CVV es necesario enviar el parámetro `creditCard.processWithoutCvv2` como true en la petición del pago y quitar el parámetro `creditCard.securityCode`.<br>
+Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas.
+{{% /alert%}}
+
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo petición:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "Información de la orden":""
+      },
+      "payer": {
+         "Información del pagador":""
+      },
+      "creditCardTokenId": "46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3",
+      "creditCard": {
+         "securityCode": "123"
+      },
+      "extraParameters": {
+         "Extra parámetros de la solicitud":""
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "Franquicia de la tarjeta", 
+      "paymentCountry": "País de procesamiento",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": true
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo petición:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <!-- Información de la orden -->
+      </order>
+      <payer>
+         <!-- IInformación del pagador -->
+      </payer>
+      <creditCardTokenId>46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3</creditCardTokenId>
+      <creditCard>
+         <securityCode>321</securityCode>
+      </creditCard>
+      <extraParameters>
+         <!-- Extra parámetros de la solicitud -->
+      </extraParameters>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>{Franquicia de la tarjeta}</paymentMethod>
+      <paymentCountry>{País de procesamiento}</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+#### Pay with MDES or VTS tokens {#pay-with-mdes-or-vts-tokens}
+If ypu are already tokenizing your customer's credit cards, you can configure the information of the token in the parameter `transaction.networkToken` replacing the information of the credit card and send the parameter `creditCard.processWithoutCvv2` as true.<br>By default, processing credit cards without security code is not enabled, contact your Sales representative to enable it.
+
+El siguiente ejemplo muestra el cuerpo de la petición a alto nivle de un flujo de un paso, no se muestran los detalles de la petición.
+
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo petición:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "Información de la orden":""
+      },
+      "payer": {
+         "Información del pagador":""
+      },
+      "networkToken": {
+          "tokenPan": "4097440000000004",
+          "cryptogram": "11223344556677889900112233445566778899",
+          "expiry": "2028/01"
+      },
+      "extraParameters": {
+         "Extra parámetros de la petición":""
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "Franquicia de la tarjeta", 
+      "paymentCountry": "País de procesamiento",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": true
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo petición:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <!-- Información de la orden -->
+      </order>
+      <payer>
+         <!-- Información del pagador -->
+      </payer>
+      <networkToken>
+         <tokenPan>4097440000000004</tokenPan>
+         <cryptogram>11223344556677889900112233445566778899</cryptogram>
+         <expiry>2028/01</expiry>
+      </networkToken>
+      <extraParameters>
+         <!-- Extra parámetros de la petición -->
+      </extraParameters>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>{Franquicia de la tarjeta}</paymentMethod>
+      <paymentCountry>{País de procesamiento}</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+<br>
+
+Encuentra la descripción del objeto `transaction.networkToken` y sus parámetros en la sección [Variables]({{< ref "#variables-for-request-and-response" >}}).
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response}
 
@@ -128,7 +319,7 @@ Encuentra la descripción de estos campos en la siguiente secciónFind the descr
 | transaction > order > submerchant > identification | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > order > submerchant > identificationType | Alfanumérico | Max:4 | Tipo de identificación of the sub-merchant. The possible values are `cnpj` o `cpf`. | No |
 | transaction > creditCardTokenId |  |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada reemplazando la información de la tarjeta de crédito. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}). | No |
-| transaction > creditCard |  |  | Información de la tarjeta de crédito.Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
+| transaction > creditCard |  |  | Información de la tarjeta de crédito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
 | transaction > creditCard > number | Alfanumérico | Min:13 Max:20 | Número de la tarjeta de crédito. | No |
 | transaction > creditCard > securityCode | Alfanumérico | Min:1 Max:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
 | transaction > creditCard > expirationDate | Alfanumérico | 7 | Fecha de expiración de la tarjeta de crédito. Formato `YYYY/MM`. | No |
@@ -152,7 +343,7 @@ Encuentra la descripción de estos campos en la siguiente secciónFind the descr
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del pagador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción requerido:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para flujos de un paso.</li></ul> | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito o débito valido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito valido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -188,7 +379,7 @@ Encuentra la descripción de estos campos en la siguiente secciónFind the descr
 | transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
 | transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados con la respuesta. <br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
@@ -927,7 +1118,6 @@ Pix tiene dos partes:
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 19, 2 | Especifica el monto base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | No | 
 | transaction > payer |  |  | Información del pagador. | Sí |
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | No |
 | transaction > payer > merchantPayerId | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
@@ -945,7 +1135,7 @@ Pix tiene dos partes:
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del comprador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alfanumérico | 32 | Como los pagos con PIX se realizan utilizando el teléfono móvil del pagador, La única transacción disponible es `AUTHORIZATION_AND_CAPTURE`. | Sí |
+| transaction > type | Alfanumérico | 32 | Como los pagos con PIX se realizan utilizando el teléfono móvil del pagador, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE`. | Sí |
 | transaction > paymentMethod | Alfanumérico | 32 | Asigna `PIX` para este medio de pago. Si quieres ver otros medios de pago, consulta [Medios de pago para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
@@ -972,9 +1162,9 @@ Pix tiene dos partes:
 | transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
 | transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
 | transactionResponse > pendingReason | Alfanumérico | Max:21 | Código de la razón asociada con el estado, como se mencionó en  `transactionResponse > state`, la transacción está en espera del pago. |
-| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. IEn este caso, para una transacción exitosa es `PENDING_PAYMENT_IN_ENTITY`. |
+| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_PAYMENT_IN_ENTITY`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"EXPIRATION_DATE": "1627488070000"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>EXPIRATION_DATE</string>`<br>&emsp;&emsp;`<int>1627488070000</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
@@ -991,7 +1181,7 @@ Pix tiene dos partes:
 ### Llamado del API {#api-call}
 Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1207,7 +1397,7 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ## Enviar transacciones en efectivo {#submit-transaction-with-cash}
-Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo,m debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un de pago como ell siguiente.
+Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un recibo de pago como el siguiente.
 
 <img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
 
@@ -1285,7 +1475,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, La única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Select a valid Payment Method in cash. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un medio de pago en efectivo válido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
 | transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1310,9 +1500,9 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
 | transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
 | transactionResponse > pendingReason | Alfanumérico | Max:21 | Código de la razón asociada con el estado, como se mencionó en  `transactionResponse > state`, la transacción está en espera del pago. |
-| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. In this case, for successful transactions is `PENDING_TRANSACTION_CONFIRMATION`. |
+| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_TRANSACTION_CONFIRMATION`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
@@ -1330,7 +1520,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 ### Llamado del API {#api-call-1}
 Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1607,7 +1797,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del comprador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos por transferencia bancaria se realizan en oficinas físicas, La única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Select a valid Payment Method in Bank transfer. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago por transferencia bancaria válido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1634,9 +1824,9 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 | transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
 | transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
 | transactionResponse > pendingReason | Alfanumérico | Max:21 | Código de la razón asociada con el estado, como se mencionó en  `transactionResponse > state`, la transacción está en espera del pago. |
-| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. In this case, for successful transactions is `PENDING_PAYMENT_IN_ENTITY`. |
+| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_PAYMENT_IN_ENTITY`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_URL": "https://gateway.payulatam.com/ppp-web-gateway/payment-redirect.zul?prid=1181964158Ya5b4bd5e7c6e4ebY4085cd2deb967f2"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_URL</string>`<br>&emsp;&emsp;`<string>https://gateway.payulatam.com/ppp-web-gateway/payment-redirect.zul?prid=1181964158Ya5b4bd5e7c6e4ebY4085cd2deb967f2</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 | transactionResponse > additionalInfo |  |  | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
 
@@ -1651,7 +1841,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 ### Llamado del API {#api-call-2}
 Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1889,18 +2079,18 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| paymentMethods |  |  | List of the payment methods. |
+| paymentMethods |  |  | Lista de medios de pago. | Sí |
 | paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > id | Numérico |  | Payment method identifier. |
-| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Payment method name. |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | ISO code of the Payment method country. |
+| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. | Sí |
+| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. | Sí |
+| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del medio de pago. | Sí |
 
 </details>
 
 ### Llamado del API {#api-call-3}
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago. 
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2020,7 +2210,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 ### Llamado del API {#api-call-4}
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 

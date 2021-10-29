@@ -49,7 +49,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | This object has the authentication data. | Sí |
+| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
@@ -150,7 +150,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 | transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
 | transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados a la respuesta. <br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
@@ -543,7 +543,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este tipo de 
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Ejemplo petición:
 ```JSON
 {
    "language": "es",
@@ -630,7 +630,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Ejemplo respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -665,7 +665,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Ejemplo petición:
 ```XML
 <request>
    <language>es</language>
@@ -760,7 +760,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Ejemplo respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -811,7 +811,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | This object has the authentication data. | Sí |
+| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
@@ -899,7 +899,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 | transactionResponse > pendingReason | Alfanumérico | Max:21 | Código de la razón asociada con el estado, como se mencionó en `transactionResponse > state`, la transacción está en espera del pago. |
 | transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_TRANSACTION_CONFIRMATION`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Para pagos en efectivo, `extraParameters` tiene un solo elemento con la URL a donde debes redirigir a tu cliente.<br>En JSON, el parámetro _extraParameters_ es: <br>`"extraParameters": {`<br>&emsp;`"BANK_URL": "https://www.multicaja.cl/bdp/order.xhtml?id=123456789012345"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ es: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_URL</string>`<br>&emsp;&emsp;`<string>https://www.multicaja.cl/bdp/order.xhtml?id=123456789012345</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
@@ -1163,7 +1163,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | This object has the authentication data. | Sí |
+| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
@@ -1253,7 +1253,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 | transactionResponse > pendingReason | Alfanumérico | Max:21 | Código de la razón asociada con el estado, como se mencionó en `transactionResponse > state`, la transacción está en espera del pago. |
 | transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_PAYMENT_IN_ENTITY`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados a la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"URL_PAYMENT_REDIRECT": "xxxx"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>URL_PAYMENT_REDIRECT</string>`<br>&emsp;&emsp;`<string>xxxx</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
@@ -1519,10 +1519,10 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles
-This method returns a list of the payment methods available in all countries.
+## Consultar medios de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los medios de pago disponibles en todos los paises.
 
-### Variables for request and response
+### Variables para la petición y la respuesta {#variables-for-request-and-response-3}
 
 <details>
 <summary>Petición (Request)</summary>
@@ -1534,7 +1534,7 @@ This method returns a list of the payment methods available in all countries.
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `GET_PAYMENT_METHODS`. | Sí |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | This object has the authentication data. | Sí |
+| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 
@@ -1549,22 +1549,22 @@ This method returns a list of the payment methods available in all countries.
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| paymentMethods |  |  | List of the payment methods. |
-| paymentMethods > paymentMethodComplete |  |  | This object has the information of a payment method. |
-| paymentMethods > paymentMethodComplete > id | Numérico |  | Payment method identifier. |
-| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Payment method name. |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | ISO code of the Payment method country. |
+| paymentMethods |  |  | Lista de medios de pago. | Sí |
+| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. | Sí |
+| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. | Sí |
+| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. | Sí |
+| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del medio de pago. | Sí |
 
 </details>
 
-### API call
-The following are the examples of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
+### Llamado del API {#api-call-2}
+Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago. 
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Ejemplo petición:
 ```JSON
 {
    "test": false,
@@ -1578,7 +1578,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Ejemplo respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1607,7 +1607,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Ejemplo petición:
 ```XML
 <request>
    <language>en</language>
@@ -1621,7 +1621,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Ejemplo respuesta:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -1645,9 +1645,9 @@ Response example:
 {{< /tabs >}}
 
 ## Ping
-The ```PING``` method lets you verify the connection to our platform. 
+El método `PING` te permite verificar la conexión con nuestra plataforma. 
 
-### Variables for request and response
+### Variables para la petición y la respuesta #variables-for-request-and-response-4}
 
 <details>
 <summary>Petición (Request)</summary>
@@ -1659,7 +1659,7 @@ The ```PING``` method lets you verify the connection to our platform.
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `PING`. | Sí |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | This object has the authentication data. | Sí |
+| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 
@@ -1672,19 +1672,19 @@ The ```PING``` method lets you verify the connection to our platform.
 
 | Nombre del campo | Formato | Tamaño | Descripción | Mandatory |
 |-|-|-|-|:-:|
-| code | Alfanumérico |  | The response code of the transaction. | Sí |
-| error | Alfanumérico | Max:2048 | The error message associated if an error ocurred. | Sí |
-| transactionResponse | transactionResponse | Max:2048 | The response of the PING method if an error ocurred. | Sí |
+| code | Alfanumérico |  | Código de respuesta de la transacción. |
+| error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
+| transactionResponse | transactionResponse | Max:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
-### API call
+### Llamado del API {#api-call-3}
 The following are the examples of the request and response of this method.
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Ejemplo petición:
 ```JSON
 {
    "test": false,
@@ -1698,7 +1698,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Ejemplo respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1712,7 +1712,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Ejemplo petición:
 ```XML
 <request>
    <language>en</language>
@@ -1726,7 +1726,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Ejemplo respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>

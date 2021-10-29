@@ -145,7 +145,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 | transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
 | transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados con la respuesta. <br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
@@ -861,7 +861,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un medio de pago en efectivo válido. [Ver los medios de pago disponibles para Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago en efectivo válido. [Ver los medios de pago disponibles para Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `AR` para Argentina. | Sí |
 | transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -888,7 +888,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transactionResponse > pendingReason | Alfanumérico | Max:21 | Código de la razón asociada con el estado, como se mencionó en `transactionResponse > state`, la transacción está en espera del pago. |
 | transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_TRANSACTION_CONFIRMATION`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Date |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
@@ -1174,7 +1174,7 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 | paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. | Sí |
 | paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. | Sí |
 | paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Cñodigo ISO del país del medio de pago. | Sí |
+| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del medio de pago. | Sí |
 
 </details>
 
