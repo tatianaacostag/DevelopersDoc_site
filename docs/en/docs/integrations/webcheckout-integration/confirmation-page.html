@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/webcheckout-integration/confirmation-page.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T12:15:57-05:00" />
-<meta property="article:modified_time" content="2021-10-25T15:33:30-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-10-27T17:42:39-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Confirmation Page">
 <meta itemprop="description" content="This page allows you to get system confirmations related with the transaction results. You can update your system&#39;s inventories, orders, or databases. This page is not visible to the customer and its goal is to enable communication between systems. The data is sent via the HTTP POST method. &lt;/br&gt;If the payer generates payment retries during the payment process, a confirmation page is generated for each transaction. This page is invoked for approved and rejected states.
 "><meta itemprop="datePublished" content="2021-03-29T12:15:57-05:00" />
-<meta itemprop="dateModified" content="2021-10-25T15:33:30-05:00" />
+<meta itemprop="dateModified" content="2021-10-27T17:42:39-05:00" />
 <meta itemprop="wordCount" content="1415">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Confirmation Page"/>
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.918482975f893ff1ccc62686933b3dea58600e346378c48bd8d80ade71bd54ddc79832de6e9d1cd37353f10e2eb8bfacfafe36b4224d7db12aa4c03f97ee303f.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.edf2eed4d7a9726063b5890570927920c02cdd1996f5f31e1e70a884a232a0e6604b30aef80d4b2ea762f295a98ed99fc0df3560fccfb42ab93207732687e191.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -997,7 +997,7 @@
 <td>account_type_ach</td>
 <td>Alphanumeric</td>
 <td>36</td>
-<td>The transaction’s type.</td>
+<td>The transaction’s identifier.</td>
 </tr>
 <tr>
 <td>administrative_fee</td>
@@ -1126,19 +1126,19 @@
 <td>Status of the payment request.</td>
 </tr>
 <tr>
-<td>pseReference1</td>
+<td>pse_reference1</td>
 <td>Alphanumeric</td>
 <td>255</td>
 <td>Reference no. 1 for PSE payments.</td>
 </tr>
 <tr>
-<td>pseReference2</td>
+<td>pse_reference2</td>
 <td>Alphanumeric</td>
 <td>255</td>
 <td>Reference no. 2 for PSE payments.</td>
 </tr>
 <tr>
-<td>pseReference3</td>
+<td>pse_reference3</td>
 <td>Alphanumeric</td>
 <td>255</td>
 <td>Reference no. 3 for PSE payments.</td>
@@ -1351,9 +1351,9 @@ state_pol=4
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 25, 2021:
+October 27, 2021:
 
- <b>Translations to Spanish (4ed421cc)</b>
+ <b>Changes from the Production environment (5cb8fc1e)</b>
 </div>
 </div>
 

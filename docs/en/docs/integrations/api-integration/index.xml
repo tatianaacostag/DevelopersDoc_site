@@ -2975,7 +2975,308 @@
 &lt;li&gt;Sub-merchant&amp;rsquo;s Postal Code (mandatory)&lt;/li&gt;
 &lt;li&gt;Sub-merchant&amp;rsquo;s Country (mandatory)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Find the description of these fields in the next section.&lt;/p&gt;
+&lt;p&gt;Find the description of these fields in the &lt;a href=&#34;#variables-for-request-and-response&#34;&gt;Variables&lt;/a&gt; section.&lt;/p&gt;
+&lt;h3 id=&#34;using-tokenized-cards&#34;&gt;Using tokenized cards&lt;/h3&gt;
+&lt;p&gt;PayU supports payments with your tokenized card to let you make payments on a regular bases with a card stored in a token. A credit card token substitutes the sensitive information of a credit card and allows you to safely store it following PCI DSS (Payment Card Industry Data Security Standard) security standards.&lt;/p&gt;
+&lt;p&gt;PayU can process payments with the following services:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;PayU Tokenization&lt;/strong&gt;.&lt;br&gt;We provide our own service to tokenize your credit cards enabled under request. This service lets you tokenize the information of your customers&#39; credit cards (regardless of their franchise) using our API or SDK integration.&lt;br&gt;For more information, refer to &lt;a href=&#34;../../../../en/docs/services/tokenization.html&#34;&gt;PayU Tokenization&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;MasterCard Digital Enablement Service - MDES&lt;/strong&gt;.&lt;br&gt;Tokenization service provided by Mastercard. This service lets you tokenize the Primary Account Number of the MasterCard credit cards to let you use them to make regular payments of build one-click payments features.&lt;br&gt;For more information, refer to &lt;a href=&#34;https://developer.mastercard.com/mdes-digital-enablement/documentation/&#34;&gt;MasterCard Digital Enablement Service (MDES)&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Visa Token Service - VTS&lt;/strong&gt;.&lt;br&gt;Tokenization service provided by Visa. This service lets you store the sensitive information of the Visa credit cards in a token to let you use them to make regular payments of build one-click payments features.&lt;br&gt;For more information, refer to &lt;a href=&#34;https://usa.visa.com/products/visa-token-service.html&#34;&gt;Visa Token Service (VTS)&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;pay-with-payu-tokens&#34;&gt;Pay with PayU tokens&lt;/h4&gt;
+&lt;p&gt;For payments with PayU credit card tokens, include the parameter &lt;code&gt;transaction.creditCardTokenId&lt;/code&gt; replacing the information of the credit card. The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+To process without CVV is necessary to send the parameter &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; as true in the payment request and remove the parameter &lt;code&gt;creditCard.securityCode&lt;/code&gt;.&lt;br&gt;
+By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative.
+&lt;/div&gt;
+
+&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-9&#34; data-toggle=&#34;tab&#34; href=&#34;#tab91&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-9&#34; data-toggle=&#34;tab&#34; href=&#34;#tab92&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;9&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab91&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUBMIT_TRANSACTION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchant&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiKey&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4Vj8eK4rloUd272L48hsrarnUA&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiLogin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pRRXKOl8ikMmt9u&amp;#34;&lt;/span&gt;
+   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transaction&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Information of the order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;payer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Information of the payer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;creditCardTokenId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;creditCard&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;securityCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;123&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;extraParameters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Extra parameters of the request&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;AUTHORIZATION_AND_CAPTURE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Card franchise&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; 
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentCountry&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Processing country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;deviceSessionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;vghs6tvkcle931686k1900o6e1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ipAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;cookie&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pt1t38347bs6jc9ruv2ecpv7o2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;userAgent&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&amp;#34;&lt;/span&gt;
+   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab92&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;request&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;language&amp;gt;&lt;/span&gt;es&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/language&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;command&amp;gt;&lt;/span&gt;SUBMIT_TRANSACTION&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchant&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiKey&amp;gt;&lt;/span&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiKey&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiLogin&amp;gt;&lt;/span&gt;pRRXKOl8ikMmt9u&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiLogin&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchant&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transaction&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;order&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;!-- Information of the order --&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/order&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;payer&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;!-- Information of the payer --&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/payer&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;creditCardTokenId&amp;gt;&lt;/span&gt;46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/creditCardTokenId&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;creditCard&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;securityCode&amp;gt;&lt;/span&gt;321&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/securityCode&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/creditCard&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;extraParameters&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;!-- Extra parameters of the request --&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/extraParameters&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;AUTHORIZATION_AND_CAPTURE&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethod&amp;gt;&lt;/span&gt;{Card franchise}&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentMethod&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentCountry&amp;gt;&lt;/span&gt;{Processing country}&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentCountry&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;deviceSessionId&amp;gt;&lt;/span&gt;vghs6tvkcle931686k1900o6e1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/deviceSessionId&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;ipAddress&amp;gt;&lt;/span&gt;127.0.0.1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/ipAddress&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;cookie&amp;gt;&lt;/span&gt;pt1t38347bs6jc9ruv2ecpv7o2&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/cookie&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;userAgent&amp;gt;&lt;/span&gt;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/userAgent&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transaction&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;isTest&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/isTest&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/request&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;h4 id=&#34;pay-with-mdes-or-vts-tokens&#34;&gt;Pay with MDES or VTS tokens&lt;/h4&gt;
+&lt;p&gt;If ypu are already tokenizing your customer&amp;rsquo;s credit cards, you can configure the information of the token in the parameter &lt;code&gt;transaction.networkToken&lt;/code&gt; replacing the information of the credit card and send the parameter &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; as true.&lt;br&gt;By default, processing credit cards without security code is not enabled, contact your Sales representative to enable it.&lt;/p&gt;
+&lt;p&gt;The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-10&#34; data-toggle=&#34;tab&#34; href=&#34;#tab101&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-10&#34; data-toggle=&#34;tab&#34; href=&#34;#tab102&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;10&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab101&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUBMIT_TRANSACTION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchant&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiKey&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4Vj8eK4rloUd272L48hsrarnUA&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiLogin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pRRXKOl8ikMmt9u&amp;#34;&lt;/span&gt;
+   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transaction&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Information of the order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;payer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Information of the payer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;networkToken&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;tokenPan&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4097440000000004&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;cryptogram&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;11223344556677889900112233445566778899&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;expiry&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2028/01&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;extraParameters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;Extra parameters of the request&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;AUTHORIZATION_AND_CAPTURE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Card franchise&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; 
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentCountry&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Processing country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;deviceSessionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;vghs6tvkcle931686k1900o6e1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ipAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;cookie&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pt1t38347bs6jc9ruv2ecpv7o2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;userAgent&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&amp;#34;&lt;/span&gt;
+   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab102&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;request&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;language&amp;gt;&lt;/span&gt;es&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/language&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;command&amp;gt;&lt;/span&gt;SUBMIT_TRANSACTION&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchant&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiKey&amp;gt;&lt;/span&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiKey&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiLogin&amp;gt;&lt;/span&gt;pRRXKOl8ikMmt9u&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiLogin&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchant&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transaction&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;order&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;!-- Information of the order --&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/order&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;payer&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;!-- Information of the payer --&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/payer&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;networkToken&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;tokenPan&amp;gt;&lt;/span&gt;4097440000000004&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/tokenPan&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;cryptogram&amp;gt;&lt;/span&gt;11223344556677889900112233445566778899&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/cryptogram&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;expiry&amp;gt;&lt;/span&gt;2028/01&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/expiry&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/networkToken&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;extraParameters&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;!-- Extra parameters of the request --&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/extraParameters&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;AUTHORIZATION_AND_CAPTURE&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethod&amp;gt;&lt;/span&gt;{Card franchise}&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentMethod&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentCountry&amp;gt;&lt;/span&gt;{Processing country}&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentCountry&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;deviceSessionId&amp;gt;&lt;/span&gt;vghs6tvkcle931686k1900o6e1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/deviceSessionId&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;ipAddress&amp;gt;&lt;/span&gt;127.0.0.1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/ipAddress&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;cookie&amp;gt;&lt;/span&gt;pt1t38347bs6jc9ruv2ecpv7o2&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/cookie&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;userAgent&amp;gt;&lt;/span&gt;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/userAgent&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transaction&amp;gt;&lt;/span&gt;
+   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;isTest&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/isTest&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/request&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Find the description of the object &lt;code&gt;transaction.networkToken&lt;/code&gt; and its parameters in the &lt;a href=&#34;#variables-for-request-and-response&#34;&gt;Variables&lt;/a&gt; section.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variables for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
@@ -3423,7 +3724,7 @@
 &lt;td&gt;transaction &amp;gt; creditCardTokenId&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Include this parameter when the transaction is done using a tokenized card; moreover, it is mandatory to also send the parameter &lt;code&gt;transaction.creditCard.expirationDate&lt;/code&gt;.&lt;br&gt;For more information, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Include this parameter when the transaction is done using a tokenized card using the PayU Tokenization; moreover, it is mandatory to also send the parameter &lt;code&gt;transaction.creditCard.expirationDate&lt;/code&gt;.&lt;br&gt;For more information, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -3586,6 +3887,34 @@
 &lt;td&gt;2&lt;/td&gt;
 &lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../../../../en/docs/getting-started/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; networkToken&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Information of the token. Include this parameter when the transaction is done using a tokenized card using the VTS or MDES Tokenization. For more information, refer to &lt;a href=&#34;#pay-with-mdes-or-vts-tokens&#34;&gt;Pay with MDES or VTS tokens&lt;/a&gt;. &lt;br&gt;&lt;sup&gt;*&lt;/sup&gt;When sending this object, all its parameters are mandatory.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; networkToken &amp;gt; tokenPan&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:32&lt;/td&gt;
+&lt;td&gt;Token number generated either by MDES or VTS.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; networkToken &amp;gt; cryptogram&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:28&lt;/td&gt;
+&lt;td&gt;Unique key generated by MDES or VTS to decrypt the information of the credit card.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; networkToken &amp;gt; expiry&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Expiration date of the token.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
@@ -3800,8 +4129,9 @@
 &lt;ul&gt;
 &lt;li&gt;If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter &lt;code&gt;transaction.[payer|buyer].dniNumber&lt;/code&gt;) or the CNPJ (parameter &lt;code&gt;transaction.[payer|buyer].cnpj&lt;/code&gt;) when using &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-brazil.html#authorization&#34;&gt;Authorization&lt;/a&gt; or &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-brazil.html#charge&#34;&gt;Charge&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;If you don&amp;rsquo;t send any information for the sub-merchants, PayU configures your merchant as sub-merchant.&lt;/li&gt;
-&lt;li&gt;For payments with credit card tokens, include the parameters &lt;code&gt;transaction.creditCardTokenId&lt;/code&gt; and &lt;code&gt;transaction.creditCard.securityCode&lt;/code&gt; (if you process with security code) replacing the information of the credit card. For more information, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; as true and remove the variable &lt;code&gt;creditCard.securityCode&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;For payments with credit card tokens generated by PayU, include the parameters &lt;code&gt;transaction.creditCardTokenId&lt;/code&gt; and &lt;code&gt;transaction.creditCard.securityCode&lt;/code&gt; (if you process with security code) replacing the information of the credit card. For more information, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;For payments with credit card tokens generated using MDES or VTS, include the object &lt;code&gt;transaction.networkToken&lt;/code&gt; and its parameters.&lt;/li&gt;
+&lt;li&gt;By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; as true and remove the variable &lt;code&gt;creditCard.securityCode&lt;/code&gt;.&lt;br&gt;Having this feature enable is mandatory when using credit card tokens generated using MDES or VTS.&lt;/li&gt;
 &lt;li&gt;The extra parameter &lt;code&gt;CIELO_TID&lt;/code&gt; identifies the transaction, this parameter is needed when you want to process voids.&lt;/li&gt;
 &lt;li&gt;The variable &lt;code&gt;transaction.threeDomainSecure&lt;/code&gt; does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.&lt;/li&gt;
 &lt;li&gt;The variable &lt;code&gt;transaction.threeDomainSecure&lt;/code&gt; corresponds to a &lt;em&gt;Pass Through&lt;/em&gt; scenario where the commerce performs the authentication by their own.&lt;/li&gt;
@@ -4958,13 +5288,6 @@
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;transaction &amp;gt; creditCardTokenId&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -5262,7 +5585,7 @@
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab71&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab41&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -5274,7 +5597,7 @@
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab72&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab42&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -5283,7 +5606,7 @@
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;7&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;4&#34;&gt;
 
 
 
@@ -5292,7 +5615,7 @@
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab71&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab41&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -5401,7 +5724,7 @@
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab72&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab42&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -5983,7 +6306,7 @@
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;As Bank transfers payments are performed in physical offices, the only available transaction type is &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;As Bank transfers payments are performed in the bank&amp;rsquo;s webpage, the only available transaction type is &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -6152,7 +6475,7 @@
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab41&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -6164,7 +6487,7 @@
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab42&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -6173,7 +6496,7 @@
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;4&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
 
 
 
@@ -6182,7 +6505,7 @@
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab41&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -6283,7 +6606,7 @@
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab42&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -7032,7 +7355,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab61&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -7044,7 +7367,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab62&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -7053,7 +7376,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;6&#34;&gt;
 
 
 
@@ -7062,7 +7385,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab61&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -7173,7 +7496,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab62&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -7411,7 +7734,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab71&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -7423,7 +7746,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab72&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -7432,7 +7755,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;7&#34;&gt;
 
 
 
@@ -7441,7 +7764,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab71&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -7489,7 +7812,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab72&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -7642,7 +7965,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab61&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-8&#34; data-toggle=&#34;tab&#34; href=&#34;#tab81&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -7654,7 +7977,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab62&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-8&#34; data-toggle=&#34;tab&#34; href=&#34;#tab82&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -7663,7 +7986,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;6&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;8&#34;&gt;
 
 
 
@@ -7672,7 +7995,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab61&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab81&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -7705,7 +8028,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab62&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab82&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -8504,7 +8827,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab31&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -8516,7 +8839,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab32&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -8525,7 +8848,7 @@ Transactions with credit card using two-step flows are available under demand. C
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;3&#34;&gt;
 
 
 
@@ -8534,7 +8857,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab31&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -8661,7 +8984,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab32&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -8812,7 +9135,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab21&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab41&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -8824,7 +9147,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab22&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab42&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -8833,7 +9156,7 @@ Transactions with credit card using two-step flows are available under demand. C
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;2&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;4&#34;&gt;
 
 
 
@@ -8842,7 +9165,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab21&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab41&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -8902,7 +9225,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab22&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab42&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -8968,7 +9291,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab31&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -8980,7 +9303,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab32&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -8989,7 +9312,7 @@ Transactions with credit card using two-step flows are available under demand. C
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;3&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
 
 
 
@@ -8998,7 +9321,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab31&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -9125,7 +9448,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab32&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -9886,7 +10209,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab41&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab61&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -9898,7 +10221,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab42&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab62&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -9907,7 +10230,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;4&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;6&#34;&gt;
 
 
 
@@ -9916,7 +10239,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab41&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab61&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -10034,7 +10357,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab42&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab62&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -10612,14 +10935,14 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Como los pagos con tarjetas débito y prepago se realizan en la página web de WebPay Plus, el único tipo de transacción disponible es &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;As cash payments are performed in physical offices, the only available transaction type is &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Seleccione un medio de pago válido para tarjetas débito y prepago. &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;Ver los medios de pago disponibles para Chile&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method for Debit and prepaid cards. &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;See the available Payment Methods for Chile&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10830,7 +11153,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab71&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -10842,7 +11165,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab72&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -10851,7 +11174,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;7&#34;&gt;
 
 
 
@@ -10860,7 +11183,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab71&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -10982,7 +11305,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab72&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -11242,7 +11565,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab61&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-8&#34; data-toggle=&#34;tab&#34; href=&#34;#tab81&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -11254,7 +11577,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab62&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-8&#34; data-toggle=&#34;tab&#34; href=&#34;#tab82&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -11263,7 +11586,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;6&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;8&#34;&gt;
 
 
 
@@ -11272,7 +11595,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab61&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab81&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -11320,7 +11643,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab62&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab82&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -11477,7 +11800,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab71&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-9&#34; data-toggle=&#34;tab&#34; href=&#34;#tab91&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -11489,7 +11812,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab72&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-9&#34; data-toggle=&#34;tab&#34; href=&#34;#tab92&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -11498,7 +11821,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;7&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;9&#34;&gt;
 
 
 
@@ -11507,7 +11830,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab71&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab91&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -11540,7 +11863,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab72&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab92&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -12189,7 +12512,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; threeDomainSecure &amp;gt; eci&lt;/td&gt;
 &lt;td&gt;Number&lt;/td&gt;
 &lt;td&gt;Max:2&lt;/td&gt;
-&lt;td&gt;Eletronic Commerce Indicator.&lt;br&gt;Value returned by the directory servers showing the authentication attempt.&lt;br&gt;This parameter is mandatory when &lt;code&gt;transaction.threeDomainSecure.embedded&lt;/code&gt; is &lt;code&gt;false&lt;/code&gt; and &lt;code&gt;transaction.threeDomainSecure.xid&lt;/code&gt; has been set.&lt;/td&gt;
+&lt;td&gt;Electronic Commerce Indicator.&lt;br&gt;Value returned by the directory servers showing the authentication attempt.&lt;br&gt;This parameter is mandatory when &lt;code&gt;transaction.threeDomainSecure.embedded&lt;/code&gt; is &lt;code&gt;false&lt;/code&gt; and &lt;code&gt;transaction.threeDomainSecure.xid&lt;/code&gt; has been set.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12703,7 +13026,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 &lt;/div&gt;
 &lt;h2 id=&#34;submit-transaction-with-cash-or-bank-reference&#34;&gt;Submit transaction with cash or Bank reference&lt;/h2&gt;
-&lt;p&gt;This method lets you process the payments of your customers in cash or using a Bank reference. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.&lt;/p&gt;
+&lt;p&gt;This method lets you process the payments of your customers in cash or using a Bank reference. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.&lt;/p&gt;
 &lt;h4 id=&#34;payments-in-cash&#34;&gt;Payments in cash&lt;/h4&gt;
 &lt;img src=&#34;../../../../assets/Payments/CashReceiptCO.png&#34; alt=&#34;PrintScreen&#34; width=&#34;75%&#34;&gt;
 &lt;h4 id=&#34;payments-with-bank-reference&#34;&gt;Payments with Bank reference&lt;/h4&gt;
@@ -13162,7 +13485,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;As cash payments are performed in physical offices, the only available transaction type is &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;As cash and Bank reference payments are performed in physical offices, la única transacción disponible es &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -13648,8 +13971,8 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;ul&gt;
 &lt;li&gt;You can use the following names in Spanish:
 &lt;ul&gt;
-&lt;li&gt;Débito desde cuenta corrient/ahorros&lt;/li&gt;
-&lt;li&gt;Debito bancario PSE&lt;/li&gt;
+&lt;li&gt;Débito desde cuenta corriente/ahorros&lt;/li&gt;
+&lt;li&gt;Débito bancario PSE&lt;/li&gt;
 &lt;li&gt;PSE&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -14141,7 +14464,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;As cash payments are performed in physical offices, the only available transaction type is &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;As these payments are performed in PSE webpage, la única transacción disponible es &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -14686,7 +15009,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 &lt;/div&gt;
 &lt;h2 id=&#34;bank-list---pse&#34;&gt;Bank List - PSE&lt;/h2&gt;
-&lt;p&gt;This method returns a list of the banks available for &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer&#34;&gt;payments using PSE&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This method returns a list of the banks available for &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer-pse&#34;&gt;payments using PSE&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-3&#34;&gt;Variables for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
@@ -14823,7 +15146,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-3&#34;&gt;API call&lt;/h3&gt;
-&lt;p&gt;The following are the examples of the request and response of this method. For the sake of the example, the request and response here show two payment methods.&lt;/p&gt;
+&lt;p&gt;The following are the examples of the request and response of this method.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -30871,7 +31194,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;h2 id=&#34;configuring-the-authentication&#34;&gt;Configuring the authentication&lt;/h2&gt;
 &lt;p&gt;To use the methods to manage Payouts or WebHooks exposed by the Payouts service, you must include the &lt;code&gt;Authorization&lt;/code&gt; and &lt;code&gt;PublicKey&lt;/code&gt; headers:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;To configure the &lt;code&gt;Authorization&lt;/code&gt; header, call the &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#authentication&#34;&gt;authentication method&lt;/a&gt; provided by the Payouts service. &lt;br&gt;Example:&lt;/li&gt;
+&lt;li&gt;To configure the &lt;code&gt;Authorization&lt;/code&gt; header, call the &lt;a href=&#34;#authentication&#34;&gt;authentication method&lt;/a&gt; provided by the Payouts service. &lt;br&gt;Example:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTYyODU0ODE2NywiaWF0IjoxNjI4NTQ4MTY3fQ.jrO3u5ramYKOvoNNb0TNfBuZkbYg1EvPmCDDYXFEO4c 
 &lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
@@ -30882,13 +31205,13 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
 &lt;p&gt;Payouts API includes the following methods:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#authentication&#34;&gt;Authentication&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#request-payout&#34;&gt;Request payout&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#update-payout-request&#34;&gt;Update payout request&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#cancel-payout-request&#34;&gt;Cancel payout request&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#create-or-update-a-webhook&#34;&gt;Create or update a WebHook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#delete-a-webhook&#34;&gt;Delete a WebHook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#query-webhooks&#34;&gt;Query WebHooks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#authentication&#34;&gt;Authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#request-payout&#34;&gt;Request payout&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#update-payout-request&#34;&gt;Update payout request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cancel-payout-request&#34;&gt;Cancel payout request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#create-or-update-a-transfershook&#34;&gt;Create or update a WebHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#delete-a-transfershook&#34;&gt;Delete a WebHook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#query-transfershooks&#34;&gt;Query WebHooks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;authentication&#34;&gt;Authentication&lt;/h2&gt;
 &lt;p&gt;The first step regardless of the method you want to request is to authenticate your account using the credentials provided by PayU.&lt;/p&gt;
@@ -30898,7 +31221,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;POST&lt;/span&gt;
 &lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/authenticate?accountId={accountId}&amp;amp;apiKey={apiKey}&amp;amp;apiLogin={apiLogin}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; displayed above is &lt;code&gt;sandbox-web&lt;/code&gt; for testing and &lt;code&gt;web&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; displayed above is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -30992,7 +31315,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-You need to include two headers to use this method, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to &lt;a href=&#34;#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 &lt;/div&gt;
 
 &lt;h3 id=&#34;api-call-1&#34;&gt;API Call&lt;/h3&gt;
@@ -31000,7 +31323,7 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;POST&lt;/span&gt;
 &lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; displayed above is &lt;code&gt;sandbox-web&lt;/code&gt; for testing and &lt;code&gt;web&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; displayed above is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -31544,20 +31867,41 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-You need to include two headers to use this method, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to &lt;a href=&#34;#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 &lt;/div&gt;
 
 &lt;h3 id=&#34;api-call-2&#34;&gt;API Call&lt;/h3&gt;
 &lt;p&gt;To update a Payout request, use the following URL:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PUT&lt;/span&gt;
-&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{bankAccountId}
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{accountId}/{bankAccountId}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-web&lt;/code&gt; for testing and &lt;code&gt;web&lt;/code&gt; for production mode.&lt;/li&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{merchantId}&lt;/code&gt; is the identifier of your commerce in PayU.&lt;/li&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{bankAccountId}&lt;/code&gt; is the payee Id returned by the &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#request-payout&#34;&gt;Request payout service&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Merchant’s ID number in PayU’s system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID of the user account for each country associated with the merchant.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bankAccountId&lt;/td&gt;
+&lt;td&gt;ID returned by the &lt;a href=&#34;#request-payout&#34;&gt;Request payout service&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h3 id=&#34;variables-for-request&#34;&gt;Variables for request&lt;/h3&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -31668,20 +32012,41 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-You need to include two headers to use this method, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to &lt;a href=&#34;#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 &lt;/div&gt;
 
 &lt;h3 id=&#34;api-call-3&#34;&gt;API Call&lt;/h3&gt;
 &lt;p&gt;To cancel a Payout request, use the following URL:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;DELETE&lt;/span&gt;
-&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{paymentOrderId}
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}/{paymentOrderId}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-web&lt;/code&gt; for testing and &lt;code&gt;web&lt;/code&gt; for production mode.&lt;/li&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{merchantId}&lt;/code&gt; is the identifier of your commerce in PayU.&lt;/li&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{paymentOrderId}&lt;/code&gt; is the Payout id generated when the order was created by the &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#request-payout&#34;&gt;Request payout service&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Merchant’s ID number in PayU’s system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID of the user account for each country associated with the merchant.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paymentOrderId&lt;/td&gt;
+&lt;td&gt;Payout ID generated when the order was created by the &lt;a href=&#34;#request-payout&#34;&gt;Request payout service&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h3 id=&#34;variables-for-request-1&#34;&gt;Variables for request&lt;/h3&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -31798,7 +32163,7 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-You need to include two headers to use this method, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to &lt;a href=&#34;#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 &lt;/div&gt;
 
 &lt;h3 id=&#34;api-call-4&#34;&gt;API Call&lt;/h3&gt;
@@ -31806,18 +32171,36 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;li&gt;To create a WebHook, use:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;POST&lt;/span&gt;
-&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;To update a WebHook, use:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PUT&lt;/span&gt;
-&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-web&lt;/code&gt; for testing and &lt;code&gt;web&lt;/code&gt; for production mode.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Merchant’s ID number in PayU’s system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID of the user account for each country associated with the merchant.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-1&#34;&gt;Variables for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request parameters&lt;/summary&gt;
@@ -32035,19 +32418,41 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-You need to include two headers to use this method, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to &lt;a href=&#34;#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 &lt;/div&gt;
 
 &lt;h3 id=&#34;api-call-5&#34;&gt;API Call&lt;/h3&gt;
 &lt;p&gt;To delete a WebHook, use the following URL:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;DELETE&lt;/span&gt;
-&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-web&lt;/code&gt; for testing and &lt;code&gt;web&lt;/code&gt; for production mode.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;{id}&lt;/code&gt; is the id of the WebHook you want to delete.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Merchant’s ID number in PayU’s system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID of the user account for each country associated with the merchant.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;ID the WebHook you want to delete.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h4 id=&#34;response-example-1&#34;&gt;Response example&lt;/h4&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -32148,19 +32553,41 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-You need to include two headers to use this method, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payouts-api.html#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
+You need to include two headers to use this method, refer to &lt;a href=&#34;#configuring-the-authentication&#34;&gt;Configuring authentication&lt;/a&gt; for more information. Furthermore, you need to know your Merchant and account ID, you can get this information in your PayU Module.
 &lt;/div&gt;
 
 &lt;h3 id=&#34;query-webhooks-by-id&#34;&gt;Query WebHooks by Id&lt;/h3&gt;
 &lt;p&gt;This method lets you consult the information of a specific WebHook using its id. To query a WebHook, use the following URL:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt;
-&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks/{id}
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-web&lt;/code&gt; for testing and &lt;code&gt;web&lt;/code&gt; for production mode.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;{id}&lt;/code&gt; is the id of the WebHook you want to consult.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Merchant’s ID number in PayU’s system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID of the user account for each country associated with the merchant.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;ID the WebHook you want to query.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h4 id=&#34;response-example-2&#34;&gt;Response example&lt;/h4&gt;
 &lt;details&gt;
 &lt;summary&gt;Response parameters&lt;/summary&gt;
@@ -32302,13 +32729,30 @@ You need to include two headers to use this method, refer to &lt;a href=&#34;../
 &lt;h3 id=&#34;query-webhooks-by-account&#34;&gt;Query webhooks by account&lt;/h3&gt;
 &lt;p&gt;This method lets you consult the information of all the WebHooks created in your account. To query the WebHook list, use the following URL:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt;
-&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{accountId}
+&lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{merchantId}/{accountId}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-web&lt;/code&gt; for testing and &lt;code&gt;web&lt;/code&gt; for production mode.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;{accountId}&lt;/code&gt; is the id of your account.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The value for the variable &lt;code&gt;{env-api}&lt;/code&gt; is &lt;code&gt;sandbox-transfers&lt;/code&gt; for testing and &lt;code&gt;transfers&lt;/code&gt; for production mode.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Merchant’s ID number in PayU’s system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID of the user account for each country associated with the merchant.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h4 id=&#34;response-example-3&#34;&gt;Response example&lt;/h4&gt;
 &lt;details&gt;
 &lt;summary&gt;Response parameters&lt;/summary&gt;

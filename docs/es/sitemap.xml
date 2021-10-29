@@ -123,7 +123,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-argentina.html</loc>
-    <lastmod>2021-10-27T09:30:46-05:00</lastmod>
+    <lastmod>2021-10-29T11:10:45-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -138,7 +138,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-brazil.html</loc>
-    <lastmod>2021-10-27T09:30:46-05:00</lastmod>
+    <lastmod>2021-10-29T11:10:45-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -153,7 +153,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-chile.html</loc>
-    <lastmod>2021-10-27T09:30:46-05:00</lastmod>
+    <lastmod>2021-10-29T11:10:45-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -165,6 +165,66 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/api-integration/payments-api-chile.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration/payments-api-colombia.html</loc>
+    <lastmod>2021-10-29T11:10:45-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/payments-api-colombia.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/payments-api-colombia.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration/payments-api-mexico.html</loc>
+    <lastmod>2021-10-29T11:10:45-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/payments-api-mexico.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/payments-api-mexico.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration/payments-api-panama.html</loc>
+    <lastmod>2021-10-29T11:10:45-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/payments-api-panama.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/payments-api-panama.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration/payments-api-peru.html</loc>
+    <lastmod>2021-10-29T11:10:45-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/payments-api-peru.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/payments-api-peru.html"
                 />
   </url><url>
     <loc>/es/docs/getting-started/select-your-integration.html</loc>
