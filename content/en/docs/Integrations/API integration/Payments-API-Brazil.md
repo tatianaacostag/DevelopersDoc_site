@@ -55,7 +55,198 @@ You need to send the following information:
 * Sub-merchant's Postal Code (mandatory)
 * Sub-merchant's Country (mandatory)
 
-Find the description of these fields in the next section.
+Find the description of these fields in the [Variables]({{< ref "#variables-for-request-and-response" >}}) section.
+
+### Using tokenized cards
+PayU supports payments with your tokenized card to let you make payments on a regular bases with a card stored in a token. A credit card token substitutes the sensitive information of a credit card and allows you to safely store it following PCI DSS (Payment Card Industry Data Security Standard) security standards.
+
+PayU can process payments with the following services:
+
+* **PayU Tokenization**.<br>We provide our own service to tokenize your credit cards enabled under request. This service lets you tokenize the information of your customers' credit cards (regardless of their franchise) using our API or SDK integration.<br>For more information, refer to [PayU Tokenization]({{< ref "Tokenization.md" >}}).
+
+* **MasterCard Digital Enablement Service - MDES**.<br>Tokenization service provided by Mastercard. This service lets you tokenize the Primary Account Number of the MasterCard credit cards to let you use them to make regular payments of build one-click payments features.<br>For more information, refer to [MasterCard Digital Enablement Service (MDES)](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
+
+* **Visa Token Service - VTS**.<br>Tokenization service provided by Visa. This service lets you store the sensitive information of the Visa credit cards in a token to let you use them to make regular payments of build one-click payments features.<br>For more information, refer to [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
+
+#### Pay with PayU tokens
+For payments with PayU credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+
+{{% alert title="Note" color="info"%}}
+To process without CVV is necessary to send the parameter `creditCard.processWithoutCvv2` as true in the payment request and remove the parameter `creditCard.securityCode`.<br>
+By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative.
+{{% /alert%}}
+
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "Information of the order":""
+      },
+      "payer": {
+         "Information of the payer":""
+      },
+      "creditCardTokenId": "46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3",
+      "creditCard": {
+         "securityCode": "123"
+      },
+      "extraParameters": {
+         "Extra parameters of the request":""
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "Card franchise", 
+      "paymentCountry": "Processing country",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": true
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <!-- Information of the order -->
+      </order>
+      <payer>
+         <!-- Information of the payer -->
+      </payer>
+      <creditCardTokenId>46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3</creditCardTokenId>
+      <creditCard>
+         <securityCode>321</securityCode>
+      </creditCard>
+      <extraParameters>
+         <!-- Extra parameters of the request -->
+      </extraParameters>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>{Card franchise}</paymentMethod>
+      <paymentCountry>{Processing country}</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+#### Pay with MDES or VTS tokens
+If ypu are already tokenizing your customer's credit cards, you can configure the information of the token in the parameter `transaction.networkToken` replacing the information of the credit card and send the parameter `creditCard.processWithoutCvv2` as true.<br>By default, processing credit cards without security code is not enabled, contact your Sales representative to enable it.
+
+The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "Information of the order":""
+      },
+      "payer": {
+         "Information of the payer":""
+      },
+      "networkToken": {
+          "tokenPan": "4097440000000004",
+          "cryptogram": "11223344556677889900112233445566778899",
+          "expiry": "2028/01"
+      },
+      "extraParameters": {
+         "Extra parameters of the request":""
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "Card franchise", 
+      "paymentCountry": "Processing country",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": true
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <!-- Information of the order -->
+      </order>
+      <payer>
+         <!-- Information of the payer -->
+      </payer>
+      <networkToken>
+         <tokenPan>4097440000000004</tokenPan>
+         <cryptogram>11223344556677889900112233445566778899</cryptogram>
+         <expiry>2028/01</expiry>
+      </networkToken>
+      <extraParameters>
+         <!-- Extra parameters of the request -->
+      </extraParameters>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>{Card franchise}</paymentMethod>
+      <paymentCountry>{Processing country}</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+<br>
+
+Find the description of the object `transaction.networkToken` and its parameters in the [Variables]({{< ref "#variables-for-request-and-response" >}}) section.
 
 ### Variables for request and response
 
@@ -127,7 +318,7 @@ Find the description of these fields in the next section.
 | transaction > order > submerchant > address > phone | Alphanumeric | Max:11 | Phone number associated to the address. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
 | transaction > order > submerchant > identification | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > order > submerchant > identificationType | Alphanumeric | Max:4 | Identification type of the sub-merchant. The possible values are `cnpj` or `cpf`. | No |
-| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | No |
+| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card using the PayU Tokenization; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | No |
 | transaction > creditCard |  |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). | No |
@@ -151,6 +342,10 @@ Find the description of these fields in the next section.
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| transaction > networkToken |  |  | Information of the token. Include this parameter when the transaction is done using a tokenized card using the VTS or MDES Tokenization. For more information, refer to [Pay with MDES or VTS tokens]({{< ref "#pay-with-mdes-or-vts-tokens" >}}). <br><sup>\*</sup>When sending this object, all its parameters are mandatory.| No |
+| transaction > networkToken > tokenPan | Alphanumeric | Max:32 | Token number generated either by MDES or VTS. | Yes<sup>\*</sup> |
+| transaction > networkToken > cryptogram | Alphanumeric | Max:28 | Unique key generated by MDES or VTS to decrypt the information of the credit card. | Yes<sup>\*</sup> |
+| transaction > networkToken > expiry | Alphanumeric | 7 | Expiration date of the token. | Yes<sup>\*</sup> |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` for one-step flows.</li></ul> | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit card Payment Method. [See the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `BR` for Brazil. | Yes |
@@ -193,11 +388,13 @@ Find the description of these fields in the next section.
 
 </details>
 
+
 #### Considerations
 * If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`) when using [Authorization]({{< ref "payments-api-brazil.md#authorization" >}}) or [Charge]({{< ref "payments-api-brazil.md#charge" >}}).
 * If you don't send any information for the sub-merchants, PayU configures your merchant as sub-merchant.
-* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
-* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
+* For payments with credit card tokens generated by PayU, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
+* For payments with credit card tokens generated using MDES or VTS, include the object `transaction.networkToken` and its parameters.
+* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.<br>Having this feature enable is mandatory when using credit card tokens generated using MDES or VTS.
 * The extra parameter `CIELO_TID` identifies the transaction, this parameter is needed when you want to process voids.
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
 * The variable `transaction.threeDomainSecure` corresponds to a _Pass Through_ scenario where the commerce performs the authentication by their own.
@@ -927,7 +1124,6 @@ Pix has two parts:
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 19, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | No | 
 | transaction > payer |  |  | Payer information. | Yes |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
@@ -991,7 +1187,7 @@ Pix has two parts:
 ### API call
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1330,7 +1526,7 @@ This method lets you process the payments in cash of your customers. To integrat
 ### API call
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1651,7 +1847,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 ### API call
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1900,7 +2096,7 @@ This method returns a list of the payment methods available in all countries.
 ### API call
 The following are the bodies of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2020,7 +2216,7 @@ The ```PING``` method lets you verify the connection to our platform.
 ### Api call
 The following are the bodies of the request and response of this method.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
