@@ -44,11 +44,11 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
 | merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
@@ -83,7 +83,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 | transaction > order > buyer > shippingAddress > postalCode | Numérico | Max:20 | Código postal de la dirección del comprador. | Sí |
 | transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
 | transaction > order > additionalValues > |  | 64 | Monto de la orden y sus valores asociados. | Sí |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Amount of the transaction. | Sí |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
 | transaction > order > additionalValues > TX_VALUE > value | Numérico | 19, 2 | Especifica el monto de la transacción. This amount cannot include decimals. | Sí |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
 | transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del impuesto a las ventas. | Sí |
@@ -535,7 +535,7 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ### Cobro {#charge}
-Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del clienta a tu cuenta PayU tan pronto sean aprobados.
+Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados.
 
 Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
 
@@ -810,7 +810,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
 | merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
@@ -831,7 +831,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 | transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
 | transaction > order > shippingAddress > postalCode | Alfanumérico | Max:8 | Código postal de la dirección. | No |
 | transaction > order > shippingAddress > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
-| transaction > order > buyer |  |  | Buyer information. | Sí |
+| transaction > order > buyer |  |  | Información del comprador. | Sí |
 | transaction > order > buyer > merchantBuyerId | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
 | transaction > order > buyer > fullName | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
 | transaction > order > buyer > emailAddress | Alfanumérico | Max:255 | Correo electrónico de comprador. | Sí |
@@ -845,7 +845,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 | transaction > order > buyer > shippingAddress > postalCode | Numérico | Max:20 | Código postal de la dirección del comprador. | Sí |
 | transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
 | transaction > order > additionalValues > |  | 64 | Monto de la orden y sus valores asociados. | Sí |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Amount of the transaction. | Sí |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
 | transaction > order > additionalValues > TX_VALUE > value | Numérico | 19, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
 | transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del impuesto a las ventas. | Sí |
@@ -865,7 +865,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 | transaction > payer > billingAddress > state | Alfanumérico | Max:40 | Región de la dirección de facturación. | No |
 | transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | Sí |
 | transaction > payer > billingAddress > postalCode | Alfanumérico | Max:20 | Código postal de la dirección de facturación. | No |
-| transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Dirección de facturación phone number. | No |
+| transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. | No |
 | transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
 | transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. | Sí |
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
@@ -1158,11 +1158,11 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
 | merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
@@ -1183,7 +1183,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 | transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
 | transaction > order > shippingAddress > postalCode | Alfanumérico | Max:8 | Código postal de la dirección. | No |
 | transaction > order > shippingAddress > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
-| transaction > order > buyer |  |  | Buyer information. | Sí |
+| transaction > order > buyer |  |  | Información del comprador. | Sí |
 | transaction > order > buyer > merchantBuyerId | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
 | transaction > order > buyer > fullName | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
 | transaction > order > buyer > emailAddress | Alfanumérico | Max:255 | Correo electrónico de comprador. | Sí |
@@ -1217,7 +1217,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 | transaction > payer > billingAddress > state | Alfanumérico | Max:40 | Región de la dirección de facturación. | No |
 | transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | Sí |
 | transaction > payer > billingAddress > postalCode | Alfanumérico | Max:20 | Código postal de la dirección de facturación. | No |
-| transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Dirección de facturación phone number. | No |
+| transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. | No |
 | transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
 | transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. | Sí |
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
@@ -1245,7 +1245,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 | transactionResponse |  |  | Datos de la respuesta. |
 | transactionResponse > orderId | Numérico |  | Identificador generado o existente de la orden en PayU. |
 | transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
-| transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. As the payment is performed by the user in a physical office, the state for a successful transaction is `PENDING` |
+| transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. Como el pago se realiza de forma externa, el estado de una transacción exitosa es `PENDING` |
 | transactionResponse > paymentNetworkResponseCode | Alfanumérico | Max:255 | Código de respuesta retornado por la red bancaria. |
 | transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Max:255 | Mensaje de error retornado por la red bancaria. |
 | transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
@@ -1529,11 +1529,11 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `GET_PAYMENT_METHODS`. | Sí |
-| test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
 | merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
@@ -1654,11 +1654,11 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `PING`. | Sí |
-| test (JSON)<hr>isTest (XML) | Boolean |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
 | merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
@@ -1670,7 +1670,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
 | code | Alfanumérico |  | Código de respuesta de la transacción. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
@@ -1678,7 +1678,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 </details>
 
 ### Llamado del API {#api-call-3}
-The following are the examples of the request and response of this method.
+Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

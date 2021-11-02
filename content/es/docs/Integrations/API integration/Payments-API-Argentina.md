@@ -512,7 +512,7 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ### Cobro {#charge}
-Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del clienta a tu cuenta PayU tan pronto sean aprobados.
+Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados.
 
 Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
 
@@ -855,7 +855,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > payer > billingAddress > state | Alfanumérico | Max:40 | Estado o provincia de la dirección de facturación. | Sí |
 | transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | Sí |
 | transaction > payer > billingAddress > postalCode | Alfanumérico | Max:20 | Código postal de la dirección de facturación. | No |
-| transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Dirección de facturación phone number. | No |
+| transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. | No |
 | transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
 | transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. | Sí |
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
@@ -896,7 +896,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 #### Consideraciones {#considerations-2}
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es 15 días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * El parámetro `transactionResponse.extraParameters` tiene los siguientes parámetros relacionados con la transacción:
-   - **REFERENCE**: referencias de pago interna generada por PayU.
+   - **REFERENCE**: referencia de pago interna generada por PayU.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago. 
    - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando e pagador selecciona un medio de pago en efectivo. 

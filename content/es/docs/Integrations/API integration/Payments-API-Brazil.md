@@ -343,9 +343,9 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del pagador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > networkToken |  |  | Información del token. Incluye este parámetro cuando la transacción se realice con una tarjeta tokenizada utilizando la tokenización de VTS o MDES. Para más información, consulta [Pagar con tókenes de MDES o VTS]({{< ref "#pay-with-mdes-or-vts-tokens" >}}). <br><sup>\*</sup>Cuando envíes este objeto, todos sus parámetros son obligatorios.| No |
-| transaction > networkToken > tokenPan | Alphanumeric | Max:32 | Número del token generado por MDES o VTS. | Sí<sup>\*</sup> |
-| transaction > networkToken > cryptogram | Alphanumeric | Max:28 | Llave única generada por MDES o VTS para descifrar la información de la tarjeta de crédito. | Sí<sup>\*</sup> |
-| transaction > networkToken > expiry | Alphanumeric | 7 | Fecha de expiración del token. Formato `YYYY/MM`. | Sí<sup>\*</sup> |
+| transaction > networkToken > tokenPan | Alfanumérico | Max:32 | Número del token generado por MDES o VTS. | Sí<sup>\*</sup> |
+| transaction > networkToken > cryptogram | Alfanumérico | Max:28 | Llave única generada por MDES o VTS para descifrar la información de la tarjeta de crédito. | Sí<sup>\*</sup> |
+| transaction > networkToken > expiry | Alfanumérico | 7 | Fecha de expiración del token. Formato `YYYY/MM`. | Sí<sup>\*</sup> |
 | transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción requerido:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para flujos de un paso.</li></ul> | Sí |
 | transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito valido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
@@ -782,7 +782,7 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ### Cobro {#charge}
-Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del clienta a tu cuenta PayU tan pronto sean aprobados.
+Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados.
 
 Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
 
@@ -1137,7 +1137,7 @@ Pix tiene dos partes:
 | transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. Para Brasil, utiliza el formato `ddd(2)+number(7-9)`. Ejemplo: `(11)756312633`. | No |
 | transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
 | transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. Para Brasil, utiliza el formato `ddd(2)+number(7-9)`. Ejemplo: `(11)756312633`. | No |
-| transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del comprador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
+| transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos con PIX se realizan utilizando el teléfono móvil del pagador, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE`. | Sí |
@@ -1476,7 +1476,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. Para Brasil, utiliza el formato `ddd(2)+number(7-9)`. Ejemplo: `(11)756312633`. | No |
 | transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
 | transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. Para Brasil, utiliza el formato `ddd(2)+number(7-9)`. Ejemplo: `(11)756312633`. | No |
-| transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del comprador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
+| transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, La única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
@@ -1799,7 +1799,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 | transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. Para Brasil, utiliza el formato `ddd(2)+number(7-9)`. Ejemplo: `(11)756312633`. | No |
 | transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. Formato `YYYY-MM-DD`. | No |
 | transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. Para Brasil, utiliza el formato `ddd(2)+number(7-9)`. Ejemplo: `(11)756312633`. | No |
-| transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del comprador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
+| transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos por transferencia bancaria se realizan en oficinas físicas, La única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
 | transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago por transferencia bancaria válido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |

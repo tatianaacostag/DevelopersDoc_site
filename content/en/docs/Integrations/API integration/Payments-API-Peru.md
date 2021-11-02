@@ -107,11 +107,11 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
 | transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | No |
-| transaction > payer > billingAddress > state | Alphanumeric | Max:40 | Billing address state. Format [ISO 3166-2 ARG official](https://www.iso.org/obp/ui/#iso:code:3166:AR). | Yes |
+| transaction > payer > billingAddress > state | Alphanumeric | Max:40 | Billing address state. | Yes |
 | transaction > payer > billingAddress > country | Alphanumeric | 2 | Billing address country in format ISO 3166 Alpha-2. | No |
 | transaction > payer > billingAddress > postalCode | Alphanumeric | Max:20 | Billing address zip code. | No |
 | transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. | No |
-| transaction > payer > birthdate | Alphanumeric | Max:10 |Buyer's date of birth. | No |
+| transaction > payer > birthdate | Alphanumeric | Max:10 | Buyer's date of birth. | No |
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Buyer's phone number. | No |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | No |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | Yes |
@@ -1168,7 +1168,7 @@ This method returns a list of the payment methods available in all countries.
 </details>
 
 ### API call
-The following are the bodies of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
+The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

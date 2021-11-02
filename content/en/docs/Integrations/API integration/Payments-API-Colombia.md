@@ -2020,7 +2020,7 @@ This method returns a list of the payment methods available in all countries.
 </details>
 
 ### API call
-The following are the examples of the request and response of this method. For the sake of the example, the request and response here show two payment methods. 
+The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
