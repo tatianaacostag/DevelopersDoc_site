@@ -43,12 +43,12 @@ Before using Voids and Refunds API, take into account the following consideratio
 * The minimum amount to send a refund is 10 CLP.
 
 ### Colombia
-* No se soportan Anulaciones (Void).
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es two years.
-* El valor mínimo para enviar un Reembolso es 100 COP.
-* Si no se envía el reembolso el mismo día en el que la transacción fue capturada (antes de las 9 pm UTC-5) el reembolso va inmediatamente  un proceso manual sin enviar un intento en línea.
-* Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 30 días hábiles.
-* No se soportan reembolsos parciales para tarjetas de crédito internacionales.
+* Voids are not supported.
+* The minimum time to send a refund is 10 minutes after the approval and the maximum is two years.
+* Minimum amount to send the Refund 100 COP.
+* If refund is not sent the same day in which the transaction was captured (before 9 pm UTC-5) the refund goes immediately to a manual process without sending the online attempt.
+* When a refund is approved, the payer gets the money back in maximum 30 working days.
+* Partial refunds are not available for international credit cards.
 
 ### Mexico
 * The minimum time to send a void is 10 minutes after the authorization and the maximum is 30 days. If the transaction was made with American Express, the maximum time is seven (7) days.<br>If no void or capture is sent after this time, the transaction is auto-voided.
