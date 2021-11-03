@@ -20,7 +20,6 @@ To integrate with Tokenization API, target your request to the following URLs ac
 ## Available methods
 Tokenization API includes methods to register and remove tokens, and methods to query tokens.
 
-For registration a removal of tokens:
 * [Individual credit card registration]({{< ref "Tokenization-API.md#individual-credit-card-registration" >}})
 * [Massive credit card registration]({{< ref "Tokenization-API.md#massive-credit-card-registration" >}})
 * [Individual token removal]({{< ref "Tokenization-API.md#individual-token-removal" >}})
@@ -541,7 +540,7 @@ Using this feature, you can get the information of tokenized credit cards, you c
 | creditCardTokenList > payerId | Alphanumeric | | Internal id of the credit card holder as sent in the request. |
 | creditCardTokenList > identificationNumber | Alphanumeric | Max:20 | Identification number of the credit card holder as sent in the request. |
 | creditCardTokenList > paymentMethod | Alphanumeric | 32 | Franchise of the tokenized credit card as sent in the request. |
-| creditCardTokenList > creationDate | Alphanumeric | 19 | date when the credit card was tokenized. |
+| creditCardTokenList > creationDate | Alphanumeric | 19 | Date when the credit card was tokenized. |
 | creditCardTokenList > maskedNumber | Alphanumeric | Min:13 Max:20 | Masked credit card number. The masked used displays the first six digits and the last four digits of the credit card. |
 
 </details>
@@ -786,7 +785,7 @@ For specific details about how to perform payments, refer to the respective arti
 <br>
 
 ### Multiple payments with tokenization
-Using this feature, you can perform payments using several tokens stored in a _**.csv**_ file and get a token per each card. 
+Using this feature, you can perform payments using several tokens stored in a _**.csv**_ file. 
 
 ### Considerations
 * Each record of the file must have the following structure and order separated by commas:

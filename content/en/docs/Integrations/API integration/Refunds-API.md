@@ -52,7 +52,7 @@ Before using Voids and Refunds API, take into account the following consideratio
 
 ### Mexico
 * The minimum time to send a void is 10 minutes after the authorization and the maximum is 30 days. If the transaction was made with American Express, the maximum time is seven (7) days.<br>If no void or capture is sent after this time, the transaction is auto-voided.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days. If the transaction was made processed by Bancomer, the maximum time is 45 days.
+* The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days. If the transaction was processed by Bancomer, the maximum time is 45 days.
 * When a refund is approved, the payer gets the money back in 30 working days.
 * Refunds with decimals are not supported.
 
@@ -448,18 +448,18 @@ As mentioned before, refund request follows an approval in flow in which, PayU t
 
 2. Use the _**Filter my sales**_ field to find the order using the order and the transaction id.
 
-![PrintScreen](/assets/Refunds/Refunds_en_02.png)
+<img src="/assets/Refunds/Refunds_en_02.png" alt="PrintScreen" width="50%"/><br>
 
 3. The Status column show whether the refund has been approved or rejected; if the refund has not been approved, this column shows that the refund has been requested.
 
 ![PrintScreen](/assets/Refunds/Refunds_en_03.png)
 
 #### Check status using queries
-You can consult the state of the refund by using the [Queries API]({{< ref "Queries-API.md" >}}). In the response of the query, you need to send the order id.
+You can consult the state of the refund by using the [Queries API]({{< ref "Queries-API.md" >}}). In the request of the query, you need to send the order id.
 
 When query an order, the system returns the last transaction associated with the Order.
 
 There are three possible status in the response of your request:
 * **Unresolved request**: if the request has not been resolved, the order found in the query appears in `CAPTURED` status (parameter `result.payload.status` in the response), the first transaction type is `AUTHORIZATION_AND_CAPTURE` (parameter `result.transactions.type` in the response) and the first transaction status is `APPROVED` (First parameter `result.transactions.transactionResponse.state` in the response).
 * **Approved**: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in `REFUNDED` status (parameter `result.payload.status` in the response), the first transaction type is `REFUND` (parameter `result.transactions.type` in the response) and the first transaction status is `APPROVED` (First parameter `result.transactions.transactionResponse.state` in the response).
-* **Declined**: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in `CAPTURED` status (parameter `result.payload.status` in the response), the first transaction type is `REFUND` (parameter `result.transactions.type` in the response) and the first transaction status is `DECLINED` (First parameter `result.transactions.transactionResponse.state` in the response).
+* **Declined**: if the refund request is declined by a PayU’s customer service agent, the order found in the query appears in `CAPTURED` status (parameter `result.payload.status` in the response), the first transaction type is `REFUND` (parameter `result.transactions.type` in the response) and the first transaction status is `DECLINED` (First parameter `result.transactions.transactionResponse.state` in the response).
