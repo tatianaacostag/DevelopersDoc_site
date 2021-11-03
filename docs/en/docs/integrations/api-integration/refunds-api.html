@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/refunds-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-06-25T09:24:50-05:00" />
-<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-03T16:52:24-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Voids and Refunds API">
 <meta itemprop="description" content="This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction. 
 "><meta itemprop="datePublished" content="2021-06-25T09:24:50-05:00" />
-<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
-<meta itemprop="wordCount" content="2297">
+<meta itemprop="dateModified" content="2021-11-03T16:52:24-05:00" />
+<meta itemprop="wordCount" content="2289">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Voids and Refunds API"/>
 <meta name="twitter:description" content="This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction. 
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.3e936a2b6de19ba07c93b266267cd254d7139a23804b751d6e82abad1190b4c5f65c408073ea4e04d1ca244b7049aa2b90b38e9493eb04263e7b42d6ac0c02a5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.4cff48d4332b658a300d50112d905c434105f7780727619c2f89d95c1a6ea4e618030a5d44eaaaf00eb9787a3920a954fb80cd22ebe838634166ed424ead2384.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -855,12 +855,12 @@
 </ul>
 <h3 id="colombia">Colombia</h3>
 <ul>
-<li>No se soportan Anulaciones (Void).</li>
-<li>El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es two years.</li>
-<li>El valor mínimo para enviar un Reembolso es 100 COP.</li>
-<li>Si no se envía el reembolso el mismo día en el que la transacción fue capturada (antes de las 9 pm UTC-5) el reembolso va inmediatamente  un proceso manual sin enviar un intento en línea.</li>
-<li>Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 30 días hábiles.</li>
-<li>No se soportan reembolsos parciales para tarjetas de crédito internacionales.</li>
+<li>Voids are not supported.</li>
+<li>The minimum time to send a refund is 10 minutes after the approval and the maximum is two years.</li>
+<li>Minimum amount to send the Refund 100 COP.</li>
+<li>If refund is not sent the same day in which the transaction was captured (before 9 pm UTC-5) the refund goes immediately to a manual process without sending the online attempt.</li>
+<li>When a refund is approved, the payer gets the money back in maximum 30 working days.</li>
+<li>Partial refunds are not available for international credit cards.</li>
 </ul>
 <h3 id="mexico">Mexico</h3>
 <ul>
@@ -1697,7 +1697,7 @@ Last modified
 
 November 3, 2021:
 
- <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
+ <b>Update Refunds-API.md (093b51ec)</b>
 </div>
 </div>
 
