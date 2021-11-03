@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payouts-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-08-09T14:58:45-05:00" />
-<meta property="article:modified_time" content="2021-10-27T17:42:39-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payouts API">
 <meta itemprop="description" content="This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
 "><meta itemprop="datePublished" content="2021-08-09T14:58:45-05:00" />
-<meta itemprop="dateModified" content="2021-10-27T17:42:39-05:00" />
-<meta itemprop="wordCount" content="3132">
+<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
+<meta itemprop="wordCount" content="3122">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payouts API"/>
 <meta name="twitter:description" content="This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
@@ -105,7 +105,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../../es/docs/integrations/api-integration/payouts-api.html">Español</a>
 	
 </div>
 			</li>
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.870e6082dc2a1bff1601f69057cc72e3ba0b0299e3317e2c855e83850c03f1b84e47c6b6f18d515e46119b3f92fe497d789b7286899f34a50a3f14a3aa393b30.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3e936a2b6de19ba07c93b266267cd254d7139a23804b751d6e82abad1190b4c5f65c408073ea4e04d1ca244b7049aa2b90b38e9493eb04263e7b42d6ac0c02a5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -158,7 +158,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../../es/docs/integrations/api-integration/payouts-api.html">Español</a>
 	
 </div>
     </div>
@@ -1014,7 +1014,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>transfers[n] &gt; value</td>
 <td>Numeric</td>
 <td></td>
-<td>Amount to be transfer from yor funds. The currency of this amount is the one configured in your PayU account</td>
+<td>Amount to be transfer from your funds. The currency of this amount is the one configured in your PayU account</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
@@ -1028,7 +1028,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>transfers[n] &gt; bankAccount &gt; id</td>
 <td>Alphanumeric</td>
 <td>36</td>
-<td>Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing payee.</td>
+<td>Identifier of the Bank account of the payee.<br>Send this parameter when you want to request a Payout for an existing payee.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
@@ -1162,7 +1162,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>successfulItems[n] &gt; processingStatus</td>
 <td>Alphanumeric</td>
 <td>7</td>
-<td>Status of the Payout request. For successful transactions, the value is ´SUCCESS´</td>
+<td>Status of the Payout request. For successful transactions, the value is <code>SUCCESS</code></td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; paymentOrderId</td>
@@ -1186,7 +1186,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>successfulItems[n] &gt; bankAccount &gt; processingStatus</td>
 <td>Alphanumeric</td>
 <td>7</td>
-<td>Bank account registration status. For successful registrations, the value is ´SUCCESS´.</td>
+<td>Bank account registration status. For successful registrations, the value is <code>SUCCESS</code>.</td>
 </tr>
 <tr>
 <td>successfulItems[n] &gt; bankAccount &gt; id</td>
@@ -1282,7 +1282,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>failedItems[n] &gt; processingStatus</td>
 <td>Alphanumeric</td>
 <td>7</td>
-<td>Status of the Payout request. For failed transactions, the value is ´FAILED´.</td>
+<td>Status of the Payout request. For failed transactions, the value is <code>FAILED</code>.</td>
 </tr>
 <tr>
 <td>failedItems[n] &gt; failureMessages</td>
@@ -1301,12 +1301,6 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td></td>
 <td></td>
 <td>This object has the information of the bank account that failed. This element has the same parameters than the object <code>successfulItems[n].bankAccount</code>.</td>
-</tr>
-<tr>
-<td>successfulItems[n] &gt; description</td>
-<td>Alphanumeric</td>
-<td></td>
-<td>Additional information of the payout.</td>
 </tr>
 </tbody>
 </table>
@@ -1503,7 +1497,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 </div>
 <h2 id="update-payout-request">Update payout request</h2>
 <p>This method lets you request the update of the bank information of a payee on a running payout request. For example, this method is useful to change the bank account number of the payee.</p>
-<p>You can only request the update of the information of a payee for when the Payout status is in <code>IN_PAYU_PROCESS</code> or earlier. Refer to <a href="../../../../en/docs/services/payouts.html#payout-states">Payout states</a> for more information.</p>
+<p>You can only request the update of the information of a payee when the Payout status is in <code>IN_PAYU_PROCESS</code> or earlier. Refer to <a href="../../../../en/docs/services/payouts.html#payout-states">Payout states</a> for more information.</p>
 
 
 <div class="alert alert-info" role="alert">
@@ -1560,7 +1554,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>id</td>
 <td>Alphanumeric</td>
 <td>36</td>
-<td>Identifier of the Bank account of the third-party.</td>
+<td>Identifier of the Bank account of the payee.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
@@ -1797,7 +1791,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <ul>
 <li><strong>Transfer creation</strong>: sends a notification when a payout request is created. To enable these notifications, include the <code>TRANSFER_CREATION</code> value in the list parameter <code>enabledEvents</code>.</li>
 <li><strong>Transfer update</strong>: sends a notification when the sanction screening validation rejects the payee. To enable these notifications, include the <code>TRANSFER_UPDATE</code> value in the list parameter <code>enabledEvents</code>.</li>
-<li><strong>Validation result</strong>: sends a notification when payee has approved the sanction screening validation and when the transfer has been rejected by the bank, include the <code>VALIDATION_RESULT</code> value in the list parameter <code>enabledEvents</code>.</li>
+<li><strong>Validation result</strong>: sends a notification when payee has approved the sanction screening validation and when the transfer has been rejected by the bank. To enable these notifications, include the <code>VALIDATION_RESULT</code> value in the list parameter <code>enabledEvents</code>.</li>
 </ul>
 <p><a href="../../../../en/docs/services/payouts.html#variables-in-the-notifications">Click here to know the variables in the notifications</a>.</p>
 
@@ -2254,7 +2248,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>id</td>
 <td>Alphanumeric</td>
 <td></td>
-<td>Id of the WebHook deleted.</td>
+<td>Id of the WebHook.</td>
 </tr>
 <tr>
 <td>created</td>
@@ -2278,7 +2272,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>description</td>
 <td>Alphanumeric</td>
 <td></td>
-<td>Description of the WebHook created.</td>
+<td>Description of the WebHook.</td>
 </tr>
 <tr>
 <td>enabledEvents</td>
@@ -2419,7 +2413,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>id</td>
 <td>Alphanumeric</td>
 <td></td>
-<td>Id of the WebHook deleted.</td>
+<td>Id of the WebHook.</td>
 </tr>
 <tr>
 <td>created</td>
@@ -2443,7 +2437,7 @@ You need to include two headers to use this method, refer to <a href="#configuri
 <td>description</td>
 <td>Alphanumeric</td>
 <td></td>
-<td>Description of the WebHook created.</td>
+<td>Description of the WebHook.</td>
 </tr>
 <tr>
 <td>enabledEvents</td>
@@ -2553,9 +2547,9 @@ You need to include two headers to use this method, refer to <a href="#configuri
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 27, 2021:
+November 3, 2021:
 
- <b>Changes from the Production environment (5cb8fc1e)</b>
+ <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
 </div>
 </div>
 

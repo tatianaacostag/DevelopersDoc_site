@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/sdk-integration/refundssdk.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T11:15:44-05:00" />
-<meta property="article:modified_time" content="2021-10-25T15:33:30-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Voids and Refunds SDK">
 <meta itemprop="description" content="This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction. 
 "><meta itemprop="datePublished" content="2021-03-29T11:15:44-05:00" />
-<meta itemprop="dateModified" content="2021-10-25T15:33:30-05:00" />
-<meta itemprop="wordCount" content="1463">
+<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
+<meta itemprop="wordCount" content="1470">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Voids and Refunds SDK"/>
 <meta name="twitter:description" content="This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction. 
@@ -105,7 +105,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../../es/docs/integrations/sdk-integration/refundssdk.html">Español</a>
 	
 </div>
 			</li>
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.870e6082dc2a1bff1601f69057cc72e3ba0b0299e3317e2c855e83850c03f1b84e47c6b6f18d515e46119b3f92fe497d789b7286899f34a50a3f14a3aa393b30.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3e936a2b6de19ba07c93b266267cd254d7139a23804b751d6e82abad1190b4c5f65c408073ea4e04d1ca244b7049aa2b90b38e9493eb04263e7b42d6ac0c02a5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -158,7 +158,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../../es/docs/integrations/sdk-integration/refundssdk.html">Español</a>
 	
 </div>
     </div>
@@ -894,7 +894,7 @@
 <h3 id="argentina">Argentina</h3>
 <ul>
 <li>The maximum time to send a void is 14 days. If no void or capture is sent after this time, the transaction is auto-voided.</li>
-<li>The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days.</li>
+<li>The minimum time to send a refund is 10 minutes after the approval and the maximum is 365 days and 180 days for partial refunds.</li>
 <li>Refunds with decimals are not supported.</li>
 <li>When a refund is approved, the payer gets the money back in maximum 30 working days.</li>
 </ul>
@@ -1006,7 +1006,7 @@
 
 <span style="color:#000">TransactionResponse</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">doVoid</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">);</span>
 
-<span style="color:#8f5902;font-style:italic">//Response
+<span style="color:#8f5902;font-style:italic">// Response
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#ce5c00;font-weight:bold">){</span>
   <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getOrderId</span><span style="color:#ce5c00;font-weight:bold">();</span>
   <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getState</span><span style="color:#ce5c00;font-weight:bold">();</span>
@@ -1119,7 +1119,7 @@
 
 <span style="color:#000">TransactionResponse</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">doRefund</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">);</span>
 
-<span style="color:#8f5902;font-style:italic">//Response
+<span style="color:#8f5902;font-style:italic">// Response
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#ce5c00;font-weight:bold">){</span>
   <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getOrderId</span><span style="color:#ce5c00;font-weight:bold">();</span>
   <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getState</span><span style="color:#ce5c00;font-weight:bold">();</span>
@@ -1233,7 +1233,7 @@
 
 <span style="color:#000">TransactionResponse</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPayments</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">doPartialRefund</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">);</span>
 
-<span style="color:#8f5902;font-style:italic">//Response
+<span style="color:#8f5902;font-style:italic">// Response
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#ce5c00;font-weight:bold">){</span>
   <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getOrderId</span><span style="color:#ce5c00;font-weight:bold">();</span>
   <span style="color:#000">response</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getState</span><span style="color:#ce5c00;font-weight:bold">();</span>
@@ -1311,8 +1311,8 @@
 <p>There are three possible status in the response of your request:</p>
 <ul>
 <li><strong>Unresolved request</strong>: if the request has not been resolved, the order found in the query appears in <code>CAPTURED</code> status, the first transaction type is <code>AUTHORIZATION_AND_CAPTURE</code> and the first transaction status is <code>APPROVED</code>.</li>
-<li><strong>Approved</strong>: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in <code>REFUNDED</code> status , the first transaction type is <code>REFUND</code> and the first transaction status is <code>APPROVED</code>.</li>
-<li><strong>Declined</strong>: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in <code>CAPTURED</code> status , the first transaction type is <code>REFUND</code> and the first transaction status is <code>DECLINED</code>.</li>
+<li><strong>Approved</strong>: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in <code>REFUNDED</code> status, the first transaction type is <code>REFUND</code> and the first transaction status is <code>APPROVED</code>.</li>
+<li><strong>Declined</strong>: if the refund request is declined by a PayU’s customer service agent, the order found in the query appears in <code>CAPTURED</code> status, the first transaction type is <code>REFUND</code> and the first transaction status is <code>DECLINED</code>.</li>
 </ul>
 
 	
@@ -1320,9 +1320,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 25, 2021:
+November 3, 2021:
 
- <b>Translations to Spanish (4ed421cc)</b>
+ <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
 </div>
 </div>
 

@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/sdk-integration/queriessdk.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-30T08:51:22-05:00" />
-<meta property="article:modified_time" content="2021-06-30T22:58:54-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Queries SDK">
 <meta itemprop="description" content="Queries SDK lets you check the status of the placed orders along with their transactions.
 "><meta itemprop="datePublished" content="2021-04-30T08:51:22-05:00" />
-<meta itemprop="dateModified" content="2021-06-30T22:58:54-05:00" />
-<meta itemprop="wordCount" content="595">
+<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
+<meta itemprop="wordCount" content="598">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Queries SDK"/>
 <meta name="twitter:description" content="Queries SDK lets you check the status of the placed orders along with their transactions.
@@ -105,7 +105,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../../es/docs/integrations/sdk-integration/queriessdk.html">Español</a>
 	
 </div>
 			</li>
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.870e6082dc2a1bff1601f69057cc72e3ba0b0299e3317e2c855e83850c03f1b84e47c6b6f18d515e46119b3f92fe497d789b7286899f34a50a3f14a3aa393b30.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3e936a2b6de19ba07c93b266267cd254d7139a23804b751d6e82abad1190b4c5f65c408073ea4e04d1ca244b7049aa2b90b38e9493eb04263e7b42d6ac0c02a5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -158,7 +158,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../../es/docs/integrations/sdk-integration/queriessdk.html">Español</a>
 	
 </div>
     </div>
@@ -872,7 +872,7 @@
 
 </div>
 <h2 id="available-methods">Available methods</h2>
-<p>Queries API includes the following methods:</p>
+<p>Queries SDK includes the following methods:</p>
 <ul>
 <li><a href="../../../../en/docs/integrations/sdk-integration/queriessdk.html#query-by-order-id">Query by Order Id</a></li>
 <li><a href="../../../../en/docs/integrations/sdk-integration/queriessdk.html#query-by-transaction-id">Query by Transaction Id</a></li>
@@ -1062,7 +1062,7 @@ You can use the <code>getTransactionResponse</code> command to consult the infor
 
 	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">Map</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;();</span>
 
-<span style="color:#8f5902;font-style:italic">//Enter the transaction identifier here.
+<span style="color:#8f5902;font-style:italic">// Enter the transaction identifier here.
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">TRANSACTION_ID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;3310ba3b-cf64-49b2-80e6-3f9196917131&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
 
 <span style="color:#000">TransactionResponse</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUReports</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getTransactionResponse</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">);</span>
@@ -1159,7 +1159,7 @@ You can use the <code>getOrderDetailByReferenceCode</code> to consult the status
 
 	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">Map</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;();</span>
 
-<span style="color:#8f5902;font-style:italic">//Enter the order’s reference code here.
+<span style="color:#8f5902;font-style:italic">// Enter the order’s reference code here.
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">REFERENCE_CODE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;payment_test_1625093692957&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
 
 <span style="color:#000">List</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">Order</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">orders_response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUReports</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getOrderDetailByReferenceCode</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">);</span>
@@ -1214,7 +1214,7 @@ You can use the <code>getOrderDetailByReferenceCode</code> to consult the status
 
 <div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#8f5902;font-style:italic">//Enter the order’s reference code here.
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#8f5902;font-style:italic">// Enter the order’s reference code here.
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">$parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">array</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">REFERENCE_CODE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;payment_test_1625093692957&#34;</span><span style="color:#000;font-weight:bold">);</span>
 
 <span style="color:#000">$response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUReports</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">getOrderDetailByReferenceCode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">$parameters</span><span style="color:#000;font-weight:bold">);</span>
@@ -1333,9 +1333,9 @@ You can use the <code>getOrderDetailByReferenceCode</code> to consult the status
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-June 30, 2021:
+November 3, 2021:
 
- <b>API and SDK completed (9a333e3a)</b>
+ <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
 </div>
 </div>
 

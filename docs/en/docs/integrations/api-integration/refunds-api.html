@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/refunds-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-06-25T09:24:50-05:00" />
-<meta property="article:modified_time" content="2021-10-25T15:33:30-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Voids and Refunds API">
 <meta itemprop="description" content="This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction. 
 "><meta itemprop="datePublished" content="2021-06-25T09:24:50-05:00" />
-<meta itemprop="dateModified" content="2021-10-25T15:33:30-05:00" />
-<meta itemprop="wordCount" content="2290">
+<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
+<meta itemprop="wordCount" content="2297">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Voids and Refunds API"/>
 <meta name="twitter:description" content="This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction. 
@@ -105,7 +105,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../../es/docs/integrations/api-integration/refunds-api.html">Español</a>
 	
 </div>
 			</li>
@@ -139,7 +139,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.870e6082dc2a1bff1601f69057cc72e3ba0b0299e3317e2c855e83850c03f1b84e47c6b6f18d515e46119b3f92fe497d789b7286899f34a50a3f14a3aa393b30.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3e936a2b6de19ba07c93b266267cd254d7139a23804b751d6e82abad1190b4c5f65c408073ea4e04d1ca244b7049aa2b90b38e9493eb04263e7b42d6ac0c02a5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -158,7 +158,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="../../../../es/">Español</a>
+	<a class="dropdown-item" href="../../../../es/docs/integrations/api-integration/refunds-api.html">Español</a>
 	
 </div>
     </div>
@@ -855,17 +855,17 @@
 </ul>
 <h3 id="colombia">Colombia</h3>
 <ul>
-<li>Voids are not supported.</li>
-<li>The minimum time to send a refund is 10 minutes after the approval and the maximum is two years.</li>
-<li>Minimum amount to send the Refund 100 COP.</li>
-<li>If refund is not sent the same day in which the transaction was captured (before 9 pm UTC-5) the refund goes immediately to a manual process without sending the online attempt.</li>
-<li>When a refund is approved, the payer gets the money back in maximum 30 working days.</li>
-<li>Partial refunds are not available for international credit cards.</li>
+<li>No se soportan Anulaciones (Void).</li>
+<li>El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es two years.</li>
+<li>El valor mínimo para enviar un Reembolso es 100 COP.</li>
+<li>Si no se envía el reembolso el mismo día en el que la transacción fue capturada (antes de las 9 pm UTC-5) el reembolso va inmediatamente  un proceso manual sin enviar un intento en línea.</li>
+<li>Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 30 días hábiles.</li>
+<li>No se soportan reembolsos parciales para tarjetas de crédito internacionales.</li>
 </ul>
 <h3 id="mexico">Mexico</h3>
 <ul>
 <li>The minimum time to send a void is 10 minutes after the authorization and the maximum is 30 days. If the transaction was made with American Express, the maximum time is seven (7) days.<br>If no void or capture is sent after this time, the transaction is auto-voided.</li>
-<li>The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days. If the transaction was made processed by Bancomer, the maximum time is 45 days.</li>
+<li>The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days. If the transaction was processed by Bancomer, the maximum time is 45 days.</li>
 <li>When a refund is approved, the payer gets the money back in 30 working days.</li>
 <li>Refunds with decimals are not supported.</li>
 </ul>
@@ -1675,19 +1675,19 @@
 <ol start="2">
 <li>Use the <em><strong>Filter my sales</strong></em> field to find the order using the order and the transaction id.</li>
 </ol>
-<p><img src="../../../../assets/Refunds/Refunds_en_02.png" alt="PrintScreen"></p>
+<p><img src="../../../../assets/Refunds/Refunds_en_02.png" alt="PrintScreen" width="50%"/><br></p>
 <ol start="3">
 <li>The Status column show whether the refund has been approved or rejected; if the refund has not been approved, this column shows that the refund has been requested.</li>
 </ol>
 <p><img src="../../../../assets/Refunds/Refunds_en_03.png" alt="PrintScreen"></p>
 <h4 id="check-status-using-queries">Check status using queries</h4>
-<p>You can consult the state of the refund by using the <a href="../../../../en/docs/integrations/api-integration/queries-api.html">Queries API</a>. In the response of the query, you need to send the order id.</p>
+<p>You can consult the state of the refund by using the <a href="../../../../en/docs/integrations/api-integration/queries-api.html">Queries API</a>. In the request of the query, you need to send the order id.</p>
 <p>When query an order, the system returns the last transaction associated with the Order.</p>
 <p>There are three possible status in the response of your request:</p>
 <ul>
 <li><strong>Unresolved request</strong>: if the request has not been resolved, the order found in the query appears in <code>CAPTURED</code> status (parameter <code>result.payload.status</code> in the response), the first transaction type is <code>AUTHORIZATION_AND_CAPTURE</code> (parameter <code>result.transactions.type</code> in the response) and the first transaction status is <code>APPROVED</code> (First parameter <code>result.transactions.transactionResponse.state</code> in the response).</li>
 <li><strong>Approved</strong>: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in <code>REFUNDED</code> status (parameter <code>result.payload.status</code> in the response), the first transaction type is <code>REFUND</code> (parameter <code>result.transactions.type</code> in the response) and the first transaction status is <code>APPROVED</code> (First parameter <code>result.transactions.transactionResponse.state</code> in the response).</li>
-<li><strong>Declined</strong>: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in <code>CAPTURED</code> status (parameter <code>result.payload.status</code> in the response), the first transaction type is <code>REFUND</code> (parameter <code>result.transactions.type</code> in the response) and the first transaction status is <code>DECLINED</code> (First parameter <code>result.transactions.transactionResponse.state</code> in the response).</li>
+<li><strong>Declined</strong>: if the refund request is declined by a PayU’s customer service agent, the order found in the query appears in <code>CAPTURED</code> status (parameter <code>result.payload.status</code> in the response), the first transaction type is <code>REFUND</code> (parameter <code>result.transactions.type</code> in the response) and the first transaction status is <code>DECLINED</code> (First parameter <code>result.transactions.transactionResponse.state</code> in the response).</li>
 </ul>
 
 	
@@ -1695,9 +1695,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 25, 2021:
+November 3, 2021:
 
- <b>Translations to Spanish (4ed421cc)</b>
+ <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
 </div>
 </div>
 

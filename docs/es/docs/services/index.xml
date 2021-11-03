@@ -169,8 +169,8 @@ Consulta &lt;a href=&#34;../../../es/docs/getting-started/select-your-payment-me
 &lt;h2 id=&#34;whats-next&#34;&gt;¿Qué sigue?&lt;/h2&gt;
 &lt;p&gt;La integración con esta funcionalidad puede realizarse con cualquiera de nuestros tipos de integración:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;Para integración API, consulta este artículo&lt;/a&gt;&lt;!-- ref &#34;Queries-API.md&#34; --&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;Para integración SDK, consulta este artículo&lt;/a&gt;&lt;!-- ref &#34;QueriesSDK.md&#34; --&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../es/docs/integrations/api-integration/queries-api.html&#34;&gt;Para integración API, consulta este artículo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../es/docs/integrations/sdk-integration/queriessdk.html&#34;&gt;Para integración SDK, consulta este artículo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -215,8 +215,8 @@ Consulta &lt;a href=&#34;../../../es/docs/getting-started/select-your-payment-me
 &lt;h2 id=&#34;whats-next&#34;&gt;¿Qué sigue?&lt;/h2&gt;
 &lt;p&gt;La integración con esta funcionalidad puede realizarse con cualquiera de nuestros tipos de integración:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;Para integración API, consulta este artículo&lt;/a&gt; &lt;!-- ref &#34;Tokenization-API.md&#34; --&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;Para integración SDK, consulta este artículo&lt;/a&gt; &lt;!-- ref &#34;TokenizationSDK.md&#34; --&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../es/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Para integración API, consulta este artículo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../es/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;Para integración SDK, consulta este artículo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -264,7 +264,7 @@ Para México, puedes utilizar &lt;a href=&#34;../../../es/docs/services/promotio
 &lt;/div&gt;
 
 &lt;h2 id=&#34;whats-next&#34;&gt;¿Qué sigue?&lt;/h2&gt;
-&lt;p&gt;La integración con esta funcionalidad puede realizarse utilizando el &lt;a href=&#34;&#34;&gt;API de Promociones&lt;/a&gt;. Para saber cómo integrarse con MSI, consulta esta &lt;a href=&#34;&#34;&gt;sección&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La integración con esta funcionalidad puede realizarse utilizando el &lt;a href=&#34;../../../es/docs/integrations/api-integration/promotions-api.html&#34;&gt;API de Promociones&lt;/a&gt;. Para saber cómo integrarse con MSI, consulta esta &lt;a href=&#34;../../../es/docs/integrations/api-integration/promotions-api.html#msi&#34;&gt;sección&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
@@ -302,7 +302,7 @@ El método &lt;code&gt;VOID&lt;/code&gt; no está disponible en Colombia ni en P
 &lt;p&gt;A diferencia del método &lt;code&gt;VOID&lt;/code&gt;, este método requiere una aprobación. El proceso de reembolso se explica a continuación:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Cuando tu cliente solicita un reembolso, debes pedirlo utilizando el módulo de PayU &lt;!-- ()ref &#34;Refunds-MP.md --&gt; o nuestras integraciones. La solicitud requiere el &lt;em&gt;Id de la Orden&lt;/em&gt; y una razón del reembolso.&lt;/p&gt;
+&lt;p&gt;Cuando tu cliente solicita un reembolso, debes pedirlo utilizando el &lt;a href=&#34;../../../es/payu-module-documentation/payu-operations/refunds-mp.html&#34;&gt;módulo de PayU&lt;/a&gt; o nuestras integraciones. La solicitud requiere el &lt;em&gt;Id de la Orden&lt;/em&gt; y una razón del reembolso.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Una vez envías la solicitud, PayU la recibe y decide aprobarla o rechazarla en uno o tres días hábiles.&lt;/p&gt;
@@ -335,8 +335,8 @@ El método &lt;code&gt;VOID&lt;/code&gt; no está disponible en Colombia ni en P
 &lt;p&gt;De acuerdo con el país de procesamiento, pueden aplicar ciertas condiciones especiales para ejecutar anulaciones o reembolsos. Estas condiciones se explican en el tipo de integración que escojas.&lt;/p&gt;
 &lt;p&gt;La integración con esta funcionalidad puede realizarse con cualquiera de nuestros tipos de integración:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;Para integración API, consulta este artículo&lt;/a&gt;&lt;!-- ref &#34;Refunds-API.md&#34; --&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;Para integración SDK, consulta este artículo&lt;/a&gt;&lt;!-- ref &#34;RefundsSDK.md&#34; --&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../es/docs/integrations/api-integration/refunds-api.html&#34;&gt;Para integración API, consulta este artículo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../es/docs/integrations/sdk-integration/refundssdk.html&#34;&gt;Para integración SDK, consulta este artículo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -479,7 +479,7 @@ Puede que las solicitudes de Payouts no queden en el estado &lt;strong&gt;IN_BAN
 &lt;li&gt;&lt;strong&gt;Actualización de la transferencia&lt;/strong&gt;: envía una notificación cuando la validación de Sanction Screening rechaza al beneficiario.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Resultado de la validación&lt;/strong&gt;: envía una notificación cuando el beneficiario ha aprobado la validación y cuando la transferencia ha sido rechazada por el banco.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Consulta &lt;a href=&#34;&#34;&gt;este artículo&lt;/a&gt; para aprender a crear WebHooks. &lt;!-- payouts-api.md#create-or-update-a-webhook --&gt;&lt;/p&gt;
+&lt;p&gt;Consulta &lt;a href=&#34;../../../es/docs/integrations/api-integration/payouts-api.html#create-or-update-a-webhook&#34;&gt;este artículo&lt;/a&gt; para aprender a crear WebHooks.&lt;/p&gt;
 &lt;h3 id=&#34;variables-in-the-notifications&#34;&gt;Variables en las notificaciones&lt;/h3&gt;
 &lt;p&gt;Cuando ocurre un evento de los mencionados anterior mente, se envían al WebHook las siguientes variables.&lt;/p&gt;
 &lt;table&gt;
@@ -564,7 +564,7 @@ Puede que las solicitudes de Payouts no queden en el estado &lt;strong&gt;IN_BAN
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;whats-next&#34;&gt;¿Qué sigue?&lt;/h2&gt;
-&lt;p&gt;La integración con esta funcionalidad se realiza utilizando el &lt;a href=&#34;&#34;&gt;API de integraciones&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La integración con esta funcionalidad se realiza utilizando el &lt;a href=&#34;../../../es/docs/integrations/api-integration/payouts-api.html&#34;&gt;API de integraciones&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>

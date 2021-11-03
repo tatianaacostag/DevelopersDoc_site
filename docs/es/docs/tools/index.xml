@@ -426,7 +426,7 @@ Las razones para iniciar un proceso de disputa varian, algunas de ellas son:&lt;
 &lt;p&gt;El proceso de disputas sigue un flujo simple:&lt;/p&gt;
 &lt;h3 id=&#34;1-dispute-notification&#34;&gt;1. Notificación de la Disputa&lt;/h3&gt;
 &lt;p&gt;Cuando un banco notifica a PayU sobre una disputa, tú y tu comercio reciben un correo electrónico notificando el inicio del proceso de disputa.&lt;/p&gt;
-&lt;p&gt;También enviamos un &lt;code&gt;POST&lt;/code&gt; con toda la información de la disputa a la URL que configuraste en tu &lt;a href=&#34;&#34;&gt;módulo PayU&lt;/a&gt;. De esta forma, puedes automatizar el manejo del proceso de disputas para minimizar el riesgo de un posible contracargo. &lt;!-- Technical-configuration.md#disputes --&gt;&lt;/p&gt;
+&lt;p&gt;También enviamos un &lt;code&gt;POST&lt;/code&gt; con toda la información de la disputa a la URL que configuraste en tu &lt;a href=&#34;../../../es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#disputes&#34;&gt;módulo PayU&lt;/a&gt;. De esta forma, puedes automatizar el manejo del proceso de disputas para minimizar el riesgo de un posible contracargo.&lt;/p&gt;
 &lt;p&gt;Puedes configurar la URL donde te notificamos en el módulo PayU. Ingresa a &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; y haz clic en la opción para iniciar sesión que se encuentra en la parte superior de la página. O si lo prefieres, puedes ir directamente a &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Haz clic en &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt; y luego selecciona &lt;em&gt;&lt;strong&gt;Configuración técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/IntegrationVariables_01_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
@@ -438,7 +438,7 @@ Las razones para iniciar un proceso de disputa varian, algunas de ellas son:&lt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_02_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3-provide-evidence&#34;&gt;3. Presenta evidencias&lt;/h3&gt;
 &lt;p&gt;Es importante responder siempre a una disputa presentando evidencias antes de la &lt;a href=&#34;../../../es/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;fecha máxima estipulada por el banco&lt;/a&gt;. Luego de la fecha máxima, no puedes cargar evidencias de una disputa.&lt;/p&gt;
-&lt;p&gt;Para aprender a cargar evidencia para resolver la disputa, consulta el &lt;a href=&#34;&#34;&gt;Módulo PayU&lt;/a&gt;.&lt;!-- ref&#34;Disputes-MP.md&#34; --&gt;&lt;/p&gt;
+&lt;p&gt;Para aprender a cargar evidencia para resolver la disputa, consulta el &lt;a href=&#34;../../../es/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Módulo PayU&lt;/a&gt;.&lt;/p&gt;
 &lt;h4 id=&#34;what-information-can-be-useful&#34;&gt;¿Qué información puede ser útil?&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Información completa de tu cliente (nombre completo, número de identificación, correo electrónico, dirección de envío, número visible de su tarjeta de crédito, etc.)&lt;/li&gt;
@@ -533,7 +533,7 @@ Las razones para iniciar un proceso de disputa varian, algunas de ellas son:&lt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-Si tienes activada la &lt;a href=&#34;&#34;&gt;Garantía antifraude&lt;/a&gt;&lt;!-- ref&#34;Antifraud-Guarantee.md&#34; --&gt;, cuando el contracargo es sujeto a cobertura, PayU asume los valores debitados de tu cuenta. En este caso, el estado de la disputa es &lt;em&gt;Contracargada&lt;/em&gt; (Perdida) &lt;em&gt;Aplica garantía antifraude&lt;/em&gt;.
+Si tienes activada la &lt;a href=&#34;../../../es/docs/tools/antifraud-guarantee.html&#34;&gt;Garantía antifraude&lt;/a&gt;, cuando el contracargo es sujeto a cobertura, PayU asume los valores debitados de tu cuenta. En este caso, el estado de la disputa es &lt;em&gt;Contracargada&lt;/em&gt; (Perdida) &lt;em&gt;Aplica garantía antifraude&lt;/em&gt;.
 &lt;/div&gt;
 
 
@@ -744,9 +744,9 @@ El valor de la orden será descontado de tu cuenta PayU y debes tener saldo disp
 &lt;p&gt;Si aplica, PayU regresa los fundos a tu cuenta virtual a través de movimientos discrecionales.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;El resultado del proceso de &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; puede ser consultado en el &lt;a href=&#34;&#34;&gt;Módulo de Disputas&lt;/a&gt;.&lt;!--ref &#34;Disputes-MP.md&#34;--&gt;&lt;/p&gt;
+&lt;p&gt;El resultado del proceso de &lt;em&gt;&lt;strong&gt;Garantía Antifraude&lt;/strong&gt;&lt;/em&gt; puede ser consultado en el &lt;a href=&#34;../../../es/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Módulo de Disputas&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_08_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Además, puedes consultar los movimientos discrecionales en tu &lt;a href=&#34;&#34;&gt;Balance financiero&lt;/a&gt;. &lt;!-- ref &#34;Financial-Statement.md&#34; --&gt;&lt;/p&gt;
+&lt;p&gt;Además, puedes consultar los movimientos discrecionales en tu &lt;a href=&#34;../../../es/payu-module-documentation/reports/financial-statement.html&#34;&gt;Balance financiero&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_09_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
       </description>
