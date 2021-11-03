@@ -11,7 +11,6 @@ menu:
     weight: 40    
 ---
 
-<!--
 The PayU module is the system where you can securely manage your account. In this module, you can change your password, get sales reports, find the data needed to integrate your website with our platform, use tools to receive payments, and transfer money to your bank account.
 PayU module is ideal for businesses that need to:
 
@@ -86,4 +85,4 @@ This is the most common case when using the PayU module. A shop is legally const
 
 <img src="/assets/MerchantPanel/MerchantPanel_Concepts3.png" width="50%"/><br>
 
-* The PayU module for this shop has a single account and a single merchant, where all its users can access according to the profile they have. -->
+* The PayU module for this shop has a single account and a single merchant, where all its users can access according to the profile they have.

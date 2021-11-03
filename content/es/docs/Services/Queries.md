@@ -25,5 +25,5 @@ Para consultar transacciones, PayU te permite buscar por cualquiera de los sigui
 ## ¿Qué sigue? {#whats-next}
 La integración con esta funcionalidad puede realizarse con cualquiera de nuestros tipos de integración:
 
-* [Para integración API, consulta este artículo]({{< ref "" >}})<!-- ref "Queries-API.md" -->
-* [Para integración SDK, consulta este artículo]({{< ref "" >}})<!-- ref "QueriesSDK.md" -->
+* [Para integración API, consulta este artículo]({{< ref "Queries-API.md" >}})
+* [Para integración SDK, consulta este artículo]({{< ref "QueriesSDK.md" >}})

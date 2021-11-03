@@ -35,7 +35,7 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 {{< /tabs >}}
 
 ## Available methods
-Queries API includes the following methods:
+Queries SDK includes the following methods:
 
 * [Query by Order Id]({{< ref "QueriesSDK.md#query-by-order-id" >}})
 * [Query by Transaction Id]({{< ref "QueriesSDK.md#query-by-transaction-id" >}})
@@ -132,7 +132,7 @@ The following examples show how to call the method for this transaction type acc
 ```JAVA
 Map<String, String> parameters = new HashMap<String, String>();
 
-//Enter the transaction identifier here.
+// Enter the transaction identifier here.
 parameters.put(PayU.PARAMETERS.TRANSACTION_ID, "3310ba3b-cf64-49b2-80e6-3f9196917131");
 
 TransactionResponse response = PayUReports.getTransactionResponse(parameters);
@@ -175,7 +175,7 @@ The following examples show how to call the method for this transaction type acc
 ```JAVA
 Map<String, String> parameters = new HashMap<String, String>();
 
-//Enter the order’s reference code here.
+// Enter the order’s reference code here.
 parameters.put(PayU.PARAMETERS.REFERENCE_CODE, "payment_test_1625093692957");
 
 List<Order> orders_response = PayUReports.getOrderDetailByReferenceCode(parameters);
@@ -220,7 +220,7 @@ while(orders_iterator.hasNext()){
 
 {{< tab tabNum="2" >}}
 ```PHP
-//Enter the order’s reference code here.
+// Enter the order’s reference code here.
 $parameters = array(PayUParameters::REFERENCE_CODE => "payment_test_1625093692957");
 
 $response = PayUReports::getOrderDetailByReferenceCode($parameters);

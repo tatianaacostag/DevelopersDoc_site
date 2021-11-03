@@ -36,7 +36,7 @@ El proceso de disputas sigue un flujo simple:
 ### 1. Notificación de la Disputa {#1-dispute-notification}
 Cuando un banco notifica a PayU sobre una disputa, tú y tu comercio reciben un correo electrónico notificando el inicio del proceso de disputa.
 
-También enviamos un `POST` con toda la información de la disputa a la URL que configuraste en tu [módulo PayU]({{< ref "" >}}). De esta forma, puedes automatizar el manejo del proceso de disputas para minimizar el riesgo de un posible contracargo. <!-- Technical-configuration.md#disputes -->
+También enviamos un `POST` con toda la información de la disputa a la URL que configuraste en tu [módulo PayU]({{< ref "Technical-configuration.md#disputes" >}}). De esta forma, puedes automatizar el manejo del proceso de disputas para minimizar el riesgo de un posible contracargo.
 
 Puedes configurar la URL donde te notificamos en el módulo PayU. Ingresa a [PayU.com](payu.com) y haz clic en la opción para iniciar sesión que se encuentra en la parte superior de la página. O si lo prefieres, puedes ir directamente a https://merchants.payulatam.com/.
 
@@ -58,7 +58,7 @@ Puedes ver y administrar el proceso de disputas desde el módulo PayU en la opci
 ### 3. Presenta evidencias {#3-provide-evidence}
 Es importante responder siempre a una disputa presentando evidencias antes de la [fecha máxima estipulada por el banco]({{< ref"disputes.md#maximum-days-to-provide-evidence" >}}). Luego de la fecha máxima, no puedes cargar evidencias de una disputa.
 
-Para aprender a cargar evidencia para resolver la disputa, consulta el [Módulo PayU]({{< ref"" >}}).<!-- ref"Disputes-MP.md" -->
+Para aprender a cargar evidencia para resolver la disputa, consulta el [Módulo PayU]({{< ref"Disputes-MP.md" >}}).
 
 #### ¿Qué información puede ser útil? {#what-information-can-be-useful}
 * Información completa de tu cliente (nombre completo, número de identificación, correo electrónico, dirección de envío, número visible de su tarjeta de crédito, etc.)
@@ -101,6 +101,6 @@ Cuando se notifica una disputa, se crea una entidad disputa para la transacción
 | Expirada | Luego de pasados 120 días sin respuesta del banco, el monto de la disputa queda disponible para el comercio. |
 
 {{% alert title="Nota" color="info"%}}
-Si tienes activada la [Garantía antifraude]({{< ref"" >}})<!-- ref"Antifraud-Guarantee.md" -->, cuando el contracargo es sujeto a cobertura, PayU asume los valores debitados de tu cuenta. En este caso, el estado de la disputa es _Contracargada_ (Perdida) _Aplica garantía antifraude_. 
+Si tienes activada la [Garantía antifraude]({{< ref"Antifraud-Guarantee.md" >}}), cuando el contracargo es sujeto a cobertura, PayU asume los valores debitados de tu cuenta. En este caso, el estado de la disputa es _Contracargada_ (Perdida) _Aplica garantía antifraude_. 
 {{% /alert %}}
 

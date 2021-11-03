@@ -112,9 +112,9 @@ Both parameters can be found in your PayU module.
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | transfers | List | | List of the transfers you want to create. | Yes |
-| transfers[n] > value | Numeric | | Amount to be transfer from yor funds. The currency of this amount is the one configured in your PayU account | Yes |
+| transfers[n] > value | Numeric | | Amount to be transfer from your funds. The currency of this amount is the one configured in your PayU account | Yes |
 | transfers[n] > bankAccount | | | This object has the information of the bank account of the payee that will receive the payment.<br>The payee can be existing or new. | Yes |
-| transfers[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the third-party.<br>Send this parameter when you want to request a Payout for an existing payee. | No | 
+| transfers[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the Bank account of the payee.<br>Send this parameter when you want to request a Payout for an existing payee. | No | 
 | transfers[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type between you and your payee. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the payee is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the payee is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the payee is a customer, an employee, or any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
 | transfers[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the payee.<br>This parameter is mandatory when you are creating a payout request for a new payee. | No |
 | transfers[n] > bankAccount > bankCode | Numeric | Min:3 Max:4 | Code of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | No |
@@ -142,11 +142,11 @@ Both parameters can be found in your PayU module.
 | totalSuccessful | Numeric |  | Number of payouts successfully created. |
 | totalFailed | Numeric |  | Number of payments that could not be created. |
 | successfulItems | List |  | List of items that were successfully processed. |
-| successfulItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For successful transactions, the value is ´SUCCESS´ |
+| successfulItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For successful transactions, the value is `SUCCESS` |
 | successfulItems[n] > paymentOrderId | Alphanumeric | 36 | Id generated for the payout request. Use this id to either update or cancel the request. |
 | successfulItems[n] > value | Numeric | | Amount of the request. |
 | successfulItems[n] > bankAccount | | | This object has the information of the bank account that will receive the payment. |
-| successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. For successful registrations, the value is ´SUCCESS´. |
+| successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. For successful registrations, the value is `SUCCESS`. |
 | successfulItems[n] > bankAccount > id | Alphanumeric | 36 | Identifier of the registered Bank account. |
 | successfulItems[n] > bankAccount > supplierType | Alphanumeric | Min:11 Max:16 | Relationship type selected for the payee. |
 | successfulItems[n] > bankAccount > accountNumber | Alphanumeric | Max:17 | Bank account number of the payee. |
@@ -162,11 +162,10 @@ Both parameters can be found in your PayU module.
 | successfulItems[n] > bankAccount > state| Alphanumeric |  | State of the Bank account. |
 | successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
 | failedItems | List |  | List of items that failed during processing. |
-| failedItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For failed transactions, the value is ´FAILED´. |
+| failedItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For failed transactions, the value is `FAILED`. |
 | failedItems[n] > failureMessages | List | | List of error messages that generated the failure. |
 | failedItems[n] > value | Numeric | | Amount of the request. |
 | failedItems[n] > bankAccount | | | This object has the information of the bank account that failed. This element has the same parameters than the object `successfulItems[n].bankAccount`. |
-| successfulItems[n] > description | Alphanumeric | | Additional information of the payout. |
 
 </details>
 <br>
@@ -326,7 +325,7 @@ Response body:
 ## Update payout request
 This method lets you request the update of the bank information of a payee on a running payout request. For example, this method is useful to change the bank account number of the payee.
 
-You can only request the update of the information of a payee for when the Payout status is in `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
+You can only request the update of the information of a payee when the Payout status is in `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
 
 {{% alert title="Note" color="info"%}}
 
@@ -357,7 +356,7 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| id | Alphanumeric | 36 | Identifier of the Bank account of the third-party. | Yes |
+| id | Alphanumeric | 36 | Identifier of the Bank account of the payee. | Yes |
 | accountNumber | Alphanumeric | Max:17 | Bank account number of the payee. | Yes |
 <!--additionalData-->
 
@@ -480,7 +479,7 @@ This method lets you create or update a WebHook that allows you to configure a U
 You can configure a WebHook for the following events:
 * **Transfer creation**: sends a notification when a payout request is created. To enable these notifications, include the `TRANSFER_CREATION` value in the list parameter `enabledEvents`.
 * **Transfer update**: sends a notification when the sanction screening validation rejects the payee. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
-* **Validation result**: sends a notification when payee has approved the sanction screening validation and when the transfer has been rejected by the bank, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
+* **Validation result**: sends a notification when payee has approved the sanction screening validation and when the transfer has been rejected by the bank. To enable these notifications, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
 
 [Click here to know the variables in the notifications]({{< ref "payouts.md#variables-in-the-notifications" >}}).
 
@@ -697,11 +696,11 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 | Field name | Format | Size | Description |
 |-|-|-|-|
 | processingStatus | Alphanumeric | 7 | State of query. By default, this state is `SUCCESS`. |
-| id | Alphanumeric |  | Id of the WebHook deleted. |
+| id | Alphanumeric |  | Id of the WebHook. |
 | created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
 | accountId | Numeric | | ID of the user account for each country associated with the merchant. |
 | callbackUrl | Alphanumeric | | URL used that will receive the `POST` notifications according to the events selected. |
-| description | Alphanumeric | | Description of the WebHook created. |
+| description | Alphanumeric | | Description of the WebHook. |
 | enabledEvents | List | Max:3 | List of the events selected. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
 
@@ -761,11 +760,11 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 | Field name | Format | Size | Description |
 |-|-|-|-|
 | processingStatus | Alphanumeric | 7 | State of query. By default, this state is `SUCCESS`. |
-| id | Alphanumeric |  | Id of the WebHook deleted. |
+| id | Alphanumeric |  | Id of the WebHook. |
 | created | Date |  | Creation date of the WebHook. Format `YYYY-DD-MM hh:mm:ss`. |
 | accountId | Numeric | | ID of the user account for each country associated with the merchant. |
 | callbackUrl | Alphanumeric | | URL used that will receive the `POST` notifications according to the events selected. |
-| description | Alphanumeric | | Description of the WebHook created. |
+| description | Alphanumeric | | Description of the WebHook. |
 | enabledEvents | List | Max:3 | List of the events selected. |
 | status | Alphanumeric | 7 | State of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
 

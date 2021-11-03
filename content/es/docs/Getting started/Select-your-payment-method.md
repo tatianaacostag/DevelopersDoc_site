@@ -78,7 +78,7 @@ PayU en Colombia te permite integrar con la mayoría de los medios de pago en ef
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
 
 ## <img src="/assets/Mexico.png" width="25px"/> México {#Mexico}
-En México, soportamos tanto Meses sin Intereses y Promociones, consulte este [artículo]({{< ref "" >}}) para más información.<!-- refer Promotions.md -->
+En México, soportamos tanto Meses sin Intereses y Promociones, consulte este [artículo]({{< ref "Promotions.md" >}}) para más información.
 
 <div class="paymentMethods"></div>
 

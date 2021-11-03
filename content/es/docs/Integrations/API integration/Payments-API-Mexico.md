@@ -34,7 +34,7 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 ## Enviar transacciones con tarjeta de crédito o débito {#submit-transaction-with-credit-or-debit-card}
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para México, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 El flujo de dos pasos solo está soportados para Mastercard y Visa.
 {{% /alert %}}
 
@@ -165,7 +165,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 * Para pagos con Promociones, envía los parámetros `INSTALLMENTS_NUMBER` y `PROMOTION_ID` con el número de cuotas seleccionado y el ID de la promoción. Consulta el [API de Promociones]({{< ref "Promotions.md" >}}) para más información.
 * Para pagos con Meses Sin Intereses - MSI, envía el extra parámetro `INSTALLMENTS_NUMBER` con el número de meses. Consulta [MSI]({{< ref "Promotions.md#months-without-interests-msi---meses-sin-intereses" >}}) para más información.
 * Los bancos disponibles para MSI son: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander y Bancomer.
-* Cuando utilices MSI, promociones o apliques cuotas, debes mostrar siempre la franse **"PAGOS DIFERIDOS"** durante el proceso de pago.
+* Cuando utilices MSI, promociones o apliques cuotas, debes mostrar siempre la frase **"PAGOS DIFERIDOS"** durante el proceso de pago.
 * Cuando se apliquen cuotas (cargos asumidos por el pagador), muestra el monto original de la transacción, el monto luego de las cuotas, el número de cuotas y el monto por cuota incluyendo el valor adicional.
 * La funcionalidad de Promociones solo está disponible para [flujos de un paso]({{< ref "Payments.md#payment-flows" >}}).
 * Para pagos con tókenes de tarjetas de crédito, incluye los parámetros `transaction.creditCardTokenId` y `transaction.creditCard.securityCode` (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito . Para más información, consulta el [API de Tokenización]({{< ref "Tokenization-API.md" >}}).
@@ -964,7 +964,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
    - **EXPIRATION_DATE**: término máximo que tine el pagador para realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago.
    - **REFERENCE**: referencia interna de pago generada por PayU. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando e pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
    - **PAYMENT_WAY_ID**: red financiera del tipo de pago.
 
@@ -1349,8 +1349,8 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 * Cuando el pagador selecciona este medio de pago, PayU crea una orden en estado _in progress_ y una transacción en estado pendiente (`PENDING`).
 * Para realizar el pago, el pagador debe iniciar sesión en la sucursal virtual de su banco (el banco debe aparecer en la lista de bancos disponibles de SPEI).<br>Primero, el pagador debe registrar la cuenta CLABE de PayU en la sucursal de su banco. Una vez la cuenta CLABE esté activa para realizar transferencias, el pagador debe ingresar en su sucursal virtual, la referencia retornada por PayU en el parámetro `trazabilityCode` y el monto tal y como PayU lo retornó.
 * En el cuerpo de la respuesta, puedes encontrar las variables para generar el recibo de pago (voucher) y la URL del mismo generado en formato HTML y PDF. Si quieres generar el voucher, utiliza las siguientes variables:
-  - **trazabilityCode**: identificador único de máximo 7 dígitos; corresponde a la referencia de pago que debe ingresar el pagador en la sucursal virtual. Es obligatorio ingresar ell mismo valor en el campo referencia de la sucursal virtual para que el pago sea exitoso.
-  - **value**: the payer must enter as transfer amount the same value informed in the request, so the payment can be successful.
+  - **trazabilityCode**: identificador único de máximo 7 dígitos; corresponde a la referencia de pago que debe ingresar el pagador en la sucursal virtual. Es obligatorio ingresar el mismo valor en el campo referencia de la sucursal virtual para que el pago sea exitoso.
+  - **value**: el pagador debe ingresar como monto de la transferencia el mismo valor informado en la solicitud, para que el pago sea exitoso.
   - **SPEI_CLABE_ACCOUNT_NUMBER**: es la CLABE interbancaria de PayU, es decir, la cuenta donde se transfiere el monto. El pagador debe registrar esta CLABE como beneficiario en la sucursal de su banco antes de realizar la transferencia.
   - **SPEI_BANK_NAME**: nombre del banco asociado a la cuenta CLABE de PayU. La cuenta beneficiaria está asociada al banco STP y para PayU siempre es el mismo banco.
 
@@ -1625,7 +1625,7 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ## Enviar transacciones con referencia bancaria {#submit-transaction-with-bank-reference}
-ste método te permite procesar los pagos realizados por tus clientes por medio de referencia bancaria. Para integrarte con las transacciones con referencia bancaria, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.
+Este método te permite procesar los pagos realizados por tus clientes por medio de referencia bancaria. Para integrarte con las transacciones con referencia bancaria, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.
 
 <img src="/assets/Payments/BankReferenceReceiptMX.png" alt="PrintScreen" width="50%">
 
@@ -1738,7 +1738,7 @@ ste método te permite procesar los pagos realizados por tus clientes por medio 
    - **REFERENCE**: referencia de pago interna generada por PayU.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando e pagador selecciona un medio de pago con referencia.
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago con referencia bancaria.
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
 ### Llamado del API {#api-call-2}
@@ -2023,7 +2023,7 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 |-|-|-|-|:-:|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. | Sí |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. | Sí |
-| paymentMethods |  |  | List of the payment methods. | Sí |
+| paymentMethods |  |  | Lista de los medios de pago. | Sí |
 | paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. | Sí |
 | paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. | Sí |
 | paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. | Sí |

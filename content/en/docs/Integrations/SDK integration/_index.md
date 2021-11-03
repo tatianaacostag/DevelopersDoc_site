@@ -29,11 +29,11 @@ In general, you need the following libraries in your classpath:
 
 <a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.3.9.zip" target="_blank" class="payu-btn-green">Download SDK Java 1.3.9</a>
 
-Before performing any operation with the SDK, you need to assign some values to the `PayU` class, which apply to all the SDK operations and must be configured with your commerce data. the following table shows the values you need to configure.
+Before performing any operation with the SDK, you need to assign some values to the `PayU` class, which apply to all the SDK operations and must be configured with your commerce data. The following table shows the values you need to configure.
 
 | Parameter name | Size | Type | Mandatory | Description |
 |-|-|-|:-:|-|
-| `language` | 2 | Language | Yes | The language used for error messages in the system and in emails that are sent to the buyer and seller. It is currently supported in en (English), es (Spanish) and pt (Portuguese). |
+| `language` | 2 | Language | Yes | The language used for error messages in the system and in emails that are sent to the buyer and seller. It is currently supported in `en` (English), `es` (Spanish) and `pt` (Portuguese). |
 | `isTest` |  | boolean | Yes | Assign `true` if it's a test request. Otherwise, assign `false`. Depending on the type of transaction or operation, the behavior may vary depending on the value of this field. |
 | `apiLogin` | Min:12 Max:32 | String | Yes | Your API Login. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | `apiKey` | Min:6 Max:32 | String | Yes | Your API Key. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
@@ -89,7 +89,7 @@ require_once '[PayU-php-sdk-Path]/lib/PayU.php';
 ```
 <br>
 
-Before performing any operation with the SDK, you need to assign some values to the `PayU` class, which apply to all the SDK operations and must be configured with your commerce data. the following table shows the values you need to configure.
+Before performing any operation with the SDK, you need to assign some values to the `PayU` class, which apply to all the SDK operations and must be configured with your commerce data. The following table shows the values you need to configure.
 
 | Parameter name | Size | Type | Mandatory | Description |
 |-|-|-|:-:|-|

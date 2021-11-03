@@ -41,7 +41,7 @@ Before using Voids and Refunds API, take into account the following consideratio
 
 ### Argentina
 * The maximum time to send a void is 14 days. If no void or capture is sent after this time, the transaction is auto-voided.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days.
+* The minimum time to send a refund is 10 minutes after the approval and the maximum is 365 days and 180 days for partial refunds.
 * Refunds with decimals are not supported.
 * When a refund is approved, the payer gets the money back in maximum 30 working days.
 
@@ -106,7 +106,7 @@ parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the void of the tr
 
 TransactionResponse response = PayUPayments.doVoid(parameters);
 
-//Response
+// Response
 if (response != null){
   response.getOrderId();
   response.getState();
@@ -167,7 +167,7 @@ parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the refund of the 
 
 TransactionResponse response = PayUPayments.doRefund(parameters);
 
-//Response
+// Response
 if (response != null){
   response.getOrderId();
   response.getState();
@@ -226,7 +226,7 @@ parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the partial refund
 
 TransactionResponse response = PayUPayments.doPartialRefund(parameters);
 
-//Response
+// Response
 if (response != null){
   response.getOrderId();
   response.getState();
@@ -291,5 +291,5 @@ When query an order, the system returns the last transaction associated with the
 
 There are three possible status in the response of your request:
 * **Unresolved request**: if the request has not been resolved, the order found in the query appears in `CAPTURED` status, the first transaction type is `AUTHORIZATION_AND_CAPTURE` and the first transaction status is `APPROVED`.
-* **Approved**: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in `REFUNDED` status , the first transaction type is `REFUND` and the first transaction status is `APPROVED`.
-* **Declined**: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in `CAPTURED` status , the first transaction type is `REFUND` and the first transaction status is `DECLINED`.
+* **Approved**: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in `REFUNDED` status, the first transaction type is `REFUND` and the first transaction status is `APPROVED`.
+* **Declined**: if the refund request is declined by a PayU’s customer service agent, the order found in the query appears in `CAPTURED` status, the first transaction type is `REFUND` and the first transaction status is `DECLINED`.

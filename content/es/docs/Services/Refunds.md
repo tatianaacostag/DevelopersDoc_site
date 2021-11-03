@@ -25,7 +25,7 @@ Un reembolso se solicita cuando una tienda decide voluntariamente regresar el di
 
 A diferencia del método `VOID`, este método requiere una aprobación. El proceso de reembolso se explica a continuación:
 
-1. Cuando tu cliente solicita un reembolso, debes pedirlo utilizando el módulo de PayU <!-- ({{< ref "">}})ref "Refunds-MP.md --> o nuestras integraciones. La solicitud requiere el _Id de la Orden_ y una razón del reembolso.
+1. Cuando tu cliente solicita un reembolso, debes pedirlo utilizando el [módulo de PayU]({{< ref "Refunds-MP.md" >}}) o nuestras integraciones. La solicitud requiere el _Id de la Orden_ y una razón del reembolso.
 
 2. Una vez envías la solicitud, PayU la recibe y decide aprobarla o rechazarla en uno o tres días hábiles.
 
@@ -55,5 +55,5 @@ De acuerdo con el país de procesamiento, pueden aplicar ciertas condiciones esp
 
 La integración con esta funcionalidad puede realizarse con cualquiera de nuestros tipos de integración:
 
-* [Para integración API, consulta este artículo]({{< ref "" >}})<!-- ref "Refunds-API.md" -->
-* [Para integración SDK, consulta este artículo]({{< ref "" >}})<!-- ref "RefundsSDK.md" -->
+* [Para integración API, consulta este artículo]({{< ref "Refunds-API.md" >}})
+* [Para integración SDK, consulta este artículo]({{< ref "RefundsSDK.md" >}})

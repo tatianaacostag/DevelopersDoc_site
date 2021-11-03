@@ -45,5 +45,5 @@ Además, la funcionalidad de tokenización le permite almacenar, remover o cobra
 ## ¿Qué sigue? {#whats-next}
 La integración con esta funcionalidad puede realizarse con cualquiera de nuestros tipos de integración:
 
-* [Para integración API, consulta este artículo]({{< ref "" >}}) <!-- ref "Tokenization-API.md" -->
-* [Para integración SDK, consulta este artículo]({{< ref "" >}}) <!-- ref "TokenizationSDK.md" -->
+* [Para integración API, consulta este artículo]({{< ref "Tokenization-API.md" >}})
+* [Para integración SDK, consulta este artículo]({{< ref "TokenizationSDK.md" >}})

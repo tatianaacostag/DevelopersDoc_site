@@ -34,7 +34,7 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 {{< /tabs >}}
 
 ## Available methods
-Payments API includes the following methods:
+Payments SDK includes the following methods:
 
 * [Submit transaction with credit cards]({{< ref "Payments-SDK-Mexico.md#submit-transaction-with-credit-card" >}})
 * [Submit transaction with cash]({{< ref "Payments-SDK-Mexico.md#submit-transaction-with-cash" >}})
@@ -56,16 +56,15 @@ Two-step flows are only supported for Mastercard and Visa.
 
 ### Considerations
 * Send a valid credit card Payment Method in the request, [see the available Payment Methods for Mexico]({{< ref "select-your-payment-method.html#Mexico" >}}).
-* Two-step flows are only available for Mastercard and Visa.
 * For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
 * When using promotions or apply installments, always display the phrase **"PAGOS DIFERIDOS"** during the payment process.
 * When installments applied (fees assumed by the payer), display the original amount of the transaction, the total amount after the fees, the number of installments, and the amount per installment including the extra fee.
 * Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
-* For payments with credit card tokens, include the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` replacing the information of the credit card (if you process with security code). For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
-* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `PROCESS_WITHOUT_CVV2` as true and remove the variable `CREDIT_CARD_SECURITY_CODE`.
+* For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
 
 ### Authorization
-Use this method to perform the **Authorization** step of a two-step flow using Mastercard or Visa. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-mexico.md#capture" >}}) the funds.<br>TThe following examples show how to call the method for this transaction type according to the programming language. 
+Use this method to perform the **Authorization** step of a two-step flow using Mastercard or Visa. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-mexico.md#capture" >}}) the funds.<br>The following examples show how to call the method for this transaction type according to the programming language. 
 
 {{< tabs tabTotal="2" tabID="2" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -91,18 +90,18 @@ parameters.put(PayU.PARAMETERS.VALUE, ""+value);
 parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.MXN.name());
 
 // -- Buyer --
-//Enter the buyer Id here.
+// Enter the buyer Id here.
 parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
-//Enter the buyer's name here.
+// Enter the buyer's name here.
 parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer  name");
-//Enter the buyer's e-mail here
+// Enter the buyer's e-mail here
 parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
-//Enter the buyer's contact phone here.
+// Enter the buyer's contact phone here.
 parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "7563126");
-//Enter the buyer's contact document here.
+// Enter the buyer's contact document here.
 parameters.put(PayU.PARAMETERS.BUYER_DNI, "123456789");
 
-//Enter the buyer's address here.
+// Enter the buyer's address here.
 parameters.put(PayU.PARAMETERS.BUYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.BUYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.BUYER_CITY, "Cuernavaca");
@@ -113,19 +112,19 @@ parameters.put(PayU.PARAMETERS.BUYER_PHONE, "7563126");
 
 
 // -- Payer --
-//Enter the payer's ID here.
+// Enter the payer's ID here.
 parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
-//Enter the payer's name here.
+// Enter the payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second payer name");
-//Enter the payer's e-mail here.
+// Enter the payer's e-mail here.
 parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "payer_test@test.com");
-//Enter the payer's contact phone here.
+// Enter the payer's contact phone here.
 parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "7563126");
-//Enter the payer's contact document here.
+// Enter the payer's contact document here.
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "5415668464654");
 // Enter the payer's birthday here
 parameters.put(PayU.PARAMETERS.PAYER_BIRTH_DATE, "1994-06-21");
-//Enter the payer's address here.
+// Enter the payer's address here.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "Cuernavaca");
@@ -139,9 +138,9 @@ parameters.put(PayU.PARAMETERS.PAYER_PHONE, "7563126");
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_NUMBER, "4097440000000004");
 // Enter expiration date of the credit card here
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_EXPIRATION_DATE, "2022/12");
-//Enter the security code of the credit card here
+// Enter the security code of the credit card here
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_SECURITY_CODE, "321");
-//Enter the name of the credit card here
+// Enter the name of the credit card here
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "VISA");
 
 // Enter the number of installments here.
@@ -185,7 +184,7 @@ $reference = "payment_test_00000001";
 $value = "1000";
 
 $parameters = array(
-	//Enter the account’s identifier here
+	// Enter the account’s identifier here
 	PayUParameters::ACCOUNT_ID => "512324",
 	// Enter the reference code here.
 	PayUParameters::REFERENCE_CODE => $reference,
@@ -199,17 +198,17 @@ $parameters = array(
 	PayUParameters::CURRENCY => "MXN",
 
 	// -- Buyer --
-	//Enter the buyer Id here.
+	// Enter the buyer Id here.
 	PayUParameters::BUYER_ID => "1",
-	//Enter the buyer's name here.
+	// Enter the buyer's name here.
 	PayUParameters::BUYER_NAME => "First name and second buyer name",
-	//Enter the buyer's e-mail here.
+	// Enter the buyer's e-mail here.
 	PayUParameters::BUYER_EMAIL => "buyer_test@test.com",
-	//Enter the buyer's contact phone here.
+	// Enter the buyer's contact phone here.
 	PayUParameters::BUYER_CONTACT_PHONE => "7563126",
-	//Enter the buyer's contact document here.
+	// Enter the buyer's contact document here.
 	PayUParameters::BUYER_DNI => "5415668464654",
-	//Enter the buyer's address here.
+	// Enter the buyer's address here.
 	PayUParameters::BUYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::BUYER_STREET_2 => "5555487",
 	PayUParameters::BUYER_CITY => "Cuernavaca",
@@ -220,19 +219,19 @@ $parameters = array(
 
 
 	// -- Payer --
-	//Enter the payer's ID here.
+	// Enter the payer's ID here.
 	PayUParameters::PARAMETERS.PAYER_ID => "1",
-        ///Enter the payer's name here
+        /// Enter the payer's name here
 	PayUParameters::PAYER_NAME => "First name and second payer name",
-	//Enter the payer's e-mail here
+	// Enter the payer's e-mail here
 	PayUParameters::PAYER_EMAIL => "payer_test@test.com",
-	//Enter the payer's contact phone here.
+	// Enter the payer's contact phone here.
 	PayUParameters::PAYER_CONTACT_PHONE => "7563126",
-	//Enter the payer's contact document here.
+	// Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "5415668464654",
 	// Enter the payer's birthday here
   PayUParameters::PAYER_BIRTH_DATE => "1994-06-21"),
-	//Enter the payer's address here.
+	// Enter the payer's address here.
 	PayUParameters::PAYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::PAYER_STREET_2 => "5555487",
 	PayUParameters::PAYER_CITY => "Cuernavaca",
@@ -246,9 +245,9 @@ $parameters = array(
 	PayUParameters::CREDIT_CARD_NUMBER => "4097440000000004",
 	// Enter expiration date of the credit card here
 	PayUParameters::CREDIT_CARD_EXPIRATION_DATE => "2022/12",
-	//Enter the security code of the credit card here
+	// Enter the security code of the credit card here
 	PayUParameters::CREDIT_CARD_SECURITY_CODE=> "321",
-	//Enter the name of the credit card here
+	// Enter the name of the credit card here
 	PayUParameters::PAYMENT_METHOD => "VISA",
 
 	// Enter the number of installments here.
@@ -303,17 +302,17 @@ The following examples show how to call the method for this transaction type acc
 ```JAVA
 Map<String, String> parameters = new HashMap<String, String>();
 
-//Enter the order identifier here.
+// Enter the order identifier here.
 parameters.put(PayU.PARAMETERS.ORDER_ID, "1400469033");
-//Enter the transaction identifier here.
+// Enter the transaction identifier here.
 parameters.put(PayU.PARAMETERS.TRANSACTION_ID, "f432b9ba-a692-4350-b8c6-2348e1e21a6c");
 // Enter the transaction language here.
 parameters.put(PayU.PARAMETERS.LANGUAGE, "Language.es");
 
-//Capture Request
+// Capture Request
 TransactionResponse response = PayUPayments.doCapture(parameters);
 
-//Response
+// Response
 if(response != null){
 	response.getOrderId();
 	response.getTransactionId();
@@ -333,9 +332,9 @@ if(response != null){
 $parameters = array(
 	// Enter the account’s identifier here.
 	PayUParameters::ACCOUNT_ID => "512324",
-	//Enter the order identifier here.
+	// Enter the order identifier here.
 	PayUParameters::ORDER_ID => "1400469033",
-	//Enter the transaction identifier here.
+	// Enter the transaction identifier here.
 	PayUParameters::TRANSACTION_ID => "f432b9ba-a692-4350-b8c6-2348e1e21a6c",
 	);
 
@@ -385,18 +384,18 @@ parameters.put(PayU.PARAMETERS.VALUE, ""+value);
 parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.MXN.name());
 
 // -- Buyer --
-//Enter the buyer Id here.
+// Enter the buyer Id here.
 parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
-//Enter the buyer's name here.
+// Enter the buyer's name here.
 parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer  name");
-//Enter the buyer's e-mail here
+// Enter the buyer's e-mail here
 parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
-//Enter the buyer's contact phone here.
+// Enter the buyer's contact phone here.
 parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "7563126");
-//Enter the buyer's contact document here.
+// Enter the buyer's contact document here.
 parameters.put(PayU.PARAMETERS.BUYER_DNI, "123456789");
 
-//Enter the buyer's address here.
+// Enter the buyer's address here.
 parameters.put(PayU.PARAMETERS.BUYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.BUYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.BUYER_CITY, "Cuernavaca");
@@ -407,19 +406,19 @@ parameters.put(PayU.PARAMETERS.BUYER_PHONE, "7563126");
 
 
 // -- Payer --
-//Enter the payer's ID here.
+// Enter the payer's ID here.
 parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
-//Enter the payer's name here.
+// Enter the payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second payer name");
-//Enter the payer's e-mail here.
+// Enter the payer's e-mail here.
 parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "payer_test@test.com");
-//Enter the payer's contact phone here.
+// Enter the payer's contact phone here.
 parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "7563126");
-//Enter the payer's contact document here.
+// Enter the payer's contact document here.
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "5415668464654");
 // Enter the payer's birthday here
 parameters.put(PayU.PARAMETERS.PAYER_BIRTH_DATE, "1994-06-21");
-//Enter the payer's address here.
+// Enter the payer's address here.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "Cuernavaca");
@@ -433,9 +432,9 @@ parameters.put(PayU.PARAMETERS.PAYER_PHONE, "7563126");
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_NUMBER, "4097440000000004");
 // Enter expiration date of the credit card here
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_EXPIRATION_DATE, "2022/12");
-//Enter the security code of the credit card here
+// Enter the security code of the credit card here
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_SECURITY_CODE, "321");
-//Enter the name of the credit card here
+// Enter the name of the credit card here
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "VISA");
 
 // Enter the number of installments here.
@@ -479,7 +478,7 @@ $reference = "payment_test_00000001";
 $value = "1000";
 
 $parameters = array(
-	//Enter the account’s identifier here
+	// Enter the account’s identifier here
 	PayUParameters::ACCOUNT_ID => "512324",
 	// Enter the reference code here.
 	PayUParameters::REFERENCE_CODE => $reference,
@@ -493,17 +492,17 @@ $parameters = array(
 	PayUParameters::CURRENCY => "MXN",
 
 	// -- Buyer --
-	//Enter the buyer Id here.
+	// Enter the buyer Id here.
 	PayUParameters::BUYER_ID => "1",
-	//Enter the buyer's name here.
+	// Enter the buyer's name here.
 	PayUParameters::BUYER_NAME => "First name and second buyer name",
-	//Enter the buyer's e-mail here.
+	// Enter the buyer's e-mail here.
 	PayUParameters::BUYER_EMAIL => "buyer_test@test.com",
-	//Enter the buyer's contact phone here.
+	// Enter the buyer's contact phone here.
 	PayUParameters::BUYER_CONTACT_PHONE => "7563126",
-	//Enter the buyer's contact document here.
+	// Enter the buyer's contact document here.
 	PayUParameters::BUYER_DNI => "5415668464654",
-	//Enter the buyer's address here.
+	// Enter the buyer's address here.
 	PayUParameters::BUYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::BUYER_STREET_2 => "5555487",
 	PayUParameters::BUYER_CITY => "Cuernavaca",
@@ -514,19 +513,19 @@ $parameters = array(
 
 
 	// -- Payer --
-	//Enter the payer's ID here.
+	// Enter the payer's ID here.
 	PayUParameters::PARAMETERS.PAYER_ID => "1",
-        ///Enter the payer's name here
+        /// Enter the payer's name here
 	PayUParameters::PAYER_NAME => "First name and second payer name",
-	//Enter the payer's e-mail here
+	// Enter the payer's e-mail here
 	PayUParameters::PAYER_EMAIL => "payer_test@test.com",
-	//Enter the payer's contact phone here.
+	// Enter the payer's contact phone here.
 	PayUParameters::PAYER_CONTACT_PHONE => "7563126",
-	//Enter the payer's contact document here.
+	// Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "5415668464654",
 	// Enter the payer's birthday here
   PayUParameters::PAYER_BIRTH_DATE => "1994-06-21"),
-	//Enter the payer's address here.
+	// Enter the payer's address here.
 	PayUParameters::PAYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::PAYER_STREET_2 => "5555487",
 	PayUParameters::PAYER_CITY => "Cuernavaca",
@@ -540,9 +539,9 @@ $parameters = array(
 	PayUParameters::CREDIT_CARD_NUMBER => "4097440000000004",
 	// Enter expiration date of the credit card here
 	PayUParameters::CREDIT_CARD_EXPIRATION_DATE => "2022/12",
-	//Enter the security code of the credit card here
+	// Enter the security code of the credit card here
 	PayUParameters::CREDIT_CARD_SECURITY_CODE=> "321",
-	//Enter the name of the credit card here
+	// Enter the name of the credit card here
 	PayUParameters::PAYMENT_METHOD => "VISA",
 
 	// Enter the number of installments here.
@@ -627,18 +626,18 @@ parameters.put(PayU.PARAMETERS.VALUE, ""+value);
 parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.MXN.name());
 
 // -- Buyer --
-//Enter the buyer Id here.
+// Enter the buyer Id here.
 parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
-//Enter the buyer's name here.
+// Enter the buyer's name here.
 parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer name");
-//Enter the buyer's e-mail here
+// Enter the buyer's e-mail here
 parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
-//Enter the buyer's contact phone here.
+// Enter the buyer's contact phone here.
 parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "7563126");
-//Enter the buyer's contact document here.
+// Enter the buyer's contact document here.
 parameters.put(PayU.PARAMETERS.BUYER_DNI, "123456789");
 
-//Enter the buyer's address here.
+// Enter the buyer's address here.
 parameters.put(PayU.PARAMETERS.BUYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.BUYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.BUYER_CITY, "Cuernavaca");
@@ -649,19 +648,19 @@ parameters.put(PayU.PARAMETERS.BUYER_PHONE, "7563126");
 
 
 // -- Payer --
-//Enter the payer's ID here.
+// Enter the payer's ID here.
 parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
-//Enter the payer's name here.
+// Enter the payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second payer name");
-//Enter the payer's e-mail here.
+// Enter the payer's e-mail here.
 parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "payer_test@test.com");
-//Enter the payer's contact phone here.
+// Enter the payer's contact phone here.
 parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "7563126");
-//Enter the payer's contact document here.
+// Enter the payer's contact document here.
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "5415668464654");
 // Enter the payer's birthday here
 parameters.put(PayU.PARAMETERS.PAYER_BIRTH_DATE, "1994-06-21");
-//Enter the payer's address here.
+// Enter the payer's address here.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "Cuernavaca");
@@ -670,7 +669,7 @@ parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, "MX");
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "000000");
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "7563126");
 
-//Enter the name of the cash payment here
+// Enter the name of the cash payment here
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "OXXO");
 
 // Enter the name of the country here.
@@ -718,7 +717,7 @@ $reference = "payment_test_00000001";
 $value = "1000";
 
 $parameters = array(
-	//Enter the account’s identifier here
+	// Enter the account’s identifier here
 	PayUParameters::ACCOUNT_ID => "512324",
 	// Enter the reference code here.
 	PayUParameters::REFERENCE_CODE => $reference,
@@ -732,17 +731,17 @@ $parameters = array(
 	PayUParameters::CURRENCY => "MXN",
 
 	// -- Buyer --
-	//Enter the buyer Id here.
+	// Enter the buyer Id here.
 	PayUParameters::BUYER_ID => "1",
-	//Enter the buyer's name here.
+	// Enter the buyer's name here.
 	PayUParameters::BUYER_NAME => "First name and second buyer name",
-	//Enter the buyer's e-mail here.
+	// Enter the buyer's e-mail here.
 	PayUParameters::BUYER_EMAIL => "buyer_test@test.com",
-	//Enter the buyer's contact phone here.
+	// Enter the buyer's contact phone here.
 	PayUParameters::BUYER_CONTACT_PHONE => "7563126",
-	//Enter the buyer's contact document here.
+	// Enter the buyer's contact document here.
 	PayUParameters::BUYER_DNI => "5415668464654",
-	//Enter the buyer's address here.
+	// Enter the buyer's address here.
 	PayUParameters::BUYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::BUYER_STREET_2 => "5555487",
 	PayUParameters::BUYER_CITY => "Cuernavaca",
@@ -753,19 +752,19 @@ $parameters = array(
 
 
 	// -- Payer --
-	//Enter the payer's ID here.
+	// Enter the payer's ID here.
 	PayUParameters::PARAMETERS.PAYER_ID => "1",
-        ///Enter the payer's name here
+        /// Enter the payer's name here
 	PayUParameters::PAYER_NAME => "First name and second payer name",
-	//Enter the payer's e-mail here
+	// Enter the payer's e-mail here
 	PayUParameters::PAYER_EMAIL => "payer_test@test.com",
-	//Enter the payer's contact phone here.
+	// Enter the payer's contact phone here.
 	PayUParameters::PAYER_CONTACT_PHONE => "7563126",
-	//Enter the payer's contact document here.
+	// Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "5415668464654",
 	// Enter the payer's birthday here
   PayUParameters::PAYER_BIRTH_DATE => "1994-06-21"),
-	//Enter the payer's address here.
+	// Enter the payer's address here.
 	PayUParameters::PAYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::PAYER_STREET_2 => "5555487",
 	PayUParameters::PAYER_CITY => "Cuernavaca",
@@ -774,7 +773,7 @@ $parameters = array(
 	PayUParameters::PAYER_POSTAL_CODE => "000000",
 	PayUParameters::PAYER_PHONE => "7563126",
 
-	//Enter the name of the cash payment here
+	// Enter the name of the cash payment here
 	PayUParameters::PAYMENT_METHOD => "OXXO",
 
 	// Enter the name of the country here.
@@ -826,7 +825,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 ### Considerations
 * The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
-* When the payer selects this payment method, PayU creates an order in _in progress_ state and a transaction in `PENDING`state.
+* When the payer selects this payment method, PayU creates an order in _in progress_ state and a transaction in `PENDING` state.
 * To perform the payment, the payer must log in the virtual branch of their bank (The bank must appear in the list of SPEI available banks). <br>First, the payer must register the PayU CLABE account in their bank branch. Once the PayU CLABE account is enable to perform transfers, the payer must provide the reference returned by PayU in the parameter `trazabilityCode` and the amount as returned by PayU in their virtual branch.
 * In the response body, you can find the needed variables to generate the payment receipt (voucher) and the URL of the receipt generated by PayU in HTML and PDF format. If you want to generate the voucher, use the following variables:
   - **trazabilityCode**: unique identifier of maximum 7 digits long; corresponds to the payment reference that the payer must provide in the virtual branch. It is mandatory to enter the same value in the reference field of the bank branch so the payment can be successful.
@@ -861,18 +860,18 @@ parameters.put(PayU.PARAMETERS.VALUE, ""+value);
 parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.MXN.name());
 
 // -- Buyer --
-//Enter the buyer Id here.
+// Enter the buyer Id here.
 parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
-//Enter the buyer's name here.
+// Enter the buyer's name here.
 parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer name");
-//Enter the buyer's e-mail here
+// Enter the buyer's e-mail here
 parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
-//Enter the buyer's contact phone here.
+// Enter the buyer's contact phone here.
 parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "7563126");
-//Enter the buyer's contact document here.
+// Enter the buyer's contact document here.
 parameters.put(PayU.PARAMETERS.BUYER_DNI, "123456789");
 
-//Enter the buyer's address here.
+// Enter the buyer's address here.
 parameters.put(PayU.PARAMETERS.BUYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.BUYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.BUYER_CITY, "Cuernavaca");
@@ -883,19 +882,19 @@ parameters.put(PayU.PARAMETERS.BUYER_PHONE, "7563126");
 
 
 // -- Payer --
-//Enter the payer's ID here.
+// Enter the payer's ID here.
 parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
-//Enter the payer's name here.
+// Enter the payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second payer name");
-//Enter the payer's e-mail here.
+// Enter the payer's e-mail here.
 parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "payer_test@test.com");
-//Enter the payer's contact phone here.
+// Enter the payer's contact phone here.
 parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "7563126");
-//Enter the payer's contact document here.
+// Enter the payer's contact document here.
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "5415668464654");
 // Enter the payer's birthday here
 parameters.put(PayU.PARAMETERS.PAYER_BIRTH_DATE, "1994-06-21");
-//Enter the payer's address here.
+// Enter the payer's address here.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "Cuernavaca");
@@ -904,7 +903,7 @@ parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, "MX");
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "000000");
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "7563126");
 
-//Enter the name of the cash payment here
+// Enter the name of the cash payment here
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "SPEI");
 
 // Enter the name of the country here.
@@ -958,7 +957,7 @@ $reference = "payment_test_00000001";
 $value = "1000";
 
 $parameters = array(
-	//Enter the account’s identifier here
+	// Enter the account’s identifier here
 	PayUParameters::ACCOUNT_ID => "512324",
 	// Enter the reference code here.
 	PayUParameters::REFERENCE_CODE => $reference,
@@ -972,17 +971,17 @@ $parameters = array(
 	PayUParameters::CURRENCY => "MXN",
 
 	// -- Buyer --
-	//Enter the buyer Id here.
+	// Enter the buyer Id here.
 	PayUParameters::BUYER_ID => "1",
-	//Enter the buyer's name here.
+	// Enter the buyer's name here.
 	PayUParameters::BUYER_NAME => "First name and second buyer name",
-	//Enter the buyer's e-mail here.
+	// Enter the buyer's e-mail here.
 	PayUParameters::BUYER_EMAIL => "buyer_test@test.com",
-	//Enter the buyer's contact phone here.
+	// Enter the buyer's contact phone here.
 	PayUParameters::BUYER_CONTACT_PHONE => "7563126",
-	//Enter the buyer's contact document here.
+	// Enter the buyer's contact document here.
 	PayUParameters::BUYER_DNI => "5415668464654",
-	//Enter the buyer's address here.
+	// Enter the buyer's address here.
 	PayUParameters::BUYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::BUYER_STREET_2 => "5555487",
 	PayUParameters::BUYER_CITY => "Cuernavaca",
@@ -993,19 +992,19 @@ $parameters = array(
 
 
 	// -- Payer --
-	//Enter the payer's ID here.
+	// Enter the payer's ID here.
 	PayUParameters::PARAMETERS.PAYER_ID => "1",
-        ///Enter the payer's name here
+        /// Enter the payer's name here
 	PayUParameters::PAYER_NAME => "First name and second payer name",
-	//Enter the payer's e-mail here
+	// Enter the payer's e-mail here
 	PayUParameters::PAYER_EMAIL => "payer_test@test.com",
-	//Enter the payer's contact phone here.
+	// Enter the payer's contact phone here.
 	PayUParameters::PAYER_CONTACT_PHONE => "7563126",
-	//Enter the payer's contact document here.
+	// Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "5415668464654",
 	// Enter the payer's birthday here
   PayUParameters::PAYER_BIRTH_DATE => "1994-06-21"),
-	//Enter the payer's address here.
+	// Enter the payer's address here.
 	PayUParameters::PAYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::PAYER_STREET_2 => "5555487",
 	PayUParameters::PAYER_CITY => "Cuernavaca",
@@ -1014,7 +1013,7 @@ $parameters = array(
 	PayUParameters::PAYER_POSTAL_CODE => "000000",
 	PayUParameters::PAYER_PHONE => "7563126",
 
-	//Enter the name of the cash payment here
+	// Enter the name of the cash payment here
 	PayUParameters::PAYMENT_METHOD => "SPEI",
 
 	// Enter the name of the country here.
@@ -1105,18 +1104,18 @@ parameters.put(PayU.PARAMETERS.VALUE, ""+value);
 parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.MXN.name());
 
 // -- Buyer --
-//Enter the buyer Id here.
+// Enter the buyer Id here.
 parameters.put(PayU.PARAMETERS.BUYER_ID, "1");
-//Enter the buyer's name here.
+// Enter the buyer's name here.
 parameters.put(PayU.PARAMETERS.BUYER_NAME, "First name and second buyer name");
-//Enter the buyer's e-mail here
+// Enter the buyer's e-mail here
 parameters.put(PayU.PARAMETERS.BUYER_EMAIL, "buyer_test@test.com");
-//Enter the buyer's contact phone here.
+// Enter the buyer's contact phone here.
 parameters.put(PayU.PARAMETERS.BUYER_CONTACT_PHONE, "7563126");
-//Enter the buyer's contact document here.
+// Enter the buyer's contact document here.
 parameters.put(PayU.PARAMETERS.BUYER_DNI, "123456789");
 
-//Enter the buyer's address here.
+// Enter the buyer's address here.
 parameters.put(PayU.PARAMETERS.BUYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.BUYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.BUYER_CITY, "Cuernavaca");
@@ -1127,19 +1126,19 @@ parameters.put(PayU.PARAMETERS.BUYER_PHONE, "7563126");
 
 
 // -- Payer --
-//Enter the payer's ID here.
+// Enter the payer's ID here.
 parameters.put(PayU.PARAMETERS.PAYER_ID, "1");
-//Enter the payer's name here.
+// Enter the payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "First name and second payer name");
-//Enter the payer's e-mail here.
+// Enter the payer's e-mail here.
 parameters.put(PayU.PARAMETERS.PAYER_EMAIL, "payer_test@test.com");
-//Enter the payer's contact phone here.
+// Enter the payer's contact phone here.
 parameters.put(PayU.PARAMETERS.PAYER_CONTACT_PHONE, "7563126");
-//Enter the payer's contact document here.
+// Enter the payer's contact document here.
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "5415668464654");
 // Enter the payer's birthday here
 parameters.put(PayU.PARAMETERS.PAYER_BIRTH_DATE, "1994-06-21");
-//Enter the payer's address here.
+// Enter the payer's address here.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Av. Domingo Diez 1589");
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "5555487");
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "Cuernavaca");
@@ -1148,7 +1147,7 @@ parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, "MX");
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "000000");
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "7563126");
 
-//Enter the name of the cash payment here
+// Enter the name of the cash payment here
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "BANK_REFERENCED");
 
 // Enter the name of the country here.
@@ -1194,7 +1193,7 @@ $reference = "payment_test_00000001";
 $value = "1000";
 
 $parameters = array(
-	//Enter the account’s identifier here
+	// Enter the account’s identifier here
 	PayUParameters::ACCOUNT_ID => "512324",
 	// Enter the reference code here.
 	PayUParameters::REFERENCE_CODE => $reference,
@@ -1208,17 +1207,17 @@ $parameters = array(
 	PayUParameters::CURRENCY => "MXN",
 
 	// -- Buyer --
-	//Enter the buyer Id here.
+	// Enter the buyer Id here.
 	PayUParameters::BUYER_ID => "1",
-	//Enter the buyer's name here.
+	// Enter the buyer's name here.
 	PayUParameters::BUYER_NAME => "First name and second buyer name",
-	//Enter the buyer's e-mail here.
+	// Enter the buyer's e-mail here.
 	PayUParameters::BUYER_EMAIL => "buyer_test@test.com",
-	//Enter the buyer's contact phone here.
+	// Enter the buyer's contact phone here.
 	PayUParameters::BUYER_CONTACT_PHONE => "7563126",
-	//Enter the buyer's contact document here.
+	// Enter the buyer's contact document here.
 	PayUParameters::BUYER_DNI => "5415668464654",
-	//Enter the buyer's address here.
+	// Enter the buyer's address here.
 	PayUParameters::BUYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::BUYER_STREET_2 => "5555487",
 	PayUParameters::BUYER_CITY => "Cuernavaca",
@@ -1229,19 +1228,19 @@ $parameters = array(
 
 
 	// -- Payer --
-	//Enter the payer's ID here.
+	// Enter the payer's ID here.
 	PayUParameters::PARAMETERS.PAYER_ID => "1",
-        ///Enter the payer's name here
+        /// Enter the payer's name here
 	PayUParameters::PAYER_NAME => "First name and second payer name",
-	//Enter the payer's e-mail here
+	// Enter the payer's e-mail here
 	PayUParameters::PAYER_EMAIL => "payer_test@test.com",
-	//Enter the payer's contact phone here.
+	// Enter the payer's contact phone here.
 	PayUParameters::PAYER_CONTACT_PHONE => "7563126",
-	//Enter the payer's contact document here.
+	// Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "5415668464654",
 	// Enter the payer's birthday here
   PayUParameters::PAYER_BIRTH_DATE => "1994-06-21"),
-	//Enter the payer's address here.
+	// Enter the payer's address here.
 	PayUParameters::PAYER_STREET => "Av. Domingo Diez 1589",
 	PayUParameters::PAYER_STREET_2 => "5555487",
 	PayUParameters::PAYER_CITY => "Cuernavaca",
@@ -1250,7 +1249,7 @@ $parameters = array(
 	PayUParameters::PAYER_POSTAL_CODE => "000000",
 	PayUParameters::PAYER_PHONE => "7563126",
 
-	//Enter the name of the cash payment here
+	// Enter the name of the cash payment here
 	PayUParameters::PAYMENT_METHOD => "BANK_REFERENCED",
 
 	// Enter the name of the country here.

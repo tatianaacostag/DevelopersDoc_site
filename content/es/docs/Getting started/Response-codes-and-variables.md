@@ -296,7 +296,7 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 | TI   | Tarjeta de Identidad.                                                               | Colombia               |
 
 ## Bancos para Payouts
-Envía el valor exacto mostrado en la columna `Código` en la variable `transfers[n].bankAccount.bankCode`. Consulta [Payouts]({{< ref "" >}}) para más información.
+Envía el valor exacto mostrado en la columna `Código` en la variable `transfers[n].bankAccount.bankCode`. Consulta [Payouts]({{< ref "Payouts-API.md" >}}) para más información.
 
 ### Colombia
 

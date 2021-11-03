@@ -121,7 +121,7 @@ Puedes configurar un WebHook por uno o varios de los siguientes eventos:
 * **Actualización de la transferencia**: envía una notificación cuando la validación de Sanction Screening rechaza al beneficiario.
 * **Resultado de la validación**: envía una notificación cuando el beneficiario ha aprobado la validación y cuando la transferencia ha sido rechazada por el banco.
 
-Consulta [este artículo]({{< ref "" >}}) para aprender a crear WebHooks. <!-- payouts-api.md#create-or-update-a-webhook -->
+Consulta [este artículo]({{< ref "payouts-api.md#create-or-update-a-webhook" >}}) para aprender a crear WebHooks.
 
 ### Variables en las notificaciones {#variables-in-the-notifications}
 Cuando ocurre un evento de los mencionados anterior mente, se envían al WebHook las siguientes variables.
@@ -144,4 +144,4 @@ Cuando ocurre un evento de los mencionados anterior mente, se envían al WebHook
 | `dateOfTheNextValidation` | Numérico     | Fecha en la que el beneficiario será validado por sanction screening.<br>Esta fecha está en milisegundos. |
 
 ## ¿Qué sigue? {#whats-next}
-La integración con esta funcionalidad se realiza utilizando el [API de integraciones]({{< ref "" >}}).
+La integración con esta funcionalidad se realiza utilizando el [API de integraciones]({{< ref "payouts-api.html" >}}).

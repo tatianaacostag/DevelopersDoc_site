@@ -34,7 +34,7 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Chile, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Nota" color="info"%}}
-Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está disponibles bajo demanda. Contacta a ti representante de ventas para más información.
+Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está disponibles bajo demanda. Contacta a tu representante de ventas para más información.
 {{% /alert %}}
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response}
@@ -795,7 +795,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 
 <img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o configuraciones relacionadas con MULTICAJA.
 {{% /alert %}}
 
@@ -906,7 +906,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 
 #### Consideraciones {#considerations-2}
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete días luego de la fecha actual a las 12:00 pm.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
-* Debes configurar una URL de respuesta en ell parámetro `NETWORK_CALLBACK_URL` dentro de `transaction.extraParameters`; esta URL regresa al usuario a tu página luego de completar el proceso de pago en línea.
+* Debes configurar una URL de respuesta en el parámetro `NETWORK_CALLBACK_URL` dentro de `transaction.extraParameters`; esta URL regresa al usuario a tu página luego de completar el proceso de pago en línea.
 * Debes redirigir al pagador a la página web de Klap webpage (antes Multicaja) para permitirle hacer el pago en efectivo. Esta URL se encuentra en el parámetro `BANK_URL` en la respuesta.
 
 ### Llamado del API {#api-call}

@@ -28,10 +28,10 @@ _**Garantía Antifraude**_ se aplica siguiente este flujo.
 
 3. Si aplica, PayU regresa los fundos a tu cuenta virtual a través de movimientos discrecionales.
 
-El resultado del proceso de _**Garantía Antifraude**_ puede ser consultado en el [Módulo de Disputas]({{< ref "" >}}).<!--ref "Disputes-MP.md"-->
+El resultado del proceso de _**Garantía Antifraude**_ puede ser consultado en el [Módulo de Disputas]({{< ref "Disputes-MP.md" >}}).
 
 ![PrintScreen](/assets/Disputes/Disputes_08_es.png)
 
-Además, puedes consultar los movimientos discrecionales en tu [Balance financiero]({{< ref "" >}}). <!-- ref "Financial-Statement.md" -->
+Además, puedes consultar los movimientos discrecionales en tu [Balance financiero]({{< ref "Financial-Statement.md" >}}).
 
 ![PrintScreen](/assets/Disputes/Disputes_09_es.png)

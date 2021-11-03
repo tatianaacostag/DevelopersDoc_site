@@ -899,7 +899,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
    - **REFERENCE**: referencia de pago interna generada por PayU.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando e pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
 ### Llamado del API {#api-call}

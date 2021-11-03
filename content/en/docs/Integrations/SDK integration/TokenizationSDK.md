@@ -36,7 +36,7 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 {{< /tabs >}}
 
 ## Available methods
-Tokenization API includes methods to register and remove tokens, and methods to query tokens.
+Tokenization SDK includes methods to register and remove tokens, and methods to query tokens.
 
 For registration a removal of tokens:
 * [Individual credit card registration]({{< ref "TokenizationSDK.md#individual-credit-card-registration" >}})
@@ -55,17 +55,17 @@ The following examples show how to call the method for this transaction type acc
 ```Java
 //-- “Create Token” operation--
 Map<String, String> parameters = new HashMap<String, String>();
-//Enter the payer's name here.
+// Enter the payer's name here.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "Mary Keller");
-//Enter the payer's ID here.
+// Enter the payer's ID here.
 parameters.put(PayU.PARAMETERS.PAYER_ID, "10");
-//Enter the payer's contact document here.
+// Enter the payer's contact document here.
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "32144457");
-//Enter the number of the credit card here
+// Enter the number of the credit card here
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_NUMBER, "4668063527597820");
-//Enter the expiration date of the credit card here
+// Enter the expiration date of the credit card here
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_EXPIRATION_DATE, "2024/06");
-//Enter the name of the credit card here
+// Enter the name of the credit card here
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "VISA");
 CreditCardToken response = PayUTokens.create(parameters);
 
@@ -82,17 +82,17 @@ if(response != null){
 {{< tab tabNum="2" >}}
 ```PHP
 $parameters = array(
-	//Enter the payer's name here.
+	// Enter the payer's name here.
 	PayUParameters::PAYER_NAME => "Mary Keller",
-	//Enter the payer's ID here.
+	// Enter the payer's ID here.
 	PayUParameters::PAYER_ID => "10",
-	//Enter the payer's contact document here.
+	// Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "32144457",
-	//Enter the number of the credit card here
+	// Enter the number of the credit card here
 	PayUParameters::CREDIT_CARD_NUMBER => "4668063527597820",
-	//Enter the expiration date of the credit card here
+	// Enter the expiration date of the credit card here
 	PayUParameters::CREDIT_CARD_EXPIRATION_DATE => "2024/10",
-	//Enter the name of the credit card here
+	// Enter the name of the credit card here
 	PayUParameters::PAYMENT_METHOD => "VISA"
 );
 	
@@ -227,20 +227,20 @@ parameters.put(PayU.PARAMETERS.VALUE, value);
 parameters.put(PayU.PARAMETERS.CURRENCY, currency);
 
 // -- Buyer --
-//Enter the buyer information here.
+// Enter the buyer information here.
 //parameters.put([...], [...]);
 
 
 // -- Payer --
-//Enter the payer information here.
+// Enter the payer information here.
 //parameters.put([...], [...]);
 
 // -- Credit card data --
 // Enter the credit card token here
 parameters.put(PayU.PARAMETERS.TOKEN_ID, "ab01ecd5-7d8f-4bee-91c1-4535d9ba282e");
-//Enter the security code of the credit card here
+// Enter the security code of the credit card here
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_SECURITY_CODE, "321");
-//Enter the name of the credit card here
+// Enter the name of the credit card here
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "VISA");
 
 // Enter the number of installments here.
@@ -266,7 +266,7 @@ TransactionResponse response = PayUPayments.doAuthorizationAndCapture(parameters
 {{< tab tabNum="2" >}}
 ```PHP
 $parameters = array(
-	//Enter the account’s identifier here
+	// Enter the account’s identifier here
 	PayUParameters::ACCOUNT_ID => $accountId,
 	// Enter the reference code here.
 	PayUParameters::REFERENCE_CODE => $reference,
@@ -280,21 +280,21 @@ $parameters = array(
 	PayUParameters::CURRENCY => $currency,
 
 	// -- Buyer --
-  //Enter the buyer information here.
+  // Enter the buyer information here.
   //PayUParameters::[...] => [...],
 
 
   // -- Payer --
-  //Enter the payer information here.
+  // Enter the payer information here.
   //PayUParameters::[...] => [...],
 
 	// -- Credit card data --
   // Enter the credit card token here
   PayUParameters::TOKEN_ID => "ab01ecd5-7d8f-4bee-91c1-4535d9ba282e",
 	PayUParameters::CREDIT_CARD_EXPIRATION_DATE => "2022/12",
-	//Enter the security code of the credit card here
+	// Enter the security code of the credit card here
 	PayUParameters::CREDIT_CARD_SECURITY_CODE=> "321",
-	//Enter the name of the credit card here
+	// Enter the name of the credit card here
 	PayUParameters::PAYMENT_METHOD => "VISA",
 
 	// Enter the number of installments here.

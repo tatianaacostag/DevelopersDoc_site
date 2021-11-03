@@ -35,7 +35,7 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Brasil, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 ### Agregar Facilitadores de pago {#adding-payment-facilitators}
-Los comercios pueden ser considerados como Procesadores de Pago por las franquicias y por el Banco Central. Un procesador de pagos es una entidad legal que tiene ell dinero de los subcomercios. En caso de quiebra mercantil y gestión fiscal, el Banco Central de Brasil quiere conocer al beneficiario del negocio.
+Los comercios pueden ser considerados como Procesadores de Pago por las franquicias y por el Banco Central. Un procesador de pagos es una entidad legal que tiene el dinero de los subcomercios. En caso de quiebra mercantil y gestión fiscal, el Banco Central de Brasil quiere conocer al beneficiario del negocio.
 
 Para incluir la información del subcomercio, necesitas agregar en la petición de los flujos de **Autorización** y de **Cobro** utilizando el objeto `submerchant`.
 
@@ -1517,7 +1517,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * El paso se ve reflejado al siguiente día hábil.
 * El parámetro `transactionResponse.extraParameters` Tiene los siguientes parámetros relacionados con la transacción:
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. TAquí es donde debe redirigir el pago cuando e pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. TAquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
    - **URL_BOLETO_BANCARIO**: recibo de pago en formato de impresión.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: Código de barras que le permite al pagador realizar el pago. 

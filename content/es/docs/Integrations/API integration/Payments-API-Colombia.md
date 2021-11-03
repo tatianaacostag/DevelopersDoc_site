@@ -32,7 +32,7 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 {{% /alert %}}
 
 ## Enviar transacciones con tarjeta de crédito {#submit-transaction-with-credit-cards}
-Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Brasil, puedes realizar los flujos de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
+Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Colombia, puedes realizar los flujos de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response}
 
@@ -576,8 +576,11 @@ Este método te permite procesar los pagos en efectivo o por referencia bancaria
 * El parámetro `transactionResponse.extraParameters` tiene los siguientes parámetros relacionados con la transacción:
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.   
    - **REFERENCE**: referencia de pago interna generada por PayU.
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando e pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
+   - **BANCO_BOGOTA_SERVICE_CODE**: código de pago para Banco de Bogotá. Disponible cuando utilices `BANK_REFERENCED`.
+   - **BANK_REFERENCED_NAME**: nombre de la referencia para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
+   - **BANCOLOMBIA_SERVICE_CODE**: código de pago para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
 
 ### Llamado del API {#api-call-1}
 Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.

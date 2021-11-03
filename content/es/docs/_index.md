@@ -23,7 +23,7 @@ Ideal para negocios y personas:
 Expande el alcance de tu negocio ofreciendo varios métodos de pago.
 
 * **Acepta pagos más rápido**</br>
-Mira un resumen de todas las transacciones en nuestro sistema. Consolida y monitorea tus ventas en el [Módulo PayU]().
+Mira un resumen de todas las transacciones en nuestro sistema. Consolida y monitorea tus ventas en el [Módulo PayU](payu-module-documentation.html).
 
 * **Multiadquirencia**</br>
 Estamos integrados con todas las redes procesadoras, lo cual puede aumentar hasta 5% tu tasa de aprobación.

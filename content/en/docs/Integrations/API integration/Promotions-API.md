@@ -8,12 +8,12 @@ weight: 50
 tags: ["subtopic"]
 ---
 
-This sections explains how to integrate using [Promotions]({{< ref"Promotions-API#promotions" >}}) or using [MSI]({{< ref "Promotions-API#msi" >}}) (Only Available for Mexico).
+These sections explains how to integrate using [Promotions]({{< ref"Promotions-API#promotions" >}}) or using [MSI]({{< ref "Promotions-API#msi" >}}) (Only Available for Mexico).
 
 ## Promotions
 This feature lets you consult via API, the promotions in force, their characteristics and further information you want to present to the customers.
 
-A Promotion has the payment method, the payment method, the days of the week when it applies, the list of banks, and the start and end date when the promotion applies.
+A Promotion has the payment method, the days of the week when it applies, the list of banks, and the start and end date when the promotion applies.
 
 ### Authentication for Promotions
 For Promotions, you need to authenticate and authorize the petitions received by your server using a HMAC based mechanism. To authenticate, you need to know your ```MerchantPublicKey```, you can get this information in your PayU Module (**_Settings_** > **_Technical configuration_** > **_Public Key_**).
@@ -89,7 +89,7 @@ Mon, 11 May 2015 21:14:41 GMT
 ```
 <br>
 
-Due to some restrictions in REST clients, you can also send the the ```x-hmac-date``` header to meet security requirements, this header follows the same format used in ```Date```:
+Due to some restrictions in REST clients, you can also send the ```x-hmac-date``` header to meet security requirements, this header follows the same format used in ```Date```:
 
 **x-hmac-date**
 ```java
@@ -143,7 +143,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 | paymentMethodFee | List |  | Description of the cost assumed by the merchant according to a payment method. |
 | paymentMethodFee > paymentMethodFeeDetail.paymentMethod | String |  | Name of the payment method. |
 | paymentMethodFeeDetail > pricingFees |  |  | Object that has all the pricing for a payment method and installment, or all the installment (for countries that have a installment-based system). |
-| paymentMethodFeeDetail > pricingFees > fee.installments | String |  | Installment (1) or set of installments (1-36 for countries with installment-based ranges). |
+| paymentMethodFeeDetail > pricingFees > fee > installments | String |  | Installment (1) or set of installments (1-36 for countries with installment-based ranges). |
 | paymentMethodFeeDetail > pricingFees > fee > pricing |  |  | It has the Pricing values by default for the transaction. |
  | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail |  |  | It has the values of interests and fees that will be applied to the payer. |
  | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail > commission | Decimal |  | Total fees to be applied to the payer, includes fees and taxes, if applicable. |
@@ -1032,7 +1032,7 @@ Response example:
 {{< /tabs >}}
 
 ### Execute a transaction with Promotions
-Once you have selected the transaction, you need to include the promotion ID an the number of installments as an extra parameter:
+Once you have selected the promotion, you need to include the promotion ID an the number of installments as an extra parameter:
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

@@ -23,7 +23,7 @@ El API de pagos incluye los siguiente métodos:
 * [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Para confirmar el estado de una transacción, puedes utilizar una de las siguientes opciones:
 * Navega a la URL configurada en la variable `transaction.notifyUrl` o la opción _**URL de confirmación**_ ubicada en el Módulo PayU en _**Configuración**_ > _**Configuración técnica**_.
 * Utiliza el [API o SDK de consultas]({{< ref "Queries.md" >}}).
@@ -884,7 +884,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
    - **REFERENCE**: referencia de pago interna generada por PayU.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando e pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
 ### Llamado del API {#api-call}
@@ -1159,7 +1159,7 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| paymentMethods |  |  | List of the payment methods. |
+| paymentMethods |  |  | Lista de los medios de pago. |
 | paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. |
 | paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. |
 | paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. |

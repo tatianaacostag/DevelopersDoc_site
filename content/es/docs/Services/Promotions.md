@@ -38,5 +38,5 @@ Los valores mínimos para MSI dependen del número de cuotas seleccionado:
 {{% /alert %}}
 
 ## ¿Qué sigue? {#whats-next}
-La integración con esta funcionalidad puede realizarse utilizando el [API de Promociones]({{< ref "" >}}). Para saber cómo integrarse con MSI, consulta esta [sección]({{< ref "" >}}).
+La integración con esta funcionalidad puede realizarse utilizando el [API de Promociones]({{< ref "Promotions-API" >}}). Para saber cómo integrarse con MSI, consulta esta [sección]({{< ref "Promotions-API#msi" >}}).
 
