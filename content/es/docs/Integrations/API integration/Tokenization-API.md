@@ -26,12 +26,6 @@ El API de Tokenización incluye métodos para registrar, eliminar y consultar to
 * [Eliminación masiva de tarjetas de crédito]({{< ref "#massive-token-removal" >}})
 * [Consulta de tókenes]({{< ref "#query-tokens" >}})
 
-{{% alert title="Nota" color="info"%}}
-Para consultar tokens, necesitas apuntar tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
-* Pruebas: ```https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi```
-* Producción: ```https://api.payulatam.com/reports-api/4.0/service.cgi```
-{{% /alert %}}
-
 ## Registro individual de tarjeta de crédito {#individual-credit-card-registration}
 Utilizando esta funcionalidad, puedes registrar la información de la tarjeta de crédito de un cliente y obtener un token. 
 
