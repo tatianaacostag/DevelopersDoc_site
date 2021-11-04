@@ -66,7 +66,7 @@ Esta opción te permite administrar usuarios, permisos, perfiles y la configurac
 
 | Opción | Disponible en | Descripción |
 |---|:---:|---|
-| Gestión de usuarios | <img src="/assets/World.png" width="20px"/> | Te permite grant access to your team members so they can collect payments online or check information about your payments. Para más información, consulta [Gestión de usuarios]({{< ref"User-management.md" >}}). |
+| Gestión de usuarios | <img src="/assets/World.png" width="20px"/> | Te permite otorgar acceso a los miembros de tu equipo para que puedan solicitar pagos en línea o validar información de los pagos. Para más información, consulta [Gestión de usuarios]({{< ref"User-management.md" >}}). |
 | Perfiles y permisos | <img src="/assets/World.png" width="20px"/> | Te permite create custom profiles with specific permissions.<br>In this section, you can also query the default permission included in the PayU Module. Para más información, consulta [Profile y permission management]({{< ref"Profile-and-permissions-management.md" >}}). |
 | Configuración técnica | <img src="/assets/World.png" width="20px"/> | In this option, you can find the variables required to integrate PayU with your Web page. Furthermore, you can configure the notifications of processed payments y Disputas. Para más información, consulta [Configuración técnica]({{< ref"Technical-configuration.md" >}}). |
 
