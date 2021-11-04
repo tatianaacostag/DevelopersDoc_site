@@ -26,12 +26,6 @@ Tokenization API includes methods to register and remove tokens, and methods to 
 * [Massive token removal]({{< ref "Tokenization-API.md#massive-token-removal" >}})
 * [Query tokens]({{< ref "Tokenization-API.md#query-tokens" >}})
 
-{{% alert title="Note" color="info"%}}
-To query tokens, you need to target your request to the following URLs according to your environment.
-* Test: ```https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi```
-* Production: ```https://api.payulatam.com/reports-api/4.0/service.cgi```
-{{% /alert %}}
-
 ## Individual credit card registration
 Using this feature, you can register the information of a customer's credit card and get a token. 
 
