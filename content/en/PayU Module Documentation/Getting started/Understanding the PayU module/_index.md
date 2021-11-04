@@ -12,7 +12,7 @@ tags: ["parenttopic"]
 ## Prerequisites
 Before moving on with the explanation of how the PayU module is organized, you need the following:
 * Have a user in PayU module. Learn how to create one [here]({{< ref "create-an-account.md" >}}).
-* Have read and understand the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
+* Have read and understand the [concepts behind the PayU Module](/en/payu-module-documentation.html#payu-module-concepts).
 
 ## PayU Module web application
 PayU module is divided in four main groups:
@@ -35,7 +35,7 @@ This panel has the options required to manage the accounts associated to the cur
 
 | Option | Sub option | Available in | Description |
 |---|---|:---:|---|
-| Merchant ID |  | <img src="/assets/World.png" width="20px"/> | ID number of your shop in PayU’s system. This ID is required when you want to use [Integrations](/docs/integrations.html).  |
+| Merchant ID |  | <img src="/assets/World.png" width="20px"/> | ID number of your merchant in PayU’s system. This ID is required when you want to use [Integrations](/en/docs/integrations.html).  |
 | Account | Account information | <img src="/assets/World.png" width="20px"/> | Displays the name and ID of the selected account.<br>This option also lets you to change the account and perform operations related to it. Click the **▾** symbol to find these options or switch the account.<br><br><img src="/assets/MerchantPanel/MerchantPanel_02.png" alt="PrintScreen" width="40%"/> |
 |  | My business information | <img src="/assets/World.png" width="20px"/> | Shows the location, main contact information of your business. Also, this option shows the people associated with your business. |
 |  | Your sales information | <img src="/assets/World.png" width="20px"/> | Shows the information of how you make your sales, what you sell, the logo of your shop, delivery information, how you offer your products or services and how your clients can contact you. |

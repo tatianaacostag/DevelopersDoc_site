@@ -4,7 +4,7 @@ linkTitle: "User Management"
 date: 2021-08-27T08:43:01-05:00
 type: docs
 Description: > 
-   Learn how to create, search, update, and disable the users who can access your PayU module according to their profile.
+   Learn how to create, search, update, y disable the users who can access your PayU module according to their profile.
 weight: 10
 ---
 
@@ -12,7 +12,7 @@ Before moving on, let's recap some key terms:
 
 * A _**user**_ is a person who has a profile to manage or consult the information of an account. 
 * A _**profile**_ is a set of permissions to access an account. 
-* A user can have one or multiple profiles, this means that a user can access multiple _**accounts**_ and multiple _**merchants**_.
+* A user can have one or multiple profiles, this means that a user can access multiple _**accounts**_ y multiple _**merchants**_.
 
 For further information, read the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
 
@@ -20,37 +20,37 @@ For further information, read the [concepts behind the PayU Module](/payu-module
 To have access to this module, you need to have a profile with the following permission enabled:
 
 * _Review Users_<br>This permission allows you to search a specified user.	
-* _Create, edit and delete users_
+* _Create, edit y delete users_
 
-Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
+Refer to [Profiles y Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
 
-## User management
-To manage users, open you PayU account and click _**Settings**_ menu at the top the screen and then, select _**User management**_.
+## Gestión de usuarios
+To manage users, open you PayU account y click _**Configuración**_ menu at the top the screen y then, select _**Gestión de usuarios**_.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_01.png)
 
-The _**User management**_ module opens, here, you can find a list of the available users along with their status, the accounts they can access, and their profile.
+The _**Gestión de usuarios**_ module opens, here, you can find a list of the available users along with their status, the accounts they can access, y their profile.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_02.png)
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 The users marked with a green star (<img src="/assets/UserManagement/UserManagement_03.png" width="2%"/>) are default users which cannot be deleted (deactivated).
 {{% /alert %}}
 
 ### Add users
 You can create a user using their e-mail address or providing a username. Follow the steps below to create a new user.
 
-1. In the _**User management**_ module, click _**Add user**_.
+1. In the _**Gestión de usuarios**_ module, click _**Add user**_.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_04.png)
 
-2. The _**Add user**_ window appears. Here, you can provide the information of the person who will be allowed to collect payments over the internet and check information about your payments, according to the permission you provide.
+2. The _**Add user**_ window appears. Here, you can provide the information of the person who will be allowed to collect payments over the internet y check information about your payments, according to the permission you provide.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_05.png)
 
 3. Provide the following user information:
 
-* **E-mail**: E-mail address of the new user. PayU sends the login information to this e-mail address, make sure it is valid and the user has access to it.<br>Alternatively, you can create a user without using an e-mail address. This is useful specially when the user you want to create is attached to a role and not to a specific person. To do this, click _**Don't have an e-mail?**_ and provide the following information:
+* **E-mail**: E-mail address of the new user. PayU sends the login information to this e-mail address, make sure it is valid y the user has access to it.<br>Alternatively, you can create a user without using an e-mail address. This is useful specially when the user you want to create is attached to a role y not to a specific person. To do this, click _**Don't have an e-mail?**_ y provide the following information:
    - _User_: username used to log in. This user name cannot have numbers nor special characters.
    - _E-mail (Admin)_: provide the e-mail of the admin user to which, PayU send the options to generate or recover the password for this user.
 * **Full name**: name of the user you want to create.
@@ -87,11 +87,11 @@ You can use any of the following formats:
 
 <img src="/assets/UserPreferences/UserPreferences_08.png" alt="PrintScreen" width="40%"/><br>
 
-5. At the bottom of the screen, all the profiles created (both default and custom) loads along with the accounts of the current merchant. Configure the access for each account setting a profile, if you don't want to enable access to an account, don't select a profile.
+5. At the bottom of the screen, all the profiles created (both default y custom) loads along with the accounts of the current merchant. Configure the access for each account setting a profile, if you don't want to enable access to an account, don't select a profile.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_07.png)
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 If you want to assign a custom profile, you must create it first.
 {{% /alert %}}
 
@@ -103,7 +103,7 @@ If you want to assign a custom profile, you must create it first.
 
 <img src="/assets/UserManagement/UserManagement_09.png" alt="PrintScreen" width="40%"/>
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 If the user was created without using e-mail, the instructions to activate the account are sent to the Admin e-mail you defined.
 {{% /alert %}}
 
@@ -116,7 +116,7 @@ If the user was created without using e-mail, the instructions to activate the a
 ### Search users
 When you need to find a specific user, you can use the filter options to find one or more users that meet given conditions.
 
-In the _**User management**_ module, click the _**Search users**_ field to see the available filters.
+In the _**Gestión de usuarios**_ module, click the _**Search users**_ field to see the available filters.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_11.png) 
 
@@ -127,7 +127,7 @@ Once you have selected the filters, click _**Search**_. All the users that meets
 If you want to remove a filter, click the **x** icon next to it.
 
 ### Edit users
-Through the _**User management**_ module, you can update some information of a user. To update a user, search and click it in the _**User management**_ module.
+Through the _**Gestión de usuarios**_ module, you can update some information of a user. To update a user, search y click it in the _**Gestión de usuarios**_ module.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_13.png) 
 
@@ -138,14 +138,14 @@ You can update the following information:
 * Update the user status (Active or Inactive)
 * Change or remove the profile assigned to a given account.
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 The information of the user preferences cannot be updated using this option, this information is updated by each user by their own.
 {{% /alert %}}
 
 Once finish, click _**Save setting**_ to apply the changes.
 
 #### Edit multiple users
-To edit multiple users, search them and use the checkbox at the left. Then, click _**Edit users (n)**_.
+To edit multiple users, search them y use the checkbox at the left. Then, click _**Edit users (n)**_.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_14.png) 
 

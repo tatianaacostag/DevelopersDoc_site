@@ -36,13 +36,18 @@ PayU module allows you to perform the following operations:
 * View the status of your sales
 * Find the authentication credentials to integrate with your sales platform: API Key, API Login, and merchant ID.
 * Update your bank details.
-* Configure your company’s logo to appear on the web checkout (payment gateway).
-* Set the URLs of your confirmation page and answer page (if you have an API integration or web checkout).
+* Configure your company’s logo to appear on the Web Checkout (payment gateway).
+* Set the URLs of your confirmation page and answer page (if you have an API integration or Web checkout).
 
 ## PayU module concepts
 The PayU Module allows a user to manage the merchant and its related accounts.  The complexity of your PayU module depends on your size. Let's explain this using the following concepts.
 
 * **Merchant**: the merchant is the store that offers products or services. PayU defines the merchant as the legal person who hires the PayU service. If your store is legally constituted in two countries (two legal entities), each legal entity must be created as a merchant.<br>For example, _Shop ABC_ has branches in Mexico and Colombia, but the shop has constituted one company in each country, when _Shop ABC_ hires the PayU services, PayU creates two different merchants.
+
+{{% alert title="Note" color="info"%}}
+Each merchant in PayU has a unique `Merchant ID`.
+{{% /alert %}}
+
 * **Account**: an account in PayU represents a processing country, a business line, or a hired PayU feature of a given merchant. If your shop is legally constituted in a country and sells products in many countries, you have a single merchant (your shop) in which you find an account per each country.<br>For example, _XYZ systems_ is a company legally constituted in the United States who offers the services of web hosting in Colombia, Mexico, and Peru. When _XYZ systems_ hires the PayU services, PayU creates a merchant with three accounts.<br>Moreover, an account is also one of the following:
   - A business line: when a merchant has many different business lines in a given country. For example, a software company can offer their product as one business line and the training as another. In this case, this commerce has two accounts.
   - A feature: if you hire two PayU features with a different pricing schema, each feature is represented in your PayU module as an account. For example, a shop has one price to process with credit cards and one different when they process with cash payments.

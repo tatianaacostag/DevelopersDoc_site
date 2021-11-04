@@ -1,6 +1,6 @@
 ---
-title: "Transfers"
-linkTitle: "Transfers"
+title: "Transferencias"
+linkTitle: "Transferencias"
 date: 2021-09-03T16:42:07-05:00
 type: docs
 Description: >
@@ -10,10 +10,10 @@ weight: 20
 
 In the _Transfers_ module, you can fin the options to transfer the funds collected in your virtual PayU account to your main bank account registered.
 
-## Considerations
+## Consideraciones {#considerations}
 Keep in mind the following considerations before transferring funds to your bank account.
 
-* You must have your bank information updated and validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.S
+* You must have your bank information updated y validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.S
 * The first three local transfers performed during the first month are free. Since the 4th transfer request, PayU charges the following values:
   - Colombia: 6.500,00 COP + VAT (Colombia)
   - Peru: 10,00 PEN + IGV (Peru),
@@ -21,11 +21,11 @@ Keep in mind the following considerations before transferring funds to your bank
   - Chile: 0,00 CLP
   - Mexico: 0,00 MXN
 * The first transfer takes five (5) days to deposit in the bank account. The Risk area of PayU requests a livelihood of sales in the first transfer as an administrative process.
-* The second, and the following transfers take maximum three (3) business days.
-* The transfers can be programed by Amount and by Date
+* The second, y the following transfers take maximum three (3) business days.
+* The transfers can be programed by Amount y by Date
 
-{{% alert title="Note" color="warning"%}}
-The times and amounts explained here apply only for local transfer (into the same operation country) for international transfers, contact your sales representative.
+{{% alert title="Nota" color="warning"%}}
+The times y amounts explained here apply only for local transfer (into the same operation country) for international transfers, contact your sales representative.
 {{% /alert %}}
 
 ## Permission required
@@ -34,12 +34,12 @@ To have access to this module, you need to have a profile with the following per
 * _Transfers_ > _Review_
 * _Transfers_ > _Manage_<br>This permission allows you to perform transfers.	
 
-Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
+Refer to [Profiles y Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
 
 ## Transfer funds
 You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.
 
-1. Log into your PayU account. In the left menu, expand the _**Transfers**_ menu and select _**Transfers**_.
+1. Log into your PayU account. In the left menu, expand the _**Transferencias**_ menu y select _**Transferencias**_.
 
 ![PrintScreen](/assets/Transfers/Transfers_01.png)
 
@@ -47,7 +47,7 @@ You can transfer up to the total amount in your PayU account to the registered b
 
 ![PrintScreen](/assets/Transfers/Transfers_02.png)
 
-3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account, and the target account.<br>Click _**OK**_ to confirm it or _**Reject**_ to discard it.
+3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account, y the target account.<br>Click _**OK**_ to confirm it or _**Reject**_ to discard it.
 
 <img src="/assets/Transfers/Transfers_03.png" alt="PrintScreen" width="50%"/><br>
 
@@ -55,22 +55,22 @@ You can transfer up to the total amount in your PayU account to the registered b
 
 <img src="/assets/Transfers/Transfers_04.png" alt="PrintScreen" width="50%"/><br>
 
-As soon as the request has been successfully sent the transfer is in _In progess_ status and you can see it in the _**Created transfers report**_ section at the end of the module; also, the amount requested is debited from your balance.<br>If the transfers could not be processed, this amount backs to your account and no fee is charged for this operation.
+As soon as the request has been successfully sent the transfer is in _In progess_ status y you can see it in the _**Created transfers report**_ section at the end of the module; also, the amount requested is debited from your balance.<br>If the transfers could not be processed, this amount backs to your account y no fee is charged for this operation.
 
-## Schedule transfers
-You can automate the transfers and request the a withdrawal given a fixed amount or each certain time.
+## Programar transferencias
+You can automate the transfers y request the a withdrawal given a fixed amount or each certain time.
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 When scheduling transfers, you must have the enough funds by the time when the transfer is executed.
 {{% /alert %}}
 
 To schedule a transfer, follow these steps.
 
-1. Log into your PayU account. In the left menu, expand the _**Transfers**_ menu and select _**Schedule transfer**_.
+1. Log into your PayU account. In the left menu, expand the _**Transferencias**_ menu y select _**Schedule transfer**_.
 
 ![PrintScreen](/assets/Transfers/Transfers_05.png)
 
-2. The _**Schedule Transfers**_ module opens, here you can see all the scheduled transfers you have configured. Click _**Schedule Transfer**_ to set up a new schedule.
+2. The _**Programar transferencia**_ module opens, here you can see all the scheduled transfers you have configured. Click _**Schedule Transfer**_ to set up a new schedule.
 
 ![PrintScreen](/assets/Transfers/Transfers_06.png)
 
@@ -82,20 +82,20 @@ The _options_ column provides the following actions:
 
 3. Select how you want to schedule the transfer.
 
-* **Schedule transfers by periodicity**<br>
+* **Programar transferencias by periodicity**<br>
 This option lets you transfer a given amount every certain time (days, weeks, or months). To schedule this type of transfers, select the option _Periodicity_.
 
-* **Schedule transfers by balance available**<br>
+* **Programar transferencias by balance available**<br>
 This option lets you transfer a given amount every time the balance reaches a specific value. To schedule this type of transfers, select the option _Balance available_.
 
 Provide the following options.
 
-| Option                        | Description                                                                       |
+| Opción                        | Descripción                                                                       |
 |-------------------------------|-----------------------------------------------------------------------------------|
 | Make a withdrawal each        | Select the periodicity of the transfers you want to schedule. This option is available for transfers scheduled by periodicity.<br><br>![PrintScreen](/assets/Transfers/Transfers_07.png) |
 | Select the amount to withdraw | Select the amount you want to transfer, you can select the total available balance or a fixed value.<br><br>![PrintScreen](/assets/Transfers/Transfers_08.png) |
 | Amount to withdraw            | Select the amount you want to transfer. This field appears when you select the option _Configure value_. |
 | Start my transfers on         | Select the starting date for the schedule. In this date, the first transfer is scheduled.<br><br>![PrintScreen](/assets/Transfers/Transfers_09.png) |
-| Description                   | Provide a meaningful description for your transfer. |
+| Descripción                   | Provide a meaningful description for your transfer. |
 
 4. When finish, click _**Schedule Transfer**_.

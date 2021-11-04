@@ -1,10 +1,10 @@
 ---
-title: "Getting Started"
-linkTitle: "Getting Started"
+title: "Empezando..."
+linkTitle: "Empezando..."
 date: 2021-03-31T08:28:16-05:00
 type: docs
 Description: >
-  Learn how to log in your account, recover your password and update your user data.
+  Aprende cómo iniciar sesión en tu cuenta, recuperar tu contraseña y actualizar tus datos de usuario.
 weight: 10
 nosidetoc: true
 ---
