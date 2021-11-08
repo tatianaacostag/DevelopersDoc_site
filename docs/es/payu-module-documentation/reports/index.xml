@@ -310,7 +310,7 @@ Los reportes en el Módulo PayU están limitados a &lt;strong&gt;20 mil&lt;/stro
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_19_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;La sección de &lt;strong&gt;&lt;em&gt;Balance financiero&lt;/em&gt;&lt;/strong&gt; está divida en tres partes:&lt;/p&gt;
 &lt;h3 id=&#34;general-balance&#34;&gt;Saldo General&lt;/h3&gt;
-&lt;p&gt;La primera parte es el saldo general donde puedes ver los fondos en tu cuenta PayU y un botón que te permite solicitar una [transferencia] (/es/payu-module-documentation/payu-operations/transfers.html) a tu cuenta bancaria.&lt;br&gt;El Saldo general se compone de:&lt;/p&gt;
+&lt;p&gt;La primera parte es el saldo general donde puedes ver los fondos en tu cuenta PayU y un botón que te permite solicitar una &lt;a href=&#34;../../../es/payu-module-documentation/payu-operations/transfers.html&#34;&gt;transferencia&lt;/a&gt; a tu cuenta bancaria.&lt;br&gt;El Saldo general se compone de:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Saldo disponible&lt;/strong&gt;: los fondos totales recibidos de tus ventas, luego de descontar la comisión de PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Saldo congelado&lt;/strong&gt;: los fondos que hacen parte de una &lt;a href=&#34;../../../es/docs/tools/disputes.html&#34;&gt;disputa&lt;/a&gt; en proceso o un &lt;a href=&#34;../../../es/docs/services/refunds.html&#34;&gt;reembolso&lt;/a&gt; no aprobado solicitado por tu cliente.&lt;/li&gt;
