@@ -40,7 +40,7 @@ Para más información sobre transacciones autorizadas y capturadas, consulta [P
 ## Consideraciones {#considerations}
 Antes de utilizar las funcionalidades de _ANULACIÓN_ o _REEMBOLSO_, ten en cuenta las siguientes consideraciones:
 
-* Los métodos de _ANULACIÓN_ or _REEMBOLSO_ solo están disponibles para transacciones realizadas con tarjeta de crédito. Si la solicitud se realiza sobre una compra con un medio de pago diferente como pago en efectivo, transferencia bancaria, etc; la solicitud es rechazada por PayU.
+* Los métodos de _ANULACIÓN_ or _REEMBOLSO_ solo están disponibles para transacciones realizadas con tarjeta de crédito. Si la solicitud se realiza sobre una compra con un método de pago diferente como pago en efectivo, transferencia bancaria, etc; la solicitud es rechazada por PayU.
 * PayU solo crea una aplicación por cada solicitud de reembolso, si una solicitud se repite para la misma transacción, PayU indica que ya se registró la solicitud.
 * PayU solo acepta solicitudes de reembolso de transacciones capturadas.
 * Puedes reintentar la solicitud de reembolso si fue rechazada previamente.

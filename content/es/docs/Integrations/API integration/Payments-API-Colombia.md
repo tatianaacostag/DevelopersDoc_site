@@ -3,7 +3,7 @@ title: "API de Pagos - Colombia"
 linkTitle: "API de Pagos - Colombia"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El API de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El API de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -22,7 +22,7 @@ El API de pagos incluye los siguiente métodos:
 * [Enviar transacciones en efectivo o referencia bancaria]({{< ref "#submit-transaction-with-cash-or-bank-reference" >}})
 * [Enviar transacciones con transferencia bancaria (PSE)]({{< ref "#submit-transaction-with-bank-transfer-pse" >}})
 * [Lista de Bancos - PSE]({{< ref "#bank-list---pse" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -113,7 +113,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción. Para Colombia, asigna `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito valido. [Ver los medios de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago de Tarjeta de crédito valido. [Ver los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -175,7 +175,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 |  DE | Documento de identificación extranjero.                                                                 |
 
 ### Llamado del API {#api-call}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -533,7 +533,7 @@ Este método te permite procesar los pagos en efectivo o por referencia bancaria
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un medio de pago en efectivo o de referencia bancaria válido. [Ver los medios de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un método de pago en efectivo o de referencia bancaria válido. [Ver los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí |
 | transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -576,14 +576,14 @@ Este método te permite procesar los pagos en efectivo o por referencia bancaria
 * El parámetro `transactionResponse.extraParameters` tiene los siguientes parámetros relacionados con la transacción:
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.   
    - **REFERENCE**: referencia de pago interna generada por PayU.
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
    - **BANCO_BOGOTA_SERVICE_CODE**: código de pago para Banco de Bogotá. Disponible cuando utilices `BANK_REFERENCED`.
    - **BANK_REFERENCED_NAME**: nombre de la referencia para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
    - **BANCOLOMBIA_SERVICE_CODE**: código de pago para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
 
 ### Llamado del API {#api-call-1}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -848,7 +848,7 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ## Enviar transacciones con transferencia bancaria (PSE) {#submit-transaction-with-bank-transfer-pse}
-Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este medio de pago, necesitas crear un formulario de pago siguiendo estos pasos:
+Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este método de pago, necesitas crear un formulario de pago siguiendo estos pasos:
 
 1. Incluye un botón PSE button haciendo evidente que tu cliente va a utilizar _Proveedor de Servicios Electrónicos PSE_.
 * Puedes utilizar los siguientes nombres:
@@ -958,7 +958,7 @@ La lista de documentos disponibles es:
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como estos pagos se realizan en la página web de PSE, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago por transferencia bancaria válido. [Ver los medios de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago por transferencia bancaria válido. [Ver los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí |
  | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1011,7 +1011,7 @@ La lista de documentos disponibles es:
 | 12 o 14             | 9994 o 25       | Transacción pendiente, por favor revisar si el débito fue realizado en el banco. |
 
 ## Llamado del API {#api-call-2}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1982,8 +1982,8 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response-4}
 
@@ -2012,16 +2012,16 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| paymentMethods |  |  | Lista de medios de pago. | Sí |
-| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del medio de pago. | Sí |
+| paymentMethods |  |  | Lista de métodos de pago. | Sí |
+| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del método de pago. | Sí |
 
 </details>
 
 ### Llamado del API {#api-call-4}
-Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago. 
+Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

@@ -13,7 +13,7 @@ Estas secciones explican cómo integrarte utilizando [Promociones]({{< ref"#prom
 ## Promociones {#promotions}
 Esta funcionalidad te permite consultar vía API, las promociones vigentes, sus características e información adicional que quieres presentarle a tus clientes.
 
-Una Promoción tiene el medio de pago, los días de la semana en los que aplica, la lista de bancos y la fecha de inicio y final en la que aplica la promoción.
+Una Promoción tiene el método de pago, los días de la semana en los que aplica, la lista de bancos y la fecha de inicio y final en la que aplica la promoción.
 
 ### Autenticación para Promociones {#authentication-for-promotions}
 Para promociones, necesitar autenticar y autorizar las peticiones recibidas por tu servidor, utilizando un mecanismo basado en HMAC. Para autenticarte, necesitas saber tu `MerchantPublicKey`, puedes obtener esta información en el Módulo PayU (**_Configuración_** > **_Configuración técnica_** > **_Llave pública_**).
@@ -133,16 +133,16 @@ Si no validas el esquema, la integración so se verá afectada y solo necesitar�
 | promotion > id | Entero |  | Identificador de la promoción en la plataforma de PayU. |
 | promotion > title | String | 50 | Título de la promoción. |
 | promotion > termsAndConditions | String | 250 | Términos y condiciones que aplican a la promoción. |
-| promotion > paymentMethod | String |  | Nombre del medio de pago disponible para la promoción. |
-| promotion > subFranchise | String |  | Nombre de la submarca/subfranquicia de un medio de pago dado. |
+| promotion > paymentMethod | String |  | Nombre del método de pago disponible para la promoción. |
+| promotion > subFranchise | String |  | Nombre de la submarca/subfranquicia de un método de pago dado. |
 | promotion > banks | Lista |  | Lista de los bancos donde aplica la promoción. |
 | promotion > iins | Lista |  | Lista de los IIN/BINES de los bancos donde aplica la promoción. |
 | promotion > days | Lista |  | Lista de los días donde aplica la promoción. |
 | promotion > startDate | Fecha y hora |  | Fecha en la que empieza la promoción. |
 | promotion > endDate | Fecha y hora |  | Fecha en la que finaliza la promoción. |
-| paymentMethodFee | Lista |  | Descripción del costo asumido por el comercio de acuerdo con el medio de pago. |
-| paymentMethodFee > paymentMethodFeeDetail.paymentMethod | String |  | Nombre del medio de pago. |
-| paymentMethodFeeDetail > pricingFees |  |  | Objeto que contiene todos los Pricing para un medio de pago y cuota o un conjunto de cuotas (para el caso de países que tienen rango de cuotas). |
+| paymentMethodFee | Lista |  | Descripción del costo asumido por el comercio de acuerdo con el método de pago. |
+| paymentMethodFee > paymentMethodFeeDetail.paymentMethod | String |  | Nombre del método de pago. |
+| paymentMethodFeeDetail > pricingFees |  |  | Objeto que contiene todos los Pricing para un método de pago y cuota o un conjunto de cuotas (para el caso de países que tienen rango de cuotas). |
 | paymentMethodFeeDetail > pricingFees > fee > installments | String |  | Cuota(1) o un conjunto de cuotas (1 - 36, para el caso de países que tienen rango de cuotas). |
 | paymentMethodFeeDetail > pricingFees > fee > pricing |  |  | Contiene los valores de Pricing por defecto para la transacción. |
  | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail |  |  | Contiene los valores de intereses y comisiones que se aplicarán al pagador. |
@@ -169,7 +169,7 @@ https://{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accoun
 ```
 <br>
 
- El valor de la variable `{env-api}` mostrado es `sandbox.api` para pruebas y `api` para producción. Además, el parámetro `paymentMethod` es opcional si quieres filtrar por un medio de pago dado. Ejemplo:
+ El valor de la variable `{env-api}` mostrado es `sandbox.api` para pruebas y `api` para producción. Además, el parámetro `paymentMethod` es opcional si quieres filtrar por un método de pago dado. Ejemplo:
 
 ```JAVA
 GET https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=512322&currency=ARS&amount=1000

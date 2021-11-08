@@ -8,12 +8,13 @@ Description: >
 weight: 20
 ---
 
-In the _Transfers_ module, you can fin the options to transfer the funds collected in your virtual PayU account to your main bank account registered.
+In the _Transfers_ module, you can find the options to transfer the funds collected in your virtual PayU account to your main bank account registered.
 
 ## Considerations
 Keep in mind the following considerations before transferring funds to your bank account.
 
-* You must have your bank information updated and validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.S
+* You must have your bank information updated and validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.
+* As PayU in Brazil is not a payment institution, the funds collected in your PayU account are transferred to your bank account daily for free. To check the status of these transfers, use the _**Daily payouts**_ option (_**Transfers**_ > _**Daily Transfers**_).
 * The first three local transfers performed during the first month are free. Since the 4th transfer request, PayU charges the following values:
   - Colombia: 6.500,00 COP + VAT (Colombia)
   - Peru: 10,00 PEN + IGV (Peru),
@@ -43,7 +44,7 @@ You can transfer up to the total amount in your PayU account to the registered b
 
 ![PrintScreen](/assets/Transfers/Transfers_01.png)
 
-2. Complete the value to transfer or select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don't have free transactions, this panel also displayed the value or the transaction along with the taxes.
+2. Complete the value to transfer or select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don't have free transactions, this panel also displayed the value of the transaction along with the taxes.
 
 ![PrintScreen](/assets/Transfers/Transfers_02.png)
 

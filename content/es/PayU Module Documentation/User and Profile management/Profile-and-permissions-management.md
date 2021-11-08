@@ -1,76 +1,74 @@
 ---
-title: "Profile y Permissions Management"
-linkTitle: "Profile y Permissions Management"
+title: "Gestión de perfiles y permisos"
+linkTitle: "Gestión de perfiles y permisos"
 date: 2021-08-27T16:07:39-05:00
 type: docs
 Description: >
-   Learn how to create, update, y remove the set of permissions you can assign to your users.
+   Aprende cómo crear, actualizar y eliminar el conjunto de permisos que puedes asignarle a tus usuarios.
 weight: 20
 ---
 
-A _Profile_ is a set of permissions that allows a user to access to a feature of an _account_. A _user_ using a _profile_ can access to as many account there are in each merchant.
+Un _Perfil_ es un conjunto de permisos para acceder a una funcionalidad de una _cuenta_. Un _usuario_ es una persona que tiene un perfil para administrar o consultar la información de una cuenta.
 
-For further information about merchants, accounts, y more, read the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
+Para más información sobre comercios, cuentas y más, lee los [conceptos detrás del Módulo PayU]({{< ref"PayU Module Documentation#payu-module-concepts" >}}).
 
-## Permission required
-To have access to this module, you need to have a profile with the following permission enabled:
+## Permisos requeridos {#permission-required}
+Para tener acceso a este módulo, necesitas un perfil con los siguientes permisos activos:
 
-* _Review permissions y profiles_
-* _Create, edit y delete profiles y permissions_
+* _Consultar permisos y perfiles_
+* _Crear, editar y eliminar perfiles y permisos_
 
-Refer to [Profiles y Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
+## Permisos predeterminados {#default-profiles}
+De manera predeterminada, PayU proporciona tres perfiles que permiten a tus usuarios acceder a las cuentas. Estos perfiles son:
 
-## Default profiles
-By default, PayU provides three profiles that allow your users to access the accounts. These profiles are:
+* **Administrador**: este perfil tiene habilitados todos los permisos de la cuenta. Un usuario enrolado con este perfil puede crear, revisar, actualizar, y eliminar (o deshabilitar) la información relacionada con la cuenta. Además, este usuario puede ver y descargar todos los reportes, ver la información técnica, resolver disputas, administrar usuarios, realizar transferencias y administrar perfiles.
+* **Consultar y editar**: este perfil es el equivalente a un perfil _manager_. Un usuario enrolado con este perfil puede crear, revisar, actualizar, y eliminar (o deshabilitar) la información relacionada con la cuenta. Además, este usuario puede ver y descargar todos los reportes, ver la información técnica, resolver disputas, y revisar los perfiles de usuarios creados.
+* **Solo consultar**: este perfil puede acceder a la cuenta en modo solo lectura. Un usuario enrolado con este perfil puede crear, revisar la información relacionada con la cuenta, descargar algunos de los reportes y ver las transferencias de la cuenta. Además, este usuario **no puede** ver los detalles técnicos o tener acceso a los perfiles de los usuarios.
 
-* **Administrator**: this profile has enabled all the permission of the account. A user entitled to this profile can create, review, update, y delete (or disable) the information related to the account. Furthermore, this user can see y download all the reports, view the technical information, resolve disputes, manage users, perform transfers, y manage profiles. 
-* **Read y write**: this profile is the equivalent of a _manager_ profile. A user entitled to this profile can create, review, update, y delete (or disable) the information related to the account. Furthermore, this user can see y download all the reports, view the technical information, resolve disputes, y review the users y profiles created.
-* **Only read**: this profile can access the account in read-only mode. A user entitled to this profile can create, review the information related to the account, download some of the reports, view the transfers of the account. Furthermore, this user **cannot** see the technical details or has access to the users y profiles.
+Estos perfiles no se pueden eliminar y su conjunto de permisos es fijo, si alguno de estos permisos no satisface tus necesidades, debes [crear uno]({{< ref "#create-profiles" >}}).
 
-These profiles cannot be deleted y their set of permissions are fixed, if any of these permissions does not meet your needs, you should [create one]({{< ref"#create-profiles" >}}).
+## Gestión de perfiles y permisos {#profile-and-permission-management}
+Para gestionar perfiles y permisos, ingresa a tu cuenta PayU y haz clic en el menú _**Configuración**_ en la parte superior de la pantalla y luego, selecciona _**Perfiles y permisos**_.
 
-## Profile y Permission management
-To manage users, open you PayU account y click _**Configuración**_ menu at the top the screen y then, select _**Perfiles y permisos**_.
+![PrintScreen](/assets/Profiles/Profiles_01_es.png)
 
-![PrintScreen](/assets/Profiles/Profiles_01.png)
+Se abre el módulo _**Gestión de servicios y permisos**_ aquí, puedes encontrar una tabla con todos los permisos para acceder al módulo PayU y los perfiles con acceso a los mismos.
 
-The _**Profiles y permissions management**_ module opens, here, you can find a table with all the permissions to access PayU module y the profiles with access to them.
-
-![PrintScreen](/assets/Profiles/Profiles_02.png)
+![PrintScreen](/assets/Profiles/Profiles_02_es.png)
  
-### Create profiles
-When none of the [default profiles]({{< ref"#default-profiles" >}}) meets you requirements, you can create one y assign a customized set of permissions. To create a profile follow these steps.
+### Crear perfiles {#create-profiles}
+Cuando ninguno de los [perfiles predeterminados]({{< ref"#default-profiles" >}}) satisface tus necesidades, puedes crear uno y asignar un conjunto de permisos personalizado. Sigue estos pasos para crear un perfil.
 
-1. In the _**Profiles y permissions management**_ module, click _**Create custom profile**_.
+1. En el módulo _**Gestión de servicios y permisos**_, haz clic en _**Crear perfil personalizado**_.
 
-![PrintScreen](/assets/Profiles/Profiles_03.png)
+![PrintScreen](/assets/Profiles/Profiles_03_es.png)
 
-2. A new column is added to the table. Provide a meaningful name for your custom profile..
+2. Se agrega una nueva columna a la tabla. Ingresa un nombre significativo para su perfil personalizado.
 
-![PrintScreen](/assets/Profiles/Profiles_04.png)
+![PrintScreen](/assets/Profiles/Profiles_04_es.png)
 
-3. Once you set the name, you can assign as many permission as you need by clicking the checkbox of each row.
+3. Una vez que establezcas el nombre, puedes asignar tantos permisos como necesites haciendo clic en la casilla de verificación de cada fila.
 
-![PrintScreen](/assets/Profiles/Profiles_05.png)
+![PrintScreen](/assets/Profiles/Profiles_05_es.png)
 
-4. When finish, click _**Save settings**_. If you click _**Delete changes**_, the profile is not saved y the column is deleted form the table.
+4. Cuando termines, haz clic en _**Guardar configuración**_. Si haces clic en _**Borrar cambios**_, el perfil no se guarda y la columna se elimina de la tabla.
 
-### Edit profiles
-When editing a profile, you can either rename it, or assign or remove permissions.
+### Editar perfiles {#edit-profiles}
+Al editar un perfil, puedes cambiarle el nombre, o asignar o eliminar permisos.
 
-* To rename a given profile, click the ▾ symbol next to its name. Then, click _**Change name**_.<br><br>![PrintScreen](/assets/Profiles/Profiles_06.png)<br>This enables the name field of the profile to update it.
+* Para cambiar el nombre de un perfil, haz clic en el simbolo ▾ junto a su nombre. Luego, haz clic en _**Cambiar nombre**_.<br><br>![PrintScreen](/assets/Profiles/Profiles_06_es.png)<br>Esto habilita el campo de nombre del perfil para actualizarlo..
 
-* To assign or remove a permission, just click the checkbox of the permission.
+* Para asignar o eliminar un permiso, simplemente haz clic en la casilla de verificación del permiso.
 
-When finish, click _**Save settings**_. If you click _**Delete changes**_, all the changes for both renaming y permission change are discarded.
+Cuando termines, haz clic en _**Guardar configuración**_. Si haces clic en _**Borrar cambios**_, todos los cambios tanto para el cambio de nombre como para el cambio de permisos se descartan.
 
-### Delete profiles
-To delete a given profile by click the ▾ symbol next to its name. Then, click _**Delete**_.
+### Eliminar perfiles {#delete-profiles}
+Para eliminar un perfil, haz clic en el simbolo ▾ junto a su nombre. Luego, haz clic en _**Eliminar**_.
 
-![PrintScreen](/assets/Profiles/Profiles_07.png)
+![PrintScreen](/assets/Profiles/Profiles_07_es.png)
 
-If there are users entitled to the profile you are about to delete, you are prompted to set a new profile for them. Select the new profile from the dropdown menu y click _**Delete y reassign**_.
+Si hay usuarios enrolados al perfil que estás a punto de eliminar, se te solicitará que establezcas un nuevo perfil para ellos. Selecciona el nuevo perfil del menú desplegable y haz clic en _**Eliminar y reasignar**_.
 
-<img src="/assets/Profiles/Profiles_08.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Profiles/Profiles_08_es.png" alt="PrintScreen" width="50%"/><br>
 
-As soon as you delete the profile, its column is removed from the table y no user will be able to have this profile.
+Tan pronto como elimines el perfil, su columna se elimina de la tabla y ningún usuario podrá tener este perfil.

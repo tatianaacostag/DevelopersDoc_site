@@ -14,7 +14,7 @@ Before moving on, let's recap some key terms:
 * A _**profile**_ is a set of permissions to access an account. 
 * A user can have one or multiple profiles, this means that a user can access multiple _**accounts**_ and multiple _**merchants**_.
 
-For further information, read the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
+For further information, read the [concepts behind the PayU Module]({{< ref"PayU Module Documentation#payu-module-concepts" >}}).
 
 ## Permission required
 To have access to this module, you need to have a profile with the following permission enabled:
@@ -127,7 +127,9 @@ Once you have selected the filters, click _**Search**_. All the users that meets
 If you want to remove a filter, click the **x** icon next to it.
 
 ### Edit users
-Through the _**User management**_ module, you can update some information of a user. To update a user, search and click it in the _**User management**_ module.
+Through the _**User management**_ module, you can update some information of a user. To update a user, search and click them.
+
+The _**Edit user**_ window appears.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_13.png) 
 

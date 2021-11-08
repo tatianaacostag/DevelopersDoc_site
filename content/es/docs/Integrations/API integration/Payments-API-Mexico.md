@@ -3,7 +3,7 @@ title: "API de Pagos - México"
 linkTitle: "API de Pagos - México"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El API de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El API de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -22,7 +22,7 @@ El API de pagos incluye los siguiente métodos:
 * [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
 * [Enviar transacciones con transferencia bancaria]({{< ref "#submit-transaction-with-bank-transfer" >}})
 * [Enviar transacciones con referencia bancaria]({{< ref "#submit-transaction-with-bank-reference" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -122,7 +122,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sí |
 | transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción requerido:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para flujos de un paso.</li></ul> | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito o débito valido. [Ver los medios de pago disponibles para México]({{< ref "select-your-payment-method.html#mexico" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago de Tarjeta de crédito o débito valido. [Ver los métodos de pago disponibles para México]({{< ref "select-your-payment-method.html#mexico" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `MX` para México. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -923,7 +923,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago en efectivo válido. [Ver los medios de pago disponibles para México]({{< ref "select-your-payment-method.html#mexico" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago en efectivo válido. [Ver los métodos de pago disponibles para México]({{< ref "select-your-payment-method.html#mexico" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `MX` para México. | Sí |
 | transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -958,18 +958,18 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 
 #### Consideraciones {#considerations-3}
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
-* Cuando el medio de pago es `OXXO`, la confirmación del pago será un día después del mismo. Para otros medios de pago en efectivo, la confirmación es en línea.
+* Cuando el método de pago es `OXXO`, la confirmación del pago será un día después del mismo. Para otros métodos de pago en efectivo, la confirmación es en línea.
 * El parámetro `transactionResponse.extraParameters` tiene los siguientes parámetros relacionados con la transacción:
    - **BANK_REFERENCED_CODE**: tipo de pago.
    - **EXPIRATION_DATE**: término máximo que tine el pagador para realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago.
    - **REFERENCE**: referencia interna de pago generada por PayU. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
    - **PAYMENT_WAY_ID**: red financiera del tipo de pago.
 
 ### Llamado del API {#api-call}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1232,7 +1232,7 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ## Enviar transacciones con transferencia bancaria {#submit-transaction-with-bank-transfer}
-Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este medio de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.<br>
+Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.<br>
 Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.
 
 <img src="/assets/Payments/BankTransferReceiptMX.png" alt="PrintScreen" width="50%">
@@ -1309,7 +1309,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos con transferencia bancaria se realizan en la página web de SPEI, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago por transferencia bancaria válido. [Ver los medios de pago disponibles para México]({{< ref "select-your-payment-method.html#mexico" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago por transferencia bancaria válido. [Ver los métodos de pago disponibles para México]({{< ref "select-your-payment-method.html#mexico" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `MX` para México. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1346,7 +1346,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 
 #### Consideraciones {#considerations-3}
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
-* Cuando el pagador selecciona este medio de pago, PayU crea una orden en estado _in progress_ y una transacción en estado pendiente (`PENDING`).
+* Cuando el pagador selecciona este método de pago, PayU crea una orden en estado _in progress_ y una transacción en estado pendiente (`PENDING`).
 * Para realizar el pago, el pagador debe iniciar sesión en la sucursal virtual de su banco (el banco debe aparecer en la lista de bancos disponibles de SPEI).<br>Primero, el pagador debe registrar la cuenta CLABE de PayU en la sucursal de su banco. Una vez la cuenta CLABE esté activa para realizar transferencias, el pagador debe ingresar en su sucursal virtual, la referencia retornada por PayU en el parámetro `trazabilityCode` y el monto tal y como PayU lo retornó.
 * En el cuerpo de la respuesta, puedes encontrar las variables para generar el recibo de pago (voucher) y la URL del mismo generado en formato HTML y PDF. Si quieres generar el voucher, utiliza las siguientes variables:
   - **trazabilityCode**: identificador único de máximo 7 dígitos; corresponde a la referencia de pago que debe ingresar el pagador en la sucursal virtual. Es obligatorio ingresar el mismo valor en el campo referencia de la sucursal virtual para que el pago sea exitoso.
@@ -1355,7 +1355,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
   - **SPEI_BANK_NAME**: nombre del banco asociado a la cuenta CLABE de PayU. La cuenta beneficiaria está asociada al banco STP y para PayU siempre es el mismo banco.
 
 ### Llamado del API {#api-call-1}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1701,7 +1701,7 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos con referencia bancaria se realizan en oficinas físicas, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago por Referencia bancaria válido. [Ver los medios de pago disponibles para México]({{< ref "select-your-payment-method.html#mexico" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago por Referencia bancaria válido. [Ver los métodos de pago disponibles para México]({{< ref "select-your-payment-method.html#mexico" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `MX` para México. | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
 </details>
@@ -1738,11 +1738,11 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
    - **REFERENCE**: referencia de pago interna generada por PayU.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago con referencia bancaria.
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago con referencia bancaria.
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
 ### Llamado del API {#api-call-2}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1993,8 +1993,8 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response-4}
 
@@ -2023,16 +2023,16 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 |-|-|-|-|:-:|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. | Sí |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. | Sí |
-| paymentMethods |  |  | Lista de los medios de pago. | Sí |
-| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del medio de pago. | Sí |
+| paymentMethods |  |  | Lista de los métodos de pago. | Sí |
+| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del método de pago. | Sí |
 
 </details>
 
 ### Llamado del API {#api-call-3}
-Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.  
+Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.  
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

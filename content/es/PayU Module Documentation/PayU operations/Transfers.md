@@ -4,98 +4,99 @@ linkTitle: "Transferencias"
 date: 2021-09-03T16:42:07-05:00
 type: docs
 Description: >
-  Learn how to receive the money from your PayU account on your Bank account. Additionally, learn how to automate transfers periodically or by amount.
+ Aprende cómo recibir el diner de tu cuenta PayU en tu cuenta bancaria. Adicionalmente, aprende cómo automatizar transferencias periodicamente o por monto.
 weight: 20
 ---
 
-In the _Transfers_ module, you can fin the options to transfer the funds collected in your virtual PayU account to your main bank account registered.
+En el módulo de _Transferencias_, puede encontrar las opciones para transferir los fondos recaudados en tu cuenta PayU virtual a tu cuenta bancaria principal registrada.
 
 ## Consideraciones {#considerations}
-Keep in mind the following considerations before transferring funds to your bank account.
+Ten en cuenta las siguientes consideraciones antes de transferir fondos a tu cuenta bancaria.
 
-* You must have your bank information updated y validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.S
-* The first three local transfers performed during the first month are free. Since the 4th transfer request, PayU charges the following values:
+* Debes tener tu información bancaria actualizada y validada. Ten en cuenta que si has solicitado la actualización de tu cuenta bancaria, las transferencias que realices se envían a la cuenta bancaria anterior hasta que nuestro equipo de Riesgos la haya validado.
+* Como PayU en Brasil no es una institución de pago, los fondos recaudados en tu cuenta PayU se transfieren a tu cuenta bancaria diariamente de forma gratuita. Para consultar el estado de estas transferencias, utiliza la opción _**Transferencias diarias**_ (_**Transferencias**_ > _**Transferencias diarias**_).
+* Las tres primeras transferencias locales realizadas durante el primer mes son gratuitas. Desde la cuarta solicitud de transferencia, PayU cobra los siguientes valores:
   - Colombia: 6.500,00 COP + VAT (Colombia)
-  - Peru: 10,00 PEN + IGV (Peru),
+  - Perú: 10,00 PEN + IGV (Perú),
   - Argentina: $ 10,00 ARS+ IVA (Argentina),
   - Chile: 0,00 CLP
-  - Mexico: 0,00 MXN
-* The first transfer takes five (5) days to deposit in the bank account. The Risk area of PayU requests a livelihood of sales in the first transfer as an administrative process.
-* The second, y the following transfers take maximum three (3) business days.
-* The transfers can be programed by Amount y by Date
+  - México: 0,00 MXN
+* La primera transferencia demora cinco (5) días en depositarse en la cuenta bancaria. El área de Riesgo de PayU solicita un sustento de las ventas en la primera transferencia como proceso administrativo.
+* La segunda y las siguientes transferencias toman un máximo de tres (3) días hábiles.
+* Las transferencias se pueden programar por Monto y por Fecha
 
 {{% alert title="Nota" color="warning"%}}
-The times y amounts explained here apply only for local transfer (into the same operation country) for international transfers, contact your sales representative.
+Los tiempos y montos explicados aquí aplican solo para transferencias locales (al mismo país de operación) para transferencias internacionales, comunícate con tu representante de ventas.
 {{% /alert %}}
 
-## Permission required
-To have access to this module, you need to have a profile with the following permission enabled:
+## Permisos requeridos {#permission-required}
+Para tener acceso a este módulo, necesitas un perfil con los siguientes permisos activos:
 
-* _Transfers_ > _Review_
-* _Transfers_ > _Manage_<br>This permission allows you to perform transfers.	
+* _Transferencias_ > _Consultar_
+* _Transferencias_ > _Administrar_<br>Este permiso te permite realizar transferencias.	
 
-Refer to [Profiles y Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
+Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}}) para más información.
 
-## Transfer funds
-You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.
+## Transferir fondos {#transfer-funds}
+Puedes transferir hasta el monto total en tu cuenta PayU al banco registrado. Sigue estos pasos para realizar una transferencia.
 
-1. Log into your PayU account. In the left menu, expand the _**Transferencias**_ menu y select _**Transferencias**_.
+1. Inicia sesión en tu cuenta PayU. En el menú de la izquierda, expande el menú _**Transferencias**_ y selecciona _**Transferencias**_.
 
-![PrintScreen](/assets/Transfers/Transfers_01.png)
+![PrintScreen](/assets/Transfers/Transfers_01_es.png)
 
-2. Complete the value to transfer or select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don't have free transactions, this panel also displayed the value or the transaction along with the taxes.
+2. Completa el valor para transferir o seleccione la opción _**Transferir el saldo total disponible**_. En el panel derecho, se actualiza el valor ingresado; Además, este panel muestra cuántas transferencias gratuitas tienes hasta el final del mes.<br>Si no tienes transacciones gratuitas, este panel también muestra el valor de la transacción junto con los impuestos.
 
-![PrintScreen](/assets/Transfers/Transfers_02.png)
+![PrintScreen](/assets/Transfers/Transfers_02_es.png)
 
-3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account, y the target account.<br>Click _**OK**_ to confirm it or _**Reject**_ to discard it.
+3. Haz clic en _**Solicitar transferencia**_. Aparece una ventana de confirmación para confirmar el monto a transferir, el valor a debitar de tu cuenta y la cuenta de destino.<br>Haz clic en _**Aceptar**_ para confirmar o en _**Rechazar**_ para descartar la operación.
 
-<img src="/assets/Transfers/Transfers_03.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Transfers/Transfers_03_es.png" alt="PrintScreen" width="50%"/><br>
 
-4. The result of the operation appears. Take into account the number of days to reflect the money in the target account.
+4. Aparece el resultado de la operación. Ten en cuenta la cantidad de días para reflejar el dinero en la cuenta objetivo.
 
-<img src="/assets/Transfers/Transfers_04.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Transfers/Transfers_04_es.png" alt="PrintScreen" width="50%"/><br>
 
-As soon as the request has been successfully sent the transfer is in _In progess_ status y you can see it in the _**Created transfers report**_ section at the end of the module; also, the amount requested is debited from your balance.<br>If the transfers could not be processed, this amount backs to your account y no fee is charged for this operation.
+Tan pronto como la solicitud ha sido enviada con éxito, la transferencia está en estado _En proceso_ y puedes verla en la sección _**Reporte de transferencias realizadas**_ al final del módulo; Además, la cantidad solicitada se debita de tu saldo.<br>Si las transferencias no pudieron ser procesadas, esta cantidad se regresa a tu cuenta y no se cobra ninguna tarifa por esta operación.
 
-## Programar transferencias
-You can automate the transfers y request the a withdrawal given a fixed amount or each certain time.
+## Programar transferencias {#schedule-transfers}
+Puedes automatizar las transferencias y solicitar el retiro dado un monto fijo o cada cierto tiempo.
 
 {{% alert title="Nota" color="info"%}}
-When scheduling transfers, you must have the enough funds by the time when the transfer is executed.
+Al programar transferencias, debes tener fondos suficientes para el momento en que se ejecute la transferencia.
 {{% /alert %}}
 
-To schedule a transfer, follow these steps.
+Para programar una transferencia, sigue estos pasos.
 
-1. Log into your PayU account. In the left menu, expand the _**Transferencias**_ menu y select _**Schedule transfer**_.
+1. Inicia sesión en tu cuenta PayU. En el menú de la izquierda, expande el menú _**Transferencias**_ y selecciona _**Programar transferencia**_.
 
-![PrintScreen](/assets/Transfers/Transfers_05.png)
+![PrintScreen](/assets/Transfers/Transfers_05_es.png)
 
-2. The _**Programar transferencia**_ module opens, here you can see all the scheduled transfers you have configured. Click _**Schedule Transfer**_ to set up a new schedule.
+2. Se abre el módulo de _**Programación de transferencias**_, aquí puedes ver todas las transferencias programadas que tienes configuradas. Haz clic en _**Programar transferencia**_ para configurar una nueva.
 
-![PrintScreen](/assets/Transfers/Transfers_06.png)
+![PrintScreen](/assets/Transfers/Transfers_06_es.png)
 
-{{% alert title="Options" color="info"%}}
-The _options_ column provides the following actions:
-* Edit (<img src="/assets/Transfers/Transfers_10.png" width="2%" style="vertical-align: top;"/>): allows you to change the configuration of the schedule.
-* Delete (<img src="/assets/Transfers/Transfers_11.png" width="2%" style="vertical-align: top;"/>): allows you to deactivate the schedule. Once the schedule is removed, no automatic transfers can be created.
+{{% alert title="Opciones" color="info"%}}
+La columna _opciones_ tiene las siguientes acciones:
+* Editar (<img src="/assets/Transfers/Transfers_10.png" width="2%" style="vertical-align: top;"/>): te permite cambiar la configuración de la programación.
+* Eliminar (<img src="/assets/Transfers/Transfers_11.png" width="2%" style="vertical-align: top;"/>): le permite desactivar la programación. Una vez que se elimina, no se pueden crear transferencias automáticas.
 {{% /alert %}}
 
-3. Select how you want to schedule the transfer.
+3. Selecciona cómo deseas programar la transferencia.
 
-* **Programar transferencias by periodicity**<br>
-This option lets you transfer a given amount every certain time (days, weeks, or months). To schedule this type of transfers, select the option _Periodicity_.
+* **Programar transferencias por periodicidad**<br>
+Esta opción te permite transferir una cantidad determinada cada cierto tiempo (días, semanas o meses). Para programar este tipo de transferencias, selecciona la opción _Periodicidad_.
 
-* **Programar transferencias by balance available**<br>
-This option lets you transfer a given amount every time the balance reaches a specific value. To schedule this type of transfers, select the option _Balance available_.
+* **Programar transferencias por saldo disponible**<br>
+Esta opción te permite transferir una cantidad determinada cada vez que el saldo alcanza un valor específico. Para programar este tipo de transferencias, selecciona la opción _Saldo disponible_.
 
-Provide the following options.
+Ingresa las siguientes opciones.
 
-| Opción                        | Descripción                                                                       |
-|-------------------------------|-----------------------------------------------------------------------------------|
-| Make a withdrawal each        | Select the periodicity of the transfers you want to schedule. This option is available for transfers scheduled by periodicity.<br><br>![PrintScreen](/assets/Transfers/Transfers_07.png) |
-| Select the amount to withdraw | Select the amount you want to transfer, you can select the total available balance or a fixed value.<br><br>![PrintScreen](/assets/Transfers/Transfers_08.png) |
-| Amount to withdraw            | Select the amount you want to transfer. This field appears when you select the option _Configure value_. |
-| Start my transfers on         | Select the starting date for the schedule. In this date, the first transfer is scheduled.<br><br>![PrintScreen](/assets/Transfers/Transfers_09.png) |
-| Descripción                   | Provide a meaningful description for your transfer. |
+| Opción | Descripción |
+|---|---|
+| Realizar mi retiro cada | Selecciona la periodicidad de las transferencias que deseas programar. Esta opción está disponible para transferencias programadas por periodicidad.<br><br>![PrintScreen](/assets/Transfers/Transfers_07_es.png) |
+| Cantidad de dinero que deseas retirar | Selecciona la cantidad que deseas transferir, puedes seleccionar el saldo total disponible o un valor fijo.<br><br>![PrintScreen](/assets/Transfers/Transfers_08_es.png) |
+| Ingresa el valor a retirar | Selecciona la cantidad que deseas transferir. Este campo aparece al seleccionar la opción _Configurar valor_. |
+| Iniciar mis transferencias a partir de | Seleccione la fecha de inicio de la programación. En esta fecha está programada la primera transferencia.<br><br>![PrintScreen](/assets/Transfers/Transfers_09_es.png) |
+| Descripción | Ingresa una descripción significativa de tu transferencia. |
 
-4. When finish, click _**Schedule Transfer**_.
+4. Cuando termines, haz clic en _**Programar Transferencia**_.

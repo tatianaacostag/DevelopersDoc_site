@@ -11,7 +11,7 @@ weight: 20
 Antes de utilizar la funcionalidad de _Consultas_, ten en cuenta las siguientes consideraciones:
 
 * Se recomienda utilizar _Consultas_ para transacciones en estado `PENDING`.
-* De acuerdo con el medio de pago, el tiempo para realizar la consulta puede variar. Sin embargo, te recomendamos realizar la primera consulta siete minutos luego de que se crea la transacción.
+* De acuerdo con el método de pago, el tiempo para realizar la consulta puede variar. Sin embargo, te recomendamos realizar la primera consulta siete minutos luego de que se crea la transacción.
 * No reintentes consultar una transacción cuando PayU indica que no existe.
 * Las transacciones de transferencias bancarias están disponibles cada diez minutos.
 

@@ -3,7 +3,7 @@ title: "API de Pagos - Brasil"
 linkTitle: "API de Pagos - Brasil"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -22,7 +22,7 @@ El API de pagos incluye los siguiente métodos:
 * [Enviar transacciones con PIX]({{< ref "#submit-transaction-with-pix" >}})
 * [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
 * [Enviar transacciones con transferencia bancaria]({{< ref "#submit-transaction-with-bank-transfer" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -347,7 +347,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > networkToken > cryptogram | Alfanumérico | Max:28 | Llave única generada por MDES o VTS para descifrar la información de la tarjeta de crédito. | Sí<sup>\*</sup> |
 | transaction > networkToken > expiry | Alfanumérico | 7 | Fecha de expiración del token. Formato `YYYY/MM`. | Sí<sup>\*</sup> |
 | transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción requerido:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para flujos de un paso.</li></ul> | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito valido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago de Tarjeta de crédito valido. [Ver los métodos de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1053,9 +1053,9 @@ Al final, tu cliente ve una página de checkout como esta.
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
 ### ¿Cómo funciona PIX? {#how-does-pix-work}
-PIX es un medio de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (_Banco Central do Brasil_ - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.
+PIX es un método de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (_Banco Central do Brasil_ - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.
 
-A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el diner inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este medio de pago aparecerán en tu cuenta PayU en cuestión de segundos. 
+A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el diner inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este método de pago aparecerán en tu cuenta PayU en cuestión de segundos. 
 
 Pix tiene dos partes:
 
@@ -1141,7 +1141,7 @@ Pix tiene dos partes:
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos con PIX se realizan utilizando el teléfono móvil del pagador, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE`. | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Asigna `PIX` para este medio de pago. Si quieres ver otros medios de pago, consulta [Medios de pago para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Asigna `PIX` para este método de pago. Si quieres ver otros métodos de pago, consulta [Métodos de pago para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1184,7 +1184,7 @@ Pix tiene dos partes:
    - **QRCODE_IMAGE_BASE64**: imagen dl código QR. Este campo es una cadena de caracteres codificada en Base 64.
 
 ### Llamado del API {#api-call}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1480,7 +1480,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, La única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un medio de pago en efectivo válido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un método de pago en efectivo válido. [Ver los métodos de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
 | transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1517,13 +1517,13 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * El paso se ve reflejado al siguiente día hábil.
 * El parámetro `transactionResponse.extraParameters` Tiene los siguientes parámetros relacionados con la transacción:
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. TAquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. TAquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
    - **URL_BOLETO_BANCARIO**: recibo de pago en formato de impresión.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: Código de barras que le permite al pagador realizar el pago. 
 
 ### Llamado del API {#api-call-1}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1724,7 +1724,7 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ## Enviar transacciones con transferencia bancaria {#submit-transaction-with-bank-transfer}
-Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este medio de pago, el pagador realiza una transferencia desde su cuenta bancaria emitida por ITAU.<br>
+Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia desde su cuenta bancaria emitida por ITAU.<br>
 Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL que se encuentra en la respuesta del método.
 
 <img src="/assets/Payments/BankTransferReceiptBR.png" alt="PrintScreen" width="50%">
@@ -1802,7 +1802,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos por transferencia bancaria se realizan en oficinas físicas, La única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago por transferencia bancaria válido. [Ver los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago por transferencia bancaria válido. [Ver los métodos de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `BR` para Brasil. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1844,7 +1844,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 * En el cuerpo de la respuesta, puedes encontrar el recibo generador por PayU y su fecha de expiración.
 
 ### Llamado del API {#api-call-2}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -2054,8 +2054,8 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response-4}
 
@@ -2084,16 +2084,16 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| paymentMethods |  |  | Lista de medios de pago. | Sí |
-| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del medio de pago. | Sí |
+| paymentMethods |  |  | Lista de métodos de pago. | Sí |
+| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del método de pago. | Sí |
 
 </details>
 
 ### Llamado del API {#api-call-3}
-Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago. 
+Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

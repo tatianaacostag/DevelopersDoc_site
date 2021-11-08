@@ -54,7 +54,7 @@ To set a filter, click the _**Filter my sales**_ field at the top of the report 
 
 Configure the values for the filters and click _**Search**_. Once you click it, the filter table shows the sales that meet the selected criteria.
 
-Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner. The date frame defined here.
+Along with these filters, you can also set a time frame when the buyer performed the purchase using the dates filter at the top right corner.
 
 <img src="/assets/Reports/Reports_12.png" alt="PrintScreen" width="60%"/><br>
 
@@ -79,8 +79,8 @@ The _**Transaction details**_ panel has the following sections:
 | 4 | Values | This section shows the values involved in this transaction such as the _Value to charge (or charged)_, _Pending value_, _Refunded value_ (for refunds), _Expired value_ (for cash payments).  |
 | 5 | Buyer info | Information of the person who performed the purchase. |
 | 6 | Delivery info | Information of the delivery options. |
-| 7 | This purchase had | Transactions associated to this purchase. Click the **▾** symbol to find [details of each transaction]({{< ref "#transaction-details" >}}).<br><br>![PrintScreen](/assets/Reports/Reports_15.png) |
-| 8 | Actions | Actions available over the actions. |
+| 7 | This purchase had | Transactions associated to this purchase. Click the **▾** symbol to find the [transaction history]({{< ref "#transaction-history" >}}).<br><br>![PrintScreen](/assets/Reports/Reports_15.png) |
+| 8 | Actions | Actions available over the order. |
 
 ### Transaction history
 When you expand the _**This purchase had**_ section, you can see the details of each transaction associated to an order.

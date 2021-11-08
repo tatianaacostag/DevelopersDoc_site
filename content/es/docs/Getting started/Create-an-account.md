@@ -10,7 +10,7 @@ El primer paso para empezar a utilizar los servicios de PayU es crear una cuenta
 
 ## Beneficios de PayU {#payu-benefits}
 * Tasa competitiva
-* Múltiples medios de pago
+* Múltiples métodos de pago
 * Vende con o sin sitio web
 * Seguridad
 
@@ -41,7 +41,7 @@ Una vez hayamos recibido tu solicitud de creación de cuenta, nuestros agentes v
 Revisa las Actividades restringidas y prohibidas [aquí](https://legal.payulatam.com/ES/actividades_restringidas_y_prohibidas.pdf). 
 
 3. Activa tu cuenta.<br>
-Luego de abrir tu cuenta de PayU, recibes un correo electrónico para verificar su dirección e ingresar al Módulo de PayU por primera vez. En este punto, tu cuenta se encuentra activada para recibir pagos en Internet con todos los medios de pago disponibles.
+Luego de abrir tu cuenta de PayU, recibes un correo electrónico para verificar su dirección e ingresar al Módulo de PayU por primera vez. En este punto, tu cuenta se encuentra activada para recibir pagos en Internet con todos los métodos de pago disponibles.
 <br><br>
 Para activar tu cuenta debes:
 - Haber completado la documentación y el registro en el módulo administrativo.

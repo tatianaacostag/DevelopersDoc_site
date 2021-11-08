@@ -25,8 +25,8 @@ Las razones para iniciar un proceso de disputa varian, algunas de ellas son:
 
 {{% alert title="Atención" color="warning"%}}
 
-* Recall that PayU acts as an intermediary to let your commerce provide evidence in the dispute process between you and the bank entity. PayU has no interference on the result of the dispute, this decision depends on the issuing bank.
-* Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance; therefore, you cannot transfer funds from this balance to your bank account until the dispute is resolved.
+* Recuerda que PayU únicamente actúa como intermediario para que tu comercio pueda presentar evidencias en el proceso de disputas frente a la entidad bancaria. PayU no tiene injerencia sobre el resultado de la disputa, esta decisión depende del banco emisor.
+* Una vez que una transacción es parte de una disputa, el monto asociado pasa a formar parte del saldo congelado, por lo tanto no podrás realizar transferencias de dicho saldo a tu cuenta bancaria hasta tanto no se resuelva la disputa.
 
 {{% /alert %}} 
 
@@ -51,7 +51,7 @@ En esta ventana, ve a la pestaña _**Disputas**_. Define la URL de notificación
 Una vez configures esto, automáticamente recibes un POST con toda la información del proceso de disputa iniciado. Además, puedes una notificación POST cada vez que haya una actualización en el proceso, así puedes estar al tanto del progreso y la terminación del proceso.
 
 ### 2. Consulta desde el Módulo PayU {#2-query-through-the-payu-module}
-Puedes ver y administrar el proceso de disputas desde el módulo PayU en la opción _**Dispute**_ option inside the _**Transacciones**_ menu.
+Puedes ver y administrar el proceso de disputas desde el módulo PayU en la opción _**Disputas**_ dentro del menú _**Transacciones**_.
 
 ![PrintScreen](/assets/Disputes/Disputes_02_es.png)
 

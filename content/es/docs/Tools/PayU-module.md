@@ -16,7 +16,7 @@ El Módulo PayU es idea para negocios que necesitan:
 ## Beneficios del Módulo PayU {#benefits-of-the-payu-module}
 El Módulo PayU entrega los siguientes beneficios: 
 
-* **Haz un seguimiento a tus ventas**.<br>Encuentra la información relevante de tus ventas, los medios de pago más utilizados y las horas con mayor tasa transaccional.
+* **Haz un seguimiento a tus ventas**.<br>Encuentra la información relevante de tus ventas, los métodos de pago más utilizados y las horas con mayor tasa transaccional.
 * **Conoce tus transacciones**.<br>Puedes consultar los movimientos en tus cuentas, generar balances y reportes.
 * **No necesitas una página web**.<br>Puedes utilizar las herramientas para recibir pagos incluso si no tienes una página web.
 
@@ -29,4 +29,4 @@ El Módulo PayU entrega los siguientes beneficios:
 
 ![PrintScreen](/assets/Login2_es.png)
 
-Para más información sobre cómo utilizar el Módulo de PayU, consulte esta [sección](/es/payu-module-documentation.html).
+Para más información sobre cómo utilizar el Módulo de PayU, consulte esta [sección]({{< ref "PayU Module Documentation">}}).

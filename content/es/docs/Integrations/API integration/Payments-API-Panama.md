@@ -3,7 +3,7 @@ title: "API de Pagos - Panamá"
 linkTitle: "API de Pagos - Panamá"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El API de Pagos de Panamá le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El API de Pagos de Panamá le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -19,7 +19,7 @@ Para integrarte con el API de Pagos de Panamá, apunta tus peticiones a las sigu
 El API de pagos incluye los siguiente métodos:
 
 * [Enviar transacciones con tarjeta de crédito]({{< ref "#submit-transaction-with-credit-cards" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -110,7 +110,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sí |
 | transaction > type | Alfanumérico | 32 | Set this value according to the transaction. Para Panamá, set `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito valido. [Ver los medios de pago disponibles para Panamá]({{< ref "select-your-payment-method.html#panama" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago de Tarjeta de crédito valido. [Ver los métodos de pago disponibles para Panamá]({{< ref "select-your-payment-method.html#panama" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `PA` para Panamá. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -149,7 +149,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 * Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable `creditCard.processWithoutCvv2` con valor true y elimina la variable `creditCard.securityCode`.
 
 ### Llamado del API {#api-call   }
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -399,8 +399,8 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response-1}
 
@@ -429,16 +429,16 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| paymentMethods |  |  | Lista de los medios de pago. |
-| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. |
-| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. |
-| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del medio de pago. |
+| paymentMethods |  |  | Lista de los métodos de pago. |
+| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un método de pago. |
+| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del método de pago. |
+| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del método de pago. |
+| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del método de pago. |
 
 </details>
 
 ### Llamado del API {#api-call-1}
-Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago. 
+Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

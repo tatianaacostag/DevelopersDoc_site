@@ -4,158 +4,159 @@ linkTitle: "Balance financiero"
 date: 2021-09-03T16:45:26-05:00
 type: docs
 Description: >
-  Learn more about the funds credited to your PayU account y their movements. In this section, you can also know the data available in this report.
+  Obten más información sobre los fondos acreditados en tu cuenta PayU y sus movimientos. En esta sección, también puedes conocer los datos disponibles en este reporte.
 weight: 30
 ---
 
 {{% alert title="Nota" color="info"%}}
-The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying y downloading. If you need display more rows or columns in the report, contact your sales representative.
+Los reportes en el Módulo PayU están limitados a **20 mil** filas para visualización y descarga. Si necesitas tener reportes personalizados o mostrar más información, comunícate con tu representante de ventas.
 {{% /alert %}}
 
-## What is the Balance financiero?
-The Balance financiero helps you identify the movements (Commission discounts, transfer fees, reversions) of your PayU account. This report shows the summary of the account, with debits y credits made during the month, y information of the available balance.
+## ¿Qué es el Balance financiero? {#what-is-the-financial-statement}
+El Balance financiero te ayuda a identificar los movimientos (descuentos de comisiones, tarifas de transferencia, reversiones) de tu cuenta PayU. Este reporte muestra el resumen de la cuenta, con los débitos y abonos realizados durante el mes, y la información del saldo disponible.
 
-Furthermore, the Balance financiero helps the accounting area to reconcile all trade e-commerce operations.
+Además, el Balance financiero ayuda al área contable a conciliar todas las operaciones comerciales de comercio electrónico.
 
-## Permission required
-To have access to this module, you need to have a profile with the following permissions enabled
+## Permisos requeridos {#permission-required}
+Para tener acceso a este módulo, necesitas un perfil con el permiso following permissions enabled
 
-* _Movements_ > _Statement_	
-* _Movements_ > _Download CSV report_<br>This permission must be enabled to let you download the report.
+* _Movimientos_ > _Reporte de Balance_	
+* _Movimientos_ > _Descargar reporte CSV_<br>Este permiso debe estar habilitado para permitirle descargar el informe..
 
-Refer to [Profiles y Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
+Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}}) para más información.
 
-## Consult the report
-Log into your PayU account. In the left menu, expand the _**Transacciones**_ menu y select _**Balance financiero**_. By default, the report shows the operation information<sup>\*</sup> of the last 30 days, from the most recent to the oldest. 
+## Consultar el reporte {#consult-the-report}
+Ingresa a tu cuenta PayU. En el menú de la izquierda, expande el menú _**Transacciones**_ y selecciona _**Balance financiero**_. De forma predeterminada, el reporte muestra la información de la operación <sup>\*</sup> de los últimos 30 días desde la más reciente a la más antigua.
 
-<sup>*</sup>_Limited to top 20 thousand records._
+<sup>*</sup>_Limitado a 20 mil registros._
 
-![PrintScreen](/assets/Reports/Reports_19.png)
+![PrintScreen](/assets/Reports/Reports_19_es.png)
 
-The **_Statements Balance_** section is divided in three parts as follows:
+La sección de **_Balance financiero_** está divida en tres partes:
 
-### General Balance
-The first part is the general balance where you can see the funds in your PayU account y a button to let you request a [transfer]({{< ref "Transfers.md" >}}) to your bank account.<br>The general balance, which is comprised of:
+### Saldo General {#general-balance}
+La primera parte es el saldo general donde puedes ver los fondos en tu cuenta PayU y un botón que te permite solicitar una [transferencia] ({{< ref "Transfers.md" >}}) a tu cuenta bancaria.<br>El Saldo general se compone de:
 
-* **Available balance**: the total funds received from your sales, after deducting the commission of PayU.
-* **Frozen balance**: the funds that are part of a [dispute]({{< ref "Disputes.md" >}}) in process or an unapproved [refund]({{< ref "Refunds.md" >}}) requested by your customers.
-* **Total balance**: the money you can transfer to your bank account. It consists of the **Available balance** minus the **Frozen balance**.
+* **Saldo disponible**: los fondos totales recibidos de tus ventas, luego de descontar la comisión de PayU.
+* **Saldo congelado**: los fondos que hacen parte de una [disputa]({{< ref "Disputes.md" >}}) en proceso o un [reembolso]({{< ref "Refunds.md" >}}) no aprobado solicitado por tu cliente.
+* **Saldo total**: el dinero que puedes transferir a tu cuenta. Consiste del **Saldo disponible** menos **Saldo congelado**.
 
-![PrintScreen](/assets/Reports/Reports_20.png)
+![PrintScreen](/assets/Reports/Reports_20_es.png)
 
-### Sales made chart
-In the second part, you can understand the distribution of costs (including taxes y transaction related costs), y analyze a sales chart y a pie chart that summarizes all this information.
+### Gráfico de ventas realizadas {#sales-made-chart}
+En la segunda parte, puedes entender la distribución de costos (incluidos impuestos y costos relacionados con la transacción) y analizar los gráficos de ventas y circular que resumen toda esta información.
 
-The charts shows the information available in the date frame selected.
+Los gráficos muestran la información disponible en el rango de fechas seleccionado.
 
-![PrintScreen](/assets/Reports/Reports_21.png)
+![PrintScreen](/assets/Reports/Reports_21_es.png)
 
-The pie chart provides the following information:
+El gráfico circular proporciona la siguiente información:
 
-* **Sales Made**: total value of your sales before taxes y PayU fee, your income during the consulted period.
-* **Taxes**: additional charges generated according to your tax regime. If your tax regime is different, contact sac@payu.com.
-* **PayU Fee**: PayU processing cost, including the sales percentage plus the flat rate applied to your account.
+* **Ventas realizadas**: es el valor total de tus ventas antes de impuestos y tarifa PayU, son tus ingresos durante el período consultado.
+* **Impuestos**: son los cargos adicionales generados según tu régimen fiscal. Si tu régimen tributario es diferente, comunícate con sac@payu.com.
+* **Tarifa PayU**: es el costo de procesamiento de PayU, incluido el porcentaje de ventas más la tarifa fija aplicada a tu cuenta.
 
-### Report table
-In the last part below the charts, you find a table with the credit y debit information of the latest operations. You can see the operation type y the value (credit or debit) of each row.
+### Tabla del reporte {#report-table}
+En la última parte debajo de los gráficos, se encuentra una tabla con la información de crédito y débito de las últimas operaciones. Puedes ver el tipo de operación y el valor (crédito o débito) de cada fila.
 
-![PrintScreen](/assets/Reports/Reports_22.png)
+![PrintScreen](/assets/Reports/Reports_22_es.png)
 
-The report has the following columns:
+El reporte tiene las siguientes columnas:
 
-| Column              | Descripción                                                                                         |
-|---------------------|-----------------------------------------------------------------------------------------------------|
-| Operation           | ID y date of the operation.                                                                       |
-| Type of Operation   | Information of the operation. Depending on its type, the information displayed varies.<br>Click <img src="/assets/Reports/Reports_23.png" width="2%"/> to expand the detailed values of the operation in the **Debit** y **Credit** columns.<br><br>![PrintScreen](/assets/Reports/Reports_24.png) |
-| Credit              | Amount credited to your Cuenta.                                                                    |
-| Amount              | Amount debited from your Cuenta.                                                                   |
+| Columna             | Descripción                                                                                        |
+|---------------------|----------------------------------------------------------------------------------------------------|
+| Operación           | ID y fecha de la operación.                                                                        |
+| Tipo de operación   | Información de la operación. Dependiendo de su tipo, la información que se muestra varía.<br>Haz clic en <img src="/assets/Reports/Reports_23.png" width="2%"/> para expandir los valores detallados de la operación en las columnas **Débito** y **Crédito**.<br><br>![PrintScreen](/assets/Reports/Reports_24.png) |
+| Crédito              | Monto acreditado a tu Cuenta.                                                                     |
+| Débito               | Monto debitado de tu Cuenta.                                                                      |
 
 {{% alert title="Nota" color="info"%}}
-Click <img src="/assets/Reports/Reports_25.png" width="1.5%"/> next to _**Value**_ label to merge **debit** y **credit**; the resultant value **debit** minus the positive value of **credit**.<br>Por ejemplo, if the **debit** column value is _$3.296,63_ y the **credit** column value is _$950,00_, the resulting column value after merging is _$2.346,63_.
+Haz clic en el ícono <img src="/assets/Reports/Reports_25.png" width="1.5%"/> junto al título _**Valor**_ para unir las columnas **débito** y **crédito**; el valor resultado es **débito** menos el valor positivo de **crédito**.<br>Por ejemplo, si el valor de la columna **débito** es _$3.296,63_ y el valor de la columna **crédito** es _$950,00_, el valor de la columna resultante luego de unirlas es _$2.346,63_.
 
-![PrintScreen](/assets/Reports/Reports_26.png)
+![PrintScreen](/assets/Reports/Reports_26_es.png)
 {{% /alert %}}
 
-## Filter the report
-You can use the search bar above the graph or the calendar to set filters. You can filter by _**Type of Operation**_, _**Sale or Transfer ID**_, _**Reference**_<sup>\*</sup>, or _**Payment method type**_<sup>\*</sup>.
+## Filtrar el reporte {##filter-the-report}
+Puede utilizar la barra de búsqueda sobre el gráfico o el calendario para establecer filtros. Puedes filtrar por _**Tipo de operación**_, _**IId venta o transferencia**_, _**Referencia**_<sup>\*</sup>, o _**Método de pago type**_<sup>\*</sup>.
 
-<sup>\*</sup> _These filters are displayed when the selected **Type of Operation** is **Sale**, **Reversion**, or **Chargeback**_.
+<sup>\*</sup> _Estos filtros se muestran cuando el **Tipo de operación** seleccionado es **Venta**, **Reversión** o **Contracargada**_.
 
-To set a filter, click the _**Filter your search**_ field at the top of the sales made chart.
+Para establecer un filtro, haz clic en el campo _**Filtre su búsqueda**_ sobre el gráfico de de ventas realizadas.
 
-<img src="/assets/Reports/Reports_27.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Reports/Reports_27_es.png" alt="PrintScreen" width="60%"/><br>
 
-Configure the values for the filters y click _**Search**_. Once you click it, the filter table shows the operations that meet the selected criteria.
+Configura los valores de los filtros y haz clic en _**Buscar**_. Una vez hayas hecho clic, la tabla de filtros muestra las ventas que cumplen con los criterios seleccionados
 
-Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner. The date frame defined here
+Junto con estos filtros, también puedes establecer un período de tiempo en el que el comprador realizó la compra utilizando el filtro de fechas en la esquina superior derecha.
 
-<img src="/assets/Reports/Reports_28.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Reports/Reports_28_es.png" alt="PrintScreen" width="60%"/><br>
 
-The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.<br>To see the information of a given date, set it for both start y end date.
+El rango de fechas de este filtro es tres (3) meses antes de la fecha final. Si excedes este rango, el reporte muestra la información de tres (3) meses después de la fecha de inicio.<br>Para ver la información de una fecha específica, configúrala tanto para la fecha de inicio como para la fecha fin.
 
-## Download the report
-To download the report, click the _**Download**_ button located at the top or at the bottom of the report table.
+## Descargar el reporte {#download-the-report}
+Para descargar el reporte, haz clic en el botón _**Descargar**_ ubicado en la parte superior o inferior de la tabla del reporte. 
 
-![PrintScreen](/assets/Reports/Reports_29.png)
+![PrintScreen](/assets/Reports/Reports_29_es.png)
 
-A pop up window appear where you can select the options to generate the report<sup>\*</sup>.
+Aparece una ventana emergente donde puedes seleccionar las opciones para generar el reporte<sup>\*</sup>.
 
-<img src="/assets/Reports/Reports_30.png" alt="PrintScreen" width="50%"/>
+<img src="/assets/Reports/Reports_30_es.png" alt="PrintScreen" width="50%"/>
 
 {{% alert title="Nota" color="info"%}}
-<sup>\*</sup> If the file format does not meet the your needs, contact your sales executive to know more about the option to send files through SFTP y the templates that we have for this report.
+<sup>\*</sup> Si el formato del archivo no se ajusta a tus necesidades, comunícate con tu ejecutivo de ventas para conocer más sobre la opción de enviar archivos a través de SFTP y las plantillas que tenemos para este reporte..
 {{% /alert %}}
 
-The report is automatically downloaded in an Excel (_.csv_) format. The name of the report uses the following formats:
-* **CSV with what you are seeing on the screen** option: _[DownloadDateInMillis]\_statement\_report\_[AccountId].csv_
-* **Balance from previous secure** option: _[AccountId]\_[DownloadDate]\_transactions.csv_<sup>\*</sup>
+El reporte se descarga automáticamente en formato de Excel (_.csv_). El nombre del reporte utiliza los siguientes formatos
+* Opción **CSV con lo que estás viendo en pantalla**: _[FechaDescargaEnMilisegundos]\_statement\_report\_[AccountId].csv_
+* Opción **Versión del antiguo Módulo Administrativo**: _[AccountId]\_[FechaDescarga]\_transactions.csv_<sup>\*</sup>
 
-<sup>\*</sup> _Download date in format **dd-mm-yy-hh-mm-ss**_
+<sup>\*</sup> _fecha de descarga en formato **dd-mm-yy-hh-mm-ss**_
 
 <div style="display: flex;">
   <div style="float: left;width: 50%;text-align: center;margin: 10px;">
-    <a href="/assets/SampleReports/1632847567058_statement_report_546703.csv">Download an example of the generated file using the <i><b>CSV with what you are seeing on the screen</b></i> option.</a>
+    <a href="/assets/SampleReports/1632847567058_statement_report_546703.csv">Descarga un ejemplo del archivo generado utilizando la opción <i><b>CSV con lo que estás viendo en pantalla</b></i>.</a>
   </div>
   <div style="float: left;width: 50%;text-align: center;margin: 10px;">
-    <a href="/assets/SampleReports/546703_28-09-2021-11-48-07.285_transactions.xls">Download an example of the generated file using the <i><b>Balance from previous secure</b></i> option.</a>
+    <a href="/assets/SampleReports/546703_28-09-2021-11-48-07.285_transactions.xls">Descarga un ejemplo del archivo generado utilizando la opción <i><b>Versión del antiguo Módulo Administrativo</b></i>.</a>
   </div>
 </div>
 <br>
 
-In the downloaded report, you can validate all the credits y debits of your account y also, you can reconcile the commissions of PayU that appear in the invoice received monthly.
+En el reporte descargado, puedes validar todos los créditos y débitos de tu cuenta y además, puedes conciliar las comisiones de PayU que aparecen en la factura recibida mensualmente.
 
 ![PrintScreen](/assets/Reports/Reports_31.png)
 _PayU commissions y taxes appear in the invoice_
 
-To reconcile the information with the [sales report]({{< ref "Sales-report.md" >}}), you can use the _**ReferenceCode**_ variable which appears in brackets in the transaction.
+Para conciliar la información con el [reporte de ventas] ({{< ref "Sales-report.md" >}}), puedes usar la variable _**ReferenceCode**_ que aparece entre paréntesis en la transacción.
 
 ![PrintScreen](/assets/Reports/Reports_32.png)
 
-In the generated report you find the following concepts.
+En el informe generado encontrará los siguientes conceptos.
 
-| Concept                              | Descripción                                                                        |
-|--------------------------------------|------------------------------------------------------------------------------------|
-| **SALES**                            | Approved amount of the transaction.                                                |
-| **POL_COMMISSION**                   | PayU commission: Fixed percentage established for trade + established fixed value. |
-| **IVA_POL_COMMISSION**               | Tax commission.                                                                    |
-| **IVA_RETENTION**                    | IVA retention.<sup>\*</sup>                                                        |
-| **RENTA_RETENTION**                  | Retefuente retention.<sup>\*</sup>                                                 |
-| **ICA_RETENTION**                    | ICA retention.<sup>\*</sup>                                                        |
-| **RETENTION SALES**                  | Transaction refund.                                                                |
-| **RETENTION POL_COMMISSION**         | Refund of the PayU Commission.                                                     |
-| **RETENTION IVA_POL_COMMISSION**     | Refund of the PayU Commission tax.                                                 |
-| **RETENTION IVA_RETENTION**          | Refund of the IVA retention.                                                       |
-| **RETENTION RENTA_RETENTION**        | Refund of the Retefuente retention.                                                |
-| **RETENTION ICA_RETENTION**          | Refund of the ICA retention.                                                       |
-| **PAYMENT_ORDER**                    | Transfer of the available Balance to the registered bank account.                  |
-| **PAYMENT_ORDER_POL_COMMISSION**     | Transfer cost.                                                                     |
-| **IVA_PAYMENT_ORDER_POL_COMMISSION** | Transfer tax.                                                                      |
-| **FREEZE_FUND**                      | Frozen balance (refunds or disputes).                                              |
-| **UNFREEZE_FUND**                    | Release of the frozen amounts.                                                     |
-| **CHARGEBACK**                       | Chargeback or lost dispute.                                                        |
-| **DISCRETIONARY**                    | Discretionary movement or additional credit to the account.                        |
-<sup>\*</sup> _Applies only to transactions with credit card._
+| Concepto                             | Descripción                                                                           |
+|--------------------------------------|---------------------------------------------------------------------------------------|
+| **SALES**                            | Monto aprobado de la transacción.                                                     |
+| **POL_COMMISSION**                   | Comisión PayU: Porcentaje fijo establecido para el comercio + valor fijo establecido. |
+| **IVA_POL_COMMISSION**               | Comisión de impuestos.                                                                |
+| **IVA_RETENTION**                    | Retención de IVA.<sup>\*</sup>                                                        |
+| **RENTA_RETENTION**                  | Retención de Retefuente.<sup>\*</sup>                                                 |
+| **ICA_RETENTION**                    | Retención de ICA.<sup>\*</sup>                                                        |
+| **RETENTION SALES**                  | Reembolso de transacción.                                                             |
+| **RETENTION POL_COMMISSION**         | Reembolso de la Comisión de PayU.                                                     |
+| **RETENTION IVA_POL_COMMISSION**     | Reembolso del impuesto de la Comisión de PayU.                                        |
+| **RETENTION IVA_RETENTION**          | Reembolso de la retención del IVA.                                                    |
+| **RETENTION RENTA_RETENTION**        | Reembolso de la retención de la Retefuente.                                           |
+| **RETENTION ICA_RETENTION**          | Reembolso de la retención de ICA.                                                     |
+| **PAYMENT_ORDER**                    | Transferencia del Saldo disponible a la cuenta bancaria registrada.                   |
+| **PAYMENT_ORDER_POL_COMMISSION**     | Costo de transferencia.                                                               |
+| **IVA_PAYMENT_ORDER_POL_COMMISSION** | Impuesto de transferencia.                                                            |
+| **FREEZE_FUND**                      | Saldo congelado (reembolsos o disputas).                                              |
+| **UNFREEZE_FUND**                    | Liberación de las cantidades congeladas.                                              |
+| **CHARGEBACK**                       | Contracargo o disputa perdida.                                                        |
+| **DISCRETIONARY**                    | Movimiento discrecional o crédito adicional a la cuenta.                              |
+
+<sup>\*</sup> _Aplica solo a transacciones con tarjeta de crédito._
 
 {{% alert title="Nota" color="info"%}}
-The generated report is stored during 90 days in the [My downloaded reports]({{< ref "Reports.md#my-downloaded-reports" >}}) section.
+El reporte generado es almacenado durante 90 días en la sección [Mis reportes descargados]({{< ref "Reports.md#my-downloaded-reports" >}}).
 {{% /alert %}}

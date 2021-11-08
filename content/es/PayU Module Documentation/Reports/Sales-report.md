@@ -1,124 +1,124 @@
 ---
-title: "Sales Report"
-linkTitle: "Sales Report"
+title: "Reporte de ventas"
+linkTitle: "Reporte de ventas"
 date: 2021-09-03T16:45:07-05:00
 type: docs
 Description: >
-  Review the details of payments received, most used payment methods y frequent clients.
+  Revisa los detalles de los pagos recibidos, los métodos de pago más utilizados y clientes frecuentes.
 weight: 10
 ---
 
 {{% alert title="Nota" color="info"%}}
-The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying y downloading. If you need display more rows or columns in the report, contact your sales representative.
+Los reportes en el Módulo PayU están limitados a **20 mil** filas para visualización y descarga. Si necesitas tener reportes personalizados o mostrar más información, comunícate con tu representante de ventas.
 {{% /alert %}}
 
-## Permission required
-To have access to this module, you need to have a profile with the _Reports_ > _Sales Report_ permission enabled.
+## Permisos requeridos {#permission-required}
+Para tener acceso a este módulo, necesitas un perfil con el permiso _Reportes_ > _Reporte de Ventas_ activado.
 
-Refer to [Profiles y Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
+Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}}) para más información.
 
-## Consult the report
-Log into your PayU account. In the left menu, expand the _**Transacciones**_ menu y select _**Sales Report**_.
+## Consultar el reporte {#consult-the-report}
+Ingresa a tu cuenta PayU. En el menú de la izquierda, expande el menú _**Transacciones**_ y selecciona _**Reporte de Ventas**_.
 
-![PrintScreen](/assets/Refunds/Refunds_en_04.png)
+![PrintScreen](/assets/Refunds/Refunds_es_04.png)
 
-In the report, you can see a filter box, y the list of your latest sales. By default, the report shows the sales information<sup>\*</sup> of the last seven days, from the most recent to the oldest. 
+En el reporte, puedes ver un cuadro de filtro y la lista de tus últimas ventas. De forma predeterminada, el reporte muestra la información de ventas <sup>\*</sup> de los últimos siete días, desde el más reciente al más antiguo.
 
-<sup>*</sup>_Limited to top 20 thousand records._
+<sup>*</sup>_Limitado a 20 mil registros._
 
-![PrintScreen](/assets/Reports/Reports_10.png)
+![PrintScreen](/assets/Reports/Reports_10_es.png)
 
-The report has the following columns:
+El reporte tiene las siguientes columnas:
 
-| Column              | Descripción                                                                                         |
-|---------------------|-----------------------------------------------------------------------------------------------------|
-| Order               | This column shows the identifier of the order along with the date of the sale.                      |
-| Reference           | This column shows the sale reference y the name of the product or service offered.                |
-| Buyer               | This column shows the name y the e-mail address of the person who preform the buy.                 |
-| Amount              | Amount of the sale.                                                                                 |
-| Payment method      | Information of the payment method used by the buyer.                                                |
-| Status              | Current status of the order.                                                                        |
+| Columna             | Descripción                                                                                           |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+| Orden               | Esta columna muestra el identificador de la orden junto con la fecha de la venta.                     |
+| Referencia          | Esta columna muestra la referencia de venta y el nombre del producto o servicio ofrecido.             |
+| Comprador           | Esta columna muestra el nombre y la dirección de correo electrónico de la persona que hizo la compra. |
+| Monto               | Monto de la venta.                                                                                    |
+| Método de pago      | Información del método de pago utilizado por el comprador.                                            |
+| Estado              | Estado actual de la orden.                                                                            |
 
 {{% alert title="Nota" color="info"%}}
-If you need to display more information, contact your sales representative.
+Si necesitas mostrar más información, consulta tu representante de ventas
 {{% /alert %}}
 
-Refer to [Order details]({{< ref "#transaction-details" >}}) to know all the transaction detail of the sale.
+Consulta los [detalles de la orden]({{< ref "#transaction-details" >}}) para conocer todo el detalle de la transacción de la venta.
 
-## Filter the report
-You can use the search bar above the graph or the calendar to set filters. You can filter by _**Reference**_, _**Order**_, _**Buyer**_, _**Amount**_, _**status**_, or _**Payment method**_.
+## Filtrar el reporte {##filter-the-report}
+Puedes utilizar la barra de búsqueda sobre el gráfico o el calendario para establecer filtros. Puedes filtrar por _**Referencia**_, _**Orden**_, _**Comprador**_, _**Monto**_, _**estado**_ o _**Método de pago**_.
 
-To set a filter, click the _**Filter my sales**_ field at the top of the report table.
+Para establecer un filtro, haz clic en el campo _**Filtre su búsqueda**_ sobre la tabla del reporte.
 
-<img src="/assets/Reports/Reports_11.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Reports/Reports_11_es.png" alt="PrintScreen" width="60%"/><br>
 
-Configure the values for the filters y click _**Search**_. Once you click it, the filter table shows the sales that meet the selected criteria.
+Configura los valores de los filtros y haz clic en _**Buscar**_. Una vez hayas hecho clic, la tabla de filtros muestra las ventas que cumplen con los criterios seleccionados.
 
-Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner. The date frame defined here.
+Junto con estos filtros, también puedes establecer un período de tiempo en el que el comprador realizó la compra utilizando el filtro de fechas en la esquina superior derecha.
 
-<img src="/assets/Reports/Reports_12.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Reports/Reports_12_es.png" alt="PrintScreen" width="60%"/><br>
 
-The date range of this filter is one (1) month before the end date. If you exceed this range, The report displays the information of one (1) month after the start date.<br>To see the information of a given date, set it for both start y end date.
+El rango de fechas de este filtro es un (1) mes antes de la fecha final. Si excedes este rango, el reporte muestra la información de un (1) mes después de la fecha de inicio.<br>Para ver la información de una fecha específica, configúrala tanto para la fecha de inicio como para la fecha fin.
 
-## Transaction details
-You can review the transaction detail online. To do this, click the order you want to consult in the report table. The transaction details appears in the right panel.
+## Detalles de la transacción {#transaction-details}
+Puedes revisar los detalles de la transacción en línea. Para hacer esto, haz clic en el pedido que quieras consultar en la tabla de reporte. Los detalles de la transacción aparecen en el panel derecho.
 
-![PrintScreen](/assets/Reports/Reports_13.png)
+![PrintScreen](/assets/Reports/Reports_13_es.png)
 
-The _**Transaction details**_ panel has the following sections:
+El panel _**Detalles de la transacción**_ tiene las siguientes secciones:
 
-<img src="/assets/Reports/Reports_14.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Reports/Reports_14_es.png" alt="PrintScreen" width="50%"/><br>
 
 <div class="variables"></div>
 
-|  | Name | Descripción |
+|  | Nombre | Descripción |
 |:---:|---|---|
-| 1 | Order info | This section shows the Order Id, its latest update date, its status along with the status description, y the sale reference. |
-| 2 | Product or service | Descripción of the product or service you provided in the sale. |
-| 3 | Payment method | Information of the Payment method used in the purchase. The information displayed in this section varies according to the payment method.<br>For pending cash payments, this section lets you see the payment receipt generated to the buyer. |
-| 4 | Values | This section shows the values involved in this transaction such as the _Value to charge (or charged)_, _Pending value_, _Refunded value_ (for refunds), _Expired value_ (for cash payments).  |
-| 5 | Buyer info | Information of the person who performed the purchase. |
-| 6 | Delivery info | Information of the delivery options. |
-| 7 | This purchase had | Transacciones associated to this purchase. Click the **▾** symbol to find [details of each transaction]({{< ref "#transaction-details" >}}).<br><br>![PrintScreen](/assets/Reports/Reports_15.png) |
-| 8 | Actions | Actions available over the actions. |
+| 1 | Información de la orden | Esta sección muestra el ID de la orden, su última fecha de actualización, su estado junto con la descripción del mismo y la referencia de venta. |
+| 2 | Producto o servicio | Descripción del producto o servicio que brindó en la venta. |
+| 3 | Método de pago | Información del Método de pago utilizado en la compra. La información que se muestra en esta sección varía según el método de pago.<br>Para pagos en efectivo pendientes, esta sección le permite ver el recibo de pago generado para el comprador. |
+| 4 | Valores | Esta sección muestra los valores involucrados en esta transacción, como el _Valor a cobrar (o cobrado)_, _Valor pendiente_, _Valor reembolsado_ (para reembolsos), _Valor expirado_ (Para pagos en efectivo).  |
+| 5 | Información del Comprador | Información de la persona que realizó la compra. |
+| 6 | Información de envío | Información de las opciones de envío. |
+| 7 | Esta compra tuvo | Transacciones asociadas e esta compra. Haz clic en el simbolo **▾** para encontrar el [histórico de las transacciones]({{< ref "#transaction-history" >}}).<br><br>![PrintScreen](/assets/Reports/Reports_15_es.png) |
+| 8 | Actions | Acciones disponibles sobre la orden. |
 
-### Transaction history
-When you expand the _**This purchase had**_ section, you can see the details of each transaction associated to an order.
+### Histórico de la transacción {#transaction-history}
+Cuando expandes la sección _**Esta compra tuvo**_, puedes ver los detalles de cada transacción asociada a una orden.
 
-<img src="/assets/Reports/Reports_16.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Reports/Reports_16_es.png" alt="PrintScreen" width="50%"/><br>
 
-The information available includes the values debited from your account, the payment method, the payer information y more. 
+La información disponible incluye los valores debitados de tu cuenta, el método de pago, la información del pagador y más.
 
-## Download the report
-To download the report, click the _**Download**_ button located at the top or at the bottom of the report table.
+## Descargar el reporte {#download-the-report}
+Para descargar el reporte, haz clic en el botón _**Descargar**_ ubicado en la parte superior o inferior de la tabla del reporte. 
 
-![PrintScreen](/assets/Reports/Reports_17.png)
+![PrintScreen](/assets/Reports/Reports_17_es.png)
 
-A pop up window appear where you can select the options to generate the report:
-* **Report**: lets you generate a report with the status of the orders y the final status of the last transaction or attempted purchase related to that order.
-* **Balance from previous secure**: lets you generate a report with all the transactions y shows the information of the buyer y payer (e-mail, name, document number)<sup>\*</sup>.
+Aparece una ventana emergente donde puedes seleccionar las opciones para generar el reporte:
+* **Reporte**: te permite generar un reporte con el estado de las órdenes y el estado final de la última transacción o intento de compra relacionado con esa orden.
+* **Versión del antiguo Módulo Administrativo**: te permite generar un reporte con todas las transacciones y muestra la información del comprador y pagador (correo electrónico, nombre, número de documento)<sup>\*</sup>.
 
-<img src="/assets/Reports/Reports_18.png" alt="PrintScreen" width="50%"/>
+<img src="/assets/Reports/Reports_18_es.png" alt="PrintScreen" width="50%"/>
 
 {{% alert title="Nota" color="info"%}}
-<sup>\*</sup> If the file format does not meet the your needs, contact your sales executive to know more about the option to send files through SFTP y the templates that we have for this report.
+<sup>\*</sup> Si el formato del archivo no se ajusta a tus necesidades, comunícate con tu ejecutivo de ventas para conocer más sobre la opción de enviar archivos a través de SFTP y las plantillas que tenemos para este reporte..
 {{% /alert %}}
 
-The report is automatically downloaded in an Excel (_.csv_) format. The name of the report uses the following formats:
-* **Report** option: _[DownloadDateInMillis]\_orders\_[AccountId].csv_
-* **Balance from previous secure** option: _[AccountId]\_[DownloadDate]\_transactions.csv_<sup>\*</sup>
+El reporte se descarga automáticamente en formato de Excel (_.csv_). El nombre del reporte utiliza los siguientes formatos
+* Opción **Reporte**: _[FechaDescargaEnMilisegundos]\_orders\_[AccountId].csv_
+* Opción **Versión del antiguo Módulo Administrativo**: _[AccountId]\_[FechaDescarga]\_transactions.csv_<sup>\*</sup>
 
-<sup>\*</sup> _Download date in format **dd-mm-yy-hh-mm-ss**_
+<sup>\*</sup> _fecha de descarga en formato **dd-mm-yy-hh-mm-ss**_
 
 <div style="display: flex;">
   <div style="float: left;width: 50%;text-align: center;margin: 10px;">
-    <a href="/assets/SampleReports/1632771735723_orders_546703.csv">Download an example of the generated file using the <i><b>Report</b></i> option.</a>
+    <a href="/assets/SampleReports/1632771735723_orders_546703.csv">Descarga un ejemplo del archivo generado utilizando la opción <i><b>Report</b></i>.</a>
   </div>
   <div style="float: left;width: 50%;text-align: center;margin: 10px;">
-    <a href="/assets/SampleReports/546703_27-09-2021-14-52-58.486_transactions.csv">Download an example of the generated file using the <i><b>Balance from previous secure</b></i> option.</a>
+    <a href="/assets/SampleReports/546703_27-09-2021-14-52-58.486_transactions.csv">Descarga un ejemplo del archivo generado utilizando la opción <i><b>Balance from previous secure</b></i>.</a>
   </div>
 </div>
 
 {{% alert title="Nota" color="info"%}}
-The generated report is stored during 90 days in the [My downloaded reports]({{< ref "Reports.md#my-downloaded-reports" >}}) section.
+El reporte generado es almacenado durante 90 días en la sección [Mis reportes descargados]({{< ref "Reports.md#my-downloaded-reports" >}}).
 {{% /alert %}}

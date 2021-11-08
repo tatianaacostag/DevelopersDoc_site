@@ -3,7 +3,7 @@ title: "SDK de Pagos - Brasil"
 linkTitle: "SDK de Pagos - Brasil"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El SDK de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El SDK de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -38,7 +38,7 @@ El SDK de pagos incluye los siguientes métodos:
 
 * [Enviar transacciones con tarjeta de crédito]({{< ref "#submit-transaction-with-credit-cards" >}})
 * [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -49,7 +49,7 @@ Para confirmar el estado de una transacción, puedes utilizar el [SDK de Consult
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Brasil, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 ### Consideraciones {#considerations}
-* Envía un medio de pago válido de tarjeta de crédito, [mira los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}).
+* Envía un método de pago válido de tarjeta de crédito, [mira los métodos de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}).
 * Para pagos con tókenes de tarjeta de crédito, asigna los parámetros `TOKEN_ID` y `CREDIT_CARD_SECURITY_CODE` (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el [SDK de Tokenización]({{< ref "TokenizationSDK.md" >}}).
 * Por defecto, no está activo el procesamiento de tarjetas de crédito sin código de seguridad. Si quieres activar esta funcionalidad, contacta a tu representante de ventas. Luego de que se te active esta funcionalidad, asigna el parámetro `PROCESS_WITHOUT_CVV2` con true y elimina el parámetro `CREDIT_CARD_SECURITY_CODE`.
 * El extra parámetro `CIELO_TID` identifica la transacción, se necesita este parámetro para procesar anulaciones (voids).
@@ -590,11 +590,11 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 <img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
 
 ### Consideraciones {#considerations-2}
-* Envía un método de pago válido en efectivo, [mira los medios de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}).
+* Envía un método de pago válido en efectivo, [mira los métodos de pago disponibles para Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}).
 * El parámetro `EXPIRATION_DATE` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto
 * El pago se ve reflejado el siguiente día hábil.
 * La respuesta retorna los siguientes extra parámetros relacionados con la transacción
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
    - **URL_BOLETO_BANCARIO**: recibo de pago en formato printable.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago. 
@@ -815,8 +815,8 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Llamado del método {#method-call-1}
 Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación. 

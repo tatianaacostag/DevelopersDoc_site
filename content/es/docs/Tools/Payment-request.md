@@ -11,7 +11,7 @@ Puedes enviar tu solicitud de pago a través de correo electrónico o generar un
 
 Con la Solicitud de pago, tienes los siguientes beneficios:
 * Vendes en línea sin importar si tienes página web utilizando correo electrónico, redes sociales o plataformas de mensajería.
-* Ofreces varios medios de pago.
+* Ofreces varios métodos de pago.
 * Discriminas los pagos que recibes para que sepas quién pagó qué y cuándo.
 
 ## ¿Cómo funciona la Solicitud de pago? {#how-does-the-payment-request-work}
@@ -21,7 +21,7 @@ La Solicitud de pago siguen un flujo simple que le permite a tus clientes compra
 
 2. Una vez haya sido generado el link, puedes compartirlo con tus clientes ya sea por correo electrónico, redes sociales o incluyéndolo en tu página web como un botón (si tienes una).
 
-3. Cuando tus clientes utilicen el link, serán redirigidos a la página de checkout de PayU, donde pueden pagar utilizando cualquiera de nuestros [medios de pago disponibles]({{< ref "Select-your-payment-method.md" >}}).
+3. Cuando tus clientes utilicen el link, serán redirigidos a la página de checkout de PayU, donde pueden pagar utilizando cualquiera de nuestros [métodos de pago disponibles]({{< ref "Select-your-payment-method.md" >}}).
 
 4. Cada vez que un cliente pague utilizando el link, recibes un mensaje de confirmación y el monto de la compra<sup>*</sup> se transfiere a tu cuenta PayU, donde puedes transferirla a tu cuenta bancaria.
 
@@ -30,7 +30,7 @@ La Solicitud de pago siguen un flujo simple que le permite a tus clientes compra
 ## Crear Solicitudes de pago {#creating-payment-requests}
 De acuerdo con las necesidades de negocio, puedes crear dos tipos de Solicitudes de pago: Básica y Personalizada.
 
-Una _Solicitud de Pago Básica_ te permite crear un link solo con ingresar el nombre del producto y el precio; además, puedes decidir si necesitas incluir los impuestos o si deseas que el link expire en el futuro. La _Solicitud de Pago Personalizada_ es un link de pago con información adicional como los datos del envío, referencia de pago, página de respuesta, comentarios o acotación de los medios de pago.
+Una _Solicitud de Pago Básica_ te permite crear un link solo con ingresar el nombre del producto y el precio; además, puedes decidir si necesitas incluir los impuestos o si deseas que el link expire en el futuro. La _Solicitud de Pago Personalizada_ es un link de pago con información adicional como los datos del envío, referencia de pago, página de respuesta, comentarios o acotación de los métodos de pago.
 
 ### Crear Solicitud de Pago Básica {#create-a-basic-payment-request}
 Sigue este procedimiento para crear una Solicitud de Pago básica y compartirla con tus clientes.
@@ -86,8 +86,8 @@ Por ejemplo, puedes configurar este campo para que el comprador ingrese una desc
 
 <img src="/assets/PaymentRequest/PaymentRequest_11_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **Selecciona los medios de pago disponibles**: esta opción te permite incluir o excluir los medios de pago disponibles de acuerdo con tu país. Por ejemplo, si solo quieres recibir pagos con tarjetas de crédito.<br>
-Por defecto, todos los medios de pago disponibles para tu país están disponibles.
+* **Selecciona los métodos de pago disponibles**: esta opción te permite incluir o excluir los métodos de pago disponibles de acuerdo con tu país. Por ejemplo, si solo quieres recibir pagos con tarjetas de crédito.<br>
+Por defecto, todos los métodos de pago disponibles para tu país están disponibles.
 
 <img src="/assets/PaymentRequest/PaymentRequest_13_es.png" alt="PrintScreen" width="60%"/><br>
 
@@ -142,7 +142,7 @@ Cada fila del archivo corresponde a un link. La siguiente tabla explica cada col
 | Etiqueta para los comentarios del pagador (En portugués) | Ingresa la etiqueta del campo para los comentarios pagador en portugués. |
 | Extra 1                     | Ingresa cualquier dato adicional que quieras incluir en el link. Esta columna no puede exceder los 120 caracteres. |
 | Extra 2                     | Ingresa cualquier dato adicional que quieras incluir en el link. Esta columna no puede exceder los 120 caracteres. |
-| Personalizar los medios de pago disponibles | <ul style="margin-bottom: initial;"><li>Si dejas esta columna en blanco, se incluirán todos los medios de pago activos para la cuenta.</li><li>Para incluir algunos medios de pago, ingrésalos separados por comas.<br>Ejemplo: `LENDING,VISA,BANK_REFERENCED,AMEX`.<br>Además, puedes definir el número de cuotas que puede ingresar con la tarjeta de crédito, para esto, ingresa los medios de pago e indica las cuotas que vas a dejar disponible separadas por guiones, <br>Ejemplo: `VISA-1-2-3,AMEX`.</li></ul> |
+| Personalizar los métodos de pago disponibles | <ul style="margin-bottom: initial;"><li>Si dejas esta columna en blanco, se incluirán todos los métodos de pago activos para la cuenta.</li><li>Para incluir algunos métodos de pago, ingrésalos separados por comas.<br>Ejemplo: `LENDING,VISA,BANK_REFERENCED,AMEX`.<br>Además, puedes definir el número de cuotas que puede ingresar con la tarjeta de crédito, para esto, ingresa los métodos de pago e indica las cuotas que vas a dejar disponible separadas por guiones, <br>Ejemplo: `VISA-1-2-3,AMEX`.</li></ul> |
 
 {{% alert title="Nota" color="info"%}}
 

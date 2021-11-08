@@ -47,7 +47,7 @@ Utilizando esta funcionalidad, puedes registrar la información de la tarjeta de
 | creditCardToken > payerId | Alfanumérico | | Identificador interno del tarjetahabiente. | Sí |
 | creditCardToken > name | Alfanumérico | Min:1 Max:255 | Nombre del tarjetahabiente mostrado en la tarjeta de crédito. | Sí |
 | creditCardToken > identificationNumber | Alfanumérico | Max:20 | Número de identificación del tarjetahabiente. | Sí |
-| creditCardToken > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito valido. [Ver los medios de pago disponibles]({{< ref "select-your-payment-method.html" >}}). | Sí |
+| creditCardToken > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago de Tarjeta de crédito valido. [Ver los métodos de pago disponibles]({{< ref "select-your-payment-method.html" >}}). | Sí |
 | creditCardToken > number | Alfanumérico | Min:13 Max:20 | Número de la tarjeta de crédito. | Sí |
 | creditCardToken > expirationDate | Alfanumérico | 7 | Fecha de expiración de la tarjeta de crédito. Formato `YYYY/MM`. | Sí |
 

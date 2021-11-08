@@ -3,11 +3,11 @@ title: "Seleccionar tu medio de Pago"
 linkTitle: "Seleccionar tu medio de Pago"
 date: 2021-04-07T16:17:14-05:00
 Description: >
- En este artículo, encontrarás la lista de medios de pago disponibles en PayU.
+ En este artículo, encontrarás la lista de métodos de pago disponibles en PayU.
 weight: 30
 ---
 
-La siguiente sección muestra los medios de pago disponibles por país y brinda algunas consideraciones. Consulta la columna `Parámetro paymentMethod` para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.
+La siguiente sección muestra los métodos de pago disponibles por país y brinda algunas consideraciones. Consulta la columna `Parámetro paymentMethod` para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.
 
 ## <img src="/assets/Argentina.png" width="25px"/> Argentina {#Argentina}
 <div class="paymentMethods"></div>
@@ -58,7 +58,7 @@ La siguiente sección muestra los medios de pago disponibles por país y brinda 
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas Débito| |
 
 ## <img src="/assets/Colombia.png" width="25px"/> Colombia {#Colombia}
-PayU en Colombia te permite integrar con la mayoría de los medios de pago en efectivo del país. Además, soportamos Codensa y Falabella.
+PayU en Colombia te permite integrar con la mayoría de los métodos de pago en efectivo del país. Además, soportamos Codensa y Falabella.
 
 <div class="paymentMethods"></div>
 

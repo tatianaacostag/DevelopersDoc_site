@@ -1,162 +1,164 @@
 ---
-title: "User Management"
-linkTitle: "User Management"
+title: "Gestión de usuarios"
+linkTitle: "Gestión de usuarios"
 date: 2021-08-27T08:43:01-05:00
 type: docs
 Description: > 
-   Learn how to create, search, update, y disable the users who can access your PayU module according to their profile.
+   Aprende cómo crear, buscar, actualizar y desactivar los usuarios que tienen acceso al Módulo PayU de acuerdo con su perfil.
 weight: 10
 ---
 
-Before moving on, let's recap some key terms: 
+Antes de continuar, vamos a recapitular unos términos claves: 
 
-* A _**user**_ is a person who has a profile to manage or consult the information of an account. 
-* A _**profile**_ is a set of permissions to access an account. 
-* A user can have one or multiple profiles, this means that a user can access multiple _**accounts**_ y multiple _**merchants**_.
+* Un _**usuario**_ es una persona que tiene un perfil para administrar o consultar la información de una cuenta. 
+* Un _**perfil**_ es un conjunto de permisos para acceder a una cuenta. 
+* A usuario puede tener uno o más perfiles, esto significa que un usuarios puede acceder a múltiples _**cuentas**_ y múltiples _**comercios**_.
 
-For further information, read the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
+Para más información, lee los [conceptos detrás del Módulo PayU]({{< ref"PayU Module Documentation#payu-module-concepts" >}}).
 
-## Permission required
-To have access to this module, you need to have a profile with the following permission enabled:
+## Permisos requeridos {#permission-required}
+Para tener acceso a este módulo, necesitas un perfil con los siguientes permisos activos:
 
-* _Review Users_<br>This permission allows you to search a specified user.	
-* _Create, edit y delete users_
+* _Consultar usuarios_<br>Este permiso te permite buscar un usuario en particular.	
+* _Crear, editar y eliminar usuarios_
 
-Refer to [Profiles y Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
+Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}}) para más información.
 
-## Gestión de usuarios
-To manage users, open you PayU account y click _**Configuración**_ menu at the top the screen y then, select _**Gestión de usuarios**_.
+## Gestión de usuarios {#user-management}
+Para gestionar usuarios, ingresa a tu cuenta PayU y haz clic en el menú _**Configuración**_ en la parte superior de la pantalla y luego, selecciona _**Gestión de usuarios**_.
 
-![PrintScreen](/assets/UserManagement/UserManagement_01.png)
+![PrintScreen](/assets/UserManagement/UserManagement_01_es.png)
 
-The _**Gestión de usuarios**_ module opens, here, you can find a list of the available users along with their status, the accounts they can access, y their profile.
+Se abre el módulo de _**Gestión de usuarios**_, aquí puedes ver la lista de usuarios disponibles junto con su estado, las cuentas a las que pueden acceder y su perfil.
 
-![PrintScreen](/assets/UserManagement/UserManagement_02.png)
-
-{{% alert title="Nota" color="info"%}}
-The users marked with a green star (<img src="/assets/UserManagement/UserManagement_03.png" width="2%"/>) are default users which cannot be deleted (deactivated).
-{{% /alert %}}
-
-### Add users
-You can create a user using their e-mail address or providing a username. Follow the steps below to create a new user.
-
-1. In the _**Gestión de usuarios**_ module, click _**Add user**_.
-
-![PrintScreen](/assets/UserManagement/UserManagement_04.png)
-
-2. The _**Add user**_ window appears. Here, you can provide the information of the person who will be allowed to collect payments over the internet y check information about your payments, according to the permission you provide.
-
-![PrintScreen](/assets/UserManagement/UserManagement_05.png)
-
-3. Provide the following user information:
-
-* **E-mail**: E-mail address of the new user. PayU sends the login information to this e-mail address, make sure it is valid y the user has access to it.<br>Alternatively, you can create a user without using an e-mail address. This is useful specially when the user you want to create is attached to a role y not to a specific person. To do this, click _**Don't have an e-mail?**_ y provide the following information:
-   - _User_: username used to log in. This user name cannot have numbers nor special characters.
-   - _E-mail (Admin)_: provide the e-mail of the admin user to which, PayU send the options to generate or recover the password for this user.
-* **Full name**: name of the user you want to create.
-* **Status**: set if the user you want to create is _Active_ or _Inactive_.
-
-4. Configure the user preferences. You can configure any of the following:
-
-* **Date format**: change the format in which you want to display the dates in your PayU Module,
-
-<img src="/assets/UserPreferences/UserPreferences_05.png" alt="PrintScreen" width="40%"/><br>
-
-You can use any of the following formats:
-
-| Format      | English Format | Example<br>_August 24, 2021_ |
-|-------------|----------------|------------------------------|
-| dd/mm/aaaa  | dd/mm/yyyy     | 24/08/2021                   |
-| mm/dd/aaaa  | mm/dd/yyyy     | 08/24/2021                   |
-| aaaa/mm/dd  | yyyy/mm/dd     | 2021/08/24                   |
-| aaaa/mmm/dd | yyyy/mmm/dd    | 2021/Aug/24                  |
-| dd-mm-aaaa  | dd-mm-yyyy     | 24-08-2021                   |
-| mm-dd-aaaa  | mm-dd-yyyy     | 08-24-2021                   |
-| aaaa-mm-dd  | yyyy-mm-dd     | 2021-08-24                   |
-| aaaa-mmm-dd | yyyy-mmm-dd    | 2021-Aug-24                  |
-
-* **Time Zone**: change the time zone of the country in which you want to display the transaction’s information.
-
-<img src="/assets/UserPreferences/UserPreferences_06.png" alt="PrintScreen" width="40%"/><br>
-
-* **Currency format**: change the display format of the currency values shown in your PayU module.
-
-<img src="/assets/UserPreferences/UserPreferences_07.png" alt="PrintScreen" width="40%"/><br>
-
-* **Language**: change the language of your PayU module.
-
-<img src="/assets/UserPreferences/UserPreferences_08.png" alt="PrintScreen" width="40%"/><br>
-
-5. At the bottom of the screen, all the profiles created (both default y custom) loads along with the accounts of the current merchant. Configure the access for each account setting a profile, if you don't want to enable access to an account, don't select a profile.
-
-![PrintScreen](/assets/UserManagement/UserManagement_07.png)
+![PrintScreen](/assets/UserManagement/UserManagement_02_es.png)
 
 {{% alert title="Nota" color="info"%}}
-If you want to assign a custom profile, you must create it first.
+Los usuarios marcados con una estrella verde (<img src="/assets/UserManagement/UserManagement_03.png" width="2%"/>) son usuario predeterminados, los cuales no pueden ser borrados (desactivados).
 {{% /alert %}}
 
-6. Once finish, click _**Add user**_.
+### Agregar usuarios {#add-users}
+Puedes crear un usuario utilizando su correo electrónico o utilizando un nombre de usuario. Sigue estos pasos para crear un nuevo usuario.
 
-![PrintScreen](/assets/UserManagement/UserManagement_08.png)
+1. En el módulo _**Gestión de usuarios**_, haz clic en _**Agregar usuario**_.
 
-7. At this point, you have added the new user! We sent an e-mail to user address so they can access the PayU module.<br>The new user has to activate the account using the _**Activate your account**_ button in the e-mail.
+![PrintScreen](/assets/UserManagement/UserManagement_04_es.png)
 
-<img src="/assets/UserManagement/UserManagement_09.png" alt="PrintScreen" width="40%"/>
+2. Aparece la ventana de _**Agregar usuario**_. Aquí puedes ingresar la información de la persona a la que se permitirá recolectar pagos en línea y verificar la información de los pagos, de acuerdo con los permisos que le otorgues.
+
+![PrintScreen](/assets/UserManagement/UserManagement_05_es.png)
+
+3. Ingresa la siguiente información:
+
+* **Correo electrónico**: dirección de correo electrónico del nuevo usuario. PayU envía la información para iniciar sesión a esta dirección, asegúrate de que sea válida y que el usuario tenga acceso a él.<br>O si lo prefieres, puedes crear un usuario sin utilizar dirección de correo electrónico. Esto es útil cuando el usuario que quieres crear está atado a un rol y no a una persona específica. Para hacer esto, haz clic en _**¿No tiene correo electrónico?**_ e ingresa la siguiente información:
+   - _Usuario_: nombre de usuario utilizado para iniciar sesión. Este nombre de usuario no puede tener números o caracteres especiales.
+   - _Correo electrónico (Admin)_: ingresa la dirección de correo electrónico del usuario administrador al cual, PayU envía la información para generar o recuperar la contraseña de este usuario.
+* **Nombre completo**: nombre del usuario que deseas crear.
+* **Estado**: define si el usuario que vas a crear está _Activo_ o _Inactivo_.
+
+4. Configura las preferencias de usuario. puedes configurar las siguientes:
+
+* **Formato fecha**: cambia el formato en que quieres mostrar las fechas en tu módulo PayU,
+
+<img src="/assets/UserPreferences/UserPreferences_05_es.png" alt="PrintScreen" width="40%"/><br>
+
+Puedes utilizar cualquiera de los siguientes formatos:
+
+| Formato     | Ejemplo<br>_24 de Agosto de 2021_ |
+|-------------|-----------------------------------|
+| dd/mm/aaaa  | 24/08/2021                        |
+| mm/dd/aaaa  | 08/24/2021                        |
+| aaaa/mm/dd  | 2021/08/24                        |
+| aaaa/mmm/dd | 2021/Ago/24                       |
+| dd-mm-aaaa  | 24-08-2021                        |
+| mm-dd-aaaa  | 08-24-2021                        |
+| aaaa-mm-dd  | 2021-08-24                        |
+| aaaa-mmm-dd | 2021-Ago-24                       |
+
+* **Zona horaria**: cambia la zona horaria del país en el que deseas visualizar la información de las transacciones.
+
+<img src="/assets/UserPreferences/UserPreferences_06_es.png" alt="PrintScreen" width="40%"/><br>
+
+* **Formato moneda**: cambia el formato en el que deseas visualizar los valores monetarios en tu Módulo PayU.
+
+<img src="/assets/UserPreferences/UserPreferences_07_es.png" alt="PrintScreen" width="40%"/><br>
+
+* **Idioma**: cambia el idioma de tu Módulo PayU.
+
+<img src="/assets/UserPreferences/UserPreferences_08_es.png" alt="PrintScreen" width="40%"/><br>
+
+5. Al final de la pantalla, se  cargan todos los perfiles (predeterminados y personalizados) junto con las cuentas del comercio actual. Configura el acceso a cada cuenta configurando un perfil, si no quieres que tenga acceso a una cuenta, no selecciones ningún perfil.
+
+![PrintScreen](/assets/UserManagement/UserManagement_07_es.png)
 
 {{% alert title="Nota" color="info"%}}
-If the user was created without using e-mail, the instructions to activate the account are sent to the Admin e-mail you defined.
+Si quieres asignarle un perfil personalizado, debes crearlo primero.
 {{% /alert %}}
 
-8. The new user needs to set a new password to access the account.
+6. Una vez termines, haz clic en _**Agregar usuario**_.
 
-<img src="/assets/UserManagement/UserManagement_10.png" alt="PrintScreen" width="40%"/><br>
+![PrintScreen](/assets/UserManagement/UserManagement_08_es.png)
 
-9. Once the user sets the new password, they can access to the selected accounts using their credentials.
+7. En este punto, ¡has agregado el nuevo usuario! Enviamos un correo electrónico a la dirección del usuario para que pueda acceder al Módulo PayU.<br>El nuevo usuario debe activar la cuenta utilizando el botón _**Activa tu usuario**_ en el cuerpo del correo.
 
-### Search users
-When you need to find a specific user, you can use the filter options to find one or more users that meet given conditions.
-
-In the _**Gestión de usuarios**_ module, click the _**Search users**_ field to see the available filters.
-
-![PrintScreen](/assets/UserManagement/UserManagement_11.png) 
-
-Once you have selected the filters, click _**Search**_. All the users that meets the conditions selected are displayed in the table.
-
-![PrintScreen](/assets/UserManagement/UserManagement_12.png) 
-
-If you want to remove a filter, click the **x** icon next to it.
-
-### Edit users
-Through the _**Gestión de usuarios**_ module, you can update some information of a user. To update a user, search y click it in the _**Gestión de usuarios**_ module.
-
-![PrintScreen](/assets/UserManagement/UserManagement_13.png) 
-
-You can update the following information:
-
-* Full name of a user
-* Request a password recovery.
-* Update the user status (Active or Inactive)
-* Change or remove the profile assigned to a given account.
+![PrintScreen](/assets/UserManagement/UserManagement_09_es.png)
 
 {{% alert title="Nota" color="info"%}}
-The information of the user preferences cannot be updated using this option, this information is updated by each user by their own.
+Si el usuario se creó sin usar el correo electrónico, las instrucciones para activar la cuenta se envían al correo electrónico de administrador que definiste.
 {{% /alert %}}
 
-Once finish, click _**Save setting**_ to apply the changes.
+8. El nuevo usuario debe asignar una nueva contraseña para acceder a la cuenta.
 
-#### Edit multiple users
-To edit multiple users, search them y use the checkbox at the left. Then, click _**Edit users (n)**_.
+<img src="/assets/UserManagement/UserManagement_10_es.png" alt="PrintScreen" width="40%"/><br>
 
-![PrintScreen](/assets/UserManagement/UserManagement_14.png) 
+9. Una vez que el usuario establece la nueva contraseña, puede acceder a las cuentas seleccionadas usando sus credenciales.
 
-The _**Edit users (n)**_ window appears, where you can update the following information:
+### Buscar usuarios {#search-users}
+Cuando necesites encontrar un usuario específico, puedes utilizar las opciones de filtro para encontrar uno o más usuarios que cumplan con determinadas condiciones.
 
-* Request a password recovery for all the users.
-* Update their user status (Active or Inactive)
-* Assign a profile to a given account.
+En el módulo _**Gestión de usuarios**_, haz clic en el campo _**Buscar usuarios**_ para ver los filtros disponibles.
 
-![PrintScreen](/assets/UserManagement/UserManagement_15.png) 
+![PrintScreen](/assets/UserManagement/UserManagement_11_es.png) 
 
-Take into account that using this option, all the users will have the same configuration you define here.
+Una vez hayas seleccionado los filtros, haz clic en _**Buscar**_. Todos los usuarios que cumplen las condiciones seleccionadas se muestran en la tabla.
 
-Once finish, click _**Save setting**_ to apply the changes.
+![PrintScreen](/assets/UserManagement/UserManagement_12_es.png) 
+
+Si quieres eliminar un filtro, haz clic en el ícono **x** junto a él.
+
+### Editar usuarios {#edit-users}
+A través del módulo de _**Gestión de usuarios**_, puedes actualizar algunas propiedades de un usuarios. para actualizar un usuario, búscalo y haz clic en él.
+
+Aparece la ventana de _**Editar usuarios**_.
+
+![PrintScreen](/assets/UserManagement/UserManagement_13_es.png) 
+
+Puedes actualizar la siguiente información:
+
+* Nombre completo de un usuario
+* Solicitar la recuperación de la contraseña.
+* Actualizar el estado del usuario (activo o inactivo)
+* Cambiar o eliminar el perfil asignado a una cuenta determinada.
+
+{{% alert title="Nota" color="info"%}}
+La información de las preferencias del usuario no se puede actualizar mediante esta opción, esta información es actualizada por cada usuario por su cuenta.
+{{% /alert %}}
+
+Una vez termines, haz clic en _**Guardar configuración**_ para aplicar los cambios.
+
+#### Editar múltiples usuarios {#edit-multiple-users}
+Para editar varios usuarios, búscalos y utiliza la casilla de verificación de la izquierda. Luego, haz clic en _**Editar usuarios (n)**_.
+
+![PrintScreen](/assets/UserManagement/UserManagement_14_es.png) 
+
+Aparece la ventana de _**Editar usuarios (n)**_, donde puedes actualizar la siguiente información:
+
+* Solicitar la recuperación de contraseña para todos los usuarios.
+* Actualizar su estado de usuario (activo o inactivo)
+* Asignar un perfil a una cuenta determinada.
+
+![PrintScreen](/assets/UserManagement/UserManagement_15_es.png) 
+
+Ten en cuenta que al utilizar esta opción, todos los usuarios tendrán la misma configuración que definas aquí.
+
+Una vez termines, haz clic en _**Guardar configuración**_ para aplicar los cambios.

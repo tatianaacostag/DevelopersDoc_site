@@ -35,7 +35,7 @@ This panel has the options required to manage the accounts associated to the cur
 
 | Option | Sub option | Available in | Description |
 |---|---|:---:|---|
-| Merchant ID |  | <img src="/assets/World.png" width="20px"/> | ID number of your merchant in PayU’s system. This ID is required when you want to use [Integrations](/en/docs/integrations.html).  |
+| Merchant ID |  | <img src="/assets/World.png" width="20px"/> | ID number of your merchant in PayU’s system. This ID is required when you want to use [Integrations]({{< ref "integrations" >}}).  |
 | Account | Account information | <img src="/assets/World.png" width="20px"/> | Displays the name and ID of the selected account.<br>This option also lets you to change the account and perform operations related to it. Click the **▾** symbol to find these options or switch the account.<br><br><img src="/assets/MerchantPanel/MerchantPanel_02.png" alt="PrintScreen" width="40%"/> |
 |  | My business information | <img src="/assets/World.png" width="20px"/> | Shows the location, main contact information of your business. Also, this option shows the people associated with your business. |
 |  | Your sales information | <img src="/assets/World.png" width="20px"/> | Shows the information of how you make your sales, what you sell, the logo of your shop, delivery information, how you offer your products or services and how your clients can contact you. |
@@ -49,6 +49,7 @@ This panel has the options required to manage the accounts associated to the cur
 | | Withholding certificate | <img src="/assets/Colombia.png" width="20px"/> | Download your Withholding Certificate according to the requested period of time. For more information, refer to [Withholding Certificate]({{< ref "Withholding-Certificate.md" >}}). |
 | Transfers | Transfers | <img src="/assets/Argentina.png" width="20px"/><img src="/assets/Chile.png" width="20px"/><img src="/assets/Colombia.png" width="20px"/><br><img src="/assets/Mexico.png" width="20px"/><img src="/assets/Panama.png" width="20px"/><img src="/assets/Peru.png" width="20px"/> | Allows you to send the funds collected in your PayU account to your Bank account. For more information, refer to [Transfers]({{< ref"Transfers.md" >}}). |
 | | Schedule Transfers | <img src="/assets/Argentina.png" width="20px"/><img src="/assets/Chile.png" width="20px"/><img src="/assets/Colombia.png" width="20px"/><br><img src="/assets/Mexico.png" width="20px"/><img src="/assets/Panama.png" width="20px"/><img src="/assets/Peru.png" width="20px"/> | Allows you create transfer on a daily, weekly, monthly basis. Furthermore, you can configure custom transfers as you need. For more information, refer to [Schedule transfers]({{< ref"Transfers.md#schedule-transfers" >}}). |
+| | Daily Payouts | <img src="/assets/Brasil.png" width="20px"/> | As PayU in Brazil is not a not a payment institution, the funds collected in your account are transferred to your bank account on a daily basis. Through this report, you can know the status of the daily transfers.<br>This report is only available for accounts in Brazil and it has the same columns and options of the [Transfers report]({{< ref"transfer-report.md" >}}). |
 | | Edit bank information | <img src="/assets/World.png" width="20px"/> | Allows you to request the change of the bank account and the Intermediary bank where you want to transfers the funds collected for this account. For more information, refer to [Update my information]({{< ref"Update-my-information.md#request-the-change-of-your-bank-account" >}}) |
 | Sell with PayU | Sell on the internet | <img src="/assets/World.png" width="20px"/> | Allows you to create payment requests so you can charge to your customers without having a website. For more information, refer to [Payment request]({{< ref"Payment-request.md" >}})  |
 | | Cash charges | <img src="/assets/Argentina.png" width="20px"/><img src="/assets/Colombia.png" width="20px"/> | Allows you to generate payment coupons or collection cards<sup>\*</sup> with the necessary information to let your clients make cash payments as many times as they need in the available payment points. For more information, refer to [Payment coupons]({{< ref"Payment-coupons.md" >}}).<br><sup>\*</sup>_Collection cards are only available in Argentina_. |
@@ -84,12 +85,12 @@ This option allows you to manage your profile. In the main view of this option, 
 ### 3. Main panel
 This panel loads the selected option either in the left panel or in the option at the top. The _**Home**_ page is selected by default, so it loads as soon as you log in the PayU module.
 
-To set an option as displayed by default, click the three dot menu at the top left of the panel and select _**Set as main page**_.
+To set an option as displayed by default, click the three dot menu at the top right of the panel and select _**Set as main page**_.
 
 <img src="/assets/MerchantPanel/MerchantPanel_04.png" alt="PrintScreen" width="40%"/>
 
 #### Home page
-The home page is starting point of the Merchant panel. It shows the shortcuts to perform sales on-line, control your finances, transfers funds, learn about e-commerce and leave us comments.
+The home page is starting point of the PayU Module. It shows the shortcuts to perform sales on-line, know your sales status, control your finances, transfers funds, learn about e-commerce and leave us comments.
 
 ![PrintScreen](/assets/MerchantPanel/MerchantPanel_05.png)
 

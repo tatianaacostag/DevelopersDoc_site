@@ -1,59 +1,63 @@
 ---
-title: "Transfer Report"
-linkTitle: "Transfer Report"
+title: "Reporte de transferencias"
+linkTitle: "Reporte de transferencias"
 date: 2021-09-03T16:46:15-05:00
 type: docs
 Description: >
-  Know the status of the transfers you have requested of the funds collected in your PayU account.
+  Conoce el estado de las transferencias que has solicitado de los fondos recaudados en tu cuenta PayU.
 weight: 20
 ---
 
-Furthermore, if you have enabled the Payouts API, you can query the state of the payouts to third party requested. Para más información, consulta [Payouts]({{< ref "Payouts.md" >}}).
+Además, si tienes habilitado el API de Payouts, puedes consultar el estado de los pagos a terceros solicitados. Para más información, consulta [Payouts]({{< ref "Payouts.md" >}}).
 
-## Permission required
-To have access to this module, you need to have a profile with the _Transfers_ > _Review_ permission enabled.
-
-Refer to [Profiles y Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
-
-## Consult the report
-Log into your PayU account. In the left menu, expand the _**Transferencias**_ menu y select _**Transferencias**_.
-
-![PrintScreen](/assets/Transfers/Transfers_01.png)
-
-Scroll down to the _**Created transfers report**_ section where the report table is located. By default, the report displays the transfers created in the last 30 days from the most recent to the oldest.
-
-![PrintScreen](/assets/Reports/Reports_04.png)
-
-The report has the following columns:
-
-| Column              | Descripción                                                                                         |
-|---------------------|-----------------------------------------------------------------------------------------------------|
-| ID                  | Id of the transfer requested.                                                                       |
-| Request date        | Date y time when the transfer was created.                                                        |
-| Last update         | Date y time of the last action executed in the transfer.                                          |
-| Transferred value   | Amount of the transfer along with its associated costs.<br>To know these costs, click the <img src="/assets/Reports/Reports_05.png" width="2%" style="vertical-align: baseline;"/> icon.<br><br>![PrintScreen](/assets/Reports/Reports_06.png)               |
-| Destination account | Bank account of the request                                                                         |
-| Status              | Latest status of the request. The possible states are: <ul style="margin-bottom: initial;"><li>Approved</li><li>In progress</li><li>Rejected</li></ul>                                                               |
-
-{{% alert title="Nota" color="info"%}}
-If you need to display more information, contact your sales representative.
+{{% alert title="Note" color="info"%}}
+<img src="/assets/Brasil.png" width="20px"/> El _**Reporte de transferencias**_ tiene las misma columnas y funcionalidades disponibles para el reporte de _**Transferencias diarias**_ (_**Transferencias**_ > _**Transferencias diarias**_).
 {{% /alert %}}
 
-You can filter transfers by the date of their creation using the dates filter at the top right corner.
+## Permisos requeridos {#permission-required}
+Para tener acceso a este módulo, necesitas un perfil con el permiso _Transferencias_ > _Consultar_ activado.
 
-<img src="/assets/Reports/Reports_07.png" alt="PrintScreen" width="60%"/><br>
+Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}}) para más información.
 
-The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.<br>To see the information of a given date, set it for both start y end date.
+## Consult the report
+Ingresa a tu cuenta PayU. En el menú de la izquierda, expande el menú _**Transferencias**_ y selecciona _**Transferencias**_.
 
-## Download the report
-To download the report, click the _**Download**_ button located at the top or at the bottom of the report table.
+![PrintScreen](/assets/Transfers/Transfers_01_es.png)
 
-![PrintScreen](/assets/Reports/Reports_08.png)
+Desplázate hacia abajo hasta la sección _**Reporte de transferencias realizadas**_ donde se encuentra la tabla del reporte. De forma predeterminada, el reporte muestra las transferencias creadas en los últimos 30 días desde la más reciente a la más antigua.
 
-A progress bar appears at the top of the screen. Once the process is completed, the report is automatically downloaded in an Excel (_.csv_) format. The name of the report uses the format _**[DownloadDateInMillis]\_payment\_orders\_[AccountId].csv**_.
+![PrintScreen](/assets/Reports/Reports_04_es.png)
+
+El reporte tiene las siguientes columnas:
+
+| Columna             | Descripción                                                                                         |
+|---------------------|-----------------------------------------------------------------------------------------------------|
+| ID                  | Id de la transferencia solicitada.                                                                  |
+| Fecha de solicitud  | Fecha y hora en que se creó la transferencia.                                                       |
+| Última gestión      | Fecha y hora de la última acción ejecutada en la transferencia.                                     |
+| Valor debitado      | Monto de la transferencia junto con sus costos asociados.<br>Para saber estos costos, haz clic en el ícono <img src="/assets/Reports/Reports_05.png" width="2%" style="vertical-align: baseline;"/>.<br><br>![PrintScreen](/assets/Reports/Reports_06_es.png)               |
+| Cuenta destino      | Cuenta bancaria de la transferencia.                                                                |
+| Estado              | Último estado de la solicitud. Los posibles estados son: <ul style="margin-bottom: initial;"><li>Aprobada</li><li>En progreso</li><li>Rechazada</li></ul>                                                               |
+
+{{% alert title="Nota" color="info"%}}
+Si necesitas mostrar más información, consulta tu representante de ventas
+{{% /alert %}}
+
+Puedes filtrar las transferencias por la fecha de su creación utilizando el filtro de fechas en la esquina superior derecha.
+
+<img src="/assets/Reports/Reports_07_es.png" alt="PrintScreen" width="60%"/><br>
+
+El intervalo de fechas de este filtro es tres (3) meses antes de la fecha de fin. Si excedes este rango, el informe muestra la información de tres (3) meses después de la fecha de inicio.<br>Para ver la información de una fecha determinada, configúrala tanto para la fecha de inicio como para la fecha de fin.
+
+## Descargar el reporte {#download-the-report}
+Para descargar el reporte, haz clic en el botón _**Descargar**_ ubicado en la parte superior o inferior de la tabla del reporte. 
+
+![PrintScreen](/assets/Reports/Reports_08_es.png)
+
+Aparece una barra de progreso en la parte superior de la pantalla. Una vez finalizado el proceso, el reporte se descarga automáticamente en formato Excel (_.csv_). El nombre del reporte usa el formato _**[FechaDescargaEnMilisegundos]\_payment\_orders\_[AccountId].csv**_.
 
 ![PrintScreen](/assets/Reports/Reports_09.png)
 
 {{% alert title="Nota" color="info"%}}
-The generated report is stored during 90 days in the [My downloaded reports]({{< ref "Reports.md#my-downloaded-reports" >}}) section.
+El reporte generado es almacenado durante 90 días en la sección [Mis reportes descargados]({{< ref "Reports.md#my-downloaded-reports" >}}).
 {{% /alert %}}

@@ -91,7 +91,7 @@ Aparece un mensaje informado que has activado el plugin. Además, el ícono camb
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_09.jpg)
 
-3. En la ventana que se abre, haz clic en _**New**_ para crear el medio de pago utilizando el plugin `PayuLatam`.
+3. En la ventana que se abre, haz clic en _**New**_ para crear el método de pago utilizando el plugin `PayuLatam`.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_10.jpg)
 
@@ -116,7 +116,7 @@ Independiente de la versión de VirtueMart que utilices, configura las siguiente
 
 | Campo                                | Valor                                                                                 |
 |--------------------------------------|---------------------------------------------------------------------------------------|
-| Logo                                 | Logo mostrado para el medio de pago **PayuLatam**.                                    |
+| Logo                                 | Logo mostrado para el método de pago **PayuLatam**.                                    |
 | Test URL                             | URL de la pasarela para Pruebas: `https://sandbox.gateway.payulatam.com/ppp-web-gateway`. |
 | Production URL                       | URL de la pasarela para Producción: `https://gateway.payulatam.com/ppp-web-gateway`.  |
 | Test Mode                            | Selecciona **Yes** si quieres hacer transacciones en el ambiente de pruebas. Cuando activas esta opción, VirtueMart utiliza la URL configurada en la variable **Test URL**.                                        |
@@ -125,5 +125,5 @@ Independiente de la versión de VirtueMart que utilices, configura las siguiente
 | API Key                              | Llave única de tu comercio, puedes obtener esta información en tu Módulo PayU.        |
 | Sección **ORDER STATUS PARAMS**<br><ul style="margin-bottom: initial;"><li>Approved Transactions</li><li>Pending Transactions</li><li>Declined Transactions</li></ul> | Define el estado de la orden en VirtueMart de acuerdo con el estado de la transacción retornado por PayU. Sugerimos dejar los estados predeterminados; sin embargo, puedes configurarlos de acuerdo a tu necesidades.            |
 | Currency                             | Configura USD. También, puedes configurar la moneda del país de tu Account ID.        |
-| Minimum Value / Maximum value        | El valor total de la orden debe estar en este rango para activar el medio de pago **PayuLatam**. |
+| Minimum Value / Maximum value        | El valor total de la orden debe estar en este rango para activar el método de pago **PayuLatam**. |
 | Tax                                  | Para utilizar esta opción, configura la regla correspondiente de VirtueMart asociada al impuesto. Por ejemplo, el IVA en Colombia. |

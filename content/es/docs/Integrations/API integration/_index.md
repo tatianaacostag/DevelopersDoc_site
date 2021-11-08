@@ -10,7 +10,7 @@ tags: ["parenttopic"]
 
 Puedes contactar tu tienda en línea a la plataforma de PayU y el proceso de checkout será manejado en tu página web. Para integrar esta opción, debes tener una cuenta de PayU empresarial y habilidades de programación avanzadas.
 
-Accede a múltiples medios de pago (varía por país) incluyendo tarjetas de crédito, transferencias bancarias y pagos en efectivo.
+Accede a múltiples métodos de pago (varía por país) incluyendo tarjetas de crédito, transferencias bancarias y pagos en efectivo.
 
 ![API integration](/assets/api1-es.png)
 

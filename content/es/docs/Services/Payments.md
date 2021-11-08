@@ -3,7 +3,7 @@ title: "Pagos"
 linkTitle: "Pagos"
 date: 2021-03-25T14:28:20-05:00
 description: >
-  La funcionalidad de Pagos le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  La funcionalidad de Pagos le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 10
 ---
 
@@ -30,7 +30,7 @@ El flujo de dos pasos no está soportado para Colombia y Panamá. Para Chile, es
 {{% /alert %}}
 
 ### Métodos de pago {#payment-methods}
-Los medios de pago disponibles utilizados para procesar transacciones son:
+Los métodos de pago disponibles utilizados para procesar transacciones son:
 
 * Tarjetas de crédito.
 * Pagos en efectivo o en bancos.
@@ -38,11 +38,11 @@ Los medios de pago disponibles utilizados para procesar transacciones son:
 
 {{% alert title="Nota" color="info"%}}
 
-Consulta [este artículo]({{< ref "Select-your-payment-method.md" >}}) para conocer los medios de pago disponibles para los compradores por país.
+Consulta [este artículo]({{< ref "Select-your-payment-method.md" >}}) para conocer los métodos de pago disponibles para los compradores por país.
 
 {{% /alert %}}
 
 ## ¿Qué sigue? {#whats-next}
-La integración con esta funcionalidad depende del país de tus transacciones, la operación seleccionada y el medio de pago.
+La integración con esta funcionalidad depende del país de tus transacciones, la operación seleccionada y el método de pago.
 
 {{< payments/countries >}}

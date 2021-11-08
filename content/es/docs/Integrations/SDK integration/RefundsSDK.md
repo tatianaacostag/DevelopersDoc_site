@@ -55,7 +55,7 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 * El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 90 días.
 * No se soportan reembolsos con decimales.
 * Cuando se aprueba un reembolso, el pagador obtiene su dinero en 8 a 20 días hábiles.
-* Los reembolsos parciales para transacciones qu utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.
+* Los reembolsos parciales para transacciones que utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.
 * El valor mínimo para enviar un Reembolso es 10 CLP.
 
 ### Colombia

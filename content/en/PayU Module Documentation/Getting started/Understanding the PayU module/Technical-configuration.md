@@ -4,13 +4,13 @@ linkTitle: "Technical Configuration"
 date: 2021-08-13T12:19:55-05:00
 type: docs
 Description: >
-  Find here all the details that help you to integrate your Website using any of the [integrations](/docs/integrations.html) we provide.
+  Find here all the details that help you to integrate your Website using any of the [integrations](/en/docs/integrations.html) we provide.
 weight: 20
 tags: ["subtopic"]
 ---
 
 ## Getting Technical information
-Regardless of the [integration](/docs/integrations.html) you use, you require the following variables in the request of the methods or in their.
+Regardless of the [integration]({{< ref "integrations" >}}) you use, you require the following variables in the request of the methods or in their parameters.
 
 ### Merchant and account IDs
 These values allows you to authenticate both your merchant and your account when using any of the integrations to use the services we provide.
@@ -45,7 +45,7 @@ To configure this information, click _**Settings**_ and then select _**Technical
 
 ![PrintScreen](/assets/IntegrationVariables_01.png)
 
-In the Technical configuration window, you can find two tab according to your needs: _**Payments**_ or _**Disputes**_.
+In the _**Technical configuration**_ window, you find two tab according to your needs: _**Payments**_ or _**Disputes**_.
 
 ![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_01.png)
 

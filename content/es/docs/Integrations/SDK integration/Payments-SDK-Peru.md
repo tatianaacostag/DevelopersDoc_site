@@ -3,7 +3,7 @@ title: "SDK de Pagos - Perú"
 linkTitle: "SDK de Pagos - Perú"
 date: 2021-06-25T17:26:53-05:00
 description: >
-  El SDK de Pagos de Perú le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El SDK de Pagos de Perú le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 70
 tags: ["subtopic"]
 ---
@@ -38,7 +38,7 @@ El SDK de pagos incluye los siguientes métodos:
 
 * [Enviar transacciones con tarjeta de crédito]({{< ref "#submit-transaction-with-credit-card" >}})
 * [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -49,7 +49,7 @@ Para confirmar el estado de una transacción, puedes utilizar el [SDK de Consult
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Perú, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 ### Consideraciones {#considerations}
-* Envía un medio de pago válido de tarjeta de crédito, [mira los medios de pago disponibles para Perú]({{< ref "select-your-payment-method.html#Peru" >}}).
+* Envía un método de pago válido de tarjeta de crédito, [mira los métodos de pago disponibles para Perú]({{< ref "select-your-payment-method.html#Peru" >}}).
 * Para pagos con tókenes de tarjeta de crédito, asigna los parámetros `TOKEN_ID` y `CREDIT_CARD_SECURITY_CODE` (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, refer to [Tokenization API]({{< ref "TokenizationSDK.md" >}}).
 * Por defecto, no está activo el procesamiento de tarjetas de crédito sin código de seguridad. Si quieres activar esta funcionalidad, contacta a tu representante de ventas. Luego de que se te active esta funcionalidad, asigna el parámetro `PROCESS_WITHOUT_CVV2` con true y elimina el parámetro `CREDIT_CARD_SECURITY_CODE`.
 * En Perú, puedes seleccionar 0 o de 2 a 26 cuotas cuando pagas con tarjeta de crédito. Si seleccionas una (1) cuota, PayU envía cero (0) como valor por defecto.
@@ -577,7 +577,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
    - **REFERENCE**: referencia de pago interna generada por PayU.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
 ### Llamado del método {#method-call}
@@ -800,8 +800,8 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Llamado del método {#method-call-1}
 Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.

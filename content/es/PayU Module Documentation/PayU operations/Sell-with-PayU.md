@@ -1,30 +1,30 @@
 ---
-title: "Sell With PayU"
-linkTitle: "Sell With PayU"
+title: "Vende con PayU"
+linkTitle: "Vende con PayU"
 date: 2021-09-03T16:44:19-05:00
 type: docs
 Description: >
-  Learn how to create tools to make sells using the PayU module without having a Web page.
+  Aprende cómo crear herramientas para realizar ventas utilizando el módulo PayU sin tener una página Web.
 weight: 10
 ---
-Currently, e-commerce it's no longer a taboo. Before, people used to think that selling online require a high technical knowledge y programming skills.
+Actualmente el comercio electrónico ha dejado de ser un tabú. Antes se tenía la creencia de que para vender de manera virtual era necesario tener altos conocimientos técnicos de programación. 
 
-Nevertheless, beyond the knowledge, the key is to have the best allies and, mainly, use the best strategies that allows the growth of your product.
+Sin embargo, se ha comprobado que más allá de los conocimientos, la clave está en tener buenos aliados y sobretodo utilizar buenas estrategias que permitan el crecimiento de tu negocio. 
 
-PayU offers the best payment gateway to help your shop sell online even if your don't have a web page.
+PayU ofrece la mejor pasarela de pago para ayudar a tu negocio a vender en línea, incluso si no tienes una página web.
 
-## How to sell using PayU?
-Through PayU Module, you have the tools to start selling online fast y easy, no matter if you don't have a web page. 
+## ¿Cómo empezar a vender utilizando PayU? {#how-to-sell-using-payu}
+A través del Módulo PayU, tienes las herramientas para comenzar a vender en línea rápido y fácil, sin importar si no tienes una página web.
 
-To sell with PayU, you just need an active account in the PayU Module y configure the tool to receive the payment.
+Para vender con PayU, solo necesitas una cuenta activa en el Módulo PayU y configurar la herramienta para recibir el pago.
 
-## What tools are available?
-There are two options to create payments using the PayU Module:
+## ¿Qué herramientas hay disponibles? {#what-tools-are-available}
+Hay dos opciones para crear pagos usando el Módulo PayU:
 
-{{< overview/paymentrequests >}}
+{{< overview/paymentrequests_es >}}
 
 {{% alert title="Nota" color="info"%}}
-Review [Integrations]({{< ref "integrations" >}}) if you already have a web page y you want to integrate with the PayU services.
+Revisa [Integraciones]({{< ref "integrations" >}}) si ya cuentas con una página web y quieres integrarte con los servicios de PayU.
 {{% /alert %}}
 
 

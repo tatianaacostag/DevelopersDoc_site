@@ -3,7 +3,7 @@ title: "SDK de Pagos - México"
 linkTitle: "SDK de Pagos - México"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 50
 tags: ["subtopic"]
 ---
@@ -40,7 +40,7 @@ El SDK de pagos incluye los siguientes métodos:
 * [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
 * [Enviar transacciones con transferencia bancaria]({{< ref "#submit-transaction-with-bank-transfer" >}})
 * [Enviar transacciones con referencia bancaria]({{< ref "#submit-transaction-with-bank-reference" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -55,7 +55,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 {{% /alert %}}
 
 ### Consideraciones {#considerations}
-* Envía un medio de pago válido de tarjeta de crédito en la petición, [mira los medios de pago disponibles para México]({{< ref "select-your-payment-method.html#Mexico" >}}).
+* Envía un método de pago válido de tarjeta de crédito en la petición, [mira los métodos de pago disponibles para México]({{< ref "select-your-payment-method.html#Mexico" >}}).
 * Para pagos con Promociones, asigna los parámetros `INSTALLMENTS_NUMBER` y `PROMOTION_ID` con el número de cuotas seleccionadas y el ID de la promoción. Consulta el [API de promociones] ({{< ref "Promotions.md" >}}) para más información.
 * Cuando utilices promociones o apliques cuotas, debes mostrar siempre la frase **"PAGOS DIFERIDOS"** durante el proceso de pago.
 * Cuando se apliquen cuotas (cargos asumidos por el pagador), muestra el monto original de la transacción, el monto luego de las cuotas, el número de cuotas y el monto por cuota incluyendo el valor adicional.
@@ -587,15 +587,15 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 <img src="/assets/Payments/CashReceiptMX.png" alt="PrintScreen" width="50%">
 
 ### Consideraciones {#considerations-2}
-* Envía un método de pago válido en efectivo, [mira los medios de pago disponibles para México]({{< ref "select-your-payment-method.html#Mexico" >}}).
+* Envía un método de pago válido en efectivo, [mira los métodos de pago disponibles para México]({{< ref "select-your-payment-method.html#Mexico" >}}).
 * El parámetro `EXPIRATION_DATE` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto
-* Cuando el medio de pago es `OXXO`, la confirmación del pago será un día después del mismo. Para otros medios de pago en efectivo, la confirmación es en línea.
+* Cuando el método de pago es `OXXO`, la confirmación del pago será un día después del mismo. Para otros métodos de pago en efectivo, la confirmación es en línea.
 * Los extra parámetros tienen las siguiente información relacionada con la transacción:
    - **BANK_REFERENCED_CODE**: tipo de pago.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago.
    - **REFERENCE**: referencia de pago interna generada por PayU. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
    - **PAYMENT_WAY_ID**: red financiera del tipo de pago.
 
@@ -818,14 +818,14 @@ if ($response) {
 {{< /tabs >}}
 
 ## Enviar transacciones con transferencia bancaria {#submit-transaction-with-bank-transfer}
-Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este medio de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.<br>
+Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.<br>
 Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.
 
 <img src="/assets/Payments/BankTransferReceiptMX.png" alt="PrintScreen" width="50%">
 
 ### Consideraciones {#considerations-3}
 * El parámetro `EXPIRATION_DATE` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto
-* Cuando el pagador selecciona este medio de pago, PayU crea una orden en estado _in progress_ y una transacción en estado pendiente (`PENDING`).
+* Cuando el pagador selecciona este método de pago, PayU crea una orden en estado _in progress_ y una transacción en estado pendiente (`PENDING`).
 * Para realizar el pago, el pagador debe iniciar sesión en la sucursal virtual de su banco (el banco debe aparecer en la lista de bancos disponibles de SPEI).<br>Primero, el pagador debe registrar la cuenta CLABE de PayU en la sucursal de su banco. Una vez la cuenta CLABE esté activa para realizar transferencias, el pagador debe ingresar en su sucursal virtual, la referencia retornada por PayU en el parámetro `trazabilityCode` y el monto tal y como PayU lo retornó.
 * En el cuerpo de la respuesta, puedes encontrar las variables para generar el recibo de pago (voucher) y la URL del mismo generado en formato HTML y PDF. Si quieres generar el voucher, utiliza las siguientes variables:
   - **trazabilityCode**: identificador único de máximo 7 dígitos; corresponde a la referencia de pago que debe ingresar el pagador en la sucursal virtual. Es obligatorio ingresar el mismo valor en el campo referencia de la sucursal virtual para que el pago sea exitoso.
@@ -1074,7 +1074,7 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
    - **REFERENCE**: referencia de pago interna generada por PayU.
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.
    - **BAR_CODE**: código de barras que le permite al pagador realizar el pago. 
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago con referencia bancaria. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago con referencia bancaria. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
 ### Llamado del método {#method-call-2}
@@ -1291,8 +1291,8 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Llamado del método {#method-call-3}
 Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación. 

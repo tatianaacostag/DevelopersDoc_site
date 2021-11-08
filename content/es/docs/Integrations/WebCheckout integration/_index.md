@@ -23,7 +23,7 @@ El procedimiento para permitir que tus clientes paguen utilizando los servicios 
 
 ![WebCheckout integration](/assets/paso1-es.jpg)
 
-2. Para el procesamiento del pago, tu cliente es redirigido a nuestro Checkout donde puede seleccionar el medio de pago.<br>PayU soporta varios medios de pago que se ajustan con las necesidades de tu cliente de acuerdo con el país en el que proceses la compra, [mira los medios de pago disponibles]({{< ref "select-your-payment-method.html" >}}).
+2. Para el procesamiento del pago, tu cliente es redirigido a nuestro Checkout donde puede seleccionar el método de pago.<br>PayU soporta varios métodos de pago que se ajustan con las necesidades de tu cliente de acuerdo con el país en el que proceses la compra, [mira los métodos de pago disponibles]({{< ref "select-your-payment-method.html" >}}).
 
 ![WebCheckout integration](/assets/paso2-es.jpg)
 

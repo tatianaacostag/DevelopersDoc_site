@@ -62,7 +62,7 @@ El plugin de PayU Latam para osCommerce solo está disponible para inglés, espa
 ![PrintScreen](/assets/oscommerce/oscommerce_08.jpg)
 
 ## Configuración {#configuration}
-1. En la sección Payment, selecciona el medio de pago _**Payu Latam**_ y haz clic en el botón _**Edit**_ en el panel de la derecha.
+1. En la sección Payment, selecciona el método de pago _**Payu Latam**_ y haz clic en el botón _**Edit**_ en el panel de la derecha.
 
 ![PrintScreen](/assets/oscommerce/oscommerce_09.jpg)
 

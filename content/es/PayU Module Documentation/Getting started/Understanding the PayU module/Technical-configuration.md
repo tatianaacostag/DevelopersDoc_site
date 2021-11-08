@@ -1,83 +1,83 @@
 ---
-title: "Technical Configuration"
-linkTitle: "Technical Configuration"
+title: "Configuración técnica"
+linkTitle: "Configuración técnica"
 date: 2021-08-13T12:19:55-05:00
 type: docs
 Description: >
-  Find here all the details that help you to integrate your Website using any of the [integrations](/docs/integrations.html) we provide.
+  Encuentra aquí todos los detalles que te ayudarán a integrar tu página web usando cualquiera de nuestras [integraciones](/es/docs/integrations.html).
 weight: 20
 tags: ["subtopic"]
 ---
 
-## Getting Technical information
-Regardless of the [integration](/docs/integrations.html) you use, you require the following variables in the request of the methods or in their.
+## Obtener la información técnica {#getting-technical-information}
+Independiente de la [integración]({{< ref "integrations" >}}) que utilices, necesitas las siguientes variables en la petición de los métodos o en sus parámetros.
 
-### Merchant y account IDs
-These values allows you to authenticate both your merchant y your account when using any of the integrations to use the services we provide.
+### Merchant y account IDs {#merchant-and-account-ids}
+Estos valores te permiten autenticar tanto a tu comercio (Merchant ID) como a su cuenta (Account ID) cuando utilizas cualquiera de las integraciones para utilizar los servicios que brindamos.
 
-When you log in your PayU module, both values are accessible in the left panel.
+Cuando inicias sesión en tu módulo PayU, encuentras ambos valores en el panel izquierdo.
 
-<img src="/assets/Merchant_Ids.png" alt="PrintScreen" width="60%"/>
+<img src="/assets/Merchant_Ids_es.png" alt="PrintScreen" width="60%"/>
 
-### API key y API Login
-1. In the PayU module, click _**Configuración**_ y then select _**Configuración técnica**_.
+### API key y API Login {#api-key-and-api-login}
+1. En el módulo PayU, haz clic en _**Configuración**_ y luego selecciona _**Configuración técnica**_.
 
-![PrintScreen](/assets/IntegrationVariables_01.png)
+![PrintScreen](/assets/IntegrationVariables_01_es.png)
 
-2. In this window, you find both the API key y API Login which allows you to authenticate you commerce during the integration procedure.
+2. En esta ventana, encontrarás tanto el API key como el API Login que permiten autenticar a tu comercio durante el proceso de integración.
 
-![PrintScreen](/assets/IntegrationVariables_02.png)
+![PrintScreen](/assets/IntegrationVariables_02_es.png)
 
 {{% alert title="Advertencia" color="warning"%}}
 
-Both keys are unique per commerce in PayU, therefore, you must keep this information secured y their usage or disclosure is under your responsibility. 
+Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta información asegurada y su uso o distribución se hace bajo tu responsabilidad. 
 
 {{% /alert %}} 
 
-## Configuring technical information
-In this section, you can configure the technical properties of each active account, such as:
-* URL settings for confirmation y response pages.
-* Enable the send e-mails to the buyer y to your store when a sale takes place.
-* Enable notifications for Disputas process.
-* Select if your payments are processed in test mode or live.
+## Configurar la información técnica {#configuring-technical-information} 
+En esta sección podrás configurar propiedades técnicas pertenecientes a cada cuenta activa como:
+* La configuración de URLs para las páginas de Respuesta y Confirmación
+* Habilitar las opciones de envío de correos al comprador y a tu comercio al momento de realizar una venta.
+* Habilitar las notificaciones para el proceso de Disputas.
+* Seleccionar si tus pagos se procesan en modo pruebas o en producción
 
-To configure this information, click _**Configuración**_ y then select _**Configuración técnica**_.
+Para configurar esta información, haz clic en _**Configuración**_ y luego selecciona _**Configuración técnica**_.
 
-![PrintScreen](/assets/IntegrationVariables_01.png)
+![PrintScreen](/assets/IntegrationVariables_01_es.png)
 
-In the Configuración técnica window, you can find two tab according to your needs: _**Payments**_ or _**Disputas**_.
+En la ventana _**Configuración técnica**_, encuentras dos pestañas de acuerdo a tus necesidades: _**Pagos**_ o _**Disputas**_.
 
-![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_01.png)
+![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_01_es.png)
 
-### Payments
-In this tab, you can configure the following information.
+### Pagos {#payments}
+En esta pestaña puedes configurar la siguiente información.
 
-![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_02.png)
-
-<div class="variables"></div>
-
-| Parameter | Descripción |
-|---|---|
-| Your payments are processed | Select whether your transactions are processed _In Production_ or _In Test mode_. When processing _In Test mode_, the transactions done through your website or through payment requests, are marked as a test y the payment is not real. |
-| Response URL | The page to which the buyer is direct once the transaction in PayU ends. This page displays the status of the transaction. |
-| Confirmation URL | The page to which PayU sends the payment confirmation to your system. This is useful when you want to update stocks y database once the transaction reaches its final state.<br>This parameter is not mandatory. |
-| Control duplicate payments | When enabling this option, We validate that each payment reference sent to our system is unique. Otherwise, you can send the same reference for all your sales. |
-| Notifications of processed payments | This option lets you enable the send of an e-mail to the payer or to you when the payment was approved or rejected. |
-
-### Disputas
-In this tab, you can configure the following information of the [dispute]({{< ref "Disputes-MP.md" >}}) process.
-
-![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_03.png)
+![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_02_es.png)
 
 <div class="variables"></div>
 
-| Parameter | Descripción |
+| Parámetro | Descripción |
 |---|---|
-| Notification e-mails | Set the e-mail addresses to be notified when a dispute process has been started. |
-| Automatic notification URL | If you enable this option, you can set the URL to which PayU sends the notification of a dispute process. |
+| Tus pagos se procesan | Selecciona si tus transacciones son procesadas _En Producción_ o en _Modo prueba_. Cuando procesas en _Modo prueba_, las transacciones realizadas a través de tu página web o a través de solicitudes de pago son marcadas como de prueba y el pago no es real. |
+| URL de respuesta | Es la página a la cual se redirecciona el comprador una vez finaliza la transacción en PayU, en esta página se muestra el estado de la transacción. |
+| URL de confirmación | Es la página a la cual PayU envía la confirmación del pago a tu sistema. Esto es útil para actualizar inventarios y bases de datos una vez la transacción llegue a su estado final.<br>Esta página no es obligatoria. |
+| Controlar pagos dobles | Al habilitar esta opción, validamos que la referencia de cada pago enviado a nuestro sistema sea única. En caso contrario, podrás enviar una misma referencia para todas tus ventas. |
+| Notificaciones de pagos procesados | Esta opción te permite enviar un correo electrónico al pagador o a ti cuando el pago sea aprobado o rechazado. |
+
+### Disputas {#disputes}
+En esta pestaña puedes configurar la siguiente información del proceso de [disputas]({{< ref "Disputes-MP.md" >}}).
+
+![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_03_es.png)
+
+<div class="variables"></div>
+
+| Parámetro | Descripción |
+| --- | --- |
+| Correos de notificaciones | Configura las direcciones de correo electrónico para recibir notificaciones cuando se inicie un proceso de disputa. |
+| URL de notificación automática | Si habilitas esta opción, puedes establecer la URL a la que PayU envía la notificación de un proceso de disputa. |
 
 {{% alert title="Nota" color="info"%}}
 
-To apply the changes you made, do not forget to click the _**Save changes**_ button.
+No olvides hacer clic en _**Guardar cambios**_ al final de la sección para aplicar los cambios.
 
 {{% /alert %}} 

@@ -1,36 +1,36 @@
 ---
-title: "Reports"
-linkTitle: "Reports"
+title: "Reportes"
+linkTitle: "Reportes"
 date: 2021-09-03T16:29:25-05:00
 type: docs
 Description: >
-  Learn how to consult your statements, transfers, sales, y further information your shop may require to meet regulations.
+  Aprende a consultar tus estados de cuenta, transferencias, ventas y más información que tu tienda pueda necesitar para cumplir con las regulaciones.
 weight: 50
 nosidetoc: true
 ---
 
-PayU provided a set of reports which can be accessible from the Merchant Panel to let you have control of the operations you perform with PayU.
+PayU proporciona un conjunto de reportes a los que puedes acceder desde el Módulo PayU con el fin de que tengas el control de las operaciones que realizas.
 
 {{% alert title="Nota" color="info"%}}
-Reports in the merchant panel are limited to **20 thousand** rows for both displaying y downloading. If you need to have custom reports or display more information, contact your sales representative.
+Los reportes en el Módulo PayU están limitados a **20 mil** filas para visualización y descarga. Si necesitas tener reportes personalizados o mostrar más información, comunícate con tu representante de ventas.
 {{% /alert %}}
 
-## My downloaded reports
-When you download a report, the generated fils is saved in this section to let you download it later as you require. PayU keeps the reports stored here for 90 days.
+## Mis reportes descargados {#my-downloaded-reports}
+Cuando descargas un reporte, los archivos generados se guardan en esta sección para que puedas descargarlos más tarde cuando los necesites. PayU mantiene los reportes almacenados aquí durante 90 días.
 
 {{% alert title="Nota" color="info"%}}
-This section does not store the Colombian Withholding certificates.
+Esta sección no almacena los certificados de retenciones colombianos.
 {{% /alert %}}
 
-To open this section, go to any of the available reports y click _**My downloads**_ button located at the top y the bottom of the report table.
+Para abrir esta sección, ve a cualquiera de los reportes disponibles y haz clic en el botón _**Mis descargas**_ ubicado en la parte superior e inferior de la tabla de reporte.
 
-![PrintScreen](/assets/Reports/Reports_01.png)
+![PrintScreen](/assets/Reports/Reports_01_es.png)
 
-The _**My downloaded reports**_ section appears listing the latest reports generated in the last 90 days. Take into account that newest download records may not be ready yet, if you requested a report recently y is not in the table, try again later.
+Aparece la sección _**Mis reportes descargados**_ listando los últimos reporte generados en los últimos 90 días. Ten en cuenta que los registros más recientes puede que no estén listos aún, si generaste un reporte recientemente y no está en la tabla, intenta más tarde.
 
-![PrintScreen](/assets/Reports/Reports_02.png)
+![PrintScreen](/assets/Reports/Reports_02_es.png)
 
-To download a report, use the download icon <img src="/assets/Reports/Reports_03.png" width="2%" style="vertical-align: top;"/>.
+Para descargar un reporte, utiliza el ícono de descarga <img src="/assets/Reports/Reports_03.png" width="2%" style="vertical-align: top;"/>.
 
-## Reports available
-PayU provides the following reports to monitor your account.
+## Reportes disponibles {#reports-available}
+PayU proporciona los siguientes reportes para monitorear tu cuenta.

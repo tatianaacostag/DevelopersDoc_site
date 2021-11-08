@@ -38,7 +38,7 @@ weight: 50
 | `EXPIRED_TRANSACTION` | La transacción expiró.|
 | `PENDING_TRANSACTION_REVIEW` | La transacción fue detenida y debe ser revisada, esto puede ocurrir por filtros de seguridad. |
 | `PENDING_TRANSACTION_CONFIRMATION`| La transacción está pendiente de ser confirmada. |
-| `PENDING_TRANSACTION_TRANSMISSION` | La transacción está pendiente para ser trasmitida a la red financiera. Normalmente esto aplica para transacciones con medios de pago en efectivo. |
+| `PENDING_TRANSACTION_TRANSMISSION` | La transacción está pendiente para ser trasmitida a la red financiera. Normalmente esto aplica para transacciones con métodos de pago en efectivo. |
 | `PAYMENT_NETWORK_BAD_RESPONSE` | El mensaje retornado por la red financiera es inconsistente. |
 | `PAYMENT_NETWORK_NO_CONNECTION` | No se pudo realizar la conexión con la red financiera. |
 | `PAYMENT_NETWORK_NO_RESPONSE` | La red financiera no respondió. |
@@ -154,7 +154,7 @@ weight: 50
 |  | PAYMENT_NETWORK_BAD_RESPONSE | 9999 | Error interno |
 | 5 (Expirada) | EXPIRED_TRANSACTION | 20 | Transacción expirada |
 
-## Códigos de los medios de pago {#codes-of-the-payment-methods}
+## Códigos de los métodos de pago {#codes-of-the-payment-methods}
 Los siguientes códigos aplican para `payment_method_type` (Página de confirmación), `payment_method_id` (Página de confirmación) y `polPaymentMethodType` (Página de respuesta).
 
 | Código | lapPaymentMethodType<br>(Página de respuesta) | Descripción                   |
@@ -174,7 +174,7 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 |-----------------------|-----------------------------------------------------------------------------|
 | `PING`                | Utilizado para realizar ping al servicio.                                   |
 | `SUBMIT_TRANSACTION`  | Utilizado para enviar transacciones de cualquier tipo.                      |
-| `GET_PAYMENT_METHODS` | Utilizado para consultar los medios de pago disponibles para el comercio.   |
+| `GET_PAYMENT_METHODS` | Utilizado para consultar los métodos de pago disponibles para el comercio.   |
 | `GET_BANKS_LIST`      | Utilizado para obtener el listado de bancos para las transacciones con PSE. |
 
 ## Comandos aceptados por el API de consultas {#commands-accepted-by-the-query-api}

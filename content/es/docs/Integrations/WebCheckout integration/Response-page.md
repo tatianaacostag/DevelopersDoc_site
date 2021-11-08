@@ -43,8 +43,8 @@ Variables enviadas a la Página de respuesta.
 | referenceCode |  Alfanumérico | 255 | Referencia de la venta o la orden. Debe ser única por cada transacción enviada al sistema. | — |
 | reference_pol |  Alfanumérico | 255 | Referencia o número de transacción generado por PayU. | — |
 | signature |  Alfanumérico | 255 | Firma digital creada por cada transacción. | — |
-| polPaymentMethod |  Alfanumérico | 255 | Identificador interno utilizado por los medios de pago. | — |
-| polPaymentMethodType |  Numérico | 2 | Medio de pago utilizado.<br>[Ver los códigos de los medios de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). | — |
+| polPaymentMethod |  Alfanumérico | 255 | Identificador interno utilizado por los métodos de pago. | — |
+| polPaymentMethodType |  Numérico | 2 | Método de pago utilizado.<br>[Ver los códigos de los métodos de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). | — |
 | installmentsNumber |  Numérico | 2 | Número de cuotas en las cuales se difirió el pago con tarjeta crédito. | — |
 | TX_VALUE |  Numérico | 14,2 | Valor total de la transacción. Puede contener dos dígitos decimales. Por ejemplo 10000.00 o 10000. | — |
 | TX_TAX |  Numérico | 14,2 | Valor del IVA de la transacción, si no se envió IVA, el sistema aplica el 19% automáticamente.<br>Puede contener dos dígitos decimales. Por ejemplo 19000.00.<br>En caso de que no tenga IVA, debe enviarse 0. | — |
@@ -56,8 +56,8 @@ Variables enviadas a la Página de respuesta.
 | lng |  Alfanumérico | 2 | Idioma en el que se quiere mostrar la pasarela de pagos. | — |
 | description |  Alfanumérico | 255 | Descripción de la venta. | — |
 | lapResponseCode | Alfanumérico | 64 | Código de Respuesta entregado por PayU.<br>[Ver los códigos de respuesta en la columna respectiva]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
-| lapPaymentMethod |  Alfanumérico | 255 | Medio de pago utilizado, por ejemplo VISA. | — |
-| lapPaymentMethodType |  Alfanumérico | 255 | Tipo del medio de pago utilizado, por ejemplo CREDIT_CARD. | — |
+| lapPaymentMethod |  Alfanumérico | 255 | Método de pago utilizado, por ejemplo VISA. | — |
+| lapPaymentMethodType |  Alfanumérico | 255 | Tipo del método de pago utilizado, por ejemplo CREDIT_CARD. | — |
 | lapTransactionState |  Alfanumérico | 32 | Estado de la transacción.<br>[Ver los estados de la transacción en la columna respectiva]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
 | message |  Alfanumérico | 255 | Descripción del estado de la transacción. | — |
 | extra1 |  Alfanumérico | 255 | Campo adicional para enviar información relacionada con la compra. | — |

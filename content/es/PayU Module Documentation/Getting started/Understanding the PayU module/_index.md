@@ -35,7 +35,7 @@ Este panel tiene las opciones requeridas para manejar las cuentas asociadas al c
 
 | Opción | Subopción | Disponible en | Descripción |
 |---|---|:---:|---|
-| Merchant ID |  | <img src="/assets/World.png" width="20px"/> | Número de identificación de tu comercio en el sistema de PayU. Este identificador es requerido cuando utilizas [Integraciones](/es/docs/integrations.html).  |
+| Merchant ID |  | <img src="/assets/World.png" width="20px"/> | Número de identificación de tu comercio en el sistema de PayU. Este identificador es requerido cuando utilizas [Integraciones]({{< ref "integrations" >}}).  |
 | Cuenta | Información de la cuenta | <img src="/assets/World.png" width="20px"/> | Muestra en nombre e identificador de la cuenta seleccionada.<br>Esta opción también le permite cambiar la cuenta y realizar operaciones relacionadas. Haz clic en el simbolo **▾** para encontrar estas opciones o cambiar la cuenta.<br><br><img src="/assets/MerchantPanel/MerchantPanel_02_es.png" alt="PrintScreen" width="40%"/> |
 |  | Datos de mi negocio | <img src="/assets/World.png" width="20px"/> | Muestra la ubicación y la información de contacto principal de su negocio. Además, esta opción muestra las personas asociadas con su negocio. |
 |  | Datos de ventas | <img src="/assets/World.png" width="20px"/> | Muestra la información de cómo realizas tus ventas, qué vendes, el logo de tu tienda, información de entrega, cómo ofreces tus productos o servicios y cómo tus clientes pueden contactarte. |
@@ -43,12 +43,13 @@ Este panel tiene las opciones requeridas para manejar las cuentas asociadas al c
 |  | Cuentas creadas | <img src="/assets/World.png" width="20px"/> | Muestra la lista de cuentas disponibles en su comercio. |
 | Saldo disponible | | <img src="/assets/World.png" width="20px"/> | Muestra el saldo disponible en la cuenta seleccionada. |
 | Inicio | | <img src="/assets/World.png" width="20px"/> | Muestra la página de bienvenida del módulo PayU. Para más información, consulta la página de [Inicio]({{< ref "#home-page" >}}). |
-| Transacciones | Reporte de ventas | <img src="/assets/World.png" width="20px"/> | Revisa el detalle de los pagos recibidos, incluyendo medios de pago más utilizados y clientes frecuentes. Para más información, consulta [Reporte de ventas]({{< ref "Sales-report.md" >}}). |
+| Transacciones | Reporte de ventas | <img src="/assets/World.png" width="20px"/> | Revisa el detalle de los pagos recibidos, incluyendo métodos de pago más utilizados y clientes frecuentes. Para más información, consulta [Reporte de ventas]({{< ref "Sales-report.md" >}}). |
 | | Disputas | <img src="/assets/World.png" width="20px"/> | Gestiona el proceso de disputas generadas en tu cuenta PayU. Para más información, consulta [Disputas]({{< ref "Disputes-MP.md" >}}). |
 | | Balance financiero | <img src="/assets/World.png" width="20px"/> | Te permite entender el flujo de dinero de tu cuenta, los cargos aplicados, las tarifas relacionadas y los impuestos. Para más información, consulta [Balance financiero]({{< ref "Financial-Statement.md" >}}). |
 | | Certificado de Retenciones | <img src="/assets/Colombia.png" width="20px"/> | Descarga tu Certificado de Retenciones de acuerdo con el periodo de tiempo seleccionado. Para más información, consulta [Certificado de Retenciones]({{< ref "Withholding-Certificate.md" >}}). |
 | Transferencias | Transferencias | <img src="/assets/Argentina.png" width="20px"/><img src="/assets/Chile.png" width="20px"/><img src="/assets/Colombia.png" width="20px"/><br><img src="/assets/Mexico.png" width="20px"/><img src="/assets/Panama.png" width="20px"/><img src="/assets/Peru.png" width="20px"/> | Te permite transferir los fondos recolectados en tu cuenta PayU a tu cuenta bancaria. Para más información, consulta [Transferencias]({{< ref"Transfers.md" >}}). |
 | | Programar transferencia | <img src="/assets/Argentina.png" width="20px"/><img src="/assets/Chile.png" width="20px"/><img src="/assets/Colombia.png" width="20px"/><br><img src="/assets/Mexico.png" width="20px"/><img src="/assets/Panama.png" width="20px"/><img src="/assets/Peru.png" width="20px"/> | Te permite crear transferencias diarias, semanales o mensuales. Además, puedes configurar transferencias personalizadas. Para más información, consulta [Programar transferencias]({{< ref"Transfers.md#schedule-transfers" >}}). |
+| | Transferencias diarias| <img src="/assets/Brasil.png" width="20px"/> | Como PayU en Brasil no es una institución de pago, los fondos recaudados en tu cuenta PayU se transfieren a tu cuenta bancaria diariamente. A través de este reporte, puedes conocer el estado de las transferencias diarias.<br>Este reporte solo está disponible para cuentas en Brasil y tiene las mismas columnas y opciones que el [reporte Transferencias]({{< ref"transfer-report.md" >}}). |
 | | Editar datos bancarios | <img src="/assets/World.png" width="20px"/> | Te permite solicitar el cambio de tu cuenta bancaria y el banco intermediario donde vas a transferir los fondos recolectados en esta cuenta. Para más información, consulta [Actualizar mi información]({{< ref"Update-my-information.md#request-the-change-of-your-bank-account" >}}) |
 | Cobra con PayU | Cobra en internet | <img src="/assets/World.png" width="20px"/> | Te permite crear solicitudes de pago para que puedas cobrarle a tus clientes sin tener una página Web. Para más información, consulta [Solicitud de pago]({{< ref"Payment-request.md" >}})  |
 | | Cobros en efectivo | <img src="/assets/Argentina.png" width="20px"/><img src="/assets/Colombia.png" width="20px"/> | Te permite generar cupones de pago o tarjetas de cobranza<sup>\*</sup> con la información necesaria para permitirle a tus clientes hacer pagos en efecto las veces que lo requieran en los puntos de pago disponibles. Para más información, consulta [Cupones de pago]({{< ref"Payment-coupons.md" >}}).<br><sup>\*</sup>_Las tarjetas de cobranza solo están disponibles en Argentina_. |
@@ -67,47 +68,47 @@ Esta opción te permite administrar usuarios, permisos, perfiles y la configurac
 | Opción | Disponible en | Descripción |
 |---|:---:|---|
 | Gestión de usuarios | <img src="/assets/World.png" width="20px"/> | Te permite otorgar acceso a los miembros de tu equipo para que puedan solicitar pagos en línea o validar información de los pagos. Para más información, consulta [Gestión de usuarios]({{< ref"User-management.md" >}}). |
-| Perfiles y permisos | <img src="/assets/World.png" width="20px"/> | Te permite create custom profiles with specific permissions.<br>In this section, you can also query the default permission included in the PayU Module. Para más información, consulta [Profile y permission management]({{< ref"Profile-and-permissions-management.md" >}}). |
-| Configuración técnica | <img src="/assets/World.png" width="20px"/> | In this option, you can find the variables required to integrate PayU with your Web page. Furthermore, you can configure the notifications of processed payments y Disputas. Para más información, consulta [Configuración técnica]({{< ref"Technical-configuration.md" >}}). |
+| Perfiles y permisos | <img src="/assets/World.png" width="20px"/> | Te permite create custom profiles with specific permissions.<br>En esta sección, puedes consultar los permisos predeterminados incluidos en el Módulo PayU. Para más información, consulta [Gestión de perfiles y permisos]({{< ref"Profile-and-permissions-management.md" >}}). |
+| Configuración técnica | <img src="/assets/World.png" width="20px"/> | En esta opción, puedes encontrar las variables requeridas para integrar PayU con tu página Web. Además, puedes configurar notificaciones de pagos procesados y Disputas. Para más información, consulta [Configuración técnica]({{< ref"Technical-configuration.md" >}}). |
 
-#### User settings
-This option allows you to manage your profile. In the main view of this option, you find your e-mail, your current profile in the PayU module (for the current account), y the account Id; click the **▾** symbol to display the available user settings.
+#### Configuraciones del usuario {#user-settings}
+Esta opción te permite administrar tu perfil. En la vista principal de esta opción, encuentras tu correo electrónico, tu perfil actual en el módulo PayU (para la cuenta actual), y el account Id; haz clic en el símbolo **▾** para mostrar las configuraciones de usuario disponibles.
 
 <div class="variables"></div>
 
-| Opción          | Descripción                                                                             |
-|-----------------|-----------------------------------------------------------------------------------------|
-| Change merchant | This option is available when your user is enrolled to more than one merchant.          |
-| My profile      | In this option, you can configure your preferences y update your password as desired. | 
-| Sign off        | This option closes the session of the active user.                                      |
+| Opción           | Descripción                                                                             |
+|------------------|-----------------------------------------------------------------------------------------|
+| Cambiar comercio | Esta opción está disponible cuando tu usuario está enrolado a más de un comercio.       |
+| Mi perfil        | En esta opción, puedes configurar tus preferencias y actualizar tu contraseña.          | 
+| Cerrar Sesión    | Esta opción cierra la sesión del usuario activo.                                        |
 
 ### 3. Panel principal {#3-main-panel}
-This panel loads the selected option either in the left panel or in the option at the top. The _**Inicio**_ page is selected by default, so it loads as soon as you log in the PayU module.
+Este panel panel carga la opción seleccionada en el panel de la izquierda o en la opción de la parte superior. La página _**Inicio**_ está seleccionada por defecto, por lo que se carga tan pronto inicias sesión en el módulo PayU.
 
-To set an option as displayed by default, click the three dot menu at the top left of the panel y select _**Set as main page**_.
+Para configurar una opción para que see muestre por defecto, haz clic en el menú de los tres puntos en la esquina superior derecha y selecciona _**Definir como página principal**_.
 
-<img src="/assets/MerchantPanel/MerchantPanel_04.png" alt="PrintScreen" width="40%"/>
+<img src="/assets/MerchantPanel/MerchantPanel_04_es.png" alt="PrintScreen" width="40%"/>
 
-#### Inicio page
-The home page is starting point of the Merchant panel. It shows the shortcuts to perform sales on-line, control your finances, transfers funds, learn about e-commerce y leave us comments.
+#### Página de Inicio {#home-page}
+La página de inicio es el punto de partida del Módulo PayU. Muestra los atajos para realizar ventas en línea, saber el estado de tud ventas, controlar tus finanzas, transferir fondos, aprender sobre comercio electrónico y dejarnos comentarios.
 
-![PrintScreen](/assets/MerchantPanel/MerchantPanel_05.png)
+![PrintScreen](/assets/MerchantPanel/MerchantPanel_05_es.png)
 
-In this page, you can also take a tour using the _**Virtual tour**_ button. This button takes your through the main options to manage your account.
+En esta página, puedes también tomar un tour utilizando el botón de _**Tour Virtual**_. Este botón te lleva a través de las opciones principales para administrar tu cuenta.
 
 {{% alert title="Nota" color="info"%}}
-Some options are attached to the permissions configured to your user.
+Lagunas opciones del tour están atadas a los permisos configurados a tu usuario.
 {{% /alert %}}
 
 ### 4. Pie de página {#4-footer}
-The footer provides the phone number to contact us y the link to the _**terms y conditions**_ according to the processing country.
+El pie de página muestra el número de teléfono para contactarnos y el enlace para leer los _**terminos y condiciones**_ de acuerdo con el país de procesamiento.
 
-The following are the phone numbers y contact time:
+Los siguientes son los números y hora de contacto:
 
-* <img src="/assets/Argentina.png" width="25px"/> (+5411) 598 42132 > Mon - Fri 09:00 - 22:00 (UTC -3:00)
-* <img src="/assets/Brasil.png" width="25px"/> (+5511) 4130 5311 > Mon - Fri 09h to 18h / Sat 09h to 15h - Brasilia Time Zone (UTC -3:00)
-* <img src="/assets/Chile.png" width="25px"/> (+562) 258-13949 > Mon - Fri 8:00 - 21:00 Chilean time
-* <img src="/assets/Colombia.png" width="25px"/> (+57) 601 654 0721 > Mon - Fri 7:00 - 20:00 Colombian time (UTC -5:00)
-* <img src="/assets/Mexico.png" width="25px"/> (+5255) 474 11439 > Mon - Fri 7:00 - 20:00 CDMX time
-* <img src="/assets/Panama.png" width="25px"/> (+507) 836 5577 > Mon - Fri 7:00 - 20:00 Colombian time (UTC -5:00)
-* <img src="/assets/Peru.png" width="25px"/> (+511) 708 5381 > Mon - Fri 7:00 - 20:00 Peruvian time (UTC -5:00)
+* <img src="/assets/Argentina.png" width="25px"/> (+5411) 598 42132 > Lun - Vie 09:00 - 22:00 (UTC -3:00)
+* <img src="/assets/Brasil.png" width="25px"/> (+5511) 4130 5311 > Lun - Vie 09h a 18h / Sab 09h a 15h - Zona horaria de Brasilia (UTC -3:00)
+* <img src="/assets/Chile.png" width="25px"/> (+562) 258-13949 > Lun - Vie 8:00 - 21:00 Hora chilena
+* <img src="/assets/Colombia.png" width="25px"/> (+57) 601 654 0721 > Lun - Vie 7:00 - 20:00 Hora colombiana (UTC -5:00)
+* <img src="/assets/Mexico.png" width="25px"/> (+5255) 474 11439 > Lun - Vie 7:00 - 20:00 Hora CDMX
+* <img src="/assets/Panama.png" width="25px"/> (+507) 836 5577 > Lun - Vie 7:00 - 20:00 Hora colombiana (UTC -5:00)
+* <img src="/assets/Peru.png" width="25px"/> (+511) 708 5381 > Lun - Vie 7:00 - 20:00 Hora peruana (UTC -5:00)

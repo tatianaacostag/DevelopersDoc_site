@@ -10,7 +10,7 @@ tags: ["parenttopic"]
 
 De forma similar a cualquier integración API, puedes personalizar tu checkout de acuerdo con las necesidades de tu negocio y el cliente permanece en tu página web durante la compra y el procedimiento de pago. Para integrar esta opción, debes tener una cuenta de PayU empresarial y habilidades de programación avanzadas.
 
-Accede a múltiples medios de pago (varía por país) incluyendo tarjetas de crédito, transferencias bancarias y pagos en efectivo.
+Accede a múltiples métodos de pago (varía por país) incluyendo tarjetas de crédito, transferencias bancarias y pagos en efectivo.
 
 ![API integration](/assets/api1-es.png)
 

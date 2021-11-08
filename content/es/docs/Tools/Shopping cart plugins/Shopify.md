@@ -58,7 +58,7 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
 
 ![PrintScreen](/assets/Shopify/Shopify_07_es.png)
 
-En este punto, tus clientes pueden hacer pagos utilizando el Checkout de PayU y podrán pagar utilizando medios de pago como efectivo, tarjetas de crédito y transferencias bancarias, dependiendo del país en el que estés vendiendo.
+En este punto, tus clientes pueden hacer pagos utilizando el Checkout de PayU y podrán pagar utilizando métodos de pago como efectivo, tarjetas de crédito y transferencias bancarias, dependiendo del país en el que estés vendiendo.
 
 ## Flujo de pago en Shopify {#payment-flow-in-shopify}
 Cuando configuras PayU como pasarela de pago en la plataforma, tu cliente puede pagar de la siguiente forma.
@@ -75,6 +75,6 @@ Cuando configuras PayU como pasarela de pago en la plataforma, tu cliente puede 
 
 ![PrintScreen](/assets/Shopify/Shopify_10_es.png)
 
-4. Cuando está en nuestra pasarela de pagos, puede ver la descripción de la venta y los medios de pago disponibles para tu país.
+4. Cuando está en nuestra pasarela de pagos, puede ver la descripción de la venta y los métodos de pago disponibles para tu país.
 
 ![PrintScreen](/assets/Shopify/Shopify_11_es.png)

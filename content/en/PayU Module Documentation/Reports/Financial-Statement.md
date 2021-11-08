@@ -68,10 +68,10 @@ The report has the following columns:
 | Operation           | ID and date of the operation.                                                                       |
 | Type of Operation   | Information of the operation. Depending on its type, the information displayed varies.<br>Click <img src="/assets/Reports/Reports_23.png" width="2%"/> to expand the detailed values of the operation in the **Debit** and **Credit** columns.<br><br>![PrintScreen](/assets/Reports/Reports_24.png) |
 | Credit              | Amount credited to your Account.                                                                    |
-| Amount              | Amount debited from your Account.                                                                   |
+| Debit               | Amount debited from your Account.                                                                   |
 
 {{% alert title="Note" color="info"%}}
-Click <img src="/assets/Reports/Reports_25.png" width="1.5%"/> next to _**Value**_ label to merge **debit** and **credit**; the resultant value **debit** minus the positive value of **credit**.<br>For example, if the **debit** column value is _$3.296,63_ and the **credit** column value is _$950,00_, the resulting column value after merging is _$2.346,63_.
+Click <img src="/assets/Reports/Reports_25.png" width="1.5%"/> next to _**Value**_ label to merge **debit** and **credit**; the resultant value is **debit** minus the positive value of **credit**.<br>For example, if the **debit** column value is _$3.296,63_ and the **credit** column value is _$950,00_, the resulting column value after merging is _$2.346,63_.
 
 ![PrintScreen](/assets/Reports/Reports_26.png)
 {{% /alert %}}
@@ -87,7 +87,7 @@ To set a filter, click the _**Filter your search**_ field at the top of the sale
 
 Configure the values for the filters and click _**Search**_. Once you click it, the filter table shows the operations that meet the selected criteria.
 
-Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner. The date frame defined here
+Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner.
 
 <img src="/assets/Reports/Reports_28.png" alt="PrintScreen" width="60%"/><br>
 
@@ -154,6 +154,7 @@ In the generated report you find the following concepts.
 | **UNFREEZE_FUND**                    | Release of the frozen amounts.                                                     |
 | **CHARGEBACK**                       | Chargeback or lost dispute.                                                        |
 | **DISCRETIONARY**                    | Discretionary movement or additional credit to the account.                        |
+
 <sup>\*</sup> _Applies only to transactions with credit card._
 
 {{% alert title="Note" color="info"%}}

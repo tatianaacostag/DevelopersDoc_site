@@ -15,7 +15,7 @@ tags: ["subtopic"]
 
 La página de confirmación te permite actualizar las bases de datos de tu sistema; por lo tanto, no debe incluir código HTML ya que no es visible al comprador. Esta página es opcional; cuando se completa una transacción (por ejemplo, cuando se aprueba, se rechaza o cuando se cancela) nuestra plataforma envía las variables a través del método HTTP POST.
 
-En la página de confirmación, debes capturar los datos que desear guardar en la base de datos. Esta captura depende del lenguaje de programación qu utilizas.
+En la página de confirmación, debes capturar los datos que desear guardar en la base de datos. Esta captura depende del lenguaje de programación que utilizas.
 
 ## Consideraciones {#considerations}
 * Si tienes restringido el sitio con _basic access authentication_ o similar, desactívalo para la URL de confirmación.
@@ -44,8 +44,8 @@ En la página de confirmación, debes capturar los datos que desear guardar en l
 | sign | Alphanumeric | 255 | Firma digital creada por cada transacción. |
 | extra1 | Alphanumeric | 255 | Campo adicional para enviar información relacionada con la compra. |
 | extra2 | Alphanumeric | 255 | Campo adicional para enviar información relacionada con la compra. |
-| payment_method | Numérico | — | Identificador interno utilizado por los medios de pago.<br>[Ver los códigos de los medios de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
-| payment_method_type | Numérico | — | Medio de pago utilizado. |
+| payment_method | Numérico | — | Identificador interno utilizado por los métodos de pago.<br>[Ver los códigos de los métodos de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
+| payment_method_type | Numérico | — | Método de pago utilizado. |
 | installments_number | Numérico | — | Número de cuotas en las cuales se difirió el pago con tarjeta crédito. |
 | value | Numérico | 14,2 | Valor total de la transacción. Puede contener dos dígitos decimales. Por ejemplo 10000.00 o 10000.|
 | tax | Numérico | 14,2 | Valor del IVA de la transacción, si no se envió IVA, el sistema aplica el 19% automáticamente. Puede contener dos dígitos decimales. Por ejemplo 19000.00. En caso de que no tenga IVA, debe enviarse 0. |
@@ -82,7 +82,7 @@ En la página de confirmación, debes capturar los datos que desear guardar en l
 | ip | Alfanumérico | 39 | Dirección IP desde donde se realizó la transacción. |
 | nickname_buyer | Alfanumérico | 150 | Nombre corto del comprador. |
 | nickname_seller | Alfanumérico | 150 | Nombre corto del vendedor. |
-| payment_method_id | Numérico | — | Identificador del medio de pago.<br>[Ver los códigos de los medios de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
+| payment_method_id | Numérico | — | Identificador del método de pago.<br>[Ver los códigos de los métodos de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
 | payment_request_state | Alfanumérico | 32 | Estado de la solicitud de pago. |
 | pseReference1 | Alfanumérico | 255 | Referencia no. 1 para pagos PSE. |
 | pseReference2 | Alfanumérico | 255 | Referencia no. 2 para pagos PSE. |
@@ -92,7 +92,7 @@ En la página de confirmación, debes capturar los datos que desear guardar en l
 | shipping_country | Alfanumérico | 2 | Código ISO del país donde se entrega la mercancía. |
 | transaction_bank_id | Alfanumérico | 255 | Identificador de la transacción en el sistema del banco. |
 | transaction_id | Alfanumérico | 36 | Identificador de la transacción. |
-| payment_method_name | Alfa Numérico | 255 | Medio de pago utilizado, por ejemplo VISA. |
+| payment_method_name | Alfa Numérico | 255 | Método de pago utilizado, por ejemplo VISA. |
 
 </details>
 
@@ -266,7 +266,7 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
 Esta calculadora te permite generar la firma utilizando alguno de los métodos de cifrado disponibles.
 
 ## Reintentos de pago {#payment-retries}
-Cuando se rechaza una transacción, el pagador tiene la opción de reintentar el pago utilizando el mismo u otro medio de pago. Ten en cuenta que por cada intento, PayU hace el llamado de la página de confirmación con su estado de transacción correspondiente.
+Cuando se rechaza una transacción, el pagador tiene la opción de reintentar el pago utilizando el mismo u otro método de pago. Ten en cuenta que por cada intento, PayU hace el llamado de la página de confirmación con su estado de transacción correspondiente.
 
 Cada uno de estos llamados se hacen con la misma referencia de pago (`reference_sale`), el mismo identificador de la orden (`reference_pol`) pero diferente identificador de transacción (`transaction_id`). Por lo tanto, puedes recibir varios llamados a la página de confirmación para la misma venta.
 

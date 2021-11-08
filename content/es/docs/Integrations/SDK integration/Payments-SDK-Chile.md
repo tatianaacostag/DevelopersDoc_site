@@ -3,7 +3,7 @@ title: "SDK de Pagos - Chile"
 linkTitle: "SDK de Pagos - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 30
 tags: ["subtopic"]
 ---
@@ -37,7 +37,7 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 El SDK de pagos incluye los siguientes métodos:
 
 * [Enviar transacciones con tarjeta de crédito]({{< ref "#submit-transaction-with-credit-cards" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 <!-- * [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}}) -->
 
@@ -53,7 +53,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 {{% /alert %}}
 
 ### Consideraciones {#considerations}
-* Envía un medio de pago válido de tarjeta de crédito, [mira los medios de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
+* Envía un método de pago válido de tarjeta de crédito, [mira los métodos de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
 * Para pagos con tókenes de tarjeta de crédito, asigna los parámetros `TOKEN_ID` y `CREDIT_CARD_SECURITY_CODE` (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el [SDK de Tokenización]({{< ref "TokenizationSDK.md" >}}).
 * No se permiten transacciones en PESOS CHILENOS con decimales.
 * Two-step flows are not supported for international credit cards.
@@ -692,8 +692,8 @@ Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción
 
 
 -->
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Llamado del método {#method-call}
 Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.

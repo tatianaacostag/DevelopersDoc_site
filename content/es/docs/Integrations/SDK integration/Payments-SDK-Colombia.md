@@ -3,7 +3,7 @@ title: "SDK de Pagos - Colombia"
 linkTitle: "SDK de Pagos - Colombia"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 40
 tags: ["subtopic"]
 ---
@@ -40,7 +40,7 @@ El SDK de pagos incluye los siguientes métodos:
 * [Enviar transacciones en efectivo o Referencia bancaria]({{< ref "#submit-transaction-with-cash-or-bank-reference" >}})
 * [Enviar transacciones con transferencia bancaria]({{< ref "#submit-transaction-with-bank-transfer" >}})
 * [Lista de bancos - PSE]({{< ref "#bank-list---pse" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -51,7 +51,7 @@ Para confirmar el estado de una transacción, puedes utilizar el [SDK de Consult
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Colombia, puedes realizar flujos de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 ### Consideraciones {#considerations}
-* Envía un medio de pago válido de tarjeta de crédito, [mira los medios de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}).
+* Envía un método de pago válido de tarjeta de crédito, [mira los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}).
 * Para pagos con tókenes de tarjeta de crédito, asigna los parámetros `TOKEN_ID` y `CREDIT_CARD_SECURITY_CODE` (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el [SDK de Tokenización]({{< ref "TokenizationSDK.md" >}}).
 * Por defecto, no está activo el procesamiento de tarjetas de crédito sin código de seguridad. Si quieres activar esta funcionalidad, contacta a tu representante de ventas. Luego de que se te active esta funcionalidad, asigna el parámetro `PROCESS_WITHOUT_CVV2` con true y elimina el parámetro `CREDIT_CARD_SECURITY_CODE`.
 * Para la tarjeta Crédito Fácil Codensa, el número de cuotas soportadas es 1 a 12, 18, 24, 36 y 48.
@@ -316,7 +316,7 @@ Este método te permite procesar los pagos en efectivo o por referencia bancaria
 <img src="/assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
 
 ### Consideraciones {#considerations-1}
-* Envía un método de pago válido en efectivo o por referencia bancaria, [mira los medios de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}). No está soportado el método `OTHERS_CASH`.
+* Envía un método de pago válido en efectivo o por referencia bancaria, [mira los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}). No está soportado el método `OTHERS_CASH`.
 * El parámetro `EXPIRATION_DATE` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto
 * Para `BALOTO` y `EFECTY`, la confirmación de pago toma 15 minutos. Para `BANK_REFERENCED`, la confirmación es en línea.
 * Los valores mínimos de máximos para pagos en `BALOTO` y `EFECTY` son:
@@ -325,7 +325,7 @@ Este método te permite procesar los pagos en efectivo o por referencia bancaria
 * Los extra parámetros tienen los siguientes parámetros relacionados con la transacción:
    - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago 
    - **REFERENCE**: referencia de pago interna generada por PayU.
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
    - **BANCO_BOGOTA_SERVICE_CODE**: código de pago para Banco de Bogotá. Disponible cuando utilices `BANK_REFERENCED`.
    - **BANK_REFERENCED_NAME**: nombre de la referencia para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
@@ -567,7 +567,7 @@ if ($response) {
 {{< /tabs >}}
 
 ## Enviar transacciones con transferencia bancaria {#submit-transaction-with-bank-transfer}
-Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este medio de pago, necesitas crear un formulario de pago siguiendo estos pasos:
+Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este método de pago, necesitas crear un formulario de pago siguiendo estos pasos:
 
 1. Consulta la lista de bancos disponibles para mostrarla al pagador. Para consultar la lista de bancos, consulta [este método]({{< ref "#bank-list---pse" >}}).
 
@@ -704,7 +704,7 @@ parameters.put(PayU.PARAMETERS.PAYER_DNI, "123456789");
 // Ingresa aquí el tipo de documento del pagador.
 parameters.put(PayU.PARAMETERS.PAYER_DOCUMENT_TYPE, DocumentType.CC.toString());
 
-// Ingresa aquí el nombre del medio de pago
+// Ingresa aquí el nombre del método de pago
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "PSE");
 
 // Ingresa aquí el nombre del país.
@@ -825,7 +825,7 @@ $parameters = array(
   // Ingresa aquí el tipo de documento del pagador.
 	PayUParameters::PAYER_DOCUMENT_TYPE => "CC",
 
-  // Ingresa aquí el nombre del medio de pago
+  // Ingresa aquí el nombre del método de pago
 	PayUParameters::PAYMENT_METHOD => "PSE",
 
 	// Ingresa aquí el nombre del país.
@@ -880,7 +880,7 @@ Los siguientes son los ejemplos de la petición y la respuesta para este método
 ```JAVA
 Map<String, String> parameters = new HashMap<String, String>();
 
-// Ingresa aquí el nombre del medio de pago
+// Ingresa aquí el nombre del método de pago
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "PSE");
 
 // Ingresa aquí el nombre del país.
@@ -900,9 +900,9 @@ while(banks_iterator.hasNext()){
 
 {{< tab tabNum="2" >}}
 ```PHP
-// Ingresa aquí el nombre del medio de pago
+// Ingresa aquí el nombre del método de pago
 $parameters = array(
-	// Ingresa aquí el nombre del medio de pago.
+	// Ingresa aquí el nombre del método de pago.
 	PayUParameters::PAYMENT_METHOD => "PSE",
 	// Ingresa aquí el nombre del país.
 	PayUParameters::COUNTRY => PayUCountries::CO,
@@ -919,8 +919,8 @@ foreach ($banks as $bank) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Llamado del método {#method-call-4}
 Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.

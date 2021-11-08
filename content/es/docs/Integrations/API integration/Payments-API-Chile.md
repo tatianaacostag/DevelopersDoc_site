@@ -3,7 +3,7 @@ title: "API de Pagos - Chile"
 linkTitle: "API de Pagos - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+  El API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -21,7 +21,7 @@ El API de pagos incluye los siguiente métodos:
 * [Enviar transacciones con tarjeta de crédito o débito]({{< ref "#submit-transaction-with-credit-or-debit-cards" >}})
 * [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
 * [Enviar transacciones con tarjeta débito o prepago utilizando WebPay Plus]({{< ref "#submit-transaction-with-debit-and-prepaid-cards" >}})
-* [Consultar medios de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -121,7 +121,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción requerido:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para flujos de un paso.</li></ul> | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un medio de pago de Tarjeta de crédito o débito valido. [Ver los medios de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago de Tarjeta de crédito o débito valido. [Ver los métodos de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `CL` para Chile. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -871,7 +871,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un medio de pago en efectivo válido. [Ver los medios de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un método de pago en efectivo válido. [Ver los métodos de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `CL` para Chile. | Sí |
 | transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -910,7 +910,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 * Debes redirigir al pagador a la página web de Klap webpage (antes Multicaja) para permitirle hacer el pago en efectivo. Esta URL se encuentra en el parámetro `BANK_URL` en la respuesta.
 
 ### Llamado del API {#api-call}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1223,7 +1223,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alfanumérico | 32 | Como los pagos se realizan en la página de WebPay plus, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un medio de pago válido para Tarjetas Débito y prepago. [Ver los medios de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un método de pago válido para Tarjetas Débito y prepago. [Ver los métodos de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `CL` para Chile. | Sí |
 | transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
@@ -1276,7 +1276,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 Las variables anteriores se envía a través de GET.
 
 ### Llamado del API {#api-call-1}
-Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1519,8 +1519,8 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar medios de pago disponibles {#available-payment-methods-query}
-Este método retorna la lista de los medios de pago disponibles en todos los paises.
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
+Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response-3}
 
@@ -1549,16 +1549,16 @@ Este método retorna la lista de los medios de pago disponibles en todos los pai
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| paymentMethods |  |  | Lista de medios de pago. | Sí |
-| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del medio de pago. | Sí |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del medio de pago. | Sí |
+| paymentMethods |  |  | Lista de métodos de pago. | Sí |
+| paymentMethods > paymentMethodComplete |  |  | Este objeto tiene la información de un método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del método de pago. | Sí |
+| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del método de pago. | Sí |
 
 </details>
 
 ### Llamado del API {#api-call-2}
-Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago. 
+Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

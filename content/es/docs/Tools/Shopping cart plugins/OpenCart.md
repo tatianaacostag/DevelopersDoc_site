@@ -44,7 +44,7 @@ Esta accion agregará los archivos del plugin a tu servidor de OpenCart en las r
 
 ![PrintScreen](/assets/OpenCart/OpenCart_04.jpg)
 
-3. En la tabla _**Payment**_, localiza el medio de pago _PayuLatam_. Luego, haz clic en _**Install**_.
+3. En la tabla _**Payment**_, localiza el método de pago _PayuLatam_. Luego, haz clic en _**Install**_.
 
 **OpenCart v1.5**
 
@@ -64,7 +64,7 @@ Esta accion agregará los archivos del plugin a tu servidor de OpenCart en las r
 
 ![PrintScreen](/assets/OpenCart/OpenCart_08.jpg)
 
-5. Configura el medio de pago utilizando los datos de tu cuenta PayU así.
+5. Configura el método de pago utilizando los datos de tu cuenta PayU así.
 
 | Campo                | Valor                                                                                               |
 |----------------------|-----------------------------------------------------------------------------------------------------|
@@ -77,6 +77,6 @@ Esta accion agregará los archivos del plugin a tu servidor de OpenCart en las r
 | Approved Transaction | Estado de la orden en la tienda OpenCart cuando PayU Latam aprueba la transacción.                  |
 | Pending Transaction  | Estado de la orden en la tienda OpenCart cuando la transacción queda pendiente en PayU Latam.       |
 | Declined Transaction | Estado de la orden en la tienda OpenCart cuando PayU Latam declina la transacción.                  |
-| Status               | Selecciona _**Enable**_ para activar este medio de pago en OpenCart.                                |
+| Status               | Selecciona _**Enable**_ para activar este método de pago en OpenCart.                                |
 
 6. Por último, guarda los cambios. En este punto, tus clientes pueden pagar con PayU Latam en el carrito de compras de OpenCart. 

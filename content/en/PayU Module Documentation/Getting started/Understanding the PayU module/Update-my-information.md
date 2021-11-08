@@ -43,7 +43,7 @@ In the _**My profile**_ screen, locate the _**Preferences**_ panel.
 At the top of the panel, you see an example of the current date and time of the time zone selected and displayed in the format your choose.
 
 ### Date format
-Change the format in which you want to display the dates in your PayU Module,
+Change the format in which you want to display the dates in your PayU Module.
 
 <img src="/assets/UserPreferences/UserPreferences_05.png" alt="PrintScreen" width="40%"/><br>
 
@@ -86,7 +86,7 @@ Using the PayU module, you can upload the logo of your merchant so it can be dis
 
 To upload or update your logo, follow these steps.
 
-1. In the account options, expand the current account using the the **▾** symbol. Then, select .
+1. In the account options, expand the current account using the **▾** symbol. Then, select _**Your sale information**_.
 
 <img src="/assets/Logo/Logo_02.png" alt="PrintScreen" width="30%"/><br>
 
@@ -108,7 +108,7 @@ To request the update of your Bank account, expand _**Transfers**_ option at the
 
 ![PrintScreen](/assets/BankInformation/BankInformation_01.png)
 
-The _**Bank information option**_ opens, click the _**Edit**_ link to enable the fields of the bank account.
+The _**Bank information**_ option opens, click the _**Edit**_ link to enable the fields of the bank account.
 
 ![PrintScreen](/assets/BankInformation/BankInformation_02.png)
 
