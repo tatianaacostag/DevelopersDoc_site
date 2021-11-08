@@ -84,7 +84,7 @@
 &lt;li&gt;Abre el Módulo PayU module y vé a las opciones de &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt; (&lt;strong&gt;&lt;em&gt;Configuración&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Configuración técnica&lt;/em&gt;&lt;/strong&gt;). Luego, desactiva la validación de referencias únicas para todos los estados para evitar problemas al momento de procesar tus pagos.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_07_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;En este punto, tus clientes pueden hacer pagos utilizando el Checkout de PayU y podrán pagar utilizando medios de pago como efectivo, tarjetas de crédito y transferencias bancarias, dependiendo del país en el que estés vendiendo.&lt;/p&gt;
+&lt;p&gt;En este punto, tus clientes pueden hacer pagos utilizando el Checkout de PayU y podrán pagar utilizando métodos de pago como efectivo, tarjetas de crédito y transferencias bancarias, dependiendo del país en el que estés vendiendo.&lt;/p&gt;
 &lt;h2 id=&#34;payment-flow-in-shopify&#34;&gt;Flujo de pago en Shopify&lt;/h2&gt;
 &lt;p&gt;Cuando configuras PayU como pasarela de pago en la plataforma, tu cliente puede pagar de la siguiente forma.&lt;/p&gt;
 &lt;ol&gt;
@@ -100,7 +100,7 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_10_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Cuando está en nuestra pasarela de pagos, puede ver la descripción de la venta y los medios de pago disponibles para tu país.&lt;/li&gt;
+&lt;li&gt;Cuando está en nuestra pasarela de pagos, puede ver la descripción de la venta y los métodos de pago disponibles para tu país.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_11_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
@@ -358,7 +358,7 @@ Luego, localiza la sección &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/e
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_09.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;En la ventana que se abre, haz clic en &lt;em&gt;&lt;strong&gt;New&lt;/strong&gt;&lt;/em&gt; para crear el medio de pago utilizando el plugin &lt;code&gt;PayuLatam&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;En la ventana que se abre, haz clic en &lt;em&gt;&lt;strong&gt;New&lt;/strong&gt;&lt;/em&gt; para crear el método de pago utilizando el plugin &lt;code&gt;PayuLatam&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_10.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
@@ -390,7 +390,7 @@ Luego, localiza la sección &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/e
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Logo&lt;/td&gt;
-&lt;td&gt;Logo mostrado para el medio de pago &lt;strong&gt;PayuLatam&lt;/strong&gt;.&lt;/td&gt;
+&lt;td&gt;Logo mostrado para el método de pago &lt;strong&gt;PayuLatam&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Test URL&lt;/td&gt;
@@ -426,7 +426,7 @@ Luego, localiza la sección &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/e
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Minimum Value / Maximum value&lt;/td&gt;
-&lt;td&gt;El valor total de la orden debe estar en este rango para activar el medio de pago &lt;strong&gt;PayuLatam&lt;/strong&gt;.&lt;/td&gt;
+&lt;td&gt;El valor total de la orden debe estar en este rango para activar el método de pago &lt;strong&gt;PayuLatam&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Tax&lt;/td&gt;
@@ -628,7 +628,7 @@ El plugin de PayU Latam para osCommerce solo está disponible para inglés, espa
 &lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_08.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;configuration&#34;&gt;Configuración&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;En la sección Payment, selecciona el medio de pago &lt;em&gt;&lt;strong&gt;Payu Latam&lt;/strong&gt;&lt;/em&gt; y haz clic en el botón &lt;em&gt;&lt;strong&gt;Edit&lt;/strong&gt;&lt;/em&gt; en el panel de la derecha.&lt;/li&gt;
+&lt;li&gt;En la sección Payment, selecciona el método de pago &lt;em&gt;&lt;strong&gt;Payu Latam&lt;/strong&gt;&lt;/em&gt; y haz clic en el botón &lt;em&gt;&lt;strong&gt;Edit&lt;/strong&gt;&lt;/em&gt; en el panel de la derecha.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_09.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
@@ -750,7 +750,7 @@ Luego, carga las carpetas &lt;strong&gt;admin&lt;/strong&gt; y &lt;strong&gt;cat
 &lt;p&gt;&lt;strong&gt;OpenCart v2.0&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_04.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;En la tabla &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt;, localiza el medio de pago &lt;em&gt;PayuLatam&lt;/em&gt;. Luego, haz clic en &lt;em&gt;&lt;strong&gt;Install&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;En la tabla &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt;, localiza el método de pago &lt;em&gt;PayuLatam&lt;/em&gt;. Luego, haz clic en &lt;em&gt;&lt;strong&gt;Install&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;OpenCart v1.5&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_05.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
@@ -764,7 +764,7 @@ Luego, carga las carpetas &lt;strong&gt;admin&lt;/strong&gt; y &lt;strong&gt;cat
 &lt;p&gt;&lt;strong&gt;OpenCart v2.0&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_08.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Configura el medio de pago utilizando los datos de tu cuenta PayU así.&lt;/li&gt;
+&lt;li&gt;Configura el método de pago utilizando los datos de tu cuenta PayU así.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -812,7 +812,7 @@ Luego, carga las carpetas &lt;strong&gt;admin&lt;/strong&gt; y &lt;strong&gt;cat
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Status&lt;/td&gt;
-&lt;td&gt;Selecciona &lt;em&gt;&lt;strong&gt;Enable&lt;/strong&gt;&lt;/em&gt; para activar este medio de pago en OpenCart.&lt;/td&gt;
+&lt;td&gt;Selecciona &lt;em&gt;&lt;strong&gt;Enable&lt;/strong&gt;&lt;/em&gt; para activar este método de pago en OpenCart.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

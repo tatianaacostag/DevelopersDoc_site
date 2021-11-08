@@ -52,7 +52,7 @@ El flujo de dos pasos no está soportado para Colombia y Panamá. Para Chile, es
 &lt;/div&gt;
 
 &lt;h3 id=&#34;payment-methods&#34;&gt;Métodos de pago&lt;/h3&gt;
-&lt;p&gt;Los medios de pago disponibles utilizados para procesar transacciones son:&lt;/p&gt;
+&lt;p&gt;Los métodos de pago disponibles utilizados para procesar transacciones son:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Tarjetas de crédito.&lt;/li&gt;
 &lt;li&gt;Pagos en efectivo o en bancos.&lt;/li&gt;
@@ -62,11 +62,11 @@ El flujo de dos pasos no está soportado para Colombia y Panamá. Para Chile, es
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-Consulta &lt;a href=&#34;../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;este artículo&lt;/a&gt; para conocer los medios de pago disponibles para los compradores por país.
+Consulta &lt;a href=&#34;../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;este artículo&lt;/a&gt; para conocer los métodos de pago disponibles para los compradores por país.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;whats-next&#34;&gt;¿Qué sigue?&lt;/h2&gt;
-&lt;p&gt;La integración con esta funcionalidad depende del país de tus transacciones, la operación seleccionada y el medio de pago.&lt;/p&gt;
+&lt;p&gt;La integración con esta funcionalidad depende del país de tus transacciones, la operación seleccionada y el método de pago.&lt;/p&gt;
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; style=&#34;max-width:30%&#34;&gt;
@@ -155,7 +155,7 @@ Consulta &lt;a href=&#34;../../../es/docs/getting-started/select-your-payment-me
 &lt;p&gt;Antes de utilizar la funcionalidad de &lt;em&gt;Consultas&lt;/em&gt;, ten en cuenta las siguientes consideraciones:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Se recomienda utilizar &lt;em&gt;Consultas&lt;/em&gt; para transacciones en estado &lt;code&gt;PENDING&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;De acuerdo con el medio de pago, el tiempo para realizar la consulta puede variar. Sin embargo, te recomendamos realizar la primera consulta siete minutos luego de que se crea la transacción.&lt;/li&gt;
+&lt;li&gt;De acuerdo con el método de pago, el tiempo para realizar la consulta puede variar. Sin embargo, te recomendamos realizar la primera consulta siete minutos luego de que se crea la transacción.&lt;/li&gt;
 &lt;li&gt;No reintentes consultar una transacción cuando PayU indica que no existe.&lt;/li&gt;
 &lt;li&gt;Las transacciones de transferencias bancarias están disponibles cada diez minutos.&lt;/li&gt;
 &lt;/ul&gt;
@@ -318,7 +318,7 @@ El método &lt;code&gt;VOID&lt;/code&gt; no está disponible en Colombia ni en P
 &lt;h2 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h2&gt;
 &lt;p&gt;Antes de utilizar las funcionalidades de &lt;em&gt;ANULACIÓN&lt;/em&gt; o &lt;em&gt;REEMBOLSO&lt;/em&gt;, ten en cuenta las siguientes consideraciones:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Los métodos de &lt;em&gt;ANULACIÓN&lt;/em&gt; or &lt;em&gt;REEMBOLSO&lt;/em&gt; solo están disponibles para transacciones realizadas con tarjeta de crédito. Si la solicitud se realiza sobre una compra con un medio de pago diferente como pago en efectivo, transferencia bancaria, etc; la solicitud es rechazada por PayU.&lt;/li&gt;
+&lt;li&gt;Los métodos de &lt;em&gt;ANULACIÓN&lt;/em&gt; or &lt;em&gt;REEMBOLSO&lt;/em&gt; solo están disponibles para transacciones realizadas con tarjeta de crédito. Si la solicitud se realiza sobre una compra con un método de pago diferente como pago en efectivo, transferencia bancaria, etc; la solicitud es rechazada por PayU.&lt;/li&gt;
 &lt;li&gt;PayU solo crea una aplicación por cada solicitud de reembolso, si una solicitud se repite para la misma transacción, PayU indica que ya se registró la solicitud.&lt;/li&gt;
 &lt;li&gt;PayU solo acepta solicitudes de reembolso de transacciones capturadas.&lt;/li&gt;
 &lt;li&gt;Puedes reintentar la solicitud de reembolso si fue rechazada previamente.&lt;/li&gt;

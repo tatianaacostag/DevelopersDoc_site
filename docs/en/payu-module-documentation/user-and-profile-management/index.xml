@@ -29,7 +29,7 @@
 &lt;li&gt;A &lt;em&gt;&lt;strong&gt;profile&lt;/strong&gt;&lt;/em&gt; is a set of permissions to access an account.&lt;/li&gt;
 &lt;li&gt;A user can have one or multiple profiles, this means that a user can access multiple &lt;em&gt;&lt;strong&gt;accounts&lt;/strong&gt;&lt;/em&gt; and multiple &lt;em&gt;&lt;strong&gt;merchants&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;For further information, read the &lt;a href=&#34;../../../payu-module-documentation.html#payu-module-concepts&#34;&gt;concepts behind the PayU Module&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For further information, read the &lt;a href=&#34;../../../en/payu-module-documentation.html#payu-module-concepts&#34;&gt;concepts behind the PayU Module&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;permission-required&#34;&gt;Permission required&lt;/h2&gt;
 &lt;p&gt;To have access to this module, you need to have a profile with the following permission enabled:&lt;/p&gt;
 &lt;ul&gt;
@@ -184,7 +184,8 @@ If the user was created without using e-mail, the instructions to activate the a
 &lt;p&gt;&lt;img src=&#34;../../../assets/UserManagement/UserManagement_12.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If you want to remove a filter, click the &lt;strong&gt;x&lt;/strong&gt; icon next to it.&lt;/p&gt;
 &lt;h3 id=&#34;edit-users&#34;&gt;Edit users&lt;/h3&gt;
-&lt;p&gt;Through the &lt;em&gt;&lt;strong&gt;User management&lt;/strong&gt;&lt;/em&gt; module, you can update some information of a user. To update a user, search and click it in the &lt;em&gt;&lt;strong&gt;User management&lt;/strong&gt;&lt;/em&gt; module.&lt;/p&gt;
+&lt;p&gt;Through the &lt;em&gt;&lt;strong&gt;User management&lt;/strong&gt;&lt;/em&gt; module, you can update some information of a user. To update a user, search and click them.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;&lt;strong&gt;Edit user&lt;/strong&gt;&lt;/em&gt; window appears.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/UserManagement/UserManagement_13.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;You can update the following information:&lt;/p&gt;
 &lt;ul&gt;
@@ -227,14 +228,13 @@ The information of the user preferences cannot be updated using this option, thi
         
         
         &lt;p&gt;A &lt;em&gt;Profile&lt;/em&gt; is a set of permissions that allows a user to access to a feature of an &lt;em&gt;account&lt;/em&gt;. A &lt;em&gt;user&lt;/em&gt; using a &lt;em&gt;profile&lt;/em&gt; can access to as many account there are in each merchant.&lt;/p&gt;
-&lt;p&gt;For further information about merchants, accounts, and more, read the &lt;a href=&#34;../../../payu-module-documentation.html#payu-module-concepts&#34;&gt;concepts behind the PayU Module&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For further information about merchants, accounts, and more, read the &lt;a href=&#34;../../../en/payu-module-documentation.html#payu-module-concepts&#34;&gt;concepts behind the PayU Module&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;permission-required&#34;&gt;Permission required&lt;/h2&gt;
 &lt;p&gt;To have access to this module, you need to have a profile with the following permission enabled:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Review permissions and profiles&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Create, edit and delete profiles and permissions&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Refer to &lt;a href=&#34;../../../en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profiles and Permissions&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;h2 id=&#34;default-profiles&#34;&gt;Default profiles&lt;/h2&gt;
 &lt;p&gt;By default, PayU provides three profiles that allow your users to access the accounts. These profiles are:&lt;/p&gt;
 &lt;ul&gt;
@@ -244,7 +244,7 @@ The information of the user preferences cannot be updated using this option, thi
 &lt;/ul&gt;
 &lt;p&gt;These profiles cannot be deleted and their set of permissions are fixed, if any of these permissions does not meet your needs, you should &lt;a href=&#34;#create-profiles&#34;&gt;create one&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;profile-and-permission-management&#34;&gt;Profile and Permission management&lt;/h2&gt;
-&lt;p&gt;To manage users, open you PayU account and click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; menu at the top the screen and then, select &lt;em&gt;&lt;strong&gt;Permissions and profiles&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To manage profile and permission, open you PayU account and click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; menu at the top the screen and then, select &lt;em&gt;&lt;strong&gt;Permissions and profiles&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Profiles/Profiles_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;em&gt;&lt;strong&gt;Profiles and permissions management&lt;/strong&gt;&lt;/em&gt; module opens, here, you can find a table with all the permissions to access PayU module and the profiles with access to them.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Profiles/Profiles_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
@@ -255,7 +255,7 @@ The information of the user preferences cannot be updated using this option, thi
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Profiles/Profiles_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;A new column is added to the table. Provide a meaningful name for your custom profile..&lt;/li&gt;
+&lt;li&gt;A new column is added to the table. Provide a meaningful name for your custom profile.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Profiles/Profiles_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;

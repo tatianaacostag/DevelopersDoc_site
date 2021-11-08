@@ -22,21 +22,21 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>SDK de Pagos - México | PayU Latam</title><meta property="og:title" content="SDK de Pagos - México" />
-<meta property="og:description" content="El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta property="og:description" content="El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/sdk-integration/payments-sdk-mexico.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-08T17:41:32-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="SDK de Pagos - México">
-<meta itemprop="description" content="El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta itemprop="description" content="El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
+<meta itemprop="dateModified" content="2021-11-08T17:41:32-05:00" />
 <meta itemprop="wordCount" content="5393">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SDK de Pagos - México"/>
-<meta name="twitter:description" content="El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta name="twitter:description" content="El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "/>
 
 
@@ -139,7 +139,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4cff48d4332b658a300d50112d905c434105f7780727619c2f89d95c1a6ea4e618030a5d44eaaaf00eb9787a3920a954fb80cd22ebe838634166ed424ead2384.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.dc9f5c22c679d0d56ce1efe7fe6380a7048b5360cd741b9d37e3fcc3ff085f267c31051ee91cc44003610b6a1cc2307bf23f94a9fda317a9a99076c15698d69c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -757,7 +757,7 @@
         <li><a href="#method-call-2">Llamado del método</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Consultar medios de pago disponibles</a>
+    <li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a>
       <ul>
         <li><a href="#method-call-3">Llamado del método</a></li>
       </ul>
@@ -824,7 +824,7 @@
             
 <div class="td-content">
 	<h1>SDK de Pagos - México</h1>
-    <div class="lead">El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.</div>
+    <div class="lead">El SDK de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.</div>
 	       
 	<p>Para integrarte con el SDK de Pagos de México, apunta tus peticiones a las siguientes URLs:</p>
 <nav>
@@ -910,7 +910,7 @@
 <li><a href="#submit-transaction-with-cash">Enviar transacciones en efectivo</a></li>
 <li><a href="#submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</a></li>
 <li><a href="#submit-transaction-with-bank-reference">Enviar transacciones con referencia bancaria</a></li>
-<li><a href="#available-payment-methods-query">Consultar medios de pago disponibles</a></li>
+<li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a></li>
 <li><a href="#ping">Ping</a></li>
 </ul>
 
@@ -931,7 +931,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 
 <h3 id="considerations">Consideraciones</h3>
 <ul>
-<li>Envía un medio de pago válido de tarjeta de crédito en la petición, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Mexico">mira los medios de pago disponibles para México</a>.</li>
+<li>Envía un método de pago válido de tarjeta de crédito en la petición, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Mexico">mira los métodos de pago disponibles para México</a>.</li>
 <li>Para pagos con Promociones, asigna los parámetros <code>INSTALLMENTS_NUMBER</code> y <code>PROMOTION_ID</code> con el número de cuotas seleccionadas y el ID de la promoción. Consulta el [API de promociones] (/es/docs/services/promotions.html) para más información.</li>
 <li>Cuando utilices promociones o apliques cuotas, debes mostrar siempre la frase <strong>&ldquo;PAGOS DIFERIDOS&rdquo;</strong> durante el proceso de pago.</li>
 <li>Cuando se apliquen cuotas (cargos asumidos por el pagador), muestra el monto original de la transacción, el monto luego de las cuotas, el número de cuotas y el monto por cuota incluyendo el valor adicional.</li>
@@ -1626,16 +1626,16 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 <img src="../../../../assets/Payments/CashReceiptMX.png" alt="PrintScreen" width="50%">
 <h3 id="considerations-2">Consideraciones</h3>
 <ul>
-<li>Envía un método de pago válido en efectivo, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Mexico">mira los medios de pago disponibles para México</a>.</li>
+<li>Envía un método de pago válido en efectivo, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Mexico">mira los métodos de pago disponibles para México</a>.</li>
 <li>El parámetro <code>EXPIRATION_DATE</code> no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto</li>
-<li>Cuando el medio de pago es <code>OXXO</code>, la confirmación del pago será un día después del mismo. Para otros medios de pago en efectivo, la confirmación es en línea.</li>
+<li>Cuando el método de pago es <code>OXXO</code>, la confirmación del pago será un día después del mismo. Para otros métodos de pago en efectivo, la confirmación es en línea.</li>
 <li>Los extra parámetros tienen las siguiente información relacionada con la transacción:
 <ul>
 <li><strong>BANK_REFERENCED_CODE</strong>: tipo de pago.</li>
 <li><strong>EXPIRATION_DATE</strong>: fecha máxima en la que el pagador puede realizar el pago.</li>
 <li><strong>BAR_CODE</strong>: código de barras que le permite al pagador realizar el pago.</li>
 <li><strong>REFERENCE</strong>: referencia de pago interna generada por PayU.</li>
-<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.</li>
+<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.</li>
 <li><strong>URL_PAYMENT_RECEIPT_PDF</strong>: recibo de pago en formato PDF.</li>
 <li><strong>PAYMENT_WAY_ID</strong>: red financiera del tipo de pago.</li>
 </ul>
@@ -1915,13 +1915,13 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 
 </div>
 <h2 id="submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</h2>
-<p>Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este medio de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.<br>
+<p>Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.<br>
 Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.</p>
 <img src="../../../../assets/Payments/BankTransferReceiptMX.png" alt="PrintScreen" width="50%">
 <h3 id="considerations-3">Consideraciones</h3>
 <ul>
 <li>El parámetro <code>EXPIRATION_DATE</code> no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto</li>
-<li>Cuando el pagador selecciona este medio de pago, PayU crea una orden en estado <em>in progress</em> y una transacción en estado pendiente (<code>PENDING</code>).</li>
+<li>Cuando el pagador selecciona este método de pago, PayU crea una orden en estado <em>in progress</em> y una transacción en estado pendiente (<code>PENDING</code>).</li>
 <li>Para realizar el pago, el pagador debe iniciar sesión en la sucursal virtual de su banco (el banco debe aparecer en la lista de bancos disponibles de SPEI).<br>Primero, el pagador debe registrar la cuenta CLABE de PayU en la sucursal de su banco. Una vez la cuenta CLABE esté activa para realizar transferencias, el pagador debe ingresar en su sucursal virtual, la referencia retornada por PayU en el parámetro <code>trazabilityCode</code> y el monto tal y como PayU lo retornó.</li>
 <li>En el cuerpo de la respuesta, puedes encontrar las variables para generar el recibo de pago (voucher) y la URL del mismo generado en formato HTML y PDF. Si quieres generar el voucher, utiliza las siguientes variables:
 <ul>
@@ -2228,7 +2228,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 <li><strong>REFERENCE</strong>: referencia de pago interna generada por PayU.</li>
 <li><strong>EXPIRATION_DATE</strong>: fecha máxima en la que el pagador puede realizar el pago.</li>
 <li><strong>BAR_CODE</strong>: código de barras que le permite al pagador realizar el pago.</li>
-<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago con referencia bancaria.</li>
+<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago con referencia bancaria.</li>
 <li><strong>URL_PAYMENT_RECEIPT_PDF</strong>: recibo de pago en formato PDF.</li>
 </ul>
 </li>
@@ -2502,8 +2502,8 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 
 
 </div>
-<h2 id="available-payment-methods-query">Consultar medios de pago disponibles</h2>
-<p>Este método retorna la lista de los medios de pago disponibles en todos los paises.</p>
+<h2 id="available-payment-methods-query">Consultar métodos de pago disponibles</h2>
+<p>Este método retorna la lista de los métodos de pago disponibles en todos los paises.</p>
 <h3 id="method-call-3">Llamado del método</h3>
 <p>Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.</p>
 <nav>
@@ -2665,9 +2665,9 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-3 de noviembre de 2021:
+8 de noviembre de 2021:
 
- <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
+ <b>Translations to Spanish (6ab0d355)</b>
 </div>
 </div>
 

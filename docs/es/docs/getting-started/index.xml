@@ -27,7 +27,7 @@
 &lt;h2 id=&#34;payu-benefits&#34;&gt;Beneficios de PayU&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Tasa competitiva&lt;/li&gt;
-&lt;li&gt;Múltiples medios de pago&lt;/li&gt;
+&lt;li&gt;Múltiples métodos de pago&lt;/li&gt;
 &lt;li&gt;Vende con o sin sitio web&lt;/li&gt;
 &lt;li&gt;Seguridad&lt;/li&gt;
 &lt;/ul&gt;
@@ -67,7 +67,7 @@ Revisa las Actividades restringidas y prohibidas &lt;a href=&#34;https://legal.p
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Activa tu cuenta.&lt;br&gt;
-Luego de abrir tu cuenta de PayU, recibes un correo electrónico para verificar su dirección e ingresar al Módulo de PayU por primera vez. En este punto, tu cuenta se encuentra activada para recibir pagos en Internet con todos los medios de pago disponibles.
+Luego de abrir tu cuenta de PayU, recibes un correo electrónico para verificar su dirección e ingresar al Módulo de PayU por primera vez. En este punto, tu cuenta se encuentra activada para recibir pagos en Internet con todos los métodos de pago disponibles.
 &lt;br&gt;&lt;br&gt;
 Para activar tu cuenta debes:&lt;/p&gt;
 &lt;/li&gt;
@@ -178,7 +178,7 @@ Para activar tu cuenta debes:&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;La siguiente sección muestra los medios de pago disponibles por país y brinda algunas consideraciones. Consulta la columna &lt;code&gt;Parámetro paymentMethod&lt;/code&gt; para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.&lt;/p&gt;
+        &lt;p&gt;La siguiente sección muestra los métodos de pago disponibles por país y brinda algunas consideraciones. Consulta la columna &lt;code&gt;Parámetro paymentMethod&lt;/code&gt; para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.&lt;/p&gt;
 &lt;h2 id=&#34;Argentina&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; Argentina&lt;/h2&gt;
 &lt;div class=&#34;paymentMethods&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -435,7 +435,7 @@ Para activar tu cuenta debes:&lt;/p&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;Colombia&#34;&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; Colombia&lt;/h2&gt;
-&lt;p&gt;PayU en Colombia te permite integrar con la mayoría de los medios de pago en efectivo del país. Además, soportamos Codensa y Falabella.&lt;/p&gt;
+&lt;p&gt;PayU en Colombia te permite integrar con la mayoría de los métodos de pago en efectivo del país. Además, soportamos Codensa y Falabella.&lt;/p&gt;
 &lt;div class=&#34;paymentMethods&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1445,7 +1445,7 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PENDING_TRANSACTION_TRANSMISSION&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;La transacción está pendiente para ser trasmitida a la red financiera. Normalmente esto aplica para transacciones con medios de pago en efectivo.&lt;/td&gt;
+&lt;td&gt;La transacción está pendiente para ser trasmitida a la red financiera. Normalmente esto aplica para transacciones con métodos de pago en efectivo.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;PAYMENT_NETWORK_BAD_RESPONSE&lt;/code&gt;&lt;/td&gt;
@@ -2157,7 +2157,7 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;codes-of-the-payment-methods&#34;&gt;Códigos de los medios de pago&lt;/h2&gt;
+&lt;h2 id=&#34;codes-of-the-payment-methods&#34;&gt;Códigos de los métodos de pago&lt;/h2&gt;
 &lt;p&gt;Los siguientes códigos aplican para &lt;code&gt;payment_method_type&lt;/code&gt; (Página de confirmación), &lt;code&gt;payment_method_id&lt;/code&gt; (Página de confirmación) y &lt;code&gt;polPaymentMethodType&lt;/code&gt; (Página de respuesta).&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -2229,7 +2229,7 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;GET_PAYMENT_METHODS&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Utilizado para consultar los medios de pago disponibles para el comercio.&lt;/td&gt;
+&lt;td&gt;Utilizado para consultar los métodos de pago disponibles para el comercio.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;GET_BANKS_LIST&lt;/code&gt;&lt;/td&gt;

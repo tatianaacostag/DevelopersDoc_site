@@ -105,7 +105,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-card&#34;&gt;Enviar transacciones con tarjeta de crédito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -119,7 +119,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;p&gt;Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Argentina, puedes realizar los flujos de dos pasos (&lt;strong&gt;Autorización&lt;/strong&gt;, &lt;strong&gt;Captura&lt;/strong&gt;) y el de un paso (&lt;strong&gt;Cobro&lt;/strong&gt;). Para más información, consulta los &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;flujos de pago&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un medio de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Argentina&#34;&gt;mira los medios de pago disponibles para Argentina&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Argentina&#34;&gt;mira los métodos de pago disponibles para Argentina&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para pagos con Promociones, asigna los parámetros &lt;code&gt;INSTALLMENTS_NUMBER&lt;/code&gt; y &lt;code&gt;PROMOTION_ID&lt;/code&gt; con el número de cuotas seleccionadas y el ID de la promoción. Consulta el [API de promociones] (/es/docs/services/promotions.html) para más información.&lt;/li&gt;
 &lt;li&gt;La funcionalidad de promociones solo está disponibles para &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;flujos de un paso&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para pagos con tókenes de tarjeta de crédito, asigna los parámetros&lt;code&gt;TOKEN_ID&lt;/code&gt; y &lt;code&gt;CREDIT_CARD_SECURITY_CODE&lt;/code&gt; (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el &lt;a href=&#34;../../../../es/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;SDK de Tokenización&lt;/a&gt;.&lt;/li&gt;
@@ -862,14 +862,14 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;img src=&#34;../../../../assets/Payments/CashReceiptAR.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
 &lt;h3 id=&#34;considerations-2&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un método de pago válido en efectivo, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#argentina&#34;&gt;mira los medios de pago disponibles para Argentina&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido en efectivo, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#argentina&#34;&gt;mira los métodos de pago disponibles para Argentina&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;EXPIRATION_DATE&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es 15 días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto&lt;/li&gt;
 &lt;li&gt;La respuesta retorna los siguientes extra parámetros relacionados con la transacción:
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1144,8 +1144,8 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;method-call-1&#34;&gt;Llamado del método&lt;/h3&gt;
 &lt;p&gt;Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.&lt;/p&gt;
 &lt;nav&gt;
@@ -1396,7 +1396,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1410,7 +1410,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;p&gt;Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Brasil, puedes realizar los flujos de dos pasos (&lt;strong&gt;Autorización&lt;/strong&gt;, &lt;strong&gt;Captura&lt;/strong&gt;) y el de un paso (&lt;strong&gt;Cobro&lt;/strong&gt;). Para más información, consulta los &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;flujos de pago&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un medio de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;mira los medios de pago disponibles para Brasil&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;mira los métodos de pago disponibles para Brasil&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para pagos con tókenes de tarjeta de crédito, asigna los parámetros &lt;code&gt;TOKEN_ID&lt;/code&gt; y &lt;code&gt;CREDIT_CARD_SECURITY_CODE&lt;/code&gt; (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el &lt;a href=&#34;../../../../es/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;SDK de Tokenización&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Por defecto, no está activo el procesamiento de tarjetas de crédito sin código de seguridad. Si quieres activar esta funcionalidad, contacta a tu representante de ventas. Luego de que se te active esta funcionalidad, asigna el parámetro &lt;code&gt;PROCESS_WITHOUT_CVV2&lt;/code&gt; con true y elimina el parámetro &lt;code&gt;CREDIT_CARD_SECURITY_CODE&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;El extra parámetro &lt;code&gt;CIELO_TID&lt;/code&gt; identifica la transacción, se necesita este parámetro para procesar anulaciones (voids).&lt;/li&gt;
@@ -2112,12 +2112,12 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;img src=&#34;../../../../assets/Payments/CashReceiptBR.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
 &lt;h3 id=&#34;considerations-2&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un método de pago válido en efectivo, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;mira los medios de pago disponibles para Brasil&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido en efectivo, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;mira los métodos de pago disponibles para Brasil&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;EXPIRATION_DATE&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto&lt;/li&gt;
 &lt;li&gt;El pago se ve reflejado el siguiente día hábil.&lt;/li&gt;
 &lt;li&gt;La respuesta retorna los siguientes extra parámetros relacionados con la transacción
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_BOLETO_BANCARIO&lt;/strong&gt;: recibo de pago en formato printable.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
@@ -2394,8 +2394,8 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;method-call-1&#34;&gt;Llamado del método&lt;/h3&gt;
 &lt;p&gt;Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.&lt;/p&gt;
 &lt;nav&gt;
@@ -2645,7 +2645,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;p&gt;El SDK de pagos incluye los siguientes métodos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- * [Enviar transacciones en efectivo](#submit-transaction-with-cash) --&gt;
@@ -2667,7 +2667,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 
 &lt;h3 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un medio de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;mira los medios de pago disponibles para Chile&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;mira los métodos de pago disponibles para Chile&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para pagos con tókenes de tarjeta de crédito, asigna los parámetros &lt;code&gt;TOKEN_ID&lt;/code&gt; y &lt;code&gt;CREDIT_CARD_SECURITY_CODE&lt;/code&gt; (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el &lt;a href=&#34;../../../../es/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;SDK de Tokenización&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;No se permiten transacciones en PESOS CHILENOS con decimales.&lt;/li&gt;
 &lt;li&gt;Two-step flows are not supported for international credit cards.&lt;/li&gt;
@@ -3469,8 +3469,8 @@ Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción
 
 
 --&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;method-call&#34;&gt;Llamado del método&lt;/h3&gt;
 &lt;p&gt;Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.&lt;/p&gt;
 &lt;nav&gt;
@@ -3723,7 +3723,7 @@ Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash-or-bank-reference&#34;&gt;Enviar transacciones en efectivo o Referencia bancaria&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer&#34;&gt;Enviar transacciones con transferencia bancaria&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#bank-list---pse&#34;&gt;Lista de bancos - PSE&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -3737,7 +3737,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;p&gt;Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Colombia, puedes realizar flujos de un paso (&lt;strong&gt;Cobro&lt;/strong&gt;). Para más información, consulta los &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;flujos de pago&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un medio de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Colombia&#34;&gt;mira los medios de pago disponibles para Colombia&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Colombia&#34;&gt;mira los métodos de pago disponibles para Colombia&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para pagos con tókenes de tarjeta de crédito, asigna los parámetros &lt;code&gt;TOKEN_ID&lt;/code&gt; y &lt;code&gt;CREDIT_CARD_SECURITY_CODE&lt;/code&gt; (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el &lt;a href=&#34;../../../../es/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;SDK de Tokenización&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Por defecto, no está activo el procesamiento de tarjetas de crédito sin código de seguridad. Si quieres activar esta funcionalidad, contacta a tu representante de ventas. Luego de que se te active esta funcionalidad, asigna el parámetro &lt;code&gt;PROCESS_WITHOUT_CVV2&lt;/code&gt; con true y elimina el parámetro &lt;code&gt;CREDIT_CARD_SECURITY_CODE&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Para la tarjeta Crédito Fácil Codensa, el número de cuotas soportadas es 1 a 12, 18, 24, 36 y 48.&lt;/li&gt;
@@ -4088,7 +4088,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;img src=&#34;../../../../assets/Payments/BankReferenceReceiptCO.png&#34; alt=&#34;PrintScreen&#34; width=&#34;75%&#34;&gt;
 &lt;h3 id=&#34;considerations-1&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un método de pago válido en efectivo o por referencia bancaria, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Colombia&#34;&gt;mira los medios de pago disponibles para Colombia&lt;/a&gt;. No está soportado el método &lt;code&gt;OTHERS_CASH&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido en efectivo o por referencia bancaria, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Colombia&#34;&gt;mira los métodos de pago disponibles para Colombia&lt;/a&gt;. No está soportado el método &lt;code&gt;OTHERS_CASH&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;EXPIRATION_DATE&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto&lt;/li&gt;
 &lt;li&gt;Para &lt;code&gt;BALOTO&lt;/code&gt; y &lt;code&gt;EFECTY&lt;/code&gt;, la confirmación de pago toma 15 minutos. Para &lt;code&gt;BANK_REFERENCED&lt;/code&gt;, la confirmación es en línea.&lt;/li&gt;
 &lt;li&gt;Los valores mínimos de máximos para pagos en &lt;code&gt;BALOTO&lt;/code&gt; y &lt;code&gt;EFECTY&lt;/code&gt; son:
@@ -4101,7 +4101,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BANCO_BOGOTA_SERVICE_CODE&lt;/strong&gt;: código de pago para Banco de Bogotá. Disponible cuando utilices &lt;code&gt;BANK_REFERENCED&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BANK_REFERENCED_NAME&lt;/strong&gt;: nombre de la referencia para Bancolombia. Disponible cuando utilices &lt;code&gt;BANK_REFERENCED&lt;/code&gt;.&lt;/li&gt;
@@ -4400,7 +4400,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 
 &lt;/div&gt;
 &lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Enviar transacciones con transferencia bancaria&lt;/h2&gt;
-&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este medio de pago, necesitas crear un formulario de pago siguiendo estos pasos:&lt;/p&gt;
+&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este método de pago, necesitas crear un formulario de pago siguiendo estos pasos:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Consulta la lista de bancos disponibles para mostrarla al pagador. Para consultar la lista de bancos, consulta &lt;a href=&#34;#bank-list---pse&#34;&gt;este método&lt;/a&gt;.&lt;/p&gt;
@@ -4637,7 +4637,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el tipo de documento del pagador.
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PARAMETERS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PAYER_DOCUMENT_TYPE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DocumentType&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;CC&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;());&lt;/span&gt;
 
-&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del medio de pago
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del método de pago
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PARAMETERS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PAYMENT_METHOD&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PSE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;);&lt;/span&gt;
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del país.
@@ -4768,7 +4768,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el tipo de documento del pagador.
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;PayUParameters&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PAYER_DOCUMENT_TYPE&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CC&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 
-  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del medio de pago
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del método de pago
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;PayUParameters&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PAYMENT_METHOD&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PSE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 
 	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del país.
@@ -4867,7 +4867,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 
 	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Map&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HashMap&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;();&lt;/span&gt;
 
-&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del medio de pago
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del método de pago
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PARAMETERS&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PAYMENT_METHOD&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PSE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;);&lt;/span&gt;
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del país.
@@ -4897,9 +4897,9 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 
 &lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
-	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del medio de pago
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del método de pago
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$parameters&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;
-	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del medio de pago.
+	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del método de pago.
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;PayUParameters&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PAYMENT_METHOD&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PSE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Ingresa aquí el nombre del país.
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;PayUParameters&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;COUNTRY&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PayUCountries&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;CO&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -4921,8 +4921,8 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;method-call-4&#34;&gt;Llamado del método&lt;/h3&gt;
 &lt;p&gt;Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.&lt;/p&gt;
 &lt;nav&gt;
@@ -5175,7 +5175,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer&#34;&gt;Enviar transacciones con transferencia bancaria&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-reference&#34;&gt;Enviar transacciones con referencia bancaria&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -5196,7 +5196,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 
 &lt;h3 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un medio de pago válido de tarjeta de crédito en la petición, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Mexico&#34;&gt;mira los medios de pago disponibles para México&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido de tarjeta de crédito en la petición, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Mexico&#34;&gt;mira los métodos de pago disponibles para México&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para pagos con Promociones, asigna los parámetros &lt;code&gt;INSTALLMENTS_NUMBER&lt;/code&gt; y &lt;code&gt;PROMOTION_ID&lt;/code&gt; con el número de cuotas seleccionadas y el ID de la promoción. Consulta el [API de promociones] (/es/docs/services/promotions.html) para más información.&lt;/li&gt;
 &lt;li&gt;Cuando utilices promociones o apliques cuotas, debes mostrar siempre la frase &lt;strong&gt;&amp;ldquo;PAGOS DIFERIDOS&amp;rdquo;&lt;/strong&gt; durante el proceso de pago.&lt;/li&gt;
 &lt;li&gt;Cuando se apliquen cuotas (cargos asumidos por el pagador), muestra el monto original de la transacción, el monto luego de las cuotas, el número de cuotas y el monto por cuota incluyendo el valor adicional.&lt;/li&gt;
@@ -5891,16 +5891,16 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 &lt;img src=&#34;../../../../assets/Payments/CashReceiptMX.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
 &lt;h3 id=&#34;considerations-2&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un método de pago válido en efectivo, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Mexico&#34;&gt;mira los medios de pago disponibles para México&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido en efectivo, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Mexico&#34;&gt;mira los métodos de pago disponibles para México&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;EXPIRATION_DATE&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto&lt;/li&gt;
-&lt;li&gt;Cuando el medio de pago es &lt;code&gt;OXXO&lt;/code&gt;, la confirmación del pago será un día después del mismo. Para otros medios de pago en efectivo, la confirmación es en línea.&lt;/li&gt;
+&lt;li&gt;Cuando el método de pago es &lt;code&gt;OXXO&lt;/code&gt;, la confirmación del pago será un día después del mismo. Para otros métodos de pago en efectivo, la confirmación es en línea.&lt;/li&gt;
 &lt;li&gt;Los extra parámetros tienen las siguiente información relacionada con la transacción:
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;BANK_REFERENCED_CODE&lt;/strong&gt;: tipo de pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PAYMENT_WAY_ID&lt;/strong&gt;: red financiera del tipo de pago.&lt;/li&gt;
 &lt;/ul&gt;
@@ -6180,13 +6180,13 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 
 &lt;/div&gt;
 &lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Enviar transacciones con transferencia bancaria&lt;/h2&gt;
-&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este medio de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.&lt;br&gt;
+&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.&lt;br&gt;
 Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/Payments/BankTransferReceiptMX.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
 &lt;h3 id=&#34;considerations-3&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;El parámetro &lt;code&gt;EXPIRATION_DATE&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto&lt;/li&gt;
-&lt;li&gt;Cuando el pagador selecciona este medio de pago, PayU crea una orden en estado &lt;em&gt;in progress&lt;/em&gt; y una transacción en estado pendiente (&lt;code&gt;PENDING&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Cuando el pagador selecciona este método de pago, PayU crea una orden en estado &lt;em&gt;in progress&lt;/em&gt; y una transacción en estado pendiente (&lt;code&gt;PENDING&lt;/code&gt;).&lt;/li&gt;
 &lt;li&gt;Para realizar el pago, el pagador debe iniciar sesión en la sucursal virtual de su banco (el banco debe aparecer en la lista de bancos disponibles de SPEI).&lt;br&gt;Primero, el pagador debe registrar la cuenta CLABE de PayU en la sucursal de su banco. Una vez la cuenta CLABE esté activa para realizar transferencias, el pagador debe ingresar en su sucursal virtual, la referencia retornada por PayU en el parámetro &lt;code&gt;trazabilityCode&lt;/code&gt; y el monto tal y como PayU lo retornó.&lt;/li&gt;
 &lt;li&gt;En el cuerpo de la respuesta, puedes encontrar las variables para generar el recibo de pago (voucher) y la URL del mismo generado en formato HTML y PDF. Si quieres generar el voucher, utiliza las siguientes variables:
 &lt;ul&gt;
@@ -6493,7 +6493,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago con referencia bancaria.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago con referencia bancaria.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -6767,8 +6767,8 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;method-call-3&#34;&gt;Llamado del método&lt;/h3&gt;
 &lt;p&gt;Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.&lt;/p&gt;
 &lt;nav&gt;
@@ -7019,7 +7019,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-card&#34;&gt;Enviar transacciones con tarjeta de crédito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -7033,7 +7033,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;p&gt;Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Perú, puedes realizar los flujos de dos pasos (&lt;strong&gt;Autorización&lt;/strong&gt;, &lt;strong&gt;Captura&lt;/strong&gt;) y el de un paso (&lt;strong&gt;Cobro&lt;/strong&gt;). Para más información, consulta los &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;flujos de pago&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Envía un medio de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Peru&#34;&gt;mira los medios de pago disponibles para Perú&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Envía un método de pago válido de tarjeta de crédito, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Peru&#34;&gt;mira los métodos de pago disponibles para Perú&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para pagos con tókenes de tarjeta de crédito, asigna los parámetros &lt;code&gt;TOKEN_ID&lt;/code&gt; y &lt;code&gt;CREDIT_CARD_SECURITY_CODE&lt;/code&gt; (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, refer to &lt;a href=&#34;../../../../es/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Por defecto, no está activo el procesamiento de tarjetas de crédito sin código de seguridad. Si quieres activar esta funcionalidad, contacta a tu representante de ventas. Luego de que se te active esta funcionalidad, asigna el parámetro &lt;code&gt;PROCESS_WITHOUT_CVV2&lt;/code&gt; con true y elimina el parámetro &lt;code&gt;CREDIT_CARD_SECURITY_CODE&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;En Perú, puedes seleccionar 0 o de 2 a 26 cuotas cuando pagas con tarjeta de crédito. Si seleccionas una (1) cuota, PayU envía cero (0) como valor por defecto.&lt;/li&gt;
@@ -7723,7 +7723,7 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -8003,8 +8003,8 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;method-call-1&#34;&gt;Llamado del método&lt;/h3&gt;
 &lt;p&gt;Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.&lt;/p&gt;
 &lt;nav&gt;
@@ -9429,7 +9429,7 @@ Por defecto, no está activo el procesamiento de tarjetas de crédito sin códig
 &lt;li&gt;El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 90 días.&lt;/li&gt;
 &lt;li&gt;No se soportan reembolsos con decimales.&lt;/li&gt;
 &lt;li&gt;Cuando se aprueba un reembolso, el pagador obtiene su dinero en 8 a 20 días hábiles.&lt;/li&gt;
-&lt;li&gt;Los reembolsos parciales para transacciones qu utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.&lt;/li&gt;
+&lt;li&gt;Los reembolsos parciales para transacciones que utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.&lt;/li&gt;
 &lt;li&gt;El valor mínimo para enviar un Reembolso es 10 CLP.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;colombia&#34;&gt;Colombia&lt;/h3&gt;

@@ -87,7 +87,7 @@ If you need to display more information, contact your sales representative.
 &lt;p&gt;To set a filter, click the &lt;em&gt;&lt;strong&gt;Filter my sales&lt;/strong&gt;&lt;/em&gt; field at the top of the report table.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Configure the values for the filters and click &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt;. Once you click it, the filter table shows the sales that meet the selected criteria.&lt;/p&gt;
-&lt;p&gt;Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner. The date frame defined here.&lt;/p&gt;
+&lt;p&gt;Along with these filters, you can also set a time frame when the buyer performed the purchase using the dates filter at the top right corner.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_12.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;The date range of this filter is one (1) month before the end date. If you exceed this range, The report displays the information of one (1) month after the start date.&lt;br&gt;To see the information of a given date, set it for both start and end date.&lt;/p&gt;
 &lt;h2 id=&#34;transaction-details&#34;&gt;Transaction details&lt;/h2&gt;
@@ -138,12 +138,12 @@ If you need to display more information, contact your sales representative.
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;7&lt;/td&gt;
 &lt;td&gt;This purchase had&lt;/td&gt;
-&lt;td&gt;Transactions associated to this purchase. Click the &lt;strong&gt;▾&lt;/strong&gt; symbol to find &lt;a href=&#34;#transaction-details&#34;&gt;details of each transaction&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Reports/Reports_15.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Transactions associated to this purchase. Click the &lt;strong&gt;▾&lt;/strong&gt; symbol to find the &lt;a href=&#34;#transaction-history&#34;&gt;transaction history&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Reports/Reports_15.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;8&lt;/td&gt;
 &lt;td&gt;Actions&lt;/td&gt;
-&lt;td&gt;Actions available over the actions.&lt;/td&gt;
+&lt;td&gt;Actions available over the order.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -202,6 +202,13 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../en
         
         
         &lt;p&gt;Furthermore, if you have enabled the Payouts API, you can query the state of the payouts to third party requested. For more information, refer to &lt;a href=&#34;../../../en/docs/services/payouts.html&#34;&gt;Payouts&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;20px&#34;/&gt; The &lt;em&gt;&lt;strong&gt;Transfers Report&lt;/strong&gt;&lt;/em&gt; has the same columns and features available for the &lt;em&gt;&lt;strong&gt;Daily payouts&lt;/strong&gt;&lt;/em&gt; report (&lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Daily payouts&lt;/strong&gt;&lt;/em&gt;).
+&lt;/div&gt;
+
 &lt;h2 id=&#34;permission-required&#34;&gt;Permission required&lt;/h2&gt;
 &lt;p&gt;To have access to this module, you need to have a profile with the &lt;em&gt;Transfers&lt;/em&gt; &amp;gt; &lt;em&gt;Review&lt;/em&gt; permission enabled.&lt;/p&gt;
 &lt;p&gt;Refer to &lt;a href=&#34;../../../en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profiles and Permissions&lt;/a&gt; for more information.&lt;/p&gt;
@@ -345,7 +352,7 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;td&gt;Amount credited to your Account.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Amount&lt;/td&gt;
+&lt;td&gt;Debit&lt;/td&gt;
 &lt;td&gt;Amount debited from your Account.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -354,7 +361,7 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;Click &lt;img src=&#34;../../../assets/Reports/Reports_25.png&#34; width=&#34;1.5%&#34;/&gt; next to &lt;em&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/em&gt; label to merge &lt;strong&gt;debit&lt;/strong&gt; and &lt;strong&gt;credit&lt;/strong&gt;; the resultant value &lt;strong&gt;debit&lt;/strong&gt; minus the positive value of &lt;strong&gt;credit&lt;/strong&gt;.&lt;br&gt;For example, if the &lt;strong&gt;debit&lt;/strong&gt; column value is &lt;em&gt;$3.296,63&lt;/em&gt; and the &lt;strong&gt;credit&lt;/strong&gt; column value is &lt;em&gt;$950,00&lt;/em&gt;, the resulting column value after merging is &lt;em&gt;$2.346,63&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;img src=&#34;../../../assets/Reports/Reports_25.png&#34; width=&#34;1.5%&#34;/&gt; next to &lt;em&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/em&gt; label to merge &lt;strong&gt;debit&lt;/strong&gt; and &lt;strong&gt;credit&lt;/strong&gt;; the resultant value is &lt;strong&gt;debit&lt;/strong&gt; minus the positive value of &lt;strong&gt;credit&lt;/strong&gt;.&lt;br&gt;For example, if the &lt;strong&gt;debit&lt;/strong&gt; column value is &lt;em&gt;$3.296,63&lt;/em&gt; and the &lt;strong&gt;credit&lt;/strong&gt; column value is &lt;em&gt;$950,00&lt;/em&gt;, the resulting column value after merging is &lt;em&gt;$2.346,63&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_26.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 &lt;/div&gt;
@@ -365,7 +372,7 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;p&gt;To set a filter, click the &lt;em&gt;&lt;strong&gt;Filter your search&lt;/strong&gt;&lt;/em&gt; field at the top of the sales made chart.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_27.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Configure the values for the filters and click &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt;. Once you click it, the filter table shows the operations that meet the selected criteria.&lt;/p&gt;
-&lt;p&gt;Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner. The date frame defined here&lt;/p&gt;
+&lt;p&gt;Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_28.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.&lt;br&gt;To see the information of a given date, set it for both start and end date.&lt;/p&gt;
 &lt;h2 id=&#34;download-the-report&#34;&gt;Download the report&lt;/h2&gt;
@@ -485,12 +492,9 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;td&gt;&lt;strong&gt;DISCRETIONARY&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;Discretionary movement or additional credit to the account.&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Applies only to transactions with credit card.&lt;/em&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Applies only to transactions with credit card.&lt;/em&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -516,7 +520,7 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../en
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;To have access to this module, you need to have a profile with the permission &lt;em&gt;Colombian certificates&lt;/em&gt; &amp;gt; &lt;em&gt;View withhodlings&lt;/em&gt; permission enabled.&lt;/p&gt;
+&lt;p&gt;To have access to this module, you need to have a profile with the permission &lt;em&gt;Colombian certificates&lt;/em&gt; &amp;gt; &lt;em&gt;View withhodlings&lt;/em&gt; enabled.&lt;/p&gt;
 &lt;p&gt;Refer to &lt;a href=&#34;../../../en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profiles and Permissions&lt;/a&gt; for more information.&lt;/p&gt;
 
 &lt;/div&gt;

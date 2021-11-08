@@ -22,21 +22,21 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>SDK de Pagos - Chile | PayU Latam</title><meta property="og:title" content="SDK de Pagos - Chile" />
-<meta property="og:description" content="El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta property="og:description" content="El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/sdk-integration/payments-sdk-chile.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-08T17:41:32-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="SDK de Pagos - Chile">
-<meta itemprop="description" content="El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta itemprop="description" content="El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
+<meta itemprop="dateModified" content="2021-11-08T17:41:32-05:00" />
 <meta itemprop="wordCount" content="3007">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SDK de Pagos - Chile"/>
-<meta name="twitter:description" content="El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta name="twitter:description" content="El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "/>
 
 
@@ -139,7 +139,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4cff48d4332b658a300d50112d905c434105f7780727619c2f89d95c1a6ea4e618030a5d44eaaaf00eb9787a3920a954fb80cd22ebe838634166ed424ead2384.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.dc9f5c22c679d0d56ce1efe7fe6380a7048b5360cd741b9d37e3fcc3ff085f267c31051ee91cc44003610b6a1cc2307bf23f94a9fda317a9a99076c15698d69c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -739,7 +739,7 @@
         <li><a href="#charge">Cobro</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Consultar medios de pago disponibles</a>
+    <li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a>
       <ul>
         <li><a href="#method-call">Llamado del método</a></li>
       </ul>
@@ -806,7 +806,7 @@
             
 <div class="td-content">
 	<h1>SDK de Pagos - Chile</h1>
-    <div class="lead">El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.</div>
+    <div class="lead">El SDK de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.</div>
 	       
 	<p>Para integrarte con el SDK de Pagos de Chile, apunta tus peticiones a las siguientes URLs:</p>
 <nav>
@@ -889,7 +889,7 @@
 <p>El SDK de pagos incluye los siguientes métodos:</p>
 <ul>
 <li><a href="#submit-transaction-with-credit-cards">Enviar transacciones con tarjeta de crédito</a></li>
-<li><a href="#available-payment-methods-query">Consultar medios de pago disponibles</a></li>
+<li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a></li>
 <li><a href="#ping">Ping</a></li>
 </ul>
 <!-- * [Enviar transacciones en efectivo](#submit-transaction-with-cash) -->
@@ -911,7 +911,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 
 <h3 id="considerations">Consideraciones</h3>
 <ul>
-<li>Envía un medio de pago válido de tarjeta de crédito, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Chile">mira los medios de pago disponibles para Chile</a>.</li>
+<li>Envía un método de pago válido de tarjeta de crédito, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Chile">mira los métodos de pago disponibles para Chile</a>.</li>
 <li>Para pagos con tókenes de tarjeta de crédito, asigna los parámetros <code>TOKEN_ID</code> y <code>CREDIT_CARD_SECURITY_CODE</code> (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el <a href="../../../../es/docs/integrations/sdk-integration/tokenizationsdk.html">SDK de Tokenización</a>.</li>
 <li>No se permiten transacciones en PESOS CHILENOS con decimales.</li>
 <li>Two-step flows are not supported for international credit cards.</li>
@@ -1713,8 +1713,8 @@ Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción
 
 
 -->
-<h2 id="available-payment-methods-query">Consultar medios de pago disponibles</h2>
-<p>Este método retorna la lista de los medios de pago disponibles en todos los paises.</p>
+<h2 id="available-payment-methods-query">Consultar métodos de pago disponibles</h2>
+<p>Este método retorna la lista de los métodos de pago disponibles en todos los paises.</p>
 <h3 id="method-call">Llamado del método</h3>
 <p>Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.</p>
 <nav>
@@ -1876,9 +1876,9 @@ Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-3 de noviembre de 2021:
+8 de noviembre de 2021:
 
- <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
+ <b>Translations to Spanish (6ab0d355)</b>
 </div>
 </div>
 

@@ -55,7 +55,7 @@ Once your account has been validated and activated, your contact, business, and 
 &lt;p&gt;&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_04.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;At the top of the panel, you see an example of the current date and time of the time zone selected and displayed in the format your choose.&lt;/p&gt;
 &lt;h3 id=&#34;date-format&#34;&gt;Date format&lt;/h3&gt;
-&lt;p&gt;Change the format in which you want to display the dates in your PayU Module,&lt;/p&gt;
+&lt;p&gt;Change the format in which you want to display the dates in your PayU Module.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_05.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;You can use any of the following formats:&lt;/p&gt;
 &lt;table&gt;
@@ -130,7 +130,7 @@ After changing any of the user settings, do not forget to click &lt;em&gt;&lt;st
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Logo/Logo_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;To upload or update your logo, follow these steps.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;In the account options, expand the current account using the the &lt;strong&gt;▾&lt;/strong&gt; symbol. Then, select .&lt;/li&gt;
+&lt;li&gt;In the account options, expand the current account using the &lt;strong&gt;▾&lt;/strong&gt; symbol. Then, select &lt;em&gt;&lt;strong&gt;Your sale information&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Logo/Logo_02.png&#34; alt=&#34;PrintScreen&#34; width=&#34;30%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
@@ -151,7 +151,7 @@ After changing any of the user settings, do not forget to click &lt;em&gt;&lt;st
 &lt;p&gt;Once your account has been verified by our Risk team, you can request the update of your bank information. Due to security reasons, the update of bank information must be verified again as when you create the account.&lt;/p&gt;
 &lt;p&gt;To request the update of your Bank account, expand &lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt; option at the left menu. Then, select &lt;em&gt;&lt;strong&gt;Edit bank details&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;&lt;strong&gt;Bank information option&lt;/strong&gt;&lt;/em&gt; opens, click the &lt;em&gt;&lt;strong&gt;Edit&lt;/strong&gt;&lt;/em&gt; link to enable the fields of the bank account.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;&lt;strong&gt;Bank information&lt;/strong&gt;&lt;/em&gt; option opens, click the &lt;em&gt;&lt;strong&gt;Edit&lt;/strong&gt;&lt;/em&gt; link to enable the fields of the bank account.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Provide the information related to your Bank Account such as: country, bank, account number, etc.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
@@ -188,7 +188,7 @@ After changing any of the user settings, do not forget to click &lt;em&gt;&lt;st
         
         
         &lt;h2 id=&#34;getting-technical-information&#34;&gt;Getting Technical information&lt;/h2&gt;
-&lt;p&gt;Regardless of the &lt;a href=&#34;../../../../docs/integrations.html&#34;&gt;integration&lt;/a&gt; you use, you require the following variables in the request of the methods or in their.&lt;/p&gt;
+&lt;p&gt;Regardless of the &lt;a href=&#34;../../../../en/docs/integrations.html&#34;&gt;integration&lt;/a&gt; you use, you require the following variables in the request of the methods or in their parameters.&lt;/p&gt;
 &lt;h3 id=&#34;merchant-and-account-ids&#34;&gt;Merchant and account IDs&lt;/h3&gt;
 &lt;p&gt;These values allows you to authenticate both your merchant and your account when using any of the integrations to use the services we provide.&lt;/p&gt;
 &lt;p&gt;When you log in your PayU module, both values are accessible in the left panel.&lt;/p&gt;
@@ -219,7 +219,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 &lt;/ul&gt;
 &lt;p&gt;To configure this information, click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; and then select &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In the Technical configuration window, you can find two tab according to your needs: &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; or &lt;em&gt;&lt;strong&gt;Disputes&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt; window, you find two tab according to your needs: &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; or &lt;em&gt;&lt;strong&gt;Disputes&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;payments&#34;&gt;Payments&lt;/h3&gt;
 &lt;p&gt;In this tab, you can configure the following information.&lt;/p&gt;

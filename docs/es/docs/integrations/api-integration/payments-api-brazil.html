@@ -22,21 +22,21 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>API de Pagos - Brasil | PayU Latam</title><meta property="og:title" content="API de Pagos - Brasil" />
-<meta property="og:description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta property="og:description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-08T17:41:32-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de Pagos - Brasil">
-<meta itemprop="description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta itemprop="description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
+<meta itemprop="dateModified" content="2021-11-08T17:41:32-05:00" />
 <meta itemprop="wordCount" content="11752">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Pagos - Brasil"/>
-<meta name="twitter:description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta name="twitter:description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "/>
 
 
@@ -139,7 +139,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4cff48d4332b658a300d50112d905c434105f7780727619c2f89d95c1a6ea4e618030a5d44eaaaf00eb9787a3920a954fb80cd22ebe838634166ed424ead2384.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.dc9f5c22c679d0d56ce1efe7fe6380a7048b5360cd741b9d37e3fcc3ff085f267c31051ee91cc44003610b6a1cc2307bf23f94a9fda317a9a99076c15698d69c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -760,7 +760,7 @@
         <li><a href="#api-call-2">Llamado del API</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Consultar medios de pago disponibles</a>
+    <li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a>
       <ul>
         <li><a href="#variables-for-request-and-response-4">Variables para la petición y la respuesta</a></li>
         <li><a href="#api-call-3">Llamado del API</a></li>
@@ -829,7 +829,7 @@
             
 <div class="td-content">
 	<h1>API de Pagos - Brasil</h1>
-    <div class="lead">El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.</div>
+    <div class="lead">El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.</div>
 	       
 	<p>Para integrarte con el API de Pagos de Brasil, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.</p>
 
@@ -850,7 +850,7 @@
 <li><a href="#submit-transaction-with-pix">Enviar transacciones con PIX</a></li>
 <li><a href="#submit-transaction-with-cash">Enviar transacciones en efectivo</a></li>
 <li><a href="#submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</a></li>
-<li><a href="#available-payment-methods-query">Consultar medios de pago disponibles</a></li>
+<li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a></li>
 <li><a href="#ping">Ping</a></li>
 </ul>
 
@@ -1836,7 +1836,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <td>transaction &gt; paymentMethod</td>
 <td>Alfanumérico</td>
 <td>32</td>
-<td>Selecciona un medio de pago de Tarjeta de crédito valido. <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Brazil">Ver los medios de pago disponibles para Brasil</a>.</td>
+<td>Selecciona un método de pago de Tarjeta de crédito valido. <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Brazil">Ver los métodos de pago disponibles para Brasil</a>.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -2834,8 +2834,8 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <p>Al final, tu cliente ve una página de checkout como esta.</p>
 <p><img src="../../../../assets/Payments/PixCheckout.png" alt="PrintScreen"></p>
 <h3 id="how-does-pix-work">¿Cómo funciona PIX?</h3>
-<p>PIX es un medio de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (<em>Banco Central do Brasil</em> - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.</p>
-<p>A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el diner inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este medio de pago aparecerán en tu cuenta PayU en cuestión de segundos.</p>
+<p>PIX es un método de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (<em>Banco Central do Brasil</em> - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.</p>
+<p>A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el diner inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este método de pago aparecerán en tu cuenta PayU en cuestión de segundos.</p>
 <p>Pix tiene dos partes:</p>
 <ul>
 <li>
@@ -3326,7 +3326,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <td>transaction &gt; paymentMethod</td>
 <td>Alfanumérico</td>
 <td>32</td>
-<td>Asigna <code>PIX</code> para este medio de pago. Si quieres ver otros medios de pago, consulta <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Brazil">Medios de pago para Brasil</a>.</td>
+<td>Asigna <code>PIX</code> para este método de pago. Si quieres ver otros métodos de pago, consulta <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Brazil">Métodos de pago para Brasil</a>.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -3481,7 +3481,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </li>
 </ul>
 <h3 id="api-call">Llamado del API</h3>
-<p>Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.</p>
+<p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -4222,7 +4222,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <td>transaction &gt; paymentMethod</td>
 <td>Alfanumérico</td>
 <td>32</td>
-<td>Seleccione un medio de pago en efectivo válido. <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Brazil">Ver los medios de pago disponibles para Brasil</a>.</td>
+<td>Seleccione un método de pago en efectivo válido. <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Brazil">Ver los métodos de pago disponibles para Brasil</a>.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -4363,7 +4363,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <li>El paso se ve reflejado al siguiente día hábil.</li>
 <li>El parámetro <code>transactionResponse.extraParameters</code> Tiene los siguientes parámetros relacionados con la transacción:
 <ul>
-<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: recibo de pago en formato HTML. TAquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.</li>
+<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: recibo de pago en formato HTML. TAquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.</li>
 <li><strong>URL_BOLETO_BANCARIO</strong>: recibo de pago en formato de impresión.</li>
 <li><strong>EXPIRATION_DATE</strong>: fecha máxima en la que el pagador puede realizar el pago.</li>
 <li><strong>BAR_CODE</strong>: Código de barras que le permite al pagador realizar el pago.</li>
@@ -4371,7 +4371,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </li>
 </ul>
 <h3 id="api-call-1">Llamado del API</h3>
-<p>Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.</p>
+<p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -4618,7 +4618,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 </div>
 <h2 id="submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</h2>
-<p>Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este medio de pago, el pagador realiza una transferencia desde su cuenta bancaria emitida por ITAU.<br>
+<p>Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia desde su cuenta bancaria emitida por ITAU.<br>
 Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL que se encuentra en la respuesta del método.</p>
 <img src="../../../../assets/Payments/BankTransferReceiptBR.png" alt="PrintScreen" width="50%">
 <h3 id="variables-for-request-and-response-3">Variables para la petición y la respuesta</h3>
@@ -5089,7 +5089,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 <td>transaction &gt; paymentMethod</td>
 <td>Alfanumérico</td>
 <td>32</td>
-<td>Selecciona un medio de pago por transferencia bancaria válido. <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Brazil">Ver los medios de pago disponibles para Brasil</a>.</td>
+<td>Selecciona un método de pago por transferencia bancaria válido. <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Brazil">Ver los métodos de pago disponibles para Brasil</a>.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -5251,7 +5251,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 <li>En el cuerpo de la respuesta, puedes encontrar el recibo generador por PayU y su fecha de expiración.</li>
 </ul>
 <h3 id="api-call-2">Llamado del API</h3>
-<p>Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.</p>
+<p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -5507,8 +5507,8 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 </div>
-<h2 id="available-payment-methods-query">Consultar medios de pago disponibles</h2>
-<p>Este método retorna la lista de los medios de pago disponibles en todos los paises.</p>
+<h2 id="available-payment-methods-query">Consultar métodos de pago disponibles</h2>
+<p>Este método retorna la lista de los métodos de pago disponibles en todos los paises.</p>
 <h3 id="variables-for-request-and-response-4">Variables para la petición y la respuesta</h3>
 <details>
 <summary>Petición (Request)</summary>
@@ -5600,37 +5600,37 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 <td>paymentMethods</td>
 <td></td>
 <td></td>
-<td>Lista de medios de pago.</td>
+<td>Lista de métodos de pago.</td>
 </tr>
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete</td>
 <td></td>
 <td></td>
-<td>Este objeto tiene la información de un medio de pago.</td>
+<td>Este objeto tiene la información de un método de pago.</td>
 </tr>
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete &gt; id</td>
 <td>Numérico</td>
 <td></td>
-<td>Identificador del medio de pago.</td>
+<td>Identificador del método de pago.</td>
 </tr>
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete &gt; description</td>
 <td>Alfanumérico</td>
 <td>Max:32</td>
-<td>Nombre del medio de pago.</td>
+<td>Nombre del método de pago.</td>
 </tr>
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete &gt; country</td>
 <td>Alfanumérico</td>
 <td>2</td>
-<td>Código ISO del país del medio de pago.</td>
+<td>Código ISO del país del método de pago.</td>
 </tr>
 </tbody>
 </table>
 </details>
 <h3 id="api-call-3">Llamado del API</h3>
-<p>Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.</p>
+<p>Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -5970,9 +5970,9 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-3 de noviembre de 2021:
+8 de noviembre de 2021:
 
- <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
+ <b>Translations to Spanish (6ab0d355)</b>
 </div>
 </div>
 

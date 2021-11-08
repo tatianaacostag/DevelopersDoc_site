@@ -78,7 +78,7 @@
 &lt;p&gt;Before moving on with the explanation of how the PayU module is organized, you need the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Have a user in PayU module. Learn how to create one &lt;a href=&#34;../../../en/docs/getting-started/create-an-account.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Have read and understand the &lt;a href=&#34;../../../payu-module-documentation.html#payu-module-concepts&#34;&gt;concepts behind the PayU Module&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Have read and understand the &lt;a href=&#34;../../../en/payu-module-documentation.html#payu-module-concepts&#34;&gt;concepts behind the PayU Module&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;payu-module-web-application&#34;&gt;PayU Module web application&lt;/h2&gt;
 &lt;p&gt;PayU module is divided in four main groups:&lt;/p&gt;
@@ -113,7 +113,7 @@ The options displayed in this article depends on the profile you have to access 
 &lt;td&gt;Merchant ID&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
-&lt;td&gt;ID number of your shop in PayU’s system. This ID is required when you want to use &lt;a href=&#34;../../../docs/integrations.html&#34;&gt;Integrations&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;ID number of your merchant in PayU’s system. This ID is required when you want to use &lt;a href=&#34;../../../en/docs/integrations.html&#34;&gt;Integrations&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Account&lt;/td&gt;
@@ -192,6 +192,12 @@ The options displayed in this article depends on the profile you have to access 
 &lt;td&gt;Schedule Transfers&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
 &lt;td&gt;Allows you create transfer on a daily, weekly, monthly basis. Furthermore, you can configure custom transfers as you need. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/transfers.html#schedule-transfers&#34;&gt;Schedule transfers&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Daily Payouts&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;As PayU in Brazil is not a not a payment institution, the funds collected in your account are transferred to your bank account on a daily basis. Through this report, you can know the status of the daily transfers.&lt;br&gt;This report is only available for accounts in Brazil and it has the same columns and options of the &lt;a href=&#34;../../../en/payu-module-documentation/reports/transfer-report.html&#34;&gt;Transfers report&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -278,10 +284,10 @@ The options displayed in this article depends on the profile you have to access 
 &lt;/table&gt;
 &lt;h3 id=&#34;3-main-panel&#34;&gt;3. Main panel&lt;/h3&gt;
 &lt;p&gt;This panel loads the selected option either in the left panel or in the option at the top. The &lt;em&gt;&lt;strong&gt;Home&lt;/strong&gt;&lt;/em&gt; page is selected by default, so it loads as soon as you log in the PayU module.&lt;/p&gt;
-&lt;p&gt;To set an option as displayed by default, click the three dot menu at the top left of the panel and select &lt;em&gt;&lt;strong&gt;Set as main page&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To set an option as displayed by default, click the three dot menu at the top right of the panel and select &lt;em&gt;&lt;strong&gt;Set as main page&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_04.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;
 &lt;h4 id=&#34;home-page&#34;&gt;Home page&lt;/h4&gt;
-&lt;p&gt;The home page is starting point of the Merchant panel. It shows the shortcuts to perform sales on-line, control your finances, transfers funds, learn about e-commerce and leave us comments.&lt;/p&gt;
+&lt;p&gt;The home page is starting point of the PayU Module. It shows the shortcuts to perform sales on-line, know your sales status, control your finances, transfers funds, learn about e-commerce and leave us comments.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In this page, you can also take a tour using the &lt;em&gt;&lt;strong&gt;Virtual tour&lt;/strong&gt;&lt;/em&gt; button. This button takes your through the main options to manage your account.&lt;/p&gt;
 

@@ -22,21 +22,21 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>SDK de Pagos - Colombia | PayU Latam</title><meta property="og:title" content="SDK de Pagos - Colombia" />
-<meta property="og:description" content="El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta property="og:description" content="El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/sdk-integration/payments-sdk-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-08T17:41:32-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="SDK de Pagos - Colombia">
-<meta itemprop="description" content="El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta itemprop="description" content="El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
+<meta itemprop="dateModified" content="2021-11-08T17:41:32-05:00" />
 <meta itemprop="wordCount" content="4109">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SDK de Pagos - Colombia"/>
-<meta name="twitter:description" content="El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.
+<meta name="twitter:description" content="El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "/>
 
 
@@ -139,7 +139,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4cff48d4332b658a300d50112d905c434105f7780727619c2f89d95c1a6ea4e618030a5d44eaaaf00eb9787a3920a954fb80cd22ebe838634166ed424ead2384.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.dc9f5c22c679d0d56ce1efe7fe6380a7048b5360cd741b9d37e3fcc3ff085f267c31051ee91cc44003610b6a1cc2307bf23f94a9fda317a9a99076c15698d69c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -755,7 +755,7 @@
         <li><a href="#method-call-3">Llamado del método</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Consultar medios de pago disponibles</a>
+    <li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a>
       <ul>
         <li><a href="#method-call-4">Llamado del método</a></li>
       </ul>
@@ -822,7 +822,7 @@
             
 <div class="td-content">
 	<h1>SDK de Pagos - Colombia</h1>
-    <div class="lead">El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples medios de pago.</div>
+    <div class="lead">El SDK de Pagos de Colombia le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.</div>
 	       
 	<p>Para integrarte con el SDK de Pagos de Colombia, apunta tus peticiones a las siguientes URLs:</p>
 <nav>
@@ -908,7 +908,7 @@
 <li><a href="#submit-transaction-with-cash-or-bank-reference">Enviar transacciones en efectivo o Referencia bancaria</a></li>
 <li><a href="#submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</a></li>
 <li><a href="#bank-list---pse">Lista de bancos - PSE</a></li>
-<li><a href="#available-payment-methods-query">Consultar medios de pago disponibles</a></li>
+<li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a></li>
 <li><a href="#ping">Ping</a></li>
 </ul>
 
@@ -922,7 +922,7 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 <p>Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Colombia, puedes realizar flujos de un paso (<strong>Cobro</strong>). Para más información, consulta los <a href="../../../../es/docs/services/payments.html#payment-flows">flujos de pago</a>.</p>
 <h3 id="considerations">Consideraciones</h3>
 <ul>
-<li>Envía un medio de pago válido de tarjeta de crédito, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Colombia">mira los medios de pago disponibles para Colombia</a>.</li>
+<li>Envía un método de pago válido de tarjeta de crédito, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Colombia">mira los métodos de pago disponibles para Colombia</a>.</li>
 <li>Para pagos con tókenes de tarjeta de crédito, asigna los parámetros <code>TOKEN_ID</code> y <code>CREDIT_CARD_SECURITY_CODE</code> (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el <a href="../../../../es/docs/integrations/sdk-integration/tokenizationsdk.html">SDK de Tokenización</a>.</li>
 <li>Por defecto, no está activo el procesamiento de tarjetas de crédito sin código de seguridad. Si quieres activar esta funcionalidad, contacta a tu representante de ventas. Luego de que se te active esta funcionalidad, asigna el parámetro <code>PROCESS_WITHOUT_CVV2</code> con true y elimina el parámetro <code>CREDIT_CARD_SECURITY_CODE</code>.</li>
 <li>Para la tarjeta Crédito Fácil Codensa, el número de cuotas soportadas es 1 a 12, 18, 24, 36 y 48.</li>
@@ -1273,7 +1273,7 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 <img src="../../../../assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
 <h3 id="considerations-1">Consideraciones</h3>
 <ul>
-<li>Envía un método de pago válido en efectivo o por referencia bancaria, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Colombia">mira los medios de pago disponibles para Colombia</a>. No está soportado el método <code>OTHERS_CASH</code>.</li>
+<li>Envía un método de pago válido en efectivo o por referencia bancaria, <a href="../../../../es/docs/getting-started/select-your-payment-method.html#Colombia">mira los métodos de pago disponibles para Colombia</a>. No está soportado el método <code>OTHERS_CASH</code>.</li>
 <li>El parámetro <code>EXPIRATION_DATE</code> no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto</li>
 <li>Para <code>BALOTO</code> y <code>EFECTY</code>, la confirmación de pago toma 15 minutos. Para <code>BANK_REFERENCED</code>, la confirmación es en línea.</li>
 <li>Los valores mínimos de máximos para pagos en <code>BALOTO</code> y <code>EFECTY</code> son:
@@ -1286,7 +1286,7 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 <ul>
 <li><strong>EXPIRATION_DATE</strong>: fecha máxima en la que el pagador puede realizar el pago</li>
 <li><strong>REFERENCE</strong>: referencia de pago interna generada por PayU.</li>
-<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.</li>
+<li><strong>URL_PAYMENT_RECEIPT_HTML</strong>: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.</li>
 <li><strong>URL_PAYMENT_RECEIPT_PDF</strong>: recibo de pago en formato PDF.</li>
 <li><strong>BANCO_BOGOTA_SERVICE_CODE</strong>: código de pago para Banco de Bogotá. Disponible cuando utilices <code>BANK_REFERENCED</code>.</li>
 <li><strong>BANK_REFERENCED_NAME</strong>: nombre de la referencia para Bancolombia. Disponible cuando utilices <code>BANK_REFERENCED</code>.</li>
@@ -1585,7 +1585,7 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 
 </div>
 <h2 id="submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</h2>
-<p>Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este medio de pago, necesitas crear un formulario de pago siguiendo estos pasos:</p>
+<p>Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este método de pago, necesitas crear un formulario de pago siguiendo estos pasos:</p>
 <ol>
 <li>
 <p>Consulta la lista de bancos disponibles para mostrarla al pagador. Para consultar la lista de bancos, consulta <a href="#bank-list---pse">este método</a>.</p>
@@ -1822,7 +1822,7 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 <span style="color:#8f5902;font-style:italic">// Ingresa aquí el tipo de documento del pagador.
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYER_DOCUMENT_TYPE</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">DocumentType</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">CC</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">toString</span><span style="color:#ce5c00;font-weight:bold">());</span>
 
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del medio de pago
+<span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del método de pago
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYMENT_METHOD</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;PSE&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
 
 <span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del país.
@@ -1953,7 +1953,7 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
   <span style="color:#8f5902;font-style:italic">// Ingresa aquí el tipo de documento del pagador.
 </span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYER_DOCUMENT_TYPE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;CC&#34;</span><span style="color:#000;font-weight:bold">,</span>
 
-  <span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del medio de pago
+  <span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del método de pago
 </span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYMENT_METHOD</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;PSE&#34;</span><span style="color:#000;font-weight:bold">,</span>
 
 	<span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del país.
@@ -2052,7 +2052,7 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 
 	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA"><span style="color:#000">Map</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;();</span>
 
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del medio de pago
+<span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del método de pago
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PAYMENT_METHOD</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;PSE&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
 
 <span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del país.
@@ -2082,9 +2082,9 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 
 <div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del medio de pago
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del método de pago
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">$parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">array</span><span style="color:#000;font-weight:bold">(</span>
-	<span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del medio de pago.
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del método de pago.
 </span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PAYMENT_METHOD</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;PSE&#34;</span><span style="color:#000;font-weight:bold">,</span>
 	<span style="color:#8f5902;font-style:italic">// Ingresa aquí el nombre del país.
 </span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">COUNTRY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#000">PayUCountries</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">CO</span><span style="color:#000;font-weight:bold">,</span>
@@ -2106,8 +2106,8 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 
 
 </div>
-<h2 id="available-payment-methods-query">Consultar medios de pago disponibles</h2>
-<p>Este método retorna la lista de los medios de pago disponibles en todos los paises.</p>
+<h2 id="available-payment-methods-query">Consultar métodos de pago disponibles</h2>
+<p>Este método retorna la lista de los métodos de pago disponibles en todos los paises.</p>
 <h3 id="method-call-4">Llamado del método</h3>
 <p>Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.</p>
 <nav>
@@ -2269,9 +2269,9 @@ Para confirmar el estado de una transacción, puedes utilizar el <a href="../../
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-3 de noviembre de 2021:
+8 de noviembre de 2021:
 
- <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
+ <b>Translations to Spanish (6ab0d355)</b>
 </div>
 </div>
 

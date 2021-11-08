@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/tokenization-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-06-24T10:31:30-05:00" />
-<meta property="article:modified_time" content="2021-11-03T16:33:52-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-08T17:41:32-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de Tokenización">
 <meta itemprop="description" content="El API de Tokenización te permite almacenar de forma segura, la información de las tarjetas de crédito de tus clientes a través de la creación de un token. Este token tee permite realizar pagos regulares o implementar la funcionalidad de pago a un clic, siguiendo lo estándares de seguridad de PCI DSS (Payment Card Industry Data Security Standard) para manejar los datos de las tarjetas de crédito.
 "><meta itemprop="datePublished" content="2021-06-24T10:31:30-05:00" />
-<meta itemprop="dateModified" content="2021-11-03T16:33:52-05:00" />
-<meta itemprop="wordCount" content="2732">
+<meta itemprop="dateModified" content="2021-11-08T17:41:32-05:00" />
+<meta itemprop="wordCount" content="2711">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Tokenización"/>
 <meta name="twitter:description" content="El API de Tokenización te permite almacenar de forma segura, la información de las tarjetas de crédito de tus clientes a través de la creación de un token. Este token tee permite realizar pagos regulares o implementar la funcionalidad de pago a un clic, siguiendo lo estándares de seguridad de PCI DSS (Payment Card Industry Data Security Standard) para manejar los datos de las tarjetas de crédito.
@@ -139,7 +139,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4cff48d4332b658a300d50112d905c434105f7780727619c2f89d95c1a6ea4e618030a5d44eaaaf00eb9787a3920a954fb80cd22ebe838634166ed424ead2384.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.dc9f5c22c679d0d56ce1efe7fe6380a7048b5360cd741b9d37e3fcc3ff085f267c31051ee91cc44003610b6a1cc2307bf23f94a9fda317a9a99076c15698d69c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -852,18 +852,6 @@
 <li><a href="#massive-token-removal">Eliminación masiva de tarjetas de crédito</a></li>
 <li><a href="#query-tokens">Consulta de tókenes</a></li>
 </ul>
-
-
-<div class="alert alert-info" role="alert">
-<h4 class="alert-heading">Nota</h4>
-<p>Para consultar tokens, necesitas apuntar tus peticiones a las siguientes URLs de acuerdo con tu ambiente.</p>
-<ul>
-<li>Pruebas: <code>https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi</code></li>
-<li>Producción: <code>https://api.payulatam.com/reports-api/4.0/service.cgi</code></li>
-</ul>
-
-</div>
-
 <h2 id="individual-credit-card-registration">Registro individual de tarjeta de crédito</h2>
 <p>Utilizando esta funcionalidad, puedes registrar la información de la tarjeta de crédito de un cliente y obtener un token.</p>
 <h3 id="variables-for-request-and-response">Variables para la petición y la respuesta</h3>
@@ -949,7 +937,7 @@
 <td>creditCardToken &gt; paymentMethod</td>
 <td>Alfanumérico</td>
 <td>32</td>
-<td>Selecciona un medio de pago de Tarjeta de crédito valido. <a href="../../../../es/docs/getting-started/select-your-payment-method.html">Ver los medios de pago disponibles</a>.</td>
+<td>Selecciona un método de pago de Tarjeta de crédito valido. <a href="../../../../es/docs/getting-started/select-your-payment-method.html">Ver los métodos de pago disponibles</a>.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -2619,9 +2607,9 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-3 de noviembre de 2021:
+8 de noviembre de 2021:
 
- <b>Last translations to Spanish in Dev Part 1 (59585aeb)</b>
+ <b>Translations to Spanish (6ab0d355)</b>
 </div>
 </div>
 

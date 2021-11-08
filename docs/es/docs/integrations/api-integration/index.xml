@@ -39,7 +39,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-or-debit-card&#34;&gt;Enviar transacciones con tarjeta de crédito o débito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -601,7 +601,7 @@
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago de Tarjeta de crédito o débito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Argentina&#34;&gt;Ver los medios de pago disponibles para Argentina&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago de Tarjeta de crédito o débito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Argentina&#34;&gt;Ver los métodos de pago disponibles para Argentina&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -2013,7 +2013,7 @@
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Argentina&#34;&gt;Ver los medios de pago disponibles para Argentina&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Argentina&#34;&gt;Ver los métodos de pago disponibles para Argentina&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -2155,13 +2155,13 @@
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -2444,8 +2444,8 @@
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-2&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
@@ -2540,42 +2540,42 @@
 &lt;td&gt;paymentMethods&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Lista de medios de pago.&lt;/td&gt;
+&lt;td&gt;Lista de métodos de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Este objeto tiene la información de un medio de pago.&lt;/td&gt;
+&lt;td&gt;Este objeto tiene la información de un método de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; id&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Identificador del medio de pago.&lt;/td&gt;
+&lt;td&gt;Identificador del método de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; description&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Max:32&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; country&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Código ISO del país del medio de pago.&lt;/td&gt;
+&lt;td&gt;Código ISO del país del método de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-1&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -2941,7 +2941,7 @@
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-pix&#34;&gt;Enviar transacciones con PIX&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer&#34;&gt;Enviar transacciones con transferencia bancaria&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -3927,7 +3927,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago de Tarjeta de crédito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Ver los medios de pago disponibles para Brasil&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago de Tarjeta de crédito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Ver los métodos de pago disponibles para Brasil&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -4925,8 +4925,8 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;p&gt;Al final, tu cliente ve una página de checkout como esta.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/PixCheckout.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;how-does-pix-work&#34;&gt;¿Cómo funciona PIX?&lt;/h3&gt;
-&lt;p&gt;PIX es un medio de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (&lt;em&gt;Banco Central do Brasil&lt;/em&gt; - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.&lt;/p&gt;
-&lt;p&gt;A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el diner inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este medio de pago aparecerán en tu cuenta PayU en cuestión de segundos.&lt;/p&gt;
+&lt;p&gt;PIX es un método de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (&lt;em&gt;Banco Central do Brasil&lt;/em&gt; - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.&lt;/p&gt;
+&lt;p&gt;A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el diner inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este método de pago aparecerán en tu cuenta PayU en cuestión de segundos.&lt;/p&gt;
 &lt;p&gt;Pix tiene dos partes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -5417,7 +5417,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Asigna &lt;code&gt;PIX&lt;/code&gt; para este medio de pago. Si quieres ver otros medios de pago, consulta &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Medios de pago para Brasil&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Asigna &lt;code&gt;PIX&lt;/code&gt; para este método de pago. Si quieres ver otros métodos de pago, consulta &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Métodos de pago para Brasil&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -5572,7 +5572,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -6313,7 +6313,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Seleccione un medio de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Ver los medios de pago disponibles para Brasil&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Seleccione un método de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Ver los métodos de pago disponibles para Brasil&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -6454,7 +6454,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;li&gt;El paso se ve reflejado al siguiente día hábil.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;transactionResponse.extraParameters&lt;/code&gt; Tiene los siguientes parámetros relacionados con la transacción:
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. TAquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. TAquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_BOLETO_BANCARIO&lt;/strong&gt;: recibo de pago en formato de impresión.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: Código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
@@ -6462,7 +6462,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call-1&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -6709,7 +6709,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 &lt;/div&gt;
 &lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Enviar transacciones con transferencia bancaria&lt;/h2&gt;
-&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este medio de pago, el pagador realiza una transferencia desde su cuenta bancaria emitida por ITAU.&lt;br&gt;
+&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia desde su cuenta bancaria emitida por ITAU.&lt;br&gt;
 Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL que se encuentra en la respuesta del método.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/Payments/BankTransferReceiptBR.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-3&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
@@ -7180,7 +7180,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago por transferencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Ver los medios de pago disponibles para Brasil&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago por transferencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Brazil&#34;&gt;Ver los métodos de pago disponibles para Brasil&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -7342,7 +7342,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 &lt;li&gt;En el cuerpo de la respuesta, puedes encontrar el recibo generador por PayU y su fecha de expiración.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call-2&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -7598,8 +7598,8 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-4&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
@@ -7691,37 +7691,37 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 &lt;td&gt;paymentMethods&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Lista de medios de pago.&lt;/td&gt;
+&lt;td&gt;Lista de métodos de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Este objeto tiene la información de un medio de pago.&lt;/td&gt;
+&lt;td&gt;Este objeto tiene la información de un método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; id&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Identificador del medio de pago.&lt;/td&gt;
+&lt;td&gt;Identificador del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; description&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Max:32&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; country&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Código ISO del país del medio de pago.&lt;/td&gt;
+&lt;td&gt;Código ISO del país del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-3&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -8086,7 +8086,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-or-debit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito o débito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-debit-and-prepaid-cards&#34;&gt;Enviar transacciones con tarjeta débito o prepago utilizando WebPay Plus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -8655,7 +8655,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago de Tarjeta de crédito o débito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;Ver los medios de pago disponibles para Chile&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago de Tarjeta de crédito o débito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;Ver los métodos de pago disponibles para Chile&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10048,7 +10048,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Seleccione un medio de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;Ver los medios de pago disponibles para Chile&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Seleccione un método de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;Ver los métodos de pago disponibles para Chile&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10196,7 +10196,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;li&gt;Debes redirigir al pagador a la página web de Klap webpage (antes Multicaja) para permitirle hacer el pago en efectivo. Esta URL se encuentra en el parámetro &lt;code&gt;BANK_URL&lt;/code&gt; en la respuesta.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -10942,7 +10942,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Seleccione un medio de pago válido para Tarjetas Débito y prepago. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;Ver los medios de pago disponibles para Chile&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Seleccione un método de pago válido para Tarjetas Débito y prepago. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Chile&#34;&gt;Ver los métodos de pago disponibles para Chile&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -11140,7 +11140,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;/table&gt;
 &lt;p&gt;Las variables anteriores se envía a través de GET.&lt;/p&gt;
 &lt;h3 id=&#34;api-call-1&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -11429,8 +11429,8 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-3&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
@@ -11522,37 +11522,37 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;td&gt;paymentMethods&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Lista de medios de pago.&lt;/td&gt;
+&lt;td&gt;Lista de métodos de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Este objeto tiene la información de un medio de pago.&lt;/td&gt;
+&lt;td&gt;Este objeto tiene la información de un método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; id&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Identificador del medio de pago.&lt;/td&gt;
+&lt;td&gt;Identificador del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; description&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Max:32&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; country&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Código ISO del país del medio de pago.&lt;/td&gt;
+&lt;td&gt;Código ISO del país del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-2&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -11922,7 +11922,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash-or-bank-reference&#34;&gt;Enviar transacciones en efectivo o referencia bancaria&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer-pse&#34;&gt;Enviar transacciones con transferencia bancaria (PSE)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#bank-list---pse&#34;&gt;Lista de Bancos - PSE&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -12449,7 +12449,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago de Tarjeta de crédito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;Ver los medios de pago disponibles para Colombia&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago de Tarjeta de crédito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;Ver los métodos de pago disponibles para Colombia&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12702,7 +12702,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;api-call&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -13492,7 +13492,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Seleccione un medio de pago en efectivo o de referencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;Ver los medios de pago disponibles para Colombia&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Seleccione un método de pago en efectivo o de referencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;Ver los métodos de pago disponibles para Colombia&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -13647,7 +13647,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BANCO_BOGOTA_SERVICE_CODE&lt;/strong&gt;: código de pago para Banco de Bogotá. Disponible cuando utilices &lt;code&gt;BANK_REFERENCED&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BANK_REFERENCED_NAME&lt;/strong&gt;: nombre de la referencia para Bancolombia. Disponible cuando utilices &lt;code&gt;BANK_REFERENCED&lt;/code&gt;.&lt;/li&gt;
@@ -13656,7 +13656,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call-1&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -13967,7 +13967,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 
 &lt;/div&gt;
 &lt;h2 id=&#34;submit-transaction-with-bank-transfer-pse&#34;&gt;Enviar transacciones con transferencia bancaria (PSE)&lt;/h2&gt;
-&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este medio de pago, necesitas crear un formulario de pago siguiendo estos pasos:&lt;/p&gt;
+&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este método de pago, necesitas crear un formulario de pago siguiendo estos pasos:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Incluye un botón PSE button haciendo evidente que tu cliente va a utilizar &lt;em&gt;Proveedor de Servicios Electrónicos PSE&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
@@ -14474,7 +14474,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago por transferencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;Ver los medios de pago disponibles para Colombia&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago por transferencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;Ver los métodos de pago disponibles para Colombia&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -14672,7 +14672,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;api-call-2&#34;&gt;Llamado del API&lt;/h2&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -15832,8 +15832,8 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-4&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
@@ -15925,37 +15925,37 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;td&gt;paymentMethods&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Lista de medios de pago.&lt;/td&gt;
+&lt;td&gt;Lista de métodos de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Este objeto tiene la información de un medio de pago.&lt;/td&gt;
+&lt;td&gt;Este objeto tiene la información de un método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; id&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Identificador del medio de pago.&lt;/td&gt;
+&lt;td&gt;Identificador del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; description&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Max:32&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; country&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Código ISO del país del medio de pago.&lt;/td&gt;
+&lt;td&gt;Código ISO del país del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-4&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -16321,7 +16321,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer&#34;&gt;Enviar transacciones con transferencia bancaria&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-reference&#34;&gt;Enviar transacciones con referencia bancaria&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -16890,7 +16890,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago de Tarjeta de crédito o débito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;Ver los medios de pago disponibles para México&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago de Tarjeta de crédito o débito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;Ver los métodos de pago disponibles para México&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -18336,7 +18336,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;Ver los medios de pago disponibles para México&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;Ver los métodos de pago disponibles para México&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -18479,21 +18479,21 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 &lt;h4 id=&#34;considerations-3&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;El parámetro &lt;code&gt;transaction.expirationDate&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.&lt;/li&gt;
-&lt;li&gt;Cuando el medio de pago es &lt;code&gt;OXXO&lt;/code&gt;, la confirmación del pago será un día después del mismo. Para otros medios de pago en efectivo, la confirmación es en línea.&lt;/li&gt;
+&lt;li&gt;Cuando el método de pago es &lt;code&gt;OXXO&lt;/code&gt;, la confirmación del pago será un día después del mismo. Para otros métodos de pago en efectivo, la confirmación es en línea.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;transactionResponse.extraParameters&lt;/code&gt; tiene los siguientes parámetros relacionados con la transacción:
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;BANK_REFERENCED_CODE&lt;/strong&gt;: tipo de pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: término máximo que tine el pagador para realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia interna de pago generada por PayU.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PAYMENT_WAY_ID&lt;/strong&gt;: red financiera del tipo de pago.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -18802,7 +18802,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 
 &lt;/div&gt;
 &lt;h2 id=&#34;submit-transaction-with-bank-transfer&#34;&gt;Enviar transacciones con transferencia bancaria&lt;/h2&gt;
-&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este medio de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.&lt;br&gt;
+&lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.&lt;br&gt;
 Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/Payments/BankTransferReceiptMX.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-2&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
@@ -19266,7 +19266,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago por transferencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;Ver los medios de pago disponibles para México&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago por transferencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;Ver los métodos de pago disponibles para México&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -19423,7 +19423,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;h4 id=&#34;considerations-3&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;El parámetro &lt;code&gt;transaction.expirationDate&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.&lt;/li&gt;
-&lt;li&gt;Cuando el pagador selecciona este medio de pago, PayU crea una orden en estado &lt;em&gt;in progress&lt;/em&gt; y una transacción en estado pendiente (&lt;code&gt;PENDING&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Cuando el pagador selecciona este método de pago, PayU crea una orden en estado &lt;em&gt;in progress&lt;/em&gt; y una transacción en estado pendiente (&lt;code&gt;PENDING&lt;/code&gt;).&lt;/li&gt;
 &lt;li&gt;Para realizar el pago, el pagador debe iniciar sesión en la sucursal virtual de su banco (el banco debe aparecer en la lista de bancos disponibles de SPEI).&lt;br&gt;Primero, el pagador debe registrar la cuenta CLABE de PayU en la sucursal de su banco. Una vez la cuenta CLABE esté activa para realizar transferencias, el pagador debe ingresar en su sucursal virtual, la referencia retornada por PayU en el parámetro &lt;code&gt;trazabilityCode&lt;/code&gt; y el monto tal y como PayU lo retornó.&lt;/li&gt;
 &lt;li&gt;En el cuerpo de la respuesta, puedes encontrar las variables para generar el recibo de pago (voucher) y la URL del mismo generado en formato HTML y PDF. Si quieres generar el voucher, utiliza las siguientes variables:
 &lt;ul&gt;
@@ -19435,7 +19435,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call-1&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -20214,7 +20214,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago por Referencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;Ver los medios de pago disponibles para México&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago por Referencia bancaria válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#mexico&#34;&gt;Ver los métodos de pago disponibles para México&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20355,13 +20355,13 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago con referencia bancaria.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago con referencia bancaria.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call-2&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -20658,8 +20658,8 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-4&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
@@ -20754,42 +20754,42 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;td&gt;paymentMethods&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Lista de los medios de pago.&lt;/td&gt;
+&lt;td&gt;Lista de los métodos de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Este objeto tiene la información de un medio de pago.&lt;/td&gt;
+&lt;td&gt;Este objeto tiene la información de un método de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; id&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Identificador del medio de pago.&lt;/td&gt;
+&lt;td&gt;Identificador del método de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; description&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Max:32&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; country&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Código ISO del país del medio de pago.&lt;/td&gt;
+&lt;td&gt;Código ISO del país del método de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-3&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -21152,7 +21152,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;p&gt;El API de pagos incluye los siguiente métodos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -21679,7 +21679,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago de Tarjeta de crédito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#panama&#34;&gt;Ver los medios de pago disponibles para Panamá&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago de Tarjeta de crédito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#panama&#34;&gt;Ver los métodos de pago disponibles para Panamá&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -21834,7 +21834,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;li&gt;Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable &lt;code&gt;creditCard.processWithoutCvv2&lt;/code&gt; con valor true y elimina la variable &lt;code&gt;creditCard.securityCode&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -22129,8 +22129,8 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response-1&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
@@ -22222,37 +22222,37 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;td&gt;paymentMethods&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Lista de los medios de pago.&lt;/td&gt;
+&lt;td&gt;Lista de los métodos de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Este objeto tiene la información de un medio de pago.&lt;/td&gt;
+&lt;td&gt;Este objeto tiene la información de un método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; id&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Identificador del medio de pago.&lt;/td&gt;
+&lt;td&gt;Identificador del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; description&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Max:32&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; country&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Código ISO del país del medio de pago.&lt;/td&gt;
+&lt;td&gt;Código ISO del país del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-1&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -22616,7 +22616,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-or-debit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito o débito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transacciones en efectivo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -23178,7 +23178,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago de Tarjeta de crédito o débito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Peru&#34;&gt;Ver los medios de pago disponibles para Perú&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago de Tarjeta de crédito o débito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Peru&#34;&gt;Ver los métodos de pago disponibles para Perú&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -24543,7 +24543,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Peru&#34;&gt;Ver los medios de pago disponibles para Perú&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago en efectivo válido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Peru&#34;&gt;Ver los métodos de pago disponibles para Perú&lt;/a&gt;.&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -24692,13 +24692,13 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;li&gt;&lt;strong&gt;REFERENCE&lt;/strong&gt;: referencia de pago interna generada por PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha máxima en la que el pagador puede realizar el pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;BAR_CODE&lt;/strong&gt;: código de barras que le permite al pagador realizar el pago.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un medio de pago en efectivo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_HTML&lt;/strong&gt;: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;URL_PAYMENT_RECEIPT_PDF&lt;/strong&gt;: recibo de pago en formato PDF.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;api-call&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este medio de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -24985,8 +24985,8 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar medios de pago disponibles&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de los medios de pago disponibles en todos los paises.&lt;/p&gt;
+&lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
+&lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
 &lt;h3 id=&#34;available-payment-methods-query&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
@@ -25071,37 +25071,37 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;td&gt;paymentMethods&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Lista de los medios de pago.&lt;/td&gt;
+&lt;td&gt;Lista de los métodos de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Este objeto tiene la información de un medio de pago.&lt;/td&gt;
+&lt;td&gt;Este objeto tiene la información de un método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; id&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Identificador del medio de pago.&lt;/td&gt;
+&lt;td&gt;Identificador del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; description&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Max:32&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethods &amp;gt; paymentMethodComplete &amp;gt; country&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Código ISO del país del medio de pago.&lt;/td&gt;
+&lt;td&gt;Código ISO del país del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;api-call-1&#34;&gt;Llamado del API&lt;/h3&gt;
-&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos medios de pago.&lt;/p&gt;
+&lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
 
@@ -27132,18 +27132,6 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método.
 &lt;li&gt;&lt;a href=&#34;#massive-token-removal&#34;&gt;Eliminación masiva de tarjetas de crédito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#query-tokens&#34;&gt;Consulta de tókenes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-&lt;p&gt;Para consultar tokens, necesitas apuntar tus peticiones a las siguientes URLs de acuerdo con tu ambiente.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pruebas: &lt;code&gt;https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Producción: &lt;code&gt;https://api.payulatam.com/reports-api/4.0/service.cgi&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
 &lt;h2 id=&#34;individual-credit-card-registration&#34;&gt;Registro individual de tarjeta de crédito&lt;/h2&gt;
 &lt;p&gt;Utilizando esta funcionalidad, puedes registrar la información de la tarjeta de crédito de un cliente y obtener un token.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
@@ -27229,7 +27217,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método.
 &lt;td&gt;creditCardToken &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Selecciona un medio de pago de Tarjeta de crédito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;Ver los medios de pago disponibles&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Selecciona un método de pago de Tarjeta de crédito valido. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;Ver los métodos de pago disponibles&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -28909,7 +28897,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
         &lt;p&gt;Estas secciones explican cómo integrarte utilizando &lt;a href=&#34;#promotions&#34;&gt;Promociones&lt;/a&gt; o &lt;a href=&#34;#msi&#34;&gt;MSI&lt;/a&gt; (Solo disponible para México).&lt;/p&gt;
 &lt;h2 id=&#34;promotions&#34;&gt;Promociones&lt;/h2&gt;
 &lt;p&gt;Esta funcionalidad te permite consultar vía API, las promociones vigentes, sus características e información adicional que quieres presentarle a tus clientes.&lt;/p&gt;
-&lt;p&gt;Una Promoción tiene el medio de pago, los días de la semana en los que aplica, la lista de bancos y la fecha de inicio y final en la que aplica la promoción.&lt;/p&gt;
+&lt;p&gt;Una Promoción tiene el método de pago, los días de la semana en los que aplica, la lista de bancos y la fecha de inicio y final en la que aplica la promoción.&lt;/p&gt;
 &lt;h3 id=&#34;authentication-for-promotions&#34;&gt;Autenticación para Promociones&lt;/h3&gt;
 &lt;p&gt;Para promociones, necesitar autenticar y autorizar las peticiones recibidas por tu servidor, utilizando un mecanismo basado en HMAC. Para autenticarte, necesitas saber tu &lt;code&gt;MerchantPublicKey&lt;/code&gt;, puedes obtener esta información en el Módulo PayU (&lt;strong&gt;&lt;em&gt;Configuración&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Configuración técnica&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Llave pública&lt;/em&gt;&lt;/strong&gt;).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Promotions/PublicKey_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
@@ -29044,13 +29032,13 @@ Si no validas el esquema, la integración so se verá afectada y solo necesitar�
 &lt;td&gt;promotion &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago disponible para la promoción.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago disponible para la promoción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;promotion &amp;gt; subFranchise&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Nombre de la submarca/subfranquicia de un medio de pago dado.&lt;/td&gt;
+&lt;td&gt;Nombre de la submarca/subfranquicia de un método de pago dado.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;promotion &amp;gt; banks&lt;/td&gt;
@@ -29086,19 +29074,19 @@ Si no validas el esquema, la integración so se verá afectada y solo necesitar�
 &lt;td&gt;paymentMethodFee&lt;/td&gt;
 &lt;td&gt;Lista&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Descripción del costo asumido por el comercio de acuerdo con el medio de pago.&lt;/td&gt;
+&lt;td&gt;Descripción del costo asumido por el comercio de acuerdo con el método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethodFee &amp;gt; paymentMethodFeeDetail.paymentMethod&lt;/td&gt;
 &lt;td&gt;String&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Nombre del medio de pago.&lt;/td&gt;
+&lt;td&gt;Nombre del método de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethodFeeDetail &amp;gt; pricingFees&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Objeto que contiene todos los Pricing para un medio de pago y cuota o un conjunto de cuotas (para el caso de países que tienen rango de cuotas).&lt;/td&gt;
+&lt;td&gt;Objeto que contiene todos los Pricing para un método de pago y cuota o un conjunto de cuotas (para el caso de países que tienen rango de cuotas).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentMethodFeeDetail &amp;gt; pricingFees &amp;gt; fee &amp;gt; installments&lt;/td&gt;
@@ -29192,7 +29180,7 @@ Si no validas el esquema, la integración so se verá afectada y solo necesitar�
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt;
 &lt;span style=&#34;color:#f57900&#34;&gt;https:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accountId}&amp;amp;currency={currency}&amp;amp;amount={amount}&amp;amp;paymentMethod={paymentMethod}
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;El valor de la variable &lt;code&gt;{env-api}&lt;/code&gt; mostrado es &lt;code&gt;sandbox.api&lt;/code&gt; para pruebas y &lt;code&gt;api&lt;/code&gt; para producción. Además, el parámetro &lt;code&gt;paymentMethod&lt;/code&gt; es opcional si quieres filtrar por un medio de pago dado. Ejemplo:&lt;/p&gt;
+&lt;p&gt;El valor de la variable &lt;code&gt;{env-api}&lt;/code&gt; mostrado es &lt;code&gt;sandbox.api&lt;/code&gt; para pruebas y &lt;code&gt;api&lt;/code&gt; para producción. Además, el parámetro &lt;code&gt;paymentMethod&lt;/code&gt; es opcional si quieres filtrar por un método de pago dado. Ejemplo:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;GET&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=512322&amp;amp;currency=ARS&amp;amp;amount=1000
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;p&gt;Ejemplo respuesta:&lt;/p&gt;
@@ -30339,7 +30327,7 @@ Si no validas el esquema, la integración so se verá afectada y solo necesitar�
 &lt;li&gt;Si se rechaza el reembolso, PayU muestra el &lt;a href=&#34;../../../../es/docs/getting-started/response-codes-and-variables.html#response-codes-for-transactions&#34;&gt;código de error&lt;/a&gt; generado por la red.&lt;/li&gt;
 &lt;li&gt;No se soportan reembolsos con decimales.&lt;/li&gt;
 &lt;li&gt;Cuando se aprueba un reembolso, el pagador obtiene su dinero en 8 a 20 días hábiles.&lt;/li&gt;
-&lt;li&gt;Los reembolsos parciales para transacciones qu utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.&lt;/li&gt;
+&lt;li&gt;Los reembolsos parciales para transacciones que utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.&lt;/li&gt;
 &lt;li&gt;El valor mínimo para enviar un Reembolso es 10 CLP.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;colombia&#34;&gt;Colombia&lt;/h3&gt;

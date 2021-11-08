@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/webcheckout-integration/confirmation-page.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T12:15:57-05:00" />
-<meta property="article:modified_time" content="2021-10-25T15:33:30-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-08T17:41:32-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Página de confirmación">
 <meta itemprop="description" content="Esta página te permite obtener confirmaciones de sistema relacionadas con los resultados de la transacción. Puedes actualizar tus inventarios, órdenes o bases de datos. Está página no es visible para el cliente y su objetivo es permitir la comunicación entre sistemas. Los datos se envía a través deñ método HTTP POST. &lt;/br&gt;Si el pagador genera reintentos de pago durante el proceso, se genera una página de confirmación por cada transacción. Esta página es invocada por transacciones aprobadas o rechazadas.
 "><meta itemprop="datePublished" content="2021-03-29T12:15:57-05:00" />
-<meta itemprop="dateModified" content="2021-10-25T15:33:30-05:00" />
+<meta itemprop="dateModified" content="2021-11-08T17:41:32-05:00" />
 <meta itemprop="wordCount" content="1484">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Página de confirmación"/>
@@ -139,7 +139,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4cff48d4332b658a300d50112d905c434105f7780727619c2f89d95c1a6ea4e618030a5d44eaaaf00eb9787a3920a954fb80cd22ebe838634166ed424ead2384.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.dc9f5c22c679d0d56ce1efe7fe6380a7048b5360cd741b9d37e3fcc3ff085f267c31051ee91cc44003610b6a1cc2307bf23f94a9fda317a9a99076c15698d69c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -805,7 +805,7 @@
 <script src="../../../../js/signature-generator/sha256.js"></script>
 <script src="../../../../js/signature-generator/signature-generator.js"></script>
 <p>La página de confirmación te permite actualizar las bases de datos de tu sistema; por lo tanto, no debe incluir código HTML ya que no es visible al comprador. Esta página es opcional; cuando se completa una transacción (por ejemplo, cuando se aprueba, se rechaza o cuando se cancela) nuestra plataforma envía las variables a través del método HTTP POST.</p>
-<p>En la página de confirmación, debes capturar los datos que desear guardar en la base de datos. Esta captura depende del lenguaje de programación qu utilizas.</p>
+<p>En la página de confirmación, debes capturar los datos que desear guardar en la base de datos. Esta captura depende del lenguaje de programación que utilizas.</p>
 <h2 id="considerations">Consideraciones</h2>
 <ul>
 <li>Si tienes restringido el sitio con <em>basic access authentication</em> o similar, desactívalo para la URL de confirmación.</li>
@@ -889,13 +889,13 @@
 <td>payment_method</td>
 <td>Numérico</td>
 <td>—</td>
-<td>Identificador interno utilizado por los medios de pago.<br><a href="../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods">Ver los códigos de los medios de pago</a>.</td>
+<td>Identificador interno utilizado por los métodos de pago.<br><a href="../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods">Ver los códigos de los métodos de pago</a>.</td>
 </tr>
 <tr>
 <td>payment_method_type</td>
 <td>Numérico</td>
 <td>—</td>
-<td>Medio de pago utilizado.</td>
+<td>Método de pago utilizado.</td>
 </tr>
 <tr>
 <td>installments_number</td>
@@ -1117,7 +1117,7 @@
 <td>payment_method_id</td>
 <td>Numérico</td>
 <td>—</td>
-<td>Identificador del medio de pago.<br><a href="../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods">Ver los códigos de los medios de pago</a>.</td>
+<td>Identificador del método de pago.<br><a href="../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods">Ver los códigos de los métodos de pago</a>.</td>
 </tr>
 <tr>
 <td>payment_request_state</td>
@@ -1177,7 +1177,7 @@
 <td>payment_method_name</td>
 <td>Alfa Numérico</td>
 <td>255</td>
-<td>Medio de pago utilizado, por ejemplo VISA.</td>
+<td>Método de pago utilizado, por ejemplo VISA.</td>
 </tr>
 </tbody>
 </table>
@@ -1332,7 +1332,7 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
 <!-- End of signature generator - confirmation page -->
 <p>Esta calculadora te permite generar la firma utilizando alguno de los métodos de cifrado disponibles.</p>
 <h2 id="payment-retries">Reintentos de pago</h2>
-<p>Cuando se rechaza una transacción, el pagador tiene la opción de reintentar el pago utilizando el mismo u otro medio de pago. Ten en cuenta que por cada intento, PayU hace el llamado de la página de confirmación con su estado de transacción correspondiente.</p>
+<p>Cuando se rechaza una transacción, el pagador tiene la opción de reintentar el pago utilizando el mismo u otro método de pago. Ten en cuenta que por cada intento, PayU hace el llamado de la página de confirmación con su estado de transacción correspondiente.</p>
 <p>Cada uno de estos llamados se hacen con la misma referencia de pago (<code>reference_sale</code>), el mismo identificador de la orden (<code>reference_pol</code>) pero diferente identificador de transacción (<code>transaction_id</code>). Por lo tanto, puedes recibir varios llamados a la página de confirmación para la misma venta.</p>
 <p>A continuación, encontrarás un ejemplo e un intento rechazado y su reintento aprobado:</p>
 <pre><code>reference_sale=2015-05-27 13:04:37
@@ -1351,9 +1351,9 @@ state_pol=4
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-25 de octubre de 2021:
+8 de noviembre de 2021:
 
- <b>Translations to Spanish (4ed421cc)</b>
+ <b>Translations to Spanish (6ab0d355)</b>
 </div>
 </div>
 

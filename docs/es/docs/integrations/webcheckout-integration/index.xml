@@ -548,14 +548,14 @@ Si deseas que PayU siempre muestra la información de la transacción, no envíe
 &lt;td&gt;polPaymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;255&lt;/td&gt;
-&lt;td&gt;Identificador interno utilizado por los medios de pago.&lt;/td&gt;
+&lt;td&gt;Identificador interno utilizado por los métodos de pago.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;—&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;polPaymentMethodType&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Medio de pago utilizado.&lt;br&gt;&lt;a href=&#34;../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods&#34;&gt;Ver los códigos de los medios de pago&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Método de pago utilizado.&lt;br&gt;&lt;a href=&#34;../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods&#34;&gt;Ver los códigos de los métodos de pago&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;—&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -639,14 +639,14 @@ Si deseas que PayU siempre muestra la información de la transacción, no envíe
 &lt;td&gt;lapPaymentMethod&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;255&lt;/td&gt;
-&lt;td&gt;Medio de pago utilizado, por ejemplo VISA.&lt;/td&gt;
+&lt;td&gt;Método de pago utilizado, por ejemplo VISA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;—&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;lapPaymentMethodType&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;255&lt;/td&gt;
-&lt;td&gt;Tipo del medio de pago utilizado, por ejemplo CREDIT_CARD.&lt;/td&gt;
+&lt;td&gt;Tipo del método de pago utilizado, por ejemplo CREDIT_CARD.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;—&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1063,7 +1063,7 @@ signature = 779f163be9347a691bcdb25064644795
 &lt;script src=&#34;../../../../js/signature-generator/sha256.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/signature-generator.js&#34;&gt;&lt;/script&gt;
 &lt;p&gt;La página de confirmación te permite actualizar las bases de datos de tu sistema; por lo tanto, no debe incluir código HTML ya que no es visible al comprador. Esta página es opcional; cuando se completa una transacción (por ejemplo, cuando se aprueba, se rechaza o cuando se cancela) nuestra plataforma envía las variables a través del método HTTP POST.&lt;/p&gt;
-&lt;p&gt;En la página de confirmación, debes capturar los datos que desear guardar en la base de datos. Esta captura depende del lenguaje de programación qu utilizas.&lt;/p&gt;
+&lt;p&gt;En la página de confirmación, debes capturar los datos que desear guardar en la base de datos. Esta captura depende del lenguaje de programación que utilizas.&lt;/p&gt;
 &lt;h2 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Si tienes restringido el sitio con &lt;em&gt;basic access authentication&lt;/em&gt; o similar, desactívalo para la URL de confirmación.&lt;/li&gt;
@@ -1147,13 +1147,13 @@ signature = 779f163be9347a691bcdb25064644795
 &lt;td&gt;payment_method&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;—&lt;/td&gt;
-&lt;td&gt;Identificador interno utilizado por los medios de pago.&lt;br&gt;&lt;a href=&#34;../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods&#34;&gt;Ver los códigos de los medios de pago&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identificador interno utilizado por los métodos de pago.&lt;br&gt;&lt;a href=&#34;../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods&#34;&gt;Ver los códigos de los métodos de pago&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;payment_method_type&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;—&lt;/td&gt;
-&lt;td&gt;Medio de pago utilizado.&lt;/td&gt;
+&lt;td&gt;Método de pago utilizado.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;installments_number&lt;/td&gt;
@@ -1375,7 +1375,7 @@ signature = 779f163be9347a691bcdb25064644795
 &lt;td&gt;payment_method_id&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
 &lt;td&gt;—&lt;/td&gt;
-&lt;td&gt;Identificador del medio de pago.&lt;br&gt;&lt;a href=&#34;../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods&#34;&gt;Ver los códigos de los medios de pago&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Identificador del método de pago.&lt;br&gt;&lt;a href=&#34;../../../../es/docs/getting-started/response-codes-and-variables.html#codes-of-the-payment-methods&#34;&gt;Ver los códigos de los métodos de pago&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;payment_request_state&lt;/td&gt;
@@ -1435,7 +1435,7 @@ signature = 779f163be9347a691bcdb25064644795
 &lt;td&gt;payment_method_name&lt;/td&gt;
 &lt;td&gt;Alfa Numérico&lt;/td&gt;
 &lt;td&gt;255&lt;/td&gt;
-&lt;td&gt;Medio de pago utilizado, por ejemplo VISA.&lt;/td&gt;
+&lt;td&gt;Método de pago utilizado, por ejemplo VISA.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1590,7 +1590,7 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
 &lt;!-- End of signature generator - confirmation page --&gt;
 &lt;p&gt;Esta calculadora te permite generar la firma utilizando alguno de los métodos de cifrado disponibles.&lt;/p&gt;
 &lt;h2 id=&#34;payment-retries&#34;&gt;Reintentos de pago&lt;/h2&gt;
-&lt;p&gt;Cuando se rechaza una transacción, el pagador tiene la opción de reintentar el pago utilizando el mismo u otro medio de pago. Ten en cuenta que por cada intento, PayU hace el llamado de la página de confirmación con su estado de transacción correspondiente.&lt;/p&gt;
+&lt;p&gt;Cuando se rechaza una transacción, el pagador tiene la opción de reintentar el pago utilizando el mismo u otro método de pago. Ten en cuenta que por cada intento, PayU hace el llamado de la página de confirmación con su estado de transacción correspondiente.&lt;/p&gt;
 &lt;p&gt;Cada uno de estos llamados se hacen con la misma referencia de pago (&lt;code&gt;reference_sale&lt;/code&gt;), el mismo identificador de la orden (&lt;code&gt;reference_pol&lt;/code&gt;) pero diferente identificador de transacción (&lt;code&gt;transaction_id&lt;/code&gt;). Por lo tanto, puedes recibir varios llamados a la página de confirmación para la misma venta.&lt;/p&gt;
 &lt;p&gt;A continuación, encontrarás un ejemplo e un intento rechazado y su reintento aprobado:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;reference_sale=2015-05-27 13:04:37

@@ -25,7 +25,7 @@
         
         &lt;p&gt;Currently, e-commerce it&amp;rsquo;s no longer a taboo. Before, people used to think that selling online require a high technical knowledge and programming skills.&lt;/p&gt;
 &lt;p&gt;Nevertheless, beyond the knowledge, the key is to have the best allies and, mainly, use the best strategies that allows the growth of your product.&lt;/p&gt;
-&lt;p&gt;PayU offers the best payment gateway to help your shop sell online even if your don&amp;rsquo;t have a web page.&lt;/p&gt;
+&lt;p&gt;PayU offers the best payment gateway to help your shop sell online even if you don&amp;rsquo;t have a web page.&lt;/p&gt;
 &lt;h2 id=&#34;how-to-sell-using-payu&#34;&gt;How to sell using PayU?&lt;/h2&gt;
 &lt;p&gt;Through PayU Module, you have the tools to start selling online fast and easy, no matter if you don&amp;rsquo;t have a web page.&lt;/p&gt;
 &lt;p&gt;To sell with PayU, you just need an active account in the PayU Module and configure the tool to receive the payment.&lt;/p&gt;
@@ -33,19 +33,23 @@
 &lt;p&gt;There are two options to create payments using the PayU Module:&lt;/p&gt;
 &lt;div class=&#34;container overview-topic&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-request.html&#39;&#34;&gt; 
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-request.html&#39;&#34; style=&#34;position:relative;&#34;&gt; 
       &lt;p&gt;&lt;img src=&#34;../../../assets/money-digital-device.svg&#34; alt=&#34;SellIcons&#34;&gt;&lt;/p&gt;
       &lt;h4 class=&#34;navblock-title&#34;&gt;Payment request&lt;/h4&gt;
-      &lt;p style=&#34;padding-bottom: 1.3rem;&#34;&gt;Generate Payment requests which can be shared via email, chats, social networks, or included as a button for your webpage (if you own one).&lt;/p&gt;
-      &lt;p&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;30px&#34;/&gt;&lt;/p&gt;
-      &lt;div onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-request.html&#39;&#34;&gt;&lt;a&gt;Learn more about Payment request&lt;/a&gt;&lt;/div&gt;
+      &lt;p style=&#34;padding-bottom: 60pt;&#34;&gt;Generate Payment requests which can be shared via email, chats, social networks, or included as a button for your webpage (if you own one).&lt;/p&gt;
+      &lt;div style=&#34;position:absolute;bottom: 4%;right: 5%;left: 5%;&#34;&gt;
+        &lt;p&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;30px&#34;/&gt;&lt;/p&gt;
+        &lt;a&gt;Learn more about Payment request&lt;/a&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-coupons.html&#39;&#34;&gt; 
       &lt;p&gt;&lt;img src=&#34;../../../assets/payments.svg&#34; alt=&#34;SellIcons&#34;&gt;&lt;/p&gt;
       &lt;h4 class=&#34;navblock-title&#34;&gt;Payment coupons&lt;/h4&gt;
-      &lt;p&gt;Generate payment coupons and collection cards with the necessary information to let your clients make cash payments as many times as they need in the available payment points.&lt;/p&gt;
-      &lt;p&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;30px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;30px&#34;/&gt;&lt;/p&gt;
-      &lt;div onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-coupons.html&#39;&#34;&gt;&lt;a&gt;Learn more about Payment coupons&lt;/a&gt;&lt;/div&gt;
+      &lt;p style=&#34;padding-bottom: 60pt;&#34;&gt;Generate payment coupons and collection cards with the necessary information to let your clients make cash payments as many times as they need in the available payment points.&lt;/p&gt;
+      &lt;div style=&#34;position:absolute;bottom: 4%;right: 5%;;left: 5%;&#34;&gt;
+        &lt;p&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;30px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;30px&#34;/&gt;&lt;/p&gt;
+        &lt;a&gt;Learn more about Payment coupons&lt;/a&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -70,11 +74,12 @@ Review &lt;a href=&#34;../../../en/docs/integrations.html&#34;&gt;Integrations&l
       <description>
         
         
-        &lt;p&gt;In the &lt;em&gt;Transfers&lt;/em&gt; module, you can fin the options to transfer the funds collected in your virtual PayU account to your main bank account registered.&lt;/p&gt;
+        &lt;p&gt;In the &lt;em&gt;Transfers&lt;/em&gt; module, you can find the options to transfer the funds collected in your virtual PayU account to your main bank account registered.&lt;/p&gt;
 &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
 &lt;p&gt;Keep in mind the following considerations before transferring funds to your bank account.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;You must have your bank information updated and validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.S&lt;/li&gt;
+&lt;li&gt;You must have your bank information updated and validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.&lt;/li&gt;
+&lt;li&gt;As PayU in Brazil is not a payment institution, the funds collected in your PayU account are transferred to your bank account daily for free. To check the status of these transfers, use the &lt;em&gt;&lt;strong&gt;Daily payouts&lt;/strong&gt;&lt;/em&gt; option (&lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Daily Transfers&lt;/strong&gt;&lt;/em&gt;).&lt;/li&gt;
 &lt;li&gt;The first three local transfers performed during the first month are free. Since the 4th transfer request, PayU charges the following values:
 &lt;ul&gt;
 &lt;li&gt;Colombia: 6.500,00 COP + VAT (Colombia)&lt;/li&gt;
@@ -109,7 +114,7 @@ The times and amounts explained here apply only for local transfer (into the sam
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Complete the value to transfer or select the &lt;em&gt;&lt;strong&gt;Transfer all available balance&lt;/strong&gt;&lt;/em&gt; option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.&lt;br&gt;If you don&amp;rsquo;t have free transactions, this panel also displayed the value or the transaction along with the taxes.&lt;/li&gt;
+&lt;li&gt;Complete the value to transfer or select the &lt;em&gt;&lt;strong&gt;Transfer all available balance&lt;/strong&gt;&lt;/em&gt; option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.&lt;br&gt;If you don&amp;rsquo;t have free transactions, this panel also displayed the value of the transaction along with the taxes.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
@@ -221,7 +226,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
 &lt;h2 id=&#34;what-is-a-refund&#34;&gt;What is a refund?&lt;/h2&gt;
 &lt;p&gt;A refund is the action to voluntary return the money paid by a customer when any of the following situations happen:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The product or service delivered does not met the spectates of the customer and they returned it.&lt;/li&gt;
+&lt;li&gt;The product or service delivered does not met the expectations of the customer and they returned it.&lt;/li&gt;
 &lt;li&gt;The product is out of stock, anf the merchant is not able to deliver the product to the client.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;refund-procedure&#34;&gt;Refund procedure&lt;/h2&gt;
@@ -266,7 +271,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
 &lt;li&gt;If your refund request is approved, the amount is refunded to the card holder.&lt;/li&gt;
 &lt;li&gt;If your refund request is declined, the amount is released from the Frozen Balance and returns to the available Balance of your PayU account.&lt;/li&gt;
 &lt;li&gt;Once the refund is approved, this will be reflected in the payer’s credit card when the bank make it effective.&lt;/li&gt;
-&lt;li&gt;To check the status of your refund request, you can consult it by clicking the sale in the Merchant Panel.&lt;/li&gt;
+&lt;li&gt;To check the status of your refund request, you can consult it by clicking the sale in the PayU Module.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;refunds-per-country&#34;&gt;Refunds per country&lt;/h2&gt;
 &lt;p&gt;Take into account the following considerations per country before requesting refunds.&lt;/p&gt;
@@ -318,7 +323,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;10 minutes&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;2 years&lt;/td&gt;
-        &lt;td style=&#34;text-align: center;&#34;&gt;300 COP&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;100 COP&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;1 working day&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;30 working days&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;✓&lt;/td&gt;
