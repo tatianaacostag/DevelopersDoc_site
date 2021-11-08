@@ -35,7 +35,7 @@ Ingresa a tu cuenta PayU. En el menú de la izquierda, expande el menú _**Trans
 La sección de **_Balance financiero_** está divida en tres partes:
 
 ### Saldo General {#general-balance}
-La primera parte es el saldo general donde puedes ver los fondos en tu cuenta PayU y un botón que te permite solicitar una [transferencia] ({{< ref "Transfers.md" >}}) a tu cuenta bancaria.<br>El Saldo general se compone de:
+La primera parte es el saldo general donde puedes ver los fondos en tu cuenta PayU y un botón que te permite solicitar una [transferencia]({{< ref "Transfers.md" >}}) a tu cuenta bancaria.<br>El Saldo general se compone de:
 
 * **Saldo disponible**: los fondos totales recibidos de tus ventas, luego de descontar la comisión de PayU.
 * **Saldo congelado**: los fondos que hacen parte de una [disputa]({{< ref "Disputes.md" >}}) en proceso o un [reembolso]({{< ref "Refunds.md" >}}) no aprobado solicitado por tu cliente.
