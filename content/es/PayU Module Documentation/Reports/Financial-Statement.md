@@ -77,7 +77,7 @@ Haz clic en el ícono <img src="/assets/Reports/Reports_25.png" width="1.5%"/> j
 {{% /alert %}}
 
 ## Filtrar el reporte {##filter-the-report}
-Puede utilizar la barra de búsqueda sobre el gráfico o el calendario para establecer filtros. Puedes filtrar por _**Tipo de operación**_, _**IId venta o transferencia**_, _**Referencia**_<sup>\*</sup>, o _**Método de pago**_<sup>\*</sup>.
+Puedes utilizar la barra de búsqueda sobre el gráfico o el calendario para establecer filtros. Puedes filtrar por _**Tipo de operación**_, _**Id de venta o transferencia**_, _**Referencia**_<sup>\*</sup>, o _**Método de pago**_<sup>\*</sup>.
 
 <sup>\*</sup> _Estos filtros se muestran cuando el **Tipo de operación** seleccionado es **Venta**, **Reversión** o **Contracargada**_.
 
@@ -131,7 +131,7 @@ Para conciliar la información con el [reporte de ventas] ({{< ref "Sales-report
 
 ![PrintScreen](/assets/Reports/Reports_32.png)
 
-En el informe generado encontrará los siguientes conceptos.
+En el reporte generado encontrarás los siguientes conceptos.
 
 | Concepto                             | Descripción                                                                           |
 |--------------------------------------|---------------------------------------------------------------------------------------|
