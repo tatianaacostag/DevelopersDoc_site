@@ -66,7 +66,7 @@ El reporte tiene las siguientes columnas:
 | Columna             | Descripción                                                                                        |
 |---------------------|----------------------------------------------------------------------------------------------------|
 | Operación           | ID y fecha de la operación.                                                                        |
-| Tipo de operación   | Información de la operación. Dependiendo de su tipo, la información que se muestra varía.<br>Haz clic en <img src="/assets/Reports/Reports_23.png" width="2%"/> para expandir los valores detallados de la operación en las columnas **Débito** y **Crédito**.<br><br>![PrintScreen](/assets/Reports/Reports_24.png) |
+| Tipo de operación   | Información de la operación. Dependiendo de su tipo, la información que se muestra varía.<br>Haz clic en <img src="/assets/Reports/Reports_23.png" width="2%"/> para expandir los valores detallados de la operación en las columnas **Débito** y **Crédito**.<br><br>![PrintScreen](/assets/Reports/Reports_24_es.png) |
 | Crédito              | Monto acreditado a tu Cuenta.                                                                     |
 | Débito               | Monto debitado de tu Cuenta.                                                                      |
 
