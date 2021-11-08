@@ -77,7 +77,7 @@ Haz clic en el ícono <img src="/assets/Reports/Reports_25.png" width="1.5%"/> j
 {{% /alert %}}
 
 ## Filtrar el reporte {##filter-the-report}
-Puede utilizar la barra de búsqueda sobre el gráfico o el calendario para establecer filtros. Puedes filtrar por _**Tipo de operación**_, _**IId venta o transferencia**_, _**Referencia**_<sup>\*</sup>, o _**Método de pago type**_<sup>\*</sup>.
+Puede utilizar la barra de búsqueda sobre el gráfico o el calendario para establecer filtros. Puedes filtrar por _**Tipo de operación**_, _**IId venta o transferencia**_, _**Referencia**_<sup>\*</sup>, o _**Método de pago**_<sup>\*</sup>.
 
 <sup>\*</sup> _Estos filtros se muestran cuando el **Tipo de operación** seleccionado es **Venta**, **Reversión** o **Contracargada**_.
 
@@ -125,7 +125,7 @@ El reporte se descarga automáticamente en formato de Excel (_.csv_). El nombre 
 En el reporte descargado, puedes validar todos los créditos y débitos de tu cuenta y además, puedes conciliar las comisiones de PayU que aparecen en la factura recibida mensualmente.
 
 ![PrintScreen](/assets/Reports/Reports_31.png)
-_PayU commissions y taxes appear in the invoice_
+_Las comisiones e impuestos de PayU aparecen en la factura_
 
 Para conciliar la información con el [reporte de ventas] ({{< ref "Sales-report.md" >}}), puedes usar la variable _**ReferenceCode**_ que aparece entre paréntesis en la transacción.
 
