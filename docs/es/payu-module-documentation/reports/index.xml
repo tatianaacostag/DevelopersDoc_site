@@ -367,7 +367,7 @@ Los reportes en el Módulo PayU están limitados a &lt;strong&gt;20 mil&lt;/stro
 &lt;/div&gt;
 
 &lt;h2 id=&#34;filter-the-report&#34;&gt;Filtrar el reporte&lt;/h2&gt;
-&lt;p&gt;Puede utilizar la barra de búsqueda sobre el gráfico o el calendario para establecer filtros. Puedes filtrar por &lt;em&gt;&lt;strong&gt;Tipo de operación&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;IId venta o transferencia&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Referencia&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;, o &lt;em&gt;&lt;strong&gt;Método de pago type&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Puedes utilizar la barra de búsqueda sobre el gráfico o el calendario para establecer filtros. Puedes filtrar por &lt;em&gt;&lt;strong&gt;Tipo de operación&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Id de venta o transferencia&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Referencia&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;, o &lt;em&gt;&lt;strong&gt;Método de pago&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Estos filtros se muestran cuando el &lt;strong&gt;Tipo de operación&lt;/strong&gt; seleccionado es &lt;strong&gt;Venta&lt;/strong&gt;, &lt;strong&gt;Reversión&lt;/strong&gt; o &lt;strong&gt;Contracargada&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Para establecer un filtro, haz clic en el campo &lt;em&gt;&lt;strong&gt;Filtre su búsqueda&lt;/strong&gt;&lt;/em&gt; sobre el gráfico de de ventas realizadas.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_27_es.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
@@ -404,10 +404,10 @@ Los reportes en el Módulo PayU están limitados a &lt;strong&gt;20 mil&lt;/stro
 &lt;br&gt;
 &lt;p&gt;En el reporte descargado, puedes validar todos los créditos y débitos de tu cuenta y además, puedes conciliar las comisiones de PayU que aparecen en la factura recibida mensualmente.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_31.png&#34; alt=&#34;PrintScreen&#34;&gt;
-&lt;em&gt;PayU commissions y taxes appear in the invoice&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;Las comisiones e impuestos de PayU aparecen en la factura&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Para conciliar la información con el [reporte de ventas] (/es/payu-module-documentation/reports/sales-report.html), puedes usar la variable &lt;em&gt;&lt;strong&gt;ReferenceCode&lt;/strong&gt;&lt;/em&gt; que aparece entre paréntesis en la transacción.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_32.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;En el informe generado encontrará los siguientes conceptos.&lt;/p&gt;
+&lt;p&gt;En el reporte generado encontrarás los siguientes conceptos.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
