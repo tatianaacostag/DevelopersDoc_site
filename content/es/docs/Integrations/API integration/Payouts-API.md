@@ -3,7 +3,7 @@ title: "API de Payouts"
 linkTitle: "API de Payouts"
 date: 2021-08-09T14:58:45-05:00
 description: >
-  Esta funcionalidad te permite crear múltiples y seguros pagos a beneficiarios (usuarios, comercios, proveedores, clientes, etc.) utilizando los fondos que tienes un tu cuenta PayU.
+  Esta funcionalidad te permite crear múltiples y seguros pagos a beneficiarios (usuarios, comercios, proveedores, clientes, etc.) utilizando los fondos que tienes en tu cuenta PayU.
 weight: 60
 tags: ["subtopic"]
 ---
@@ -44,7 +44,7 @@ Para autenticar, envía la petición así:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?accountId={accountId}&apiKey={apiKey}&apiLogin={apiLogin}
+https://{env-api}.payulatam.com/v1.0/authenticate?accountId={accountId}&apiKey={apiKey}&apiLogin={apiLogin}
 ```
 <br>
 
@@ -88,7 +88,7 @@ Para crear un Payout, utiliza la siguiente URL:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
 ```
 <br>
 
@@ -337,7 +337,7 @@ Para actualizar una solicitud de Payout, utiliza la siguiente URL:
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{accountId}/{bankAccountId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/bank-account/{merchantId}/{accountId}/{bankAccountId}
 ```
 <br>
 
@@ -412,7 +412,7 @@ Para cancelar una solicitud de Payout, utiliza la siguiente URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}/{paymentOrderId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}/{paymentOrderId}
 ```
 <br>
 
@@ -493,7 +493,7 @@ Necesitas incluir dos encabezados para utilizar este método, consulta [Configur
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
@@ -501,7 +501,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{account
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
@@ -619,7 +619,7 @@ Para borrar un WebHook, utiliza la siguiente URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
@@ -673,7 +673,7 @@ Este método te permite consultar la información de un WebHook específico a tr
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
@@ -738,7 +738,7 @@ Este método te permite consultar la información de todos los WebHooks creados 
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/account/{merchantId}/{accountId}
 ```
 <br>
 
