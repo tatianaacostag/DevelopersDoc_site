@@ -29,7 +29,6 @@ Payouts API includes the following methods:
 
 * [Authentication]({{< ref "#authentication" >}})
 * [Request payout]({{< ref "#request-payout" >}})
-* [Update payout request]({{< ref "#update-payout-request" >}})
 * [Cancel payout request]({{< ref "#cancel-payout-request" >}})
 * [Create or update a WebHook]({{< ref "#create-or-update-a-transfershook" >}})
 * [Delete a WebHook]({{< ref "#delete-a-transfershook" >}})
@@ -45,7 +44,7 @@ To authenticate, send the request as follows:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?accountId={accountId}&apiKey={apiKey}&apiLogin={apiLogin}
+https://{env-api}.payulatam.com/v1.0/authenticate?accountId={accountId}&apiKey={apiKey}&apiLogin={apiLogin}
 ```
 <br>
 
@@ -89,7 +88,7 @@ To create a Payout request, use the following URL:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
 ```
 <br>
 
@@ -143,7 +142,7 @@ Both parameters can be found in your PayU module.
 | totalFailed | Numeric |  | Number of payments that could not be created. |
 | successfulItems | List |  | List of items that were successfully processed. |
 | successfulItems[n] > processingStatus | Alphanumeric | 7 | Status of the Payout request. For successful transactions, the value is `SUCCESS` |
-| successfulItems[n] > paymentOrderId | Alphanumeric | 36 | Id generated for the payout request. Use this id to either update or cancel the request. |
+| successfulItems[n] > paymentOrderId | Alphanumeric | 36 | Id generated for the payout request. Use this id to cancel the request. |
 | successfulItems[n] > value | Numeric | | Amount of the request. |
 | successfulItems[n] > bankAccount | | | This object has the information of the bank account that will receive the payment. |
 | successfulItems[n] > bankAccount > processingStatus | Alphanumeric | 7 | Bank account registration status. For successful registrations, the value is `SUCCESS`. |
@@ -322,7 +321,7 @@ Response body:
 {{< /tab >}}-->
 {{< /tabs >}}
 
-## Update payout request
+<!--## Update payout request
 This method lets you request the update of the bank information of a payee on a running payout request. For example, this method is useful to change the bank account number of the payee.
 
 You can only request the update of the information of a payee when the Payout status is in `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
@@ -338,7 +337,7 @@ To update a Payout request, use the following URL:
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{accountId}/{bankAccountId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/bank-account/{merchantId}/{accountId}/{bankAccountId}
 ```
 <br>
 
@@ -357,10 +356,10 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 | Field name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | id | Alphanumeric | 36 | Identifier of the Bank account of the payee. | Yes |
-| accountNumber | Alphanumeric | Max:17 | Bank account number of the payee. | Yes |
+| accountNumber | Alphanumeric | Max:17 | Bank account number of the payee. | Yes |-->
 <!--additionalData-->
 
-The following are the request and response bodies for this method.
+<!--The following are the request and response bodies for this method.
 
 {{< tabs tabTotal="1" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -382,7 +381,7 @@ Response body:
 }
 ```
 {{< /tab >}}
-
+-->
 <!--{{< tab tabNum="2" >}}
 <br>
 
@@ -397,7 +396,7 @@ Response body:
 
 ```
 {{< /tab >}}-->
-{{< /tabs >}}
+<!--{{< /tabs >}}-->
 
 ## Cancel payout request
 This method lets you request the cancellation of a payout request. You can only request the cancellation of a Payout when its status is `IN_PAYU_PROCESS` or earlier. Refer to [Payout states]({{< ref "payouts.html#payout-states" >}}) for more information. 
@@ -413,7 +412,7 @@ To cancel a Payout request, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}/{paymentOrderId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}/{paymentOrderId}
 ```
 <br>
 
@@ -494,7 +493,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
@@ -502,7 +501,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{account
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
@@ -620,7 +619,7 @@ To delete a WebHook, use the following URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
@@ -674,7 +673,7 @@ This method lets you consult the information of a specific WebHook using its id.
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
@@ -739,7 +738,7 @@ This method lets you consult the information of all the WebHooks created in your
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/account/{merchantId}/{accountId}
 ```
 <br>
 
