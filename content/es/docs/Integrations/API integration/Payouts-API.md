@@ -3,7 +3,7 @@ title: "API de Payouts"
 linkTitle: "API de Payouts"
 date: 2021-08-09T14:58:45-05:00
 description: >
-  Esta funcionalidad te permite crear múltiples y seguros pagos a beneficiarios (usuarios, comercios, proveedores, clientes, etc.) utilizando los fondos que tienes un tu cuenta PayU.
+  Esta funcionalidad te permite crear múltiples y seguros pagos a beneficiarios (usuarios, comercios, proveedores, clientes, etc.) utilizando los fondos que tienes en tu cuenta PayU.
 weight: 60
 tags: ["subtopic"]
 ---
@@ -29,7 +29,6 @@ El API de Payouts incluye los siguientes métodos:
 
 * [Autenticación]({{< ref "#authentication" >}})
 * [Solicitar payout]({{< ref "#request-payout" >}})
-* [Actualizar solicitud de payout]({{< ref "#update-payout-request" >}})
 * [Cancelar solicitud de payout]({{< ref "#cancel-payout-request" >}})
 * [Crear o actualizar un WebHook]({{< ref "#create-or-update-a-transfershook" >}})
 * [Eliminar un WebHook]({{< ref "#delete-a-transfershook" >}})
@@ -45,7 +44,7 @@ Para autenticar, envía la petición así:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/authenticate?accountId={accountId}&apiKey={apiKey}&apiLogin={apiLogin}
+https://{env-api}.payulatam.com/v1.0/authenticate?accountId={accountId}&apiKey={apiKey}&apiLogin={apiLogin}
 ```
 <br>
 
@@ -89,7 +88,7 @@ Para crear un Payout, utiliza la siguiente URL:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
 ```
 <br>
 
@@ -322,7 +321,7 @@ Ejemplo respuesta:
 {{< /tab >}}-->
 {{< /tabs >}}
 
-## Actualizar solicitud de payout {#update-payout-request}
+<!--## Actualizar solicitud de payout {#update-payout-request}
 Este método te permite actualizar la información del banco de un pagador en una solicitud de payout en curso. Por ejemplo, este método es util para cambiar el número de cuenta del beneficiario.
 
 Solo puedes solicitar la actualización del beneficiario cuando el estado de Payout esté en `IN_PAYU_PROCESS` o antes. Consulta [estados de los Payout]({{< ref "payouts.html#payout-states" >}}) para más información. 
@@ -338,7 +337,7 @@ Para actualizar una solicitud de Payout, utiliza la siguiente URL:
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/bank-account/{merchantId}/{accountId}/{bankAccountId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/bank-account/{merchantId}/{accountId}/{bankAccountId}
 ```
 <br>
 
@@ -357,9 +356,9 @@ El valor de la variable `{env-api}` is `sandbox-transfers` para pruebas y `trans
 | Nombre del campo  | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | id | Alfanumérico | 36 | Identificador de la cuenta bancaria del beneficiario. | Sí |
-| accountNumber | Alfanumérico | Max:17 | Número de cuenta bancaria del beneficiario. | Sí |
+| accountNumber | Alfanumérico | Max:17 | Número de cuenta bancaria del beneficiario. | Sí |-->
 <!--additionalData-->
-
+<!--
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
 {{< tabs tabTotal="1" tabID="3" tabName1="JSON" tabName2="XML" >}}
@@ -382,7 +381,7 @@ Ejemplo respuesta:
 }
 ```
 {{< /tab >}}
-
+-->
 <!--{{< tab tabNum="2" >}}
 <br>
 
@@ -397,7 +396,7 @@ Ejemplo respuesta:
 
 ```
 {{< /tab >}}-->
-{{< /tabs >}}
+<!--{{< /tabs >}}-->
 
 ## Cancelar solicitud de payout {#cancel-payout-request}
 Este método te permite cancelar la solicitud de payout. Solo puedes solicitar la cancelación de un Payout cuando está en estado `IN_PAYU_PROCESS` o antes. Consulta [estados del Payout]({{< ref "payouts.html#payout-states" >}}) para más información. 
@@ -408,12 +407,12 @@ Necesitas incluir dos encabezados para utilizar este método, consulta [Configur
 
 {{% /alert %}}
 
-### Llamado del API {#api-call-3}
+### Llamado del API {#api-call-2}
 Para cancelar una solicitud de Payout, utiliza la siguiente URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/supplier-transfers/{merchantId}/{accountId}/{paymentOrderId}
+https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}/{paymentOrderId}
 ```
 <br>
 
@@ -425,7 +424,7 @@ El valor de la variable `{env-api}` is `sandbox-transfers` para pruebas y `trans
 | accountId      | Identificador de la cuenta para cada país asociada al comercio.             |     Sí      |
 | paymentOrderId | Identificador del Payout generado cuando el [servicio de solicitar payout]({{< ref "#request-payout" >}}) creó la orden. |    Sí    |
 
-### Variables para la solicitud {#variables-for-request-1}
+### Variables para la solicitud {#variables-for-request}
 
 <div class="variables"></div>
 
@@ -489,12 +488,12 @@ Necesitas incluir dos encabezados para utilizar este método, consulta [Configur
 
 {{% /alert %}}
 
-### Llamado del API {#api-call-4}
+### Llamado del API {#api-call-3}
 * Para crear un WebHook, utiliza:
 
 ```JAVA
 POST
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
@@ -502,7 +501,7 @@ https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{account
 
 ```JAVA
 PUT
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
@@ -615,12 +614,12 @@ Necesitas incluir dos encabezados para utilizar este método, consulta [Configur
 
 {{% /alert %}}
 
-### Llamado del API {#api-call-5}
+### Llamado del API {#api-call-4}
 Para borrar un WebHook, utiliza la siguiente URL:
 
 ```JAVA
 DELETE
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
@@ -674,7 +673,7 @@ Este método te permite consultar la información de un WebHook específico a tr
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/{merchantId}/{accountId}/{id}
+https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
@@ -739,7 +738,7 @@ Este método te permite consultar la información de todos los WebHooks creados 
 
 ```JAVA
 GET
-https://{env-api}.payulatam.com/push-payment/v1.0/webhooks/account/{merchantId}/{accountId}
+https://{env-api}.payulatam.com/v1.0/webhooks/account/{merchantId}/{accountId}
 ```
 <br>
 

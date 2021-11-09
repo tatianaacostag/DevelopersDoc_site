@@ -24,7 +24,6 @@ El valor de cada pago más la tarifa de procesamiento es debitado de la cuenta. 
 * **Aprovecha las capacidades regionales**.<br>Payouts es una API completa y fácil de utilizar para realizar pagos a cualquier banco en el país de procesamiento<sup>\*</sup>.<br><sup>\*</sup>_Disponible por ahora en Colombia, próximamente en otros mercados._
 * **Uno or múltiples pagos**.<br>La API es flexible. Puedes crear uno o múltiples solicitudes de pago para beneficiarios nuevos o existentes. No hay restricción en el número de registros. 
 * **Ahorra tiempo y costos**.<br>Puedes ahorrar costos operacionales y tiempo gestionando todas las operaciones de pago en un solo lugar.
-* **Flexibilidad de pago**.<br>Puedes hacer actualizaciones a las órdenes de pago en cualquier momento antes de que sean enviadas al banco.<br>Esto es útil cuando el beneficiario cambia su cuenta bancaria.
 * **Administra mejor los fondos y el saldo de la cuenta**.<br>Puedes cancelar órdenes de pago antes de que sean enviadas al banco. Payouts te ayuda a manejar mejor los fondos y el saldo de tu cuenta. 
 * **Notificaciones personalizadas**.<br>Cualquier cambio en la orden de pago es actualizado por nuestra solución. Puedes personalizar las notificaciones que recibes.
 
@@ -69,7 +68,7 @@ Una vez el Payout ha sido aprobado, es transformado en una orden de pago. Los si
 * **IN_VALIDATION**: debido a políticas de PayU, cada pago puede estar sujeto a una validación. Este estado indica que tu solicitud debe ser revisada bajo nuestras políticas internas. Si la validación falla, el pago que no cumplió con las políticas es rechazado.
 * **IN_PAYU_PROCESS**: este estado indica que PayU ha iniciado el proceso del pago.
 * **AWAITING_BANK_SENT**: este estado indica que PayU ha iniciado la transferencia del monto al beneficiario.
-* **IN_BANKING_PROCESS**: este estado indica que el pago está siendo procesado por la cuenta bancaria del beneficiario. En este punto, no puedes solicitar su cancelación ni actualizarla.
+* **IN_BANKING_PROCESS**: este estado indica que el pago está siendo procesado por la cuenta bancaria del beneficiario. En este punto, no puedes solicitar su cancelación.
 * **CONFIRMED_BY_THE_BANK**: este estado indica que el beneficiario ha recibido el monto de la transferencia.
 * **REJECTED**: este estado indica que la transacción ha sido rechazada por PayU (debido a incumplimiento de políticas) o por el Banco (debido a errores en la información bancaria).
 
@@ -88,7 +87,7 @@ Si una persona no aprueba la validación, el Pago no se realiza y se te envía u
 Ten en cuentas las siguientes consideraciones:
 
 * Payouts no es un servicio incluido de forma predeterminada. Debes solicitarlo y firmar un anexo al contrato para acordar el valor de la tarifa de procesamiento y demás condiciones. Contacta a tu Key Account Manager para contratar este servicio.
-* Los comercios son los responsables de la integridad y la veracidad de la información de los beneficiarios. PayU no valida que la información entregada sea completa y correcta. Además, la actualización de la información debe ser solicitada por los comercios.<br>PayU no es responsable por transacciones no exitosas debido a información incorrecta.
+* Los comercios son los responsables de la integridad y la veracidad de la información de los beneficiarios. PayU no valida que la información entregada sea completa y correcta.<br>PayU no es responsable por transacciones no exitosas debido a información incorrecta.
 * Payouts solo permite pagos locales. El comercio puede ser internacional (bajo análisis de seguridad y riesgo) pero solo pueden solicitar Payouts utilizando los fondos obtenidos en el país de procesamiento.<br>Por ejemplo, si el comercio _ABC_ procesa en Colombia y Perú, puede solicitar payouts a beneficiarios en Colombia utilizando los fondos recaudados en Colombia; no pueden solicitar pagos a beneficiarios en Perú utilizando los fondos recaudados en Colombia.
 * Una vez se ha creado el Payout, toma el flujo regular en PayU. Esto significa que puedes ver el payout creado en el módulo PayU. 
 * El comercio debe probar la relación entre él y sus beneficiarios para garantizar que la transacción es legítima.

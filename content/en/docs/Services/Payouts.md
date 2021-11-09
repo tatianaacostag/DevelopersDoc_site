@@ -24,9 +24,8 @@ The amount of each payout plus the processing fee is deducted from your account.
 * **Leverage regional capabilities**.<br>A complete and easy-to-use API to make payments to any bank in the processing country<sup>\*</sup>.<br><sup>\*</sup>_Available for now in Colombia, with other markets coming soon._
 * **One or multiple payouts**.<br>The API is flexible. You can create one or multiple requests which can be new or existing. There is no restriction for the number of records. 
 * **Save time and costs**.<br>You can save operational costs and time managing all payment operations in just one place.
-* **Payment flexibility**.<br>You can make updates to the payment order any time before it’s sent to the bank.<br>This feature is useful when the payee changes their bank account.
 * **Better manage account funds and balance**.<br>You can cancel payment orders before the payout is sent to the bank. Payouts feature helps you to better manage your account funds and balance. 
-* **Customizable  notifications**.<br>Any changes in the payment order status are updated through our solution. You can customize the update notifications you receive. 
+* **Customizable notifications**.<br>Any changes in the payment order status are updated through our solution. You can customize the update notifications you receive. 
 
 ## How does the Payouts feature work?
 Through Payouts, you can send multiple and secure payouts such as fund disbursement to employees, sub-merchants, suppliers or customers, using the funds you have in your PayU Account. 
@@ -39,7 +38,6 @@ You only need to provide the amount to pay along with the information of each pa
 2. **Payee validation**: payees are validated through our solution (Sanction Screening process) and payouts are scheduled. 
 3. **Funds deduction**: each payout along with the processing fee are deducted from your PayU virtual account.
 4. **Confirmation process**: the bank processes the payment according to [ACH process]({{< ref "#transaction-processing" >}}). You can customize notifications to receive changes in the payment status. 
-
 
 ### Payout states
 Payouts are performed in two main steps: the first step is when you request the payment to a payee. The second one is when the request has been approved and moves to the transfer of the funds.
@@ -70,7 +68,7 @@ Once the Payout has been approved, it is transformed into a payment order. The f
 * **IN_VALIDATION**: due to PayU policies, each payment may be subject to validation. This state indicates that your request must be reviewed under our internal policies. If the validation fails, the payment which didn't meet the policies is rejected.
 * **IN_PAYU_PROCESS**: this state indicates that PayU has started the process payment.
 * **AWAITING_BANK_SENT**: this state indicates that PayU has started the transfer of the amount to the payee.
-* **IN_BANKING_PROCESS**: this state indicates that the payment is being processed in the payee's bank account. At this point you cannot cancel the request nor update it.
+* **IN_BANKING_PROCESS**: this state indicates that the payment is being processed in the payee's bank account. At this point you cannot cancel the request.
 * **CONFIRMED_BY_THE_BANK**: this state indicates that the payee has received the transferred amount.
 * **REJECTED**: this state indicates that the transaction has been rejected either by PayU (due to policy breach) or the Bank (due to errors in the bank information).
 
@@ -89,7 +87,7 @@ If a person does not approve the validation, the Payout is not performed and you
 Take into account the following considerations:
 
 * Payouts is not a service included by default. You must request it and sign an annex to the contract to agree the fee and further conditions. Contact your Key Account Manager to contract this service.
-* Merchants are responsible for the integrity and the correctness of the payee's data. PayU does not validate that the data provided by the merchant is complete and correct. Furthermore, the update of data must be requested by the merchants.<br>PayU is not responsible for unsuccessful transactions due to wrong data.
+* Merchants are responsible for the integrity and the correctness of the payee's data. PayU does not validate that the data provided by the merchant is complete and correct.<br>PayU is not responsible for unsuccessful transactions due to wrong data.
 * Payouts allows local payments only. The merchant may be international (under security and risk analysis) but they can only request payouts using the funds collected in the processing country.<br>For example, if the merchant _ABC_ processes in Colombia and Peru, they can request payouts to payees in Colombia using the funds collected in Colombia; they cannot request payouts to payees in Peru using the funds collected in Colombia.
 * Once the payout is created, it takes the regular flow in PayU. This means that you can see the payout created in your PayU module. 
 * The merchant must prove the relationship between them and their payees to guarantee that the transaction is legit.
