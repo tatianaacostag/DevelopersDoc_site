@@ -39,7 +39,6 @@ La siguiente sección muestra los métodos de pago disponibles por país y brind
 | ![Logo](/assets/PaymentMethods/elo.png) | Elo | ELO | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/hipercard.png) | Hipercard | HIPERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/itau.png) | TEF Itaú | ITAU | Transferencia Bancaria | Solo disponible para cuentas Itaú. |
-| ![Logo](/assets/PaymentMethods/pix.png) | PIX | PIX | Pago Instantaneo | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
 
