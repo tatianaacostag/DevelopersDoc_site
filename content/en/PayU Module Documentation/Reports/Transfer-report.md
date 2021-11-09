@@ -10,6 +10,10 @@ weight: 20
 
 Furthermore, if you have enabled the Payouts API, you can query the state of the payouts to third party requested. For more information, refer to [Payouts]({{< ref "Payouts.md" >}}).
 
+{{% alert title="Note" color="info"%}}
+<img src="/assets/Brasil.png" width="20px"/> The _**Transfers Report**_ has the same columns and features available for the _**Daily payouts**_ report (_**Transfers**_ > _**Daily payouts**_).
+{{% /alert %}}
+
 ## Permission required
 To have access to this module, you need to have a profile with the _Transfers_ > _Review_ permission enabled.
 

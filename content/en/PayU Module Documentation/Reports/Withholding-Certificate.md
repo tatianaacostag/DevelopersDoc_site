@@ -12,7 +12,7 @@ nosidetoc: true
 For transactions in Colombia paid with credit cards, the intermediary financial entities make retentions of **Rent Withholding**, **ICA Withholding**, and **IVA Withholding**. According to this, PayU delivers for merchants, a certificate with the total of the withholdings applied during a monthly period.
 
 {{% alert title="Note" color="info"%}}
-To have access to this module, you need to have a profile with the permission _Colombian certificates_ > _View withhodlings_ permission enabled.
+To have access to this module, you need to have a profile with the permission _Colombian certificates_ > _View withhodlings_ enabled.
 
 Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
 {{% /alert %}}

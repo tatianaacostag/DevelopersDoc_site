@@ -14,7 +14,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
 
 ## What is a refund?
 A refund is the action to voluntary return the money paid by a customer when any of the following situations happen:
-* The product or service delivered does not met the spectates of the customer and they returned it.
+* The product or service delivered does not met the expectations of the customer and they returned it.
 * The product is out of stock, anf the merchant is not able to deliver the product to the client.
 
 ## Refund procedure
@@ -53,7 +53,7 @@ Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.m
 * If your refund request is approved, the amount is refunded to the card holder.
 * If your refund request is declined, the amount is released from the Frozen Balance and returns to the available Balance of your PayU account.
 * Once the refund is approved, this will be reflected in the payer’s credit card when the bank make it effective.
-* To check the status of your refund request, you can consult it by clicking the sale in the Merchant Panel.
+* To check the status of your refund request, you can consult it by clicking the sale in the PayU Module.
 
 ## Refunds per country
 Take into account the following considerations per country before requesting refunds.

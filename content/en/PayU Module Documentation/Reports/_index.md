@@ -9,10 +9,10 @@ weight: 50
 nosidetoc: true
 ---
 
-PayU provided a set of reports which can be accessible from the Merchant Panel to let you have control of the operations you perform with PayU.
+PayU provides a set of reports which can be accessible from the PayU Module to let you have control of the operations you perform with PayU.
 
 {{% alert title="Note" color="info"%}}
-Reports in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need to have custom reports or display more information, contact your sales representative.
+Reports in the PayU module are limited to **20 thousand** rows for both displaying and downloading. If you need to have custom reports or display more information, contact your sales representative.
 {{% /alert %}}
 
 ## My downloaded reports

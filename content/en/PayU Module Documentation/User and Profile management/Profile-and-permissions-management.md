@@ -10,15 +10,13 @@ weight: 20
 
 A _Profile_ is a set of permissions that allows a user to access to a feature of an _account_. A _user_ using a _profile_ can access to as many account there are in each merchant.
 
-For further information about merchants, accounts, and more, read the [concepts behind the PayU Module](/payu-module-documentation.html#payu-module-concepts).
+For further information about merchants, accounts, and more, read the [concepts behind the PayU Module]({{< ref"PayU Module Documentation#payu-module-concepts" >}}).
 
 ## Permission required
 To have access to this module, you need to have a profile with the following permission enabled:
 
 * _Review permissions and profiles_
 * _Create, edit and delete profiles and permissions_
-
-Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
 
 ## Default profiles
 By default, PayU provides three profiles that allow your users to access the accounts. These profiles are:
@@ -30,7 +28,7 @@ By default, PayU provides three profiles that allow your users to access the acc
 These profiles cannot be deleted and their set of permissions are fixed, if any of these permissions does not meet your needs, you should [create one]({{< ref"#create-profiles" >}}).
 
 ## Profile and Permission management
-To manage users, open you PayU account and click _**Settings**_ menu at the top the screen and then, select _**Permissions and profiles**_.
+To manage profile and permission, open you PayU account and click _**Settings**_ menu at the top the screen and then, select _**Permissions and profiles**_.
 
 ![PrintScreen](/assets/Profiles/Profiles_01.png)
 
@@ -45,7 +43,7 @@ When none of the [default profiles]({{< ref"#default-profiles" >}}) meets you re
 
 ![PrintScreen](/assets/Profiles/Profiles_03.png)
 
-2. A new column is added to the table. Provide a meaningful name for your custom profile..
+2. A new column is added to the table. Provide a meaningful name for your custom profile.
 
 ![PrintScreen](/assets/Profiles/Profiles_04.png)
 

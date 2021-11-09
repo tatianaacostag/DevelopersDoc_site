@@ -11,7 +11,7 @@ Currently, e-commerce it's no longer a taboo. Before, people used to think that 
 
 Nevertheless, beyond the knowledge, the key is to have the best allies and, mainly, use the best strategies that allows the growth of your product.
 
-PayU offers the best payment gateway to help your shop sell online even if your don't have a web page.
+PayU offers the best payment gateway to help your shop sell online even if you don't have a web page.
 
 ## How to sell using PayU?
 Through PayU Module, you have the tools to start selling online fast and easy, no matter if you don't have a web page. 
