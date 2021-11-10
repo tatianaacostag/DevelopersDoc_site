@@ -15,6 +15,267 @@
     
     
     <item>
+      <title>Docs: VTEX</title>
+      <link>/en/docs/tools/shopping-cart-plugins/vtex.html</link>
+      <pubDate>Tue, 25 May 2021 10:30:35 -0500</pubDate>
+      
+      <guid>/en/docs/tools/shopping-cart-plugins/vtex.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;VTEX is an enterprise digital commerce platform that allows you to create an online store with out-of-the-box capabilities fast. For more information, refer to official &lt;a href=&#34;https://vtex.com/&#34;&gt;VTEX webpage&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need an active account in PayU Latam.&lt;/li&gt;
+&lt;li&gt;You need an active account in PaymentsOS. If you don&amp;rsquo;t have an account, click &lt;a href=&#34;https://control.paymentsos.com/signup&#34;&gt;here&lt;/a&gt; to create one.&lt;br&gt;All the commerce that requires to integrate PayU with VTEX &lt;strong&gt;must&lt;/strong&gt; have an account in PaymentsOS.&lt;/li&gt;
+&lt;li&gt;You need an account with enough rights and permissions to access the VTEX admin. This account must have enabled the two-factor authentication.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;configuration-procedure&#34;&gt;Configuration procedure&lt;/h2&gt;
+&lt;p&gt;The procedure to enable payment methods in VTEX processed by our gateway is divided in two steps. Before moving on, make sure you have meet the prerequisites above.&lt;/p&gt;
+&lt;h3 id=&#34;configure-your-paymentsos-account&#34;&gt;Configure your PaymentsOS account&lt;/h3&gt;
+&lt;p&gt;The integration of PayU Latam with VTEX is performed using PaymentsOS as a middleware. As the first step, you need to configure in PaymentsOS your account the following objects.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A Provider configuration.&lt;/li&gt;
+&lt;li&gt;A Business unit.&lt;/li&gt;
+&lt;li&gt;A WebHook.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can configure these objects using one of the following options.&lt;/p&gt;
+&lt;h4 id=&#34;configure-the-account-using-postman&#34;&gt;Configure the account using Postman&lt;/h4&gt;
+&lt;p&gt;Follow these steps to configure your account using Postman.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class=&#34;postman-run-button&#34;
+data-postman-action=&#34;collection/import&#34;
+data-postman-var-1=&#34;400731dd3ca5aa713cd3&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+  (function (p,o,s,t,m,a,n) {
+    !p[s] &amp;&amp; (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+    !o.getElementById(s+t) &amp;&amp; o.getElementsByTagName(&#34;head&#34;)[0].appendChild((
+      (n = o.createElement(&#34;script&#34;)),
+      (n.id = s+t), (n.async = 1), (n.src = m), n
+    ));
+  }(window, document, &#34;_pm&#34;, &#34;PostmanRunObject&#34;, &#34;https://run.pstmn.io/button.js&#34;));
+&lt;/script&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;After you run the collection, you need to set the globals. Download the globals file &lt;a href=&#34;../../../../static/assets/globals/VTEX%20Hub.postman_globals.json&#34; download&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the Postman collection, click &lt;em&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/em&gt; next to your workspace name and locate the json file recently downloaded.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When finish, click &lt;em&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It is mandatory to run the collection methods in the order displayed. First, click the &lt;code&gt;POST&lt;/code&gt; method called &lt;code&gt;1. Login&lt;/code&gt; and go to &lt;em&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/em&gt; tab.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Provide the &lt;em&gt;&lt;strong&gt;email&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;password&lt;/strong&gt;&lt;/em&gt; of your PaymentsOS account. Then, click &lt;em&gt;&lt;strong&gt;Send&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the login was successful, the authentication data is set for the second method.&lt;br&gt;Click the &lt;code&gt;GET&lt;/code&gt; method &lt;code&gt;2. Retrieve PayU Latam ID&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the top right corner, click the eye icon and locate the &lt;code&gt;env&lt;/code&gt; parameter. Then, click the pencil icon and set &lt;code&gt;test&lt;/code&gt;if you are processing in the test environment and &lt;code&gt;live&lt;/code&gt; otherwise.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Once configured, click &lt;em&gt;&lt;strong&gt;Send&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click the &lt;code&gt;POST&lt;/code&gt; method &lt;code&gt;3. Create Provider Configuration&lt;/code&gt;, this method creates the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt; in PaymentsOS. Then, go to &lt;em&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/em&gt; tab.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Provide the following information:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;Provide a to the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;Provide a meaningful description for the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;This value is optional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.apiLogin&lt;/td&gt;
+&lt;td&gt;User or login provided by PayU. &lt;a href=&#34;../../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.apiKey&lt;/td&gt;
+&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;../../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.accountId&lt;/td&gt;
+&lt;td&gt;ID of the PayU account according to the country where you want to sell.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.merchantId&lt;/td&gt;
+&lt;td&gt;ID of your commerce in PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.paymentCountry&lt;/td&gt;
+&lt;td&gt;Processing country in format ISO 3166 Alpha-3.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+The parameter &lt;code&gt;provider_id&lt;/code&gt; is  automatically set by the response of the method &lt;code&gt;2. Retrieve PayU Latam ID&lt;/code&gt;. Do not change this value.
+&lt;/div&gt;
+
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;Click the &lt;code&gt;POST&lt;/code&gt; method &lt;code&gt;4. Create Business Unit&lt;/code&gt; this method creates the &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt; in PaymentsOS. Then, go to &lt;em&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/em&gt; tab.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Provide the following information:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;Identifier of the &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;. This id must be in lowercase and without blank spaces.&lt;br&gt;&lt;em&gt;Make sure you have provided the correct value for the id as this cannot be updated later&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;Provide a meaningful description for the &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;This value is optional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+The parameter &lt;code&gt;default_processor&lt;/code&gt; is  automatically set by the response of the method &lt;code&gt;3. Create Provider Configuration&lt;/code&gt;. Do not change this value.
+&lt;/div&gt;
+
+&lt;ol start=&#34;12&#34;&gt;
+&lt;li&gt;Click the &lt;code&gt;POST&lt;/code&gt; method &lt;code&gt;5. Create Webhook&lt;/code&gt; this method creates the &lt;em&gt;&lt;strong&gt;WebHook&lt;/strong&gt;&lt;/em&gt; in PaymentsOS. This WebHook is the confirmation URL that will receive the notifications sent by VTEX when a transaction changes its state.&lt;br&gt;Then, go to &lt;em&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/em&gt; tab.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Set the &lt;code&gt;endpoint&lt;/code&gt; parameter with the following values according to your environment.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Live: &lt;code&gt;https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Leave the other parameters with their default value.&lt;/p&gt;
+&lt;p&gt;At this point, your PaymentsOS account has been configured as a middleware, the next step is the &lt;a href=&#34;#configure-the-vtex-provider&#34;&gt;configuration of the VTEX provider&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;configure-the-account-manually-using-paymentsos-dashboard&#34;&gt;Configure the account manually using PaymentsOS dashboard&lt;/h4&gt;
+&lt;p&gt;Follow these steps to configure your account using PaymentsOS dashboard.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create the Provider configuration.&lt;br&gt;
+In the PaymentsOS dashboard, expand the &lt;em&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/em&gt; menu, then select &lt;em&gt;&lt;strong&gt;Services&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Use the &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt; field in the &lt;em&gt;&lt;strong&gt;Create a new Provider configuration&lt;/strong&gt;&lt;/em&gt; section and enter &lt;em&gt;PayU&lt;/em&gt; to find the &lt;em&gt;PayU Latam&lt;/em&gt; provider.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Provide the following information for the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Configuration Name&lt;/td&gt;
+&lt;td&gt;Provide a to the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Provide a meaningful description for the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;This value is optional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;apiLogin&lt;/td&gt;
+&lt;td&gt;User or login provided by PayU. &lt;a href=&#34;../../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;apiKey&lt;/td&gt;
+&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;../../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID of the PayU account according to the country where you want to sell.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;ID of your commerce in PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paymentCountry&lt;/td&gt;
+&lt;td&gt;Processing country in format ISO 3166 Alpha-3.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;When finish, click &lt;em&gt;&lt;strong&gt;Create&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Create the Business Unit.&lt;br&gt;
+Back in the PaymentsOS dashboard, expand the &lt;em&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/em&gt; menu, then select &lt;em&gt;&lt;strong&gt;Business Units&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click the &lt;em&gt;&lt;strong&gt;Create Business Unit&lt;/strong&gt;&lt;/em&gt; button and provide the following information:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Business Unit Name&lt;/td&gt;
+&lt;td&gt;Name of the &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;. This name must be in lowercase and without blank spaces.&lt;br&gt;&lt;em&gt;Make sure you have provided the correct name as this cannot be updated later&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;Provide a meaningful description for the &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;This value is optional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;In the &lt;em&gt;&lt;strong&gt;Choose a default Provider for this Business Unit&lt;/strong&gt;&lt;/em&gt; section, select the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt; created in the last step.&lt;br&gt;When finish, click &lt;em&gt;&lt;strong&gt;Create&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Create the Webhook. This WebHook is the confirmation URL that will receive the notifications sent by VTEX when a transaction changes its state.&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Back in the PaymentsOS dashboard, expand the &lt;em&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/em&gt; menu, then select &lt;em&gt;&lt;strong&gt;Webhooks&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click the &lt;em&gt;&lt;strong&gt;Create a Webhook Endpoint&lt;/strong&gt;&lt;/em&gt; button and provide the URL according to your environment:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Live: &lt;code&gt;https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the &lt;em&gt;&lt;strong&gt;Payment Events Alert&lt;/strong&gt;&lt;/em&gt; table, enable the &lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;&lt;/em&gt; event for &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Charge&lt;/strong&gt;&lt;/em&gt;. Furthermore, select in the &lt;em&gt;&lt;strong&gt;Associated Business Units&lt;/strong&gt;&lt;/em&gt; combo the &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt; created in the last step.&lt;br&gt;When finish, click &lt;em&gt;&lt;strong&gt;Create&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;At this point, your PaymentsOS account has been configured as a middleware, the next step is the &lt;a href=&#34;#configure-the-vtex-provider&#34;&gt;configuration of the VTEX provider&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;configure-the-vtex-provider&#34;&gt;Configure the VTEX provider&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Shopify</title>
       <link>/en/docs/tools/shopping-cart-plugins/shopify.html</link>
       <pubDate>Tue, 25 May 2021 10:30:35 -0500</pubDate>
