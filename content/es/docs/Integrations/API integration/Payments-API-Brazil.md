@@ -1175,13 +1175,21 @@ Pix tiene dos partes:
 </details>
 
 #### Consideraciones {#considerations-2}
+* Los pagos procesados a través de nuestra pasarela serán para PayU en nombre de tu comercio.
 * Si tu comercio no tiene una entidad local, es obligatorio enviar tanto el CPF (parámetro `transaction.[payer|buyer].dniNumber`) o el CNPJ (parámetro `transaction.[payer|buyer].cnpj`).
+* Para configurar el tiempo de vencimiento del código QR, comunícate con tu representante de ventas. El tiempo máximo que puede solicitar es de un día.<br>De forma predeterminada, el tiempo de vencimiento es de dos (2) horas.
+* El monto mínimo que puedes procesar con PIX es de R$1.00, el monto máximo depende de tu cliente y de su banco.
 * El parámetro `transaction.payer.fullName` es obligatorio para crear la petición.
 * El código QR y la llave PIX key utilizada para recibir pago es generada por PayU, no se soporta configurar tu propio código QR ni tu llave PIX. Sin embargo, el monto total de la transacción menos la tarifa de procesamiento es transferida a tu cuenta de PayU.
+* Para consultar un código activo de tu transacción, utiliza el [API de consultas]({{< ref "Queries-API.md" >}}).
 * El parámetro `transactionResponse.extraParameters` Tiene los siguientes parámetros relacionados con la transacción:
    - **EXPIRATION_DATE**: fecha de expiración del pago.
    - **QRCODE_EMV**: código que se debe pegar en el portal del banco para realizar el pago. Este código es utilizado cuando el cliente no puede leer el código QR.
    - **QRCODE_IMAGE_BASE64**: imagen dl código QR. Este campo es una cadena de caracteres codificada en Base 64.
+
+{{% alert title="Nota" color="info"%}}
+Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro `QRCODE_IMAGE_BASE64` decodificado) como la cadena del código (parámetro` QRCODE_EMV`) para evitar deserciones de pago.
+{{% /alert %}}
 
 ### Llamado del API {#api-call}
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
@@ -1250,7 +1258,6 @@ Ejemplo petición:
       "type": "AUTHORIZATION_AND_CAPTURE",
       "paymentMethod": "PIX",
       "paymentCountry": "BR",
-      "expirationDate": "2014-05-08T00:00:00",
       "ipAddress": "127.0.0.1"
     },
     "test": false

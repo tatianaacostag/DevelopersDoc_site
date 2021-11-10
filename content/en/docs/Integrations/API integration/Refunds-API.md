@@ -28,7 +28,9 @@ Before using Voids and Refunds API, take into account the following consideratio
 
 ### Brazil
 * The maximum time to send a void is seven (7) days. If no void or capture is sent after this time, the transaction is cancelled.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 90 days for transactions processed in Redecard and 120 for transactions processed in Cielo.
+* The minimum time to send a refund is 10 minutes after the approval and the maximum is:
+   - 90 days for transactions with PIX or processed in Redecard.
+   - 120 days for transactions processed in Cielo.
 * When a refund is approved, the payer gets the money back in maximum 15 working days.
 
 ### Chile

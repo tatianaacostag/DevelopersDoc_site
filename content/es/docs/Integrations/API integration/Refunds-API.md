@@ -29,7 +29,9 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 
 ### Brasil {#brazil}  
 * El tiempo máximo para enviar una anulación es siete (7) días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se cancela.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 90 días para transacciones procesadas en Redecard y 120 para transacciones procesadas en Cielo.
+* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es:
+   - 90 días para transacciones con PIX o procesadas en Redecard
+   - 120 días para transacciones procesadas en Cielo.
 * Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 15 días hábiles.
 
 ### Chile
