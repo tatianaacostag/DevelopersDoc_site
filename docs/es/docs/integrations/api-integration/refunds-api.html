@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/refunds-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-06-25T09:24:50-05:00" />
-<meta property="article:modified_time" content="2021-11-08T17:41:32-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-10T08:47:05-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de Reembolsos y Anulaciones">
 <meta itemprop="description" content="Esta funcionalidad te permite solicitar la cancelación o el reembolso de transacciones autorizadas o cobradas. Puedes crear la solicitud utilizando los métodos de reembolso (_Refund_) o de cancelación (_Void_) de acuerdo con el estado de la transacción.
 "><meta itemprop="datePublished" content="2021-06-25T09:24:50-05:00" />
-<meta itemprop="dateModified" content="2021-11-08T17:41:32-05:00" />
-<meta itemprop="wordCount" content="2383">
+<meta itemprop="dateModified" content="2021-11-10T08:47:05-05:00" />
+<meta itemprop="wordCount" content="2386">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Reembolsos y Anulaciones"/>
 <meta name="twitter:description" content="Esta funcionalidad te permite solicitar la cancelación o el reembolso de transacciones autorizadas o cobradas. Puedes crear la solicitud utilizando los métodos de reembolso (_Refund_) o de cancelación (_Void_) de acuerdo con el estado de la transacción.
@@ -139,7 +139,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.a06364987aed0f6050ea16352e533d4bd09e5f5033a9013c322abebb18ec45cb988e30649f28df8f57fdf1cf1efe4643fe7d0dd15348bd43a9ff206e8d3173e7.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.dc1c13a6d4941f0896680ac79685b78a381aeac7189a1ab82c7f96b972467d697cf53edea37b30169cac5b2f703e7b28131aabba3dd499979b9cdbb2c2bae1bd.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -838,7 +838,12 @@
 <h3 id="brazil">Brasil</h3>
 <ul>
 <li>El tiempo máximo para enviar una anulación es siete (7) días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se cancela.</li>
-<li>El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 90 días para transacciones procesadas en Redecard y 120 para transacciones procesadas en Cielo.</li>
+<li>El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es:
+<ul>
+<li>90 días para transacciones con PIX o procesadas en Redecard</li>
+<li>120 días para transacciones procesadas en Cielo.</li>
+</ul>
+</li>
 <li>Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 15 días hábiles.</li>
 </ul>
 <h3 id="chile">Chile</h3>
@@ -1695,9 +1700,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-8 de noviembre de 2021:
+10 de noviembre de 2021:
 
- <b>Translations to Spanish (6ab0d355)</b>
+ <b>Changes for PIX (29b440b8)</b>
 </div>
 </div>
 

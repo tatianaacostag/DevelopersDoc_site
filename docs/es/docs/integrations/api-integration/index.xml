@@ -5560,9 +5560,13 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;/details&gt;
 &lt;h4 id=&#34;considerations-2&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;ul&gt;
+&lt;li&gt;Los pagos procesados a través de nuestra pasarela serán para PayU en nombre de tu comercio.&lt;/li&gt;
 &lt;li&gt;Si tu comercio no tiene una entidad local, es obligatorio enviar tanto el CPF (parámetro &lt;code&gt;transaction.[payer|buyer].dniNumber&lt;/code&gt;) o el CNPJ (parámetro &lt;code&gt;transaction.[payer|buyer].cnpj&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Para configurar el tiempo de vencimiento del código QR, comunícate con tu representante de ventas. El tiempo máximo que puede solicitar es de un día.&lt;br&gt;De forma predeterminada, el tiempo de vencimiento es de dos (2) horas.&lt;/li&gt;
+&lt;li&gt;El monto mínimo que puedes procesar con PIX es de R$1.00, el monto máximo depende de tu cliente y de su banco.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;transaction.payer.fullName&lt;/code&gt; es obligatorio para crear la petición.&lt;/li&gt;
 &lt;li&gt;El código QR y la llave PIX key utilizada para recibir pago es generada por PayU, no se soporta configurar tu propio código QR ni tu llave PIX. Sin embargo, el monto total de la transacción menos la tarifa de procesamiento es transferida a tu cuenta de PayU.&lt;/li&gt;
+&lt;li&gt;Para consultar un código activo de tu transacción, utiliza el &lt;a href=&#34;../../../../es/docs/integrations/api-integration/queries-api.html&#34;&gt;API de consultas&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;transactionResponse.extraParameters&lt;/code&gt; Tiene los siguientes parámetros relacionados con la transacción:
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;EXPIRATION_DATE&lt;/strong&gt;: fecha de expiración del pago.&lt;/li&gt;
@@ -5571,6 +5575,13 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro &lt;code&gt;QRCODE_IMAGE_BASE64&lt;/code&gt; decodificado) como la cadena del código (parámetro&lt;code&gt; QRCODE_EMV&lt;/code&gt;) para evitar deserciones de pago.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;api-call&#34;&gt;Llamado del API&lt;/h3&gt;
 &lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.&lt;/p&gt;
 &lt;nav&gt;
@@ -5677,7 +5688,6 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;AUTHORIZATION_AND_CAPTURE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PIX&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentCountry&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BR&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;expirationDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;2014-05-08T00:00:00&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ipAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;
@@ -30315,7 +30325,12 @@ Si no validas el esquema, la integración so se verá afectada y solo necesitar�
 &lt;h3 id=&#34;brazil&#34;&gt;Brasil&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;El tiempo máximo para enviar una anulación es siete (7) días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se cancela.&lt;/li&gt;
-&lt;li&gt;El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 90 días para transacciones procesadas en Redecard y 120 para transacciones procesadas en Cielo.&lt;/li&gt;
+&lt;li&gt;El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es:
+&lt;ul&gt;
+&lt;li&gt;90 días para transacciones con PIX o procesadas en Redecard&lt;/li&gt;
+&lt;li&gt;120 días para transacciones procesadas en Cielo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 15 días hábiles.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;chile&#34;&gt;Chile&lt;/h3&gt;
