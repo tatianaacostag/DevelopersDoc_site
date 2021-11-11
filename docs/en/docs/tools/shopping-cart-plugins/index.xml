@@ -284,7 +284,7 @@ Back in the PaymentsOS dashboard, expand the &lt;em&gt;&lt;strong&gt;Account&lt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Before configuring Payment conditions, you must create an affiliation to our gateway. In the top panel, click &lt;em&gt;&lt;strong&gt;Gateway affiliations&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_09.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Click the plus icon. Scroll down to &lt;em&gt;&lt;strong&gt;OTHERS&lt;/strong&gt;&lt;/em&gt; section and locate the &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&gt;&lt;/em&gt; connector.&lt;/li&gt;
 &lt;/ol&gt;
