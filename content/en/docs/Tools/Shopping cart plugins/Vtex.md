@@ -174,7 +174,7 @@ Once you have configured your PaymentsOS account, the next step is the configura
 
 2. Before configuring Payment conditions, you must create an affiliation to our gateway. In the top panel, click _**Gateway affiliations**_.
 
-![PrintScreen](/assets/VTEX/VTEX_08.png)
+![PrintScreen](/assets/VTEX/VTEX_09.png)
 
 3. Click the plus icon. Scroll down to _**OTHERS**_ section and locate the _**PayUv2**_ connector.
 
