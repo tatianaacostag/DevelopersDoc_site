@@ -245,4 +245,27 @@ Changes to payment conditions can take up to 10 minutes to apply to the checkout
 {{% /alert %}}
 
 ## Testing the integration
-Bla bla
+Once you have configured the Payment conditions for your payment methods you can test the integration in your store. Before moving on, make sure your PaymentsOS account is in `TEST` mode.
+
+1. In the VTEX admin, click _**VISIT STORE**_ at the top panel.
+
+![PrintScreen](/assets/VTEX/VTEX_16.png)
+
+2. The store configured for your VTEX account opens. Select any product and click purchase.
+
+![PrintScreen](/assets/VTEX/VTEX_17.png)
+
+3. In the shopping cart, click the place order button. 
+
+![PrintScreen](/assets/VTEX/VTEX_18.png)
+
+4. In the payment section, the payment methods appears grouped by their type. Select the one you want to test and enter the test data, find [here]({{< ref "Test-your-solution.md#test-cards" >}}) some test card numbers and information to test status.<br>
+Finally, click in Complete purchase
+
+![PrintScreen](/assets/VTEX/VTEX_19.png)
+
+Once the purchase has been approved you can check it in:
+* VTEX Admin: _**Orders**_ > _**Orders management**_ > _**All orders**_.
+* PaymentsOS dashboard: _**Payments**_ > _**Search**_.<br>The parameter _**External Transaction ID**_ is the Order ID in PayU.
+* PayU Module: in the [_**Sales Report**_]({{< ref "Sales-report.md" >}}) module.
+* [Queries API]({{< ref "Queries.md" >}}) using the parameter _**External Transaction ID**_ as OrderID.
