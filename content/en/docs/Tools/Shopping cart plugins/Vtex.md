@@ -18,14 +18,16 @@ VTEX is an enterprise digital commerce platform that allows you to create an onl
 ## Configuration procedure
 The procedure to enable payment methods in VTEX processed by our gateway is divided in two steps. Before moving on, make sure you have meet the prerequisites above.
 
-### Configure your PaymentsOS account
+### 1. Configure your PaymentsOS account
 The integration of PayU Latam with VTEX is performed using PaymentsOS as a middleware. As the first step, you need to configure in PaymentsOS your account the following objects.
 
 * A Provider configuration.
 * A Business unit.
 * A WebHook.
 
-You can configure these objects using one of the following options.
+You can configure these objects using one of the following options:
+* [Configure the account using Postman]({{< ref "#configure-the-account-using-postman" >}}).
+* [Configure the account manually using PaymentsOS dashboard]({{< ref "#configure-the-account-manually-using-paymentsos-dashboard" >}}).
 
 #### Configure the account using Postman
 Follow these steps to configure your account using Postman.
@@ -100,7 +102,7 @@ Set the `endpoint` parameter with the following values according to your environ
 
 Leave the other parameters with their default value.
 
-At this point, your PaymentsOS account has been configured as a middleware, the next step is the [configuration of the VTEX provider]({{< ref "#configure-the-vtex-provider" >}}).
+At this point, your PaymentsOS account has been configured as a middleware, the next step is the [configuration of the VTEX provider]({{< ref "#2-configure-the-vtex-provider" >}}).
 
 #### Configure the account manually using PaymentsOS dashboard
 Follow these steps to configure your account using PaymentsOS dashboard.
@@ -160,6 +162,87 @@ In the _**Payment Events Alert**_ table, enable the _**Update**_ event for _**Au
 
 ![PrintScreen](/assets/VTEX/VTEX_07.png)
 
-At this point, your PaymentsOS account has been configured as a middleware, the next step is the [configuration of the VTEX provider]({{< ref "#configure-the-vtex-provider" >}}).
+At this point, your PaymentsOS account has been configured as a middleware, the next step is the [configuration of the VTEX provider]({{< ref "#2-configure-the-vtex-provider" >}}).
 
-## Configure the VTEX provider
+### 2. Configure the VTEX provider
+Once you have configured your PaymentsOS account, the next step is the configuration of the VTEX provider per each payment method. For this step, it is mandatory that you have a valid user to access the VTEX admin.
+
+#### Configure the Gateway affiliation
+1. In the VTEX admin, expand the _**Payments**_ menu inside _**Transactions**_ group. Then, select _**Settings**_.
+
+![PrintScreen](/assets/VTEX/VTEX_08.png)
+
+2. Before configuring Payment conditions, you must create an affiliation to our gateway. In the top panel, click _**Gateway affiliations**_.
+
+![PrintScreen](/assets/VTEX/VTEX_08.png)
+
+3. Click the plus icon. Scroll down to _**OTHERS**_ section and locate the _**PayUv2**_ connector.
+
+![PrintScreen](/assets/VTEX/VTEX_10.png)
+
+{{% alert title="Important" color="warning"%}}
+Make sure you have selected the _**PayUv2**_ connector, the procedure explained in this guide applies specifically to this connector.
+{{% /alert %}}  
+
+4. In the connector configuration, you must install the connector by clicking the _**Install app**_ button. Then, provide the following information for the connector.
+
+![PrintScreen](/assets/VTEX/VTEX_11.png)
+
+{{% alert title="Note" color="info"%}}
+The information of the connector can be obtained either:
+* Using the Postman collection.<br>Run the **Retrieve Authentication Keys** method setting the global parameter `env` as `test` or `live` according to your processing environment.
+* Using the PaymentsOS dashboard.<br>Go to _**Account**_ > _**Business Units**_ and select the Business unit you create in the [previous]({{< ref "#1-configure-your-paymentsos-account" >}}) step. Recall that you must use the select at the top to choose the processing environment.<br>Some values are hidden by default, click the eye icon to display them.
+{{% /alert %}} 
+
+| Field | Description |
+|---|---|
+| Affiliation name | Name you want to set to identify the _**Gateway affiliation**_. |
+| Environment selector | Choose the environment where you want to create the transactions.<br>According to the selection you make here, you must provide the other parameters selecting the same environment in PaymentsOS. |
+| Application Key | App ID of the _**Business Unit**_. |
+| Application Token | Private API Key of the _**Business Unit**_. |
+| Tipo Autorizacion | Select `Autorizacion Y Captura` for this field. |
+| Public Key | Public API Key of the _**Business Unit**_. |
+| Enable payout split and send payment recipients? | Select `No` for this field. |
+
+When finish, click _**Save**_.
+
+#### Configure Payment methods
+Configure the payment methods to be displayed on the website for checkout. [Consult our available Payment methods]({{< ref "Select-your-payment-method.md" >}}).
+
+{{% alert title="Important" color="warning"%}}
+PSE (Colombian Bank transfer method) is not supported through this version of the connector. If you need to configure this Payment method, refer to the [procedure to install version 1 of the conector](https://help.vtex.com/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q).
+{{% /alert %}}
+
+
+1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_) select the _**Payment conditions**_ tab and click the plus icon.
+
+![PrintScreen](/assets/VTEX/VTEX_12.png)
+
+2. Select the Payment method you want to include. Payments methods are grouped by their type.<br>For the sake of our example, we select _**American Express**_ in the Credit Card section.
+
+![PrintScreen](/assets/VTEX/VTEX_13.png)
+
+{{% alert title="note" color="info"%}}
+If the payment method you want to configure is not listed, you need to create it first and selected in the _**Custom payments**_ group. Refer to the [VTEX help center](https://help.vtex.com/en/tutorial/how-to-configure-a-custom-payment--tutorials_451) to learn how to create a custom payment method.
+{{% /alert %}}
+
+3. Provide the following information.
+* **Rule Name (to help you quickly identify)**: provide a meaningful name for the payment condition next to the payment method you selected.
+* **Status**: set the status of the payment condition. You can only have **one** active payment condition per payment method.
+* **Process with affiliation**: select the gateway affiliation configured before.
+* **Prepaid in full or in installments?**: select _**Prepaid in full**_<sup>\*</sup>.
+
+<sup>\*</sup>_Processing in installments is not yet supported_.
+
+![PrintScreen](/assets/VTEX/VTEX_14.png)
+
+4. Click _**Save**_. When the payment condition has been created, it is listed in the _**Payment conditions**_ tab.
+
+![PrintScreen](/assets/VTEX/VTEX_15.png)
+
+{{% alert title="note" color="info"%}}
+Changes to payment conditions can take up to 10 minutes to apply to the checkout flow.
+{{% /alert %}}
+
+## Testing the integration
+Bla bla
