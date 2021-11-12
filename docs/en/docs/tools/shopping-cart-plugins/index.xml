@@ -277,6 +277,7 @@ Back in the PaymentsOS dashboard, expand the &lt;em&gt;&lt;strong&gt;Account&lt;
 &lt;h3 id=&#34;2-configure-the-vtex-provider&#34;&gt;2. Configure the VTEX provider&lt;/h3&gt;
 &lt;p&gt;Once you have configured your PaymentsOS account, the next step is the configuration of the VTEX provider per each payment method. For this step, it is mandatory that you have a valid user to access the VTEX admin.&lt;/p&gt;
 &lt;h4 id=&#34;configure-the-gateway-affiliation&#34;&gt;Configure the Gateway affiliation&lt;/h4&gt;
+&lt;p&gt;Before configuring the &lt;em&gt;&lt;strong&gt;Gateway affiliation&lt;/strong&gt;&lt;/em&gt;, make sure you have configured FingerPrint for PayU. To do so, refer to this &lt;a href=&#34;https://help.vtex.com/en/tutorial/configurar-fingerprint-para-payu&#34;&gt;article&lt;/a&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;In the VTEX admin, expand the &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; menu inside &lt;em&gt;&lt;strong&gt;Transactions&lt;/strong&gt;&lt;/em&gt; group. Then, select &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
@@ -398,7 +399,31 @@ Changes to payment conditions can take up to 10 minutes to apply to the checkout
 &lt;/div&gt;
 
 &lt;h2 id=&#34;testing-the-integration&#34;&gt;Testing the integration&lt;/h2&gt;
-&lt;p&gt;Bla bla&lt;/p&gt;
+&lt;p&gt;Once you have configured the Payment conditions for your payment methods you can test the integration in your store. Before moving on, make sure your PaymentsOS account is in &lt;code&gt;TEST&lt;/code&gt; mode.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the VTEX admin, click &lt;em&gt;&lt;strong&gt;VISIT STORE&lt;/strong&gt;&lt;/em&gt; at the top panel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_16.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;The store configured for your VTEX account opens. Select any product and click purchase.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_17.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;In the shopping cart, click the place order button.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_18.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;In the payment section, the payment methods appears grouped by their type. Select the one you want to test and enter the test data, find &lt;a href=&#34;../../../../en/docs/getting-started/test-your-solution.html#test-cards&#34;&gt;here&lt;/a&gt; some test card numbers and information to test status.&lt;br&gt;
+Finally, click in Complete purchase&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_19.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Once the purchase has been approved you can check it in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VTEX Admin: &lt;em&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Orders management&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;All orders&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;PaymentsOS dashboard: &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;The parameter &lt;em&gt;&lt;strong&gt;External Transaction ID&lt;/strong&gt;&lt;/em&gt; is the Order ID in PayU.&lt;/li&gt;
+&lt;li&gt;PayU Module: in the &lt;a href=&#34;../../../../en/payu-module-documentation/reports/sales-report.html&#34;&gt;&lt;em&gt;&lt;strong&gt;Sales Report&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; module.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../../en/docs/services/queries.html&#34;&gt;Queries API&lt;/a&gt; using the parameter &lt;em&gt;&lt;strong&gt;External Transaction ID&lt;/strong&gt;&lt;/em&gt; as OrderID.&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
