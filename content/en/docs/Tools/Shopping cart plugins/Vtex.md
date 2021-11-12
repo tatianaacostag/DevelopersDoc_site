@@ -168,6 +168,8 @@ At this point, your PaymentsOS account has been configured as a middleware, the 
 Once you have configured your PaymentsOS account, the next step is the configuration of the VTEX provider per each payment method. For this step, it is mandatory that you have a valid user to access the VTEX admin.
 
 #### Configure the Gateway affiliation
+Before configuring the _**Gateway affiliation**_, make sure you have configured FingerPrint for PayU. To do so, refer to this [article](https://help.vtex.com/en/tutorial/configurar-fingerprint-para-payu).
+
 1. In the VTEX admin, expand the _**Payments**_ menu inside _**Transactions**_ group. Then, select _**Settings**_.
 
 ![PrintScreen](/assets/VTEX/VTEX_08.png)
