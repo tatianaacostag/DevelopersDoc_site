@@ -123,23 +123,23 @@ Puedes configurar un WebHook por uno o varios de los siguientes eventos:
 Consulta [este artículo]({{< ref "payouts-api.md#create-or-update-a-webhook" >}}) para aprender a crear WebHooks.
 
 ### Variables en las notificaciones {#variables-in-the-notifications}
-Cuando ocurre un evento de los mencionados anterior mente, se envían al WebHook las siguientes variables.
+Cuando ocurre un evento de los mencionados anteriormente, se envían al WebHook las siguientes variables.
 
-| Variable                  | Formato      | Descripción                                                               |
-|---------------------------|--------------|---------------------------------------------------------------------------|
-| `pushPaymentId`           | Alfanumérico | Identificador del Payout creado.                                          |
-| `creationDate`            | Numérico     | Fecha de creación de Payout.<br>Esta fecha está en milisegundos.          |
+| Variable                  | Formato      | Descripción                                                                    |
+|---------------------------|--------------|--------------------------------------------------------------------------------|
+| `pushPaymentId`           | Alfanumérico | Identificador del Payout creado.                                               |
+| `creationDate`            | Numérico     | Fecha de creación de Payout.<br>Esta fecha está en milisegundos.               |
 | `value`                   | Numérico     | Cantidad solicitada para ser transferida al beneficiario.                      |
-| `currency`                | Alfanumérico | Moneda de la cantidad solicitada.                                         |
-| `state`                   | Alfanumérico | [Estado del Payout]({{< ref"#payout-states" >}}) actual.                  |
-| `status`                  | Alfanumérico | [Estado de la orden de pago]({{< ref"#payment-order-states" >}}) actual.  | 
-| `errorCode`               | Alfanumérico | Error generado luego de la validación de sanction screening.              |
-| `errorMessage`            | Alfanumérico | Mensaje del error generado luego de la validación de sanction screening.  |
+| `currency`                | Alfanumérico | Moneda de la cantidad solicitada.                                              |
+| `state`                   | Alfanumérico | [Estado del Payout]({{< ref"#payout-states" >}}) actual.                       |
+| `status`                  | Alfanumérico | [Estado de la orden de pago]({{< ref"#payment-order-states" >}}) actual.       | 
+| `errorCode`               | Alfanumérico | Error generado luego de la validación de sanction screening.                   |
+| `errorMessage`            | Alfanumérico | Mensaje del error generado luego de la validación de sanction screening.       |
 | `supplierBankAccountId`   | Alfanumérico | Id de la cuenta bancaria del beneficiario generado por la solicitud de payout. |
 | `fullName`                | Alfanumérico | Nombre del beneficiario beneficiario del Payout.                               |
 | `documentNumber`          | Numérico     | Número de documento del beneficiario beneficiario del Payout.                  |
 | `country`                 | Alfanumérico | País del beneficiario beneficiario del Payout.                                 |
-| `validationState`         | Alfanumérico | Resultado de la validación realizada por PayU.                            |
+| `validationState`         | Alfanumérico | Resultado de la validación realizada por PayU.                                 |
 | `dateOfTheNextValidation` | Numérico     | Fecha en la que el beneficiario será validado por sanction screening.<br>Esta fecha está en milisegundos. |
 
 ## ¿Qué sigue? {#whats-next}

@@ -41,3 +41,36 @@ other = "Relatar um problema de documentação"
 other = "Relatar um problema no projeto"
 [post_posts_in]
 other = "Posts em"
+
+# Content Section
+[on_this_page]
+other = "Nesta página"
+
+[topics_in_this_section]
+other = "Tópicos nesta seção"
+
+# Dates
+[January]
+other = "janeiro"
+[February]
+other = "fevereiro"
+[March]
+other = "março"
+[April]
+other = "abril"
+[May]
+other = "maio"
+[June]
+other = "junho"
+[July]
+other = "julho"
+[August]
+other = "agosto"
+[September]
+other = "setembro"
+[October]
+other = "outubro"
+[November]
+other = "novembro"
+[December]
+other = "dezembro"

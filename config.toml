@@ -72,12 +72,19 @@ title = "PayU Latam"
 description = "PayU Developers documentation"
 languageName ="English"
 # Weight used for sorting.
-weight = 1
+weight = 2
 [languages.es]
 title = "PayU Latam"
 description = "Documentación de PayU desarrolladores"
 languageName ="Español"
 contentDir = "content/es"
+weight = 1
+[languages.pt]
+title = "PayU Latam"
+description = "Documentação de desenvolvedores PayU"
+languageName ="Português"
+contentDir = "content/pt"
+weight = 3
 
 
 # Everything below this are Site Params
