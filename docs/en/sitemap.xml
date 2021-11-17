@@ -6,6 +6,16 @@
     <lastmod>2021-11-12T14:11:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/vtex.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/vtex.html"
+                />
   </url><url>
     <loc>/en/payu-module-documentation/getting-started/log-in/google-accounts.html</loc>
     <lastmod>2021-09-29T17:40:24-05:00</lastmod>
@@ -15,6 +25,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/getting-started/log-in/google-accounts.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/getting-started/log-in/google-accounts.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -33,6 +48,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/getting-started/log-in.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/getting-started/log-in.html"
                 />
@@ -45,6 +65,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/reports/sales-report.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/reports/sales-report.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -63,6 +88,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/payu-operations/sell-with-payu.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/payu-operations/sell-with-payu.html"
                 />
@@ -75,6 +105,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/user-and-profile-management/user-management.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/user-and-profile-management/user-management.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -93,6 +128,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html"
                 />
@@ -105,6 +145,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/shopping-cart-plugins/shopify.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/shopify.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -123,6 +168,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/payments-sdk-argentina.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/sdk-integration/payments-sdk-argentina.html"
                 />
@@ -135,6 +185,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/payment-request.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/payment-request.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -153,6 +208,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/getting-started/create-an-account.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/getting-started/create-an-account.html"
                 />
@@ -165,6 +225,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/getting-started.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/getting-started.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -183,6 +248,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/getting-started.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/getting-started.html"
                 />
@@ -195,6 +265,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/webcheckout-integration/payment-form.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/webcheckout-integration/payment-form.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -213,6 +288,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/webcheckout-integration.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/webcheckout-integration.html"
                 />
@@ -225,6 +305,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/services/payments.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/payments.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -243,6 +328,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/reports/transfer-report.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/reports/transfer-report.html"
                 />
@@ -255,6 +345,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/payu-operations/transfers.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/payu-operations/transfers.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -273,6 +368,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/payu-operations/refunds-mp.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/payu-operations/refunds-mp.html"
                 />
@@ -285,6 +385,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -303,6 +408,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/user-and-profile-management.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/user-and-profile-management.html"
                 />
@@ -315,6 +425,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -333,6 +448,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/getting-started/password-recovery.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/getting-started/password-recovery.html"
                 />
@@ -345,6 +465,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/shopping-cart-plugins/magento.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/magento.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -363,6 +488,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/payments-api-argentina.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration/payments-api-argentina.html"
                 />
@@ -375,6 +505,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/api-integration/payments-api-brazil.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/payments-api-brazil.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -393,6 +528,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/payments-api-chile.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration/payments-api-chile.html"
                 />
@@ -405,6 +545,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/api-integration/payments-api-colombia.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/payments-api-colombia.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -423,6 +568,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/payments-api-mexico.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration/payments-api-mexico.html"
                 />
@@ -435,6 +585,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/api-integration/payments-api-panama.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/payments-api-panama.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -453,6 +608,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/payments-api-peru.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration/payments-api-peru.html"
                 />
@@ -465,6 +625,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/sdk-integration/payments-sdk-brazil.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/payments-sdk-brazil.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -483,6 +648,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/getting-started/select-your-integration.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/getting-started/select-your-integration.html"
                 />
@@ -495,6 +665,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/services.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -513,6 +688,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/webcheckout-integration/response-page.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/webcheckout-integration/response-page.html"
                 />
@@ -525,6 +705,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/services/queries.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/queries.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -543,6 +728,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration.html"
                 />
@@ -555,6 +745,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/reports/financial-statement.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/reports/financial-statement.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -573,6 +768,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/getting-started/understanding-the-payu-module.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/getting-started/understanding-the-payu-module.html"
                 />
@@ -585,6 +785,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/shopping-cart-plugins/drupal.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/drupal.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -603,6 +808,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/payments-sdk-chile.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/sdk-integration/payments-sdk-chile.html"
                 />
@@ -615,6 +825,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/api-integration/queries-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/queries-api.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -633,6 +848,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/getting-started/select-your-payment-method.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/getting-started/select-your-payment-method.html"
                 />
@@ -645,6 +865,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/shopping-cart-plugins.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -663,6 +888,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/tools.html"
                 />
@@ -675,6 +905,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/webcheckout-integration/confirmation-page.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/webcheckout-integration/confirmation-page.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -693,6 +928,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/tokenization.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/services/tokenization.html"
                 />
@@ -705,6 +945,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/sdk-integration.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -723,6 +968,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/reports/withholding-certificate.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/reports/withholding-certificate.html"
                 />
@@ -735,6 +985,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/payu-operations/disputes-mp.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/payu-operations/disputes-mp.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -753,6 +1008,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/payu-operations.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation/payu-operations.html"
                 />
@@ -765,6 +1025,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/api-integration/tokenization-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/tokenization-api.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -783,6 +1048,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/virtuemart.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/tools/shopping-cart-plugins/virtuemart.html"
                 />
@@ -795,6 +1065,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/sdk-integration/payments-sdk-colombia.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/payments-sdk-colombia.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -813,6 +1088,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations.html"
                 />
@@ -825,6 +1105,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/payu-module.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/payu-module.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -843,6 +1128,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/getting-started/test-your-solution.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/getting-started/test-your-solution.html"
                 />
@@ -855,6 +1145,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/payu-module-documentation/reports.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/reports.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -873,6 +1168,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/promotions-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration/promotions-api.html"
                 />
@@ -885,6 +1185,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/api-integration/refunds-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/refunds-api.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -903,6 +1208,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/woocommerce.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/tools/shopping-cart-plugins/woocommerce.html"
                 />
@@ -915,6 +1225,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/sdk-integration/payments-sdk-mexico.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/payments-sdk-mexico.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -933,6 +1248,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/getting-started/deploy-to-production.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/getting-started/deploy-to-production.html"
                 />
@@ -945,6 +1265,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/getting-started/response-codes-and-variables.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/getting-started/response-codes-and-variables.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -963,6 +1288,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/server-status.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/server-status.html"
                 />
@@ -975,6 +1305,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/services/promotions.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/promotions.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -993,18 +1328,28 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/payouts-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration/payouts-api.html"
                 />
   </url><url>
     <loc>/en/docs/tools/shopping-cart-plugins/oscommerce.html</loc>
-    <lastmod>2021-10-19T09:43:54-05:00</lastmod>
+    <lastmod>2021-11-17T09:36:23-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/shopping-cart-plugins/oscommerce.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/oscommerce.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1023,6 +1368,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/disputes.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/tools/disputes.html"
                 />
@@ -1035,6 +1385,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/services/refunds.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/refunds.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1053,6 +1408,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/payouts.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/services/payouts.html"
                 />
@@ -1068,18 +1428,28 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/payments-sdk-peru.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/sdk-integration/payments-sdk-peru.html"
                 />
   </url><url>
     <loc>/en/docs/tools/shopping-cart-plugins/opencart.html</loc>
-    <lastmod>2021-10-14T12:17:58-05:00</lastmod>
+    <lastmod>2021-11-17T09:36:23-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/shopping-cart-plugins/opencart.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/opencart.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1098,6 +1468,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/payment-coupons.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/tools/payment-coupons.html"
                 />
@@ -1110,6 +1485,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/tools/antifraud-guarantee.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/antifraud-guarantee.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1128,6 +1508,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/queriessdk.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/sdk-integration/queriessdk.html"
                 />
@@ -1140,6 +1525,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/integrations/sdk-integration/tokenizationsdk.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/tokenizationsdk.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1158,6 +1548,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/sdk-integration/refundssdk.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/sdk-integration/refundssdk.html"
                 />
@@ -1170,6 +1565,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1188,6 +1588,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation.html"
                 />
@@ -1200,6 +1605,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/index.json"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/index.json"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1218,6 +1628,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/search.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/search.html"
                 />
@@ -1230,6 +1645,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/"
                 />
     <xhtml:link
                 rel="alternate"

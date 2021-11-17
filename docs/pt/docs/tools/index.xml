@@ -1,0 +1,785 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – Ferramentas</title>
+    <link>/pt/docs/tools.html</link>
+    <description>Recent content in Ferramentas on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 07 Apr 2021 09:25:41 -0500</lastBuildDate>
+    
+	  <atom:link href="/pt/docs/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Solicitação de pagamento</title>
+      <link>/pt/docs/tools/payment-request.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:26:46 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/payment-request.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Você pode enviar sua solicitação de pagamento por e-mail ou gerar um link para compartilhá-la em salas de chat ou redes sociais. Assim que seu cliente receber sua solicitação de pagamento, ele poderá efetuar o pagamento por meio de nosso sistema de pagamento seguro.&lt;/p&gt;
+&lt;p&gt;Com a solicitação de pagamento, você tem os seguintes benefícios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Venda online independente de ter ou não um site que use e-mail, redes sociais ou plataformas de troca de mensagens.&lt;/li&gt;
+&lt;li&gt;Oferece vários métodos de pagamento.&lt;/li&gt;
+&lt;li&gt;Diferencia os pagamentos que você recebe para saber quem paga o quê e quando.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-does-the-payment-request-work&#34;&gt;Como funciona a solicitação de pagamento?&lt;/h2&gt;
+&lt;p&gt;A solicitação de pagamento segue um fluxo simples para permitir que seus clientes comprem seus produtos ou serviços usando a plataforma segura PayU:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Gere a solicitação de Pagamento pelo módulo PayU. Para uma solicitação de pagamento básica, você só precisa fornecer o que deseja vender, seu preço e decidir se seu pagamento inclui impostos ou uma data de vencimento. Você pode criar uma solicitação de pagamento personalizada se quiser incluir informações adicionais, como frete, referência de pagamento, comentários e muito mais.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Depois de gerar o link, você pode compartilhá-lo com seus clientes por e-mail, postando o link nas redes sociais, ou incluindo o link como um botão em seu site (se você tiver um).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quando seus clientes usam o link, eles são redirecionados para a página de checkout do PayU, onde podem pagar usando qualquer um dos &lt;a href=&#34;../../../pt/docs/getting-started/select-your-payment-method.html&#34;&gt;métodos de pagamento disponíveis&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cada vez que um cliente paga usando o link, você recebe uma mensagem de confirmação e o valor da compra&lt;sup&gt;*&lt;/sup&gt; é transferido para sua conta PayU, de onde você pode transferi-lo para sua conta bancária.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;O valor transferido corresponde ao valor pago pelo seu cliente, menos a taxa PayU.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creating-payment-requests&#34;&gt;Criação de solicitações de pagamento&lt;/h2&gt;
+&lt;p&gt;De acordo com as necessidades de sua empresa, você pode criar dois tipos de solicitações de pagamento: Básica e personalizada.&lt;/p&gt;
+&lt;p&gt;Uma &lt;em&gt;Solicitação de Pagamento Básica&lt;/em&gt; permite criar um link apenas fornecendo o nome e o preço do produto. Além disso, você pode decidir se precisa incluir impostos ou se o link pode expirar no futuro. O &lt;em&gt;Solicitação de pagamento Personalizado&lt;/em&gt; é um link de pagamento com informações extras, como informações de envio, referência de pagamento, páginas de resposta, comentários ou restrições dos métodos de pagamento disponíveis.&lt;/p&gt;
+&lt;h3 id=&#34;create-a-basic-payment-request&#34;&gt;Como criar uma Solicitação de Pagamento Básico&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Si&lt;/code&gt;ga o próximo procedimento para criar uma solicitação de pagamento básica e compartilhá-la com seus clientes.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login em &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Expandir a opção &lt;strong&gt;Venda com a PayU&lt;/strong&gt; em seguida selecione &lt;strong&gt;Venda na internet&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Providencie a seguinte informação:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_02_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;O que você irá vender?&lt;/strong&gt;: descrição do produto ou serviço que deseja vender usando esta solicitação de pagamento.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Qual o preço?&lt;/strong&gt;: forneça o valor do produto ou serviço e selecione a moeda.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_03_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Você cobra impostos?&lt;/strong&gt;: escolha se o preço do produto inclui impostos. Em caso afirmativo, selecione a porcentagem ou o valor fixo dos impostos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_04_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Data limite de pagamento&lt;/strong&gt;: cescolha se a solicitação de pagamento expira em um determinado tempo. Em caso afirmativo, selecione a data e a hora em que a solicitação de pagamento expira.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_05_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Gerar link&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;create-a-custom-payment-request&#34;&gt;Como criar uma Solicitação de Pagamento Personalizado&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Si&lt;/code&gt;ga o próximo procedimento para criar uma solicitação de pagamento básica e compartilhá-la com seus clientes.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Si&lt;/code&gt;ga as etapas 1 a 3 do procedimento &lt;a href=&#34;#create-a-basic-payment-request&#34;&gt;Criar uma solicitação de pagamento básica&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique na opção &lt;strong&gt;Quero personalizar meu link&lt;/strong&gt;. Serão exibidas opções avançadas onde você pode fornecer as seguintes informações.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_08_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Você envia seus produtos?&lt;/strong&gt;: esta opção permite selecionar se as informações de envio do produto serão incluídas no link. Ao selecionar &lt;strong&gt;SIM&lt;/strong&gt;, você pode definir um valor de envio fixo e selecionar se o cliente deve fornecer o endereço para entrega.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_09_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Referência de pagamento&lt;/strong&gt;: esta opção permite que você decida se deseja definir uma referência de pagamento específica para o link.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_12_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Redirecionamentos de transação&lt;/strong&gt;: nesta opção você pode definir as URLs das páginas de resposta personalizadas que você tem quando uma transação é aprovada, recusada ou pendente. Esses campos não são obrigatórios e se você não definir uma URL, a transação será redirecionada para as páginas de resposta padrão do PayU.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_10_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Comentários do comprador&lt;/strong&gt;: esta opção permite ao comprador adicionar comentários relacionados com a compra. O campo onde o comprador pode adicionar comentários pode ser definido em inglês, espanhol ou português.&lt;br&gt;
+Por exemplo, você pode configurar este campo para permitir que o cliente inclua uma descrição específica do produto.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_11_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Personalizar os meios de pagamentos disponíveis&lt;/strong&gt;: testa opção permite incluir ou excluir os métodos de pagamento disponíveis de acordo com o seu país. Por exemplo, se você deseja apenas receber pagamentos por meio de cartões de crédito.&lt;br&gt;
+Por padrão, todos os métodos de pagamento disponíveis em seu país são selecionados.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_13_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Gerar link&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;sharing-the-payment-request&#34;&gt;Como compartilhar a solicitação de pagamento&lt;/h2&gt;
+&lt;p&gt;Depois de configurar e gerar a solicitação de pagamento, uma página de confirmação aparece, onde você pode executar as seguintes ações&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Compartilhar em redes sociais com um link&lt;/em&gt;&lt;/strong&gt;: com esta opção, você pode copiar o link gerado recentemente, postá-lo no Facebook, no Twitter ou enviá-lo para vários endereços de e-mail.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_06_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Ao selecionar Facebook ou Twitter, você precisará fornecer as credenciais da conta onde deseja publicar o link.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Publicar um botão em meu site&lt;/em&gt;&lt;/strong&gt;: se você tem um site e deseja incluir o link gerado, PayU permite criar um botão que pode ser adicionado em algum lugar de sua página. Você pode usar qualquer uma das imagens que já vem carregadas pelo PayU ou fazer upload de uma usando a opção &lt;em&gt;Imagem personalizada&lt;/em&gt;.&lt;br&gt;
+Depois clique em &lt;em&gt;Copiar HTML&lt;/em&gt; para copiar o código do botão em sua área de transferência.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_07_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creating-multiple-payment-requests&#34;&gt;Como criar várias solicitações de pagamento&lt;/h2&gt;
+&lt;p&gt;O módulo PayU permite que você crie várias solicitações de pagamento ao mesmo tempo para que você possa incluir vários produtos em sua loja com facilidade. Os links criados com esse recurso só podem ser enviados por e-mail.&lt;/p&gt;
+&lt;p&gt;Para criar vários links de pagamento, expanda a opção &lt;strong&gt;Venda com a Payu&lt;/strong&gt; e então selecione &lt;strong&gt;Venda na internet&lt;/strong&gt;. Em seguida, selecione a opção &lt;strong&gt;Crie vários link de cobrança&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Para criar vários links de pagamento de uma vez, você só precisa fazer o upload de um arquivo &lt;em&gt;.csv&lt;/em&gt; com todas as informações de cada produto que deseja vender. Você pode baixar um exemplo de como o PayU espera as informações clicando em &lt;strong&gt;Baixar exemplo&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentRequest/PaymentRequest_14_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;O arquivo do Excel baixado é, por padrão, em espanhol e cada linha corresponde a um link. A tabela a seguir explica cada coluna. Lembre-se de que as colunas marcadas com asterisco são obrigatórias e se você deixar uma coluna em branco, esta propriedade não será incluída no link.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;code&gt;No&lt;/code&gt;me&lt;/th&gt;
+&lt;th&gt;Coluna&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;E-mail do comprador&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;O endereço de e-mail para o qual o link de pagamento será enviado.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;O que você vai vender?&lt;/td&gt;
+&lt;td&gt;B&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;No&lt;/code&gt;me ou descrição do produto que deseja vender.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Quanto custa o produto?&lt;/td&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;Preço do produto que você oferece.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Moeda&lt;/td&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;Moeda do valor do produto.&lt;br&gt;Valores possíveis: COP, USD, PEN, ARS, BRL e MXN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tipo de imposto&lt;/td&gt;
+&lt;td&gt;E&lt;/td&gt;
+&lt;td&gt;Permite que defina se quer incluir impostos em seu produto..&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Defina &lt;code&gt;Fijo&lt;/code&gt; para adicionar um valor fixo.&lt;/li&gt;&lt;li&gt;Defina &lt;code&gt;Porcentaje&lt;/code&gt; para adicionar um valor percentual.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Valor do imposto&lt;/td&gt;
+&lt;td&gt;F&lt;/td&gt;
+&lt;td&gt;Valor do imposto de acordo com o tipo de imposto especificado.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data de Vencimento&lt;/td&gt;
+&lt;td&gt;G&lt;/td&gt;
+&lt;td&gt;Defina a data de vencimento do link usando o formato dd/MM/yy HH:mm.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirecionar em caso de sucesso&lt;/td&gt;
+&lt;td&gt;H&lt;/td&gt;
+&lt;td&gt;Defina a URL para a qual seus clientes serão redirecionados quando a transação for bem-sucedida.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirecionar em caso de falha&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;Defina a URL para a qual seus clientes serão redirecionados quando a transação falhar.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Redirecionar quando pendente&lt;/td&gt;
+&lt;td&gt;J&lt;/td&gt;
+&lt;td&gt;Defina a URL para a qual seus clientes serão redirecionados quando a transação estiver pendente.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Solicitar o endereço para entrega&lt;/td&gt;
+&lt;td&gt;K&lt;/td&gt;
+&lt;td&gt;Definir &lt;code&gt;Si&lt;/code&gt; para solicitar endereço de entrega ao pagador. Caso contrário, defina &lt;code&gt;No&lt;/code&gt; ou deixe em branco.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Valor do frete&lt;/td&gt;
+&lt;td&gt;L&lt;/td&gt;
+&lt;td&gt;Defina um valor fixo para frete na mesma moeda do preço do produto.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Deixe os pagadores adicionarem comentários&lt;/td&gt;
+&lt;td&gt;M&lt;/td&gt;
+&lt;td&gt;Definir &lt;code&gt;Si&lt;/code&gt; para permitir que os pagadores adicionem comentários. Caso contrário, defina &lt;code&gt;No&lt;/code&gt; ou deixe em branco.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etiqueta para comentários de pagadores (ES)&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;Defina o rótulo do campo de comentários do pagador em espanhol.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etiqueta para comentários de pagadores (EN)&lt;/td&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;Defina o rótulo do campo de comentários do pagador em inglês.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etiqueta para comentários de pagadores (PT)&lt;/td&gt;
+&lt;td&gt;P&lt;/td&gt;
+&lt;td&gt;Defina o rótulo do campo de comentários do pagador em português.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Extra 1&lt;/td&gt;
+&lt;td&gt;Q&lt;/td&gt;
+&lt;td&gt;Defina quaisquer dados adicionais de string a serem incluídos no link. Esta coluna não pode ter mais de 120 caracteres.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Extra 2&lt;/td&gt;
+&lt;td&gt;R&lt;/td&gt;
+&lt;td&gt;Defina quaisquer dados adicionais de string a serem incluídos no link. Esta coluna não pode ter mais de 120 caracteres.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Selecione os métodos de pagamento&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Se você deixar esta coluna em branco, todos os métodos de pagamento ativos para a conta serão incluídos.&lt;/li&gt;&lt;li&gt;Para incluir alguns métodos de pagamento, defina os métodos de pagamento separados por vírgulas.&lt;br&gt;Exemplo: &lt;code&gt;LENDING,VISA,BANK_REFERENCED,AMEX&lt;/code&gt;.&lt;br&gt;Além disso, você pode definir quais parcelas deseja enviar no cartão de crédito. Para isso, insira as formas de pagamento e indique as parcelas que deseja disponibilizar separadas por hifens.&lt;br&gt;Exemplo: &lt;code&gt;VISA-1-2-3,AMEX&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Você pode criar até 1000 links por arquivo.
+&lt;/div&gt;
+
+&lt;p&gt;Depois de preencher o arquivo Excel, carregue-o no Módulo PayU e clique em &lt;strong&gt;Enviar link de cobrança&lt;/strong&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Plugins do carrinho de compras</title>
+      <link>/pt/docs/tools/shopping-cart-plugins.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;pre-integrated-solutions&#34;&gt;Soluções pré-integradas&lt;/h2&gt;
+&lt;p&gt;Algumas lojas online já estão integradas ao PayU. Você só precisa ativar a opção PayU como sua plataforma de pagamento.&lt;/p&gt;
+&lt;p&gt;Soluções disponíveis:&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+    &lt;div class=&#34;row&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://www.tiendanube.com/blog/como-cobrar-online-con-dinero-mail-by-payu/&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/tiendanube.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://help.vtex.com/pt/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/vtex.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://addons.prestashop.com/pt/pagamento-carta-carteira/6631-payu-latam.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/prestashop.svg&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #353535;border: 3px solid #353535;&#34;&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/shopify.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://jumpseller.com/support/payu/&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/jumpseller.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://ayuda.alegra.com/es/recibe-los-pagos-de-tus-facturas-de-venta-desde-alegra-colombia-con-payu&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/alegra.webp&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #00b19d;;border: 3px solid #00b19d;;&#34;&gt;
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Alguns dos links acima podem aparecer em espanhol ou em inglês.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;plugins-for-modules&#34;&gt;Plugins para módulos&lt;/h2&gt;
+&lt;p&gt;Se você usa um carrinho de compras open source, baixe e use os plugins que desenvolvemos para facilitar o processo de integração com o sistema de pagamento.&lt;/p&gt;
+&lt;p&gt;Plug-ins disponíveis:&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/magento.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/drupal.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/virtuemart.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/vm-logo-220.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/woocommerce.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/woocommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/oscommerce.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/oscommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/opencart.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/opencart.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
+    &lt;/div&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;h3 id=&#34;plugin-files&#34;&gt;Arquivos de plug-in&lt;/h3&gt;
+&lt;p&gt;Encontre a versão mais recente do plug-in na tabela a seguir&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+       &lt;tr&gt;
+          &lt;th width=&#34;20%&#34;&gt;Carrinho de compras&lt;/th&gt;
+          &lt;th&gt;Plug-in&lt;/th&gt;
+          &lt;th&gt;Observações&lt;/th&gt;
+       &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/Plugin_PayU_Magento-1.3.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Disponível para versões de 1.7.x a 1.9.x.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/commerce_payulatam_1.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Você precisa de &lt;a href=&#34;https://www.drupal.org/project/commerce_kickstart&#34; target=&#34;_blank&#34;&gt;Drupal Commerce Kickstart 7.xx&lt;/a&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/vm-logo-220.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;VirtueMart v2+&lt;br&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-joomla-virtuemart2.6.7.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;hr&gt;VirtueMart v3.0.6&lt;br&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-joomla-virtuemart3.0.6.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Você precisa do Joomla 2.5 com MySQL 5.1 ou superior.&lt;hr style=&#34;margin-top:2.5rem;margin-bottom: 2.5rem;&#34;&gt;Você precisa das versões do Joomla 3.3.6, 2.5.28 ou 2.5.27.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/woocommerce.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/woocommerce-payu-latam-2.1.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Você precisa:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;WordPress 3.8 ou superior.&lt;/li&gt;&lt;li&gt;WooCommerce versão 2.0 ou superior instalado no site WordPress.&lt;/ul&gt;&lt;/li&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/oscommerce.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-oscommerce.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Disponível para a versão 2.3.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/opencart.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Versão 1.5.5.1 ou 1.5.6.4&lt;br&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-opencart.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;hr&gt;Versão 2.0.x.x a 2.1.x.x&lt;br&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-opencart-2.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+    &lt;/tbody&gt;
+ &lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Módulo PayU</title>
+      <link>/pt/docs/tools/payu-module.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:23 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/payu-module.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Módulo PayU is ideal for business that need to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep control of their stocks and sales performed through PayU.&lt;/li&gt;
+&lt;li&gt;Be updated with the information of their financial movements of their account.&lt;/li&gt;
+&lt;li&gt;Make requests to the support team about issues in their account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;benefits-of-the-módulo-payu&#34;&gt;Benefits of the Módulo PayU&lt;/h2&gt;
+&lt;p&gt;Módulo PayU provides the following benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Keep track of your sales&lt;/strong&gt;&lt;br&gt;Find relevant information about your sales, the most used payment methods, and the hours with higher transaction rates.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Know your transactions&lt;/strong&gt;.&lt;br&gt;You can consult the movements in your accounts, generate statements and reports.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;You don&amp;rsquo;t need a Web page&lt;/strong&gt;&lt;br&gt;You can use the tools to receive payments even if you don&amp;rsquo;t have a web page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-access-the-módulo-payu&#34;&gt;How to access the Módulo PayU?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Log in our web page&lt;/strong&gt;&lt;br&gt;Log into &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;, at the top right corner, you find the option to log in. For merchants in Colombia, this option is called &lt;em&gt;PayU Login&lt;/em&gt;.&lt;br&gt;Alternatively, you can go directly to &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login1_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Enter the Módulo PayU&lt;/strong&gt;.&lt;br&gt;Provide your credentials and enter your account. Here, você pode usar all the available options to manage your account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login2_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;For more information about how to use the Módulo PayU, refer to this &lt;a href=&#34;../../../pt/payu-module-documentation.html&#34;&gt;section&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Disputas</title>
+      <link>/pt/docs/tools/disputes.html</link>
+      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/disputes.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;../../../assets/Disputas/Disputes_en.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
+&lt;p&gt;Your buyers can present a claim to their card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.&lt;/p&gt;
+&lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
+&lt;p&gt;A buyer can claim to their card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;br&gt;
+The reasons for starting a dispute process may vary, some of them are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fraud&lt;/strong&gt;: disputes are classified as fraud when an unauthorized person makes purchases with a credit card. These type of dispute can happen if the card was lost or stolen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not acknowledging payment&lt;/strong&gt;: the brand or shop name which appears in the credit card statement is not recognized by the cardholder.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Product not delivered&lt;/strong&gt;: the cardholder states that they don&amp;rsquo;t received the product or service covered by the charges made to the credit card.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Product not acceptable&lt;/strong&gt;: the cardholder claims not to have received the product or service under the expected conditions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Duplicate&lt;/strong&gt;: the cardholder indicates that the charge made for the purchase of a product or service was applied more than once to their credit card.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amount does not match&lt;/strong&gt;: the charge to the credit card does not match with the value of the purchase.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not reported by the entity&lt;/strong&gt;: the bank or processing network initiates a dispute process without a specific reason.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Attention&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Recall that PayU acts as an intermediary to let your commerce provide evidence in the dispute process between you and the bank entity. PayU has no interference on the result of the dispute, this decision depends on the issuing bank.&lt;/li&gt;
+&lt;li&gt;Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance; therefore, you cannot transfer funds from this balance to your bank account until the dispute is resolved.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;how-does-the-disputes-process-works-in-payu&#34;&gt;How does the disputes process works in PayU?&lt;/h2&gt;
+&lt;p&gt;The disputes process follows a simple flow:&lt;/p&gt;
+&lt;h3 id=&#34;1-dispute-notification&#34;&gt;1. Dispute notification&lt;/h3&gt;
+&lt;p&gt;When a bank notifies PayU about a dispute, both you and your customer receives an e-mail notifying the start of the dispute process.&lt;/p&gt;
+&lt;p&gt;We also send a &lt;code&gt;POST&lt;/code&gt; with all the information of the dispute to the URL you set in your &lt;a href=&#34;../../../pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#disputes&#34;&gt;Módulo PayU&lt;/a&gt;. This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.&lt;/p&gt;
+&lt;p&gt;You can configure the URL where we make the notification in the Módulo PayU. Faça login em &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; and then select &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/IntegrationVariables_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this window, go to &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt; tab and define the dispute notification url and enable the notification box in the &lt;em&gt;&lt;strong&gt;Automatic notification URL&lt;/strong&gt;&lt;/em&gt; field.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputas/Disputes_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Once you configured this, you automatically receive a POST with all the information of the started dispute process. Furthermore, You also receive a notification POST each time the dispute process has an update, so you can be aware of the progress and completion of this process.&lt;/p&gt;
+&lt;h3 id=&#34;2-query-through-the-módulo-payu&#34;&gt;2. Query through the Módulo PayU&lt;/h3&gt;
+&lt;p&gt;You can view and manage your dispute processes from your Módulo PayU, in the &lt;em&gt;&lt;strong&gt;Dispute&lt;/strong&gt;&lt;/em&gt; option inside the &lt;em&gt;&lt;strong&gt;Transactions&lt;/strong&gt;&lt;/em&gt; menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputas/Disputes_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-provide-evidence&#34;&gt;3. Provide evidence&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s important to always respond a dispute by providing evidence before the &lt;a href=&#34;../../../pt/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;deadline stipulated by the bank&lt;/a&gt;. After the deadline date, you cannot upload the corresponding evidence for a dispute.&lt;/p&gt;
+&lt;p&gt;To learn how to upload evidence to resolve the dispute, refer to the &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Módulo PayU&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;what-information-can-be-useful&#34;&gt;What information can be useful?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Full information of your customer (full name, identification number, e-mail, shipping address, visible credit card number, etc.)&lt;/li&gt;
+&lt;li&gt;Proof of delivery of the product or service signed by the cardholder.&lt;/li&gt;
+&lt;li&gt;Bill of sale of the product or service.&lt;/li&gt;
+&lt;li&gt;Acceptance letter of the payment signed by the cardholder attaching their identification document.&lt;/li&gt;
+&lt;li&gt;Cancellation and refund policy.&lt;/li&gt;
+&lt;li&gt;Acceptance of terms and conditions.&lt;/li&gt;
+&lt;li&gt;Transactional history of your customer (if any).&lt;/li&gt;
+&lt;li&gt;Other supports that validate the purchase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;maximum-days-to-provide-evidence&#34;&gt;Maximum days to provide evidence&lt;/h4&gt;
+&lt;p&gt;Recall that the maximum days to provide evidence for each country are:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Country&lt;/th&gt;
+&lt;th&gt;Days to provide evidence&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Argentina&lt;/td&gt;
+&lt;td&gt;5 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brazil&lt;/td&gt;
+&lt;td&gt;12 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chile&lt;/td&gt;
+&lt;td&gt;5 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Colombia&lt;/td&gt;
+&lt;td&gt;2 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mexico&lt;/td&gt;
+&lt;td&gt;12 calendar days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Panama&lt;/td&gt;
+&lt;td&gt;8 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Peru&lt;/td&gt;
+&lt;td&gt;6 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;4-final-decision-on-dispute-status&#34;&gt;4. Final decision on dispute status&lt;/h3&gt;
+&lt;p&gt;Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refunded. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.&lt;/p&gt;
+&lt;p&gt;When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.&lt;/p&gt;
+&lt;h2 id=&#34;dispute-states&#34;&gt;Dispute states&lt;/h2&gt;
+&lt;p&gt;When a dispute is reported, a dispute entity for the associated transaction is created. The dispute status changes according to the step where the dispute is within the course of the process.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;State&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Notified&lt;/td&gt;
+&lt;td&gt;When the dispute process begins, you must upload the evidence for the dispute.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;On Payment Network Review&lt;/td&gt;
+&lt;td&gt;When the shop provides evidence for a dispute through the Módulo PayU and the dispute is reviewed by the bank or network.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lost&lt;/td&gt;
+&lt;td&gt;The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Won&lt;/td&gt;
+&lt;td&gt;The dispute process is resolved in favor of the shop, there are no deductions of any kind.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Refunded&lt;/td&gt;
+&lt;td&gt;This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Expired&lt;/td&gt;
+&lt;td&gt;After past 120 days without a response from the bank, the amount is set to available for the merchant.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+If you have activated &lt;a href=&#34;../../../pt/docs/tools/antifraud-guarantee.html&#34;&gt;Anti-fraud Guarantee&lt;/a&gt;, when the chargeback is subject to be covered by the guarantee, PayU assumes the values debited from your account. In this case, the status of this dispute is &lt;em&gt;Chargeback&lt;/em&gt; (Lost) &lt;em&gt;With antifraud guarantee&lt;/em&gt;.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Payment Coupons</title>
+      <link>/pt/docs/tools/payment-coupons.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:50 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/payment-coupons.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.&lt;/p&gt;
+&lt;p&gt;You can receive payments without any technical knowledge. You just need to send an e-mail where your client can download the coupon and makes the respective payment.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Cupons de pagamento are available for Argentina using &lt;em&gt;&lt;strong&gt;RAPIPAGO&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;PAGOFACIL&lt;/strong&gt;&lt;/em&gt;, and for Colombia using &lt;em&gt;&lt;strong&gt;BALOTO&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;EFECTY&lt;/strong&gt;&lt;/em&gt;.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;how-cupons-de-pagamento-work&#34;&gt;How Cupons de pagamento work?&lt;/h2&gt;
+&lt;p&gt;The Payment coupon follows a simple flow to let your clients regular cash payments as many times as they need:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure the Payment coupon through the Módulo PayU&lt;/strong&gt;.&lt;br&gt;You only need to provide how many payments per client you want to receive, decide if the payment amount is fixed or your client decides the amount, decide the payment deadline, and the payment reference.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Decide the delivery of the coupon&lt;/strong&gt;&lt;br&gt;Decide if you want to deliver the coupons by e-mail, by generating PDF, by payment references or collection cards (Available only for Argentina).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Use the Cupons de pagamento&lt;/strong&gt;&lt;br&gt;When your clients receive the coupon, they can make the payment using any of the available cash payment offices in their countries.&lt;br&gt;Every time a client pays using the coupon, you receive a confirmation message and the amount of the purchase&lt;sup&gt;*&lt;/sup&gt; is transferred to your PayU account, where you can transfer it to your bank account.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;The value transferred corresponds to the amount paid by your client minus the PayU fee.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creating-payment-coupons&#34;&gt;Creating payment coupons&lt;/h2&gt;
+&lt;p&gt;According to your business needs, you can configure the options to receive payments using coupons. Follow the next procedure to create Cupons de pagamento and delivery them to your clients.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login em &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Expandir a opção &lt;strong&gt;Venda com a PayU&lt;/strong&gt; em seguida selecione &lt;strong&gt;Dinheiro Payment&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Configure the following information:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;How many payments do you expect to receive for each client?&lt;/strong&gt;: select how many times a client can use the coupon. Select &lt;em&gt;Unique&lt;/em&gt; if you want to let your client pay once. Otherwise, select &lt;em&gt;Multiple&lt;/em&gt; for several payments while the coupon is available. The default value is &lt;em&gt;Multiple&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Will you charge a specific amount?&lt;/strong&gt;: select the payment amount of the coupon. If you select &lt;em&gt;No&lt;/em&gt;, your client decides the value to pay at the payment office. The default value is &lt;em&gt;No&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payment deadline&lt;/strong&gt;: decide whether the payment coupon expires in a given date. The date specified is fixed, it is not supported to provide a specific day of the month or other custom configuration. If you select &lt;em&gt;No&lt;/em&gt;, the coupon will not have a due date. The default value is &lt;em&gt;No&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Do you want to define the payment reference?&lt;/strong&gt;: if you select &lt;em&gt;Yes&lt;/em&gt; you need to provide the payment references for the coupon. Otherwise, PayU defines and sets an automatic reference. The default value is &lt;em&gt;No&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sharing-the-payment-coupon&#34;&gt;Sharing the Payment coupon&lt;/h2&gt;
+&lt;p&gt;After you have configured the Cupons de pagamento, decide how you want to deliver them to your client.&lt;br&gt;You have available the following options:&lt;/p&gt;
+&lt;h3 id=&#34;send-via-e-mail&#34;&gt;Send via e-mail&lt;/h3&gt;
+&lt;p&gt;This option lets you send the Payment coupon via e-mail. The clients receive the e-mail and print the coupon to let them pay in cash in the available offices.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To add the clients one by one, provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Email: e-mail of the client who receives the coupon.&lt;/li&gt;
+&lt;li&gt;Payer name: name of the client.&lt;/li&gt;
+&lt;li&gt;Payment description: description of the payment.&lt;/li&gt;
+&lt;li&gt;Amount: this field is available when you define the amount paid by your client and takes the defined value.&lt;/li&gt;
+&lt;li&gt;Expiration date: this field is available when you define an expiration date of the coupon.&lt;/li&gt;
+&lt;li&gt;Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/em&gt; button to save the clients data and add an extra client if required.&lt;/p&gt;
+&lt;p&gt;To add multiple clients, click &lt;strong&gt;Add multiple payers from one file&lt;/strong&gt; and download the sample file by clicking &lt;strong&gt;Download format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the Módulo PayU.&lt;/p&gt;
+&lt;p&gt;Regardless of the option selected, click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A new window appears showing the resume of the emails to be sent.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you want to edit the information of the issuer and the e-mail, click Edit link displayed in the top right corner of each section.&lt;/p&gt;
+&lt;p&gt;Finally, click &lt;strong&gt;Send email&lt;/strong&gt;. Each client receive an e-mail with the coupon.&lt;/p&gt;
+&lt;h3 id=&#34;print-the-coupons&#34;&gt;Print the coupons&lt;/h3&gt;
+&lt;p&gt;This option lets you generate coupons in PDF format.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To add the clients one by one, provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Payer name: name of the client.&lt;/li&gt;
+&lt;li&gt;Payment description: description of the payment.&lt;/li&gt;
+&lt;li&gt;Amount: this field is available when you define the amount paid by your client and takes the defined value.&lt;/li&gt;
+&lt;li&gt;Expiration date: this field is available when you define an expiration date of the coupon.&lt;/li&gt;
+&lt;li&gt;Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/em&gt; button to save the clients data and add an extra client if required.&lt;/p&gt;
+&lt;p&gt;To add multiple clients, click &lt;strong&gt;Add multiple payers from one file&lt;/strong&gt; and download the sample file by clicking &lt;strong&gt;Download format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the Módulo PayU.&lt;/p&gt;
+&lt;p&gt;Regardless of the option selected, click &lt;strong&gt;Continue&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A new window appears showing the resume of the PDF to be generated.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_05.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;If you want to edit the information of the issuer, click &lt;em&gt;&lt;strong&gt;Edit&lt;/strong&gt;&lt;/em&gt; link displayed in the top right corner of the issuer section section.&lt;/p&gt;
+&lt;p&gt;Finally, click &lt;strong&gt;Generate coupons in PDF&lt;/strong&gt;. A PDF file is downloaded, each page has the coupon generated per each client.&lt;/p&gt;
+&lt;h3 id=&#34;generate-payment-references&#34;&gt;Generate Payment references&lt;/h3&gt;
+&lt;p&gt;This option lets you generate an Excel file with the coupons requested.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To add the clients one by one, provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Payer name: name of the client.&lt;/li&gt;
+&lt;li&gt;Payment description: description of the payment.&lt;/li&gt;
+&lt;li&gt;Amount: this field is available when you define the amount paid by your client and takes the defined value.&lt;/li&gt;
+&lt;li&gt;Expiration date: this field is available when you define an expiration date of the coupon.&lt;/li&gt;
+&lt;li&gt;Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Add&lt;/strong&gt;&lt;/em&gt; button to save the clients data and add an extra client if required.&lt;/p&gt;
+&lt;p&gt;To add multiple clients, click &lt;strong&gt;Add multiple payers from one file&lt;/strong&gt; and download the sample file by clicking &lt;strong&gt;Download format&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the Módulo PayU.&lt;/p&gt;
+&lt;p&gt;Regardless of the option selected, click &lt;strong&gt;Generate references in Excel&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The download starts immediately. Furthermore, a new window appears showing the number of references generated. In this window, you can also send the Excel file to whoever you need.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;create-collection-cards&#34;&gt;Create collection cards&lt;/h3&gt;
+&lt;p&gt;This option lets you generate cards with the information required to let your clients to be able to make cash payments at the available payment points every time they need to.&lt;/p&gt;
+&lt;p&gt;This option is available when you don&amp;rsquo;t set a fixed payment amount nor a payment deadline.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; &lt;strong&gt;Available only for Argentina.&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Collection cards are plastic cards associated to your PayU account; they have a bar code and you can include a reference code printed on them.&lt;/p&gt;
+&lt;p&gt;Once your cards have been generated, deliver them to your customers and they can pay the amount in cash they wish and without any expiration date.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To request the cards, you need to provide the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Design of your collection cards: choose a predefined or custom design for your cards. Custom cards are available from 1000 cards.&lt;/li&gt;
+&lt;li&gt;How many cards do you want to request?: select the number of cards you want to generate according to the design you choose.&lt;/li&gt;
+&lt;li&gt;Delivery address: Click &lt;em&gt;&lt;strong&gt;Edit&lt;/strong&gt;&lt;/em&gt; at the top right corner of this panel to provide the address where you want to receive the cards.&lt;/li&gt;
+&lt;li&gt;Payment summary: we calculate the cost of your order depending on the quantity of cards requested and the design you choose.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+This order will be debited from your PayU account and you must have an available balance.
+&lt;/div&gt;
+
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Request cards&lt;/strong&gt;&lt;/em&gt; to continue. A confirmation window appears to let you validate the information of your request.&lt;/p&gt;
+&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_09.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;
+&lt;h2 id=&#34;consult-the-created-coupons&#34;&gt;Consult the created coupons&lt;/h2&gt;
+&lt;p&gt;When you have created coupons or collection cards, you can consult their information to see the received payments, enable, disable, or download the coupon or card.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the Módulo PayU, expand the &lt;strong&gt;Venda com a Payu&lt;/strong&gt; e então selecione &lt;strong&gt;My tools&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_10.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Select either &lt;em&gt;&lt;strong&gt;Collection by cash&lt;/strong&gt;&lt;/em&gt; or &lt;em&gt;&lt;strong&gt;Collection cards&lt;/strong&gt;&lt;/em&gt;  tab according to your needs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can use the Advanced filter option to find a specific set of coupons.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Each coupon presents the options to disable/enable or download the coupon. Once the coupon is disabled, it cannot receive more payments.&lt;br&gt;Find these options in the three-dot menu in the &lt;em&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/em&gt; column.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_12.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Anti-fraud Guarantee</title>
+      <link>/pt/docs/tools/antifraud-guarantee.html</link>
+      <pubDate>Wed, 29 Sep 2021 15:51:04 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/antifraud-guarantee.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;PayU assumes the fraud or supplantation of the cardholders when a &lt;a href=&#34;../../../pt/docs/tools/disputes.html&#34;&gt;Dispute&lt;/a&gt; process has been started by a customer. To request the activation of the &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt;, contact your sales representative.&lt;/p&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Observações&lt;/h2&gt;
+&lt;p&gt;Before using the &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt;, take into account the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; is not offered by default. Merchants must request it and sign a document where the condition of the guarantees are reflected.&lt;/li&gt;
+&lt;li&gt;The activation of &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; depends on your economic activity. &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; does not cover the sale of services, as well as music, videos, MP3, electronic books, products offered in stores or adult websites, vouchers, gift cards; nor other goods or mechanisms through which the aforementioned products can be acquired.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; applies only for transactions performed with credit card.&lt;/li&gt;
+&lt;li&gt;PayU validates the evidence of the dispute process and determines whether the chargeback is applies to &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;If you don&amp;rsquo;t provide evidence of the &lt;em&gt;dispute&lt;/em&gt; in the &lt;a href=&#34;../../../pt/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;specified times&lt;/a&gt;, the result of this will be &lt;em&gt;Lost&lt;/em&gt; and the &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; will not apply.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; does not apply for disputes requested due to customer dissatisfaction with the purchased product.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-does-the-anti-fraud-guarantee-work&#34;&gt;How does the Anti-fraud Guarantee work?&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; is applied following the next flow.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Once PayU notifies you about a &lt;a href=&#34;../../../pt/docs/tools/disputes.html&#34;&gt;Dispute&lt;/a&gt;, you must provide the evidence to response to it in the &lt;a href=&#34;../../../pt/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;terms specified&lt;/a&gt; for your country. If you don&amp;rsquo;t provide evidence, the dispute will be lost and the funds of this sale will be debited from your account and &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; will not apply.&lt;br&gt;Learn &lt;a href=&#34;../../../pt/docs/tools/disputes.html#what-information-can-be-useful&#34;&gt;aqui&lt;/a&gt; what evidence you can provide to resolve the dispute.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After you have provided the evidence to resolve the dispute, PayU validates whether the chargebacks apply to be covered by &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the chargebacks apply, PayU returns the funds to your virtual account through discretionary movements.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The result of the &lt;em&gt;&lt;strong&gt;Anti-fraud Guarantee&lt;/strong&gt;&lt;/em&gt; process can be consulted in the &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Disputas module&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputas/Disputes_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Furthermore, you can consult the discretionary movements in your &lt;a href=&#34;../../../pt/payu-module-documentation/reports/financial-statement.html&#34;&gt;Financial Statement&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputas/Disputes_09.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
