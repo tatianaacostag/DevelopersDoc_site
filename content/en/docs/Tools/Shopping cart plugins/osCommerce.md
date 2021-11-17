@@ -85,7 +85,7 @@ Configure it using the information of your PayU account as follows:
 
 3. Save the changes using the button at the bottom of the panel.
 
-4. Finally, go expand the _**Localization**_ menu and click _**Order Status**_. Verify that the order status were created according to the installed languages (English, Spanish, and Portuguese) in your osCommerce website.
+4. Finally, expand the _**Localization**_ menu and click _**Order Status**_. Verify that the order status were created according to the installed languages (English, Spanish, and Portuguese) in your osCommerce website.
 
 ![PrintScreen](/assets/oscommerce/oscommerce_13.jpg)
 

@@ -61,4 +61,4 @@ PayU ofrece las siguientes herramientas para darte más opciones para vender y r
 
  {{< overview/tools_es >}}
 
-## ¿Qué sigue?
+## ¿Qué sigue? {#whats-next} 
