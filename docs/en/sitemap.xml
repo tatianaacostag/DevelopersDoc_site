@@ -6,16 +6,6 @@
     <lastmod>2021-11-12T14:11:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/vtex.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/vtex.html"
-                />
   </url><url>
     <loc>/en/payu-module-documentation/getting-started/log-in/google-accounts.html</loc>
     <lastmod>2021-09-29T17:40:24-05:00</lastmod>
@@ -36,6 +26,21 @@
                 hreflang="en"
                 href="/en/payu-module-documentation/getting-started/log-in/google-accounts.html"
                 />
+  </url><url>
+    <loc>/en/deprecated/recurring-payments.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/recurring-payments/recurring-payments-api.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/recurring-payments/recurring-payments-sdk.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>/en/payu-module-documentation/getting-started/log-in.html</loc>
     <lastmod>2021-09-29T17:40:24-05:00</lastmod>
@@ -316,6 +321,11 @@
                 hreflang="en"
                 href="/en/docs/services/payments.html"
                 />
+  </url><url>
+    <loc>/en/deprecated/merchant-panel.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>/en/payu-module-documentation/reports/transfer-report.html</loc>
     <lastmod>2021-11-08T17:41:32-05:00</lastmod>
@@ -736,6 +746,46 @@
                 hreflang="en"
                 href="/en/docs/integrations/api-integration.html"
                 />
+  </url><url>
+    <loc>/en/deprecated/merchant-panel/account-activation.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/merchant-panel/checking-balance.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/merchant-panel/transfers-old.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/merchant-panel/reports-old.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/merchant-panel/refunds-old.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/merchant-panel/disputes-old.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/merchant-panel/update-my-data.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/en/deprecated/merchant-panel/integration-settings.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>/en/payu-module-documentation/reports/financial-statement.html</loc>
     <lastmod>2021-11-08T17:41:32-05:00</lastmod>
@@ -1556,6 +1606,11 @@
                 hreflang="en"
                 href="/en/docs/integrations/sdk-integration/refundssdk.html"
                 />
+  </url><url>
+    <loc>/en/deprecated.html</loc>
+    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>/en/docs.html</loc>
     <lastmod>2021-11-08T17:41:32-05:00</lastmod>

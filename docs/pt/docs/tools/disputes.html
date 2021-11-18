@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/tools/disputes.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-12T08:34:58-05:00" />
-<meta property="article:modified_time" content="2021-11-17T09:36:23-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-18T17:29:12-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Disputas">
 <meta itemprop="description" content="Using this tool, you can manage the dispute processes generated in your PayU account.
 "><meta itemprop="datePublished" content="2021-04-12T08:34:58-05:00" />
-<meta itemprop="dateModified" content="2021-11-17T09:36:23-05:00" />
-<meta itemprop="wordCount" content="1025">
+<meta itemprop="dateModified" content="2021-11-18T17:29:12-05:00" />
+<meta itemprop="wordCount" content="1035">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Disputas"/>
 <meta name="twitter:description" content="Using this tool, you can manage the dispute processes generated in your PayU account.
@@ -141,7 +141,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.d6d9749ca356291179980f3bda4ff3edbe90744fbfac67e0900fe5f58e12a3f88a1957d00960e8182ec4177e38b25b9597a0b39fb7235fa63945b1e5573b4fc3.json"
+  data-offline-search-index-json-src="../../../offline-search-index.e3b945d9ad010c8271b5f304405ff13ed9dd72cbf03d0173aeb728e8510460135409371fb0a038f7cd34cf07aeb10c2f969fb2dc2dfddb60dbdbacc46f617baa.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -349,12 +349,6 @@
   <ul class="side-main">
     <li class="" id="ptdocstoolsshopping-cart-pluginshtml">
       
-      
-      
-      
-      
-      
-        <a id="/pt/docs/tools/shopping-cart-plugins/vtex.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsvtexhtml" href="../../../pt/docs/tools/shopping-cart-plugins/vtex.html">VTEX</a>
       
       
       
@@ -740,13 +734,13 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#what-is-a-dispute">What is a Dispute?</a></li>
-    <li><a href="#why-a-dispute-happens">Why a dispute happens?</a></li>
-    <li><a href="#how-does-the-disputes-process-works-in-payu">How does the disputes process works in PayU?</a>
+    <li><a href="#what-is-a-dispute">O que é uma disputa?</a></li>
+    <li><a href="#why-a-dispute-happens">Por que acontece uma disputa?</a></li>
+    <li><a href="#how-does-the-disputes-process-works-in-payu">Como funciona o processo de disputas no PayU?</a>
       <ul>
-        <li><a href="#1-dispute-notification">1. Dispute notification</a></li>
-        <li><a href="#2-query-through-the-módulo-payu">2. Query through the Módulo PayU</a></li>
-        <li><a href="#3-provide-evidence">3. Provide evidence</a></li>
+        <li><a href="#1-dispute-notification">1. Notificação de uma disputa</a></li>
+        <li><a href="#2-query-through-the-payu-module">2. Consulta através do módulo PayU</a></li>
+        <li><a href="#3-provide-evidence">3. Fornecer evidências</a></li>
         <li><a href="#4-final-decision-on-dispute-status">4. Final decision on dispute status</a></li>
       </ul>
     </li>
@@ -800,49 +794,49 @@
 	<h1>Disputas</h1>
     <div class="lead">Using this tool, you can manage the dispute processes generated in your PayU account.</div>
 	       
-	<p><img src="../../../assets/Disputas/Disputes_en.png" alt="Concepts"></p>
-<h2 id="what-is-a-dispute">What is a Dispute?</h2>
-<p>Your buyers can present a claim to their card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.</p>
-<h2 id="why-a-dispute-happens">Why a dispute happens?</h2>
-<p>A buyer can claim to their card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.<br>
-The reasons for starting a dispute process may vary, some of them are:</p>
+	<p><img src="../../../assets/Disputes/Disputes_pt.png" alt="Concepts"></p>
+<h2 id="what-is-a-dispute">O que é uma disputa?</h2>
+<p>Seus compradores podem apresentar uma reclamação ao banco emissor do cartão. O banco nos envia uma notificação de disputa e nós criamos a disputa em nosso sistema. Esta disputa congelou o valor total da venda em sua conta PayU.</p>
+<h2 id="why-a-dispute-happens">Por que acontece uma disputa?</h2>
+<p>Um comprador pode reclamar ao banco emissor do cartão informando que não recebeu um produto, que o produto é deficiente ou não atende às características esperadas. O comprador também pode negar a compra da fatura do cartão de crédito.<br>
+Os motivos para iniciar um processo de disputa podem variar, alguns deles são:</p>
 <ul>
-<li><strong>Fraud</strong>: disputes are classified as fraud when an unauthorized person makes purchases with a credit card. These type of dispute can happen if the card was lost or stolen.</li>
-<li><strong>Not acknowledging payment</strong>: the brand or shop name which appears in the credit card statement is not recognized by the cardholder.</li>
-<li><strong>Product not delivered</strong>: the cardholder states that they don&rsquo;t received the product or service covered by the charges made to the credit card.</li>
-<li><strong>Product not acceptable</strong>: the cardholder claims not to have received the product or service under the expected conditions.</li>
-<li><strong>Duplicate</strong>: the cardholder indicates that the charge made for the purchase of a product or service was applied more than once to their credit card.</li>
-<li><strong>Amount does not match</strong>: the charge to the credit card does not match with the value of the purchase.</li>
-<li><strong>Not reported by the entity</strong>: the bank or processing network initiates a dispute process without a specific reason.</li>
+<li><strong>Fraude</strong>: as disputas são classificadas como fraude quando uma pessoa não autorizada faz compras com cartão de crédito. Esse tipo de disputa pode acontecer se o cartão for perdido ou roubado.</li>
+<li><strong>Não reconhecimento do pagamento</strong>: a marca ou nome da loja que aparece no extrato do cartão de crédito não é reconhecida pelo titular do cartão.</li>
+<li><strong>Produto não entregue</strong>: o titular do cartão afirma não ter recebido o produto ou serviço coberto pelas cobranças efetuadas no cartão de crédito.</li>
+<li><strong>Produto não aceitável</strong>: o titular do cartão alega não ter recebido o produto ou serviço nas condições esperadas.</li>
+<li><strong>Duplicado</strong>: o titular do cartão indica que a cobrança realizada pela compra de um produto ou serviço foi feita mais de uma vez no cartão de crédito.</li>
+<li><strong>Quantidade não corresponde</strong>: a cobrança no cartão de crédito não coincide com o valor da compra.</li>
+<li><strong>Não reportado pela entidade</strong>: o banco ou rede de processamento inicia um processo de disputa sem um motivo específico.</li>
 </ul>
 
 
 <div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Attention</h4>
+<h4 class="alert-heading">Atenção</h4>
 <ul>
-<li>Recall that PayU acts as an intermediary to let your commerce provide evidence in the dispute process between you and the bank entity. PayU has no interference on the result of the dispute, this decision depends on the issuing bank.</li>
-<li>Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance; therefore, you cannot transfer funds from this balance to your bank account until the dispute is resolved.</li>
+<li>Lembre-se de que PayU atua como um intermediário para permitir que sua loja forneça evidências no processo de disputa entre você e a entidade bancária. O PayU não interfere no resultado da disputa, a decisão depende do banco emissor.</li>
+<li>Uma vez que uma transação é parte de uma disputa, o valor associado torna-se parte do saldo congelado; portanto, você não pode transferir fundos desse saldo para sua conta bancária até que a disputa seja resolvida.</li>
 </ul>
 
 </div>
 
-<h2 id="how-does-the-disputes-process-works-in-payu">How does the disputes process works in PayU?</h2>
-<p>The disputes process follows a simple flow:</p>
-<h3 id="1-dispute-notification">1. Dispute notification</h3>
-<p>When a bank notifies PayU about a dispute, both you and your customer receives an e-mail notifying the start of the dispute process.</p>
-<p>We also send a <code>POST</code> with all the information of the dispute to the URL you set in your <a href="../../../pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#disputes">Módulo PayU</a>. This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.</p>
-<p>You can configure the URL where we make the notification in the Módulo PayU. Faça login em <a href="payu.com">PayU.com</a> e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login <a href="https://merchants.payulatam.com/">https://merchants.payulatam.com/</a>.</p>
-<p>Click <em><strong>Settings</strong></em> and then select <em><strong>Technical configuration</strong></em>.</p>
-<p><img src="../../../assets/IntegrationVariables_01.png" alt="PrintScreen"></p>
-<p>In this window, go to <em><strong>Disputas</strong></em> tab and define the dispute notification url and enable the notification box in the <em><strong>Automatic notification URL</strong></em> field.</p>
-<p><img src="../../../assets/Disputas/Disputes_01.png" alt="PrintScreen"></p>
-<p>Once you configured this, you automatically receive a POST with all the information of the started dispute process. Furthermore, You also receive a notification POST each time the dispute process has an update, so you can be aware of the progress and completion of this process.</p>
-<h3 id="2-query-through-the-módulo-payu">2. Query through the Módulo PayU</h3>
-<p>You can view and manage your dispute processes from your Módulo PayU, in the <em><strong>Dispute</strong></em> option inside the <em><strong>Transactions</strong></em> menu.</p>
-<p><img src="../../../assets/Disputas/Disputes_02.png" alt="PrintScreen"></p>
-<h3 id="3-provide-evidence">3. Provide evidence</h3>
-<p>It&rsquo;s important to always respond a dispute by providing evidence before the <a href="../../../pt/docs/tools/disputes.html#maximum-days-to-provide-evidence">deadline stipulated by the bank</a>. After the deadline date, you cannot upload the corresponding evidence for a dispute.</p>
-<p>To learn how to upload evidence to resolve the dispute, refer to the <a href="../../../pt/payu-module-documentation/payu-operations/disputes-mp.html">Módulo PayU</a>.</p>
+<h2 id="how-does-the-disputes-process-works-in-payu">Como funciona o processo de disputas no PayU?</h2>
+<p>O processo de disputas segue um fluxo simples:</p>
+<h3 id="1-dispute-notification">1. Notificação de uma disputa</h3>
+<p>Quando um banco notifica o PayU sobre uma disputa, você e seu cliente recebem um e-mail notificando o início do processo de disputa.</p>
+<p>Também enviamos um <code>POST</code> com todas as informações da disputa para a URL que você definiu em seu <a href="../../../pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#disputes">Módulo PayU</a>. Dessa forma, você pode automatizar seus processos de gerenciamento de disputas para minimizar o risco de um possível estorno.</p>
+<p>Você pode configurar a URL onde fazemos a notificação no módulo PayU. Faça login em <a href="payu.com">PayU.com</a> e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login <a href="https://merchants.payulatam.com/">https://merchants.payulatam.com/</a>.</p>
+<p>Clique <em><strong>Configuração</strong></em> e selecione <em><strong>Configuração técnica</strong></em>.</p>
+<p><img src="../../../assets/IntegrationVariables_01_pt.png" alt="PrintScreen"></p>
+<p>Nesta janela, acesse a guia <em><strong>Disputas</strong></em> e defina a URL de notificação de disputa. Habilite a caixa de notificação no campo <em><strong>Automatic notification URL</strong></em>.</p>
+<p><img src="../../../assets/Disputes/Disputes_01_pt.png" alt="PrintScreen"></p>
+<p>Depois de configurar isso, você receberá automaticamente um POST com todas as informações do processo de disputa iniciado. Além disso, você também receberá uma notificação POST cada vez que o processo de disputa tiver uma atualização, para que possa estar ciente do andamento e da conclusão desse processo.</p>
+<h3 id="2-query-through-the-payu-module">2. Consulta através do módulo PayU</h3>
+<p>Você pode visualizar e gerenciar seus processos de disputa a partir de seu módulo PayU, na opção <em><strong>Disputas</strong></em> no menu <em><strong>Transações</strong></em>.</p>
+<p><img src="../../../assets/Disputes/Disputes_02_pt.png" alt="PrintScreen"></p>
+<h3 id="3-provide-evidence">3. Fornecer evidências</h3>
+<p>É importante sempre responder a uma disputa fornecendo evidências antes do <a href="../../../pt/docs/tools/disputes.html#maximum-days-to-provide-evidence">prazo estipulado pelo banco</a>. Após a data limite, você não pode carregar as evidências correspondentes a uma disputa.</p>
+<p>Para saber como fazer upload de evidências para resolver a disputa, consulte o <a href="../../../pt/payu-module-documentation/payu-operations/disputes-mp.html">Módulo PayU</a>.</p>
 <h4 id="what-information-can-be-useful">What information can be useful?</h4>
 <ul>
 <li>Full information of your customer (full name, identification number, e-mail, shipping address, visible credit card number, etc.)</li>
@@ -869,7 +863,7 @@ The reasons for starting a dispute process may vary, some of them are:</p>
 <td>5 working days</td>
 </tr>
 <tr>
-<td>Brazil</td>
+<td>Brasil</td>
 <td>12 working days</td>
 </tr>
 <tr>
@@ -877,11 +871,11 @@ The reasons for starting a dispute process may vary, some of them are:</p>
 <td>5 working days</td>
 </tr>
 <tr>
-<td>Colombia</td>
+<td>Colômbia</td>
 <td>2 working days</td>
 </tr>
 <tr>
-<td>Mexico</td>
+<td>México</td>
 <td>12 calendar days</td>
 </tr>
 <tr>
@@ -946,9 +940,9 @@ If you have activated <a href="../../../pt/docs/tools/antifraud-guarantee.html">
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-17 de novembro de 2021:
+18 de novembro de 2021:
 
- <b>Translations to Portuguese and further grammar fixes (11270be8)</b>
+ <b>Features or articles that have been deprecated for new commerces (db9bc3a5)</b>
 </div>
 </div>
 
