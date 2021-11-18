@@ -17,7 +17,7 @@ Regardless of the integration selected, you may require any of the following var
 ### API key and API Login
 1. Faça login em [PayU.com](payu.com) e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login https://merchants.payulatam.com/.
 
-2. Click _**Settings**_ and then select _**Technical configuration**_.
+2. Clique _**Configuração**_ e selecione _**Configuração técnica**_.
 
 ![PrintScreen](/assets/IntegrationVariables_01.png)
 

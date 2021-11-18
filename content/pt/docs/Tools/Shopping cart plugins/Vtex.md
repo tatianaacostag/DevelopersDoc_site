@@ -6,6 +6,7 @@ description:
   Este artigo mostra o procedimento para habilitar PayU em seu site VTEX. 
 weight: 5
 tags: ["subtopic"]
+draft: true
 ---
 
 VTEX is an enterprise digital commerce platform that allows you to create an online store with out-of-the-box capabilities fast. For more information, refer to official [VTEX webpage](https://vtex.com/).

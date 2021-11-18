@@ -7,26 +7,27 @@ Description: >
 weight: 40
 ---
 
-Módulo PayU is ideal for business that need to: 
+O módulo PayU é o sistema onde você pode gerenciar sua conta com segurança. Neste módulo, você pode alterar sua senha, obter relatórios de vendas, encontrar os dados necessários para integrar seu site à nossa plataforma, utilizar ferramentas para receber pagamentos e transferir dinheiro para sua conta bancária.
+O módulo PayU é ideal para empresas que precisam:
 
-* Keep control of their stocks and sales performed through PayU.
-* Be updated with the information of their financial movements of their account.
-* Make requests to the support team about issues in their account.
+* Manter o controle de seus estoques e vendas realizadas através do PayU.
+* Estar atualizado com as informações de movimentos financeiros de sua conta.
+* Fazer solicitações à equipe de suporte sobre problemas em sua conta.
 
-## Benefits of the Módulo PayU
-Módulo PayU provides the following benefits: 
+## Benefícios do Módulo PayU {#benefits-of-the-payu-module}
+O módulo PayU oferece os seguintes benefícios:
 
-* **Keep track of your sales**<br>Find relevant information about your sales, the most used payment methods, and the hours with higher transaction rates.
-* **Know your transactions**.<br>You can consult the movements in your accounts, generate statements and reports.
-* **You don't need a Web page**<br>You can use the tools to receive payments even if you don't have a web page.
+* **Acompanhe suas vendas**<br>Encontre informações relevantes sobre suas vendas, os métodos de pagamento mais usados e os horários com maiores taxas de transação.
+* **Conheça suas transações**.<br>Você pode consultar os movimentos em suas contas, gerar extratos e relatórios.
+* **Você não precisa de um site**<br>Você pode usar as ferramentas para receber pagamentos mesmo se não tiver um site.
 
-## How to access the Módulo PayU?
-1. **Log in our web page**<br>Log into www.payu.com, at the top right corner, you find the option to log in. For merchants in Colombia, this option is called _PayU Login_.<br>Alternatively, you can go directly to https://merchants.payulatam.com/.
+## How to access the Módulo PayU? {#how-to-access-the-payu-module}
+1. **Faça login em nossa página da web**<br>Logar em www.payu.com, no canto superior direito, você encontra a opção de fazer login.<br>Alternativamente, você pode ir diretamente https://merchants.payulatam.com/.
 
-![PrintScreen](/assets/Login1_en.png)
+![PrintScreen](/assets/Login1_pt.png)
 
-2. **Enter the Módulo PayU**.<br>Provide your credentials and enter your account. Here, você pode usar all the available options to manage your account.
+2. **Entre no módulo PayUU**.<br>Forneça suas credenciais e insira sua conta. Aqui, você pode usar todas as opções disponíveis para gerenciar sua conta.
 
-![PrintScreen](/assets/Login2_en.png)
+![PrintScreen](/assets/Login2_pt.png)
 
-For more information about how to use the Módulo PayU, refer to this [section]({{< ref "PayU Module Documentation">}}).
+Para obter mais informações sobre como usar o Módulo PayU, consulte esta [seção]({{< ref "PayU Module Documentation">}}).

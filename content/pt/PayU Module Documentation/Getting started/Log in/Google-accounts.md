@@ -15,7 +15,7 @@ tags: ["subtopic"]
 * Even though you use your _Google_ account to sign in, you can still using the credentials you created when you created your account.
 
 ## Signing in using a _Google_ account
-1. Go to www.payu.com. At the top right corner, you find the option to log in. For merchants in Colombia, this option is called _PayU Login_.<br>Alternatively, you can go directly to https://merchants.payulatam.com/.
+1. Go to www.payu.com. At the top right corner, you find the option to log in.<br>Alternativamente, você pode ir diretamente https://merchants.payulatam.com/.
 
 ![PrintScreen](/assets/Login1_en.png)
 
