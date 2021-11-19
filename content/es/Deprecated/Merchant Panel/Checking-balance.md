@@ -23,28 +23,28 @@ También podrás consultar el saldo general que está compuesto por:
 * _**Saldo de reserva**_: Por razones de seguridad todas las cuentas PayU reservan temporalmente parte de tu dinero como garantía, durante este tiempo el dinero no puede ser transferido a tus cuentas bancarias, este porcentaje es asignado de acuerdo a tu actividad económica. Si deseas consultar el porcentaje de saldo de reserva que es aplicado a tus cuentas debes escribir al correo a sac@payulatam.com.
 * _**Saldo disponible**_: Es el dinero que puedes transferir a tu cuenta bancaria. Está compuesto por el Saldo total menos el Saldo de reserva.
 
-## Movements
-This option allows you to perform a query of the movements of your PayU accounts. For example, you can view the credit of your sales, discounts for PayU commissions, or the transfers you have made.
+## Movimientos
+Puedes acceder desde el menú _**Cuentas**_ haciendo clic sobre la opción _**Movimientos**_.
 
-1. You can access this feature from the _**Accounts**_ menu by clicking on the _**Movement**_ option.
+1. Puedes acceder desde el menú _**Cuentas**_ haciendo clic sobre la opción _**Movimientos**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo2-es.jpg)
 
-2. You can define a range of dates (start and end) for your query, as well as the output format, which can be HTML (to show the outcome on within the PayU module), CSV (Excel).
+2. Podrás definir un rango de fechas (inicial y final) para realizar la consulta, además de un formato de salida, el cual puede ser HTML (para mostrar el resultado en pantalla) o Excel.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo3-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo3-es.jpg)
 
-3. When you run the query, you will see a summary, where the currency is indicated, the total balance, and the reserve balance of the account. It also shows all movements of sales, commissions, taxes, balance releases, reversals in detail and other information that is associated with the accessed account.
+3. Al ejecutar la consulta, podrás ver un resumen en donde se indica la moneda, el saldo total y el saldo de reserva de la cuenta, además de mostrar de forma detallada todos los movimientos de ventas, comisiones, impuestos, liberaciones de saldo, reversiones, y demás información que está asociada a la cuenta consultada..
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo4-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo4-es.jpg)
 
-## Statement
-This option allows you to generate a statement with all transactions made in a chosen month. The statement shows the summary of the account, with debits and credits made during the month, and information of the available balance.
+## Extracto
+Esta opción te permite generar el extracto con todas las transacciones realizadas en un determinado mes. El extracto muestra el resumen de la cuenta, con los créditos y débitos que fueron efectuados y la información de los saldos disponibles.
 
-1. You can access this feature in the _**Accounts**_ menu by clicking on the _**Statement**_ option.
+1. Puedes acceder desde el menú _**Cuentas**_ haciendo clic sobre la opción _**Extracto**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo5-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo5-es.jpg)
 
-2. You can download the file with the account information in PDF format. You will also find the _**Download and Print**_ option at the bottom-left of the statement.
+2. Podrás descargar el archivo con los datos de la cuenta en formato PDF. Encontrarás la opción _**descargar o imprimir**_ colocando tu mouse en la parte superior izquierda del extracto.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo6-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo6-es.jpg)

@@ -1,10 +1,10 @@
 ---
-title: "Reports"
-linkTitle: "Reports"
+title: "Reportes"
+linkTitle: "Reportes"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   Information of the reports displayed in the Merchant Panel.
+   Información de los reportes mostrados en el Módulo Administrativo.
 weight: 24
 ---
 
@@ -12,271 +12,272 @@ weight: 24
 Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
-## Orders report
-With these reports you can see the overview of the sales made through your PayU account and know the status of each of them (if they are in process, paid or refunded). An order can have several associated transactions. PayU stores payment attempts related to an order. For example if you sell your shoes to a client and he tries to pay with an invalid VISA credit card, he can then pay again with a MasterCard credit card. Each payment attempt is recorded in the order as a separate transaction.  
+## Reportes de órdenes
+En este reporte podrás ver la información general de las ventas realizadas a través de tu cuenta PayU y conocer el estado de cada una de ellas (si están en proceso, fueron pagadas o reembolsadas). Una orden puede tener asociadas varias transacciones, PayU almacena los intentos de pago relacionados a una orden; por ejemplo si vendes unos zapatos y tu cliente intenta pagar con una tarjeta de crédito VISA que no es válida, tu cliente podrá realizar el pago nuevamente con una tarjeta de crédito MasterCard, cada intento de pago se registrará dentro de la orden como una transacción diferente.  
 
-1. You can access this feature in the _**Reports**_ menu by clicking on _**Orders**_.
+1. Puedes acceder desde el menú _**Reportes**_ haciendo clic sobre la opción _**Órdenes**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ordenes1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ordenes1-es.jpg)
  
-2. You can filter this report by:
-* _**Range of dates**_: You can define the range of dates between which you want to generate the query. The query limit is 3 months.
-* _**Status**_: Allows you to select the status of the orders you want to see.
+2. Puedes realizar un filtro de este reporte por:
+* _**Rango de fechas**_: Te permite definir el rango de fechas entre los cuales deseas realizar la consulta. El límite de la consulta es de 3 meses.
+* _**Estado**_: Te permite seleccionar el estado de las órdenes que deseas consultar.
 
 <details>
-<summary>Order status</summary>
+<summary>Estados de la orden</summary>
 <br>
 
-* _Initiated_: The initial status of the order. The payer has not selected a payment method or it is a reservation.
-* _In progress_: The payment of the order has been selected but not completed (common state with cash payments because it requires the payer to deposit the money in the financial institution).
-* _Captured_: The order was paid.
-* _Cancelled_: The payer canceled the order, or the payment time expired.
-* _Declined_: The process was not completed, either because of rejection by our anti-fraud module or the financial institution.
-* _Refunded_: The funds from a sale were returned.
+* _Iniciada_: Estado inicial con el que se crea una orden, ya sea porque el pagador aún no ha seleccionado un medio de pago o porque se trata de una reserva.
+* _En progreso_: Aún se espera el pago de la orden (estado común en pago con efectivo ya que requiere que el pagador consigne el dinero en la entidad financiera).
+* _Capturada_: Orden que ha sido pagada.
+* _Cancelada_: Orden que fue cancelada por decisión del pagador o porque el tiempo de pago expiró.
+* _Declinada_: El proceso ha finalizado, ya sea por rechazo del módulo antifraude o de la entidad bancaria.
+* _Reembolsada_: Se ha realizado la devolución del dinero proveniente de una venta.
 
 </details>
 <br>
 
-* _**Transaction type**_: Allows you to choose the type of transaction related to an order. An order can have different types of transactions associated with it.
+* _**Tipos de transacción**_: Te permite elegir el tipo de transacción relacionada a una orden. Una orden puede tener diferentes tipos de transacciones asociadas.
 
 <details>
-<summary>Transaction status</summary>
+<summary>Tipos de transacción</summary>
 <br>
 
-* _Authorization_: Authorized transaction.
-* _Authorization and Capture_: Authorized and paid transaction
-* _Capture_: Payment transaction.
-* _Cancellation_: Transaction canceled before financial movement
-* _Annulment_: Transaction in which the financial movement has been already made and cancellation is required (before reimbursement).
-* _Reimbursement_: Return of money.
+* _Autorización_: Transacción autorizada.
+* _Autorización y Captura_: Transacción autorizada y pagada.
+* _Captura_: Transacción de pago.
+* _Cancelación_: Transacción cancelada antes de realizar el movimiento financiero.
+* _Anulación_: Transacción en la que ya se realizó el movimiento financiero y se requiere una cancelación (previa a reembolso).
+* _Reembolso_: Devolución del dinero.
 
 </details>
 <br>
 
-* _**Payment method**_: Displays each of the possible options in which your customers can make a payment, either by franchise (e.g VISA, MasterCard) or by cash payments (e.g. Baloto, OXXO, and BCP), or by bank transfer.
-* _**Format**_: This shows you the query on the screen when you choose the HTML format or exports the results to a excel file.
+* _**Medio de pago**_: Despliega cada una de las opciones en las que tus clientes pueden realizar un pago, ya sea por franquicias como VISA o Mastercard, o por medios de pagos en efectivo como Baloto, OXXO y BCP; o por transferencia bancaria.
+* _**Formato**_: Te permite mostrar el resultado de la consulta en pantalla al elegir el formato HTML, o exportar el resultado a un archivo Excel.
  
 {{% alert title="Nota" color="info"%}}
-In the advanced search option, you can check data related to the order including the identifier, the sales reference, or email of the payer.
+Puedes consultar datos relacionados a la orden como el identificador, la referencia de venta o e-mail del pagador en la opción de búsqueda avanzada.
 {{% /alert %}}
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ordenes2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ordenes2-es.jpg)
 
-3. The results of the query are displaying in a set of orders that match the conditions defined in the report’s filters. This will show detailed information such as the ID of the order, the reference number of the sale, and the value of the transaction, among others.
+3. El resultado de la consulta es el conjunto de órdenes que cumplen las condiciones definidas en los filtros del reporte, mostrando información puntual como el Id de la orden, el número de referencia de la venta y el valor de la transacción entre otros.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ordenes3-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ordenes3-es.jpg)
 
-4. In case you want more information, you can click on one of the orders. The system will display a screen with detailed information, including associated transactions.
+4. En caso de que desees ampliar la información puedes hacer clic sobre una de las órdenes; el sistema mostrará una pantalla con información detallada, incluyendo las transacciones asociadas.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ordenes4-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ordenes4-es.jpg)
 
-## Transactions report
-This report will allow you to check all transactions related to a payment process and the order to which they belong. You can get detailed information about attempts to pay an order, reversals performed, payer data, etc.
+## Reporte de transacciones
+A partir de este reporte podrás consultar todas las transacciones relacionadas a un proceso de pago y la orden a la que pertenecen. Obteniendo información más específica sobre intentos de pago de una orden, reversiones realizadas, datos del pagador etc.
 
 {{% alert title="Nota" color="info"%}}
-The data of the buyer and the payer may differ because the person placing the order through the website is not the same who makes the payment.
+En algunos casos los datos del comprador y del pagador pueden diferir ya que la persona que ordena la compra a través de la página web no es la misma que realiza el pago.
 {{% /alert %}}
  
-1. You can access this feature in the _**Reports**_ menu by clicking on the _**Transactions**_ option.
+1. Puedes acceder desde el menú _**Reportes**_ haciendo clic sobre la opción _**Transacciones**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones1-es.jpg)
  
-2. You can generate your query filter by:
-* _**Account**_: If you have multiple accounts, you can select which you want to query transactions.
-* _**Date Ranges**_: You can define the date range in which you want to query. The query limit is 3 months between the specified dates.
-* _**Status**_: Allows you to select the status of the transactions you want to check.
+2. Podrás realizar la consulta filtrando por:
+* _**Cuenta**_: En caso de que tengas varias cuentas, te permite seleccionar con cual deseas realizar la consulta de transacciones.
+* _**Rango de fechas**_: Te permite definir el rango de fechas en los cuales deseas realizar la consulta. El límite de la consulta es de 3 meses entre las fechas ingresadas.
+* _**Estado**_: Permite que selecciones el estado de las transacciones que deseas consultar.
  
 <details>
-<summary>States of the transaction</summary>
+<summary>Estados de la transacción</summary>
 <br>
 
-* _Approved_: The result of the transaction was successful
-* _Declined_: The transaction was canceled.
-* _Error_: Transaction processing error.
-* _Pending_: Pending transaction response.
-* _Expired_: The timeout of the transaction response has ended.
+* _Aprobada_: El resultado de la transacción fue satisfactorio.
+* _Declinada_: La transacción fue cancelada.
+* _Error_: Error de procesamiento de la transacción.
+* _Pendiente_: Pendiente por respuesta de la transacción.
+* _Expirada_: El tiempo de espera de la respuesta en la transacción ha terminado.
 
 </details>
 <br>
 
-* _**Response Code**_: Displays a list of possible response codes a transaction may have and allows you to filter the query with a specific code.
-Transaction type: You can choose the type of transaction related with an order.
+* _**Código de respuesta**_: Despliega un listado de los posibles códigos de respuesta que puede tener una transacción y te permite filtrar la consulta por un código específico.
+* _**Tipo de transacción**_: Puedes elegir el tipo de transacción relacionada a una orden.
 
 <details>
-<summary>Transaction types</summary>
+<summary>Tipos de transacción</summary>
 <br>
 
-* _Authorization_: Authorized transaction
-* _Authorization and Capture_: Authorized and paid transaction.
-* _Capture_: Payment transaction.
-* _Refund_: Return of funds.
+* _Autorización_: Transacción autorizada.
+* _Autorización y Captura_: Transacción autorizada y pagada.
+* _Captura_: Transacción de pago.
+* _Cancelación_: Transacción cancelada antes de realizar el movimiento financiero.
+* _Anulación_: Transacción en la que ya se realizó el movimiento financiero y se requiere una cancelación.(previa a reembolso)
+* _Reembolso_: Devolución del dinero.
 
 </details>
 <br>
 
-* _**Country**_: Lets you see the country from which the sales transaction was generated.
-* _**Método of payment**_: Displays each of the possible options that your customers can make a payment, either by franchises (e.g. VISA or MasterCard) or by cash payments (e.g. Baloto, OXXO, or BCP) or by bank transfer.
-* _**Format**_: You can display the result of the query in the PayU platform when choosing the HTML format, or export the results to a CSV file.
+* _**País**_: Te permite consultar el país desde el cual se generó la transacción de venta.
+* _**Medio de pago**_: Despliega cada una de las posibles opciones en que tus clientes pueden realizar un pago, ya sea por franquicias como VISA o Mastercard, o por medios de pagos en efectivo como como Baloto, OXXO y BCP o por transferencia bancaria.
+* _**Formato**_: Permite mostrar el resultado de la consulta en pantalla al elegir el formato HTML o exportar el resultado a un archivo Excel.
  
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones2-es.jpg)
  
-3. The result of the query is a set of transactions that meet the conditions defined in the report filters. This will include information such as the ID of the order to which a transaction is related, the date on which it took place, the Id, and the value, among others.
+3. El resultado de la consulta es el conjunto de transacciones que cumplen las condiciones definidas en los filtros del reporte, mostrando información como el ID de la orden al cual se encuentra relacionada una transacción, la fecha en que se llevó a cabo, el Id y el valor entre otros.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones3-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones3-es.jpg)
 
-## Graphic report
-This option allows you to generate graphs with information of sales or transactions processed over a period of time.  
+## Reporte gráfico
+Esta opción te permite generar gráficos con la información de las ventas o las transacciones generadas en un periodo de tiempo específico.  
 
-1. You can access this feature in the _**Reports**_ menu by clicking on the _**Graphic Report**_ option..
+1. Puedes acceder desde el menú _**Reportes**_ haciendo clic sobre la opción _**Reporte gráfico**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/grafico1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/grafico1-es.jpg)
 
-2. The report allows you to filter by:
-* _**Timeline**_: Allows you to query various time ranges, allowing you to view reports by days, weeks, or months.
-* _**Date Range**_: You can define the date range in which you want to query. The query limit is 3 months.
-* _**Status**_: You can select the status of the transactions you want to query.
+2. El reporte te permite filtrar por:
+* _**Línea de tiempo**_: Te permite realizar la consulta en varios tipos de rango de tiempos, permitiéndote ver la información por días, semanas o meses.
+* _**Rango de fechas**_: Te permite definir el rango de fechas en los cuales deseas realizar la consulta. El límite de la consulta es de 3 meses. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Estado**_: Puedes seleccionar el estado de las transacciones que deseas consultar.
 
 <details>
-<summary>Status of the transaction</summary>
+<summary>Estados de la transacción</summary>
 <br>
 
-* _Approved_: The result of the transaction was successful
-* _Declined_: The transaction was canceled.
-* _Error_: Transaction processing error.
-* _Pending_: Pending transaction response.
-* _Expired_: The timeout of the transaction response has ended.
+* _Aprobada_: El resultado de la transacción fue satisfactorio.
+* _Declinada_: La transacción fue cancelada.
+* _Error_: Error de procesamiento de la transacción.
+* _Pendiente_: Pendiente por respuesta de la transacción.
+* _Expirada_: El tiempo de espera de la respuesta en la transacción ha terminado.
 
 </details>
 <br>
 
-* _**Country**_: Allows you to search transactions according to the country where are generated.
+* _**País**_: Te permite realizar la consulta de transacciones según el país en el cual se genera la transacción.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/grafico2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/grafico2-es.jpg)
  
-3. The search results can be demonstrated using a line or column chart that summarizes the behavior of the transactions under the conditions defined in the filter.
+3. El resultado de la consulta puede ser visualizado por medio de un gráfico de líneas o por un gráfico de columnas, que resumen el comportamiento de las transacciones según las condiciones definidas en el filtro.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/grafico3-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/grafico3-es.jpg )
  
-## Retentions certificate
-If your account is active for Colombian transactions and you must present the deductions certificate for reporting of your income tax, the administrative module allows you to generate a document with the necessary information.  
+## Certificado de retenciones
+Si tu comercio es Colombiano y debes presentar certificado de retenciones para la declaración de renta, el módulo administrativo te permite generar de manera automática un documento con la información necesaria.    
 
-1. You can access this feature in the _**Reports**_ menu by clicking on the _**Retentions Certificate**_ and set the filter according to a time range and the account in Colombia with which the report will be created.
+1. Puedes acceder desde el menú _**Reportes**_ haciendo clic sobre la opción _**Certificado de retenciones**_ y realizar el filtro de acuerdo al período de tiempo y cuenta deseada.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/retenciones1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/retenciones1-es.jpg)
  
-2. The exported file of the report is a PDF document that contains all the information required by Colombian law for income tax returns.
+2. El resultado de la consulta es un documento en formato PDF que contiene toda información requerida por la legislación colombiana para tu declaración.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/retenciones2.jpg)
  
-## Transfer reports between PayU accounts
-This report allows you to view all the transfer operations of the available balance of your PayU accounts.
+## Transferencias entre cuentas PayU
+Estos reportes te permiten consultar todas las operaciones de transferencia de saldo disponible que se han llevado a cabo desde y hacia tus cuentas PayU.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu1-es.jpg)
  
-1. You can check the transfers made from your accounts in the _**Reports**_ module and by clicking on _**Transfers Made**_.
+1. Podrás consultar aquellas transferencias que se han realizado desde tus cuentas en el módulo de _**Transferencias realizadas**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu2-es.jpg)
 
-Similarly, you can check the transfers made to your accounts in the _**Reports**_ module and by clicking on _**Transfers Received**_.
+Y de igual forma podrás consultar aquellas transferencias que se han realizado hacia tus cuentas en el módulo de _**Transferencias recibidas**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu3-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu3-es.jpg)
 
-2. In both reports you can perform the query according to the period of time in which the operation was conducted, the accounts involved, and the value of the transfer.
+2. En ambos reportes puedes realizar la consulta del período de tiempo en que se llevó a cabo la operación, las cuentas involucradas y el valor de la transferencia.
 
 {{% alert title="Nota" color="info"%}}
-If you want to consult transfers made to accounts that do not belong to your shop, you must have the _**Account ID**_, the number that identifies the PayU account in our system.
+Si quieres realizar la consulta de transferencias a cuentas que no pertenezcan a tu comercio debes tener el número _**cuenta id**_, que identifica la cuenta PayU latam que deseas consultar en nuestro sistema.
 {{% /alert %}}
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu4-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu4-es.jpg)
 
-3. The result of these queries will be a consolidated report of the transfers between PayU accounts that meet the required values.
+3. El resultado de la consulta será el reporte consolidado de transferencias entre cuentas PayU que cumplan con los valores solicitados.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu5-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/cuentaspayu5-es.jpg)
 
-## Accreditation models of accounts in brazil
-If you have an account in Brazil that operates with the _**Installments**_ model or the _**Withdraw After X Days**_ model, you can see in these reports the transactions paid every day, allowing you a better control of the money from your sales in Brazil.
+## Modelos de recaudo en Brasil
+Si tienes una cuenta en Brasil que funcione a través del modelo de cuotas o del modelo de D+X días, en estos reportes podrás ver como las transacciones están siendo abonadas día a día, permitiéndote tener un mejor control del dinero proveniente de tus ventas en Brasil.
 
-### Withdraw at X days
-In this model your business will receive all the money from a sale once the number of days that were defined for your account have passed.
+### Modelo D+X días
+En este modelo tu comercio recibirá la totalidad del dinero de una venta una vez hayan transcurrido la cantidad de días que se definieron para tu cuenta.
 
-**Example**: If your account is set for payment at D +5 days, and your customer makes a purchase on January 1st, you will receive the payment on January 6th.
+**Ejemplo**: Si tú cuenta está configurada para abono de dinero a D+5 días, y tu cliente realiza una compra el día 1 de enero recibirás el abono de tu dinero el día 6 de enero.
 
-#### Consult your received payments
-1. You can check your payments received in the _**Reports**_ module by clicking on _**Received Payments**_.
+#### Consultar tus pagos recibidos
+1. Podrás consultar tus pagos recibidos en el módulo de _**Reportes**_ y haciendo clic sobre _**Pagos recibidos**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias1-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias1-es.png)
  
-2. According to the accreditation model and the parameters that you have configured in your account, the report allows you to filter by:
-* _**Account**_: Allows you to select the account with which you want to query payments received.
-* _**Accreditation model**_: Allows you to select between the two available models of accreditation to perform the query, which in this case is D + X days.
-* _**Date Range**_: You can define the date range in which you want to query. The query limit is 3 months between the entered dates.
-* _**Order Id**_: Allows you to enter a specific order number to see if was credited in your account.
-* _**Output format**_: Displays the result of the query on the screen when you choose the HTML format, or export the results to a CSV file.
+2. Según el modelo de acreditación y los parámetros que tengas configurados en tú cuenta el reporte te permite filtrar por:
+* _**Cuenta**_: Te permite seleccionar la cuenta con la cual se deseas realizar la consulta de pagos recibidos. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Modelo de acreditación**_: Te permite seleccionar entre los dos modelos disponibles de acreditación para realizar la consulta, que en este caso es D+X días. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Rango de fechas**_: Te permite definir el rango de fechas en los cuales deseas realizar la consulta. El límite de la consulta es de 3 meses entre las fechas ingresadas. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Id de la orden**_: Te permite ingresar un número de orden específico para mirar si este ya fue acreditado a tu cuenta.
+* _**Formato**_: Permite mostrar el resultado de la consulta en pantalla al elegir el formato HTML, o exportar el resultado a un archivo Excel.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias2-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias2-es.png)
  
-3. The report will show the date on which the sale was conducted, the date it was credited to the account, and the most important data relating to the transaction such as the order Id to which the transaction relates, reference, value of the sale and value of interest of the transaction
+3. El reporte mostrará la fecha en que se llevó a cabo la transacción de venta, la fecha en que fue acreditada en la cuenta, y los datos más importantes correspondientes a la transacción como lo son el ID de la orden al cual está relacionada la transacción, la referencia, el valor de la venta y el valor por concepto de intereses de la transacción.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias3-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias3-es.png)
 
-#### Check your pending payments
-1. You can check your payments in the _**Reports**_ module and clicking on _**Pending Payments**_.
+#### Consultar tus pagos pendientes
+1. Podrás consultar tus pagos en el módulo de _**Reportes**_ y haciendo clic sobre _**Pagos pendientes**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias4-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias4-es.png)
  
-2. The report allows filtering by:
-Account: Select the account from which you want to query outstanding payments.
-Accreditation model: Select between the two available accreditation models to perform the query, in this case D + X days.
-Date Range: You can define the date range in which you want to query. The query limit is 3 months between the entered dates.
-Output format: Displays the result of the query on the screen when you choose the HTML format, or export the results to an CSV file.
+2. El reporte permite filtrar por:
+* _**Cuenta**_: Permite seleccionar la cuenta con la cual deseas realizar la consulta de pagos pendientes. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Modelo de acreditación**_: Permite seleccionar entre los dos modelos disponibles de acreditación para realizar la consulta, en este caso D+X días. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Rango de fechas**_: Te permite definir el rango de fechas en los cuales deseas realizar la consulta. El límite de la consulta es de 3 meses entre las fechas ingresadas. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Formato**_: Permite mostrar el resultado de la consulta en pantalla al elegir el formato HTML, o exportar el resultado a un archivo Excel.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias5-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias5-es.png)
  
-3. The report will show the date of the transaction, the date of accreditation of the sale, the remaining days, and the most important data relating to the transaction such as the Order ID related to the transaction, the reference, the value of the sale and value of interest of the transaction.
+3. El reporte mostrará la fecha en que se llevó a cabo la transacción de venta, la fecha en que será acreditada la venta, la cantidad de días faltantes, y los datos más importantes correspondientes a la transacción. Como el ID de la orden al cual está relacionada la transacción, la referencia, el valor de la venta y el valor por concepto de intereses de la transacción.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias6-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias6-es.png)
 
-### Installments model
-Your store will receive the money every month from the sales according to the number of installments defined by your customer at the time of purchase. 
+### Modelo a cuotas
+Tu comercio recibirá el dinero de las ventas realizadas mes a mes de acuerdo a la cantidad de cuotas definidas por tu cliente al momento de la compra.
 
-**Example**: If your customer makes a purchase on January 1 deferred to 6 months, from the date of purchase the amount of money will be pay corresponding to the installments during 6 months.
+**Ejemplo**: Si tu cliente realiza una compra el 1 de enero diferida a 6 meses, a partir del día de la compra mes a mes será abonada la cantidad de dinero correspondiente a la cuota durante 6 meses.
 
-#### Check your received payments
+#### Consultar tus pagos recibidos
+1. Podrás consultar tus pagos recibidos en el módulo de _**Reportes**_ y haciendo clic sobre _**Pagos recibidos**_.
+
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias1-es.png)
  
-1. You can check your received payments in the _**Reports**_ module and clicking on _**Paid Payments**_.
+2. Según el modelo de acreditación y los parámetros que tengas configurados en tú cuenta el reporte te permite filtrar por:
+* _**Cuenta**Ç_: Te permite seleccionar la cuenta con la cual se deseas realizar la consulta de pagos recibidos. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Modelo de acreditación**_: Te permite seleccionar entre los dos modelos disponibles de acreditación para realizar la consulta, que en este caso es D+X días. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Rango de fechas**_: Te permite definir el rango de fechas en los cuales deseas realizar la consulta. El límite de la consulta es de 3 meses entre las fechas ingresadas. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Id de la orden**_: Te permite ingresar un número de orden específico para mirar si este ya fue acreditado a tu cuenta.
+* _**Formato**_: Permite mostrar el resultado de la consulta en pantalla al elegir el formato HTML, o exportar el resultado a un archivo Excel.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias1-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias8-es.png)
  
-2.According to the accreditation model and the parameters that you have configured in your account, the report allows you to filter by:
-* _**Account**_: Allows you to select the account with which you want to query received payments.
-* _**Accreditation model**_: Allows you to select between the two available accreditation models to perform the query, which in this case is by quotas.
-* _**Date range**_: You can define the date range in which you want to query. The query limit is 3 months between the entered dates.
-* _**Order Id**_: Allows you to enter a specific order number to see if was accredited in your account.
-* _**Output format**_: Displays the result of the query within the PayU module when you choose the HTML format, or export the results to a CSV file.
+3. El reporte mostrará la fecha en que se llevó a cabo la transacción, la fecha en que la última cuota fue acreditada a la cuenta, y la fecha en que la próxima cuota será acreditada, la cantidad de cuotas a la que fue diferida la compra y la cantidad de cuotas que ya han sido pagadas, además de los datos más importantes correspondientes a la transacción como lo son el ID de la orden al cual está relacionada la transacción, como lo son la referencia, el valor de la venta y el valor por concepto de intereses de la transacción.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias8-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias3-es.png)
+
+#### Consultar tus pagos pendientes
+1. Podrás consultar tus pagos en el módulo de _**Reportes**_ y haciendo clic sobre _**Pagos pendientes**_.
+
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias4-es.png)
  
-3. The report will display the date on which the transaction took place, the date when the last payment was credited to the account, the date on which the next installment will be credited, the amount of fees to which the purchase was deferred, and the amount of fees that have been paid. Additionally, the report will show the most important data related to the transaction, such as the order Id to which the transaction relates, the value of the sale, and the value of interest on the transaction.
+2. El reporte permite filtrar por:
+* _**Cuenta**_: Permite seleccionar la cuenta con la cual deseas realizar la consulta de pagos pendientes ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Modelo de acreditación**_: Permite seleccionar entre los dos modelos disponibles de acreditación para realizar la consulta, en este caso D+X días. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Rango de fechas**_: Te permite definir el rango de fechas en los cuales deseas realizar la consulta. El límite de la consulta es de 3 meses entre las fechas ingresadas. ![](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/obligatorio.png)
+* _**Formato**_: Permite mostrar el resultado de la consulta en pantalla al elegir el formato HTML, o exportar el resultado a un archivo Excel.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias3-pt.png)
-
-#### Check your pending payments
-1. You can check your received payments in the form of _**Reports**_ and clicking on _**Pending Payments**_.
-
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias4-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias7-es.png)
  
-2. The report allows filtering by:
-* _**Account**_: Select the account from which you want to search the pending payments.
-* _**Accreditation model**_: You can define the date range in which you want to search. The query limit is 3 months between the entered dates
-* _**Date range**_: You can define the date range in which you want to search. The query limit is 3 months between the entered dates.
-* _**Output format**_: Displays the result of the search on the screen when you choose the HTML format, or export the results to an Excel file.
+3. El reporte mostrará la fecha en que se llevó a cabo la transacción de venta, la fecha en que será acreditada en la cuenta, la cantidad de días faltantes, y los datos más importantes correspondientes a la transacción. Como el ID de la orden al cual está relacionada la transacción, la referencia, el valor de la venta y el valor por concepto de intereses de la transacción.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias7-pt.png)
- 
-3. The report will show the date of the sale, the date on which the last installment was paid. The most important data relating to the transaction such as the Order ID to which the transaction relates, the reference, the amount of fees the purchase was deferred to, the amount of pending payments to be accredited, the value of the sale, and the interest value of the transaction.
-
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias6-pt.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias6-es.png)
 
 {{% alert title="Nota" color="info"%}}
-If your account has a reserve fund, a percentage of this will be held during the credit to your PayU account.
+Si tu cuenta tiene fondo de reserva, el porcentaje de este será retenido durante el abono a tu cuenta PayU.
 {{% /alert %}}

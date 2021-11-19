@@ -1,10 +1,10 @@
 ---
-title: "Transfers"
-linkTitle: "Transfers"
+title: "Transferencias"
+linkTitle: "Transferencias"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   In the administrative module you can view all the information of your accounts. You will be able to check to see the money coming into your accounts, the overall balance, and credits or discounts made to your account.
+   En el Módulo de transferencias encuentras opciones que te permiten realizar transferencias de fondos desde tu cuenta virtual PayU, a tu cuenta bancaria principal o a cuentas bancarias de terceros, como a proveedores o a diferentes cuentas a tu nombre.
 weight: 23
 ---
 
@@ -12,58 +12,58 @@ weight: 23
 Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias1-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias1-es.png)
 
-## Bank Data
-In this section you can verify and edit your bank details. Your main bank account will be automatically linked to your PayU account upon registration. This is the account that will receive most of your transfers.
+## Datos Bancarios
+En esta sección puedes verificar o editar tus datos bancarios. Al abrir tu cuenta en PayU, automáticamente tienes asociada una cuenta bancaria principal que registrarte al momento de iniciar tu cuenta virtual PayU y a la cual se realizan la mayoría de las transferencias.
 
-1. Choose this option by clicking on _**Bank Data**_ in the _**Transfer**_ menu where you will find main bank account details. You can change this bank account, edit details and attach a supporting document confirming this account is registered under the same person that holds the PayU account.
+1. Puedes acceder desde el menú _**Transferencias**_ haciendo clic sobre la opción _**Datos bancarios**_, donde encontrarás los datos de tu cuenta bancaria principal. Si deseas cambiar esta cuenta, puedes editar los datos y adjuntar un soporte que acredite que la cuenta bancaria esta a nombre de la misma persona de la cuenta PayU.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias2-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias2-es.png)
 
- 
-2. Once you have registered new bank details, PayU will validate the information. While this process is taking place you can still make transfers to your previous bank account. This icon <i class="fas fa-clock" style="color:#e09222;"></i> indicates that your new account is still being validated. A green icon <i class="fas fa-check-circle" style="color:#a6c307;"></i> indicates that your new account has been verified and you will be able to make transfers to the new main account.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias3-en.png)
+2. na vez registres los datos de la nueva cuenta bancaria principal, el equipo de PayU validará los datos. Mientras se realiza este proceso, podrás realizar transferencias a tu cuenta bancaria anterior y el icono <i class="fas fa-clock" style="color:#e09222;"></i> indicará que aún se está validando la nueva cuenta. Cuando el icono se vuelva color verde <i class="fas fa-check-circle" style="color:#a6c307;"></i>, significa que la cuenta ha sido verificada y ya podrás hacer tus transferencias a la nueva cuenta principal.
 
-## Registration of Third Party Bank Accounts
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias3-es.png)
+
+## Registro de cuentas bancarias de terceros
 {{% alert title="Please Note" color="info"%}}
-* Currently, only available to PayU accounts registered in Colombia
-* The option _**Manage Third Parties**_ is only available by request from [Customer Service](http://payu.com.co/en/support). This function requires your agreement to further terms and conditions.
+* Disponible por ahora, solo para cuentas PayU de Colombia.
+* La opción de _**Gestión de Terceros**_ solo se habilitará una vez hayas solicitado a [Servicio al cliente](http://payu.com.co/en/support) la activación de esta herramienta, ya que debes aceptar nuevos términos y condiciones antes de disponer de sus funciones.
 {{% /alert %}}
  
-This function enables you to manage (create, edit and delete) the details of third party bank accounts, for example: suppliers, associates or other bank accounts registered to the PayU account holder.
+Esta funcionalidad te permite gestionar (crear, editar y eliminar) los datos bancarios de terceros, por ejemplo, proveedores, asociados o cuentas bancarias a nombre del titular de la cuenta PayU.
 
-1. Choose this option by clicking on _**Manage Third Parties**_ in the _**Transfer**_ menu.
+1. Puedes acceder desde el menú _**Transferencias**_ haciendo clic sobre la opción _**Gestión de Terceros**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias4-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias4-es.png)
  
-2. In order to register another bank account, click on the option _**Register Third Party**_. Complete the required fields and click on the _**Register**_ button.
+2. Para registrar otra cuenta bancaria, puedes hacer clic en la opción _**Registrar Tercero**_, diligenciar la información solicitada y finalmente hacer clic en el botón _**Registrar**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias5-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias5-es.png)
  
-3. You are able register up to 5 accounts. If you would like to edit or remove a registered account you can do this using the icons <i class="fas fa-pencil-alt" style="color:#1c3a85;"></i> or <i class="fas fa-trash-alt" style="color:#1c3a85;"></i> respectively.
+3. Podrás registrar un máximo de 5 cuentas. Si deseas editar o borrar alguna cuenta previamente registrada, podrás hacer clic sobre los iconos <i class="fas fa-pencil-alt" style="color:#1c3a85;"></i> o <i class="fas fa-trash-alt" style="color:#1c3a85;"></i> respectivamente.
  
-## Transfer Money
-1. In order to make a transfer select Transfers from the Transfer menu.
+## Transferir dinero
+1. Para realizar transferencias de dinero puedes acceder desde el menú _**Transferencias**_ haciendo clic sobre la opción _**Transferencia**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias6-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias6-es.png)
 
 {{% alert title="Nota" color="info"%}}
-**If your account is registered in Brazil:**
-If your PayU account was registered in Brazil and you wish to transfer funds to banks in other countries, you must select the appropriate account and date range. Our system will calculate the balance that can be transferred based on the transactions made during this timeframe.
+**Si tu cuenta es de Brasil**<br>
+Si tu cuenta PayU es de Brasil, pero deseas realizar transferencias a bancos en otros países, deberás seleccionar la cuenta y un rango de fechas. El sistema calculará el saldo que se puede transferir a la cuenta bancaria de acuerdo a las transacciones realizadas en ese período de tiempo.
 {{% /alert %}}
  
-## Schedule Transfers
-You can schedule automatic transfers, either weekly, monthly, or any regular interval you need. Choose this option by clicking on the _**Schedule Transfer**_ option in the _**Transfers**_ menu.
+## Programar transferencias
+Te permite generar transferencias automáticas semanales, mensuales o con la periodicidad que necesites. Puedes acceder desde el menú _**Transferencias**_ haciendo clic sobre la opción _**Prog. de transferencias**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias7-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias7-es.png)
 
-1. Complete the fields with the required information and click Schedule Transfer. You can edit or delete previously scheduled transfers with the icons <i class="fas fa-pencil-alt" style="color:#1c3a85;"></i> or <i class="fas fa-trash-alt" style="color:#1c3a85;"></i>.
+1. Diligencia el formulario con los datos solicitados y haz clic en “Programar Transferencia”; podrás editar o borrar las transferencias previamente definidas con los iconos <i class="fas fa-pencil-alt" style="color:#1c3a85;"></i> y <i class="fas fa-trash-alt" style="color:#1c3a85;"></i>.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias8-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias8-es.png)
  
-## Check the status of a Transfer
-1. Choose this function by clicking on the _**Transfer Status**_ option in the _**Transfers**_ menu. You can filter the search by account, date of completion, and transfer status.
+## Consultar el estado de una transferencia
+1. Consulta el estado de tus transferencias ingresando al menú _**Transferencias**_ haciendo clic sobre la opción _**Estado de transferencias**_. Podrás realizar el filtro de la búsqueda por cuenta, fecha de realización y el estado de la transferencia.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias9-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias9-es.png)

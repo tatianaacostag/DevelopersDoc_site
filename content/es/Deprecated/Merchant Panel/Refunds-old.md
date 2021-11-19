@@ -1,10 +1,10 @@
 ---
-title: "Refunds"
-linkTitle: "Refunds"
+title: "Reembolsos"
+linkTitle: "Reembolsos"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   Information of the reports displayed in the Merchant Panel.
+   Información del módulo de Reembolsos en el Módulo Administrativo.
 weight: 25
 ---
 
@@ -12,79 +12,79 @@ weight: 25
 Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
-## What is a refund?
-A refund is made every time a business voluntarily decides to refund the money spent to the cardholder due to the following reasons:  
-* The client does not like the product and returns it.
-* The business’ stock is depleted and it is not able to deliver the product to the client.
+## ¿Qué es un reembolso?
+Un reembolso se presenta cada vez que el comercio voluntariamente decide reintegrar el dinero de una compra al tarjetahabiente, por motivos como:  
+* El cliente no está a gusto con el producto y lo devuelve
+* El comercio se queda sin stock y no puede entregar el producto o servicio a su cliente
  
-## How to carry out a refund?
-To proceed with a transaction refund, the following steps must be completed. The transaction must be _**approved**_ and free of any pending dispute process.
+## ¿Cómo realizar el reembolso de una transacción?
+Para realizar la solicitud del reembolso de una transacción debes realizar las siguientes acciones. Recuerda que la transacción debe estar en estado “Aprobada” y no debe tener pendiente un proceso de disputa.
 
-1. **Consult the transaction that you want to refund**:<br>
-To verify a transaction, you must go to the administrative section on the _**Report**_ menu, then select _**Transactions**_ option and look for the specific operation to reimburse based on the money spent during the purchase.
+1. **Consultar la transacción que deseas que reembolsar**:<br>
+Para consultar una transacción debes ir en tu módulo administrativo al menú _**Reportes**_ haciendo clic sobre la opción _**Transacciones**_ y buscar la transacción específica de la cual deseas solicitar el reembolso del dinero correspondiente al valor de la transacción.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/reportes.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reportes.png)
  
-2. **Submit the request of refund**:<br>
-After identifying the transaction, you can expand it to see more details and be sure of continuing with the process. If in effect this is the right transaction, you have to click the _**Refund**_ button located in the _**Transaction detail**_ section.
+2. **Realizar solicitud de reembolso**:<br>
+Una vez tengas identificada la transacción, debes seleccionarla para ver el detalle de la misma y si estás seguro de realizar la solicitud de reembolso debes dar clic al botón _**Reembolsar**_ que se encuentra en la sección _**Detalle de la transacción**_.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/reembolso_clic.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_clic.jpg)
  
-3. **Enter information related with the refund request**:<br>
-You will be requested with the following additional information to fulfill it: Reversion code, type of transaction (refund or partial reversion), reversion amount<sup>\*</sup> and comment.
+3. **Ingresar información de la solicitud de reembolso**:<br>
+Una vez indiques que deseas realizar una solicitud de reembolso de una transacción, se te solicitará una información adicional para poder radicarla, la información requerida es la siguiente: Código de reversión, Tipo de transacción (Reembolso o Reversión parcial), Monto de reversión<sup>\*</sup> y Comentario.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/reembolso_dialog.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_dialog.jpg)
  
-{{% alert title="Bear in mind" color="info"%}}
-<sup>\*</sup> _Partial reversal_: if the amount regarding the requested partial reversal exceeds the total of the transaction, you will not be able to proceed with partial refund. You must also consider that the current transaction may be affected by other partial reversal requests.
+{{% alert title="Tener en cuenta" color="info"%}}
+<sup>\*</sup> _Reversiones parciales_: Si el valor de la reversión parcial solicitada supera el valor total actual de la transacción padre no se te permitirá radicar una solicitud de reembolso parcial asociada a dicha transacción. Debes tener en cuenta que el valor actual de la transacción padre pudo haber sido afectado por otras solicitudes de reversiones parciales.
 
-Partial reversals only apply to Brazil, Peru and Argentina.
+Las Reversiones parciales sólo aplican para Brasil, Perú y Argentina.
 {{% /alert %}}
 
-4. **Confirmation of a refund request**: 
-Prior to submit your refund request, the information related to the transaction you previously selected will be shown jointly with the last provided data; in this sense, you will be requested to confirm the filling of such request by means of the _**Send**_ option. On the contrary, you may discontinue the process by choosing _**Cancel**_.
+4. **Confirmar solicitud de reembolso**: 
+Antes de registrar tu solicitud de reembolso se te mostrará la información de la transacción que seleccionaste junto con la información ingresada y se te solicitará que confirmes la radicación de tu solicitud a través de la opción _**Enviar**_. En caso contrario puedes desistir de la operación a través de la acción _**Cancelar**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/reembolso_validacion1.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_confirmar.jpg)
  
-## What are the possible results after submitting a refund request?
-After confirming the filling of the refund request, the system, depending on the case, may issue one of the following answers:
+## ¿Cuáles son las posibles resultados una vez registres tu solicitud de reembolso?
+Una vez confirmaste la radicación de tu solicitud de reembolso el sistema dependiendo del caso puede emitir alguna de las siguientes respuestas:
 
-### Passed refund request
-If your request is complying with all required conditions, you may see the following confirmation message.
+### Solicitud de Reembolso aprobada
+Si tu solicitud de reembolso cumple con las condiciones requeridas verás el siguiente mensaje de confirmación.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/reembolso_aprobado.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_aprobado.png)
 
-### The refund request awaits approval by the corresponding department
-In this case, the request must be reviewed and passed by the corresponding department in charge of this process, and it will await to be attended and processed. You may consult the status from your _**Secure**_ account, and then go to the _**Report**_ section, option: _**Refund**_.
+### Solicitud de Reembolso pendiente de aprobación por parte del área encargada
+En este caso la solicitud de reembolso debe ser revisada y aprobada por el área encargada de la gestión de este tipo de solicitudes, por lo cual esta queda en estado pendiente y debes esperar que sea atendida o gestionada. Puedes consultar el estado de tu solicitud de reembolso desde tu Secure a través del módulo de _**Reportes**_ y a través de la opción _**Reembolsos**_.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/pendiente_aprobacion.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/pendiente_aprobacion.png)
 
-{{% alert title="Bear in mind" color="info"%}}
-* If the transaction if a _**partial reversal**_, the requests will stay in all cases as pending.
-* Partial reversals only apply to Brazil, Peru and Argentina.
-* The estimated time to answer your request by the department in charge of such area is two (2) working days for all countries (Argentina, Brazil, Chile, Colombia, Mexico, Peru, Panama).
-* The time of refund to purchasers varies in all countries.
+{{% alert title="Tener en cuenta" color="info"%}}
+* Si el tipo de transacción es _**Reversión Parcial**_ estas solicitudes quedarán en todos los casos en estado Pendiente.
+* Las Reversiones parciales sólo aplican para Brasil, Perú y Argentina.
+* El tiempo de respuesta estimado para la gestión de la solicitud de reembolso por parte del área encargada es de dos (2) días hábiles para todos los países (Argentina, Brasil, Chile, Colombia, México, Perú, Panamá).
+* Los tiempos de reintegro del dinero a los compradores varían de acuerdo a cada país.
 {{% /alert %}}
 
-### Rejection of refund request
-A refund request may be rejected due to the following:
+### Solicitud de Reembolso Declinada
+Una solicitud de reembolso puede quedar declinada por algunos de los siguientes motivos:
 
-* **There is already a refund request**:<br>
-If the transaction is already related to a previous refund request, which waits for its approval, the system will indicate that the request is rejected due to this reason.
+* **Ya existe una solicitud de reembolso**:<br>
+Si la transacción ya tiene asociada una solicitud de reembolso que se encuentre en estado pendiente, el sistema te indicará que tu solicitud fue declinada por tal motivo.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/reembolso_existente.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_existente.png)
 
-* **There is not credit in your account**:<br>
-If you do not have within the available balance of your account, the amount corresponding to the money of the transaction or to the value of the refund request (See the partial reversions*), you are not able to submit a request related to the transaction of said account; as a result, your request will be declined.
+* **No tienes saldo disponible en tu cuenta**:<br>
+Si no tienes dentro del saldo disponible de tu cuenta mínimo el valor correspondiente al valor de la transacción o al valor de la solicitud de reembolso (En caso de reversiones parciales*) no se te permitirá registrar una solicitud de reembolso asociada a transacciones de dicha cuenta y por ende tu solicitud será declinada.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/saldo_insuficiente.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/saldo_insuficiente.png)
 
-* **The transaction awaits a dispute request**:<br>
-If the transaction awaits a dispute, the system will indicate that the request is rejected and will not submit it. In this case, you may consult the status in the dispute section.
+* **La transacción tiene pendiente una solicitud de disputa**:<br>
+Si la transacción tiene pendiente una Disputa, el sistema te indicará que tu solicitud fue declinada y no registrará tu solicitud de reembolso, en este caso puedes consultar su estado a través del módulo de disputas.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/disputa_pendiente.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/disputa_pendiente.png)
  
-## Where can I get the information of the refund request status?
-To know in details the status of your request, you may use your Secure account and go to the _**Report**_ section and in the _**Refund**_ section, you will verify the status of all refund requests. If you want to know the status of a request or a specific one as well, you may apply criteria or search filters to look for said information.
+## ¿Dónde puedes consultar el estado de tu solicitud de reembolso?
+Para conocer el estado de tus solicitudes de reembolso puedes acceder desde tu Secure al módulo de _**Reportes**_ y a través de la opción _**Reembolsos**_ consultar el estado de todas tus solicitudes de reembolso. Si deseas conocer el estado de una solicitud o solicitudes determinadas puedes aplicar los criterios o filtros de búsqueda para que realices búsquedas específicas.  
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/reembolso_consulta.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_consulta.png)

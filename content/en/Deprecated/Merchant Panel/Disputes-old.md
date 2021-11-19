@@ -12,6 +12,8 @@ weight: 26
 This article has been deprecated and it is not offered for new commerces.
 {{% /alert %}}
 
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contracargos-en.png)
+
 {{% alert title="Note" color="info"%}}
 Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance, therefore you cannot transfer funds from this balance to your bank account until the dispute is resolved.
 {{% /alert %}}

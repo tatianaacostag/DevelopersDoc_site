@@ -1,70 +1,72 @@
 ---
-title: "Actualización my data"
-linkTitle: "Actualización my data"
+title: "Actualizar mis datos"
+linkTitle: "Actualizar mis datos"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   Actualización the user information displayed in the Módulo Administrativo.
-weight: 26
+   Actualiza la información de usuario mostrada en el Módulo Administrativo.
+weight: 27
 ---
 
 {{% alert title="Nota" color="warning"%}}
 Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
-## Change password
-In this section, you can change the password used to enter your administrative module.
+## Cambiar clave
+En esta sección podrás hacer el cambio de clave para el ingreso a tu módulo administrativo.
 
-1. You can access this feature in the menu _**Configuration**_ by clicking on the _**Change password**_ option.
+1. Puedes acceder desde el menú _**Configuración**_, haciendo clic sobre la opción _**Cambiar clave**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/clave1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/clave1-es.jpg)
 
-2. You must enter the current password and enter the new password twice.
+2. Debes ingresar la clave actual e ingresar dos veces la nueva clave.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/clave2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/clave2-es.jpg)
  
-## Contact information
-In this section, you can view the contact data used to create your PayU account. For your security you cannot change some of this information. Therefore, should you need to change any of the data, please send a request to sac@payulatam.com.
-You can see this information by accessing the _**Configuration**_ menu by clicking on _**Contact information**_.
+## Información de contacto
+En esta sección podrás encontrar los datos de contacto con los cuales fue creada tu cuenta en PayU account. Esta información no puede ser modificada, por lo tanto, si necesitas cambiar alguno de los datos debes enviar la solicitud a sac@payulatam.com.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contacto1-en.jpg)
+Podrás ver la información de tus datos actuales ingresando al menú _**Configuración**_ haciendo clic en la opción _**Información de contacto**_.
+
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contacto1-es.jpg)
  
-## Bank data
-In this section you will find the information you need to login to make the money transfer from your virtual PayU account to your bank account.
+## Datos bancarios
+En esta sección encontrarás la información que debes ingresar para poder realizar la transferencia de dinero desde tu cuenta virtual PayU a tu cuenta bancaria.
 
-1. You can view the information of your current data by accessing the _**Settings**_ menu and then clicking on _**Banking data**_.
+1. Podrás ver la información de tus datos actuales ingresando al menú _**Configuración**_ haciendo clic en la opción _**Datos Bancarios**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/bancarios1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/bancarios1-es.jpg)
 
-2. You will find bank information that you must complete to be able to transfer money from your virtual PayU LATAM account to your bank account, including: Country of the bank, bank name, account type, agency, account number, SWIFT, or ABA code, among others.
+2. Encontrarás la información bancaria necesaria para hacer la transferencia de dinero desde tu cuenta virtual PayU a tu cuenta bancaria, incluye: País del banco, banco, número de cuenta, código Swift o código ABA entre otros (códigos que asignan los bancos para hacer transferencias internacionales entre cuentas).
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/bancarios2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/bancarios2-es.jpg)
  
-## Sales information
-This tab allows you to update the information that describes your sales, (the allocation of your reserve fund depends on this information, the type of integration to be performed, and the parameters assigned to your store in relation to the anti-fraud module).
+## Información de ventas
+Esta pestaña te permite actualizar la información que describe tus ventas, (de esta información depende la asignación de tu fondo de reserva, el tipo de integración a realizar y los parámetros asignados a tu comercio ante el módulo antifraude).
 
-1. You can see this information by accessing the _**Settings**_, menu and then clicking on _**Sales Information**_.
+1. Podrás ver la información de tus datos actuales ingresando al menú _**Configuración**_, haciendo clic sobre la opción _**Información de ventas**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ventas1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ventas1-es.jpg)
 
-2. You can adjust your sales information manually. If you want to make adjustments to data such as _**Account**_, _**Web Site**_, and _**What Do You Sell**_ you must send an email request to sac@payulatam.com with your request.
+2. Podrás realizar los ajustes en la información de tus ventas manualmente. En caso de que quieras hacer ajustes en datos como _**Cuenta**_, _**Pagina web**_ y _**¿Qué vendes?**_ deberás enviar un correo a sac@payulatam.com con tu solicitud.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ventas2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ventas2-es.jpg)
   
-## Time and currency format
-In this section you can change the display settings of the information on your administrative module, and you can change the date format, time zone of your country and the scoring format for the currency values.
-You can see this information by accessing the _**Settings**_ menu, by clicking on the _**Information Format**_ option.
+## Formato de tiempo y moneda
+En esta sección podrás cambiar la configuración de visualización de la información en tu módulo administrativo, y podrás cambiar el formato de fecha, la zona horaria de tu país y el formato de puntuación para los valores de la moneda.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato1-en.jpg)
+Podrás ver esta información ingresando al menú _**Configuración**_ haciendo clic sobre la opción _**Formato de información**_.
 
-* _**Time zone format**_: With this option you can change the time zone of the country in which you want to display the transaction’s information.
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato1-es.jpg)
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato2-en.jpg)
+* _**Formato hora**_: Con esta opción podrás cambiar la zona horaria del país en el que deseas visualizar la información de las transacciones.
 
-* _**Date format**_: Here you can change the format in which you want to display the date in your Administrative Module, allowing you to choose one of 4 options.
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato2-es.jpg)
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato3-en.jpg)
+* _**Formato fecha**_: Aquí podrás cambiar el formato en que deseas visualizar la fecha en tu Módulo Administrativo, permitiéndote elegir una de 4 opciones.
 
-* _**Currency Format**_: In this option you can change the display format of the currency values that are shown in your administrative module.
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato3-es.jpg)
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato4-en.jpg)
+* _**Formato moneda**_: En esta opción podrás cambiar el formato de visualización de los valores de moneda que son presentados en tu módulo administrativo.
+
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato4-es.jpg)

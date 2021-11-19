@@ -5,7 +5,7 @@ date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
    Get the integration settings displayed in the Merchant panel.
-weight: 27
+weight: 28
 nosidetoc: true
 ---
 

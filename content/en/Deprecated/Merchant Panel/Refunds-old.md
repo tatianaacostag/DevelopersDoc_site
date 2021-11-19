@@ -4,7 +4,7 @@ linkTitle: "Refunds"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   Information of the reports displayed in the Merchant Panel.
+   Information of the Refunds module in the Merchant Panel.
 weight: 25
 ---
 

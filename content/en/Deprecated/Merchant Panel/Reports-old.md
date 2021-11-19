@@ -100,7 +100,7 @@ The data of the buyer and the payer may differ because the person placing the or
 <br>
 
 * _**Response Code**_: Displays a list of possible response codes a transaction may have and allows you to filter the query with a specific code.
-Transaction type: You can choose the type of transaction related with an order.
+* _**Transaction type**_: You can choose the type of transaction related with an order.
 
 <details>
 <summary>Transaction types</summary>
@@ -127,7 +127,7 @@ Transaction type: You can choose the type of transaction related with an order.
 ## Graphic report
 This option allows you to generate graphs with information of sales or transactions processed over a period of time.  
 
-1. You can access this feature in the _**Reports**_ menu by clicking on the _**Graphic Report**_ option..
+1. You can access this feature in the _**Reports**_ menu by clicking on the _**Graphic Report**_ option.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/grafico1-en.jpg)
 
@@ -225,10 +225,10 @@ In this model your business will receive all the money from a sale once the numb
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias4-pt.png)
  
 2. The report allows filtering by:
-Account: Select the account from which you want to query outstanding payments.
-Accreditation model: Select between the two available accreditation models to perform the query, in this case D + X days.
-Date Range: You can define the date range in which you want to query. The query limit is 3 months between the entered dates.
-Output format: Displays the result of the query on the screen when you choose the HTML format, or export the results to an CSV file.
+* _**Account**_: Select the account from which you want to query outstanding payments.
+* _**Accreditation model**_: Select between the two available accreditation models to perform the query, in this case D + X days.
+* _**Date Range**_: You can define the date range in which you want to query. The query limit is 3 months between the entered dates.
+* _**Output format**_: Displays the result of the query on the screen when you choose the HTML format, or export the results to an CSV file.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias5-pt.png)
  
@@ -242,12 +242,11 @@ Your store will receive the money every month from the sales according to the nu
 **Example**: If your customer makes a purchase on January 1 deferred to 6 months, from the date of purchase the amount of money will be pay corresponding to the installments during 6 months.
 
 #### Check your received payments
- 
 1. You can check your received payments in the _**Reports**_ module and clicking on _**Paid Payments**_.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias1-pt.png)
  
-2.According to the accreditation model and the parameters that you have configured in your account, the report allows you to filter by:
+2. According to the accreditation model and the parameters that you have configured in your account, the report allows you to filter by:
 * _**Account**_: Allows you to select the account with which you want to query received payments.
 * _**Accreditation model**_: Allows you to select between the two available accreditation models to perform the query, which in this case is by quotas.
 * _**Date range**_: You can define the date range in which you want to query. The query limit is 3 months between the entered dates.

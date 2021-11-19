@@ -1,11 +1,11 @@
 ---
-title: "Integration settings"
-linkTitle: "Integration settings"
+title: "Configurar integración"
+linkTitle: "Configurar integración"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   Get the integration settings displayed in the Módulo Administrativo.
-weight: 27
+   Obten las configuraciones de integración mostradas en el Módulo Administrativo.
+weight: 28
 nosidetoc: true
 ---
 
@@ -13,39 +13,43 @@ nosidetoc: true
 Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
-## Technical information
-This section contains the necessary information to perform the technical integration of your website with our transaction platform.
+## Información técnica
+En esta sección encontrarás la información necesaria para realizar la integración técnica de tu página web con nuestra plataforma transaccional.
 
-1. You can see this information by accessing the _**Configuration**_ menu and clicking _**Technical Settings**_.
+1. Podrás ver esta información ingresando al menú _**Configuración**_, haciendo clic sobre la opción _**Información técnica**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/tecnica1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/tecnica1-es.jpg)
 
-You will find the following technical data:
+Los siguientes son los datos técnicos que encontrarás:
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/tecnica2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/tecnica2-es.jpg)
 
-2. You will be able to charge your logo clicking on the _**search image**_ button.
+2. Podrás realizar en cambio de tu logo haciendo clic en el botón buscar imagen.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/tecnica3-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/tecnica3-es.jpg)
  
-## Account settings
-In this section, you can configure technical properties belonging to each active account as:
-* URL settings for confirmation and response pages.
-* Enable the option of sending emails to the buyer and to your store when a sale takes place.
-* Define a unique reference number for each sale you make through your website.
+## Configuración de cuentas
+En esta sección podrás configurar propiedades técnicas pertenecientes a cada cuenta activa como:
+* La configuración de URLs para las páginas de Respuesta y Confirmación
+* Habilitar las opciones de envío de correos al comprador y a tu comercio al momento de realizar una venta.
+* Definir un número de referencia único para cada venta que realices a través de tu página web.
 
-You can see this information by accessing the _**Configuration**_, menu and clicking on _**Account Settings**_.
+Podrás ver esta información ingresando al menú _**Configuración**_, haciendo clic sobre la opción _**Configuración Cuentas**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/configuracion1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/configuracion1-es.jpg)
 
-You will find the properties you can set:
-* _**Choose the account**_: You must choose the account to activate the particular configuration. Choosing it will display the country which corresponds with that account.
-* _**Response URL**_: The page to which the buyer will be direct once the transaction in PayU ends. This page will display the status of the transaction.
-* _**Confirmation URL**_: The page to which PayU will send the payment confirmation to your system in order to update inventory and database once the transaction reaches its final state. This page is not mandatory.
-* _**Email to the buyer**_: By enabling this option, PayU will send an email from to the buyer confirming if the payment was approved or rejected.
-* _**Email to the seller**_: Enabling this option will send an email from PayU to your shop, confirming if the payment was approved or rejected.
-* _**Sending confirmation page**_: Enabling this option will send the payment confirmation to the configured confirmation page once the transaction reaches its final state.
-* _**Validate unique reference**_: Enabling this option will validate that each payment reference sent to our system is unique. If the checkbox is unmarked, you will be able to send the same reference for all your sales. This function is useful if you want to control subjects like billing, inventories or to identify the orders sent from your store to PayU.
-* _**Transaction in test mode**_: When you enable this option, the transactions made through your website or through payment request, will be marked as a test and payment will not be real. You must disable this option when you want to start receiving actual payments.
+Encontrarás las propiedades que puedes configurar:
+* _**Seleccionar la cuenta**_: Debes elegir la cuenta para hacer la respectiva configuración, al elegirla se mostrará el país correspondiente a dicha cuenta.
+* _**URL respuesta**_: Es la página a la cual será direccionado el comprador una vez finaliza la transacción en PayU, en esta página se mostrará el estado de la transacción.
+* _**URL confirmación**_: Es la página a la cual PayU enviará la confirmación del pago a tu sistema con el fin de actualizar inventarios y bases de datos una vez la transacción llegue a su estado final. Esta página no es obligatoria.
+* _**Email al comprador**_: Al habilitar esta opción se enviará desde PayU un correo al comprador, confirmando si el pago fue aprobado o rechazado.
+* _**Email al vendedor**_: Al habilitar esta opción se enviará desde PayU un correo a tu comercio, confirmando si el pago fue aprobado o rechazado.
+* _**Habilitar página de confirmación**_: Al habilitar esta opción se enviará la confirmación del pago a la página de confirmación configurada una vez la transacción llegue a su estado final.
+* _**Validar referencia única**_: Al habilitar esta opción PayU validará que la referencia de cada pago enviado a nuestro sistema sea única. Si la casilla se encuentra desactivada, podrás enviar una misma referencia para todas tus ventas. Esta función es útil si se desea controlar temas como facturación, inventarios o para identificar las órdenes enviadas desde tu tienda a PayU.
+* _**Transacción en modo de pruebas**_: Al habilitar esta opción las transacciones que se realicen, a través de tu sitio web o por medio de solicitud de pago, se marcarán como de prueba y el pago no será real. Es necesario deshabilitar esta casilla cuando quieras empezar a recibir pagos reales.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar8-en.jpg)
+{{% alert title="Salir del modo de pruebas" color="info"%}}
+Una vez tu cuenta sea activada podrás desmarcar la opción de _**Modo de pruebas**_ en tu Módulo Administrativo, de esta forma podrás realizar transacciones reales a través de tu cuenta PayU. Ingresado en la pestaña _**Configuración**_ opción _**Configuración cuentas**_.
+
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar8-es.jpg)
+{{% /alert %}}

@@ -5,7 +5,7 @@ date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
    Update the user information displayed in the Merchant panel.
-weight: 26
+weight: 27
 ---
 
 {{% alert title="Note" color="warning"%}}
@@ -25,6 +25,7 @@ In this section, you can change the password used to enter your administrative m
  
 ## Contact information
 In this section, you can view the contact data used to create your PayU account. For your security you cannot change some of this information. Therefore, should you need to change any of the data, please send a request to sac@payulatam.com.
+
 You can see this information by accessing the _**Configuration**_ menu by clicking on _**Contact information**_.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contacto1-en.jpg)
@@ -53,6 +54,7 @@ This tab allows you to update the information that describes your sales, (the al
   
 ## Time and currency format
 In this section you can change the display settings of the information on your administrative module, and you can change the date format, time zone of your country and the scoring format for the currency values.
+
 You can see this information by accessing the _**Settings**_ menu, by clicking on the _**Information Format**_ option.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato1-en.jpg)

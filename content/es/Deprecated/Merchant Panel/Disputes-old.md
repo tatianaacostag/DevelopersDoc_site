@@ -1,10 +1,10 @@
 ---
-title: "Disputes"
-linkTitle: "Disputes"
+title: "Disputas"
+linkTitle: "Disputas"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   This module is a tool that you can find in the Administrative module to manage dispute processes generated in your PayU account. Find all necessary information and the steps to follow to validate performed charges.
+   Esta es una herramienta que puedes encontrar en el Módulo administrativo que te sirve para gestionar procesos de disputa que se generen con tu cuenta PayU. Encuentra toda la información necesaria y los pasos a seguir para validar los cobros efectuados.
 weight: 26
 ---
 
@@ -12,105 +12,113 @@ weight: 26
 Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contracargos.png)
+
 {{% alert title="Nota" color="info"%}}
-Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance, therefore you cannot transfer funds from this balance to your bank account until the dispute is resolved.
+Una vez que una transacción es parte de una disputa, el monto asociado pasa a formar parte del saldo congelado, por lo tanto no podrás realizar transferencias de dicho saldo a tu cuenta bancaria hasta tanto no se resuelva la disputa.
+
+Si deseas ver un demo de la herramienta y conocer más sobre el Módulo de disputas y cómo puede ayudarte a disminuir los contracargos te invitamos al visitar el video en nuestro canal el YouTube con las memorias del webinar sobre contracargos
+
+[Ver webinar](https://www.youtube.com/watch?v=VK64Ma6WsyI)
 {{% /alert %}}
 
-## What is a dispute?
-A dispute begins when a buyer does not acknowledge to the bank a charge made to his credit card. Once the bank is notified, the formal process begins to determine the validity of the purchase.
+## ¿Qué es una disputa?
+Una disputa se inicia cuando un comprador desconoce ante el banco un cargo realizado a su tarjeta de crédito. Una vez notificado el banco, se inicia el proceso formal para determinar la validez de la compra efectuada.
 
-## Motives of dispute
-There are several reasons that can cause a purchaser to not acknowledge a charge on his credit card. The reasons for starting a dispute process may vary. Some of which have been identified are:
-* _**Fraud**_: Disputes are classified as fraud when an unauthorized person made purchases with a credit card. This kind of dispute can happen if the card was lost or stolen.
-* _**Not acknowledging payment**_: the brand or shop name which appears in the credit card statement is not recognized by the cardholder.
-* _**Product not delivered**_: the cardholder states that he has not received the product or service covered by the charges made to his credit card.
-* _**Product not acceptable**_: The cardholder claims not to have received the product or service under the expected conditions.
-* Duplicate: The cardholder indicates that the charge made for the purchase of a product or service was applied more than once to his credit card.
-* _**Amount does not match**_: The charge to the credit card does not match the value of the purchase.
-* _**Not reported by the entity**_: On many occasions the bank or processing network initiates a dispute process without a specific reason.
+## Motivos de disputa
+Existen varias razones que pueden llevar a un comprador a desconocer un cargo en su tarjeta de crédito. Los motivos por los que se inicia un proceso de disputa pueden variar. Algunos de los que se han identificado son los siguientes:
+* _**Fraude**_: Las disputas se determinan como fraude cuando una persona no autorizada realizó compras con una tarjeta de crédito. Este tipo de disputa puede suceder si la tarjeta fue robada o extraviada.
+* _**Desconocimiento de pago**_**_: La marca o el nombre del comercio que se refleja en el extracto de la tarjeta de crédito no es reconocida por el tarjetahabiente.
+* _*Producto no entregado**_: el tarjetahabiente indica que no ha recibido el producto o servicio objeto del cargo realizado a su tarjeta de crédito.
+* _**Producto no aceptable**_: el tarjetahabiente alega no haber recibido el producto o servicio en las condiciones esperadas.
+* _**Duplicado**_: el tarjetahabiente indica que el cargo realizado por la compra de un producto o servicio se aplicó más de una vez a su tarjeta de crédito.
+* _**Monto no corresponde**_: El cargo realizado a la tarjeta de crédito no corresponde con el valor de la compra.
+* _**No informado por la entidad**_: En muchas ocasiones el banco o la red procesadora inicia un proceso de disputa sin tener un motivo específico.
  
 ## ¿Cómo funciona?
 
-### 1. Dispute notification
-When PayU is notified by the bank that a dispute process has been launched, you automatically will receive an email with the details of that process.
+### 1. Notificación de una disputa
+Cuando PayU es notificado por parte del banco que se ha iniciado un proceso de disputa, automáticamente recibirás un email con la información de dicho proceso.
 
 <div style="display: flex;">
   <div style="float: left;width: 50%;">
-    <p style="text-align: center">Email that you receive when the dispute begins</p>
+    <p style="text-align: center">Email que te notifica el inicio de una disputa</p>
     <p><img src="https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-notificacion-es.png" alt="PrintScreen"/></p>
   </div>
   <div style="float: left;width: 50%;">
-    <p style="text-align: center">Email that your buyer receives</p>
-    <p><img src="https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-notificacioncomprador-en.png" alt="PrintScreen"/></p>
+    <p style="text-align: center">Email que pueden ver tus compradores</p>
+    <p><img src="https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-notificacioncomprador-es.png" alt="PrintScreen"/></p>
   </div>
 </div>
 <br>
 
-We also send a POST with all the information of the dispute to any URL you may set on your administrative module. This way you can automate your dispute management processes to minimize the risk of a possible chargeback.
+Igualmente enviamos un POST con toda la información de la disputa a cualquier URL que configures desde tu módulo administrativo. De esta manera puedes automatizar tus procesos de gestión de disputas para minimizar el riesgo de un posible contracargo.
 
-You can set the URL where we will make the notification in the administrative module by clicking on the _**settings**_ menu in the _**account setup**_ option, define the dispute notification url and enabling the notification box.
+Puedes configurar la URL en donde realizaremos la notificación dentro del módulo administrativo haciendo click en el menú _**configuración**_ en la opción _**configuración de cuentas**_, defines la url de notificación de disputas y habilitando la casilla de notificación.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas1-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas1-es.png)
 
-### 2. Queries through the Administrative module
-You can view and manage your dispute processes from your administrative module, in the _**Dispute**_ menu.
+Una vez realices este proceso, recibirás automáticamente un POST con toda la información del proceso de disputa iniciado. Igualmente recibirás una notificación POST cada vez que el proceso de disputa sufra una actualización, de esta manera estarás enterado del avance y finalización de dicho proceso.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas2-en.png)
+### 2. Consultas a través del módulo administrativo
+Puedes consultar y gestionar tus procesos de disputa desde tu módulo administrativo. En el menú _**disputas**_.
 
-### 3. Provide evidence
-It is important to always respond to a dispute by providing evidence before the deadline stipulated by the bank. Following completion of the deadline, it will not be possible to upload the corresponding evidence for a dispute.
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas2-es.png)
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas3-en.png)
+### 3. Proporciona evidencias
+Es importante que siempre respondas proporcionando evidencia para una disputa antes de la fecha límite estipulada por el banco. Una vez cumplida la fecha máxima no será posible cargar la evidencia correspondiente para una disputa.
 
-To upload evidence that allows us to handle the difference with the bank or the processing network, you must click on the dispute, where you will see all the details of the process. You will find the _**Upload evidence**_ button there, select the files you think can be useful to contest the dispute and press the _**save**_ button.
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas3-es.png)
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas4-en.png)
+Para cargar evidencia que nos permita gestionar frente al banco o la red procesadora, debes hacer clic sobre una disputa, esto te llevará al detalle de la disputa. Allí encontrarás el botón _**cargar evidencia**_, selecciona el archivo que creas puede ser útil para pelear por la disputa y presiona el botón _**guardar**_.
 
-To minimize the likelihood that a chargeback is generated, you can provide the following evidence for a dispute to us:
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas4-es.png)
 
-* Proof of delivery of the product and / or service signed by the cardholder.
-* Bill of sale of the product or service.
-* Payment acceptance letter signed by the cardholder, annexing ID card of the same.
-* Other media which validate the purchase.
+Para minimizar la probabilidad de generación de un contracargo puedes proporcionarnos las siguientes evidencias para una disputa:
+
+* Comprobante de entrega del producto y/o servicio firmado por el tarjeta-habiente.
+* Factura de Venta del producto o servicio.
+* Carta de aceptación de pago firmada por el tarjeta-habiente anexando documento de identificación del mismo.
+* Otros soportes que validen la compra.
 
 {{% alert title="Nota" color="info"%}}
-You must check that the response deadline has not been met, in this case you will not be able to upload evidence.
+Debes fijarte que no se haya cumplido la fecha máxima de respuesta, en este caso no vas a poder cargar evidencia, las fechas máximas de respuesta por país son:
 
-| Country | Days given to provide evidences |
+| País | Cantidad de días para enviar evidencias |
 |---|---|
-| Argentina | 5 work days |
-| Brazil | 5 work days |
-| Chile | 5 work days |
-| Colombia | 2 work days |
-| Mexico | 5 calendar days |
-| Peru | 2 work days |
-| Panama | 8 work days |
+| Argentina | 5 días hábiles |
+| Brasil | 5 días hábiles |
+| Chile | 5 días hábiles |
+| Colombia | 2 días hábiles |
+| México | 5 días calendario |
+| Perú | 2 días hábiles |
+| Panamá | 8 días hábiles |
 
 {{% /alert %}}
 
-### 4. Final decision on dispute status.
-Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The case of dispute can be: won (without chargeback), lost (chargeback) or refund. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.
-When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.
+### 4. Decisión final sobre el estado de la disputa
+Una vez proporcionada la evidencia, enviamos los documentos al banco emisor o la red que procesó la transacción, de quien depende la resolución del caso. El caso de disputa puede resultar: ganado (sin contracargo), perdido (contracargo) o reembolso. En el caso de reembolsos, el comercio es quién hace la devolución al comprador y el banco no genera el contracargo.
+Cuando la entidad financiera comunica el resultado de la disputa, el caso se actualiza automáticamente en el módulo administrativo y PayU envía un POST a la URL configurada con la información del resultado final.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-resultado-en.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-resultado-es.png)
 
-## States according to the dispute’s course
-When a dispute is reported, a dispute entity for the associated transaction is created.
+## Estados según el flujo de una disputa
+Cuando se notifica una disputa, se crea una entidad disputa para la transacción asociada.
 
-The dispute status changes according to the point where it is within the course of the process.
+El estado de la disputa cambia según el punto en que se encuentre dentro del flujo del proceso.
 
-States of a dispute:
+Estados de una disputa:
 
-| State | Descripción |
+| Estado | Descripción |
 |---|---|
-| Notified | When a dispute process begins, you must upload the evidence for the dispute. |
-| In review | When the shop provides evidence for a dispute through the administrative module and the dispute comes under review by the bank. |
-| Lost | The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost. |
-| Won | The dispute process is resolved in favor of the shop, there are no deductions of any kind. |
-| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. To resolve a dispute as refund you have to request it at disputas@payulatam.com |
+| Notificada | Cuando se inicia un proceso de disputa, debes cargar evidencia para la disputa. |
+| En revisión | Cuando el comercio proporciona evidencia para una disputa desde el módulo administrativo y la disputa entra en revisión por parte de la entidad financiera. |
+| Perdida | La transacción es reversada desde la cuenta virtual del comercio y puede incurrir en un costo de gestión de contracargo. |
+| Ganada: | El proceso de disputa se resuelve a favor del comercio, no hay deducciones de ningún tipo. |
+| Reembolsada | Existen disputas que pueden ser reversadas ya que aún no ha sido facturado el monto en la tarjeta de crédito del tarjetahabiente. Se genera reversión de la transacción, pero no existe cobro por contracargo. Para resolver una disputa como reembolso debes solicitarlo a disputas@payulatam.com |
 
-{{% alert title="Tips for managing your disputes" color="info"%}}
-* If you have the cardholder’s data, the best way to manage a dispute process is contacting her. If the reason for the dispute is simple ignorance, you can ask the cardholder to call her bank to withdraw the complaint and so the dispute process is resolved in your favor, anyway you should provide any evidence you see fit from your administrative module.
-* It is very important that the deadline for the answer is not over or you will not be able to upload any evidence, if you do not send the evidence in time, the chances that chargebacks are generated and the money in your PayU account is debited will increase.
-* Files loaded in the evidence section should not be larger than 10MB. You can upload files such as .JPG .TIFF .GIF .PNG .PDF .DOC or .PPT.
+{{% alert title="Tips para gestionar tus disputas" color="info"%}}
+* Si cuentas con los datos del tarjetahabiente, la mejor forma para gestionar un proceso de disputa es contactándolo. Si el motivo de la disputa es simplemente desconocimiento, puedes pedirle al tarjetahabiente que hable con su banco para que retire la queja y se resuelva el proceso de disputa a tu favor, igualmente debes proporcionar cualquier evidencia que creas conveniente desde tu módulo administrativo.
+* Es muy importante que no se haya cumplido la fecha máxima de respuesta o no podrás cargar ninguna evidencia, si no envías las evidencias a tiempo aumentarán las posibilidades de que se generen contracargos y se debite el dinero de tu cuenta PayU.
+* Los archivos a cargar en la sección de evidencias no deben tener un peso superior a 10 MB. Puedes subir archivos tipo .JPG .PNG .GIF .TIFF .PDF .DOC o .PPT.
 {{% /alert %}}
