@@ -27,13 +27,7 @@
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This article has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/docs/services/payments.html&#34;&gt;Payments&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+Recurring payments has been deprecated and it is not offered for commerces.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;how-does-it-work&#34;&gt;How does it work?&lt;/h2&gt;
@@ -48,7 +42,8 @@ Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/st
 &lt;p&gt;To ensure proper use of the system, all requests must contain the HTTP authorization header with the shop’s credentials, so that it can be identified who is making the request. For this implementation basic authorization will be used, where the username (API Login) and password (API Key) are sent.&lt;/p&gt;
 &lt;p&gt;These are the data to be sent in the header of the request: The data pass an encrypted base 64 with the format: &lt;code&gt;API Login : API Key&lt;/code&gt;&lt;br&gt;
 For example, if the API Login is &lt;code&gt;0123ABCDEF&lt;/code&gt; and the API Key is &lt;code&gt;A1B2C3D4E5&lt;/code&gt;, then the Authorization header would be:&lt;/p&gt;
-&lt;p&gt;Authorization: &lt;code&gt;Basic &amp;lt;base64 of 0123ABCDEF:A1B2C3D4E5&amp;gt; Authorization: Basic MDEyM0FCQ0RFRjpBMUIyQzNENEU1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Authorization: &lt;code&gt;Basic &amp;lt;base64 of 0123ABCDEF:A1B2C3D4E5&amp;gt;&lt;/code&gt;
+Authorization: &lt;code&gt;Basic MDEyM0FCQ0RFRjpBMUIyQzNENEU1&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;POST /payments-api/4.0/service.cgi HTTP/1.1
 Host: sandbox.api.payulatam.com
 Content-Type: application/json; charset=utf-8
@@ -4671,13 +4666,7 @@ Authorization: Basic MDEyM0FCQ0RFRjpBMUIyQzNENEU1
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This feature has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;Tokenization SDK&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/docs/services/payments.html&#34;&gt;Payments&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+Recurring payments has been deprecated and it is not offered for new commerces.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;how-does-it-work&#34;&gt;How does it work?&lt;/h2&gt;
@@ -4777,7 +4766,7 @@ Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/st
 &lt;tr&gt;
 &lt;th&gt;URL&lt;/th&gt;
 &lt;th&gt;Method&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -5239,7 +5228,7 @@ Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/st
 &lt;tr&gt;
 &lt;th&gt;URL&lt;/th&gt;
 &lt;th&gt;Method&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -5520,9 +5509,6 @@ Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/st
 
 	&lt;br&gt;
 &lt;p&gt;Example request:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-HTTP&#34; data-lang=&#34;HTTP&#34;&gt;&lt;span style=&#34;color:#a40000&#34;&gt;GET https://api.payulatam.com/payments-api/rest/v4.3/customers/2mkls9xekm
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;p&gt;Response body:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;$parameters&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;
 	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Enter the costumer name here.
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;PayUParameters&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;CUSTOMER_ID&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;24978c6l3e&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -5655,7 +5641,7 @@ Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/st
 &lt;tr&gt;
 &lt;th&gt;URL&lt;/th&gt;
 &lt;th&gt;Method&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -6161,7 +6147,7 @@ Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/st
 &lt;tr&gt;
 &lt;th&gt;URL&lt;/th&gt;
 &lt;th&gt;Methods&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -7086,7 +7072,7 @@ Recurring payments is only available for accounts in &lt;strong&gt;Brazil&lt;/st
 &lt;tr&gt;
 &lt;th&gt;URL&lt;/th&gt;
 &lt;th&gt;Methods&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;

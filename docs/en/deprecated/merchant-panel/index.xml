@@ -103,7 +103,7 @@ If the bank account is not located in the country where you created your account
 &lt;p&gt;If a correction in any document is necessary, PayU will let you know through an email, you can change the documents clicking on the edit button.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar12-en.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;After the validation of the data, you will receive an email telling you we have successfully activated of your account..&lt;/li&gt;
+&lt;li&gt;After the validation of the data, you will receive an email telling you we have successfully activated of your account.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar11-en.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 
@@ -132,12 +132,7 @@ If the bank account is not located in the country where you created your account
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This article has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/payu-module-documentation/reports/financial-statement.html&#34;&gt;Financial Statement&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+This article has been deprecated and it is not offered for new commerces.
 &lt;/div&gt;
 
 &lt;p&gt;You can identify your accounts with the &lt;em&gt;&lt;strong&gt;Account Id&lt;/strong&gt;&lt;/em&gt; which is found next to the country&amp;rsquo;s image.&lt;/p&gt;
@@ -189,12 +184,7 @@ If the bank account is not located in the country where you created your account
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This article has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/transfers.html&#34;&gt;Transfers  in the PayU Module&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+This article has been deprecated and it is not offered for new commerces.
 &lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias1-en.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
@@ -274,12 +264,7 @@ If your PayU account was registered in Brazil and you wish to transfer funds to 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This article has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/payu-module-documentation/reports.html&#34;&gt;Reports  in the PayU Module&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+This article has been deprecated and it is not offered for new commerces.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;orders-report&#34;&gt;Orders report&lt;/h2&gt;
@@ -378,8 +363,8 @@ The data of the buyer and the payer may differ because the person placing the or
 &lt;/details&gt;
 &lt;br&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Response Code&lt;/strong&gt;&lt;/em&gt;: Displays a list of possible response codes a transaction may have and allows you to filter the query with a specific code.
-Transaction type: You can choose the type of transaction related with an order.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Response Code&lt;/strong&gt;&lt;/em&gt;: Displays a list of possible response codes a transaction may have and allows you to filter the query with a specific code.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Transaction type&lt;/strong&gt;&lt;/em&gt;: You can choose the type of transaction related with an order.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;details&gt;
 &lt;summary&gt;Transaction types&lt;/summary&gt;
@@ -405,7 +390,7 @@ Transaction type: You can choose the type of transaction related with an order.&
 &lt;h2 id=&#34;graphic-report&#34;&gt;Graphic report&lt;/h2&gt;
 &lt;p&gt;This option allows you to generate graphs with information of sales or transactions processed over a period of time.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;You can access this feature in the &lt;em&gt;&lt;strong&gt;Reports&lt;/strong&gt;&lt;/em&gt; menu by clicking on the &lt;em&gt;&lt;strong&gt;Graphic Report&lt;/strong&gt;&lt;/em&gt; option..&lt;/li&gt;
+&lt;li&gt;You can access this feature in the &lt;em&gt;&lt;strong&gt;Reports&lt;/strong&gt;&lt;/em&gt; menu by clicking on the &lt;em&gt;&lt;strong&gt;Graphic Report&lt;/strong&gt;&lt;/em&gt; option.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/grafico1-en.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
@@ -501,12 +486,14 @@ If you want to consult transfers made to accounts that do not belong to your sho
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias4-pt.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;The report allows filtering by:
-Account: Select the account from which you want to query outstanding payments.
-Accreditation model: Select between the two available accreditation models to perform the query, in this case D + X days.
-Date Range: You can define the date range in which you want to query. The query limit is 3 months between the entered dates.
-Output format: Displays the result of the query on the screen when you choose the HTML format, or export the results to an CSV file.&lt;/li&gt;
+&lt;li&gt;The report allows filtering by:&lt;/li&gt;
 &lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/em&gt;: Select the account from which you want to query outstanding payments.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Accreditation model&lt;/strong&gt;&lt;/em&gt;: Select between the two available accreditation models to perform the query, in this case D + X days.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Date Range&lt;/strong&gt;&lt;/em&gt;: You can define the date range in which you want to query. The query limit is 3 months between the entered dates.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Output format&lt;/strong&gt;&lt;/em&gt;: Displays the result of the query on the screen when you choose the HTML format, or export the results to an CSV file.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias5-pt.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;The report will show the date of the transaction, the date of accreditation of the sale, the remaining days, and the most important data relating to the transaction such as the Order ID related to the transaction, the reference, the value of the sale and value of interest of the transaction.&lt;/li&gt;
@@ -520,7 +507,9 @@ Output format: Displays the result of the query on the screen when you choose th
 &lt;li&gt;You can check your received payments in the &lt;em&gt;&lt;strong&gt;Reports&lt;/strong&gt;&lt;/em&gt; module and clicking on &lt;em&gt;&lt;strong&gt;Paid Payments&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias1-pt.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
-&lt;p&gt;2.According to the accreditation model and the parameters that you have configured in your account, the report allows you to filter by:&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;According to the accreditation model and the parameters that you have configured in your account, the report allows you to filter by:&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/em&gt;: Allows you to select the account with which you want to query received payments.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Accreditation model&lt;/strong&gt;&lt;/em&gt;: Allows you to select between the two available accreditation models to perform the query, which in this case is by quotas.&lt;/li&gt;
@@ -576,12 +565,7 @@ If your account has a reserve fund, a percentage of this will be held during the
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This article has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/refunds-mp.html&#34;&gt;Refunds in the PayU Module&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+This article has been deprecated and it is not offered for new commerces.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;what-is-a-refund&#34;&gt;What is a refund?&lt;/h2&gt;
@@ -679,14 +663,10 @@ If the transaction awaits a dispute, the system will indicate that the request i
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This article has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Disputes in the PayU Module&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+This article has been deprecated and it is not offered for new commerces.
 &lt;/div&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contracargos-en.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -852,12 +832,7 @@ When the bank announces the dispute’s outcome, the case is automatically updat
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This article has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html&#34;&gt;Update my information in the PayU Module&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+This article has been deprecated and it is not offered for new commerces.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;change-password&#34;&gt;Change password&lt;/h2&gt;
@@ -871,8 +846,8 @@ When the bank announces the dispute’s outcome, the case is automatically updat
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/clave2-en.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;contact-information&#34;&gt;Contact information&lt;/h2&gt;
-&lt;p&gt;In this section, you can view the contact data used to create your PayU account. For your security you cannot change some of this information. Therefore, should you need to change any of the data, please send a request to &lt;a href=&#34;mailto:sac@payulatam.com&#34;&gt;sac@payulatam.com&lt;/a&gt;.
-You can see this information by accessing the &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt; menu by clicking on &lt;em&gt;&lt;strong&gt;Contact information&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In this section, you can view the contact data used to create your PayU account. For your security you cannot change some of this information. Therefore, should you need to change any of the data, please send a request to &lt;a href=&#34;mailto:sac@payulatam.com&#34;&gt;sac@payulatam.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can see this information by accessing the &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt; menu by clicking on &lt;em&gt;&lt;strong&gt;Contact information&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contacto1-en.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;bank-data&#34;&gt;Bank data&lt;/h2&gt;
 &lt;p&gt;In this section you will find the information you need to login to make the money transfer from your virtual PayU account to your bank account.&lt;/p&gt;
@@ -895,8 +870,8 @@ You can see this information by accessing the &lt;em&gt;&lt;strong&gt;Configurat
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ventas2-en.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;time-and-currency-format&#34;&gt;Time and currency format&lt;/h2&gt;
-&lt;p&gt;In this section you can change the display settings of the information on your administrative module, and you can change the date format, time zone of your country and the scoring format for the currency values.
-You can see this information by accessing the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; menu, by clicking on the &lt;em&gt;&lt;strong&gt;Information Format&lt;/strong&gt;&lt;/em&gt; option.&lt;/p&gt;
+&lt;p&gt;In this section you can change the display settings of the information on your administrative module, and you can change the date format, time zone of your country and the scoring format for the currency values.&lt;/p&gt;
+&lt;p&gt;You can see this information by accessing the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; menu, by clicking on the &lt;em&gt;&lt;strong&gt;Information Format&lt;/strong&gt;&lt;/em&gt; option.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/formato1-en.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Time zone format&lt;/strong&gt;&lt;/em&gt;: With this option you can change the time zone of the country in which you want to display the transaction’s information.&lt;/li&gt;
@@ -927,12 +902,7 @@ You can see this information by accessing the &lt;em&gt;&lt;strong&gt;Settings&l
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-&lt;p&gt;This article has been deprecated and it is not offered for new commerces.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Related topics&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34;&gt;Technical Configuration in the PayU Module&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
+This article has been deprecated and it is not offered for new commerces.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;technical-information&#34;&gt;Technical information&lt;/h2&gt;

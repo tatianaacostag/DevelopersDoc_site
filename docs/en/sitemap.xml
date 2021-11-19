@@ -28,19 +28,49 @@
                 />
   </url><url>
     <loc>/en/deprecated/recurring-payments.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/recurring-payments.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/recurring-payments.html"
+                />
   </url><url>
     <loc>/en/deprecated/recurring-payments/recurring-payments-api.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/recurring-payments/recurring-payments-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/recurring-payments/recurring-payments-api.html"
+                />
   </url><url>
     <loc>/en/deprecated/recurring-payments/recurring-payments-sdk.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/recurring-payments/recurring-payments-sdk.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/recurring-payments/recurring-payments-sdk.html"
+                />
   </url><url>
     <loc>/en/payu-module-documentation/getting-started/log-in.html</loc>
     <lastmod>2021-09-29T17:40:24-05:00</lastmod>
@@ -323,9 +353,19 @@
                 />
   </url><url>
     <loc>/en/deprecated/merchant-panel.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel.html"
+                />
   </url><url>
     <loc>/en/payu-module-documentation/reports/transfer-report.html</loc>
     <lastmod>2021-11-08T17:41:32-05:00</lastmod>
@@ -748,44 +788,124 @@
                 />
   </url><url>
     <loc>/en/deprecated/merchant-panel/account-activation.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel/account-activation.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel/account-activation.html"
+                />
   </url><url>
     <loc>/en/deprecated/merchant-panel/checking-balance.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel/checking-balance.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel/checking-balance.html"
+                />
   </url><url>
     <loc>/en/deprecated/merchant-panel/transfers-old.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel/transfers-old.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel/transfers-old.html"
+                />
   </url><url>
     <loc>/en/deprecated/merchant-panel/reports-old.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T15:23:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel/reports-old.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel/reports-old.html"
+                />
   </url><url>
     <loc>/en/deprecated/merchant-panel/refunds-old.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T15:23:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel/refunds-old.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel/refunds-old.html"
+                />
   </url><url>
     <loc>/en/deprecated/merchant-panel/disputes-old.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T15:23:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel/disputes-old.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel/disputes-old.html"
+                />
   </url><url>
     <loc>/en/deprecated/merchant-panel/update-my-data.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T15:23:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel/update-my-data.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel/update-my-data.html"
+                />
   </url><url>
     <loc>/en/deprecated/merchant-panel/integration-settings.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T15:23:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated/merchant-panel/integration-settings.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated/merchant-panel/integration-settings.html"
+                />
   </url><url>
     <loc>/en/payu-module-documentation/reports/financial-statement.html</loc>
     <lastmod>2021-11-08T17:41:32-05:00</lastmod>
@@ -1608,9 +1728,19 @@
                 />
   </url><url>
     <loc>/en/deprecated.html</loc>
-    <lastmod>2021-11-18T17:29:12-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/deprecated.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/deprecated.html"
+                />
   </url><url>
     <loc>/en/docs.html</loc>
     <lastmod>2021-11-08T17:41:32-05:00</lastmod>
@@ -1633,7 +1763,7 @@
                 />
   </url><url>
     <loc>/en/payu-module-documentation.html</loc>
-    <lastmod>2021-11-04T12:04:46-05:00</lastmod>
+    <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
