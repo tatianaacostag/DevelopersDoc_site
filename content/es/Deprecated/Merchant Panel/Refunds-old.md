@@ -8,8 +8,8 @@ Description: >
 weight: 25
 ---
 
-{{% alert title="Note" color="warning"%}}
-This article has been deprecated and it is not offered for new commerces.
+{{% alert title="Nota" color="warning"%}}
+Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
 ## What is a refund?

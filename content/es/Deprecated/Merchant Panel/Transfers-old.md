@@ -8,8 +8,8 @@ Description: >
 weight: 23
 ---
 
-{{% alert title="Note" color="warning"%}}
-This article has been deprecated and it is not offered for new commerces.
+{{% alert title="Nota" color="warning"%}}
+Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias1-en.png)
@@ -49,7 +49,7 @@ This function enables you to manage (create, edit and delete) the details of thi
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/en/transferencias6-en.png)
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 **If your account is registered in Brazil:**
 If your PayU account was registered in Brazil and you wish to transfer funds to banks in other countries, you must select the appropriate account and date range. Our system will calculate the balance that can be transferred based on the transactions made during this timeframe.
 {{% /alert %}}

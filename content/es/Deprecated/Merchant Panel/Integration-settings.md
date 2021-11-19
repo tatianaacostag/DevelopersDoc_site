@@ -4,13 +4,13 @@ linkTitle: "Integration settings"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   Get the integration settings displayed in the Merchant panel.
+   Get the integration settings displayed in the Módulo Administrativo.
 weight: 27
 nosidetoc: true
 ---
 
-{{% alert title="Note" color="warning"%}}
-This article has been deprecated and it is not offered for new commerces.
+{{% alert title="Nota" color="warning"%}}
+Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
 ## Technical information

@@ -17,81 +17,81 @@ To activate your personal account follow these simple steps:
 
 1. You must enter your administrative module by clicking on the _**Activate your account**_ tab.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar1-en.jpg)
 
 2. We will ask you about your sales in order to learn more about your economic activity.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar2-en.jpg)
 
 3. You can register the bank account where we will transfer the money from your sales.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar2-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar2-en.jpg)
 
 {{% alert title="Note" color="info"%}}
 If the bank account does not belong to the country where you created your account, PayU will show a different menu.
 {{% /alert %}}
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar2a-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar2a-en.jpg)
 
 4. You must attach the images of the required documents. The supported formats are: .txt, .png, .tiff, .jpg, .pdf, or .doc The most important documents in the account activation process are:
 
 * Copy of your ID.
 * A bank statement certifying that the bank account is in the name of the person who registered the account in PayU.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar9-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar9-en.jpg)
 
 5. You will receive an email confirming that you have sent the documents. Additionally we will inform you how long it will take to process.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar5-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar5-en.jpg)
 
 If a correction in any document is necessary, PayU will let you know through an email, you can change the documents clicking on the edit button.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar12-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar12-en.jpg)
 
 6. After the validation of the data, you will receive an email telling you we have successfully activated of your account.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar11-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar11-en.jpg)
 
 ## Activate my business account
 To activate your business account you must follow these simple steps:
 
 1. You must enter your administrative module by clicking on the _**Activate your account**_ tab.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar1a-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar1a-en.jpg)
 
 2. We will ask you about your sales in order to learn more about your economic activity.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar10-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar10-en.jpg)
 
 3. You can register the bank account to which we will transfer funds from your sales.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar3-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar3-en.jpg)
 
 {{% alert title="Note" color="info"%}}
 If the bank account is not located in the country where you created your account, PayU will show a different menu.
 {{% /alert %}}
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar2a-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar2a-en.jpg)
 
 4. You must attach the images of the required documents, the supported formats are: .txt, .png, .tiff, .jpg, .pdf, or.doc
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar4-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar4-en.jpg)
 
 5. You will receive an email confirming that you have sent the documents. Additionally, we will inform you how long it will take process them.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar5-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar5-en.jpg)
 
 If a correction in any document is necessary, PayU will let you know through an email, you can change the documents clicking on the edit button.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar12-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar12-en.jpg)
 
-6. After the validation of the data, you will receive an email telling you we have successfully activated of your account..
+6. After the validation of the data, you will receive an email telling you we have successfully activated of your account.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar11-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar11-en.jpg)
 
 {{% alert title="Getting out of the test mode" color="info"%}}
 Once your account is active, you must uncheck the _**Test mode**_ in your administrative module. This way you can make real transactions through your PayU account. Enter the _**Configuration**_ tab, and click _**Account configuration**_.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/activar8-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/activar8-en.jpg)
 
 {{% /alert %}}

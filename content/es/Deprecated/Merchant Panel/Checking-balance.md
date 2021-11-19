@@ -1,27 +1,27 @@
 ---
-title: "Checking balance"
-linkTitle: "Checking balance"
+title: "Consultar saldos"
+linkTitle: "Consultar saldos"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   In the administrative module you can view all the information of your accounts. You will be able to check to see the money coming into your accounts, the overall balance, and credits or discounts made to your account.
+   En el módulo administrativo obtienes toda la información relativa a tus cuentas, podrás consultar el dinero proveniente de tus cuentas, el saldo general y los abonos o descuentos que se realicen a tu cuenta.
 weight: 22
 nosidetoc: true
 ---
 
-{{% alert title="Note" color="warning"%}}
-This article has been deprecated and it is not offered for new commerces.
+{{% alert title="Nota" color="warning"%}}
+Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
-You can identify your accounts with the _**Account Id**_ which is found next to the country's image.
+Podrás identificar tus cuentas a través de las _**Cuenta id**_ que podrás encontrar a lado de la imagen del país.
 
-You can also consult the general balance, which is comprised of:
+También podrás consultar el saldo general que está compuesto por:
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo1-es.jpg)
 
-* _**Total balance**_: The total funds received from your sales, after deducting the commission of PayU.
-* _**Reserve balance**_: For security reasons, all PayU accounts temporarily reserve a part of the balance as collateral. During this time, the money cannot be transferred to your bank account. This percentage is determined by your business activity and the judgment of your account representative. If you want to see the percentage of reserve balance applied to your account, please write to sac@payulatam.com.
-* _**Available credit**_: The money you can transfer to your bank account. It consists of the available credit minus the reserve balance.
+* _**Saldo total**_: Es el total del dinero recibido por tus ventas, después de descontar la comisión de PayU.
+* _**Saldo de reserva**_: Por razones de seguridad todas las cuentas PayU reservan temporalmente parte de tu dinero como garantía, durante este tiempo el dinero no puede ser transferido a tus cuentas bancarias, este porcentaje es asignado de acuerdo a tu actividad económica. Si deseas consultar el porcentaje de saldo de reserva que es aplicado a tus cuentas debes escribir al correo a sac@payulatam.com.
+* _**Saldo disponible**_: Es el dinero que puedes transferir a tu cuenta bancaria. Está compuesto por el Saldo total menos el Saldo de reserva.
 
 ## Movements
 This option allows you to perform a query of the movements of your PayU accounts. For example, you can view the credit of your sales, discounts for PayU commissions, or the transfers you have made.

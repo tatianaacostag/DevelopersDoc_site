@@ -18,6 +18,12 @@ PayU module is ideal for businesses that need to:
 * Be updated with the information of the financial movements of their account.
 * Make requests to the support team about issues in their account.
 
+{{% alert title="Note" color="info"%}}
+
+Click [here]({{< ref "Merchant Panel" >}}) to consult the documentation of the Administrative Module, also known as secure.
+
+{{% /alert %}}
+
 To access the PayU module, go to www.payu.com, at the top right corner, you find the option to log in. For merchants in Colombia, this option is called _PayU Login_.<br>Alternatively, you can go directly to https://merchants.payulatam.com/.
 
 ![PrintScreen](/assets/Login1_en.png)

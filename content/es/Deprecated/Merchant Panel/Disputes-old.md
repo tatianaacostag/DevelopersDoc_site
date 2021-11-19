@@ -8,11 +8,11 @@ Description: >
 weight: 26
 ---
 
-{{% alert title="Note" color="warning"%}}
-This article has been deprecated and it is not offered for new commerces.
+{{% alert title="Nota" color="warning"%}}
+Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance, therefore you cannot transfer funds from this balance to your bank account until the dispute is resolved.
 {{% /alert %}}
 
@@ -29,7 +29,7 @@ There are several reasons that can cause a purchaser to not acknowledge a charge
 * _**Amount does not match**_: The charge to the credit card does not match the value of the purchase.
 * _**Not reported by the entity**_: On many occasions the bank or processing network initiates a dispute process without a specific reason.
  
-## How does it work?
+## ¿Cómo funciona?
 
 ### 1. Dispute notification
 When PayU is notified by the bank that a dispute process has been launched, you automatically will receive an email with the details of that process.
@@ -73,7 +73,7 @@ To minimize the likelihood that a chargeback is generated, you can provide the f
 * Payment acceptance letter signed by the cardholder, annexing ID card of the same.
 * Other media which validate the purchase.
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 You must check that the response deadline has not been met, in this case you will not be able to upload evidence.
 
 | Country | Days given to provide evidences |
@@ -101,7 +101,7 @@ The dispute status changes according to the point where it is within the course 
 
 States of a dispute:
 
-| State | Description |
+| State | Descripción |
 |---|---|
 | Notified | When a dispute process begins, you must upload the evidence for the dispute. |
 | In review | When the shop provides evidence for a dispute through the administrative module and the dispute comes under review by the bank. |

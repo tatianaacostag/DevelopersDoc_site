@@ -1,15 +1,15 @@
 ---
-title: "Update my data"
-linkTitle: "Update my data"
+title: "Actualización my data"
+linkTitle: "Actualización my data"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   Update the user information displayed in the Merchant panel.
+   Actualización the user information displayed in the Módulo Administrativo.
 weight: 26
 ---
 
-{{% alert title="Note" color="warning"%}}
-This article has been deprecated and it is not offered for new commerces.
+{{% alert title="Nota" color="warning"%}}
+Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
 ## Change password

@@ -1,32 +1,28 @@
 ---
-title: "Recurring payments - API"
-linkTitle: "Recurring payments - API"
+title: "Pagos recurrentes - API"
+linkTitle: "Pagos recurrentes - API"
 date: 2021-09-28T13:40:06-05:00
 type: docs
 Description: >
-   Recurring payments are automated payments that are carried out periodically (daily, monthly, annually), of those consumption charges of goods or services such as memberships, subscriptions, policies or receipts with fixed value; that were previously authorized by the customer.
+   Los pagos recurrentes son cobros automatizados que se realizan periódicamente (diario, mensual, anual), de aquellos cargos por consumo de productos o servicios como membresías, suscripciones, pólizas o recibos con valor fijo; que previamente fueron autorizados por el cliente.
 weight: 10
 ---
 
-{{% alert title="Note" color="warning"%}}
-Recurring payments has been deprecated and it is not offered for commerces.
+{{% alert title="Nota" color="warning"%}}
+Pagos recurrentes ha sido deprecado y no se ofrece para comercios.
 {{% /alert %}}
 
-## How does it work? 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/pagos-recurrentes1-en.jpg)
+## ¿Cómo funciona? 
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/pagos-recurrentes-1.jpg)
 
-{{% alert title="Consider" color="info"%}}
-Recurring payments is only available for accounts in **Brazil**, **Colombia**, **Peru**, and **Mexico**.
-{{% /alert %}}
-
-To ensure proper use of the system, all requests must contain the HTTP authorization header with the shop’s credentials, so that it can be identified who is making the request. For this implementation basic authorization will be used, where the username (API Login) and password (API Key) are sent.
+Con el fin de garantizar el correcto uso del sistema, todas las peticiones deben contener el encabezado HTTP de autorización con las credenciales del comercio, de manera que pueda identificarse quién está realizando la petición. Para esta implementación se usará autorización básica, en donde se envía el nombre de usuario (API Login) y contraseña (API Key).
  
-These are the data to be sent in the header of the request: The data pass an encrypted base 64 with the format: `API Login : API Key`  
-For example, if the API Login is `0123ABCDEF` and the API Key is `A1B2C3D4E5`, then the Authorization header would be:
+Estos son los datos que deben ser enviados en el encabezado de la petición: Los datos pasan un cifrado base 64 con formato: `API Login : API Key`.  
+Ejemplo, si el API Login es `0123ABCDEF` y API Key es `A1B2C3D4E5`, entonces el encabezado de autorización sería el siguiente:
 
  
 Authorization: ```Basic <base64 of 0123ABCDEF:A1B2C3D4E5>```
-Authorization: ```Basic MDEyM0FCQ0RFRjpBMUIyQzNENEU1```  
+Authorization: ```Basic MDEyM0FCQ0RFRjpBMUIyQzNENEU1   ``` 
 ```HTML
 POST /payments-api/4.0/service.cgi HTTP/1.1
 Host: sandbox.api.payulatam.com
@@ -38,60 +34,64 @@ Authorization: Basic MDEyM0FCQ0RFRjpBMUIyQzNENEU1
 ```
 <br>
 
-Pointing to the relevant URLs:
+Apuntando a las correspondientes URLs:
 
 {{% alert title="API" color="info"%}}
 * Test: ```https://sandbox.api.payulatam.com/payments-api/```
 * Production: ```https://api.payulatam.com/payments-api/```
 {{% /alert %}}
 
-The available methods for recurring payments are: PLAN, CUSTOMER, CREDIT CARD, SUBSCRIPTION and ADDITIONAL CHARGES. Below is a description of each.
+Los métodos disponibles para los pagos recurrentes son: Plan, Cliente, Tarjeta de crédito, Suscripción y Cargos adicionales. A continuación encontrarás la descripción de cada uno.
 
 ## 1. Plan
 
 <details>
-<summary>Variables used for the creation of a plan</summary>
+<summary>Variables usadas para la creación de un plan</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio en |
 |---|---|---|---|---|
-| planCode | Alphanumeric | Min: 1 Max: 255 | Unique code assigned by the merchant to the plan in order to identify it. | All countries |
-| description | Alphanumeric | Min: 1 Max: 255 | Plan description. | All countries |
-| accountId | Numeric |  | The identifier of the account to which the plan will be associated. | All countries |
-| interval | Alphanumeric | Min: 3 Max: 5 | Interval that defines how often the subscription payment is performed. The possible values are: `DAY`, `WEEK`, `MONTH`, and `YEAR`. | All countries |
-| intervalCount | Numeric |  | Interval count that defines how often the subscription payment is performed. | All countries |
-| maxPaymentsAllowed | Numeric |  | Total amount of payments for the subscription. | All countries |
-| maxPaymentAttempts | Numeric | Max: 3 | Total amount of payment attempts performed when a subscription payment is declined. | No |
-| paymentAttemptsDelay | Numeric |  | Total amount of waiting days between the payment attempts of the subscription. | All countries |
-| maxPendingPayments | Numeric |  | Total amount of pending payments that a subscription can have before it is cancelled. | No |
-| trialDays | Numeric |  | Total amount of trial days of the subscription. | No |
-| additionalValues.entry.name | Alphanumeric | Min: 1 Max: 255 | The type of amount associated to the plan. The possible values are:<br><ul style="margin-bottom: initial;"><li>`PLAN_VALUE`: total value of the plan.</li><li>`PLAN_TAX_VALUE`: tax value associated to the value of the plan.</li><li>`PLAN_TAX_RETURN_BASE`: tax return base value associated to the value of the plan.</li></ul> | A node for each type. All countries |
-| additionalValues.entry.value | Numeric | 19, 2 | Plan value, tax or tax return base according to the additionalValue.entry.name. | All countries |
-| additionalValues.entry.currency | Alphanumeric | 3 | The ISO currency code associated with the amount. [See Accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | All countries |
+| planCode | Alfanumérico | Mín: 1 Máx: 255 | Código único que el comercio le asigna al plan para su posterior identificación. | Todos los países |
+| description | Alfanumérico | Mín: 1 Máx: 255 | Descripción del plan. | Todos los países |
+| accountId | Numérico |  | Identificador de la cuenta del comercio al cual se asocia el plan. | Todos los países |
+| interval | Alfanumérico | Mín: 3 Máx: 5 | Intervalo que define cada cuanto se realiza el cobro de la suscripción. Los valores posibles son: `DAY`, `WEEK`, `MONTH` y `YEAR`. | Todos los países |
+| intervalCount | Numérico |  | Cantidad del intervalo que define cada cuanto se realiza el cobro de la suscripción. | Todos los países |
+| maxPaymentsAllowed | Numérico |  | Cantidad total de pagos de la suscripción. | Todos los países |
+| maxPaymentAttempts | Numérico | Máx: 3 | Cantidad total de reintentos para cada pago rechazado de la suscripción. | No |
+| paymentAttemptsDelay | Numérico |  | Cantidad de días de espera entre los reintentos de pago de la suscripción. | Todos los países |
+| maxPendingPayments | Numérico |  | Cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada. | No |
+| trialDays | Numérico |  | Cantidad de días de prueba de la suscripción. | No |
+| additionalValues.entry.name |  | 64 | Valor o monto asociado al plan. En este campo se envía un monto por entrada. | Todos los países |
+| transaction.order. additionalValues.entry.string | Alfanumérico | 64 | `PLAN_VALUE`, es el monto total del plan. Puede contener dos dígitos decimales. Ej. 10000.00 ó 10000. Este valor debe ser enviado en `transaction.order.additionalValues.entry. additionalValue.value` | Colombia |
+| transaction.order. additionalValues.entry.string | Alfanumérico | 64 | `PLAN_TAX_VALUE`, es el valor del IVA (Impuesto al Valor Agregado solo valido para Colombia) del plan, si se envía el IVA nulo el sistema aplicará el 19% automáticamente. Puede contener dos dígitos decimales. Ej: 19000.00. En caso de no tener IVA debe enviarse en 0. Este valor debe ser enviado en `transaction.order.additionalValues.entry. additionalValue.value` | Colombia |
+| transaction.order. additionalValues.entry.string | Alfanumérico | 64 | `PLAN_TAX_RETURN_BASE`, Es el valor base sobre el cual se calcula el IVA (solo valido para Colombia). En caso de que no tenga IVA debe enviarse en 0. Este valor debe ser enviado en `transaction.order.additionalValues.entry. additionalValue.value` | Colombia |
+| additionalValues.entry.value | Numérico | 19, 2 | Valor del plan, impuesto o base de retorno de acuerdo a `additionalValue.entry.name`. | Todos los países |
+| additionalValues.entry.currency | Alfanumérico | 3 | El código ISO de la moneda asociada al monto. [Ver Divisas admitidas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Todos los países |
 
 </details>
 <br>
 
-Using this feature you can register a recurring plan and thus get its identifier.  
+Mediante esta funcionalidad puedes registrar los datos asociados a tu plan recurrente y así obtener un identificador para el mismo.  
 
-The following operations are available:  
+Se encuentran disponibles las siguientes operaciones: 
+
 <div class="variables"></div>
 
-| URL | Method | Description |
+| URL | Método | Descripción |
 |---|---|---|
-| /rest/v4.3/plans | `POST` | Creating a new plan for subscriptions associated with the merchant. |
-| /rest/v4.3/plans/{planCode} | `PUT` | Update information about a plan for subscriptions.<br>`{planCode}`: Plan’s identification code for the merchant. |
-| /rest/v4.3/plans/{planCode} | `GET` | Check all the information of a plan for subscriptions associated with the merchant.<br>`{planCode}`: Plan’s identification code for the merchant |
-| /rest/v4.3/plans/{planCode} | `DELETE` | Delete an entire subscription plan associated with the merchant.<br>`{planCode}`: Plan’s identification code for the merchant. |
+| /rest/v4.9/plans | `POST` | Creación de un nuevo plan para suscripciones asociado al comercio. |
+| /rest/v4.9/plans/{planCode} | `PUT` | Actualizar la información de un plan para suscripciones.<br>`{planCode}`: Código de identificación del plan para el comercio. |
+| /rest/v4.9/plans/{planCode} | `GET` | Consultar toda la información de un plan para suscripciones asociado al comercio.<br>`{planCode}`: Código de identificación del plan para el comercio. |
+| /rest/v4.9/plans/{planCode} | `DELETE` | Eliminar todo un plan para suscripciones asociado al comercio.<br>`{planCode}`: Código de identificación del plan para el comercio. |
 
-### Creation
+### Creación
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "accountId": "512321",
@@ -122,7 +122,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "b3d406d0-abd4-473c-a557-25aa81ff9032",
@@ -161,7 +161,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <plan>
 	<planCode>sample-plan-code-001</planCode>
@@ -195,7 +195,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <plan>
 	<id>0b63bd6d-9a2b-4c40-a314-a70a6bae27e3</id>
@@ -231,13 +231,13 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Update
+### Actualización
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "planCode": "sample-plan-code-001",
@@ -266,7 +266,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "6b104e86-d6ca-41b5-ae39-834a55ed1565",
@@ -305,7 +305,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <plan>
 	<description>New Sample Plan 001</description>
@@ -333,7 +333,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <plan>
    <id>6b104e86-d6ca-41b5-ae39-834a55ed1565</id>
@@ -369,19 +369,19 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Query
+### Consulta
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/plans/sample-plan-code-001
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "2a852bf2-ce67-4920-b9a6-66af2c68b4ae",
@@ -415,13 +415,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/plans/sample-plan-code-001
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <plan>
 	<id>2a852bf2-ce67-4920-b9a6-66af2c68b4ae</id>
@@ -448,19 +448,19 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Deletion
+### Eliminación
 
 {{< tabs tabTotal="1" tabID="4" tabName1="JSON / XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/plans/sample-plan-code-001
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```HTTP
 HTTP STATUS: 200 OK
 ```
@@ -468,39 +468,39 @@ HTTP STATUS: 200 OK
 {{< /tab >}}
 {{< /tabs >}}
 
-## 2. Customer
+## 2. Cliente
 <details>
-<summary>Variables used for the creation of a customer</summary>
+<summary>Variables usadas para la creación de un cliente</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio en |
 |---|---|---|---|---|
-| fullName | Alphanumeric | Max: 255 | Customer's complete name. | All countries |
-| email | Alphanumeric | Max: 255 | Customer's email address. | All countries |
+| fullName | Alfanumérico | Max: 255 | Nombre completo del cliente. | Todos los países |
+| email | Alfanumérico | Max: 255 | Dirección de correo electrónico del cliente. | Todos los países |
 
 </details>
 <br>
 
-A customer is the unit that identifies who will be the beneficiary of a provided product or service and who is associated with a recurring payment plan.  
+Un cliente es la unidad que identifica quien será el beneficiario de un producto o servicio prestado y que se encuentra asociado a un plan de pagos recurrentes.
 
-The following operations are available:  
+Se encuentran disponibles las siguientes operaciones:  
 <div class="variables"></div>
 
-| URL | Method | Description |
+| URL | Método | Descripción |
 |---|---|---|
-| /rest/v4.3/customers/ | `POST` | Creation of a customer in the system. |
-| /rest/v4.3/customers/{customerId} | `PUT` | Updates the customer’s information in the system.<br>`{customerId}`: Identifier of the client to be updated. |
-| /rest/v4.3/customers/{customerId} | `GET` | Queries the information related to the customer.<br>`{customerId}`: Identifier of the client from which you want to find the associated information. |
-| /rest/v4.3/customers/{customerId} | `DELETE` | Removes a user from the system.<br>`{customerId}`: Identifier of the client to be deleted. |
+| /rest/v4.9/customers/ | `POST` | Creación de un cliente en el sistema. |
+| /rest/v4.9/customers/{customerId} | `PUT` | Actualiza la información de un cliente en el sistema.<br>`{customerId}`: Identificador del cliente que se desea actualizar. |
+| /rest/v4.9/customers/{customerId} | `GET` | Consulta la información relacionada con el cliente<br>`{customerId}`: Identificador del cliente del cual se desea conocer la información asociada. |
+| /rest/v4.9/customers/{customerId} | `DELETE` | Elimina un usuario del sistema.<br>`{customerId}`: Identificador del cliente que se desea eliminar. |
 
-### Creation
+### Creación
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
    "fullName": "Pedro E. Perez",
@@ -509,7 +509,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "id": "6ahxar252",
@@ -523,7 +523,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <customer>
 	<fullName>Pedro E. Perez</fullName>
@@ -532,7 +532,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <customer>
 	<id>6ahxar252</id>
@@ -543,13 +543,13 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Update
+### Actualización
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
    "fullName": "Pedro E. Perez",
@@ -558,7 +558,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "id": "6ahxar252",
@@ -572,7 +572,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <customer>
 	<fullName>Pedro E. Perez</fullName>
@@ -581,7 +581,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <customer>
 	<id>6ahxar252</id>
@@ -592,19 +592,19 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Query
+### Consulta
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/customers/2mkls9xekm
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "2mkls9xekm",
@@ -660,13 +660,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/customers/2mkls9xekm
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <customer>
 	<id>2mkls9xekm</id>
@@ -719,19 +719,19 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Deletion
+### Eliminación
 
 {{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/customers/7wp1r0atl
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
     "description": "El cliente [7wp1r0atl] ha sido eliminado."
@@ -743,13 +743,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/customers/7wp1r0atl
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <response>
    <description>El cliente [7wp1r0atl] ha sido eliminado</description>
@@ -758,52 +758,53 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## 3. Credit card
+## 3. Tarjeta de crédito
 
 <details>
-<summary>Variables used for the creation of a credit card</summary>
+<summary>Variables usadas para la creación de una tarjeta de crédito</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio en |
 |---|---|---|---|---|
-| number | Numeric | Min: 13 Max: 20 | Credit card number. | All countries |
-| name | Alphanumeric | Min: 1 Max: 255 | Full name of the credit card holder as shown in the credit card. | All countries |
-| document | Alphanumeric | Min: 5 Max: 30 | Identification number of the credit card holder. | All countries |
-| expMonth | Numeric | Min: 1 Max: 12 | Credit card’s expiration month. | All countries |
-| expYear | Numeric | Min: 00 Max: 2999 | Credit card’s expiration year. If it is a two digit value, it represents the years between 2000 (00) and 2099 (99). It the value has more than two digits it is used literally, being 2000 the minimum value. | All countries |
-| type | Alphanumeric |  | The franchise or credit card type. See [Payment method]({{< ref "select-your-payment-method.html" >}}). | All countries |
-| address |  |  | Credit card holder's billing address, associated to the credit card. | All countries |
-| address.line1 | Alphanumeric | Min: 1 Max: 100 | First line of the address. | All countries |
-| address.line2 | Alphanumeric | Min: 1 Max: 100 | Second line of the address or street number. | No |
-| address.line3 | Alphanumeric | Min: 1 Max: 100 | Third line of the address. | No |
-| address.city | Alphanumeric | Min: 1 Max: 50 | City. | All countries |
-| address.state | Alphanumeric | Min: 1 Max: 40 | State or department. <sup>\*</sup>For Brazil send only 2 characters. Example: For Sao Paulo, send SP. | Brazil |
-| address.country | Alphanumeric | 2 | Country of the address in format ISO 3166 Alfa 2 code. | All countries |
-| address.postalCode | Alphanumeric | Min: 1 Max: 20 | Postal code of the address. <sup>\*</sup>For Brazil use the format XXXXX-XXX or XXXXXXXX, for example: 09210-710 o 09210710. | Mexico, Brazil |
-| address.phone | Alphanumeric | Min: 1 Max: 20 | Phone associated to the address. <sup>\*</sup>For Brazil use the format ddd(2)+number(7-9), for example: (11)756312633. | All countries |
+| number | Numérico | Mín: 13 Máx: 20 | Número de la tarjeta de crédito. | Todos los países |
+| name | Alfanumérico | Mín: 1 Máx: 255 | Nombre completo del tarjeta habiente. | Todos los países |
+| document | Alfanumérico | Mín: 5 Máx: 30 | Número del documento de identidad del tarjeta habiente. | Todos los países |
+| expMonth | Numérico | Mín: 1 Máx: 12 | Mes de expiración de la tarjeta de crédito. | Todos los países |
+| expYear | Numérico | Mín: 00 Máx: 2999 | Año de expiración de la tarjeta de crédito. Si el valor es de dos dígitos corresponde al año comprendido entre 2000 (00) y 2099 (99). Si el valor es de más de dos dígitos se toma literal, siendo el año 2000 como mínimo posible. | Todos los países |
+| type | Alfanumérico |  | Corresponde a la franquicia o tipo de tarjeta de crédito. [Ver Medios de pago]({{< ref "select-your-payment-method.html" >}}). | Todos los países |
+| address |  |  | Dirección de correspondencia del tarjeta habiente asociado con la tarjeta de crédito. | Todos los países |
+| address.line1 | Alfanumérico | Mín: 1 Máx: 100 | Primera línea de la dirección. | Todos los países |
+| address.line2 | Alfanumérico | Mín: 1 Máx: 100 | Segunda línea de la dirección o número de la dirección. | No |
+| address.line3 | Alfanumérico | Mín: 1 Máx: 100 | Tercera línea de la dirección o complemento de la dirección. | No |
+| address.city | Alfanumérico | Mín: 1 Máx: 50 | Nombre de la ciudad. | Todos los países |
+| address.state | Alfanumérico | Mín: 1 Máx: 40 | Estado o departamento de la dirección. <sup>\*</sup>Para Brasil enviar únicamente 2 caracteres. Ejemplo: Si es Sao Paulo enviar SP. | Brasil |
+| address.country | Alfanumérico | 2 | País de la dirección en formato ISO 3166 Código Alfa 2. | Todos los países |
+| address.postalCode | Alfanumérico | Mín: 1 Máx: 20 | Código postal de la dirección. <sup>\*</sup>Para Brasil utilizar el formato XXXXX-XXX o XXXXXXXX ejemplo: 09210-710 o 09210710. | México, Brasil |
+| address.phone | Alfanumérico | Mín: 1 Máx: 20 | Teléfono asociado a la dirección. <sup>\*</sup>Para Brasil usar el formato ddd(2)+numero(7-9) ejemplo: (11)756312633. | Todos los países |
 </details>
 <br>
 
-It is the payment method that relates a customer to a plan. It is composed of the credit card number (that will be tokenized to store data securely), the expiration date of the card and some additional address data.  
+Es el medio de pago con el cual se relaciona un Plan y un Pagador, se encuentra compuesto por el número de tarjeta de crédito (el cual será tokenizado para almacenar los datos de forma segura), la fecha de vencimiento de la tarjeta y algunos datos adicionales de dirección.  
 
-The following operations are available:  
+Se encuentran disponibles las siguientes operaciones:  
 <div class="variables"></div>
 
-| URL | Method | Description |
+| URL | Método | Descripción |
 |---|---|---|
-| /rest/v4.3/customers/{customerID}/creditCards | `POST` | Creating a credit card (Token) and assigning it to a user.<br>`{customerId}`: Identifier of the client with whom you are going to associate the token with. |
-| /rest/v4.3/creditCards/{creditCardId} | `PUT` | Update a token’s information.<br>`{creditCardId}`: Identifier of the token to be updated. |
-| /rest/v4.3/creditCards/{creditCardId} | `GET` | Check the information of a credit card (Token) data identifier.<br>`{creditCardId}`: Credit Card Token you want to consult. |
-| /rest/v4.3/customers/{customerID}/creditCards/{creditCardId} | `DELETE` | Delete a credit card (Token) associated with a user.<br>`{customerId}`: Identifier of the client of whom you are going to delete the token.<br>`{creditCardId}`: Identifier of the token to be deleted. |
+| /rest/v4.9/customers/{customerID}/creditCards | `POST` | Creación de una tarjeta de crédito (Token) y asociarla a un usuario.<br>{customerId} : Identificador del cliente al cual se le va a asociar el token |
+| /rest/v4.9/creditCards/{creditCardId} | `PUT` | Actualizar la información de un token.<br>`{creditCardId}`: Identificador del token que se desea actualizar. |
+| /rest/v4.9/creditCards/{creditCardId} | `GET` | Consultar la información de una tarjeta de crédito (Token) dato su identificador.<br>`{creditCardId}`: Token de la tarjeta de crédito que desea consultarse |
+| /rest/v4.9/customers/{customerID}/creditCards/{creditCardId} | `DELETE` | Eliminar una tarjeta de crédito (Token) asociado a un usuario.<br>{customerId} : Identificador del cliente al cual se le va a eliminar el token<br>`{creditCardId}`: Identificador del token que se desea eliminar |
 
-### Creation
+
+### Creación
 
 {{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "name": "Sample User Name",
@@ -826,7 +827,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "token": "8186ca42-2f69-417b-94a0-208bd8e089af"
@@ -838,7 +839,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <creditCard>
    <name>Sample User Name</name>
@@ -861,7 +862,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <creditCard>
    <token>8186ca42-2f69-417b-94a0-208bd8e089af</token>
@@ -870,13 +871,13 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Update
+### Actualización
 
 {{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "expMonth": "12",
@@ -897,7 +898,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "token": "a068e980-a6d7-4a19-b549-75c04f39ec22",
@@ -924,7 +925,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <creditCard>
    <expMonth>12</expMonth>
@@ -945,7 +946,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <creditCard>
   <token>a068e980-a6d7-4a19-b549-75c04f39ec22</token>
@@ -969,19 +970,19 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Query
+### Consulta
 
 {{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/customers/2mkls9xekm
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "token": "256f8e39-e37c-4ff3-9b5f-63937ee5c69c",
@@ -1008,13 +1009,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/customers/2mkls9xekm
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <creditCard>
 	<token>8186ca42-2f69-417b-94a0-208bd8e089af</token>
@@ -1037,19 +1038,19 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Deletion
+### Eliminación
 
 {{< tabs tabTotal="2" tabID="12" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/customers/{customerID}/creditCards/{creditCardId}
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 { 
   "description": "La tarjeta de crédito f17e9c5c-c414-4dc0-a145-5b0647f7dbf8 se ha eliminado exitosamente"
@@ -1061,13 +1062,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/customers/{customerID}/creditCards/{creditCardId}
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <response>
 	<description>La tarjeta de crédito f17e9c5c-c414-4dc0-a145-5b0647f7dbf8 se ha eliminado exitosamente</description>
@@ -1076,49 +1077,63 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## 4. Subscription
+## 4. Suscripción
 
 <details>
-<summary>Variables used for the creation of a subscription</summary>
+<summary>Variables usadas para la creación de un suscripción</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio en |
 |---|---|---|---|---|
-| quantity | Numeric |  | Total amount of plans that will be acquired with the subscription. | No |
-| installments | Numeric |  | Total amount of installments to defer the payment. | No |
-| trialDays | Numeric |  | Total amount of trial days of the subscription. This variable has preference over the plan's trial days. | No |
-| customer |  |  | Customer that will be associated to the subscription. You can find more information in the "Customer" section of this page. | All countries |
-| customer.creditCards |  |  | Customer's credit card that is selected to make the payment. You can find more information in the "Credit card" section of this page. | All countries |
-| plan |  |  | Plan that will be associated to the subscription. You can find more information in the "Plan" section of this page. | All countries |
+| quantity | Numérico |  | Cantidad de planes a adquirir con la suscripción. | No |
+| installments | Numérico |  | Número de cuotas en las que se diferirá cada cobro de la suscripción. | No |
+| trialDays | Numérico |  | Días de prueba que tendrá la suscripción sin generar cobros. | No |
+| customer |  |  | Cliente(s) asociado(s) a la suscripción. Puedes encontrar mayor información en la sección "Cliente" de esta página. | Todos los países |
+| customer.creditCards |  |  | Tarjeta de crédito asociada al cliente, sobre la cual se realizará el cobro. Puedes encontrar mayor información en la sección "Tarjeta de credito" de esta página. | Todos los países |
+| plan |  |  | Plan asociado a la suscripción. Puedes encontrar mayor información en la sección "Plan" de esta página. | Todos los países |
+| immediatePayment | Booleano |  | True: Ejecuta la suscripción inmediatamente como una transacción y se crea la suscripción para los siguientes pagos.<br>False: Se realiza el primer cobro al siguiente día o de acuerdo a los dias de prueba especificados. | No |
+| extra1 | Alfanumérico | Mín: 0 Máx: 255 | Campo adicional para enviar información sobre la compra. Ej: Descripción de la compra. | No |
+| extra2 | Alfanumérico | Mín: 0 Máx: 255 | Campo adicional para enviar información sobre la compra. Ej: Códigos internos de los productos. | No |
+| deliveryAddress |  |  | Dirección de envío de los productos. | Todos los comercios con envío físico de productos |
+| deliveryAddress.line1 | Alfanumérico | Mín: 0 Máx: 100 | Primera línea de la dirección. | Todos los comercios con envío físico de productos |
+| deliveryAddress.line2 | Alfanumérico | Mín: 0 Máx: 100 | Segunda línea de la dirección o número de la dirección. | No |
+| deliveryAddress.line3 | Alfanumérico | Mín: 0 Máx: 100 | Tercera línea de la dirección o complemento de la dirección. | No |
+| deliveryAddress.city | Alfanumérico | Mín: 0 Máx: 50 | Nombre de la ciudad. | Todos los comercios con envío físico de productos |
+| deliveryAddress.state | Alfanumérico | Mín: 0 Máx: 40 | Estado o departamento de la dirección. <sup>\*</sup>Para Brasil enviar únicamente 2 caracteres. Ejemplo: Si es Sao Paulo enviar SP. | Brasil (Todos los comercios con envío físico de productos) |
+| deliveryAddress.country | Alfanumérico | 2 | País de la dirección en formato ISO 3166 Código Alfa 2. | Todos los comercios con envío físico de productos |
+| deliveryAddress.postalCode | Alfanumérico | Mín: 0 Máx: 20 | Código postal de la dirección. <sup>\*</sup>Para Brasil utilizar el formato XXXXX-XXX o XXXXXXXX ejemplo: 09210-710 o 09210710. | México, Brasil (Todos los comercios con envío físico de productos) |
+| deliveryAddress.phone | Alfanumérico | Mín: 0 Máx: 20 | Teléfono asociado a la dirección. <sup>\*</sup>Para Brasil usar el formato ddd(2)+numero(7-9) ejemplo: (11)756312633. | Todos los comercios con envío físico de productos |
+| notifyUrl | Alfanumérico | Mín: 0 Máx: 2048 | La URL de notificación o confirmación de la orden. | No |
+| recurringBillItems |  |  | Cobro adicional o un descuento realizado sobre el valor de uno de los pagos que conforman el plan de pagos recurrentes. Se tendrá en cuenta únicamente si el atributo "immediatePayment" tiene valor true.<br>Para obtener mayor informacion por favor visualizar la sección "Cargos adicionales" de esta página. | No |
 
 </details>
 <br>
 
-A subscription is the relationship between a payment plan, a payer and a credit card. It is the element that controls the execution of the respective collections.  
+Una suscripción es la relación entre un plan de pagos, un pagador y una tarjeta de crédito y es el elemento con el que se controla la ejecución de los cobros correspondientes.  
 
-The following operations are available:  
+Se encuentran disponibles las siguientes operaciones:  
 <div class="variables"></div>
 
-| URL | Methods | Description |
+| URL | Métodos | Descripción |
 |---|---|---|
-| /rest/v4.3/subscriptions/ | `POST` | Creating a new subscription of a client to a plan. |
-| /rest/v4.3/subscriptions/{subscriptionId} | `PUT` | Update information associated with the specified subscription. At the moment it is only possible to update the token of the credit card to which the charge of the subscription is made.<br>`{subscriptionId}`: Identification of the subscription. |
-| /rest/v4.3/subscriptions/{subscriptionId} | `GET` | Check the basic information associated with the specified subscription.<br>`{subscriptionId}`: Identification of the subscription. |
-| /rest/v4.3/subscriptions/{subscriptionId} | `DELETE` | Unsubscribe, delete the relationship of the customer with the plan.<br>`{subscriptionId}`: Identification of the subscription. |
+| /rest/v4.9/subscriptions/ | POST | Creación de una nueva suscripción de un cliente a un plan. |
+| /rest/v4.9/subscriptions/{subscriptionId} | PUT | Actualizar la información asociada a la suscripción indicada. En este momento sólo es posible actualizar el token de la tarjeta de crédito a la cual se realiza el cargo de la suscripción.<br>`{subscriptionId}`: Identificación de la suscripción |
+| /rest/v4.9/subscriptions/{subscriptionId} | GET | Consultar la información básica asociada a la suscripción indicada.<br>`{subscriptionId}`: Identificación de la suscripción |
+| /rest/v4.9/subscriptions/{subscriptionId} | DELETE | Eliminar la suscripción, es decir la relación del cliente al plan.<br>`{subscriptionId}`: Identificación de la suscripción |
 
 
-### Creation
+### Creación
  
 <details>
-<summary>With all new items</summary>
+<summary>Con todos los elementos nuevos</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="13" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "quantity": "1",
@@ -1181,7 +1196,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "563cbd0o54z",
@@ -1232,7 +1247,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <subscription>
 	<trialDays>30</trialDays>
@@ -1292,7 +1307,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <subscription>
 	<id>26fb7yxfej0</id>
@@ -1342,14 +1357,14 @@ Response body:
 
 </details>
 <details>
-<summary>With all existing elements</summary>
+<summary>Con todos los elementos existentes</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="14" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "quantity": "1",
@@ -1370,7 +1385,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "fb6d0m9nqb8",
@@ -1422,7 +1437,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <subscription>
 	<quantity>1</quantity>
@@ -1443,7 +1458,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <subscription>
 	<id>fb6d0m9nqb8</id>
@@ -1493,14 +1508,14 @@ Response body:
 
 </details>
 <details>
-<summary>With plan and client already created, and a new card</summary>
+<summary>Plan y cliente ya creados, y una tarjeta nueva</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="15" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "quantity": "1",
@@ -1536,7 +1551,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "c50d94ge25d",
@@ -1587,7 +1602,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <subscription>
 	<trialDays>10</trialDays>
@@ -1621,7 +1636,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <subscription>
 	<id>40adcwryufe</id>
@@ -1671,14 +1686,14 @@ Response body:
 
 </details>
 <details>
-<summary>Customer and card already created, and with a new plan</summary>
+<summary>Cliente y tarjeta ya creados, y con plan nuevo</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="16" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "installments": "1",
@@ -1724,7 +1739,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "320756yk1x0",
@@ -1775,7 +1790,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <subscription>
 	<trialDays>30</trialDays>
@@ -1820,7 +1835,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <subscription>
 	<id>17d11h3b2xs</id>
@@ -1870,13 +1885,13 @@ Response body:
 
 </details>
 
-### Update (Credit card of a subscription)
+### Actualización (Tarjeta de crédito de una suscripción)
 
 {{< tabs tabTotal="2" tabID="17" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
   "creditCardToken": "a068e980-a6d7-4a19-b549-75c04f39ec22"
@@ -1884,7 +1899,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "320756yk1x0",
@@ -1908,7 +1923,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <subscription>
 	<creditCardToken>a068e980-a6d7-4a19-b549-75c04f39ec22</creditCardToken>
@@ -1916,7 +1931,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <subscription>
 	<id>320756yk1x0</id>
@@ -1937,18 +1952,18 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Query
+### Consulta
 {{< tabs tabTotal="2" tabID="18" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/subscriptions/1dhb51hfuu
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "id": "320756yk1x0",
@@ -1972,13 +1987,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/subscriptions/1dhb51hfuu
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <subscription>
 	<id>320756yk1x0</id>
@@ -1999,19 +2014,19 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Deletion
+### Eliminación
 
 {{< tabs tabTotal="2" tabID="19" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/subscriptions/3hpyu04ij
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "description": "La suscripción [3hpyu04ij] ha sido cancelada"
@@ -2023,13 +2038,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/subscriptions/3hpyu04ij
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <response>
   <description>La suscripción [3hpyu04ij] ha sido cancelada</description>
@@ -2038,41 +2053,46 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## 5. Additional charges
+## 5. Cargos adicionales
 <details>
-<summary>Variables used for the creation of an additional charge</summary>
+<summary>Variables usadas para la creación de un cargo adicional</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio en |
 |---|---|---|---|---|
-| descripcion | Alphanumeric | Min: 1 Max: 255 | Description of the additional charge associated to the payment. | All countries |
-| additionalValues.entry.name | Alphanumeric | Min: 1 Max: 255 | The type of amount associated to the additional charge. The possible values are:<br><ul style="margin-bottom: initial;"><li>`ITEM_VALUE`: total value of the additional charge.</li><li>`ITEM_TAX`: tax value associated to the value of the additional charge.</li><li>`ITEM_TAX_RETURN_BASE`: tax return base value associated to the value of the additional charge.</li></ul> | A node for each type. All countries |
-| additionalValues.entry.value | Numeric | 19, 2 | Charge value, tax or tax return base according to the `additionalValue.entry.name`. | All countries |
-| additionalValues.entry.currency | Alphanumeric | 3 | The ISO currency code associated to the amount. [See Accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | All countries |
+| descripcion | Alfanumérico | Mín: 1 Máx: 255 | Descripción del cargo adicional asociado al cobro. | Todos los países |
+| additionalValues.entry.name |  | 64 | Valor o monto asociado al cargo adicional. En este campo se envía un monto por entrada. | Todos los países |
+| transaction.order. additionalValues.entry.string | Alfanumérico | 64 | `ITEM_VALUE`, es el monto total del cargo adicional. Puede contener dos dígitos decimales. Ej. 10000.00 ó 10000. Este valor debe ser enviado en `transaction.order.additionalValues. entry.additionalValue.value` | Colombia |
+| transaction.order. additionalValues.entry.string | Alfanumérico | 64 | `ITEM_TAX`, es el valor del IVA (Impuesto al Valor Agregado solo valido para Colombia) del cargo adicional, si se envía el IVA nulo el sistema aplicará el 19% automáticamente. Puede contener dos dígitos decimales. Ej: 19000.00. En caso de no tener IVA debe enviarse en 0. Este valor debe ser enviado en `transaction.order.additionalValues. entry.additionalValue.value` | Colombia |
+| transaction.order. additionalValues.entry.string | Alfanumérico | 64 | `ITEM_TAX_RETURN_BASE`, Es el valor base sobre el cual se calcula el IVA (solo valido para Colombia). En caso de que no tenga IVA debe enviarse en 0. Este valor debe ser enviado en `transaction.order.additionalValues. entry.additionalValue.value` | Colombia |
+| additionalValues.entry.value | Numérico | 19, 2 | Valor del cargo, impuesto o base de retorno de acuerdo a `additionalValue.entry.name`. | Todos los países |
+| additionalValues.entry.currency | Alfanumérico | 3 | El código ISO de la moneda asociada al monto. [Ver Divisas admitidas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Todos los países |
+
 
 </details>
 <br>
 
-A charge may be an additional charge or a discount realized on the value of one of the payments that comprise the recurring payment plan. These only affect the next pending item and run once.  
+Un cargo puede ser un cobro adicional o un descuento realizado sobre el valor de uno de los pagos que conforman el plan de pagos recurrentes. Estos solo afectan el siguiente cobro pendiente y se ejecutan una única vez.  
 
-The following operations are available:   
+Se encuentran disponibles las siguientes operaciones:   
 <div class="variables"></div>
 
-| URL | Methods | Description |
+| URL | Métodos | Descripción |
 |---|---|---|
-| /rest/v4.3/subscriptions/{subscriptionId}/recurringBillItems | `POST` | Adds extra charges to the respective invoice for the current period.<br>`{subscriptionId}`: Identification of the subscription |
-| /rest/v4.3/recurringBillItems/{recurringBillItemId} | `PUT` | Updates the information from an additional charge in an invoice<br>`{recurringBillItemId}`: Identifier of the additional charge. |
-| /rest/v4.3/recurringBillItems/{recurringBillItemId} | `GET` | Query extra charge information of an invoice from its identifier.<br>`{recurringBillItemId}`: Identifier of the additional charge |
-| /rest/v4.3/recurringBillItems/{recurringBillItemId} | `DELETE` | Remove an extra charge from an invoice.<br>`{recurringBillItemId}`: Identifier of the additional charge. |
-| /rest/v4.3/recurringBillItems/ | GET | Query extra charges of shop’s invoices that meet the stipulated filters. The available filters are shown below and should be sent as named parameters in the URL:<br>`{subscriptionId}`: Identification of the subscription.<br>`{description}`: Description entered in the extra charge. |
+| /rest/v4.9/subscriptions/{subscriptionId}/recurringBillItems | `POST` | Adiciona cargos extras a la factura correspondiente al periodo actual.<br>`{subscriptionId}`: Identificación de la suscripción |
+| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `PUT` | Actualiza la información del cargo extra de una factura<br>`{recurringBillItemId}`: Identificador del cargo extra |
+| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `GET` | Consulta la información del cargo extra de una factura a partir de su identificador.<br>`{recurringBillItemId}`: Identificador del cargo extra |
+| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `DELETE` | Eliminar un cargo extra de una factura<br>`{recurringBillItemId}`: Identificador del cargo extra |
+| /rest/v4.9/recurringBillItems/ | `GET` | Consulta de los cargos extras de las facturas del comercio que cumplen con los filtros estipulados. Los filtros disponibles se muestra a continuación y deben ser enviados como named parameters dentro de la URL:<br>`{subscriptionId}`: Identificación de la suscripción<br>`{description}`: Descripción ingresada en el cargo extra |
 
-### Creation
+
+### Creación
 {{< tabs tabTotal="2" tabID="20" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
    "description": "Cargo extra de prueba",
@@ -2097,7 +2117,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "id": "522023su5xg",
@@ -2128,7 +2148,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <recurringBillItem>
    <description>Cargo extra de prueba</description>
@@ -2153,7 +2173,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <recurringBillItem>
    <id>5e174m7lgns</id>
@@ -2181,12 +2201,12 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Update
+### Actualización
 {{< tabs tabTotal="2" tabID="21" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```JSON
 {
    "description": "Cargo extra de prueba",
@@ -2211,7 +2231,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "id": "5e174m7lgns",
@@ -2242,7 +2262,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```XML
 <recurringBillItem>
    <isTest>false</isTest>
@@ -2269,7 +2289,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <recurringBillItem>
    <id>5e174m7lgns</id>
@@ -2297,23 +2317,23 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Query
+### Consulta
 
 <details>
-<summary>By id of extra charge</summary>
+<summary>Por id del cargo adicional</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="22" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBillItems/2uww909obl
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "id": "5wm1pxmpiwq",
@@ -2344,13 +2364,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBillItems/2uww909obl
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <recurringBillItem>
    <id>2uww909obl</id>
@@ -2379,20 +2399,20 @@ Response body:
 
 </details>
 <details>
-<summary>By description of the extra charge</summary>
+<summary>Por descripción del cargo adicional</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="23" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBillItems/?description=Cargo%20b
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "recurringBillItemList": [
@@ -2439,13 +2459,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBillItems/?description=Cargo%20b
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <recurringBillItemResponse>
    <recurringBillItems>
@@ -2534,20 +2554,20 @@ Response body:
 
 </details>
 <details>
-<summary>By subscription</summary>
+<summary>Por suscripción</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="24" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBillItems/?subscriptionId=26gyv192a
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "recurringBillItemList": [
@@ -2599,13 +2619,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBillItems/?subscriptionId=26gyv192a
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <recurringBillItemResponse>
    <recurringBillItems>
@@ -2639,19 +2659,19 @@ Response body:
 
 </details>
 
-### Deletion
+### Eliminación
 
 {{< tabs tabTotal="2" tabID="25" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/recurringBillItems/ou8ru86nq
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
    "description": "recurring bill item ou8ru86nq has been removed successfully"
@@ -2663,13 +2683,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 DELETE https://api.payulatam.com/payments-api/rest/v4.3/recurringBillItems/ou8ru86nq
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <response>
 	<description>recurring bill item ou8ru86nq has been removed successfully</description>
@@ -2679,51 +2699,51 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## 6. Billing
+## 6. Facturas
 <details>
-<summary>Associated attributes to the bills</summary>
+<summary>Atributos asociados a una factura</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Description |
+| Nombre del campo | Formato | Descripción |
 |---|---|---|
-| recurringBill.id | Alphanumeric | Bill id in the PayU platform. |
-| recurringBill.orderId | Numeric | Id of the order that is associated to the bill in the PayU platform. |
-| recurringBill.subscriptionId | Alphanumeric | Id of the subscription that is associated to the bill in the PayU platform. |
-| recurringBill.state | Alphanumeric | State of the payment. The possible values are:<br><ul style="margin-bottom: initial;"><li>`NOT_PAID`: Declined payment.</li><li>`PAYMENT_IN_PROGRESS`: Payment in progress of charge.</li><li>`PENDING`: The next payment to charge.</li><li>`RETRYING_PAYMENT`: Retrying payment.</li><li>`PAID`: Approved payment.</li><li>`CANCELLED`: Cancelled subscription.</li><li>`PENDING_REVIEW`: Payment in process of validation.</li></ul> |
-| recurringBill.amount | Numeric | Total amount of the payment. |
-| recurringBill.currency | Alphanumeric | The ISO currency code associated to the amount. [See Accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
-| recurringBill.dateCharge | Date | Date of the payment. When the json format is used the value structure is Epoch/Unix, therefore it is necessary to convert it. |
+| recurringBill.id | Alfanumérico | Identificador de la factura recurrente en la plataforma de PayU. |
+| recurringBill.orderId | Numérico | Identificador de la orden asociada a la factura recurrente en la plataforma de PayU. |
+| recurringBill.subscriptionId | Alfanumérico | Identificador de la suscripción asociada a la factura recurrente en la plataforma de PayU. |
+| recurringBill.state | Alfanumérico | Estado de la factura recurrente. Los estados pueden ser:<br><ul style="margin-bottom: initial;"><li>`NOT_PAID`: Pago rechazado.</li><li>`PAYMENT_IN_PROGRESS`: Cobro en progreso.</li><li>`PENDING`: Próximo cobro a realizar.</li><li>`RETRYING_PAYMENT`: Reintento de pago.</li><li>`PAID`: Pago aprobado.</li><li>`CANCELLED`: Suscripción cancelada.</li><li>`PENDING_REVIEW`: Pago en proceso de validación.</li></ul> |
+| recurringBill.amount | Numérico | Valor de la factura recurrente. |
+| recurringBill.currency | Alfanumérico | El código ISO de la moneda asociada al monto. [Ver Divisas admitidas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
+| recurringBill.dateCharge | Date | Fecha de cobro de la factura recurrente. Cuando se utiliza el formato json la estructura del valor será Epoch/Unix, por lo que se debe convertir. |
 
 </details>
 <br>
 
-A bill is a payment attempt performed over a subscription, or its execution is pending.
+Una factura es un intento de pago que se realizó sobre una suscripción, o está pendiente por ejecutarse.  
 
-Billing only has the following query method available:
+Las facturas solo tienen el método de consulta disponible:  
 <div class="variables"></div>
 
-| URL | Methods | Description |
+| URL | Métodos | Descripción |
 |---|---|---|
-| /rest/v4.3/recurringBill | `GET` | Query the pill paid or pending. You can query by client, subscription, or date range:<br>```/rest/v4.3/recurringBill?customerId={customerId}```<br>```/rest/v4.3/recurringBill?subscriptionId={subscriptionId}```<br>```/rest/v4.3/recurringBill?customerId={customerId}&dateBegin;={dateBegin}&dateFinal;={dateFinal}``` |
+| /rest/v4.3/recurringBill | `GET` | Consulta de las facturas que están pagadas o pendientes por pagar. Se puede consultar por cliente, por suscripción o por rango de fechas:<br>```/rest/v4.3/recurringBill?customerId={customerId}```<br>```/rest/v4.3/recurringBill?subscriptionId={subscriptionId}```<br>```/rest/v4.3/recurringBill?customerId={customerId}&dateBegin;={dateBegin}&dateFinal;={dateFinal}``` |
 
-### Query
+### Consulta
 
 <details>
-<summary>By id of the client</summary>
+<summary>Por id del cliente</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="26" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBill?customerId=6dtc2i97hw5
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "recurringBillList": [
@@ -2753,13 +2773,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBill?customerId=6dtc2i97hw5
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <recurringBillListResponse>
 	<recurringBills>
@@ -2788,20 +2808,20 @@ Response body:
 
 </details>
 <details>
-<summary>By id of the subscription</summary>
+<summary>Por id de la suscripción</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="27" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBill?subscriptionId=6dtg51j09cr
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "recurringBillList": [
@@ -2832,13 +2852,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBill?subscriptionId=6dtg51j09cr
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <recurringBillListResponse>
 	<recurringBills>
@@ -2868,20 +2888,20 @@ Response body:
 
 </details>
 <details>
-<summary>By id of the client and a date range</summary>
+<summary>Por id del cliente y un rango de fechas</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="28" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBill?customerId=6dtc2i97hw5&dateBegin;=2014-02-03&dateFinal;=2014-02-04
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```JSON
 {
   "recurringBillList": [
@@ -2903,13 +2923,13 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Ejemplo petición:
 ```HTTP
 GET https://api.payulatam.com/payments-api/rest/v4.3/recurringBill?customerId=6dtc2i97hw5&dateBegin;=2014-02-03&dateFinal;=2014-02-04
 ```
 <br>
 
-Response body:
+Ejemplo respuesta:
 ```XML
 <recurringBillListResponse>
 	<recurringBills>

@@ -6,3 +6,5 @@ type: docs
 description: >
   Features or articles that have been deprecated for new commerces due to a new version or features no longer supported.  
 ---
+
+[Refer to the current version of our developers page]({{< ref "docs.html" >}}). 

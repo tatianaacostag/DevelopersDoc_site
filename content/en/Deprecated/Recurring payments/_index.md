@@ -6,4 +6,5 @@ type: docs
 Description: >
    Recurring payments information for API and SDK.
 weight: 10
+nosidetoc: true
 ---

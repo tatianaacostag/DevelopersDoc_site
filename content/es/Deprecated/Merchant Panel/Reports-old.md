@@ -8,8 +8,8 @@ Description: >
 weight: 24
 ---
 
-{{% alert title="Note" color="warning"%}}
-This article has been deprecated and it is not offered for new commerces.
+{{% alert title="Nota" color="warning"%}}
+Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
 ## Orders report
@@ -56,7 +56,7 @@ With these reports you can see the overview of the sales made through your PayU 
 * _**Payment method**_: Displays each of the possible options in which your customers can make a payment, either by franchise (e.g VISA, MasterCard) or by cash payments (e.g. Baloto, OXXO, and BCP), or by bank transfer.
 * _**Format**_: This shows you the query on the screen when you choose the HTML format or exports the results to a excel file.
  
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 In the advanced search option, you can check data related to the order including the identifier, the sales reference, or email of the payer.
 {{% /alert %}}
 
@@ -73,7 +73,7 @@ In the advanced search option, you can check data related to the order including
 ## Transactions report
 This report will allow you to check all transactions related to a payment process and the order to which they belong. You can get detailed information about attempts to pay an order, reversals performed, payer data, etc.
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 The data of the buyer and the payer may differ because the person placing the order through the website is not the same who makes the payment.
 {{% /alert %}}
  
@@ -115,7 +115,7 @@ Transaction type: You can choose the type of transaction related with an order.
 <br>
 
 * _**Country**_: Lets you see the country from which the sales transaction was generated.
-* _**Method of payment**_: Displays each of the possible options that your customers can make a payment, either by franchises (e.g. VISA or MasterCard) or by cash payments (e.g. Baloto, OXXO, or BCP) or by bank transfer.
+* _**Método of payment**_: Displays each of the possible options that your customers can make a payment, either by franchises (e.g. VISA or MasterCard) or by cash payments (e.g. Baloto, OXXO, or BCP) or by bank transfer.
 * _**Format**_: You can display the result of the query in the PayU platform when choosing the HTML format, or export the results to a CSV file.
  
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones2-en.jpg)
@@ -183,7 +183,7 @@ Similarly, you can check the transfers made to your accounts in the _**Reports**
 
 2. In both reports you can perform the query according to the period of time in which the operation was conducted, the accounts involved, and the value of the transfer.
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 If you want to consult transfers made to accounts that do not belong to your shop, you must have the _**Account ID**_, the number that identifies the PayU account in our system.
 {{% /alert %}}
 
@@ -277,6 +277,6 @@ Your store will receive the money every month from the sales according to the nu
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/d+xdias6-pt.png)
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 If your account has a reserve fund, a percentage of this will be held during the credit to your PayU account.
 {{% /alert %}}

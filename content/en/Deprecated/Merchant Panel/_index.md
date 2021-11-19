@@ -10,15 +10,14 @@ nosidetoc: true
 ---
 
 {{% alert title="Note" color="warning"%}}
-This article has been deprecated and it is not offered for new commerces.
+This article has been deprecated and it is not offered for new commerces. Click [here]({{< ref"PayU Module Documentation" >}}) to consult the documentation of the PayU module.
 
-**Related topics**
-* [PayU Module]({{< ref "PayU Module Documentation" >}})
+If you want to migrate to the PayU Module, contact your sales representative.
 {{% /alert %}}
 
 To use the Administrative Module go www.payu.com. At the top, you will find the “Login to Your Account”, field. There you can enter your respective username and password, which will have been supplied via email at the time of creation of your PayU account.
 
-![Concepts](http://developers.payulatam.com/images/soluciones-adicionales/secure1-en.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/secure1-en.jpg)
 
 {{% alert title="" color="info"%}}
 You still do not have a PayU account? You can create yours [here](https://secure.payulatam.com/online_account/create_account.zul).
