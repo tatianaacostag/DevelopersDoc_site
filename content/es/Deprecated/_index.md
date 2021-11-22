@@ -1,6 +1,6 @@
 ---
 title: "Descontinuados"
-linkTitle: "Funcionalidades deprecadas"
+linkTitle: "Funcionalidades descontinuadas"
 date: 2017-01-05
 type: docs
 description: >
