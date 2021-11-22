@@ -9,7 +9,7 @@ weight: 26
 ---
 
 {{% alert title="Nota" color="warning"%}}
-Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
+Este artículo ha sido descontinuado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contracargos.png)

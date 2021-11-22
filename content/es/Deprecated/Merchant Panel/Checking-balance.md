@@ -10,7 +10,7 @@ nosidetoc: true
 ---
 
 {{% alert title="Nota" color="warning"%}}
-Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
+Este artículo ha sido descontinuado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
 Podrás identificar tus cuentas a través de las _**Cuenta id**_ que podrás encontrar a lado de la imagen del país.

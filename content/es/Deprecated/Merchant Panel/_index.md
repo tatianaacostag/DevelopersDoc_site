@@ -10,7 +10,7 @@ nosidetoc: true
 ---
 
 {{% alert title="Nota" color="warning"%}}
-Este artículo ha sido deprecado y no se ofrece para comercios nuevos. Haga clic [aquí]({{< ref"PayU Module Documentation" >}}) para consultar la documentación del Módulo PayU.
+Este artículo ha sido descontinuado y no se ofrece para comercios nuevos. Haga clic [aquí]({{< ref"PayU Module Documentation" >}}) para consultar la documentación del Módulo PayU.
 
 Si quieres migrar al Módulo PayU, contacta tu representante de ventas.
 {{% /alert %}}

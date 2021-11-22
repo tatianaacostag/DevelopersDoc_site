@@ -9,7 +9,7 @@ weight: 21
 ---
 
 {{% alert title="Nota" color="warning"%}}
-Este artículo ha sido deprecado y no se ofrece a comercios nuevos.
+Este artículo ha sido descontinuado y no se ofrece a comercios nuevos.
 {{% /alert %}}
 
 ## Completar registro de mi cuenta personal
