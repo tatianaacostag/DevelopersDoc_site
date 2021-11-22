@@ -23,7 +23,98 @@
       <description>
         
         
-        
+        &lt;!-- Modal window start --&gt;
+&lt;style&gt;
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  animation: animatetop 0.4s;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header {
+  color: white;
+  background-color: #ED6A5A;
+  padding: 15px;
+}
+
+
+
+&lt;/style&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id=&#34;myModal&#34; class=&#34;modal&#34;&gt;
+  &lt;!-- Modal content --&gt;
+  &lt;div class=&#34;modal-content&#34;&gt;
+    &lt;header class=&#34;header&#34;&gt;
+      &lt;p style=&#34;display:contents;color:white&#34;&gt;&lt;b&gt;Deprecated feature&lt;/b&gt;&lt;/p&gt;
+      &lt;span class=&#34;close&#34; style=&#34;color:white&#34;&gt;&amp;times;&lt;/span&gt;
+    &lt;/header&gt;
+    &lt;p style=&#34;padding:20px&#34;&gt;&lt;b&gt;&lt;i&gt;Recurring Payments&lt;/i&gt;&lt;/b&gt; feature has been deprecated. Therefore, it is not longer offered to new or existing merchants. The following topic is available as a reference for merchants who still have it enabled.&lt;br&gt;This feature &lt;b&gt;WILL NOT&lt;/b&gt; be activated again.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+// Get the modal
+var modal = document.getElementById(&#34;myModal&#34;);
+
+// Get the &lt;span&gt; element that closes the modal
+var span = document.getElementsByClassName(&#34;close&#34;)[0];
+
+var toc = document.getElementById(&#34;td-section-nav&#34;);
+
+// When the page loads, open the modal 
+window.onload = function() {
+  modal.style.display = &#34;block&#34;;
+  toc.style[&#39;pointer-events&#39;] = &#39;none&#39;;
+  toc.style.backgroundColor = &#34;rgba(0,0,0,-0.6)&#34;;
+}
+
+// When the user clicks on &lt;span&gt; (x), close the modal
+span.onclick = function() {
+  modal.style.display = &#34;none&#34;;
+  toc.removeAttribute(&#34;style&#34;)
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if ((event.target == modal) || (event.target.id == &#34;td-sidebar-menu&#34;)) {
+    modal.style.display = &#34;none&#34;;
+    toc.removeAttribute(&#34;style&#34;)
+  }
+}
+&lt;/script&gt;
+&lt;!-- Modal window end --&gt;
+
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
@@ -4662,7 +4753,98 @@ Authorization: Basic MDEyM0FCQ0RFRjpBMUIyQzNENEU1
       <description>
         
         
-        
+        &lt;!-- Modal window start --&gt;
+&lt;style&gt;
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  animation: animatetop 0.4s;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header {
+  color: white;
+  background-color: #ED6A5A;
+  padding: 15px;
+}
+
+
+
+&lt;/style&gt;
+&lt;!-- The Modal --&gt;
+&lt;div id=&#34;myModal&#34; class=&#34;modal&#34;&gt;
+  &lt;!-- Modal content --&gt;
+  &lt;div class=&#34;modal-content&#34;&gt;
+    &lt;header class=&#34;header&#34;&gt;
+      &lt;p style=&#34;display:contents;color:white&#34;&gt;&lt;b&gt;Deprecated feature&lt;/b&gt;&lt;/p&gt;
+      &lt;span class=&#34;close&#34; style=&#34;color:white&#34;&gt;&amp;times;&lt;/span&gt;
+    &lt;/header&gt;
+    &lt;p style=&#34;padding:20px&#34;&gt;&lt;b&gt;&lt;i&gt;Recurring Payments&lt;/i&gt;&lt;/b&gt; feature has been deprecated. Therefore, it is not longer offered to new or existing merchants. The following topic is available as a reference for merchants who still have it enabled.&lt;br&gt;This feature &lt;b&gt;WILL NOT&lt;/b&gt; be activated again.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+// Get the modal
+var modal = document.getElementById(&#34;myModal&#34;);
+
+// Get the &lt;span&gt; element that closes the modal
+var span = document.getElementsByClassName(&#34;close&#34;)[0];
+
+var toc = document.getElementById(&#34;td-section-nav&#34;);
+
+// When the page loads, open the modal 
+window.onload = function() {
+  modal.style.display = &#34;block&#34;;
+  toc.style[&#39;pointer-events&#39;] = &#39;none&#39;;
+  toc.style.backgroundColor = &#34;rgba(0,0,0,-0.6)&#34;;
+}
+
+// When the user clicks on &lt;span&gt; (x), close the modal
+span.onclick = function() {
+  modal.style.display = &#34;none&#34;;
+  toc.removeAttribute(&#34;style&#34;)
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if ((event.target == modal) || (event.target.id == &#34;td-sidebar-menu&#34;)) {
+    modal.style.display = &#34;none&#34;;
+    toc.removeAttribute(&#34;style&#34;)
+  }
+}
+&lt;/script&gt;
+&lt;!-- Modal window end --&gt;
+
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;

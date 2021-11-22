@@ -135,7 +135,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.fb2d4a9a90d61dd3068d7ae2ba91d092b1801d45fb127b1f8e9f7192cdf8336f9172ec9db0852c448549ba814520cc0bf33fe5d3e57ed778655a10f0f1e71c3d.json"
+  data-offline-search-index-json-src="../../offline-search-index.316cbf927452ac595882797265126aea7b61287faa0a5d1043540e5374384256d68ddc455743cc7e408656dc90b5e457c5bfb4f06eee2ef126fbb31bc4cb63f3.json"
   data-offline-search-base-href="../../"
 >
 
@@ -352,7 +352,97 @@
 	<h1>Recurring payments</h1>
         <div class="lead">Recurring payments information for API and SDK.</div>
 	
-	
+	<!-- Modal window start -->
+<style>
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  animation: animatetop 0.4s;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header {
+  color: white;
+  background-color: #ED6A5A;
+  padding: 15px;
+}
+
+
+
+</style>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <header class="header">
+      <p style="display:contents;color:white"><b>Deprecated feature</b></p>
+      <span class="close" style="color:white">&times;</span>
+    </header>
+    <p style="padding:20px"><b><i>Recurring Payments</i></b> feature has been deprecated. Therefore, it is not longer offered to new or existing merchants. The following topic is available as a reference for merchants who still have it enabled.<br>This feature <b>WILL NOT</b> be activated again.</p>
+  </div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+var toc = document.getElementById("td-section-nav");
+
+// When the page loads, open the modal 
+window.onload = function() {
+  modal.style.display = "block";
+  toc.style['pointer-events'] = 'none';
+  toc.style.backgroundColor = "rgba(0,0,0,-0.6)";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  toc.removeAttribute("style")
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if ((event.target == modal) || (event.target.id == "td-sidebar-menu")) {
+    modal.style.display = "none";
+    toc.removeAttribute("style")
+  }
+}
+</script>
+<!-- Modal window end -->
 		
 <div class="section-index">
     <hr class="panel-line">
@@ -411,9 +501,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-November 19, 2021:
+November 22, 2021:
 
- <b>Translations of deprecated topics (3ac4019d)</b>
+ <b>Fixes for deprecated content (8c329c87)</b>
 </div>
 </div>
 
