@@ -213,7 +213,7 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 
 ## Transaction states {#transaction-states}
 
-| State       | Descrição                                                                                                   |
+| Estado       | Descrição                                                                                                   |
 |-------------|-------------------------------------------------------------------------------------------------------------|
 | `APPROVED`  | Transação aprovada                                                                                          |
 | `DECLINED`  | Transação rejeitada                                                                                         |

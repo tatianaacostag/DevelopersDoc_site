@@ -50,12 +50,12 @@ This method lets you process the payments performed by your customers using cred
 
 ### Observações {#considerations}
 * Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods for Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}).
-* For payments with Promotions, set the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Consulte [Promotions API]({{< ref "Promotions.md" >}}) para obter mais informações.
+* For payments with Promotions, set the parameters `INSTALLMENTS_NUMBER` e `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Consulte [Promotions API]({{< ref "Promotions.md" >}}) para obter mais informações.
 * Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
 * When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.
-* Due to Tax regulations, it is mandatory to set the parameters `PAYER_STATE` and `PAYER_DNI_TYPE`.
+* Due to Tax regulations, it is mandatory to set the parameters `PAYER_STATE` e `PAYER_DNI_TYPE`.
 
 ### Autorização
 Use this method to perform the **Autorização** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-argentina.md#capture" >}}) the funds.<br>The following examples show how to call the method for this transaction type according to the programming language.
@@ -581,11 +581,11 @@ When processing transactions with credit cards, you need to show the following a
 
 Where:
 
-| Number in the screen | Option         | Descrição                                       |
+| Número in the screen | Option         | Descrição                                       |
 |:--------------------:|----------------|---------------------------------------------------|
 |           1          | Total purchase | Total amount of the purchase without financing.   |
 |           2          | Total payment  | Total amount financed of the purchase.            |
-|           3          | Installments   | Number of installments and their amount.          |
+|           3          | Installments   | Número of installments and their amount.          |
 |           4          | TEA            | The annual effective interest rate (TEA) applied. |
 |           5          | CFT            | The total financial cost (CFT).                   |
 
@@ -595,7 +595,7 @@ The information of the total financial cost (CFT) must comply with the following
 
 2. Must appear in a prominent color typeface using the same font and size of at least five times bigger than the one used to inform the annual effective interest rate (TEA), the number of installments, and their amount.
 
-According to the current regulations, you cannot use the phrase without interest (in Spanish, "sin interés") or any other similar phrase, when the financial cost of the product or service is transferred to the customer's selling price.
+According to the current regulations, you cannot use the phrase without interest (in Spanish, "sin interés") ou any other similar phrase, when the financial cost of the product ou service is transferred to the customer's selling price.
 
 ## Submit transaction with cash
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.

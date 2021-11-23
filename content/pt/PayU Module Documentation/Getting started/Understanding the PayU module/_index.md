@@ -36,9 +36,9 @@ This panel has the options required to manage the accounts associated to the cur
 | Option | Sub option | Available in | Descrição |
 |---|---|:---:|---|
 | Merchant ID |  | <img src="/assets/World.png" width="20px"/> | ID number of your merchant in PayU’s system. This ID is required when you want to use [Integrações]({{< ref "integrations" >}}).  |
-| Account | Account information | <img src="/assets/World.png" width="20px"/> | Displays the name and ID of the selected account.<br>This option also lets you to change the account and perform operations related to it. Click the **▾** symbol to find these options or switch the account.<br><br><img src="/assets/MerchantPanel/MerchantPanel_02.png" alt="PrintScreen" width="40%"/> |
+| Account | Account information | <img src="/assets/World.png" width="20px"/> | Displays the name and ID of the selected account.<br>This option also lets you to change the account and perform operations related to it. Click the **▾** symbol to find these options ou switch the account.<br><br><img src="/assets/MerchantPanel/MerchantPanel_02.png" alt="PrintScreen" width="40%"/> |
 |  | My business information | <img src="/assets/World.png" width="20px"/> | Shows the location, main contact information of your business. Also, this option shows the people associated with your business. |
-|  | Your sales information | <img src="/assets/World.png" width="20px"/> | Shows the information of how you make your sales, what you sell, the logo of your shop, delivery information, how you offer your products or services and how your clients can contact you. |
+|  | Your sales information | <img src="/assets/World.png" width="20px"/> | Shows the information of how you make your sales, what you sell, the logo of your shop, delivery information, how you offer your products ou services and how your clients can contact you. |
 |  | Bank information | <img src="/assets/World.png" width="20px"/> | Shows the bank account and the Intermediary bank where you want to transfers the funds collected for this account. |
 |  | Accounts created | <img src="/assets/World.png" width="20px"/> | Shows the list of account available in your merchant. |
 | Balance available | | <img src="/assets/World.png" width="20px"/> | Displays the balance available in the selected account. |
@@ -52,7 +52,7 @@ This panel has the options required to manage the accounts associated to the cur
 | | Daily Payouts | <img src="/assets/Brasil.png" width="20px"/> | As PayU in Brazil is not a not a payment institution, the funds collected in your account are transferred to your bank account on a daily basis. Through this report, you can know the status of the daily transfers.<br>This report is only available for accounts in Brazil and it has the same columns and options of the [Transfers report]({{< ref"transfer-report.md" >}}). |
 | | Edit bank information | <img src="/assets/World.png" width="20px"/> | Allows you to request the change of the bank account and the Intermediary bank where you want to transfers the funds collected for this account. For more information, refer to [Update my information]({{< ref"Update-my-information.md#request-the-change-of-your-bank-account" >}}) |
 | Sell with PayU | Venda na internet | <img src="/assets/World.png" width="20px"/> | Allows you to create payment requests so you can charge to your customers without having a website. For more information, refer to [Payment request]({{< ref"Payment-request.md" >}})  |
-| | Dinheiro charges | <img src="/assets/Argentina.png" width="20px"/><img src="/assets/Colombia.png" width="20px"/> | Allows you to generate payment coupons or collection cards<sup>\*</sup> with the necessary information to let your clients make cash payments as many times as they need in the available payment points. For more information, refer to [Cupons de pagamento]({{< ref"Payment-coupons.md" >}}).<br><sup>\*</sup>_Collection cards are only available in Argentina_. |
+| | Dinheiro charges | <img src="/assets/Argentina.png" width="20px"/><img src="/assets/Colombia.png" width="20px"/> | Allows you to generate payment coupons ou collection cards<sup>\*</sup> with the necessary information to let your clients make cash payments as many times as they need in the available payment points. For more information, refer to [Cupons de pagamento]({{< ref"Payment-coupons.md" >}}).<br><sup>\*</sup>_Collection cards are only available in Argentina_. |
 | | My tools | <img src="/assets/World.png" width="20px"/> | Allows you find and manage the information of _Payment links_ (Payment request) and _Payment Coupons_<sup>\*</sup> you have created in your account.<br><sup>\*</sup>_Payment coupons are only available in Argentina and Colombia_. |
 
 ### 2. Settings and user options.
@@ -67,7 +67,7 @@ This option allows you to manage users, permissions, profiles and the technical 
 
 | Option | Available in | Descrição |
 |---|:---:|---|
-| User management | <img src="/assets/World.png" width="20px"/> | Allows you to grant access to your team members so they can collect payments online or check information about your payments. For more information, refer to [User management]({{< ref"User-management.md" >}}). |
+| User management | <img src="/assets/World.png" width="20px"/> | Allows you to grant access to your team members so they can collect payments online ou check information about your payments. For more information, refer to [User management]({{< ref"User-management.md" >}}). |
 | Permissions and profiles | <img src="/assets/World.png" width="20px"/> | Allows you to create custom profiles with specific permissions.<br>In this section, you can also query the default permission included in the Módulo PayU. For more information, refer to [Profile and permission management]({{< ref"Profile-and-permissions-management.md" >}}). |
 | Technical configuration | <img src="/assets/World.png" width="20px"/> | In this option, you can find the variables required to integrate PayU with your Web page. Furthermore, you can configure the notifications of processed payments and Disputas. For more information, refer to [Technical configuration]({{< ref"Technical-configuration.md" >}}). |
 
@@ -83,7 +83,7 @@ This option allows you to manage your profile. In the main view of this option, 
 | Sign off        | This option closes the session of the active user.                                      |
 
 ### 3. Main panel
-This panel loads the selected option either in the left panel or in the option at the top. The _**Home**_ page is selected by default, so it loads as soon as you log in the Módulo PayU.
+This panel loads the selected option either in the left panel ou in the option at the top. The _**Home**_ page is selected by default, so it loads as soon as you log in the Módulo PayU.
 
 To set an option as displayed by default, click the three dot menu at the top right of the panel and select _**Set as main page**_.
 

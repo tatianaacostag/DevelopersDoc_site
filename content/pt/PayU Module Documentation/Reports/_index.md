@@ -12,7 +12,7 @@ nosidetoc: true
 PayU provides a set of reports which can be accessible from the Módulo PayU to let you have control of the operations you perform with PayU.
 
 {{% alert title="Observação" color="info"%}}
-Reports in the Módulo PayU are limited to **20 thousand** rows for both displaying and downloading. If you need to have custom reports or display more information, contact your sales representative.
+Reports in the Módulo PayU are limited to **20 thousand** rows for both displaying and downloading. If you need to have custom reports ou display more information, contact your sales representative.
 {{% /alert %}}
 
 ## My downloaded reports

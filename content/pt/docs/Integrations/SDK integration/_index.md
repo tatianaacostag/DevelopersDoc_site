@@ -15,10 +15,10 @@ Access multiple payment methods (varies per country), including credit cards, ba
 ![API integration](/assets/api1-en.png)
 
 ## Initial settings
-PayU allows you to integrate with the transactional gateway, available payment tools and Consultas by developing a web site in Java or PHP. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow [PCI DSS’ best practices](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).
+PayU allows you to integrate with the transactional gateway, available payment tools and Consultas by developing a web site in Java ou PHP. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow [PCI DSS’ best practices](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).
 
 ### Java
-To integrate with the API, the SDK relies on the Apache's library `HttpClient` which also relies on the libraries `HttpCore`, `CommonsLoggin` and `CommonsCodec`.
+To integrate with the API, the SDK relies on the Apache's library `HttpClient` which also relies on the libraries `HttpCore`, `CommonsLoggin` e `CommonsCodec`.
 
 In general, you need the following libraries in your classpath:
 * [HttpClient-4.4.1.jar](https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.4.1)
@@ -31,17 +31,17 @@ In general, you need the following libraries in your classpath:
 
 Before performing any operation with the SDK, you need to assign some values to the `PayU` class, which apply to all the SDK operations and must be configured with your commerce data. The following table shows the values you need to configure.
 
-| Parâmetro name | Size | Tipo | Mandatory | Descrição |
+| Parâmetro name | Tamanho | Tipo | Obrigatório | Descrição |
 |-|-|-|:-:|-|
 | `language` | 2 | Language | Sim | The language used for error messages in the system and in emails that are sent to the buyer and seller. It is currently supported in `en` (English), `es` (Spanish) and `pt` (Portuguese). |
-| `isTest` |  | boolean | Sim | Assign `true` if it's a test request. Otherwise, assign `false`. Depending on the type of transaction or operation, the behavior may vary depending on the value of this field. |
+| `isTest` |  | boolean | Sim | Assign `true` if it's a test request. Otherwise, atribua `false`. Depending on the type of transaction ou operation, the behavior may vary depending on the value of this field. |
 | `apiLogin` | Min:12 Max:32 | String | Sim | Your API Login. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | `apiKey` | Min:6 Max:32 | String | Sim | Your API Key. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | `merchantId` |  | String | Não | The merchant identifier, it's used to generate the signatures to verify payment transactions. <br>This parameter is mandatory when you want to check the transaction, unless you send the signature. |
 | `paymentsUrl` | Min:1 | String | Não | The URL of the page to where you will send the requests related to payments. By default, this parameter takes the production URL. |
 | `reportsUrl` | Min:1 | String | Não | The URL of the page to where you will send the requests related to the reports. By default, this parameter takes the production URL. |
 
-Example
+Exemplo
 
 ```JAVA
 PayU.apiKey = "xxxxxxxxxxxx"; // Enter your API key here
@@ -54,7 +54,7 @@ PayU.reportsUrl = "https://api.payulatam.com/reports-api/"; // Include it if you
 ```
 <br>
 
-To execute the operations provided by the PayU's SDK, you must send to the method a parameter map as an argument, this map has all the required information to process a transaction. Example:
+To execute the operations provided by the PayU's SDK, you must send to the method a parameter map as an argument, this map has all the required information to process a transaction. Exemplo:
 
 ```JAVA
 Map<String, String>  parameters = new HashMap <String, String>();
@@ -70,7 +70,7 @@ From version 1.2.X, it is needed to add the certificate of the Payu's Payments A
 {{% /alert %}}
 
 ### PHP
-To integrate with the API, the SDK can be executed in machines with PHP version greater than or equals to 5.2.1. Furthermore, the following PHP extensions are required in your server:
+To integrate with the API, the SDK can be executed in machines with PHP version greater than ou equals to 5.2.1. Furthermore, the following PHP extensions are required in your server:
 
 * curl
 * xml
@@ -91,15 +91,15 @@ require_once '[PayU-php-sdk-Path]/lib/PayU.php';
 
 Before performing any operation with the SDK, you need to assign some values to the `PayU` class, which apply to all the SDK operations and must be configured with your commerce data. The following table shows the values you need to configure.
 
-| Parâmetro name | Size | Tipo | Mandatory | Descrição |
+| Parâmetro name | Tamanho | Tipo | Obrigatório | Descrição |
 |-|-|-|:-:|-|
 | `PayU::$language` | 2 | Language | Sim | The language used for error messages in the system and in emails that are sent to the buyer and seller. It is currently supported in en (English), es (Spanish) and pt (Portuguese). |
-| `PayU::$isTest` |  | boolean | Sim | Assign `true` if it's a test request. Otherwise, assign `false`. Depending on the type of transaction or operation, the behavior may vary depending on the value of this field. |
+| `PayU::$isTest` |  | boolean | Sim | Assign `true` if it's a test request. Otherwise, atribua `false`. Depending on the type of transaction ou operation, the behavior may vary depending on the value of this field. |
 | `PayU::$apiLogin` | Min:12 Max:32 | String | Sim | Your API Login. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | `PayU::$apiKey` | Min:6 Max:32 | String | Sim | Your API Key. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | `PayU::$merchantId` |  | String | Não | The merchant identifier, it's used to generate the signatures to verify payment transactions. <br>This parameter is mandatory when you want to check the transaction, unless you send the signature. |
 
-Example
+Exemplo
 
 ```PHP
 <?php
@@ -128,11 +128,11 @@ Environment::setReportsCustomUrl("https://sandbox.api.payulatam.com/reports-api/
 ## Observações {#considerations}
 * You must have an active PayU account.
 * You must install a valid SSL certificate in your server and your site must be able to make SSL connections. Due to this, the virtual machine must have appropriate security extensions.
-* Temporarily, do not use security certificates elliptic curve or those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` in your payment requests.
-* You must have CGI or server languages such as Java, C#, VB, PHP, etc.
+* Temporarily, do not use security certificates elliptic curve ou those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` in your payment requests.
+* You must have CGI ou server languages such as Java, C#, VB, PHP, etc.
 * You must be able to store your authentication credentials (API Key and API Login) safely.
 * The encoding for messages must be `UTF-8`.
-* The dates must have format `yyyy-MM-ddTHH:mm:ss`, the time format is 24 hours. Example: `2015-08-22T21:35:12`.
+* The dates must have format `yyyy-MM-ddTHH:mm:ss`, the time format is 24 hours. Exemplo: `2015-08-22T21:35:12`.
 * Normally the connection guarantees response times of three seconds on average. If there is an unusual situation, the maximum response time is one minute. It is highly recommended that you set _timeouts_ when you connect with PayU.
 * It is important to validate the length and numbers of credit cards by franchise, together with the security codes.
 

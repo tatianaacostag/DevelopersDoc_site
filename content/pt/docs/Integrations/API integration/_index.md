@@ -17,7 +17,7 @@ Access multiple payment methods (varies per country), including credit cards, ba
 ## Initial settings
 PayU allows you to integrate with the transactional gateway, available payment tools and Consultas by developing a HTTPS client to send the transaction information through SSL. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow [PCI DSS’ best practices](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).  
 
-The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop's server our payment Gateway. The exchange of messages is done via JSON or XML strings and operations are distinguished by a command that is included in the request. Check out the following JSON and XML examples:  
+The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop's server our payment Gateway. The exchange of messages is done via JSON ou XML strings and operations are distinguished by a command that is included in the request. Check out the following JSON and XML examples:  
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -66,7 +66,7 @@ Content-Length: length<br>
 {{< /tabs >}}
 <br>
 
-You can set the language you want to use in the request through the `Content-type` and `Accept` HTTP headers. You can use all possible combinations:
+You can set the language you want to use in the request through the `Content-type` e `Accept` HTTP headers. You can use all possible combinations:
 
 | CONTENT-TYPE       | ACCEPT             |
 |--------------------|--------------------|
@@ -78,11 +78,11 @@ You can set the language you want to use in the request through the `Content-typ
 ## Observações {#considerations}
 * You must have an active PayU account.
 * You must install a valid SSL certificate in your server and your site must be able to make SSL connections. Due to this, the virtual machine must have appropriate security extensions.
-* Temporarily, do not use security certificates elliptic curve or those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` in your payment requests.
-* You must have CGI or server languages such as Java, C#, VB, PHP, etc.
+* Temporarily, do not use security certificates elliptic curve ou those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` in your payment requests.
+* You must have CGI ou server languages such as Java, C#, VB, PHP, etc.
 * You must be able to store your authentication credentials (API Key and API Login) safely.
 * The encoding for messages must be `UTF-8`.
-* The dates must have format `yyyy-MM-ddTHH:mm:ss`, the time format is 24 hours. Example: `2015-08-22T21:35:12`.
+* The dates must have format `yyyy-MM-ddTHH:mm:ss`, the time format is 24 hours. Exemplo: `2015-08-22T21:35:12`.
 * Normally the connection guarantees response times of three seconds on average. If there is an unusual situation, the maximum response time is one minute. It is highly recommended that you set _timeouts_ when you connect with PayU.
 * It is important to validate the length and numbers of credit cards by franchise, together with the security codes.
 

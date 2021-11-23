@@ -3,7 +3,7 @@ title: "Tokenization API"
 linkTitle: "Tokenization API"
 date: 2021-06-24T10:31:30-05:00
 description: >
-  Tokenization API allows you to safely store the data of your customers' credit cards through the creation of a token. This token lets you make regular charges or implement the 1 Click payment feature, following PCI DSS (Payment Card Industry Data Security Standard) security standards to handle credit card data.
+  Tokenization API allows you to safely store the data of your customers' credit cards through the creation of a token. This token lets you make regular charges ou implement the 1 Click payment feature, following PCI DSS (Payment Card Industry Data Security Standard) security standards to handle credit card data.
 weight: 40
 tags: ["subtopic"]
 ---
@@ -36,9 +36,9 @@ Using this feature, you can register the information of a customer's credit card
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `CREATE_TOKEN`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
@@ -58,9 +58,9 @@ Using this feature, you can register the information of a customer's credit card
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | creditCardToken |  |  | Information of the Tokenized credit card. |
 | creditCardToken > creditCardTokenId | Alfanumérico | | Token generated through the information of the credit card. |
@@ -185,9 +185,9 @@ Using this feature, you can register the information of several credit cards sto
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `CREATE_BATCH_TOKENS`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
@@ -201,9 +201,9 @@ Using this feature, you can register the information of several credit cards sto
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | id |  |  | Identification of the procedure. |
 
@@ -278,9 +278,9 @@ Using this feature, you can remove the token previously registered.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `REMOVE_TOKEN`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
@@ -296,9 +296,9 @@ Using this feature, you can remove the token previously registered.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | creditCardToken |  |  | Information of the Token removed. |
 | creditCardToken > creditCardTokenId | Alfanumérico | | Token of the credit card as sent in the request. |
@@ -412,9 +412,9 @@ Using this feature, you can remove the tokens stored in a _**.csv**_ file.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `REMOVE_BATCH_TOKENS`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
@@ -428,9 +428,9 @@ Using this feature, you can remove the tokens stored in a _**.csv**_ file.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | id |  |  | Identification of the procedure. |
 
@@ -496,7 +496,7 @@ Response body:
 {{< /tabs >}}
 
 ## Query tokens
-Using this feature, you can get the information of tokenized credit cards, you can perform the query by the token number or by a date range. 
+Using this feature, you can get the information of tokenized credit cards, you can perform the query by the token number ou by a date range. 
 
 ### Variables for request and response
 
@@ -505,9 +505,9 @@ Using this feature, you can get the information of tokenized credit cards, you c
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `GET_TOKENS`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
@@ -524,9 +524,9 @@ Using this feature, you can get the information of tokenized credit cards, you c
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | creditCardTokenList |  |  | Information of the Tokenized credit cards. |
 | creditCardTokenList > creditCardTokenId | Alfanumérico | | Token generated through the information of the credit card. |
@@ -786,7 +786,7 @@ Using this feature, you can perform payments using several tokens stored in a _*
     - Account Id, identifier of your PayU account.
     - Credit card token
     - Credit card security code
-    - Number of installments
+    - Número of installments
     - Sale reference
     - Sale description
     - Buyer's e-mail
@@ -794,7 +794,7 @@ Using this feature, you can perform payments using several tokens stored in a _*
     - Total amount including taxes
     - Base value of reimbursement
     - Additional value
-    - Language used in emails sent to the buyer and the seller. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}})
+    - Language used in emails sent to the buyer and the seller. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}})
 * The file must not have header.
 * The file must be codifies using UTF-8. You need to implement a functionality to codify the content and send the codified string in the `contentFile` parameter.
 * The file cannot have more than 10.000 records.<br><br>![PrintScreen](/assets/massivePaymentTokenization.png) 
@@ -806,9 +806,9 @@ Using this feature, you can perform payments using several tokens stored in a _*
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `PROCESS_BATCH_TRANSACTIONS_TOKEN`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
@@ -822,9 +822,9 @@ Using this feature, you can perform payments using several tokens stored in a _*
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | id |  |  | Identification of the procedure. |
 

@@ -79,9 +79,11 @@ var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
 var toc = document.getElementById("td-section-nav");
+// var content = document.getElementsByClassName("td-content")[0];
 
 // When the page loads, open the modal 
 window.onload = function() {
+  // content.style.backgroundImage = "url('/assets/deprecated.png')";
   modal.style.display = "block";
   toc.style['pointer-events'] = 'none';
   toc.style.backgroundColor = "rgba(0,0,0,-0.6)";

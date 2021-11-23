@@ -9,7 +9,7 @@ weight: 10
 ---
 
 {{% alert title="Observação" color="info"%}}
-The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows or columns in the report, contact your sales representative.
+The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows ou columns in the report, contact your sales representative.
 {{% /alert %}}
 
 ## Permission required
@@ -33,9 +33,9 @@ The report has the following columns:
 | Coluna              | Descrição                                                                                         |
 |---------------------|-----------------------------------------------------------------------------------------------------|
 | Order               | This column shows the identifier of the order along with the date of the sale.                      |
-| Reference           | This column shows the sale reference and the name of the product or service offered.                |
+| Reference           | This column shows the sale reference and the name of the product ou service offered.                |
 | Buyer               | This column shows the name and the e-mail address of the person who preform the buy.                 |
-| Amount              | Amount of the sale.                                                                                 |
+| Valor              | Valor of the sale.                                                                                 |
 | Payment method      | Information of the payment method used by the buyer.                                                |
 | Status              | Current status of the order.                                                                        |
 
@@ -46,7 +46,7 @@ If you need to display more information, contact your sales representative.
 Consulte [Order details]({{< ref "#transaction-details" >}}) to know all the transaction detail of the sale.
 
 ## Filter the report
-You can use the search bar above the graph or the calendar to set filters. You can filter by _**Reference**_, _**Order**_, _**Buyer**_, _**Amount**_, _**status**_, or _**Payment method**_.
+You can use the search bar above the graph ou the calendar to set filters. You can filter by _**Reference**_, _**Order**_, _**Buyer**_, _**Amount**_, _**status**_, ou _**Payment method**_.
 
 To set a filter, click the _**Filter my sales**_ field at the top of the report table.
 
@@ -74,7 +74,7 @@ The _**Transaction details**_ panel has the following sections:
 |  | Nome | Descrição |
 |:---:|---|---|
 | 1 | Order info | This section shows the Order Id, its latest update date, its status along with the status description, and the sale reference. |
-| 2 | Product or service | Descrição of the product or service you provided in the sale. |
+| 2 | Produto ou service | Descrição of the product ou service you provided in the sale. |
 | 3 | Payment method | Information of the Payment method used in the purchase. The information displayed in this section varies according to the payment method.<br>For pending cash payments, this section lets you see the payment receipt generated to the buyer. |
 | 4 | Values | This section shows the values involved in this transaction such as the _Value to charge (or charged)_, _Pending value_, _Refunded value_ (for refunds), _Expired value_ (for cash payments).  |
 | 5 | Buyer info | Information of the person who performed the purchase. |
@@ -90,12 +90,12 @@ When you expand the _**This purchase had**_ section, you can see the details of 
 The information available includes the values debited from your account, the payment method, the payer information and more. 
 
 ## Download the report
-To download the report, click the _**Download**_ button located at the top or at the bottom of the report table.
+To download the report, click the _**Download**_ button located at the top ou at the bottom of the report table.
 
 ![PrintScreen](/assets/Reports/Reports_17.png)
 
 A pop up window appear where you can select the options to generate the report:
-* **Report**: lets you generate a report with the status of the orders and the final status of the last transaction or attempted purchase related to that order.
+* **Report**: lets you generate a report with the status of the orders and the final status of the last transaction ou attempted purchase related to that order.
 * **Balance from previous secure**: lets you generate a report with all the transactions and shows the information of the buyer and payer (e-mail, name, document number)<sup>\*</sup>.
 
 <img src="/assets/Reports/Reports_18.png" alt="PrintScreen" width="50%"/>

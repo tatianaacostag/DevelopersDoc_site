@@ -54,7 +54,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 ### Observações {#considerations}
 * Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
 * Two-step flows are not supported for international credit cards.
 * Transactions with credit card using two-step flows are available under demand and for single installment payments. Contact your Sales representative para obter mais informações.
@@ -678,7 +678,7 @@ This method lets you process the bank transfer payments of your customers. To in
 
 | Variável          | Descrição                                                   |
 |-------------------|---------------------------------------------------------------|
-| transactionState  | State of the transaction.                                     |
+| transactionState  | Estado of the transaction.                                     |
 | reference_pol     | Reference code to identify a transaction in PayU.             |
 | TX_VALUE          | Transaction amount.                                           |
 | authorizationCode | Autorização code of the transaction.                        |

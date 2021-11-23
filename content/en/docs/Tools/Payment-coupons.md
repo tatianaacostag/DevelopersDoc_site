@@ -107,7 +107,7 @@ A new window appears showing the resume of the PDF to be generated.
 
 <img src="/assets/PaymentCoupons/PaymentCoupons_05.png" alt="PrintScreen" width="60%"/><br>
 
-If you want to edit the information of the issuer, click _**Edit**_ link displayed in the top right corner of the issuer section section.
+If you want to edit the information of the issuer, click _**Edit**_ link displayed in the top right corner of the issuer section.
 
 Finally, click **Generate coupons in PDF**. A PDF file is downloaded, each page has the coupon generated per each client.
 

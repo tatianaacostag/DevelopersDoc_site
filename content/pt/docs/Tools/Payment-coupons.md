@@ -1,189 +1,191 @@
 ---
-title: "Payment Coupons"
-linkTitle: "Payment Coupons"
+title: "Cupons de pagamento"
+linkTitle: "Cupons de pagamento"
 date: 2021-04-07T09:27:50-05:00
 Description: >
-  Through the _Cash charges_ module, you can generate payment coupons with the necessary information to let your clients make cash payments as many times as they need in the available payment points.
+  No módulo _Cobranças em dinheiro_, você pode gerar cupons de pagamento com as informações necessárias para permitir que seus clientes efetuem pagamentos à vista quantas vezes forem necessárias nos pontos de pagamento disponíveis.
+
 weight: 70
 ---
 
-This solution is useful for businesses who need to receive payments on a regular basis such as paying memberships, courses, memberships or catalog and telesales, and more.
+Esta solução é útil para empresas que precisam receber pagamentos regularmente, como assinaturas, cursos, associações, catálogos, televendas e muito mais.
 
-You can receive payments without any technical knowledge. You just need to send an e-mail where your client can download the coupon and makes the respective payment.
+Você pode receber pagamentos sem ter nenhum conhecimento técnico. Basta enviar um e-mail onde o seu cliente poderá fazer o download do cupom e efetuar o respectivo pagamento.
 
 {{% alert title="Observação" color="info"%}}
 
-Cupons de pagamento are available for Argentina using _**RAPIPAGO**_ and _**PAGOFACIL**_, and for Colombia using _**BALOTO**_ and _**EFECTY**_.
+Cupons de pagamento estão disponíveis para a Argentina usando _**RAPIPAGO**_ e _**PAGOFACIL**_, e para a Colômbia usando _**BALOTO**_ e _**EFECTY**_.
 
 {{% /alert %}}  
 
-## How Cupons de pagamento work?
-The Payment coupon follows a simple flow to let your clients regular cash payments as many times as they need:
+## Como funcionam os cupons de pagamento? {#how-payment-coupons-work}
+O cupom de pagamento segue um fluxo simples para permitir que seus clientes façam pagamentos regulares em dinheiro quantas vezes forem necessárias:
 
-1. **Configure the Payment coupon through the Módulo PayU**.<br>You only need to provide how many payments per client you want to receive, decide if the payment amount is fixed or your client decides the amount, decide the payment deadline, and the payment reference.
+1. **Configure o cupom de pagamento no módulo PayU**.<br>Você só precisa informar quantos pagamentos por cliente deseja receber, decidir se o valor do pagamento é fixo ou o seu cliente decide o valor, o prazo de pagamento e a referência de pagamento.
 
-2. **Decide the delivery of the coupon**<br>Decide if you want to deliver the coupons by e-mail, by generating PDF, by payment references or collection cards (Available only for Argentina). 
+2. **Decidir a entrega do cupom**<br>Decida se deseja entregar os cupons por e-mail, gerando PDF, por meio de referências de pagamento ou cartões de cobrança (Disponível somente para Argentina).
 
-3. **Use the Cupons de pagamento**<br>When your clients receive the coupon, they can make the payment using any of the available cash payment offices in their countries.<br>Every time a client pays using the coupon, you receive a confirmation message and the amount of the purchase<sup>*</sup> is transferred to your PayU account, where you can transfer it to your bank account.
+3. **Usar os cupons de pagamento**<br>Quando seus clientes recebem o cupom, eles podem fazer o pagamento usando qualquer um dos escritórios de pagamento em dinheiro disponíveis em seus países.<br>Cada vez que um cliente paga com o cupom, você recebe uma mensagem de confirmação e o valor da compra<sup>*</sup> é transferido para sua conta PayU, onde você pode transferi-lo para sua conta bancária.
 
-<sup>*</sup>_The value transferred corresponds to the amount paid by your client minus the PayU fee._
+<sup>*</sup>_O valor transferido corresponde ao valor pago pelo seu cliente, descontada a taxa PayU._
 
-## Creating payment coupons
-According to your business needs, you can configure the options to receive payments using coupons. Follow the next procedure to create Cupons de pagamento and delivery them to your clients.
+## Criação de cupons de pagamento {#creating-payment-coupons}
+De acordo com as necessidades do seu negócio, você pode configurar as opções de recebimento de pagamentos por meio de cupons. Siga o próximo procedimento para criar cupons de pagamento e entregá-los aos seus clientes.
 
 1. Faça login em [PayU.com](payu.com) e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login https://merchants.payulatam.com/.
 
-2. 2.	Expandir a opção **Venda com a PayU** em seguida selecione **Dinheiro Payment**.
+2. Expandir a opção **Venda com a PayU** em seguida selecione **Pagamento em dinheiro**.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons.png)
 
-3. Configure the following information:
+3. Configure as seguintes informações:
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_01.png)
 
-* **How many payments do you expect to receive for each client?**: select how many times a client can use the coupon. Select _Unique_ if you want to let your client pay once. Otherwise, select _Multiple_ for several payments while the coupon is available. The default value is _Multiple_.
+* **Quantos pagamentos você espera receber de cada cliente?**: selecione quantas vezes um cliente pode usar o cupom. Selecione _Exclusivo_ se você quiser que seu cliente pague uma vez. Caso contrário, selecione _Múltiplo_ para vários pagamentos enquanto o cupom estiver disponível. o valor padrão é _Múltiplo_.
 
-* **Will you charge a specific amount?**: select the payment amount of the coupon. If you select _No_, your client decides the value to pay at the payment office. The default value is _No_.
+* **Você cobrará um valor específico?**: selecione o valor de pagamento do cupom. Se você selecionar _Não_, seu cliente decide o valor a pagar no posto de pagamento. o valor padrão é _Não_.
 
-* **Payment deadline**: decide whether the payment coupon expires in a given date. The date specified is fixed, it is not supported to provide a specific day of the month or other custom configuration. If you select _No_, the coupon will not have a due date. The default value is _No_.
+* **Prazo de pagamento**: decida se o cupom de pagamento expira em uma determinada data. A data especificada é fixa, não há suporte para fornecer um dia específico do mês ou outra configuração personalizada. Se você selecionar _Não_, o cupom não terá uma data de vencimento. o valor padrão é _Não_.
 
-* **Do you want to define the payment reference?**: if you select _Yes_ you need to provide the payment references for the coupon. Otherwise, PayU defines and sets an automatic reference. The default value is _No_. 
+* *** Quer definir a referência de pagamento?**: se você selecionar _Sim_ você precisa fornecer as referências de pagamento do cupom. Caso contrário, PayU define uma referência automática. o valor padrão é _Não_.
 
-## Sharing the Payment coupon
-After you have configured the Cupons de pagamento, decide how you want to deliver them to your client.<br>You have available the following options:
+## Compartilhar o cupom de pagamento {#sharing-the-payment-coupon}
+Depois de configurar os cupons de pagamento, decida como deseja entregá-los ao seu cliente.<br>Você tem as seguintes opções:
 
-### Send via e-mail 
-This option lets you send the Payment coupon via e-mail. The clients receive the e-mail and print the coupon to let them pay in cash in the available offices.
+### Enviar por e-mail {#send-via-e-mail}
+Esta opção permite enviar o cupom de pagamento por e-mail. Os clientes recebem o e-mail e imprimem o cupom para efetuar o pagamento à vista nos postos disponíveis.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_02.png)
 
-To add the clients one by one, provide the following information:
+Para adicionar os clientes um por um, forneça as seguintes informações:
 
-* Email: e-mail of the client who receives the coupon.
-* Payer name: name of the client.
-* Payment description: description of the payment.
-* Amount: this field is available when you define the amount paid by your client and takes the defined value.
-* Expiration date: this field is available when you define an expiration date of the coupon.
-* Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
+* E-mail: endereço de e-mail do cliente que recebe o cupom.
+* Nome do pagador: nome do cliente.
+* Descrição do pagamento: descrição do pagamento.
+* Valor: este campo está disponível quando você define o valor pago pelo seu cliente e assume o valor definido.
+* Data de validade: este campo está disponível ao definir a data de validade do cupom.
+* Referência de pagamento: este campo está disponível quando você define sua própria referência de pagamento para o cupom.
 
-Click _**Add**_ button to save the clients data and add an extra client if required.
+Clique no botão _**Adicionar**_ para salvar os dados do cliente e adicionar um cliente extra, se necessário.
 
-To add multiple clients, click **Add multiple payers from one file** and download the sample file by clicking **Download format**.
+Para adicionar vários clientes, clique em **Adicionar vários pagadores de um arquivo** e baixe o arquivo modelo clicando em **Formato de download**.
 
-The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the Módulo PayU.
+O arquivo Excel baixado é, por padrão, em espanhol e cada linha corresponde a um cliente. Forneça as informações do exemplo e faça o upload para o módulo PayU.
 
-Regardless of the option selected, click **Continue**.
+Seja qual for a opção selecionada, clique em **Avançar**.
 
-A new window appears showing the resume of the emails to be sent.
+Uma nova janela aparecerá mostrando o resumo dos e-mails a serem enviados.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_03.png)
 
-If you want to edit the information of the issuer and the e-mail, click Edit link displayed in the top right corner of each section.
+Se você deseja editar as informações do emissor e do e-mail, clique no link Editar, exibido no canto superior direito de cada seção.
 
-Finally, click **Send email**. Each client receive an e-mail with the coupon.
+Finalmente, clique **Enviar e-mail**. Cada cliente recebe um e-mail com o cupom.
 
-### Print the coupons
-This option lets you generate coupons in PDF format.
+### Print the coupons {#print-the-coupons}
+Esta opção permite gerar cupons no formato PDF.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_04.png)
 
-To add the clients one by one, provide the following information:
+Para adicionar os clientes um por um, forneça as seguintes informações:
 
-* Payer name: name of the client.
-* Payment description: description of the payment.
-* Amount: this field is available when you define the amount paid by your client and takes the defined value.
-* Expiration date: this field is available when you define an expiration date of the coupon.
-* Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
+* Nome do pagador: nome do cliente.
+* Descrição do pagamento: descrição do pagamento.
+* Valor: este campo está disponível quando você define o valor pago pelo seu cliente e assume o valor definido.
+* Data de validade: este campo está disponível ao definir a data de validade do cupom.
+* Referência de pagamento: este campo está disponível quando você define sua própria referência de pagamento para o cupom.
 
-Click _**Add**_ button to save the clients data and add an extra client if required.
+Clique no botão _**Adicionar**_ para salvar os dados do cliente e adicionar um cliente extra, se necessário.
 
-To add multiple clients, click **Add multiple payers from one file** and download the sample file by clicking **Download format**.
+Para adicionar vários clientes, clique em **Adicionar vários pagadores de um arquivo** e baixe o arquivo modelo clicando em **Formato de download**.
 
-The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the Módulo PayU.
+O arquivo Excel baixado é, por padrão, em espanhol e cada linha corresponde a um cliente. Forneça as informações do exemplo e faça o upload para o módulo PayU.
 
-Regardless of the option selected, click **Continue**.
+Seja qual for a opção selecionada, clique em **Avançar**.
 
-A new window appears showing the resume of the PDF to be generated.
+Uma nova janela aparece mostrando o resumo do PDF a ser gerado.
 
 <img src="/assets/PaymentCoupons/PaymentCoupons_05.png" alt="PrintScreen" width="60%"/><br>
 
-If you want to edit the information of the issuer, click _**Edit**_ link displayed in the top right corner of the issuer section section.
+Se você deseja editar as informações do emissor, clique no link Editar exibido no canto superior direito da seção do emissor.
 
-Finally, click **Generate coupons in PDF**. A PDF file is downloaded, each page has the coupon generated per each client.
+Por fim, clique em **Gerar cupons em PDF**. Um arquivo PDF é baixado, cada página contém o cupom gerado para cada cliente.
 
-### Generate Payment references
-This option lets you generate an Excel file with the coupons requested.
+### Gerar referências de pagamento {#generate-payment-references}
+Esta opção permite gerar um arquivo Excel com os cupons solicitados.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_06.png)
 
-To add the clients one by one, provide the following information:
+Para adicionar os clientes um por um, forneça as seguintes informações:
 
-* Payer name: name of the client.
-* Payment description: description of the payment.
-* Amount: this field is available when you define the amount paid by your client and takes the defined value.
-* Expiration date: this field is available when you define an expiration date of the coupon.
-* Payment reference: this field is available when you define that you want to set your own payment reference for the coupon.
+* Nome do pagador: nome do cliente.
+* Descrição do pagamento: descrição do pagamento.
+* Valor: este campo está disponível quando você define o valor pago pelo seu cliente e assume o valor definido.
+* Data de validade: este campo está disponível ao definir a data de validade do cupom.
+* Referência de pagamento: este campo está disponível quando você define sua própria referência de pagamento para o cupom.
 
-Click _**Add**_ button to save the clients data and add an extra client if required.
+Clique no botão _**Adicionar**_ para salvar os dados do cliente e adicionar um cliente extra, se necessário.
 
-To add multiple clients, click **Add multiple payers from one file** and download the sample file by clicking **Download format**.
+Para adicionar vários clientes, clique em **Adicionar vários pagadores de um arquivo** e baixe o arquivo modelo clicando em **Formato de download**.
 
-The Excel file downloaded is by default in Spanish and each row corresponds to a client. Provide the information of the example and upload it to the Módulo PayU.
+O arquivo Excel baixado é, por padrão, em espanhol e cada linha corresponde a um cliente. Forneça as informações do exemplo e faça o upload para o módulo PayU.
 
-Regardless of the option selected, click **Generate references in Excel**.
+Seja qual for a opção selecionada, clique em **Gerar referências no Excel**.
 
-The download starts immediately. Furthermore, a new window appears showing the number of references generated. In this window, you can also send the Excel file to whoever you need.
+O download começa imediatamente. Além disso, uma nova janela aparece mostrando o número de referências geradas. Nesta janela, você também pode enviar o arquivo Excel para quem precisar.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_07.png)
 
-### Create collection cards
-This option lets you generate cards with the information required to let your clients to be able to make cash payments at the available payment points every time they need to.
+### Crie cartões de cobrança {#create-collection-cards}
+Esta opção permite gerar cartões com as informações necessárias para que seus clientes possam fazer pagamentos em dinheiro nos pontos de pagamento disponíveis sempre que necessário.
 
-This option is available when you don't set a fixed payment amount nor a payment deadline.
+Esta opção está disponível quando você não define um valor fixo nem um prazo de pagamento.
 
 {{% alert title="Observação" color="info"%}}
 
-<img src="/assets/Argentina.png" width="25px"/> **Available only for Argentina.**
+<img src="/assets/Argentina.png" width="25px"/> **Disponível apenas para Argentina.**
 
 {{% /alert %}}  
 
-Collection cards are plastic cards associated to your PayU account; they have a bar code and you can include a reference code printed on them.
+Os cartões de cobrança são cartões de plástico associados à sua conta PayU. Eles têm um código de barras e você pode incluir um código de referência impresso.
 
-Once your cards have been generated, deliver them to your customers and they can pay the amount in cash they wish and without any expiration date.
+Uma vez gerados os cartões, entregue-os aos seus clientes e eles poderão pagar o valor em dinheiro que desejarem, sem prazo de validade. 
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_08.png)
 
-To request the cards, you need to provide the following information:
+Para solicitar os cartões, você precisa fornecer as seguintes informações:
 
-* Design of your collection cards: choose a predefined or custom design for your cards. Custom cards are available from 1000 cards.
-* How many cards do you want to request?: select the number of cards you want to generate according to the design you choose.
-* Delivery address: Click _**Edit**_ at the top right corner of this panel to provide the address where you want to receive the cards.
-* Payment summary: we calculate the cost of your order depending on the quantity of cards requested and the design you choose.
+* Design de seus cartões de cobrança: escolha um design predefinido ou personalizado para seus cartões. Cartões personalizados estão disponíveis a partir de 1000 unidades.
+* Quantos cartões deseja solicitar?: selecione o número de cartões que deseja gerar de acordo com o design escolhido.
+* Endereço de entrega: Clique _**Editar**_ no canto superior direito deste painel para fornecer o endereço onde você deseja receber os cartões.
+* Resumo do pagamento: calculamos o custo do seu ordem em função da quantidade de cartões solicitados e do design que você escolher.
 
 {{% alert title="Note" color="warning"%}}
 
-This order will be debited from your PayU account and you must have an available balance.
+Esta ordem será debitada de sua conta PayU, e você deve ter saldo disponível.
 
 {{% /alert %}} 
 
-Click _**Request cards**_ to continue. A confirmation window appears to let you validate the information of your request.
+Clique _**Solicitar cartões**_ para continuar. Uma janela de confirmação aparece para permitir que você valide as informações de sua solicitação.
 
 <img src="/assets/PaymentCoupons/PaymentCoupons_09.png" alt="PrintScreen" width="60%"/>
 
-## Consult the created coupons
-When you have created coupons or collection cards, you can consult their information to see the received payments, enable, disable, or download the coupon or card.
+## Consultar os cupons criados {#consult-the-created-coupons}
+Depois de criar cupons ou cartões de cobrança, você pode consultar suas informações para ver os pagamentos recebidos, habilitar, desabilitar ou baixar o cupom ou cartão.
 
-1. In the Módulo PayU, expand the **Venda com a Payu** e então selecione **My tools**.
+1. No Módulo PayU, expanda a opção **Venda com a Payu** e selecione **Ver os links criados**.
 
 <img src="/assets/PaymentCoupons/PaymentCoupons_10.png" alt="PrintScreen" width="60%"/><br>
 
-2. Select either _**Collection by cash**_ or _**Collection cards**_  tab according to your needs.
+2. Selecione _**Link de Cobrança**_ ou _**Cobrança em dinheiro**_  cobrança de acordo com suas necessidades.
 
-3. You can use the Advanced filter option to find a specific set of coupons.
+3. Você pode usar a opção de filtro Avançado para encontrar uma série específica de cupons.
 
 <img src="/assets/PaymentCoupons/PaymentCoupons_11.png" alt="PrintScreen" width="60%"/><br>
 
-4. Each coupon presents the options to disable/enable or download the coupon. Once the coupon is disabled, it cannot receive more payments.<br>Find these options in the three-dot menu in the _**status**_ column.
+4. Cada cupom tem opções para ativar/desativar ou baixar o cupom. Depois que o cupom é desativado, ele não pode receber mais pagamentos.<br>
+Encontre essas opções no menu de três pontos no _**status**_ coluna.
 
 ![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_12.png)
 

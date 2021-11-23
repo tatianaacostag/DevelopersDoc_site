@@ -9,7 +9,7 @@ nosidetoc: true
 
 Você pode utilizar os serviços de integração ou as ferramentas PayU de acordo com as necessidades do seu negócio
 
-## Integrations {#integrations}
+## Integrações {#integrations}
 Implementar PayU com o modelo agregador ou gateway, usando seus próprios acordos financeiros ou os do PayU
 
 {{< overview/navblocks_pt >}}

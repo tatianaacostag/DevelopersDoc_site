@@ -19,7 +19,7 @@ To integrate with Payments API Colombia, target your request to the following UR
 Payments API includes the following methods:
 
 * [Submit transaction with credit card]({{< ref "Payments-API-Colombia.md#submit-transaction-with-credit-cards" >}})
-* [Submit transaction with cash or Bank reference]({{< ref "Payments-API-Colombia.md#submit-transaction-with-cash-or-bank-reference" >}})
+* [Submit transaction with cash ou Bank reference]({{< ref "Payments-API-Colombia.md#submit-transaction-with-cash-or-bank-reference" >}})
 * [Submit transaction with bank transfer (PSE)]({{< ref "Payments-API-Colombia.md#submit-transaction-with-bank-transfer-pse" >}})
 * [Bank List - PSE]({{< ref "Payments-API-Colombia.md#bank-list---pse" >}})
 * [Available payment methods query]({{< ref "Payments-API-Colombia.md#available-payment-methods-query" >}})
@@ -27,8 +27,8 @@ Payments API includes the following methods:
 
 {{% alert title="Observação" color="info"%}}
 To confirm the status of a transaction, você pode usar one of the following options:
-* Navigate to the the URL set in the `transaction.notifyUrl` variable or the _**Confirmation URL**_ option located in the Módulo PayU in _**Settings**_ > _**Technical configuration**_.
-* Use the [Consultas API or SDK]({{< ref "Queries.md" >}}).
+* Navigate to the the URL set in the `transaction.notifyUrl` variable ou the _**Confirmation URL**_ option located in the Módulo PayU in _**Settings**_ > _**Technical configuration**_.
+* Use the [Consultas API ou SDK]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
 ## Submit transaction with credit cards
@@ -41,9 +41,9 @@ This method lets you process the payments performed by your customers using cred
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `SUBMIT_TRANSACTION`. | Sim |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Defina `true` if the request is in test mode. Otherwise, defina `false`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
@@ -51,7 +51,7 @@ This method lets you process the payments performed by your customers using cred
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
 | transaction |  |  | This object has the transaction data. | Sim |
 | transaction > order |  |  | This object has the order data. | Sim |
-| transaction > order > accountId | Number |  | Identifier of your account. | Sim |
+| transaction > order > accountId | Número |  | Identifier of your account. | Sim |
 | transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Represents the identifier of the order in your system. | Sim |
 | transaction > order > description | Alfanumérico | Min:1 Max:255 | Descrição of the order. | Sim |
 | transaction > order > language | Alfanumérico | 2 | Language used in emails sent to the buyer and the seller. | Sim |
@@ -77,17 +77,17 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > buyer > shippingAddress > city | Alfanumérico | Max:50 | Buyer's shipping address city. | Sim |
 | transaction > order > buyer > shippingAddress > state | Alfanumérico | Max:40 | Buyer's shipping address state. | Sim |
 | transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Sim |
-| transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. | Sim |
-| transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. | Sim |
-| transaction > order > additionalValues > |  | 64 | Amount of the order and its associated values. | Sim |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Amount of the transaction. | Sim |
-| transaction > order > additionalValues > TX_VALUE > value | Number | 19, 2 | Specifies the amount of the transaction. This amount cannot include decimals. | Sim |
+| transaction > order > buyer > shippingAddress > postalCode | Número | Max:20 | Buyer's shipping address zip code. | Sim |
+| transaction > order > buyer > shippingAddress > phone | Número | Max:20 | Buyer's shipping address phone number. | Sim |
+| transaction > order > additionalValues > |  | 64 | Valor of the order and its associated values. | Sim |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Valor of the transaction. | Sim |
+| transaction > order > additionalValues > TX_VALUE > value | Número | 19, 2 | Specifies the amount of the transaction. This amount cannot include decimals. | Sim |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
-| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Amount of the Value Added Tax (IVA - Impuesto al Valor Agregado). | Sim |
-| transaction > order > additionalValues > TX_TAX > value | Number | 19, 2 | Specifies the amount of the IVA.<br>If this parameter is not set, PayU applies the current tax value (19%).<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits  | Não |
+| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Valor of the Value Added Tax (IVA - Impuesto al Valor Agregado). | Sim |
+| transaction > order > additionalValues > TX_TAX > value | Número | 19, 2 | Specifies the amount of the IVA.<br>If this parameter is not set, PayU applies the current tax value (19%).<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits  | Não |
 | transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Base value to calculate the IVA.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits  | Não |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 19, 2 | Specifies the base amount of the transaction. | Não |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 19, 2 | Specifies the base amount of the transaction. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
 | transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | Não |
 | transaction > creditCard |  |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | Não |
@@ -119,12 +119,12 @@ This method lets you process the payments performed by your customers using cred
 | transaction > ipAddress | Alfanumérico | Max:39 | IP address of the device where the customer performs the transaction. | Sim |
 | transaction > cookie | Alfanumérico | Max:255 | Cookie stored by the device where the customer performs the transaction. | Sim |
 | transaction > userAgent | Alfanumérico | Max:1024 | The User agent of the browser where the customer performs the transaction. | Sim |
-| transaction > extraParameters |  |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | Não |
+| transaction > extraParameters |  |  | Additional parameters ou data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | Não |
 | transaction > threeDomainSecure |  |  | This object contains the information of 3DS 2.0. | Não |
 | transaction > threeDomainSecure > embedded | Boolean |  | Defina `true` if you want to use and embedded MPI for the Autorização process. By default, this value is set as `false`. | Não |
-| transaction > threeDomainSecure > eci | Number | Max:2 | Electronic Commerce Indicator.<br>Value returned by the directory servers showing the authentication attempt.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` and `transaction.threeDomainSecure.xid` has been set. | Não |
+| transaction > threeDomainSecure > eci | Número | Max:2 | Electronic Commerce Indicator.<br>Value returned by the directory servers showing the authentication attempt.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` e `transaction.threeDomainSecure.xid` has been set. | Não |
 | transaction > threeDomainSecure > cavv | Alfanumérico | Max:28 | Cardholder Authentication Verification Value.<br>Code of the cryptogram used in the transaction authentication in Base64.<br>Depending on the specific ECI codes established by the process network, this value may be optional. | Não |
-| transaction > threeDomainSecure > xid | Alfanumérico | Max:28 | Transaction ID sent by the MPI in Base64.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` and `transaction.threeDomainSecure.eci` has been set. | Não |
+| transaction > threeDomainSecure > xid | Alfanumérico | Max:28 | Transaction ID sent by the MPI in Base64.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` e `transaction.threeDomainSecure.eci` has been set. | Não |
 | transaction > threeDomainSecure > directoryServerTransactionId | Alfanumérico | Max:36 | Transaction ID generated by the Directory Server during the Authentication. | Não |
 
 </details>
@@ -134,12 +134,12 @@ This method lets you process the payments performed by your customers using cred
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | transactionResponse |  |  | The response data. |
-| transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
+| transactionResponse > orderId | Número |  | The generated ou existing order Id in PayU. |
 | transactionResponse > transactionId | Alfanumérico | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alfanumérico | Max:32 | The status of the transaction. |
 | transactionResponse > responseCode | Alfanumérico | Max:64 | The response code associated with the status. |
@@ -149,13 +149,13 @@ This method lets you process the payments performed by your customers using cred
 | transactionResponse > authorizationCode | Alfanumérico | Max:12 | The authorization code returned by the financial network. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters |  |  | Additional parameters ou data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 | transactionResponse > additionalInfo |  |  | Additional information associated with the response. This object follows the same structure than `transactionResponse.extraParameters`. |
 
 </details>
 
 #### Observações {#considerations}
-* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
+* For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` e `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
 * The variable `transaction.threeDomainSecure` corresponds to a _Pass Through_ scenario where the commerce performs the authentication by their own.
@@ -453,8 +453,8 @@ Response example:
 {{< /tabs >}}
 
 
-## Submit transaction with cash or Bank reference
-This method lets you process the payments of your customers in cash or using a Bank reference. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.
+## Submit transaction with cash ou Bank reference
+This method lets you process the payments of your customers in cash ou using a Bank reference. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.
 
 #### Payments in cash
 <img src="/assets/Payments/CashReceiptCO.png" alt="PrintScreen" width="75%">
@@ -469,9 +469,9 @@ This method lets you process the payments of your customers in cash or using a B
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `SUBMIT_TRANSACTION`. | Sim |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Defina `true` if the request is in test mode. Otherwise, defina `false`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
@@ -479,7 +479,7 @@ This method lets you process the payments of your customers in cash or using a B
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
 | transaction |  |  | This object has the transaction data. | Sim |
 | transaction > order |  |  | This object has the order data. | Sim |
-| transaction > order > accountId | Number |  | Identifier of your account. | Sim |
+| transaction > order > accountId | Número |  | Identifier of your account. | Sim |
 | transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Represents the identifier of the order in your system. | Sim |
 | transaction > order > description | Alfanumérico | Min:1 Max:255 | Descrição of the order. | Sim |
 | transaction > order > language | Alfanumérico | 2 | Language used in emails sent to the buyer and the seller. | Sim |
@@ -505,17 +505,17 @@ This method lets you process the payments of your customers in cash or using a B
 | transaction > order > buyer > shippingAddress > city | Alfanumérico | Max:50 | Buyer's shipping address city. | Sim | 
 | transaction > order > buyer > shippingAddress > state | Alfanumérico | Max:40 | Buyer's shipping address state. | Sim |
 | transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Sim |
-| transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. | Sim |
-| transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. | Sim |
-| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Sim |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Amount of the transaction. | Sim |
-| transaction > order > additionalValues > TX_VALUE > value | Number | 19, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Sim |
+| transaction > order > buyer > shippingAddress > postalCode | Número | Max:20 | Buyer's shipping address zip code. | Sim |
+| transaction > order > buyer > shippingAddress > phone | Número | Max:20 | Buyer's shipping address phone number. | Sim |
+| transaction > order > additionalValues > |  | 64 | Valor of the order ou its associated values. | Sim |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Valor of the transaction. | Sim |
+| transaction > order > additionalValues > TX_VALUE > value | Número | 19, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` ou `10000`). | Sim |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sim |
-| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Amount of the Value Added Tax (IVA - Impuesto al Valor Agregado). | Sim |
-| transaction > order > additionalValues > TX_TAX > value | Number | 19, 2 | Specifies the amount of the IVA.<br>If this parameter is not set, PayU applies the current tax value (19%).<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits  | Não |
+| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Valor of the Value Added Tax (IVA - Impuesto al Valor Agregado). | Sim |
+| transaction > order > additionalValues > TX_TAX > value | Número | 19, 2 | Specifies the amount of the IVA.<br>If this parameter is not set, PayU applies the current tax value (19%).<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits  | Não |
 | transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Base value to calculate the IVA.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits  | Não |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 19, 2 | Specifies the base amount of the transaction. | Não |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 19, 2 | Specifies the base amount of the transaction. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
 | transaction > payer |  |  | Payer information. | Sim |
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Payer e-mail address. | Sim |
@@ -534,7 +534,7 @@ This method lets you process the payments of your customers in cash or using a B
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Identification number of the buyer. | Sim |
 | transaction > payer > dniType | Alfanumérico | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | Não |
 | transaction > type | Alfanumérico | 32 | As cash and Bank reference payments are performed in physical offices, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sim |
-| transaction > paymentMethod | Alfanumérico | 32 | Select a valid Método de pagamento in cash or Referência bancária. [See the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sim |
+| transaction > paymentMethod | Alfanumérico | 32 | Select a valid Método de pagamento in cash ou Referência bancária. [See the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sim |
 | transaction > paymentCountry | Alfanumérico | 2 | Defina `CO` for Colombia. | Sim |
 | transaction > expirationDate | Alfanumérico | 23 | Maximum date and time that the payer has to make the payment. Formato `YYYY-MM-DDTHH:MM:SS`, for example `2021-06-12T16:07:11.586`. | Não |
 | transaction > ipAddress | Alfanumérico | Max:39 | IP address of the device where the customer performs the transaction. | Sim |
@@ -546,12 +546,12 @@ This method lets you process the payments of your customers in cash or using a B
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | transactionResponse |  |  | The response data. |
-| transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
+| transactionResponse > orderId | Número |  | The generated ou existing order Id in PayU. |
 | transactionResponse > transactionId | Alfanumérico | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alfanumérico | Max:32 | The status of the transaction. As the payment is performed by the user in a physical office, the state for a successful transaction is `PENDING` |
 | transactionResponse > paymentNetworkResponseCode | Alfanumérico | Max:255 | The response code returned by the financial network. |
@@ -562,15 +562,15 @@ This method lets you process the payments of your customers in cash or using a B
 | transactionResponse > responseCode | Alfanumérico | Max:64 | The response code associated with the status. In this case, for successful transactions is `PENDING_TRANSACTION_CONFIRMATION`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters |  |  | Additional parameters ou data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 | transactionResponse > additionalInfo |  |  | Additional information associated with the response. This object follows the same structure than `transactionResponse.extraParameters`. |
 
 </details>
 
 #### Observações {#considerations}
 * The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
-* For `BALOTO` and `EFECTY`, the confirmation of the payment takes 15 minutes. For `BANK_REFERENCED` and `OTHERS_CASH` (Su Red), the confirmation is online.
-* The minimum and maximum values for `BALOTO`, `EFECTY`, and `OTHERS_CASH` (Su Red) are:
+* For `BALOTO` e `EFECTY`, the confirmation of the payment takes 15 minutes. For `BANK_REFERENCED` e `OTHERS_CASH` (Su Red), the confirmation is online.
+* The minimum and maximum values for `BALOTO`, `EFECTY` e `OTHERS_CASH` (Su Red) are:
    - `BALOTO` > Min: $3.000 COP - Max: $1.000.000 COP
    - `EFECTY` > Min: $20.000 COP - Max: $6.000.000 COP
    - `OTHERS_CASH` (Su Red) > Min: $1.000 COP - Max: $4.000.000 COP
@@ -869,7 +869,7 @@ This method lets you process the bank transfer payments of your customers. In Co
 
 When the payer selects a bank, you must send the parameter `pseCode` of the selection in the extra parameter `FINANCIAL_INSTITUTION_CODE` in the request.
 
-4. Show a list to let the payer choose whether they are a _Natural_ (N) or _Legal_ (J) person. Depending on what the payer choose, you must send the value in the extra parameter `USER_TYPE` in the request. The list must be displayed as follows:
+4. Show a list to let the payer choose whether they are a _Natural_ (N) ou _Legal_ (J) person. Depending on what the payer choose, you must send the value in the extra parameter `USER_TYPE` in the request. The list must be displayed as follows:
 
 <img src="/assets/Payments/PSEPersonList_EN.png" alt="PrintScreen" width="50%"><br>
 
@@ -900,9 +900,9 @@ The list of available documents is:
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `SUBMIT_TRANSACTION`. | Sim |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Defina `true` if the request is in test mode. Otherwise, defina `false`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
@@ -910,7 +910,7 @@ The list of available documents is:
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
 | transaction |  |  | This object has the transaction data. | Sim |
 | transaction > order |  |  | This object has the order data. | Sim |
-| transaction > order > accountId | Number |  | Identifier of your account. | Sim |
+| transaction > order > accountId | Número |  | Identifier of your account. | Sim |
 | transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Represents the identifier of the order in your system. | Sim |
 | transaction > order > description | Alfanumérico | Min:1 Max:255 | Descrição of the order. | Sim |
 | transaction > order > language | Alfanumérico | 2 | Language used in emails sent to the buyer and the seller. | Sim |
@@ -936,11 +936,11 @@ The list of available documents is:
 | transaction > order > buyer > shippingAddress > city | Alfanumérico | Max:50 | Buyer's shipping address city. | Sim |
 | transaction > order > buyer > shippingAddress > state | Alfanumérico | Max:40 | Buyer's shipping address state. | Sim |
 | transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Sim |
-| transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. | Sim |
-| transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. | Sim |
-| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Sim |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Amount of the transaction. | Sim |
-| transaction > order > additionalValues > TX_VALUE > value | Number | 19, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Sim |
+| transaction > order > buyer > shippingAddress > postalCode | Número | Max:20 | Buyer's shipping address zip code. | Sim |
+| transaction > order > buyer > shippingAddress > phone | Número | Max:20 | Buyer's shipping address phone number. | Sim |
+| transaction > order > additionalValues > |  | 64 | Valor of the order ou its associated values. | Sim |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Valor of the transaction. | Sim |
+| transaction > order > additionalValues > TX_VALUE > value | Número | 19, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` ou `10000`). | Sim |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sim |
 | transaction > payer |  |  | Payer information. | Sim |
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Payer e-mail address. | Sim |
@@ -965,7 +965,7 @@ The list of available documents is:
 | transaction > ipAddress | Alfanumérico | Max:39 | IP address of the device where the customer performs the transaction. | Sim |
 | transaction > cookie | Alfanumérico | Max:255 | Cookie stored by the device where the customer performs the transaction. | Sim |
 | transaction > userAgent | Alfanumérico | Max:1024 | The User agent of the browser where the customer performs the transaction. | Sim |
-| transaction > extraParameters |  |  | Additional parameters or data associated with the request. <br>For Bank transfer payments, this is the response page of your commerce.<br>In JSON, the _extraParameters_ parameter is set as: <br>`"extraParameters": {`<br>&emsp;`"PSE_REFERENCE3": "123456789"`<br>`}`<br><br>In XML, the _extraParameters_ parameter is set as: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>PSE_REFERENCE3</string>`<br>&emsp;&emsp;`<string>123456789</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` | Não |
+| transaction > extraParameters |  |  | Additional parameters ou data associated with the request. <br>For Bank transfer payments, this is the response page of your commerce.<br>In JSON, the _extraParameters_ parameter is set as: <br>`"extraParameters": {`<br>&emsp;`"PSE_REFERENCE3": "123456789"`<br>`}`<br><br>In XML, the _extraParameters_ parameter is set as: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>PSE_REFERENCE3</string>`<br>&emsp;&emsp;`<string>123456789</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` | Não |
 
 </details>
 
@@ -974,12 +974,12 @@ The list of available documents is:
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | transactionResponse |  |  | The response data. |
-| transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
+| transactionResponse > orderId | Número |  | The generated ou existing order Id in PayU. |
 | transactionResponse > transactionId | Alfanumérico | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alfanumérico | Max:32 | The status of the transaction. As the payment is performed by the user in a physical office, the state for a successful transaction is `PENDING` |
 | transactionResponse > paymentNetworkResponseCode | Alfanumérico | Max:255 | The response code returned by the financial network. |
@@ -990,27 +990,27 @@ The list of available documents is:
 | transactionResponse > responseCode | Alfanumérico | Max:64 | The response code associated with the status. In this case, for successful transactions is `PENDING_TRANSACTION_CONFIRMATION`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_URL": "xxxx"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_URL</string>`<br>&emsp;&emsp;`<string>xxxx</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters |  |  | Additional parameters ou data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_URL": "xxxx"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_URL</string>`<br>&emsp;&emsp;`<string>xxxx</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
 #### Observações {#considerations}
 * To test PSE bank transfers in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
-* All the payment process values must be formatted in thousands (i.e., 1,200.00 or 1,200) without exception.
+* All the payment process values must be formatted in thousands (i.e., 1,200.00 ou 1,200) without exception.
 * If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_TRANSACTION_CONFIRMATION`; this is because the payer is redirected to the selected bank to complete the payment; you must redirect the payer to the URL returned in the extra parameter `BANK_URL`.
 * The URL returned in the extra parameter `BANK_URL` is configured in the Módulo PayU and must show the following information:<br><br>![PrintScreen](/assets/Payments/PSEresponse-en.png)<br>Parameters starting with $ symbol are sent via `GET`.
 * Once the client click the Pay button, this must be disabled to avoid sending a new request over the same payment.
 * It is recommended to display a wait message while your customer is redirected.
-* Do not show the bank site in containers (frames, panel, iframes, etc). The payment process must be fluid. Furthermore, avoid opening the bank site in a new tab nor a new browser window. If you need to use a new tab or window, block the origin page to avoid sending a new request over the same payment.
+* Do not show the bank site in containers (frames, panel, iframes, etc). The payment process must be fluid. Furthermore, avoid opening the bank site in a new tab nor a new browser window. If you need to use a new tab ou window, block the origin page to avoid sending a new request over the same payment.
 * You must add in the response page the options to retry the payment, finish the transaction and print the receipt.
 * The status displayed in the response page can be any of the following:
 
-| polTransactionState | polResponseCode | State                                                                |
+| polTransactionState | polResponseCode | Estado                                                                |
 |---------------------|-----------------|----------------------------------------------------------------------|
 | 4                   | 1               | Approved transaction                                                 |
 | 6                   | 5               | Failed transaction                                                   |
 | 6                   | 4               | Rejected transaction                                                 |
-| 12 or 14            | 9994 or 25      | Pending transaction, please check if the debit was made in the bank. |
+| 12 ou 14            | 9994 ou 25      | Pending transaction, please check if the debit was made in the bank. |
 
 ### API call
 The following are the bodies of the request and response of this payment method.
@@ -1315,9 +1315,9 @@ This method returns a list of the banks available for [payments using PSE]({{< r
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |-|-|-|-|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `GET_BANKS_LIST`. | Sim |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Defina `true` if the request is in test mode. Otherwise, defina `false`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
@@ -1334,9 +1334,9 @@ This method returns a list of the banks available for [payments using PSE]({{< r
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | banks |  |  | List of the banks available in PSE. |
 | banks > id | Numérico |  | Internal bank identifier. |
@@ -1994,9 +1994,9 @@ This method returns a list of the payment methods available in all countries.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |-|-|-|-|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `GET_PAYMENT_METHODS`. | Sim |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Defina `true` if the request is in test mode. Otherwise, defina `false`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
@@ -2010,9 +2010,9 @@ This method returns a list of the payment methods available in all countries.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
 | paymentMethods |  |  | List of the payment methods. |
 | paymentMethods > paymentMethodComplete |  |  | This object has the information of a payment method. |
@@ -2119,9 +2119,9 @@ The ```PING``` method lets you verify the connection to our platform.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição | Mandatory |
+| Campo name | Formato | Tamanho | Descrição | Obrigatório |
 |-|-|-|-|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Max:32 | Defina `PING`. | Sim |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Defina `true` if the request is in test mode. Otherwise, defina `false`. | Sim |
 | merchant |  |  | This object has the authentication data. | Sim |
@@ -2135,7 +2135,7 @@ The ```PING``` method lets you verify the connection to our platform.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
 | code | Alfanumérico |  | The response code of the transaction. |
 | error | Alfanumérico | Max:2048 | The error message associated if an error ocurred. |

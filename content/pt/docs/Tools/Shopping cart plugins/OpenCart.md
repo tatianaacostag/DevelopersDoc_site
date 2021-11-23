@@ -25,7 +25,7 @@ O plug-in OpenCart está disponível para as versões 1.5 e 2.0 e você precisa 
 O procedimento para instalar o plugin OpenCart é o mesmo para a versão 1.5 ou 2.0. A única diferença é a aparência das versões e isso é abordado neste artigo.<br>
 Siga o próximo procedimento para instalar o plugin em seu site.
 
-1. 1.	Descompacte o arquivo do plugin em um local de sua escolha. Em seguida, usando um cliente FTP, vá para o local onde você descompactou o plug-in.<br>Em seguida, carregue as pastas **admin** e **catalog** na pasta raiz da instalação do OpenCart em seu servidor.
+1.	Descompacte o arquivo do plugin em um local de sua escolha. Em seguida, usando um cliente FTP, vá para o local onde você descompactou o plug-in.<br>Em seguida, carregue as pastas **admin** e **catalog** na pasta raiz da instalação do OpenCart em seu servidor.
 
 ![PrintScreen](/assets/OpenCart/OpenCart_01.jpg)
 

@@ -20,7 +20,7 @@ To query transactions, PayU allows you to search by any of the following criteri
 
 * *Order Id*: gerado pelo PayU. Identifica a ordem no sistema PayU e é o principal elemento onde qualquer movimentação é registrada (cobranças, novas tentativas, reembolsos etc.)
 * *Transaction Id*: PayU gera este identificador para cada movimento associado a uma ordem (Order ID).
-* *Reference Number*: gerado pela loja. Identifica a ordem ou compra em seu sistema, o PayU salva este valor conforme você o envia.
+* *Reference Número*: gerado pela loja. Identifica a ordem ou compra em seu sistema, o PayU salva este valor conforme você o envia.
 
 ## O que acontece agora? {#whats-next}
 A integração com este recurso pode ser feita com um dos nossos tipos de integração:

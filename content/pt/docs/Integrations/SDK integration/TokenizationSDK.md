@@ -3,7 +3,7 @@ title: "Tokenization SDK"
 linkTitle: "Tokenization SDK"
 date: 2021-03-29T08:31:38-05:00
 description: >
-  Tokenization SDK allows you to safely store the data of your customers' credit cards through the creation of a token. This token lets you make regular charges or implement the 1 Click payment feature, following PCI DSS (Payment Card Industry Data Security Standard) security standards to handle credit card data.
+  Tokenization SDK allows you to safely store the data of your customers' credit cards through the creation of a token. This token lets you make regular charges ou implement the 1 Click payment feature, following PCI DSS (Payment Card Industry Data Security Standard) security standards to handle credit card data.
 weight: 90
 tags: ["subtopic"]
 ---
@@ -133,7 +133,7 @@ LoggerUtil.info("{0}", response);
 {{< /tabs >}}
 
 ## Query tokens
-Using this feature, you can get the information of tokenized credit cards, you can perform the query by the token number or by a date range. 
+Using this feature, you can get the information of tokenized credit cards, you can perform the query by the token number ou by a date range. 
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.

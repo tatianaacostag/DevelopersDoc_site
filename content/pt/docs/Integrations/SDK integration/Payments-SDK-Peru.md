@@ -50,9 +50,9 @@ This method lets you process the payments performed by your customers using cred
 
 ### Observações {#considerations}
 * Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods for Peru]({{< ref "select-your-payment-method.html#Peru" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
-* In Peru, you can select 0 or 2 to 36 installments when paying with credit card. If you select one (1) installment, PayU sends zero (0) as default value.
+* In Peru, you can select 0 ou 2 to 36 installments when paying with credit card. If you select one (1) installment, PayU sends zero (0) as default value.
 
 ### Autorização
 Use this method to perform the **Autorização** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-peru.md#capture" >}}) the funds.

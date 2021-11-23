@@ -1,44 +1,44 @@
 ---
-title: "Integrations"
-linkTitle: "Integrations"
+title: "Integrações"
+linkTitle: "Integrações"
 date: 2021-04-07T10:01:55-05:00
 Description: >
-  According to your business needs, select how to integrate your shop with the PayU services and tools.
+  De acordo com as necessidades do seu negócio, selecione como integrar sua loja com os serviços e ferramentas PayU.
 weight: 40
 ---
 
-Implement PayU with the aggregator model or gateway, using PayU’s financial agreements or your own. Select the integration that fits best with your needs:
+Implemente o PayU com o modelo agregador ou portal, usando os acordos financeiros do PayU ou os seus. Selecione a integração que melhor se adapta às suas necessidades:
 
-{{< overview/navblocks >}}
+{{< overview/navblocks_pt >}}
 
-## How to get variables for integration
-Regardless of the integration selected, you may require any of the following variables in the request of the methods.
+## Como obter variáveis para integração {#how-to-get-variables-for-integration}
+Seja qual for a integração selecionada, você pode exigir qualquer uma das seguintes variáveis na solicitação dos métodos
 
-### API key and API Login
+### API key e API Login {#api-key-and-api-login}
 1. Faça login em [PayU.com](payu.com) e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login https://merchants.payulatam.com/.
 
 2. Clique _**Configuração**_ e selecione _**Configuração técnica**_.
 
-![PrintScreen](/assets/IntegrationVariables_01.png)
+![PrintScreen](/assets/IntegrationVariables_01_pt.png)
 
-3. In this window, you find both the API key and API Login which allows you to authenticate your commerce during the integration procedure.
+3. Nesta janela, você encontra a API key e a API, que permitem autenticar sua loja durante o procedimento de integração.
 
-![PrintScreen](/assets/IntegrationVariables_02.png)
+![PrintScreen](/assets/IntegrationVariables_02_pt.png)
 
-{{% alert title="Warning" color="warning"%}}
+{{% alert title="Aviso" color="warning"%}}
 
-Both keys are unique per commerce in PayU, therefore, you must keep this information secured and their usage or disclosure is under your responsibility. 
+Ambas as chaves são exclusivas de cada loja no PayU, portanto, você deve manter essas informações protegidas. Seu uso ou divulgação são de sua responsabilidade.
 
 {{% /alert %}}  
 
-### Assinatura de autenticação
-The variable `signature` is used to validate the payments performed through the platform, ensuring their authenticity. This variable is a string value encrypted using MD5 or SHA algorithms and follows this structure.
+### Assinatura de autenticação {#authentication-signature}
+A variável `signature` é utilizada para validar os pagamentos realizados por meio da plataforma, garantindo sua autenticidade. Esta variável é um valor de string criptografado usando algoritmos MD5 ou SHA e segue esta estrutura.
 
 ```
 ApiKey~merchantId~referenceCode~tx_value~currency
 ```
 
-Let's build a `signature` using the following test values:
+Vamos criar uma `signature` usando os seguintes valores de teste:
 
 * **ApiKey**: `4Vj8eK4rloUd272L48hsrarnUA`
 * **merchantId**: `508029`
@@ -46,22 +46,22 @@ Let's build a `signature` using the following test values:
 * **tx_value**: `3`
 * **currency**: `USD`
 
-The string is these values concatenated with the tilde character (~):
+String são esses valores concatenados com o caractere til (~):
 
 ```
 4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU~3~USD
 ```
 
-After you apply the MD5 algorithm, the `signature` value is:
+Depois de aplicar o algoritmo MD5, o valor da `signature` é:
 
 ```
 ba9ffa71559580175585e45ce70b6c37
 ```
 
-### _deviceSessionId_ variable
-The _deviceSessionId_ is a code with the information of the device where the transaction was generated and provides a unique identifier for the device. This variable lets us identify attackers.
+### _deviceSessionId_ variável {#_devicesessionid_-variable}
+O _deviceSessionId_ é um código com as informações do dispositivo onde a transação foi gerada e fornece um identificador exclusivo para o dispositivo. Essa variável nos permite identificar invasores.
 
-1. To perform either API or SDK integration, you need to include the following script in your payment form:
+1. Para realizar a integração de API ou SDK, você precisa incluir o seguinte script em seu formulário de pagamento:
 
 ```` HTML
 <script type="text/javascript" src="https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200"></script>
@@ -71,16 +71,16 @@ The _deviceSessionId_ is a code with the information of the device where the tra
 ````
 <br>
 
-2. It is important to generate the `deviceSessionId` per each transaction. To generate the `deviceSessionId` get the `session_id` of the cookie and concatenate it with the current timestamp along with the milliseconds. Then, encrypt the result using MD5.
+2. É importante gerar o `deviceSessionId` por cada transação. Para gerar o `deviceSessionId` pegue o `session_id` do cookie e concatene-o com o carimbo de data/hora atual incluindo os milissegundos. Em seguida, criptografe o resultado usando MD5.
 
-Example in PHP
+Exemplo em PHP
 
 ```` PHP
 $deviceSessionId = md5(session_id().microtime())
 ````
 <br>
 
-Por exemplo, if the `$deviceSessionId` is `d66f949f19b33e88c202b579cfc549b3`, the script is as follows:
+Por exemplo, se o `$deviceSessionId` é `d66f949f19b33e88c202b579cfc549b3`, o script é o seguinte:
 
 ```` HTML
 <script type="text/javascript" src="https://maf.pagosonline.net/ws/fp/tags.js?id=d66f949f19b33e88c202b579cfc549b380200"></script>
@@ -90,8 +90,8 @@ Por exemplo, if the `$deviceSessionId` is `d66f949f19b33e88c202b579cfc549b3`, th
 ````
 <br>
 
-3. Finally, you must send the `$deviceSessionId` in the variable according to the integration selected:
+3. Finalmente, você deve enviar o `$deviceSessionId` na variável de acordo com a integração selecionada
 
-* For **API**: `transaction.deviceSessionId`
-* For **SDK JAVA**: `PayU.PARAMETERS.DEVICE_SESSION_ID`
-* For **SDK PHP**: `PayUParameters::DEVICE_SESSION_ID`
+* Para **API**: `transaction.deviceSessionId`
+* Para **SDK JAVA**: `PayU.PARAMETERS.DEVICE_SESSION_ID`
+* Para **SDK PHP**: `PayUParameters::DEVICE_SESSION_ID`

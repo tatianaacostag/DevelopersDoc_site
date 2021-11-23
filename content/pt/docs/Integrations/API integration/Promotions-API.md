@@ -8,7 +8,7 @@ weight: 50
 tags: ["subtopic"]
 ---
 
-These sections explains how to integrate using [Promotions]({{< ref"Promotions-API#promotions" >}}) or using [MSI]({{< ref "Promotions-API#msi" >}}) (Only Available for Mexico).
+These sections explains how to integrate using [Promotions]({{< ref"Promotions-API#promotions" >}}) ou using [MSI]({{< ref "Promotions-API#msi" >}}) (Only Available for Mexico).
 
 ## Promotions
 This feature lets you consult via API, the promotions in force, their characteristics and further information you want to present to the customers.
@@ -21,7 +21,7 @@ For Promotions, you need to authenticate and authorize the petitions received by
 ![PrintScreen](/assets/Promotions/PublicKey.png)
 
 ### Configuring the authentication
-You must include the headers ```Autorização``` and ```Date```. The ```Autorização``` header follows this structure:
+You must include the headers ```Autorização``` e ```Date```. The ```Autorização``` header follows this structure:
 
 ```java
 "Hmac" + " " + MerchantPublicKey + ":" + Signature
@@ -114,11 +114,11 @@ If the schema is not validated, the integration is not affected, and you only ne
 <br>
 <div class="variables"></div>
 
-| Parâmetro     | Descrição                                                              | Mandatory |
+| Parâmetro     | Descrição                                                              | Obrigatório |
 |---------------|--------------------------------------------------------------------------|:---------:|
 | accountId     | Identifier of your account.                                              |    Sim    |
 | currency      | Currency of your account                                                 |     No    |
-| amount        | Amount of the purchase                                                   |    Sim    |
+| amount        | Valor of the purchase                                                   |    Sim    |
 | paymentMethod | Send this method if you want to filter the Promotions by Payment method. |     No    |
 
 </details>
@@ -128,7 +128,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Size | Descrição |
+| Campo name | Formato | Tamanho | Descrição |
 |-|-|-|-|
 | promotion > id | Integer |  | Identifier of promotion in PayU platform. |
 | promotion > title | String | 50 | Promotion title. |
@@ -142,8 +142,8 @@ If the schema is not validated, the integration is not affected, and you only ne
 | promotion > endDate | Datetime |  | Date when promotion ends. |
 | paymentMethodFee | List |  | Descrição of the cost assumed by the merchant according to a payment method. |
 | paymentMethodFee > paymentMethodFeeDetail.paymentMethod | String |  | Nome of the payment method. |
-| paymentMethodFeeDetail > pricingFees |  |  | Object that has all the pricing for a payment method and installment, or all the installment (for countries that have a installment-based system). |
-| paymentMethodFeeDetail > pricingFees > fee > installments | String |  | Installment (1) or set of installments (1-36 for countries with installment-based ranges). |
+| paymentMethodFeeDetail > pricingFees |  |  | Object that has all the pricing for a payment method and installment, ou all the installment (for countries that have a installment-based system). |
+| paymentMethodFeeDetail > pricingFees > fee > installments | String |  | Installment (1) ou set of installments (1-36 for countries with installment-based ranges). |
 | paymentMethodFeeDetail > pricingFees > fee > pricing |  |  | It has the Pricing values by default for the transaction. |
  | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail |  |  | It has the values of interests and fees that will be applied to the payer. |
  | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail > commission | Decimal |  | Total fees to be applied to the payer, includes fees and taxes, if applicable. |
@@ -169,7 +169,7 @@ https://{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accoun
 ```
 <br>
 
- The value for the variable `{env-api}` displayed above is `sandbox.api` for testing and `api` for production mode. Furthermore, the `paymentMethod` parameter is optional if you want to filter by a given payment method. Example:
+ The value for the variable `{env-api}` displayed above is `sandbox.api` for testing and `api` for production mode. Furthermore, the `paymentMethod` parameter is optional if you want to filter by a given payment method. Exemplo:
 
 ```JAVA
 GET https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=512322&currency=ARS&amount=1000
@@ -1038,7 +1038,7 @@ Once you have selected the promotion, you need to include the promotion ID an th
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
-    "INSTALLMENTS_NUMBER": (Number of installments),
+    "INSTALLMENTS_NUMBER": (Número of installments),
     "PROMOTION_ID": (Promotion Id selected)
 }
 ```
@@ -1050,7 +1050,7 @@ Once you have selected the promotion, you need to include the promotion ID an th
 <extraParameters>
     <entry>
         <string>INSTALLMENTS_NUMBER</string>
-        <string>Number of installments</string>
+        <string>Número of installments</string>
     </entry>
     <entry>
         <string>PROMOTION_ID</string>
@@ -1068,7 +1068,7 @@ To learn how to include these extra parameters, refer to the Payments API for [A
 If your account is in Mexico, you can offer to your customers the option to pay in a determined number of interest-free installments. If you want to enable this feature, contact your sale representative.
 
 ### Observações {#considerations}
-* The numbers of installments supported are 3, 6, 9, 12, or 18.
+* The numbers of installments supported are 3, 6, 9, 12, ou 18.
 * The minimum values for MSI depends on the number of installments selected:
     - 3 > $300 MXN
     - 6 > $600 MXN
@@ -1085,7 +1085,7 @@ To use MSI, you need to include the number of months as an extra parameter:
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
-    "INSTALLMENTS_NUMBER": (Number of months)
+    "INSTALLMENTS_NUMBER": (Número of months)
 }
 ```
 
@@ -1096,7 +1096,7 @@ To use MSI, you need to include the number of months as an extra parameter:
 <extraParameters>
     <entry>
         <string>INSTALLMENTS_NUMBER</string>
-        <string>Number of months</string>
+        <string>Número of months</string>
     </entry>
 </extraParameters>
 ```

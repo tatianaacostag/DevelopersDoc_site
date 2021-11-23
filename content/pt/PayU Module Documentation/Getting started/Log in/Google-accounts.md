@@ -23,7 +23,7 @@ tags: ["subtopic"]
 
 <img src="/assets/GoogleSignIn/GoogleSignIn_01.png" alt="PrintScreen" width="45%"/><br>
 
-3. A pop up window appear to sign in using _Google_ accounts. First, provide your e-mail or phone number used to authenticate in your _Google_ account.
+3. A pop up window appear to sign in using _Google_ accounts. First, provide your e-mail ou phone number used to authenticate in your _Google_ account.
 
 <img src="/assets//GoogleSignIn/GoogleSignIn_02.png" alt="PrintScreen" width="45%"/><br>
 

@@ -10,9 +10,9 @@ weight: 10
 
 Before moving on, let's recap some key terms: 
 
-* A _**user**_ is a person who has a profile to manage or consult the information of an account. 
+* A _**user**_ is a person who has a profile to manage ou consult the information of an account. 
 * A _**profile**_ is a set of permissions to access an account. 
-* A user can have one or multiple profiles, this means that a user can access multiple _**accounts**_ and multiple _**merchants**_.
+* A user can have one ou multiple profiles, this means that a user can access multiple _**accounts**_ and multiple _**merchants**_.
 
 For further information, read the [concepts behind the Módulo PayU]({{< ref"PayU Module Documentation#payu-module-concepts" >}}).
 
@@ -38,7 +38,7 @@ The users marked with a green star (<img src="/assets/UserManagement/UserManagem
 {{% /alert %}}
 
 ### Add users
-You can create a user using their e-mail address or providing a username. Follow the steps below to create a new user.
+You can create a user using their e-mail address ou providing a username. Follow the steps below to create a new user.
 
 1. In the _**User management**_ module, click _**Add user**_.
 
@@ -52,9 +52,9 @@ You can create a user using their e-mail address or providing a username. Follow
 
 * **E-mail**: E-mail address of the new user. PayU sends the login information to this e-mail address, make sure it is valid and the user has access to it.<br>Alternatively, you can create a user without using an e-mail address. This is useful specially when the user you want to create is attached to a role and not to a specific person. To do this, click _**Don't have an e-mail?**_ and provide the following information:
    - _User_: username used to log in. This user name cannot have numbers nor special characters.
-   - _E-mail (Admin)_: provide the e-mail of the admin user to which, PayU send the options to generate or recover the password for this user.
+   - _E-mail (Admin)_: provide the e-mail of the admin user to which, PayU send the options to generate ou recover the password for this user.
 * **Full name**: name of the user you want to create.
-* **Status**: set if the user you want to create is _Active_ or _Inactive_.
+* **Status**: set if the user you want to create is _Active_ ou _Inactive_.
 
 4. Configure the user preferences. You can configure any of the following:
 
@@ -64,7 +64,7 @@ You can create a user using their e-mail address or providing a username. Follow
 
 You can use any of the following formats:
 
-| Formato      | English Formato | Example<br>_August 24, 2021_ |
+| Formato      | English Formato | Exemplo<br>_August 24, 2021_ |
 |-------------|----------------|------------------------------|
 | dd/mm/aaaa  | dd/mm/yyyy     | 24/08/2021                   |
 | mm/dd/aaaa  | mm/dd/yyyy     | 08/24/2021                   |
@@ -114,7 +114,7 @@ If the user was created without using e-mail, the instructions to activate the a
 9. Once the user sets the new password, they can access to the selected accounts using their credentials.
 
 ### Search users
-When you need to find a specific user, você pode usar the filter options to find one or more users that meet given conditions.
+When you need to find a specific user, você pode usar the filter options to find one ou more users that meet given conditions.
 
 In the _**User management**_ module, click the _**Search users**_ field to see the available filters.
 
@@ -137,8 +137,8 @@ You can update the following information:
 
 * Full name of a user
 * Request a password recovery.
-* Update the user status (Active or Inactive)
-* Change or remove the profile assigned to a given account.
+* Update the user status (Active ou Inactive)
+* Change ou remove the profile assigned to a given account.
 
 {{% alert title="Observação" color="info"%}}
 The information of the user preferences cannot be updated using this option, this information is updated by each user by their own.
@@ -154,7 +154,7 @@ To edit multiple users, search them and use the checkbox at the left. Depois cli
 The _**Edit users (n)**_ window appears, where you can update the following information:
 
 * Request a password recovery for all the users.
-* Update their user status (Active or Inactive)
+* Update their user status (Active ou Inactive)
 * Assign a profile to a given account.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_15.png) 

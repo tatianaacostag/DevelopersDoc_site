@@ -49,7 +49,7 @@ Change the format in which you want to display the dates in your Módulo PayU.
 
 You can use any of the following formats:
 
-| Formato      | English Formato | Example<br>_August 24, 2021_ |
+| Formato      | English Formato | Exemplo<br>_August 24, 2021_ |
 |-------------|----------------|------------------------------|
 | dd/mm/aaaa  | dd/mm/yyyy     | 24/08/2021                   |
 | mm/dd/aaaa  | mm/dd/yyyy     | 08/24/2021                   |
@@ -84,7 +84,7 @@ Using the Módulo PayU, you can upload the logo of your merchant so it can be di
 
 ![PrintScreen](/assets/Logo/Logo_01.png)
 
-To upload or update your logo, follow these steps.
+To upload ou update your logo, follow these steps.
 
 1. In the account options, expand the current account using the **▾** symbol. Then, select _**Your sale information**_.
 
@@ -97,7 +97,7 @@ To upload or update your logo, follow these steps.
 
 3. The upload panel appears, locate the image of your logo in your local machine. 
 
-4. The maximum size allowed for your logo is 350x90 pixels, if the selected image is bigger than this size, you can crop it using the upload panel. Furthermore, this panel provides options to zoom in or rotate the image.<br>When finish, click _**Save**_.
+4. The maximum size allowed for your logo is 350x90 pixels, if the selected image is bigger than this size, you can crop it using the upload panel. Furthermore, this panel provides options to zoom in ou rotate the image.<br>When finish, click _**Save**_.
 
 <img src="/assets/Logo/Logo_05.png" alt="PrintScreen" width="50%"/>
 
@@ -131,7 +131,7 @@ When finish, click _**Save changes**_. When the information is submitted, you ar
 
 Furthermore, you receive an e-mail informing the request and providing a ticket number.
 
-The procedure to validate your account take up two working days. In the meantime, the information you provide is loaded in the **_Bank account under analysis_** panel.
+The procedure to validate your account take up two dias úteis. In the meantime, the information you provide is loaded in the **_Bank account under analysis_** panel.
 
 ![PrintScreen](/assets/BankInformation/BankInformation_06.png)
 

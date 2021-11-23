@@ -22,7 +22,7 @@ O valor de cada payout, mais a taxa de processamento, é deduzido de sua conta. 
 ## Benefícios {##benefits}
 
 * **Leverage regional capabilities**.<br>A complete and easy-to-use API to make payments to any bank in the processing country<sup>\*</sup>.<br><sup>\*</sup>_Available for now in Colombia, with other markets coming soon._
-* **One or multiple payouts**.<br>The API is flexible. You can create one or multiple requests which can be new or existing. There is no restriction for the number of records. 
+* **One ou multiple payouts**.<br>The API is flexible. You can create one ou multiple requests which can be new ou existing. There is no restriction for the number of records. 
 * **Save time and costs**.<br>You can save operational costs and time managing all payment operations in just one place.
 * **Better manage account funds and balance**.<br>You can cancel payment orders before the payout is sent to the bank. Payouts feature helps you to better manage your account funds and balance. 
 * **Customizable notifications**.<br>Any changes in the payment order status are updated through our solution. You can customize the update notifications you receive. 
@@ -32,12 +32,12 @@ Through Payouts, you can send multiple and secure payouts such as fund disbursem
 
 Você só precisa fornecer o valor a pagar juntamente com os dados de cada beneficiário (como nome, identificação, dados bancários etc.), e PayU transfere o valor solicitado após as validações.
 
-<img src="/assets/PushPayments/PushPaymentsFlow.png" alt="Concepts"/><br>
+<img src="/assets/PushPayments/PushPaymentsFlow_pt.png" alt="Concepts"/><br>
 
-1. **Payout request**: you send an API request with the list of payees you want to send funds to, along with the amount for each transaction and their payment information. 
-2. **Payee validation**: payees are validated through our solution (Sanction Screening process) and payouts are scheduled. 
-3. **Funds deduction**: each payout along with the processing fee are deducted from your PayU virtual account.
-4. **Confirmation process**: the bank processes the payment according to [ACH process]({{< ref "#transaction-processing" >}}). You can customize notifications to receive changes in the payment status. 
+1. **Solicitação de Payout**: você envia uma solicitação via API com a lista de beneficiários para os quais deseja enviar os fundos, junto com o valor de cada transação e seus dados de pagamento.
+2. **Validação de beneficiário**: os beneficiários são validados por meio de nossa solução (processo de Sanction Screening) e os pagamentos são agendados.
+3. **Débito de fundos**: o valor de cada Payout junto com a taxa de processamento são debitados de sua conta virtual do PayU.
+4. **Confirmação do processo**: o banco processa o pagamento de acordo com o [processo ACH]({{< ref "#transaction-processing" >}}). Você pode personalizar as notificações para receber alterações no status do pagamento.
 
 ### Estados de Payouts {#payout-states}
 Os Payouts são realizados em duas etapas principais: a primeira etapa é quando você solicita o pagamento a um beneficiário. O segundo é quando o pedido foi aprovado e passa para a transferência dos fundos.

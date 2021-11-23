@@ -80,9 +80,11 @@ var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
 var toc = document.getElementById("td-section-nav");
+// var content = document.getElementsByClassName("td-content")[0];
 
 // When the page loads, open the modal 
 window.onload = function() {
+  content.style.backgroundImage = "url('/assets/deprecated.png')";
   modal.style.display = "block";
   toc.style['pointer-events'] = 'none';
   toc.style.backgroundColor = "rgba(0,0,0,-0.6)";
@@ -91,14 +93,14 @@ window.onload = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-  toc.removeAttribute("style")
+  toc.removeAttribute("style");
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if ((event.target == modal) || (event.target.id == "td-sidebar-menu")) {
     modal.style.display = "none";
-    toc.removeAttribute("style")
+    toc.removeAttribute("style");
   }
 }
 </script>

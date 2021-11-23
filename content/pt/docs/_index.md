@@ -64,7 +64,7 @@ PayU oferece as seguintes ferramentas para que você tenha mais opções para ve
 
 <!--
 ## Select your Integration
-Implement PayU with the aggregator model or gateway, using PayU’s financial agreements or your own. Select the integration that fits bets with your needs:
+Implement PayU with the aggregator model ou gateway, using PayU’s financial agreements ou your own. Select the integration that fits bets with your needs:
 
 {{< overview/navblocks >}}
 -->

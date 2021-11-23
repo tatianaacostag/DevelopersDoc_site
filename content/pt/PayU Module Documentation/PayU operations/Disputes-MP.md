@@ -3,7 +3,7 @@ title: "Disputas"
 date: 2021-09-03T16:42:19-05:00
 type: docs
 Description: >
-  Learn how to manage the Dispute process requested by your customers. This includes, see the disputes created, provide the evidence to resolve a dispute or refund the amount paid by the customer.
+  Learn how to manage the Dispute process requested by your customers. This includes, see the disputes created, provide the evidence to resolve a dispute ou refund the amount paid by the customer.
 weight: 40
 ---
 
@@ -38,7 +38,7 @@ A dispute begins when a buyer does not know a charge made to their credit card. 
 1. When we are notified by the bank that a dispute process has been launched, you and your customer automatically receive an e-mail informing about that process.
 
 {{% alert title="Observação" color="info"%}}
-To configure the e-mail or the URL to receive dispute notifications, refer to [Technical configurations]({{< ref "technical-configuration.md#disputes" >}}).
+To configure the e-mail ou the URL to receive dispute notifications, refer to [Technical configurations]({{< ref "technical-configuration.md#disputes" >}}).
 {{% /alert %}}
 
 2. Log into your PayU account. In the left menu, expand the _**Transactions**_ menu and select _**Disputas**_.
@@ -71,8 +71,8 @@ When finish, click _**Send for review**_.
 
 <img src="/assets/Disputas/Disputes_07.png" alt="PrintScreen" width="60%"/><br>
 
-8. At this point, we send the documents to the issuing bank or the network that processed the transaction, from whom the resolution of the case depends.<br><br>
-The dispute case may result in won (no chargeback), Lost (chargeback) or refunded. In the case of refunds, the trade is who makes the return to the buyer and the bank does not generate the chargeback. Consulte [dispute states]({{< ref "Disputes.md#dispute-states" >}}) to know all the states of a dispute.
+8. At this point, we send the documents to the issuing bank ou the network that processed the transaction, from whom the resolution of the case depends.<br><br>
+The dispute case may result in won (no chargeback), Lost (chargeback) ou refunded. In the case of refunds, the trade is who makes the return to the buyer and the bank does not generate the chargeback. Consulte [dispute states]({{< ref "Disputes.md#dispute-states" >}}) to know all the states of a dispute.
 
 {{% alert title="Observação" color="info"%}}
 If you have activated [Anti-fraud Guarantee]({{< ref"Antifraud-Guarantee.md" >}}), when the chargeback is subject to be covered by the guarantee, PayU assumes the values debited from your account. In this case, the status of this dispute is _Chargeback_ (Lost) _With antifraud guarantee_. 

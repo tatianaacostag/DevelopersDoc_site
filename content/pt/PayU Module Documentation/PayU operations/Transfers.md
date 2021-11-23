@@ -4,7 +4,7 @@ linkTitle: "Transfers"
 date: 2021-09-03T16:42:07-05:00
 type: docs
 Description: >
-  Learn how to receive the money from your PayU account on your Bank account. Additionally, learn how to automate transfers periodically or by amount.
+  Learn how to receive the money from your PayU account on your Bank account. Additionally, learn how to automate transfers periodically ou by amount.
 weight: 20
 ---
 
@@ -44,11 +44,11 @@ You can transfer up to the total amount in your PayU account to the registered b
 
 ![PrintScreen](/assets/Transfers/Transfers_01.png)
 
-2. Complete the value to transfer or select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don't have free transactions, this panel also displayed the value of the transaction along with the taxes.
+2. Complete the value to transfer ou select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don't have free transactions, this panel also displayed the value of the transaction along with the taxes.
 
 ![PrintScreen](/assets/Transfers/Transfers_02.png)
 
-3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account, and the target account.<br>Click _**OK**_ to confirm it or _**Reject**_ to discard it.
+3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account, and the target account.<br>Click _**OK**_ to confirm it ou _**Reject**_ to discard it.
 
 <img src="/assets/Transfers/Transfers_03.png" alt="PrintScreen" width="50%"/><br>
 
@@ -59,7 +59,7 @@ You can transfer up to the total amount in your PayU account to the registered b
 As soon as the request has been successfully sent the transfer is in _In progess_ status and you can see it in the _**Created transfers report**_ section at the end of the module; also, the amount requested is debited from your balance.<br>If the transfers could not be processed, this amount backs to your account and no fee is charged for this operation.
 
 ## Schedule transfers
-You can automate the transfers and request the a withdrawal given a fixed amount or each certain time.
+You can automate the transfers and request the a withdrawal given a fixed amount ou each certain time.
 
 {{% alert title="Observação" color="info"%}}
 When scheduling transfers, you must have the enough funds by the time when the transfer is executed.
@@ -84,7 +84,7 @@ The _options_ column provides the following actions:
 3. Select how you want to schedule the transfer.
 
 * **Schedule transfers by periodicity**<br>
-This option lets you transfer a given amount every certain time (days, weeks, or months). To schedule this type of transfers, select the option _Periodicity_.
+This option lets you transfer a given amount every certain time (days, weeks, ou months). To schedule this type of transfers, select the option _Periodicity_.
 
 * **Schedule transfers by balance available**<br>
 This option lets you transfer a given amount every time the balance reaches a specific value. To schedule this type of transfers, select the option _Balance available_.
@@ -94,8 +94,8 @@ Provide the following options.
 | Option                        | Descrição                                                                       |
 |-------------------------------|-----------------------------------------------------------------------------------|
 | Make a withdrawal each        | Select the periodicity of the transfers you want to schedule. This option is available for transfers scheduled by periodicity.<br><br>![PrintScreen](/assets/Transfers/Transfers_07.png) |
-| Select the amount to withdraw | Select the amount you want to transfer, you can select the total available balance or a fixed value.<br><br>![PrintScreen](/assets/Transfers/Transfers_08.png) |
-| Amount to withdraw            | Select the amount you want to transfer. This field appears when you select the option _Configure value_. |
+| Select the amount to withdraw | Select the amount you want to transfer, you can select the total available balance ou a fixed value.<br><br>![PrintScreen](/assets/Transfers/Transfers_08.png) |
+| Valor to withdraw            | Select the amount you want to transfer. This field appears when you select the option _Configure value_. |
 | Start my transfers on         | Select the starting date for the schedule. In this date, the first transfer is scheduled.<br><br>![PrintScreen](/assets/Transfers/Transfers_09.png) |
 | Descrição                   | Provide a meaningful description for your transfer. |
 

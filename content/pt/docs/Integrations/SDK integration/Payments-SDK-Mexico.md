@@ -56,15 +56,15 @@ Two-step flows are only supported for Mastercard and Visa.
 
 ### Observações {#considerations}
 * Send a valid credit card Método de pagamento in the request, [see the available Payment Methods for Mexico]({{< ref "select-your-payment-method.html#Mexico" >}}).
-* For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Consulte [Promotions API]({{< ref "Promotions.md" >}}) para obter mais informações.
-* When using promotions or apply installments, always display the phrase **"PAGOS DIFERIDOS"** during the payment process.
+* For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` e `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Consulte [Promotions API]({{< ref "Promotions.md" >}}) para obter mais informações.
+* When using promotions ou apply installments, always display the phrase **"PAGOS DIFERIDOS"** during the payment process.
 * When installments applied (fees assumed by the payer), display the original amount of the transaction, the total amount after the fees, the number of installments, and the amount per installment including the extra fee.
 * Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
 
 ### Autorização
-Use this method to perform the **Autorização** step of a two-step flow using Mastercard or Visa. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-mexico.md#capture" >}}) the funds.<br>The following examples show how to call the method for this transaction type according to the programming language. 
+Use this method to perform the **Autorização** step of a two-step flow using Mastercard ou Visa. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-mexico.md#capture" >}}) the funds.<br>The following examples show how to call the method for this transaction type according to the programming language. 
 
 {{< tabs tabTotal="2" tabID="2" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}

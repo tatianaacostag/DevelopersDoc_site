@@ -23,7 +23,7 @@ By default, PayU provides three profiles that allow your users to access the acc
 
 * **Administrator**: this profile has enabled all the permission of the account. A user entitled to this profile can create, review, update, and delete (or disable) the information related to the account. Furthermore, this user can see and download all the reports, view the technical information, resolve disputes, manage users, perform transfers, and manage profiles. 
 * **Read and write**: this profile is the equivalent of a _manager_ profile. A user entitled to this profile can create, review, update, and delete (or disable) the information related to the account. Furthermore, this user can see and download all the reports, view the technical information, resolve disputes, and review the users and profiles created.
-* **Only read**: this profile can access the account in read-only mode. A user entitled to this profile can create, review the information related to the account, download some of the reports, view the transfers of the account. Furthermore, this user **cannot** see the technical details or has access to the users and profiles.
+* **Only read**: this profile can access the account in read-only mode. A user entitled to this profile can create, review the information related to the account, download some of the reports, view the transfers of the account. Furthermore, this user **cannot** see the technical details ou has access to the users and profiles.
 
 These profiles cannot be deleted and their set of permissions are fixed, if any of these permissions does not meet your needs, you should [create one]({{< ref"#create-profiles" >}}).
 
@@ -54,11 +54,11 @@ When none of the [default profiles]({{< ref"#default-profiles" >}}) meets you re
 4. When finish, click _**Save settings**_. If you click _**Delete changes**_, the profile is not saved and the column is deleted form the table.
 
 ### Edit profiles
-When editing a profile, you can either rename it, or assign or remove permissions.
+When editing a profile, you can either rename it, ou assign ou remove permissions.
 
 * To rename a given profile, click the ▾ symbol next to its name. Depois clique em _**Change name**_.<br><br>![PrintScreen](/assets/Profiles/Profiles_06.png)<br>This enables the name field of the profile to update it.
 
-* To assign or remove a permission, just click the checkbox of the permission.
+* To assign ou remove a permission, just click the checkbox of the permission.
 
 When finish, click _**Save settings**_. If you click _**Delete changes**_, all the changes for both renaming and permission change are discarded.
 

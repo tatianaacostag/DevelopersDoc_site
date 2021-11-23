@@ -37,21 +37,21 @@ Módulo PayU allows you to perform the following operations:
 * Find the authentication credentials to integrate with your sales platform: API Key, API Login, and merchant ID.
 * Update your bank details.
 * Configure your company’s logo to appear on the Web Checkout (payment gateway).
-* Set the URLs of your confirmation page and answer page (if you have an API integration or Web checkout).
+* Set the URLs of your confirmation page and answer page (if you have an API integration ou Web checkout).
 
 ## Módulo PayU concepts
 The Módulo PayU allows a user to manage the merchant and its related accounts.  The complexity of your Módulo PayU depends on your size. Let's explain this using the following concepts.
 
-* **Merchant**: the merchant is the store that offers products or services. PayU defines the merchant as the legal person who hires the PayU service. If your store is legally constituted in two countries (two legal entities), each legal entity must be created as a merchant.<br>Por exemplo, _Shop ABC_ has branches in Mexico and Colombia, but the shop has constituted one company in each country, when _Shop ABC_ hires the PayU services, PayU creates two different merchants.
+* **Merchant**: the merchant is the store that offers products ou services. PayU defines the merchant as the legal person who hires the PayU service. If your store is legally constituted in two countries (two legal entities), each legal entity must be created as a merchant.<br>Por exemplo, _Shop ABC_ has branches in Mexico and Colombia, but the shop has constituted one company in each country, when _Shop ABC_ hires the PayU services, PayU creates two different merchants.
 
 {{% alert title="Observação" color="info"%}}
 Each merchant in PayU has a unique `Merchant ID`.
 {{% /alert %}}
 
-* **Account**: an account in PayU represents a processing country, a business line, or a hired PayU feature of a given merchant. If your shop is legally constituted in a country and sells products in many countries, you have a single merchant (your shop) in which you find an account per each country.<br>Por exemplo, _XYZ systems_ is a company legally constituted in the United States who offers the services of web hosting in Colombia, Mexico, and Peru. When _XYZ systems_ hires the PayU services, PayU creates a merchant with three accounts.<br>Moreover, an account is also one of the following:
+* **Account**: an account in PayU represents a processing country, a business line, ou a hired PayU feature of a given merchant. If your shop is legally constituted in a country and sells products in many countries, you have a single merchant (your shop) in which you find an account per each country.<br>Por exemplo, _XYZ systems_ is a company legally constituted in the United States who offers the services of web hosting in Colombia, Mexico, and Peru. When _XYZ systems_ hires the PayU services, PayU creates a merchant with three accounts.<br>Moreover, an account is also one of the following:
   - A business line: when a merchant has many different business lines in a given country. Por exemplo, a software company can offer their product as one business line and the training as another. In this case, this commerce has two accounts.
   - A feature: if you hire two PayU features with a different pricing schema, each feature is represented in your Módulo PayU as an account. Por exemplo, a shop has one price to process with credit cards and one different when they process with cash payments.
-* **User**: a user is a person who has a profile to manage or consult the information of an account.<br>A profile is a set of permissions to access an account. A user can have one or multiple profiles, this means that a user can access multiple accounts and multiple merchants.
+* **User**: a user is a person who has a profile to manage ou consult the information of an account.<br>A profile is a set of permissions to access an account. A user can have one ou multiple profiles, this means that a user can access multiple accounts and multiple merchants.
 
 The following graphics show the relation between the concepts above.
 
@@ -86,7 +86,7 @@ Merchants can be outside of our processing countries. Nevertheless, they must ha
 {{% /alert %}}
 
 #### Single merchants with single accounts
-This is the most common case when using the Módulo PayU. A shop is legally constituted in a country where it offers its products or services, this is the relation between the previous concepts for this example:
+This is the most common case when using the Módulo PayU. A shop is legally constituted in a country where it offers its products ou services, this is the relation between the previous concepts for this example:
 
 <img src="/assets/MerchantPanel/MerchantPanel_Concepts3.png" width="50%"/><br>
 

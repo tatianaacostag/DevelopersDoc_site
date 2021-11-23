@@ -35,7 +35,7 @@ The report has the following columns:
 | ID                  | Id of the transfer requested.                                                                       |
 | Request date        | Date and time when the transfer was created.                                                        |
 | Last update         | Date and time of the last action executed in the transfer.                                          |
-| Transferred value   | Amount of the transfer along with its associated costs.<br>To know these costs, click the <img src="/assets/Reports/Reports_05.png" width="2%" style="vertical-align: baseline;"/> icon.<br><br>![PrintScreen](/assets/Reports/Reports_06.png)               |
+| Transferred value   | Valor of the transfer along with its associated costs.<br>To know these costs, click the <img src="/assets/Reports/Reports_05.png" width="2%" style="vertical-align: baseline;"/> icon.<br><br>![PrintScreen](/assets/Reports/Reports_06.png)               |
 | Destination account | Bank account of the request                                                                         |
 | Status              | Latest status of the request. The possible states are: <ul style="margin-bottom: initial;"><li>Approved</li><li>In progress</li><li>Rejected</li></ul>                                                               |
 
@@ -50,7 +50,7 @@ You can filter transfers by the date of their creation using the dates filter at
 The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.<br>To see the information of a given date, set it for both start and end date.
 
 ## Download the report
-To download the report, click the _**Download**_ button located at the top or at the bottom of the report table.
+To download the report, click the _**Download**_ button located at the top ou at the bottom of the report table.
 
 ![PrintScreen](/assets/Reports/Reports_08.png)
 

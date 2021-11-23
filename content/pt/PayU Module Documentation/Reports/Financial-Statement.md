@@ -9,7 +9,7 @@ weight: 30
 ---
 
 {{% alert title="Observação" color="info"%}}
-The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows or columns in the report, contact your sales representative.
+The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows ou columns in the report, contact your sales representative.
 {{% /alert %}}
 
 ## What is the Financial Statement?
@@ -38,7 +38,7 @@ The **_Statements Balance_** section is divided in three parts as follows:
 The first part is the general balance where you can see the funds in your PayU account and a button to let you request a [transfer]({{< ref "Transfers.md" >}}) to your bank account.<br>The general balance, which is comprised of:
 
 * **Available balance**: the total funds received from your sales, after deducting the commission of PayU.
-* **Frozen balance**: the funds that are part of a [dispute]({{< ref "Disputes.md" >}}) in process or an unapproved [refund]({{< ref "Refunds.md" >}}) requested by your customers.
+* **Frozen balance**: the funds that are part of a [dispute]({{< ref "Disputes.md" >}}) in process ou an unapproved [refund]({{< ref "Refunds.md" >}}) requested by your customers.
 * **Total balance**: the money you can transfer to your bank account. It consists of the **Available balance** minus the **Frozen balance**.
 
 ![PrintScreen](/assets/Reports/Reports_20.png)
@@ -57,7 +57,7 @@ The pie chart provides the following information:
 * **PayU Fee**: PayU processing cost, including the sales percentage plus the flat rate applied to your account.
 
 ### Report table
-In the last part below the charts, you find a table with the credit and debit information of the latest operations. You can see the operation type and the value (credit or debit) of each row.
+In the last part below the charts, you find a table with the credit and debit information of the latest operations. You can see the operation type and the value (credit ou debit) of each row.
 
 ![PrintScreen](/assets/Reports/Reports_22.png)
 
@@ -67,8 +67,8 @@ The report has the following columns:
 |---------------------|-----------------------------------------------------------------------------------------------------|
 | Operation           | ID and date of the operation.                                                                       |
 | Tipo of Operation   | Information of the operation. Depending on its type, the information displayed varies.<br>Click <img src="/assets/Reports/Reports_23.png" width="2%"/> to expand the detailed values of the operation in the **Debit** and **Credit** columns.<br><br>![PrintScreen](/assets/Reports/Reports_24.png) |
-| Credit              | Amount credited to your Account.                                                                    |
-| Debit               | Amount debited from your Account.                                                                   |
+| Credit              | Valor credited to your Account.                                                                    |
+| Debit               | Valor debited from your Account.                                                                   |
 
 {{% alert title="Observação" color="info"%}}
 Click <img src="/assets/Reports/Reports_25.png" width="1.5%"/> next to _**Value**_ label to merge **debit** and **credit**; the resultant value is **debit** minus the positive value of **credit**.<br>Por exemplo, if the **debit** column value is _$3.296,63_ and the **credit** column value is _$950,00_, the resulting column value after merging is _$2.346,63_.
@@ -77,9 +77,9 @@ Click <img src="/assets/Reports/Reports_25.png" width="1.5%"/> next to _**Value*
 {{% /alert %}}
 
 ## Filter the report
-You can use the search bar above the graph or the calendar to set filters. You can filter by _**Tipo of Operation**_, _**Sale or Transfer ID**_, _**Reference**_<sup>\*</sup>, or _**Payment method type**_<sup>\*</sup>.
+You can use the search bar above the graph ou the calendar to set filters. You can filter by _**Tipo of Operation**_, _**Sale ou Transfer ID**_, _**Reference**_<sup>\*</sup>, ou _**Payment method type**_<sup>\*</sup>.
 
-<sup>\*</sup> _These filters are displayed when the selected **Tipo of Operation** is **Sale**, **Reversion**, or **Chargeback**_.
+<sup>\*</sup> _These filters are displayed when the selected **Tipo of Operation** is **Sale**, **Reversion**, ou **Chargeback**_.
 
 To set a filter, click the _**Filter your search**_ field at the top of the sales made chart.
 
@@ -94,7 +94,7 @@ Along with these filters, you can also set a time frame when the buyer performed
 The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.<br>To see the information of a given date, set it for both start and end date.
 
 ## Download the report
-To download the report, click the _**Download**_ button located at the top or at the bottom of the report table.
+To download the report, click the _**Download**_ button located at the top ou at the bottom of the report table.
 
 ![PrintScreen](/assets/Reports/Reports_29.png)
 
@@ -150,10 +150,10 @@ In the generated report you find the following concepts.
 | **PAYMENT_ORDER**                    | Transfer of the available Balance to the registered bank account.                  |
 | **PAYMENT_ORDER_POL_COMMISSION**     | Transfer cost.                                                                     |
 | **IVA_PAYMENT_ORDER_POL_COMMISSION** | Transfer tax.                                                                      |
-| **FREEZE_FUND**                      | Frozen balance (refunds or disputes).                                              |
+| **FREEZE_FUND**                      | Frozen balance (refunds ou disputes).                                              |
 | **UNFREEZE_FUND**                    | Release of the frozen amounts.                                                     |
-| **CHARGEBACK**                       | Chargeback or lost dispute.                                                        |
-| **DISCRETIONARY**                    | Discretionary movement or additional credit to the account.                        |
+| **CHARGEBACK**                       | Chargeback ou lost dispute.                                                        |
+| **DISCRETIONARY**                    | Discretionary movement ou additional credit to the account.                        |
 
 <sup>\*</sup> _Applies only to transactions with credit card._
 

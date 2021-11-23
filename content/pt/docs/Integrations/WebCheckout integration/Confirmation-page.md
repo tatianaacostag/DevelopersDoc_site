@@ -2,7 +2,7 @@
 title: "Página de confirmação"
 date: 2021-03-29T12:15:57-05:00
 description: >
-  This page allows you to get system confirmations related with the transaction results. You can update your system's inventories, orders, or databases. This page is not visible to the customer and its goal is to enable communication between systems. The data is sent via the HTTP POST method. </br>If the payer generates payment retries during the payment process, a confirmation page is generated for each transaction. This page is invoked for approved and rejected states.
+  This page allows you to get system confirmations related with the transaction results. You can update your system's inventories, orders, ou databases. This page is not visible to the customer and its goal is to enable communication between systems. The data is sent via the HTTP POST method. </br>If the payer generates payment retries during the payment process, a confirmation page is generated for each transaction. This page is invoked for approved and rejected states.
 weight: 30
 tags: ["subtopic"]
 ---
@@ -13,18 +13,18 @@ tags: ["subtopic"]
 <script src="/js/signature-generator/sha256.js"></script>
 <script src="/js/signature-generator/signature-generator.js"></script>
 
-The confirmation page lets you update the databases in your system; hence, this page should not include HTML code as it's not visible to the buyer. This page is optional; when a transaction is complete (i.e., when approved, rejected, or when canceled) our platform sends the variables via the HTTP POST method.
+The confirmation page lets you update the databases in your system; hence, this page should not include HTML code as it's not visible to the buyer. This page is optional; when a transaction is complete (i.e., when approved, rejected, ou when canceled) our platform sends the variables via the HTTP POST method.
 
 In the confirmation page, you must capture the data you want to store in the database. This capture depends on the programming language you use.
 
 ## Observações {#considerations}
-* If your site is restricted with _basic access authentication_ or similar, disable it for the confirmation URL.
-* The IP associated with the confirmation URL should be public; do not use URL accessible from intranet or localhost.
+* If your site is restricted with _basic access authentication_ ou similar, disable it for the confirmation URL.
+* The IP associated with the confirmation URL should be public; do not use URL accessible from intranet ou localhost.
 * If you're using HTTPS, you must have a valid certificate.
 * The format of your confirmation page must be `x-www-form-urlencoded`.
-* Do not use security certificates elliptic curve or those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` on your confirmation page.
+* Do not use security certificates elliptic curve ou those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` on your confirmation page.
 * PayU assumes that the confirmation page is reported correctly when receives the HTTP 200 code; otherwise, PayU makes a maximum of nine (9) attempts to send the confirmation page to your system. If after these attempts, HTTP 200 code is not received, PayU sends an e-mail alert.
-* PayU reports the confirmation page once the transaction has a final status for example, when approved, rejected or expired. If a transaction is in progress (waiting for payment or analysis), PayU does not report until the transaction has a final status.
+* PayU reports the confirmation page once the transaction has a final status for example, when approved, rejected ou expired. If a transaction is in progress (waiting for payment ou analysis), PayU does not report until the transaction has a final status.
  
 ## Variables sent with the confirmation page
 
@@ -33,22 +33,22 @@ In the confirmation page, you must capture the data you want to store in the dat
 <br>
 <div class="variables"></div>
 
-| Campo | Tipo | Size | Descrição |
+| Campo | Tipo | Tamanho | Descrição |
 |-|-|-|-|
 | merchant_id | Numérico | 12 | Merchant’s ID number in PayU’s system, you find this number in the account creation mail. |
 | state_pol | Alfanumérico | 32 | Indicates the status of the transaction in the system.<br>[See the transaction status in the given column]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
 | risk | Decimal (#.00) | — | Risk associated with the transaction. Values between 0 and 1.<br>The higher value, the greater the risk.<br>Formato `###.00`. |
 | response_code_pol | Alfanumérico | 255 | PayU’s response code.<br>[See the response codes in the given column]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
-| reference_sale | Alfanumérico | 255 | Reference of the sale or order. It must be unique for each transaction that is sent to the system. |
-| reference_pol | Alfanumérico | 255 | The reference or transaction number generated by PayU. |
+| reference_sale | Alfanumérico | 255 | Reference of the sale ou order. It must be unique for each transaction that is sent to the system. |
+| reference_pol | Alfanumérico | 255 | The reference ou transaction number generated by PayU. |
 | sign | Alfanumérico | 255 | Digital signature created for each of one the transactions. |
-| extra1 | Alfanumérico | 255 | Additional field to send information about the purchase. |
-| extra2 | Alfanumérico | 255 | Additional field to send information about the purchase. |
+| extra1 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. |
+| extra2 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. |
 | payment_method | Numérico | — | The internal identifier of the payment method used.<br>[See the codes of the payment methods]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
 | payment_method_type | Numérico | — | The payment method type used for the payment. |
-| installments_number | Numérico | — | Number of installments in which the credit card payment was deferred. |
-| value | Numérico | 14,2 | Total amount of the transaction. It can contain two decimal digits. Por exemplo, 10000.00 or 10000 |
-| tax | Numérico | 14,2 | VAT value of the transaction, if VAT zero is sent the system will automatically apply the 19%. It can contain two decimal digits. Por exemplo: 19000.00. In case you have no VAT you should fill out 0. |
+| installments_number | Numérico | — | Número of installments in which the credit card payment was deferred. |
+| value | Numérico | 14,2 | Valor total da transação. Ele pode conter dois dígitos decimais. Por exemplo, 10000.00 ou 10000 |
+| tax | Numérico | 14,2 | VAT value of the transaction, if VAT zero is sent the system will automatically apply the 19%. Ele pode conter dois dígitos decimais. Por exemplo: 19000.00. In case you have no VAT you should fill out 0. |
 | additional_value | Numérico | 14,2 | Non commissionaire Additional Value. |
 | transaction_date | Date(YYYY-MM-DD HH:mm:ss) | — | The date the transaction was made. |
 | currency | Alfanumérico | 3 | The currency in which the payment is made.<br>[See the accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
@@ -67,7 +67,7 @@ In the confirmation page, you must capture the data you want to store in the dat
 | administrative_fee_base | Decimal (#.00) | — | Base value of the administrative fee |
 | administrative_fee_tax | Decimal (#.00) | — | Tax value of the administrative fee |
 | airline_code | Alfanumérico | 4 | Airline code |
-| attempts | Numérico | — | Number of attempts of sending the confirmation. |
+| attempts | Numérico | — | Número of attempts of sending the confirmation. |
 | authorization_code | Alfanumérico | 12 | Sale’s authorization code |
 | bank_id | Alfanumérico | 255 | Bank identifier |
 | billing_city | Alfanumérico | 255 | The billing city. |
@@ -164,9 +164,9 @@ The signature validation allows you to check the data integrity, you must genera
 
 To validate the signature in the confirmation page, you should consider:
 
-* If the second decimal is zero, the `new_value` to generate the signature must have one decimal. Example (`150.00` -> `150.0`).
-* If the second decimal is not zero, the `new_value` to generate the signature must keep the same two decimals. Example (`150.26` -> `150.26`).
-* Get the parameters to generate the signature (`merchant_id`, `reference_sale`, `value`, `currency`, and `state_pol`) from the confirmation page, do not get them from your database. 
+* If the second decimal is zero, the `new_value` to generate the signature must have one decimal. Exemplo (`150.00` -> `150.0`).
+* If the second decimal is not zero, the `new_value` to generate the signature must keep the same two decimals. Exemplo (`150.26` -> `150.26`).
+* Get the parameters to generate the signature (`merchant_id`, `reference_sale`, `value`, `currency` e `state_pol`) from the confirmation page, do not get them from your database. 
 * You must store your ApiKey safely.
 * Create the signature as follows:
 
@@ -175,7 +175,7 @@ To validate the signature in the confirmation page, you should consider:
 ```
 <br>
 
-Example
+Exemplo
 
 **With one decimal**
 
@@ -188,7 +188,7 @@ Parameters obtained from the confirmation page
 - currency = USD
 - state_pol = 6
 
-The signature is generated in the following way: 
+A assinatura é generated in the following way: 
 MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU04~150.0~USD~6) = b607a2c2fa100e0947b206d41864fb86
 
 sign = b607a2c2fa100e0947b206d41864fb86
@@ -205,13 +205,13 @@ Parameters obtained from the confirmation page:
 - currency = USD
 - state_pol = 4
 
-The signature is generated in the following way: 
+A assinatura é generated in the following way: 
 MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU05~150.26~USD~4) = 1d95778a651e11a0ab93c2169a519cd6
 
 sign = 1d95778a651e11a0ab93c2169a519cd6 
 ```
 
-### Compare your signature
+### Compare a sua assinatura {#compare-your-signature}
 
 <!-- Signature generator - confirmation page -->
 <div id="blue-box">
@@ -254,8 +254,8 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
     </table>
     <br>
     <table width="50%"  border="0" cellspacing="2" cellpadding="2">
-        <input type="button" name="signature_generate_confirmation_page" id="signature_generate_confirmation_page" value="Generate signature" >
-        <input type="button" name="signature_generate_again_confirmation_page" id="signature_generate_again_confirmation_page" value="Generate new signature" >
+        <input type="button" name="signature_generate_confirmation_page" id="signature_generate_confirmation_page" value="Gerar assinatura" >
+        <input type="button" name="signature_generate_again_confirmation_page" id="signature_generate_again_confirmation_page" value="Gerar nova assinatura" >
     </table>
 </form>
 </div>
@@ -263,10 +263,10 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
 </div>
 <!-- End of signature generator - confirmation page -->
 
-This calculator lets you generate the signature using any of the available encryption methods.
+Esta calculadora permite gerar a assinatura usando qualquer um dos métodos de criptografia disponíveis.
 
 ## Payment retries
-When a transaction is rejected, the payer has the option to retry the payment using the same payment method or another. Keep in mind that for each attempt, PayU makes the call to the confirmation page with the corresponding transaction status.
+When a transaction is rejected, the payer has the option to retry the payment using the same payment method ou another. Keep in mind that for each attempt, PayU makes the call to the confirmation page with the corresponding transaction status.
 
 Each of these calls are made with the same payment reference (`reference_sale`), the same order identifier (`reference_pol`) but with different transaction identifier (`transaction_id`). Therefore, you can receive several calls to the confirmation page for the same sale.
 

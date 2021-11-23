@@ -37,7 +37,7 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 Payments SDK includes the following methods:
 
 * [Submit transaction with credit card]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-credit-cards" >}})
-* [Submit transaction with cash or Bank reference]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-cash-or-bank-reference" >}})
+* [Submit transaction with cash ou Bank reference]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-cash-or-bank-reference" >}})
 * [Submit transaction with bank transfer]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-bank-transfer" >}})
 * [Bank List - PSE]({{< ref "Payments-SDK-Colombia.md#bank-list---pse" >}})
 * [Available payment methods query]({{< ref "Payments-SDK-Colombia.md#available-payment-methods-query" >}})
@@ -52,7 +52,7 @@ This method lets you process the payments performed by your customers using cred
 
 ### Observações {#considerations}
 * Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
 * For Crédito Fácil Codensa card, the number of installments supported are 1 to 12, 18, 24, 36 and 48.
 * For Crédito Fácil Codensa card, the payer can choose any of the following document types for the variable `PAYER_DNI_TYPE`:
@@ -93,8 +93,8 @@ parameters.put(PayU.PARAMETERS.LANGUAGE, "Language.es");
 // Enter the value here.
 parameters.put(PayU.PARAMETERS.VALUE, ""+value);
 // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
-// if no IVA is sent, the system applies 19% automatically. It can contain two decimal digits.
-// Example 19000.00. In case you don't have IVA, set 0.
+// if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
+// Exemplo 19000.00. In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_VALUE, "10378");
 // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
 // In case you don't have IVA, set 0.
@@ -208,8 +208,8 @@ $parameters = array(
         // Enter the value here.
 	PayUParameters::VALUE => $value,
   // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
-  // if no IVA is sent, the system applies 19% automatically. It can contain two decimal digits.
-  // Example 19000.00. In case you don't have IVA, set 0.
+  // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
+  // Exemplo 19000.00. In case you don't have IVA, set 0.
   PayUParameters::TAX_VALUE => "10378",
   // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
   // In case you don't have IVA, set 0.
@@ -306,8 +306,8 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with cash or Bank reference
-This method lets you process the payments of your customers in cash or using a Bank reference. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.
+## Submit transaction with cash ou Bank reference
+This method lets you process the payments of your customers in cash ou using a Bank reference. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.
 
 #### Payments in cash
 <img src="/assets/Payments/CashReceiptCO.png" alt="PrintScreen" width="75%">
@@ -318,8 +318,8 @@ This method lets you process the payments of your customers in cash or using a B
 ### Observações {#considerations}
 * Send a valid cash Método de pagamento in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}). `OTHERS_CASH` method is not supported.
 * The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
-* For `BALOTO` and `EFECTY`, the confirmation of the payment takes 15 minutes. For `BANK_REFERENCED`, the confirmation is online.
-* The minimum and maximum values for `BALOTO` and `EFECTY` are:
+* For `BALOTO` e `EFECTY`, the confirmation of the payment takes 15 minutes. For `BANK_REFERENCED`, the confirmation is online.
+* The minimum and maximum values for `BALOTO` e `EFECTY` are:
    - `BALOTO` > Min: $3.000 COP - Max: $1.000.000 COP
    - `EFECTY` > Min: $20.000 COP - Max: $6.000.000 COP
 * The extra parameters have the following data related to the transaction:
@@ -355,8 +355,8 @@ parameters.put(PayU.PARAMETERS.LANGUAGE, "Language.es");
 // Enter the value here.
 parameters.put(PayU.PARAMETERS.VALUE, ""+value);
 // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
-// if no IVA is sent, the system applies 19% automatically. It can contain two decimal digits.
-// Example 19000.00. In case you don't have IVA, set 0.
+// if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
+// Exemplo 19000.00. In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_VALUE, "10378");
 // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
 // In case you don't have IVA, set 0.
@@ -469,8 +469,8 @@ $parameters = array(
         // Enter the value here.
 	PayUParameters::VALUE => $value,
   // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
-  // if no IVA is sent, the system applies 19% automatically. It can contain two decimal digits.
-  // Example 19000.00. In case you don't have IVA, set 0.
+  // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
+  // Exemplo 19000.00. In case you don't have IVA, set 0.
   PayUParameters::TAX_VALUE => "10378",
   // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
   // In case you don't have IVA, set 0.
@@ -577,13 +577,13 @@ This method lets you process the bank transfer payments of your customers. In Co
 
 When the payer selects a bank, you must send the parameter `pseCode` of the selection in the parameter `PSE_FINANCIAL_INSTITUTION_CODE` in the request.
 
-3. Show a list to let the payer choose whether they are a _Natural_ or _Legal_ person. Depending on what the payer choose, you must send the value in the parameter `PAYER_PERSON_TYPE` in the request. The list must be displayed as follows:
+3. Show a list to let the payer choose whether they are a _Natural_ ou _Legal_ person. Depending on what the payer choose, you must send the value in the parameter `PAYER_PERSON_TYPE` in the request. The list must be displayed as follows:
 
 <img src="/assets/Payments/PSEPersonList_EN.png" alt="PrintScreen" width="50%"><br>
 
 The selected value must be sent as follows:
-* Java: `PersonType.NATURAL.toString()` (N) or `PersonType.LEGAL.toString()` (J).
-* PHP: `N` or `J`.
+* Java: `PersonType.NATURAL.toString()` (N) ou `PersonType.LEGAL.toString()` (J).
+* PHP: `N` ou `J`.
 
 4. Show a list to let the payer choose their identification type. You must send the ISO code of the value selected in the parameter `PAYER_DOCUMENT_TYPE` in the request. The list must be displayed as follows:
 
@@ -611,12 +611,12 @@ The list of available documents is:
 * You must add in the response page the options to retry the payment, finish the transaction and print the receipt.
 * The status displayed in the response page can be any of the following:
 
-| polTransactionState | polResponseCode | State                                                                |
+| polTransactionState | polResponseCode | Estado                                                                |
 |---------------------|-----------------|----------------------------------------------------------------------|
 | 4                   | 1               | Approved transaction                                                 |
 | 6                   | 5               | Failed transaction                                                   |
 | 6                   | 4               | Rejected transaction                                                 |
-| 12 or 14            | 9994 or 25      | Pending transaction, please check if the debit was made in the bank. |
+| 12 ou 14            | 9994 ou 25      | Pending transaction, please check if the debit was made in the bank. |
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -642,8 +642,8 @@ parameters.put(PayU.PARAMETERS.LANGUAGE, "Language.es");
 // Enter the value here.
 parameters.put(PayU.PARAMETERS.VALUE, ""+value);
 // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
-// if no IVA is sent, the system applies 19% automatically. It can contain two decimal digits.
-// Example 19000.00. In case you don't have IVA, set 0.
+// if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
+// Exemplo 19000.00. In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_VALUE, "10378");
 // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
 // In case you don't have IVA, set 0.
@@ -691,12 +691,12 @@ parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, "CO");
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "000000");
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "7563126");
 
-//-- Mandatory information for PSE –
+//-- Obrigatório information for PSE –
 // Enter the bank PSE code here.
 parameters.put(PayU.PARAMETERS.PSE_FINANCIAL_INSTITUTION_CODE, "1007");
-// Enter the person type here (Natural or legal).
+// Enter the person type here (Natural ou legal).
 parameters.put(PayU.PARAMETERS.PAYER_PERSON_TYPE, PersonType.NATURAL.toString());
-// or parameters.put(PayU.PARAMETERS.PAYER_PERSON_TYPE, PersonType.LEGAL.toString());
+// ou parameters.put(PayU.PARAMETERS.PAYER_PERSON_TYPE, PersonType.LEGAL.toString());
 // Enter the payer's contact document here.
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "123456789");
 // Enter the payer’s document type here.
@@ -762,8 +762,8 @@ $parameters = array(
         // Enter the value here.
 	PayUParameters::VALUE => $value,
   // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
-  // if no IVA is sent, the system applies 19% automatically. It can contain two decimal digits.
-  // Example 19000.00. In case you don't have IVA, set 0.
+  // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
+  // Exemplo 19000.00. In case you don't have IVA, set 0.
   PayUParameters::TAX_VALUE => "10378",
   // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
   // In case you don't have IVA, set 0.
@@ -812,12 +812,12 @@ $parameters = array(
 	PayUParameters::PAYER_POSTAL_CODE => "000000",
 	PayUParameters::PAYER_PHONE => "7563126",
 
-	//-- Mandatory information for PSE –
+	//-- Obrigatório information for PSE –
   // Enter the bank PSE code here.
 	PayUParameters::PSE_FINANCIAL_INSTITUTION_CODE => "1007",
-  // Enter the person type here (Natural or legal).
+  // Enter the person type here (Natural ou legal).
 	PayUParameters::PAYER_PERSON_TYPE => "N",
-  // or PayUParameters::PAYER_PERSON_TYPE => "J"
+  // ou PayUParameters::PAYER_PERSON_TYPE => "J"
   // Enter the payer's contact document here.
 	PayUParameters::PAYER_DNI => "123456789",
   // Enter the payer’s document type here.

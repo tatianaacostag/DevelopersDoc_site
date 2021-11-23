@@ -3,7 +3,7 @@ title: "Disputas"
 linkTitle: "Disputas"
 date: 2021-04-12T08:34:58-05:00
 description: >
-  Using this tool, you can manage the dispute processes generated in your PayU account.
+  Usando esta ferramenta, você pode gerenciar os processos de disputas gerados em sua conta PayU.
 weight: 60
 ---
 
@@ -61,46 +61,46 @@ Você pode visualizar e gerenciar seus processos de disputa a partir de seu mód
 
 Para saber como fazer upload de evidências para resolver a disputa, consulte o [Módulo PayU]({{< ref"Disputes-MP.md" >}}).
 
-#### What information can be useful?
-* Full information of your customer (full name, identification number, e-mail, shipping address, visible credit card number, etc.)
-* Proof of delivery of the product or service signed by the cardholder.
-* Bill of sale of the product or service.
-* Acceptance letter of the payment signed by the cardholder attaching their identification document.
-* Cancellation and refund policy.
-* Acceptance of terms and conditions.
-* Transactional history of your customer (if any).
-* Other supports that validate the purchase.
+#### Que informações podem ser úteis? {#what-information-can-be-useful}
+* Informações completas do seu cliente (nome completo, número de identificação, e-mail, endereço de entrega, número de cartão de crédito visível etc.)
+* Comprovante de entrega do produto ou serviço assinado pelo titular do cartão.
+* Nota fiscal de venda do produto ou serviço.
+* Carta de aceitação do pagamento assinada pelo titular do cartão, anexando o documento de identificação.
+* Política de cancelamento e reembolso.
+* Aceitação dos termos e condições.
+* Histórico de transações de seu cliente (se houver).
+* Outros suportes que validam a compra.
 
-#### Maximum days to provide evidence
+#### Maximum days to provide evidence {#maximum-days-to-provide-evidence}
 Recall that the maximum days to provide evidence for each country are: 
 
-| Country   | Days to provide evidence  |
-|-----------|---------------------------|
-| Argentina | 5 working days            |
-| Brasil    | 12 working days           |
-| Chile     | 5 working days            |
-| Colômbia  | 2 working days            |
-| México    | 12 calendar days          |
-| Panama    | 8 working days            |
-| Peru      | 6 working days            |
+| País      | Dias para fornecer evidências  |
+|-----------|--------------------------------|
+| Argentina | 5 dias úteis                   |
+| Brasil    | 12 dias úteis                  |
+| Chile     | 5 dias úteis                   |
+| Colômbia  | 2 dias úteis                   |
+| México    | 12 dias corridos               |
+| Panama    | 8 dias úteis                   |
+| Peru      | 6 dias úteis                   |
 
-### 4. Final decision on dispute status
-Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refunded. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.
+### 4. Decisão final sobre o status da disputa {#4-final-decision-on-dispute-status}
+Uma vez apresentada a prova, enviamos os documentos ao banco emissor ou à rede que processou a transação, que supervisiona a resolução do caso. O resultado da disputa pode ser: ganho (sem estorno), perdido (estorno) ou reembolsado. No caso de devolução, a loja faz a devolução ao comprador e o banco não efetua o estorno.
 
-When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.
+Quando o banco anuncia o resultado da disputa, o caso é atualizado automaticamente no módulo administrativo e o PayU envia um POST para a URL configurada com a informação do resultado.
 
-## Dispute states
-When a dispute is reported, a dispute entity for the associated transaction is created. The dispute status changes according to the step where the dispute is within the course of the process.
+## Estados de disputa {#dispute-states}
+Quando uma disputa é relatada, é criada uma entidade de disputa para a transação associada. O status da disputa muda de acordo com a etapa em que a disputa está no decorrer do processo.
 
-| State | Descrição |
-|-|-|
-| Notified | When the dispute process begins, you must upload the evidence for the dispute. |
-| On Payment Network Review | When the shop provides evidence for a dispute through the Módulo PayU and the dispute is reviewed by the bank or network. |
-| Lost | The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost. |
-| Won | The dispute process is resolved in favor of the shop, there are no deductions of any kind. |
-| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. |
-| Expired | After past 120 days without a response from the bank, the amount is set to available for the merchant. |
+| Estado | Descrição |
+|---|---|
+| Notificada | Quando o processo de disputa começar, você deve carregar as evidências da disputa. |
+| Na avaliação da rede de pagamentos | Quando a loja fornece evidências de uma disputa por meio do módulo PayU, a disputa é analisada pelo banco ou rede. |
+| Perda | A transação é revertida da conta de compras virtual e pode incorrer em um custo de gerenciamento de estorno. |
+| Ganho | O processo de disputa é resolvido a favor da loja, não havendo deduções de qualquer espécie. |
+| Devolvida | Este processo ocorre quando a loja autoriza a reversão da operação, evitando que a loja tenha que pagar uma transação de estorno, que é substituída por um reembolso. |
+| Expirada | Após 120 dias sem resposta do banco, o valor é definido como disponível para o vendedor. |
 
 {{% alert title="Observação" color="info"%}}
-If you have activated [Anti-fraud Guarantee]({{< ref"Antifraud-Guarantee.md" >}}), when the chargeback is subject to be covered by the guarantee, PayU assumes the values debited from your account. In this case, the status of this dispute is _Chargeback_ (Lost) _With antifraud guarantee_. 
+Se você ativou [Garantia Antifraude]({{< ref"Antifraud-Guarantee.md" >}}), quando o estorno estiver sujeito à cobertura da garantia, o PayU assume os valores debitados de sua conta. Neste caso, o status desta disputa é _Contracargada_ (Perda) _Com garantia antifraude_. 
 {{% /alert %}}

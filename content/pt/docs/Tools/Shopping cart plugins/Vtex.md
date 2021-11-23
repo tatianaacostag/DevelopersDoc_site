@@ -183,7 +183,7 @@ Before configuring the _**Gateway affiliation**_, make sure you have configured 
 
 ![PrintScreen](/assets/VTEX/VTEX_10.png)
 
-{{% alert title="Important" color="warning"%}}
+{{% alert title="Importante" color="warning"%}}
 Make sure you have selected the _**PayUv2**_ connector, the procedure explained in this guide applies specifically to this connector.
 {{% /alert %}}  
 
@@ -193,7 +193,7 @@ Make sure you have selected the _**PayUv2**_ connector, the procedure explained 
 
 {{% alert title="Observação" color="info"%}}
 The information of the connector can be obtained either:
-* Using the Postman collection.<br>Run the **Retrieve Authentication Keys** method setting the global parameter `env` as `test` or `live` according to your processing environment.
+* Using the Postman collection.<br>Run the **Retrieve Authentication Keys** method setting the global parameter `env` as `test` ou `live` according to your processing environment.
 * Using the PaymentsOS dashboard.<br>Go to _**Account**_ > _**Business Units**_ and select the Business unit you create in the [previous]({{< ref "#1-configure-your-paymentsos-account" >}}) step. Recall that you must use the select at the top to choose the processing environment.<br>Some values are hidden by default, click the eye icon to display them.
 {{% /alert %}} 
 
@@ -212,7 +212,7 @@ When finish, click _**Save**_.
 #### Configure Payment methods
 Configure the payment methods to be displayed on the website for checkout. [Consult our available Payment methods]({{< ref "Select-your-payment-method.md" >}}).
 
-{{% alert title="Important" color="warning"%}}
+{{% alert title="Importante" color="warning"%}}
 PSE (Colombian Bank transfer method) is not supported through this version of the connector. If you need to configure this Payment method, refer to the [procedure to install version 1 of the conector](https://help.vtex.com/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q).
 {{% /alert %}}
 
@@ -233,7 +233,7 @@ If the payment method you want to configure is not listed, you need to create it
 * **Rule Name (to help you quickly identify)**: provide a meaningful name for the payment condition next to the payment method you selected.
 * **Status**: set the status of the payment condition. You can only have **one** active payment condition per payment method.
 * **Process with affiliation**: select the gateway affiliation configured before.
-* **Prepaid in full or in installments?**: select _**Prepaid in full**_<sup>\*</sup>.
+* **Prepaid in full ou in installments?**: select _**Prepaid in full**_<sup>\*</sup>.
 
 <sup>\*</sup>_Processing in installments is not yet supported_.
 

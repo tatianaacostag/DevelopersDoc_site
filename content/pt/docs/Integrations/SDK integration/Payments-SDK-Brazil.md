@@ -50,7 +50,7 @@ This method lets you process the payments performed by your customers using cred
 
 ### Observações {#considerations}
 * Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
 * The extra parameter `CIELO_TID` identifies the transaction, this parameter is needed when you want to process voids.
 

@@ -29,7 +29,7 @@ Si deseas que PayU siempre muestra la información de la transacción, no envíe
 ## Variables
 Variables enviadas a la Página de respuesta.
 
-<details open>
+<details>
 <summary>Variables enviadas a la Página de respuesta</summary>
 <br>
 <div class="variables"></div>
