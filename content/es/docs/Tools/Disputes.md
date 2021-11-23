@@ -10,7 +10,7 @@ weight: 60
 ![Concepts](/assets/Disputes/Disputes_es.png)
 
 ## ¿Qué es una Disputa? {#what-is-a-dispute} 
-Tus compradores pueden presentar una reclamación al banco de emisor de su tarjeta. El banco nos envía una notificación de disputa y nosotros ña creamos en nuestro sistema. La disputa congela el valor total de la venta en tu cuenta PayU.
+Tus compradores pueden presentar una reclamación al banco de emisor de su tarjeta. El banco nos envía una notificación de disputa y nosotros la creamos en nuestro sistema. La disputa congela el valor total de la venta en tu cuenta PayU.
 
 ## ¿Por qué ocurre una disputa? {#why-a-dispute-happens}
 Un comprador puede reclamar al banco de emisor de su tarjeta reportando que no ha recibido el producto, el producto es deficiente o no cumple con las características esperadas. El comprador también puede desconocer la compra en el extracto de su tarjeta de crédito.<br>
