@@ -34,40 +34,55 @@ Puedes incluir las siguientes variables en el Formulario de pago.
 
 | Campo | Tipo | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
-| amount | Numérico | 14 | Valor total de la transacción. Puede tener dos cifras decimales. Ejemplo 10000.00 o 10000. | ✓ |
 | merchantId | Numérico | 12 | Identificador de tu tienda en el sistema de PayU, puedes encontrar este número en el correo de creación de tu cuenta. | ✓ |
 | referenceCode | Alfanumérico | 255 | Referencia de la venta o la orden. Debe ser única por cada transacción enviada al sistema. Usualmente, esta es una forma de identificar las peticiones enviadas a la pasarela de pagos. | ✓ |
 | accountId | Numérico | 6 | Identificador de la cuenta de usuario de cada país asociado con la tienda. Esta variable se utiliza para mostrar los métodos disponibles del país. | ✓ |
 | description | Alfanumérico | 255 | Descripción de la venta. | ✓ |
-| tax | Numérico | 14,2 | Valor del impuesto al valor agregado de la transacción.<br>En Colombia, si no se envía el IVA. el sistema aplica automáticamente el 19%. Puede tener dos dígitos decimales, por ejemplo 19000.00.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne `0` a esta variable. | ✓ |
-| signature | Alfanumérico | 255 | Firma digital creada por cada transacción. Consulta [Firma para el formulario de pago]({{< ref "payment-form.md#signature-for-payment-form" >}}) para aprender a generarla. | ✓ |
 | currency | Alfanumérico | 3 | Moneda respectiva en la que se hace el pago. El proceso de conciliación se realiza en pesos colombianos a la tasa representativa del día.<br>[Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ |
-| buyerEmail | Alfanumérico | 255 | Campo que contiene el correo electrónico del comprador para notificar el resultado de la transacción por medio de correo electrónico. Se recomienda validar que se haya ingresado este campo en el formulario. | ✓ |
-| telephone | Alfanumérico | 50 | Teléfono de residencia del comprador. | ✓ |
-| buyerFullName | Alfanumérico | 150 | Nombre completo del comprador. | ✓ |
+| amount | Numérico | 14 | Valor total de la transacción. Puede tener dos cifras decimales. Ejemplo 10000.00 o 10000. | ✓ |
+| tax | Numérico | 14,2 | Valor del impuesto al valor agregado de la transacción.<br>En Colombia, si no se envía el IVA. el sistema aplica automáticamente el 19%. Puede tener dos dígitos decimales, por ejemplo 19000.00.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne `0` a esta variable. | ✓ |
+| discount | Numérico| 14,2 | Valor del descuento sobre la venta. | — |
+| taxReturnBase | Numérico | 14,2 | Valor base para la devolución de impuestos.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne `0` a esta variable. | ✓ |
+| additionalValue | Numérico | 14,2 | Valor adicional no comisionable de la venta. | — |
+| signature | Alfanumérico | 255 | Firma digital creada por cada transacción. Consulta [Firma para el formulario de pago]({{< ref "payment-form.md#signature-for-payment-form" >}}) para aprender a generarla. | ✓ |
+| algorithmSignature | Alfanumérico | 255 | Algoritmo de encriptación de la firma digital (campo `signature`). Los tres algoritmos disponibles son: `MD5`, `SHA` y `SHA256`. | — |
 | test | Numérico | 1 | Indica si la transacción es en modo pruebas o en producción. Asigna `1` para pruebas y `0` para producción. | — |
 | lng | Alfanumérico | 3 | Idioma en el que se quiere mostrar la pasarela de pagos.<br>[Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | — |
-| shippingCity | Alfanumérico | 50 | Ciudad de entrega de la mercancía<br><sup>\*</sup> Obligatorio si tu tienda envía el producto. | ✓* |
-| shippingCountry | Alfanumérico | 2 | Código ISO del país de entrega de lla mercancía.<br><sup>\*</sup> Obligatorio si tu tienda envía el producto.<br>[Ver los paises de pago]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | ✓* |
-| shippingAddress | Alfanumérico | 255 | Dirección de entrega de la mercancía.<br><sup>\*</sup> Obligatorio si tu tienda envía el producto. | ✓* |
 | extra1 | Alfanumérico | 255 | Campo adicional para enviar información relacionada con la compra. | — |
 | extra2 | Alfanumérico | 255 | Campo adicional para enviar información relacionada con la compra. | — |
 | extra3 | Alfanumérico | 255 | Campo adicional para enviar información relacionada con la compra. | — |
+| template | Alfanumérico | 255 | Plantilla para la página de pagos.| — |
 | responseUrl | Alfanumérico | 255 | URL de la página de respuesta. | — |
 | confirmationUrl | Alfanumérico | 255 | URL de la página de confirmación. | — |
-| payerFullName | Alfanumérico | 50 | Nombre del pagador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito. | — |
-| payerDocument | Alfanumérico | 25 | Número de identificación del pagador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito. | — |
-| mobilePhone | Alfanumérico | 50 | Número del móvil del comprador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito y será el número de teléfono de contacto. | — |
+| sourceUrl | Alfanumérico| 255 | URL de origen de las transacciones del comercio. Aquí es donde se encuentra ubicado el botón de pago. | — |
+| airline | Alfanumérico | 4 | Código de la aerolínea. | — |
 | billingAddress | Alfanumérico | 255 | Dirección de facturación. | — |
-| officeTelephone | Alfanumérico | 50 | Teléfono diurno del comprador. | — |
-| algorithmSignature | Alfanumérico | 255 | Algoritmo de encriptación de la firma digital (campo `signature`). Los tres algoritmos disponibles son: `MD5`, `SHA` y `SHA256`. | — |
+| shippingAddress | Alfanumérico | 255 | Dirección de entrega de la mercancía.<br><sup>\*</sup> Obligatorio si tu tienda envía el producto. | ✓* |
 | billingCity | Alfanumérico | 50 | Ciudad asociada con la dirección de facturación. | — |
+| shippingCity | Alfanumérico | 50 | Ciudad de entrega de la mercancía<br><sup>\*</sup> Obligatorio si tu tienda envía el producto. | ✓* |
 | zipCode | Alfanumérico | 20 | Postal code. | — |
 | billingCountry | Alfanumérico | 2 | Código ISO del país asociado con la dirección de facturación. | — |
+| shippingCountry | Alfanumérico | 2 | Código ISO del país de entrega de lla mercancía.<br><sup>\*</sup> Obligatorio si tu tienda envía el producto.<br>[Ver los paises de pago]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | ✓* |
+| buyerEmail | Alfanumérico | 255 | Campo que contiene el correo electrónico del comprador para notificar el resultado de la transacción por medio de correo electrónico. Se recomienda validar que se haya ingresado este campo en el formulario. | ✓ |
+| telephone | Alfanumérico | 50 | Teléfono de residencia del comprador. | ✓ |
+| officeTelephone | Alfanumérico | 50 | Teléfono diurno del comprador. | — |
+| mobilePhone | Alfanumérico | 50 | Número del móvil del comprador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito y será el número de teléfono de contacto. | — |
+| buyerFullName | Alfanumérico | 150 | Nombre completo del comprador. | ✓ |
+| paymentMethods | Alfanumérico | 255 | Lista de métodos de pago habilitados en el proceso de pago.<br>Esta lista debe estar separada por comas y sin espacios en blanco. Por ejemplo: `VISA,MASTERCARD`.<br>Puedes incluir cuotas para los métodos de pago añadiéndolas mediante guiones. Ejemplo: `VISA-1-3,MASTERCARD-3-5-9`.<br>[Consulta los métodos de pago disponibles para tu país en la columna` parámetro de método de pago`]({{< ref "select-your-payment-method.html" >}}). | — | 
+| administrativeFee | Numérico | 14,2 | Valor de la tarifa administrativa. | - |
+| taxAdministrativeFee | Numérico | 14,2 | Valor del impuesto de la tarifa administrativa. | - |
+| taxAdministrativeFeeReturnBase | Numérico | 14,2 | Valor base para calcular el impuesto de la tarifa administrativa. | - |
 | payerEmail | Alfanumérico | 255 | Dirección de correo electrónico del pagador. | — |
 | payerPhone | Alfanumérico | 20 | Número de teléfono del pagador. | — |
 | payerOfficePhone | Alfanumérico | 20 | Número de teléfono de oficina del pagador. | — |
 | payerMobilePhone | Alfanumérico | 20 | Número de teléfono móvil del pagador. | — |
+| expirationDate | #N/A | 19 | Fecha de vencimiento de las transacciones para pagos en efectivo. Formato: `YYYY-MM-DD HH:mm:ss`.<br>Este valor debe ser menor que el número de días predeterminado para el pago en efectivo (15 días para Argentina y 7 días para el resto de países). | - |
+| payerFullName | Alfanumérico | 50 | Nombre del pagador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito. | — |
+| payerDocument | Alfanumérico | 25 | Número de identificación del pagador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito. | — |
+| payerDocumentType | Alfanumérico | 25 | El número de identificación del comprador. Este valor se tomará para completar el formulario de la tarjeta de crédito. | - |
+| iin | Alfanumérico | 2048 | Lista de Bins admitidos durante el proceso de pago (separados por coma).<br>_Este parámetro solo lo pueden utilizar los comercios que validan la firma._ | - |
+| PaymentMethodsDescription | Alfanumérico | 255 | Descripción de los métodos de pago y Bins admitidos durante el proceso de pago. | - |
+| pseBanks | Alfanumérico | 255 | Listado de códigos bancarios habilitados en el proceso de pago a través de PSE.<br>Este listado debe estar separado por coma y sin espacios en blanco. | - |
 
 </details>
 
@@ -134,6 +149,14 @@ La firma es un método para validar los pagos realizados a través de la platafo
 "ApiKey~merchantId~referenceCode~amount~currency".
 ```
 <br>
+
+{{% alert title="Nota" color="info"%}}
+Si tu formulario de pago incluye las variables `paymentMethods`, `iin` o `pseBanks`, debes concatenarlas en dicho orden:
+
+```HTML
+"ApiKey~merchantId~referenceCode~amount~currency~paymentMethods~iin~pseBanks"
+```
+{{% /alert %}}
 
 Por ejemplo, con los siguientes datos:
 
