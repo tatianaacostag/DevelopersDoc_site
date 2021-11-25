@@ -7,7 +7,7 @@ Description: >
 weight: 40
 ---
 
-![Concepts](/assets/Disputes/Disputes_en.png)
+![Concepts](/assets/Disputes/Disputes_en2.png)
 
 {{% alert title="Note" color="info"%}}
 For introductory terms about a dispute refer to this [article]({{< ref "disputes.md" >}}).
@@ -28,18 +28,18 @@ Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.m
 * It damages the score of the PayU code facing the payment networks.
 * The disputed amount will be frozen until the dispute is solved.
 
-It is important to reply to a dispute by providing evidence before the deadline stipulated by the bank. After the deadline, it is not possible to upload the corresponding evidence for a dispute.
+It is important to reply to a dispute by providing evidence before the deadline stipulated by the bank. After the deadline, it is not possible to upload the corresponding evidence for a dispute and the amount may be debited from your account.
 
 For more information about the deadlines defined, refer to [maximum days to provide evidence]({{< ref "disputes.md#maximum-days-to-provide-evidence" >}}).
 
 ## How to resolve disputes?
 A dispute begins when a buyer does not know a charge made to their credit card. Once the bank is notified, the formal process begins to determine the validity of the purchase.
 
-1. When we are notified by the bank that a dispute process has been launched, you and your customer automatically receive an e-mail informing about that process.
-
-{{% alert title="Note" color="info"%}}
-To configure the e-mail or the URL to receive dispute notifications, refer to [Technical configurations]({{< ref "technical-configuration.md#disputes" >}}).
+{{% alert title="Tip" color="info"%}}
+If you have the cardholder’s data, the best way to manage a dispute process is to contact them. If the reason for the dispute is just ignorance (the customer didn't recall the purchase or your commerce), you can ask them to call their bank to withdraw the complaint and so the dispute process is resolved in your favor.
 {{% /alert %}}
+
+1. When we are notified by the bank that a dispute process has been launched, you are notified about that process. To configure the e-mail or the URL to receive dispute notifications, refer to [Technical configurations]({{< ref "technical-configuration.md#disputes" >}}).
 
 2. Log into your PayU account. In the left menu, expand the _**Transactions**_ menu and select _**Disputes**_.
 
@@ -61,9 +61,9 @@ To configure the e-mail or the URL to receive dispute notifications, refer to [T
 If you accept that the dispute is not a mistake, you can start a [Refund]({{< ref "Refunds-MP.md" >}}) process by clicking _**Or refund this value**_.
 {{% /alert %}}
 
-6. Upload the evidence files to resolve the dispute and click _**Save evidence**_. It is mandatory to save the evidence first before send it to review.
+6. Upload the evidence files to resolve the dispute and click _**Save evidence**_. It is mandatory to save the evidence first before send it to review. The files uploaded here should not be larger than 10MB and must be PDF files.
 
-<img src="/assets/Disputes/Disputes_06.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Disputes/Disputes2_06.png" alt="PrintScreen" width="60%"/><br>
 
 When finish, click _**Send for review**_.
 
