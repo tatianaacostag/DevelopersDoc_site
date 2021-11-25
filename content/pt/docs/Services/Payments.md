@@ -14,10 +14,10 @@ PayU pode processar os pagamentos usando dois tipos de fluxos de pagamento: duas
 
 ![Payments](/assets/Payments/autorizacionycaptura-pt.png)
 
-* •	No fluxo de uma etapa, combina as etapas _**Autorização**_ e _**Captura**_ em uma só transação. Os fundos são transferidos da conta do cliente para a conta PayU quando o pagamento é autorizado. A única etapa neste fluxo é:
-  - _**Cobrança (Autorização e captura)**_: esta operação envia o valor da transação para validar (AutorizaçãoAutorizaçãorovada, o valor é debitado do cartão imediatamente (captura). Este é o método mais comum para processar transações..
+* No fluxo de uma etapa, combina as etapas _**Autorização**_ e _**Captura**_ em uma só transação. Os fundos são transferidos da conta do cliente para a conta PayU quando o pagamento é autorizado. A única etapa neste fluxo é:
+  - _**Cobrança (Autorização e captura)**_: esta operação envia o valor da transação para validar (AutorizaçãoAutorizaçãorovada, o valor é debitado do cartão imediatamente (captura). Este é o método mais comum para processar transações.
 
-* •	No fluxo de duas etapas, primeiro você precisa autorizar e reter os fundos do cliente. Em seguida, conclua a transação para transferir os fundos autorizados para sua conta PayU. As etapas neste fluxo são:
+* No fluxo de duas etapas, primeiro você precisa autorizar e reter os fundos do cliente. Em seguida, conclua a transação para transferir os fundos autorizados para sua conta PayU. As etapas neste fluxo são:
   - _**Autorização**_: esta operação serve para verificar se o cartão utilizado para o pagamento está ativo, possui fundos etc. A cobrança não se completa até que seja enviada a captura da transação. </br>
 Por exemplo, quando você usa um aplicativo de transporte, depois de solicitar o serviço, o aplicativo envia uma Autorização para reservar o valor da viagem e verificar se o seu cartão é válido (ativo e com fundos suficientes). No entanto, a cobrança ainda não é realizada em seu cartão
   - _**Captura**_: esta operação conclui a uma operação previamente autorizada e a conta faz um débito no cartão.</br>

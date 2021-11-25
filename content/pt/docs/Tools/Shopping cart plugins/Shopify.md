@@ -10,7 +10,7 @@ tags: ["subtopic"]
 
 ## Pré-requisitos {#prerequisites}
 * Você precisa de uma conta ativa no PayU Latam.
-* •	Você precisa de um [plano](https://www.shopify.com/pricing) válido no Shopify. O check-out não está disponível em planos de teste.
+* Você precisa de um [plano](https://www.shopify.com/pricing) válido no Shopify. O check-out não está disponível em planos de teste.
 
 ## Gerenciamento de ordem no Shopify {#order-management-in-shopify}
 Leve em conta o seguinte ao gerenciar ordens no Shopify:

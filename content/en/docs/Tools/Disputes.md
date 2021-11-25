@@ -3,14 +3,16 @@ title: "Disputes"
 linkTitle: "Disputes"
 date: 2021-04-12T08:34:58-05:00
 description: >
-  Using this tool, you can manage the dispute processes generated in your PayU account.
+  Find all the information about the dispute module. This tool found in your PayU module, allows you to manage the dispute processes generated in your PayU account.
 weight: 60
 ---
 
-![Concepts](/assets/Disputes/Disputes_en.png)
-
 ## What is a Dispute?
-Your buyers can present a claim to their card issuing bank. The bank sends us a dispute notification, and we create the dispute in our system. This dispute froze the total amount of the sale in your PayU account.
+Your buyers can present a claim to their card issuing bank. The bank sends us a dispute notification to determine the validity of the purchase, and we create the dispute in our system. After we create the dispute, we notify you through the PayU Module.
+
+The dispute freezes the total amount of the sale in your PayU account.
+
+![Concepts](/assets/Disputes/Disputes_en2.png)
 
 ## Why a dispute happens?
 A buyer can claim to their card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.<br>
@@ -23,10 +25,13 @@ The reasons for starting a dispute process may vary, some of them are:
 * **Amount does not match**: the charge to the credit card does not match with the value of the purchase.
 * **Not reported by the entity**: the bank or processing network initiates a dispute process without a specific reason.
 
+As not all the financial entities use the same mechanisms to notify a dispute; therefore, PayU cannot guarantee that you can always know the reasons of the dispute.
+
 {{% alert title="Attention" color="warning"%}}
 
 * Recall that PayU acts as an intermediary to let your commerce provide evidence in the dispute process between you and the bank entity. PayU has no interference on the result of the dispute, this decision depends on the issuing bank.
 * Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance; therefore, you cannot transfer funds from this balance to your bank account until the dispute is resolved.
+* Your customers may claim a transaction up to **120 days** after the transaction date for local cards and **180 days** for international cards. These date are defined by the card franchises.
 
 {{% /alert %}} 
 
@@ -34,9 +39,9 @@ The reasons for starting a dispute process may vary, some of them are:
 The disputes process follows a simple flow:
 
 ### 1. Dispute notification
-When a bank notifies PayU about a dispute, both you and your customer receives an e-mail notifying the start of the dispute process.
+When a bank or a processing network notifies PayU about the start of a dispute process due to a claim of your customer, you can consult all the information related to it in the [Disputes module]({{< ref"Disputes-MP.md" >}}) of the PayU Module.
 
-We also send a `POST` with all the information of the dispute to the URL you set in your [PayU module]({{< ref "Technical-configuration.md#disputes" >}}). This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.
+If you have configured the notification e-mails in your [PayU module]({{< ref "Technical-configuration.md#disputes" >}}), you also receive the dispute information vía e-mail. Furthermore, when you have enabled the _**Automatic notification URL**_, we also send a `POST` notification. This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.
 
 You can configure the URL where we make the notification in the PayU module. Log in to [PayU.com](payu.com) and click the login option located at the top of the page. Alternatively, you can log in to https://merchants.payulatam.com/.
 
@@ -56,7 +61,7 @@ You can view and manage your dispute processes from your PayU module, in the _**
 ![PrintScreen](/assets/Disputes/Disputes_02.png)
 
 ### 3. Provide evidence
-It's important to always respond a dispute by providing evidence before the [deadline stipulated by the bank]({{< ref"disputes.md#maximum-days-to-provide-evidence" >}}). After the deadline date, you cannot upload the corresponding evidence for a dispute.
+It's important to always respond a dispute by providing evidence before the [deadline stipulated by the bank or the processing network]({{< ref"disputes.md#maximum-days-to-provide-evidence" >}}). After the deadline date, you cannot upload the corresponding evidence for a dispute.
 
 To learn how to upload evidence to resolve the dispute, refer to the [PayU module]({{< ref"Disputes-MP.md" >}}).
 
@@ -95,11 +100,18 @@ When a dispute is reported, a dispute entity for the associated transaction is c
 |-|-|
 | Notified | When the dispute process begins, you must upload the evidence for the dispute. |
 | On Payment Network Review | When the shop provides evidence for a dispute through the PayU module and the dispute is reviewed by the bank or network. |
+| Documents not provided | The deadline date to provide evidence has been reached and the commerce did not provide any documentation. |
 | Lost | The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost. |
 | Won | The dispute process is resolved in favor of the shop, there are no deductions of any kind. |
-| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. |
 | Expired | After past 120 days without a response from the bank, the amount is set to available for the merchant. |
+| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. |
 
 {{% alert title="Note" color="info"%}}
 If you have activated [Anti-fraud Guarantee]({{< ref"Antifraud-Guarantee.md" >}}), when the chargeback is subject to be covered by the guarantee, PayU assumes the values debited from your account. In this case, the status of this dispute is _Chargeback_ (Lost) _With antifraud guarantee_. 
 {{% /alert %}}
+
+## Anti-fraud tips for your business
+Fight against the digital fraud it's our duty!. Take into account the following tips:
+1. Be wary of an increase in purchases or service requests higher than expected due to the nature of your business.
+2. Be suspicious of purchases made with higher amounts than the average you receive in your commerce.
+3. Verify if you have a higher purchase volume form a single client or requested to the same address.

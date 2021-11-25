@@ -4,7 +4,7 @@ linkTitle: "User Management"
 date: 2021-08-27T08:43:01-05:00
 type: docs
 Description: > 
-   Learn how to create, search, update, and disable the users who can access your Módulo PayU according to their profile.
+   Learn how to create, search, update e disable the users who can access your Módulo PayU according to their profile.
 weight: 10
 ---
 
@@ -29,7 +29,7 @@ To manage users, open you PayU account and click _**Settings**_ menu at the top 
 
 ![PrintScreen](/assets/UserManagement/UserManagement_01.png)
 
-The _**User management**_ module opens, here, you can find a list of the available users along with their status, the accounts they can access, and their profile.
+The _**User management**_ module opens, here, you can find a list of the available users along with their status, the accounts they can access e their profile.
 
 ![PrintScreen](/assets/UserManagement/UserManagement_02.png)
 
@@ -50,10 +50,10 @@ You can create a user using their e-mail address ou providing a username. Follow
 
 3. Provide the following user information:
 
-* **E-mail**: E-mail address of the new user. PayU sends the login information to this e-mail address, make sure it is valid and the user has access to it.<br>Alternatively, you can create a user without using an e-mail address. This is useful specially when the user you want to create is attached to a role and not to a specific person. To do this, click _**Don't have an e-mail?**_ and provide the following information:
+* **E-mail**: E-mail address of the new user. PayU sends the login information to this e-mail address, make sure it is valid and the user has access to it.<br>Alternatively, you can create a user without using an e-mail address. This is useful specially when the user you want to create is attached to a role and not to a specific. To do this, click _**Don't have an e-mail?**_ and provide the following information:
    - _User_: username used to log in. This user name cannot have numbers nor special characters.
    - _E-mail (Admin)_: provide the e-mail of the admin user to which, PayU send the options to generate ou recover the password for this user.
-* **Full name**: name of the user you want to create.
+* **Nome completo**: name of the user you want to create.
 * **Status**: set if the user you want to create is _Active_ ou _Inactive_.
 
 4. Configure the user preferences. You can configure any of the following:
@@ -135,7 +135,7 @@ The _**Edit user**_ window appears.
 
 You can update the following information:
 
-* Full name of a user
+* Nome completo of a user
 * Request a password recovery.
 * Update the user status (Active ou Inactive)
 * Change ou remove the profile assigned to a given account.

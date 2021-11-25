@@ -21,7 +21,7 @@ weight: 50
 | `INACTIVE_PAYMENT_PROVIDER` | O provedor de pagamento não estava ativo. |
 | `DIGITAL_CERTIFICATE_NOT_FOUND` | The financial network reported an authentication error. |
 | `INVALID_EXPIRATION_DATE_OR_SECURITY_CODE` | O código de segurança ou a data de validade eram inválidos. |
-| `INVALID_RESPONSE_PARTIAL_APPROVAL` | Tipo de resposta inválido. A resposta da entidade é uma aprovação parcial e deve ser cancelada automaticamente pelo sistema. |
+| `INVALID_RESPONSE_PARTIAL_APPROVAL` | Tipo de resposta inválido. A resposta da entidade é uma aprovação parcial e deve ser cancelada automaticamente (auto-void) pelo sistema. |
 | `INSUFFICIENT_FUNDS` | A conta não tinha fundos suficientes. |
 | `CREDIT_CARD_NOT_AUTHORIZED _FOR_INTERNET_TRANSACTIONS` | O cartão de crédito não foi autorizado para transações na Internet. |
 | `INVALID_TRANSACTION` | A rede financeira informou que a transação era inválida. |
@@ -259,7 +259,7 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | CC   | Cartão de cidadania.                                                                     | Colômbia               |
 | CE   | Cartão de cidadão estrangeiro.                                                           | Colômbia, Peru         |
 | CEL  | Quando identificado pela linha móvel.                                                    | Colômbia               |
-| CEP  | Recibo de Pagamento Eletrônico                                                           | México                 |
+| Código postal  | Recibo de Pagamento Eletrônico                                                           | México                 |
 | CI   | Cartão de identidade.                                                                    | Argentina, Chile       |
 | CNPJ | Registro Nacional de Pessoas Jurídicas                                                   | Brasil                 |
 | CPF  | Registro de Indivíduos                                                                   | Brasil                 |

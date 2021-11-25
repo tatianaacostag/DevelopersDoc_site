@@ -47,7 +47,7 @@ Em seguida, localize a seção _**Actions**_ e clique em _**edit**_ ao lado da a
 * **API KEY**: Chave única da sua loja. Você pode obter esta informação no seu Módulo PayU (**_Configuração_** > **_Configuração técnica_** > **_API Key_**).
 * **Merchant Id**: ID da sua loja no PayU Latam.
 * **Account Id**: ID da conta PayU de acordo com o país onde você quer vender.
-* **Test Enabled**: Defina `No` se você deseja processar no ambiente de produção. Caso contrário, defina `Yes`.
+* **Test Enabled**: Definir `No` se você deseja processar no ambiente de produção. Caso contrário, definir `Yes`.
 
 Deixe os outros campos com os valores pré-configurados.
 

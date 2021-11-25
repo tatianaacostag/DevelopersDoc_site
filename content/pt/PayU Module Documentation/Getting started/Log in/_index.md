@@ -20,7 +20,7 @@ Follow the next steps to log in your PayU account.
 
 ![PrintScreen](/assets/Login3_en.png)
 
-3. If your user can access to more than one merchant, click it to access it. Otherwise, you are redirected your merchant.
+3. If your user can access to more than one merchant, click it to access it. Caso contrário, you are redirected your merchant.
 
 ![PrintScreen](/assets/Login4_en.png)
 

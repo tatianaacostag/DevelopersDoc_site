@@ -7,7 +7,7 @@ Description: >
 weight: 40
 ---
 
-![Concepts](/assets/Disputes/Disputes_es.png)
+![Concepts](/assets/Disputes/Disputes_es2.png)
 
 {{% alert title="Nota" color="info"%}}
 Para conocer los términos introductorios sobre una disputa, consulte este [artículo]({{< ref "disputes.md" >}}).
@@ -28,18 +28,18 @@ Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}
 * Daña la puntuación del código PayU de cara a las redes de pago.
 * La cantidad en disputa se congelará hasta que se resuelva la disputa.
 
-Es importante responder siempre a una disputa presentando evidencias antes de la fecha máxima estipulada por el banco]. Luego de la fecha máxima, no puedes cargar evidencias de una disputa.
+Es importante responder siempre a una disputa presentando evidencias antes de la fecha máxima estipulada por el banco]. Luego de la fecha máxima, no puedes cargar evidencias de una disputa y el monto podría ser debitado de tu cuenta.
 
 Para obtener más información sobre los plazos definidos, consulta [días máximos para presentar evidencias]({{< ref "disputes.md#maximum-days-to-provide-evidence" >}}).
 
 ## ¿Cómo resolver disputas?
 Una disputa comienza cuando un comprador no conoce un cargo realizado en su tarjeta de crédito. Una vez que se notifica al banco, comienza el proceso formal para determinar la validez de la compra.
 
-1. Cuando el banco nos notifica que se ha iniciado un proceso de disputa, tú y tu cliente reciben automáticamente un correo electrónico informando sobre este proceso.
-
-{{% alert title="Nota" color="info"%}}
-Para configurar el correo electrónico o la URL para recibir notificaciones de disputas, consulta [Configuración técnica]({{< ref "technical-configuration.md#disputes" >}}).
+{{% alert title="Consejo" color="info"%}}
+Si cuentas con los datos del tarjetahabiente, la mejor forma para gestionar un proceso de disputa es contactándolo. Si el motivo de la disputa es simplemente desconocimiento (el cliente no recuerda la compra o tu comercio), puedes pedirle que hable con su banco para que retire la solicitud y se resuelva el proceso de disputa a tu favor.
 {{% /alert %}}
+
+1. Cuando el banco nos notifica que se ha iniciado un proceso de disputa, se te notifica sobre este procceso. Para configurar el correo electrónico o la URL para recibir notificaciones de disputas, consulta [Configuración técnica]({{< ref "technical-configuration.md#disputes" >}}).
 
 2. Ingresa a tu cuenta PayU. En el menú de la izquierda, expende el menú _**Transacciones**_ y selecciona _**Disputas**_.
 
@@ -61,9 +61,9 @@ Para configurar el correo electrónico o la URL para recibir notificaciones de d
 Si aceptas que la disputa no es un error, puedes iniciar un procesos de [Reembolso]({{< ref "Refunds-MP.md" >}}) haciendo clic en _**Devolver dinero**_.
 {{% /alert %}}
 
-6. Sube los archivos de evidencia para resolver la disputa y haz clic en _**Guardar evidencia**_. Es obligatorio guardar la evidencia antes de enviarla a revisión.
+6. Sube los archivos de evidencia para resolver la disputa y haz clic en _**Guardar evidencia**_. Es obligatorio guardar la evidencia antes de enviarla a revisión.<br>Los archivos cargados aquí no pueden ser superiores a 10MB y deben ser archivos PDF.
 
-<img src="/assets/Disputes/Disputes_06_es.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Disputes/Disputes2_06_es.png" alt="PrintScreen" width="60%"/><br>
 
 Cuando termines, haz clic en _**Enviar a revisión**_.
 

@@ -3,7 +3,7 @@ title: "Payments SDK - Chile"
 linkTitle: "Payments SDK - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  Payments SDK Chile lets your shop process different transaction types with multiple payment methods.
+  Payments SDK Chile permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 weight: 30
 tags: ["subtopic"]
 ---
@@ -33,35 +33,35 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available methods
+## Métodos disponíveis {#available-methods}
 Payments SDK includes the following methods:
 
-* [Submit transaction with credit cards]({{< ref "Payments-SDK-Chile.md#submit-transaction-with-credit-cards" >}})
-* [Available payment methods query]({{< ref "Payments-SDK-Chile.md#available-payment-methods-query" >}})
+* [Enviar transação com cartão de crédito]({{< ref "Payments-SDK-Chile.md#submit-transaction-with-credit-cards" >}})
+* [Consulta de métodos de pagamento disponíveis]({{< ref "Payments-SDK-Chile.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-SDK-Chile.md#ping" >}})
-<!-- * [Submit transaction with cash]({{< ref "Payments-SDK-Chile.md#submit-transaction-with-cash" >}}) -->
+<!-- * [Enviar transação em dinheiro]({{< ref "Payments-SDK-Chile.md#submit-transaction-with-cash" >}}) -->
 
 {{% alert title="Observação" color="info"%}}
 To confirm the status of a transaction, você pode usar the [Consultas SDK]({{< ref "QueriesSDK.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit cards
-This method lets you process the payments performed by your customers using credit cards. For Chile, you can perform the two-step flows (**Autorização**, **Captura**), and one-step flows (**Cobrança**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+## Enviar transação com cartão de crédito {#submit-transaction-with-credit-cards}
+Este método permite processar os pagamentos efetuados com cartão de crédito pelos seus clientes. For Chile, você pode executar os fluxos de duas etapas, você pode executar os fluxos de duas etapas (**Autorização**, **Captura**) e fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Observação" color="info"%}}
 Transactions with credit card using two-step flows are available under demand. Contact your Sales representative para obter mais informações.
 {{% /alert %}}
 
 ### Observações {#considerations}
-* Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods o Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (se processar com código de segurança) substituindo as informações do cartão de crédito. Para obter mais informações, consulte [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
 * Two-step flows are not supported for international credit cards.
 * Transactions with credit card using two-step flows are available under demand and for single installment payments. Contact your Sales representative para obter mais informações.
-* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
+* Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
 
-### Autorização
-Use this method to perform the **Autorização** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-chile.md#capture" >}}) the funds.<br>The following examples show how to call the method for this transaction type according to the programming language.
+### Autorização {#authorization}
+Use este método para executar a etapa **Autorização** de um fluxo de duas etapas. Nesta etapa, você autoriza o pagamento, mas o valor não é debitado até você [capturar]({{< ref "payments-sdk-chile.md#capture" >}}) os fundos.<br>The following examples show how to call the method for this transaction type according to the programming language.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -156,7 +156,7 @@ parameters.put(PayU.PARAMETERS.USER_AGENT, "Mozilla/5.0 (Windows NT 5.1; rv:18.0
 // Autorização request
 TransactionResponse response = PayUPayments.doAuthorization(parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if(response != null){
 	response.getOrderId();
     response.getTransactionId();
@@ -263,7 +263,7 @@ $parameters = array(
 // Autorização request
 $response = PayUPayments::doAuthorization($parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if ($response) {
 	$response->transactionResponse->orderId;
 	$response->transactionResponse->transactionId;
@@ -283,13 +283,13 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-### Captura
-Use this method to perform the **Captura** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-sdk-chile.md#authorization" >}}) to transfer them to your PayU account.
+### Captura {#capture}
+Use este método para executar a etapa **Captura** de um fluxo de duas etapas. Nesta etapa, você captura os fundos [Autorizados]({{< ref "payments-sdk-chile.md#authorization" >}}) anteriormente para transferi-los para sua conta PayU.
 
 #### Observações {#considerations}
-Leve em conta as seguintes informações for capture.
-* The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.
-* Only the parameters displayed in the request body are mandatory to invoke a Captura transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
+Leve em conta as seguintes informações para captura.
+* O tempo máximo para capturar uma transação aprovada é de sete (7) dias. Após este período, a transação é cancelada automaticamente (auto-void).
+* Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.
 * Captures are only allowed for transactions in one installment.
 
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -350,8 +350,8 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-### Cobrança
-Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
+### Cobrança {#charge}
+Use este método para executar um fluxo de uma etapa, ou seja, uma cobrança. Neste momento, as duas etapas do fluxo são combinadas em uma só transação, e os fundos são transferidos da conta do cliente para sua conta PayU, uma vez que tenham sido aprovados:
 
 The following examples show how to call the method for this transaction type according to the programming language.
 
@@ -448,7 +448,7 @@ parameters.put(PayU.PARAMETERS.USER_AGENT, "Mozilla/5.0 (Windows NT 5.1; rv:18.0
 // Autorização request
 TransactionResponse response = PayUPayments.doAuthorizationAndCapture(parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if(response != null){
 	response.getOrderId();
     response.getTransactionId();
@@ -555,7 +555,7 @@ $parameters = array(
 // Autorização request
 $response = PayUPayments::doAuthorizationAndCapture($parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if ($response) {
 	$response->transactionResponse->orderId;
 	$response->transactionResponse->transactionId;
@@ -575,18 +575,18 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 <!--
-## Submit transaction with cash
-This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.
+## Enviar transação em dinheiro {#submit-transaction-with-cash}
+Este método permite processar os pagamentos de seus clientes em dinheiro. Para integrar com transações em dinheiro, você deve redirecionar o cliente para a URL encontrada na resposta do método; your customer selects cash and generates the payment code.
 
 <img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
 
 ### Observações {#considerations}
-* The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven days after the current date at 12:00 pm.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
-* You must set a response URL in the parameter `NETWORK_CALLBACK_URL` in the request; this URL redirects the user back to your page after they finish the online payment procedure.
-* You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the `BANK_URL` parameter in the response.
+* O parâmetro `EXPIRATION_DATE` não é obrigatórionão é obrigatório. Se você não enviar este parâmetro, seu valor padrão será de seven dias após a data atual at 12:00 pm.<br>Se você enviar uma data posterior ao número de dias padrão, PayU ignorará esse valor e o vencimento será definido como padrão.
+* Você deve definir uma URL de resposta no parâmetro `NETWORK_CALLBACK_URL` in the request; esta URL redireciona o usuário de volta à sua página depois de concluir o procedimento de pagamento online.
+* Você deve redirecionar o pagador para a página do Klap (antigo Multicaja) para permitir que ele efetue o pagamento em dinheiro. Esta URL está no parâmetro `BANK_URL` na resposta.
 
 ### Method call
-The following are the bodies of the request and response of this payment method.
+A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
 Map<String, String> parameters = new HashMap<String, String>();
 
@@ -665,35 +665,35 @@ Map<String, String> parameters = new HashMap<String, String>();
         TransactionResponse response = PayUPayments.doAuthorizationAndCapture(parameters);
 
 
-## Submit transaction with bank transfer
-This method lets you process the bank transfer payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
+## Enviar transação com transferência bancária {#submit-transaction-with-bank-transfer}
+Este método permite processar os pagamentos de seus clientes por transferência bancária. Para se integrar a essas transações, você deve redirecionar o cliente para a URL encontrada na resposta do método.
 
 <img src="/assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
 
 ### Observações {#considerations}
-* If you don't send the `RESPONSE_URL` parameter in the extra parameters, the API took the value from the _**Response URL**_ variable in your Módulo PayU (_**Settings**_ > _**Technical configuration**_).
-* When you process bank transfer payment, you must redirect the customer to the URL found in the `URL_PAYMENT_REDIRECT` extra parameter concatenated with the `TRANSBANK_DIRECT_TOKEN` extra parameter as follows: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
-* If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_PAYMENT_IN_ENTITY`; this is because the payer is redirected to the selected bank to complete the payment.
+* Se você não enviar o parâmetro `RESPONSE_URL` parameter in the extra parameters, API extrairá o valor da variável _**URL de resposta**_ em seu Módulo PayU (_**Configuração**_ > _**Configuração técnica**_).
+* Ao processar os pagamentos através do WebPay plus, você deve redirecionar o cliente para a URL encontrada no parâmetro extra `URL_PAYMENT_REDIRECT` concatenado com o parâmetro extra `TRANSBANK_DIRECT_TOKEN` da seguinte forma: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
+* Se a solicitação de pagamento for bem-sucedida, a transação tem estado `PENDING` e responseCode `PENDING_PAYMENT_IN_ENTITY`; Isso ocorre porque o pagador é redirecionado ao banco selecionado para concluir o pagamento.
 * The response page must have the following variables:
 
 | Variável          | Descrição                                                   |
 |-------------------|---------------------------------------------------------------|
-| transactionState  | Estado of the transaction.                                     |
-| reference_pol     | Reference code to identify a transaction in PayU.             |
-| TX_VALUE          | Transaction amount.                                           |
-| authorizationCode | Autorização code of the transaction.                        |
-| processingDate    | Transaction date.                                             |
-| cc_number         | Visible number of the card used in the transaction.           |
+| transactionState  | Estado da transação.                                     |
+| reference_pol     | Código de referência para identificar uma transação no PayU.             |
+| TX_VALUE          | Valor da transação.                                           |
+| authorizationCode | Código de autorização da transação.                        |
+| processingDate    | Data da transação.                                             |
+| cc_number         | Número visível do cartão utilizado na transação.           |
 
-The variables above are sent via GET.
+As variáveis acima são enviadas via GET.
 
 ### Method call
-The following are the bodies of the request and response of this payment method.
+A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
 
 -->
-## Available payment methods query
-This method returns a list of the payment methods available in all countries.
+## Consulta de métodos de pagamento disponíveis {#available-payment-methods-query}
+Este método gera uma lista dos métodos de pagamento disponíveis em todos os países.
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -720,7 +720,7 @@ foreach ($payment_methods as $payment_method){
 {{< /tabs >}}
 
 ## Ping
-The ```PING``` method lets you verify the connection to our platform. 
+O método `PING` permite que você confirme a conexão com a nossa plataforma.
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.

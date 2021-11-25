@@ -1229,7 +1229,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
 | transaction > cookie | Alfanumérico | Max:255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
 | transaction > userAgent | Alfanumérico | Max:1024 | User agent del navegador donde el cliente realiza la transacción. | Sí |
-| transaction > extraParameters |  |  | Parámetros adicionales o datos asociados a la petición. Para los pagos a través de WebPay plus, esthis is the response page of your commerce.<br>En JSON, El parámetro _extraParameters_ se configura así: <br>`"extraParameters": {`<br>&emsp;`"RESPONSE_URL": "http://www.test.com/response"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ se configura así: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>RESPONSE_URL</string>`<br>&emsp;&emsp;`http://www.test.com/response`<br>&emsp;`</entry>`<br>`</extraParameters>` | No |
+| transaction > extraParameters |  |  | Parámetros adicionales o datos asociados a la petición. Para los pagos a través de WebPay plus, esta es la página de respuesta de tu comercio.<br>En JSON, El parámetro _extraParameters_ se configura así: <br>`"extraParameters": {`<br>&emsp;`"RESPONSE_URL": "http://www.test.com/response"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ se configura así: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>RESPONSE_URL</string>`<br>&emsp;&emsp;`http://www.test.com/response`<br>&emsp;`</entry>`<br>`</extraParameters>` | No |
 
 </details>
 
@@ -1260,7 +1260,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 
 #### Consideraciones {#considerations-3}
 * Si no envías el parámetro `RESPONSE_URL` en `transaction.extraParameters`, el API toma el valor de la variable _**URL de respuesta**_ en tu Módulo PayU (_**Configuración**_ > _**Configuración técnica**_).
-* Cuando procesas pagos de transferencias bancarias, debes redirigir a tu cliente a la URL que encuentras en el extra parámetro `URL_PAYMENT_REDIRECT` concatenado con el extra parámetro `TRANSBANK_DIRECT_TOKEN` así: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
+* Cuando procesas pagos a través de WebPay plus, debes redirigir a tu cliente a la URL que encuentras en el extra parámetro `URL_PAYMENT_REDIRECT` concatenado con el extra parámetro `TRANSBANK_DIRECT_TOKEN` así: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
 * Si la solicitud de pago es exitosa, la transacción queda con estado `PENDING` y responseCode `PENDING_PAYMENT_IN_ENTITY`; esto es debido a que el pagador es redirigido al banco seleccionado para completar el pago.
 * La página de respuesta debe tener las siguientes variables:
 

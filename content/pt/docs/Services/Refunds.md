@@ -48,7 +48,7 @@ Antes de usar qualquer recurso de CANCELAMENTO ou REEMBOLSO, leve em conta as se
   - Se a sua ordem de reembolso for  `APPROVED`, o valor será devolvido ao titular do cartão. 
   - Se a sua ordem de reembolso for  `DECLINED`, o valor é liberado do Saldo Congelado e retorna ao Saldo disponível de sua conta PayU.
 * Assim que o reembolso for aprovado, isso será refletido no cartão de crédito do pagador quando o banco o efetivar.
-* •	Para verificar o status de sua solicitação de reembolso, use o [Serviço de consultas]({{< ref "queries" >}} "Query Service") disponíveis para esse fim.
+* Para verificar o status de sua solicitação de reembolso, use o [Serviço de consultas]({{< ref "queries" >}} "Query Service") disponíveis para esse fim.
 
 ## O que acontece agora? {#whats-next}
 De acordo com o país de processamento, algumas condições especiais podem ser necessárias para a execução de cancelamentos ou reembolsos. Essas condições são explicadas no tipo de integração selecionado.

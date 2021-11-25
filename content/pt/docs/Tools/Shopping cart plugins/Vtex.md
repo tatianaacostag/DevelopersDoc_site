@@ -9,7 +9,7 @@ tags: ["subtopic"]
 draft: true
 ---
 
-VTEX is an enterprise digital commerce platform that allows you to create an online store with out-of-the-box capabilities fast. For more information, refer to official [VTEX webpage](https://vtex.com/).
+VTEX is an enterprise digital commerce platform that allows you to create an online store with out-of-the-box capabilities fast. Para obter mais informações, consulte official [VTEX webpage](https://vtex.com/).
 
 ## Pré-requisitos {#prerequisites}
 * Você precisa de uma conta ativa no PayU Latam.
@@ -72,10 +72,10 @@ Provide the following information:
 | configuration_data.apiKey | Unique key of your commerce. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | configuration_data.accountId | ID da conta PayU de acordo com o país onde você quer vender. |
 | configuration_data.merchantId | ID da sua loja no PayU Latam. |
-| configuration_data.paymentCountry | Processing country in format ISO 3166 Alpha-3. |
+| configuration_data.paymentCountry | País de processamento no formato ISO 3166 Alpha-3. |
 
 {{% alert title="Observação" color="info"%}}
-The parameter `provider_id` is  automatically set by the response of the method `2. Retrieve PayU Latam ID`. Do not change this value.
+O parâmetro `provider_id` is  automatically set by the response of the method `2. Retrieve PayU Latam ID`. Do not change this value.
 {{% /alert %}}  
 
 11. Click the `POST` method `4. Create Business Unit` this method creates the _**Business Unit**_ in PaymentsOS. Then, go to _**Body**_ tab. 
@@ -90,7 +90,7 @@ Provide the following information:
 | description | Provide a meaningful description for the _**Business Unit**_.<br>This value is optional. |
 
 {{% alert title="Observação" color="info"%}}
-The parameter `default_processor` is  automatically set by the response of the method `3. Create Provider Configuration`. Do not change this value.
+O parâmetro `default_processor` is  automatically set by the response of the method `3. Create Provider Configuration`. Do not change this value.
 {{% /alert %}}  
  
 12. Click the `POST` method `5. Create Webhook` this method creates the _**WebHook**_ in PaymentsOS. This WebHook is the confirmation URL that will receive the notifications sent by VTEX when a transaction changes its state.<br>Then, go to _**Body**_ tab.
@@ -127,7 +127,7 @@ Provide the following information for the _**Provider Configuration**_:
 | apiKey| Unique key of your commerce. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | accountId | ID da conta PayU de acordo com o país onde você quer vender. |
 | merchantId | ID da sua loja no PayU Latam. |
-| paymentCountry | Processing country in format ISO 3166 Alpha-3. |
+| paymentCountry | País de processamento no formato ISO 3166 Alpha-3. |
 
 When finish, click _**Create**_.
 
@@ -270,5 +270,5 @@ Finally, click in Complete purchase
 Once the purchase has been approved you can check it in:
 * VTEX Admin: _**Orders**_ > _**Orders management**_ > _**All orders**_.
 * PaymentsOS dashboard: _**Payments**_ > _**Search**_.<br>The parameter _**External Transaction ID**_ is the Order ID in PayU.
-* Módulo PayU: in the [_**Sales Report**_]({{< ref "Sales-report.md" >}}) module.
-* [Consultas API]({{< ref "Queries.md" >}}) using the parameter _**External Transaction ID**_ as OrderID.
+* Módulo PayU: in the [_**Relatório de Vendas**_]({{< ref "Sales-report.md" >}}) module.
+* [API de Consultas]({{< ref "Queries.md" >}}) using the parameter _**External Transaction ID**_ as OrderID.

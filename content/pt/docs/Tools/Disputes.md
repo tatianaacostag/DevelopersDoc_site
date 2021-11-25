@@ -72,7 +72,7 @@ Para saber como fazer upload de evidências para resolver a disputa, consulte o 
 * Outros suportes que validam a compra.
 
 #### Maximum days to provide evidence {#maximum-days-to-provide-evidence}
-Recall that the maximum days to provide evidence for each country are: 
+Recall that the máximo days to provide evidence for each country são: 
 
 | País      | Dias para fornecer evidências  |
 |-----------|--------------------------------|

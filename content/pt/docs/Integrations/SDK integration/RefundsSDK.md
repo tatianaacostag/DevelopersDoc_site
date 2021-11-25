@@ -3,12 +3,12 @@ title: "Voids and Refunds SDK"
 linkTitle: "Voids and Refunds SDK"
 date: 2021-03-29T11:15:44-05:00
 description: >
-  This feature allows you to request the cancellation ou the refund of the transactions authorized ou charged. You can create the refund request using the _Refund_ ou _Void_ method according to the status of the transaction. 
+  This feature allows you to request the cancellation ou the refund of the transactions authorized ou charged. You can create the refund request using the _Refund_ ou _Void_ method according to the status da transação. 
 weight: 100
 tags: ["subtopic"]
 ---
 
-To integrate with Voids and Refunds SDK, target your request to the following URLs according to your environment.
+To integrate with Voids and Refunds SDK, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -40,69 +40,69 @@ If you need to understand the concepts and read further considerations of Voids 
 Before using Voids and Refunds API, Leve em conta as seguintes informações.
 
 ### Argentina
-* The maximum time to send a void is 14 days. If no void ou capture is sent after this time, the transaction is auto-voided.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 365 days and 180 days for partial refunds.
-* Refunds with decimals are not supported.
-* When a refund is approved, the payer gets the money back in maximum 30 dias úteis.
+* O tempo máximo para enviar um cancelamento é de 14 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada automaticamente (auto-void).
+* O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 365 days and 180 days para reembolsos parciais.
+* Reembolsos com casas decimais não são aceitos.
+* Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 30 dias úteis.
 
 ### Brazil
-* The maximum time to send a void is seven (7) days. If no void ou capture is sent after this time, the transaction is cancelled.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 90 days for transactions processed in Redecard and 120 for transactions processed in Cielo.
-* When a refund is approved, the payer gets the money back in maximum 15 dias úteis.
+* O tempo máximo para enviar um cancelamento é de 7 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada.
+* O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 90 days para transações processadas na  Redecard and 120 para transações processadas na  Cielo.
+* Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 15 dias úteis.
 
 ### Chile
-* Due to network restrictions, void can be authorized within the first three hours after the authorization. If the void is not accepted ou no capture is sent after seven (7) days, the transaction is auto-voided.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 90 days.
-* Refunds with decimals are not supported.
-* When a refund is approved, the payer gets the money back in 8 to 20 dias úteis.
-* Partial refunds for transactions using installments are received online but PayU processes them manually due to acquirer restrictions.
-* The minimum amount to send a refund is 10 CLP.
+* Due to network restrictions, void can be authorized within the first three hours after the authorization. Se nenhum cancelamento ou reembolso for enviado após de 7 days, a transação será cancelada automaticamente (auto-void).
+* O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 90 dias.
+* Reembolsos com casas decimais não são aceitos.
+* Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no 8 to 20 dias úteis.
+* Reembolsos parciais para transações parceladas são recebidos online, mas PayU os processa manualmente devido a restrições do adquirente.
+* O valor mínimo para enviar um reembolso é de 10 CLP.
 
 ### Colombia
-* Voids are not supported.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is two years.
-* Minimum amount to send the Refund 300 COP.
-* If refund is not sent the same day in which the transaction was captured (before 9 pm UTC-5) the refund goes immediately to a manual process without sending the online attempt.
-* When a refund is approved, the payer gets the money back in maximum 30 dias úteis.
-* Partial refunds are not available for international credit cards.
+* Não há suporte para cancelamentos.
+* O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é de dois anos.
+* O valor mínimo para envio do Reembolso é de 300 COP.
+* Se o reembolso não for enviado no mesmo dia em que a transação foi capturada (antes das 21h UTC-5), o reembolso vai imediatamente para um processo manual sem a tentativa online.
+* Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 30 dias úteis.
+* Reembolsos parciais não estão disponíveis para cartões de crédito internacionais.
 
 ### Mexico
-* The minimum time to send a void is 10 minutes after the authorization and the maximum is 30 days. If the transaction was made with American Express, the maximum time is seven (7) days.<br>If no void ou capture is sent after this time, the transaction is auto-voided.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days. If the transaction was made processed by Bancomer, the maximum time is 45 days.
-* When a refund is approved, the payer gets the money back in 30 dias úteis.
-* Refunds with decimals are not supported.
+* O tempo mínimo para envio do cancelamento é de 10 minutes after the authorization and the máximo is 30 dias. Se a transação foi feita com American Express, o prazo máximo é de 7 dias.<br>Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada automaticamente (auto-void).
+* O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 180 dias. If the transaction was made processed by Bancomer, the máximo time is 45 dias.
+* Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no 30 dias úteis.
+* Reembolsos com casas decimais não são aceitos.
 
 ### Peru
-* The maximum days to void an authorization are: 
-    - Visa: 21 days. If no void ou capture is sent after this time, the transaction is auto-captured.
-    - Mastercard: 28 days. If no void ou capture is sent after this time, the transaction is auto-captured.
-    - American Express: 30 days. If no void ou capture is sent after this time, the transaction is auto-voided.
-    - Diners: 11 days. If no void ou capture is sent after this time, the transaction is auto-voided.
-* The minimum time to send a refund is 10 minutes after the approval and the maximum is 180 days.
-* Partial refunds are supported for transactions without installments. Recall that transactions with one installment are considered as without installments.
-* Partial refunds with visanet must be sent after one day.
-* When a refund is approved, the payer gets the money back in 15 to 25 dias úteis.
-* Minimum amount to send the Refund is 1 USD ou 1 PEN.
+* The máximo days to void an authorization são: 
+    - Visa: 21 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será capturada automaticamente.
+    - Mastercard: 28 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será capturada automaticamente.
+    - American Express: 30 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada automaticamente (auto-void).
+    - Diners: 11 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada automaticamente (auto-void).
+* O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 180 dias.
+* Reembolsos parciais são aceitos para transações sem parcelamento. Lembre-se de que as transações com uma parcela são consideradas sem parcelas.
+* Reembolsos parciais com visanet devem ser enviados após um dia.
+* Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no 15 to 25 dias úteis.
+* O valor mínimo para envio do Reembolso é de 1 USD ou 1 PEN.
 
 ## Void
-The `VOID` method cancels a previously authorized transaction. Void is automatic procedure, as soon as you send the `VOID` request, it does not follow any approval flow, and the transaction is not charged to the card holder.
+O método `VOID` cancela uma transação previamente autorizada. O cancelamento é um procedimento automático. Assim que você enviar o pedido de `VOID`, não há nenhum fluxo de aprovação e a transação não é cobrada do titular do cartão.
 
 ### Method Call
-The following are the request and response bodies for this transaction type.
+A seguir estão os corpos de pedido e resposta para este tipo de transação.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
 
-// Insert the ID of the order here.
+// Insert the ID da ordem here.
 parameters.put(PayU.PARAMETERS.ORDER_ID, "40049920");
 
-// Insert the ID of the transaction here.
+// Insert the ID da transação here.
 parameters.put(PayU.PARAMETERS.TRANSACTION_ID, "96535b36-99db-4c66-bd87-6ad5c59b25a8");
 
 // Enter the void reason here. Optional
-parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the void of the transaction");
+parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the void da transação");
 
 TransactionResponse response = PayUPayments.doVoid(parameters);
 
@@ -119,14 +119,14 @@ if (response != null){
 {{< tab tabNum="2" >}}
 ```PHP
 $parameters = array(
-	// Insert the ID of the order here.
+	// Insert the ID da ordem here.
 	PayUParameters::ORDER_ID => "40049920",
 
-	// Insert the ID of the transaction here.
+	// Insert the ID da transação here.
 	PayUParameters::TRANSACTION_ID => "96535b36-99db-4c66-bd87-6ad5c59b25a8",
 
 	// Enter the void reason here. Optional
-	PayUParameters::REASON => "Reason for requesting the void of the transaction",
+	PayUParameters::REASON => "Reason for requesting the void da transação",
 );
 
 $response = PayUPayments::doVoid($parameters);
@@ -142,12 +142,12 @@ if ($response) {
 {{< /tabs >}}
 
 ## Refunds
-A refund is requested when a shop decides to voluntarily return the money spent by the shopper due to dissatisfaction reasons ou when the shop does not have enough stock of the product purchased. The `REFUND` method request the reversal of a previously captured transaction.
+Reembolsos são solicitados quando uma loja decide devolver voluntariamente o dinheiro gasto pelo comprador por motivos de insatisfação ou quando a loja não possui estoque suficiente do produto adquirido. O método `REFUND` solicita a reversão de uma transação capturada anteriormente.
 
-Refunds can be requested by the total ou the partial amount (`PARTIAL REFUND`).
+Reembolsos podem ser solicitados pelo valor total ou parcial (`PARTIAL REFUND`).
 
 ### Method Call
-The following are the request and response bodies for this transaction type.
+A seguir estão os corpos de pedido e resposta para este tipo de transação.
 
 #### Refund
 
@@ -156,14 +156,14 @@ The following are the request and response bodies for this transaction type.
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
 
-// Insert the ID of the order here.
+// Insert the ID da ordem here.
 parameters.put(PayU.PARAMETERS.ORDER_ID, "40049920");
 
-// Insert the ID of the transaction here.
+// Insert the ID da transação here.
 parameters.put(PayU.PARAMETERS.TRANSACTION_ID, "96535b36-99db-4c66-bd87-6ad5c59b25a8");
 
 // Enter the refund reason here
-parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the refund of the transaction");
+parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the refund da transação");
 
 TransactionResponse response = PayUPayments.doRefund(parameters);
 
@@ -180,14 +180,14 @@ if (response != null){
 {{< tab tabNum="2" >}}
 ```PHP
 $parameters = array(
-	// Insert the ID of the order here.
+	// Insert the ID da ordem here.
 	PayUParameters::ORDER_ID => "40049920",
 
-	// Insert the ID of the transaction here.
+	// Insert the ID da transação here.
 	PayUParameters::TRANSACTION_ID => "96535b36-99db-4c66-bd87-6ad5c59b25a8",
 
 	// Enter the refund reason here
-	PayUParameters::REASON => "Reason for requesting the refund of the transaction",
+	PayUParameters::REASON => "Reason for requesting the refund da transação",
 );
 
 $response = PayUPayments::doRefund($parameters);
@@ -209,10 +209,10 @@ if ($response) {
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
 
-// Insert the ID of the order here.
+// Insert the ID da ordem here.
 parameters.put(PayU.PARAMETERS.ORDER_ID, "40049920");
 
-// Insert the ID of the transaction here.
+// Insert the ID da transação here.
 parameters.put(PayU.PARAMETERS.TRANSACTION_ID, "96535b36-99db-4c66-bd87-6ad5c59b25a8");
 
 // -- Partial Refund Value --
@@ -222,7 +222,7 @@ parameters.put(PayU.PARAMETERS.VALUE, "950");
 parameters.put(PayU.PARAMETERS.CURRENCY, ""+Currency.CLP.name());
 
 // Enter the partial refund reason here
-parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the partial refund of the transaction");
+parameters.put(PayU.PARAMETERS.REASON, "Reason for requesting the partial refund da transação");
 
 TransactionResponse response = PayUPayments.doPartialRefund(parameters);
 
@@ -240,10 +240,10 @@ if (response != null){
 {{< tab tabNum="2" >}}
 ```PHP
 $parameters = array(
-	// Insert the ID of the order here.
+	// Insert the ID da ordem here.
 	PayUParameters::ORDER_ID => "40049920",
 
-	// Insert the ID of the transaction here.
+	// Insert the ID da transação here.
 	PayUParameters::TRANSACTION_ID => "96535b36-99db-4c66-bd87-6ad5c59b25a8",
 
   // -- Partial Refund Value --
@@ -253,7 +253,7 @@ $parameters = array(
   PayUParameters::CURRENCY => "CLP",
 
 	// Enter the partial refund reason here
-	PayUParameters::REASON => "Reason for requesting the partial refund of the transaction",
+	PayUParameters::REASON => "Reason for requesting the partial refund da transação",
 );
 
 $response = PayUPayments::doPartialRefund($parameters);
@@ -271,12 +271,12 @@ if ($response) {
 ### Query the refund status
 As mentioned before, refund request follows an approval in flow in which, PayU take 1 to 3 days to process the request and approves ou rejects the request. If you want to know the status of the refund, you have two options:
 
-#### Check status through the Módulo PayU
-1. Log into you Módulo PayU account. In the left panel, expand the _**Transactions**_ menu and select _**Sales Report**_ option.
+#### Verifique o status através do Módulo PayU
+1. Faça login em sua conta do módulo PayU. No painel esquerdo, expanda o menu _**Transações**_ menu and select _**Relatório de Vendas**_ option.
 
 ![PrintScreen](/assets/Refunds/Refunds_en_01.png)
 
-2. Use the _**Filter my sales**_ field to find the order using the order and the transaction id.
+2. Use o campo _**Filtrar minhas vendas**_ field to find the order using the order and the transaction id.
 
 ![PrintScreen](/assets/Refunds/Refunds_en_02.png)
 
@@ -285,11 +285,11 @@ As mentioned before, refund request follows an approval in flow in which, PayU t
 ![PrintScreen](/assets/Refunds/Refunds_en_03.png)
 
 #### Check status using queries
-You can consult the state of the refund by using the [Consultas SDK]({{< ref "QueriesSDK.md" >}}). In the response of the query, you need to send the order id.
+Você pode consultar o estado do reembolso usando o [Consultas SDK]({{< ref "QueriesSDK.md" >}}). In the response of the query, you need to send the order id.
 
-When query an order, the system returns the last transaction associated with the Order.
+Ao consultar uma ordem, o sistema exibe a última transação associada à ordem.
 
-There are three possible status in the response of your request:
-* **Unresolved request**: if the request has not been resolved, the order found in the query appears in `CAPTURED` status, the first transaction type is `AUTHORIZATION_AND_CAPTURE` and the first transaction status is `APPROVED`.
-* **Approved**: if the refund request is approved by a PayU’s customer service agent, the order found in the query appears in `REFUNDED` status, the first transaction type is `REFUND` and the first transaction status is `APPROVED`.
-* **Declined**: if the refund request is declined by a PayU’s customer service agent, the order found in the query appears in `CAPTURED` status, the first transaction type is `REFUND` and the first transaction status is `DECLINED`.
+Existem três status possíveis na resposta à seu pedido:
+* **Solicitação não resolvida**: se o pedido não foi resolvido, a ordem encontrada na consulta aparece com status `CAPTURED` status, the first transaction type is `AUTHORIZATION_AND_CAPTURE` and the first transaction status is `APPROVED`.
+* **Aprovada**: se o pedido de reembolso for aprovado por um agente de atendimento ao cliente do PayU, a ordem encontrada na consulta aparecerá com status `REFUNDED` status, the first transaction type is `REFUND` and the first transaction status is `APPROVED`.
+* **Recusada**: se o pedido de reembolso for recusada por um agente de atendimento ao cliente do PayU, a ordem encontrada na consulta aparecerá com status `CAPTURED` status, the first transaction type is `REFUND` and the first transaction status is `DECLINED`.

@@ -9,11 +9,11 @@ weight: 30
 ---
 
 {{% alert title="Observação" color="info"%}}
-The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows ou columns in the report, contact your sales representative.
+The Relatório de Vendas displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows ou columns in the report, contact your sales representative.
 {{% /alert %}}
 
 ## What is the Financial Statement?
-The Financial Statement helps you identify the movements (Commission discounts, transfer fees, reversions) of your PayU account. This report shows the summary of the account, with debits and credits made during the month, and information of the available balance.
+The Financial Statement helps you identify the movements (Commission discounts, transfer fees, reversions) of your PayU account. This report shows the summary of the account, with debits and credits made during the month e information of the available balance.
 
 Furthermore, the Financial Statement helps the accounting area to reconcile all trade e-commerce operations.
 
@@ -26,7 +26,7 @@ To have access to this module, you need to have a profile with the following per
 Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 
 ## Consult the report
-Log into your PayU account. In the left menu, expand the _**Transactions**_ menu and select _**Financial Statement**_. By default, the report shows the operation information<sup>\*</sup> of the last 30 days, from the most recent to the oldest. 
+Log into your PayU account. In the left menu, expand the _**Transações**_ menu and select _**Financial Statement**_. By default, the report shows the operation information<sup>\*</sup> of the last 30 days, from the most recent to the oldest. 
 
 <sup>*</sup>_Limited to top 20 thousand records._
 
@@ -44,7 +44,7 @@ The first part is the general balance where you can see the funds in your PayU a
 ![PrintScreen](/assets/Reports/Reports_20.png)
 
 ### Sales made chart
-In the second part, you can understand the distribution of costs (including taxes and transaction related costs), and analyze a sales chart and a pie chart that summarizes all this information.
+In the second part, you can understand the distribution of costs (including taxes and transaction related costs) e analyze a sales chart and a pie chart that summarizes all this information.
 
 The charts shows the information available in the date frame selected.
 
@@ -135,7 +135,7 @@ In the generated report you find the following concepts.
 
 | Concept                              | Descrição                                                                        |
 |--------------------------------------|------------------------------------------------------------------------------------|
-| **SALES**                            | Approved amount of the transaction.                                                |
+| **SALES**                            | Approved amount da transação.                                                |
 | **POL_COMMISSION**                   | PayU commission: Fixed percentage established for trade + established fixed value. |
 | **IVA_POL_COMMISSION**               | Tax commission.                                                                    |
 | **IVA_RETENTION**                    | IVA retention.<sup>\*</sup>                                                        |

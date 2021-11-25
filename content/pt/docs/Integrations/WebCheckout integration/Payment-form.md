@@ -3,7 +3,7 @@ title: "Formulário de pagamento"
 linkTitle: "Formulário de pagamento"
 date: 2021-03-29T12:15:27-05:00
 description: >
-  Com este formulário HTML, você pode enviar a solicitação de transação para nosso portal de pagamento junto com as informações de compra. Envie a solicitação usando o método HTTP POST..
+  Com este formulário HTML, você pode enviar a solicitação de transação para nosso portal de pagamento junto com as informações de compra. Envie a solicitação usando o método HTTP POST.
 
 weight: 10
 tags: ["subtopic"]
@@ -61,7 +61,7 @@ As seguintes variáveis podem ser incluídas no formulário de pagamento.
 | shippingAddress | Alfanumérico | 255 | O endereço de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto. | ✓* | 
 | billingCity | Alfanumérico | 50 | Cidade associada ao endereço de cobrança. | — | 
 | shippingCity | Alfanumérico | 50 | A cidade de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto. | ✓* | 
-| zipCode | Alfanumérico | 20 | CEP. | — | 
+| zipCode | Alfanumérico | 20 | Código postal. | — | 
 | billingCountry | Alfanumérico | 2 | Código ISO do país associado ao endereço de cobrança. | — | 
 | shippingCountry | Alfanumérico | 2 | O código ISO do país associado ao endereço de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto.<br>[Veja os países de processamento]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | ✓* | 
 | buyerEmail | Alfanumérico | 255 | Campo que contém o e-mail do comprador para notificar o resultado da transação por e-mail. Recomenda-se validar se este campo foi fornecido no formulário. | ✓ | 

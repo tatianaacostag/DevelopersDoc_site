@@ -875,7 +875,7 @@ This method lets you process the payments in cash of your customers. To integrat
 </details>
 
 #### Considerations
-* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
+* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * For cash payments, the following parameters are mandatory:
    - `transaction.order.buyer.fullName`
    - `transaction.payer.fullName`

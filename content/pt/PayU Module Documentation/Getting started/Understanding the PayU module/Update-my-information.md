@@ -9,7 +9,7 @@ weight: 10
 tags: ["subtopic"]
 ---
 {{% alert title="Observação" color="info"%}}
-Once your account has been validated and activated, your contact, business, and sales information cannot be updated using the Módulo PayU. If you need to update this information, contact sac@payu.com.
+Once your account has been validated and activated, your contact, business e sales information cannot be updated using the Módulo PayU. If you need to update this information, contact sac@payu.com.
 {{% /alert %}}
 
 ## Change password
@@ -27,7 +27,7 @@ Follow these steps to change your current password.
 
 ![PrintScreen](/assets/UserPreferences/UserPreferences_03.png)
 
-4. Assim que terminar, clique em  _**Save changes**_ at the footer of the section. Otherwise, click _**Discard changes**_ to close the _**Change password**_ panel and discard the change of your password.
+4. Assim que terminar, clique em  _**Save changes**_ at the footer of the section. Caso contrário, click _**Discard changes**_ to close the _**Change password**_ panel and discard the change of your password.
 
 ## Update your user preferences
 In this section, you can change the display settings of the information displayed in your module, such as the date format, time zone of your country, the currency format and the display language.
@@ -90,14 +90,14 @@ To upload ou update your logo, follow these steps.
 
 <img src="/assets/Logo/Logo_02.png" alt="PrintScreen" width="30%"/><br>
 
-2. In the _**Your sales information**_ window, find the _Merchant logo_ field.<br>If you have not uploaded a logo yet, click the _**Select your logo**_ link. Otherwise, use the _**Change logo**_ link.
+2. In the _**Your sales information**_ window, find the _Merchant logo_ field.<br>If you have not uploaded a logo yet, click the _**Select your logo**_ link. Caso contrário, use the _**Change logo**_ link.
 
 ![PrintScreen](/assets/Logo/Logo_03.png)
 ![PrintScreen](/assets/Logo/Logo_04.png)
 
 3. The upload panel appears, locate the image of your logo in your local machine. 
 
-4. The maximum size allowed for your logo is 350x90 pixels, if the selected image is bigger than this size, you can crop it using the upload panel. Furthermore, this panel provides options to zoom in ou rotate the image.<br>When finish, click _**Save**_.
+4. The máximo size allowed for your logo is 350x90 pixels, if the selected image is bigger than this size, you can crop it using the upload panel. Furthermore, this panel provides options to zoom in ou rotate the image.<br>When finish, click _**Save**_.
 
 <img src="/assets/Logo/Logo_05.png" alt="PrintScreen" width="50%"/>
 
@@ -118,7 +118,7 @@ Provide the information related to your Bank Account such as: country, bank, acc
 
 {{% alert title="Considerations" color="info"%}}
 * The information available depends on the country of your account.
-* If the Bank account is foreign, you must provide the information of the **Intermediary bank** such as its name, the _ABA code_, and the _Swift code_.
+* If the Bank account is foreign, you must provide the information of the **Intermediary bank** such as its name, the _ABA code_ e the _Swift code_.
 {{% /alert %}}
 
 Along with the information you provide, you need to attach a certification issued by your bank to proof the veracity and authenticity of the information. 

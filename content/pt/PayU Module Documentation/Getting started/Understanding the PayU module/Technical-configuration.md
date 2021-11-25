@@ -13,7 +13,7 @@ tags: ["subtopic"]
 Regardless of the [integration]({{< ref "integrations" >}}) you use, you require the following variables in the request of the methods ou in their parameters.
 
 ### Merchant and account IDs
-These values allows you to authenticate both your merchant and your account when using any of the integrations to use the services we provide.
+These values allows you to authenticate both your merchant and your account ao usar any of the integrations to use the services we provide.
 
 When you log in your Módulo PayU, both values are accessible in the left panel.
 
@@ -59,9 +59,9 @@ In this tab, you can configure the following information.
 | Parâmetro | Descrição |
 |---|---|
 | Your payments are processed | Select whether your transactions are processed _In Production_ ou _In Test mode_. When processing _In Test mode_, the transactions done through your website ou through payment requests, are marked as a test and the payment is not real. |
-| Response URL | The page to which the buyer is direct once the transaction in PayU ends. This page displays the status of the transaction. |
-| Confirmation URL | The page to which PayU sends the payment confirmation to your system. This is useful when you want to update stocks and database once the transaction reaches its final state.<br>This parameter is not mandatory. |
-| Control duplicate payments | When enabling this option, We validate that each payment reference sent to our system is unique. Otherwise, you can send the same reference for all your sales. |
+| URL de resposta | The page to which the buyer is direct once the transaction in PayU ends. This page displays the status da transação. |
+| URL de confirmação | The page to which PayU sends the payment confirmation to your system. This is useful when you want to update stocks and database once the transaction reaches its final state.<br>This parameter não é obrigatórionão é obrigatório. |
+| Control duplicate payments | When enabling this option, We validate that each payment reference sent to our system is unique. Caso contrário, you can send the same reference for all your sales. |
 | Notifications of processed payments | This option lets you enable the send of an e-mail to the payer ou to you when the payment was approved ou rejected. |
 
 ### Disputas

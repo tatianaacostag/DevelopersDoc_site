@@ -3,7 +3,7 @@ title: "Payments SDK - Colombia"
 linkTitle: "Payments SDK - Colombia"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  Payments SDK Colombia lets your shop process different transaction types with multiple payment methods.
+  Payments SDK Colombia permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 weight: 40
 tags: ["subtopic"]
 ---
@@ -33,41 +33,41 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available methods
+## Métodos disponíveis {#available-methods}
 Payments SDK includes the following methods:
 
-* [Submit transaction with credit card]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-credit-cards" >}})
-* [Submit transaction with cash ou Bank reference]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-cash-or-bank-reference" >}})
-* [Submit transaction with bank transfer]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-bank-transfer" >}})
-* [Bank List - PSE]({{< ref "Payments-SDK-Colombia.md#bank-list---pse" >}})
-* [Available payment methods query]({{< ref "Payments-SDK-Colombia.md#available-payment-methods-query" >}})
+* [Enviar transação com cartão de crédito]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-credit-cards" >}})
+* [Enviar transação em dinheiro ou referência bancária]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-cash-or-bank-reference" >}})
+* [Enviar transação com transferência bancária]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-bank-transfer" >}})
+* [Lista de bancos - PSE]({{< ref "Payments-SDK-Colombia.md#bank-list---pse" >}})
+* [Consulta de métodos de pagamento disponíveis]({{< ref "Payments-SDK-Colombia.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-SDK-Colombia.md#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
 To confirm the status of a transaction, você pode usar the [Consultas SDK]({{< ref "QueriesSDK.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit cards
-This method lets you process the payments performed by your customers using credit cards. For Colombia, you can perform one-step flows (**Cobrança**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+## Enviar transação com cartão de crédito {#submit-transaction-with-credit-cards}
+Este método permite processar os pagamentos efetuados com cartão de crédito pelos seus clientes. Para a Colômbia, você pode fazer fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
 
 ### Observações {#considerations}
-* Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
-* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
-* For Crédito Fácil Codensa card, the number of installments supported are 1 to 12, 18, 24, 36 and 48.
-* For Crédito Fácil Codensa card, the payer can choose any of the following document types for the variable `PAYER_DNI_TYPE`:
+* Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods para a Colômbia]({{< ref "select-your-payment-method.html#Colombia" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (se processar com código de segurança) substituindo as informações do cartão de crédito. Para obter mais informações, consulte [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
+* No cartão Crédito Fácil Codensa, o número de parcelas aceitas é de 1 a 12, 18, 24, 36 e 48.
+* No cartão Crédito Fácil Codensa, o pagador pode escolher qualquer um dos seguintes tipos de documentos para a variável `PAYER_DNI_TYPE`:
 
 | ISO | Descrição                                                                         |
 |:---:|-------------------------------------------------------------------------------------|
-|  CC | Citizenship card.                                                                   |
-|  CE | Foreign citizenship card.                                                           |
-| NIT | Tax identification number (Companies).                                              |
-|  TI | Identity Card.                                                                      |
-|  PP | Passport.                                                                           |
-| IDC | Client´s unique identifier, in the case of unique customer / utility consumer ID's. |
-| CEL | When identified by the mobile line.                                                 |
-|  RC | Birth certificate.                                                                  |
-|  DE | Foreign identification document.                                                    |
+|  CC | Cartão de cidadania.                                                                   |
+|  CE | Cartão de cidadão estrangeiro.                                                           |
+| NIT | Número de identificação fiscal (empresas).                                              |
+|  TI | Cartão de identidade.                                                                      |
+|  PP | Passaporte.                                                                           |
+| IDC | Client´s unique identifier, in the case of unique customer / ID de conta de serviços. |
+| CEL | Quando identificado pela linha móvel.                                                 |
+|  RC | Certidão de nascimento.                                                                  |
+|  DE | Documento de identificação de estrangeiro.                                                    |
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -92,11 +92,11 @@ parameters.put(PayU.PARAMETERS.LANGUAGE, "Language.es");
 // -- Values --
 // Enter the value here.
 parameters.put(PayU.PARAMETERS.VALUE, ""+value);
-// Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
+// Enter the value of the IVA (Value Added Tax only valid para a Colômbia) da transação,
 // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
 // Exemplo 19000.00. In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_VALUE, "10378");
-// Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
+// Enter the value of the base value on which VAT (only valid para a Colômbia) is calculated.
 // In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_RETURN_BASE, "54622");
 // Enter the currency here.
@@ -172,7 +172,7 @@ parameters.put(PayU.PARAMETERS.USER_AGENT, "Mozilla/5.0 (Windows NT 5.1; rv:18.0
 // "Autorização and capture" request
 TransactionResponse response = PayUPayments.doAuthorizationAndCapture(parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if(response != null){
 	response.getOrderId();
     response.getTransactionId();
@@ -207,11 +207,11 @@ $parameters = array(
 	// -- Values --
         // Enter the value here.
 	PayUParameters::VALUE => $value,
-  // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
+  // Enter the value of the IVA (Value Added Tax only valid para a Colômbia) da transação,
   // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
   // Exemplo 19000.00. In case you don't have IVA, set 0.
   PayUParameters::TAX_VALUE => "10378",
-  // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
+  // Enter the value of the base value on which VAT (only valid para a Colômbia) is calculated.
   // In case you don't have IVA, set 0.
   PayUParameters::TAX_RETURN_BASE => "54622",
 	// Enter the currency here.
@@ -286,7 +286,7 @@ $parameters = array(
 // Autorização request
 $response = PayUPayments::doAuthorizationAndCapture($parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if ($response) {
 	$response->transactionResponse->orderId;
 	$response->transactionResponse->transactionId;
@@ -306,30 +306,30 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with cash ou Bank reference
-This method lets you process the payments of your customers in cash ou using a Bank reference. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.
+## Enviar transação em dinheiro {#submit-transaction-with-cash} ou referência bancária
+Este método permite processar os pagamentos de seus clientes em dinheiro ou usando uma referência bancária. Para integrar com transações em dinheiro, você deve redirecionar o cliente para a URL encontrada na resposta do método; Seu cliente verá um recibo de pagamento como o seguinte.
 
-#### Payments in cash
+#### Pagamentos em dinheiro {#payments-in-cash}
 <img src="/assets/Payments/CashReceiptCO.png" alt="PrintScreen" width="75%">
 
-#### Payments with Bank reference
+#### Pagamentos com referência bancária {#payments-with-bank-reference}
 <img src="/assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
 
 ### Observações {#considerations}
-* Send a valid cash Método de pagamento in the request, [see the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#Colombia" >}}). `OTHERS_CASH` method is not supported.
-* The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
-* For `BALOTO` e `EFECTY`, the confirmation of the payment takes 15 minutes. For `BANK_REFERENCED`, the confirmation is online.
-* The minimum and maximum values for `BALOTO` e `EFECTY` are:
-   - `BALOTO` > Min: $3.000 COP - Max: $1.000.000 COP
-   - `EFECTY` > Min: $20.000 COP - Max: $6.000.000 COP
+* Send a valid cash Método de pagamento in the request, [see the available Payment Methods para a Colômbia]({{< ref "select-your-payment-method.html#Colombia" >}}). `OTHERS_CASH` method is not supported.
+* O parâmetro `EXPIRATION_DATE` não é obrigatórionão é obrigatório. Se você não enviar este parâmetro, seu valor padrão será de 7 dias após a data atual.<br>Se você enviar uma data posterior ao número de dias padrão, PayU ignorará esse valor e o vencimento será definido como padrão.
+* Para `BALOTO` e `EFECTY`, a confirmação do pagamento leva 15 minutos. Para `BANK_REFERENCED`, a confirmação é feita online.
+* Os valores mínimo e máximo para `BALOTO` e `EFECTY` são:
+   - `BALOTO` > Mín: $3.000 COP - Máx: $1.000.000 COP
+   - `EFECTY` > Mín: $20.000 COP - Máx: $6.000.000 COP
 * The extra parameters have the following data related to the transaction:
-   - **EXPIRATION_DATE**: maximum term for the payer to perform the payment 
-   - **REFERENCE**: internal payment reference generated by PayU.
-   - **URL_PAYMENT_RECEIPT_HTML**: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment. 
-   - **URL_PAYMENT_RECEIPT_PDF**: payment receipt in PDF format.
-   - **BANCO_BOGOTA_SERVICE_CODE**: payment code for Banco de Bogotá. Available when using `BANK_REFERENCED`.
-   - **BANK_REFERENCED_NAME**: Reference name for Bancolombia. Available when using `BANK_REFERENCED`.
-   - **BANCOLOMBIA_SERVICE_CODE**: payment code for Bancolombia. Available when using `BANK_REFERENCED`.
+   - **EXPIRATION_DATE**: prazo máximo para o pagador fazer o pagamento 
+   - **REFERENCE**: referência interna de pagamento gerada pelo PayU.
+   - **URL_PAYMENT_RECEIPT_HTML**: comprovante de pagamento em formato HTML. É para cá que você precisa redirecionar o pagamento quando o pagador seleciona o pagamento em dinheiro. 
+   - **URL_PAYMENT_RECEIPT_PDF**: comprovante de pagamento em formato PDF.
+   - **BANCO_BOGOTA_SERVICE_CODE**: código de pagamento para Banco de Bogotá. Available ao usar `BANK_REFERENCED`.
+   - **BANK_REFERENCED_NAME**: Nome de referência para Bancolombia. Available ao usar `BANK_REFERENCED`.
+   - **BANCOLOMBIA_SERVICE_CODE**: código de pagamento para Bancolombia. Available ao usar `BANK_REFERENCED`.
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -354,11 +354,11 @@ parameters.put(PayU.PARAMETERS.LANGUAGE, "Language.es");
 // -- Values --
 // Enter the value here.
 parameters.put(PayU.PARAMETERS.VALUE, ""+value);
-// Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
+// Enter the value of the IVA (Value Added Tax only valid para a Colômbia) da transação,
 // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
 // Exemplo 19000.00. In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_VALUE, "10378");
-// Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
+// Enter the value of the base value on which VAT (only valid para a Colômbia) is calculated.
 // In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_RETURN_BASE, "54622");
 // Enter the currency here.
@@ -468,11 +468,11 @@ $parameters = array(
 	// -- Values --
         // Enter the value here.
 	PayUParameters::VALUE => $value,
-  // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
+  // Enter the value of the IVA (Value Added Tax only valid para a Colômbia) da transação,
   // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
   // Exemplo 19000.00. In case you don't have IVA, set 0.
   PayUParameters::TAX_VALUE => "10378",
-  // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
+  // Enter the value of the base value on which VAT (only valid para a Colômbia) is calculated.
   // In case you don't have IVA, set 0.
   PayUParameters::TAX_RETURN_BASE => "54622",
 	// Enter the currency here.
@@ -541,7 +541,7 @@ $parameters = array(
 // Autorização request
 $response = PayUPayments::doAuthorizationAndCapture($parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if ($response) {
 	$response->transactionResponse->orderId;
 	$response->transactionResponse->transactionId;
@@ -566,18 +566,18 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with bank transfer
-This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to follow these steps:
+## Enviar transação com transferência bancária {#submit-transaction-with-bank-transfer}
+Este método permite processar os pagamentos de seus clientes por transferência bancária. Na Colômbia, as transferências bancárias são feitas com o PSE, to perform an integration with this payment method, you need to follow these steps:
 
-1. Query the available bank list to show them to the payer. To query the bank list, refer to [this method]({{< ref "Payments-SDK-Colombia.md#bank-list---pse" >}}).
+1. Consulte a lista de bancos disponíveis para mostrá-los ao pagador. Para consultar a lista de bancos, [consulte este método]({{< ref "Payments-SDK-Colombia.md#bank-list---pse" >}}).
 
-2. Show the list of banks as displayed below:
+2. Apresente a lista de bancos conforme exibido abaixo:
 
 <img src="/assets/Payments/PSEBankList_EN.png" alt="PrintScreen" width="50%"><br>
 
 When the payer selects a bank, you must send the parameter `pseCode` of the selection in the parameter `PSE_FINANCIAL_INSTITUTION_CODE` in the request.
 
-3. Show a list to let the payer choose whether they are a _Natural_ ou _Legal_ person. Depending on what the payer choose, you must send the value in the parameter `PAYER_PERSON_TYPE` in the request. The list must be displayed as follows:
+3. Apresente uma lista para permitir que o pagador escolha se é uma pessoa _Física_ ou _Jurídica_. Depending on what the payer choose, you must send the value in the parameter `PAYER_PERSON_TYPE` in the request. A lista deve ser exibida da seguinte forma:
 
 <img src="/assets/Payments/PSEPersonList_EN.png" alt="PrintScreen" width="50%"><br>
 
@@ -585,38 +585,38 @@ The selected value must be sent as follows:
 * Java: `PersonType.NATURAL.toString()` (N) ou `PersonType.LEGAL.toString()` (J).
 * PHP: `N` ou `J`.
 
-4. Show a list to let the payer choose their identification type. You must send the ISO code of the value selected in the parameter `PAYER_DOCUMENT_TYPE` in the request. The list must be displayed as follows:
+4. 5.	Mostre uma lista para permitir que o pagador escolha um tipo de identificação. Você deve enviar o código ISO do valor selecionado no parameter `PAYER_DOCUMENT_TYPE` in the request. A lista deve ser exibida da seguinte forma:
 
 <img src="/assets/Payments/PSEDocType_EN.png" alt="PrintScreen" width="50%"><br>
 
-The list of available documents is:
+A lista de documentos disponíveis é:
 
 | ISO | Descrição                                                                         |
 |:---:|-------------------------------------------------------------------------------------|
-|  CC | Citizenship card.                                                                   |
-|  CE | Foreign citizenship card.                                                           |
-| NIT | Tax identification number (Companies).                                              |
-|  TI | Identity Card.                                                                      |
-|  PP | Passport.                                                                           |
-| IDC | Client´s unique identifier, in the case of unique customer / utility consumer ID's. |
-| CEL | When identified by the mobile line.                                                 |
-|  RC | Birth certificate.                                                                  |
-|  DE | Foreign identification document.                                                    |
+|  CC | Cartão de cidadania.                                                                   |
+|  CE | Cartão de cidadão estrangeiro.                                                           |
+| NIT | Número de identificação fiscal (empresas).                                              |
+|  TI | Cartão de identidade.                                                                      |
+|  PP | Passaporte.                                                                           |
+| IDC | Client´s unique identifier, in the case of unique customer / ID de conta de serviços. |
+| CEL | Quando identificado pela linha móvel.                                                 |
+|  RC | Certidão de nascimento.                                                                  |
+|  DE | Documento de identificação de estrangeiro.                                                    |
 
 5. You must send the payer identification number in the extra parameter `PAYER_DNI` in the request.
 
 ### Observações {#considerations}
-* If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_TRANSACTION_CONFIRMATION`; this is because the payer is redirected to the selected bank to complete the payment; you must redirect the payer to the URL returned in the extra parameter `BANK_URL`.
-* The URL returned in the extra parameter `BANK_URL` is configured in the Módulo PayU and must show the following information:<br><br>![PrintScreen](/assets/Payments/PSEresponse-en.png)<br>Parameters starting with $ symbol are sent via `GET`.
-* You must add in the response page the options to retry the payment, finish the transaction and print the receipt.
-* The status displayed in the response page can be any of the following:
+* Se a solicitação de pagamento for bem-sucedida, a transação tem estado `PENDING` e responseCode `PENDING_TRANSACTION_CONFIRMATION`; Isso ocorre porque o pagador é redirecionado ao banco selecionado para concluir o pagamento; Você deve redirecionar o pagador para a URL retornada no parâmetro extra `BANK_URL`.
+* A URL retornada no parâmetro extra `BANK_URL` está configurada no Módulo PayU e deve apresentar as seguintes informações:<br><br>![PrintScreen](/assets/Payments/PSEresponse-en.png)<br>Os parâmetros que começam com o símbolo $ são enviados via `GET`.
+* You must add na resposta page the options to retry the payment, finish the transaction and print the receipt.
+* The status displayed na resposta page can be any of the following:
 
 | polTransactionState | polResponseCode | Estado                                                                |
 |---------------------|-----------------|----------------------------------------------------------------------|
-| 4                   | 1               | Approved transaction                                                 |
-| 6                   | 5               | Failed transaction                                                   |
-| 6                   | 4               | Rejected transaction                                                 |
-| 12 ou 14            | 9994 ou 25      | Pending transaction, please check if the debit was made in the bank. |
+| 4                   | 1               | Transação aprovada                                                 |
+| 6                   | 5               | Transação falhou                                                   |
+| 6                   | 4               | Transação rejeitada                                                 |
+| 12 ou 14            | 9994 ou 25      | Transação pendente, verifique se o débito foi feito no banco. |
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -641,11 +641,11 @@ parameters.put(PayU.PARAMETERS.LANGUAGE, "Language.es");
 // -- Values --
 // Enter the value here.
 parameters.put(PayU.PARAMETERS.VALUE, ""+value);
-// Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
+// Enter the value of the IVA (Value Added Tax only valid para a Colômbia) da transação,
 // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
 // Exemplo 19000.00. In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_VALUE, "10378");
-// Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
+// Enter the value of the base value on which VAT (only valid para a Colômbia) is calculated.
 // In case you don't have IVA, set 0.
 parameters.put(PayU.PARAMETERS.TAX_RETURN_BASE, "54622");
 // Enter the currency here.
@@ -761,11 +761,11 @@ $parameters = array(
 	// -- Values --
         // Enter the value here.
 	PayUParameters::VALUE => $value,
-  // Enter the value of the IVA (Value Added Tax only valid for Colombia) of the transaction,
+  // Enter the value of the IVA (Value Added Tax only valid para a Colômbia) da transação,
   // if no IVA is sent, the system applies 19% automatically. Ele pode conter dois dígitos decimais.
   // Exemplo 19000.00. In case you don't have IVA, set 0.
   PayUParameters::TAX_VALUE => "10378",
-  // Enter the value of the base value on which VAT (only valid for Colombia) is calculated.
+  // Enter the value of the base value on which VAT (only valid para a Colômbia) is calculated.
   // In case you don't have IVA, set 0.
   PayUParameters::TAX_RETURN_BASE => "54622",
 	// Enter the currency here.
@@ -845,7 +845,7 @@ $parameters = array(
 // Autorização request
 $response = PayUPayments::doAuthorizationAndCapture($parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if ($response) {
 	$response->transactionResponse->orderId;
 	$response->transactionResponse->transactionId;
@@ -867,11 +867,11 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Bank List - PSE
+## Lista de bancos - PSE
 This method returns a list of the banks available for [payments using PSE]({{< ref "Payments-SDK-Colombia.md#submit-transaction-with-bank-transfer" >}}). 
 
 ### Method call
-The following are the examples of the request and response of this method.
+A seguir estão os corpos do pedido e resposta deste método.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -917,8 +917,8 @@ foreach ($banks as $bank) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available payment methods query
-This method returns a list of the payment methods available in all countries.
+## Consulta de métodos de pagamento disponíveis {#available-payment-methods-query}
+Este método gera uma lista dos métodos de pagamento disponíveis em todos os países.
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -945,7 +945,7 @@ foreach ($payment_methods as $payment_method){
 {{< /tabs >}}
 
 ## Ping
-The ```PING``` method lets you verify the connection to our platform. 
+O método `PING` permite que você confirme a conexão com a nossa plataforma.
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.

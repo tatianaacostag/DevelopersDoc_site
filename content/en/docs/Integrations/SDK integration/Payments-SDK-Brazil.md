@@ -591,7 +591,7 @@ This method lets you process the payments in cash of your customers. To integrat
 
 ### Considerations
 * Send a valid cash Payment Method in the request, [see the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}).
-* The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
+* The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * The payment is reflected in the next business day.
 * The response returns the following extra parameters related to the transaction
    - **URL_PAYMENT_RECEIPT_HTML**: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment. 

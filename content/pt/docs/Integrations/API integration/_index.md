@@ -1,23 +1,23 @@
 ---
-title: "API Integration"
-linkTitle: "API Integration"
+title: "Integração API"
+linkTitle: "Integração API"
 date: 2021-25-03
 description: >
-  PayU's API integration allows your business to process transactions from different types of applications (web, mobile, IVR, etc).
+  A integração API do PayU permite que sua empresa processe transações de diferentes tipos de aplicativos (site, móvel, IVR etc).
 weight: 20
 tags: ["parenttopic"]
 ---
 
-You can connect your online store to the PayU platform and the checkout process will be handled on your website. To integrate this option you must have a PayU Business account and advanced programming skills.
+Você pode conectar sua loja online à plataforma PayU e o processo de checkout será feito em seu site. Para integrar esta opção, você deve ter uma conta PayU Business e habilidades de programação avançadas.
 
-Access multiple payment methods (varies per country), including credit cards, bank transfers, and cash payments.
+Você pode acessar vários métodos de pagamento (varia por país), incluindo cartões de crédito, transferências bancárias e pagamentos em dinheiro.
 
-![API integration](/assets/api1-en.png)
+![API integration](/assets/api1-pt.png)
 
-## Initial settings
-PayU allows you to integrate with the transactional gateway, available payment tools and Consultas by developing a HTTPS client to send the transaction information through SSL. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow [PCI DSS’ best practices](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).  
+## Configurações iniciais {#initial-settings}
+PayU permite que você integre com o portal de transações, ferramentas de pagamento disponíveis e Consultas, programando um cliente HTTPS para enviar as informações da transação através de SSL. É fundamental que os dados confidenciais da transação, como número do cartão de crédito e data de validade, não sejam armazenados. Recomenda-se seguir as [Melhores práticas do PCI DSS](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).  
 
-The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop's server our payment Gateway. The exchange of messages is done via JSON ou XML strings and operations are distinguished by a command that is included in the request. Check out the following JSON and XML examples:  
+A transmissão das transações é protegida através de uma conexão TLS (Transport Layer Security) de 256 bits do servidor da loja nosso portal de pagamento. A troca de mensagens é feita por meio de strings JSON ou XML e as operações são diferenciadas por um comando incluído na solicitação. Confira os seguintes exemplos de JSON e XML:
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -66,7 +66,7 @@ Content-Length: length<br>
 {{< /tabs >}}
 <br>
 
-You can set the language you want to use in the request through the `Content-type` e `Accept` HTTP headers. You can use all possible combinations:
+Você pode definir o idioma que deseja usar na solicitação por meio dos cabeçalhos HTTP `Content-type` e `Accept`. Você pode usar todas as combinações possíveis:
 
 | CONTENT-TYPE       | ACCEPT             |
 |--------------------|--------------------|
@@ -76,14 +76,15 @@ You can set the language you want to use in the request through the `Content-typ
 | `application/json` | `application/xml`  |
 
 ## Observações {#considerations}
-* You must have an active PayU account.
-* You must install a valid SSL certificate in your server and your site must be able to make SSL connections. Due to this, the virtual machine must have appropriate security extensions.
-* Temporarily, do not use security certificates elliptic curve ou those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` in your payment requests.
-* You must have CGI ou server languages such as Java, C#, VB, PHP, etc.
-* You must be able to store your authentication credentials (API Key and API Login) safely.
-* The encoding for messages must be `UTF-8`.
-* The dates must have format `yyyy-MM-ddTHH:mm:ss`, the time format is 24 hours. Exemplo: `2015-08-22T21:35:12`.
-* Normally the connection guarantees response times of three seconds on average. If there is an unusual situation, the maximum response time is one minute. It is highly recommended that you set _timeouts_ when you connect with PayU.
-* It is important to validate the length and numbers of credit cards by franchise, together with the security codes.
+* Você deve ter uma conta PayU ativa.
+* Você deve instalar um certificado SSL válido em seu servidor e seu site deve ser capaz de fazer conexões SSL. Por isso, a máquina virtual deve ter extensões de segurança adequadas.
+* Temporariamente, não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia TLS_ECDHE_ECDSA_WITH_RC4_128_SHA em suas ordens de pagamento.
+* Você deve ter CGI ou linguagens de servidor como Java, C #, VB, PHP etc.
+* Você deve ser capaz de armazenar suas credenciais de autenticação (API Key e API Login) com segurança.
+* A codificação das mensagens deve ser  `UTF-8`.
+* As datas devem ter formato `yyyy-MM-ddTHH:mm:ss`, o formato da hora é 24 horas. Exemplo: `2015-08-22T21:35:12`.
+* Normalmente a conexão garante tempos de resposta de três segundos em média. Se houver uma situação incomum, o tempo máximo de resposta é de um minuto. É altamente recomendável que você defina _timeouts_ quando se conectar com PayU.
+* É importante validar a duração e o número dos cartões de crédito por franquia, juntamente com os códigos de segurança.
 
-## Available features
+
+## Recursos disponíveis {#available-features}

@@ -1,9 +1,9 @@
 ---
-title: "Payments SDK - Brazil"
-linkTitle: "Payments SDK - Brazil"
+title: "Payments SDK - Brasil"
+linkTitle: "Payments SDK - Brasil"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  Payments SDK Brazil lets your shop process different transaction types with multiple payment methods.
+  Payments SDK Brazil permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -33,29 +33,29 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available methods
+## Métodos disponíveis {#available-methods}
 Payments SDK includes the following methods:
 
-* [Submit transaction with credit cards]({{< ref "Payments-SDK-Brazil.md#submit-transaction-with-credit-cards" >}})
-* [Submit transaction with cash]({{< ref "Payments-SDK-Brazil.md#submit-transaction-with-cash" >}})
-* [Available payment methods query]({{< ref "Payments-SDK-Brazil.md#available-payment-methods-query" >}})
+* [Enviar transação com cartão de crédito]({{< ref "Payments-SDK-Brazil.md#submit-transaction-with-credit-cards" >}})
+* [Enviar transação em dinheiro]({{< ref "Payments-SDK-Brazil.md#submit-transaction-with-cash" >}})
+* [Consulta de métodos de pagamento disponíveis]({{< ref "Payments-SDK-Brazil.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-SDK-Brazil.md#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
 To confirm the status of a transaction, você pode usar the [Consultas SDK]({{< ref "QueriesSDK.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit cards
-This method lets you process the payments performed by your customers using credit cards. For Brazil, you can perform the two-step flows (**Autorização**, **Captura**), and one-step flows (**Cobrança**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+## Enviar transação com cartão de crédito {#submit-transaction-with-credit-cards}
+Este método permite processar os pagamentos efetuados com cartão de crédito pelos seus clientes. Para o Brasil, você pode executar os fluxos de duas etapas, você pode executar os fluxos de duas etapas (**Autorização**, **Captura**) e fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
 
 ### Observações {#considerations}
-* Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}).
-* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
-* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
-* The extra parameter `CIELO_TID` identifies the transaction, this parameter is needed when you want to process voids.
+* Send a valid Credit card Método de pagamento in the request, [see the available Payment Methods para o Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}).
+* For payments with credit card tokens, set the parameters `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (se processar com código de segurança) substituindo as informações do cartão de crédito. Para obter mais informações, consulte [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
+* Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
+* O parâmetro extra  `CIELO_TID` identifica a transação. Este parâmetro é necessário quando você deseja processar cancelamentos.
 
-### Autorização
-Use this method to perform the **Autorização** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-sdk-brazil.md#capture" >}}) the funds.<br>The following examples shows how to call the method for this transaction type according to the programming language.
+### Autorização {#authorization}
+Use este método para executar a etapa **Autorização** de um fluxo de duas etapas. Nesta etapa, você autoriza o pagamento, mas o valor não é debitado até você [capturar]({{< ref "payments-sdk-brazil.md#capture" >}}) os fundos.<br>The following examples shows how to call the method for this transaction type according to the programming language.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -154,7 +154,7 @@ parameters.put(PayU.PARAMETERS.USER_AGENT, "Mozilla/5.0 (Windows NT 5.1; rv:18.0
 // Autorização request
 TransactionResponse response = PayUPayments.doAuthorization(parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if(response != null){
 	response.getOrderId();
   response.getTransactionId();
@@ -265,7 +265,7 @@ $parameters = array(
 // Autorização request
 $response = PayUPayments::doAuthorization($parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if ($response) {
 	$response->transactionResponse->orderId;
 	$response->transactionResponse->transactionId;
@@ -285,13 +285,13 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-### Captura
-Use this method to perform the **Captura** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-sdk-brazil.md#authorization" >}}) to transfer them to your PayU account.
+### Captura {#capture}
+Use este método para executar a etapa **Captura** de um fluxo de duas etapas. Nesta etapa, você captura os fundos [Autorizados]({{< ref "payments-sdk-brazil.md#authorization" >}}) anteriormente para transferi-los para sua conta PayU.
 
 #### Observações {#considerations}
-Leve em conta as seguintes informações for capture.
-* The maximum time to capture an approved transaction is seven (7) days. After this time, the transaction is cancelled.
-* Only the parameters displayed in the request body are mandatory to invoke a Captura transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
+Leve em conta as seguintes informações para captura.
+* O tempo máximo para capturar uma transação aprovada é de sete (7) dias. Após este período, a transação é cancelada.
+* Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.
 
 The following examples show how to call the method for this transaction type according to the programming language.
 
@@ -351,8 +351,8 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-### Cobrança
-Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
+### Cobrança {#charge}
+Use este método para executar um fluxo de uma etapa, ou seja, uma cobrança. Neste momento, as duas etapas do fluxo são combinadas em uma só transação, e os fundos são transferidos da conta do cliente para sua conta PayU, uma vez que tenham sido aprovados:
 
 The following examples show how to call the method for this transaction type according to the programming language.
 
@@ -453,7 +453,7 @@ parameters.put(PayU.PARAMETERS.USER_AGENT, "Mozilla/5.0 (Windows NT 5.1; rv:18.0
 // Autorização request
 TransactionResponse response = PayUPayments.doAuthorizationAndCapture(parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if(response != null){
 	response.getOrderId();
         response.getTransactionId();
@@ -564,7 +564,7 @@ $parameters = array(
 // Autorização request
 $response = PayUPayments::doAuthorizationAndCapture($parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if ($response) {
 	$response->transactionResponse->orderId;
 	$response->transactionResponse->transactionId;
@@ -584,20 +584,20 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with cash
-This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.
+## Enviar transação em dinheiro {#submit-transaction-with-cash}
+Este método permite processar os pagamentos de seus clientes em dinheiro. Para integrar com transações em dinheiro, você deve redirecionar o cliente para a URL encontrada na resposta do método; Seu cliente verá um recibo de pagamento como este.
 
 <img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
 
 ### Observações {#considerations}
-* Send a valid cash Método de pagamento in the request, [see the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}).
-* The parameter `EXPIRATION_DATE` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
-* The payment is reflected in the next business day.
+* Send a valid cash Método de pagamento in the request, [see the available Payment Methods para o Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}).
+* O parâmetro `EXPIRATION_DATE` não é obrigatórionão é obrigatório. Se você não enviar este parâmetro, seu valor padrão será de 7 dias após a data atual.<br>Se você enviar uma data posterior ao número de dias padrão, PayU ignorará esse valor e o vencimento será definido como padrão.
+* O pagamento aparece no próximo dia útil.
 * The response returns the following extra parameters related to the transaction
-   - **URL_PAYMENT_RECEIPT_HTML**: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment. 
-   - **URL_BOLETO_BANCARIO**: payment receipt in printable format.
-   - **EXPIRATION_DATE**: maximum term for the payer to perform the payment.
-   - **BAR_CODE**: barcode which lets the payer perform the payment. 
+   - **URL_PAYMENT_RECEIPT_HTML**: comprovante de pagamento em formato HTML. É para cá que você precisa redirecionar o pagamento quando o pagador seleciona o pagamento em dinheiro. 
+   - **URL_BOLETO_BANCARIO**: comprovante de pagamento em formato printable format.
+   - **EXPIRATION_DATE**: prazo máximo para o pagador fazer o pagamento.
+   - **BAR_CODE**: código de barras que permite ao pagador efetuar o pagamento. 
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -683,7 +683,7 @@ parameters.put(PayU.PARAMETERS.IP_ADDRESS, "127.0.0.1");
 // Autorização request
 TransactionResponse response = PayUPayments.doAuthorizationAndCapture(parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if(response != null){
   response.getOrderId();
   response.getTransactionId();
@@ -789,7 +789,7 @@ $parameters = array(
 // Autorização request
 $response = PayUPayments::doAuthorizationAndCapture($parameters);
 
-// You can obtain the properties in the response
+// You can obtain the properties na resposta
 if ($response) {
 	$response->transactionResponse->orderId;
 	$response->transactionResponse->transactionId;
@@ -815,8 +815,8 @@ if ($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available payment methods query
-This method returns a list of the payment methods available in all countries.
+## Consulta de métodos de pagamento disponíveis {#available-payment-methods-query}
+Este método gera uma lista dos métodos de pagamento disponíveis em todos os países.
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language. 
@@ -843,7 +843,7 @@ foreach ($payment_methods as $payment_method){
 {{< /tabs >}}
 
 ## Ping
-The ```PING``` method lets you verify the connection to our platform. 
+O método `PING` permite que você confirme a conexão com a nossa plataforma.
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.

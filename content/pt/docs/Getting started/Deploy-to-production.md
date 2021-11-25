@@ -24,7 +24,7 @@ Inclua os seguintes parâmetros em seus formulários de pagamento:
 | taxReturnBase | Base da declaração de imposto de renda da venda que você está realizando.                                    |
 | currency      | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
 | signature     | A assinatura é uma forma única de validar os pagamentos efetuados na plataforma, garantindo sua autenticidade. <br>Para obter mais informações, consulte [Assinatura de autenticação]({{< ref "integrations.html#authentication-signature" >}}).       |
-| test          | Defina `0` para transações processadas no ambiente de Produção.                                             |
+| test          | Definir `0` para transações processadas no ambiente de Produção.                                             |
 | buyerEmail    | Endereço de e-mail do comprador.                                                                             |
 
 Direcione sua solicitação para a seguinte URL:
@@ -43,7 +43,7 @@ Inclua os seguintes parâmetros em seus formulários de pagamento:
 | ApiLogin      | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | accountId     | ID da conta PayU de acordo com o país onde você quer vender.                                                |
 | signature     | A assinatura é uma forma única de validar os pagamentos efetuados na plataforma, garantindo sua autenticidade.<br>Para obter mais informações, consulte [Assinatura de autenticação]({{< ref "integrations.html#authentication-signature" >}}).            |
-| test          | Defina `false` para transações processadas no ambiente de Produção.                                        |
+| test          | Definir `false` para transações processadas no ambiente de Produção.                                        |
 
 Direcione sua solicitação para a seguinte URL:
 
@@ -61,7 +61,7 @@ Inclua os seguintes parâmetros em seus formulários de pagamento:
 | ApiKey        | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | ApiLogin      | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | accountId     | ID da conta PayU de acordo com o país onde você quer vender.                                     |
-| test          | Defina `false` para transações processadas no ambiente de Produção.                                        |
+| test          | Definir `false` para transações processadas no ambiente de Produção.                                        |
 
 Direcione sua solicitação para a seguinte URL:
 

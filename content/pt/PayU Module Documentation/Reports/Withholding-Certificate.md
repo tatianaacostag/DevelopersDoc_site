@@ -9,7 +9,7 @@ weight: 40
 nosidetoc: true
 ---
 
-For transactions in Colombia paid with credit cards, the intermediary financial entities make retentions of **Rent Withholding**, **ICA Withholding**, and **IVA Withholding**. According to this, PayU delivers for merchants, a certificate with the total of the withholdings applied during a monthly period.
+For transactions in Colombia paid with credit cards, the intermediary financial entities make retentions of **Rent Withholding**, **ICA Withholding** e **IVA Withholding**. According to this, PayU delivers for merchants, a certificate with the total of the withholdings applied during a monthly period.
 
 {{% alert title="Observação" color="info"%}}
 To have access to this module, you need to have a profile with the permission _Colombian certificates_ > _View withhodlings_ enabled.
@@ -18,7 +18,7 @@ Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.m
 {{% /alert %}}
 
 ## Generate Withholding Certificate
-1. Log into your PayU account. In the left menu, expand the _**Transactions**_ menu and select _**Withholding certificate**_.
+1. Log into your PayU account. In the left menu, expand the _**Transações**_ menu and select _**Withholding certificate**_.
 
 ![PrintScreen](/assets/WithholdingCertificate/WithholdingCertificate_01.png)
 
@@ -26,6 +26,6 @@ Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.m
 
 ![PrintScreen](/assets/WithholdingCertificate/WithholdingCertificate_02.png)
 
-3. Click _**Download**_. The report is automatically downloaded to your computer in PDF format.<br>The following is an example of this certificate.
+3. Click _**Download**_. The report is automatically downloaded to your computer in PDF.<br>The following is an example of this certificate.
 
 ![PrintScreen](/assets/WithholdingCertificate/WithholdingCertificate_03.png)

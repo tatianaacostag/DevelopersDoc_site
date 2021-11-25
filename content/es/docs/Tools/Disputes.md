@@ -3,14 +3,15 @@ title: "Disputas"
 linkTitle: "Disputas"
 date: 2021-04-12T08:34:58-05:00
 description: >
-  Utilizando esta herramienta, puedes manejar el proceso de disputas generadas a tu cuenta de PayU.
+  Encuentra toda la información sobre el módulo de disputas. Esta herramienta, disponible en tu Módulo PayU, te permite gestionar los procesos de disputas generados en tu cuenta de PayU.
 weight: 60
 ---
-
-![Concepts](/assets/Disputes/Disputes_es.png)
-
 ## ¿Qué es una Disputa? {#what-is-a-dispute} 
-Tus compradores pueden presentar una reclamación al banco de emisor de su tarjeta. El banco nos envía una notificación de disputa y nosotros ña creamos en nuestro sistema. La disputa congela el valor total de la venta en tu cuenta PayU.
+Tus compradores pueden presentar una reclamación al banco de emisor de su tarjeta. El banco nos envía una notificación de disputa para determinar la validez de la compra y nosotros la creamos en nuestro sistema. Luego de la creación, te notificamos a través del Módulo PayU.
+
+La disputa congela el valor total de la venta en tu cuenta PayU.
+
+![Concepts](/assets/Disputes/Disputes_es2.png)
 
 ## ¿Por qué ocurre una disputa? {#why-a-dispute-happens}
 Un comprador puede reclamar al banco de emisor de su tarjeta reportando que no ha recibido el producto, el producto es deficiente o no cumple con las características esperadas. El comprador también puede desconocer la compra en el extracto de su tarjeta de crédito.<br>
@@ -23,10 +24,13 @@ Las razones para iniciar un proceso de disputa varian, algunas de ellas son:
 * **Monto no corresponde**: el cobro de la tarjeta de crédito no corresponde con el valor de la compra.
 * **No informado por la entidad**: el banco o la red de procesamiento inicia una disputa sin una razón específica.
 
+No todas las entidades financieras utilizan los mismos mecanismos para notificar una disputa; por lo tanto, PayU no puede garantizar que siempre puedas conocer las razones de la disputa.
+
 {{% alert title="Atención" color="warning"%}}
 
 * Recuerda que PayU únicamente actúa como intermediario para que tu comercio pueda presentar evidencias en el proceso de disputas frente a la entidad bancaria. PayU no tiene injerencia sobre el resultado de la disputa, esta decisión depende del banco emisor.
 * Una vez que una transacción es parte de una disputa, el monto asociado pasa a formar parte del saldo congelado, por lo tanto no podrás realizar transferencias de dicho saldo a tu cuenta bancaria hasta tanto no se resuelva la disputa.
+* Tus clientes pueden reclamar una transacción hasta **120 días** después de la fecha de la transacción para tarjetas locales y hasta **180 días** para tarjetas internacionales. Estos tiempos son definidos por las franquicias. 
 
 {{% /alert %}} 
 
@@ -34,9 +38,9 @@ Las razones para iniciar un proceso de disputa varian, algunas de ellas son:
 El proceso de disputas sigue un flujo simple:
 
 ### 1. Notificación de la Disputa {#1-dispute-notification}
-Cuando un banco notifica a PayU sobre una disputa, tú y tu comercio reciben un correo electrónico notificando el inicio del proceso de disputa.
+Cuando un banco o una red de procesamiento notifica a PayU sobre una disputa, puedes consultar toda su información en el [Módulo de disputas]({{< ref"Disputes-MP.md" >}}) del Módulo PayU.
 
-También enviamos un `POST` con toda la información de la disputa a la URL que configuraste en tu [módulo PayU]({{< ref "Technical-configuration.md#disputes" >}}). De esta forma, puedes automatizar el manejo del proceso de disputas para minimizar el riesgo de un posible contracargo.
+Si tienes configurados los correos de notificaciones en tu [módulo PayU]({{< ref "Technical-configuration.md#disputes" >}}), recibes también la información a través de correo electrónico. Además, cuando tienes habilitada la _**URL de notificación automática**_, enviamos una notificación `POST`. De esta forma, puedes automatizar el manejo del proceso de disputas para minimizar el riesgo de un posible contracargo.
 
 Puedes configurar la URL donde te notificamos en el módulo PayU. Ingresa a [PayU.com](payu.com) y haz clic en la opción para iniciar sesión que se encuentra en la parte superior de la página. O si lo prefieres, puedes ir directamente a https://merchants.payulatam.com/.
 
@@ -56,7 +60,7 @@ Puedes ver y administrar el proceso de disputas desde el módulo PayU en la opci
 ![PrintScreen](/assets/Disputes/Disputes_02_es.png)
 
 ### 3. Presenta evidencias {#3-provide-evidence}
-Es importante responder siempre a una disputa presentando evidencias antes de la [fecha máxima estipulada por el banco]({{< ref"disputes.md#maximum-days-to-provide-evidence" >}}). Luego de la fecha máxima, no puedes cargar evidencias de una disputa.
+Es importante responder siempre a una disputa presentando evidencias antes de la [fecha máxima estipulada por el banco o la red de procesamiento]({{< ref"disputes.md#maximum-days-to-provide-evidence" >}}). Luego de la fecha máxima, no puedes cargar evidencias de una disputa.
 
 Para aprender a cargar evidencia para resolver la disputa, consulta el [Módulo PayU]({{< ref"Disputes-MP.md" >}}).
 
@@ -94,13 +98,19 @@ Cuando se notifica una disputa, se crea una entidad disputa para la transacción
 | Estado | Descripción |
 |-|-|
 | Notificada | Cuando inicia el proceso de disputas, debes cargar la evidencia para la misma. |
-| En revisión de la red | Cuando la tienda presenta la evidencia a través del Módulo PayU y la disputa entra en revisión por el banco o la red. |
+| En revisión de la red | Cuando el comercio presenta la evidencia a través del Módulo PayU y la disputa entra en revisión por el banco o la red. |
+| Documentos no presentados | Cuando vence el tiempo para la presentación de documentos y el comercio no proporciona ninguna evidencia. |
 | Perdida | La transacción es reversada desde la cuenta virtual del comercio y puede incurrir en costos de gestión de contracargos. |
 | Ganada | El proceso de disputas ha sido resulto en favor de la tienda, no hay deducciones de ningún tipo. |
-| Reembolsada | Este procesos ocurre cuando el comercio autoriza reversar la operación bajo su propia voluntad, esto previene que la tienda tenga que pagar un contracargo y se reemplace por un reembolso. |
 | Expirada | Luego de pasados 120 días sin respuesta del banco, el monto de la disputa queda disponible para el comercio. |
+| Reembolsada | Este procesos ocurre cuando el comercio autoriza reversar la operación bajo su propia voluntad, esto previene que la tienda tenga que pagar un contracargo y se reemplace por un reembolso. |
 
 {{% alert title="Nota" color="info"%}}
 Si tienes activada la [Garantía antifraude]({{< ref"Antifraud-Guarantee.md" >}}), cuando el contracargo es sujeto a cobertura, PayU asume los valores debitados de tu cuenta. En este caso, el estado de la disputa es _Contracargada_ (Perdida) _Aplica garantía antifraude_. 
 {{% /alert %}}
 
+## Consejos antifraude para tu negocio {#anti-fraud-tips-for-your-business}
+¡Luchar contra el fraude digital es nuestro deber!. Ten en cuenta los siguientes consejos:
+1. Ten cuidado con un aumento en las compras o solicitudes de servicio mayor de lo esperado dada a la naturaleza de tu negocio.
+2. Desconfía de las compras realizadas con montos superiores al promedio que recibes en tu comercio.
+3. Verifica si recibes un volumen de compra mayor de un solo cliente o solicitado a la misma dirección.

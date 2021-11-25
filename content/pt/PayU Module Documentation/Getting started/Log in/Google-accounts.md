@@ -10,7 +10,7 @@ tags: ["subtopic"]
 ---
 
 ## Observações {#considerations}
-* The option to sign in using _Google_ accounts is not available when using browsers in incognito mode.
+* The option to sign in using _Google_ accounts is not available ao usar browsers in incognito mode.
 * You must have a user entitled to at least an account and merchant registered using a _Google_ e-mail address.
 * Even though you use your _Google_ account to sign in, you can still using the credentials you created when you created your account.
 
@@ -31,7 +31,7 @@ tags: ["subtopic"]
 
 <img src="/assets//GoogleSignIn/GoogleSignIn_03.png" alt="PrintScreen" width="45%"/><br>
 
-5. If your user can access to more than one merchant, click it to access it. Otherwise, you are redirected to the default merchant.
+5. If your user can access to more than one merchant, click it to access it. Caso contrário, you are redirected to the default merchant.
 
 ![PrintScreen](/assets/GoogleSignIn/GoogleSignIn_04.png)
 

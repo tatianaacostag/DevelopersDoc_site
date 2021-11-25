@@ -20,9 +20,9 @@ Keep in mind the following considerations before transferring funds to your bank
   - Peru: 10,00 PEN + IGV (Peru),
   - Argentina: $ 10,00 ARS+ IVA (Argentina),
   - Chile: 0,00 CLP
-  - Mexico: 0,00 MXN
+  - México: 0,00 MXN
 * The first transfer takes five (5) days to deposit in the bank account. The Risk area of PayU requests a livelihood of sales in the first transfer as an administrative process.
-* The second, and the following transfers take maximum three (3) business days.
+* The second e the following transfers take máximo three (3) business dias.
 * The transfers can be programed by Amount and by Date
 
 {{% alert title="Note" color="warning"%}}
@@ -44,11 +44,11 @@ You can transfer up to the total amount in your PayU account to the registered b
 
 ![PrintScreen](/assets/Transfers/Transfers_01.png)
 
-2. Complete the value to transfer ou select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don't have free transactions, this panel also displayed the value of the transaction along with the taxes.
+2. Complete the value to transfer ou select the _**Transfer all available balance**_ option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don't have free transactions, this panel also displayed the value da transação along with the taxes.
 
 ![PrintScreen](/assets/Transfers/Transfers_02.png)
 
-3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account, and the target account.<br>Click _**OK**_ to confirm it ou _**Reject**_ to discard it.
+3. Click _**Request transfer**_. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account e the target account.<br>Click _**OK**_ to confirm it ou _**Reject**_ to discard it.
 
 <img src="/assets/Transfers/Transfers_03.png" alt="PrintScreen" width="50%"/><br>
 

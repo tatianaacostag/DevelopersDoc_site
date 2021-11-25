@@ -1,6 +1,6 @@
 ---
-title: "Sales Report"
-linkTitle: "Sales Report"
+title: "Relatório de Vendas"
+linkTitle: "Relatório de Vendas"
 date: 2021-09-03T16:45:07-05:00
 type: docs
 Description: >
@@ -9,7 +9,7 @@ weight: 10
 ---
 
 {{% alert title="Observação" color="info"%}}
-The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows ou columns in the report, contact your sales representative.
+The Relatório de Vendas displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows ou columns in the report, contact your sales representative.
 {{% /alert %}}
 
 ## Permission required
@@ -18,11 +18,11 @@ To have access to this module, you need to have a profile with the _Reports_ > _
 Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 
 ## Consult the report
-Log into your PayU account. In the left menu, expand the _**Transactions**_ menu and select _**Sales Report**_.
+Log into your PayU account. In the left menu, expand the _**Transações**_ menu and select _**Relatório de Vendas**_.
 
 ![PrintScreen](/assets/Refunds/Refunds_en_04.png)
 
-In the report, you can see a filter box, and the list of your latest sales. By default, the report shows the sales information<sup>\*</sup> of the last seven days, from the most recent to the oldest. 
+In the report, you can see a filter box e the list of your latest sales. By default, the report shows the sales information<sup>\*</sup> of the last seven days, from the most recent to the oldest. 
 
 <sup>*</sup>_Limited to top 20 thousand records._
 
@@ -32,12 +32,12 @@ The report has the following columns:
 
 | Coluna              | Descrição                                                                                         |
 |---------------------|-----------------------------------------------------------------------------------------------------|
-| Order               | This column shows the identifier of the order along with the date of the sale.                      |
+| Order               | This column shows the identifier da ordem along with the date of the sale.                      |
 | Reference           | This column shows the sale reference and the name of the product ou service offered.                |
 | Buyer               | This column shows the name and the e-mail address of the person who preform the buy.                 |
 | Valor              | Valor of the sale.                                                                                 |
 | Payment method      | Information of the payment method used by the buyer.                                                |
-| Status              | Current status of the order.                                                                        |
+| Status              | Current status da ordem.                                                                        |
 
 {{% alert title="Observação" color="info"%}}
 If you need to display more information, contact your sales representative.
@@ -48,7 +48,7 @@ Consulte [Order details]({{< ref "#transaction-details" >}}) to know all the tra
 ## Filter the report
 You can use the search bar above the graph ou the calendar to set filters. You can filter by _**Reference**_, _**Order**_, _**Buyer**_, _**Amount**_, _**status**_, ou _**Payment method**_.
 
-To set a filter, click the _**Filter my sales**_ field at the top of the report table.
+To set a filter, click the _**Filtrar minhas vendas**_ field at the top of the report table.
 
 <img src="/assets/Reports/Reports_11.png" alt="PrintScreen" width="60%"/><br>
 
@@ -73,7 +73,7 @@ The _**Transaction details**_ panel has the following sections:
 
 |  | Nome | Descrição |
 |:---:|---|---|
-| 1 | Order info | This section shows the Order Id, its latest update date, its status along with the status description, and the sale reference. |
+| 1 | Order info | This section shows the Order Id, its latest update date, its status along with the status description e the sale reference. |
 | 2 | Produto ou service | Descrição of the product ou service you provided in the sale. |
 | 3 | Payment method | Information of the Payment method used in the purchase. The information displayed in this section varies according to the payment method.<br>For pending cash payments, this section lets you see the payment receipt generated to the buyer. |
 | 4 | Values | This section shows the values involved in this transaction such as the _Value to charge (or charged)_, _Pending value_, _Refunded value_ (for refunds), _Expired value_ (for cash payments).  |
@@ -96,7 +96,7 @@ To download the report, click the _**Download**_ button located at the top ou at
 
 A pop up window appear where you can select the options to generate the report:
 * **Report**: lets you generate a report with the status of the orders and the final status of the last transaction ou attempted purchase related to that order.
-* **Balance from previous secure**: lets you generate a report with all the transactions and shows the information of the buyer and payer (e-mail, name, document number)<sup>\*</sup>.
+* **Balance from previous secure**: lets you generate a report with all the transactions and shows the information do comprador and payer (e-mail, name, document number)<sup>\*</sup>.
 
 <img src="/assets/Reports/Reports_18.png" alt="PrintScreen" width="50%"/>
 

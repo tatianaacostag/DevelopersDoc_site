@@ -3,14 +3,14 @@ title: "Tokenization SDK"
 linkTitle: "Tokenization SDK"
 date: 2021-03-29T08:31:38-05:00
 description: >
-  Tokenization SDK allows you to safely store the data of your customers' credit cards through the creation of a token. This token lets you make regular charges ou implement the 1 Click payment feature, following PCI DSS (Payment Card Industry Data Security Standard) security standards to handle credit card data.
+  Tokenization SDK permite armazenar com segurança os dados dos cartões de crédito de seus clientes por meio da criação de um token. Este token permite fazer cobranças regulares ou implementar o recurso de pagamento em 1 clique, seguindo os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard) para gerenciar dados de cartão de crédito.
 weight: 90
 tags: ["subtopic"]
 ---
 
-Tokenization feature is available under customized commercial agreements. For more information, contact your sales representative.
+O recurso de tokenização está disponível em acordos comerciais personalizados. Para obter mais informações, entre em contato com seu representante de vendas.
 
-To integrate with Tokenization SDK, target your request to the following URLs according to your environment.
+To integrate with Tokenization SDK, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
@@ -35,17 +35,17 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available methods
-Tokenization SDK includes methods to register and remove tokens, and methods to query tokens.
+## Métodos disponíveis {#available-methods}
+Tokenization SDK inclui métodos para registrar, remover e consultar tokens.
 
 For registration a removal of tokens:
-* [Individual credit card registration]({{< ref "TokenizationSDK.md#individual-credit-card-registration" >}})
-* [Individual token removal]({{< ref "TokenizationSDK.md#individual-token-removal" >}})
-* [Query tokens]({{< ref "TokenizationSDK.md#query-tokens" >}})
+* [Registro de cartão de crédito individual]({{< ref "TokenizationSDK.md#individual-credit-card-registration" >}})
+* [Remoção de token individual]({{< ref "TokenizationSDK.md#individual-token-removal" >}})
+* [Consulta de token]({{< ref "TokenizationSDK.md#query-tokens" >}})
 
 
-## Individual credit card registration
-Using this feature, you can register the information of a customer's credit card and get a token. 
+## Registro de cartão de crédito individual
+Usando esse recurso, você pode registrar as informações do cartão de crédito de um cliente e obter um token. 
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -105,8 +105,8 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-## Individual token removal
-Using this feature, you can remove the token previously registered. 
+## Remoção de token individual
+Usando este recurso, você pode remover o token registrado anteriormente. 
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -132,8 +132,8 @@ LoggerUtil.info("{0}", response);
 {{< /tab >}}
 {{< /tabs >}}
 
-## Query tokens
-Using this feature, you can get the information of tokenized credit cards, you can perform the query by the token number ou by a date range. 
+## Consulta de token
+Usando este recurso, você pode obter as informações de cartões de crédito tokenizados e realizar a consulta pelo número do token ou por um intervalo de datas. 
 
 ### Method call
 The following examples show how to call the method for this transaction type according to the programming language.
@@ -198,11 +198,11 @@ if($response) {
 {{< /tabs >}}
 
 ## Payments using Tokenization
-For payments with credit card tokens, include the parameter `CREDIT_CARD_SECURITY_CODE` replacing the information of the credit card. The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+Para pagamentos com tokens de cartão de crédito, inclua o parâmetro `CREDIT_CARD_SECURITY_CODE` substituindo as informações do cartão de crédito. O exemplo a seguir mostra o corpo da solicitação em um nível alto para um fluxo de uma etapa. Os detalhes da solicitação não são fornecidos.
 
 {{% alert title="Observação" color="info"%}}
-To process without CVV is necessary to send the parameter `PROCESS_WITHOUT_CVV2` as true in the payment request and remove the parameter `CREDIT_CARD_SECURITY_CODE`.<br>
-By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative.
+Para processar sem CVV, é necessário enviar o parâmetro `PROCESS_WITHOUT_CVV2` como true na solicitação de pagamento e remover o parâmetro `CREDIT_CARD_SECURITY_CODE`.<br>
+Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas.
 {{% /alert%}}
 
 
@@ -228,12 +228,12 @@ parameters.put(PayU.PARAMETERS.CURRENCY, currency);
 
 // -- Buyer --
 // Enter the buyer information here.
-//parameters.put([...], [...]);
+//parameters.put([..], [..]);
 
 
 // -- Payer --
 // Enter the payer information here.
-//parameters.put([...], [...]);
+//parameters.put([..], [..]);
 
 // -- Credit card data --
 // Enter the credit card token here
@@ -281,12 +281,12 @@ $parameters = array(
 
 	// -- Buyer --
   // Enter the buyer information here.
-  //PayUParameters::[...] => [...],
+  //PayUParameters::[..] => [..],
 
 
   // -- Payer --
   // Enter the payer information here.
-  //PayUParameters::[...] => [...],
+  //PayUParameters::[..] => [..],
 
 	// -- Credit card data --
   // Enter the credit card token here
@@ -319,7 +319,7 @@ $response = PayUPayments::doAuthorizationAndCapture($parameters);
 {{< /tabs >}}
 <br>
 
-For specific details about how to perform payments, refer to the respective article according to the processing country.
+Para obter informações específicas sobre como efetuar pagamentos, consulte o artigo respectivo ao país de processamento.
 
 <div>
   <div style="float: left;width: 50%;">

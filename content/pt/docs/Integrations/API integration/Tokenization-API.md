@@ -1,85 +1,85 @@
 ---
-title: "Tokenization API"
-linkTitle: "Tokenization API"
+title: "API de tokenização"
+linkTitle: "API de tokenização"
 date: 2021-06-24T10:31:30-05:00
 description: >
-  Tokenization API allows you to safely store the data of your customers' credit cards through the creation of a token. This token lets you make regular charges ou implement the 1 Click payment feature, following PCI DSS (Payment Card Industry Data Security Standard) security standards to handle credit card data.
+  API de tokenização permite armazenar com segurança os dados dos cartões de crédito de seus clientes por meio da criação de um token. Este token permite fazer cobranças regulares ou implementar o recurso de pagamento em 1 clique, seguindo os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard) para gerenciar dados de cartão de crédito.
 weight: 40
 tags: ["subtopic"]
 ---
 
-Tokenization feature is available under customized commercial agreements. For more information, contact your sales representative.
+O recurso de tokenização está disponível em acordos comerciais personalizados. Para obter mais informações, entre em contato com seu representante de vendas.
 
-To integrate with Tokenization API, target your request to the following URLs according to your environment.
+Para integrar com a API de tokenização, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
 {{% alert title="URL" color="info"%}}
 * Teste: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Produção: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
 {{% /alert %}}
 
-## Available methods
-Tokenization API includes methods to register and remove tokens, and methods to query tokens.
+## Métodos disponíveis {#available-methods}
+A API de tokenização inclui métodos para registrar, remover e consultar tokens.
 
-* [Individual credit card registration]({{< ref "Tokenization-API.md#individual-credit-card-registration" >}})
-* [Massive credit card registration]({{< ref "Tokenization-API.md#massive-credit-card-registration" >}})
-* [Individual token removal]({{< ref "Tokenization-API.md#individual-token-removal" >}})
-* [Massive token removal]({{< ref "Tokenization-API.md#massive-token-removal" >}})
-* [Query tokens]({{< ref "Tokenization-API.md#query-tokens" >}})
+* [Registro de cartão de crédito individual]({{< ref "#individual-credit-card-registration" >}})
+* [Registro de cartões de crédito em massa]({{< ref "#massive-credit-card-registration" >}})
+* [Remoção de token individual]({{< ref "#individual-token-removal" >}})
+* [Remoção de tokens em massa]({{< ref "#massive-token-removal" >}})
+* [Consulta de token]({{< ref "#query-tokens" >}})
 
-## Individual credit card registration
-Using this feature, you can register the information of a customer's credit card and get a token. 
+## Registro de cartão de crédito individual {#individual-credit-card-registration}
+Usando esse recurso, você pode registrar as informações do cartão de crédito de um cliente e obter um token. 
 
-### Variables for request and response
+### Variáveis para pedido e resposta {#variables-for-request-and-response}
 
 <details>
-<summary>Request</summary>
+<summary>Pedido</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
-| command | Alfanumérico | Max:32 | Defina `CREATE_TOKEN`. | Sim |
-| merchant |  |  | This object has the authentication data. | Sim |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| creditCardToken |  |  | Information of the credit card to be tokenized. | Sim |
-| creditCardToken > payerId | Alfanumérico | | Internal id of the credit card holder. | Sim |
-| creditCardToken > name | Alfanumérico | Min:1 Max:255 | Holder's name displayed in the credit card. | Sim |
-| creditCardToken > identificationNumber | Alfanumérico | Max:20 | Identification number of the credit card holder. | Sim |
-| creditCardToken > paymentMethod | Alfanumérico | 32 | Select a valid Credit card Método de pagamento. [See the available Payment Methods]({{< ref "select-your-payment-method.html" >}}). | Sim |
-| creditCardToken > number | Alfanumérico | Min:13 Max:20 | Credit card number. | Sim |
-| creditCardToken > expirationDate | Alfanumérico | 7 | Credit card expiration date. Formato `YYYY/MM`. | Sim |
+| language | Alfanumérico | 2 | Idioma usado no pedido, usado para exibir as mensagens de erro geradas. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| command | Alfanumérico | Máx:32 | Definir `CREATE_TOKEN`. | Sim |
+| merchant |  |  | Este objeto contém os dados de autenticação. | Sim |
+| merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| creditCardToken |  |  | Informações do cartão de crédito a ser tokenizado. | Sim |
+| creditCardToken > payerId | Alfanumérico | | Identificação interna do titular do cartão de crédito. | Sim |
+| creditCardToken > name | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de crédito. | Sim |
+| creditCardToken > identificationNumber | Alfanumérico | Máx:20 | Número de identificação do titular do cartão de crédito. | Sim |
+| creditCardToken > paymentMethod | Alfanumérico | 32 | Selecione um método de pagamento com cartão de crédito válido. [Veja os métodos de pagamento disponíveis]({{< ref "select-your-payment-method.html" >}}). | Sim |
+| creditCardToken > number | Alfanumérico | Mín:13 Máx:20 | Número do cartão de crédito. | Sim |
+| creditCardToken > expirationDate | Alfanumérico | 7 | Data de validade do cartão de crédito. Formato `YYYY/MM`. | Sim |
 
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Resposta</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
-| creditCardToken |  |  | Information of the Tokenized credit card. |
-| creditCardToken > creditCardTokenId | Alfanumérico | | Token generated through the information of the credit card. |
-| creditCardToken > name | Alfanumérico | Min:1 Max:255 | Holder's name displayed in the credit card as sent in the request. |
-| creditCardToken > payerId | Alfanumérico | | Internal id of the credit card holder as sent in the request. |
-| creditCardToken > identificationNumber | Alfanumérico | Max:20 | Identification number of the credit card holder as sent in the request. |
-| creditCardToken > paymentMethod | Alfanumérico | 32 | Franchise of the tokenized credit card as sent in the request. |
-| creditCardToken > maskedNumber | Alfanumérico | Min:13 Max:20 | Masked credit card number. The masked used displays the first six digits and the last four digits of the credit card. |
+| code | Alfanumérico |  | O código de resposta da transação. Os valores possíveis são `ERROR` e `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | A mensagem de erro associada quando o código de resposta é `ERROR`. |
+| creditCardToken |  |  | Informações do cartão de crédito tokenizado. |
+| creditCardToken > creditCardTokenId | Alfanumérico | | Token gerado com as informações do cartão de crédito. |
+| creditCardToken > name | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de crédito conforme enviado no pedido. |
+| creditCardToken > payerId | Alfanumérico | | Identificação interna do titular do cartão de crédito conforme enviado no pedido. |
+| creditCardToken > identificationNumber | Alfanumérico | Máx:20 | Número de identificação do titular do cartão de crédito conforme enviado no pedido. |
+| creditCardToken > paymentMethod | Alfanumérico | 32 | Franquia do cartão de crédito tokenizado conforme enviado no pedido. |
+| creditCardToken > maskedNumber | Alfanumérico | Mín:13 Máx:20 | Número do cartão de crédito ocultado. Quando o cartão é ocultado, são exibidos os primeiros seis dígitos e os últimos quatro dígitos do cartão de crédito. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### Chamada API {#api-call}
+A seguir estão os corpos do pedido e resposta deste método.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
    "language": "es",
@@ -100,7 +100,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -125,7 +125,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 <request>
    <language>es</language>
@@ -146,7 +146,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 <creditCardTokenResponse>
     <code>SUCCESS</code>
@@ -163,60 +163,60 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Massive credit card registration
-Using this feature, you can register the information of several credit cards stored in a _**.csv**_ file and get a token per each card. 
+## Registro de cartões de crédito em massa {#massive-credit-card-registration}
+Usando este recurso, você pode registrar as informações de vários cartões de crédito armazenados em um arquivo _**.csv**_ e obtenha um token para cada cartão.
 
 ### Observações {#considerations}
-* Each record of the file must have the following structure and order separated by commas:
-    - Payer ID
-    - Full name
-    - Credit card number
-    - Expiration date
-    - Franchise
-    - Identification number
-* The file must not have header.
-* The file must be codifies using UTF-8. You need to implement a functionality to codify the content and send the codified string in the `contentFile` parameter.
-* The file cannot have more than 10.000 records.<br><br>![PrintScreen](/assets/massiveTokenization.jpeg) 
+* Cada registro do arquivo deve ter a seguinte estrutura e ordem separadas por vírgulas:
+    - ID de pagador
+    - Nome completo
+    - Número do cartão de crédito
+    - Data de validade
+    - Franquia
+    - Número de identificação
+* O arquivo não deve ter cabeçalho.
+* O arquivo deve ser codificado em UTF-8. Você precisa implementar uma funcionalidade para codificar o conteúdo e enviar a string codificada no parâmetro `contentFile`.
+* O arquivo não pode ter mais de 10.000 registros.<br><br>![PrintScreen](/assets/massiveTokenization.jpeg) 
 
-### Variables for request and response
+### Variáveis para pedido e resposta {#variables-for-request-and-response-1}
 
 <details>
-<summary>Request</summary>
+<summary>Pedido</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
-| command | Alfanumérico | Max:32 | Defina `CREATE_BATCH_TOKENS`. | Sim |
-| merchant |  |  | This object has the authentication data. | Sim |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| contentFile | Alfanumérico |  | Codified string in Base64 with the information of the credit cards as explained before. | Sim |
+| language | Alfanumérico | 2 | Idioma usado no pedido, usado para exibir as mensagens de erro geradas. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| command | Alfanumérico | Máx:32 | Definir `CREATE_BATCH_TOKENS`. | Sim |
+| merchant |  |  | Este objeto contém os dados de autenticação. | Sim |
+| merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| contentFile | Alfanumérico |  | String codificada em Base64 com as informações dos cartões de crédito, conforme explicado anteriormente. | Sim |
 
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Resposta</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
-| id |  |  | Identification of the procedure. |
+| code | Alfanumérico |  | O código de resposta da transação. Os valores possíveis são `ERROR` e `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | A mensagem de erro associada quando o código de resposta é `ERROR`. |
+| id |  |  | Identificação do procedimento. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### Chamada API {#api-call-1}
+A seguir estão os corpos do pedido e resposta deste método.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
    "language": "es",
@@ -230,7 +230,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -244,7 +244,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 <request>
    <language>es</language>
@@ -258,7 +258,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 <creditCardTokenBatchResponse>
    <code>SUCCESS</code>
@@ -268,56 +268,56 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Individual token removal
-Using this feature, you can remove the token previously registered. 
+## Remoção de token individual {#individual-token-removal}
+Usando este recurso, você pode remover o token registrado anteriormente. 
 
-### Variables for request and response
+### Variáveis para pedido e resposta {#variables-for-request-and-response-2}
 
 <details>
-<summary>Request</summary>
+<summary>Pedido</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
-| command | Alfanumérico | Max:32 | Defina `REMOVE_TOKEN`. | Sim |
-| merchant |  |  | This object has the authentication data. | Sim |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| removeCreditCardToken |  |  | Information of token to be removed. | Sim |
-| removeCreditCardToken > payerId | Alfanumérico | | Internal id of the credit card holder. | Sim |
-| removeCreditCardToken > creditCardTokenId | Alfanumérico | | Token of the credit card to be removed. | Sim |
+| language | Alfanumérico | 2 | Idioma usado no pedido, usado para exibir as mensagens de erro geradas. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| command | Alfanumérico | Máx:32 | Definir `REMOVE_TOKEN`. | Sim |
+| merchant |  |  | Este objeto contém os dados de autenticação. | Sim |
+| merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| removeCreditCardToken |  |  | Informação do token a ser removido. | Sim |
+| removeCreditCardToken > payerId | Alfanumérico | | Identificação interna do titular do cartão de crédito. | Sim |
+| removeCreditCardToken > creditCardTokenId | Alfanumérico | | Token do cartão de crédito a ser removido. | Sim |
 
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Resposta</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
-| creditCardToken |  |  | Information of the Token removed. |
-| creditCardToken > creditCardTokenId | Alfanumérico | | Token of the credit card as sent in the request. |
-| creditCardToken > name | Alfanumérico | Min:1 Max:255 | Holder's name displayed in the credit card. |
-| creditCardToken > payerId | Alfanumérico | | Internal id of the credit card holder. |
-| creditCardToken > identificationNumber | Alfanumérico | Max:20 | Identification number of the credit card holder. |
-| creditCardToken > paymentMethod | Alfanumérico | 32 | Franchise of the tokenized credit card. |
-| creditCardToken > maskedNumber | Alfanumérico | Min:13 Max:20 | Masked credit card number. The masked used displays the first six digits and the last four digits of the credit card. |
+| code | Alfanumérico |  | O código de resposta da transação. Os valores possíveis são `ERROR` e `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | A mensagem de erro associada quando o código de resposta é `ERROR`. |
+| creditCardToken |  |  | Informações do token removidas. |
+| creditCardToken > creditCardTokenId | Alfanumérico | | Token do cartão de crédito conforme enviado no pedido. |
+| creditCardToken > name | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de crédito. |
+| creditCardToken > payerId | Alfanumérico | | Identificação interna do titular do cartão de crédito. |
+| creditCardToken > identificationNumber | Alfanumérico | Máx:20 | Número de identificação do titular do cartão de crédito. |
+| creditCardToken > paymentMethod | Alfanumérico | 32 | Franquia do cartão de crédito tokenizado. |
+| creditCardToken > maskedNumber | Alfanumérico | Mín:13 Máx:20 | Número do cartão de crédito ocultado. Quando o cartão é ocultado, são exibidos os primeiros seis dígitos e os últimos quatro dígitos do cartão de crédito. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### Chamada API {#api-call-2}
+A seguir estão os corpos do pedido e resposta deste método.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
    "language": "es",
@@ -334,7 +334,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -359,7 +359,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 <request>
    <language>es</language>
@@ -377,7 +377,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 <creditCardTokenResponse>
     <code>SUCCESS</code>
@@ -394,56 +394,56 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Massive token removal
-Using this feature, you can remove the tokens stored in a _**.csv**_ file. 
+## Remoção de tokens em massa {#massive-token-removal}
+Usando este recurso, você pode remover os tokens armazenados em um arquivo _**.csv**_.
 
-### Observações {#considerations}
-* Each record of the file must have the following structure and order separated by commas:
-    - Payer ID
+### Observações {#considerations-1}
+* Cada registro do arquivo deve ter a seguinte estrutura e ordem separadas por vírgulas:
+    - ID de pagador
     - Token.
-* The file must not have header.
-* The file must be codifies using UTF-8. You need to implement a functionality to codify the content and send the codified string in the `contentFile` parameter.
-* The file cannot have more than 10.000 records.<br><br>![PrintScreen](/assets/massiveDeletion.png) 
+* O arquivo não deve ter cabeçalho.
+* O arquivo deve ser codificado em UTF-8. Você precisa implementar uma funcionalidade para codificar o conteúdo e enviar a string codificada no parâmetro `contentFile`.
+* O arquivo não pode ter mais de 10.000 registros.<br><br>![PrintScreen](/assets/massiveDeletion.png) 
 
-### Variables for request and response
+### Variáveis para pedido e resposta {#variables-for-request-and-response-3}
 
 <details>
-<summary>Request</summary>
+<summary>Pedido</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
-| command | Alfanumérico | Max:32 | Defina `REMOVE_BATCH_TOKENS`. | Sim |
-| merchant |  |  | This object has the authentication data. | Sim |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| contentFile | Alfanumérico |  | Codified string in Base64 with the information of the tokens to be removed. | Sim |
+| language | Alfanumérico | 2 | Idioma usado no pedido, usado para exibir as mensagens de erro geradas. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| command | Alfanumérico | Máx:32 | Definir `REMOVE_BATCH_TOKENS`. | Sim |
+| merchant |  |  | Este objeto contém os dados de autenticação. | Sim |
+| merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| contentFile | Alfanumérico |  | String codificada em Base64 com as informações dos tokens a serem removidos. | Sim |
 
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Resposta</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
-| id |  |  | Identification of the procedure. |
+| code | Alfanumérico |  | O código de resposta da transação. Os valores possíveis são `ERROR` e `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | A mensagem de erro associada quando o código de resposta é `ERROR`. |
+| id |  |  | Identificação do procedimento. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### Chamada API {#api-call-3}
+A seguir estão os corpos do pedido e resposta deste método.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
    "language": "es",
@@ -457,7 +457,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -471,7 +471,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 <request>
    <language>es</language>
@@ -485,7 +485,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 <creditCardTokenBatchResponse>
    <code>SUCCESS</code>
@@ -495,58 +495,58 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Query tokens
-Using this feature, you can get the information of tokenized credit cards, you can perform the query by the token number ou by a date range. 
+## Consulta de token {#query-tokens}
+Usando este recurso, você pode obter as informações de cartões de crédito tokenizados e realizar a consulta pelo número do token ou por um intervalo de datas. 
 
-### Variables for request and response
+### Variáveis para pedido e resposta {#variables-for-request-and-response-4}
 
 <details>
-<summary>Request</summary>
+<summary>Pedido</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
-| command | Alfanumérico | Max:32 | Defina `GET_TOKENS`. | Sim |
-| merchant |  |  | This object has the authentication data. | Sim |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| creditCardTokenInformation |  |  | Parameters of the query. | Sim |
-| creditCardTokenInformation > creditCardTokenId | Alfanumérico | | Token of the card to consult. This parameter is mandatory when you want to query by Token Id. | Não |
-| creditCardTokenInformation > startDate | Alfanumérico | 23 | Start date of the query when you want to query by date range. This parameter is mandatory when you want to query by date rage.<br>Formato `YYYY-MM-DDTHH:MM:SS`, for example `2021-06-12T16:07:11`. | Não |
-| creditCardTokenInformation > endDate | Alfanumérico | 23 | End date of the query when you want to query by date range. This parameter is mandatory when you want to query by date rage.<br>Formato `YYYY-MM-DDTHH:MM:SS`, for example `2021-06-12T16:07:11`. | Não |
+| language | Alfanumérico | 2 | Idioma usado no pedido, usado para exibir as mensagens de erro geradas. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| command | Alfanumérico | Máx:32 | Definir `GET_TOKENS`. | Sim |
+| merchant |  |  | Este objeto contém os dados de autenticação. | Sim |
+| merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| creditCardTokenInformation |  |  | Parâmetros da consulta. | Sim |
+| creditCardTokenInformation > creditCardTokenId | Alfanumérico | | Token of the card to consult. Este parâmetro é obrigatório quando você deseja consultar por ID de Token. | Não |
+| creditCardTokenInformation > startDate | Alfanumérico | 23 | Data de início da consulta, quando quiser consultar por intervalo de datas. Este parâmetro é obrigatório quando você deseja consultar por intervalo de datas.<br>Formato `YYYY-MM-DDTHH:MM:SS`, por exemplo `2021-06-12T16:07:11`. | Não |
+| creditCardTokenInformation > endDate | Alfanumérico | 23 | Data de término da consulta, quando quiser consultar por intervalo de datas. Este parâmetro é obrigatório quando você deseja consultar por intervalo de datas.<br>Formato `YYYY-MM-DDTHH:MM:SS`, por exemplo `2021-06-12T16:07:11`. | Não |
 
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Resposta</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
-| creditCardTokenList |  |  | Information of the Tokenized credit cards. |
-| creditCardTokenList > creditCardTokenId | Alfanumérico | | Token generated through the information of the credit card. |
-| creditCardTokenList > name | Alfanumérico | Min:1 Max:255 | Holder's name displayed in the credit card as sent in the request. |
-| creditCardTokenList > payerId | Alfanumérico | | Internal id of the credit card holder as sent in the request. |
-| creditCardTokenList > identificationNumber | Alfanumérico | Max:20 | Identification number of the credit card holder as sent in the request. |
-| creditCardTokenList > paymentMethod | Alfanumérico | 32 | Franchise of the tokenized credit card as sent in the request. |
-| creditCardTokenList > creationDate | Alfanumérico | 19 | Date when the credit card was tokenized. |
-| creditCardTokenList > maskedNumber | Alfanumérico | Min:13 Max:20 | Masked credit card number. The masked used displays the first six digits and the last four digits of the credit card. |
+| code | Alfanumérico |  | O código de resposta da transação. Os valores possíveis são `ERROR` e `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | A mensagem de erro associada quando o código de resposta é `ERROR`. |
+| creditCardTokenList |  |  | Informações dos cartões de crédito tokenizados. |
+| creditCardTokenList > creditCardTokenId | Alfanumérico | | Token gerado com as informações do cartão de crédito. |
+| creditCardTokenList > name | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de crédito conforme enviado no pedido. |
+| creditCardTokenList > payerId | Alfanumérico | | Identificação interna do titular do cartão de crédito conforme enviado no pedido. |
+| creditCardTokenList > identificationNumber | Alfanumérico | Máx:20 | Número de identificação do titular do cartão de crédito conforme enviado no pedido. |
+| creditCardTokenList > paymentMethod | Alfanumérico | 32 | Franquia do cartão de crédito tokenizado conforme enviado no pedido. |
+| creditCardTokenList > creationDate | Alfanumérico | 19 | Data em que o cartão de crédito foi tokenizado. |
+| creditCardTokenList > maskedNumber | Alfanumérico | Mín:13 Máx:20 | Número do cartão de crédito ocultado. Quando o cartão é ocultado, são exibidos os primeiros seis dígitos e os últimos quatro dígitos do cartão de crédito. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method. The following example queries the tokenized cards by date range, if you want to query by using the token Id, just send the parameter `creditCardTokenInformation.creditCardTokenId`.
+### Chamada API {#api-call-4}
+A seguir estão os corpos do pedido e resposta deste método. O exemplo a seguir consulta os cartões tokenizados por intervalo de datas. Se você quiser consultar usando o ID do token, basta enviar o parâmetro `creditCardTokenInformation.creditCardTokenId`.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
    "language": "es",
@@ -563,7 +563,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -614,7 +614,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 <request>
    <language>es</language>
@@ -631,7 +631,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 <creditCardTokenListResponse>
     <code>SUCCESS</code>
@@ -667,19 +667,19 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Payments using Tokenization
-For payments with credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+## Pagamentos usando tokenização {#payments-using-tokenization}
+Para pagamentos com tokens de cartão de crédito, inclua o parâmetro `transaction.creditCardTokenId` substituindo as informações do cartão de crédito. O exemplo a seguir mostra o corpo da solicitação em um nível alto para um fluxo de uma etapa. Os detalhes da solicitação não são fornecidos.
 
 {{% alert title="Observação" color="info"%}}
-To process without CVV is necessary to send the parameter `creditCard.processWithoutCvv2` as true in the payment request and remove the parameter `creditCard.securityCode`.<br>
-By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative.
+Para processar sem CVV, é necessário enviar o parâmetro `creditCard.processWithoutCvv2` como true na solicitação de pagamento e remover o parâmetro `creditCard.securityCode`.<br>
+Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas.
 {{% /alert%}}
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
    "language": "es",
@@ -690,21 +690,21 @@ Request body:
    },
    "transaction": {
       "order": {
-         "Information of the order":""
+         "Informação do pedido":""
       },
       "payer": {
-         "Information of the payer":""
+         "Informação do pagador":""
       },
       "creditCardTokenId": "46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3",
       "creditCard": {
          "securityCode": "123"
       },
       "extraParameters": {
-         "Extra parameters of the request":""
+         "Parâmetros extras do pedido":""
       },
       "type": "AUTHORIZATION_AND_CAPTURE",
       "paymentMethod": "Card franchise", 
-      "paymentCountry": "Processing country",
+      "paymentCountry": "País de processamento",
       "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
       "ipAddress": "127.0.0.1",
       "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
@@ -718,7 +718,7 @@ Request body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 <request>
    <language>es</language>
@@ -729,21 +729,21 @@ Request body:
    </merchant>
    <transaction>
       <order>
-         <!-- Information of the order -->
+         <!-- Informação do pedido -->
       </order>
       <payer>
-         <!-- Information of the payer -->
+         <!-- Informação do pagador -->
       </payer>
       <creditCardTokenId>46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3</creditCardTokenId>
       <creditCard>
          <securityCode>321</securityCode>
       </creditCard>
       <extraParameters>
-         <!-- Extra parameters of the request -->
+         <!-- Parâmetros extras do pedido -->
       </extraParameters>
       <type>AUTHORIZATION_AND_CAPTURE</type>
       <paymentMethod>{Card franchise}</paymentMethod>
-      <paymentCountry>{Processing country}</paymentCountry>
+      <paymentCountry>{País de processamento}</paymentCountry>
       <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
       <ipAddress>127.0.0.1</ipAddress>
       <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
@@ -757,20 +757,20 @@ Request body:
 {{< /tabs >}}
 <br>
 
-For specific details about how to perform payments, refer to the respective article according to the processing country.
+Para obter informações específicas sobre como efetuar pagamentos, consulte o artigo respectivo ao país de processamento.
 
 <div style="display: flex;">
   <div style="float: left;width: 50%;">
       <img src="/assets/Argentina.png" width="25px"/> <a href="{{< ref "Payments-API-Argentina.md" >}}">Argentina</a><br>
-      <img src="/assets/Brasil.png" width="25px"/> <a href="{{< ref "Payments-API-Brazil.md" >}}">Brazil</a><br>
+      <img src="/assets/Brasil.png" width="25px"/> <a href="{{< ref "Payments-API-Brazil.md" >}}">Brasil</a><br>
       <img src="/assets/Chile.png" width="25px"/> <a href="{{< ref "Payments-API-Chile.md" >}}">Chile</a><br>
-      <img src="/assets/Colombia.png" width="25px"/> <a href="{{< ref "Payments-API-Colombia.md" >}}">Colombia</a>
+      <img src="/assets/Colombia.png" width="25px"/> <a href="{{< ref "Payments-API-Colombia.md" >}}">Colômbia</a>
     </ul>
   </div>
   <div style="float: left;width: 50%;">
     <ul>
-      <img src="/assets/Mexico.png" width="25px"/> <a href="{{< ref "Payments-API-Mexico.md" >}}">Mexico</a><br>
-      <img src="/assets/Panama.png" width="25px"/> <a href="{{< ref "Payments-API-Panama.md" >}}">Panama</a><br>
+      <img src="/assets/Mexico.png" width="25px"/> <a href="{{< ref "Payments-API-Mexico.md" >}}">México</a><br>
+      <img src="/assets/Panama.png" width="25px"/> <a href="{{< ref "Payments-API-Panama.md" >}}">Panamá</a><br>
       <img src="/assets/Peru.png" width="25px"/> <a href="{{< ref "Payments-API-Peru.md" >}}">Peru</a>
     </ul>
   </div>
@@ -778,66 +778,66 @@ For specific details about how to perform payments, refer to the respective arti
 
 <br>
 
-### Multiple payments with tokenization
-Using this feature, you can perform payments using several tokens stored in a _**.csv**_ file. 
+### Pagamentos múltiplos com tokenização {#multiple-payments-with-tokenization}
+Usando este recurso, você pode realizar pagamentos usando vários tokens armazenados em um arquivo _**.csv**_ e obter um token para cada cartão.
 
-### Observações {#considerations}
-* Each record of the file must have the following structure and order separated by commas:
-    - Account Id, identifier of your PayU account.
-    - Credit card token
-    - Credit card security code
-    - Número of installments
-    - Sale reference
-    - Sale description
-    - Buyer's e-mail
+### Observações {#considerations-2}
+* Cada registro do arquivo deve ter a seguinte estrutura e ordem separadas por vírgulas:
+    - ID da conta, identificador da sua conta PayU.
+    - Token de cartão de crédito
+    - Código de segurança do cartão de crédito
+    - Quantidade de parcelas
+    - Referência de venda
+    - Descrição de venda
+    - E-mail do comprador
     - Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}})
-    - Total amount including taxes
-    - Base value of reimbursement
-    - Additional value
-    - Language used in emails sent to the buyer and the seller. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}})
-* The file must not have header.
-* The file must be codifies using UTF-8. You need to implement a functionality to codify the content and send the codified string in the `contentFile` parameter.
-* The file cannot have more than 10.000 records.<br><br>![PrintScreen](/assets/massivePaymentTokenization.png) 
+    - Valor total incluindo impostos
+    - Valor base de reembolso
+    - Valor adicional
+    - Idioma usado nos e-mails enviados ao comprador e ao vendedor. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}})
+* O arquivo não deve ter cabeçalho.
+* O arquivo deve ser codificado em UTF-8. Você precisa implementar uma funcionalidade para codificar o conteúdo e enviar a string codificada no parâmetro `contentFile`.
+* O arquivo não pode ter mais de 10.000 registros.<br><br>![PrintScreen](/assets/massivePaymentTokenization.png) 
 
-### Variables for request and response
+### Variáveis para pedido e resposta {#variables-for-request-and-response-5}
 
 <details>
-<summary>Request</summary>
+<summary>Pedido</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Language used in the request, this language is used to display the error messages generated. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
-| command | Alfanumérico | Max:32 | Defina `PROCESS_BATCH_TRANSACTIONS_TOKEN`. | Sim |
-| merchant |  |  | This object has the authentication data. | Sim |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| contentFile | Alfanumérico |  | Codified string in Base64 with the information of the credit cards as explained before. | Sim |
+| language | Alfanumérico | 2 | Idioma usado no pedido, usado para exibir as mensagens de erro geradas. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| command | Alfanumérico | Máx:32 | Definir `PROCESS_BATCH_TRANSACTIONS_TOKEN`. | Sim |
+| merchant |  |  | Este objeto contém os dados de autenticação. | Sim |
+| merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| contentFile | Alfanumérico |  | String codificada em Base64 com as informações dos cartões de crédito, conforme explicado anteriormente. | Sim |
 
 </details>
 
 <details>
-<summary>Response</summary>
+<summary>Resposta</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| code | Alfanumérico |  | The response code of the transaction. Possible values are `ERROR` e `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | The error message associated when the response code is `ERROR`. |
-| id |  |  | Identification of the procedure. |
+| code | Alfanumérico |  | O código de resposta da transação. Os valores possíveis são `ERROR` e `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | A mensagem de erro associada quando o código de resposta é `ERROR`. |
+| id |  |  | Identificação do procedimento. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### Chamada API {#api-call-5}
+A seguir estão os corpos do pedido e resposta deste método.
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
    "language": "es",
@@ -851,7 +851,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -865,7 +865,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 <request>
    <language>es</language>
@@ -879,7 +879,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 <creditCardTokenBatchResponse>
    <code>SUCCESS</code>

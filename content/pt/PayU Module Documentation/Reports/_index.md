@@ -4,7 +4,7 @@ linkTitle: "Reports"
 date: 2021-09-03T16:29:25-05:00
 type: docs
 Description: >
-  Learn how to consult your statements, transfers, sales, and further information your shop may require to meet regulations.
+  Learn how to consult your statements, transfers, sales e further information your shop may require to meet regulations.
 weight: 50
 nosidetoc: true
 ---
@@ -16,7 +16,7 @@ Reports in the Módulo PayU are limited to **20 thousand** rows for both display
 {{% /alert %}}
 
 ## My downloaded reports
-When you download a report, the generated fils is saved in this section to let you download it later as you require. PayU keeps the reports stored here for 90 days.
+When you download a report, the generated fils is saved in this section to let you download it later as you require. PayU keeps the reports stored here for 90 dias.
 
 {{% alert title="Observação" color="info"%}}
 This section does not store the Colombian Withholding certificates.
@@ -26,7 +26,7 @@ To open this section, go to any of the available reports and click _**My downloa
 
 ![PrintScreen](/assets/Reports/Reports_01.png)
 
-The _**My downloaded reports**_ section appears listing the latest reports generated in the last 90 days. Take into account that newest download records may not be ready yet, if you requested a report recently and is not in the table, try again later.
+The _**My downloaded reports**_ section appears listing the latest reports generated in the last 90 dias. Take into account that newest download records may not be ready yet, if you requested a report recently and is not in the table, try again later.
 
 ![PrintScreen](/assets/Reports/Reports_02.png)
 

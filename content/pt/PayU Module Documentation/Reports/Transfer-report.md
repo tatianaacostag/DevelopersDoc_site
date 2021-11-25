@@ -8,7 +8,7 @@ Description: >
 weight: 20
 ---
 
-Furthermore, if you have enabled the Payouts API, you can query the state of the payouts to third party requested. For more information, refer to [Payouts]({{< ref "Payouts.md" >}}).
+Furthermore, if you have enabled the Payouts API, you can query the state of the payouts to third party requested. Para obter mais informações, consulte [Payouts]({{< ref "Payouts.md" >}}).
 
 {{% alert title="Observação" color="info"%}}
 <img src="/assets/Brasil.png" width="20px"/> The _**Transfers Report**_ has the same columns and features available for the _**Daily payouts**_ report (_**Transfers**_ > _**Daily payouts**_).
@@ -37,7 +37,7 @@ The report has the following columns:
 | Last update         | Date and time of the last action executed in the transfer.                                          |
 | Transferred value   | Valor of the transfer along with its associated costs.<br>To know these costs, click the <img src="/assets/Reports/Reports_05.png" width="2%" style="vertical-align: baseline;"/> icon.<br><br>![PrintScreen](/assets/Reports/Reports_06.png)               |
 | Destination account | Bank account of the request                                                                         |
-| Status              | Latest status of the request. The possible states are: <ul style="margin-bottom: initial;"><li>Approved</li><li>In progress</li><li>Rejected</li></ul>                                                               |
+| Status              | Latest status of the request. The possible states são: <ul style="margin-bottom: initial;"><li>Approved</li><li>In progress</li><li>Rejected</li></ul>                                                               |
 
 {{% alert title="Observação" color="info"%}}
 If you need to display more information, contact your sales representative.

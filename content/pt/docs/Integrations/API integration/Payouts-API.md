@@ -24,7 +24,7 @@ Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2Vy
 
 ![PrintScreen](/assets/Promotions/PublicKey.png)
 
-## Available methods
+## Métodos disponíveis {#available-methods}
 Payouts API includes the following methods:
 
 * [Authentication]({{< ref "#authentication" >}})
@@ -39,7 +39,7 @@ The first step regardless of the method you want to request is to authenticate y
 
 The _authentication_ method logs in the merchant returning the JWT Token generated to use the services exposed by Payouts. This token is available during 10 minutes after its creation.
 
-### API Call
+### Chamada API {#api-call}
 To authenticate, send the request as follows:
 
 ```JAVA
@@ -48,7 +48,7 @@ https://{env-api}.payulatam.com/v1.0/authenticate?accountId={accountId}&apiKey={
 ```
 <br>
 
- The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
+ O valor da variável `{env-api}` mostrado acima é `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro     | Descrição                                                              | Obrigatório |
 |---------------|--------------------------------------------------------------------------|:---------:|
@@ -56,7 +56,7 @@ https://{env-api}.payulatam.com/v1.0/authenticate?accountId={accountId}&apiKey={
 | apiKey        | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Sim    |
 | apiLogin      | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Sim    |
 
-#### Response example
+#### Exemplo resposta
 
 {{< tabs tabTotal="1" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -83,7 +83,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 {{% /alert %}}
 
-### API Call
+### Chamada API {#api-call}
 To create a Payout request, use the following URL:
 
 ```JAVA
@@ -92,7 +92,7 @@ https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
 ```
 <br>
 
- The value for the variable `{env-api}` displayed above is `sandbox-transfers` for testing and `transfers` for production mode.
+ O valor da variável `{env-api}` mostrado acima é `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro     | Descrição                                                           | Obrigatório |
 |---------------|-----------------------------------------------------------------------|:---------:|
@@ -101,30 +101,30 @@ https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
 
 Both parameters can be found in your Módulo PayU.
 
-### Variables for request and response
+### Variáveis para pedido e resposta
 
 <details>
 <summary>Request parameters</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
 | transfers | List | | List of the transfers you want to create. | Sim |
 | transfers[n] > value | Numérico | | Valor to be transfer from your funds. The currency of this amount is the one configured in your PayU account | Sim |
 | transfers[n] > bankAccount | | | This object has the information of the bank account of the payee that will receive the payment.<br>The payee can be existing ou new. | Sim |
 | transfers[n] > bankAccount > id | Alfanumérico | 36 | Identifier of the Bank account of the payee.<br>Send this parameter when you want to request a Payout for an existing payee. | Não | 
-| transfers[n] > bankAccount > supplierType | Alfanumérico | Min:11 Max:16 | Relationship type between you and your payee. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the payee is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the payee is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the payee is a customer, an employee, ou any user of your services.</li></ul><br>This parameter is mandatory when you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > accountNumber | Alfanumérico | Max:17 | Bank account number of the payee.<br>This parameter is mandatory when you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > bankCode | Numérico | Min:3 Max:4 | Código of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | Não |
-| transfers[n] > bankAccount > accountType | Alfanumérico | 2 | Defina `CC` for Current account and `CA` for Saving account ou `Nequi`<sup>\*</sup>.<br>This parameter is mandatory when you are creating a payout request for a new payee.<br><sup>\*</sup>_Nequi is available in Colombia_. | Não |
-| transfers[n] > bankAccount > country | Alfanumérico | 2 | País of the bank account in format ISO 3166 Alpha-2.<br>This parameter is mandatory when you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > documentNumber | Numérico | 50 | Identification number of the payee. If the `documentType` is `NIT`, the document number must have a hyphen (`-`) and the check digit. Exemplo: `830140299-6`.<br>This parameter is mandatory when you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > documentType | Alfanumérico | 2 | Identification type of the payee. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>This parameter is mandatory when you are creating a payout request for a new payee. | Não |
+| transfers[n] > bankAccount > supplierType | Alfanumérico | Mín:11 Máx:16 | Relationship type between you and your payee. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the payee is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the payee is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the payee is a customer, an employee, ou any user of your services.</li></ul><br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
+| transfers[n] > bankAccount > accountNumber | Alfanumérico | Máx:17 | Bank account number of the payee.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
+| transfers[n] > bankAccount > bankCode | Numérico | Mín:3 Máx:4 | Código of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | Não |
+| transfers[n] > bankAccount > accountType | Alfanumérico | 2 | Definir `CC` for Current account and `CA` for Saving account ou `Nequi`<sup>\*</sup>.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee.<br><sup>\*</sup>_Nequi is available in Colombia_. | Não |
+| transfers[n] > bankAccount > country | Alfanumérico | 2 | País of the bank account no formato ISO 3166 Alpha-2.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
+| transfers[n] > bankAccount > documentNumber | Numérico | 50 | Número de identificação of the payee. If the `documentType` is `NIT`, the document number must have a hyphen (`-`) and the check digit. Exemplo: `830140299-6`.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
+| transfers[n] > bankAccount > documentType | Alfanumérico | 2 | Tipo de identificação of the payee. [Veja os tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
 | transfers[n] > bankAccount > expeditionDate | Alfanumérico | 10 | Expedition date of the identity document of the payee. Formato `YYYY/MM/DD`. | Não |
-| transfers[n] > bankAccount > fullName | Alfanumérico |  | Full name of the payee.<br>This parameter is mandatory when you are creating a payout request for a new payee. | Não |
+| transfers[n] > bankAccount > fullName | Alfanumérico |  | Nome completo of the payee.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
 | transfers[n] > bankAccount > birthDate | Alfanumérico | 10 | Birth date of the payee. Formato `YYYY/MM/DD`. | Não |
-| transfers[n] > bankAccount > state| Alfanumérico |  | Estado of the Bank account. Defina `ACTIVE` when you are creating a new payee. | Não |
+| transfers[n] > bankAccount > state| Alfanumérico |  | Estado of the Bank account. Definir `ACTIVE` when you are creating a new payee. | Não |
 | transfers[n] > bankAccount > merchantId | Numérico | | Identifier of your commerce in PayU. | Não |
 | transfers[n] > description | Alfanumérico | | Additional information of the payout. | Não |
 <!--additionalData-->
@@ -136,7 +136,7 @@ Both parameters can be found in your Módulo PayU.
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
 | totalSuccessful | Numérico |  | Número of payouts successfully created. |
 | totalFailed | Numérico |  | Número of payments that could not be created. |
@@ -147,16 +147,16 @@ Both parameters can be found in your Módulo PayU.
 | successfulItems[n] > bankAccount | | | This object has the information of the bank account that will receive the payment. |
 | successfulItems[n] > bankAccount > processingStatus | Alfanumérico | 7 | Bank account registration status. For successful registrations, the value is `SUCCESS`. |
 | successfulItems[n] > bankAccount > id | Alfanumérico | 36 | Identifier of the registered Bank account. |
-| successfulItems[n] > bankAccount > supplierType | Alfanumérico | Min:11 Max:16 | Relationship type selected for the payee. |
-| successfulItems[n] > bankAccount > accountNumber | Alfanumérico | Max:17 | Bank account number of the payee. |
-| successfulItems[n] > bankAccount > bankCode | Numérico | Min:3 Max:4 | Código of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). |
+| successfulItems[n] > bankAccount > supplierType | Alfanumérico | Mín:11 Máx:16 | Relationship type selected for the payee. |
+| successfulItems[n] > bankAccount > accountNumber | Alfanumérico | Máx:17 | Bank account number of the payee. |
+| successfulItems[n] > bankAccount > bankCode | Numérico | Mín:3 Máx:4 | Código of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). |
 | successfulItems[n] > bankAccount > bankName | Alfanumérico |  | Bank name of the payee. |
 | successfulItems[n] > bankAccount > accountType | Alfanumérico | 2 | Account type of the of the payee. |
 | successfulItems[n] > bankAccount > country | Alfanumérico | 2 | País of the bank account. |
-| successfulItems[n] > bankAccount > documentNumber | Numérico | 50 | Identification number of the payee. |
-| successfulItems[n] > bankAccount > documentType | Alfanumérico | 2 | Identification type of the payee. |
+| successfulItems[n] > bankAccount > documentNumber | Numérico | 50 | Número de identificação of the payee. |
+| successfulItems[n] > bankAccount > documentType | Alfanumérico | 2 | Tipo de identificação of the payee. |
 | successfulItems[n] > bankAccount > expeditionDate | Alfanumérico | 10 | Expedition date of the identity document of the payee. |
-| successfulItems[n] > bankAccount > fullName | Alfanumérico |  | Full name of the payee. |
+| successfulItems[n] > bankAccount > fullName | Alfanumérico |  | Nome completo of the payee. |
 | successfulItems[n] > bankAccount > birthDate | Alfanumérico | 10 | Birth date of the payee. |
 | successfulItems[n] > bankAccount > state| Alfanumérico |  | Estado of the Bank account. |
 | successfulItems[n] > description | Alfanumérico | | Additional information of the payout. |
@@ -177,7 +177,7 @@ The following request example sends three payouts:
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
   "transfers": [
@@ -227,7 +227,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "totalSuccessful": 2,
@@ -308,13 +308,13 @@ Response body:
 <!--{{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 
 ```
@@ -332,7 +332,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 {{% /alert %}}
 
-### API Call
+### Chamada API {#api-call}
 To update a Payout request, use the following URL:
 
 ```JAVA
@@ -341,7 +341,7 @@ https://{env-api}.payulatam.com/v1.0/supplier-transfers/bank-account/{merchantId
 ```
 <br>
 
-The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro     | Descrição                                                                 | Obrigatório |
 |---------------|-----------------------------------------------------------------------------|:---------:|
@@ -353,10 +353,10 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
 | id | Alfanumérico | 36 | Identifier of the Bank account of the payee. | Sim |
-| accountNumber | Alfanumérico | Max:17 | Bank account number of the payee. | Sim |-->
+| accountNumber | Alfanumérico | Máx:17 | Bank account number of the payee. | Sim |-->
 <!--additionalData-->
 
 <!--The following are the request and response bodies for this method.
@@ -365,7 +365,7 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
   "id": "1f92a225-9559-4b7f-9739-e6bb27b8b838",
@@ -374,7 +374,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "message": "Update received"
@@ -385,13 +385,13 @@ Response body:
 <!--{{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 
 ```
@@ -407,7 +407,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 {{% /alert %}}
 
-### API Call
+### Chamada API {#api-call}
 To cancel a Payout request, use the following URL:
 
 ```JAVA
@@ -416,7 +416,7 @@ https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
 ```
 <br>
 
-The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro      | Descrição                                                                 | Obrigatório |
 |----------------|-----------------------------------------------------------------------------|:---------:|
@@ -428,7 +428,7 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
 | comments | Alfanumérico | | Reason to cancel the Payout request. | Não |
 | pushPaymentId | Alfanumérico | | Payout ID of the request to be cancelled. | Não |
@@ -439,7 +439,7 @@ The following are the request and response bodies for this method.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
   "comments": "Request cancellation for payout",
@@ -448,7 +448,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "message": "Cancellation request received"
@@ -459,13 +459,13 @@ Response body:
 <!--{{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 
 ```
@@ -488,7 +488,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 {{% /alert %}}
 
-### API Call
+### Chamada API {#api-call}
 * To create a WebHook, use:
 
 ```JAVA
@@ -505,27 +505,27 @@ https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
-The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro      | Descrição                                                                 | Obrigatório |
 |----------------|-----------------------------------------------------------------------------|:---------:|
 | merchantId     | Merchant’s ID number in PayU’s system.                                      |    Sim    |
 | accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
 
-### Variables for request and response
+### Variáveis para pedido e resposta
 
 <details>
 <summary>Request parameters</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição | Obrigatório |
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| id | Alfanumérico |  | Id of the WebHook you want to update. This parameter is mandatory when updating a WebHook | Não |
+| id | Alfanumérico |  | Id of the WebHook you want to update. Este parâmetro é obrigatório quando updating a WebHook | Não |
 | accountId | Numérico | | ID of the user account for each country associated with the merchant. | Sim |
 | callbackUrl | Alfanumérico | | URL used to receive the `POST` notifications sent by PayU according to the events selected. This URL must be unique per WebHook. | Sim |
 | description | Alfanumérico | | Descrição of the WebHook you want to create. | Sim |
-| enabledEvents | List | Max:3 | List of the events that will launch a notification to the configured URL when they occur. At least one event must be selected.<br>Possibles values are: `TRANSFER_UPDATE`, `TRANSFER_CREATION`, `VALIDATION_RESULT`. | Sim |
+| enabledEvents | List | Máx:3 | List of the events that will launch a notification to the configured URL when they occur. At least one event must be selected.<br>Possibles values são: `TRANSFER_UPDATE`, `TRANSFER_CREATION`, `VALIDATION_RESULT`. | Sim |
 
 </details>
 
@@ -534,14 +534,14 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
 | id | Alfanumérico |  | Id of the WebHook created. |
 | created | Date |  | Creation date of the WebHook. Formato `YYYY-DD-MM hh:mm:ss`. |
 | accountId | Numérico | | ID of the user account for each country associated with the merchant. |
 | callbackUrl | Alfanumérico | | URL used that will receive the `POST` notifications according to the events selected. |
 | description | Alfanumérico | | Descrição of the WebHook created. |
-| enabledEvents | List | Max:3 | List of the events selected. |
+| enabledEvents | List | Máx:3 | List of the events selected. |
 | status | Alfanumérico | 7 | Estado of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
 | processingStatus | Alfanumérico | 7 | Estado of creation ou update of the WebHook. By default, this state is `SUCCESS`. |
 
@@ -555,7 +555,7 @@ The following are the request and response bodies for this method.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```JSON
 {
   "accountId": 1,
@@ -570,7 +570,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```JSON
 {
     "processingStatus": "SUCCESS",
@@ -592,13 +592,13 @@ Response body:
 <!--{{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Exemplo pedido:
 ```XML
 
 ```
 <br>
 
-Response body:
+Exemplo resposta:
 ```XML
 
 ```
@@ -614,7 +614,7 @@ You need to include two headers to use this method, refer to [Configuring authen
 
 {{% /alert %}}
 
-### API Call
+### Chamada API {#api-call}
 To delete a WebHook, use the following URL:
 
 ```JAVA
@@ -623,7 +623,7 @@ https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
-The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro      | Descrição                                                                 | Obrigatório |
 |----------------|-----------------------------------------------------------------------------|:---------:|
@@ -631,11 +631,11 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 | accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
 | id             | ID the WebHook you want to delete.                                          |    Sim    |
 
-#### Response example
+#### Exemplo resposta
 
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
 | processingStatus | Alfanumérico | 7 | Estado of deletion of the WebHook. By default, this state is `SUCCESS`. |
 | id | Alfanumérico |  | Id of the WebHook deleted. |
@@ -677,7 +677,7 @@ https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 ```
 <br>
 
-The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro      | Descrição                                                                 | Obrigatório |
 |----------------|-----------------------------------------------------------------------------|:---------:|
@@ -685,14 +685,14 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 | accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
 | id             | ID the WebHook you want to query.                                           |    Sim    |
 
-#### Response example
+#### Exemplo resposta
 
 <details>
 <summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
 | processingStatus | Alfanumérico | 7 | Estado of query. By default, this state is `SUCCESS`. |
 | id | Alfanumérico |  | Id of the WebHook. |
@@ -700,7 +700,7 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 | accountId | Numérico | | ID of the user account for each country associated with the merchant. |
 | callbackUrl | Alfanumérico | | URL used that will receive the `POST` notifications according to the events selected. |
 | description | Alfanumérico | | Descrição of the WebHook. |
-| enabledEvents | List | Max:3 | List of the events selected. |
+| enabledEvents | List | Máx:3 | List of the events selected. |
 | status | Alfanumérico | 7 | Estado of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
 
 </details>
@@ -742,21 +742,21 @@ https://{env-api}.payulatam.com/v1.0/webhooks/account/{merchantId}/{accountId}
 ```
 <br>
 
-The value for the variable `{env-api}` is `sandbox-transfers` for testing and `transfers` for production mode.
+O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro      | Descrição                                                                 | Obrigatório |
 |----------------|-----------------------------------------------------------------------------|:---------:|
 | merchantId     | Merchant’s ID number in PayU’s system.                                      |    Sim    |
 | accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
 
-#### Response example
+#### Exemplo resposta
 
 <details>
 <summary>Response parameters</summary>
 <br>
 <div class="variables"></div>
 
-| Campo name | Formato | Tamanho | Descrição |
+| Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
 | processingStatus | Alfanumérico | 7 | Estado of query. By default, this state is `SUCCESS`. |
 | id | Alfanumérico |  | Id of the WebHook. |
@@ -764,7 +764,7 @@ The value for the variable `{env-api}` is `sandbox-transfers` for testing and `t
 | accountId | Numérico | | ID of the user account for each country associated with the merchant. |
 | callbackUrl | Alfanumérico | | URL used that will receive the `POST` notifications according to the events selected. |
 | description | Alfanumérico | | Descrição of the WebHook. |
-| enabledEvents | List | Max:3 | List of the events selected. |
+| enabledEvents | List | Máx:3 | List of the events selected. |
 | status | Alfanumérico | 7 | Estado of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
 
 </details>

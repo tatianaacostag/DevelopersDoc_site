@@ -10,12 +10,12 @@ tags: ["parenttopic"]
 
 Similar to any API integration, you can customize your checkout according to your shop's needs and the customer stays on your site during the purchase and payment process. To integrate this option you must have a PayU Business account and advanced programming skills.
 
-Access multiple payment methods (varies per country), including credit cards, bank transfers, and cash payments.
+Access multiple payment methods (varies per country), including credit cards, bank transfers e cash payments.
 
 ![API integration](/assets/api1-en.png)
 
-## Initial settings
-PayU allows you to integrate with the transactional gateway, available payment tools and Consultas by developing a web site in Java ou PHP. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow [PCI DSS’ best practices](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).
+## Configurações iniciais {#initial-settings}
+PayU allows you to integrate with the transactional gateway, available payment tools and Consultas by developing a web site in Java ou PHP. É fundamental que os dados confidenciais da transação, como número do cartão de crédito e data de validade, não sejam armazenados. Recomenda-se seguir as [Melhores práticas do PCI DSS](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).
 
 ### Java
 To integrate with the API, the SDK relies on the Apache's library `HttpClient` which also relies on the libraries `HttpCore`, `CommonsLoggin` e `CommonsCodec`.
@@ -34,12 +34,12 @@ Before performing any operation with the SDK, you need to assign some values to 
 | Parâmetro name | Tamanho | Tipo | Obrigatório | Descrição |
 |-|-|-|:-:|-|
 | `language` | 2 | Language | Sim | The language used for error messages in the system and in emails that are sent to the buyer and seller. It is currently supported in `en` (English), `es` (Spanish) and `pt` (Portuguese). |
-| `isTest` |  | boolean | Sim | Assign `true` if it's a test request. Otherwise, atribua `false`. Depending on the type of transaction ou operation, the behavior may vary depending on the value of this field. |
-| `apiLogin` | Min:12 Max:32 | String | Sim | Your API Login. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| `apiKey` | Min:6 Max:32 | String | Sim | Your API Key. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| `merchantId` |  | String | Não | The merchant identifier, it's used to generate the signatures to verify payment transactions. <br>This parameter is mandatory when you want to check the transaction, unless you send the signature. |
-| `paymentsUrl` | Min:1 | String | Não | The URL of the page to where you will send the requests related to payments. By default, this parameter takes the production URL. |
-| `reportsUrl` | Min:1 | String | Não | The URL of the page to where you will send the requests related to the reports. By default, this parameter takes the production URL. |
+| `isTest` |  | boolean | Sim | Assign `true` if it's a test request. Caso contrário, atribua `false`. Depending on the type of transaction ou operation, the behavior may vary depending on the value of this field. |
+| `apiLogin` | Mín:12 Máx:32 | String | Sim | Your API Login. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| `apiKey` | Mín:6 Máx:32 | String | Sim | Your API Key. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| `merchantId` |  | String | Não | The merchant identifier, it's used to generate the signatures to verify payment transactions. <br>Este parâmetro é obrigatório quando you want to check the transaction, unless you send the signature. |
+| `paymentsUrl` | Mín:1 | String | Não | The URL of the page to where you will send the requests related to payments. By default, this parameter takes the production URL. |
+| `reportsUrl` | Mín:1 | String | Não | The URL of the page to where you will send the requests related to the reports. By default, this parameter takes the production URL. |
 
 Exemplo
 
@@ -48,7 +48,7 @@ PayU.apiKey = "xxxxxxxxxxxx"; // Enter your API key here
 PayU.apiLogin = "xxxxxxxxxxxx"; // Enter your API Login here
 PayU.language = Language.en; // Enter the language here
 PayU.isTest = false; // assign true if you are in test mode
-LoggerUtil.setLogLevel(Level.ALL); // Include it only if you want to see the full log trace. Otherwise, you can remove it.
+LoggerUtil.setLogLevel(Level.ALL); // Include it only if you want to see the full log trace. Caso contrário, you can remove it.
 PayU.paymentsUrl = "https://api.payulatam.com/payments-api/"; // Include it if you want to test in a specific payment server and assign its URL.
 PayU.reportsUrl = "https://api.payulatam.com/reports-api/"; // Include it if you want to test in a specific report server and assign its URL.
 ```
@@ -77,14 +77,14 @@ To integrate with the API, the SDK can be executed in machines with PHP version 
 * mbstring
 * json
 
-<a href="../../assets/Libraries/PHP/4.5.6/payu-php-sdk-4.5.6.zip" target="_blank" class="payu-btn-green">Download SDK PHP 4.5.6</a>
+<a href="././assets/Libraries/PHP/4.5.6/payu-php-sdk-4.5.6.zip" target="_blank" class="payu-btn-green">Download SDK PHP 4.5.6</a>
 
 To have access to the SDK features, you need to include the `PayU` class located in _**[PayU-php-sdk-Path]/lib/PayU.php**_. 
 
 ```PHP
 <?php
 require_once '[PayU-php-sdk-Path]/lib/PayU.php';
-...
+..
 ?>
 ```
 <br>
@@ -94,10 +94,10 @@ Before performing any operation with the SDK, you need to assign some values to 
 | Parâmetro name | Tamanho | Tipo | Obrigatório | Descrição |
 |-|-|-|:-:|-|
 | `PayU::$language` | 2 | Language | Sim | The language used for error messages in the system and in emails that are sent to the buyer and seller. It is currently supported in en (English), es (Spanish) and pt (Portuguese). |
-| `PayU::$isTest` |  | boolean | Sim | Assign `true` if it's a test request. Otherwise, atribua `false`. Depending on the type of transaction ou operation, the behavior may vary depending on the value of this field. |
-| `PayU::$apiLogin` | Min:12 Max:32 | String | Sim | Your API Login. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| `PayU::$apiKey` | Min:6 Max:32 | String | Sim | Your API Key. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| `PayU::$merchantId` |  | String | Não | The merchant identifier, it's used to generate the signatures to verify payment transactions. <br>This parameter is mandatory when you want to check the transaction, unless you send the signature. |
+| `PayU::$isTest` |  | boolean | Sim | Assign `true` if it's a test request. Caso contrário, atribua `false`. Depending on the type of transaction ou operation, the behavior may vary depending on the value of this field. |
+| `PayU::$apiLogin` | Mín:12 Máx:32 | String | Sim | Your API Login. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| `PayU::$apiKey` | Mín:6 Máx:32 | String | Sim | Your API Key. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| `PayU::$merchantId` |  | String | Não | The merchant identifier, it's used to generate the signatures to verify payment transactions. <br>Este parâmetro é obrigatório quando you want to check the transaction, unless you send the signature. |
 
 Exemplo
 
@@ -108,7 +108,7 @@ PayU::$apiLogin = "xxxxxxxxxxxx"; // Enter your API Login here
 PayU::$merchantId = "1"; // Enter your Merchant Id here
 PayU::$language = SupportedLanguages::ES; // Enter the language here
 PayU::$isTest = false; // assign true if you are in test mode
-...
+..
 ?>
 ```
 <br>
@@ -121,7 +121,7 @@ Furthermore, you need to configure the API to redirect the requests using the `E
 Environment::setPaymentsCustomUrl("https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi");
 // Reports URL
 Environment::setReportsCustomUrl("https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi");
-...
+..
 ?>
 ```
 
@@ -133,7 +133,7 @@ Environment::setReportsCustomUrl("https://sandbox.api.payulatam.com/reports-api/
 * You must be able to store your authentication credentials (API Key and API Login) safely.
 * The encoding for messages must be `UTF-8`.
 * The dates must have format `yyyy-MM-ddTHH:mm:ss`, the time format is 24 hours. Exemplo: `2015-08-22T21:35:12`.
-* Normally the connection guarantees response times of three seconds on average. If there is an unusual situation, the maximum response time is one minute. It is highly recommended that you set _timeouts_ when you connect with PayU.
+* Normally the connection guarantees response times of three seconds on average. If there is an unusual situation, the máximo response time is one minute. It is highly recommended that you set _timeouts_ when you connect with PayU.
 * It is important to validate the length and numbers of credit cards by franchise, together with the security codes.
 
-## Available features
+## Recursos disponíveis {#available-features}

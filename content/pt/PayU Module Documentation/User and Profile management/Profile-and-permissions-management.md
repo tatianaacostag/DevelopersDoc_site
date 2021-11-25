@@ -4,13 +4,13 @@ linkTitle: "Profile and Permissions Management"
 date: 2021-08-27T16:07:39-05:00
 type: docs
 Description: >
-   Learn how to create, update, and remove the set of permissions you can assign to your users.
+   Learn how to create, update e remove the set of permissions you can assign to your users.
 weight: 20
 ---
 
 A _Profile_ is a set of permissions that allows a user to access to a feature of an _account_. A _user_ using a _profile_ can access to as many account there are in each merchant.
 
-For further information about merchants, accounts, and more, read the [concepts behind the Módulo PayU]({{< ref"PayU Module Documentation#payu-module-concepts" >}}).
+For further information about merchants, accounts e more, read the [concepts behind the Módulo PayU]({{< ref"PayU Module Documentation#payu-module-concepts" >}}).
 
 ## Permission required
 To have access to this module, you need to have a profile with the following permission enabled:
@@ -19,10 +19,10 @@ To have access to this module, you need to have a profile with the following per
 * _Create, edit and delete profiles and permissions_
 
 ## Default profiles
-By default, PayU provides three profiles that allow your users to access the accounts. These profiles are:
+By default, PayU provides three profiles that allow your users to access the accounts. These profiles são:
 
-* **Administrator**: this profile has enabled all the permission of the account. A user entitled to this profile can create, review, update, and delete (or disable) the information related to the account. Furthermore, this user can see and download all the reports, view the technical information, resolve disputes, manage users, perform transfers, and manage profiles. 
-* **Read and write**: this profile is the equivalent of a _manager_ profile. A user entitled to this profile can create, review, update, and delete (or disable) the information related to the account. Furthermore, this user can see and download all the reports, view the technical information, resolve disputes, and review the users and profiles created.
+* **Administrator**: this profile has enabled all the permission of the account. A user entitled to this profile can create, review, update e delete (or disable) the information related to the account. Furthermore, this user can see and download all the reports, view the technical information, resolve disputes, manage users, perform transfers e manage profiles. 
+* **Read and write**: this profile is the equivalent of a _manager_ profile. A user entitled to this profile can create, review, update e delete (or disable) the information related to the account. Furthermore, this user can see and download all the reports, view the technical information, resolve disputes e review the users and profiles created.
 * **Only read**: this profile can access the account in read-only mode. A user entitled to this profile can create, review the information related to the account, download some of the reports, view the transfers of the account. Furthermore, this user **cannot** see the technical details ou has access to the users and profiles.
 
 These profiles cannot be deleted and their set of permissions are fixed, if any of these permissions does not meet your needs, you should [create one]({{< ref"#create-profiles" >}}).

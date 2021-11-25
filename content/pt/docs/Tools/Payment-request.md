@@ -128,7 +128,7 @@ O arquivo do Excel baixado é, por padrão, em espanhol e cada linha corresponde
 | O que você vai vender? | B | `No`me ou descrição do produto que deseja vender. |
 | Quanto custa o produto? | C | Preço do produto que você oferece. |
 | Moeda | D | Moeda do valor do produto.<br>Valores possíveis: COP, USD, PEN, ARS, BRL e MXN |
-| Tipo de imposto | E | Permite que defina se quer incluir impostos em seu produto..<ul style="margin-bottom: initial;"><li>Defina `Fijo` para adicionar um valor fixo.</li><li>Defina `Porcentaje` para adicionar um valor percentual.</li></ul> |
+| Tipo de imposto | E | Permite que defina se quer incluir impostos em seu produto.<ul style="margin-bottom: initial;"><li>Definir `Fijo` para adicionar um valor fixo.</li><li>Definir `Porcentaje` para adicionar um valor percentual.</li></ul> |
 | Valor do imposto | F | Valor do imposto de acordo com o tipo de imposto especificado. |
 | Data de Vencimento | G | Defina a data de vencimento do link usando o formato dd/MM/yy HH:mm. |
 | Redirecionar em caso de sucesso | H | Defina a URL para a qual seus clientes serão redirecionados quando a transação for bem-sucedida. |
