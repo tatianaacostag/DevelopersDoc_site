@@ -115,7 +115,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction. For Colombia, set `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit card Payment Method. [See the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CO` for Colombia. | Yes |
-| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For mor information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
+| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
@@ -568,7 +568,7 @@ This method lets you process the payments of your customers in cash or using a B
 </details>
 
 #### Considerations
-* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
+* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * For `BALOTO` and `EFECTY`, the confirmation of the payment takes 15 minutes. For `BANK_REFERENCED` and `OTHERS_CASH` (Su Red), the confirmation is online.
 * The minimum and maximum values for `BALOTO`, `EFECTY`, and `OTHERS_CASH` (Su Red) are:
    - `BALOTO` > Min: $3.000 COP - Max: $1.000.000 COP
@@ -999,7 +999,7 @@ The list of available documents is:
 * All the payment process values must be formatted in thousands (i.e., 1,200.00 or 1,200) without exception.
 * If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_TRANSACTION_CONFIRMATION`; this is because the payer is redirected to the selected bank to complete the payment; you must redirect the payer to the URL returned in the extra parameter `BANK_URL`.
 * The URL returned in the extra parameter `BANK_URL` is configured in the PayU Module and must show the following information:<br><br>![PrintScreen](/assets/Payments/PSEresponse-en.png)<br>Parameters starting with $ symbol are sent via `GET`.
-* Once the client click the Pay button, this must be disabled to avoid sending a new request over the same payment.
+* Once the client clicks the Pay button, this must be disabled to avoid sending a new request over the same payment.
 * It is recommended to display a wait message while your customer is redirected.
 * Do not show the bank site in containers (frames, panel, iframes, etc). The payment process must be fluid. Furthermore, avoid opening the bank site in a new tab nor a new browser window. If you need to use a new tab or window, block the origin page to avoid sending a new request over the same payment.
 * You must add in the response page the options to retry the payment, finish the transaction and print the receipt.

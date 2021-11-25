@@ -905,7 +905,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </details>
 
 #### Considerations
-* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value for is seven days after the current date at 12:00 pm.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
+* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven days after the current date at 12:00 pm.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * You must set a response URL in the parameter `NETWORK_CALLBACK_URL` inside `transaction.extraParameters`; this URL redirects the user back to your page after they finish the online payment procedure.
 * You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the `BANK_URL` parameter in the response.
 
@@ -1222,14 +1222,14 @@ This method lets you process the bank debit and prepaid card payments of your cu
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. | Yes |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
+| transaction > type | Alphanumeric | 32 | As payments are made on the WebPay plus page, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method for Debit and prepaid cards. [See the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CL` for Chile. | Yes |
 | transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
-| transaction > extraParameters |  |  | Additional parameters or data associated with the request. For Bank transfer payments, this is the response page of your commerce.<br>In JSON, the _extraParameters_ parameter is set as: <br>`"extraParameters": {`<br>&emsp;`"RESPONSE_URL": "http://www.test.com/response"`<br>`}`<br><br>In XML, the _extraParameters_ parameter is set as: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>RESPONSE_URL</string>`<br>&emsp;&emsp;`http://www.test.com/response`<br>&emsp;`</entry>`<br>`</extraParameters>` | No |
+| transaction > extraParameters |  |  | Additional parameters or data associated with the request. For payments through WebPay plus, this is the response page of your commerce.<br>In JSON, the _extraParameters_ parameter is set as: <br>`"extraParameters": {`<br>&emsp;`"RESPONSE_URL": "http://www.test.com/response"`<br>`}`<br><br>In XML, the _extraParameters_ parameter is set as: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>RESPONSE_URL</string>`<br>&emsp;&emsp;`http://www.test.com/response`<br>&emsp;`</entry>`<br>`</extraParameters>` | No |
 
 </details>
 
@@ -1259,8 +1259,8 @@ This method lets you process the bank debit and prepaid card payments of your cu
 </details>
 
 #### Considerations
-* If you don't send the `RESPONSE_URL` parameter in `transaction.extraParameters`, the API took the value from the _**Response URL**_ variable in your PayU Module (_**Settings**_ > _**Technical configuration**_).
-* When you process bank transfer payment, you must redirect the customer to the URL found in the `URL_PAYMENT_REDIRECT` extra parameter concatenated with the `TRANSBANK_DIRECT_TOKEN` extra parameter as follows: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
+* If you don't send the `RESPONSE_URL` parameter in `transaction.extraParameters`, the API takes the value from the _**Response URL**_ variable in your PayU Module (_**Settings**_ > _**Technical configuration**_).
+* When you process payments through WebPay plus, you must redirect the customer to the URL found in the `URL_PAYMENT_REDIRECT` extra parameter concatenated with the `TRANSBANK_DIRECT_TOKEN` extra parameter as follows: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
 * If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_PAYMENT_IN_ENTITY`; this is because the payer is redirected to the selected bank to complete the payment.
 * The response page must have the following variables:
 

@@ -1078,7 +1078,7 @@ Si tu cuenta está en México, puedes ofrecerle a tus clientes la opción de pag
 * Los bancos disponibles para MSI son: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander y Bancomer.
 * Cuando utilices MSI, muestra siempre la frase **"PAGOS DIFERIDOS"** durante el proceso de pago.
 
-### Variables for MSI {#variables-for-msi} 
+### Variables para MSI {#variables-for-msi} 
 Para utilizar MSI, necesitas incluir el número de meses como un extra parámetro:
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
