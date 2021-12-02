@@ -1,46 +1,46 @@
 ---
-title: "Payouts API"
-linkTitle: "Payouts API"
+title: "API de Payouts"
+linkTitle: "API de Payouts"
 date: 2021-08-09T14:58:45-05:00
 description: >
-  This feature allows you to create multiple and secure payments for payees (users, merchants, providers, customers, etc.) using the funds you have in your PayU Account.
+  Este recurso permite que você crie pagamentos múltiplos e seguros para beneficiários (usuários, vendedores, provedores, clientes, etc.) usando os fundos que você tem em sua conta PayU.
 weight: 60
 tags: ["subtopic"]
 ---
 
-For introductory terms, how to request this service and more information, refer to [Payouts]({{< ref "payouts.html" >}}).
+Para termos introdutórios, como solicitar este serviço e mais informações, consulte [Payouts]({{< ref "payouts.html" >}}).
 
-## Configuring the authentication
-To use the methods to manage Payouts ou WebHooks exposed by the Payouts service, you must include the `Autorização` e `PublicKey` headers:
+## Como configurar a autenticação {#configuring-the-authentication}
+Para usar os métodos de gerenciamento de Payouts ou WebHooks expostos pelo serviço de Payouts, você deve incluir os cabeçalhos `Authorization` e `PublicKey`:
 
-* To configure the `Autorização` header, call the [authentication method]({{< ref "#authentication" >}}) provided by the Payouts service. <br>Exemplo:
+* Para configurar o cabeçalho `Authorization`, use o [Método de autenticação]({{< ref "#authentication" >}}) fornecido pelo serviço de Payouts. <br>Exemplo:
 
 ```
 Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTYyODU0ODE2NywiaWF0IjoxNjI4NTQ4MTY3fQ.jrO3u5ramYKOvoNNb0TNfBuZkbYg1EvPmCDDYXFEO4c 
 ```
 <br>
 
-* To configure the `PublicKey` header, use your Public Key which can be found in the Módulo PayU (**_Configuração_** > **_Configuração técnica_** > **_Public Key_**).
+* Para configurar o cabeçalho `PublicKey`, use sua chave pública, que pode ser encontrada no Módulo PayU (**_Configuração_** > **_Configuração técnica_** > **_Chave pública_**).
 
-![PrintScreen](/assets/Promotions/PublicKey.png)
+![PrintScreen](/assets/Promotions/PublicKey_pt.png)
 
 ## Métodos disponíveis {#available-methods}
-Payouts API includes the following methods:
+A API de Payouts inclui os seguintes métodos:
 
-* [Authentication]({{< ref "#authentication" >}})
-* [Request payout]({{< ref "#request-payout" >}})
-* [Cancel payout request]({{< ref "#cancel-payout-request" >}})
-* [Create ou update a WebHook]({{< ref "#create-or-update-a-transfershook" >}})
-* [Delete a WebHook]({{< ref "#delete-a-transfershook" >}})
-* [Query WebHooks]({{< ref "#query-transfershooks" >}})
+* [Autenticação]({{< ref "#authentication" >}})
+* [Solicitar payout]({{< ref "#request-payout" >}})
+* [Cancelar ordem de Payout]({{< ref "#cancel-payout-request" >}})
+* [Criar ou atualizar um WebHook]({{< ref "#create-or-update-a-webhook" >}})
+* [Excluir um WebHook]({{< ref "#delete-a-webhook" >}})
+* [Consultar WebHooks]({{< ref "#query-webhooks" >}})
 
-## Authentication
-The first step regardless of the method you want to request is to authenticate your account using the credentials provided by PayU.
+## Autenticação {#authentication}
+A primeira etapa, seja qual for o método que você deseja solicitar, é autenticar sua conta usando as credenciais fornecidas pelo PayU.
 
-The _authentication_ method logs in the merchant returning the JWT Token generated to use the services exposed by Payouts. This token is available during 10 minutes after its creation.
+O método _autenticação_ registra o comércio retornando o Token JWT gerado para usar os serviços expostos pelos Payouts. Este token fica disponível durante 10 minutos após sua criação.
 
 ### Chamada API {#api-call}
-To authenticate, send the request as follows:
+Para autenticar, envie a solicitação da seguinte forma:
 
 ```JAVA
 POST
@@ -50,13 +50,13 @@ https://{env-api}.payulatam.com/v1.0/authenticate?accountId={accountId}&apiKey={
 
  O valor da variável `{env-api}` mostrado acima é `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
-| Parâmetro     | Descrição                                                              | Obrigatório |
-|---------------|--------------------------------------------------------------------------|:---------:|
-| accountId     | ID of the user account for each country associated with the merchant.    |    Sim    |
-| apiKey        | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Sim    |
-| apiLogin      | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |    Sim    |
+| Parâmetro | Descrição  | Obrigatório |
+|---|---|:-:|
+| accountId | ID da conta do usuário para cada país associado ao comércio. | Sim |
+| apiKey | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
+| apiLogin | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
 
-#### Exemplo resposta
+#### Exemplo resposta {#response-example}
 
 {{< tabs tabTotal="1" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -74,17 +74,17 @@ https://{env-api}.payulatam.com/v1.0/authenticate?accountId={accountId}&apiKey={
 {{< /tab >}}-->
 {{< /tabs >}}
 
-## Request payout
-This method lets you create one ou multiple Payouts request for payees which can be new ou existing. As soon as you create the request, this moves along the [available states]({{< ref "payouts.html#payout-states" >}}) for Payouts.
+## Solicitar payout {#request-payout}
+Este método permite que você crie uma ou várias solicitações de Payouts para beneficiários, que podem ser novas ou existentes. Assim que você cria a solicitação, ela passa pelos [estados disponíveis]({{< ref "payouts.html#payout-states" >}}) para Payouts.
 
 {{% alert title="Observação" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Furthermore, you need to know your Merchant and account ID, you can get this information in your Módulo PayU.
+Você precisa incluir dois cabeçalhos para usar este método, consulte [Configurar autenticação ]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Além disso, você precisa saber seu ID de vendedor e conta, você pode obter essas informações no seu Módulo PayU.
 
 {{% /alert %}}
 
-### Chamada API {#api-call}
-To create a Payout request, use the following URL:
+### Chamada API {#api-call-1}
+Para criar um pedido de Payout, use a seguinte URL:
 
 ```JAVA
 POST
@@ -96,82 +96,82 @@ https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
 
 | Parâmetro     | Descrição                                                           | Obrigatório |
 |---------------|-----------------------------------------------------------------------|:---------:|
-| merchantId    | Merchant’s ID number in PayU’s system.                                |    Sim    |
-| accountId     | ID of the user account for each country associated with the merchant. |    Sim    |
+| merchantId    | Número de identificação do comércio no sistema PayU.                                |    Sim    |
+| accountId     | ID da conta do usuário para cada país associado ao comércio. |    Sim    |
 
-Both parameters can be found in your Módulo PayU.
+Ambos os parâmetros podem ser encontrados em seu módulo PayU.
 
-### Variáveis para pedido e resposta
+### Variáveis para pedido e resposta {#variables-for-request-and-response}
 
 <details>
-<summary>Request parameters</summary>
+<summary>Parâmetros de pedido</summary>
 <br>
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| transfers | List | | List of the transfers you want to create. | Sim |
-| transfers[n] > value | Numérico | | Valor to be transfer from your funds. The currency of this amount is the one configured in your PayU account | Sim |
-| transfers[n] > bankAccount | | | This object has the information of the bank account of the payee that will receive the payment.<br>The payee can be existing ou new. | Sim |
-| transfers[n] > bankAccount > id | Alfanumérico | 36 | Identifier of the Bank account of the payee.<br>Send this parameter when you want to request a Payout for an existing payee. | Não | 
-| transfers[n] > bankAccount > supplierType | Alfanumérico | Mín:11 Máx:16 | Relationship type between you and your payee. You can choose one of the following values: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: select this relation if the payee is a related merchant.</li><li>`RELATED_PROVIDER`: select this relation if the payee is a provider</li><li>`RELATED_THIRD_PARTY`: select this type if the payee is a customer, an employee, ou any user of your services.</li></ul><br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > accountNumber | Alfanumérico | Máx:17 | Bank account number of the payee.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > bankCode | Numérico | Mín:3 Máx:4 | Código of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | Não |
-| transfers[n] > bankAccount > accountType | Alfanumérico | 2 | Definir `CC` for Current account and `CA` for Saving account ou `Nequi`<sup>\*</sup>.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee.<br><sup>\*</sup>_Nequi is available in Colombia_. | Não |
-| transfers[n] > bankAccount > country | Alfanumérico | 2 | País of the bank account no formato ISO 3166 Alpha-2.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > documentNumber | Numérico | 50 | Número de identificação of the payee. If the `documentType` is `NIT`, the document number must have a hyphen (`-`) and the check digit. Exemplo: `830140299-6`.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > documentType | Alfanumérico | 2 | Tipo de identificação of the payee. [Veja os tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > expeditionDate | Alfanumérico | 10 | Expedition date of the identity document of the payee. Formato `YYYY/MM/DD`. | Não |
-| transfers[n] > bankAccount > fullName | Alfanumérico |  | Nome completo of the payee.<br>Este parâmetro é obrigatório quando you are creating a payout request for a new payee. | Não |
-| transfers[n] > bankAccount > birthDate | Alfanumérico | 10 | Birth date of the payee. Formato `YYYY/MM/DD`. | Não |
-| transfers[n] > bankAccount > state| Alfanumérico |  | Estado of the Bank account. Definir `ACTIVE` when you are creating a new payee. | Não |
-| transfers[n] > bankAccount > merchantId | Numérico | | Identifier of your commerce in PayU. | Não |
-| transfers[n] > description | Alfanumérico | | Additional information of the payout. | Não |
+| transfers | Lista | | Lista das transferências que você deseja criar. | Sim |
+| transfers[n] > value | Numérico | | Valor a ser transferido de seus fundos. A moeda deste valor é a que está configurada em sua conta PayU | Sim |
+| transfers[n] > bankAccount | | | Este objeto contém as informações da conta bancária do beneficiário que receberá o pagamento.<br>O beneficiário pode ser existente ou novo. | Sim |
+| transfers[n] > bankAccount > id | Alfanumérico | 36 | Identificador da conta bancária do beneficiário.<br>Envie este parâmetro quando quiser solicitar um pagamento para um beneficiário existente. | Não | 
+| transfers[n] > bankAccount > supplierType | Alfanumérico | Mín:11 Máx:16 | RTipo de relacionamento entre você e o beneficiário. Você pode escolher um dos seguintes valores: <ul style="margin-bottom: initial;"><li>`SUBMERCHANT`: selecione esta relação se o beneficiário for um vendedor relacionado.</li><li>`RELATED_PROVIDER`: selecione esta relação se o beneficiário for um provedor</li><li>`RELATED_THIRD_PARTY`: selecione este tipo se o beneficiário for um cliente, um funcionário ou qualquer usuário de seus serviços.</li></ul><br>Este parâmetro é obrigatório quando você está criando uma solicitação de pagamento para um novo beneficiário. | Não |
+| transfers[n] > bankAccount > accountNumber | Alfanumérico | Máx:17 | Número da conta bancária do beneficiário.<br>Este parâmetro é obrigatório quando você está criando uma solicitação de pagamento para um novo beneficiário. | Não |
+| transfers[n] > bankAccount > bankCode | Numérico | Mín:3 Máx:4 | Código do banco que emitiu a conta do beneficiário. [Veja os códigos de bancos]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). | Não |
+| transfers[n] > bankAccount > accountType | Alfanumérico | 2 | Definir `CC` para conta corrente e `CA` para conta poupança ou `Nequi`<sup>\*</sup>.<br>Este parâmetro é obrigatório quando você está criando uma solicitação de pagamento para um novo beneficiário.<br><sup>\*</sup>_Nequi está disponível na Colômbia_. | Não |
+| transfers[n] > bankAccount > country | Alfanumérico | 2 | País da conta bancária no formato ISO 3166 Alpha-2.<br>Este parâmetro é obrigatório quando você está criando uma solicitação de pagamento para um novo beneficiário. | Não |
+| transfers[n] > bankAccount > documentNumber | Numérico | 50 | Número de identificação do beneficiário. If the `documentType` is `NIT`, the document number must have a hyphen (`-`) and the check digit. Exemplo: `830140299-6`.<br>Este parâmetro é obrigatório quando você está criando uma solicitação de pagamento para um novo beneficiário. | Não |
+| transfers[n] > bankAccount > documentType | Alfanumérico | 2 | Tipo de identificação do beneficiário. [Veja os tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}).<br>Este parâmetro é obrigatório quando você está criando uma solicitação de pagamento para um novo beneficiário. | Não |
+| transfers[n] > bankAccount > expeditionDate | Alfanumérico | 10 | Data de expedição do documento de identidade. Formato `YYYY/MM/DD`. | Não |
+| transfers[n] > bankAccount > fullName | Alfanumérico |  | Nome completo do beneficiário.<br>Este parâmetro é obrigatório quando você está criando uma solicitação de pagamento para um novo beneficiário. | Não |
+| transfers[n] > bankAccount > birthDate | Alfanumérico | 10 | Data de nascimento do beneficiário. Formato `YYYY/MM/DD`. | Não |
+| transfers[n] > bankAccount > state| Alfanumérico |  | Estado da conta bancária. Definir `ACTIVE` quando você está criando um beneficiário. | Não |
+| transfers[n] > bankAccount > merchantId | Numérico | | Identificador da sua loja no PayU. | Não |
+| transfers[n] > description | Alfanumérico | | Informações adicionais sobre o pagamento. | Não |
 <!--additionalData-->
 
 </details>
 
 <details>
-<summary>Response parameters</summary>
+<summary>Parâmetros de resposta</summary>
 <br>
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| totalSuccessful | Numérico |  | Número of payouts successfully created. |
-| totalFailed | Numérico |  | Número of payments that could not be created. |
-| successfulItems | List |  | List of items that were successfully processed. |
-| successfulItems[n] > processingStatus | Alfanumérico | 7 | Status of the Payout request. For successful transactions, the value is `SUCCESS` |
-| successfulItems[n] > paymentOrderId | Alfanumérico | 36 | Id generated for the payout request. Use this id to cancel the request. |
-| successfulItems[n] > value | Numérico | | Valor of the request. |
-| successfulItems[n] > bankAccount | | | This object has the information of the bank account that will receive the payment. |
-| successfulItems[n] > bankAccount > processingStatus | Alfanumérico | 7 | Bank account registration status. For successful registrations, the value is `SUCCESS`. |
+| totalSuccessful | Numérico |  | Número de Payouts criados com sucesso. |
+| totalFailed | Numérico |  | Número de pagamentos que não puderam ser criados. |
+| successfulItems | Lista |  | Lista de itens que foram processados com sucesso. |
+| successfulItems[n] > processingStatus | Alfanumérico | 7 | Status do pedido de Payout. Para transações bem-sucedidas, o valor é `SUCCESS` |
+| successfulItems[n] > paymentOrderId | Alfanumérico | 36 | ID gerado para a solicitação de Payout. Use este id para atualizar ou cancelar a solicitação. |
+| successfulItems[n] > value | Numérico | | Valor do pedido. |
+| successfulItems[n] > bankAccount | | | Este objeto contém as informações da conta bancária que receberá o pagamento. |
+| successfulItems[n] > bankAccount > processingStatus | Alfanumérico | 7 | BStatus de registro da conta bancária. Para registros bem-sucedidos, o valor é `SUCCESS`. |
 | successfulItems[n] > bankAccount > id | Alfanumérico | 36 | Identifier of the registered Bank account. |
 | successfulItems[n] > bankAccount > supplierType | Alfanumérico | Mín:11 Máx:16 | Relationship type selected for the payee. |
-| successfulItems[n] > bankAccount > accountNumber | Alfanumérico | Máx:17 | Bank account number of the payee. |
-| successfulItems[n] > bankAccount > bankCode | Numérico | Mín:3 Máx:4 | Código of the bank who issued the account of the payee. [See Bank codes]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). |
-| successfulItems[n] > bankAccount > bankName | Alfanumérico |  | Bank name of the payee. |
-| successfulItems[n] > bankAccount > accountType | Alfanumérico | 2 | Account type of the of the payee. |
-| successfulItems[n] > bankAccount > country | Alfanumérico | 2 | País of the bank account. |
-| successfulItems[n] > bankAccount > documentNumber | Numérico | 50 | Número de identificação of the payee. |
-| successfulItems[n] > bankAccount > documentType | Alfanumérico | 2 | Tipo de identificação of the payee. |
-| successfulItems[n] > bankAccount > expeditionDate | Alfanumérico | 10 | Expedition date of the identity document of the payee. |
-| successfulItems[n] > bankAccount > fullName | Alfanumérico |  | Nome completo of the payee. |
-| successfulItems[n] > bankAccount > birthDate | Alfanumérico | 10 | Birth date of the payee. |
-| successfulItems[n] > bankAccount > state| Alfanumérico |  | Estado of the Bank account. |
-| successfulItems[n] > description | Alfanumérico | | Additional information of the payout. |
-| failedItems | List |  | List of items that failed during processing. |
-| failedItems[n] > processingStatus | Alfanumérico | 7 | Status of the Payout request. For failed transactions, the value is `FAILED`. |
-| failedItems[n] > failureMessages | List | | List of error messages that generated the failure. |
-| failedItems[n] > value | Numérico | | Valor of the request. |
-| failedItems[n] > bankAccount | | | This object has the information of the bank account that failed. This element has the same parameters than the object `successfulItems[n].bankAccount`. |
+| successfulItems[n] > bankAccount > accountNumber | Alfanumérico | Máx:17 | Número da conta bancária do beneficiário. |
+| successfulItems[n] > bankAccount > bankCode | Numérico | Mín:3 Máx:4 | Código do banco que emitiu a conta do beneficiário. [Veja os códigos de bancos]({{< ref "response-codes-and-variables.html#banks-for-payouts" >}}). |
+| successfulItems[n] > bankAccount > bankName | Alfanumérico |  | Nome do banco do beneficiário. |
+| successfulItems[n] > bankAccount > accountType | Alfanumérico | 2 | Tipo de conta do beneficiário. |
+| successfulItems[n] > bankAccount > country | Alfanumérico | 2 | País da conta bancária . |
+| successfulItems[n] > bankAccount > documentNumber | Numérico | 50 | Número de identificação do beneficiário. |
+| successfulItems[n] > bankAccount > documentType | Alfanumérico | 2 | Tipo de identificação do beneficiário. |
+| successfulItems[n] > bankAccount > expeditionDate | Alfanumérico | 10 | Data de expedição do documento de identidade. |
+| successfulItems[n] > bankAccount > fullName | Alfanumérico |  | Nome completo do beneficiário. |
+| successfulItems[n] > bankAccount > birthDate | Alfanumérico | 10 | Data de nascimento do beneficiário. |
+| successfulItems[n] > bankAccount > state| Alfanumérico |  | Estado da conta bancária. |
+| successfulItems[n] > description | Alfanumérico | | Informações adicionais sobre o pagamento. |
+| failedItems | Lista |  | Lista de itens que falharam durante o processamento. |
+| failedItems[n] > processingStatus | Alfanumérico | 7 | Status do pedido de Payout. Para transações com falha, o valor é `FAILED`. |
+| failedItems[n] > failureMessages | Lista | | Lista de mensagens de erro que geraram a falha. |
+| failedItems[n] > value | Numérico | | Valor do pedido. |
+| failedItems[n] > bankAccount | | | Este objeto contém as informações da conta bancária que falhou. Este elemento possui os mesmos parâmetros do objeto `successfulItems[n].bankAccount`. |
 
 </details>
 <br>
 
-The following request example sends three payouts: 
-* The first and the second payout are requested for unregistered payees. The second one fails because the parameter `bankCode` has an invalid value.
-* The third payout is for a registered payee.
+O seguinte exemplo de pedido envia três Payouts:
+* O primeiro e o segundo pagamento são solicitados para beneficiários não registrados. O segundo falha porque o parâmetro Código bancário tem um valor inválido.
+* O beneficiário pagamento é para um beneficiário registrado.
 
 {{< tabs tabTotal="1" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -322,13 +322,13 @@ Exemplo resposta:
 {{< /tabs >}}
 
 <!--## Update payout request
-This method lets you request the update of the bank information of a payee on a running payout request. Por exemplo, this method is useful to change the bank account number of the payee.
+This method lets you request the update of the bank information of a payee on a running payout request. Por exemplo, this method is useful to change the bank account number do beneficiário.
 
 You can only request the update of the information of a payee when the Payout status is in `IN_PAYU_PROCESS` ou earlier. Consulte [Payout states]({{< ref "payouts.html#payout-states" >}}) para obter mais informações. 
 
 {{% alert title="Observação" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Furthermore, you need to know your Merchant and account ID, you can get this information in your Módulo PayU.
+Você precisa incluir dois cabeçalhos para usar este método, consulte [Configurar autenticação ]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Além disso, você precisa saber seu ID de vendedor e conta, você pode obter essas informações no seu Módulo PayU.
 
 {{% /alert %}}
 
@@ -345,21 +345,21 @@ O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers`
 
 | Parâmetro     | Descrição                                                                 | Obrigatório |
 |---------------|-----------------------------------------------------------------------------|:---------:|
-| merchantId    | Merchant’s ID number in PayU’s system.                                      |    Sim    |
-| accountId     | ID of the user account for each country associated with the merchant.       |    Sim    |
-| bankAccountId | ID returned by the [Request payout service]({{< ref "#request-payout" >}}). |    Sim    |
+| merchantId    | Número de identificação do comércio no sistema PayU.                                      |    Sim    |
+| accountId     | ID da conta do usuário para cada país associado ao comércio.       |    Sim    |
+| bankAccountId | ID returned by the [Solicitar payout service]({{< ref "#request-payout" >}}). |    Sim    |
 
-### Variables for request
+### Variáveis para pedido
 
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| id | Alfanumérico | 36 | Identifier of the Bank account of the payee. | Sim |
-| accountNumber | Alfanumérico | Máx:17 | Bank account number of the payee. | Sim |-->
+| id | Alfanumérico | 36 | Identificador da conta bancária do beneficiário. | Sim |
+| accountNumber | Alfanumérico | Máx:17 | Número da conta bancária do beneficiário. | Sim |-->
 <!--additionalData-->
 
-<!--The following are the request and response bodies for this method.
+<!--A seguir estão os exemplos de pedido e resposta para este método.
 
 {{< tabs tabTotal="1" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -398,17 +398,17 @@ Exemplo resposta:
 {{< /tab >}}-->
 <!--{{< /tabs >}}-->
 
-## Cancel payout request
-This method lets you request the cancellation of a payout request. You can only request the cancellation of a Payout when its status is `IN_PAYU_PROCESS` ou earlier. Consulte [Payout states]({{< ref "payouts.html#payout-states" >}}) para obter mais informações. 
+## Cancelar ordem de Payout {#cancel-payout-request}
+Este método permite solicitar o cancelamento de uma solicitação de Payout. Você só pode solicitar o cancelamento de um Payout quando seu status for `IN_PAYU_PROCESS` ou anterior. Consulte [Payout states]({{< ref "payouts.html#payout-states" >}}) para obter mais informações. 
 
 {{% alert title="Observação" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Furthermore, you need to know your Merchant and account ID, you can get this information in your Módulo PayU.
+Você precisa incluir dois cabeçalhos para usar este método, consulte [Configurar autenticação ]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Além disso, você precisa saber seu ID de vendedor e conta, você pode obter essas informações no seu Módulo PayU.
 
 {{% /alert %}}
 
-### Chamada API {#api-call}
-To cancel a Payout request, use the following URL:
+### Chamada API {#api-call-2}
+Para cancelar um pedido de Payout, use a seguinte URL:
 
 ```JAVA
 DELETE
@@ -418,22 +418,22 @@ https://{env-api}.payulatam.com/v1.0/supplier-transfers/{merchantId}/{accountId}
 
 O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
-| Parâmetro      | Descrição                                                                 | Obrigatório |
-|----------------|-----------------------------------------------------------------------------|:---------:|
-| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Sim    |
-| accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
-| paymentOrderId | Payout ID generated when the order was created by the [Request payout service]({{< ref "#request-payout" >}}). |    Sim    |
+| Parâmetro | Descrição | Obrigatório |
+|---|---|:-:|
+| merchantId | Número de identificação do comércio no sistema PayU.  | Sim |
+| accountId | ID da conta do usuário para cada país associado ao comércio. | Sim |
+| paymentOrderId | ID de pagamento gerado quando o pedido foi criado pelo [serviço de Solicitar pagamento]({{< ref "#request-payout" >}}). |  Sim |
 
-### Variables for request
+### Variáveis para pedido {#variables-for-request}
 
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| comments | Alfanumérico | | Reason to cancel the Payout request. | Não |
-| pushPaymentId | Alfanumérico | | Payout ID of the request to be cancelled. | Não |
+| comments | Alfanumérico | | Motivo para cancelar a solicitação de Payout. | Não |
+| pushPaymentId | Alfanumérico | | ID de Payout da solicitação a ser cancelada. | Não |
 
-The following are the request and response bodies for this method.
+A seguir estão os exemplos de pedido e resposta para este método.
 
 {{< tabs tabTotal="1" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -472,24 +472,24 @@ Exemplo resposta:
 {{< /tab >}}-->
 {{< /tabs >}}
 
-## Create ou Update a WebHook
-This method lets you create ou update a WebHook that allows you to configure a URL where PayU notifies states of a Payout via `POST`.
+## Create ou Update a WebHook {#create-or-update-a-webhook}
+Este método permite criar ou atualizar um WebHook onde é possível configurar uma URL em que o PayU notifica os estados de um pagamento via `POST`.
 
-You can configure a WebHook for the following events:
-* **Transfer creation**: sends a notification when a payout request is created. To enable these notifications, include the `TRANSFER_CREATION` value in the list parameter `enabledEvents`.
-* **Transfer update**: sends a notification when the sanction screening validation rejects the payee. To enable these notifications, include the `TRANSFER_UPDATE` value in the list parameter `enabledEvents`.
-* **Validation result**: sends a notification when payee has approved the sanction screening validation and when the transfer has been rejected by the bank. To enable these notifications, include the `VALIDATION_RESULT` value in the list parameter `enabledEvents`.
+Você pode configurar um WebHook para os seguintes eventos:
+* **Criação de transferência**: envia uma notificação quando uma solicitação de payout é criada. Para habilitar estas notificações, inclua o valor `TRANSFER_CREATION` no parâmetro da lista `enabledEvents`.
+* **Atualização de transferência**: envia uma notificação quando a validação da triagem de sanção rejeita o beneficiário. Para habilitar estas notificações, inclua o valor `TRANSFER_UPDATE` no parâmetro da lista `enabledEvents`.
+* **Resultado de validação**: envia uma notificação quando o beneficiário aprova a validação da triagem de sanção e quando a transferência é rejeitada pelo banco. Inclui o valor `VALIDATION_RESULT` no parâmetro da lista `enabledEvents`.
 
-[Click here to know the variables in the notifications]({{< ref "payouts.md#variables-in-the-notifications" >}}).
+[Clique aqui para conhecer as variáveis nas notificações]({{< ref "payouts.md#variables-in-the-notifications" >}}).
 
 {{% alert title="Observação" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Furthermore, you need to know your Merchant and account ID, you can get this information in your Módulo PayU.
+Você precisa incluir dois cabeçalhos para usar este método, consulte [Configurar autenticação ]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Além disso, você precisa saber seu ID de vendedor e conta, você pode obter essas informações no seu Módulo PayU.
 
 {{% /alert %}}
 
-### Chamada API {#api-call}
-* To create a WebHook, use:
+### Chamada API {#api-call-3}
+* Para criar um WebHook, use:
 
 ```JAVA
 POST
@@ -497,7 +497,7 @@ https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 ```
 <br>
 
-* To update a WebHook, use:
+* Para atualizar um WebHook, use:
 
 ```JAVA
 PUT
@@ -508,48 +508,48 @@ https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}
 O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro      | Descrição                                                                 | Obrigatório |
-|----------------|-----------------------------------------------------------------------------|:---------:|
-| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Sim    |
-| accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
+|----------------|---------------------------------------------------------------------------|:-----------:|
+| merchantId     | Número de identificação do comércio no sistema PayU.                      |     Sim     |
+| accountId      | ID da conta do usuário para cada país associado ao comércio.              |     Sim     |
 
-### Variáveis para pedido e resposta
+### Variáveis para pedido e resposta {#variables-for-request-and-response-1}
 
 <details>
-<summary>Request parameters</summary>
+<summary>Parâmetros de pedido</summary>
 <br>
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| id | Alfanumérico |  | Id of the WebHook you want to update. Este parâmetro é obrigatório quando updating a WebHook | Não |
-| accountId | Numérico | | ID of the user account for each country associated with the merchant. | Sim |
-| callbackUrl | Alfanumérico | | URL used to receive the `POST` notifications sent by PayU according to the events selected. This URL must be unique per WebHook. | Sim |
-| description | Alfanumérico | | Descrição of the WebHook you want to create. | Sim |
-| enabledEvents | List | Máx:3 | List of the events that will launch a notification to the configured URL when they occur. At least one event must be selected.<br>Possibles values são: `TRANSFER_UPDATE`, `TRANSFER_CREATION`, `VALIDATION_RESULT`. | Sim |
+| id | Alfanumérico |  | Id do WebHook que você deseja atualizar. Este parâmetro é obrigatório ao atualizar um WebHook | Não |
+| accountId | Numérico | | ID da conta do usuário para cada país associado ao comércio. | Sim |
+| callbackUrl | Alfanumérico | | URL usada para receber as notificações de `POST` enviadas pelo PayU de acordo com os eventos selecionados. Esta URL deve ser única para cada WebHook. | Sim |
+| description | Alfanumérico | | Descrição do WebHook que você deseja criar. | Sim |
+| enabledEvents | Lista | Máx:3 | Lista dos eventos que gerarão uma notificação para a URL configurada quando ocorrerem. Pelo menos um evento deve ser selecionado.<br>Os valores possíveis são: `TRANSFER_UPDATE`, `TRANSFER_CREATION`, `VALIDATION_RESULT`. | Sim |
 
 </details>
 
 <details>
-<summary>Response parameters</summary>
+<summary>Parâmetros de resposta</summary>
 <br>
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| id | Alfanumérico |  | Id of the WebHook created. |
-| created | Date |  | Creation date of the WebHook. Formato `YYYY-DD-MM hh:mm:ss`. |
-| accountId | Numérico | | ID of the user account for each country associated with the merchant. |
-| callbackUrl | Alfanumérico | | URL used that will receive the `POST` notifications according to the events selected. |
-| description | Alfanumérico | | Descrição of the WebHook created. |
-| enabledEvents | List | Máx:3 | List of the events selected. |
-| status | Alfanumérico | 7 | Estado of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
-| processingStatus | Alfanumérico | 7 | Estado of creation ou update of the WebHook. By default, this state is `SUCCESS`. |
+| id | Alfanumérico |  | Id do WebHook criado. |
+| created | Date |  | Data de criação do WebHook. Formato `YYYY-DD-MM hh:mm:ss`. |
+| accountId | Numérico | | ID da conta do usuário para cada país associado ao comércio. |
+| callbackUrl | Alfanumérico | | URL usada que receberá notificações de `POST` de acordo com os eventos selecionados. |
+| description | Alfanumérico | | Descrição do WebHook criado. |
+| enabledEvents | Lista | Máx:3 | Lista dos eventos selecionados. |
+| status | Alfanumérico | 7 | Estado do WebHook. Por padrão, o estado do novo WebHook é `ENABLED`. |
+| processingStatus | Alfanumérico | 7 | Estado de criação ou atualização do WebHook. Por padrão, este estado é `SUCCESS`. |
 
 </details>
 
 <br>
 
-The following are the request and response bodies for this method.
+A seguir estão os exemplos de pedido e resposta para este método.
 
 {{< tabs tabTotal="1" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -605,17 +605,17 @@ Exemplo resposta:
 {{< /tab >}}-->
 {{< /tabs >}}
 
-## Delete a WebHook
-This method lets you delete a WebHook previously created. As soon as you delete a WebHook, you stop receiving notifications.
+## Excluir um WebHook {#delete-a-webhook}
+Este método permite excluir um WebHook criado anteriormente. Assim que exclui um WebHook, você para de receber notificações.
 
 {{% alert title="Observação" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Furthermore, you need to know your Merchant and account ID, you can get this information in your Módulo PayU.
+Você precisa incluir dois cabeçalhos para usar este método, consulte [Configurar autenticação ]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Além disso, você precisa saber seu ID de vendedor e conta, você pode obter essas informações no seu Módulo PayU.
 
 {{% /alert %}}
 
-### Chamada API {#api-call}
-To delete a WebHook, use the following URL:
+### Chamada API {#api-call-4}
+Para excluir um WebHook, use a seguinte URL:
 
 ```JAVA
 DELETE
@@ -626,20 +626,20 @@ https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro      | Descrição                                                                 | Obrigatório |
-|----------------|-----------------------------------------------------------------------------|:---------:|
-| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Sim    |
-| accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
-| id             | ID the WebHook you want to delete.                                          |    Sim    |
+|----------------|---------------------------------------------------------------------------|:-----------:|
+| merchantId     | Número de identificação do comércio no sistema PayU.                      |     Sim     |
+| accountId      | ID da conta do usuário para cada país associado ao comércio.              |     Sim     |
+| id             | Id do WebHook que você deseja excluir.                                    |     Sim     |
 
-#### Exemplo resposta
+#### Exemplo resposta {#response-example-1}
 
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| processingStatus | Alfanumérico | 7 | Estado of deletion of the WebHook. By default, this state is `SUCCESS`. |
-| id | Alfanumérico |  | Id of the WebHook deleted. |
-| status | Alfanumérico | 7 | Estado of the WebHook. By default, the state of the deleted WebHook is `DELETED`. |
+| processingStatus | Alfanumérico | 7 | Estado de exclusão do WebHook. Por padrão, este estado é `SUCCESS`. |
+| id | Alfanumérico |  | Id do WebHook excluído. |
+| status | Alfanumérico | 7 | Estado do WebHook. Por padrão, o estado do WebHook excluído é `DELETED`. |
 
 {{< tabs tabTotal="1" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -659,17 +659,17 @@ O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers`
 {{< /tab >}}-->
 {{< /tabs >}}
 
-## Query WebHooks
-You can consult WebHooks related to your account either by their id ou by the account id. Both methods are explained below. 
+## Consultar WebHooks {#query-webhooks}
+Você pode consultar WebHooks relacionados à sua conta pelo id do WeHook ou pelo id da conta. Ambos os métodos são explicados a seguir.
 
 {{% alert title="Observação" color="info"%}}
 
-You need to include two headers to use this method, refer to [Configuring authentication]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Furthermore, you need to know your Merchant and account ID, you can get this information in your Módulo PayU.
+Você precisa incluir dois cabeçalhos para usar este método, consulte [Configurar autenticação ]({{< ref "#configuring-the-authentication" >}}) para obter mais informações. Além disso, você precisa saber seu ID de vendedor e conta, você pode obter essas informações no seu Módulo PayU.
 
 {{% /alert %}}
 
-### Query WebHooks by Id
-This method lets you consult the information of a specific WebHook using its id. To query a WebHook, use the following URL:
+### Consultar WebHooks por Id {#query-webhooks-by-id}
+Este método permite consultar as informações de um determinado WebHook usando seu id. Para consultar um WebHook, use a seguinte URL:
 
 ```JAVA
 GET
@@ -679,29 +679,29 @@ https://{env-api}.payulatam.com/v1.0/webhooks/{merchantId}/{accountId}/{id}
 
 O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
-| Parâmetro      | Descrição                                                                 | Obrigatório |
-|----------------|-----------------------------------------------------------------------------|:---------:|
-| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Sim    |
-| accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
-| id             | ID the WebHook you want to query.                                           |    Sim    |
+| Parâmetro      | Descrição                                                                   | Obrigatório |
+|----------------|-----------------------------------------------------------------------------|:-----------:|
+| merchantId     | Número de identificação do comércio no sistema PayU.                        |    Sim    |
+| accountId      | ID da conta do usuário para cada país associado ao comércio.                |    Sim    |
+| id             | Id do WebHook que você deseja consultar.                                    |    Sim    |
 
-#### Exemplo resposta
+#### Exemplo resposta {#response-example-2}
 
 <details>
-<summary>Response parameters</summary>
+<summary>Parâmetros de resposta</summary>
 <br>
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| processingStatus | Alfanumérico | 7 | Estado of query. By default, this state is `SUCCESS`. |
-| id | Alfanumérico |  | Id of the WebHook. |
-| created | Date |  | Creation date of the WebHook. Formato `YYYY-DD-MM hh:mm:ss`. |
-| accountId | Numérico | | ID of the user account for each country associated with the merchant. |
-| callbackUrl | Alfanumérico | | URL used that will receive the `POST` notifications according to the events selected. |
+| processingStatus | Alfanumérico | 7 | Estado da consulta. Por padrão, este estado é `SUCCESS`. |
+| id | Alfanumérico |  | Id do WebHook. |
+| created | Date |  | Data de criação do WebHook. Formato `YYYY-DD-MM hh:mm:ss`. |
+| accountId | Numérico | | ID da conta do usuário para cada país associado ao comércio. |
+| callbackUrl | Alfanumérico | | URL usada que receberá notificações de `POST` de acordo com os eventos selecionados. |
 | description | Alfanumérico | | Descrição of the WebHook. |
-| enabledEvents | List | Máx:3 | List of the events selected. |
-| status | Alfanumérico | 7 | Estado of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
+| enabledEvents | Lista | Máx:3 | Lista dos eventos selecionados. |
+| status | Alfanumérico | 7 | Estado do WebHook. Por padrão, o estado do novo WebHook é `ENABLED`. |
 
 </details>
 <br>
@@ -733,8 +733,8 @@ O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers`
 {{< /tab >}}-->
 {{< /tabs >}}
 
-### Query webhooks by account
-This method lets you consult the information of all the WebHooks created in your account. To query the WebHook list, use the following URL:
+### Consultar webhooks por conta {#query-webhooks-by-account}
+Este método permite que você consulte as informações de todos os WebHooks criados em sua conta. Para consultar a lista de WebHooks, use a seguinte URL:
 
 ```JAVA
 GET
@@ -745,27 +745,27 @@ https://{env-api}.payulatam.com/v1.0/webhooks/account/{merchantId}/{accountId}
 O valor da variável `{env-api}` is `sandbox-transfers` para teste e `transfers` para o modo de produção.
 
 | Parâmetro      | Descrição                                                                 | Obrigatório |
-|----------------|-----------------------------------------------------------------------------|:---------:|
-| merchantId     | Merchant’s ID number in PayU’s system.                                      |    Sim    |
-| accountId      | ID of the user account for each country associated with the merchant.       |    Sim    |
+|----------------|---------------------------------------------------------------------------|:-----------:|
+| merchantId     | Número de identificação do comércio no sistema PayU.                      |     Sim     |
+| accountId      | ID da conta do usuário para cada país associado ao comércio.              |     Sim     |
 
-#### Exemplo resposta
+#### Exemplo resposta {#response-example-3}
 
 <details>
-<summary>Response parameters</summary>
+<summary>Parâmetros de resposta</summary>
 <br>
 <div class="variables"></div>
 
 | Nome do campo | Formato | Tamanho | Descrição |
 |-|-|-|-|
-| processingStatus | Alfanumérico | 7 | Estado of query. By default, this state is `SUCCESS`. |
-| id | Alfanumérico |  | Id of the WebHook. |
-| created | Date |  | Creation date of the WebHook. Formato `YYYY-DD-MM hh:mm:ss`. |
-| accountId | Numérico | | ID of the user account for each country associated with the merchant. |
-| callbackUrl | Alfanumérico | | URL used that will receive the `POST` notifications according to the events selected. |
+| processingStatus | Alfanumérico | 7 | Estado da consulta. Por padrão, este estado é `SUCCESS`. |
+| id | Alfanumérico |  | Id do WebHook. |
+| created | Date |  | Data de criação do WebHook. Formato `YYYY-DD-MM hh:mm:ss`. |
+| accountId | Numérico | | ID da conta do usuário para cada país associado ao comércio. |
+| callbackUrl | Alfanumérico | | URL usada que receberá notificações de `POST` de acordo com os eventos selecionados. |
 | description | Alfanumérico | | Descrição of the WebHook. |
-| enabledEvents | List | Máx:3 | List of the events selected. |
-| status | Alfanumérico | 7 | Estado of the WebHook. By default, the state of the new WebHook is `ENABLED`. |
+| enabledEvents | Lista | Máx:3 | Lista dos eventos selecionados. |
+| status | Alfanumérico | 7 | Estado do WebHook. Por padrão, o estado do novo WebHook é `ENABLED`. |
 
 </details>
 <br>

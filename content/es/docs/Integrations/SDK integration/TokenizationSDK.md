@@ -126,7 +126,18 @@ LoggerUtil.info("{0}", response);
 
 {{< tab tabNum="2" >}}
 ```PHP
+$parameters = array(
+	// Ingresa aquí el identificador del pagador.
+	PayUParameters::PAYER_ID => "10",
+	// Ingresa aquí identificador el token.
+	PayUParameters::TOKEN_ID => "ab01ecd5-7d8f-4bee-91c1-4535d9ba282e"         
+);
 
+$response=PayUTokens::remove($parameters);
+
+if($response){
+
+}
 ```
 {{< /tab >}}
 {{< /tabs >}}

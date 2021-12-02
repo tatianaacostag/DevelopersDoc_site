@@ -26,7 +26,7 @@ A API de pagamentos inclui os seguintes métodos:
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
-To confirm the status of a transaction, você pode usar one of the following options:
+Para confirmar o status de uma transação, você pode usar one of the following options:
 * Navegue até a URL definida na variável `transaction.notifyUrl` ou na opção _**URL de confirmação**_ localizada no Módulo PayU em _**Configuração**_ > _**Configuração técnica**_.
 * Use o [API ou SDK de Consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
@@ -58,18 +58,18 @@ Você precisa enviar as seguintes informações:
 A descrição desses campos está na seção [Variáveis]({{< ref "#variables-for-request-and-response" >}}).
 
 ### Usar cartões tokenizados {#using-tokenized-cards}
-PayU suporta pagamentos com seu cartão tokenizado para permitir que você faça pagamentos regularmente com um cartão armazenado em um token. Um token de cartão de crédito substitui as informações confidenciais de um cartão de crédito e permite que você armazene-as com segurança seguindo os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard).
+A PayU suporta pagamentos recorrentes usando as informações do cartão de crédito armazenadas em um token. Este token substitui as informações sensíveis do cartão de crédito e permite salvá-lo para futuros pagamentos preservando os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard).
 
-PayU pode processar pagamentos com os seguintes serviços:
+A PayU pode processar pagamentos através de: 
 
-* **Tokenização de PayU**.<br>Nós fornecemos nosso próprio serviço para tokenizar seus cartões de crédito ativados sob solicitação. Este serviço permite que você tokenize as informações dos cartões de crédito de seus clientes (independentemente de sua franquia) usando nossa integração API ou SDK.<br>Para obter mais informações, consulte [Tokenização de PayUn]({{< ref "Tokenization.md" >}}).
+* **Tokenização da PayU**.<br>Na PayU temos nosso próprio serviço para gerar os tokens dos cartões de crédito mediante um request. Este serviço permite obter os tokens com as informações do cartão de crédito de seus clientes (independentemente da bandeira) usando a integração API ou SDK da PayU.<br>Para mais informações, confira a [Tokenização de PayU]({{< ref "Tokenization.md" >}}).
 
-* **MasterCard Digital Enablement Service - MDES**.<br>Serviço de tokenização fornecido pela Mastercard. Este serviço permite que você tokenize o Número da conta principal dos cartões de crédito MasterCard para que você possa usá-los para fazer pagamentos regulares ou criar recursos de pagamentos com um clique.<br>Para obter mais informações, consulte [MasterCard Digital Enablement Service (MDES)](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
+* **MasterCard Digital Enablement Service - MDES**.<br>MDES é o serviço de tokenização da Mastercard. Este serviço permite que você salve os tokens no número da conta primária dos cartões de crédito MasterCard, e fazer pagamentos recorrentes ou implementar funcionalidades de pagamento com um clique.<br>Para mais informações, pode consultar a documentação oficial do [MasterCard Digital Enablement Service (MDES) em inglês](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
 
-* **Visa Token Service - VTS**.<br>Serviço de tokenização fornecido pela Visa. Este serviço permite que você armazene as informações confidenciais dos cartões de crédito Visa em um token para permitir que você os use para fazer pagamentos regulares ou criar recursos de pagamentos com um clique.<br>Para obter mais informações, consulte [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
+* **Visa Token Service - VTS**.<br>VTS é o serviço de tokenização da Visa. Este serviço permite salvar de forma segura as informações sensíveis do cartão de crédito Visa para fazer pagamentos recorrentes ou implementar funcionalidades de pagamento com um clique.<br>Para mais informações, você pode consultar o [Visa Token Service (VTS) em inglês](https://usa.visa.com/products/visa-token-service.html).
 
-#### Pagamentos usando tokens de PayU {#pay-with-payu-tokens#pay-with-payu-tokens}
-Para pagamentos com tokens de cartão de crédito de PayU, inclua o parâmetro `transaction.creditCardTokenId` substituindo as informações do cartão de crédito. O exemplo a seguir mostra o corpo da solicitação em um nível alto para um fluxo de uma etapa. Os detalhes da solicitação não são fornecidos.
+#### Pagamentos com tokens de PayU {#pay-with-payu-tokens#pay-with-payu-tokens}
+Para pagamentos com tokens de cartão de crédito de PayU, inclua o parâmetro `transaction.creditCardTokenId` substituindo as informações do cartão de crédito. Na seguinte request temos um exemplo da solicitação de processamento em uma etapa. Os detalhes da solicitação não são mostrados. 
 
 {{% alert title="Observação" color="info"%}}
 Para processar sem CVV, é necessário enviar o parâmetro `creditCard.processWithoutCvv2` como true na solicitação de pagamento e remover o parâmetro `creditCard.securityCode`.<br>
@@ -157,10 +157,10 @@ Exemplo pedido:
 {{< /tab >}}
 {{< /tabs >}}
 
-#### Pagamentos usando tokens de MDES ou VTS {#pay-with-mdes-or-vts-tokens}
-Se você estiver tokenizando os cartões de crédito do seu cliente usando MDES ou VTS, você pode configurar as informações do token no parâmetro `transaction.networkToken` substituindo as informações do cartão de crédito e envie o parâmetro  `creditCard.processWithoutCvv2` como true.<br>Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado, entre em contato com seu representante de vendas para habilitá-lo.
+#### Pagamentos com tokens de MDES ou VTS {#pay-with-mdes-or-vts-tokens}
+Se você tiver tokens salvos nas bandeiras usando MDES ou VTS, é possível processar pagamentos diretamente na PayU. Você só precisa definir as informações do token no parâmetro `transaction.networkToken`, substituindo as informações do cartão de crédito e definindo o parâmetro  `creditCard.processWithoutCvv2` em true.<br>Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado, entre em contato com seu representante de vendas para habilitá-lo.
 
-O exemplo a seguir mostra o corpo da solicitação em um nível alto para um fluxo de uma etapa. Os detalhes da solicitação não são fornecidos.
+Na seguinte request temos um exemplo da solicitação de processamento em uma etapa. Os detalhes da solicitação não são mostrados. 
 
 {{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1184,7 +1184,7 @@ O Pix tem duas partes:
 * Para consultar um código ativo de sua transação, use a [API de Consultas]({{< ref "Queries-API.md" >}}).
 * O parâmetro `transactionResponse.extraParameters` tem os seguintes parâmetros relacionados à transação:
    - **EXPIRATION_DATE**: prazo para efetuar o pagamento.
-   - **QRCODE_EMV**: código a ser colado no portal do banco para fazer o pagamento. Este código é usado quando o cliente não consegue ler o código QR..
+   - **QRCODE_EMV**: código a ser colado no portal do banco para fazer o pagamento. Este código é usado quando o cliente não consegue ler o código QR.
    - **QRCODE_IMAGE_BASE64**: imagem do código QR. Esta é uma string codificada em Base64.
 
 {{% alert title="Observação" color="info"%}}

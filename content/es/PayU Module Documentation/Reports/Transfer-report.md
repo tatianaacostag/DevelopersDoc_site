@@ -10,21 +10,25 @@ weight: 20
 
 Además, si tienes habilitado el API de Payouts, puedes consultar el estado de los pagos a terceros solicitados. Para más información, consulta [Payouts]({{< ref "Payouts.md" >}}).
 
-{{% alert title="Note" color="info"%}}
-<img src="/assets/Brasil.png" width="20px"/> El _**Reporte de transferencias**_ tiene las misma columnas y funcionalidades disponibles para el reporte de _**Transferencias diarias**_ (_**Transferencias**_ > _**Transferencias diarias**_).
+{{% alert title="Nota" color="info"%}}
+<img src="/assets/Brasil.png" width="20px"/> Para cuentas brasileñas, el _**Reporte de transferencias**_ se encuentra en la opción _**Transferencias diarias**_ (_**Transferencias**_ > _**Transferencias diarias**_).
 {{% /alert %}}
 
 ## Permisos requeridos {#permission-required}
-Para tener acceso a este módulo, necesitas un perfil con el permiso _Transferencias_ > _Consultar_ activado.
+Para tener acceso a este módulo, necesitas un perfil con el siguiente permiso activado.
+* Si tu cuenta no es brasileña: _Transferencias_ > _Consultar_
+* Si tu cuenta es brasileña (Transferencias diarias Brasil):
+  - _Ver_	
+  - _download.csv_
 
 Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}}) para más información.
 
-## Consult the report
+## Consultar el reporte {#consult-the-report}
 Ingresa a tu cuenta PayU. En el menú de la izquierda, expande el menú _**Transferencias**_ y selecciona _**Transferencias**_.
 
 ![PrintScreen](/assets/Transfers/Transfers_01_es.png)
 
-Desplázate hacia abajo hasta la sección _**Reporte de transferencias realizadas**_ donde se encuentra la tabla del reporte. De forma predeterminada, el reporte muestra las transferencias creadas en los últimos 30 días desde la más reciente a la más antigua.
+Para cuentas no brasileñas, desplázate hacia abajo hasta la sección _**Reporte de transferencias realizadas**_ donde se encuentra la tabla del reporte. De forma predeterminada, el reporte muestra las transferencias creadas en los últimos 30 días desde la más reciente a la más antigua.
 
 ![PrintScreen](/assets/Reports/Reports_04_es.png)
 
@@ -54,7 +58,9 @@ Para descargar el reporte, haz clic en el botón _**Descargar**_ ubicado en la p
 
 ![PrintScreen](/assets/Reports/Reports_08_es.png)
 
-Aparece una barra de progreso en la parte superior de la pantalla. Una vez finalizado el proceso, el reporte se descarga automáticamente en formato Excel (_.csv_). El nombre del reporte usa el formato _**[FechaDescargaEnMilisegundos]\_payment\_orders\_[AccountId].csv**_.
+Aparece una barra de progreso en la parte superior de la pantalla. Una vez finalizado el proceso, el reporte se descarga automáticamente en formato Excel (_.csv_). El nombre del reporte usa el formato:
+* Si tu cuenta no es brasileña: _**[FechaDescargaEnMilisegundos]\_payment\_orders\_[AccountId].csv**_.
+* Si tu cuenta es brasileña: _**[FechaDescargaEnMilisegundos]\_daily\_payment\_order\_[AccountId].csv**_.
 
 ![PrintScreen](/assets/Reports/Reports_09.png)
 

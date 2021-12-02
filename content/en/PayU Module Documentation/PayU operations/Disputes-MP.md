@@ -7,7 +7,7 @@ Description: >
 weight: 40
 ---
 
-![Concepts](/assets/Disputes/Disputes_en2.png)
+![Concepts](/assets/Disputes/Disputes_en.png)
 
 {{% alert title="Note" color="info"%}}
 For introductory terms about a dispute refer to this [article]({{< ref "disputes.md" >}}).
@@ -63,7 +63,7 @@ If you accept that the dispute is not a mistake, you can start a [Refund]({{< re
 
 6. Upload the evidence files to resolve the dispute and click _**Save evidence**_. It is mandatory to save the evidence first before send it to review. The files uploaded here should not be larger than 10MB and must be PDF files.
 
-<img src="/assets/Disputes/Disputes2_06.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Disputes/Disputes_06.png" alt="PrintScreen" width="60%"/><br>
 
 When finish, click _**Send for review**_.
 

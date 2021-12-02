@@ -17,20 +17,18 @@ Com a solicitação de pagamento, você tem os seguintes benefícios:
 ## Como funciona a solicitação de pagamento? {#how-does-the-payment-request-work}
 A solicitação de pagamento segue um fluxo simples para permitir que seus clientes comprem seus produtos ou serviços usando a plataforma segura PayU:
 
-1. Gere a solicitação de Pagamento pelo módulo PayU. Para uma solicitação de pagamento básica, você só precisa fornecer o que deseja vender, seu preço e decidir se seu pagamento inclui impostos ou uma data de vencimento. Você pode criar uma solicitação de pagamento personalizada se quiser incluir informações adicionais, como frete, referência de pagamento, comentários e muito mais.
+1. Gere a solicitação de Pagamento pelo módulo PayU. Para uma solicitação de pagamento básica, você só precisa fornecer o que deseja vender, seu preço e decidir se seu pagamento inclui impostos<sup>\*</sup> ou uma data de vencimento. Você pode criar uma solicitação de pagamento personalizada se quiser incluir informações adicionais, como frete, referência de pagamento, comentários e muito mais.<br><br><sup>\*</sup>_Disponível apenas para Colômbia_.
 
 2. Depois de gerar o link, você pode compartilhá-lo com seus clientes por e-mail, postando o link nas redes sociais, ou incluindo o link como um botão em seu site (se você tiver um).
 
 3. Quando seus clientes usam o link, eles são redirecionados para a página de checkout do PayU, onde podem pagar usando qualquer um dos [métodos de pagamento disponíveis]({{< ref "Select-your-payment-method.md" >}}).
 
-4. Cada vez que um cliente paga usando o link, você recebe uma mensagem de confirmação e o valor da compra<sup>*</sup> é transferido para sua conta PayU, de onde você pode transferi-lo para sua conta bancária.
-
-<sup>*</sup>_O valor transferido corresponde ao valor pago pelo seu cliente, menos a taxa PayU._
+4. Cada vez que um cliente paga usando o link, você recebe uma mensagem de confirmação e o valor da compra<sup>\*</sup> é transferido para sua conta PayU, de onde você pode transferi-lo para sua conta bancária.<br><br><sup>\*</sup>_O valor transferido corresponde ao valor pago pelo seu cliente, menos a taxa PayU._
 
 ## Criação de solicitações de pagamento {#creating-payment-requests}
 De acordo com as necessidades de sua empresa, você pode criar dois tipos de solicitações de pagamento: Básica e personalizada.
 
-Uma _Solicitação de Pagamento Básica_ permite criar um link apenas fornecendo o nome e o preço do produto. Além disso, você pode decidir se precisa incluir impostos ou se o link pode expirar no futuro. O _Solicitação de pagamento Personalizado_ é um link de pagamento com informações extras, como informações de envio, referência de pagamento, páginas de resposta, comentários ou restrições dos métodos de pagamento disponíveis.
+Uma _Solicitação de Pagamento Básica_ permite criar um link apenas fornecendo o nome e o preço do produto. Além disso, você pode decidir se precisa incluir impostos<sup>\*</sup> ou se o link pode expirar no futuro. O _Solicitação de pagamento Personalizado_ é um link de pagamento com informações extras, como informações de envio, referência de pagamento, páginas de resposta, comentários ou restrições dos métodos de pagamento disponíveis.<br><br><sup>\*</sup>_Disponível apenas para Colômbia_.
 
 ### Como criar uma Solicitação de Pagamento Básico {#create-a-basic-payment-request}
 `Si`ga o próximo procedimento para criar uma solicitação de pagamento básica e compartilhá-la com seus clientes.
@@ -50,7 +48,7 @@ Uma _Solicitação de Pagamento Básica_ permite criar um link apenas fornecendo
 
 <img src="/assets/PaymentRequest/PaymentRequest_03_pt.png" alt="PrintScreen" width="60%"/><br>
 
-* **Você cobra impostos?**: escolha se o preço do produto inclui impostos. Em caso afirmativo, selecione a porcentagem ou o valor fixo dos impostos.
+* **Você cobra impostos?**: escolha se o preço do produto inclui impostos. Em caso afirmativo, selecione a porcentagem ou o valor fixo dos impostos. Disponível apenas para Colômbia.
 
 <img src="/assets/PaymentRequest/PaymentRequest_04_pt.png" alt="PrintScreen" width="60%"/><br>
 
@@ -107,7 +105,7 @@ Depois de configurar e gerar a solicitação de pagamento, uma página de confir
   {{% /alert %}}  
 
   * **_Publicar um botão em meu site_**: se você tem um site e deseja incluir o link gerado, PayU permite criar um botão que pode ser adicionado em algum lugar de sua página. Você pode usar qualquer uma das imagens que já vem carregadas pelo PayU ou fazer upload de uma usando a opção _Imagem personalizada_.<br>
-  Depois clique em _Copiar HTML_ para copiar o código do botão em sua área de transferência.
+ Depois clique em _Copiar HTML_ para copiar o código do botão em sua área de transferência.
 
   <img src="/assets/PaymentRequest/PaymentRequest_07_pt.png" alt="PrintScreen" width="60%"/><br>
 

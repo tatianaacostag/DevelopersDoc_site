@@ -56,7 +56,7 @@ Cuando ninguno de los [perfiles predeterminados]({{< ref"#default-profiles" >}})
 ### Editar perfiles {#edit-profiles}
 Al editar un perfil, puedes cambiarle el nombre, o asignar o eliminar permisos.
 
-* Para cambiar el nombre de un perfil, haz clic en el simbolo ▾ junto a su nombre. Luego, haz clic en _**Cambiar nombre**_.<br><br>![PrintScreen](/assets/Profiles/Profiles_06_es.png)<br>Esto habilita el campo de nombre del perfil para actualizarlo..
+* Para cambiar el nombre de un perfil, haz clic en el simbolo ▾ junto a su nombre. Luego, haz clic en _**Cambiar nombre**_.<br><br>![PrintScreen](/assets/Profiles/Profiles_06_es.png)<br>Esto habilita el campo de nombre del perfil para actualizarlo.
 
 * Para asignar o eliminar un permiso, simplemente haz clic en la casilla de verificación del permiso.
 

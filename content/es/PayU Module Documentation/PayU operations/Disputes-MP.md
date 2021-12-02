@@ -7,7 +7,7 @@ Description: >
 weight: 40
 ---
 
-![Concepts](/assets/Disputes/Disputes_es2.png)
+![Concepts](/assets/Disputes/Disputes_es.png)
 
 {{% alert title="Nota" color="info"%}}
 Para conocer los términos introductorios sobre una disputa, consulte este [artículo]({{< ref "disputes.md" >}}).
@@ -63,7 +63,7 @@ Si aceptas que la disputa no es un error, puedes iniciar un procesos de [Reembol
 
 6. Sube los archivos de evidencia para resolver la disputa y haz clic en _**Guardar evidencia**_. Es obligatorio guardar la evidencia antes de enviarla a revisión.<br>Los archivos cargados aquí no pueden ser superiores a 10MB y deben ser archivos PDF.
 
-<img src="/assets/Disputes/Disputes2_06_es.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Disputes/Disputes_06_es.png" alt="PrintScreen" width="60%"/><br>
 
 Cuando termines, haz clic en _**Enviar a revisión**_.
 

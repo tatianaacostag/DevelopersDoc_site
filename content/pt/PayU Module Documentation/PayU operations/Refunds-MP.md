@@ -1,93 +1,93 @@
 ---
-title: "Refunds"
-linkTitle: "Refunds"
+title: "Reembolsos"
+linkTitle: "Reembolsos"
 date: 2021-09-03T16:41:53-05:00
 type: docs
 Description: >
-  Learn how to make refunds from a paid sale from the Módulo PayU. A refund is made when you voluntarily decide to return the amount paid by your customer.
+  Aprenda a fazer o reembolso de uma venda paga pelo módulo PayU. Um reembolso é feito quando você voluntariamente decide devolver o valor pago pelo seu cliente.
 weight: 20
 ---
 
 {{% alert title="Observação" color="info"%}}
-If you perform a refund through this panel, this is only updated in the Módulo PayU. If you need to control and record the refunds in your refund system, you should use the [Refunds API]({{< ref "refunds.md" >}}).
+Se você fizer um reembolso por este painel, ele só será atualizado no Módulo PayU. Se precisar controlar e registrar os reembolsos em seu sistema de reembolsos, você deve usar a [API de reembolsos]({{< ref "refunds.md" >}}).
 {{% /alert %}}
 
-## What is a refund?
-A refund is the action to voluntary return the money paid by a customer when any of the following situations happen:
-* The product ou service delivered does not met the expectations of the customer and they returned it.
-* The product is out of stock, anf the merchant is not able to deliver the product to the client.
+## O que é um reembolso? {#what-is-a-refund}
+Um reembolso é a ação de devolver voluntariamente o dinheiro pago por um cliente quando qualquer uma das seguintes situações acontecer:
+* O produto ou serviço entregue não atendeu às expectativas do cliente e ele o devolveu.
+* O produto está esgotado e o lojista não consegue entregar o produto ao cliente.
 
-## Refund procedure
-Refunds are subject to review and approval of our team. The procedure to request refunds is explained below:
+## Procedimento de reembolso {#refund-procedure}
+Reembolsos estão sujeitos a análise e aprovação de nossa equipe. O procedimento para solicitar reembolsos é explicado abaixo:
 
-1. When a refund is requested by your customer, you need to request it using the Módulo PayU. You just need to identify the order and provide a reason for refund.
+1. Quando um reembolso é solicitado por seu cliente, você precisa solicitá-lo usando o módulo PayU. Você só precisa identificar a ordem e fornecer um motivo para o reembolso.
 
-2. Once you send the request, PayU reviews it and this is approved ou rejected in **one** to **three** business dias.
+2. Depois de enviar a solicitação, PayU a analisa e ela é aprovada ou rejeitada em **1** a **3** dias úteis.
 
-### Refund states
-A refund can be in one of the following three states:
+### Estados de reembolso {#refund-states}
+Um reembolso pode estar em um dos três estados a seguir:
 
-* **In return**: the request has been sent to PayU for approval and it is under approval.
-* **Aprovada**: the request has been approved by a PayU’s customer service agent.
-* **Recusada**: the request does not meet the policies defined by PayU and was rejected by an agent.
+* **Em devolução**: a solicitação foi enviada a PayU para aprovação e está em aprovação.
+* **Aprovada**: a solicitação foi aprovada por um agente de atendimento ao cliente do PayU.
+* **Recusada**: a solicitação não atende às políticas definidas pelo PayU e foi rejeitada por um agente.
 
-## Permission required
-To have access to this module, you need to have a profile with the following permission enabled:
+## Permissão necessária {#permission-required}
+Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permissão habilitada:
 
-* _Refunds and Chargebacks_ > _List Refunds_
-* _Refunds and Chargebacks_ > _Manage Refunds_<br>This permission allows you to perform refunds.	
+* _Reembolsos e chargeback_ > _Listar Reembolsos_
+* _Reembolsos e chargeback_ > _Gerenciar Reembolsos_<br>Esta permissão autoriza que você faça reembolsos.	
 
-Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
+Consulte [Perfis e permissões]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 
 ## Observações {#considerations}
-* Refunds are only available for transactions paid with card.
+* Reembolsos estão disponíveis apenas para transações pagas com cartão.
 * Você pode tentar novamente a ordem de reembolso se ele foi recusado anteriormente.
 * Assim que você faz a solicitação, o valor da transação passa a fazer parte do Saldo Congelado de sua conta PayU até que seja processado.
-* In **Chile**:
-  - Refunds for [transactions processed by WebPay Plus]({{< ref "Payments-API-chile.md#submit-transaction-with-debit-and-prepaid-cards" >}}) are not supported.
-  - For transactions prepaid cards not processed by WebPay Plus, Refunds requested during the first hour after their charge can be approved ou rejected by the financial network. After the first hour, all the refund for transactions with prepaid cards are rejected.
+* No **Chile**:
+  - Reembolsos para [transações processadas por WebPay Plus]({{< ref "Payments-API-chile.md#submit-transaction-with-debit-and-prepaid-cards" >}}) não estão disponíveis.
+  - Para transações com cartões pré-pagos não processadas pelo WebPay Plus, os reembolsos solicitados na primeira hora após a cobrança podem ser aprovados ou rejeitados pela rede financeira. Após a primeira hora, todos os reembolsos de transações com cartões pré-pagos são rejeitados.
   - Se o reembolso for rejeitado, o PayU mostra o [código de erro]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}) gerado pela rede.
   - Reembolsos parciais para transações parceladas são recebidos online, mas PayU os processa manualmente devido a restrições do adquirente.
-* In **Colombia**, partial refunds are not available for international credit cards.
-* In **Peru**, partial refunds are supported for transactions without installments. Recall that transactions with one installment are considered as without installments. Reembolsos parciais com visanet devem ser enviados após um dia.
-* Se a sua ordem de reembolso for  approved, o valor será devolvido ao titular do cartão.
-* Se a sua ordem de reembolso for  declined, o valor é liberado do Saldo Congelado e retorna ao Saldo disponível de sua conta PayU.
-* Once the refund is approved, this will be reflected in the payer’s credit card when the bank make it effective.
-* To check the status of your refund request, you can consult it by clicking the sale in the Módulo PayU.
+* Na **Colômbia**, reembolsos parciais não estão disponíveis para cartões de crédito internacionais.
+* No **Peru**, reembolsos parciais são aceitos para transações sem prestações. Lembre-se de que as transações com uma parcela são consideradas sem parcelas. Reembolsos parciais com visanet devem ser enviados após um dia.
+* Se sua solicitação de reembolso for aprovada, o valor será devolvido ao titular do cartão.
+* Se sua solicitação de reembolso for recusada, o valor será liberado do Saldo Congelado e retornará ao Saldo Disponível em sua conta PayU.
+* Assim que o reembolso for aprovado, isso será refletido no cartão de crédito do pagador quando o banco o efetivar.
+* Para verificar o status da sua solicitação de reembolso, você pode consultá-lo clicando na venda no Painel do comércio. 
 
-## Refunds per country
-Leve em conta as seguintes informações per country before requesting refunds.
+## Reembolsos por país {#refunds-per-country}
+Observe as seguintes considerações por país antes de solicitar reembolsos.
 
-{{< overview/refunds >}}
-<sup>*</sup>_Depends on the network._
+{{< overview/refunds_pt >}}
+<sup>*</sup>_Depende da rede._
 
-## How to request a refund?
-To request a refund, the transaction must be approved and without any pending dispute process. Follow the next steps to request it.
+## Como solicitar um reembolso? {#how-to-request-a-refund}
+Para solicitar um reembolso, a transação deve ser aprovada e sem nenhum processo de disputa pendente. Siga as próximas etapas para solicitar.
 
-1. Log into your PayU account. In the left menu, expand the _**Transações**_ menu and select _**Relatório de Vendas**_.
+1. Faça login em sua conta PayU. No menu esquerdo, expanda o menu _**Transações**_ e selecione _**Relatório de Vendas**_.
 
-![PrintScreen](/assets/Refunds/Refunds_en_04.png)
+![PrintScreen](/assets/Refunds/Refunds_pt_04.png)
 
-2. The [Relatório de Vendas]({{< ref "Sales-report.md" >}}) opens. Locate the transaction you want to refund and click it.
+2. O [Relatório de Vendas]({{< ref "Sales-report.md" >}}) abrirá. Localize a transação que deseja reembolsar e clique nela.
 
-![PrintScreen](/assets/Refunds/Refunds_en_05.png)
+![PrintScreen](/assets/Refunds/Refunds_pt_05.png)
 
-3. The transaction details appear at the right of the screen, Click the _**Refund**_ button at the end of the panel.
+3. Os detalhes da transação aparecem à direita da tela. Clique no botão _**Reembolsar pagamento**_ no final do painel.
 
-<img src="/assets/Refunds/Refunds_en_06.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Refunds/Refunds_pt_06.png" alt="PrintScreen" width="50%"/><br>
 
-4. If you need to request a partial refund, check the option _**Partial refund**_ and provide the requested value.
+4. Se você precisar solicitar um reembolso parcial, marque a opção _**Reembolsar um parte do dinheiro**_ e forneça o valor solicitado.
 
-<img src="/assets/Refunds/Refunds_en_08.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Refunds/Refunds_pt_08.png" alt="PrintScreen" width="50%"/><br>
 
-5. Provide the reason to request the refund (partial ou total) and click _**Refund**_.
+5. Forneça o motivo para solicitar o reembolso (parcial ou total) e clique em _**Reembolso**_.
 
-<img src="/assets/Refunds/Refunds_en_07.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Refunds/Refunds_pt_07.png" alt="PrintScreen" width="50%"/><br>
 
-6. The summary of the request appears. While PayU process the refund, the amount of the refund is frozen in your account. If the request is approved, the amount refunded is returned to the customer through the payment method used.
+6. O resumo da solicitação aparecerá. Enquanto PayU processa o reembolso, o valor do reembolso fica congelado em sua conta. Se a solicitação for aprovada, o valor reembolsado será devolvido ao cliente pelo meio de pagamento utilizado.
 
-<img src="/assets/Refunds/Refunds_en_09.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Refunds/Refunds_pt_09.png" alt="PrintScreen" width="50%"/><br>
 
-7. Once the request has been approved, the status appears in the sale.
+7. Assim que a solicitação for aprovada, o status aparecerá na venda.
 
-<img src="/assets/Refunds/Refunds_en_10.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Refunds/Refunds_pt_10.png" alt="PrintScreen" width="50%"/><br>

@@ -141,7 +141,7 @@ Importe as variáveis globais da coleção para configurar os valores enviados �
 
 2. Na coleção Postman, clique em _**Import**_ próximo ao nome do seu espaço de trabalho e localize o arquivo json baixado recentemente.
 
-3. Quando terminar, clique em  _**Import**_.
+3. Quando terminar, clique em _**Import**_.
 
 Para alterar o valor de uma transação, atualize o valor para o  `tx_value_[país]` de acordo com o país que você deseja testar.de acordo com o país que você deseja testar.
 

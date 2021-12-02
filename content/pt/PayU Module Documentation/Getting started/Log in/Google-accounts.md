@@ -1,6 +1,6 @@
 ---
-title: "Log in using Google Accounts"
-linkTitle: "Log in using Google Accounts"
+title: "Faça login usando contas do Google"
+linkTitle: "Faça login usando contas do Google"
 date: 2021-09-28T13:40:06-05:00
 type: docs
 Description: >
@@ -10,31 +10,31 @@ tags: ["subtopic"]
 ---
 
 ## Observações {#considerations}
-* The option to sign in using _Google_ accounts is not available ao usar browsers in incognito mode.
-* You must have a user entitled to at least an account and merchant registered using a _Google_ e-mail address.
-* Even though you use your _Google_ account to sign in, you can still using the credentials you created when you created your account.
+* A opção de fazer login usando contas _Google_ não está disponível ao usar navegadores no modo de navegação anônima.
+* Você deve ter um usuário com direito a pelo menos uma conta e comércio registrado usando um endereço de e-mail _Google_.
+* Mesmo que você use sua conta _Google_ para entrar, você ainda pode usar as credenciais geradas quando criou sua conta.
 
-## Signing in using a _Google_ account
-1. Go to www.payu.com. At the top right corner, you find the option to log in.<br>Alternativamente, você pode ir diretamente https://merchants.payulatam.com/.
+## Login usando uma conta _Google_ {#signing-in-using-a-_google_-account}
+1. Acesse www.payu.com. No canto superior direito, você encontra a opção de fazer login.<br>Alternativamente, você pode ir diretamente https://merchants.payulatam.com/.
 
-![PrintScreen](/assets/Login1_en.png)
+![PrintScreen](/assets/Login1_pt.png)
 
-2. Click the _**Sign in with Google**_ button.
+2. Clique no botão _**Faça login no Google**_.
 
-<img src="/assets/GoogleSignIn/GoogleSignIn_01.png" alt="PrintScreen" width="45%"/><br>
+<img src="/assets/GoogleSignIn/GoogleSignIn_01_pt.png" alt="PrintScreen" width="45%"/><br>
 
-3. A pop up window appear to sign in using _Google_ accounts. First, provide your e-mail ou phone number used to authenticate in your _Google_ account.
+3. Uma janela pop-up aparece para fazer login usando contas _Google_. Primeiro, forneça seu e-mail ou número de telefone usado para autenticação em sua conta Google.
 
-<img src="/assets//GoogleSignIn/GoogleSignIn_02.png" alt="PrintScreen" width="45%"/><br>
+<img src="/assets//GoogleSignIn/GoogleSignIn_02_pt.png" alt="PrintScreen" width="45%"/><br>
 
-4. Provide the password of your _Google_ account.
+4. Forneça a senha da sua conta _Google_.
 
-<img src="/assets//GoogleSignIn/GoogleSignIn_03.png" alt="PrintScreen" width="45%"/><br>
+<img src="/assets//GoogleSignIn/GoogleSignIn_03_pt.png" alt="PrintScreen" width="45%"/><br>
 
-5. If your user can access to more than one merchant, click it to access it. Caso contrário, you are redirected to the default merchant.
+5. Se o seu usuário puder acessar mais de um comércio, clique nele para acessar. Caso contrário, você será redirecionado para o comércio padrão.
 
-![PrintScreen](/assets/GoogleSignIn/GoogleSignIn_04.png)
+![PrintScreen](/assets/GoogleSignIn/GoogleSignIn_04_pt.png)
 
-6. As soon as you log in, você pode usar all the available options to manage your PayU account.
+6. Assim que você fizer login, você pode usar todas as opções disponíveis para administrar sua conta PayU.
 
-![PrintScreen](/assets/GoogleSignIn/GoogleSignIn_05.png)
+![PrintScreen](/assets/GoogleSignIn/GoogleSignIn_05_pt.png)

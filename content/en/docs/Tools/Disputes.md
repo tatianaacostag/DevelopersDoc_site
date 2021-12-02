@@ -12,7 +12,7 @@ Your buyers can present a claim to their card issuing bank. The bank sends us a 
 
 The dispute freezes the total amount of the sale in your PayU account.
 
-![Concepts](/assets/Disputes/Disputes_en2.png)
+![Concepts](/assets/Disputes/Disputes_en.png)
 
 ## Why a dispute happens?
 A buyer can claim to their card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.<br>

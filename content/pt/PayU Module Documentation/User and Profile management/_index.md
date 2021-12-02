@@ -1,10 +1,10 @@
 ---
-title: "User & Profile management"
-linkTitle: "User & Profile management"
+title: "Gerenciamento de usuários e perfis"
+linkTitle: "Gerenciamento de usuários e perfis"
 date: 2021-08-26T15:41:06-05:00
 type: docs
 Description: >
-  Learn how to manage users, profiles and permissions to access the accounts in your merchants.
+  Aprenda a gerenciar usuários, perfis e permissões para acessar as contas em seus comércios.
 weight: 20
 nosidetoc: true
 ---

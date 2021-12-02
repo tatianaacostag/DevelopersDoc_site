@@ -38,7 +38,6 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 ## Available methods
 Tokenization SDK includes methods to register and remove tokens, and methods to query tokens.
 
-For registration a removal of tokens:
 * [Individual credit card registration]({{< ref "TokenizationSDK.md#individual-credit-card-registration" >}})
 * [Individual token removal]({{< ref "TokenizationSDK.md#individual-token-removal" >}})
 * [Query tokens]({{< ref "TokenizationSDK.md#query-tokens" >}})
@@ -127,7 +126,18 @@ LoggerUtil.info("{0}", response);
 
 {{< tab tabNum="2" >}}
 ```PHP
+$parameters = array(
+	// Enter the ID of the payer here.
+	PayUParameters::PAYER_ID => "10",
+	// Enter the ID of the token here.
+	PayUParameters::TOKEN_ID => "ab01ecd5-7d8f-4bee-91c1-4535d9ba282e"         
+);
 
+$response=PayUTokens::remove($parameters);
+
+if($response){
+
+}
 ```
 {{< /tab >}}
 {{< /tabs >}}

@@ -1078,7 +1078,7 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
 ### Llamado del método {#method-call-2}
-Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación..
+Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.
 
 {{< tabs tabTotal="2" tabID="7" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}

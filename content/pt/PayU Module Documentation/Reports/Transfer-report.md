@@ -1,63 +1,69 @@
 ---
-title: "Transfer Report"
-linkTitle: "Transfer Report"
+title: "Relatório de transferências"
+linkTitle: "Relatório de transferências"
 date: 2021-09-03T16:46:15-05:00
 type: docs
 Description: >
-  Know the status of the transfers you have requested of the funds collected in your PayU account.
+  Consulte o estado das transferências solicitadas dos fundos recolhidos na sua conta PayU.
 weight: 20
 ---
 
-Furthermore, if you have enabled the Payouts API, you can query the state of the payouts to third party requested. Para obter mais informações, consulte [Payouts]({{< ref "Payouts.md" >}}).
+Além disso, se você ativou a API de Payouts, pode consultar o estado dos pagamentos solicitados por terceiros. Para obter mais informações, consulte [Payouts]({{< ref "Payouts.md" >}}).
 
 {{% alert title="Observação" color="info"%}}
-<img src="/assets/Brasil.png" width="20px"/> The _**Transfers Report**_ has the same columns and features available for the _**Daily payouts**_ report (_**Transfers**_ > _**Daily payouts**_).
+<img src="/assets/Brasil.png" width="20px"/> Para contas brasileiras, o _**Relatório de transferência**_ encontra-se na opção _**Para conta bancária**_ (_**Transferências**_ > _**Para conta bancária**_).
 {{% /alert %}}
 
-## Permission required
-To have access to this module, you need to have a profile with the _Transfers_ > _Review_ permission enabled.
+## Permissão necessária {#permission-required}
+Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permissão habilitada.
+* Se sua conta não é brasileira: _Transferências_ > _Consultar_.
+* Se sua conta é brasileira: (Relatório de transferências Brasil):
+  - _Visualizar_	
+  - _download.csv_
 
-Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
+Consulte [Perfis e permissões]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 
-## Consult the report
-Log into your PayU account. In the left menu, expand the _**Transfers**_ menu and select _**Transfers**_.
+## Consulte o relatório {#consult-the-report}
+Faça login em sua conta PayU. No menu esquerdo, expanda o menu _**Transferências**_ e selecione _**Transferências**_ ou _**Para conta bancária**_ se sua conta for brasileira.
 
-![PrintScreen](/assets/Transfers/Transfers_01.png)
+![PrintScreen](/assets/Reports/Reports_33.png)
 
-Scroll down to the _**Created transfers report**_ section where the report table is located. By default, the report displays the transfers created in the last 30 days from the most recent to the oldest.
+Para contas não brasileiras, role para baixo até a seção _**Relatório de transferências realizadas**_ onde a tabela do relatório está localizada. Por padrão, o relatório exibe as transferências criadas nos últimos 30 dias, da mais recente para a mais antiga.
 
-![PrintScreen](/assets/Reports/Reports_04.png)
+![PrintScreen](/assets/Reports/Reports_04_pt.png)
 
-The report has the following columns:
+O relatório tem as seguintes colunas:
 
-| Coluna              | Descrição                                                                                         |
-|---------------------|-----------------------------------------------------------------------------------------------------|
-| ID                  | Id of the transfer requested.                                                                       |
-| Request date        | Date and time when the transfer was created.                                                        |
-| Last update         | Date and time of the last action executed in the transfer.                                          |
-| Transferred value   | Valor of the transfer along with its associated costs.<br>To know these costs, click the <img src="/assets/Reports/Reports_05.png" width="2%" style="vertical-align: baseline;"/> icon.<br><br>![PrintScreen](/assets/Reports/Reports_06.png)               |
-| Destination account | Bank account of the request                                                                         |
-| Status              | Latest status of the request. The possible states são: <ul style="margin-bottom: initial;"><li>Approved</li><li>In progress</li><li>Rejected</li></ul>                                                               |
+| Coluna              | Descrição                                                                  |
+|---------------------|----------------------------------------------------------------------------|
+| ID                  | Id da transferência solicitada.                                            |
+| Data de solicitação | Data e hora em que a transferência foi criada.                             |
+| Last update         | Data e hora da última ação executada na transferência.                     |
+| Valor transferido   | Valor da transferência                                                     |
+| Conta destino       | Conta bancária do pedido.                                                  |
+| Status              | Último status do pedido. The possible states são: <ul style="margin-bottom: initial;"><li>Aprovada</li><li>Em processo</li><li>Rejeitada</li></ul>                                                               |
 
 {{% alert title="Observação" color="info"%}}
-If you need to display more information, contact your sales representative.
+Se você precisar exibir mais informações, entre em contato com seu representante de vendas.
 {{% /alert %}}
 
-You can filter transfers by the date of their creation using the dates filter at the top right corner.
+Você pode filtrar as transferências pela data de sua criação usando o filtro de datas no canto superior direito.
 
-<img src="/assets/Reports/Reports_07.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Reports/Reports_07_pt.png" alt="PrintScreen" width="60%"/><br>
 
-The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.<br>To see the information of a given date, set it for both start and end date.
+O intervalo de datas deste filtro é três (3) meses antes da data de término. Se você exceder esse intervalo, o relatório exibirá as informações de três (3) meses após a data de início.<br>Para ver as informações de uma determinada data, defina a mesma para a data de início e de término.
 
-## Download the report
-To download the report, click the _**Download**_ button located at the top ou at the bottom of the report table.
+## Baixar o relatório {#download-the-report}
+Para baixar o relatório, clique no botão _**Baixar**_ localizado na parte superior ou inferior da tabela do relatório.
 
-![PrintScreen](/assets/Reports/Reports_08.png)
+![PrintScreen](/assets/Reports/Reports_08_pt.png)
 
-A progress bar appears at the top of the screen. Once the process is completed, the report is automatically downloaded in an Excel (_.csv_) format. The name of the report uses the format _**[DownloadDateInMillis]\_payment\_orders\_[AccountId].csv**_.
+Uma barra de progresso aparece na parte superior da tela. Assim que o processo for concluído, o relatório será baixado automaticamente em formato Excel (_.csv_). O nome do relatório usa o formato:
+* Se sua conta não é brasileira: _**[DataDeDownloadEmMilis]\_payment\_orders\_[AccountId].csv**_.
+* Se sua conta é brasileira: _**[DataDeDownloadEmMilis]\_daily\_payment\_order\_[AccountId].csv**_.
 
 ![PrintScreen](/assets/Reports/Reports_09.png)
 
 {{% alert title="Observação" color="info"%}}
-The generated report is stored during 90 days in the [My downloaded reports]({{< ref "Reports.md#my-downloaded-reports" >}}) section.
+O relatório gerado é armazenado durante 90 dias na seção [Meus relatórios baixados]({{< ref "Reports.md#my-downloaded-reports" >}}).
 {{% /alert %}}

@@ -121,7 +121,9 @@ Provide the information related to your Bank Account such as: country, bank, acc
 * If the Bank account is foreign, you must provide the information of the **Intermediary bank** such as its name, the _ABA code_, and the _Swift code_.
 {{% /alert %}}
 
-Along with the information you provide, you need to attach a certification issued by your bank to proof the veracity and authenticity of the information. 
+Along with the information you provide, you need to attach a certification<sup>\*</sup> issued by your bank to proof the veracity and authenticity of the information. 
+
+<sup>\*</sup> _Dependendo do seu país, pode ser necessário anexar mais documentos._
 
 ![PrintScreen](/assets/BankInformation/BankInformation_04.png)
 

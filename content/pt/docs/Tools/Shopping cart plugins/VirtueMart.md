@@ -91,7 +91,7 @@ Aparecerá uma mensagem informando que você habilitou o plugin. Além disso, o 
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_09.jpg)
 
-3. Na janela aberta, clique em  _**New**_ para criar um método de pagamento usando o `PayuLatam`.
+3. Na janela aberta, clique em _**New**_ para criar um método de pagamento usando o `PayuLatam`.
 
 ![PrintScreen](/assets/VirtueMart/VirtueMart3_10.jpg)
 

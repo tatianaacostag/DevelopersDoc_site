@@ -26,6 +26,6 @@ Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}
 
 ![PrintScreen](/assets/WithholdingCertificate/WithholdingCertificate_02_es.png)
 
-3. Haz clic en _**Descargar**_. El reporte se descarga automáticamente a tu equipo en formato PDF.<br>El siguiente es un ejemplo de este certificado..
+3. Haz clic en _**Descargar**_. El reporte se descarga automáticamente a tu equipo en formato PDF.<br>El siguiente es un ejemplo de este certificado.
 
 ![PrintScreen](/assets/WithholdingCertificate/WithholdingCertificate_03.png)

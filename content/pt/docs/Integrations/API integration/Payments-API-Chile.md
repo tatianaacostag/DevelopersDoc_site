@@ -25,7 +25,7 @@ A API de pagamentos inclui os seguintes métodos:
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
-To confirm the status of a transaction, você pode usar one of the following options:
+Para confirmar o status de uma transação, você pode usar one of the following options:
 * Navegue até a URL definida na variável `transaction.notifyUrl` ou na opção _**URL de confirmação**_ localizada no Módulo PayU em _**Configuração**_ > _**Configuração técnica**_.
 * Use o [API ou SDK de Consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
@@ -160,7 +160,7 @@ Transações com cartão de crédito usando fluxos de duas etapas estão dispon�
 * Cartões de débito internacionais não são aceitos.
 * Não são permitidas transações em PESOS CHILENOS com valores decimais.
 * Os fluxos de duas etapas não são compatíveis com cartões de débito, pré-pagos e cartões de crédito internacionais.
-* As transações com cartão de crédito usando fluxos de duas etapas estão disponíveis para pagamento em parcela única. Se você enviar uma transação em duas etapas com duas parcelas ou mais, esta transação será automaticamente rejeitada pelo adquirente.<br>TO fluxo em duas etapas está disponível mediante solicitação, entre em contato com seu representante de vendas para obter mais informações.
+* As transações com cartão de crédito usando fluxos de duas etapas estão disponíveis para pagamento em parcela única. Se você enviar uma transação em duas etapas com duas parcelas ou mais, esta transação será automaticamente rejeitada pelo adquirente.<br>O fluxo em duas etapas está disponível mediante solicitação, entre em contato com seu representante de vendas para obter mais informações.
 * Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. Depois que esse recurso for habilitado para você, envie no pedido a variável `creditCard.processWithoutCvv2` como true e remova a variável `creditCard.securityCode`.
 
 ### Autorização {#authorization}
@@ -422,7 +422,7 @@ Use este método para executar a etapa **Captura** de um fluxo de duas etapas. N
 Leve em conta as seguintes informações para captura.
 * O tempo máximo para capturar uma transação aprovada é de sete (7) dias. Após este período, a transação é cancelada automaticamente (auto-void).
 * Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.
-* Você pode fazer apenas uma captura parcial sobre um montante autorizado.. Para fazer isso, você precisa enviar a solicitação do parâmetro `transaction.order.additionalValues.TX_VALUE` com seu valor (conforme enviado durante a Autorização) e definir `PARTIAL_CAPTURE` para `transaction.type`.<br>O valor mínimo é 50 CLP.
+* Você pode fazer apenas uma captura parcial sobre um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro `transaction.order.additionalValues.TX_VALUE` com seu valor (conforme enviado durante a Autorização) e definir `PARTIAL_CAPTURE` para `transaction.type`.<br>O valor mínimo é 50 CLP.
 * Não é permitida a captura de valor superior ao previamente autorizado.
 * As capturas são permitidas apenas para transações em uma parcela.
 

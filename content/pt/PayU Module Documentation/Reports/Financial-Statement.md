@@ -1,45 +1,45 @@
 ---
-title: "Financial Statement"
-linkTitle: "Financial Statement"
+title: "Extrato"
+linkTitle: "Extrato"
 date: 2021-09-03T16:45:26-05:00
 type: docs
 Description: >
-  Learn more about the funds credited to your PayU account and their movements. In this section, you can also know the data available in this report.
+  Saiba mais sobre os fundos creditados em sua conta PayU e seus movimentos. Nesta seção, você também pode consultar os dados disponíveis neste relatório.
 weight: 30
 ---
 
 {{% alert title="Observação" color="info"%}}
-The Relatório de Vendas displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows ou columns in the report, contact your sales representative.
+Os relatórios no painel do comércio são limitado a 20 mil linhas para exibição e download. Se você precisar exibir mais linhas ou colunas no relatório, entre em contato com seu representante de vendas.
 {{% /alert %}}
 
-## What is the Financial Statement?
-The Financial Statement helps you identify the movements (Commission discounts, transfer fees, reversions) of your PayU account. This report shows the summary of the account, with debits and credits made during the month e information of the available balance.
+## O que é o Extrato? {#what-is-the-financial-statement}
+O Extrato ajuda a identificar os movimentos (descontos de comissão, taxas de transferência, reembolsos) de sua conta PayU. Este relatório mostra o resumo da conta, com débitos e créditos realizados no mês, e informações do saldo disponível.
 
-Furthermore, the Financial Statement helps the accounting area to reconcile all trade e-commerce operations.
+Além disso, o the Extrato ajuda a área contábil a conciliar todas as operações de comércio eletrônico.
 
-## Permission required
-To have access to this module, you need to have a profile with the following permissions enabled
+## Permissão necessária {#permission-required}
+Para ter acesso a este módulo, você precisa ter um perfil com as seguintes permissões habilitadas
 
-* _Movements_ > _Statement_	
-* _Movements_ > _Download CSV report_<br>This permission must be enabled to let you download the report.
+* _Declarações_ > _Relatório de Balanço_	
+* _Declarações_ > _Baixar o relatório CSV_<br>Essa permissão deve ser habilitada para que você baixe o relatório.
 
-Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
+Consulte [Perfis e permissões]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 
-## Consult the report
-Log into your PayU account. In the left menu, expand the _**Transações**_ menu and select _**Financial Statement**_. By default, the report shows the operation information<sup>\*</sup> of the last 30 days, from the most recent to the oldest. 
+## Consulte o relatório {#consult-the-report}
+Faça login em sua conta PayU. No menu esquerdo, expanda o menu _**Transações**_ e selecione _**Extrato**_. Por padrão, o relatório mostra as informações de operação<sup>\*</sup> dos últimos 30 dias, do mais recente ao mais antigo. 
 
-<sup>*</sup>_Limited to top 20 thousand records._
+<sup>*</sup>_Limitado aos 20 mil registros principais._
 
 ![PrintScreen](/assets/Reports/Reports_19.png)
 
-The **_Statements Balance_** section is divided in three parts as follows:
+The **_Balanço financeiro_** section is divided in three parts as follows:
 
-### General Balance
-The first part is the general balance where you can see the funds in your PayU account and a button to let you request a [transfer]({{< ref "Transfers.md" >}}) to your bank account.<br>The general balance, which is comprised of:
+### Saldo Geral {#general-balance}
+A primeira parte é o saldo geral, onde você pode ver os fundos em sua conta PayU, e um botão para permitir que você solicite uma [transferênca]({{< ref "Transfers.md" >}}) para sua conta bancária.<br>O saldo geral, que é composto por:
 
 * **Available balance**: the total funds received from your sales, after deducting the commission of PayU.
 * **Frozen balance**: the funds that are part of a [dispute]({{< ref "Disputes.md" >}}) in process ou an unapproved [refund]({{< ref "Refunds.md" >}}) requested by your customers.
-* **Total balance**: the money you can transfer to your bank account. It consists of the **Available balance** minus the **Frozen balance**.
+* **Total balance**: the money you can transfer to your bank account. It consists of the **Available balance** plus the **Frozen balance**.
 
 ![PrintScreen](/assets/Reports/Reports_20.png)
 
@@ -61,7 +61,7 @@ In the last part below the charts, you find a table with the credit and debit in
 
 ![PrintScreen](/assets/Reports/Reports_22.png)
 
-The report has the following columns:
+O relatório tem as seguintes colunas:
 
 | Coluna              | Descrição                                                                                         |
 |---------------------|-----------------------------------------------------------------------------------------------------|
@@ -76,25 +76,25 @@ Click <img src="/assets/Reports/Reports_25.png" width="1.5%"/> next to _**Value*
 ![PrintScreen](/assets/Reports/Reports_26.png)
 {{% /alert %}}
 
-## Filter the report
+## Filtrar o relatório {##filter-the-report}
 You can use the search bar above the graph ou the calendar to set filters. You can filter by _**Tipo of Operation**_, _**Sale ou Transfer ID**_, _**Reference**_<sup>\*</sup>, ou _**Payment method type**_<sup>\*</sup>.
 
 <sup>\*</sup> _These filters are displayed when the selected **Tipo of Operation** is **Sale**, **Reversion**, ou **Chargeback**_.
 
-To set a filter, click the _**Filter your search**_ field at the top of the sales made chart.
+Para definir um filtro, clique no campo _**Filter your search**_ field at the top of the sales made chart.
 
 <img src="/assets/Reports/Reports_27.png" alt="PrintScreen" width="60%"/><br>
 
-Configure the values for the filters and click _**Search**_. Once you click it, the filter table shows the operations that meet the selected criteria.
+Configure os valores para os filtros e clique em _**Search**_. Once you click it, the filter table shows the operations that meet the selected criteria.
 
 Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner.
 
 <img src="/assets/Reports/Reports_28.png" alt="PrintScreen" width="60%"/><br>
 
-The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.<br>To see the information of a given date, set it for both start and end date.
+O intervalo de datas deste filtro é três (3) meses antes da data de término. Se você exceder esse intervalo, o relatório exibirá as informações de três (3) meses após a data de início.<br>Para ver as informações de uma determinada data, defina a mesma para a data de início e de término.
 
-## Download the report
-To download the report, click the _**Download**_ button located at the top ou at the bottom of the report table.
+## Baixar o relatório {#download-the-report}
+Para baixar o relatório, clique no botão _**Baixar**_ localizado na parte superior ou inferior da tabela do relatório.
 
 ![PrintScreen](/assets/Reports/Reports_29.png)
 
@@ -103,21 +103,21 @@ A pop up window appear where you can select the options to generate the report<s
 <img src="/assets/Reports/Reports_30.png" alt="PrintScreen" width="50%"/>
 
 {{% alert title="Observação" color="info"%}}
-<sup>\*</sup> If the file format does not meet the your needs, contact your sales executive to know more about the option to send files through SFTP and the templates that we have for this report.
+<sup>\*</sup> Caso o formato do arquivo não atenda às suas necessidades, entre em contato com o seu executivo de vendas para saber mais sobre a opção de envio de arquivos por SFTP e os modelos que temos para este relatório.
 {{% /alert %}}
 
-The report is automatically downloaded in an Excel (_.csv_) format. The name of the report uses the following formats:
-* **CSV with what you are seeing on the screen** option: _[DownloadDateInMillis]\_statement\_report\_[AccountId].csv_
-* **Balance from previous secure** option: _[AccountId]\_[DownloadDate]\_transactions.csv_<sup>\*</sup>
+O relatório é baixado automaticamente em formato Excel (_.csv_). O nome do relatório usa os seguintes formatos:
+* **CSV with what you are seeing on the screen** option: _[DataDeDownloadEmMilis]\_statement\_report\_[AccountId].csv_
+* **Balance from previous secure** option: _[AccountId]\_[DataDeDownload]\_transactions.csv_<sup>\*</sup>
 
-<sup>\*</sup> _Download date in format **dd-mm-yy-hh-mm-ss**_
+<sup>\*</sup> _Data de download em formato **dd-mm-yy-hh-mm-ss**_
 
 <div style="display: flex;">
   <div style="float: left;width: 50%;text-align: center;margin: 10px;">
-    <a href="/assets/SampleReports/1632847567058_statement_report_546703.csv">Download an example of the generated file using the <i><b>CSV with what you are seeing on the screen</b></i> option.</a>
+    <a href="/assets/SampleReports/1632847567058_statement_report_546703.csv">Baixe um exemplo do arquivo gerado usando a opção <i><b>CSV with what you are seeing on the screen</b></i>.</a>
   </div>
   <div style="float: left;width: 50%;text-align: center;margin: 10px;">
-    <a href="/assets/SampleReports/546703_28-09-2021-11-48-07.285_transactions.xls">Download an example of the generated file using the <i><b>Balance from previous secure</b></i> option.</a>
+    <a href="/assets/SampleReports/546703_28-09-2021-11-48-07.285_transactions.xls">Baixe um exemplo do arquivo gerado usando a opção <i><b>Balance from previous secure</b></i>.</a>
   </div>
 </div>
 <br>
@@ -127,7 +127,7 @@ In the downloaded report, you can validate all the credits and debits of your ac
 ![PrintScreen](/assets/Reports/Reports_31.png)
 _PayU commissions and taxes appear in the invoice_
 
-To reconcile the information with the [sales report]({{< ref "Sales-report.md" >}}), você pode usar the _**ReferenceCode**_ variable which appears in brackets in the transaction.
+To reconcile the information with the [sales report]({{< ref "Sales-report.md" >}}), você pode usar o _**ReferenceCode**_ variable which appears in brackets in the transaction.
 
 ![PrintScreen](/assets/Reports/Reports_32.png)
 
@@ -158,5 +158,5 @@ In the generated report you find the following concepts.
 <sup>\*</sup> _Applies only to transactions with credit card._
 
 {{% alert title="Observação" color="info"%}}
-The generated report is stored during 90 days in the [My downloaded reports]({{< ref "Reports.md#my-downloaded-reports" >}}) section.
+O relatório gerado é armazenado durante 90 dias na seção [Meus relatórios baixados]({{< ref "Reports.md#my-downloaded-reports" >}}).
 {{% /alert %}}

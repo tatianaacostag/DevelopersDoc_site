@@ -3,7 +3,7 @@ title: "Implementar na produção"
 linkTitle: "Implementar na produção"
 date: 2021-04-07T08:24:15-05:00
 Description: >
-  Depois de realizar todos os testes do sistema e verificar se tudo está funcionando corretamente, você pode mudar para o servidor de produção, onde as transações reais são processadas.
+ Depois de realizar todos os testes do sistema e verificar se tudo está funcionando corretamente, você pode mudar para o servidor de produção, onde as transações reais são processadas.
 weight: 50
 ---
 

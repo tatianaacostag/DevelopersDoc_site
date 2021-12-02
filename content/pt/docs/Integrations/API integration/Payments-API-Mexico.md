@@ -26,13 +26,13 @@ A API de pagamentos inclui os seguintes métodos:
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
-To confirm the status of a transaction, você pode usar one of the following options:
+Para confirmar o status de uma transação, você pode usar one of the following options:
 * Navegue até a URL definida na variável `transaction.notifyUrl` ou na opção _**URL de confirmação**_ localizada no Módulo PayU em _**Configuração**_ > _**Configuração técnica**_.
 * Use o [API ou SDK de Consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
 ## Enviar transação com cartão de crédito ou débito {#submit-transaction-with-credit-or-debit-card}
-Este método permite processar os pagamentos efetuados pelos seus clientes com cartões de crédito ou débito. Para a Mexico, você pode executar os fluxos de duas etapas, você pode executar os fluxos de duas etapas (**Autorização**, **Captura**) e fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
+Este método permite processar os pagamentos efetuados pelos seus clientes com cartões de crédito ou débito. Para o México, você pode executar os fluxos de duas etapas, você pode executar os fluxos de duas etapas (**Autorização**, **Captura**) e fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Observação" color="info"%}}
 Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
@@ -172,7 +172,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 * Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. Depois que esse recurso for habilitado para você, envie no pedido a variável `creditCard.processWithoutCvv2` como true e remova a variável `creditCard.securityCode`.
 
 ### Autorização {#authorization}
-Use este método para executar a etapa **Autorização** step of a two-step flow using Mastercard ou Visa. Nesta etapa, você autoriza o pagamento, mas o valor não é debitado até você [capturar]({{< ref "#capture" >}}) os fundos.<br>A seguir estão os corpos de pedido e resposta para este tipo de transação.
+Use este método para executar a etapa **Autorização** de um fluxo de duas etapas usando Mastercard ou Visa. Nesta etapa, você autoriza o pagamento, mas o valor não é debitado até você [capturar]({{< ref "#capture" >}}) os fundos.<br>A seguir estão os corpos de pedido e resposta para este tipo de transação.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -444,7 +444,7 @@ Exemplo resposta:
 {{< /tabs >}}
 
 ### Captura {#capture}
-Use este método para executar a etapa **Captura** step of a two-step flow for Mastercard and Visa. Nesta etapa, você captura os fundos [Autorizados]({{< ref "#authorization" >}}) anteriormente para transferi-los para sua conta PayU.
+Use este método para executar a etapa **Captura** de um fluxo de duas etapas usando Mastercard e Visa. Nesta etapa, você captura os fundos [Autorizados]({{< ref "#authorization" >}}) anteriormente para transferi-los para sua conta PayU.
 
 #### Observações {#considerations-1}
 Leve em conta as seguintes informações para captura.
@@ -1739,7 +1739,7 @@ Este método permite processar pagamentos de seus clientes usando referências d
    - **REFERENCE**: referência interna de pagamento gerada pelo PayU.
    - **EXPIRATION_DATE**: prazo máximo para o pagador fazer o pagamento.
    - **BAR_CODE**: código de barras que permite ao pagador efetuar o pagamento. 
-   - **URL_PAYMENT_RECEIPT_HTML**: comprovante de pagamento em formato HTML. This is where you need to redirect the payment when the payer selects bank reference payment. 
+   - **URL_PAYMENT_RECEIPT_HTML**: comprovante de pagamento em formato HTML. É aqui que você precisa redirecionar o pagamento quando o pagador seleciona o pagamento de referência do banco. 
    - **URL_PAYMENT_RECEIPT_PDF**: comprovante de pagamento em formato PDF.
 
 ### Chamada API {#api-call-2}

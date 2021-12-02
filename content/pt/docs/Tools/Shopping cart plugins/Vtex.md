@@ -217,7 +217,7 @@ PSE (Colombian Bank transfer method) is not supported through this version of th
 {{% /alert %}}
 
 
-1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_) select the _**Payment conditions**_ tab and click the plus icon.
+1. In the Settings option (_**Transações**_ > _**Payments**_ > _**Settings**_) select the _**Payment conditions**_ tab and click the plus icon.
 
 ![PrintScreen](/assets/VTEX/VTEX_12.png)
 

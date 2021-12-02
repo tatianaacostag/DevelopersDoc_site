@@ -23,7 +23,7 @@ A API de pagamentos inclui os seguintes métodos:
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
-To confirm the status of a transaction, você pode usar one of the following options:
+Para confirmar o status de uma transação, você pode usar one of the following options:
 * Navegue até a URL definida na variável `transaction.notifyUrl` ou na opção _**URL de confirmação**_ localizada no Módulo PayU em _**Configuração**_ > _**Configuração técnica**_.
 * Use o [API ou SDK de Consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
@@ -149,7 +149,7 @@ Este método permite processar os pagamentos efetuados com cartão de crédito p
 * Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. Depois que esse recurso for habilitado para você, envie no pedido a variável `creditCard.processWithoutCvv2` como true e remova a variável `creditCard.securityCode`.
 
 ### Chamada API {#api-call}
-A seguir estão os exemplos de solicitação e resposta desta forma de pagamento.
+A seguir estão os exemplos de pedido e resposta desta forma de pagamento.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}

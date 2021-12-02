@@ -34,7 +34,7 @@ Puedes acceder desde el menú _**Cuentas**_ haciendo clic sobre la opción _**Mo
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo3-es.jpg)
 
-3. Al ejecutar la consulta, podrás ver un resumen en donde se indica la moneda, el saldo total y el saldo de reserva de la cuenta, además de mostrar de forma detallada todos los movimientos de ventas, comisiones, impuestos, liberaciones de saldo, reversiones, y demás información que está asociada a la cuenta consultada..
+3. Al ejecutar la consulta, podrás ver un resumen en donde se indica la moneda, el saldo total y el saldo de reserva de la cuenta, además de mostrar de forma detallada todos los movimientos de ventas, comisiones, impuestos, liberaciones de saldo, reversiones, y demás información que está asociada a la cuenta consultada.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/saldo4-es.jpg)
 

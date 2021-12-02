@@ -3,79 +3,79 @@ title: "Disputas"
 date: 2021-09-03T16:42:19-05:00
 type: docs
 Description: >
-  Learn how to manage the Dispute process requested by your customers. This includes, see the disputes created, provide the evidence to resolve a dispute ou refund the amount paid by the customer.
+  Aprenda a gerenciar o processo de disputa iniciados por seus clientes. Isso inclui ver as disputas gerados, fornecer as evidências para resolver uma disputa ou reembolsar o valor pago pelo cliente.
 weight: 40
 ---
 
-![Concepts](/assets/Disputes/Disputes_en2.png)
+![Concepts](/assets/Disputes/Disputes_pt.png)
 
 {{% alert title="Observação" color="info"%}}
-For introductory terms about a dispute refer to this [article]({{< ref "disputes.md" >}}).
+Para termos introdutórios sobre uma disputa, consulte este [artigo]({{< ref "disputes.md" >}}).
 {{% /alert %}}
 
-## Permission required
-To have access to this module, you need to have a profile with the following permission enabled:
+## Permissão necessária {#permission-required}
+Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permissão habilitada:
 
-* _Reports_ > _Refunds and disputes_
-* _Reports_ > _Resolve disputes with buyers (manage chargebacks)_
+* _Relatórios_ > _Reembolsos e disputas_
+* _Relatórios_ > _Resolver disputas com compradores (gerenciar chargeback)_
 
-Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
+Consulte [Perfis e permissões]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 
-## Why is it important to reply to a Dispute? 
-* The Merchant can generate mistrust with the client.
-* If you don't address the disputes, PayU takes the amount from your account.
-* The reservation fund could be higher by the risk area.
-* It damages the score of the PayU code facing the payment networks.
-* The disputed amount will be frozen until the dispute is solved.
+## Por que é importante responder a uma disputa? {#why-is-it-important-to-reply-to-a-dispute}
+* O comércio pode gerar desconfiança ao cliente.
+* Se você não resolver as disputas, PayU retirará o valor de sua conta.
+* O fundo de reserva pode ser maior pela área de risco.
+* Isso prejudica a pontuação do código PayU perante as redes de pagamento.
+* O valor em disputa ficará congelado até que ele seja resolvido.
 
-It is important to reply to a dispute by providing evidence before the deadline stipulated by the bank. After the deadline, it is not possible to upload the corresponding evidence for a dispute.
+É importante responder a uma disputa fornecendo provas antes do prazo estipulado pelo banco. Após o prazo, não é possível fazer o upload das provas correspondentes a uma disputa.
 
-For more information about the deadlines defined, refer to [máximo days to provide evidence]({{< ref "disputes.md#maximum-days-to-provide-evidence" >}}).
+Para obter mais informações sobre os prazos definidos, consulte [dias máximos para fornecer evidências]({{< ref "disputes.md#maximum-days-to-provide-evidence" >}}).
 
-## How to resolve disputes?
-A dispute begins when a buyer does not know a charge made to their credit card. Once the bank is notified, the formal process begins to determine the validity of the purchase.
+## Como resolver disputas? {#how-to-resolve-disputes}
+Uma disputa é iniciada quando um comprador desconhece uma cobrança feita em seu cartão de crédito. Assim que o banco é notificado, começa o processo formal para determinar a validade da compra.
 
-{{% alert title="Tip" color="info"%}}
-If you have the cardholder’s data, the best way to manage a dispute process is to contact them. If the reason for the dispute is just ignorance (the customer didn't recall the purchase or your commerce), you can ask them to call their bank to withdraw the complaint and so the dispute process is resolved in your favor.
+{{% alert title="Dica" color="info"%}}
+Se você tem os dados do titular do cartão, a melhor forma de gerenciar um processo de disputa é entrando em contato com ele. Se o motivo da disputa é simplesmente desconhecimento, você pode pedir ao titular do cartão que fale com seu banco para retirar a queixa e para que o processo de disputa se resolva a seu favor.
 {{% /alert %}}
 
-1. When we are notified by the bank that a dispute process has been launched, you are notified about that process. To configure the e-mail or the URL to receive dispute notifications, refer to [Technical configurations]({{< ref "technical-configuration.md#disputes" >}}).
+1. Quando somos notificados pelo banco de que um processo de disputa foi iniciado, você é notificado sobre esse processo. TPara configurar o e-mail ou URL para receber notificações de disputa, consulte [Configurações técnicas]({{< ref "technical-configuration.md#disputes" >}}).
 
-2. Log into your PayU account. In the left menu, expand the _**Transactions**_ menu and select _**Disputes**_.
+2. Faça login em sua conta PayU. No menu esquerdo, expanda o menu _**Transações**_ e selecione _**Disputas**_.
 
-![PrintScreen](/assets/Disputes/Disputes_02.png)
+![PrintScreen](/assets/Disputes/Disputes_02_pt.png)
 
-3. The _**Disputas**_ module opens, scroll down the page and locate the dispute you have opened. You can use the available filters to find your dispute if it is required.
+3. O módulo _**Disputas**_ será aberto. Role a página para baixo e localize a disputa que você abriu. Se necessário, você pode usar os filtros disponíveis para localizar sua disputa.
 
-![PrintScreen](/assets/Disputes/Disputes_03.png)
+![PrintScreen](/assets/Disputes/Disputes_03_pt.png)
 
-4. The order details appear at the right of the screen. Click _**Resolve dispute**_ at the end of the panel.
+4. Os detalhes da ordem aparecem à direita da tela. Clique _**Resolve um chargeback**_ no final do painel.
 
-<img src="/assets/Disputes/Disputes_04.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Disputes/Disputes_04_pt.png" alt="PrintScreen" width="60%"/><br>
 
-5. In the pop up window, you can find the details about why your customer request the dispute process and the dead line to provide evidence to resolve the dispute. Click the _**Attach file**_ link to upload all the evidence you have.
+5. Na janela pop-up, você encontrará os detalhes sobre o motivo pelo qual seu cliente solicitou o processo de disputa e o prazo para fornecer evidências para solucioná-lo. Clique no link _**Anexar arquivo**_ para fazer o upload de todas as evidências que você tem.
 
-<img src="/assets/Disputes/Disputes_05.png" alt="PrintScreen" width="60%"/>
+<img src="/assets/Disputes/Disputes_05_pt.png" alt="PrintScreen" width="60%"/>
 
 {{% alert title="Observação" color="info"%}}
-If you accept that the dispute is not a mistake, you can start a [Refund]({{< ref "Refunds-MP.md" >}}) process by clicking _**Or refund this value**_.
+Se você aceitar que a disputa não é um erro, você pode iniciar um processo de [Reembolso]({{< ref "Refunds-MP.md" >}}) clicando em _**Ou devolva o valor**_.
 {{% /alert %}}
 
-6. Upload the evidence files to resolve the dispute and click _**Save evidence**_. It is mandatory to save the evidence first before send it to review.<br>The files uploaded here should not be larger than 10MB and must be PDF files.
+6. Faça upload dos arquivos de evidências para resolver a disputa e clique em _**Salvar evidência**_. É obrigatório salvar a evidência antes de enviá-la para revisão.<br>Os arquivos a serem carregados na seção de evidências não devem ter tamanho superior a 10 MB e devem ser arquivos PDF.
 
-<img src="/assets/Disputes/Disputes2_06.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Disputes/Disputes_06_pt.png" alt="PrintScreen" width="60%"/><br>
 
-When finish, click _**Send for review**_.
+Quando terminar, clique em _**Enviar para revisão**_.
 
-7. A confirmation window appears informing that the evidence has been send. 
+7. Uma janela de confirmação aparecerá informando que a evidência foi enviada.
 
-<img src="/assets/Disputes/Disputes_07.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/Disputes/Disputes_07_pt.png" alt="PrintScreen" width="60%"/><br>
 
-8. At this point, we send the documents to the issuing bank ou the network that processed the transaction, from whom the resolution of the case depends.<br><br>
-The dispute case may result in won (no chargeback), Lost (chargeback) ou refunded. In the case of refunds, the trade is who makes the return to the buyer and the bank does not generate the chargeback. Consulte [dispute states]({{< ref "Disputes.md#dispute-states" >}}) to know all the states of a dispute.
+8. Nesse momento, enviamos os documentos ao banco emissor ou à rede que processou a transação, de quem depende a resolução do caso.<br><br>
+O caso de disputa pode resultar em ganho (sem estorno), perda (estorno) ou reembolso. No caso de devoluções, a loja é que faz a devolução ao comprador e o banco não gera o estorno. Consulte [estados de disputa]({{< ref "Disputes.md#dispute-states" >}}) para conhecer todos os estados de uma disputa.
 
 {{% alert title="Observação" color="info"%}}
-If you have activated [Anti-fraud Guarantee]({{< ref"Antifraud-Guarantee.md" >}}), when the chargeback is subject to be covered by the guarantee, PayU assumes the values debited from your account. In this case, the status of this dispute is _Chargeback_ (Lost) _With antifraud guarantee_. 
+Se você ativou [Garantia Antifraude]({{< ref"Antifraud-Guarantee.md" >}}), quando o estorno estiver sujeito à cobertura da garantia, o PayU assume os valores debitados de sua conta. Neste caso, o status desta disputa é _Contracargada_ (Perda) _Com garantia antifraude_. 
 {{% /alert %}}
 
-When the financial entity communicates the result of the dispute, the case is automatically updated in the Módulo PayU.
+Quando a entidade financeira comunica o resultado da disputa, o caso é atualizado automaticamente no Módulo PayU.

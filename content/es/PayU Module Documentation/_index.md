@@ -16,7 +16,7 @@ El módulo PayU es ideal para negocios que necesitan:
 
 * Tener control de su inventario y conocer las ventas aprobadas a través de PayU.
 * Tener la información más actualizada sobre los movimientos financieros en su cuenta.
-* Realizar cualquier solicitud de soporte o ayuda sobre su cuenta..
+* Realizar cualquier solicitud de soporte o ayuda sobre su cuenta.
 
 {{% alert title="Nota" color="info"%}}
 
@@ -83,7 +83,7 @@ _XYZ sistemas_ es una compañía legalmente constituida en Estados Unidos que of
 
 * El módulo PayU para _XYZ sistemas_ tiene un único comercio ya que están constituidos legalmente en Estados Unidos. Como _XYZ sistemas_ procesa en tres paises, este comercio cuenta con cuatro cuentas; dos para Colombia (una por cada línea de negocio), una para México y una para Perú.
 
-* _Tienda ABC_ tiene cuatro usuarios; **Usuario 3** puede acceder a todas las cuentas, mientras que los demás usuarios pueden acceder a su país asignado.
+* _XYZ sistemas_ tiene cuatro usuarios; **Usuario 3** puede acceder a todas las cuentas, mientras que los demás usuarios pueden acceder a su país asignado.
 
 {{% alert title="Nota" color="info"%}}
 

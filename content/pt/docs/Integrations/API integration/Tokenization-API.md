@@ -1,6 +1,6 @@
 ---
-title: "API de tokenização"
-linkTitle: "API de tokenização"
+title: "API de Tokenização"
+linkTitle: "API de Tokenização"
 date: 2021-06-24T10:31:30-05:00
 description: >
   API de tokenização permite armazenar com segurança os dados dos cartões de crédito de seus clientes por meio da criação de um token. Este token permite fazer cobranças regulares ou implementar o recurso de pagamento em 1 clique, seguindo os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard) para gerenciar dados de cartão de crédito.

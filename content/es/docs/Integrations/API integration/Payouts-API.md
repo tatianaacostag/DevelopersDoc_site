@@ -30,9 +30,9 @@ El API de Payouts incluye los siguientes métodos:
 * [Autenticación]({{< ref "#authentication" >}})
 * [Solicitar payout]({{< ref "#request-payout" >}})
 * [Cancelar solicitud de payout]({{< ref "#cancel-payout-request" >}})
-* [Crear o actualizar un WebHook]({{< ref "#create-or-update-a-transfershook" >}})
-* [Eliminar un WebHook]({{< ref "#delete-a-transfershook" >}})
-* [Consultar WebHooks]({{< ref "#query-transfershooks" >}})
+* [Crear o actualizar un WebHook]({{< ref "#create-or-update-a-webhook" >}})
+* [Eliminar un WebHook]({{< ref "#delete-a-webhook" >}})
+* [Consultar WebHooks]({{< ref "#query-webhooks" >}})
 
 ## Autenticación {#authentication}
 Sin importar el método que quieras invocar, el primer paso es autenticar tu cuenta utilizando las credenciales entregadas por PayU.

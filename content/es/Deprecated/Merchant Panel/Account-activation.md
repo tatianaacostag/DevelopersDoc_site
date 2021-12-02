@@ -40,7 +40,7 @@ Si la cuenta bancaria no pertenece al país en donde creaste tu cuenta PayU se d
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/completar_6-es.png)
 
-5. Recibirás un correo electrónico confirmándote que has enviado los documentos, adicionalmente te informaremos en cuanto tiempo te daremos una respuesta del trámite..
+5. Recibirás un correo electrónico confirmándote que has enviado los documentos, adicionalmente te informaremos en cuanto tiempo te daremos una respuesta del trámite.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/completar5-es.png)
 

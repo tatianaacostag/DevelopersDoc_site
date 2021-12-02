@@ -812,7 +812,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > order > language | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
 | transaction > order > notifyUrl | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No |
 | transaction > order > partnerId | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
-| transaction > order > signature | Alfanumérico | Max:255 | Firma asociada al formulario.. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
+| transaction > order > signature | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
 | transaction > order > shippingAddress |  |  | Dirección de envío. | No |
 | transaction > order > shippingAddress > street1 | Alfanumérico | Max:100 | Línea de dirección 1. | No |
 | transaction > order > shippingAddress > street2 | Alfanumérico | Max:100 | Línea de dirección 2. | No |

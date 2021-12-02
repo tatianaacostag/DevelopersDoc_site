@@ -1,30 +1,30 @@
 ---
-title: "Sell With PayU"
-linkTitle: "Sell With PayU"
+title: "Vender com PayU"
+linkTitle: "Vender com PayU"
 date: 2021-09-03T16:44:19-05:00
 type: docs
 Description: >
-  Learn how to create tools to make sells using the Módulo PayU without having a Web page.
+  Aprenda a criar ferramentas para vendas com o módulo PayU sem ter um site.
 weight: 10
 ---
-Currently, e-commerce it's no longer a taboo. Before, people used to think that selling online require a high technical knowledge and programming skills.
+Atualmente, o e-commerce deixou de ser tabu. Antes, as pessoas pensavam que vender online exigia um alto conhecimento técnico e habilidades de programação.
 
-Nevertheless, beyond the knowledge, the key is to have the best allies and, mainly, use the best strategies that allows the growth of your product.
+Porém, além do conhecimento, o fundamental é ter os melhores aliados e, principalmente, usar as melhores estratégias que possibilitem o crescimento do seu produto.
 
-PayU offers the best payment gateway to help your shop sell online even if you don't have a web page.
+PayU oferece o melhor portal de pagamentos para ajudar sua loja a vender online, mesmo que você não tenha um site.
 
-## How to sell using PayU?
-Through Módulo PayU, you have the tools to start selling online fast and easy, no matter if you don't have a web page. 
+## Como vender usando PayU? {#how-to-sell-using-payu}
+No Módulo PayU, você tem as ferramentas para começar a vender online de forma rápida e fácil, mesmo se não tiver um site.
 
-To sell with PayU, you just need an active account in the Módulo PayU and configure the tool to receive the payment.
+Para vender com PayU, basta ter uma conta ativa no Módulo PayU e configurar a ferramenta para receber pagamentos.
 
-## What tools are available?
-There are two options to create payments using the Módulo PayU:
+## Quais ferramentas estão disponíveis? {#what-tools-are-available}
+Existem duas opções para criar pagamentos usando o Módulo PayU:
 
-{{< overview/paymentrequests >}}
+{{< overview/paymentrequests_pt >}}
 
 {{% alert title="Observação" color="info"%}}
-Review [Integrações]({{< ref "integrations" >}}) if you already have a web page and you want to integrate with the PayU services.
+Consulte [Integrações]({{< ref "integrations" >}}) se você já tem site e quer integrar os serviços PayU.
 {{% /alert %}}
 
 

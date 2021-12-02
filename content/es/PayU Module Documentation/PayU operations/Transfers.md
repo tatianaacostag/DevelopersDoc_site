@@ -62,7 +62,8 @@ Tan pronto como la solicitud ha sido enviada con éxito, la transferencia está 
 Puedes automatizar las transferencias y solicitar el retiro dado un monto fijo o cada cierto tiempo.
 
 {{% alert title="Nota" color="info"%}}
-Al programar transferencias, debes tener fondos suficientes para el momento en que se ejecute la transferencia.
+* <img src="/assets/Brasil.png" width="20px"/> _**Programar transferencia**_ no está disponible para Brasil.
+* Al programar transferencias, debes tener fondos suficientes para el momento en que se ejecute la transferencia.
 {{% /alert %}}
 
 Para programar una transferencia, sigue estos pasos.

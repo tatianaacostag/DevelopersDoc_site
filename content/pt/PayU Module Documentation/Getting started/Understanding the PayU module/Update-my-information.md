@@ -1,138 +1,140 @@
 ---
-title: "Update my information"
-linkTitle: "Update my information"
+title: "Atualizar minhas informações"
+linkTitle: "Atualizar minhas informações"
 date: 2021-07-22T15:30:25-05:00
 type: docs
 Description: >
-   Learn how to change your password, update your user preferences, change the merchant's logo and request the change of your Bank information.
+   Saiba como alterar sua senha, atualizar suas preferências de usuário, alterar o logotipo da loja e solicitar a alteração de seus dados bancários.
 weight: 10
 tags: ["subtopic"]
 ---
 {{% alert title="Observação" color="info"%}}
-Once your account has been validated and activated, your contact, business e sales information cannot be updated using the Módulo PayU. If you need to update this information, contact sac@payu.com.
+Uma vez que sua conta tenha sido validada e ativada, suas informações de contato, negócios e vendas não podem ser atualizadas usando o módulo PayU. Se você precisar atualizar essas informações, entre em contato com sac@payu.com.
 {{% /alert %}}
 
-## Change password
-Follow these steps to change your current password.
+## Mudar senha {#change-password}
+Siga estas etapas para alterar sua senha atual.
 
-1. At the top right corner, click the **▾** symbol next to your e-mail address to display the available user settings.<br>Click _**My profile**_.
+1. No canto superior direito, clique no símbolo **▾** ao lado do seu endereço de e-mail para exibir as configurações de usuário disponíveis.<br>Clique em _**Meu perfil**_.
 
-![PrintScreen](/assets/UserPreferences/UserPreferences_01.png)
+![PrintScreen](/assets/UserPreferences/UserPreferences_01_pt.png)
 
-2. In the _**My profile**_ screen, click _**Change password**_.
+2. Na tela _**Meu perfil**_, clique em _**Mudar senha**_.
 
-![PrintScreen](/assets/UserPreferences/UserPreferences_02.png)
+![PrintScreen](/assets/UserPreferences/UserPreferences_02_pt.png)
 
-3. The _**Change password**_ panel appears. You must enter here the current password and enter the new password twice.
+3. O painel _**Mudar senha**_ aparece. Você deve inserir aqui a senha atual e a nova senha duas vezes.
 
-![PrintScreen](/assets/UserPreferences/UserPreferences_03.png)
+![PrintScreen](/assets/UserPreferences/UserPreferences_03_pt.png)
 
-4. Assim que terminar, clique em  _**Save changes**_ at the footer of the section. Caso contrário, click _**Discard changes**_ to close the _**Change password**_ panel and discard the change of your password.
+4. Assim que terminar, clique em _**Salvar alterações**_ no rodapé da seção. Para descartar a alteração de sua senha, clique em _**Descartar alterações**_ para fechar o painel _**Mudar senha**_.
 
-## Update your user preferences
-In this section, you can change the display settings of the information displayed in your module, such as the date format, time zone of your country, the currency format and the display language.
+## Atualize suas preferências de usuário {#update-your-user-preferences}
+Nesta seção, você pode alterar as configurações de visualização das informações exibidas em seu módulo, como formato de data, fuso horário de seu país, formato de moeda e idioma.
 
-To do this, click the **▾** symbol next to your e-mail address to display the available user settings. Depois clique em _**My profile**_.
+Para isso, clique no símbolo **▾** ao lado do seu endereço de e-mail para exibir as configurações de usuário disponíveis. Clique em _**Meu perfil**_.
 
-![PrintScreen](/assets/UserPreferences/UserPreferences_01.png)
+![PrintScreen](/assets/UserPreferences/UserPreferences_01_pt.png)
 
-In the _**My profile**_ screen, locate the _**Preferences**_ panel.
+Na tela _**Meu perfil**_ localize o painel _**Preferências**_.
 
-<img src="/assets/UserPreferences/UserPreferences_04.png" alt="PrintScreen" width="40%"/><br>
+<img src="/assets/UserPreferences/UserPreferences_04_pt.png" alt="PrintScreen" width="40%"/><br>
 
-At the top of the panel, you see an example of the current date and time of the time zone selected and displayed in the format your choose.
+Na parte superior do painel, há um exemplo da data e hora atuais do fuso selecionado no formato de sua escolha.
 
-### Date format
-Change the format in which you want to display the dates in your Módulo PayU.
+### Formato de data {#date-format}
+Altere o formato em que deseja exibir as datas em seu Módulo PayU.
 
-<img src="/assets/UserPreferences/UserPreferences_05.png" alt="PrintScreen" width="40%"/><br>
+<img src="/assets/UserPreferences/UserPreferences_05_pt.png" alt="PrintScreen" width="40%"/><br>
 
-You can use any of the following formats:
+Você pode usar qualquer um dos seguintes formatos:
 
-| Formato      | English Formato | Exemplo<br>_August 24, 2021_ |
-|-------------|----------------|------------------------------|
-| dd/mm/aaaa  | dd/mm/yyyy     | 24/08/2021                   |
-| mm/dd/aaaa  | mm/dd/yyyy     | 08/24/2021                   |
-| aaaa/mm/dd  | yyyy/mm/dd     | 2021/08/24                   |
-| aaaa/mmm/dd | yyyy/mmm/dd    | 2021/Aug/24                  |
-| dd-mm-aaaa  | dd-mm-yyyy     | 24-08-2021                   |
-| mm-dd-aaaa  | mm-dd-yyyy     | 08-24-2021                   |
-| aaaa-mm-dd  | yyyy-mm-dd     | 2021-08-24                   |
-| aaaa-mmm-dd | yyyy-mmm-dd    | 2021-Aug-24                  |
+| Formato     | Exemplo<br>_24 de agosto de 2021_ |
+|-------------|------------------------------|
+| dd/mm/aaaa  | 24/08/2021                   |
+| mm/dd/aaaa  | 08/24/2021                   |
+| aaaa/mm/dd  | 2021/08/24                   |
+| aaaa/mmm/dd | 2021/Ago/24                  |
+| dd-mm-aaaa  | 24-08-2021                   |
+| mm-dd-aaaa  | 08-24-2021                   |
+| aaaa-mm-dd  | 2021-08-24                   |
+| aaaa-mmm-dd | 2021-Ago-24                  |
 
-### Time Zone 
-Change the time zone of the country in which you want to display the transaction’s information.
+### Fuso horário {#time-zone}
+Altere o fuso horário do país no qual deseja exibir as informações da transação.
 
-<img src="/assets/UserPreferences/UserPreferences_06.png" alt="PrintScreen" width="40%"/>
+<img src="/assets/UserPreferences/UserPreferences_06_pt.png" alt="PrintScreen" width="40%"/>
 
-### Currency format
-Change the display format of the currency values shown in your Módulo PayU.
+### Formato de moeda {#currency-format}
+Altere o formato dos valores monetários mostrados em seu módulo PayU.
 
-<img src="/assets/UserPreferences/UserPreferences_07.png" alt="PrintScreen" width="40%"/>
+<img src="/assets/UserPreferences/UserPreferences_07_pt.png" alt="PrintScreen" width="40%"/>
 
-### Language
-Change the language of your Módulo PayU.
+### Idioma {#language}
+Altere o idioma do seu módulo PayU.
 
-<img src="/assets/UserPreferences/UserPreferences_08.png" alt="PrintScreen" width="40%"/>
+<img src="/assets/UserPreferences/UserPreferences_08_pt.png" alt="PrintScreen" width="40%"/>
 
 {{% alert title="Observação" color="info"%}}
-After changing any of the user settings, do not forget to click _**Save changes**_ button at the footer of the section to apply the changes.
+Depois de alterar qualquer uma das configurações do usuário, não se esqueça de clicar em _**Salvar alterações**_ no rodapé da seção.
 {{% /alert %}}
 
-## Change your logo
-Using the Módulo PayU, you can upload the logo of your merchant so it can be displayed in our Web checkout.
+## Mudar o seu logotipo {#change-your-logo}
+No módulo PayU, você pode fazer o upload do logotipo de sua loja para que apareça em nosso Web checkout. 
 
-![PrintScreen](/assets/Logo/Logo_01.png)
+![PrintScreen](/assets/Logo/Logo_01_pt.png)
 
-To upload ou update your logo, follow these steps.
+Para fazer upload ou atualizar seu logotipo, siga estas etapas.
 
-1. In the account options, expand the current account using the **▾** symbol. Then, select _**Your sale information**_.
+1. Nas opções de conta, expanda a conta atual usando o símbolo▾. Em seguida, selecione _**Dados de vendas**_.
 
-<img src="/assets/Logo/Logo_02.png" alt="PrintScreen" width="30%"/><br>
+<img src="/assets/Logo/Logo_02_pt.png" alt="PrintScreen" width="30%"/><br>
 
-2. In the _**Your sales information**_ window, find the _Merchant logo_ field.<br>If you have not uploaded a logo yet, click the _**Select your logo**_ link. Caso contrário, use the _**Change logo**_ link.
+2. Na janela _**Dados da suas vendas**_, encontre o campo _Merchant logo_.<br>Se você ainda não fez o upload de um logotipo, clique no link _**Escolha o seu logotipo**_. Caso contrário, use o link _**Mudar o logo**_.
 
-![PrintScreen](/assets/Logo/Logo_03.png)
-![PrintScreen](/assets/Logo/Logo_04.png)
+![PrintScreen](/assets/Logo/Logo_03_pt.png)
+![PrintScreen](/assets/Logo/Logo_04_pt.png)
 
-3. The upload panel appears, locate the image of your logo in your local machine. 
+3. O painel de upload aparecerá. Localize a imagem do seu logotipo em seu computador.
 
-4. The máximo size allowed for your logo is 350x90 pixels, if the selected image is bigger than this size, you can crop it using the upload panel. Furthermore, this panel provides options to zoom in ou rotate the image.<br>When finish, click _**Save**_.
+4. O tamanho máximo permitido para o seu logotipo é 350x90 pixels. Se a imagem selecionada for maior que esse tamanho, você pode recortá-la usando o painel de upload. Este painel também oferece opções para ampliar ou girar a imagem.<br>Quando terminar, clique _**Salvar**_.
 
-<img src="/assets/Logo/Logo_05.png" alt="PrintScreen" width="50%"/>
+<img src="/assets/Logo/Logo_05_pt.png" alt="PrintScreen" width="50%"/>
 
-## Request the change of your bank account 
-Once your account has been verified by our Risk team, you can request the update of your bank information. Due to security reasons, the update of bank information must be verified again as when you create the account.
+## Solicitar a alteração da sua conta bancária {#request-the-change-of-your-bank-account}
+Assim que sua conta for verificada por nossa equipe de riscos, você pode solicitar a atualização de suas informações bancárias. Por motivos de segurança, a atualização das informações bancárias deve ser verificada novamente, assim como quando você cria a conta.
 
-To request the update of your Bank account, expand _**Transfers**_ option at the left menu. Then, select _**Edit bank details**_.
+Para solicitar a atualização da sua conta bancária, expanda a opção _**Transferências**_ no menu esquerdo. Então, selecione _**Editar dados bancários**_.
 
-![PrintScreen](/assets/BankInformation/BankInformation_01.png)
+![PrintScreen](/assets/BankInformation/BankInformation_01_pt.png)
 
-The _**Bank information**_ option opens, click the _**Edit**_ link to enable the fields of the bank account.
+A opção _**Dados bancários**_ abre. Clique no link _**Editar**_ para habilitar os campos da conta bancária.
 
-![PrintScreen](/assets/BankInformation/BankInformation_02.png)
+![PrintScreen](/assets/BankInformation/BankInformation_02_pt.png)
 
-Provide the information related to your Bank Account such as: country, bank, account number, etc. 
+Forneça as informações relacionadas à sua conta bancária, como: país, banco, número da conta etc
 
-![PrintScreen](/assets/BankInformation/BankInformation_03.png)
+![PrintScreen](/assets/BankInformation/BankInformation_03_pt.png)
 
 {{% alert title="Considerations" color="info"%}}
-* The information available depends on the country of your account.
-* If the Bank account is foreign, you must provide the information of the **Intermediary bank** such as its name, the _ABA code_ e the _Swift code_.
+* As informações disponíveis dependem do país de sua conta.
+* Se a conta bancária for estrangeira, você deve fornecer as informações do **Banco intermediário** como nome, _Código ABA_ e _Código Swift_.
 {{% /alert %}}
 
-Along with the information you provide, you need to attach a certification issued by your bank to proof the veracity and authenticity of the information. 
+Junto com as informações fornecidas, você precisa anexar uma certificação<sup>\*</sup> emitida por seu banco para comprovar a veracidade e autenticidade das informações. 
 
-![PrintScreen](/assets/BankInformation/BankInformation_04.png)
+<sup>\*</sup> _Dependiendo de su país, es posible que deba adjuntar más documentos._
 
-When finish, click _**Save changes**_. When the information is submitted, you are prompted about the result of the operation.
+![PrintScreen](/assets/BankInformation/BankInformation_04_pt.png)
+
+Quando terminar, clique em _**Salvar alterações**_. Quando as informações são enviadas, você é questionado sobre o resultado da operação.
 
 <img src="/assets/BankInformation/BankInformation_05.png" alt="PrintScreen" width="50%"/><br>
 
-Furthermore, you receive an e-mail informing the request and providing a ticket number.
+Além disso, você recebe um e-mail informando a solicitação e fornecendo o número do ticket.
 
-The procedure to validate your account take up two dias úteis. In the meantime, the information you provide is loaded in the **_Bank account under analysis_** panel.
+O procedimento de validação da sua conta leva até dois dias úteis. Enquanto isso, as informações que você fornece são carregadas no painel **_Conta bancária em análise_**.
 
-![PrintScreen](/assets/BankInformation/BankInformation_06.png)
+![PrintScreen](/assets/BankInformation/BankInformation_06_pt.png)
 
-As soon as your bank account information has been validated by our Risk team, you can transfer to it the funds collected in your PayU account. While the new account is under validation, the transfers you make are sent to the former bank account.
+Assim que as informações de sua conta bancária forem validadas por nossa equipe de Risco, você poderá transferir para ela os fundos arrecadados em sua conta PayU. Enquanto a nova conta está em validação, as transferências que você faz são enviadas para a conta bancária anterior.

@@ -17,20 +17,20 @@ Con la Solicitud de pago, tienes los siguientes beneficios:
 ## ¿Cómo funciona la Solicitud de pago? {#how-does-the-payment-request-work}
 La Solicitud de pago siguen un flujo simple que le permite a tus clientes comprar tus productos o servicios utilizando la plataforma segura de PayU:
 
-1. Genera la Solicitud de pago a través del Módulo PayU. Para una Solicitud de pago básica, solo necesitas ingresar lo que vas a vender, su precio y decidir si tu pago incluye impuestos o fecha de expiración. Si quieres incluir información adicional como envío, referencia de pago, comentarios y más, puedes crear una Solicitud de pago personalizada.
+1. Genera la Solicitud de pago a través del Módulo PayU. Para una Solicitud de pago básica, solo necesitas ingresar lo que vas a vender, su precio y decidir si tu pago incluye impuestos<sup>\*</sup> o fecha de expiración. Si quieres incluir información adicional como envío, referencia de pago, comentarios y más, puedes crear una Solicitud de pago personalizada.<br><br><sup>\*</sup>_Disponible únicamente en Colombia_.
 
 2. Una vez haya sido generado el link, puedes compartirlo con tus clientes ya sea por correo electrónico, redes sociales o incluyéndolo en tu página web como un botón (si tienes una).
 
 3. Cuando tus clientes utilicen el link, serán redirigidos a la página de checkout de PayU, donde pueden pagar utilizando cualquiera de nuestros [métodos de pago disponibles]({{< ref "Select-your-payment-method.md" >}}).
 
-4. Cada vez que un cliente pague utilizando el link, recibes un mensaje de confirmación y el monto de la compra<sup>*</sup> se transfiere a tu cuenta PayU, donde puedes transferirla a tu cuenta bancaria.
-
-<sup>*</sup>_El valor transferido corresponde a la cantidad pagada por el cliente menos la tarifa de PayU._
+4. Cada vez que un cliente pague utilizando el link, recibes un mensaje de confirmación y el monto de la compra<sup>*</sup> se transfiere a tu cuenta PayU, donde puedes transferirla a tu cuenta bancaria.<br><br><sup>*</sup>_El valor transferido corresponde a la cantidad pagada por el cliente menos la tarifa de PayU._
 
 ## Crear Solicitudes de pago {#creating-payment-requests}
 De acuerdo con las necesidades de negocio, puedes crear dos tipos de Solicitudes de pago: Básica y Personalizada.
 
-Una _Solicitud de Pago Básica_ te permite crear un link solo con ingresar el nombre del producto y el precio; además, puedes decidir si necesitas incluir los impuestos o si deseas que el link expire en el futuro. La _Solicitud de Pago Personalizada_ es un link de pago con información adicional como los datos del envío, referencia de pago, página de respuesta, comentarios o acotación de los métodos de pago.
+Una _Solicitud de Pago Básica_ te permite crear un link solo con ingresar el nombre del producto y el precio; además, puedes decidir si necesitas incluir los impuestos<sup>\*</sup> o si deseas que el link expire en el futuro. La _Solicitud de Pago Personalizada_ es un link de pago con información adicional como los datos del envío, referencia de pago, página de respuesta, comentarios o acotación de los métodos de pago.
+
+<sup>\*</sup>_Disponible únicamente en Colombia_.
 
 ### Crear Solicitud de Pago Básica {#create-a-basic-payment-request}
 Sigue este procedimiento para crear una Solicitud de Pago básica y compartirla con tus clientes.
@@ -50,7 +50,7 @@ Sigue este procedimiento para crear una Solicitud de Pago básica y compartirla 
 
 <img src="/assets/PaymentRequest/PaymentRequest_03_es.png" alt="PrintScreen" width="60%"/><br>
 
-* **¿Cobras impuestos?**: selecciona si el precio del producto incluye impuestos. Si los incluye, selecciona el porcentaje o el monto de los impuestos.
+* **¿Cobras impuestos?**: selecciona si el precio del producto incluye impuestos. Si los incluye, selecciona el porcentaje o el monto de los impuestos. Esta opción está disponible únicamente en Colombia.
 
 <img src="/assets/PaymentRequest/PaymentRequest_04_es.png" alt="PrintScreen" width="60%"/><br>
 

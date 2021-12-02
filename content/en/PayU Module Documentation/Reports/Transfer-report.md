@@ -11,11 +11,15 @@ weight: 20
 Furthermore, if you have enabled the Payouts API, you can query the state of the payouts to third party requested. For more information, refer to [Payouts]({{< ref "Payouts.md" >}}).
 
 {{% alert title="Note" color="info"%}}
-<img src="/assets/Brasil.png" width="20px"/> The _**Transfers Report**_ has the same columns and features available for the _**Daily payouts**_ report (_**Transfers**_ > _**Daily payouts**_).
+<img src="/assets/Brasil.png" width="20px"/> For brazilian accounts, the _**Transfers Report**_ is found in the _**Daily payouts**_ option (_**Transfers**_ > _**Daily payouts**_).
 {{% /alert %}}
 
 ## Permission required
-To have access to this module, you need to have a profile with the _Transfers_ > _Review_ permission enabled.
+To have access to this module, you need to have a profile with the following permission enabled:
+* If your account is not brazilian: _Transfers_ > _Review_
+* If your account is brazilian: (Daily Payouts Brazil):
+  - _View_	
+  - _download.csv_
 
 Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
 
@@ -54,7 +58,9 @@ To download the report, click the _**Download**_ button located at the top or at
 
 ![PrintScreen](/assets/Reports/Reports_08.png)
 
-A progress bar appears at the top of the screen. Once the process is completed, the report is automatically downloaded in an Excel (_.csv_) format. The name of the report uses the format _**[DownloadDateInMillis]\_payment\_orders\_[AccountId].csv**_.
+A progress bar appears at the top of the screen. Once the process is completed, the report is automatically downloaded in an Excel (_.csv_) format. The name of the report uses the format:
+* If your account is not brazilian: _**[DownloadDateInMillis]\_payment\_orders\_[AccountId].csv**_.
+* If your account is brazilian: _**[DownloadDateInMillis]\_daily\_payment\_order\_[AccountId].csv**_.
 
 ![PrintScreen](/assets/Reports/Reports_09.png)
 

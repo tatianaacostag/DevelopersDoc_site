@@ -4,7 +4,7 @@ linkTitle: "Log In"
 date: 2021-09-28T13:38:28-05:00
 type: docs
 Description: >
-  Login to your PayU account to manage your sales, users, reports and make transfers.
+  Acesse sua conta PayU para gerenciar suas vendas, usuários, relatórios e fazer transferências.
 weight: 10
 nosidetoc: true
 tags: ["parenttopic"]
@@ -12,18 +12,18 @@ tags: ["parenttopic"]
 
 Follow the next steps to log in your PayU account.
 
-1. Go to www.payu.com. At the top right corner, you find the option to log in.<br>Alternativamente, você pode ir diretamente https://merchants.payulatam.com/.
+1. Acesse www.payu.com. No canto superior direito, você encontra a opção de fazer login.<br>Alternativamente, você pode ir diretamente https://merchants.payulatam.com/.
 
-![PrintScreen](/assets/Login1_en.png)
+![PrintScreen](/assets/Login1_pt.png)
 
-2. Log in to your PayU account by using the credentials we sent to your registered e-mail.
+2. Faça login em sua conta PayU usando as credenciais que enviamos para seu e-mail cadastrado.
 
-![PrintScreen](/assets/Login3_en.png)
+![PrintScreen](/assets/Login3_pt.png)
 
-3. If your user can access to more than one merchant, click it to access it. Caso contrário, you are redirected your merchant.
+3. Se o seu usuário puder acessar mais de um comércio, clique nele para acessar. Caso contrário, você será redirecionado para seu comércio.
 
-![PrintScreen](/assets/Login4_en.png)
+![PrintScreen](/assets/Login4_pt.png)
 
-4. As soon as you log in, você pode usar all the available options to manage your PayU account.
+4. Assim que você fizer login, você pode usar todas as opções disponíveis para administrar sua conta PayU.
 
-![PrintScreen](/assets/Login2_en.png)
+![PrintScreen](/assets/Login2_pt.png)

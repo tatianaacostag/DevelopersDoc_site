@@ -1,9 +1,9 @@
 ---
-title: "Server Status"
-linkTitle: "Server Status"
+title: "Status do servidor"
+linkTitle: "Status do servidor"
 date: 2021-03-29T16:49:29-05:00
 Description: >
-  Know the current status of PayU Latam
+  Verifique o status atual do PayU Latam
 weight: 50
 nosidetoc: true
 notopicssection: true

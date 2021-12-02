@@ -26,7 +26,7 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 * Reembolsos com casas decimais não são aceitos.
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 30 dias úteis.
 
-### Brasil
+### Brasil {#brazil}
 * O tempo máximo para enviar um cancelamento é de 7 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada.
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é:
    - 90 dias para transações com PIX ou processadas na Redecard .
@@ -44,7 +44,7 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 * Reembolsos parciais para transações parceladas são recebidos online, mas PayU os processa manualmente devido a restrições do adquirente.
 * O valor mínimo para enviar um reembolso é de 10 CLP.
 
-### Colômbia
+### Colômbia {#colombia}
 * Não há suporte para cancelamentos.
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é de dois anos.
 * O valor mínimo para envio do Reembolso é de 100 COP.
@@ -52,13 +52,13 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo, 30 dias úteis.
 * Reembolsos parciais não estão disponíveis para cartões de crédito internacionais.
 
-### México
+### México {#mexico}
 * O tempo mínimo para envio do cancelamento é de 10 minutos após a autorização e o máximo é de 30 dias. Se a transação foi feita com American Express, o prazo máximo é de 7 dias.<br>Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada automaticamente (auto-void).
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 180 dias. Se a transação foi processada pelo Bancomer, o prazo máximo é de 45 dias.
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no 30 dias úteis.
 * Reembolsos com casas decimais não são aceitos.
 
-### Panamá
+### Panamá {#panama}
 * Não há suporte para cancelamentos.
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 180 dias.
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 8 dias úteis.
@@ -146,7 +146,7 @@ Exemplo pedido:
          "id": "1400462414"
       },
       "type": "VOID",
-      "reason": "Reason for requesting the void da transação",
+      "reason": "Motivo do pedido de cancelamento da transação",
       "parentTransactionId": "c8ec8737-7645-4756-a991-6e60a99eb4d9"
    },
    "test": false
@@ -304,7 +304,7 @@ Exemplo pedido (Refund):
          "id": "1400462687"
       },
       "type": "REFUND",
-      "reason": "Reason for requesting the refund da transação",
+      "reason": "Motivo do pedido de reembolso da transação",
       "parentTransactionId": "60e2080d-08b1-4db2-a54f-8bcbe8271662"
    },
    "test": false
@@ -385,7 +385,7 @@ Exemplo pedido (Refund):
          <id>1400462689</id>
       </order>
       <type>REFUND</type>
-      <reason>Reason for requesting the refund da transação.</reason>
+      <reason>Motivo do pedido de reembolso da transação.</reason>
       <parentTransactionId>1d31ea44-0d8f-4e65-93ac-6be4347e5b40</parentTransactionId>
    </transaction>
    <isTest>false</isTest>
@@ -416,7 +416,7 @@ Exemplo pedido (Partial refund):
          <id>1400462691</id>
       </order>
       <type>REFUND</type>
-      <reason>Reason for requesting the refund da transação.</reason>
+      <reason>Motivo do pedido de reembolso da transação.</reason>
       <parentTransactionId>976d0411-8d0f-46e7-b5fe-515dad9a41ee</parentTransactionId>
    </transaction>
    <isTest>false</isTest>
@@ -452,7 +452,7 @@ Conforme mencionado anteriormente, a solicitação de reembolso segue um fluxo d
 
 <img src="/assets/Refunds/Refunds_en_02.png" alt="PrintScreen" width="50%"/><br>
 
-3. A coluna Estado mostra se o reembolso foi aprovado ou rejeitado; se o reembolso não foi aprovado, esta coluna mostra que o reembolso foi solicitado..
+3. A coluna Estado mostra se o reembolso foi aprovado ou rejeitado; se o reembolso não foi aprovado, esta coluna mostra que o reembolso foi solicitado.
 
 ![PrintScreen](/assets/Refunds/Refunds_en_03.png)
 

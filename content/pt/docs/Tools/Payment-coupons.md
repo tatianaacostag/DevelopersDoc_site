@@ -36,11 +36,11 @@ De acordo com as necessidades do seu negócio, você pode configurar as opções
 
 2. Expandir a opção **Venda com a PayU** em seguida selecione **Pagamento em dinheiro**.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_es.png)
 
 3. Configure as seguintes informações:
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_01.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_01_es.png)
 
 * **Quantos pagamentos você espera receber de cada cliente?**: selecione quantas vezes um cliente pode usar o cupom. Selecione _Exclusivo_ se você quiser que seu cliente pague uma vez. Caso contrário, selecione _Múltiplo_ para vários pagamentos enquanto o cupom estiver disponível. o valor padrão é _Múltiplo_.
 
@@ -56,7 +56,7 @@ Depois de configurar os cupons de pagamento, decida como deseja entregá-los ao 
 ### Enviar por e-mail {#send-via-e-mail}
 Esta opção permite enviar o cupom de pagamento por e-mail. Os clientes recebem o e-mail e imprimem o cupom para efetuar o pagamento à vista nos postos disponíveis.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_02.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_02_es.png)
 
 Para adicionar os clientes um por um, forneça as seguintes informações:
 
@@ -77,7 +77,7 @@ Seja qual for a opção selecionada, clique em **Avançar**.
 
 Uma nova janela aparecerá mostrando o resumo dos e-mails a serem enviados.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_03.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_03_es.png)
 
 Se você deseja editar as informações do emissor e do e-mail, clique no link Editar, exibido no canto superior direito de cada seção.
 
@@ -86,7 +86,7 @@ Finalmente, clique **Enviar e-mail**. Cada cliente recebe um e-mail com o cupom.
 ### Print the coupons {#print-the-coupons}
 Esta opção permite gerar cupons no formato PDF.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_04.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_04_es.png)
 
 Para adicionar os clientes um por um, forneça as seguintes informações:
 
@@ -106,7 +106,7 @@ Seja qual for a opção selecionada, clique em **Avançar**.
 
 Uma nova janela aparece mostrando o resumo do PDF a ser gerado.
 
-<img src="/assets/PaymentCoupons/PaymentCoupons_05.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentCoupons/PaymentCoupons_05_es.png" alt="PrintScreen" width="60%"/><br>
 
 Se você deseja editar as informações do emissor, clique no link Editar exibido no canto superior direito da seção do emissor.
 
@@ -115,7 +115,7 @@ Por fim, clique em **Gerar cupons em PDF**. Um arquivo PDF é baixado, cada pág
 ### Gerar referências de pagamento {#generate-payment-references}
 Esta opção permite gerar um arquivo Excel com os cupons solicitados.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_06.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_06_es.png)
 
 Para adicionar os clientes um por um, forneça as seguintes informações:
 
@@ -135,7 +135,7 @@ Seja qual for a opção selecionada, clique em **Gerar referências no Excel**.
 
 O download começa imediatamente. Além disso, uma nova janela aparece mostrando o número de referências geradas. Nesta janela, você também pode enviar o arquivo Excel para quem precisar.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_07.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_07_es.png)
 
 ### Crie cartões de cobrança {#create-collection-cards}
 Esta opção permite gerar cartões com as informações necessárias para que seus clientes possam fazer pagamentos em dinheiro nos pontos de pagamento disponíveis sempre que necessário.
@@ -152,7 +152,7 @@ Os cartões de cobrança são cartões de plástico associados à sua conta PayU
 
 Uma vez gerados os cartões, entregue-os aos seus clientes e eles poderão pagar o valor em dinheiro que desejarem, sem prazo de validade. 
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_08.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_08_es.png)
 
 Para solicitar os cartões, você precisa fornecer as seguintes informações:
 
@@ -169,23 +169,23 @@ Esta ordem será debitada de sua conta PayU, e você deve ter saldo disponível.
 
 Clique _**Solicitar cartões**_ para continuar. Uma janela de confirmação aparece para permitir que você valide as informações de sua solicitação.
 
-<img src="/assets/PaymentCoupons/PaymentCoupons_09.png" alt="PrintScreen" width="60%"/>
+<img src="/assets/PaymentCoupons/PaymentCoupons_09_es.png" alt="PrintScreen" width="60%"/>
 
 ## Consultar os cupons criados {#consult-the-created-coupons}
 Depois de criar cupons ou cartões de cobrança, você pode consultar suas informações para ver os pagamentos recebidos, habilitar, desabilitar ou baixar o cupom ou cartão.
 
 1. No Módulo PayU, expanda a opção **Venda com a Payu** e selecione **Ver os links criados**.
 
-<img src="/assets/PaymentCoupons/PaymentCoupons_10.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentCoupons/PaymentCoupons_10_es.png" alt="PrintScreen" width="60%"/><br>
 
 2. Selecione _**Link de Cobrança**_ ou _**Cobrança em dinheiro**_  cobrança de acordo com suas necessidades.
 
 3. Você pode usar a opção de filtro Avançado para encontrar uma série específica de cupons.
 
-<img src="/assets/PaymentCoupons/PaymentCoupons_11.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/PaymentCoupons/PaymentCoupons_11_es.png" alt="PrintScreen" width="60%"/><br>
 
 4. Cada cupom tem opções para ativar/desativar ou baixar o cupom. Depois que o cupom é desativado, ele não pode receber mais pagamentos.<br>
 Encontre essas opções no menu de três pontos no _**status**_ coluna.
 
-![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_12.png)
+![PrintScreen](/assets/PaymentCoupons/PaymentCoupons_12_es.png)
 

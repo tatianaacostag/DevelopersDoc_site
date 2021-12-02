@@ -1,26 +1,26 @@
 ---
-title: "Password Recovery"
-linkTitle: "Password Recovery"
+title: "Recuperação de senha"
+linkTitle: "Recuperação de senha"
 date: 2021-07-22T15:30:03-05:00
 type: docs
 Description: >
-  Recover your password if you have lost it.
+  Recupere sua senha se você a perdeu .
 weight: 20
 nosidetoc: true
 ---
 
-To recover your password, click the respective link under the _**Login**_ button.
+Para recuperar sua senha, clique no link do botão _**Entrar**_.
 
-<img src="/assets/ForgotPass_en_1.png" alt="PrintScreen" width="40%"/><br>
+<img src="/assets/ForgotPass_pt_1.png" alt="PrintScreen" width="40%"/><br>
 
-Provide the e-mail of your account and perform the validation of the reCAPTCHA.
+Forneça o e-mail da sua conta e faça a validação do reCAPTCHA.
 
-<img src="/assets/ForgotPass_en_2.png" alt="PrintScreen" width="40%"/><br>
+<img src="/assets/ForgotPass_pt_2.png" alt="PrintScreen" width="40%"/><br>
 
-Click _**Recover password**_. If your e-mail address is registered, you receive an e-mail with the password recovery URL. Check your spam box if you haven't receive the e-mail yet.
+Clique em _**Recuperar senha**_. Se o seu endereço de e-mail estiver cadastrado, você receberá um e-mail com a URL de recuperação de senha. Verifique sua caixa de spam se você ainda não recebeu o e-mail.
 
-<img src="/assets/ForgotPass_en_3.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/ForgotPass_pt_3.png" alt="PrintScreen" width="50%"/><br>
 
-Click _**Reset password**_. A new browser window opens, provide your new password twice and click _**Set password**_. 
+Clique em _**Redefinir senha**_. Uma nova janela do navegador será aberta, forneça sua nova senha duas vezes e clique em _**Definir senha**_.
 
-<img src="/assets/ForgotPass_en_4.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/ForgotPass_pt_4.png" alt="PrintScreen" width="50%"/><br>

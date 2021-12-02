@@ -14,11 +14,11 @@ For transactions in Colombia paid with credit cards, the intermediary financial 
 {{% alert title="Observação" color="info"%}}
 To have access to this module, you need to have a profile with the permission _Colombian certificates_ > _View withhodlings_ enabled.
 
-Consulte [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
+Consulte [Perfis e permissões]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 {{% /alert %}}
 
 ## Generate Withholding Certificate
-1. Log into your PayU account. In the left menu, expand the _**Transações**_ menu and select _**Withholding certificate**_.
+1. Faça login em sua conta PayU. No menu esquerdo, expanda o menu _**Transações**_ e selecione _**Certificado de retenção**_.
 
 ![PrintScreen](/assets/WithholdingCertificate/WithholdingCertificate_01.png)
 
