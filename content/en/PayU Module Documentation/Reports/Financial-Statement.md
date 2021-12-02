@@ -9,7 +9,7 @@ weight: 30
 ---
 
 {{% alert title="Note" color="info"%}}
-The Sales Report displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows or columns in the report, contact your sales representative.
+The reports displayed in the merchant panel are limited to **20 thousand** rows for both displaying and downloading. If you need display more rows or columns in the report, contact your sales representative.
 {{% /alert %}}
 
 ## What is the Financial Statement?
@@ -37,9 +37,9 @@ The **_Statements Balance_** section is divided in three parts as follows:
 ### General Balance
 The first part is the general balance where you can see the funds in your PayU account and a button to let you request a [transfer]({{< ref "Transfers.md" >}}) to your bank account.<br>The general balance, which is comprised of:
 
-* **Available balance**: the total funds received from your sales, after deducting the commission of PayU.
+* **Available balance**: the money you can transfer to your bank account.
 * **Frozen balance**: the funds that are part of a [dispute]({{< ref "Disputes.md" >}}) in process or an unapproved [refund]({{< ref "Refunds.md" >}}) requested by your customers.
-* **Total balance**: the money you can transfer to your bank account. It consists of the **Available balance** minus the **Frozen balance**.
+* **Total balance**: the total funds received from your sales, after deducting the commission of PayU. It consists of the **Available balance** plus the **Frozen balance**.
 
 ![PrintScreen](/assets/Reports/Reports_20.png)
 

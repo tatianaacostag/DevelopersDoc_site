@@ -17,20 +17,20 @@ With the Payment Request, you have the following benefits:
 ## How does the Payment request work?
 The Payment request follows a simple flow to let your customers buy your products or services using the secure PayU platform:
 
-1. Generate the Payment request through the PayU module. For a basic payment request, you only need to provide what you want to sell, its price, and decide whether your payment includes taxes or an expiration date. If you want to include additional information such as shipping, payment reference, comments, and more, you can create a Custom payment request.
+1. Generate the Payment request through the PayU module. For a basic payment request, you only need to provide what you want to sell, its price, and decide whether your payment includes taxes<sup>\*</sup> or an expiration date. If you want to include additional information such as shipping, payment reference, comments, and more, you can create a Custom payment request.<br><br><sup>\*</sup>_Only available in Colombia_.
 
 2. Once the link has been generated, you can share it with your customers either by e-mail, posting the link on social networks, or including this link as a button in your website (if you have one).
 
 3. When your customers use the link, they are redirected to the PayU's checkout page, where they can pay using any of the [available payment methods]({{< ref "Select-your-payment-method.md" >}}).
 
-4. Every time a customer pays using the link, you receive a confirmation message and the amount of the purchase<sup>*</sup> is transferred to your PayU account, where you can transfer it to your bank account.
-
-<sup>*</sup>_The value transferred corresponds to the amount paid by your customer minus the PayU fee._
+4. Every time a customer pays using the link, you receive a confirmation message and the amount of the purchase<sup>\*</sup> is transferred to your PayU account, where you can transfer it to your bank account.<br><br><sup>\*</sup>_The value transferred corresponds to the amount paid by your customer minus the PayU fee._
 
 ## Creating payment requests
 According to your business needs, you can create two types of Payment requests: Basic and Custom.
 
-A _Basic Payment Request_ lets you create a link just by providing the product's name and price; furthermore, you can decide whether you need to include taxes or whether the link may expire in the future. The _Custom Payment Request_ is a payment link with extra information such as shipping information, payment reference, response pages, comments or narrow down the available payment methods.
+A _Basic Payment Request_ lets you create a link just by providing the product's name and price; furthermore, you can decide whether you need to include taxes<sup>\*</sup> or whether the link may expire in the future. The _Custom Payment Request_ is a payment link with extra information such as shipping information, payment reference, response pages, comments or narrow down the available payment methods.
+
+<sup>\*</sup>_Only available in Colombia_.
 
 ### Create a Basic Payment Request
 Follow the next procedure to create a Basic Payment Request and share it with your customers.
@@ -50,7 +50,7 @@ Follow the next procedure to create a Basic Payment Request and share it with yo
 
 <img src="/assets/PaymentRequest/PaymentRequest_03.png" alt="PrintScreen" width="60%"/><br>
 
-* **Do you charge tax?**: choose if the product price includes taxes. If so, select the percentage or fixed amount of the taxes.
+* **Do you charge tax?**: choose if the product price includes taxes. If so, select the percentage or fixed amount of the taxes. This option is only available in Colombia.
 
 <img src="/assets/PaymentRequest/PaymentRequest_04.png" alt="PrintScreen" width="60%"/><br>
 

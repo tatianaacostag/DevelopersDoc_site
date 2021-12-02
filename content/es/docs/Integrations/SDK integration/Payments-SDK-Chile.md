@@ -586,7 +586,7 @@ This method lets you process the payments in cash of your customers. To integrat
 * You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the `BANK_URL` parameter in the response.
 
 ### Llamado del método
-Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación..
+Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.
 
 Map<String, String> parameters = new HashMap<String, String>();
 
@@ -688,7 +688,7 @@ This method lets you process the bank transfer payments of your customers. To in
 The variables above are sent via GET.
 
 ### Llamado del método
-Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación..
+Los siguientes ejemplos muestra cómo llamar los métodos para esta transacción de acuerdo con el lenguaje de programación.
 
 
 -->

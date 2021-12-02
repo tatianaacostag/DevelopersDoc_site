@@ -62,7 +62,8 @@ As soon as the request has been successfully sent the transfer is in _In progess
 You can automate the transfers and request the a withdrawal given a fixed amount or each certain time.
 
 {{% alert title="Note" color="info"%}}
-When scheduling transfers, you must have the enough funds by the time when the transfer is executed.
+* <img src="/assets/Brasil.png" width="20px"/> _**Schedule transfer**_ is not available for Brazil.
+* When scheduling transfers, you must have the enough funds by the time when the transfer is executed.
 {{% /alert %}}
 
 To schedule a transfer, follow these steps.

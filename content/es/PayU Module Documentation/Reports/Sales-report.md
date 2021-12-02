@@ -22,7 +22,7 @@ Ingresa a tu cuenta PayU. En el menú de la izquierda, expande el menú _**Trans
 
 ![PrintScreen](/assets/Refunds/Refunds_es_04.png)
 
-En el reporte, puedes ver un cuadro de filtro y la lista de tus últimas ventas. De forma predeterminada, el reporte muestra la información de ventas <sup>\*</sup> de los últimos siete días, desde el más reciente al más antiguo.
+En el reporte, puedes ver un cuadro de filtro y la lista de tus últimas ventas. De forma predeterminada, el reporte muestra la información de ventas<sup>\*</sup> de los últimos siete días, desde el más reciente al más antiguo.
 
 <sup>*</sup>_Limitado a 20 mil registros._
 
@@ -101,7 +101,7 @@ Aparece una ventana emergente donde puedes seleccionar las opciones para generar
 <img src="/assets/Reports/Reports_18_es.png" alt="PrintScreen" width="50%"/>
 
 {{% alert title="Nota" color="info"%}}
-<sup>\*</sup> Si el formato del archivo no se ajusta a tus necesidades, comunícate con tu ejecutivo de ventas para conocer más sobre la opción de enviar archivos a través de SFTP y las plantillas que tenemos para este reporte..
+<sup>\*</sup> Si el formato del archivo no se ajusta a tus necesidades, comunícate con tu ejecutivo de ventas para conocer más sobre la opción de enviar archivos a través de SFTP y las plantillas que tenemos para este reporte.
 {{% /alert %}}
 
 El reporte se descarga automáticamente en formato de Excel (_.csv_). El nombre del reporte utiliza los siguientes formatos

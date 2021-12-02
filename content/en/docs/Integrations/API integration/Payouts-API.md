@@ -30,9 +30,9 @@ Payouts API includes the following methods:
 * [Authentication]({{< ref "#authentication" >}})
 * [Request payout]({{< ref "#request-payout" >}})
 * [Cancel payout request]({{< ref "#cancel-payout-request" >}})
-* [Create or update a WebHook]({{< ref "#create-or-update-a-transfershook" >}})
-* [Delete a WebHook]({{< ref "#delete-a-transfershook" >}})
-* [Query WebHooks]({{< ref "#query-transfershooks" >}})
+* [Create or update a WebHook]({{< ref "#create-or-update-a-webhook" >}})
+* [Delete a WebHook]({{< ref "#delete-a-webhook" >}})
+* [Query WebHooks]({{< ref "#query-webhooks" >}})
 
 ## Authentication
 The first step regardless of the method you want to request is to authenticate your account using the credentials provided by PayU.

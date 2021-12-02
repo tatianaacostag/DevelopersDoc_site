@@ -121,7 +121,9 @@ Ingresa la información relacionada a tu cuenta bancaria como: país, banco, nú
 * Si la cuenta bancaria es extranjera, debes ingresar la información del **Banco intermediario** como el nombre, el _código ABA_, y el _código Swift_.
 {{% /alert %}}
 
-Junto con la información que ingresas, necesitas adjuntar una certificación expedida por tu banco para probar la veracidad y autenticidad de la información.
+Junto con la información que ingresas, necesitas adjuntar una certificación<sup>\*</sup> expedida por tu banco para probar la veracidad y autenticidad de la información.
+
+<sup>\*</sup> _Dependiendo de tu país, es posible que debas adjuntar más documentos._
 
 ![PrintScreen](/assets/BankInformation/BankInformation_04_es.png)
 

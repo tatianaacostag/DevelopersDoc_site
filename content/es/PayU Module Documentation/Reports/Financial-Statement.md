@@ -21,7 +21,7 @@ Además, el Balance financiero ayuda al área contable a conciliar todas las ope
 Para tener acceso a este módulo, necesitas un perfil con el permiso following permissions enabled
 
 * _Movimientos_ > _Reporte de Balance_	
-* _Movimientos_ > _Descargar reporte CSV_<br>Este permiso debe estar habilitado para permitirle descargar el informe..
+* _Movimientos_ > _Descargar reporte CSV_<br>Este permiso debe estar habilitado para permitirle descargar el reporte.
 
 Consulta [Perfiles y Permisos]({{< ref"Profile-and-permissions-management.md" >}}) para más información.
 
@@ -37,9 +37,9 @@ La sección de **_Balance financiero_** está divida en tres partes:
 ### Saldo General {#general-balance}
 La primera parte es el saldo general donde puedes ver los fondos en tu cuenta PayU y un botón que te permite solicitar una [transferencia]({{< ref "Transfers.md" >}}) a tu cuenta bancaria.<br>El Saldo general se compone de:
 
-* **Saldo disponible**: los fondos totales recibidos de tus ventas, luego de descontar la comisión de PayU.
+* **Saldo disponible**: el dinero que puedes transferir a tu cuenta.
 * **Saldo congelado**: los fondos que hacen parte de una [disputa]({{< ref "Disputes.md" >}}) en proceso o un [reembolso]({{< ref "Refunds.md" >}}) no aprobado solicitado por tu cliente.
-* **Saldo total**: el dinero que puedes transferir a tu cuenta. Consiste del **Saldo disponible** menos **Saldo congelado**.
+* **Saldo total**: los fondos totales recibidos de tus ventas, luego de descontar la comisión de PayU. Consiste del **Saldo disponible** más el **Saldo congelado**.
 
 ![PrintScreen](/assets/Reports/Reports_20_es.png)
 
@@ -103,7 +103,7 @@ Aparece una ventana emergente donde puedes seleccionar las opciones para generar
 <img src="/assets/Reports/Reports_30_es.png" alt="PrintScreen" width="50%"/>
 
 {{% alert title="Nota" color="info"%}}
-<sup>\*</sup> Si el formato del archivo no se ajusta a tus necesidades, comunícate con tu ejecutivo de ventas para conocer más sobre la opción de enviar archivos a través de SFTP y las plantillas que tenemos para este reporte..
+<sup>\*</sup> Si el formato del archivo no se ajusta a tus necesidades, comunícate con tu ejecutivo de ventas para conocer más sobre la opción de enviar archivos a través de SFTP y las plantillas que tenemos para este reporte.
 {{% /alert %}}
 
 El reporte se descarga automáticamente en formato de Excel (_.csv_). El nombre del reporte utiliza los siguientes formatos
