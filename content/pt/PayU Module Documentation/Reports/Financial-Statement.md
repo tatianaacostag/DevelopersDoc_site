@@ -37,9 +37,9 @@ The **_Balanço financeiro_** section is divided in three parts as follows:
 ### Saldo Geral {#general-balance}
 A primeira parte é o saldo geral, onde você pode ver os fundos em sua conta PayU, e um botão para permitir que você solicite uma [transferênca]({{< ref "Transfers.md" >}}) para sua conta bancária.<br>O saldo geral, que é composto por:
 
-* **Available balance**: the total funds received from your sales, after deducting the commission of PayU.
-* **Frozen balance**: the funds that are part of a [dispute]({{< ref "Disputes.md" >}}) in process ou an unapproved [refund]({{< ref "Refunds.md" >}}) requested by your customers.
-* **Total balance**: the money you can transfer to your bank account. It consists of the **Available balance** plus the **Frozen balance**.
+* **Available balance**: the money you can transfer to your bank account.
+* **Frozen balance**: the funds that are part of a [dispute]({{< ref "Disputes.md" >}}) in process or an unapproved [refund]({{< ref "Refunds.md" >}}) requested by your customers.
+* **Total balance**: the total funds received from your sales, after deducting the commission of PayU. It consists of the **Available balance** plus the **Frozen balance**.
 
 ![PrintScreen](/assets/Reports/Reports_20.png)
 
