@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-peru.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-11-08T17:41:32-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-11-25T12:20:57-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de Pagos - Perú">
 <meta itemprop="description" content="El API de Pagos de Perú le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-11-08T17:41:32-05:00" />
+<meta itemprop="dateModified" content="2021-11-25T12:20:57-05:00" />
 <meta itemprop="wordCount" content="5584">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Pagos - Perú"/>
@@ -141,7 +141,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.316cbf927452ac595882797265126aea7b61287faa0a5d1043540e5374384256d68ddc455743cc7e408656dc90b5e457c5bfb4f06eee2ef126fbb31bc4cb63f3.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.1a23ec15a83894c6e203375727ffd8df289cd49f78be64641dab74de8bca98fb055af28d6ce3f905b525ecbb3d4171149ebdc08115068125ef46127f30cf689f.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1552,7 +1552,7 @@
 <ul>
 <li>Para pagos con tókenes de tarjetas de crédito, incluye los parámetros <code>transaction.creditCardTokenId</code> y <code>transaction.creditCard.securityCode</code> (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito . Para más información, consulta el <a href="../../../../es/docs/integrations/api-integration/tokenization-api.html">API de Tokenización</a>.</li>
 <li>Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable <code>creditCard.processWithoutCvv2</code> con valor true y elimina la variable <code>creditCard.securityCode</code>.</li>
-<li>En Perú, puedes seleccionar 0 o de 2 a 26 cuotas cuando pagas con tarjeta de crédito. Si seleccionas una (1) cuota, PayU envía cero (0) como valor por defecto.</li>
+<li>En Perú, puedes seleccionar 0 o de 2 a 36 cuotas cuando pagas con tarjeta de crédito. Si seleccionas una (1) cuota, PayU envía cero (0) como valor por defecto.</li>
 </ul>
 <h3 id="authorization">Autorización</h3>
 <p>Utiliza este método para realizar el paso de <strong>Autorización</strong> del flujo de dos pasos. En este paso, autorizas el pago pero el monto no se debita hasta que <a href="../../../../es/docs/integrations/api-integration/payments-api-peru.html#capture">captures</a> los fondos.</p>
@@ -3655,9 +3655,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-8 de noviembre de 2021:
+25 de noviembre de 2021:
 
- <b>Translations to Spanish (6ab0d355)</b>
+ <b>Changes for Disputesand transaltions to portuguese (811169db)</b>
 </div>
 </div>
 

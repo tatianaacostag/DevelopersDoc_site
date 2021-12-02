@@ -135,7 +135,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.316cbf927452ac595882797265126aea7b61287faa0a5d1043540e5374384256d68ddc455743cc7e408656dc90b5e457c5bfb4f06eee2ef126fbb31bc4cb63f3.json"
+  data-offline-search-index-json-src="../../offline-search-index.1a23ec15a83894c6e203375727ffd8df289cd49f78be64641dab74de8bca98fb055af28d6ce3f905b525ecbb3d4171149ebdc08115068125ef46127f30cf689f.json"
   data-offline-search-base-href="../../"
 >
 
@@ -420,9 +420,11 @@ var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
 var toc = document.getElementById("td-section-nav");
+// var content = document.getElementsByClassName("td-content")[0];
 
 // When the page loads, open the modal 
 window.onload = function() {
+  content.style.backgroundImage = "url('/assets/deprecated.png')";
   modal.style.display = "block";
   toc.style['pointer-events'] = 'none';
   toc.style.backgroundColor = "rgba(0,0,0,-0.6)";
@@ -431,14 +433,14 @@ window.onload = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-  toc.removeAttribute("style")
+  toc.removeAttribute("style");
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if ((event.target == modal) || (event.target.id == "td-sidebar-menu")) {
     modal.style.display = "none";
-    toc.removeAttribute("style")
+    toc.removeAttribute("style");
   }
 }
 </script>
@@ -501,9 +503,9 @@ window.onclick = function(event) {
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-22 de noviembre de 2021:
+23 de noviembre de 2021:
 
- <b>Fixes for deprecated content (8c329c87)</b>
+ <b>Translations in portuguese and some fixes (846c3ead)</b>
 </div>
 </div>
 

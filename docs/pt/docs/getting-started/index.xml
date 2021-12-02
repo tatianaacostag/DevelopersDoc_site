@@ -94,7 +94,7 @@ Para ativar sua conta, você deve:&lt;/p&gt;
         
         
         &lt;p&gt;Você pode utilizar os serviços de integração ou as ferramentas PayU de acordo com as necessidades do seu negócio&lt;/p&gt;
-&lt;h2 id=&#34;integrations&#34;&gt;Integrations&lt;/h2&gt;
+&lt;h2 id=&#34;integrations&#34;&gt;Integrações&lt;/h2&gt;
 &lt;p&gt;Implementar PayU com o modelo agregador ou gateway, usando seus próprios acordos financeiros ou os do PayU&lt;/p&gt;
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
@@ -1055,8 +1055,8 @@ Para ativar sua conta, você deve:&lt;/p&gt;
 &lt;li&gt;Para transações pendentes, envie o valor  &lt;strong&gt;PENDING&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;•	Para o número do cartão, é preciso inserir um número válido, correspondente à franquia enviada na solicitação. Você pode usar um gerador de cartão online para fins de teste ou usar um dos cartões mencionados anteriormente que estejam disponíveis para o seu país.&lt;/li&gt;
-&lt;li&gt;•	Para testar as transferências bancárias PSE (disponíveis na Colômbia) no ambiente PayU Sandbox, consulte o &lt;a href=&#34;../../../assets/pse-test-guide-v5-es.pdf&#34;&gt;Guia de teste PSE (PDF - em espanhol)&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Para o número do cartão, é preciso inserir um número válido, correspondente à franquia enviada na solicitação. Você pode usar um gerador de cartão online para fins de teste ou usar um dos cartões mencionados anteriormente que estejam disponíveis para o seu país.&lt;/li&gt;
+&lt;li&gt;Para testar as transferências bancárias PSE (disponíveis na Colômbia) no ambiente PayU Sandbox, consulte o &lt;a href=&#34;../../../assets/pse-test-guide-v5-es.pdf&#34;&gt;Guia de teste PSE (PDF - em espanhol)&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;importing-the-collection&#34;&gt;Como importar a coleção&lt;/h2&gt;
 &lt;p&gt;Clique no botão abaixo para importar nossa coleção no Postman (pode ser necessário atualizar a página se o botão não funcionar para você). Observe que criamos um novo ambiente cada vez que você importa a coleção.&lt;/p&gt;
@@ -1089,7 +1089,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;p&gt;Na coleção Postman, clique em &lt;em&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/em&gt; próximo ao nome do seu espaço de trabalho e localize o arquivo json baixado recentemente.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Quando terminar, clique em  &lt;em&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Quando terminar, clique em &lt;em&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Para alterar o valor de uma transação, atualize o valor para o  &lt;code&gt;tx_value_[país]&lt;/code&gt; de acordo com o país que você deseja testar.de acordo com o país que você deseja testar.&lt;/p&gt;
@@ -1161,7 +1161,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;test&lt;/td&gt;
-&lt;td&gt;Defina &lt;code&gt;0&lt;/code&gt; para transações processadas no ambiente de Produção.&lt;/td&gt;
+&lt;td&gt;Definir &lt;code&gt;0&lt;/code&gt; para transações processadas no ambiente de Produção.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;buyerEmail&lt;/td&gt;
@@ -1203,7 +1203,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;test&lt;/td&gt;
-&lt;td&gt;Defina &lt;code&gt;false&lt;/code&gt; para transações processadas no ambiente de Produção.&lt;/td&gt;
+&lt;td&gt;Definir &lt;code&gt;false&lt;/code&gt; para transações processadas no ambiente de Produção.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1238,7 +1238,7 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;test&lt;/td&gt;
-&lt;td&gt;Defina &lt;code&gt;false&lt;/code&gt; para transações processadas no ambiente de Produção.&lt;/td&gt;
+&lt;td&gt;Definir &lt;code&gt;false&lt;/code&gt; para transações processadas no ambiente de Produção.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1379,7 +1379,7 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;INVALID_RESPONSE_PARTIAL_APPROVAL&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Tipo de resposta inválido. A resposta da entidade é uma aprovação parcial e deve ser cancelada automaticamente pelo sistema.&lt;/td&gt;
+&lt;td&gt;Tipo de resposta inválido. A resposta da entidade é uma aprovação parcial e deve ser cancelada automaticamente (auto-void) pelo sistema.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;INSUFFICIENT_FUNDS&lt;/code&gt;&lt;/td&gt;
@@ -2352,7 +2352,7 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;State&lt;/th&gt;
+&lt;th&gt;Estado&lt;/th&gt;
 &lt;th&gt;Descrição&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -2502,7 +2502,7 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;td&gt;Colômbia&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;CEP&lt;/td&gt;
+&lt;td&gt;Código postal&lt;/td&gt;
 &lt;td&gt;Recibo de Pagamento Eletrônico&lt;/td&gt;
 &lt;td&gt;México&lt;/td&gt;
 &lt;/tr&gt;

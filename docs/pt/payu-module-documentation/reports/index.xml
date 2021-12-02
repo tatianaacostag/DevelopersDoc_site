@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PayU Latam – Reports</title>
+    <title>PayU Latam – Relatórios</title>
     <link>/pt/payu-module-documentation/reports.html</link>
-    <description>Recent content in Reports on PayU Latam</description>
+    <description>Recent content in Relatórios on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 03 Sep 2021 16:29:25 -0500</lastBuildDate>
     
@@ -15,7 +15,7 @@
     
     
     <item>
-      <title>PayU Module Documentation: Sales Report</title>
+      <title>PayU Module Documentation: Relatório de Vendas</title>
       <link>/pt/payu-module-documentation/reports/sales-report.html</link>
       <pubDate>Fri, 03 Sep 2021 16:45:07 -0500</pubDate>
       
@@ -27,19 +27,19 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20 thousand&lt;/strong&gt; rows for both displaying and downloading. If you need display more rows or columns in the report, contact your sales representative.
+O relatório de vendas exibido no painel do comércio está limitado a &lt;strong&gt;20 mil&lt;/strong&gt; linhas para exibição e download. Se você precisar exibir mais linhas ou colunas no relatório, entre em contato com seu representante de vendas.
 &lt;/div&gt;
 
-&lt;h2 id=&#34;permission-required&#34;&gt;Permission required&lt;/h2&gt;
-&lt;p&gt;To have access to this module, you need to have a profile with the &lt;em&gt;Reports&lt;/em&gt; &amp;gt; &lt;em&gt;Sales Report&lt;/em&gt; permission enabled.&lt;/p&gt;
-&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profiles and Permissions&lt;/a&gt; para obter mais informações.&lt;/p&gt;
-&lt;h2 id=&#34;consult-the-report&#34;&gt;Consult the report&lt;/h2&gt;
-&lt;p&gt;Log into your PayU account. In the left menu, expand the &lt;em&gt;&lt;strong&gt;Transactions&lt;/strong&gt;&lt;/em&gt; menu and select &lt;em&gt;&lt;strong&gt;Sales Report&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_en_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In the report, you can see a filter box, and the list of your latest sales. By default, the report shows the sales information&lt;sup&gt;*&lt;/sup&gt; of the last seven days, from the most recent to the oldest.&lt;/p&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Limited to top 20 thousand records.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_10.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The report has the following columns:&lt;/p&gt;
+&lt;h2 id=&#34;permission-required&#34;&gt;Permissão necessária&lt;/h2&gt;
+&lt;p&gt;Para ter acesso a este módulo, você precisa ter um perfil com permissão &lt;em&gt;Relatórios&lt;/em&gt; &amp;gt; &lt;em&gt;Relatório de Vendas&lt;/em&gt; habilitada.&lt;/p&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfis e permissões&lt;/a&gt; para obter mais informações.&lt;/p&gt;
+&lt;h2 id=&#34;consult-the-report&#34;&gt;Consulte o relatório&lt;/h2&gt;
+&lt;p&gt;Faça login em sua conta PayU. No menu esquerdo, expanda o menu &lt;em&gt;&lt;strong&gt;Transações&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Relatório de Vendas&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;No relatório, há uma caixa de filtro e a lista de suas vendas mais recentes. Por padrão, o relatório mostra as informações de vendas&lt;sup&gt;*&lt;/sup&gt; dos últimos sete dias, do mais recente ao mais antigo.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Limitado aos 20 mil registros principais.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_10_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;O relatório tem as seguintes colunas:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -49,28 +49,28 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Order&lt;/td&gt;
-&lt;td&gt;This column shows the identifier of the order along with the date of the sale.&lt;/td&gt;
+&lt;td&gt;Ordem&lt;/td&gt;
+&lt;td&gt;Esta coluna mostra o identificador da ordem e a data da venda.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Reference&lt;/td&gt;
-&lt;td&gt;This column shows the sale reference and the name of the product or service offered.&lt;/td&gt;
+&lt;td&gt;Referência&lt;/td&gt;
+&lt;td&gt;Esta coluna mostra a referência de venda e o nome do produto ou serviço oferecido.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Buyer&lt;/td&gt;
-&lt;td&gt;This column shows the name and the e-mail address of the person who preform the buy.&lt;/td&gt;
+&lt;td&gt;Comprador&lt;/td&gt;
+&lt;td&gt;Esta coluna mostra o nome e o endereço de e-mail da pessoa que realiza a compra.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Amount&lt;/td&gt;
-&lt;td&gt;Amount of the sale.&lt;/td&gt;
+&lt;td&gt;Valor&lt;/td&gt;
+&lt;td&gt;Valor da venda.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Payment method&lt;/td&gt;
-&lt;td&gt;Information of the payment method used by the buyer.&lt;/td&gt;
+&lt;td&gt;Meio de pagamento&lt;/td&gt;
+&lt;td&gt;Informação da forma de pagamento utilizada pelo comprador.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Status&lt;/td&gt;
-&lt;td&gt;Current status of the order.&lt;/td&gt;
+&lt;td&gt;Status atual da ordem.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -78,23 +78,23 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-If you need to display more information, contact your sales representative.
+Se você precisar exibir mais informações, entre em contato com seu representante de vendas.
 &lt;/div&gt;
 
-&lt;p&gt;Consulte &lt;a href=&#34;#transaction-details&#34;&gt;Order details&lt;/a&gt; to know all the transaction detail of the sale.&lt;/p&gt;
-&lt;h2 id=&#34;filter-the-report&#34;&gt;Filter the report&lt;/h2&gt;
-&lt;p&gt;You can use the search bar above the graph or the calendar to set filters. You can filter by &lt;em&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Order&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Buyer&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Amount&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/em&gt;, or &lt;em&gt;&lt;strong&gt;Payment method&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;To set a filter, click the &lt;em&gt;&lt;strong&gt;Filter my sales&lt;/strong&gt;&lt;/em&gt; field at the top of the report table.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Configure the values for the filters and click &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt;. Once you click it, the filter table shows the sales that meet the selected criteria.&lt;/p&gt;
-&lt;p&gt;Along with these filters, you can also set a time frame when the buyer performed the purchase using the dates filter at the top right corner.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_12.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;The date range of this filter is one (1) month before the end date. If you exceed this range, The report displays the information of one (1) month after the start date.&lt;br&gt;To see the information of a given date, set it for both start and end date.&lt;/p&gt;
-&lt;h2 id=&#34;transaction-details&#34;&gt;Transaction details&lt;/h2&gt;
-&lt;p&gt;You can review the transaction detail online. To do this, click the order you want to consult in the report table. The transaction details appears in the right panel.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_13.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;&lt;strong&gt;Transaction details&lt;/strong&gt;&lt;/em&gt; panel has the following sections:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_14.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;#transaction-details&#34;&gt;Detalhes da ordem&lt;/a&gt; para saber todos os detalhes da transação da venda.&lt;/p&gt;
+&lt;h2 id=&#34;filter-the-report&#34;&gt;Filtrar o relatório&lt;/h2&gt;
+&lt;p&gt;Você pode usar a barra de pesquisa acima do gráfico ou o calendário para definir filtros. Você pode filtrar por &lt;em&gt;&lt;strong&gt;Referência&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Ordem&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Comprador&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Valor&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/em&gt;, ou &lt;em&gt;&lt;strong&gt;Tipo de meio de pagamento&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Para definir um filtro, clique no campo &lt;em&gt;&lt;strong&gt;Filtrar minhas vendas&lt;/strong&gt;&lt;/em&gt; na parte superior da tabela do relatório.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_11_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Configure os valores para os filtros e clique em &lt;em&gt;&lt;strong&gt;Buscar&lt;/strong&gt;&lt;/em&gt;. Depois de clicar, a tabela do filtro mostra as vendas que atendem aos critérios selecionados.&lt;/p&gt;
+&lt;p&gt;Além desses filtros, você pode definir um período em que o comprador realizou a venda usando o filtro de datas no canto superior direito.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_12_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;O intervalo de datas deste filtro é um (1) mês antes da data de término. Se você exceder esse intervalo, o relatório exibirá as informações de um (1) mês após a data de início.&lt;br&gt;Para ver as informações de uma determinada data, defina a mesma para a data de início e de término.&lt;/p&gt;
+&lt;h2 id=&#34;transaction-details&#34;&gt;Detalhes da transação&lt;/h2&gt;
+&lt;p&gt;Você pode consultar os detalhes da transação online. Para fazer isso, clique na ordem que deseja consultar na tabela de relatórios. Os detalhes da transação aparecem no painel direito.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_13_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;O painel &lt;em&gt;&lt;strong&gt;Detalhes da transação&lt;/strong&gt;&lt;/em&gt; tem as seguintes seções:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_14_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -107,85 +107,85 @@ If you need to display more information, contact your sales representative.
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
-&lt;td&gt;Order info&lt;/td&gt;
-&lt;td&gt;This section shows the Order Id, its latest update date, its status along with the status description, and the sale reference.&lt;/td&gt;
+&lt;td&gt;Informação da ordem&lt;/td&gt;
+&lt;td&gt;Esta seção mostra o ID da ordem, sua última data de atualização, seu status, a descrição do status e a referência de venda.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
-&lt;td&gt;Product or service&lt;/td&gt;
-&lt;td&gt;Descrição of the product or service you provided in the sale.&lt;/td&gt;
+&lt;td&gt;Produto ou serviço&lt;/td&gt;
+&lt;td&gt;Descrição do produto ou serviço que você forneceu na venda&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
-&lt;td&gt;Payment method&lt;/td&gt;
-&lt;td&gt;Information of the Payment method used in the purchase. The information displayed in this section varies according to the payment method.&lt;br&gt;For pending cash payments, this section lets you see the payment receipt generated to the buyer.&lt;/td&gt;
+&lt;td&gt;Meio de pagamento&lt;/td&gt;
+&lt;td&gt;Informação do meio de pagamento utilizado na compra. As informações exibidas nesta seção variam de acordo com a forma de pagamento.&lt;br&gt;Para pagamentos em dinheiro pendentes, esta seção permite que você veja o recibo de pagamento gerado para o comprador.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;4&lt;/td&gt;
-&lt;td&gt;Values&lt;/td&gt;
-&lt;td&gt;This section shows the values involved in this transaction such as the &lt;em&gt;Value to charge (or charged)&lt;/em&gt;, &lt;em&gt;Pending value&lt;/em&gt;, &lt;em&gt;Refunded value&lt;/em&gt; (for refunds), &lt;em&gt;Expired value&lt;/em&gt; (for cash payments).&lt;/td&gt;
+&lt;td&gt;Valores&lt;/td&gt;
+&lt;td&gt;Esta seção mostra os valores envolvidos nesta transação, como o &lt;em&gt;Valor cobrado&lt;/em&gt;, &lt;em&gt;Valor pendente&lt;/em&gt;, &lt;em&gt;Valor reembolsado&lt;/em&gt; (para reembolsos), &lt;em&gt;Valor expirado&lt;/em&gt; (para pagamentos em dinheiro).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;5&lt;/td&gt;
-&lt;td&gt;Buyer info&lt;/td&gt;
-&lt;td&gt;Information of the person who performed the purchase.&lt;/td&gt;
+&lt;td&gt;Informações do comprador&lt;/td&gt;
+&lt;td&gt;Informações da pessoa que realizou a compra.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;6&lt;/td&gt;
-&lt;td&gt;Delivery info&lt;/td&gt;
-&lt;td&gt;Information of the delivery options.&lt;/td&gt;
+&lt;td&gt;Informações de entrega&lt;/td&gt;
+&lt;td&gt;Informações das opções de entrega.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;7&lt;/td&gt;
-&lt;td&gt;This purchase had&lt;/td&gt;
-&lt;td&gt;Transactions associated to this purchase. Click the &lt;strong&gt;▾&lt;/strong&gt; symbol to find the &lt;a href=&#34;#transaction-history&#34;&gt;transaction history&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Reports/Reports_15.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Está compra foi&lt;/td&gt;
+&lt;td&gt;Transações associadas a esta compra. Clique no símbolo &lt;strong&gt;▾&lt;/strong&gt; para encontrar &lt;a href=&#34;#transaction-history&#34;&gt;detalhes de cada transação&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Reports/Reports_15_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;8&lt;/td&gt;
-&lt;td&gt;Actions&lt;/td&gt;
-&lt;td&gt;Actions available over the order.&lt;/td&gt;
+&lt;td&gt;Ações&lt;/td&gt;
+&lt;td&gt;Ações disponíveis sobre as ações.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;transaction-history&#34;&gt;Transaction history&lt;/h3&gt;
-&lt;p&gt;When you expand the &lt;em&gt;&lt;strong&gt;This purchase had&lt;/strong&gt;&lt;/em&gt; section, you can see the details of each transaction associated to an order.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_16.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;The information available includes the values debited from your account, the payment method, the payer information and more.&lt;/p&gt;
-&lt;h2 id=&#34;download-the-report&#34;&gt;Download the report&lt;/h2&gt;
-&lt;p&gt;To download the report, click the &lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt; button located at the top or at the bottom of the report table.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_17.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;A pop up window appear where you can select the options to generate the report:&lt;/p&gt;
+&lt;h3 id=&#34;transaction-history&#34;&gt;Histórico de transações&lt;/h3&gt;
+&lt;p&gt;Ao expandir a seção &lt;em&gt;&lt;strong&gt;Está compra foi&lt;/strong&gt;&lt;/em&gt;, você pode ver os detalhes de cada transação associada a uma ordem.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_16_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;As informações disponíveis incluem os valores debitados da sua conta, a forma de pagamento, as informações do pagador e muito mais.&lt;/p&gt;
+&lt;h2 id=&#34;download-the-report&#34;&gt;Baixar o relatório&lt;/h2&gt;
+&lt;p&gt;Para baixar o relatório, clique no botão &lt;em&gt;&lt;strong&gt;Baixar&lt;/strong&gt;&lt;/em&gt; localizado na parte superior ou inferior da tabela do relatório.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_17_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Uma janela pop-up aparecerá onde você pode selecionar as opções para gerar o relatório:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Report&lt;/strong&gt;: lets you generate a report with the status of the orders and the final status of the last transaction or attempted purchase related to that order.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Balance from previous secure&lt;/strong&gt;: lets you generate a report with all the transactions and shows the information of the buyer and payer (e-mail, name, document number)&lt;sup&gt;*&lt;/sup&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Relatório&lt;/strong&gt;: permite gerar um relatório com o status das ordens e o status final da última transação ou tentativa de compra relacionada a essa ordem.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Versão do antigo Módulo Administrativo&lt;/strong&gt;: permite gerar um relatório com todas as transações e mostra as informações do comprador e do pagador (e-mail, nome, número do documento)&lt;sup&gt;*&lt;/sup&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;../../../assets/Reports/Reports_18.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;
+&lt;img src=&#34;../../../assets/Reports/Reports_18_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;sup&gt;*&lt;/sup&gt; If the file format does not meet the your needs, contact your sales executive to know more about the option to send files through SFTP and the templates that we have for this report.
+&lt;sup&gt;*&lt;/sup&gt; Caso o formato do arquivo não atenda às suas necessidades, entre em contato com o seu executivo de vendas para saber mais sobre a opção de envio de arquivos por SFTP e os modelos que temos para este relatório.
 &lt;/div&gt;
 
-&lt;p&gt;The report is automatically downloaded in an Excel (&lt;em&gt;.csv&lt;/em&gt;) format. The name of the report uses the following formats:&lt;/p&gt;
+&lt;p&gt;O relatório é baixado automaticamente em formato Excel (&lt;em&gt;.csv&lt;/em&gt;). O nome do relatório usa os seguintes formatos:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Report&lt;/strong&gt; option: &lt;em&gt;[DownloadDateInMillis]_orders_[AccountId].csv&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Balance from previous secure&lt;/strong&gt; option: &lt;em&gt;[AccountId]_[DownloadDate]_transactions.csv&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Opção &lt;strong&gt;Relatório&lt;/strong&gt;: &lt;em&gt;[DataDeDownloadEmMilis]_orders_[AccountId].csv&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Opção &lt;strong&gt;Versão do antigo Módulo Administrativo&lt;/strong&gt;: &lt;em&gt;[AccountId]_[DataDeDownload]_transactions.csv&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Download date in format &lt;strong&gt;dd-mm-yy-hh-mm-ss&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Data de download em formato &lt;strong&gt;dd-mm-yy-hh-mm-ss&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div style=&#34;display: flex;&#34;&gt;
   &lt;div style=&#34;float: left;width: 50%;text-align: center;margin: 10px;&#34;&gt;
-    &lt;a href=&#34;../../../assets/SampleReports/1632771735723_orders_546703.csv&#34;&gt;Download an example of the generated file using the &lt;i&gt;&lt;b&gt;Report&lt;/b&gt;&lt;/i&gt; option.&lt;/a&gt;
+    &lt;a href=&#34;../../../assets/SampleReports/1632771735723_orders_546703.csv&#34;&gt;Baixe um exemplo do arquivo gerado usando a opção &lt;i&gt;&lt;b&gt;Relatório&lt;/b&gt;&lt;/i&gt;.&lt;/a&gt;
   &lt;/div&gt;
   &lt;div style=&#34;float: left;width: 50%;text-align: center;margin: 10px;&#34;&gt;
-    &lt;a href=&#34;../../../assets/SampleReports/546703_27-09-2021-14-52-58.486_transactions.csv&#34;&gt;Download an example of the generated file using the &lt;i&gt;&lt;b&gt;Balance from previous secure&lt;/b&gt;&lt;/i&gt; option.&lt;/a&gt;
+    &lt;a href=&#34;../../../assets/SampleReports/546703_27-09-2021-14-52-58.486_transactions.csv&#34;&gt;Baixe um exemplo do arquivo gerado usando a opção &lt;i&gt;&lt;b&gt;Versão do antigo Módulo Administrativo&lt;/b&gt;&lt;/i&gt;.&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt/payu-module-documentation/reports.html#my-downloaded-reports&#34;&gt;My downloaded reports&lt;/a&gt; section.
+O relatório gerado é armazenado durante 90 dias na seção &lt;a href=&#34;../../../pt/payu-module-documentation/reports.html#my-downloaded-reports&#34;&gt;Meus relatórios baixados&lt;/a&gt;.
 &lt;/div&gt;
 
 
@@ -193,7 +193,7 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt
     </item>
     
     <item>
-      <title>PayU Module Documentation: Transfer Report</title>
+      <title>PayU Module Documentation: Relatório de transferências</title>
       <link>/pt/payu-module-documentation/reports/transfer-report.html</link>
       <pubDate>Fri, 03 Sep 2021 16:46:15 -0500</pubDate>
       
@@ -201,23 +201,32 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt
       <description>
         
         
-        &lt;p&gt;Furthermore, if you have enabled the Payouts API, you can query the state of the payouts to third party requested. For more information, refer to &lt;a href=&#34;../../../pt/docs/services/payouts.html&#34;&gt;Payouts&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Além disso, se você ativou a API de Payouts, pode consultar o estado dos pagamentos solicitados por terceiros. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/docs/services/payouts.html&#34;&gt;Payouts&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;20px&#34;/&gt; The &lt;em&gt;&lt;strong&gt;Transfers Report&lt;/strong&gt;&lt;/em&gt; has the same columns and features available for the &lt;em&gt;&lt;strong&gt;Daily payouts&lt;/strong&gt;&lt;/em&gt; report (&lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Daily payouts&lt;/strong&gt;&lt;/em&gt;).
+&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;20px&#34;/&gt; Para contas brasileiras, o &lt;em&gt;&lt;strong&gt;Relatório de transferência&lt;/strong&gt;&lt;/em&gt; encontra-se na opção &lt;em&gt;&lt;strong&gt;Para conta bancária&lt;/strong&gt;&lt;/em&gt; (&lt;em&gt;&lt;strong&gt;Transferências&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Para conta bancária&lt;/strong&gt;&lt;/em&gt;).
 &lt;/div&gt;
 
-&lt;h2 id=&#34;permission-required&#34;&gt;Permission required&lt;/h2&gt;
-&lt;p&gt;To have access to this module, you need to have a profile with the &lt;em&gt;Transfers&lt;/em&gt; &amp;gt; &lt;em&gt;Review&lt;/em&gt; permission enabled.&lt;/p&gt;
-&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profiles and Permissions&lt;/a&gt; para obter mais informações.&lt;/p&gt;
-&lt;h2 id=&#34;consult-the-report&#34;&gt;Consult the report&lt;/h2&gt;
-&lt;p&gt;Log into your PayU account. In the left menu, expand the &lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt; menu and select &lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Scroll down to the &lt;em&gt;&lt;strong&gt;Created transfers report&lt;/strong&gt;&lt;/em&gt; section where the report table is located. By default, the report displays the transfers created in the last 30 days from the most recent to the oldest.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The report has the following columns:&lt;/p&gt;
+&lt;h2 id=&#34;permission-required&#34;&gt;Permissão necessária&lt;/h2&gt;
+&lt;p&gt;Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permissão habilitada.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Se sua conta não é brasileira: &lt;em&gt;Transferências&lt;/em&gt; &amp;gt; &lt;em&gt;Consultar&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Se sua conta é brasileira: (Relatório de transferências Brasil):
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Visualizar&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;download.csv&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfis e permissões&lt;/a&gt; para obter mais informações.&lt;/p&gt;
+&lt;h2 id=&#34;consult-the-report&#34;&gt;Consulte o relatório&lt;/h2&gt;
+&lt;p&gt;Faça login em sua conta PayU. No menu esquerdo, expanda o menu &lt;em&gt;&lt;strong&gt;Transferências&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Transferências&lt;/strong&gt;&lt;/em&gt; ou &lt;em&gt;&lt;strong&gt;Para conta bancária&lt;/strong&gt;&lt;/em&gt; se sua conta for brasileira.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_33.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Para contas não brasileiras, role para baixo até a seção &lt;em&gt;&lt;strong&gt;Relatório de transferências realizadas&lt;/strong&gt;&lt;/em&gt; onde a tabela do relatório está localizada. Por padrão, o relatório exibe as transferências criadas nos últimos 30 dias, da mais recente para a mais antiga.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_04_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;O relatório tem as seguintes colunas:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -228,27 +237,27 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;ID&lt;/td&gt;
-&lt;td&gt;Id of the transfer requested.&lt;/td&gt;
+&lt;td&gt;Id da transferência solicitada.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Request date&lt;/td&gt;
-&lt;td&gt;Date and time when the transfer was created.&lt;/td&gt;
+&lt;td&gt;Data de solicitação&lt;/td&gt;
+&lt;td&gt;Data e hora em que a transferência foi criada.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Last update&lt;/td&gt;
-&lt;td&gt;Date and time of the last action executed in the transfer.&lt;/td&gt;
+&lt;td&gt;Data e hora da última ação executada na transferência.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Transferred value&lt;/td&gt;
-&lt;td&gt;Amount of the transfer along with its associated costs.&lt;br&gt;To know these costs, click the &lt;img src=&#34;../../../assets/Reports/Reports_05.png&#34; width=&#34;2%&#34; style=&#34;vertical-align: baseline;&#34;/&gt; icon.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Reports/Reports_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Valor transferido&lt;/td&gt;
+&lt;td&gt;Valor da transferência&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Destination account&lt;/td&gt;
-&lt;td&gt;Bank account of the request&lt;/td&gt;
+&lt;td&gt;Conta destino&lt;/td&gt;
+&lt;td&gt;Conta bancária do pedido.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Status&lt;/td&gt;
-&lt;td&gt;Latest status of the request. The possible states are: &lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Approved&lt;/li&gt;&lt;li&gt;In progress&lt;/li&gt;&lt;li&gt;Rejected&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;Último status do pedido. The possible states são: &lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Aprovada&lt;/li&gt;&lt;li&gt;Em processo&lt;/li&gt;&lt;li&gt;Rejeitada&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -256,22 +265,26 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-If you need to display more information, contact your sales representative.
+Se você precisar exibir mais informações, entre em contato com seu representante de vendas.
 &lt;/div&gt;
 
-&lt;p&gt;You can filter transfers by the date of their creation using the dates filter at the top right corner.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_07.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.&lt;br&gt;To see the information of a given date, set it for both start and end date.&lt;/p&gt;
-&lt;h2 id=&#34;download-the-report&#34;&gt;Download the report&lt;/h2&gt;
-&lt;p&gt;To download the report, click the &lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt; button located at the top or at the bottom of the report table.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;A progress bar appears at the top of the screen. Once the process is completed, the report is automatically downloaded in an Excel (&lt;em&gt;.csv&lt;/em&gt;) format. The name of the report uses the format &lt;em&gt;&lt;strong&gt;[DownloadDateInMillis]_payment_orders_[AccountId].csv&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Você pode filtrar as transferências pela data de sua criação usando o filtro de datas no canto superior direito.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_07_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;O intervalo de datas deste filtro é três (3) meses antes da data de término. Se você exceder esse intervalo, o relatório exibirá as informações de três (3) meses após a data de início.&lt;br&gt;Para ver as informações de uma determinada data, defina a mesma para a data de início e de término.&lt;/p&gt;
+&lt;h2 id=&#34;download-the-report&#34;&gt;Baixar o relatório&lt;/h2&gt;
+&lt;p&gt;Para baixar o relatório, clique no botão &lt;em&gt;&lt;strong&gt;Baixar&lt;/strong&gt;&lt;/em&gt; localizado na parte superior ou inferior da tabela do relatório.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_08_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Uma barra de progresso aparece na parte superior da tela. Assim que o processo for concluído, o relatório será baixado automaticamente em formato Excel (&lt;em&gt;.csv&lt;/em&gt;). O nome do relatório usa o formato:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Se sua conta não é brasileira: &lt;em&gt;&lt;strong&gt;[DataDeDownloadEmMilis]_payment_orders_[AccountId].csv&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Se sua conta é brasileira: &lt;em&gt;&lt;strong&gt;[DataDeDownloadEmMilis]_daily_payment_order_[AccountId].csv&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_09.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt/payu-module-documentation/reports.html#my-downloaded-reports&#34;&gt;My downloaded reports&lt;/a&gt; section.
+O relatório gerado é armazenado durante 90 dias na seção &lt;a href=&#34;../../../pt/payu-module-documentation/reports.html#my-downloaded-reports&#34;&gt;Meus relatórios baixados&lt;/a&gt;.
 &lt;/div&gt;
 
 
@@ -279,7 +292,7 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt
     </item>
     
     <item>
-      <title>PayU Module Documentation: Financial Statement</title>
+      <title>PayU Module Documentation: Extrato</title>
       <link>/pt/payu-module-documentation/reports/financial-statement.html</link>
       <pubDate>Fri, 03 Sep 2021 16:45:26 -0500</pubDate>
       
@@ -291,34 +304,34 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20 thousand&lt;/strong&gt; rows for both displaying and downloading. If you need display more rows or columns in the report, contact your sales representative.
+Os relatórios no painel do comércio são limitado a 20 mil linhas para exibição e download. Se você precisar exibir mais linhas ou colunas no relatório, entre em contato com seu representante de vendas.
 &lt;/div&gt;
 
-&lt;h2 id=&#34;what-is-the-financial-statement&#34;&gt;What is the Financial Statement?&lt;/h2&gt;
-&lt;p&gt;The Financial Statement helps you identify the movements (Commission discounts, transfer fees, reversions) of your PayU account. This report shows the summary of the account, with debits and credits made during the month, and information of the available balance.&lt;/p&gt;
-&lt;p&gt;Furthermore, the Financial Statement helps the accounting area to reconcile all trade e-commerce operations.&lt;/p&gt;
-&lt;h2 id=&#34;permission-required&#34;&gt;Permission required&lt;/h2&gt;
-&lt;p&gt;To have access to this module, you need to have a profile with the following permissions enabled&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-financial-statement&#34;&gt;O que é o Extrato?&lt;/h2&gt;
+&lt;p&gt;O Extrato ajuda a identificar os movimentos (descontos de comissão, taxas de transferência, reembolsos) de sua conta PayU. Este relatório mostra o resumo da conta, com débitos e créditos realizados no mês, e informações do saldo disponível.&lt;/p&gt;
+&lt;p&gt;Além disso, o the Extrato ajuda a área contábil a conciliar todas as operações de comércio eletrônico.&lt;/p&gt;
+&lt;h2 id=&#34;permission-required&#34;&gt;Permissão necessária&lt;/h2&gt;
+&lt;p&gt;Para ter acesso a este módulo, você precisa ter um perfil com as seguintes permissões habilitadas&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Movements&lt;/em&gt; &amp;gt; &lt;em&gt;Statement&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Movements&lt;/em&gt; &amp;gt; &lt;em&gt;Download CSV report&lt;/em&gt;&lt;br&gt;This permission must be enabled to let you download the report.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Declarações&lt;/em&gt; &amp;gt; &lt;em&gt;Relatório de Balanço&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Declarações&lt;/em&gt; &amp;gt; &lt;em&gt;Baixar o relatório CSV&lt;/em&gt;&lt;br&gt;Essa permissão deve ser habilitada para que você baixe o relatório.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profiles and Permissions&lt;/a&gt; para obter mais informações.&lt;/p&gt;
-&lt;h2 id=&#34;consult-the-report&#34;&gt;Consult the report&lt;/h2&gt;
-&lt;p&gt;Log into your PayU account. In the left menu, expand the &lt;em&gt;&lt;strong&gt;Transactions&lt;/strong&gt;&lt;/em&gt; menu and select &lt;em&gt;&lt;strong&gt;Financial Statement&lt;/strong&gt;&lt;/em&gt;. By default, the report shows the operation information&lt;sup&gt;*&lt;/sup&gt; of the last 30 days, from the most recent to the oldest.&lt;/p&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Limited to top 20 thousand records.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfis e permissões&lt;/a&gt; para obter mais informações.&lt;/p&gt;
+&lt;h2 id=&#34;consult-the-report&#34;&gt;Consulte o relatório&lt;/h2&gt;
+&lt;p&gt;Faça login em sua conta PayU. No menu esquerdo, expanda o menu &lt;em&gt;&lt;strong&gt;Transações&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Extrato&lt;/strong&gt;&lt;/em&gt;. Por padrão, o relatório mostra as informações de operação&lt;sup&gt;*&lt;/sup&gt; dos últimos 30 dias, do mais recente ao mais antigo.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Limitado aos 20 mil registros principais.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_19.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;strong&gt;&lt;em&gt;Statements Balance&lt;/em&gt;&lt;/strong&gt; section is divided in three parts as follows:&lt;/p&gt;
-&lt;h3 id=&#34;general-balance&#34;&gt;General Balance&lt;/h3&gt;
-&lt;p&gt;The first part is the general balance where you can see the funds in your PayU account and a button to let you request a &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/transfers.html&#34;&gt;transfer&lt;/a&gt; to your bank account.&lt;br&gt;The general balance, which is comprised of:&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;&lt;em&gt;Balanço financeiro&lt;/em&gt;&lt;/strong&gt; section is divided in three parts as follows:&lt;/p&gt;
+&lt;h3 id=&#34;general-balance&#34;&gt;Saldo Geral&lt;/h3&gt;
+&lt;p&gt;A primeira parte é o saldo geral, onde você pode ver os fundos em sua conta PayU, e um botão para permitir que você solicite uma &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/transfers.html&#34;&gt;transferênca&lt;/a&gt; para sua conta bancária.&lt;br&gt;O saldo geral, que é composto por:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Available balance&lt;/strong&gt;: the total funds received from your sales, after deducting the commission of PayU.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Available balance&lt;/strong&gt;: the money you can transfer to your bank account.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Frozen balance&lt;/strong&gt;: the funds that are part of a &lt;a href=&#34;../../../pt/docs/tools/disputes.html&#34;&gt;dispute&lt;/a&gt; in process or an unapproved &lt;a href=&#34;../../../pt/docs/services/refunds.html&#34;&gt;refund&lt;/a&gt; requested by your customers.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Total balance&lt;/strong&gt;: the money you can transfer to your bank account. It consists of the &lt;strong&gt;Available balance&lt;/strong&gt; minus the &lt;strong&gt;Frozen balance&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Total balance&lt;/strong&gt;: the total funds received from your sales, after deducting the commission of PayU. It consists of the &lt;strong&gt;Available balance&lt;/strong&gt; plus the &lt;strong&gt;Frozen balance&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_20.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;sales-made-chart&#34;&gt;Sales made chart&lt;/h3&gt;
-&lt;p&gt;In the second part, you can understand the distribution of costs (including taxes and transaction related costs), and analyze a sales chart and a pie chart that summarizes all this information.&lt;/p&gt;
+&lt;p&gt;In the second part, you can understand the distribution of costs (including taxes and transaction related costs) e analyze a sales chart and a pie chart that summarizes all this information.&lt;/p&gt;
 &lt;p&gt;The charts shows the information available in the date frame selected.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_21.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The pie chart provides the following information:&lt;/p&gt;
@@ -328,9 +341,9 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;li&gt;&lt;strong&gt;PayU Fee&lt;/strong&gt;: PayU processing cost, including the sales percentage plus the flat rate applied to your account.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;report-table&#34;&gt;Report table&lt;/h3&gt;
-&lt;p&gt;In the last part below the charts, you find a table with the credit and debit information of the latest operations. You can see the operation type and the value (credit or debit) of each row.&lt;/p&gt;
+&lt;p&gt;In the last part below the charts, you find a table with the credit and debit information of the latest operations. You can see the operation type and the value (credit ou debit) of each row.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_22.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The report has the following columns:&lt;/p&gt;
+&lt;p&gt;O relatório tem as seguintes colunas:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -349,11 +362,11 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Credit&lt;/td&gt;
-&lt;td&gt;Amount credited to your Account.&lt;/td&gt;
+&lt;td&gt;Valor credited to your Account.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Debit&lt;/td&gt;
-&lt;td&gt;Amount debited from your Account.&lt;/td&gt;
+&lt;td&gt;Valor debited from your Account.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -366,17 +379,17 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;filter-the-report&#34;&gt;Filter the report&lt;/h2&gt;
-&lt;p&gt;You can use the search bar above the graph or the calendar to set filters. You can filter by &lt;em&gt;&lt;strong&gt;Tipo of Operation&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Sale or Transfer ID&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;, or &lt;em&gt;&lt;strong&gt;Payment method type&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;These filters are displayed when the selected &lt;strong&gt;Tipo of Operation&lt;/strong&gt; is &lt;strong&gt;Sale&lt;/strong&gt;, &lt;strong&gt;Reversion&lt;/strong&gt;, or &lt;strong&gt;Chargeback&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;To set a filter, click the &lt;em&gt;&lt;strong&gt;Filter your search&lt;/strong&gt;&lt;/em&gt; field at the top of the sales made chart.&lt;/p&gt;
+&lt;h2 id=&#34;filter-the-report&#34;&gt;Filtrar o relatório&lt;/h2&gt;
+&lt;p&gt;You can use the search bar above the graph ou the calendar to set filters. You can filter by &lt;em&gt;&lt;strong&gt;Tipo of Operation&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Sale ou Transfer ID&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;Reference&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;, ou &lt;em&gt;&lt;strong&gt;Payment method type&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;These filters are displayed when the selected &lt;strong&gt;Tipo of Operation&lt;/strong&gt; is &lt;strong&gt;Sale&lt;/strong&gt;, &lt;strong&gt;Reversion&lt;/strong&gt;, ou &lt;strong&gt;Chargeback&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Para definir um filtro, clique no campo &lt;em&gt;&lt;strong&gt;Filter your search&lt;/strong&gt;&lt;/em&gt; field at the top of the sales made chart.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_27.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Configure the values for the filters and click &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt;. Once you click it, the filter table shows the operations that meet the selected criteria.&lt;/p&gt;
+&lt;p&gt;Configure os valores para os filtros e clique em &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt;. Once you click it, the filter table shows the operations that meet the selected criteria.&lt;/p&gt;
 &lt;p&gt;Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_28.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;The date range of this filter is three (3) months before the end date. If you exceed this range, The report displays the information of three (3) months after the start date.&lt;br&gt;To see the information of a given date, set it for both start and end date.&lt;/p&gt;
-&lt;h2 id=&#34;download-the-report&#34;&gt;Download the report&lt;/h2&gt;
-&lt;p&gt;To download the report, click the &lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt; button located at the top or at the bottom of the report table.&lt;/p&gt;
+&lt;p&gt;O intervalo de datas deste filtro é três (3) meses antes da data de término. Se você exceder esse intervalo, o relatório exibirá as informações de três (3) meses após a data de início.&lt;br&gt;Para ver as informações de uma determinada data, defina a mesma para a data de início e de término.&lt;/p&gt;
+&lt;h2 id=&#34;download-the-report&#34;&gt;Baixar o relatório&lt;/h2&gt;
+&lt;p&gt;Para baixar o relatório, clique no botão &lt;em&gt;&lt;strong&gt;Baixar&lt;/strong&gt;&lt;/em&gt; localizado na parte superior ou inferior da tabela do relatório.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_29.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;A pop up window appear where you can select the options to generate the report&lt;sup&gt;*&lt;/sup&gt;.&lt;/p&gt;
 &lt;img src=&#34;../../../assets/Reports/Reports_30.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;
@@ -384,28 +397,28 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;sup&gt;*&lt;/sup&gt; If the file format does not meet the your needs, contact your sales executive to know more about the option to send files through SFTP and the templates that we have for this report.
+&lt;sup&gt;*&lt;/sup&gt; Caso o formato do arquivo não atenda às suas necessidades, entre em contato com o seu executivo de vendas para saber mais sobre a opção de envio de arquivos por SFTP e os modelos que temos para este relatório.
 &lt;/div&gt;
 
-&lt;p&gt;The report is automatically downloaded in an Excel (&lt;em&gt;.csv&lt;/em&gt;) format. The name of the report uses the following formats:&lt;/p&gt;
+&lt;p&gt;O relatório é baixado automaticamente em formato Excel (&lt;em&gt;.csv&lt;/em&gt;). O nome do relatório usa os seguintes formatos:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;CSV with what you are seeing on the screen&lt;/strong&gt; option: &lt;em&gt;[DownloadDateInMillis]_statement_report_[AccountId].csv&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Balance from previous secure&lt;/strong&gt; option: &lt;em&gt;[AccountId]_[DownloadDate]_transactions.csv&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CSV with what you are seeing on the screen&lt;/strong&gt; option: &lt;em&gt;[DataDeDownloadEmMilis]_statement_report_[AccountId].csv&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Balance from previous secure&lt;/strong&gt; option: &lt;em&gt;[AccountId]_[DataDeDownload]_transactions.csv&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Download date in format &lt;strong&gt;dd-mm-yy-hh-mm-ss&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Data de download em formato &lt;strong&gt;dd-mm-yy-hh-mm-ss&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div style=&#34;display: flex;&#34;&gt;
   &lt;div style=&#34;float: left;width: 50%;text-align: center;margin: 10px;&#34;&gt;
-    &lt;a href=&#34;../../../assets/SampleReports/1632847567058_statement_report_546703.csv&#34;&gt;Download an example of the generated file using the &lt;i&gt;&lt;b&gt;CSV with what you are seeing on the screen&lt;/b&gt;&lt;/i&gt; option.&lt;/a&gt;
+    &lt;a href=&#34;../../../assets/SampleReports/1632847567058_statement_report_546703.csv&#34;&gt;Baixe um exemplo do arquivo gerado usando a opção &lt;i&gt;&lt;b&gt;CSV with what you are seeing on the screen&lt;/b&gt;&lt;/i&gt;.&lt;/a&gt;
   &lt;/div&gt;
   &lt;div style=&#34;float: left;width: 50%;text-align: center;margin: 10px;&#34;&gt;
-    &lt;a href=&#34;../../../assets/SampleReports/546703_28-09-2021-11-48-07.285_transactions.xls&#34;&gt;Download an example of the generated file using the &lt;i&gt;&lt;b&gt;Balance from previous secure&lt;/b&gt;&lt;/i&gt; option.&lt;/a&gt;
+    &lt;a href=&#34;../../../assets/SampleReports/546703_28-09-2021-11-48-07.285_transactions.xls&#34;&gt;Baixe um exemplo do arquivo gerado usando a opção &lt;i&gt;&lt;b&gt;Balance from previous secure&lt;/b&gt;&lt;/i&gt;.&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;br&gt;
 &lt;p&gt;In the downloaded report, you can validate all the credits and debits of your account and also, you can reconcile the commissions of PayU that appear in the invoice received monthly.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_31.png&#34; alt=&#34;PrintScreen&#34;&gt;
 &lt;em&gt;PayU commissions and taxes appear in the invoice&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;To reconcile the information with the &lt;a href=&#34;../../../pt/payu-module-documentation/reports/sales-report.html&#34;&gt;sales report&lt;/a&gt;, você pode usar the &lt;em&gt;&lt;strong&gt;ReferenceCode&lt;/strong&gt;&lt;/em&gt; variable which appears in brackets in the transaction.&lt;/p&gt;
+&lt;p&gt;To reconcile the information with the &lt;a href=&#34;../../../pt/payu-module-documentation/reports/sales-report.html&#34;&gt;sales report&lt;/a&gt;, você pode usar o &lt;em&gt;&lt;strong&gt;ReferenceCode&lt;/strong&gt;&lt;/em&gt; variable which appears in brackets in the transaction.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Reports/Reports_32.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In the generated report you find the following concepts.&lt;/p&gt;
 &lt;table&gt;
@@ -418,7 +431,7 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;SALES&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Approved amount of the transaction.&lt;/td&gt;
+&lt;td&gt;Approved amount da transação.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;POL_COMMISSION&lt;/strong&gt;&lt;/td&gt;
@@ -478,7 +491,7 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;FREEZE_FUND&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Frozen balance (refunds or disputes).&lt;/td&gt;
+&lt;td&gt;Frozen balance (refunds ou disputes).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;UNFREEZE_FUND&lt;/strong&gt;&lt;/td&gt;
@@ -486,11 +499,11 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;CHARGEBACK&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Chargeback or lost dispute.&lt;/td&gt;
+&lt;td&gt;Chargeback ou lost dispute.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;DISCRETIONARY&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Discretionary movement or additional credit to the account.&lt;/td&gt;
+&lt;td&gt;Discretionary movement ou additional credit to the account.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -499,7 +512,7 @@ The Sales Report displayed in the merchant panel are limited to &lt;strong&gt;20
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt/payu-module-documentation/reports.html#my-downloaded-reports&#34;&gt;My downloaded reports&lt;/a&gt; section.
+O relatório gerado é armazenado durante 90 dias na seção &lt;a href=&#34;../../../pt/payu-module-documentation/reports.html#my-downloaded-reports&#34;&gt;Meus relatórios baixados&lt;/a&gt;.
 &lt;/div&gt;
 
 
@@ -515,19 +528,19 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt
       <description>
         
         
-        &lt;p&gt;For transactions in Colombia paid with credit cards, the intermediary financial entities make retentions of &lt;strong&gt;Rent Withholding&lt;/strong&gt;, &lt;strong&gt;ICA Withholding&lt;/strong&gt;, and &lt;strong&gt;IVA Withholding&lt;/strong&gt;. According to this, PayU delivers for merchants, a certificate with the total of the withholdings applied during a monthly period.&lt;/p&gt;
+        &lt;p&gt;For transactions in Colombia paid with credit cards, the intermediary financial entities make retentions of &lt;strong&gt;Rent Withholding&lt;/strong&gt;, &lt;strong&gt;ICA Withholding&lt;/strong&gt; e &lt;strong&gt;IVA Withholding&lt;/strong&gt;. According to this, PayU delivers for merchants, a certificate with the total of the withholdings applied during a monthly period.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
 &lt;p&gt;To have access to this module, you need to have a profile with the permission &lt;em&gt;Colombian certificates&lt;/em&gt; &amp;gt; &lt;em&gt;View withhodlings&lt;/em&gt; enabled.&lt;/p&gt;
-&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profiles and Permissions&lt;/a&gt; para obter mais informações.&lt;/p&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfis e permissões&lt;/a&gt; para obter mais informações.&lt;/p&gt;
 
 &lt;/div&gt;
 
 &lt;h2 id=&#34;generate-withholding-certificate&#34;&gt;Generate Withholding Certificate&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Log into your PayU account. In the left menu, expand the &lt;em&gt;&lt;strong&gt;Transactions&lt;/strong&gt;&lt;/em&gt; menu and select &lt;em&gt;&lt;strong&gt;Withholding certificate&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Faça login em sua conta PayU. No menu esquerdo, expanda o menu &lt;em&gt;&lt;strong&gt;Transações&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Certificado de retenção&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/WithholdingCertificate/WithholdingCertificate_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
@@ -535,7 +548,7 @@ The generated report is stored during 90 days in the &lt;a href=&#34;../../../pt
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/WithholdingCertificate/WithholdingCertificate_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Click &lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt;. The report is automatically downloaded to your computer in PDF format.&lt;br&gt;The following is an example of this certificate.&lt;/li&gt;
+&lt;li&gt;Click &lt;em&gt;&lt;strong&gt;Download&lt;/strong&gt;&lt;/em&gt;. The report is automatically downloaded to your computer in PDF.&lt;br&gt;The following is an example of this certificate.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/WithholdingCertificate/WithholdingCertificate_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 

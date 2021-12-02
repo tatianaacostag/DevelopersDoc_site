@@ -26,7 +26,7 @@
         &lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Você precisa de uma conta ativa no PayU Latam.&lt;/li&gt;
-&lt;li&gt;•	Você precisa de um &lt;a href=&#34;https://www.shopify.com/pricing&#34;&gt;plano&lt;/a&gt; válido no Shopify. O check-out não está disponível em planos de teste.&lt;/li&gt;
+&lt;li&gt;Você precisa de um &lt;a href=&#34;https://www.shopify.com/pricing&#34;&gt;plano&lt;/a&gt; válido no Shopify. O check-out não está disponível em planos de teste.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;order-management-in-shopify&#34;&gt;Gerenciamento de ordem no Shopify&lt;/h2&gt;
 &lt;p&gt;Leve em conta o seguinte ao gerenciar ordens no Shopify:&lt;/p&gt;
@@ -241,7 +241,7 @@ Em seguida, localize a seção &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt
 &lt;li&gt;&lt;strong&gt;API KEY&lt;/strong&gt;: Chave única da sua loja. Você pode obter esta informação no seu Módulo PayU (&lt;strong&gt;&lt;em&gt;Configuração&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Configuração técnica&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;API Key&lt;/em&gt;&lt;/strong&gt;).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Merchant Id&lt;/strong&gt;: ID da sua loja no PayU Latam.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Account Id&lt;/strong&gt;: ID da conta PayU de acordo com o país onde você quer vender.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Test Enabled&lt;/strong&gt;: Defina &lt;code&gt;No&lt;/code&gt; se você deseja processar no ambiente de produção. Caso contrário, defina &lt;code&gt;Yes&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Enabled&lt;/strong&gt;: Definir &lt;code&gt;No&lt;/code&gt; se você deseja processar no ambiente de produção. Caso contrário, definir &lt;code&gt;Yes&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Deixe os outros campos com os valores pré-configurados.&lt;/p&gt;
 
@@ -358,7 +358,7 @@ Em seguida, localize a seção &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_09.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Na janela aberta, clique em  &lt;em&gt;&lt;strong&gt;New&lt;/strong&gt;&lt;/em&gt; para criar um método de pagamento usando o &lt;code&gt;PayuLatam&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Na janela aberta, clique em &lt;em&gt;&lt;strong&gt;New&lt;/strong&gt;&lt;/em&gt; para criar um método de pagamento usando o &lt;code&gt;PayuLatam&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_10.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
@@ -736,11 +736,7 @@ Se você não tiver nenhum dos idiomas mencionados anteriormente, os estados nã
 &lt;p&gt;O procedimento para instalar o plugin OpenCart é o mesmo para a versão 1.5 ou 2.0. A única diferença é a aparência das versões e isso é abordado neste artigo.&lt;br&gt;
 Siga o próximo procedimento para instalar o plugin em seu site.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;ol&gt;
 &lt;li&gt;Descompacte o arquivo do plugin em um local de sua escolha. Em seguida, usando um cliente FTP, vá para o local onde você descompactou o plug-in.&lt;br&gt;Em seguida, carregue as pastas &lt;strong&gt;admin&lt;/strong&gt; e &lt;strong&gt;catalog&lt;/strong&gt; na pasta raiz da instalação do OpenCart em seu servidor.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_01.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Esta ação adiciona os arquivos de plugin ao seu servidor OpenCart nos locais corretos. Para validar se o procedimento estava correto, pesquise os seguintes arquivos em seus locais correspondentes.&lt;/p&gt;

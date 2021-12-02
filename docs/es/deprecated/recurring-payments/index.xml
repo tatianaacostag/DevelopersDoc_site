@@ -91,9 +91,11 @@ var modal = document.getElementById(&#34;myModal&#34;);
 var span = document.getElementsByClassName(&#34;close&#34;)[0];
 
 var toc = document.getElementById(&#34;td-section-nav&#34;);
+// var content = document.getElementsByClassName(&#34;td-content&#34;)[0];
 
 // When the page loads, open the modal 
 window.onload = function() {
+  // content.style.backgroundImage = &#34;url(&#39;/assets/deprecated.png&#39;)&#34;;
   modal.style.display = &#34;block&#34;;
   toc.style[&#39;pointer-events&#39;] = &#39;none&#39;;
   toc.style.backgroundColor = &#34;rgba(0,0,0,-0.6)&#34;;
@@ -4954,9 +4956,11 @@ var modal = document.getElementById(&#34;myModal&#34;);
 var span = document.getElementsByClassName(&#34;close&#34;)[0];
 
 var toc = document.getElementById(&#34;td-section-nav&#34;);
+// var content = document.getElementsByClassName(&#34;td-content&#34;)[0];
 
 // When the page loads, open the modal 
 window.onload = function() {
+  // content.style.backgroundImage = &#34;url(&#39;/assets/deprecated.png&#39;)&#34;;
   modal.style.display = &#34;block&#34;;
   toc.style[&#39;pointer-events&#39;] = &#39;none&#39;;
   toc.style.backgroundColor = &#34;rgba(0,0,0,-0.6)&#34;;
