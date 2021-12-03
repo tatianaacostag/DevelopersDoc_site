@@ -123,7 +123,7 @@ Provide the information related to your Bank Account such as: country, bank, acc
 
 Along with the information you provide, you need to attach a certification<sup>\*</sup> issued by your bank to proof the veracity and authenticity of the information. 
 
-<sup>\*</sup> _Dependendo do seu país, pode ser necessário anexar mais documentos._
+<sup>\*</sup> _Depending on your country, you may need to attach more documents._
 
 ![PrintScreen](/assets/BankInformation/BankInformation_04.png)
 
