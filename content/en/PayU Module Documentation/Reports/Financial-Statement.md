@@ -37,9 +37,10 @@ The **_Statements Balance_** section is divided in three parts as follows:
 ### General Balance
 The first part is the general balance where you can see the funds in your PayU account and a button to let you request a [transfer]({{< ref "Transfers.md" >}}) to your bank account.<br>The general balance, which is comprised of:
 
-* **Available balance**: the money you can transfer to your bank account.
+* **Available balance**: is the money received from your sales, after deducting the PayU commission, taxes, refunds or chargebacks.
+the money you can transfer to your bank account.
 * **Frozen balance**: the funds that are part of a [dispute]({{< ref "Disputes.md" >}}) in process or an unapproved [refund]({{< ref "Refunds.md" >}}) requested by your customers.
-* **Total balance**: the total funds received from your sales, after deducting the commission of PayU. It consists of the **Available balance** plus the **Frozen balance**.
+* **Total balance**: the total funds received in your PayU account. It consists of the **Available balance** plus the **Frozen balance**.
 
 ![PrintScreen](/assets/Reports/Reports_20.png)
 

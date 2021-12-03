@@ -77,7 +77,7 @@ _XYZ systems_ is a company legally constituted in the United States who offers t
 
 * The PayU module for _XYZ systems_ has a single merchant as they are legally constituted in the United States. As _XYZ systems_ processes in three countries, this merchant has four accounts; two for Colombia (one per each business line), one for Mexico and one for Peru.
 
-* _Shop ABC_ has four users; **User 3** can access all the accounts, meanwhile, the other users can access their assigned country.
+* _XYZ systems_ has four users; **User 3** can access all the accounts, meanwhile, the other users can access their assigned country.
 
 {{% alert title="Note" color="info"%}}
 
