@@ -34,7 +34,6 @@ If you don't have transactions in the selected month, the reports downloaded are
 ### Transaction charges
 This report can be generated for a given month and it has the following fields (in Spanish):
 
-
 | | Field | Description |
 |:-:|---|---|
 | A | Monto Facturado Total | Total value in pesos (**MXN**) of the trasnactions of the month. |
