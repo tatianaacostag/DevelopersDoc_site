@@ -46,7 +46,7 @@ Este relatório pode ser gerado para um mês específico e possui os seguintes c
 Este é um relatório detalhado da _Coluna C_ (_**Cuotas por otros conceptos o penalizaciones**_) no [Relatório de Encargos de transações]({{< ref"#transaction-charges" >}}). Este relatório pode ser gerado para um determinado mês e inclui todos os conceitos do mês e a soma de cada um.
 
 ### Encargos TPVs relacionado {#tpvs-related-charge}
-Para baixar este relatório, desmarque as caixas _**Encargos de transações**_ e _**CComissões para outros conceitos ou penalidades**_. Este relatório pode ser gerado para um mês específico e possui os seguintes campos:
+Para baixar este relatório, desmarque as caixas _**Encargos de transações**_ e _**Comissões para outros conceitos ou penalidades**_. Este relatório pode ser gerado para um mês específico e possui os seguintes campos:
 
 | Campo | Descrição |
 |:-:|---|---|
