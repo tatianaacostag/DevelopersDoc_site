@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/payu-module-documentation/reports/financial-statement.html" /><meta property="article:section" content="PayU Module Documentation" />
 <meta property="article:published_time" content="2021-09-03T16:45:26-05:00" />
-<meta property="article:modified_time" content="2021-12-02T10:54:48-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-12-03T18:03:20-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Extrato">
 <meta itemprop="description" content="Saiba mais sobre os fundos creditados em sua conta PayU e seus movimentos. Nesta seção, você também pode consultar os dados disponíveis neste relatório.
 "><meta itemprop="datePublished" content="2021-09-03T16:45:26-05:00" />
-<meta itemprop="dateModified" content="2021-12-02T10:54:48-05:00" />
-<meta itemprop="wordCount" content="1065">
+<meta itemprop="dateModified" content="2021-12-03T18:03:20-05:00" />
+<meta itemprop="wordCount" content="1081">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Extrato"/>
 <meta name="twitter:description" content="Saiba mais sobre os fundos creditados em sua conta PayU e seus movimentos. Nesta seção, você também pode consultar os dados disponíveis neste relatório.
@@ -141,7 +141,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.1a23ec15a83894c6e203375727ffd8df289cd49f78be64641dab74de8bca98fb055af28d6ce3f905b525ecbb3d4171149ebdc08115068125ef46127f30cf689f.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d7ea25cfea9632c6a0c7091d6ff28aeed89159c22f9b5abc1bad51412e020cd1b384f7d347a44e2316c1bf1e852fe4ae72cd18874b273dd9fc98684c2caedd02.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -410,7 +410,13 @@
       
       
       
-        <a id="/pt/payu-module-documentation/reports/withholding-certificate.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-ptpayu-module-documentationreportswithholding-certificatehtml" href="../../../pt/payu-module-documentation/reports/withholding-certificate.html">Withholding Certificate</a>
+        <a id="/pt/payu-module-documentation/reports/withholding-certificate.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-ptpayu-module-documentationreportswithholding-certificatehtml" href="../../../pt/payu-module-documentation/reports/withholding-certificate.html">Certificado de retenção</a>
+      
+      
+      
+      
+      
+        <a id="/pt/payu-module-documentation/reports/operation-reports.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-ptpayu-module-documentationreportsoperation-reportshtml" href="../../../pt/payu-module-documentation/reports/operation-reports.html">Relatório de operações</a>
       
       
     </li>
@@ -460,7 +466,7 @@
     <li><a href="#consult-the-report">Consulte o relatório</a>
       <ul>
         <li><a href="#general-balance">Saldo Geral</a></li>
-        <li><a href="#sales-made-chart">Sales made chart</a></li>
+        <li><a href="#sales-made-chart">Gráfico de vendas realizadas</a></li>
         <li><a href="#report-table">Report table</a></li>
       </ul>
     </li>
@@ -535,53 +541,53 @@ Os relatórios no painel do comércio são limitado a 20 mil linhas para exibiç
 <h2 id="consult-the-report">Consulte o relatório</h2>
 <p>Faça login em sua conta PayU. No menu esquerdo, expanda o menu <em><strong>Transações</strong></em> e selecione <em><strong>Extrato</strong></em>. Por padrão, o relatório mostra as informações de operação<sup>*</sup> dos últimos 30 dias, do mais recente ao mais antigo.</p>
 <p><sup>*</sup><em>Limitado aos 20 mil registros principais.</em></p>
-<p><img src="../../../assets/Reports/Reports_19.png" alt="PrintScreen"></p>
-<p>The <strong><em>Balanço financeiro</em></strong> section is divided in three parts as follows:</p>
+<p><img src="../../../assets/Reports/Reports_19_pt.png" alt="PrintScreen"></p>
+<p>A seção <strong><em>Balanço financeiro</em></strong> é dividida em três partes da seguinte forma:</p>
 <h3 id="general-balance">Saldo Geral</h3>
 <p>A primeira parte é o saldo geral, onde você pode ver os fundos em sua conta PayU, e um botão para permitir que você solicite uma <a href="../../../pt/payu-module-documentation/payu-operations/transfers.html">transferênca</a> para sua conta bancária.<br>O saldo geral, que é composto por:</p>
 <ul>
-<li><strong>Available balance</strong>: the money you can transfer to your bank account.</li>
-<li><strong>Frozen balance</strong>: the funds that are part of a <a href="../../../pt/docs/tools/disputes.html">dispute</a> in process or an unapproved <a href="../../../pt/docs/services/refunds.html">refund</a> requested by your customers.</li>
-<li><strong>Total balance</strong>: the total funds received from your sales, after deducting the commission of PayU. It consists of the <strong>Available balance</strong> plus the <strong>Frozen balance</strong>.</li>
+<li><strong>Saldo disponível</strong>: saldo disponível em conta, após desconto de tarifa PayU e outros encargos</li>
+<li><strong>Saldo congelado</strong>: os fundos que fazem parte de uma <a href="../../../pt/docs/tools/disputes.html">disputa</a> em andamento ou ordem de <a href="../../../pt/docs/services/refunds.html">reembolso</a> não aprovado solicitado por seus clientes.</li>
+<li><strong>Total balance</strong>: o total de fundos recebidos em sua conta PayU. It consists of the <strong>Saldo disponível</strong> mais o <strong>Saldo congelado</strong>.</li>
 </ul>
-<p><img src="../../../assets/Reports/Reports_20.png" alt="PrintScreen"></p>
-<h3 id="sales-made-chart">Sales made chart</h3>
-<p>In the second part, you can understand the distribution of costs (including taxes and transaction related costs) e analyze a sales chart and a pie chart that summarizes all this information.</p>
-<p>The charts shows the information available in the date frame selected.</p>
-<p><img src="../../../assets/Reports/Reports_21.png" alt="PrintScreen"></p>
-<p>The pie chart provides the following information:</p>
+<p><img src="../../../assets/Reports/Reports_20_pt.png" alt="PrintScreen"></p>
+<h3 id="sales-made-chart">Gráfico de vendas realizadas</h3>
+<p>Na segunda parte, você pode entender a distribuição dos custos (incluindo impostos e custos relacionados à transação) e analisar um gráfico de vendas e um gráfico de pizza que resumem todas essas informações.</p>
+<p>Os gráficos mostram as informações disponíveis no período selecionado.</p>
+<p><img src="../../../assets/Reports/Reports_21_pt.png" alt="PrintScreen"></p>
+<p>O gráfico de pizza fornece as seguintes informações:</p>
 <ul>
-<li><strong>Sales Made</strong>: total value of your sales before taxes and PayU fee, your income during the consulted period.</li>
-<li><strong>Taxes</strong>: additional charges generated according to your tax regime. If your tax regime is different, contact <a href="mailto:sac@payu.com">sac@payu.com</a>.</li>
-<li><strong>PayU Fee</strong>: PayU processing cost, including the sales percentage plus the flat rate applied to your account.</li>
+<li><strong>Vendas realizadas</strong>: valor total das suas vendas antes de impostos e taxa PayU, seus rendimentos durante o período consultado.</li>
+<li><strong>Impostos</strong>: encargos adicionais gerados de acordo com seu regime tributário. Se o seu regime tributário for diferente, entre em contato <a href="mailto:sac@payu.com">sac@payu.com</a>.</li>
+<li><strong>Tarifa PayU</strong>: Custo de processamento PayU, incluindo a porcentagem de vendas mais a taxa fixa aplicada à sua conta.</li>
 </ul>
 <h3 id="report-table">Report table</h3>
-<p>In the last part below the charts, you find a table with the credit and debit information of the latest operations. You can see the operation type and the value (credit ou debit) of each row.</p>
-<p><img src="../../../assets/Reports/Reports_22.png" alt="PrintScreen"></p>
+<p>Na última parte abaixo dos gráficos, você encontra uma tabela com os dados de crédito e débito das últimas operações. Você pode ver o tipo de operação e o valor (crédito ou débito) de cada linha.</p>
+<p><img src="../../../assets/Reports/Reports_22_pt.png" alt="PrintScreen"></p>
 <p>O relatório tem as seguintes colunas:</p>
 <table>
 <thead>
 <tr>
-<th>Coluna</th>
+<th>Operação</th>
 <th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Operation</td>
-<td>ID and date of the operation.</td>
+<td>ID e data da operação.</td>
 </tr>
 <tr>
-<td>Tipo of Operation</td>
-<td>Information of the operation. Depending on its type, the information displayed varies.<br>Click <img src="../../../assets/Reports/Reports_23.png" width="2%"/> to expand the detailed values of the operation in the <strong>Debit</strong> and <strong>Credit</strong> columns.<br><br><img src="../../../assets/Reports/Reports_24.png" alt="PrintScreen"></td>
+<td>Tipo de operação</td>
+<td>Informações da operação. Dependendo do tipo, as informações exibidas variam.<br>Clique <img src="../../../assets/Reports/Reports_23.png" width="2%"/> para expandir os valores detalhados da operação nas colunas <strong>Débito</strong> e <strong>Crédito</strong>.<br><br><img src="../../../assets/Reports/Reports_24_pt.png" alt="PrintScreen"></td>
 </tr>
 <tr>
-<td>Credit</td>
-<td>Valor credited to your Account.</td>
+<td>Crédito</td>
+<td>Valor creditado na sua conta.</td>
 </tr>
 <tr>
-<td>Debit</td>
-<td>Valor debited from your Account.</td>
+<td>Débito</td>
+<td>Valor debitado da sua conta.</td>
 </tr>
 </tbody>
 </table>
@@ -589,25 +595,25 @@ Os relatórios no painel do comércio são limitado a 20 mil linhas para exibiç
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Observação</h4>
-<p>Click <img src="../../../assets/Reports/Reports_25.png" width="1.5%"/> next to <em><strong>Value</strong></em> label to merge <strong>debit</strong> and <strong>credit</strong>; the resultant value is <strong>debit</strong> minus the positive value of <strong>credit</strong>.<br>Por exemplo, if the <strong>debit</strong> column value is <em>$3.296,63</em> and the <strong>credit</strong> column value is <em>$950,00</em>, the resulting column value after merging is <em>$2.346,63</em>.</p>
-<p><img src="../../../assets/Reports/Reports_26.png" alt="PrintScreen"></p>
+<p>Clique em <img src="../../../assets/Reports/Reports_25.png" width="1.5%"/> ao lado da etiqueta <em><strong>Valor</strong></em> para mesclar <strong>débito</strong> e <strong>crédito</strong>; o valor resultante é o <strong>débito</strong> menos o valor positivo de <strong>crédito</strong>.<br>Por exemplo, se o o valor da coluna <strong>débito</strong> é <em>$3.296,63</em> e o valor da coluna <strong>crédito</strong> é <em>$950,00</em>, o valor da coluna resultante após mesclar é <em>$2.346,63</em>.</p>
+<p><img src="../../../assets/Reports/Reports_26_pt.png" alt="PrintScreen"></p>
 
 </div>
 
 <h2 id="filter-the-report">Filtrar o relatório</h2>
-<p>You can use the search bar above the graph ou the calendar to set filters. You can filter by <em><strong>Tipo of Operation</strong></em>, <em><strong>Sale ou Transfer ID</strong></em>, <em><strong>Reference</strong></em><sup>*</sup>, ou <em><strong>Payment method type</strong></em><sup>*</sup>.</p>
-<p><sup>*</sup> <em>These filters are displayed when the selected <strong>Tipo of Operation</strong> is <strong>Sale</strong>, <strong>Reversion</strong>, ou <strong>Chargeback</strong></em>.</p>
-<p>Para definir um filtro, clique no campo <em><strong>Filter your search</strong></em> field at the top of the sales made chart.</p>
-<p><img src="../../../assets/Reports/Reports_27.png" alt="PrintScreen" width="60%"/><br></p>
-<p>Configure os valores para os filtros e clique em <em><strong>Search</strong></em>. Once you click it, the filter table shows the operations that meet the selected criteria.</p>
-<p>Along with these filters, you can also set a time frame when the buyer performed the sale using the dates filter at the top right corner.</p>
-<p><img src="../../../assets/Reports/Reports_28.png" alt="PrintScreen" width="60%"/><br></p>
+<p>Você pode usar a barra de pesquisa acima do gráfico ou o calendário para definir filtros. Você pode filtrar por <em><strong>Tipo de operação</strong></em>, <em><strong>ID venda ou saque</strong></em>, <em><strong>Referência</strong></em><sup>*</sup>, ou <em><strong>Tipo de meio de pagamento</strong></em><sup>*</sup>.</p>
+<p><sup>*</sup> <em>Esses filtros são exibidos quando o <strong>Tipo de operação</strong> é <strong>Venda</strong>, <strong>Reversão</strong>, ou <strong>Chargeback</strong></em>.</p>
+<p>Para definir um filtro, clique no campo <em><strong>Filtre sua busca</strong></em> na parte superior do gráfico de vendas realizadas.</p>
+<p><img src="../../../assets/Reports/Reports_27_pt.png" alt="PrintScreen" width="60%"/><br></p>
+<p>Configure os valores para os filtros e clique em <em><strong>Buscar</strong></em>. Depois de clicar, a tabela do filtro mostra as operações que atendem aos critérios selecionados.</p>
+<p>Além desses filtros, você pode definir um período em que o comprador realizou a venda usando o filtro de datas no canto superior direito. O período é definido aqui</p>
+<p><img src="../../../assets/Reports/Reports_28_pt.png" alt="PrintScreen" width="60%"/><br></p>
 <p>O intervalo de datas deste filtro é três (3) meses antes da data de término. Se você exceder esse intervalo, o relatório exibirá as informações de três (3) meses após a data de início.<br>Para ver as informações de uma determinada data, defina a mesma para a data de início e de término.</p>
 <h2 id="download-the-report">Baixar o relatório</h2>
 <p>Para baixar o relatório, clique no botão <em><strong>Baixar</strong></em> localizado na parte superior ou inferior da tabela do relatório.</p>
-<p><img src="../../../assets/Reports/Reports_29.png" alt="PrintScreen"></p>
-<p>A pop up window appear where you can select the options to generate the report<sup>*</sup>.</p>
-<img src="../../../assets/Reports/Reports_30.png" alt="PrintScreen" width="50%"/>
+<p><img src="../../../assets/Reports/Reports_29_pt.png" alt="PrintScreen"></p>
+<p>Uma janela pop-up aparecerá onde você pode selecionar as opções para gerar o relatório<sup>*</sup>.</p>
+<img src="../../../assets/Reports/Reports_30_pt.png" alt="PrintScreen" width="50%"/>
 
 
 <div class="alert alert-info" role="alert">
@@ -617,112 +623,112 @@ Os relatórios no painel do comércio são limitado a 20 mil linhas para exibiç
 
 <p>O relatório é baixado automaticamente em formato Excel (<em>.csv</em>). O nome do relatório usa os seguintes formatos:</p>
 <ul>
-<li><strong>CSV with what you are seeing on the screen</strong> option: <em>[DataDeDownloadEmMilis]_statement_report_[AccountId].csv</em></li>
-<li><strong>Balance from previous secure</strong> option: <em>[AccountId]_[DataDeDownload]_transactions.csv</em><sup>*</sup></li>
+<li><strong>CSV com o que você está vendo na tela</strong> option: <em>[DataDeDownloadEmMilis]_statement_report_[AccountId].csv</em></li>
+<li><strong>Versão do antigo Módulo Administrativo</strong> option: <em>[AccountId]_[DataDeDownload]_transactions.csv</em><sup>*</sup></li>
 </ul>
 <p><sup>*</sup> <em>Data de download em formato <strong>dd-mm-yy-hh-mm-ss</strong></em></p>
 <div style="display: flex;">
   <div style="float: left;width: 50%;text-align: center;margin: 10px;">
-    <a href="../../../assets/SampleReports/1632847567058_statement_report_546703.csv">Baixe um exemplo do arquivo gerado usando a opção <i><b>CSV with what you are seeing on the screen</b></i>.</a>
+    <a href="../../../assets/SampleReports/1632847567058_statement_report_546703.csv">Baixe um exemplo do arquivo gerado usando a opção <i><b>CSV com o que você está vendo na tela</b></i>.</a>
   </div>
   <div style="float: left;width: 50%;text-align: center;margin: 10px;">
-    <a href="../../../assets/SampleReports/546703_28-09-2021-11-48-07.285_transactions.xls">Baixe um exemplo do arquivo gerado usando a opção <i><b>Balance from previous secure</b></i>.</a>
+    <a href="../../../assets/SampleReports/546703_28-09-2021-11-48-07.285_transactions.xls">Baixe um exemplo do arquivo gerado usando a opção <i><b>Versão do antigo Módulo Administrativo</b></i>.</a>
   </div>
 </div>
 <br>
-<p>In the downloaded report, you can validate all the credits and debits of your account and also, you can reconcile the commissions of PayU that appear in the invoice received monthly.</p>
+<p>No relatório baixado, você pode validar todos os créditos e débitos da sua conta, bem como conciliar as comissões do PayU que constam na fatura recebida mensalmente.</p>
 <p><img src="../../../assets/Reports/Reports_31.png" alt="PrintScreen">
-<em>PayU commissions and taxes appear in the invoice</em></p>
-<p>To reconcile the information with the <a href="../../../pt/payu-module-documentation/reports/sales-report.html">sales report</a>, você pode usar o <em><strong>ReferenceCode</strong></em> variable which appears in brackets in the transaction.</p>
+<em>Comissões e impostos PayU aparecem na fatura</em></p>
+<p>Para reconciliar as informações com o <a href="../../../pt/payu-module-documentation/reports/sales-report.html">relatório de vendas</a>, você pode usar a variável <em><strong>ReferenceCode</strong></em> que aparece entre colchetes na transação.</p>
 <p><img src="../../../assets/Reports/Reports_32.png" alt="PrintScreen"></p>
-<p>In the generated report you find the following concepts.</p>
+<p>No relatório gerado, você encontra os seguintes conceitos.</p>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
+<th>Conceito</th>
 <th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>SALES</strong></td>
-<td>Approved amount da transação.</td>
+<td>Valor aprovado da transação.</td>
 </tr>
 <tr>
 <td><strong>POL_COMMISSION</strong></td>
-<td>PayU commission: Fixed percentage established for trade + established fixed value.</td>
+<td>Comissão PayU: Percentual fixo estabelecido para negociação, mais o valor fixo estabelecido.</td>
 </tr>
 <tr>
 <td><strong>IVA_POL_COMMISSION</strong></td>
-<td>Tax commission.</td>
+<td>Comissão tributária.</td>
 </tr>
 <tr>
 <td><strong>IVA_RETENTION</strong></td>
-<td>IVA retention.<sup>*</sup></td>
+<td>Retenção de IVA.<sup>*</sup></td>
 </tr>
 <tr>
 <td><strong>RENTA_RETENTION</strong></td>
-<td>Retefuente retention.<sup>*</sup></td>
+<td>Retenção retefuente.<sup>*</sup></td>
 </tr>
 <tr>
 <td><strong>ICA_RETENTION</strong></td>
-<td>ICA retention.<sup>*</sup></td>
+<td>Retenção de ICA.<sup>*</sup></td>
 </tr>
 <tr>
 <td><strong>RETENTION SALES</strong></td>
-<td>Transaction refund.</td>
+<td>Reembolso da transação.</td>
 </tr>
 <tr>
 <td><strong>RETENTION POL_COMMISSION</strong></td>
-<td>Refund of the PayU Commission.</td>
+<td>Reembolso da Comissão PayU.</td>
 </tr>
 <tr>
 <td><strong>RETENTION IVA_POL_COMMISSION</strong></td>
-<td>Refund of the PayU Commission tax.</td>
+<td>Reembolso do imposto de comissão PayU.</td>
 </tr>
 <tr>
 <td><strong>RETENTION IVA_RETENTION</strong></td>
-<td>Refund of the IVA retention.</td>
+<td>Reembolso da retenção do IVA.</td>
 </tr>
 <tr>
 <td><strong>RETENTION RENTA_RETENTION</strong></td>
-<td>Refund of the Retefuente retention.</td>
+<td>Reembolso da retenção Retefuente.</td>
 </tr>
 <tr>
 <td><strong>RETENTION ICA_RETENTION</strong></td>
-<td>Refund of the ICA retention.</td>
+<td>Reembolso da retenção do ICA.</td>
 </tr>
 <tr>
 <td><strong>PAYMENT_ORDER</strong></td>
-<td>Transfer of the available Balance to the registered bank account.</td>
+<td>Transferência do saldo disponível para a conta bancária cadastrada.</td>
 </tr>
 <tr>
 <td><strong>PAYMENT_ORDER_POL_COMMISSION</strong></td>
-<td>Transfer cost.</td>
+<td>Custo de transferência.</td>
 </tr>
 <tr>
 <td><strong>IVA_PAYMENT_ORDER_POL_COMMISSION</strong></td>
-<td>Transfer tax.</td>
+<td>Imposto de transferência.</td>
 </tr>
 <tr>
 <td><strong>FREEZE_FUND</strong></td>
-<td>Frozen balance (refunds ou disputes).</td>
+<td>Saldo congelado (reembolsos ou disputas).</td>
 </tr>
 <tr>
 <td><strong>UNFREEZE_FUND</strong></td>
-<td>Release of the frozen amounts.</td>
+<td>Liberação dos valores congelados.</td>
 </tr>
 <tr>
 <td><strong>CHARGEBACK</strong></td>
-<td>Chargeback ou lost dispute.</td>
+<td>Estorno ou disputa perdida.</td>
 </tr>
 <tr>
 <td><strong>DISCRETIONARY</strong></td>
-<td>Discretionary movement ou additional credit to the account.</td>
+<td>Movimento sujeito a critério ou crédito adicional à conta.</td>
 </tr>
 </tbody>
 </table>
-<p><sup>*</sup> <em>Applies only to transactions with credit card.</em></p>
+<p><sup>*</sup> <em>Válido apenas a transações com cartão de crédito.</em></p>
 
 
 <div class="alert alert-info" role="alert">
@@ -736,9 +742,9 @@ O relatório gerado é armazenado durante 90 dias na seção <a href="../../../p
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-2 de dezembro de 2021:
+3 de dezembro de 2021:
 
- <b>Update Financial-Statement.md (c8010684)</b>
+ <b>Operation reports (9a557eae)</b>
 </div>
 </div>
 

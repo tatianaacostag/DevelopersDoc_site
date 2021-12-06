@@ -153,7 +153,7 @@
                 />
   </url><url>
     <loc>/en/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html</loc>
-    <lastmod>2021-12-02T10:47:25-05:00</lastmod>
+    <lastmod>2021-12-03T18:07:56-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -908,7 +908,7 @@
                 />
   </url><url>
     <loc>/en/payu-module-documentation/reports/financial-statement.html</loc>
-    <lastmod>2021-12-02T10:47:25-05:00</lastmod>
+    <lastmod>2021-12-03T18:03:20-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -928,7 +928,7 @@
                 />
   </url><url>
     <loc>/en/payu-module-documentation/getting-started/understanding-the-payu-module.html</loc>
-    <lastmod>2021-11-08T17:41:32-05:00</lastmod>
+    <lastmod>2021-12-03T18:03:20-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1305,6 +1305,26 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/getting-started/test-your-solution.html"
+                />
+  </url><url>
+    <loc>/en/payu-module-documentation/reports/operation-reports.html</loc>
+    <lastmod>2021-12-03T18:04:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/payu-module-documentation/reports/operation-reports.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/payu-module-documentation/reports/operation-reports.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/payu-module-documentation/reports/operation-reports.html"
                 />
   </url><url>
     <loc>/en/payu-module-documentation/reports.html</loc>
