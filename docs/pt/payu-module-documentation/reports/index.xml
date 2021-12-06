@@ -633,7 +633,7 @@ Se você não tiver transações no mês selecionado, os relatórios baixados co
 &lt;h3 id=&#34;commissions-for-other-concepts-or-penalties&#34;&gt;Comissões para outros conceitos ou penalidades&lt;/h3&gt;
 &lt;p&gt;Este é um relatório detalhado da &lt;em&gt;Coluna C&lt;/em&gt; (&lt;em&gt;&lt;strong&gt;Cuotas por otros conceptos o penalizaciones&lt;/strong&gt;&lt;/em&gt;) no &lt;a href=&#34;#transaction-charges&#34;&gt;Relatório de Encargos de transações&lt;/a&gt;. Este relatório pode ser gerado para um determinado mês e inclui todos os conceitos do mês e a soma de cada um.&lt;/p&gt;
 &lt;h3 id=&#34;tpvs-related-charge&#34;&gt;Encargos TPVs relacionado&lt;/h3&gt;
-&lt;p&gt;Para baixar este relatório, desmarque as caixas &lt;em&gt;&lt;strong&gt;Encargos de transações&lt;/strong&gt;&lt;/em&gt; e &lt;em&gt;&lt;strong&gt;CComissões para outros conceitos ou penalidades&lt;/strong&gt;&lt;/em&gt;. Este relatório pode ser gerado para um mês específico e possui os seguintes campos:&lt;/p&gt;
+&lt;p&gt;Para baixar este relatório, desmarque as caixas &lt;em&gt;&lt;strong&gt;Encargos de transações&lt;/strong&gt;&lt;/em&gt; e &lt;em&gt;&lt;strong&gt;Comissões para outros conceitos ou penalidades&lt;/strong&gt;&lt;/em&gt;. Este relatório pode ser gerado para um mês específico e possui os seguintes campos:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
