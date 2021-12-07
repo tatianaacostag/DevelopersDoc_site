@@ -110,12 +110,22 @@ Você pode usar os seguintes cartões para teste:
 
 ### Testando estados {#testing-status}
 Para testar Pagamentos, você deve enviar a solicitação:
-* O parâmetro `test` como `true`.
-* Definir **777** no CVV do cartão (para AMEX, use **7777**).
-* Envie o nome do status da transação em nome do titular do cartão.
-    - Para transações aprovadas, envie o valor  **APPROVED**.
-    - Para transações rejeitadas, envie o valor **REJECTED**.
-    - Para transações pendentes, envie o valor  **PENDING**.
+
+* **Para transações _aprovadas_**: 
+  - Envie o valor `APPROVED` em nome do titular do cartão.
+  - Definir **777** no CVV do cartão (para AMEX, use **7777**).
+  - O parâmetro `test` e a descrição também definem o estado. Se não funcionar com `test` definido como _false_, altere seu valor para _true_.
+  - Envie o mês de vencimento do cartão menor que `6` e o ​​ano deve ser `2023` ou maior. Exemplo: `05/2025`.
+* **Para transações _rejeitadas_**: 
+  - Envie o valor `REJECTED` em nome do titular do cartão.
+  - Definir **666** no CVV do cartão (para AMEX, use **6666**).
+  - O parâmetro `test` e a descrição também definem o estado. Se não funcionar com `test` definido como _false_, altere seu valor para _true_.
+  - Envie o mês de vencimento do cartão maior que `6` e o ​​ano deve ser `2023` ou maior. Exemplo: `07/2027`.
+* **Para transações _pendentes_**: 
+  - Envie o valor `PENDING` em nome do titular do cartão.
+  - Definir **777** no CVV do cartão (para AMEX, use **7777**).
+  - Envie o parâmetro `test` como _true_.
+  - Nas informações de comprador e pagador, atribua o endereço de e-mail `manual-reviewhub@email.com`.
 * Para o número do cartão, é preciso inserir um número válido, correspondente à franquia enviada na solicitação. Você pode usar um gerador de cartão online para fins de teste ou usar um dos cartões mencionados anteriormente que estejam disponíveis para o seu país.
 * Para testar as transferências bancárias PSE (disponíveis na Colômbia) no ambiente PayU Sandbox, consulte o [Guia de teste PSE (PDF - em espanhol)](/assets/pse-test-guide-v5-es.pdf).
 

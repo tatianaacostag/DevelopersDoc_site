@@ -110,12 +110,22 @@ You can use the following cards for testing:
 
 ### Testing status
 When testing Payments, you must send in the request:
-* The `test` parameter as `true`.
-* Set **777** in the CVV of the card (for AMEX, use **7777**).
-* Send the name of the transaction status in the name of the cardholder.
-    - For approved transactions, send **APPROVED** value.
-    - For rejected transactions, send **REJECTED** value.
-    - For pending transactions, send **PENDING** value.
+
+* **To get _approved_ transactions**: 
+  - Send `APPROVED` in the name of the cardholder.
+  - Send **777** in the CVV of the card (for AMEX, use **7777**).
+  - The `test` parameter and the description also define the state. If it doesn't work with `test` set as _false_, change its value to _true_.
+  - Send the month of the expiration date of the card less than `6` and the year must be `2023` or higher. Example: `05/2025`.
+* **To get _declined_ transactions**: 
+  - Send `REJECTED` in the name of the cardholder.
+  - Send **666** in the CVV of the card (for AMEX, use **6666**).
+  - The `test` parameter and the description also define the state. If it doesn't work with `test` set as _false_, change its value to _true_.
+  - Send the month of the expiration date of the card higher than `6` and the year must be `2023` or higher. Example: `07/2027`.
+* **To get _pending_ transactions**: 
+  - Send `PENDING` in the name of the cardholder.
+  - Send **777** in the CVV of the card (for AMEX, use **7777**).
+  - Send the `test` parameter as _true_.
+  - In the buyer and payer information, set the email as `manual-reviewhub@email.com`.
 * For the card number you must enter a valid number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes or use one of the cards available for your country mentioned before.
 * To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
 
