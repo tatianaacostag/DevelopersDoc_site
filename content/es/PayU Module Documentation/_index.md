@@ -16,7 +16,13 @@ El módulo PayU es ideal para negocios que necesitan:
 
 * Tener control de su inventario y conocer las ventas aprobadas a través de PayU.
 * Tener la información más actualizada sobre los movimientos financieros en su cuenta.
-* Realizar cualquier solicitud de soporte o ayuda sobre su cuenta..
+* Realizar cualquier solicitud de soporte o ayuda sobre su cuenta.
+
+{{% alert title="Nota" color="info"%}}
+
+Haz clic [aquí]({{< ref "Merchant Panel" >}}) para consultar la documentación del Módulo Administrativo, también conocido como secure.
+
+{{% /alert %}}
 
 Para acceder al módulo PayU, ingresa a www.payu.com, at la esquina superior derecha, encontrarás la opción para iniciar sesión. Para comercios en Colombia, esta opción se llama _PayU Login_.<br>O si lo prefieres, puedes ir directamente a https://merchants.payulatam.com/.
 
