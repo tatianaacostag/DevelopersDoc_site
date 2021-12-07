@@ -61,7 +61,7 @@ If you have the cardholder’s data, the best way to manage a dispute process is
 If you accept that the dispute is not a mistake, you can start a [Refund]({{< ref "Refunds-MP.md" >}}) process by clicking _**Or refund this value**_.
 {{% /alert %}}
 
-6. Upload the evidence files to resolve the dispute and click _**Save evidence**_. It is mandatory to save the evidence first before send it to review.<br>The files uploaded here should not be larger than 10MB and must be PDF files.
+6. Upload the evidence files to resolve the dispute and click _**Save evidence**_. It is mandatory to save the evidence first before send it to review. The files uploaded here should not be larger than 10MB and must be PDF files.
 
 <img src="/assets/Disputes/Disputes_06.png" alt="PrintScreen" width="60%"/><br>
 
