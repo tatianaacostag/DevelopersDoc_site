@@ -25,7 +25,7 @@ The reasons for starting a dispute process may vary, some of them are:
 * **Amount does not match**: the charge to the credit card does not match with the value of the purchase.
 * **Not reported by the entity**: the bank or processing network initiates a dispute process without a specific reason.
 
-As not all the financial entities use the same mechanisms to notify a dispute; therefore, PayU cannot guarantee that you can always know the reasons of the dispute.
+Not all the financial entities use the same mechanisms to notify a dispute; therefore, PayU cannot guarantee that you can always know the reasons of the dispute.
 
 {{% alert title="Attention" color="warning"%}}
 
