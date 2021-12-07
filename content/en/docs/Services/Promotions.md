@@ -4,7 +4,7 @@ linkTitle: "Installments and Promotions - Argentina and Mexico"
 date: 2021-03-26T14:02:05-05:00
 description: >
     Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico.
-weight: 50
+weight: 40
 ---
 
 ## What are Installments and Promotions

@@ -1046,13 +1046,28 @@ Para ativar sua conta, você deve:&lt;/p&gt;
 &lt;h3 id=&#34;testing-status&#34;&gt;Testando estados&lt;/h3&gt;
 &lt;p&gt;Para testar Pagamentos, você deve enviar a solicitação:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;O parâmetro &lt;code&gt;test&lt;/code&gt; como &lt;code&gt;true&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Definir &lt;strong&gt;777&lt;/strong&gt; no CVV do cartão (para AMEX, use &lt;strong&gt;7777&lt;/strong&gt;).&lt;/li&gt;
-&lt;li&gt;Envie o nome do status da transação em nome do titular do cartão.
+&lt;li&gt;&lt;strong&gt;Para transações &lt;em&gt;aprovadas&lt;/em&gt;&lt;/strong&gt;:
 &lt;ul&gt;
-&lt;li&gt;Para transações aprovadas, envie o valor  &lt;strong&gt;APPROVED&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Para transações rejeitadas, envie o valor &lt;strong&gt;REJECTED&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Para transações pendentes, envie o valor  &lt;strong&gt;PENDING&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Envie o valor &lt;code&gt;APPROVED&lt;/code&gt; em nome do titular do cartão.&lt;/li&gt;
+&lt;li&gt;Definir &lt;strong&gt;777&lt;/strong&gt; no CVV do cartão (para AMEX, use &lt;strong&gt;7777&lt;/strong&gt;).&lt;/li&gt;
+&lt;li&gt;O parâmetro &lt;code&gt;test&lt;/code&gt; e a descrição também definem o estado. Se não funcionar com &lt;code&gt;test&lt;/code&gt; definido como &lt;em&gt;false&lt;/em&gt;, altere seu valor para &lt;em&gt;true&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Envie o mês de vencimento do cartão menor que &lt;code&gt;6&lt;/code&gt; e o ​​ano deve ser &lt;code&gt;2023&lt;/code&gt; ou maior. Exemplo: &lt;code&gt;05/2025&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Para transações &lt;em&gt;rejeitadas&lt;/em&gt;&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Envie o valor &lt;code&gt;REJECTED&lt;/code&gt; em nome do titular do cartão.&lt;/li&gt;
+&lt;li&gt;Definir &lt;strong&gt;666&lt;/strong&gt; no CVV do cartão (para AMEX, use &lt;strong&gt;6666&lt;/strong&gt;).&lt;/li&gt;
+&lt;li&gt;O parâmetro &lt;code&gt;test&lt;/code&gt; e a descrição também definem o estado. Se não funcionar com &lt;code&gt;test&lt;/code&gt; definido como &lt;em&gt;false&lt;/em&gt;, altere seu valor para &lt;em&gt;true&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Envie o mês de vencimento do cartão maior que &lt;code&gt;6&lt;/code&gt; e o ​​ano deve ser &lt;code&gt;2023&lt;/code&gt; ou maior. Exemplo: &lt;code&gt;07/2027&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Para transações &lt;em&gt;pendentes&lt;/em&gt;&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Envie o valor &lt;code&gt;PENDING&lt;/code&gt; em nome do titular do cartão.&lt;/li&gt;
+&lt;li&gt;Definir &lt;strong&gt;777&lt;/strong&gt; no CVV do cartão (para AMEX, use &lt;strong&gt;7777&lt;/strong&gt;).&lt;/li&gt;
+&lt;li&gt;Envie o parâmetro &lt;code&gt;test&lt;/code&gt; como &lt;em&gt;true&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Nas informações de comprador e pagador, atribua o endereço de e-mail &lt;code&gt;manual-review-hub@email.com&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Para o número do cartão, é preciso inserir um número válido, correspondente à franquia enviada na solicitação. Você pode usar um gerador de cartão online para fins de teste ou usar um dos cartões mencionados anteriormente que estejam disponíveis para o seu país.&lt;/li&gt;

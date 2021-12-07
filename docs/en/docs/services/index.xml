@@ -143,6 +143,60 @@ Refer to &lt;a href=&#34;../../../en/docs/getting-started/select-your-payment-me
     </item>
     
     <item>
+      <title>Docs: 3DS Authentication</title>
+      <link>/en/docs/services/3ds-authentication.html</link>
+      <pubDate>Tue, 07 Dec 2021 10:25:17 -0500</pubDate>
+      
+      <guid>/en/docs/services/3ds-authentication.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;what-is-3ds&#34;&gt;What is 3DS?&lt;/h2&gt;
+&lt;p&gt;3DS (Three-Domain Secure) is a messaging protocol that enables the issues to authenticate their cardholders during the online shops. This authentication is performed before authorize the transaction and follows the next flow.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/3DS/3DS_whatis_en.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The next infographic explains the authentication flow for 3DS.&lt;/p&gt;
+&lt;div style=&#34;display: inline-flex;&#34;&gt;
+    &lt;div style=&#34;width: 20%; height: 600px; float:left; background:linear-gradient(to bottom, #EEE 90%, white);padding: 20px;position:relative;&#34; &gt;
+        &lt;p align=&#34;center&#34;&gt;John buys a cellphone to be delivered in his house from his computer.&lt;/p&gt;
+        &lt;div style=&#34;position:absolute;bottom:-11.5%;right:0px;&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_1_en.png&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;width: 20%; height: 600px; float:left; background:#FFF;padding: 20px;position:relative;&#34; &gt;
+        &lt;p align=&#34;center&#34;&gt;The &lt;b&gt;cellphone shop, who is integrated to PayU authentication service&lt;/b&gt;, wants to verify that John is the one making the purchase, so they send this transaction to authenticate.&lt;/p&gt;
+        &lt;div style=&#34;position:absolute;bottom:-12%;right:0px;&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_2_en.png&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;width: 20%; height: 600px; float:left; background:linear-gradient(to bottom, #EEE 90%, white);padding: 20px;position:relative;&#34; &gt;
+        &lt;p align=&#34;center&#34;&gt;Through 3DS communication, the issuer receives the request to authenticate the transaction and start reviewing the shared data.&lt;/p&gt;
+        &lt;div style=&#34;position:absolute;bottom:-12%;right:0px;&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_3_en.png&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;width: 20%; height: 600px; float:left; background:#FFF;padding: 20px;position:relative;&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;The issuer successfully authenticates the card used by John to perform the purchase. Given that the risk was low, the authentication was silent without contacting John.&lt;/p&gt;
+        &lt;hr style=&#34;border: 1px solid #ACC629;&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;When the transaction is risker for the issuer, John may receive a simple challenge, such as an OTP sent to his cellphone.&lt;/p&gt;
+        &lt;div style=&#34;position:absolute;bottom:-11.2%;right:0px;&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_4_en.png&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&#34;width: 20%; height: 600px; float:left; background:linear-gradient(to bottom, #EEE 90%, white);padding: 20px;position:relative;&#34; &gt;
+        &lt;p align=&#34;center&#34;&gt;John receives the confirmation of his purchase and later on, he receives the cellphone in his house.&lt;/p&gt;
+        &lt;div style=&#34;position:absolute;bottom:-11.2%;right:5px;left: -7%;&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_5_en.png&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3ds-benefits&#34;&gt;3DS Benefits&lt;/h2&gt;
+&lt;h2 id=&#34;3ds-authentication-for-payu&#34;&gt;3DS Authentication for PayU&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Queries for transactions</title>
       <link>/en/docs/services/queries.html</link>
       <pubDate>Fri, 26 Mar 2021 09:12:41 -0500</pubDate>
@@ -171,52 +225,6 @@ Refer to &lt;a href=&#34;../../../en/docs/getting-started/select-your-payment-me
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../../en/docs/integrations/api-integration/queries-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../en/docs/integrations/sdk-integration/queriessdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Tokenization</title>
-      <link>/en/docs/services/tokenization.html</link>
-      <pubDate>Fri, 26 Mar 2021 09:34:59 -0500</pubDate>
-      
-      <guid>/en/docs/services/tokenization.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;To use the tokenization feature, you need to enable it in your PayU account. To do so, contact your sales representative:&lt;/p&gt;
-&lt;div style=&#34;display: flex;&#34;&gt;
-  &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.ar@payu.com&#34;&gt;comercios.ar@payu.com&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.br@payu.com&#34;&gt;comercios.br@payu.com&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.cl@payu.com&#34;&gt;comercios.cl@payu.com&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.co@payu.com&#34;&gt;comercios.co@payu.com&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-  &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.mx@payu.com&#34;&gt;comercios.mx@payu.com&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.pa@payu.com&#34;&gt;comercios.pa@payu.com&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.pe@payu.com&#34;&gt;comercios.pe@payu.com&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;how-does-tokenization-work&#34;&gt;How does Tokenization work?&lt;/h2&gt;
-&lt;p&gt;Tokenization includes two separated processes:&lt;/p&gt;
-&lt;h3 id=&#34;generate-token&#34;&gt;Generate token&lt;/h3&gt;
-&lt;p&gt;The first process lets you save the information of a credit card. This information is transformed into a token to let you use it later.&lt;/p&gt;
-&lt;img src=&#34;../../../assets/Tokenization/tokenizacion1-en.png&#34; width=&#34;50%&#34;/&gt;
-&lt;h3 id=&#34;make-charges&#34;&gt;Make charges&lt;/h3&gt;
-&lt;p&gt;After you have the information of a credit card stored in a token, you can use it to perform charges periodically according to your need and your customer does not have to provide the information of their credit cards whenever you require a payment.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Tokenization/tokenizacion2-en.png&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Furthermore, the tokenization feature lets you store, remove or charge several credit carts by sending an file coded in Base64.&lt;/p&gt;
-&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
-&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../en/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -265,6 +273,52 @@ For Mexico, you can use &lt;a href=&#34;../../../en/docs/services/promotions.htm
 
 &lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
 &lt;p&gt;The integration with this feature can be performed using the &lt;a href=&#34;../../../en/docs/integrations/api-integration/promotions-api.html&#34;&gt;Promotions API&lt;/a&gt;. To learn how to integrate with MSI, refer to this &lt;a href=&#34;../../../en/docs/integrations/api-integration/promotions-api.html#msi&#34;&gt;section&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Tokenization</title>
+      <link>/en/docs/services/tokenization.html</link>
+      <pubDate>Fri, 26 Mar 2021 09:34:59 -0500</pubDate>
+      
+      <guid>/en/docs/services/tokenization.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;To use the tokenization feature, you need to enable it in your PayU account. To do so, contact your sales representative:&lt;/p&gt;
+&lt;div style=&#34;display: flex;&#34;&gt;
+  &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.ar@payu.com&#34;&gt;comercios.ar@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.br@payu.com&#34;&gt;comercios.br@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.cl@payu.com&#34;&gt;comercios.cl@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.co@payu.com&#34;&gt;comercios.co@payu.com&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.mx@payu.com&#34;&gt;comercios.mx@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.pa@payu.com&#34;&gt;comercios.pa@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.pe@payu.com&#34;&gt;comercios.pe@payu.com&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;how-does-tokenization-work&#34;&gt;How does Tokenization work?&lt;/h2&gt;
+&lt;p&gt;Tokenization includes two separated processes:&lt;/p&gt;
+&lt;h3 id=&#34;generate-token&#34;&gt;Generate token&lt;/h3&gt;
+&lt;p&gt;The first process lets you save the information of a credit card. This information is transformed into a token to let you use it later.&lt;/p&gt;
+&lt;img src=&#34;../../../assets/Tokenization/tokenizacion1-en.png&#34; width=&#34;50%&#34;/&gt;
+&lt;h3 id=&#34;make-charges&#34;&gt;Make charges&lt;/h3&gt;
+&lt;p&gt;After you have the information of a credit card stored in a token, you can use it to perform charges periodically according to your need and your customer does not have to provide the information of their credit cards whenever you require a payment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Tokenization/tokenizacion2-en.png&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Furthermore, the tokenization feature lets you store, remove or charge several credit carts by sending an file coded in Base64.&lt;/p&gt;
+&lt;h2 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;The integration with this feature can be performed using one of our integration types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;For API integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../en/docs/integrations/sdk-integration/tokenizationsdk.html&#34;&gt;For SDK integrations, refer to this topic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>

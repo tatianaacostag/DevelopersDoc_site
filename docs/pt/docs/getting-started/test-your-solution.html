@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/getting-started/test-your-solution.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-06T15:34:20-05:00" />
-<meta property="article:modified_time" content="2021-12-02T10:47:25-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-12-07T09:18:48-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Teste sua solução">
 <meta itemprop="description" content="PayU oferece um espaço onde você pode testar sua solução antes de colocar no ar, onde você poderá receber pagamentos e transações reais.
 "><meta itemprop="datePublished" content="2021-04-06T15:34:20-05:00" />
-<meta itemprop="dateModified" content="2021-12-02T10:47:25-05:00" />
-<meta itemprop="wordCount" content="739">
+<meta itemprop="dateModified" content="2021-12-07T09:18:48-05:00" />
+<meta itemprop="wordCount" content="863">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Teste sua solução"/>
 <meta name="twitter:description" content="PayU oferece um espaço onde você pode testar sua solução antes de colocar no ar, onde você poderá receber pagamentos e transações reais.
@@ -141,7 +141,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.fc8e1aa81e0e20be786f68c67c4e57748ebdcfe751357027ebf22dbe2160f5cf24dc0fea94367041a9708536bdb0d3a912fa789f24ab7ee16528ad9a2e400dd2.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c083bd1b8fa454ea556a80a7805d860892780bb95fe20caf2f90cb5ca7369d4ddbb5540db3d8e99efeaeaefab69768fd1f4b081bdd316cafc52608bd3b4510b7.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -1108,13 +1108,28 @@
 <h3 id="testing-status">Testando estados</h3>
 <p>Para testar Pagamentos, você deve enviar a solicitação:</p>
 <ul>
-<li>O parâmetro <code>test</code> como <code>true</code>.</li>
-<li>Definir <strong>777</strong> no CVV do cartão (para AMEX, use <strong>7777</strong>).</li>
-<li>Envie o nome do status da transação em nome do titular do cartão.
+<li><strong>Para transações <em>aprovadas</em></strong>:
 <ul>
-<li>Para transações aprovadas, envie o valor  <strong>APPROVED</strong>.</li>
-<li>Para transações rejeitadas, envie o valor <strong>REJECTED</strong>.</li>
-<li>Para transações pendentes, envie o valor  <strong>PENDING</strong>.</li>
+<li>Envie o valor <code>APPROVED</code> em nome do titular do cartão.</li>
+<li>Definir <strong>777</strong> no CVV do cartão (para AMEX, use <strong>7777</strong>).</li>
+<li>O parâmetro <code>test</code> e a descrição também definem o estado. Se não funcionar com <code>test</code> definido como <em>false</em>, altere seu valor para <em>true</em>.</li>
+<li>Envie o mês de vencimento do cartão menor que <code>6</code> e o ​​ano deve ser <code>2023</code> ou maior. Exemplo: <code>05/2025</code>.</li>
+</ul>
+</li>
+<li><strong>Para transações <em>rejeitadas</em></strong>:
+<ul>
+<li>Envie o valor <code>REJECTED</code> em nome do titular do cartão.</li>
+<li>Definir <strong>666</strong> no CVV do cartão (para AMEX, use <strong>6666</strong>).</li>
+<li>O parâmetro <code>test</code> e a descrição também definem o estado. Se não funcionar com <code>test</code> definido como <em>false</em>, altere seu valor para <em>true</em>.</li>
+<li>Envie o mês de vencimento do cartão maior que <code>6</code> e o ​​ano deve ser <code>2023</code> ou maior. Exemplo: <code>07/2027</code>.</li>
+</ul>
+</li>
+<li><strong>Para transações <em>pendentes</em></strong>:
+<ul>
+<li>Envie o valor <code>PENDING</code> em nome do titular do cartão.</li>
+<li>Definir <strong>777</strong> no CVV do cartão (para AMEX, use <strong>7777</strong>).</li>
+<li>Envie o parâmetro <code>test</code> como <em>true</em>.</li>
+<li>Nas informações de comprador e pagador, atribua o endereço de e-mail <code>manual-review-hub@email.com</code>.</li>
 </ul>
 </li>
 <li>Para o número do cartão, é preciso inserir um número válido, correspondente à franquia enviada na solicitação. Você pode usar um gerador de cartão online para fins de teste ou usar um dos cartões mencionados anteriormente que estejam disponíveis para o seu país.</li>
@@ -1163,9 +1178,9 @@ data-postman-param="env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52IiwidmFsdW
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-2 de dezembro de 2021:
+7 de dezembro de 2021:
 
- <b>Translations to portuguese (4a9cef71)</b>
+ <b>Changes in testing status (a63fcfb6)</b>
 </div>
 </div>
 

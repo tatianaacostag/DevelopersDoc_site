@@ -38,7 +38,7 @@ Para entender como o PayU processa os pagamentos, é importante entender dois co
 Por exemplo, um cliente compra um produto no seu site e paga com cartão de crédito. O pagamento é aprovado e aceito pelo banco do cliente. Depois, a loja descobre que não tem estoque suficiente deste produto e solicita o reembolso ao PayU. O PayU aprova o reembolso e o dinheiro é devolvido ao cliente. Nesse caso, a ordem era a compra do produto e incluiu transações como a aceitação do pagamento, a cobrança e a aprovação do reembolso.
 
 ## Como começar a usar o PayU {#how-to-start-using-payu}
-When you want to integrate your commerce with PayU services and tools, you need to consider the following steps.
+Para integrar sua loja com os serviços e ferramentas PayU, você precisa seguir estas etapas:
 
 ### 1. Crie uma conta PayU {#1-create-a-payu-account}
 Crie sua conta PayU gratuitamente. Entre em contato conosco para obter ajuda durante o processo.

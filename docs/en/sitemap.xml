@@ -352,6 +352,11 @@
                 href="/en/docs/services/payments.html"
                 />
   </url><url>
+    <loc>/en/docs/services/3ds-authentication.html</loc>
+    <lastmod>2021-12-07T10:25:17-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/en/deprecated/merchant-panel.html</loc>
     <lastmod>2021-11-19T10:47:38-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -747,26 +752,6 @@
                 href="/en/docs/integrations/webcheckout-integration/response-page.html"
                 />
   </url><url>
-    <loc>/en/docs/services/queries.html</loc>
-    <lastmod>2021-10-05T15:57:19-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/services/queries.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/services/queries.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/services/queries.html"
-                />
-  </url><url>
     <loc>/en/docs/integrations/api-integration.html</loc>
     <lastmod>2021-06-29T20:27:18-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -1087,24 +1072,24 @@
                 href="/en/docs/integrations/webcheckout-integration/confirmation-page.html"
                 />
   </url><url>
-    <loc>/en/docs/services/tokenization.html</loc>
+    <loc>/en/docs/services/queries.html</loc>
     <lastmod>2021-10-05T15:57:19-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/docs/services/tokenization.html"
+                href="/es/docs/services/queries.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="/pt/docs/services/tokenization.html"
+                href="/pt/docs/services/queries.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/services/tokenization.html"
+                href="/en/docs/services/queries.html"
                 />
   </url><url>
     <loc>/en/docs/integrations/sdk-integration.html</loc>
@@ -1288,7 +1273,7 @@
                 />
   </url><url>
     <loc>/en/docs/getting-started/test-your-solution.html</loc>
-    <lastmod>2021-10-05T15:57:19-05:00</lastmod>
+    <lastmod>2021-12-07T09:18:48-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1305,6 +1290,46 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/getting-started/test-your-solution.html"
+                />
+  </url><url>
+    <loc>/en/docs/services/promotions.html</loc>
+    <lastmod>2021-11-03T16:33:52-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/services/promotions.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/promotions.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/promotions.html"
+                />
+  </url><url>
+    <loc>/en/docs/services/tokenization.html</loc>
+    <lastmod>2021-10-05T15:57:19-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/services/tokenization.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/tokenization.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/tokenization.html"
                 />
   </url><url>
     <loc>/en/payu-module-documentation/reports/operation-reports.html</loc>
@@ -1487,24 +1512,24 @@
                 href="/en/docs/server-status.html"
                 />
   </url><url>
-    <loc>/en/docs/services/promotions.html</loc>
-    <lastmod>2021-11-03T16:33:52-05:00</lastmod>
+    <loc>/en/docs/services/refunds.html</loc>
+    <lastmod>2021-10-07T15:19:39-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/docs/services/promotions.html"
+                href="/es/docs/services/refunds.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="/pt/docs/services/promotions.html"
+                href="/pt/docs/services/refunds.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/services/promotions.html"
+                href="/en/docs/services/refunds.html"
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payouts-api.html</loc>
@@ -1525,6 +1550,26 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration/payouts-api.html"
+                />
+  </url><url>
+    <loc>/en/docs/services/payouts.html</loc>
+    <lastmod>2021-11-09T12:09:09-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/services/payouts.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/payouts.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/payouts.html"
                 />
   </url><url>
     <loc>/en/docs/tools/shopping-cart-plugins/oscommerce.html</loc>
@@ -1548,7 +1593,7 @@
                 />
   </url><url>
     <loc>/en/docs/tools/disputes.html</loc>
-    <lastmod>2021-12-02T10:47:25-05:00</lastmod>
+    <lastmod>2021-12-07T09:22:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1565,46 +1610,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/tools/disputes.html"
-                />
-  </url><url>
-    <loc>/en/docs/services/refunds.html</loc>
-    <lastmod>2021-10-07T15:19:39-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/services/refunds.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/services/refunds.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/services/refunds.html"
-                />
-  </url><url>
-    <loc>/en/docs/services/payouts.html</loc>
-    <lastmod>2021-11-09T12:09:09-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/services/payouts.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/services/payouts.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/services/payouts.html"
                 />
   </url><url>
     <loc>/en/docs/integrations/sdk-integration/payments-sdk-peru.html</loc>
@@ -1783,7 +1788,7 @@
                 />
   </url><url>
     <loc>/en/payu-module-documentation.html</loc>
-    <lastmod>2021-12-02T10:47:25-05:00</lastmod>
+    <lastmod>2021-12-07T09:22:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
