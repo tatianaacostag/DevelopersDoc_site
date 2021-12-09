@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/services/3ds-authentication.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-12-07T10:25:17-05:00" />
-<meta property="article:modified_time" content="2021-12-07T15:07:05-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-12-09T11:41:29-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="3DS Authentication">
 <meta itemprop="description" content="3DS (Three-Domain Secure) lets you perform an intuitive and consumer-friendly authentication process. 3DS adds additional security layers to reduce the fraud avoiding the unauthorized usage of credit cards. 
 "><meta itemprop="datePublished" content="2021-12-07T10:25:17-05:00" />
-<meta itemprop="dateModified" content="2021-12-07T15:07:05-05:00" />
-<meta itemprop="wordCount" content="174">
+<meta itemprop="dateModified" content="2021-12-09T11:41:29-05:00" />
+<meta itemprop="wordCount" content="681">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3DS Authentication"/>
 <meta name="twitter:description" content="3DS (Three-Domain Secure) lets you perform an intuitive and consumer-friendly authentication process. 3DS adds additional security layers to reduce the fraud avoiding the unauthorized usage of credit cards. 
@@ -141,7 +141,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.87f9738b89cf5834229221ad9808921d9d145329976e58679ee2f8cb63d14f4e0628160516f287b9bcc25096daf3d17e42dde8c90093da5a4bae320e54a226fd.json"
+  data-offline-search-index-json-src="../../../offline-search-index.22b6b45bc607e9745ea62fa27c65ee5680be4136731c5fbe3daaae6127ba94564e3386c28913d0d507846e93bb1d9264334042102c1c8fc7e3e10067ba4a9c8d.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -748,7 +748,12 @@
   <ul>
     <li><a href="#what-is-3ds">What is 3DS?</a></li>
     <li><a href="#3ds-benefits">3DS Benefits</a></li>
-    <li><a href="#3ds-authentication-for-payu">3DS Authentication for PayU</a></li>
+    <li><a href="#3ds-authentication-solution">3DS Authentication solution</a>
+      <ul>
+        <li><a href="#benefits-of-our-solution">Benefits of our solution</a></li>
+        <li><a href="#how-to-integrate-3ds">How to integrate 3DS?</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -802,52 +807,138 @@
 <p>3DS (Three-Domain Secure) is a messaging protocol that enables the issues to authenticate their cardholders during the online shops. This authentication is performed before authorize the transaction and follows the next flow.</p>
 <p><img src="../../../assets/3DS/3DS_whatis_en.png" alt="Concepts"></p>
 <p>The next infographic explains the authentication flow for 3DS.</p>
-<div style="display: inline-flex;">
-    <div style="width: 20%; height: 600px; float:left; background:linear-gradient(to bottom, #EEE 90%, white);padding: 20px;position:relative;" >
-        <p align="center">John buys a cellphone to be delivered in his house from his computer.</p>
-        <div style="position:absolute;bottom:-11.5%;right:0px;">
+<div class="infographicDiv" align="center">
+    <div class="DivGray" >
+        <p align="center">John buys a cellphone through an e-commerce shop in his personal computer.</p>
+        <div class="img1">
             <p align="center"><img src="../../../assets/3DS/3DS_step_1_en.png"/></p>
         </div>
     </div>
-    <div style="width: 20%; height: 600px; float:left; background:#FFF;padding: 20px;position:relative;" >
-        <p align="center">The <b>cellphone shop, who is integrated to PayU authentication service</b>, wants to verify that John is the one making the purchase, so they send this transaction to authenticate.</p>
-        <div style="position:absolute;bottom:-12%;right:0px;">
+    <div class="DivWhite" >
+        <p align="center">The <b>cellphone shop, which is integrated to the PayU authentication service</b>, wants to verify that John is the one making the purchase, so they send this transaction to authenticate.</p>
+        <div class="img2">
             <p align="center"><img src="../../../assets/3DS/3DS_step_2_en.png"/></p>
         </div>
     </div>
-    <div style="width: 20%; height: 600px; float:left; background:linear-gradient(to bottom, #EEE 90%, white);padding: 20px;position:relative;" >
-        <p align="center">Through 3DS communication, the issuer receives the request to authenticate the transaction and start reviewing the shared data.</p>
-        <div style="position:absolute;bottom:-12%;right:0px;">
+    <div class="DivGray longDiv" >
+        <p align="center">Through 3DS communication, the issuer receives the request to authenticate the transaction and begins to review the shared data.</p>
+        <div class="img3">
             <p align="center"><img src="../../../assets/3DS/3DS_step_3_en.png"/></p>
         </div>
     </div>
-    <div style="width: 20%; height: 600px; float:left; background:#FFF;padding: 20px;position:relative;">
-        <p align="center">The issuer successfully authenticates the card used by John to perform the purchase. Given that the risk was low, the authentication was silent without contacting John.</p>
+    <div class="DivWhite Div4" >
+        <p align="center">The issuer successfully authenticates the card used by John to perform the purchase. Since the risk was low, the authentication was silent without contacting John.</p>
         <hr style="border: 1px solid #ACC629;">
-        <p align="center">When the transaction is risker for the issuer, John may receive a simple challenge, such as an OTP sent to his cellphone.</p>
-        <div style="position:absolute;bottom:-11.2%;right:0px;">
+        <p align="center">When the transaction involves higher risk, John may receive a simple challenge, such as an OTP sent to his cellphone.</p>
+        <div class="img4">
             <p align="center"><img src="../../../assets/3DS/3DS_step_4_en.png"/></p>
         </div>
     </div>
-    <div style="width: 20%; height: 600px; float:left; background:linear-gradient(to bottom, #EEE 90%, white);padding: 20px;position:relative;" >
-        <p align="center">John receives the confirmation of his purchase and later on, he receives the cellphone in his house.</p>
-        <div style="position:absolute;bottom:-11.2%;right:5px;left: -7%;">
+    <div class="DivGray lastDiv" >
+        <p align="center">John receives the confirmation of his purchase and later on, he receives the cellphone at home.</p>
+        <div class="img5">
             <p align="center"><img src="../../../assets/3DS/3DS_step_5_en.png"/></p>
         </div>
     </div>
 </div>
-<p><br><br></p>
 <h2 id="3ds-benefits">3DS Benefits</h2>
-<h2 id="3ds-authentication-for-payu">3DS Authentication for PayU</h2>
+<p>3DS (Three-Domain Secure) adds additional security layers to reduce the fraud avoiding the unauthorized usage of credit cards, protecting you of chargebacks due to fraud transactions.</p>
+<p>Using 3DS, you can have:</p>
+<ul>
+<li>
+<p><strong>Higher approval rates, less fraud.</strong><br>
+The exchange of data between merchants and issuers helps to make better authorization decisions and fraud detection. In case of fraud chargebacks, the issuer is the one who has the responsibility with the buyer.</p>
+</li>
+<li>
+<p><strong>Better user experience.</strong><br>
+3DS allows a better integration of the authentication process during the shopping experience of the end user. Reduces the friction with the user in a higher percentage of transactions.</p>
+</li>
+<li>
+<p><strong>Complies with regulations and <a href="https://www.emvco.com/emv-technologies/3d-secure/">EMVCo</a> standards.</strong><br>
+Supports a strong customer authentication for issuers, acquirers, and payment services in regulated markets.</p>
+</li>
+</ul>
+<h2 id="3ds-authentication-solution">3DS Authentication solution</h2>
+<p>The authorization can be sent by <strong>PayU Latam</strong> or by <strong>PayU Hub</strong>. You are free to decide and it&rsquo;s not necessary to completely migrate to the <strong>PayU Hub</strong> if you choose <strong>PayU Latam</strong>.</p>
+<ul>
+<li>
+<p>Through <strong>PayU Latam</strong> using a <em>Pass Through</em> scenario where the commerce performs the authentication by their own. This is available for commerces who processes in <a href="../../../en/docs/integrations/api-integration/payments-api-brazil.html">Brazil</a> and <a href="../../../en/docs/integrations/api-integration/payments-api-colombia.html">Colombia</a>.<br>For more information, contact your sales representative.</p>
+</li>
+<li>
+<p>Through <strong>PayU Hub</strong> using the <a href="https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html">Authentication Service</a> that operates in two calls flow. To authenticate, you must connect to the PayU Hub, where you will get the authentication response.<br><strong>PayU Hub</strong>, is the solution for borderless Payments. With a single API integration, you can process local payments in 18 markets.</p>
+</li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+3DS Authentication is supported for Visa &amp; MasterCard.
+</div>
+
+<p>When using the 3DS Authentication solution, take into account the following:</p>
+<ul>
+<li>The authentication service is independent from the authorization service.</li>
+<li>The authorization must include the authentication response.</li>
+</ul>
+<h3 id="benefits-of-our-solution">Benefits of our solution</h3>
+<p>Regardless of how you integrate with our 3DS Authentication solution, you have the following benefits.</p>
+<ul>
+<li>PayU is connected to a 3DS server (MPI), you don&rsquo;t need to do it by your own. Less providers &amp; contracts! </li>
+<li>You control and decide when to authenticate a transaction.</li>
+<li>No additional costs<sup>*</sup>. Authentication is a service for free!.</li>
+<li>Minimum or none contract adjustments for 3DS service. </li>
+<li>If you migrate to the HUB, you can have additional benefits of a global solution.</li>
+</ul>
+<p><sup>*</sup> <em>The acquirers may charge an authentication cost.</em></p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+We are working on connecting to multiple 3DS server providers to improve performance and guarantee authentication service always.
+</div>
+
+<h3 id="how-to-integrate-3ds">How to integrate 3DS?</h3>
+<ul>
+<li>To integrate using <strong>PayU Latam</strong>, refer to the <em>Payments API</em> of your processing country:</li>
+</ul>
+<div style="display: flex;">
+  <div style="float: left;width: 50%;text-align: center;">
+    <a href='../../../en/docs/integrations/api-integration/payments-api-brazil.html#considerations'><img src="../../../assets/Brasil.png" width="10%"/></a>
+  </div>
+  <div style="float: left;width: 50%;text-align: center;">
+    <a href='../../../en/docs/integrations/api-integration/payments-api-colombia.html#considerations'><img src="../../../assets/Colombia.png" width="10%"/></a>
+  </div>
+</div>
+<br>
+<ul>
+<li>To integrate using <strong>PayU Hub</strong>, follow these steps:</li>
+</ul>
+<ol>
+<li>
+<p>To get started, open an account on the <strong>PayU Hub</strong>.<br>Click <a href="https://control.paymentsos.com/signup">here</a> to create one.</p>
+</li>
+<li>
+<p>Update your integration code. Ask your developers to update their integration code to connect through the PayU Hub.</p>
+</li>
+<li>
+<p>Test your integration and go live!</p>
+</li>
+</ol>
+<p>Everything else remains the same!.</p>
+<ul>
+<li>Keep your current offer. You can still offering your current payment methods either from <strong>PayU Latam</strong> or from <strong>PayU Hub</strong>.</li>
+<li>New On boarding process? Hell no! You&rsquo;re already with us, so there&rsquo;s nothing else we need.</li>
+<li>Payments are still handled by the local platforms, so we will make sure that the same data is available for you. </li>
+</ul>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-December 7, 2021:
+December 9, 2021:
 
- <b>publish December 2, 2021 (a9b9584b)</b>
+ <b>Article for 3DS authentication service (d820a2be)</b>
 </div>
 </div>
 
