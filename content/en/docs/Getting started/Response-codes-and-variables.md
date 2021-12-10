@@ -320,6 +320,7 @@ Send the exact value displayed in the `Code` column in the variable `transfers[n
 | `047`     | MUNDOMUJER                                        |
 | `051`     | DAVIVIENDA                                        |
 | `052`     | AV VILLAS                                         |
+| `053`     | BANCO WWB                                         |
 | `059`     | BANCAMIA                                          |
 | `060`     | PICHINCHA                                         |
 | `061`     | BANCOOMEVA                                        |
@@ -332,7 +333,7 @@ Send the exact value displayed in the `Code` column in the variable `transfers[n
 | `070`     | LULO BANK                                         |
 | `071`     | BANCO JP MORGAN COLOMBIA                          |
 | `083`     | COMPENSAR                                         |
-| `084`     | APORTES EN LINEA                                  |
+| `084`     | APORTES EN LINEA (GESTION Y CONTACTO)             |
 | `086`     | ASOPAGOS                                          |
 | `087`     | FEDECAJAS                                         |
 | `088`     | SIMPLE                                            |
@@ -340,20 +341,17 @@ Send the exact value displayed in the `Code` column in the variable `transfers[n
 | `090`     | CORFICOLOMBIANA                                   |
 | `121`     | JURISCOOP                                         |
 | `151`     | RAPPIPAY                                          |
-| `283`     | COOP FIN DE ANTIOQUIA                             |
+| `283`     | COOPERATIVA FINANCIERA DE ANTIOQUIA               |
 | `289`     | COTRAFA                                           |
-| `292`     | CONFIAR                                           |
-| `342`     | SERFINANSA                                        |
+| `292`     | CONFIAR COOPERATIVA FINANCIERA                    |
 | `370`     | COLTEFINANCIERA S.A. - COMPANIA DE FINANCIAMIENTO |
-| `637`     | IRIS                                              |
-| `550`     | DECEVAL                                           |
 | `507`     | NEQUI                                             |
+| `550`     | DECEVAL                                           |
+| `558 `    | CREDIFINANCIERA S.A.                              |
 | `683`     | DGCPTN                                            |
 | `685`     | DGCPTN-REGALIAS                                   |
 | `801`     | MOVII                                             |
 | `0551`    | DAVIPLATA                                         |
-| `0558`    | CREDIFINANCIERA S.A.                              |
-| `1053`    | BANCO WWB                                         |
 | `1062`    | BANCO FALABELLA S.A.                              |
 | `1063`    | BANCO FINANDINA S.A.                              |
 | `1069`    | BANCO SERFINANZA S.A.                             |
@@ -361,3 +359,4 @@ Send the exact value displayed in the `Code` column in the variable `transfers[n
 | `1291`    | COOFINEP                                          |
 | `1292`    | CONFIAR COOPERATIVA FINANCIERA                    |
 | `1303`    | GIROS Y FINANZAS                                  |
+| `1637`    | IRIS                                              |
