@@ -125,7 +125,7 @@ Cuando pruebas los Pagos, debes enviar en el request:
   - Envía `PENDING` en el nombre del tarjetahabiente.
   - Envía **777** en el CVV de la tarjeta (para AMEX, utiliza **7777**).
   - Envía el parámetro `test` como _true_.
-  - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-reviewhub@email.com`.
+  - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-review-hub@email.com`.
 * Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia enviada en el request. Puedes utilizar un generador en línea de tarjetas de crédito o una de las  correspondientes a tu país mencionadas anteriormente.
 * Para probar transferencias bancarias por PSE (Disponible en Colombia) en el ambiente de Sandbox de PayU, consulta la [Guía de pruebas PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
 

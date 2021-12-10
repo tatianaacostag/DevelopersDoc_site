@@ -125,7 +125,7 @@ When testing Payments, you must send in the request:
   - Send `PENDING` in the name of the cardholder.
   - Send **777** in the CVV of the card (for AMEX, use **7777**).
   - Send the `test` parameter as _true_.
-  - In the buyer and payer information, set the email as `manual-reviewhub@email.com`.
+  - In the buyer and payer information, set the email as `manual-review-hub@email.com`.
 * For the card number you must enter a valid number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes or use one of the cards available for your country mentioned before.
 * To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
 
