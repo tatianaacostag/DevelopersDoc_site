@@ -318,7 +318,7 @@ Envía el valor exacto mostrado en la columna `Código` en la variable `transfer
 | `041`     | JPMORGAN                                          |
 | `042`     | BNP PARIBAS                                       |
 | `047`     | MUNDOMUJER                                        |
-| `051`     | DAVIVIENDA                                        |
+| `051`     | DAVIVIENDA - DAVIPLATA                            |
 | `052`     | AV VILLAS                                         |
 | `053`     | BANCO WWB                                         |
 | `059`     | BANCAMIA                                          |
@@ -351,7 +351,6 @@ Envía el valor exacto mostrado en la columna `Código` en la variable `transfer
 | `683`     | DGCPTN                                            |
 | `685`     | DGCPTN-REGALIAS                                   |
 | `801`     | MOVII                                             |
-| `0551`    | DAVIPLATA                                         |
 | `1062`    | BANCO FALABELLA S.A.                              |
 | `1063`    | BANCO FINANDINA S.A.                              |
 | `1069`    | BANCO SERFINANZA S.A.                             |

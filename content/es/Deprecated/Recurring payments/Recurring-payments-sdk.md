@@ -66,7 +66,7 @@ weight: 10
       <p style="display:contents;color:white"><b>Funcionalidad descontinuada</b></p>
       <span class="close" style="color:white">&times;</span>
     </header>
-    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los   comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
+    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
   </div>
 
 </div>
@@ -122,9 +122,9 @@ Apuntando a las correspondientes URLs:
 {{< tabs tabTotal="2" tabID="30" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
 ```Java
-// URL for test: https://sandbox.api.payulatam.com/payments-api/
+// URL para pruebas: https://sandbox.api.payulatam.com/payments-api/
 PayU.paymentsUrl = “https://api.payulatam.com/payments-api/”;
-// URL for test: https://sandbox.api.payulatam.com/reports-api/
+// URL para pruebas: https://sandbox.api.payulatam.com/reports-api/
 PayU.reportsUrl = “https://api.payulatam.com/reports-api/”;
 ```
 
@@ -133,9 +133,9 @@ PayU.reportsUrl = “https://api.payulatam.com/reports-api/”;
 {{< tab tabNum="2" >}}
 
 ```PHP
-// URL for test: https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi
+// URL para pruebas: https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi
 Environment::setPaymentsCustomUrl(“https://api.payulatam.com/payments-api/4.0/service.cgi”);
-// URL for test: https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi
+// URL para pruebas: https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi
 Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/service.cgi”);
 ```
 
@@ -199,30 +199,42 @@ SubscriptionPlan response = PayUPlans.create(parameters);
 
 Ejemplo petición:
 ```PHP
-Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí la descripción del plan
-parameters.put(PayU.PARAMETERS.PLAN_DESCRIPTION, "Basic Plan");
-// Ingresa aquí el código de identificación para el plan
-parameters.put(PayU.PARAMETERS.PLAN_CODE, "ASd456" + System.currentTimeMillis());
-// Ingresa aquí el intervalo del plan
-parameters.put(PayU.PARAMETERS.PLAN_INTERVAL, "MONTH");
-// Ingresa aquí la cantidad de intervalos
-parameters.put(PayU.PARAMETERS.PLAN_INTERVAL_COUNT, "12");
-// Ingresa aquí la moneda para el plan
-parameters.put(PayU.PARAMETERS.PLAN_CURRENCY, "COP");
-// Ingresa aquí el valor del plan
-parameters.put(PayU.PARAMETERS.PLAN_VALUE, "50000");
-//(OPCIONAL) Ingresa aquí el valor del impuesto
-parameters.put(PayU.PARAMETERS.PLAN_TAX, "10000");
-//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
-parameters.put(PayU.PARAMETERS.PLAN_TAX_RETURN_BASE, "40000");
-// Ingresa aquí la cuenta Id del plan
-parameters.put(PayU.PARAMETERS.ACCOUNT_ID, "2");
-// Ingresa aquí el intervalo de reintentos
-parameters.put(PayU.PARAMETERS.PLAN_ATTEMPTS_DELAY, "2");
-// Ingresa aquí la cantidad de cobros que componen el plan
-parameters.put(PayU.PARAMETERS.PLAN_MAX_PAYMENTS, "2");
-SubscriptionPlan response = PayUPlans.create(parameters);
+$parameters = array(
+	// Ingresa aquí la descripción del plan
+	PayUParameters::PLAN_DESCRIPTION => "Sample Plan 001",
+	// Ingresa aquí el código de identificación para el plan
+	PayUParameters::PLAN_CODE => "sample-plan-code-001",
+	// Ingresa aquí el intervalo del plan
+	//DAY||WEEK||MONTH||YEAR
+	PayUParameters::PLAN_INTERVAL => "MONTH",
+	// Ingresa aquí la cantidad de intervalos
+	PayUParameters::PLAN_INTERVAL_COUNT => "1",
+	// Ingresa aquí la moneda para el plan
+	PayUParameters::PLAN_CURRENCY => "COP",
+	// Ingresa aquí el valor del plan
+	PayUParameters::PLAN_VALUE => "10000",
+	//(OPCIONAL) Ingresa aquí el valor del impuesto
+	PayUParameters::PLAN_TAX => "1600",
+	//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+	PayUParameters::PLAN_TAX_RETURN_BASE => "8400",
+	// Ingresa aquí la cuenta Id del plan
+	PayUParameters::ACCOUNT_ID => "512321",
+	// Ingresa aquí el intervalo de reintentos
+	PayUParameters::PLAN_ATTEMPTS_DELAY => "1",
+	// Ingresa aquí la cantidad de cobros que componen el plan
+	PayUParameters::PLAN_MAX_PAYMENTS => "12",
+	// Ingresa aquí la cantidad total de reintentos para cada pago rechazado de la suscripción
+	PayUParameters::PLAN_MAX_PAYMENT_ATTEMPTS => "3",
+	// Ingresa aquí la cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada.
+	PayUParameters::PLAN_MAX_PENDING_PAYMENTS => "1",
+	// Ingresa aquí la cantidad de días de prueba de la suscripción.
+	PayUParameters::TRIAL_DAYS => "30",
+);
+
+$response = PayUSubscriptionPlans::create($parameters);
+if($response){
+	$response->id;
+}
 ```
 {{< /tab >}}
 {{< /tabs >}}

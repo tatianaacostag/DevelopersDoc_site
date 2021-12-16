@@ -66,7 +66,7 @@ weight: 10
       <p style="display:contents;color:white"><b>Funcionalidad descontinuada</b></p>
       <span class="close" style="color:white">&times;</span>
     </header>
-    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los   comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
+    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
   </div>
 
 </div>
@@ -112,6 +112,10 @@ Pagos recurrentes ha sido descontinuado y no se ofrece para comercios.
 
 ## ¿Cómo funciona? 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/pagos-recurrentes-1.jpg)
+
+{{% alert title="Tener en cuenta" color="info"%}}
+Pagos recurrentes sólo está disponible para cuentas de **Brasil**, **Colombia**, **Perú** y **México**.
+{{% /alert %}}
 
 Con el fin de garantizar el correcto uso del sistema, todas las peticiones deben contener el encabezado HTTP de autorización con las credenciales del comercio, de manera que pueda identificarse quién está realizando la petición. Para esta implementación se usará autorización básica, en donde se envía el nombre de usuario (API Login) y contraseña (API Key).
  

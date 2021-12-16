@@ -22,14 +22,14 @@ En esta sección puedes verificar o editar tus datos bancarios. Al abrir tu cuen
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias2-es.png)
 
 
-2. na vez registres los datos de la nueva cuenta bancaria principal, el equipo de PayU validará los datos. Mientras se realiza este proceso, podrás realizar transferencias a tu cuenta bancaria anterior y el icono <i class="fas fa-clock" style="color:#e09222;"></i> indicará que aún se está validando la nueva cuenta. Cuando el icono se vuelva color verde <i class="fas fa-check-circle" style="color:#a6c307;"></i>, significa que la cuenta ha sido verificada y ya podrás hacer tus transferencias a la nueva cuenta principal.
+2. Una vez registres los datos de la nueva cuenta bancaria principal, el equipo de PayU validará los datos. Mientras se realiza este proceso, podrás realizar transferencias a tu cuenta bancaria anterior y el icono <i class="fas fa-clock" style="color:#e09222;"></i> indicará que aún se está validando la nueva cuenta. Cuando el icono se vuelva color verde <i class="fas fa-check-circle" style="color:#a6c307;"></i>, significa que la cuenta ha sido verificada y ya podrás hacer tus transferencias a la nueva cuenta principal.
 
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/transfers/es/transferencias3-es.png)
 
 ## Registro de cuentas bancarias de terceros
-{{% alert title="Please Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 * Disponible por ahora, solo para cuentas PayU de Colombia.
-* La opción de _**Gestión de Terceros**_ solo se habilitará una vez hayas solicitado a [Servicio al cliente](http://payu.com.co/en/support) la activación de esta herramienta, ya que debes aceptar nuevos términos y condiciones antes de disponer de sus funciones.
+* La opción de _**Gestión de Terceros**_ solo se habilitará una vez hayas solicitado a [Servicio al cliente](http://payu.com.co/soporte) la activación de esta herramienta, ya que debes aceptar nuevos términos y condiciones antes de disponer de sus funciones.
 {{% /alert %}}
  
 Esta funcionalidad te permite gestionar (crear, editar y eliminar) los datos bancarios de terceros, por ejemplo, proveedores, asociados o cuentas bancarias a nombre del titular de la cuenta PayU.

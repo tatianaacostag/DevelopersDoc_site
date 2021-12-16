@@ -67,7 +67,7 @@ nosidetoc: true
       <p style="display:contents;color:white"><b>Funcionalidad descontinuada</b></p>
       <span class="close" style="color:white">&times;</span>
     </header>
-    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los   comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
+    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
   </div>
 
 </div>
@@ -84,7 +84,7 @@ var toc = document.getElementById("td-section-nav");
 
 // When the page loads, open the modal 
 window.onload = function() {
-  content.style.backgroundImage = "url('/assets/deprecated.png')";
+  //content.style.backgroundImage = "url('/assets/deprecated.png')";
   modal.style.display = "block";
   toc.style['pointer-events'] = 'none';
   toc.style.backgroundColor = "rgba(0,0,0,-0.6)";
