@@ -24,7 +24,7 @@ También podrás consultar el saldo general que está compuesto por:
 * _**Saldo disponible**_: Es el dinero que puedes transferir a tu cuenta bancaria. Está compuesto por el Saldo total menos el Saldo de reserva.
 
 ## Movimientos
-Puedes acceder desde el menú _**Cuentas**_ haciendo clic sobre la opción _**Movimientos**_.
+Esta opción te permite realizar una consulta de los movimientos realizados en tus cuentas PayU, por ejemplo el abono de tus ventas, descuentos de comisiones PayU o las transferencias que has realizado.
 
 1. Puedes acceder desde el menú _**Cuentas**_ haciendo clic sobre la opción _**Movimientos**_.
 

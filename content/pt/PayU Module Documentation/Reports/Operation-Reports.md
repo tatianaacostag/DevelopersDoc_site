@@ -9,7 +9,7 @@ weight: 50
 ---
 Os relatórios de operações sugeridos pela _Comissão Nacional de Bancos e Valores Mobiliários_ (CNBV) são relatórios mensais com validade de 3 (três) meses. Ou seja, durante o mês atual, você pode baixar os relatórios do mês imediatamente anterior e dos dois meses anteriores.
 
-{{% alert title="Nota" color="info"%}}
+{{% alert title="Observação" color="info"%}}
 Para ter acesso a este módulo, você precisa ter um perfil com a permissão _Operation reports_ > _Consult operation reports_ habilitada.
 
 Consulte [Perfis e permissões]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.

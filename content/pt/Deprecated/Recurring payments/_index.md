@@ -1,10 +1,10 @@
 ---
-title: "Pagos recurrentes"
-linkTitle: "Pagos recurrentes"
+title: "Pagamentos recorrentes"
+linkTitle: "Pagamentos recorrentes"
 date: 2021-09-28T13:40:06-05:00
 type: docs
 Description: >
-   Información de Pagos recurrentes para API y SDK.
+   Informações de pagamentos recorrentes para API e SDK.
 weight: 10
 nosidetoc: true
 ---
@@ -64,10 +64,10 @@ nosidetoc: true
   <!-- Modal content -->
   <div class="modal-content">
     <header class="header">
-      <p style="display:contents;color:white"><b>Funcionalidad descontinuada</b></p>
+      <p style="display:contents;color:white"><b>Funcionalidade descontinuada</b></p>
       <span class="close" style="color:white">&times;</span>
     </header>
-    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
+    <p style="padding:20px">A funcionalidade de <b><i>Pagamentos recorrentes</i></b> foi descontinuada e, portanto, não é oferecida aos comerciantes. O artigo a seguir está disponível como uma referência para lojas que ainda o têm ativo.<br>Esta funcionalidade <b>NÃO</b> será ativada novamente.</p>
   </div>
 
 </div>

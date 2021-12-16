@@ -1,10 +1,10 @@
 ---
-title: "Pagos recurrentes - SDK"
-linkTitle: "Pagos recurrentes - SDK"
+title: "Pagamentos recorrentes - SDK"
+linkTitle: "Pagamentos recorrentes - SDK"
 date: 2021-09-28T13:40:06-05:00
 type: docs
 Description: >
-   Los pagos recurrentes son cobros automatizados que se realizan periódicamente (diario, mensual, anual), de aquellos cargos por consumo de productos o servicios como membresías, suscripciones, pólizas o recibos con valor fijo; que previamente fueron autorizados por el cliente.
+   Los pagamentos recorrentes son cobros automatizados que se realizan periódicamente (diario, mensual, anual), de aquellos cargos por consumo de productos o servicios como membresías, suscripciones, pólizas o recibos con valor fijo; que previamente fueron autorizados por el cliente.
 weight: 10
 ---
 <!-- Modal window start -->
@@ -63,10 +63,10 @@ weight: 10
   <!-- Modal content -->
   <div class="modal-content">
     <header class="header">
-      <p style="display:contents;color:white"><b>Funcionalidad descontinuada</b></p>
+      <p style="display:contents;color:white"><b>Funcionalidade descontinuada</b></p>
       <span class="close" style="color:white">&times;</span>
     </header>
-    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
+    <p style="padding:20px">A funcionalidade de <b><i>Pagamentos recorrentes</i></b> foi descontinuada e, portanto, não é oferecida aos comerciantes. O artigo a seguir está disponível como uma referência para lojas que ainda o têm ativo.<br>Esta funcionalidade <b>NÃO</b> será ativada novamente.</p>
   </div>
 
 </div>
@@ -106,25 +106,25 @@ window.onclick = function(event) {
 
 <!-- Modal window end -->
 
-{{% alert title="Nota" color="warning"%}}
-Pagos recurrentes ha sido descontinuado y no se ofrece para comercios.
+{{% alert title="Observação" color="warning"%}}
+Os pagamentos recorrentes foram descontinuados e não são oferecidos aos comerciantes.
 {{% /alert %}}
 
-## ¿Cómo funciona? 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/pagos-recurrentes-1.jpg)
+## Como funciona? 
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/pagos-recurrentes1-pt.jpg)
 
 {{% alert title="Tener en cuenta" color="info"%}}
-Pagos recurrentes sólo está disponible para cuentas de **Brasil**, **Colombia**, **Perú** y **México**.
+Pagamentos recorrentes somente está disponível para contas do **Brasil**, **Colômbia**, **Peru** e **México**.
 {{% /alert %}}
 
-Apuntando a las correspondientes URLs:
+Apontando as correspondentes URLs:
 
 {{< tabs tabTotal="2" tabID="30" tabName1="Java" tabName2="PHP" >}}
 {{< tab tabNum="1" >}}
 ```Java
-// URL para pruebas: https://sandbox.api.payulatam.com/payments-api/
+// URL for teste: https://sandbox.api.payulatam.com/payments-api/
 PayU.paymentsUrl = “https://api.payulatam.com/payments-api/”;
-// URL para pruebas: https://sandbox.api.payulatam.com/reports-api/
+// URL for teste: https://sandbox.api.payulatam.com/reports-api/
 PayU.reportsUrl = “https://api.payulatam.com/reports-api/”;
 ```
 
@@ -133,9 +133,9 @@ PayU.reportsUrl = “https://api.payulatam.com/reports-api/”;
 {{< tab tabNum="2" >}}
 
 ```PHP
-// URL para pruebas: https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi
+// URL for teste: https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi
 Environment::setPaymentsCustomUrl(“https://api.payulatam.com/payments-api/4.0/service.cgi”);
-// URL para pruebas: https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi
+// URL for teste: https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi
 Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/service.cgi”);
 ```
 
@@ -143,51 +143,51 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 {{< /tabs >}}
 <br>
 
-Los métodos disponibles para los pagos recurrentes son: Plan, Cliente, Tarjeta de crédito, Suscripción y Cargos adicionales. A continuación encontrarás la descripción de cada uno.
+Os métodos disponíveis para os pagamentos recorrentes são: Plano, Cliente, Cartão de crédito, Assinatura e Taxas adicionais. A seguir você encontrará a descrição de cada um.
 
-## 1. Plan
-Using this feature you can register a recurring plan and thus get its identifier.  
+## 1. Plano
+Mediante esta funcionalidade você pode registrar os dados do cartão de crédito de um cliente e assim obter um código sequencial token.  
 
-Se encuentran disponibles las siguientes operaciones:  
+As seguintes operações estão disponíveis:  
 <div class="variables"></div>
 
-| URL | Método | Descripción |
+| URL | Método | Descrição |
 |---|---|---|
-| /rest/v4.9/plans | `POST` | Creación de un nuevo plan para suscripciones asociado al comercio. |
-| /rest/v4.9/plans/{planCode} | `PUT` | Actualizar la información de un plan para suscripciones.<br>`{planCode}`: Código de identificación del plan para el comercio. |
-| /rest/v4.9/plans/{planCode} | `GET` | Consultar toda la información de un plan para suscripciones asociado al comercio.<br>`{planCode}`: Código de identificación del plan para el comercio. |
-| /rest/v4.9/plans/{planCode} | `DELETE` | Eliminar todo un plan para suscripciones asociado al comercio.<br>`{planCode}`: Código de identificación del plan para el comercio. |
+| /rest/v4.9/plans | `POST` | Criação de um novo plano para assinaturas associado ao comércio. |
+| /rest/v4.9/plans/{planCode} | `PUT` | Actualizar la información de un plan para suscripciones.<br>`{planCode}`: Código de identificação do plano para o comércio. |
+| /rest/v4.9/plans/{planCode} | `GET` | Consultar toda la información de un plan para suscripciones asociado al comercio.<br>`{planCode}`: Código de identificação do plano para o comércio. |
+| /rest/v4.9/plans/{planCode} | `DELETE` | Eliminar todo un plan para suscripciones asociado al comercio.<br>`{planCode}`: Código de identificação do plano para o comércio. |
 
-### Creación
+### Criação
 
 {{< tabs tabTotal="2" tabID="1" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí la descripción del plan
+// Insira aqui a descrição do plano.
 parameters.put(PayU.PARAMETERS.PLAN_DESCRIPTION, "Basic Plan");
-// Ingresa aquí el código de identificación para el plan
+// Insira aqui o código de identificação do plano.
 parameters.put(PayU.PARAMETERS.PLAN_CODE, "ASd456" + System.currentTimeMillis());
-// Ingresa aquí el intervalo del plan
+// Insira aqui o intervalo do plano.
 parameters.put(PayU.PARAMETERS.PLAN_INTERVAL, "MONTH");
-// Ingresa aquí la cantidad de intervalos
+// Insira aqui a quantidade de intervalos.
 parameters.put(PayU.PARAMETERS.PLAN_INTERVAL_COUNT, "12");
-// Ingresa aquí la moneda para el plan
+// Insira aqui a moeda do plano
 parameters.put(PayU.PARAMETERS.PLAN_CURRENCY, "COP");
-// Ingresa aquí el valor del plan
+// Insira aqui o valor do plano
 parameters.put(PayU.PARAMETERS.PLAN_VALUE, "50000");
-//(OPCIONAL) Ingresa aquí el valor del impuesto
+//(OPCIONAL) Insira aqui o valor do imposto.
 parameters.put(PayU.PARAMETERS.PLAN_TAX, "10000");
-//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+//(OPCIONAL) Insira aqui a base de devolução do imposto.
 parameters.put(PayU.PARAMETERS.PLAN_TAX_RETURN_BASE, "40000");
-// Ingresa aquí la cuenta Id del plan
+// Insira aqui a conta ID do plano
 parameters.put(PayU.PARAMETERS.ACCOUNT_ID, "2");
-// Ingresa aquí el intervalo de reintentos
+// Insira aqui o intervalo das novas tentativas de cobrança.
 parameters.put(PayU.PARAMETERS.PLAN_ATTEMPTS_DELAY, "2");
-// Ingresa aquí la cantidad de cobros que componen el plan
+// Insira aqui a quantidade de cobranças que compõem o plano de pagamento
 parameters.put(PayU.PARAMETERS.PLAN_MAX_PAYMENTS, "2");
 SubscriptionPlan response = PayUPlans.create(parameters);
 ```
@@ -197,37 +197,37 @@ SubscriptionPlan response = PayUPlans.create(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí la descripción del plan
+	// Insira aqui a descrição do plano.
 	PayUParameters::PLAN_DESCRIPTION => "Sample Plan 001",
-	// Ingresa aquí el código de identificación para el plan
+	// Insira aqui o código de identificação do plano.
 	PayUParameters::PLAN_CODE => "sample-plan-code-001",
-	// Ingresa aquí el intervalo del plan
+	// Insira aqui o intervalo do plano.
 	//DAY||WEEK||MONTH||YEAR
 	PayUParameters::PLAN_INTERVAL => "MONTH",
-	// Ingresa aquí la cantidad de intervalos
+	// Insira aqui a quantidade de intervalos.
 	PayUParameters::PLAN_INTERVAL_COUNT => "1",
-	// Ingresa aquí la moneda para el plan
+	// Insira aqui a moeda do plano
 	PayUParameters::PLAN_CURRENCY => "COP",
-	// Ingresa aquí el valor del plan
+	// Insira aqui o valor do plano
 	PayUParameters::PLAN_VALUE => "10000",
-	//(OPCIONAL) Ingresa aquí el valor del impuesto
+	//(OPCIONAL) Insira aqui o valor do imposto.
 	PayUParameters::PLAN_TAX => "1600",
-	//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+	//(OPCIONAL) Insira aqui a base de devolução do imposto.
 	PayUParameters::PLAN_TAX_RETURN_BASE => "8400",
-	// Ingresa aquí la cuenta Id del plan
+	// Insira aqui a conta ID do plano
 	PayUParameters::ACCOUNT_ID => "512321",
-	// Ingresa aquí el intervalo de reintentos
+	// Insira aqui o intervalo das novas tentativas de cobrança.
 	PayUParameters::PLAN_ATTEMPTS_DELAY => "1",
-	// Ingresa aquí la cantidad de cobros que componen el plan
+	// Insira aqui a quantidade de cobranças que compõem o plano de pagamento
 	PayUParameters::PLAN_MAX_PAYMENTS => "12",
-	// Ingresa aquí la cantidad total de reintentos para cada pago rechazado de la suscripción
+	// Insira aqui a quantidade total de novas tentativas quando um pagamento tem sido rejeitado.
 	PayUParameters::PLAN_MAX_PAYMENT_ATTEMPTS => "3",
-	// Ingresa aquí la cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada.
+	// Insira aqui o número máximo de pagamentos pendentes que uma assinatura pode ter antes de ser cancelada.
 	PayUParameters::PLAN_MAX_PENDING_PAYMENTS => "1",
-	// Ingresa aquí la cantidad de días de prueba de la suscripción.
+	// Insira aqui a quantidade de dias de teste da assinatura.
 	PayUParameters::TRIAL_DAYS => "30",
 );
 
@@ -239,28 +239,28 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-### Actualización
+### Atualização
 
 {{< tabs tabTotal="2" tabID="2" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingrese aquí la nueva descripción para el plan
+// Insira aqui a nova descrição para o plano.
 parameters.put(PayU.PARAMETERS.PLAN_DESCRIPTION, "New Basic Plan");
-// Ingrese aquí el código del plan (Debe ser un código de plan existente)
+// Insira aqui o código do plano (deve ser um código já existente)
 parameters.put(PayU.PARAMETERS.PLAN_CODE, "ASd4561379351327982");
-// Ingrese aquí la moneda del plan (Debe ser el mismo que fue usado cuando el plan fue creado)
+// Insira aqui a moeda do plano (deve ser a mesma do plano original)
 parameters.put(PayU.PARAMETERS.PLAN_CURRENCY, "COP");
-// Ingrese aquí el nuevo valor del plan
+// Insira aqui o novo valor do plano.
 parameters.put(PayU.PARAMETERS.PLAN_VALUE, "100000");
-//(OPCIONAL) Ingrese aquí el valor del impuesto
+// (OPCIONAL) Insira aqui o valor do imposto.
 parameters.put(PayU.PARAMETERS.PLAN_TAX, "10000");
-//(OPCIONAL) Ingrese aquí base de devolución del impuesto
+// (OPCIONAL) Insira aqui a base de devolução imposto.
 parameters.put(PayU.PARAMETERS.PLAN_TAX_RETURN_BASE, "40000");
-// Ingrese aquí la cantidad de reintentos
+// Insira aqui a quantidade de tentativas.
 parameters.put(PayU.PARAMETERS.PLAN_ATTEMPTS_DELAY, "3");
 SubscriptionPlan response;
 response = PayUPlans.update(parameters);
@@ -270,26 +270,26 @@ response = PayUPlans.update(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí la descripción del plan
+	// Insira aqui a nova descrição para o plano.
 	PayUParameters::PLAN_DESCRIPTION => "New Sample Plan 001",
-	// Ingresa aquí el código de identificación para el plan
+	// Insira aqui o código do plano (deve ser um código já existente)
 	PayUParameters::PLAN_CODE => "sample-plan-code-001",
-	// Ingresa aquí la moneda para el plan
+	// Insira aqui a moeda do plano (deve ser a mesma do plano original)
 	PayUParameters::PLAN_CURRENCY => "COP",
-	// Ingresa aquí el valor del plan
+	// Insira aqui o novo valor do plano.
 	PayUParameters::PLAN_VALUE => "10000",
-	//(OPCIONAL) Ingresa aquí el valor del impuesto
+	// (OPCIONAL) Insira aqui o valor do imposto.
 	PayUParameters::PLAN_TAX => "0",
-	//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+	// (OPCIONAL) Insira aqui a base de devolução imposto.
 	PayUParameters::PLAN_TAX_RETURN_BASE => "0",
-	// Ingresa aquí el intervalo de reintentos
+	// Insira aqui a quantidade de tentativas.
 	PayUParameters::PLAN_ATTEMPTS_DELAY => "1",
-	// Ingresa aquí la cantidad total de reintentos para cada pago rechazado de la suscripción
+	// Insira aqui a quantidade total de novas tentativas quando um pagamento tem sido rejeitado.
 	PayUParameters::PLAN_MAX_PAYMENT_ATTEMPTS => "3",
-	// Ingresa aquí la cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada.
+	// Insira aqui o número máximo de pagamentos pendentes que uma assinatura pode ter antes de ser cancelada.
 	PayUParameters::PLAN_MAX_PENDING_PAYMENTS => "1",
 );
 
@@ -306,10 +306,10 @@ if($response){
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-//Ingrese aquí el código del plan
+// Insira aqui o código de identificação do plano.
 parameters.put(PayU.PARAMETERS.PLAN_CODE, "ASd4561379351327982");
 SubscriptionPlan response = PayUPlans.find(parameters);
 ```
@@ -319,10 +319,10 @@ SubscriptionPlan response = PayUPlans.find(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el código de identificación para el plan
+	// Insira aqui o código de identificação do plano.
 	PayUParameters::PLAN_CODE => "sample-plan-code-001",
 );
 
@@ -343,16 +343,16 @@ if($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-### Eliminación
+### Exclusão
 
 {{< tabs tabTotal="2" tabID="4" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingrese aquí el código del plan
+// Insira aqui o código de identificação do plano.
 parameters.put(PayU.PARAMETERS.PLAN_CODE, "ASd4561379351327982");
 boolean response = PayUPlans.delete(parameters);
 ```
@@ -362,10 +362,10 @@ boolean response = PayUPlans.delete(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el código de identificación para el plan
+	// Insira aqui o código de identificação do plano.
 	PayUParameters::PLAN_CODE => "sample-plan-code-001",
 );
 
@@ -377,32 +377,32 @@ if($response) {
 {{< /tabs >}}
 
 ## 2. Cliente
-Un cliente es la unidad que identifica quien será el beneficiario de un producto o servicio prestado y que se encuentra asociado a un plan de pagos recurrentes.
+Um cliente é a unidade que identifica quem será o beneficiário de um produto ou serviço prestado e que se encontra associado a um plano de pagamentos recorrentes.  
 
-Se encuentran disponibles las siguientes operaciones:  
+As seguintes operações estão disponíveis:  
 <div class="variables"></div>
 
-| URL | Método | Descripción |
+| URL | Método | Descrição |
 |---|---|---|
-| /rest/v4.9/customers/ | `POST` | Creación de un cliente en el sistema. |
-| /rest/v4.9/customers/{customerId} | `PUT` | Actualiza la información de un cliente en el sistema.<br>`{customerId}`: Identificador del cliente que se desea actualizar. |
-| /rest/v4.9/customers/{customerId} | `GET` | Consulta la información relacionada con el cliente<br>`{customerId}`: Identificador del cliente del cual se desea conocer la información asociada. |
-| /rest/v4.9/customers/{customerId} | `DELETE` | Elimina un usuario del sistema.<br>`{customerId}`: Identificador del cliente que se desea eliminar. |
+| /rest/v4.9/customers/ | `POST` | Criação de um cliente no sistema. |
+| /rest/v4.9/customers/{customerId} | `PUT` | Atualiza a informação de um cliente no sistema.<br>`{customerId}`: Identificador do cliente que se deseja atualizar. |
+| /rest/v4.9/customers/{customerId} | `GET` | Consulta a informação relacionada com o cliente.<br>`{customerId}`: Identificador do cliente do qual se deseja conhecer a informação associada. |
+| /rest/v4.9/customers/{customerId} | `DELETE` | Apaga um usuário do sistema.<br>`{customerId}`: Identificador do cliente que se deseja apagar. |
 
-### Creación
+### Criação
 
 {{< tabs tabTotal="2" tabID="5" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-//Ingresa aquí el Nombre del cliente
+// Insira o nome do cliente
 parameters.put(PayU.PARAMETERS.CUSTOMER_NAME, "Oscar");
-//Ingresa aquí el E-mail del Cliente
+// Insira aqui o email do cliente.
 parameters.put(PayU.PARAMETERS.CUSTOMER_EMAIL, "oscar.romero@payulatam.com");
-//Operación crear el cliente
+// Operação criar cliente.
 Customer response = PayUCustomers.create(parameters);
 ```
 {{< /tab >}}
@@ -410,12 +410,12 @@ Customer response = PayUCustomers.create(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el nombre del cliente
+	// Insira o nome do cliente
 	PayUParameters::CUSTOMER_NAME => "Pedro Perez",
-	// Ingresa aquí el correo del cliente
+	// Insira aqui o email do cliente.
 	PayUParameters::CUSTOMER_EMAIL => "pperez@payulatam.com"
 );
 
@@ -428,30 +428,22 @@ if($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-### Actualización
+### Atualização
 
 {{< tabs tabTotal="2" tabID="6" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-//Ingresa aquí el ID del Cliente
+// Insira o ID do cliente
 parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "f543exh3zh5o");
-//Ingresa aquí el Nombre del Cliente
-parameters.put(PayU.PARAMETERS.CUSTOMER_NAME, "Oscar Romero");
-//Ingresa aquí el E-mail del Cliente
+// Insira o nome do cliente
+parameters.put(PayU.PARAMETERS.CUSTOMER_NAME, "Oscar");
+// Insira aqui o email do cliente.
 parameters.put(PayU.PARAMETERS.CUSTOMER_EMAIL, "oscarromero@payulatam.com");
-//Operación Actualizar el cliente
-Customer response = PayUCustomers.update(parameters);Map<String, String> parameters = new HashMap<String, String>();
-//Ingresa aquí el ID del Cliente
-parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "f543exh3zh5o");
-//Ingresa aquí el Nombre del Cliente
-parameters.put(PayU.PARAMETERS.CUSTOMER_NAME, "Oscar Romero");
-//Ingresa aquí el E-mail del Cliente
-parameters.put(PayU.PARAMETERS.CUSTOMER_EMAIL, "oscarromero@payulatam.com");
-//Operación Actualizar el cliente
+// Operação atualizar cliente.
 Customer response = PayUCustomers.update(parameters);
 ```
 
@@ -460,14 +452,14 @@ Customer response = PayUCustomers.update(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el identificador del cliente,
+	// Insira o ID do cliente
 	PayUParameters::CUSTOMER_ID => "24978c6l3e",
-	// Ingresa aquí el nombre del cliente
+	// Insira o nome do cliente
 	PayUParameters::CUSTOMER_NAME => "Pedro Perez",
-	// Ingresa aquí el correo del cliente
+	// Insira aqui o email do cliente.
 	PayUParameters::CUSTOMER_EMAIL => "pperez@payulatam.com"
 );
 $response = PayUCustomers::update($parameters);
@@ -485,10 +477,10 @@ if($response){
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-//Ingresa aquí el Id del Cliente
+// Insira aqui o ID do cliente.
 parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "17ylzjz6bxz");
 Customer response = PayUCustomers.find(parameters);
 ```
@@ -498,10 +490,10 @@ Customer response = PayUCustomers.find(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el nombre del cliente
+	// Insira o nome do cliente
 	PayUParameters::CUSTOMER_ID => "24978c6l3e",
 );
 $response = PayUCustomers::find($parameters);
@@ -531,16 +523,16 @@ if($response) {
 {{< /tab >}}
 {{< /tabs >}}
 
-### Eliminación
+### Exclusão
 
 {{< tabs tabTotal="2" tabID="8" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el Id del cliente
+// Insira aqui o ID do cliente.
 parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "17ylzjz6bxz");
 boolean response = PayUCustomers.delete(parameters);
 ```
@@ -550,10 +542,10 @@ boolean response = PayUCustomers.delete(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el identificador del cliente,
+	// Insira aqui o ID do cliente.
 	PayUParameters::CUSTOMER_ID => "24978c6l3e"
 );
 
@@ -566,56 +558,56 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-## 3. Tarjeta de crédito
-Es el medio de pago con el cual se relaciona un Plan y un Pagador, se encuentra compuesto por el número de tarjeta de crédito (el cual será tokenizado para almacenar los datos de forma segura), la fecha de vencimiento de la tarjeta y algunos datos adicionales de dirección.
+## 3. Cartão de crédito
+É a forma de pago com a qual um Plano se relaciona a um Pagador, é composto pelo número de cartão de crédito (o qual será tokenizado para armazenar os dados de forma segura), a data de vencimento do cartão e alguns dados adicionais de endereço.  
 
-Se encuentran disponibles las siguientes operaciones:  
+As seguintes operações estão disponíveis:  
 <div class="variables"></div>
 
-| URL | Método | Descripción |
+| URL | Método | Descrição |
 |---|---|---|
-| /rest/v4.9/customers/{customerID}/creditCards | `POST` | Creación de una tarjeta de crédito (Token) y asociarla a un usuario.<br>{customerId} : Identificador del cliente al cual se le va a asociar el token |
-| /rest/v4.9/creditCards/{creditCardId} | `PUT` | Actualizar la información de un token.<br>`{creditCardId}`: Identificador del token que se desea actualizar. |
-| /rest/v4.9/creditCards/{creditCardId} | `GET` | Consultar la información de una tarjeta de crédito (Token) dato su identificador.<br>`{creditCardId}`: Token de la tarjeta de crédito que desea consultarse |
-| /rest/v4.9/customers/{customerID}/creditCards/{creditCardId} | `DELETE` | Eliminar una tarjeta de crédito (Token) asociado a un usuario.<br>{customerId} : Identificador del cliente al cual se le va a eliminar el token<br>`{creditCardId}`: Identificador del token que se desea eliminar |
+| /rest/v4.9/customers/{customerID}/creditCards | `POST` | Criação de um cartão de crédito (Token) e associá-lo a um usuário.<br>{customerId} : Identificador do cliente ao qual será associado o token |
+| /rest/v4.9/creditCards/{creditCardId} | `PUT` | Atualizar a informação de um token.<br>`{creditCardId}`: Identificador do token que se deseja atualizar. |
+| /rest/v4.9/creditCards/{creditCardId} | `GET` | Consultar a informação de um cartão de crédito (Token) dado seu identificador.<br>`{creditCardId}`: Token do cartão de crédito que deseja consultar. |
+| /rest/v4.9/customers/{customerID}/creditCards/{creditCardId} | `DELETE` | Apagar um cartão de crédito (Token) associado a um usuário.<br>{customerId} : Identificador do cliente do qual será apagado o token.<br>`{creditCardId}`: Identificador do token que se deseja apagar. |
 
-### Creación
+### Criação
 
 {{< tabs tabTotal="2" tabID="9" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el identificador del pagador.
+// Insira aqui o ID do cliente.
 parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "180oklk4o56");
-// Ingresa aquí el número de la tarjera.
+// Coloque aqui o número do cartão de crédito
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_NUMBER, "4005580000029205");
-// Ingresa aquí la fecha de expiración de la tarjeta.
+// Coloque aqui a data de vencimento do cartão de crédito.
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_EXPIRATION_DATE, "2015/01");
-// Ingresa aquí el tipo de la tarjeta.
+//Coloque aqui o tipo do cartão de crédito.
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "VISA");
-// Ingresa aquí el nombre del pagador.
+// Coloque aqui o nome do pagador.
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "Nombre");
-// Ingresa aquí el documento de identificación asociado a la tarjeta.
+// Insira aqui o documento de identificação do pagador
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_DOCUMENT, "1020304050");
-// -- Todos los parámetros que siguen son opcionales. --
-// Ingresa aquí la primera parte de la dirección.
+// -- Os seguintes parâmetros são opcionais. --
+// Insira aqui a primeira parte do endereço.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Calle falsa");
-// Ingresa aquí la segunda parte de la dirección (si aplica).
+// Insira aqui a segunda parte do endereço (opcional).
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "123");
-// Ingresa aquí la tercera parte de la dirección (si aplica).
+// Insira aqui a terceira parte do endereço (opcional).
 parameters.put(PayU.PARAMETERS.PAYER_STREET_3, "patio trasero");
-// Ingresa aquí el departamento.
+// Insira aqui o nome da cidade.
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "Bogotá");
-// Ingresa aquí la ciudad.
+// Insira aqui o nome do estado.
 parameters.put(PayU.PARAMETERS.PAYER_STATE, "Bogotá D.C.");
-// Ingresa aquí el país.
+// Insira aqui o nome do pais.
 parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, PaymentCountry.CO.name());
-// Ingresa aquí el código postal.
+// Insira aqui o código postal.
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "00000");
-// Ingresa aquí el teléfono.
+// Insira aqui o número do telefone.
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "300300300");
 PaymentPlanCreditCard response = PayUCreditCard.create(parameters);
 LoggerUtil.info("{0}", response);
@@ -626,38 +618,38 @@ LoggerUtil.info("{0}", response);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el identificador del cliente,
+	// Insira aqui o ID do cliente.
 	PayUParameters::CUSTOMER_ID => "6eb24tzp40",
-	// Ingresa aquí el nombre del cliente
+	// Insira o nome do cliente
 	PayUParameters::PAYER_NAME => "Pedro Perez",
-	// Ingresa aquí el número de la tarjeta de crédito
+	//Coloque aqui o número do cartão de crédito.
 	PayUParameters::CREDIT_CARD_NUMBER => "4242424242424242",
-	// Ingresa aquí la fecha de expiración de la tarjeta de crédito en formato AAAA/MM
+	//Coloque aqui a data de vencimento do cartão de crédito em formato AAAA/MM
 	PayUParameters::CREDIT_CARD_EXPIRATION_DATE => "2018/01",
-	// Ingresa aquí el nombre de la franquicia de la tarjeta de crédito
+	// Insira aqui o nome da franquia do cartão de credito.
 	PayUParameters::PAYMENT_METHOD => "VISA",
-        // Ingresa aquí el documento de identificación asociado a la tarjeta
-	PayUParameters::CREDIT_CARD_DOCUMENT => "1020304050",
-	// (OPCIONAL) Ingresa aquí el documento de identificación del pagador
+        // Insira aqui o documento de identificação do pagador.
+        PayUParameters::CREDIT_CARD_DOCUMENT => "1020304050",
+	// Insira aqui o documento de identificação do pagador. (Opcional)
 	PayUParameters::PAYER_DNI => "101010123",
-	// (OPCIONAL) Ingresa aquí la primera línea de la dirección del pagador
+	// Insira aqui a primeira parte do endereço.
 	PayUParameters::PAYER_STREET => "Street 93B",
-	// (OPCIONAL) Ingresa aquí la segunda línea de la dirección del pagador
+	// Insira aqui a segunda parte do endereço (opcional).
 	PayUParameters::PAYER_STREET_2 => "17 25",
-	// (OPCIONAL) Ingresa aquí la tercera línea de la dirección del pagador
+	// Insira aqui a terceira parte do endereço (opcional).
 	PayUParameters::PAYER_STREET_3 => "Office 301",
-	// (OPCIONAL) Ingresa aquí la ciudad de la dirección del pagador
+	// Insira aqui o nome da cidade.
 	PayUParameters::PAYER_CITY => "Bogotá",
-	// (OPCIONAL) Ingresa aquí el estado o departamento de la dirección del pagador
+	// Insira aqui o nome do estado.
 	PayUParameters::PAYER_STATE => "Bogotá D.C.",
-	// (OPCIONAL) Ingresa aquí el código del país de la dirección del pagador
+	// Insira aqui o nome do pais.
 	PayUParameters::PAYER_COUNTRY => "CO",
-	// (OPCIONAL) Ingresa aquí el código postal de la dirección del pagador
+	// Insira aqui o código postal.
 	PayUParameters::PAYER_POSTAL_CODE => "00000",
-	// (OPCIONAL) Ingresa aquí el número telefónico del pagador
+	// Insira aqui o número do telefone.
 	PayUParameters::PAYER_PHONE => "300300300"
 );
 
@@ -670,39 +662,39 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-### Actualización
+### Atualização
 
 {{< tabs tabTotal="2" tabID="10" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el identificador del token de la tarjeta.
+// Insira aqui o ID do token do cartão de credito.
 parameters.put(PayU.PARAMETERS.TOKEN_ID, "180oklk4o56");
-// Ingresa aquí la fecha de expiración de la tarjeta.
+//Coloque aqui a data de vencimento do cartão de crédito.
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_EXPIRATION_DATE, "2015/01");
-// Ingresa aquí el nombre del pagador.
+//Coloque aqui o nome do pagador
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "Nombre");
-// Ingresa aquí el documento de identificación asociado a la tarjeta.
+// Insira aqui o documento de identificação do pagador
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_DOCUMENT, "1020304050");
-// -- Todos los parámetros que siguen son opcionales. --
-// Ingresa aquí la primera parte de la dirección.
+// -- Os seguintes parâmetros são opcionais. --
+// Insira aqui a primeira parte do endereço.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Calle 5476");
-// Ingresa aquí la segunda parte de la dirección (si aplica).
+// Insira aqui a segunda parte do endereço (opcional).
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "123");
-// Ingresa aquí la tercera parte de la dirección (si aplica).
+// Insira aqui a terceira parte do endereço (opcional).
 parameters.put(PayU.PARAMETERS.PAYER_STREET_3, "patio trasero");
-// Ingresa aquí el departamento.
+// Insira aqui o nome da cidade.
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "Bogotá");
-// Ingresa aquí la ciudad.
+// Insira aqui o nome do estado.
 parameters.put(PayU.PARAMETERS.PAYER_STATE, "Bogotá D.C.");
-// Ingresa aquí el país.
+// Insira aqui o nome do pais.
 parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, PaymentCountry.CO.name());
-// Ingresa aquí el código postal.
+// Insira aqui o código postal.
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "00000");
-// Ingresa aquí el teléfono.
+// Insira aqui o número do telefone.
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "300300300");
 PaymentPlanCreditCard response = PayUCreditCard.update(parameters);
 LoggerUtil.info("{0}", response);
@@ -713,34 +705,34 @@ LoggerUtil.info("{0}", response);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el identificador del token de la tarjeta.
+	// Insira aqui o ID do token do cartão de credito.
 	PayUParameters::TOKEN_ID => "6f5f32d9-9c6f-4d57-97d7-68cde86f9266",
-	// Ingresa aquí el nombre del cliente
+	// Insira aqui o nome do cliente.
 	PayUParameters::PAYER_NAME => "Pedro Perez",
-	// Ingresa aquí la fecha de expiración de la tarjeta de crédito en formato AAAA/MM
+	//Coloque aqui a data de vencimento do cartão de crédito em formato AAAA/MM
 	PayUParameters::CREDIT_CARD_EXPIRATION_DATE => "2018/01",
-        // Ingresa aquí el documento de identificación asociado a la tarjeta
-	PayUParameters::CREDIT_CARD_DOCUMENT => "1020304050",
-	// (OPCIONAL) Ingresa aquí el documento de identificación del pagador
+        // Insira aqui o documento de identificação do pagador.
+        PayUParameters::CREDIT_CARD_DOCUMENT => "1020304050",
+	// (OPCIONAL) Coloque aqui o documento de identificação do pagador
 	PayUParameters::PAYER_DNI => "101010123",
-	// (OPCIONAL) Ingresa aquí la primera línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a primeira parte do endereço.
 	PayUParameters::PAYER_STREET => "Street 93B",
-	// (OPCIONAL) Ingresa aquí la segunda línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a segunda parte do endereço
 	PayUParameters::PAYER_STREET_2 => "17 25",
-	// (OPCIONAL) Ingresa aquí la tercera línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a terceira parte do endereço
 	PayUParameters::PAYER_STREET_3 => "Office 301",
-	// (OPCIONAL) Ingresa aquí la ciudad de la dirección del pagador
+	// (OPCIONAL) Insira aqui o nome da cidade.
 	PayUParameters::PAYER_CITY => "Bogotá",
-	// (OPCIONAL) Ingresa aquí el estado o departamento de la dirección del pagador
+	// (OPCIONAL) Insira aqui o nome do estado
 	PayUParameters::PAYER_STATE => "Bogotá D.C.",
-	// (OPCIONAL) Ingresa aquí el código del país de la dirección del pagador
+	// (OPCIONAL) Insira aqui o códig do pais.
 	PayUParameters::PAYER_COUNTRY => "CO",
-	// (OPCIONAL) Ingresa aquí el código postal de la dirección del pagador
+	// (OPCIONAL) Insira aqui o código postal
 	PayUParameters::PAYER_POSTAL_CODE => "00000",
-	// (OPCIONAL) Ingresa aquí el número telefónico del pagador
+	// (OPCIONAL) Insira aqui o número do telefone.
 	PayUParameters::PAYER_PHONE => "300300300"
 );
 
@@ -759,10 +751,10 @@ if($response){
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el identificador del token de la tarjeta.
+// Insira aqui o ID do token do cartão de credito.
 parameters.put(PayU.PARAMETERS.TOKEN_ID, "25181bb1-b07f-4b9b-ae5d-6b13436c706d");
 PaymentPlanCreditCard response = PayUCreditCard.find(parameters);
 LoggerUtil.info("{0}", response);
@@ -773,10 +765,10 @@ LoggerUtil.info("{0}", response);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el identificador del token de la tarjeta.
+	// Insira aqui o ID do token do cartão de credito.
 	PayUParameters::TOKEN_ID => "6f5f32d9-9c6f-4d57-97d7-68cde86f9266"
 );
 
@@ -787,7 +779,7 @@ if($response){
 	$response->number;
 	$response->type;
 	$response->name;
-        $response->document;
+        $responde->document;
 	$address=$response->address;
 	$address->line1;
 	$address->line2;
@@ -802,16 +794,16 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-### Eliminación
+### Exclusão
 
 {{< tabs tabTotal="2" tabID="12" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el identificador del token de la tarjeta.
+// Insira aqui o ID do token do cartão de credito.
 parameters.put(PayU.PARAMETERS.TOKEN_ID, "25181bb1-b07f-4b9b-ae5d-6b13436c706d");
 // Ingresa aquí el Id del cliente
 parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "17ylzjz6bxz");
@@ -824,12 +816,12 @@ LoggerUtil.info("{0}", response);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el identificador del token de la tarjeta.
+	// Insira aqui o ID do token do cartão de credito.
 	PayUParameters::TOKEN_ID => "6f5f32d9-9c6f-4d57-97d7-68cde86f9266",
-	// Ingresa aquí el identificador del cliente,
+	// Insira aqui o ID do cliente.
 	PayUParameters::CUSTOMER_ID => "6eb24tzp40"
 );
 
@@ -842,102 +834,102 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-## 4. Suscripción
-Una suscripción es la relación entre un plan de pagos, un pagador y una tarjeta de crédito y es el elemento con el que se controla la ejecución de los cobros correspondientes.  
+## 4. Assinatura
+Uma assinatura é a relação entre um plano de pagamentos, um pagador e um cartão de crédito e é o elemento com o qual se controla a execução das cobranças correspondentes.  
 
-Se encuentran disponibles las siguientes operaciones:  
+As seguintes operações estão disponíveis:  
 <div class="variables"></div>
 
-| URL | Métodos | Descripción |
+| URL | Métodos | Descrição |
 |---|---|---|
-| /rest/v4.9/subscriptions/ | POST | Creación de una nueva suscripción de un cliente a un plan. |
-| /rest/v4.9/subscriptions/{subscriptionId} | PUT | Actualizar la información asociada a la suscripción indicada. En este momento sólo es posible actualizar el token de la tarjeta de crédito a la cual se realiza el cargo de la suscripción.<br>`{subscriptionId}`: Identificación de la suscripción |
-| /rest/v4.9/subscriptions/{subscriptionId} | GET | Consultar la información básica asociada a la suscripción indicada.<br>`{subscriptionId}`: Identificación de la suscripción |
-| /rest/v4.9/subscriptions/{subscriptionId} | DELETE | Eliminar la suscripción, es decir la relación del cliente al plan.<br>`{subscriptionId}`: Identificación de la suscripción |
+| /rest/v4.9/subscriptions/ | POST | Criação de uma nova assinatura de um cliente para um plano. |
+| /rest/v4.9/subscriptions/{subscriptionId} | PUT | Atualizar a informação associada à assinatura indicada. Neste momento somente é possível atualizar o token do cartão de crédito ao qual se realiza o encargo da assinatura.<br>`{subscriptionId}`: Identificação da assinatura. |
+| /rest/v4.9/subscriptions/{subscriptionId} | GET | Consultar a informação básica associada à assinatura indicada.<br>`{subscriptionId}`: Identificação da assinatura. |
+| /rest/v4.9/subscriptions/{subscriptionId} | DELETE | Apagar a assinatura, ou seja, a relação do cliente ao plano.<br>`{subscriptionId}`: Identificação da assinatura. |
 
 
-### Creación
+### Criação
  
 <details>
-<summary>Con todos los elementos nuevos</summary>
+<summary>Com todos os elementos novos</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="13" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el número de cuotas a pagar.
+//Coloque aqui o número de parcelas.
 parameters.put(PayU.PARAMETERS.INSTALLMENTS_NUMBER, "1");
-// Ingresa aquí la cantidad de días de prueba
+// Insira aqui a quantidade de dias de teste da assinatura
 parameters.put(PayU.PARAMETERS.TRIAL_DAYS, "10");
 
-// -- Parámetros del cliente --
-// Ingresa aquí el nombre del cliente
+// -- Parámetros do cliente --
+// Insira o nome do cliente
 parameters.put(PayU.PARAMETERS.CUSTOMER_NAME, "Pedro Perez");
-// Ingresa aquí el email del cliente
+// Insira aqui o email do cliente.
 parameters.put(PayU.PARAMETERS.CUSTOMER_EMAIL, "pperezz@payulatam.com");
 
-// -- Parámetros de la tarjeta de crédito --
-// Ingresa aquí el nombre del pagador.
+// -- Parámetros do cartão de crédito  --
+//Coloque aqui o nome do pagador
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "Sample User Name");
-// Ingresa aquí el número de la tarjeta de crédito
+//Coloque aqui o número do cartão de crédito.
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_NUMBER, "4242424242424242");
-// Ingresa aquí la fecha de expiración de la tarjeta de crédito en formato AAAA/MM
+//Coloque aqui a data de vencimento do cartão de crédito em formato AAAA/MM
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_EXPIRATION_DATE, "2018/01");
-// Ingresa aquí el nombre de la franquicia de la tarjeta de crédito
+// Insira aqui o nome da franquia do cartão de credito.
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "VISA");
-// Ingresa aquí el documento de identificación asociado a la tarjeta.
+// Insira aqui o documento de identificação do pagador
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_DOCUMENT, "1020304050");
-// (OPCIONAL) Ingresa aquí el documento de identificación del pagador
+// (OPCIONAL) Coloque aqui o documento de identificação do pagador
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "1020304050");
-// (OPCIONAL) Ingresa aquí la primera línea de la dirección del pagador
+// (OPCIONAL) Insira aqui a primeira parte do endereço.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Address Name");
-// (OPCIONAL) Ingresa aquí la segunda línea de la dirección del pagador
+// (OPCIONAL) Insira aqui a segunda parte do endereço
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "17 25");
-// (OPCIONAL) Ingresa aquí la tercera línea de la dirección del pagador
+// (OPCIONAL) Insira aqui a terceira parte do endereço
 parameters.put(PayU.PARAMETERS.PAYER_STREET_3, "Of 301");
-// (OPCIONAL) Ingresa aquí la ciudad de la dirección del pagador
+// (OPCIONAL) Insira aqui o nome da cidade.
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "City Name");
-// (OPCIONAL) Ingresa aquí el estado o departamento de la dirección del pagador
+// (OPCIONAL) Insira aqui o nome do estado.
 parameters.put(PayU.PARAMETERS.PAYER_STATE, "State Name");
-// (OPCIONAL) Ingresa aquí el código del país de la dirección del pagador
+// (OPCIONAL) Insira aqui o código do pais.
 parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, "CO");
-// (OPCIONAL) Ingresa aquí el código postal de la dirección del pagador
+// (OPCIONAL) Insira aqui o código postal.
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "00000");
-// (OPCIONAL) Ingresa aquí el número telefónico del pagador
+// (OPCIONAL) Insira aqui o número do telefone.
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "300300300");
 
-// -- Parámetros del plan --
-// Ingresa aquí la descripción del plan
+// --  Parâmetros do plano --
+// Insira aqui a descrição do plano.
 parameters.put(PayU.PARAMETERS.PLAN_DESCRIPTION, "Sample Plan 001");
-// Ingresa aquí el código de identificación para el plan
+// Insira aqui o código de identificação do plano
 parameters.put(PayU.PARAMETERS.PLAN_CODE, "sample-plan-code-001");
-// Ingresa aquí el intervalo del plan
+// Insira aqui o intervalo do plano.
 parameters.put(PayU.PARAMETERS.PLAN_INTERVAL, "MONTH");
-// Ingresa aquí la cantidad de intervalos
+// Insira aqui a quantidade de intervalos.
 parameters.put(PayU.PARAMETERS.PLAN_INTERVAL_COUNT, "1");
-// Ingresa aquí la moneda para el plan
+// Insira aqui a moeda do plano
 parameters.put(PayU.PARAMETERS.PLAN_CURRENCY, "COP");
-// Ingresa aquí el valor del plan
+// Insira aqui o valor do plano
 parameters.put(PayU.PARAMETERS.PLAN_VALUE, "10000");
-//(OPCIONAL) Ingresa aquí el valor del impuesto
+//(OPCIONAL) Insira aqui o valor do imposto
 parameters.put(PayU.PARAMETERS.PLAN_TAX, "1600");
-//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+//(OPCIONAL) Insira aqui a base de devolução do imposto.
 parameters.put(PayU.PARAMETERS.PLAN_TAX_RETURN_BASE, "8400");
-// Ingresa aquí la cuenta Id del plan
+// Insira aqui a conta ID do plano
 parameters.put(PayU.PARAMETERS.ACCOUNT_ID, "512321");
-// Ingresa aquí el intervalo de reintentos
+// Insira aqui o intervalo das novas tentativas de cobrança.
 parameters.put(PayU.PARAMETERS.PLAN_ATTEMPTS_DELAY, "1");
-// Ingresa aquí la cantidad de cobros que componen el plan
+// Insira aqui a quantidade de cobranças que compõem o plano de pagamento.
 parameters.put(PayU.PARAMETERS.PLAN_MAX_PAYMENTS, "12");
-// Ingresa aquí la cantidad total de reintentos para cada pago rechazado de la suscripción
+// Insira aqui a quantidade total de novas tentativas quando um pagamento tem sido rejeitado.
 parameters.put(PayU.PARAMETERS.PLAN_MAX_PAYMENT_ATTEMPTS, "3");
-// Ingresa aquí la cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada.
+// Insira aqui o número máximo de pagamentos pendentes que uma assinatura pode ter antes de ser cancelada.
 parameters.put(PayU.PARAMETERS.PLAN_MAX_PENDING_PAYMENTS, "1");
-// Ingresa aquí la cantidad de días de prueba de la suscripción.
+// Insira aqui a quantidade de dias de teste da assinatura.
 parameters.put(PayU.PARAMETERS.TRIAL_DAYS, "30");
 
 Subscription response = PayUSubscription.create(parameters);
@@ -955,78 +947,78 @@ if(response!=null){
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el número de cuotas a pagar.
+	// Coloque aqui o número de parcelas.
 	PayUParameters::INSTALLMENTS_NUMBER => "1",
-	// Ingresa aquí la cantidad de días de prueba
+	// Insira aqui a quantidade de dias de teste.
 	PayUParameters::TRIAL_DAYS => "10",
 
-	// -- Parámetros del cliente --
-	// Ingresa aquí el nombre del cliente
+	// --  Parâmetros do cliente --
+	// Insira o nome do cliente.
 	PayUParameters::CUSTOMER_NAME => "Pedro Perez",
-	// Ingresa aquí el email del cliente
+	// Insira aqui o email do cliente.
 	PayUParameters::CUSTOMER_EMAIL => "pperezz@payulatam.com",
 
-	// -- Parámetros de la tarjeta de crédito --
-	// Ingresa aquí el nombre del pagador.
+	// --  Parâmetros do cartão de credito --
+	//Coloque aqui o nome do pagador.
 	PayUParameters::PAYER_NAME => "Sample User Name",
-	// Ingresa aquí el número de la tarjeta de crédito
+	//Coloque aqui o número do cartão de crédito.
 	PayUParameters::CREDIT_CARD_NUMBER => "4242424242424242",
-	// Ingresa aquí la fecha de expiración de la tarjeta de crédito en formato AAAA/MM
+	//Coloque aqui a data de vencimento do cartão de crédito em formato AAAA/MM
 	PayUParameters::CREDIT_CARD_EXPIRATION_DATE => "2014/12",
-	// Ingresa aquí el nombre de la franquicia de la tarjeta de crédito
+	// Insira aqui o nome da franquia do cartão de credito.
 	PayUParameters::PAYMENT_METHOD => "VISA",
-        // Ingresa aquí el documento de identificación asociado a la tarjeta
+        // Insira aqui o documento de identificação do pagador.
         PayUParameters::CREDIT_CARD_DOCUMENT => "1020304050",
-	// (OPCIONAL) Ingresa aquí el documento de identificación del pagador
+	// (OPCIONAL) Coloque aqui o documento de identificação do pagador
 	PayUParameters::PAYER_DNI => "1020304050",
-	// (OPCIONAL) Ingresa aquí la primera línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a primeira parte do endereço.
 	PayUParameters::PAYER_STREET => "Address Name",
-	// (OPCIONAL) Ingresa aquí la segunda línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a segunda parte do endereço
 	PayUParameters::PAYER_STREET_2 => "17 25",
-	// (OPCIONAL) Ingresa aquí la tercera línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a terceira parte do endereço
 	PayUParameters::PAYER_STREET_3 => "Of 301",
-	// (OPCIONAL) Ingresa aquí la ciudad de la dirección del pagador
+	// (OPCIONAL) Insira aqui o nome da cidade.
 	PayUParameters::PAYER_CITY => "City Name",
-	// (OPCIONAL) Ingresa aquí el estado o departamento de la dirección del pagador
+	// (OPCIONAL) Insira aqui o nome do estado.
 	PayUParameters::PAYER_STATE => "State Name",
-	// (OPCIONAL) Ingresa aquí el código del país de la dirección del pagador
+	// (OPCIONAL) Insira aqui o codigo do pais.
 	PayUParameters::PAYER_COUNTRY => "CO",
-	// (OPCIONAL) Ingresa aquí el código postal de la dirección del pagador
+	// (OPCIONAL) Insira aqui o documento de identificação do pagador.
 	PayUParameters::PAYER_POSTAL_CODE => "00000",
-	// (OPCIONAL) Ingresa aquí el número telefónico del pagador
+	// (OPCIONAL) Insira aqui o número do telefone.
 	PayUParameters::PAYER_PHONE => "300300300",
 
-	// -- Parámetros del plan --
-	// Ingresa aquí la descripción del plan
+	// --  Parâmetros do plano --
+	// Insira aqui a descrição do plano
 	PayUParameters::PLAN_DESCRIPTION => "Sample Plan 001",
-	// Ingresa aquí el código de identificación para el plan
+	// Insira aqui o código de identificação do plano.
 	PayUParameters::PLAN_CODE => "sample-plan-code-001",
-	// Ingresa aquí el intervalo del plan
+	// Insira aqui o intervalo do plano.
 	PayUParameters::PLAN_INTERVAL => "MONTH",
-	// Ingresa aquí la cantidad de intervalos
+	// Insira aqui a quantidade de intervalos.
 	PayUParameters::PLAN_INTERVAL_COUNT => "1",
-	// Ingresa aquí la moneda para el plan
+	// Insira aqui a moeda do plano
 	PayUParameters::PLAN_CURRENCY => "COP",
-	// Ingresa aquí el valor del plan
+	// Insira aqui o valor do plano
 	PayUParameters::PLAN_VALUE => "10000",
-	//(OPCIONAL) Ingresa aquí el valor del impuesto
+	//(OPCIONAL) Insira aqui o valor do imposto
 	PayUParameters::PLAN_TAX => "1600",
-	//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+	//(OPCIONAL) Insira aqui a base de devolução do imposto.
 	PayUParameters::PLAN_TAX_RETURN_BASE => "8400",
-	// Ingresa aquí la cuenta Id del plan
+	// Insira aqui a conta ID do plano
 	PayUParameters::ACCOUNT_ID => "512321",
-	// Ingresa aquí el intervalo de reintentos
+	// Insira aqui o intervalo das novas tentativas de cobrança.
 	PayUParameters::PLAN_ATTEMPTS_DELAY => "1",
-	// Ingresa aquí la cantidad de cobros que componen el plan
+	// Insira aqui a quantidade de cobranças que compõem o plano de pagamento.
 	PayUParameters::PLAN_MAX_PAYMENTS => "12",
-	// Ingresa aquí la cantidad total de reintentos para cada pago rechazado de la suscripción
+	// Insira aqui a quantidade total de novas tentativas quando um pagamento tem sido rejeitado.
 	PayUParameters::PLAN_MAX_PAYMENT_ATTEMPTS => "3",
-	// Ingresa aquí la cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada.
+	// Insira aqui o número máximo de pagamentos pendentes que uma assinatura pode ter antes de ser cancelada.
 	PayUParameters::PLAN_MAX_PENDING_PAYMENTS => "1",
-	// Ingresa aquí la cantidad de días de prueba de la suscripción.
+	// Insira aqui a quantidade de dias de teste da assinatura.
 	PayUParameters::TRIAL_DAYS => "30",
 );
 
@@ -1043,25 +1035,25 @@ if($response){
 
 </details>
 <details>
-<summary>Con todos los elementos existentes</summary>
+<summary>Com todos os elementos existentes</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="14" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el código del plan a suscribirse.
+// Insira o código do plano pela assinatura.
 parameters.put(PayU.PARAMETERS.PLAN_CODE, "sample-plan-code-001");
-// Ingresa aquí el identificador del pagador.
+// Insira aqui o ID do cliente.
 parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "eab38z33hh2");
-// Ingresa aquí el identificador del token de la tarjeta.
+// Insira aqui o ID do token do cartão de credito
 parameters.put(PayU.PARAMETERS.TOKEN_ID, "a068e980-a6d7-4a19-b549-75c04f39ec22");
-// Ingresa aquí la cantidad de días de prueba de la suscripción.
+// Insira aqui a quantidade de dias de teste da assinatura.
 parameters.put(PayU.PARAMETERS.TRIAL_DAYS, "10");
-// Ingresa aquí el número de cuotas a pagar.
+//Coloque aqui o número de parcelas.
 parameters.put(PayU.PARAMETERS.INSTALLMENTS_NUMBER, "1");
 Subscription response = PayUSubscription.create(parameters);
 
@@ -1076,18 +1068,18 @@ if(response!=null){
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el código del plan a suscribirse.
+	// Insira o código do plano pela assinatura.
 	PayUParameters::PLAN_CODE => "sample-plan-code-001s",
-	// Ingresa aquí el identificador del pagador.
+	// Insira aqui o ID do pagador.
 	PayUParameters::CUSTOMER_ID => "f03612gyte",
-	// Ingresa aquí el identificador del token de la tarjeta.
+	// Insira aqui o ID do token do cartão de credito.
 	PayUParameters::TOKEN_ID => "79490437-d64a-4dc6-baeb-8d52492b0a00",
-	// Ingresa aquí la cantidad de días de prueba de la suscripción.
+	// Insira aqui a quantidade de dias de teste da assinatura.
 	PayUParameters::TRIAL_DAYS => "10",
-	// Ingresa aquí el número de cuotas a pagar.
+	//Coloque aqui o número de parcelas.
 	PayUParameters::INSTALLMENTS_NUMBER => "1",
 );
 
@@ -1102,54 +1094,54 @@ if($response){
 
 </details>
 <details>
-<summary>Plan y cliente ya creados, y una tarjeta nueva</summary>
+<summary>Plano e cliente já criados, e um cartão novo</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="15" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí la cantidad de días de prueba de la suscripción.
+// Insira aqui a quantidade de dias de teste da assinatura.
 parameters.put(PayU.PARAMETERS.TRIAL_DAYS, "10");
-// Ingresa aquí el número de cuotas a pagar.
+//Coloque aqui o número de parcelas.
 parameters.put(PayU.PARAMETERS.INSTALLMENTS_NUMBER, "1");
 
-// Ingresa aquí el código del plan a suscribirse.
+// Insira o código do plano pela assinatura.
 parameters.put(PayU.PARAMETERS.PLAN_CODE, "sample-plan-code-001");
-// Ingresa aquí el identificador del pagador.
+//Coloque aqui o ID do pagador.
 parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "eab38z33hh2");
 
-// -- Parámetros de la tarjeta de crédito --
-// Ingresa aquí el nombre del pagador.
+// --  Parâmetros de cartão de crédito --
+//Coloque aqui o nome do pagador
 parameters.put(PayU.PARAMETERS.PAYER_NAME, "Sample User Name");
-// Ingresa aquí el número de la tarjeta de crédito
+//Coloque aqui o número do cartão de crédito
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_NUMBER, "4242424242424242");
-// Ingresa aquí la fecha de expiración de la tarjeta de crédito en formato AAAA/MM
+// Coloque aqui a data de vencimento do cartão de crédito em formato AAAA/MM
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_EXPIRATION_DATE, "2018/01");
-// Ingresa aquí el nombre de la franquicia de la tarjeta de crédito
+// Insira aqui o nome da franquia do cartão de credito.
 parameters.put(PayU.PARAMETERS.PAYMENT_METHOD, "VISA");
-// Ingresa aquí el documento de identificación asociado a la tarjeta.
+// Insira aqui o documento de identificação do pagador
 parameters.put(PayU.PARAMETERS.CREDIT_CARD_DOCUMENT, "1020304050");
-// (OPCIONAL) Ingresa aquí el documento de identificación del pagador
+// (OPCIONAL) Coloque aqui o documento de identificação do pagador
 parameters.put(PayU.PARAMETERS.PAYER_DNI, "1020304050");
-// (OPCIONAL) Ingresa aquí la primera línea de la dirección del pagador
+// (OPCIONAL) Insira aqui a primeira parte do endereço.
 parameters.put(PayU.PARAMETERS.PAYER_STREET, "Address Name");
-// (OPCIONAL) Ingresa aquí la segunda línea de la dirección del pagador
+// (OPCIONAL) Insira aqui a segunda parte do endereço.
 parameters.put(PayU.PARAMETERS.PAYER_STREET_2, "17 25");
-// (OPCIONAL) Ingresa aquí la tercera línea de la dirección del pagador
+// (OPCIONAL) Insira aqui a terceira parte do endereço.
 parameters.put(PayU.PARAMETERS.PAYER_STREET_3, "Of 301");
-// (OPCIONAL) Ingresa aquí la ciudad de la dirección del pagador
+// (OPCIONAL) Insira aqui o nome da cidade.
 parameters.put(PayU.PARAMETERS.PAYER_CITY, "City Name");
-// (OPCIONAL) Ingresa aquí el estado o departamento de la dirección del pagador
+// (OPCIONAL) Insira aqui o nome do estado.
 parameters.put(PayU.PARAMETERS.PAYER_STATE, "State Name");
-// (OPCIONAL) Ingresa aquí el código del país de la dirección del pagador
+// (OPCIONAL) Insira o código do pais do endereço
 parameters.put(PayU.PARAMETERS.PAYER_COUNTRY, "CO");
-// (OPCIONAL) Ingresa aquí el código postal de la dirección del pagador
+// (OPCIONAL) IInsira aqui o código postal.
 parameters.put(PayU.PARAMETERS.PAYER_POSTAL_CODE, "00000");
-// (OPCIONAL) Ingresa aquí el número telefónico del pagador
+// (OPCIONAL) Insira aqui o número do telefone.
 parameters.put(PayU.PARAMETERS.PAYER_PHONE, "300300300");
 
 Subscription response = PayUSubscription.create(parameters);
@@ -1166,50 +1158,50 @@ if(response!=null){
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el número de cuotas a pagar.
+	//Coloque aqui o número de parcelas.
 	PayUParameters::INSTALLMENTS_NUMBER => "1",
-	// Ingresa aquí la cantidad de días de prueba
+	// Insira aqui a quantidade de dias de teste
 	PayUParameters::TRIAL_DAYS => "10",
 
-	// -- Parámetros del cliente --
-	// Ingresa aquí el identificador del pagador.
+	// --  Parâmetros do cliente --
+	//Coloque aqui o ID do pagador.
 	PayUParameters::CUSTOMER_ID => "f03612gyte",
 
-	// -- Parámetros de la tarjeta de crédito --
-	// Ingresa aquí el nombre del pagador.
+	// --  Parâmetros de cartão de crédito --
+	//Coloque aqui o nome do pagador.
 	PayUParameters::PAYER_NAME => "Sample User Name",
-	// Ingresa aquí el número de la tarjeta de crédito
+	//Coloque aqui o número do cartão de crédito
 	PayUParameters::CREDIT_CARD_NUMBER => "4242424242424242",
-	// Ingresa aquí la fecha de expiración de la tarjeta de crédito en formato AAAA/MM
+	//Coloque aqui a data de vencimento do cartão de crédito em formato AAAA/MM
 	PayUParameters::CREDIT_CARD_EXPIRATION_DATE => "2014/12",
-	// Ingresa aquí el nombre de la franquicia de la tarjeta de crédito
+	// Insira aqui o nome da franquia do cartão de credito.
 	PayUParameters::PAYMENT_METHOD => "VISA",
-        // Ingresa aquí el documento de identificación asociado a la tarjeta
+        // Insira aqui o documento de identificação do pagador.
         PayUParameters::CREDIT_CARD_DOCUMENT => "1020304050",
-	// (OPCIONAL) Ingresa aquí el documento de identificación del pagador
+	// (OPCIONAL) Coloque aqui o documento de identificação do pagador
 	PayUParameters::PAYER_DNI => "1020304050",
-	// (OPCIONAL) Ingresa aquí la primera línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a primeira parte do endereço.
 	PayUParameters::PAYER_STREET => "Address Name",
-	// (OPCIONAL) Ingresa aquí la segunda línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a segunda parte do endereço
 	PayUParameters::PAYER_STREET_2 => "17 25",
-	// (OPCIONAL) Ingresa aquí la tercera línea de la dirección del pagador
+	// (OPCIONAL) Insira aqui a terceira parte do endereço
 	PayUParameters::PAYER_STREET_3 => "Of 301",
-	// (OPCIONAL) Ingresa aquí la ciudad de la dirección del pagador
+	// (OPCIONAL) Insira aqui o nome da cidade.
 	PayUParameters::PAYER_CITY => "City Name",
-	// (OPCIONAL) Ingresa aquí el estado o departamento de la dirección del pagador
+	// (OPCIONAL) Insira aqui o nome do estado.
 	PayUParameters::PAYER_STATE => "State Name",
-	// (OPCIONAL) Ingresa aquí el código del país de la dirección del pagador
+	// (OPCIONAL) Insira aqui o nome do pais.
 	PayUParameters::PAYER_COUNTRY => "CO",
-	// (OPCIONAL) Ingresa aquí el código postal de la dirección del pagador
+	// (OPCIONAL) Insira aqui o código postal.
 	PayUParameters::PAYER_POSTAL_CODE => "00000",
-	// (OPCIONAL) Ingresa aquí el número telefónico del pagador
+	// (OPCIONAL) Insira aqui o número do telefone.
 	PayUParameters::PAYER_PHONE => "300300300",
 
-	// -- Parámetros del plan --
-	// Ingresa aquí el código del plan a suscribirse.
+	// --  Parâmetros do plano --
+	// Insira o código do plano pela assinatura.
 	PayUParameters::PLAN_CODE => "sample-plan-code-001",
  );
 
@@ -1224,54 +1216,54 @@ if($response){
 
 </details>
 <details>
-<summary>Cliente y tarjeta ya creados, y con plan nuevo</summary>
+<summary>Cliente e cartão já criados, e com plano novo</summary>
 <br>
 
 {{< tabs tabTotal="2" tabID="16" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el número de cuotas a pagar.
+//Coloque aqui o número de parcelas.
 parameters.put(PayU.PARAMETERS.INSTALLMENTS_NUMBER, "1");
-// Ingresa aquí la cantidad de días de prueba
+// Insira aqui a quantidade de dias de teste da assinatura.
 parameters.put(PayU.PARAMETERS.TRIAL_DAYS, "10");
 
-// Ingresa aquí el identificador del pagador.
+//Coloque aqui o ID do pagador.
 parameters.put(PayU.PARAMETERS.CUSTOMER_ID, "eab38z33hh2");
-// Ingresa aquí el identificador del token de la tarjeta.
+// Insira aqui o ID do token do cartão de credito.
 parameters.put(PayU.PARAMETERS.TOKEN_ID, "a068e980-a6d7-4a19-b549-75c04f39ec22");
 
-// -- Parámetros del plan --
-// Ingresa aquí la descripción del plan
+// --  Parâmetros do plano --
+// Insira aqui a descrição do plano.
 parameters.put(PayU.PARAMETERS.PLAN_DESCRIPTION, "Sample Plan 001");
-// Ingresa aquí el código de identificación para el plan
+// Insira aqui o código de identificação do plano.
 parameters.put(PayU.PARAMETERS.PLAN_CODE, "sample-plan-code-001");
-// Ingresa aquí el intervalo del plan
+// Insira aqui o intervalo do plano.
 parameters.put(PayU.PARAMETERS.PLAN_INTERVAL, "MONTH");
-// Ingresa aquí la cantidad de intervalos
+// Insira aqui a quantidade de intervalos.
 parameters.put(PayU.PARAMETERS.PLAN_INTERVAL_COUNT, "1");
-// Ingresa aquí la moneda para el plan
+// Insira aqui a moeda do plano
 parameters.put(PayU.PARAMETERS.PLAN_CURRENCY, "COP");
-// Ingresa aquí el valor del plan
+// Insira aqui o valor do plano
 parameters.put(PayU.PARAMETERS.PLAN_VALUE, "10000");
-//(OPCIONAL) Ingresa aquí el valor del impuesto
+//(OPCIONAL) Insira aqui o valor do imposto
 parameters.put(PayU.PARAMETERS.PLAN_TAX, "1600");
-//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+//(OPCIONAL) Insira aqui a base de devolução do imposto.
 parameters.put(PayU.PARAMETERS.PLAN_TAX_RETURN_BASE, "8400");
-// Ingresa aquí la cuenta Id del plan
+// Insira aqui a conta ID do plano
 parameters.put(PayU.PARAMETERS.ACCOUNT_ID, "512321");
-// Ingresa aquí el intervalo de reintentos
+// Insira aqui o intervalo das tentativas de cobrança.
 parameters.put(PayU.PARAMETERS.PLAN_ATTEMPTS_DELAY, "1");
-// Ingresa aquí la cantidad de cobros que componen el plan
+// Insira aqui a quantidade de cobranças que compõem o plano de pagamento.
 parameters.put(PayU.PARAMETERS.PLAN_MAX_PAYMENTS, "12");
-// Ingresa aquí la cantidad total de reintentos para cada pago rechazado de la suscripción
+// Insira aqui a quantidade total de novas tentativas quando um pagamento tem sido rejeitado.
 parameters.put(PayU.PARAMETERS.PLAN_MAX_PAYMENT_ATTEMPTS, "3");
-// Ingresa aquí la cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada.
+// Insira aqui o número máximo de pagamentos pendentes que uma assinatura pode ter antes de ser cancelada.
 parameters.put(PayU.PARAMETERS.PLAN_MAX_PENDING_PAYMENTS, "1");
-// Ingresa aquí la cantidad de días de prueba de la suscripción.
+// Insira aqui a quantidade de dias de teste da assinatura.
 parameters.put(PayU.PARAMETERS.TRIAL_DAYS, "30");
 
 Subscription response = PayUSubscription.create(parameters);
@@ -1286,48 +1278,48 @@ if(response!=null){
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el número de cuotas a pagar.
+	//Coloque aqui o número de parcelas.
 	PayUParameters::INSTALLMENTS_NUMBER => "1",
-	// Ingresa aquí la cantidad de días de prueba
+	// Insira aqui a quantidade de dias de teste da assinatura.
 	PayUParameters::TRIAL_DAYS => "10",
 
-	// -- Parámetros de la tarjeta de crédito --
-	// Ingresa aquí el identificador del pagador.
+	// -- Parâmetros do cartão de credito --
+	//Coloque aqui o ID do pagador.
 	PayUParameters::CUSTOMER_ID => "5131879lzbx",
-	// Ingresa aquí el identificador del token de la tarjeta.
+	// Insira aqui o ID do token do cartão de credito.
 	PayUParameters::TOKEN_ID => "158e5bed-1e76-4bb2-83c2-97dc9bb1522d",
 
-	// -- Parámetros del plan --
-	// Ingresa aquí la descripción del plan
+	// -- Parâmetros do plano --
+	// Insira aqui a descrição do plano.
 	PayUParameters::PLAN_DESCRIPTION => "Sample Plan 001",
-	// Ingresa aquí el código de identificación para el plan
+	// Insira aqui o código de identificação do plano.
 	PayUParameters::PLAN_CODE => "sample-plan-code-001",
-	// Ingresa aquí el intervalo del plan
+	// Insira aqui o intervalo do plano.
 	PayUParameters::PLAN_INTERVAL => "MONTH",
-	// Ingresa aquí la cantidad de intervalos
+	// Insira aqui a quantidade de intervalos.
 	PayUParameters::PLAN_INTERVAL_COUNT => "1",
-	// Ingresa aquí la moneda para el plan
+	// Insira aqui a moeda do plano
 	PayUParameters::PLAN_CURRENCY => "COP",
-	// Ingresa aquí el valor del plan
+	// Insira aqui o valor do plano
 	PayUParameters::PLAN_VALUE => "10000",
-	//(OPCIONAL) Ingresa aquí el valor del impuesto
+	//(OPCIONAL) Insira aqui o valor do imposto
 	PayUParameters::PLAN_TAX => "1600",
-	//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+	//(OPCIONAL) Insira aqui a base de devolução do imposto.
 	PayUParameters::PLAN_TAX_RETURN_BASE => "8400",
 	// Ingresa aquí la cuenta Id del plan
 	PayUParameters::ACCOUNT_ID => "512321",
-	// Ingresa aquí el intervalo de reintentos
+	// Insira aqui o intervalo das tentativas de cobrança.
 	PayUParameters::PLAN_ATTEMPTS_DELAY => "1",
-	// Ingresa aquí la cantidad de cobros que componen el plan
+	// Insira aqui a quantidade de cobranças que compõem o plano de pagamento.
 	PayUParameters::PLAN_MAX_PAYMENTS => "12",
-	// Ingresa aquí la cantidad total de reintentos para cada pago rechazado de la suscripción
+	// Insira aqui a quantidade total de novas tentativas quando um pagamento tem sido rejeitado.
 	PayUParameters::PLAN_MAX_PAYMENT_ATTEMPTS => "3",
-	// Ingresa aquí la cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada.
+	// Insira aqui o número máximo de pagamentos pendentes que uma assinatura pode ter antes de ser cancelada.
 	PayUParameters::PLAN_MAX_PENDING_PAYMENTS => "1",
-	// Ingresa aquí la cantidad de días de prueba de la suscripción.
+	// Insira aqui a quantidade de dias de teste da assinatura.
 	PayUParameters::TRIAL_DAYS => "30",
 );
 
@@ -1343,19 +1335,19 @@ if($response){
 
 </details>
 
-### Actualización (Tarjeta de crédito de una suscripción)
+### Atualização (Cartão de credito de uma assinatura)
 
 {{< tabs tabTotal="1" tabID="17" tabName1="SDK Java">}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
 
-// Ingresa aquí el ID de la suscripción.
+// Insira o ID da assinatura.
 parameters.put(PayU.PARAMETERS.SUBSCRIPTION_ID, "320756yk1x0");
-// Ingresa aquí el identificador del token de la tarjeta.
+// Insira aqui o ID do token do cartão de credito.
 parameters.put(PayU.PARAMETERS.TOKEN_ID, "a068e980-a6d7-4a19-b549-75c04f39ec22");
 
 Subscription response = PayUSubscription.update(parameters);
@@ -1372,10 +1364,10 @@ if(response!=null){
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el ID de la suscripción.
+// Insira o ID da assinatura.
 parameters.put(PayU.PARAMETERS.SUBSCRIPTION_ID, "320756yk1x0");
 
 Subscription response = PayUSubscription.find(parameters);
@@ -1389,16 +1381,16 @@ if(response!=null){
 {{< /tab >}}
 {{< /tabs >}}
 
-### Eliminación
+### Exclusão
 
 {{< tabs tabTotal="2" tabID="19" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-// Ingresa aquí el identifcador de la subscripción.
+// Insira o ID da assinatura.
 parameters.put(PayU.PARAMETERS.SUBSCRIPTION_ID, "123");
 boolean response = PayUSubscription.cancel(parameters);
 LoggerUtil.info("{0}", response);
@@ -1409,10 +1401,10 @@ LoggerUtil.info("{0}", response);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	// Ingresa aquí el ID de la suscripción.
+	// Insira o ID da assinatura.
 	PayUParameters::SUBSCRIPTION_ID => "03e481u9l13",
 );
 
@@ -1424,39 +1416,39 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-## 5. Cargos adicionales
-Un cargo puede ser un cobro adicional o un descuento realizado sobre el valor de uno de los pagos que conforman el plan de pagos recurrentes. Estos solo afectan el siguiente cobro pendiente y se ejecutan una única vez.  
+## 5. Taxas extras
+Um encargo pode ser uma cobrança adicional ou um desconto realizado sobre o valor de um dos pagamentos que conformam o plano de pagamentos recorrentes. Estes somente afetam a próxima cobrança pendente e são executados uma única vez.  
 
-Se encuentran disponibles las siguientes operaciones:   
+As seguintes operações estão disponíveis:   
 <div class="variables"></div>
 
-| URL | Métodos | Descripción |
+| URL | Métodos | Descrição |
 |---|---|---|
-| /rest/v4.9/subscriptions/{subscriptionId}/recurringBillItems | `POST` | Adiciona cargos extras a la factura correspondiente al periodo actual.<br>`{subscriptionId}`: Identificación de la suscripción |
-| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `PUT` | Actualiza la información del cargo extra de una factura<br>`{recurringBillItemId}`: Identificador del cargo extra |
-| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `GET` | Consulta la información del cargo extra de una factura a partir de su identificador.<br>`{recurringBillItemId}`: Identificador del cargo extra |
-| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `DELETE` | Eliminar un cargo extra de una factura<br>`{recurringBillItemId}`: Identificador del cargo extra |
-| /rest/v4.9/recurringBillItems/ | `GET` | Consulta de los cargos extras de las facturas del comercio que cumplen con los filtros estipulados. Los filtros disponibles se muestra a continuación y deben ser enviados como named parameters dentro de la URL:<br>`{subscriptionId}`: Identificación de la suscripción<br>`{description}`: Descripción ingresada en el cargo extra |
+| /rest/v4.9/subscriptions/{subscriptionId}/recurringBillItems | `POST` | Adiciona taxas extras na fatura correspondente ao período atual.<br>`{subscriptionId}`: Identificação da assinatura. |
+| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `PUT` | Atualiza a informação da taxa extra de uma fatura.<br>`{recurringBillItemId}`: Identificador da taxa extra. |
+| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `GET` | Consulta a informação da taxa extra de uma fatura a partir de seu identificador.<br>`{recurringBillItemId}`: Identificador da taxa extra. |
+| /rest/v4.9/recurringBillItems/{recurringBillItemId} | `DELETE` | Apagar uma taxa extra de uma fatura.<br>`{recurringBillItemId}`: Identificador da taxa extra. |
+| /rest/v4.9/recurringBillItems/ | `GET` | Consulta dos encargos extras das faturas do comércio que cumprem com os filtros estipulados. Os filtros disponíveis são mostrados a seguir e devem ser enviados como named parameters dentro do URL:<br>`{subscriptionId}`: Identificação da assinatura.<br>`{description}`: Descrição inserida no encargo extra. |
 
-### Creación
+### Criação
 {{< tabs tabTotal="2" tabID="20" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-//Descripción del item
+// Descrição da taxa extra.
 parameters.put(PayU.PARAMETERS.DESCRIPTION, "Cargo extra de prueba");
-//Valor del item
+// Valor da taxa extra.
 parameters.put(PayU.PARAMETERS.ITEM_VALUE, "20000");
-//Moneda
+// Moeda da taxa extra.
 parameters.put(PayU.PARAMETERS.CURRENCY, "COP");
-//Identificador de la subscripción
+// Identificador da assinatura.
 parameters.put(PayU.PARAMETERS.SUBSCRIPTION_ID, "52b04sx2s6");
-//Impuestos - opcional
+// Impostos – Opcional
 parameters.put(PayU.PARAMETERS.ITEM_TAX, "0");
-//Base de devolución - opcional
+// Base de devolução – Opcional
 parameters.put(PayU.PARAMETERS.ITEM_TAX_RETURN_BASE, "0");
 RecurringBillItem response = PayURecurringBillItem.create(parameters);
 
@@ -1470,20 +1462,20 @@ if(response!=null){
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	//Descripción del item
+	// Descrição da taxa extra.
 	PayUParameters::DESCRIPTION => "Cargo extra de prueba",
-	//Valor del item
+	// Valor da taxa extra.
 	PayUParameters::ITEM_VALUE => "20000",
-	//Moneda
+	// Moeda da taxa extra.
 	PayUParameters::CURRENCY => "COP",
-	//Identificador de la subscripción
+	/// Identificador da assinatura.
 	PayUParameters::SUBSCRIPTION_ID => "a9d01imeihk",
-	//Impuestos - opcional
+	// Impostos – Opcional
 	PayUParameters::ITEM_TAX => "0",
-	//Base de devolución - opcional
+	// Base de devolução – Opcional
 	PayUParameters::ITEM_TAX_RETURN_BASE => "0",
 );
 
@@ -1496,12 +1488,12 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-### Actualización
+### Atualização
 {{< tabs tabTotal="2" tabID="21" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
 //Identificador del item existente
@@ -1524,20 +1516,20 @@ RecurringBillItem response = PayURecurringBillItem.update(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	//Identificador del cargo extra
+	// ID da taxa extra.
 	PayUParameters::RECURRING_BILL_ITEM_ID => "cbb57ywul2l",
-	//Descripción del item
+	// Descrição da taxa extra.
 	PayUParameters::DESCRIPTION => "Cargo extra de prueba",
-	//Valor del item
+	// Valor da taxa extra.
 	PayUParameters::ITEM_VALUE => "20000",
-	//Moneda
+	// Moeda da taxa extra.
 	PayUParameters::CURRENCY => "COP",
-	//Impuestos - opcional
+	// Impostos – Opcional
 	PayUParameters::ITEM_TAX => "0",
-	//Base de devolución - opcional
+	// Base de devolução – Opcional
 	PayUParameters::ITEM_TAX_RETURN_BASE => "0",
 );
 
@@ -1549,17 +1541,17 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-### Consulta (Por id del cargo adicional)
+### Consulta (Por id da taxa adicional)
 
 {{< tabs tabTotal="2" tabID="22" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
 
-//Identificador del cargo extra
+// ID da taxa extra.
 parameters.put(PayU.PARAMETERS.RECURRING_BILL_ITEM_ID, "5e174m7lgns");
 
 RecurringBillItem response = PayURecurringBillItem.find(parameters);
@@ -1574,10 +1566,10 @@ if(response!=null){
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	//Identificador del cargo extra
+	//Identificador da taxa extra.
 	PayUParameters::RECURRING_BILL_ITEM_ID => "cbb57ywul2l",
 );
 
@@ -1592,16 +1584,16 @@ if($response){
 {{< /tab >}}
 {{< /tabs >}}
 
-### Eliminación
+### Exclusão
 
 {{< tabs tabTotal="2" tabID="25" tabName1="SDK Java" tabName2="SDK PHP" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```Java
 Map<String, String> parameters = new HashMap<String, String>();
-//Identificador del item existente
+// ID da taxa extra.
 parameters.put(PayU.PARAMETERS.RECURRING_BILL_ITEM_ID, "15tolsvwz7l");
 boolean response = PayURecurringBillItem.delete(parameters);
 ```
@@ -1611,10 +1603,10 @@ boolean response = PayURecurringBillItem.delete(parameters);
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Exemplo pedido:
 ```PHP
 $parameters = array(
-	//Identificador del cargo extra
+	// ID da taxa extra.
 	PayUParameters::RECURRING_BILL_ITEM_ID => "228bdp236sy",
 );
 
