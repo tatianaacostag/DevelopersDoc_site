@@ -19,6 +19,7 @@ To integrate with Payments API Brazil, target your request to the following URLs
 Payments API includes the following methods:
 
 * [Submit transaction with credit card]({{< ref "Payments-API-Brazil.md#submit-transaction-with-credit-cards" >}})
+* [Submit transaction with PIX]({{< ref "Payments-API-Brazil.md#submit-transaction-with-pix" >}})
 * [Submit transaction with cash]({{< ref "Payments-API-Brazil.md#submit-transaction-with-cash" >}})
 * [Submit transaction with bank transfer]({{< ref "Payments-API-Brazil.md#submit-transaction-with-bank-transfer" >}})
 * [Available payment methods query]({{< ref "Payments-API-Brazil.md#available-payment-methods-query" >}})
@@ -1040,6 +1041,373 @@ Response body:
         </extraParameters>
     </transactionResponse>
 </paymentResponse>
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+## Submit transaction with PIX
+This method lets you process payments using PIX. To integrate with PIX you need to show in your checkout page a QR code so your customer can read it using their smartphone to perform the payment.
+
+In the end, your customer sees a checkout page like this.
+
+![PrintScreen](/assets/Payments/PixCheckout.png)
+
+{{% alert title="Note" color="warning"%}}
+Integration with PIX will be available for merchants since January, 2022. For more information, contact your sales representative.
+{{% /alert %}}
+
+### How does PIX work?
+PIX is an online transfer method released in November, 2020 by the Brazilian Central Bank (_Banco Central do Brasil_ - BACEN) which allows you make and receive transfers easily regardless of the bank who issued your account.
+
+Unlike other cash and bank transfer methods, PIX allows you to receive transfers immediately without sharing your account number; at any time, on any day. The funds received using this payment method will appear in your PayU account in a matter of seconds. 
+
+Pix has two parts:
+
+* PIX key: unique identifier of a banking or payment account in the Brazilian Banking System. Your key can be generated using any of the following values:
+   - Tax ID (CPF or CNPJ).
+   - E-mail
+   - Phone number
+   - Random key
+
+* QR code: this code is read by your customer using their phone and performs the payment.
+
+### Variables for request and response
+
+<details>
+<summary>Request</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description | Mandatory |
+|---|---|---|---|:-:|
+| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
+| command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
+| test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
+| merchant |  |  | This object has the authentication data. | Yes |
+| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| transaction |  |  | This object has the transaction data. | Yes |
+| transaction > order |  |  | This object has the order data. | Yes |
+| transaction > order > accountId | Number |  | Identifier of your account. | Yes |
+| transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
+| transaction > order > description | Alphanumeric | Min:1 Max:255 | Description of the order. | Yes |
+| transaction > order > language | Alphanumeric | 2 | Language used in emails sent to the buyer and the seller. | Yes |
+| transaction > order > notifyUrl | Alphanumeric | Max:2048 | Confirmation URL of the order. | No |
+| transaction > order > partnerId | Alphanumeric | Max:255 | Partner ID in PayU. | No |
+| transaction > order > signature | Alphanumeric | Max:255 | The signature associated to the form. For more information refer [Authentication signature]({{< ref "integrations.html#authentication-signature" >}}). | Yes |
+| transaction > order > shippingAddress |  |  | Shipping address. | No |
+| transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
+| transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
+| transaction > order > shippingAddress > city | Alphanumeric | Max:50 | Address city. | No |
+| transaction > order > shippingAddress > state | Alphanumeric | Max:40 | Address State. For Brazil, only send two characters, For example, set `SP` for São Paulo. | No |
+| transaction > order > shippingAddress > country | Alphanumeric | 2 | Address country. | No |
+| transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Address Zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | No |
+| transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated to the address. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
+| transaction > order > buyer |  |  | Buyer information. | Yes |
+| transaction > order > buyer > merchantBuyerId | Alphanumeric | Max:100 | Buyer ID in your system. | No |
+| transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
+| transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes | Yes |
+| transaction > order > buyer > contactPhone | Alphanumeric | Max:20 | Phone number of the buyer. | Yes |
+| transaction > order > buyer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | Yes |
+| transaction > order > buyer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | Yes |
+| transaction > order > buyer > shippingAddress | Alphanumeric |  | Shipping address of the buyer. | Yes |
+| transaction > order > buyer > shippingAddress > street1 | Alphanumeric | Max:150 | Buyer's shipping address Line 1. | Yes |
+| transaction > order > buyer > shippingAddress > city | Alphanumeric | Max:50 | Buyer's shipping address city. | Yes |
+| transaction > order > buyer > shippingAddress > state | Alphanumeric | Max:40 | Buyer's shipping address state. For Brazil, only send two characters, For example, set `SP` for São Paulo. | Yes |
+| transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Yes |
+| transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | Yes |
+| transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | Yes |
+| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Yes |
+| transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. | Yes |
+| transaction > order > additionalValues > TX_VALUE > value | Number | 19, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Yes |
+| transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
+| transaction > order > additionalValues > TX_TAX | Alphanumeric | 64 | Amount of the Value Added Tax (VAT). | Yes |
+| transaction > order > additionalValues > TX_TAX > value | Number | 19, 2 | Specifies the amount of the VAT.  | No |
+| transaction > order > additionalValues > TX_TAX > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 19, 2 | Specifies the base amount of the transaction. | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > payer |  |  | Payer information. | Yes |
+| transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
+| transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
+| transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer. | Yes |
+| transaction > payer > billingAddress |  |  | Billing address. | No |
+| transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
+| transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
+| transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | No |
+| transaction > payer > billingAddress > state | Alphanumeric | Max:40 | Billing address state. For Brazil, only send two characters, For example, set `SP` for São Paulo. | No |
+| transaction > payer > billingAddress > country | Alphanumeric | 2 | Billing address country in format ISO 3166 Alpha-2. | No |
+| transaction > payer > billingAddress > postalCode | Alphanumeric | Max:20 | Billing address zip code. For Brazil, use the format `XXXXX-XXX` or ´. Example: `09210-710` or `09210710`. | No |
+| transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
+| transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
+| transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
+| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
+| transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
+| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| transaction > type | Alphanumeric | 32 | As PIX payments are performed using the payer mobile phone, the only available transaction type is `AUTHORIZATION_AND_CAPTURE`. | Yes |
+| transaction > paymentMethod | Alphanumeric | 32 | Set `PIX` for this payment method. If you want to see other payment method, refer to [Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Yes |
+| transaction > paymentCountry | Alphanumeric | 2 | Set `BR` for Brazil. | Yes |
+| transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
+| transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
+| transaction > extraParameters |  |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"PARAMETER_NAME": "VALUE"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>PARAMETER_NAME</string>`<br>&emsp;&emsp;`<string>VALUE</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`<br>_Set the respective data type_  | No |
+
+</details>
+
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description |
+|-|-|-|-|
+| code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
+| transactionResponse |  |  | The response data. |
+| transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
+| transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
+| transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. As the payment is performed by the user in their phone, the state for a successful transaction is `PENDING` |
+| transactionResponse > paymentNetworkResponseCode | Alphanumeric | Max:255 | The response code returned by the financial network. |
+| transactionResponse > paymentNetworkResponseErrorMessage | Alphanumeric | Max:255 | The error message returned by the financial network. |
+| transactionResponse > trazabilityCode | Alphanumeric | Max:32 | The traceability code returned by the financial network. |
+| transactionResponse > authorizationCode | Alphanumeric | Max:12 | The authorization code returned by the financial network. |
+| transactionResponse > pendingReason | Alphanumeric | Max:21 | The reason code associated with the status, as mentioned in `transactionResponse > state`, the transaction is waiting for the payment. |
+| transactionResponse > responseCode | Alphanumeric | Max:64 | The response code associated with the status. In this case, for successful transactions is `PENDING_PAYMENT_IN_ENTITY`. |
+| transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
+| transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
+| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"EXPIRATION_DATE": "1627488070000"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>EXPIRATION_DATE</string>`<br>&emsp;&emsp;`<int>1627488070000</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+
+</details>
+
+#### Considerations
+* Payments processed through our gateway will be for PayU on behalf of your commerce.
+* If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`).
+* To configure the expiration time of the QR code, contact your sales representative. The maximum time you can request is one day.<br>By default, the expiration time is two (2) hours.
+* The minimum amount you can process with PIX is R$ 1.00, the maximum amount depends on your customer and their bank.
+* The parameter `transaction.payer.fullName` is mandatory to create the request.
+* The QR code and the PIX key used to receive payments is generated by PayU, it is not supported to configure your own QR code nor PIX key. Nevertheless, the total of the transaction minus the commission fee is transferred to your PayU account.
+* To query an active code of your transaction, use the [Queries API]({{< ref "Queries-API.md" >}}).
+* The parameter `transactionResponse.extraParameters` has the following parameters related to the transaction:
+   - **EXPIRATION_DATE**: deadline to make the payment.
+   - **QRCODE_EMV**: code to be pasted in the bank portal to perform the payment. This code is used when the customer cannot read the QR code.
+   - **QRCODE_IMAGE_BASE64**: image of the QR code. This is a string codified in Base64.
+
+{{% alert title="Note" color="info"%}}
+It is recommended to display in your Checkout both the image of the QR code (parameter `QRCODE_IMAGE_BASE64` decoded) and the string of the code (parameter `QRCODE_EMV`) to avoid payment desertions.
+{{% /alert %}}
+
+### API call
+The following are the bodies of the request and response of this payment method.
+
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
+```JSON
+{
+   "language": "pt",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "accountId": "512327",
+         "referenceCode": "PRODUCT_TEST_2021-06-17T19:11:57.179Z",
+         "description": "Payment test description",
+         "language": "pt",
+         "signature": "fbc089272288edc52c332395d9566f4c",
+         "notifyUrl": "http://www.payu.com/notify",
+         "additionalValues": {
+            "TX_VALUE": {
+               "value": 1000,
+               "currency": "BRL"
+            }
+         },
+         "buyer": {
+            "merchantBuyerId": "1",
+            "fullName": "First name and second buyer name",
+            "emailAddress": "buyer_test@test.com",
+            "contactPhone": "7563126",
+            "dniNumber": "811.807.405-64",
+            "cnpj": "32593371000110",
+            "shippingAddress": {
+               "street1": "Quadra QNP 34 Conjunto G 780",
+               "street2": "5555487",
+               "city": "Manaos",
+               "state": "SP",
+               "country": "BR",
+               "postalCode": "10012545",
+               "phone": "(11)756312633"
+            }
+         },
+         "shippingAddress": {
+            "street1": "Quadra QNP 34 Conjunto G 780",
+            "street2": "5555487",
+            "city": "Manaos",
+            "state": "SP",
+            "country": "BR",
+            "postalCode": "10012545",
+            "phone": "(11)756312633"
+         }
+      },
+      "payer": {
+         "fullName":"Payer Name",
+         "emailAddress": "buyer_test@test.com",
+         "contactPhone": "55 12345678901",
+         "dniType": "CPF",
+         "dniNumber": "653.098.319-83"
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "PIX",
+      "paymentCountry": "BR",
+      "ipAddress": "127.0.0.1"
+    },
+    "test": false
+}
+```
+<br>
+
+Response body:
+```JSON
+{
+  "code": "SUCCESS",
+  "error": null,
+  "transactionResponse": {
+    "orderId": 120000260,
+    "transactionId": "e82ace4c-647b-457d-b4f5-136c921445b6",
+    "state": "PENDING",
+    "paymentNetworkResponseCode": null,
+    "paymentNetworkResponseErrorMessage": null,
+    "trazabilityCode": "9c7d3f2d-6c2c-436c-a06d-e6f99271ff3f",
+    "authorizationCode": null,
+    "pendingReason": "AWAITING_PAYMENT_IN_ENTITY",
+    "responseCode": "PENDING_PAYMENT_IN_ENTITY",
+    "errorCode": null,
+    "responseMessage": null,
+    "transactionDate": null,
+    "transactionTime": null,
+    "operationDate": 1627473671920,
+    "referenceQuestionnaire": null,
+    "extraParameters": {
+      "EXPIRATION_DATE": 1627488070000,
+      "QRCODE_EMV": "00020101021126950014BR.GOV.BCB.PIX2573spi.dev.cloud.itau.com.br/documentos/198e49c5-2330-4ad7-9d0b-967c7b5371225204000053039865802BR5923PMD Gotham NegA cios ME6009SAO PAULO62410503***50300017BR.GOV.BCB.BRCODE01051.0.063040866",
+      "QRCODE_IMAGE_BASE64": "iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AQAAAACgl2eQAAADCUlEQVR4Xu2XUW4cIRBE6YvA/W+Ro8BFIPWKsWU5kpWPbOVn8SaZhWep1F1dTNr5ef1q33e+rTdw1xu466+A2VqtXbuP3etMPY9zlrdjwPLnrNm1NceaNXtv426nAOliqw5K+1io3IBhoFyZsWuaE/UfgM1h0xpzTMqUBfRxXZB2ONylhy/Nej0wMe2fi+0Y4KUend1omcZHR7vufgigNMzLEDXFbL63Pj6bFQBkld57MS0KkEWfdhOg3sWAI0mYRUIJMkvGwq5VCJhWtwkwAWoXIcJvjRxw9WnL/YKQWxejPGKAxvZgEHWoBKlhErztmBhgafaMXCtqWKVDJQYc2oNndY5llncEspUDlOFFrXRA23QiUl9jwB7aPvhkoE5UGeQxBlyFLEaXCbrW+XT16wGe9Kcsk25JsH/oWgjw9PbGge+ysdAtgRAhwNm1iW+rXN5pV2oMuEaVTHlXL30iFaySXU+hAsBGpJulzAAclE3geEQGAIzCfcKrFv7VEVna3LAQMIcNyiue7lKSg1ppQ0OcAshPWWT4amNtarb4GgN8qcmwvlAk8qNRtC4GuEVKLn13fKlUUuxepQC+C9NWJ9ZlHRu5iLMUMPGrdhkZLKwLpvQfoXvXhoCDzsZP0beFgagefgkC0yWiVbxqFBmmn/Xh6tcDyxnGtUpskJ/Mb0dpDGBQnSJSJ7NKHYahaR+Fej3wWMSqMI/+Utmkmm6lgCewfICwmyPdHg4BGtRBkHp+m29VqbPyHCCPKL+pFzpJUiZIep9CBQAnOZ+nQwu3TP8bAybjqvJgkyI+DjLF07gQ4M5wXEibvtod5u0RGQDYKhhZFX3ca9hYuRID9GbDidql+kgt/eKCpYMpwGaVIAZGAaKObZyL1BygxTMgMUKXuOEXbQwBFEWaOt4tusQW/eKXQsDic0vE+17njA4SrjFg8n43XCwbZQsdfooCC4eSJJoXJVkRYJ/NSgHEOBIJ8wtYeAzQh0HpCjLop3GDeU4BtEU2kUpXR1YhQqlXDvhxvYG73sBd/wD4Df7+v4eqIoYgAAAAAElFTkSuQmCC"
+    },
+    "additionalInfo": null
+  }
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+<request>
+   <language>pt</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <accountId>512327</accountId>
+         <referenceCode>PRODUCT_TEST_2021-06-17T19:11:57.179Z</referenceCode>
+         <description>payment test</description>
+         <language>pt</language>
+         <signature>fbc089272288edc52c332395d9566f4c</signature>
+         <notifyUrl>http://www.payu.com/notify</notifyUrl>
+         <additionalValues>
+            <entry>
+               <string>TX_VALUE</string>
+               <additionalValue>
+                  <value>1000</value>
+                  <currency>BRL</currency>
+               </additionalValue>
+            </entry>
+         </additionalValues>
+         <buyer>
+            <contactPhone>7563126</contactPhone>
+            <dniNumber>811.807.405-64</dniNumber>
+            <cnpj>32593371000110</cnpj>
+            <emailAddress>buyer_test@test.com</emailAddress>
+            <fullName>First name and second buyer name</fullName>
+            <merchantBuyerId>1</merchantBuyerId>
+            <shippingAddress>
+               <street1>Quadra QNP 34 Conjunto G 780</street1>
+               <street2>5555487</street2>            
+               <city>Manaos</city>
+               <state>SP</state>               
+               <country>BR</country>
+               <postalCode>10012545</postalCode>
+               <phone>7563126</phone>
+            </shippingAddress>
+         </buyer>
+         <shippingAddress>
+            <street1>Quadra QNP 34 Conjunto G 780</street1>
+               <street2>5555487</street2>            
+               <city>Manaos</city>
+               <state>SP</state>               
+               <country>BR</country>
+                <postalCode>10012545</postalCode>
+               <phone>7563126</phone>
+         </shippingAddress>
+      </order>
+      <payer>
+         <contactPhone>55 12345678901</contactPhone>
+         <dniNumber>653.098.319-83</dniNumber>
+         <dniType>CPF</dniType>
+         <emailAddress>buyer_test@test.com</emailAddress>
+         <fullName>Payer Name</fullName>
+      </payer>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>PIX</paymentMethod>
+      <paymentCountry>BR</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+<br>
+
+Response body:
+```XML
+<paymentResponse>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>1181965893</orderId>
+        <transactionId>8397992b-3717-49c5-92ee-345a65ff13cf</transactionId>
+        <state>PENDING</state>
+        <trazabilityCode>e0a52a20-6ae2-4970-9b81-47f208bbf40e</trazabilityCode>
+        <pendingReason>AWAITING_NOTIFICATION</pendingReason>
+        <responseCode>PENDING_TRANSACTION_CONFIRMATION</responseCode>
+        <operationDate>2021-10-08T12:14:15</operationDate>
+        <extraParameters>
+            <entry>
+                <string>EXPIRATION_DATE</string>
+                <date>2021-10-08T18:14:13</date>
+            </entry>
+            <entry>
+                <string>QRCODE_EMV</string>
+                <string>00020101021226770014BR.GOV.BCB.PIX2555api.itau/pix/qr/v2/8ccd84ae-0c8d-4f71-8abf-b676a666bf9f5204000053039865802BR5911PAYU BRASIL6009SAO PAULO62070503***6304E404</string>
+            </entry>
+            <entry>
+                <string>QRCODE_IMAGE_BASE64</string>
+                <string>iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6AQAAAACgl2eQAAAC0ElEQVR4Xu2XW27cMAxFpY1I+99FlyJtRO45VFIrUyDoR8z+DDEPj3QMMCTvlVOu7+NXeV15iTew4w3seAM7/g0YpdTJ92p1lTpKveY1XUwE2JyT3TnnqF6WFnd4UxowKq/R56qrldZH68uVfIDc+mqktyBb/w/A6vSMXtms0kePxUyAl79t2AVKyWYsJgIxtK/x11S/xs8CH0GOrJEh7+WmkQWMPpjW3aWYFybY8b3/iucBqtLwjn4txsWSIRs13BMB80E2zqrqoUyle08qQFV6zK0UqfpuXiYC5OQu9sXqMmGRW7wJwBykMxCuWdosb6Fcf5JMAJAMFo5e9HFHZtvaXagEYG7n4kDzHMHRi656NCsBcErJLIQLZc56+t2sDECJ+IF1TWNtI7uTfB64LEswJQR8sYV4j24+Dww9nCeLzzpFo0LHeQCIBO8aEtZYQ0KJgJ4pwsB4qpic2rGFaYC9Kj5k9Rk1o2DSIxMgIxdCL2SMlTq+425WBjCqZ5idwkb57ZeLiYBaoVlLH9lDIzcPdT8PRJkUSkiG3OJ4+9KsxwH2PE/YVi+OjeI5DpQEYDgmJQ73poThMNR1NOt5YKqZmFObxMfSQ5RPHsCkVPfYIMsisLwjE2BqL/eKeZmxvZqHeBOAuX8iGZKjT1g5rTqb9TzADu5hTvYo3ItUj2YlAGywHk3D08ltWKuzks8DeNfSwxwUL6NSX9X9PIBtqBpey+cM9snbtTzg2koZrkz/K3OM19ms5wHr08JM9fHqR+vx+J0IOKXTXTanQ4yU0dGVCAwFa5rVR4zlBb/5SAQMc3R6PelXqGee4n0cMKHl814Ixvy63j4yAdKbnufD2iiYj/M1FRjhGaGd4qMO8/qlWUlAjE1MK7BCqldEJqBfUCwa5NV0fpZMGhDNas2xwTlIUU87zDwBiMZooFZIIYsq4UTgu3gDO97Ajjew4weA30GD9ELLE47fAAAAAElFTkSuQmC</string>
+            </entry>
+        </extraParameters>
+    </transactionResponse>
+</paymentResponse>
+
 ```
 {{< /tab >}}
 {{< /tabs >}}

@@ -75,7 +75,7 @@ Si la transacción ya tiene asociada una solicitud de reembolso que se encuentre
 ![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_existente.png)
 
 * **No tienes saldo disponible en tu cuenta**:<br>
-Si no tienes dentro del saldo disponible de tu cuenta mínimo el valor correspondiente al valor de la transacción o al valor de la solicitud de reembolso (En caso de reversiones parciales*) no se te permitirá registrar una solicitud de reembolso asociada a transacciones de dicha cuenta y por ende tu solicitud será declinada.
+Si no tienes dentro del saldo disponible de tu cuenta mínimo el valor correspondiente al valor de la transacción o al valor de la solicitud de reembolso (En caso de reversiones parciales<sup>\*</sup>) no se te permitirá registrar una solicitud de reembolso asociada a transacciones de dicha cuenta y por ende tu solicitud será declinada.
 
 ![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/saldo_insuficiente.png)
 
