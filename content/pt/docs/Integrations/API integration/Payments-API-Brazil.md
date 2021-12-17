@@ -1413,6 +1413,10 @@ Este método permite processar os pagamentos de seus clientes em dinheiro. Para 
 
 <img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
 
+{{% alert title="Observação" color="warning"%}}
+A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
+{{% /alert %}}
+
 ### Variáveis para pedido e resposta {#variables-for-request-and-response-2}
 
 <details>

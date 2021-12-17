@@ -29,9 +29,13 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 ### Brasil {#brazil}
 * O tempo máximo para enviar um cancelamento é de 7 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada.
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é:
-   - 90 dias para transações com PIX ou processadas na Redecard .
+   - 90 dias para transações com PIX<sup>\*</sup> ou processadas na Redecard .
    - 120 dias para transações processadas na  Cielo.
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 15 dias úteis.
+
+{{% alert title="Observação" color="warning"%}}
+<sup>\*</sup> A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
+{{% /alert %}}
 
 ### Chile
 * Devido a restrições de rede, o cancelamento pode ser autorizado nas primeiras três horas após a autorização. Se nenhum cancelamento ou reembolso for enviado após de 7 dias, a transação será cancelada automaticamente (auto-void).

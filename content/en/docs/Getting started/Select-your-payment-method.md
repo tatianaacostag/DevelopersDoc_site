@@ -43,6 +43,10 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards    |           |
 | ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards    |           |
 
+{{% alert title="Note" color="warning"%}}
+Integration with PIX will be available for merchants since January, 2022. For more information, contact your sales representative.
+{{% /alert %}}
+
 ## <img src="/assets/Chile.png" width="25px"/> Chile {#Chile}
 <div class="paymentMethods"></div>
 

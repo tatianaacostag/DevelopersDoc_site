@@ -43,6 +43,10 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 | ![Logo](/assets/PaymentMethods/master.png)| Mastercard | MASTERCARD | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/visa.png)| VISA | VISA | Cartões de crédito| |
 
+{{% alert title="Observação" color="warning"%}}
+A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
+{{% /alert %}}
+
 ## <img src="/assets/Chile.png" width="25px"/> Chile {#Chile}
 <div class="paymentMethods"></div>
 
