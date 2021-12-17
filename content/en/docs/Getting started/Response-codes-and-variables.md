@@ -399,7 +399,7 @@ Send the exact value displayed in the `Code` column in the variable `transfers[n
 | `041`     | JPMORGAN                                          |
 | `042`     | BNP PARIBAS                                       |
 | `047`     | MUNDOMUJER                                        |
-| `051`     | DAVIVIENDA - DAVIPLATA                            |
+| `051`     | DAVIVIENDA                                        |
 | `052`     | AV VILLAS                                         |
 | `053`     | BANCO WWB                                         |
 | `059`     | BANCAMIA                                          |

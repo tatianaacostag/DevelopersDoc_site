@@ -18,73 +18,75 @@ Acontece reembolso quando o estabelecimento decide voluntariamente reintegrar o 
 * O estabelecimento não tem estoque e não pode entregar o produto ou serviço a seu cliente.
  
 ## Como fazer o reembolso de uma transação?
-Para fazer a petição do reembolso de uma transação você deve fazer as seguintes ações. Lembre-se que a transação deve estar em estado “Aprovada” e não deve ter pendente um processo de disputa.
+Para fazer a petição do reembolso de uma transação você deve fazer as seguintes ações. Lembre-se que a transação deve estar em estado _**Aprovada**_ e não deve ter pendente um processo de disputa.
 
 1. **Consultar a transação que você deseja reembolsar**:<br>
-Para consultar uma transação você deve ir a seu tu módulo administrativo ao menu “Relatórios” clicando na opção “Transações” e buscar a transação específica da qual deseja pedir o reembolso do dinheiro correspondente ao valor da transação.
+Para consultar uma transação você deve ir a seu tu módulo administrativo ao menu _**Relatórios**_ clicando na opção _**Transações**_ e buscar a transação específica da qual deseja pedir o reembolso do dinheiro correspondente ao valor da transação.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/http://developers.payulatam.com/images/soluciones-adicionales-pt/reembolsos/reportes.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reportes.png)
  
 2. **Fazer petição de reembolso**:<br>
-Una vez tengas identificada la transacción, debes seleccionarla para ver el detalle de la misma y si estás seguro de realizar la solicitud de reembolso debes dar clic al botón _**Reembolsar**_ que se encuentra en la sección _**Detalle de la transacción**_.
+quando você tenha identificado a transação, deve selecioná-la para ver o detalhe da mesma e se tem certeza de fazer a petição de reembolso, deve clicar no botão _**Reembolsar**_ que está na seção _**Detalhe da transação**_.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_clic.jpg)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_clic.png)
  
-3. **Ingresar información de la solicitud de reembolso**:<br>
-Una vez indiques que deseas realizar una solicitud de reembolso de una transacción, se te solicitará una información adicional para poder radicarla, la información requerida es la siguiente: Código de reversión, Tipo de transacción (Reembolso o Reversión parcial), Monto de reversión<sup>\*</sup> y Comentario.
+3. **Inserir informação da petição de reembolso**:<br>
+Quando tenha indicado que deseja fazer uma petição de reembolso de uma transação, o sistema pedirá uma informação adicional para poder processá-la; a informação requerida é a seguinte: Código de reversão, Tipo de transação (Reembolso ou Reversão parcial), Montante de reversão<sup>\*</sup> e Comentário.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_dialog.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_dialog.png)
  
-{{% alert title="Tener en cuenta" color="info"%}}
-<sup>\*</sup> _Reversiones parciales_: Si el valor de la reversión parcial solicitada supera el valor total actual de la transacción padre no se te permitirá radicar una solicitud de reembolso parcial asociada a dicha transacción. Debes tener en cuenta que el valor actual de la transacción padre pudo haber sido afectado por otras solicitudes de reversiones parciales.
+{{% alert title="Levar em conta" color="info"%}}
+<sup>\*</sup> _Reversões parciais_: Se o valor da reversão parcial solicitada supera o valor total atual da transação pai não lhe será permitido processar uma petição de reembolso parcial associada a essa transação. Você deve levar em conta que o valor atual da transação pai pode ter sido afetado por outras petições de reversões parciais.
 
-Las Reversiones parciales sólo aplican para Brasil, Perú y Argentina.
+as Reversões parciais somente aplicam para Brasil, Peru e Argentina.
 {{% /alert %}}
+
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_validacion1.png)
 
 4. **Confirmar solicitud de reembolso**: 
 Antes de registrar tu solicitud de reembolso se te mostrará la información de la transacción que seleccionaste junto con la información ingresada y se te solicitará que confirmes la radicación de tu solicitud a través de la opción _**Enviar**_. En caso contrario puedes desistir de la operación a través de la acción _**Cancelar**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_confirmar.jpg)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_confirmar.png)
  
-## ¿Cuáles son las posibles resultados una vez registres tu solicitud de reembolso?
-Una vez confirmaste la radicación de tu solicitud de reembolso el sistema dependiendo del caso puede emitir alguna de las siguientes respuestas:
+## Quais os possíveis resultados quando cadastrada sua petição de reembolso?
+Quando confirmado o processamento da sua petição de reembolso o sistema, segundo o caso, pode emitir qualquer uma destas respostas:
 
-### Solicitud de Reembolso aprobada
-Si tu solicitud de reembolso cumple con las condiciones requeridas verás el siguiente mensaje de confirmación.
+### Petição de Reembolso aprovada:
+Se sua petição de reembolso cumprir com as condições exigidas, você verá a seguinte mensagem de confirmação.
 
 ![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_aprobado.png)
 
-### Solicitud de Reembolso pendiente de aprobación por parte del área encargada
-En este caso la solicitud de reembolso debe ser revisada y aprobada por el área encargada de la gestión de este tipo de solicitudes, por lo cual esta queda en estado pendiente y debes esperar que sea atendida o gestionada. Puedes consultar el estado de tu solicitud de reembolso desde tu Secure a través del módulo de _**Reportes**_ y a través de la opción _**Reembolsos**_.
+### Petição de Reembolso pendente de aprovação por parte da área encarregada
+Nesse caso, a petição de reembolso deve ser revisada e aprovada pela área encarregada da gestão deste tipo de petições, portanto fica em estado pendente e deve aguardar que seja atendida ou gerenciada. Você pode consultar o estado da sua petição de reembolso desde seu Secure através do módulo de _**Relatórios**_ e através da opção _**Reembolsos**_.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/pendiente_aprobacion.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_aprobado.png)
 
-{{% alert title="Tener en cuenta" color="info"%}}
-* Si el tipo de transacción es _**Reversión Parcial**_ estas solicitudes quedarán en todos los casos en estado Pendiente.
-* Las Reversiones parciales sólo aplican para Brasil, Perú y Argentina.
-* El tiempo de respuesta estimado para la gestión de la solicitud de reembolso por parte del área encargada es de dos (2) días hábiles para todos los países (Argentina, Brasil, Chile, Colombia, México, Perú, Panamá).
-* Los tiempos de reintegro del dinero a los compradores varían de acuerdo a cada país.
+{{% alert title="Levar em conta" color="info"%}}
+* Se o tipo de transação for _**Reversão Parcial**_ estas petições ficarão em todos os casos em estado Pendente.
+* As Reversões parciais somente aplicam o Brasil, Peru e a Argentina
+* O tempo de resposta estimado para a gestão da petição de reembolso por parte da área encarregada é de dois (2) dias uteis para todos os países (Argentina, Brasil, Chile, Colômbia, México, Peru, Panamá).
+* Os tempos de reintegro do dinheiro aos compradores variam segundo cada país.
 {{% /alert %}}
 
-### Solicitud de Reembolso Declinada
-Una solicitud de reembolso puede quedar declinada por algunos de los siguientes motivos:
+### Petição de Reembolso Declinada
+Uma petição de reembolso pode ser declinada por qualquer um dos seguintes motivos:
 
-* **Ya existe una solicitud de reembolso**:<br>
-Si la transacción ya tiene asociada una solicitud de reembolso que se encuentre en estado pendiente, el sistema te indicará que tu solicitud fue declinada por tal motivo.
+* **Existe já uma petição de reembolso**:<br>
+Se a transação já tem associada uma petição de reembolso que esteja em estado pendente, o sistema indicará que sua petição foi declinada por esse motivo.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_existente.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_existente.png)
 
-* **No tienes saldo disponible en tu cuenta**:<br>
-Si no tienes dentro del saldo disponible de tu cuenta mínimo el valor correspondiente al valor de la transacción o al valor de la solicitud de reembolso (En caso de reversiones parciales*) no se te permitirá registrar una solicitud de reembolso asociada a transacciones de dicha cuenta y por ende tu solicitud será declinada.
+* **Não tem saldo disponível na sua conta**:<br>
+Se você não tiver saldo disponível na sua conta o montante equivalente ao valor da transação ou ao valor da petição de reembolso (Em caso de reversões parciais<sup>\*</sup>) você não terá permitido cadastrar uma petição de reembolso associada a transações dessa conta e, portanto, sua petição será declinada.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/saldo_insuficiente.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/saldo_insuficiente.png)
 
-* **La transacción tiene pendiente una solicitud de disputa**:<br>
-Si la transacción tiene pendiente una Disputa, el sistema te indicará que tu solicitud fue declinada y no registrará tu solicitud de reembolso, en este caso puedes consultar su estado a través del módulo de disputas.
+* **A transação tem pendente uma petição de disputa**:<br>
+Se a transação tiver pendente uma Disputa, o sistema indicará que sua petição foi declinada e não irá cadastrar sua petição de reembolso, neste caso você pode consultar seu estado através do módulo de disputas.
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/disputa_pendiente.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/disputa_pendiente.png)
  
-## ¿Dónde puedes consultar el estado de tu solicitud de reembolso?
-Para conocer el estado de tus solicitudes de reembolso puedes acceder desde tu Secure al módulo de _**Reportes**_ y a través de la opción _**Reembolsos**_ consultar el estado de todas tus solicitudes de reembolso. Si deseas conocer el estado de una solicitud o solicitudes determinadas puedes aplicar los criterios o filtros de búsqueda para que realices búsquedas específicas.  
+## Onde você pode consultar o estado da sua petição de reembolso?
+Para conhecer o estado de suas petições de reembolso você pode entrar a seu Secure no módulo de _**Relatórios**_ e através da opção _**Reembolsos**_ consultar o estado de todas suas petições de reembolso. Se quiser conhecer o estado de uma petição ou petições determinadas, pode aplicar os critérios ou filtros de busca para você fazer buscas específicas. 
 
-![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_consulta.png)
+![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_consulta.png)

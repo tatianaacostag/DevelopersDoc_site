@@ -75,7 +75,7 @@ If the transaction is already related to a previous refund request, which waits 
 ![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/reembolso_existente.png)
 
 * **There is not credit in your account**:<br>
-If you do not have within the available balance of your account, the amount corresponding to the money of the transaction or to the value of the refund request (See the partial reversions*), you are not able to submit a request related to the transaction of said account; as a result, your request will be declined.
+If you do not have within the available balance of your account, the amount corresponding to the money of the transaction or to the value of the refund request (See the partial reversions<sup>\*</sup>), you are not able to submit a request related to the transaction of said account; as a result, your request will be declined.
 
 ![PrintScreen](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-en/reembolsos/saldo_insuficiente.png)
 

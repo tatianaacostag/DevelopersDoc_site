@@ -4,7 +4,7 @@ linkTitle: "Disputas"
 date: 2021-11-18T13:40:06-05:00
 type: docs
 Description: >
-   Esta es una herramienta que puedes encontrar en el Módulo administrativo que te sirve para gestionar procesos de disputa que se generen con tu cuenta PayU. Encuentra toda la información necesaria y los pasos a seguir para validar los cobros efectuados.
+   Este módulo é uma ferramenta que pode ser encontrada no Módulo administrativo para gerenciar processos de disputa gerados com a sua conta PayU. Encontre todas as informações necessárias e os passos a serem seguidos para validar as cobranças efetuadas.
 weight: 26
 ---
 
@@ -12,113 +12,105 @@ weight: 26
 Este tópico foi descontinuado e não está sendo oferecido a novos comerciantes.
 {{% /alert %}}
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/contracargos.png)
-
-{{% alert title="Observação" color="info"%}}
-Una vez que una transacción es parte de una disputa, el monto asociado pasa a formar parte del saldo congelado, por lo tanto no podrás realizar transferencias de dicho saldo a tu cuenta bancaria hasta tanto no se resuelva la disputa.
-
-Si deseas ver un demo de la herramienta y conocer más sobre el Módulo de disputas y cómo puede ayudarte a disminuir los contracargos te invitamos al visitar el video en nuestro canal el YouTube con las memorias del webinar sobre contracargos
-
-[Ver webinar](https://www.youtube.com/watch?v=VK64Ma6WsyI)
+{{% alert title="Lembre-se" color="info"%}}
+Uma vez que uma transação é parte de uma disputa, o valor associado passa a fazer parte do saldo congelado e, portanto, você não poderá realizar transferências desse saldo para a sua conta bancária até que a disputa seja resolvida.
 {{% /alert %}}
 
-## ¿Qué es una disputa?
-Una disputa se inicia cuando un comprador desconoce ante el banco un cargo realizado a su tarjeta de crédito. Una vez notificado el banco, se inicia el proceso formal para determinar la validez de la compra efectuada.
+## O que é uma disputa?
+Uma disputa é iniciada quando um comprador desconhece perante o banco uma cobrança feita no seu cartão de crédito. Uma vez que o banco tenha sido notificado, inicia-se o processo formal para determinar a validade da compra efetuada.
 
-## Motivos de disputa
-Existen varias razones que pueden llevar a un comprador a desconocer un cargo en su tarjeta de crédito. Los motivos por los que se inicia un proceso de disputa pueden variar. Algunos de los que se han identificado son los siguientes:
-* _**Fraude**_: Las disputas se determinan como fraude cuando una persona no autorizada realizó compras con una tarjeta de crédito. Este tipo de disputa puede suceder si la tarjeta fue robada o extraviada.
-* _**Desconocimiento de pago**_**_: La marca o el nombre del comercio que se refleja en el extracto de la tarjeta de crédito no es reconocida por el tarjetahabiente.
-* _*Producto no entregado**_: el tarjetahabiente indica que no ha recibido el producto o servicio objeto del cargo realizado a su tarjeta de crédito.
-* _**Producto no aceptable**_: el tarjetahabiente alega no haber recibido el producto o servicio en las condiciones esperadas.
-* _**Duplicado**_: el tarjetahabiente indica que el cargo realizado por la compra de un producto o servicio se aplicó más de una vez a su tarjeta de crédito.
-* _**Monto no corresponde**_: El cargo realizado a la tarjeta de crédito no corresponde con el valor de la compra.
-* _**No informado por la entidad**_: En muchas ocasiones el banco o la red procesadora inicia un proceso de disputa sin tener un motivo específico.
+## Motivos de disputas
+Existem diversas razões que podem levar um comprador a desconhecer uma cobrança no seu cartão de crédito. Os motivos que levam ao início de um processo de disputa podem variar. Alguns dos motivos identificados são os seguintes:
+* **Fraude**: As contestações são determinadas como fraude quando uma pessoa não autorizada fez compras com um cartão de crédito. Esse tipo de disputa pode acontecer se o cartão tiver sido roubado ou extraviado.
+* **Desconhecimento de pagamento**: a marca ou o nome do estabelecimento comercial refletidos no extrato do cartão de crédito não são reconhecidos pelo titular do cartão.
+* **Produto não entregue**: o titular do cartão indica que não recebeu o produto ou serviço objeto da cobrança realizada no seu cartão de crédito.
+* **Produto não aceitável**: o titular do cartão alega não ter recebido o produto ou serviço nas condições esperadas.
+* **Duplicado**: O titular do cartão indica que a cobrança realizada pela compra de um produto ou serviço foi aplicada mais de uma vez ao seu cartão de crédito.
+* **Valor não corresponde**: A cobrança realizada no cartão de crédito não corresponde ao valor da compra.
+* **Não informado pela entidade**: Em muitas ocasiões, o banco ou a rede processadora inicia um processo de disputa sem ter um motivo específico.
  
-## ¿Cómo funciona?
+## Como funciona?
 
-### 1. Notificación de una disputa
-Cuando PayU es notificado por parte del banco que se ha iniciado un proceso de disputa, automáticamente recibirás un email con la información de dicho proceso.
+### 1. Notificação de uma disputa
+Quando a PayU é notificada pelo banco que um processo de disputa foi iniciado, você automaticamente receberá um e-mail informando sobre esse processo.
 
 <div style="display: flex;">
   <div style="float: left;width: 50%;">
-    <p style="text-align: center">Email que te notifica el inicio de una disputa</p>
+    <p style="text-align: center">E-mail que você recebe quando é iniciada a disputa</p>
     <p><img src="https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-notificacion-es.png" alt="PrintScreen"/></p>
   </div>
   <div style="float: left;width: 50%;">
-    <p style="text-align: center">Email que pueden ver tus compradores</p>
-    <p><img src="https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-notificacioncomprador-es.png" alt="PrintScreen"/></p>
+    <p style="text-align: center">E-mail que o seu comprador recebe</p>
+    <p><img src="https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-notificacioncomprador-pt.png" alt="PrintScreen"/></p>
   </div>
 </div>
 <br>
 
-Igualmente enviamos un POST con toda la información de la disputa a cualquier URL que configures desde tu módulo administrativo. De esta manera puedes automatizar tus procesos de gestión de disputas para minimizar el riesgo de un posible contracargo.
+Também enviamos um POST com toda a informação da disputa a qualquer URL que você tiver configurado a partir do seu módulo administrativo. Assim você pode automatizar seus processos de gerenciamento de contestações para minimizar o risco de um possível estorno.
 
-Puedes configurar la URL en donde realizaremos la notificación dentro del módulo administrativo haciendo click en el menú _**configuración**_ en la opción _**configuración de cuentas**_, defines la url de notificación de disputas y habilitando la casilla de notificación.
+Você pode configurar a URL onde será feita a notificação dentro do módulo administrativo clicando no menu _**Configuração**_ na opção _**Configuração de contas**_, definindo a URL de notificação de contestações e habilitando a caixa de notificação.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas1-es.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas1-pt.png)
 
-Una vez realices este proceso, recibirás automáticamente un POST con toda la información del proceso de disputa iniciado. Igualmente recibirás una notificación POST cada vez que el proceso de disputa sufra una actualización, de esta manera estarás enterado del avance y finalización de dicho proceso.
+Uma vez que esse processo tenha sido realizado, você receberá automaticamente um POST com toda a informação do processo de disputa iniciado. Você também receberá um POST de notificação cada vez que o processo de disputa for atualizado, e assim acompanhará o progresso e a finalização do processo.
 
-### 2. Consultas a través del módulo administrativo
-Puedes consultar y gestionar tus procesos de disputa desde tu módulo administrativo. En el menú _**disputas**_.
+### 2. Consultas através do Módulo administrativo
+Você pode consultar e gerenciar seus processos de disputa a partir do seu módulo administrativo. No menu _**disputas**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas2-es.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas2-pt.png)
 
-### 3. Proporciona evidencias
-Es importante que siempre respondas proporcionando evidencia para una disputa antes de la fecha límite estipulada por el banco. Una vez cumplida la fecha máxima no será posible cargar la evidencia correspondiente para una disputa.
+### 3. Forneça evidências
+É importante que você sempre responda fornecendo evidência para uma disputa antes da data limite estipulada pelo banco. Uma vez que a data limite tenha sido atingida, não será possível enviar a evidência correspondente para uma disputa.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas3-es.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas3-pt.png)
 
-Para cargar evidencia que nos permita gestionar frente al banco o la red procesadora, debes hacer clic sobre una disputa, esto te llevará al detalle de la disputa. Allí encontrarás el botón _**cargar evidencia**_, selecciona el archivo que creas puede ser útil para pelear por la disputa y presiona el botón _**guardar**_.
+Para enviar evidência que nos permita gerenciar o caso perante o banco ou à rede processadora, você deve clicar na disputa, onde verá todos os detalhes do processo. Lá você encontrará o botão _**Enviar evidência**_, onde poderá selecionar os arquivos que acredita serem úteis para questionar a disputa e depois apertar o botão _**Salvar**_.
 
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas4-es.png)
+![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/disputas4-pt.png)
 
-Para minimizar la probabilidad de generación de un contracargo puedes proporcionarnos las siguientes evidencias para una disputa:
+Para diminuir a probabilidade de um estorno, você pode fornecer-nos as seguintes evidências para uma disputa:
 
-* Comprobante de entrega del producto y/o servicio firmado por el tarjeta-habiente.
-* Factura de Venta del producto o servicio.
-* Carta de aceptación de pago firmada por el tarjeta-habiente anexando documento de identificación del mismo.
-* Otros soportes que validen la compra.
+* Comprovante de entrega do produto e/ou serviço assinado pelo titular do cartão.
+* Nota Fiscal da Venda do produto ou serviço.
+* Carta de aceitação de pagamento assinada pelo titular do cartão, anexando o documento de identidade do mesmo.
+* Outros suportes que validem a compra.
 
 {{% alert title="Observação" color="info"%}}
-Debes fijarte que no se haya cumplido la fecha máxima de respuesta, en este caso no vas a poder cargar evidencia, las fechas máximas de respuesta por país son:
+Você deve garantir que a data limite de resposta não tenha passado, caso em que a evidência já não poderá ser carregada.
 
-| País | Cantidad de días para enviar evidencias |
-|---|---|
-| Argentina | 5 días hábiles |
-| Brasil | 5 días hábiles |
-| Chile | 5 días hábiles |
-| Colombia | 2 días hábiles |
-| México | 5 días calendario |
-| Perú | 2 días hábiles |
-| Panamá | 8 días hábiles |
+| País      | Quantidade de dias para enviar evidências |
+|-----------|-------------------------------------------|
+| Argentina | 5 dias úteis                              |
+| Brasil    | 5 dias úteis                              |
+| Chile     | 5 dias úteis                              |
+| Colômbia  | 2 dias úteis                              |
+| México    | 5 dias calendario                         |
+| Peru      | 2 dias úteis                              |
+| Panamá    | 8 dias úteis                              |
 
 {{% /alert %}}
 
-### 4. Decisión final sobre el estado de la disputa
-Una vez proporcionada la evidencia, enviamos los documentos al banco emisor o la red que procesó la transacción, de quien depende la resolución del caso. El caso de disputa puede resultar: ganado (sin contracargo), perdido (contracargo) o reembolso. En el caso de reembolsos, el comercio es quién hace la devolución al comprador y el banco no genera el contracargo.
-Cuando la entidad financiera comunica el resultado de la disputa, el caso se actualiza automáticamente en el módulo administrativo y PayU envía un POST a la URL configurada con la información del resultado final.
-
-![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/mail-resultado-es.png)
+### 4. Decisão final sobre o estado da disputa
+Uma vez fornecida a evidência, enviamos os documentos ao banco emissor ou à rede que processou a transação, de quem depende a resolução do caso. O caso de disputa pode terminar em: ganho (sem estorno), perda (estorno) ou reembolso. No caso dos reembolsos, o comércio é quem faz a devolução ao comprador e o banco não gera o estorno. Quando a entidade financeira comunica o resultado da disputa, o caso é atualizado automaticamente no módulo administrativo e a PayU envia um POST à URL configurada com a informação do resultado final.
 
 ## Estados según el flujo de una disputa
-Cuando se notifica una disputa, se crea una entidad disputa para la transacción asociada.
+Quando uma disputa é notificada, cria-se uma entidade disputa para a transação associada.
 
-El estado de la disputa cambia según el punto en que se encuentre dentro del flujo del proceso.
+O estado da disputa muda dependendo do ponto em que ele estiver dentro do fluxo do processo.
 
-Estados de una disputa:
+Estados de uma disputa:
 
-| Estado | Descripción |
-|---|---|
-| Notificada | Cuando se inicia un proceso de disputa, debes cargar evidencia para la disputa. |
-| En revisión | Cuando el comercio proporciona evidencia para una disputa desde el módulo administrativo y la disputa entra en revisión por parte de la entidad financiera. |
-| Perdida | La transacción es reversada desde la cuenta virtual del comercio y puede incurrir en un costo de gestión de contracargo. |
-| Ganada: | El proceso de disputa se resuelve a favor del comercio, no hay deducciones de ningún tipo. |
-| Reembolsada | Existen disputas que pueden ser reversadas ya que aún no ha sido facturado el monto en la tarjeta de crédito del tarjetahabiente. Se genera reversión de la transacción, pero no existe cobro por contracargo. Para resolver una disputa como reembolso debes solicitarlo a disputas@payulatam.com |
+| Estado      | Descripción                                                                                                             |
+|-------------|-------------------------------------------------------------------------------------------------------------------------|
+| Notificada | Quando um processo de disputa é iniciado, você deve enviar evidência para a disputa.                                     |
+| Em revisão | Quando o comércio fornece evidência para uma disputa a partir do módulo administrativo e a disputa entra em revisão por parte da entidade financeira. |
+| Perda | A transação é revertida a partir da conta virtual do comércio e pode implicar um custo de gerenciamento do estorno.           |
+| Ganho | O processo de disputa é resolvido a favor do comércio, não há nenhum tipo de dedução.                                         |
+| Reembolso | Esse processo se dá quando é o comércio que, por determinação própria, autoriza reverter a operação, o que impede que seja gerada uma transação de estorno ao comércio, que é substituída por uma de reembolso. Para resolver uma disputa como reembolso você deve enviar uma solicitação a disputas@payulatam.com |
 
-{{% alert title="Tips para gestionar tus disputas" color="info"%}}
-* Si cuentas con los datos del tarjetahabiente, la mejor forma para gestionar un proceso de disputa es contactándolo. Si el motivo de la disputa es simplemente desconocimiento, puedes pedirle al tarjetahabiente que hable con su banco para que retire la queja y se resuelva el proceso de disputa a tu favor, igualmente debes proporcionar cualquier evidencia que creas conveniente desde tu módulo administrativo.
-* Es muy importante que no se haya cumplido la fecha máxima de respuesta o no podrás cargar ninguna evidencia, si no envías las evidencias a tiempo aumentarán las posibilidades de que se generen contracargos y se debite el dinero de tu cuenta PayU.
-* Los archivos a cargar en la sección de evidencias no deben tener un peso superior a 10 MB. Puedes subir archivos tipo .JPG .PNG .GIF .TIFF .PDF .DOC o .PPT.
+{{% alert title="Dicas para gerenciar as suas contestações" color="info"%}}
+
+* Se você tem os dados do titular do cartão, a melhor forma de gerenciar um processo de disputa é entrando em contato com ele. Se o motivo da disputa é simplesmente desconhecimento, você pode pedir ao titular do cartão que fale com seu banco para retirar a queixa e para que o processo de disputa se resolva a seu favor. Você também deve fornecer qualquer evidência que acreditar ser conveniente a partir do seu módulo administrativo.
+* É muito importante que a data máxima de resposta não tenha passado, ou você não poderá enviar nenhuma evidência. Se as evidências não forem enviadas a tempo, aumentarão as possibilidades de que sejam gerados estornos e o dinheiro seja debitado da sua conta PayU.
+* Os arquivos a serem carregados na seção de evidências não devem ter tamanho superior a 10 MB. Você pode carregar arquivos tipo .JPG .PNG .GIF .TIFF .PDF .DOC ou .PPT.
 {{% /alert %}}

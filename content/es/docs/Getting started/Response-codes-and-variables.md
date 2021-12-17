@@ -318,7 +318,7 @@ Envía el valor exacto mostrado en la columna `Código` en la variable `transfer
 | `041`     | JPMORGAN                                          |
 | `042`     | BNP PARIBAS                                       |
 | `047`     | MUNDOMUJER                                        |
-| `051`     | DAVIVIENDA - DAVIPLATA                            |
+| `051`     | DAVIVIENDA                                        |
 | `052`     | AV VILLAS                                         |
 | `053`     | BANCO WWB                                         |
 | `059`     | BANCAMIA                                          |
