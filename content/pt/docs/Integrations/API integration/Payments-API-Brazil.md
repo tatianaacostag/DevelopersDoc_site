@@ -1052,6 +1052,10 @@ Depois, seu cliente vê uma página de checkout como esta.
 
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
+{{% alert title="Observação" color="warning"%}}
+A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
+{{% /alert %}}
+
 ### Como funciona o PIX? {#how-does-pix-work}
 PIX é um método de transferência online lançado em novembro de 2020 pelo Banco Central do Brasil (BACEN) que permite realizar e receber transferências com facilidade independente do banco que emitiu sua conta.
 
