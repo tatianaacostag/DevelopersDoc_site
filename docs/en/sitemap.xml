@@ -1672,11 +1672,6 @@
                 href="/en/docs/tools/disputes.html"
                 />
   </url><url>
-    <loc>/en/docs/sandbox.html</loc>
-    <lastmod>2021-12-16T10:08:00-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>/en/docs/integrations/sdk-integration/payments-sdk-peru.html</loc>
     <lastmod>2021-11-25T12:20:57-05:00</lastmod>
     <changefreq>monthly</changefreq>
