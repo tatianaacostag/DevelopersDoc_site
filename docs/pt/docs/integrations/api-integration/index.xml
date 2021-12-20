@@ -5848,6 +5848,13 @@ Recomenda-se exibir em seu Checkout a imagem do código QR (parâmetro &lt;code&
 &lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Enviar transação em dinheiro&lt;/h2&gt;
 &lt;p&gt;Este método permite processar os pagamentos de seus clientes em dinheiro. Para integrar com transações em dinheiro, você deve redirecionar o cliente para a URL encontrada na resposta do método; Seu cliente verá um recibo de pagamento como este.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/Payments/CashReceiptBR.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;variables-for-request-and-response-2&#34;&gt;Variáveis para pedido e resposta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Pedido&lt;/summary&gt;
@@ -30327,12 +30334,19 @@ Se o esquema não for validado, a integração não será afetada e você só pr
 &lt;li&gt;O tempo máximo para enviar um cancelamento é de 7 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada.&lt;/li&gt;
 &lt;li&gt;O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é:
 &lt;ul&gt;
-&lt;li&gt;90 dias para transações com PIX ou processadas na Redecard .&lt;/li&gt;
+&lt;li&gt;90 dias para transações com PIX&lt;sup&gt;*&lt;/sup&gt; ou processadas na Redecard .&lt;/li&gt;
 &lt;li&gt;120 dias para transações processadas na  Cielo.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 15 dias úteis.&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+&lt;sup&gt;*&lt;/sup&gt; A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;chile&#34;&gt;Chile&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Devido a restrições de rede, o cancelamento pode ser autorizado nas primeiras três horas após a autorização. Se nenhum cancelamento ou reembolso for enviado após de 7 dias, a transação será cancelada automaticamente (auto-void).&lt;/li&gt;

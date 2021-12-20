@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/deprecated/recurring-payments/recurring-payments-sdk.html" /><meta property="article:section" content="Deprecated" />
 <meta property="article:published_time" content="2021-09-28T13:40:06-05:00" />
-<meta property="article:modified_time" content="2021-11-23T07:43:08-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-12-16T10:08:00-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Pagos recurrentes - SDK">
 <meta itemprop="description" content="Los pagos recurrentes son cobros automatizados que se realizan periódicamente (diario, mensual, anual), de aquellos cargos por consumo de productos o servicios como membresías, suscripciones, pólizas o recibos con valor fijo; que previamente fueron autorizados por el cliente.
 "><meta itemprop="datePublished" content="2021-09-28T13:40:06-05:00" />
-<meta itemprop="dateModified" content="2021-11-23T07:43:08-05:00" />
-<meta itemprop="wordCount" content="5458">
+<meta itemprop="dateModified" content="2021-12-16T10:08:00-05:00" />
+<meta itemprop="wordCount" content="5522">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pagos recurrentes - SDK"/>
 <meta name="twitter:description" content="Los pagos recurrentes son cobros automatizados que se realizan periódicamente (diario, mensual, anual), de aquellos cargos por consumo de productos o servicios como membresías, suscripciones, pólizas o recibos con valor fijo; que previamente fueron autorizados por el cliente.
@@ -107,6 +107,8 @@
 	
 	<a class="dropdown-item" href="../../../en/deprecated/recurring-payments/recurring-payments-sdk.html">English</a>
 	
+	<a class="dropdown-item" href="../../../pt/deprecated/recurring-payments/recurring-payments-sdk.html">Português</a>
+	
 </div>
 			</li>
 			
@@ -139,7 +141,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.22b6b45bc607e9745ea62fa27c65ee5680be4136731c5fbe3daaae6127ba94564e3386c28913d0d507846e93bb1d9264334042102c1c8fc7e3e10067ba4a9c8d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c7990f333f69873e56106c881624e7d3df10c518492478cb07beb9c41ffb4a30afe672bcae125372c354bce176bb10e7a5be4be2888b7934638284f2779d4bae.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -159,6 +161,8 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="../../../en/deprecated/recurring-payments/recurring-payments-sdk.html">English</a>
+	
+	<a class="dropdown-item" href="../../../pt/deprecated/recurring-payments/recurring-payments-sdk.html">Português</a>
 	
 </div>
     </div>
@@ -474,7 +478,7 @@
       <p style="display:contents;color:white"><b>Funcionalidad descontinuada</b></p>
       <span class="close" style="color:white">&times;</span>
     </header>
-    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los   comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
+    <p style="padding:20px">La funcionalidad de <b><i>Pagos Recurrentes</i></b> ha sido descontinuada y por lo tanto, no se ofrece a los comercios. El siguiente artículo está disponible a modo de consulta para comercios que aún la tienen activa.<br>Esta funcionalidad <b>NO</b> será activada nuevamente.</p>
   </div>
 </div>
 <script>
@@ -571,9 +575,9 @@ Pagos recurrentes sólo está disponible para cuentas de <strong>Brasil</strong>
 
 <div class="tab-pane fade show active" id="tab301" role="tabpanel" aria-labelledby="nav-tabName1">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#8f5902;font-style:italic">// URL for test: https://sandbox.api.payulatam.com/payments-api/
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#8f5902;font-style:italic">// URL para pruebas: https://sandbox.api.payulatam.com/payments-api/
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">paymentsUrl</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">“</span><span style="color:#000">https</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#8f5902;font-style:italic">//api.payulatam.com/payments-api/”;
-</span><span style="color:#8f5902;font-style:italic">// URL for test: https://sandbox.api.payulatam.com/reports-api/
+</span><span style="color:#8f5902;font-style:italic">// URL para pruebas: https://sandbox.api.payulatam.com/reports-api/
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">reportsUrl</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">“</span><span style="color:#000">https</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#8f5902;font-style:italic">//api.payulatam.com/reports-api/”;
 </span></code></pre></div>
 
@@ -590,9 +594,9 @@ Pagos recurrentes sólo está disponible para cuentas de <strong>Brasil</strong>
 
 <div class="tab-pane fade" id="tab302" role="tabpanel" aria-labelledby="nav-tabName2">
 
-	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#8f5902;font-style:italic">// URL for test: https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#8f5902;font-style:italic">// URL para pruebas: https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">Environment</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">setPaymentsCustomUrl</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">“https</span><span style="color:#ce5c00;font-weight:bold">://</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">payulatam</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">com</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">payments</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">4.0</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">service</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">cgi”</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">// URL for test: https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi
+<span style="color:#8f5902;font-style:italic">// URL para pruebas: https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">Environment</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">setReportsCustomUrl</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">“https</span><span style="color:#ce5c00;font-weight:bold">://</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">payulatam</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">com</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">reports</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">api</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">4.0</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">service</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">cgi”</span><span style="color:#000;font-weight:bold">);</span>
 </code></pre></div>
 
@@ -728,30 +732,42 @@ Pagos recurrentes sólo está disponible para cuentas de <strong>Brasil</strong>
 
 	<br>
 <p>Ejemplo petición:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#000">Map</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">&gt;</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí la descripción del plan
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_DESCRIPTION</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Basic Plan&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí el código de identificación para el plan
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_CODE</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;ASd456&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">System</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">currentTimeMillis</span><span style="color:#000;font-weight:bold">());</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí el intervalo del plan
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_INTERVAL</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;MONTH&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cantidad de intervalos
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_INTERVAL_COUNT</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;12&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí la moneda para el plan
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_CURRENCY</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;COP&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí el valor del plan
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_VALUE</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;50000&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">//(OPCIONAL) Ingresa aquí el valor del impuesto
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_TAX</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;10000&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_TAX_RETURN_BASE</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;40000&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cuenta Id del plan
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">ACCOUNT_ID</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;2&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí el intervalo de reintentos
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_ATTEMPTS_DELAY</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;2&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cantidad de cobros que componen el plan
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">parameters</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">put</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PayU</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PARAMETERS</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">PLAN_MAX_PAYMENTS</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;2&#34;</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000">SubscriptionPlan</span> <span style="color:#000">response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUPlans</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">create</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">parameters</span><span style="color:#000;font-weight:bold">);</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#000">$parameters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">array</span><span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí la descripción del plan
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_DESCRIPTION</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;Sample Plan 001&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí el código de identificación para el plan
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_CODE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;sample-plan-code-001&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí el intervalo del plan
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#8f5902;font-style:italic">//DAY||WEEK||MONTH||YEAR
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_INTERVAL</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;MONTH&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cantidad de intervalos
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_INTERVAL_COUNT</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí la moneda para el plan
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_CURRENCY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;COP&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí el valor del plan
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_VALUE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;10000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//(OPCIONAL) Ingresa aquí el valor del impuesto
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_TAX</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1600&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">//(OPCIONAL) Ingresa aquí la base de devolución sobre el impuesto
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_TAX_RETURN_BASE</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;8400&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cuenta Id del plan
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">ACCOUNT_ID</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;512321&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí el intervalo de reintentos
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_ATTEMPTS_DELAY</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cantidad de cobros que componen el plan
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_MAX_PAYMENTS</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;12&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cantidad total de reintentos para cada pago rechazado de la suscripción
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_MAX_PAYMENT_ATTEMPTS</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;3&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cantidad máxima de pagos pendientes que puede tener una suscripción antes de ser cancelada.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">PLAN_MAX_PENDING_PAYMENTS</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#8f5902;font-style:italic">// Ingresa aquí la cantidad de días de prueba de la suscripción.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">PayUParameters</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">TRIAL_DAYS</span> <span style="color:#ce5c00;font-weight:bold">=&gt;</span> <span style="color:#4e9a06">&#34;30&#34;</span><span style="color:#000;font-weight:bold">,</span>
+<span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#000">$response</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">PayUSubscriptionPlans</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#c4a000">create</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">$parameters</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">$response</span><span style="color:#000;font-weight:bold">){</span>
+	<span style="color:#000">$response</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#c4a000">id</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 
 </div>
@@ -3352,9 +3368,9 @@ Pagos recurrentes sólo está disponible para cuentas de <strong>Brasil</strong>
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-23 de noviembre de 2021:
+16 de diciembre de 2021:
 
- <b>Translations in portuguese and some fixes (846c3ead)</b>
+ <b>Translations and search box (657453db)</b>
 </div>
 </div>
 

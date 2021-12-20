@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/services/3ds-authentication.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-12-07T10:25:17-05:00" />
-<meta property="article:modified_time" content="2021-12-09T11:41:29-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-12-20T09:37:30-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="3DS Authentication">
 <meta itemprop="description" content="3DS (Three-Domain Secure) lets you perform an intuitive and consumer-friendly authentication process. 3DS adds additional security layers to reduce the fraud avoiding the unauthorized usage of credit cards. 
 "><meta itemprop="datePublished" content="2021-12-07T10:25:17-05:00" />
-<meta itemprop="dateModified" content="2021-12-09T11:41:29-05:00" />
-<meta itemprop="wordCount" content="681">
+<meta itemprop="dateModified" content="2021-12-20T09:37:30-05:00" />
+<meta itemprop="wordCount" content="768">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3DS Authentication"/>
 <meta name="twitter:description" content="3DS (Three-Domain Secure) lets you perform an intuitive and consumer-friendly authentication process. 3DS adds additional security layers to reduce the fraud avoiding the unauthorized usage of credit cards. 
@@ -141,7 +141,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.22b6b45bc607e9745ea62fa27c65ee5680be4136731c5fbe3daaae6127ba94564e3386c28913d0d507846e93bb1d9264334042102c1c8fc7e3e10067ba4a9c8d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c7990f333f69873e56106c881624e7d3df10c518492478cb07beb9c41ffb4a30afe672bcae125372c354bce176bb10e7a5be4be2888b7934638284f2779d4bae.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -710,6 +710,31 @@
 
       
       
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/sandbox.html" href="../../../en/docs/sandbox.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Sandbox</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocssandboxhtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
     </li>
   </ul>
    </ul> 
@@ -805,7 +830,7 @@
 	       
 	<h2 id="what-is-3ds">What is 3DS?</h2>
 <p>3DS (Three-Domain Secure) is a messaging protocol that enables the issues to authenticate their cardholders during the online shops. This authentication is performed before authorize the transaction and follows the next flow.</p>
-<p><img src="../../../assets/3DS/3DS_whatis_en.png" alt="Concepts"></p>
+<p><img src="../../../assets/3DS/3DS_whatis_en.png" alt=""></p>
 <p>The next infographic explains the authentication flow for 3DS.</p>
 <div class="infographicDiv" align="center">
     <div class="DivGray" >
@@ -859,15 +884,16 @@ Supports a strong customer authentication for issuers, acquirers, and payment se
 </li>
 </ul>
 <h2 id="3ds-authentication-solution">3DS Authentication solution</h2>
-<p>The authorization can be sent by <strong>PayU Latam</strong> or by <strong>PayU Hub</strong>. You are free to decide and it&rsquo;s not necessary to completely migrate to the <strong>PayU Hub</strong> if you choose <strong>PayU Latam</strong>.</p>
+<p>3DS Authentication, available for Brazil and Colombia, is provided via API under two modalities:</p>
 <ul>
 <li>
-<p>Through <strong>PayU Latam</strong> using a <em>Pass Through</em> scenario where the commerce performs the authentication by their own. This is available for commerces who processes in <a href="../../../en/docs/integrations/api-integration/payments-api-brazil.html">Brazil</a> and <a href="../../../en/docs/integrations/api-integration/payments-api-colombia.html">Colombia</a>.<br>For more information, contact your sales representative.</p>
+<p><em><strong>Pass Through</strong></em>: if you have your own 3DS Authentication service, you can send us the authentication response in the payment request. Under this modality, you are responsible for the integration with an <em><strong>MPI</strong></em> or a <em><strong>3DS Server</strong></em>.<br>For more information, contact your sales representative.</p>
 </li>
 <li>
-<p>Through <strong>PayU Hub</strong> using the <a href="https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html">Authentication Service</a> that operates in two calls flow. To authenticate, you must connect to the PayU Hub, where you will get the authentication response.<br><strong>PayU Hub</strong>, is the solution for borderless Payments. With a single API integration, you can process local payments in 18 markets.</p>
+<p><em><strong>2-calls Authentication flow</strong></em>: if you want to authenticate the transaction using the PayU, you can integrate through <strong>PayU Hub</strong><sup>*</sup> using the <a href="https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html">Authentication Service</a> that operates in two calls flow, one call for authentication and other for authorization.<br>To authenticate, you must connect to the PayU Hub, where you will get the authentication response.<br>To authorize, you can chose to go through <strong>PayU Latam</strong> or <strong>PayU Hub</strong>.</p>
 </li>
 </ul>
+<p><sup>*</sup><strong>PayU Hub</strong>, is the solution for borderless Payments. With a single API integration, you can process local payments in 18 markets.</p>
 
 
 <div class="alert alert-info" role="alert">
@@ -883,13 +909,13 @@ Supports a strong customer authentication for issuers, acquirers, and payment se
 <h3 id="benefits-of-our-solution">Benefits of our solution</h3>
 <p>Regardless of how you integrate with our 3DS Authentication solution, you have the following benefits.</p>
 <ul>
-<li>PayU is connected to a 3DS server (MPI), you don&rsquo;t need to do it by your own. Less providers &amp; contracts! </li>
+<li>PayU is connected to a 3DS server (MPI), you don&rsquo;t need to do it by your own. Less providers &amp; contracts!</li>
 <li>You control and decide when to authenticate a transaction.</li>
 <li>No additional costs<sup>*</sup>. Authentication is a service for free!.</li>
-<li>Minimum or none contract adjustments for 3DS service. </li>
+<li>Minimum or none contract adjustments for 3DS service.</li>
 <li>If you migrate to the HUB, you can have additional benefits of a global solution.</li>
 </ul>
-<p><sup>*</sup> <em>The acquirers may charge an authentication cost.</em></p>
+<p><sup>*</sup> <em>The acquirers may charge an authentication cost, if so, this cost will be transferred to you.</em></p>
 
 
 <div class="alert alert-info" role="alert">
@@ -898,9 +924,9 @@ We are working on connecting to multiple 3DS server providers to improve perform
 </div>
 
 <h3 id="how-to-integrate-3ds">How to integrate 3DS?</h3>
-<ul>
-<li>To integrate using <strong>PayU Latam</strong>, refer to the <em>Payments API</em> of your processing country:</li>
-</ul>
+<p>Depending on the scenario you choose to use the 3DS Authentication, the integration procedure varies.</p>
+<h4 id="pass-through">Pass Through</h4>
+<p>When you are integrated with an <em><strong>MPI</strong></em> or a <em><strong>3DS Server</strong></em>, you just need to send us the authentication response in the payment request. Refer to your processing country to see an example of how to send the parameters returned in the response:</p>
 <div style="display: flex;">
   <div style="float: left;width: 50%;text-align: center;">
     <a href='../../../en/docs/integrations/api-integration/payments-api-brazil.html#considerations'><img src="../../../assets/Brasil.png" width="10%"/></a>
@@ -910,9 +936,8 @@ We are working on connecting to multiple 3DS server providers to improve perform
   </div>
 </div>
 <br>
-<ul>
-<li>To integrate using <strong>PayU Hub</strong>, follow these steps:</li>
-</ul>
+<h4 id="2-calls-authentication-flow">2-calls Authentication flow</h4>
+<p>To integrate with our Authentication service, follow the next steps:</p>
 <ol>
 <li>
 <p>To get started, open an account on the <strong>PayU Hub</strong>.<br>Click <a href="https://control.paymentsos.com/signup">here</a> to create one.</p>
@@ -928,7 +953,7 @@ We are working on connecting to multiple 3DS server providers to improve perform
 <ul>
 <li>Keep your current offer. You can still offering your current payment methods either from <strong>PayU Latam</strong> or from <strong>PayU Hub</strong>.</li>
 <li>New On boarding process? Hell no! You&rsquo;re already with us, so there&rsquo;s nothing else we need.</li>
-<li>Payments are still handled by the local platforms, so we will make sure that the same data is available for you. </li>
+<li>Payments are still handled by the local platforms, so we will make sure that the same data is available for you.</li>
 </ul>
 
 	
@@ -936,9 +961,9 @@ We are working on connecting to multiple 3DS server providers to improve perform
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-December 9, 2021:
+December 20, 2021:
 
- <b>Article for 3DS authentication service (d820a2be)</b>
+ <b>Changes in 3ds Auth (d900905f)</b>
 </div>
 </div>
 

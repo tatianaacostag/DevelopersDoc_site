@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/getting-started/response-codes-and-variables.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-06T15:33:35-05:00" />
-<meta property="article:modified_time" content="2021-11-09T12:09:09-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-12-17T12:39:59-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Response Codes and Variables">
 <meta itemprop="description" content="In this section, you find relevant data used during the integration process, such as the variable tables, languages, and currencies admitted in the PayU’s platform."><meta itemprop="datePublished" content="2021-04-06T15:33:35-05:00" />
-<meta itemprop="dateModified" content="2021-11-09T12:09:09-05:00" />
-<meta itemprop="wordCount" content="1716">
+<meta itemprop="dateModified" content="2021-12-17T12:39:59-05:00" />
+<meta itemprop="wordCount" content="1794">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Response Codes and Variables"/>
 <meta name="twitter:description" content="In this section, you find relevant data used during the integration process, such as the variable tables, languages, and currencies admitted in the PayU’s platform."/>
@@ -138,7 +138,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.22b6b45bc607e9745ea62fa27c65ee5680be4136731c5fbe3daaae6127ba94564e3386c28913d0d507846e93bb1d9264334042102c1c8fc7e3e10067ba4a9c8d.json"
+  data-offline-search-index-json-src="../../../offline-search-index.c7990f333f69873e56106c881624e7d3df10c518492478cb07beb9c41ffb4a30afe672bcae125372c354bce176bb10e7a5be4be2888b7934638284f2779d4bae.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -707,6 +707,31 @@
 
       
       
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/sandbox.html" href="../../../en/docs/sandbox.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Sandbox</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocssandboxhtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
     </li>
   </ul>
    </ul> 
@@ -810,7 +835,87 @@
 	<h1>Response Codes and Variables</h1>
     <div class="lead">In this section, you find relevant data used during the integration process, such as the variable tables, languages, and currencies admitted in the PayU’s platform.</div>
 	       
-	<h2 id="response-codes-for-transactions">Response codes for transactions</h2>
+	<script>
+
+
+  function performSearch(table, elem1, elem2) {
+    var filter = searchBox.value.toUpperCase();
+    var trs = table.tBodies[0].getElementsByTagName("tr");
+    var results = 0;
+
+    for (var i = 0; i < trs.length; i++) {
+      var tds = trs[i].getElementsByTagName("td");
+      trs[i].style.display = "none";
+      
+      for (var j = 0; j < tds.length; j++) {
+        if (tds[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          trs[i].style.display = "";
+          results++;
+          continue;
+        }
+      }
+    }
+
+    //var txtDiv = document.getElementById("ResultsDiv").innerHTML;
+    if(results == 0) {
+      table.style.display = "none";
+      elem1.style.display = "none";
+      elem2.style.display = "none";
+    } else {
+      table.style.display = "";
+      elem1.style.display = "";
+      elem2.style.display = "";
+    }
+    return results;
+  }
+
+  function findTables() {
+    var allH2 = document.getElementsByTagName("h2");
+    for (var e=0; e<allH2.length; e++) {
+      allH2[e].style.display = "";
+    }  
+    var allTables = document.getElementsByTagName("table");
+    for(var i=0; i<allTables.length; i++) {
+      var table = allTables[i];
+      var sibling1 = table.previousElementSibling;
+      var sibling2 = sibling1;
+      if(sibling1.tagName == "P") {
+        sibling2 = sibling1.previousElementSibling;
+      }
+      performSearch(table, sibling1, sibling2);
+    }
+    var elements = document.querySelectorAll('h2:not([style*="display: none"])');
+    //document.getElementById("ResultsDiv").innerHTML = "Number of visible h2: "+elements.length;
+    for (e=0; e<elements.length; e++) {
+      var hideH2 = true;
+      let sib = elements[e].nextElementSibling;
+      while (sib) {
+        if(sib.tagName.toUpperCase() == "TABLE") {
+          if(sib.style.display != "none") {
+            hideH2 = false;
+            break;
+          }
+        } else if(sib.tagName.toUpperCase() == "H2") {
+          break;
+        }
+        sib = sib.nextElementSibling;
+      }
+
+      if(hideH2) {
+        elements[e].style.display = "none";
+        elements[e].nextElementSibling.style.display = "none";
+      } else {
+        elements[e].style.display = "";
+        elements[e].nextElementSibling.style.display = "";
+      }
+    }
+    
+  }
+
+</script>
+<p><input type="text" id="searchBox" placeholder=" Search for names, codes or description..." onkeyup="findTables()" >
+<button onclick="document.getElementById('searchBox').value = '';findTables()" class="btn-green">Clear</button></p>
+<h2 id="response-codes-for-transactions">Response codes for transactions</h2>
 <table>
 <thead>
 <tr>
@@ -2244,6 +2349,10 @@
 <td>AV VILLAS</td>
 </tr>
 <tr>
+<td><code>053</code></td>
+<td>BANCO WWB</td>
+</tr>
+<tr>
 <td><code>059</code></td>
 <td>BANCAMIA</td>
 </tr>
@@ -2293,7 +2402,7 @@
 </tr>
 <tr>
 <td><code>084</code></td>
-<td>APORTES EN LINEA</td>
+<td>APORTES EN LINEA (GESTION Y CONTACTO)</td>
 </tr>
 <tr>
 <td><code>086</code></td>
@@ -2325,7 +2434,7 @@
 </tr>
 <tr>
 <td><code>283</code></td>
-<td>COOP FIN DE ANTIOQUIA</td>
+<td>COOPERATIVA FINANCIERA DE ANTIOQUIA</td>
 </tr>
 <tr>
 <td><code>289</code></td>
@@ -2333,27 +2442,23 @@
 </tr>
 <tr>
 <td><code>292</code></td>
-<td>CONFIAR</td>
-</tr>
-<tr>
-<td><code>342</code></td>
-<td>SERFINANSA</td>
+<td>CONFIAR COOPERATIVA FINANCIERA</td>
 </tr>
 <tr>
 <td><code>370</code></td>
 <td>COLTEFINANCIERA S.A. - COMPANIA DE FINANCIAMIENTO</td>
 </tr>
 <tr>
-<td><code>637</code></td>
-<td>IRIS</td>
+<td><code>507</code></td>
+<td>NEQUI</td>
 </tr>
 <tr>
 <td><code>550</code></td>
 <td>DECEVAL</td>
 </tr>
 <tr>
-<td><code>507</code></td>
-<td>NEQUI</td>
+<td><code>558 </code></td>
+<td>CREDIFINANCIERA S.A.</td>
 </tr>
 <tr>
 <td><code>683</code></td>
@@ -2366,18 +2471,6 @@
 <tr>
 <td><code>801</code></td>
 <td>MOVII</td>
-</tr>
-<tr>
-<td><code>0551</code></td>
-<td>DAVIPLATA</td>
-</tr>
-<tr>
-<td><code>0558</code></td>
-<td>CREDIFINANCIERA S.A.</td>
-</tr>
-<tr>
-<td><code>1053</code></td>
-<td>BANCO WWB</td>
 </tr>
 <tr>
 <td><code>1062</code></td>
@@ -2407,6 +2500,10 @@
 <td><code>1303</code></td>
 <td>GIROS Y FINANZAS</td>
 </tr>
+<tr>
+<td><code>1637</code></td>
+<td>IRIS</td>
+</tr>
 </tbody>
 </table>
 
@@ -2415,9 +2512,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-November 9, 2021:
+December 17, 2021:
 
- <b>Changes from Production environment (29bdb69e)</b>
+ <b>Final translations (b78139e6)</b>
 </div>
 </div>
 

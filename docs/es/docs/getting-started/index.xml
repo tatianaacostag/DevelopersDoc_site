@@ -363,6 +363,13 @@ Para activar tu cuenta debes:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+La integración con PIX como medio de pago estará disponibles desde enero del 2022. Para más información, consulta a tu representante de ventas.
+&lt;/div&gt;
+
 &lt;h2 id=&#34;Chile&#34;&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; Chile&lt;/h2&gt;
 &lt;div class=&#34;paymentMethods&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -2777,6 +2784,10 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;td&gt;AV VILLAS&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;053&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;BANCO WWB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;059&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;BANCAMIA&lt;/td&gt;
 &lt;/tr&gt;
@@ -2826,7 +2837,7 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;084&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;APORTES EN LINEA&lt;/td&gt;
+&lt;td&gt;APORTES EN LINEA (GESTION Y CONTACTO)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;086&lt;/code&gt;&lt;/td&gt;
@@ -2858,7 +2869,7 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;283&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;COOP FIN DE ANTIOQUIA&lt;/td&gt;
+&lt;td&gt;COOPERATIVA FINANCIERA DE ANTIOQUIA&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;289&lt;/code&gt;&lt;/td&gt;
@@ -2866,27 +2877,23 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;292&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;CONFIAR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;342&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;SERFINANSA&lt;/td&gt;
+&lt;td&gt;CONFIAR COOPERATIVA FINANCIERA&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;370&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;COLTEFINANCIERA S.A. - COMPANIA DE FINANCIAMIENTO&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;637&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;IRIS&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;507&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;NEQUI&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;550&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;DECEVAL&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;507&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;NEQUI&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;558 &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;CREDIFINANCIERA S.A.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;683&lt;/code&gt;&lt;/td&gt;
@@ -2899,18 +2906,6 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;801&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;MOVII&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;0551&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;DAVIPLATA&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;0558&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;CREDIFINANCIERA S.A.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;1053&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;BANCO WWB&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;1062&lt;/code&gt;&lt;/td&gt;
@@ -2939,6 +2934,10 @@ Pagos (Payments): https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;1303&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;GIROS Y FINANZAS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;1637&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;IRIS&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

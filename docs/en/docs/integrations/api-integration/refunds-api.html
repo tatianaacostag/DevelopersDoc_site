@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/refunds-api.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-06-25T09:24:50-05:00" />
-<meta property="article:modified_time" content="2021-11-10T08:47:05-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2021-12-17T12:47:35-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Voids and Refunds API">
 <meta itemprop="description" content="This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction. 
 "><meta itemprop="datePublished" content="2021-06-25T09:24:50-05:00" />
-<meta itemprop="dateModified" content="2021-11-10T08:47:05-05:00" />
-<meta itemprop="wordCount" content="2292">
+<meta itemprop="dateModified" content="2021-12-17T12:47:35-05:00" />
+<meta itemprop="wordCount" content="2312">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Voids and Refunds API"/>
 <meta name="twitter:description" content="This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction. 
@@ -141,7 +141,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.22b6b45bc607e9745ea62fa27c65ee5680be4136731c5fbe3daaae6127ba94564e3386c28913d0d507846e93bb1d9264334042102c1c8fc7e3e10067ba4a9c8d.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.c7990f333f69873e56106c881624e7d3df10c518492478cb07beb9c41ffb4a30afe672bcae125372c354bce176bb10e7a5be4be2888b7934638284f2779d4bae.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -710,6 +710,31 @@
 
       
       
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/sandbox.html" href="../../../../en/docs/sandbox.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Sandbox</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocssandboxhtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
     </li>
   </ul>
    </ul> 
@@ -856,12 +881,19 @@
 <li>The maximum time to send a void is seven (7) days. If no void or capture is sent after this time, the transaction is cancelled.</li>
 <li>The minimum time to send a refund is 10 minutes after the approval and the maximum is:
 <ul>
-<li>90 days for transactions with PIX or processed in Redecard.</li>
+<li>90 days for transactions with PIX<sup>*</sup> or processed in Redecard.</li>
 <li>120 days for transactions processed in Cielo.</li>
 </ul>
 </li>
 <li>When a refund is approved, the payer gets the money back in maximum 15 working days.</li>
 </ul>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Note</h4>
+<sup>*</sup> Integration with PIX will be available for merchants since January, 2022. For more information, contact your sales representative.
+</div>
+
 <h3 id="chile">Chile</h3>
 <ul>
 <li>Due to network restrictions, void can be authorized within the first three hours after the authorization. If the void is not accepted or no capture is sent after seven (7) days, the transaction is auto-voided.</li>
@@ -1716,9 +1748,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-November 10, 2021:
+December 17, 2021:
 
- <b>Changes for PIX (29b440b8)</b>
+ <b>Note for PIX (74765e3b)</b>
 </div>
 </div>
 

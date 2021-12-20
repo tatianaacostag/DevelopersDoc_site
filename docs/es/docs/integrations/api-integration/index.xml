@@ -4924,6 +4924,13 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;p&gt;Este método te permite procesar pagos utilizando PIX. Para integrarte con PIX necesitas mostrar un código QR en tu checkout para que tu cliente lo pueda leer con su teléfono inteligente y realizar el pago.&lt;/p&gt;
 &lt;p&gt;Al final, tu cliente ve una página de checkout como esta.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/PixCheckout.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+La integración con PIX como medio de pago estará disponibles desde enero del 2022. Para más información, consulta a tu representante de ventas.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;how-does-pix-work&#34;&gt;¿Cómo funciona PIX?&lt;/h3&gt;
 &lt;p&gt;PIX es un método de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (&lt;em&gt;Banco Central do Brasil&lt;/em&gt; - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.&lt;/p&gt;
 &lt;p&gt;A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el diner inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este método de pago aparecerán en tu cuenta PayU en cuestión de segundos.&lt;/p&gt;
@@ -30327,12 +30334,19 @@ Si no validas el esquema, la integración so se verá afectada y solo necesitar�
 &lt;li&gt;El tiempo máximo para enviar una anulación es siete (7) días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se cancela.&lt;/li&gt;
 &lt;li&gt;El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es:
 &lt;ul&gt;
-&lt;li&gt;90 días para transacciones con PIX o procesadas en Redecard&lt;/li&gt;
+&lt;li&gt;90 días para transacciones con PIX&lt;sup&gt;*&lt;/sup&gt; o procesadas en Redecard&lt;/li&gt;
 &lt;li&gt;120 días para transacciones procesadas en Cielo.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 15 días hábiles.&lt;/li&gt;
 &lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+&lt;sup&gt;*&lt;/sup&gt; La integración con PIX como medio de pago estará disponibles desde enero del 2022. Para más información, consulta a tu representante de ventas.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;chile&#34;&gt;Chile&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Debido a restricciones de la red, se pueden autorizar anulaciones dentro de las tres primeras horas luego de la autorización. Si no se acepta la anulación o no se envía una captura luego de siete (7) días, la transacción se anula automáticamente.&lt;/li&gt;

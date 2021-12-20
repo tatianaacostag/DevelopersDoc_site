@@ -568,7 +568,7 @@ O relatório gerado é armazenado durante 90 dias na seção &lt;a href=&#34;../
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
 &lt;p&gt;Para ter acesso a este módulo, você precisa ter um perfil com a permissão &lt;em&gt;Operation reports&lt;/em&gt; &amp;gt; &lt;em&gt;Consult operation reports&lt;/em&gt; habilitada.&lt;/p&gt;
 &lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfis e permissões&lt;/a&gt; para obter mais informações.&lt;/p&gt;
 

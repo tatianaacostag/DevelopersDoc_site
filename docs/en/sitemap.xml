@@ -38,6 +38,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/recurring-payments.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/deprecated/recurring-payments.html"
                 />
@@ -53,6 +58,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/recurring-payments/recurring-payments-api.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/deprecated/recurring-payments/recurring-payments-api.html"
                 />
@@ -65,6 +75,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/deprecated/recurring-payments/recurring-payments-sdk.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/recurring-payments/recurring-payments-sdk.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -353,7 +368,7 @@
                 />
   </url><url>
     <loc>/en/docs/services/3ds-authentication.html</loc>
-    <lastmod>2021-12-09T11:41:29-05:00</lastmod>
+    <lastmod>2021-12-20T09:37:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -365,6 +380,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/deprecated/merchant-panel.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -553,7 +573,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-brazil.html</loc>
-    <lastmod>2021-11-25T12:20:57-05:00</lastmod>
+    <lastmod>2021-12-17T13:00:28-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -593,7 +613,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-colombia.html</loc>
-    <lastmod>2021-11-25T12:20:57-05:00</lastmod>
+    <lastmod>2021-12-20T09:37:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -783,6 +803,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel/account-activation.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/deprecated/merchant-panel/account-activation.html"
                 />
@@ -795,6 +820,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/deprecated/merchant-panel/checking-balance.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel/checking-balance.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -813,6 +843,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel/transfers-old.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/deprecated/merchant-panel/transfers-old.html"
                 />
@@ -828,18 +863,28 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel/reports-old.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/deprecated/merchant-panel/reports-old.html"
                 />
   </url><url>
     <loc>/en/deprecated/merchant-panel/refunds-old.html</loc>
-    <lastmod>2021-11-19T15:23:14-05:00</lastmod>
+    <lastmod>2021-12-17T12:39:59-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="/es/deprecated/merchant-panel/refunds-old.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel/refunds-old.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -858,6 +903,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel/disputes-old.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/deprecated/merchant-panel/disputes-old.html"
                 />
@@ -873,6 +923,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel/update-my-data.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="/en/deprecated/merchant-panel/update-my-data.html"
                 />
@@ -885,6 +940,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/deprecated/merchant-panel/integration-settings.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated/merchant-panel/integration-settings.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -993,7 +1053,7 @@
                 />
   </url><url>
     <loc>/en/docs/getting-started/select-your-payment-method.html</loc>
-    <lastmod>2021-10-11T10:05:51-05:00</lastmod>
+    <lastmod>2021-12-17T12:47:35-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1093,7 +1153,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/sdk-integration.html</loc>
-    <lastmod>2021-11-03T16:33:52-05:00</lastmod>
+    <lastmod>2021-12-16T10:08:00-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1393,7 +1453,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/refunds-api.html</loc>
-    <lastmod>2021-11-10T08:47:05-05:00</lastmod>
+    <lastmod>2021-12-17T12:47:35-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1473,7 +1533,7 @@
                 />
   </url><url>
     <loc>/en/docs/getting-started/response-codes-and-variables.html</loc>
-    <lastmod>2021-11-09T12:09:09-05:00</lastmod>
+    <lastmod>2021-12-17T12:39:59-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1611,6 +1671,11 @@
                 hreflang="en"
                 href="/en/docs/tools/disputes.html"
                 />
+  </url><url>
+    <loc>/en/docs/sandbox.html</loc>
+    <lastmod>2021-12-16T10:08:00-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>/en/docs/integrations/sdk-integration/payments-sdk-peru.html</loc>
     <lastmod>2021-11-25T12:20:57-05:00</lastmod>
@@ -1760,6 +1825,11 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/deprecated.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/deprecated.html"
                 />
     <xhtml:link
                 rel="alternate"

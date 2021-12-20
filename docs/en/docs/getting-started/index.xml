@@ -363,6 +363,13 @@ To activate your account, you should:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Integration with PIX will be available for merchants since January, 2022. For more information, contact your sales representative.
+&lt;/div&gt;
+
 &lt;h2 id=&#34;Chile&#34;&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; Chile&lt;/h2&gt;
 &lt;div class=&#34;paymentMethods&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -1343,7 +1350,87 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
       <description>
         
         
-        &lt;h2 id=&#34;response-codes-for-transactions&#34;&gt;Response codes for transactions&lt;/h2&gt;
+        &lt;script&gt;
+
+
+  function performSearch(table, elem1, elem2) {
+    var filter = searchBox.value.toUpperCase();
+    var trs = table.tBodies[0].getElementsByTagName(&#34;tr&#34;);
+    var results = 0;
+
+    for (var i = 0; i &lt; trs.length; i++) {
+      var tds = trs[i].getElementsByTagName(&#34;td&#34;);
+      trs[i].style.display = &#34;none&#34;;
+      
+      for (var j = 0; j &lt; tds.length; j++) {
+        if (tds[j].innerHTML.toUpperCase().indexOf(filter) &gt; -1) {
+          trs[i].style.display = &#34;&#34;;
+          results++;
+          continue;
+        }
+      }
+    }
+
+    //var txtDiv = document.getElementById(&#34;ResultsDiv&#34;).innerHTML;
+    if(results == 0) {
+      table.style.display = &#34;none&#34;;
+      elem1.style.display = &#34;none&#34;;
+      elem2.style.display = &#34;none&#34;;
+    } else {
+      table.style.display = &#34;&#34;;
+      elem1.style.display = &#34;&#34;;
+      elem2.style.display = &#34;&#34;;
+    }
+    return results;
+  }
+
+  function findTables() {
+    var allH2 = document.getElementsByTagName(&#34;h2&#34;);
+    for (var e=0; e&lt;allH2.length; e++) {
+      allH2[e].style.display = &#34;&#34;;
+    }  
+    var allTables = document.getElementsByTagName(&#34;table&#34;);
+    for(var i=0; i&lt;allTables.length; i++) {
+      var table = allTables[i];
+      var sibling1 = table.previousElementSibling;
+      var sibling2 = sibling1;
+      if(sibling1.tagName == &#34;P&#34;) {
+        sibling2 = sibling1.previousElementSibling;
+      }
+      performSearch(table, sibling1, sibling2);
+    }
+    var elements = document.querySelectorAll(&#39;h2:not([style*=&#34;display: none&#34;])&#39;);
+    //document.getElementById(&#34;ResultsDiv&#34;).innerHTML = &#34;Number of visible h2: &#34;+elements.length;
+    for (e=0; e&lt;elements.length; e++) {
+      var hideH2 = true;
+      let sib = elements[e].nextElementSibling;
+      while (sib) {
+        if(sib.tagName.toUpperCase() == &#34;TABLE&#34;) {
+          if(sib.style.display != &#34;none&#34;) {
+            hideH2 = false;
+            break;
+          }
+        } else if(sib.tagName.toUpperCase() == &#34;H2&#34;) {
+          break;
+        }
+        sib = sib.nextElementSibling;
+      }
+
+      if(hideH2) {
+        elements[e].style.display = &#34;none&#34;;
+        elements[e].nextElementSibling.style.display = &#34;none&#34;;
+      } else {
+        elements[e].style.display = &#34;&#34;;
+        elements[e].nextElementSibling.style.display = &#34;&#34;;
+      }
+    }
+    
+  }
+
+&lt;/script&gt;
+&lt;p&gt;&lt;input type=&#34;text&#34; id=&#34;searchBox&#34; placeholder=&#34; Search for names, codes or description...&#34; onkeyup=&#34;findTables()&#34; &gt;
+&lt;button onclick=&#34;document.getElementById(&#39;searchBox&#39;).value = &#39;&#39;;findTables()&#34; class=&#34;btn-green&#34;&gt;Clear&lt;/button&gt;&lt;/p&gt;
+&lt;h2 id=&#34;response-codes-for-transactions&#34;&gt;Response codes for transactions&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2777,6 +2864,10 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;td&gt;AV VILLAS&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;053&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;BANCO WWB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;059&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;BANCAMIA&lt;/td&gt;
 &lt;/tr&gt;
@@ -2826,7 +2917,7 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;084&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;APORTES EN LINEA&lt;/td&gt;
+&lt;td&gt;APORTES EN LINEA (GESTION Y CONTACTO)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;086&lt;/code&gt;&lt;/td&gt;
@@ -2858,7 +2949,7 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;283&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;COOP FIN DE ANTIOQUIA&lt;/td&gt;
+&lt;td&gt;COOPERATIVA FINANCIERA DE ANTIOQUIA&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;289&lt;/code&gt;&lt;/td&gt;
@@ -2866,27 +2957,23 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;292&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;CONFIAR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;342&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;SERFINANSA&lt;/td&gt;
+&lt;td&gt;CONFIAR COOPERATIVA FINANCIERA&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;370&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;COLTEFINANCIERA S.A. - COMPANIA DE FINANCIAMIENTO&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;637&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;IRIS&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;507&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;NEQUI&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;550&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;DECEVAL&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;507&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;NEQUI&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;558 &lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;CREDIFINANCIERA S.A.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;683&lt;/code&gt;&lt;/td&gt;
@@ -2899,18 +2986,6 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;801&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;MOVII&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;0551&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;DAVIPLATA&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;0558&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;CREDIFINANCIERA S.A.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;1053&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;BANCO WWB&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;1062&lt;/code&gt;&lt;/td&gt;
@@ -2939,6 +3014,10 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;1303&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;GIROS Y FINANZAS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;1637&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;IRIS&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
