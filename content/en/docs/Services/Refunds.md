@@ -4,7 +4,7 @@ linkTitle: "Void and Refunds"
 date: 2021-03-26T15:09:39-05:00
 description: >
   This feature allows you to request the cancellation or the refund of the transactions authorized or charged. You can create the refund request using the _Refund_ or _Void_ method according to the status of the transaction.
-weight: 60
+weight: 50
 ---
 
 ## Understanding concepts

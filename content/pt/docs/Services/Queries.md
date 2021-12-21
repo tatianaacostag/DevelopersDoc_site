@@ -4,7 +4,7 @@ linkTitle: "Consultas para transações"
 date: 2021-03-26T09:12:41-05:00
 description: >
   Usando o recurso Consultas, você pode verificar o status das ordens feitas e suas transações. 
-weight: 20
+weight: 30
 ---
 
 ## Observações {#considerations}

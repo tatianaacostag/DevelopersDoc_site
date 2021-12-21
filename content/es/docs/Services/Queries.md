@@ -4,7 +4,7 @@ linkTitle: "Consulta de transacciones"
 date: 2021-03-26T09:12:41-05:00
 description: >
   Utilizando la funcionalidad de consultas, puedes verificar el estado de las órdenes realizadas junto con sus transacciones. 
-weight: 20
+weight: 30
 ---
 
 ## Consideraciones {#considerations}

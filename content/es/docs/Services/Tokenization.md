@@ -4,7 +4,7 @@ linkTitle: "Tokenización"
 date: 2021-03-26T09:34:59-05:00
 description: >
   La Tokenización te permite guardar de forma segura la información de las tarjetas de crédito de tus clientes a través de la creación de un token. Este token te permite realizar pagos regulares o implementar la funcionalidad de _Pago a un clic_, siguiendo los estándares de seguridad de PCI DSS (Payment Card Industry Data Security Standard) para manejar la información de las tarjetas de crédito.
-weight: 30
+weight: 40
 ---
 
 Para utilizar la funcionalidad de Tokenización, necesitas habilitarlo en tu cuenta de PayU. Para esto, contacta a tu representante de ventas:
