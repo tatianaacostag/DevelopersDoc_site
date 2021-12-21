@@ -662,7 +662,7 @@ highlight-wrapper {
 .longDiv, 
 .DivGray {
     width: 20%;
-    height: 600px;
+    height: 700px;
     float:left;
     background:linear-gradient(to bottom, #EEE 90%, white);
     padding: 20px;
@@ -672,7 +672,7 @@ highlight-wrapper {
 .Div4,
 .DivWhite {
     width: 20%;
-    height: 600px;
+    height: 700px;
     float:left;
     background:#FFF;
     padding: 20px;
