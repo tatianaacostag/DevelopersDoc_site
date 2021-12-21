@@ -7,7 +7,7 @@ weight: 20
 ---
 
 ## What is 3DS?
-3DS (Three-Domain Secure) is a messaging protocol that enables the issues to authenticate their cardholders during the online shops. This authentication is performed before authorize the transaction and follows the next flow.
+3DS (Three-Domain Secure) is a messaging protocol that enables the issuers to authenticate their cardholders during the online shops. This authentication is performed before the transaction is authorized and follows the next flow.
 
 ![](/assets/3DS/3DS_whatis_en.png)
 
@@ -34,7 +34,7 @@ Supports a strong customer authentication for issuers, acquirers, and payment se
 
 * _**Pass Through**_: if you have your own 3DS Authentication service, you can send us the authentication response in the payment request. Under this modality, you are responsible for the integration with an _**MPI**_ or a _**3DS Server**_.<br>For more information, contact your sales representative.
 
-* _**2-calls Authentication flow**_: if you want to authenticate the transaction using the PayU, you can integrate through **PayU Hub**<sup>\*</sup> using the [Authentication Service](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) that operates in two calls flow, one call for authentication and other for authorization.<br>To authenticate, you must connect to the PayU Hub, where you will get the authentication response.<br>To authorize, you can chose to go through **PayU Latam** or **PayU Hub**.
+* _**2-calls Authentication flow**_: if you want to authenticate the transaction using PayU, you can integrate through **PayU Hub**<sup>\*</sup> using the [Authentication Service](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) that operates in two calls flow, one call for authentication and other for authorization.<br>To authenticate, you must connect to the PayU Hub, where you will get the authentication response.<br>To authorize, you can chose to go through **PayU Latam** or **PayU Hub**.
 
 <sup>\*</sup>**PayU Hub**, is the solution for borderless Payments. With a single API integration, you can process local payments in 18 markets.
 
@@ -48,7 +48,7 @@ When using the 3DS Authentication solution, take into account the following:
 * The authorization must include the authentication response.
 
 ### Benefits of our solution
-Regardless of how you integrate with our 3DS Authentication solution, you have the following benefits.
+When using the Authentication Service featured by **PayU Hub** (2-calls Authentication flow), you have the following benefits.
 
 * PayU is connected to a 3DS server (MPI), you don't need to do it by your own. Less providers & contracts!
 * You control and decide when to authenticate a transaction.
@@ -63,7 +63,7 @@ We are working on connecting to multiple 3DS server providers to improve perform
 {{% /alert %}}
 
 ### How to integrate 3DS?
-Depending on the scenario you choose to use the 3DS Authentication, the integration procedure varies.
+3DS Authentication is a service available under demand, contact your Key Account Manager or Technical support to enable it.<br>Depending on the scenario you choose to use the 3DS Authentication, the integration procedure varies.
 
 #### Pass Through
 When you are integrated with an _**MPI**_ or a _**3DS Server**_, you just need to send us the authentication response in the payment request. Refer to your processing country to see an example of how to send the parameters returned in the response:
@@ -83,7 +83,7 @@ To integrate with our Authentication service, follow the next steps:
 
 1. To get started, open an account on the **PayU Hub**.<br>Click [here](https://control.paymentsos.com/signup) to create one.
 
-2. Update your integration code. Ask your developers to update their integration code to connect through the PayU Hub.
+2. Update your integration code. Ask your developers to update their integration code to connect through the **PayU Hub**.
 
 3. Test your integration and go live!
 
