@@ -28,7 +28,7 @@ O valor de cada payout, mais a taxa de processamento, é deduzido de sua conta. 
 * **Customizable notifications**.<br>Any changes in the payment order status are updated through our solution. You can customize the update notifications you receive. 
 
 ## Como funcionam os Payouts? {#how-does-the-payouts-feature-work}
-Through Payouts, you can send multiple and secure payouts such as fund disbursement to employees, sub-merchants, suppliers or customers, using the funds you have in your PayU Account. 
+Por meio de Payouts, você pode enviar pagamentos múltiplos e seguros, tais como desembolso de fundos a empregados, sub-merchants, fornecedores ou clientes, utilizando os fundos que tem na sua conta PayU. 
 
 Você só precisa fornecer o valor a pagar juntamente com os dados de cada beneficiário (como nome, identificação, dados bancários etc.), e PayU transfere o valor solicitado após as validações.
 
@@ -91,6 +91,7 @@ Leve em conta as seguintes informações:
 * Os Payouts permitem apenas pagamentos locais. O comércio pode ser internacional (sob análise de segurança e risco), mas só pode solicitar Payouts usando os fundos coletados no país de processamento.<br>Por exemplo, se o vendedor _ABC_ processa pagamentos na Colômbia e no Peru, ele pode solicitar pagamentos a beneficiários na Colômbia usando os fundos arrecadados na Colômbia, mas não pode solicitar pagamentos a beneficiários no Peru usando os fundos arrecadados na Colômbia.
 * Depois que o payout é criado, ele segue o fluxo regular no PayU. Isso significa que você pode ver o payout criado em seu módulo PayU.
 * O comércio deve comprovar a relação entre ele e seus beneficiários para garantir que a transação seja legítima.
+* Os Payouts dirigidos a Daviplata não são suportados.
 <!-- * For Gambling commerces, Payouts cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. -->
 
 ## Processamento de transação {#transaction-processing}
