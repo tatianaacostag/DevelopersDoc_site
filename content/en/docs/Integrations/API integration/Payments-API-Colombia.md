@@ -269,7 +269,14 @@ Request example:
       "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
       "ipAddress": "127.0.0.1",
       "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
-      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0",
+      "threeDomainSecure": {
+         "embedded": false,
+         "eci": "01",
+         "cavv": "AOvG5rV058/iAAWhssPUAAADFA==",
+         "xid": "Nmp3VFdWMlEwZ05pWGN3SGo4TDA=",
+         "directoryServerTransactionId": "00000-70000b-5cc9-0000-000000000cb"
+      }
    },
    "test": true
 }
@@ -414,6 +421,13 @@ Request example:
       <ipAddress>127.0.0.1</ipAddress>
       <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
       <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+      <threeDomainSecure>
+         <embedded>false</embedded>
+         <eci>01</eci>
+         <cavv>AOvG5rV058/iAAWhssPUAAADFA==</cavv>
+         <xid>Nmp3VFdWMlEwZ05pWGN3SGo4TDA=</xid>
+         <directoryServerTransactionId>00000-70000b-5cc9-0000-000000000cb</directoryServerTransactionId>
+      </threeDomainSecure>
    </transaction>
    <isTest>false</isTest>
 </request>
