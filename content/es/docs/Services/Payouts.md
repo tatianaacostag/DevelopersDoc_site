@@ -91,6 +91,7 @@ Ten en cuentas las siguientes consideraciones:
 * Payouts solo permite pagos locales. El comercio puede ser internacional (bajo análisis de seguridad y riesgo) pero solo pueden solicitar Payouts utilizando los fondos obtenidos en el país de procesamiento.<br>Por ejemplo, si el comercio _ABC_ procesa en Colombia y Perú, puede solicitar payouts a beneficiarios en Colombia utilizando los fondos recaudados en Colombia; no pueden solicitar pagos a beneficiarios en Perú utilizando los fondos recaudados en Colombia.
 * Una vez se ha creado el Payout, toma el flujo regular en PayU. Esto significa que puedes ver el payout creado en el módulo PayU. 
 * El comercio debe probar la relación entre él y sus beneficiarios para garantizar que la transacción es legítima.
+* No se soportan Payouts dirigidos a Daviplata.
 <!-- * Para comercios de apuestas, no se puede utilizar Payouts parra hacer reembolsos. Por lo tanto es necesario garantizar que el comercio está pagando un premio. -->
 
 ## Procesamiento de transacciones {#transaction-processing}
