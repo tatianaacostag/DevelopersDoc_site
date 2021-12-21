@@ -6,6 +6,10 @@ description:
   Nesta seção, você encontra dados relevantes utilizados durante o processo de integração, como as tabelas de variáveis, idiomas e moedas aceitas na plataforma do PayU.
 weight: 50
 ---
+<script src="/js/searchcodes.js"></script>
+
+<input type="text" id="searchBox" placeholder=" Pesquise por nomes, códigos ou descrição..." onkeyup="findTables()" >
+<button onclick="document.getElementById('searchBox').value = '';findTables()" class="btn-green">Limpar</button>
 
 ## Códigos de resposta para transações {#response-codes-for-transactions}  
 
