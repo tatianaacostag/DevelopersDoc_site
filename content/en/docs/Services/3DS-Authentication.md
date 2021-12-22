@@ -58,10 +58,6 @@ When using the Authentication Service featured by **PayU Hub** (2-calls Authenti
 
 <sup>\*</sup> _The acquirers may charge an authentication cost, if so, this cost will be transferred to you._
 
-{{% alert title="Note" color="info"%}}
-We are working on connecting to multiple 3DS server providers to improve performance and guarantee authentication service always.
-{{% /alert %}}
-
 ### How to integrate 3DS?
 3DS Authentication is a service available under demand, contact your Key Account Manager or Technical support to enable it.<br>Depending on the scenario you choose to use the 3DS Authentication, the integration procedure varies.
 

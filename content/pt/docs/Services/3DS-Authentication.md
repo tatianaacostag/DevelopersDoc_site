@@ -58,10 +58,6 @@ Quando utiliza o Serviço de Autenticação oferecido pelo **PayU Hub** (Fluxo d
 
 <sup>\*</sup> _Os adquirentes podem cobrar uma taxa de autenticação, se assim for, esta taxa ser-lhe-á transmitida._
 
-{{% alert title="Observação" color="info"%}}
-Estamos a trabalhar para nos ligarmos a múltiplos servidores 3DS para melhorar o desempenho e garantir o serviço de autenticação a todo o momento.
-{{% /alert %}}
-
 ### Como integrar 3DS? {#how-to-integrate-3ds}
 A Autenticação 3DS é um serviço disponível a pedido, contacte o seu Key Account Manager ou o Apoio Técnico para o activar.<br>Dependendo do cenário escolhido para utilizar a Autenticação 3DS, o procedimento de integração varia.
 
