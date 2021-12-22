@@ -91,6 +91,7 @@ Take into account the following considerations:
 * Payouts allows local payments only. The merchant may be international (under security and risk analysis) but they can only request payouts using the funds collected in the processing country.<br>For example, if the merchant _ABC_ processes in Colombia and Peru, they can request payouts to payees in Colombia using the funds collected in Colombia; they cannot request payouts to payees in Peru using the funds collected in Colombia.
 * Once the payout is created, it takes the regular flow in PayU. This means that you can see the payout created in your PayU module. 
 * The merchant must prove the relationship between them and their payees to guarantee that the transaction is legit.
+* Payouts for Daviplata accounts are not supported.
 <!-- * For Gambling commerces, Payouts cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. -->
 
 ## Transaction processing
