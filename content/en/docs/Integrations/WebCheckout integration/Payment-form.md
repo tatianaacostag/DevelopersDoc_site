@@ -39,11 +39,11 @@ The following variables can be included in the Payment form.
 | accountId | Number | 6 | ID of the user account for each country associated with the shop. This variable is used to display the available payment methods for this country. | ✓ | 
 | description | Alphanumeric | 255 | Sale’s description. | ✓ | 
 | currency | Alphanumeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in Colombian pesos at the representative rate of the day.<br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ | 
-| amount | Number | 14 | Total amount of the transaction. It can contain two decimal digits. Example 10000.00 or 10000. | ✓ | 
-| tax | Number | 14,2 | Value of the VAT of the transaction.<br>In Colombia, if no VAT is sent, the system applies 19% automatically. It can contain two decimal digits, for example 19000.00.<br>If the product or service is VAT exempt, assign `0` to this variable. | ✓ | 
-| discount | Number | 14,2 | Discount value applied to the sale. | — | 
-| taxReturnBase | Number | 14,2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0` to this variable. | ✓ | 
-| additionalValue | Number | 14,2 | Additional value of the sale. | — | 
+| amount | Number | 10 | Total amount of the transaction. It can contain two decimal digits. Example 10000.00 or 10000. | ✓ | 
+| tax | Number | 10,2 | Value of the VAT of the transaction.<br>In Colombia, if no VAT is sent, the system applies 19% automatically. It can contain two decimal digits, for example 19000.00.<br>If the product or service is VAT exempt, assign `0` to this variable. | ✓ | 
+| discount | Number | 10,2 | Discount value applied to the sale. | — | 
+| taxReturnBase | Number | 10,2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0` to this variable. | ✓ | 
+| additionalValue | Number | 10,2 | Additional value of the sale. | — | 
 | signature | Alphanumeric | 255 | Digital signature created for each transaction. Refer to [Signature for Payment form]({{< ref "payment-form.md#signature-for-payment-form" >}}) to learn how to generate it. | ✓ | 
 | algorithmSignature | Alphanumeric | 255 | Encryption algorithm of the digital signature (`signature` field). The three available algorithms are: `MD5`, `SHA` and `SHA256`. | — | 
 | test | Number | 1 | Indicates whether the transaction is in test or production mode. Set `1` for test and `0` for production. | — | 
@@ -69,9 +69,9 @@ The following variables can be included in the Payment form.
 | mobilePhone | Alphanumeric | 50 | The buyer’s cell phone number. This value will be taken to fill out the credit card form and will be the contact telephone number. | — | 
 | buyerFullName | Alphanumeric | 150 | The buyer’s full name. | ✓ | 
 | paymentMethods | Alphanumeric | 255 | List of payment methods enabled in the payment process.<br>This list must be separated by comma and without blanks. For example: `VISA,MASTERCARD`.<br>You can include installments for the payment methods adding them using hyphens. Example: `VISA-1-3,MASTERCARD-3-5-9`.<br>[See the available Payment Methods for your country in the column `paymentMethod parameter`]({{< ref "select-your-payment-method.html" >}}). | — | 
-| administrativeFee | Number | 14,2 | Amount of the administrative fee. | — | 
-| taxAdministrativeFee | Number | 14,2 | Amount of tax of the administrative fee. | — | 
-| taxAdministrativeFeeReturnBase | Number | 14,2 | Base value to calculate the tax of the administrative fee. | — | 
+| administrativeFee | Number | 10,2 | Amount of the administrative fee. | — | 
+| taxAdministrativeFee | Number | 10,2 | Amount of tax of the administrative fee. | — | 
+| taxAdministrativeFeeReturnBase | Number | 10,2 | Base value to calculate the tax of the administrative fee. | — | 
 | payerEmail | Alphanumeric | 255 | The payer’s e-mail. | — | 
 | payerPhone | Alphanumeric | 20 | The payer’s phone number. | — | 
 | payerOfficePhone | Alphanumeric | 20 | The payer’s workplace phone number. | — | 

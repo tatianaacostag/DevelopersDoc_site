@@ -522,7 +522,7 @@ Este método te permite procesar los pagos en efectivo o por referencia bancaria
 | transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono de la dirección del comprador. | Sí |
 | transaction > order > additionalValues > |  | 64 | Monto de la orden y sus valores asociados. | Sí |
 | transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
-| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
+| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor no puede tener decimales. | Sí |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
 | transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del IVA (Impuesto al Valor Agregado). | Sí |
 | transaction > order > additionalValues > TX_TAX > value | Numérico | 12, 2 | Especifica el monto del IVA.<br>Si no se envía este parámetro, PayU aplica el impuesto actual (19%).<br>Si la cantidad está exenta de IVA, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
@@ -953,7 +953,7 @@ La lista de documentos disponibles es:
 | transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono de la dirección del comprador. | Sí |
 | transaction > order > additionalValues > |  | 64 | Monto de la orden y sus valores asociados. | Sí |
 | transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
-| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
+| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor no puede tener decimales. | Sí |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
 | transaction > payer |  |  | Información del pagador. | Sí |
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | Sí |
