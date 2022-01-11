@@ -17,6 +17,12 @@ O módulo PayU é o sistema onde você pode gerenciar sua conta com segurança. 
 * Estar atualizado com as informações dos movimentos financeiros de sua conta.
 * Fazer solicitações à equipe de suporte sobre problemas em sua conta.
 
+{{% alert title="Observação" color="info"%}}
+
+Clique [aqui]({{< ref "Merchant Panel" >}}) para consultar a documentação do Módulo Administrativo, também conhecido como secure.
+
+{{% /alert %}}
+
 Para acessar o módulo PayU, acesse www.payu.com, no canto superior direito, você encontra a opção de fazer login.<br>Alternativamente, você pode ir diretamente https://merchants.payulatam.com/.
 
 ![PrintScreen](/assets/Login1_pt.png)

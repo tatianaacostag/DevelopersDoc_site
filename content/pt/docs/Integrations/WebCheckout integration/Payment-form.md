@@ -40,11 +40,11 @@ As seguintes variáveis podem ser incluídas no formulário de pagamento.
 | accountId | Número | 6 | ID da conta do usuário para cada país associado à loja. Esta variável é usada para exibir os métodos de pagamento disponíveis para este país. | ✓ | 
 | description | Alfanumérico | 255 | Descrição da venda. | ✓ | 
 | currency | Alfanumérico | 3 | A respectiva moeda na qual o pagamento é feito. O processo de reconciliação é realizado em pesos na taxa representativa do dia.<br>[Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ | 
-| amount | Número | 14 | Valor total da transação. Ele pode conter dois dígitos decimais. Exemplo 10000.00 ou 10000. | ✓ | 
-| tax | Número | 14,2 | Valor do IVA da transação.<br>Na Colômbia, se nenhum IVA for enviado, o sistema aplica 19% automaticamente. Ele pode conter dois dígitos decimais, por exemplo 19000.00.<br>Se o produto ou serviço for isento de IVA, atribua `0` a esta variável. | ✓ | 
-| discount | Número | 14,2 | Discount value applied to the sale. | — | 
-| taxReturnBase | Número | 14,2 | Valor base para cálculo do VAT.<br>Se o produto ou serviço for isento de IVA, atribua `0` a esta variável. | ✓ | 
-| additionalValue | Número | 14,2 | Valor adicional da venda. | — | 
+| amount | Número | 10 | Valor total da transação. Ele pode conter dois dígitos decimais. Exemplo 10000.00 ou 10000. | ✓ | 
+| tax | Número | 10,2 | Valor do IVA da transação.<br>Na Colômbia, se nenhum IVA for enviado, o sistema aplica 19% automaticamente. Ele pode conter dois dígitos decimais, por exemplo 19000.00.<br>Se o produto ou serviço for isento de IVA, atribua `0` a esta variável. | ✓ | 
+| discount | Número | 10,2 | Discount value applied to the sale. | — | 
+| taxReturnBase | Número | 10,2 | Valor base para cálculo do VAT.<br>Se o produto ou serviço for isento de IVA, atribua `0` a esta variável. | ✓ | 
+| additionalValue | Número | 10,2 | Valor adicional da venda. | — | 
 | signature | Alfanumérico | 255 | Assinatura digital criada para cada transação. Consultar [Assinatura para forma de pagamento]({{< ref "payment-form.md#signature-for-payment-form" >}}) para aprender como gerar. | ✓ | 
 | algorithmSignature | Alfanumérico | 255 | Algoritmo de criptografia da assinatura digital (campo `signature`). Os três algoritmos disponíveis são: `MD5`, `SHA` e `SHA256`. | — | 
 | test | Número | 1 | Indica se a transação está em modo de teste ou produção. Definir `1` para teste e `0`para produção. | — | 
@@ -70,9 +70,9 @@ As seguintes variáveis podem ser incluídas no formulário de pagamento.
 | mobilePhone | Alfanumérico | 50 | O número do celular do comprador. Este valor será usado para preencher o formulário do cartão de crédito e será o telefone de contato. | — | 
 | buyerFullName | Alfanumérico | 150 | O nome completo do comprador. | ✓ | 
 | paymentMethods | Alfanumérico | 255 | Lista das formas de pagamento habilitadas no processo de pagamento.<br>Esta lista deve ser separada por vírgula e sem espaços em branco. Por exemplo: `VISA,MASTERCARD`.<br>YVocê pode incluir parcelas para as formas de pagamento adicionando-as usando hifens. Exemplo: `VISA-1-3,MASTERCARD-3-5-9`.<br>[Veja os métodos de pagamento disponíveis para seu país na coluna `Parâmetro paymentMethod`]({{< ref "select-your-payment-method.html" >}}). | — | 
-| administrativeFee | Número | 14,2 | Valor da taxa administrativa. | — | 
-| taxAdministrativeFee | Número | 14,2 | Valor do imposto da taxa administrativa. | — | 
-| taxAdministrativeFeeReturnBase | Número | 14,2 | Valor base para cálculo do imposto da taxa administrativa. | — | 
+| administrativeFee | Número | 10,2 | Valor da taxa administrativa. | — | 
+| taxAdministrativeFee | Número | 10,2 | Valor do imposto da taxa administrativa. | — | 
+| taxAdministrativeFeeReturnBase | Número | 10,2 | Valor base para cálculo do imposto da taxa administrativa. | — | 
 | payerEmail | Alfanumérico | 255 | E-mail do pagador. | — | 
 | payerPhone | Alfanumérico | 20 | Número de telefone do pagador. | — | 
 | payerOfficePhone | Alfanumérico | 20 | Número de telefone do local de trabalho do pagador. | — | 
