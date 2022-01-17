@@ -66,7 +66,7 @@ weight: 10
       <p style="display:contents;color:white"><b>Funcionalidade descontinuada</b></p>
       <span class="close" style="color:white">&times;</span>
     </header>
-    <p style="padding:20px">A funcionalidade de <b><i>Pagamentos recorrentes</i></b> foi descontinuada e, portanto, não é oferecida aos comerciantes. O artigo a seguir está disponível como uma referência para lojas que ainda o têm ativo.<br>Esta funcionalidade <b>NÃO</b> será ativada novamente.</p>
+    <p style="padding:20px">A funcionalidade de <b><i>Pagamentos recorrentes</i></b> oferecida pela PayU foi descontinuada e, portanto, não é oferecida aos comerciantes. O artigo a seguir está disponível como uma referência para lojas que ainda o têm ativo.<br>Esta funcionalidade <b>NÃO</b> será ativada novamente.<br><br>Se você precisar implementar uma solução de <b><i>Pagamentos recorrentes</i></b> ou de <b><i>1 clique</i></b>, consulte <a href="/pt/docs/services/tokenization.html">Tokenização</a>.</p>
   </div>
 
 </div>
