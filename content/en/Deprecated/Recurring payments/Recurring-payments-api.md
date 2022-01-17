@@ -66,7 +66,7 @@ weight: 10
       <p style="display:contents;color:white"><b>Deprecated feature</b></p>
       <span class="close" style="color:white">&times;</span>
     </header>
-    <p style="padding:20px"><b><i>Recurring Payments</i></b> feature has been deprecated. Therefore, it is not longer offered to new or existing merchants. The following topic is available as a reference for merchants who still have it enabled.<br>This feature <b>WILL NOT</b> be activated again.</p>
+    <p style="padding:20px">The <b><i>Recurring Payments</i></b> feature offered by PayU has been deprecated. Therefore, we don't longer offer it to new or existing merchants. The following topic is available as a reference for merchants who still have it enabled.<br>We <b>WILL NOT</b> activate this feature again.<br><br>If you need to implement a <b><i>Recurring Payments</i></b> or <b><i>1 Click payment</i></b> solution, refer to <a href="/en/docs/services/tokenization.html">Tokenization</a>.</p>
   </div>
 
 </div>
