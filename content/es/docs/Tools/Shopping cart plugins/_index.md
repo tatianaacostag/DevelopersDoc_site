@@ -15,6 +15,19 @@ Soluciones disponibles:
 
 {{< shoppingcarts/preintegrated-es >}}
 
+## Configuración a través de partners {#configuration-through-partners}
+Aprende a instalar, configurar y personalizar PayU en tu sitio de comercio electrónico utilizando la guía y la asistencia de nuestros partners.
+
+Guías disponibles:
+
+{{< shoppingcarts/pluginpartners-es >}}
+
+{{% alert title="Nota" color="info"%}}
+
+Para Magento en las versiones de la 1.7.x a la 1.9.x, consulta [Plugins para módulos]({{< ref"#plugins-for-modules" >}}).
+
+{{% /alert %}} 
+
 ## Plugins para módulos {#plugins-for-modules}
 Si utilizas un carrito de compras open source, descarga y utiliza los plugins que hemos desarrollado para facilitar tu proceso de integración con el sistema de pagos.
 
