@@ -121,11 +121,11 @@ Cuando pruebas los Pagos, debes enviar en el request:
   - Envía **666** en el CVV de la tarjeta (para AMEX, utiliza **666**).
   - El parámetro `test` y la descripción también definen el estado. Si no funciona con `test` asignado como _false_, cambia su valor a _true_.
   - Envía el mes de la expiración de la tarjeta mayor a `6` y el año debe ser `2023` o mayor. Ejemplo: `07/2027`.
-* **Para obtener transacciones _pendientes_**: 
+<!--* **Para obtener transacciones _pendientes_**: 
   - Envía `PENDING` en el nombre del tarjetahabiente.
   - Envía **777** en el CVV de la tarjeta (para AMEX, utiliza **7777**).
   - Envía el parámetro `test` como _true_.
-  - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-review-hub@email.com`.
+  - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-review-hub@email.com`.-->
 * Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia enviada en el request. Puedes utilizar un generador en línea de tarjetas de crédito o una de las  correspondientes a tu país mencionadas anteriormente.
 * Para probar transferencias bancarias por PSE (Disponible en Colombia) en el ambiente de Sandbox de PayU, consulta la [Guía de pruebas PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
 
