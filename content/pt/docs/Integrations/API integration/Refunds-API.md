@@ -46,6 +46,7 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é:
    - 90 dias para transações com PIX<sup>\*</sup> ou processadas na Redecard .
    - 120 dias para transações processadas na  Cielo.
+* Apenas um reembolso por transação é permitido ao usar o PIX.
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 15 dias úteis.
 
 {{% pageinfo color="info" %}}
