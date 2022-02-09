@@ -35,6 +35,8 @@ Plugins disponibles:
 
 {{< shoppingcarts/plugins >}}
 
+<br><sup>*</sup> _Disponible para versiones de 1.7.x a 1.9.x._
+
 ### Archivos de plugins {#plugin-files}
 Encuentra la última versión del plugin requerido en ls siguiente tabla
 

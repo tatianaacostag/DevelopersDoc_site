@@ -7,6 +7,21 @@ description: >
 weight: 50
 tags: ["subtopic"]
 ---
+<script>
+   function hideAlert() {
+      var today = new Date();
+      var launchDate = new Date("2/17/22");
+      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
+      if((today - launchDate) > 0) {
+         note.style.display = "none";
+
+      } else {
+         note.style.display = "";
+      }
+   }
+  
+   window.onload = hideAlert;
+</script>
 
 To integrate with Voids and Refunds API, target your request to the following URLs according to your environment.
 
@@ -31,11 +46,12 @@ Before using Voids and Refunds API, take into account the following consideratio
 * The minimum time to send a refund is 10 minutes after the approval and the maximum is:
    - 90 days for transactions with PIX<sup>\*</sup> or processed in Redecard.
    - 120 days for transactions processed in Cielo.
+* Only one refund per transaction is supported when using PIX.
 * When a refund is approved, the payer gets the money back in maximum 15 working days.
 
-{{% alert title="Note" color="warning"%}}
-<sup>\*</sup> Integration with PIX will be available for merchants since January, 2022. For more information, contact your sales representative.
-{{% /alert %}}
+{{% pageinfo color="info" %}}
+<sup>\*</sup> Integration with **PIX** will be available for merchants since _February 16, 2022_. For more information, contact your sales representative.
+{{% /pageinfo %}}
 
 ### Chile
 * Due to network restrictions, void can be authorized within the first three hours after the authorization. If the void is not accepted or no capture is sent after seven (7) days, the transaction is auto-voided.

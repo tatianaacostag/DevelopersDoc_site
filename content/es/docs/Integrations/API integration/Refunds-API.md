@@ -8,6 +8,21 @@ description: >
 weight: 50
 tags: ["subtopic"]
 ---
+<script>
+   function hideAlert() {
+      var today = new Date();
+      var launchDate = new Date("2/17/22");
+      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
+      if((today - launchDate) > 0) {
+         note.style.display = "none";
+
+      } else {
+         note.style.display = "";
+      }
+   }
+  
+   window.onload = hideAlert;
+</script>
 
 Para integrarte con el API de Reembolsos y Anulaciones, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
 
@@ -32,11 +47,12 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 * El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es:
    - 90 días para transacciones con PIX<sup>\*</sup> o procesadas en Redecard
    - 120 días para transacciones procesadas en Cielo.
+   * Solo se permite un reembolso por transacción cuando se usa PIX.
 * Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 15 días hábiles.
 
-{{% alert title="Nota" color="warning"%}}
-<sup>\*</sup> La integración con PIX como medio de pago estará disponibles desde enero del 2022. Para más información, consulta a tu representante de ventas.
-{{% /alert %}}
+{{% pageinfo color="info" %}}
+<sup>\*</sup> La integración con **PIX** como medio de pago estará disponibles desde el _16 de febrero del 2022_. Para más información, consulta a tu representante de ventas.
+{{% /pageinfo %}}
 
 ### Chile
 * Debido a restricciones de la red, se pueden autorizar anulaciones dentro de las tres primeras horas luego de la autorización. Si no se acepta la anulación o no se envía una captura luego de siete (7) días, la transacción se anula automáticamente.

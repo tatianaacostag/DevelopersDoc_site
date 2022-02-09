@@ -6,6 +6,21 @@ Description: >
  En este artículo, encontrarás la lista de métodos de pago disponibles en PayU.
 weight: 30
 ---
+<script>
+   function hideAlert() {
+      var today = new Date();
+      var launchDate = new Date("2/17/22");
+      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
+      if((today - launchDate) > 0) {
+         note.style.display = "none";
+
+      } else {
+         note.style.display = "";
+      }
+   }
+  
+   window.onload = hideAlert;
+</script>
 
 La siguiente sección muestra los métodos de pago disponibles por país y brinda algunas consideraciones. Consulta la columna `Parámetro paymentMethod` para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.
 
@@ -43,9 +58,10 @@ La siguiente sección muestra los métodos de pago disponibles por país y brind
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
 
-{{% alert title="Nota" color="warning"%}}
-La integración con PIX como medio de pago estará disponibles desde enero del 2022. Para más información, consulta a tu representante de ventas.
-{{% /alert %}}
+{{% pageinfo color="info" %}}
+#### Nota
+La integración con **PIX** como medio de pago estará disponibles desde el _16 de febrero del 2022_. Para más información, consulta a tu representante de ventas.
+{{% /pageinfo %}}
 
 ## <img src="/assets/Chile.png" width="25px"/> Chile {#Chile}
 <div class="paymentMethods"></div>

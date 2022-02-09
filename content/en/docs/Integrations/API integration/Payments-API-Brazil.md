@@ -7,6 +7,21 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script>
+   function hideAlert() {
+      var today = new Date();
+      var launchDate = new Date("2/17/22");
+      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
+      if((today - launchDate) > 0) {
+         note.style.display = "none";
+
+      } else {
+         note.style.display = "";
+      }
+   }
+  
+   window.onload = hideAlert;
+</script>
 
 To integrate with Payments API Brazil, target your request to the following URLs according to your environment.
 
@@ -1052,9 +1067,10 @@ In the end, your customer sees a checkout page like this.
 
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
-{{% alert title="Note" color="warning"%}}
-Integration with PIX will be available for merchants since January, 2022. For more information, contact your sales representative.
-{{% /alert %}}
+{{% pageinfo color="info" %}}
+#### Note
+Integration with **PIX** will be available for merchants since _February 16, 2022_. For more information, contact your sales representative.
+{{% /pageinfo %}}
 
 ### How does PIX work?
 PIX is an online transfer method released in November, 2020 by the Brazilian Central Bank (_Banco Central do Brasil_ - BACEN) which allows you make and receive transfers easily regardless of the bank who issued your account.

@@ -41,6 +41,8 @@ Plug-ins disponíveis:
 
 {{< shoppingcarts/plugins >}}
 
+<br><sup>*</sup> _Disponível para versões de 1.7.x a 1.9.x._
+
 ### Arquivos de plug-in {#plugin-files}
 Encontre a versão mais recente do plug-in na tabela a seguir
 
