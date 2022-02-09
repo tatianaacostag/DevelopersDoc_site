@@ -6,6 +6,21 @@ Description: >
   In this topic, you can find the list of payment methods available from PayU.
 weight: 30
 ---
+<script>
+   function hideAlert() {
+      var today = new Date();
+      var launchDate = new Date("2/17/22");
+      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
+      if((today - launchDate) > 0) {
+         note.style.display = "none";
+
+      } else {
+         note.style.display = "";
+      }
+   }
+  
+   window.onload = hideAlert;
+</script>
 
 The following section shows the payment methods supported per country and provides some considerations. Refer to the `paymentMethod parameter` column to know the value to be sent as Payment Method while using API or SDK integrations.
 
@@ -43,9 +58,10 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/master.png)          | Mastercard       | MASTERCARD              | Credit Cards    |           |
 | ![Logo](/assets/PaymentMethods/visa.png)            | VISA             | VISA                    | Credit Cards    |           |
 
-{{% alert title="Note" color="warning"%}}
-Integration with PIX will be available for merchants since January, 2022. For more information, contact your sales representative.
-{{% /alert %}}
+{{% pageinfo color="info" %}}
+#### Note
+Integration with **PIX** will be available for merchants since _February 16, 2022_. For more information, contact your sales representative.
+{{% /pageinfo %}}
 
 ## <img src="/assets/Chile.png" width="25px"/> Chile {#Chile}
 <div class="paymentMethods"></div>

@@ -7,6 +7,21 @@ description: >
 weight: 50
 tags: ["subtopic"]
 ---
+<script>
+   function hideAlert() {
+      var today = new Date();
+      var launchDate = new Date("2/17/22");
+      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
+      if((today - launchDate) > 0) {
+         note.style.display = "none";
+
+      } else {
+         note.style.display = "";
+      }
+   }
+  
+   window.onload = hideAlert;
+</script>
 
 Para integrar com a API de Cancelamentos e Reembolsos, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
@@ -33,9 +48,9 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
    - 120 dias para transações processadas na  Cielo.
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 15 dias úteis.
 
-{{% alert title="Observação" color="warning"%}}
-<sup>\*</sup> A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
-{{% /alert %}}
+{{% pageinfo color="info" %}}
+<sup>\*</sup> A integração com o PIX estará disponível a partir de 16 de fevereiro de 2022. Para mais informações, consulte com o seu executivo de vendas.
+{{% /pageinfo %}}
 
 ### Chile
 * Devido a restrições de rede, o cancelamento pode ser autorizado nas primeiras três horas após a autorização. Se nenhum cancelamento ou reembolso for enviado após de 7 dias, a transação será cancelada automaticamente (auto-void).

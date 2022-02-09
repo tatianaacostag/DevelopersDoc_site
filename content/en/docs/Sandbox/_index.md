@@ -85,6 +85,13 @@ draft: true
     
   }
 
+  function hideAlert() {
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+" "+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();;
+    alert(date);
+  }
+  
+  window.onload = hideAlert;
 </script>
 
 <input type="text" id="searchBox" placeholder=" Search for names.." onkeyup="findTables()">

@@ -15,6 +15,10 @@ tags: ["subtopic"]
 * Você precisa ter acesso às pastas onde o Magento está instalado.
 * Você precisa ter acesso ao painel de administração do Magento.
 
+{{% alert title="Observação" color="info"%}}
+Para Magento versão 2.0, siga o guia assistido oferecido por **élOOm** para instalar e configurar PayU em seu site Magento. Clique [aqui](https://docs.eloom.tech/pt/payment/payu-latam) para mais informações ou entre em contato com suporte@eloom.com.br para atendimento personalizado.
+{{% /alert %}}  
+
 ## Observações {#considerations}
 * Pagamentos aprovados aparecem com status _Processing_ no relatório de ordens.
 * Assim que o pagamento for recebido corretamente, o Magento cria uma fatura com a ordem associada.

@@ -15,6 +15,12 @@ tags: ["subtopic"]
 * You need access to the folders where Magento is installed.
 * You need access to the Magento Admin Panel.
 
+{{% alert title="Note" color="info"%}}
+For Magento version 2.0, follow the assisted guidelines offered by **élOOm** to install and configure PayU in your Magento site. Click [here](https://docs.eloom.tech/es/payment/payu-latam)<sup>\*</sup> for more information or email suporte@eloom.com.br for custom assistance.
+
+<sup>\*</sup>_This guide is available in Spanish and Portuguese_.
+{{% /alert %}}  
+
 ## Considerations
 * Approved payments appear with _Processing_ status in the orders report.
 * Once the payment is received correctly, Magento creates an invoice with the associated order.

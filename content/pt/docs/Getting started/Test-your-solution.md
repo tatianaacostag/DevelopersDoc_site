@@ -121,11 +121,11 @@ Para testar Pagamentos, você deve enviar a solicitação:
   - Definir **666** no CVV do cartão (para AMEX, use **6666**).
   - O parâmetro `test` e a descrição também definem o estado. Se não funcionar com `test` definido como _false_, altere seu valor para _true_.
   - Envie o mês de vencimento do cartão maior que `6` e o ​​ano deve ser `2023` ou maior. Exemplo: `07/2027`.
-* **Para transações _pendentes_**: 
+<!--* **Para transações _pendentes_**: 
   - Envie o valor `PENDING` em nome do titular do cartão.
   - Definir **777** no CVV do cartão (para AMEX, use **7777**).
   - Envie o parâmetro `test` como _true_.
-  - Nas informações de comprador e pagador, atribua o endereço de e-mail `manual-review-hub@email.com`.
+  - Nas informações de comprador e pagador, atribua o endereço de e-mail `manual-review-hub@email.com`.-->
 * Para o número do cartão, é preciso inserir um número válido, correspondente à franquia enviada na solicitação. Você pode usar um gerador de cartão online para fins de teste ou usar um dos cartões mencionados anteriormente que estejam disponíveis para o seu país.
 * Para testar as transferências bancárias PSE (disponíveis na Colômbia) no ambiente PayU Sandbox, consulte o [Guia de teste PSE (PDF - em espanhol)](/assets/pse-test-guide-v5-es.pdf).
 
