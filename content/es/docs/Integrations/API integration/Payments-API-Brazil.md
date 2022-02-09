@@ -1069,7 +1069,7 @@ Al final, tu cliente ve una página de checkout como esta.
 
 {{% pageinfo color="info" %}}
 #### Nota
-La integración con PIX como medio de pago estará disponibles desde el 16 de febrero del 2022. Para más información, consulta a tu representante de ventas.
+La integración con **PIX** como medio de pago estará disponibles desde el _16 de febrero del 2022_. Para más información, consulta a tu representante de ventas.
 {{% /pageinfo %}}
 
 ### ¿Cómo funciona PIX? {#how-does-pix-work}

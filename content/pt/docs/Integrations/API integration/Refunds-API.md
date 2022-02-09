@@ -50,7 +50,7 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 15 dias úteis.
 
 {{% pageinfo color="info" %}}
-<sup>\*</sup> A integração com o PIX estará disponível a partir de 16 de fevereiro de 2022. Para mais informações, consulte com o seu executivo de vendas.
+<sup>\*</sup> A integração com o **PIX** estará disponível a partir de _16 de fevereiro de 2022_. Para mais informações, consulte com o seu executivo de vendas.
 {{% /pageinfo %}}
 
 ### Chile

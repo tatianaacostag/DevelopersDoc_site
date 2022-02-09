@@ -60,7 +60,7 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 
 {{% pageinfo color="info" %}}
 #### Observação
-A integração com o PIX estará disponível a partir de 16 de fevereiro de 2022. Para mais informações, consulte seu representante de vendas.
+A integração com o **PIX** estará disponível a partir de _16 de fevereiro de 2022_. Para mais informações, consulte seu representante de vendas.
 {{% /pageinfo %}}
 
 ## <img src="/assets/Chile.png" width="25px"/> Chile {#Chile}

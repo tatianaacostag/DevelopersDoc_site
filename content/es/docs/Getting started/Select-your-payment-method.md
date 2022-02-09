@@ -60,7 +60,7 @@ La siguiente sección muestra los métodos de pago disponibles por país y brind
 
 {{% pageinfo color="info" %}}
 #### Nota
-La integración con PIX como medio de pago estará disponibles desde el 16 de febrero del 2022. Para más información, consulta a tu representante de ventas.
+La integración con **PIX** como medio de pago estará disponibles desde el _16 de febrero del 2022_. Para más información, consulta a tu representante de ventas.
 {{% /pageinfo %}}
 
 ## <img src="/assets/Chile.png" width="25px"/> Chile {#Chile}

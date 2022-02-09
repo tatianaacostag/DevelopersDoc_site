@@ -1069,7 +1069,7 @@ Depois, seu cliente vê uma página de checkout como esta.
 
 {{% pageinfo color="info" %}}
 #### Observação
-A integração com o PIX estará disponível a partir de 16 de fevereiro de 2022. Para mais informações, consulte seu representante de vendas.
+A integração com o **PIX** estará disponível a partir de _16 de fevereiro de 2022_. Para mais informações, consulte seu representante de vendas.
 {{% /pageinfo %}}
 
 ### Como funciona o PIX? {#how-does-pix-work}
@@ -1432,10 +1432,6 @@ Exemplo resposta:
 Este método permite processar os pagamentos de seus clientes em dinheiro. Para integrar com transações em dinheiro, você deve redirecionar o cliente para a URL encontrada na resposta do método; Seu cliente verá um recibo de pagamento como este.
 
 <img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
-
-{{% alert title="Observação" color="warning"%}}
-A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
-{{% /alert %}}
 
 ### Variáveis para pedido e resposta {#variables-for-request-and-response-2}
 
