@@ -344,7 +344,6 @@ Envía el valor exacto mostrado en la columna `Código` en la variable `transfer
 | `089`     | ENLACE OPERATIVO                                  |
 | `090`     | CORFICOLOMBIANA                                   |
 | `121`     | JURISCOOP                                         |
-| `151`     | RAPPIPAY                                          |
 | `283`     | COOPERATIVA FINANCIERA DE ANTIOQUIA               |
 | `289`     | COTRAFA                                           |
 | `292`     | CONFIAR COOPERATIVA FINANCIERA                    |
