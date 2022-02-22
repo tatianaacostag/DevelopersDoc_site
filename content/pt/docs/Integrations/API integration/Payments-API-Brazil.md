@@ -1108,7 +1108,7 @@ O Pix tem duas partes:
 | transaction > order > referenceCode | Alfanumérico | Mín:1 Máx:255 | Representa o identificador da ordem em seu sistema. | Sim |
 | transaction > order > description | Alfanumérico | Mín:1 Máx:255 | Descrição da ordem. | Sim |
 | transaction > order > language | Alfanumérico |2| Idioma usado nos e-mails enviados ao comprador e ao vendedor. | Sim |
-| transaction > order > NotifyUrl | Alfanumérico | Máx:2048 | URL de confirmação da ordem. | Sim |
+| transaction > order > notifyUrl | Alfanumérico | Máx:2048 | URL de confirmação da ordem. | Sim |
 | transaction > order > partnerId | Alfanumérico | Máx:255 | ID de parceiro no PayU. | Não |
 | transaction > order > signature | Alfanumérico | Máx:255 | A assinatura associada ao formulário. Para obter mais informações, consulte [Assinatura de autenticação]({{< ref "integrations.html#authentication-signature" >}}). | Sim |
 | transaction > order > shippingAddress | | | Endereço para envio. | Não |
