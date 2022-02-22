@@ -73,7 +73,7 @@ The _**Transaction details**_ panel has the following sections:
 
 |  | Name | Description |
 |:---:|---|---|
-| 1 | Order info | This section shows the Order Id, its latest update date, its status along with the status description, and the sale reference. |
+| 1 | Order info | This section shows the Order Id, its latest update date, its status along with the status description, and the sale reference.<br>This section also shows a button to let you print the details of the order. |
 | 2 | Product or service | Description of the product or service you provided in the sale. |
 | 3 | Payment method | Information of the Payment method used in the purchase. The information displayed in this section varies according to the payment method.<br>For pending cash payments, this section lets you see the payment receipt generated to the buyer. |
 | 4 | Values | This section shows the values involved in this transaction such as the _Value to charge (or charged)_, _Pending value_, _Refunded value_ (for refunds), _Expired value_ (for cash payments).  |

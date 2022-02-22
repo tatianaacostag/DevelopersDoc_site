@@ -91,3 +91,32 @@ Para solicitar un reembolso, la transacción debe estar aprobada y sin ningún p
 7. Una vez aprobada la solicitud, el estado aparece en la venta.
 
 <img src="/assets/Refunds/Refunds_es_10.png" alt="PrintScreen" width="50%"/><br>
+
+## Obtener la confirmación del reembolso
+When the refund has been approved, you can generate a receipt or send the confirmation to the payer. To do this, follow the instructions depending on the operation you want to perform.
+
+### Generate the refund receipt
+To generate the refund receipt, locate the refunded sale and click the printer button located at the top right corner of the transaction details panel.
+
+<img src="/assets/Refunds/Refunds_en_11.png" alt="PrintScreen" width="50%"/><br>
+
+The print options of your browser opens, here you may physically print it or save it in PDF. The following image corresponds to the print options of Google Chrome.
+
+![PrintScreen](/assets/Refunds/Refunds_en_12.png)
+
+{{% alert title="Warning" color="warning"%}}
+The _Save to PDF_ option depends on your browser. If your browser does not support this feature, you can only print it using a printer.
+{{% /alert %}}
+
+### Send the refund confirmation to the payer
+Along with the print feature, you can also send a confirmation email to payer informing the result of the refund. This option is located in the _**Actions**_ section in the bottom of the transaction details panel.
+
+<img src="/assets/Refunds/Refunds_en_13.png" alt="PrintScreen" width="50%"/><br>
+
+Once you click this button, the payer receives an email with the details of the refunds.
+
+<img src="/assets/Refunds/Refunds_en_14.png" alt="PrintScreen" width="50%"/><br>
+
+{{% alert title="Note" color="info"%}}
+You can enable the automatic send of the refund confirmation to the payer. To know more details about this option, contact your Sales representative.
+{{% /alert %}}
