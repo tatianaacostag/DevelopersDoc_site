@@ -1096,76 +1096,77 @@ O Pix tem duas partes:
 
 | Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Idioma usado no pedido, usado para exibir as mensagens de erro geradas. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
+| language | Alfanumérico |2| Idioma usado Não pedido, usado para exibir as mensagens de erro geradas. [Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sim |
 | command | Alfanumérico | Máx:32 | Definir `SUBMIT_TRANSACTION`. | Sim |
-| test (JSON)<hr>isTest (XML) | Boolean |  | Definir `true` se o pedido estiver em modo de teste. Caso contrário, definir `false`. | Sim |
-| merchant |  |  | Este objeto contém os dados de autenticação. | Sim |
+| test (JSON)<hr>isTest (XML) | Boolean | | Definir `true` se o pedido estiver em modo de teste. Caso contrário, definir `false`. | Sim |
+| merchant | | | Este objeto contém os dados de autenticação. | Sim |
 | merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuário ou login fornecido pelo PayU. [Como faço para obter minha API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
 | merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Senha fornecida pelo PayU. [Como faço para obter minha API key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sim |
-| transaction |  |  | Este objeto contém os dados da transação. | Sim |
-| transaction > order |  |  | Este objeto contém os dados da ordem. | Sim |
-| transaction > order > accountId | Número |  | Identificador da sua conta. | Sim |
+| transaction | | | Este objeto contém os dados da transação. | Sim |
+| transaction > order | | | Este objeto contém os dados da ordem. | Sim |
+| transaction > order > accountId | Número | | Identificador da sua conta. | Sim |
 | transaction > order > referenceCode | Alfanumérico | Mín:1 Máx:255 | Representa o identificador da ordem em seu sistema. | Sim |
 | transaction > order > description | Alfanumérico | Mín:1 Máx:255 | Descrição da ordem. | Sim |
-| transaction > order > language | Alfanumérico | 2 | Idioma usado nos e-mails enviados ao comprador e ao vendedor. | Sim |
-| transaction > order > notifyUrl | Alfanumérico | Máx:2048 | URL de confirmação da ordem. | Não |
-| transaction > order > partnerId | Alfanumérico | Máx:255 | ID de parceiro no PayU. | Não |
+| transaction > order > language | Alfanumérico |2| Idioma usado Nãos e-mails enviados ao comprador e ao vendedor. | Sim |
+| transaction > order > NãotifyUrl | Alfanumérico | Máx:2048 | URL de confirmação da ordem. | Sim |
+| transaction > order > partnerId | Alfanumérico | Máx:255 | ID de parceiro Não PayU. | Não |
 | transaction > order > signature | Alfanumérico | Máx:255 | A assinatura associada ao formulário. Para obter mais informações, consulte [Assinatura de autenticação]({{< ref "integrations.html#authentication-signature" >}}). | Sim |
-| transaction > order > shippingAddress |  |  | Endereço para envio. | Não |
+| transaction > order > shippingAddress | | | Endereço para envio. | Não |
 | transaction > order > shippingAddress > street1 | Alfanumérico | Máx:100 | Endereço: Linha 1. | Não |
 | transaction > order > shippingAddress > street2 | Alfanumérico | Máx:100 | Endereço: Linha 2. | Não |
 | transaction > order > shippingAddress > city | Alfanumérico | Máx:50 | Endereço: cidade. | Não |
 | transaction > order > shippingAddress > state | Alfanumérico | Máx:40 | Endereço: estado. Para o Brasil, envie apenas dois caracteres, Por exemplo, definir `SP` para São Paulo. | Não |
-| transaction > order > shippingAddress > country | Alfanumérico | 2 | Endereço: país. | Não |
+| transaction > order > shippingAddress > country | Alfanumérico |2| Endereço: país. | Não |
 | transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Endereço: CEP. Para o Brasil, use o formato `XXXXX-XXX` ou `XXXXXXXX`. Exemplo: `09210-710` ou `09210710`. | Não |
 | transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de telefone associado ao endereço. Para o Brasil, use o formato `ddd(2)+number(7-9)`. Exemplo: `(11)756312633`. | Não |
-| transaction > order > buyer |  |  | Informações do comprador. | Sim |
+| transaction > order > buyer | | | Informações do comprador. | Sim |
 | transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | ID do comprador em seu sistema. | Não |
-| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nome completo do comprador. | Sim |
-| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | E-mail do comprador. | Sim | Sim |
+| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nãome completo do comprador. | Sim |
+| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | E-mail do comprador. | Sim |
 | transaction > order > buyer > contactPhone | Alfanumérico | Máx:20 | Número de telefone do comprador. | Sim |
+| transaction > order > buyer > dniType | Alfanumérico |2| Tipo de identificação do pagador. [Veja os tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sim |
 | transaction > order > buyer > dniNumber | Alfanumérico | Máx:20 | Número de identificação do comprador. Você deve usar um algoritmo para validar o CPF, que deve ser definido usando o formato `XXX.XXX.XXX-XX`. Exemplo: `811.807.405-64`. | Sim |
-| transaction > order > buyer > cnpj | Alfanumérico | Máx:14 | Número de identificação do comprador (para pessoa jurídica no Brasil). Você deve usar um algoritmo para validar o CNPJ, que deve ser definido usando o formato `XXXXXXXXXXXXXX`. Exemplo: `32593371000110`. | Sim |
-| transaction > order > buyer > shippingAddress | Alfanumérico |  | Endereço de envio do comprador. | Sim |
-| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Máx:150 | Linha 1 do endereço de entrega do comprador. | Sim |
-| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Cidade do endereço de entrega do comprador. | Sim |
-| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Estado do endereço de entrega do comprador. Para o Brasil, envie apenas dois caracteres, Por exemplo, definir `SP` para São Paulo. | Sim |
-| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País do endereço do comprador no formato ISO 3166 alpha-2. | Sim |
-| transaction > order > buyer > shippingAddress > postalCode | Número | Máx:20 | CEP do endereço do comprador. Para o Brasil, use o formato `XXXXX-XXX` ou `XXXXXXXX`. Exemplo: `09210-710` ou `09210710`. | Sim |
-| transaction > order > buyer > shippingAddress > phone | Número | Máx:20 | Número de telefone do endereço do comprador. Para o Brasil, use o formato `ddd(2)+number(7-9)`. Exemplo: `(11)756312633`. | Sim |
-| transaction > order > additionalValues > |  | 64 | Valor da ordem ou seus valores associados. | Sim |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Valor da transação. | Sim |
+| transaction > order > buyer > cnpj | Alfanumérico | Máx:14 | Número de identificação do comprador (para pessoa jurídica Não Brasil). Você deve usar um algoritmo para validar o CNPJ, que deve ser definido usando o formato `XXXXXXXXXXXXXX`. Exemplo: `32593371000110`. | Sim |
+| transaction > order > buyer > shippingAddress | Alfanumérico | | Endereço de envio do comprador. | Não |
+| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Máx:150 | Linha 1 do endereço de entrega do comprador. | Não |
+| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Cidade do endereço de entrega do comprador. | Não |
+| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Estado do endereço de entrega do comprador. Para o Brasil, envie apenas dois caracteres, Por exemplo, definir `SP` para São Paulo. | Não |
+| transaction > order > buyer > shippingAddress > country | Alfanumérico |2| País do endereço do comprador Não formato ISO 3166 alpha-2. | Não |
+| transaction > order > buyer > shippingAddress > postalCode | Número | Máx:20 | CEP do endereço do comprador. Para o Brasil, use o formato `XXXXX-XXX` ou `XXXXXXXX`. Exemplo: `09210-710` ou `09210710`. | Não |
+| transaction > order > buyer > shippingAddress > phone | Número | Máx:20 | Número de telefone do endereço do comprador. Para o Brasil, use o formato `ddd(2)+number(7-9)`. Exemplo: `(11)756312633`. | Não |
+| transaction > order > additionalValues > | |64| Valor da ordem ou seus valores associados. | Sim |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico |64| Valor da transação. | Sim |
 | transaction > order > additionalValues > TX_VALUE > value | Número | 12, 2 | Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo `10000.00` ou `10000`). | Sim |
-| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sim |
-| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Total do Imposto sobre Valor Agregado (IVA). | Sim |
-| transaction > order > additionalValues > TX_TAX > value | Número | 12, 2 | Especifica o valor do IVA.  | Não |
-| transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para cálculo do VAT.<br>Se o valor não tiver IVA, envie 0.<br>Este valor pode ter duas casas decimais.  | Não |
+| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico |3| Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sim |
+| transaction > order > additionalValues > TX_TAX | Alfanumérico |64| Total do Imposto sobre Valor Agregado (IVA). | Não |
+| transaction > order > additionalValues > TX_TAX > value | Número | 12, 2 | Especifica o valor do IVA. | Não |
+| transaction > order > additionalValues > TX_TAX > currency | Alfanumérico |3| Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico |64| Valor base para cálculo do VAT.<br>Se o valor não tiver IVA, envie 0.<br>Este valor pode ter duas casas decimais. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica o valor base da transação. | Não |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
-| transaction > payer |  |  | Informações do pagador. | Sim |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico |3| Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
+| transaction > payer | | | Informações do pagador. | Sim |
 | transaction > payer > emailAddress | Alfanumérico | Máx:255 | Endereço de e-mail do pagador. | Não |
 | transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador do pagador em seu sistema. | Não |
-| transaction > payer > fullName | Alfanumérico | Máx:150 | Nome of the payer. | Sim |
-| transaction > payer > billingAddress |  |  | Endereço de cobrança. | Não |
+| transaction > payer > fullName | Alfanumérico | Máx:150 | Nãome of the payer. | Sim |
+| transaction > payer > billingAddress | | | Endereço de cobrança. | Não |
 | transaction > payer > billingAddress > street1 | Alfanumérico | Máx:100 | Endereço de cobrança linha 1. | Não |
 | transaction > payer > billingAddress > street2 | Alfanumérico | Máx:100 | Endereço de cobrança linha 2. | Não |
 | transaction > payer > billingAddress > city | Alfanumérico | Máx:50 | Cidade do endereço de cobrança. | Não |
 | transaction > payer > billingAddress > state | Alfanumérico | Máx:40 | Estado do endereço de cobrança. Para o Brasil, envie apenas dois caracteres, Por exemplo, definir `SP` para São Paulo. | Não |
-| transaction > payer > billingAddress > country | Alfanumérico | 2 | País do endereço de cobrança no formato ISO 3166 Alpha-2. | Não |
+| transaction > payer > billingAddress > country | Alfanumérico |2| País do endereço de cobrança Não formato ISO 3166 Alpha-2. | Não |
 | transaction > payer > billingAddress > postalCode | Alfanumérico | Máx:20 | CEP do endereço de cobrança. Para o Brasil, use o formato `XXXXX-XXX` ou ´. Exemplo: `09210-710` ou `09210710`. | Não |
 | transaction > payer > billingAddress > phone | Alfanumérico | Máx:20 | Número de telefone do endereço de cobrança. Para o Brasil, use o formato `ddd(2)+number(7-9)`. Exemplo: `(11)756312633`. | Não |
 | transaction > payer > birthdate | Alfanumérico | Máx:10 | Data de nascimento do pagador. | Não |
-| transaction > payer > contactPhone | Alfanumérico | Máx:20 | Número de telefone do pagador. Para o Brasil, use o formato `ddd(2)+number(7-9)`. Exemplo: `(11)756312633`. | Não |
-| transaction > payer > dniNumber | Alfanumérico | Máx:20 | Número de identificação do pagador. Você deve usar um algoritmo para validar o CPF, que deve ser definido usando o formato `XXX.XXX.XXX-XX`. Exemplo: `811.807.405-64`. | Não |
-| transaction > payer > cnpj | Alfanumérico | Máx:14 | Número de identificação do comprador (para pessoa jurídica no Brasil). Você deve usar um algoritmo para validar o CNPJ, que deve ser definido usando o formato `XXXXXXXXXXXXXX`. Exemplo: `32593371000110`. | Não |
-| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificação do pagador. [Veja os tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Não |
-| transaction > type | Alfanumérico | 32 | Como os pagamentos PIX são feitos com o telefone celular do pagador, o único tipo de transação disponível é `AUTHORIZATION_AND_CAPTURE`. | Sim |
-| transaction > paymentMethod | Alfanumérico | 32 | Definir `PIX` para este método de pagamento. Se você quiser ver outro método de pagamento, consulte [Métodos de pagamento para o Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sim |
-| transaction > paymentCountry | Alfanumérico | 2 | Definir `BR` para o Brasil. | Sim |
-| transaction > deviceSessionId | Alfanumérico | Máx:255 | Identificador da sessão do dispositivo onde o cliente faz a transação. Para obter mais informações, consulte [este tópico]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sim |
+| transaction > payer > contactPhone | Alfanumérico | Máx:20 | Número de telefone do pagador. Para o Brasil, use o formato `ddd(2)+number(7-9)`. Exemplo: `(11)756312633`. | Sim |
+| transaction > payer > dniNumber | Alfanumérico | Máx:20 | Número de identificação do pagador. Você deve usar um algoritmo para validar o CPF, que deve ser definido usando o formato `XXX.XXX.XXX-XX`. Exemplo: `811.807.405-64`. | Sim |
+| transaction > payer > cnpj | Alfanumérico | Máx:14 | Número de identificação do comprador (para pessoa jurídica Não Brasil). Você deve usar um algoritmo para validar o CNPJ, que deve ser definido usando o formato `XXXXXXXXXXXXXX`. Exemplo: `32593371000110`. | Não |
+| transaction > payer > dniType | Alfanumérico |2| Tipo de identificação do pagador. [Veja os tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sim |
+| transaction > type | Alfanumérico |32| Como os pagamentos PIX são feitos com o telefone celular do pagador, o único tipo de transação disponível é `AUTHORIZATION_AND_CAPTURE`. | Sim |
+| transaction > paymentMethod | Alfanumérico |32| Definir `PIX` para este método de pagamento. Se você quiser ver outro método de pagamento, consulte [Métodos de pagamento para o Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sim |
+| transaction > paymentCountry | Alfanumérico |2| Definir `BR` para o Brasil. | Sim |
+| transaction > deviceSessionId | Alfanumérico | Máx:255 | Identificador da sessão do dispositivo onde o cliente faz a transação. Para obter mais informações, consulte [este tópico]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Não |
 | transaction > ipAddress | Alfanumérico | Máx:39 | Endereço IP do dispositivo onde o cliente faz a transação. | Sim |
-| transaction > extraParameters |  |  | Parâmetros ou dados adicionais associados a pedido. O tamanho máximo de cada nome _extraParameters_ é de 64 caracteres.<br>Em JSON, o parâmetro _extraParameters_ segue esta estrutura: <br>`"extraParameters": {`<br>&emsp;`"PARAMETER_NAME": "VALUE"`<br>`}`<br><br>Em XML, o parâmetro _extraParameters_ segue esta estrutura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>PARAMETER_NAME</string>`<br>&emsp;&emsp;`<string>VALUE</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`<br>_Defina o respectivo tipo de dados_  | Não |
+| transaction > extraParameters | | | Parâmetros ou dados adicionais associados a pedido. O tamanho máximo de cada Nãome _extraParameters_ é de 64 caracteres.<br>Em JSON, o parâmetro _extraParameters_ segue esta estrutura: <br>`"extraParameters": {`<br>&emsp;`"PARAMETER_NAME": "VALUE"`<br>`}`<br><br>Em XML, o parâmetro _extraParameters_ segue esta estrutura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>PARAMETER_NAME</string>`<br>&emsp;&emsp;`<string>VALUE</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`<br>_Defina o respectivo tipo de dados_ | Não |
 
 </details>
 
