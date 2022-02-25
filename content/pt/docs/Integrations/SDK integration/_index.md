@@ -27,7 +27,7 @@ Em geral, você precisa das seguintes bibliotecas em seu classpath:
 * [Commons-codec-1.6.jar](https://mvnrepository.com/artifact/commons-codec/commons-codec/1.6)
 * [Commons-lang3-3.5.jar](https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.5)
 
-<a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.3.9.zip" target="_blank" class="payu-btn-green">Faça download do SDK Java 1.3.9</a>
+<a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Faça download do SDK Java 1.4.0</a>
 
 Antes de realizar qualquer operação com o SDK, você precisa atribuir alguns valores à classe `PayU`, que se aplica a todas as operações do SDK e deve ser configurada com os dados da sua loja. A tabela a seguir mostra os valores que você precisa configurar.
 
