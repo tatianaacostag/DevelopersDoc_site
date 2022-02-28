@@ -96,7 +96,7 @@ Para solicitar un reembolso, la transacción debe estar aprobada y sin ningún p
 Cuando el reembolso haya sido aprobado, puedes generar un recibo o enviar el comprobante al pagador. Para esto, sigue las instrucciones dependiendo de la operación que quieras realizar.
 
 ### Generar el recibo del reembolso {#generate-the-refund-receipt}
-Para generar el recibo del reembolso, encuentra la venta reembolsada y haz clic en el botón de impresoa ubicado en la esquina superior derecha del panel de detalles de la transacción.
+Para generar el recibo del reembolso, encuentra la venta reembolsada y haz clic en el botón de impresora ubicado en la esquina superior derecha del panel de detalles de la transacción.
 
 <img src="/assets/Refunds/Refunds_es_11.png" alt="PrintScreen" width="50%"/><br>
 
