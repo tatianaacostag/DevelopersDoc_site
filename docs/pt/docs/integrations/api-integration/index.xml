@@ -341,7 +341,7 @@
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -362,7 +362,7 @@
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -383,7 +383,7 @@
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -1837,7 +1837,7 @@
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -1858,7 +1858,7 @@
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -1879,7 +1879,7 @@
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -2922,7 +2922,22 @@
       <description>
         
         
-        &lt;p&gt;Para integrar com a API de pagamentos do Brasil, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.&lt;/p&gt;
+        &lt;script&gt;
+   function hideAlert() {
+      var today = new Date();
+      var launchDate = new Date(&#34;2/17/22&#34;);
+      var note = document.getElementsByClassName(&#34;pageinfo pageinfo-info&#34;)[0];
+      if((today - launchDate) &gt; 0) {
+         note.style.display = &#34;none&#34;;
+
+      } else {
+         note.style.display = &#34;&#34;;
+      }
+   }
+  
+   window.onload = hideAlert;
+&lt;/script&gt;
+&lt;p&gt;Para integrar com a API de pagamentos do Brasil, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -3569,7 +3584,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -3590,7 +3605,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -3611,7 +3626,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -4924,6 +4939,14 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;p&gt;Este método permite processar pagamentos usando PIX. Para fazer a integração com o PIX, você precisa incluir na página de checkout um código QR que seu cliente possa ler com o smartphone para fazer o pagamento.&lt;/p&gt;
 &lt;p&gt;Depois, seu cliente vê uma página de checkout como esta.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/PixCheckout.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;pageinfo pageinfo-info&#34;&gt;
+&lt;h4 id=&#34;observação&#34;&gt;Observação&lt;/h4&gt;
+&lt;p&gt;A integração com o &lt;strong&gt;PIX&lt;/strong&gt; estará disponível a partir de &lt;em&gt;16 de fevereiro de 2022&lt;/em&gt;. Para mais informações, consulte seu representante de vendas.&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;h3 id=&#34;how-does-pix-work&#34;&gt;Como funciona o PIX?&lt;/h3&gt;
 &lt;p&gt;PIX é um método de transferência online lançado em novembro de 2020 pelo Banco Central do Brasil (BACEN) que permite realizar e receber transferências com facilidade independente do banco que emitiu sua conta.&lt;/p&gt;
 &lt;p&gt;Ao contrário de outros métodos de transferência bancária e envio de dinheiro, o PIX permite que você receba transferências imediatamente, sem compartilhar o número da sua conta, a qualquer hora ou dia. Os fundos recebidos por meio deste método de pagamento aparecerão em sua conta PayU em questão de segundos.&lt;/p&gt;
@@ -5047,7 +5070,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Máx:2048&lt;/td&gt;
 &lt;td&gt;URL de confirmação da ordem.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; partnerId&lt;/td&gt;
@@ -5155,6 +5178,13 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; dniType&lt;/td&gt;
+&lt;td&gt;Alfanumérico&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Tipo de identificação do pagador. &lt;a href=&#34;../../../../pt/docs/getting-started/response-codes-and-variables.html#document-types&#34;&gt;Veja os tipos de documentos&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; dniNumber&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Máx:20&lt;/td&gt;
@@ -5173,49 +5203,49 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Endereço de envio do comprador.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; street1&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Máx:150&lt;/td&gt;
 &lt;td&gt;Linha 1 do endereço de entrega do comprador.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; city&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Máx:50&lt;/td&gt;
 &lt;td&gt;Cidade do endereço de entrega do comprador.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; state&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Máx:40&lt;/td&gt;
 &lt;td&gt;Estado do endereço de entrega do comprador. Para o Brasil, envie apenas dois caracteres, Por exemplo, definir &lt;code&gt;SP&lt;/code&gt; para São Paulo.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; country&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
 &lt;td&gt;País do endereço do comprador no formato ISO 3166 alpha-2.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; postalCode&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
 &lt;td&gt;Máx:20&lt;/td&gt;
 &lt;td&gt;CEP do endereço do comprador. Para o Brasil, use o formato &lt;code&gt;XXXXX-XXX&lt;/code&gt; ou &lt;code&gt;XXXXXXXX&lt;/code&gt;. Exemplo: &lt;code&gt;09210-710&lt;/code&gt; ou &lt;code&gt;09210710&lt;/code&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; phone&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
 &lt;td&gt;Máx:20&lt;/td&gt;
 &lt;td&gt;Número de telefone do endereço do comprador. Para o Brasil, use o formato &lt;code&gt;ddd(2)+number(7-9)&lt;/code&gt;. Exemplo: &lt;code&gt;(11)756312633&lt;/code&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt;&lt;/td&gt;
@@ -5234,7 +5264,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -5250,12 +5280,12 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;64&lt;/td&gt;
 &lt;td&gt;Total do Imposto sobre Valor Agregado (IVA).&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -5276,7 +5306,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -5383,14 +5413,14 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Máx:20&lt;/td&gt;
 &lt;td&gt;Número de telefone do pagador. Para o Brasil, use o formato &lt;code&gt;ddd(2)+number(7-9)&lt;/code&gt;. Exemplo: &lt;code&gt;(11)756312633&lt;/code&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; dniNumber&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Máx:20&lt;/td&gt;
 &lt;td&gt;Número de identificação do pagador. Você deve usar um algoritmo para validar o CPF, que deve ser definido usando o formato &lt;code&gt;XXX.XXX.XXX-XX&lt;/code&gt;. Exemplo: &lt;code&gt;811.807.405-64&lt;/code&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; cnpj&lt;/td&gt;
@@ -5404,7 +5434,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
 &lt;td&gt;Tipo de identificação do pagador. &lt;a href=&#34;../../../../pt/docs/getting-started/response-codes-and-variables.html#document-types&#34;&gt;Veja os tipos de documentos&lt;/a&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
@@ -5432,7 +5462,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Máx:255&lt;/td&gt;
 &lt;td&gt;Identificador da sessão do dispositivo onde o cliente faz a transação. Para obter mais informações, consulte &lt;a href=&#34;../../../../pt/docs/integrations.html#_devicesessionid_-variable&#34;&gt;este tópico&lt;/a&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; ipAddress&lt;/td&gt;
@@ -5848,13 +5878,6 @@ Recomenda-se exibir em seu Checkout a imagem do código QR (parâmetro &lt;code&
 &lt;h2 id=&#34;submit-transaction-with-cash&#34;&gt;Enviar transação em dinheiro&lt;/h2&gt;
 &lt;p&gt;Este método permite processar os pagamentos de seus clientes em dinheiro. Para integrar com transações em dinheiro, você deve redirecionar o cliente para a URL encontrada na resposta do método; Seu cliente verá um recibo de pagamento como este.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/Payments/CashReceiptBR.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
-&lt;/div&gt;
-
 &lt;h3 id=&#34;variables-for-request-and-response-2&#34;&gt;Variáveis para pedido e resposta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Pedido&lt;/summary&gt;
@@ -6147,7 +6170,7 @@ A integração com o PIX estará disponível a partir de janeiro 2022. Para mais
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -6168,7 +6191,7 @@ A integração com o PIX estará disponível a partir de janeiro 2022. Para mais
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -6189,7 +6212,7 @@ A integração com o PIX estará disponível a partir de janeiro 2022. Para mais
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -7021,7 +7044,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -7042,7 +7065,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -7063,7 +7086,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -8412,8 +8435,8 @@ Transações com cartão de crédito usando fluxos de duas etapas estão dispon�
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
-&lt;td&gt;Specifies the amount da transação. This amount cannot include decimals.&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Especifica o valor da transação. Este valor não pode incluir decimais.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -8433,7 +8456,7 @@ Transações com cartão de crédito usando fluxos de duas etapas estão dispon�
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -8454,7 +8477,7 @@ Transações com cartão de crédito usando fluxos de duas etapas estão dispon�
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -9889,8 +9912,8 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
-&lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Especifica o valor da transação. Este valor não pode incluir decimais.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -9910,7 +9933,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -9931,7 +9954,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -10783,8 +10806,8 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
-&lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Especifica o valor da transação. Este valor não pode incluir decimais.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -10804,7 +10827,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -10825,7 +10848,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -12241,8 +12264,8 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
-&lt;td&gt;Specifies the amount da transação. This amount cannot include decimals.&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Especifica o valor da transação. Este valor não pode incluir decimais.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12262,7 +12285,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;br&gt;Se este parâmetro não for definido, PayU aplica o valor do imposto atual (19%).&lt;br&gt;Se o valor não tiver IVA, envie 0.&lt;br&gt;Este valor pode ter duas casas decimais&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -12283,7 +12306,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -12852,7 +12875,14 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;deviceSessionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;vghs6tvkcle931686k1900o6e1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ipAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;cookie&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pt1t38347bs6jc9ruv2ecpv7o2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;userAgent&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;userAgent&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;threeDomainSecure&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;embedded&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;eci&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;01&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;cavv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;AOvG5rV058/iAAWhssPUAAADFA==&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;xid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Nmp3VFdWMlEwZ05pWGN3SGo4TDA=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;directoryServerTransactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;00000-70000b-5cc9-0000-000000000cb&amp;#34;&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
@@ -13002,6 +13032,13 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;ipAddress&amp;gt;&lt;/span&gt;127.0.0.1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/ipAddress&amp;gt;&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;cookie&amp;gt;&lt;/span&gt;pt1t38347bs6jc9ruv2ecpv7o2&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/cookie&amp;gt;&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;userAgent&amp;gt;&lt;/span&gt;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/userAgent&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;threeDomainSecure&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;embedded&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/embedded&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;eci&amp;gt;&lt;/span&gt;01&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/eci&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;cavv&amp;gt;&lt;/span&gt;AOvG5rV058/iAAWhssPUAAADFA==&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/cavv&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;xid&amp;gt;&lt;/span&gt;Nmp3VFdWMlEwZ05pWGN3SGo4TDA=&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/xid&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;directoryServerTransactionId&amp;gt;&lt;/span&gt;00000-70000b-5cc9-0000-000000000cb&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/directoryServerTransactionId&amp;gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/threeDomainSecure&amp;gt;&lt;/span&gt;
    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transaction&amp;gt;&lt;/span&gt;
    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;isTest&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/isTest&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/request&amp;gt;&lt;/span&gt;
@@ -13333,8 +13370,8 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
-&lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Especifica o valor da transação. Este valor não pode incluir decimais.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -13354,7 +13391,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;br&gt;Se este parâmetro não for definido, PayU aplica o valor do imposto atual (19%).&lt;br&gt;Se o valor não tiver IVA, envie 0.&lt;br&gt;Este valor pode ter duas casas decimais&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -13375,7 +13412,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -14357,8 +14394,8 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
-&lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Especifica o valor da transação. Este valor não pode incluir decimais.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -16648,7 +16685,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -16669,7 +16706,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -16690,7 +16727,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -18178,7 +18215,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -18199,7 +18236,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -18220,7 +18257,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -19108,7 +19145,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -19129,7 +19166,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -19150,7 +19187,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -20056,7 +20093,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -20077,7 +20114,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -20098,7 +20135,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -21472,8 +21509,8 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
-&lt;td&gt;Specifies the amount da transação. This amount cannot include decimals.&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Especifica o valor da transação, este valor pode ter duas casas decimais (por exemplo 10000.00 ou 10000).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -21493,7 +21530,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -21514,7 +21551,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -22936,7 +22973,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -22957,7 +22994,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -22978,7 +23015,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -24385,7 +24422,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor da transação. Este valor pode ter duas casas decimais (por exemplo &lt;code&gt;10000.00&lt;/code&gt; ou &lt;code&gt;10000&lt;/code&gt;).&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
@@ -24406,7 +24443,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor do IVA.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -24427,7 +24464,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;19, 2&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
 &lt;td&gt;Especifica o valor base da transação.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -30334,19 +30371,13 @@ Se o esquema não for validado, a integração não será afetada e você só pr
 &lt;li&gt;O tempo máximo para enviar um cancelamento é de 7 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada.&lt;/li&gt;
 &lt;li&gt;O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é:
 &lt;ul&gt;
-&lt;li&gt;90 dias para transações com PIX&lt;sup&gt;*&lt;/sup&gt; ou processadas na Redecard .&lt;/li&gt;
+&lt;li&gt;90 dias para transações com PIX ou processadas na Redecard .&lt;/li&gt;
 &lt;li&gt;120 dias para transações processadas na  Cielo.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no máximo 15 dias úteis.&lt;/li&gt;
+&lt;li&gt;Apenas um reembolso por transação é permitido ao usar o PIX.&lt;/li&gt;
+&lt;li&gt;Quando um reembolso é aprovado para transações PIX, o pagador recebe o dinheiro imediatamente. Caso contrário, o pagador recupera em no máximo 15 dias úteis.&lt;/li&gt;
 &lt;/ul&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;sup&gt;*&lt;/sup&gt; A integração com o PIX estará disponível a partir de janeiro 2022. Para mais informações, consulte com o seu executivo de vendas.
-&lt;/div&gt;
-
 &lt;h3 id=&#34;chile&#34;&gt;Chile&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Devido a restrições de rede, o cancelamento pode ser autorizado nas primeiras três horas após a autorização. Se nenhum cancelamento ou reembolso for enviado após de 7 dias, a transação será cancelada automaticamente (auto-void).&lt;/li&gt;

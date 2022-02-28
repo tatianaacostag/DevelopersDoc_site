@@ -152,7 +152,7 @@ Refer to &lt;a href=&#34;../../../en/docs/getting-started/select-your-payment-me
         
         
         &lt;h2 id=&#34;what-is-3ds&#34;&gt;What is 3DS?&lt;/h2&gt;
-&lt;p&gt;3DS (Three-Domain Secure) is a messaging protocol that enables the issues to authenticate their cardholders during the online shops. This authentication is performed before authorize the transaction and follows the next flow.&lt;/p&gt;
+&lt;p&gt;3DS (Three-Domain Secure) is a messaging protocol that enables the issuers to authenticate their cardholders during the online shops. This authentication is performed before the transaction is authorized and follows the next flow.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/3DS/3DS_whatis_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The next infographic explains the authentication flow for 3DS.&lt;/p&gt;
 &lt;div class=&#34;infographicDiv&#34; align=&#34;center&#34;&gt;
@@ -175,7 +175,7 @@ Refer to &lt;a href=&#34;../../../en/docs/getting-started/select-your-payment-me
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&#34;DivWhite Div4&#34; &gt;
-        &lt;p align=&#34;center&#34;&gt;The issuer successfully authenticates the card used by John to perform the purchase. Since the risk was low, the authentication was silent without contacting John.&lt;/p&gt;
+        &lt;p align=&#34;center&#34;&gt;The issuer authenticates the buyer that is making the transaction successfully. Since the risk was low, the authentication was silent without contacting John.&lt;/p&gt;
         &lt;hr style=&#34;border: 1px solid #ACC629;&#34;&gt;
         &lt;p align=&#34;center&#34;&gt;When the transaction involves higher risk, John may receive a simple challenge, such as an OTP sent to his cellphone.&lt;/p&gt;
         &lt;div class=&#34;img4&#34;&gt;
@@ -213,7 +213,7 @@ Supports a strong customer authentication for issuers, acquirers, and payment se
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;Pass Through&lt;/strong&gt;&lt;/em&gt;: if you have your own 3DS Authentication service, you can send us the authentication response in the payment request. Under this modality, you are responsible for the integration with an &lt;em&gt;&lt;strong&gt;MPI&lt;/strong&gt;&lt;/em&gt; or a &lt;em&gt;&lt;strong&gt;3DS Server&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;For more information, contact your sales representative.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;2-calls Authentication flow&lt;/strong&gt;&lt;/em&gt;: if you want to authenticate the transaction using the PayU, you can integrate through &lt;strong&gt;PayU Hub&lt;/strong&gt;&lt;sup&gt;*&lt;/sup&gt; using the &lt;a href=&#34;https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html&#34;&gt;Authentication Service&lt;/a&gt; that operates in two calls flow, one call for authentication and other for authorization.&lt;br&gt;To authenticate, you must connect to the PayU Hub, where you will get the authentication response.&lt;br&gt;To authorize, you can chose to go through &lt;strong&gt;PayU Latam&lt;/strong&gt; or &lt;strong&gt;PayU Hub&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;2-calls Authentication flow&lt;/strong&gt;&lt;/em&gt;: if you want to authenticate the transaction using PayU, you can integrate through &lt;strong&gt;PayU Hub&lt;/strong&gt;&lt;sup&gt;*&lt;/sup&gt; using the &lt;a href=&#34;https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html&#34;&gt;Authentication Service&lt;/a&gt; that operates in two calls flow, one call for authentication and other for authorization.&lt;br&gt;To authenticate, you must connect to the PayU Hub, where you will get the authentication response.&lt;br&gt;To authorize, you can chose to go through &lt;strong&gt;PayU Latam&lt;/strong&gt; or &lt;strong&gt;PayU Hub&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;strong&gt;PayU Hub&lt;/strong&gt;, is the solution for borderless Payments. With a single API integration, you can process local payments in 18 markets.&lt;/p&gt;
@@ -230,7 +230,7 @@ Supports a strong customer authentication for issuers, acquirers, and payment se
 &lt;li&gt;The authorization must include the authentication response.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;benefits-of-our-solution&#34;&gt;Benefits of our solution&lt;/h3&gt;
-&lt;p&gt;Regardless of how you integrate with our 3DS Authentication solution, you have the following benefits.&lt;/p&gt;
+&lt;p&gt;When using the Authentication Service featured by &lt;strong&gt;PayU Hub&lt;/strong&gt; (2-calls Authentication flow), you have the following benefits.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;PayU is connected to a 3DS server (MPI), you don&amp;rsquo;t need to do it by your own. Less providers &amp;amp; contracts!&lt;/li&gt;
 &lt;li&gt;You control and decide when to authenticate a transaction.&lt;/li&gt;
@@ -239,15 +239,8 @@ Supports a strong customer authentication for issuers, acquirers, and payment se
 &lt;li&gt;If you migrate to the HUB, you can have additional benefits of a global solution.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;The acquirers may charge an authentication cost, if so, this cost will be transferred to you.&lt;/em&gt;&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-We are working on connecting to multiple 3DS server providers to improve performance and guarantee authentication service always.
-&lt;/div&gt;
-
 &lt;h3 id=&#34;how-to-integrate-3ds&#34;&gt;How to integrate 3DS?&lt;/h3&gt;
-&lt;p&gt;Depending on the scenario you choose to use the 3DS Authentication, the integration procedure varies.&lt;/p&gt;
+&lt;p&gt;3DS Authentication is a service available under demand, contact your Key Account Manager or Technical support to enable it.&lt;br&gt;Depending on the scenario you choose to use the 3DS Authentication, the integration procedure varies.&lt;/p&gt;
 &lt;h4 id=&#34;pass-through&#34;&gt;Pass Through&lt;/h4&gt;
 &lt;p&gt;When you are integrated with an &lt;em&gt;&lt;strong&gt;MPI&lt;/strong&gt;&lt;/em&gt; or a &lt;em&gt;&lt;strong&gt;3DS Server&lt;/strong&gt;&lt;/em&gt;, you just need to send us the authentication response in the payment request. Refer to your processing country to see an example of how to send the parameters returned in the response:&lt;/p&gt;
 &lt;div style=&#34;display: flex;&#34;&gt;
@@ -266,7 +259,7 @@ We are working on connecting to multiple 3DS server providers to improve perform
 &lt;p&gt;To get started, open an account on the &lt;strong&gt;PayU Hub&lt;/strong&gt;.&lt;br&gt;Click &lt;a href=&#34;https://control.paymentsos.com/signup&#34;&gt;here&lt;/a&gt; to create one.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Update your integration code. Ask your developers to update their integration code to connect through the PayU Hub.&lt;/p&gt;
+&lt;p&gt;Update your integration code. Ask your developers to update their integration code to connect through the &lt;strong&gt;PayU Hub&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Test your integration and go live!&lt;/p&gt;
@@ -562,6 +555,7 @@ For Mexico, you can use &lt;a href=&#34;../../../en/docs/services/promotions.htm
 &lt;li&gt;Payouts allows local payments only. The merchant may be international (under security and risk analysis) but they can only request payouts using the funds collected in the processing country.&lt;br&gt;For example, if the merchant &lt;em&gt;ABC&lt;/em&gt; processes in Colombia and Peru, they can request payouts to payees in Colombia using the funds collected in Colombia; they cannot request payouts to payees in Peru using the funds collected in Colombia.&lt;/li&gt;
 &lt;li&gt;Once the payout is created, it takes the regular flow in PayU. This means that you can see the payout created in your PayU module.&lt;/li&gt;
 &lt;li&gt;The merchant must prove the relationship between them and their payees to guarantee that the transaction is legit.&lt;/li&gt;
+&lt;li&gt;Payouts for Daviplata accounts are not supported.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- * For Gambling commerces, Payouts cannot be used to make refunds. Therefore, it is necessary to guarantee that the commerce is paying a prize. --&gt;
 &lt;h2 id=&#34;transaction-processing&#34;&gt;Transaction processing&lt;/h2&gt;

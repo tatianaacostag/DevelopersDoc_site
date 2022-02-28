@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-12-17T12:47:35-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2022-02-22T16:36:38-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de Pagos - Brasil">
 <meta itemprop="description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-12-17T12:47:35-05:00" />
-<meta itemprop="wordCount" content="11890">
+<meta itemprop="dateModified" content="2022-02-22T16:36:38-05:00" />
+<meta itemprop="wordCount" content="11949">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Pagos - Brasil"/>
 <meta name="twitter:description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
@@ -141,7 +141,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.bc31374fb0a64bcc39d704bf897e4426c0d22ff3f2f10dc959b40600720631fc64793189f1af9571d7e2d7a3f2bb92c3bc98b1deb004a1641b4b567c5610b880.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.0dfe8e5a683a9af21191098be113b0953ce3247da369b531fa2318f4da0e9b387ac5e366b3386d745116e0f323d4f84384dec77df750a2e96dc13743e11c0440.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -269,6 +269,12 @@
       
       
         <a id="/es/docs/services/payments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespaymentshtml" href="../../../../es/docs/services/payments.html">Pagos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservices3ds-authenticationhtml" href="../../../../es/docs/services/3ds-authentication.html">Autenticación 3DS</a>
       
       
       
@@ -835,7 +841,22 @@
 	<h1>API de Pagos - Brasil</h1>
     <div class="lead">El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.</div>
 	       
-	<p>Para integrarte con el API de Pagos de Brasil, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.</p>
+	<script>
+   function hideAlert() {
+      var today = new Date();
+      var launchDate = new Date("2/17/22");
+      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
+      if((today - launchDate) > 0) {
+         note.style.display = "none";
+
+      } else {
+         note.style.display = "";
+      }
+   }
+  
+   window.onload = hideAlert;
+</script>
+<p>Para integrarte con el API de Pagos de Brasil, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.</p>
 
 
 <div class="alert alert-info" role="alert">
@@ -1482,7 +1503,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. <code>10000.00</code> o <code>10000</code>).</td>
 <td style="text-align:center">Sí</td>
 </tr>
@@ -1503,7 +1524,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto del impuesto.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1524,7 +1545,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto base de la transacción.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -2839,9 +2860,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <p><img src="../../../../assets/Payments/PixCheckout.png" alt="PrintScreen"></p>
 
 
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Nota</h4>
-La integración con PIX como medio de pago estará disponibles desde enero del 2022. Para más información, consulta a tu representante de ventas.
+<div class="pageinfo pageinfo-info">
+<h4 id="nota">Nota</h4>
+<p>La integración con <strong>PIX</strong> como medio de pago estará disponibles desde el <em>16 de febrero del 2022</em>. Para más información, consulta a tu representante de ventas.</p>
+
 </div>
 
 <h3 id="how-does-pix-work">¿Cómo funciona PIX?</h3>
@@ -3058,7 +3080,7 @@ La integración con PIX como medio de pago estará disponibles desde enero del 2
 <td>Alfanumérico</td>
 <td>Max:150</td>
 <td>Nombre del comprador.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; emailAddress</td>
@@ -3072,6 +3094,13 @@ La integración con PIX como medio de pago estará disponibles desde enero del 2
 <td>Alfanumérico</td>
 <td>Max:20</td>
 <td>Teléfono del comprador.</td>
+<td style="text-align:center">Sí</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; dniType</td>
+<td>Alfanumérico</td>
+<td>2</td>
+<td>Tipo de identificación del comprador. <a href="../../../../es/docs/getting-started/response-codes-and-variables.html#document-types">Ver tipos de documentos</a>.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -3093,49 +3122,49 @@ La integración con PIX como medio de pago estará disponibles desde enero del 2
 <td>Alfanumérico</td>
 <td></td>
 <td>Dirección de envío del comprador.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; street1</td>
 <td>Alfanumérico</td>
 <td>Max:150</td>
 <td>Línea de dirección 1 del comprador.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; city</td>
 <td>Alfanumérico</td>
 <td>Max:50</td>
 <td>Ciudad de la dirección del comprador.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; state</td>
 <td>Alfanumérico</td>
 <td>Max:40</td>
 <td>Estado de la dirección del comprador. Para Brasil, solo debes enviar dos caracteres, por ejemplo, asigna <code>SP</code> para São Paulo.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; country</td>
 <td>Alfanumérico</td>
 <td>2</td>
 <td>País de la dirección del comprador en formato ISO 3166 alpha-2.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; postalCode</td>
 <td>Numérico</td>
 <td>Max:20</td>
 <td>Código postal de la dirección del comprador. Para Brasil, utiliza el formato <code>XXXXX-XXX</code> o <code>XXXXXXXX</code>. Ejemplo: <code>09210-710</code> o <code>09210710</code>.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; phone</td>
 <td>Numérico</td>
 <td>Max:20</td>
 <td>Teléfono asociado a la dirección del comprador. Para Brasil, utiliza el formato <code>ddd(2)+number(7-9)</code>. Ejemplo: <code>(11)756312633</code>.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
@@ -3154,7 +3183,7 @@ La integración con PIX como medio de pago estará disponibles desde enero del 2
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. <code>10000.00</code> o <code>10000</code>).</td>
 <td style="text-align:center">Sí</td>
 </tr>
@@ -3170,12 +3199,12 @@ La integración con PIX como medio de pago estará disponibles desde enero del 2
 <td>Alfanumérico</td>
 <td>64</td>
 <td>Monto del impuesto a las ventas.</td>
-<td style="text-align:center">Sí</td>
+<td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto del impuesto.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -3196,7 +3225,7 @@ La integración con PIX como medio de pago estará disponibles desde enero del 2
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto base de la transacción.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -4060,7 +4089,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. <code>10000.00</code> o <code>10000</code>).</td>
 <td style="text-align:center">Sí</td>
 </tr>
@@ -4081,7 +4110,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto del impuesto.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -4102,7 +4131,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto base de la transacción.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -4934,7 +4963,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. <code>10000.00</code> o <code>10000</code>).</td>
 <td style="text-align:center">Sí</td>
 </tr>
@@ -4955,7 +4984,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto del impuesto.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -4976,7 +5005,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto base de la transacción.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -5991,9 +6020,9 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-17 de diciembre de 2021:
+22 de febrero de 2022:
 
- <b>Note for PIX (74765e3b)</b>
+ <b>Changes for PIX, mandatory fields and refunds notes (d53eebf6)</b>
 </div>
 </div>
 

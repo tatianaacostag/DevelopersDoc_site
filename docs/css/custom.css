@@ -14,6 +14,13 @@ img[alt=Concepts] {
     margin-right: auto;
 }
 
+.showMandatory {
+    margin: 30px 0px 0px;
+    display: block;
+    text-align: right;
+    color: gray;
+}
+
 #signature_apikey_response_page,
 #signature_apikey_confirmation_page {
     width: 27% !important;
@@ -67,7 +74,7 @@ img[alt=Concepts] {
 .longDiv, 
 .DivGray {
     width: 20%;
-    height: 600px;
+    height: 700px;
     float:left;
     background:linear-gradient(to bottom, #EEE 90%, white);
     padding: 20px;
@@ -77,7 +84,7 @@ img[alt=Concepts] {
 .Div4,
 .DivWhite {
     width: 20%;
-    height: 600px;
+    height: 700px;
     float:left;
     background:#FFF;
     padding: 20px;
@@ -171,3 +178,5 @@ img[alt=Concepts] {
         left:-11px;
     } 
   }
+
+  

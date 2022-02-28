@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/getting-started/test-your-solution.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-06T15:34:20-05:00" />
-<meta property="article:modified_time" content="2021-12-07T15:07:05-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2022-02-09T14:53:06-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Probar tu solución">
 <meta itemprop="description" content="PayU tiene un ambiente de sandbox en el cual, puedes probar tu solución antes de moverte al ambiente en vivo, donde puedes recibir pagos reales y transacciones.
 "><meta itemprop="datePublished" content="2021-04-06T15:34:20-05:00" />
-<meta itemprop="dateModified" content="2021-12-07T15:07:05-05:00" />
-<meta itemprop="wordCount" content="870">
+<meta itemprop="dateModified" content="2022-02-09T14:53:06-05:00" />
+<meta itemprop="wordCount" content="826">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Probar tu solución"/>
 <meta name="twitter:description" content="PayU tiene un ambiente de sandbox en el cual, puedes probar tu solución antes de moverte al ambiente en vivo, donde puedes recibir pagos reales y transacciones.
@@ -141,7 +141,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.bc31374fb0a64bcc39d704bf897e4426c0d22ff3f2f10dc959b40600720631fc64793189f1af9571d7e2d7a3f2bb92c3bc98b1deb004a1641b4b567c5610b880.json"
+  data-offline-search-index-json-src="../../../offline-search-index.0dfe8e5a683a9af21191098be113b0953ce3247da369b531fa2318f4da0e9b387ac5e366b3386d745116e0f323d4f84384dec77df750a2e96dc13743e11c0440.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -269,6 +269,12 @@
       
       
         <a id="/es/docs/services/payments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespaymentshtml" href="../../../es/docs/services/payments.html">Pagos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservices3ds-authenticationhtml" href="../../../es/docs/services/3ds-authentication.html">Autenticación 3DS</a>
       
       
       
@@ -1124,14 +1130,13 @@
 <li>Envía el mes de la expiración de la tarjeta mayor a <code>6</code> y el año debe ser <code>2023</code> o mayor. Ejemplo: <code>07/2027</code>.</li>
 </ul>
 </li>
-<li><strong>Para obtener transacciones <em>pendientes</em></strong>:
-<ul>
-<li>Envía <code>PENDING</code> en el nombre del tarjetahabiente.</li>
-<li>Envía <strong>777</strong> en el CVV de la tarjeta (para AMEX, utiliza <strong>7777</strong>).</li>
-<li>Envía el parámetro <code>test</code> como <em>true</em>.</li>
-<li>En la información del comprador y el pagador, asigna la dirección de correo electrónico <code>manual-review-hub@email.com</code>.</li>
 </ul>
-</li>
+<!--* **Para obtener transacciones _pendientes_**: 
+  - Envía `PENDING` en el nombre del tarjetahabiente.
+  - Envía **777** en el CVV de la tarjeta (para AMEX, utiliza **7777**).
+  - Envía el parámetro `test` como _true_.
+  - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-review-hub@email.com`.-->
+<ul>
 <li>Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia enviada en el request. Puedes utilizar un generador en línea de tarjetas de crédito o una de las  correspondientes a tu país mencionadas anteriormente.</li>
 <li>Para probar transferencias bancarias por PSE (Disponible en Colombia) en el ambiente de Sandbox de PayU, consulta la <a href="../../../assets/pse-test-guide-v5-es.pdf">Guía de pruebas PSE (PDF)</a>.</li>
 </ul>
@@ -1178,9 +1183,9 @@ data-postman-param="env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52IiwidmFsdW
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-7 de diciembre de 2021:
+9 de febrero de 2022:
 
- <b>publish December 2, 2021 (a9b9584b)</b>
+ <b>Changes from PRD environment (e098c823)</b>
 </div>
 </div>
 

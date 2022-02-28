@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-chile.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2021-11-25T12:20:57-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2022-01-11T11:59:26-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de Pagos - Chile">
 <meta itemprop="description" content="El API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2021-11-25T12:20:57-05:00" />
-<meta itemprop="wordCount" content="7781">
+<meta itemprop="dateModified" content="2022-01-11T11:59:26-05:00" />
+<meta itemprop="wordCount" content="7772">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de Pagos - Chile"/>
 <meta name="twitter:description" content="El API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
@@ -141,7 +141,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.bc31374fb0a64bcc39d704bf897e4426c0d22ff3f2f10dc959b40600720631fc64793189f1af9571d7e2d7a3f2bb92c3bc98b1deb004a1641b4b567c5610b880.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.0dfe8e5a683a9af21191098be113b0953ce3247da369b531fa2318f4da0e9b387ac5e366b3386d745116e0f323d4f84384dec77df750a2e96dc13743e11c0440.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -269,6 +269,12 @@
       
       
         <a id="/es/docs/services/payments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespaymentshtml" href="../../../../es/docs/services/payments.html">Pagos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservices3ds-authenticationhtml" href="../../../../es/docs/services/3ds-authentication.html">Autenticación 3DS</a>
       
       
       
@@ -1153,8 +1159,8 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
-<td>Especifica el monto de la transacción. This amount cannot include decimals.</td>
+<td>12, 2</td>
+<td>Especifica el monto de la transacción. Este valor no puede incluir decimales.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -1174,7 +1180,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto del impuesto.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1195,7 +1201,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto base de la transacción.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -2630,8 +2636,8 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
-<td>Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. <code>10000.00</code> o <code>10000</code>).</td>
+<td>12, 2</td>
+<td>Especifica el monto de la transacción. Este valor no puede incluir decimales.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -2651,7 +2657,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto del impuesto.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -2672,7 +2678,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto base de la transacción.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -3524,8 +3530,8 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
-<td>Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. <code>10000.00</code> o <code>10000</code>).</td>
+<td>12, 2</td>
+<td>Especifica el monto de la transacción. Este valor no puede incluir decimales.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
@@ -3545,7 +3551,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto del impuesto.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -3566,7 +3572,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
 <td>Numérico</td>
-<td>19, 2</td>
+<td>12, 2</td>
 <td>Especifica el monto base de la transacción.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -4654,9 +4660,9 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-25 de noviembre de 2021:
+11 de enero de 2022:
 
- <b>Changes for Disputesand transaltions to portuguese (811169db)</b>
+ <b>Changes from production environment (3903bb40)</b>
 </div>
 </div>
 
