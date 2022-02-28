@@ -118,6 +118,13 @@ img[alt=ShoppingCartLogos] {
     margin-right: auto;
 }
 
+.showMandatory {
+    margin: 30px 0px 0px;
+    display: block;
+    text-align: right;
+    color: gray;
+}
+
 a.payu-btn-green {
     font-weight: 600;
     border-radius: 36px;

@@ -73,7 +73,7 @@ O painel _**Detalhes da transação**_ tem as seguintes seções:
 
 |  | Nome | Descrição |
 |:---:|---|---|
-| 1 | Informação da ordem |	Esta seção mostra o ID da ordem, sua última data de atualização, seu status, a descrição do status e a referência de venda. |
+| 1 | Informação da ordem |	Esta seção mostra o ID da ordem, sua última data de atualização, seu status, a descrição do status e a referência de venda.<br>Esta seção também mostra um botão para permitir que você imprima os detalhes da ordem. |
 | 2 | Produto ou serviço | Descrição do produto ou serviço que você forneceu na venda |
 | 3 | Meio de pagamento | Informação do meio de pagamento utilizado na compra. As informações exibidas nesta seção variam de acordo com a forma de pagamento.<br>Para pagamentos em dinheiro pendentes, esta seção permite que você veja o recibo de pagamento gerado para o comprador. |
 | 4 | Valores | Esta seção mostra os valores envolvidos nesta transação, como o _Valor cobrado_, _Valor pendente_, _Valor reembolsado_ (para reembolsos), _Valor expirado_ (para pagamentos em dinheiro). |

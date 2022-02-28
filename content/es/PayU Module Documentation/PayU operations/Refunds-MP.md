@@ -91,3 +91,32 @@ Para solicitar un reembolso, la transacción debe estar aprobada y sin ningún p
 7. Una vez aprobada la solicitud, el estado aparece en la venta.
 
 <img src="/assets/Refunds/Refunds_es_10.png" alt="PrintScreen" width="50%"/><br>
+
+## Obtener la confirmación del reembolso {#getting-the-refund-confirmation}
+Cuando el reembolso haya sido aprobado, puedes generar un recibo o enviar el comprobante al pagador. Para esto, sigue las instrucciones dependiendo de la operación que quieras realizar.
+
+### Generar el recibo del reembolso {#generate-the-refund-receipt}
+Para generar el recibo del reembolso, encuentra la venta reembolsada y haz clic en el botón de impresoa ubicado en la esquina superior derecha del panel de detalles de la transacción.
+
+<img src="/assets/Refunds/Refunds_es_11.png" alt="PrintScreen" width="50%"/><br>
+
+Se abren las opciones de impresión de tu navegador, aquí puedes imprimirlo físicamente o guardarlo en formato PDF. La siguiente imagen corresponde a las opciones de impresión de Google Chrome.
+
+![PrintScreen](/assets/Refunds/Refunds_es_12.png)
+
+{{% alert title="Advertencia" color="warning"%}}
+La opción _Guardar como PDF_ depende de tu navegador. Si tu navegador no soporta esta opción, solo podrás imprimirlo utilizando una impresora.
+{{% /alert %}}
+
+### Enviar el comprobante del reembolso al pagador {#send-the-refund-confirmation-to-the-payer}
+Junto con la funcionalidad de impresión, también puedes enviar un correo de confirmación al pagador informando el resultado del reembolso. Esta opción se encuentra en la sección _**Acciones**_ al final del panel de detalles de la transacción.
+
+<img src="/assets/Refunds/Refunds_es_13.png" alt="PrintScreen" width="50%"/><br>
+
+Una vez haces clic en este botón, el pagador recibe un correo electrónico con los detalles del reembolso.
+
+<img src="/assets/Refunds/Refunds_en_14.png" alt="PrintScreen" width="50%"/><br>
+
+{{% alert title="Nota" color="info"%}}
+Puedes habilitar el envío automático de la confirmación de reembolso al pagador. Para conocer más detalles sobre esta opción, consulta a tu representante de ventas.
+{{% /alert %}}
