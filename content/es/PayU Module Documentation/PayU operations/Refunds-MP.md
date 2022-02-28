@@ -92,31 +92,31 @@ Para solicitar un reembolso, la transacción debe estar aprobada y sin ningún p
 
 <img src="/assets/Refunds/Refunds_es_10.png" alt="PrintScreen" width="50%"/><br>
 
-## Obtener la confirmación del reembolso
-When the refund has been approved, you can generate a receipt or send the confirmation to the payer. To do this, follow the instructions depending on the operation you want to perform.
+## Obtener la confirmación del reembolso {#getting-the-refund-confirmation}
+Cuando el reembolso haya sido aprobado, puedes generar un recibo o enviar el comprobante al pagador. Para esto, sigue las instrucciones dependiendo de la operación que quieras realizar.
 
-### Generate the refund receipt
-To generate the refund receipt, locate the refunded sale and click the printer button located at the top right corner of the transaction details panel.
+### Generar el recibo del reembolso {#generate-the-refund-receipt}
+Para generar el recibo del reembolso, encuentra la venta reembolsada y haz clic en el botón de impresoa ubicado en la esquina superior derecha del panel de detalles de la transacción.
 
-<img src="/assets/Refunds/Refunds_en_11.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Refunds/Refunds_es_11.png" alt="PrintScreen" width="50%"/><br>
 
-The print options of your browser opens, here you may physically print it or save it in PDF. The following image corresponds to the print options of Google Chrome.
+Se abren las opciones de impresión de tu navegador, aquí puedes imprimirlo físicamente o guardarlo en formato PDF. La siguiente imagen corresponde a las opciones de impresión de Google Chrome.
 
-![PrintScreen](/assets/Refunds/Refunds_en_12.png)
+![PrintScreen](/assets/Refunds/Refunds_es_12.png)
 
-{{% alert title="Warning" color="warning"%}}
-The _Save to PDF_ option depends on your browser. If your browser does not support this feature, you can only print it using a printer.
+{{% alert title="Advertencia" color="warning"%}}
+La opción _Guardar como PDF_ depende de tu navegador. Si tu navegador no soporta esta opción, solo podrás imprimirlo utilizando una impresora.
 {{% /alert %}}
 
-### Send the refund confirmation to the payer
-Along with the print feature, you can also send a confirmation email to payer informing the result of the refund. This option is located in the _**Actions**_ section in the bottom of the transaction details panel.
+### Enviar el comprobante del reembolso al pagador {#send-the-refund-confirmation-to-the-payer}
+Junto con la funcionalidad de impresión, también puedes enviar un correo de confirmación al pagador informando el resultado del reembolso. Esta opción se encuentra en la sección _**Acciones**_ al final del panel de detalles de la transacción.
 
-<img src="/assets/Refunds/Refunds_en_13.png" alt="PrintScreen" width="50%"/><br>
+<img src="/assets/Refunds/Refunds_es_13.png" alt="PrintScreen" width="50%"/><br>
 
-Once you click this button, the payer receives an email with the details of the refunds.
+Una vez haces clic en este botón, el pagador recibe un correo electrónico con los detalles del reembolso.
 
 <img src="/assets/Refunds/Refunds_en_14.png" alt="PrintScreen" width="50%"/><br>
 
-{{% alert title="Note" color="info"%}}
-You can enable the automatic send of the refund confirmation to the payer. To know more details about this option, contact your Sales representative.
+{{% alert title="Nota" color="info"%}}
+Puedes habilitar el envío automático de la confirmación de reembolso al pagador. Para conocer más detalles sobre esta opción, consulta a tu representante de ventas.
 {{% /alert %}}

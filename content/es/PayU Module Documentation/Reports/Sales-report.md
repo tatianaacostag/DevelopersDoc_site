@@ -73,7 +73,7 @@ El panel _**Detalles de la transacción**_ tiene las siguientes secciones:
 
 |  | Nombre | Descripción |
 |:---:|---|---|
-| 1 | Información de la orden | Esta sección muestra el ID de la orden, su última fecha de actualización, su estado junto con la descripción del mismo y la referencia de venta. |
+| 1 | Información de la orden | Esta sección muestra el ID de la orden, su última fecha de actualización, su estado junto con la descripción del mismo y la referencia de venta.<br>Esta sección también muestra un botón que te permite imprimir los detalles del pedido. |
 | 2 | Producto o servicio | Descripción del producto o servicio que brindó en la venta. |
 | 3 | Método de pago | Información del Método de pago utilizado en la compra. La información que se muestra en esta sección varía según el método de pago.<br>Para pagos en efectivo pendientes, esta sección le permite ver el recibo de pago generado para el comprador. |
 | 4 | Valores | Esta sección muestra los valores involucrados en esta transacción, como el _Valor a cobrar (o cobrado)_, _Valor pendiente_, _Valor reembolsado_ (para reembolsos), _Valor expirado_ (Para pagos en efectivo).  |

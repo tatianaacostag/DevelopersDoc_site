@@ -113,7 +113,7 @@ Along with the print feature, you can also send a confirmation email to payer in
 
 <img src="/assets/Refunds/Refunds_en_13.png" alt="PrintScreen" width="50%"/><br>
 
-Once you click this button, the payer receives an email with the details of the refunds.
+Once you click this button, the payer receives an email with the details of the refund.
 
 <img src="/assets/Refunds/Refunds_en_14.png" alt="PrintScreen" width="50%"/><br>
 

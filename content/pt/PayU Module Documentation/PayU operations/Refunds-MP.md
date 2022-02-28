@@ -91,3 +91,32 @@ Para solicitar um reembolso, a transação deve ser aprovada e sem nenhum proces
 7. Assim que a solicitação for aprovada, o status aparecerá na venda.
 
 <img src="/assets/Refunds/Refunds_pt_10.png" alt="PrintScreen" width="50%"/><br>
+
+## Obtenha a confirmação do reembolso {#getting-the-refund-confirmation}
+Quando o reembolso for aprovado, você poderá gerar um recibo ou enviar o recibo ao pagador. Para isso, siga as instruções dependendo da operação que deseja realizar.
+
+### Gere o recibo de reembolso {#generate-the-refund-recipt}
+Para gerar o recibo de reembolso, localize a venda reembolsada e clique no botão de impressão localizado no canto superior direito do painel de detalhes da transação.
+
+<img src="/assets/Refunds/Refunds_pt_11.png" alt="PrintScreen" width="50%"/><br>
+
+As opções de impressão do seu navegador são abertas, aqui você pode imprimir fisicamente ou salvá-lo em formato PDF. A imagem a seguir corresponde às opções de impressão do Google Chrome.
+
+![PrintScreen](/assets/Refunds/Refunds_pt_12.png)
+
+{{% alert title="Advertencia" color="warning"%}}
+A opção _Salvar como PDF_ depende do seu navegador. Se o seu navegador não suportar esta opção, você só poderá imprimi-la usando uma impressora.
+{{% /alert %}}
+
+### Envie o recibo de reembolso para o pagador {#send-the-refund-confirmation-to-the-payer}
+Junto com a funcionalidade de impressão, você também pode enviar um e-mail de confirmação ao pagador informando o resultado do reembolso. Essa opção está localizada na seção _**Ações**_ na parte inferior do painel de detalhes da transação.
+
+<img src="/assets/Refunds/Refunds_es_13.png" alt="PrintScreen" width="50%"/><br>
+
+Depois de clicar neste botão, o pagador recebe um e-mail com os detalhes do reembolso.
+
+<img src="/assets/Refunds/Refunds_en_14.png" alt="PrintScreen" width="50%"/><br>
+
+{{% alert title="Observação" color="info"%}}
+Você pode habilitar o envio automático da confirmação de reembolso ao pagador. Para obter mais detalhes sobre esta opção, consulte seu representante de vendas.
+{{% /alert %}}
