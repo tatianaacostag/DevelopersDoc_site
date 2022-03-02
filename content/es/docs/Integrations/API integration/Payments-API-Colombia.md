@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 Para integrarte con el API de Pagos de Colombia, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
 
@@ -38,6 +39,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -479,6 +481,7 @@ Este método te permite procesar los pagos en efectivo o por referencia bancaria
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -910,6 +913,7 @@ La lista de documentos disponibles es:
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 

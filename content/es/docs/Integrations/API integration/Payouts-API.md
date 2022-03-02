@@ -7,6 +7,7 @@ description: >
 weight: 60
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 Para términos introductorios, cómo solicitar este servicio y más información, consulta [Payouts]({{< ref "payouts.html" >}}).
 
@@ -105,6 +106,7 @@ Ambos parámetros se pueden encontrar el tu Módulo PayU.
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 

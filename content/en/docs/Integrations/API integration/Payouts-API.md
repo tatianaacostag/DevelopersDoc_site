@@ -7,6 +7,7 @@ description: >
 weight: 60
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 For introductory terms, how to request this service and more information, refer to [Payouts]({{< ref "payouts.html" >}}).
 
@@ -105,6 +106,7 @@ Both parameters can be found in your PayU module.
 
 <details>
 <summary>Request parameters</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 

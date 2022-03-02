@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 Para integrar com a API de pagamentos do Chile, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
@@ -41,6 +42,7 @@ Transações com cartão de crédito usando fluxos de duas etapas estão dispon�
 
 <details>
 <summary>Pedido</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 
@@ -803,6 +805,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 
 <details>
 <summary>Pedido</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table12" name="table2" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 
@@ -1155,6 +1158,7 @@ Esse método permite que você processe os pagamentos com cartão pré-pago e de
 
 <details>
 <summary>Pedido</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 

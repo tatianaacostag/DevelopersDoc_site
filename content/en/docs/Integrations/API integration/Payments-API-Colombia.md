@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 To integrate with Payments API Colombia, target your request to the following URLs according to your environment.
 
@@ -38,6 +39,7 @@ This method lets you process the payments performed by your customers using cred
 
 <details>
 <summary>Request</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 
@@ -480,6 +482,7 @@ This method lets you process the payments of your customers in cash or using a B
 
 <details>
 <summary>Request</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 
@@ -911,6 +914,7 @@ The list of available documents is:
 
 <details>
 <summary>Request</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 

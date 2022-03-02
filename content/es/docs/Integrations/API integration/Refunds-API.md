@@ -8,21 +8,6 @@ description: >
 weight: 50
 tags: ["subtopic"]
 ---
-<script>
-   function hideAlert() {
-      var today = new Date();
-      var launchDate = new Date("2/17/22");
-      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
-      if((today - launchDate) > 0) {
-         note.style.display = "none";
-
-      } else {
-         note.style.display = "";
-      }
-   }
-  
-   window.onload = hideAlert;
-</script>
 
 Para integrarte con el API de Reembolsos y Anulaciones, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
 

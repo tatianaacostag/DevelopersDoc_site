@@ -14,6 +14,7 @@ tags: ["subtopic"]
 <script src="/js/signature-generator/sha1.js"></script>
 <script src="/js/signature-generator/sha256.js"></script>
 <script src="/js/signature-generator/signature-generator.js"></script>
+<script src="/js/searchcodes.js"></script>
 
 Neste tópico, você aprenderá a enviar dados de uma transação para o portal de pagamento PayU. Para isso, deve-se gerar um formulário HTML com os dados da transação utilizando o método HTTP POST e apontando-o para o nosso sistema.
 
@@ -30,60 +31,61 @@ As seguintes variáveis podem ser incluídas no formulário de pagamento.
 
 <details>
 <summary>Variáveis no formulário de pagamento</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 
 | Campo | Tipo | Tamanho | Descrição | Obrigatório |
 |-|-|-|-|:-:|
-| merchantId | Número | 12 | Número de identificação da sua loja no sistema PayU. Você encontrará este número no e-mail de criação de conta. | ✓ | 
-| referenceCode | Alfanumérico | 255 | Referência da venda ou ordem. Deve ser exclusiva para cada transação enviada ao sistema. Normalmente, é uma forma de identificar as solicitações enviadas para a plataforma de pagamento. | ✓ | 
-| accountId | Número | 6 | ID da conta do usuário para cada país associado à loja. Esta variável é usada para exibir os métodos de pagamento disponíveis para este país. | ✓ | 
-| description | Alfanumérico | 255 | Descrição da venda. | ✓ | 
-| currency | Alfanumérico | 3 | A respectiva moeda na qual o pagamento é feito. O processo de reconciliação é realizado em pesos na taxa representativa do dia.<br>[Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | ✓ | 
-| amount | Número | 10 | Valor total da transação. Ele pode conter dois dígitos decimais. Exemplo 10000.00 ou 10000. | ✓ | 
-| tax | Número | 10,2 | Valor do IVA da transação.<br>Na Colômbia, se nenhum IVA for enviado, o sistema aplica 19% automaticamente. Ele pode conter dois dígitos decimais, por exemplo 19000.00.<br>Se o produto ou serviço for isento de IVA, atribua `0` a esta variável. | ✓ | 
-| discount | Número | 10,2 | Discount value applied to the sale. | — | 
-| taxReturnBase | Número | 10,2 | Valor base para cálculo do VAT.<br>Se o produto ou serviço for isento de IVA, atribua `0` a esta variável. | ✓ | 
-| additionalValue | Número | 10,2 | Valor adicional da venda. | — | 
-| signature | Alfanumérico | 255 | Assinatura digital criada para cada transação. Consultar [Assinatura para forma de pagamento]({{< ref "payment-form.md#signature-for-payment-form" >}}) para aprender como gerar. | ✓ | 
-| algorithmSignature | Alfanumérico | 255 | Algoritmo de criptografia da assinatura digital (campo `signature`). Os três algoritmos disponíveis são: `MD5`, `SHA` e `SHA256`. | — | 
-| test | Número | 1 | Indica se a transação está em modo de teste ou produção. Definir `1` para teste e `0`para produção. | — | 
-| lng | Alfanumérico | 3 | Idioma no qual a plataforma de pagamento deve ser exibida.<br>[Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | — | 
-| extra1 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. | — | 
-| extra2 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. | — | 
-| extra3 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. | — | 
-| template | Alfanumérico | 255 | Modelo para a página de pagamento. | — | 
-| responseUrl | Alfanumérico | 255 | URL da página de resposta. | — | 
-| confirmationUrl | Alfanumérico | 255 | URL da página de resposta. | — | 
-| sourceUrl | Alfanumérico | 255 | URL de origem das transações do comércio. É aqui que o botão de pagamento está localizado. | — | 
-| airline | Alfanumérico | 4 | Código da companhia aérea. | — | 
-| billingAddress | Alfanumérico | 255 | Endereço de correspondência. | — | 
-| shippingAddress | Alfanumérico | 255 | O endereço de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto. | ✓* | 
-| billingCity | Alfanumérico | 50 | Cidade associada ao endereço de cobrança. | — | 
-| shippingCity | Alfanumérico | 50 | A cidade de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto. | ✓* | 
-| zipCode | Alfanumérico | 20 | Código postal. | — | 
-| billingCountry | Alfanumérico | 2 | Código ISO do país associado ao endereço de cobrança. | — | 
-| shippingCountry | Alfanumérico | 2 | O código ISO do país associado ao endereço de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto.<br>[Veja os países de processamento]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | ✓* | 
-| buyerEmail | Alfanumérico | 255 | Campo que contém o e-mail do comprador para notificar o resultado da transação por e-mail. Recomenda-se validar se este campo foi fornecido no formulário. | ✓ | 
-| telephone | Alfanumérico | 50 | O telefone residencial do comprador. | ✓ | 
-| officeTelephone | Alfanumérico | 50 | O telefone do comprador em horário comercial. | — | 
-| mobilePhone | Alfanumérico | 50 | O número do celular do comprador. Este valor será usado para preencher o formulário do cartão de crédito e será o telefone de contato. | — | 
-| buyerFullName | Alfanumérico | 150 | O nome completo do comprador. | ✓ | 
-| paymentMethods | Alfanumérico | 255 | Lista das formas de pagamento habilitadas no processo de pagamento.<br>Esta lista deve ser separada por vírgula e sem espaços em branco. Por exemplo: `VISA,MASTERCARD`.<br>YVocê pode incluir parcelas para as formas de pagamento adicionando-as usando hifens. Exemplo: `VISA-1-3,MASTERCARD-3-5-9`.<br>[Veja os métodos de pagamento disponíveis para seu país na coluna `Parâmetro paymentMethod`]({{< ref "select-your-payment-method.html" >}}). | — | 
-| administrativeFee | Número | 10,2 | Valor da taxa administrativa. | — | 
-| taxAdministrativeFee | Número | 10,2 | Valor do imposto da taxa administrativa. | — | 
-| taxAdministrativeFeeReturnBase | Número | 10,2 | Valor base para cálculo do imposto da taxa administrativa. | — | 
-| payerEmail | Alfanumérico | 255 | E-mail do pagador. | — | 
-| payerPhone | Alfanumérico | 20 | Número de telefone do pagador. | — | 
-| payerOfficePhone | Alfanumérico | 20 | Número de telefone do local de trabalho do pagador. | — | 
-| payerMobilePhone | Alfanumérico | 20 | Número do celular do pagador. | — | 
+| merchantId | Número | 12 | Número de identificação da sua loja no sistema PayU. Você encontrará este número no e-mail de criação de conta. | Sim | 
+| referenceCode | Alfanumérico | 255 | Referência da venda ou ordem. Deve ser exclusiva para cada transação enviada ao sistema. Normalmente, é uma forma de identificar as solicitações enviadas para a plataforma de pagamento. | Sim | 
+| accountId | Número | 6 | ID da conta do usuário para cada país associado à loja. Esta variável é usada para exibir os métodos de pagamento disponíveis para este país. | Sim | 
+| description | Alfanumérico | 255 | Descrição da venda. | Sim | 
+| currency | Alfanumérico | 3 | A respectiva moeda na qual o pagamento é feito. O processo de reconciliação é realizado em pesos na taxa representativa do dia.<br>[Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sim | 
+| amount | Número | 10 | Valor total da transação. Ele pode conter dois dígitos decimais. Exemplo 10000.00 ou 10000. | Sim | 
+| tax | Número | 10,2 | Valor do IVA da transação.<br>Na Colômbia, se nenhum IVA for enviado, o sistema aplica 19% automaticamente. Ele pode conter dois dígitos decimais, por exemplo 19000.00.<br>Se o produto ou serviço for isento de IVA, atribua `0` a esta variável. | Sim | 
+| discount | Número | 10,2 | Discount value applied to the sale. | Não | 
+| taxReturnBase | Número | 10,2 | Valor base para cálculo do VAT.<br>Se o produto ou serviço for isento de IVA, atribua `0` a esta variável. | Sim | 
+| additionalValue | Número | 10,2 | Valor adicional da venda. | Não | 
+| signature | Alfanumérico | 255 | Assinatura digital criada para cada transação. Consultar [Assinatura para forma de pagamento]({{< ref "payment-form.md#signature-for-payment-form" >}}) para aprender como gerar. | Sim | 
+| algorithmSignature | Alfanumérico | 255 | Algoritmo de criptografia da assinatura digital (campo `signature`). Os três algoritmos disponíveis são: `MD5`, `SHA` e `SHA256`. | Não | 
+| test | Número | 1 | Indica se a transação está em modo de teste ou produção. Definir `1` para teste e `0`para produção. | Não | 
+| lng | Alfanumérico | 3 | Idioma no qual a plataforma de pagamento deve ser exibida.<br>[Veja os idiomas disponíveis]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Não | 
+| extra1 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. | Não | 
+| extra2 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. | Não | 
+| extra3 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. | Não | 
+| template | Alfanumérico | 255 | Modelo para a página de pagamento. | Não | 
+| responseUrl | Alfanumérico | 255 | URL da página de resposta. | Não | 
+| confirmationUrl | Alfanumérico | 255 | URL da página de resposta. | Não | 
+| sourceUrl | Alfanumérico | 255 | URL de origem das transações do comércio. É aqui que o botão de pagamento está localizado. | Não | 
+| airline | Alfanumérico | 4 | Código da companhia aérea. | Não | 
+| billingAddress | Alfanumérico | 255 | Endereço de correspondência. | Não | 
+| shippingAddress | Alfanumérico | 255 | O endereço de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto. | Sim* | 
+| billingCity | Alfanumérico | 50 | Cidade associada ao endereço de cobrança. | Não | 
+| shippingCity | Alfanumérico | 50 | A cidade de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto. | Sim* | 
+| zipCode | Alfanumérico | 20 | Código postal. | Não | 
+| billingCountry | Alfanumérico | 2 | Código ISO do país associado ao endereço de cobrança. | Não | 
+| shippingCountry | Alfanumérico | 2 | O código ISO do país associado ao endereço de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto.<br>[Veja os países de processamento]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | Sim* | 
+| buyerEmail | Alfanumérico | 255 | Campo que contém o e-mail do comprador para notificar o resultado da transação por e-mail. Recomenda-se validar se este campo foi fornecido no formulário. | Sim | 
+| telephone | Alfanumérico | 50 | O telefone residencial do comprador. | Sim | 
+| officeTelephone | Alfanumérico | 50 | O telefone do comprador em horário comercial. | Não | 
+| mobilePhone | Alfanumérico | 50 | O número do celular do comprador. Este valor será usado para preencher o formulário do cartão de crédito e será o telefone de contato. | Não | 
+| buyerFullName | Alfanumérico | 150 | O nome completo do comprador. | Sim | 
+| paymentMethods | Alfanumérico | 255 | Lista das formas de pagamento habilitadas no processo de pagamento.<br>Esta lista deve ser separada por vírgula e sem espaços em branco. Por exemplo: `VISA,MASTERCARD`.<br>YVocê pode incluir parcelas para as formas de pagamento adicionando-as usando hifens. Exemplo: `VISA-1-3,MASTERCARD-3-5-9`.<br>[Veja os métodos de pagamento disponíveis para seu país na coluna `Parâmetro paymentMethod`]({{< ref "select-your-payment-method.html" >}}). | Não | 
+| administrativeFee | Número | 10,2 | Valor da taxa administrativa. | Não | 
+| taxAdministrativeFee | Número | 10,2 | Valor do imposto da taxa administrativa. | Não | 
+| taxAdministrativeFeeReturnBase | Número | 10,2 | Valor base para cálculo do imposto da taxa administrativa. | Não | 
+| payerEmail | Alfanumérico | 255 | E-mail do pagador. | Não | 
+| payerPhone | Alfanumérico | 20 | Número de telefone do pagador. | Não | 
+| payerOfficePhone | Alfanumérico | 20 | Número de telefone do local de trabalho do pagador. | Não | 
+| payerMobilePhone | Alfanumérico | 20 | Número do celular do pagador. | Não | 
 | expirationDate | Alfanumérico | 19 | Prazo de validade das transações de pagamentos da Dinheiro. Formato:  `YYYY-MM-DD HH:mm:ss`.<br>Este valor deve ser inferior ao número padrão de dias para o pagamento à vista (15 dias para a Argentina e 7 dias para os demais países). | - | 
-| payerFullName | Alfanumérico | 50 | O nome do pagador. Este valor será usado para preencher o formulário do cartão de crédito. | — | 
-| payerDocument | Alfanumérico | 25 | O número de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | — | 
-| payerDocumentType | Alfanumérico | 25 | O tipo de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | — | 
-| iin | Alfanumérico | 2048 | Lista de Bins admitidos durante o processo de pagamento (separados por vírgula).<br>_Este parâmetro só pode ser utilizado por estabelecimentos que validem assinatura._ | - |
-| paymentMethodsDescription | Alfanumérico | 255 | Descrição dos meios de pagamento e Caixas admitidas durante o processo de pagamento. | - |
-| pseBanks | Alfanumérico | 255 | Lista de códigos bancários habilitados no processo de pagamento via PSE.<br>Esta lista deve ser separada por vírgula e sem espaços em branco. | - |
+| payerFullName | Alfanumérico | 50 | O nome do pagador. Este valor será usado para preencher o formulário do cartão de crédito. | Não | 
+| payerDocument | Alfanumérico | 25 | O número de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | Não | 
+| payerDocumentType | Alfanumérico | 25 | O tipo de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | Não | 
+| iin | Alfanumérico | 2048 | Lista de Bins admitidos durante o processo de pagamento (separados por vírgula).<br>_Este parâmetro só pode ser utilizado por estabelecimentos que validem assinatura._ | Não |
+| paymentMethodsDescription | Alfanumérico | 255 | Descrição dos meios de pagamento e Caixas admitidas durante o processo de pagamento. | Não |
+| pseBanks | Alfanumérico | 255 | Lista de códigos bancários habilitados no processo de pagamento via PSE.<br>Esta lista deve ser separada por vírgula e sem espaços em branco. | Não |
 </details>
 
 ### Considerações sobre variáveis {#considerations-in-variables}

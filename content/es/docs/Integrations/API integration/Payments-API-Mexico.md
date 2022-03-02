@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 Para integrarte con el API de Pagos de México, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
 
@@ -42,6 +43,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -855,6 +857,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -1241,6 +1244,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 

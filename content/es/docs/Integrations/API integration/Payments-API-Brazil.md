@@ -7,21 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
-<script>
-   function hideAlert() {
-      var today = new Date();
-      var launchDate = new Date("2/17/22");
-      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
-      if((today - launchDate) > 0) {
-         note.style.display = "none";
-
-      } else {
-         note.style.display = "";
-      }
-   }
-  
-   window.onload = hideAlert;
-</script>
+<script src="/js/searchcodes.js"></script>
 
 Para integrarte con el API de Pagos de Brasil, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
 
@@ -267,6 +253,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -1067,11 +1054,6 @@ Al final, tu cliente ve una página de checkout como esta.
 
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
-{{% pageinfo color="info" %}}
-#### Nota
-La integración con **PIX** como medio de pago estará disponibles desde el _16 de febrero del 2022_. Para más información, consulta a tu representante de ventas.
-{{% /pageinfo %}}
-
 ### ¿Cómo funciona PIX? {#how-does-pix-work}
 PIX es un método de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (_Banco Central do Brasil_ - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.
 
@@ -1091,6 +1073,7 @@ Pix tiene dos partes:
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -1438,6 +1421,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 

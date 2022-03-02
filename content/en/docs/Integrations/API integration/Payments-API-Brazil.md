@@ -7,21 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
-<script>
-   function hideAlert() {
-      var today = new Date();
-      var launchDate = new Date("2/17/22");
-      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
-      if((today - launchDate) > 0) {
-         note.style.display = "none";
-
-      } else {
-         note.style.display = "";
-      }
-   }
-  
-   window.onload = hideAlert;
-</script>
+<script src="/js/searchcodes.js"></script>
 
 To integrate with Payments API Brazil, target your request to the following URLs according to your environment.
 
@@ -267,6 +253,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 
 <details>
 <summary>Request</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields</label>
 <br>
 <div class="variables"></div>
 
@@ -1067,11 +1054,6 @@ In the end, your customer sees a checkout page like this.
 
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
-{{% pageinfo color="info" %}}
-#### Note
-Integration with **PIX** will be available for merchants since _February 16, 2022_. For more information, contact your sales representative.
-{{% /pageinfo %}}
-
 ### How does PIX work?
 PIX is an online transfer method released in November, 2020 by the Brazilian Central Bank (_Banco Central do Brasil_ - BACEN) which allows you make and receive transfers easily regardless of the bank who issued your account.
 
@@ -1084,13 +1066,14 @@ Pix has two parts:
    - E-mail
    - Phone number
    - Random key
-
+   
 * QR code: this code is read by your customer using their phone and performs the payment.
 
 ### Variables for request and response
 
 <details>
 <summary>Request</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields</label>
 <br>
 <div class="variables"></div>
 
@@ -1439,6 +1422,7 @@ This method lets you process the payments in cash of your customers. To integrat
 
 <details>
 <summary>Request</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields</label>
 <br>
 <div class="variables"></div>
 
@@ -1762,6 +1746,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 <details>
 <summary>Request</summary>
+<label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Show mandatory fields</label>
 <br>
 <div class="variables"></div>
 
