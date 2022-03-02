@@ -1149,7 +1149,7 @@ Exemplo resposta:
 {{< /tab >}}
 {{< /tabs >}}
 
-∫## Enviar a transação com cartões de débito e pré-pagos usando WebPay Plus {#submit-transaction-with-debit-and-prepaid-cards}
+## Enviar a transação com cartões de débito e pré-pagos usando WebPay Plus {#submit-transaction-with-debit-and-prepaid-cards}
 Esse método permite que você processe os pagamentos com cartão pré-pago e de débito de seus clientes. Para se integrar a essas transações, você deve redirecionar o cliente para a URL encontrada na resposta do método.
 
 <img src="/assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
