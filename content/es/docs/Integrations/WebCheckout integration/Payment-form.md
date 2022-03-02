@@ -81,10 +81,10 @@ Puedes incluir las siguientes variables en el Formulario de pago.
 | expirationDate | #N/A | 19 | Fecha de vencimiento de las transacciones para pagos en efectivo. Formato: `YYYY-MM-DD HH:mm:ss`.<br>Este valor debe ser menor que el número de días predeterminado para el pago en efectivo (15 días para Argentina y 7 días para el resto de países). | - |
 | payerFullName | Alfanumérico | 50 | Nombre del pagador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito. | No |
 | payerDocument | Alfanumérico | 25 | Número de identificación del pagador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito. | No |
-| payerDocumentType | Alfanumérico | 25 | El número de identificación del comprador. Este valor se tomará para completar el formulario de la tarjeta de crédito. | - |
-| iin | Alfanumérico | 2048 | Lista de Bins admitidos durante el proceso de pago (separados por coma).<br>_Este parámetro solo lo pueden utilizar los comercios que validan la firma._ | - |
-| PaymentMethodsDescription | Alfanumérico | 255 | Descripción de los métodos de pago y Bins admitidos durante el proceso de pago. | - |
-| pseBanks | Alfanumérico | 255 | Listado de códigos bancarios habilitados en el proceso de pago a través de PSE.<br>Este listado debe estar separado por coma y sin espacios en blanco. | - |
+| payerDocumentType | Alfanumérico | 25 | El número de identificación del comprador. Este valor se tomará para completar el formulario de la tarjeta de crédito. | No |
+| iin | Alfanumérico | 2048 | Lista de Bins admitidos durante el proceso de pago (separados por coma).<br>_Este parámetro solo lo pueden utilizar los comercios que validan la firma._ | No |
+| PaymentMethodsDescription | Alfanumérico | 255 | Descripción de los métodos de pago y Bins admitidos durante el proceso de pago. | No |
+| pseBanks | Alfanumérico | 255 | Listado de códigos bancarios habilitados en el proceso de pago a través de PSE.<br>Este listado debe estar separado por coma y sin espacios en blanco. | No |
 
 </details>
 
