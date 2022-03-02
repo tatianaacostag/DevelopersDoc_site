@@ -4,7 +4,7 @@ linkTitle: "API de Pagos - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
   El API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
-weight: 20  
+weight: 20
 tags: ["subtopic"]
 ---
 <script src="/js/searchcodes.js"></script>
