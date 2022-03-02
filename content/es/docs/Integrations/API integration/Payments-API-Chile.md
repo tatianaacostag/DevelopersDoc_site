@@ -4,9 +4,10 @@ linkTitle: "API de Pagos - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
   El API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
-weight: 20
+weight: 20  
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 Para integrarte con el API de Pagos de Chile, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
 
@@ -41,6 +42,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -803,6 +805,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -1155,6 +1158,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 
 <details>
 <summary>Petición (Request)</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 

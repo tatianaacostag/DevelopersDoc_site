@@ -7,21 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
-<script>
-   function hideAlert() {
-      var today = new Date();
-      var launchDate = new Date("2/17/22");
-      var note = document.getElementsByClassName("pageinfo pageinfo-info")[0];
-      if((today - launchDate) > 0) {
-         note.style.display = "none";
-
-      } else {
-         note.style.display = "";
-      }
-   }
-  
-   window.onload = hideAlert;
-</script>
+<script src="/js/searchcodes.js"></script>
 
 Para integrar com a API de pagamentos do Brasil, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
@@ -267,6 +253,7 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 
 <details>
 <summary>Pedido</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 
@@ -1067,11 +1054,6 @@ Depois, seu cliente vê uma página de checkout como esta.
 
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
-{{% pageinfo color="info" %}}
-#### Observação
-A integração com o **PIX** estará disponível a partir de _16 de fevereiro de 2022_. Para mais informações, consulte seu representante de vendas.
-{{% /pageinfo %}}
-
 ### Como funciona o PIX? {#how-does-pix-work}
 PIX é um método de transferência online lançado em novembro de 2020 pelo Banco Central do Brasil (BACEN) que permite realizar e receber transferências com facilidade independente do banco que emitiu sua conta.
 
@@ -1091,6 +1073,7 @@ O Pix tem duas partes:
 
 <details>
 <summary>Pedido</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 
@@ -1438,6 +1421,7 @@ Este método permite processar os pagamentos de seus clientes em dinheiro. Para 
 
 <details>
 <summary>Pedido</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 

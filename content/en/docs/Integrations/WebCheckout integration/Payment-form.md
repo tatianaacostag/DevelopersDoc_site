@@ -14,6 +14,7 @@ tags: ["subtopic"]
 <script src="/js/signature-generator/sha1.js"></script>
 <script src="/js/signature-generator/sha256.js"></script>
 <script src="/js/signature-generator/signature-generator.js"></script>
+<script src="/js/searchcodes.js"></script>
 
 In this topic, you find how to send data from one transaction to the PayU payment gateway. To do so, You must generate an HTML form with the transaction data using the HTTP POST method and pointing it to our system.
 
@@ -29,6 +30,7 @@ The following variables can be included in the Payment form.
 
 <details>
 <summary>Variables in the payment form</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 

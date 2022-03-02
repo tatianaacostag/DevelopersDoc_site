@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 To integrate with Payments API Panama, target your request to the following URLs according to your environment.
 
@@ -35,6 +36,7 @@ This method lets you process the payments performed by your customers using cred
 
 <details>
 <summary>Request</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 

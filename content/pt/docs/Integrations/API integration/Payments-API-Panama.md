@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 Para integrar com a API de pagamentos da Panama, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
@@ -35,6 +36,7 @@ Este método permite processar os pagamentos efetuados com cartão de crédito p
 
 <details>
 <summary>Pedido</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 

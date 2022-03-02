@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 Para integrar com a API de pagamentos do Peru, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
@@ -36,6 +37,7 @@ Este método permite processar os pagamentos efetuados pelos seus clientes com c
 
 <details>
 <summary>Pedido</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 
@@ -774,6 +776,7 @@ Este método permite processar os pagamentos de seus clientes em dinheiro. Para 
 
 <details>
 <summary>Pedido</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
 

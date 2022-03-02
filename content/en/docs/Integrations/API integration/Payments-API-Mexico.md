@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 To integrate with Payments API Mexico, target your request to the following URLs according to your environment.
 
@@ -42,6 +43,7 @@ Two-step flows are only supported for Mastercard and Visa.
 
 <details>
 <summary>Request</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 
@@ -855,6 +857,7 @@ This method lets you process the payments in cash of your customers. To integrat
 
 <details>
 <summary>Request</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 
@@ -1241,6 +1244,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 <details>
 <summary>Request</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 
@@ -1633,6 +1637,7 @@ This method lets you process payments of your customers using bank references. T
 
 <details>
 <summary>Request</summary>
+<label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 

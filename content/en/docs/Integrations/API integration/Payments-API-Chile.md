@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+<script src="/js/searchcodes.js"></script>
 
 To integrate with Payments API Chile, target your request to the following URLs according to your environment.
 
@@ -41,6 +42,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 <details>
 <summary>Request</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 
@@ -803,6 +805,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 <details>
 <summary>Request</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 
@@ -1155,6 +1158,7 @@ This method lets you process the bank debit and prepaid card payments of your cu
 
 <details>
 <summary>Request</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 
