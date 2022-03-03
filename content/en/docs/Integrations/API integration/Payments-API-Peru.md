@@ -413,7 +413,7 @@ Zero Authorization allows you to validate a card without performing any charge o
 {{% alert title="Important" color="info"%}}
 * This feature is not enabled by default, contact your sales representative to request it.
 * _Zero Authorization_ is available for VISA cards only. Mastercard and other franchises must send the transaction value greater than or equals to 1 PEN.
-* CVV2 is required in the _Zero Authorization_ request. Otherwise, the transaction is rejected
+* CVV2 is required in the _Zero Authorization_ request. Otherwise, the transaction is rejected.
 {{% /alert %}}
 
 ### Capture
