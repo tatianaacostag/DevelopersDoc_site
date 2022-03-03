@@ -688,7 +688,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-peru.html</loc>
-    <lastmod>2022-03-03T09:41:21-05:00</lastmod>
+    <lastmod>2022-03-03T13:46:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1890,6 +1890,26 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/payu-module-documentation.html"
+                />
+  </url><url>
+    <loc>/en/orderid-validation.html</loc>
+    <lastmod>2022-03-03T13:47:16-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/orderid-validation.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/orderid-validation.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/orderid-validation.html"
                 />
   </url><url>
     <loc>/en/index.json</loc>
