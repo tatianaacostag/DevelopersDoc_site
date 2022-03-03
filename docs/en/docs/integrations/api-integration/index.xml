@@ -23694,6 +23694,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 &lt;ul&gt;
 &lt;li&gt;This feature is not enabled by default, contact your sales representative to request it.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Zero Authorization&lt;/em&gt; is available for VISA cards only. Mastercard and other franchises must send the transaction value greater than or equals to 1 PEN.&lt;/li&gt;
+&lt;li&gt;CVV2 is required in the &lt;em&gt;Zero Authorization&lt;/em&gt; request. Otherwise, the transaction is rejected&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
