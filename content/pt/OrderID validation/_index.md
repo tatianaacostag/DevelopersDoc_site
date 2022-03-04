@@ -1,6 +1,6 @@
 ---
-title: "Validation of the OrderId variable"
-linkTitle: "Variable OrderId"
+title: "Validação da variável OrderId"
+linkTitle: "Variável OrderId"
 date: 2017-01-05
 type: docs
 description: > 
@@ -10,76 +10,76 @@ notopicssection: true
 <script src="/js/countdown.js"></script>
 <br>
 <div id="MainCounter">
-    <p class="CounterHeader">Your system must be ready in</p>
+    <p class="CounterHeader">Seu sistema deve estar pronto em</p>
     <div class="CounterContent">
       <div id="DaysDiv">
         <p id="days"></p>
-        <p style="color:white;text-align:center;">Days</p>
+        <p style="color:white;text-align:center;">Dias</p>
       </div>
       <div id="HoursDiv">
         <p id="hours"></p>
-        <p style="color:white;text-align:center;">Hours</p>
+        <p style="color:white;text-align:center;">Horas</p>
       </div>
       <div id="MinutesDiv">
         <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutes</p>
+        <p style="color:white;text-align:center;">Minutos</p>
       </div>
       <div id="SecondsDiv">
         <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Seconds</p>
+        <p style="color:white;text-align:center;">Segundos</p>
       </div>
     </div>  
 </div>
 
-## Overview
-Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor has increased.
+## Introdução {#overview}
+Devido ao crescimento exponencial do comércio eletrônico e dos pagamentos online, o tamanho dos tokens que retornamos do nosso processador de pagamentos aumentou.
 
-Our estimations show that approximately on _April 30, 2022_, we will overcome the barrier of the 10 digits for the parameter `orderId`. This makes us change the current data type of the Number parameter `orderId` to allow more digits in the returning identifiers; Thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.
+Nossas estimativas mostram que por volta de _30 de abril de 2022_, passaremos a barreira de 10 dígitos para o parâmetro `orderId`. Isso nos faz alterar o tipo numérico atual do parâmetro para permitir um número maior de dígitos nos identificadores retornados; portanto, o tipo de dados atual não será mais suportado e essa alteração pode afetar sua integração com nossa plataforma.
 
-To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines in this article to check whether your integration requires an update.
+Para evitar problemas devido a essa alteração, você deve verificar se o novo tipo retornado corresponde à sua integração atual. Siga as diretrizes explicadas neste artigo para verificar se sua integração requer uma atualização.
 
-### Frequently Asked Questions
+### Perguntas frequentes {#frequently-asked-questions}
 
-* **How can I check if the data type change affects my integration?**<br>Refer to the [_**Validation procedure**_ section]({{< ref"#validation-procedure" >}}) to learn how to validate according to the integration type you have with us.
+* **Como posso verificar se a alteração do tipo de dados afeta minha integração?**<br>Veja a seção [_**Procedimento de validação**_]({{< ref"#validation-procedure" >}}) para saber como validar com base no tipo de integração que você tem conosco.
 
-* **My integration is through a digital commerce platform (such as VTEX, Shopify, etc). Do I need to implement the change?**<br>No, your digital commerce platform will implement the change silently. Nevertheless, you need to check if you have external connections for reports or queries.
+* **Minha integração é através de uma plataforma de comércio digital (como VTEX, Shopify, etc), preciso implementar a mudança?**<br>Não, sua plataforma de comércio digital implementará a mudança silenciosamente. No entanto, você deve verificar se possui conexões externas à plataforma para relatórios ou consultas.
 
-* **What is the data type change?**<br>Nowadays, the Number parameter `orderId` is returned using the `Integer` type; the new data type for this parameter will be `Long`.
+* **Qual é a alteração do tipo de dados?**<br>Atualmente, o parâmetro `orderId` é retornado usando o tipo `Integer`, o novo tipo de dados para este parâmetro será `Long`.
 
-* **Is this change mandatory?**<br>If after verifying your integration, you found that the `orderId` is an Integer-type variable, yes. Otherwise, you don't have to change your integration.
+* **Essa alteração é necessária?**<br>Se após verificar sua integração, você descobriu que o `orderId` é uma variável do tipo `Integer`, sim. Caso contrário, você não precisa alterar sua integração.
 
-* **This change only affects the Payment flow?**<br>No. This change may also impact your reports or queries related to transactions. Be careful when you perform the validation.
+* **Essa alteração afeta apenas o fluxo de pagamento?**<br>Não, essa alteração também pode afetar seus relatórios ou consultas relacionadas a transações. Tenha cuidado ao realizar a validação.
 
-* **What if I don't apply this change?**<br>If you don’t apply this change and you oughta do it, you **will not** receive the confirmation of the payment procedure. Furthermore, you **will not** be able to query new transactions since we start to return `orderId` parameter with more than 10 digits (approximately after _April 30, 2022_). 
+* **O que acontece se eu não aplicar essa alteração?**<br>Se você não fizer essa alteração e isso afetar sua integração, você **não** poderá receber a confirmação do procedimento de pagamento. Além disso, você **não** poderá consultar novas transações depois que começarmos a retornar o parâmetro `orderId` com mais de 10 dígitos (aproximadamente após _30 de abril de 2022_).
 
-* **Can the PayU Support team make this change for me?**<br>No. The way you integrate with our services is up to you. PayU is not responsible for errors due to wrong integrations.
+* **A equipe de suporte da PayU pode fazer essa alteração para mim?**<br>Não, você decide como se integra aos nossos serviços. PayU não se responsabiliza por erros devido a integrações incorretas.
 
-* **Does this change need to be implemented again?**<br>Not shortly. This change in the data type allows us to increase our capacity to generate identifiers, letting us generate up to _**9.223.372.036.854.775.807**_ identifiers.
+* **Essa alteração precisa ser reimplementada?**<br>Não em um futuro próximo. A alteração do tipo de dados permite-nos ter uma maior capacidade na geração de identificadores. Essa alteração nos permite gerar até _**9.223.372.036.854.775.807**_ tokens.
 
-## Validation procedure
-The validation of the `orderId` depends on your integration.
+## Procedimento de validação {#validation-procedure}
+A validação de `orderId` depende da sua integração.
 
-### API Integration
-If your shop is integrated via **API** and you use a **typed** language for your integration, you need to validate how you declare the numeric variable `orderId`.
+### Integração API {#api-integration}
+Se sua loja é integrada por meio da **API** e você usa uma linguagem **tipada** para sua integração, você deve validar como declarou a variável numérica `orderId`.
 
-* If the variable `orderId` is `int` or `Integer` type, you must change it to the type `long` or `Long`.
-* If you use the Query API and you are mapping the variable `orderId` using `int` or `Integer` type, you must change it to the type `long` or `Long`.
-* You must validate with your technical team whether the variable `orderId` is being stored in a database. If so, validate that the column in your database supports `Long-type` values.
+* Se a variável `orderId` for do tipo `int` ou `Integer`, você deve alterá-la para o tipo `long` ou `Long`.
+* Se você estiver usando a API de Consultas e estiver mapeando a variável `orderId` para o tipo `int` ou `Integer`, você deve alterá-la para o tipo `long` ou `Long`.
+* Você deve verificar com sua equipe técnica se a variável `orderId` está sendo armazenada em um banco de dados. Em caso afirmativo, valide se a coluna em seu banco de dados suporta valores do tipo `Long`.
 
-### SDK Integration
-If you are integrating with our services using the SDK, change the _**.jar**_ file of the current version of our SDK.
+### Integração SDK {#sdk-integration}
+Se você estiver integrando com nossos serviços usando o SDK, altere o arquivo _**.jar**_ da versão atual. 
 
-<a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Download SDK Java 1.4.0</a>
+<a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Faça download do SDK Java 1.4.0</a>
 
-### WebCheckout Integration
-If your shop is integrated via **WebCheckout** and you use a **typed** language for your integration, you need to validate how you declare the numeric variable `orderId`.
+### Integração WebCheckout {#webcheckout-integration}
+Se sua loja é integrada por meio do **WebCheckout** e você usa uma linguagem **tipada** para sua integração, você deve validar como declarou a variável numérica `orderId`.
 
-* If the variable `orderId` used in the confirmation page is defined as `int` or `Integer` type, you must change it to the type `long` or `Long`.
-* If you use the Query API and you are mapping the variable `orderId` using `int` or `Integer` type, you must change it to the type `long` or `Long`.
-* You must validate with your technical team whether the variable `orderId` is being stored in a database. If so, validate that the column in your database supports `Long-type` values.
+* Se a variável `orderId` usada na página de confirmação estiver configurada para o tipo `int` ou `Integer`, você deve alterá-la para o tipo `long` ou `Long`.
+* Se você estiver usando a Query API e estiver mapeando a variável `orderId` para o tipo `int` ou `Integer`, você deve alterá-la para o tipo `long` ou `Long`.
+* Você deve verificar com sua equipe técnica se a variável `orderId` está sendo armazenada em um banco de dados. Em caso afirmativo, valide se a coluna em seu banco de dados suporta valores do tipo `Long`.
 
-## Support
-To request support or ask questions related to this change, contact our support team in your country:
+## Suporte {#support}
+Para solicitar suporte ou fazer perguntas relacionadas a essa alteração, entre em contato com nossa equipe de suporte em seu país:
 
 <div style="display: flex;">
   <div style="float: left;width: 50%;">

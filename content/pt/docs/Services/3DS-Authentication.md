@@ -53,13 +53,12 @@ Quando utiliza o Serviço de Autenticação oferecido pelo **PayU Hub** (Fluxo d
 * PayU está conectado a un servidor 3DS (MPI), no es necesario que lo hagas por tu cuenta. ¡Menos proveedores y contratos!
 * Você controla e decide quando autenticar uma transação.
 * Sem custos adicionais<sup>\*</sup> - a autenticação é um serviço gratuito oferecido pelo PayU!
-* Mínimo ou nenhum ajuste contratual para aceder ao serviço 3DS.
 * Se migrar para o HUB, poderá ter benefícios adicionais da nossa solução global.
 
 <sup>\*</sup> _Os adquirentes podem cobrar uma taxa de autenticação, se assim for, esta taxa ser-lhe-á transmitida._
 
 ### Como integrar 3DS? {#how-to-integrate-3ds}
-A Autenticação 3DS é um serviço disponível a pedido, contacte o seu Key Account Manager ou o Apoio Técnico para o activar.<br>Dependendo do cenário escolhido para utilizar a Autenticação 3DS, o procedimento de integração varia.
+A Autenticação 3DS é um serviço disponível a pedido, contacte o seu Key Account Manager para assinar os Termos e Condições para ativá-lo.<br>Dependendo do cenário escolhido para utilizar a Autenticação 3DS, o procedimento de integração varia.
 
 #### Pass Through
 Quando está integrado com um _**MPI**_ ou um _**3DS Server**_, só precisa de nos enviar a resposta de autenticação no pedido de pagamento. Veja o seu país de processamento para um exemplo de como enviamos os parâmetros devolvidos na resposta:

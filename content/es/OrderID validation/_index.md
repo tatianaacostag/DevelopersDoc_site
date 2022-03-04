@@ -66,12 +66,12 @@ Si tu tienda está integrada a través de **API** y utilizas un lenguaje **tipad
 * Si usas el API de consultas y estás mapeando la variable `orderId` con el tipo `int` o `Integer`, debes cambiarlo al tipo `long` o `Long`.
 * Debes validar con tu equipo técnico si la variable `orderId` está siendo almacenada en una base de Datos. Si es así, valida que la columna en tu base de datos admita valores de tipo `Long`.
 
-### Integración de SDK {#sdk-integration}
+### Integración SDK {#sdk-integration}
 Si te estás integrando con nuestros servicios usando el SDK, cambia el archivo _**.jar**_ de la versión actual.
 
 <a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Descarga el SDK Java 1.4.0</a>
 
-### WebCheckout Integration {#webcheckout-integration}
+### Integración WebCheckout {#webcheckout-integration}
 Si tu tienda está integrada a través de **WebCheckout** y utilizas un lenguaje **tipado** para tu integración, debes validar cómo declaraste la variable numérica `orderId`.
 
 * Si la variable `orderId` utilizada en la página de confirmación está definida como tipo `int` o `Integer`, debe cambiarla al tipo `long` o `Long`.
