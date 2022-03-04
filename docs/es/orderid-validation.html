@@ -280,9 +280,9 @@
     </div>  
 </div>
 <h2 id="overview">Introducción</h2>
-<p>Debido al crecimiento exponencial del comercio electrónico y los pagos en línea, el tamaño de los identificadores que devolvemos desde nuestro procesador de pagos se ha vuelto más grandes.</p>
-<p>A partir del <em>30 de abril de 2022</em>, el tipo de datos actual del parámetro <code>orderId</code> cambiará para permitir una mayor cantidad de posibles identificadores; Por lo tanto, el tipo de datos actual ya no será compatible y este cambio puede afectar tu integración con nuestra plataforma.</p>
-<p>Para evitar problemas debido a este cambio, debes validar si el nuevo tipo devuelto coincide con tu integración actual. Sigue las pautas explicadas en este artículo para verificar si tu integración requiere una actualización.</p>
+<p>Debido al crecimiento exponencial del comercio electrónico y los pagos en línea, el tamaño de los identificadores que devolvemos desde nuestro procesador de pagos se ha incrementado.</p>
+<p>Nuestras estimaciones muestran que aproximadamente el <em>30 de abril de 2022</em>, sobrepasaremos la barrera de los 10 dígitos del parámetro <code>orderId</code>. Esto hace que cambiamos el tipo numérico actual del parámetro para permitir un mayor número de dígitos en los identificadores retornados; por lo tanto, el tipo de datos actual ya no será compatible y este cambio puede afectar tu integración con nuestra plataforma.</p>
+<p>Para evitar problemas debido a este cambio, debes validar si el nuevo tipo retornado coincide con tu integración actual. Sigue las pautas explicadas en este artículo para verificar si tu integración requiere una actualización.</p>
 <h3 id="frequently-asked-questions">Preguntas frecuentes</h3>
 <ul>
 <li>
@@ -301,7 +301,7 @@
 <p><strong>¿Este cambio solo afecta el flujo de Pago?</strong><br>No, este cambio también puede tener impacto en tus reportes o consultas relacionadas con transacciones. Ten cuidado cuando realices la validación.</p>
 </li>
 <li>
-<p><strong>¿Qué sucede si no aplico este cambio?</strong><br>Si no realizas este cambio y este afecta tu integración, <strong>no</strong> podrás recibir la confirmación del procedimiento de pago. Además, <strong>no</strong> podrás consultar nuevas transacciones desde el <em>30 de abril de 2022</em>.</p>
+<p><strong>¿Qué sucede si no aplico este cambio?</strong><br>Si no realizas este cambio y este afecta tu integración, <strong>no</strong> podrás recibir la confirmación del procedimiento de pago. Además, <strong>no</strong> podrás consultar nuevas transacciones a partir de que empecemos a retornar el poarámetro <code>orderId</code> con más de 10 dígitos (aproximadamente, después del <em>30 de abril de 2022</em>).</p>
 </li>
 <li>
 <p><strong>¿El equipo de Soporte de PayU puede hacer este cambio por mí?</strong><br>No, tú decides cómo te integras con nuestros servicios. PayU no se hace responsable por errores debido a integraciones incorrectas.</p>
@@ -355,9 +355,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-3 de marzo de 2022:
+4 de marzo de 2022:
 
- <b>Order ID validation for merchants (1e040354)</b>
+ <b>Order ID validation for merchants (11b8975d)</b>
 </div>
 </div>
 

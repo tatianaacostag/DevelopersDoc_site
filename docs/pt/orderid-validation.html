@@ -263,51 +263,51 @@
     <div class="CounterContent">
       <div id="DaysDiv">
         <p id="days"></p>
-        <p style="color:white;text-align:center;">Dias</p>
+        <p style="color:white;text-align:center;">Days</p>
       </div>
       <div id="HoursDiv">
         <p id="hours"></p>
-        <p style="color:white;text-align:center;">Horas</p>
+        <p style="color:white;text-align:center;">Hours</p>
       </div>
       <div id="MinutesDiv">
         <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutos</p>
+        <p style="color:white;text-align:center;">Minutes</p>
       </div>
       <div id="SecondsDiv">
         <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Segundos</p>
+        <p style="color:white;text-align:center;">Seconds</p>
       </div>
     </div>  
 </div>
 <h2 id="overview">Overview</h2>
-<p>Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor have become larger.</p>
-<p>Since <em>April 30, 2022</em>, the current data type of the parameter <code>orderId</code> will change to allow a bigger number of possible identifiers; Thence, the current data type will no be longer supported and this change may affect your integration with our platform.</p>
-<p>To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines explained in this article to check whether your integration requires an update.</p>
+<p>Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor has increased.</p>
+<p>Our estimations show that approximately on <em>April 30, 2022</em>, we will overcome the barrier of the 10 digits for the parameter <code>orderId</code>. This makes us change the current data type of the Number parameter <code>orderId</code> to allow more digits in the returning identifiers; Thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.</p>
+<p>To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines in this article to check whether your integration requires an update.</p>
 <h3 id="frequently-asked-questions">Frequently Asked Questions</h3>
 <ul>
 <li>
 <p><strong>How can I check if the data type change affects my integration?</strong><br>Refer to the <a href="#validation-procedure"><em><strong>Validation procedure</strong></em> section</a> to learn how to validate according to the integration type you have with us.</p>
 </li>
 <li>
-<p><strong>My integration is through a digital commerce platform (such as VTEX, Shopify, etc), Do I need to implement the change?</strong><br>No, your digital commerce platform will implement the change silently. Nevertheless, you need to check if you have external connections to the platform for reports or queries.</p>
+<p><strong>My integration is through a digital commerce platform (such as VTEX, Shopify, etc). Do I need to implement the change?</strong><br>No, your digital commerce platform will implement the change silently. Nevertheless, you need to check if you have external connections for reports or queries.</p>
 </li>
 <li>
-<p><strong>What is the data type change?</strong><br>Nowadays, the parameter <code>orderId</code> is returned using the <code>Integer</code> type, the new data type for this parameter will be <code>Long</code>.</p>
+<p><strong>What is the data type change?</strong><br>Nowadays, the Number parameter <code>orderId</code> is returned using the <code>Integer</code> type; the new data type for this parameter will be <code>Long</code>.</p>
 </li>
 <li>
-<p><strong>Is this change mandatory?</strong><br>If after you have verified your integration, you found that the <code>orderId</code> is an Integer-type variable, yes. Otherwise, you don&rsquo;t have to change your integration.</p>
+<p><strong>Is this change mandatory?</strong><br>If after verifying your integration, you found that the <code>orderId</code> is an Integer-type variable, yes. Otherwise, you don&rsquo;t have to change your integration.</p>
 </li>
 <li>
-<p><strong>This change only affects the Payment flow?</strong><br>No, this change may also have an impact on your reports or queries related to transactions. Be careful when you perform the validation.</p>
+<p><strong>This change only affects the Payment flow?</strong><br>No. This change may also impact your reports or queries related to transactions. Be careful when you perform the validation.</p>
 </li>
 <li>
-<p><strong>What if I don&rsquo;t apply this change?</strong><br>If you don&rsquo;t apply this change if it applies to your integration, you <strong>will not</strong> be able to receive the confirmation of the payment procedure. Furthermore, you <strong>will not</strong> be able to query new transactions since <em>April 30, 2022</em>.</p>
+<p><strong>What if I don&rsquo;t apply this change?</strong><br>If you don’t apply this change and you oughta do it, you <strong>will not</strong> receive the confirmation of the payment procedure. Furthermore, you <strong>will not</strong> be able to query new transactions since we start to return <code>orderId</code> parameter with more than 10 digits (approximately after <em>April 30, 2022</em>).</p>
 </li>
 <li>
-<p><strong>Can the PayU Support team make this change for me?</strong><br>No, the way how you integrate with our services is up to you. PayU is not responsible for errors due to wrong integrations.</p>
+<p><strong>Can the PayU Support team make this change for me?</strong><br>No. The way you integrate with our services is up to you. PayU is not responsible for errors due to wrong integrations.</p>
 </li>
 <li>
-<p><strong>Does this change need to be implemented again?</strong><br>Not in the near future. The change of the data type allows us to have a bigger capacity in the generation of identifiers. This change lets us generate up to <em><strong>9.223.372.036.854.775.807</strong></em> identifiers.</p>
+<p><strong>Does this change need to be implemented again?</strong><br>Not shortly. This change in the data type allows us to increase our capacity to generate identifiers, letting us generate up to <em><strong>9.223.372.036.854.775.807</strong></em> identifiers.</p>
 </li>
 </ul>
 <h2 id="validation-procedure">Validation procedure</h2>
@@ -320,7 +320,7 @@
 <li>You must validate with your technical team whether the variable <code>orderId</code> is being stored in a database. If so, validate that the column in your database supports <code>Long-type</code> values.</li>
 </ul>
 <h3 id="sdk-integration">SDK Integration</h3>
-<p>If are integrating with our services using the SDK, change the <em><strong>.jar</strong></em> file of the current version of our SDK.</p>
+<p>If you are integrating with our services using the SDK, change the <em><strong>.jar</strong></em> file of the current version of our SDK.</p>
 <p><a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Download SDK Java 1.4.0</a></p>
 <h3 id="webcheckout-integration">WebCheckout Integration</h3>
 <p>If your shop is integrated via <strong>WebCheckout</strong> and you use a <strong>typed</strong> language for your integration, you need to validate how you declare the numeric variable <code>orderId</code>.</p>
@@ -355,9 +355,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-3 de março de 2022:
+4 de março de 2022:
 
- <b>Order ID validation for merchants (1e040354)</b>
+ <b>Order ID validation for merchants (11b8975d)</b>
 </div>
 </div>
 
