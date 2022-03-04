@@ -14,47 +14,47 @@ notopicssection: true
     <div class="CounterContent">
       <div id="DaysDiv">
         <p id="days"></p>
-        <p style="color:white;text-align:center;">Dias</p>
+        <p style="color:white;text-align:center;">Days</p>
       </div>
       <div id="HoursDiv">
         <p id="hours"></p>
-        <p style="color:white;text-align:center;">Horas</p>
+        <p style="color:white;text-align:center;">Hours</p>
       </div>
       <div id="MinutesDiv">
         <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutos</p>
+        <p style="color:white;text-align:center;">Minutes</p>
       </div>
       <div id="SecondsDiv">
         <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Segundos</p>
+        <p style="color:white;text-align:center;">Seconds</p>
       </div>
     </div>  
 </div>
 
 ## Overview
-Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor have become larger.
+Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor has increased.
 
-Since _April 30, 2022_, the current data type of the parameter `orderId` will change to allow a bigger number of possible identifiers; Thence, the current data type will no be longer supported and this change may affect your integration with our platform.
+Our estimations show that approximately on _April 30, 2022_, we will overcome the barrier of the 10 digits for the parameter `orderId`. This makes us change the current data type of the Number parameter `orderId` to allow more digits in the returning identifiers; Thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.
 
-To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines explained in this article to check whether your integration requires an update.
+To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines in this article to check whether your integration requires an update.
 
 ### Frequently Asked Questions
 
 * **How can I check if the data type change affects my integration?**<br>Refer to the [_**Validation procedure**_ section]({{< ref"#validation-procedure" >}}) to learn how to validate according to the integration type you have with us.
 
-* **My integration is through a digital commerce platform (such as VTEX, Shopify, etc), Do I need to implement the change?**<br>No, your digital commerce platform will implement the change silently. Nevertheless, you need to check if you have external connections to the platform for reports or queries.
+* **My integration is through a digital commerce platform (such as VTEX, Shopify, etc). Do I need to implement the change?**<br>No, your digital commerce platform will implement the change silently. Nevertheless, you need to check if you have external connections for reports or queries.
 
-* **What is the data type change?**<br>Nowadays, the parameter `orderId` is returned using the `Integer` type, the new data type for this parameter will be `Long`.
+* **What is the data type change?**<br>Nowadays, the Number parameter `orderId` is returned using the `Integer` type; the new data type for this parameter will be `Long`.
 
-* **Is this change mandatory?**<br>If after you have verified your integration, you found that the `orderId` is an Integer-type variable, yes. Otherwise, you don't have to change your integration.
+* **Is this change mandatory?**<br>If after verifying your integration, you found that the `orderId` is an Integer-type variable, yes. Otherwise, you don't have to change your integration.
 
-* **This change only affects the Payment flow?**<br>No, this change may also have an impact on your reports or queries related to transactions. Be careful when you perform the validation.
+* **This change only affects the Payment flow?**<br>No. This change may also impact your reports or queries related to transactions. Be careful when you perform the validation.
 
-* **What if I don't apply this change?**<br>If you don't apply this change if it applies to your integration, you **will not** be able to receive the confirmation of the payment procedure. Furthermore, you **will not** be able to query new transactions since _April 30, 2022_. 
+* **What if I don't apply this change?**<br>If you don’t apply this change and you oughta do it, you **will not** receive the confirmation of the payment procedure. Furthermore, you **will not** be able to query new transactions since we start to return `orderId` parameter with more than 10 digits (approximately after _April 30, 2022_). 
 
-* **Can the PayU Support team make this change for me?**<br>No, the way how you integrate with our services is up to you. PayU is not responsible for errors due to wrong integrations.
+* **Can the PayU Support team make this change for me?**<br>No. The way you integrate with our services is up to you. PayU is not responsible for errors due to wrong integrations.
 
-* **Does this change need to be implemented again?**<br>Not in the near future. The change of the data type allows us to have a bigger capacity in the generation of identifiers. This change lets us generate up to _**9.223.372.036.854.775.807**_ identifiers.
+* **Does this change need to be implemented again?**<br>Not shortly. This change in the data type allows us to increase our capacity to generate identifiers, letting us generate up to _**9.223.372.036.854.775.807**_ identifiers.
 
 ## Validation procedure
 The validation of the `orderId` depends on your integration.
@@ -67,7 +67,7 @@ If your shop is integrated via **API** and you use a **typed** language for your
 * You must validate with your technical team whether the variable `orderId` is being stored in a database. If so, validate that the column in your database supports `Long-type` values.
 
 ### SDK Integration
-If are integrating with our services using the SDK, change the _**.jar**_ file of the current version of our SDK.
+If you are integrating with our services using the SDK, change the _**.jar**_ file of the current version of our SDK.
 
 <a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Download SDK Java 1.4.0</a>
 
