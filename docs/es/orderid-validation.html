@@ -134,7 +134,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.d52f5e1818a4a1c8f3caaf69e0ec91357158dffef4b2d8f4809adecdf402c2cade1e079adc79dd128d9b8e8ac5868c6d62f3b362bb18fa9e74b76c832c8c4434.json"
+  data-offline-search-index-json-src="../offline-search-index.fba04b1c327779dfe1c0ae760859be866a6ff199ce585781e773ad29e1c6873513f0d8ddcd76f9d5905acfc7e5917f281f1af7c1cc0bf2eff98399f868194e39.json"
   data-offline-search-base-href="../"
 >
 
@@ -222,8 +222,8 @@
     <li><a href="#validation-procedure">Procedimiento de validación</a>
       <ul>
         <li><a href="#api-integración">Integración API</a></li>
-        <li><a href="#sdk-integration">Integración de SDK</a></li>
-        <li><a href="#webcheckout-integration">WebCheckout Integration</a></li>
+        <li><a href="#sdk-integration">Integración SDK</a></li>
+        <li><a href="#webcheckout-integration">Integración WebCheckout</a></li>
       </ul>
     </li>
     <li><a href="#support">Soporte</a></li>
@@ -319,10 +319,10 @@
 <li>Si usas el API de consultas y estás mapeando la variable <code>orderId</code> con el tipo <code>int</code> o <code>Integer</code>, debes cambiarlo al tipo <code>long</code> o <code>Long</code>.</li>
 <li>Debes validar con tu equipo técnico si la variable <code>orderId</code> está siendo almacenada en una base de Datos. Si es así, valida que la columna en tu base de datos admita valores de tipo <code>Long</code>.</li>
 </ul>
-<h3 id="sdk-integration">Integración de SDK</h3>
+<h3 id="sdk-integration">Integración SDK</h3>
 <p>Si te estás integrando con nuestros servicios usando el SDK, cambia el archivo <em><strong>.jar</strong></em> de la versión actual.</p>
 <p><a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Descarga el SDK Java 1.4.0</a></p>
-<h3 id="webcheckout-integration">WebCheckout Integration</h3>
+<h3 id="webcheckout-integration">Integración WebCheckout</h3>
 <p>Si tu tienda está integrada a través de <strong>WebCheckout</strong> y utilizas un lenguaje <strong>tipado</strong> para tu integración, debes validar cómo declaraste la variable numérica <code>orderId</code>.</p>
 <ul>
 <li>Si la variable <code>orderId</code> utilizada en la página de confirmación está definida como tipo <code>int</code> o <code>Integer</code>, debe cambiarla al tipo <code>long</code> o <code>Long</code>.</li>
@@ -357,7 +357,7 @@
 
 4 de marzo de 2022:
 
- <b>Order ID validation for merchants (11b8975d)</b>
+ <b>Validation of the Order Id articles (447e32b9)</b>
 </div>
 </div>
 

@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/services/3ds-authentication.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-12-07T10:25:17-05:00" />
-<meta property="article:modified_time" content="2022-01-11T11:59:26-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2022-03-04T11:11:46-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Autenticación 3DS">
 <meta itemprop="description" content="3DS (en inglés **Three-Domain Secure**) te permite realizar un proceso de autenticación intuitivo y amigable con el cliente. 3DS agrega capas de seguridad adicionales para reducir el fraude evitando el uso no autorizado de tarjetas de crédito. 
 "><meta itemprop="datePublished" content="2021-12-07T10:25:17-05:00" />
-<meta itemprop="dateModified" content="2022-01-11T11:59:26-05:00" />
-<meta itemprop="wordCount" content="841">
+<meta itemprop="dateModified" content="2022-03-04T11:11:46-05:00" />
+<meta itemprop="wordCount" content="831">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Autenticación 3DS"/>
 <meta name="twitter:description" content="3DS (en inglés **Three-Domain Secure**) te permite realizar un proceso de autenticación intuitivo y amigable con el cliente. 3DS agrega capas de seguridad adicionales para reducir el fraude evitando el uso no autorizado de tarjetas de crédito. 
@@ -141,7 +141,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.d52f5e1818a4a1c8f3caaf69e0ec91357158dffef4b2d8f4809adecdf402c2cade1e079adc79dd128d9b8e8ac5868c6d62f3b362bb18fa9e74b76c832c8c4434.json"
+  data-offline-search-index-json-src="../../../offline-search-index.fba04b1c327779dfe1c0ae760859be866a6ff199ce585781e773ad29e1c6873513f0d8ddcd76f9d5905acfc7e5917f281f1af7c1cc0bf2eff98399f868194e39.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -881,12 +881,11 @@ La Autenticación 3DS está soportada para Visa y MasterCard.
 <li>PayU está conectado a un servidor 3DS (MPI), no es necesario que lo hagas por tu cuenta. ¡Menos proveedores y contratos!</li>
 <li>Tú controlas y decides cuándo autenticar una transacción.</li>
 <li>Sin costos adicionales<sup>*</sup>. ¡La autenticación es un servicio gratuito que ofrece PayU!.</li>
-<li>Ajustes mínimos o nulos al contrato para acceder al servicio de 3DS.</li>
 <li>Si migras al HUB, puedes tener beneficios adicionales de nuestra solución global.</li>
 </ul>
 <p><sup>*</sup> <em>Los adquirentes pueden cobrar un costo de autenticación, de ser así, este costo se te transferirá.</em></p>
 <h3 id="how-to-integrate-3ds">¿Cómo integrar 3DS?</h3>
-<p>La Autenticación 3DS es un servicio disponible bajo demanda, contacta a tu Key Account Manager o a Soporte Técnico para activarlo.<br>Dependiendo del escenario que escojas para utilizar la Autenticación 3DS, el procedimiento de integración varia.</p>
+<p>La Autenticación 3DS es un servicio disponible bajo demanda, contacta a tu Key Account Manager para firmar los Términos y Condiciones para activarlo.<br>Dependiendo del escenario que escojas para utilizar la Autenticación 3DS, el procedimiento de integración varia.</p>
 <h4 id="pass-through">Pass Through</h4>
 <p>Cuando estás integrado con un <em><strong>MPI</strong></em> o un <em><strong>3DS Server</strong></em>, solo necesitas enviarnos la respuesta de la autenticación en la petición de pago. Consulta tu país de procesamiento para ver un ejemplo de cómo enviamos los parámetros retornados en la respuesta:</p>
 <div style="display: flex;">
@@ -923,9 +922,9 @@ La Autenticación 3DS está soportada para Visa y MasterCard.
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-11 de enero de 2022:
+4 de marzo de 2022:
 
- <b>Changes from production environment (3903bb40)</b>
+ <b>Validation of the Order Id articles (447e32b9)</b>
 </div>
 </div>
 

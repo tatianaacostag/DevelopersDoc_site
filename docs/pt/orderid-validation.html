@@ -22,14 +22,14 @@
 <link rel="icon" type="image/png" href="../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../favicons/android-192x192.png" sizes="192x192">
 
-<title>Validation of the OrderId variable | PayU Latam</title><meta property="og:title" content="Validation of the OrderId variable" />
+<title>Validação da variável OrderId | PayU Latam</title><meta property="og:title" content="Validação da variável OrderId" />
 <meta property="og:description" content="Documentação de desenvolvedores PayU" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/pt/orderid-validation.html" /><meta property="og:site_name" content="PayU Latam" />
 
-<meta itemprop="name" content="Validation of the OrderId variable">
+<meta itemprop="name" content="Validação da variável OrderId">
 <meta itemprop="description" content="Documentação de desenvolvedores PayU"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Validation of the OrderId variable"/>
+<meta name="twitter:title" content="Validação da variável OrderId"/>
 <meta name="twitter:description" content="Documentação de desenvolvedores PayU"/>
 
 
@@ -134,7 +134,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.d52f5e1818a4a1c8f3caaf69e0ec91357158dffef4b2d8f4809adecdf402c2cade1e079adc79dd128d9b8e8ac5868c6d62f3b362bb18fa9e74b76c832c8c4434.json"
+  data-offline-search-index-json-src="../offline-search-index.fba04b1c327779dfe1c0ae760859be866a6ff199ce585781e773ad29e1c6873513f0d8ddcd76f9d5905acfc7e5917f281f1af7c1cc0bf2eff98399f868194e39.json"
   data-offline-search-base-href="../"
 >
 
@@ -171,7 +171,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/pt/orderid-validation.html" href="../pt/orderid-validation.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Variable OrderId</a>
+    <a id="/pt/orderid-validation.html" href="../pt/orderid-validation.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Variável OrderId</a>
   </li>
   <ul class="side-main">
     <li class="" id="ptorderid-validationhtml">
@@ -214,19 +214,19 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#overview">Overview</a>
+    <li><a href="#overview">Introdução</a>
       <ul>
-        <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+        <li><a href="#frequently-asked-questions">Perguntas frequentes</a></li>
       </ul>
     </li>
-    <li><a href="#validation-procedure">Validation procedure</a>
+    <li><a href="#validation-procedure">Procedimento de validação</a>
       <ul>
-        <li><a href="#api-integration">API Integration</a></li>
-        <li><a href="#sdk-integration">SDK Integration</a></li>
-        <li><a href="#webcheckout-integration">WebCheckout Integration</a></li>
+        <li><a href="#api-integration">Integração API</a></li>
+        <li><a href="#sdk-integration">Integração SDK</a></li>
+        <li><a href="#webcheckout-integration">Integração WebCheckout</a></li>
       </ul>
     </li>
-    <li><a href="#support">Support</a></li>
+    <li><a href="#support">Suporte</a></li>
   </ul>
 </nav>
 
@@ -245,7 +245,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../pt/orderid-validation.html">Variable OrderId</a>
+	<a href="../pt/orderid-validation.html">Variável OrderId</a>
 </li>
 
 	</ol>
@@ -253,84 +253,84 @@
 
             
 <div class="td-content">
-	<h1>Validation of the OrderId variable</h1>
+	<h1>Validação da variável OrderId</h1>
         
 	
 	<script src="../js/countdown.js"></script>
 <br>
 <div id="MainCounter">
-    <p class="CounterHeader">Your system must be ready in</p>
+    <p class="CounterHeader">Seu sistema deve estar pronto em</p>
     <div class="CounterContent">
       <div id="DaysDiv">
         <p id="days"></p>
-        <p style="color:white;text-align:center;">Days</p>
+        <p style="color:white;text-align:center;">Dias</p>
       </div>
       <div id="HoursDiv">
         <p id="hours"></p>
-        <p style="color:white;text-align:center;">Hours</p>
+        <p style="color:white;text-align:center;">Horas</p>
       </div>
       <div id="MinutesDiv">
         <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutes</p>
+        <p style="color:white;text-align:center;">Minutos</p>
       </div>
       <div id="SecondsDiv">
         <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Seconds</p>
+        <p style="color:white;text-align:center;">Segundos</p>
       </div>
     </div>  
 </div>
-<h2 id="overview">Overview</h2>
-<p>Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor has increased.</p>
-<p>Our estimations show that approximately on <em>April 30, 2022</em>, we will overcome the barrier of the 10 digits for the parameter <code>orderId</code>. This makes us change the current data type of the Number parameter <code>orderId</code> to allow more digits in the returning identifiers; Thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.</p>
-<p>To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines in this article to check whether your integration requires an update.</p>
-<h3 id="frequently-asked-questions">Frequently Asked Questions</h3>
+<h2 id="overview">Introdução</h2>
+<p>Devido ao crescimento exponencial do comércio eletrônico e dos pagamentos online, o tamanho dos tokens que retornamos do nosso processador de pagamentos aumentou.</p>
+<p>Nossas estimativas mostram que por volta de <em>30 de abril de 2022</em>, passaremos a barreira de 10 dígitos para o parâmetro <code>orderId</code>. Isso nos faz alterar o tipo numérico atual do parâmetro para permitir um número maior de dígitos nos identificadores retornados; portanto, o tipo de dados atual não será mais suportado e essa alteração pode afetar sua integração com nossa plataforma.</p>
+<p>Para evitar problemas devido a essa alteração, você deve verificar se o novo tipo retornado corresponde à sua integração atual. Siga as diretrizes explicadas neste artigo para verificar se sua integração requer uma atualização.</p>
+<h3 id="frequently-asked-questions">Perguntas frequentes</h3>
 <ul>
 <li>
-<p><strong>How can I check if the data type change affects my integration?</strong><br>Refer to the <a href="#validation-procedure"><em><strong>Validation procedure</strong></em> section</a> to learn how to validate according to the integration type you have with us.</p>
+<p><strong>Como posso verificar se a alteração do tipo de dados afeta minha integração?</strong><br>Veja a seção <a href="#validation-procedure"><em><strong>Procedimento de validação</strong></em></a> para saber como validar com base no tipo de integração que você tem conosco.</p>
 </li>
 <li>
-<p><strong>My integration is through a digital commerce platform (such as VTEX, Shopify, etc). Do I need to implement the change?</strong><br>No, your digital commerce platform will implement the change silently. Nevertheless, you need to check if you have external connections for reports or queries.</p>
+<p><strong>Minha integração é através de uma plataforma de comércio digital (como VTEX, Shopify, etc), preciso implementar a mudança?</strong><br>Não, sua plataforma de comércio digital implementará a mudança silenciosamente. No entanto, você deve verificar se possui conexões externas à plataforma para relatórios ou consultas.</p>
 </li>
 <li>
-<p><strong>What is the data type change?</strong><br>Nowadays, the Number parameter <code>orderId</code> is returned using the <code>Integer</code> type; the new data type for this parameter will be <code>Long</code>.</p>
+<p><strong>Qual é a alteração do tipo de dados?</strong><br>Atualmente, o parâmetro <code>orderId</code> é retornado usando o tipo <code>Integer</code>, o novo tipo de dados para este parâmetro será <code>Long</code>.</p>
 </li>
 <li>
-<p><strong>Is this change mandatory?</strong><br>If after verifying your integration, you found that the <code>orderId</code> is an Integer-type variable, yes. Otherwise, you don&rsquo;t have to change your integration.</p>
+<p><strong>Essa alteração é necessária?</strong><br>Se após verificar sua integração, você descobriu que o <code>orderId</code> é uma variável do tipo <code>Integer</code>, sim. Caso contrário, você não precisa alterar sua integração.</p>
 </li>
 <li>
-<p><strong>This change only affects the Payment flow?</strong><br>No. This change may also impact your reports or queries related to transactions. Be careful when you perform the validation.</p>
+<p><strong>Essa alteração afeta apenas o fluxo de pagamento?</strong><br>Não, essa alteração também pode afetar seus relatórios ou consultas relacionadas a transações. Tenha cuidado ao realizar a validação.</p>
 </li>
 <li>
-<p><strong>What if I don&rsquo;t apply this change?</strong><br>If you don’t apply this change and you oughta do it, you <strong>will not</strong> receive the confirmation of the payment procedure. Furthermore, you <strong>will not</strong> be able to query new transactions since we start to return <code>orderId</code> parameter with more than 10 digits (approximately after <em>April 30, 2022</em>).</p>
+<p><strong>O que acontece se eu não aplicar essa alteração?</strong><br>Se você não fizer essa alteração e isso afetar sua integração, você <strong>não</strong> poderá receber a confirmação do procedimento de pagamento. Além disso, você <strong>não</strong> poderá consultar novas transações depois que começarmos a retornar o parâmetro <code>orderId</code> com mais de 10 dígitos (aproximadamente após <em>30 de abril de 2022</em>).</p>
 </li>
 <li>
-<p><strong>Can the PayU Support team make this change for me?</strong><br>No. The way you integrate with our services is up to you. PayU is not responsible for errors due to wrong integrations.</p>
+<p><strong>A equipe de suporte da PayU pode fazer essa alteração para mim?</strong><br>Não, você decide como se integra aos nossos serviços. PayU não se responsabiliza por erros devido a integrações incorretas.</p>
 </li>
 <li>
-<p><strong>Does this change need to be implemented again?</strong><br>Not shortly. This change in the data type allows us to increase our capacity to generate identifiers, letting us generate up to <em><strong>9.223.372.036.854.775.807</strong></em> identifiers.</p>
+<p><strong>Essa alteração precisa ser reimplementada?</strong><br>Não em um futuro próximo. A alteração do tipo de dados permite-nos ter uma maior capacidade na geração de identificadores. Essa alteração nos permite gerar até <em><strong>9.223.372.036.854.775.807</strong></em> tokens.</p>
 </li>
 </ul>
-<h2 id="validation-procedure">Validation procedure</h2>
-<p>The validation of the <code>orderId</code> depends on your integration.</p>
-<h3 id="api-integration">API Integration</h3>
-<p>If your shop is integrated via <strong>API</strong> and you use a <strong>typed</strong> language for your integration, you need to validate how you declare the numeric variable <code>orderId</code>.</p>
+<h2 id="validation-procedure">Procedimento de validação</h2>
+<p>A validação de <code>orderId</code> depende da sua integração.</p>
+<h3 id="api-integration">Integração API</h3>
+<p>Se sua loja é integrada por meio da <strong>API</strong> e você usa uma linguagem <strong>tipada</strong> para sua integração, você deve validar como declarou a variável numérica <code>orderId</code>.</p>
 <ul>
-<li>If the variable <code>orderId</code> is <code>int</code> or <code>Integer</code> type, you must change it to the type <code>long</code> or <code>Long</code>.</li>
-<li>If you use the Query API and you are mapping the variable <code>orderId</code> using <code>int</code> or <code>Integer</code> type, you must change it to the type <code>long</code> or <code>Long</code>.</li>
-<li>You must validate with your technical team whether the variable <code>orderId</code> is being stored in a database. If so, validate that the column in your database supports <code>Long-type</code> values.</li>
+<li>Se a variável <code>orderId</code> for do tipo <code>int</code> ou <code>Integer</code>, você deve alterá-la para o tipo <code>long</code> ou <code>Long</code>.</li>
+<li>Se você estiver usando a API de Consultas e estiver mapeando a variável <code>orderId</code> para o tipo <code>int</code> ou <code>Integer</code>, você deve alterá-la para o tipo <code>long</code> ou <code>Long</code>.</li>
+<li>Você deve verificar com sua equipe técnica se a variável <code>orderId</code> está sendo armazenada em um banco de dados. Em caso afirmativo, valide se a coluna em seu banco de dados suporta valores do tipo <code>Long</code>.</li>
 </ul>
-<h3 id="sdk-integration">SDK Integration</h3>
-<p>If you are integrating with our services using the SDK, change the <em><strong>.jar</strong></em> file of the current version of our SDK.</p>
-<p><a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Download SDK Java 1.4.0</a></p>
-<h3 id="webcheckout-integration">WebCheckout Integration</h3>
-<p>If your shop is integrated via <strong>WebCheckout</strong> and you use a <strong>typed</strong> language for your integration, you need to validate how you declare the numeric variable <code>orderId</code>.</p>
+<h3 id="sdk-integration">Integração SDK</h3>
+<p>Se você estiver integrando com nossos serviços usando o SDK, altere o arquivo <em><strong>.jar</strong></em> da versão atual.</p>
+<p><a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Faça download do SDK Java 1.4.0</a></p>
+<h3 id="webcheckout-integration">Integração WebCheckout</h3>
+<p>Se sua loja é integrada por meio do <strong>WebCheckout</strong> e você usa uma linguagem <strong>tipada</strong> para sua integração, você deve validar como declarou a variável numérica <code>orderId</code>.</p>
 <ul>
-<li>If the variable <code>orderId</code> used in the confirmation page is defined as <code>int</code> or <code>Integer</code> type, you must change it to the type <code>long</code> or <code>Long</code>.</li>
-<li>If you use the Query API and you are mapping the variable <code>orderId</code> using <code>int</code> or <code>Integer</code> type, you must change it to the type <code>long</code> or <code>Long</code>.</li>
-<li>You must validate with your technical team whether the variable <code>orderId</code> is being stored in a database. If so, validate that the column in your database supports <code>Long-type</code> values.</li>
+<li>Se a variável <code>orderId</code> usada na página de confirmação estiver configurada para o tipo <code>int</code> ou <code>Integer</code>, você deve alterá-la para o tipo <code>long</code> ou <code>Long</code>.</li>
+<li>Se você estiver usando a Query API e estiver mapeando a variável <code>orderId</code> para o tipo <code>int</code> ou <code>Integer</code>, você deve alterá-la para o tipo <code>long</code> ou <code>Long</code>.</li>
+<li>Você deve verificar com sua equipe técnica se a variável <code>orderId</code> está sendo armazenada em um banco de dados. Em caso afirmativo, valide se a coluna em seu banco de dados suporta valores do tipo <code>Long</code>.</li>
 </ul>
-<h2 id="support">Support</h2>
-<p>To request support or ask questions related to this change, contact our support team in your country:</p>
+<h2 id="support">Suporte</h2>
+<p>Para solicitar suporte ou fazer perguntas relacionadas a essa alteração, entre em contato com nossa equipe de suporte em seu país:</p>
 <div style="display: flex;">
   <div style="float: left;width: 50%;">
     <ul>
@@ -357,7 +357,7 @@
 
 4 de março de 2022:
 
- <b>Order ID validation for merchants (11b8975d)</b>
+ <b>Validation of the Order Id articles (447e32b9)</b>
 </div>
 </div>
 

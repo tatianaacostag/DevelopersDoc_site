@@ -338,8 +338,12 @@ Make sure you have selected the &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&gt;&lt
 &lt;td&gt;Private API Key of the &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;Payment capture&lt;/td&gt;
+&lt;td&gt;Select how you want to perform the settlement (charge) in your affiliation.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For one-step flow, select &lt;code&gt;Automatic capture immediately after payment authorization&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;For two-step flow, select &lt;code&gt;Deactivated: Not automatically captured&lt;/code&gt; to execute the settlement once you invoice the order.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;For more information about this parameter, refer to &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Custom Auto Capture Feature&lt;/a&gt; in the developers documentation.&lt;br&gt;The default value for this option is seven (7) days after the approval.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;Tipo Autorizacion&lt;/td&gt;
-&lt;td&gt;Select &lt;code&gt;Autorizacion Y Captura&lt;/code&gt; for this field.&lt;/td&gt;
+&lt;td&gt;Choose if your payment transactions are executed in using one-step or two-step flow.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For one-step flow, select &lt;code&gt;Autorizacion y Captura&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;For two-step flow, select &lt;code&gt;Pre-Autorizacion&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Refer to the following &lt;a href=&#34;../../../../en/docs/services/payments.html#payment-flows&#34;&gt;link&lt;/a&gt; to learn more about the Payment flows.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Public Key&lt;/td&gt;
@@ -372,7 +376,7 @@ PSE (Colombian Bank transfer method) is not supported through this version of th
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;note&lt;/h4&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
 If the payment method you want to configure is not listed, you need to create it first and selected in the &lt;em&gt;&lt;strong&gt;Custom payments&lt;/strong&gt;&lt;/em&gt; group. Refer to the &lt;a href=&#34;https://help.vtex.com/en/tutorial/how-to-configure-a-custom-payment--tutorials_451&#34;&gt;VTEX help center&lt;/a&gt; to learn how to create a custom payment method.
 &lt;/div&gt;
 
@@ -394,12 +398,12 @@ If the payment method you want to configure is not listed, you need to create it
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;note&lt;/h4&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
 Changes to payment conditions can take up to 10 minutes to apply to the checkout flow.
 &lt;/div&gt;
 
 &lt;h2 id=&#34;testing-the-integration&#34;&gt;Testing the integration&lt;/h2&gt;
-&lt;p&gt;Once you have configured the Payment conditions for your payment methods you can test the integration in your store. Before moving on, make sure your PaymentsOS account is in &lt;code&gt;TEST&lt;/code&gt; mode.&lt;/p&gt;
+&lt;p&gt;Once you have configured the Payment conditions for your payment methods, it is strongly recommended to test your integration before starting to receive real transactions. As a prerequisite, make sure your PaymentsOS account is in &lt;code&gt;TEST&lt;/code&gt; mode, as well as the &lt;em&gt;&lt;strong&gt;Environment selector&lt;/strong&gt;&lt;/em&gt; in your &lt;em&gt;&lt;strong&gt;Gateway affiliation&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;In the VTEX admin, click &lt;em&gt;&lt;strong&gt;VISIT STORE&lt;/strong&gt;&lt;/em&gt; at the top panel.&lt;/li&gt;
 &lt;/ol&gt;
@@ -419,11 +423,36 @@ Finally, click in Complete purchase&lt;/li&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_19.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Once the purchase has been approved you can check it in:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;VTEX Admin: &lt;em&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Orders management&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;All orders&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;PaymentsOS dashboard: &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;The parameter &lt;em&gt;&lt;strong&gt;External Transaction ID&lt;/strong&gt;&lt;/em&gt; is the Order ID in PayU.&lt;/li&gt;
-&lt;li&gt;PayU Module: in the &lt;a href=&#34;../../../../en/payu-module-documentation/reports/sales-report.html&#34;&gt;&lt;em&gt;&lt;strong&gt;Sales Report&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; module.&lt;/li&gt;
+&lt;li&gt;VTEX Admin: &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Transactions&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_20.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;PaymentsOS dashboard: &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Search&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_21.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;br&gt;The parameter &lt;em&gt;&lt;strong&gt;External Transaction ID&lt;/strong&gt;&lt;/em&gt; inside the &lt;em&gt;&lt;strong&gt;Transaction Activity&lt;/strong&gt;&lt;/em&gt; is the Order ID in PayU.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PayU Module: in the &lt;a href=&#34;../../../../en/payu-module-documentation/reports/sales-report.html&#34;&gt;&lt;em&gt;&lt;strong&gt;Sales Report&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; module.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_22.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;../../../../en/docs/services/queries.html&#34;&gt;Queries API&lt;/a&gt; using the parameter &lt;em&gt;&lt;strong&gt;External Transaction ID&lt;/strong&gt;&lt;/em&gt; as OrderID.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;testing-two-step-flows&#34;&gt;Testing two-step flows&lt;/h3&gt;
+&lt;p&gt;When you have configured your &lt;em&gt;&lt;strong&gt;Gateway affiliation&lt;/strong&gt;&lt;/em&gt; to process transactions in two-step flows, the funds authorized in the credit card are not settled until you explicitly request the settlement. To request the settlement, you need to invoice the order.&lt;/p&gt;
+&lt;p&gt;To invoice an order, locate the transaction in the VTEX Admin (&lt;strong&gt;Payments&lt;/strong&gt;_ &amp;gt; _**Transactions**_) and click it. Then, click the _**Order**_ button at the top right corner.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_23.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Scroll down to the Package section, and click &lt;em&gt;&lt;strong&gt;Invoice package&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_24.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Provide the information of the invoice and click &lt;em&gt;&lt;strong&gt;Send Invoice&lt;/strong&gt;&lt;/em&gt; at the end of the panel. Once the invoice is sent to the customer, the amount authorized is charged fom the customer&amp;rsquo;s card.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_25.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+An authorized order can be cancelled using the &lt;em&gt;&lt;strong&gt;Cancel order&lt;/strong&gt;&lt;/em&gt; button in the Order information. When cancelling the order, PayU send a &lt;em&gt;void&lt;/em&gt; transaction which is record both in the Hub and PayU Latam.
+&lt;/div&gt;
+
 
       </description>
     </item>
