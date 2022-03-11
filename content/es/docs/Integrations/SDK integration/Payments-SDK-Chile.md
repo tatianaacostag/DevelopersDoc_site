@@ -45,18 +45,17 @@ El SDK de pagos incluye los siguientes métodos:
 Para confirmar el estado de una transacción, puedes utilizar el [SDK de Consultas]({{< ref "QueriesSDK.md" >}}).
 {{% /alert %}}
 
-## Enviar transacciones con tarjeta de crédito {#submit-transaction-with-credit-cards}
-Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito. Para Chile, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
+## Enviar transacciones con tarjeta de crédito, débito o prepago {#submit-transaction-with-credit-cards}
+Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito, débito o prepago. Para Chile, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Nota" color="info"%}}
-Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está disponibles bajo demanda. Contacta a tu representante de ventas para más información.
+Las transacciones utilizando flujos de dos pasos está disponibles bajo demanda. Contacta a tu representante de ventas para más información.
 {{% /alert %}}
 
 ### Consideraciones {#considerations}
 * Envía un método de pago válido de tarjeta de crédito, [mira los métodos de pago disponibles para Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
 * Para pagos con tókenes de tarjeta de crédito, asigna los parámetros `TOKEN_ID` y `CREDIT_CARD_SECURITY_CODE` (si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el [SDK de Tokenización]({{< ref "TokenizationSDK.md" >}}).
 * No se permiten transacciones en PESOS CHILENOS con decimales.
-* Two-step flows are not supported for international credit cards.
 * Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está disponibles bajo demanda y para pagos en una cuota. Contacta a tu representante de ventas para más información
 * Por defecto, no está activo el procesamiento de tarjetas de crédito sin código de seguridad. Si quieres activar esta funcionalidad, contacta a tu representante de ventas. Luego de que se te active esta funcionalidad, asigna el parámetro `PROCESS_WITHOUT_CVV2` con true y elimina el parámetro `CREDIT_CARD_SECURITY_CODE`.
 

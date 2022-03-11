@@ -19,7 +19,7 @@ To integrate with Payments API Chile, target your request to the following URLs 
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transaction with credit or debit cards]({{< ref "Payments-API-Chile.md#submit-transaction-with-credit-or-debit-cards" >}})
+* [Submit transaction with credit, debit or prepaid cards]({{< ref "Payments-API-Chile.md#submit-transaction-with-credit-or-debit-cards" >}})
 * [Submit transaction with cash]({{< ref "Payments-API-Chile.md#submit-transaction-with-cash" >}})
 * [Submit transaction with debit and prepaid cards using WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transaction-with-debit-and-prepaid-cards" >}})
 * [Available payment methods query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
@@ -31,11 +31,11 @@ To confirm the status of a transaction, you can use one of the following options
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit or debit cards
-This method lets you process the payments performed by your customers using credit or debit cards. For Chile, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+## Submit transaction with credit, debit or prepaid cards {#submit-transaction-with-credit-or-debit-cards}
+This method lets you process the payments performed by your customers using credit, debit or prepaid cards. For Chile, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Note" color="info"%}}
-Transactions with credit card using two-step flows are available under demand. Contact your Sales representative for more information.
+Transactions using two-step flows are available under demand. Contact your Sales representative for more information.
 {{% /alert %}}
 
 ### Variables for request and response
@@ -159,9 +159,7 @@ Transactions with credit card using two-step flows are available under demand. C
 
 #### Considerations
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
-* International debit cards are not supported.
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
-* Two-step flows are not supported for debit, prepaid and international credit cards.
 * Transactions with credit card using two-step flows are available for single installment payments. If you send a two-step transaction with more two installments or more, this transaction is automatically rejected by the acquirer.<br>Two-step flow is available under request, contact your Sales representative for more information.
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 

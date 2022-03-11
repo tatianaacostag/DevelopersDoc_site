@@ -6,7 +6,19 @@ description: >
   PayU tiene un ambiente de sandbox en el cual, puedes probar tu solución antes de moverte al ambiente en vivo, donde puedes recibir pagos reales y transacciones.
 weight: 40
 ---
-
+<script>
+  function openTarget() {
+    var hash = location.hash.substring(1);
+    if(hash) {
+      var details = document.getElementById(hash);
+    } 
+    if(details && details.tagName.toLowerCase() === 'details') {
+      details.open = true;
+      details.scrollIntoView(true);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', openTarget);
+</script>
 Si deseas hace pruebas con PayU, necesitas utilizar las siguientes credenciales en el request, dependiendo del país de tu cuenta:  
 
 {{< testaccounts/accounts_es >}}
@@ -16,7 +28,7 @@ El ambiente de pruebas no replica los datos de tu cuenta de producción.
 ## Tarjetas de prueba {#test-cards}
 Puedes utilizar las siguientes tarjetas de prueba:
 
-<details>
+<details id="argentina">
 <summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
 
 | Tarjeta                           | Número                              |
@@ -33,7 +45,7 @@ Puedes utilizar las siguientes tarjetas de prueba:
 | **Tarjeta Débito VISA**           | 4517730000000000                    |
 
 </details>
-<details>
+<details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brasil</summary>
 
 | Tarjeta                           | Número                              |
@@ -46,18 +58,76 @@ Puedes utilizar las siguientes tarjetas de prueba:
 | **Tarjeta de Crédito VISA**       | 4422120000000008 - 4984460000000008 |
 
 </details>
-<details>
+<details id="chile">
 <summary><img src="/assets/Chile.png" width="25px"/> Chile</summary>
 
-| Tarjeta                           | Número                               |
-|-----------------------------------|--------------------------------------|
-| **Tarjeta de Crédito AMEX**       | 377825000000005                      |
-| **Tarjeta de Crédito DINERS**     | 36525200000002                       |
-| **Tarjeta de Crédito MASTERCARD** | 5435630000000008                     |
-| **Tarjeta de Crédito VISA**       | 4051885600446623 - 4938590000000017  |
+<table>
+<thead>
+  <tr>
+    <th>Tarjeta</th>
+    <th>Número</th>
+    <th>Tarjetahabiente</th>
+    <th>CVV</th>
+    <th>Fecha de expiración</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><b>Tarjeta de crédito AMEX</b></td>
+    <td>377825000000005</td>
+    <td colspan="3" rowspan="2" style="vertical-align:middle"><a href="#testing-status">Utiliza los valores de prueba de acuerdo con el resultado esperado.</a></td>
+  </tr>
+  <tr>
+    <td><b>Tarjeta de crédito DINERS</b></td>
+    <td>36525200000002</td>
+  </tr>
+  <tr>
+    <td><b>Tarjeta de crédito MASTERCARD</b></td>
+    <td>5457210001000019</td>
+    <td>BKN_DMC_001</td>
+    <td>300</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>Tarjeta débito MASTERCARD</b></td>
+    <td>5204730000001003</td>
+    <td>BKN_MCS_001</td>
+    <td>100</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>Tarjeta prepago MASTERCARD</b></td>
+    <td>5185540320000012</td>
+    <td>BKN_DMC_001</td>
+    <td>001</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>Tarjeta de crédito VISA</b></td>
+    <td>4761340000000035</td>
+    <td>VISA_GLOBAL_3</td>
+    <td>846</td>
+    <td>12/27</td>
+  </tr>
+  <tr>
+    <td><b>Tarjeta Internacional VISA</b></td>
+    <td>4005520000000129</td>
+    <td>VISA_ECOMMERCE_03</td>
+    <td>921</td>
+    <td>12/27</td>
+  </tr>
+  <tr>
+    <td><b>Tarjeta débito VISA</b></td>
+    <td>4761340000000050</td>
+    <td>VISA_GLOBAL_5</td>
+    <td>846</td>
+    <td>12/27</td>
+  </tr>
+</tbody>
+</table>
 
 </details>
-<details>
+<details id="colombia">
 <summary><img src="/assets/Colombia.png" width="25px"/> Colombia</summary>
 
 | Tarjeta                           | Número                                                                |
@@ -73,7 +143,7 @@ Puedes utilizar las siguientes tarjetas de prueba:
 | **Tarjeta Débito VISA**           | 4509420000000008                                                      |
 
 </details>
-<details>
+<details id="mexico">
 <summary><img src="/assets/Mexico.png" width="25px"/> México</summary>
 
 | Tarjeta                           | Número                               |
@@ -85,7 +155,7 @@ Puedes utilizar las siguientes tarjetas de prueba:
 | **Tarjeta Débito VISA**           | 4415490000000004                     |
 
 </details>
-<details>
+<details id="panama">
 <summary><img src="/assets/Panama.png" width="25px"/> Panamá</summary>
 
 | Tarjeta                           | Número                               |
@@ -94,7 +164,7 @@ Puedes utilizar las siguientes tarjetas de prueba:
 | **Tarjeta de Crédito VISA**       | 4723030000000005                     |
 
 </details>
-<details>
+<details id="peru">
 <summary><img src="/assets/Peru.png" width="25px"/> Perú</summary>
 
 | Tarjeta                           | Número                               |
@@ -128,6 +198,7 @@ Cuando pruebas los Pagos, debes enviar en el request:
   - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-review-hub@email.com`.-->
 * Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia enviada en el request. Puedes utilizar un generador en línea de tarjetas de crédito o una de las  correspondientes a tu país mencionadas anteriormente.
 * Para probar transferencias bancarias por PSE (Disponible en Colombia) en el ambiente de Sandbox de PayU, consulta la [Guía de pruebas PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
+* Para probar tarjetas en Chile, utiliza los valores de nombre del tarjetahabiente, CVV y fecha de expiración mostrados en las <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">tarjetas de ejemplo</a>.
 
 ## Importar la colección {#importing-the-collection}
 Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona). Ten en cuenta que creamos un ambiente cada vez que importas la colección.

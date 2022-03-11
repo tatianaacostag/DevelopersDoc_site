@@ -36,7 +36,7 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 ## Métodos disponíveis {#available-methods}
 O SDK de pagamentos inclui os seguintes métodos
 
-* [Enviar transação com cartão de crédito]({{< ref "#submit-transaction-with-credit-cards" >}})
+* [Enviar transação com cartão de crédito, débito ou pré-pago]({{< ref "#submit-transaction-with-credit-cards" >}})
 * [Consulta de métodos de pagamento disponíveis]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 <!-- * [Enviar transação em dinheiro]({{< ref "#submit-transaction-with-cash" >}}) -->
@@ -45,18 +45,17 @@ O SDK de pagamentos inclui os seguintes métodos
 Para confirmar o status de uma transação, você pode usar o [SDK de Consultas]({{< ref "QueriesSDK.md" >}}).
 {{% /alert %}}
 
-## Enviar transação com cartão de crédito {#submit-transaction-with-credit-cards}
-Este método permite processar os pagamentos efetuados com cartão de crédito pelos seus clientes. Para o Chile, você pode executar os fluxos de duas etapas, você pode executar os fluxos de duas etapas (**Autorização**, **Captura**) e fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
+## Enviar transação com cartão de crédito, débito ou pré-pago {#submit-transaction-with-credit-cards}
+Este método permite processar os pagamentos efetuados com cartões de crédito, débito ou pré-pago pelos seus clientes. Para o Chile, você pode executar os fluxos de duas etapas, você pode executar os fluxos de duas etapas (**Autorização**, **Captura**) e fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Observação" color="info"%}}
-Transações com cartão de crédito usando fluxos de duas etapas estão disponíveis sob demanda. Contate seu representante de vendas para obter mais informações.
+Transações usando fluxos de duas etapas estão disponíveis sob demanda. Contate seu representante de vendas para obter mais informações.
 {{% /alert %}}
 
 ### Observações {#considerations}
 * Enviar um método de pagamento com cartão de crédito válido, [see the available Payment Methods o Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
 * Para pagamentos com tokens de cartão de crédito, inclua os parâmetros `TOKEN_ID` e `CREDIT_CARD_SECURITY_CODE` (se processar com código de segurança) substituindo as informações do cartão de crédito. Para obter mais informações, consulte [SDK de Tokenização]({{< ref "TokenizationSDK.md" >}}).
 * Não são permitidas transações em PESOS CHILENOS com valores decimais.
-* Os fluxos de duas etapas não são compatíveis com cartões de crédito internacionais.
 * As transações com cartão de crédito usando fluxos de duas etapas estão disponíveis para pagamento em parcela única. Contate seu representante de vendas para obter mais informações.
 * Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. Depois que esse recurso for habilitado para você, envie no pedido o parâmetro `PROCESS_WITHOUT_CVV2` como true e remova o parâmetro `CREDIT_CARD_SECURITY_CODE`.
 

@@ -6,7 +6,19 @@ description: >
   PayU oferece um espaço onde você pode testar sua solução antes de colocar no ar, onde você poderá receber pagamentos e transações reais.
 weight: 40
 ---
-
+<script>
+  function openTarget() {
+    var hash = location.hash.substring(1);
+    if(hash) {
+      var details = document.getElementById(hash);
+    } 
+    if(details && details.tagName.toLowerCase() === 'details') {
+      details.open = true;
+      details.scrollIntoView(true);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', openTarget);
+</script>
 Se desejar fazer testes com o PayU, será necessário usar as seguintes credenciais na solicitação, dependendo do país de sua conta:  
 
 {{< testaccounts/accounts_pt >}}
@@ -16,7 +28,7 @@ O ambiente de teste não reproduz dados de sua conta de produção.
 ## Cartões de teste {#test-Cartãos}
 Você pode usar os seguintes cartões para teste:
 
-<details>
+<details id="argentina">
 <summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
 
 | Cartão                           | Número                              |
@@ -33,7 +45,7 @@ Você pode usar os seguintes cartões para teste:
 | **Cartão de Débito VISA**        | 4517730000000000                    |  
 
 </details>
-<details>
+<details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brasil</summary>
 
 | Cartão                           | Número                              |
@@ -46,18 +58,76 @@ Você pode usar os seguintes cartões para teste:
 | **Cartão de Crédito VISA**       | 4422120000000008 - 4984460000000008 |
 
 </details>
-<details>
+<details id="chile">
 <summary><img src="/assets/Chile.png" width="25px"/> Chile</summary>
 
-| Cartão                           | Número                               |
-|----------------------------------|--------------------------------------|
-| **Cartão de Crédito AMEX**       | 377825000000005                      |
-| **Cartão de Crédito DINERS**     | 36525200000002                       |
-| **Cartão de Crédito MASTERCARD** | 5435630000000008                     |
-| **Cartão de Crédito VISA**       | 4051885600446623 - 4938590000000017  |
+<table>
+<thead>
+  <tr>
+    <th>Cartão</th>
+    <th>Número</th>
+    <th>Titular do cartão</th>
+    <th>CVV</th>
+    <th>Data de expiração</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><b>Cartão de Crédito AMEX</b></td>
+    <td>377825000000005</td>
+    <td colspan="3" rowspan="2" style="vertical-align:middle"><a href="#testing-status">Use os valores de teste de acordo com o resultado esperado.</a></td>
+  </tr>
+  <tr>
+    <td><b>Cartão de Crédito DINERS</b></td>
+    <td>36525200000002</td>
+  </tr>
+  <tr>
+    <td><b>Cartão de Crédito MASTERCARD</b></td>
+    <td>5457210001000019</td>
+    <td>BKN_DMC_001</td>
+    <td>300</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>Cartão de Débito MASTERCARD</b></td>
+    <td>5204730000001003</td>
+    <td>BKN_MCS_001</td>
+    <td>100</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>Cartão Pré-pago MASTERCARD</b></td>
+    <td>5185540320000012</td>
+    <td>BKN_DMC_001</td>
+    <td>001</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>Cartão de Crédito VISA</b></td>
+    <td>4761340000000035</td>
+    <td>VISA_GLOBAL_3</td>
+    <td>846</td>
+    <td>12/27</td>
+  </tr>
+  <tr>
+    <td><b>Cartão Internacional VISA</b></td>
+    <td>4005520000000129</td>
+    <td>VISA_ECOMMERCE_03</td>
+    <td>921</td>
+    <td>12/27</td>
+  </tr>
+  <tr>
+    <td><b>Cartão de Débito VISA</b></td>
+    <td>4761340000000050</td>
+    <td>VISA_GLOBAL_5</td>
+    <td>846</td>
+    <td>12/27</td>
+  </tr>
+</tbody>
+</table>
 
 </details>
-<details>
+<details id="colombia">
 <summary><img src="/assets/Colombia.png" width="25px"/> Colômbia</summary>
 
 | Cartão                           | Número                                                                |
@@ -73,7 +143,7 @@ Você pode usar os seguintes cartões para teste:
 | **Cartão de Débito VISA**        | 4509420000000008                                                      |
 
 </details>
-<details>
+<details id="mexico">
 <summary><img src="/assets/Mexico.png" width="25px"/> México</summary>
 
 | Cartão                           | Número                               |
@@ -85,7 +155,7 @@ Você pode usar os seguintes cartões para teste:
 | **Cartão de Débito VISA**        | 4415490000000004                     |
 
 </details>
-<details>
+<details id="panama">
 <summary><img src="/assets/Panama.png" width="25px"/> Panama</summary>
 
 | Cartão                           | Número                               |
@@ -94,7 +164,7 @@ Você pode usar os seguintes cartões para teste:
 | **Cartão de Crédito VISA**       | 4723030000000005                     |
 
 </details>
-<details>
+<details id="peru">
 <summary><img src="/assets/Peru.png" width="25px"/> Peru</summary>
 
 | Cartão                           | Número                               |
@@ -128,6 +198,7 @@ Para testar Pagamentos, você deve enviar a solicitação:
   - Nas informações de comprador e pagador, atribua o endereço de e-mail `manual-review-hub@email.com`.-->
 * Para o número do cartão, é preciso inserir um número válido, correspondente à franquia enviada na solicitação. Você pode usar um gerador de cartão online para fins de teste ou usar um dos cartões mencionados anteriormente que estejam disponíveis para o seu país.
 * Para testar as transferências bancárias PSE (disponíveis na Colômbia) no ambiente PayU Sandbox, consulte o [Guia de teste PSE (PDF - em espanhol)](/assets/pse-test-guide-v5-es.pdf).
+* Para testar cartões no Chile, use os valores de nome do titular do cartão, CVV e data de expiração mostrados no <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true ;">cartões de teste</a>.
 
 ## Como importar a coleção {#importing-the-collection}
 Clique no botão abaixo para importar nossa coleção no Postman (pode ser necessário atualizar a página se o botão não funcionar para você). Observe que criamos um novo ambiente cada vez que você importa a coleção.
