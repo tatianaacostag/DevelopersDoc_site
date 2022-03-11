@@ -21,7 +21,7 @@ O infográfico seguinte explica o fluxo de autenticação 3DS.
 Usando o 3DS, pode ter:
 
 * **Mais aprovação, menos fraude.**<br>
-O intercâmbio de dados entre comerciantes e emitentes apoia melhores decisões de autorização e detecção de fraudes. Em caso de fraude, o emissor é responsável perante o comprador.
+O intercâmbio de dados entre comércios e emitentes apoia melhores decisões de autorização e detecção de fraudes. Em caso de fraude, o emissor é responsável perante o comprador.
 
 * **Melhoria da experiência do utilizador.**<br>
 3DS permite uma melhor integração do processo de autenticação na experiência de compra do utilizador final. Reduz o atrito do utilizador numa maior percentagem de transacções.
@@ -32,9 +32,17 @@ Apoia uma forte autenticação de clientes para emissores, adquirentes e serviç
 ## Solução de Autenticação 3DS {#3ds-authentication-solution}
 A Autenticação 3DS, disponível para o Brasil e Colômbia, é oferecida através de API sob duas modalidades:
 
-* _**Pass Through**_: se tiver o seu próprio serviço 3DS Authentication, pode enviar-nos a resposta de autenticação no pedido de pagamento. Sob esta modalidade, é responsável pela integração com um _**MPI**_ ou um _**3DS Server**_.<br>Para mais informações, queira contactar o seu representante de vendas.
+* _**Pass Through**_: se tiver o seu próprio serviço 3DS Authentication, pode enviar-nos a resposta de autenticação no pedido de pagamento. Sob esta modalidade, é responsável pela integração com um _**MPI**_ ou um _**3DS Server**_.<br>O _**Pass Through**_ é voltado para comércios integrados via API à plataforma **PayU Latam**. Para mais informações, queira contactar o seu representante de vendas.
 
-* _**Fluxo de duas chamadas**_: se desejar autenticar a transacção utilizando PayU, pode integrar através do **PayU Hub**<sup>\*</sup> utilizando o [Serviço de Autenticação](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) que funciona num fluxo de duas chamadas; uma para autenticação e outra para autorização.<br>Para autenticação, deve ligar-se ao PayU Hub, onde obterá a resposta de autenticação.<br>Para autorização, pode optar por utilizar **PayU Latam** ou **PayU Hub**.
+* _**Fluxo de duas chamadas**_: se desejar autenticar a transacção utilizando PayU, pode integrar através do **PayU Hub**<sup>\*</sup> utilizando o [Serviço de Autenticação](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) que funciona num fluxo de duas chamadas; uma para autenticação e outra para autorização.
+  - Para _autenticação_, deve ligar-se ao PayU Hub, onde obterá a resposta de autenticação.
+  - Para _autorização_, pode optar por utilizar **PayU Latam** ou **PayU Hub**.
+
+  <br>O _**Fluxo de duas chamadas**_ é voltado para comércios com as seguintes características:
+    - Comércios integrados via API à plataforma **PayU Latam** (diretamente, não através de parceiros).
+    - Comércios integrados ao **PayU Hub** que processam em países da LATAM. <img src="/assets/Brasil.png" width="2%"/><img src="/assets/Colombia.png" width="2%"/>
+    - Grandes comércios que desejam controlar seu fluxo de autenticação e querem dizer quais transações devem ser autenticadas.
+    - Comércios com grandes recursos tecnológicos para fazer a integração da API.
 
 <sup>\*</sup>O **PayU Hub** é a solução de pagamento sem fronteiras globais. Com uma integração API única, processa pagamentos locais com métodos de pagamento relevantes em 18 mercados.
 
@@ -50,7 +58,7 @@ Leve em conta o seguinte ao utilizar a Autenticação 3DS:
 ### Benefícios da nossa solução {#benefits-of-our-solution}
 Quando utiliza o Serviço de Autenticação oferecido pelo **PayU Hub** (Fluxo de duas chamadas), tem os seguintes benefícios.
 
-* PayU está conectado a un servidor 3DS (MPI), no es necesario que lo hagas por tu cuenta. ¡Menos proveedores y contratos!
+* PayU está conectado a um servidor 3DS (MPI), você não precisa fazer isso sozinho. Menos fornecedores e contratos!
 * Você controla e decide quando autenticar uma transação.
 * Sem custos adicionais<sup>\*</sup> - a autenticação é um serviço gratuito oferecido pelo PayU!
 * Se migrar para o HUB, poderá ter benefícios adicionais da nossa solução global.
