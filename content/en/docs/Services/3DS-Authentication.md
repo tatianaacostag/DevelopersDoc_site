@@ -32,9 +32,17 @@ Supports a strong customer authentication for issuers, acquirers, and payment se
 ## 3DS Authentication solution
 3DS Authentication, available for Brazil and Colombia, is provided via API under two modalities:
 
-* _**Pass Through**_: if you have your own 3DS Authentication service, you can send us the authentication response in the payment request. Under this modality, you are responsible for the integration with an _**MPI**_ or a _**3DS Server**_.<br>For more information, contact your sales representative.
+* _**Pass Through**_: if you have your own 3DS Authentication service, you can send us the authentication response in the payment request. Under this modality, you are responsible for the integration with an _**MPI**_ or a _**3DS Server**_.<br>The _**Pass Through**_ is intended for merchants integrated via API to **PayU Latam** Platform. For more information, contact your sales representative.
 
-* _**2-calls Authentication flow**_: if you want to authenticate the transaction using PayU, you can integrate through **PayU Hub**<sup>\*</sup> using the [Authentication Service](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) that operates in two calls flow, one call for authentication and other for authorization.<br>To authenticate, you must connect to the PayU Hub, where you will get the authentication response.<br>To authorize, you can chose to go through **PayU Latam** or **PayU Hub**.
+* _**2-calls Authentication flow**_: if you want to authenticate the transaction using PayU, you can integrate through **PayU Hub**<sup>\*</sup> using the [Authentication Service](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) that operates in two calls flow, one call for authentication and other for authorization.
+  - To _authenticate_, you must connect to the PayU Hub, where you will get the authentication response.
+  - To _authorize_, you can chose to go through **PayU Latam** or **PayU Hub**.
+
+  <br>The _**2-calls Authentication flow**_ is intended for merchants with the following characteristics:
+    - Merchants integrated via API to **PayU Latam** Platform (directly not through partners).
+    - Merchants integrated to the **PayU Hub** processing in Latam countries. <img src="/assets/Brasil.png" width="2%"/><img src="/assets/Colombia.png" width="2%"/>
+    - Large merchants that want to control their authentication flow and want to decide which transactions to authenticate.
+    - Merchants with high-tech resources to make the API integration.
 
 <sup>\*</sup>**PayU Hub**, is the solution for borderless Payments. With a single API integration, you can process local payments in 18 markets.
 

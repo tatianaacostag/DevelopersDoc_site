@@ -32,9 +32,17 @@ Admite una sólida autenticación de clientes para emisores, adquirentes, y serv
 ## Solución de Autenticación 3DS {#3ds-authentication-solution}
 La Autenticación 3DS, disponible para Brasil y Colombia, se ofrece vía API bajo dos modalidades:
 
-* _**Pass Through**_: si tienes tu propio servicio de Autenticación 3DS, puedes enviarnos la respuesta de la autenticación en la petición de pago. Bajo esta modalidad, tú eres responsable de la integración con un _**MPI**_ o un _**3DS Server**_.<br>Para más información, contacta a tu representante de ventas.
+* _**Pass Through**_: si tienes tu propio servicio de Autenticación 3DS, puedes enviarnos la respuesta de la autenticación en la petición de pago. Bajo esta modalidad, tú eres responsable de la integración con un _**MPI**_ o un _**3DS Server**_.<br>El _**Pass Through**_ está dirigido a comercios integrados vía API a la plataforma de **PayU Latam**. Para más información, contacta a tu representante de ventas.
 
-* _**Flujo de dos llamados**_: si deseas autenticar la transacción utilizando PayU, puedes integrarte a través del **PayU Hub**<sup>\*</sup> utilizando el [Servicio de Autenticación](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) que opera een un flujo de dos llamados; uno para la autenticación y otro para la autorización.<br>Para la autenticación, debes conectarte al PayU Hub, donde vas a obtener la respuesta de la autenticación.<br>Para la autorización, puedes escoger utilizar **PayU Latam** o **PayU Hub**.
+* _**Flujo de dos llamados**_: si deseas autenticar la transacción utilizando PayU, puedes integrarte a través del **PayU Hub**<sup>\*</sup> utilizando el [Servicio de Autenticación](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) que opera en un flujo de dos llamados; uno para la autenticación y otro para la autorización.
+  - Para la _autenticación_, debes conectarte al PayU Hub, donde vas a obtener la respuesta de la autenticación.
+  - Para la _autorización_, puedes escoger utilizar **PayU Latam** o **PayU Hub**.
+
+  <br>El _**Flujo de dos llamados**_ está dirigido a comercios con las siguientes características:
+    - Comercios integrados vía API a la plataforma de **PayU Latam** (directamente, no a través de partners).
+    - Comercios integrados al **PayU Hub** que procesen en países de LATAM. <img src="/assets/Brasil.png" width="2%"/><img src="/assets/Colombia.png" width="2%"/>
+    - Comercios grandes que quieren controlar su flujo de autenticación y quieren decir cuáles transacciones van a autenticar.
+    - Comercios con grandes recursos tecnológicos para hacer la integración API.
 
 <sup>\*</sup>El **PayU Hub**, es la solución de pagos sin fronteras globales. Con única integración API , procesa pagos locales con medios de pago relevantes en 18 mercados.
 
