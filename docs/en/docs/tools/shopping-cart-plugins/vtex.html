@@ -31,7 +31,7 @@
 <meta itemprop="name" content="VTEX">
 <meta itemprop="description" content="This article shows you the procedure to enable PayU on your VTEX website."><meta itemprop="datePublished" content="2021-05-25T10:30:35-05:00" />
 <meta itemprop="dateModified" content="2022-03-08T16:17:15-05:00" />
-<meta itemprop="wordCount" content="2067">
+<meta itemprop="wordCount" content="2605">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VTEX"/>
 <meta name="twitter:description" content="This article shows you the procedure to enable PayU on your VTEX website."/>
@@ -138,7 +138,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.fba04b1c327779dfe1c0ae760859be866a6ff199ce585781e773ad29e1c6873513f0d8ddcd76f9d5905acfc7e5917f281f1af7c1cc0bf2eff98399f868194e39.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.63427a469b81c9ca4b101b13c1e0363bb72341673c4e497cfe995759b0217e6454565f954e7e6fbb3b6a30820769f5cbfa4434c58ddc2c3e5643311ef8726a3f.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1178,24 +1178,32 @@ Make sure you have selected the <em><strong>PayUv2</strong></em> connector, the 
 
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Important</h4>
-PSE (Colombian Bank transfer method) is not supported through this version of the connector. If you need to configure this Payment method, refer to the <a href="https://help.vtex.com/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q">procedure to install version 1 of the conector</a>.
+<ul>
+<li>PSE (Colombian Bank transfer method) is not supported through this version of the connector. If you need to configure this Payment method, refer to the <a href="https://help.vtex.com/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q">procedure to install version 1 of the conector</a>.</li>
+<li>PIX is not available for Brazil using VTEX.</li>
+<li>Changes to payment conditions can take up to 10 minutes to apply to the checkout flow.</li>
+</ul>
+
+</div>
+
+<h5 id="configure-credit-or-debit-cards">Configure credit or debit cards.</h5>
+<p>According to your <a href="../../../../en/docs/getting-started/select-your-payment-method.html">processing country</a>, you can configure the affiliation you create to use credit or debit cards<sup>*</sup>. Follow the instructions below to add this payment method to your VTEX shop.</p>
+<p><sup>*</sup> <em>Debit cards usage depends on your processing country.</em></p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Important</h4>
+Click <a href="#configure-co-branded-or-private-labels-cards">here</a> if you want to know how to configure Co-branded or Private labels cards
 </div>
 
 <ol>
-<li>In the Settings option (<em><strong>Transactions</strong></em> &gt; <em><strong>Payments</strong></em> &gt; <em><strong>Settings</strong></em>) select the <em><strong>Payment conditions</strong></em> tab and click the plus icon.</li>
+<li>In the Settings option (<em><strong>Transactions</strong></em> &gt; <em><strong>Payments</strong></em> &gt; <em><strong>Settings</strong></em>), select the <em><strong>Payment conditions</strong></em> tab and click the plus icon.</li>
 </ol>
 <p><img src="../../../../assets/VTEX/VTEX_12.png" alt="PrintScreen"></p>
 <ol start="2">
 <li>Select the Payment method you want to include. Payments methods are grouped by their type.<br>For the sake of our example, we select <em><strong>American Express</strong></em> in the Credit Card section.</li>
 </ol>
 <p><img src="../../../../assets/VTEX/VTEX_13.png" alt="PrintScreen"></p>
-
-
-<div class="alert alert-info" role="alert">
-<h4 class="alert-heading">Note</h4>
-If the payment method you want to configure is not listed, you need to create it first and selected in the <em><strong>Custom payments</strong></em> group. Refer to the <a href="https://help.vtex.com/en/tutorial/how-to-configure-a-custom-payment--tutorials_451">VTEX help center</a> to learn how to create a custom payment method.
-</div>
-
 <ol start="3">
 <li>Provide the following information.</li>
 </ol>
@@ -1211,13 +1219,123 @@ If the payment method you want to configure is not listed, you need to create it
 <li>Click <em><strong>Save</strong></em>. When the payment condition has been created, it is listed in the <em><strong>Payment conditions</strong></em> tab.</li>
 </ol>
 <p><img src="../../../../assets/VTEX/VTEX_15.png" alt="PrintScreen"></p>
+<h5 id="configure-co-branded-or-private-labels-cards">Configure Co-branded or Private labels cards.</h5>
+<p>Co-branded and Private label cards are credit cards issued by an store or brand which can be issued in partnership with a network such as AMEX, VISA, MasterCard, etc. Follow the instructions below to add this payment method to your VTEX shop.</p>
+<ol>
+<li>In the Settings option (<em><strong>Transactions</strong></em> &gt; <em><strong>Payments</strong></em> &gt; <em><strong>Settings</strong></em>), go to <em><strong>Custom payments</strong></em> tab.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/VTEX_26.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>In this tab, you have five (5) available space to configure both Co-branded and Private label cards. In this example, we will set up the Colombian card Codensa which is a Private label card.<br>Click in any of the available boxes in the <em><strong>Private labels</strong></em> section.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/VTEX_27.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Provide the following data of the card using the case displayed.</li>
+</ol>
+<ul>
+<li><strong>Name</strong>: <code>Codensa</code>.</li>
+<li><strong>Description</strong>: <code>Codensa</code></li>
+<li><strong>BIN ranges</strong>: <code>590712-590712</code></li>
+<li><strong>Acquirer payment code</strong>: <code>codensa</code></li>
+</ul>
 
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Note</h4>
-Changes to payment conditions can take up to 10 minutes to apply to the checkout flow.
+For <em>Co-branded</em> cards, you also need to select the card brand.
 </div>
 
+<p><img src="../../../../assets/VTEX/VTEX_28.png" alt="PrintScreen" width="60%"/><br></p>
+<p>The remaining values can be left as default. Use the following values to configure Co-branded and Private label cards.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Country</th>
+<th>Name</th>
+<th>Description</th>
+<th>BIN ranges</th>
+<th>Acquirer payment code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="../../../../assets/Argentina.png" width="25px"/></td>
+<td>Argencard</td>
+<td>Argencard</td>
+<td><code>501105-532362</code></td>
+<td>argencard</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../../../../assets/Argentina.png" width="25px"/></td>
+<td>Cabal</td>
+<td>Cabal</td>
+<td><code>60423,60400,589657</code></td>
+<td>cabal</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../../../../assets/Argentina.png" width="25px"/></td>
+<td>Cencosud</td>
+<td>Cencosud</td>
+<td><code>603493-603493</code></td>
+<td>cencosud</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../../../../assets/Argentina.png" width="25px"/></td>
+<td>Naranja</td>
+<td>Naranja</td>
+<td><code>589562</code></td>
+<td>naranja</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../../../../assets/Argentina.png" width="25px"/></td>
+<td>Shopping</td>
+<td>Shopping</td>
+<td><code>603488</code></td>
+<td>shopping</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="../../../../assets/Colombia.png" width="25px"/></td>
+<td>Codensa</td>
+<td>Codensa</td>
+<td><code>590712-590712</code></td>
+<td>codensa</td>
+</tr>
+</tbody>
+</table>
+<p>For more information about how to configure <a href="https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-cobranded--jrkLK41IjuquUmyKUi86Q">Co-branded</a> and <a href="https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-bandeira-propria--428FgVdSGQUeAOoogkaIw4">Private label</a> cards, refer to the VTEX Help Center.</p>
+<ol start="4">
+<li>Click <em><strong>Save</strong></em>. When the custom payment has been created, you are redirected to the option to create a new <em><strong>Payment conditions</strong></em>. This payment condition is created as explained in <a href="#configure-credit-or-debit-cards">Configure credit or debit cards</a> section.</li>
+</ol>
+<h5 id="configure-cash-payment-methods">Configure cash payment methods.</h5>
+<p>As cash payments require that your customer pays in physical offices, you can configure this payment method in VTEX as promissory notes (Notes payables).</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+For <em>Boleto bancario</em> in Brazil, this procedure it is not required, just locate and configure this payment method as a Payment condition.
+</div>
+
+<p>When you configure a cash payment method, your customers are redirected to the PayU&rsquo;s checkout so they can download the payment voucher and pay it in the respective physical office. Follow the instructions below to add this payment method to your VTEX shop.</p>
+<ol>
+<li>In the Settings option (<em><strong>Transactions</strong></em> &gt; <em><strong>Payments</strong></em> &gt; <em><strong>Settings</strong></em>), go to <em><strong>Custom payments</strong></em> tab.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/VTEX_26.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>In this tab, you have five (5) available space to configure Cash payments. In this example, we will set up <code>OXXO</code>, a Mexican cash payment method.<br>Click in any of the available boxes in the <em><strong>Notes payables</strong></em> section.</li>
+</ol>
+<p><img src="../../../../assets/VTEX/VTEX_29.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Provide the following data for the cash payment.</li>
+</ol>
+<ul>
+<li><strong>Name</strong>: In this parameter, you need to use the value displayed <a href="../../../../en/docs/integrations.html#api-key-and-api-login">here</a> in the column <code>paymentMethod parameter</code>. For the sake of our example, set <code>OXXO</code>.</li>
+<li><strong>Description</strong>: Provide the description you want to show when the customer selects this payment method. This parameter is optional.</li>
+<li><strong>Notes payable expiration date</strong>: provide the number of days before the cash payment expires. By default, this value is assigned to seven days.</li>
+</ul>
+<p>Leave the other parameters with their default values</p>
+<ol start="4">
+<li>Click <em><strong>Save</strong></em>. When the custom payment has been created, you are redirected to the option to create a new <em><strong>Payment conditions</strong></em>. This payment condition is created as explained in <a href="#configure-credit-or-debit-cards">Configure credit or debit cards</a> section.</li>
+</ol>
 <h2 id="testing-the-integration">Testing the integration</h2>
 <p>Once you have configured the Payment conditions for your payment methods, it is strongly recommended to test your integration before starting to receive real transactions. As a prerequisite, make sure your PaymentsOS account is in <code>TEST</code> mode, as well as the <em><strong>Environment selector</strong></em> in your <em><strong>Gateway affiliation</strong></em>.</p>
 <ol>

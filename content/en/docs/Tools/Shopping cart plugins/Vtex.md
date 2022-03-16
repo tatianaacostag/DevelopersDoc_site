@@ -213,21 +213,27 @@ When finish, click _**Save**_.
 Configure the payment methods to be displayed on the website for checkout. [Consult our available Payment methods]({{< ref "Select-your-payment-method.md" >}}).
 
 {{% alert title="Important" color="warning"%}}
-PSE (Colombian Bank transfer method) is not supported through this version of the connector. If you need to configure this Payment method, refer to the [procedure to install version 1 of the conector](https://help.vtex.com/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q).
+* PSE (Colombian Bank transfer method) is not supported through this version of the connector. If you need to configure this Payment method, refer to the [procedure to install version 1 of the conector](https://help.vtex.com/tutorial/setting-up-payu-gateway--36zWOAFHmwIAoWIEU2Y08q).
+* PIX is not available for Brazil using VTEX.
+* Changes to payment conditions can take up to 10 minutes to apply to the checkout flow.
 {{% /alert %}}
 
+##### Configure credit or debit cards.
+According to your [processing country]({{< ref "Select-your-payment-method.md" >}}), you can configure the affiliation you create to use credit or debit cards<sup>*</sup>. Follow the instructions below to add this payment method to your VTEX shop.
 
-1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_) select the _**Payment conditions**_ tab and click the plus icon.
+<sup>*</sup> _Debit cards usage depends on your processing country._
+
+{{% alert title="Important" color="warning"%}}
+Click [here](#configure-co-branded-or-private-labels-cards) if you want to know how to configure Co-branded or Private labels cards 
+{{% /alert %}}
+
+1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_), select the _**Payment conditions**_ tab and click the plus icon.
 
 ![PrintScreen](/assets/VTEX/VTEX_12.png)
 
 2. Select the Payment method you want to include. Payments methods are grouped by their type.<br>For the sake of our example, we select _**American Express**_ in the Credit Card section.
 
 ![PrintScreen](/assets/VTEX/VTEX_13.png)
-
-{{% alert title="Note" color="info"%}}
-If the payment method you want to configure is not listed, you need to create it first and selected in the _**Custom payments**_ group. Refer to the [VTEX help center](https://help.vtex.com/en/tutorial/how-to-configure-a-custom-payment--tutorials_451) to learn how to create a custom payment method.
-{{% /alert %}}
 
 3. Provide the following information.
 * **Rule Name (to help you quickly identify)**: provide a meaningful name for the payment condition next to the payment method you selected.
@@ -243,9 +249,71 @@ If the payment method you want to configure is not listed, you need to create it
 
 ![PrintScreen](/assets/VTEX/VTEX_15.png)
 
+##### Configure Co-branded or Private labels cards.
+Co-branded and Private label cards are credit cards issued by an store or brand which can be issued in partnership with a network such as AMEX, VISA, MasterCard, etc. Follow the instructions below to add this payment method to your VTEX shop.
+
+1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_), go to _**Custom payments**_ tab.
+
+![PrintScreen](/assets/VTEX/VTEX_26.png)
+
+2. In this tab, you have five (5) available space to configure both Co-branded and Private label cards. In this example, we will set up the Colombian card Codensa which is a Private label card.<br>Click in any of the available boxes in the _**Private labels**_ section.
+
+![PrintScreen](/assets/VTEX/VTEX_27.png)
+
+3. Provide the following data of the card using the case displayed.
+
+* **Name**: `Codensa`.
+* **Description**: `Codensa`
+* **BIN ranges**: `590712-590712`
+* **Acquirer payment code**: `codensa`
+
 {{% alert title="Note" color="info"%}}
-Changes to payment conditions can take up to 10 minutes to apply to the checkout flow.
+For _Co-branded_ cards, you also need to select the card brand.
 {{% /alert %}}
+
+<img src="/assets/VTEX/VTEX_28.png" alt="PrintScreen" width="60%"/><br>
+
+The remaining values can be left as default. Use the following values to configure Co-branded and Private label cards.
+
+| Country | Name | Description | BIN ranges | Acquirer payment code |
+|:-:|---|---|---|---|
+| <img src="/assets/Argentina.png" width="25px"/> | Argencard | Argencard | `501105-532362` | argencard |
+| <img src="/assets/Argentina.png" width="25px"/> | Cabal | Cabal | `60423,60400,589657` | cabal |
+| <img src="/assets/Argentina.png" width="25px"/> | Cencosud | Cencosud | `603493-603493` | cencosud |
+| <img src="/assets/Argentina.png" width="25px"/> | Naranja | Naranja | `589562` | naranja |
+| <img src="/assets/Argentina.png" width="25px"/> | Shopping | Shopping | `603488` | shopping |
+| <img src="/assets/Colombia.png" width="25px"/> | Codensa | Codensa | `590712-590712` | codensa |
+
+For more information about how to configure [Co-branded](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-cobranded--jrkLK41IjuquUmyKUi86Q) and [Private label](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-bandeira-propria--428FgVdSGQUeAOoogkaIw4) cards, refer to the VTEX Help Center.
+
+4. Click _**Save**_. When the custom payment has been created, you are redirected to the option to create a new _**Payment conditions**_. This payment condition is created as explained in [Configure credit or debit cards](#configure-credit-or-debit-cards) section.
+
+##### Configure cash payment methods.
+As cash payments require that your customer pays in physical offices, you can configure this payment method in VTEX as promissory notes (Notes payables). 
+
+{{% alert title="Note" color="info"%}}
+For _Boleto bancario_ in Brazil, this procedure it is not required, just locate and configure this payment method as a Payment condition.
+{{% /alert %}}
+
+When you configure a cash payment method, your customers are redirected to the PayU's checkout so they can download the payment voucher and pay it in the respective physical office. Follow the instructions below to add this payment method to your VTEX shop.
+
+1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_), go to _**Custom payments**_ tab.
+
+![PrintScreen](/assets/VTEX/VTEX_26.png)
+
+2. In this tab, you have five (5) available space to configure Cash payments. In this example, we will set up `OXXO`, a Mexican cash payment method.<br>Click in any of the available boxes in the _**Notes payables**_ section.
+
+![PrintScreen](/assets/VTEX/VTEX_29.png)
+
+3. Provide the following data for the cash payment.
+
+* **Name**: In this parameter, you need to use the value displayed [here]({{< ref "integrations.html#api-key-and-api-login" >}}) in the column `paymentMethod parameter`. For the sake of our example, set `OXXO`.
+* **Description**: Provide the description you want to show when the customer selects this payment method. This parameter is optional.
+* **Notes payable expiration date**: provide the number of days before the cash payment expires. By default, this value is assigned to seven days.
+
+Leave the other parameters with their default values 
+
+4. Click _**Save**_. When the custom payment has been created, you are redirected to the option to create a new _**Payment conditions**_. This payment condition is created as explained in [Configure credit or debit cards](#configure-credit-or-debit-cards) section.
 
 ## Testing the integration
 Once you have configured the Payment conditions for your payment methods, it is strongly recommended to test your integration before starting to receive real transactions. As a prerequisite, make sure your PaymentsOS account is in `TEST` mode, as well as the _**Environment selector**_ in your _**Gateway affiliation**_.
