@@ -30,145 +30,145 @@ Puedes configurar estos objetos usando una de las siguientes opciones:
 * [Configurar la cuenta manualmente utilizando el Panel de Control de PaymentsOS]({{< ref "#configure-the-account-manually-using-paymentsos-dashboard" >}}).
 
 #### Configurar la cuenta utilizando Postman {#configure-the-account-using-postman}
-Follow these steps to configure your account using Postman.
+Sigue estos pasos para configurar tu cuenta utilizando Postman.
 
-1. Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you).
+1. Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona).
 
 {{< postman/postman_vtex >}}
 <br>
 
-2. After you run the collection, you need to set the globals. Download the globals file <a href="/static/assets/globals/VTEX%20Hub.postman_globals.json" download>here</a>.
+2. Luego de ejecutar la colección, necesitas configurar los globales. Descarga el archivo de globales <a href="/static/assets/globals/VTEX%20Hub.postman_globals.json" download>aquí</a>.
 
-3. In the Postman collection, click _**Import**_ next to your workspace name and locate the json file recently downloaded.
+3. En la colección de Postman, haz clic en _**Import**_ junto al nombre de tu workspace y localiza el archivo json descargado previamente.
 
-4. When finish, click _**Import**_.
+4. Cuando termine, haz click en _**Import**_.
 
-5. It is mandatory to run the collection methods in the order displayed. First, click the `POST` method called `1. Login` and go to _**Body**_ tab.
+5. Es obligatorio ejecutar los métodos de la colección en el orden mostrado. Primero, haz click en el método `POST` llamado `1. Login` y abre la pestaña _**Body**_.
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_01.png)
 
-6. Provide the _**email**_ and _**password**_ of your PaymentsOS account. Then, click _**Send**_.
+6. Ingresa el correo electrónico (_**email**_) y la contraseña (_**password**_) de tu cuenta de PaymentsOS. Luego, haz clic ens _**Send**_.
 
-7. If the login was successful, the authentication data is set for the second method.<br>Click the `GET` method `2. Retrieve PayU Latam ID`.
+7. Si el inicio de sesión fue correcto, los datos de autenticación son asignados en el segundo método.<br>Haz clic en el método `GET` llamado `2. Retrieve PayU Latam ID`.
 
-8. In the top right corner, click the eye icon and locate the `env` parameter. Then, click the pencil icon and set `test`if you are processing in the test environment and `live` otherwise.
+8. En la esquina superior derecha, haz clic en el ícono de ojo y localiza el parámetro `env`. Luego, haz clic en el ícono de lápiz e ingresa `test` si estás procesando en el ambiente de pruebas o `live` en caso contrario.
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_02.png)
 
-9. Once configured, click _**Send**_.
+9. Una vez configurado, haz clic en _**Send**_.
 
-10. Click the `POST` method `3. Create Provider Configuration`, this method creates the _**Provider Configuration**_ in PaymentsOS. Then, go to _**Body**_ tab. 
+10. Haz clic en el método `POST` llamado `3. Create Provider Configuration`, este método crea la _**Configuración de proveedor**_ en PaymentsOS. Luego, ve a la pestaña _**Body**_. 
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_03.png)
 
-Provide the following information:
+Ingresa la siguiente información:
 
-| Parameter | Description |
+| Parámetro | Descripción |
 |---|---|
-| name | Provide a to the _**Provider Configuration**_. |
-| description | Provide a meaningful description for the _**Provider Configuration**_.<br>This value is optional. |
-| configuration_data.apiLogin | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| configuration_data.apiKey | Unique key of your commerce. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| configuration_data.accountId | ID of the PayU account according to the country where you want to sell. |
-| configuration_data.merchantId | ID of your commerce in PayU Latam. |
-| configuration_data.paymentCountry | Processing country in format ISO 3166 Alpha-3. |
+| name | Ingresa un nombre para la _**Configuración de proveedor**_. |
+| description | Ingresa una descripción significativa para la _**Configuración de proveedor**_.<br>Este valor es opcional. |
+| configuration_data.apiLogin | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| configuration_data.apiKey | Contraseña entregada por PayU. [  Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| configuration_data.accountId | ID de la cuenta de PayU de acuerdo al país en el que vas a vender. |
+| configuration_data.merchantId | ID de tu comercio en PayU Latam. |
+| configuration_data.paymentCountry | País de procesamiento en formato ISO 3166 Alpha-3. |
 
-{{% alert title="Note" color="info"%}}
-The parameter `provider_id` is  automatically set by the response of the method `2. Retrieve PayU Latam ID`. Do not change this value.
+{{% alert title="Nota" color="info"%}}
+El parámetro `provider_id` es llenado automáticamente por la respuesta del método `2. Retrieve PayU Latam ID`. No cambies este valor.
 {{% /alert %}}  
 
-11. Click the `POST` method `4. Create Business Unit` this method creates the _**Business Unit**_ in PaymentsOS. Then, go to _**Body**_ tab. 
+11. Haz clic en el método `POST` llamado `4. Create Business Unit`, este método crea la _**Unidad de Negocio**_ en PaymentsOS. Luego, ve a la pestaña _**Body**_. 
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_04.png)
 
-Provide the following information:
+Ingresa la siguiente información:
 
-| Parameter | Description |
+| Parámetro | Descripción |
 |---|---|
-| id | Identifier of the _**Business Unit**_. This id must be in lowercase and without blank spaces.<br>_Make sure you have provided the correct value for the id as this cannot be updated later_. |
-| description | Provide a meaningful description for the _**Business Unit**_.<br>This value is optional. |
+| id | Identificador de la _**Unidad de Negocio**_. Este id debe estar en minúsculas y sin espacios.<br>_Asegúrate de haber ingresado el valor correcto para el id ya que este valor no se puede actualizar después_. |
+| description | Ingresa una descripción significativa para la _**Unidad de Negocio**_.<br>Este valor es opcional. |
 
-{{% alert title="Note" color="info"%}}
-The parameter `default_processor` is  automatically set by the response of the method `3. Create Provider Configuration`. Do not change this value.
+{{% alert title="Nota" color="info"%}}
+El parámetro `default_processor` es llenado automáticamente por la respuesta del método `3. Create Provider Configuration`. No cambies este valor.
 {{% /alert %}}  
  
-12. Click the `POST` method `5. Create Webhook` this method creates the _**WebHook**_ in PaymentsOS. This WebHook is the confirmation URL that will receive the notifications sent by VTEX when a transaction changes its state.<br>Then, go to _**Body**_ tab.
+12. Haz clic en el método `POST` llamado `5. Create Webhook`, este método crea el _**WebHook**_ en PaymentsOS. Este WebHook es la URL de confirmación que recibirá las notificaciones enviadas por VTEX cuando una transacción cambia de estado.<br>Luego, ve a la pestaña _**Body**_.
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_05.png)
 
-Set the `endpoint` parameter with the following values according to your environment.
+Asigna en el parámetro `endpoint` los siguientes valores de acuerdo con tu ambiente.
 * Test: ```https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
 * Live: ```https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
 
-Leave the other parameters with their default value.
+Deja los demás valores con su valor por defecto.
 
-At this point, your PaymentsOS account has been configured as a middleware, the next step is the [configuration of the VTEX provider]({{< ref "#2-configure-the-vtex-provider" >}}).
+En este punto, has configurado tu cuenta de PaymentsOS como middleware, el siguiente paso es la [configuración del proveedor de VTEX]({{< ref "#2-configure-the-vtex-provider" >}}).
 
 #### Configurar la cuenta manualmente utilizando el Panel de Control de PaymentsOS {#configure-the-account-manually-using-paymentsos-dashboard}
-Follow these steps to configure your account using PaymentsOS dashboard.
+Sigue estos pasos para configurar tu cuenta utilizando el panel de control de PaymentsOS.
 
-1. Create the Provider configuration.<br>
-In the PaymentsOS dashboard, expand the _**Account**_ menu, then select _**Services**_.
+1. Crea la the Configuración de proveedor.<br>
+En el panel de control de PaymentsOS dashboard, expande el menú _**Cuenta**_, luego selecciona _**Servicios**_.
 
-![PrintScreen](/assets/VTEX/VTEX_01.png)
+![PrintScreen](/assets/VTEX/VTEX_01_es.png)
 
-Use the _**Search**_ field in the _**Create a new Provider configuration**_ section and enter _PayU_ to find the _PayU Latam_ provider.
+Utiliza el campo _**Buscar**_ en la sección _**Crea una nueva configuración de proveedor**_ e ingresa _PayU_ para encontrar el proveedor _PayU Latam_.
 
-![PrintScreen](/assets/VTEX/VTEX_02.png)
+![PrintScreen](/assets/VTEX/VTEX_02_es.png)
 
-Provide the following information for the _**Provider Configuration**_:
+Ingresa la siguiente información para la _**Configuración de proveedor**_:
 
-| Parameter | Description |
+| Parámetro | Descripción |
 |---|---|
-| Configuration Name | Provide a to the _**Provider Configuration**_. |
-| Description | Provide a meaningful description for the _**Provider Configuration**_.<br>This value is optional. |
-| apiLogin | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| apiKey| Unique key of your commerce. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| accountId | ID of the PayU account according to the country where you want to sell. |
-| merchantId | ID of your commerce in PayU Latam. |
-| paymentCountry | Processing country in format ISO 3166 Alpha-3. |
+| Nombre de Configuración | Ingresa un nombre para la _**Configuración de proveedor**_. |
+| Descripción | Ingresa un nombre para la _**Configuración de proveedor**_. |
+| apiLogin | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| apiKey| Contraseña entregada por PayU. [  Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| accountId | ID de la cuenta de PayU de acuerdo al país en el que vas a vender. |
+| merchantId | ID de tu comercio en PayU Latam. |
+| paymentCountry | País de procesamiento en formato ISO 3166 Alpha-3. |
 
-When finish, click _**Create**_.
+Cuando termines, has clic en _**Crear**_.
 
-![PrintScreen](/assets/VTEX/VTEX_03.png)
+![PrintScreen](/assets/VTEX/VTEX_03_es.png)
 
-2. Create the Business Unit.<br>
-Back in the PaymentsOS dashboard, expand the _**Account**_ menu, then select _**Business Units**_.
+2. Crea la Unidad de Negocio.<br>
+En el panel de control de PaymentsOS dashboard, expande el menú _**Cuenta**_, luego selecciona _**Unidades de Negocio**_.
 
-![PrintScreen](/assets/VTEX/VTEX_04.png)
+![PrintScreen](/assets/VTEX/VTEX_04_es.png)
 
-Click the _**Create Business Unit**_ button and provide the following information:
+Haz clic en el botón _**Crear una Unidad de Negocio**_ e ingresa la siguiente información:
 
-| Parameter | Description |
+| Parámetro | Descripción |
 |---|---|
-| Business Unit Name | Name of the _**Business Unit**_. This name must be in lowercase and without blank spaces.<br>_Make sure you have provided the correct name as this cannot be updated later_. |
-| description | Provide a meaningful description for the _**Business Unit**_.<br>This value is optional. |
+| Business Unit Name | Nombre de la _**Unidad de Negocio**_. Este nombre debe estar en minúsculas y sin espacios.<br>_Asegúrate de haber ingresado el valor correcto para el nombre ya que este valor no se puede actualizar después_. |
+| Descripción | Ingresa una descripción significativa para la _**Unidad de Negocio**_.<br>Este valor es opcional. |
 
-In the _**Choose a default Provider for this Business Unit**_ section, select the _**Provider Configuration**_ created in the last step.<br>When finish, click _**Create**_.
+En la sección _**Selecciona un proveedor por defecto para esta Unidad de Negocio**_, escoge la _**Configuración de proveedor**_ creada en el paso anterior.<br>Cuando termines, haz clic en _**Crear**_.
 
-![PrintScreen](/assets/VTEX/VTEX_05.png)
+![PrintScreen](/assets/VTEX/VTEX_05_es.png)
 
-3. Create the Webhook. This WebHook is the confirmation URL that will receive the notifications sent by VTEX when a transaction changes its state.<br>
+3. Crea el Webhook. Este WebHook es la URL de confirmación que va a recibir las notificaciones enviadas por VTEX cuando una transacción cambia de estado.<br>
 
-Back in the PaymentsOS dashboard, expand the _**Account**_ menu, then select _**Webhooks**_.
+De vuelta en el panel de control de PaymentsOS, expande el menú _**Cuenta**_ y selecciona _**Webhooks**_.
 
-![PrintScreen](/assets/VTEX/VTEX_06.png)
+![PrintScreen](/assets/VTEX/VTEX_06_es.png)
 
-Click the _**Create a Webhook Endpoint**_ button and provide the URL according to your environment:
+Haz click en el botón _**Configuración de proveedor**_ e ingresa la URL de acuerdo con tu ambiente:
 * Test: ```https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
 * Live: ```https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
 
-In the _**Payment Events Alert**_ table, enable the _**Update**_ event for _**Authorization**_ and _**Charge**_. Furthermore, select in the _**Associated Business Units**_ combo the _**Business Unit**_ created in the last step.<br>When finish, click _**Create**_.
+En la tabla _**Payment Events Alert**_, activa el evento _**Update**_ para _**Authorization**_ y _**Charge**_. Además, selecciona en el combo _**Associated Business Units**_ la _**Unidad de Negocio**_ creada en el paso anterior.<br>Cuando termines, haz clic en _**Crear **_.
 
-![PrintScreen](/assets/VTEX/VTEX_07.png)
+![PrintScreen](/assets/VTEX/VTEX_07_es.png)
 
-At this point, your PaymentsOS account has been configured as a middleware, the next step is the [configuration of the VTEX provider]({{< ref "#2-configure-the-vtex-provider" >}}).
+En este punto, has configurado tu cuenta de PaymentsOS como middleware, el siguiente paso es la [configuración del proveedor de VTEX]({{< ref "#2-configure-the-vtex-provider" >}}).
 
-### 2. Configure the VTEX provider
-Once you have configured your PaymentsOS account, the next step is the configuration of the VTEX provider per each payment method. For this step, it is mandatory that you have a valid user to access the VTEX admin.
+### 2. Configurar el proveedor de VTEX {#2-configure-the-vtex-provider}
+Una vez hayas configurado tu cuenta de PaymentsOS, el siguiente paso es la configuración del proveedor de VTEX para cada método de pago. Para este paso, es obligatorio que tengas un usuario válido para acceder al admin de VTEX.
 
-#### Configure the Gateway affiliation
-Before configuring the _**Gateway affiliation**_, make sure you have configured FingerPrint for PayU. To do so, refer to this [article](https://help.vtex.com/en/tutorial/configurar-fingerprint-para-payu).
+#### Configurar la afiliación de Gateway {#configure-the-gateway-affiliation}
+Antes de configurar la _**afiliación de Gateway**_, asegurate de haber configurado FingerPrint para PayU. Para esto, consulta este [artículo](https://help.vtex.com/en/tutorial/configurar-fingerprint-para-payu).
 
 1. In the VTEX admin, expand the _**Payments**_ menu inside _**Transactions**_ group. Then, select _**Settings**_.
 

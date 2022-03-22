@@ -51,7 +51,7 @@ Follow these steps to configure your account using Postman.
 
 7. If the login was successful, the authentication data is set for the second method.<br>Click the `GET` method `2. Retrieve PayU Latam ID`.
 
-8. In the top right corner, click the eye icon and locate the `env` parameter. Then, click the pencil icon and set `test`if you are processing in the test environment and `live` otherwise.
+8. In the top right corner, click the eye icon and locate the `env` parameter. Then, click the pencil icon and set `test` if you are processing in the test environment and `live` otherwise.
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_02.png)
 
@@ -120,7 +120,7 @@ Provide the following information for the _**Provider Configuration**_:
 
 | Parameter | Description |
 |---|---|
-| Configuration Name | Provide a to the _**Provider Configuration**_. |
+| Configuration Name | Provide a name to the _**Provider Configuration**_. |
 | Description | Provide a meaningful description for the _**Provider Configuration**_.<br>This value is optional. |
 | apiLogin | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | apiKey| Unique key of your commerce. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
