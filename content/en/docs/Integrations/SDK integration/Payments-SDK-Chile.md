@@ -36,7 +36,7 @@ Environment::setReportsCustomUrl(“https://api.payulatam.com/reports-api/4.0/se
 ## Available methods
 Payments SDK includes the following methods:
 
-* [Submit transaction with credit cards]({{< ref "Payments-SDK-Chile.md#submit-transaction-with-credit-cards" >}})
+* [Submit transaction with credit, debit or prepaid cards]({{< ref "Payments-SDK-Chile.md#submit-transaction-with-credit-cards" >}})
 * [Available payment methods query]({{< ref "Payments-SDK-Chile.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-SDK-Chile.md#ping" >}})
 <!-- * [Submit transaction with cash]({{< ref "Payments-SDK-Chile.md#submit-transaction-with-cash" >}}) -->
@@ -45,8 +45,8 @@ Payments SDK includes the following methods:
 To confirm the status of a transaction, you can use the [Queries SDK]({{< ref "QueriesSDK.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit cards
-This method lets you process the payments performed by your customers using credit cards. For Chile, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+## Submit transaction with credit, debit or prepaid cards {#submit-transaction-with-credit-cards}
+This method lets you process the payments performed by your customers using credit, debit or prepaid cards. For Chile, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Note" color="info"%}}
 Transactions with credit card using two-step flows are available under demand. Contact your Sales representative for more information.
@@ -56,7 +56,6 @@ Transactions with credit card using two-step flows are available under demand. C
 * Send a valid Credit card Payment Method in the request, [see the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#Chile" >}}).
 * For payments with credit card tokens, set the parameters `TOKEN_ID` and `CREDIT_CARD_SECURITY_CODE` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization SDK]({{< ref "TokenizationSDK.md" >}}).
 * Transactions in CHILEAN PESOS with decimal amounts are not allowed.
-* Two-step flows are not supported for international credit cards.
 * Transactions with credit card using two-step flows are available under demand and for single installment payments. Contact your Sales representative for more information.
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, set the parameter `PROCESS_WITHOUT_CVV2` as true and remove the parameter `CREDIT_CARD_SECURITY_CODE`.
 

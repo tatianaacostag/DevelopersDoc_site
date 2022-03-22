@@ -19,7 +19,7 @@ Para integrarte con el API de Pagos de Chile, apunta tus peticiones a las siguie
 ## Métodos disponibles {#available-methods}
 El API de pagos incluye los siguiente métodos:
 
-* [Enviar transacciones con tarjeta de crédito o débito]({{< ref "#submit-transaction-with-credit-or-debit-cards" >}})
+* [Enviar transacciones con tarjeta de crédito, débito o prepago]({{< ref "#submit-transaction-with-credit-or-debit-cards" >}})
 * [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
 * [Enviar transacciones con tarjeta débito o prepago utilizando WebPay Plus]({{< ref "#submit-transaction-with-debit-and-prepaid-cards" >}})
 * [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
@@ -31,11 +31,11 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 * Utiliza el [API o SDK de consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Enviar transacciones con tarjeta de crédito o débito {#submit-transaction-with-credit-or-debit-cards}
-Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Chile, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
+## Enviar transacciones con tarjeta de crédito, débito o prepago {#submit-transaction-with-credit-or-debit-cards}
+Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito, débito o prepago. Para Chile, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Nota" color="info"%}}
-Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está disponibles bajo demanda. Contacta a tu representante de ventas para más información.
+Las transacciones utilizando flujos de dos pasos están disponibles bajo demanda. Contacta a tu representante de ventas para más información.
 {{% /alert %}}
 
 ### Variables para la petición y la respuesta {#variables-for-request-and-response}
@@ -159,9 +159,7 @@ Las transacciones con tarjeta de crédito utilizando flujos de dos pasos está d
 
 #### Consideraciones {#considerations}
 * Para pagos con tókenes de tarjetas de crédito, incluye los parámetros `transaction.creditCardTokenId` y `transaction.creditCard.securityCode` (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito . Para más información, consulta el [API de Tokenización]({{< ref "Tokenization-API.md" >}}).
-* No están soportadas las tarjetas débito internacionales.
 * No se permiten transacciones en PESOS CHILENOS con decimales.
-* El flujo de dos pasos no está soportado para tarjetas débito, prepago o internacionales.
 * Las transacciones utilizando el flujo de dos pasos están soportadas para pagos en una sola cuota. Si envías una transacción de dos pasos con dos o más cuotas, esta se rechaza automáticamente por el adquirente.<br>El flujo de dos pasos está disponible bajo demanda, contacta a tu representante de ventas para más información.
 * Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable `creditCard.processWithoutCvv2` con valor true y elimina la variable `creditCard.securityCode`.
 

@@ -6,7 +6,19 @@ description: >
   PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.
 weight: 40
 ---
-
+<script>
+  function openTarget() {
+    var hash = location.hash.substring(1);
+    if(hash) {
+      var details = document.getElementById(hash);
+    } 
+    if(details && details.tagName.toLowerCase() === 'details') {
+      details.open = true;
+      details.scrollIntoView(true);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', openTarget);
+</script>
 If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:  
 
 {{< testaccounts/accounts >}}
@@ -16,7 +28,7 @@ The test environment does not replicate data from your production account.
 ## Test cards
 You can use the following cards for testing:
 
-<details>
+<details id="argentina">
 <summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
 
 | Card                       | Number                              |
@@ -33,7 +45,7 @@ You can use the following cards for testing:
 | **VISA Debit Card**        | 4517730000000000                    |
 
 </details>
-<details>
+<details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brazil</summary>
 
 | Card                       | Number                              |
@@ -46,18 +58,76 @@ You can use the following cards for testing:
 | **VISA Credit Card**       | 4422120000000008 - 4984460000000008 |
 
 </details>
-<details>
+<details id="chile">
 <summary><img src="/assets/Chile.png" width="25px"/> Chile</summary>
 
-| Card                       | Number                               |
-|----------------------------|--------------------------------------|
-| **AMEX Credit Card**       | 377825000000005                      |
-| **DINERS Credit Card**     | 36525200000002                       |
-| **MASTERCARD Credit Card** | 5435630000000008                     |
-| **VISA Credit Card**       | 4051885600446623 - 4938590000000017  |
+<table>
+<thead>
+  <tr>
+    <th>Card</th>
+    <th>Number</th>
+    <th>Cardholder</th>
+    <th>CVV</th>
+    <th>Expiration date</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><b>AMEX Credit Card</b></td>
+    <td>377825000000005</td>
+    <td colspan="3" rowspan="2" style="vertical-align:middle"><a href="#testing-status">Follow the testing values according to the expected result.</a></td>
+  </tr>
+  <tr>
+    <td><b> DINERS Credit Card</b></td>
+    <td>36525200000002</td>
+  </tr>
+  <tr>
+    <td><b>MASTERCARD Credit Card</b></td>
+    <td>5457210001000019</td>
+    <td>BKN_DMC_001</td>
+    <td>300</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>MASTERCARD Debit Card</b></td>
+    <td>5204730000001003</td>
+    <td>BKN_MCS_001</td>
+    <td>100</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>MASTERCARD Prepaid Card</b></td>
+    <td>5185540320000012</td>
+    <td>BKN_DMC_001</td>
+    <td>001</td>
+    <td>12/25</td>
+  </tr>
+  <tr>
+    <td><b>VISA Credit Card</b></td>
+    <td>4761340000000035</td>
+    <td>VISA_GLOBAL_3</td>
+    <td>846</td>
+    <td>12/27</td>
+  </tr>
+  <tr>
+    <td><b>VISA International Card</b></td>
+    <td>4005520000000129</td>
+    <td>VISA_ECOMMERCE_03</td>
+    <td>921</td>
+    <td>12/27</td>
+  </tr>
+  <tr>
+    <td><b>VISA Dedit Card</b></td>
+    <td>4761340000000050</td>
+    <td>VISA_GLOBAL_5</td>
+    <td>846</td>
+    <td>12/27</td>
+  </tr>
+</tbody>
+</table>
 
 </details>
-<details>
+<details id="colombia">
 <summary><img src="/assets/Colombia.png" width="25px"/> Colombia</summary>
 
 | Card                       | Number                                                                |
@@ -73,7 +143,7 @@ You can use the following cards for testing:
 | **VISA Debit Card**        | 4509420000000008                                                      |
 
 </details>
-<details>
+<details id="mexico">
 <summary><img src="/assets/Mexico.png" width="25px"/> Mexico</summary>
 
 | Card                       | Number                               |
@@ -85,7 +155,7 @@ You can use the following cards for testing:
 | **VISA Debit Card**        | 4415490000000004                     |
 
 </details>
-<details>
+<details id="panama">
 <summary><img src="/assets/Panama.png" width="25px"/> Panama</summary>
 
 | Card                       | Number                               |
@@ -94,7 +164,7 @@ You can use the following cards for testing:
 | **VISA Credit Card**       | 4723030000000005                     |
 
 </details>
-<details>
+<details id="peru">
 <summary><img src="/assets/Peru.png" width="25px"/> Peru</summary>
 
 | Card                       | Number                               |
@@ -128,6 +198,7 @@ When testing Payments, you must send in the request:
   - In the buyer and payer information, set the email as `manual-review-hub@email.com`.-->
 * For the card number you must enter a valid number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes or use one of the cards available for your country mentioned before.
 * To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
+* To test cards in Chile, use the cardholder name, CVV and expiration date displayed in the <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">example cards</a>.
 
 ## Importing the Collection
 Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you). Note that we create a new environment each time you import the collection.
