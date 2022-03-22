@@ -85,7 +85,7 @@ data-postman-var-1=&#34;400731dd3ca5aa713cd3&#34;&gt;&lt;/div&gt;
 &lt;p&gt;If the login was successful, the authentication data is set for the second method.&lt;br&gt;Click the &lt;code&gt;GET&lt;/code&gt; method &lt;code&gt;2. Retrieve PayU Latam ID&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;In the top right corner, click the eye icon and locate the &lt;code&gt;env&lt;/code&gt; parameter. Then, click the pencil icon and set &lt;code&gt;test&lt;/code&gt;if you are processing in the test environment and &lt;code&gt;live&lt;/code&gt; otherwise.&lt;/p&gt;
+&lt;p&gt;In the top right corner, click the eye icon and locate the &lt;code&gt;env&lt;/code&gt; parameter. Then, click the pencil icon and set &lt;code&gt;test&lt;/code&gt; if you are processing in the test environment and &lt;code&gt;live&lt;/code&gt; otherwise.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
@@ -205,7 +205,7 @@ In the PaymentsOS dashboard, expand the &lt;em&gt;&lt;strong&gt;Account&lt;/stro
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Configuration Name&lt;/td&gt;
-&lt;td&gt;Provide a to the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Provide a name to the &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Description&lt;/td&gt;
