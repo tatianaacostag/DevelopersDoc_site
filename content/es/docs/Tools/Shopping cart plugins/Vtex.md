@@ -360,7 +360,7 @@ Desplázate hasta la sección Paquete y haz clic en _**Facturar paquete**_.
 
 Proporciona la información de la factura y haz clic en _**Enviar factura**_ al final del panel. Una vez enviada la factura al cliente, se cobra en la tarjeta del cliente el importe autorizado.
 
-![PrintScreen](/assets/VTEX/_VTEX_25_es.png)
+![PrintScreen](/assets/VTEX/VTEX_25_es.png)
 
 {{% alert title="Nota" color="info"%}}
 Un pedido autorizado se puede cancelar utilizando el botón _**Cancelar pedido**_ en la Información del pedido. Al cancelarlo, PayU envía una transacción _void_ la cual queda registrada tanto en el Hub como en PayU Latam.
