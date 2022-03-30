@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/tools/shopping-cart-plugins/vtex.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-25T10:30:35-05:00" />
-<meta property="article:modified_time" content="2022-03-22T07:44:45-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2022-03-30T15:36:50-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="VTEX">
 <meta itemprop="description" content="Este artículo te muestra el procedimiento para habilitar PayU en tu sitio web de VTEX."><meta itemprop="datePublished" content="2021-05-25T10:30:35-05:00" />
-<meta itemprop="dateModified" content="2022-03-22T07:44:45-05:00" />
-<meta itemprop="wordCount" content="2827">
+<meta itemprop="dateModified" content="2022-03-30T15:36:50-05:00" />
+<meta itemprop="wordCount" content="2839">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VTEX"/>
 <meta name="twitter:description" content="Este artículo te muestra el procedimiento para habilitar PayU en tu sitio web de VTEX."/>
@@ -104,6 +104,8 @@
 	
 	<a class="dropdown-item" href="../../../../en/docs/tools/shopping-cart-plugins/vtex.html">English</a>
 	
+	<a class="dropdown-item" href="../../../../pt/docs/tools/shopping-cart-plugins/vtex.html">Português</a>
+	
 </div>
 			</li>
 			
@@ -136,7 +138,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.c9cd7839fd64f454149d36cfe29edd4682efa34521d25a4cbfa297f8dcf03e5e1d52e05814ff89c7c0d980d11ada97b861b883197013e9509af384542221f317.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.93be765b46125238012c8341116900e15b27fede0184dcf96c5bd0dd731ea36c1242f97a0c3d299a402714a1c0e94d175e5f1f2a3609033af27b5c19630fb261.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -156,6 +158,8 @@
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 	<a class="dropdown-item" href="../../../../en/docs/tools/shopping-cart-plugins/vtex.html">English</a>
+	
+	<a class="dropdown-item" href="../../../../pt/docs/tools/shopping-cart-plugins/vtex.html">Português</a>
 	
 </div>
     </div>
@@ -866,7 +870,7 @@ data-postman-var-1="400731dd3ca5aa713cd3"></div>
 <p><img src="../../../../assets/VTEX/Postman/VTEX_Postman_01.png" alt="PrintScreen"></p>
 <ol start="6">
 <li>
-<p>Ingresa el correo electrónico (<em><strong>email</strong></em>) y la contraseña (<em><strong>password</strong></em>) de tu cuenta de PaymentsOS. Luego, haz clic ens <em><strong>Send</strong></em>.</p>
+<p>Ingresa el correo electrónico (<em><strong>email</strong></em>) y la contraseña (<em><strong>password</strong></em>) de tu cuenta de PaymentsOS. Luego, haz clic en <em><strong>Send</strong></em>.</p>
 </li>
 <li>
 <p>Si el inicio de sesión fue correcto, los datos de autenticación son asignados en el segundo método.<br>Haz clic en el método <code>GET</code> llamado <code>2. Retrieve PayU Latam ID</code>.</p>
@@ -975,8 +979,8 @@ El parámetro <code>default_processor</code> es llenado automáticamente por la 
 <h4 id="configure-the-account-manually-using-paymentsos-dashboard">Configurar la cuenta manualmente utilizando el Panel de Control de PaymentsOS</h4>
 <p>Sigue estos pasos para configurar tu cuenta utilizando el panel de control de PaymentsOS.</p>
 <ol>
-<li>Crea la the Configuración de proveedor.<br>
-En el panel de control de PaymentsOS dashboard, expande el menú <em><strong>Cuenta</strong></em>, luego selecciona <em><strong>Servicios</strong></em>.</li>
+<li>Crea la Configuración de proveedor.<br>
+En el panel de control de PaymentsOS, expande el menú <em><strong>Cuenta</strong></em>, luego selecciona <em><strong>Servicios</strong></em>.</li>
 </ol>
 <p><img src="../../../../assets/VTEX/VTEX_01_es.png" alt="PrintScreen"></p>
 <p>Utiliza el campo <em><strong>Buscar</strong></em> en la sección <em><strong>Crea una nueva configuración de proveedor</strong></em> e ingresa <em>PayU</em> para encontrar el proveedor <em>PayU Latam</em>.</p>
@@ -996,7 +1000,7 @@ En el panel de control de PaymentsOS dashboard, expande el menú <em><strong>Cue
 </tr>
 <tr>
 <td>Descripción</td>
-<td>Ingresa un nombre para la <em><strong>Configuración de proveedor</strong></em>.</td>
+<td>Ingresa una descripción significativa para la <em><strong>Configuración de proveedor</strong></em>.<br>Este valor es opcional.</td>
 </tr>
 <tr>
 <td>apiLogin</td>
@@ -1004,7 +1008,7 @@ En el panel de control de PaymentsOS dashboard, expande el menú <em><strong>Cue
 </tr>
 <tr>
 <td>apiKey</td>
-<td>Contraseña entregada por PayU. <a href="../../../../es/docs/integrations.html#api-key-and-api-login">  Cómo obtengo mi API Key</a></td>
+<td>Contraseña entregada por PayU. <a href="../../../../es/docs/integrations.html#api-key-and-api-login">Cómo obtengo mi API Key</a></td>
 </tr>
 <tr>
 <td>accountId</td>
@@ -1037,7 +1041,7 @@ En el panel de control de PaymentsOS dashboard, expande el menú <em><strong>Cue
 </thead>
 <tbody>
 <tr>
-<td>Business Unit Name</td>
+<td>Nombre de la Unidad de negocio</td>
 <td>Nombre de la <em><strong>Unidad de Negocio</strong></em>. Este nombre debe estar en minúsculas y sin espacios.<br><em>Asegúrate de haber ingresado el valor correcto para el nombre ya que este valor no se puede actualizar después</em>.</td>
 </tr>
 <tr>
@@ -1053,12 +1057,12 @@ En el panel de control de PaymentsOS dashboard, expande el menú <em><strong>Cue
 </ol>
 <p>De vuelta en el panel de control de PaymentsOS, expande el menú <em><strong>Cuenta</strong></em> y selecciona <em><strong>Webhooks</strong></em>.</p>
 <p><img src="../../../../assets/VTEX/VTEX_06_es.png" alt="PrintScreen"></p>
-<p>Haz click en el botón <em><strong>Configuración de proveedor</strong></em> e ingresa la URL de acuerdo con tu ambiente:</p>
+<p>Haz click en el botón <em><strong>Crear URL de confirmación (Webhook)</strong></em> e ingresa la URL de acuerdo con tu ambiente:</p>
 <ul>
 <li>Test: <code>https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook</code></li>
 <li>Live: <code>https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook</code></li>
 </ul>
-<p>En la tabla <em><strong>Payment Events Alert</strong></em>, activa el evento <em><strong>Update</strong></em> para <em><strong>Authorization</strong></em> y <em><strong>Charge</strong></em>. Además, selecciona en el combo <em><strong>Associated Business Units</strong></em> la <em><strong>Unidad de Negocio</strong></em> creada en el paso anterior.<br>Cuando termines, haz clic en <em><strong>Crear</strong></em>.</p>
+<p>En la tabla <em><strong>Alertas de eventos transaccionales</strong></em>, activa el evento <em><strong>Update</strong></em> para <em><strong>Authorization</strong></em> y <em><strong>Charge</strong></em>. Además, selecciona en el combo <em><strong>Unidades de Negocio Asociadas</strong></em> la <em><strong>Unidad de Negocio</strong></em> creada en el paso anterior.<br>Cuando termines, haz clic en <em><strong>Crear</strong></em>.</p>
 <p><img src="../../../../assets/VTEX/VTEX_07_es.png" alt="PrintScreen"></p>
 <p>En este punto, has configurado tu cuenta de PaymentsOS como middleware, el siguiente paso es la <a href="#2-configure-the-vtex-provider">configuración del proveedor de VTEX</a>.</p>
 <h3 id="2-configure-the-vtex-provider">2. Configurar el proveedor de VTEX</h3>
@@ -1126,11 +1130,11 @@ Asegúrate de seleccionar el conector <em><strong>PayUv2</strong></em>, el proce
 </tr>
 <tr>
 <td>Captura automática de pago</td>
-<td>Selecciona como quieres realizar la captura (cobro) en tu afiliación.<br><ul style="margin-bottom: initial;"><li>Para flujos en un paso, selecciona <code>Inmediatamente: captura automática al autorizar el pago</code>.</li><li>Para flujos de dos pasos, selecciona <code>Desactivado: no capturado automáticamente</code> para ejecutar la captura una vez factures la orden.</li></ul><br>Para más información, consulta <a href="https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature">Función de captura automática personalizada (en inglés)</a> en la documentación de desarrolladores.<br>EL valor por defecto de esta opción es siete (7) días luego de la aprobación.</td>
+<td>Selecciona cómo quieres realizar la captura (cobro) en tu afiliación.<br><ul style="margin-bottom: initial;"><li>Para flujos en un paso, selecciona <code>Inmediatamente: captura automática al autorizar el pago</code>.</li><li>Para flujos de dos pasos, selecciona <code>Desactivado: no capturado automáticamente</code> para ejecutar la captura una vez factures la orden.</li></ul><br>Para más información, consulta <a href="https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature">Función de captura automática personalizada (en inglés)</a> en la documentación de desarrolladores.<br>EL valor por defecto de esta opción es siete (7) días luego de la aprobación.</td>
 </tr>
 <tr>
 <td>Tipo Autorizacion</td>
-<td>Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.<br><ul style="margin-bottom: initial;"><li>For one-step flow, select <code>Autorizacion y Captura</code>.</li><li>Para flujos de dos pasos, selecciona <code>Pre-Autorizacion</code>.</li></ul><br>Consulta el siguiente <a href="../../../../es/docs/services/payments.html#payment-flows">enlace</a> para conocer más de flujos de pago.</td>
+<td>Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.<br><ul style="margin-bottom: initial;"><li>Para flujos de un paso, selecciona <code>Autorizacion y Captura</code>.</li><li>Para flujos de dos pasos, selecciona <code>Pre-Autorizacion</code>.</li></ul><br>Consulta el siguiente <a href="../../../../es/docs/services/payments.html#payment-flows">enlace</a> para conocer más de flujos de pago.</td>
 </tr>
 <tr>
 <td>Public Key</td>
@@ -1212,7 +1216,7 @@ Haz clic <a href="#configure-co-branded-or-private-labels-cards">aquí</a> si qu
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">Note</h4>
+<h4 class="alert-heading">Nota</h4>
 Para tarjetas de <em>marca compartida</em>, debes seleccionar la marca de la misma.
 </div>
 
@@ -1299,7 +1303,7 @@ No se requiere este procedimiento para <em>Boleto bancario</em> en Brasil, simpl
 <li>Ingresa la siguiente información para el medio de pago en efectivo.</li>
 </ol>
 <ul>
-<li><strong>Nombre</strong>: En este parámetro, necesitar utilizar el valor mostrado <a href="../../../../es/docs/integrations.html#api-key-and-api-login">aquí</a> en la columna <code>Parámetro paymentMethod</code>. Para este ejemplo, configuramos <code>OXXO</code>.</li>
+<li><strong>Nombre</strong>: En este parámetro, necesitar utilizar el valor mostrado <a href="../../../../es/docs/getting-started/select-your-payment-method.html">aquí</a> en la columna <code>Parámetro paymentMethod</code>. Para este ejemplo, configuramos <code>OXXO</code>.</li>
 <li><strong>Descripción</strong>: Ingresa la descripción que desea mostrar cuando el cliente seleccione este método de pago. Este parámetro es opcional.</li>
 <li><strong>Validez del pagaré</strong>: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a siete días.</li>
 </ul>
@@ -1329,10 +1333,10 @@ No se requiere este procedimiento para <em>Boleto bancario</em> en Brasil, simpl
 <ul>
 <li>Admin de VTEX: <em><strong>Pagos</strong></em> &gt; <em><strong>Transacciones</strong></em>.</li>
 </ul>
-<p><img src="../../../../assets/VTEX/VTEX_20.png" alt="PrintScreen"></p>
+<p><img src="../../../../assets/VTEX/VTEX_20_es.png" alt="PrintScreen"></p>
 <ul>
 <li>
-<p>Panel de control de PaymentsOS: <em><strong>Pagos</strong></em> &gt; <em><strong>Buscar</strong></em>.<br><br><img src="../../../../assets/VTEX/VTEX_21.png" alt="PrintScreen"><br>El parámetro <em><strong>ID Externa de la Transacción</strong></em> dentro de <em><strong>Actividad de la Transacción</strong></em> es el OrderID de PayU.</p>
+<p>Panel de control de PaymentsOS: <em><strong>Pagos</strong></em> &gt; <em><strong>Buscar</strong></em>.<br><br><img src="../../../../assets/VTEX/VTEX_21_es.png" alt="PrintScreen"><br>El parámetro <em><strong>ID Externa de la Transacción</strong></em> dentro de <em><strong>Actividad de la Transacción</strong></em> es el OrderID de PayU.</p>
 </li>
 <li>
 <p>Módulo PayU: en el <a href="../../../../es/payu-module-documentation/reports/sales-report.html"><em><strong>Reporte de Ventas</strong></em></a>.</p>
@@ -1363,9 +1367,9 @@ Un pedido autorizado se puede cancelar utilizando el botón <em><strong>Cancelar
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-22 de marzo de 2022:
+30 de marzo de 2022:
 
- <b>VTEX in Spanish (3313ed7f)</b>
+ <b>Translations (620f4c4e)</b>
 </div>
 </div>
 

@@ -79,7 +79,7 @@ data-postman-var-1=&#34;400731dd3ca5aa713cd3&#34;&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Ingresa el correo electrónico (&lt;em&gt;&lt;strong&gt;email&lt;/strong&gt;&lt;/em&gt;) y la contraseña (&lt;em&gt;&lt;strong&gt;password&lt;/strong&gt;&lt;/em&gt;) de tu cuenta de PaymentsOS. Luego, haz clic ens &lt;em&gt;&lt;strong&gt;Send&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Ingresa el correo electrónico (&lt;em&gt;&lt;strong&gt;email&lt;/strong&gt;&lt;/em&gt;) y la contraseña (&lt;em&gt;&lt;strong&gt;password&lt;/strong&gt;&lt;/em&gt;) de tu cuenta de PaymentsOS. Luego, haz clic en &lt;em&gt;&lt;strong&gt;Send&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Si el inicio de sesión fue correcto, los datos de autenticación son asignados en el segundo método.&lt;br&gt;Haz clic en el método &lt;code&gt;GET&lt;/code&gt; llamado &lt;code&gt;2. Retrieve PayU Latam ID&lt;/code&gt;.&lt;/p&gt;
@@ -188,8 +188,8 @@ El parámetro &lt;code&gt;default_processor&lt;/code&gt; es llenado automáticam
 &lt;h4 id=&#34;configure-the-account-manually-using-paymentsos-dashboard&#34;&gt;Configurar la cuenta manualmente utilizando el Panel de Control de PaymentsOS&lt;/h4&gt;
 &lt;p&gt;Sigue estos pasos para configurar tu cuenta utilizando el panel de control de PaymentsOS.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Crea la the Configuración de proveedor.&lt;br&gt;
-En el panel de control de PaymentsOS dashboard, expande el menú &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt;, luego selecciona &lt;em&gt;&lt;strong&gt;Servicios&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Crea la Configuración de proveedor.&lt;br&gt;
+En el panel de control de PaymentsOS, expande el menú &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt;, luego selecciona &lt;em&gt;&lt;strong&gt;Servicios&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_01_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Utiliza el campo &lt;em&gt;&lt;strong&gt;Buscar&lt;/strong&gt;&lt;/em&gt; en la sección &lt;em&gt;&lt;strong&gt;Crea una nueva configuración de proveedor&lt;/strong&gt;&lt;/em&gt; e ingresa &lt;em&gt;PayU&lt;/em&gt; para encontrar el proveedor &lt;em&gt;PayU Latam&lt;/em&gt;.&lt;/p&gt;
@@ -209,7 +209,7 @@ En el panel de control de PaymentsOS dashboard, expande el menú &lt;em&gt;&lt;s
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Descripción&lt;/td&gt;
-&lt;td&gt;Ingresa un nombre para la &lt;em&gt;&lt;strong&gt;Configuración de proveedor&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Ingresa una descripción significativa para la &lt;em&gt;&lt;strong&gt;Configuración de proveedor&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;Este valor es opcional.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;apiLogin&lt;/td&gt;
@@ -217,7 +217,7 @@ En el panel de control de PaymentsOS dashboard, expande el menú &lt;em&gt;&lt;s
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;apiKey&lt;/td&gt;
-&lt;td&gt;Contraseña entregada por PayU. &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;  Cómo obtengo mi API Key&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Contraseña entregada por PayU. &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;Cómo obtengo mi API Key&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;accountId&lt;/td&gt;
@@ -250,7 +250,7 @@ En el panel de control de PaymentsOS dashboard, expande el menú &lt;em&gt;&lt;s
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Business Unit Name&lt;/td&gt;
+&lt;td&gt;Nombre de la Unidad de negocio&lt;/td&gt;
 &lt;td&gt;Nombre de la &lt;em&gt;&lt;strong&gt;Unidad de Negocio&lt;/strong&gt;&lt;/em&gt;. Este nombre debe estar en minúsculas y sin espacios.&lt;br&gt;&lt;em&gt;Asegúrate de haber ingresado el valor correcto para el nombre ya que este valor no se puede actualizar después&lt;/em&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -266,12 +266,12 @@ En el panel de control de PaymentsOS dashboard, expande el menú &lt;em&gt;&lt;s
 &lt;/ol&gt;
 &lt;p&gt;De vuelta en el panel de control de PaymentsOS, expande el menú &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt; y selecciona &lt;em&gt;&lt;strong&gt;Webhooks&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_06_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Haz click en el botón &lt;em&gt;&lt;strong&gt;Configuración de proveedor&lt;/strong&gt;&lt;/em&gt; e ingresa la URL de acuerdo con tu ambiente:&lt;/p&gt;
+&lt;p&gt;Haz click en el botón &lt;em&gt;&lt;strong&gt;Crear URL de confirmación (Webhook)&lt;/strong&gt;&lt;/em&gt; e ingresa la URL de acuerdo con tu ambiente:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Test: &lt;code&gt;https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Live: &lt;code&gt;https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;En la tabla &lt;em&gt;&lt;strong&gt;Payment Events Alert&lt;/strong&gt;&lt;/em&gt;, activa el evento &lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;&lt;/em&gt; para &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; y &lt;em&gt;&lt;strong&gt;Charge&lt;/strong&gt;&lt;/em&gt;. Además, selecciona en el combo &lt;em&gt;&lt;strong&gt;Associated Business Units&lt;/strong&gt;&lt;/em&gt; la &lt;em&gt;&lt;strong&gt;Unidad de Negocio&lt;/strong&gt;&lt;/em&gt; creada en el paso anterior.&lt;br&gt;Cuando termines, haz clic en &lt;em&gt;&lt;strong&gt;Crear&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;En la tabla &lt;em&gt;&lt;strong&gt;Alertas de eventos transaccionales&lt;/strong&gt;&lt;/em&gt;, activa el evento &lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;&lt;/em&gt; para &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; y &lt;em&gt;&lt;strong&gt;Charge&lt;/strong&gt;&lt;/em&gt;. Además, selecciona en el combo &lt;em&gt;&lt;strong&gt;Unidades de Negocio Asociadas&lt;/strong&gt;&lt;/em&gt; la &lt;em&gt;&lt;strong&gt;Unidad de Negocio&lt;/strong&gt;&lt;/em&gt; creada en el paso anterior.&lt;br&gt;Cuando termines, haz clic en &lt;em&gt;&lt;strong&gt;Crear&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_07_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;En este punto, has configurado tu cuenta de PaymentsOS como middleware, el siguiente paso es la &lt;a href=&#34;#2-configure-the-vtex-provider&#34;&gt;configuración del proveedor de VTEX&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;2-configure-the-vtex-provider&#34;&gt;2. Configurar el proveedor de VTEX&lt;/h3&gt;
@@ -339,11 +339,11 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Captura automática de pago&lt;/td&gt;
-&lt;td&gt;Selecciona como quieres realizar la captura (cobro) en tu afiliación.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para flujos en un paso, selecciona &lt;code&gt;Inmediatamente: captura automática al autorizar el pago&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para flujos de dos pasos, selecciona &lt;code&gt;Desactivado: no capturado automáticamente&lt;/code&gt; para ejecutar la captura una vez factures la orden.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Para más información, consulta &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Función de captura automática personalizada (en inglés)&lt;/a&gt; en la documentación de desarrolladores.&lt;br&gt;EL valor por defecto de esta opción es siete (7) días luego de la aprobación.&lt;/td&gt;
+&lt;td&gt;Selecciona cómo quieres realizar la captura (cobro) en tu afiliación.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para flujos en un paso, selecciona &lt;code&gt;Inmediatamente: captura automática al autorizar el pago&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para flujos de dos pasos, selecciona &lt;code&gt;Desactivado: no capturado automáticamente&lt;/code&gt; para ejecutar la captura una vez factures la orden.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Para más información, consulta &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Función de captura automática personalizada (en inglés)&lt;/a&gt; en la documentación de desarrolladores.&lt;br&gt;EL valor por defecto de esta opción es siete (7) días luego de la aprobación.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Tipo Autorizacion&lt;/td&gt;
-&lt;td&gt;Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For one-step flow, select &lt;code&gt;Autorizacion y Captura&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para flujos de dos pasos, selecciona &lt;code&gt;Pre-Autorizacion&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Consulta el siguiente &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;enlace&lt;/a&gt; para conocer más de flujos de pago.&lt;/td&gt;
+&lt;td&gt;Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para flujos de un paso, selecciona &lt;code&gt;Autorizacion y Captura&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para flujos de dos pasos, selecciona &lt;code&gt;Pre-Autorizacion&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Consulta el siguiente &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;enlace&lt;/a&gt; para conocer más de flujos de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Public Key&lt;/td&gt;
@@ -425,7 +425,7 @@ Haz clic &lt;a href=&#34;#configure-co-branded-or-private-labels-cards&#34;&gt;a
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
 Para tarjetas de &lt;em&gt;marca compartida&lt;/em&gt;, debes seleccionar la marca de la misma.
 &lt;/div&gt;
 
@@ -512,7 +512,7 @@ No se requiere este procedimiento para &lt;em&gt;Boleto bancario&lt;/em&gt; en B
 &lt;li&gt;Ingresa la siguiente información para el medio de pago en efectivo.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Nombre&lt;/strong&gt;: En este parámetro, necesitar utilizar el valor mostrado &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;aquí&lt;/a&gt; en la columna &lt;code&gt;Parámetro paymentMethod&lt;/code&gt;. Para este ejemplo, configuramos &lt;code&gt;OXXO&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nombre&lt;/strong&gt;: En este parámetro, necesitar utilizar el valor mostrado &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;aquí&lt;/a&gt; en la columna &lt;code&gt;Parámetro paymentMethod&lt;/code&gt;. Para este ejemplo, configuramos &lt;code&gt;OXXO&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Descripción&lt;/strong&gt;: Ingresa la descripción que desea mostrar cuando el cliente seleccione este método de pago. Este parámetro es opcional.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Validez del pagaré&lt;/strong&gt;: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a siete días.&lt;/li&gt;
 &lt;/ul&gt;
@@ -542,10 +542,10 @@ No se requiere este procedimiento para &lt;em&gt;Boleto bancario&lt;/em&gt; en B
 &lt;ul&gt;
 &lt;li&gt;Admin de VTEX: &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Transacciones&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_20.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_20_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Panel de control de PaymentsOS: &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Buscar&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_21.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;br&gt;El parámetro &lt;em&gt;&lt;strong&gt;ID Externa de la Transacción&lt;/strong&gt;&lt;/em&gt; dentro de &lt;em&gt;&lt;strong&gt;Actividad de la Transacción&lt;/strong&gt;&lt;/em&gt; es el OrderID de PayU.&lt;/p&gt;
+&lt;p&gt;Panel de control de PaymentsOS: &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Buscar&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_21_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;br&gt;El parámetro &lt;em&gt;&lt;strong&gt;ID Externa de la Transacción&lt;/strong&gt;&lt;/em&gt; dentro de &lt;em&gt;&lt;strong&gt;Actividad de la Transacción&lt;/strong&gt;&lt;/em&gt; es el OrderID de PayU.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Módulo PayU: en el &lt;a href=&#34;../../../../es/payu-module-documentation/reports/sales-report.html&#34;&gt;&lt;em&gt;&lt;strong&gt;Reporte de Ventas&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
@@ -562,7 +562,7 @@ No se requiere este procedimiento para &lt;em&gt;Boleto bancario&lt;/em&gt; en B
 &lt;p&gt;Desplázate hasta la sección Paquete y haz clic en &lt;em&gt;&lt;strong&gt;Facturar paquete&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_24_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Proporciona la información de la factura y haz clic en &lt;em&gt;&lt;strong&gt;Enviar factura&lt;/strong&gt;&lt;/em&gt; al final del panel. Una vez enviada la factura al cliente, se cobra en la tarjeta del cliente el importe autorizado.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/_VTEX_25_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_25_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;

@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/pt/docs/tools/shopping-cart-plugins/vtex.html</loc>
+    <lastmod>2022-03-30T15:36:50-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/vtex.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/vtex.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/vtex.html"
+                />
+  </url><url>
     <loc>/pt/payu-module-documentation/getting-started/log-in/google-accounts.html</loc>
     <lastmod>2021-12-02T10:47:25-05:00</lastmod>
     <changefreq>monthly</changefreq>
