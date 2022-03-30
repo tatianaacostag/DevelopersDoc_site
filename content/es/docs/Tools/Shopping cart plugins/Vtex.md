@@ -47,7 +47,7 @@ Sigue estos pasos para configurar tu cuenta utilizando Postman.
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_01.png)
 
-6. Ingresa el correo electrónico (_**email**_) y la contraseña (_**password**_) de tu cuenta de PaymentsOS. Luego, haz clic ens _**Send**_.
+6. Ingresa el correo electrónico (_**email**_) y la contraseña (_**password**_) de tu cuenta de PaymentsOS. Luego, haz clic en _**Send**_.
 
 7. Si el inicio de sesión fue correcto, los datos de autenticación son asignados en el segundo método.<br>Haz clic en el método `GET` llamado `2. Retrieve PayU Latam ID`.
 
@@ -107,8 +107,8 @@ En este punto, has configurado tu cuenta de PaymentsOS como middleware, el sigui
 #### Configurar la cuenta manualmente utilizando el Panel de Control de PaymentsOS {#configure-the-account-manually-using-paymentsos-dashboard}
 Sigue estos pasos para configurar tu cuenta utilizando el panel de control de PaymentsOS.
 
-1. Crea la the Configuración de proveedor.<br>
-En el panel de control de PaymentsOS dashboard, expande el menú _**Cuenta**_, luego selecciona _**Servicios**_.
+1. Crea la Configuración de proveedor.<br>
+En el panel de control de PaymentsOS, expande el menú _**Cuenta**_, luego selecciona _**Servicios**_.
 
 ![PrintScreen](/assets/VTEX/VTEX_01_es.png)
 
@@ -121,9 +121,9 @@ Ingresa la siguiente información para la _**Configuración de proveedor**_:
 | Parámetro | Descripción |
 |---|---|
 | Nombre de Configuración | Ingresa un nombre para la _**Configuración de proveedor**_. |
-| Descripción | Ingresa un nombre para la _**Configuración de proveedor**_. |
+| Descripción | Ingresa una descripción significativa para la _**Configuración de proveedor**_.<br>Este valor es opcional. |
 | apiLogin | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| apiKey| Contraseña entregada por PayU. [  Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| apiKey| Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | accountId | ID de la cuenta de PayU de acuerdo al país en el que vas a vender. |
 | merchantId | ID de tu comercio en PayU Latam. |
 | paymentCountry | País de procesamiento en formato ISO 3166 Alpha-3. |
@@ -141,7 +141,7 @@ Haz clic en el botón _**Crear una Unidad de Negocio**_ e ingresa la siguiente i
 
 | Parámetro | Descripción |
 |---|---|
-| Business Unit Name | Nombre de la _**Unidad de Negocio**_. Este nombre debe estar en minúsculas y sin espacios.<br>_Asegúrate de haber ingresado el valor correcto para el nombre ya que este valor no se puede actualizar después_. |
+| Nombre de la Unidad de negocio | Nombre de la _**Unidad de Negocio**_. Este nombre debe estar en minúsculas y sin espacios.<br>_Asegúrate de haber ingresado el valor correcto para el nombre ya que este valor no se puede actualizar después_. |
 | Descripción | Ingresa una descripción significativa para la _**Unidad de Negocio**_.<br>Este valor es opcional. |
 
 En la sección _**Selecciona un proveedor por defecto para esta Unidad de Negocio**_, escoge la _**Configuración de proveedor**_ creada en el paso anterior.<br>Cuando termines, haz clic en _**Crear**_.
@@ -154,11 +154,11 @@ De vuelta en el panel de control de PaymentsOS, expande el menú _**Cuenta**_ y 
 
 ![PrintScreen](/assets/VTEX/VTEX_06_es.png)
 
-Haz click en el botón _**Configuración de proveedor**_ e ingresa la URL de acuerdo con tu ambiente:
+Haz click en el botón _**Crear URL de confirmación (Webhook)**_ e ingresa la URL de acuerdo con tu ambiente:
 * Test: ```https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
 * Live: ```https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
 
-En la tabla _**Payment Events Alert**_, activa el evento _**Update**_ para _**Authorization**_ y _**Charge**_. Además, selecciona en el combo _**Associated Business Units**_ la _**Unidad de Negocio**_ creada en el paso anterior.<br>Cuando termines, haz clic en _**Crear**_.
+En la tabla _**Alertas de eventos transaccionales**_, activa el evento _**Update**_ para _**Authorization**_ y _**Charge**_. Además, selecciona en el combo _**Unidades de Negocio Asociadas**_ la _**Unidad de Negocio**_ creada en el paso anterior.<br>Cuando termines, haz clic en _**Crear**_.
 
 ![PrintScreen](/assets/VTEX/VTEX_07_es.png)
 
@@ -202,8 +202,8 @@ La información del conector puede ser obtenida a través de lo siguiente:
 | Selector de ambiente | Selecciona el ambiente donde quieres crear las transacciones.<br>De acuerdo con la selección que hagas aquí, debes ingresar otros parámetros seleccionando el mismo ambiente en PaymentsOS. |
 | Application Key | ID de la aplicación de la _**Unidad de negocio**_. |
 | Application Token | Llave de API Privada de la _**Unidad de negocio**_. |
-| Captura automática de pago | Selecciona como quieres realizar la captura (cobro) en tu afiliación.<br><ul style="margin-bottom: initial;"><li>Para flujos en un paso, selecciona `Inmediatamente: captura automática al autorizar el pago`.</li><li>Para flujos de dos pasos, selecciona `Desactivado: no capturado automáticamente` para ejecutar la captura una vez factures la orden.</li></ul><br>Para más información, consulta [Función de captura automática personalizada (en inglés)](https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature) en la documentación de desarrolladores.<br>EL valor por defecto de esta opción es siete (7) días luego de la aprobación. |
-| Tipo Autorizacion | Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.<br><ul style="margin-bottom: initial;"><li>For one-step flow, select `Autorizacion y Captura`.</li><li>Para flujos de dos pasos, selecciona `Pre-Autorizacion`.</li></ul><br>Consulta el siguiente [enlace]({{< ref "payments.md#payment-flows" >}}) para conocer más de flujos de pago. |
+| Captura automática de pago | Selecciona cómo quieres realizar la captura (cobro) en tu afiliación.<br><ul style="margin-bottom: initial;"><li>Para flujos en un paso, selecciona `Inmediatamente: captura automática al autorizar el pago`.</li><li>Para flujos de dos pasos, selecciona `Desactivado: no capturado automáticamente` para ejecutar la captura una vez factures la orden.</li></ul><br>Para más información, consulta [Función de captura automática personalizada (en inglés)](https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature) en la documentación de desarrolladores.<br>EL valor por defecto de esta opción es siete (7) días luego de la aprobación. |
+| Tipo Autorizacion | Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.<br><ul style="margin-bottom: initial;"><li>Para flujos de un paso, selecciona `Autorizacion y Captura`.</li><li>Para flujos de dos pasos, selecciona `Pre-Autorizacion`.</li></ul><br>Consulta el siguiente [enlace]({{< ref "payments.md#payment-flows" >}}) para conocer más de flujos de pago. |
 | Public Key | Llave de API Pública de la _**Unidad de negocio**_. |
 | ¿Activar split y enviar receptores?  | Selecciona `No` en este campo. |
 
@@ -267,7 +267,7 @@ Las tarjetas de marca compartida o privada son tarjetas emitidas por una tienda 
 * **Rangos de BIN**: `590712-590712`
 * **Código de pago del adquirente**: `codensa`
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="Nota" color="info"%}}
 Para tarjetas de _marca compartida_, debes seleccionar la marca de la misma.
 {{% /alert %}}
 
@@ -307,7 +307,7 @@ Cuando configuras un método de pago en efectivo, tus clientes son redirigidos a
 
 3. Ingresa la siguiente información para el medio de pago en efectivo.
 
-* **Nombre**: En este parámetro, necesitar utilizar el valor mostrado [aquí]({{< ref "integrations.html#api-key-and-api-login" >}}) en la columna `Parámetro paymentMethod`. Para este ejemplo, configuramos `OXXO`.
+* **Nombre**: En este parámetro, necesitar utilizar el valor mostrado [aquí]({{< ref "select-your-payment-method.html" >}}) en la columna `Parámetro paymentMethod`. Para este ejemplo, configuramos `OXXO`.
 * **Descripción**: Ingresa la descripción que desea mostrar cuando el cliente seleccione este método de pago. Este parámetro es opcional.
 * **Validez del pagaré**: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a siete días.
 
@@ -337,9 +337,9 @@ Una vez que hayas configurado las Condiciones de pago para tus medios de pago, s
 Una vez aprobada la compra puedes verificarla en:
 * Admin de VTEX: _**Pagos**_ > _**Transacciones**_.
 
-![PrintScreen](/assets/VTEX/VTEX_20.png)
+![PrintScreen](/assets/VTEX/VTEX_20_es.png)
 
-* Panel de control de PaymentsOS: _**Pagos**_ > _**Buscar**_.<br><br>![PrintScreen](/assets/VTEX/VTEX_21.png)<br>El parámetro _**ID Externa de la Transacción**_ dentro de _**Actividad de la Transacción**_ es el OrderID de PayU.  
+* Panel de control de PaymentsOS: _**Pagos**_ > _**Buscar**_.<br><br>![PrintScreen](/assets/VTEX/VTEX_21_es.png)<br>El parámetro _**ID Externa de la Transacción**_ dentro de _**Actividad de la Transacción**_ es el OrderID de PayU.  
 
 * Módulo PayU: en el [_**Reporte de Ventas**_]({{< ref "Sales-report.md" >}}).
 

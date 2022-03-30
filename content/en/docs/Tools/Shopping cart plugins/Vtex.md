@@ -307,7 +307,7 @@ When you configure a cash payment method, your customers are redirected to the P
 
 3. Provide the following data for the cash payment.
 
-* **Name**: In this parameter, you need to use the value displayed [here]({{< ref "integrations.html#api-key-and-api-login" >}}) in the column `paymentMethod parameter`. For the sake of our example, set `OXXO`.
+* **Name**: In this parameter, you need to use the value displayed [here]({{< ref "select-your-payment-method.html" >}}) in the column `paymentMethod parameter`. For the sake of our example, set `OXXO`.
 * **Description**: Provide the description you want to show when the customer selects this payment method. This parameter is optional.
 * **Notes payable expiration date**: provide the number of days before the cash payment expires. By default, this value is assigned to seven days.
 
