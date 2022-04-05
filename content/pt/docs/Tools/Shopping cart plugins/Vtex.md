@@ -107,7 +107,7 @@ Neste ponto, você configurou sua conta do PaymentsOS como middleware, o próxim
 #### Configure a conta manualmente usando o Painel de controle do PaymentsOS {#configure-the-account-manually-using-paymentsos-dashboard}
 Siga estas etapas para configurar sua conta usando o painel de controle do PaymentsOS.
 
-1. Crea la the Configuração de Provedor.<br>
+1. Crie a Configuração de Provedor.<br>
 No painel de controle do PaymentsOS, expanda o menu _**Configuração**_ e selecione _**Provedores de Pagamento**_.
 
 ![PrintScreen](/assets/VTEX/VTEX_01_pt.png)
