@@ -188,7 +188,7 @@ O parâmetro &lt;code&gt;default_processor&lt;/code&gt;  preenchido automaticame
 &lt;h4 id=&#34;configure-the-account-manually-using-paymentsos-dashboard&#34;&gt;Configure a conta manualmente usando o Painel de controle do PaymentsOS&lt;/h4&gt;
 &lt;p&gt;Siga estas etapas para configurar sua conta usando o painel de controle do PaymentsOS.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Crea la the Configuração de Provedor.&lt;br&gt;
+&lt;li&gt;Crie a Configuração de Provedor.&lt;br&gt;
 No painel de controle do PaymentsOS, expanda o menu &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Provedores de Pagamento&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
