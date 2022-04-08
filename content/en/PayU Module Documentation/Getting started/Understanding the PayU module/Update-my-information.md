@@ -9,7 +9,26 @@ weight: 10
 tags: ["subtopic"]
 ---
 {{% alert title="Note" color="info"%}}
-Once your account has been validated and activated, your contact, business, and sales information cannot be updated using the PayU module. If you need to update this information, contact sac@payu.com.
+Once your account has been validated and activated, your contact, business, and sales information cannot be updated using the PayU module. If you need to update this information, contact:
+
+<div style="display: flex;">
+  <div style="float: left;width: 50%;">
+    <ul>
+      <li><img src="/assets/Argentina.png" width="25px"/> <a href="comercios.ar@payu.com">comercios.ar@payu.com</a></li>
+      <li><img src="/assets/Brasil.png" width="25px"/> <a href="comercios.br@payu.com">comercios.br@payu.com</a></li>
+      <li><img src="/assets/Chile.png" width="25px"/> <a href="comercios.cl@payu.com">comercios.cl@payu.com</a></li>
+      <li><img src="/assets/Colombia.png" width="25px"/> <a href="comercios.co@payu.com">comercios.co@payu.com</a></li>
+    </ul>
+  </div>
+  <div style="float: left;width: 50%;">
+    <ul>
+      <li><img src="/assets/Mexico.png" width="25px"/> <a href="comercios.mx@payu.com">comercios.mx@payu.com</a></li>
+      <li><img src="/assets/Panama.png" width="25px"/> <a href="comercios.pa@payu.com">comercios.pa@payu.com</a></li>
+      <li><img src="/assets/Peru.png" width="25px"/> <a href="comercios.pe@payu.com">comercios.pe@payu.com</a></li>
+    </ul>
+  </div>
+</div>
+
 {{% /alert %}}
 
 ## Change password
