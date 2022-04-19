@@ -339,7 +339,11 @@ Certifique-se de selecionar o conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Captura automática de pagamento&lt;/td&gt;
-&lt;td&gt;Selecione como deseja fazer a captura (pagamento) em sua afiliação.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para fluxos de uma etapa, selecione &lt;code&gt;Inmediatamente: captura automática al autorizar el pago&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para fluxos de duas etapas, selecione &lt;code&gt;Desactivado: no capturado automáticamente&lt;/code&gt; para executar a captura assim que você faturar o pedido.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Para obter mais informações, consulte &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Recurso de captura automática personalizada&lt;/a&gt; na documentação do desenvolvedor.&lt;br&gt;O valor padrão de esta opção é de sete (7) dias após a aprovação.&lt;/td&gt;
+&lt;td&gt;Selecione como deseja fazer a captura (pagamento) em sua afiliação.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para fluxos de uma etapa, selecione &lt;code&gt;Inmediatamente: captura automática al autorizar el pago&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para fluxos de duas etapas, selecione &lt;code&gt;Desactivado: no capturado automáticamente&lt;/code&gt; para executar a captura assim que você faturar o pedido.&lt;/li&gt;&lt;li&gt;Selecione &lt;code&gt;Agendada: Defina quando a captura automática será realizada&lt;/code&gt; para definir um tempo em horas para capturar automaticamente o pedido.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Para obter mais informações, consulte &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Recurso de captura automática personalizada&lt;/a&gt; na documentação do desenvolvedor.&lt;br&gt;O valor padrão de esta opção é de sete (7) dias após a aprovação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Prazo agendado em horas para a captura automática&lt;/td&gt;
+&lt;td&gt;Este campo aparece quando você seleciona &lt;code&gt;Agendada: Defina quando a captura automática será realizada&lt;/code&gt; como forma de captura de pagamento; selecione o período programado que deseja configurar de acordo com suas configurações. Este valor deve ser um número inteiro, portanto, decimais não são permitidos.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Tipo Autorizacion&lt;/td&gt;

@@ -339,7 +339,11 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Captura automática de pago&lt;/td&gt;
-&lt;td&gt;Selecciona cómo quieres realizar la captura (cobro) en tu afiliación.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para flujos en un paso, selecciona &lt;code&gt;Inmediatamente: captura automática al autorizar el pago&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para flujos de dos pasos, selecciona &lt;code&gt;Desactivado: no capturado automáticamente&lt;/code&gt; para ejecutar la captura una vez factures la orden.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Para más información, consulta &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Función de captura automática personalizada (en inglés)&lt;/a&gt; en la documentación de desarrolladores.&lt;br&gt;EL valor por defecto de esta opción es siete (7) días luego de la aprobación.&lt;/td&gt;
+&lt;td&gt;Selecciona cómo quieres realizar la captura (cobro) en tu afiliación.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para flujos en un paso, selecciona &lt;code&gt;Inmediatamente: captura automática al autorizar el pago&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para flujos de dos pasos, selecciona &lt;code&gt;Desactivado: no capturado automáticamente&lt;/code&gt; para ejecutar la captura una vez factures la orden.&lt;/li&gt;&lt;li&gt;Selecciona &lt;code&gt;Programado: establece cuándo se realizará la captura automática&lt;/code&gt; para configurar un tiempo en horas para capturar la orden automáticamente.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Para más información, consulta &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Función de captura automática personalizada (en inglés)&lt;/a&gt; en la documentación de desarrolladores.&lt;br&gt;EL valor por defecto de esta opción es siete (7) días luego de la aprobación.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Periodo de tiempo programado en horas para la captura automática&lt;/td&gt;
+&lt;td&gt;Este campo aparece cuando seleccionas &lt;code&gt;Programado: establece cuándo se realizará la captura automática&lt;/code&gt; como el método de captura del pago; selecciona el periodo programado que deseas configurar de acuerdo con tu configuración. Este valor debe ser entero, por lo tanto, no se permiten decimales.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Tipo Autorizacion&lt;/td&gt;

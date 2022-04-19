@@ -339,7 +339,11 @@ Make sure you have selected the &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&gt;&lt
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Payment capture&lt;/td&gt;
-&lt;td&gt;Select how you want to perform the settlement (charge) in your affiliation.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For one-step flow, select &lt;code&gt;Automatic capture immediately after payment authorization&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;For two-step flow, select &lt;code&gt;Deactivated: Not automatically captured&lt;/code&gt; to execute the settlement once you invoice the order.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;For more information about this parameter, refer to &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Custom Auto Capture Feature&lt;/a&gt; in the developers documentation.&lt;br&gt;The default value for this option is seven (7) days after the approval.&lt;/td&gt;
+&lt;td&gt;Select how you want to perform the settlement (charge) in your affiliation.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;For one-step flow, select &lt;code&gt;Automatic capture immediately after payment authorization&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;For two-step flow, select &lt;code&gt;Deactivated: Not automatically captured&lt;/code&gt; to execute the settlement once you invoice the order.&lt;/li&gt;&lt;li&gt;Select &lt;code&gt;Scheduled: Schedules the automatic capture&lt;/code&gt; to configure a time in hours to automatically capture the order.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;For more information about this parameter, refer to &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Custom Auto Capture Feature&lt;/a&gt; in the developers documentation.&lt;br&gt;The default value for this option is seven (7) days after the approval.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Scheduled time frame in hours for automatic capture&lt;/td&gt;
+&lt;td&gt;This field appears when selecting &lt;code&gt;Scheduled: Schedules the automatic capture&lt;/code&gt; as the Payment capture method; select the automatic capture time frame you want to configure according to your own configuration. This value must be integer, thus, no decimals are permitted.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Tipo Autorizacion&lt;/td&gt;
