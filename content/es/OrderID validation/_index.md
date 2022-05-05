@@ -34,7 +34,7 @@ notopicssection: true
 ## Introducción {#overview}
 Debido al crecimiento exponencial del comercio electrónico y los pagos en línea, el tamaño de los identificadores que devolvemos desde nuestro procesador de pagos se ha incrementado.
 
-Nuestras estimaciones muestran que aproximadamente el _30 de abril de 2022_, sobrepasaremos la barrera de los 10 dígitos del parámetro `orderId`. Esto hace que cambiamos el tipo numérico actual del parámetro para permitir un mayor número de dígitos en los identificadores retornados; por lo tanto, el tipo de datos actual ya no será compatible y este cambio puede afectar tu integración con nuestra plataforma.
+Nuestras estimaciones muestran que aproximadamente el _20 de mayo de 2022_, sobrepasaremos la barrera de los 10 dígitos del parámetro `orderId`. Esto hace que cambiamos el tipo numérico actual del parámetro para permitir un mayor número de dígitos en los identificadores retornados; por lo tanto, el tipo de datos actual ya no será compatible y este cambio puede afectar tu integración con nuestra plataforma.
 
 Para evitar problemas debido a este cambio, debes validar si el nuevo tipo retornado coincide con tu integración actual. Sigue las pautas explicadas en este artículo para verificar si tu integración requiere una actualización.
 

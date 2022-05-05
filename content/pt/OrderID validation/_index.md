@@ -34,7 +34,7 @@ notopicssection: true
 ## Introdução {#overview}
 Devido ao crescimento exponencial do comércio eletrônico e dos pagamentos online, o tamanho dos tokens que retornamos do nosso processador de pagamentos aumentou.
 
-Nossas estimativas mostram que por volta de _30 de abril de 2022_, passaremos a barreira de 10 dígitos para o parâmetro `orderId`. Isso nos faz alterar o tipo numérico atual do parâmetro para permitir um número maior de dígitos nos identificadores retornados; portanto, o tipo de dados atual não será mais suportado e essa alteração pode afetar sua integração com nossa plataforma.
+Nossas estimativas mostram que por volta de _20 de maio de 2022_, passaremos a barreira de 10 dígitos para o parâmetro `orderId`. Isso nos faz alterar o tipo numérico atual do parâmetro para permitir um número maior de dígitos nos identificadores retornados; portanto, o tipo de dados atual não será mais suportado e essa alteração pode afetar sua integração com nossa plataforma.
 
 Para evitar problemas devido a essa alteração, você deve verificar se o novo tipo retornado corresponde à sua integração atual. Siga as diretrizes explicadas neste artigo para verificar se sua integração requer uma atualização.
 
