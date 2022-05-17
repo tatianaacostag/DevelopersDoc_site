@@ -412,9 +412,9 @@ Utiliza este método para realizar el paso de **Captura** del flujo de dos pasos
 
 #### Consideraciones {#considerations-1}
 Ten en cuenta las siguientes consideraciones para la captura.
-* El tiempo máximo para capturar una transacción aprobada es de 14 días. Despues de este tiempo, la transacción es anulada automáticamente.
+* El tiempo máximo para capturar una transacción aprobada es de 14 días. Después de este tiempo, la transacción es anulada automáticamente.
 * Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.
-* Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro `transaction.order.additionalValues.TX_VALUE` con su valor (Como se envió durante la Autorización) y asignar `PARTIAL_CAPTURE` en el parámetro `transaction.type`.
+* Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro `transaction.order.TX_VALUE` con su valor (Como se envió durante la Autorización).
 
 Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
 

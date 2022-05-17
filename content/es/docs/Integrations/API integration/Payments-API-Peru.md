@@ -412,7 +412,7 @@ Utiliza este método para realizar el paso de **Captura** del flujo de dos pasos
 
 #### Consideraciones {#considerations-1}
 Ten en cuenta las siguientes consideraciones para la captura.
-* Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro `transaction.order.additionalValues.TX_VALUE` con su valor (Como se envió durante la Autorización) y asignar `PARTIAL_CAPTURE` en el parámetro `transaction.type`.
+* Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro `transaction.order.TX_VALUE` con su valor (Como se envió durante la Autorización).
 * Para capturas parciales, el mínimo valor a capturar puede ser 10% menor que el valor autorizado.
 * Para capturas parciales, las redes de pago liberan los valores no capturados entre 2 y 10 días para tarjetas locales y 28 días para tarjetas extranjeras.
 

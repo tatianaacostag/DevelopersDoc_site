@@ -421,7 +421,7 @@ Use this method to perform the **Capture** step of a two-step flow. In this step
 
 #### Considerations
 Take into account the following considerations for capture.
-* You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter `transaction.order.additionalValues.TX_VALUE` with its value (as sent during the Authorization) and set `PARTIAL_CAPTURE` for `transaction.type`.
+* You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter `transaction.order.TX_VALUE` with its value (as sent during the Authorization).
 * For partial captures, the minimum value to capture can be 10% lower than the amount authorized.
 * For partial captures, the payment networks release the no captured value at 2-10 days for local cards and 28 days for foreign cards.
 

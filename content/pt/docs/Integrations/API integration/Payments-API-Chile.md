@@ -26,7 +26,7 @@ A API de pagamentos inclui os seguintes métodos:
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
-Para confirmar o status de uma transação, você pode usar one of the following options:
+Para confirmar o status de uma transação, você pode usar:
 * Navegue até a URL definida na variável `transaction.notifyUrl` ou na opção _**URL de confirmação**_ localizada no Módulo PayU em _**Configuração**_ > _**Configuração técnica**_.
 * Use o [API ou SDK de Consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
@@ -422,7 +422,7 @@ Use este método para executar a etapa **Captura** de um fluxo de duas etapas. N
 Leve em conta as seguintes informações para captura.
 * O tempo máximo para capturar uma transação aprovada é de sete (7) dias. Após este período, a transação é cancelada automaticamente (auto-void).
 * Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.
-* Você pode fazer apenas uma captura parcial sobre um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro `transaction.order.additionalValues.TX_VALUE` com seu valor (conforme enviado durante a Autorização) e definir `PARTIAL_CAPTURE` para `transaction.type`.<br>O valor mínimo é 50 CLP.
+* Você pode fazer apenas uma captura parcial sobre um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro `transaction.order.TX_VALUE` com seu valor (conforme enviado durante a Autorização).<br>O valor mínimo é 50 CLP.
 * Não é permitida a captura de valor superior ao previamente autorizado.
 * As capturas são permitidas apenas para transações em uma parcela.
 
