@@ -8,6 +8,32 @@ weight: 20
 tags: ["subtopic"]
 ---
 <script src="/js/searchcodes.js"></script>
+<script src="/js/banner.js"></script>
+
+<script>
+window.onload = function() {
+    var bannerText = "<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>We inform that PayU S.A. has been notified by IGT – operator for Baloto network – its decision to terminate the contract for the cash collection model given the entry of a new operator, which to date has not provided information on the continuity of this service. Therefore, the payment service through Baloto will stop working since <b>May 25, 2022</b>. It is recommended to disable this service at least seven (7) days before this date. If you need further assistance, contact the technical support team through <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>";
+
+    loadBanner(bannerText);
+}
+
+window.onresize = function() {
+    refreshBanner();
+}
+</script>
+
+<style type="text/css" media="screen">
+    div#banner { 
+        z-index: 999;
+        background-color: #DDEEEE; 
+        width: 100%;
+        margin-top: -1.3rem;
+    }
+    div#banner-content { 
+        margin: 0 auto; 
+        padding: 10px; 
+    }
+</style>
 
 To integrate with Payments API Colombia, target your request to the following URLs according to your environment.
 
@@ -19,7 +45,7 @@ To integrate with Payments API Colombia, target your request to the following UR
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transaction with credit card]({{< ref "Payments-API-Colombia.md#submit-transaction-with-credit-cards" >}})
+* [Submit transaction with credit or debit cards]({{< ref "Payments-API-Colombia.md#submit-transaction-with-credit-or-debit-cards" >}})
 * [Submit transaction with cash or Bank reference]({{< ref "Payments-API-Colombia.md#submit-transaction-with-cash-or-bank-reference" >}})
 * [Submit transaction with bank transfer (PSE)]({{< ref "Payments-API-Colombia.md#submit-transaction-with-bank-transfer-pse" >}})
 * [Bank List - PSE]({{< ref "Payments-API-Colombia.md#bank-list---pse" >}})
@@ -32,8 +58,12 @@ To confirm the status of a transaction, you can use one of the following options
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit cards
-This method lets you process the payments performed by your customers using credit cards. For Colombia, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+## Submit transaction with credit or debit cards
+This method lets you process the payments performed by your customers using credit or debit cards. For Colombia, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+
+{{% alert title="Note" color="info"%}}
+Two-step flow is available under request, contact your sales representative.
+{{% /alert %}}
 
 ### Variables for request and response
 
@@ -93,11 +123,17 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
 | transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | No |
 | transaction > creditCard |  |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
+| transaction > creditCard |  |  | Credit card information. If you process using debit card, do not send this parameter.<br>This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). | No |
-| transaction > creditCard > expirationDate | Alphanumeric | 7 | Credit card expiration date. Format `YYYY/MM`. This parameter is mandatory when the payment is performed using a tokenized credit card. | No |
+| transaction > creditCard > expirationDate | Alphanumeric | 7 | Credit card expiration date. Format `YYYY/MM`. | No |
 | transaction > creditCard > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card. | No |
 | transaction > creditCard > processWithoutCvv2 | Boolean | Max:255 | Allows you to process transactions without including the credit card security code. Your commerce requires PayU's authorization before using this feature. | No |
+| transaction > debitCard |  |  | Debit card information. This object and its parameters are mandatory when the payment is performed using debit card. | No |
+| transaction > debitCard > number | Alphanumeric | Min:13 Max:20 | Debit card number. | No |
+| transaction > debitCard > securityCode | Alphanumeric | Min:1 Max:4 | Debit card security code (CVC2, CVV2, CID). | No |
+| transaction > debitCard > expirationDate | Alphanumeric | 7 | Debit card expiration date. Format `YYYY/MM`. | No |
+| transaction > debitCard > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the debit card. | No |
 | transaction > payer |  |  | Payer information. | Yes |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | Yes |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
@@ -204,15 +240,15 @@ Request example:
             "TX_VALUE": {
                "value": 65000,
                "currency": "COP"
-         },
+            },
             "TX_TAX": {
                "value": 10378,
                "currency": "COP"
-         },
+            },
             "TX_TAX_RETURN_BASE": {
                "value": 54622,
                "currency": "COP"
-         }
+            }
          },
          "buyer": {
             "merchantBuyerId": "1",
@@ -471,6 +507,10 @@ Response example:
 
 ## Submit transaction with cash or Bank reference
 This method lets you process the payments of your customers in cash or using a Bank reference. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.
+
+{{% alert title="" color="warning"%}}
+<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>We inform that PayU S.A. has been notified by IGT – operator for Baloto network – its decision to terminate the contract for the cash collection model given the entry of a new operator, which to date has not provided information on the continuity of this service. Therefore, the payment service through Baloto will stop working since <b>May 25, 2022</b>. It is recommended to disable this service at least seven (7) days before this date. If you need further assistance, contact the technical support team through <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>
+{{% /alert %}}
 
 #### Payments in cash
 <img src="/assets/Payments/CashReceiptCO.png" alt="PrintScreen" width="75%">

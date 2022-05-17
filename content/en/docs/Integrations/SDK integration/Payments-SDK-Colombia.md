@@ -7,6 +7,32 @@ description: >
 weight: 40
 tags: ["subtopic"]
 ---
+<script src="/js/banner.js"></script>
+
+<script>
+window.onload = function() {
+    var bannerText = "<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>We inform that PayU S.A. has been notified by IGT – operator for Baloto network – its decision to terminate the contract for the cash collection model given the entry of a new operator, which to date has not provided information on the continuity of this service. Therefore, the payment service through Baloto will stop working since <b>May 25, 2022</b>. It is recommended to disable this service at least seven (7) days before this date. If you need further assistance, contact the technical support team through <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>";
+
+    loadBanner(bannerText);
+}
+
+window.onresize = function() {
+    refreshBanner();
+}
+</script>
+
+<style type="text/css" media="screen">
+    div#banner { 
+        z-index: 999;
+        background-color: #DDEEEE; 
+        width: 100%;
+        margin-top: -1.3rem;
+    }
+    div#banner-content { 
+        margin: 0 auto; 
+        padding: 10px; 
+    }
+</style>
 
 To integrate with Payments SDK Colombia, target the requests to the following URLs:
 
