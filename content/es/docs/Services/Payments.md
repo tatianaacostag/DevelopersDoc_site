@@ -6,6 +6,32 @@ description: >
   La funcionalidad de Pagos le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 10
 ---
+<script src="/js/banner.js"></script>
+
+<script>
+window.onload = function() {
+    var bannerText = "<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. ha sido notificado por parte de IGT - operador de la red Baloto - su decisión de terminar el contrato para el recaudo en efectivo debido a la entrada de un nuevo operador, el cual a la fecha no ha entregado información sobre la continuidad de este servicio. Por lo tanto, el servicio de pago a través de Baloto dejará de funcionar a partir del <b>25 de mayo de 2022</b>. Se recomienda deshabilitar este medio de pago al menos siete (7) días antes de esta fecha. Si necesitas asistencia adicional, contacta al equipo de soporte técnico a través de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>";
+
+    loadBanner(bannerText);
+}
+
+window.onresize = function() {
+    refreshBanner();
+}
+</script>
+
+<style type="text/css" media="screen">
+    div#banner { 
+        z-index: 999;
+        background-color: #DDEEEE; 
+        width: 100%;
+        margin-top: -1.3rem;
+    }
+    div#banner-content { 
+        margin: 0 auto; 
+        padding: 10px; 
+    }
+</style>
 
 Independiente del [tipo de integración]({{< ref "integrations" >}}) que escojas, PayU provee operaciones para procesar tus transacciones. La siguiente sección explica estos métodos.
 
@@ -25,7 +51,7 @@ De nuevo en el ejemplo de la aplicación de transporte, una vez el servicio haya
 
 {{% alert title="Nota" color="info"%}}
 
-El flujo de dos pasos no está soportado para Colombia y Panamá. Para Chile, este flujo está disponible únicamente bajo solicitud, contacta a tu representante de ventas.
+El flujo de dos pasos no está soportado para Panamá. Para Colombia y Chile, este flujo está disponible únicamente bajo solicitud, contacta a tu representante de ventas.
 
 {{% /alert %}}
 

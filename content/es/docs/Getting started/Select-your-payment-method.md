@@ -6,6 +6,33 @@ Description: >
  En este artículo, encontrarás la lista de métodos de pago disponibles en PayU.
 weight: 30
 ---
+<script src="/js/banner.js"></script>
+
+<script>
+window.onload = function() {
+    var bannerText = "<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. ha sido notificado por parte de IGT - operador de la red Baloto - su decisión de terminar el contrato para el recaudo en efectivo debido a la entrada de un nuevo operador, el cual a la fecha no ha entregado información sobre la continuidad de este servicio. Por lo tanto, el servicio de pago a través de Baloto dejará de funcionar a partir del <b>25 de mayo de 2022</b>. Se recomienda deshabilitar este medio de pago al menos siete (7) días antes de esta fecha. Si necesitas asistencia adicional, contacta al equipo de soporte técnico a través de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>";
+
+    loadBanner(bannerText);
+}
+
+window.onresize = function() {
+    refreshBanner();
+}
+</script>
+
+<style type="text/css" media="screen">
+    div#banner { 
+        z-index: 999;
+        background-color: #DDEEEE; 
+        width: 100%;
+        margin-top: -1.3rem;
+    }
+    div#banner-content { 
+        margin: 0 auto; 
+        padding: 10px; 
+    }
+</style>
+
 La siguiente sección muestra los métodos de pago disponibles por país y brinda algunas consideraciones. Consulta la columna `Parámetro paymentMethod` para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.
 
 ## <img src="/assets/Argentina.png" width="25px"/> Argentina {#Argentina}
@@ -59,6 +86,10 @@ La siguiente sección muestra los métodos de pago disponibles por país y brind
 ## <img src="/assets/Colombia.png" width="25px"/> Colombia {#Colombia}
 PayU en Colombia te permite integrar con la mayoría de los métodos de pago en efectivo del país. Además, soportamos Codensa y Falabella.
 
+{{% alert title="" color="warning"%}}
+<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. ha sido notificado por parte de IGT - operador de la red Baloto - su decisión de terminar el contrato para el recaudo en efectivo debido a la entrada de un nuevo operador, el cual a la fecha no ha entregado información sobre la continuidad de este servicio. Por lo tanto, el servicio de pago a través de Baloto dejará de funcionar a partir del <b>25 de mayo de 2022</b>. Se recomienda deshabilitar este medio de pago al menos siete (7) días antes de esta fecha. Si necesitas asistencia adicional, contacta al equipo de soporte técnico a través de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>
+{{% /alert %}}
+
 <div class="paymentMethods"></div>
 
 |  | Medio de Pago | Parámetro paymentMethod | Tipo | Comentarios |
@@ -72,9 +103,11 @@ PayU en Colombia te permite integrar con la mayoría de los métodos de pago en 
 | ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/efecty.png) | Efecty | EFECTY | Efectivo | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Tarjetas Débito| |
 | ![Logo](/assets/PaymentMethods/pse_logo.png) | PSE | PSE | Transferencia Bancaria | PSE le permite a tus clientes pagar utilizando Nequi y Daviplata. |
 | ![Logo](/assets/PaymentMethods/su-red.png) | Su Red | OTHERS_CASH | Efectivo | **Oficinas de pago**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas Débito| |
 
 ## <img src="/assets/Mexico.png" width="25px"/> México {#Mexico}
 En México, soportamos tanto Meses sin Intereses y Promociones, consulte este [artículo]({{< ref "Promotions.md" >}}) para más información.

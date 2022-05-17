@@ -8,6 +8,32 @@ weight: 20
 tags: ["subtopic"]
 ---
 <script src="/js/searchcodes.js"></script>
+<script src="/js/banner.js"></script>
+
+<script>
+window.onload = function() {
+    var bannerText = "<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. foi notificada pela IGT - Operador da rede Baloto - da sua decisão de rescindir o contrato de cobrança em dinheiro por entrada de um novo operador, que até à data não deu informação sobre a continuidade deste serviço. Portanto, o serviço de pagamento por meio do Baloto deixará de funcionar a partir de <b>25 de maio de 2022</b>. Recomenda-se desabilitar este meio de pagamento pelo menos 7 (sete) dias antes desta data. Se precisar de assistência adicional, entre em contato com a equipe de suporte técnico através de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>";
+
+    loadBanner(bannerText);
+}
+
+window.onresize = function() {
+    refreshBanner();
+}
+</script>
+
+<style type="text/css" media="screen">
+    div#banner { 
+        z-index: 999;
+        background-color: #DDEEEE; 
+        width: 100%;
+        margin-top: -1.3rem;
+    }
+    div#banner-content { 
+        margin: 0 auto; 
+        padding: 10px; 
+    }
+</style>
 
 Para integrar com a API de pagamentos da Colômbia, direcione sua solicitação para as seguintes URLs de acordo com seu ambiente.
 
@@ -19,7 +45,7 @@ Para integrar com a API de pagamentos da Colômbia, direcione sua solicitação 
 ## Métodos disponíveis {#available-methods}
 A API de pagamentos inclui os seguintes métodos:
 
-* [Enviar transação com cartão de crédito]({{< ref "#submit-transaction-with-credit-cards" >}})
+* [Enviar transação com cartão de crédito ou débito]({{< ref "#submit-transaction-with-credit-or-debit-cards" >}})
 * [Enviar transação em dinheiro ou referência bancária]({{< ref "#submit-transaction-with-cash-or-bank-reference" >}})
 * [Enviar transação com transferência bancária (PSE)]({{< ref "#submit-transaction-with-bank-transfer-pse" >}})
 * [Lista de bancos - PSE]({{< ref "#bank-list---pse" >}})
@@ -27,13 +53,19 @@ A API de pagamentos inclui os seguintes métodos:
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
-Para confirmar o status de uma transação, você pode usar one of the following options:
+Para confirmar o status de uma transação, você pode usar:
 * Navegue até a URL definida na variável `transaction.notifyUrl` ou na opção _**URL de confirmação**_ localizada no Módulo PayU em _**Configuração**_ > _**Configuração técnica**_.
 * Use o [API ou SDK de Consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Enviar transação com cartão de crédito {#submit-transaction-with-credit-cards}
-Este método permite processar os pagamentos efetuados com cartão de crédito pelos seus clientes. Para a Colômbia, você pode fazer fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
+## Enviar transação com cartão de crédito ou débito {#submit-transaction-with-credit-or-debit-cards}
+Este método permite processar os pagamentos efetuados com cartão de crédito ou débito pelos seus clientes. Para a Colômbia, você pode fazer fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
+
+{{% alert title="Observação" color="info"%}}
+
+O fluxo em duas etapas está disponível somente sob solicitação, entre em contato com seu representante de vendas.
+
+{{% /alert %}}
 
 ### Variáveis para pedido e resposta {#variables-for-request-and-response}
 
@@ -92,12 +124,17 @@ Este método permite processar os pagamentos efetuados com cartão de crédito p
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica o valor base da transação. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
 | transaction > creditCardTokenId |  |  | Inclua este parâmetro quando a transação for feita com um cartão tokenizado. Além disso, é obrigatório enviar o parâmetro `transaction.creditCard.expirationDate`.<br>Para obter mais informações, consulte [API de tokenização]({{< ref "Tokenization-API.md" >}}). | Não |
-| transaction > creditCard |  |  | Informações do cartão de crédito. Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de crédito não tokenizado. | Não |
+| transaction > creditCard |  |  | Informações do cartão de crédito. Se você processar usando cartão de débito, não envie este parâmetro.<br>Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de crédito não tokenizado. | Não |
 | transaction > creditCard > number | Alfanumérico | Mín:13 Máx:20 | Número do cartão de crédito. | Não |
 | transaction > creditCard > securityCode | Alfanumérico | Mín:1 Máx:4 | Código de segurança do cartão de crédito (CVC2, CVV2, CID). | Não |
-| transaction > creditCard > expirationDate | Alfanumérico | 7 | Data de validade do cartão de crédito. Formato `YYYY/MM`. Este parâmetro e obrigatório quando o pagamento é realizado com cartão de crédito tokenizado. | Não |
+| transaction > creditCard > expirationDate | Alfanumérico | 7 | Data de validade do cartão de crédito. Formato `YYYY/MM`. | Não |
 | transaction > creditCard > name | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de crédito. | Não |
 | transaction > creditCard > processWithoutCvv2 | Boolean | Máx:255 | Permite processar transações sem incluir o código de segurança do cartão de crédito. Sua loja precisa da autorização do PayU antes de usar este recurso. | Não |
+| transaction > debitCard |  |  | Informações do cartão de débito. Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de débito. | Não |
+| transaction > debitCard > number | Alfanumérico | Mín:13 Máx:20 | Número do cartão de débito. | Não |
+| transaction > debitCard > securityCode | Alfanumérico | Mín:1 Máx:4 | Código de segurança do cartão de débito (CVC2, CVV2, CID). | Não |
+| transaction > debitCard > expirationDate | Alfanumérico | 7 | Data de validade do cartão de débito. Formato `YYYY/MM`. | Não |
+| transaction > debitCard > name | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de débito. | Não |
 | transaction > payer |  |  | Informações do pagador. | Sim |
 | transaction > payer > emailAddress | Alfanumérico | Máx:255 | Endereço de e-mail do pagador. | Sim |
 | transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador do pagador em seu sistema. | Não |

@@ -6,6 +6,33 @@ Description: >
     Neste tópico, você encontra a lista de formas de pagamento disponíveis no PayU.
 weight: 30
 ---
+<script src="/js/banner.js"></script>
+
+<script>
+window.onload = function() {
+    var bannerText = "<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. foi notificada pela IGT - Operador da rede Baloto - da sua decisão de rescindir o contrato de cobrança em dinheiro por entrada de um novo operador, que até à data não deu informação sobre a continuidade deste serviço. Portanto, o serviço de pagamento por meio do Baloto deixará de funcionar a partir de <b>25 de maio de 2022</b>. Recomenda-se desabilitar este meio de pagamento pelo menos 7 (sete) dias antes desta data. Se precisar de assistência adicional, entre em contato com a equipe de suporte técnico através de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>";
+
+    loadBanner(bannerText);
+}
+
+window.onresize = function() {
+    refreshBanner();
+}
+</script>
+
+<style type="text/css" media="screen">
+    div#banner { 
+        z-index: 999;
+        background-color: #DDEEEE; 
+        width: 100%;
+        margin-top: -1.3rem;
+    }
+    div#banner-content { 
+        margin: 0 auto; 
+        padding: 10px; 
+    }
+</style>
+
 A seção a seguir mostra os métodos de pagamento disponíveis por país e fornece algumas informações. Consulte a coluna do `parâmetro paymentMethod` para saber o valor a ser enviado como método de pagamento ao usar integrações API ou SDK.
 
 ## <img src="/assets/Argentina.png" width="25px"/> Argentina {#Argentina}
@@ -59,6 +86,10 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 ## <img src="/assets/Colombia.png" width="25px"/> Colômbia {#Colombia}
 PayU na Colômbia permite a integração com a maioria dos métodos de pagamento em dinheiro do país. Além disso, trabalhamos com Codensa e Falabella
 
+{{% alert title="" color="warning"%}}
+<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. foi notificada pela IGT - Operador da rede Baloto - da sua decisão de rescindir o contrato de cobrança em dinheiro por entrada de um novo operador, que até à data não deu informação sobre a continuidade deste serviço. Portanto, o serviço de pagamento por meio do Baloto deixará de funcionar a partir de <b>25 de maio de 2022</b>. Recomenda-se desabilitar este meio de pagamento pelo menos 7 (sete) dias antes desta data. Se precisar de assistência adicional, entre em contato com a equipe de suporte técnico através de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>
+{{% /alert %}}
+
 <div class="paymentMethods"></div>
 
 | | Método de pagamento | Parâmetro paymentMethod | Tipo | Comentários |
@@ -72,9 +103,11 @@ PayU na Colômbia permite a integração com a maioria dos métodos de pagamento
 | ![Logo](/assets/PaymentMethods/diners.png)| Diners | DINERS | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/efecty.png)| Efecty | EFECTY | Dinheiro | |
 | ![Logo](/assets/PaymentMethods/master.png)| Mastercard | MASTERCARD | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Cartões de débito | |
 | ![Logo](/assets/PaymentMethods/pse_logo.png)| PSE | PSE | Transferência bancária | O PSE permite que seus clientes paguem usando Nequi e Daviplata. |
 | ![Logo](/assets/PaymentMethods/su-red.png)| Su Red | OTHERS_CASH| Dinheiro | **Escritórios de pagamento**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. |
 | ![Logo](/assets/PaymentMethods/visa.png)| VISA | VISA | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Cartões de débito | |
 
 ## <img src="/assets/Mexico.png" width="25px"/> México {#Mexico}
 Para o México, oferecemos suporte tanto para MSI quanto para parcelas e promoções. Consulte este [artigo]({{< ref "Promotions.md" >}}) para obter mais informações.
