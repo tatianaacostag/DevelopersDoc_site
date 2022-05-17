@@ -414,7 +414,7 @@ Use this method to perform the **Capture** step of a two-step flow. In this step
 Take into account the following considerations for capture.
 * The maximum time to capture an approved transaction is 14 days. After this time, the transaction is auto voided.
 * Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
-* You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter `transaction.order.additionalValues.TX_VALUE` with its value (as sent during the Authorization) and set `PARTIAL_CAPTURE` for `transaction.type`.
+* You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter `transaction.order.TX_VALUE` with its value (as sent during the Authorization).
 
 The following are the request and response bodies for this transaction type.
 

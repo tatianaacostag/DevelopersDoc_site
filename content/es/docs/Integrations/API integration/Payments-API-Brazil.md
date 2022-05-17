@@ -668,7 +668,7 @@ Utiliza este método para realizar el paso de **Captura** del flujo de dos pasos
 
 #### Consideraciones {#considerations-1}
 Ten en cuenta las siguientes consideraciones para la captura.
-* El tiempo máximo para capturar una transacción aprobada es de siete (7) días. Despues de este tiempo, la transacción es cancelada.
+* El tiempo máximo para capturar una transacción aprobada es de siete (7) días. Después de este tiempo, la transacción es cancelada.
 * Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.
 
 Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.

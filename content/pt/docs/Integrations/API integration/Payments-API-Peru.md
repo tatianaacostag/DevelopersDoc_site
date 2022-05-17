@@ -25,7 +25,7 @@ A API de pagamentos inclui os seguintes métodos:
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Observação" color="info"%}}
-Para confirmar o status de uma transação, você pode usar one of the following options:
+Para confirmar o status de uma transação, você pode usar:
 * Navegue até a URL definida na variável `transaction.notifyUrl` ou na opção _**URL de confirmação**_ localizada no Módulo PayU em _**Configuração**_ > _**Configuração técnica**_.
 * Use o [API ou SDK de Consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
@@ -412,7 +412,7 @@ Use este método para executar a etapa **Captura** de um fluxo de duas etapas. N
 
 #### Observações {#considerations-1}
 Leve em conta as seguintes informações para captura.
-* Você pode realizar capturas parciais de um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro `transaction.additionalValues.TX_VALUE` com seu valor (conforme enviado durante a Autorização).
+* Você pode realizar capturas parciais de um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro `transaction.order.TX_VALUE` com seu valor (conforme enviado durante a Autorização).
 * Para capturas parciais, o valor mínimo a capturar pode ser 10% inferior ao valor autorizado.
 * Para capturas parciais, as redes de pagamento liberam o valor não capturado em 2 a 10 dias para cartões locais e 28 dias para cartões estrangeiros.
 
