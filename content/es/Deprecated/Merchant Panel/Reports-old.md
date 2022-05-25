@@ -53,7 +53,7 @@ En este reporte podrás ver la información general de las ventas realizadas a t
 </details>
 <br>
 
-* _**Medio de pago**_: Despliega cada una de las opciones en las que tus clientes pueden realizar un pago, ya sea por franquicias como VISA o Mastercard, o por medios de pagos en efectivo como Baloto, OXXO y BCP; o por transferencia bancaria.
+* _**Medio de pago**_: Despliega cada una de las opciones en las que tus clientes pueden realizar un pago, ya sea por franquicias como VISA o Mastercard, o por medios de pagos en efectivo como <!--Baloto, -->OXXO y BCP; o por transferencia bancaria.
 * _**Formato**_: Te permite mostrar el resultado de la consulta en pantalla al elegir el formato HTML, o exportar el resultado a un archivo Excel.
  
 {{% alert title="Nota" color="info"%}}
@@ -117,7 +117,7 @@ En algunos casos los datos del comprador y del pagador pueden diferir ya que la 
 <br>
 
 * _**País**_: Te permite consultar el país desde el cual se generó la transacción de venta.
-* _**Medio de pago**_: Despliega cada una de las posibles opciones en que tus clientes pueden realizar un pago, ya sea por franquicias como VISA o Mastercard, o por medios de pagos en efectivo como como Baloto, OXXO y BCP o por transferencia bancaria.
+* _**Medio de pago**_: Despliega cada una de las posibles opciones en que tus clientes pueden realizar un pago, ya sea por franquicias como VISA o Mastercard, o por medios de pagos en efectivo como como <!--Baloto, -->OXXO y BCP o por transferencia bancaria.
 * _**Formato**_: Permite mostrar el resultado de la consulta en pantalla al elegir el formato HTML o exportar el resultado a un archivo Excel.
  
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones2-es.jpg)

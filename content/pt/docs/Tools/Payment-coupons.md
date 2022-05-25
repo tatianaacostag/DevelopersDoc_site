@@ -14,7 +14,7 @@ Você pode receber pagamentos sem ter nenhum conhecimento técnico. Basta enviar
 
 {{% alert title="Observação" color="info"%}}
 
-Cupons de pagamento estão disponíveis para a Argentina usando _**RAPIPAGO**_ e _**PAGOFACIL**_, e para a Colômbia usando _**BALOTO**_ e _**EFECTY**_.
+Cupons de pagamento estão disponíveis para a Argentina usando _**RAPIPAGO**_ e _**PAGOFACIL**_, e para a Colômbia usando <!--_**BALOTO**_ e -->_**EFECTY**_.
 
 {{% /alert %}}  
 

@@ -53,7 +53,7 @@ With these reports you can see the overview of the sales made through your PayU 
 </details>
 <br>
 
-* _**Payment method**_: Displays each of the possible options in which your customers can make a payment, either by franchise (e.g VISA, MasterCard) or by cash payments (e.g. Baloto, OXXO, and BCP), or by bank transfer.
+* _**Payment method**_: Displays each of the possible options in which your customers can make a payment, either by franchise (e.g VISA, MasterCard) or by cash payments (e.g. <!--Baloto, -->OXXO, and BCP), or by bank transfer.
 * _**Format**_: This shows you the query on the screen when you choose the HTML format or exports the results to a excel file.
  
 {{% alert title="Note" color="info"%}}
@@ -115,7 +115,7 @@ The data of the buyer and the payer may differ because the person placing the or
 <br>
 
 * _**Country**_: Lets you see the country from which the sales transaction was generated.
-* _**Method of payment**_: Displays each of the possible options that your customers can make a payment, either by franchises (e.g. VISA or MasterCard) or by cash payments (e.g. Baloto, OXXO, or BCP) or by bank transfer.
+* _**Method of payment**_: Displays each of the possible options that your customers can make a payment, either by franchises (e.g. VISA or MasterCard) or by cash payments (e.g. <!--Baloto, -->OXXO, or BCP) or by bank transfer.
 * _**Format**_: You can display the result of the query in the PayU platform when choosing the HTML format, or export the results to a CSV file.
  
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones2-en.jpg)

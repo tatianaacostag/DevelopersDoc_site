@@ -53,7 +53,7 @@ Uma ordem pode estar associada a várias transações, a PayU armazena as tentat
 </details>
 <br>
 
-* _**Meio de pagamento**_: apresenta cada uma das possíveis opções em que os seus clientes possam realizar um pagamento, seja por bandeiras como VISA ou MasterCard, ou por meios de pagamentos em dinheiro como Baloto, OXXO e BCP; o por transferência.
+* _**Meio de pagamento**_: apresenta cada uma das possíveis opções em que os seus clientes possam realizar um pagamento, seja por bandeiras como VISA ou MasterCard, ou por meios de pagamentos em dinheiro como <!--Baloto, -->OXXO e BCP; o por transferência.
 * _**Formato**_: Permite que você veja o resultado da consulta na tela ao escolher o formato HTML, ou exporte o resultado para um arquivo Excel.
  
  
@@ -118,7 +118,7 @@ Em alguns casos, os dados do comprador e do pagador podem diferir já que a pess
 <br>
 
 * _**País**_: Permite que você consulte o país desde o qual foi gerada a venda.
-* _**Meio de pagamento**_: apresenta cada uma das possíveis opções em que os seus clientes possam realizar um pagamento, seja por bandeiras como VISA ou MasterCard, ou por meios de pagamentos em dinheiro como Baloto, OXXO e BCP; o por transferência.
+* _**Meio de pagamento**_: apresenta cada uma das possíveis opções em que os seus clientes possam realizar um pagamento, seja por bandeiras como VISA ou MasterCard, ou por meios de pagamentos em dinheiro como <!--Baloto, -->OXXO e BCP; o por transferência.
 * _**Formato**_: Permite que você veja o resultado da consulta na tela ao escolher o formato HTML, ou exporte o resultado para um arquivo Excel.
  
 ![Concepts](https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/transacciones2-pt.jpg)
