@@ -7,34 +7,11 @@ description: >
 exclude_search: true
 notopicssection: true
 ---
-<script src="/js/countdown.js"></script>
-<br>
-<div id="MainCounter">
-    <p class="CounterHeader">Seu sistema deve estar pronto em</p>
-    <div class="CounterContent">
-      <div id="DaysDiv">
-        <p id="days"></p>
-        <p style="color:white;text-align:center;">Dias</p>
-      </div>
-      <div id="HoursDiv">
-        <p id="hours"></p>
-        <p style="color:white;text-align:center;">Horas</p>
-      </div>
-      <div id="MinutesDiv">
-        <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutos</p>
-      </div>
-      <div id="SecondsDiv">
-        <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Segundos</p>
-      </div>
-    </div>  
-</div>
 
 ## Introdução {#overview}
 Devido ao crescimento exponencial do comércio eletrônico e dos pagamentos online, o tamanho dos tokens que retornamos do nosso processador de pagamentos aumentou.
 
-Nossas estimativas mostram que por volta de _20 de maio de 2022_, passaremos a barreira de 10 dígitos para o parâmetro `orderId`. Isso nos faz alterar o tipo numérico atual do parâmetro para permitir um número maior de dígitos nos identificadores retornados; portanto, o tipo de dados atual não será mais suportado e essa alteração pode afetar sua integração com nossa plataforma.
+Nossas estimativas mostram que em breve passaremos a barreira de 10 dígitos para o parâmetro `orderId`. Isso nos faz alterar o tipo numérico atual do parâmetro para permitir um número maior de dígitos nos identificadores retornados; portanto, o tipo de dados atual não será mais suportado e essa alteração pode afetar sua integração com nossa plataforma.
 
 Para evitar problemas devido a essa alteração, você deve verificar se o novo tipo retornado corresponde à sua integração atual. Siga as diretrizes explicadas neste artigo para verificar se sua integração requer uma atualização.
 
@@ -50,7 +27,7 @@ Para evitar problemas devido a essa alteração, você deve verificar se o novo 
 
 * **Essa alteração afeta apenas o fluxo de pagamento?**<br>Não, essa alteração também pode afetar seus relatórios ou consultas relacionadas a transações. Tenha cuidado ao realizar a validação.
 
-* **O que acontece se eu não aplicar essa alteração?**<br>Se você não fizer essa alteração e isso afetar sua integração, você **não** poderá receber a confirmação do procedimento de pagamento. Além disso, você **não** poderá consultar novas transações depois que começarmos a retornar o parâmetro `orderId` com mais de 10 dígitos (aproximadamente após _30 de abril de 2022_).
+* **O que acontece se eu não aplicar essa alteração?**<br>Se você não fizer essa alteração e isso afetar sua integração, você **não** poderá receber a confirmação do procedimento de pagamento. Além disso, você **não** poderá consultar novas transações depois que começarmos a retornar o parâmetro `orderId` com mais de 10 dígitos.
 
 * **A equipe de suporte da PayU pode fazer essa alteração para mim?**<br>Não, você decide como se integra aos nossos serviços. PayU não se responsabiliza por erros devido a integrações incorretas.
 
