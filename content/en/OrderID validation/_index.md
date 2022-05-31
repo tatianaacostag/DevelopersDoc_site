@@ -11,7 +11,7 @@ notopicssection: true
 ## Overview
 Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor has increased.
 
-Our estimations show that we will overcome the barrier of the 10 digits for the parameter `orderId`. This makes us change the current data type of the Number parameter `orderId` to allow more digits in the returning identifiers; thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.
+Our estimations show that we will soon overcome the barrier of the 10 digits for the parameter `orderId`. This makes us change the current data type of the Number parameter `orderId` to allow more digits in the returning identifiers; thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.
 
 To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines in this article to check whether your integration requires an update.
 
