@@ -13,7 +13,7 @@ Algunas soluciones comerciales de tiendas virtuales, ya están integradas con Pa
 
 Soluciones disponibles:
 
-{{< shoppingcarts/preintegrated-es >}}
+{{< shoppingcarts/preintegrated >}}
 
 ## Configuración a través de partners {#configuration-through-partners}
 Aprende a instalar, configurar y personalizar PayU en tu sitio de comercio electrónico utilizando la guía y la asistencia de nuestros partners.

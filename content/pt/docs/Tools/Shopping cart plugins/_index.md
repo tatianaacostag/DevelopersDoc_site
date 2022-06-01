@@ -13,7 +13,7 @@ Algumas lojas online já estão integradas ao PayU. Você só precisa ativar a o
 
 Soluções disponíveis:
 
-{{< shoppingcarts/preintegrated-pt >}}
+{{< shoppingcarts/preintegrated >}}
 
 {{% alert title="Observação" color="info"%}}
 
