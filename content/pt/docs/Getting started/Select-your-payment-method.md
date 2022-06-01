@@ -6,32 +6,6 @@ Description: >
     Neste tópico, você encontra a lista de formas de pagamento disponíveis no PayU.
 weight: 30
 ---
-<script src="/js/banner.js"></script>
-
-<script>
-window.onload = function() {
-    var bannerText = "<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. foi notificada pela IGT - Operador da rede Baloto - da sua decisão de rescindir o contrato de cobrança em dinheiro por entrada de um novo operador, que até à data não deu informação sobre a continuidade deste serviço. Portanto, o serviço de pagamento por meio do Baloto deixará de funcionar a partir de <b>25 de maio de 2022</b>. Recomenda-se desabilitar este meio de pagamento pelo menos 7 (sete) dias antes desta data. Se precisar de assistência adicional, entre em contato com a equipe de suporte técnico através de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>";
-
-    loadBanner(bannerText);
-}
-
-window.onresize = function() {
-    refreshBanner();
-}
-</script>
-
-<style type="text/css" media="screen">
-    div#banner { 
-        z-index: 999;
-        background-color: #DDEEEE; 
-        width: 100%;
-        margin-top: -1.3rem;
-    }
-    div#banner-content { 
-        margin: 0 auto; 
-        padding: 10px; 
-    }
-</style>
 
 A seção a seguir mostra os métodos de pagamento disponíveis por país e fornece algumas informações. Consulte a coluna do `parâmetro paymentMethod` para saber o valor a ser enviado como método de pagamento ao usar integrações API ou SDK.
 
@@ -82,20 +56,14 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 | ![Logo](/assets/PaymentMethods/red-compra.png) | Redcompra | TRANSBANK_DEBIT | Debit and Prepaid Cards | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Cartões de débito | |
+<!--| ![Logo](/assets/PaymentMethods/viabaloto.png) | Baloto | BALOTO | Dinheiro | |-->
 
 ## <img src="/assets/Colombia.png" width="25px"/> Colômbia {#Colombia}
 PayU na Colômbia permite a integração com a maioria dos métodos de pagamento em dinheiro do país. Além disso, trabalhamos com Codensa e Falabella
 
-{{% alert title="" color="warning"%}}
-<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. foi notificada pela IGT - Operador da rede Baloto - da sua decisão de rescindir o contrato de cobrança em dinheiro por entrada de um novo operador, que até à data não deu informação sobre a continuidade deste serviço. Portanto, o serviço de pagamento por meio do Baloto deixará de funcionar a partir de <b>25 de maio de 2022</b>. Recomenda-se desabilitar este meio de pagamento pelo menos 7 (sete) dias antes desta data. Se precisar de assistência adicional, entre em contato com a equipe de suporte técnico através de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>
-{{% /alert %}}
-
-<div class="paymentMethods"></div>
-
 | | Método de pagamento | Parâmetro paymentMethod | Tipo | Comentários |
 |:-:|---|---|----|---|
 | ![Logo](/assets/PaymentMethods/american.png)| American Express | AMEX | Cartões de crédito | |
-| ![Logo](/assets/PaymentMethods/viabaloto.png) | Baloto | BALOTO | Dinheiro | |
 | ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá| BANK_REFERENCED | Referência bancária | |
 | ![Logo](/assets/PaymentMethods/bancolombia.png) | Bancolombia | BANK_REFERENCED | Referência bancária | |
 | ![Logo](/assets/PaymentMethods/codensa.png) | Codensa | CODENSA | Cartões de crédito | |

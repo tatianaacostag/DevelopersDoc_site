@@ -7,34 +7,11 @@ description: >
 exclude_search: true
 notopicssection: true
 ---
-<script src="/js/countdown.js"></script>
-<br>
-<div id="MainCounter">
-    <p class="CounterHeader">Tu sistema debe estar listo en</p>
-    <div class="CounterContent">
-      <div id="DaysDiv">
-        <p id="days"></p>
-        <p style="color:white;text-align:center;">Días</p>
-      </div>
-      <div id="HoursDiv">
-        <p id="hours"></p>
-        <p style="color:white;text-align:center;">Horas</p>
-      </div>
-      <div id="MinutesDiv">
-        <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutos</p>
-      </div>
-      <div id="SecondsDiv">
-        <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Segundos</p>
-      </div>
-    </div>  
-</div>
 
 ## Introducción {#overview}
 Debido al crecimiento exponencial del comercio electrónico y los pagos en línea, el tamaño de los identificadores que devolvemos desde nuestro procesador de pagos se ha incrementado.
 
-Nuestras estimaciones muestran que aproximadamente el _30 de abril de 2022_, sobrepasaremos la barrera de los 10 dígitos del parámetro `orderId`. Esto hace que cambiamos el tipo numérico actual del parámetro para permitir un mayor número de dígitos en los identificadores retornados; por lo tanto, el tipo de datos actual ya no será compatible y este cambio puede afectar tu integración con nuestra plataforma.
+Nuestras estimaciones muestran que sobrepasaremos la barrera de los 10 dígitos del parámetro `orderId`. Esto hace que cambiamos el tipo numérico actual del parámetro para permitir un mayor número de dígitos en los identificadores retornados; por lo tanto, el tipo de datos actual ya no será compatible y este cambio puede afectar tu integración con nuestra plataforma.
 
 Para evitar problemas debido a este cambio, debes validar si el nuevo tipo retornado coincide con tu integración actual. Sigue las pautas explicadas en este artículo para verificar si tu integración requiere una actualización.
 
@@ -50,7 +27,7 @@ Para evitar problemas debido a este cambio, debes validar si el nuevo tipo retor
 
 * **¿Este cambio solo afecta el flujo de Pago?**<br>No, este cambio también puede tener impacto en tus reportes o consultas relacionadas con transacciones. Ten cuidado cuando realices la validación.
 
-* **¿Qué sucede si no aplico este cambio?**<br>Si no realizas este cambio y este afecta tu integración, **no** podrás recibir la confirmación del procedimiento de pago. Además, **no** podrás consultar nuevas transacciones a partir de que empecemos a retornar el poarámetro `orderId` con más de 10 dígitos (aproximadamente, después del _30 de abril de 2022_).
+* **¿Qué sucede si no aplico este cambio?**<br>Si no realizas este cambio y este afecta tu integración, **no** podrás recibir la confirmación del procedimiento de pago. Además, **no** podrás consultar nuevas transacciones a partir de que empecemos a retornar el parámetro `orderId` con más de 10 dígitos.
 
 * **¿El equipo de Soporte de PayU puede hacer este cambio por mí?**<br>No, tú decides cómo te integras con nuestros servicios. PayU no se hace responsable por errores debido a integraciones incorrectas.
 

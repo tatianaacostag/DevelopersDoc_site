@@ -7,32 +7,6 @@ description: >
 weight: 40
 tags: ["subtopic"]
 ---
-<script src="/js/banner.js"></script>
-
-<script>
-window.onload = function() {
-    var bannerText = "<ul class='fa-ul' style='--fa-li-width: 2em;margin-bottom: initial;'><li style='margin-bottom: initial;'><span class='fa-li'><i class='fas fa-exclamation-triangle'></i></span>Informamos que PayU S.A. foi notificada pela IGT - Operador da rede Baloto - da sua decisão de rescindir o contrato de cobrança em dinheiro por entrada de um novo operador, que até à data não deu informação sobre a continuidade deste serviço. Portanto, o serviço de pagamento por meio do Baloto deixará de funcionar a partir de <b>25 de maio de 2022</b>. Recomenda-se desabilitar este meio de pagamento pelo menos 7 (sete) dias antes desta data. Se precisar de assistência adicional, entre em contato com a equipe de suporte técnico através de <a href='mailto:tecnico.co@payu.com'>tecnico.co@payu.com</a>.</li></ul>";
-
-    loadBanner(bannerText);
-}
-
-window.onresize = function() {
-    refreshBanner();
-}
-</script>
-
-<style type="text/css" media="screen">
-    div#banner { 
-        z-index: 999;
-        background-color: #DDEEEE; 
-        width: 100%;
-        margin-top: -1.3rem;
-    }
-    div#banner-content { 
-        margin: 0 auto; 
-        padding: 10px; 
-    }
-</style>
 
 Para integrar com o SDK de Pagamentos da Colômbia, direcione sua solicitação para as seguintes URLs:
 
@@ -344,10 +318,10 @@ Este método permite processar os pagamentos de seus clientes em dinheiro ou usa
 ### Observações {#considerations-1}
 * Enviar um método de pagamento válido em dinheiro, [Veja os métodos de pagamento disponíveis na Colômbia]({{< ref "select-your-payment-method.html#Colombia" >}}). O método `OTHERS_CASH` não é compatível.
 * O parâmetro `EXPIRATION_DATE` não é obrigatórionão é obrigatório. Se você não enviar este parâmetro, seu valor padrão será de 7 dias após a data atual.<br>Se você enviar uma data posterior ao número de dias padrão, PayU ignorará esse valor e o vencimento será definido como padrão.
-* Para `BALOTO` e `EFECTY`, a confirmação do pagamento leva 15 minutos. Para `BANK_REFERENCED`, a confirmação é feita online.
-* Os valores mínimo e máximo para `BALOTO` e `EFECTY` são:
-   - `BALOTO` > Mín: $3.000 COP - Máx: $1.000.000 COP
-   - `EFECTY` > Mín: $20.000 COP - Máx: $6.000.000 COP
+* Para <!--`BALOTO` e -->`EFECTY`, a confirmação do pagamento leva 15 minutos. Para `BANK_REFERENCED`, a confirmação é feita online.
+* Os valores mínimo e máximo <!--para `BALOTO` e -->`EFECTY` são Mín: $20.000 COP - Máx: $6.000.000 COP.
+  <!-- - `BALOTO` > Mín: $3.000 COP - Máx: $1.000.000 COP
+   - `EFECTY` > Mín: $20.000 COP - Máx: $6.000.000 COP -->
 * Os parâmetros extras têm os seguintes dados relacionados à transação:
    - **EXPIRATION_DATE**: prazo máximo para o pagador fazer o pagamento 
    - **REFERENCE**: referência interna de pagamento gerada pelo PayU.

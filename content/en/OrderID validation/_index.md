@@ -7,34 +7,11 @@ description: >
 exclude_search: true
 notopicssection: true
 ---
-<script src="/js/countdown.js"></script>
-<br>
-<div id="MainCounter">
-    <p class="CounterHeader">Your system must be ready in</p>
-    <div class="CounterContent">
-      <div id="DaysDiv">
-        <p id="days"></p>
-        <p style="color:white;text-align:center;">Days</p>
-      </div>
-      <div id="HoursDiv">
-        <p id="hours"></p>
-        <p style="color:white;text-align:center;">Hours</p>
-      </div>
-      <div id="MinutesDiv">
-        <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutes</p>
-      </div>
-      <div id="SecondsDiv">
-        <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Seconds</p>
-      </div>
-    </div>  
-</div>
 
 ## Overview
 Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor has increased.
 
-Our estimations show that approximately on _April 30, 2022_, we will overcome the barrier of the 10 digits for the parameter `orderId`. This makes us change the current data type of the Number parameter `orderId` to allow more digits in the returning identifiers; thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.
+Our estimations show that we will soon overcome the barrier of the 10 digits for the parameter `orderId`. This makes us change the current data type of the Number parameter `orderId` to allow more digits in the returning identifiers; thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.
 
 To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines in this article to check whether your integration requires an update.
 
@@ -50,7 +27,7 @@ To avoid issues due to this change, you must validate whether the new returned t
 
 * **This change only affects the Payment flow?**<br>No. This change may also impact your reports or queries related to transactions. Be careful when you perform the validation.
 
-* **What if I don't apply this change?**<br>If you don’t apply this change and you oughta do it, you **will not** receive the confirmation of the payment procedure. Furthermore, you **will not** be able to query new transactions since we start to return `orderId` parameter with more than 10 digits (approximately after _April 30, 2022_). 
+* **What if I don't apply this change?**<br>If you don’t apply this change and you oughta do it, you **will not** receive the confirmation of the payment procedure. Furthermore, you **will not** be able to query new transactions since we start to return `orderId` parameter with more than 10 digits. 
 
 * **Can the PayU Support team make this change for me?**<br>No. The way you integrate with our services is up to you. PayU is not responsible for errors due to wrong integrations.
 

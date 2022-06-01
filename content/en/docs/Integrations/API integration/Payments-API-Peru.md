@@ -406,15 +406,16 @@ Response body:
 ```
 {{< /tab >}}
 {{< /tabs >}}
-
+<!--
 #### Zero Authorization
 Zero Authorization allows you to validate a card without performing any charge or capture operation. Through this option, you can send an _Authorization_ request as explained before with `TX_VALUE` equals to 0 and you will receive the result of the card validation.
 
 {{% alert title="Important" color="info"%}}
+* Make sure your shop can create transactions with `TX_VALUE` equals to 0.
 * This feature is not enabled by default, contact your sales representative to request it.
-* _Zero Authorization_ is available for VISA cards only. Mastercard and other franchises must send the transaction value greater than or equals to 1 PEN.
-* CVV2 is required in the _Zero Authorization_ request. Otherwise, the transaction is rejected.
+* _Zero Authorization_ is available for VISA and Mastercard cards only. For other franchises, send the transaction value greater than or equals to 1 PEN.
 {{% /alert %}}
+-->
 
 ### Capture
 Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-peru.md#authorization" >}}) to transfer them to your PayU account.
