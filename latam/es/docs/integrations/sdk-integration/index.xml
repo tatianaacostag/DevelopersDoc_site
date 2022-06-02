@@ -4089,10 +4089,12 @@ Para confirmar el estado de una transacción, puedes utilizar el &lt;a href=&#34
 &lt;ul&gt;
 &lt;li&gt;Envía un método de pago válido en efectivo o por referencia bancaria, &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html#Colombia&#34;&gt;mira los métodos de pago disponibles para Colombia&lt;/a&gt;. No está soportado el método &lt;code&gt;OTHERS_CASH&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;El parámetro &lt;code&gt;EXPIRATION_DATE&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto&lt;/li&gt;
-&lt;li&gt;Para &lt;!--`BALOTO` y --&gt;&lt;code&gt;EFECTY&lt;/code&gt;, la confirmación de pago toma 15 minutos. Para &lt;code&gt;BANK_REFERENCED&lt;/code&gt;, la confirmación es en línea.&lt;/li&gt;
-&lt;li&gt;Los valores mínimos de máximos para pagos en &lt;!--`BALOTO` y --&gt;&lt;code&gt;EFECTY&lt;/code&gt; son Min: $20.000 COP - Max: $6.000.000 COP.
-&lt;!-- - `BALOTO` &gt; Min: $3.000 COP - Max: $1.000.000 COP
- - `EFECTY` &gt; Min: $20.000 COP - Max: $6.000.000 COP --&gt;
+&lt;li&gt;Para &lt;code&gt;BALOTO&lt;/code&gt; y &lt;code&gt;EFECTY&lt;/code&gt;, la confirmación de pago toma 15 minutos. Para &lt;code&gt;BANK_REFERENCED&lt;/code&gt;, la confirmación es en línea.&lt;/li&gt;
+&lt;li&gt;Los valores mínimos de máximos para pagos en &lt;code&gt;BALOTO&lt;/code&gt; y &lt;code&gt;EFECTY&lt;/code&gt; son:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;BALOTO&lt;/code&gt; &amp;gt; Min: $3.000 COP - Max: $1.000.000 COP&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;EFECTY&lt;/code&gt; &amp;gt; Min: $20.000 COP - Max: $6.000.000 COP&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Los extra parámetros tienen los siguientes parámetros relacionados con la transacción:
 &lt;ul&gt;

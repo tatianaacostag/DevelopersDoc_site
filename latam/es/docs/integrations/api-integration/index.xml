@@ -1059,9 +1059,9 @@
 &lt;h4 id=&#34;considerations-1&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;p&gt;Ten en cuenta las siguientes consideraciones para la captura.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;El tiempo máximo para capturar una transacción aprobada es de 14 días. Después de este tiempo, la transacción es anulada automáticamente.&lt;/li&gt;
+&lt;li&gt;El tiempo máximo para capturar una transacción aprobada es de 14 días. Despues de este tiempo, la transacción es anulada automáticamente.&lt;/li&gt;
 &lt;li&gt;Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.&lt;/li&gt;
-&lt;li&gt;Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; con su valor (Como se envió durante la Autorización).&lt;/li&gt;
+&lt;li&gt;Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; con su valor (Como se envió durante la Autorización) y asignar &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; en el parámetro &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.&lt;/p&gt;
 &lt;nav&gt;
@@ -4455,7 +4455,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 &lt;h4 id=&#34;considerations-1&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;p&gt;Ten en cuenta las siguientes consideraciones para la captura.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;El tiempo máximo para capturar una transacción aprobada es de siete (7) días. Después de este tiempo, la transacción es cancelada.&lt;/li&gt;
+&lt;li&gt;El tiempo máximo para capturar una transacción aprobada es de siete (7) días. Despues de este tiempo, la transacción es cancelada.&lt;/li&gt;
 &lt;li&gt;Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.&lt;/p&gt;
@@ -9140,9 +9140,9 @@ Las transacciones utilizando flujos de dos pasos están disponibles bajo demanda
 &lt;h4 id=&#34;considerations-1&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;p&gt;Ten en cuenta las siguientes consideraciones para la captura.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;El tiempo máximo para capturar una transacción aprobada es de 7 días. Después de este tiempo, la transacción es anulada automáticamente.&lt;/li&gt;
+&lt;li&gt;El tiempo máximo para capturar una transacción aprobada es de 7 días. Despues de este tiempo, la transacción es anulada automáticamente.&lt;/li&gt;
 &lt;li&gt;Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.&lt;/li&gt;
-&lt;li&gt;Solo puedes realizar una captura parcial sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; con su valor (Como se envió durante la Autorización).&lt;br&gt;El monto mínimo es 50 CLP.&lt;/li&gt;
+&lt;li&gt;Solo puedes realizar una captura parcial sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; con su valor (Como se envió durante la Autorización) y asignar &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; en el parámetro &lt;code&gt;transaction.type&lt;/code&gt;.&lt;br&gt;El monto mínimo es 50 CLP.&lt;/li&gt;
 &lt;li&gt;No está permitido capturar un monto mayor al previamente autorizado.&lt;/li&gt;
 &lt;li&gt;Solo se permite capturar transacciones en una cuota.&lt;/li&gt;
 &lt;/ul&gt;
@@ -11945,7 +11945,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;h2 id=&#34;available-methods&#34;&gt;Métodos disponibles&lt;/h2&gt;
 &lt;p&gt;El API de pagos incluye los siguiente métodos:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-or-debit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito o débito&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash-or-bank-reference&#34;&gt;Enviar transacciones en efectivo o referencia bancaria&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer-pse&#34;&gt;Enviar transacciones con transferencia bancaria (PSE)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#bank-list---pse&#34;&gt;Lista de Bancos - PSE&lt;/a&gt;&lt;/li&gt;
@@ -11964,15 +11964,8 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;submit-transaction-with-credit-or-debit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito o débito&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito&lt;/h2&gt;
 &lt;p&gt;Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Colombia, puedes realizar los flujos de un paso (&lt;strong&gt;Cobro&lt;/strong&gt;). Para más información, consulta los &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;flujos de pago&lt;/a&gt;.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu representante de ventas.
-&lt;/div&gt;
-
 &lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
@@ -13685,10 +13678,10 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;h4 id=&#34;considerations-1&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;El parámetro &lt;code&gt;transaction.expirationDate&lt;/code&gt; no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.&lt;br&gt;Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.&lt;/li&gt;
-&lt;li&gt;Para &lt;!--`BALOTO` y --&gt;&lt;code&gt;EFECTY&lt;/code&gt;, la confirmación del pago tarda 15 minutos. Para &lt;code&gt;BANK_REFERENCED&lt;/code&gt; y &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red), la confirmación es en línea.&lt;/li&gt;
-&lt;li&gt;Los valores mínimos de máximos para pagos en &lt;!--`BALOTO`, --&gt;&lt;code&gt;EFECTY&lt;/code&gt; y &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) son:
- &lt;!-- - `BALOTO` &gt; Min: $3.000 COP - Max: $1.000.000 COP--&gt;
+&lt;li&gt;Para &lt;code&gt;BALOTO&lt;/code&gt; y &lt;code&gt;EFECTY&lt;/code&gt;, la confirmación del pago tarda 15 minutos. Para &lt;code&gt;BANK_REFERENCED&lt;/code&gt; y &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red), la confirmación es en línea.&lt;/li&gt;
+&lt;li&gt;Los valores mínimos de máximos para pagos en &lt;code&gt;BALOTO&lt;/code&gt;, &lt;code&gt;EFECTY&lt;/code&gt; y &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) son:
 &lt;ul&gt;
+&lt;li&gt;&lt;code&gt;BALOTO&lt;/code&gt; &amp;gt; Min: $3.000 COP - Max: $1.000.000 COP&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;EFECTY&lt;/code&gt; &amp;gt; Min: $20.000 COP - Max: $6.000.000 COP&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) &amp;gt; Min: $1.000 COP - Max: $4.000.000 COP&lt;/li&gt;
 &lt;/ul&gt;
@@ -16069,8 +16062,8 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentMethods&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;36&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;EFECTY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;35&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BALOTO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;enabled&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;reason&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
@@ -16116,8 +16109,8 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;SUCCESS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethods&amp;gt;&lt;/span&gt;
         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethodComplete&amp;gt;&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;36&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;EFECTY&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;35&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;BALOTO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;country&amp;gt;&lt;/span&gt;CO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/country&amp;gt;&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentMethodComplete&amp;gt;&lt;/span&gt;
@@ -17436,9 +17429,9 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 &lt;h4 id=&#34;considerations-1&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;p&gt;Ten en cuenta las siguientes consideraciones para la captura.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;El tiempo máximo para capturar una transacción aprobada es de 30 días. Después de este tiempo, la transacción es anulada automáticamente.&lt;/li&gt;
+&lt;li&gt;El tiempo máximo para capturar una transacción aprobada es de 30 días. Despues de este tiempo, la transacción es anulada automáticamente.&lt;/li&gt;
 &lt;li&gt;Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.&lt;/li&gt;
-&lt;li&gt;Puedes realizar capturas parciales sobre un monto autorizado siempre y cuando este no exceda el monto autorizado. Para esto, necesitas enviar en la petición el parámetro &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; con su valor (Como se envió durante la Autorización).&lt;/li&gt;
+&lt;li&gt;Puedes realizar capturas parciales sobre un monto autorizado siempre y cuando este no exceda el monto autorizado. Para esto, necesitas enviar en la petición el parámetro &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; con su valor (Como se envió durante la Autorización) y asignar &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; en el parámetro &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.&lt;/p&gt;
 &lt;nav&gt;
@@ -23692,7 +23685,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;h4 id=&#34;considerations-1&#34;&gt;Consideraciones&lt;/h4&gt;
 &lt;p&gt;Ten en cuenta las siguientes consideraciones para la captura.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; con su valor (Como se envió durante la Autorización).&lt;/li&gt;
+&lt;li&gt;Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; con su valor (Como se envió durante la Autorización) y asignar &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; en el parámetro &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Para capturas parciales, el mínimo valor a capturar puede ser 10% menor que el valor autorizado.&lt;/li&gt;
 &lt;li&gt;Para capturas parciales, las redes de pago liberan los valores no capturados entre 2 y 10 días para tarjetas locales y 28 días para tarjetas extranjeras.&lt;/li&gt;
 &lt;/ul&gt;

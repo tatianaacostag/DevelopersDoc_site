@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-argentina.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2022-05-17T16:20:14-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2022-02-25T09:18:44-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payments API - Argentina">
 <meta itemprop="description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2022-05-17T16:20:14-05:00" />
-<meta itemprop="wordCount" content="5459">
+<meta itemprop="dateModified" content="2022-02-25T09:18:44-05:00" />
+<meta itemprop="wordCount" content="5464">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Argentina"/>
 <meta name="twitter:description" content="Payments API Argentina lets your shop process different transaction types with multiple payment methods.
@@ -141,7 +141,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.6f61763d2b71e2c150665e03b024a4156ff735b9d89eaf539e7812a8b138ae86dd00f4dd70d442c5b58650fc73dd02800d2a05ae814dae0135532b2c141637a1.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.864218c5667a21b9217bd7360991090349e8d948593690151d8e94d6f917446a74c4774e04d9221d615434c2a0f07226d388ed06e1801e830417aebcd6938a2f.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -701,6 +701,31 @@
   </li>
   <ul class="side-main">
     <li class="" id="endocsserver-statushtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/sandbox.html" href="../../../../en/docs/sandbox.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Sandbox</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocssandboxhtml">
       
       
       
@@ -1872,7 +1897,7 @@
 <ul>
 <li>The maximum time to capture an approved transaction is 14 days. After this time, the transaction is auto voided.</li>
 <li>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</li>
-<li>You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter <code>transaction.order.TX_VALUE</code> with its value (as sent during the Authorization).</li>
+<li>You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter <code>transaction.order.additionalValues.TX_VALUE</code> with its value (as sent during the Authorization) and set <code>PARTIAL_CAPTURE</code> for <code>transaction.type</code>.</li>
 </ul>
 <p>The following are the request and response bodies for this transaction type.</p>
 <nav>
@@ -3729,9 +3754,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-May 17, 2022:
+February 25, 2022:
 
- <b>Fixes for partial captures (a5f177cb)</b>
+ <b>Check for Mandatory only and counter created (9d3166a6)</b>
 </div>
 </div>
 

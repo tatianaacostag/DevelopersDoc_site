@@ -47,7 +47,7 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;p&gt;Para confirmar o status de uma transação, você pode usar:&lt;/p&gt;
+&lt;p&gt;Para confirmar o status de uma transação, você pode usar one of the following options:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Navegue até a URL definida na variável &lt;code&gt;transaction.notifyUrl&lt;/code&gt; ou na opção &lt;em&gt;&lt;strong&gt;URL de confirmação&lt;/strong&gt;&lt;/em&gt; localizada no Módulo PayU em &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuração técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Use o &lt;a href=&#34;../../../../pt/docs/services/queries.html&#34;&gt;API ou SDK de Consultas&lt;/a&gt;.&lt;/li&gt;
@@ -1061,7 +1061,7 @@
 &lt;ul&gt;
 &lt;li&gt;O tempo máximo para capturar uma transação aprovada é de 14 dias. Após este período, a transação é automaticamente cancelada.&lt;/li&gt;
 &lt;li&gt;Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.&lt;/li&gt;
-&lt;li&gt;Você pode realizar capturas parciais de um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; com seu valor (conforme enviado durante a Autorização).&lt;/li&gt;
+&lt;li&gt;Você pode realizar capturas parciais de um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; com seu valor (conforme enviado durante a Autorização) e definir &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; para &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A seguir estão os corpos de pedido e resposta para este tipo de transação.&lt;/p&gt;
 &lt;nav&gt;
@@ -2952,7 +2952,7 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;p&gt;Para confirmar o status de uma transação, você pode usar:&lt;/p&gt;
+&lt;p&gt;Para confirmar o status de uma transação, você pode usar one of the following options:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Navegue até a URL definida na variável &lt;code&gt;transaction.notifyUrl&lt;/code&gt; ou na opção &lt;em&gt;&lt;strong&gt;URL de confirmação&lt;/strong&gt;&lt;/em&gt; localizada no Módulo PayU em &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuração técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Use o &lt;a href=&#34;../../../../pt/docs/services/queries.html&#34;&gt;API ou SDK de Consultas&lt;/a&gt;.&lt;/li&gt;
@@ -8118,7 +8118,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;p&gt;Para confirmar o status de uma transação, você pode usar:&lt;/p&gt;
+&lt;p&gt;Para confirmar o status de uma transação, você pode usar one of the following options:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Navegue até a URL definida na variável &lt;code&gt;transaction.notifyUrl&lt;/code&gt; ou na opção &lt;em&gt;&lt;strong&gt;URL de confirmação&lt;/strong&gt;&lt;/em&gt; localizada no Módulo PayU em &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuração técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Use o &lt;a href=&#34;../../../../pt/docs/services/queries.html&#34;&gt;API ou SDK de Consultas&lt;/a&gt;.&lt;/li&gt;
@@ -9142,7 +9142,7 @@ Transações usando fluxos de duas etapas estão disponíveis sob demanda. Conta
 &lt;ul&gt;
 &lt;li&gt;O tempo máximo para capturar uma transação aprovada é de sete (7) dias. Após este período, a transação é cancelada automaticamente (auto-void).&lt;/li&gt;
 &lt;li&gt;Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.&lt;/li&gt;
-&lt;li&gt;Você pode fazer apenas uma captura parcial sobre um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; com seu valor (conforme enviado durante a Autorização).&lt;br&gt;O valor mínimo é 50 CLP.&lt;/li&gt;
+&lt;li&gt;Você pode fazer apenas uma captura parcial sobre um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; com seu valor (conforme enviado durante a Autorização) e definir &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; para &lt;code&gt;transaction.type&lt;/code&gt;.&lt;br&gt;O valor mínimo é 50 CLP.&lt;/li&gt;
 &lt;li&gt;Não é permitida a captura de valor superior ao previamente autorizado.&lt;/li&gt;
 &lt;li&gt;As capturas são permitidas apenas para transações em uma parcela.&lt;/li&gt;
 &lt;/ul&gt;
@@ -11945,7 +11945,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 &lt;h2 id=&#34;available-methods&#34;&gt;Métodos disponíveis&lt;/h2&gt;
 &lt;p&gt;A API de pagamentos inclui os seguintes métodos:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-or-debit-cards&#34;&gt;Enviar transação com cartão de crédito ou débito&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-cards&#34;&gt;Enviar transação com cartão de crédito&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash-or-bank-reference&#34;&gt;Enviar transação em dinheiro ou referência bancária&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer-pse&#34;&gt;Enviar transação com transferência bancária (PSE)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#bank-list---pse&#34;&gt;Lista de bancos - PSE&lt;/a&gt;&lt;/li&gt;
@@ -11956,7 +11956,7 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;p&gt;Para confirmar o status de uma transação, você pode usar:&lt;/p&gt;
+&lt;p&gt;Para confirmar o status de uma transação, você pode usar one of the following options:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Navegue até a URL definida na variável &lt;code&gt;transaction.notifyUrl&lt;/code&gt; ou na opção &lt;em&gt;&lt;strong&gt;URL de confirmação&lt;/strong&gt;&lt;/em&gt; localizada no Módulo PayU em &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuração técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Use o &lt;a href=&#34;../../../../pt/docs/services/queries.html&#34;&gt;API ou SDK de Consultas&lt;/a&gt;.&lt;/li&gt;
@@ -11964,15 +11964,8 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;submit-transaction-with-credit-or-debit-cards&#34;&gt;Enviar transação com cartão de crédito ou débito&lt;/h2&gt;
-&lt;p&gt;Este método permite processar os pagamentos efetuados com cartão de crédito ou débito pelos seus clientes. Para a Colômbia, você pode fazer fluxos de uma etapa (&lt;strong&gt;Cobrança&lt;/strong&gt;). Para obter mais informações, consulte &lt;a href=&#34;../../../../pt/docs/services/payments.html#payment-flows&#34;&gt;Fluxos de pagamento&lt;/a&gt;.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-O fluxo em duas etapas está disponível somente sob solicitação, entre em contato com seu representante de vendas.
-&lt;/div&gt;
-
+&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Enviar transação com cartão de crédito&lt;/h2&gt;
+&lt;p&gt;Este método permite processar os pagamentos efetuados com cartão de crédito pelos seus clientes. Para a Colômbia, você pode fazer fluxos de uma etapa (&lt;strong&gt;Cobrança&lt;/strong&gt;). Para obter mais informações, consulte &lt;a href=&#34;../../../../pt/docs/services/payments.html#payment-flows&#34;&gt;Fluxos de pagamento&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variáveis para pedido e resposta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Pedido&lt;/summary&gt;
@@ -12323,7 +12316,7 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
 &lt;td&gt;transaction &amp;gt; creditCard&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Informações do cartão de crédito. Se você processar usando cartão de débito, não envie este parâmetro.&lt;br&gt;Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de crédito não tokenizado.&lt;/td&gt;
+&lt;td&gt;Informações do cartão de crédito. Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de crédito não tokenizado.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12344,7 +12337,7 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
 &lt;td&gt;transaction &amp;gt; creditCard &amp;gt; expirationDate&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;Data de validade do cartão de crédito. Formato &lt;code&gt;YYYY/MM&lt;/code&gt;.&lt;/td&gt;
+&lt;td&gt;Data de validade do cartão de crédito. Formato &lt;code&gt;YYYY/MM&lt;/code&gt;. Este parâmetro e obrigatório quando o pagamento é realizado com cartão de crédito tokenizado.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12359,41 +12352,6 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
 &lt;td&gt;Boolean&lt;/td&gt;
 &lt;td&gt;Máx:255&lt;/td&gt;
 &lt;td&gt;Permite processar transações sem incluir o código de segurança do cartão de crédito. Sua loja precisa da autorização do PayU antes de usar este recurso.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;transaction &amp;gt; debitCard&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Informações do cartão de débito. Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de débito.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;transaction &amp;gt; debitCard &amp;gt; number&lt;/td&gt;
-&lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;Mín:13 Máx:20&lt;/td&gt;
-&lt;td&gt;Número do cartão de débito.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;transaction &amp;gt; debitCard &amp;gt; securityCode&lt;/td&gt;
-&lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;Mín:1 Máx:4&lt;/td&gt;
-&lt;td&gt;Código de segurança do cartão de débito (CVC2, CVV2, CID).&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;transaction &amp;gt; debitCard &amp;gt; expirationDate&lt;/td&gt;
-&lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;Data de validade do cartão de débito. Formato &lt;code&gt;YYYY/MM&lt;/code&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;transaction &amp;gt; debitCard &amp;gt; name&lt;/td&gt;
-&lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;Mín:1 Máx:255&lt;/td&gt;
-&lt;td&gt;Nome do titular exibido no cartão de débito.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -13720,13 +13678,13 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
 &lt;h4 id=&#34;considerations-1&#34;&gt;Observações&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;O parâmetro &lt;code&gt;transaction.expirationDate&lt;/code&gt; não é obrigatórionão é obrigatório. Se você não enviar este parâmetro, seu valor padrão será de 7 dias após a data atual.&lt;br&gt;Se você enviar uma data posterior ao número de dias padrão, PayU ignorará esse valor e o vencimento será definido como padrão.&lt;/li&gt;
-&lt;li&gt;Para &lt;!--`BALOTO` e --&gt;&lt;code&gt;EFECTY&lt;/code&gt;, a confirmação do pagamento leva 15 minutos. Para &lt;code&gt;BANK_REFERENCED&lt;/code&gt; e &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red), a confirmação é feita online.&lt;/li&gt;
-&lt;li&gt;Os valores mínimo e máximo para &lt;!--`BALOTO`, --&gt;&lt;code&gt;EFECTY&lt;/code&gt; e &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) são:
+&lt;li&gt;Para &lt;code&gt;BALOTO&lt;/code&gt; e &lt;code&gt;EFECTY&lt;/code&gt;, a confirmação do pagamento leva 15 minutos. Para &lt;code&gt;BANK_REFERENCED&lt;/code&gt; e &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red), a confirmação é feita online.&lt;/li&gt;
+&lt;li&gt;Os valores mínimo e máximo para &lt;code&gt;BALOTO&lt;/code&gt;, &lt;code&gt;EFECTY&lt;/code&gt; e &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) são:
 &lt;ul&gt;
+&lt;li&gt;&lt;code&gt;BALOTO&lt;/code&gt; &amp;gt; Mín: $3.000 COP - Máx: $1.000.000 COP&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;EFECTY&lt;/code&gt; &amp;gt; Mín: $20.000 COP - Máx: $6.000.000 COP&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) &amp;gt; Mín: $1.000 COP - Máx: $4.000.000 COP&lt;/li&gt;
 &lt;/ul&gt;
- &lt;!-- - `BALOTO` &gt; Mín: $3.000 COP - Máx: $1.000.000 COP--&gt;
 &lt;/li&gt;
 &lt;li&gt;O parâmetro &lt;code&gt;transactionResponse.extraParameters&lt;/code&gt; tem os seguintes parâmetros relacionados à transação:
 &lt;ul&gt;
@@ -16105,8 +16063,8 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentMethods&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;36&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;EFECTY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;35&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BALOTO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;enabled&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;reason&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
@@ -16152,8 +16110,8 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;SUCCESS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethods&amp;gt;&lt;/span&gt;
         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethodComplete&amp;gt;&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;36&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;EFECTY&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;35&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;BALOTO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;country&amp;gt;&lt;/span&gt;CO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/country&amp;gt;&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentMethodComplete&amp;gt;&lt;/span&gt;
@@ -16416,7 +16374,7 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;p&gt;Para confirmar o status de uma transação, você pode usar:&lt;/p&gt;
+&lt;p&gt;Para confirmar o status de uma transação, você pode usar one of the following options:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Navegue até a URL definida na variável &lt;code&gt;transaction.notifyUrl&lt;/code&gt; ou na opção &lt;em&gt;&lt;strong&gt;URL de confirmação&lt;/strong&gt;&lt;/em&gt; localizada no Módulo PayU em &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuração técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Use o &lt;a href=&#34;../../../../pt/docs/services/queries.html&#34;&gt;API ou SDK de Consultas&lt;/a&gt;.&lt;/li&gt;
@@ -17474,7 +17432,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 &lt;ul&gt;
 &lt;li&gt;O tempo máximo para capturar uma transação aprovada é de 30 dias. Após este período, a transação é automaticamente cancelada.&lt;/li&gt;
 &lt;li&gt;Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.&lt;/li&gt;
-&lt;li&gt;Você pode executar capturas parciais sobre um valor autorizado, desde que o valor da captura parcial não exceda o valor autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; com seu valor (conforme enviado durante a Autorização).&lt;/li&gt;
+&lt;li&gt;Você pode executar capturas parciais sobre um valor autorizado, desde que o valor da captura parcial não exceda o valor autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; com seu valor (conforme enviado durante a Autorização) e definir &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; para &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A seguir estão os corpos de pedido e resposta para este tipo de transação.&lt;/p&gt;
 &lt;nav&gt;
@@ -21251,7 +21209,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;p&gt;Para confirmar o status de uma transação, você pode usar:&lt;/p&gt;
+&lt;p&gt;Para confirmar o status de uma transação, você pode usar one of the following options:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Navegue até a URL definida na variável &lt;code&gt;transaction.notifyUrl&lt;/code&gt; ou na opção &lt;em&gt;&lt;strong&gt;URL de confirmação&lt;/strong&gt;&lt;/em&gt; localizada no Módulo PayU em &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuração técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Use o &lt;a href=&#34;../../../../pt/docs/services/queries.html&#34;&gt;API ou SDK de Consultas&lt;/a&gt;.&lt;/li&gt;
@@ -22717,7 +22675,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-&lt;p&gt;Para confirmar o status de uma transação, você pode usar:&lt;/p&gt;
+&lt;p&gt;Para confirmar o status de uma transação, você pode usar one of the following options:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Navegue até a URL definida na variável &lt;code&gt;transaction.notifyUrl&lt;/code&gt; ou na opção &lt;em&gt;&lt;strong&gt;URL de confirmação&lt;/strong&gt;&lt;/em&gt; localizada no Módulo PayU em &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuração técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Use o &lt;a href=&#34;../../../../pt/docs/services/queries.html&#34;&gt;API ou SDK de Consultas&lt;/a&gt;.&lt;/li&gt;
@@ -23728,7 +23686,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 &lt;h4 id=&#34;considerations-1&#34;&gt;Observações&lt;/h4&gt;
 &lt;p&gt;Leve em conta as seguintes informações para captura.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Você pode realizar capturas parciais de um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; com seu valor (conforme enviado durante a Autorização).&lt;/li&gt;
+&lt;li&gt;Você pode realizar capturas parciais de um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; com seu valor (conforme enviado durante a Autorização) e definir &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; para &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Para capturas parciais, o valor mínimo a capturar pode ser 10% inferior ao valor autorizado.&lt;/li&gt;
 &lt;li&gt;Para capturas parciais, as redes de pagamento liberam o valor não capturado em 2 a 10 dias para cartões locais e 28 dias para cartões estrangeiros.&lt;/li&gt;
 &lt;/ul&gt;
