@@ -134,7 +134,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.864218c5667a21b9217bd7360991090349e8d948593690151d8e94d6f917446a74c4774e04d9221d615434c2a0f07226d388ed06e1801e830417aebcd6938a2f.json"
+  data-offline-search-index-json-src="../offline-search-index.638fd619b0852d19356c34fdbffd248952bf90577336469cefa66404487900b46cdcc862a5bb1bd2bcfeb68d9101c984b44e12498300dac4bbc68ce94a45f761.json"
   data-offline-search-base-href="../"
 >
 
@@ -256,32 +256,9 @@
 	<h1>Validação da variável OrderId</h1>
         
 	
-	<script src="../js/countdown.js"></script>
-<br>
-<div id="MainCounter">
-    <p class="CounterHeader">Seu sistema deve estar pronto em</p>
-    <div class="CounterContent">
-      <div id="DaysDiv">
-        <p id="days"></p>
-        <p style="color:white;text-align:center;">Dias</p>
-      </div>
-      <div id="HoursDiv">
-        <p id="hours"></p>
-        <p style="color:white;text-align:center;">Horas</p>
-      </div>
-      <div id="MinutesDiv">
-        <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutos</p>
-      </div>
-      <div id="SecondsDiv">
-        <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Segundos</p>
-      </div>
-    </div>  
-</div>
-<h2 id="overview">Introdução</h2>
+	<h2 id="overview">Introdução</h2>
 <p>Devido ao crescimento exponencial do comércio eletrônico e dos pagamentos online, o tamanho dos tokens que retornamos do nosso processador de pagamentos aumentou.</p>
-<p>Nossas estimativas mostram que por volta de <em>30 de abril de 2022</em>, passaremos a barreira de 10 dígitos para o parâmetro <code>orderId</code>. Isso nos faz alterar o tipo numérico atual do parâmetro para permitir um número maior de dígitos nos identificadores retornados; portanto, o tipo de dados atual não será mais suportado e essa alteração pode afetar sua integração com nossa plataforma.</p>
+<p>Nossas estimativas mostram que em breve passaremos a barreira de 10 dígitos para o parâmetro <code>orderId</code>. Isso nos faz alterar o tipo numérico atual do parâmetro para permitir um número maior de dígitos nos identificadores retornados; portanto, o tipo de dados atual não será mais suportado e essa alteração pode afetar sua integração com nossa plataforma.</p>
 <p>Para evitar problemas devido a essa alteração, você deve verificar se o novo tipo retornado corresponde à sua integração atual. Siga as diretrizes explicadas neste artigo para verificar se sua integração requer uma atualização.</p>
 <h3 id="frequently-asked-questions">Perguntas frequentes</h3>
 <ul>
@@ -301,7 +278,7 @@
 <p><strong>Essa alteração afeta apenas o fluxo de pagamento?</strong><br>Não, essa alteração também pode afetar seus relatórios ou consultas relacionadas a transações. Tenha cuidado ao realizar a validação.</p>
 </li>
 <li>
-<p><strong>O que acontece se eu não aplicar essa alteração?</strong><br>Se você não fizer essa alteração e isso afetar sua integração, você <strong>não</strong> poderá receber a confirmação do procedimento de pagamento. Além disso, você <strong>não</strong> poderá consultar novas transações depois que começarmos a retornar o parâmetro <code>orderId</code> com mais de 10 dígitos (aproximadamente após <em>30 de abril de 2022</em>).</p>
+<p><strong>O que acontece se eu não aplicar essa alteração?</strong><br>Se você não fizer essa alteração e isso afetar sua integração, você <strong>não</strong> poderá receber a confirmação do procedimento de pagamento. Além disso, você <strong>não</strong> poderá consultar novas transações depois que começarmos a retornar o parâmetro <code>orderId</code> com mais de 10 dígitos.</p>
 </li>
 <li>
 <p><strong>A equipe de suporte da PayU pode fazer essa alteração para mim?</strong><br>Não, você decide como se integra aos nossos serviços. PayU não se responsabiliza por erros devido a integrações incorretas.</p>
@@ -355,9 +332,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-4 de março de 2022:
+1 de junho de 2022:
 
- <b>Validation of the Order Id articles (447e32b9)</b>
+ <b>Changes from PRD environment (bcd5ad17)</b>
 </div>
 </div>
 

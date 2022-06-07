@@ -1061,7 +1061,7 @@
 &lt;ul&gt;
 &lt;li&gt;The maximum time to capture an approved transaction is 14 days. After this time, the transaction is auto voided.&lt;/li&gt;
 &lt;li&gt;Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.&lt;/li&gt;
-&lt;li&gt;You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization) and set &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; for &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The following are the request and response bodies for this transaction type.&lt;/p&gt;
 &lt;nav&gt;
@@ -9143,7 +9143,7 @@ Transactions using two-step flows are available under demand. Contact your Sales
 &lt;ul&gt;
 &lt;li&gt;The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.&lt;/li&gt;
 &lt;li&gt;Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.&lt;/li&gt;
-&lt;li&gt;You can perform only one partial capture over an authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization) and set &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; for &lt;code&gt;transaction.type&lt;/code&gt;.&lt;br&gt;The minimum amount is 50 CLP.&lt;/li&gt;
+&lt;li&gt;You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization).&lt;br&gt;The minimum amount is 50 CLP.&lt;/li&gt;
 &lt;li&gt;It is not allowed to capture a higher amount than the amount previously authorized.&lt;/li&gt;
 &lt;li&gt;Captures are only allowed for transactions in one installment.&lt;/li&gt;
 &lt;/ul&gt;
@@ -11946,7 +11946,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
 &lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-credit-or-debit-cards&#34;&gt;Submit transaction with credit or debit cards&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-cash-or-bank-reference&#34;&gt;Submit transaction with cash or Bank reference&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer-pse&#34;&gt;Submit transaction with bank transfer (PSE)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse&#34;&gt;Bank List - PSE&lt;/a&gt;&lt;/li&gt;
@@ -11965,8 +11965,15 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;submit-transaction-with-credit-cards&#34;&gt;Submit transaction with credit cards&lt;/h2&gt;
-&lt;p&gt;This method lets you process the payments performed by your customers using credit cards. For Colombia, you can perform one-step flows (&lt;strong&gt;Charge&lt;/strong&gt;). For more information, refer to &lt;a href=&#34;../../../../en/docs/services/payments.html#payment-flows&#34;&gt;Payment flows&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;submit-transaction-with-credit-or-debit-cards&#34;&gt;Submit transaction with credit or debit cards&lt;/h2&gt;
+&lt;p&gt;This method lets you process the payments performed by your customers using credit or debit cards. For Colombia, you can perform one-step flows (&lt;strong&gt;Charge&lt;/strong&gt;). For more information, refer to &lt;a href=&#34;../../../../en/docs/services/payments.html#payment-flows&#34;&gt;Payment flows&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Two-step flow is available under request, contact your sales representative.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variables for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
@@ -12321,6 +12328,13 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; creditCard&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Credit card information. If you process using debit card, do not send this parameter.&lt;br&gt;This object and its parameters are mandatory when the payment is performed using not tokenized credit card.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; creditCard &amp;gt; number&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;Min:13 Max:20&lt;/td&gt;
@@ -12338,7 +12352,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;transaction &amp;gt; creditCard &amp;gt; expirationDate&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;Credit card expiration date. Format &lt;code&gt;YYYY/MM&lt;/code&gt;. This parameter is mandatory when the payment is performed using a tokenized credit card.&lt;/td&gt;
+&lt;td&gt;Credit card expiration date. Format &lt;code&gt;YYYY/MM&lt;/code&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12353,6 +12367,41 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;td&gt;Boolean&lt;/td&gt;
 &lt;td&gt;Max:255&lt;/td&gt;
 &lt;td&gt;Allows you to process transactions without including the credit card security code. Your commerce requires PayU&amp;rsquo;s authorization before using this feature.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; debitCard&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Debit card information. This object and its parameters are mandatory when the payment is performed using debit card.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; debitCard &amp;gt; number&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Min:13 Max:20&lt;/td&gt;
+&lt;td&gt;Debit card number.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; debitCard &amp;gt; securityCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Min:1 Max:4&lt;/td&gt;
+&lt;td&gt;Debit card security code (CVC2, CVV2, CID).&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; debitCard &amp;gt; expirationDate&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Debit card expiration date. Format &lt;code&gt;YYYY/MM&lt;/code&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; debitCard &amp;gt; name&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Min:1 Max:255&lt;/td&gt;
+&lt;td&gt;Holder&amp;rsquo;s name displayed in the debit card.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -12797,15 +12846,15 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TX_VALUE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;65000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt;
-         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TX_TAX&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10378&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt;
-         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TX_TAX_RETURN_BASE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;54622&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt;
-         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
          &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;buyer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchantBuyerId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -13679,12 +13728,11 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;h4 id=&#34;considerations-1&#34;&gt;Considerations&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;The parameter &lt;code&gt;transaction.expirationDate&lt;/code&gt; is not mandatory. If you don&amp;rsquo;t send this parameter, its default value is seven (7) days after the current date.&lt;br&gt;If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.&lt;/li&gt;
-&lt;li&gt;For &lt;code&gt;BALOTO&lt;/code&gt; and &lt;code&gt;EFECTY&lt;/code&gt;, the confirmation of the payment takes 15 minutes. For &lt;code&gt;BANK_REFERENCED&lt;/code&gt; and &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red), the confirmation is online.&lt;/li&gt;
-&lt;li&gt;The minimum and maximum values for &lt;code&gt;BALOTO&lt;/code&gt;, &lt;code&gt;EFECTY&lt;/code&gt;, and &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) are:
+&lt;li&gt;For &lt;!--`BALOTO` and --&gt;&lt;code&gt;EFECTY&lt;/code&gt;, the confirmation of the payment takes 15 minutes. For &lt;code&gt;BANK_REFERENCED&lt;/code&gt; and &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red), the confirmation is online.&lt;/li&gt;
+&lt;li&gt;The minimum and maximum values for &lt;!--`BALOTO`, --&gt;&lt;code&gt;EFECTY&lt;/code&gt;, and &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) are:
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;BALOTO&lt;/code&gt; &amp;gt; Min: $3.000 COP - Max: $1.000.000 COP&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;EFECTY&lt;/code&gt; &amp;gt; Min: $20.000 COP - Max: $6.000.000 COP&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) &amp;gt; Min: $1.000 COP - Max: $4.000.000 COP&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red) &amp;gt; Min: $1.000 COP - Max: $4.000.000 COP&lt;!-- - `BALOTO` &gt; Min: $3.000 COP - Max: $1.000.000 COP--&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;The parameter &lt;code&gt;transactionResponse.extraParameters&lt;/code&gt; has the following parameters related to the transaction:
@@ -16064,8 +16112,8 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentMethods&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;35&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BALOTO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;36&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;EFECTY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;enabled&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;reason&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
@@ -16111,8 +16159,8 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;SUCCESS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethods&amp;gt;&lt;/span&gt;
         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethodComplete&amp;gt;&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;35&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
-            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;BALOTO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;36&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;EFECTY&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;country&amp;gt;&lt;/span&gt;CO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/country&amp;gt;&lt;/span&gt;
             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentMethodComplete&amp;gt;&lt;/span&gt;
@@ -17433,7 +17481,7 @@ Two-step flows are only supported for Mastercard and Visa.
 &lt;ul&gt;
 &lt;li&gt;The maximum time to capture an approved transaction is 30 days. After this time, the transaction is auto voided.&lt;/li&gt;
 &lt;li&gt;Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.&lt;/li&gt;
-&lt;li&gt;You can perform partial captures over an authorized amount as long as the partial capture amount does not exceed the authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization) and set &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; for &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;You can perform partial captures over an authorized amount as long as the partial capture amount does not exceed the authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The following are the request and response bodies for this transaction type.&lt;/p&gt;
 &lt;nav&gt;
@@ -23683,26 +23731,29 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 &lt;/div&gt;
-&lt;h4 id=&#34;zero-authorization&#34;&gt;Zero Authorization&lt;/h4&gt;
-&lt;p&gt;Zero Authorization allows you to validate a card without performing any charge or capture operation. Through this option, you can send an &lt;em&gt;Authorization&lt;/em&gt; request as explained before with &lt;code&gt;TX_VALUE&lt;/code&gt; equals to 0 and you will receive the result of the card validation.&lt;/p&gt;
+&lt;!--
+#### Zero Authorization
+Zero Authorization allows you to validate a card without performing any charge or capture operation. Through this option, you can send an _Authorization_ request as explained before with `TX_VALUE` equals to 0 and you will receive the result of the card validation.
+
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
 &lt;ul&gt;
+&lt;li&gt;Make sure your shop can create transactions with &lt;code&gt;TX_VALUE&lt;/code&gt; equals to 0.&lt;/li&gt;
 &lt;li&gt;This feature is not enabled by default, contact your sales representative to request it.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Zero Authorization&lt;/em&gt; is available for VISA cards only. Mastercard and other franchises must send the transaction value greater than or equals to 1 PEN.&lt;/li&gt;
-&lt;li&gt;CVV2 is required in the &lt;em&gt;Zero Authorization&lt;/em&gt; request. Otherwise, the transaction is rejected.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Zero Authorization&lt;/em&gt; is available for VISA and Mastercard cards only. For other franchises, send the transaction value greater than or equals to 1 PEN.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
 
+--&gt;
 &lt;h3 id=&#34;capture&#34;&gt;Capture&lt;/h3&gt;
 &lt;p&gt;Use this method to perform the &lt;strong&gt;Capture&lt;/strong&gt; step of a two-step flow. In this step, you capture the funds previously &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-peru.html#authorization&#34;&gt;Authorized&lt;/a&gt; to transfer them to your PayU account.&lt;/p&gt;
 &lt;h4 id=&#34;considerations-1&#34;&gt;Considerations&lt;/h4&gt;
 &lt;p&gt;Take into account the following considerations for capture.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.additionalValues.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization) and set &lt;code&gt;PARTIAL_CAPTURE&lt;/code&gt; for &lt;code&gt;transaction.type&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter &lt;code&gt;transaction.order.TX_VALUE&lt;/code&gt; with its value (as sent during the Authorization).&lt;/li&gt;
 &lt;li&gt;For partial captures, the minimum value to capture can be 10% lower than the amount authorized.&lt;/li&gt;
 &lt;li&gt;For partial captures, the payment networks release the no captured value at 2-10 days for local cards and 28 days for foreign cards.&lt;/li&gt;
 &lt;/ul&gt;
@@ -25854,7 +25905,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;details&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;java.util.HashMap&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;entry&amp;gt;&lt;/span&gt;
          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;orderId&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
-         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;object&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;java.lang.Integer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;2637540&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/object&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;object&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;java.lang.Long&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;2637540&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/object&amp;gt;&lt;/span&gt;
       &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/entry&amp;gt;&lt;/span&gt;
    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/details&amp;gt;&lt;/span&gt;  
    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;isTest&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/isTest&amp;gt;&lt;/span&gt;
