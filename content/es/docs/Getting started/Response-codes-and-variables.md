@@ -3,7 +3,7 @@ title: "Códigos de respuesta y Variables"
 linkTitle: "Códigos de respuesta y Variables"
 date: 2021-04-06T15:33:35-05:00
 description:
-  En esta sección, encontrarás información relevante usada durante el proceso de integración, como las tablas de variables, lenguajes y monedas permitidas en la plataforma de PayU. 
+  En esta sección, encontrarás data relevante usada durante el proceso de integración, como las tablas de variables, lenguajes y monedas permitidas en la plataforma de PayU. 
 weight: 50
 ---
 <script src="/js/searchcodes.js"></script>
