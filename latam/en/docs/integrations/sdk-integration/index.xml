@@ -4089,12 +4089,10 @@ To confirm the status of a transaction, you can use the &lt;a href=&#34;../../..
 &lt;ul&gt;
 &lt;li&gt;Send a valid cash Payment Method in the request, &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html#Colombia&#34;&gt;see the available Payment Methods for Colombia&lt;/a&gt;. &lt;code&gt;OTHERS_CASH&lt;/code&gt; method is not supported.&lt;/li&gt;
 &lt;li&gt;The parameter &lt;code&gt;EXPIRATION_DATE&lt;/code&gt; is not mandatory. If you don&amp;rsquo;t send this parameter, its default value is seven (7) days after the current date.&lt;br&gt;If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.&lt;/li&gt;
-&lt;li&gt;For &lt;code&gt;BALOTO&lt;/code&gt; and &lt;code&gt;EFECTY&lt;/code&gt;, the confirmation of the payment takes 15 minutes. For &lt;code&gt;BANK_REFERENCED&lt;/code&gt;, the confirmation is online.&lt;/li&gt;
-&lt;li&gt;The minimum and maximum values for &lt;code&gt;BALOTO&lt;/code&gt; and &lt;code&gt;EFECTY&lt;/code&gt; are:
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;BALOTO&lt;/code&gt; &amp;gt; Min: $3.000 COP - Max: $1.000.000 COP&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;EFECTY&lt;/code&gt; &amp;gt; Min: $20.000 COP - Max: $6.000.000 COP&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;For &lt;!--`BALOTO` and --&gt;&lt;code&gt;EFECTY&lt;/code&gt;, the confirmation of the payment takes 15 minutes. For &lt;code&gt;BANK_REFERENCED&lt;/code&gt;, the confirmation is online.&lt;/li&gt;
+&lt;li&gt;The minimum and maximum values for &lt;!--`BALOTO` and --&gt;&lt;code&gt;EFECTY&lt;/code&gt; are Min: $20.000 COP - Max: $6.000.000 COP &lt;!-- are:--&gt;
+ &lt;!-- - `BALOTO` &gt; Min: $3.000 COP - Max: $1.000.000 COP
+ - `EFECTY` &gt; --&gt; 
 &lt;/li&gt;
 &lt;li&gt;The extra parameters have the following data related to the transaction:
 &lt;ul&gt;

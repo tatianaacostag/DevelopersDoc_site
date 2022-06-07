@@ -134,7 +134,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.864218c5667a21b9217bd7360991090349e8d948593690151d8e94d6f917446a74c4774e04d9221d615434c2a0f07226d388ed06e1801e830417aebcd6938a2f.json"
+  data-offline-search-index-json-src="../offline-search-index.638fd619b0852d19356c34fdbffd248952bf90577336469cefa66404487900b46cdcc862a5bb1bd2bcfeb68d9101c984b44e12498300dac4bbc68ce94a45f761.json"
   data-offline-search-base-href="../"
 >
 
@@ -256,32 +256,9 @@
 	<h1>Validation of the OrderId variable</h1>
         
 	
-	<script src="../js/countdown.js"></script>
-<br>
-<div id="MainCounter">
-    <p class="CounterHeader">Your system must be ready in</p>
-    <div class="CounterContent">
-      <div id="DaysDiv">
-        <p id="days"></p>
-        <p style="color:white;text-align:center;">Days</p>
-      </div>
-      <div id="HoursDiv">
-        <p id="hours"></p>
-        <p style="color:white;text-align:center;">Hours</p>
-      </div>
-      <div id="MinutesDiv">
-        <p id="minutes"></p>
-        <p style="color:white;text-align:center;">Minutes</p>
-      </div>
-      <div id="SecondsDiv">
-        <p id="seconds"></p>
-        <p style="color:white;text-align:center;">Seconds</p>
-      </div>
-    </div>  
-</div>
-<h2 id="overview">Overview</h2>
+	<h2 id="overview">Overview</h2>
 <p>Due to the exponential growth of e-commerce and Online Payments, the size of the identifiers we return from our Payment processor has increased.</p>
-<p>Our estimations show that approximately on <em>April 30, 2022</em>, we will overcome the barrier of the 10 digits for the parameter <code>orderId</code>. This makes us change the current data type of the Number parameter <code>orderId</code> to allow more digits in the returning identifiers; thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.</p>
+<p>Our estimations show that we will soon overcome the barrier of the 10 digits for the parameter <code>orderId</code>. This makes us change the current data type of the Number parameter <code>orderId</code> to allow more digits in the returning identifiers; thence, the current numeric data type will no be longer supported and this change may affect your integration with our platform.</p>
 <p>To avoid issues due to this change, you must validate whether the new returned type matches your current integration. Follow the guidelines in this article to check whether your integration requires an update.</p>
 <h3 id="frequently-asked-questions">Frequently Asked Questions</h3>
 <ul>
@@ -301,7 +278,7 @@
 <p><strong>This change only affects the Payment flow?</strong><br>No. This change may also impact your reports or queries related to transactions. Be careful when you perform the validation.</p>
 </li>
 <li>
-<p><strong>What if I don&rsquo;t apply this change?</strong><br>If you don’t apply this change and you oughta do it, you <strong>will not</strong> receive the confirmation of the payment procedure. Furthermore, you <strong>will not</strong> be able to query new transactions since we start to return <code>orderId</code> parameter with more than 10 digits (approximately after <em>April 30, 2022</em>).</p>
+<p><strong>What if I don&rsquo;t apply this change?</strong><br>If you don’t apply this change and you oughta do it, you <strong>will not</strong> receive the confirmation of the payment procedure. Furthermore, you <strong>will not</strong> be able to query new transactions since we start to return <code>orderId</code> parameter with more than 10 digits.</p>
 </li>
 <li>
 <p><strong>Can the PayU Support team make this change for me?</strong><br>No. The way you integrate with our services is up to you. PayU is not responsible for errors due to wrong integrations.</p>
@@ -355,9 +332,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-March 4, 2022:
+June 1, 2022:
 
- <b>Order ID validation for merchants (11b8975d)</b>
+ <b>Changes from PRD environment (bcd5ad17)</b>
 </div>
 </div>
 

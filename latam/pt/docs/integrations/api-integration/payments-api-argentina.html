@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-argentina.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2022-03-02T14:08:28-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2022-05-17T16:20:14-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de pagamentos - Argentina">
 <meta itemprop="description" content="A API de pagamentos da Argentina permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2022-03-02T14:08:28-05:00" />
-<meta itemprop="wordCount" content="5640">
+<meta itemprop="dateModified" content="2022-05-17T16:20:14-05:00" />
+<meta itemprop="wordCount" content="5630">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de pagamentos - Argentina"/>
 <meta name="twitter:description" content="A API de pagamentos da Argentina permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
@@ -141,7 +141,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.864218c5667a21b9217bd7360991090349e8d948593690151d8e94d6f917446a74c4774e04d9221d615434c2a0f07226d388ed06e1801e830417aebcd6938a2f.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.638fd619b0852d19356c34fdbffd248952bf90577336469cefa66404487900b46cdcc862a5bb1bd2bcfeb68d9101c984b44e12498300dac4bbc68ce94a45f761.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -858,7 +858,7 @@
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Observação</h4>
-<p>Para confirmar o status de uma transação, você pode usar one of the following options:</p>
+<p>Para confirmar o status de uma transação, você pode usar:</p>
 <ul>
 <li>Navegue até a URL definida na variável <code>transaction.notifyUrl</code> ou na opção <em><strong>URL de confirmação</strong></em> localizada no Módulo PayU em <em><strong>Configuração</strong></em> &gt; <em><strong>Configuração técnica</strong></em>.</li>
 <li>Use o <a href="../../../../pt/docs/services/queries.html">API ou SDK de Consultas</a>.</li>
@@ -1872,7 +1872,7 @@
 <ul>
 <li>O tempo máximo para capturar uma transação aprovada é de 14 dias. Após este período, a transação é automaticamente cancelada.</li>
 <li>Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.</li>
-<li>Você pode realizar capturas parciais de um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro <code>transaction.order.additionalValues.TX_VALUE</code> com seu valor (conforme enviado durante a Autorização) e definir <code>PARTIAL_CAPTURE</code> para <code>transaction.type</code>.</li>
+<li>Você pode realizar capturas parciais de um montante autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro <code>transaction.order.TX_VALUE</code> com seu valor (conforme enviado durante a Autorização).</li>
 </ul>
 <p>A seguir estão os corpos de pedido e resposta para este tipo de transação.</p>
 <nav>
@@ -3729,9 +3729,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-2 de março de 2022:
+17 de maio de 2022:
 
- <b>Check to display only mandatory fields (56ffd463)</b>
+ <b>Fixes for partial captures (a5f177cb)</b>
 </div>
 </div>
 

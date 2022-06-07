@@ -303,7 +303,7 @@ Ejemplo petición:
    <details class="java.util.HashMap">
       <entry>
          <string>orderId</string>
-         <object class="java.lang.Entero">2637540</object>
+         <object class="java.lang.Long">2637540</object>
       </entry>
    </details>  
    <isTest>false</isTest>
