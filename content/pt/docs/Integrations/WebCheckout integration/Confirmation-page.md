@@ -23,7 +23,6 @@ Na página de confirmação, você deve capturar os dados que deseja armazenar n
 * Se estiver usando HTTPS, você deve ter um certificado válido.
 * O formato da sua página de confirmação deve ser `x-www-form-urlencoded`.
 * Não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` na sua página de confirmação.
-* PayU atua como se a página de confirmação tenha sido informada corretamente ao receber o código HTTP 200. Caso contrário, PayU fará no máximo nove (9) tentativas de enviar a página de confirmação para o seu sistema. Se após essas tentativas o código HTTP 200 não for recebido, o PayU envia um alerta por e-mail.
 * PayU reporta a página de confirmação quando a transação tem um status conclusivo, por exemplo, quando aprovada, rejeitada ou expirada. Se uma transação estiver em andamento (aguardando pagamento ou análise), PayU não reporta nada até que a transação tenha um status conclusivo
  
 ## Variáveis enviadas com a página de confirmação {#variables-sent-with-the-confirmation-page}
