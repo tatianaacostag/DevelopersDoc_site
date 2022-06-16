@@ -36,7 +36,7 @@ Para entender cómo PayU procesa pagos, es importante entender dos conceptos pri
 
 Por ejemplo, un cliente compra un producto utilizando tu página web, el cliente paga utilizando su tarjeta de crédito y el pago es aprobado y aceptado por su banco; luego, la tienda se da cuenta que no tiene suficiente inventario del producto y solicita un reembolso en PayU. PayU aprueba el reembolso y el dinero es regresado al cliente. En este caso, la orden fue la compra del producto y esta orden tiene muchas transacciones como la aceptación del pago, el cobro y el reembolso.
 
-## ¿Cómo empezar a utiliza PayU? {#how-to-start-using-payu}
+## ¿Cómo empezar a utilizar PayU? {#how-to-start-using-payu}
 Cuando quieres integrar tu negocio con los servicios y herramientas de PayU, necesitas realizar los siguientes pasos.
 
 ### 1. Crea una cuenta de PayU. {#1-create-a-payu-account}
