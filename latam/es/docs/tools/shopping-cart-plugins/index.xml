@@ -684,7 +684,7 @@ Un pedido autorizado se puede cancelar utilizando el botón &lt;em&gt;&lt;strong
 &lt;ul&gt;
 &lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
 &lt;li&gt;Tener instalado Magento versión 1.7.x a la 1.9.x.&lt;/li&gt;
-&lt;li&gt;Haber descargado el plugin de Magento de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;http://developers.payulatam.com/plugins/Plugin_PayU_Magento-1.3.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
+&lt;li&gt;Haber descargado el plugin de Magento de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/Plugin_PayU_Magento-1.3.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
 &lt;li&gt;Tener acceso a las carpetas donde se encuentra instalado Magento.&lt;/li&gt;
 &lt;li&gt;Tener acceso al Admin Panel de Magento.&lt;/li&gt;
 &lt;/ul&gt;
@@ -779,7 +779,7 @@ Localiza y expande el método &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em
 &lt;ul&gt;
 &lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
 &lt;li&gt;Tener instalado &lt;a href=&#34;https://www.drupal.org/project/commerce_kickstart&#34;&gt;Drupal Commerce Kickstart 7.xx&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Haber descargado el plugin de Drupal de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;http://developers.payulatam.com/plugins/commerce_payulatam_1.0.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
+&lt;li&gt;Haber descargado el plugin de Drupal de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/commerce_payulatam_1.0.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
 &lt;li&gt;Tener acceso a la carpeta de instalación de Drupal.&lt;/li&gt;
 &lt;li&gt;Tener acceso al backend de Drupal.&lt;/li&gt;
 &lt;/ul&gt;
@@ -848,14 +848,14 @@ Luego, localiza la sección &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/e
 &lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
 &lt;li&gt;Para VirtueMart versión 2 o superior:
 &lt;ul&gt;
-&lt;li&gt;Haber descargado el plugin de VirtueMart de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-joomla-virtuemart2.6.7.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
+&lt;li&gt;Haber descargado el plugin de VirtueMart de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart2.6.7.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
 &lt;li&gt;Tener instalado VirtueMart versión 2 o superior.&lt;/li&gt;
 &lt;li&gt;Tu página web de VirtueMart website debe estar instalada en &lt;a href=&#34;https://joomla.org/&#34;&gt;Joomla!®&lt;/a&gt; 2.5 o superior con MySQL 5.1 o superior.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Para VirtueMart versión 3.0.6:
 &lt;ul&gt;
-&lt;li&gt;Haber descargado el plugin de VirtueMart de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-joomla-virtuemart3.0.6.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
+&lt;li&gt;Haber descargado el plugin de VirtueMart de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart3.0.6.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
 &lt;li&gt;Tener instalado VirtueMart versión 3.0.6.&lt;/li&gt;
 &lt;li&gt;Tu página web de VirtueMart website debe estar instalada en &lt;a href=&#34;https://joomla.org/&#34;&gt;Joomla!®&lt;/a&gt; versions 3.3.6, 2.5.28 o 2.5.27.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1024,7 +1024,7 @@ Luego, localiza la sección &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/e
 &lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
 &lt;li&gt;Tener instalado &lt;a href=&#34;https://wordpress.com/es&#34;&gt;WordPress 3.8&lt;/a&gt; o superior.&lt;/li&gt;
 &lt;li&gt;Tener instalado WooCommerce 2.0 o superior in the WordPress website.&lt;/li&gt;
-&lt;li&gt;Haber descargado el plugin de WooCommerce de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;http://developers.payulatam.com/plugins/woocommerce-payu-latam-2.1.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
+&lt;li&gt;Haber descargado el plugin de WooCommerce de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/woocommerce-payu-latam-2.1.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Instalación&lt;/h2&gt;
 &lt;p&gt;Sigue este procedimiento para instalar el plugin en tu página web.&lt;/p&gt;
@@ -1144,7 +1144,7 @@ Haz clic en el radio de la columna &lt;em&gt;&lt;strong&gt;Predeterminado&lt;/st
 &lt;ul&gt;
 &lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
 &lt;li&gt;Tener instalado &lt;a href=&#34;https://www.oscommerce.com/Products&#34;&gt;osCommerce versión 2.3&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Haber descargado el plugin de osCommerce de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-oscommerce.zip&#34;&gt;aquí&lt;/a&gt; to download it.&lt;/li&gt;
+&lt;li&gt;Haber descargado el plugin de osCommerce de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-oscommerce.zip&#34;&gt;aquí&lt;/a&gt; to download it.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;installation&#34;&gt;Instalación&lt;/h2&gt;
 &lt;p&gt;Sigue este procedimiento para instalar el plugin en tu página web.&lt;/p&gt;
@@ -1293,13 +1293,13 @@ Si no tienes instalado ninguno de los idiomas mencionados, los estados no aparec
 &lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
 &lt;li&gt;Para OpenCart versión 1.5:
 &lt;ul&gt;
-&lt;li&gt;Haber descargado el plugin de OpenCart v1.5 de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-opencart.zip&#34;&gt;aquí&lt;/a&gt; to download it.&lt;/li&gt;
+&lt;li&gt;Haber descargado el plugin de OpenCart v1.5 de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart.zip&#34;&gt;aquí&lt;/a&gt; to download it.&lt;/li&gt;
 &lt;li&gt;Tener instalado OpenCart versión 1.5.5.1 - 1.5.6.X.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Para OpenCart versión 2.0:
 &lt;ul&gt;
-&lt;li&gt;Haber descargado el plugin de OpenCart v2.0 de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-opencart-2.0.zip&#34;&gt;aquí&lt;/a&gt; to download it.&lt;/li&gt;
+&lt;li&gt;Haber descargado el plugin de OpenCart v2.0 de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart-2.0.zip&#34;&gt;aquí&lt;/a&gt; to download it.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
