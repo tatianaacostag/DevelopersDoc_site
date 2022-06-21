@@ -14,7 +14,7 @@ WooCommerce es uin plugin de WordPress que facilita la creación de una tienda e
 * Necesitas una cuenta activa en PayU Latam.
 * Tener instalado [WordPress 3.8](https://wordpress.com/es) o superior.
 * Tener instalado WooCommerce 2.0 o superior in the WordPress website.
-* Haber descargado el plugin de WooCommerce de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](http://developers.payulatam.com/plugins/woocommerce-payu-latam-2.1.zip) para descargarlo.
+* Haber descargado el plugin de WooCommerce de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/woocommerce-payu-latam-2.1.zip) para descargarlo.
 
 ## Instalación {#installation}
 Sigue este procedimiento para instalar el plugin en tu página web.

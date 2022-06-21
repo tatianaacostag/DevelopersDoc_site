@@ -11,11 +11,11 @@ tags: ["subtopic"]
 ## Prerequisites
 * You need an active account in PayU Latam.
 * For VirtueMart version 2 or higher:
-  * Having the PayU's VirtueMart plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-joomla-virtuemart2.6.7.zip) to download it.
+  * Having the PayU's VirtueMart plugin downloaded and stored in an accessible location. Click [here](https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart2.6.7.zip) to download it.
   * Having VirtueMart version 2 or higher installed.
   * Your VirtueMart website must be installed on [Joomla!®](https://joomla.org/) 2.5 or higher with MySQL 5.1 or higher.
 * For VirtueMart version 3.0.6:
-  * Having the PayU's VirtueMart plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-joomla-virtuemart3.0.6.zip) to download it. 
+  * Having the PayU's VirtueMart plugin downloaded and stored in an accessible location. Click [here](https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart3.0.6.zip) to download it. 
   * Having VirtueMart version 3.0.6 installed.
   * Your VirtueMart website must be installed on [Joomla!®](https://joomla.org/) versions 3.3.6, 2.5.28 or 2.5.27.
 

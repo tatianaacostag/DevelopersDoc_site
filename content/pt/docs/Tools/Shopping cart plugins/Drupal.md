@@ -11,7 +11,7 @@ tags: ["subtopic"]
 ## Pré-requisitos {#prerequisites}
 * Você precisa de uma conta ativa no PayU Latam.
 * Ter instalado [Drupal Commerce Kickstart 7.xx](https://www.drupal.org/project/commerce_kickstart).
-* Ter o plugin Drupal do PayU baixado e armazenado em local acessível. Clique [aqui](http://developers.payulatam.com/plugins/commerce_payulatam_1.0.zip) para fazer o download.
+* Ter o plugin Drupal do PayU baixado e armazenado em local acessível. Clique [aqui](https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/commerce_payulatam_1.0.zip) para fazer o download.
 * Ter acesso à pasta de instalação do Drupal.
 * Ter acesso ao backend do Drupal.
 

@@ -11,7 +11,7 @@ tags: ["subtopic"]
 ## Prerrequisitos {#prerequisites}
 * Necesitas una cuenta activa en PayU Latam.
 * Tener instalado Magento versión 1.7.x a la 1.9.x.
-* Haber descargado el plugin de Magento de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](http://developers.payulatam.com/plugins/Plugin_PayU_Magento-1.3.zip) para descargarlo.
+* Haber descargado el plugin de Magento de PayU y tenerlo guardado en una ruta accesible. Haz clic [aquí](https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/Plugin_PayU_Magento-1.3.zip) para descargarlo.
 * Tener acceso a las carpetas donde se encuentra instalado Magento.
 * Tener acceso al Admin Panel de Magento.
 

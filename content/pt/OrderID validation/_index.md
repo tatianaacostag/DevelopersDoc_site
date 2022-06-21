@@ -46,7 +46,7 @@ Se sua loja é integrada por meio da **API** e você usa uma linguagem **tipada*
 ### Integração SDK {#sdk-integration}
 Se você estiver integrando com nossos serviços usando o SDK, altere o arquivo _**.jar**_ da versão atual. 
 
-<a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Faça download do SDK Java 1.4.0</a>
+<a href="https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Faça download do SDK Java 1.4.0</a>
 
 ### Integração WebCheckout {#webcheckout-integration}
 Se sua loja é integrada por meio do **WebCheckout** e você usa uma linguagem **tipada** para sua integração, você deve validar como declarou a variável numérica `orderId`.

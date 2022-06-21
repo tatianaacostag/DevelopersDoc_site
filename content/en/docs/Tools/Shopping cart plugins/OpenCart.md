@@ -16,10 +16,10 @@ The OpenCart plugin is available for version 1.5 and 2.0 and you need to meet th
 
 * You need an active account in PayU Latam.
 * For OpenCart version 1.5:
-  * Having the PayU's OpenCart v1.5 plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-opencart.zip) to download it.
+  * Having the PayU's OpenCart v1.5 plugin downloaded and stored in an accessible location. Click [here](https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart.zip) to download it.
   * Having OpenCart version 1.5.5.1 - 1.5.6.X installed.
 * For OpenCart version 2.0:
-  * Having the PayU's OpenCart v2.0 plugin downloaded and stored in an accessible location. Click [here](http://developers.payulatam.com/plugins/plugin-opencart-2.0.zip) to download it.
+  * Having the PayU's OpenCart v2.0 plugin downloaded and stored in an accessible location. Click [here](https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart-2.0.zip) to download it.
 
 ## Installation and configuration
 The procedure to install OpenCart plugin is the same for version 1.5 or 2.0. The only difference is the look and feel of the versions and this is highlighted during this article.<br>

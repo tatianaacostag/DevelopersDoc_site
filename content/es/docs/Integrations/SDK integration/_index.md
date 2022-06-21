@@ -27,7 +27,7 @@ En general, necesitas las siguientes librerías en tu classpath:
 * [Commons-codec-1.6.jar](https://mvnrepository.com/artifact/commons-codec/commons-codec/1.6)
 * [Commons-lang3-3.5.jar](https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.5)
 
-<a href="http://developers.payulatam.com/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Descargar el SDK Java 1.4.0</a>
+<a href="https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Descargar el SDK Java 1.4.0</a>
 
 Antes de realizar cualquier operación con el SDK, necesitas asignar algunos valores a la clase `PayU`, los cuales aplican a todas las operaciones SDK y deben ser configurados con tu información comercial. La siguiente tabla muestra los valores que necesitas configurar.
 
@@ -77,7 +77,7 @@ Para integrarte con el API, el SDK puede ser ejecutado en máquinas con PHP vers
 * mbstring
 * json
 
-<a href="http://developers.payulatam.com/sdk/php/payu-php-sdk-4.5.7.zip" target="_blank" class="payu-btn-green">Descargar el SDK PHP 4.5.7</a>
+<a href="https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/php/payu-php-sdk-4.5.7.zip" target="_blank" class="payu-btn-green">Descargar el SDK PHP 4.5.7</a>
 
 Para tener acceso al las funcionalidades de SDK, necesitas incluir la clase `PayU` ubicada en _**[PayU-php-sdk-Path]/lib/PayU.php**_. 
 

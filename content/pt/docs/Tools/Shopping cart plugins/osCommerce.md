@@ -13,7 +13,7 @@ O osCommerce é uma plataforma desenvolvida em PHP que facilita a criação de u
 ## Pré-requisitos {#prerequisites}
 * Você precisa de uma conta ativa no PayU Latam.
 * Ter instalado [osCommerce version 2.3](https://www.oscommerce.com/Products).
-* Ter o plugin osCommerce do PayU baixado e armazenado em local acessível. Clique [aqui](http://developers.payulatam.com/plugins/plugin-oscommerce.zip) para fazer o download.
+* Ter o plugin osCommerce do PayU baixado e armazenado em local acessível. Clique [aqui](https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-oscommerce.zip) para fazer o download.
 
 ## Instalação {#installation}
 Siga o próximo procedimento para instalar o plugin em seu site.
