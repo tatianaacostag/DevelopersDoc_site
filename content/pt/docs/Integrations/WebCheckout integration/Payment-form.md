@@ -8,8 +8,8 @@ description: >
 weight: 10
 tags: ["subtopic"]
 ---
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 <script src="/js/signature-generator/md5.js"></script>
 <script src="/js/signature-generator/sha1.js"></script>
 <script src="/js/signature-generator/sha256.js"></script>
