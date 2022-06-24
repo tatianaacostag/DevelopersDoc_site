@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.84.2" />
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Installments and Promotions - Argentina and Mexico | PayU Latam</title><meta property="og:title" content="Installments and Promotions - Argentina and Mexico" />
+<meta property="og:description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/docs/services/promotions.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-03-26T14:02:05-05:00" />
+<meta property="article:modified_time" content="2021-12-21T13:53:00-05:00" /><meta property="og:site_name" content="PayU Latam" />
+
+<meta itemprop="name" content="Installments and Promotions - Argentina and Mexico">
+<meta itemprop="description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico.
+"><meta itemprop="datePublished" content="2021-03-26T14:02:05-05:00" />
+<meta itemprop="dateModified" content="2021-12-21T13:53:00-05:00" />
+<meta itemprop="wordCount" content="276">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Installments and Promotions - Argentina and Mexico"/>
+<meta name="twitter:description" content="Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico.
+"/>
+
+
+
+
+
+<link rel="preload" href="../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" as="style">
+<link href="../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" rel="stylesheet" integrity="">
+
+
+<link href="../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../en/">
+
+
+			<span class="navbar-logo"><img src="../../../assets/PayULatam.png"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+
+
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+
+
+
+
+
+
+				<a class="nav-link active" href="../../../en/docs.html" ><span class="active">Online payments</span></a>
+			</li>
+
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+
+
+
+
+
+
+				<a class="nav-link" href="../../../en/payu-module-documentation.html" ><span>PayU Module guide</span></a>
+			</li>
+
+
+
+			<li class="nav-item dropdown d-none d-lg-block">
+
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+	<a class="dropdown-item" href="../../../es/docs/services/promotions.html">Español</a>
+
+	<a class="dropdown-item" href="../../../pt/docs/services/promotions.html">Português</a>
+
+</div>
+			</li>
+
+		</ul>
+	</div>
+
+
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+
+  <form class="td-sidebar__search d-flex align-items-center">
+
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+
+  data-offline-search-index-json-src="../../../offline-search-index.3de2b7a9edf634733dccfe029c81d7437ca5071835cb198750d19cca8d198739f1d33cd834d616489337331d24261e1e14a804bb7dd9eb2884c84890cc907f33.json"
+  data-offline-search-base-href="../../../"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+
+    <div class="nav-item dropdown d-block d-lg-none">
+
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+	<a class="dropdown-item" href="../../../es/docs/services/promotions.html">Español</a>
+
+	<a class="dropdown-item" href="../../../pt/docs/services/promotions.html">Português</a>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3">
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs.html" href="../../../en/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Home</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocshtml">
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3">
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/getting-started.html" href="../../../en/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting Started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsgetting-startedhtml">
+
+
+
+
+
+
+        <a id="/en/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedcreate-an-accounthtml" href="../../../en/docs/getting-started/create-an-account.html">Create a PayU Account</a>
+
+
+
+
+
+        <a id="/en/docs/getting-started/select-your-integration.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedselect-your-integrationhtml" href="../../../en/docs/getting-started/select-your-integration.html">Select Your Integration</a>
+
+
+
+
+
+        <a id="/en/docs/getting-started/select-your-payment-method.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedselect-your-payment-methodhtml" href="../../../en/docs/getting-started/select-your-payment-method.html">Select Your Payment Method</a>
+
+
+
+
+
+        <a id="/en/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedtest-your-solutionhtml" href="../../../en/docs/getting-started/test-your-solution.html">Test Your Solution</a>
+
+
+
+
+
+        <a id="/en/docs/getting-started/deploy-to-production.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-starteddeploy-to-productionhtml" href="../../../en/docs/getting-started/deploy-to-production.html">Deploy to Production</a>
+
+
+
+
+
+        <a id="/en/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedresponse-codes-and-variableshtml" href="../../../en/docs/getting-started/response-codes-and-variables.html">Response Codes and Variables</a>
+
+
+    </li>
+  </ul>
+   </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3">
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/services.html" href="../../../en/docs/services.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Services</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsserviceshtml">
+
+
+
+
+
+
+        <a id="/en/docs/services/payments.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicespaymentshtml" href="../../../en/docs/services/payments.html">Payments</a>
+
+
+
+
+
+        <a id="/en/docs/services/3ds-authentication.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservices3ds-authenticationhtml" href="../../../en/docs/services/3ds-authentication.html">3DS Authentication</a>
+
+
+
+
+
+        <a id="/en/docs/services/queries.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicesquerieshtml" href="../../../en/docs/services/queries.html">Queries for transactions</a>
+
+
+
+
+
+        <a id="/en/docs/services/promotions.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-endocsservicespromotionshtml" href="../../../en/docs/services/promotions.html">Installments and Promotions - Argentina and Mexico</a>
+
+
+
+
+
+        <a id="/en/docs/services/tokenization.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicestokenizationhtml" href="../../../en/docs/services/tokenization.html">Tokenization</a>
+
+
+
+
+
+        <a id="/en/docs/services/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicesrefundshtml" href="../../../en/docs/services/refunds.html">Void and Refunds</a>
+
+
+
+
+
+        <a id="/en/docs/services/payouts.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicespayoutshtml" href="../../../en/docs/services/payouts.html">Payouts</a>
+
+
+    </li>
+  </ul>
+   </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3">
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/tools.html" href="../../../en/docs/tools.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Tools</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolshtml">
+
+
+
+
+
+
+        <a id="/en/docs/tools/payment-request.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayment-requesthtml" href="../../../en/docs/tools/payment-request.html">Payment Request</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/tools/shopping-cart-plugins.html" href="../../../en/docs/tools/shopping-cart-plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Shopping Cart Plugins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolsshopping-cart-pluginshtml">
+
+
+
+
+
+
+        <a id="/en/docs/tools/shopping-cart-plugins/vtex.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsvtexhtml" href="../../../en/docs/tools/shopping-cart-plugins/vtex.html">VTEX</a>
+
+
+
+
+
+        <a id="/en/docs/tools/shopping-cart-plugins/shopify.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsshopifyhtml" href="../../../en/docs/tools/shopping-cart-plugins/shopify.html">Shopify</a>
+
+
+
+
+
+        <a id="/en/docs/tools/shopping-cart-plugins/magento.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsmagentohtml" href="../../../en/docs/tools/shopping-cart-plugins/magento.html">Magento</a>
+
+
+
+
+
+        <a id="/en/docs/tools/shopping-cart-plugins/drupal.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsdrupalhtml" href="../../../en/docs/tools/shopping-cart-plugins/drupal.html">Drupal</a>
+
+
+
+
+
+        <a id="/en/docs/tools/shopping-cart-plugins/virtuemart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsvirtuemarthtml" href="../../../en/docs/tools/shopping-cart-plugins/virtuemart.html">VirtueMart</a>
+
+
+
+
+
+        <a id="/en/docs/tools/shopping-cart-plugins/woocommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginswoocommercehtml" href="../../../en/docs/tools/shopping-cart-plugins/woocommerce.html">WooCommerce</a>
+
+
+
+
+
+        <a id="/en/docs/tools/shopping-cart-plugins/oscommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsoscommercehtml" href="../../../en/docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
+
+
+
+
+
+        <a id="/en/docs/tools/shopping-cart-plugins/opencart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsopencarthtml" href="../../../en/docs/tools/shopping-cart-plugins/opencart.html">OpenCart</a>
+
+
+    </li>
+  </ul>
+
+
+
+
+
+
+
+        <a id="/en/docs/tools/payu-module.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayu-modulehtml" href="../../../en/docs/tools/payu-module.html">PayU Module</a>
+
+
+
+
+
+        <a id="/en/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolsdisputeshtml" href="../../../en/docs/tools/disputes.html">Disputes</a>
+
+
+
+
+
+        <a id="/en/docs/tools/payment-coupons.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayment-couponshtml" href="../../../en/docs/tools/payment-coupons.html">Payment Coupons</a>
+
+
+
+
+
+        <a id="/en/docs/tools/antifraud-guarantee.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolsantifraud-guaranteehtml" href="../../../en/docs/tools/antifraud-guarantee.html">Anti-fraud Guarantee</a>
+
+
+    </li>
+  </ul>
+   </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3">
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/integrations.html" href="../../../en/docs/integrations.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Integrations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationshtml">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/webcheckout-integration.html" href="../../../en/docs/integrations/webcheckout-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">WebCheckout integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationswebcheckout-integrationhtml">
+
+
+
+
+
+
+        <a id="/en/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../en/docs/integrations/webcheckout-integration/payment-form.html">Payment Form</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/webcheckout-integration/response-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationresponse-pagehtml" href="../../../en/docs/integrations/webcheckout-integration/response-page.html">Response Page</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../en/docs/integrations/webcheckout-integration/confirmation-page.html">Confirmation Page</a>
+
+
+    </li>
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/api-integration.html" href="../../../en/docs/integrations/api-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">API Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationsapi-integrationhtml">
+
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/payments-api-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../en/docs/integrations/api-integration/payments-api-argentina.html">Payments API - Argentina</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/payments-api-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-brazilhtml" href="../../../en/docs/integrations/api-integration/payments-api-brazil.html">Payments API - Brazil</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/payments-api-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-chilehtml" href="../../../en/docs/integrations/api-integration/payments-api-chile.html">Payments API - Chile</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/payments-api-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-colombiahtml" href="../../../en/docs/integrations/api-integration/payments-api-colombia.html">Payments API - Colombia</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/payments-api-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-mexicohtml" href="../../../en/docs/integrations/api-integration/payments-api-mexico.html">Payments API - Mexico</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/payments-api-panama.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-panamahtml" href="../../../en/docs/integrations/api-integration/payments-api-panama.html">Payments API - Panama</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/payments-api-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-peruhtml" href="../../../en/docs/integrations/api-integration/payments-api-peru.html">Payments API - Peru</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/queries-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationqueries-apihtml" href="../../../en/docs/integrations/api-integration/queries-api.html">Queries API</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/tokenization-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationtokenization-apihtml" href="../../../en/docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/promotions-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpromotions-apihtml" href="../../../en/docs/integrations/api-integration/promotions-api.html">Promotions API</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/refunds-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationrefunds-apihtml" href="../../../en/docs/integrations/api-integration/refunds-api.html">Voids and Refunds API</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/api-integration/payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayouts-apihtml" href="../../../en/docs/integrations/api-integration/payouts-api.html">Payouts API</a>
+
+
+    </li>
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/sdk-integration.html" href="../../../en/docs/integrations/sdk-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">SDK Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationssdk-integrationhtml">
+
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../en/docs/integrations/sdk-integration/payments-sdk-argentina.html">Payments SDK - Argentina</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-brazilhtml" href="../../../en/docs/integrations/sdk-integration/payments-sdk-brazil.html">Payments SDK - Brazil</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-chilehtml" href="../../../en/docs/integrations/sdk-integration/payments-sdk-chile.html">Payments SDK - Chile</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-colombiahtml" href="../../../en/docs/integrations/sdk-integration/payments-sdk-colombia.html">Payments SDK - Colombia</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-mexicohtml" href="../../../en/docs/integrations/sdk-integration/payments-sdk-mexico.html">Payments SDK - Mexico</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-peruhtml" href="../../../en/docs/integrations/sdk-integration/payments-sdk-peru.html">Payments SDK - Peru</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/queriessdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationqueriessdkhtml" href="../../../en/docs/integrations/sdk-integration/queriessdk.html">Queries SDK</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/tokenizationsdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationtokenizationsdkhtml" href="../../../en/docs/integrations/sdk-integration/tokenizationsdk.html">Tokenization SDK</a>
+
+
+
+
+
+        <a id="/en/docs/integrations/sdk-integration/refundssdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationrefundssdkhtml" href="../../../en/docs/integrations/sdk-integration/refundssdk.html">Voids and Refunds SDK</a>
+
+
+    </li>
+  </ul>
+
+
+
+
+    </li>
+  </ul>
+   </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3">
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/server-status.html" href="../../../en/docs/server-status.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Server Status</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsserver-statushtml">
+
+
+
+    </li>
+  </ul>
+   </ul>
+
+
+
+    </li>
+  </ul>
+   </ul>
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+
+
+
+
+
+
+
+
+
+
+<p>On this page</p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-are-installments-and-promotions">What are Installments and Promotions</a></li>
+    <li><a href="#how-does-installments-and-promotions-works-in-payu">How does Installments and Promotions works in PayU</a></li>
+    <li><a href="#months-without-interests-msi---meses-sin-intereses">Months Without Interests (MSI - Meses sin intereses)</a></li>
+    <li><a href="#whats-next">What&rsquo;s next?</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+
+
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/docs.html">Home</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/docs/services.html">Services</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../en/docs/services/promotions.html">Installments and Promotions - Argentina and Mexico</a>
+</li>
+
+	</ol>
+</nav	>
+
+
+<div class="td-content">
+	<h1>Installments and Promotions - Argentina and Mexico</h1>
+    <div class="lead">Promotions feature lets you consult the valid promotions, along with their associate costs, characteristics, and further relevant information available for your customers. Promotions API applies only to Argentina and Mexico.</div>
+
+	<h2 id="what-are-installments-and-promotions">What are Installments and Promotions</h2>
+<p>With Installments and Promotions, you can offer to your customer the possibility to buy your products paying in a determined number of installments with a reduced interest rate. Regardless of the number of installments selected by your customer, you will receive the full amount of the purchase minus the commission free agreed with PayU.</p>
+<p>To perform the configuration of Installments and Promotions based on the agreements you have with bank entities, contact your sales representative.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+For Mexico, you can use <a href="../../../en/docs/services/promotions.html#months-without-interests-msi---meses-sin-intereses">Months Without Interests (MSI - Meses sin intereses)</a>
+</div>
+
+<h2 id="how-does-installments-and-promotions-works-in-payu">How does Installments and Promotions works in PayU</h2>
+<p>To use promotions, you need to first consult the available promotions for your shop; then, select the promotion that fits to your needs and finally, send the payment request along with the promotion Id selected and the number of installments.</p>
+<p>The following sequence of events explains better the promotions flow.</p>
+<p><img src="../../../assets/Promotions/PromotionsFlow.png" alt="Promotions Flow"></p>
+<h2 id="months-without-interests-msi---meses-sin-intereses">Months Without Interests (MSI - Meses sin intereses)</h2>
+<p>Months Without Interests (known in Mexico as <em>Meses sin intereses</em>) lets you offer to your customers the possibility to pay in a defined number of interest-free installments (3, 6, 9, 12, or 18). Unlike the promotions model, when using MSI you don&rsquo;t need to query the promotion id.</p>
+<p>To request the usage of MSI, contact your sales representative.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+<p>The minimum values for MSI depends on the number of installments selected:</p>
+<ul>
+<li>3 &gt; $300 MXN</li>
+<li>6 &gt; $600 MXN</li>
+<li>9 &gt; $900 MXN</li>
+<li>12 &gt; $1200 MXN</li>
+<li>18 &gt; $1800 MXN</li>
+</ul>
+
+</div>
+
+<h2 id="whats-next">What&rsquo;s next?</h2>
+<p>The integration with this feature can be performed using the <a href="../../../en/docs/integrations/api-integration/promotions-api.html">Promotions API</a>. To learn how to integrate with MSI, refer to this <a href="../../../en/docs/integrations/api-integration/promotions-api.html#msi">section</a>.</p>
+
+
+
+	<div class="text-muted mt-5 pt-3 border-top">
+Last modified
+
+December 21, 2021:
+
+ <b>Table of content reorganized (8aeab63e)</b>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.8c865aba183c7b45657c96d592a977547887a44cf70782e8996d3c3687a50bc5.js" integrity="sha256-jIZauhg8e0VlfJbVkql3VHiHpEz3B4LomW08NoelC8U=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>
