@@ -323,7 +323,11 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/webcheckout-integration/payment-form.html</loc>
+<<<<<<< HEAD
+    <lastmod>2022-06-24T07:53:58-05:00</lastmod>
+=======
     <lastmod>2022-03-02T16:57:06-05:00</lastmod>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -783,7 +787,11 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/webcheckout-integration/response-page.html</loc>
+<<<<<<< HEAD
+    <lastmod>2022-06-24T07:53:58-05:00</lastmod>
+=======
     <lastmod>2021-11-23T08:09:54-05:00</lastmod>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1143,7 +1151,11 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/webcheckout-integration/confirmation-page.html</loc>
+<<<<<<< HEAD
+    <lastmod>2022-06-24T07:53:58-05:00</lastmod>
+=======
     <lastmod>2022-06-07T15:28:04-05:00</lastmod>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link

@@ -5,26 +5,26 @@
     <description>Recent content in WebCheckout integration on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 29 Mar 2021 11:52:52 -0500</lastBuildDate>
-    
+
 	  <atom:link href="/en/docs/integrations/webcheckout-integration/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-      
-        
-      
-    
-    
+
+
+
+
+
+
+
     <item>
       <title>Docs: Payment Form</title>
       <link>/en/docs/integrations/webcheckout-integration/payment-form.html</link>
       <pubDate>Mon, 29 Mar 2021 12:15:27 -0500</pubDate>
-      
+
       <guid>/en/docs/integrations/webcheckout-integration/payment-form.html</guid>
       <description>
-        
-        
-        &lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
+
+
+        &lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/md5.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha1.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha256.js&#34;&gt;&lt;/script&gt;
@@ -562,18 +562,18 @@ buyerEmail: test@test.com
 
       </description>
     </item>
-    
+
     <item>
       <title>Docs: Response Page</title>
       <link>/en/docs/integrations/webcheckout-integration/response-page.html</link>
       <pubDate>Mon, 29 Mar 2021 12:15:39 -0500</pubDate>
-      
+
       <guid>/en/docs/integrations/webcheckout-integration/response-page.html</guid>
       <description>
-        
-        
-        &lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
+
+
+        &lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/md5.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha1.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha256.js&#34;&gt;&lt;/script&gt;
@@ -1080,8 +1080,8 @@ MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU04~150.2~USD~6) = 00286dc735bd9eaa
 
 signature = 00286dc735bd9eaa8ae3a3a4cbb40688
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;First decimal is an odd number and the second is 5&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
-Parameters get from the response page: 
+&lt;pre&gt;&lt;code&gt;Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA
+Parameters get from the response page:
 - merchantId = 508029
 - referenceCode = TestPayU04
 - TX_VALUE = 150.35
@@ -1091,10 +1091,10 @@ Parameters get from the response page:
 The signature is generated as follows:
 MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU04~150.4~USD~6) = 9df2bb60e2838170009040982967923f
 
-signature = 9df2bb60e2838170009040982967923f 
+signature = 9df2bb60e2838170009040982967923f
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Other cases&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
-Parameters get from the response page: 
+&lt;pre&gt;&lt;code&gt;Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA
+Parameters get from the response page:
 - merchantId = 508029
 - referenceCode = TestPayU04
 - TX_VALUE = 150.34
@@ -1104,7 +1104,7 @@ Parameters get from the response page:
 The signature is generated as follows:
 MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU04~150.3~USD~6) = 779f163be9347a691bcdb25064644795
 
-signature = 779f163be9347a691bcdb25064644795 
+signature = 779f163be9347a691bcdb25064644795
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;compare-your-signature&#34;&gt;Compare your signature&lt;/h3&gt;
 &lt;!-- Signatue generator - response page --&gt;
 &lt;div id=&#34;blue-box&#34;&gt;
@@ -1161,18 +1161,18 @@ signature = 779f163be9347a691bcdb25064644795
 
       </description>
     </item>
-    
+
     <item>
       <title>Docs: Confirmation Page</title>
       <link>/en/docs/integrations/webcheckout-integration/confirmation-page.html</link>
       <pubDate>Mon, 29 Mar 2021 12:15:57 -0500</pubDate>
-      
+
       <guid>/en/docs/integrations/webcheckout-integration/confirmation-page.html</guid>
       <description>
-        
-        
-        &lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
+
+
+        &lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/md5.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha1.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha256.js&#34;&gt;&lt;/script&gt;
@@ -1627,7 +1627,7 @@ pse_reference2=
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;p&gt;Example&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;With one decimal&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
+&lt;pre&gt;&lt;code&gt;Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA
 Parameters obtained from the confirmation page
 - merchant_id = 508029
 - reference_sale = TestPayU04
@@ -1635,12 +1635,12 @@ Parameters obtained from the confirmation page
 - currency = USD
 - state_pol = 6
 
-The signature is generated in the following way: 
+The signature is generated in the following way:
 MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU04~150.0~USD~6) = b607a2c2fa100e0947b206d41864fb86
 
 sign = b607a2c2fa100e0947b206d41864fb86
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;With two decimals&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
+&lt;pre&gt;&lt;code&gt;Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA
 Parameters obtained from the confirmation page:
 - merchant_id = 508029
 - reference_sale = TestPayU05
@@ -1648,10 +1648,10 @@ Parameters obtained from the confirmation page:
 - currency = USD
 - state_pol = 4
 
-The signature is generated in the following way: 
+The signature is generated in the following way:
 MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU05~150.26~USD~4) = 1d95778a651e11a0ab93c2169a519cd6
 
-sign = 1d95778a651e11a0ab93c2169a519cd6 
+sign = 1d95778a651e11a0ab93c2169a519cd6
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;compare-your-signature&#34;&gt;Compare your signature&lt;/h3&gt;
 &lt;!-- Signature generator - confirmation page --&gt;
 &lt;div id=&#34;blue-box&#34;&gt;
@@ -1720,6 +1720,6 @@ state_pol=4
 
       </description>
     </item>
-    
+
   </channel>
 </rss>

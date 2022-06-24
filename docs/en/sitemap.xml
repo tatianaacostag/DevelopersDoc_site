@@ -262,11 +262,14 @@
                 href="/en/docs/tools/payment-request.html"
                 />
   </url><url>
+<<<<<<< HEAD
+=======
     <loc>/en/docs/ejemplo-tati/articulohijoejemplotati.html</loc>
     <lastmod>2021-04-06T11:40:29-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <loc>/en/docs/getting-started/create-an-account.html</loc>
     <lastmod>2021-10-05T07:58:49-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -328,7 +331,11 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/webcheckout-integration/payment-form.html</loc>
+<<<<<<< HEAD
+    <lastmod>2022-06-24T07:53:58-05:00</lastmod>
+=======
     <lastmod>2022-03-02T16:57:06-05:00</lastmod>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -767,11 +774,14 @@
                 href="/en/docs/getting-started/select-your-integration.html"
                 />
   </url><url>
+<<<<<<< HEAD
+=======
     <loc>/en/docs/ejemplo-tati/articulohijoejemplotati-copy.html</loc>
     <lastmod>2021-04-06T11:40:29-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <loc>/en/docs/services.html</loc>
     <lastmod>2021-04-12T15:26:58-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -793,7 +803,11 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/webcheckout-integration/response-page.html</loc>
+<<<<<<< HEAD
+    <lastmod>2022-06-24T07:53:58-05:00</lastmod>
+=======
     <lastmod>2021-10-27T17:42:39-05:00</lastmod>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1153,7 +1167,11 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/webcheckout-integration/confirmation-page.html</loc>
+<<<<<<< HEAD
+    <lastmod>2022-06-24T07:53:58-05:00</lastmod>
+=======
     <lastmod>2022-06-07T15:28:04-05:00</lastmod>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1632,11 +1650,14 @@
                 href="/en/docs/services/refunds.html"
                 />
   </url><url>
+<<<<<<< HEAD
+=======
     <loc>/en/docs/ejemplo-tati.html</loc>
     <lastmod>2022-06-16T08:28:16-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+>>>>>>> dbbadf29220fbfdcff0d82aaa3f9e0743a6a0f29
     <loc>/en/docs/integrations/api-integration/payouts-api.html</loc>
     <lastmod>2022-03-02T16:57:06-05:00</lastmod>
     <changefreq>monthly</changefreq>
