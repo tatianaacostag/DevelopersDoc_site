@@ -23687,6 +23687,33 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 
 
 &lt;/div&gt;
+&lt;!--
+#### Zero Authorization
+Zero Authorization allows you to validate a card without performing any charge or capture operation. Through this option, you can send an _Authorization_ request as explained before with `TX_VALUE` equals to 0 and you will receive the result of the card validation.
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure your shop can create transactions with &lt;code&gt;TX_VALUE&lt;/code&gt; equals to 0.&lt;/li&gt;
+&lt;li&gt;This feature is not enabled by default, contact your sales representative to request it.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Zero Authorization&lt;/em&gt; is available for VISA and Mastercard cards only. For other franchises, send the transaction value greater than or equals to 1 PEN.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+##### Beneficios {#benefits}
+Utilizando _Zero Authorization_, tienes los siguientes beneficios:
+
+* Free trial periods
+* Increase trust and loyalty
+* Increase your subscriber base
+* Update credit card information
+* Add several cards to an account
+* Lower refunds
+--&gt;
 &lt;h3 id=&#34;capture&#34;&gt;Captura&lt;/h3&gt;
 &lt;p&gt;Utiliza este método para realizar el paso de &lt;strong&gt;Captura&lt;/strong&gt; del flujo de dos pasos. En este paso, capturas los fondos previamente &lt;a href=&#34;../../../../es/docs/integrations/api-integration/payments-api-peru.html#authorization&#34;&gt;Autorizados&lt;/a&gt; para transferirlos a tu cuenta PayU.&lt;/p&gt;
 &lt;h4 id=&#34;considerations-1&#34;&gt;Consideraciones&lt;/h4&gt;
@@ -26188,7 +26215,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;query-by-transaction-id&#34;&gt;Consultar por Identificador de la transacción&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Transaction Id&lt;/em&gt; es un valor generado por PayU para identificar una transaccion generada para una orden. 
+&lt;p&gt;&lt;em&gt;Transaction Id&lt;/em&gt; es un valor generado por PayU para identificar una transaccion generada para una orden.
 Puedes utilizar el comando &lt;code&gt;TRANSACTION_RESPONSE_DETAIL&lt;/code&gt; para consultar la información de una transacción.&lt;/p&gt;
 &lt;p&gt;Los siguientes son los cuerpos de la petición y la respuesta para esta operación.&lt;/p&gt;
 &lt;p&gt;&lt;nav&gt;
@@ -26331,7 +26358,7 @@ Puedes utilizar el comando &lt;code&gt;TRANSACTION_RESPONSE_DETAIL&lt;/code&gt; 
 &lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;query-by-reference-id&#34;&gt;Consultar por Identificador de la referencia&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Reference Id&lt;/em&gt; es un valor generado por tu comercio para identificar una orden. 
+&lt;p&gt;&lt;em&gt;Reference Id&lt;/em&gt; es un valor generado por tu comercio para identificar una orden.
 Puedes utilizar el comando &lt;code&gt;ORDER_DETAIL_BY_REFERENCE_CODE&lt;/code&gt; para consultar el estado de una order por tu propio identificador (Referencia).
 Los siguientes son los cuerpos de la petición y la respuesta para este método.&lt;/p&gt;
 &lt;p&gt;&lt;nav&gt;
