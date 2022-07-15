@@ -90,13 +90,11 @@ En México, soportamos tanto Meses sin Intereses y Promociones, consulte este [a
 | ![Logo](/assets/PaymentMethods/bbva.png) | BBVA Bancomer | BANK_REFERENCED | Referencia Bancaria | |
 | ![Logo](/assets/PaymentMethods/farmaciabenavides.png) | Farmacias Benavides | OTHERS_CASH_MX | Efectivo | |
 | ![Logo](/assets/PaymentMethods/farmaciasahorro.png) | Farmacias del Ahorro | OTHERS_CASH_MX | Efectivo | |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Tarjetas Débito| |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito / Tarjetas Débito | |
 | ![Logo](/assets/PaymentMethods/oxxo.png) | Oxxo | OXXO | Efectivo | |
 | ![Logo](/assets/PaymentMethods/7eleven.png) | Seven Eleven | SEVEN_ELEVEN | Efectivo | |
 | ![Logo](/assets/PaymentMethods/spei.png) | SPEI | SPEI | Transferencia Bancaria | |
-| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
-| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas Débito| |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito / Tarjetas Débito | |
 
 ## <img src="/assets/Panama.png" width="25px"/> Panamá {#Panama}
 <div class="paymentMethods"></div>
