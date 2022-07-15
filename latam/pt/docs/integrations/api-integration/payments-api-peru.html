@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-peru.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2022-06-29T11:02:55-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="API de pagamentos - Peru">
 <meta itemprop="description" content="A API de pagamentos do Peru permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="5466">
+<meta itemprop="dateModified" content="2022-06-29T11:02:55-05:00" />
+<meta itemprop="wordCount" content="5557">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="API de pagamentos - Peru"/>
 <meta name="twitter:description" content="A API de pagamentos do Peru permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
@@ -141,7 +141,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.505f4f255cb97c1d04617911adb7b2ff464215940292dfc7f84ac17c6bfacaeeaf655d76fb978786e995f4b0cd244f1782a1def4ae7a030cb48a0e8505cb068b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.a6506fd217d73fe794557c33064d273776ad1136e65c9b493f376420af25e95bd70cf7f9ec58277d14a83b83c79ab9cb6e279b06ffb83d3d16289853e8051136.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1863,6 +1863,33 @@
 
 
 </div>
+<!--
+#### Zero Authorization
+Zero Authorization allows you to validate a card without performing any charge or capture operation. Through this option, you can send an _Authorization_ request as explained before with `TX_VALUE` equals to 0 and you will receive the result of the card validation.
+
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Important</h4>
+<ul>
+<li>Make sure your shop can create transactions with <code>TX_VALUE</code> equals to 0.</li>
+<li>This feature is not enabled by default, contact your sales representative to request it.</li>
+<li><em>Zero Authorization</em> is available for VISA and Mastercard cards only. For other franchises, send the transaction value greater than or equals to 1 PEN.</li>
+</ul>
+
+</div>
+
+
+##### Beneficios {#benefits}
+Utilizando _Zero Authorization_, tienes los siguientes beneficios:
+
+* Free trial periods
+* Increase trust and loyalty
+* Increase your subscriber base
+* Update credit card information
+* Add several cards to an account
+* Lower refunds
+-->
 <h3 id="capture">Captura</h3>
 <p>Use este método para executar a etapa <strong>Captura</strong> de um fluxo de duas etapas. Nesta etapa, você captura os fundos <a href="#authorization">Autorizados</a> anteriormente para transferi-los para sua conta PayU.</p>
 <h4 id="considerations-1">Observações</h4>
@@ -3670,9 +3697,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-24 de junho de 2022:
+29 de junho de 2022:
 
- <b>clon issue (d73e43fe)</b>
+ <b>Include Zero Authorization feature (5e2217f2)</b>
 </div>
 </div>
 

@@ -415,8 +415,17 @@ Zero Authorization allows you to validate a card without performing any charge o
 * This feature is not enabled by default, contact your sales representative to request it.
 * _Zero Authorization_ is available for VISA and Mastercard cards only. For other franchises, send the transaction value greater than or equals to 1 PEN.
 {{% /alert %}}
--->
 
+##### Benefits
+Using _Zero Authorization_, you can have the following benefits:
+
+* Free trial periods
+* Increase trust and loyalty
+* Increase your subscriber base
+* Update credit card information
+* Add several cards to an account
+* Lower refunds
+-->
 ### Capture
 Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-peru.md#authorization" >}}) to transfer them to your PayU account.
 
