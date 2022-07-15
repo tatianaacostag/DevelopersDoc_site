@@ -90,13 +90,11 @@ For Mexico, we support both MSI, and Installments and Promotions, refer to this 
 | ![Logo](/assets/PaymentMethods/bbva.png)         | BBVA Bancomer        | BANK_REFERENCED         | Bank Reference |          |
 | ![Logo](/assets/PaymentMethods/farmaciabenavides.png) | Farmacias Benavides  | OTHERS_CASH_MX     | Cash           |          |
 | ![Logo](/assets/PaymentMethods/farmaciasahorro.png) | Farmacias del Ahorro | OTHERS_CASH_MX       | Cash           |          |
-| ![Logo](/assets/PaymentMethods/master.png)       | Mastercard           | MASTERCARD              | Credit Cards   |          |
-| ![Logo](/assets/PaymentMethods/master.png)       | Mastercard           | MASTERCARD_DEBIT        | Debit Cards    |          |
+| ![Logo](/assets/PaymentMethods/master.png)       | Mastercard           | MASTERCARD              | Credit Cards / Debit Cards   |          |
 | ![Logo](/assets/PaymentMethods/oxxo.png)         | Oxxo                 | OXXO                    | Cash           |          |
 | ![Logo](/assets/PaymentMethods/7eleven.png)      | Seven Eleven         | SEVEN_ELEVEN            | Cash           |          |
 | ![Logo](/assets/PaymentMethods/spei.png)         | SPEI                 | SPEI                    | Bank Transfer  |          |
-| ![Logo](/assets/PaymentMethods/visa.png)         | VISA                 | VISA                    | Credit Cards   |          |
-| ![Logo](/assets/PaymentMethods/visa.png)         | VISA                 | VISA_DEBIT              | Debit Cards    |          |
+| ![Logo](/assets/PaymentMethods/visa.png)         | VISA                 | VISA                    | Credit Cards / Debit Cards   |          |
 
 ## <img src="/assets/Panama.png" width="25px"/> Panama {#Panama}
 <div class="paymentMethods"></div>
