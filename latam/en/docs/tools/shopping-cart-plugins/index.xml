@@ -64,7 +64,7 @@ data-postman-var-1=&#34;400731dd3ca5aa713cd3&#34;&gt;&lt;/div&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;After you run the collection, you need to set the globals. Download the globals file &lt;a href=&#34;../../../../static/assets/globals/VTEX%20Hub.postman_globals.json&#34; download&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After you run the collection, you need to set the globals. Download the globals file &lt;a href=&#34;../../../../assets/globals/VTEX Hub.postman_globals.json&#34; download&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;In the Postman collection, click &lt;em&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/em&gt; next to your workspace name and locate the json file recently downloaded.&lt;/p&gt;
