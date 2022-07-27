@@ -23,8 +23,8 @@
       <description>
         
         
-        &lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
+        &lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/md5.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha1.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha256.js&#34;&gt;&lt;/script&gt;
@@ -573,8 +573,8 @@ buyerEmail: test@test.com
       <description>
         
         
-        &lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
+        &lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/md5.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha1.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha256.js&#34;&gt;&lt;/script&gt;
@@ -1172,8 +1172,8 @@ signature = 779f163be9347a691bcdb25064644795
       <description>
         
         
-        &lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
+        &lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/md5.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha1.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../../../js/signature-generator/sha256.js&#34;&gt;&lt;/script&gt;

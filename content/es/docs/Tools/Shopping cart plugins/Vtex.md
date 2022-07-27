@@ -37,7 +37,7 @@ Sigue estos pasos para configurar tu cuenta utilizando Postman.
 {{< postman/postman_vtex >}}
 <br>
 
-2. Luego de ejecutar la colección, necesitas configurar los globales. Descarga el archivo de globales <a href="/static/assets/globals/VTEX%20Hub.postman_globals.json" download>aquí</a>.
+2. Luego de ejecutar la colección, necesitas configurar los globales. Descarga el archivo de globales <a href="/assets/globals/VTEX Hub.postman_globals.json" download>aquí</a>.
 
 3. En la colección de Postman, haz clic en _**Import**_ junto al nombre de tu workspace y localiza el archivo json descargado previamente.
 

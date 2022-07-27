@@ -88,13 +88,11 @@ Para o México, oferecemos suporte tanto para MSI quanto para parcelas e promoç
 | ![Logo](/assets/PaymentMethods/bbva.png) | BBVA Bancomer| BANK_REFERENCED | Referência bancária |  |
 | ![Logo](/assets/PaymentMethods/farmaciabenavides.png) | Farmacias Benavides | OTHERS_CASH_MX | Dinheiro |  |
 | ![Logo](/assets/PaymentMethods/farmaciasahorro.png) | Farmacias del Ahorro | OTHERS_CASH_MX | Dinheiro |  |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Cartões de crédito |  |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Cartões de débito|  |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Cartões de crédito / Cartões de débito |  |
 | ![Logo](/assets/PaymentMethods/oxxo.png) | Oxxo | OXXO | Dinheiro |  |
 | ![Logo](/assets/PaymentMethods/7eleven.png)| Seven Eleven | SEVEN_ELEVEN| Dinheiro |  |
 | ![Logo](/assets/PaymentMethods/spei.png) | SPEI | SPEI | Transferência bancária|  |
-| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Cartões de crédito |  |
-| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Cartões de débito|  |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Cartões de crédito / Cartões de débito |  |
 
 ## <img src="/assets/Panama.png" width="25px"/> Panamá {#Panama}
 <div class="paymentMethods"></div>

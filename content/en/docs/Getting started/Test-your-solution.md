@@ -203,7 +203,7 @@ When testing Payments, you must send in the request:
 ## Importing the Collection
 Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you). Note that we create a new environment each time you import the collection.
 
-{{< postman/postman_flow_collection >}}
+{{< postman/postman_flow_collection >}} <!-- Buscar en la carpeta layouts/shortcodes -->
 <br>
 
 After you run the collection, you need to set the environment variables and the globals.
