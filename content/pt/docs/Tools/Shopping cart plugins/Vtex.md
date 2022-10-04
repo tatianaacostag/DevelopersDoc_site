@@ -242,8 +242,6 @@ Clique [aqui](#configure-co-branded-or-private-labels-cards) se quiser saber com
 * **Processar com a afiliação**: selecione a afiliação do gateway configurada anteriormente.
 * **À vista ou parcelado?**: selecione _**À vista**_<sup>\*</sup>.
 
-<sup>\*</sup>_O processamento de parcelas não é suportado_.
-
 ![PrintScreen](/assets/VTEX/VTEX_14_pt.png)
 
 4. Clique em _**Salvar**_. Quando você cria a condição de pagamento, ela é listada na guia _**Condições de pagamento**_.

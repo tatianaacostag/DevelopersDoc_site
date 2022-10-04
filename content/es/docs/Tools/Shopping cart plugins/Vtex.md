@@ -242,8 +242,6 @@ Haz clic [aquí](#configure-co-branded-or-private-labels-cards) si quieres saber
 * **Procesar con afiliación**: select the gateway affiliation configured before.
 * **Pago al contado o en cuotas?**: selecciona _**Al contado**_<sup>\*</sup>.
 
-<sup>\*</sup>_El procesamiento en cuotas no está soportado_.
-
 ![PrintScreen](/assets/VTEX/VTEX_14_es.png)
 
 4. Haz clic en _**Guardar**_. Cuando hayas creado la condición de pago, esta se lista en la pestaña _**Condiciones de pago**_.

@@ -242,8 +242,6 @@ Click [here](#configure-co-branded-or-private-labels-cards) if you want to know 
 * **Process with affiliation**: select the gateway affiliation configured before.
 * **Prepaid in full or in installments?**: select _**Prepaid in full**_<sup>\*</sup>.
 
-<sup>\*</sup>_Processing in installments is not yet supported_.
-
 ![PrintScreen](/assets/VTEX/VTEX_14.png)
 
 4. Click _**Save**_. When the payment condition has been created, it is listed in the _**Payment conditions**_ tab.
