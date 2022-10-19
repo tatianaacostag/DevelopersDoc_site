@@ -27,7 +27,7 @@ En general, necesitas las siguientes librerías en tu classpath:
 * [Commons-codec-1.6.jar](https://mvnrepository.com/artifact/commons-codec/commons-codec/1.6)
 * [Commons-lang3-3.5.jar](https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.5)
 
-<a href="https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/java/payu-java-sdk-1.4.0.zip" target="_blank" class="payu-btn-green">Descargar el SDK Java 1.4.0</a>
+<a href="https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/java/payu-java-sdk-1.5.0.zip" target="_blank" class="payu-btn-green">Descargar el SDK Java 1.5.0</a>
 
 Antes de realizar cualquier operación con el SDK, necesitas asignar algunos valores a la clase `PayU`, los cuales aplican a todas las operaciones SDK y deben ser configurados con tu información comercial. La siguiente tabla muestra los valores que necesitas configurar.
 

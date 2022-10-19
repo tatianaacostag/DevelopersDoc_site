@@ -401,7 +401,6 @@ Click &lt;a href=&#34;#configure-co-branded-or-private-labels-cards&#34;&gt;here
 &lt;li&gt;&lt;strong&gt;Process with affiliation&lt;/strong&gt;: select the gateway affiliation configured before.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Prepaid in full or in installments?&lt;/strong&gt;: select &lt;em&gt;&lt;strong&gt;Prepaid in full&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Processing in installments is not yet supported&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_14.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt;. When the payment condition has been created, it is listed in the &lt;em&gt;&lt;strong&gt;Payment conditions&lt;/strong&gt;&lt;/em&gt; tab.&lt;/li&gt;

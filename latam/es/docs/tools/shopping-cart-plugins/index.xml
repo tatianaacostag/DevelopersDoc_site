@@ -401,7 +401,6 @@ Haz clic &lt;a href=&#34;#configure-co-branded-or-private-labels-cards&#34;&gt;a
 &lt;li&gt;&lt;strong&gt;Procesar con afiliación&lt;/strong&gt;: select the gateway affiliation configured before.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Pago al contado o en cuotas?&lt;/strong&gt;: selecciona &lt;em&gt;&lt;strong&gt;Al contado&lt;/strong&gt;&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;El procesamiento en cuotas no está soportado&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_14_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Haz clic en &lt;em&gt;&lt;strong&gt;Guardar&lt;/strong&gt;&lt;/em&gt;. Cuando hayas creado la condición de pago, esta se lista en la pestaña &lt;em&gt;&lt;strong&gt;Condiciones de pago&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
