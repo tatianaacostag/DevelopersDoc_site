@@ -149,7 +149,7 @@ You can use the following cards for testing:
 | Card                       | Number                               |
 |----------------------------|--------------------------------------|
 | **AMEX Credit Card**       | 376675000000005                      |
-| **MASTERCARD Credit Card** | 5579070000000003                     |
+| **MASTERCARD Credit Card** | 5491380000000001                    |
 | **MASTERCARD Debit Card**  | 5256780000000007                     |
 | **VISA Credit Card**       | 4268070000000002                     |
 | **VISA Debit Card**        | 4415490000000004                     |

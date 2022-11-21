@@ -149,7 +149,7 @@ Você pode usar os seguintes cartões para teste:
 | Cartão                           | Número                               |
 |----------------------------------|--------------------------------------|
 | **Cartão de Crédito AMEX**       | 376675000000005                      |
-| **Cartão de Crédito MASTERCARD** | 5579070000000003                     |
+| **Cartão de Crédito MASTERCARD** | 5491380000000001                     |
 | **Cartão de Débito MASTERCARD**  | 5256780000000007                     |
 | **Cartão de Crédito VISA**       | 4268070000000002                     |
 | **Cartão de Débito VISA**        | 4415490000000004                     |
