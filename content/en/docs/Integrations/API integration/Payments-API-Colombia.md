@@ -984,7 +984,7 @@ The list of available documents is:
 | transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. | Yes |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
-| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | Yes |
 | transaction > type | Alphanumeric | 32 | As these payments are performed in PSE webpage, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method in Bank transfer. [See the available Payment Methods for Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `CO` for Colombia. | Yes |

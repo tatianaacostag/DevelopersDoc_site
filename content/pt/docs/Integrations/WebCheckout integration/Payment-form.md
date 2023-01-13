@@ -75,14 +75,14 @@ As seguintes variáveis podem ser incluídas no formulário de pagamento.
 | administrativeFee | Número | 10,2 | Valor da taxa administrativa. | Não | 
 | taxAdministrativeFee | Número | 10,2 | Valor do imposto da taxa administrativa. | Não | 
 | taxAdministrativeFeeReturnBase | Número | 10,2 | Valor base para cálculo do imposto da taxa administrativa. | Não | 
-| payerEmail | Alfanumérico | 255 | E-mail do pagador. | Não | 
-| payerPhone | Alfanumérico | 20 | Número de telefone do pagador. | Não | 
+| payerEmail | Alfanumérico | 255 | E-mail do pagador. | Sim | 
+| payerPhone | Alfanumérico | 20 | Número de telefone do pagador. | Sim | 
 | payerOfficePhone | Alfanumérico | 20 | Número de telefone do local de trabalho do pagador. | Não | 
 | payerMobilePhone | Alfanumérico | 20 | Número do celular do pagador. | Não | 
 | expirationDate | Alfanumérico | 19 | Prazo de validade das transações de pagamentos da Dinheiro. Formato:  `YYYY-MM-DD HH:mm:ss`.<br>Este valor deve ser inferior ao número padrão de dias para o pagamento à vista (15 dias para a Argentina e 7 dias para os demais países). | - | 
-| payerFullName | Alfanumérico | 50 | O nome do pagador. Este valor será usado para preencher o formulário do cartão de crédito. | Não | 
-| payerDocument | Alfanumérico | 25 | O número de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | Não | 
-| payerDocumentType | Alfanumérico | 25 | O tipo de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | Não | 
+| payerFullName | Alfanumérico | 50 | O nome do pagador. Este valor será usado para preencher o formulário do cartão de crédito. | Sim | 
+| payerDocument | Alfanumérico | 25 | O número de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | Sim | 
+| payerDocumentType | Alfanumérico | 25 | O tipo de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | Sim | 
 | iin | Alfanumérico | 2048 | Lista de Bins admitidos durante o processo de pagamento (separados por vírgula).<br>_Este parâmetro só pode ser utilizado por estabelecimentos que validem assinatura._ | Não |
 | paymentMethodsDescription | Alfanumérico | 255 | Descrição dos meios de pagamento e Caixas admitidas durante o processo de pagamento. | Não |
 | pseBanks | Alfanumérico | 255 | Lista de códigos bancários habilitados no processo de pagamento via PSE.<br>Esta lista deve ser separada por vírgula e sem espaços em branco. | Não |

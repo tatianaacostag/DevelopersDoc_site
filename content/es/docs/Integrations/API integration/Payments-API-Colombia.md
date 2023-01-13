@@ -980,7 +980,7 @@ La lista de documentos disponibles es:
 | transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
 | transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. | Sí |
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
-| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sí |
 | transaction > type | Alfanumérico | 32 | Como estos pagos se realizan en la página web de PSE, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
 | transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago por transferencia bancaria válido. [Ver los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
 | transaction > paymentCountry | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí |

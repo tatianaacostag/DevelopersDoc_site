@@ -74,14 +74,14 @@ The following variables can be included in the Payment form.
 | administrativeFee | Number | 10,2 | Amount of the administrative fee. | No | 
 | taxAdministrativeFee | Number | 10,2 | Amount of tax of the administrative fee. | No | 
 | taxAdministrativeFeeReturnBase | Number | 10,2 | Base value to calculate the tax of the administrative fee. | No | 
-| payerEmail | Alphanumeric | 255 | The payer’s e-mail. | No | 
-| payerPhone | Alphanumeric | 20 | The payer’s phone number. | No | 
+| payerEmail | Alphanumeric | 255 | The payer’s e-mail. | Yes | 
+| payerPhone | Alphanumeric | 20 | The payer’s phone number. | Yes | 
 | payerOfficePhone | Alphanumeric | 20 | The payer’s workplace phone number. | No | 
 | payerMobilePhone | Alphanumeric | 20 | The payer’s mobile phone number. | No | 
 | expirationDate | Alphanumeric | 19 | Expiration date of the transactions for Cash payments. Format: `YYYY-MM-DD HH:mm:ss`.<br>This value must be lower than the default number of days for the cash payment (15 days for Argentina and 7 days for the other countries). | - | 
-| payerFullName | Alphanumeric | 50 | The payer’s name. This value will be taken to fill out the credit card form. | No | 
-| payerDocument | Alphanumeric | 25 | The buyer’s identification number. This value will be taken to fill out the credit card form. | No | 
-| payerDocumentType | Alphanumeric | 25 | The buyer’s identification number. This value will be taken to fill out the credit card form. | No | 
+| payerFullName | Alphanumeric | 50 | The payer’s name. This value will be taken to fill out the credit card form. | Yes | 
+| payerDocument | Alphanumeric | 25 | The buyer’s identification number. This value will be taken to fill out the credit card form. | Yes | 
+| payerDocumentType | Alphanumeric | 25 | The buyer’s identification number. This value will be taken to fill out the credit card form. | Yes | 
 | iin | Alphanumeric | 2048 | List of Bins admitted during the payment process (separated by comma).<br>_This parameter can only be used by merchants that validate signature._ | No | 
 | paymentMethodsDescription | Alphanumeric | 255 | Description of the payment methods and Bins admitted during the payment process. | No | 
 | pseBanks | Alphanumeric | 255 | List of bank codes enabled in the payment process through PSE.<br>This list must be separated by comma and without blanks. | No | 
