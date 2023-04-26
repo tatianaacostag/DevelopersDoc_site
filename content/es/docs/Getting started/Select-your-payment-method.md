@@ -7,7 +7,7 @@ Description: >
 weight: 30
 ---
 
-La siguiente sección muestra los métodos de pago disponibles por país y brinda algunas consideraciones. Consulta la columna `Parámetro paymentMethod` para saber el valor que se enviar como Medio de Pago cuando utilices la integración API o SDK.
+La siguiente sección muestra los métodos de pago disponibles por país y brinda algunas consideraciones. Consulta la columna `Parámetro paymentMethod` para saber el valor que se debe enviar como Medio de Pago cuando utilices la integración API o SDK.
 
 ## <img src="/assets/Argentina.png" width="25px"/> Argentina {#Argentina}
 <div class="paymentMethods"></div>
@@ -49,7 +49,6 @@ La siguiente sección muestra los métodos de pago disponibles por país y brind
 |  | Medio de Pago | Parámetro paymentMethod | Tipo | Comentarios |
 |:-:|---|---|---|---|
 | ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Tarjetas de Crédito | |
-| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Tarjetas Débito| |
 | ![Logo](/assets/PaymentMethods/multicaja.png) | Klap (Antes Multicaja) | MULTICAJA | Efectivo | |
@@ -116,3 +115,124 @@ En México, soportamos tanto Meses sin Intereses y Promociones, consulte este [a
 | ![Logo](/assets/PaymentMethods/pago-efectivo.png) | PAGOEFECTIVO | PAGOEFECTIVO | Efectivo | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas Débito| |
+
+## Banners de los medios de pago para la página web de tu comercio {#Banners-de-los-medios-de-pago-para-la-página-web-de-tu-comercio}
+
+A continuación se encuentran los banners con todos los medios de pago disponibles en PayU para que los cuelgues en tu página web y se los ofrezcas a tus clientes. 
+
+### Banners de color blanco con verde oscuro {#Banners-de-color-blanco-con-verde-oscuro}
+
+120 X 600 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_120x60.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="120" height="600"/>
+
+
+120 X 240 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_120x240.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="120" height="240"/>
+
+785 X 40 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_785x40.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="785" height="40"/>
+
+575 X 40 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_575x40.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="575" height="40"/>
+
+468 X 60 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_468x60.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="468" height="60"/>
+
+125 X 125 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_125x125.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="125" height="125"/>
+
+### Banners de color verde claro {#Banners-de-color-verde-claro}
+
+120 X 600 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_120x60.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="120" height="600"/>
+
+
+120 X 240 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_120x240.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="120" height="240"/>
+
+785 X 40 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_785x40.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="785" height="40"/>
+
+575 X 40 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_575x40.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="575" height="40"/>
+
+468 X 60 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_468x60.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="468" height="60"/>
+
+125 X 125 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_125x125.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="125" height="125"/>
+
+### Banners de color verde oscuro {#Banners-de-color-verde-oscuro}
+
+120 X 600 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_120x60.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="120" height="600"/>
+
+
+120 X 240 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_120x240.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="120" height="240"/>
+
+785 X 40 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_785x40.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="785" height="40"/>
+
+575 X 40 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_575x40.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="575" height="40"/>
+
+468 X 60 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_468x60.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="468" height="60"/>
+
+125 X 125 px
+
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_125x125.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="125" height="125"/>

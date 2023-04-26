@@ -14512,7 +14512,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
 &lt;td&gt;Tipo de identificación del pagador. &lt;a href=&#34;../../../../es/docs/getting-started/response-codes-and-variables.html#document-types&#34;&gt;Ver tipos de documentos&lt;/a&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;

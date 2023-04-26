@@ -14554,7 +14554,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
 &lt;td&gt;Identification type of the buyer. &lt;a href=&#34;../../../../en/docs/getting-started/response-codes-and-variables.html#document-types&#34;&gt;See Document types&lt;/a&gt;.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
