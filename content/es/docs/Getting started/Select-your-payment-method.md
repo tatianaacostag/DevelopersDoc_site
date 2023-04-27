@@ -122,11 +122,20 @@ A continuación se encuentran los banners con todos los medios de pago disponibl
 
 ### Banners de color blanco con verde oscuro {#Banners-de-color-blanco-con-verde-oscuro}
 
-120 X 600 px
+**120 X 600 px**
 
+Vista previa:
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_120x60.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="120" height="600"/>
+
+Código:
+```Blanco con verde oscuro 120 x 600 px
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_120x60.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="120" height="600"/>
+```
+<br>
 
 
 120 X 240 px
