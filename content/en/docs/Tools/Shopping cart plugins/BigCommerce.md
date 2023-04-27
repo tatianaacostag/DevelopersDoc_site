@@ -1,6 +1,6 @@
 ---
-title: "BIGCOMMERCE"
-linkTitle: "BIGCOMMERCE"
+title: "BigCommerce"
+linkTitle: "BigCommerce"
 date: 2023-04-27T10:30:35-05:00
 description:
   This article shows you the procedure to enable PayU on your BigCommerce website. 
@@ -12,4 +12,4 @@ VTEX is an enterprise digital commerce platform that allows you to create an onl
 
 ## How to install the extension
 1. Install the app from the BigCommerce Marketplace by clicking the install button.
-![](/assets/BigCommerce/Imagen1)
+![](/assets/BigCommerce/Imagen1.png)
