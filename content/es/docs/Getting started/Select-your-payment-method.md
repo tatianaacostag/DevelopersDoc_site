@@ -125,6 +125,7 @@ A continuación se encuentran los banners con todos los medios de pago disponibl
 **120 X 600 px**
 
 Vista previa:
+
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_120x60.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="120" height="600"/>
@@ -137,71 +138,132 @@ width="120" height="600"/>
 ```
 <br>
 
+**120 X 240 px**
 
-120 X 240 px
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_120x240.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="120" height="240"/>
 
-785 X 40 px
+Código:
+```Blanco con verde oscuro 120 x 240 px
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_120x240.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="120" height="240"/>
+```
+<br>
+
+**785 X 40 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_785x40.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="785" height="40"/>
 
-575 X 40 px
+Código:
+```Blanco con verde oscuro 785 x 40 px
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_785x40.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="785" height="40"/>
+```
+<br>
+
+**575 X 40 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_575x40.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="575" height="40"/>
 
-468 X 60 px
+Código:
+```Blanco con verde oscuro 575 x 40 px
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_575x40.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="575" height="40"/>
+```
+<br>
+
+**468 X 60 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_468x60.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="468" height="60"/>
 
-125 X 125 px
+Código:
+```Blanco con verde oscuro 468 x 60 px
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_468x60.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="468" height="60"/>
+```
+<br>
+
+**125 X 125 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_125x125.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="125" height="125"/>
 
+Código:
+```Blanco con verde oscuro 125 x 125 px
+<img src="https://prod-developers.s3.amazonaws.com/latam/images/BlancoVerde/Medios_Pago_Blanco_Verde_125x125.jpg" 
+title="PayU - Medios de pago" alt="PayU - Medios de pago" 
+width="125" height="125"/>
+```
+<br>
+
 ### Banners de color verde claro {#Banners-de-color-verde-claro}
 
-120 X 600 px
+**120 X 600 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_120x60.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="120" height="600"/>
 
 
-120 X 240 px
+**120 X 240 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_120x240.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="120" height="240"/>
 
-785 X 40 px
+**785 X 40 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_785x40.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="785" height="40"/>
 
-575 X 40 px
+**575 X 40 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_575x40.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="575" height="40"/>
 
-468 X 60 px
+**468 X 60 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_468x60.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="468" height="60"/>
 
-125 X 125 px
+**125 X 125 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeClaro/Medios_Pago_Verde_Claro_125x125.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
@@ -209,38 +271,50 @@ width="125" height="125"/>
 
 ### Banners de color verde oscuro {#Banners-de-color-verde-oscuro}
 
-120 X 600 px
+**120 X 600 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_120x60.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="120" height="600"/>
 
 
-120 X 240 px
+**120 X 240 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_120x240.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="120" height="240"/>
 
-785 X 40 px
+**785 X 40 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_785x40.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="785" height="40"/>
 
-575 X 40 px
+**575 X 40 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_575x40.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="575" height="40"/>
 
-468 X 60 px
+**468 X 60 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_468x60.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
 width="468" height="60"/>
 
-125 X 125 px
+**125 X 125 px**
+
+Vista previa:
 
 <img src="https://prod-developers.s3.amazonaws.com/latam/images/VerdeOscuro/Medios_Pago_Verde_Oscuro_125x125.jpg" 
 title="PayU - Medios de pago" alt="PayU - Medios de pago" 
