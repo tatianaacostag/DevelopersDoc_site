@@ -208,19 +208,19 @@ Checkout Country Selection:
 
 •	**Pay By Web Checkout:** 
 
-1. Click the ‘Pay By Web Checkout’ button.
+A. Click the ‘Pay By Web Checkout’ button.
 
 ![](/assets/BigCommerce/Imagen16.png)
 
 
 
-2. Select the payment method 
+B. Select the payment method 
 
 ![](/assets/BigCommerce/Imagen17.png)
 
 
 
-3. Provide the details and click the button below to confirm payment.
+C. Provide the details and click the button below to confirm payment.
 
 ![](/assets/BigCommerce/Imagen18.png)
 

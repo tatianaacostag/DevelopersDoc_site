@@ -116,9 +116,9 @@ En México, soportamos tanto Meses sin Intereses y Promociones, consulte este [a
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas Débito| |
 
-## Banners de los medios de pago para la página web de tu comercio {#Banners-de-los-medios-de-pago-para-la-página-web-de-tu-comercio}
+## Banners de los medios de pago en Colombia para la página web de tu comercio {#Banners-de-los-medios-de-pago-para-la-página-web-de-tu-comercio}
 
-A continuación se encuentran los banners con todos los medios de pago disponibles en PayU para que los cuelgues en tu página web y se los ofrezcas a tus clientes. 
+A continuación se encuentran los banners con todos los medios de pago disponibles en PayU Colombia para que los cuelgues en tu página web y se los ofrezcas a tus clientes. 
 
 ### Banners de color blanco con verde oscuro {#Banners-de-color-blanco-con-verde-oscuro}
 
