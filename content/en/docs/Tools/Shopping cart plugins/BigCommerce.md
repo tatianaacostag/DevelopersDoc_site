@@ -20,6 +20,8 @@ BigCommerce is a digital commerce platform that allows you to quickly create an 
 
 
 
+
+
 2.	Click the checkbox and click the ‘Confirm’ button to install the app.
 ![](/assets/BigCommerce/Imagen2.png)
 
@@ -33,13 +35,20 @@ App Interface Screen:
 
 
 
+
+
 4. The ‘Enable PayU Latam’ option allows the user to enable/disable the app on the BigCommerce store.
 
 Enable PayU Latam option:
 ![](/assets/BigCommerce/Imagen4.png)
 
+
+
+
 Click to enable the extension:
 ![](/assets/BigCommerce/Imagen4B.png)
+
+
 
 
 
@@ -50,12 +59,18 @@ Title:
 
 
 
+
+
 6. The two display options visible as radio button (single selection) options are:
+
 •	Show Powered by PayU Latam and Logo on payment form?
+
 •	Show credit card logo on checkout page?
 
 Display options:
 ![](/assets/BigCommerce/Imagen6.png)
+
+
 
 
 
@@ -66,6 +81,8 @@ Web Checkout (APM):
 
 
 
+
+
 8. Use the 'Add Provider' button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials.
 
 Provider List:
@@ -73,13 +90,22 @@ Provider List:
 
 
 
+
+
 9. To add a new provider, specify the following mandatory fields:
+
 •	Select Payu Latam country
+
 •	API Login
+
 •	API Key
+
 •	Public Key
+
 •	Account ID
+
 •	Merchant ID
+
 - For Credentials in test environment: 
 https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html
 - For credentials in production: 
@@ -89,8 +115,12 @@ https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api
 
 
 
+
+
 10. The two radio button (single selection) options for credit card payment are:
+
 •	Capture on order placed – for immediate payment 
+
 •	Capture on shipment – awaiting payment fulfilment
 
 Payment Options:
@@ -101,10 +131,14 @@ Multistore options will be visible below the payment options section:
 
 
 
+
+
 11. To access the Order Dashboard, click the ‘Order Dashboard’ button.
 
 Order Dashboard:
 ![](/assets/BigCommerce/Imagen11.png)
+
+
 
 
 
@@ -113,9 +147,14 @@ Order Dashboard:
 
 
 
+
+
 13. To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.
+
 Refund:
 ![](/assets/BigCommerce/Imagen13.png)
+
+
 
 
 
@@ -126,30 +165,36 @@ Checkout Country Selection:
 
 
 
+
+
 15. At the store checkout, customers have the option to select their payment method.
 
-Checkout Payment Selection:
+**Checkout Payment Selection:**
 
 
 
-•	Pay By Card: Specify the card details, then click the ‘Pay By Card’ option.
+•	**Pay By Card:** Specify the card details, then click the ‘Pay By Card’ option.
 ![](/assets/BigCommerce/Imagen15.png)
 
 
 
 
-•	Pay By Web Checkout: Click the ‘Pay By Web Checkout’ button.
+•	**Pay By Web Checkout:** 
+
+1. Click the ‘Pay By Web Checkout’ button.
 ![](/assets/BigCommerce/Imagen16.png)
 
 
 
-Select the payment method 
+2. Select the payment method 
 ![](/assets/BigCommerce/Imagen17.png)
 
 
 
-Provide the details and click the button below to confirm payment.
+3. Provide the details and click the button below to confirm payment.
 ![](/assets/BigCommerce/Imagen18.png)
+
+
 
 
 
