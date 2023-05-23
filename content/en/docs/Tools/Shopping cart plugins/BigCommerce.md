@@ -22,6 +22,8 @@ BigCommerce is a digital commerce platform that allows you to quickly create an 
 
 
 
+
+
 2.	Click the checkbox and click the ‘Confirm’ button to install the app.
 ![](/assets/BigCommerce/Imagen2.png)
 
@@ -32,6 +34,8 @@ BigCommerce is a digital commerce platform that allows you to quickly create an 
 
 App Interface Screen:
 ![](/assets/BigCommerce/Imagen3.png)
+
+
 
 
 
@@ -52,10 +56,14 @@ Click to enable the extension:
 
 
 
+
+
 5. Allows the user to set a custom title that is visible on the Checkout page (e.g. Pay By Card).
 
 Title:
 ![](/assets/BigCommerce/Imagen5.png)
+
+
 
 
 
@@ -74,6 +82,8 @@ Display options:
 
 
 
+
+
 7. If the merchant wants to allow alternative payment methods (cash and bank transfers) select the ‘Web Checkout’ option for PayU Latam.
 
 Web Checkout (APM):
@@ -83,10 +93,14 @@ Web Checkout (APM):
 
 
 
+
+
 8. Use the 'Add Provider' button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials.
 
 Provider List:
 ![](/assets/BigCommerce/Imagen8.png)
+
+
 
 
 
@@ -117,6 +131,8 @@ https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api
 
 
 
+
+
 10. The two radio button (single selection) options for credit card payment are:
 
 •	Capture on order placed – for immediate payment 
@@ -133,6 +149,8 @@ Multistore options will be visible below the payment options section:
 
 
 
+
+
 11. To access the Order Dashboard, click the ‘Order Dashboard’ button.
 
 Order Dashboard:
@@ -142,8 +160,12 @@ Order Dashboard:
 
 
 
+
+
 12. The Order Dashboard grid will show the payment statuses for the order placed.
 ![](/assets/BigCommerce/Imagen12.png)
+
+
 
 
 
@@ -158,10 +180,14 @@ Refund:
 
 
 
+
+
 14. As an example, if the shipping is to Argentina, then select Argentina from the drop down country options.
 
 Checkout Country Selection:
 ![](/assets/BigCommerce/Imagen14.png)
+
+
 
 
 
@@ -174,6 +200,7 @@ Checkout Country Selection:
 
 
 •	**Pay By Card:** Specify the card details, then click the ‘Pay By Card’ option.
+
 ![](/assets/BigCommerce/Imagen15.png)
 
 
@@ -182,16 +209,19 @@ Checkout Country Selection:
 •	**Pay By Web Checkout:** 
 
 1. Click the ‘Pay By Web Checkout’ button.
+
 ![](/assets/BigCommerce/Imagen16.png)
 
 
 
 2. Select the payment method 
+
 ![](/assets/BigCommerce/Imagen17.png)
 
 
 
 3. Provide the details and click the button below to confirm payment.
+
 ![](/assets/BigCommerce/Imagen18.png)
 
 
