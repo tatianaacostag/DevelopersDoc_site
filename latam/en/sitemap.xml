@@ -382,6 +382,11 @@
                 href="/en/docs/services/payments.html"
                 />
   </url><url>
+    <loc>/en/docs/tools/shopping-cart-plugins/bigcommerce.html</loc>
+    <lastmod>2023-05-23T16:37:51-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/en/docs/services/3ds-authentication.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>

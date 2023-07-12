@@ -672,6 +672,132 @@ An authorized order can be cancelled using the &lt;em&gt;&lt;strong&gt;Cancel or
     </item>
     
     <item>
+      <title>Docs: BigCommerce</title>
+      <link>/en/docs/tools/shopping-cart-plugins/bigcommerce.html</link>
+      <pubDate>Thu, 27 Apr 2023 10:30:35 -0500</pubDate>
+      
+      <guid>/en/docs/tools/shopping-cart-plugins/bigcommerce.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;BigCommerce is a digital commerce platform that allows you to quickly create an online store with ready-to-use functionalities. For more information, take a look at the official BigCommerce page: &lt;a href=&#34;https://www.bigcommerce.com/press/&#34;&gt;BigCommerce webpage&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You need an active account in PayU Latam.&lt;/li&gt;
+&lt;li&gt;You need an account with BigCommerce.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-install-the-extension&#34;&gt;How to install the extension&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install the app from the BigCommerce Marketplace by clicking the install button.
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click the checkbox and click the ‘Confirm’ button to install the app.
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;how-to-use-this-extension&#34;&gt;How to use this extension&lt;/h2&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;The app interface appears as follows:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;App Interface Screen:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;The ‘Enable PayU Latam’ option allows the user to enable/disable the app on the BigCommerce store.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Enable PayU Latam option:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Click to enable the extension:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen4B.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Allows the user to set a custom title that is visible on the Checkout page (e.g. Pay By Card).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Title:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;The two display options visible as radio button (single selection) options are:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;•	Show Powered by PayU Latam and Logo on payment form?&lt;/p&gt;
+&lt;p&gt;•	Show credit card logo on checkout page?&lt;/p&gt;
+&lt;p&gt;Display options:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;If the merchant wants to allow alternative payment methods (cash and bank transfers) select the ‘Web Checkout’ option for PayU Latam.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Web Checkout (APM):
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Use the &amp;lsquo;Add Provider&amp;rsquo; button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Provider List:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;To add a new provider, specify the following mandatory fields:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;•	Select Payu Latam country&lt;/p&gt;
+&lt;p&gt;•	API Login&lt;/p&gt;
+&lt;p&gt;•	API Key&lt;/p&gt;
+&lt;p&gt;•	Public Key&lt;/p&gt;
+&lt;p&gt;•	Account ID&lt;/p&gt;
+&lt;p&gt;•	Merchant ID&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For Credentials in test environment: 
+&lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html&#34;&gt;https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For credentials in production: 
+&lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&#34;&gt;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;The two radio button (single selection) options for credit card payment are:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;•	Capture on order placed – for immediate payment&lt;/p&gt;
+&lt;p&gt;•	Capture on shipment – awaiting payment fulfilment&lt;/p&gt;
+&lt;p&gt;Payment Options:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Multistore options will be visible below the payment options section:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen10B.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;To access the Order Dashboard, click the ‘Order Dashboard’ button.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Order Dashboard:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;12&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;The Order Dashboard grid will show the payment statuses for the order placed.
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen12.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Refund:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;14&#34;&gt;
+&lt;li&gt;As an example, if the shipping is to Argentina, then select Argentina from the drop down country options.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Checkout Country Selection:
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen14.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;15&#34;&gt;
+&lt;li&gt;At the store checkout, customers have the option to select their payment method.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Checkout Payment Selection:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;•	&lt;strong&gt;Pay By Card:&lt;/strong&gt; Specify the card details, then click the ‘Pay By Card’ option.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen15.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;•	&lt;strong&gt;Pay By Web Checkout:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A. Click the ‘Pay By Web Checkout’ button.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;B. Select the payment method&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen17.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;C. Provide the details and click the button below to confirm payment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen18.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;support-options&#34;&gt;Support Options:&lt;/h2&gt;
+&lt;p&gt;If you experience a technical issue or have any questions about this extension, please contact our support team on &lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt; or by visiting our website at &lt;a href=&#34;https://colombia.payu.com/contactanos/&#34;&gt;https://colombia.payu.com/contactanos/&lt;/a&gt;. If you choose to email us, please provide details of the extension being used in the subject field and a summary of the issue you’re experiencing in the body copy.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Magento</title>
       <link>/en/docs/tools/shopping-cart-plugins/magento.html</link>
       <pubDate>Wed, 26 May 2021 08:38:26 -0500</pubDate>

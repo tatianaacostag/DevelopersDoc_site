@@ -16,6 +16,8 @@ BigCommerce is a digital commerce platform that allows you to quickly create an 
 
 ## How to install the extension
 1. Install the app from the BigCommerce Marketplace by clicking the install button.
+
+
 ![](/assets/BigCommerce/Imagen1.png)
 
 
@@ -25,14 +27,19 @@ BigCommerce is a digital commerce platform that allows you to quickly create an 
 
 
 2.	Click the checkbox and click the ‘Confirm’ button to install the app.
+
+
 ![](/assets/BigCommerce/Imagen2.png)
 
 
 
-## How to use this extension
-3.	The app interface appears as follows:
 
-App Interface Screen:
+
+
+
+3. The app interface appears as follows:
+
+
 ![](/assets/BigCommerce/Imagen3.png)
 
 
@@ -41,15 +48,21 @@ App Interface Screen:
 
 
 
-4. The ‘Enable PayU Latam’ option allows the user to enable/disable the app on the BigCommerce store.
+## How to use this extension
+### Configure Payment Methods
+Configure the payment methods to be displayed on the website for checkout. [Consult our available Payment methods]({{< ref "Select-your-payment-method.md" >}}).
 
-Enable PayU Latam option:
+
+
+1. After installing the application select **Enable PayU Latam** to allow the app in the BigCommerce store.  
+
+
 ![](/assets/BigCommerce/Imagen4.png)
 
 
 
 
-Click to enable the extension:
+
 ![](/assets/BigCommerce/Imagen4B.png)
 
 
@@ -58,9 +71,9 @@ Click to enable the extension:
 
 
 
-5. Allows the user to set a custom title that is visible on the Checkout page (e.g. Pay By Card).
+2. Select a custom title for the card payment option (e.g., Pay by Card). This title will be visible on the checkout page for your customers.  
 
-Title:
+
 ![](/assets/BigCommerce/Imagen5.png)
 
 
@@ -69,24 +82,23 @@ Title:
 
 
 
-6. The two display options visible as radio button (single selection) options are:
+3. Choose the way you want the available card payment options to be displayed at the checkout. You can choose between one of the following options:  
 
-•	Show Powered by PayU Latam and Logo on payment form?
 
-•	Show credit card logo on checkout page?
+*	Show Powered by PayU Latam and logo on payment form
 
-Display options:
+*	Show credit card logo on checkout page
+
+
 ![](/assets/BigCommerce/Imagen6.png)
 
 
 
+{{% alert title="Important" color="warning"%}}
+If the merchant wants to allow alternative payment methods (cash and bank transfers) select the "Enable Web Checkout (APM)” option.
+{{% /alert %}}
 
 
-
-
-7. If the merchant wants to allow alternative payment methods (cash and bank transfers) select the ‘Web Checkout’ option for PayU Latam.
-
-Web Checkout (APM):
 ![](/assets/BigCommerce/Imagen7.png)
 
 
@@ -95,49 +107,45 @@ Web Checkout (APM):
 
 
 
-8. Use the 'Add Provider' button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials.
 
-Provider List:
+
+
+4. Use the 'Add Provider' button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials.
+
+
 ![](/assets/BigCommerce/Imagen8.png)
 
-
-
-
-
-
-
-9. To add a new provider, specify the following mandatory fields:
-
-•	Select Payu Latam country
-
-•	API Login
-
-•	API Key
-
-•	Public Key
-
-•	Account ID
-
-•	Merchant ID
-
-- For Credentials in test environment: 
-https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html
-- For credentials in production: 
-https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login
 
 ![](/assets/BigCommerce/Imagen9.png)
 
 
+{{% alert title="Note" color="info"%}}
+To add a new provider, specify the following mandatory fields:
+
+| Parameter | Description |
+|---|---|
+| Select Payu Latam country | Choose the country you want to configure |
+| API Login | User or login provided by PayU. How do I get my API Login |
+| API Key | Unique key of your commerce. How do I get my API Key |
+| Public Key| Unique key of your commerce. How do I get my Public Key |
+| Account ID | ID of the PayU account according to the country where you want to sell. |
+| Merchant ID | ID of your commerce in PayU Latam. |
+
+{{% /alert %}} 
 
 
 
 
 
-10. The two radio button (single selection) options for credit card payment are:
 
-•	Capture on order placed – for immediate payment 
+5. Choose if your payment transactions are executed in a one-step or two-step flow: 
 
-•	Capture on shipment – awaiting payment fulfilment
+* For one-step flow, select **Capture on order placed**.
+
+* For two-step flow, select **Capture on Shipment**.
+
+
+
 
 Payment Options:
 ![](/assets/BigCommerce/Imagen10.png)
@@ -151,7 +159,7 @@ Multistore options will be visible below the payment options section:
 
 
 
-11. To access the Order Dashboard, click the ‘Order Dashboard’ button.
+6. To access the Order Dashboard, click the ‘Order Dashboard’ button.
 
 Order Dashboard:
 ![](/assets/BigCommerce/Imagen11.png)
@@ -162,7 +170,7 @@ Order Dashboard:
 
 
 
-12. The Order Dashboard grid will show the payment statuses for the order placed.
+7. The Order Dashboard grid will show the payment statuses for the order placed.
 ![](/assets/BigCommerce/Imagen12.png)
 
 
@@ -171,7 +179,7 @@ Order Dashboard:
 
 
 
-13. To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.
+8. To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.
 
 Refund:
 ![](/assets/BigCommerce/Imagen13.png)
@@ -182,7 +190,7 @@ Refund:
 
 
 
-14. As an example, if the shipping is to Argentina, then select Argentina from the drop down country options.
+9. As an example, if the shipping is to Argentina, then select Argentina from the drop down country options.
 
 Checkout Country Selection:
 ![](/assets/BigCommerce/Imagen14.png)
@@ -193,7 +201,7 @@ Checkout Country Selection:
 
 
 
-15. At the store checkout, customers have the option to select their payment method.
+10. At the store checkout, customers have the option to select their payment method.
 
 **Checkout Payment Selection:**
 
