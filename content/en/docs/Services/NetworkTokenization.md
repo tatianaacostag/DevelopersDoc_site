@@ -7,7 +7,7 @@ description: >
 weight: 50
 ---
 
-## What is PayU network token solution?
+## What is PayU Network Token solution?
 
 Network Tokenization processes card payments by replacing the card details with a network-issued token, this leads to higher approval rates and more secure sensitive customer card information. Tokenization provides an additional layer of security by replacing sensitive payment information with the unique token, thereby reducing the risk of data breaches, and enhancing customer experience.
 
@@ -15,12 +15,13 @@ Network Tokenization processes card payments by replacing the card details with 
 
 To use the Tokenization feature, it is necessary to enable it in your PayU account. To do so, contact your sales representative, or if you don’t have one, please send an email to:
 
-![](/assets/BanderasPaíses/Argentina.png) comercios.ar@payu.com   
-![](/assets/BanderasPaíses/Brazil.png) comercios.br@payu.com
+![](/assets/BanderasPaises/Argentina.png) comercios.ar@payu.com   
+
+![](/assets/BanderasPaises/Brazil.png) comercios.br@payu.com
 
 
 {{% alert title="Note" color="info"%}}
-In a pass-through model, the merchant should tokenize the payment card in the first place with an external token requestor provider. After doing so, the merchant will be able to transact using the previously generated token as explained in the section **How does Tokenization work?** on this page.
+In a pass-through model, the merchant should tokenize the payment card in the first place with an external token requestor provider. After doing so, the merchant will be able to transact using the previously generated token as explained in the section **How does Network Tokenization work?** on this page.
 {{% /alert %}}
 
 
@@ -34,7 +35,7 @@ In a pass-through model, the merchant should tokenize the payment card in the fi
 * **There are no additional fees.**
 
 
-## How does Tokenization work?
+## How does Network Tokenization work?
 
 ![](/assets/NetworkTokenization/Flow.png)
 
