@@ -43,7 +43,7 @@ In a pass-through model, the merchant should tokenize the payment card in the fi
 ## What´s next?
 
 1.	Contact your sales representative. 
-2.	Update your integration code. Please keep in mind that this functionality is supported only through API integration.
+2.	Update your integration code. Please keep in mind that this functionality is supported only through [**API integration**] (https://developers.payulatam.com/latam/en/docs/integrations/api-integration.html)
 3.	Test the functionality and go live.
 
 Everything else remains the same!

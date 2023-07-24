@@ -383,7 +383,7 @@
                 />
   </url><url>
     <loc>/en/docs/tools/shopping-cart-plugins/bigcommerce.html</loc>
-    <lastmod>2023-05-23T16:37:51-05:00</lastmod>
+    <lastmod>2023-07-12T17:49:31-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -1626,6 +1626,11 @@
                 hreflang="en"
                 href="/en/docs/services/refunds.html"
                 />
+  </url><url>
+    <loc>/en/docs/services/networktokenization.html</loc>
+    <lastmod>2023-07-12T18:31:55-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>/en/docs/integrations/api-integration/payouts-api.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
