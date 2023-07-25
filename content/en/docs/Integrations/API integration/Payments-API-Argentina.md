@@ -33,6 +33,197 @@ To confirm the status of a transaction, you can use one of the following options
 ## Submit transaction with credit or debit card
 This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
+### Using tokenized cards
+PayU supports payments with your tokenized card to let you make payments on a regular bases with a card stored in a token. A credit card token substitutes the sensitive information of a credit card and allows you to safely store it following PCI DSS (Payment Card Industry Data Security Standard) security standards.
+
+PayU can process payments with the following services:
+
+* **PayU Tokenization**.<br>We provide our own service to tokenize your credit cards enabled under request. This service lets you tokenize the information of your customers' credit cards (regardless of their franchise) using our API or SDK integration.<br>For more information, refer to [PayU Tokenization]({{< ref "Tokenization.md" >}}).
+
+* **MasterCard Digital Enablement Service - MDES**.<br>Tokenization service provided by Mastercard. This service lets you tokenize the Primary Account Number of the MasterCard credit cards to let you use them to make regular payments or build one-click payments features.<br>For more information, refer to [MasterCard Digital Enablement Service (MDES)](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
+
+* **Visa Token Service - VTS**.<br>Tokenization service provided by Visa. This service lets you store the sensitive information of the Visa credit cards in a token to let you use them to make regular payments or build one-click payments features.<br>For more information, refer to [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
+
+#### Pay with PayU tokens
+For payments with PayU credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+
+{{% alert title="Note" color="info"%}}
+To process without CVV is necessary to send the parameter `creditCard.processWithoutCvv2` as true in the payment request and remove the parameter `creditCard.securityCode`.<br>
+By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative.
+{{% /alert%}}
+
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "Information of the order":""
+      },
+      "payer": {
+         "Information of the payer":""
+      },
+      "creditCardTokenId": "46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3",
+      "creditCard": {
+         "securityCode": "123"
+      },
+      "extraParameters": {
+         "Extra parameters of the request":""
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "Card franchise", 
+      "paymentCountry": "Processing country",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": true
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <!-- Information of the order -->
+      </order>
+      <payer>
+         <!-- Information of the payer -->
+      </payer>
+      <creditCardTokenId>46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3</creditCardTokenId>
+      <creditCard>
+         <securityCode>321</securityCode>
+      </creditCard>
+      <extraParameters>
+         <!-- Extra parameters of the request -->
+      </extraParameters>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>{Card franchise}</paymentMethod>
+      <paymentCountry>{Processing country}</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+#### Pay with MDES or VTS tokens
+If you are tokenizing your customer's credit cards using MDES or VTS, you can configure the information of the token in the parameter `transaction.networkToken` replacing the information of the credit card and send the parameter `creditCard.processWithoutCvv2` as true.<br>By default, processing credit cards without security code is not enabled, contact your Sales representative to enable it.
+
+The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "Information of the order":""
+      },
+      "payer": {
+         "Information of the payer":""
+      },
+      "networkToken": {
+          "tokenPan": "4097440000000004",
+          "cryptogram": "11223344556677889900112233445566778899",
+          "expiry": "2028/01"
+      },
+      "extraParameters": {
+         "Extra parameters of the request":""
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "Card franchise", 
+      "paymentCountry": "Processing country",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": true
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <!-- Information of the order -->
+      </order>
+      <payer>
+         <!-- Information of the payer -->
+      </payer>
+      <networkToken>
+         <tokenPan>4097440000000004</tokenPan>
+         <cryptogram>11223344556677889900112233445566778899</cryptogram>
+         <expiry>2028/01</expiry>
+      </networkToken>
+      <extraParameters>
+         <!-- Extra parameters of the request -->
+      </extraParameters>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>{Card franchise}</paymentMethod>
+      <paymentCountry>{Processing country}</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+<br>
+
+Find the description of the object `transaction.networkToken` and its parameters in the [Variables]({{< ref "#variables-for-request-and-response" >}}) section.
+
 ### Variables for request and response
 
 <details>
@@ -117,6 +308,10 @@ This method lets you process the payments performed by your customers using cred
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Buyer's phone number. | No |
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | No |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | Yes |
+| transaction > networkToken |  |  | Information of the token. Include this parameter when the transaction is done using a tokenized card with VTS or MDES Tokenization. For more information, refer to [Pay with MDES or VTS tokens](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-brazil.html#pay-with-mdes-or-vts-tokens). *When sending this object, all its parameters are mandatory.  | No |
+| transaction > networkToken > tokenPan | Alphanumeric | Max: 32 | Token number generated either by MDES or VTS. | Yes* |
+| transaction > networkToken > cryptogram | Alphanumeric | Max: 28 | Unique key generated by MDES or VTS to decrypt the information of the credit card. | Yes* |
+| transaction > networkToken > expiry | Alphanumeric | Max: 7 | Expiration date of the token. Format YYYY/MM. | Yes* |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` for one-step flows.</li></ul> | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit or Debit card Payment Method. [See the available Payment Methods for Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `AR` for Argentina. | Yes |
@@ -156,7 +351,8 @@ This method lets you process the payments performed by your customers using cred
 * For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
 * Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
-* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
+* For payments with credit card tokens generated using MDES or VTS, include the object `transaction.networkToken` and its parameters.
+* By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`. Having this feature enabled is mandatory when using credit card tokens generated with MDES or VTS.
 * When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.
 * Due to Tax regulations, it is mandatory to send the parameters `payer.billingAddress.state` using format [ISO 3166-2 ARG official](https://www.iso.org/obp/ui/#iso:code:3166:AR) and `payer.dnitype`.
 
