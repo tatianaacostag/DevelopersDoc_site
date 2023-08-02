@@ -34,18 +34,6 @@ La Autenticación 3DS, disponible para Brasil y Colombia, se ofrece vía API baj
 
 * _**Pass Through**_: si tienes tu propio servicio de Autenticación 3DS, puedes enviarnos la respuesta de la autenticación en la petición de pago. Bajo esta modalidad, tú eres responsable de la integración con un _**MPI**_ o un _**3DS Server**_.<br>El _**Pass Through**_ está dirigido a comercios integrados vía API a la plataforma de **PayU Latam**. Para más información, contacta a tu representante de ventas.
 
-* _**Flujo de dos llamados**_: si deseas autenticar la transacción utilizando PayU, puedes integrarte a través del **PayU Hub**<sup>\*</sup> utilizando el [Servicio de Autenticación](https://developers.paymentsos.com/docs/threed-d-secure-authentication-service.html) que opera en un flujo de dos llamados; uno para la autenticación y otro para la autorización.
-  - Para la _autenticación_, debes conectarte al PayU Hub, donde vas a obtener la respuesta de la autenticación.
-  - Para la _autorización_, puedes escoger utilizar **PayU Latam** o **PayU Hub**.
-
-  <br>El _**Flujo de dos llamados**_ está dirigido a comercios con las siguientes características:
-    - Comercios integrados vía API a la plataforma de **PayU Latam** (directamente, no a través de partners).
-    - Comercios integrados al **PayU Hub** que procesen en países de LATAM. <img src="/assets/Brasil.png" width="2%"/><img src="/assets/Colombia.png" width="2%"/>
-    - Comercios grandes que quieren controlar su flujo de autenticación y quieren decir cuáles transacciones van a autenticar.
-    - Comercios con grandes recursos tecnológicos para hacer la integración API.
-
-<sup>\*</sup>El **PayU Hub**, es la solución de pagos sin fronteras globales. Con única integración API , procesa pagos locales con medios de pago relevantes en 18 mercados.
-
 {{% alert title="Note" color="info"%}}
 La Autenticación 3DS está soportada para Visa y MasterCard.
 {{% /alert %}}
@@ -56,14 +44,9 @@ Ten en cuenta lo siguiente cuando utilices la Autenticación 3DS:
 * La Autorización debe incluir la respuesta de la Autenticación.
 
 ### Beneficios de nuestra solución {#benefits-of-our-solution}
-Cuando utilices el Servicio de Autenticación ofrecido por el **PayU Hub** (Flujo de dos llamados), tienes los siguientes beneficios.
 
-* PayU está conectado a un servidor 3DS (MPI), no es necesario que lo hagas por tu cuenta. ¡Menos proveedores y contratos!
 * Tú controlas y decides cuándo autenticar una transacción.
-* Sin costos adicionales<sup>\*</sup>. ¡La autenticación es un servicio gratuito que ofrece PayU!.
 * Si migras al HUB, puedes tener beneficios adicionales de nuestra solución global.
-
-<sup>\*</sup> _Los adquirentes pueden cobrar un costo de autenticación, de ser así, este costo se te transferirá._
 
 ### ¿Cómo integrar 3DS? {#how-to-integrate-3ds}
 La Autenticación 3DS es un servicio disponible bajo demanda, contacta a tu Key Account Manager para firmar los Términos y Condiciones para activarlo.<br>Dependiendo del escenario que escojas para utilizar la Autenticación 3DS, el procedimiento de integración varia.
@@ -80,18 +63,3 @@ Cuando estás integrado con un _**MPI**_ o un _**3DS Server**_, solo necesitas e
   </div>
 </div>
 <br>
-
-#### Flujo de dos llamados {#flujo-de-dos-llamados}
-Sigue estos pasos para integrate con nuestro servicio de Autenticación:
-
-1. Para empezar, abre una cuenta en el **PayU Hub**.<br>Haz clic [aquí](https://control.paymentsos.com/signup) para crear una.
-
-2. Actualiza tu integración. Solicita a tu equipo de desarrollo la actualización de la integración para ahora se conecte al API del **PayU Hub**.
-
-3. Todo lo que queda ahora son algunas pruebas, ¡y listo! realiza el paso producción. 
-
-¡Todo lo demás permanece igual!
-
-* Tu oferta actual se mantiene. Puedes seguir ofreciendo tus medios de pago actuales a través de **PayU Latam** o del **PayU Hub**.
-* ¿Nuevo proceso de Onboarding? ¡Claro que no! Ya estás con nosotros, así que no necesitamos nada más.
-* Los pagos aún son manejados por las plataformas locales, por lo que nos aseguraremos de que los mismos datos estén disponibles para ti.
