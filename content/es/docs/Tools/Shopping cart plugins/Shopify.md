@@ -20,7 +20,7 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
   2. Fueron abandonados durante el proceso de pago.
   3. Transacciones con estado _**Rechazado**_.
   4. Transacciones con estado _**Pendiente**_ siempre y cuando el pagador no regrese a la tienda luego del procesamiento del pago en la pasarela:<br>
-    <span style="color: #A6C307;font-weight: bold;">4.1.</span> Pagos en efectivo (siempre se obtiene el estado _**Pendiente**_ state).<br>
+    <span style="color: #A6C307;font-weight: bold;">4.1.</span> Pagos en efectivo (siempre se obtiene el estado _**Pendiente**_).<br>
     <span style="color: #A6C307;font-weight: bold;">4.2.</span> Pagos con Tarjetas de Crédito que entren en validación por las reglas de protección antifraude.
 
 {{% alert title="Nota" color="info"%}}
@@ -29,39 +29,46 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
 {{% /alert %}}
 
 ## Configurar PayU como pasarela de pagos {#enable-payu-as-payment-gateway}
-1. Ingresa a tu panel de control de _Shopify_. Haz clic en _**Configuración**_ y luego, selecciona _**Pagos**_.
- 
-![PrintScreen](/assets/Shopify/Shopify_01_es.png)
+1. Inicia sesión en tu cuenta de Shopify y descarga la app de PayU Latam v2 del app store haciendo clic [aquí](https://apps.shopify.com/payu-latam-v2?locale=es) y seleccionando “Agregar app”.
 
-2. Ve a la sección _**Proveedores de pago**_ y haz clic en _**Seleccionar un proveedor**_.
+![](/assets/ShopifyReverseIntegration/imagen1.png)
 
-![PrintScreen](/assets/Shopify/Shopify_02_es.png)
+2. Selecciona la tienda en la cual quieres instalar la app de las opciones que aparecen en pantalla y serás redireccionado a otra página en donde debes hacer clic en “Install app”.
 
-3. En la lista, localiza y haz clic en la pasarela de _PayU Latam_. 
+![](/assets/ShopifyReverseIntegration/imagen2.png)
 
-![PrintScreen](/assets/Shopify/Shopify_03_es.png)
+3. Ingresa las credenciales de tu tienda para el ambiente de test y de producción (Merchand Id y Account Id).
 
-4. Ingresa la siguiente información de tu cuenta PayU:
+![](/assets/ShopifyReverseIntegration/imagen3.png)
 
-![PrintScreen](/assets/Shopify/Shopify_04_es.png)
+{{% alert title="Nota" color="info"%}}
+* Puedes encontrar las credenciales para el ambiente de test [aquí](https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html)
+* Para encontrar las credenciales para el ambiente de producción, haz clic [aquí](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) y sigue los pasos indicados.
+* Recuerda que posteriormente puedes cambiar o consultar las credenciales que ingresaste desde tu admin de Shopify.   
+{{% /alert %}}
 
-* **Account Id (1)**: Identificador de la cuenta PayU de acuerdo con el país en el que quieres vender.
-* **Api Key (2)**: Llave única de tu comercio, puedes obtener esta información en tu Módulo PayU (**_Configuración_** > **_Configuración técnica_** > **_API Key_**).
+{{% alert title="Importante" color="warning"%}}
+Para cada tienda que tengas en Shopify, debes tener un account ID diferente en PayU.
+{{% /alert %}}
 
-![PrintScreen](/assets/Shopify/Shopify_05_es.png)
+4. Serás dirigido a la sección llamada “Payments”. Allí, selecciona “Activate PayU Latam v2” en la esquina inferior derecha.
 
-5. Por último, haz clic en el botón _**Activar PayU Latam**_ al final de la página.
+![](/assets/ShopifyReverseIntegration/imagen4.png)
 
-![PrintScreen](/assets/Shopify/Shopify_06_es.png)
+{{% alert title="Importante" color="warning"%}}
+* A modo informativo, verás distintos medios de pago. Para avanzar, debes seleccionar por lo menos uno de ellos, pero recuerda que esto no modificará los medios de pago que tienes disponible en el Web Checkout de PayU.  
+* La casilla “Enable test mode” indica si se usarán las credenciales del ambiente de producción o del ambiente de prueba.  
+Ejemplo: Si deseas utilizar el ambiente de pruebas en vez del ambiente de producción, debes hacer clic en la casilla “Enable test mode”. 
+{{% /alert %}}
 
-6. Abre el Módulo PayU module y vé a las opciones de _**Configuración**_ (**_Configuración_** > **_Configuración técnica_**). Luego, desactiva la validación de referencias únicas para todos los estados para evitar problemas al momento de procesar tus pagos.
+5. Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Desactiva la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.
 
-![PrintScreen](/assets/Shopify/Shopify_07_es.png)
+![](/assets/ShopifyReverseIntegration/imagen5.png)
 
-En este punto, tus clientes pueden hacer pagos utilizando el Checkout de PayU y podrán pagar utilizando métodos de pago como efectivo, tarjetas de crédito y transferencias bancarias, dependiendo del país en el que estés vendiendo.
+6. A partir de este momento, tienes a PayU instalado como procesador de pagos y puedes comenzar tus ventas. Tus clientes pueden hacer compras utilizando el Web Checkout de PayU a través de métodos de pago como efectivo, tarjetas de crédito y transferencias bancarias (dependiendo del país en el que estés vendiendo).
 
 ## Flujo de pago en Shopify {#payment-flow-in-shopify}
-Cuando configuras PayU como pasarela de pago en la plataforma, tu cliente puede pagar de la siguiente forma.
+Cuando configuras PayU como pasarela de pago en la plataforma, tu cliente puede hacer compras de la siguiente forma:
 
 1. Tu cliente selecciona el producto o servicio que quiere comprar y luego lo agrega a su carrito de compras.
 
@@ -78,3 +85,8 @@ Cuando configuras PayU como pasarela de pago en la plataforma, tu cliente puede 
 4. Cuando está en nuestra pasarela de pagos, puede ver la descripción de la venta y los métodos de pago disponibles para tu país.
 
 ![PrintScreen](/assets/Shopify/Shopify_11_es.png)
+
+{{% alert title="Nota" color="info"%}}
+Recuerda que si requieres realizar un reembolso total o parcial, podrás gestionarlo directamente desde el admin de tu tienda en Shopify. Para más información, haz clic [aquí](https://help.shopify.com/en/manual/orders/refund-cancel-order#refunding-an-order).
+{{% /alert %}}
+

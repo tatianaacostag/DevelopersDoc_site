@@ -521,7 +521,7 @@ In a pass-through model, the merchant should tokenize the payment card in the fi
 &lt;h2 id=&#34;whats-next&#34;&gt;What´s next?&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Contact your sales representative.&lt;/li&gt;
-&lt;li&gt;Update your integration code. Please keep in mind that this functionality is supported only through API integration.&lt;/li&gt;
+&lt;li&gt;Update your integration code. Please keep in mind that this functionality is supported only through &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations/api-integration.html&#34;&gt;&lt;strong&gt;API integration&lt;/strong&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Test the functionality and go live.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Everything else remains the same!&lt;/p&gt;
