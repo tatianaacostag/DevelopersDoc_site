@@ -1057,7 +1057,7 @@ Al final, tu cliente ve una página de checkout como esta.
 ### ¿Cómo funciona PIX? {#how-does-pix-work}
 PIX es un método de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (_Banco Central do Brasil_ - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.
 
-A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el diner inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este método de pago aparecerán en tu cuenta PayU en cuestión de segundos. 
+A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el dinero inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este método de pago aparecerán en tu cuenta PayU en cuestión de segundos. 
 
 Pix tiene dos partes:
 

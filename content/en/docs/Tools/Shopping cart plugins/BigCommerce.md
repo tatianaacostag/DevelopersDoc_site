@@ -116,9 +116,14 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 ![](/assets/BigCommerce/Imagen9.png)
 
 
-{{% alert title="Note" color="info"%}}
-To add a new provider, specify the following mandatory fields:
 
+
+
+
+
+
+
+To add a new provider, specify the following mandatory fields:
 | Parameter | Description |
 |---|---|
 | Select Payu Latam country | Choose the country you want to configure |
@@ -128,7 +133,12 @@ To add a new provider, specify the following mandatory fields:
 | Account ID | ID of the PayU account according to the country where you want to sell. |
 | Merchant ID | ID of your commerce in PayU Latam. |
 
-{{% /alert %}} 
+
+
+
+
+
+
 
 
 
@@ -142,9 +152,9 @@ To add a new provider, specify the following mandatory fields:
 
 * For two-step flow, select **Capture on Shipment**.
 
-Refer to the following [link](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) to learn more about the Payment flows.
-
 ![](/assets/BigCommerce/Imagen10.png)
+
+Refer to the following [link](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) to learn more about the Payment flows.
 
 {{% alert title="Important" color="warning"%}}
 The option of processing in more than one step only applies to card payments (subject to [availability](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) in each country). Transactions with other payment methods will perform authorization and capture in a single step.
@@ -220,21 +230,16 @@ Once you have configured the payment conditions for your payment methods, it is 
 ![](/assets/BigCommerce/Imagen15.png)
 
 {{% alert title="Note" color="info"%}}
-Remember you can select a custom title for the card payment option during the configuration of PayU Latam in your BigCommerce account (e.g., you can change “Pay by Card” for “Pay”).  
+Remember you can select a custom title for the card payment option during the configuration of PayU Latam in your BigCommerce account (e.g., you can change “Pay by Card” for “Pay”).
+{{% /alert %}} 
 
-A. Pay By Card: Specify the card details, then click the ‘Pay By Card’ option. 
-
-![](/assets/BigCommerce/Imagen15.png)
-
-B. Pay with APMs: For other payment methods select the ‘pay by web checkout’ button. Provide the details and confirm payment.
+* **Pay by Web Checkout:** For other payment methods select the ‘Pay by Web Checkout’ button. Provide the details and confirm payment.
 
 ![](/assets/BigCommerce/Imagen16.png)
 
 ![](/assets/BigCommerce/Imagen17.png)
 
 ![](/assets/BigCommerce/Imagen18.png)
-
-{{% /alert %}} 
 
 
 
@@ -249,7 +254,7 @@ B. Pay with APMs: For other payment methods select the ‘pay by web checkout’
 
 * PayU Module: In the **_Sales Report module_**.
 
-![](/assets/BigCommerce/Image19.png)
+![](/assets/BigCommerce/Imagen19.png)
 
 
 
