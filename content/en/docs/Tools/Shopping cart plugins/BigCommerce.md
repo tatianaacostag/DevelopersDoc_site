@@ -107,9 +107,6 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 
 
 
-
-
-
 4. Use the 'Add Provider' button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials.
 
 
@@ -125,13 +122,14 @@ To add a new provider, specify the following mandatory fields:
 | Parameter | Description |
 |---|---|
 | Select Payu Latam country | Choose the country you want to configure |
-| API Login | User or login provided by PayU. How do I get my API Login |
-| API Key | Unique key of your commerce. How do I get my API Key |
-| Public Key| Unique key of your commerce. How do I get my Public Key |
+| API Login | User or login provided by PayU. [How do I get my API Login](https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login) |
+| API Key | Unique key of your commerce. [How do I get my API Key](https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login) |
+| Public Key| Unique key of your commerce. [How do I get my Public Key](https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login) |
 | Account ID | ID of the PayU account according to the country where you want to sell. |
 | Merchant ID | ID of your commerce in PayU Latam. |
 
 {{% /alert %}} 
+
 
 
 
@@ -144,14 +142,18 @@ To add a new provider, specify the following mandatory fields:
 
 * For two-step flow, select **Capture on Shipment**.
 
+Refer to the following [link](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) to learn more about the Payment flows.
 
-
-
-Payment Options:
 ![](/assets/BigCommerce/Imagen10.png)
 
-Multistore options will be visible below the payment options section:
+{{% alert title="Important" color="warning"%}}
+The option of processing in more than one step only applies to card payments (subject to [availability](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) in each country). Transactions with other payment methods will perform authorization and capture in a single step.
+{{% /alert %}}
+
+{{% alert title="Note" color="info"%}}
+Multistore options will be visible below the payment options section.
 ![](/assets/BigCommerce/Imagen10B.png)
+{{% /alert %}} 
 
 
 
@@ -159,9 +161,10 @@ Multistore options will be visible below the payment options section:
 
 
 
-6. To access the Order Dashboard, click the ‘Order Dashboard’ button.
+### Manage your orders
 
-Order Dashboard:
+1. To access the Order Dashboard, click the ‘Order Dashboard’ button.
+
 ![](/assets/BigCommerce/Imagen11.png)
 
 
@@ -170,7 +173,8 @@ Order Dashboard:
 
 
 
-7. The Order Dashboard grid will show the payment statuses for the order placed.
+2. The Order Dashboard grid will show the payment statuses for the order placed.
+
 ![](/assets/BigCommerce/Imagen12.png)
 
 
@@ -179,20 +183,26 @@ Order Dashboard:
 
 
 
-8. To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.
+3. To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.
 
-Refund:
 ![](/assets/BigCommerce/Imagen13.png)
 
+{{% alert title="Important" color="warning"%}}
+* Refunds are only available for transactions paid with card.
+* To learn more about the particularities of refunds in each country where PayU operates, click [here](https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html).
+{{% /alert %}}
 
 
 
 
 
 
-9. As an example, if the shipping is to Argentina, then select Argentina from the drop down country options.
 
-Checkout Country Selection:
+## Testing the integration 
+Once you have configured the payment conditions for your payment methods, it is strongly recommended to test your integration before starting to receive real transactions. As a prerequisite, make sure you add a provider with test credentials in your BigCommerce Configuration.
+
+1. Log in to your store and select the product you wish to purchase for testing. At the moment of finalizing the purchase, fill in the data and bear in mind that the country selected must be the country associated to the country where the product will be shipped. As an example, if the shipping is to Argentina, then select Argentina from the drop-down country options.
+
 ![](/assets/BigCommerce/Imagen14.png)
 
 
@@ -201,43 +211,54 @@ Checkout Country Selection:
 
 
 
-10. At the store checkout, customers have the option to select their payment method.
+2. You will then be able to select the desired payment method.  
 
 **Checkout Payment Selection:**
 
-
-
-•	**Pay By Card:** Specify the card details, then click the ‘Pay By Card’ option.
+*	**Card:** Specify the card details, then click the ‘Pay By Card’ option.
 
 ![](/assets/BigCommerce/Imagen15.png)
 
+{{% alert title="Note" color="info"%}}
+Remember you can select a custom title for the card payment option during the configuration of PayU Latam in your BigCommerce account (e.g., you can change “Pay by Card” for “Pay”).  
 
+A. Pay By Card: Specify the card details, then click the ‘Pay By Card’ option. 
 
+![](/assets/BigCommerce/Imagen15.png)
 
-•	**Pay By Web Checkout:** 
-
-A. Click the ‘Pay By Web Checkout’ button.
+B. Pay with APMs: For other payment methods select the ‘pay by web checkout’ button. Provide the details and confirm payment.
 
 ![](/assets/BigCommerce/Imagen16.png)
 
-
-
-B. Select the payment method 
-
 ![](/assets/BigCommerce/Imagen17.png)
 
-
-
-C. Provide the details and click the button below to confirm payment.
-
 ![](/assets/BigCommerce/Imagen18.png)
+
+{{% /alert %}} 
+
+
+
+
+
+
+3. Once the purchase has been approved, you can check it in:
+
+* BigCommerce Order Dashboard: **_PayU Latam > Order Dashboard_**
+
+![](/assets/BigCommerce/Imagen6.png)
+
+* PayU Module: In the **_Sales Report module_**.
+
+![](/assets/BigCommerce/Image19.png)
+
+
 
 
 
 
 
 ## Support Options:
-If you experience a technical issue or have any questions about this extension, please contact our support team on tecnico.co@payu.com or by visiting our website at https://colombia.payu.com/contactanos/. If you choose to email us, please provide details of the extension being used in the subject field and a summary of the issue you’re experiencing in the body copy.
+If you experience a technical issue or have any questions about this extension, please contact our support team **tecnico.co@payu.com** or visit our website **https://colombia.payu.com/contactanos/**. If you choose to email us, please provide details of the extension being used in the subject field and a summary of the issue you’re experiencing in the body copy.
 
 
 
