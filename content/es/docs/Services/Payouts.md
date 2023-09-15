@@ -1,9 +1,9 @@
 ---
-title: "Payouts"
-linkTitle: "Payouts"
+title: "Payouts - Colombia"
+linkTitle: "Payouts - Colombia"
 date: 2021-07-16T11:32:55-05:00
 description: >
-  Payouts is una solución API que te permite enviar múltiples pagos de forma fácil y segura a diferentes tipos de beneficiarios (usuarios, comercios, proveedores, clientes, etc.) y se adapta funcionalmente a las especificaciones del mercado LATAM.
+  Payouts es una solución API que te permite enviar múltiples pagos de forma fácil y segura a diferentes tipos de beneficiarios (usuarios, comercios, proveedores, clientes, etc.) y se adapta funcionalmente a las especificaciones del mercado de Colombia. <img src="/assets/Colombia.png" width="25px"/> 
 weight: 70
 ---
 
