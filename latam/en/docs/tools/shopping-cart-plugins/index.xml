@@ -736,10 +736,6 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
 &lt;p&gt;To add a new provider, specify the following mandatory fields:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -755,15 +751,15 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;API Login&lt;/td&gt;
-&lt;td&gt;User or login provided by PayU. How do I get my API Login&lt;/td&gt;
+&lt;td&gt;User or login provided by PayU. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;API Key&lt;/td&gt;
-&lt;td&gt;Unique key of your commerce. How do I get my API Key&lt;/td&gt;
+&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Key&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Public Key&lt;/td&gt;
-&lt;td&gt;Unique key of your commerce. How do I get my Public Key&lt;/td&gt;
+&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my Public Key&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Account ID&lt;/td&gt;
@@ -775,9 +771,6 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-&lt;/div&gt;
-
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Choose if your payment transactions are executed in a one-step or two-step flow:&lt;/li&gt;
 &lt;/ol&gt;
@@ -789,46 +782,87 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 &lt;p&gt;For two-step flow, select &lt;strong&gt;Capture on Shipment&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Payment Options:
-&lt;img src=&#34;../../../../assets/BigCommerce/Imagen10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Multistore options will be visible below the payment options section:
-&lt;img src=&#34;../../../../assets/BigCommerce/Imagen10B.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;6&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Refer to the following &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;link&lt;/a&gt; to learn more about the Payment flows.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
+The option of processing in more than one step only applies to card payments (subject to &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;availability&lt;/a&gt; in each country). Transactions with other payment methods will perform authorization and capture in a single step.
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Multistore options will be visible below the payment options section.
+&lt;img src=&#34;../../../../assets/BigCommerce/Imagen10B.png&#34; alt=&#34;&#34;&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;manage-your-orders&#34;&gt;Manage your orders&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;To access the Order Dashboard, click the ‘Order Dashboard’ button.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Order Dashboard:
-&lt;img src=&#34;../../../../assets/BigCommerce/Imagen11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;7&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;The Order Dashboard grid will show the payment statuses for the order placed.
-&lt;img src=&#34;../../../../assets/BigCommerce/Imagen12.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.&lt;/p&gt;
-&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;The Order Dashboard grid will show the payment statuses for the order placed.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Refund:
-&lt;img src=&#34;../../../../assets/BigCommerce/Imagen13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;9&#34;&gt;
-&lt;li&gt;As an example, if the shipping is to Argentina, then select Argentina from the drop down country options.&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen12.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Checkout Country Selection:
-&lt;img src=&#34;../../../../assets/BigCommerce/Imagen14.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;10&#34;&gt;
-&lt;li&gt;At the store checkout, customers have the option to select their payment method.&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Refunds are only available for transactions paid with card.&lt;/li&gt;
+&lt;li&gt;To learn more about the particularities of refunds in each country where PayU operates, click &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;testing-the-integration&#34;&gt;Testing the integration&lt;/h2&gt;
+&lt;p&gt;Once you have configured the payment conditions for your payment methods, it is strongly recommended to test your integration before starting to receive real transactions. As a prerequisite, make sure you add a provider with test credentials in your BigCommerce Configuration.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Log in to your store and select the product you wish to purchase for testing. At the moment of finalizing the purchase, fill in the data and bear in mind that the country selected must be the country associated to the country where the product will be shipped. As an example, if the shipping is to Argentina, then select Argentina from the drop-down country options.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen14.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;You will then be able to select the desired payment method.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;Checkout Payment Selection:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;•	&lt;strong&gt;Pay By Card:&lt;/strong&gt; Specify the card details, then click the ‘Pay By Card’ option.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Card:&lt;/strong&gt; Specify the card details, then click the ‘Pay By Card’ option.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen15.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;•	&lt;strong&gt;Pay By Web Checkout:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;A. Click the ‘Pay By Web Checkout’ button.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Remember you can select a custom title for the card payment option during the configuration of PayU Latam in your BigCommerce account (e.g., you can change “Pay by Card” for “Pay”).
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pay by Web Checkout:&lt;/strong&gt; For other payment methods select the ‘Pay by Web Checkout’ button. Provide the details and confirm payment.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;B. Select the payment method&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen17.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;C. Provide the details and click the button below to confirm payment.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen18.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Once the purchase has been approved, you can check it in:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;BigCommerce Order Dashboard: &lt;strong&gt;&lt;em&gt;PayU Latam &amp;gt; Order Dashboard&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PayU Module: In the &lt;strong&gt;&lt;em&gt;Sales Report module&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen19.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;support-options&#34;&gt;Support Options:&lt;/h2&gt;
-&lt;p&gt;If you experience a technical issue or have any questions about this extension, please contact our support team on &lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt; or by visiting our website at &lt;a href=&#34;https://colombia.payu.com/contactanos/&#34;&gt;https://colombia.payu.com/contactanos/&lt;/a&gt;. If you choose to email us, please provide details of the extension being used in the subject field and a summary of the issue you’re experiencing in the body copy.&lt;/p&gt;
+&lt;p&gt;If you experience a technical issue or have any questions about this extension, please contact our support team &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; or visit our website &lt;strong&gt;&lt;a href=&#34;https://colombia.payu.com/contactanos/&#34;&gt;https://colombia.payu.com/contactanos/&lt;/a&gt;&lt;/strong&gt;. If you choose to email us, please provide details of the extension being used in the subject field and a summary of the issue you’re experiencing in the body copy.&lt;/p&gt;
 
       </description>
     </item>
