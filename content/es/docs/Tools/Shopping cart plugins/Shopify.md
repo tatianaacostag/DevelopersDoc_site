@@ -81,10 +81,10 @@ Ejemplo: Si deseas utilizar el ambiente de pruebas en vez del ambiente de produc
 
 
 
-5. Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Desactiva la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.
+5. Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Activa la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.
 
 
-![](/assets/ShopifyReverseIntegration/imagen5.png)
+![](/assets/ShopifyReverseIntegration/imagen6.png)
 
 
 
