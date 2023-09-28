@@ -666,9 +666,9 @@ Ejemplo: Si deseas utilizar el ambiente de pruebas en vez del ambiente de produc
 &lt;/div&gt;
 
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Desactiva la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.&lt;/li&gt;
+&lt;li&gt;Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Activa la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;A partir de este momento, tienes a PayU instalado como procesador de pagos y puedes comenzar tus ventas. Tus clientes pueden hacer compras utilizando el Web Checkout de PayU a través de métodos de pago como efectivo, tarjetas de crédito y transferencias bancarias (dependiendo del país en el que estés vendiendo).&lt;/li&gt;
 &lt;/ol&gt;

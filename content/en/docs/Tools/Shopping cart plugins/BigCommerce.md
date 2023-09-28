@@ -82,7 +82,7 @@ Configure the payment methods to be displayed on the website for checkout. [Cons
 
 
 
-3. Choose the way you want the available card payment options to be displayed at the checkout. You can choose between one of the following options:  
+3. Choose the way you want the available card payment options to be displayed at the checkout. You can choose one of the following options:  
 
 
 *	Show Powered by PayU Latam and logo on payment form
@@ -90,7 +90,8 @@ Configure the payment methods to be displayed on the website for checkout. [Cons
 *	Show credit card logo on checkout page
 
 
-![](/assets/BigCommerce/Imagen6.png)
+
+![](/assets/BigCommerce/Imagen7.png)
 
 
 
@@ -99,7 +100,6 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 {{% /alert %}}
 
 
-![](/assets/BigCommerce/Imagen7.png)
 
 
 
@@ -107,7 +107,7 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 
 
 
-4. Use the 'Add Provider' button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials.
+4. Use the 'Add Provider' button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials, and remember that in the configuration of your accounts you can choose whether you want to use them in test mode or in a productive environment.
 
 
 ![](/assets/BigCommerce/Imagen8.png)
@@ -211,7 +211,7 @@ Multistore options will be visible below the payment options section.
 ## Testing the integration 
 Once you have configured the payment conditions for your payment methods, it is strongly recommended to test your integration before starting to receive real transactions. As a prerequisite, make sure you add a provider with test credentials in your BigCommerce Configuration.
 
-1. Log in to your store and select the product you wish to purchase for testing. At the moment of finalizing the purchase, fill in the data and bear in mind that the country selected must be the country associated to the country where the product will be shipped. As an example, if the shipping is to Argentina, then select Argentina from the drop-down country options.
+1. Log in to your store and select the product you wish to purchase for testing. At the moment of finalizing the purchase, fill in the data and keep in mind that the country selected must be the country where the product will be shipped. As an example, if the shipping is to Argentina, then select Argentina from the drop-down country options.
 
 ![](/assets/BigCommerce/Imagen14.png)
 
