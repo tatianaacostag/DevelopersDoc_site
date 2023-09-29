@@ -18,7 +18,7 @@ BigCommerce is a digital commerce platform that allows you to quickly create an 
 1. Install the app from the BigCommerce Marketplace by clicking the install button.
 
 
-![](/assets/BigCommerce/Imagen1.png)
+![](/assets/BigCommerceFinal/Howtoinstall_1.png)
 
 
 
@@ -29,7 +29,7 @@ BigCommerce is a digital commerce platform that allows you to quickly create an 
 2.	Click the checkbox and click the ‘Confirm’ button to install the app.
 
 
-![](/assets/BigCommerce/Imagen2.png)
+![](/assets/BigCommerceFinal/Howtoinstall_2.png)
 
 
 
@@ -40,7 +40,7 @@ BigCommerce is a digital commerce platform that allows you to quickly create an 
 3. The app interface appears as follows:
 
 
-![](/assets/BigCommerce/Imagen3.png)
+![](/assets/BigCommerceFinal/Howtoinstall_3.png)
 
 
 
@@ -57,13 +57,7 @@ Configure the payment methods to be displayed on the website for checkout. [Cons
 1. After installing the application select **Enable PayU Latam** to allow the app in the BigCommerce store.  
 
 
-![](/assets/BigCommerce/Imagen4.png)
-
-
-
-
-
-![](/assets/BigCommerce/Imagen4B.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_1.png)
 
 
 
@@ -74,7 +68,7 @@ Configure the payment methods to be displayed on the website for checkout. [Cons
 2. Select a custom title for the card payment option (e.g., Pay by Card). This title will be visible on the checkout page for your customers.  
 
 
-![](/assets/BigCommerce/Imagen5.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_2.png)
 
 
 
@@ -91,7 +85,7 @@ Configure the payment methods to be displayed on the website for checkout. [Cons
 
 
 
-![](/assets/BigCommerce/Imagen7.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_3.png)
 
 
 
@@ -110,10 +104,10 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 4. Use the 'Add Provider' button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials, and remember that in the configuration of your accounts you can choose whether you want to use them in test mode or in a productive environment.
 
 
-![](/assets/BigCommerce/Imagen8.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_4.png)
 
 
-![](/assets/BigCommerce/Imagen9.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_5.png)
 
 
 
@@ -152,7 +146,7 @@ To add a new provider, specify the following mandatory fields:
 
 * For two-step flow, select **Capture on Shipment**.
 
-![](/assets/BigCommerce/Imagen10.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_6.png)
 
 Refer to the following [link](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) to learn more about the Payment flows.
 
@@ -162,7 +156,7 @@ The option of processing in more than one step only applies to card payments (su
 
 {{% alert title="Note" color="info"%}}
 Multistore options will be visible below the payment options section.
-![](/assets/BigCommerce/Imagen10B.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_7.png)
 {{% /alert %}} 
 
 
@@ -175,7 +169,7 @@ Multistore options will be visible below the payment options section.
 
 1. To access the Order Dashboard, click the ‘Order Dashboard’ button.
 
-![](/assets/BigCommerce/Imagen11.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_8.png)
 
 
 
@@ -250,7 +244,7 @@ Remember you can select a custom title for the card payment option during the co
 
 * BigCommerce Order Dashboard: **_PayU Latam > Order Dashboard_**
 
-![](/assets/BigCommerce/Imagen6.png)
+![](/assets/BigCommerceFinal/Cómoutilizarestaextensión_8.png)
 
 * PayU Module: In the **_Sales Report module_**.
 
