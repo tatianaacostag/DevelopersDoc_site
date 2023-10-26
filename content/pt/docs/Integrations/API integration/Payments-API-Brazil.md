@@ -351,7 +351,7 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 | transaction > networkToken > expiry | Alfanumérico | 7 | Data de expiração do token. Formato `YYYY/MM`. | Sim<sup>\*</sup> |
 | transaction > digitalWallet |  |  | Incluir este parâmetro quando a transação for efectuada através de uma Carteira Digital. *Ao submeter este objeto, todos os seus campos são obrigatórios. | Não |
 | transaction > digitalWallet > type | Alfanumérico | ---- | Envia o valor com base na carteira que está a ser processada: GOOGLE_PAY | Sim* |
-| transaction > digitalWallet > message | Alfanumérico | ---- | Inclui as informações do token de pagamento do Google que o Google lhe devolverá para cada transação. Para mais informações, clique aqui. | Sim* |
+| transaction > digitalWallet > message | Alfanumérico | ---- | Inclui as informações do token de pagamento do Google que o Google lhe devolverá para cada transação. Para mais informações, clique [aqui](#definições-payu-para-integração-api-do-meio-de-pagamento). | Sim* |
 | transaction > type | Alfanumérico | 32 | Definir este valor de acordo com a transação que você quer:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para fluxos de uma etapa.</li></ul> | Sim |
 | transaction > paymentMethod | Alfanumérico | 32 | Selecione um método de pagamento com cartão de crédito válido. [Veja os métodos de pagamento disponíveis o Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sim |
 | transaction > paymentCountry | Alfanumérico | 2 | Definir `BR` para o Brasil. | Sim |
@@ -1052,7 +1052,7 @@ Exemplo resposta:
 {{< /tabs >}}
 
 ## Enviar transação com Google Pay™ {#submit-transaction-with-google-pay}
-O Google Pay é uma carteira digital que lhe permite efetuar pagamentos com cartão de forma fácil e rápida, sem ter de introduzir os dados do seu cartão para cada pagamento. Os dados do cartão são guardados de forma segura pelo Google. Este método de pagamento está disponível para todos os dispositivos (smartphones e computadores), independentemente do Sistema Operacional e em quase todos os navegadores Web.
+Google Pay é uma carteira digital que lhe permite efetuar pagamentos com cartão de forma fácil e rápida, sem ter de introduzir os dados do seu cartão para cada pagamento. Os dados do cartão são guardados de forma segura pelo Google. Este método de pagamento está disponível para todos os dispositivos (smartphones e computadores), independentemente do Sistema Operacional e em quase todos os navegadores Web.
 
 Se utilizarem o Google Pay, os comerciantes devem aderir à [Política de Utilização](https://payments.developers.google.com/terms/aup) da API do Google Pay e concordar com os termos que definem os [Termos de serviço da API do Google Pay](https://payments.developers.google.com/terms/sellertos).
 
@@ -1061,8 +1061,9 @@ A descrição abaixo aplica-se à prestação deste serviço diretamente atravé
 {{% /alert %}}
 
 Um tema muito importante é que se a sua integração com a PayU for API, você deve efetuar as definições descritas nesta seção para processar as transações com o Google Pay: 
-* Efetuar a integração API do meio de pagamento
-* Realizar a adaptação da sua integração API com PayU.
+
+* [Efetuar a integração API do meio de pagamento](#integração-api-do-meio-de-pagamento)
+* [Realizar a adaptação da sua integração API com PayU](#processar-transacções-o-google-pay-com-payu)
 
  ### Integração API do meio de pagamento 
 Para integrar o seu site com a carteira Google Pay, proceda de acordo com as instruções apresentadas no link abaixo:
@@ -1070,10 +1071,10 @@ Para integrar o seu site com a carteira Google Pay, proceda de acordo com as ins
 * [Lista de verificação da integração da API](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist)
 * [Directrizes da marca](https://developers.google.com/pay/api/web/guides/brand-guidelines)
 
-#### Definições PayU para integração API do meio de pagamento
+##### Definições PayU para integração API do meio de pagamento
 Abaixo encontrará as informações relevantes que deverá seguir durante a integração do meio de pagamento para que os seus pagamentos sejam processados pela PayU:
 
- * Solicitar um Payment Token para a PayU
+* ###### Solicitar um Payment Token para a PayU
 Google encripta as informações do cartão informado pelo pagador para o processamento seguro por um fornecedor de pagamento. O parâmetro ```gateway``` no script deve ter o valor constante de ```payulatam```, e o ```gatewayMerchantId``` deve incluir o número da sua conta PayU. Aqui está um exemplo:
 
 ```
@@ -1086,7 +1087,7 @@ const tokenizationSpecification = {
 };
 ```
 
-* Meios de pagamento suportados
+* ###### Meios de pagamento suportados
 Note que a PayU, enquanto processador de pagamentos Google Pay, permite o tratamento de todos os tipos de cartões de pagamento emitidos pelas organizações Visa e MasterCard, isto implica a seguinte configuração do script Google:
 
 ```
@@ -1212,9 +1213,8 @@ Response body:
 
 Request body:
 ```XML
-<?xml version="1.0" encoding="UTF-8" ?>
- <root>
-     <language>es</language>
+<request>
+        <language>es</language>
      <command>SUBMIT_TRANSACTION</command>
      <merchant>
          <apiKey>012345678901</apiKey>
@@ -1257,16 +1257,14 @@ Request body:
          <paymentCountry>BR</paymentCountry>
      </transaction>
      <test>false</test>
- </root>
-
+</request>
 ```
 <br>
 
 Response body:
 ```XML
-<?xml version="1.0" encoding="UTF-8" ?>
- <root>
-     <code>SUCCESS</code>
+<paymentResponse>
+         <code>SUCCESS</code>
      <error></error>
      <transactionResponse>
          <orderId>1400437001</orderId>
@@ -1290,7 +1288,7 @@ Response body:
          </extraParameters>
          <additionalInfo></additionalInfo>
      </transactionResponse>
- </root>
+</paymentResponse>
 ```
 {{< /tab >}}
 {{< /tabs >}}
