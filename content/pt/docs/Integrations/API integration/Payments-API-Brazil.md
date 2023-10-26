@@ -20,6 +20,7 @@ Para integrar com a API de pagamentos do Brasil, direcione sua solicitação par
 A API de pagamentos inclui os seguintes métodos:
 
 * [Enviar transação com cartão de crédito]({{< ref "#submit-transaction-with-credit-cards" >}})
+* [Enviar transação com Google Pay™]({{< ref "#submit-transaction-with-google-pay" >}})
 * [Enviar transação com PIX]({{< ref "#submit-transaction-with-pix" >}})
 * [Enviar transação em dinheiro]({{< ref "#submit-transaction-with-cash" >}})
 * [Enviar transação com transferência bancária]({{< ref "#submit-transaction-with-bank-transfer" >}})
@@ -325,7 +326,7 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 | transaction > creditCard > number | Alfanumérico | Mín:13 Máx:20 | Número do cartão de crédito. | Não |
 | transaction > creditCard > securityCode | Alfanumérico | Mín:1 Máx:4 | Código de segurança do cartão de crédito (CVC2, CVV2, CID). | Não |
 | transaction > creditCard > expirationDate | Alfanumérico | 7 | Data de validade do cartão de crédito. Formato `YYYY/MM`. Este parâmetro e obrigatório quando o pagamento é realizado com cartão de crédito tokenizado. | Não |
-| transaction > creditCard > name | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de crédito. | Não |
+| transaction > creditCard > name | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de crédito. *Obrigatório apenas para transacções Google Pay. | Não* |
 | transaction > creditCard > processWithoutCvv2 | Boolean | Máx:255 | Permite processar transações sem incluir o código de segurança do cartão de crédito. Sua loja precisa da autorização do PayU antes de usar este recurso. | Não |
 | transaction > payer |  |  | Informações do pagador. | Não |
 | transaction > payer > emailAddress | Alfanumérico | Máx:255 | Endereço de e-mail do pagador. | Não |
@@ -348,6 +349,9 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 | transaction > networkToken > tokenPan | Alfanumérico | Máx:32 | Número do token gerado por MDES ou VTS. | Sim<sup>\*</sup> |
 | transaction > networkToken > cryptogram | Alfanumérico | Máx:28 | Chave única gerada por MDES ou VTS para decifrar as informações do cartão de crédito. | Sim<sup>\*</sup> |
 | transaction > networkToken > expiry | Alfanumérico | 7 | Data de expiração do token. Formato `YYYY/MM`. | Sim<sup>\*</sup> |
+| transaction > digitalWallet |  |  | Incluir este parâmetro quando a transação for efectuada através de uma Carteira Digital. *Ao submeter este objeto, todos os seus campos são obrigatórios. | Não |
+| transaction > digitalWallet > type | Alfanumérico | ---- | Envia o valor com base na carteira que está a ser processada: GOOGLE_PAY | Sim* |
+| transaction > digitalWallet > message | Alfanumérico | ---- | Inclui as informações do token de pagamento do Google que o Google lhe devolverá para cada transação. Para mais informações, clique aqui. | Sim* |
 | transaction > type | Alfanumérico | 32 | Definir este valor de acordo com a transação que você quer:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para fluxos de uma etapa.</li></ul> | Sim |
 | transaction > paymentMethod | Alfanumérico | 32 | Selecione um método de pagamento com cartão de crédito válido. [Veja os métodos de pagamento disponíveis o Brasil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Sim |
 | transaction > paymentCountry | Alfanumérico | 2 | Definir `BR` para o Brasil. | Sim |
@@ -1046,6 +1050,254 @@ Exemplo resposta:
 ```
 {{< /tab >}}
 {{< /tabs >}}
+
+## Enviar transação com Google Pay™ {#submit-transaction-with-google-pay}
+O Google Pay é uma carteira digital que lhe permite efetuar pagamentos com cartão de forma fácil e rápida, sem ter de introduzir os dados do seu cartão para cada pagamento. Os dados do cartão são guardados de forma segura pelo Google. Este método de pagamento está disponível para todos os dispositivos (smartphones e computadores), independentemente do Sistema Operacional e em quase todos os navegadores Web.
+
+Se utilizarem o Google Pay, os comerciantes devem aderir à [Política de Utilização](https://payments.developers.google.com/terms/aup) da API do Google Pay e concordar com os termos que definem os [Termos de serviço da API do Google Pay](https://payments.developers.google.com/terms/sellertos).
+
+{{% alert title="Observação" color="info"%}}
+A descrição abaixo aplica-se à prestação deste serviço diretamente através da apresentação do pop-up do Google Pay no site do beneficiário (loja virtual).
+{{% /alert %}}
+
+Um tema muito importante é que se a sua integração com a PayU for API, você deve efetuar as definições descritas nesta seção para processar as transações com o Google Pay: 
+* Efetuar a integração API do meio de pagamento
+* Realizar a adaptação da sua integração API com PayU.
+
+ ### Integração API do meio de pagamento 
+Para integrar o seu site com a carteira Google Pay, proceda de acordo com as instruções apresentadas no link abaixo:
+* [Documentação da API](https://developers.google.com/pay/api/web)
+* [Lista de verificação da integração da API](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist)
+* [Directrizes da marca](https://developers.google.com/pay/api/web/guides/brand-guidelines)
+
+#### Definições PayU para integração API do meio de pagamento
+Abaixo encontrará as informações relevantes que deverá seguir durante a integração do meio de pagamento para que os seus pagamentos sejam processados pela PayU:
+
+ * Solicitar um Payment Token para a PayU
+Google encripta as informações do cartão informado pelo pagador para o processamento seguro por um fornecedor de pagamento. O parâmetro ```gateway``` no script deve ter o valor constante de ```payulatam```, e o ```gatewayMerchantId``` deve incluir o número da sua conta PayU. Aqui está um exemplo:
+
+```
+const tokenizationSpecification = {
+  type: 'PAYMENT_GATEWAY',
+  parameters: {
+    'gateway': 'payulatam',
+    'gatewayMerchantId': 'YOUR_ACCOUNT_ID '
+  }
+};
+```
+
+* Meios de pagamento suportados
+Note que a PayU, enquanto processador de pagamentos Google Pay, permite o tratamento de todos os tipos de cartões de pagamento emitidos pelas organizações Visa e MasterCard, isto implica a seguinte configuração do script Google:
+
+```
+const allowedCardNetworks = ["MASTERCARD", "VISA", “ELECTRON”, “MAESTRO];
+const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
+```
+
+Em resposta, a Google devolverá o elemento ```PaymentData``` e o campo ```paymentMethodData.tokenizationData.token``` conterá um token do Google Pay encriptado de forma segura (uma cadeia de caracteres).
+
+Abaixo encontra-se um exemplo de um Google Pay Token:
+
+```
+{
+  "protocolVersion":"ECv2",
+  "signature":"MEUCIG39tbaQPwJe28U+UMsJmxUBUWSkwlOv9Ibohacer+CoAiEA8Wuq3lLUCwLQ06D2kErxaMg3b/oLDFbd2gcFze1zDqU\u003d",
+  "intermediateSigningKey":{
+    "signedKey": "{\"keyExpiration\":\"1542394027316\",\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\\u003d\\u003d\"}",
+    "signatures": ["MEYCIQDcXCoB4fYJF3EolxrE2zB+7THZCfKA7cWxSztKceXTCgIhAN/d5eBgx/1A6qKBdH0IS7/aQ7dO4MuEt26OrLCUxZnl"]
+  },
+  "signedMessage":"{\"tag\":\"TjkIKzIOvCrFvjf7/aeeL8/FZJ3tigaNnerag68hIaw\\u003d\",\"ephemeralPublicKey\":\"BLJoTmxP2z7M2N6JmaN786aJcT/L/OJfuJKQdIXcceuBBZ00sf5nm2+snxAJxeJ4HYFTdNH4MOJrH58GNDJ9lJw\\u003d\",\"encryptedMessage\":\"mleAf23XkKjj\"}"
+}
+```
+
+ ### Processar transacções o Google Pay com PayU 
+ A principal função do Google Pay como carteira digital é armazenar cartões de crédito para facilitar o processamento de pagamentos, com isso em mente, para processar transações do Google Pay na PayU a lógica a ser aplicada será a mesma que para cartões de crédito, exceto para as seguintes particularidades:
+
+* Se estiver processando transações para os seus clientes com o Google Pay, é preciso configurar as informações da carteira digital no parâmetro ```transaction.digitalWallet```.
+* No parâmetro ```transaction.digitalWallet```, utilize ```GOOGLE_PAY``` para o campo ```transaction.digitalWallet.type```  e envie o Google Pay token no campo ```transaction.digitalWallet.message```. 
+* Tenha em mente que o parâmetro ```transaction.creditcard``` para transações do Google Pay, deve enviar sempre um valor válido para o campo ```transaction.creditcard.name```. Os outros campos deste parâmetro não são necessários, uma vez que o Google Pay os fornece no token do Google Pay.
+* Por predefinição, o processamento de cartões de crédito sem código de segurança não está ativa. Contate o seu Gestor de Conta da PayU para efetuar as activações necessárias para processar sem cvv, uma vez que este método de pagamento o exige.
+
+#### Chamada API
+A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
+
+{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request body:
+```JSON
+{
+    "language": "es",
+    "command": "SUBMIT_TRANSACTION",
+    "merchant": {
+        "apiKey": "012345678901",
+        "apiLogin": "012345678901"
+    },
+    "transaction": {
+        "order": {
+            "accountId": "9",
+            "language": "es",
+            "description" : "test",
+            "signature": "{{payu_signature}}",
+            "referenceCode": "{{payu_ref_code}}",
+            "additionalValues": {
+                "TX_VALUE": {
+                    "value": 100,
+                    "currency": "ARS"
+                }
+            }
+        },
+        "payer": {
+            "merchantPayerId": "1",
+            "fullName": "First name and second payer name",
+            "emailAddress": "payer.name@payu.com",
+            "contactPhone": "7563126",
+            "dniNumber": "5415668464654",
+            "dniType": null
+        },
+        "creditCard": {
+            "name": "Kevin Pelaez"
+        },
+        "digitalWallet": {
+            "type" : "GOOGLE_PAY",
+            "message" : "{\"signature\":\"MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\\u003d\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1695147545256\\\"}\",\"signatures\":[\"MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\\u003d\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\\\",\\\"ephemeralPublicKey\\\":\\\"BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\\\u003d\\\",\\\"tag\\\":\\\"NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\\\u003d\\\"}\"}"
+        },
+        "extraParameters": {
+            "INSTALLMENTS_NUMBER": 1
+        },
+        "type": "AUTHORIZATION_AND_CAPTURE",
+        "paymentMethod": "MASTERCARD",
+        "paymentCountry": "BR"
+    },
+    "test": false
+}
+```
+<br>
+
+Response body:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 1400437001,
+        "transactionId": "f0f8c441-43e8-490a-b4f2-c14d2c403175",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "6",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "282856",
+        "authorizationCode": "MOCK-CIELO-1624047897817",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": null,
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1624029898077,
+        "referenceQuestionnaire": null,
+        "extraParameters": {
+            "BANK_REFERENCED_CODE": "CREDIT",
+            "CIELO_TID": "1006993069000509C28A"
+        },
+        "additionalInfo": null
+    }
+} 
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request body:
+```XML
+<?xml version="1.0" encoding="UTF-8" ?>
+ <root>
+     <language>es</language>
+     <command>SUBMIT_TRANSACTION</command>
+     <merchant>
+         <apiKey>012345678901</apiKey>
+         <apiLogin>012345678901</apiLogin>
+     </merchant>
+     <transaction>
+         <order>
+             <accountId>9</accountId>
+             <language>es</language>
+             <description>test</description>
+             <signature>{{payu_signature}}</signature>
+             <referenceCode>{{payu_ref_code}}</referenceCode>
+             <additionalValues>
+                 <TX_VALUE>
+                     <value>100</value>
+                     <currency>ARS</currency>
+                 </TX_VALUE>
+             </additionalValues>
+         </order>
+         <payer>
+             <merchantPayerId>1</merchantPayerId>
+             <fullName>First name and second payer name</fullName>
+             <emailAddress>payer.name@payu.com</emailAddress>
+             <contactPhone>7563126</contactPhone>
+             <dniNumber>5415668464654</dniNumber>
+             <dniType></dniType>
+         </payer>
+         <creditCard>
+             <name>Kevin Pelaez</name>
+         </creditCard>
+         <digitalWallet>
+             <type>GOOGLE_PAY</type>
+             <message>{"signature":"MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\u003d\\u003d\",\"keyExpiration\":\"1695147545256\"}","signatures":["MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\u003d\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\",\"ephemeralPublicKey\":\"BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\u003d\",\"tag\":\"NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\u003d\"}"}</message>
+         </digitalWallet>
+         <extraParameters>
+             <INSTALLMENTS_NUMBER>1</INSTALLMENTS_NUMBER>
+         </extraParameters>
+         <type>AUTHORIZATION_AND_CAPTURE</type>
+         <paymentMethod>MASTERCARD</paymentMethod>
+         <paymentCountry>BR</paymentCountry>
+     </transaction>
+     <test>false</test>
+ </root>
+
+```
+<br>
+
+Response body:
+```XML
+<?xml version="1.0" encoding="UTF-8" ?>
+ <root>
+     <code>SUCCESS</code>
+     <error></error>
+     <transactionResponse>
+         <orderId>1400437001</orderId>
+         <transactionId>f0f8c441-43e8-490a-b4f2-c14d2c403175</transactionId>
+         <state>APPROVED</state>
+         <paymentNetworkResponseCode>6</paymentNetworkResponseCode>
+         <paymentNetworkResponseErrorMessage></paymentNetworkResponseErrorMessage>
+         <trazabilityCode>282856</trazabilityCode>
+         <authorizationCode>MOCK-CIELO-1624047897817</authorizationCode>
+         <pendingReason></pendingReason>
+         <responseCode>APPROVED</responseCode>
+         <errorCode></errorCode>
+         <responseMessage></responseMessage>
+         <transactionDate></transactionDate>
+         <transactionTime></transactionTime>
+         <operationDate>1624029898077</operationDate>
+         <referenceQuestionnaire></referenceQuestionnaire>
+         <extraParameters>
+             <BANK_REFERENCED_CODE>CREDIT</BANK_REFERENCED_CODE>
+             <CIELO_TID>1006993069000509C28A</CIELO_TID>
+         </extraParameters>
+         <additionalInfo></additionalInfo>
+     </transactionResponse>
+ </root>
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+
+Você encontrará a descrição do objeto transaction.digitalWallet e dos seus campos na seção [Variáveis](https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-brazil.html#variables-for-request-and-response).
+
 
 ## Enviar transação com PIX {#submit-transaction-with-pix}
 Este método permite processar pagamentos usando PIX. Para fazer a integração com o PIX, você precisa incluir na página de checkout um código QR que seu cliente possa ler com o smartphone para fazer o pagamento.
