@@ -351,7 +351,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > networkToken > expiry | Alphanumeric | 7 | Expiration date of the token. Format `YYYY/MM`. | Yes<sup>\*</sup> |
 | transaction > digitalWallet |  |  | Include this parameter when the transaction is done using a Digital Wallet. *When sending this object, all its parameters are mandatory. | No |
 | transaction > digitalWallet > type | Alphanumeric | ---- | Set this value according to the digital wallet that you are processing: GOOGLE_PAY | Yes* |
-| transaction > digitalWallet > message | Alphanumeric | ---- | Include the information of the Google Pay Token that Google will return to you for each transaction. For more information consult [here](#payu-definitions-for-the-payment-method-api-integration). | Yes* |
+| transaction > digitalWallet > message | Alphanumeric | ---- | Include the information of the Google Pay Token that Google will return to you for each transaction. For more information consult [here](#payu-definitions-for-the-api-integration-of-the-payment-method). | Yes* |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` for one-step flows.</li></ul> | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Credit card Payment Method. [See the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `BR` for Brazil. | Yes |
@@ -1053,32 +1053,32 @@ Response body:
 
 
 ## Submit transaction with Google Pay™ {#submit-transaction-with-google-pay}
-Google Pay is a digital wallet, which enables simple and fast card payments, without the need to enter the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), irrespective of the operating system and in almost all web browser.
+Google Pay is a digital wallet that enables simple and fast card payments, without the need of entering the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), no matter the operating system and in almost all web browsers.
 
-In case of Google Pay usage, the merchants must adhere to the Google Pay APIs [Acceptable Use Policy](https://payments.developers.google.com/terms/aup) and accept the terms that [Google Pay API Terms of Service](https://payments.developers.google.com/terms/sellertos) defines.
+In case of using Google Pay, the merchants must adhere to the Google Pay APIs [Acceptable Use Policy](https://payments.developers.google.com/terms/aup) and accept the terms that [Google Pay API Terms of Service](https://payments.developers.google.com/terms/sellertos) defines.
 
 {{% alert title="Note" color="info"%}}
-The description below applies to provision of this service directly by displaying the Google Pay lightbox at the website of payment recipient (e-store).
+The description below applies to provision of this service directly by displaying the Google Pay lightbox at the website of the payment recipient (e-store).
 {{% /alert %}}
 
-If you wish to offer this method via PayU web-checkout, no additional integration effort is required. Contact your Key Account Manager to make the activation request.
+If you wish to offer this method via PayU Web-Checkout, no additional integration effort is required. Contact your Key Account Manager to make the activation request.
 
-Please note that if your integration with PayU is API you must make the settings described in this section to process Google Pay transactions: 
+Please note that if your integration with PayU is API, you must change the settings described in this section to process Google Pay transactions: 
 
 * [Perform API integration of the payment method](#api-integration-of-the-payment-method)
 * [Perform the adaptation of your API integration with PayU](#process-google-pay-transactions-in-payu)
 
  ### API integration of the payment method 
-To integrate the website with the Google Pay wallet, proceed according to the instructions placed at this website:
+To integrate the website with the Google Pay wallet, proceed according to the instructions placed at these websites:
 * [API documentation](https://developers.google.com/pay/api/web)
 * [API integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist)
 * [Brand guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines)
 
-##### PayU definitions for the payment method API integration
-Below you will find the relevant information that you must consider for your payments to be processed by PayU once the payment method is integrated:
+##### PayU definitions for the API integration of the payment method
+Below you will find relevant information that you must consider for your payments to be processed by PayU once the payment method is integrated:
 
 * ###### Request a payment token for PayU
-Google encrypts information about a payer's selected card for secure processing by a payment provider. The ```gateway``` parameter in the script should have the constant value of ```payulatam```, and the ```gatewayMerchantId``` should include your PayU account number according to the example below:
+Google encrypts the information of the card selected by the payer for secure processing, this is carried out by a payment provider. The ```gateway``` parameter in the script should have the constant value of ```payulatam```, and the ```gatewayMerchantId``` should include your PayU account number according to the example below:
 
 ```
 const tokenizationSpecification = {
@@ -1091,7 +1091,7 @@ const tokenizationSpecification = {
 ```
 
 * ###### Supported payment card networks
-Please note that PayU as the processor of Google Pay payments enables the handling of all types of payment cards issued by the Visa and MasterCard organizations. This implies the following configuration of the Google script:
+Please note that PayU as the processor of Google Pay payments, enables the handling of all types of payment cards issued by the Visa and Mastercard organizations. This implies the following configuration of the Google script:
 
 ```
 const allowedCardNetworks = ["MASTERCARD", "VISA", “ELECTRON”, “MAESTRO];
@@ -1115,11 +1115,11 @@ A sample of Google Pay Token looks like this:
 ```
 
  ### Process Google Pay transactions in PayU
- The primary function of Google Pay as digital wallet is to store credit cards to facilitate payment processing, with that in mid, for PayU the transactions processed by Gpay will have the same logic of credit cards except for the following particularities:
+ The primary function of Google Pay as a digital wallet is to store credit cards to facilitate payment processing. With that in mind, for PayU, the transactions processed by Google Pay will have the same credit card logic except for the following particularities:
 
-* If you are processing transactions of your customers with Google pay, you should configure the information of the wallet in the parameter ```transaction.digitalWallet``` replacing the information of the wallet.
-* Inside the parameter ```transaction.digitalWallet``` use ```GOOGLE_PAY``` for ```transaction.digitalWallet.type``` and send the Google Pay Token for ```transaction.digitalWallet.message```. 
-* Take into account that for Google pay transactions inside the parameter ```transaction.creditcard```, you should always send a value for ```transaction.creditcard.name```. Other fields of this parameter are not necessary since Google Pay delivers them inside the token. 
+* If you are processing transactions of your customers with Google Pay, you should configure the information of the wallet in the parameter ```transaction.digitalWallet```.
+* Inside the parameter ```transaction.digitalWallet``` use ```GOOGLE_PAY``` in the field ```transaction.digitalWallet.type``` and send the Google Pay Token in the field ```transaction.digitalWallet.message```. 
+* Take into account that for Google Pay transactions inside the parameter ```transaction.creditcard```, you should always send a value for ```transaction.creditcard.name```. Other fields of this parameter are not necessary since Google Pay delivers them inside the token. 
 * Contact your account manager to make the necessary activations to process without cvv as this payment method requires it.
 
 #### API Call
@@ -1297,7 +1297,7 @@ Response body:
 {{< /tabs >}}
 
 
-You will find the description of the transaction.digitalWallet object and its fields in the section [Variables](https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-brazil.html#variables-for-request-and-response).
+You will find the description of the transaction.digitalWallet object and its fields in the section [Variables](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-brazil.html#variables-for-request-and-response).
 
 
 ## Submit transaction with PIX
