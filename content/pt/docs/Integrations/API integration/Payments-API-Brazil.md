@@ -1060,6 +1060,8 @@ Se utilizarem o Google Pay, os comerciantes devem aderir à [Política de Utiliz
 A descrição abaixo aplica-se à prestação deste serviço diretamente através da apresentação do pop-up do Google Pay no site do beneficiário (loja virtual).
 {{% /alert %}}
 
+Se você deseja oferecer esse método via web-checkout da PayU, não é necessário nenhum esforço adicional de integração. Entre em contato com o gerente da sua conta para fazer a solicitação de ativação.
+
 Um tema muito importante é que se a sua integração com a PayU for API, você deve efetuar as definições descritas nesta seção para processar as transações com o Google Pay: 
 
 * [Efetuar a integração API do meio de pagamento](#integração-api-do-meio-de-pagamento)

@@ -2942,6 +2942,7 @@
 &lt;p&gt;A API de pagamentos inclui os seguintes métodos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-cards&#34;&gt;Enviar transação com cartão de crédito&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-google-pay&#34;&gt;Enviar transação com Google Pay™&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-pix&#34;&gt;Enviar transação com PIX&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash&#34;&gt;Enviar transação em dinheiro&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer&#34;&gt;Enviar transação com transferência bancária&lt;/a&gt;&lt;/li&gt;
@@ -3764,8 +3765,8 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td&gt;transaction &amp;gt; creditCard &amp;gt; name&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;Mín:1 Máx:255&lt;/td&gt;
-&lt;td&gt;Nome do titular exibido no cartão de crédito.&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td&gt;Nome do titular exibido no cartão de crédito. *Obrigatório apenas para transacções Google Pay.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não*&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; creditCard &amp;gt; processWithoutCvv2&lt;/td&gt;
@@ -3920,6 +3921,27 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 &lt;td&gt;7&lt;/td&gt;
 &lt;td&gt;Data de expiração do token. Formato &lt;code&gt;YYYY/MM&lt;/code&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; digitalWallet&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Incluir este parâmetro quando a transação for efectuada através de uma Carteira Digital. *Ao submeter este objeto, todos os seus campos são obrigatórios.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; digitalWallet &amp;gt; type&lt;/td&gt;
+&lt;td&gt;Alfanumérico&lt;/td&gt;
+&lt;td&gt;&amp;mdash;-&lt;/td&gt;
+&lt;td&gt;Envia o valor com base na carteira que está a ser processada: GOOGLE_PAY&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; digitalWallet &amp;gt; message&lt;/td&gt;
+&lt;td&gt;Alfanumérico&lt;/td&gt;
+&lt;td&gt;&amp;mdash;-&lt;/td&gt;
+&lt;td&gt;Inclui as informações do token de pagamento do Google que o Google lhe devolverá para cada transação. Para mais informações, clique &lt;a href=&#34;#defini%C3%A7%C3%B5es-payu-para-integra%C3%A7%C3%A3o-api-do-meio-de-pagamento&#34;&gt;aqui&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim*&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
@@ -4925,6 +4947,291 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 
 
 &lt;/div&gt;
+&lt;h2 id=&#34;submit-transaction-with-google-pay&#34;&gt;Enviar transação com Google Pay™&lt;/h2&gt;
+&lt;p&gt;Google Pay é uma carteira digital que lhe permite efetuar pagamentos com cartão de forma fácil e rápida, sem ter de introduzir os dados do seu cartão para cada pagamento. Os dados do cartão são guardados de forma segura pelo Google. Este método de pagamento está disponível para todos os dispositivos (smartphones e computadores), independentemente do Sistema Operacional e em quase todos os navegadores Web.&lt;/p&gt;
+&lt;p&gt;Se utilizarem o Google Pay, os comerciantes devem aderir à &lt;a href=&#34;https://payments.developers.google.com/terms/aup&#34;&gt;Política de Utilização&lt;/a&gt; da API do Google Pay e concordar com os termos que definem os &lt;a href=&#34;https://payments.developers.google.com/terms/sellertos&#34;&gt;Termos de serviço da API do Google Pay&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+A descrição abaixo aplica-se à prestação deste serviço diretamente através da apresentação do pop-up do Google Pay no site do beneficiário (loja virtual).
+&lt;/div&gt;
+
+&lt;p&gt;Um tema muito importante é que se a sua integração com a PayU for API, você deve efetuar as definições descritas nesta seção para processar as transações com o Google Pay:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#integra%C3%A7%C3%A3o-api-do-meio-de-pagamento&#34;&gt;Efetuar a integração API do meio de pagamento&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#processar-transac%C3%A7%C3%B5es-o-google-pay-com-payu&#34;&gt;Realizar a adaptação da sua integração API com PayU&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;integração-api-do-meio-de-pagamento&#34;&gt;Integração API do meio de pagamento&lt;/h3&gt;
+&lt;p&gt;Para integrar o seu site com a carteira Google Pay, proceda de acordo com as instruções apresentadas no link abaixo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.google.com/pay/api/web&#34;&gt;Documentação da API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist&#34;&gt;Lista de verificação da integração da API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.google.com/pay/api/web/guides/brand-guidelines&#34;&gt;Directrizes da marca&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;definições-payu-para-integração-api-do-meio-de-pagamento&#34;&gt;Definições PayU para integração API do meio de pagamento&lt;/h5&gt;
+&lt;p&gt;Abaixo encontrará as informações relevantes que deverá seguir durante a integração do meio de pagamento para que os seus pagamentos sejam processados pela PayU:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h6 id=&#34;solicitar-um-payment-token-para-a-payu&#34;&gt;Solicitar um Payment Token para a PayU&lt;/h6&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Google encripta as informações do cartão informado pelo pagador para o processamento seguro por um fornecedor de pagamento. O parâmetro &lt;code&gt;gateway&lt;/code&gt; no script deve ter o valor constante de &lt;code&gt;payulatam&lt;/code&gt;, e o &lt;code&gt;gatewayMerchantId&lt;/code&gt; deve incluir o número da sua conta PayU. Aqui está um exemplo:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const tokenizationSpecification = {
+  type: &#39;PAYMENT_GATEWAY&#39;,
+  parameters: {
+    &#39;gateway&#39;: &#39;payulatam&#39;,
+    &#39;gatewayMerchantId&#39;: &#39;YOUR_ACCOUNT_ID &#39;
+  }
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;h6 id=&#34;meios-de-pagamento-suportados&#34;&gt;Meios de pagamento suportados&lt;/h6&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note que a PayU, enquanto processador de pagamentos Google Pay, permite o tratamento de todos os tipos de cartões de pagamento emitidos pelas organizações Visa e MasterCard, isto implica a seguinte configuração do script Google:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const allowedCardNetworks = [&amp;quot;MASTERCARD&amp;quot;, &amp;quot;VISA&amp;quot;, “ELECTRON”, “MAESTRO];
+const allowedCardAuthMethods = [&amp;quot;PAN_ONLY&amp;quot;, &amp;quot;CRYPTOGRAM_3DS&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Em resposta, a Google devolverá o elemento &lt;code&gt;PaymentData&lt;/code&gt; e o campo &lt;code&gt;paymentMethodData.tokenizationData.token&lt;/code&gt; conterá um token do Google Pay encriptado de forma segura (uma cadeia de caracteres).&lt;/p&gt;
+&lt;p&gt;Abaixo encontra-se um exemplo de um Google Pay Token:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;protocolVersion&amp;quot;:&amp;quot;ECv2&amp;quot;,
+  &amp;quot;signature&amp;quot;:&amp;quot;MEUCIG39tbaQPwJe28U+UMsJmxUBUWSkwlOv9Ibohacer+CoAiEA8Wuq3lLUCwLQ06D2kErxaMg3b/oLDFbd2gcFze1zDqU\u003d&amp;quot;,
+  &amp;quot;intermediateSigningKey&amp;quot;:{
+    &amp;quot;signedKey&amp;quot;: &amp;quot;{\&amp;quot;keyExpiration\&amp;quot;:\&amp;quot;1542394027316\&amp;quot;,\&amp;quot;keyValue\&amp;quot;:\&amp;quot;MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\\u003d\\u003d\&amp;quot;}&amp;quot;,
+    &amp;quot;signatures&amp;quot;: [&amp;quot;MEYCIQDcXCoB4fYJF3EolxrE2zB+7THZCfKA7cWxSztKceXTCgIhAN/d5eBgx/1A6qKBdH0IS7/aQ7dO4MuEt26OrLCUxZnl&amp;quot;]
+  },
+  &amp;quot;signedMessage&amp;quot;:&amp;quot;{\&amp;quot;tag\&amp;quot;:\&amp;quot;TjkIKzIOvCrFvjf7/aeeL8/FZJ3tigaNnerag68hIaw\\u003d\&amp;quot;,\&amp;quot;ephemeralPublicKey\&amp;quot;:\&amp;quot;BLJoTmxP2z7M2N6JmaN786aJcT/L/OJfuJKQdIXcceuBBZ00sf5nm2+snxAJxeJ4HYFTdNH4MOJrH58GNDJ9lJw\\u003d\&amp;quot;,\&amp;quot;encryptedMessage\&amp;quot;:\&amp;quot;mleAf23XkKjj\&amp;quot;}&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;processar-transacções-o-google-pay-com-payu&#34;&gt;Processar transacções o Google Pay com PayU&lt;/h3&gt;
+&lt;p&gt;A principal função do Google Pay como carteira digital é armazenar cartões de crédito para facilitar o processamento de pagamentos, com isso em mente, para processar transações do Google Pay na PayU a lógica a ser aplicada será a mesma que para cartões de crédito, exceto para as seguintes particularidades:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Se estiver processando transações para os seus clientes com o Google Pay, é preciso configurar as informações da carteira digital no parâmetro &lt;code&gt;transaction.digitalWallet&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;No parâmetro &lt;code&gt;transaction.digitalWallet&lt;/code&gt;, utilize &lt;code&gt;GOOGLE_PAY&lt;/code&gt; para o campo &lt;code&gt;transaction.digitalWallet.type&lt;/code&gt;  e envie o Google Pay token no campo &lt;code&gt;transaction.digitalWallet.message&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Tenha em mente que o parâmetro &lt;code&gt;transaction.creditcard&lt;/code&gt; para transações do Google Pay, deve enviar sempre um valor válido para o campo &lt;code&gt;transaction.creditcard.name&lt;/code&gt;. Os outros campos deste parâmetro não são necessários, uma vez que o Google Pay os fornece no token do Google Pay.&lt;/li&gt;
+&lt;li&gt;Por predefinição, o processamento de cartões de crédito sem código de segurança não está ativa. Contate o seu Gestor de Conta da PayU para efetuar as activações necessárias para processar sem cvv, uma vez que este método de pagamento o exige.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;chamada-api&#34;&gt;Chamada API&lt;/h4&gt;
+&lt;p&gt;A seguir estão o corpo do pedido e da resposta deste meio de pagamento.&lt;/p&gt;
+&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab21&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab22&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;2&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab21&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUBMIT_TRANSACTION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchant&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiKey&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;012345678901&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiLogin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;012345678901&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transaction&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;accountId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;9&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;signature&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{{payu_signature}}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;referenceCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{{payu_ref_code}}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;additionalValues&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TX_VALUE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+                    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+                    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ARS&amp;#34;&lt;/span&gt;
+                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;payer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchantPayerId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;fullName&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;First name and second payer name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;emailAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;payer.name@payu.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;contactPhone&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;7563126&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dniNumber&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;5415668464654&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dniType&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;creditCard&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Kevin Pelaez&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;digitalWallet&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;GOOGLE_PAY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;{\&amp;#34;signature\&amp;#34;:\&amp;#34;MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\\u003d\&amp;#34;,\&amp;#34;intermediateSigningKey\&amp;#34;:{\&amp;#34;signedKey\&amp;#34;:\&amp;#34;{\\\&amp;#34;keyValue\\\&amp;#34;:\\\&amp;#34;MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\\\u003d\\\\u003d\\\&amp;#34;,\\\&amp;#34;keyExpiration\\\&amp;#34;:\\\&amp;#34;1695147545256\\\&amp;#34;}\&amp;#34;,\&amp;#34;signatures\&amp;#34;:[\&amp;#34;MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\\u003d\\u003d\&amp;#34;]},\&amp;#34;protocolVersion\&amp;#34;:\&amp;#34;ECv2\&amp;#34;,\&amp;#34;signedMessage\&amp;#34;:\&amp;#34;{\\\&amp;#34;encryptedMessage\\\&amp;#34;:\\\&amp;#34;GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\\\&amp;#34;,\\\&amp;#34;ephemeralPublicKey\\\&amp;#34;:\\\&amp;#34;BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\\\u003d\\\&amp;#34;,\\\&amp;#34;tag\\\&amp;#34;:\\\&amp;#34;NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\\\u003d\\\&amp;#34;}\&amp;#34;}&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;extraParameters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;INSTALLMENTS_NUMBER&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;AUTHORIZATION_AND_CAPTURE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;MASTERCARD&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentCountry&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;BR&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transactionResponse&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;orderId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1400437001&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;f0f8c441-43e8-490a-b4f2-c14d2c403175&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;state&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;APPROVED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentNetworkResponseCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;6&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentNetworkResponseErrorMessage&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;trazabilityCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;282856&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;authorizationCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;MOCK-CIELO-1624047897817&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;pendingReason&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;responseCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;APPROVED&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;errorCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;responseMessage&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transactionDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transactionTime&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;operationDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1624029898077&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;referenceQuestionnaire&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;extraParameters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;BANK_REFERENCED_CODE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CREDIT&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;CIELO_TID&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1006993069000509C28A&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;additionalInfo&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab22&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;request&amp;gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;language&amp;gt;&lt;/span&gt;es&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/language&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;command&amp;gt;&lt;/span&gt;SUBMIT_TRANSACTION&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchant&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiKey&amp;gt;&lt;/span&gt;012345678901&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiKey&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiLogin&amp;gt;&lt;/span&gt;012345678901&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiLogin&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchant&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transaction&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;order&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;accountId&amp;gt;&lt;/span&gt;9&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/accountId&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;language&amp;gt;&lt;/span&gt;es&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/language&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;test&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;signature&amp;gt;&lt;/span&gt;{{payu_signature}}&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/signature&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;referenceCode&amp;gt;&lt;/span&gt;{{payu_ref_code}}&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/referenceCode&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;additionalValues&amp;gt;&lt;/span&gt;
+                 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;TX_VALUE&amp;gt;&lt;/span&gt;
+                     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;100&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+                     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;currency&amp;gt;&lt;/span&gt;ARS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/currency&amp;gt;&lt;/span&gt;
+                 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/TX_VALUE&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/additionalValues&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/order&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;payer&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchantPayerId&amp;gt;&lt;/span&gt;1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchantPayerId&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;fullName&amp;gt;&lt;/span&gt;First name and second payer name&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/fullName&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;emailAddress&amp;gt;&lt;/span&gt;payer.name@payu.com&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/emailAddress&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;contactPhone&amp;gt;&lt;/span&gt;7563126&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/contactPhone&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;dniNumber&amp;gt;&lt;/span&gt;5415668464654&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/dniNumber&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;dniType&amp;gt;&amp;lt;/dniType&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/payer&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;creditCard&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Kevin Pelaez&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/creditCard&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;digitalWallet&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;GOOGLE_PAY&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;message&amp;gt;&lt;/span&gt;{&amp;#34;signature&amp;#34;:&amp;#34;MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\u003d&amp;#34;,&amp;#34;intermediateSigningKey&amp;#34;:{&amp;#34;signedKey&amp;#34;:&amp;#34;{\&amp;#34;keyValue\&amp;#34;:\&amp;#34;MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\u003d\\u003d\&amp;#34;,\&amp;#34;keyExpiration\&amp;#34;:\&amp;#34;1695147545256\&amp;#34;}&amp;#34;,&amp;#34;signatures&amp;#34;:[&amp;#34;MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\u003d\u003d&amp;#34;]},&amp;#34;protocolVersion&amp;#34;:&amp;#34;ECv2&amp;#34;,&amp;#34;signedMessage&amp;#34;:&amp;#34;{\&amp;#34;encryptedMessage\&amp;#34;:\&amp;#34;GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\&amp;#34;,\&amp;#34;ephemeralPublicKey\&amp;#34;:\&amp;#34;BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\u003d\&amp;#34;,\&amp;#34;tag\&amp;#34;:\&amp;#34;NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\u003d\&amp;#34;}&amp;#34;}&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/message&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/digitalWallet&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;extraParameters&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;INSTALLMENTS_NUMBER&amp;gt;&lt;/span&gt;1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/INSTALLMENTS_NUMBER&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/extraParameters&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;AUTHORIZATION_AND_CAPTURE&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethod&amp;gt;&lt;/span&gt;MASTERCARD&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentMethod&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentCountry&amp;gt;&lt;/span&gt;BR&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentCountry&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transaction&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;test&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/test&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/request&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response body:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentResponse&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;SUCCESS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;error&amp;gt;&amp;lt;/error&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transactionResponse&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;orderId&amp;gt;&lt;/span&gt;1400437001&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/orderId&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transactionId&amp;gt;&lt;/span&gt;f0f8c441-43e8-490a-b4f2-c14d2c403175&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transactionId&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;state&amp;gt;&lt;/span&gt;APPROVED&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/state&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentNetworkResponseCode&amp;gt;&lt;/span&gt;6&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentNetworkResponseCode&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentNetworkResponseErrorMessage&amp;gt;&amp;lt;/paymentNetworkResponseErrorMessage&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;trazabilityCode&amp;gt;&lt;/span&gt;282856&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/trazabilityCode&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;authorizationCode&amp;gt;&lt;/span&gt;MOCK-CIELO-1624047897817&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/authorizationCode&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;pendingReason&amp;gt;&amp;lt;/pendingReason&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;responseCode&amp;gt;&lt;/span&gt;APPROVED&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/responseCode&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;errorCode&amp;gt;&amp;lt;/errorCode&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;responseMessage&amp;gt;&amp;lt;/responseMessage&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transactionDate&amp;gt;&amp;lt;/transactionDate&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transactionTime&amp;gt;&amp;lt;/transactionTime&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;operationDate&amp;gt;&lt;/span&gt;1624029898077&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/operationDate&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;referenceQuestionnaire&amp;gt;&amp;lt;/referenceQuestionnaire&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;extraParameters&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;BANK_REFERENCED_CODE&amp;gt;&lt;/span&gt;CREDIT&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/BANK_REFERENCED_CODE&amp;gt;&lt;/span&gt;
+             &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;CIELO_TID&amp;gt;&lt;/span&gt;1006993069000509C28A&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/CIELO_TID&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/extraParameters&amp;gt;&lt;/span&gt;
+         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;additionalInfo&amp;gt;&amp;lt;/additionalInfo&amp;gt;&lt;/span&gt;
+     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transactionResponse&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentResponse&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;p&gt;Você encontrará a descrição do objeto transaction.digitalWallet e dos seus campos na seção &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-brazil.html#variables-for-request-and-response&#34;&gt;Variáveis&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;submit-transaction-with-pix&#34;&gt;Enviar transação com PIX&lt;/h2&gt;
 &lt;p&gt;Este método permite processar pagamentos usando PIX. Para fazer a integração com o PIX, você precisa incluir na página de checkout um código QR que seu cliente possa ler com o smartphone para fazer o pagamento.&lt;/p&gt;
 &lt;p&gt;Depois, seu cliente vê uma página de checkout como esta.&lt;/p&gt;
