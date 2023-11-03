@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2023-11-02T17:54:00-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="Payments API - Brazil">
 <meta itemprop="description" content="Payments API Brazil lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="11473">
+<meta itemprop="dateModified" content="2023-11-02T17:54:00-05:00" />
+<meta itemprop="wordCount" content="12374">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Payments API - Brazil"/>
 <meta name="twitter:description" content="Payments API Brazil lets your shop process different transaction types with multiple payment methods.
@@ -141,7 +141,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9351a6c0798e209f192079d4a39d79e0a4a22189b4c327fe39986d57b7c63d75a5d4f58b649e173c7dcb2695e7d0e649fcc9526ad45d410c0fc3ec02864f3fd0.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.cd9fa8ae37e064855d3f9c58a8724b6b62c54e9054491747552f644f74065e5baefb964eb1eee6c69ba649795d12d2c0f5ea0080d5ef261ce659153c571e356c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -769,35 +769,41 @@
         <li><a href="#charge">Charge</a></li>
       </ul>
     </li>
+    <li><a href="#submit-transaction-with-google-pay">Submit transaction with Google Pay™</a>
+      <ul>
+        <li><a href="#api-integration-of-the-payment-method">API integration of the payment method</a></li>
+        <li><a href="#process-google-pay-transactions-in-payu">Process Google Pay transactions in PayU</a></li>
+      </ul>
+    </li>
     <li><a href="#submit-transaction-with-pix">Submit transaction with PIX</a>
       <ul>
         <li><a href="#how-does-pix-work">How does PIX work?</a></li>
         <li><a href="#variables-for-request-and-response-1">Variables for request and response</a></li>
-        <li><a href="#api-call">API call</a></li>
+        <li><a href="#api-call-1">API call</a></li>
       </ul>
     </li>
     <li><a href="#submit-transaction-with-cash">Submit transaction with cash</a>
       <ul>
         <li><a href="#variables-for-request-and-response-2">Variables for request and response</a></li>
-        <li><a href="#api-call-1">API call</a></li>
+        <li><a href="#api-call-2">API call</a></li>
       </ul>
     </li>
     <li><a href="#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a>
       <ul>
         <li><a href="#variables-for-request-and-response-3">Variables for request and response</a></li>
-        <li><a href="#api-call-2">API call</a></li>
+        <li><a href="#api-call-3">API call</a></li>
       </ul>
     </li>
     <li><a href="#available-payment-methods-query">Available payment methods query</a>
       <ul>
         <li><a href="#variables-for-request-and-response-4">Variables for request and response</a></li>
-        <li><a href="#api-call-3">API call</a></li>
+        <li><a href="#api-call-4">API call</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
         <li><a href="#variables-for-request-and-response-5">Variables for request and response</a></li>
-        <li><a href="#api-call-4">Api call</a></li>
+        <li><a href="#api-call-5">Api call</a></li>
       </ul>
     </li>
   </ul>
@@ -876,6 +882,7 @@
 <p>Payments API includes the following methods:</p>
 <ul>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-credit-cards">Submit transaction with credit card</a></li>
+<li><a href="#submit-transaction-with-google-pay">Submit transaction with Google Pay™</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-pix">Submit transaction with PIX</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-cash">Submit transaction with cash</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a></li>
@@ -1698,8 +1705,8 @@ By default, processing credit cards without security code is not enabled. If you
 <td>transaction &gt; creditCard &gt; name</td>
 <td>Alphanumeric</td>
 <td>Min:1 Max:255</td>
-<td>Holder&rsquo;s name displayed in the credit card.</td>
-<td style="text-align:center">No</td>
+<td>Holder&rsquo;s name displayed in the credit card. *Mandatory just for Google Pay transactions.</td>
+<td style="text-align:center">No*</td>
 </tr>
 <tr>
 <td>transaction &gt; creditCard &gt; processWithoutCvv2</td>
@@ -1854,6 +1861,27 @@ By default, processing credit cards without security code is not enabled. If you
 <td>7</td>
 <td>Expiration date of the token. Format <code>YYYY/MM</code>.</td>
 <td style="text-align:center">Yes<sup>*</sup></td>
+</tr>
+<tr>
+<td>transaction &gt; digitalWallet</td>
+<td></td>
+<td></td>
+<td>Include this parameter when the transaction is done using a Digital Wallet. *When sending this object, all its parameters are mandatory.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; digitalWallet &gt; type</td>
+<td>Alphanumeric</td>
+<td>&mdash;-</td>
+<td>Set this value according to the digital wallet that you are processing: GOOGLE_PAY</td>
+<td style="text-align:center">Yes*</td>
+</tr>
+<tr>
+<td>transaction &gt; digitalWallet &gt; message</td>
+<td>Alphanumeric</td>
+<td>&mdash;-</td>
+<td>Include the information of the Google Pay Token that Google will return to you for each transaction. For more information consult <a href="#payu-definitions-for-the-api-integration-of-the-payment-method">here</a>.</td>
+<td style="text-align:center">Yes*</td>
 </tr>
 <tr>
 <td>transaction &gt; type</td>
@@ -2859,6 +2887,292 @@ By default, processing credit cards without security code is not enabled. If you
 
 
 </div>
+<h2 id="submit-transaction-with-google-pay">Submit transaction with Google Pay™</h2>
+<p>Google Pay is a digital wallet that enables simple and fast card payments, without the need of entering the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), no matter the operating system and in almost all web browsers.</p>
+<p>In case of using Google Pay, the merchants must adhere to the Google Pay APIs <a href="https://payments.developers.google.com/terms/aup">Acceptable Use Policy</a> and accept the terms that <a href="https://payments.developers.google.com/terms/sellertos">Google Pay API Terms of Service</a> defines.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+The description below applies to provision of this service directly by displaying the Google Pay lightbox at the website of the payment recipient (e-store).
+</div>
+
+<p>If you wish to offer this method via PayU Web-Checkout, no additional integration effort is required. Contact your Key Account Manager to make the activation request.</p>
+<p>Please note that if your integration with PayU is API, you must change the settings described in this section to process Google Pay transactions:</p>
+<ul>
+<li><a href="#api-integration-of-the-payment-method">Perform API integration of the payment method</a></li>
+<li><a href="#process-google-pay-transactions-in-payu">Perform the adaptation of your API integration with PayU</a></li>
+</ul>
+<h3 id="api-integration-of-the-payment-method">API integration of the payment method</h3>
+<p>To integrate the website with the Google Pay wallet, proceed according to the instructions placed at these websites:</p>
+<ul>
+<li><a href="https://developers.google.com/pay/api/web">API documentation</a></li>
+<li><a href="https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist">API integration checklist</a></li>
+<li><a href="https://developers.google.com/pay/api/web/guides/brand-guidelines">Brand guidelines</a></li>
+</ul>
+<h5 id="payu-definitions-for-the-api-integration-of-the-payment-method">PayU definitions for the API integration of the payment method</h5>
+<p>Below you will find relevant information that you must consider for your payments to be processed by PayU once the payment method is integrated:</p>
+<ul>
+<li>
+<h6 id="request-a-payment-token-for-payu">Request a payment token for PayU</h6>
+</li>
+</ul>
+<p>Google encrypts the information of the card selected by the payer for secure processing, this is carried out by a payment provider. The <code>gateway</code> parameter in the script should have the constant value of <code>payulatam</code>, and the <code>gatewayMerchantId</code> should include your PayU account number according to the example below:</p>
+<pre><code>const tokenizationSpecification = {
+  type: 'PAYMENT_GATEWAY',
+  parameters: {
+    'gateway': 'payulatam',
+    'gatewayMerchantId': 'YOUR_ACCOUNT_ID '
+  }
+};
+</code></pre><ul>
+<li>
+<h6 id="supported-payment-card-networks">Supported payment card networks</h6>
+</li>
+</ul>
+<p>Please note that PayU as the processor of Google Pay payments, enables the handling of all types of payment cards issued by the Visa and Mastercard organizations. This implies the following configuration of the Google script:</p>
+<pre><code>const allowedCardNetworks = [&quot;MASTERCARD&quot;, &quot;VISA&quot;, “ELECTRON”, “MAESTRO];
+const allowedCardAuthMethods = [&quot;PAN_ONLY&quot;, &quot;CRYPTOGRAM_3DS&quot;];
+</code></pre><p>In response, Google shall return the <code>PaymentData</code> item, and the field <code>paymentMethodData.tokenizationData.token</code> shall contain a safely encrypted Google Pay Token (a string of characters).</p>
+<p>A sample of Google Pay Token looks like this:</p>
+<pre><code>{
+  &quot;protocolVersion&quot;:&quot;ECv2&quot;,
+  &quot;signature&quot;:&quot;MEUCIG39tbaQPwJe28U+UMsJmxUBUWSkwlOv9Ibohacer+CoAiEA8Wuq3lLUCwLQ06D2kErxaMg3b/oLDFbd2gcFze1zDqU\u003d&quot;,
+  &quot;intermediateSigningKey&quot;:{
+    &quot;signedKey&quot;: &quot;{\&quot;keyExpiration\&quot;:\&quot;1542394027316\&quot;,\&quot;keyValue\&quot;:\&quot;MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\\u003d\\u003d\&quot;}&quot;,
+    &quot;signatures&quot;: [&quot;MEYCIQDcXCoB4fYJF3EolxrE2zB+7THZCfKA7cWxSztKceXTCgIhAN/d5eBgx/1A6qKBdH0IS7/aQ7dO4MuEt26OrLCUxZnl&quot;]
+  },
+  &quot;signedMessage&quot;:&quot;{\&quot;tag\&quot;:\&quot;TjkIKzIOvCrFvjf7/aeeL8/FZJ3tigaNnerag68hIaw\\u003d\&quot;,\&quot;ephemeralPublicKey\&quot;:\&quot;BLJoTmxP2z7M2N6JmaN786aJcT/L/OJfuJKQdIXcceuBBZ00sf5nm2+snxAJxeJ4HYFTdNH4MOJrH58GNDJ9lJw\\u003d\&quot;,\&quot;encryptedMessage\&quot;:\&quot;mleAf23XkKjj\&quot;}&quot;
+}
+</code></pre><h3 id="process-google-pay-transactions-in-payu">Process Google Pay transactions in PayU</h3>
+<p>The primary function of Google Pay as a digital wallet is to store credit cards to facilitate payment processing. With that in mind, for PayU, the transactions processed by Google Pay will have the same credit card logic except for the following particularities:</p>
+<ul>
+<li>If you are processing transactions of your customers with Google Pay, you should configure the information of the wallet in the parameter <code>transaction.digitalWallet</code>.</li>
+<li>Inside the parameter <code>transaction.digitalWallet</code> use <code>GOOGLE_PAY</code> in the field <code>transaction.digitalWallet.type</code> and send the Google Pay Token in the field <code>transaction.digitalWallet.message</code>.</li>
+<li>Take into account that for Google Pay transactions inside the parameter <code>transaction.creditcard</code>, you should always send a value for <code>transaction.creditcard.name</code>. Other fields of this parameter are not necessary since Google Pay delivers them inside the token.</li>
+<li>Contact your account manager to make the necessary activations to process without cvv as this payment method requires it.</li>
+</ul>
+<h4 id="api-call">API Call</h4>
+<p>The following are the bodies of the request and response of this payment method.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="2">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;012345678901&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;012345678901&#34;</span>
+    <span style="color:#000;font-weight:bold">},</span>
+    <span style="color:#204a87;font-weight:bold">&#34;transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#204a87;font-weight:bold">&#34;order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;accountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;9&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;test&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;signature&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;{{payu_signature}}&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;referenceCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;{{payu_ref_code}}&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;additionalValues&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+                <span style="color:#204a87;font-weight:bold">&#34;TX_VALUE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+                    <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
+                    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;ARS&#34;</span>
+                <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000;font-weight:bold">},</span>
+        <span style="color:#204a87;font-weight:bold">&#34;payer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;merchantPayerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;First name and second payer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;emailAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;payer.name@payu.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;contactPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;dniNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5415668464654&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;dniType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+        <span style="color:#000;font-weight:bold">},</span>
+        <span style="color:#204a87;font-weight:bold">&#34;creditCard&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Kevin Pelaez&#34;</span>
+        <span style="color:#000;font-weight:bold">},</span>
+        <span style="color:#204a87;font-weight:bold">&#34;digitalWallet&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;GOOGLE_PAY&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;message&#34;</span> <span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;{\&#34;signature\&#34;:\&#34;MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\\u003d\&#34;,\&#34;intermediateSigningKey\&#34;:{\&#34;signedKey\&#34;:\&#34;{\\\&#34;keyValue\\\&#34;:\\\&#34;MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\\\u003d\\\\u003d\\\&#34;,\\\&#34;keyExpiration\\\&#34;:\\\&#34;1695147545256\\\&#34;}\&#34;,\&#34;signatures\&#34;:[\&#34;MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\\u003d\\u003d\&#34;]},\&#34;protocolVersion\&#34;:\&#34;ECv2\&#34;,\&#34;signedMessage\&#34;:\&#34;{\\\&#34;encryptedMessage\\\&#34;:\\\&#34;GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\\\&#34;,\\\&#34;ephemeralPublicKey\\\&#34;:\\\&#34;BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\\\u003d\\\&#34;,\\\&#34;tag\\\&#34;:\\\&#34;NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\\\u003d\\\&#34;}\&#34;}&#34;</span>
+        <span style="color:#000;font-weight:bold">},</span>
+        <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;INSTALLMENTS_NUMBER&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span>
+        <span style="color:#000;font-weight:bold">},</span>
+        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AUTHORIZATION_AND_CAPTURE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;paymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MASTERCARD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;paymentCountry&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BR&#34;</span>
+    <span style="color:#000;font-weight:bold">},</span>
+    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#204a87;font-weight:bold">&#34;transactionResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#204a87;font-weight:bold">&#34;orderId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1400437001</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;transactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;f0f8c441-43e8-490a-b4f2-c14d2c403175&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseErrorMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;trazabilityCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;282856&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;authorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MOCK-CIELO-1624047897817&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;pendingReason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;responseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;responseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;transactionDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;transactionTime&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;operationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1624029898077</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;referenceQuestionnaire&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">&#34;BANK_REFERENCED_CODE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CREDIT&#34;</span><span style="color:#000;font-weight:bold">,</span>
+            <span style="color:#204a87;font-weight:bold">&#34;CIELO_TID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1006993069000509C28A&#34;</span>
+        <span style="color:#000;font-weight:bold">},</span>
+        <span style="color:#204a87;font-weight:bold">&#34;additionalInfo&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span> 
+</code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+        <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>012345678901<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>012345678901<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;transaction&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;order&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;accountId&gt;</span>9<span style="color:#204a87;font-weight:bold">&lt;/accountId&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>test<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;signature&gt;</span>{{payu_signature}}<span style="color:#204a87;font-weight:bold">&lt;/signature&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;referenceCode&gt;</span>{{payu_ref_code}}<span style="color:#204a87;font-weight:bold">&lt;/referenceCode&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;additionalValues&gt;</span>
+                 <span style="color:#204a87;font-weight:bold">&lt;TX_VALUE&gt;</span>
+                     <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>100<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+                     <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>ARS<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
+                 <span style="color:#204a87;font-weight:bold">&lt;/TX_VALUE&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;/additionalValues&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;/order&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;payer&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;merchantPayerId&gt;</span>1<span style="color:#204a87;font-weight:bold">&lt;/merchantPayerId&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>First name and second payer name<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;emailAddress&gt;</span>payer.name@payu.com<span style="color:#204a87;font-weight:bold">&lt;/emailAddress&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;contactPhone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/contactPhone&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;dniNumber&gt;</span>5415668464654<span style="color:#204a87;font-weight:bold">&lt;/dniNumber&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;dniType&gt;&lt;/dniType&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;/payer&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;creditCard&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;name&gt;</span>Kevin Pelaez<span style="color:#204a87;font-weight:bold">&lt;/name&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;/creditCard&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;digitalWallet&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;type&gt;</span>GOOGLE_PAY<span style="color:#204a87;font-weight:bold">&lt;/type&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;message&gt;</span>{&#34;signature&#34;:&#34;MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\u003d&#34;,&#34;intermediateSigningKey&#34;:{&#34;signedKey&#34;:&#34;{\&#34;keyValue\&#34;:\&#34;MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\u003d\\u003d\&#34;,\&#34;keyExpiration\&#34;:\&#34;1695147545256\&#34;}&#34;,&#34;signatures&#34;:[&#34;MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\u003d\u003d&#34;]},&#34;protocolVersion&#34;:&#34;ECv2&#34;,&#34;signedMessage&#34;:&#34;{\&#34;encryptedMessage\&#34;:\&#34;GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\&#34;,\&#34;ephemeralPublicKey\&#34;:\&#34;BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\u003d\&#34;,\&#34;tag\&#34;:\&#34;NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\u003d\&#34;}&#34;}<span style="color:#204a87;font-weight:bold">&lt;/message&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;/digitalWallet&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;extraParameters&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;INSTALLMENTS_NUMBER&gt;</span>1<span style="color:#204a87;font-weight:bold">&lt;/INSTALLMENTS_NUMBER&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;/extraParameters&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;type&gt;</span>AUTHORIZATION_AND_CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/type&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;paymentMethod&gt;</span>MASTERCARD<span style="color:#204a87;font-weight:bold">&lt;/paymentMethod&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;paymentCountry&gt;</span>BR<span style="color:#204a87;font-weight:bold">&lt;/paymentCountry&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;/transaction&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;test&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/test&gt;</span>
+<span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</code></pre></div><br>
+<p>Response body:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;error&gt;&lt;/error&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;orderId&gt;</span>1400437001<span style="color:#204a87;font-weight:bold">&lt;/orderId&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;transactionId&gt;</span>f0f8c441-43e8-490a-b4f2-c14d2c403175<span style="color:#204a87;font-weight:bold">&lt;/transactionId&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;paymentNetworkResponseCode&gt;</span>6<span style="color:#204a87;font-weight:bold">&lt;/paymentNetworkResponseCode&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;paymentNetworkResponseErrorMessage&gt;&lt;/paymentNetworkResponseErrorMessage&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;trazabilityCode&gt;</span>282856<span style="color:#204a87;font-weight:bold">&lt;/trazabilityCode&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;authorizationCode&gt;</span>MOCK-CIELO-1624047897817<span style="color:#204a87;font-weight:bold">&lt;/authorizationCode&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;pendingReason&gt;&lt;/pendingReason&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;responseCode&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/responseCode&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;errorCode&gt;&lt;/errorCode&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;responseMessage&gt;&lt;/responseMessage&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;transactionDate&gt;&lt;/transactionDate&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;transactionTime&gt;&lt;/transactionTime&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;operationDate&gt;</span>1624029898077<span style="color:#204a87;font-weight:bold">&lt;/operationDate&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;referenceQuestionnaire&gt;&lt;/referenceQuestionnaire&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;extraParameters&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;BANK_REFERENCED_CODE&gt;</span>CREDIT<span style="color:#204a87;font-weight:bold">&lt;/BANK_REFERENCED_CODE&gt;</span>
+             <span style="color:#204a87;font-weight:bold">&lt;CIELO_TID&gt;</span>1006993069000509C28A<span style="color:#204a87;font-weight:bold">&lt;/CIELO_TID&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;/extraParameters&gt;</span>
+         <span style="color:#204a87;font-weight:bold">&lt;additionalInfo&gt;&lt;/additionalInfo&gt;</span>
+     <span style="color:#204a87;font-weight:bold">&lt;/transactionResponse&gt;</span>
+<span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
+</code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<p>You will find the description of the transaction.digitalWallet object and its fields in the section <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-brazil.html#variables-for-request-and-response">Variables</a>.</p>
 <h2 id="submit-transaction-with-pix">Submit transaction with PIX</h2>
 <p>This method lets you process payments using PIX. To integrate with PIX you need to show in your checkout page a QR code so your customer can read it using their smartphone to perform the payment.</p>
 <p>In the end, your customer sees a checkout page like this.</p>
@@ -3529,7 +3843,7 @@ By default, processing credit cards without security code is not enabled. If you
 It is recommended to display in your Checkout both the image of the QR code (parameter <code>QRCODE_IMAGE_BASE64</code> decoded) and the string of the code (parameter <code>QRCODE_EMV</code>) to avoid payment desertions.
 </div>
 
-<h3 id="api-call">API call</h3>
+<h3 id="api-call-1">API call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4419,7 +4733,7 @@ It is recommended to display in your Checkout both the image of the QR code (par
 </ul>
 </li>
 </ul>
-<h3 id="api-call-1">API call</h3>
+<h3 id="api-call-2">API call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5300,7 +5614,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <li>When the payer selects this payment method, PayU creates an order in <em>in progress</em> state and a transaction in <code>PENDING</code> state.</li>
 <li>In the response body, you can find the receipt generated by PayU and the expiration date.</li>
 </ul>
-<h3 id="api-call-2">API call</h3>
+<h3 id="api-call-3">API call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5679,7 +5993,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </tbody>
 </table>
 </details>
-<h3 id="api-call-3">API call</h3>
+<h3 id="api-call-4">API call</h3>
 <p>The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5910,7 +6224,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </tbody>
 </table>
 </details>
-<h3 id="api-call-4">Api call</h3>
+<h3 id="api-call-5">Api call</h3>
 <p>The following are the bodies of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6020,9 +6334,9 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-June 24, 2022:
+November 2, 2023:
 
- <b>clon issue (d73e43fe)</b>
+ <b>Google Pay (220970e0)</b>
 </div>
 </div>
 

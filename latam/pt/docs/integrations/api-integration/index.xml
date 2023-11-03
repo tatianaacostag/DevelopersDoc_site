@@ -4957,6 +4957,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 A descrição abaixo aplica-se à prestação deste serviço diretamente através da apresentação do pop-up do Google Pay no site do beneficiário (loja virtual).
 &lt;/div&gt;
 
+&lt;p&gt;Se você deseja oferecer esse método via web-checkout da PayU, não é necessário nenhum esforço adicional de integração. Entre em contato com o gerente da sua conta para fazer a solicitação de ativação.&lt;/p&gt;
 &lt;p&gt;Um tema muito importante é que se a sua integração com a PayU for API, você deve efetuar as definições descritas nesta seção para processar as transações com o Google Pay:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#integra%C3%A7%C3%A3o-api-do-meio-de-pagamento&#34;&gt;Efetuar a integração API do meio de pagamento&lt;/a&gt;&lt;/li&gt;
