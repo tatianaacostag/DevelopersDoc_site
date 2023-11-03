@@ -1066,7 +1066,7 @@ Si deseas ofrecer este método de pago a través de PayU Web-Checkout, no se req
 Ten en cuenta que si tu integración con PayU es API, debes realizar los ajustes que se describen en esta sección para procesar transacciones de Google Pay: 
 
 * [Realizar la integración API del medio de pago](#integración-api-del-medio-de-pago)
-* [Realizar la adaptación de la integración API con PayU](#procesartransacciones-google-pay-en-payu)
+* [Realizar la adaptación de la integración API con PayU](#procesar-transacciones-google-pay-en-payu)
 
  ### Integración API del medio de pago
 Para integrar el sitio web con el monedero Google Pay, procede según las instrucciones que figuran en este sitio web:
