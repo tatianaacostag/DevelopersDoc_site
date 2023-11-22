@@ -19,7 +19,7 @@ To use the Tokenization feature, it is necessary to enable it in your PayU accou
 
 ![](/assets/BanderasPaises/Brazil.png) comercios.br@payu.com
 
-![](/assets/BanderasPaises/Colombia.png) comercios.co@payu.com
+![](/assets/BanderasPaises/Colombia.jpg) comercios.co@payu.com
 
 
 {{% alert title="Note" color="info"%}}
