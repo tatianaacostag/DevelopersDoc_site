@@ -60,7 +60,7 @@ You need to send the following information:
 Find the description of these fields in the [Variables]({{< ref "#variables-for-request-and-response" >}}) section.
 
 ### Using tokenized cards
-PayU supports payments with your tokenized card to let you make payments on a regular bases with a card stored in a token. A credit card token substitutes the sensitive information of a credit card and allows you to safely store it following PCI DSS (Payment Card Industry Data Security Standard) security standards.
+PayU supports payments with your tokenized card to let you make payments on a regular basis with a card stored in a token. A credit card token substitutes the sensitive information of a credit card and allows you to safely store it following PCI DSS (Payment Card Industry Data Security Standard) security standards.
 
 PayU can process payments with the following services:
 
