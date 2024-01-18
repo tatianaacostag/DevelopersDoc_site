@@ -1123,7 +1123,7 @@ A sample of Google Pay Token looks like this:
 * Take into account that for Google Pay transactions inside the parameter ```transaction.creditcard```, you should always send a value for ```transaction.creditcard.name```. Other fields of this parameter are not necessary since Google Pay delivers them inside the token. 
 * Contact your account manager to make the necessary activations to process without cvv as this payment method requires it.
 
-#### Test the payment method
+### Test the payment method
 This section is designed to guide users through the testing process and familiarization with the Google Pay payment method in PayU.  
 
 **Prerequisites (for API and Web Checkout integrations):**

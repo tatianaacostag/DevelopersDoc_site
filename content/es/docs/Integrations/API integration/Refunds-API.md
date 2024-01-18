@@ -23,21 +23,21 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 
 ### Argentina
 * El tiempo máximo para enviar una anulación es 14 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 365 días y 180 días para reembolsos parciales.
+* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
 * No se soportan reembolsos con decimales.
 * Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 30 días hábiles.
 
 ### Brasil {#brazil}  
 * El tiempo máximo para enviar una anulación es siete (7) días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se cancela.
 * El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es:
-   - 90 días para transacciones con PIX o procesadas en Redecard
-   - 120 días para transacciones procesadas en Cielo.
+   - 87 días para transacciones con PIX o procesadas en Redecard.
+   - 172 días para transacciones con tarjeta.
    * Solo se permite un reembolso por transacción cuando se usa PIX.
 * Cuando se aprueba un reembolso por transacciones con PIX, el pagador recibe el dinero de inmediato. De lo contrario, lo recuperan en un máximo de 15 días hábiles.
 
 ### Chile
 * Debido a restricciones de la red, se pueden autorizar anulaciones dentro de las tres primeras horas luego de la autorización. Si no se acepta la anulación o no se envía una captura luego de siete (7) días, la transacción se anula automáticamente.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 90 días.
+* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 327 días. Si la transacción fue procesada con KLAP, el tiempo máximo es 172 días.
 * No se soportan reembolsos para [transacciones procesadas con WebPay Plus]({{< ref "Payments-API-chile.md#submit-transaction-with-debit-y-prepaid-cards" >}}).
 * Para transacciones con tarjetas prepago que no sean procesadas a través de WebPay Plus, los Reembolsos solicitados luego de la primero hora del cobro pueden ser aprobados o rechazados por la red financiera. Luego de esta hora, se rechazan todos los reembolsos para transacciones realizadas con tarjetas prepago.
 * Si se rechaza el reembolso, PayU muestra el [código de error]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}) generado por la red.
@@ -48,7 +48,7 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 
 ### Colombia
 * No se soportan Anulaciones (Void).
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es two years.
+* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
 * El valor mínimo para enviar un Reembolso es 100 COP.
 * Si no se envía el reembolso el mismo día en el que la transacción fue capturada (antes de las 9 pm UTC-5) el reembolso va inmediatamente  un proceso manual sin enviar un intento en línea.
 * Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 30 días hábiles.
@@ -56,13 +56,13 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 
 ### México {#mexico}
 * El tiempo mínimo para enviar una anulación (Void) es 10 minutos luego de la autorización y el máximo es 30 días. Si la transacción se hizo con American Express, el tiempo máximo es siete (7) días.<br>Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 180 días. Si la transacción fue procesada por Bancomer, el tiempo máximo es 45 días.
+* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 175 días. Si la transacción fue procesada por Bancomer, el tiempo máximo es 40 días.
 * Cuando se aprueba un reembolso, el pagador obtiene su dinero en 30 días hábiles.
 * No se soportan reembolsos con decimales.
 
 ### Panamá {#panama}
 * No se soportan Anulaciones (Void).
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 180 días.
+* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
 * Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 8 días hábiles.
 
 ### Perú {#peru}
@@ -71,7 +71,7 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
     - Mastercard: 28 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se captura automáticamente.
     - American Express: 30 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
     - Diners: 11 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 180 días.
+* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
 * Se soportan reembolsos parciales para transacciones sin cuotas. Ten en cuenta que las transacciones en una cuota son consideradas como sin cuotas.
 * Los Reembolsos parciales con visanet deben enviarse un día después.
 * Cuando se aprueba un reembolso, el pagador obtiene su dinero en 15 to 25 días hábiles.

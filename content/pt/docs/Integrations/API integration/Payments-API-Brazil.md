@@ -1060,12 +1060,13 @@ Se utilizarem o Google Pay, os comerciantes devem aderir à [Política de Utiliz
 A descrição abaixo aplica-se à prestação deste serviço diretamente através da apresentação do pop-up do Google Pay no site do beneficiário (loja virtual).
 {{% /alert %}}
 
-Se você deseja oferecer esse método via web-checkout da PayU, não é necessário nenhum esforço adicional de integração. Entre em contato com o gerente da sua conta para fazer a solicitação de ativação.
+Se você deseja oferecer esse método via web-checkout da PayU, não é necessário nenhum esforço adicional de integração. Entre em contato com o gerente da sua conta para fazer a solicitação de ativação. Se desejar testar o método de pagamento antes da ativação, pode seguir as instruções [aqui](testes-para-estabelecimentos-com-integração-web-checkout).
 
 Um tema muito importante é que se a sua integração com a PayU for API, você deve efetuar as definições descritas nesta seção para processar as transações com o Google Pay: 
 
 * [Efetuar a integração API do meio de pagamento](#integração-api-do-meio-de-pagamento)
 * [Realizar a adaptação da sua integração API com PayU](#processar-transacções-o-google-pay-com-payu)
+* [Testar o meio de pagamento](#testar-o-meio-de-pagamento)
 
  ### Integração API do meio de pagamento 
 Para integrar o seu site com a carteira Google Pay, proceda de acordo com as instruções apresentadas no link abaixo:
@@ -1120,6 +1121,33 @@ Abaixo encontra-se um exemplo de um Google Pay Token:
 * No parâmetro ```transaction.digitalWallet```, utilize ```GOOGLE_PAY``` para o campo ```transaction.digitalWallet.type```  e envie o Google Pay token no campo ```transaction.digitalWallet.message```. 
 * Tenha em mente que o parâmetro ```transaction.creditcard``` para transações do Google Pay, deve enviar sempre um valor válido para o campo ```transaction.creditcard.name```. Os outros campos deste parâmetro não são necessários, uma vez que o Google Pay os fornece no token do Google Pay.
 * Por predefinição, o processamento de cartões de crédito sem código de segurança não está ativa. Contate o seu Gestor de Conta da PayU para efetuar as activações necessárias para processar sem cvv, uma vez que este método de pagamento o exige.
+
+### Testar o meio de pagamento
+Esta secção foi concebida para guiar os utilizadores através do processo de teste e familiarização com o método de pagamento Google Pay na PayU.
+
+**Pré-requisitos (aplicar para integração API e Web Checkout):**
+* Certifique-se de que tem sessão iniciada no seu navegador com a conta Gmail que vai testar.
+* Junte-se ao grupo do Google onde estarão disponíveis os cartões de teste para PayU. O grupo pode ser encontrado na seguinte [documentação do Google](https://developers.google.com/pay/api/android/guides/resources/test-card-suite).
+
+#### Testes para estabelecimentos com integração API:
+1.	Depois de ter efectuado as alterações indicadas nas secções anteriores, utilize o ficheiro de simulação de token para simular uma transação e obter um exemplo de token do Google Pay. O simulador pode ser descarregado aqui. 
+
+{{% alert title="Observação" color="info"%}}
+Para garantir um processamento correto, ao selecionar os cartões para pagamento, utilize cartões cujo nome não comece por "Test".
+{{% /alert %}}
+
+2. Utilize as informações da amostra do token do Google Pay para completar o pedido da PayU. Envie-o para o PayU e poderá obter prova de uma transação aprovada. Se tiver algum resultado não aprovado, reveja a documentação das etapas acima.
+
+#### Testes para estabelecimentos com integração Web Checkout: 
+Utilize o checkout PayU no [ambiente de teste](https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/test/prueba_pago.jsp) para simular uma transação. 
+
+{{% alert title="Observação" color="info"%}}
+* Para garantir um processamento correto, ao selecionar os cartões para pagamento, utilize cartões cujo nome não comece por "Test".
+* Use as credenciais de teste brasileiras para este teste. Ver credenciais Use las credenciales de prueba de Brasil para esta prueba [aqui](https://developers.payulatam.com/latam/pt/docs/getting-started/test-your-solution.html).
+{{% /alert %}}
+
+![](/assets/GooglePay/Imagen2.png)
+
 
 #### Chamada API
 A seguir estão o corpo do pedido e da resposta deste meio de pagamento.

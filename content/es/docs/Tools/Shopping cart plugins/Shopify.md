@@ -44,6 +44,9 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
 ![](/assets/ShopifyReverseIntegration/imagen2.png)
 
 
+![](/assets/ShopifyReverseIntegration/imagen7.png)
+
+
 
 
 3. Ingresa las credenciales de tu tienda para el ambiente de test y de producción (Merchand Id y Account Id).
@@ -52,9 +55,13 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
 ![](/assets/ShopifyReverseIntegration/imagen3.png)
 
 
+Recuerda que puedes encontrar tus credenciales de ambiente de producción ingresando a tu módulo administrativo de PayU. Una vez inicies sesión encontrarás el merchant ID (1) y el account ID (2) en la parte superior izquierda del módulo, tal como se muestra en la siguiente imagen de referencia: 
+
+![](/assets/ShopifyReverseIntegration/imagen8.png)
+
+
 {{% alert title="Nota" color="info"%}}
-* Puedes encontrar las credenciales para el ambiente de test [aquí](https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html)
-* Para encontrar las credenciales para el ambiente de producción, haz clic [aquí](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) y sigue los pasos indicados.
+* Puedes encontrar las credenciales para el ambiente de test [aquí](https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html).
 * Recuerda que posteriormente puedes cambiar o consultar las credenciales que ingresaste desde tu admin de Shopify.   
 {{% /alert %}}
 
@@ -66,22 +73,31 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 
 
 
-4. Serás dirigido a la sección llamada “Payments”. Allí, selecciona “Activate PayU Latam v2” en la esquina inferior derecha.
+4. Serás dirigido a la sección llamada “Pagos”. Allí, selecciona “Activate PayU Latam v2” en la esquina inferior derecha.
 
 
-![](/assets/ShopifyReverseIntegration/imagen4.png)
+![](/assets/ShopifyReverseIntegration/imagen9.png)
+
+
+![](/assets/ShopifyReverseIntegration/imagen10.png)
 
 
 {{% alert title="Importante" color="warning"%}}
 * A modo informativo, verás distintos medios de pago. Para avanzar, debes seleccionar por lo menos uno de ellos, pero recuerda que esto no modificará los medios de pago que tienes disponible en el Web Checkout de PayU.  
-* La casilla “Enable test mode” indica si se usarán las credenciales del ambiente de producción o del ambiente de prueba.  
-Ejemplo: Si deseas utilizar el ambiente de pruebas en vez del ambiente de producción, debes hacer clic en la casilla “Enable test mode”. 
+* Modo test: Dentro de la misma sección de “pagos”, encontrarás la opción para utilizar el modo test que te permitirá hacer pruebas en ambiente Sandbox. 
+* Te recomendamos usar el ambiente test de forma controlada, preferiblemente en un horario de baja transaccionalidad, ya que las transacciones que se procesen mientras estes en modo de test no generan un pago real y el ambiente productivo queda desactivado. 
+* Para deshabilitar el modo test, retira el check y guarda los cambios.
+![](/assets/ShopifyReverseIntegration/imagen11.png)
+![](/assets/ShopifyReverseIntegration/imagen12.png)
 {{% /alert %}}
 
 
 
 
 5. Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Activa la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.
+
+
+![](/assets/ShopifyReverseIntegration/imagen13.png)
 
 
 ![](/assets/ShopifyReverseIntegration/imagen6.png)
