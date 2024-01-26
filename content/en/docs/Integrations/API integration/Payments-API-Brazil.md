@@ -1061,7 +1061,7 @@ In case of using Google Pay, the merchants must adhere to the Google Pay APIs [A
 The description below applies to provision of this service directly by displaying the Google Pay lightbox at the website of the payment recipient (e-store).
 {{% /alert %}}
 
-If you wish to offer this method via PayU Web-Checkout, no additional integration effort is required. Contact your Key Account Manager to make the activation request.If you wish to test the payment method prior to activation, you can follow the instructions [here](#testing-for-merchants-with-checkout-integration).
+If you wish to offer this method via PayU Web-Checkout, no additional integration effort is required. Contact your Key Account Manager to make the activation request. If you wish to test the payment method prior to activation, you can follow the instructions [here](#testing-for-merchants-with-web-checkout-integration).
 
 Please note that if your integration with PayU is API, you must change the settings described in this section to process Google Pay transactions: 
 
@@ -1131,7 +1131,7 @@ This section is designed to guide users through the testing process and familiar
 * Join the Google group in which the test cards for PayU will be available. The group can be found in the following [Google documentation](https://developers.google.com/pay/api/android/guides/resources/test-card-suite).
 
 #### Testing for merchants with API integration:  
-1. Once the changes indicated in the previous sections have been made, use the Token Simulator File to simulate a transaction and obtain a sample of a Google Pay Token. The simulator can be downloaded here.
+1. Once the changes indicated in the previous sections have been made, use the Token Simulator File to simulate a transaction and obtain a sample of a Google Pay Token. The simulator can be visualized [here]({{< ref Simulator.md >}})
 
 {{% alert title="Note" color="info"%}}
 To ensure correct processing, use cards whose name do NOT start with "Test". 
@@ -1139,11 +1139,12 @@ To ensure correct processing, use cards whose name do NOT start with "Test".
 
 2. Use the information on the sample of the Google Pay Token to fill out the PayU Request. Send it to PayU to get proof of an approved transaction. If you have results that are not approved, please review the documentation from the steps above.
 
+<video width="630" height="300" controls>
+	<source src="/assets/GooglePay/API.mp4" type="video/mp4">
+ 	Your browser does not support the video tag.
+</video>
 
 #### Testing for merchants with Web Checkout integration:  
-
-![](/assets/GooglePay/Imagen1.png)
-
 Access PayU Latam Web Checkout in a [test environment](https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/test/prueba_pago.jsp) and simulate a transaction. 
 
 {{% alert title="Note" color="info"%}}
@@ -1151,8 +1152,10 @@ Access PayU Latam Web Checkout in a [test environment](https://sandbox.checkout.
 * Use the Brazil test credentials for this test. Consult them [here](https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html).
 {{% /alert %}}
 
-![](/assets/GooglePay/Imagen2.png)
-
+<video width="630" height="300" controls>
+	<source src="/assets/GooglePay/WebCheckout.mp4" type="video/mp4">
+ 	Your browser does not support the video tag.
+</video>
 
 #### API Call
 The following are the bodies of the request and response of this payment method.

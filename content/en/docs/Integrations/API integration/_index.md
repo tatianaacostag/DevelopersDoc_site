@@ -86,4 +86,4 @@ You can set the language you want to use in the request through the `Content-typ
 * Normally the connection guarantees response times of three seconds on average. If there is an unusual situation, the maximum response time is one minute. It is highly recommended that you set _timeouts_ when you connect with PayU.
 * It is important to validate the length and numbers of credit cards by franchise, together with the security codes.
 
-## Available features
+## Available features 

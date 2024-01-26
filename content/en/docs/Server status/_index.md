@@ -14,3 +14,4 @@ window.onload = function () {
 };
 </script>-->
 <iframe src="https://status.payulatam.com/" style="width:100%;height:50vh;border:none;"></iframe>
+<iframe src="https://status.payulatam.com/" style="width:100%;height:50vh;border:none;"></iframe>

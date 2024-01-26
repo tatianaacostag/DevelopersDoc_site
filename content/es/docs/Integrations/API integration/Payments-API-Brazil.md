@@ -1131,7 +1131,7 @@ Esta sección está diseñada para guiar a los usuarios sobre el proceso de prue
 * Únete al grupo de Google en el que estarán disponibles las tarjetas de prueba para PayU. El grupo se encuentra en la siguiente [documentación de Google](https://developers.google.com/pay/api/android/guides/resources/test-card-suite).
 
 #### Pruebas para comercios con integración API:
-1.	Una vez realizados los cambios indicados en los apartados anteriores, utiliza el Archivo Simulador de Token para simular una transacción y obtener un token de Google Pay de muestra. El simulador puede descargarse aquí. 
+1.	Una vez realizados los cambios indicados en los apartados anteriores, utiliza el Archivo Simulador de Token para simular una transacción y obtener un token de Google Pay de muestra. El simulador puede visualizarse [aquí]({{< ref Simulator.md >}})
 
 {{% alert title="Nota" color="info"%}}
 Para garantizar un procesamiento correcto, al momento de seleccionar las tarjetas para el pago,   utiliza tarjetas cuyo nombre no empiecen por "Test". 
@@ -1139,16 +1139,23 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 
 2. Utiliza la información del token de Google Pay de muestra para completar el request de PayU. Envíala a PayU para obtener prueba de una transacción aprobada. Si tienes algún resultado no aprobado, revisa la documentación de los pasos anteriores.
 
+<video width="630" height="300" controls>
+	<source src="/assets/GooglePay/API.mp4" type="video/mp4">
+ 	Your browser does not support the video tag.
+</video>
+
 #### Pruebas para comercios con integración Web Checkout: 
 Utiliza el Web Checkout en [ambiente de prueba](https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/test/prueba_pago.jsp) para simular una transacción. 
 
 {{% alert title="Nota" color="info"%}}
-* Para garantizar un procesamiento correcto, al momento de seleccionar las tarjetas para el pago,   utiliza tarjetas cuyo nombre no empiecen por "Test". 
+* Para garantizar un procesamiento correcto, al momento de seleccionar las tarjetas para el pago, utiliza tarjetas cuyo nombre no empiecen por "Test". 
 * Usa las credenciales de prueba de Brasil para esta prueba. Consulta las credenciales [aquí](https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html).
 {{% /alert %}}
 
-![](/assets/GooglePay/Imagen2.png)
-
+<video width="630" height="300" controls>
+	<source src="/assets/GooglePay/WebCheckout.mp4" type="video/mp4">
+ 	Your browser does not support the video tag.
+</video>
 
 #### Llamado API
 Los siguientes son ejemplos de los cuerpos de la petición y la respuesta de este método de pago.
