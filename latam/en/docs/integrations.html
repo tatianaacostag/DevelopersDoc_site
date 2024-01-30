@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.84.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -39,8 +39,8 @@
 
 
 
-<link rel="preload" href="../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" as="style">
-<link href="../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../scss/main.scss" as="style">
+<link href="../../scss/main.scss" rel="stylesheet" integrity="">
 
 
 <link href="../../css/custom.css" rel="stylesheet">
@@ -137,7 +137,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.0f93ed0919f4b202ad0832b6114d071c8b1cfbf0edf1423e32c931b90000acb61ac958230917551383469d2c8518fd230c6b76f7d606ac782b94b61afffcd97f.json"
+  data-offline-search-index-json-src="../../offline-search-index.6cac162361f1cc774241d5c5dbb4256561a9fa970df4c1275ff1a43fbdb13e76e717faf896a7364c16d1e36296c6f928432a5ee60f42f32594eef0035a191a0d.json"
   data-offline-search-base-href="../../"
 >
 
@@ -461,7 +461,7 @@
 
  <ul class="td-sidebar-nav__section pr-md-3"> 
 <li class="  td-sidebar-nav__section-title ">
-    <a id="/en/docs/integrations.html" href="../../en/docs/integrations.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">Integrations</a>
+    <a id="/en/docs/integrations.html" href="../../en/docs/integrations.html" class="align-left pl-0 pr-2 collapsed active  td-sidebar-link td-sidebar-link__section ">Integrations</a>
   </li>
   <ul class="side-main">
     <li class="" id="endocsintegrationshtml">
@@ -600,6 +600,12 @@
       
       
         <a id="/en/docs/integrations/api-integration/payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayouts-apihtml" href="../../en/docs/integrations/api-integration/payouts-api.html">Payouts API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/simulator.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationsimulatorhtml" href="../../en/docs/integrations/api-integration/simulator.html">Token Simulator</a>
       
       
     </li>
@@ -857,7 +863,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 
 <h3 id="authentication-signature">Authentication signature</h3>
 <p>The variable <code>signature</code> is used to validate the payments performed through the platform, ensuring their authenticity. This variable is a string value encrypted using MD5 or SHA algorithms and follows this structure.</p>
-<pre><code>ApiKey~merchantId~referenceCode~tx_value~currency
+<pre tabindex="0"><code>ApiKey~merchantId~referenceCode~tx_value~currency
 </code></pre><p>Let&rsquo;s build a <code>signature</code> using the following test values:</p>
 <ul>
 <li><strong>ApiKey</strong>: <code>4Vj8eK4rloUd272L48hsrarnUA</code></li>
@@ -867,31 +873,31 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 <li><strong>currency</strong>: <code>USD</code></li>
 </ul>
 <p>The string is these values concatenated with the tilde character (~):</p>
-<pre><code>4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU~3~USD
+<pre tabindex="0"><code>4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU~3~USD
 </code></pre><p>After you apply the MD5 algorithm, the <code>signature</code> value is:</p>
-<pre><code>ba9ffa71559580175585e45ce70b6c37
+<pre tabindex="0"><code>ba9ffa71559580175585e45ce70b6c37
 </code></pre><h3 id="_devicesessionid_-variable"><em>deviceSessionId</em> variable</h3>
 <p>The <em>deviceSessionId</em> is a code with the information of the device where the transaction was generated and provides a unique identifier for the device. This variable lets us identify attackers.</p>
 <ol>
 <li>To perform either API or SDK integration, you need to include the following script in your payment form:</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
-<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">noscript</span><span style="color:#000;font-weight:bold">&gt;</span>
-   <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">iframe</span> <span style="color:#c4a000">style</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;&#34;</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">iframe</span><span style="color:#000;font-weight:bold">&gt;</span>
-<span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">noscript</span><span style="color:#000;font-weight:bold">&gt;</span>
-</code></pre></div><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">noscript</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">iframe</span> <span style="color:#c4a000">style</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;&#34;</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://maf.pagosonline.net/ws/fp/tags.js?id=${deviceSessionId}80200&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">iframe</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">noscript</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><br>
 <ol start="2">
 <li>It is important to generate the <code>deviceSessionId</code> per each transaction. To generate the <code>deviceSessionId</code> get the <code>session_id</code> of the cookie and concatenate it with the current timestamp along with the milliseconds. Then, encrypt the result using MD5.</li>
 </ol>
 <p>Example in PHP</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP"><span style="color:#000">$deviceSessionId</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">md5</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">session_id</span><span style="color:#000;font-weight:bold">()</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">microtime</span><span style="color:#000;font-weight:bold">())</span>
-</code></pre></div><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#000">$deviceSessionId</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">md5</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">session_id</span><span style="color:#000;font-weight:bold">()</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">microtime</span><span style="color:#000;font-weight:bold">())</span>
+</span></span></code></pre></div><br>
 <p>For example, if the <code>$deviceSessionId</code> is <code>d66f949f19b33e88c202b579cfc549b3</code>, the script is as follows:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://maf.pagosonline.net/ws/fp/tags.js?id=d66f949f19b33e88c202b579cfc549b380200&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
-<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">noscript</span><span style="color:#000;font-weight:bold">&gt;</span>
-	<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">iframe</span> <span style="color:#c4a000">style</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;&#34;</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://maf.pagosonline.net/ws/fp/tags.js?id=d66f949f19b33e88c202b579cfc549b380200&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">iframe</span><span style="color:#000;font-weight:bold">&gt;</span>
-<span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">noscript</span><span style="color:#000;font-weight:bold">&gt;</span>
-</code></pre></div><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;text/javascript&#34;</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://maf.pagosonline.net/ws/fp/tags.js?id=d66f949f19b33e88c202b579cfc549b380200&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">noscript</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">iframe</span> <span style="color:#c4a000">style</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;&#34;</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://maf.pagosonline.net/ws/fp/tags.js?id=d66f949f19b33e88c202b579cfc549b380200&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">iframe</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">noscript</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><br>
 <ol start="3">
 <li>Finally, you must send the <code>$deviceSessionId</code> in the variable according to the integration selected:</li>
 </ol>
@@ -1055,6 +1061,8 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
         
             
         
+            
+        
     
 </div>
 
@@ -1087,7 +1095,7 @@ June 24, 2022:
 
 
 
-<script src="../../js/main.min.8c865aba183c7b45657c96d592a977547887a44cf70782e8996d3c3687a50bc5.js" integrity="sha256-jIZauhg8e0VlfJbVkql3VHiHpEz3B4LomW08NoelC8U=" crossorigin="anonymous"></script>
+<script src="../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
 
 
 <script src="../../js/scrollspy.js"></script>

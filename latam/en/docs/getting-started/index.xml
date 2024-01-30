@@ -130,40 +130,40 @@ To activate your account, you should:&lt;/p&gt;
 &lt;h2 id=&#34;payu-tools&#34;&gt;PayU Tools&lt;/h2&gt;
 &lt;p&gt;Any of the following tools give you more options to sell and receive payments online.&lt;/p&gt;
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
-  &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-request.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/money-flowing.svg&#34; alt=&#34;Payment requests&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment request&lt;/h4&gt;
-      &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Shopping cart plugins&lt;/h4&gt;
-      &lt;p&gt;Integrate your shopping cart solution with any of our available plugins.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payu-module.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/PayULogo.png&#34; alt=&#34;PayU Module&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;PayU module&lt;/h4&gt;
-      &lt;p&gt;Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/disputes.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/bank.svg&#34; alt=&#34;Disputes&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputes&lt;/h4&gt;
-      &lt;p&gt;Manage the dispute processes generated in your PayU account.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-coupons.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/hand-with-icon.svg&#34; alt=&#34;Payment coupons&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment coupons&lt;/h4&gt;
-      &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/antifraud-guarantee.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/fraud.svg&#34; alt=&#34;Anti-fraud Guarantee&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Anti-fraud Guarantee&lt;/h4&gt;
-      &lt;p&gt;PayU offers the Anti-fraud Guarantee that protects merchants against the lost due to fraud transactions.&lt;/p&gt;
-    &lt;/div&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
+   &lt;div class=&#34;row&#34;&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-request.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/money-flowing.svg&#34; alt=&#34;Payment requests&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment request&lt;/h4&gt;
+       &lt;p&gt;Receive payments even if you don&#39;t have a web page.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Shopping cart plugins&lt;/h4&gt;
+       &lt;p&gt;Integrate your shopping cart solution with any of our available plugins.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payu-module.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/PayULogo.png&#34; alt=&#34;PayU Module&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;PayU module&lt;/h4&gt;
+       &lt;p&gt;Manage your PayU account, generate sales reports, query your account balance or transfer money to your bank account.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/disputes.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/bank.svg&#34; alt=&#34;Disputes&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputes&lt;/h4&gt;
+       &lt;p&gt;Manage the dispute processes generated in your PayU account.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-coupons.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/hand-with-icon.svg&#34; alt=&#34;Payment coupons&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Payment coupons&lt;/h4&gt;
+       &lt;p&gt;Send payment coupons to your customers, they can pay in the cash branches available.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/antifraud-guarantee.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/fraud.svg&#34; alt=&#34;Anti-fraud Guarantee&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Anti-fraud Guarantee&lt;/h4&gt;
+       &lt;p&gt;PayU offers the Anti-fraud Guarantee that protects merchants against the lost due to fraud transactions.&lt;/p&gt;
+     &lt;/div&gt;
+     
+   &lt;/div&gt;
+ &lt;/div&gt;
 
 
       </description>
@@ -1230,8 +1230,8 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Target your request to the following URL:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;https://checkout.payulatam.com/ppp-web-gateway-payu
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-over-to-production-using-api-integration&#34;&gt;Step over to production using API integration&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://checkout.payulatam.com/ppp-web-gateway-payu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-over-to-production-using-api-integration&#34;&gt;Step over to production using API integration&lt;/h2&gt;
 &lt;p&gt;Include the following parameters in your payment forms:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1268,9 +1268,9 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Target your request to the following URL:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;Queries: https://api.payulatam.com/reports-api/4.0/service.cgi
-Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-over-to-production-using-sdk-integration&#34;&gt;Step over to production using SDK integration&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Queries: https://api.payulatam.com/reports-api/4.0/service.cgi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-over-to-production-using-sdk-integration&#34;&gt;Step over to production using SDK integration&lt;/h2&gt;
 &lt;p&gt;Include the following parameters in your payment forms:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1347,9 +1347,9 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 
 &lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
-	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;paymentsUrl&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//api.payulatam.com/payments-api/”;
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;reportsUrl&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//api.payulatam.com/reports-api/”;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;paymentsUrl&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//api.payulatam.com/payments-api/”;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;reportsUrl&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//api.payulatam.com/reports-api/”;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 
@@ -1364,9 +1364,9 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 
 &lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
-	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setPaymentsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;“https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;://&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payulatam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4.0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;service&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cgi”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setReportsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;“https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;://&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payulatam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reports&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4.0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;service&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cgi”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setPaymentsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;“https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;://&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payulatam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4.0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;service&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cgi”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setReportsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;“https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;://&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payulatam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reports&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4.0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;service&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cgi”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 
@@ -1389,8 +1389,8 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
         
         
         &lt;script src=&#34;../../../js/searchcodes.js&#34;&gt;&lt;/script&gt;
-&lt;p&gt;&lt;input type=&#34;text&#34; id=&#34;searchBox&#34; placeholder=&#34; Search for names, codes or description...&#34; onkeyup=&#34;findTables()&#34; &gt;
-&lt;button onclick=&#34;document.getElementById(&#39;searchBox&#39;).value = &#39;&#39;;findTables()&#34; class=&#34;btn-green&#34;&gt;Clear&lt;/button&gt;&lt;/p&gt;
+&lt;input type=&#34;text&#34; id=&#34;searchBox&#34; placeholder=&#34; Search for names, codes or description...&#34; onkeyup=&#34;findTables()&#34; &gt;
+&lt;button onclick=&#34;document.getElementById(&#39;searchBox&#39;).value = &#39;&#39;;findTables()&#34; class=&#34;btn-green&#34;&gt;Clear&lt;/button&gt;
 &lt;h2 id=&#34;response-codes-for-transactions&#34;&gt;Response codes for transactions&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;

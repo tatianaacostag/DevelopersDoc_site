@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.84.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -26,11 +26,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/tools/shopping-cart-plugins/bigcommerce.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-04-27T10:30:35-05:00" />
-<meta property="article:modified_time" content="2023-09-29T13:47:06-05:00" /><meta property="og:site_name" content="PayU Latam" />
+<meta property="article:modified_time" content="2024-01-18T17:20:34-05:00" /><meta property="og:site_name" content="PayU Latam" />
 
 <meta itemprop="name" content="BigCommerce">
 <meta itemprop="description" content="Este artículo te muestra el procedimiento para habilitar PayU en tu sitio web BigCommerce."><meta itemprop="datePublished" content="2023-04-27T10:30:35-05:00" />
-<meta itemprop="dateModified" content="2023-09-29T13:47:06-05:00" />
+<meta itemprop="dateModified" content="2024-01-18T17:20:34-05:00" />
 <meta itemprop="wordCount" content="868">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="BigCommerce"/>
@@ -40,8 +40,8 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" as="style">
-<link href="../../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.scss" as="style">
+<link href="../../../../scss/main.scss" rel="stylesheet" integrity="">
 
 
 <link href="../../../../css/custom.css" rel="stylesheet">
@@ -136,7 +136,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.0f93ed0919f4b202ad0832b6114d071c8b1cfbf0edf1423e32c931b90000acb61ac958230917551383469d2c8518fd230c6b76f7d606ac782b94b61afffcd97f.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.6cac162361f1cc774241d5c5dbb4256561a9fa970df4c1275ff1a43fbdb13e76e717faf896a7364c16d1e36296c6f928432a5ee60f42f32594eef0035a191a0d.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -371,12 +371,6 @@
       
       
       
-        <a id="/es/docs/tools/shopping-cart-plugins/magento.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsmagentohtml" href="../../../../es/docs/tools/shopping-cart-plugins/magento.html">Magento</a>
-      
-      
-      
-      
-      
         <a id="/es/docs/tools/shopping-cart-plugins/drupal.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsdrupalhtml" href="../../../../es/docs/tools/shopping-cart-plugins/drupal.html">Drupal</a>
       
       
@@ -591,6 +585,12 @@
       
       
         <a id="/es/docs/integrations/api-integration/payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayouts-apihtml" href="../../../../es/docs/integrations/api-integration/payouts-api.html">API de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/simulator.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationsimulatorhtml" href="../../../../es/docs/integrations/api-integration/simulator.html">Token Simulator</a>
       
       
     </li>
@@ -824,26 +824,26 @@
 <ol>
 <li>Instala la aplicación desde BigCommerce Marketplace haciendo clic en el botón de instalación.</li>
 </ol>
-<p><img src="../../../../assets/BigCommerceFinal/Howtoinstall_1.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/howtoinstall1.png" alt=""></p>
 <ol start="2">
 <li>Haz clic en la casilla de verificación y en el botón &ldquo;Confirmar&rdquo; para finalizar la instalación.</li>
 </ol>
-<p><img src="../../../../assets/BigCommerceFinal/Howtoinstall_2.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/howtoinstall2.png" alt=""></p>
 <ol start="3">
 <li>Una vez tengas la app instalada, verás la interfaz de la aplicación de la siguiente manera:</li>
 </ol>
-<p><img src="../../../../assets/BigCommerceFinal/Howtoinstall_3.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/howtoinstall3.png" alt=""></p>
 <h2 id="cómo-usar-esta-extensión">Cómo usar esta extensión</h2>
 <h3 id="configura-los-métodos-de-pago">Configura los métodos de pago</h3>
 <p>Esta sección te explicará cómo configurar los métodos de pago que se mostrarán en el sitio web para el pago. <a href="../../../../es/docs/getting-started/select-your-payment-method.html">Consulta nuestros métodos de pago disponibles</a>.</p>
 <ol>
 <li>Después de instalar la aplicación selecciona <strong>Habilitar PayU Latam</strong> para permitir la app en la tienda BigCommerce.</li>
 </ol>
-<p><img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_1.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension1.png" alt=""></p>
 <ol start="2">
 <li>Selecciona un título personalizado para la opción de pago con tarjeta (por ejemplo, Pagar con tarjeta). Este título será visible en la página de pago para tus clientes.</li>
 </ol>
-<p><img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_2.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension2.png" alt=""></p>
 <ol start="3">
 <li>Elige la forma en que deseas que se muestren las opciones de pago con tarjeta disponibles. Puedes elegir una de las siguientes opciones:</li>
 </ol>
@@ -851,7 +851,7 @@
 <li>Mostrar Powered by PayU Latam y logo en el formulario de pago</li>
 <li>Mostrar el logo de la tarjeta de crédito en la página de pago</li>
 </ul>
-<p><img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_3.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension3.png" alt=""></p>
 
 
 <div class="alert alert-warning" role="alert">
@@ -862,8 +862,8 @@ Si el comercio desea permitir métodos de pago alternativos (efectivo y transfer
 <ol start="4">
 <li>Utiliza el botón &ldquo;Add provider&rdquo; para añadir la cuenta de procesamiento de un país específico de PayU Latam. Cada configuración puede ser habilitada/deshabilitada desde la interfaz de la app usando el botón de “Status” respectivo. También puedes hacer clic en &ldquo;Editar&rdquo; para actualizar las credenciales, y recuerda que en la configuración de tus cuentas podrás elegir si quieres usarlas en modo prueba o en ambiente productivo.</li>
 </ol>
-<p><img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_4.png" alt=""></p>
-<p><img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_5.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension4.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension5.png" alt=""></p>
 <p>Para agregar una nueva configuración, especifica los siguientes campos obligatorios:</p>
 <table>
 <thead>
@@ -910,7 +910,7 @@ Si el comercio desea permitir métodos de pago alternativos (efectivo y transfer
 <p>Para el flujo en dos pasos, selecciona <strong>Capture on Shipment</strong>.</p>
 </li>
 </ul>
-<p><img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_6.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension6.png" alt=""></p>
 <p>Consulte el siguiente <a href="https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows">enlace</a> para obtener más información sobre los flujos de pago.</p>
 
 
@@ -924,14 +924,14 @@ La opción de procesar en más de un paso sólo se aplica a pagos con tarjeta (s
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Nota</h4>
 Las opciones multi-tienda estarán visibles debajo de la sección de opciones de pago.
-<img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_7.png" alt="">
+<img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension7.png" alt="">
 </div>
 
 <h3 id="gestiona-tus-pedidos">Gestiona tus pedidos</h3>
 <ol>
 <li>Para acceder al panel de pedidos, haz clic en el botón ‘Order Dashboard’.</li>
 </ol>
-<p><img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_8.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension8.png" alt=""></p>
 <ol start="2">
 <li>La tabla del panel de pedidos mostrará los estados de pago del pedido realizado.</li>
 </ol>
@@ -984,7 +984,7 @@ Recuerda que puedes seleccionar un título personalizado para la opción de pago
 <ul>
 <li>Order Dashboard de BigCommerce: <strong><em>PayU Latam &gt; Order Dashboard</em></strong></li>
 </ul>
-<p><img src="../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_8.png" alt=""></p>
+<p><img src="../../../../assets/BigCommerceFinal/comoutilizarestaextension8.png" alt=""></p>
 <ul>
 <li>Módulo administrativo de PayU: En el módulo de <strong><em>Reporte de Ventas</em></strong>.</li>
 </ul>
@@ -997,9 +997,9 @@ Recuerda que puedes seleccionar un título personalizado para la opción de pago
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-29 de septiembre de 2023:
+18 de enero de 2024:
 
- <b>BigCommerce Images (9a46a868)</b>
+ <b>Update (18ea7b7b)</b>
 </div>
 </div>
 
@@ -1021,7 +1021,7 @@ Recuerda que puedes seleccionar un título personalizado para la opción de pago
 
 
 
-<script src="../../../../js/main.min.8c865aba183c7b45657c96d592a977547887a44cf70782e8996d3c3687a50bc5.js" integrity="sha256-jIZauhg8e0VlfJbVkql3VHiHpEz3B4LomW08NoelC8U=" crossorigin="anonymous"></script>
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
 
 
 <script src="../../../../js/scrollspy.js"></script>

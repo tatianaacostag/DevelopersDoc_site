@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.84.2" />
+<meta name="generator" content="Hugo 0.101.0" />
 
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -43,8 +43,8 @@
 
 
 
-<link rel="preload" href="../../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" as="style">
-<link href="../../../../scss/main.min.2c800af6f7a24d9ae00100d75d78e9de82241a7ddc379ab6cb8b076cd0d05395.css" rel="stylesheet" integrity="">
+<link rel="preload" href="../../../../scss/main.scss" as="style">
+<link href="../../../../scss/main.scss" rel="stylesheet" integrity="">
 
 
 <link href="../../../../css/custom.css" rel="stylesheet">
@@ -141,7 +141,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.0f93ed0919f4b202ad0832b6114d071c8b1cfbf0edf1423e32c931b90000acb61ac958230917551383469d2c8518fd230c6b76f7d606ac782b94b61afffcd97f.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.6cac162361f1cc774241d5c5dbb4256561a9fa970df4c1275ff1a43fbdb13e76e717faf896a7364c16d1e36296c6f928432a5ee60f42f32594eef0035a191a0d.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -378,12 +378,6 @@
       
       
       
-        <a id="/es/docs/tools/shopping-cart-plugins/magento.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsmagentohtml" href="../../../../es/docs/tools/shopping-cart-plugins/magento.html">Magento</a>
-      
-      
-      
-      
-      
         <a id="/es/docs/tools/shopping-cart-plugins/drupal.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsdrupalhtml" href="../../../../es/docs/tools/shopping-cart-plugins/drupal.html">Drupal</a>
       
       
@@ -598,6 +592,12 @@
       
       
         <a id="/es/docs/integrations/api-integration/payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayouts-apihtml" href="../../../../es/docs/integrations/api-integration/payouts-api.html">API de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/simulator.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationsimulatorhtml" href="../../../../es/docs/integrations/api-integration/simulator.html">Token Simulator</a>
       
       
     </li>
@@ -1205,64 +1205,64 @@
 </details>
 <h2 id="post-example-send-to-the-confirmation-page">Ejemplo POST enviado a página de confirmación</h2>
 <p>El siguiente es un ejemplo básico de las variables enviadas a la página de confirmación vía POST:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">response_code_pol=5
-phone=
-additional_value=0.00
-test=1
-transaction_date=2015-05-27 13:07:35
-cc_number=************0004
-cc_holder=test_buyer
-error_code_bank=
-billing_country=CO
-bank_referenced_name=
-description=test_payu_01
-administrative_fee_tax=0.00
-value=100.00
-administrative_fee=0.00
-payment_method_type=2
-office_phone=
-email_buyer=test@payulatam.com
-response_message_pol=ENTITY_DECLINED
-error_message_bank=
-shipping_city=
-transaction_id=f5e668f1-7ecc-4b83-a4d1-0aaa68260862
-sign=e1b0939bbdc99ea84387bee9b90e4f5c
-tax=0.00
-payment_method=10
-billing_address=cll 93
-payment_method_name=VISA
-pse_bank=
-state_pol=6
-date=2015.05.27 01:07:35
-nickname_buyer=
-reference_pol=7069375
-currency=USD
-risk=1.0
-shipping_address=
-bank_id=10
-payment_request_state=R
-customer_number=
-administrative_fee_base=0.00
-attempts=1
-merchant_id=508029
-exchange_rate=2541.15
-shipping_country=
-installments_number=1
-franchise=VISA
-payment_method_id=2
-extra1=
-extra2=
-antifraudMerchantId=
-extra3=
-nickname_seller=
-ip=190.242.116.98
-airline_code=
-billing_city=Bogota
-pse_reference1=
-reference_sale=2015-05-27 13:04:37
-pse_reference3=
-pse_reference2=
-</code></pre></div><h2 id="signature-validation">Validación de la firma</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>response_code_pol=5
+</span></span><span style="display:flex;"><span>phone=
+</span></span><span style="display:flex;"><span>additional_value=0.00
+</span></span><span style="display:flex;"><span>test=1
+</span></span><span style="display:flex;"><span>transaction_date=2015-05-27 13:07:35
+</span></span><span style="display:flex;"><span>cc_number=************0004
+</span></span><span style="display:flex;"><span>cc_holder=test_buyer
+</span></span><span style="display:flex;"><span>error_code_bank=
+</span></span><span style="display:flex;"><span>billing_country=CO
+</span></span><span style="display:flex;"><span>bank_referenced_name=
+</span></span><span style="display:flex;"><span>description=test_payu_01
+</span></span><span style="display:flex;"><span>administrative_fee_tax=0.00
+</span></span><span style="display:flex;"><span>value=100.00
+</span></span><span style="display:flex;"><span>administrative_fee=0.00
+</span></span><span style="display:flex;"><span>payment_method_type=2
+</span></span><span style="display:flex;"><span>office_phone=
+</span></span><span style="display:flex;"><span>email_buyer=test@payulatam.com
+</span></span><span style="display:flex;"><span>response_message_pol=ENTITY_DECLINED
+</span></span><span style="display:flex;"><span>error_message_bank=
+</span></span><span style="display:flex;"><span>shipping_city=
+</span></span><span style="display:flex;"><span>transaction_id=f5e668f1-7ecc-4b83-a4d1-0aaa68260862
+</span></span><span style="display:flex;"><span>sign=e1b0939bbdc99ea84387bee9b90e4f5c
+</span></span><span style="display:flex;"><span>tax=0.00
+</span></span><span style="display:flex;"><span>payment_method=10
+</span></span><span style="display:flex;"><span>billing_address=cll 93
+</span></span><span style="display:flex;"><span>payment_method_name=VISA
+</span></span><span style="display:flex;"><span>pse_bank=
+</span></span><span style="display:flex;"><span>state_pol=6
+</span></span><span style="display:flex;"><span>date=2015.05.27 01:07:35
+</span></span><span style="display:flex;"><span>nickname_buyer=
+</span></span><span style="display:flex;"><span>reference_pol=7069375
+</span></span><span style="display:flex;"><span>currency=USD
+</span></span><span style="display:flex;"><span>risk=1.0
+</span></span><span style="display:flex;"><span>shipping_address=
+</span></span><span style="display:flex;"><span>bank_id=10
+</span></span><span style="display:flex;"><span>payment_request_state=R
+</span></span><span style="display:flex;"><span>customer_number=
+</span></span><span style="display:flex;"><span>administrative_fee_base=0.00
+</span></span><span style="display:flex;"><span>attempts=1
+</span></span><span style="display:flex;"><span>merchant_id=508029
+</span></span><span style="display:flex;"><span>exchange_rate=2541.15
+</span></span><span style="display:flex;"><span>shipping_country=
+</span></span><span style="display:flex;"><span>installments_number=1
+</span></span><span style="display:flex;"><span>franchise=VISA
+</span></span><span style="display:flex;"><span>payment_method_id=2
+</span></span><span style="display:flex;"><span>extra1=
+</span></span><span style="display:flex;"><span>extra2=
+</span></span><span style="display:flex;"><span>antifraudMerchantId=
+</span></span><span style="display:flex;"><span>extra3=
+</span></span><span style="display:flex;"><span>nickname_seller=
+</span></span><span style="display:flex;"><span>ip=190.242.116.98
+</span></span><span style="display:flex;"><span>airline_code=
+</span></span><span style="display:flex;"><span>billing_city=Bogota
+</span></span><span style="display:flex;"><span>pse_reference1=
+</span></span><span style="display:flex;"><span>reference_sale=2015-05-27 13:04:37
+</span></span><span style="display:flex;"><span>pse_reference3=
+</span></span><span style="display:flex;"><span>pse_reference2=
+</span></span></code></pre></div><h2 id="signature-validation">Validación de la firma</h2>
 <p>La validación de la firma te permite comprobar la integridad de los datos, debes generar la firma con los datos que encuentras en la página de confirmación y compararla con la información del parámetro signature.</p>
 <p>Para validar la firma en la página de respuesta debes tener en cuenta:</p>
 <ul>
@@ -1272,11 +1272,11 @@ pse_reference2=
 <li>Debes guardar tu ApiKey de forma segura.</li>
 <li>Crea la firma así:</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&#34;ApiKey~merchant_id~reference_sale~new_value~currency~state_pol&#34;
-</code></pre></div><br>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&#34;ApiKey~merchant_id~reference_sale~new_value~currency~state_pol&#34;
+</span></span></code></pre></div><br>
 <p>Ejemplo</p>
 <p><strong>Con un decimal</strong></p>
-<pre><code>Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
+<pre tabindex="0"><code>Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
 Parámetros obtenidos de la página de confirmación
 - merchant_id = 508029
 - reference_sale = TestPayU04
@@ -1289,7 +1289,7 @@ MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU04~150.0~USD~6) = b607a2c2fa100e09
 
 sign = b607a2c2fa100e0947b206d41864fb86
 </code></pre><p><strong>Con dos decimales</strong></p>
-<pre><code>Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
+<pre tabindex="0"><code>Your apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
 Parámetros obtenidos de la página de confirmación:
 - merchant_id = 508029
 - reference_sale = TestPayU05
@@ -1356,7 +1356,7 @@ sign = 1d95778a651e11a0ab93c2169a519cd6
 <p>Cuando se rechaza una transacción, el pagador tiene la opción de reintentar el pago utilizando el mismo u otro método de pago. Ten en cuenta que por cada intento, PayU hace el llamado de la página de confirmación con su estado de transacción correspondiente.</p>
 <p>Cada uno de estos llamados se hacen con la misma referencia de pago (<code>reference_sale</code>), el mismo identificador de la orden (<code>reference_pol</code>) pero diferente identificador de transacción (<code>transaction_id</code>). Por lo tanto, puedes recibir varios llamados a la página de confirmación para la misma venta.</p>
 <p>A continuación, encontrarás un ejemplo e un intento rechazado y su reintento aprobado:</p>
-<pre><code>reference_sale=2015-05-27 13:04:37
+<pre tabindex="0"><code>reference_sale=2015-05-27 13:04:37
 reference_pol=7069375
 transaction_id=f5e668f1-7ecc-4b83-a4d1-0aaa68260862
 state_pol=6
@@ -1396,7 +1396,7 @@ state_pol=4
 
 
 
-<script src="../../../../js/main.min.8c865aba183c7b45657c96d592a977547887a44cf70782e8996d3c3687a50bc5.js" integrity="sha256-jIZauhg8e0VlfJbVkql3VHiHpEz3B4LomW08NoelC8U=" crossorigin="anonymous"></script>
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
 
 
 <script src="../../../../js/scrollspy.js"></script>

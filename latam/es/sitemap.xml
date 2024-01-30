@@ -203,7 +203,7 @@
                 />
   </url><url>
     <loc>/es/docs/tools/shopping-cart-plugins/shopify.html</loc>
-    <lastmod>2023-09-19T17:16:49-05:00</lastmod>
+    <lastmod>2024-01-18T17:20:34-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -383,7 +383,7 @@
                 />
   </url><url>
     <loc>/es/docs/tools/shopping-cart-plugins/bigcommerce.html</loc>
-    <lastmod>2023-09-29T13:47:06-05:00</lastmod>
+    <lastmod>2024-01-18T17:20:34-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -577,26 +577,6 @@
                 href="/es/payu-module-documentation/getting-started/password-recovery.html"
                 />
   </url><url>
-    <loc>/es/docs/tools/shopping-cart-plugins/magento.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/magento.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/magento.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/magento.html"
-                />
-  </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-argentina.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -618,7 +598,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-brazil.html</loc>
-    <lastmod>2023-11-03T15:47:02-05:00</lastmod>
+    <lastmod>2024-01-26T15:57:39-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1478,7 +1458,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/refunds-api.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-01-18T17:20:34-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1695,6 +1675,26 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/docs/services/refunds.html"
+                />
+  </url><url>
+    <loc>/es/docs/integrations/api-integration/simulator.html</loc>
+    <lastmod>2024-01-26T15:57:39-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/simulator.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/simulator.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/simulator.html"
                 />
   </url><url>
     <loc>/es/docs/services/payouts.html</loc>

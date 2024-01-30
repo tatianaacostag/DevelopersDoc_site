@@ -626,17 +626,19 @@ Un pedido autorizado se puede cancelar utilizando el botón &lt;em&gt;&lt;strong
 &lt;li&gt;Selecciona la tienda en la cual quieres instalar la app de las opciones que aparecen en pantalla y serás redireccionado a otra página en donde debes hacer clic en “Install app”.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Ingresa las credenciales de tu tienda para el ambiente de test y de producción (Merchand Id y Account Id).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Recuerda que puedes encontrar tus credenciales de ambiente de producción ingresando a tu módulo administrativo de PayU. Una vez inicies sesión encontrarás el merchant ID (1) y el account ID (2) en la parte superior izquierda del módulo, tal como se muestra en la siguiente imagen de referencia:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Puedes encontrar las credenciales para el ambiente de test &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html&#34;&gt;aquí&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Para encontrar las credenciales para el ambiente de producción, haz clic &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&#34;&gt;aquí&lt;/a&gt; y sigue los pasos indicados.&lt;/li&gt;
+&lt;li&gt;Puedes encontrar las credenciales para el ambiente de test &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html&#34;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Recuerda que posteriormente puedes cambiar o consultar las credenciales que ingresaste desde tu admin de Shopify.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -650,17 +652,21 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 &lt;/div&gt;
 
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Serás dirigido a la sección llamada “Payments”. Allí, selecciona “Activate PayU Latam v2” en la esquina inferior derecha.&lt;/li&gt;
+&lt;li&gt;Serás dirigido a la sección llamada “Pagos”. Allí, selecciona “Activate PayU Latam v2” en la esquina inferior derecha.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;A modo informativo, verás distintos medios de pago. Para avanzar, debes seleccionar por lo menos uno de ellos, pero recuerda que esto no modificará los medios de pago que tienes disponible en el Web Checkout de PayU.&lt;/li&gt;
-&lt;li&gt;La casilla “Enable test mode” indica si se usarán las credenciales del ambiente de producción o del ambiente de prueba.&lt;br&gt;
-Ejemplo: Si deseas utilizar el ambiente de pruebas en vez del ambiente de producción, debes hacer clic en la casilla “Enable test mode”.&lt;/li&gt;
+&lt;li&gt;Modo test: Dentro de la misma sección de “pagos”, encontrarás la opción para utilizar el modo test que te permitirá hacer pruebas en ambiente Sandbox.&lt;/li&gt;
+&lt;li&gt;Te recomendamos usar el ambiente test de forma controlada, preferiblemente en un horario de baja transaccionalidad, ya que las transacciones que se procesen mientras estes en modo de test no generan un pago real y el ambiente productivo queda desactivado.&lt;/li&gt;
+&lt;li&gt;Para deshabilitar el modo test, retira el check y guarda los cambios.
+&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen11.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen12.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -668,6 +674,7 @@ Ejemplo: Si deseas utilizar el ambiente de pruebas en vez del ambiente de produc
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Activa la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;A partir de este momento, tienes a PayU instalado como procesador de pagos y puedes comenzar tus ventas. Tus clientes pueden hacer compras utilizando el Web Checkout de PayU a través de métodos de pago como efectivo, tarjetas de crédito y transferencias bancarias (dependiendo del país en el que estés vendiendo).&lt;/li&gt;
@@ -720,26 +727,26 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
 &lt;ol&gt;
 &lt;li&gt;Instala la aplicación desde BigCommerce Marketplace haciendo clic en el botón de instalación.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/Howtoinstall_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Haz clic en la casilla de verificación y en el botón &amp;ldquo;Confirmar&amp;rdquo; para finalizar la instalación.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/Howtoinstall_2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Una vez tengas la app instalada, verás la interfaz de la aplicación de la siguiente manera:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/Howtoinstall_3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;cómo-usar-esta-extensión&#34;&gt;Cómo usar esta extensión&lt;/h2&gt;
 &lt;h3 id=&#34;configura-los-métodos-de-pago&#34;&gt;Configura los métodos de pago&lt;/h3&gt;
 &lt;p&gt;Esta sección te explicará cómo configurar los métodos de pago que se mostrarán en el sitio web para el pago. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;Consulta nuestros métodos de pago disponibles&lt;/a&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Después de instalar la aplicación selecciona &lt;strong&gt;Habilitar PayU Latam&lt;/strong&gt; para permitir la app en la tienda BigCommerce.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Selecciona un título personalizado para la opción de pago con tarjeta (por ejemplo, Pagar con tarjeta). Este título será visible en la página de pago para tus clientes.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Elige la forma en que deseas que se muestren las opciones de pago con tarjeta disponibles. Puedes elegir una de las siguientes opciones:&lt;/li&gt;
 &lt;/ol&gt;
@@ -747,7 +754,7 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
 &lt;li&gt;Mostrar Powered by PayU Latam y logo en el formulario de pago&lt;/li&gt;
 &lt;li&gt;Mostrar el logo de la tarjeta de crédito en la página de pago&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
@@ -758,8 +765,8 @@ Si el comercio desea permitir métodos de pago alternativos (efectivo y transfer
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Utiliza el botón &amp;ldquo;Add provider&amp;rdquo; para añadir la cuenta de procesamiento de un país específico de PayU Latam. Cada configuración puede ser habilitada/deshabilitada desde la interfaz de la app usando el botón de “Status” respectivo. También puedes hacer clic en &amp;ldquo;Editar&amp;rdquo; para actualizar las credenciales, y recuerda que en la configuración de tus cuentas podrás elegir si quieres usarlas en modo prueba o en ambiente productivo.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Para agregar una nueva configuración, especifica los siguientes campos obligatorios:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -806,7 +813,7 @@ Si el comercio desea permitir métodos de pago alternativos (efectivo y transfer
 &lt;p&gt;Para el flujo en dos pasos, selecciona &lt;strong&gt;Capture on Shipment&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Consulte el siguiente &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows&#34;&gt;enlace&lt;/a&gt; para obtener más información sobre los flujos de pago.&lt;/p&gt;
 
 
@@ -820,14 +827,14 @@ La opción de procesar en más de un paso sólo se aplica a pagos con tarjeta (s
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
 Las opciones multi-tienda estarán visibles debajo de la sección de opciones de pago.
-&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_7.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension7.png&#34; alt=&#34;&#34;&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&#34;gestiona-tus-pedidos&#34;&gt;Gestiona tus pedidos&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Para acceder al panel de pedidos, haz clic en el botón ‘Order Dashboard’.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;La tabla del panel de pedidos mostrará los estados de pago del pedido realizado.&lt;/li&gt;
 &lt;/ol&gt;
@@ -880,108 +887,13 @@ Recuerda que puedes seleccionar un título personalizado para la opción de pago
 &lt;ul&gt;
 &lt;li&gt;Order Dashboard de BigCommerce: &lt;strong&gt;&lt;em&gt;PayU Latam &amp;gt; Order Dashboard&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/C%C3%B3moutilizarestaextensi%C3%B3n_8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Módulo administrativo de PayU: En el módulo de &lt;strong&gt;&lt;em&gt;Reporte de Ventas&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen19.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;opciones-de-soporte&#34;&gt;Opciones de soporte:&lt;/h2&gt;
 &lt;p&gt;Si experimentas un problema técnico o tienes alguna pregunta sobre esta extensión, contacta a nuestro equipo de asistencia &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; o visita nuestro sitio web &lt;strong&gt;&lt;a href=&#34;https://colombia.payu.com/contactanos/&#34;&gt;https://colombia.payu.com/contactanos/&lt;/a&gt;&lt;/strong&gt;. Si optas por enviarnos un correo electrónico, facilítanos los detalles de la extensión que estás utilizando en el campo del asunto y un resumen del problema que estás experimentando en el cuerpo del mensaje.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Magento</title>
-      <link>/es/docs/tools/shopping-cart-plugins/magento.html</link>
-      <pubDate>Wed, 26 May 2021 08:38:26 -0500</pubDate>
-      
-      <guid>/es/docs/tools/shopping-cart-plugins/magento.html</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerrequisitos&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
-&lt;li&gt;Tener instalado Magento versión 1.7.x a la 1.9.x.&lt;/li&gt;
-&lt;li&gt;Haber descargado el plugin de Magento de PayU y tenerlo guardado en una ruta accesible. Haz clic &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/Plugin_PayU_Magento-1.3.zip&#34;&gt;aquí&lt;/a&gt; para descargarlo.&lt;/li&gt;
-&lt;li&gt;Tener acceso a las carpetas donde se encuentra instalado Magento.&lt;/li&gt;
-&lt;li&gt;Tener acceso al Admin Panel de Magento.&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-Para Magento versión 2.0, sigue la guía asistida ofrecida por &lt;strong&gt;élOOm&lt;/strong&gt; para instalar y configurar PayU en tu sitio de Magento. Haz clic &lt;a href=&#34;https://docs.eloom.tech/es/payment/payu-latam&#34;&gt;aquí&lt;/a&gt; para más información o contacta a &lt;a href=&#34;mailto:suporte@eloom.com.br&#34;&gt;suporte@eloom.com.br&lt;/a&gt; para asistencia personalizada.
-&lt;/div&gt;
-
-&lt;h2 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Los pagos aprobados aparecen con estado &lt;em&gt;Processing&lt;/em&gt; en el reporte de órdenes.&lt;/li&gt;
-&lt;li&gt;Una vez el pago es recibido correctamente, Magento crea una factura con la orden asociada.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;installation&#34;&gt;Instalación&lt;/h2&gt;
-&lt;p&gt;Sigue este procedimiento para instalar el plugin en tu página web.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Ingresa a tu Admin panel de Log in to your Magento admin panel. Luego, expande el menú &lt;em&gt;&lt;strong&gt;System&lt;/strong&gt;&lt;/em&gt; en la parte superior y haz clic en &lt;em&gt;&lt;strong&gt;Cache Management&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;
-En la nueva ventana, haz clic en &lt;em&gt;&lt;strong&gt;Flush Magento Cache&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/Magento/Magento_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Descomprime el plugin. La carpeta del plugin se llama &lt;code&gt;app&lt;/code&gt; y tiene la siguente estructura:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/Magento/Magento_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Navega a &lt;em&gt;&lt;strong&gt;[CarpetaPlugin]\app\code\local&lt;/strong&gt;&lt;/em&gt; y copia la carpeta &lt;strong&gt;Gfgrisales&lt;/strong&gt; en la carpeta &lt;em&gt;&lt;strong&gt;\app\code\local&lt;/strong&gt;&lt;/em&gt; en la ruta de instalación de Magento.&lt;br&gt;
-Si esta estructura no existe, créala con permisos de lectura y escritura.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/Magento/Magento_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Navega a &lt;em&gt;&lt;strong&gt;[CarpetaPlugin]\app\design\frontend\base\default\template&lt;/strong&gt;&lt;/em&gt; y copia la carpeta &lt;strong&gt;payu&lt;/strong&gt; en la carpeta &lt;em&gt;&lt;strong&gt;\app\design\frontend\base\default\template&lt;/strong&gt;&lt;/em&gt; en la ruta de instalación de Magento.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/Magento/Magento_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Navega a &lt;em&gt;&lt;strong&gt;[CarpetaPlugin]\app\etc\modules&lt;/strong&gt;&lt;/em&gt; y copia el archivo &lt;strong&gt;Gfgrisales_Payu.xml&lt;/strong&gt; en la carpeta &lt;em&gt;&lt;strong&gt;\app\etc\modules&lt;/strong&gt;&lt;/em&gt; en la raíz de la ruta de instalación de Magento.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/Magento/Magento_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;configuration&#34;&gt;Configuración&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Regresa al Admin panel de Magento, expande el menú &lt;em&gt;&lt;strong&gt;System&lt;/strong&gt;&lt;/em&gt; y haz clic en &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt;. Luego, expande la sección &lt;em&gt;&lt;strong&gt;Advanced&lt;/strong&gt;&lt;/em&gt; en el menú mostrado en el panel izquierdo y haz clic en la opción &lt;em&gt;&lt;strong&gt;Advanced&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;
-Has clic en &lt;em&gt;&lt;strong&gt;Disable Modules Output&lt;/strong&gt;&lt;/em&gt; y verifica que está habilitada (Enable) la extensión llamada &lt;em&gt;Gfgrisales_Payu&lt;/em&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/Magento/Magento_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;En el menú &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt; en el panel de la izquierda, expande la sección &lt;em&gt;&lt;strong&gt;Sales&lt;/strong&gt;&lt;/em&gt; en el menú mostrado en el panel izquierdo y haz clic en la opción &lt;em&gt;&lt;strong&gt;Payment methods&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;
-Localiza y expande el método &lt;em&gt;&lt;strong&gt;PayU&lt;/strong&gt;&lt;/em&gt; e ingresa la siguiente información de tu cuenta PayU.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/Magento/Magento_07.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Merchant ID&lt;/strong&gt;: Identificador de tu comercio en PayU Latam.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;APIKey&lt;/strong&gt;: Llave única de tu comercio, puedes obtener esta información en tu Módulo Payu (&lt;strong&gt;&lt;em&gt;Configuración&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Configuración técnica&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;API Key&lt;/em&gt;&lt;/strong&gt;).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Account ID&lt;/strong&gt;: Identificador de la cuenta PayU de acuerdo con el país en el que quieres vender.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gateway URL&lt;/strong&gt;: URL de la pasarela.
-&lt;ul&gt;
-&lt;li&gt;Para pruebas, utiliza &lt;a href=&#34;https://sandbox.gateway.payulatam.com/ppp-web-gateway&#34;&gt;https://sandbox.gateway.payulatam.com/ppp-web-gateway&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Para producción, utiliza &lt;a href=&#34;https://gateway.payulatam.com/ppp-web-gateway/&#34;&gt;https://gateway.payulatam.com/ppp-web-gateway/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-&lt;p&gt;Para pruebas, puedes utilizar los valores de &lt;strong&gt;Merchant ID&lt;/strong&gt;, &lt;strong&gt;APIKey&lt;/strong&gt; y &lt;strong&gt;Account ID&lt;/strong&gt; disponibles en &lt;a href=&#34;../../../../es/docs/getting-started/test-your-solution.html&#34;&gt;Probar tu solución&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Una vez estén en el formulario de pago con tarjeta de crédito y asegurandote de que en la parte superior de la pasarela se muestre el mensaje &lt;em&gt;Transacción en modo de prueba&lt;/em&gt;, debes:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Ingresar el texto &lt;code&gt;APPROVED&lt;/code&gt; en el campo Nombre completo si quieres que la transacción sea aprobada, &lt;code&gt;REJECTED&lt;/code&gt; si quieres que la transacción sea rechazada o &lt;code&gt;PENDING&lt;/code&gt; si quieres que la transacción quede pendiente.&lt;/li&gt;
-&lt;li&gt;Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia seleccionada. Puedes utilizar un generador en línea de tarjetas de crédito.&lt;/li&gt;
-&lt;li&gt;Los demás campos pueden ser aleatorios.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;Una vez termines, haz clic en &lt;em&gt;&lt;strong&gt;Save Config&lt;/strong&gt;&lt;/em&gt; para guardar los cambios.&lt;/p&gt;
-&lt;p&gt;En este punto, tus clientes pueden pagar con PayU Latam en el carrito de compras de Magento.&lt;/p&gt;
 
       </description>
     </item>
@@ -1335,11 +1247,11 @@ Haz clic en el radio de la columna &lt;em&gt;&lt;strong&gt;Predeterminado&lt;/st
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Página de respuesta&lt;/td&gt;
-&lt;td&gt;URL de la página de respuesta.&lt;br&gt;Por defecto, la URL es &lt;a href=&#34;https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/response.php,&#34;&gt;https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/response.php,&lt;/a&gt; debes reemplazar &lt;a href=&#34;https://tu.dominio.com&#34;&gt;https://tu.dominio.com&lt;/a&gt; con el dominio de tu sitio.&lt;/td&gt;
+&lt;td&gt;URL de la página de respuesta.&lt;br&gt;Por defecto, la URL es &lt;a href=&#34;https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/response.php&#34;&gt;https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/response.php&lt;/a&gt;, debes reemplazar &lt;a href=&#34;https://tu.dominio.com&#34;&gt;https://tu.dominio.com&lt;/a&gt; con el dominio de tu sitio.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Página de confirmación&lt;/td&gt;
-&lt;td&gt;URL de la página de confirmación.&lt;br&gt;Por defecto, la URL es &lt;a href=&#34;https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php,&#34;&gt;https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php,&lt;/a&gt; debes reemplazar &lt;a href=&#34;https://tu.dominio.com&#34;&gt;https://tu.dominio.com&lt;/a&gt; con el dominio de tu sitio.&lt;/td&gt;
+&lt;td&gt;URL de la página de confirmación.&lt;br&gt;Por defecto, la URL es &lt;a href=&#34;https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php&#34;&gt;https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php&lt;/a&gt;, debes reemplazar &lt;a href=&#34;https://tu.dominio.com&#34;&gt;https://tu.dominio.com&lt;/a&gt; con el dominio de tu sitio.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1462,11 +1374,11 @@ El plugin de PayU Latam para osCommerce solo está disponible para inglés, espa
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Página de respuesta&lt;/td&gt;
-&lt;td&gt;URL de la página de respuesta.&lt;br&gt;Por defecto, la URL es &lt;a href=&#34;https://tu.dominio.com/yourOscommerceFolder/catalog/response_payu.php,&#34;&gt;https://tu.dominio.com/yourOscommerceFolder/catalog/response_payu.php,&lt;/a&gt; debes reemplazar &lt;a href=&#34;https://tu.dominio.com&#34;&gt;https://tu.dominio.com&lt;/a&gt; con el dominio de tu sitio.&lt;/td&gt;
+&lt;td&gt;URL de la página de respuesta.&lt;br&gt;Por defecto, la URL es &lt;a href=&#34;https://tu.dominio.com/yourOscommerceFolder/catalog/response_payu.php&#34;&gt;https://tu.dominio.com/yourOscommerceFolder/catalog/response_payu.php&lt;/a&gt;, debes reemplazar &lt;a href=&#34;https://tu.dominio.com&#34;&gt;https://tu.dominio.com&lt;/a&gt; con el dominio de tu sitio.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Página de confirmación&lt;/td&gt;
-&lt;td&gt;URL de la página de confirmación.&lt;br&gt;Por defecto, la URL es &lt;a href=&#34;https://tu.dominio.com/yourOscommerceFolder/catalog/confirmation_payu.php,&#34;&gt;https://tu.dominio.com/yourOscommerceFolder/catalog/confirmation_payu.php,&lt;/a&gt; debes reemplazar &lt;a href=&#34;https://tu.dominio.com&#34;&gt;https://tu.dominio.com&lt;/a&gt; con el dominio de tu sitio.&lt;/td&gt;
+&lt;td&gt;URL de la página de confirmación.&lt;br&gt;Por defecto, la URL es &lt;a href=&#34;https://tu.dominio.com/yourOscommerceFolder/catalog/confirmation_payu.php&#34;&gt;https://tu.dominio.com/yourOscommerceFolder/catalog/confirmation_payu.php&lt;/a&gt;, debes reemplazar &lt;a href=&#34;https://tu.dominio.com&#34;&gt;https://tu.dominio.com&lt;/a&gt; con el dominio de tu sitio.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

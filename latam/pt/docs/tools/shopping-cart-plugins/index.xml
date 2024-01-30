@@ -1114,11 +1114,11 @@ Clique no rádio da coluna &lt;em&gt;&lt;strong&gt;Default&lt;/strong&gt;&lt;/em
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Response page&lt;/td&gt;
-&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php,&#34;&gt;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php,&lt;/a&gt; você deve substituir &lt;a href=&#34;https://your.domain.com&#34;&gt;https://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
+&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php&#34;&gt;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php&lt;/a&gt;, você deve substituir &lt;a href=&#34;https://your.domain.com&#34;&gt;https://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Confirmation page&lt;/td&gt;
-&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php,&#34;&gt;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php,&lt;/a&gt; você deve substituir &lt;a href=&#34;https://your.domain.com&#34;&gt;https://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
+&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php&#34;&gt;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php&lt;/a&gt;, você deve substituir &lt;a href=&#34;https://your.domain.com&#34;&gt;https://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1241,11 +1241,11 @@ O plugin PayU Latam para osCommerce está disponível apenas para inglês, espan
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Response page&lt;/td&gt;
-&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;http://your.domain.com/yourOscommerceFolder/catalog/response_payu.php,&#34;&gt;http://your.domain.com/yourOscommerceFolder/catalog/response_payu.php,&lt;/a&gt; você deve substituir &lt;a href=&#34;http://your.domain.com&#34;&gt;http://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
+&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;http://your.domain.com/yourOscommerceFolder/catalog/response_payu.php&#34;&gt;http://your.domain.com/yourOscommerceFolder/catalog/response_payu.php&lt;/a&gt;, você deve substituir &lt;a href=&#34;http://your.domain.com&#34;&gt;http://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Confirmation page&lt;/td&gt;
-&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;http://your.domain.com/yourOscommerceFolder/catalog/confirmation_payu.php,&#34;&gt;http://your.domain.com/yourOscommerceFolder/catalog/confirmation_payu.php,&lt;/a&gt; você deve substituir &lt;a href=&#34;http://your.domain.com&#34;&gt;http://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
+&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;http://your.domain.com/yourOscommerceFolder/catalog/confirmation_payu.php&#34;&gt;http://your.domain.com/yourOscommerceFolder/catalog/confirmation_payu.php&lt;/a&gt;, você deve substituir &lt;a href=&#34;http://your.domain.com&#34;&gt;http://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
