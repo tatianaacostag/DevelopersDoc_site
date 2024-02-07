@@ -6,8 +6,8 @@ description: >
   Encuentra toda la información sobre el módulo de disputas. Esta herramienta, disponible en tu Módulo PayU, te permite gestionar los procesos de disputas generados en tu cuenta de PayU.
 weight: 60
 ---
-## ¿Qué es una Disputa? {#what-is-a-dispute} 
-Tus compradores pueden presentar una reclamación al banco de emisor de su tarjeta. El banco nos envía una notificación de disputa para determinar la validez de la compra y nosotros la creamos en nuestro sistema. Luego de la creación, te notificamos a través del Módulo PayU.
+## ¿Qué es una disputa? {#what-is-a-dispute} 
+Tus compradores pueden presentar una reclamación al banco emisor de su tarjeta. El banco nos envía una notificación de disputa para determinar la validez de la compra y nosotros la creamos en nuestro sistema. Luego de la creación, te notificamos a través del Módulo PayU.
 
 La disputa congela el valor total de la venta en tu cuenta PayU.
 
