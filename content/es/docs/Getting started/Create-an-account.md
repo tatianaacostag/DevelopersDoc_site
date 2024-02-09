@@ -13,6 +13,7 @@ El primer paso para empezar a utilizar los servicios de PayU es crear una cuenta
 * Múltiples métodos de pago
 * Vende con o sin sitio web
 * Seguridad
+*.
 
 ## ¿Cómo crear una cuenta? {#how-to-create-an-account}
 Independiente del tamaño de tu negocio, el procedimiento para crear una cuenta es el siguiente:

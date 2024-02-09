@@ -1,0 +1,875 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – parenttopic</title>
+    <link>/en/tags/parenttopic.html</link>
+    <description>Recent content in parenttopic on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 Sep 2021 13:38:28 -0500</lastBuildDate>
+    
+	  <atom:link href="/en/tags/parenttopic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>PayU Module Documentation: Log In</title>
+      <link>/en/payu-module-documentation/getting-started/log-in.html</link>
+      <pubDate>Tue, 28 Sep 2021 13:38:28 -0500</pubDate>
+      
+      <guid>/en/payu-module-documentation/getting-started/log-in.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Follow the next steps to log in your PayU account.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href=&#34;https://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;. At the top right corner, you find the option to log in. For merchants in Colombia, this option is called &lt;em&gt;PayU Login&lt;/em&gt;.&lt;br&gt;Alternatively, you can go directly to &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login1_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Log in to your PayU account by using the credentials we sent to your registered e-mail.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login3_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;If your user can access to more than one merchant, click it to access it. Otherwise, you are redirected your merchant.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login4_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;As soon as you log in, you can use all the available options to manage your PayU account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login2_en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: WebCheckout integration</title>
+      <link>/en/docs/integrations/webcheckout-integration.html</link>
+      <pubDate>Mon, 29 Mar 2021 11:52:52 -0500</pubDate>
+      
+      <guid>/en/docs/integrations/webcheckout-integration.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;../../../assets/Checkout1-en.png&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You can include your company logo in our payment gateway, sending it via HTTP POST method.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+The person in charge of integrating your shop with our Payment gateway (WebCheckout) must have strong knowledge in integration with dynamic programming languages such as PHP or Java.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;how-does-the-webcheckout-integration-work&#34;&gt;How does the WebCheckout integration work?&lt;/h2&gt;
+&lt;p&gt;The procedure to let your shoppers pay using PayU services is simple.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Your customer navigates your site and selects the products or services they want to purchase. Your system updates the purchase amount and sends to our system the payment form with the purchase information.&lt;br&gt;Your system must send this information via &lt;code&gt;HTTP POST&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso1-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;For the payment process, your customer is redirected to our Checkout where they can select the payment method.&lt;br&gt;PayU supports many payment methods that fits to your customers&amp;rsquo; needs according to the country where you process the purchase, &lt;a href=&#34;../../../en/docs/getting-started/select-your-payment-method.html&#34;&gt;see the available Payment Methods&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso2-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;PayU processes the transaction and shows the result in our response page.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso3-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;When you customer back to your page after the payment process, PayU redirects them to you Response page and sends the transaction results via &lt;code&gt;HTTP GET&lt;/code&gt;. You need to process the response and show its information to your customer.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso4-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;In parallel, PayU notifies the status of the transaction to the confirmation page via &lt;code&gt;HTTP POST&lt;/code&gt;. Furthermore, PayU notifies to you and your customer the result of the transaction via e-mail.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso5-en.jpeg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The coding of your page must be &lt;code&gt;UTF-8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The WebCheckout page should not be included in an iframe.&lt;/li&gt;
+&lt;li&gt;Do not mask the URL during the checkout process.&lt;/li&gt;
+&lt;li&gt;Do not use security certificates elliptic curve or those who have the suite of encryption &lt;code&gt;TLS_ECDHE_ECDSA_WITH_RC4_128_SHA&lt;/code&gt; on your confirmation page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;integration-components&#34;&gt;Integration components&lt;/h2&gt;
+&lt;p&gt;Refer to the following sections to learn how to integrate using WebCheckout integration.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: API Integration</title>
+      <link>/en/docs/integrations/api-integration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/integrations/api-integration.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;You can connect your online store to the PayU platform and the checkout process will be handled on your website. To integrate this option you must have a PayU Business account and advanced programming skills.&lt;/p&gt;
+&lt;p&gt;Access multiple payment methods (varies per country), including credit cards, bank transfers, and cash payments.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/api1-en.png&#34; alt=&#34;API integration&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;initial-settings&#34;&gt;Initial settings&lt;/h2&gt;
+&lt;p&gt;PayU allows you to integrate with the transactional gateway, available payment tools and Queries by developing a HTTPS client to send the transaction information through SSL. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow &lt;a href=&#34;https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf&#34;&gt;PCI DSS’ best practices&lt;/a&gt; (Payment Card Industry Data Security Standard).&lt;/p&gt;
+&lt;p&gt;The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop&amp;rsquo;s server our payment Gateway. The exchange of messages is done via JSON or XML strings and operations are distinguished by a command that is included in the request. Check out the following JSON and XML examples:&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+POST /payments-api/4.0/service.cgi HTTP/1.1&lt;br&gt;
+Host: sandbox.api.payulatam.com&lt;br&gt;
+Content-Type: application/json; charset=utf-8&lt;br&gt;
+Accept: application/json&lt;br&gt;
+Content-Length: length
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;GET_PAYMENT_METHODS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchant&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiLogin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiKey&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+POST /payments-api/4.0/service.cgi HTTP/1.1&lt;br&gt;
+Host: sandbox.api.payulatam.com&lt;br&gt;
+Content-Type: application/json; charset=utf-8&lt;br&gt;
+Accept: application/xml&lt;br&gt;
+Content-Length: length&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;request&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;language&amp;gt;&lt;/span&gt;en&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/language&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;command&amp;gt;&lt;/span&gt;GET_PAYMENT_METHODS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchant&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiLogin&amp;gt;&lt;/span&gt;xxxxxxxxxxxxx&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiLogin&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiKey&amp;gt;&lt;/span&gt;xxxxxxxxxxxxx&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiKey&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchant&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;isTest&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/isTest&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/request&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;You can set the language you want to use in the request through the &lt;code&gt;Content-type&lt;/code&gt; and &lt;code&gt;Accept&lt;/code&gt; HTTP headers. You can use all possible combinations:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;CONTENT-TYPE&lt;/th&gt;
+&lt;th&gt;ACCEPT&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;application/xml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/xml&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;application/xml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/xml&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You must have an active PayU account.&lt;/li&gt;
+&lt;li&gt;You must install a valid SSL certificate in your server and your site must be able to make SSL connections. Due to this, the virtual machine must have appropriate security extensions.&lt;/li&gt;
+&lt;li&gt;Temporarily, do not use security certificates elliptic curve or those who have the suite of encryption &lt;code&gt;TLS_ECDHE_ECDSA_WITH_RC4_128_SHA&lt;/code&gt; in your payment requests.&lt;/li&gt;
+&lt;li&gt;You must have CGI or server languages such as Java, C#, VB, PHP, etc.&lt;/li&gt;
+&lt;li&gt;You must be able to store your authentication credentials (API Key and API Login) safely.&lt;/li&gt;
+&lt;li&gt;The encoding for messages must be &lt;code&gt;UTF-8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The dates must have format &lt;code&gt;yyyy-MM-ddTHH:mm:ss&lt;/code&gt;, the time format is 24 hours. Example: &lt;code&gt;2015-08-22T21:35:12&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Normally the connection guarantees response times of three seconds on average. If there is an unusual situation, the maximum response time is one minute. It is highly recommended that you set &lt;em&gt;timeouts&lt;/em&gt; when you connect with PayU.&lt;/li&gt;
+&lt;li&gt;It is important to validate the length and numbers of credit cards by franchise, together with the security codes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;available-features&#34;&gt;Available features&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Getting to know the PayU module</title>
+      <link>/en/payu-module-documentation/getting-started/understanding-the-payu-module.html</link>
+      <pubDate>Tue, 17 Aug 2021 14:47:21 -0500</pubDate>
+      
+      <guid>/en/payu-module-documentation/getting-started/understanding-the-payu-module.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Before moving on with the explanation of how the PayU module is organized, you need the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Have a user in PayU module. Learn how to create one &lt;a href=&#34;../../../en/docs/getting-started/create-an-account.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Have read and understand the &lt;a href=&#34;../../../en/payu-module-documentation.html#payu-module-concepts&#34;&gt;concepts behind the PayU Module&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;payu-module-web-application&#34;&gt;PayU Module web application&lt;/h2&gt;
+&lt;p&gt;PayU module is divided in four main groups:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#1-account-options&#34;&gt;Account options&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-settings-and-user-options&#34;&gt;Settings and user options&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#3-main-panel&#34;&gt;Main panel&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#4-footer&#34;&gt;Footer&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+The options displayed in this article depends on the profile you have to access each account.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;1-account-options&#34;&gt;1. Account options&lt;/h3&gt;
+&lt;p&gt;This panel has the options required to manage the accounts associated to the current merchant. In this panel you find the following options:&lt;/p&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Sub option&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Available in&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;ID number of your merchant in PayU’s system. This ID is required when you want to use &lt;a href=&#34;../../../en/docs/integrations.html&#34;&gt;Integrations&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account&lt;/td&gt;
+&lt;td&gt;Account information&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Displays the name and ID of the selected account.&lt;br&gt;This option also lets you to change the account and perform operations related to it. Click the &lt;strong&gt;▾&lt;/strong&gt; symbol to find these options or switch the account.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_02.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;My business information&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Shows the location, main contact information of your business. Also, this option shows the people associated with your business.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Your sales information&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Shows the information of how you make your sales, what you sell, the logo of your shop, delivery information, how you offer your products or services and how your clients can contact you.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Bank information&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Shows the bank account and the Intermediary bank where you want to transfers the funds collected for this account.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Accounts created&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Shows the list of account available in your merchant.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Balance available&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Displays the balance available in the selected account.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Home&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Displays the welcome page of the PayU module. For more information, refer to &lt;a href=&#34;#home-page&#34;&gt;Home&lt;/a&gt; page.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Transactions&lt;/td&gt;
+&lt;td&gt;Sales report&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Review the details of payments received, including the most used payment methods and frequent clients. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/reports/sales-report.html&#34;&gt;Sales report&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Disputes&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Manage the dispute processes generated in your PayU account. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Disputes&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Financial Statement&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to understand the money flow in your account, the applied charges and the related fees and taxes. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/reports/financial-statement.html&#34;&gt;Financial Statement&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Withholding certificate&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Download your Withholding Certificate according to the requested period of time. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/reports/withholding-certificate.html&#34;&gt;Withholding Certificate&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Operation reports&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Download the Operation reports suggested by the &lt;strong&gt;CNBV&lt;/strong&gt; according to a given month. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/reports/operation-reports.html&#34;&gt;Operation reports&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Transfers&lt;/td&gt;
+&lt;td&gt;Transfers&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to send the funds collected in your PayU account to your Bank account. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/transfers.html&#34;&gt;Transfers&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Schedule Transfers&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you create transfer on a daily, weekly, monthly basis. Furthermore, you can configure custom transfers as you need. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/transfers.html#schedule-transfers&#34;&gt;Schedule transfers&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Daily Payouts&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;As PayU in Brazil is not a not a payment institution, the funds collected in your account are transferred to your bank account on a daily basis. Through this report, you can know the status of the daily transfers.&lt;br&gt;This report is only available for accounts in Brazil and it has the same columns and options of the &lt;a href=&#34;../../../en/payu-module-documentation/reports/transfer-report.html&#34;&gt;Transfers report&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Edit bank information&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to request the change of the bank account and the Intermediary bank where you want to transfers the funds collected for this account. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html#request-the-change-of-your-bank-account&#34;&gt;Update my information&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sell with PayU&lt;/td&gt;
+&lt;td&gt;Sell on the internet&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to create payment requests so you can charge to your customers without having a website. For more information, refer to &lt;a href=&#34;../../../en/docs/tools/payment-request.html&#34;&gt;Payment request&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Cash charges&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to generate payment coupons or collection cards&lt;sup&gt;*&lt;/sup&gt; with the necessary information to let your clients make cash payments as many times as they need in the available payment points. For more information, refer to &lt;a href=&#34;../../../en/docs/tools/payment-coupons.html&#34;&gt;Payment coupons&lt;/a&gt;.&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Collection cards are only available in Argentina&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;My tools&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you find and manage the information of &lt;em&gt;Payment links&lt;/em&gt; (Payment request) and &lt;em&gt;Payment Coupons&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt; you have created in your account.&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Payment coupons are only available in Argentina and Colombia&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-settings-and-user-options&#34;&gt;2. Settings and user options.&lt;/h3&gt;
+&lt;p&gt;This panel has the options required to manage your merchant and your user.&lt;/p&gt;
+&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_03.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;
+&lt;h4 id=&#34;merchant-settings&#34;&gt;Merchant settings&lt;/h4&gt;
+&lt;p&gt;This option allows you to manage users, permissions, profiles and the technical configuration of your merchant. By clicking the &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; button, you can find the following options:&lt;/p&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Available in&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;User management&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to grant access to your team members so they can collect payments online or check information about your payments. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/user-and-profile-management/user-management.html&#34;&gt;User management&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Permissions and profiles&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Allows you to create custom profiles with specific permissions.&lt;br&gt;In this section, you can also query the default permission included in the PayU Module. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profile and permission management&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Technical configuration&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;In this option, you can find the variables required to integrate PayU with your Web page. Furthermore, you can configure the notifications of processed payments and Disputes. For more information, refer to &lt;a href=&#34;../../../en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34;&gt;Technical configuration&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;user-settings&#34;&gt;User settings&lt;/h4&gt;
+&lt;p&gt;This option allows you to manage your profile. In the main view of this option, you find your e-mail, your current profile in the PayU module (for the current account), and the account Id; click the &lt;strong&gt;▾&lt;/strong&gt; symbol to display the available user settings.&lt;/p&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Change merchant&lt;/td&gt;
+&lt;td&gt;This option is available when your user is enrolled to more than one merchant.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;My profile&lt;/td&gt;
+&lt;td&gt;In this option, you can configure your preferences and update your password as desired.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sign off&lt;/td&gt;
+&lt;td&gt;This option closes the session of the active user.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;3-main-panel&#34;&gt;3. Main panel&lt;/h3&gt;
+&lt;p&gt;This panel loads the selected option either in the left panel or in the option at the top. The &lt;em&gt;&lt;strong&gt;Home&lt;/strong&gt;&lt;/em&gt; page is selected by default, so it loads as soon as you log in the PayU module.&lt;/p&gt;
+&lt;p&gt;To set an option as displayed by default, click the three dot menu at the top right of the panel and select &lt;em&gt;&lt;strong&gt;Set as main page&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_04.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;
+&lt;h4 id=&#34;home-page&#34;&gt;Home page&lt;/h4&gt;
+&lt;p&gt;The home page is starting point of the PayU Module. It shows the shortcuts to perform sales on-line, know your sales status, control your finances, transfers funds, learn about e-commerce and leave us comments.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this page, you can also take a tour using the &lt;em&gt;&lt;strong&gt;Virtual tour&lt;/strong&gt;&lt;/em&gt; button. This button takes your through the main options to manage your account.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Some options are attached to the permissions configured to your user.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;4-footer&#34;&gt;4. Footer&lt;/h3&gt;
+&lt;p&gt;The footer provides the phone number to contact us and the link to the &lt;em&gt;&lt;strong&gt;terms and conditions&lt;/strong&gt;&lt;/em&gt; according to the processing country.&lt;/p&gt;
+&lt;p&gt;The following are the phone numbers and contact time:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; (+5411) 598 42132 &amp;gt; Mon - Fri 09:00 - 22:00 (UTC -3:00)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; (+5511) 4130 5311 &amp;gt; Mon - Fri 09h to 18h / Sat 09h to 15h - Brasilia Time Zone (UTC -3:00)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; (+562) 258-13949 &amp;gt; Mon - Fri 8:00 - 21:00 Chilean time&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; (+57) 601 654 0721 &amp;gt; Mon - Fri 7:00 - 20:00 Colombian time (UTC -5:00)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; (+5255) 474 11439 &amp;gt; Mon - Fri 7:00 - 20:00 CDMX time&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; (+507) 836 5577 &amp;gt; Mon - Fri 7:00 - 20:00 Colombian time (UTC -5:00)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; (+511) 708 5381 &amp;gt; Mon - Fri 7:00 - 20:00 Peruvian time (UTC -5:00)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Shopping Cart Plugins</title>
+      <link>/en/docs/tools/shopping-cart-plugins.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
+      
+      <guid>/en/docs/tools/shopping-cart-plugins.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;pre-integrated-solutions&#34;&gt;Pre-integrated solutions&lt;/h2&gt;
+&lt;p&gt;Some online stores are already integrated with PayU. You just need to activate the PayU option as your payment platform.&lt;/p&gt;
+&lt;p&gt;Available solutions:&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+    &lt;div class=&#34;row&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://www.tiendanube.com/blog/como-cobrar-online-con-dinero-mail-by-payu/&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/tiendanube.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/vtex.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/vtex.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://addons.prestashop.com/en/payment-card-wallet/6631-payu-latam.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/prestashop.svg&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #353535;border: 3px solid #353535;&#34;&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/shopify.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://jumpseller.com/support/payu/&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/jumpseller.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://ayuda.alegra.com/es/recibe-los-pagos-de-tus-facturas-de-venta-desde-alegra-colombia-con-payu&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/alegra.webp&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #00b19d;;border: 3px solid #00b19d;;&#34;&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/bigcommerce.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/BigCommerceLogo.webp&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; style=&#34;cursor:default;box-shadow:initial&#34;&gt;
+        &lt;h4 class=&#34;navblock-title&#34;&gt;&lt;/h4&gt;
+        &lt;p&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Some of the links above may appear in Spanish.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;configuration-through-partners&#34;&gt;Configuration through partners&lt;/h2&gt;
+&lt;p&gt;Learn how to install, configure and customize PayU in your e-commerce site using the guide and assistance of our partners.&lt;/p&gt;
+&lt;p&gt;Guidelines available:&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+       &lt;tr&gt;
+          &lt;th&gt;Shopping cart&lt;/th&gt;
+          &lt;th&gt;Partner&#39;s Guide&lt;/th&gt;
+          &lt;th&gt;Support&lt;/th&gt;
+       &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+       &lt;tr&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34;&gt;&lt;i&gt;Version 2&lt;/i&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;text-align: center&#34;&gt;&lt;a href=&#34;https://docs.eloom.tech/es/payment/payu-latam&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;View guide&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;mailto:suporte@eloom.com.br&#34; target=&#34;_blank&#34;&gt;suporte@eloom.com.br&lt;/a&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+ &lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+For Magento versions from 1.7.x to 1.9.x, refer to &lt;a href=&#34;#plugins-for-modules&#34;&gt;Plugins for modules&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;plugins-for-modules&#34;&gt;Plugins for modules&lt;/h2&gt;
+&lt;p&gt;If you use an open source shopping cart, download and use the plugins we developed to ease your integration process with its payment system.&lt;/p&gt;
+&lt;p&gt;Available plugins:&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/magento.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;p style=&#34;margin-bottom: initial;&#34;&gt;&lt;sup&gt;&lt;i&gt;*&lt;/i&gt;&lt;/sup&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/drupal.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/virtuemart.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/vm-logo-220.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/woocommerce.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/woocommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/oscommerce.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/oscommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/opencart.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/opencart.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
+    &lt;/div&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Available for versions from 1.7.x to 1.9.x.&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;plugin-files&#34;&gt;Plugin files&lt;/h3&gt;
+&lt;p&gt;Find the latest version of the plugin in the following table&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+       &lt;tr&gt;
+          &lt;th width=&#34;20%&#34;&gt;Shopping cart&lt;/th&gt;
+          &lt;th&gt;Plugin&lt;/th&gt;
+          &lt;th&gt;Considerations&lt;/th&gt;
+       &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/Plugin_PayU_Magento-1.3.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Available for versions from 1.7.x to 1.9.x.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/commerce_payulatam_1.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;You need &lt;a href=&#34;https://www.drupal.org/project/commerce_kickstart&#34; target=&#34;_blank&#34;&gt;Drupal Commerce Kickstart 7.xx&lt;/a&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/vm-logo-220.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;VirtueMart v2+&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart2.6.7.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;hr&gt;VirtueMart v3.0.6&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart3.0.6.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;You need Joomla 2.5 with MySQL 5.1 or higher.&lt;hr style=&#34;margin-top:2.5rem;margin-bottom: 2.5rem;&#34;&gt;You need Joomla versions 3.3.6, 2.5.28, or 2.5.27.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/woocommerce.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/woocommerce-payu-latam-2.1.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;You need:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;WordPress 3.8 or higher.&lt;/li&gt;&lt;li&gt;WooCommerce version 2.0 or higher installed on the WordPress site.&lt;/ul&gt;&lt;/li&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/oscommerce.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-oscommerce.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Available for version 2.3.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/opencart.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Version 1.5.5.1 or 1.5.6.4&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;hr&gt;Version 2.0.x.x to 2.1.x.x&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart-2.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+    &lt;/tbody&gt;
+ &lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: SDK Integration</title>
+      <link>/en/docs/integrations/sdk-integration.html</link>
+      <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/integrations/sdk-integration.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Similar to any API integration, you can customize your checkout according to your shop&amp;rsquo;s needs and the customer stays on your site during the purchase and payment process. To integrate this option you must have a PayU Business account and advanced programming skills.&lt;/p&gt;
+&lt;p&gt;Access multiple payment methods (varies per country), including credit cards, bank transfers, and cash payments.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/api1-en.png&#34; alt=&#34;API integration&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;initial-settings&#34;&gt;Initial settings&lt;/h2&gt;
+&lt;p&gt;PayU allows you to integrate with the transactional gateway, available payment tools and Queries by developing a web site in Java or PHP. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow &lt;a href=&#34;https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf&#34;&gt;PCI DSS’ best practices&lt;/a&gt; (Payment Card Industry Data Security Standard).&lt;/p&gt;
+&lt;h3 id=&#34;java&#34;&gt;Java&lt;/h3&gt;
+&lt;p&gt;To integrate with the API, the SDK relies on the Apache&amp;rsquo;s library &lt;code&gt;HttpClient&lt;/code&gt; which also relies on the libraries &lt;code&gt;HttpCore&lt;/code&gt;, &lt;code&gt;CommonsLoggin&lt;/code&gt; and &lt;code&gt;CommonsCodec&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In general, you need the following libraries in your classpath:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.4.1&#34;&gt;HttpClient-4.4.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore/4.4.4&#34;&gt;HttpCore-4.4.4.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/commons-logging/commons-logging/1.1.1&#34;&gt;Commons-loggin-1.1.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/commons-codec/commons-codec/1.6&#34;&gt;Commons-codec-1.6.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.5&#34;&gt;Commons-lang3-3.5.jar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/java/payu-java-sdk-1.5.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download SDK Java 1.5.0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before performing any operation with the SDK, you need to assign some values to the &lt;code&gt;PayU&lt;/code&gt; class, which apply to all the SDK operations and must be configured with your commerce data. The following table shows the values you need to configure.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter name&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;language&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Language&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;The language used for error messages in the system and in emails that are sent to the buyer and seller. It is currently supported in &lt;code&gt;en&lt;/code&gt; (English), &lt;code&gt;es&lt;/code&gt; (Spanish) and &lt;code&gt;pt&lt;/code&gt; (Portuguese).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;isTest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Assign &lt;code&gt;true&lt;/code&gt; if it&amp;rsquo;s a test request. Otherwise, assign &lt;code&gt;false&lt;/code&gt;. Depending on the type of transaction or operation, the behavior may vary depending on the value of this field.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;apiLogin&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Min:12 Max:32&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Your API Login. &lt;a href=&#34;../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;apiKey&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Min:6 Max:32&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Your API Key. &lt;a href=&#34;../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;merchantId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;The merchant identifier, it&amp;rsquo;s used to generate the signatures to verify payment transactions. &lt;br&gt;This parameter is mandatory when you want to check the transaction, unless you send the signature.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;paymentsUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Min:1&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;The URL of the page to where you will send the requests related to payments. By default, this parameter takes the production URL.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;reportsUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Min:1&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;The URL of the page to where you will send the requests related to the reports. By default, this parameter takes the production URL.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Example&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;apiKey&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Enter your API key here&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;apiLogin&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Enter your API Login here&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Language&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;en&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Enter the language here&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;isTest&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// assign true if you are in test mode&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoggerUtil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setLogLevel&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Level&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Include it only if you want to see the full log trace. Otherwise, you can remove it.&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;paymentsUrl&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.payulatam.com/payments-api/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Include it if you want to test in a specific payment server and assign its URL.&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;reportsUrl&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.payulatam.com/reports-api/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Include it if you want to test in a specific report server and assign its URL.&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;To execute the operations provided by the PayU&amp;rsquo;s SDK, you must send to the method a parameter map as an argument, this map has all the required information to process a transaction. Example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Map&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HashMap&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PARAMETERS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;TRANSACTION_ID&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;transactionId&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PARAMETERS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;ORDER_ID&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;orderId&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;());&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;To ease the usage, you find a set of constants in the interface &lt;code&gt;PayU.PARAMETERS&lt;/code&gt;, which contains the names of the parameters used in the SDK methods.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+From version 1.2.X, it is needed to add the certificate of the Payu&amp;rsquo;s Payments API(&lt;a href=&#34;https://api.payulatam.com/payments-api/&#34;&gt;https://api.payulatam.com/payments-api/&lt;/a&gt;) in the Java key folder. This folder is located in path &lt;em&gt;&lt;strong&gt;[Java-Installation-Folder]/jdk/jre/lib/security/cacerts&lt;/strong&gt;&lt;/em&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;php&#34;&gt;PHP&lt;/h3&gt;
+&lt;p&gt;To integrate with the API, the SDK can be executed in machines with PHP version greater than or equals to 5.2.1. Furthermore, the following PHP extensions are required in your server:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;curl&lt;/li&gt;
+&lt;li&gt;xml&lt;/li&gt;
+&lt;li&gt;mbstring&lt;/li&gt;
+&lt;li&gt;json&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/php/payu-php-sdk-4.5.7.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Download SDK PHP 4.5.7&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To have access to the SDK features, you need to include the &lt;code&gt;PayU&lt;/code&gt; class located in &lt;em&gt;&lt;strong&gt;[PayU-php-sdk-Path]/lib/PayU.php&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;require_once&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;[PayU-php-sdk-Path]/lib/PayU.php&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Before performing any operation with the SDK, you need to assign some values to the &lt;code&gt;PayU&lt;/code&gt; class, which apply to all the SDK operations and must be configured with your commerce data. The following table shows the values you need to configure.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter name&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$language&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Language&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;The language used for error messages in the system and in emails that are sent to the buyer and seller. It is currently supported in en (English), es (Spanish) and pt (Portuguese).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$isTest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Assign &lt;code&gt;true&lt;/code&gt; if it&amp;rsquo;s a test request. Otherwise, assign &lt;code&gt;false&lt;/code&gt;. Depending on the type of transaction or operation, the behavior may vary depending on the value of this field.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$apiLogin&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Min:12 Max:32&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Your API Login. &lt;a href=&#34;../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$apiKey&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Min:6 Max:32&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;td&gt;Your API Key. &lt;a href=&#34;../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$merchantId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;td&gt;The merchant identifier, it&amp;rsquo;s used to generate the signatures to verify payment transactions. &lt;br&gt;This parameter is mandatory when you want to check the transaction, unless you send the signature.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Example&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$apiKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Enter your API key here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$apiLogin&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Enter your API Login here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$merchantId&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Enter your Merchant Id here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$language&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SupportedLanguages&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;ES&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Enter the language here
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$isTest&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// assign true if you are in test mode
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Furthermore, you need to configure the API to redirect the requests using the &lt;code&gt;Environment&lt;/code&gt; class:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Payments URL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setPaymentsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Reports URL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setReportsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You must have an active PayU account.&lt;/li&gt;
+&lt;li&gt;You must install a valid SSL certificate in your server and your site must be able to make SSL connections. Due to this, the virtual machine must have appropriate security extensions.&lt;/li&gt;
+&lt;li&gt;Temporarily, do not use security certificates elliptic curve or those who have the suite of encryption &lt;code&gt;TLS_ECDHE_ECDSA_WITH_RC4_128_SHA&lt;/code&gt; in your payment requests.&lt;/li&gt;
+&lt;li&gt;You must have CGI or server languages such as Java, C#, VB, PHP, etc.&lt;/li&gt;
+&lt;li&gt;You must be able to store your authentication credentials (API Key and API Login) safely.&lt;/li&gt;
+&lt;li&gt;The encoding for messages must be &lt;code&gt;UTF-8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The dates must have format &lt;code&gt;yyyy-MM-ddTHH:mm:ss&lt;/code&gt;, the time format is 24 hours. Example: &lt;code&gt;2015-08-22T21:35:12&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Normally the connection guarantees response times of three seconds on average. If there is an unusual situation, the maximum response time is one minute. It is highly recommended that you set &lt;em&gt;timeouts&lt;/em&gt; when you connect with PayU.&lt;/li&gt;
+&lt;li&gt;It is important to validate the length and numbers of credit cards by franchise, together with the security codes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;available-features&#34;&gt;Available features&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
