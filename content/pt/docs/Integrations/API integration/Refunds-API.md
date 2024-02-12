@@ -54,7 +54,7 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 * Reembolsos parciais não estão disponíveis para cartões de crédito internacionais.
 
 ### México {#mexico}
-* O tempo mínimo para envio do cancelamento é de 10 minutos após a autorização e o máximo é de 30 dias. Se a transação foi feita com American Express, o prazo máximo é de 7 dias.<br>Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada automaticamente (auto-void).
+* O tempo mínimo para envio do cancelamento é de 10 minutos após a autorização e o máximo é de 30 dias. Se a transação foi feita com American Express, o prazo máximo é de 7 dias. Se nenhum cancelamento ou reembolso for enviado após esse período, a transação será cancelada automaticamente (auto-void).
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 175 dias. Se a transação foi processada pelo Bancomer, o prazo máximo é de 40 dias.
 * Quando um reembolso é aprovado, o pagador recebe o dinheiro de volta em, no 30 dias úteis.
 * Reembolsos com casas decimais não são aceitos.

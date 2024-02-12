@@ -54,7 +54,7 @@ Before using Voids and Refunds API, take into account the following consideratio
 * Partial refunds are not available for international credit cards.
 
 ### Mexico
-* The minimum time to send a void is 10 minutes after the authorization and the maximum is 30 days. If the transaction was made with American Express, the maximum time is seven (7) days.<br>If no void or capture is sent after this time, the transaction is auto-voided.
+* The minimum time to send a void is 10 minutes after the authorization and the maximum is 30 days. If the transaction was made with American Express, the maximum time is seven (7) days. If no void or capture is sent after this time, the transaction is auto-voided.
 * The minimum time to send a refund is 10 minutes after the approval and the maximum is 175 days. If the transaction was processed by Bancomer, the maximum time is 40 days.
 * When a refund is approved, the payer gets the money back in 30 working days.
 * Refunds with decimals are not supported.

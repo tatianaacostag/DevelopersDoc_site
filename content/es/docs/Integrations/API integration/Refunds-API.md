@@ -55,7 +55,7 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 * No se soportan reembolsos parciales para tarjetas de crédito internacionales.
 
 ### México {#mexico}
-* El tiempo mínimo para enviar una anulación (Void) es 10 minutos luego de la autorización y el máximo es 30 días. Si la transacción se hizo con American Express, el tiempo máximo es siete (7) días.<br>Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
+* El tiempo mínimo para enviar una anulación (Void) es 10 minutos luego de la autorización y el máximo es 30 días. Si la transacción se hizo con American Express, el tiempo máximo es siete (7) días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
 * El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 175 días. Si la transacción fue procesada por Bancomer, el tiempo máximo es 40 días.
 * Cuando se aprueba un reembolso, el pagador obtiene su dinero en 30 días hábiles.
 * No se soportan reembolsos con decimales.
