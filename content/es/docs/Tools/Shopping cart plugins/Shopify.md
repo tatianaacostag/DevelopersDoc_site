@@ -45,7 +45,7 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
 
 
 
-![](/assets/ShopifyReverseIntegration/imagen7.png)
+![](/assets/ShopifyReverseIntegration/imagen700.png)
 
 
 
@@ -58,7 +58,7 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
 
 Recuerda que puedes encontrar tus credenciales de ambiente de producción ingresando a tu módulo administrativo de PayU. Una vez inicies sesión encontrarás el merchant ID (1) y el account ID (2) en la parte superior izquierda del módulo, tal como se muestra en la siguiente imagen de referencia: 
 
-![](/assets/ShopifyReverseIntegration/imagen8.png)
+![](/assets/ShopifyReverseIntegration/imagen800.png)
 
 
 {{% alert title="Nota" color="info"%}}
@@ -77,10 +77,10 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 4. Serás dirigido a la sección llamada “Pagos”. Allí, selecciona “Activate PayU Latam v2” en la esquina inferior derecha.
 
 
-![](/assets/ShopifyReverseIntegration/imagen9.png)
+![](/assets/ShopifyReverseIntegration/imagen900.png)
 
 
-![](/assets/ShopifyReverseIntegration/imagen10.png)
+![](/assets/ShopifyReverseIntegration/imagen100.png)
 
 
 {{% alert title="Importante" color="warning"%}}
@@ -88,8 +88,8 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 * Modo test: Dentro de la misma sección de “pagos”, encontrarás la opción para utilizar el modo test que te permitirá hacer pruebas en ambiente Sandbox. 
 * Te recomendamos usar el ambiente test de forma controlada, preferiblemente en un horario de baja transaccionalidad, ya que las transacciones que se procesen mientras estes en modo de test no generan un pago real y el ambiente productivo queda desactivado. 
 * Para deshabilitar el modo test, retira el check y guarda los cambios.
-![](/assets/ShopifyReverseIntegration/imagen11.png)
-![](/assets/ShopifyReverseIntegration/imagen12.png)
+![](/assets/ShopifyReverseIntegration/imagen110.png)
+![](/assets/ShopifyReverseIntegration/imagen120.png)
 {{% /alert %}}
 
 
@@ -98,7 +98,7 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 5. Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Activa la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.
 
 
-![](/assets/ShopifyReverseIntegration/imagen13.png)
+![](/assets/ShopifyReverseIntegration/imagen130.png)
 
 
 ![](/assets/ShopifyReverseIntegration/imagen6.png)
