@@ -4,6 +4,7 @@
     <link>/pt/deprecated/merchant-panel.html</link>
     <description>Recent content in Módulo administrativo (Secure panel) on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
     <lastBuildDate>Tue, 28 Sep 2021 13:40:06 -0500</lastBuildDate>
     
 	  <atom:link href="/pt/deprecated/merchant-panel/index.xml" rel="self" type="application/rss+xml" />
@@ -604,7 +605,7 @@ Quando tenha indicado que deseja fazer uma petição de reembolso de uma transa�
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_validacion1.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;&lt;strong&gt;Confirmar solicitud de reembolso&lt;/strong&gt;: 
+&lt;li&gt;&lt;strong&gt;Confirmar solicitud de reembolso&lt;/strong&gt;:
 Antes de registrar tu solicitud de reembolso se te mostrará la información de la transacción que seleccionaste junto con la información ingresada y se te solicitará que confirmes la radicación de tu solicitud a través de la opción &lt;em&gt;&lt;strong&gt;Enviar&lt;/strong&gt;&lt;/em&gt;. En caso contrario puedes desistir de la operación a través de la acción &lt;em&gt;&lt;strong&gt;Cancelar&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales-pt/reembolsos/reembolso_confirmar.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
@@ -765,7 +766,6 @@ Uma vez que uma transação é parte de uma disputa, o valor associado passa a f
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;/div&gt;
 
 &lt;h3 id=&#34;4-decisão-final-sobre-o-estado-da-disputa&#34;&gt;4. Decisão final sobre o estado da disputa&lt;/h3&gt;
@@ -867,7 +867,7 @@ Este tópico foi descontinuado e não está sendo oferecido a novos comerciantes
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ventas1-pt.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Você poderá realizar os ajustes na informação de suas vendas manualmente. Em caso de que você queira ajustar dados como &lt;em&gt;&lt;strong&gt;Conta&lt;/strong&gt;&lt;/em&gt;, &amp;ldquo;Website**_ e _**O que você esta vendendo**_ você deverá enviar um e-mail para &lt;a href=&#34;mailto:sac@payulatam.com&#34;&gt;sac@payulatam.com&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Você poderá realizar os ajustes na informação de suas vendas manualmente. Em caso de que você queira ajustar dados como &lt;em&gt;&lt;strong&gt;Conta&lt;/strong&gt;&lt;/em&gt;, &amp;ldquo;Website**_ e &lt;em&gt;&lt;strong&gt;O que você esta vendendo&lt;/strong&gt;&lt;/em&gt; você deverá enviar um e-mail para &lt;a href=&#34;mailto:sac@payulatam.com&#34;&gt;sac@payulatam.com&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/ventas2-pt.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;formato-de-tiempo-y-moneda&#34;&gt;Formato de tiempo y moneda&lt;/h2&gt;

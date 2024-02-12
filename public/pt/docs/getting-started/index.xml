@@ -4,6 +4,7 @@
     <link>/pt/docs/getting-started.html</link>
     <description>Recent content in Para começar on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
     <lastBuildDate>Wed, 31 Mar 2021 08:28:16 -0500</lastBuildDate>
     
 	  <atom:link href="/pt/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
@@ -130,40 +131,40 @@ Para ativar sua conta, você deve:&lt;/p&gt;
 &lt;h2 id=&#34;payu-tools&#34;&gt;Ferramentas PayU&lt;/h2&gt;
 &lt;p&gt;Todas as ferramentas a seguir oferecem mais opções para vender e receber pagamentos online.&lt;/p&gt;
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
-  &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/payment-request.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/money-flowing.svg&#34; alt=&#34;Payment requests&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Solicitação de pagamento&lt;/h4&gt;
-      &lt;p&gt;Receba pagamentos mesmo se você não tiver um site.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Plug-ins de carrinho de compras&lt;/h4&gt;
-      &lt;p&gt;Integre sua solução de carrinho de compras com qualquer um de nossos plug-ins.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/payu-module.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/PayULogo.png&#34; alt=&#34;Módulo PayU&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Módulo PayU&lt;/h4&gt;
-      &lt;p&gt;Gerencie sua conta PayU, gere relatórios de vendas, consulte o saldo de sua conta ou transfira dinheiro para sua conta bancária.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/disputes.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/bank.svg&#34; alt=&#34;Disputas&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputas&lt;/h4&gt;
-      &lt;p&gt;Gerencie os processos de disputas gerados em sua conta PayU.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/payment-coupons.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/hand-with-icon.svg&#34; alt=&#34;Cupons de pagamento&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Cupons de pagamento&lt;/h4&gt;
-      &lt;p&gt;Envie cupons de pagamento que seus clientes podem pagar nas agências disponíveis.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/antifraud-guarantee.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/SVG/fraud.svg&#34; alt=&#34;Garantia Antifraude&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
-      &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Garantia Antifraude&lt;/h4&gt;
-      &lt;p&gt;PayU oferece a Garantia Antifraude que protege os vendedores contra perdas devido a transações fraudulentas.&lt;/p&gt;
-    &lt;/div&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
+   &lt;div class=&#34;row&#34;&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/payment-request.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/money-flowing.svg&#34; alt=&#34;Payment requests&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Solicitação de pagamento&lt;/h4&gt;
+       &lt;p&gt;Receba pagamentos mesmo se você não tiver um site.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/shopping-cart-plugins.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/shopping.svg&#34; alt=&#34;Shopping cart plugins&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Plug-ins de carrinho de compras&lt;/h4&gt;
+       &lt;p&gt;Integre sua solução de carrinho de compras com qualquer um de nossos plug-ins.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/payu-module.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/PayULogo.png&#34; alt=&#34;Módulo PayU&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Módulo PayU&lt;/h4&gt;
+       &lt;p&gt;Gerencie sua conta PayU, gere relatórios de vendas, consulte o saldo de sua conta ou transfira dinheiro para sua conta bancária.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/disputes.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/bank.svg&#34; alt=&#34;Disputas&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Disputas&lt;/h4&gt;
+       &lt;p&gt;Gerencie os processos de disputas gerados em sua conta PayU.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/payment-coupons.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/hand-with-icon.svg&#34; alt=&#34;Cupons de pagamento&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Cupons de pagamento&lt;/h4&gt;
+       &lt;p&gt;Envie cupons de pagamento que seus clientes podem pagar nas agências disponíveis.&lt;/p&gt;
+     &lt;/div&gt;
+     &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../pt/docs/tools/antifraud-guarantee.html&#39;&#34;&gt;
+       &lt;img src=&#34;../../../assets/SVG/fraud.svg&#34; alt=&#34;Garantia Antifraude&#34; width=&#34;118&#34; height=&#34;118&#34;&gt;
+       &lt;h4 class=&#34;navblock-title&#34; style=&#34;margin-top:15px;&#34;&gt;Garantia Antifraude&lt;/h4&gt;
+       &lt;p&gt;PayU oferece a Garantia Antifraude que protege os vendedores contra perdas devido a transações fraudulentas.&lt;/p&gt;
+     &lt;/div&gt;
+     
+   &lt;/div&gt;
+ &lt;/div&gt;
 
 
       </description>
@@ -587,14 +588,7 @@ Para ativar sua conta, você deve:&lt;/p&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
 &lt;td&gt;Mastercard&lt;/td&gt;
 &lt;td&gt;MASTERCARD&lt;/td&gt;
-&lt;td&gt;Cartões de crédito&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
-&lt;td&gt;Mastercard&lt;/td&gt;
-&lt;td&gt;MASTERCARD_DEBIT&lt;/td&gt;
-&lt;td&gt;Cartões de débito&lt;/td&gt;
+&lt;td&gt;Cartões de crédito / Cartões de débito&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -622,14 +616,7 @@ Para ativar sua conta, você deve:&lt;/p&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
 &lt;td&gt;VISA&lt;/td&gt;
 &lt;td&gt;VISA&lt;/td&gt;
-&lt;td&gt;Cartões de crédito&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/visa.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
-&lt;td&gt;VISA&lt;/td&gt;
-&lt;td&gt;VISA_DEBIT&lt;/td&gt;
-&lt;td&gt;Cartões de débito&lt;/td&gt;
+&lt;td&gt;Cartões de crédito / Cartões de débito&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1026,7 +1013,7 @@ Para ativar sua conta, você deve:&lt;/p&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Cartão de Crédito MASTERCARD&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;5579070000000003&lt;/td&gt;
+&lt;td&gt;5491380000000001&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Cartão de Débito MASTERCARD&lt;/strong&gt;&lt;/td&gt;
@@ -1136,7 +1123,7 @@ Para ativar sua conta, você deve:&lt;/p&gt;
 &lt;p&gt;&lt;div class=&#34;postman-run-button&#34;
 data-postman-action=&#34;collection/import&#34;
 data-postman-var-1=&#34;0912c6fdb7442f3a1baa&#34;
-data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52IiwidmFsdWUiOiJzYW5kYm94LmFwaSIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXBpX2tleSIsInZhbHVlIjoiNFZqOGVLNHJsb1VkMjcyTDQ4aHNyYXJuVUEiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFwaV9sb2dpbiIsInZhbHVlIjoicFJSWEtPbDhpa01tdDl1IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJtZXJjaGFudF9pZCIsInZhbHVlIjoiNTA4MDI5IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2NvdW50X2NvIiwidmFsdWUiOiI1MTIzMjEiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfbXgiLCJ2YWx1ZSI6IjUxMjMyNCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYWNjb3VudF9jbCIsInZhbHVlIjoiNTEyMzI1IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2NvdW50X3BlIiwidmFsdWUiOiI1MTIzMjMiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfcGEiLCJ2YWx1ZSI6IjUxMjMyNiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYWNjb3VudF9hciIsInZhbHVlIjoiNTEyMzIyIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2NvdW50X2JyIiwidmFsdWUiOiI1MTIzMjciLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfcGVfdXNkIiwidmFsdWUiOiI1MTQzOTMiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InBzZV90ZXN0X2JhbmsiLCJ2YWx1ZSI6IjEwMjIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InB1YmxpY19rZXkiLCJ2YWx1ZSI6IlBLYUM2SDRjRURKRDkxOW43MDVMNTQ0a1NVIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJkZXZpY2VGaW5nZXJwcmludCIsInZhbHVlIjoiZTI5NGZiNjJhOThjYjQ0YzI5ZGVlNDIxMmQ0Mjk4MjQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InJlY29uY2lsaWF0aW9uSWQiLCJ2YWx1ZSI6IjIwMTgxMjA0MTE1OTQ2LjA2OCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoicGF5ZXJFbWFpbEFkZHJlc3MiLCJ2YWx1ZSI6InRlc3RAcGF5dWxhdGFtLmNvbSIsImVuYWJsZWQiOnRydWV9XQ==&#34;&gt;&lt;/div&gt;
+data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52IiwidmFsdWUiOiJzYW5kYm94LmFwaSIsImVuYWJsZWQiOnRydWUsInNlc3Npb25WYWx1ZSI6InNhbmRib3guYXBpIiwic2Vzc2lvbkluZGV4IjowfSx7ImtleSI6ImFwaV9rZXkiLCJ2YWx1ZSI6IjRWajhlSzRybG9VZDI3Mkw0OGhzcmFyblVBIiwiZW5hYmxlZCI6dHJ1ZSwic2Vzc2lvblZhbHVlIjoiNFZqOGVLNHJsb1VkMjcyTDQ4aHNyYXJuVUEiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoiYXBpX2xvZ2luIiwidmFsdWUiOiJwUlJYS09sOGlrTW10OXUiLCJlbmFibGVkIjp0cnVlLCJzZXNzaW9uVmFsdWUiOiJwUlJYS09sOGlrTW10OXUiLCJzZXNzaW9uSW5kZXgiOjJ9LHsia2V5IjoibWVyY2hhbnRfaWQiLCJ2YWx1ZSI6IjUwODAyOSIsImVuYWJsZWQiOnRydWUsInNlc3Npb25WYWx1ZSI6IjUwODAyOSIsInNlc3Npb25JbmRleCI6M30seyJrZXkiOiJhY2NvdW50X2NvIiwidmFsdWUiOiI1MTIzMjEiLCJlbmFibGVkIjp0cnVlLCJzZXNzaW9uVmFsdWUiOiI1MTIzMjEiLCJzZXNzaW9uSW5kZXgiOjR9LHsia2V5IjoiYWNjb3VudF9teCIsInZhbHVlIjoiNTEyMzI0IiwiZW5hYmxlZCI6dHJ1ZSwic2Vzc2lvblZhbHVlIjoiNTEyMzI0Iiwic2Vzc2lvbkluZGV4Ijo1fSx7ImtleSI6ImFjY291bnRfY2wiLCJ2YWx1ZSI6IjUxMjMyNSIsImVuYWJsZWQiOnRydWUsInNlc3Npb25WYWx1ZSI6IjUxMjMyNSIsInNlc3Npb25JbmRleCI6Nn0seyJrZXkiOiJhY2NvdW50X3BlIiwidmFsdWUiOiI1MTIzMjMiLCJlbmFibGVkIjp0cnVlLCJzZXNzaW9uVmFsdWUiOiI1MTIzMjMiLCJzZXNzaW9uSW5kZXgiOjd9LHsia2V5IjoiYWNjb3VudF9wYSIsInZhbHVlIjoiNTEyMzI2IiwiZW5hYmxlZCI6dHJ1ZSwic2Vzc2lvblZhbHVlIjoiNTEyMzI2Iiwic2Vzc2lvbkluZGV4Ijo4fSx7ImtleSI6ImFjY291bnRfYXIiLCJ2YWx1ZSI6IjUxMjMyMiIsImVuYWJsZWQiOnRydWUsInNlc3Npb25WYWx1ZSI6IjUxMjMyMiIsInNlc3Npb25JbmRleCI6OX0seyJrZXkiOiJhY2NvdW50X2JyIiwidmFsdWUiOiI1MTIzMjciLCJlbmFibGVkIjp0cnVlLCJzZXNzaW9uVmFsdWUiOiI1MTIzMjciLCJzZXNzaW9uSW5kZXgiOjEwfSx7ImtleSI6ImFjY291bnRfcGVfdXNkIiwidmFsdWUiOiI1MTQzOTMiLCJlbmFibGVkIjp0cnVlLCJzZXNzaW9uVmFsdWUiOiI1MTQzOTMiLCJzZXNzaW9uSW5kZXgiOjExfSx7ImtleSI6InBzZV90ZXN0X2JhbmsiLCJ2YWx1ZSI6IjEwMjIiLCJlbmFibGVkIjp0cnVlLCJzZXNzaW9uVmFsdWUiOiIxMDIyIiwic2Vzc2lvbkluZGV4IjoxMn0seyJrZXkiOiJwdWJsaWNfa2V5IiwidmFsdWUiOiJQS2FDNkg0Y0VESkQ5MTluNzA1TDU0NGtTVSIsImVuYWJsZWQiOnRydWUsInNlc3Npb25WYWx1ZSI6IlBLYUM2SDRjRURKRDkxOW43MDVMNTQ0a1NVIiwic2Vzc2lvbkluZGV4IjoxM30seyJrZXkiOiJkZXZpY2VGaW5nZXJwcmludCIsInZhbHVlIjoiZTI5NGZiNjJhOThjYjQ0YzI5ZGVlNDIxMmQ0Mjk4MjQiLCJlbmFibGVkIjp0cnVlLCJzZXNzaW9uVmFsdWUiOiJlMjk0ZmI2MmE5OGNiNDRjMjlkZWU0MjEyZDQyOTgyNCIsInNlc3Npb25JbmRleCI6MTR9LHsia2V5IjoicmVjb25jaWxpYXRpb25JZCIsInZhbHVlIjoiMjAxODEyMDQxMTU5NDYuMDY4IiwiZW5hYmxlZCI6dHJ1ZSwic2Vzc2lvblZhbHVlIjoiMjAxODEyMDQxMTU5NDYuMDY4Iiwic2Vzc2lvbkluZGV4IjoxNX0seyJrZXkiOiJwYXllckVtYWlsQWRkcmVzcyIsInZhbHVlIjoidGVzdEBwYXl1bGF0YW0uY29tIiwiZW5hYmxlZCI6dHJ1ZSwic2Vzc2lvblZhbHVlIjoidGVzdEBwYXl1bGF0YW0uY29tIiwic2Vzc2lvbkluZGV4IjoxNn1d&#34;&gt;&lt;/div&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;
   (function (p,o,s,t,m,a,n) {
     !p[s] &amp;&amp; (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
@@ -1243,8 +1230,8 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Direcione sua solicitação para a seguinte URL:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;https://checkout.payulatam.com/ppp-web-gateway-payu
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-over-to-production-using-api-integration&#34;&gt;Passe para a produção usando a integração API&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;https://checkout.payulatam.com/ppp-web-gateway-payu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-over-to-production-using-api-integration&#34;&gt;Passe para a produção usando a integração API&lt;/h2&gt;
 &lt;p&gt;Inclua os seguintes parâmetros em seus formulários de pagamento:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1281,9 +1268,9 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Direcione sua solicitação para a seguinte URL:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;Consultas: https://api.payulatam.com/reports-api/4.0/service.cgi
-Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-over-to-production-using-sdk-integration&#34;&gt;Passe para a produção usando a integração SDK&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Consultas: https://api.payulatam.com/reports-api/4.0/service.cgi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;step-over-to-production-using-sdk-integration&#34;&gt;Passe para a produção usando a integração SDK&lt;/h2&gt;
 &lt;p&gt;Inclua os seguintes parâmetros em seus formulários de pagamento:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1360,9 +1347,9 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 
 &lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
-	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;paymentsUrl&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//api.payulatam.com/payments-api/”;
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;reportsUrl&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//api.payulatam.com/reports-api/”;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;paymentsUrl&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//api.payulatam.com/payments-api/”;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;reportsUrl&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;https&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//api.payulatam.com/reports-api/”;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 
@@ -1377,9 +1364,9 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
 
 &lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
-	&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setPaymentsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;“https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;://&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payulatam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4.0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;service&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cgi”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setReportsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;“https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;://&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payulatam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reports&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4.0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;service&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cgi”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setPaymentsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;“https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;://&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payulatam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payments&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4.0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;service&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cgi”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setReportsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;“https&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;://&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;payulatam&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;com&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reports&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;api&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4.0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;service&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;cgi”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 
@@ -1402,8 +1389,8 @@ Payments: https://api.payulatam.com/payments-api/4.0/service.cgi
         
         
         &lt;script src=&#34;../../../js/searchcodes.js&#34;&gt;&lt;/script&gt;
-&lt;p&gt;&lt;input type=&#34;text&#34; id=&#34;searchBox&#34; placeholder=&#34; Pesquise por nomes, códigos ou descrição...&#34; onkeyup=&#34;findTables()&#34; &gt;
-&lt;button onclick=&#34;document.getElementById(&#39;searchBox&#39;).value = &#39;&#39;;findTables()&#34; class=&#34;btn-green&#34;&gt;Limpar&lt;/button&gt;&lt;/p&gt;
+&lt;input type=&#34;text&#34; id=&#34;searchBox&#34; placeholder=&#34; Pesquise por nomes, códigos ou descrição...&#34; onkeyup=&#34;findTables()&#34; &gt;
+&lt;button onclick=&#34;document.getElementById(&#39;searchBox&#39;).value = &#39;&#39;;findTables()&#34; class=&#34;btn-green&#34;&gt;Limpar&lt;/button&gt;
 &lt;h2 id=&#34;response-codes-for-transactions&#34;&gt;Códigos de resposta para transações&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;

@@ -4,6 +4,7 @@
     <link>/es/deprecated/merchant-panel.html</link>
     <description>Recent content in Módulo Administrativo (Secure panel) on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
     <lastBuildDate>Tue, 28 Sep 2021 13:40:06 -0500</lastBuildDate>
     
 	  <atom:link href="/es/deprecated/merchant-panel/index.xml" rel="self" type="application/rss+xml" />
@@ -594,7 +595,7 @@ Una vez indiques que deseas realizar una solicitud de reembolso de una transacci
 &lt;/div&gt;
 
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;&lt;strong&gt;Confirmar solicitud de reembolso&lt;/strong&gt;: 
+&lt;li&gt;&lt;strong&gt;Confirmar solicitud de reembolso&lt;/strong&gt;:
 Antes de registrar tu solicitud de reembolso se te mostrará la información de la transacción que seleccionaste junto con la información ingresada y se te solicitará que confirmes la radicación de tu solicitud a través de la opción &lt;em&gt;&lt;strong&gt;Enviar&lt;/strong&gt;&lt;/em&gt;. En caso contrario puedes desistir de la operación a través de la acción &lt;em&gt;&lt;strong&gt;Cancelar&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/developers-payu-latam/developers-payu-latam.github.io/master/images/soluciones-adicionales/reembolsos/reembolso_confirmar.jpg&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
@@ -677,7 +678,7 @@ Este artículo ha sido descontinuado y no se ofrece a comercios nuevos.
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Fraude&lt;/strong&gt;&lt;/em&gt;: Las disputas se determinan como fraude cuando una persona no autorizada realizó compras con una tarjeta de crédito. Este tipo de disputa puede suceder si la tarjeta fue robada o extraviada.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Desconocimiento de pago&lt;/strong&gt;&lt;/em&gt;**_: La marca o el nombre del comercio que se refleja en el extracto de la tarjeta de crédito no es reconocida por el tarjetahabiente.&lt;/li&gt;
-&lt;li&gt;_&lt;em&gt;Producto no entregado&lt;/em&gt;*_: el tarjetahabiente indica que no ha recibido el producto o servicio objeto del cargo realizado a su tarjeta de crédito.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;em&gt;Producto no entregado&lt;/em&gt;*&lt;/em&gt;: el tarjetahabiente indica que no ha recibido el producto o servicio objeto del cargo realizado a su tarjeta de crédito.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Producto no aceptable&lt;/strong&gt;&lt;/em&gt;: el tarjetahabiente alega no haber recibido el producto o servicio en las condiciones esperadas.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Duplicado&lt;/strong&gt;&lt;/em&gt;: el tarjetahabiente indica que el cargo realizado por la compra de un producto o servicio se aplicó más de una vez a su tarjeta de crédito.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Monto no corresponde&lt;/strong&gt;&lt;/em&gt;: El cargo realizado a la tarjeta de crédito no corresponde con el valor de la compra.&lt;/li&gt;
@@ -759,7 +760,6 @@ Este artículo ha sido descontinuado y no se ofrece a comercios nuevos.
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;/div&gt;
 
 &lt;h3 id=&#34;4-decisión-final-sobre-el-estado-de-la-disputa&#34;&gt;4. Decisión final sobre el estado de la disputa&lt;/h3&gt;

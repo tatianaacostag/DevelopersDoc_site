@@ -4,6 +4,7 @@
     <link>/es/payu-module-documentation/getting-started.html</link>
     <description>Recent content in Empezando... on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
     <lastBuildDate>Wed, 31 Mar 2021 08:28:16 -0500</lastBuildDate>
     
 	  <atom:link href="/es/payu-module-documentation/getting-started/index.xml" rel="self" type="application/rss+xml" />
@@ -25,7 +26,7 @@
         
         &lt;p&gt;Sigue estos pasos para iniciar sesión en tu cuenta PayU.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Ingresa a &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;. En la esquina superior derecha, encontrarás la opción para iniciar sesión. Para comercios en Colombia, esta opción se llama &lt;em&gt;PayU Login&lt;/em&gt;.&lt;br&gt;O si lo prefieres, puedes ir directamente a &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Ingresa a &lt;a href=&#34;https://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;. En la esquina superior derecha, encontrarás la opción para iniciar sesión. Para comercios en Colombia, esta opción se llama &lt;em&gt;PayU Login&lt;/em&gt;.&lt;br&gt;O si lo prefieres, puedes ir directamente a &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Login1_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;

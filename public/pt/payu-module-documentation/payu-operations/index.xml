@@ -4,6 +4,7 @@
     <link>/pt/payu-module-documentation/payu-operations.html</link>
     <description>Recent content in Operações PayU on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
     <lastBuildDate>Fri, 03 Sep 2021 16:16:41 -0500</lastBuildDate>
     
 	  <atom:link href="/pt/payu-module-documentation/payu-operations/index.xml" rel="self" type="application/rss+xml" />
@@ -157,7 +158,6 @@ Os períodos e valores explicados aqui valem apenas para transferências locais 
 &lt;li&gt;Editar (&lt;img src=&#34;../../../assets/Transfers/Transfers_10.png&#34; width=&#34;2%&#34; style=&#34;vertical-align: top;&#34;/&gt;): permite que você altere a configuração da programação.&lt;/li&gt;
 &lt;li&gt;Excluir (&lt;img src=&#34;../../../assets/Transfers/Transfers_11.png&#34; width=&#34;2%&#34; style=&#34;vertical-align: top;&#34;/&gt;): permite que você desative a programação. Depois que a programação é removida, nenhuma transferência automática pode ser criada.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;/div&gt;
 
 &lt;ol start=&#34;3&#34;&gt;

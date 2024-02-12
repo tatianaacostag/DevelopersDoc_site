@@ -4,6 +4,7 @@
     <link>/en/payu-module-documentation/payu-operations.html</link>
     <description>Recent content in PayU Operations on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Fri, 03 Sep 2021 16:16:41 -0500</lastBuildDate>
     
 	  <atom:link href="/en/payu-module-documentation/payu-operations/index.xml" rel="self" type="application/rss+xml" />
@@ -157,7 +158,6 @@ The times and amounts explained here apply only for local transfer (into the sam
 &lt;li&gt;Edit (&lt;img src=&#34;../../../assets/Transfers/Transfers_10.png&#34; width=&#34;2%&#34; style=&#34;vertical-align: top;&#34;/&gt;): allows you to change the configuration of the schedule.&lt;/li&gt;
 &lt;li&gt;Delete (&lt;img src=&#34;../../../assets/Transfers/Transfers_11.png&#34; width=&#34;2%&#34; style=&#34;vertical-align: top;&#34;/&gt;): allows you to deactivate the schedule. Once the schedule is removed, no automatic transfers can be created.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;/div&gt;
 
 &lt;ol start=&#34;3&#34;&gt;

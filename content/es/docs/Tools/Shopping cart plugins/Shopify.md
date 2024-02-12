@@ -44,6 +44,7 @@ Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:
 ![](/assets/ShopifyReverseIntegration/imagen2.png)
 
 
+
 ![](/assets/ShopifyReverseIntegration/imagen7.png)
 
 

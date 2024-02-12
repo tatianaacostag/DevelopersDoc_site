@@ -4,6 +4,7 @@
     <link>/es/docs/tools.html</link>
     <description>Recent content in Herramientas on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
     <lastBuildDate>Wed, 07 Apr 2021 09:25:41 -0500</lastBuildDate>
     
 	  <atom:link href="/es/docs/tools/index.xml" rel="self" type="application/rss+xml" />
@@ -271,7 +272,13 @@ Puedes crear hasta 1000 links por archivo.
       &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://ayuda.alegra.com/es/recibe-los-pagos-de-tus-facturas-de-venta-desde-alegra-colombia-con-payu&#39;&#34;&gt;
         &lt;img src=&#34;../../../assets/ShoppingCartLogos/alegra.webp&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #00b19d;;border: 3px solid #00b19d;;&#34;&gt;
       &lt;/div&gt;
-      
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/bigcommerce.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/BigCommerceLogo.webp&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; style=&#34;cursor:default;box-shadow:initial&#34;&gt;
+        &lt;h4 class=&#34;navblock-title&#34;&gt;&lt;/h4&gt;
+        &lt;p&gt;&lt;/p&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   
@@ -344,32 +351,32 @@ Para Magento en las versiones de la 1.7.x a la 1.9.x, consulta &lt;a href=&#34;#
     &lt;tbody&gt;
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/Plugin_PayU_Magento-1.3.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/Plugin_PayU_Magento-1.3.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;Disponible para las versiones de la 1.7.x a 1.9.x.&lt;/td&gt;
        &lt;/tr&gt;
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/commerce_payulatam_1.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/commerce_payulatam_1.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;Necesitas &lt;a href=&#34;https://www.drupal.org/project/commerce_kickstart&#34; target=&#34;_blank&#34;&gt;Drupal Commerce Kickstart 7.xx&lt;/a&gt;&lt;/td&gt;
        &lt;/tr&gt;
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/vm-logo-220.png&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;VirtueMart v2+&lt;br&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-joomla-virtuemart2.6.7.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;hr&gt;VirtueMart v3.0.6&lt;br&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-joomla-virtuemart3.0.6.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;VirtueMart v2+&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart2.6.7.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;hr&gt;VirtueMart v3.0.6&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart3.0.6.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;Necesitas Joomla 2.5 con MySQL 5.1 o superior.&lt;hr style=&#34;margin-top:2.5rem;margin-bottom: 2.5rem;&#34;&gt;Necesitas Joomla versiones 3.3.6, 2.5.28 o 2.5.27.&lt;/td&gt;
        &lt;/tr&gt;
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/woocommerce.png&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/woocommerce-payu-latam-2.1.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/woocommerce-payu-latam-2.1.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;Necesitas:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;WordPress 3.8 o superior.&lt;/li&gt;&lt;li&gt;WooCommerce versión 2.0 o superior instalado en el sitio WordPress.&lt;/ul&gt;&lt;/li&gt;&lt;/td&gt;
        &lt;/tr&gt;
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/oscommerce.png&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-oscommerce.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-oscommerce.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;Disponible para la versión 2.3.&lt;/td&gt;
        &lt;/tr&gt;
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/opencart.png&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Versión 1.5.5.1 o 1.5.6.4&lt;br&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-opencart.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;hr&gt;Versión 2.0.x.x a 2.1.x.x&lt;br&gt;&lt;a href=&#34;http://developers.payulatam.com/plugins/plugin-opencart-2.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Versión 1.5.5.1 o 1.5.6.4&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;hr&gt;Versión 2.0.x.x a 2.1.x.x&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart-2.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Descargar&lt;/a&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;/td&gt;
        &lt;/tr&gt;
     &lt;/tbody&gt;
@@ -402,7 +409,7 @@ Para Magento en las versiones de la 1.7.x a la 1.9.x, consulta &lt;a href=&#34;#
 &lt;/ul&gt;
 &lt;h2 id=&#34;how-to-access-the-payu-module&#34;&gt;¿Cómo acceder al Módulo PayU?&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Ingresa a nuestra página web&lt;/strong&gt;&lt;br&gt;Ingresa a &lt;a href=&#34;http://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;, en la esquina superior derecha, encontrarás la opción para iniciar sesión. Para comercios en Colombia, esta opción se llama &lt;em&gt;PayU Login&lt;/em&gt;.&lt;br&gt;O si lo prefieres, puedes ir directamente a &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ingresa a nuestra página web&lt;/strong&gt;&lt;br&gt;Ingresa a &lt;a href=&#34;https://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;, en la esquina superior derecha, encontrarás la opción para iniciar sesión. Para comercios en Colombia, esta opción se llama &lt;em&gt;PayU Login&lt;/em&gt;.&lt;br&gt;O si lo prefieres, puedes ir directamente a &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Login1_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
@@ -423,8 +430,8 @@ Para Magento en las versiones de la 1.7.x a la 1.9.x, consulta &lt;a href=&#34;#
       <description>
         
         
-        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;¿Qué es una Disputa?&lt;/h2&gt;
-&lt;p&gt;Tus compradores pueden presentar una reclamación al banco de emisor de su tarjeta. El banco nos envía una notificación de disputa para determinar la validez de la compra y nosotros la creamos en nuestro sistema. Luego de la creación, te notificamos a través del Módulo PayU.&lt;/p&gt;
+        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;¿Qué es una disputa?&lt;/h2&gt;
+&lt;p&gt;Tus compradores pueden presentar una reclamación al banco emisor de su tarjeta. El banco nos envía una notificación de disputa para determinar la validez de la compra y nosotros la creamos en nuestro sistema. Luego de la creación, te notificamos a través del Módulo PayU.&lt;/p&gt;
 &lt;p&gt;La disputa congela el valor total de la venta en tu cuenta PayU.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_es.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;¿Por qué ocurre una disputa?&lt;/h2&gt;
