@@ -20,7 +20,7 @@ BigCommerce es una plataforma de comercio digital que te permite crear rápidame
 1. Instala la aplicación desde BigCommerce Marketplace haciendo clic en el botón de instalación.
 
 
-![](/assets/BigCommerceFinal/howtoinstall1.png)
+![](/assets/BigCommerce/Update1.png)
 
 
 
@@ -31,7 +31,7 @@ BigCommerce es una plataforma de comercio digital que te permite crear rápidame
 2. Haz clic en la casilla de verificación y en el botón "Confirmar" para finalizar la instalación.
 
 
-![](/assets/BigCommerceFinal/howtoinstall2.png)
+![](/assets/BigCommerce/Update2.png)
 
 
 
@@ -42,7 +42,7 @@ BigCommerce es una plataforma de comercio digital que te permite crear rápidame
 3. Una vez tengas la app instalada, verás la interfaz de la aplicación de la siguiente manera:
 
 
-![](/assets/BigCommerceFinal/howtoinstall3.png)
+![](/assets/BigCommerce/Update3.png)
 
 
 
@@ -59,7 +59,7 @@ Esta sección te explicará cómo configurar los métodos de pago que se mostrar
 1. Después de instalar la aplicación selecciona **Habilitar PayU Latam** para permitir la app en la tienda BigCommerce.
 
 
-![](/assets/BigCommerceFinal/comoutilizarestaextension1.png)
+![](/assets/BigCommerce/Update4.png)
 
 
 
@@ -70,7 +70,7 @@ Esta sección te explicará cómo configurar los métodos de pago que se mostrar
 2. Selecciona un título personalizado para la opción de pago con tarjeta (por ejemplo, Pagar con tarjeta). Este título será visible en la página de pago para tus clientes.
 
 
-![](/assets/BigCommerceFinal/comoutilizarestaextension2.png)
+![](/assets/BigCommerce/Update5.png)
 
 
 
@@ -85,7 +85,7 @@ Esta sección te explicará cómo configurar los métodos de pago que se mostrar
 
 
 
-![](/assets/BigCommerceFinal/comoutilizarestaextension3.png)
+![](/assets/BigCommerce/Update6.png)
 
 
 
@@ -104,10 +104,10 @@ Si el comercio desea permitir métodos de pago alternativos (efectivo y transfer
 4. Utiliza el botón "Add provider" para añadir la cuenta de procesamiento de un país específico de PayU Latam. Cada configuración puede ser habilitada/deshabilitada desde la interfaz de la app usando el botón de “Status” respectivo. También puedes hacer clic en "Editar" para actualizar las credenciales, y recuerda que en la configuración de tus cuentas podrás elegir si quieres usarlas en modo prueba o en ambiente productivo.
 
 
-![](/assets/BigCommerceFinal/comoutilizarestaextension4.png)
+![](/assets/BigCommerce/Update7.png)
 
 
-![](/assets/BigCommerceFinal/comoutilizarestaextension5.png)
+![](/assets/BigCommerce/Update8.png)
 
 
 
@@ -146,7 +146,7 @@ Para agregar una nueva configuración, especifica los siguientes campos obligato
 
 * Para el flujo en dos pasos, selecciona **Capture on Shipment**.
 
-![](/assets/BigCommerceFinal/comoutilizarestaextension6.png)
+![](/assets/BigCommerce/Update9.png)
 
 Consulte el siguiente [enlace](https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows) para obtener más información sobre los flujos de pago.
 
@@ -157,7 +157,7 @@ La opción de procesar en más de un paso sólo se aplica a pagos con tarjeta (s
 
 {{% alert title="Nota" color="info"%}}
 Las opciones multi-tienda estarán visibles debajo de la sección de opciones de pago.
-![](/assets/BigCommerceFinal/comoutilizarestaextension7.png)
+![](/assets/BigCommerce/Update10.png)
 {{% /alert %}} 
 
 
@@ -170,7 +170,7 @@ Las opciones multi-tienda estarán visibles debajo de la sección de opciones de
 
 1. Para acceder al panel de pedidos, haz clic en el botón ‘Order Dashboard’.
 
-![](/assets/BigCommerceFinal/comoutilizarestaextension8.png)
+![](/assets/BigCommerce/Update11.png)
 
 
 
@@ -247,7 +247,7 @@ Recuerda que puedes seleccionar un título personalizado para la opción de pago
 
 * Order Dashboard de BigCommerce: **_PayU Latam > Order Dashboard_**
 
-![](/assets/BigCommerceFinal/comoutilizarestaextension8.png)
+![](/assets/BigCommerce/Update11.png)
 
 * Módulo administrativo de PayU: En el módulo de **_Reporte de Ventas_**.
 
