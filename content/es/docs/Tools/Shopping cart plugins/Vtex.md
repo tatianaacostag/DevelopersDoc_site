@@ -13,7 +13,7 @@ VTEX es una plataforma de comercio digital que te permite crear una tienda en l�
 ## Prerrequisitos {#prerequisites}
 * Necesitas una cuenta activa en PayU Latam.
 * Necesitas una cuenta activa en PaymentsOS. Si no tienes una cuenta, haz clic [aquí](https://control.paymentsos.com/signup) para crearla. Todos los comercios que requieran integrar PayU con VTEX **deben** tener una cuenta en modo productivo/live en PaymentsOS.
-* Necesitas una cuenta VTEX con suficientes permisos para acceder al módulo administrativo de VTEX. Esta cuenta debe tener habilitado la autenticación en dos factores.
+* Necesitas una cuenta VTEX con suficientes permisos para acceder al módulo administrativo de VTEX. Esta cuenta debe tener habilitada la autenticación en dos factores.
 
 {{% alert title="Nota" color="info"%}}
 Una vez crees la cuenta, esta será creada por defecto en modo test, para activar la cuenta en modo productivo/live debes realizar la solicitud comunicándote con tu gerente de cuenta.
