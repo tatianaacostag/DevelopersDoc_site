@@ -81,9 +81,9 @@ Ingresa la siguiente información:
 | configuration_data.accountId | ID de la cuenta de PayU de acuerdo al país en el que vas a vender. |
 | configuration_data.merchantId | ID de tu comercio en PayU Latam. |
 | configuration_data.paymentCountry | País de procesamiento en formato ISO 3166 Alpha-3. |
-| configuration_data.partnerID | Identificador para PayU. Poblar este valor con “ZOOZ_VTEX_V2” |
+| configuration_data.partnerID | Identificador para PayU. Poblar este valor con `ZOOZ_VTEX_V2`. |
 | configuration_data.cashRedirect | Envía `True` para asegurar el correcto flujo de órdenes con medios de pago en efectivo en VTEX. {{% alert title="Nota" color="info"%}}
-Nota: Esta configuración es importante para todos los comercios que procesen medios de pago en efectivo con VTEX {{% /alert %}} |
+Nota: Esta configuración es importante para todos los comercios que procesen medios de pago en efectivo con VTEX. {{% /alert %}} |
 
 {{% alert title="Nota" color="info"%}}
 El parámetro `provider_id` es llenado automáticamente por la respuesta del método `2. Retrieve PayU Latam ID`. No cambies este valor.
