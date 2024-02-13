@@ -626,13 +626,13 @@ Un pedido autorizado se puede cancelar utilizando el botón &lt;em&gt;&lt;strong
 &lt;li&gt;Selecciona la tienda en la cual quieres instalar la app de las opciones que aparecen en pantalla y serás redireccionado a otra página en donde debes hacer clic en “Install app”.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen700.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Ingresa las credenciales de tu tienda para el ambiente de test y de producción (Merchand Id y Account Id).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Recuerda que puedes encontrar tus credenciales de ambiente de producción ingresando a tu módulo administrativo de PayU. Una vez inicies sesión encontrarás el merchant ID (1) y el account ID (2) en la parte superior izquierda del módulo, tal como se muestra en la siguiente imagen de referencia:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen800.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -654,8 +654,8 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Serás dirigido a la sección llamada “Pagos”. Allí, selecciona “Activate PayU Latam v2” en la esquina inferior derecha.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen900.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen100.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
@@ -665,8 +665,8 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 &lt;li&gt;Modo test: Dentro de la misma sección de “pagos”, encontrarás la opción para utilizar el modo test que te permitirá hacer pruebas en ambiente Sandbox.&lt;/li&gt;
 &lt;li&gt;Te recomendamos usar el ambiente test de forma controlada, preferiblemente en un horario de baja transaccionalidad, ya que las transacciones que se procesen mientras estes en modo de test no generan un pago real y el ambiente productivo queda desactivado.&lt;/li&gt;
 &lt;li&gt;Para deshabilitar el modo test, retira el check y guarda los cambios.
-&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen11.png&#34; alt=&#34;&#34;&gt;
-&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen12.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen110.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen120.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -674,7 +674,7 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Activa la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen130.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;A partir de este momento, tienes a PayU instalado como procesador de pagos y puedes comenzar tus ventas. Tus clientes pueden hacer compras utilizando el Web Checkout de PayU a través de métodos de pago como efectivo, tarjetas de crédito y transferencias bancarias (dependiendo del país en el que estés vendiendo).&lt;/li&gt;
@@ -727,26 +727,26 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
 &lt;ol&gt;
 &lt;li&gt;Instala la aplicación desde BigCommerce Marketplace haciendo clic en el botón de instalación.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Haz clic en la casilla de verificación y en el botón &amp;ldquo;Confirmar&amp;rdquo; para finalizar la instalación.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Una vez tengas la app instalada, verás la interfaz de la aplicación de la siguiente manera:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;cómo-usar-esta-extensión&#34;&gt;Cómo usar esta extensión&lt;/h2&gt;
 &lt;h3 id=&#34;configura-los-métodos-de-pago&#34;&gt;Configura los métodos de pago&lt;/h3&gt;
 &lt;p&gt;Esta sección te explicará cómo configurar los métodos de pago que se mostrarán en el sitio web para el pago. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;Consulta nuestros métodos de pago disponibles&lt;/a&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Después de instalar la aplicación selecciona &lt;strong&gt;Habilitar PayU Latam&lt;/strong&gt; para permitir la app en la tienda BigCommerce.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Selecciona un título personalizado para la opción de pago con tarjeta (por ejemplo, Pagar con tarjeta). Este título será visible en la página de pago para tus clientes.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Elige la forma en que deseas que se muestren las opciones de pago con tarjeta disponibles. Puedes elegir una de las siguientes opciones:&lt;/li&gt;
 &lt;/ol&gt;
@@ -754,7 +754,7 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
 &lt;li&gt;Mostrar Powered by PayU Latam y logo en el formulario de pago&lt;/li&gt;
 &lt;li&gt;Mostrar el logo de la tarjeta de crédito en la página de pago&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
@@ -765,8 +765,8 @@ Si el comercio desea permitir métodos de pago alternativos (efectivo y transfer
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Utiliza el botón &amp;ldquo;Add provider&amp;rdquo; para añadir la cuenta de procesamiento de un país específico de PayU Latam. Cada configuración puede ser habilitada/deshabilitada desde la interfaz de la app usando el botón de “Status” respectivo. También puedes hacer clic en &amp;ldquo;Editar&amp;rdquo; para actualizar las credenciales, y recuerda que en la configuración de tus cuentas podrás elegir si quieres usarlas en modo prueba o en ambiente productivo.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Para agregar una nueva configuración, especifica los siguientes campos obligatorios:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -813,7 +813,7 @@ Si el comercio desea permitir métodos de pago alternativos (efectivo y transfer
 &lt;p&gt;Para el flujo en dos pasos, selecciona &lt;strong&gt;Capture on Shipment&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Consulte el siguiente &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows&#34;&gt;enlace&lt;/a&gt; para obtener más información sobre los flujos de pago.&lt;/p&gt;
 
 
@@ -827,14 +827,14 @@ La opción de procesar en más de un paso sólo se aplica a pagos con tarjeta (s
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
 Las opciones multi-tienda estarán visibles debajo de la sección de opciones de pago.
-&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension7.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Update10.png&#34; alt=&#34;&#34;&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&#34;gestiona-tus-pedidos&#34;&gt;Gestiona tus pedidos&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Para acceder al panel de pedidos, haz clic en el botón ‘Order Dashboard’.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;La tabla del panel de pedidos mostrará los estados de pago del pedido realizado.&lt;/li&gt;
 &lt;/ol&gt;
@@ -887,7 +887,7 @@ Recuerda que puedes seleccionar un título personalizado para la opción de pago
 &lt;ul&gt;
 &lt;li&gt;Order Dashboard de BigCommerce: &lt;strong&gt;&lt;em&gt;PayU Latam &amp;gt; Order Dashboard&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Update11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Módulo administrativo de PayU: En el módulo de &lt;strong&gt;&lt;em&gt;Reporte de Ventas&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;

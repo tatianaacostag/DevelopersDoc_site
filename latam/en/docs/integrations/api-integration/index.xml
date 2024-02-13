@@ -31133,7 +31133,7 @@ If the schema is not validated, the integration is not affected, and you only ne
 &lt;/ul&gt;
 &lt;h3 id=&#34;mexico&#34;&gt;Mexico&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;The minimum time to send a void is 10 minutes after the authorization and the maximum is 30 days. If the transaction was made with American Express, the maximum time is seven (7) days.&lt;br&gt;If no void or capture is sent after this time, the transaction is auto-voided.&lt;/li&gt;
+&lt;li&gt;The minimum time to send a void is 10 minutes after the authorization and the maximum is 30 days. If the transaction was made with American Express, the maximum time is seven (7) days. If no void or capture is sent after this time, the transaction is auto-voided.&lt;/li&gt;
 &lt;li&gt;The minimum time to send a refund is 10 minutes after the approval and the maximum is 175 days. If the transaction was processed by Bancomer, the maximum time is 40 days.&lt;/li&gt;
 &lt;li&gt;When a refund is approved, the payer gets the money back in 30 working days.&lt;/li&gt;
 &lt;li&gt;Refunds with decimals are not supported.&lt;/li&gt;
