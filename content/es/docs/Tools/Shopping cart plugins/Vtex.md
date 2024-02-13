@@ -21,6 +21,7 @@ Una vez crees la cuenta, esta será creada por defecto en modo test, para activa
 Ten en cuenta que debes incluir la siguiente información en tu solicitud: 
 * Merchant ID de tu cuenta LATAM (para encontrarlo, consulta [aquí](https://developers.payulatam.com/latam/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids)).
 * PaymentsOS accountID que encontrarás en el panel de control de PaymentsOS tal como se muestra a continuación:
+
 ![PrintScreen](/assets/VTEX/VTEX_30.png)
 {{% /alert %}}
 
@@ -121,11 +122,14 @@ Sigue estos pasos para configurar tu cuenta utilizando el panel de control de Pa
 1. Crea la Configuración de proveedor.<br>
 En el panel de control de PaymentsOS, expande el menú _**Cuenta**_, luego selecciona _**Servicios**_.
 
+
 ![PrintScreen](/assets/VTEX/VTEX_01_es.png)
+
 
 Utiliza el campo _**Buscar**_ en la sección _**Crea una nueva configuración de proveedor**_ e ingresa _PayU_ para encontrar el proveedor _PayU Latam_.
 
 ![PrintScreen](/assets/VTEX/VTEX_02_es.png)
+
 
 Ingresa la siguiente información para la _**Configuración de proveedor**_:
 
@@ -181,7 +185,7 @@ En este punto, has configurado tu cuenta de PaymentsOS como middleware, el sigui
 Una vez hayas configurado tu cuenta de PaymentsOS, el siguiente paso es la configuración del proveedor de VTEX para cada método de pago. Para este paso, es obligatorio que tengas un usuario válido para acceder al admin de VTEX.
 
 #### Configurar la afiliación de Gateway {#configure-the-gateway-affiliation}
-Antes de configurar la _**afiliación de Gateway**_, asegurate de haber configurado FingerPrint para PayU. Para esto, consulta este [artículo](https://help.vtex.com/es/tutorial/configurar-fingerprint-para-payu).
+Antes de configurar la _**afiliación de Gateway**_, asegúrate de haber configurado FingerPrint para PayU. Para esto, consulta este [artículo](https://help.vtex.com/es/tutorial/configurar-fingerprint-para-payu).
 
 1. En el admin de VTEX, expande el menú _**Pagos**_ dentro del grupo _**Transacciones**_. Luego, selecciona _**Configuración**_.
 
