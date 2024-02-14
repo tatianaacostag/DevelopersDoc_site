@@ -74,8 +74,4 @@ Cuando termines, haz clic en _**Enviar a revisión**_.
 8. En este punto, enviamos los documentos al banco emisor o a la red que procesó la transacción, quienes supervisan la resolución del caso.<br><br>
 El resultado de a disputa puede ser ganada (sin contracargos), perdida (contracargo) o reembolso. En el caso de reembolso, la tienda lo realiza y el banco no crea el contracargo. Consulta los [estados de las disputas]({{< ref "Disputes.md#dispute-states" >}}) para saber todos sus posibles estados.
 
-{{% alert title="Nota" color="info"%}}
-Si tienes activada la [Garantía Antifraude]({{< ref"Antifraud-Guarantee.md" >}}), cuando el contracargo es sujeto a ser cubierto por la garantía PayU asume los valores debitados de tu cuenta. En este caso, el estado de la disputa es _Contracargo_ (perdida) _Con garantía antifraude_. 
-{{% /alert %}}
-
 Cuando la entidad financiera comunica el resultado de la disputa, el caso se actualiza automáticamente en el Módulo PayU.

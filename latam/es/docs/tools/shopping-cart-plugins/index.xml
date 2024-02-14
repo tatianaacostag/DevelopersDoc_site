@@ -66,7 +66,9 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;div class=&#34;postman-run-button&#34;
 data-postman-action=&#34;collection/import&#34;
-data-postman-var-1=&#34;400731dd3ca5aa713cd3&#34;&gt;&lt;/div&gt;
+data-postman-visibility=&#34;public&#34;
+data-postman-var-1=&#34;32817672-5295ab7d-32e5-4563-89f7-62c6a32ae773&#34;
+data-postman-collection-url=&#34;entityId=32817672-5295ab7d-32e5-4563-89f7-62c6a32ae773&amp;entityType=collection&amp;workspaceId=34b660f6-497b-4504-afcc-11eb3025d8a9&#34;&gt;&lt;/div&gt;
 &lt;script type=&#34;text/javascript&#34;&gt;
   (function (p,o,s,t,m,a,n) {
     !p[s] &amp;&amp; (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
@@ -261,7 +263,7 @@ En el panel de control de PaymentsOS, expande el menú &lt;em&gt;&lt;strong&gt;C
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Cuando termines, haz clic en &lt;em&gt;&lt;strong&gt;Crear&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_03_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX32ES.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Crea la Unidad de Negocio.&lt;br&gt;
 En el panel de control de PaymentsOS dashboard, expande el menú &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt;, luego selecciona &lt;em&gt;&lt;strong&gt;Unidades de Negocio&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
@@ -327,7 +329,7 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;En la configuración del conector, debes instalarlo haciendo clic en el botón &lt;em&gt;&lt;strong&gt;Instalar app&lt;/strong&gt;&lt;/em&gt;. Luego, ingresa la siguiente información.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_11_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX33ES.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -381,7 +383,7 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Idioma&lt;/td&gt;
-&lt;td&gt;Selecciona el idioma en el que deseas sean emitidas las órdenes, los idiomas soportados son: Español, inglés y portugués.&lt;/td&gt;
+&lt;td&gt;Selecciona el idioma en el que deseas sean emitidas las órdenes, los idiomas soportados son:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Español&lt;/li&gt;&lt;li&gt;Inglés&lt;/li&gt;&lt;li&gt;Portugués&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Expiración pago (días)&lt;/td&gt;

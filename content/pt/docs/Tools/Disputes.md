@@ -106,10 +106,6 @@ Quando uma disputa é relatada, é criada uma entidade de disputa para a transa�
 | Expirada | Após 120 dias sem resposta do banco, o valor é definido como disponível para o vendedor. |
 | Devolvida | Este processo ocorre quando a loja autoriza a reversão da operação, evitando que a loja tenha que pagar uma transação de estorno, que é substituída por um reembolso. |
 
-{{% alert title="Observação" color="info"%}}
-Se você ativou [Garantia Antifraude]({{< ref"Antifraud-Guarantee.md" >}}), quando o estorno estiver sujeito à cobertura da garantia, o PayU assume os valores debitados de sua conta. Neste caso, o status desta disputa é _Contracargada_ (Perda) _Com garantia antifraude_. 
-{{% /alert %}}
-
 ## Dicas antifraude para o seu negócio {#anti-fraud-tips-for-your-business}
 Combater a fraude digital é nosso dever! Lembre-se das seguintes dicas:
 1. Cuidado com um aumento nas compras ou solicitações de serviço maior do que o esperado, dada a natureza do seu negócio.

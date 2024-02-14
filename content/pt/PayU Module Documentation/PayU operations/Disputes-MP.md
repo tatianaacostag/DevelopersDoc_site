@@ -74,8 +74,4 @@ Quando terminar, clique em _**Enviar para revisão**_.
 8. Nesse momento, enviamos os documentos ao banco emissor ou à rede que processou a transação, de quem depende a resolução do caso.<br><br>
 O caso de disputa pode resultar em ganho (sem estorno), perda (estorno) ou reembolso. No caso de devoluções, a loja é que faz a devolução ao comprador e o banco não gera o estorno. Consulte [estados de disputa]({{< ref "Disputes.md#dispute-states" >}}) para conhecer todos os estados de uma disputa.
 
-{{% alert title="Observação" color="info"%}}
-Se você ativou [Garantia Antifraude]({{< ref"Antifraud-Guarantee.md" >}}), quando o estorno estiver sujeito à cobertura da garantia, o PayU assume os valores debitados de sua conta. Neste caso, o status desta disputa é _Contracargada_ (Perda) _Com garantia antifraude_. 
-{{% /alert %}}
-
 Quando a entidade financeira comunica o resultado da disputa, o caso é atualizado automaticamente no Módulo PayU.

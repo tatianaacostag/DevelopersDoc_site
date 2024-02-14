@@ -106,10 +106,6 @@ When a dispute is reported, a dispute entity for the associated transaction is c
 | Expired | After past 120 days without a response from the bank, the amount is set to available for the merchant. |
 | Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. |
 
-{{% alert title="Note" color="info"%}}
-If you have activated [Anti-fraud Guarantee]({{< ref"Antifraud-Guarantee.md" >}}), when the chargeback is subject to be covered by the guarantee, PayU assumes the values debited from your account. In this case, the status of this dispute is _Chargeback_ (Lost) _With antifraud guarantee_. 
-{{% /alert %}}
-
 ## Anti-fraud tips for your business
 Fight against the digital fraud it's our duty!. Take into account the following tips:
 1. Be wary of an increase in purchases or service requests higher than expected due to the nature of your business.

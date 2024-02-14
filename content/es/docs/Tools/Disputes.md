@@ -105,10 +105,6 @@ Cuando se notifica una disputa, se crea una entidad disputa para la transacción
 | Expirada | Luego de pasados 120 días sin respuesta del banco, el monto de la disputa queda disponible para el comercio. |
 | Reembolsada | Este procesos ocurre cuando el comercio autoriza reversar la operación bajo su propia voluntad, esto previene que la tienda tenga que pagar un contracargo y se reemplace por un reembolso. |
 
-{{% alert title="Nota" color="info"%}}
-Si tienes activada la [Garantía antifraude]({{< ref"Antifraud-Guarantee.md" >}}), cuando el contracargo es sujeto a cobertura, PayU asume los valores debitados de tu cuenta. En este caso, el estado de la disputa es _Contracargada_ (Perdida) _Aplica garantía antifraude_. 
-{{% /alert %}}
-
 ## Consejos antifraude para tu negocio {#anti-fraud-tips-for-your-business}
 ¡Luchar contra el fraude digital es nuestro deber!. Ten en cuenta los siguientes consejos:
 1. Ten cuidado con un aumento en las compras o solicitudes de servicio mayor de lo esperado dada a la naturaleza de tu negocio.
