@@ -147,7 +147,7 @@ Ingresa la siguiente información para la _**Configuración de proveedor**_:
 
 Cuando termines, haz clic en _**Crear**_.
 
-![PrintScreen](/assets/VTEX/VTEX_03_es.png)
+![PrintScreen](/assets/VTEX/VTEX32ES.png)
 
 2. Crea la Unidad de Negocio.<br>
 En el panel de control de PaymentsOS dashboard, expande el menú _**Cuenta**_, luego selecciona _**Unidades de Negocio**_.
@@ -205,7 +205,7 @@ Asegúrate de seleccionar el conector _**PayUv2**_, el procedimiento explicado e
 
 4. En la configuración del conector, debes instalarlo haciendo clic en el botón _**Instalar app**_. Luego, ingresa la siguiente información.
 
-![PrintScreen](/assets/VTEX/VTEX_11_es.png)
+![PrintScreen](/assets/VTEX/VTEX33ES.png)
 
 {{% alert title="Nota" color="info"%}}
 La información del conector puede ser obtenida a través de lo siguiente:
@@ -223,7 +223,7 @@ La información del conector puede ser obtenida a través de lo siguiente:
 | Periodo de tiempo programado en horas para la captura automática | Este campo aparece cuando seleccionas `Programado: establece cuándo se realizará la captura automática` como el método de captura del pago; selecciona el periodo programado que deseas configurar de acuerdo con tu configuración. Este valor debe ser entero, por lo tanto, no se permiten decimales. |
 | Tipo Autorizacion | Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.<br><ul style="margin-bottom: initial;"><li>Para flujos de un paso, selecciona `Autorizacion y Captura`.</li><li>Para flujos de dos pasos, selecciona `Pre-Autorizacion`.</li></ul><br>Consulta el siguiente [enlace]({{< ref "payments.md#payment-flows" >}}) para conocer más de flujos de pago. |
 | Public Key | Llave de API Pública de la _**Unidad de negocio**_. |
-| Idioma | Selecciona el idioma en el que deseas sean emitidas las órdenes, los idiomas soportados son: Español, inglés y portugués. |
+| Idioma | Selecciona el idioma en el que deseas sean emitidas las órdenes, los idiomas soportados son:<br><ul style="margin-bottom: initial;"><li>Español</li><li>Inglés</li><li>Portugués</li></ul> |
 | Expiración pago (días) | Hace referencia a la cantidad de días que se desea personalizar para pagos en efectivo. <br> **Importante:** Este valor debe coincidir con el configurado en el medio de pago en el campo _**Validez del pagaré**_ explicado en la sección [Configurar medios de pago en efectivo]({{< ref "#configure-cash-payment-methods" >}}) de esta documentación. |
 | ¿Activar split y enviar receptores?  | Selecciona `No` en este campo. |
 
