@@ -12,8 +12,18 @@ VTEX is an enterprise digital commerce platform that allows you to create an onl
 
 ## Prerequisites
 * You need an active account in PayU Latam.
-* You need an active account in PaymentsOS. If you don't have an account, click [here](https://control.paymentsos.com/signup) to create one.<br>All the commerces that require to integrate PayU with VTEX **must** have an account in PaymentsOS.
-* You need an account with enough rights and permissions to access the VTEX admin. This account must have enabled the two-factor authentication.
+* You need an active account in PaymentsOS. If you don't have an account, click [here](https://control.paymentsos.com/signup) to create one.<br>All the merchants that require to integrate PayU with VTEX **must** have a PaymentsOS account in productive/live mode.
+* You require a VTEX account with sufficient rights and permissions to access the VTEX administrative panel. This account must have two-factor authentication enabled.
+
+{{% alert title="Note" color="info"%}}
+After the account is created, it will be set to test mode by default. To activate the account in productive/live mode, you must submit a request by contacting your account manager.
+
+Please ensure that your request includes the following information: 
+* Merchant ID of your LATAM account (refer to this [link](https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids) for its location).
+* PaymentsOS accountID,  which you can find in the PaymentsOS control panel as follows:
+
+![PrintScreen](/assets/VTEX/VTEX_30.png)
+{{% /alert %}}
 
 ## Configuration procedure
 The procedure to enable payment methods in VTEX processed by our gateway is divided in two steps. Before moving on, make sure you have meet the prerequisites above.
@@ -34,7 +44,7 @@ Follow these steps to configure your account using Postman.
 
 1. Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you).
 
-{{< postman/postman_vtex >}}
+{{< postman/postman_vtex2024 >}}
 <br>
 
 2. After you run the collection, you need to set the globals. Download the globals file <a href="/assets/globals/VTEX Hub.postman_globals.json" download>here</a>.

@@ -44,7 +44,7 @@ Sigue estos pasos para configurar tu cuenta utilizando Postman.
 
 1. Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona).
 
-{{< postman/postman_vtex >}}
+{{< postman/postman_vtex2024 >}}
 <br>
 
 2. Luego de ejecutar la colección, necesitas configurar los globales. Descarga el archivo de globales <a href="/assets/globals/VTEX Hub.postman_globals.json" download>aquí</a>.

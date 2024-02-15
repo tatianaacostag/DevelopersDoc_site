@@ -308,43 +308,14 @@ Você pode criar até 1000 links por arquivo.
 Alguns dos links acima podem aparecer em espanhol ou em inglês.
 &lt;/div&gt;
 
-&lt;h2 id=&#34;configuration-through-partners&#34;&gt;Configuração através de parceiros&lt;/h2&gt;
-&lt;p&gt;Aprenda a instalar, configurar e personalizar o PayU em seu site de e-commerce com a orientação e assistência de nossos parceiros.&lt;/p&gt;
-&lt;p&gt;Guias disponíveis:&lt;/p&gt;
-&lt;table&gt;
-    &lt;thead&gt;
-       &lt;tr&gt;
-          &lt;th&gt;Carrinho de compras&lt;/th&gt;
-          &lt;th&gt;Guia do parceiro&lt;/th&gt;
-          &lt;th&gt;Suporte&lt;/th&gt;
-       &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-       &lt;tr&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34;&gt;&lt;i&gt;Versão 2&lt;/i&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;text-align: center&#34;&gt;&lt;a href=&#34;https://docs.eloom.tech/pt/payment/payu-latam&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Veja o guia&lt;/a&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;mailto:suporte@eloom.com.br&#34; target=&#34;_blank&#34;&gt;suporte@eloom.com.br&lt;/a&gt;&lt;/td&gt;
-       &lt;/tr&gt;
- &lt;/table&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-Para as versões 1.7.x a 1.9.x do Magento, consulte &lt;a href=&#34;#plugins-for-modules&#34;&gt;Plugins para módulos&lt;/a&gt;.
-&lt;/div&gt;
-
 &lt;h2 id=&#34;plugins-for-modules&#34;&gt;Plugins para módulos&lt;/h2&gt;
 &lt;p&gt;Se você usa um carrinho de compras open source, baixe e use os plugins que desenvolvemos para facilitar o processo de integração com o sistema de pagamento.&lt;/p&gt;
 &lt;p&gt;Plug-ins disponíveis:&lt;/p&gt;
 &lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
   &lt;div class=&#34;row&#34;&gt;
-    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/magento.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
-      &lt;p style=&#34;margin-bottom: initial;&#34;&gt;&lt;sup&gt;&lt;i&gt;*&lt;/i&gt;&lt;/sup&gt;&lt;/p&gt;
-    &lt;/div&gt;
     &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/drupal.html&#39;&#34;&gt;
-      &lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
-    &lt;/div&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;      
+    &lt;/div&gt;    
     &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/virtuemart.html&#39;&#34;&gt;
       &lt;img src=&#34;../../../assets/ShoppingCartLogos/vm-logo-220.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
     &lt;/div&gt;
@@ -363,7 +334,6 @@ Para as versões 1.7.x a 1.9.x do Magento, consulte &lt;a href=&#34;#plugins-for
 
 
 
-&lt;p&gt;&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Disponível para versões de 1.7.x a 1.9.x.&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;plugin-files&#34;&gt;Arquivos de plug-in&lt;/h3&gt;
 &lt;p&gt;Encontre a versão mais recente do plug-in na tabela a seguir&lt;/p&gt;
 &lt;table&gt;
@@ -374,12 +344,7 @@ Para as versões 1.7.x a 1.9.x do Magento, consulte &lt;a href=&#34;#plugins-for
           &lt;th&gt;Observações&lt;/th&gt;
        &lt;/tr&gt;
     &lt;/thead&gt;
-    &lt;tbody&gt;
-       &lt;tr&gt;
-          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/Magento.svg&#34;&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/Plugin_PayU_Magento-1.3.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
-          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Disponível para versões de 1.7.x a 1.9.x.&lt;/td&gt;
-       &lt;/tr&gt;
+    &lt;tbody&gt;       
        &lt;tr&gt;
           &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34;&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/commerce_payulatam_1.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
@@ -597,13 +562,6 @@ Os motivos para iniciar um processo de disputa podem variar, alguns deles são:&
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-Se você ativou &lt;a href=&#34;../../../pt/docs/tools/antifraud-guarantee.html&#34;&gt;Garantia Antifraude&lt;/a&gt;, quando o estorno estiver sujeito à cobertura da garantia, o PayU assume os valores debitados de sua conta. Neste caso, o status desta disputa é &lt;em&gt;Contracargada&lt;/em&gt; (Perda) &lt;em&gt;Com garantia antifraude&lt;/em&gt;.
-&lt;/div&gt;
-
 &lt;h2 id=&#34;anti-fraud-tips-for-your-business&#34;&gt;Dicas antifraude para o seu negócio&lt;/h2&gt;
 &lt;p&gt;Combater a fraude digital é nosso dever! Lembre-se das seguintes dicas:&lt;/p&gt;
 &lt;ol&gt;
@@ -783,47 +741,6 @@ Esta ordem será debitada de sua conta PayU, e você deve ter saldo disponível.
 Encontre essas opções no menu de três pontos no &lt;em&gt;&lt;strong&gt;status&lt;/strong&gt;&lt;/em&gt; coluna.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/PaymentCoupons/PaymentCoupons_12_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Garantia Antifraude</title>
-      <link>/pt/docs/tools/antifraud-guarantee.html</link>
-      <pubDate>Wed, 29 Sep 2021 15:51:04 -0500</pubDate>
-      
-      <guid>/pt/docs/tools/antifraud-guarantee.html</guid>
-      <description>
-        
-        
-        &lt;p&gt;PayU assume a disputa ou suplantação dos titulares do cartão quando um processo de &lt;a href=&#34;../../../pt/docs/tools/disputes.html&#34;&gt;Disputa&lt;/a&gt; é iniciado por um cliente. Para solicitar a ativação da &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; para seu cliente, entre em contato com seu representante de vendas.&lt;/p&gt;
-&lt;h2 id=&#34;considerations&#34;&gt;Observações&lt;/h2&gt;
-&lt;p&gt;Antes de usar a &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt;, leve em conta o seguinte:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; não é oferecida por padrão. O comércio deve solicitá-la e assinar um documento onde se refletem as condições das garantias.&lt;/li&gt;
-&lt;li&gt;A ativação de &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; depende da sua atividade econômica. &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; não cobre a venda de serviços, bem como música, vídeos, MP3, livros eletrônicos, produtos oferecidos em lojas ou sites adultos, vouchers, cartões-presente; nem outros bens ou mecanismos através dos quais os referidos produtos possam ser adquiridos.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; aplica-se apenas a transações realizadas com cartão de crédito.&lt;/li&gt;
-&lt;li&gt;PayU valida a evidência do processo de disputa e determina se o estorno se aplica à &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Se você não fornecer evidências da disputa no &lt;a href=&#34;../../../pt/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;períodos especificados&lt;/a&gt;, o resultado será &lt;em&gt;Perda&lt;/em&gt; e a &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; não se aplicará.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; não se aplica a disputas iniciados devido à insatisfação do cliente com o produto adquirido.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;how-does-the-anti-fraud-guarantee-work&#34;&gt;Como funciona a garantia antifraude?&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; é aplicada de acordo com o fluxo a seguir.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Assim que PayU notificar você sobre uma &lt;a href=&#34;../../../pt/docs/tools/disputes.html&#34;&gt;Disputa&lt;/a&gt;, yvocê deve fornecer as evidências para responder a ele no &lt;a href=&#34;../../../pt/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;termos especificados&lt;/a&gt; para o seu país. Se você não fornecer evidências, a disputa será perdido, os fundos desta venda serão debitados de sua conta e a &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; não se aplicará.&lt;br&gt;Aprender &lt;a href=&#34;../../../pt/docs/tools/disputes.html#what-information-can-be-useful&#34;&gt;aqui&lt;/a&gt; quais evidências você pode fornecer para resolver a disputa.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Depois de fornecer as evidências para resolver a disputa, PayU valida se os estornos se aplicam para serem cobertos pela  &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Se os estornos se aplicarem, PayU devolve os fundos para sua conta virtual por meio de movimentações a seu critério.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;O resultado do processo &lt;em&gt;&lt;strong&gt;Garantia Antifraude&lt;/strong&gt;&lt;/em&gt; pode ser consultado no &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Módulo de disputas&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_08_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Além disso, você pode consultar essas movimentações em seu &lt;a href=&#34;../../../pt/payu-module-documentation/reports/financial-statement.html&#34;&gt;Balanço financeiro&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_09_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

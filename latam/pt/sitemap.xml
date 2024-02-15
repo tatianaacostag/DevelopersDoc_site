@@ -562,21 +562,6 @@
                 href="/pt/payu-module-documentation/getting-started/password-recovery.html"
                 />
   </url><url>
-    <loc>/pt/docs/tools/shopping-cart-plugins/magento.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/magento.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/magento.html"
-                />
-  </url><url>
     <loc>/pt/docs/integrations/api-integration/payments-api-argentina.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -1098,7 +1083,7 @@
                 />
   </url><url>
     <loc>/pt/docs/tools/shopping-cart-plugins.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-02-14T16:05:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1218,7 +1203,7 @@
                 />
   </url><url>
     <loc>/pt/payu-module-documentation/payu-operations/disputes-mp.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-02-14T16:05:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1638,7 +1623,7 @@
                 />
   </url><url>
     <loc>/pt/docs/tools/disputes.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-02-14T16:05:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1777,26 +1762,6 @@
                 href="/pt/docs/tools/payment-coupons.html"
                 />
   </url><url>
-    <loc>/pt/docs/tools/antifraud-guarantee.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/antifraud-guarantee.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/antifraud-guarantee.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/antifraud-guarantee.html"
-                />
-  </url><url>
     <loc>/pt/docs/integrations/sdk-integration/queriessdk.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -1878,7 +1843,7 @@
                 />
   </url><url>
     <loc>/pt/tags/parenttopic.html</loc>
-    <lastmod>2022-10-19T10:32:51-05:00</lastmod>
+    <lastmod>2024-02-14T16:05:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link

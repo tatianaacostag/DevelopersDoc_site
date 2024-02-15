@@ -1098,7 +1098,7 @@
                 />
   </url><url>
     <loc>/es/docs/tools/shopping-cart-plugins.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-02-14T16:05:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1218,7 +1218,7 @@
                 />
   </url><url>
     <loc>/es/payu-module-documentation/payu-operations/disputes-mp.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-02-14T16:05:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1638,7 +1638,7 @@
                 />
   </url><url>
     <loc>/es/docs/tools/disputes.html</loc>
-    <lastmod>2024-02-07T17:17:42-05:00</lastmod>
+    <lastmod>2024-02-14T16:05:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1777,26 +1777,6 @@
                 href="/es/docs/tools/payment-coupons.html"
                 />
   </url><url>
-    <loc>/es/docs/tools/antifraud-guarantee.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/antifraud-guarantee.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/antifraud-guarantee.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/antifraud-guarantee.html"
-                />
-  </url><url>
     <loc>/es/docs/integrations/sdk-integration/queriessdk.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -1878,7 +1858,7 @@
                 />
   </url><url>
     <loc>/es/tags/parenttopic.html</loc>
-    <lastmod>2022-10-19T10:32:51-05:00</lastmod>
+    <lastmod>2024-02-14T16:05:53-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
