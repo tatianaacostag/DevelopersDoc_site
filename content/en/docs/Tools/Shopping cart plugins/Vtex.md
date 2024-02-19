@@ -223,7 +223,7 @@ The information of the connector can be obtained either:
 | Expiración pago (días) | Refers to the number of days you wish to customize for cash payments. <br> **Important:** This value must match the value configured in the payment method in the  _**Promissory note validity**_ field explained in the [Configure cash payment methods]({{< ref "#configure-cash-payment-methods" >}}) section of this documentation. |
 | Enable payout split and send payment recipients? | Select `No` for this field. |
 
-When finish, click _**Save**_.
+Once done, click _**Save**_.
 
 #### Configure Payment methods
 Configure the payment methods to be displayed on the website for checkout. [Consult our available Payment methods]({{< ref "Select-your-payment-method.md" >}}).
@@ -331,19 +331,19 @@ Leave the other parameters with their default values
 ##### Configure PSE
 **Prerequisites:**
 *	This payment method only applies to merchants that have processing in Colombia.
-*	To offer PSE as a payment method, you must first make sure to install the **PSE App developed by VTEX**. If you have not already done so, go to **Account Settings > Applications > App Store** and search for **Banks for PSE**. In case you cannot find the App in the store, you can request its installation from the VTEX team through a ticket at [VTEX Support](https://help.vtex.com/en/support).
+*	To offer PSE as a payment method, you must first make sure to install the **PSE App developed by VTEX**. If you have not already done so, go to **Account Settings > Applications > App Store** and search for **Banks for PSE**. <br>In case you cannot find the App in the store, you can request its installation from the VTEX team through a ticket at [VTEX Support](https://help.vtex.com/en/support).
 * In case you have a VTEX Legacy integration, please note that VTEX must perform an additional configuration for you to set up the payment method. Contact your VTEX agent or request help through [VTEX Support](https://help.vtex.com/en/support).
 
 {{% alert title="Note" color="info"%}} 
 You can complement this section review with the information available at VTEX sites: [PSE general information](https://help.vtex.com/en/announcements/pse-medio-de-pago-para-clientes-en-colombia--4T22CHOcEV3Nb2RtkJZOFB), [Setting up payments in VTEX with PSE](https://help.vtex.com/en/tutorial/configurar-pago-con-pse--7dRChubn7TqdEyWrHQEQp6),  [Banks for PSE app](https://apps.vtex.com/vtexlatam-banks-for-pse/p).  
 {{% /alert %}}
 
-1. To configure PSE, access the administration panel of your VTEX platform and navigate to Store Settings > Payments > Settings > Payment Conditions. Then, proceed as follows:
+1. To configure PSE, access the administration panel of your VTEX platform and navigate to **Store Settings > Payments > Settings > Payment Conditions**. Then, proceed as follows:
 *	Click on the _+_ button.
 *	Under the _Other_ category, locate _PSE_.
 *	Fill out the fields displayed on the screen:
     -	Enter a descriptive name for the rule to identify this payment method.
-    -	Choose the affiliation configured to process payments with PayUV2 from the _Process with affiliation:_ dropdown menu.
+    -	Choose the affiliation configured to process payments with PayUV2 from the _Process with affiliation_ dropdown menu.
     -	Activate the payment condition in the _Status_ field.
     -	Click _Save_ to apply the settings.
 

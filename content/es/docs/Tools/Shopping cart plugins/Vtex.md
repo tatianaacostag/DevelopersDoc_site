@@ -351,8 +351,7 @@ Puedes complementar la revisión de esta sección con la información disponible
     -	Haz clic en _Guardar_/_Save_ para activar la configuración.
 
 <video width="630" height="300" controls>
-	<source src="/assets/VTEX/Videos/Video01.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
+	<source src="/assets/VTEX/Videos/Video01.mp4" type="video/mp4"> 	
 </video>
 
 <br>
