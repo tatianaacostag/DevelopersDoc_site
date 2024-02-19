@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/tools/shopping-cart-plugins/vtex.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-25T10:30:35-05:00" />
-<meta property="article:modified_time" content="2022-10-04T10:29:53-05:00" />
+<meta property="article:modified_time" content="2024-02-15T11:27:25-05:00" />
 
 <meta itemprop="name" content="VTEX">
 <meta itemprop="description" content="This article shows you the procedure to enable PayU on your VTEX website."><meta itemprop="datePublished" content="2021-05-25T10:30:35-05:00" />
-<meta itemprop="dateModified" content="2022-10-04T10:29:53-05:00" />
-<meta itemprop="wordCount" content="2626">
+<meta itemprop="dateModified" content="2024-02-15T11:27:25-05:00" />
+<meta itemprop="wordCount" content="2696">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="VTEX"/>
 <meta name="twitter:description" content="This article shows you the procedure to enable PayU on your VTEX website."/>
 
@@ -137,7 +137,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.8cc19747ea2d68e5ba47e5bcfec2bed45f5c7c23a5f2d88b1f071f4e988b36d5f79bb55e4995e3930065bb6e6812426313944b68036567b8c4eff5e51322a6a2.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.1bee7e55573dff9be218cd31ee48ff68b19d6c636b753de2cfe9c438cc4265a9ad43cec1affa4e472b2b25c5a76a8de18db80fc8d2d2b56bca356826224380b9.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -823,9 +823,23 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>You need an active account in PayU Latam.</li>
-<li>You need an active account in PaymentsOS. If you don&rsquo;t have an account, click <a href="https://control.paymentsos.com/signup">here</a> to create one.<br>All the commerces that require to integrate PayU with VTEX <strong>must</strong> have an account in PaymentsOS.</li>
-<li>You need an account with enough rights and permissions to access the VTEX admin. This account must have enabled the two-factor authentication.</li>
+<li>You need an active account in PaymentsOS. If you don&rsquo;t have an account, click <a href="https://control.paymentsos.com/signup">here</a> to create one.<br>All the merchants that require to integrate PayU with VTEX <strong>must</strong> have a PaymentsOS account in productive/live mode.</li>
+<li>You require a VTEX account with sufficient rights and permissions to access the VTEX administrative panel. This account must have two-factor authentication enabled.</li>
 </ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+<p>After the account is created, it will be set to test mode by default. To activate the account in productive/live mode, you must submit a request by contacting your account manager.</p>
+<p>Please ensure that your request includes the following information:</p>
+<ul>
+<li>Merchant ID of your LATAM account (refer to this <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids">link</a> for its location).</li>
+<li>PaymentsOS accountID,  which you can find in the PaymentsOS control panel as follows:</li>
+</ul>
+<p><img src="../../../../assets/VTEX/VTEX_30.png" alt="PrintScreen"></p>
+
+</div>
+
 <h2 id="configuration-procedure">Configuration procedure</h2>
 <p>The procedure to enable payment methods in VTEX processed by our gateway is divided in two steps. Before moving on, make sure you have meet the prerequisites above.</p>
 <h3 id="1-configure-your-paymentsos-account">1. Configure your PaymentsOS account</h3>
@@ -1377,9 +1391,9 @@ An authorized order can be cancelled using the <em><strong>Cancel order</strong>
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-October 4, 2022:
+February 15, 2024:
 
- <b>Change in conditions (6c65a183)</b>
+ <b>VTEX updates (1e4ec68d)</b>
 </div>
 </div>
 

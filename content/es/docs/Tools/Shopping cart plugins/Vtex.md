@@ -12,7 +12,7 @@ VTEX es una plataforma de comercio digital que te permite crear una tienda en l�
 
 ## Prerrequisitos {#prerequisites}
 * Necesitas una cuenta activa en PayU Latam.
-* Necesitas una cuenta activa en PaymentsOS. Si no tienes una cuenta, haz clic [aquí](https://control.paymentsos.com/signup) para crearla. Todos los comercios que requieran integrar PayU con VTEX **deben** tener una cuenta en modo productivo/live en PaymentsOS.
+* Necesitas una cuenta activa en PaymentsOS. Si no tienes una cuenta, haz clic [aquí](https://control.paymentsos.com/signup) para crearla.<br>Todos los comercios que requieran integrar PayU con VTEX **deben** tener una cuenta en modo productivo/live en PaymentsOS.
 * Necesitas una cuenta VTEX con suficientes permisos para acceder al módulo administrativo de VTEX. Esta cuenta debe tener habilitada la autenticación en dos factores.
 
 {{% alert title="Nota" color="info"%}}
@@ -29,18 +29,18 @@ Ten en cuenta que debes incluir la siguiente información en tu solicitud:
 El procedimiento para habilitar en VTEX los medios de pago que procesamos en nuestra plataforma se divide en dos pasos. Antes de continuar, asegúrate de cumplir con los prerrequisitos anteriores.
 
 ### 1. Configurar tu cuenta de PaymentsOS {#1-configure-your-paymentsos-account}
-La integración de PayU Latam con VTEX se realiza utilizando PaymentsOS como middleware. Como primer paso, necesitas configurar en tu cuenta de PaymentsOS los siguientes objetos.
+La integración de PayU Latam con VTEX se realiza utilizando PaymentsOS como middleware. Como primer paso, necesitas configurar en tu cuenta de PaymentsOS los siguientes ítems:
 
 * Una configuración de Proveedor.
 * Una Unidad de Negocio.
 * Un WebHook.
 
-Puedes configurar estos objetos usando una de las siguientes opciones:
+Puedes configurar los ítems usando una de las siguientes opciones:
 * [Configurar la cuenta utilizando Postman]({{< ref "#configure-the-account-using-postman" >}}).
 * [Configurar la cuenta manualmente utilizando el Panel de Control de PaymentsOS]({{< ref "#configure-the-account-manually-using-paymentsos-dashboard" >}}).
 
 #### Configurar la cuenta utilizando Postman {#configure-the-account-using-postman}
-Sigue estos pasos para configurar tu cuenta utilizando Postman.
+Sigue estos pasos para configurar tu cuenta utilizando Postman:
 
 1. Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona).
 
@@ -144,10 +144,9 @@ Ingresa la siguiente información para la _**Configuración de proveedor**_:
 | paymentCountry | País de procesamiento en formato ISO 3166 Alpha-3. |
 | cashRedirect | Selecciona `True` para asegurar el correcto flujo de órdenes con medios de pago en efectivo en VTEX. <br> **Nota:** Esta configuración es importante para todos los comercios que procesen medios de pago en efectivo con VTEX. |
 
-
 Cuando termines, haz clic en _**Crear**_.
 
-![PrintScreen](/assets/VTEX/VTEX32ES.png)
+![PrintScreen](/assets/VTEX/VTEX34ES.png)
 
 2. Crea la Unidad de Negocio.<br>
 En el panel de control de PaymentsOS dashboard, expande el menú _**Cuenta**_, luego selecciona _**Unidades de Negocio**_.
@@ -221,7 +220,7 @@ La información del conector puede ser obtenida a través de lo siguiente:
 | Application Token | Llave de API Privada de la _**Unidad de negocio**_. |
 | Captura automática de pago | Selecciona cómo quieres realizar la captura (cobro) en tu afiliación.<br><ul style="margin-bottom: initial;"><li>Para flujos en un paso, selecciona `Inmediatamente: captura automática al autorizar el pago`.</li><li>Para flujos de dos pasos, selecciona `Desactivado: no capturado automáticamente` para ejecutar la captura una vez factures la orden.</li><li>Selecciona `Programado: establece cuándo se realizará la captura automática` para configurar un tiempo en horas para capturar la orden automáticamente.</li></ul><br>Para más información, consulta [Función de captura automática personalizada (en inglés)](https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature) en la documentación de desarrolladores.<br>EL valor por defecto de esta opción es siete (7) días luego de la aprobación. |
 | Periodo de tiempo programado en horas para la captura automática | Este campo aparece cuando seleccionas `Programado: establece cuándo se realizará la captura automática` como el método de captura del pago; selecciona el periodo programado que deseas configurar de acuerdo con tu configuración. Este valor debe ser entero, por lo tanto, no se permiten decimales. |
-| Tipo Autorizacion | Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.<br><ul style="margin-bottom: initial;"><li>Para flujos de un paso, selecciona `Autorizacion y Captura`.</li><li>Para flujos de dos pasos, selecciona `Pre-Autorizacion`.</li></ul><br>Consulta el siguiente [enlace]({{< ref "payments.md#payment-flows" >}}) para conocer más de flujos de pago. |
+| Tipo Autorización | Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.<br><ul style="margin-bottom: initial;"><li>Para flujos de un paso, selecciona `Autorizacion y Captura`.</li><li>Para flujos de dos pasos, selecciona `Pre-Autorizacion`.</li></ul><br>Consulta el siguiente [enlace]({{< ref "payments.md#payment-flows" >}}) para conocer más de flujos de pago. |
 | Public Key | Llave de API Pública de la _**Unidad de negocio**_. |
 | Idioma | Selecciona el idioma en el que deseas sean emitidas las órdenes, los idiomas soportados son:<br><ul style="margin-bottom: initial;"><li>Español</li><li>Inglés</li><li>Portugués</li></ul> |
 | Expiración pago (días) | Hace referencia a la cantidad de días que se desea personalizar para pagos en efectivo. <br> **Importante:** Este valor debe coincidir con el configurado en el medio de pago en el campo _**Validez del pagaré**_ explicado en la sección [Configurar medios de pago en efectivo]({{< ref "#configure-cash-payment-methods" >}}) de esta documentación. |
@@ -326,7 +325,7 @@ Cuando configuras un método de pago en efectivo, tus clientes son redirigidos a
 
 * **Nombre**: En este parámetro, necesitar utilizar el valor mostrado [aquí]({{< ref "select-your-payment-method.html" >}}) en la columna `Parámetro paymentMethod`. Para este ejemplo, configuramos `OXXO`.
 * **Descripción**: Ingresa la descripción que desea mostrar cuando el cliente seleccione este método de pago. Este parámetro es opcional.
-* **Validez del pagaré**: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a siete días. Ten presente que, para evitar inconvenientes en el procesamiento, este valor debe coincidir con el valor seleccionado en el campo _**Expiración pago (días)**_ que configuraste en la afiliación VTEX.
+* **Validez del pagaré**: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a 7 días. Ten presente que, para evitar inconvenientes en el procesamiento, este valor debe coincidir con el valor seleccionado en el campo _**Expiración pago (días)**_ que configuraste en la afiliación VTEX.
 
 Deja los demás parámetros con sus valores por defecto.
 
