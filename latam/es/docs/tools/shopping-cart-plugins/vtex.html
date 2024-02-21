@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/tools/shopping-cart-plugins/vtex.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-25T10:30:35-05:00" />
-<meta property="article:modified_time" content="2024-02-15T11:27:25-05:00" />
+<meta property="article:modified_time" content="2024-02-19T15:42:53-05:00" />
 
 <meta itemprop="name" content="VTEX">
 <meta itemprop="description" content="Este artículo te muestra el procedimiento para habilitar PayU en tu sitio web de VTEX."><meta itemprop="datePublished" content="2021-05-25T10:30:35-05:00" />
-<meta itemprop="dateModified" content="2024-02-15T11:27:25-05:00" />
-<meta itemprop="wordCount" content="3641">
+<meta itemprop="dateModified" content="2024-02-19T15:42:53-05:00" />
+<meta itemprop="wordCount" content="3633">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="VTEX"/>
 <meta name="twitter:description" content="Este artículo te muestra el procedimiento para habilitar PayU en tu sitio web de VTEX."/>
 
@@ -137,7 +137,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.1bee7e55573dff9be218cd31ee48ff68b19d6c636b753de2cfe9c438cc4265a9ad43cec1affa4e472b2b25c5a76a8de18db80fc8d2d2b56bca356826224380b9.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.949cef027ebb55bfa2cae0730db0e3925f9daa3ac5deb8cac81a82daa23aaed3e6d36c39c70023c1ed70196d2e96d876ba0ac4097e6ef945091eafb670280d17.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -817,7 +817,7 @@
 <h2 id="prerequisites">Prerrequisitos</h2>
 <ul>
 <li>Necesitas una cuenta activa en PayU Latam.</li>
-<li>Necesitas una cuenta activa en PaymentsOS. Si no tienes una cuenta, haz clic <a href="https://control.paymentsos.com/signup">aquí</a> para crearla. Todos los comercios que requieran integrar PayU con VTEX <strong>deben</strong> tener una cuenta en modo productivo/live en PaymentsOS.</li>
+<li>Necesitas una cuenta activa en PaymentsOS. Si no tienes una cuenta, haz clic <a href="https://control.paymentsos.com/signup">aquí</a> para crearla.<br>Todos los comercios que requieran integrar PayU con VTEX <strong>deben</strong> tener una cuenta en modo productivo/live en PaymentsOS.</li>
 <li>Necesitas una cuenta VTEX con suficientes permisos para acceder al módulo administrativo de VTEX. Esta cuenta debe tener habilitada la autenticación en dos factores.</li>
 </ul>
 
@@ -837,19 +837,19 @@
 <h2 id="configuration-procedure">Procedimiento de configuración</h2>
 <p>El procedimiento para habilitar en VTEX los medios de pago que procesamos en nuestra plataforma se divide en dos pasos. Antes de continuar, asegúrate de cumplir con los prerrequisitos anteriores.</p>
 <h3 id="1-configure-your-paymentsos-account">1. Configurar tu cuenta de PaymentsOS</h3>
-<p>La integración de PayU Latam con VTEX se realiza utilizando PaymentsOS como middleware. Como primer paso, necesitas configurar en tu cuenta de PaymentsOS los siguientes objetos.</p>
+<p>La integración de PayU Latam con VTEX se realiza utilizando PaymentsOS como middleware. Como primer paso, necesitas configurar en tu cuenta de PaymentsOS los siguientes ítems:</p>
 <ul>
 <li>Una configuración de Proveedor.</li>
 <li>Una Unidad de Negocio.</li>
 <li>Un WebHook.</li>
 </ul>
-<p>Puedes configurar estos objetos usando una de las siguientes opciones:</p>
+<p>Puedes configurar los ítems usando una de las siguientes opciones:</p>
 <ul>
 <li><a href="#configure-the-account-using-postman">Configurar la cuenta utilizando Postman</a>.</li>
 <li><a href="#configure-the-account-manually-using-paymentsos-dashboard">Configurar la cuenta manualmente utilizando el Panel de Control de PaymentsOS</a>.</li>
 </ul>
 <h4 id="configure-the-account-using-postman">Configurar la cuenta utilizando Postman</h4>
-<p>Sigue estos pasos para configurar tu cuenta utilizando Postman.</p>
+<p>Sigue estos pasos para configurar tu cuenta utilizando Postman:</p>
 <ol>
 <li>Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona).</li>
 </ol>
@@ -1052,7 +1052,7 @@ En el panel de control de PaymentsOS, expande el menú <em><strong>Cuenta</stron
 </tbody>
 </table>
 <p>Cuando termines, haz clic en <em><strong>Crear</strong></em>.</p>
-<p><img src="../../../../assets/VTEX/VTEX32ES.png" alt="PrintScreen"></p>
+<p><img src="../../../../assets/VTEX/VTEX34ES.png" alt="PrintScreen"></p>
 <ol start="2">
 <li>Crea la Unidad de Negocio.<br>
 En el panel de control de PaymentsOS dashboard, expande el menú <em><strong>Cuenta</strong></em>, luego selecciona <em><strong>Unidades de Negocio</strong></em>.</li>
@@ -1163,7 +1163,7 @@ Asegúrate de seleccionar el conector <em><strong>PayUv2</strong></em>, el proce
 <td>Este campo aparece cuando seleccionas <code>Programado: establece cuándo se realizará la captura automática</code> como el método de captura del pago; selecciona el periodo programado que deseas configurar de acuerdo con tu configuración. Este valor debe ser entero, por lo tanto, no se permiten decimales.</td>
 </tr>
 <tr>
-<td>Tipo Autorizacion</td>
+<td>Tipo Autorización</td>
 <td>Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.<br><ul style="margin-bottom: initial;"><li>Para flujos de un paso, selecciona <code>Autorizacion y Captura</code>.</li><li>Para flujos de dos pasos, selecciona <code>Pre-Autorizacion</code>.</li></ul><br>Consulta el siguiente <a href="../../../../es/docs/services/payments.html#payment-flows">enlace</a> para conocer más de flujos de pago.</td>
 </tr>
 <tr>
@@ -1341,7 +1341,7 @@ No se requiere este procedimiento para <em>Boleto bancario</em> en Brasil, simpl
 <ul>
 <li><strong>Nombre</strong>: En este parámetro, necesitar utilizar el valor mostrado <a href="../../../../es/docs/getting-started/select-your-payment-method.html">aquí</a> en la columna <code>Parámetro paymentMethod</code>. Para este ejemplo, configuramos <code>OXXO</code>.</li>
 <li><strong>Descripción</strong>: Ingresa la descripción que desea mostrar cuando el cliente seleccione este método de pago. Este parámetro es opcional.</li>
-<li><strong>Validez del pagaré</strong>: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a siete días. Ten presente que, para evitar inconvenientes en el procesamiento, este valor debe coincidir con el valor seleccionado en el campo <em><strong>Expiración pago (días)</strong></em> que configuraste en la afiliación VTEX.</li>
+<li><strong>Validez del pagaré</strong>: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a 7 días. Ten presente que, para evitar inconvenientes en el procesamiento, este valor debe coincidir con el valor seleccionado en el campo <em><strong>Expiración pago (días)</strong></em> que configuraste en la afiliación VTEX.</li>
 </ul>
 <p>Deja los demás parámetros con sus valores por defecto.</p>
 <ol start="4">
@@ -1377,8 +1377,7 @@ Puedes complementar la revisión de esta sección con la información disponible
 </li>
 </ul>
 <video width="630" height="300" controls>
-	<source src="../../../../assets/VTEX/Videos/Video01.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
+	<source src="../../../../assets/VTEX/Videos/Video01.mp4" type="video/mp4"> 	
 </video>
 <br>
 </br>
@@ -1485,9 +1484,9 @@ Un pedido autorizado se puede cancelar utilizando el botón <em><strong>Cancelar
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-15 de febrero de 2024:
+19 de febrero de 2024:
 
- <b>VTEX updates (1e4ec68d)</b>
+ <b>VTEX updates (928ba00d)</b>
 </div>
 </div>
 

@@ -20,7 +20,7 @@ After the account is created, it will be set to test mode by default. To activat
 
 Please ensure that your request includes the following information: 
 * Merchant ID of your LATAM account (refer to this [link](https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids) for its location).
-* PaymentsOS accountID,  which you can find in the PaymentsOS control panel, as follows:
+* PaymentsOS accountID, which you can find in the PaymentsOS control panel, as follows:
 
 ![PrintScreen](/assets/VTEX/VTEX_30.png)
 {{% /alert %}}
@@ -322,9 +322,9 @@ When you configure a cash payment method, your customers are redirected to the P
 
 * **Name**: In this parameter, you need to use the value displayed [here]({{< ref "select-your-payment-method.html" >}}) in the column `paymentMethod parameter`. For the sake of our example, set `OXXO`.
 * **Description**: Provide the description you want to show when the customer selects this payment method. This parameter is optional.
-* **Notes payable expiration date**: provide the number of days before the cash payment expires. By default, this value is assigned to 7 days. Keep in mind that, to avoid processing problems, this value must match the value selected in the Payment expiration (days) field that you configured in the VTEX affiliation.
+* **Notes payable expiration date**: provide the number of days before the cash payment expires. By default, this value is assigned to 7 days. Keep in mind that, to avoid processing problems, this value must match the value selected in the _**Payment expiration (days)**_ field that you configured in the VTEX affiliation.
 
-Leave the other parameters with their default values 
+Leave the other parameters with their default values. 
 
 4. Click _**Save**_. When the custom payment has been created, you are redirected to the option to create a new _**Payment conditions**_. This payment condition is created as explained in [Configure credit or debit cards](#configure-credit-or-debit-cards) section.
 

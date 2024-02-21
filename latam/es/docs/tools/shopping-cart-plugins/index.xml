@@ -28,7 +28,7 @@
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerrequisitos&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
-&lt;li&gt;Necesitas una cuenta activa en PaymentsOS. Si no tienes una cuenta, haz clic &lt;a href=&#34;https://control.paymentsos.com/signup&#34;&gt;aquí&lt;/a&gt; para crearla. Todos los comercios que requieran integrar PayU con VTEX &lt;strong&gt;deben&lt;/strong&gt; tener una cuenta en modo productivo/live en PaymentsOS.&lt;/li&gt;
+&lt;li&gt;Necesitas una cuenta activa en PaymentsOS. Si no tienes una cuenta, haz clic &lt;a href=&#34;https://control.paymentsos.com/signup&#34;&gt;aquí&lt;/a&gt; para crearla.&lt;br&gt;Todos los comercios que requieran integrar PayU con VTEX &lt;strong&gt;deben&lt;/strong&gt; tener una cuenta en modo productivo/live en PaymentsOS.&lt;/li&gt;
 &lt;li&gt;Necesitas una cuenta VTEX con suficientes permisos para acceder al módulo administrativo de VTEX. Esta cuenta debe tener habilitada la autenticación en dos factores.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -48,19 +48,19 @@
 &lt;h2 id=&#34;configuration-procedure&#34;&gt;Procedimiento de configuración&lt;/h2&gt;
 &lt;p&gt;El procedimiento para habilitar en VTEX los medios de pago que procesamos en nuestra plataforma se divide en dos pasos. Antes de continuar, asegúrate de cumplir con los prerrequisitos anteriores.&lt;/p&gt;
 &lt;h3 id=&#34;1-configure-your-paymentsos-account&#34;&gt;1. Configurar tu cuenta de PaymentsOS&lt;/h3&gt;
-&lt;p&gt;La integración de PayU Latam con VTEX se realiza utilizando PaymentsOS como middleware. Como primer paso, necesitas configurar en tu cuenta de PaymentsOS los siguientes objetos.&lt;/p&gt;
+&lt;p&gt;La integración de PayU Latam con VTEX se realiza utilizando PaymentsOS como middleware. Como primer paso, necesitas configurar en tu cuenta de PaymentsOS los siguientes ítems:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Una configuración de Proveedor.&lt;/li&gt;
 &lt;li&gt;Una Unidad de Negocio.&lt;/li&gt;
 &lt;li&gt;Un WebHook.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Puedes configurar estos objetos usando una de las siguientes opciones:&lt;/p&gt;
+&lt;p&gt;Puedes configurar los ítems usando una de las siguientes opciones:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#configure-the-account-using-postman&#34;&gt;Configurar la cuenta utilizando Postman&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#configure-the-account-manually-using-paymentsos-dashboard&#34;&gt;Configurar la cuenta manualmente utilizando el Panel de Control de PaymentsOS&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;configure-the-account-using-postman&#34;&gt;Configurar la cuenta utilizando Postman&lt;/h4&gt;
-&lt;p&gt;Sigue estos pasos para configurar tu cuenta utilizando Postman.&lt;/p&gt;
+&lt;p&gt;Sigue estos pasos para configurar tu cuenta utilizando Postman:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona).&lt;/li&gt;
 &lt;/ol&gt;
@@ -263,7 +263,7 @@ En el panel de control de PaymentsOS, expande el menú &lt;em&gt;&lt;strong&gt;C
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Cuando termines, haz clic en &lt;em&gt;&lt;strong&gt;Crear&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX32ES.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX34ES.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Crea la Unidad de Negocio.&lt;br&gt;
 En el panel de control de PaymentsOS dashboard, expande el menú &lt;em&gt;&lt;strong&gt;Cuenta&lt;/strong&gt;&lt;/em&gt;, luego selecciona &lt;em&gt;&lt;strong&gt;Unidades de Negocio&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
@@ -374,7 +374,7 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;td&gt;Este campo aparece cuando seleccionas &lt;code&gt;Programado: establece cuándo se realizará la captura automática&lt;/code&gt; como el método de captura del pago; selecciona el periodo programado que deseas configurar de acuerdo con tu configuración. Este valor debe ser entero, por lo tanto, no se permiten decimales.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Tipo Autorizacion&lt;/td&gt;
+&lt;td&gt;Tipo Autorización&lt;/td&gt;
 &lt;td&gt;Selecciona su tus transacciones de pago son ejecutadas en flujos de uno o dos pasos.&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para flujos de un paso, selecciona &lt;code&gt;Autorizacion y Captura&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para flujos de dos pasos, selecciona &lt;code&gt;Pre-Autorizacion&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Consulta el siguiente &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;enlace&lt;/a&gt; para conocer más de flujos de pago.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -552,7 +552,7 @@ No se requiere este procedimiento para &lt;em&gt;Boleto bancario&lt;/em&gt; en B
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Nombre&lt;/strong&gt;: En este parámetro, necesitar utilizar el valor mostrado &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;aquí&lt;/a&gt; en la columna &lt;code&gt;Parámetro paymentMethod&lt;/code&gt;. Para este ejemplo, configuramos &lt;code&gt;OXXO&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Descripción&lt;/strong&gt;: Ingresa la descripción que desea mostrar cuando el cliente seleccione este método de pago. Este parámetro es opcional.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Validez del pagaré&lt;/strong&gt;: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a siete días. Ten presente que, para evitar inconvenientes en el procesamiento, este valor debe coincidir con el valor seleccionado en el campo &lt;em&gt;&lt;strong&gt;Expiración pago (días)&lt;/strong&gt;&lt;/em&gt; que configuraste en la afiliación VTEX.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validez del pagaré&lt;/strong&gt;: ingresa el número de días antes de que venza el pago en efectivo. Por defecto, este valor se asigna a 7 días. Ten presente que, para evitar inconvenientes en el procesamiento, este valor debe coincidir con el valor seleccionado en el campo &lt;em&gt;&lt;strong&gt;Expiración pago (días)&lt;/strong&gt;&lt;/em&gt; que configuraste en la afiliación VTEX.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Deja los demás parámetros con sus valores por defecto.&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
@@ -588,8 +588,7 @@ Puedes complementar la revisión de esta sección con la información disponible
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;video width=&#34;630&#34; height=&#34;300&#34; controls&gt;
-	&lt;source src=&#34;../../../../assets/VTEX/Videos/Video01.mp4&#34; type=&#34;video/mp4&#34;&gt;
- 	Your browser does not support the video tag.
+	&lt;source src=&#34;../../../../assets/VTEX/Videos/Video01.mp4&#34; type=&#34;video/mp4&#34;&gt; 	
 &lt;/video&gt;
 &lt;br&gt;
 &lt;/br&gt;
