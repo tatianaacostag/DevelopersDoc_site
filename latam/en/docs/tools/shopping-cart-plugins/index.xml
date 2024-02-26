@@ -39,7 +39,7 @@
 &lt;p&gt;Please ensure that your request includes the following information:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Merchant ID of your LATAM account (refer to this &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids&#34;&gt;link&lt;/a&gt; for its location).&lt;/li&gt;
-&lt;li&gt;PaymentsOS accountID,  which you can find in the PaymentsOS control panel, as follows:&lt;/li&gt;
+&lt;li&gt;PaymentsOS accountID, which you can find in the PaymentsOS control panel, as follows:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_30.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
@@ -552,9 +552,9 @@ For &lt;em&gt;Boleto bancario&lt;/em&gt; in Brazil, this procedure it is not req
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Name&lt;/strong&gt;: In this parameter, you need to use the value displayed &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html&#34;&gt;here&lt;/a&gt; in the column &lt;code&gt;paymentMethod parameter&lt;/code&gt;. For the sake of our example, set &lt;code&gt;OXXO&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt;: Provide the description you want to show when the customer selects this payment method. This parameter is optional.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Notes payable expiration date&lt;/strong&gt;: provide the number of days before the cash payment expires. By default, this value is assigned to 7 days. Keep in mind that, to avoid processing problems, this value must match the value selected in the Payment expiration (days) field that you configured in the VTEX affiliation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notes payable expiration date&lt;/strong&gt;: provide the number of days before the cash payment expires. By default, this value is assigned to 7 days. Keep in mind that, to avoid processing problems, this value must match the value selected in the &lt;em&gt;&lt;strong&gt;Payment expiration (days)&lt;/strong&gt;&lt;/em&gt; field that you configured in the VTEX affiliation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Leave the other parameters with their default values&lt;/p&gt;
+&lt;p&gt;Leave the other parameters with their default values.&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Click &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt;. When the custom payment has been created, you are redirected to the option to create a new &lt;em&gt;&lt;strong&gt;Payment conditions&lt;/strong&gt;&lt;/em&gt;. This payment condition is created as explained in &lt;a href=&#34;#configure-credit-or-debit-cards&#34;&gt;Configure credit or debit cards&lt;/a&gt; section.&lt;/li&gt;
 &lt;/ol&gt;

@@ -186,13 +186,13 @@ Antes de configurar a _**Afiliação de Gateway**_, certifique-se de ter configu
 
 ![PrintScreen](/assets/VTEX/VTEX_08_pt.png)
 
-2. Antes de prosseguir com as Condições de pagamento, você deve criar uma afiliação ao nosso gateway. No painel superior, clique em _**Afiliações de Gateways**_.
+2. Antes de configurar as Condições de pagamento, você deve criar um novo provedor. No painel esquerdo, selecione _**Configurações da Loja > Provedores > Novo provedor**_:
 
-![PrintScreen](/assets/VTEX/VTEX_09_pt.png)
+![PrintScreen](/assets/VTEX/VTEX35PT.png)
 
-3. Clique no ícone de adição. Desça até a seção _**OUTROS**_ e localize o conector _**PayUv2**_.
+3. Localize _**PayU**_ e selecione _**PayUv2**_:
 
-![PrintScreen](/assets/VTEX/VTEX_10_pt.png)
+![PrintScreen](/assets/VTEX/VTEX36PT.png)
 
 {{% alert title="Importante" color="warning"%}}
 Certifique-se de selecionar o conector _**PayUv2**_, o procedimento explicado neste guia se aplica especificamente a este conector.

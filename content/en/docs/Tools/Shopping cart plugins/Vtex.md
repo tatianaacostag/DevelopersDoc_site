@@ -187,13 +187,13 @@ Before configuring the _**Gateway affiliation**_, make sure you have configured 
 
 ![PrintScreen](/assets/VTEX/VTEX_08.png)
 
-2. Before configuring Payment conditions, you must create an affiliation to our gateway. In the top panel, click _**Gateway affiliations**_.
+2. Before configuring the Payment conditions, you must create a new provider. In the left panel, select _**Store Settings > Providers > New Provider**_:
 
-![PrintScreen](/assets/VTEX/VTEX_09.png)
+![PrintScreen](/assets/VTEX/VTEX35EN.png)
 
-3. Click the plus icon. Scroll down to _**OTHERS**_ section and locate the _**PayUv2**_ connector.
+3. Locate _PayU_, and select _**PayUv2**_:
 
-![PrintScreen](/assets/VTEX/VTEX_10.png)
+![PrintScreen](/assets/VTEX/VTEX36EN.png)
 
 {{% alert title="Important" color="warning"%}}
 Make sure you have selected the _**PayUv2**_ connector, the procedure explained in this guide applies specifically to this connector.
