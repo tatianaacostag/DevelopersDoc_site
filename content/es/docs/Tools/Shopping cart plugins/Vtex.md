@@ -190,7 +190,7 @@ Antes de configurar la _**afiliación de Gateway**_, asegúrate de haber configu
 
 ![PrintScreen](/assets/VTEX/VTEX_08_es.png)
 
-2. Antes de continuar con las Condiciones de pago, debes crear un nuevo proveedor. En el panel izquierdo, haz clic en _**Configuraciones de la tienda > Proveedores > Nuevo proveedor**_.:
+2. Antes de continuar con las Condiciones de pago, debes crear un nuevo proveedor. En el panel izquierdo, haz clic en _**Configuraciones de la tienda > Proveedores > Nuevo proveedor**_:
 
 ![PrintScreen](/assets/VTEX/VTEX35ES.png)
 

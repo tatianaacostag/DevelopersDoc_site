@@ -312,13 +312,13 @@ Back in the PaymentsOS dashboard, expand the &lt;em&gt;&lt;strong&gt;Account&lt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_08.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Before configuring Payment conditions, you must create an affiliation to our gateway. In the top panel, click &lt;em&gt;&lt;strong&gt;Gateway affiliations&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Before configuring the Payment conditions, you must create a new provider. In the left panel, select &lt;em&gt;&lt;strong&gt;Store Settings &amp;gt; Providers &amp;gt; New Provider&lt;/strong&gt;&lt;/em&gt;:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_09.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX35EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Click the plus icon. Scroll down to &lt;em&gt;&lt;strong&gt;OTHERS&lt;/strong&gt;&lt;/em&gt; section and locate the &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&gt;&lt;/em&gt; connector.&lt;/li&gt;
+&lt;li&gt;Locate &lt;em&gt;PayU&lt;/em&gt;, and select &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&gt;&lt;/em&gt;:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX_10.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/VTEX36EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
