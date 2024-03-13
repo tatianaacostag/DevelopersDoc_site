@@ -77,7 +77,7 @@ Para integração com a API, o SDK pode ser executado em máquinas com versão P
 * mbstring
 * json
 
-<a href="https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/php/payu-php-sdk-4.5.7.zip" target="_blank" class="payu-btn-green">Faça download do SDK PHP 4.5.7</a>
+<a href="https://github.com/developers-payu-latam/developers-payu-latam.github.io/blob/master/sdk/php/payu-php-sdk-4.5.8.zip" target="_blank" class="payu-btn-green">Faça download do SDK PHP 4.5.8</a>
 
 Para ter acesso aos recursos do SDK, você precisa incluir a classe `PayU` localizada em _**[PayU-php-sdk-Path]/lib/PayU.php**_. 
 

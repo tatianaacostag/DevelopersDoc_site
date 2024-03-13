@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 <script src="/js/searchcodes.js"></script>
 
-Para integrarte con la API de Pagos de Colombia, apunta tus peticiones a los siguientes URLs de acuerdo con tu ambiente.
+Para integrarte con la API de Pagos para Colombia, dirige tus solicitudes a las siguientes URL según el entorno correspondiente.
 
 {{% alert title="URL" color="info"%}}
 * Pruebas: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
@@ -19,22 +19,22 @@ Para integrarte con la API de Pagos de Colombia, apunta tus peticiones a los sig
 ## Métodos disponibles {#available-methods}
 La API de pagos incluye los siguiente métodos:
 
-* [Enviar transacciones con tarjeta de crédito o débito]({{< ref "#submit-transaction-with-credit-or-debit-cards" >}})
-* [Enviar transacciones con Nequi]({{< ref "#submit-transaction-with-Nequi" >}})
-* [Enviar transacciones en efectivo o referencia bancaria]({{< ref "#submit-transaction-with-cash-or-bank-reference" >}})
-* [Enviar transacciones con transferencia bancaria (PSE)]({{< ref "#submit-transaction-with-bank-transfer-pse" >}})
+* [Enviar transacciones utilizando tarjetas de crédito o débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
+* [Enviar transacciones utilizando Nequi]({{< ref "#submit-transactions-using-Nequi" >}})
+* [Enviar transacciones utilizando efectivo o referencia bancaria]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
+* [Enviar transacciones utilizando transferencia bancaria (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
 * [Lista de Bancos - PSE]({{< ref "#bank-list---pse" >}})
 * [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
 Para confirmar el estado de una transacción, puedes utilizar una de las siguientes opciones:
-* Navega al URL configurado en la variable `transaction.notifyUrl` o la opción _**URL de confirmación**_ ubicada en el Módulo PayU en _**Configuración**_ > _**Configuración técnica**_.
+* Navega a la URL configurada en la variable `transaction.notifyUrl` o la opción _**URL de confirmación**_ ubicada en el Módulo PayU en _**Configuración**_ > _**Configuración técnica**_.
 * Utiliza la [API o SDK de consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Enviar transacciones con tarjeta de crédito o débito {#submit-transaction-with-credit-or-debit-cards}
-Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Colombia, puedes realizar los flujos de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
+## Enviar transacciones utilizando tarjetas de crédito o débito {#submit-transactions-using-credit-or-debit-cards}
+Este método te permite procesar los pagos que realizan tus clientes utilizando tarjetas de crédito o débito. Para Colombia, puedes realizar los flujos de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Nota" color="info"%}}
 
@@ -42,7 +42,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 
 {{% /alert %}}
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response}
 
 <details>
 <summary>Petición (Request)</summary>
@@ -75,7 +75,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 | transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
 | transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Código postal de la dirección. | No |
 | transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de teléfono asociado con la dirección. | No |
-| transaction > order > buyer |  |  | Información del comprador. | Sí |
+| transaction > order > buyer | Objeto |  | Información del comprador. | Sí |
 | transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | Identificador del comprador en tu sistema. | No |
 | transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nombre del comprador. | Sí |
 | transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del comprador. | Sí |
@@ -88,7 +88,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 | transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
 | transaction > order > buyer > shippingAddress > postalCode | Numérico | Máx:20 | Código postal de la dirección del comprador. | Sí |
 | transaction > order > buyer > shippingAddress > phone | Numérico | Máx:20 | Número de teléfono de la dirección del comprador. | Sí |
-| transaction > order > additionalValues > |  | 64 | Monto de la orden y sus valores asociados. | Sí |
+| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
 | transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
 | transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor no puede tener decimales. | Sí |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
@@ -98,14 +98,14 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el IVA.<br>Si la cantidad está exenta de IVA, envía 0.<br>Este valor puede tener dos dígitos decimales  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el valor base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId |  |  | Incluye este parámetro cuando la transacción se hace con una tarjeta de crédito tokenizada; además, es obligatorio enviar el parámetro `transaction.creditCard.expirationDate`.<br>Para más información, consulte [API de Tokenización]({{< ref "Tokenization-API.md" >}}). | No |
+| transaction > creditCardTokenId | Objeto |  | Incluye este parámetro cuando la transacción se hace con una tarjeta de crédito tokenizada; además, es obligatorio enviar el parámetro `transaction.creditCard.expirationDate`.<br>Para más información, consulte [API de Tokenización]({{< ref "Tokenization-API.md" >}}). | No |
 | transaction > creditCard | Objeto |  | Información de la tarjeta de crédito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
 | transaction > creditCard > number | Alfanumérico | Min:13 Máx:20 | Número de la tarjeta de crédito. | No |
 | transaction > creditCard > securityCode | Alfanumérico | Min:1 Máx:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
 | transaction > creditCard > expirationDate | Alfanumérico | 7 | Fecha de expiración de la tarjeta de crédito. Formato `YYYY/MM`. | No |
 | transaction > creditCard > name | Alfanumérico | Min:1 Máx:255 | Nombre del tarjetahabiente mostrado en la tarjeta de crédito. | No |
 | transaction > creditCard > processWithoutCvv2 | Booleano | Máx:255 | Te permite procesar transacciones sin incluir el código de seguridad de la tarjeta de crédito. Tu comercio requiere autorización de PayU antes de utilizar esta funcionalidad. | No |
-| transaction > payer |  |  | Información del pagador. | Sí |
+| transaction > payer | Objeto |  | Información del pagador. | Sí |
 | transaction > payer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del pagador. | Sí |
 | transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador del pagador en tu sistema. | No |
 | transaction > payer > fullName | Alfanumérico | Máx:150 | Nombre del pagador que debe ser igual al enviado en el parámetro `transaction.creditCard.name`. | Sí |
@@ -128,8 +128,8 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 | transaction > ipAddress | Alfanumérico | Máx:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
 | transaction > cookie | Alfanumérico | Máx:255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
 | transaction > userAgent | Alfanumérico | Máx:1024 | User agent del navegador donde el cliente realiza la transacción. | Sí |
-| transaction > extraParameters |  |  | Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de _extraParameters_ es 64 caracteres.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
-| transaction > threeDomainSecure |  |  | Este objeto contiene la información de 3DS 2.0. | No |
+| transaction > extraParameters | Objeto |  | Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de _extraParameters_ es 64 caracteres.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
+| transaction > threeDomainSecure | Objeto |  | Este objeto contiene la información de 3DS 2.0. | No |
 | transaction > threeDomainSecure > embedded | Booleano |  | Asigna `true` si quieres utilizar un MPI embebido para el proceso de Autorización. Por defecto, este valor está asignado como `false`. | No |
 | transaction > threeDomainSecure > eci | Numérico | Máx:2 | Indicador de Comercio Electrónico.<br>Valor retornado por los servidores de directorio indicando el intento de autenticación.<br>Este parámetro es obligatorio cuando `transaction.threeDomainSecure.embedded` es `false` y `transaction.threeDomainSecure.xid` tiene un valor configurado. | No |
 | transaction > threeDomainSecure > cavv | Alfanumérico | Máx:28 | Valor de verificación de autenticación del titular de la tarjeta (Cardholder Authentication Verification Value).<br>Código del criptograma utilizado en la autenticación de la transacción codificado en Base 64.<br>Dependiendo de los códigos ECI específicos establecidos por la red, este valor puede ser opcional. | No |
@@ -171,17 +171,17 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 * Para la tarjeta Crédito Fácil Codensa, el número de cuotas soportadas es 1 a 12, 18, 24, 36 y 48.
 * Para la tarjeta Crédito Fácil Codensa, el pagador puede escoger uno de los siguientes tipos de documento en la variable `transaction.payer.dniType`:
 
-| ISO | Descripción                                                                                             |
-|:---:|---------------------------------------------------------------------------------------------------------|
-|  CC | Cédula de ciudadanía.                                                                                   |
-|  CE | Cédula de extranjería.                                                                                  |
-| NIT | Número de Identificación Tributaria (Empresas).                                                         |
-|  TI | Tarjeta de identidad.                                                                                   |
-|  PP | Pasaporte.                                                                                              |
+| ISO | Descripción |
+|:---:|---|
+| CC | Cédula de ciudadanía. |
+| CE | Cédula de extranjería. |
+| NIT | Número de Identificación Tributaria (Empresas). |
+| TI | Tarjeta de identidad. |
+| PP | Pasaporte. |
 | IDC | Identificador único de cliente, para el caso de ID’s únicos de clientes/usuarios de servicios públicos. |
-| CEL | En caso de identificarse a través de la línea del móvil.                                                |
-|  RC | Registro civil de nacimiento.                                                                           |
-|  DE | Documento de identificación extranjero.                                                                 |
+| CEL | En caso de identificarse a través de la línea del móvil. |
+| RC | Registro civil de nacimiento. |
+| DE | Documento de identificación extranjero. |
 
 ### Llamado a la API {#api-call}
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
@@ -475,7 +475,7 @@ Ejemplo de una respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones con Nequi {#submit-transaction-with-Nequi}
+## Enviar transacciones utilizando Nequi {#submit-transactions-using-Nequi}
 Nequi es una plataforma integral de servicios financieros que funciona por medio de una billetera digital disponible para millones de usuarios a través de una aplicación móvil. Con Nequi, puedes realizar pagos, transferencias, recargas y retiros de dinero de manera rápida y segura, todo desde tu dispositivo personal.
 
 Además de ser una herramienta conveniente para usuarios individuales, Nequi también es una solución de pagos innovadora para comercios. Al aceptar pagos con Nequi, tu negocio puede disfrutar de una serie de ventajas significativas:
@@ -517,7 +517,7 @@ En esta sección, te indicamos los elementos necesarios para la óptima experien
 
 ![PrintScreen](/assets/Payments/Nequi04ES.png)
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-1}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-1}
 
 <details>
 <summary>Petición (Request)</summary>
@@ -573,11 +573,11 @@ En esta sección, te indicamos los elementos necesarios para la óptima experien
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el IVA. Si el monto no tiene IVA, envía 0. Este valor puede tener dos dígitos decimales. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica el monto base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Consulta las monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer | | | Información del pagador. | Sí |
+| transaction > payer | Objeto | | Información del pagador. | Sí |
 | transaction > payer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del pagador. | Sí |
 | transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador del pagador en tu sistema. | No |
 | transaction > payer > fullName | Alfanumérico | Máx:150 | Nombre del pagador. | Sí |
-| transaction > payer > billingAddress | | | Dirección de facturación. | Sí |
+| transaction > payer > billingAddress | Objeto | | Dirección de facturación. | Sí |
 | transaction > payer > billingAddress > street1 | Alfanumérico | Máx:100 | Línea 1 de la dirección de facturación. | Sí |
 | transaction > payer > billingAddress > street2 | Alfanumérico | Máx:100 | Línea 2 de la dirección de facturación. | No |
 | transaction > payer > billingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de facturación. | Sí |
@@ -622,6 +622,7 @@ En esta sección, te indicamos los elementos necesarios para la óptima experien
 | transactionResponse > operationDate | Fecha | | Fecha de creación de la respuesta en el sistema de PayU. |
 | transactionResponse > extraParameters | Objeto | | Parámetros o datos adicionales asociados con la respuesta. En JSON, el parámetro extraParameters sigue esta estructura: `"extraParameters": { "BANK_REFERENCED_CODE": "CREDIT"}`<br>En XML, el parámetro extraParameters sigue esta estructura: `<extraParameters> <entry>  <string>BANK_REFERENCED_CODE</string>  <string>CREDIT</string> </entry></extraParameters>` |
 | transactionResponse > additionalInfo | Objeto | | Información adicional asociada con la respuesta. Este objeto sigue la misma estructura que `transactionResponse.extraParameters`. |
+
 </details>
 
 ### Llamado a la API {#api-call-1}
@@ -877,13 +878,13 @@ En las transacciones enviadas mediante integraciones API que contienen espacios 
 
 Para prevenir errores causados por espacios en blanco en los números de celular, te recomendamos implementar las siguientes características en la experiencia de usuario:
 
-1. Configura la interfaz para que automáticamente cree espacios separadores en el número de celular que el usuario ingresa, de esta forma, el usuario podrá leer más fácilmente el número y se reducirá la probabilidad de que ingrese manualmente espacios en blanco. Si bien los espacios serán visibles a nivel de interfaz, puedes configurar tu sistema para eliminar los espacios en blanco a nivel backend.
+1. Implementa una interfaz que automáticamente cree espacios separadores en el número de teléfono móvil mientras el usuario lo ingresa, haciendo que el número sea más fácil de leer y reduciendo la probabilidad de errores de entrada manual. Asegúrate de que estos espacios sean visibles a nivel de la interfaz mientras configuras tu sistema para eliminarlos a nivel de backend.
 
 * Ejemplo de la interfaz:
 
 ![PrintScreen](/assets/Payments/Nequi05ES.png)
 
-2. Configura la interfaz para que muestre anuncios de error si el usuario ingresa un número inferior o superior a 10 dígitos (sin tener en cuenta el código de país, que es +57 para Colombia).
+2. Configura mensajes de error para que se muestren cuando un usuario ingrese un número de teléfono con menos de 10 dígitos o más de 10 dígitos (excluyendo el código de país, que es +57 para Colombia).
 
 * **A)** Ejemplo de una interfaz con espacios generados automáticamente donde el usuario no ha ingresado 10 dígitos:
 
@@ -893,7 +894,6 @@ Para prevenir errores causados por espacios en blanco en los números de celular
 
 ![PrintScreen](/assets/Payments/Nequi07ES.png)
  
-
 #### Pruebas en ambiente Sandbox
 
 Para probar las transacciones de Nequi en el ambiente Sandbox de PayU, utiliza los siguientes datos:
@@ -909,7 +909,7 @@ Para probar las transacciones de Nequi en el ambiente Sandbox de PayU, utiliza l
 
 Puedes consultar el estado de la transacción a través de la [API de Consultas]({{< ref "queries-api.html" >}}). 
 
-## Enviar transacciones en efectivo o referencia bancaria {#submit-transaction-with-cash-or-bank-reference}
+## Enviar transacciones utilizando efectivo o referencia bancaria {#submit-transactions-using-cash-or-bank-reference}
 Este método te permite procesar los pagos en efectivo o por referencia bancaria de tus clientes. Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un recibo de pago como los siguientes.
 
 #### Pagos en efectivo {#payments-in-cash}
@@ -918,7 +918,7 @@ Este método te permite procesar los pagos en efectivo o por referencia bancaria
 #### Pagos con Referencia bancaria {#payments-with-bank-reference}
 <img src="/assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-2}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-2}
 
 <details>
 <summary>Petición (Request)</summary>
@@ -1305,7 +1305,7 @@ Ejemplo de una respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones con transferencia bancaria (PSE) {#submit-transaction-with-bank-transfer-pse}
+## Enviar transacciones utilizando transferencia bancaria (PSE) {#submit-transactions-using-bank-transfer-pse}
 Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este método de pago, necesitas crear un formulario de pago siguiendo estos pasos:
 
 1. Incluye un botón PSE button haciendo evidente que tu cliente va a utilizar _Proveedor de Servicios Electrónicos PSE_.
@@ -1330,27 +1330,29 @@ Cuando el pagador seleccione un banco, debes enviar al parámetro `pseCode` sele
 
 <img src="/assets/Payments/PSEPersonList_ES.png" alt="PrintScreen" width="50%"><br>
 
+{{% alert title="Nota" color="info"%}}
+Este campo no es obligatorio para _PSE Avanza_.
+{{% /alert %}}
+
 5. Muestra una lista para que el pagador escoja su tipo de identificación. Debes enviar el código ISO del valor seleccionado en el extra parámetro `PSE_REFERENCE2` de la petición. La lista debe verse así:
 
 <img src="/assets/Payments/PSEDocType_ES.png" alt="PrintScreen" width="50%"><br>
 
 La lista de documentos disponibles es:
 
-| ISO | Descripción                                                                                             |
-|:---:|---------------------------------------------------------------------------------------------------------|
-|  CC | Cédula de ciudadanía.                                                                                   |
-|  CE | Cédula de extranjería.                                                                                  |
-| NIT | Número de Identificación Tributaria (Empresas).                                                         |
-|  TI | Tarjeta de identidad.                                                                                   |
-|  PP | Pasaporte.                                                                                              |
-| IDC | Identificador único de cliente, para el caso de ID’s únicos de clientes/usuarios de servicios públicos. |
-| CEL | En caso de identificarse a través de la línea del móvil.                                                |
-|  RC | Registro civil de nacimiento.                                                                           |
-|  DE | Documento de identificación extranjero.                                                                 |
+| ISO | Descripción |
+|:---:|---|
+| CC | Cédula de ciudadanía. |
+| CE | Cédula de extranjería. |
+| NIT | Número de Identificación Tributaria (Empresas). |
+| TI | Tarjeta de identidad. |
+| PP | Pasaporte. |
+| RC | Registro civil de nacimiento. |
+| DE | Documento de identificación extranjero. |
 
 6. Debes enviar el número de identificación del pagador en el extra parámetro `PSE_REFERENCE3` de la petición.
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-3}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-3}
 
 <details>
 <summary>Petición (Request)</summary>
@@ -1763,9 +1765,9 @@ Ejemplo de una respuesta:
 {{< /tabs >}}
 
 ## Lista de Bancos - PSE {#bank-list---pse}
-Este método retorna la lista de bancos disponibles para realizar [pagos utilizando PSE]({{< ref "#submit-transaction-with-bank-transfer-pse" >}}). 
+Este método retorna la lista de bancos disponibles para realizar [pagos utilizando PSE]({{< ref "#submit-transactions-using-bank-transfer-pse" >}}). 
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-4}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-4}
 
 <details>
 <summary>Petición (Request)</summary>
@@ -2444,7 +2446,7 @@ Ejemplo de una respuesta:
 ## Consultar métodos de pago disponibles {#available-payment-methods-query}
 Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-5}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-5}
 
 <details>
 <summary>Petición (Request)</summary>
@@ -2569,7 +2571,7 @@ Ejemplo de una respuesta:
 ## Ping
 El método `PING` te permite verificar la conexión con nuestra plataforma. 
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-6}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-6}
 
 <details>
 <summary>Petición (Request)</summary>
