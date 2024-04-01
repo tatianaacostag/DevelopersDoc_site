@@ -12598,7 +12598,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
         
         
         &lt;script src=&#34;../../../../js/searchcodes.js&#34;&gt;&lt;/script&gt;
-&lt;p&gt;To integrate with Payments API Colombia, target your request to the following URLs according to your environment.&lt;/p&gt;
+&lt;p&gt;To integrate with the Payments API for Colombia, direct your requests to the following URLs based on the corresponding environment.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -12613,9 +12613,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;h2 id=&#34;available-methods&#34;&gt;Available methods&lt;/h2&gt;
 &lt;p&gt;Payments API includes the following methods:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-credit-or-debit-cards&#34;&gt;Submit transaction with credit or debit cards&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-cash-or-bank-reference&#34;&gt;Submit transaction with cash or Bank reference&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer-pse&#34;&gt;Submit transaction with bank transfer (PSE)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-credit-or-debit-cards&#34;&gt;Submit transactions using credit or debit cards&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-nequi&#34;&gt;Submit transactions using Nequi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-cash-or-bank-reference&#34;&gt;Submit transactions using cash or bank reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-bank-transfer-pse&#34;&gt;Submit transactions using bank transfer (PSE)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse&#34;&gt;Bank List - PSE&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#available-payment-methods-query&#34;&gt;Available payment methods query&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
@@ -12631,8 +12632,8 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&#34;submit-transaction-with-credit-or-debit-cards&#34;&gt;Submit transaction with credit or debit cards&lt;/h2&gt;
-&lt;p&gt;This method lets you process the payments performed by your customers using credit or debit cards. For Colombia, you can perform one-step flows (&lt;strong&gt;Charge&lt;/strong&gt;). For more information, refer to &lt;a href=&#34;../../../../en/docs/services/payments.html#payment-flows&#34;&gt;Payment flows&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;submit-transactions-using-credit-or-debit-cards&#34;&gt;Submit transactions using credit or debit cards&lt;/h2&gt;
+&lt;p&gt;This method allows you to process the payments that your customers conduct using credit or debit cards. For Colombia, you can perform one-step flows (&lt;strong&gt;Charge&lt;/strong&gt;). For more information, refer to &lt;a href=&#34;../../../../en/docs/services/payments.html#payment-flows&#34;&gt;Payment flows&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -12640,7 +12641,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 Two-step flow is available under request, contact your sales representative.
 &lt;/div&gt;
 
-&lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variables for request and response&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response&#34;&gt;Parameters for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
 &lt;label for=&#34;table1&#34; class=&#34;showMandatory&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;table1&#34; name=&#34;table1&#34; value=&#34;true&#34; onchange=&#34;showMandatory(this)&#34;&gt; Show mandatory fields only&lt;/label&gt;
@@ -12680,7 +12681,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;merchant&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;This object has the authentication data.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
@@ -12701,14 +12702,14 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;This object has the transaction data.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;This object has the order data.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
@@ -12764,7 +12765,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Shipping address.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
@@ -12820,7 +12821,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Buyer information.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
@@ -12911,7 +12912,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;64&lt;/td&gt;
 &lt;td&gt;Amount of the order and its associated values.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
@@ -12981,14 +12982,14 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; creditCardTokenId&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Include this parameter when the transaction is done using a tokenized card; moreover, it is mandatory to also send the parameter &lt;code&gt;transaction.creditCard.expirationDate&lt;/code&gt;.&lt;br&gt;For more information, refer to &lt;a href=&#34;../../../../en/docs/integrations/api-integration/tokenization-api.html&#34;&gt;Tokenization API&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; creditCard&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
@@ -13037,7 +13038,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; debitCard&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Debit card information. This object and its parameters are mandatory when the payment is performed using debit card.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
@@ -13072,7 +13073,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Payer information.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
@@ -13100,7 +13101,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Billing address.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
@@ -13233,14 +13234,14 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; extraParameters&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Additional parameters or data associated with the request. The maximum size of each &lt;em&gt;extraParameters&lt;/em&gt; name is 64 characters.&lt;br&gt;In JSON, the &lt;em&gt;extraParameters&lt;/em&gt; parameter follows this structure: &lt;br&gt;&lt;code&gt;&amp;quot;extraParameters&amp;quot;: {&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;quot;INSTALLMENTS_NUMBER&amp;quot;: 1&lt;/code&gt;&lt;br&gt;&lt;code&gt;}&lt;/code&gt;&lt;br&gt;&lt;br&gt;In XML, the &lt;em&gt;extraParameters&lt;/em&gt; parameter follows this structure: &lt;br&gt;&lt;code&gt;&amp;lt;extraParameters&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;entry&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;INSTALLMENTS_NUMBER&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;1&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;/entry&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/extraParameters&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; threeDomainSecure&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;This object contains the information of 3DS 2.0.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
@@ -13311,7 +13312,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transactionResponse&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;The response data.&lt;/td&gt;
 &lt;/tr&gt;
@@ -13377,13 +13378,13 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transactionResponse &amp;gt; extraParameters&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Additional parameters or data associated with the response. &lt;br&gt;In JSON, the &lt;em&gt;extraParameters&lt;/em&gt; parameter follows this structure: &lt;br&gt;&lt;code&gt;&amp;quot;extraParameters&amp;quot;: {&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;quot;BANK_REFERENCED_CODE&amp;quot;: &amp;quot;CREDIT&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;}&lt;/code&gt;&lt;br&gt;&lt;br&gt;In XML, the &lt;em&gt;extraParameters&lt;/em&gt; parameter follows this structure: &lt;br&gt;&lt;code&gt;&amp;lt;extraParameters&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;entry&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;BANK_REFERENCED_CODE&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;CREDIT&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;/entry&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/extraParameters&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transactionResponse &amp;gt; additionalInfo&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Additional information associated with the response. This object follows the same structure than &lt;code&gt;transactionResponse.extraParameters&lt;/code&gt;.&lt;/td&gt;
 &lt;/tr&gt;
@@ -13783,13 +13784,1033 @@ Two-step flow is available under request, contact your sales representative.
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;submit-transaction-with-cash-or-bank-reference&#34;&gt;Submit transaction with cash or Bank reference&lt;/h2&gt;
-&lt;p&gt;This method lets you process the payments of your customers in cash or using a Bank reference. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.&lt;/p&gt;
+&lt;h2 id=&#34;submit-transactions-using-nequi&#34;&gt;Submit transactions using Nequi&lt;/h2&gt;
+&lt;p&gt;Nequi is a comprehensive platform of financial services that operates through a digital wallet available to millions of users via a mobile application. With Nequi, you can make payments, transfers, top-ups, and withdrawals quickly and securely, all from your personal device.&lt;/p&gt;
+&lt;p&gt;In addition to being a convenient tool for individual users, Nequi is also an innovative payment solution for businesses. By accepting payments with Nequi, your business can enjoy a series of significant advantages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Increase in sales:&lt;/strong&gt; By offering Nequi as a payment option, your business can attract new customers who prefer digital transactions. This can translate into increased sales and greater customer loyalty.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Greater convenience:&lt;/strong&gt; By allowing your customers to pay with Nequi, you are providing a more versatile and faster shopping experience. Customers can make instant payments using their mobile phones, without the need for cash or physical cards.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Greater security:&lt;/strong&gt; Nequi offers a secure and reliable payment environment, backed by Bancolombia, one of Colombia&amp;rsquo;s largest and most trusted financial institutions. This provides peace of mind to both merchants and customers, as transactions are conducted securely and protected.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;payment-process-with-nequi&#34;&gt;Payment process with Nequi&lt;/h3&gt;
+&lt;p&gt;The payment flow with Nequi is designed to be simple and agile for the user. The process includes 4 steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Selection of Payment Method:&lt;/strong&gt; The customer, at the time of making the purchase, chooses Nequi as their preferred payment method among the available options.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Generation of Push Notification:&lt;/strong&gt; Automatically, the system generates a push notification that is sent to the customer&amp;rsquo;s Nequi mobile application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Acceptance of Notification:&lt;/strong&gt; The customer receives the notification in their Nequi application and proceeds to accept it to confirm the transaction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Entry of Nequi PIN:&lt;/strong&gt; To complete the operation, the customer enters their personal Nequi PIN to authenticate and authorize the payment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;user-experience&#34;&gt;User experience&lt;/h3&gt;
+&lt;p&gt;In this section, we indicate the necessary elements for the optimal user experience when using Nequi as a payment method:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Request the buyer&amp;rsquo;s name and email address, for example:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi01EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Present the Nequi payment method and request the phone number associated with the Nequi account, for example:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi02EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Display a detailed summary of the payment and the account, for example:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi03EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Highlight the steps to follow to facilitate the payment process for the buyer, for example:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi04EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-1&#34;&gt;Parameters for request and response&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;Request&lt;/summary&gt;
+&lt;label for=&#34;table1&#34; class=&#34;showMandatory&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;table1&#34; name=&#34;table1&#34; value=&#34;true&#34; onchange=&#34;showMandatory(this)&#34;&gt; Show mandatory fields only&lt;/label&gt;
+&lt;br&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field Name&lt;/th&gt;
+&lt;th&gt;Format&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mandatory&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;language&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Language used in the request, this language is used to display generated error messages. &lt;a href=&#34;../../../../en/docs/getting-started/response-codes-and-variables.html#supported-languages&#34;&gt;Check supported languages&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;command&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:32&lt;/td&gt;
+&lt;td&gt;Set to &lt;code&gt;SUBMIT_TRANSACTION&lt;/code&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;test (JSON)&lt;hr&gt;isTest (XML)&lt;/td&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Set to &lt;code&gt;true&lt;/code&gt; if the request is in test mode. Otherwise, set to &lt;code&gt;false&lt;/code&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;merchant&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;This object contains authentication data.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;merchant &amp;gt; apiLogin&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Min:12 Max:32&lt;/td&gt;
+&lt;td&gt;Username or login provided by PayU.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;merchant &amp;gt; apiKey&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Min:6 Max:32&lt;/td&gt;
+&lt;td&gt;Password provided by PayU.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;This object contains transaction data.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;This object contains order data.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; accountId&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Your account identifier.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; referenceCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Min:1 Max:255&lt;/td&gt;
+&lt;td&gt;Represents the order identifier in your system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; description&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Min:1 Max:255&lt;/td&gt;
+&lt;td&gt;Description of the order.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; language&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Language used in emails sent to the buyer and seller.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; notifyUrl&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:2048&lt;/td&gt;
+&lt;td&gt;Order confirmation URL.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; partnerId&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:255&lt;/td&gt;
+&lt;td&gt;PayU partner ID.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; signature&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:255&lt;/td&gt;
+&lt;td&gt;Form associated signature. For more information, see &lt;a href=&#34;../../../../en/docs/integrations.html#authentication-signature&#34;&gt;Authentication Signature&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Shipping address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress &amp;gt; street1&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:100&lt;/td&gt;
+&lt;td&gt;Address line 1.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress &amp;gt; street2&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:100&lt;/td&gt;
+&lt;td&gt;Address line 2.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress &amp;gt; city&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:50&lt;/td&gt;
+&lt;td&gt;City of the address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress &amp;gt; state&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:40&lt;/td&gt;
+&lt;td&gt;State of the address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress &amp;gt; country&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Country of the address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress &amp;gt; postalCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:8&lt;/td&gt;
+&lt;td&gt;Postal code of the address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; shippingAddress &amp;gt; phone&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:11&lt;/td&gt;
+&lt;td&gt;Phone number associated with the address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Buyer information.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; merchantBuyerId&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:100&lt;/td&gt;
+&lt;td&gt;Buyer ID in your system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; fullName&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:150&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s full name.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; emailAddress&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:255&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s email address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; contactPhone&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:20&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s phone number.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; dniNumber&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:20&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s identification number.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s shipping address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; street1&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:150&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s shipping address line 1.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; city&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:50&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s shipping address city.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; state&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:40&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s shipping address state.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; country&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s shipping address country in ISO 3166 alpha-2 format.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; postalCode&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;Max:20&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s shipping address postal code.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; buyer &amp;gt; shippingAddress &amp;gt; phone&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;Max:20&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s shipping address phone number.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;Order amount and associated values.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;Transaction amount.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; value&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Specifies the transaction amount. This amount cannot include decimals.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_VALUE &amp;gt; currency&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;ISO currency code. &lt;a href=&#34;../../../../en/docs/getting-started/response-codes-and-variables.html#accepted-currencies&#34;&gt;Check accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;Value-added tax (VAT) amount.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; value&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Specifies the VAT amount. If this parameter is not configured, PayU applies the current tax value (19%). If the amount has no VAT, send 0. This value can have two decimal digits.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX &amp;gt; currency&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;ISO currency code. &lt;a href=&#34;../../../../en/docs/getting-started/response-codes-and-variables.html#accepted-currencies&#34;&gt;Check accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;td&gt;Base value for calculating VAT. If the amount has no VAT, send 0. This value can have two decimal digits.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; value&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;12, 2&lt;/td&gt;
+&lt;td&gt;Specifies the transaction base amount.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt; TX_TAX_RETURN_BASE &amp;gt; currency&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;ISO currency code. &lt;a href=&#34;../../../../en/docs/getting-started/response-codes-and-variables.html#accepted-currencies&#34;&gt;Check accepted currencies&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Payer information.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; emailAddress&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:255&lt;/td&gt;
+&lt;td&gt;Payer&amp;rsquo;s email address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; merchantPayerId&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:100&lt;/td&gt;
+&lt;td&gt;Payer&amp;rsquo;s identifier in your system.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; fullName&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:150&lt;/td&gt;
+&lt;td&gt;Payer&amp;rsquo;s name.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Billing address.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress &amp;gt; street1&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:100&lt;/td&gt;
+&lt;td&gt;Billing address line 1.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress &amp;gt; street2&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:100&lt;/td&gt;
+&lt;td&gt;Billing address line 2.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress &amp;gt; city&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:50&lt;/td&gt;
+&lt;td&gt;Billing address city.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress &amp;gt; state&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:40&lt;/td&gt;
+&lt;td&gt;Billing address state.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress &amp;gt; country&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Billing address country in ISO 3166 alpha-2 format.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress &amp;gt; postalCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:20&lt;/td&gt;
+&lt;td&gt;Billing address postal code.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress &amp;gt; phone&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:20&lt;/td&gt;
+&lt;td&gt;Billing address phone number.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; birthdate&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:10&lt;/td&gt;
+&lt;td&gt;Payer&amp;rsquo;s date of birth.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; contactPhone&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:20&lt;/td&gt;
+&lt;td&gt;Payer&amp;rsquo;s phone number. This is the number to be used for payment in Nequi.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; dniNumber&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:20&lt;/td&gt;
+&lt;td&gt;Payer&amp;rsquo;s identification number.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; payer &amp;gt; dniType&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Buyer&amp;rsquo;s identification type. &lt;a href=&#34;../../../../en/docs/getting-started/response-codes-and-variables.html#document-types&#34;&gt;Check document types&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; type&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;Assign this value according to the transaction. For Colombia, assign &lt;code&gt;AUTHORIZATION_AND_CAPTURE&lt;/code&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;NEQUI&lt;/code&gt; for Nequi Payment Method.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; paymentCountry&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Set &lt;code&gt;CO&lt;/code&gt; for Colombia.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; deviceSessionId&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:255&lt;/td&gt;
+&lt;td&gt;Device session identifier where the client performs the transaction. For more information, see &lt;a href=&#34;../../../../en/docs/integrations.html#_devicesessionid_-variable&#34;&gt;this section&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; ipAddress&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:39&lt;/td&gt;
+&lt;td&gt;IP address of the device where the client performs the transaction.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; cookie&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:255&lt;/td&gt;
+&lt;td&gt;Cookie stored by the device where the client performs the transaction.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transaction &amp;gt; userAgent&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:1024&lt;/td&gt;
+&lt;td&gt;Browser user agent where the client performs the transaction.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;Response&lt;/summary&gt;
+&lt;br&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field Name&lt;/th&gt;
+&lt;th&gt;Format&lt;/th&gt;
+&lt;th&gt;Size&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;code&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Transaction response code. Possible values are &lt;code&gt;ERROR&lt;/code&gt; and &lt;code&gt;SUCCESS&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;error&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:2048&lt;/td&gt;
+&lt;td&gt;Error message associated when the response code is &lt;code&gt;ERROR&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Response data.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; orderId&lt;/td&gt;
+&lt;td&gt;Number&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Order identifier generated or existing in PayU.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; transactionId&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;36&lt;/td&gt;
+&lt;td&gt;Transaction identifier in PayU.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; state&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:32&lt;/td&gt;
+&lt;td&gt;Transaction state.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; responseCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:64&lt;/td&gt;
+&lt;td&gt;Response code associated with the state.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; pendingReason&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:64&lt;/td&gt;
+&lt;td&gt;Pending reason of the transaction.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; paymentNetworkResponseCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:255&lt;/td&gt;
+&lt;td&gt;Response code returned by the financial network.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; paymentNetworkResponseErrorMessage&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:255&lt;/td&gt;
+&lt;td&gt;Error message returned by the financial network.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; trazabilityCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:32&lt;/td&gt;
+&lt;td&gt;Trazability code returned by the financial network.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; authorizationCode&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:12&lt;/td&gt;
+&lt;td&gt;Authorization code returned by the financial network.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; responseMessage&lt;/td&gt;
+&lt;td&gt;Alphanumeric&lt;/td&gt;
+&lt;td&gt;Max:2048&lt;/td&gt;
+&lt;td&gt;Message associated with the response code.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; operationDate&lt;/td&gt;
+&lt;td&gt;Date&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Creation date of the response in the PayU system.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; extraParameters&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Additional parameters or data associated with the response. In JSON, the &lt;code&gt;extraParameters&lt;/code&gt; parameter follows this structure: &lt;code&gt;&amp;quot;extraParameters&amp;quot;: { &amp;quot;BANK_REFERENCED_CODE&amp;quot;: &amp;quot;CREDIT&amp;quot;}&lt;/code&gt;&lt;br&gt;In XML, the &lt;code&gt;extraParameters&lt;/code&gt; parameter follows this structure: &lt;code&gt;&amp;lt;extraParameters&amp;gt; &amp;lt;entry&amp;gt;  &amp;lt;string&amp;gt;BANK_REFERENCED_CODE&amp;lt;/string&amp;gt;  &amp;lt;string&amp;gt;CREDIT&amp;lt;/string&amp;gt; &amp;lt;/entry&amp;gt;&amp;lt;/extraParameters&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;transactionResponse &amp;gt; additionalInfo&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Additional information associated with the response. This object follows the same structure as &lt;code&gt;transactionResponse.extraParameters&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;api-call-1&#34;&gt;API call&lt;/h3&gt;
+&lt;p&gt;The following are the request and response bodies for this payment method:&lt;/p&gt;
+&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab21&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab22&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;2&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab21&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUBMIT_TRANSACTION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchant&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiKey&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4Vj8eK4rloUd272L48hsrarnUA&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiLogin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pRRXKOl8ikMmt9u&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transaction&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;order&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;accountId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;512321&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;referenceCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PRODUCT_TEST_2024-01-18T19:59:43.229Z&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Payment test description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;signature&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1d6c33aed575c4974ad5c0be7c6a1c87&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;notifyUrl&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://www.payu.com/notify&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;additionalValues&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TX_VALUE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;65000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TX_TAX&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10378&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;TX_TAX_RETURN_BASE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;54622&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;buyer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchantBuyerId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;fullName&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;First name and second buyer name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;emailAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;buyer_test@test.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;contactPhone&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;57 3007777777&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dniNumber&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;123456789&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;shippingAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;street1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Cr 23 No. 53-50&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;street2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;5555487&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;city&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Bogotá&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;state&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Bogotá D.C.&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;postalCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;000000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;phone&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;57 3007777777&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;shippingAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;street1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Cr 23 No. 53-50&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;street2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;5555487&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;city&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Bogotá&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;state&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Bogotá D.C.&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;postalCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;0000000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;phone&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;7563126&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;payer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchantPayerId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;fullName&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;First name and second payer name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;emailAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;payer_test@test.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;contactPhone&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;57 3007777777&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;dniNumber&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;5415668464654&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;billingAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;street1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Cr 23 No. 53-50&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;street2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;125544&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;city&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Bogotá&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;state&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Bogotá D.C.&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;country&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;postalCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;000000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;phone&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;57 3007777777&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;AUTHORIZATION_AND_CAPTURE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentMethod&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;NEQUI&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentCountry&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;CO&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;deviceSessionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;vghs6tvkcle931686k1900o6e1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;ipAddress&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;cookie&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pt1t38347bs6jc9ruv2ecpv7o2&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;userAgent&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transactionResponse&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;orderId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2151135729&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transactionId&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;fe667b48-e685-40b3-8863-9a0cd8257860&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;state&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PENDING&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentNetworkResponseCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;paymentNetworkResponseErrorMessage&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;trazabilityCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;3ba38ac9-3d68-48ef-bf86-b6c121404162&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;authorizationCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;pendingReason&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;AWAITING_PAYMENT_IN_ENTITY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;responseCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PENDING_PAYMENT_IN_ENTITY&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;errorCode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;responseMessage&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transactionDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;transactionTime&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;operationDate&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1705670262058&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;referenceQuestionnaire&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;extraParameters&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;additionalInfo&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab22&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;p&gt;Request example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;request&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;language&amp;gt;&lt;/span&gt;es&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/language&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;command&amp;gt;&lt;/span&gt;SUBMIT_TRANSACTION&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchant&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiKey&amp;gt;&lt;/span&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiKey&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiLogin&amp;gt;&lt;/span&gt;pRRXKOl8ikMmt9u&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiLogin&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchant&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transaction&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;order&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;accountId&amp;gt;&lt;/span&gt;512321&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/accountId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;referenceCode&amp;gt;&lt;/span&gt;PRODUCT_TEST_2024-01-18T19:59:43.229Z&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/referenceCode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;Payment test description&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;language&amp;gt;&lt;/span&gt;es&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/language&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;signature&amp;gt;&lt;/span&gt;1d6c33aed575c4974ad5c0be7c6a1c87&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/signature&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;notifyUrl&amp;gt;&lt;/span&gt;http://www.payu.com/notify&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/notifyUrl&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;additionalValues&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;entry&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;TX_VALUE&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;additionalValue&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;65000&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;currency&amp;gt;&lt;/span&gt;COP&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/currency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/additionalValue&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;TX_TAX&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;additionalValue&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;10378&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;currency&amp;gt;&lt;/span&gt;COP&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/currency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/additionalValue&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;TX_TAX_RETURN_BASE&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;additionalValue&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;54622&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;currency&amp;gt;&lt;/span&gt;COP&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/currency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/additionalValue&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/entry&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/additionalValues&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;buyer&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchantBuyerId&amp;gt;&lt;/span&gt;1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchantBuyerId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;fullName&amp;gt;&lt;/span&gt;First name and second buyer name&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/fullName&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;emailAddress&amp;gt;&lt;/span&gt;buyer_test@test.com&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/emailAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;contactPhone&amp;gt;&lt;/span&gt;57 3007777777&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/contactPhone&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;dniNumber&amp;gt;&lt;/span&gt;123456789&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/dniNumber&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;shippingAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;street1&amp;gt;&lt;/span&gt;Cr 23 No. 53-50&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/street1&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;street2&amp;gt;&lt;/span&gt;5555487&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/street2&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;city&amp;gt;&lt;/span&gt;Bogotá&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/city&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;state&amp;gt;&lt;/span&gt;Bogotá D.C.&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/state&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;country&amp;gt;&lt;/span&gt;CO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/country&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;postalCode&amp;gt;&lt;/span&gt;000000&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/postalCode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;phone&amp;gt;&lt;/span&gt;57 3007777777&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/phone&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/shippingAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/buyer&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;shippingAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;street1&amp;gt;&lt;/span&gt;Cr 23 No. 53-50&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/street1&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;street2&amp;gt;&lt;/span&gt;5555487&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/street2&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;city&amp;gt;&lt;/span&gt;Bogot√°&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/city&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;state&amp;gt;&lt;/span&gt;Bogot√° D.C.&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/state&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;country&amp;gt;&lt;/span&gt;CO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/country&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;postalCode&amp;gt;&lt;/span&gt;0000000&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/postalCode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;phone&amp;gt;&lt;/span&gt;7563126&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/phone&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/shippingAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/order&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;payer&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchantPayerId&amp;gt;&lt;/span&gt;1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchantPayerId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;fullName&amp;gt;&lt;/span&gt;First name and second payer name&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/fullName&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;emailAddress&amp;gt;&lt;/span&gt;payer_test@test.com&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/emailAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;contactPhone&amp;gt;&lt;/span&gt;57 3007777777&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/contactPhone&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;dniNumber&amp;gt;&lt;/span&gt;5415668464654&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/dniNumber&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;billingAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;street1&amp;gt;&lt;/span&gt;Cr 23 No. 53-50&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/street1&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;street2&amp;gt;&lt;/span&gt;125544&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/street2&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;city&amp;gt;&lt;/span&gt;Bogotá&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/city&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;state&amp;gt;&lt;/span&gt;Bogotá D.C.&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/state&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;country&amp;gt;&lt;/span&gt;CO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/country&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;postalCode&amp;gt;&lt;/span&gt;000000&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/postalCode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;phone&amp;gt;&lt;/span&gt;57 3007777777&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/phone&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/billingAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/payer&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;AUTHORIZATION_AND_CAPTURE&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentMethod&amp;gt;&lt;/span&gt;NEQUI&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentMethod&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentCountry&amp;gt;&lt;/span&gt;CO&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentCountry&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;deviceSessionId&amp;gt;&lt;/span&gt;vghs6tvkcle931686k1900o6e1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/deviceSessionId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;ipAddress&amp;gt;&lt;/span&gt;127.0.0.1&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/ipAddress&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;cookie&amp;gt;&lt;/span&gt;pt1t38347bs6jc9ruv2ecpv7o2&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/cookie&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;userAgent&amp;gt;&lt;/span&gt;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/userAgent&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transaction&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;isTest&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/isTest&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/request&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Response example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentResponse&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;SUCCESS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transactionResponse&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;orderId&amp;gt;&lt;/span&gt;2151135729&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/orderId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;transactionId&amp;gt;&lt;/span&gt;fe667b48-e685-40b3-8863-9a0cd8257860&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transactionId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;state&amp;gt;&lt;/span&gt;PENDING&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/state&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;paymentNetworkResponseCode&amp;gt;&lt;/span&gt;0&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentNetworkResponseCode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;trazabilityCode&amp;gt;&lt;/span&gt;3ba38ac9-3d68-48ef-bf86-b6c121404162&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/trazabilityCode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;pendingReason&amp;gt;&lt;/span&gt;AWAITING_PAYMENT_IN_ENTITY&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/pendingReason&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;responseCode&amp;gt;&lt;/span&gt;PENDING_PAYMENT_IN_ENTITY&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/responseCode&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;responseMessage&amp;gt;&lt;/span&gt;SUCCESS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/responseMessage&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;operationDate&amp;gt;&lt;/span&gt;2024-01-19T08:17:42&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/operationDate&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/transactionResponse&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/paymentResponse&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;h4 id=&#34;considerations-1&#34;&gt;Considerations&lt;/h4&gt;
+&lt;h5 id=&#34;phone-number-details&#34;&gt;Phone Number Details&lt;/h5&gt;
+&lt;p&gt;At PayU, our commitment is to make online payments effortless for both our merchants and their customers. To improve the Nequi payment experience, we&amp;rsquo;ve identified common errors made by payers when entering their mobile numbers.&lt;/p&gt;
+&lt;p&gt;Please note, when using API integrations, transactions can fail if the mobile number includes spaces. Currently, there is no default mechanism to strip these spaces. The outcomes of such transactions are as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;57 3007777777 → Approved&lt;/li&gt;
+&lt;li&gt;3007777777 → Approved&lt;/li&gt;
+&lt;li&gt;573007777777 → Error&lt;/li&gt;
+&lt;li&gt;57 300 7777777 → Error&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Recommendations&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To prevent errors caused by spaces in mobile numbers, we recommend implementing the following features in the user experience:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Implement an interface that automatically creates separator spaces in the mobile number as the user enters it, making the number easier to read and reducing the likelihood of manual entry errors. Ensure that these spaces are visible at the interface level while configuring your system to remove them at the backend level.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Interface example:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi05EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Configure error messages to display when a user enters a phone number with less than 10 digits or more than 10 digits (excluding the country code, which is +57 for Colombia).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A)&lt;/strong&gt; Example of an interface displaying automatically generated spaces when the user has entered fewer than 10 digits:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi06EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;B)&lt;/strong&gt; Example of an interface without spaces when the user has entered more than 10 digits:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi07EN.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;sandbox-environment-testing&#34;&gt;Sandbox Environment Testing&lt;/h4&gt;
+&lt;p&gt;To test Nequi transactions in the PayU Sandbox environment, use the following data:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Phone number&lt;/th&gt;
+&lt;th&gt;Authorization behavior&lt;/th&gt;
+&lt;th&gt;Query behavior &lt;br&gt;(Approximately 5 minutes after authorization)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;3006666666&lt;/td&gt;
+&lt;td&gt;Transaction rejected - Client not found on database&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3007777777&lt;/td&gt;
+&lt;td&gt;Transaction pending&lt;/td&gt;
+&lt;td&gt;Transaction approved&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3007777776&lt;/td&gt;
+&lt;td&gt;Transaction pending&lt;/td&gt;
+&lt;td&gt;Transaction declined&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3007777775&lt;/td&gt;
+&lt;td&gt;Transaction pending&lt;/td&gt;
+&lt;td&gt;Transaction pending&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3007777774&lt;/td&gt;
+&lt;td&gt;Transaction pending&lt;/td&gt;
+&lt;td&gt;Transaction failed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3007777772&lt;/td&gt;
+&lt;td&gt;Transaction pending&lt;/td&gt;
+&lt;td&gt;Transaction expired&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You can check the transaction status through the &lt;a href=&#34;../../../../en/docs/integrations/api-integration/queries-api.html&#34;&gt;Queries API&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;submit-transactions-using-cash-or-bank-reference&#34;&gt;Submit transactions using cash or bank reference&lt;/h2&gt;
+&lt;p&gt;This method lets you process the payments of your customers in cash or using a bank reference. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.&lt;/p&gt;
 &lt;h4 id=&#34;payments-in-cash&#34;&gt;Payments in cash&lt;/h4&gt;
 &lt;img src=&#34;../../../../assets/Payments/CashReceiptCO.png&#34; alt=&#34;PrintScreen&#34; width=&#34;75%&#34;&gt;
 &lt;h4 id=&#34;payments-with-bank-reference&#34;&gt;Payments with Bank reference&lt;/h4&gt;
 &lt;img src=&#34;../../../../assets/Payments/BankReferenceReceiptCO.png&#34; alt=&#34;PrintScreen&#34; width=&#34;75%&#34;&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-1&#34;&gt;Variables for request and response&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-2&#34;&gt;Parameters for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
 &lt;label for=&#34;table2&#34; class=&#34;showMandatory&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;table2&#34; name=&#34;table2&#34; value=&#34;true&#34; onchange=&#34;showMandatory(this)&#34;&gt; Show mandatory fields only&lt;/label&gt;
@@ -14391,7 +15412,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
-&lt;h4 id=&#34;considerations-1&#34;&gt;Considerations&lt;/h4&gt;
+&lt;h4 id=&#34;considerations-2&#34;&gt;Considerations&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;The parameter &lt;code&gt;transaction.expirationDate&lt;/code&gt; is not mandatory. If you don&amp;rsquo;t send this parameter, its default value is seven (7) days after the current date.&lt;br&gt;If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.&lt;/li&gt;
 &lt;li&gt;For &lt;!--`BALOTO` and --&gt;&lt;code&gt;EFECTY&lt;/code&gt;, the confirmation of the payment takes 15 minutes. For &lt;code&gt;BANK_REFERENCED&lt;/code&gt; and &lt;code&gt;OTHERS_CASH&lt;/code&gt; (Su Red), the confirmation is online.&lt;/li&gt;
@@ -14413,7 +15434,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;api-call-1&#34;&gt;API call&lt;/h3&gt;
+&lt;h3 id=&#34;api-call-2&#34;&gt;API call&lt;/h3&gt;
 &lt;p&gt;The following are the bodies of the request and response of this payment method.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
@@ -14427,7 +15448,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab21&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab31&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -14439,7 +15460,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-2&#34; data-toggle=&#34;tab&#34; href=&#34;#tab22&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab32&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -14448,7 +15469,7 @@ Two-step flow is available under request, contact your sales representative.
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;2&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;3&#34;&gt;
 
 
 
@@ -14457,7 +15478,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab21&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab31&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -14590,7 +15611,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab22&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab32&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -14724,7 +15745,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;submit-transaction-with-bank-transfer-pse&#34;&gt;Submit transaction with bank transfer (PSE)&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transactions-using-bank-transfer-pse&#34;&gt;Submit transactions using bank transfer (PSE)&lt;/h2&gt;
 &lt;p&gt;This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to create a Payment form following these steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Include a PSE button making clear that your customer will use &lt;em&gt;Proveedor de Servicios Electrónicos PSE&lt;/em&gt;.&lt;/li&gt;
@@ -14759,6 +15780,13 @@ Two-step flow is available under request, contact your sales representative.
 &lt;li&gt;Show a list to let the payer choose whether they are a &lt;em&gt;Natural&lt;/em&gt; (N) or &lt;em&gt;Legal&lt;/em&gt; (J) person. Depending on what the payer choose, you must send the value in the extra parameter &lt;code&gt;USER_TYPE&lt;/code&gt; in the request. The list must be displayed as follows:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/PSEPersonList_EN.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+This field is not mandatory for &lt;em&gt;PSE Avanza&lt;/em&gt;.
+&lt;/div&gt;
+
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Show a list to let the payer choose their identification type. You must send the ISO code of the value selected in the extra parameter &lt;code&gt;PSE_REFERENCE2&lt;/code&gt; in the request. The list must be displayed as follows:&lt;/li&gt;
 &lt;/ol&gt;
@@ -14793,14 +15821,6 @@ Two-step flow is available under request, contact your sales representative.
 &lt;td&gt;Passport.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;IDC&lt;/td&gt;
-&lt;td&gt;Customer´s unique identifier, in the case of unique customer / utility consumer ID&amp;rsquo;s.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;CEL&lt;/td&gt;
-&lt;td&gt;When identified by the mobile line.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;RC&lt;/td&gt;
 &lt;td&gt;Birth certificate.&lt;/td&gt;
 &lt;/tr&gt;
@@ -14813,7 +15833,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;You must send the payer identification number in the extra parameter &lt;code&gt;PSE_REFERENCE3&lt;/code&gt; in the request.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-2&#34;&gt;Variables for request and response&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-3&#34;&gt;Parameters for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
 &lt;label for=&#34;table3&#34; class=&#34;showMandatory&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;table3&#34; name=&#34;table3&#34; value=&#34;true&#34; onchange=&#34;showMandatory(this)&#34;&gt; Show mandatory fields only&lt;/label&gt;
@@ -15233,7 +16253,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;td&gt;transaction &amp;gt; paymentMethod&lt;/td&gt;
 &lt;td&gt;Alphanumeric&lt;/td&gt;
 &lt;td&gt;32&lt;/td&gt;
-&lt;td&gt;Select a valid Payment Method in Bank transfer. &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Select a valid Payment Method in bank transfer. &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html#colombia&#34;&gt;See the available Payment Methods for Colombia&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Yes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -15275,7 +16295,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;td&gt;transaction &amp;gt; extraParameters&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
-&lt;td&gt;Additional parameters or data associated with the request. &lt;br&gt;For Bank transfer payments, this is the response page of your commerce.&lt;br&gt;In JSON, the &lt;em&gt;extraParameters&lt;/em&gt; parameter is set as: &lt;br&gt;&lt;code&gt;&amp;quot;extraParameters&amp;quot;: {&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;quot;PSE_REFERENCE3&amp;quot;: &amp;quot;123456789&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;}&lt;/code&gt;&lt;br&gt;&lt;br&gt;In XML, the &lt;em&gt;extraParameters&lt;/em&gt; parameter is set as: &lt;br&gt;&lt;code&gt;&amp;lt;extraParameters&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;entry&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;PSE_REFERENCE3&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;123456789&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;/entry&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/extraParameters&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Additional parameters or data associated with the request. &lt;br&gt;For bank transfer payments, this is the response page of your commerce.&lt;br&gt;In JSON, the &lt;em&gt;extraParameters&lt;/em&gt; parameter is set as: &lt;br&gt;&lt;code&gt;&amp;quot;extraParameters&amp;quot;: {&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;quot;PSE_REFERENCE3&amp;quot;: &amp;quot;123456789&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;}&lt;/code&gt;&lt;br&gt;&lt;br&gt;In XML, the &lt;em&gt;extraParameters&lt;/em&gt; parameter is set as: &lt;br&gt;&lt;code&gt;&amp;lt;extraParameters&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;entry&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;PSE_REFERENCE3&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;123456789&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;/entry&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/extraParameters&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -15388,7 +16408,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
-&lt;h4 id=&#34;considerations-2&#34;&gt;Considerations&lt;/h4&gt;
+&lt;h4 id=&#34;considerations-3&#34;&gt;Considerations&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;To test PSE bank transfers in the PayU Sandbox environment, see the &lt;a href=&#34;../../../../assets/pse-test-guide-v5.pdf&#34;&gt;PSE Test Guide (PDF)&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;All the payment process values must be formatted in thousands (i.e., 1,200.00 or 1,200) without exception.&lt;/li&gt;
@@ -15431,7 +16451,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;api-call-2&#34;&gt;API call&lt;/h3&gt;
+&lt;h3 id=&#34;api-call-3&#34;&gt;API call&lt;/h3&gt;
 &lt;p&gt;The following are the bodies of the request and response of this payment method.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
@@ -15445,7 +16465,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab31&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab41&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -15457,7 +16477,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-3&#34; data-toggle=&#34;tab&#34; href=&#34;#tab32&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab42&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -15466,7 +16486,7 @@ Two-step flow is available under request, contact your sales representative.
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;3&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;4&#34;&gt;
 
 
 
@@ -15475,7 +16495,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab31&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab41&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -15616,7 +16636,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab32&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab42&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request body:&lt;/p&gt;
@@ -15771,8 +16791,8 @@ Two-step flow is available under request, contact your sales representative.
 
 &lt;/div&gt;
 &lt;h2 id=&#34;bank-list---pse&#34;&gt;Bank List - PSE&lt;/h2&gt;
-&lt;p&gt;This method returns a list of the banks available for &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transaction-with-bank-transfer-pse&#34;&gt;payments using PSE&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-3&#34;&gt;Variables for request and response&lt;/h3&gt;
+&lt;p&gt;This method returns a list of the banks available for &lt;a href=&#34;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-bank-transfer-pse&#34;&gt;payments using PSE&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-4&#34;&gt;Parameters for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
 &lt;br&gt;
@@ -15907,7 +16927,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
-&lt;h3 id=&#34;api-call-3&#34;&gt;API call&lt;/h3&gt;
+&lt;h3 id=&#34;api-call-4&#34;&gt;API call&lt;/h3&gt;
 &lt;p&gt;The following are the examples of the request and response of this method.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
@@ -15921,7 +16941,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab41&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -15933,7 +16953,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-4&#34; data-toggle=&#34;tab&#34; href=&#34;#tab42&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -15942,7 +16962,7 @@ Two-step flow is available under request, contact your sales representative.
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;4&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
 
 
 
@@ -15951,7 +16971,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab41&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -16274,7 +17294,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab42&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -16594,7 +17614,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/div&gt;
 &lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Available payment methods query&lt;/h2&gt;
 &lt;p&gt;This method returns a list of the payment methods available in all countries.&lt;/p&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-4&#34;&gt;Variables for request and response&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-5&#34;&gt;Parameters for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
 &lt;br&gt;
@@ -16714,7 +17734,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
-&lt;h3 id=&#34;api-call-4&#34;&gt;API call&lt;/h3&gt;
+&lt;h3 id=&#34;api-call-5&#34;&gt;API call&lt;/h3&gt;
 &lt;p&gt;The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
@@ -16728,7 +17748,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab51&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab61&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -16740,7 +17760,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-5&#34; data-toggle=&#34;tab&#34; href=&#34;#tab52&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab62&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -16749,7 +17769,7 @@ Two-step flow is available under request, contact your sales representative.
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;5&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;6&#34;&gt;
 
 
 
@@ -16758,7 +17778,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab51&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab61&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -16806,7 +17826,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab52&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab62&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -16849,7 +17869,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/div&gt;
 &lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;PING&lt;/code&gt; method lets you verify the connection to our platform.&lt;/p&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-5&#34;&gt;Variables for request and response&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-6&#34;&gt;Parameters for request and response&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Request&lt;/summary&gt;
 &lt;br&gt;
@@ -16945,7 +17965,7 @@ Two-step flow is available under request, contact your sales representative.
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
-&lt;h3 id=&#34;api-call-5&#34;&gt;API call&lt;/h3&gt;
+&lt;h3 id=&#34;api-call-6&#34;&gt;API call&lt;/h3&gt;
 &lt;p&gt;The following are the examples of the request and response of this method.&lt;/p&gt;
 &lt;nav&gt;
 	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
@@ -16959,7 +17979,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab61&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab71&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
 
 		
@@ -16971,7 +17991,7 @@ Two-step flow is available under request, contact your sales representative.
 
 		
 
-		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-6&#34; data-toggle=&#34;tab&#34; href=&#34;#tab62&#34; role=&#34;tab&#34;
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-7&#34; data-toggle=&#34;tab&#34; href=&#34;#tab72&#34; role=&#34;tab&#34;
 		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
 
 		
@@ -16980,7 +18000,7 @@ Two-step flow is available under request, contact your sales representative.
 	&lt;/div&gt;
 &lt;/nav&gt;
 
-&lt;div class=&#34;tab-content&#34; id=&#34;6&#34;&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;7&#34;&gt;
 
 
 
@@ -16989,7 +18009,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab61&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab71&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;
@@ -17022,7 +18042,7 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
-&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab62&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab72&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
 
 	&lt;br&gt;
 &lt;p&gt;Request example:&lt;/p&gt;

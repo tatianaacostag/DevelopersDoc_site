@@ -3,264 +3,169 @@ title: "BigCommerce"
 linkTitle: "BigCommerce"
 date: 2023-04-27T10:30:35-05:00
 description:
-  Este artículo te muestra el procedimiento para habilitar PayU en tu sitio web BigCommerce.
+  Esta guía describe los pasos para integrar PayU con tu sitio web de BigCommerce.
 weight: 11
 tags: ["subtopic"]
 ---
 
-BigCommerce es una plataforma de comercio digital que te permite crear rápidamente una tienda en línea con funcionalidades listas para usar. Para más información, echa un vistazo a la página oficial de BigCommerce: [Página oficial de BigCommerce](https://www.bigcommerce.com/press/).
+**Contenido**
+- [Introducción](#introduction)
+- [Requisitos previos](#prerequisites)
+- [Instalación de la extensión](#installing-the-extension)
+- [Uso de la extensión](#utilizing-the-extension)
+    - [Configuración de métodos de pago](#payment-methods-configuration)
+    - [Gestión de pedidos y reembolsos](#order-management-and-refunds)
+- [Prueba de la integración](#testing-the-integration)
+- [Soporte](#support)
+
+## Introducción
+BigCommerce es una plataforma de comercio digital que te permite crear rápidamente una tienda en línea equipada con funcionalidades listas para usar. Para más detalles, visita la [página oficial de BigCommerce](https://www.bigcommerce.com/press/).
 
 ## Requisitos previos
-* Necesitas una cuenta activa en PayU Latam.
-* Necesitas una cuenta con BigCommerce.
+Para llevar a cabo la integración, necesitas:
+* Una cuenta de PayU Latam
+* Una cuenta de BigCommerce
 
+## Instalación de la extensión
+1. Dirígete al Marketplace de BigCommerce, haz clic en **Mis Aplicaciones**, ubica la extensión de PayU y haz clic en **Instalar**:
 
+<img src="/assets/BigCommerce/Bigcommerce1.png" alt="PrintScreen" width="700">
+<p></p>
 
-## Cómo instalar esta extensión
-1. Instala la aplicación desde BigCommerce Marketplace haciendo clic en el botón de instalación.
+2. Marca la casilla de verificación y haz clic en **Confirmar** para proceder con la instalación:
 
+<img src="/assets/BigCommerce/Bigcommerce2.png" alt="PrintScreen" width="700">
+<p></p>
 
-![](/assets/BigCommerce/Update1.png)
+3. Después de la instalación, la interfaz de la aplicación aparecerá de la siguiente manera:
 
+<img src="/assets/BigCommerce/Bigcommerce3.png" alt="PrintScreen" width="700">
+<br></br>
 
+## Uso de la extensión
+### Configuración de métodos de pago
+Personaliza los métodos de pago mostrados en tu sitio web durante el proceso de pago. Consulta nuestros [métodos de pago disponibles]({{< ref "Select-your-payment-method.md" >}}).
 
+1. Tras la instalación, selecciona **Habilitar PayU Latam** para integrar la aplicación con tu tienda BigCommerce.
 
+<img src="/assets/BigCommerce/Bigcommerce4.png" alt="PrintScreen" width="700">
+<p></p>
 
+2. Personaliza el título para la opción de pago con tarjeta (por ejemplo, *Pagar con Tarjeta*). Este título quedará visible para los usuarios en la página de pago.
 
+<img src="/assets/BigCommerce/Bigcommerce5.png" alt="PrintScreen" width="700">
+<p></p>
 
-2. Haz clic en la casilla de verificación y en el botón "Confirmar" para finalizar la instalación.
+3. Elige el formato de visualización para las opciones de pago con tarjeta disponibles durante el proceso de pago. Puedes elegir una de las siguientes opciones:
 
+* Mostrar *Powered by PayU Latam* y logotipo en el formulario de pago.
+* Mostrar logotipos de tarjetas de crédito en la página de pago.
 
-![](/assets/BigCommerce/Update2.png)
-
-
-
-
-
-
-
-3. Una vez tengas la app instalada, verás la interfaz de la aplicación de la siguiente manera:
-
-
-![](/assets/BigCommerce/Update3.png)
-
-
-
-
-
-
-
-## Cómo usar esta extensión
-### Configura los métodos de pago
-Esta sección te explicará cómo configurar los métodos de pago que se mostrarán en el sitio web para el pago. [Consulta nuestros métodos de pago disponibles]({{< ref "Select-your-payment-method.md" >}}).
-
-
-
-1. Después de instalar la aplicación selecciona **Habilitar PayU Latam** para permitir la app en la tienda BigCommerce.
-
-
-![](/assets/BigCommerce/Update4.png)
-
-
-
-
-
-
-
-2. Selecciona un título personalizado para la opción de pago con tarjeta (por ejemplo, Pagar con tarjeta). Este título será visible en la página de pago para tus clientes.
-
-
-![](/assets/BigCommerce/Update5.png)
-
-
-
-
-
-
-
-3. Elige la forma en que deseas que se muestren las opciones de pago con tarjeta disponibles. Puedes elegir una de las siguientes opciones:
-
-* Mostrar Powered by PayU Latam y logo en el formulario de pago
-* Mostrar el logo de la tarjeta de crédito en la página de pago
-
-
-
-![](/assets/BigCommerce/Update6.png)
-
-
+<img src="/assets/BigCommerce/Bigcommerce6.png" alt="PrintScreen" width="700">
 
 {{% alert title="Importante" color="warning"%}}
-Si el comercio desea permitir métodos de pago alternativos (efectivo y transferencias bancarias), selecciona la opción "Activar Web Checkout (APM)".
+Para habilitar métodos de pago alternativos (efectivo y transferencias bancarias), selecciona **Activar Web Checkout (APM)**.
 {{% /alert %}}
 
+4. Agrega un proveedor para un país específico de PayU Latam, para hacerlo, haz clic en **Agregar Proveedor**. Puedes habilitar o deshabilitar cada proveedor utilizando la opción en la columna **Estado**, y puedes actualizar sus credenciales haciendo clic en el botón **Editar**.
 
+<img src="/assets/BigCommerce/Bigcommerce7.png" alt="PrintScreen" width="700">
+<p></p>
 
+Adicionalmente, elige el modo **Prueba** o **En Producción** para cada proveedor en la **Configuración de Incorporación**.
 
+<img src="/assets/BigCommerce/Bigcommerce8.png" alt="PrintScreen" width="700">
+<p></p>
 
-
-
-
-
-4. Utiliza el botón "Add provider" para añadir la cuenta de procesamiento de un país específico de PayU Latam. Cada configuración puede ser habilitada/deshabilitada desde la interfaz de la app usando el botón de “Status” respectivo. También puedes hacer clic en "Editar" para actualizar las credenciales, y recuerda que en la configuración de tus cuentas podrás elegir si quieres usarlas en modo prueba o en ambiente productivo.
-
-
-![](/assets/BigCommerce/Update7.png)
-
-
-![](/assets/BigCommerce/Update8.png)
-
-
-
-
-
-
-
-
-
-Para agregar una nueva configuración, especifica los siguientes campos obligatorios:
+**Campos obligatorios para agregar un nuevo proveedor:**
 | Parámetro | Descripción |
 |---|---|
-| Selecciona el país de tu cuenta | Selecciona el país que deseas configurar |
-| API Login | Usuario o Login que te provee PayU. [Cómo obtener el API Login de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
-| API Key | Llave única del comercio. [Cómo obtener el API Key de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
-| Public Key| Llave única del comercio. [Cómo obtener el Public Key de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
-| Account ID | ID de la cuenta de PayU asociada al país que seleccionaste anteriormente.  |
+| Select Payu Latam country | Selecciona el país que deseas configurar |
+| API Login | Usuario o Login que te proporciona PayU. [Cómo obtener el API Login de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
+| API Key | Clave única del comercio. [Cómo obtener el API Key de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
+| Public Key| Clave única del comercio. [Cómo obtener el Public Key de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
+| Account ID |  ID de la cuenta de PayU para el país seleccionado.  |
 | Merchant ID | ID de tu comercio en PayU Latam. |
+<p></p>
 
+5. Selecciona el flujo de transacción: 
 
+* Para el flujo de un paso, selecciona **Capturar en pedido realizado**.
+* Para el flujo en dos pasos, selecciona **Capturar en Envío**.
 
+<img src="/assets/BigCommerce/Bigcommerce9.png" alt="PrintScreen" width="700">
+<p></p>
 
-
-
-
-
-
-
-
-
-
-
-5. Elige si tus transacciones de pago se ejecutarán en un flujo de uno o dos pasos: 
-
-* Para un flujo de un paso, selecciona **Capture on order placed**.
-
-* Para el flujo en dos pasos, selecciona **Capture on Shipment**.
-
-![](/assets/BigCommerce/Update9.png)
-
-Consulte el siguiente [enlace](https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows) para obtener más información sobre los flujos de pago.
-
+Consulta el [documento de Flujo de Pagos](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) para obtener más información sobre las opciones.
 
 {{% alert title="Importante" color="warning"%}}
-La opción de procesar en más de un paso sólo se aplica a pagos con tarjeta (sujeto a [disponibilidad](https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows) en cada país). Las transacciones con otros métodos de pago realizarán la autorización y la captura en un solo paso.
+La opción de procesamiento en más de un paso solo se aplica a pagos con tarjeta (sujeto a [disponibilidad](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) en cada país). Las transacciones con otros métodos de pago requieren autorización y captura en un solo paso.
 {{% /alert %}}
 
 {{% alert title="Nota" color="info"%}}
-Las opciones multi-tienda estarán visibles debajo de la sección de opciones de pago.
-![](/assets/BigCommerce/Update10.png)
+Las opciones multi-tienda estarán visibles debajo de la sección de opciones de pago:
+
+<img src="/assets/BigCommerce/Bigcommerce10.png" alt="PrintScreen" width="700">
 {{% /alert %}} 
 
+### Gestión de pedidos y reembolsos
 
+1. Para gestionar los pedidos, haz clic en el botón **Panel de Pedidos** en la esquina superior derecha.
 
-
-
-
-
-### Gestiona tus pedidos
-
-1. Para acceder al panel de pedidos, haz clic en el botón ‘Order Dashboard’.
-
-![](/assets/BigCommerce/Update11.png)
-
-
-
-
-
-
+<img src="/assets/BigCommerce/Bigcommerce11.png" alt="PrintScreen" width="700">
+<p></p>
 
 2. La tabla del panel de pedidos mostrará los estados de pago del pedido realizado.
 
-![](/assets/BigCommerce/Imagen12.png)
+<img src="/assets/BigCommerce/Bigcommerce12.png" alt="PrintScreen" width="500">
+<p></p>
 
+3. Para procesar un reembolso, haz clic en el botón **Reembolsar** en la columna de **Acciones**.
 
-
-
-
-
-
-3. Para procesar un reembolso, haz clic en el botón ‘Refund’ en la tabla del panel de pedidos.
-
-![](/assets/BigCommerce/Imagen13.png)
+<img src="/assets/BigCommerce/Bigcommerce13.png" alt="PrintScreen" width="500">
 
 {{% alert title="Importante" color="warning"%}}
-* Los reembolsos sólo están disponibles para transacciones pagadas con tarjeta.
-* Para saber más sobre las particularidades de los reembolsos en cada país donde PayU opera, haz clic [aquí](https://developers.payulatam.com/latam/es/payu-module-documentation/payu-operations/refunds-mp.html).
+* Los reembolsos solo están disponibles para transacciones con tarjeta.
+* Consulta el [documento de reembolsos](https://developers.payulatam.com/latam/es/payu-module-documentation/payu-operations/refunds-mp.html) para obtener detalles para cada país.
 {{% /alert %}}
 
+## Prueba de la integración 
+Antes de iniciar transacciones reales, se recomienda probar tu integración. Asegúrate de haber agregado un proveedor con credenciales de prueba en la Configuración de tu BigCommerce.
 
+1. Inicia sesión en tu tienda, selecciona un producto para probar y procede al pago. Asegúrate de que el país de envío coincida con el destino:
 
+<img src="/assets/BigCommerce/Bigcommerce14.png" alt="PrintScreen" width="400">
+<p></p>
 
+2. Selecciona el método de pago deseado:
 
+* **A) Tarjeta:**  Ingresa los detalles de la tarjeta y haz clic en **Pagar con Tarjeta**.
 
-
-## Cómo probar la integración 
-Cuando hayas terminado de configurar la app y lo descrito anteriormente, se recomienda probar la integración antes de empezar a recibir transacciones reales. Como requisito previo, asegúrate de añadir un proveedor con credenciales de prueba en la Configuración de BigCommerce.
-
-1. Inicia sesión en tu tienda y selecciona el producto que deseas comprar para probarlo. En el momento de finalizar la compra, introduce los datos y ten en cuenta que el país seleccionado debe ser el país a donde se enviará el producto. Por ejemplo, si el envío es a Argentina, selecciona Argentina en el desplegable de opciones de país.
-
-
-![](/assets/BigCommerce/Imagen14.png)
-
-
-
-
-
-
-
-2. A continuación, podrás seleccionar el método de pago deseado.
-
-**Selección de pago:**
-
-*	**Tarjeta:** Especifica los datos de la tarjeta y, a continuación, haz clic en la opción ‘Pagar con tarjeta’.
-
-![](/assets/BigCommerce/Imagen15.png)
+<img src="/assets/BigCommerce/Bigcommerce15.png" alt="PrintScreen" width="400">
 
 {{% alert title="Nota" color="info"%}}
-Recuerda que puedes seleccionar un título personalizado para la opción de pago con tarjeta durante la configuración de PayU Latam en tu cuenta de BigCommerce (por ejemplo, puedes cambiar "Pay by card" por "Pagar").
-{{% /alert %}} 
+Puedes personalizar el título de la opción de pago con tarjeta como se ve en [Configuración de métodos de pago](#payment_methods_configuration).
+{{% /alert %}}
 
-* **Pay by Web Checkout:** Para otros métodos de pago, selecciona el botón ‘Pay by Web Checkout’. Introduce los datos y confirma el pago.
+* **B) Pagar mediante Web Checkout:** Para otros métodos de pago, selecciona **Pagar mediante Web Checkout** y completa el pago.
 
+<img src="/assets/BigCommerce/Bigcommerce16.png" alt="PrintScreen" width="400">
+<p></p>
 
-![](/assets/BigCommerce/Imagen16.png)
+3. Tras la aprobación, verifica la compra en:
 
-![](/assets/BigCommerce/Imagen17.png)
+* Panel de Pedidos de BigCommerce: **PayU Latam > Panel de Pedidos**
 
-![](/assets/BigCommerce/Imagen18.png)
+<img src="/assets/BigCommerce/Bigcommerce11.png" alt="PrintScreen" width="700">
+<p></p>
 
+* Módulo administrativo de PayU: En el módulo de **Informe de Ventas**.
 
+<img src="/assets/BigCommerce/Bigcommerce17.png" alt="PrintScreen" width="700">
+<p></p>
 
-
-
-
-3. Cuando la compra sea aprobada, puedes registrarla en:
-
-* Order Dashboard de BigCommerce: **_PayU Latam > Order Dashboard_**
-
-![](/assets/BigCommerce/Update11.png)
-
-* Módulo administrativo de PayU: En el módulo de **_Reporte de Ventas_**.
-
-![](/assets/BigCommerce/Imagen19.png)
-
-
-
-
-
-
-
-## Opciones de soporte:
-Si experimentas un problema técnico o tienes alguna pregunta sobre esta extensión, contacta a nuestro equipo de asistencia **tecnico.co@payu.com** o visita nuestro sitio web **https://colombia.payu.com/contactanos/**. Si optas por enviarnos un correo electrónico, facilítanos los detalles de la extensión que estás utilizando en el campo del asunto y un resumen del problema que estás experimentando en el cuerpo del mensaje.
+## Soporte:
+Para problemas técnicos o consultas sobre esta extensión, contacta a nuestro equipo de soporte en **tecnico.co@payu.com** o visita [nuestro sitio web](https://colombia.payu.com/contactanos/). Si optas por enviarnos un correo electrónico,  incluye los detalles de la extensión en el asunto y un resumen del problema en el cuerpo del mensaje.
 
 
 

@@ -12269,7 +12269,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
         
         
         &lt;script src=&#34;../../../../js/searchcodes.js&#34;&gt;&lt;/script&gt;
-&lt;p&gt;Para integrarte con la API de Pagos de Colombia, apunta tus peticiones a los siguientes URLs de acuerdo con tu ambiente.&lt;/p&gt;
+&lt;p&gt;Para integrarte con la API de Pagos para Colombia, dirige tus solicitudes a las siguientes URL según el entorno correspondiente.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -12284,10 +12284,10 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;h2 id=&#34;available-methods&#34;&gt;Métodos disponibles&lt;/h2&gt;
 &lt;p&gt;La API de pagos incluye los siguiente métodos:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-credit-or-debit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito o débito&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-Nequi&#34;&gt;Enviar transacciones con Nequi&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-cash-or-bank-reference&#34;&gt;Enviar transacciones en efectivo o referencia bancaria&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#submit-transaction-with-bank-transfer-pse&#34;&gt;Enviar transacciones con transferencia bancaria (PSE)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#submit-transactions-using-credit-or-debit-cards&#34;&gt;Enviar transacciones utilizando tarjetas de crédito o débito&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#submit-transactions-using-Nequi&#34;&gt;Enviar transacciones utilizando Nequi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#submit-transactions-using-cash-or-bank-reference&#34;&gt;Enviar transacciones utilizando efectivo o referencia bancaria&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#submit-transactions-using-bank-transfer-pse&#34;&gt;Enviar transacciones utilizando transferencia bancaria (PSE)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#bank-list---pse&#34;&gt;Lista de Bancos - PSE&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#ping&#34;&gt;Ping&lt;/a&gt;&lt;/li&gt;
@@ -12298,13 +12298,13 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
 &lt;p&gt;Para confirmar el estado de una transacción, puedes utilizar una de las siguientes opciones:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Navega al URL configurado en la variable &lt;code&gt;transaction.notifyUrl&lt;/code&gt; o la opción &lt;em&gt;&lt;strong&gt;URL de confirmación&lt;/strong&gt;&lt;/em&gt; ubicada en el Módulo PayU en &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuración técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Navega a la URL configurada en la variable &lt;code&gt;transaction.notifyUrl&lt;/code&gt; o la opción &lt;em&gt;&lt;strong&gt;URL de confirmación&lt;/strong&gt;&lt;/em&gt; ubicada en el Módulo PayU en &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuración técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Utiliza la &lt;a href=&#34;../../../../es/docs/services/queries.html&#34;&gt;API o SDK de consultas&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&#34;submit-transaction-with-credit-or-debit-cards&#34;&gt;Enviar transacciones con tarjeta de crédito o débito&lt;/h2&gt;
-&lt;p&gt;Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Colombia, puedes realizar los flujos de un paso (&lt;strong&gt;Cobro&lt;/strong&gt;). Para más información, consulta los &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;flujos de pago&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;submit-transactions-using-credit-or-debit-cards&#34;&gt;Enviar transacciones utilizando tarjetas de crédito o débito&lt;/h2&gt;
+&lt;p&gt;Este método te permite procesar los pagos que realizan tus clientes utilizando tarjetas de crédito o débito. Para Colombia, puedes realizar los flujos de un paso (&lt;strong&gt;Cobro&lt;/strong&gt;). Para más información, consulta los &lt;a href=&#34;../../../../es/docs/services/payments.html#payment-flows&#34;&gt;flujos de pago&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -12312,7 +12312,7 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu representante de ventas.
 &lt;/div&gt;
 
-&lt;h3 id=&#34;variables-for-request-and-response&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response&#34;&gt;Parámetros para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
 &lt;label for=&#34;table1&#34; class=&#34;showMandatory&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;table1&#34; name=&#34;table1&#34; value=&#34;true&#34; onchange=&#34;showMandatory(this)&#34;&gt; Mostrar solo los campos obligatorios&lt;/label&gt;
@@ -12492,7 +12492,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; buyer&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Objeto&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Información del comprador.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
@@ -12583,7 +12583,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; order &amp;gt; additionalValues &amp;gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Objeto&lt;/td&gt;
 &lt;td&gt;64&lt;/td&gt;
 &lt;td&gt;Monto de la orden y sus valores asociados.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
@@ -12653,7 +12653,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; creditCardTokenId&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Objeto&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Incluye este parámetro cuando la transacción se hace con una tarjeta de crédito tokenizada; además, es obligatorio enviar el parámetro &lt;code&gt;transaction.creditCard.expirationDate&lt;/code&gt;.&lt;br&gt;Para más información, consulte &lt;a href=&#34;../../../../es/docs/integrations/api-integration/tokenization-api.html&#34;&gt;API de Tokenización&lt;/a&gt;.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
@@ -12702,7 +12702,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Objeto&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Información del pagador.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
@@ -12863,14 +12863,14 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; extraParameters&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Objeto&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de &lt;em&gt;extraParameters&lt;/em&gt; es 64 caracteres.&lt;br&gt;En JSON, el parámetro &lt;em&gt;extraParameters&lt;/em&gt; sigue esta estructura: &lt;br&gt;&lt;code&gt;&amp;quot;extraParameters&amp;quot;: {&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;quot;INSTALLMENTS_NUMBER&amp;quot;: 1&lt;/code&gt;&lt;br&gt;&lt;code&gt;}&lt;/code&gt;&lt;br&gt;&lt;br&gt;En XML, el parámetro &lt;em&gt;extraParameters&lt;/em&gt; sigue esta estructura: &lt;br&gt;&lt;code&gt;&amp;lt;extraParameters&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;entry&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;INSTALLMENTS_NUMBER&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt;  &lt;code&gt;&amp;lt;string&amp;gt;1&amp;lt;/string&amp;gt;&lt;/code&gt;&lt;br&gt; &lt;code&gt;&amp;lt;/entry&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/extraParameters&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; threeDomainSecure&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Objeto&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Este objeto contiene la información de 3DS 2.0.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;No&lt;/td&gt;
@@ -13413,7 +13413,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;submit-transaction-with-Nequi&#34;&gt;Enviar transacciones con Nequi&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transactions-using-Nequi&#34;&gt;Enviar transacciones utilizando Nequi&lt;/h2&gt;
 &lt;p&gt;Nequi es una plataforma integral de servicios financieros que funciona por medio de una billetera digital disponible para millones de usuarios a través de una aplicación móvil. Con Nequi, puedes realizar pagos, transferencias, recargas y retiros de dinero de manera rápida y segura, todo desde tu dispositivo personal.&lt;/p&gt;
 &lt;p&gt;Además de ser una herramienta conveniente para usuarios individuales, Nequi también es una solución de pagos innovadora para comercios. Al aceptar pagos con Nequi, tu negocio puede disfrutar de una serie de ventajas significativas:&lt;/p&gt;
 &lt;ul&gt;
@@ -13461,7 +13461,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;li&gt;Destaca los pasos a seguir para facilitar el proceso de pago al comprador, por ejemplo:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi04ES.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-1&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-1&#34;&gt;Parámetros para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
 &lt;label for=&#34;table1&#34; class=&#34;showMandatory&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;table1&#34; name=&#34;table1&#34; value=&#34;true&#34; onchange=&#34;showMandatory(this)&#34;&gt; Mostrar solo campos obligatorios&lt;/label&gt;
@@ -13802,7 +13802,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Objeto&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Información del pagador.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
@@ -13830,7 +13830,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;transaction &amp;gt; payer &amp;gt; billingAddress&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Objeto&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;td&gt;Dirección de facturación.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sí&lt;/td&gt;
@@ -14372,14 +14372,14 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;p&gt;&lt;strong&gt;Recomendaciones&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Para prevenir errores causados por espacios en blanco en los números de celular, te recomendamos implementar las siguientes características en la experiencia de usuario:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Configura la interfaz para que automáticamente cree espacios separadores en el número de celular que el usuario ingresa, de esta forma, el usuario podrá leer más fácilmente el número y se reducirá la probabilidad de que ingrese manualmente espacios en blanco. Si bien los espacios serán visibles a nivel de interfaz, puedes configurar tu sistema para eliminar los espacios en blanco a nivel backend.&lt;/li&gt;
+&lt;li&gt;Implementa una interfaz que automáticamente cree espacios separadores en el número de teléfono móvil mientras el usuario lo ingresa, haciendo que el número sea más fácil de leer y reduciendo la probabilidad de errores de entrada manual. Asegúrate de que estos espacios sean visibles a nivel de la interfaz mientras configuras tu sistema para eliminarlos a nivel de backend.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Ejemplo de la interfaz:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/Nequi05ES.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Configura la interfaz para que muestre anuncios de error si el usuario ingresa un número inferior o superior a 10 dígitos (sin tener en cuenta el código de país, que es +57 para Colombia).&lt;/li&gt;
+&lt;li&gt;Configura mensajes de error para que se muestren cuando un usuario ingrese un número de teléfono con menos de 10 dígitos o más de 10 dígitos (excluyendo el código de país, que es +57 para Colombia).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;A)&lt;/strong&gt; Ejemplo de una interfaz con espacios generados automáticamente donde el usuario no ha ingresado 10 dígitos:&lt;/li&gt;
@@ -14433,13 +14433,13 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Puedes consultar el estado de la transacción a través de la &lt;a href=&#34;../../../../es/docs/integrations/api-integration/queries-api.html&#34;&gt;API de Consultas&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;submit-transaction-with-cash-or-bank-reference&#34;&gt;Enviar transacciones en efectivo o referencia bancaria&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transactions-using-cash-or-bank-reference&#34;&gt;Enviar transacciones utilizando efectivo o referencia bancaria&lt;/h2&gt;
 &lt;p&gt;Este método te permite procesar los pagos en efectivo o por referencia bancaria de tus clientes. Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un recibo de pago como los siguientes.&lt;/p&gt;
 &lt;h4 id=&#34;payments-in-cash&#34;&gt;Pagos en efectivo&lt;/h4&gt;
 &lt;img src=&#34;../../../../assets/Payments/CashReceiptCO.png&#34; alt=&#34;PrintScreen&#34; width=&#34;75%&#34;&gt;
 &lt;h4 id=&#34;payments-with-bank-reference&#34;&gt;Pagos con Referencia bancaria&lt;/h4&gt;
 &lt;img src=&#34;../../../../assets/Payments/BankReferenceReceiptCO.png&#34; alt=&#34;PrintScreen&#34; width=&#34;75%&#34;&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-2&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-2&#34;&gt;Parámetros para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
 &lt;label for=&#34;table2&#34; class=&#34;showMandatory&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;table2&#34; name=&#34;table2&#34; value=&#34;true&#34; onchange=&#34;showMandatory(this)&#34;&gt; Mostrar solo campos obligatorios&lt;/label&gt;
@@ -15375,7 +15375,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 
 
 &lt;/div&gt;
-&lt;h2 id=&#34;submit-transaction-with-bank-transfer-pse&#34;&gt;Enviar transacciones con transferencia bancaria (PSE)&lt;/h2&gt;
+&lt;h2 id=&#34;submit-transactions-using-bank-transfer-pse&#34;&gt;Enviar transacciones utilizando transferencia bancaria (PSE)&lt;/h2&gt;
 &lt;p&gt;Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este método de pago, necesitas crear un formulario de pago siguiendo estos pasos:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Incluye un botón PSE button haciendo evidente que tu cliente va a utilizar &lt;em&gt;Proveedor de Servicios Electrónicos PSE&lt;/em&gt;.&lt;/li&gt;
@@ -15410,6 +15410,13 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;li&gt;Muestra una lista para que el pagador escoja si es una persona &lt;em&gt;Natural&lt;/em&gt; (N) o &lt;em&gt;Jurídica&lt;/em&gt; (J). Dependiendo de lo que escoja, debes enviar el valor en el extra parámetro &lt;code&gt;USER_TYPE&lt;/code&gt; de la petición. La lista debe verse así:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Payments/PSEPersonList_ES.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;&gt;&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Este campo no es obligatorio para &lt;em&gt;PSE Avanza&lt;/em&gt;.
+&lt;/div&gt;
+
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Muestra una lista para que el pagador escoja su tipo de identificación. Debes enviar el código ISO del valor seleccionado en el extra parámetro &lt;code&gt;PSE_REFERENCE2&lt;/code&gt; de la petición. La lista debe verse así:&lt;/li&gt;
 &lt;/ol&gt;
@@ -15444,14 +15451,6 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;td&gt;Pasaporte.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;IDC&lt;/td&gt;
-&lt;td&gt;Identificador único de cliente, para el caso de ID’s únicos de clientes/usuarios de servicios públicos.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;CEL&lt;/td&gt;
-&lt;td&gt;En caso de identificarse a través de la línea del móvil.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;RC&lt;/td&gt;
 &lt;td&gt;Registro civil de nacimiento.&lt;/td&gt;
 &lt;/tr&gt;
@@ -15464,7 +15463,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;Debes enviar el número de identificación del pagador en el extra parámetro &lt;code&gt;PSE_REFERENCE3&lt;/code&gt; de la petición.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-3&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-3&#34;&gt;Parámetros para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
 &lt;label for=&#34;table3&#34; class=&#34;showMandatory&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;table3&#34; name=&#34;table3&#34; value=&#34;true&#34; onchange=&#34;showMandatory(this)&#34;&gt; Mostrar solo campos obligatorios&lt;/label&gt;
@@ -16421,8 +16420,8 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 
 &lt;/div&gt;
 &lt;h2 id=&#34;bank-list---pse&#34;&gt;Lista de Bancos - PSE&lt;/h2&gt;
-&lt;p&gt;Este método retorna la lista de bancos disponibles para realizar &lt;a href=&#34;#submit-transaction-with-bank-transfer-pse&#34;&gt;pagos utilizando PSE&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-4&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
+&lt;p&gt;Este método retorna la lista de bancos disponibles para realizar &lt;a href=&#34;#submit-transactions-using-bank-transfer-pse&#34;&gt;pagos utilizando PSE&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-4&#34;&gt;Parámetros para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
 &lt;br&gt;
@@ -17244,7 +17243,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/div&gt;
 &lt;h2 id=&#34;available-payment-methods-query&#34;&gt;Consultar métodos de pago disponibles&lt;/h2&gt;
 &lt;p&gt;Este método retorna la lista de los métodos de pago disponibles en todos los paises.&lt;/p&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-5&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-5&#34;&gt;Parámetros para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
 &lt;br&gt;
@@ -17499,7 +17498,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 &lt;/div&gt;
 &lt;h2 id=&#34;ping&#34;&gt;Ping&lt;/h2&gt;
 &lt;p&gt;El método &lt;code&gt;PING&lt;/code&gt; te permite verificar la conexión con nuestra plataforma.&lt;/p&gt;
-&lt;h3 id=&#34;variables-for-request-and-response-6&#34;&gt;Variables para la petición y la respuesta&lt;/h3&gt;
+&lt;h3 id=&#34;parameters-for-request-and-response-6&#34;&gt;Parámetros para la petición y la respuesta&lt;/h3&gt;
 &lt;details&gt;
 &lt;summary&gt;Petición (Request)&lt;/summary&gt;
 &lt;br&gt;

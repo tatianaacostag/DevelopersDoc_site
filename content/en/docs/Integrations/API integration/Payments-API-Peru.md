@@ -9,9 +9,9 @@ tags: ["subtopic"]
 ---
 <script src="/js/searchcodes.js"></script>
 
-To integrate with Payments API Peru, target your request to the following URLs according to your environment.
+To integrate with Peru's Payment API, direct your requests to the following URLs based on your environment:
 
-{{% alert title="URL" color="info"%}}
+{{% alert title="URLs" color="info"%}}
 * Test: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Production: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
 {{% /alert %}}
@@ -19,8 +19,9 @@ To integrate with Payments API Peru, target your request to the following URLs a
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transaction with credit or debit cards]({{< ref "Payments-API-Peru.md#submit-transaction-with-credit-or-debit-cards" >}})
-* [Submit transaction with cash]({{< ref "Payments-API-Peru.md#submit-transaction-with-cash" >}})
+* [Submit transactions using credit or debit cards]({{< ref "Payments-API-Peru.md#submit-transactions-using-credit-or-debit-cards" >}})
+* [Submit transactions using Yape]({{< ref "Payments-API-Peru.md#submit-transactions-using-yape" >}})
+* [Submit transactions using cash]({{< ref "Payments-API-Peru.md#submit-transactions-using-cash" >}})
 * [Available payment methods query]({{< ref "Payments-API-Peru.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Peru.md#ping" >}})
 
@@ -30,10 +31,10 @@ To confirm the status of a transaction, you can use one of the following options
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Submit transaction with credit or debit cards
+## Submit transactions using credit or debit cards
 This method lets you process the payments performed by your customers using credit or debit cards. For Peru, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
-### Variables for request and response
+### Parameters for request and response
 
 <details>
 <summary>Request</summary>
@@ -46,11 +47,11 @@ This method lets you process the payments performed by your customers using cred
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes | 
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| transaction |  |  | This object has the transaction data. | Yes |
-| transaction > order |  |  | This object has the order data. | Yes |
+| transaction | Object |  | This object has the transaction data. | Yes |
+| transaction > order | Object |  | This object has the order data. | Yes |
 | transaction > order > accountId | Number |  | Identifier of your account. | Yes |
 | transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
 | transaction > order > description | Alphanumeric | Min:1 Max:255 | Description of the order. | Yes |
@@ -58,7 +59,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > notifyUrl | Alphanumeric | Max:2048 | Confirmation URL of the order. | No |
 | transaction > order > partnerId | Alphanumeric | Max:255 | Partner ID in PayU. | No |
 | transaction > order > signature | Alphanumeric | Max:255 | The signature associated to the form. For more information refer [Authentication signature]({{< ref "integrations.html#authentication-signature" >}}). | Yes |
-| transaction > order > shippingAddress |  |  | Shipping address. | No |
+| transaction > order > shippingAddress | Object |  | Shipping address. | No |
 | transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
 | transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
 | transaction > order > shippingAddress > city | Alphanumeric | Max:50 | Address city. | No |
@@ -66,7 +67,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > shippingAddress > country | Alphanumeric | 2 | Address country. | No |
 | transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Address Zip code. | No |
 | transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated to the address. | No |
-| transaction > order > buyer |  |  | Buyer information. | Yes |
+| transaction > order > buyer | Object |  | Buyer information. | Yes |
 | transaction > order > buyer > merchantBuyerId | Alphanumeric | Max:100 | Buyer ID in your system. | No |
 | transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
 | transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes |
@@ -79,7 +80,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Yes |
 | transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. | Yes |
 | transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. | Yes |
-| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Yes |
+| transaction > order > additionalValues > | Object | 64 | Amount of the order or its associated values. | Yes |
 | transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. | Yes |
 | transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Yes |
 | transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
@@ -90,22 +91,22 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
 | transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | No |
-| transaction > creditCard |  |  | Credit card information. If you process using debit card, do not send this parameter.<br>This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
+| transaction > creditCard | Object |  | Credit card information. If you process using debit card, do not send this parameter.<br>This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). | No |
 | transaction > creditCard > expirationDate | Alphanumeric | 7 | Credit card expiration date. Format `YYYY/MM`. | No |
 | transaction > creditCard > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card. | No |
 | transaction > creditCard > processWithoutCvv2 | Boolean | Max:255 | Allows you to process transactions without including the credit card security code. Your commerce requires PayU's authorization before using this feature. | No |
-| transaction > debitCard |  |  | Debit card information. This object and its parameters are mandatory when the payment is performed using debit card. | No |
+| transaction > debitCard | Object |  | Debit card information. This object and its parameters are mandatory when the payment is performed using debit card. | No |
 | transaction > debitCard > number | Alphanumeric | Min:13 Max:20 | Debit card number. | No |
 | transaction > debitCard > securityCode | Alphanumeric | Min:1 Max:4 | Debit card security code (CVC2, CVV2, CID). | No |
 | transaction > debitCard > expirationDate | Alphanumeric | 7 | Debit card expiration date. Format `YYYY/MM`. | No |
 | transaction > debitCard > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the debit card. | No |
-| transaction > payer |  |  | Payer information. | No |
+| transaction > payer | Object |  | Payer information. | No |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
 | transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `transaction.creditCard.name` for credit card payments. | No |
-| transaction > payer > billingAddress |  |  | Billing address. | Yes |
+| transaction > payer > billingAddress | Object |  | Billing address. | Yes |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
 | transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | No |
@@ -124,7 +125,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | No |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | No |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | No |
-| transaction > extraParameters |  |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
+| transaction > extraParameters | Object |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
 
 </details>
 
@@ -137,7 +138,7 @@ This method lets you process the payments performed by your customers using cred
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| transactionResponse |  |  | The response data. |
+| transactionResponse | Object |  | The response data. |
 | transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
 | transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. |
@@ -148,7 +149,7 @@ This method lets you process the payments performed by your customers using cred
 | transactionResponse > authorizationCode | Alphanumeric | Max:12 | The authorization code returned by the financial network. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
@@ -166,7 +167,7 @@ The following are the request and response bodies for this transaction type.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Example of a request:
 ```JSON
 {
    "language": "es",
@@ -253,7 +254,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```JSON
 {
     "code": "SUCCESS",
@@ -287,7 +288,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Example of a request:
 ```XML
 <request>
    <language>es</language>
@@ -381,7 +382,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -426,6 +427,7 @@ Using _Zero Authorization_, you can have the following benefits:
 * Add several cards to an account
 * Lower refunds
 -->
+
 ### Capture
 Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-peru.md#authorization" >}}) to transfer them to your PayU account.
 
@@ -441,7 +443,7 @@ The following are the request and response bodies for this transaction type.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Example of a request:
 ```JSON
 {
    "language": "es",
@@ -462,7 +464,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```JSON
 {
     "code": "SUCCESS",
@@ -494,7 +496,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Example of a request:
 ```XML
 <request>
    <language>es</language>
@@ -515,7 +517,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -544,7 +546,7 @@ The following are the request and response bodies for this transaction type.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Example of a request:
 ```JSON
 {
    "language": "es",
@@ -631,7 +633,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```JSON
 {
     "code": "SUCCESS",
@@ -665,7 +667,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Example of a request:
 ```XML
 <request>
    <language>es</language>
@@ -760,7 +762,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -786,7 +788,488 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with cash
+## Submit transactions using Yape
+
+### Description
+Yape is a mobile application created by the BCP (Banco de Crédito del Perú) that offers a digital wallet. The application allows users to make online purchases, pay for services, top-up, withdraw funds, and send or receive money quickly and securely. Access to this digital wallet does not require a bank account; only the payer's cell phone number is needed.
+
+#### Features and benefits
+Enabling payments through Yape in your business provides valuable benefits to you and your customers:
+
+* **More sales:** Attract new customers and increase sales thanks to the millions of customers who have Yape.
+* **More convenience:** Customers can make quick and easy purchases using their mobile phones.
+* **More security:** Ensure secure and reliable transactions with the backing of BCP.
+
+### Payment process with Yape
+
+#### Prerequisites
+To conduct payments, the end user needs 2 components:
+* Mobile phone number
+* OTP (One-Time Password)
+
+#### User Experience
+A purchase through Yape can follow the flow described below:
+
+1. The user accesses the shopping website or application and selects the product they want to purchase. The website offers the user the option to pay through Yape and requests their mobile phone number and an approval code, for example:
+
+<img src="/assets/Payments/Yape01ES.png" alt="PrintScreen" width="250">
+<p></p>
+
+2. The user accesses the Yape application to obtain the approval code, for example:
+
+<img src="/assets/Payments/Yape02ES.png" alt="PrintScreen" width="250">
+<p></p>
+
+3. The user enters the approval code and easily completes the payment, for example:
+
+<img src="/assets/Payments/Yape03EN.png" alt="PrintScreen" width="500">
+<p></p>
+
+### Parameters for request and response
+
+<details>
+<summary>Request</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description | Mandatory |
+|---|---|---|---|:---:|
+| language | Alphanumeric| 2 | Language used in the request, used for error messages. | Yes |
+| command | Alphanumeric| Max:32 | Set SUBMIT_TRANSACTION. | Yes |
+| test (JSON) isTest (XML) | Boolean | | Set true if the request is in test mode, otherwise set false. | Yes |
+| merchant | Object | | Authentication data. | Yes |
+| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. | Yes |
+| merchant > apiKey | Alphanumeric | Min:6 Max:32  | Password provided by PayU. | Yes       |
+| transaction | Object | | Transaction data. | Yes |
+| transaction > order | Object | | Order data. | Yes |
+| transaction > order > accountId | Number | | Your account identifier. | Yes |
+| transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Order identifier in your system. | Yes |
+| transaction > order > description | Alphanumeric | Min:1 Max:255 | Order description. | Yes |
+| transaction > order > language | Alphanumeric | 2 | Language used in emails sent to buyer and seller. | Yes |
+| transaction > order > notifyUrl | Alphanumeric| Max:2048| Order confirmation URL. | No |
+| transaction > order > partnerId | Alphanumeric| Max:255 | Partner ID in PayU. | No |
+| transaction > order > signature | Alphanumeric| Max:255 | Form-associated signature. | Yes |
+| transaction > order > shippingAddress | Object | | Shipping address. | No |
+| transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
+| transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
+| transaction > order > shippingAddress > city | Alphanumeric | Max:50  | City of the address. | No |
+| transaction > order > shippingAddress > state | Alphanumeric | Max:40  | State of the address. | No |
+| transaction > order > shippingAddress > country | Alphanumeric | 2 | Country of the address. | No |
+| transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Postal code of the address. | No |
+| transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated with the address. | No |
+| transaction > order > buyer | Object | | Information about the buyer. | Yes |
+| transaction > order > buyer > merchantBuyerId | Alphanumeric| Max:100 | Buyer's ID in your system. | No |
+| transaction > order > buyer > fullName | Alphanumeric| Max:150 | Buyer's full name. | Yes |
+| transaction > order > buyer > emailAddress | Alphanumeric| Max:255 | Buyer's email address. | Yes |
+| transaction > order > buyer > contactPhone | Alphanumeric| Max:20  | Buyer's phone number. | Yes |
+| transaction > order > buyer > dniNumber | Alphanumeric| Max:20  | Buyer's identification number. | Yes |
+| transaction > order > buyer > shippingAddress | Alphanumeric| | Buyer's shipping address. | Yes |
+| transaction > order > buyer > shippingAddress > street1 | Alphanumeric | Max:150 | Buyer's shipping address Line 1. | Yes |
+| transaction > order > buyer > shippingAddress > city | Alphanumeric | Max:50  | City of buyer's shipping address. | Yes |
+| transaction > order > buyer > shippingAddress > state | Alphanumeric | Max:40 | State of buyer's shipping address. | Yes |
+| transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Country of buyer's shipping address in ISO 3166 alpha-2 format. | Yes |
+| transaction > order > buyer > shippingAddress > postalCode | Number | Max:20  | Postal code of buyer's shipping address. | Yes |
+| transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Phone number of buyer's shipping address. | Yes |
+| transaction > order > additionalValues | Object | 64 | Order amount and its associated values. | Yes |
+| transaction > order > additionalValues > TX_VALUE | Alphanumeric| 64 | Transaction amount. | Yes |
+| transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2  | Specifies the transaction amount. | Yes |
+| transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. | No |
+| transaction > order > additionalValues > TX_TAX | Alphanumeric| 64 | Value of the Value Added Tax (VAT). | Yes |
+| transaction > order > additionalValues > TX_TAX > value | Number | 12, 2  | Specifies the VAT amount. | No |
+| transaction > order > additionalValues > TX_TAX > currency | Alphanumeric | 3 | ISO code of the currency. | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value for calculating VAT. | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the transaction base amount. | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. Consult accepted currencies. | No |
+| transaction > extraParameters > OTP | Alphanumeric| 6 | Code generated in the Yape application needed to approve a Yape transaction (One Time Password). | |
+| transaction > payer | Payer Information. | | Information about the payer. | Yes |
+| transaction > payer > emailAddress | Alphanumeric| Max:255| Payer's email address. | Yes |
+| transaction > payer > merchantPayerId | Alphanumeric| Max:100| Payer's identifier in your system. | No |
+| transaction > payer > fullName | Alphanumeric| Max:150| Payer's full name. | Yes |
+| transaction > payer > billingAddress | Billing Address. | | Payer's billing address. | Yes       |
+| transaction > payer > billingAddress > street1 | Alphanumeric| Max:100 | Line 1 of the billing address. | Yes |
+| transaction > payer > billingAddress > street2 | Alphanumeric| Max:100 | Line 2 of the billing address. | No |
+| transaction > payer > billingAddress > city | Alphanumeric| Max:50 | City of the billing address. | Yes |
+| transaction > payer > billingAddress > state | Alphanumeric| Max:40  | State of the billing address. | No |
+| transaction > payer > billingAddress > country | Alphanumeric| 2 | Country of the billing address in ISO 3166 Alpha-2 format. | Yes |
+| transaction > payer > billingAddress > postalCode| Alphanumeric| Max:20  | Postal code of the billing address. | No |
+| transaction > payer > billingAddress > phone | Alphanumeric| Max:20  | Phone number of the billing address. | No |
+| transaction > payer > birthdate | Alphanumeric| Max:10  | Payer's date of birth. | No |
+| transaction > payer > contactPhone | Alphanumeric| Max:20  | Payer's phone number. This is the number to be used for Yape payment.| Yes |
+| transaction > payer > dniNumber | Alphanumeric| Max:20  | Payer's identification number. | Yes |
+| transaction > payer > dniType | Alphanumeric| 2 | Payer's identification type. Consult document types. | No |
+| transaction > type | Alphanumeric| 32 | Set this value according to the transaction. For Colombia, set AUTHORIZATION_AND_CAPTURE. | Yes |
+| transaction > paymentMethod | Alphanumeric| 32 | Set YAPE for Yape Payment Method. | Yes |
+| transaction > paymentCountry | Alphanumeric| 2 | Set PE for Peru. | Yes |
+| transaction > deviceSessionId | Alphanumeric| Max:255 | Device session identifier where the customer performs the transaction. | Yes |
+| transaction > ipAddress | Alphanumeric| Max:39  | IP address of the device where the customer performs the transaction. | Yes |
+| transaction > cookie | Alphanumeric| Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
+| transaction > userAgent | Alphanumeric| Max:1024| User agent of the browser where the customer performs the transaction. | Yes |
+
+</details>
+
+<details>
+<summary> Response </summary>
+<br>
+<div class="variables"></div>
+
+| Field name | Format | Size | Description |
+|---|---|---|---|
+| code | Alphanumeric | | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
+| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
+| transactionResponse | Object | | The response data. |
+| transactionResponse > orderId | Number | | The generated or existing order Id in PayU. |
+| transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
+| transactionResponse > state | Alphanumeric| Max:32 | The status of the transaction. |
+| transactionResponse > responseCode | Alphanumeric| Max:64 | The response code associated with the status. |
+| transactionResponse > pendingReason | Alphanumeric | Max:64 | The pending reason of the transaction |
+| transactionResponse > paymentNetworkResponseCode | Alphanumeric| Max:255  | The response code returned by the financial network. |
+| transactionResponse > paymentNetworkResponseErrorMessage | Alphanumeric | Max:255  | The error message returned by the financial network. |
+| transactionResponse > trazabilityCode | Alphanumeric | Max:32 | The traceability code returned by the financial network. |
+| transactionResponse > authorizationCode | Alphanumeric | Max:12 | The authorization code returned by the financial network. |
+| transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
+| transactionResponse > operationDate | Date | | Creation date of the response in the PayU´s system. |
+| transactionResponse > extraParameters | Object | | Additional parameters or data associated with the response. In JSON, the extraParameters parameter follows this structure: "extraParameters": { "BANK_REFERENCED_CODE": "CREDIT"}In XML, the extraParameters parameter follows this structure: <extraParameters> <entry> <string>BANK_REFERENCED_CODE</string> <string>CREDIT</string> </entry></extraParameters> |
+| transactionResponse > additionalInfo | Object | | Additional information associated with the response. This object follows the same structure than transactionResponse.extraParameters. |
+
+</details>
+
+### API call
+The following are the request and response bodies for this payment method.
+
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Example of a request:
+```JSON
+{
+  "language": "es",
+  "command": "SUBMIT_TRANSACTION",
+  "merchant": {
+    "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+    "apiLogin": "pRRXKOl8ikMmt9u"
+  },
+  "transaction": {
+    "order": {
+      "accountId": "512323",
+      "referenceCode": "PRODUCT_TEST_2021-06-21T16:39:10.965Z",
+      "description": "Payment test description",
+      "language": "es",
+      "signature": "af24b22ad0aa0b14dbe3c21a07d9558c",
+      "notifyUrl": "http://www.payu.com/notify",
+      "additionalValues": {
+        "TX_VALUE": {
+          "value": 100,
+          "currency": "PEN"
+        }
+      },
+      "buyer": {
+        "merchantBuyerId": "1",
+        "fullName": "First name and second buyer  name",
+        "emailAddress": "buyer_test@test.com",
+        "contactPhone": "7563126",
+        "dniNumber": "123456789",
+        "shippingAddress": {
+          "street1": "Av. Isabel La Católica 103-La Victoria",
+          "street2": "5555487",
+          "city": "Lima",
+          "state": "Lima y Callao",
+          "country": "PE",
+          "postalCode": "000000",
+          "phone": "7563126"
+        }
+      },
+      "shippingAddress": {
+        "street1": "Av. Isabel La Católica 103-La Victoria",
+        "street2": "5555487",
+        "city": "Lima",
+        "state": "Lima y Callao",
+        "country": "PE",
+        "postalCode": "0000000",
+        "phone": "7563126"
+      }
+    },
+    "extraParameters": {
+      "OTP": "557454"
+    },    
+    "payer": {
+      "merchantPayerId": "1",
+      "fullName": "First name and second payer name",
+      "emailAddress": "payer_test@test.com",
+      "contactPhone": "969929157",
+      "dniNumber": "5415668464654",
+      "billingAddress": {
+        "street1": "Av. Isabel La Católica 103-La Victoria",
+        "street2": "125544",
+        "city": "Lima",
+        "state": "Lima y Callao",
+        "country": "PE",
+        "postalCode": "000000",
+        "phone": "7563126"
+      }
+    },
+    "type": "AUTHORIZATION_AND_CAPTURE",
+    "paymentMethod": "YAPE",
+    "expirationDate": "2021-06-22T19:51:20.302",
+    "paymentCountry": "PE",
+    "ipAddress": "127.0.0.1"
+  },
+  "test": true
+}
+```
+<br>
+
+Example of a response:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 2151156450,
+        "transactionId": "70149315-677f-4bc0-9f59-a1de47ef4f7e",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "00",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "437",
+        "authorizationCode": "160105",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": "Aprobado y completado con exito",
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1706024870610,
+        "referenceQuestionnaire": null,
+        "extraParameters": null,
+        "additionalInfo": null
+    }
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Example of a request:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <accountId>512323</accountId>
+         <referenceCode>PRODUCT_TEST_2021-06-21T16:39:10.965Z</referenceCode>
+         <description>Payment test description</description>
+         <language>es</language>
+         <signature>af24b22ad0aa0b14dbe3c21a07d9558c</signature>
+         <notifyUrl>http://www.payu.com/notify</notifyUrl>
+         <additionalValues>
+            <entry>
+               <string>TX_VALUE</string>
+               <additionalValue>
+                  <value>100</value>
+                  <currency>PEN</currency>
+               </additionalValue>
+            </entry>
+         </additionalValues>
+         <buyer>
+            <contactPhone>7563126</contactPhone>
+            <dniNumber>123456789</dniNumber>
+            <emailAddress>buyer_test@test.com</emailAddress>
+            <fullName>First name and second buyer name</fullName>
+            <merchantBuyerId>1</merchantBuyerId>
+            <shippingAddress>
+               <street1>Av. Isabel La Católica 103-La Victoria</street1>
+               <street2>5555487</street2>            
+               <city>Lima</city>
+               <state>Lima y Callao</state>               
+               <country>PE</country>
+                <postalCode>000000</postalCode>
+               <phone>7563126</phone>
+            </shippingAddress>
+         </buyer>
+         <shippingAddress>
+            <street1>Av. Isabel La Católica 103-La Victoria</street1>
+               <street2>5555487</street2>            
+               <city>Lima</city>
+               <state>Lima y Callao</state>               
+               <country>PE</country>
+                <postalCode>000000</postalCode>
+               <phone>7563126</phone>
+         </shippingAddress>
+      </order>
+      <extraParameters>
+         <OTP>557454</OTP>
+      </extraParameters>
+      <payer>
+         <billingAddress>
+            <street1>Av. Isabel La Católica 103-La Victoria</street1>
+            <street2>5555487</street2>            
+            <city>Lima</city>
+            <state>Lima y Callao</state>               
+            <country>PE</country>
+            <postalCode>000000</postalCode>
+            <phone>7563126</phone>
+         </billingAddress>
+         <contactPhone>969929157</contactPhone>
+         <dniNumber>5415668464654</dniNumber>
+         <emailAddress>payer_test@test.com</emailAddress>
+         <fullName>First name and second payer name</fullName>
+         <merchantPayerId>1</merchantPayerId>
+      </payer>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>YAPE</paymentMethod>
+      <expirationDate>2021-06-16T16:07:11</expirationDate>
+      <paymentCountry>PE</paymentCountry>
+      <ipAddress>127.0.0.1</ipAddress>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+```
+<br>
+
+Example of a response:
+```XML
+<paymentResponse>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>2151156450</orderId>
+        <transactionId>70149315-677f-4bc0-9f59-a1de47ef4f7e</transactionId>
+        <state>APPROVED</state>
+        <paymentNetworkResponseCode>00</paymentNetworkResponseCode>
+        <trazabilityCode>437</trazabilityCode>
+        <responseCode>APPROVED</responseCode>
+        <authorizationCode>160105</authorizationCode>        
+        <responseMessage>Aprobado y completado con exito</responseMessage>
+        <operationDate>2024-01-19T08:17:42</operationDate>
+    </transactionResponse>
+</paymentResponse>
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+### Considerations
+* Payments processed through our gateway will be made on behalf of your business by PayU.
+* The maximum amount that payers can process with Yape is 950 soles accumulated per day.
+* To check an active code for your transaction, use the [Queries API](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/queries-api.html).
+* Yape supports total refunds, partial refunds, and cancellations.
+* API integrations containing spaces in the phone number may result in transaction loss. Below are the cases that can be approved or may generate errors:
+    * **Approved case 1:** `51` `969929157` → The country code and phone number are separated.
+    * **Approved case 2:** `969929157` → There is a single field for the phone number without spaces.
+    * **Error case 1:** `51969929157` → The country code and phone number are in the same field.
+    * **Error case 2:** `51` `969` `929157` → The phone number is separated by spaces.
+    <p></p>
+
+    Therefore, to avoid errors and improve the user experience, we recommend the following:
+    1. Use a single field for the phone number that automatically includes the country code, or display two separate fields in the interface: one for the country code and another for the phone number.
+    2. Configure the interface to accept a maximum of 9 digits and display a message to the user informing them that the entered phone number must consist of 9 digits.
+    3. Configure the interface to avoid spaces or automatically remove them, or display a message to the user instructing them to enter the number without spaces.
+
+### Testing in sandbox environment 
+To test Yape transactions in the PayU Sandbox environment, use the following data:
+
+<table border="1"> 
+<tr> 
+<th colspan="2"><h5>Test Cases</h5></th>
+<th colspan="3"><h5>PayU Response</h5></th>  
+</tr> 
+ 
+<tr> 
+<td><b>transaction > payer > contactPhone</b></td> 
+<td><b>transaction > extraParameters > OTP</b></td> 
+<td><b>state</b></td> 
+<td><b>responseCode</b></td> 
+<td><b>responseMessage</b></td> 
+</tr>
+
+<tr> 
+<td>969929157</td> 
+<td>557454</td> 
+<td>APPROVED</td> 
+<td>APPROVED</td> 
+<td>Approved and completed successfully.</td> 
+</tr>
+
+<tr> 
+<td>969929157</td> 
+<td>000000</td> 
+<td>DECLINED</td> 
+<td>INVALID_TRANSACTION</td> 
+<td>Operation denied. Incorrect OTP.</td> 
+</tr>
+
+<tr> 
+<td>999999999</td> 
+<td>284563</td> 
+<td>DECLINED</td> 
+<td>NOT_ACCEPTED_TRANSACTION</td> 
+<td>Operation denied. Inactive account.</td> 
+</tr>
+
+<tr> 
+<td>993355231</td> 
+<td>784592</td> 
+<td>DECLINED</td> 
+<td>PAYMENT_NETWORK_REJECTED</td> 
+<td>Operation denied. Account not allowed.</td> 
+</tr>
+
+<tr> 
+<td>969929157</td> 
+<td>285743</td> 
+<td>DECLINED</td> 
+<td>EXCEEDED_AMOUNT</td> 
+<td>Daily limit exceeded.</td> 
+</tr>
+
+<tr> 
+<td>991055199</td> 
+<td>378458</td> 
+<td>DECLINED</td> 
+<td>INVALID_TRANSACTION</td> 
+<td>Operation denied. Blocked OTP.</td> 
+</tr>
+
+<tr> 
+<td>995555126</td> 
+<td>678452</td> 
+<td>DECLINED</td> 
+<td>INVALID_TRANSACTION</td> 
+<td>Operation denied. Account not associated with the program.</td> 
+</tr>
+
+<tr> 
+<td>969929158</td> 
+<td>528475</td> 
+<td>DECLINED</td> 
+<td>REPEAT_TRANSACTION</td> 
+<td>Error: incorrect Yape code.</td> 
+</tr>
+
+<tr> 
+<td>969929158</td> 
+<td>074854</td> 
+<td>DECLINED</td> 
+<td>REPEAT_TRANSACTION</td> 
+<td>Error: incorrect Yape code.</td> 
+</tr>
+
+<tr> 
+<td>969929158</td> 
+<td>875612</td> 
+<td>DECLINED</td> 
+<td>NOT_ACCEPTED_TRANSACTION</td> 
+<td>Error: incorrect Yape code.</td> 
+</tr>
+
+</table>
+
+## Submit transactions using cash
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.
 
 <img src="/assets/Payments/CashReceiptPE.png" alt="PrintScreen" width="50%">
@@ -916,7 +1399,7 @@ The following are the bodies of the request and response of this payment method.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Example of a request:
 ```JSON
 {
    "language": "es",
@@ -992,7 +1475,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1030,7 +1513,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Example of a request:
 ```XML
 <request>
    <language>es</language>
@@ -1110,7 +1593,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1196,7 +1679,7 @@ The following are the bodies of the request and response of this method. For the
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Example of a request:
 ```JSON
 {
    "test": false,
@@ -1210,7 +1693,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1239,7 +1722,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Example of a request:
 ```XML
 <request>
    <language>en</language>
@@ -1253,7 +1736,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -1316,7 +1799,7 @@ The following are the bodies of the request and response of this method.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Example of a request:
 ```JSON
 {
    "test": false,
@@ -1330,7 +1813,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1344,7 +1827,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Example of a request:
 ```XML
 <request>
    <language>en</language>
@@ -1358,7 +1841,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Example of a response:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>

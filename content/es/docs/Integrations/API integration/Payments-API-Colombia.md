@@ -20,7 +20,7 @@ Para integrarte con la API de Pagos para Colombia, dirige tus solicitudes a las 
 La API de pagos incluye los siguiente métodos:
 
 * [Enviar transacciones utilizando tarjetas de crédito o débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
-* [Enviar transacciones utilizando Nequi]({{< ref "#submit-transactions-using-Nequi" >}})
+* [Enviar transacciones utilizando Nequi]({{< ref "#submit-transactions-using-nequi" >}})
 * [Enviar transacciones utilizando efectivo o referencia bancaria]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
 * [Enviar transacciones utilizando transferencia bancaria (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
 * [Lista de Bancos - PSE]({{< ref "#bank-list---pse" >}})
