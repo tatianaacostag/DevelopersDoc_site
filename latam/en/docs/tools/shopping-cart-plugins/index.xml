@@ -796,61 +796,81 @@ An authorized order can be cancelled using the &lt;em&gt;&lt;strong&gt;Cancel or
       <description>
         
         
-        &lt;p&gt;BigCommerce is a digital commerce platform that allows you to quickly create an online store with ready-to-use functionalities. For more information, take a look at the official BigCommerce page: &lt;a href=&#34;https://www.bigcommerce.com/press/&#34;&gt;BigCommerce webpage&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;prerequisite&#34;&gt;Prerequisite&lt;/h2&gt;
+        &lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;You need an active account in PayU Latam.&lt;/li&gt;
-&lt;li&gt;You need an account with BigCommerce.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#prerequisites&#34;&gt;Prerequisites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#installing-the-extension&#34;&gt;Installing the extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#utilizing-the-extension&#34;&gt;Utilizing the extension&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#payment-methods-configuration&#34;&gt;Payment methods configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#order-management-and-refunds&#34;&gt;Order management and refunds&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;how-to-install-the-extension&#34;&gt;How to install the extension&lt;/h2&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#testing-the-integration&#34;&gt;Testing the integration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#support&#34;&gt;Support&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;BigCommerce is a digital commerce platform that enables you to swiftly establish an online store equipped with ready-to-use functionalities. For further details, check out the &lt;a href=&#34;https://www.bigcommerce.com/press/&#34;&gt;official BigCommerce webpage&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;To carry out the integration, you need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A PayU Latam account&lt;/li&gt;
+&lt;li&gt;A BigCommerce account&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installing-the-extension&#34;&gt;Installing the extension&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Install the app from the BigCommerce Marketplace by clicking the install button.&lt;/li&gt;
+&lt;li&gt;Navigate to the BigCommerce Marketplace, click on &lt;strong&gt;My Apps&lt;/strong&gt;, find the PayU extension, and click on &lt;strong&gt;Install&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce1.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Click the checkbox and click the ‘Confirm’ button to install the app.&lt;/li&gt;
+&lt;li&gt;Tick the checkbox and click &lt;strong&gt;Confirm&lt;/strong&gt; to proceed with the installation:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce2.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;The app interface appears as follows:&lt;/li&gt;
+&lt;li&gt;After installation, the app interface will appear as follows:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/howtoinstall3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;how-to-use-this-extension&#34;&gt;How to use this extension&lt;/h2&gt;
-&lt;h3 id=&#34;configure-payment-methods&#34;&gt;Configure Payment Methods&lt;/h3&gt;
-&lt;p&gt;Configure the payment methods to be displayed on the website for checkout. &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html&#34;&gt;Consult our available Payment methods&lt;/a&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce3.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;br&gt;&lt;/br&gt;
+&lt;h2 id=&#34;utilizing-the-extension&#34;&gt;Utilizing the extension&lt;/h2&gt;
+&lt;h3 id=&#34;payment-methods-configuration&#34;&gt;Payment methods configuration&lt;/h3&gt;
+&lt;p&gt;Customize the payment methods displayed on your website during checkout. Refer to our &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html&#34;&gt;available payment methods&lt;/a&gt;.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;After installing the application select &lt;strong&gt;Enable PayU Latam&lt;/strong&gt; to allow the app in the BigCommerce store.&lt;/li&gt;
+&lt;li&gt;Upon installation, select &lt;strong&gt;Enable PayU Latam&lt;/strong&gt; to integrate the app with your BigCommerce store.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce4.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Select a custom title for the card payment option (e.g., Pay by Card). This title will be visible on the checkout page for your customers.&lt;/li&gt;
+&lt;li&gt;Personalize the title for the card payment option (e.g., &lt;em&gt;Pay by Card&lt;/em&gt;). This title will be visible to users on the checkout page.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce5.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Choose the way you want the available card payment options to be displayed at the checkout. You can choose one of the following options:&lt;/li&gt;
+&lt;li&gt;Choose the display format for available card payment options during checkout. You can choose one of the following options:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Show Powered by PayU Latam and logo on payment form&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Show credit card logo on checkout page&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Displaying &lt;em&gt;Powered by PayU Latam&lt;/em&gt; and logo on the payment form.&lt;/li&gt;
+&lt;li&gt;Displaying credit card logos on the checkout page.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce6.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
-If the merchant wants to allow alternative payment methods (cash and bank transfers) select the &amp;ldquo;Enable Web Checkout (APM)” option.
+To enable alternative payment methods (cash and bank transfers), select &lt;strong&gt;Enable Web Checkout (APM)&lt;/strong&gt;.
 &lt;/div&gt;
 
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Use the &amp;lsquo;Add Provider&amp;rsquo; button to add the provider for a specific PayU Latam country. Each provider can be enabled/disabled from the grid using the respective status button. You can also click ‘Edit’ to update the credentials, and remember that in the configuration of your accounts you can choose whether you want to use them in test mode or in a productive environment.&lt;/li&gt;
+&lt;li&gt;Add a provider for a specific PayU Latam country, to do this, click on &lt;strong&gt;Add Provider&lt;/strong&gt;. You can enable or disable each provider by using the option in the &lt;strong&gt;Status&lt;/strong&gt; column, and you can update their credentials by clicking the &lt;strong&gt;Edit&lt;/strong&gt; button.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;To add a new provider, specify the following mandatory fields:&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce7.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Additionally, choose &lt;strong&gt;Test&lt;/strong&gt; or &lt;strong&gt;Live&lt;/strong&gt; mode for each provider in the &lt;strong&gt;Onboard Setup&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce8.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mandatory fields for adding a new provider:&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -861,11 +881,11 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Select Payu Latam country&lt;/td&gt;
-&lt;td&gt;Choose the country you want to configure&lt;/td&gt;
+&lt;td&gt;Choose the country you want to configure.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;API Login&lt;/td&gt;
-&lt;td&gt;User or login provided by PayU. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;User or login that PayU provides you. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;API Key&lt;/td&gt;
@@ -877,7 +897,7 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Account ID&lt;/td&gt;
-&lt;td&gt;ID of the PayU account according to the country where you want to sell.&lt;/td&gt;
+&lt;td&gt;ID of the PayU account for the selected country.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Merchant ID&lt;/td&gt;
@@ -885,98 +905,99 @@ If the merchant wants to allow alternative payment methods (cash and bank transf
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Choose if your payment transactions are executed in a one-step or two-step flow:&lt;/li&gt;
+&lt;li&gt;Select the transaction flow:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;For one-step flow, select &lt;strong&gt;Capture on order placed&lt;/strong&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;For two-step flow, select &lt;strong&gt;Capture on Shipment&lt;/strong&gt;.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;For one-step flow, select &lt;strong&gt;Capture on order placed&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;For two-step flow, select &lt;strong&gt;Capture on Shipment&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Refer to the following &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;link&lt;/a&gt; to learn more about the Payment flows.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce9.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;Payments flow&lt;/a&gt; document to learn more about the options.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
-The option of processing in more than one step only applies to card payments (subject to &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;availability&lt;/a&gt; in each country). Transactions with other payment methods will perform authorization and capture in a single step.
+The option of processing in more than one step only applies to card payments (subject to &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;availability&lt;/a&gt; in each country). Transactions with other payment methods require authorization and capture in a single step.
 &lt;/div&gt;
 
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-Multistore options will be visible below the payment options section.
-&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension7.png&#34; alt=&#34;&#34;&gt;
+&lt;p&gt;Multi-store options will be visible below the payment options section:&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce10.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;manage-your-orders&#34;&gt;Manage your orders&lt;/h3&gt;
+&lt;h3 id=&#34;order-management-and-refunds&#34;&gt;Order management and refunds&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;To access the Order Dashboard, click the ‘Order Dashboard’ button.&lt;/li&gt;
+&lt;li&gt;To manage the orders, click the &lt;strong&gt;Order Dashboard&lt;/strong&gt; button at the upper right corner.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;The Order Dashboard grid will show the payment statuses for the order placed.&lt;/li&gt;
+&lt;li&gt;The Order Dashboard grid displays payment statuses for each order:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen12.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce12.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;To process a refund, click the ‘Refund button’ on the Order Dashboard grid item.&lt;/li&gt;
+&lt;li&gt;To process a refund, click the &lt;strong&gt;Refund&lt;/strong&gt; button in the &lt;strong&gt;Actions&lt;/strong&gt; column.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce13.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Refunds are only available for transactions paid with card.&lt;/li&gt;
-&lt;li&gt;To learn more about the particularities of refunds in each country where PayU operates, click &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Refunds are only available for card transactions.&lt;/li&gt;
+&lt;li&gt;Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html&#34;&gt;refunds document&lt;/a&gt; for details by country.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
 
 &lt;h2 id=&#34;testing-the-integration&#34;&gt;Testing the integration&lt;/h2&gt;
-&lt;p&gt;Once you have configured the payment conditions for your payment methods, it is strongly recommended to test your integration before starting to receive real transactions. As a prerequisite, make sure you add a provider with test credentials in your BigCommerce Configuration.&lt;/p&gt;
+&lt;p&gt;Before starting real transactions, it&amp;rsquo;s recommended to test your integration. Ensure you&amp;rsquo;ve added a provider with test credentials in your BigCommerce Configuration.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Log in to your store and select the product you wish to purchase for testing. At the moment of finalizing the purchase, fill in the data and keep in mind that the country selected must be the country where the product will be shipped. As an example, if the shipping is to Argentina, then select Argentina from the drop-down country options.&lt;/li&gt;
+&lt;li&gt;Log in to your store, select a product for testing, and proceed to checkout. Ensure the shipping country matches the destination:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen14.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce14.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;You will then be able to select the desired payment method.&lt;/li&gt;
+&lt;li&gt;Select the desired payment method:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Checkout Payment Selection:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Card:&lt;/strong&gt; Specify the card details, then click the ‘Pay By Card’ option.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A) Card:&lt;/strong&gt; Enter card details and click &lt;strong&gt;Pay By Card&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen15.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce15.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-Remember you can select a custom title for the card payment option during the configuration of PayU Latam in your BigCommerce account (e.g., you can change “Pay by Card” for “Pay”).
+You can customize the card payment option title as seen in &lt;a href=&#34;#payment_methods_configuration&#34;&gt;Payments methods configuration&lt;/a&gt;.
 &lt;/div&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Pay by Web Checkout:&lt;/strong&gt; For other payment methods select the ‘Pay by Web Checkout’ button. Provide the details and confirm payment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B) Pay by Web Checkout:&lt;/strong&gt; For other methods, select &lt;strong&gt;Pay by Web Checkout&lt;/strong&gt; and complete the payment.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen16.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen17.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen18.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce16.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Once the purchase has been approved, you can check it in:&lt;/li&gt;
+&lt;li&gt;Upon approval, verify the purchase in:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;BigCommerce Order Dashboard: &lt;strong&gt;&lt;em&gt;PayU Latam &amp;gt; Order Dashboard&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;BigCommerce Order Dashboard: &lt;strong&gt;PayU Latam &amp;gt; Order Dashboard&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerceFinal/comoutilizarestaextension8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;PayU Module: In the &lt;strong&gt;&lt;em&gt;Sales Report module&lt;/em&gt;&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;PayU Module: &lt;strong&gt;Sales Report module&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/BigCommerce/Imagen19.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;support-options&#34;&gt;Support Options:&lt;/h2&gt;
-&lt;p&gt;If you experience a technical issue or have any questions about this extension, please contact our support team &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; or visit our website &lt;strong&gt;&lt;a href=&#34;https://colombia.payu.com/contactanos/&#34;&gt;https://colombia.payu.com/contactanos/&lt;/a&gt;&lt;/strong&gt;. If you choose to email us, please provide details of the extension being used in the subject field and a summary of the issue you’re experiencing in the body copy.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce17.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&#34;support&#34;&gt;Support:&lt;/h2&gt;
+&lt;p&gt;For technical issues or queries regarding this extension, contact our support team at &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; or visit &lt;a href=&#34;https://colombia.payu.com/contactanos/&#34;&gt;our website&lt;/a&gt;. When emailing, include extension details in the subject and a summary of the issue in the body.&lt;/p&gt;
 
       </description>
     </item>

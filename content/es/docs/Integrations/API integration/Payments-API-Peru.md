@@ -31,13 +31,13 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 * Utiliza el [API o SDK de consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Enviar  transacciones utilizando tarjetas de crédito o débito {#submit-transactions-using-credit-or-debit-cards}
+## Enviar transacciones utilizando tarjetas de crédito o débito {#submit-transactions-using-credit-or-debit-cards}
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Perú, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 ### Parámetros para la solicitud y la respuesta {#parameters-for-request-and-response}
 
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -130,7 +130,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
@@ -806,7 +806,7 @@ Facilitar pagos a través de Yape en tu negocio te otorga a ti y a tus clientes 
 #### Requisitos previos
 Para realizar pagos, el usuario final necesita 2 componentes:
 * Número de celular
-* OTP
+* OTP (contraseña de un solo uso)
 
 #### Experiencia de usuario
 Una compra a través de Yape puede seguir el flujo descrito a continuación:
@@ -829,7 +829,7 @@ Una compra a través de Yape puede seguir el flujo descrito a continuación:
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-1}
 
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -910,7 +910,7 @@ Una compra a través de Yape puede seguir el flujo descrito a continuación:
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
@@ -1278,7 +1278,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 ### Parámetros para la solicitud y la respuesta {#parameters-for-request-and-response-2}
 
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -1356,7 +1356,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
@@ -1393,7 +1393,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
    - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
-### Llamado del API {#api-call}
+### Llamado a la API {#api-call-1}
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
@@ -1641,7 +1641,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 ### Parámetros para la solicitud y la respuesta {#available-payment-methods-query}
 
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
@@ -1657,7 +1657,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
@@ -1673,7 +1673,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 
 </details>
 
-### Llamado del API {#api-call-1}
+### Llamado a la API {#api-call-2}
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.  
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
@@ -1766,7 +1766,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 ### Parámetros para la solicitud y la respuesta {#parameters-for-request-and-response-3}
 
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
@@ -1782,7 +1782,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
@@ -1790,10 +1790,10 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
-| transactionResponse | transactionResponse | Max:2048 | La respuesta del método PING si ocurrió un error. |
+| transactionResponse |  | Max:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
-### Llamado del API {#api-call-2}
+### Llamado a la API {#api-call-3}
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método.
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
@@ -1850,4 +1850,3 @@ Ejemplo de una respuesta:
 ```
 {{< /tab >}}
 {{< /tabs >}}
-
