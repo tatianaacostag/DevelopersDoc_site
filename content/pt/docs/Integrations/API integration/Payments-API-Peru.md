@@ -1156,7 +1156,7 @@ Exemplo de uma resposta:
 
 ### Considerações
 * Os pagamentos processados através do nosso gateway serão feitos em nome do seu negócio pela PayU.
-* O valor máximo que os pagadores podem processar com o Yape é de 950 sóis acumulados por dia.
+* O valor máximo que os pagadores podem processar com o Yape é de 2000 sóis acumulados por dia.
 * Para verificar um código ativo para a sua transação, utilize a [API de Consultas](https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/queries-api.html).
 * O Yape suporta reembolsos totais, reembolsos parciais e cancelamentos.
 * Integrações de API contendo espaços no número de telefone podem resultar em perda de transação. Abaixo estão os casos que podem ser aprovados ou podem gerar erros:

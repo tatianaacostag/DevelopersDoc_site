@@ -35,7 +35,6 @@ La siguiente sección muestra los métodos de pago disponibles por país y brind
 |:-:|---|---|---|---|
 | ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario | BOLETO_BANCARIO | Efectivo | No concilia en fines de semana ni festivos |
-| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/elo.png) | Elo | ELO | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/hipercard.png) | Hipercard | HIPERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/itau.png) | TEF Itaú | ITAU | Transferencia Bancaria | Solo disponible para cuentas Itaú. |

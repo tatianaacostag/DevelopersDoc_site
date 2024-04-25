@@ -1156,7 +1156,7 @@ Ejemplo de una respuesta:
 
 ### Consideraciones
 * Los pagos procesados a través de nuestra pasarela serán realizados a nombre de tu comercio por parte de PayU.
-* El monto máximo que los pagadores pueden procesar con Yape es de 950 soles acumulados por día.
+* El monto máximo que los pagadores pueden procesar con Yape es de 2000 soles acumulados por día.
 * Para consultar un código activo de tu transacción, utiliza la [API de consultas](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/queries-api.html).
 * Yape admite reversos totales, parciales y anulaciones.
 * Las integraciones API que contienen espacios en el número de celular pueden ocasionar la pérdida de la transacción. A continuación, los casos que pueden ser aprobados o que pueden generar errores:

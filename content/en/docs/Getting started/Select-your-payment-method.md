@@ -35,7 +35,6 @@ The following section shows the payment methods supported per country and provid
 |:---------------------------------------------------:|------------------|-------------------------|-----------------|-----------|
 | ![Logo](/assets/PaymentMethods/american.png)        | American Express | AMEX                    | Credit Cards    |           |
 | ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario  | BOLETO_BANCARIO         | Cash            | Does not conciliate at weekends or holidays |
-| ![Logo](/assets/PaymentMethods/diners.png)          | Diners           | DINERS                  | Credit Cards    |           |
 | ![Logo](/assets/PaymentMethods/elo.png)             | Elo              | ELO                     | Credit Cards    |           |
 | ![Logo](/assets/PaymentMethods/hipercard.png)       | Hipercard        | HIPERCARD               | Credit Cards    |           |
 | ![Logo](/assets/PaymentMethods/itau.png)            | TEF Itaú         | ITAU                    | Bank Transfer   | Only available for Itaú accounts. |
@@ -49,7 +48,6 @@ The following section shows the payment methods supported per country and provid
 |                                                | Payment Method       | paymentMethod parameter | Type          | Comments    |
 |:----------------------------------------------:|----------------------|-------------------------|---------------|-------------|
 | ![Logo](/assets/PaymentMethods/american.png)   | American Express     | AMEX                    | Credit Cards  |             |
-| ![Logo](/assets/PaymentMethods/diners.png)     | Diners               | DINERS                  | Credit Cards  |             |
 | ![Logo](/assets/PaymentMethods/master.png)     | Mastercard           | MASTERCARD              | Credit Cards  |             |
 | ![Logo](/assets/PaymentMethods/master.png)     | Mastercard           | MASTERCARD_DEBIT        | Debit Cards   |             |
 | ![Logo](/assets/PaymentMethods/multicaja.png)  | Klap (FKA Multicaja) | MULTICAJA               | Cash          |             |

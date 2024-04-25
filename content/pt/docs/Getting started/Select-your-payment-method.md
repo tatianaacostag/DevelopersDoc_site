@@ -35,7 +35,6 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 |:-:|---|---|---|---|
 | ![Logo](/assets/PaymentMethods/american.png)| American Express | AMEX | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario| BOLETO_BANCARIO | Dinheiro | Não concilia em fins de semana e feriados |
-| ![Logo](/assets/PaymentMethods/diners.png)| Diners | DINERS | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/elo.png) | Elo| ELO | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/hipercard.png) | Hipercard | HIPERCARD | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/itau.png)| TEF Itaú | ITAU | Transferência bancária | Disponível apenas para contas Itaú. |
@@ -49,7 +48,6 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 |  | Método de pagamento | Parâmetro paymentMethod | Tipo | Comentários |
 |:---:|---|---|---|---|
 | ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Cartões de crédito| |
-| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Cartões de débito | |
 | ![Logo](/assets/PaymentMethods/multicaja.png)| Klap (FKA Multicaja) | MULTICAJA | Dinheiro | |

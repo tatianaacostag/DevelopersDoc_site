@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-peru.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-04-01T16:19:51-05:00" />
+<meta property="article:modified_time" content="2024-04-08T11:27:37-05:00" />
 
 <meta itemprop="name" content="Payments API - Peru">
 <meta itemprop="description" content="Payments API Peru lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-04-01T16:19:51-05:00" />
-<meta itemprop="wordCount" content="7537">
+<meta itemprop="dateModified" content="2024-04-08T11:27:37-05:00" />
+<meta itemprop="wordCount" content="7550">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Peru"/>
 <meta name="twitter:description" content="Payments API Peru lets your shop process different transaction types with multiple payment methods.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.454845eea5272668c63fc72fb31cda041fee45865e07d3710135031ec409fd7a37ab3d705a442182bf472f26f036f83227d54df3d1af31e6c1eef53dfea22ac9.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.aa30af6bda3ca4d0cd51fc1b1ac9a57d15d342e0f5b32a0c7fa3b751e7ea22b011baf263f689e391d0d842b4a390608ab5feb87e084117945673459885ede03a.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -772,20 +772,20 @@
     </li>
     <li><a href="#submit-transactions-using-cash">Submit transactions using cash</a>
       <ul>
-        <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
+        <li><a href="#parameters-for-request-and-response-2">Parameters for request and response</a></li>
         <li><a href="#api-call-1">API call</a></li>
       </ul>
     </li>
     <li><a href="#available-payment-methods-query">Available payment methods query</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-1">Variables for request and response</a></li>
+        <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
         <li><a href="#api-call-2">API call</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-2">Variables for request and response</a></li>
-        <li><a href="#api-call-3">Api call</a></li>
+        <li><a href="#parameters-for-request-and-response-3">Parameters for request and response</a></li>
+        <li><a href="#api-call-3">API call</a></li>
       </ul>
     </li>
   </ul>
@@ -1661,8 +1661,8 @@
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;dniNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;shippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Av. Isabel La Católica 103-La Victoria&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
-</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Lima&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#a40000">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#4e9a06">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Lima&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Lima y Callao&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PE&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2389,7 +2389,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <h3 id="parameters-for-request-and-response-1">Parameters for request and response</h3>
 <details>
 <summary>Request</summary>
-<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 <table>
@@ -3310,8 +3310,8 @@ Using _Zero Authorization_, you can have the following benefits:
 <p>To test Yape transactions in the PayU Sandbox environment, use the following data:</p>
 <table border="1"> 
 <tr> 
-<th colspan="2"><h5>Test Cases</h5></th>
-<th colspan="3"><h5>PayU Response</h5></th>  
+<th colspan="2"><h5>Test cases</h5></th>
+<th colspan="3"><h5>PayU response</h5></th>  
 </tr> 
 <tr> 
 <td><b>transaction > payer > contactPhone</b></td> 
@@ -3393,11 +3393,11 @@ Using _Zero Authorization_, you can have the following benefits:
 </table>
 <h2 id="submit-transactions-using-cash">Submit transactions using cash</h2>
 <p>This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.</p>
-<img src="../../../../assets/Payments/CashReceiptPE.png" alt="PrintScreen" width="50%">
-<h3 id="variables-for-request-and-response">Variables for request and response</h3>
+<img src="../../../../assets/Payments/CashReceiptPE.png" alt="PrintScreen" width="400">
+<h3 id="parameters-for-request-and-response-2">Parameters for request and response</h3>
 <details>
 <summary>Request</summary>
-<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 <table>
@@ -3434,7 +3434,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the authentication data.</td>
 <td style="text-align:center">Yes</td>
@@ -3455,14 +3455,14 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the transaction data.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the order data.</td>
 <td style="text-align:center">Yes</td>
@@ -3518,7 +3518,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Shipping address.</td>
 <td style="text-align:center">No</td>
@@ -3574,7 +3574,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Buyer information.</td>
 <td style="text-align:center">Yes</td>
@@ -3665,7 +3665,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Object</td>
 <td>64</td>
 <td>Amount of the order or its associated values.</td>
 <td style="text-align:center">Yes</td>
@@ -3735,7 +3735,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Payer information.</td>
 <td style="text-align:center">Yes</td>
@@ -3763,7 +3763,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Billing address.</td>
 <td style="text-align:center">Yes</td>
@@ -3911,7 +3911,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>The response data.</td>
 </tr>
@@ -3983,7 +3983,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Additional parameters or data associated with the response.<br>In JSON, the <em>extraParameters</em> parameter follows this structure: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;REFERENCE&quot;: &quot;74794&quot;</code><br><code>}</code><br><br>In XML, the <em>extraParameters</em> parameter follows this structure: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;REFERENCE&lt;/string&gt;</code><br>  <code>&lt;int&gt;74794&lt;/int&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
@@ -4024,7 +4024,7 @@ Using _Zero Authorization_, you can have the following benefits:
 
 		
 
-		<a class="nav-item nav-link active" id="nav-4" data-toggle="tab" href="#tab41" role="tab"
+		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -4036,7 +4036,7 @@ Using _Zero Authorization_, you can have the following benefits:
 
 		
 
-		<a class="nav-item nav-link" id="nav-4" data-toggle="tab" href="#tab42" role="tab"
+		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -4045,7 +4045,7 @@ Using _Zero Authorization_, you can have the following benefits:
 	</div>
 </nav>
 
-<div class="tab-content" id="4">
+<div class="tab-content" id="5">
 
 
 
@@ -4054,7 +4054,7 @@ Using _Zero Authorization_, you can have the following benefits:
 
 
 
-<div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
 <p>Example of a request:</p>
@@ -4173,7 +4173,7 @@ Using _Zero Authorization_, you can have the following benefits:
 
 
 
-<div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
 <p>Example of a request:</p>
@@ -4299,7 +4299,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </div>
 <h2 id="available-payment-methods-query">Available payment methods query</h2>
 <p>This method returns a list of the payment methods available in all countries.</p>
-<h3 id="variables-for-request-and-response-1">Variables for request and response</h3>
+<h3 id="variables-for-request-and-response">Variables for request and response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -4334,7 +4334,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the authentication data.</td>
 </tr>
@@ -4381,13 +4381,13 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>paymentMethods</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>List of the payment methods.</td>
 </tr>
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the information of a payment method.</td>
 </tr>
@@ -4426,7 +4426,7 @@ Using _Zero Authorization_, you can have the following benefits:
 
 		
 
-		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
+		<a class="nav-item nav-link active" id="nav-6" data-toggle="tab" href="#tab61" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -4438,7 +4438,7 @@ Using _Zero Authorization_, you can have the following benefits:
 
 		
 
-		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
+		<a class="nav-item nav-link" id="nav-6" data-toggle="tab" href="#tab62" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -4447,7 +4447,7 @@ Using _Zero Authorization_, you can have the following benefits:
 	</div>
 </nav>
 
-<div class="tab-content" id="5">
+<div class="tab-content" id="6">
 
 
 
@@ -4456,7 +4456,7 @@ Using _Zero Authorization_, you can have the following benefits:
 
 
 
-<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
 <p>Example of a request:</p>
@@ -4504,7 +4504,7 @@ Using _Zero Authorization_, you can have the following benefits:
 
 
 
-<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
 <p>Example of a request:</p>
@@ -4547,7 +4547,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </div>
 <h2 id="ping">Ping</h2>
 <p>The <code>PING</code> method lets you verify the connection to our platform.</p>
-<h3 id="variables-for-request-and-response-2">Variables for request and response</h3>
+<h3 id="parameters-for-request-and-response-3">Parameters for request and response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -4582,7 +4582,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the authentication data.</td>
 </tr>
@@ -4629,14 +4629,14 @@ Using _Zero Authorization_, you can have the following benefits:
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td>transactionResponse</td>
+<td></td>
 <td>Max:2048</td>
 <td>The response of the PING method if an error ocurred.</td>
 </tr>
 </tbody>
 </table>
 </details>
-<h3 id="api-call-3">Api call</h3>
+<h3 id="api-call-3">API call</h3>
 <p>The following are the bodies of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4746,9 +4746,9 @@ Using _Zero Authorization_, you can have the following benefits:
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-April 1, 2024:
+April 8, 2024:
 
- <b>Documentation updates (9feaacb7)</b>
+ <b>Documentation updates (241f1a4f)</b>
 </div>
 </div>
 

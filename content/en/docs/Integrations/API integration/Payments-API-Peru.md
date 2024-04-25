@@ -1156,7 +1156,7 @@ Example of a response:
 
 ### Considerations
 * Payments processed through our gateway will be made on behalf of your business by PayU.
-* The maximum amount that payers can process with Yape is 950 soles accumulated per day.
+* The maximum amount that payers can process with Yape is 2000 soles accumulated per day.
 * To check an active code for your transaction, use the [Queries API](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/queries-api.html).
 * Yape supports total refunds, partial refunds, and cancellations.
 * API integrations containing spaces in the phone number may result in transaction loss. Below are the cases that can be approved or may generate errors:

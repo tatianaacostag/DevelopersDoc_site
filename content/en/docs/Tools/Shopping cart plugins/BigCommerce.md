@@ -8,16 +8,6 @@ weight: 11
 tags: ["subtopic"]
 ---
 
-**Contents**
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Installing the extension](#installing-the-extension)
-- [Utilizing the extension](#utilizing-the-extension)
-    - [Payment methods configuration](#payment-methods-configuration)
-    - [Order management and refunds](#order-management-and-refunds)
-- [Testing the integration](#testing-the-integration)
-- [Support](#support)
-
 ## Introduction
 BigCommerce is a digital commerce platform that enables you to swiftly establish an online store equipped with ready-to-use functionalities. For further details, check out the [official BigCommerce webpage](https://www.bigcommerce.com/press/).
 

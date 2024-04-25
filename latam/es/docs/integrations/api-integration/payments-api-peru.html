@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-peru.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-04-01T16:19:51-05:00" />
+<meta property="article:modified_time" content="2024-04-08T11:27:37-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Perú">
 <meta itemprop="description" content="La API de Pagos de Perú le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-04-01T16:19:51-05:00" />
-<meta itemprop="wordCount" content="8013">
+<meta itemprop="dateModified" content="2024-04-08T11:27:37-05:00" />
+<meta itemprop="wordCount" content="8010">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Perú"/>
 <meta name="twitter:description" content="La API de Pagos de Perú le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.454845eea5272668c63fc72fb31cda041fee45865e07d3710135031ec409fd7a37ab3d705a442182bf472f26f036f83227d54df3d1af31e6c1eef53dfea22ac9.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.aa30af6bda3ca4d0cd51fc1b1ac9a57d15d342e0f5b32a0c7fa3b751e7ea22b011baf263f689e391d0d842b4a390608ab5feb87e084117945673459885ede03a.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -746,7 +746,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#available-methods">Métodos disponibles</a></li>
-    <li><a href="#submit-transactions-using-credit-or-debit-cards">Enviar  transacciones utilizando tarjetas de crédito o débito</a>
+    <li><a href="#submit-transactions-using-credit-or-debit-cards">Enviar transacciones utilizando tarjetas de crédito o débito</a>
       <ul>
         <li><a href="#parameters-for-request-and-response">Parámetros para la solicitud y la respuesta</a></li>
         <li><a href="#authorization">Autorización</a></li>
@@ -767,19 +767,19 @@
     <li><a href="#submit-transactions-using-cash">Enviar transacciones utilizando efectivo</a>
       <ul>
         <li><a href="#parameters-for-request-and-response-2">Parámetros para la solicitud y la respuesta</a></li>
-        <li><a href="#api-call">Llamado del API</a></li>
+        <li><a href="#api-call-1">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a>
       <ul>
         <li><a href="#available-payment-methods-query">Parámetros para la solicitud y la respuesta</a></li>
-        <li><a href="#api-call-1">Llamado del API</a></li>
+        <li><a href="#api-call-2">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
         <li><a href="#parameters-for-request-and-response-3">Parámetros para la solicitud y la respuesta</a></li>
-        <li><a href="#api-call-2">Llamado del API</a></li>
+        <li><a href="#api-call-3">Llamado a la API</a></li>
       </ul>
     </li>
   </ul>
@@ -874,11 +874,11 @@
 </ul>
 </div>
 
-<h2 id="submit-transactions-using-credit-or-debit-cards">Enviar  transacciones utilizando tarjetas de crédito o débito</h2>
+<h2 id="submit-transactions-using-credit-or-debit-cards">Enviar transacciones utilizando tarjetas de crédito o débito</h2>
 <p>Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Perú, puedes realizar los flujos de dos pasos (<strong>Autorización</strong>, <strong>Captura</strong>) y el de un paso (<strong>Cobro</strong>). Para más información, consulta los <a href="../../../../es/docs/services/payments.html#payment-flows">flujos de pago</a>.</p>
 <h3 id="parameters-for-request-and-response">Parámetros para la solicitud y la respuesta</h3>
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -1471,7 +1471,7 @@
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -2361,7 +2361,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 <p>Para realizar pagos, el usuario final necesita 2 componentes:</p>
 <ul>
 <li>Número de celular</li>
-<li>OTP</li>
+<li>OTP (contraseña de un solo uso)</li>
 </ul>
 <h4 id="experiencia-de-usuario">Experiencia de usuario</h4>
 <p>Una compra a través de Yape puede seguir el flujo descrito a continuación:</p>
@@ -2382,7 +2382,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 <p></p>
 <h3 id="parameters-for-request-and-response-1">Parámetros para la solicitud y respuesta</h3>
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -2891,7 +2891,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -3390,7 +3390,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 <img src="../../../../assets/Payments/CashReceiptPE.png" alt="PrintScreen" width="400">
 <h3 id="parameters-for-request-and-response-2">Parámetros para la solicitud y la respuesta</h3>
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -3878,7 +3878,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -4004,7 +4004,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 </ul>
 </li>
 </ul>
-<h3 id="api-call">Llamado del API</h3>
+<h3 id="api-call-1">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la solicitud y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4295,7 +4295,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 <p>Este método retorna la lista de los métodos de pago disponibles en todos los paises.</p>
 <h3 id="available-payment-methods-query">Parámetros para la solicitud y la respuesta</h3>
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -4348,7 +4348,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -4406,7 +4406,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 </tbody>
 </table>
 </details>
-<h3 id="api-call-1">Llamado del API</h3>
+<h3 id="api-call-2">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la solicitud y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4543,7 +4543,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 <p>El método <code>PING</code> te permite verificar la conexión con nuestra plataforma.</p>
 <h3 id="parameters-for-request-and-response-3">Parámetros para la solicitud y la respuesta</h3>
 <details>
-<summary>Solicitud (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -4596,7 +4596,7 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -4623,14 +4623,14 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td>transactionResponse</td>
+<td></td>
 <td>Max:2048</td>
 <td>La respuesta del método PING si ocurrió un error.</td>
 </tr>
 </tbody>
 </table>
 </details>
-<h3 id="api-call-2">Llamado del API</h3>
+<h3 id="api-call-3">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la solicitud y la respuesta para este método.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4740,9 +4740,9 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-1 de abril de 2024:
+8 de abril de 2024:
 
- <b>Documentation updates (9feaacb7)</b>
+ <b>Documentation updates (241f1a4f)</b>
 </div>
 </div>
 

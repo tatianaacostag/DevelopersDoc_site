@@ -7,7 +7,7 @@ Description: >
 weight: 40
 ---
 
-![Concepts](/assets/Disputes/Disputes_es.png)
+![Concepts](/assets/Disputes/Disputes.png)
 
 {{% alert title="Nota" color="info"%}}
 Para conocer los términos introductorios sobre una disputa, consulte este [artículo]({{< ref "disputes.md" >}}).
