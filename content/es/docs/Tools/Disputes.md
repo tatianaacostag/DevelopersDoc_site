@@ -11,7 +11,7 @@ Tus compradores pueden presentar una reclamación al banco emisor de su tarjeta.
 
 La disputa congela el valor total de la venta en tu cuenta PayU.
 
-![Concepts](/assets/Disputes/Disputes_es.png)
+![Concepts](/assets/Disputes/Disputes_ES.png)
 
 ## ¿Por qué ocurre una disputa? {#why-a-dispute-happens}
 Un comprador puede reclamar al banco de emisor de su tarjeta reportando que no ha recibido el producto, el producto es deficiente o no cumple con las características esperadas. El comprador también puede desconocer la compra en el extracto de su tarjeta de crédito.<br>

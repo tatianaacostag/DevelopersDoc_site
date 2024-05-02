@@ -36,6 +36,7 @@ La siguiente sección muestra los métodos de pago disponibles por país y brind
 | ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario | BOLETO_BANCARIO | Efectivo | No concilia en fines de semana ni festivos |
 | ![Logo](/assets/PaymentMethods/elo.png) | Elo | ELO | Tarjetas de Crédito | |
+| ![Logo](/assets/PaymentMethods/google_pay.png) | Google Pay | GOOGLE_PAY | Servicio móvil de pagos | |
 | ![Logo](/assets/PaymentMethods/hipercard.png) | Hipercard | HIPERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/itau.png) | TEF Itaú | ITAU | Transferencia Bancaria | Solo disponible para cuentas Itaú. |
 | ![Logo](/assets/PaymentMethods/pix.png) | PIX | PIX | Pago Instantaneo | |
@@ -71,6 +72,7 @@ PayU en Colombia te permite integrar con la mayoría de los métodos de pago en 
 | ![Logo](/assets/PaymentMethods/efecty.png) | Efecty | EFECTY | Efectivo | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Tarjetas Débito| |
+| ![Logo](/assets/PaymentMethods/nequi.png) | Nequi | NEQUI | Servicio móvil de pagos | |
 | ![Logo](/assets/PaymentMethods/pse_logo.png) | PSE | PSE | Transferencia Bancaria | PSE le permite a tus clientes pagar utilizando Nequi y Daviplata. |
 | ![Logo](/assets/PaymentMethods/su-red.png) | Su Red | OTHERS_CASH | Efectivo | **Oficinas de pago**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
@@ -114,6 +116,7 @@ En México, soportamos tanto Meses sin Intereses y Promociones, consulte este [a
 | ![Logo](/assets/PaymentMethods/pago-efectivo.png) | PAGOEFECTIVO | PAGOEFECTIVO | Efectivo | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas Débito| |
+| ![Logo](/assets/PaymentMethods/yape.png) | Yape | YAPE | Servicio móvil de pagos | |
 
 ## Banners de los medios de pago en Colombia para la página web de tu comercio {#Banners-de-los-medios-de-pago-para-la-página-web-de-tu-comercio}
 

@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 
 ## Introduction
-BigCommerce is a digital commerce platform that enables you to swiftly establish an online store equipped with ready-to-use functionalities. For further details, check out the [official BigCommerce webpage](https://www.bigcommerce.com/press/).
+BigCommerce is a digital commerce platform that enables you to swiftly establish an online store equipped with ready-to-use functionalities. For further details, check out the <a href="https://www.bigcommerce.com/press" target="_blank">official BigCommerce website</a> .
 
 ## Prerequisites
 To carry out the integration, you need:
@@ -30,11 +30,10 @@ To carry out the integration, you need:
 3. After installation, the app interface will appear as follows:
 
 <img src="/assets/BigCommerce/Bigcommerce3.png" alt="PrintScreen" width="700">
-<br></br>
 
 ## Utilizing the extension
 ### Payment methods configuration
-Customize the payment methods displayed on your website during checkout. Refer to our [available payment methods]({{< ref "Select-your-payment-method.md" >}}).
+Customize the payment methods displayed on your website during checkout. Refer to our <a href="https://developers.payulatam.com/latam/en/docs/getting-started/select-your-payment-method.html" target="_blank">available payment methods</a>.
 
 1. Upon installation, select **Enable PayU Latam** to integrate the app with your BigCommerce store.
 
@@ -71,25 +70,24 @@ Additionally, choose **Test** or **Live** mode for each provider in the **Onboar
 | Parameter | Description |
 |---|---|
 | Select Payu Latam country | Choose the country you want to configure. |
-| API Login | User or login that PayU provides you. [How do I get my API Login](https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login) |
-| API Key | Unique key of your commerce. [How do I get my API Key](https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login) |
-| Public Key| Unique key of your commerce. [How do I get my Public Key](https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login) |
+| API Login | User or login that PayU provides you. <a href="https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login" target="_blank">How do I get my API Login</a>. |
+| API Key | Unique key of your commerce. <a href="https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login" target="_blank">How do I get my API Key</a>. |
+| Public Key| Unique key of your commerce. <a href="https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login" target="_blank">How do I get my Public Key</a>. |
 | Account ID | ID of the PayU account for the selected country. |
 | Merchant ID | ID of your commerce in PayU Latam. |
 <p></p>
 
-5. Select the transaction flow: 
-
+5. Select the transaction flow:
 * For one-step flow, select **Capture on order placed**.
 * For two-step flow, select **Capture on Shipment**.
 
 <img src="/assets/BigCommerce/Bigcommerce9.png" alt="PrintScreen" width="700">
 <p></p>
 
-Refer to the [Payments flow](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) document to learn more about the options.
+Refer to the <a href="https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows" target="_blank">Payments flow</a> document to learn more about the options.
 
 {{% alert title="Important" color="warning"%}}
-The option of processing in more than one step only applies to card payments (subject to [availability](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) in each country). Transactions with other payment methods require authorization and capture in a single step.
+The option of processing in more than one step only applies to card payments (subject to <a href="https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows" target="_blank">availability</a> in each country). Transactions with other payment methods require authorization and capture in a single step.
 {{% /alert %}}
 
 {{% alert title="Note" color="info"%}}
@@ -116,7 +114,7 @@ Multi-store options will be visible below the payment options section:
 
 {{% alert title="Important" color="warning"%}}
 * Refunds are only available for card transactions.
-* Refer to the [refunds document](https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html) for details by country.
+* Refer to the <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html" target="_blank">refunds document</a> for details by country.
 {{% /alert %}}
 
 ## Testing the integration 
@@ -155,4 +153,4 @@ You can customize the card payment option title as seen in [Payments methods con
 <p></p>
 
 ## Support:
-For technical issues or queries regarding this extension, contact our support team at **tecnico.co@payu.com** or visit [our website](https://colombia.payu.com/contactanos/). When emailing, include extension details in the subject and a summary of the issue in the body.
+For technical issues or queries regarding this extension, contact our support team at **tecnico.co@payu.com** or visit <a href="https://colombia.payu.com/en/contact-us//" target="_blank">our website</a>. When emailing, include extension details in the subject and a summary of the issue in the body.

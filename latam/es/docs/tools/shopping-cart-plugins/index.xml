@@ -694,7 +694,7 @@ Un pedido autorizado se puede cancelar utilizando el botón &lt;em&gt;&lt;strong
     </item>
     
     <item>
-      <title>Docs: Shopify - PayU Latam v2</title>
+      <title>Docs: Shopify</title>
       <link>/es/docs/tools/shopping-cart-plugins/shopify.html</link>
       <pubDate>Tue, 25 May 2021 10:30:35 -0500</pubDate>
       
@@ -702,23 +702,27 @@ Un pedido autorizado se puede cancelar utilizando el botón &lt;em&gt;&lt;strong
       <description>
         
         
-        &lt;h2 id=&#34;prerequisites&#34;&gt;Prerrequisitos&lt;/h2&gt;
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Requisitos previos&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Necesitas una cuenta activa en PayU Latam.&lt;/li&gt;
-&lt;li&gt;Necesitas un &lt;a href=&#34;https://es.shopify.com/precios&#34;&gt;plan&lt;/a&gt; válido en Shopify. El Checkout no está disponible para cuentas Trial.&lt;/li&gt;
+&lt;li&gt;Una cuenta activa en PayU Latam.&lt;/li&gt;
+&lt;li&gt;Un plan válido de Shopify. Ten en cuenta que la funcionalidad de Checkout no está disponible en los planes de prueba. Puedes explorar los planes y precios de Shopify &lt;a href=&#34;https://www.shopify.com/co/precios&#34; target=&#34;_blank&#34;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;order-management-in-shopify&#34;&gt;Gestión de órdenes en Shopify&lt;/h2&gt;
-&lt;p&gt;Ten en cuenta lo siguiente cuando manejes órdenes en Shopify:&lt;/p&gt;
+&lt;p&gt;Ten en cuenta las siguientes disposiciones al gestionar órdenes en Shopify:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;All orders&lt;/strong&gt;: son las órdenes con estado &lt;em&gt;&lt;strong&gt;Aprobado&lt;/strong&gt;&lt;/em&gt; (con pago completo o parcial) y &lt;em&gt;&lt;strong&gt;Pendiente&lt;/strong&gt;&lt;/em&gt; (siempre y cuando el pagador regrese a la tienda luego del procesamiento del pago en la pasarela).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Abandoned checkouts&lt;/strong&gt;: son procesos de pago que cumplen con uno de los siguientes criterios:
+&lt;li&gt;&lt;strong&gt;All orders (Todas las órdenes):&lt;/strong&gt; Incluye órdenes con los siguientes 2 estados:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Approved (Aprobadas):&lt;/strong&gt; Órdenes que están pagadas en su totalidad o parcialmente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pending (Pendientes):&lt;/strong&gt; Órdenes en espera de completarse cuando el cliente regresa a la tienda después de procesar un pago a través de la pasarela.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Abandoned checkouts (Procesos de pago abandonados)&lt;/strong&gt;: Aplica a procesos que:
 &lt;ol&gt;
-&lt;li&gt;No fueron completados.&lt;/li&gt;
-&lt;li&gt;Fueron abandonados durante el proceso de pago.&lt;/li&gt;
-&lt;li&gt;Transacciones con estado &lt;em&gt;&lt;strong&gt;Rechazado&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Transacciones con estado &lt;em&gt;&lt;strong&gt;Pendiente&lt;/strong&gt;&lt;/em&gt; siempre y cuando el pagador no regrese a la tienda luego del procesamiento del pago en la pasarela:&lt;br&gt;
-&lt;span style=&#34;color: #A6C307;font-weight: bold;&#34;&gt;4.1.&lt;/span&gt; Pagos en efectivo (siempre se obtiene el estado &lt;em&gt;&lt;strong&gt;Pendiente&lt;/strong&gt;&lt;/em&gt;).&lt;br&gt;
-&lt;span style=&#34;color: #A6C307;font-weight: bold;&#34;&gt;4.2.&lt;/span&gt; Pagos con Tarjetas de Crédito que entren en validación por las reglas de protección antifraude.&lt;/li&gt;
+&lt;li&gt;Quedaron incompletos ya que el usuario no pudo completar el pago o abandonó el sitio de compras.&lt;/li&gt;
+&lt;li&gt;Están marcados como &lt;em&gt;Rechazados&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Permanecen en estado &lt;em&gt;Pendiente&lt;/em&gt; sin que el cliente regrese al sitio de compras después del procesamiento del pago a través de la pasarela, esto incluye:&lt;br&gt;
+&lt;span style=&#34;color: #A6C307;font-weight: bold;&#34;&gt;3.1.&lt;/span&gt; Pagos en efectivo.&lt;br&gt;
+&lt;span style=&#34;color: #A6C307;font-weight: bold;&#34;&gt;3.2.&lt;/span&gt; Pagos con tarjetas de crédito que entren en validación por las reglas de protección antifraude.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -727,73 +731,78 @@ Un pedido autorizado se puede cancelar utilizando el botón &lt;em&gt;&lt;strong
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Shopify &lt;strong&gt;NO&lt;/strong&gt; realiza ningún tipo de reserva de inventarios para los casos anteriores.&lt;/li&gt;
-&lt;li&gt;Shopify crea órdenes para estos casos cuando el estado final de la transacción es &lt;em&gt;&lt;strong&gt;Aprobado&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Shopify &lt;strong&gt;NO&lt;/strong&gt; reserva inventario para ninguno de los escenarios anteriores.&lt;/li&gt;
+&lt;li&gt;Para los procesos considerados como &lt;em&gt;abandoned checkout&lt;/em&gt;, el sistema solo genera órdenes una vez que la transacción alcanza un estado &lt;em&gt;Aprobado&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;enable-payu-as-payment-gateway&#34;&gt;Configurar PayU como pasarela de pagos&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-payu-as-payment-gateway&#34;&gt;Configurar PayU como pasarela de pagos&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Inicia sesión en tu cuenta de Shopify y descarga la app de PayU Latam v2 del app store haciendo clic &lt;a href=&#34;https://apps.shopify.com/payu-latam-v2?locale=es&#34;&gt;aquí&lt;/a&gt; y seleccionando “Agregar app”.&lt;/li&gt;
+&lt;li&gt;Inicia sesión en tu cuenta de Shopify y descarga la app de PayU Latam v2 del app store haciendo clic &lt;a href=&#34;https://apps.shopify.com/payu-latam-v2?locale=es&#34; target=&#34;_blank&#34;&gt;aquí&lt;/a&gt; y seleccionando &lt;strong&gt;Instalar&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify01ES.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Selecciona la tienda en la cual quieres instalar la app de las opciones que aparecen en pantalla y serás redireccionado a otra página en donde debes hacer clic en “Install app”.&lt;/li&gt;
+&lt;li&gt;Selecciona la tienda donde quieres instalar la aplicación, serás redirigido a la página de instalación, haz clic en &lt;strong&gt;Instalar&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen700.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify02ES.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify03ES.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Ingresa las credenciales de tu tienda para el ambiente de test y de producción (Merchand Id y Account Id).&lt;/li&gt;
+&lt;li&gt;Elige el entorno deseado para la instalación de la aplicación: ya sea el Entorno de Pruebas (Test Environment) o el Entorno de Producción (Production Environment). Luego, ingresa tu Merchant ID y Account ID, y selecciona &lt;strong&gt;Save&lt;/strong&gt; para confirmar.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Recuerda que puedes encontrar tus credenciales de ambiente de producción ingresando a tu módulo administrativo de PayU. Una vez inicies sesión encontrarás el merchant ID (1) y el account ID (2) en la parte superior izquierda del módulo, tal como se muestra en la siguiente imagen de referencia:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen800.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify04EN.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Puedes encontrar las credenciales para el ambiente de test &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html&#34;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Recuerda que posteriormente puedes cambiar o consultar las credenciales que ingresaste desde tu admin de Shopify.&lt;/li&gt;
+&lt;li&gt;Encuentra tus credenciales del entorno de producción iniciando sesión en tu módulo administrativo de PayU, donde puedes localizar el Merchant ID y el Account ID en la esquina superior izquierda del módulo.&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;img src=&#34;../../../../assets/Shopify/Shopify05ES.png&#34; alt=&#34;PrintScreen&#34; width=&#34;240&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Encuentra las credenciales del entorno de prueba &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html&#34; target=&#34;_blank&#34;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Puedes verificar o cambiar tus credenciales en la configuración de tu cuenta de Shopify.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
-Para cada tienda que tengas en Shopify, debes tener un account ID diferente en PayU.
+Necesitas un Account ID por tienda en Shopify.
 &lt;/div&gt;
 
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Serás dirigido a la sección llamada “Pagos”. Allí, selecciona “Activate PayU Latam v2” en la esquina inferior derecha.&lt;/li&gt;
+&lt;li&gt;Serás redirigido a la página de Pagos, para habilitar la aplicación, haz clic en el botón &lt;strong&gt;Activar&lt;/strong&gt; ubicado en la esquina inferior derecha.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen900.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen100.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify06ES.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;A modo informativo, verás distintos medios de pago. Para avanzar, debes seleccionar por lo menos uno de ellos, pero recuerda que esto no modificará los medios de pago que tienes disponible en el Web Checkout de PayU.&lt;/li&gt;
-&lt;li&gt;Modo test: Dentro de la misma sección de “pagos”, encontrarás la opción para utilizar el modo test que te permitirá hacer pruebas en ambiente Sandbox.&lt;/li&gt;
-&lt;li&gt;Te recomendamos usar el ambiente test de forma controlada, preferiblemente en un horario de baja transaccionalidad, ya que las transacciones que se procesen mientras estes en modo de test no generan un pago real y el ambiente productivo queda desactivado.&lt;/li&gt;
-&lt;li&gt;Para deshabilitar el modo test, retira el check y guarda los cambios.
-&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen110.png&#34; alt=&#34;&#34;&gt;
-&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen120.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;li&gt;A modo informativo, verás distintos medios de pago. Para avanzar, debes seleccionar por lo menos uno de ellos, esto no modificará los medios de pago que tienes disponible en el Web Checkout de PayU.&lt;/li&gt;
+&lt;li&gt;Modo test: Dentro de la misma sección de &lt;em&gt;Pagos&lt;/em&gt;, encontrarás la opción para utilizar el modo test que te permitirá hacer pruebas en ambiente Sandbox.&lt;/li&gt;
+&lt;li&gt;Recomendamos que utilices el entorno de prueba de manera controlada, preferiblemente durante las horas de menor actividad, ya que las transacciones procesadas en modo de prueba no generan pagos reales y el entorno de producción permanece desactivado.&lt;/li&gt;
+&lt;li&gt;Para deshabilitar el modo test, desmarque la caja.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify07ES.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
 
 &lt;/div&gt;
 
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Ingresa a tu Merchant Panel, ve a la sección de Configuración y haz clic en “Configuración técnica”. Activa la opción llamada “Controlar pagos dobles (Validar referencia única)” para evitar problemas al momento de procesar tus pagos.&lt;/li&gt;
+&lt;li&gt;Ingresa a tu &lt;a href=&#34;https://developers.payulatam.com/latam/es/payu-module-documentation/getting-started/understanding-the-payu-module.html&#34; target=&#34;_blank&#34;&gt;Módulo de PayU&lt;/a&gt;, ve a la sección de &lt;strong&gt;Configuración&lt;/strong&gt; y haz clic en &lt;strong&gt;Configuración técnica&lt;/strong&gt;. Activa la opción llamada &lt;strong&gt;Controlar pagos dobles (Validar referencia única)&lt;/strong&gt; para evitar problemas al momento de procesar tus pagos.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen130.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../../assets/ShopifyReverseIntegration/imagen6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify08ES.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;A partir de este momento, tienes a PayU instalado como procesador de pagos y puedes comenzar tus ventas. Tus clientes pueden hacer compras utilizando el Web Checkout de PayU a través de métodos de pago como efectivo, tarjetas de crédito y transferencias bancarias (dependiendo del país en el que estés vendiendo).&lt;/li&gt;
+&lt;li&gt;A partir de ahora, PayU está configurado como tu procesador de pagos, lo que te permite iniciar tus ventas. Con el Web Checkout de PayU, tus clientes pueden realizar compras utilizando diversos métodos de pago, como efectivo, tarjetas de crédito y transferencias bancarias, adaptados al país en el que realizas negocios.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;payment-flow-in-shopify&#34;&gt;Flujo de pago en Shopify&lt;/h2&gt;
 &lt;p&gt;Cuando configuras PayU como pasarela de pago en la plataforma, tu cliente puede hacer compras de la siguiente forma:&lt;/p&gt;
@@ -806,18 +815,18 @@ Para cada tienda que tengas en Shopify, debes tener un account ID diferente en P
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_09_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Una vez tu cliente ingresa su información, puede hacer clic en &lt;em&gt;&lt;strong&gt;Finalizar el pedido&lt;/strong&gt;&lt;/em&gt; para ser redireccionado a PayU Latam para completar el pago.&lt;/li&gt;
+&lt;li&gt;Después de proporcionar su información, tu cliente hace clic en &lt;em&gt;&lt;strong&gt;Finalizar el pedido&lt;/strong&gt;&lt;/em&gt; para ser redirigido a PayU Latam para completar el pago.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_10_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Cuando está en nuestra pasarela de pagos, puede ver la descripción de la venta y los métodos de pago disponibles para tu país.&lt;/li&gt;
+&lt;li&gt;Cuando esté en nuestra pasarela de pagos, tu cliente puede ver la descripción de la venta y los métodos de pago disponibles para tu país.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_11_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-Recuerda que si requieres realizar un reembolso total o parcial, podrás gestionarlo directamente desde el admin de tu tienda en Shopify. Para más información, haz clic &lt;a href=&#34;https://help.shopify.com/en/manual/orders/refund-cancel-order#refunding-an-order&#34;&gt;aquí&lt;/a&gt;.
+Recuerda que si requieres realizar un reembolso total o parcial, podrás gestionarlo directamente desde el admin de tu tienda en Shopify. Para más información, haz clic &lt;a href=&#34;https://help.shopify.com/es/manual/orders/cancel-delete-order&#34; target=&#34;_blank&#34;&gt;aquí&lt;/a&gt;.
 &lt;/div&gt;
 
 
@@ -833,21 +842,7 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
       <description>
         
         
-        &lt;p&gt;&lt;strong&gt;Contenido&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introducción&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#prerequisites&#34;&gt;Requisitos previos&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#installing-the-extension&#34;&gt;Instalación de la extensión&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#utilizing-the-extension&#34;&gt;Uso de la extensión&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#payment-methods-configuration&#34;&gt;Configuración de métodos de pago&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#order-management-and-refunds&#34;&gt;Gestión de pedidos y reembolsos&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#testing-the-integration&#34;&gt;Prueba de la integración&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#support&#34;&gt;Soporte&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
+        &lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
 &lt;p&gt;BigCommerce es una plataforma de comercio digital que te permite crear rápidamente una tienda en línea equipada con funcionalidades listas para usar. Para más detalles, visita la &lt;a href=&#34;https://www.bigcommerce.com/press/&#34;&gt;página oficial de BigCommerce&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;requisitos-previos&#34;&gt;Requisitos previos&lt;/h2&gt;
 &lt;p&gt;Para llevar a cabo la integración, necesitas:&lt;/p&gt;

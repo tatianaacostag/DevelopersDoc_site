@@ -22,18 +22,18 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Shopify | PayU Latam</title><meta property="og:title" content="Shopify" />
-<meta property="og:description" content="Este artigo mostra o procedimento para habilitar PayU em seu site Shopify." />
+<meta property="og:description" content="Este guia descreve os passos para habilitar o PayU em seu site Shopify." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/tools/shopping-cart-plugins/shopify.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-25T10:30:35-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-04-25T14:12:17-05:00" />
 
 <meta itemprop="name" content="Shopify">
-<meta itemprop="description" content="Este artigo mostra o procedimento para habilitar PayU em seu site Shopify."><meta itemprop="datePublished" content="2021-05-25T10:30:35-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="434">
+<meta itemprop="description" content="Este guia descreve os passos para habilitar o PayU em seu site Shopify."><meta itemprop="datePublished" content="2021-05-25T10:30:35-05:00" />
+<meta itemprop="dateModified" content="2024-04-25T14:12:17-05:00" />
+<meta itemprop="wordCount" content="674">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Shopify"/>
-<meta name="twitter:description" content="Este artigo mostra o procedimento para habilitar PayU em seu site Shopify."/>
+<meta name="twitter:description" content="Este guia descreve os passos para habilitar o PayU em seu site Shopify."/>
 
 
 
@@ -137,7 +137,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.aa30af6bda3ca4d0cd51fc1b1ac9a57d15d342e0f5b32a0c7fa3b751e7ea22b011baf263f689e391d0d842b4a390608ab5feb87e084117945673459885ede03a.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.3dcd7854afcabc96291571409e5faa1e815d3580a78077b734b0b9b68c892dbedbf32b5931dc32fa2d43a640b35bcf687a7908f2e22a8cf64a3fbcc99849566c.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -737,8 +737,8 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#prerequisites">Pré-requisitos</a></li>
-    <li><a href="#order-management-in-shopify">Gerenciamento de ordem no Shopify</a></li>
-    <li><a href="#enable-payu-as-payment-gateway">Enable PayU as Payment gateway</a></li>
+    <li><a href="#order-management-in-shopify">Gestão de pedidos no Shopify</a></li>
+    <li><a href="#setting-up-payu-as-payment-gateway">Configurando o PayU como gateway de pagamento</a></li>
     <li><a href="#payment-flow-in-shopify">Fluxo de pagamento no Shopify</a></li>
   </ul>
 </nav>
@@ -797,70 +797,110 @@
             
 <div class="td-content">
 	<h1>Shopify</h1>
-    <div class="lead">Este artigo mostra o procedimento para habilitar PayU em seu site Shopify.</div>
+    <div class="lead">Este guia descreve os passos para habilitar o PayU em seu site Shopify.</div>
 	       
 	<h2 id="prerequisites">Pré-requisitos</h2>
 <ul>
-<li>Você precisa de uma conta ativa no PayU Latam.</li>
-<li>Você precisa de um <a href="https://www.shopify.com/pricing">plano</a> válido no Shopify. O check-out não está disponível em planos de teste.</li>
+<li>Uma conta ativa no PayU Latam.</li>
+<li>Um plano válido do Shopify. Note que a funcionalidade de Checkout não está disponível nos planos de teste. Você pode explorar os planos e preços do Shopify <a href="https://www.shopify.com/br/precos" target="_blank">aqui</a>.</li>
 </ul>
-<h2 id="order-management-in-shopify">Gerenciamento de ordem no Shopify</h2>
-<p>Leve em conta o seguinte ao gerenciar ordens no Shopify:</p>
+<h2 id="order-management-in-shopify">Gestão de pedidos no Shopify</h2>
+<p>Tenha em mente as seguintes disposições ao gerenciar pedidos no Shopify:</p>
 <ul>
-<li><strong>All orders</strong>: são as ordens com estado <em><strong>Aprovado</strong></em> (total ou parcialmente pago) e <em><strong>Pendente</strong></em> (enquanto o pagador volta à loja após processar o pagamento no portal).</li>
-<li><strong>Abandoned checkouts</strong>: são procedimentos de pagamento que atendem a qualquer um dos seguintes critérios:
+<li><strong>All orders (Todos os pedidos):</strong> Inclui pedidos com os seguintes 2 estados:
+<ul>
+<li><strong>Approved (Aprovado):</strong> Pedidos que estão pagos integralmente ou parcialmente.</li>
+<li><strong>Pending (Pendente):</strong> Pedidos aguardando conclusão quando o cliente retorna à loja após processar um pagamento pelo gateway.</li>
+</ul>
+</li>
+<li><strong>Abandoned checkouts (Pagamentos abandonados)</strong>: Aplica-se a processos que:
 <ol>
-<li>Check-outs incompletos.</li>
-<li>Check-outs abandonados durante o processo de pagamento.</li>
-<li>Transações com estado <em><strong>Rejeitada</strong></em>.</li>
-<li>Transações com estado <em><strong>Pendente</strong></em>, desde que o pagador não volte à loja após processar o pagamento no portal:<br>
-<span style="color: #A6C307;font-weight: bold;">4.1.</span> Pagamentos em dinheiro (sempre em estado <em><strong>Pendente</strong></em>).<br>
-<span style="color: #A6C307;font-weight: bold;">4.2.</span> Pagamentos com cartão de crédito sujeitos a análise de fraude.</li>
+<li>Permaneceram incompletos porque o usuário não pôde completar o pagamento ou abandonou o site de compras.</li>
+<li>Estão marcados como <em>Rejeitados</em>.</li>
+<li>Permanecem em estado <em>Pendente</em> sem que o cliente retorne ao site de compras após o processamento do pagamento pelo gateway, isso inclui:<br>
+<span style="color: #A6C307;font-weight: bold;">3.1.</span> Pagamentos em dinheiro.<br>
+<span style="color: #A6C307;font-weight: bold;">3.2.</span> Pagamentos com cartão de crédito que passam por validação devido às regras de proteção contra fraude.</li>
 </ol>
 </li>
 </ul>
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">Observação</h4>
+<h4 class="alert-heading">Nota</h4>
 <ul>
-<li>Shopify <strong>NÃO</strong> faz qualquer reserva de estoque ou para qualquer um desses dois casos.</li>
-<li>O Shopify cria a ordem para esses dois casos quando o estado final da transação é <em><strong>Aprovada</strong></em>.</li>
+<li>O Shopify <strong>NÃO</strong> reserva inventário para nenhum dos cenários acima.</li>
+<li>Para os processos considerados como <em>pagamento abandonado</em>, o sistema só gera pedidos uma vez que a transação atinja o estado <em>Aprovado</em>.</li>
 </ul>
 
 </div>
 
-<h2 id="enable-payu-as-payment-gateway">Enable PayU as Payment gateway</h2>
+<h2 id="setting-up-payu-as-payment-gateway">Configurando o PayU como gateway de pagamento</h2>
 <ol>
-<li>Entre no seu site de administração do Shopify. Clique em <em><strong>Configurações</strong></em> e selecione <em><strong>Pagamentos</strong></em>.</li>
+<li>Faça login em sua conta do Shopify e baixe o aplicativo PayU Latam v2 na loja de aplicativos clicando <a href="https://apps.shopify.com/payu-latam-v2?locale=pt-BR" target="_blank">aqui</a> e selecionando <strong>Instalar</strong>.</li>
 </ol>
-<p><img src="../../../../assets/Shopify/Shopify_01_pt.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Shopify/Shopify01PT.png" alt="PrintScreen" width="700">
+<p></p>
 <ol start="2">
-<li>Acesse a seção <em><strong>Provedores de pagamento</strong></em> e clique em <em><strong>Escolher um provedor</strong></em>.</li>
+<li>Selecione a loja onde deseja instalar o aplicativo. Você será redirecionado para a página de instalação. Clique em <strong>Instalar</strong>.</li>
 </ol>
-<p><img src="../../../../assets/Shopify/Shopify_02_pt.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Shopify/Shopify02PT.png" alt="PrintScreen" width="700">
+<p></p>
+<img src="../../../../assets/Shopify/Shopify03PT.png" alt="PrintScreen" width="700">
+<p></p>
 <ol start="3">
-<li>Na lista, localize e clique no Gateway do <em>PayU Latam</em>.</li>
+<li>Escolha o ambiente desejado para a instalação da aplicação: Ambiente de Teste (Test Environment) ou Ambiente de Produção (Production Environment). Em seguida, insira seu Merchant ID e Account ID e selecione <strong>Save</strong> para confirmar.</li>
 </ol>
-<p><img src="../../../../assets/Shopify/Shopify_03_pt.png" alt="PrintScreen"></p>
-<ol start="4">
-<li>Forneça as seguintes informações de sua conta PayU:</li>
-</ol>
-<p><img src="../../../../assets/Shopify/Shopify_04_pt.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Shopify/Shopify04EN.png" alt="PrintScreen" width="500">
+<p></p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
 <ul>
-<li><strong>Account Id (1)</strong>: ID da conta PayU de acordo com o país onde você quer vender.</li>
-<li><strong>Api Key (2)</strong>: Chave única da sua loja. Você pode obter esta informação no seu Módulo PayU (<strong><em>Configuração</em></strong> &gt; <strong><em>Configuração técnica</em></strong> &gt; <strong><em>API Key</em></strong>).</li>
+<li>Encontre suas credenciais do ambiente de produção fazendo login no seu módulo administrativo PayU, onde você pode localizar o Merchant ID e o Account ID no canto superior esquerdo do módulo.</li>
 </ul>
-<p><img src="../../../../assets/Shopify/Shopify_05_pt.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Shopify/Shopify05PT.png" alt="PrintScreen" width="240">
+<p></p>
+<ul>
+<li>Encontre as credenciais do ambiente de teste <a href="https://developers.payulatam.com/latam/pt/docs/getting-started/test-your-solution.html" target="_blank">aqui</a>.</li>
+<li>Você pode verificar ou alterar suas credenciais nas configurações da sua conta do Shopify.</li>
+</ul>
+</div>
+
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Importante</h4>
+Você precisa de um Account ID por loja no Shopify.
+</div>
+
+<ol start="4">
+<li>Você será redirecionado para a página de Pagamentos. Para ativar o aplicativo, clique no botão <strong>Ativar</strong> localizado no canto inferior direito.</li>
+</ol>
+<img src="../../../../assets/Shopify/Shopify06PT.png" alt="PrintScreen" width="700">
+<p></p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Importante</h4>
+<ul>
+<li>Para sua informação, você verá vários métodos de pagamento. Para prosseguir, você deve selecionar pelo menos um deles. Isso não alterará os métodos de pagamento disponíveis no Checkout Web da PayU.</li>
+<li>Modo de teste: dentro da mesma seção &ldquo;pagamentos&rdquo;, você encontrará a opção para usar o modo de teste, permitindo que você conduza testes no ambiente Sandbox.</li>
+<li>Recomendamos que você utilize o ambiente de teste de forma controlada, preferencialmente durante os horários de menor movimento, já que as transações processadas em modo de teste não resultam em pagamentos reais e o ambiente de produção permanece desativado.</li>
+<li>Para desativar o modo de teste, desmarque a caixa:</li>
+</ul>
+<img src="../../../../assets/Shopify/Shopify07PT.png" alt="PrintScreen" width="700">
+
+</div>
+
 <ol start="5">
-<li>Finalmente, clique no botão <em><strong>Ativar PayU Latam</strong></em> na parte inferior da página.</li>
+<li>Acesse seu <a href="https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module.html" target="_blank">Módulo PayU</a>, vá para a seção <strong>Configurações</strong> e clique em <strong>Configurações Técnicas</strong>. Ative a opção chamada <strong>Controlar pagamentos duplicados (Validar referência única)</strong> para evitar problemas durante o processamento do pagamento.</li>
 </ol>
-<p><img src="../../../../assets/Shopify/Shopify_06_pt.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Shopify/Shopify08PT.png" alt="PrintScreen" width="700">
+<p></p>
 <ol start="6">
-<li>Abra o módulo PayU e acesse as opções de <em><strong>Configuração</strong></em> (<strong><em>Configuração</em></strong> &gt; <strong><em>Configuração técnica</em></strong>). Em seguida, desative a validação de referência única para todos os estados, para evitar problemas no momento de processar seus pagamentos.</li>
+<li>A partir de agora, o PayU está configurado como seu processador de pagamento, permitindo que você inicie suas vendas. Com o Checkout Web da PayU, seus clientes podem fazer compras usando vários métodos de pagamento, incluindo dinheiro, cartões de crédito e transferências bancárias, adaptados ao país onde você está realizando negócios.</li>
 </ol>
-<p><img src="../../../../assets/Shopify/Shopify_07_pt.png" alt="PrintScreen"></p>
-<p>Nesta etapa, seus clientes podem fazer pagamentos por meio do PayU Checkout. Eles podem pagar usando opções de pagamento, incluindo dinheiro, cartões de crédito e transferências bancárias, dependendo do país onde você está vendendo.</p>
 <h2 id="payment-flow-in-shopify">Fluxo de pagamento no Shopify</h2>
 <p>Ao configurar o PayU como portal de pagamento na plataforma, seu cliente pode pagar conforme explicado a seguir.</p>
 <ol>
@@ -880,14 +920,21 @@
 </ol>
 <p><img src="../../../../assets/Shopify/Shopify_11_pt.png" alt="PrintScreen"></p>
 
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+Se precisar emitir um reembolso total ou parcial, você pode gerenciá-lo diretamente no administrador da loja Shopify. Para obter mais informações, clique <a href="https://help.shopify.com/pt-BR/manual/orders/cancel-delete-order" target="_blank">aqui</a>.
+</div>
+
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-24 de junho de 2022:
+25 de abril de 2024:
 
- <b>clon issue (d73e43fe)</b>
+ <b>Documentation updates (8d96a15a)</b>
 </div>
 </div>
 

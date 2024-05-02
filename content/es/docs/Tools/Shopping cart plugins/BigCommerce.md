@@ -8,15 +8,15 @@ weight: 11
 tags: ["subtopic"]
 ---
 
-## Introducción
-BigCommerce es una plataforma de comercio digital que te permite crear rápidamente una tienda en línea equipada con funcionalidades listas para usar. Para más detalles, visita la [página oficial de BigCommerce](https://www.bigcommerce.com/press/).
+## Introducción {#introduction}
+BigCommerce es una plataforma de comercio digital que te permite crear rápidamente una tienda en línea equipada con funcionalidades listas para usar. Para más detalles, visita la <a href="https://www.bigcommerce.com/press" target="_blank">página oficial de BigCommerce</a>.
 
-## Requisitos previos
+## Requisitos previos {#prerequisites}
 Para llevar a cabo la integración, necesitas:
 * Una cuenta de PayU Latam
 * Una cuenta de BigCommerce
 
-## Instalación de la extensión
+## Instalación de la extensión {#installing-the-extension}
 1. Dirígete al Marketplace de BigCommerce, haz clic en **Mis Aplicaciones**, ubica la extensión de PayU y haz clic en **Instalar**:
 
 <img src="/assets/BigCommerce/Bigcommerce1.png" alt="PrintScreen" width="700">
@@ -30,11 +30,10 @@ Para llevar a cabo la integración, necesitas:
 3. Después de la instalación, la interfaz de la aplicación aparecerá de la siguiente manera:
 
 <img src="/assets/BigCommerce/Bigcommerce3.png" alt="PrintScreen" width="700">
-<br></br>
 
-## Uso de la extensión
+## Uso de la extensión {#utilizing-the-extension}
 ### Configuración de métodos de pago
-Personaliza los métodos de pago mostrados en tu sitio web durante el proceso de pago. Consulta nuestros [métodos de pago disponibles]({{< ref "Select-your-payment-method.md" >}}).
+Personaliza los métodos de pago mostrados en tu sitio web durante el proceso de pago. Consulta nuestros <a href="https://developers.payulatam.com/latam/es/docs/getting-started/select-your-payment-method.html" target="_blank">métodos de pago disponibles</a>.
 
 1. Tras la instalación, selecciona **Habilitar PayU Latam** para integrar la aplicación con tu tienda BigCommerce.
 
@@ -71,25 +70,24 @@ Adicionalmente, elige el modo **Prueba** o **En Producción** para cada proveedo
 | Parámetro | Descripción |
 |---|---|
 | Select Payu Latam country | Selecciona el país que deseas configurar |
-| API Login | Usuario o Login que te proporciona PayU. [Cómo obtener el API Login de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
-| API Key | Clave única del comercio. [Cómo obtener el API Key de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
-| Public Key| Clave única del comercio. [Cómo obtener el Public Key de mi tienda](https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login) |
+| API Login | Usuario o Login que te proporciona PayU. <a href="https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login" target="_blank">Cómo obtener mi API Login</a>. |
+| API Key | Clave única del comercio. <a href="https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login" target="_blank">Cómo obtener mi API Key</a>. |
+| Public Key| Clave única del comercio. <a href="https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login" target="_blank">Cómo obtener mi Public Key</a>. |
 | Account ID |  ID de la cuenta de PayU para el país seleccionado.  |
 | Merchant ID | ID de tu comercio en PayU Latam. |
 <p></p>
 
-5. Selecciona el flujo de transacción: 
-
+5. Selecciona el flujo de transacción:
 * Para el flujo de un paso, selecciona **Capturar en pedido realizado**.
 * Para el flujo en dos pasos, selecciona **Capturar en Envío**.
 
 <img src="/assets/BigCommerce/Bigcommerce9.png" alt="PrintScreen" width="700">
 <p></p>
 
-Consulta el [documento de Flujo de Pagos](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) para obtener más información sobre las opciones.
+Consulta el documento de <a href="https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows" target="_blank">Flujo de Pagos</a> para obtener más información sobre las opciones.
 
 {{% alert title="Importante" color="warning"%}}
-La opción de procesamiento en más de un paso solo se aplica a pagos con tarjeta (sujeto a [disponibilidad](https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows) en cada país). Las transacciones con otros métodos de pago requieren autorización y captura en un solo paso.
+La opción de procesamiento en más de un paso solo se aplica a pagos con tarjeta (sujeto a <a href="https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows" target="_blank">disponibilidad</a> en cada país). Las transacciones con otros métodos de pago requieren autorización y captura en un solo paso.
 {{% /alert %}}
 
 {{% alert title="Nota" color="info"%}}
@@ -116,7 +114,7 @@ Las opciones multi-tienda estarán visibles debajo de la sección de opciones de
 
 {{% alert title="Importante" color="warning"%}}
 * Los reembolsos solo están disponibles para transacciones con tarjeta.
-* Consulta el [documento de reembolsos](https://developers.payulatam.com/latam/es/payu-module-documentation/payu-operations/refunds-mp.html) para obtener detalles para cada país.
+* Consulta el <a href="https://developers.payulatam.com/latam/es/payu-module-documentation/payu-operations/refunds-mp.html" target="_blank">documento de reembolsos</a> para obtener detalles para cada país.
 {{% /alert %}}
 
 ## Prueba de la integración 
@@ -155,7 +153,7 @@ Puedes personalizar el título de la opción de pago con tarjeta como se ve en [
 <p></p>
 
 ## Soporte:
-Para problemas técnicos o consultas sobre esta extensión, contacta a nuestro equipo de soporte en **tecnico.co@payu.com** o visita [nuestro sitio web](https://colombia.payu.com/contactanos/). Si optas por enviarnos un correo electrónico,  incluye los detalles de la extensión en el asunto y un resumen del problema en el cuerpo del mensaje.
+Para problemas técnicos o consultas sobre esta extensión, contacta a nuestro equipo de soporte en **tecnico.co@payu.com** o visita <a href="https://colombia.payu.com/contactanos/" target="_blank">nuestro sitio web</a>. Si optas por enviarnos un correo electrónico, incluye los detalles de la extensión en el asunto y un resumen del problema en el cuerpo del mensaje.
 
 
 

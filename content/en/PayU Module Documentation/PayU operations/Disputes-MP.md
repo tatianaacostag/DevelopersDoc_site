@@ -7,7 +7,7 @@ Description: >
 weight: 40
 ---
 
-![Concepts](/assets/Disputes/Disputes_en.png)
+![Concepts](/assets/Disputes/Disputes.png)
 
 {{% alert title="Note" color="info"%}}
 For introductory terms about a dispute refer to this [article]({{< ref "disputes.md" >}}).

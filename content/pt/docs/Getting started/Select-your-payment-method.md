@@ -14,28 +14,29 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 
 | | Método de pagamento | Parâmetro paymentMethod | Tipo | Comentários |
 |:-:|---|---|---|---|
-| ![Logo](/assets/PaymentMethods/american.png)| American Express | AMEX | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/argencard.png) | Argencard| ARGENCARD | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/cabal.png) | Cabal| CABAL | Cartões de crédito | |
-| ![Logo](/assets/PaymentMethods/cencosud.png)| Cencosud | CENCOSUD| Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/cencosud.png) | Cencosud | CENCOSUD| Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/cobro-express.png) | Cobro Express| COBRO_EXPRESS | Dinheiro | |
-| ![Logo](/assets/PaymentMethods/diners.png)| Diners | DINERS | Cartões de crédito | |
-| ![Logo](/assets/PaymentMethods/master.png)| Mastercard | MASTERCARD | Cartões de crédito | **Cartões autorizados**: CRM Falabella, Nativa, Cordial, Cordobesa e Nexo. |
+| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Cartões de crédito | **Cartões autorizados**: CRM Falabella, Nativa, Cordial, Cordobesa e Nexo. |
 | ![Logo](/assets/PaymentMethods/naranja.png) | Naranja| NARANJA | Cartões de crédito | |
-| ![Logo](/assets/PaymentMethods/pago-facil.png)| PAGOFACIL| PAGOFACIL | Dinheiro | |
+| ![Logo](/assets/PaymentMethods/pago-facil.png) | PAGOFACIL| PAGOFACIL | Dinheiro | |
 | ![Logo](/assets/PaymentMethods/rapi-pago.png) | RAPIPAGO | RAPIPAGO| Dinheiro | |
 | ![Logo](/assets/PaymentMethods/shopping.png)| Shopping | SHOPPING| Cartões de crédito | |
-| ![Logo](/assets/PaymentMethods/visa.png)| VISA | VISA | Cartões de crédito | **Cartões autorizados**: Shopping, Nativa, Credimas e Nevada. |
-| ![Logo](/assets/PaymentMethods/visa.png)| VISA | VISA_DEBIT | Cartões de débito| |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Cartões de crédito | **Cartões autorizados**: Shopping, Nativa, Credimas e Nevada. |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Cartões de débito| |
 
 ## <img src="/assets/Brasil.png" width="25px"/> Brasil {#Brazil}
 <div class="paymentMethods"></div>
 
 | | Método de pagamento | Parâmetro paymentMethod | Tipo | Comentários |
 |:-:|---|---|---|---|
-| ![Logo](/assets/PaymentMethods/american.png)| American Express | AMEX | Cartões de crédito| |
+| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/boleto-bancario.png) | Boleto Bancario| BOLETO_BANCARIO | Dinheiro | Não concilia em fins de semana e feriados |
 | ![Logo](/assets/PaymentMethods/elo.png) | Elo| ELO | Cartões de crédito| |
+| ![Logo](/assets/PaymentMethods/google_pay.png) | Google Pay | GOOGLE_PAY | Serviço de pagamento móvel | |
 | ![Logo](/assets/PaymentMethods/hipercard.png) | Hipercard | HIPERCARD | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/itau.png)| TEF Itaú | ITAU | Transferência bancária | Disponível apenas para contas Itaú. |
 | ![Logo](/assets/PaymentMethods/pix.png) | PIX | PIX | Pagamento Instantâneo | |
@@ -47,8 +48,8 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 
 |  | Método de pagamento | Parâmetro paymentMethod | Tipo | Comentários |
 |:---:|---|---|---|---|
-| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Cartões de crédito| |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Cartões de crédito| |
+| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Cartões de débito | |
 | ![Logo](/assets/PaymentMethods/multicaja.png)| Klap (FKA Multicaja) | MULTICAJA | Dinheiro | |
 | ![Logo](/assets/PaymentMethods/red-compra.png) | Redcompra | TRANSBANK_DEBIT | Debit and Prepaid Cards | |
@@ -59,20 +60,23 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 ## <img src="/assets/Colombia.png" width="25px"/> Colômbia {#Colombia}
 PayU na Colômbia permite a integração com a maioria dos métodos de pagamento em dinheiro do país. Além disso, trabalhamos com Codensa e Falabella
 
+<div class="paymentMethods"></div>
+
 | | Método de pagamento | Parâmetro paymentMethod | Tipo | Comentários |
-|:-:|---|---|----|---|
-| ![Logo](/assets/PaymentMethods/american.png)| American Express | AMEX | Cartões de crédito | |
-| ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá| BANK_REFERENCED | Referência bancária | |
+|:-:|---|---|---|---|
+| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá | BANK_REFERENCED | Referência bancária | |
 | ![Logo](/assets/PaymentMethods/bancolombia.png) | Bancolombia | BANK_REFERENCED | Referência bancária | |
 | ![Logo](/assets/PaymentMethods/codensa.png) | Codensa | CODENSA | Cartões de crédito | |
-| ![Logo](/assets/PaymentMethods/davivienda.png)| Davivienda | BANK_REFERENCED | Referência bancária | |
-| ![Logo](/assets/PaymentMethods/diners.png)| Diners | DINERS | Cartões de crédito | |
-| ![Logo](/assets/PaymentMethods/efecty.png)| Efecty | EFECTY | Dinheiro | |
-| ![Logo](/assets/PaymentMethods/master.png)| Mastercard | MASTERCARD | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/davivienda.png) | Davivienda | BANK_REFERENCED | Referência bancária | |
+| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/efecty.png) | Efecty | EFECTY | Dinheiro | |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Cartões de débito | |
-| ![Logo](/assets/PaymentMethods/pse_logo.png)| PSE | PSE | Transferência bancária | O PSE permite que seus clientes paguem usando Nequi e Daviplata. |
-| ![Logo](/assets/PaymentMethods/su-red.png)| Su Red | OTHERS_CASH| Dinheiro | **Escritórios de pagamento**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. |
-| ![Logo](/assets/PaymentMethods/visa.png)| VISA | VISA | Cartões de crédito | |
+| ![Logo](/assets/PaymentMethods/nequi.png) | Nequi | NEQUI | Serviço de pagamento móvel | |
+| ![Logo](/assets/PaymentMethods/pse_logo.png) | PSE | PSE | Transferência bancária | O PSE permite que seus clientes paguem usando Nequi e Daviplata. | 
+| ![Logo](/assets/PaymentMethods/su-red.png) | Su Red | OTHERS_CASH | Dinheiro | **Escritórios de pagamento**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. | 
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Cartões de débito | |
 
 ## <img src="/assets/Mexico.png" width="25px"/> México {#Mexico}
@@ -112,3 +116,4 @@ Para o México, oferecemos suporte tanto para MSI quanto para parcelas e promoç
 | ![Logo](/assets/PaymentMethods/pago-efectivo.png) | PAGOEFECTIVO | PAGOEFECTIVO | Dinheiro |  |
 | ![Logo](/assets/PaymentMethods/visa.png)| VISA | VISA | Cartões de crédito |  |
 | ![Logo](/assets/PaymentMethods/visa.png)| VISA | VISA_DEBIT | Cartões de débito|  |
+| ![Logo](/assets/PaymentMethods/yape.png) | Yape | YAPE | Serviço de pagamento móvel | |
