@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="../../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>BigCommerce | PayU Latam</title><meta property="og:title" content="BigCommerce" />
+<meta property="og:description" content="Este guia descreve os passos para integrar o PayU com o seu site BigCommerce." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/pt/docs/tools/shopping-cart-plugins/bigcommerce.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-04-27T10:30:35-05:00" />
+<meta property="article:modified_time" content="2024-05-02T15:25:36-05:00" />
+
+<meta itemprop="name" content="BigCommerce">
+<meta itemprop="description" content="Este guia descreve os passos para integrar o PayU com o seu site BigCommerce."><meta itemprop="datePublished" content="2023-04-27T10:30:35-05:00" />
+<meta itemprop="dateModified" content="2024-05-02T15:25:36-05:00" />
+<meta itemprop="wordCount" content="677">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="BigCommerce"/>
+<meta name="twitter:description" content="Este guia descreve os passos para integrar o PayU com o seu site BigCommerce."/>
+
+
+
+
+
+<link rel="preload" href="../../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" as="style">
+<link href="../../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" rel="stylesheet" integrity="">
+
+
+<link href="../../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../pt/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/PayULatam.png"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../pt/docs.html" ><span class="active">Pagamentos Online</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../pt/payu-module-documentation.html" ><span>Guia do Módulo PayU</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Português
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/tools/shopping-cart-plugins/bigcommerce.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../../en/docs/tools/shopping-cart-plugins/bigcommerce.html">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Buscar no site…"
+  aria-label="Buscar no site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.9cc6a7a30d709156b33ca68e6d9617a71dd020edd7522eb757c836e90227e7bb309e95a90ceb7bea785f42d5f612437d4796465d0b0042ef8a62ec36413a7ad7.json"
+  data-offline-search-base-href="../../../../"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Português
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/tools/shopping-cart-plugins/bigcommerce.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../../en/docs/tools/shopping-cart-plugins/bigcommerce.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs.html" href="../../../../pt/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Início</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/getting-started.html" href="../../../../pt/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Para começar</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedcreate-an-accounthtml" href="../../../../pt/docs/getting-started/create-an-account.html">Crie uma conta PayU</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/select-your-integration.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedselect-your-integrationhtml" href="../../../../pt/docs/getting-started/select-your-integration.html">Selecione sua integração</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/select-your-payment-method.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedselect-your-payment-methodhtml" href="../../../../pt/docs/getting-started/select-your-payment-method.html">Selecione seu método de pagamento</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedtest-your-solutionhtml" href="../../../../pt/docs/getting-started/test-your-solution.html">Teste sua solução</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/deploy-to-production.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-starteddeploy-to-productionhtml" href="../../../../pt/docs/getting-started/deploy-to-production.html">Implementar na produção</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedresponse-codes-and-variableshtml" href="../../../../pt/docs/getting-started/response-codes-and-variables.html">Códigos e variáveis de resposta</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/services.html" href="../../../../pt/docs/services.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Serviços</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsserviceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/payments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicespaymentshtml" href="../../../../pt/docs/services/payments.html">Pagamentos</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservices3ds-authenticationhtml" href="../../../../pt/docs/services/3ds-authentication.html">Autenticação 3DS</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/queries.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicesquerieshtml" href="../../../../pt/docs/services/queries.html">Consultas para transações</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicestokenizationhtml" href="../../../../pt/docs/services/tokenization.html">Tokenização</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/promotions.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicespromotionshtml" href="../../../../pt/docs/services/promotions.html">Parcelas e promoções - Argentina e México</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicesrefundshtml" href="../../../../pt/docs/services/refunds.html">Cancelamentos e Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/payouts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicespayoutshtml" href="../../../../pt/docs/services/payouts.html">Payouts - Colômbia</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/tools.html" href="../../../../pt/docs/tools.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Ferramentas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocstoolshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/payment-request.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocstoolspayment-requesthtml" href="../../../../pt/docs/tools/payment-request.html">Solicitação de pagamento</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/tools/shopping-cart-plugins.html" href="../../../../pt/docs/tools/shopping-cart-plugins.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Plugins do carrinho de compras</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocstoolsshopping-cart-pluginshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/vtex.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsvtexhtml" href="../../../../pt/docs/tools/shopping-cart-plugins/vtex.html">VTEX</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/shopify.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsshopifyhtml" href="../../../../pt/docs/tools/shopping-cart-plugins/shopify.html">Shopify</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/bigcommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsbigcommercehtml" href="../../../../pt/docs/tools/shopping-cart-plugins/bigcommerce.html">BigCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/drupal.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsdrupalhtml" href="../../../../pt/docs/tools/shopping-cart-plugins/drupal.html">Drupal</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/virtuemart.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsvirtuemarthtml" href="../../../../pt/docs/tools/shopping-cart-plugins/virtuemart.html">VirtueMart</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/woocommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginswoocommercehtml" href="../../../../pt/docs/tools/shopping-cart-plugins/woocommerce.html">WooCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/oscommerce.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsoscommercehtml" href="../../../../pt/docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/opencart.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsopencarthtml" href="../../../../pt/docs/tools/shopping-cart-plugins/opencart.html">OpenCart</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/payu-module.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocstoolspayu-modulehtml" href="../../../../pt/docs/tools/payu-module.html">Módulo PayU</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/disputes.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocstoolsdisputeshtml" href="../../../../pt/docs/tools/disputes.html">Disputas</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/payment-coupons.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocstoolspayment-couponshtml" href="../../../../pt/docs/tools/payment-coupons.html">Cupons de pagamento</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/integrations.html" href="../../../../pt/docs/integrations.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Integrações</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsintegrationshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/integrations/webcheckout-integration.html" href="../../../../pt/docs/integrations/webcheckout-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Integração Webcheckout</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsintegrationswebcheckout-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../../pt/docs/integrations/webcheckout-integration/payment-form.html">Formulário de pagamento</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/webcheckout-integration/response-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationresponse-pagehtml" href="../../../../pt/docs/integrations/webcheckout-integration/response-page.html">Página de resposta</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../pt/docs/integrations/webcheckout-integration/confirmation-page.html">Página de confirmação</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/integrations/api-integration.html" href="../../../../pt/docs/integrations/api-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Integração API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsintegrationsapi-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-argentina.html">API de pagamentos - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-brazilhtml" href="../../../../pt/docs/integrations/api-integration/payments-api-brazil.html">API de pagamentos - Brasil</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-chilehtml" href="../../../../pt/docs/integrations/api-integration/payments-api-chile.html">API de pagamentos - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-colombiahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-colombia.html">API de pagamentos - Colômbia</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-mexicohtml" href="../../../../pt/docs/integrations/api-integration/payments-api-mexico.html">API de pagamentos - México</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-panama.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-panamahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-panama.html">API de pagamentos - Panamá</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-peruhtml" href="../../../../pt/docs/integrations/api-integration/payments-api-peru.html">API de pagamentos - Peru</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/queries-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationqueries-apihtml" href="../../../../pt/docs/integrations/api-integration/queries-api.html">API de Consultas</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/tokenization-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationtokenization-apihtml" href="../../../../pt/docs/integrations/api-integration/tokenization-api.html">API de Tokenização</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/promotions-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpromotions-apihtml" href="../../../../pt/docs/integrations/api-integration/promotions-api.html">API de promoções</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/refunds-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationrefunds-apihtml" href="../../../../pt/docs/integrations/api-integration/refunds-api.html">API de Cancelamentos e Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayouts-apihtml" href="../../../../pt/docs/integrations/api-integration/payouts-api.html">API de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/simulator.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationsimulatorhtml" href="../../../../pt/docs/integrations/api-integration/simulator.html">Token Simulator</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/integrations/sdk-integration.html" href="../../../../pt/docs/integrations/sdk-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Integração SDK</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsintegrationssdk-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-argentina.html">SDK de Pagamentos - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-brazilhtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-brazil.html">SDK de Pagamentos - Brasil</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-chilehtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-chile.html">SDK de Pagamentos - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-colombiahtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-colombia.html">SDK de Pagamentos - Colômbia</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-mexicohtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-mexico.html">SDK de Pagamentos - México</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-peruhtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-peru.html">SDK de Pagamentos - Peru</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/queriessdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationqueriessdkhtml" href="../../../../pt/docs/integrations/sdk-integration/queriessdk.html">SDK de Consultas</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/tokenizationsdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationtokenizationsdkhtml" href="../../../../pt/docs/integrations/sdk-integration/tokenizationsdk.html">SDK de Tokenização</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/refundssdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationrefundssdkhtml" href="../../../../pt/docs/integrations/sdk-integration/refundssdk.html">SDK de Cancelamentos e Reembolsos</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/server-status.html" href="../../../../pt/docs/server-status.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Status do servidor</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsserver-statushtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p>Nesta página</p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introdução</a></li>
+    <li><a href="#prerequisites">Pré-requisitos</a></li>
+    <li><a href="#installing-the-extension">Instalando a extensão</a></li>
+    <li><a href="#utilizing-the-extension">Utilizando a extensão</a>
+      <ul>
+        <li><a href="#configuração-de-métodos-de-pagamento">Configuração de métodos de pagamento</a></li>
+        <li><a href="#gerenciamento-de-pedidos-e-reembolsos">Gerenciamento de pedidos e reembolsos</a></li>
+      </ul>
+    </li>
+    <li><a href="#testando-a-integração">Testando a integração</a></li>
+    <li><a href="#suporte">Suporte:</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../pt/docs.html">Início</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../pt/docs/tools.html">Ferramentas</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../pt/docs/tools/shopping-cart-plugins.html">Plugins do carrinho de compras</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../pt/docs/tools/shopping-cart-plugins/bigcommerce.html">BigCommerce</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>BigCommerce</h1>
+    <div class="lead">Este guia descreve os passos para integrar o PayU com o seu site BigCommerce.</div>
+	       
+	<h2 id="introduction">Introdução</h2>
+<p>O BigCommerce é uma plataforma de comércio digital que permite estabelecer rapidamente uma loja online equipada com funcionalidades prontas para uso. Para mais detalhes, confira a <a href="https://www.bigcommerce.com/press" target="_blank">página oficial do BigCommerce</a>.</p>
+<h2 id="prerequisites">Pré-requisitos</h2>
+<p>Para realizar a integração, você precisa de:</p>
+<ul>
+<li>Uma conta PayU Latam</li>
+<li>Uma conta BigCommerce</li>
+</ul>
+<h2 id="installing-the-extension">Instalando a extensão</h2>
+<ol>
+<li>Acesse o Marketplace do BigCommerce, clique em <strong>Meus Apps</strong>, encontre a extensão PayU e clique em <strong>Instalar</strong>:</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce1.png" alt="PrintScreen" width="700">
+<p></p>
+<ol start="2">
+<li>Marque a caixa de seleção e clique em <strong>Confirmar</strong> para prosseguir com a instalação:</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce2.png" alt="PrintScreen" width="700">
+<p></p>
+<ol start="3">
+<li>Após a instalação, a interface do aplicativo aparecerá da seguinte forma:</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce3.png" alt="PrintScreen" width="700">
+<h2 id="utilizing-the-extension">Utilizando a extensão</h2>
+<h3 id="configuração-de-métodos-de-pagamento">Configuração de métodos de pagamento</h3>
+<p>Personalize os métodos de pagamento exibidos em seu site durante o checkout. Consulte nossos <a href="https://developers.payulatam.com/latam/pt/docs/getting-started/select-your-payment-method.html" target="_blank">métodos de pagamento disponíveis</a>.</p>
+<ol>
+<li>Após a instalação, selecione <strong>Ativar PayU Latam</strong> para integrar o aplicativo à sua loja BigCommerce.</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce4.png" alt="PrintScreen" width="700">
+<p></p>
+<ol start="2">
+<li>Personalize o título para a opção de pagamento com cartão (por exemplo, <em>Pagar com Cartão</em>). Este título será visível para os usuários na página de checkout.</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce5.png" alt="PrintScreen" width="700">
+<p></p>
+<ol start="3">
+<li>Escolha o formato de exibição para as opções de pagamento com cartão disponíveis durante o checkout. Você pode escolher uma das seguintes opções:</li>
+</ol>
+<ul>
+<li>Exibindo <em>Powered by PayU Latam</em> e o logotipo no formulário de pagamento.</li>
+<li>Exibindo logotipos de cartão de crédito na página de checkout.</li>
+</ul>
+<img src="../../../../assets/BigCommerce/Bigcommerce6.png" alt="PrintScreen" width="700">
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Importante</h4>
+Para habilitar métodos de pagamento alternativos (dinheiro e transferências bancárias), selecione <strong>Ativar Checkout Web (APM)</strong>.
+</div>
+
+<ol start="4">
+<li>Adicione um provedor para um país específico da PayU Latam, para fazer isso, clique em <strong>Adicionar Provedor</strong>. Você pode habilitar ou desabilitar cada provedor usando a opção na coluna <strong>Status</strong>, e pode atualizar suas credenciais clicando no botão <strong>Editar</strong>.</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce7.png" alt="PrintScreen" width="700">
+<p></p>
+<p>Além disso, escolha o modo <strong>Teste</strong> ou <strong>Produção</strong> para cada provedor na <strong>Configuração do Onboarding</strong>.</p>
+<img src="../../../../assets/BigCommerce/Bigcommerce8.png" alt="PrintScreen" width="700">
+<p></p>
+<p><strong>Campos obrigatórios para adicionar um novo provedor:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select Payu Latam country</td>
+<td>Escolha o país que você deseja configurar.</td>
+</tr>
+<tr>
+<td>API Login</td>
+<td>Usuário ou login fornecido pela PayU. <a href="https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login" target="_blank">Como obter meu Login da API</a>.</td>
+</tr>
+<tr>
+<td>API Key</td>
+<td>Chave única do seu comércio. <a href="https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login" target="_blank">Como obter minha Chave da API</a>.</td>
+</tr>
+<tr>
+<td>Public Key</td>
+<td>Chave única do seu comércio. <a href="https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login" target="_blank">Como obter minha Chave Pública</a>.</td>
+</tr>
+<tr>
+<td>Account ID</td>
+<td>ID da conta PayU para o país selecionado.</td>
+</tr>
+<tr>
+<td>Merchant ID</td>
+<td>ID do seu comércio na PayU Latam.</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<ol start="5">
+<li>Selecione o fluxo de transação:</li>
+</ol>
+<ul>
+<li>Para fluxo de uma etapa, selecione <strong>Capturar ao fazer o pedido</strong>.</li>
+<li>Para fluxo de duas etapas, selecione <strong>Capturar no Envio</strong>.</li>
+</ul>
+<img src="../../../../assets/BigCommerce/Bigcommerce9.png" alt="PrintScreen" width="700">
+<p></p>
+<p>Consulte o documento <a href="https://developers.payulatam.com/latam/pt/docs/services/payments.html#payment-flows" target="_blank">Fluxo de Pagamentos</a> para saber mais sobre as opções.</p>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Importante</h4>
+A opção de processamento em mais de uma etapa se aplica apenas a pagamentos com cartão (sujeito a <a href="https://developers.payulatam.com/latam/pt/docs/services/payments.html#payment-flows" target="_blank">disponibilidade</a> em cada país). Transações com outros métodos de pagamento requerem autorização e captura em uma única etapa.
+</div>
+
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+<p>As opções de multi-loja serão visíveis abaixo da seção de opções de pagamento:</p>
+<img src="../../../../assets/BigCommerce/Bigcommerce10.png" alt="PrintScreen" width="700">
+</div>
+
+<h3 id="gerenciamento-de-pedidos-e-reembolsos">Gerenciamento de pedidos e reembolsos</h3>
+<ol>
+<li>Para gerenciar os pedidos, clique no botão <strong>Painel de Pedidos</strong> no canto superior direito.</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce11.png" alt="PrintScreen" width="700">
+<p></p>
+<ol start="2">
+<li>A grade do Painel de Pedidos exibe os status de pagamento para cada pedido:</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce12.png" alt="PrintScreen" width="500">
+<p></p>
+<ol start="3">
+<li>Para processar um reembolso, clique no botão <strong>Reembolso</strong> na coluna <strong>Ações</strong>.</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce13.png" alt="PrintScreen" width="500">
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Importante</h4>
+<ul>
+<li>Os reembolsos estão disponíveis apenas para transações com cartão.</li>
+<li>Consulte o <a href="https://developers.payulatam.com/latam/pt/payu-module-documentation/payu-operations/refunds-mp.html" target="_blank">documento de reembolsos</a> para detalhes por país.</li>
+</ul>
+
+</div>
+
+<h2 id="testando-a-integração">Testando a integração</h2>
+<p>Antes de iniciar transações reais, é recomendável testar sua integração. Certifique-se de ter adicionado um provedor com credenciais de teste na Configuração do seu BigCommerce.</p>
+<ol>
+<li>Faça login em sua loja, selecione um produto para teste e prossiga para o checkout. Certifique-se de que o país de entrega corresponda ao destino:</li>
+</ol>
+<img src="../../../../assets/BigCommerce/Bigcommerce14.png" alt="PrintScreen" width="400">
+<p></p>
+<ol start="2">
+<li>Selecione o método de pagamento desejado:</li>
+</ol>
+<ul>
+<li><strong>A) Cartão:</strong> Insira os detalhes do cartão e clique em <strong>Pagar com Cartão</strong>.</li>
+</ul>
+<img src="../../../../assets/BigCommerce/Bigcommerce15.png" alt="PrintScreen" width="400">
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+Você pode personalizar o título da opção de pagamento com cartão conforme visto em <a href="#payment_methods_configuration">Configuração dos métodos de pagamento</a>.
+</div>
+
+<ul>
+<li><strong>B) Pagar com Checkout Web:</strong> Para outros métodos, selecione <strong>Pagar com Checkout Web</strong> e conclua o pagamento.</li>
+</ul>
+<img src="../../../../assets/BigCommerce/Bigcommerce16.png" alt="PrintScreen" width="400">
+<p></p>
+<ol start="3">
+<li>Após a aprovação, verifique a compra em:</li>
+</ol>
+<ul>
+<li>Painel de Pedidos do BigCommerce: <strong>PayU Latam &gt; Painel de Pedidos</strong></li>
+</ul>
+<img src="../../../../assets/BigCommerce/Bigcommerce11.png" alt="PrintScreen" width="700">
+<p></p>
+<ul>
+<li>Módulo PayU: <strong>Módulo de Relatório de Vendas</strong>.</li>
+</ul>
+<img src="../../../../assets/BigCommerce/Bigcommerce17.png" alt="PrintScreen" width="700">
+<p></p>
+<h2 id="suporte">Suporte:</h2>
+<p>Para problemas técnicos ou dúvidas sobre esta extensão, entre em contato com nossa equipe de suporte em <strong><a href="mailto:tecnico.co@payu.com">tecnico.co@payu.com</a></strong> ou visite <a href="https://brazil.payu.com/contato/" target="_blank">nosso site</a>. Ao enviar um e-mail, inclua os detalhes da extensão no assunto e um resumo do problema no corpo.</p>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+Última modificação
+
+2 de maio de 2024:
+
+ <b>Documentation updates (c3b78a49)</b>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

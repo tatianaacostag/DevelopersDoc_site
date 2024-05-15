@@ -830,6 +830,206 @@ Se precisar emitir um reembolso total ou parcial, você pode gerenciá-lo direta
     </item>
     
     <item>
+      <title>Docs: BigCommerce</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/bigcommerce.html</link>
+      <pubDate>Thu, 27 Apr 2023 10:30:35 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/bigcommerce.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;introduction&#34;&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;O BigCommerce é uma plataforma de comércio digital que permite estabelecer rapidamente uma loja online equipada com funcionalidades prontas para uso. Para mais detalhes, confira a &lt;a href=&#34;https://www.bigcommerce.com/press&#34; target=&#34;_blank&#34;&gt;página oficial do BigCommerce&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;p&gt;Para realizar a integração, você precisa de:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma conta PayU Latam&lt;/li&gt;
+&lt;li&gt;Uma conta BigCommerce&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installing-the-extension&#34;&gt;Instalando a extensão&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Acesse o Marketplace do BigCommerce, clique em &lt;strong&gt;Meus Apps&lt;/strong&gt;, encontre a extensão PayU e clique em &lt;strong&gt;Instalar&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce1.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Marque a caixa de seleção e clique em &lt;strong&gt;Confirmar&lt;/strong&gt; para prosseguir com a instalação:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce2.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Após a instalação, a interface do aplicativo aparecerá da seguinte forma:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce3.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;h2 id=&#34;utilizing-the-extension&#34;&gt;Utilizando a extensão&lt;/h2&gt;
+&lt;h3 id=&#34;configuração-de-métodos-de-pagamento&#34;&gt;Configuração de métodos de pagamento&lt;/h3&gt;
+&lt;p&gt;Personalize os métodos de pagamento exibidos em seu site durante o checkout. Consulte nossos &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/select-your-payment-method.html&#34; target=&#34;_blank&#34;&gt;métodos de pagamento disponíveis&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Após a instalação, selecione &lt;strong&gt;Ativar PayU Latam&lt;/strong&gt; para integrar o aplicativo à sua loja BigCommerce.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce4.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Personalize o título para a opção de pagamento com cartão (por exemplo, &lt;em&gt;Pagar com Cartão&lt;/em&gt;). Este título será visível para os usuários na página de checkout.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce5.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Escolha o formato de exibição para as opções de pagamento com cartão disponíveis durante o checkout. Você pode escolher uma das seguintes opções:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Exibindo &lt;em&gt;Powered by PayU Latam&lt;/em&gt; e o logotipo no formulário de pagamento.&lt;/li&gt;
+&lt;li&gt;Exibindo logotipos de cartão de crédito na página de checkout.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce6.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+Para habilitar métodos de pagamento alternativos (dinheiro e transferências bancárias), selecione &lt;strong&gt;Ativar Checkout Web (APM)&lt;/strong&gt;.
+&lt;/div&gt;
+
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Adicione um provedor para um país específico da PayU Latam, para fazer isso, clique em &lt;strong&gt;Adicionar Provedor&lt;/strong&gt;. Você pode habilitar ou desabilitar cada provedor usando a opção na coluna &lt;strong&gt;Status&lt;/strong&gt;, e pode atualizar suas credenciais clicando no botão &lt;strong&gt;Editar&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce7.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Além disso, escolha o modo &lt;strong&gt;Teste&lt;/strong&gt; ou &lt;strong&gt;Produção&lt;/strong&gt; para cada provedor na &lt;strong&gt;Configuração do Onboarding&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce8.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Campos obrigatórios para adicionar um novo provedor:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parâmetro&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Select Payu Latam country&lt;/td&gt;
+&lt;td&gt;Escolha o país que você deseja configurar.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API Login&lt;/td&gt;
+&lt;td&gt;Usuário ou login fornecido pela PayU. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Como obter meu Login da API&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API Key&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Como obter minha Chave da API&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Public Key&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Como obter minha Chave Pública&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account ID&lt;/td&gt;
+&lt;td&gt;ID da conta PayU para o país selecionado.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;ID do seu comércio na PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Selecione o fluxo de transação:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Para fluxo de uma etapa, selecione &lt;strong&gt;Capturar ao fazer o pedido&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Para fluxo de duas etapas, selecione &lt;strong&gt;Capturar no Envio&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce9.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Consulte o documento &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/services/payments.html#payment-flows&#34; target=&#34;_blank&#34;&gt;Fluxo de Pagamentos&lt;/a&gt; para saber mais sobre as opções.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+A opção de processamento em mais de uma etapa se aplica apenas a pagamentos com cartão (sujeito a &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/services/payments.html#payment-flows&#34; target=&#34;_blank&#34;&gt;disponibilidade&lt;/a&gt; em cada país). Transações com outros métodos de pagamento requerem autorização e captura em uma única etapa.
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+&lt;p&gt;As opções de multi-loja serão visíveis abaixo da seção de opções de pagamento:&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce10.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;gerenciamento-de-pedidos-e-reembolsos&#34;&gt;Gerenciamento de pedidos e reembolsos&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Para gerenciar os pedidos, clique no botão &lt;strong&gt;Painel de Pedidos&lt;/strong&gt; no canto superior direito.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;A grade do Painel de Pedidos exibe os status de pagamento para cada pedido:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce12.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Para processar um reembolso, clique no botão &lt;strong&gt;Reembolso&lt;/strong&gt; na coluna &lt;strong&gt;Ações&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce13.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Os reembolsos estão disponíveis apenas para transações com cartão.&lt;/li&gt;
+&lt;li&gt;Consulte o &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/payu-operations/refunds-mp.html&#34; target=&#34;_blank&#34;&gt;documento de reembolsos&lt;/a&gt; para detalhes por país.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;testando-a-integração&#34;&gt;Testando a integração&lt;/h2&gt;
+&lt;p&gt;Antes de iniciar transações reais, é recomendável testar sua integração. Certifique-se de ter adicionado um provedor com credenciais de teste na Configuração do seu BigCommerce.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Faça login em sua loja, selecione um produto para teste e prossiga para o checkout. Certifique-se de que o país de entrega corresponda ao destino:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce14.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Selecione o método de pagamento desejado:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A) Cartão:&lt;/strong&gt; Insira os detalhes do cartão e clique em &lt;strong&gt;Pagar com Cartão&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce15.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Você pode personalizar o título da opção de pagamento com cartão conforme visto em &lt;a href=&#34;#payment_methods_configuration&#34;&gt;Configuração dos métodos de pagamento&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;B) Pagar com Checkout Web:&lt;/strong&gt; Para outros métodos, selecione &lt;strong&gt;Pagar com Checkout Web&lt;/strong&gt; e conclua o pagamento.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce16.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Após a aprovação, verifique a compra em:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Painel de Pedidos do BigCommerce: &lt;strong&gt;PayU Latam &amp;gt; Painel de Pedidos&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Módulo PayU: &lt;strong&gt;Módulo de Relatório de Vendas&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce17.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&#34;suporte&#34;&gt;Suporte:&lt;/h2&gt;
+&lt;p&gt;Para problemas técnicos ou dúvidas sobre esta extensão, entre em contato com nossa equipe de suporte em &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; ou visite &lt;a href=&#34;https://brazil.payu.com/contato/&#34; target=&#34;_blank&#34;&gt;nosso site&lt;/a&gt;. Ao enviar um e-mail, inclua os detalhes da extensão no assunto e um resumo do problema no corpo.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Drupal</title>
       <link>/pt/docs/tools/shopping-cart-plugins/drupal.html</link>
       <pubDate>Wed, 26 May 2021 08:38:45 -0500</pubDate>

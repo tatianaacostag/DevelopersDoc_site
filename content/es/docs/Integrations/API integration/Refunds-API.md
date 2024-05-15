@@ -47,9 +47,9 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 * El valor mínimo para enviar un Reembolso es 10 CLP.
 
 ### Colombia
-* No se soportan Anulaciones (Void).
+* No se soportan Anulaciones (voids).
 * El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
-* El valor mínimo para enviar un Reembolso es 100 COP.
+* El valor mínimo para enviar un reembolso es 100 COP.
 * Si no se envía el reembolso el mismo día en el que la transacción fue capturada (antes de las 9 pm UTC-5) el reembolso va inmediatamente  un proceso manual sin enviar un intento en línea.
 * Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 30 días hábiles.
 * No se soportan reembolsos parciales para tarjetas de crédito internacionales.
@@ -61,7 +61,7 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 * No se soportan reembolsos con decimales.
 
 ### Panamá {#panama}
-* No se soportan Anulaciones (Void).
+* No se soportan Anulaciones (voids).
 * El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
 * Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 8 días hábiles.
 

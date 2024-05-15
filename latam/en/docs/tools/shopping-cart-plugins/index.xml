@@ -844,7 +844,7 @@ If you need to issue a full or partial refund, you can manage it directly from y
         
         
         &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;BigCommerce is a digital commerce platform that enables you to swiftly establish an online store equipped with ready-to-use functionalities. For further details, check out the &lt;a href=&#34;https://www.bigcommerce.com/press/&#34;&gt;official BigCommerce webpage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;BigCommerce is a digital commerce platform that enables you to swiftly establish an online store equipped with ready-to-use functionalities. For further details, check out the &lt;a href=&#34;https://www.bigcommerce.com/press&#34; target=&#34;_blank&#34;&gt;official BigCommerce website&lt;/a&gt; .&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;To carry out the integration, you need:&lt;/p&gt;
 &lt;ul&gt;
@@ -866,10 +866,9 @@ If you need to issue a full or partial refund, you can manage it directly from y
 &lt;li&gt;After installation, the app interface will appear as follows:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce3.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;br&gt;&lt;/br&gt;
 &lt;h2 id=&#34;utilizing-the-extension&#34;&gt;Utilizing the extension&lt;/h2&gt;
 &lt;h3 id=&#34;payment-methods-configuration&#34;&gt;Payment methods configuration&lt;/h3&gt;
-&lt;p&gt;Customize the payment methods displayed on your website during checkout. Refer to our &lt;a href=&#34;../../../../en/docs/getting-started/select-your-payment-method.html&#34;&gt;available payment methods&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Customize the payment methods displayed on your website during checkout. Refer to our &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/getting-started/select-your-payment-method.html&#34; target=&#34;_blank&#34;&gt;available payment methods&lt;/a&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Upon installation, select &lt;strong&gt;Enable PayU Latam&lt;/strong&gt; to integrate the app with your BigCommerce store.&lt;/li&gt;
 &lt;/ol&gt;
@@ -918,15 +917,15 @@ To enable alternative payment methods (cash and bank transfers), select &lt;stro
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;API Login&lt;/td&gt;
-&lt;td&gt;User or login that PayU provides you. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Login&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;User or login that PayU provides you. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;How do I get my API Login&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;API Key&lt;/td&gt;
-&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my API Key&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;How do I get my API Key&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Public Key&lt;/td&gt;
-&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34;&gt;How do I get my Public Key&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;How do I get my Public Key&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Account ID&lt;/td&gt;
@@ -948,12 +947,12 @@ To enable alternative payment methods (cash and bank transfers), select &lt;stro
 &lt;/ul&gt;
 &lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce9.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;Payments flow&lt;/a&gt; document to learn more about the options.&lt;/p&gt;
+&lt;p&gt;Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34; target=&#34;_blank&#34;&gt;Payments flow&lt;/a&gt; document to learn more about the options.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
-The option of processing in more than one step only applies to card payments (subject to &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;availability&lt;/a&gt; in each country). Transactions with other payment methods require authorization and capture in a single step.
+The option of processing in more than one step only applies to card payments (subject to &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34; target=&#34;_blank&#34;&gt;availability&lt;/a&gt; in each country). Transactions with other payment methods require authorization and capture in a single step.
 &lt;/div&gt;
 
 
@@ -985,7 +984,7 @@ The option of processing in more than one step only applies to card payments (su
 &lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Refunds are only available for card transactions.&lt;/li&gt;
-&lt;li&gt;Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html&#34;&gt;refunds document&lt;/a&gt; for details by country.&lt;/li&gt;
+&lt;li&gt;Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html&#34; target=&#34;_blank&#34;&gt;refunds document&lt;/a&gt; for details by country.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -1030,7 +1029,7 @@ You can customize the card payment option title as seen in &lt;a href=&#34;#paym
 &lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce17.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&#34;support&#34;&gt;Support:&lt;/h2&gt;
-&lt;p&gt;For technical issues or queries regarding this extension, contact our support team at &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; or visit &lt;a href=&#34;https://colombia.payu.com/contactanos/&#34;&gt;our website&lt;/a&gt;. When emailing, include extension details in the subject and a summary of the issue in the body.&lt;/p&gt;
+&lt;p&gt;For technical issues or queries regarding this extension, contact our support team at &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; or visit &lt;a href=&#34;https://colombia.payu.com/en/contact-us//&#34; target=&#34;_blank&#34;&gt;our website&lt;/a&gt;. When emailing, include extension details in the subject and a summary of the issue in the body.&lt;/p&gt;
 
       </description>
     </item>

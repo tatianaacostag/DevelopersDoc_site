@@ -1131,7 +1131,7 @@ This section is designed to guide users through the testing process and familiar
 * Join the Google group in which the test cards for PayU will be available. The group can be found in the following [Google documentation](https://developers.google.com/pay/api/android/guides/resources/test-card-suite).
 
 #### Testing for merchants with API integration:  
-1. Once the changes indicated in the previous sections have been made, use the Token Simulator File to simulate a transaction and obtain a sample of a Google Pay Token. The simulator can be visualized [here]({{< ref Simulator.md >}})
+1. Once the changes indicated in the previous sections have been made, use the Token Simulator File to simulate a transaction and obtain a sample of a Google Pay Token. The simulator can be visualized <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/simulator.html" target="_blank">here</a>.
 
 {{% alert title="Note" color="info"%}}
 To ensure correct processing, use cards whose name do NOT start with "Test". 

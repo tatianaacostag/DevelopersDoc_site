@@ -867,20 +867,26 @@ Exemplo de uma resposta:
 {{< /tab >}}
 {{< /tabs >}}
 
-#### Considerações
+#### Considerações {#considerations-1}
 
-##### Detalhes do número de telefone
-Na PayU, nosso compromisso é tornar os pagamentos on-line fáceis para nossos comerciantes e seus clientes. Para melhorar a experiência de pagamento da Nequi, identificamos os erros comuns cometidos pelos pagadores ao inserir seus números de celular.
+##### Formatos de número de telefone suportados
+Ao usar integrações de API, as transações podem falhar quando o sistema recebe números de telefone de usuário que:
 
-Observe que, ao usar integrações de API, as transações podem falhar se o número do celular incluir espaços. Atualmente, não há um mecanismo padrão para remover esses espaços. Os resultados de tais transações são os seguintes:
+1. Contêm espaços em branco.
+2. Não estão separados do código do país.
+3. Contêm mais ou menos do que 10 dígitos (excluindo o código do país).
 
-* 57 3007777777 → Aprovado
-* 3007777777 → Aprovado
-* 573007777777 → Erro
-* 57 300 7777777 → Erro
+Atualmente, a integração não fornece um mecanismo para corrigir automaticamente o formato do número de telefone que o usuário insere. A tabela abaixo mostra exemplos de formatos de números de telefone e sua compatibilidade com a integração:
+
+| Exemplo de formato de número de telefone | Compatibilidade | Detalhes |
+| --- | --- | --- |
+| 57 3007777777 | Formato compatível | O código do país (57) está separado do número de celular. |
+| 3007777777 | Formato compatível | O número de celular não tem espaços e tem 10 dígitos. |
+| 573007777777 | Formato incompatível | O número de celular e o código do país (57) não estão separados. |
+| 57 300 7777777 | Formato incompatível | O número de celular tem espaços. |
 
 **Recomendações**
-Para evitar erros causados por espaços em números de celular, recomendamos a implementação dos seguintes recursos na experiência do usuário:
+Para evitar erros causados por formatos incompatíveis de números de telefone, recomendamos implementar as seguintes funcionalidades na experiência do usuário:
 
 1. Implemente uma interface que crie automaticamente espaços separadores no número do celular à medida que o usuário o digita, facilitando a leitura do número e reduzindo a probabilidade de erros de entrada manual. Certifique-se de que esses espaços estejam visíveis no nível da interface e configure seu sistema para removê-los no nível do backend.
 

@@ -475,7 +475,7 @@ Ejemplo de una respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones utilizando Nequi {#submit-transactions-using-Nequi}
+## Enviar transacciones utilizando Nequi {#submit-transactions-using-nequi}
 Nequi es una plataforma integral de servicios financieros que funciona por medio de una billetera digital disponible para millones de usuarios a través de una aplicación móvil. Con Nequi, puedes realizar pagos, transferencias, recargas y retiros de dinero de manera rápida y segura, todo desde tu dispositivo personal.
 
 Además de ser una herramienta conveniente para usuarios individuales, Nequi también es una solución de pagos innovadora para comercios. Al aceptar pagos con Nequi, tu negocio puede disfrutar de una serie de ventajas significativas:
@@ -864,19 +864,25 @@ Ejemplo de una respuesta:
 
 #### Consideraciones {#considerations-1}
 
-##### Detalles del número de teléfono
-En PayU, nos apasiona simplificar los pagos en línea tanto para nuestros comercios como para sus clientes. Para mejorar la experiencia de pago con Nequi, te sugerimos prestar atención a los siguientes escenarios en los que los pagadores podrían cometer errores al ingresar su número de celular.
+##### Formatos de números de teléfono admitidos
+Al utilizar integraciones API, las transacciones pueden fallar cuando el sistema recibe números de teléfono de usuario que:
 
-En las transacciones enviadas mediante integraciones API que contienen espacios en el número de celular, la transacción se pierde. Esto se debe a que no hay un mecanismo que elimine los espacios por defecto. A continuación, se muestran los resultados que se obtendrían:
+1. Contienen espacios en blanco.
+2. No están separados del código del país.
+3. Contienen más o menos de 10 dígitos (sin contar el código del país).
 
-* 57 3007777777 → Aprobada
-* 3007777777 → Aprobada
-* 573007777777 → Error
-* 57 300 7777777 → Error
+Actualmente, la integración no proporciona un mecanismo para corregir automáticamente el formato del número de teléfono que el usuario ingresa. La tabla a continuación muestra ejemplos de formatos de números de teléfono y su compatibilidad con la integración:
+
+| Ejemplo de formato de número de teléfono | Compatibilidad | Detalles |
+| --- | --- | --- |
+| 57 3007777777 | Formato compatible | El código de país (57) está separado del número telefónico. |
+| 3007777777 | Formato compatible | El número telefónico no tiene espacios y tiene 10 dígitos. |
+| 573007777777 | Formato incompatible | El número telefónico y el código de país (57) no están separados. |
+| 57 300 7777777 | Formato incompatible | El número telefónico tiene espacios. |
 
 **Recomendaciones**
 
-Para prevenir errores causados por espacios en blanco en los números de celular, te recomendamos implementar las siguientes características en la experiencia de usuario:
+Para prevenir errores causados por formatos de números telefónicos incompatibles, te recomendamos implementar las siguientes características en la experiencia de usuario:
 
 1. Implementa una interfaz que automáticamente cree espacios separadores en el número de teléfono móvil mientras el usuario lo ingresa, haciendo que el número sea más fácil de leer y reduciendo la probabilidad de errores de entrada manual. Asegúrate de que estos espacios sean visibles a nivel de la interfaz mientras configuras tu sistema para eliminarlos a nivel de backend.
 

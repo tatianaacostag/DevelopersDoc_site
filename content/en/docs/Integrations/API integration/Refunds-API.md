@@ -48,7 +48,7 @@ Before using Voids and Refunds API, take into account the following consideratio
 ### Colombia
 * Voids are not supported.
 * The minimum time to send a refund is 10 minutes after the approval and the maximum is 357 days.
-* Minimum amount to send the Refund 100 COP.
+* Minimum amount to send the refund is 100 COP.
 * If refund is not sent the same day in which the transaction was captured (before 9 pm UTC-5) the refund goes immediately to a manual process without sending the online attempt.
 * When a refund is approved, the payer gets the money back in maximum 30 working days.
 * Partial refunds are not available for international credit cards.

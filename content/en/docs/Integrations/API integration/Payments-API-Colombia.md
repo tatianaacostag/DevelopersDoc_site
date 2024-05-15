@@ -868,19 +868,25 @@ Response example:
 
 #### Considerations
 
-##### Phone Number Details
-At PayU, our commitment is to make online payments effortless for both our merchants and their customers. To improve the Nequi payment experience, we've identified common errors made by payers when entering their mobile numbers.
+##### Supported phone number formats
+When using API integrations, transactions may fail when the system receives user phone numbers that:
 
-Please note, when using API integrations, transactions can fail if the mobile number includes spaces. Currently, there is no default mechanism to strip these spaces. The outcomes of such transactions are as follows:
+1. Contain whitespace.
+2. Are not separated from the country code.
+3. Contain more or less than 10 digits (excluding the country code).
 
-* 57 3007777777 → Approved
-* 3007777777 → Approved
-* 573007777777 → Error
-* 57 300 7777777 → Error
+ Currently, the integration does not provide a mechanism to automatically correct the format of the phone number that the user enters. The table below shows examples of phone number formats and their compatibility with the integration:
+
+| Phone number format example | Compatibility | Details |
+| --- | --- | --- |
+| 57 3007777777 | Compatible format | The country code (57) is separated from the mobile number. |
+| 3007777777 | Compatible format | The mobile number has no spaces and is 10 digits long. |
+| 573007777777 | Incompatible format | The mobile number and the country code (57) are not separated. |
+| 57 300 7777777 | Incompatible format | The mobile number has spaces. |
 
 **Recommendations**
 
-To prevent errors caused by spaces in mobile numbers, we recommend implementing the following features in the user experience:
+To prevent errors caused by incompatible phone number formats, we recommend implementing the following features in the user experience:
 
 1. Implement an interface that automatically creates separator spaces in the mobile number as the user enters it, making the number easier to read and reducing the likelihood of manual entry errors. Ensure that these spaces are visible at the interface level while configuring your system to remove them at the backend level.
 

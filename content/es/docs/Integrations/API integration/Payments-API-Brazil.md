@@ -1131,7 +1131,7 @@ Esta sección está diseñada para guiar a los usuarios sobre el proceso de prue
 * Únete al grupo de Google en el que estarán disponibles las tarjetas de prueba para PayU. El grupo se encuentra en la siguiente [documentación de Google](https://developers.google.com/pay/api/android/guides/resources/test-card-suite).
 
 #### Pruebas para comercios con integración API:
-1.	Una vez realizados los cambios indicados en los apartados anteriores, utiliza el Archivo Simulador de Token para simular una transacción y obtener un token de Google Pay de muestra. El simulador puede visualizarse [aquí]({{< ref Simulator.md >}})
+1.	Una vez realizados los cambios indicados en los apartados anteriores, utiliza el Archivo Simulador de Token para simular una transacción y obtener un token de Google Pay de muestra. El simulador puede visualizarse <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/simulator.html" target="_blank">aquí</a>.
 
 {{% alert title="Nota" color="info"%}}
 Para garantizar un procesamiento correcto, al momento de seleccionar las tarjetas para el pago,   utiliza tarjetas cuyo nombre no empiecen por "Test". 

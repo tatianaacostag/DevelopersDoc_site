@@ -842,15 +842,15 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
       <description>
         
         
-        &lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
-&lt;p&gt;BigCommerce es una plataforma de comercio digital que te permite crear rápidamente una tienda en línea equipada con funcionalidades listas para usar. Para más detalles, visita la &lt;a href=&#34;https://www.bigcommerce.com/press/&#34;&gt;página oficial de BigCommerce&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;requisitos-previos&#34;&gt;Requisitos previos&lt;/h2&gt;
+        &lt;h2 id=&#34;introduction&#34;&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;BigCommerce es una plataforma de comercio digital que te permite crear rápidamente una tienda en línea equipada con funcionalidades listas para usar. Para más detalles, visita la &lt;a href=&#34;https://www.bigcommerce.com/press&#34; target=&#34;_blank&#34;&gt;página oficial de BigCommerce&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Requisitos previos&lt;/h2&gt;
 &lt;p&gt;Para llevar a cabo la integración, necesitas:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Una cuenta de PayU Latam&lt;/li&gt;
 &lt;li&gt;Una cuenta de BigCommerce&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;instalación-de-la-extensión&#34;&gt;Instalación de la extensión&lt;/h2&gt;
+&lt;h2 id=&#34;installing-the-extension&#34;&gt;Instalación de la extensión&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Dirígete al Marketplace de BigCommerce, haz clic en &lt;strong&gt;Mis Aplicaciones&lt;/strong&gt;, ubica la extensión de PayU y haz clic en &lt;strong&gt;Instalar&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ol&gt;
@@ -865,10 +865,9 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
 &lt;li&gt;Después de la instalación, la interfaz de la aplicación aparecerá de la siguiente manera:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce3.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;br&gt;&lt;/br&gt;
-&lt;h2 id=&#34;uso-de-la-extensión&#34;&gt;Uso de la extensión&lt;/h2&gt;
+&lt;h2 id=&#34;utilizing-the-extension&#34;&gt;Uso de la extensión&lt;/h2&gt;
 &lt;h3 id=&#34;configuración-de-métodos-de-pago&#34;&gt;Configuración de métodos de pago&lt;/h3&gt;
-&lt;p&gt;Personaliza los métodos de pago mostrados en tu sitio web durante el proceso de pago. Consulta nuestros &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;métodos de pago disponibles&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Personaliza los métodos de pago mostrados en tu sitio web durante el proceso de pago. Consulta nuestros &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/getting-started/select-your-payment-method.html&#34; target=&#34;_blank&#34;&gt;métodos de pago disponibles&lt;/a&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Tras la instalación, selecciona &lt;strong&gt;Habilitar PayU Latam&lt;/strong&gt; para integrar la aplicación con tu tienda BigCommerce.&lt;/li&gt;
 &lt;/ol&gt;
@@ -917,15 +916,15 @@ Para habilitar métodos de pago alternativos (efectivo y transferencias bancaria
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;API Login&lt;/td&gt;
-&lt;td&gt;Usuario o Login que te proporciona PayU. &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&#34;&gt;Cómo obtener el API Login de mi tienda&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Usuario o Login que te proporciona PayU. &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Cómo obtener mi API Login&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;API Key&lt;/td&gt;
-&lt;td&gt;Clave única del comercio. &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&#34;&gt;Cómo obtener el API Key de mi tienda&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Clave única del comercio. &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Cómo obtener mi API Key&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Public Key&lt;/td&gt;
-&lt;td&gt;Clave única del comercio. &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&#34;&gt;Cómo obtener el Public Key de mi tienda&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Clave única del comercio. &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Cómo obtener mi Public Key&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Account ID&lt;/td&gt;
@@ -947,12 +946,12 @@ Para habilitar métodos de pago alternativos (efectivo y transferencias bancaria
 &lt;/ul&gt;
 &lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce9.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
 &lt;p&gt;&lt;/p&gt;
-&lt;p&gt;Consulta el &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;documento de Flujo de Pagos&lt;/a&gt; para obtener más información sobre las opciones.&lt;/p&gt;
+&lt;p&gt;Consulta el documento de &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows&#34; target=&#34;_blank&#34;&gt;Flujo de Pagos&lt;/a&gt; para obtener más información sobre las opciones.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
-La opción de procesamiento en más de un paso solo se aplica a pagos con tarjeta (sujeto a &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34;&gt;disponibilidad&lt;/a&gt; en cada país). Las transacciones con otros métodos de pago requieren autorización y captura en un solo paso.
+La opción de procesamiento en más de un paso solo se aplica a pagos con tarjeta (sujeto a &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/services/payments.html#payment-flows&#34; target=&#34;_blank&#34;&gt;disponibilidad&lt;/a&gt; en cada país). Las transacciones con otros métodos de pago requieren autorización y captura en un solo paso.
 &lt;/div&gt;
 
 
@@ -984,7 +983,7 @@ La opción de procesamiento en más de un paso solo se aplica a pagos con tarjet
 &lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Los reembolsos solo están disponibles para transacciones con tarjeta.&lt;/li&gt;
-&lt;li&gt;Consulta el &lt;a href=&#34;https://developers.payulatam.com/latam/es/payu-module-documentation/payu-operations/refunds-mp.html&#34;&gt;documento de reembolsos&lt;/a&gt; para obtener detalles para cada país.&lt;/li&gt;
+&lt;li&gt;Consulta el &lt;a href=&#34;https://developers.payulatam.com/latam/es/payu-module-documentation/payu-operations/refunds-mp.html&#34; target=&#34;_blank&#34;&gt;documento de reembolsos&lt;/a&gt; para obtener detalles para cada país.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -1029,7 +1028,7 @@ Puedes personalizar el título de la opción de pago con tarjeta como se ve en &
 &lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce17.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
 &lt;p&gt;&lt;/p&gt;
 &lt;h2 id=&#34;soporte&#34;&gt;Soporte:&lt;/h2&gt;
-&lt;p&gt;Para problemas técnicos o consultas sobre esta extensión, contacta a nuestro equipo de soporte en &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; o visita &lt;a href=&#34;https://colombia.payu.com/contactanos/&#34;&gt;nuestro sitio web&lt;/a&gt;. Si optas por enviarnos un correo electrónico,  incluye los detalles de la extensión en el asunto y un resumen del problema en el cuerpo del mensaje.&lt;/p&gt;
+&lt;p&gt;Para problemas técnicos o consultas sobre esta extensión, contacta a nuestro equipo de soporte en &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; o visita &lt;a href=&#34;https://colombia.payu.com/contactanos/&#34; target=&#34;_blank&#34;&gt;nuestro sitio web&lt;/a&gt;. Si optas por enviarnos un correo electrónico, incluye los detalles de la extensión en el asunto y un resumen del problema en el cuerpo del mensaje.&lt;/p&gt;
 
       </description>
     </item>
