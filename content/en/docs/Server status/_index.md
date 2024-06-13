@@ -4,7 +4,7 @@ linkTitle: "Server Status"
 date: 2021-03-29T16:49:29-05:00
 Description: >
   Know the current status of PayU Latam
-weight: 50
+weight: 5
 nosidetoc: true
 notopicssection: true
 ---

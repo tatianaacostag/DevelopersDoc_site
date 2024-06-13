@@ -7,7 +7,7 @@ description: >
 menu:
   main:
     name: Online payments
-    weight: 20     
+    weight: 1     
 ---
 
 We provide a set of services and tools to let you receive payments, download reports, manage disputes and more.

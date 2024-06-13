@@ -4,7 +4,7 @@ linkTitle: "Network Tokenization"
 date: 2021-03-26T09:34:59-05:00
 description: >
   This section explains what Network Tokenization is, all the benefits that it can bring to your commerce and an easy step by step to add it to your business.
-weight: 50
+weight: 70
 ---
 
 ## What is PayU Network Token solution?

@@ -4,7 +4,7 @@ linkTitle: "Integrations"
 date: 2021-04-07T10:01:55-05:00
 Description: >
   According to your business needs, select how to integrate your shop with the PayU services and tools.
-weight: 40
+weight: 4
 ---
 
 Implement PayU with the aggregator model or gateway, using PayU’s financial agreements or your own. Select the integration that fits best with your needs:

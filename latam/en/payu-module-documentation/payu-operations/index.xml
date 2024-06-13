@@ -299,7 +299,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutes&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;365 days&lt;/li&gt;&lt;li&gt;180 days (Partial refunds)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;357 days&lt;/li&gt;&lt;li&gt;180 days (Partial refunds)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 working day&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;30 working days&lt;/td&gt;
@@ -308,7 +308,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;10 minutes&lt;/li&gt;&lt;li&gt;1 day (Partial refunds)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;90 or 120 days&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;li&gt;82 or 172 days for cards*&lt;/li&gt;&lt;li&gt;87 days for Pix&lt;/li&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 working day&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;15 working days&lt;/td&gt;
@@ -317,7 +317,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutes&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;90 days&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;172 or 327 days*&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 CLP&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;8 working days&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;20 working days&lt;/td&gt;
@@ -326,7 +326,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;10 minutes&lt;/td&gt;
-        &lt;td style=&#34;text-align: center;&#34;&gt;2 years&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;357 days&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;100 COP&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;1 working day&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;30 working days&lt;/td&gt;
@@ -335,7 +335,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutes&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;45 or 180 days&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;40 or 175 days*&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 working day&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;30 working days&lt;/td&gt;
@@ -344,7 +344,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutes&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;180 days&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;357 days&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 working day&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;8 working days&lt;/td&gt;
@@ -353,7 +353,7 @@ If you perform a refund through this panel, this is only updated in the PayU Mod
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutes&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;180 days&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;357 days&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;1 USD&lt;/li&gt;&lt;li&gt;1 PEN&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;15 working days&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;25 working days&lt;/td&gt;

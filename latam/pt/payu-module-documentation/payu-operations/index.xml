@@ -299,7 +299,7 @@ Se você fizer um reembolso por este painel, ele só será atualizado no Módulo
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;365 dias&lt;/li&gt;&lt;li&gt;180 dias (Reembolsos parciais)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;357 dias&lt;/li&gt;&lt;li&gt;180 dias (Reembolsos parciais)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;30 dias úteis&lt;/td&gt;
@@ -308,7 +308,7 @@ Se você fizer um reembolso por este painel, ele só será atualizado no Módulo
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;10 minutos&lt;/li&gt;&lt;li&gt;1 dia (Reembolsos parciais)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;90 ou 120 dias&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;li&gt;82 ou 172 dias para cartões*&lt;/li&gt;&lt;li&gt;87 dias para Pix&lt;/li&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;15 dias úteis&lt;/td&gt;
@@ -317,7 +317,7 @@ Se você fizer um reembolso por este painel, ele só será atualizado no Módulo
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;90 dias&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;172 ou 327 dias*&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 CLP&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;8 dias úteis&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;20 dias úteis&lt;/td&gt;
@@ -326,7 +326,7 @@ Se você fizer um reembolso por este painel, ele só será atualizado no Módulo
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
-        &lt;td style=&#34;text-align: center;&#34;&gt;2 anos&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;357 dias&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;100 COP&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
         &lt;td style=&#34;text-align: center;&#34;&gt;30 dias úteis&lt;/td&gt;
@@ -335,7 +335,7 @@ Se você fizer um reembolso por este painel, ele só será atualizado no Módulo
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;45 ou 180 dias&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;40 ou 175 dias*&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;30 dias úteis&lt;/td&gt;
@@ -344,7 +344,7 @@ Se você fizer um reembolso por este painel, ele só será atualizado no Módulo
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;180 dias&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;357 dias&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;8 dias úteis&lt;/td&gt;
@@ -353,7 +353,7 @@ Se você fizer um reembolso por este painel, ele só será atualizado no Módulo
       &lt;tr&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
-        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;180 dias&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;357 dias&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;1 USD&lt;/li&gt;&lt;li&gt;1 PEN&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;15 dias úteis&lt;/td&gt;
         &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;25 dias úteis&lt;/td&gt;

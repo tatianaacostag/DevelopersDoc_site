@@ -19,7 +19,7 @@ To integrate with Payments API Brazil, target your request to the following URLs
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transaction with credit card]({{< ref "Payments-API-Brazil.md#submit-transaction-with-credit-cards" >}})
+* [Submit transaction with credit card]({{< ref "Payments-API-Brazil.md#submit-transaction-with-credit-cards" >}}) 
 * [Submit transaction with Google Pay™]({{< ref "#submit-transaction-with-google-pay" >}})
 * [Submit transaction with PIX]({{< ref "Payments-API-Brazil.md#submit-transaction-with-pix" >}})
 * [Submit transaction with cash]({{< ref "Payments-API-Brazil.md#submit-transaction-with-cash" >}})

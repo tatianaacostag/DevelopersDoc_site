@@ -3,13 +3,13 @@ title: "API de Pagos - Chile"
 linkTitle: "API de Pagos - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
+  La API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 weight: 20
 tags: ["subtopic"]
 ---
 <script src="/js/searchcodes.js"></script>
 
-Para integrarte con el API de Pagos de Chile, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
+Para integrarte con la API de Pagos de Chile, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
 
 {{% alert title="URL" color="info"%}}
 * Pruebas: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
@@ -17,11 +17,12 @@ Para integrarte con el API de Pagos de Chile, apunta tus peticiones a las siguie
 {{% /alert %}}
 
 ## Métodos disponibles {#available-methods}
-El API de pagos incluye los siguiente métodos:
+La API de pagos incluye los siguiente métodos:
 
-* [Enviar transacciones con tarjeta de crédito, débito o prepago]({{< ref "#submit-transaction-with-credit-or-debit-cards" >}})
-* [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
-* [Enviar transacciones con tarjeta débito o prepago utilizando WebPay Plus]({{< ref "#submit-transaction-with-debit-and-prepaid-cards" >}})
+* [Enviar transacciones utilizando tarjeta de crédito, débito o prepago]({{< ref "#submit-transaction-with-credit-or-debit-cards" >}})
+* [Enviar transacciones utilizando Khipu]({{< ref "#submit-transactions-using-khipu" >}})
+* [Enviar transacciones utilizando efectivo]({{< ref "#submit-transaction-with-cash" >}})
+* [Enviar transacciones utilizando tarjeta débito o prepago a través de WebPay Plus]({{< ref "#submit-transaction-with-debit-and-prepaid-cards" >}})
 * [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
@@ -31,7 +32,7 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 * Utiliza el [API o SDK de consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Enviar transacciones con tarjeta de crédito, débito o prepago {#submit-transaction-with-credit-or-debit-cards}
+## Enviar transacciones utilizando tarjeta de crédito, débito o prepago {#submit-transaction-with-credit-or-debit-cards}
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito, débito o prepago. Para Chile, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Nota" color="info"%}}
@@ -790,7 +791,571 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones en efectivo {#submit-transaction-with-cash}
+## Enviar transacciones utilizando Khipu {#submit-transactions-using-khipu}
+
+Khipu es una solución de pago que permite a los comercios de Chile aceptar pagos directamente desde las cuentas bancarias de sus clientes, sin necesidad de tarjetas de crédito o débito.
+
+**Beneficios para tu negocio:**
+
+* **Aumenta tus ventas:** Khipu ofrece una experiencia de pago fluida y sencilla, lo que se traduce en una mayor tasa de conversión y más ventas.
+* **Expande tu alcance:** Llega a un público más amplio al aceptar pagos de todos los bancos de Chile, incluyendo clientes que no cuentan con tarjeta de crédito o débito.
+* **Mejora la seguridad:** Khipu emplea tecnologías de cifrado y autenticación para proteger la información de tus clientes y promover transacciones seguras.
+
+### Proceso de pago con Khipu
+
+Para integrar Khipu en tu plataforma de comercio electrónico, puedes crear un formulario de pago y generar una experiencia de usuario siguiendo el flujo a continuación:
+
+1. **Selección de pago:** El cliente elige Khipu como método de pago en tu checkout:
+
+<img src="/assets/Payments/KHIPU_ES_01.png" alt="PrintScreen" width="250">
+<p></p>
+
+2. **Selección de banco:** El cliente selecciona su banco de preferencia.
+
+<img src="/assets/Payments/KHIPU_ES_02.png" alt="PrintScreen" width="250">
+<p></p>
+
+3. **Autenticación segura:** El cliente ingresa sus credenciales bancarias en la plataforma segura de Khipu.
+
+<img src="/assets/Payments/KHIPU_ES_03.png" alt="PrintScreen" width="500">
+<p></p>
+
+4. **Confirmación de pago:** El cliente recibe una confirmación inmediata de la transacción.
+
+<img src="/assets/Payments/KHIPU_ES_04.png" alt="PrintScreen" width="250">
+<p></p>
+
+5. **Soporte y recibo:** El sistema envía un recibo detallado al correo electrónico del cliente.
+
+<img src="/assets/Payments/KHIPU_ES_05.png" alt="PrintScreen" width="250">
+<p></p>
+
+### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-1}
+
+<details>
+<summary>Solicitud</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
+<br>
+<div class="variables"></div>
+
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+|---|---|---|---|---|
+| language | Alfanumérico | 2 | Idioma utilizado en la solicitud, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| command | Alfanumérico| Máx:32 | Establecer `SUBMIT_TRANSACTION`. | Sí |
+| merchant | Objeto | | Este objeto tiene los datos de autenticación. | Sí |
+| merchant > apiLogin | Alfanumérico| Mín:12 Máx:32| Usuario o inicio de sesión proporcionado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| merchant > apiKey | Alfanumérico| Mín:6 Máx:32| Contraseña proporcionada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| transaction | Objeto | | Este objeto tiene los datos de la transacción. | Sí |
+| transaction > order | Objeto | | Este objeto tiene los datos del pedido. | Sí |
+| transaction > order > accountId | Número | | Identificador de tu cuenta. | Sí |
+| transaction > order > referenceCode| Alfanumérico| Mín:1 Máx:255| Representa el identificador del pedido en tu sistema. | Sí |
+| transaction > order > description| Alfanumérico| Mín:1 Máx:255| Descripción del pedido. | Sí |
+| transaction > order > language  | Alfanumérico| 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí | 
+| transaction > order > notifyUrl| Alfanumérico| Máx:2048 | URL de confirmación del pedido. | No |
+| transaction > order > partnerId| Alfanumérico| Máx:255 | ID de socio en PayU. | No |
+| transaction > order > signature| Alfanumérico| Máx:255 | Firma asociada al formulario. Para más información, consulte Firma de autenticación. | Sí |
+| transaction > order > additionalValues| Objeto | 64 | Monto del pedido o sus valores asociados. | Sí |
+| transaction > order > additionalValues > TX_VALUE| Alfanumérico| 64| Monto de la transacción. | Sí |
+| transaction > order > additionalValues > TX_VALUE > value| Número| 12, 2| Especifica el monto de la transacción. Este monto no puede incluir decimales. | Sí |
+| transaction > order > additionalValues > TX_VALUE > currency| Alfanumérico| 3| Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
+| transaction > order > buyer | Objeto | | Información del comprador. | Sí |
+| transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | ID del comprador en tu sistema. | No |
+| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nombre completo del comprador. | Sí |
+| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del comprador. | Sí |
+| transaction > order > buyer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del comprador. | Sí |
+| transaction > order > buyer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del comprador. | Sí |
+| transaction > order > buyer > shippingAddress | Alfanumérico | | Dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > street1| Alfanumérico | Máx:150 | Línea 1 de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Estado de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > country| Alfanumérico | 2 | País de la dirección de envío del comprador en formato ISO 3166 alfa-2. | Sí |
+| transaction > order > buyer > shippingAddress > postalCode| Número | Máx:20 | Código postal de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > phone | Número | Máx:20 | Número de teléfono de la dirección de envío del comprador. | Sí |
+| transaction > order > shippingAddress | Objeto | | Dirección de envío. | No |
+| transaction > order > shippingAddress > street1 | Alfanumérico | Máx:100 | Línea 1 de la dirección. | No |
+| transaction > order > shippingAddress > street2 | Alfanumérico | Máx:100 | Línea 2 de la dirección. | No |
+| transaction > order > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección. | No |
+| transaction > order > shippingAddress > state | Alfanumérico | Máx:40 | Estado de la dirección. | No |
+| transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
+| transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Código postal de la dirección. | No |
+| transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de teléfono asociado a la dirección. | No |
+| transaction > payer | Objeto | | Información del pagador. | Sí |
+| transaction > payer > emailAddress | Alfanumérico | 255 | Dirección de correo electrónico del pagador. | Sí |
+| transaction > payer > merchantPayerId | Alfanumérico | 100 | Identificador del pagador en tu sistema. | No |
+| transaction > payer > fullName | Alfanumérico | 150 | Nombre del pagador. | Sí |
+| transaction > payer > billingAddress | Objeto | | Dirección de facturación. | Sí |
+| transaction > payer > billingAddress > street1 | Alfanumérico | 100 | Línea 1 de la dirección de facturación. | Sí |
+| transaction > payer > billingAddress > street2 | Alfanumérico | 100 | Línea 2 de la dirección de facturación. | No |
+| transaction > payer > billingAddress > city | Alfanumérico | 50 | Ciudad de la dirección de facturación. | Sí |
+| transaction > payer > billingAddress > state | Alfanumérico | 40 | Estado de la dirección de facturación. | No |
+| transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | Sí |
+| transaction > payer > billingAddress > postalCode | Alfanumérico | 20 | Código postal de la dirección de facturación. | No |
+| transaction > payer > billingAddress > phone | Alfanumérico | 20 | Número de teléfono de la dirección de facturación. | No |
+| transaction > payer > birthdate | Alfanumérico | 10 | Fecha de nacimiento del pagador. | No |
+| transaction > payer > contactPhone | Alfanumérico | 20 | Número de teléfono del pagador. | Sí |
+| transaction > payer > dniNumber | Alfanumérico | 20 | Número de identificación del comprador. | Sí |
+| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sí |
+| transaction > extraParameters | Objeto | | Parámetros o datos adicionales asociados con la solicitud. Para pagos por transferencia bancaria Khipu, esto contiene: La página de respuesta de tu comercio (requerido), el código del banco (requerido) y el nombre del banco (opcional). <ul> En JSON, el parámetro `extraParameters` se establece como: `"extraParameters": {"RESPONSE_URL": "http://www.payu.com/response", "FINANCIAL_INSTITUTION_CODE": "Bawdf", "FINANCIAL_INSTITUTION_NAME": "DemoBank" }` </ul> <ul> En XML, el parámetro `extraParameters` se establece como: `<extraParameters> <entry> <string>RESPONSE_URL</string> <string>http://www.payu.com/response</string> </entry> <entry> <string>FINANCIAL_INSTITUTION_CODE</string> <string>Bawdf</string> </entry> <entry> <string>FINANCIAL_INSTITUTION_NAME</string> <string>DemoBank</string> </entry> </extraParameters>` | Sí |
+| transaction > type | Alfanumérico | 32 | Como estos pagos se realizan en la página web de PSE, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un Método de Pago válido en transferencia bancaria. Ver los Métodos de Pago disponibles para Chile | Sí |
+| transaction > paymentCountry | Alfanumérico | 2 | Establecer `CL` para Chile. | Sí |
+| transaction > deviceSessionId | Alfanumérico | 255 | Identificador de sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulte este tema. | Sí |
+| transaction > ipAddress | Alfanumérico | 39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
+| transaction > cookie | Alfanumérico | 255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
+| transaction > userAgent | Alfanumérico | 1024 | El agente de usuario del navegador donde el cliente realiza la transacción. | Sí |
+| test (JSON) <hr>isTest (XML) | Booleano | | Establecer `true` si la solicitud está en modo de prueba. De lo contrario, establecer `false`. | Sí |
+
+</details>
+
+<details>
+<summary>Respuesta</summary>
+<br>
+<div class="variables"></div>
+
+| Nombre del Campo | Formato | Tamaño | Descripción |
+|---|---|---|---|
+| code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| error | Alfanumérico | Máx: 2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
+| transactionResponse | Objeto | | Datos de la respuesta. |
+| transactionResponse > orderId | Número | | Id de pedido generado o existente en PayU. |
+| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
+| transactionResponse > state | Alfanumérico | Máx: 32 | Estado de la transacción. Ya que el usuario realiza el pago en una oficina física, el estado para una transacción exitosa es `PENDING`. |
+| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Máx: 255 | Código de respuesta devuelto por la red financiera. |
+| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Máx: 255 | Mensaje de error devuelto por la red financiera. |
+| transactionResponse > trazabilityCode | Alfanumérico | Máx: 32 | Código de trazabilidad devuelto por la red financiera. |
+| transactionResponse > authorizationCode | Alfanumérico | Máx: 12 | Código de autorización devuelto por la red financiera. |
+| transactionResponse > pendingReason | Alfanumérico | Máx: 21 | Código de razón asociado con el estado. Como se menciona en `transactionResponse > state`, la transacción está esperando el pago. |
+| transactionResponse > responseCode | Alfanumérico | Máx: 64 | Código de respuesta asociado con el estado. En este caso, para transacciones exitosas es `PENDING_TRANSACTION_CONFIRMATION`.|
+| transactionResponse > responseMessage | Alfanumérico | Máx: 2048 | Mensaje asociado con el código de respuesta. |
+| transactionResponse > operationDate | Fecha | | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > extraParameters | Objeto | | Parámetros adicionales o datos asociados con la respuesta. La `BANK_URL` es la URL que debes usar para redirigir a tu pagador a Khipu. En JSON, el parámetro `extraParameters` sigue esta estructura: `"extraParameters": { "BANK_URL": "xxxx" }` En XML, el parámetro `extraParameters` sigue esta estructura: `<extraParameters> <entry> <string>BANK_URL</string> <string>xxxx</string> </entry> </extraParameters>` |
+
+</details>
+
+#### Ejemplos de solicitud y respuesta
+
+A continuación, los ejemplos de solicitud y respuesta en formatos JSON y XML.
+
+{{% alert title="Nota" color="info"%}}
+Para realizar pruebas, puedes utilizar:
+* `"FINANCIAL_INSTITUTION_CODE": "Bawdf"`
+* `"FINANCIAL_INSTITUTION_NAME": "DemoBank"`
+{{% /alert %}}
+
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una solicitud:
+```JSON
+{
+    "language": "es",
+    "command": "SUBMIT_TRANSACTION",
+    "merchant": {
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+        "apiLogin": "pRRXKOl8ikMmt9u"
+    },
+    "transaction": {
+        "order": {
+            "accountId": "512325",
+            "referenceCode": "PRODUCT_TEST_2024-03-13T19:59:43.229Z",
+            "description": "Payment test description",
+            "language": "es",
+            "signature": "1d6c33aed575c4974ad5c0be7c6a1c87",
+            "notifyUrl": "http://www.payu.com/notify",
+            "additionalValues": {
+                "TX_VALUE": {
+                    "value": 10000,
+                    "currency": "CLP"
+                }
+            },
+            "buyer": {
+                "merchantBuyerId": "1",
+                "fullName": "First name and second buyer name",
+                "emailAddress": "buyer_test@test.com",
+                "contactPhone": "7563126",
+                "dniNumber": "123456789",
+                "shippingAddress": {
+                   "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
+                   "street2": "5555487",
+                   "city": "RM",
+                   "state": "Talagante",
+                   "country": "CL",
+                   "postalCode": "000000",
+                   "phone": "7563126"
+                }
+             },
+             "shippingAddress": {
+                "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
+                "street2": "5555487",
+                "city": "RM",
+                "state": "Talagante",
+                "country": "CL",
+                "postalCode": "0000000",
+                "phone": "7563126"
+             }
+        },
+        "payer": {
+            "merchantPayerId": "1",
+            "fullName": "First name and second payer name",
+            "emailAddress": "payer_test@test.com",
+            "contactPhone": "7563126",
+            "dniNumber": "5415668464654",
+            "billingAddress": {
+                "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
+                "street2": "125544",
+                "city": "RM",
+                "state": "Talagante",
+                "country": "CL",
+                "postalCode": "000000",
+                "phone": "7563126"
+            }
+        },
+        "extraParameters": {
+            "FINANCIAL_INSTITUTION_CODE": "Bawdf",
+            "FINANCIAL_INSTITUTION_NAME": "DemoBank",
+            "RESPONSE_URL": "http://www.payu.com/response"
+        },
+        "type": "AUTHORIZATION_AND_CAPTURE",
+        "paymentMethod": "KHIPU",
+        "paymentCountry": "CL",
+        "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+        "ipAddress": "127.0.0.1",
+        "cookie": "cookie_52278879710130",
+        "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+    },
+    "test": false
+}
+```
+<br>
+
+Ejemplo de una respuesta:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 1400021721,
+        "transactionId": "b5c1ef12-7f6b-4f00-9c43-6e801bf525ad",
+        "state": "PENDING",
+        "paymentNetworkResponseCode": null,
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "gsizttwrygpd",
+        "authorizationCode": null,
+        "pendingReason": "AWAITING_NOTIFICATION",
+        "responseCode": "PENDING_TRANSACTION_CONFIRMATION",
+        "errorCode": null,
+        "responseMessage": null,
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1710329617633,
+        "referenceQuestionnaire": null,
+        "extraParameters": {
+            "BANK_URL": "https://app.khipu.com/payment/simplified/gsizttwrygpd"
+        },
+        "additionalInfo": null
+    }
+}
+
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una solicitud:
+```XML
+<request>
+	<language>es</language>
+	<command>SUBMIT_TRANSACTION</command>
+	<merchant>
+		<apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+		<apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+	</merchant>
+	<transaction>
+		<order>
+			<accountId>512325</accountId>
+			<referenceCode>PRODUCT_TEST_2024-03-13T19:59:43.229Z</referenceCode>
+			<description>Payment test description</description>
+			<language>es</language>
+			<signature>1d6c33aed575c4974ad5c0be7c6a1c87</signature>
+			<notifyUrl>http://www.payu.com/notify</notifyUrl>
+			<additionalValues>
+                <string>TX_VALUE</string>
+				<additionalValue>
+					<value>10000</value>
+					<currency>CLP</currency>
+				</additionalValue>
+			</additionalValues>
+			<buyer>
+				<merchantBuyerId>1</merchantBuyerId>
+				<fullName>First name and second buyer name</fullName>
+				<emailAddress>buyer_test@test.com</emailAddress>
+				<contactPhone>7563126</contactPhone>
+				<dniNumber>123456789</dniNumber>
+				<shippingAddress>
+					<street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
+					<street2>5555487</street2>
+					<city>RM</city>
+					<state>Talagante</state>
+					<country>CL</country>
+					<postalCode>000000</postalCode>
+					<phone>7563126</phone>
+				</shippingAddress>
+			</buyer>
+			<shippingAddress>
+				<street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
+				<street2>5555487</street2>
+				<city>RM</city>
+				<state>Talagante</state>
+				<country>CL</country>
+				<postalCode>0000000</postalCode>
+				<phone>7563126</phone>
+			</shippingAddress>
+		</order>
+		<payer>
+			<merchantPayerId>1</merchantPayerId>
+			<fullName>First name and second payer name</fullName>
+			<emailAddress>payer_test@test.com</emailAddress>
+			<contactPhone>7563126</contactPhone>
+			<dniNumber>5415668464654</dniNumber>
+			<billingAddress>
+				<street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
+				<street2>125544</street2>
+				<city>RM</city>
+				<state>Talagante</state>
+				<country>CL</country>
+				<postalCode>000000</postalCode>
+				<phone>7563126</phone>
+			</billingAddress>
+		</payer>
+		<extraParameters>
+            <entry>
+                <string>FINANCIAL_INSTITUTION_CODE</string>
+                <string>Bawdf</string>
+            </entry>
+            <entry>
+                <string>FINANCIAL_INSTITUTION_NAME</string>
+                <string>DemoBank</string>
+            </entry>
+            <entry>
+                <string>RESPONSE_URL</string>
+                <string>http://www.payu.com/response</string>
+            </entry>
+		</extraParameters>
+		<type>AUTHORIZATION_AND_CAPTURE</type>
+		<paymentMethod>KHIPU</paymentMethod>
+		<paymentCountry>CL</paymentCountry>
+		<deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+		<ipAddress>127.0.0.1</ipAddress>
+		<cookie>cookie_52278879710130</cookie>
+		<userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+	</transaction>
+	<isTest>false</isTest>
+</request>
+
+```
+<br>
+
+Ejemplo de una respuesta:
+```XML
+<paymentResponse>
+	<code>SUCCESS</code>
+	<error />
+	<transactionResponse>
+		<orderId>1400021721</orderId>
+		<transactionId>b5c1ef12-7f6b-4f00-9c43-6e801bf525ad</transactionId>
+		<state>PENDING</state>
+		<trazabilityCode>gsizttwrygpd</trazabilityCode>
+		<authorizationCode />
+		<pendingReason>AWAITING_NOTIFICATION</pendingReason>
+		<responseCode>PENDING_TRANSACTION_CONFIRMATION</responseCode>
+		<operationDate>1710329617633</operationDate>
+		<referenceQuestionnaire />
+		<extraParameters>
+			<entry>
+				<string>BANK_URL</string>
+				<string>https://app.khipu.com/payment/simplified/gsizttwrygpd</string>
+			</entry>
+		</extraParameters>
+	</transactionResponse>
+</paymentResponse>
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+
+### Lista de bancos disponibles con Khipu
+
+Este método retorna la lista de bancos disponibles para realizar pagos utilizando Khipu:
+
+<details>
+<summary>Solicitud</summary>
+<br>
+<div class="variables"></div>
+
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+|---|---|---|---|---|
+| language | Alfanumérico | 2 | Idioma utilizado en la solicitud, este idioma se usa para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| command | Alfanumérico | Máx: 32 | Establecer `GET_BANKS_LIST`. | Sí |
+| test (JSON) <hr> isTest (XML) | Booleano | | Establecer `true` si la solicitud está en modo de prueba. De lo contrario, establecer `false`. | Sí |
+| merchant | Objeto | | Este objeto tiene los datos de autenticación. | Sí |
+| merchant > apiLogin | Alfanumérico | Mín: 12 Máx: 32 | Usuario o login proporcionado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| merchant > apiKey | Alfanumérico | Mín: 6 Máx: 32 | Contraseña proporcionada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| bankListInformation | Objeto | | Este objeto tiene la información de la consulta. | Sí |
+| bankListInformation > paymentMethod | Alfanumérico | | Establecer `KHIPU`. | Sí |
+| bankListInformation > paymentCountry | Alfanumérico   | | Establecer `CL`. | Sí |
+
+</details>
+
+<details>
+<summary>Respuesta</summary>
+<br>
+<div class="variables"></div>
+
+| Nombre del Campo | Formato | Tamaño | Descripción |
+|---|---|---|---|
+| code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| error | Alfanumérico | Máx: 2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
+| banks | Objeto | | Lista de los bancos disponibles en Khipu. |
+| banks > id | Alfanumérico | | Código para enviar en el parámetro extra `FINANCIAL_INSTITUTION_CODE` de la solicitud de pago. |
+| banks > name | Alfanumérico | | Nombre del banco para mostrar en la lista. |
+| banks > message | Alfanumérico | | Mensaje con particularidades del banco. |
+| banks > minAmount | Numérico | | Monto mínimo que soporta el banco. |
+| banks > type | Alfanumérico | | Tipo de banco. |
+| banks > parent | Alfanumérico | | Identificador del banco principal, si un banco tiene sección de Persona y Empresa, la sección Persona será el principal de la empresa. |
+
+</details>
+
+#### Ejemplos de solicitud y respuesta
+
+A continuación, los ejemplos de solicitud y respuesta en formatos JSON y XML.
+
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una solicitud:
+```JSON
+{
+   "language": "es",
+   "command": "GET_BANKS_LIST",
+   "merchant": {
+      "apiLogin": "pRRXKOl8ikMmt9u",
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+   },
+   "test": false,
+   "bankListInformation": {
+      "paymentMethod": "KHIPU",
+      "paymentCountry": "CL"
+   }
+}
+
+```
+<br>
+
+Ejemplo de una respuesta:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "banks": [
+        {
+            "bankId": "Bawdf",
+            "name": "DemoBank",
+            "message": "Este es un banco de pruebas. Las transacciones no son reales.",
+            "minAmount": 200.0000,
+            "type": "Persona",
+            "parent": ""
+        },
+        {
+            "bankId": "Qwert",
+            "name": "DemoBank2",
+            "message": "Este es un banco de pruebas. Las transacciones no son reales.",
+            "minAmount": 100.0000,
+            "type": "Persona",
+            "parent": ""
+        }
+    ]
+}
+
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una solicitud:
+```XML
+<request>
+    <language>en</language>
+    <command>GET_BANKS_LIST</command>
+    <merchant>
+        <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+        <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+    </merchant>
+    <isTest>false</isTest>
+    <bankListInformation>
+        <paymentMethod>KHIPU</paymentMethod>
+        <paymentCountry>CL</paymentCountry>
+    </bankListInformation>
+</request>
+
+```
+<br>
+
+Ejemplo de una respuesta:
+```XML
+<bankListResponse>
+    <code>SUCCESS</code>
+    <banks>
+        <bank>
+            <bankId>Bawdf</bankId>
+            <name>DemoBank</name>
+            <message>Este es un banco de pruebas. Las transacciones no son reales.</message>
+            <minAmount>200.0000</minAmount>
+            <type>Persona</type>
+            <parent></parent>
+        </bank>
+        <bank>
+            <bankId>Qwert</bankId>
+            <name>DemoBank2</name>
+            <message>Este es un banco de pruebas. Las transacciones no son reales.</message>
+            <minAmount>100.0000</minAmount>
+            <type>Persona</type>
+            <parent></parent>
+        </bank>
+    </banks>
+</bankListResponse>
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+### Consideraciones adicionales para la integración de Khipu
+
+**Transparencia en los pagos:**
+* Los pagos procesados a través de la pasarela de Khipu se reflejarán en el estado de cuenta del pagador bajo el nombre de "PayU Chile SA en nombre de [Nombre de tu Comercio]". Esto garantiza transparencia y trazabilidad en las transacciones.
+
+**Limitaciones de montos:**
+* Es importante tener en cuenta que los bancos asociados a Khipu pueden establecer límites de monto mínimo o máximo por transacción. Estos límites varían según cada institución financiera.
+* Consulta con Khipu o tu banco emisor para conocer los límites específicos aplicables a las transacciones procesadas a través de la plataforma.
+
+**Políticas de reversos:**
+* De acuerdo con las políticas de Khipu, no se permiten reversos totales, parciales o anulaciones de pagos una vez que la transacción ha sido confirmada y procesada.
+* Es fundamental asegurar que la información proporcionada por el cliente sea precisa y completa antes de finalizar la transacción para evitar inconvenientes posteriores.
+
+**Disponibilidad del método de pago:**
+* Ten en cuenta que el método de pago Khipu solo está disponible para el modelo agregador.
+* Si tu negocio requiere un modelo de pago distinto, consulta con Khipu para explorar otras soluciones disponibles.
+
+### Recursos Adicionales:
+
+* Logos oficiales de Khipu: https://docs.khipu.com/portal/en/payment-logos/
+
+
+## Enviar transacciones utilizando efectivo {#submit-transaction-with-cash}
 Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente selecciona efectivo y genera el código de pago.
 
 <img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
@@ -799,11 +1364,11 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o configuraciones relacionadas con MULTICAJA.
 {{% /alert %}}
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-1}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-2}
 
 <details>
 <summary>Petición (Request)</summary>
-<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -1147,16 +1712,16 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones con tarjeta débito o prepago utilizando WebPay Plus {#submit-transaction-with-debit-and-prepaid-cards}
+## Enviar transacciones utilizando tarjeta débito o prepago utilizando WebPay Plus {#submit-transaction-with-debit-and-prepaid-cards}
 Este método te permite procesar los pagos con tarjetas débito o prepago de tus clientes. Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un de pago como el siguiente.
 
 <img src="/assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-2}
+### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-4}
 
 <details>
 <summary>Petición (Request)</summary>
-<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
+<label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -1260,7 +1825,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 
 </details>
 
-#### Consideraciones {#considerations-3}
+#### Consideraciones {#considerations-4}
 * Si no envías el parámetro `RESPONSE_URL` en `transaction.extraParameters`, el API toma el valor de la variable _**URL de respuesta**_ en tu Módulo PayU (_**Configuración**_ > _**Configuración técnica**_).
 * Cuando procesas pagos a través de WebPay plus, debes redirigir a tu cliente a la URL que encuentras en el extra parámetro `URL_PAYMENT_REDIRECT` concatenado con el extra parámetro `TRANSBANK_DIRECT_TOKEN` así: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
 * Si la solicitud de pago es exitosa, la transacción queda con estado `PENDING` y responseCode `PENDING_PAYMENT_IN_ENTITY`; esto es debido a que el pagador es redirigido al banco seleccionado para completar el pago.
@@ -1277,7 +1842,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 
 Las variables anteriores se envía a través de GET.
 
-### Llamado del API {#api-call-1}
+### Llamado del API {#api-call-2}
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
