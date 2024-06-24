@@ -413,11 +413,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="/en/docs/services/3ds-authentication.html"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="pt"
                 href="/pt/docs/services/3ds-authentication.html"
                 />

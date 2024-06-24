@@ -144,18 +144,19 @@ Refer to &lt;a href=&#34;../../../en/docs/getting-started/select-your-payment-me
     </item>
     
     <item>
-      <title>Docs: 3DS Authentication</title>
-      <link>/en/docs/services/3ds-authentication.html</link>
-      <pubDate>Tue, 07 Dec 2021 10:25:17 -0500</pubDate>
+      <title>Docs: 3DS authentication</title>
+      <link>/en/docs/services/3dsauthentication.html</link>
+      <pubDate>Fri, 16 Jul 2021 11:32:55 -0500</pubDate>
       
-      <guid>/en/docs/services/3ds-authentication.html</guid>
+      <guid>/en/docs/services/3dsauthentication.html</guid>
       <description>
         
         
         &lt;h2 id=&#34;what-is-3ds&#34;&gt;What is 3DS?&lt;/h2&gt;
-&lt;p&gt;3DS (Three-Domain Secure) is a messaging protocol that enables the issuers to authenticate their cardholders during the online shops. This authentication is performed before the transaction is authorized and follows the next flow.&lt;/p&gt;
+&lt;p&gt;3DS (Three-Domain Secure) is a security protocol that adds an extra layer of verification during online payments. It works by securely communicating with the cardholder&amp;rsquo;s issuing bank to confirm their identity before authorizing the transaction. This significantly reduces the risk of unauthorized card usage and fraud.&lt;/p&gt;
+&lt;p&gt;The diagram below describes the protocol flow:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/3DS/3DS_whatis_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The next infographic explains the authentication flow for 3DS.&lt;/p&gt;
+&lt;p&gt;Below, an example of the authentication process:&lt;/p&gt;
 &lt;div class=&#34;infographicDiv&#34; align=&#34;center&#34;&gt;
     &lt;div class=&#34;DivGray&#34; &gt;
         &lt;p align=&#34;center&#34;&gt;John buys a cellphone through an e-commerce shop in his personal computer.&lt;/p&gt;
@@ -190,58 +191,28 @@ Refer to &lt;a href=&#34;../../../en/docs/getting-started/select-your-payment-me
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;3ds-benefits&#34;&gt;3DS Benefits&lt;/h2&gt;
-&lt;p&gt;3DS (Three-Domain Secure) adds additional security layers to reduce the fraud avoiding the unauthorized usage of credit cards, protecting you of chargebacks due to fraud transactions.&lt;/p&gt;
-&lt;p&gt;Using 3DS, you can have:&lt;/p&gt;
+&lt;h2 id=&#34;benefits-of-3ds-authentication&#34;&gt;Benefits of 3DS Authentication&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Higher approval rates, less fraud.&lt;/strong&gt;&lt;br&gt;
-The exchange of data between merchants and issuers helps to make better authorization decisions and fraud detection. In case of fraud chargebacks, the issuer is the one who has the responsibility with the buyer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Increased security and reduced fraud:&lt;/strong&gt;&lt;br&gt;
+By verifying cardholder identity, 3DS helps prevent fraudulent transactions. Additionally, in case of a fraudulent chargeback, the liability often shifts to the issuing bank.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Better user experience.&lt;/strong&gt;&lt;br&gt;
-3DS allows a better integration of the authentication process during the shopping experience of the end user. Reduces the friction with the user in a higher percentage of transactions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Improved user experience:&lt;/strong&gt;&lt;br&gt;
+Modern 3DS implementations ensure a smooth authentication process with minimal disruption to the user&amp;rsquo;s shopping experience.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Complies with regulations and &lt;a href=&#34;https://www.emvco.com/emv-technologies/3d-secure/&#34;&gt;EMVCo&lt;/a&gt; standards.&lt;/strong&gt;&lt;br&gt;
-Supports a strong customer authentication for issuers, acquirers, and payment services in regulated markets.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Regulatory compliance:&lt;/strong&gt;&lt;br&gt;
+3DS adheres to &lt;a href=&#34;https://www.emvco.com/emv-technologies/3d-secure/&#34; target=&#34;_blank&#34;&gt;EMVCo&lt;/a&gt; standards and regulations in many markets, ensuring compliance for merchants and payment processors.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;3ds-authentication-solution&#34;&gt;3DS Authentication solution&lt;/h2&gt;
-&lt;p&gt;3DS Authentication, available for Brazil and Colombia, is provided via API under two modalities:&lt;/p&gt;
+&lt;h2 id=&#34;leveraging-3ds-with-payu&#34;&gt;Leveraging 3DS with PayU&lt;/h2&gt;
+&lt;p&gt;PayU offers 2 options to integrate 3DS authentication into your payment processing:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Pass Through&lt;/strong&gt;&lt;/em&gt;: if you have your own 3DS Authentication service, you can send us the authentication response in the payment request. Under this modality, you are responsible for the integration with an &lt;em&gt;&lt;strong&gt;MPI&lt;/strong&gt;&lt;/em&gt; or a &lt;em&gt;&lt;strong&gt;3DS Server&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;The &lt;em&gt;&lt;strong&gt;Pass Through&lt;/strong&gt;&lt;/em&gt; is intended for merchants integrated via API to &lt;strong&gt;PayU Latam&lt;/strong&gt; Platform. For more information, contact your sales representative.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/passthrough.html&#34; target=&#34;_blank&#34;&gt;Passthrough:&lt;/a&gt;. This method allows you to leverage your existing 3DS service provider. You&amp;rsquo;ll handle the authentication process and send the response directly to PayU within the payment request.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;PayU-handled 3DS authentication:&lt;/a&gt; If you don&amp;rsquo;t have your own 3DS service, PayU can manage the authentication process on your behalf.&lt;/li&gt;
 &lt;/ul&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-3DS Authentication is supported for Visa &amp;amp; MasterCard.
-&lt;/div&gt;
-
-&lt;p&gt;When using the 3DS Authentication solution, take into account the following:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The authentication service is independent from the authorization service.&lt;/li&gt;
-&lt;li&gt;The authorization must include the authentication response.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;benefits-of-our-solution&#34;&gt;Benefits of our solution&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;You control and decide when to authenticate a transaction.&lt;/li&gt;
-&lt;li&gt;If you migrate to the HUB, you can have additional benefits of a global solution.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;how-to-integrate-3ds&#34;&gt;How to integrate 3DS?&lt;/h3&gt;
-&lt;p&gt;3DS Authentication is a service available under demand, contact your Key Account Manager to sign the Terms &amp;amp; conditions to enable it.&lt;br&gt;Depending on the scenario you choose to use the 3DS Authentication, the integration procedure varies.&lt;/p&gt;
-&lt;h4 id=&#34;pass-through&#34;&gt;Pass Through&lt;/h4&gt;
-&lt;p&gt;When you are integrated with an &lt;em&gt;&lt;strong&gt;MPI&lt;/strong&gt;&lt;/em&gt; or a &lt;em&gt;&lt;strong&gt;3DS Server&lt;/strong&gt;&lt;/em&gt;, you just need to send us the authentication response in the payment request. Refer to your processing country to see an example of how to send the parameters returned in the response:&lt;/p&gt;
-&lt;div style=&#34;display: flex;&#34;&gt;
-  &lt;div style=&#34;float: left;width: 50%;text-align: center;&#34;&gt;
-    &lt;a href=&#39;../../../en/docs/integrations/api-integration/payments-api-brazil.html#considerations&#39;&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;10%&#34;/&gt;&lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div style=&#34;float: left;width: 50%;text-align: center;&#34;&gt;
-    &lt;a href=&#39;../../../en/docs/integrations/api-integration/payments-api-colombia.html#considerations&#39;&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;10%&#34;/&gt;&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;br&gt;
+&lt;p&gt;Choose the option that best suits your existing infrastructure and preferences.&lt;/p&gt;
 
       </description>
     </item>
