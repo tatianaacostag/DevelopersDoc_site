@@ -263,11 +263,11 @@ Find the description of the object `transaction.networkToken` and its parameters
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | transaction |  |  | This object has the transaction data. | Yes |
-| transaction > order |  |  | This object has the order data. | Yes |
+| transaction > order | Object |  | This object has the order data. | Yes |
 | transaction > order > accountId | Number |  | Identifier of your account. | Yes |
 | transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
 | transaction > order > description | Alphanumeric | Min:1 Max:255 | Description of the order. | Yes |
@@ -275,7 +275,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > order > notifyUrl | Alphanumeric | Max:2048 | Confirmation URL of the order. | No |
 | transaction > order > partnerId | Alphanumeric | Max:255 | Partner ID in PayU. | No |
 | transaction > order > signature | Alphanumeric | Max:255 | The signature associated to the form. For more information refer [Authentication signature]({{< ref "integrations.html#authentication-signature" >}}). | Yes |
-| transaction > order > shippingAddress |  |  | Shipping address. | No |
+| transaction > order > shippingAddress | Object |  | Shipping address. | No |
 | transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
 | transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
 | transaction > order > shippingAddress > city | Alphanumeric | Max:50 | Address city. | No |
@@ -283,7 +283,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > order > shippingAddress > country | Alphanumeric | 2 | Address country. | No |
 | transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Address Zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | No |
 | transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated to the address. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > order > buyer |  |  | Buyer information. | Yes |
+| transaction > order > buyer | Object |  | Buyer information. | Yes |
 | transaction > order > buyer > merchantBuyerId | Alphanumeric | Max:100 | Buyer ID in your system. | No |
 | transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
 | transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes |
@@ -297,7 +297,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Yes |
 | transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | Yes |
 | transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | Yes |
-| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Yes |
+| transaction > order > additionalValues > | Object | 64 | Amount of the order or its associated values. | Yes |
 | transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. | Yes |
 | transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Yes |
 | transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
@@ -307,7 +307,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > order > submerchant |  |  | Information of the sub-merchant. If you don't send this parameter, PayU configures your merchant as sub-merchant. | No |
+| transaction > order > submerchant | Object |  | Information of the sub-merchant. If you don't send this parameter, PayU configures your merchant as sub-merchant. | No |
 | transaction > order > submerchant > id | Alphanumeric | Max:15 | Internal ID of the sub-merchant if you use one to identify it. | No |
 | transaction > order > submerchant > fullName | Alphanumeric | Max:150 | Full name of the sub-merchant. | No |
 | transaction > order > submerchant > address |  |  | Sub-merchant address. The fields `state`, `country`, and `postalCode`are mandatory when sending this object. | No |
@@ -322,13 +322,13 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > order > submerchant > identification | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > order > submerchant > identificationType | Alphanumeric | Max:4 | Identification type of the sub-merchant. The possible values are `cnpj` or `cpf`. | No |
 | transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card using the PayU Tokenization; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | No |
-| transaction > creditCard |  |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
+| transaction > creditCard | Object |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). | No |
 | transaction > creditCard > expirationDate | Alphanumeric | 7 | Credit card expiration date. Format `YYYY/MM`. This parameter is mandatory when the payment is performed using a tokenized credit card. | No |
 | transaction > creditCard > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card. *Mandatory just for Google Pay transactions. | No* |
 | transaction > creditCard > processWithoutCvv2 | Boolean | Max:255 | Allows you to process transactions without including the credit card security code. Your commerce requires PayU's authorization before using this feature. | No |
-| transaction > payer |  |  | Payer information. | No |
+| transaction > payer | Object |  | Payer information. | No |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
 | transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `transaction.creditCard.name` for credit card payments. | No |
@@ -359,9 +359,9 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
-| transaction > extraParameters |  |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
+| transaction > extraParameters | Object |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
 | transaction > termsAndConditionsAcepted | Boolean | | PayU terms and conditions that the payers must accept. *This parameter is only mandatory if your Brazilian PayU account is associated to a foreign bank account. | No* |
-| transaction > threeDomainSecure |  |  | This object contains the information of 3DS 2.0. | No |
+| transaction > threeDomainSecure | Object |  | This object contains the information of 3DS 2.0. | No |
 | transaction > threeDomainSecure > embedded | Boolean |  | Set `true` if you want to use and embedded MPI for the Authorization process. By default, this value is set as `false`. | No |
 | transaction > threeDomainSecure > eci | Number | Max:2 | Electronic Commerce Indicator.<br>Value returned by the directory servers showing the authentication attempt.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` and `transaction.threeDomainSecure.xid` has been set. | No |
 | transaction > threeDomainSecure > cavv | Alphanumeric | Max:28 | Cardholder Authentication Verification Value.<br>Code of the cryptogram used in the transaction authentication in Base64.<br>Depending on the specific ECI codes established by the process network, this value may be optional. | No |
@@ -379,7 +379,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| transactionResponse |  |  | The response data. |
+| transactionResponse | Object |  | The response data. |
 | transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
 | transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. |
@@ -390,7 +390,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transactionResponse > authorizationCode | Alphanumeric | Max:12 | The authorization code returned by the financial network. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 

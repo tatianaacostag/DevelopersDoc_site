@@ -19,7 +19,7 @@ To integrate with Payments API Chile, target your request to the following URLs 
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transactions using credit, debit or prepaid cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-or-debit-cards" >}})
+* [Submit transactions using credit, debit or prepaid cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}})
 * [Submit transactions using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) 
 * [Submit transactions using cash]({{< ref "Payments-API-Chile.md#submit-transactions-using-cash" >}})
 * [Submit transactions using debit and prepaid cards through WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transactions-using-debit-and-prepaid-cards" >}})
@@ -32,7 +32,7 @@ To confirm the status of a transaction, you can use one of the following options
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Submit transactions using credit, debit or prepaid cards {#submit-transaction-using-credit-or-debit-cards}
+## Submit transactions using credit, debit or prepaid cards {#submit-transactions-using-credit-debit-or-prepaid-cards}
 This method lets you process the payments that your customers perform using credit, debit or prepaid cards. For Chile, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Note" color="info"%}}

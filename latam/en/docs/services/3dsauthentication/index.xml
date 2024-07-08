@@ -17,15 +17,15 @@
     
     <item>
       <title>Docs: PayU-handled 3DS authentication</title>
-      <link>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication-.html</link>
+      <link>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</link>
       <pubDate>Fri, 16 Jul 2021 11:32:55 -0500</pubDate>
       
-      <guid>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication-.html</guid>
+      <guid>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</guid>
       <description>
         
         
-        &lt;h2 id=&#34;how-to-use-payu-3ds-authentication&#34;&gt;How to use PayU 3DS Authentication&lt;/h2&gt;
-&lt;p&gt;To use 3DS Authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called &lt;code&gt;req3DSAuthentication&lt;/code&gt; in your payment requests via PayU&amp;rsquo;s Payments API.&lt;/p&gt;
+        &lt;h2 id=&#34;how-to-use-payu-3ds-authentication&#34;&gt;How to use PayU 3DS authentication&lt;/h2&gt;
+&lt;p&gt;To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called &lt;code&gt;req3DSAuthentication&lt;/code&gt; in your payment requests via PayU&amp;rsquo;s Payments API.&lt;/p&gt;
 &lt;h3 id=&#34;the-req3dsauthentication-parameter&#34;&gt;The &lt;code&gt;req3DSAuthentication&lt;/code&gt; parameter&lt;/h3&gt;
 &lt;p&gt;This parameter allows you to control whether 3DS authentication is required for each transaction. It accepts two values:&lt;/p&gt;
 &lt;ul&gt;

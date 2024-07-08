@@ -19,7 +19,7 @@ Para integrarte con la API de Pagos de Chile, apunta tus peticiones a las siguie
 ## Métodos disponibles {#available-methods}
 La API de pagos incluye los siguiente métodos:
 
-* [Enviar transacciones utilizando tarjeta de crédito, débito o prepago]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
+* [Enviar transacciones utilizando tarjeta de crédito, débito o prepago]({{< ref "#submit-transactions-using-credit-debit-or-prepaid-cards" >}})
 * [Enviar transacciones utilizando Khipu]({{< ref "#submit-transactions-using-khipu" >}})
 * [Enviar transacciones utilizando efectivo]({{< ref "#submit-transactions-using-cash" >}})
 * [Enviar transacciones utilizando tarjeta débito o prepago a través de WebPay Plus]({{< ref "#submit-transactions-using-debit-and-prepaid-cards" >}})
@@ -32,7 +32,7 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 * Utiliza el [API o SDK de consultas]({{< ref "Queries.md" >}}).
 {{% /alert %}}
 
-## Enviar transacciones utilizando tarjeta de crédito, débito o prepago {#submit-transactions-using-credit-or-debit-cards}
+## Enviar transacciones utilizando tarjeta de crédito, débito o prepago {#submit-transactions-using-credit-debit-or-prepaid-cards}
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito, débito o prepago. Para Chile, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Nota" color="info"%}}

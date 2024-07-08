@@ -1,16 +1,20 @@
 ---
 title: "PayU-handled 3DS authentication"
 linkTitle: "PayU-handled 3DS authentication"
-date: 2021-07-16T11:32:55-05:00
+date: 2024-07-1T11:32:55-05:00
 description: >
-  PayU-Handled 3DS authentication removes the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.
-weight: 22
+  PayU-handled 3DS authentication removes the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.  
+weight: 21
 tags: ["subtopic"]
 ---
 
 ## How to use PayU 3DS authentication
 
 To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called `req3DSAuthentication` in your payment requests via PayU's Payments API.
+
+{{% alert title="Note" color="info"%}}
+3DS authentication for PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, and **Peru**.
+{{% /alert %}}
 
 ### The `req3DSAuthentication` parameter
 
@@ -147,7 +151,7 @@ In the response example below, the merchant redirects the payer to `https://merc
 
 ## After authentication
 
-Once the payer completes the 3DS authentication (if required), PayU will be notified. The transaction will then be:
+Once the payer completes the 3DS authentication (if required), PayU will receive a notification. The transaction will then be:
 
 * **Completed:** If the authentication is successful.
 * **Declined:** If the authentication fails.

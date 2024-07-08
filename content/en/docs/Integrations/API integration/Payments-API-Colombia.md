@@ -171,7 +171,7 @@ Two-step flow is available under request, contact your sales representative.
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
-* The variable `transaction.threeDomainSecure` corresponds to a _Pass Through_ scenario where the commerce performs the authentication by their own.
+* The variable `transaction.threeDomainSecure` corresponds to a _passthrough_ scenario where the commerce performs the authentication by their own.
 * For Crédito Fácil Codensa card, the number of installments supported are 1 to 12, 18, 24, 36 and 48.
 * For Crédito Fácil Codensa card, the payer can choose any of the following document types for the variable `transaction.payer.dniType`:
 

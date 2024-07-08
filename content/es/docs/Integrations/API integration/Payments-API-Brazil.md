@@ -263,11 +263,11 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
 | test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
+| merchant | Objeto |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > order |  |  | Este objeto tiene los datos de la orden. | Sí |
+| transaction | Objeto |  | Este objeto tiene los datos de la transacción. | Sí |
+| transaction > order | Objeto |  | Este objeto tiene los datos de la orden. | Sí |
 | transaction > order > accountId | Numérico |  | Identificador de tu cuenta. | Sí |
 | transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Representa el identificador de la orden en tu sistema. | Sí |
 | transaction > order > description | Alfanumérico | Min:1 Max:255 | Descripción de la orden. | Sí |
@@ -275,7 +275,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > order > notifyUrl | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No |
 | transaction > order > partnerId | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
 | transaction > order > signature | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
-| transaction > order > shippingAddress |  |  | Dirección de envío. | No |
+| transaction > order > shippingAddress | Objeto |  | Dirección de envío. | No |
 | transaction > order > shippingAddress > street1 | Alfanumérico | Max:100 | Línea de dirección 1. | No |
 | transaction > order > shippingAddress > street2 | Alfanumérico | Max:100 | Línea de dirección 2. | No |
 | transaction > order > shippingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección. | No |
@@ -283,7 +283,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
 | transaction > order > shippingAddress > postalCode | Alfanumérico | Max:8 | Código postal de la dirección. Para Brasil, utiliza el formato `XXXXX-XXX` o `XXXXXXXX`. Ejemplo: `09210-710` o `09210710`. | No |
 | transaction > order > shippingAddress > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. Para Brasil, utiliza el formato `ddd(2)+number(7-9)`. Ejemplo: `(11)756312633`. | No |
-| transaction > order > buyer |  |  | Información del comprador. | Sí |
+| transaction > order > buyer | Objeto |  | Información del comprador. | Sí |
 | transaction > order > buyer > merchantBuyerId | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
 | transaction > order > buyer > fullName | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
 | transaction > order > buyer > emailAddress | Alfanumérico | Max:255 | Correo electrónico de comprador. | Sí | Sí |
@@ -310,7 +310,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > order > submerchant |  |  | Información del subcomercio. Si no envías este parámetro, PayU configura tu comercio como subcomercio. | No |
 | transaction > order > submerchant > id | Alfanumérico | Max:15 | Identificador interno del subcomercio si utilizas uno para identificarlo. | No |
 | transaction > order > submerchant > fullName | Alfanumérico | Max:150 | Nombre del subcomercio. | No |
-| transaction > order > submerchant > address |  |  | Dirección del subcomercio. los campos `state`, `country` y `postalCode` son obligatorios cuando se envía este objeto. | No |
+| transaction > order > submerchant > address | Objeto |  | Dirección del subcomercio. los campos `state`, `country` y `postalCode` son obligatorios cuando se envía este objeto. | No |
 | transaction > order > submerchant > address > street1 | Alfanumérico | Max:100 | Línea de dirección 1. | No |
 | transaction > order > submerchant > address > street2 | Alfanumérico | Max:100 | Línea de dirección 2. | No |
 | transaction > order > submerchant > address > street3 | Alfanumérico | Max:100 | Línea de dirección 3. | No |
@@ -322,13 +322,13 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > order > submerchant > identification | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > order > submerchant > identificationType | Alfanumérico | Max:4 | Tipo de identificación of the sub-merchant. The possible values are `cnpj` o `cpf`. | No |
 | transaction > creditCardTokenId |  |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada utilizando la tokenización de PayU reemplazando la información de tu tarjeta de crédito; además, es obligatorio enviar el parámetro `transaction.creditCard.expirationDate`. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}). | No |
-| transaction > creditCard |  |  | Información de la tarjeta de crédito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
+| transaction > creditCard | Objeto |  | Información de la tarjeta de crédito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
 | transaction > creditCard > number | Alfanumérico | Min:13 Max:20 | Número de la tarjeta de crédito. | No |
 | transaction > creditCard > securityCode | Alfanumérico | Min:1 Max:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
 | transaction > creditCard > expirationDate | Alfanumérico | 7 | Fecha de expiración de la tarjeta de crédito. Formato `YYYY/MM`. | No |
 | transaction > creditCard > name | Alfanumérico | Min:1 Max:255 | Nombre del tarjetahabiente mostrado en la tarjeta de crédito. *Obligatorio sólo para transacciones de Google Pay. | No* |
 | transaction > creditCard > processWithoutCvv2 | Booleano | Max:255 | Te permite procesar transacciones sin incluir el código de seguridad de la tarjeta de crédito. Tu comercio requiere autorización de PayU antes de utilizar esta funcionalidad. | No |
-| transaction > payer |  |  | Información del pagador. | No |
+| transaction > payer | Objeto |  | Información del pagador. | No |
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | No |
 | transaction > payer > merchantPayerId | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
 | transaction > payer > fullName | Alfanumérico | Max:150 | Nombre del pagador. | No |
@@ -345,7 +345,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. Debes utilizar un algoritmo para validar el CPF y debe tener el siguiente formato `XXX.XXX.XXX-XX`. Ejemplo: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alfanumérico | Max:14 | Número de identificación del pagador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > networkToken |  |  | Información del token. Incluye este parámetro cuando la transacción se realice con una tarjeta tokenizada utilizando la tokenización de VTS o MDES. Para más información, consulta [Pagar con tókenes de MDES o VTS]({{< ref "#pay-with-mdes-or-vts-tokens" >}}). <br><sup>\*</sup>Cuando envíes este objeto, todos sus parámetros son obligatorios.| No |
+| transaction > networkToken | Objeto |  | Información del token. Incluye este parámetro cuando la transacción se realice con una tarjeta tokenizada utilizando la tokenización de VTS o MDES. Para más información, consulta [Pagar con tókenes de MDES o VTS]({{< ref "#pay-with-mdes-or-vts-tokens" >}}). <br><sup>\*</sup>Cuando envíes este objeto, todos sus parámetros son obligatorios.| No |
 | transaction > networkToken > tokenPan | Alfanumérico | Max:32 | Número del token generado por MDES o VTS. | Sí<sup>\*</sup> |
 | transaction > networkToken > cryptogram | Alfanumérico | Max:28 | Llave única generada por MDES o VTS para descifrar la información de la tarjeta de crédito. | Sí<sup>\*</sup> |
 | transaction > networkToken > expiry | Alfanumérico | 7 | Fecha de expiración del token. Formato `YYYY/MM`. | Sí<sup>\*</sup> |
@@ -359,9 +359,9 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
 | transaction > cookie | Alfanumérico | Max:255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
 | transaction > userAgent | Alfanumérico | Max:1024 | User agent del navegador donde el cliente realiza la transacción. | Sí |
-| transaction > extraParameters |  |  | Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de _extraParameters_ es 64 caracteres.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
+| transaction > extraParameters | Objeto |  | Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de _extraParameters_ es 64 caracteres.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
 | transaction > termsAndConditionsAcepted | Booleano | | Términos y condiciones de PayU que deben aceptar los pagadores. *Este parámetros es obligatorio únicamente si tu cuenta PayU brasilera está asociada a una cuenta bancaria extranjera. | No* |
-| transaction > threeDomainSecure |  |  | Este objeto contiene la información de 3DS 2.0. | No |
+| transaction > threeDomainSecure | Objeto |  | Este objeto contiene la información de 3DS 2.0. | No |
 | transaction > threeDomainSecure > embedded | Booleano |  | Asigna `true` si quieres utilizar un MPI embebido para el proceso de Autorización. Por defecto, este valor está asignado como `false`. | No |
 | transaction > threeDomainSecure > eci | Numérico | Max:2 | Indicador de Comercio Electrónico.<br>Valor retornado por los servidores de directorio indicando el intento de autenticación.<br>Este parámetro es obligatorio cuando `transaction.threeDomainSecure.embedded` es `false` y `transaction.threeDomainSecure.xid` tiene un valor configurado. | No |
 | transaction > threeDomainSecure > cavv | Alfanumérico | Max:28 | Valor de verificación de autenticación del titular de la tarjeta (Cardholder Authentication Verification Value).<br>Código del criptograma utilizado en la autenticación de la transacción codificado en Base 64.<br>Dependiendo de los códigos ECI específicos establecidos por la red, este valor puede ser opcional. | No |
@@ -379,7 +379,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse |  |  | Datos de la respuesta. |
+| transactionResponse | Objeto |  | Datos de la respuesta. |
 | transactionResponse > orderId | Numérico |  | Identificador generado o existente de la orden en PayU. |
 | transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
 | transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. |
@@ -390,7 +390,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
 | transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
-| transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados con la respuesta. <br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Objeto  |  | Parámetros adicionales o datos asociados con la respuesta. <br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
@@ -402,7 +402,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 * Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable `creditCard.processWithoutCvv2` con valor true y elimina la variable `creditCard.securityCode`.<br>Es obligatorio tener activa esta funcionalidad cuando utilices tókenes de tarjetas de crédito generados utilizando MDES o VTS.
 * El extra parámetro `CIELO_TID` identifica la transacción, se necesita este parámetro para procesar anulaciones (voids).
 * La variable `transaction.threeDomainSecure` no reemplaza la información de la tarjeta o ninguno de los campos obligatorios de la transacción. Este objeto es adicional y no es obligatorio.
-* La variable `transaction.threeDomainSecure` corresponde a un escenario _Pass Through_ donde el comercio realiza la autenticación por su cuenta.
+* La variable `transaction.threeDomainSecure` corresponde a un escenario _passthrough_ donde el comercio realiza la autenticación por su cuenta.
 
 ### Autorización {#authorization}
 Utiliza este método para realizar el paso de **Autorización** del flujo de dos pasos. En este paso, autorizas el pago pero el monto no se debita hasta que [captures]({{< ref "#capture" >}}) los fondos.<br>Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
