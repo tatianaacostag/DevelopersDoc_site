@@ -40,6 +40,6 @@ Para finalizar la activación de tu cuenta:
 ## Próximos Pasos
 Con tu cuenta de PayU activada:
 * **Recibe notificaciones de pago:** Tú y tus clientes serán notificados por cada transacción completada.
-* **Administra tus fondos:** El dinero de tus ventas se deposita en tu cuenta de PayU.
+* **Administra tus fondos:** El dinero de tus ventas lo depositaremos en tu cuenta de PayU.
 * **Integra PayU:** Elige el método de integración adecuado para conectar tu tienda en línea con los servicios y herramientas de PayU. Consulta la sección de [Integraciones]({{< ref "integrations" >}}) para obtener instrucciones detalladas.
 * **Transfiere fondos:** Transfiere fácilmente el saldo de tu cuenta de PayU a tu cuenta bancaria.
