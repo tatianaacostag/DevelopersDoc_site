@@ -1,6 +1,6 @@
 ---
-title: "External 3DS authentication"
-linkTitle: "External 3DS authentication"
+title: "External 3DS Authentication"
+linkTitle: "External 3DS Authentication"
 date: 2024-07-1T11:32:55-05:00
 description: >
   Leverage your existing 3DS service to enhance payment security with PayU's passthrough integration.

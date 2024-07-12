@@ -402,19 +402,24 @@
                 href="/es/docs/tools/shopping-cart-plugins/bigcommerce.html"
                 />
   </url><url>
-    <loc>/es/docs/services/3ds-authentication.html</loc>
-    <lastmod>2023-08-02T18:17:24-05:00</lastmod>
+    <loc>/es/docs/services/3dsauthentication.html</loc>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/3dsauthentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="pt"
-                href="/pt/docs/services/3ds-authentication.html"
+                href="/pt/docs/services/3dsauthentication.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/docs/services/3ds-authentication.html"
+                href="/es/docs/services/3dsauthentication.html"
                 />
   </url><url>
     <loc>/es/deprecated/merchant-panel.html</loc>
@@ -578,7 +583,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-argentina.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -598,7 +603,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-brazil.html</loc>
-    <lastmod>2024-05-15T16:16:48-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -618,7 +623,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-chile.html</loc>
-    <lastmod>2024-06-24T16:33:19-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -698,7 +703,7 @@
                 />
   </url><url>
     <loc>/es/docs/integrations/api-integration/payments-api-peru.html</loc>
-    <lastmod>2024-04-25T14:12:17-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -817,6 +822,26 @@
                 href="/es/docs/integrations/api-integration.html"
                 />
   </url><url>
+    <loc>/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</loc>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html"
+                />
+  </url><url>
     <loc>/es/deprecated/merchant-panel/account-activation.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -835,6 +860,26 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/deprecated/merchant-panel/account-activation.html"
+                />
+  </url><url>
+    <loc>/es/docs/services/3dsauthentication/external-3ds-authentication.html</loc>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/3dsauthentication/external-3ds-authentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/3dsauthentication/external-3ds-authentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/services/3dsauthentication/external-3ds-authentication.html"
                 />
   </url><url>
     <loc>/es/deprecated/merchant-panel/checking-balance.html</loc>
@@ -1837,28 +1882,8 @@
                 href="/es/docs/integrations/sdk-integration/refundssdk.html"
                 />
   </url><url>
-    <loc>/es/tags/subtopic.html</loc>
-    <lastmod>2024-06-24T16:33:19-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/subtopic.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/tags/subtopic.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/tags/subtopic.html"
-                />
-  </url><url>
     <loc>/es/tags/parenttopic.html</loc>
-    <lastmod>2024-03-13T17:07:24-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1875,6 +1900,26 @@
                 rel="alternate"
                 hreflang="es"
                 href="/es/tags/parenttopic.html"
+                />
+  </url><url>
+    <loc>/es/tags/subtopic.html</loc>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/subtopic.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/tags/subtopic.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/tags/subtopic.html"
                 />
   </url><url>
     <loc>/es/deprecated.html</loc>

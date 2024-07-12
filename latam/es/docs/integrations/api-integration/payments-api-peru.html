@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-peru.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-04-25T14:12:17-05:00" />
+<meta property="article:modified_time" content="2024-07-08T10:25:14-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Perú">
 <meta itemprop="description" content="La API de Pagos de Perú le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-04-25T14:12:17-05:00" />
-<meta itemprop="wordCount" content="8010">
+<meta itemprop="dateModified" content="2024-07-08T10:25:14-05:00" />
+<meta itemprop="wordCount" content="8239">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Perú"/>
 <meta name="twitter:description" content="La API de Pagos de Perú le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.26a1506d907895ccaec472fc07da6f34040557dafc6fa82ac2f22836408ee16dbe6409bf15a3425b1ca44f75f7cee6f24b0a653db92a8574b7fa2ab68967661c.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.95cb6427d2b0693eac0b4b8ae5988485accbe67e453729653df0169488e31fae99fc853a1322e2cd68d6a9facf7a9064a891b1da4e7d511644ae01781a62ddb5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -272,8 +272,39 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/services/3dsauthentication.html" href="../../../../es/docs/services/3dsauthentication.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Autenticación 3DS</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsservices3dsauthenticationhtml">
       
-        <a id="/es/docs/services/3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservices3ds-authenticationhtml" href="../../../../es/docs/services/3ds-authentication.html">Autenticación 3DS</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticación 3DS gestionada por PayU</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../es/docs/services/3dsauthentication/external-3ds-authentication.html">Autenticación 3DS externa</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -1467,6 +1498,48 @@
 <td>Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de <em>extraParameters</em> es 64 caracteres.<br>En JSON, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;INSTALLMENTS_NUMBER&quot;: 1</code><br><code>}</code><br><br>En XML, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;INSTALLMENTS_NUMBER&lt;/string&gt;</code><br>  <code>&lt;string&gt;1&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 <td style="text-align:center">No</td>
 </tr>
+<tr>
+<td>transaction &gt; threeDomainSecure</td>
+<td>Objeto</td>
+<td></td>
+<td>Este objeto contiene la información de 3DS 2.0.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; embedded</td>
+<td>Booleano</td>
+<td></td>
+<td>Asigna <code>true</code> si quieres utilizar un MPI embebido para el proceso de Autorización. Por defecto, este valor está asignado como <code>false</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; eci</td>
+<td>Numérico</td>
+<td>Máx:2</td>
+<td>Indicador de Comercio Electrónico.<br>Valor retornado por los servidores de directorio indicando el intento de autenticación.<br>Este parámetro es obligatorio cuando <code>transaction.threeDomainSecure.embedded</code> es <code>false</code> y <code>transaction.threeDomainSecure.xid</code> tiene un valor configurado.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; cavv</td>
+<td>Alfanumérico</td>
+<td>Máx:28</td>
+<td>Valor de verificación de autenticación del titular de la tarjeta (Cardholder Authentication Verification Value).<br>Código del criptograma utilizado en la autenticación de la transacción codificado en Base 64.<br>Dependiendo de los códigos ECI específicos establecidos por la red, este valor puede ser opcional.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; xid</td>
+<td>Alfanumérico</td>
+<td>Máx:28</td>
+<td>Identificador de la transacción enviado por el MPI codificado en Base 64.<br>Este parámetro es obligatorio cuando <code>transaction.threeDomainSecure.embedded</code> is <code>false</code> y <code>transaction.threeDomainSecure.eci</code> tiene un valor configurado.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; directoryServerTransactionId</td>
+<td>Alfanumérico</td>
+<td>Máx:36</td>
+<td>Identificador de la transacción generador por el servidor de directorio durante la autenticación.</td>
+<td style="text-align:center">No</td>
+</tr>
 </tbody>
 </table>
 </details>
@@ -1576,6 +1649,8 @@
 <li>Para pagos con tókenes de tarjetas de crédito, incluye los parámetros <code>transaction.creditCardTokenId</code> y <code>transaction.creditCard.securityCode</code> (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito . Para más información, consulta el <a href="../../../../es/docs/integrations/api-integration/tokenization-api.html">API de Tokenización</a>.</li>
 <li>Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable <code>creditCard.processWithoutCvv2</code> con valor true y elimina la variable <code>creditCard.securityCode</code>.</li>
 <li>En Perú, puedes seleccionar 0 o de 2 a 36 cuotas cuando pagas con tarjeta de crédito. Si seleccionas una (1) cuota, PayU envía cero (0) como valor por defecto.</li>
+<li>La variable <code>transaction.threeDomainSecure</code> no reemplaza la información de la tarjeta o ninguno de los campos obligatorios de la transacción. Este objeto es adicional y no es obligatorio.</li>
+<li>La variable <code>transaction.threeDomainSecure</code> corresponde a un escenario <em>passthrough</em> donde el comercio realiza la autenticación por su cuenta.</li>
 </ul>
 <h3 id="authorization">Autorización</h3>
 <p>Utiliza este método para realizar el paso de <strong>Autorización</strong> del flujo de dos pasos. En este paso, autorizas el pago pero el monto no se debita hasta que <a href="../../../../es/docs/integrations/api-integration/payments-api-peru.html#capture">captures</a> los fondos.</p>
@@ -4740,9 +4815,9 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-25 de abril de 2024:
+8 de julio de 2024:
 
- <b>Documentation updates (8d96a15ad)</b>
+ <b>Documentation updates (a842982f1)</b>
 </div>
 </div>
 

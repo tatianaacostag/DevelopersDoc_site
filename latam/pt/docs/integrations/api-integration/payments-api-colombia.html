@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-06-24T16:33:19-05:00" />
+<meta property="article:modified_time" content="2024-07-08T10:25:14-05:00" />
 
 <meta itemprop="name" content="API de pagamentos - Colômbia">
 <meta itemprop="description" content="A API de pagamentos da Colômbia permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-06-24T16:33:19-05:00" />
-<meta itemprop="wordCount" content="11426">
+<meta itemprop="dateModified" content="2024-07-08T10:25:14-05:00" />
+<meta itemprop="wordCount" content="11425">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de pagamentos - Colômbia"/>
 <meta name="twitter:description" content="A API de pagamentos da Colômbia permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.26a1506d907895ccaec472fc07da6f34040557dafc6fa82ac2f22836408ee16dbe6409bf15a3425b1ca44f75f7cee6f24b0a653db92a8574b7fa2ab68967661c.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.95cb6427d2b0693eac0b4b8ae5988485accbe67e453729653df0169488e31fae99fc853a1322e2cd68d6a9facf7a9064a891b1da4e7d511644ae01781a62ddb5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -272,8 +272,39 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/services/3dsauthentication.html" href="../../../../pt/docs/services/3dsauthentication.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Autenticação 3DS</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsservices3dsauthenticationhtml">
       
-        <a id="/pt/docs/services/3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservices3ds-authenticationhtml" href="../../../../pt/docs/services/3ds-authentication.html">Autenticação 3DS</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticação 3DS realizada pela PayU</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/external-3ds-authentication.html">Autenticação 3DS externa</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -1642,7 +1673,7 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
 <li>Para pagamentos com tokens de cartão de crédito, inclua os parâmetros <code>transaction.creditCardTokenId</code> e <code>transaction.creditCard.securityCode</code> (se processar com código de segurança) substituindo as informações do cartão de crédito. Para obter mais informações, consulte <a href="../../../../pt/docs/integrations/api-integration/tokenization-api.html">API de tokenização</a>.</li>
 <li>Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. Depois que esse recurso for habilitado para você, envie no pedido a variável <code>creditCard.processWithoutCvv2</code> como <code>true</code> e remova a variável <code>creditCard.securityCode</code>.</li>
 <li>A variável <code>transaction.threeDomainSecure</code> não substitui as informações do cartão nem qualquer um dos campos obrigatórios da transação. Este objeto é adicional e não obrigatório.</li>
-<li>A variável <code>transaction.threeDomainSecure</code> corresponde a um cenário <em>Pass Through</em> onde a loja faz a autenticação por conta própria.</li>
+<li>A variável <code>transaction.threeDomainSecure</code> corresponde a um cenário <em>passthrough</em> onde a loja faz a autenticação por conta própria.</li>
 <li>No cartão Crédito Fácil Codensa, o número de parcelas aceitas é de 1 a 12, 18, 24, 36 e 48.</li>
 <li>No cartão Crédito Fácil Codensa, o pagador pode escolher qualquer um dos seguintes tipos de documentos para a variável <code>transaction.payer.dniType</code>:</li>
 </ul>
@@ -6352,9 +6383,9 @@ Este campo não é obrigatório para o <em>PSE Avanza</em>.
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-24 de junho de 2024:
+8 de julho de 2024:
 
- <b>Documentation updates (261c98ca4)</b>
+ <b>Documentation updates (a842982f1)</b>
 </div>
 </div>
 

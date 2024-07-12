@@ -9,7 +9,7 @@ description: >
   <ul>
   <li> <a href="http://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" target="_blank">Autenticación 3DS gestionada por PayU: </a> Deja que PayU gestione el proceso de autenticación por ti. 
   <li><a href="http://developers.payulatam.com/latam/es/docs/services/3dsauthentication/external-3ds-authentication.html" target="_blank">Autenticación 3DS externa: </a> Integra tu servicio 3DS existente con PayU.  
-  <li><a href="https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html" target="_blank">Autenticación 3DS de PaymentsOS: </a> Si utilizas PaymentsOS con PayU Hub.
+  <li><a href="https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html" target="_blank">Autenticación 3DS de PayU HUB: </a> Si tu integración es por medio del PayU HUB.
 weight: 20
 tags: ["parenttopic"]
 ---

@@ -34,23 +34,25 @@ To confirm the status of a transaction, you can use one of the following options
 This method lets you process the payments performed by your customers using credit or debit cards. For Argentina, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Using tokenized cards
-PayU supports payments with your tokenized card to let you make payments on a regular bases with a card stored in a token. A credit card token substitutes the sensitive information of a credit card and allows you to safely store it following PCI DSS (Payment Card Industry Data Security Standard) security standards.
+PayU supports payments with your tokenized card, enabling you to make regular payments with a card stored in a token. A credit card token replaces the sensitive information of a credit card, allowing you to store it safely in compliance with PCI DSS (Payment Card Industry Data Security Standard) security standards.
 
-PayU can process payments with the following services:
+PayU can process payments using the following services:
 
-* **PayU Tokenization**.<br>We provide our own service to tokenize your credit cards enabled under request. This service lets you tokenize the information of your customers' credit cards (regardless of their franchise) using our API or SDK integration.<br>For more information, refer to [PayU Tokenization]({{< ref "Tokenization.md" >}}).
+* **PayU Tokenization**.<br>We offer our own service to tokenize your credit cards upon request. This service allows you to tokenize your customers’ credit card information (regardless of their franchise) using our API or SDK integration. <br><br>For more information, refer to [PayU Tokenization]({{< ref "Tokenization.md" >}}).
 
-* **MasterCard Digital Enablement Service - MDES**.<br>Tokenization service provided by Mastercard. This service lets you tokenize the Primary Account Number of the MasterCard credit cards to let you use them to make regular payments or build one-click payments features.<br>For more information, refer to [MasterCard Digital Enablement Service (MDES)](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
+* **MasterCard Digital Enablement Service - MDES**.<br>A tokenization service provided by Mastercard. This service enables you to tokenize the Primary Account Number of MasterCard credit cards, allowing you to use them for regular payments or to build one-click payment features.<br><br>For more information, refer to [MasterCard Digital Enablement Service (MDES)](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
 
-* **Visa Token Service - VTS**.<br>Tokenization service provided by Visa. This service lets you store the sensitive information of the Visa credit cards in a token to let you use them to make regular payments or build one-click payments features.<br>For more information, refer to [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
+* **Visa Token Service - VTS**.<br>A tokenization service provided by Visa. This service allows you to store the sensitive information of Visa credit cards in a token, enabling you to use them for regular payments or to build one-click payment features.<br><br>For more information, refer to [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
 
-#### Pay with PayU tokens
-For payments with PayU credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+#### Pay with PayU Tokens
+To make payments using PayU credit card tokens, include the parameter `transaction.creditCardTokenId` in place of the credit card information. 
+
+The following example shows the body of the request at a high level for a one-step flow. It doesn't include request parameters.
 
 {{% alert title="Note" color="info"%}}
-To process without CVV is necessary to send the parameter `creditCard.processWithoutCvv2` as true in the payment request and remove the parameter `creditCard.securityCode`.<br>
-By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative.
-{{% /alert%}}
+To process a payment without the CVV, you must set the parameter `creditCard.processWithoutCvv2` to `true` in the payment request and omit the parameter `creditCard.securityCode`.<br>
+By default, processing credit cards without a security code is not enabled. To enable this feature, please contact your sales representative.
+{{% /alert %}}
 
 {{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -133,10 +135,12 @@ Request body:
 {{< /tab >}}
 {{< /tabs >}}
 
-#### Pay with MDES or VTS tokens
-If you are tokenizing your customer's credit cards using MDES or VTS, you can configure the information of the token in the parameter `transaction.networkToken` replacing the information of the credit card and send the parameter `creditCard.processWithoutCvv2` as true.<br>By default, processing credit cards without security code is not enabled, contact your Sales representative to enable it.
+#### Pay with MDES or VTS Tokens
+If you are tokenizing your customer's credit cards using MDES or VTS, you can configure the token information in the parameter `transaction.networkToken`, replacing the credit card information, and set the parameter `creditCard.processWithoutCvv2` to `true`.
 
-The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+By default, processing credit cards without a security code is not enabled. Please contact your sales representative to enable this feature.
+
+The following example demonstrates the body of the request at a high level for a one-step flow. It doesn't include request parameters.
 
 {{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -349,7 +353,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transactionResponse > authorizationCode | Alphanumeric | Max:12 | The authorization code returned by the financial network. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 

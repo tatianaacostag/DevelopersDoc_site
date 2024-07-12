@@ -1,6 +1,6 @@
 ---
-title: "3DS authentication"
-linkTitle: "3DS authentication"
+title: "3DS Authentication"
+linkTitle: "3DS Authentication"
 date: 2024-07-1T11:32:55-05:00
 description: >
   This section explains 3DS authentication and how to leverage it for enhanced security in your PayU payment processing.
@@ -9,7 +9,7 @@ description: >
   <ul>
   <li> <a href="http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" target="_blank">PayU-handled 3DS authentication: </a>Let PayU manage the authentication process for you. 
   <li><a href="http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/external-3ds-authentication.html" target="_blank">External 3DS authentication: </a>Integrate your existing 3DS service with PayU.  
-  <li><a href="https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html" target="_blank">PaymentsOS 3DS authentication: </a>If you are leveraging PaymentsOS with the PayU Hub.
+  <li><a href="https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html" target="_blank">PayU HUB 3DS authentication: </a>If you are integrated via the PayU HUB.
 weight: 20
 tags: ["parenttopic"]
 ---
@@ -45,4 +45,3 @@ PayU Latam offers 2 options to integrate 3DS authentication into your payment pr
 * <a href="http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/external-3ds-authentication.html" target="_blank">External 3DS authentication:</a> This method allows you to leverage your existing 3DS service provider. You'll handle the authentication process and send the response directly to PayU within the payment request.
 
 Choose the option that best suits your existing infrastructure and preferences.
-

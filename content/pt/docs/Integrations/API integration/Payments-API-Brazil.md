@@ -59,30 +59,32 @@ Você precisa enviar as seguintes informações:
 
 A descrição desses campos está na seção [Variáveis]({{< ref "#variables-for-request-and-response" >}}).
 
-### Usar cartões tokenizados {#using-tokenized-cards}
-A PayU suporta pagamentos recorrentes usando as informações do cartão de crédito armazenadas em um token. Este token substitui as informações sensíveis do cartão de crédito e permite salvá-lo para futuros pagamentos preservando os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard).
+### Usando cartões tokenizados
+A PayU suporta pagamentos com seu cartão tokenizado, permitindo que você faça pagamentos regulares com um cartão armazenado em um token. Um token de cartão de crédito substitui as informações sensíveis de um cartão de crédito, permitindo que você as armazene com segurança em conformidade com os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard).
 
-A PayU pode processar pagamentos através de: 
+A PayU pode processar pagamentos usando os seguintes serviços:
 
-* **Tokenização da PayU**.<br>Na PayU temos nosso próprio serviço para gerar os tokens dos cartões de crédito mediante um request. Este serviço permite obter os tokens com as informações do cartão de crédito de seus clientes (independentemente da bandeira) usando a integração API ou SDK da PayU.<br>Para mais informações, confira a [Tokenização de PayU]({{< ref "Tokenization.md" >}}).
+* **Tokenização PayU**.<br>Oferecemos nosso próprio serviço para tokenizar seus cartões de crédito mediante solicitação. Este serviço permite tokenizar as informações dos cartões de crédito de seus clientes (independentemente de sua bandeira) usando nossa integração API ou SDK.<br><br>Para mais informações, consulte [Tokenização PayU]({{< ref "Tokenization.md" >}}).
 
-* **MasterCard Digital Enablement Service - MDES**.<br>MDES é o serviço de tokenização da Mastercard. Este serviço permite que você salve os tokens no número da conta primária dos cartões de crédito MasterCard, e fazer pagamentos recorrentes ou implementar funcionalidades de pagamento com um clique.<br>Para mais informações, pode consultar a documentação oficial do [MasterCard Digital Enablement Service (MDES) em inglês](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
+* **MasterCard Digital Enablement Service - MDES**.<br>Um serviço de tokenização fornecido pela Mastercard. Este serviço permite tokenizar o Número da Conta Principal dos cartões de crédito MasterCard, permitindo que você os use para pagamentos regulares ou para criar recursos de pagamento com um clique.<br><br>Para mais informações, consulte [MasterCard Digital Enablement Service (MDES)](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
 
-* **Visa Token Service - VTS**.<br>VTS é o serviço de tokenização da Visa. Este serviço permite salvar de forma segura as informações sensíveis do cartão de crédito Visa para fazer pagamentos recorrentes ou implementar funcionalidades de pagamento com um clique.<br>Para mais informações, você pode consultar o [Visa Token Service (VTS) em inglês](https://usa.visa.com/products/visa-token-service.html).
+* **Visa Token Service - VTS**.<br>Um serviço de tokenização fornecido pela Visa. Este serviço permite armazenar as informações sensíveis dos cartões de crédito Visa em um token, permitindo que você os use para pagamentos regulares ou para criar recursos de pagamento com um clique.<br><br>Para mais informações, consulte [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
 
-#### Pagamentos com tokens de PayU {#pay-with-payu-tokens#pay-with-payu-tokens}
-Para pagamentos com tokens de cartão de crédito de PayU, inclua o parâmetro `transaction.creditCardTokenId` substituindo as informações do cartão de crédito. Na seguinte request temos um exemplo da solicitação de processamento em uma etapa. Os detalhes da solicitação não são mostrados. 
+#### Pagar com Tokens da PayU
+Para fazer pagamentos usando tokens de cartões de crédito da PayU, inclua o parâmetro `transaction.creditCardTokenId` no lugar das informações do cartão de crédito.
 
-{{% alert title="Observação" color="info"%}}
-Para processar sem CVV, é necessário enviar o parâmetro `creditCard.processWithoutCvv2` como true na solicitação de pagamento e remover o parâmetro `creditCard.securityCode`.<br>
-Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas.
-{{% /alert%}}
+O exemplo a seguir mostra o corpo da solicitação em um nível alto para um fluxo de um passo. Não inclui os parâmetros da solicitação.
+
+{{% alert title="Nota" color="info"%}}
+Para processar um pagamento sem o CVV, você deve definir o parâmetro `creditCard.processWithoutCvv2` como `true` na solicitação de pagamento e omitir o parâmetro `creditCard.securityCode`.<br>
+Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Para habilitar esse recurso, entre em contato com seu representante de vendas.
+{{% /alert %}}
 
 {{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Exemplo pedido:
+Corpo da solicitação:
 ```JSON
 {
    "language": "es",
@@ -121,7 +123,7 @@ Exemplo pedido:
 {{< tab tabNum="2" >}}
 <br>
 
-Exemplo pedido:
+Corpo da solicitação:
 ```XML
 <request>
    <language>es</language>
@@ -159,16 +161,18 @@ Exemplo pedido:
 {{< /tab >}}
 {{< /tabs >}}
 
-#### Pagamentos com tokens de MDES ou VTS {#pay-with-mdes-or-vts-tokens}
-Se você tiver tokens salvos nas bandeiras usando MDES ou VTS, é possível processar pagamentos diretamente na PayU. Você só precisa definir as informações do token no parâmetro `transaction.networkToken`, substituindo as informações do cartão de crédito e definindo o parâmetro  `creditCard.processWithoutCvv2` em true.<br>Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado, entre em contato com seu representante de vendas para habilitá-lo.
+#### Pagar com Tokens MDES ou VTS
+Se você estiver tokenizando os cartões de crédito de seus clientes usando MDES ou VTS, pode configurar as informações do token no parâmetro `transaction.networkToken`, substituindo as informações do cartão de crédito, e definir o parâmetro `creditCard.processWithoutCvv2` como `true`.
 
-Na seguinte request temos um exemplo da solicitação de processamento em uma etapa. Os detalhes da solicitação não são mostrados. 
+Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Entre em contato com seu representante de vendas para habilitar esse recurso.
+
+O exemplo a seguir demonstra o corpo da solicitação em um nível alto para um fluxo de um passo. Não inclui os parâmetros da solicitação. 
 
 {{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Exemplo pedido:
+Corpo da solicitação:
 ```JSON
 {
    "language": "es",
@@ -208,7 +212,7 @@ Exemplo pedido:
 {{< tab tabNum="2" >}}
 <br>
 
-Exemplo pedido:
+Corpo da solicitação:
 ```XML
 <request>
    <language>es</language>
@@ -248,7 +252,7 @@ Exemplo pedido:
 {{< /tabs >}}
 <br>
 
-Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros na seção [Variáveis]({{< ref "#variables-for-request-and-response" >}}) section.
+Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros na seção [Variáveis]({{< ref "#variables-for-request-and-response" >}}).
 
 ### Variáveis para pedido e resposta {#variables-for-request-and-response}
 

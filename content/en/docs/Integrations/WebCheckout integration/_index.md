@@ -1,6 +1,6 @@
 ---
-title: "WebCheckout integration"
-linkTitle: "WebCheckout integration"
+title: "WebCheckout Integration"
+linkTitle: "WebCheckout Integration"
 date: 2021-03-29T11:52:52-05:00
 description: >
   WebCheckout integration lets your customers select the items they want to purchase in your shop and perform the payment in our Payment gateway (WebCheckout).

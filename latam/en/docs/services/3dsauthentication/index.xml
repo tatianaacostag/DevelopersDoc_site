@@ -5,7 +5,6 @@
     <description>Recent content in 3DS authentication on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 16 Jul 2021 11:32:55 -0500</lastBuildDate>
     
 	  <atom:link href="/en/docs/services/3dsauthentication/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,7 +17,7 @@
     <item>
       <title>Docs: PayU-handled 3DS authentication</title>
       <link>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</link>
-      <pubDate>Fri, 16 Jul 2021 11:32:55 -0500</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</guid>
       <description>
@@ -26,6 +25,13 @@
         
         &lt;h2 id=&#34;how-to-use-payu-3ds-authentication&#34;&gt;How to use PayU 3DS authentication&lt;/h2&gt;
 &lt;p&gt;To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called &lt;code&gt;req3DSAuthentication&lt;/code&gt; in your payment requests via PayU&amp;rsquo;s Payments API.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.
+&lt;/div&gt;
+
 &lt;h3 id=&#34;the-req3dsauthentication-parameter&#34;&gt;The &lt;code&gt;req3DSAuthentication&lt;/code&gt; parameter&lt;/h3&gt;
 &lt;p&gt;This parameter allows you to control whether 3DS authentication is required for each transaction. It accepts two values:&lt;/p&gt;
 &lt;ul&gt;
@@ -148,7 +154,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;after-authentication&#34;&gt;After authentication&lt;/h2&gt;
-&lt;p&gt;Once the payer completes the 3DS authentication (if required), PayU will be notified. The transaction will then be:&lt;/p&gt;
+&lt;p&gt;Once the payer completes the 3DS authentication (if required), PayU will receive a notification. The transaction will then be:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Completed:&lt;/strong&gt; If the authentication is successful.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Declined:&lt;/strong&gt; If the authentication fails.&lt;/li&gt;
@@ -164,28 +170,29 @@
     </item>
     
     <item>
-      <title>Docs: 3DS authentication with Passthrough</title>
-      <link>/en/docs/services/3dsauthentication/passthrough.html</link>
-      <pubDate>Fri, 16 Jul 2021 11:32:55 -0500</pubDate>
+      <title>Docs: External 3DS authentication</title>
+      <link>/en/docs/services/3dsauthentication/external-3ds-authentication.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/en/docs/services/3dsauthentication/passthrough.html</guid>
+      <guid>/en/docs/services/3dsauthentication/external-3ds-authentication.html</guid>
       <description>
         
         
-        &lt;h2 id=&#34;leveraging-passthrough&#34;&gt;Leveraging Passthrough&lt;/h2&gt;
-&lt;p&gt;If you have your own 3DS Authentication service, you can integrate it seamlessly with PayU using Passthrough. This approach lets you manage the authentication process directly with your chosen Merchant Plug-in (MPI) or 3DS Server.&lt;/p&gt;
+        &lt;h2 id=&#34;leveraging-an-external-3ds-authentication&#34;&gt;Leveraging an external 3DS authentication&lt;/h2&gt;
+&lt;p&gt;If you have your own 3DS Authentication service, you can integrate it seamlessly with PayU, this approach is also known as &lt;strong&gt;passthrough&lt;/strong&gt; and lets you manage the authentication process directly with your chosen Merchant Plug-in (MPI) or 3DS Server.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Notes&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Passthrough is currently available for API integrations with the PayU Latam platform. Contact your sales representative for details.&lt;/li&gt;
+&lt;li&gt;3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Passthrough for external 3DS authenticators is currently available for API integrations with the PayU Latam platform. Contact your sales representative for details.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Currently supported networks:&lt;/strong&gt; Visa and Mastercard&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;how-passthrough-works&#34;&gt;How Passthrough works&lt;/h2&gt;
+&lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Utilize your existing 3DS service:&lt;/strong&gt; PayU integrates seamlessly with your preferred provider for a smooth workflow.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Handle authentication:&lt;/strong&gt; You manage the communication between your platform and the 3DS service.&lt;/li&gt;
@@ -200,10 +207,16 @@
 &lt;p&gt;For detailed instructions on including authentication response parameters in your request, refer to the documentation for your processing country:&lt;/p&gt;
 &lt;div style=&#34;display: flex;&#34;&gt;
   &lt;div style=&#34;float: left;width: 50%;text-align: center;&#34;&gt;
-    &lt;a href=&#39;../../../../en/docs/integrations/api-integration/payments-api-brazil.html#considerations&#39;&gt;&lt;img src=&#34;../../../../assets/Brasil.png&#34; width=&#34;10%&#34;/&gt;&lt;/a&gt;
+    &lt;a href=&#39;../../../../en/docs/integrations/api-integration/payments-api-argentina.html#considerations&#39;&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;20%&#34;/&gt;&lt;/a&gt;
   &lt;/div&gt;
   &lt;div style=&#34;float: left;width: 50%;text-align: center;&#34;&gt;
-    &lt;a href=&#39;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#considerations&#39;&gt;&lt;img src=&#34;../../../../assets/Colombia.png&#34; width=&#34;10%&#34;/&gt;&lt;/a&gt;
+    &lt;a href=&#39;../../../../en/docs/integrations/api-integration/payments-api-brazil.html#considerations&#39;&gt;&lt;img src=&#34;../../../../assets/Brasil.png&#34; width=&#34;20%&#34;/&gt;&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;float: left;width: 50%;text-align: center;&#34;&gt;
+    &lt;a href=&#39;../../../../en/docs/integrations/api-integration/payments-api-colombia.html#considerations&#39;&gt;&lt;img src=&#34;../../../../assets/Colombia.png&#34; width=&#34;20%&#34;/&gt;&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;float: left;width: 50%;text-align: center;&#34;&gt;
+    &lt;a href=&#39;../../../../en/docs/integrations/api-integration/payments-api-peru.html#considerations&#39;&gt;&lt;img src=&#34;../../../../assets/Peru.png&#34; width=&#34;20%&#34;/&gt;&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;br&gt;

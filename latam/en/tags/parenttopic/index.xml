@@ -101,7 +101,7 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
     <item>
       <title>Docs: 3DS authentication</title>
       <link>/en/docs/services/3dsauthentication.html</link>
-      <pubDate>Fri, 16 Jul 2021 11:32:55 -0500</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/en/docs/services/3dsauthentication.html</guid>
       <description>
@@ -109,32 +109,39 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
         
         &lt;h2 id=&#34;what-is-3ds&#34;&gt;What is 3DS?&lt;/h2&gt;
 &lt;p&gt;3DS (Three-Domain Secure) is a security protocol that adds an extra layer of verification during online payments. It works by securely communicating with the cardholder&amp;rsquo;s issuing bank to confirm their identity before authorizing the transaction. This significantly reduces the risk of unauthorized card usage and fraud.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.
+&lt;/div&gt;
+
 &lt;p&gt;The diagram below describes the protocol flow:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../../assets/3DS/3DS_whatis_en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/3DS/3DS_FLOW_EN.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Below, an example of the authentication process:&lt;/p&gt;
 &lt;div class=&#34;infographicDiv&#34; align=&#34;center&#34;&gt;
     &lt;div class=&#34;DivGray&#34; &gt;
-        &lt;p align=&#34;center&#34;&gt;John buys a cellphone through an e-commerce shop in his personal computer.&lt;/p&gt;
+        &lt;p align=&#34;center&#34;&gt;John purchases a cellphone from an e-commerce shop using his personal computer.&lt;/p&gt;
         &lt;div class=&#34;img1&#34;&gt;
             &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_1_en.png&#34;/&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&#34;DivWhite&#34; &gt;
-        &lt;p align=&#34;center&#34;&gt;The &lt;b&gt;cellphone shop, which is integrated to the PayU authentication service&lt;/b&gt;, wants to verify that John is the one making the purchase, so they send this transaction to authenticate.&lt;/p&gt;
+        &lt;p align=&#34;center&#34;&gt;&lt;b&gt;The cellphone shop, integrated with PayU&#39;s authentication service&lt;/b&gt;, wants to verify that John is making the purchase. They send the transaction for authentication.&lt;/p&gt;
         &lt;div class=&#34;img2&#34;&gt;
             &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_2_en.png&#34;/&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&#34;DivGray longDiv&#34; &gt;
-        &lt;p align=&#34;center&#34;&gt;Through 3DS communication, the issuer receives the request to authenticate the transaction and begins to review the shared data.&lt;/p&gt;
+        &lt;p align=&#34;center&#34;&gt;Through 3DS communication, the issuer receives the authentication request and begins reviewing the shared data.&lt;/p&gt;
         &lt;div class=&#34;img3&#34;&gt;
             &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_3_en.png&#34;/&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&#34;DivWhite Div4&#34; &gt;
-        &lt;p align=&#34;center&#34;&gt;The issuer authenticates the buyer that is making the transaction successfully. Since the risk was low, the authentication was silent without contacting John.&lt;/p&gt;
+        &lt;p align=&#34;center&#34;&gt;The issuer successfully authenticates John. As the risk was low, the authentication was silent without contacting him.&lt;/p&gt;
         &lt;hr style=&#34;border: 1px solid #ACC629;&#34;&gt;
-        &lt;p align=&#34;center&#34;&gt;When the transaction involves higher risk, John may receive a simple challenge, such as an OTP sent to his cellphone.&lt;/p&gt;
+        &lt;p align=&#34;center&#34;&gt;For higher-risk transactions, John may receive a simple challenge, such as an OTP sent to his phone.&lt;/p&gt;
         &lt;div class=&#34;img4&#34;&gt;
             &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_4_en.png&#34;/&gt;&lt;/p&gt;
         &lt;/div&gt;
@@ -149,23 +156,24 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
 &lt;h2 id=&#34;benefits-of-3ds-authentication&#34;&gt;Benefits of 3DS Authentication&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Increased security and reduced fraud:&lt;/strong&gt;&lt;br&gt;
-By verifying cardholder identity, 3DS helps prevent fraudulent transactions. Additionally, in case of a fraudulent chargeback, the liability often shifts to the issuing bank.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Increased security and reduced fraud:&lt;/strong&gt; By verifying cardholder identity, 3DS helps prevent fraudulent transactions. Additionally, in case of a fraudulent chargeback, the liability often shifts to the issuing bank.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Improved user experience:&lt;/strong&gt;&lt;br&gt;
-Modern 3DS implementations ensure a smooth authentication process with minimal disruption to the user&amp;rsquo;s shopping experience.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Improved user experience:&lt;/strong&gt; Modern 3DS implementations ensure a smooth authentication process with minimal disruption to the user&amp;rsquo;s shopping experience.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Regulatory compliance:&lt;/strong&gt;&lt;br&gt;
-3DS adheres to &lt;a href=&#34;https://www.emvco.com/emv-technologies/3d-secure/&#34; target=&#34;_blank&#34;&gt;EMVCo&lt;/a&gt; standards and regulations in many markets, ensuring compliance for merchants and payment processors.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Regulatory compliance:&lt;/strong&gt; 3DS adheres to &lt;a href=&#34;https://www.emvco.com/emv-technologies/3d-secure/&#34; target=&#34;_blank&#34;&gt;EMVCo&lt;/a&gt; standards and regulations in many markets, ensuring compliance for merchants and payment processors.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;leveraging-3ds-with-payu&#34;&gt;Leveraging 3DS with PayU&lt;/h2&gt;
-&lt;p&gt;PayU offers 2 options to integrate 3DS authentication into your payment processing:&lt;/p&gt;
+&lt;p&gt;PayU Latam offers 2 options to integrate 3DS authentication into your payment processing:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/passthrough.html&#34; target=&#34;_blank&#34;&gt;Passthrough:&lt;/a&gt;. This method allows you to leverage your existing 3DS service provider. You&amp;rsquo;ll handle the authentication process and send the response directly to PayU within the payment request.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;PayU-handled 3DS authentication:&lt;/a&gt; If you don&amp;rsquo;t have your own 3DS service, PayU can manage the authentication process on your behalf.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;PayU-handled 3DS authentication:&lt;/a&gt; If you don&amp;rsquo;t have your own 3DS service, PayU can manage the authentication process on your behalf.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/external-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;External 3DS authentication:&lt;/a&gt; This method allows you to leverage your existing 3DS service provider. You&amp;rsquo;ll handle the authentication process and send the response directly to PayU within the payment request.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Choose the option that best suits your existing infrastructure and preferences.&lt;/p&gt;
 

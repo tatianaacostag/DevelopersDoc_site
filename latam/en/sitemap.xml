@@ -642,13 +642,8 @@
                 href="/en/payu-module-documentation/getting-started/password-recovery.html"
                 />
   </url><url>
-    <loc>/en/docs/services/3dsauthentication.html</loc>
-    <lastmod>2024-06-13T16:24:33-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-argentina.html</loc>
-    <lastmod>2023-07-24T19:00:50-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -668,7 +663,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-brazil.html</loc>
-    <lastmod>2024-06-13T16:24:33-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -688,7 +683,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-chile.html</loc>
-    <lastmod>2024-06-24T16:33:19-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -708,7 +703,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-colombia.html</loc>
-    <lastmod>2024-05-15T16:16:48-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -768,7 +763,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/payments-api-peru.html</loc>
-    <lastmod>2024-04-25T14:12:17-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -847,6 +842,26 @@
                 href="/en/docs/integrations/webcheckout-integration/response-page.html"
                 />
   </url><url>
+    <loc>/en/docs/services/3dsauthentication.html</loc>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/services/3dsauthentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/3dsauthentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/3dsauthentication.html"
+                />
+  </url><url>
     <loc>/en/docs/integrations/api-integration.html</loc>
     <lastmod>2024-01-26T15:57:39-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -887,6 +902,26 @@
                 href="/en/deprecated/merchant-panel/account-activation.html"
                 />
   </url><url>
+    <loc>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</loc>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html"
+                />
+  </url><url>
     <loc>/en/deprecated/merchant-panel/checking-balance.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -907,10 +942,25 @@
                 href="/en/deprecated/merchant-panel/checking-balance.html"
                 />
   </url><url>
-    <loc>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</loc>
-    <lastmod>2024-06-24T16:33:19-05:00</lastmod>
+    <loc>/en/docs/services/3dsauthentication/external-3ds-authentication.html</loc>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/services/3dsauthentication/external-3ds-authentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/services/3dsauthentication/external-3ds-authentication.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/services/3dsauthentication/external-3ds-authentication.html"
+                />
   </url><url>
     <loc>/en/deprecated/merchant-panel/transfers-old.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
@@ -971,11 +1021,6 @@
                 hreflang="en"
                 href="/en/deprecated/merchant-panel/refunds-old.html"
                 />
-  </url><url>
-    <loc>/en/docs/services/3dsauthentication/passthrough.html</loc>
-    <lastmod>2024-06-13T16:24:33-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
     <loc>/en/deprecated/merchant-panel/disputes-old.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
@@ -1843,7 +1888,7 @@
                 />
   </url><url>
     <loc>/en/tags/subtopic.html</loc>
-    <lastmod>2024-06-24T16:33:19-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1863,7 +1908,7 @@
                 />
   </url><url>
     <loc>/en/tags/parenttopic.html</loc>
-    <lastmod>2024-06-13T16:24:33-05:00</lastmod>
+    <lastmod>2024-07-08T10:25:14-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link

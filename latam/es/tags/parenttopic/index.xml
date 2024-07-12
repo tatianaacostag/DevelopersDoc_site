@@ -5,7 +5,7 @@
     <description>Recent content in parenttopic on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 28 Sep 2021 13:38:28 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2024 11:32:55 -0500</lastBuildDate>
     
 	  <atom:link href="/es/tags/parenttopic/index.xml" rel="self" type="application/rss+xml" />
     
@@ -94,6 +94,89 @@ La persona encargada de la integración de tu tienda con nuestra pasarela de pag
 &lt;/ul&gt;
 &lt;h2 id=&#34;integration-components&#34;&gt;Componentes de integración&lt;/h2&gt;
 &lt;p&gt;Consulta las siguientes secciones para aprender a integrarte utilizando la Integración WebCheckout.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Autenticación 3DS</title>
+      <link>/es/docs/services/3dsauthentication.html</link>
+      <pubDate>Mon, 01 Jul 2024 11:32:55 -0500</pubDate>
+      
+      <guid>/es/docs/services/3dsauthentication.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;qué-es-3ds&#34;&gt;¿Qué es 3DS?&lt;/h2&gt;
+&lt;p&gt;3DS (Three-Domain Secure) es un protocolo de seguridad que añade una capa adicional de verificación durante los pagos en línea. Funciona comunicándose de forma segura con el banco emisor de la tarjeta del tarjetahabiente para confirmar su identidad antes de autorizar la transacción. Esto reduce significativamente el riesgo de uso no autorizado de tarjetas y fraude.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+La autenticación 3DS para PayU Latam solo está disponible para &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brasil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt; y &lt;strong&gt;Perú&lt;/strong&gt;.
+&lt;/div&gt;
+
+&lt;p&gt;El siguiente diagrama describe el flujo del protocolo:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/3DS/3DS_FLOW_ES.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A continuación, un ejemplo del proceso de autenticación:&lt;/p&gt;
+&lt;div class=&#34;infographicDiv&#34; align=&#34;center&#34;&gt;
+    &lt;div class=&#34;DivGray&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;John compra un celular en una tienda de comercio electrónico usando su computadora personal.&lt;/p&gt;
+        &lt;div class=&#34;img1&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_1_en.png&#34; alt=&#34;Paso 1&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;DivWhite&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;&lt;b&gt;La tienda de celulares, integrada con el servicio de autenticación de PayU&lt;/b&gt;, quiere verificar que John está realizando la compra. Envía la transacción para autenticación.&lt;/p&gt;
+        &lt;div class=&#34;img2&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_2_en.png&#34; alt=&#34;Paso 2&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;DivGray longDiv&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;A través de la comunicación 3DS, el emisor recibe la solicitud de autenticación y comienza a revisar los datos compartidos.&lt;/p&gt;
+        &lt;div class=&#34;img3&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_3_en.png&#34; alt=&#34;Paso 3&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;DivWhite Div4&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;El emisor autentica exitosamente a John. Como el riesgo era bajo, la autenticación fue silenciosa sin contactarlo.&lt;/p&gt;
+        &lt;hr style=&#34;border: 1px solid #ACC629;&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;Para transacciones de mayor riesgo, John puede recibir un desafío simple, como un OTP enviado a su teléfono.&lt;/p&gt;
+        &lt;div class=&#34;img4&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_4_en.png&#34; alt=&#34;Paso 4&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;DivGray lastDiv&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;John recibe la confirmación de su compra y posteriormente, recibe el celular en su casa.&lt;/p&gt;
+        &lt;div class=&#34;img5&#34;&gt;
+            &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_5_en.png&#34; alt=&#34;Paso 5&#34;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;beneficios-de-la-autenticación-3ds&#34;&gt;Beneficios de la autenticación 3DS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Mayor seguridad y menos fraude:&lt;/strong&gt; Al verificar la identidad del tarjetahabiente, 3DS ayuda a prevenir transacciones fraudulentas. Además, en caso de un contracargo fraudulento, la responsabilidad suele recaer en el banco emisor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Experiencia de usuario mejorada:&lt;/strong&gt; Las implementaciones modernas de 3DS garantizan un proceso de autenticación fluido con una interrupción mínima de la experiencia de compra del usuario.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cumplimiento normativo:&lt;/strong&gt; 3DS se adhiere a los estándares y regulaciones de &lt;a href=&#34;https://www.emvco.com/emv-technologies/3d-secure/&#34; target=&#34;_blank&#34;&gt;EMVCo&lt;/a&gt; en muchos mercados, lo que garantiza el cumplimiento de los comerciantes y procesadores de pago.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;aprovechamiento-de-3ds-con-payu&#34;&gt;Aprovechamiento de 3DS con PayU&lt;/h2&gt;
+&lt;p&gt;PayU Latam ofrece 2 opciones para integrar la autenticación 3DS en tu procesamiento de pagos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;Autenticación 3DS gestionada por PayU:&lt;/a&gt; Si no tienes tu propio servicio 3DS, PayU puede gestionar el proceso de autenticación por ti.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/es/docs/services/3dsauthentication/external-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;Autenticación 3DS externa:&lt;/a&gt; Este método te permite aprovechar tu proveedor de servicios 3DS existente. Tú te encargarás del proceso de autenticación y enviarás la respuesta directamente a PayU dentro de la solicitud de pago.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Elige la opción que mejor se adapte a tu infraestructura y preferencias existentes.&lt;/p&gt;
 
       </description>
     </item>

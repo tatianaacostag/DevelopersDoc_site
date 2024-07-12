@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-05-15T16:16:48-05:00" />
+<meta property="article:modified_time" content="2024-07-08T10:25:14-05:00" />
 
 <meta itemprop="name" content="API de pagamentos - Brasil">
 <meta itemprop="description" content="A API de pagamentos do Brasil permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-05-15T16:16:48-05:00" />
-<meta itemprop="wordCount" content="13049">
+<meta itemprop="dateModified" content="2024-07-08T10:25:14-05:00" />
+<meta itemprop="wordCount" content="13061">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de pagamentos - Brasil"/>
 <meta name="twitter:description" content="A API de pagamentos do Brasil permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.26a1506d907895ccaec472fc07da6f34040557dafc6fa82ac2f22836408ee16dbe6409bf15a3425b1ca44f75f7cee6f24b0a653db92a8574b7fa2ab68967661c.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.95cb6427d2b0693eac0b4b8ae5988485accbe67e453729653df0169488e31fae99fc853a1322e2cd68d6a9facf7a9064a891b1da4e7d511644ae01781a62ddb5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -272,8 +272,39 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/services/3dsauthentication.html" href="../../../../pt/docs/services/3dsauthentication.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Autenticação 3DS</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsservices3dsauthenticationhtml">
       
-        <a id="/pt/docs/services/3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservices3ds-authenticationhtml" href="../../../../pt/docs/services/3ds-authentication.html">Autenticação 3DS</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticação 3DS realizada pela PayU</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/external-3ds-authentication.html">Autenticação 3DS externa</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -1247,7 +1278,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados de autenticação.</td>
 <td style="text-align:center">Sim</td>
@@ -1268,14 +1299,14 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados da transação.</td>
 <td style="text-align:center">Sim</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados da ordem.</td>
 <td style="text-align:center">Sim</td>
@@ -1331,7 +1362,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Endereço para envio.</td>
 <td style="text-align:center">Não</td>
@@ -1387,7 +1418,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do comprador.</td>
 <td style="text-align:center">Sim</td>
@@ -1485,7 +1516,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Objeto</td>
 <td>64</td>
 <td>Valor da ordem ou seus valores associados.</td>
 <td style="text-align:center">Sim</td>
@@ -1660,7 +1691,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; creditCard</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do cartão de crédito. Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de crédito não tokenizado.</td>
 <td style="text-align:center">Não</td>
@@ -1702,7 +1733,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do pagador.</td>
 <td style="text-align:center">Não</td>
@@ -1730,7 +1761,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Endereço de cobrança.</td>
 <td style="text-align:center">Não</td>
@@ -1919,7 +1950,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parâmetros ou dados adicionais associados a pedido. O tamanho máximo de cada nome <em>extraParameters</em> é de 64 caracteres.<br>Em JSON, o parâmetro <em>extraParameters</em> segue esta estrutura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;INSTALLMENTS_NUMBER&quot;: 1</code><br><code>}</code><br><br>Em XML, o parâmetro <em>extraParameters</em> segue esta estrutura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;INSTALLMENTS_NUMBER&lt;/string&gt;</code><br>  <code>&lt;string&gt;1&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 <td style="text-align:center">Não</td>
@@ -1933,7 +1964,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; threeDomainSecure</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém as informações do 3DS 2.0.</td>
 <td style="text-align:center">Não</td>
@@ -2004,7 +2035,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Os dados de resposta.</td>
 </tr>
@@ -2070,7 +2101,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parâmetros ou dados adicionais associados à resposta. <br>Em JSON, o parâmetro <em>extraParameters</em> segue esta estrutura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;BANK_REFERENCED_CODE&quot;: &quot;CREDIT&quot;</code><br><code>}</code><br><br>Em XML, o parâmetro <em>extraParameters</em> segue esta estrutura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;BANK_REFERENCED_CODE&lt;/string&gt;</code><br>  <code>&lt;string&gt;CREDIT&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
@@ -2086,7 +2117,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 <li>Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. Depois que esse recurso for habilitado para você, envie no pedido a variável <code>creditCard.processWithoutCvv2</code> como true e remova a variável <code>creditCard.securityCode</code>.<br>Ter esse recurso habilitado é obrigatório ao usar tokens de cartão de crédito gerados usando MDES ou VTSTer esse recurso habilitado é obrigatório ao usar tokens de cartão de crédito gerados usando MDES ou VTS.</li>
 <li>O parâmetro extra  <code>CIELO_TID</code> identifica a transação. Este parâmetro é necessário quando você deseja processar cancelamentos.</li>
 <li>A variável <code>transaction.threeDomainSecure</code> não substitui as informações do cartão nem qualquer um dos campos obrigatórios da transação. Este objeto é adicional e não obrigatório.</li>
-<li>A variável <code>transaction.threeDomainSecure</code> corresponde a um cenário <em>Pass Through</em> onde a loja faz a autenticação por conta própria.</li>
+<li>A variável <code>transaction.threeDomainSecure</code> corresponde a um cenário <em>passthrough</em> onde a loja faz a autenticação por conta própria.</li>
 </ul>
 <h3 id="authorization">Autorização</h3>
 <p>Use este método para executar a etapa <strong>Autorização</strong> de um fluxo de duas etapas. Nesta etapa, você autoriza o pagamento, mas o valor não é debitado até você <a href="#capture">capturar</a> os fundos.<br>A seguir estão os corpos de pedido e resposta para este tipo de transação.</p>
@@ -6357,9 +6388,9 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-15 de maio de 2024:
+8 de julho de 2024:
 
- <b>Documentation updates (f2a660f2e)</b>
+ <b>Documentation updates (a842982f1)</b>
 </div>
 </div>
 

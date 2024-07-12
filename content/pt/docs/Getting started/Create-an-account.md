@@ -1,55 +1,45 @@
 ---
-title: "Crie uma conta PayU"
-linkTitle: "Crie uma conta PayU"
+title: "Criando uma Conta PayU"
+linkTitle: "Criando uma Conta PayU"
 date: 2021-04-06T11:40:29-05:00
-Description: >
-  Abra sua conta gratuitamente e venda online.
+description: >
+  Este guia mostra como criar uma nova conta PayU.
 weight: 10
 ---
-The first step to start using PayU services is create an account. This topic shows you the benefits of choosing PayU to receive payments online.
 
-## Benefícios PayU {#payu-benefits}
-* Taxa competitiva
-* Vários métodos de pagamento
-* Vender com ou sem um site
-* Segurança
+## Criando uma Conta
+O registro, validação e ativação da conta seguem as etapas descritas abaixo:
 
-## Como criar uma conta? {#how-to-create-an-account}
-Seja qual for o tamanho da sua empresa, o procedimento para criar uma conta é o seguinte:
+### 1. Contate-nos
+Para iniciar o processo de registro, ligue para nós ou visite o site disponível para o seu país e complete os formulários:
 
-1. Entre em contato conosco.<br>
-Para integrar os serviços e ferramentas PayU à sua loja e começar a receber pagamentos online, contacte-nos pelo [nosso site](https://www.payu.com).<br>
-<br>
-Se preferir, ligue para:
-<br>
-* <img src="/assets/Argentina.png" width="25px"/> (+54 11) 5984-2132
-* <img src="/assets/Brasil.png" width="25px"/> (+55 11) 4130-5311
-* <img src="/assets/Chile.png" width="25px"/> (+56 2) 258-13949
-* <img src="/assets/Colombia.png" width="25px"/> (+57) 601 654-0721
-* <img src="/assets/Mexico.png" width="25px"/> (+52 55) 474-11439
-* <img src="/assets/Panama.png" width="25px"/> (+50 7) 836-5577
-* <img src="/assets/Peru.png" width="25px"/> (+51 1) 708-5381
-<br>
-{{% alert title="Observação" color="info"%}}
-Se você está na Colômbia e vende menos de 100 milhões de COP por mês, você pode criar sua conta usando este [link](https://colombia.payu.com/abre-tu-cuenta/)
-{{% /alert %}}
-Consulte nossos termos e condições [aqui](https://brazil.payu.com/wp-content/uploads/sites/3/2020/04/termos-e-condicoes-gerais-de-uso-para-comercios-payu.pdf).
+| País | Site | Número de Telefone |
+|---|---|---|
+| <img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina | <a href="https://argentina.payu.com/en/contact-us" target="_blank">argentina.payu.com/en/contact-us</a> | (+54 11) 5984-2132 |
+| <img src="/assets/Brasil.png" width="25px"/> &nbsp;Brasil | <a href="https://brazil.payu.com/contato" target="_blank">brazil.payu.com/contato</a> | (+55 11) 4130-5311 |
+| <img src="/assets/Chile.png" width="25px"/> &nbsp;Chile | <a href="https://chile.payu.com/en/contact-us/" target="_blank">chile.payu.com/en/contact-us/</a> | (+56 2) 258-13949 |
+| <img src="/assets/Colombia.png" width="25px"/> &nbsp;Colômbia | <li> Pequenas empresas: <p><a href="https://creatucuenta.payu.com" target="_blank">creatucuenta.payu.com</a> <li> Grandes empresas: <p><a href="https://colombia.payu.com/en/contact-us" target="_blank">colombia.payu.com/en/contact-us</a> | (+57) 601 654-0721 |
+| <img src="/assets/Mexico.png" width="25px"/> &nbsp;México | <a href="https://mexico.payu.com/en/contact-us" target="_blank">mexico.payu.com/en/contact-us/</a> | (+52 55) 474-11439 |
+| <img src="/assets/Panama.png" width="25px"/> &nbsp;Panamá | <a href="https://centroamerica.payu.com/en/contact-us" target="_blank">centroamerica.payu.com/en/contact-us/</a> | (+50 7) 836-5577 |
+| <img src="/assets/Peru.png" width="25px"/> &nbsp;Peru | <li> Pequenas empresas: <p><a href="https://peru.creatucuenta.payu.com" target="_blank">peru.creatucuenta.payu.com</a> <li> Grandes empresas: <p><a href="https://peru.payu.com/en/contact-us" target="_blank">peru.payu.com/en/contact-us</a> | (+57) 601 654-0721 |
 
-2. Validação de sua conta.<br>
-Assim que recebermos sua solicitação de conta, nossos agentes validarão seu risco e classificação bancária.
-<br>
-Consulte as atividades restritas ou proibidas [aqui](https://brazil.payu.com/wp-content/uploads/sites/3/2020/04/Anexo-%E2%80%93-Atividades-Restritas-ou-Proibidas.pdf).
+[Revise nossos Termos e Condições](https://legal.payulatam.com/EN/terms_conditions_merchants.html).
 
-3. Ative sua conta.<br>
-Após abrir sua conta PayU, você receberá um e-mail para confirmar seu endereço e entrar no Módulo PayU pela primeira vez. Sua conta já estará ativada para receber pagamentos na Internet com todos os métodos de pagamento disponíveis.
-<br><br>
-Para ativar sua conta, você deve:
-- Já ter preenchido a documentação e o cadastro no módulo administrativo.
-- Concluir uma transação bem-sucedida.
+### 2. Validação da Sua Conta
+Uma vez que recebemos sua solicitação de conta, nossos agentes validarão seu risco e pontuação bancária.
 
-## O que acontece agora? {#whats-next}
-Depois de criar uma conta, você e seus clientes recebem uma notificação para cada pagamento feito. O dinheiro é então creditado na sua conta PayU.
+[Revise as Atividades Proibidas ou Restringidas](https://payu.in/BannedRestrictedCategorylist).
 
-De acordo com as necessidades do seu negócio, selecione como integrar sua loja com os serviços e ferramentas PayU. Para obter mais informações, consulte [Integrações]({{< ref "integrations" >}}).
+### 3. Ative sua Conta
+Após completar o registro e receber a validação da PayU, você receberá um e-mail para confirmar sua solicitação e acessar seu Painel de Gerenciamento pela primeira vez.
 
-Agora é só transferir o saldo de sua conta PayU para sua conta bancária sempre que quiser.
+Para finalizar a ativação da sua conta:
+- Complete a documentação e o registro no Painel de Gerenciamento.
+- Realize uma transação de pagamento bem-sucedida.
+
+## Próximos Passos
+Com sua conta PayU ativada:
+* **Receba notificações de pagamento:** Você e seus clientes serão notificados para cada transação concluída.
+* **Gerencie seus fundos:** O dinheiro de suas vendas é depositado em sua conta PayU.
+* **Integre a PayU:** Escolha o método de integração apropriado para conectar sua loja online com os serviços e ferramentas da PayU. Consulte a seção de [Integrações]({{< ref "integrations" >}}) para obter instruções detalhadas.
+* **Transfira fundos:** Transfira facilmente o saldo da sua conta PayU para sua conta bancária.

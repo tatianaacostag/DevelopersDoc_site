@@ -1,6 +1,6 @@
 ---
-title: "Queries for transactions"
-linkTitle: "Queries for transactions"
+title: "Queries for Transactions"
+linkTitle: "Queries for Transactions"
 date: 2021-03-26T09:12:41-05:00
 description: >
   Using the Queries feature, you can check the status of the placed orders along with their transactions. 

@@ -33,6 +33,201 @@ Para confirmar o status de uma transação, você pode usar:
 ## Enviar transação com cartão de crédito ou débito {#submit-transaction-with-credit-or-debit-card}
 Este método permite processar os pagamentos efetuados pelos seus clientes com cartões de crédito ou débito. Para a Argentina, você pode executar os fluxos de duas etapas, você pode executar os fluxos de duas etapas (**Autorização**, **Captura**) e fluxos de uma etapa (**Cobrança**). Para obter mais informações, consulte [Fluxos de pagamento]({{< ref "payments.md#payment-flows" >}}).
 
+### Usando cartões tokenizados
+A PayU suporta pagamentos com seu cartão tokenizado, permitindo que você faça pagamentos regulares com um cartão armazenado em um token. Um token de cartão de crédito substitui as informações sensíveis de um cartão de crédito, permitindo que você as armazene com segurança em conformidade com os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard).
+
+A PayU pode processar pagamentos usando os seguintes serviços:
+
+* **Tokenização PayU**.<br>Oferecemos nosso próprio serviço para tokenizar seus cartões de crédito mediante solicitação. Este serviço permite tokenizar as informações dos cartões de crédito de seus clientes (independentemente de sua bandeira) usando nossa integração API ou SDK.<br><br>Para mais informações, consulte [Tokenização PayU]({{< ref "Tokenization.md" >}}).
+
+* **MasterCard Digital Enablement Service - MDES**.<br>Um serviço de tokenização fornecido pela Mastercard. Este serviço permite tokenizar o Número da Conta Principal dos cartões de crédito MasterCard, permitindo que você os use para pagamentos regulares ou para criar recursos de pagamento com um clique.<br><br>Para mais informações, consulte [MasterCard Digital Enablement Service (MDES)](https://developer.mastercard.com/mdes-digital-enablement/documentation/).
+
+* **Visa Token Service - VTS**.<br>Um serviço de tokenização fornecido pela Visa. Este serviço permite armazenar as informações sensíveis dos cartões de crédito Visa em um token, permitindo que você os use para pagamentos regulares ou para criar recursos de pagamento com um clique.<br><br>Para mais informações, consulte [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
+
+#### Pagar com Tokens da PayU
+Para fazer pagamentos usando tokens de cartões de crédito da PayU, inclua o parâmetro `transaction.creditCardTokenId` no lugar das informações do cartão de crédito.
+
+O exemplo a seguir mostra o corpo da solicitação em um nível alto para um fluxo de um passo. Não inclui os parâmetros da solicitação.
+
+{{% alert title="Nota" color="info"%}}
+Para processar um pagamento sem o CVV, você deve definir o parâmetro `creditCard.processWithoutCvv2` como `true` na solicitação de pagamento e omitir o parâmetro `creditCard.securityCode`.<br>
+Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Para habilitar esse recurso, entre em contato com seu representante de vendas.
+{{% /alert %}}
+
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Corpo da solicitação:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "Information of the order":""
+      },
+      "payer": {
+         "Information of the payer":""
+      },
+      "creditCardTokenId": "46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3",
+      "creditCard": {
+         "securityCode": "123"
+      },
+      "extraParameters": {
+         "Extra parameters of the request":""
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "Card franchise", 
+      "paymentCountry": "Processing country",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": true
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Corpo da solicitação:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <!-- Information of the order -->
+      </order>
+      <payer>
+         <!-- Information of the payer -->
+      </payer>
+      <creditCardTokenId>46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3</creditCardTokenId>
+      <creditCard>
+         <securityCode>321</securityCode>
+      </creditCard>
+      <extraParameters>
+         <!-- Extra parameters of the request -->
+      </extraParameters>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>{Card franchise}</paymentMethod>
+      <paymentCountry>{Processing country}</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+#### Pagar com Tokens MDES ou VTS
+Se você estiver tokenizando os cartões de crédito de seus clientes usando MDES ou VTS, pode configurar as informações do token no parâmetro `transaction.networkToken`, substituindo as informações do cartão de crédito, e definir o parâmetro `creditCard.processWithoutCvv2` como `true`.
+
+Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Entre em contato com seu representante de vendas para habilitar esse recurso.
+
+O exemplo a seguir demonstra o corpo da solicitação em um nível alto para um fluxo de um passo. Não inclui os parâmetros da solicitação.
+
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Corpo da solicitação:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "Information of the order":""
+      },
+      "payer": {
+         "Information of the payer":""
+      },
+      "networkToken": {
+          "tokenPan": "4097440000000004",
+          "cryptogram": "11223344556677889900112233445566778899",
+          "expiry": "2028/01"
+      },
+      "extraParameters": {
+         "Extra parameters of the request":""
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "Card franchise", 
+      "paymentCountry": "Processing country",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": true
+}
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Corpo da solicitação:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <!-- Information of the order -->
+      </order>
+      <payer>
+         <!-- Information of the payer -->
+      </payer>
+      <networkToken>
+         <tokenPan>4097440000000004</tokenPan>
+         <cryptogram>11223344556677889900112233445566778899</cryptogram>
+         <expiry>2028/01</expiry>
+      </networkToken>
+      <extraParameters>
+         <!-- Extra parameters of the request -->
+      </extraParameters>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>{Card franchise}</paymentMethod>
+      <paymentCountry>{Processing country}</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+
+```
+{{< /tab >}}
+{{< /tabs >}}
+<br>
+
+Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros na seção [Variáveis]({{< ref "#variables-for-request-and-response" >}}).
+
 ### Variáveis para pedido e resposta {#variables-for-request-and-response}
 
 <details>

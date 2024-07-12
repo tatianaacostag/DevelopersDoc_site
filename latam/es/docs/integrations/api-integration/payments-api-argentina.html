@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-argentina.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-07-08T10:25:14-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Argentina">
 <meta itemprop="description" content="El API de Pagos de Argentina le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="5730">
+<meta itemprop="dateModified" content="2024-07-08T10:25:14-05:00" />
+<meta itemprop="wordCount" content="5973">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Argentina"/>
 <meta name="twitter:description" content="El API de Pagos de Argentina le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.26a1506d907895ccaec472fc07da6f34040557dafc6fa82ac2f22836408ee16dbe6409bf15a3425b1ca44f75f7cee6f24b0a653db92a8574b7fa2ab68967661c.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.95cb6427d2b0693eac0b4b8ae5988485accbe67e453729653df0169488e31fae99fc853a1322e2cd68d6a9facf7a9064a891b1da4e7d511644ae01781a62ddb5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -272,8 +272,39 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/services/3dsauthentication.html" href="../../../../es/docs/services/3dsauthentication.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Autenticación 3DS</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsservices3dsauthenticationhtml">
       
-        <a id="/es/docs/services/3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservices3ds-authenticationhtml" href="../../../../es/docs/services/3ds-authentication.html">Autenticación 3DS</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticación 3DS gestionada por PayU</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../es/docs/services/3dsauthentication/external-3ds-authentication.html">Autenticación 3DS externa</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -906,7 +937,7 @@
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de autenticación.</td>
 <td style="text-align:center">Sí</td>
@@ -927,14 +958,14 @@
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de la transacción.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de la orden.</td>
 <td style="text-align:center">Sí</td>
@@ -990,7 +1021,7 @@
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de envío.</td>
 <td style="text-align:center">No</td>
@@ -1046,7 +1077,7 @@
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del comprador.</td>
 <td style="text-align:center">Sí</td>
@@ -1137,7 +1168,7 @@
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Objeto</td>
 <td>64</td>
 <td>Monto de la orden y sus valores asociados.</td>
 <td style="text-align:center">Sí</td>
@@ -1214,7 +1245,7 @@
 </tr>
 <tr>
 <td>transaction &gt; creditCard</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información de la tarjeta de crédito. Si procesas utilizando tarjeta débito, no envíes este parámetro.<br>Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada.</td>
 <td style="text-align:center">No</td>
@@ -1256,7 +1287,7 @@
 </tr>
 <tr>
 <td>transaction &gt; debitCard</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información de la tarjeta débito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta debito.</td>
 <td style="text-align:center">No</td>
@@ -1291,7 +1322,7 @@
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del pagador. Debido a regulaciones de impuestos, es obligatorio enviar los parámetros <code>payer.billingAddress.state</code> y <code>payer.dnitype</code>.</td>
 <td style="text-align:center">Sí</td>
@@ -1319,7 +1350,7 @@
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de facturación.</td>
 <td style="text-align:center">Sí</td>
@@ -1452,9 +1483,51 @@
 </tr>
 <tr>
 <td>transaction &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de <em>extraParameters</em> es 64 caracteres.<br>En JSON, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;INSTALLMENTS_NUMBER&quot;: 1</code><br><code>}</code><br><br>En XML, the <em>extraParameters</em> sigue esta estructura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;INSTALLMENTS_NUMBER&lt;/string&gt;</code><br>  <code>&lt;string&gt;1&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure</td>
+<td>Objeto</td>
+<td></td>
+<td>Este objeto contiene la información de 3DS 2.0.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; embedded</td>
+<td>Booleano</td>
+<td></td>
+<td>Asigna <code>true</code> si quieres utilizar un MPI embebido para el proceso de Autorización. Por defecto, este valor está asignado como <code>false</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; eci</td>
+<td>Numérico</td>
+<td>Máx:2</td>
+<td>Indicador de Comercio Electrónico.<br>Valor retornado por los servidores de directorio indicando el intento de autenticación.<br>Este parámetro es obligatorio cuando <code>transaction.threeDomainSecure.embedded</code> es <code>false</code> y <code>transaction.threeDomainSecure.xid</code> tiene un valor configurado.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; cavv</td>
+<td>Alfanumérico</td>
+<td>Máx:28</td>
+<td>Valor de verificación de autenticación del titular de la tarjeta (Cardholder Authentication Verification Value).<br>Código del criptograma utilizado en la autenticación de la transacción codificado en Base 64.<br>Dependiendo de los códigos ECI específicos establecidos por la red, este valor puede ser opcional.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; xid</td>
+<td>Alfanumérico</td>
+<td>Máx:28</td>
+<td>Identificador de la transacción enviado por el MPI codificado en Base 64.<br>Este parámetro es obligatorio cuando <code>transaction.threeDomainSecure.embedded</code> is <code>false</code> y <code>transaction.threeDomainSecure.eci</code> tiene un valor configurado.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; threeDomainSecure &gt; directoryServerTransactionId</td>
+<td>Alfanumérico</td>
+<td>Máx:36</td>
+<td>Identificador de la transacción generador por el servidor de directorio durante la autenticación.</td>
 <td style="text-align:center">No</td>
 </tr>
 </tbody>
@@ -1488,7 +1561,7 @@
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Datos de la respuesta.</td>
 </tr>
@@ -1554,7 +1627,7 @@
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parámetros adicionales o datos asociados con la respuesta. <br>En JSON, el parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;BANK_REFERENCED_CODE&quot;: &quot;CREDIT&quot;</code><br><code>}</code><br><br>En XML, el parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;BANK_REFERENCED_CODE&lt;/string&gt;</code><br>  <code>&lt;string&gt;CREDIT&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
@@ -1569,6 +1642,8 @@
 <li>Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable <code>creditCard.processWithoutCvv2</code> con valor true y elimina la variable <code>creditCard.securityCode</code>.</li>
 <li>Cuando utilices tarjetas de crédito, ten en cuentas las consideraciones debido a regulaciones argentinas para la página de checkout.</li>
 <li>Debido a regulaciones de impuestos, es obligatorio enviar los parámetros <code>payer.billingAddress.state</code> utilizando el formato <a href="https://www.iso.org/obp/ui/#iso:code:3166:AR">ISO 3166-2 oficial de Argentina</a> y <code>payer.dnitype</code>.</li>
+<li>La variable <code>transaction.threeDomainSecure</code> no reemplaza la información de la tarjeta o ninguno de los campos obligatorios de la transacción. Este objeto es adicional y no es obligatorio.</li>
+<li>La variable <code>transaction.threeDomainSecure</code> corresponde a un escenario <em>Pass Through</em> donde el comercio realiza la autenticación por su cuenta.</li>
 </ul>
 <h3 id="authorization">Autorización</h3>
 <p>Utiliza este método para realizar el paso de <strong>Autorización</strong> del flujo de dos pasos. En este paso, autorizas el pago pero el monto no se debita hasta que <a href="#capture">captures</a> los fondos.<br>Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.</p>
@@ -3726,9 +3801,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-24 de junio de 2022:
+8 de julio de 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation updates (a842982f1)</b>
 </div>
 </div>
 

@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-05-15T16:16:48-05:00" />
+<meta property="article:modified_time" content="2024-07-08T10:25:14-05:00" />
 
 <meta itemprop="name" content="Payments API - Colombia">
 <meta itemprop="description" content="Payments API Colombia lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-05-15T16:16:48-05:00" />
-<meta itemprop="wordCount" content="10957">
+<meta itemprop="dateModified" content="2024-07-08T10:25:14-05:00" />
+<meta itemprop="wordCount" content="10956">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Colombia"/>
 <meta name="twitter:description" content="Payments API Colombia lets your shop process different transaction types with multiple payment methods.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.26a1506d907895ccaec472fc07da6f34040557dafc6fa82ac2f22836408ee16dbe6409bf15a3425b1ca44f75f7cee6f24b0a653db92a8574b7fa2ab68967661c.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.95cb6427d2b0693eac0b4b8ae5988485accbe67e453729653df0169488e31fae99fc853a1322e2cd68d6a9facf7a9064a891b1da4e7d511644ae01781a62ddb5.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -298,7 +298,7 @@
       
       
       
-        <a id="/en/docs/services/3dsauthentication/passthrough.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpassthroughhtml" href="../../../../en/docs/services/3dsauthentication/passthrough.html">Passthrough</a>
+        <a id="/en/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/external-3ds-authentication.html">External 3DS authentication</a>
       
       
     </li>
@@ -1686,7 +1686,7 @@ Two-step flow is available under request, contact your sales representative.
 <li>For payments with credit card tokens, include the parameters <code>transaction.creditCardTokenId</code> and <code>transaction.creditCard.securityCode</code> (if you process with security code) replacing the information of the credit card. For more information, refer to <a href="../../../../en/docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</li>
 <li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
 <li>The variable <code>transaction.threeDomainSecure</code> does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.</li>
-<li>The variable <code>transaction.threeDomainSecure</code> corresponds to a <em>Pass Through</em> scenario where the commerce performs the authentication by their own.</li>
+<li>The variable <code>transaction.threeDomainSecure</code> corresponds to a <em>passthrough</em> scenario where the commerce performs the authentication by their own.</li>
 <li>For Crédito Fácil Codensa card, the number of installments supported are 1 to 12, 18, 24, 36 and 48.</li>
 <li>For Crédito Fácil Codensa card, the payer can choose any of the following document types for the variable <code>transaction.payer.dniType</code>:</li>
 </ul>
@@ -6395,9 +6395,9 @@ This field is not mandatory for <em>PSE Avanza</em>.
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-May 15, 2024:
+July 8, 2024:
 
- <b>Documentation updates (f2a660f2e)</b>
+ <b>Documentation updates (a842982f1)</b>
 </div>
 </div>
 
