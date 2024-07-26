@@ -1,6 +1,6 @@
 ---
-title: "Autenticación 3DS gestionada por PayU"
-linkTitle: "Autenticación 3DS gestionada por PayU"
+title: "Autenticación 3DS Gestionada por PayU"
+linkTitle: "Autenticación 3DS Gestionada por PayU"
 date: 2024-07-01T11:32:55-05:00
 description: >
   La autenticación 3DS gestionada por PayU elimina la necesidad de que administres el proceso de integración 3DS. PayU se encarga de todo, desde la comunicación con el banco emisor hasta la gestión del flujo de autenticación.
@@ -8,8 +8,7 @@ weight: 21
 tags: ["subtopic"]
 ---
 
-## Cómo usar la autenticación 3DS de PayU
-
+## Usar la Autenticación 3DS de PayU
 Para utilizar la autenticación 3DS, los comercios deben estar registrados en este servicio con PayU. Una vez registrado, puedes incluir un nuevo parámetro llamado `req3DSAuthentication` en tus solicitudes de pago a través de la API de Pagos de PayU.
 
 {{% alert title="Nota" color="info"%}}
@@ -25,7 +24,7 @@ Este parámetro te permite controlar si la autenticación 3DS es necesaria para 
 
 **Si no se incluye `req3DSAuthentication`,** PayU decidirá si realiza la autenticación 3DS en función de su propia evaluación de riesgos.
 
-#### Cuerpo de la solicitud:
+**Ejemplo de una solicitud:**
 
 En el siguiente ejemplo de solicitud, `req3DSAuthentication` se establece en `true`:
 
@@ -104,13 +103,12 @@ En el siguiente ejemplo de solicitud, `req3DSAuthentication` se establece en `tr
 }
 ```
 
-## Respuesta de la transacción y flujo de autenticación
-
+## Respuesta de la Transacción y Flujo de Autenticación
 Una vez que envíes una solicitud de pago, recibirás una respuesta con un estado `"PENDING"` para la transacción. Esta respuesta también incluirá un campo dentro de `extraParameters` llamado `THREEDS_AUTH_REDIRECT_URL`.
 
 * **`THREEDS_AUTH_REDIRECT_URL`:** Esta URL se debe utilizar para redirigir al pagador para que complete el proceso de autenticación 3DS. El proceso de autenticación puede incluir desafíos como ingresar una contraseña de uso único (OTP) recibida en su teléfono.
 
-### Respuesta
+**Ejemplo de una respuesta**
 
 En el siguiente ejemplo de respuesta, el comercio redirecciona al pagador a `https://merch-prod.payu.com`:
 
@@ -150,14 +148,12 @@ En el siguiente ejemplo de respuesta, el comercio redirecciona al pagador a `htt
 }
 ```
 
-## Después de la autenticación
-
+## Después de la Autenticación
 Una vez que el pagador complete la autenticación 3DS (si es necesario), PayU recibirá una notificación. La transacción entonces será:
-
 * **Completada:** Si la autenticación es exitosa.
 * **Rechazada:** Si la autenticación falla.
 
-### Redireccionamiento después de la autenticación
+### Redireccionamiento Después de la Autenticación
 
 Siguiendo la redirección del pagador desde la `THREEDS_AUTH_REDIRECT_URL`, se le dirigirá a:
 

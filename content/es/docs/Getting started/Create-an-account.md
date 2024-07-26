@@ -10,7 +10,7 @@ weight: 10
 ## Creación de una Cuenta
 El registro, validación y activación de la cuenta siguen las etapas descritas a continuación:
 
-### 1. Contáctanos
+### 1. Contactar a PayU
 Para iniciar el proceso de registro, llámanos o visita el sitio web disponible para tu país y completa los formularios:
 
 | País | Sitio Web | Número de Teléfono |
@@ -25,12 +25,12 @@ Para iniciar el proceso de registro, llámanos o visita el sitio web disponible 
 
 [Revisa nuestros Términos y Condiciones](https://legal.payulatam.com/ES/terminos_y_condiciones_comercios.html).
 
-### 2. Validación de tu Cuenta
+### 2. Validar tu Cuenta
 Una vez que recibamos tu solicitud de cuenta, nuestros agentes validarán tu riesgo y puntaje bancario.
 
 [Revisa las Actividades Prohibidas o Restringidas](https://legal.payulatam.com/ES/actividades_restringidas_y_prohibidas.pdf).
 
-### 3. Activa tu Cuenta
+### 3. Activar tu Cuenta
 Después de completar el registro y recibir la validación de PayU, recibirás un correo electrónico para confirmar tu solicitud y acceder a tu Panel de Gestión por primera vez.
 
 Para finalizar la activación de tu cuenta:

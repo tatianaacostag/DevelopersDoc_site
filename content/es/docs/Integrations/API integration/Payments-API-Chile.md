@@ -19,8 +19,7 @@ Para integrarte con la API de Pagos de Chile, apunta tus peticiones a las siguie
 ## Métodos disponibles {#available-methods}
 La API de pagos incluye los siguiente métodos:
 
-* [Enviar transacciones utilizando tarjeta de crédito, débito o prepago]({{< ref "#submit-transactions-using-credit-debit-or-prepaid-cards" >}})
-* [Enviar transacciones utilizando Khipu]({{< ref "#submit-transactions-using-khipu" >}})
+* [Enviar transacciones utilizando tarjeta de crédito, débito o prepago]({{< ref "#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Enviar transacciones utilizando Khipu]({{< ref "#submit-transactions-using-khipu" >}}) -->
 * [Enviar transacciones utilizando efectivo]({{< ref "#submit-transactions-using-cash" >}})
 * [Enviar transacciones utilizando tarjeta débito o prepago a través de WebPay Plus]({{< ref "#submit-transactions-using-debit-and-prepaid-cards" >}})
 * [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
@@ -808,6 +807,7 @@ Khipu es una solución de pago que permite a los comercios de Chile aceptar pago
 * **Expande tu alcance:** Llega a un público más amplio al aceptar pagos de todos los bancos de Chile, incluyendo clientes que no cuentan con tarjeta de crédito o débito.
 * **Mejora la seguridad:** Khipu emplea tecnologías de cifrado y autenticación para proteger la información de tus clientes y promover transacciones seguras.
 
+<!--
 ### Proceso de pago con Khipu
 
 Para integrar Khipu en tu plataforma de comercio electrónico, puedes crear un formulario de pago y generar una experiencia de usuario siguiendo el flujo a continuación:
@@ -1353,6 +1353,7 @@ Ejemplo de una respuesta:
 
 * [Logos oficiales de Khipu:](https://docs.khipu.com/portal/en/payment-logos/)
 
+-->
 
 ## Enviar transacciones utilizando efectivo {#submit-transactions-using-cash}
 Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente selecciona efectivo y genera el código de pago.

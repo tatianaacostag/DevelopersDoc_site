@@ -1,6 +1,6 @@
 ---
-title: "Autenticación 3DS externa"
-linkTitle: "Autenticación 3DS externa"
+title: "Autenticación 3DS Externa"
+linkTitle: "Autenticación 3DS Externa"
 date: 2024-07-01T11:32:55-05:00
 description: >
   Aprovecha tu servicio 3DS existente para mejorar la seguridad de los pagos con la integración passthrough de PayU.
@@ -8,7 +8,7 @@ weight: 22
 tags: ["subtopic"]
 ---
 
-## Aprovechamiento de una autenticación 3DS externa
+## Aprovechamiento de una Autenticación 3DS Externa
 Si tienes tu propio servicio de autenticación 3DS, puedes integrarlo fácilmente con PayU. Este enfoque también se conoce como **passthrough** y te permite gestionar el proceso de autenticación directamente con tu Merchant Plug-in (MPI) o servidor 3DS elegido.
 
 {{% alert title="Notas" color="info"%}}
@@ -17,19 +17,16 @@ Si tienes tu propio servicio de autenticación 3DS, puedes integrarlo fácilment
 * **Redes compatibles actualmente:** Visa y Mastercard
 {{% /alert %}}
 
-## Cómo funciona
-
+## Cómo Funciona
 * **Utiliza tu servicio 3DS existente:** PayU se integra perfectamente con tu proveedor preferido para un flujo de trabajo fluido.
 * **Gestiona la autenticación:** Tú manejas la comunicación entre tu plataforma y el servicio 3DS.
 * **Envía la respuesta a PayU:** Incluye la respuesta de autenticación de tu servicio 3DS dentro de tu solicitud de pago a PayU.
 
-### Consideraciones importantes
-
+### Consideraciones Importantes
 * **Servicios independientes:** Tu servicio 3DS funciona independientemente del servicio de autorización de PayU.
 * **Datos combinados necesarios:** Para un procesamiento de pago exitoso, tu solicitud de autorización de PayU debe incluir la respuesta de autenticación de tu servicio 3DS.
 
-## Documentación específica por país
-
+## Documentación Específica por País
 Para obtener instrucciones detalladas sobre cómo incluir parámetros de respuesta de autenticación en tu solicitud, consulta la documentación de tu país de procesamiento:
 
 <div style="display: flex;">

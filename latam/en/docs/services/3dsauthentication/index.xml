@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PayU Latam – 3DS authentication</title>
+    <title>PayU Latam – 3DS Authentication</title>
     <link>/en/docs/services/3dsauthentication.html</link>
-    <description>Recent content in 3DS authentication on PayU Latam</description>
+    <description>Recent content in 3DS Authentication on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
@@ -15,7 +15,7 @@
     
     
     <item>
-      <title>Docs: PayU-handled 3DS authentication</title>
+      <title>Docs: PayU-handled 3DS Authentication</title>
       <link>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -170,7 +170,7 @@
     </item>
     
     <item>
-      <title>Docs: External 3DS authentication</title>
+      <title>Docs: External 3DS Authentication</title>
       <link>/en/docs/services/3dsauthentication/external-3ds-authentication.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

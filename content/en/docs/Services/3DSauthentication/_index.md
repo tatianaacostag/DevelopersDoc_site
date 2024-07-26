@@ -3,16 +3,15 @@ title: "3DS Authentication"
 linkTitle: "3DS Authentication"
 date: 2024-07-1T11:32:55-05:00
 description: >
-  This section explains 3DS authentication and how to leverage it for enhanced security in your PayU payment processing.
-  <p>
-  If you are already familiar with 3DS, check our integration methods:
-  <ul>
-  <li> <a href="http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" target="_blank">PayU-handled 3DS authentication: </a>Let PayU manage the authentication process for you. 
-  <li><a href="http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/external-3ds-authentication.html" target="_blank">External 3DS authentication: </a>Integrate your existing 3DS service with PayU.  
-  <li><a href="https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html" target="_blank">PayU HUB 3DS authentication: </a>If you are integrated via the PayU HUB.
+  This section explains 3DS authentication and how to leverage it for enhanced security in your PayU payment processing.  
 weight: 20
 tags: ["parenttopic"]
 ---
+
+If you are already familiar with 3DS, check our integration methods:
+* <a href="http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" target="_blank">PayU-handled 3DS authentication: </a>Let PayU manage the authentication process for you. 
+* <a href="http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/external-3ds-authentication.html" target="_blank">External 3DS authentication: </a>Integrate your existing 3DS service with PayU.  
+* <a href="https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html" target="_blank">PayU HUB 3DS authentication: </a>If you are integrated via the PayU HUB.
 
 ## What is 3DS?
 3DS (Three-Domain Secure) is a security protocol that adds an extra layer of verification during online payments. It works by securely communicating with the cardholder's issuing bank to confirm their identity before authorizing the transaction. This significantly reduces the risk of unauthorized card usage and fraud.

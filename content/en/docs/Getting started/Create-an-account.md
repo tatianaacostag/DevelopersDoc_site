@@ -10,7 +10,7 @@ weight: 10
 ## Creating an Account
 The account registration, validation and activation follow the stages described below:
 
-### 1. Contact Us
+### 1. Contacting PayU
 To start the registration process, either give us a call or visit the website available for your country and complete the forms:
 
 | Country | Website | Phone Number |
@@ -25,19 +25,19 @@ To start the registration process, either give us a call or visit the website av
 
 [Review our Terms and Conditions](https://legal.payulatam.com/EN/terms_conditions_merchants.html).
 
-### 2. Validation of Your Account
+### 2. Validating Your Account
 Once we receive your account request, our agents will validate your risk and bank score.
 
 [Review the Prohibited or Restricted Activities](https://payu.in/BannedRestrictedCategorylist).
 
-### 3. Activate Your Account
+### 3. Activating Your Account
 After completing the registration and receiving validation from PayU, you will receive an email to confirm your request and access your Management Panel for the first time.
 
 To finish your account activation:
 * Complete the documentation and registration in the Management Panel.
 * Conduct a successful payment transaction.
 
-## Next steps
+## Next Steps
 With your PayU account activated:
 * **Receive payment notifications:** You and your customers will be notified for each completed transaction. 
 * **Manage your funds:** The money from your sales is deposited into your PayU account.

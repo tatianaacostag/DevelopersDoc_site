@@ -19,8 +19,7 @@ To integrate with Payments API Chile, target your request to the following URLs 
 ## Available methods
 Payments API includes the following methods:
 
-* [Submit transactions using credit, debit or prepaid cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}})
-* [Submit transactions using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) 
+* [Submit transactions using credit, debit or prepaid cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Submit transactions using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) -->
 * [Submit transactions using cash]({{< ref "Payments-API-Chile.md#submit-transactions-using-cash" >}})
 * [Submit transactions using debit and prepaid cards through WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transactions-using-debit-and-prepaid-cards" >}})
 * [Available payment methods query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
@@ -798,6 +797,7 @@ Response example:
 {{< /tab >}}
 {{< /tabs >}}
 
+<!--
 ## Submit transactions using Khipu
 
 Khipu is a payment solution that allows businesses in Chile to accept payments directly from their customers' bank accounts, without the need for credit or debit cards.
@@ -1350,6 +1350,8 @@ Example of a response:
 ### Additional Resources:
 
 * [Official Khipu logos:](https://docs.khipu.com/portal/en/payment-logos/)
+
+-->
 
 ## Submit transactions using cash
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.

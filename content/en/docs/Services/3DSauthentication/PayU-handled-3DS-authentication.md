@@ -8,15 +8,14 @@ weight: 21
 tags: ["subtopic"]
 ---
 
-## How to use PayU 3DS authentication
-
+## Using PayU 3DS Authentication
 To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called `req3DSAuthentication` in your payment requests via PayU's Payments API.
 
 {{% alert title="Note" color="info"%}}
 3DS authentication for PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, and **Peru**.
 {{% /alert %}}
 
-### The `req3DSAuthentication` parameter
+### The `req3DSAuthentication` Parameter
 
 This parameter allows you to control whether 3DS authentication is required for each transaction. It accepts two values:
 
@@ -25,7 +24,7 @@ This parameter allows you to control whether 3DS authentication is required for 
 
 **If `req3DSAuthentication` is not included,** PayU will decide whether to perform 3DS authentication based on its own risk assessment.
 
-#### Request body:
+**Request example:**
 In the request example below, the `req3DSAuthentication` is set `true`:
 
 ```JSON
@@ -103,14 +102,13 @@ In the request example below, the `req3DSAuthentication` is set `true`:
 }
 ```
 
-## Transaction response and authentication flow
+## Transaction Response and Authentication Flow
 
 Upon sending a payment request, you will receive a response with a `"PENDING"` state for the transaction. This response will also include a field within `extraParameters` called `THREEDS_AUTH_REDIRECT_URL`.
 
 * **`THREEDS_AUTH_REDIRECT_URL`:** This URL should be used to redirect the payer to complete the 3DS authentication process. The authentication process might involve challenges like entering a one-time password (OTP) received on their phone.
 
-### Response
-
+**Response example**
 In the response example below, the merchant redirects the payer to `https://merch-prod.payu.com`:
 
 ```JSON
@@ -149,14 +147,14 @@ In the response example below, the merchant redirects the payer to `https://merc
 }
 ```
 
-## After authentication
+## After Authentication
 
 Once the payer completes the 3DS authentication (if required), PayU will receive a notification. The transaction will then be:
 
 * **Completed:** If the authentication is successful.
 * **Declined:** If the authentication fails.
 
-### Redirection after authentication
+### Redirection After Authentication
 
 Following the payer's redirection from the `THREEDS_AUTH_REDIRECT_URL`, they will be directed to:
 

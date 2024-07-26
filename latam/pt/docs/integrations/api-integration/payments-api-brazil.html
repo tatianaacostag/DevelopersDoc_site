@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-07-08T10:25:14-05:00" />
+<meta property="article:modified_time" content="2024-07-12T01:07:00-05:00" />
 
 <meta itemprop="name" content="API de pagamentos - Brasil">
 <meta itemprop="description" content="A API de pagamentos do Brasil permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-07-08T10:25:14-05:00" />
-<meta itemprop="wordCount" content="13061">
+<meta itemprop="dateModified" content="2024-07-12T01:07:00-05:00" />
+<meta itemprop="wordCount" content="13068">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de pagamentos - Brasil"/>
 <meta name="twitter:description" content="A API de pagamentos do Brasil permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.95cb6427d2b0693eac0b4b8ae5988485accbe67e453729653df0169488e31fae99fc853a1322e2cd68d6a9facf7a9064a891b1da4e7d511644ae01781a62ddb5.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.4f7710ff2f743e8d278e1c88e6259abb3f3410fc02a886c84ca245028650c58e7d2112ad3faca914e6b5af3f9c452c1624176289230612483ec056243b5c2f6b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -206,7 +206,7 @@
       
       
       
-        <a id="/pt/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedcreate-an-accounthtml" href="../../../../pt/docs/getting-started/create-an-account.html">Crie uma conta PayU</a>
+        <a id="/pt/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedcreate-an-accounthtml" href="../../../../pt/docs/getting-started/create-an-account.html">Criando uma Conta PayU</a>
       
       
       
@@ -780,7 +780,7 @@
     <li><a href="#submit-transaction-with-credit-cards">Enviar transação com cartão de crédito</a>
       <ul>
         <li><a href="#adding-payment-facilitators">Adicionar Facilitadores de Pagamento</a></li>
-        <li><a href="#using-tokenized-cards">Usar cartões tokenizados</a></li>
+        <li><a href="#usando-cartões-tokenizados">Usando cartões tokenizados</a></li>
         <li><a href="#variables-for-request-and-response">Variáveis para pedido e resposta</a></li>
         <li><a href="#authorization">Autorização</a></li>
         <li><a href="#capture">Captura</a></li>
@@ -939,28 +939,29 @@
 <li>País do sub-vendedor (obrigatório)</li>
 </ul>
 <p>A descrição desses campos está na seção <a href="#variables-for-request-and-response">Variáveis</a>.</p>
-<h3 id="using-tokenized-cards">Usar cartões tokenizados</h3>
-<p>A PayU suporta pagamentos recorrentes usando as informações do cartão de crédito armazenadas em um token. Este token substitui as informações sensíveis do cartão de crédito e permite salvá-lo para futuros pagamentos preservando os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard).</p>
-<p>A PayU pode processar pagamentos através de:</p>
+<h3 id="usando-cartões-tokenizados">Usando cartões tokenizados</h3>
+<p>A PayU suporta pagamentos com seu cartão tokenizado, permitindo que você faça pagamentos regulares com um cartão armazenado em um token. Um token de cartão de crédito substitui as informações sensíveis de um cartão de crédito, permitindo que você as armazene com segurança em conformidade com os padrões de segurança PCI DSS (Payment Card Industry Data Security Standard).</p>
+<p>A PayU pode processar pagamentos usando os seguintes serviços:</p>
 <ul>
 <li>
-<p><strong>Tokenização da PayU</strong>.<br>Na PayU temos nosso próprio serviço para gerar os tokens dos cartões de crédito mediante um request. Este serviço permite obter os tokens com as informações do cartão de crédito de seus clientes (independentemente da bandeira) usando a integração API ou SDK da PayU.<br>Para mais informações, confira a <a href="../../../../pt/docs/services/tokenization.html">Tokenização de PayU</a>.</p>
+<p><strong>Tokenização PayU</strong>.<br>Oferecemos nosso próprio serviço para tokenizar seus cartões de crédito mediante solicitação. Este serviço permite tokenizar as informações dos cartões de crédito de seus clientes (independentemente de sua bandeira) usando nossa integração API ou SDK.<br><br>Para mais informações, consulte <a href="../../../../pt/docs/services/tokenization.html">Tokenização PayU</a>.</p>
 </li>
 <li>
-<p><strong>MasterCard Digital Enablement Service - MDES</strong>.<br>MDES é o serviço de tokenização da Mastercard. Este serviço permite que você salve os tokens no número da conta primária dos cartões de crédito MasterCard, e fazer pagamentos recorrentes ou implementar funcionalidades de pagamento com um clique.<br>Para mais informações, pode consultar a documentação oficial do <a href="https://developer.mastercard.com/mdes-digital-enablement/documentation/">MasterCard Digital Enablement Service (MDES) em inglês</a>.</p>
+<p><strong>MasterCard Digital Enablement Service - MDES</strong>.<br>Um serviço de tokenização fornecido pela Mastercard. Este serviço permite tokenizar o Número da Conta Principal dos cartões de crédito MasterCard, permitindo que você os use para pagamentos regulares ou para criar recursos de pagamento com um clique.<br><br>Para mais informações, consulte <a href="https://developer.mastercard.com/mdes-digital-enablement/documentation/">MasterCard Digital Enablement Service (MDES)</a>.</p>
 </li>
 <li>
-<p><strong>Visa Token Service - VTS</strong>.<br>VTS é o serviço de tokenização da Visa. Este serviço permite salvar de forma segura as informações sensíveis do cartão de crédito Visa para fazer pagamentos recorrentes ou implementar funcionalidades de pagamento com um clique.<br>Para mais informações, você pode consultar o <a href="https://usa.visa.com/products/visa-token-service.html">Visa Token Service (VTS) em inglês</a>.</p>
+<p><strong>Visa Token Service - VTS</strong>.<br>Um serviço de tokenização fornecido pela Visa. Este serviço permite armazenar as informações sensíveis dos cartões de crédito Visa em um token, permitindo que você os use para pagamentos regulares ou para criar recursos de pagamento com um clique.<br><br>Para mais informações, consulte <a href="https://usa.visa.com/products/visa-token-service.html">Visa Token Service (VTS)</a>.</p>
 </li>
 </ul>
-<h4 id="pay-with-payu-tokens">Pagamentos com tokens de PayU</h4>
-<p>Para pagamentos com tokens de cartão de crédito de PayU, inclua o parâmetro <code>transaction.creditCardTokenId</code> substituindo as informações do cartão de crédito. Na seguinte request temos um exemplo da solicitação de processamento em uma etapa. Os detalhes da solicitação não são mostrados.</p>
+<h4 id="pagar-com-tokens-da-payu">Pagar com Tokens da PayU</h4>
+<p>Para fazer pagamentos usando tokens de cartões de crédito da PayU, inclua o parâmetro <code>transaction.creditCardTokenId</code> no lugar das informações do cartão de crédito.</p>
+<p>O exemplo a seguir mostra o corpo da solicitação em um nível alto para um fluxo de um passo. Não inclui os parâmetros da solicitação.</p>
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">Observação</h4>
-Para processar sem CVV, é necessário enviar o parâmetro <code>creditCard.processWithoutCvv2</code> como true na solicitação de pagamento e remover o parâmetro <code>creditCard.securityCode</code>.<br>
-Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas.
+<h4 class="alert-heading">Nota</h4>
+Para processar um pagamento sem o CVV, você deve definir o parâmetro <code>creditCard.processWithoutCvv2</code> como <code>true</code> na solicitação de pagamento e omitir o parâmetro <code>creditCard.securityCode</code>.<br>
+Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Para habilitar esse recurso, entre em contato com seu representante de vendas.
 </div>
 
 <nav>
@@ -1008,7 +1009,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 <div class="tab-pane fade show active" id="tab91" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Exemplo pedido:</p>
+<p>Corpo da solicitação:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1056,7 +1057,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 <div class="tab-pane fade" id="tab92" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Exemplo pedido:</p>
+<p>Corpo da solicitação:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1097,9 +1098,10 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 
 
 </div>
-<h4 id="pay-with-mdes-or-vts-tokens">Pagamentos com tokens de MDES ou VTS</h4>
-<p>Se você tiver tokens salvos nas bandeiras usando MDES ou VTS, é possível processar pagamentos diretamente na PayU. Você só precisa definir as informações do token no parâmetro <code>transaction.networkToken</code>, substituindo as informações do cartão de crédito e definindo o parâmetro  <code>creditCard.processWithoutCvv2</code> em true.<br>Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado, entre em contato com seu representante de vendas para habilitá-lo.</p>
-<p>Na seguinte request temos um exemplo da solicitação de processamento em uma etapa. Os detalhes da solicitação não são mostrados.</p>
+<h4 id="pagar-com-tokens-mdes-ou-vts">Pagar com Tokens MDES ou VTS</h4>
+<p>Se você estiver tokenizando os cartões de crédito de seus clientes usando MDES ou VTS, pode configurar as informações do token no parâmetro <code>transaction.networkToken</code>, substituindo as informações do cartão de crédito, e definir o parâmetro <code>creditCard.processWithoutCvv2</code> como <code>true</code>.</p>
+<p>Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Entre em contato com seu representante de vendas para habilitar esse recurso.</p>
+<p>O exemplo a seguir demonstra o corpo da solicitação em um nível alto para um fluxo de um passo. Não inclui os parâmetros da solicitação.</p>
 <p><nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -1145,7 +1147,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 <div class="tab-pane fade show active" id="tab101" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Exemplo pedido:</p>
+<p>Corpo da solicitação:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1194,7 +1196,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 <div class="tab-pane fade" id="tab102" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Exemplo pedido:</p>
+<p>Corpo da solicitação:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1237,7 +1239,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 
 </div>
 <br></p>
-<p>Encontre a descrição do objeto <code>transaction.networkToken</code> e seus parâmetros na seção <a href="#variables-for-request-and-response">Variáveis</a> section.</p>
+<p>Encontre a descrição do objeto <code>transaction.networkToken</code> e seus parâmetros na seção <a href="#variables-for-request-and-response">Variáveis</a>.</p>
 <h3 id="variables-for-request-and-response">Variáveis para pedido e resposta</h3>
 <details>
 <summary>Pedido</summary>
@@ -6388,9 +6390,9 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-8 de julho de 2024:
+12 de julho de 2024:
 
- <b>Documentation updates (a842982f1)</b>
+ <b>Documentation updates (10d1ab52c)</b>
 </div>
 </div>
 

@@ -16,7 +16,7 @@
     
     
     <item>
-      <title>Docs: Crie uma conta PayU</title>
+      <title>Docs: Criando uma Conta PayU</title>
       <link>/pt/docs/getting-started/create-an-account.html</link>
       <pubDate>Tue, 06 Apr 2021 11:40:29 -0500</pubDate>
       
@@ -24,63 +24,75 @@
       <description>
         
         
-        &lt;p&gt;The first step to start using PayU services is create an account. This topic shows you the benefits of choosing PayU to receive payments online.&lt;/p&gt;
-&lt;h2 id=&#34;payu-benefits&#34;&gt;Benefícios PayU&lt;/h2&gt;
+        &lt;h2 id=&#34;criando-uma-conta&#34;&gt;Criando uma Conta&lt;/h2&gt;
+&lt;p&gt;O registro, validação e ativação da conta seguem as etapas descritas abaixo:&lt;/p&gt;
+&lt;h3 id=&#34;1-contate-nos&#34;&gt;1. Contate-nos&lt;/h3&gt;
+&lt;p&gt;Para iniciar o processo de registro, ligue para nós ou visite o site disponível para o seu país e complete os formulários:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;País&lt;/th&gt;
+&lt;th&gt;Site&lt;/th&gt;
+&lt;th&gt;Número de Telefone&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;  Argentina&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://argentina.payu.com/en/contact-us&#34; target=&#34;_blank&#34;&gt;argentina.payu.com/en/contact-us&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;(+54 11) 5984-2132&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt;  Brasil&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://brazil.payu.com/contato&#34; target=&#34;_blank&#34;&gt;brazil.payu.com/contato&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;(+55 11) 4130-5311&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt;  Chile&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://chile.payu.com/en/contact-us/&#34; target=&#34;_blank&#34;&gt;chile.payu.com/en/contact-us/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;(+56 2) 258-13949&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt;  Colômbia&lt;/td&gt;
+&lt;td&gt;&lt;li&gt; Pequenas empresas: &lt;p&gt;&lt;a href=&#34;https://creatucuenta.payu.com&#34; target=&#34;_blank&#34;&gt;creatucuenta.payu.com&lt;/a&gt; &lt;li&gt; Grandes empresas: &lt;p&gt;&lt;a href=&#34;https://colombia.payu.com/en/contact-us&#34; target=&#34;_blank&#34;&gt;colombia.payu.com/en/contact-us&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;(+57) 601 654-0721&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt;  México&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://mexico.payu.com/en/contact-us&#34; target=&#34;_blank&#34;&gt;mexico.payu.com/en/contact-us/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;(+52 55) 474-11439&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt;  Panamá&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://centroamerica.payu.com/en/contact-us&#34; target=&#34;_blank&#34;&gt;centroamerica.payu.com/en/contact-us/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;(+50 7) 836-5577&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt;  Peru&lt;/td&gt;
+&lt;td&gt;&lt;li&gt; Pequenas empresas: &lt;p&gt;&lt;a href=&#34;https://peru.creatucuenta.payu.com&#34; target=&#34;_blank&#34;&gt;peru.creatucuenta.payu.com&lt;/a&gt; &lt;li&gt; Grandes empresas: &lt;p&gt;&lt;a href=&#34;https://peru.payu.com/en/contact-us&#34; target=&#34;_blank&#34;&gt;peru.payu.com/en/contact-us&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;(+57) 601 654-0721&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;a href=&#34;https://legal.payulatam.com/EN/terms_conditions_merchants.html&#34;&gt;Revise nossos Termos e Condições&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;2-validação-da-sua-conta&#34;&gt;2. Validação da Sua Conta&lt;/h3&gt;
+&lt;p&gt;Uma vez que recebemos sua solicitação de conta, nossos agentes validarão seu risco e pontuação bancária.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://payu.in/BannedRestrictedCategorylist&#34;&gt;Revise as Atividades Proibidas ou Restringidas&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;3-ative-sua-conta&#34;&gt;3. Ative sua Conta&lt;/h3&gt;
+&lt;p&gt;Após completar o registro e receber a validação da PayU, você receberá um e-mail para confirmar sua solicitação e acessar seu Painel de Gerenciamento pela primeira vez.&lt;/p&gt;
+&lt;p&gt;Para finalizar a ativação da sua conta:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Taxa competitiva&lt;/li&gt;
-&lt;li&gt;Vários métodos de pagamento&lt;/li&gt;
-&lt;li&gt;Vender com ou sem um site&lt;/li&gt;
-&lt;li&gt;Segurança&lt;/li&gt;
+&lt;li&gt;Complete a documentação e o registro no Painel de Gerenciamento.&lt;/li&gt;
+&lt;li&gt;Realize uma transação de pagamento bem-sucedida.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;how-to-create-an-account&#34;&gt;Como criar uma conta?&lt;/h2&gt;
-&lt;p&gt;Seja qual for o tamanho da sua empresa, o procedimento para criar uma conta é o seguinte:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Entre em contato conosco.&lt;br&gt;
-Para integrar os serviços e ferramentas PayU à sua loja e começar a receber pagamentos online, contacte-nos pelo &lt;a href=&#34;https://www.payu.com&#34;&gt;nosso site&lt;/a&gt;.&lt;br&gt;
-&lt;br&gt;
-Se preferir, ligue para:
-&lt;br&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&#34;próximos-passos&#34;&gt;Próximos Passos&lt;/h2&gt;
+&lt;p&gt;Com sua conta PayU ativada:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; (+54 11) 5984-2132&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; (+55 11) 4130-5311&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; (+56 2) 258-13949&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; (+57) 601 654-0721&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; (+52 55) 474-11439&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; (+50 7) 836-5577&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; (+51 1) 708-5381
-&lt;br&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-Se você está na Colômbia e vende menos de 100 milhões de COP por mês, você pode criar sua conta usando este &lt;a href=&#34;https://colombia.payu.com/abre-tu-cuenta/&#34;&gt;link&lt;/a&gt;
-&lt;/div&gt;
-
-Consulte nossos termos e condições &lt;a href=&#34;https://brazil.payu.com/wp-content/uploads/sites/3/2020/04/termos-e-condicoes-gerais-de-uso-para-comercios-payu.pdf&#34;&gt;aqui&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Receba notificações de pagamento:&lt;/strong&gt; Você e seus clientes serão notificados para cada transação concluída.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gerencie seus fundos:&lt;/strong&gt; O dinheiro de suas vendas é depositado em sua conta PayU.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integre a PayU:&lt;/strong&gt; Escolha o método de integração apropriado para conectar sua loja online com os serviços e ferramentas da PayU. Consulte a seção de &lt;a href=&#34;../../../pt/docs/integrations.html&#34;&gt;Integrações&lt;/a&gt; para obter instruções detalhadas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Transfira fundos:&lt;/strong&gt; Transfira facilmente o saldo da sua conta PayU para sua conta bancária.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Validação de sua conta.&lt;br&gt;
-Assim que recebermos sua solicitação de conta, nossos agentes validarão seu risco e classificação bancária.
-&lt;br&gt;
-Consulte as atividades restritas ou proibidas &lt;a href=&#34;https://brazil.payu.com/wp-content/uploads/sites/3/2020/04/Anexo-%E2%80%93-Atividades-Restritas-ou-Proibidas.pdf&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ative sua conta.&lt;br&gt;
-Após abrir sua conta PayU, você receberá um e-mail para confirmar seu endereço e entrar no Módulo PayU pela primeira vez. Sua conta já estará ativada para receber pagamentos na Internet com todos os métodos de pagamento disponíveis.
-&lt;br&gt;&lt;br&gt;
-Para ativar sua conta, você deve:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;Já ter preenchido a documentação e o cadastro no módulo administrativo.&lt;/li&gt;
-&lt;li&gt;Concluir uma transação bem-sucedida.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;whats-next&#34;&gt;O que acontece agora?&lt;/h2&gt;
-&lt;p&gt;Depois de criar uma conta, você e seus clientes recebem uma notificação para cada pagamento feito. O dinheiro é então creditado na sua conta PayU.&lt;/p&gt;
-&lt;p&gt;De acordo com as necessidades do seu negócio, selecione como integrar sua loja com os serviços e ferramentas PayU. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/docs/integrations.html&#34;&gt;Integrações&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Agora é só transferir o saldo de sua conta PayU para sua conta bancária sempre que quiser.&lt;/p&gt;
 
       </description>
     </item>
