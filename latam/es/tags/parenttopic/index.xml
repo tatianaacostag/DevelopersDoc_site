@@ -107,7 +107,13 @@ La persona encargada de la integración de tu tienda con nuestra pasarela de pag
       <description>
         
         
-        &lt;h2 id=&#34;qué-es-3ds&#34;&gt;¿Qué es 3DS?&lt;/h2&gt;
+        &lt;p&gt;Si ya estás familiarizado con 3DS, consulta nuestros métodos de integración:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;Autenticación 3DS gestionada por PayU: &lt;/a&gt; Deja que PayU gestione el proceso de autenticación por ti.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/es/docs/services/3dsauthentication/external-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;Autenticación 3DS externa: &lt;/a&gt; Integra tu servicio 3DS existente con PayU.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html&#34; target=&#34;_blank&#34;&gt;Autenticación 3DS de PayU HUB: &lt;/a&gt; Si tu integración es por medio del PayU HUB.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;qué-es-3ds&#34;&gt;¿Qué es 3DS?&lt;/h2&gt;
 &lt;p&gt;3DS (Three-Domain Secure) es un protocolo de seguridad que añade una capa adicional de verificación durante los pagos en línea. Funciona comunicándose de forma segura con el banco emisor de la tarjeta del tarjetahabiente para confirmar su identidad antes de autorizar la transacción. Esto reduce significativamente el riesgo de uso no autorizado de tarjetas y fraude.&lt;/p&gt;
 
 
@@ -154,7 +160,7 @@ La autenticación 3DS para PayU Latam solo está disponible para &lt;strong&gt;A
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&#34;beneficios-de-la-autenticación-3ds&#34;&gt;Beneficios de la autenticación 3DS&lt;/h2&gt;
+&lt;h2 id=&#34;beneficios-de-la-autenticación-3ds&#34;&gt;Beneficios de la Autenticación 3DS&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Mayor seguridad y menos fraude:&lt;/strong&gt; Al verificar la identidad del tarjetahabiente, 3DS ayuda a prevenir transacciones fraudulentas. Además, en caso de un contracargo fraudulento, la responsabilidad suele recaer en el banco emisor.&lt;/p&gt;

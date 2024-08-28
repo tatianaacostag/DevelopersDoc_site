@@ -9,7 +9,7 @@ tags: ["subtopic"]
 ---
 <script src="/js/searchcodes.js"></script>
 
-Este guia mostra como aproveitar esses serviços para melhorar a experiência de pagamento dos seus clientes, proporcionando opções de pagamento flexíveis e seguras, adaptadas ao mercado colombiano.
+Este guia mostra como aproveitar esses serviços para melhorar a experiência de pagamento dos seus clientes, proporcionando opções de pagamento flexíveis e seguras, adaptadas ao mercado local.
 
 {{% alert title="Nota" color="info"%}}
 

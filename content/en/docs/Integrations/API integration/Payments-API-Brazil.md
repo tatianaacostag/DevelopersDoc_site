@@ -3,50 +3,61 @@ title: "Payments API - Brazil"
 linkTitle: "Payments API - Brazil"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  Payments API Brazil lets your shop process different transaction types with multiple payment methods.
+  The Payments API for Brazil allows you to efficiently integrate PayU's payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, electronic transfers, cash, bank transfers, and credit cards.
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
-To integrate with Payments API Brazil, target your request to the following URLs according to your environment.
+This guide shows you how to leverage these services to enhance your customers' payment experience by providing flexible and secure payment options tailored to the local market.
 
-{{% alert title="URL" color="info"%}}
-* Test: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
+{{% alert title="Note" color="info"%}}
+
+To integrate the Payments API, direct your requests to the following URLs according to the corresponding environment:
+* Testing: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Production: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-## Available methods
+## Available Methods
+
 Payments API includes the following methods:
 
-* [Submit transaction with credit card]({{< ref "Payments-API-Brazil.md#submit-transaction-with-credit-cards" >}}) 
-* [Submit transaction with Google Pay™]({{< ref "#submit-transaction-with-google-pay" >}})
-* [Submit transaction with PIX]({{< ref "Payments-API-Brazil.md#submit-transaction-with-pix" >}})
-* [Submit transaction with cash]({{< ref "Payments-API-Brazil.md#submit-transaction-with-cash" >}})
-* [Submit transaction with bank transfer]({{< ref "Payments-API-Brazil.md#submit-transaction-with-bank-transfer" >}})
-* [Available payment methods query]({{< ref "Payments-API-Brazil.md#available-payment-methods-query" >}})
+* [Submit Transactions Using Credit Card]({{< ref "Payments-API-Brazil.md#submit-transactions-using-credit-cards" >}}) 
+* [Submit Transactions Using Google Pay™]({{< ref "#submit-transactions-using-google-pay" >}})
+* [Submit Transactions Using PIX]({{< ref "Payments-API-Brazil.md#submit-transactions-using-pix" >}})
+* [Submit Transactions Using Cash]({{< ref "Payments-API-Brazil.md#submit-transactions-using-cash" >}})
+* [Submit Transactions Using Bank Transfer]({{< ref "Payments-API-Brazil.md#submit-transactions-using-bank-transfer" >}})
+* [Available Payment Methods Query]({{< ref "Payments-API-Brazil.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Brazil.md#ping" >}})
 
 {{% alert title="Note" color="info"%}}
+
 To confirm the status of a transaction, you can use one of the following options:
 * Navigate to the the URL set in the `transaction.notifyUrl` variable or the _**Confirmation URL**_ option located in the PayU Module in _**Settings**_ > _**Technical configuration**_.
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
+
 {{% /alert %}}
 
-## Submit transaction with credit cards
+## Submit Transaction Using Credit Cards
+
 This method lets you process the payments performed by your customers using credit cards. For Brazil, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 ### Adding Payment Facilitators
+
 Merchants can be considered as Payment Processor by franchises and the Central Bank. A payment processor is a legal entity that has money from sub-merchants. In the case of merchant bankruptcy and tax management, the Brazilian Central Bank wants to know the business's beneficiary.
 
 To include the information of the sub-merchant, you need to include it in the request of the **Authorization**, and **Charge** flows using the `submerchant` object.
 
 #### What is a Payment Facilitator?
+
 A payment facilitator is a company that offers an alternative to contracting with a traditional payment organization by assuming responsibility for the flow of funds in a buyer-seller relationship.
 
 Many merchants are choosing to work with payment facilitators because the payment facilitator possesses and manages the master account, thus assuming a risk. Merchants also choose a payment facilitator due the simplicity of setting up an account, typically occurring through a short application and underwriting evaluation.
 
-#### What information is required?
+#### What Information is Required?
+
 You need to send the following information:
 
 * Sub-merchant's internal identification (optional)
@@ -57,9 +68,10 @@ You need to send the following information:
 * Sub-merchant's Postal Code (mandatory)
 * Sub-merchant's Country (mandatory)
 
-Find the description of these fields in the [Variables]({{< ref "#variables-for-request-and-response" >}}) section.
+Find the description of these fields in the [Parameters]({{< ref "#parameters-for-request-and-response" >}}) section.
 
-### Using tokenized cards
+### Using Tokenized Cards
+
 PayU supports payments with your tokenized card, enabling you to make regular payments with a card stored in a token. A credit card token replaces the sensitive information of a credit card, allowing you to store it safely in compliance with PCI DSS (Payment Card Industry Data Security Standard) security standards.
 
 PayU can process payments using the following services:
@@ -71,6 +83,7 @@ PayU can process payments using the following services:
 * **Visa Token Service - VTS**.<br>A tokenization service provided by Visa. This service allows you to store the sensitive information of Visa credit cards in a token, enabling you to use them for regular payments or to build one-click payment features.<br><br>For more information, refer to [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
 
 #### Pay with PayU Tokens
+
 To make payments using PayU credit card tokens, include the parameter `transaction.creditCardTokenId` in place of the credit card information. 
 
 The following example demonstrates the body of the request at a high level for a one-step flow. It doesn't include request parameters.
@@ -81,11 +94,11 @@ By default, processing credit cards without a security code is not enabled. To e
 {{% /alert %}}
 
 
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -124,7 +137,7 @@ Request body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -159,6 +172,7 @@ Request body:
 </request>
 
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -169,11 +183,11 @@ By default, processing credit cards without a security code is not enabled. Plea
 
 The following example demonstrates the body of the request at a high level for a one-step flow. Detailed request parameters are not provided.
 
-{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -213,7 +227,7 @@ Request body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -249,13 +263,14 @@ Request body:
 </request>
 
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 <br>
 
 Find the description of the object `transaction.networkToken` and its parameters in the [Variables]({{< ref "#variables-for-request-and-response" >}}) section.
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -263,7 +278,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -271,7 +286,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| transaction |  |  | This object has the transaction data. | Yes |
+| transaction | Object |  | This object has the transaction data. | Yes |
 | transaction > order | Object |  | This object has the order data. | Yes |
 | transaction > order > accountId | Number |  | Identifier of your account. | Yes |
 | transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
@@ -315,7 +330,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > order > submerchant | Object |  | Information of the sub-merchant. If you don't send this parameter, PayU configures your merchant as sub-merchant. | No |
 | transaction > order > submerchant > id | Alphanumeric | Max:15 | Internal ID of the sub-merchant if you use one to identify it. | No |
 | transaction > order > submerchant > fullName | Alphanumeric | Max:150 | Full name of the sub-merchant. | No |
-| transaction > order > submerchant > address |  |  | Sub-merchant address. The fields `state`, `country`, and `postalCode`are mandatory when sending this object. | No |
+| transaction > order > submerchant > address | Object |  | Sub-merchant address. The fields `state`, `country`, and `postalCode`are mandatory when sending this object. | No |
 | transaction > order > submerchant > address > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
 | transaction > order > submerchant > address > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
 | transaction > order > submerchant > address > street3 | Alphanumeric | Max:100 | Address Line 3. | No |
@@ -337,7 +352,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
 | transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `transaction.creditCard.name` for credit card payments. | No |
-| transaction > payer > billingAddress |  |  | Billing address. | No |
+| transaction > payer > billingAddress | Object |  | Billing address. | No |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
 | transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | No |
@@ -350,11 +365,11 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
 | transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > networkToken |  |  | Information of the token. Include this parameter when the transaction is done using a tokenized card using the VTS or MDES Tokenization. For more information, refer to [Pay with MDES or VTS tokens]({{< ref "#pay-with-mdes-or-vts-tokens" >}}). <br><sup>\*</sup>When sending this object, all its parameters are mandatory.| No |
+| transaction > networkToken | Object |  | Information of the token. Include this parameter when the transaction is done using a tokenized card using the VTS or MDES Tokenization. For more information, refer to [Pay with MDES or VTS tokens]({{< ref "#pay-with-mdes-or-vts-tokens" >}}). <br><sup>\*</sup>When sending this object, all its parameters are mandatory.| No |
 | transaction > networkToken > tokenPan | Alphanumeric | Max:32 | Token number generated either by MDES or VTS. | Yes<sup>\*</sup> |
 | transaction > networkToken > cryptogram | Alphanumeric | Max:28 | Unique key generated by MDES or VTS to decrypt the information of the credit card. | Yes<sup>\*</sup> |
 | transaction > networkToken > expiry | Alphanumeric | 7 | Expiration date of the token. Format `YYYY/MM`. | Yes<sup>\*</sup> |
-| transaction > digitalWallet |  |  | Include this parameter when the transaction is done using a Digital Wallet. *When sending this object, all its parameters are mandatory. | No |
+| transaction > digitalWallet | Object |  | Include this parameter when the transaction is done using a Digital Wallet. *When sending this object, all its parameters are mandatory. | No |
 | transaction > digitalWallet > type | Alphanumeric | ---- | Set this value according to the digital wallet that you are processing: GOOGLE_PAY | Yes* |
 | transaction > digitalWallet > message | Alphanumeric | ---- | Include the information of the Google Pay Token that Google will return to you for each transaction. For more information consult [here](#payu-definitions-for-the-api-integration-of-the-payment-method). | Yes* |
 | transaction > type | Alphanumeric | 32 | Set this value according to the transaction you want:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` for one-step flows.</li></ul> | Yes |
@@ -380,7 +395,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -400,6 +415,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 </details>
 
 #### Considerations
+
 * If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`) when using [Authorization]({{< ref "payments-api-brazil.md#authorization" >}}) or [Charge]({{< ref "payments-api-brazil.md#charge" >}}).
 * If you don't send any information for the sub-merchants, PayU configures your merchant as sub-merchant.
 * For payments with credit card tokens generated by PayU, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
@@ -407,16 +423,17 @@ Find the description of the object `transaction.networkToken` and its parameters
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.<br>Having this feature enable is mandatory when using credit card tokens generated using MDES or VTS.
 * The extra parameter `CIELO_TID` identifies the transaction, this parameter is needed when you want to process voids.
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
-* The variable `transaction.threeDomainSecure` corresponds to a _Pass Through_ scenario where the commerce performs the authentication by their own.
+* The variable `transaction.threeDomainSecure` corresponds to a _passthrough_ scenario where the commerce performs the authentication by their own.
 
 ### Authorization
+
 Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-api-brazil.md#capture" >}}) the funds.<br>The following are the request and response bodies for this transaction type.
 
-{{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -510,7 +527,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -545,7 +562,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -643,7 +660,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -673,20 +690,23 @@ Response body:
 {{< /tabs >}}
 
 ### Capture
+
 Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-brazil.md#authorization" >}}) to transfer them to your PayU account.
 
 #### Considerations
-Take into account the following considerations for capture.
-* The maximum time to capture an approved transaction is seven (7) days. After this time, the transaction is cancelled.
+
+Take into account the following considerations for capture:
+* The maximum time to capture an approved transaction is 7 days. After this time, the transaction is cancelled.
 * Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
+* You can perform partial captures on an authorized amount. For more information, see the [Partial Capture]({{< ref "#partial-capture" >}}) section.
 
 The following are the request and response bodies for this transaction type.
 
-{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -707,7 +727,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -741,7 +761,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -763,7 +783,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -789,19 +809,171 @@ Response body:
     </transactionResponse>
 </paymentResponse>
 ```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+### Partial Capture
+
+A partial capture is an operation that allows you to request the disbursement of an amount less than what was previously authorized in a transaction.
+
+This means that if your integration initially authorized a payment of $100, you can perform a partial capture for $60, and release the remaining $40, which the integration will not be able to capture later.
+
+#### Considerations
+
+* The total amount captured cannot exceed the originally authorized amount.
+* Each payment processor and each country may have rules or restrictions regarding the amount you can capture partially.
+* You must specify the value you wish to partially capture in the `value` field, within the `TX_VALUE` parameter, as shown in the example below.
+
+The following are examples of the request and response bodies for this type of transaction.
+
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request Example:
+```JSON
+{
+    "language": "es",
+    "command": "SUBMIT_TRANSACTION",
+    "merchant": {
+        "apiLogin": "pRRXKOl8ikMmt9u",
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+    },
+    "transaction": {
+        "order": {
+            "id": "2152525133"
+        },
+        "additionalValues": {
+            "TX_VALUE": {
+                "value": 60,
+                "currency": "BRL"
+            }
+        },
+        "type": "CAPTURE",
+        "parentTransactionId": "4b6adba7-e43b-45f8-88a6-d290755d6c04"
+    },
+    "test": false
+}
+```
+<br>
+
+Response Example:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 2152543423,
+        "transactionId": "6f523681-1587-4a2d-8a15-605d27f89c26",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "0",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "6f523681-1587-4a2d-8a15-605d27f89c26",
+        "authorizationCode": "NPS-011111",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": "APROBADA - Autorizada",
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1723724052207,
+        "referenceQuestionnaire": null,
+        "extraParameters": null,
+        "additionalInfo": {
+            "paymentNetwork": "NPS_AR",
+            "rejectionType": "NONE",
+            "responseNetworkMessage": null,
+            "travelAgencyAuthorizationCode": null,
+            "cardType": null,
+            "transactionType": "CAPTURE"
+        }
+    }
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request Example:
+```XML
+<request>
+  <language>es</language>
+  <command>SUBMIT_TRANSACTION</command>
+  <merchant>
+    <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+    <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+  </merchant>
+  <transaction>
+    <order>
+      <id>2152525133</id>
+    </order>
+    <additionalValues>
+      <TX_VALUE>
+        <value>60</value>
+        <currency>BRL</currency>
+      </TX_VALUE>
+    </additionalValues>
+    <type>CAPTURE</type>
+    <parentTransactionId>4b6adba7-e43b-45f8-88a6-d290755d6c04</parentTransactionId>
+  </transaction>
+  <test>false</test>
+</request>
+
+```
+<br>
+
+Response Example:
+```XML
+<response>
+  <code>SUCCESS</code>
+  <error />
+  <transactionResponse>
+    <orderId>2152543423</orderId>
+    <transactionId>6f523681-1587-4a2d-8a15-605d27f89c26</transactionId>
+    <state>APPROVED</state>
+    <paymentNetworkResponseCode>0</paymentNetworkResponseCode>
+    <paymentNetworkResponseErrorMessage />
+    <trazabilityCode>6f523681-1587-4a2d-8a15-605d27f89c26</trazabilityCode>
+    <authorizationCode>NPS-011111</authorizationCode>
+    <pendingReason />
+    <responseCode>APPROVED</responseCode>
+    <errorCode />
+    <responseMessage>APROBADA - Autorizada</responseMessage>
+    <transactionDate />
+    <transactionTime />
+    <operationDate>1723724052207</operationDate>
+    <referenceQuestionnaire />
+    <extraParameters />
+    <additionalInfo>
+      <paymentNetwork>NPS_AR</paymentNetwork>
+      <rejectionType>NONE</rejectionType>
+      <responseNetworkMessage />
+      <travelAgencyAuthorizationCode />
+      <cardType />
+      <transactionType>CAPTURE</transactionType>
+    </additionalInfo>
+  </transactionResponse>
+</response>
+
+```
+
 {{< /tab >}}
 {{< /tabs >}}
 
 ### Charge
+
 Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
 
 The following are the request and response bodies for this transaction type.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -895,7 +1067,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -930,7 +1102,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -1027,7 +1199,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1057,13 +1229,16 @@ Response body:
 {{< /tabs >}}
 
 
-## Submit transaction with Google Pay™ {#submit-transaction-with-google-pay}
+## Submit Transactions Using Google Pay™ {#submit-transactions-using-google-pay}
+
 Google Pay is a digital wallet that enables simple and fast card payments, without the need of entering the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), no matter the operating system and in almost all web browsers.
 
 In case of using Google Pay, the merchants must adhere to the Google Pay APIs [Acceptable Use Policy](https://payments.developers.google.com/terms/aup) and accept the terms that [Google Pay API Terms of Service](https://payments.developers.google.com/terms/sellertos) defines.
 
 {{% alert title="Note" color="info"%}}
+
 The description below applies to provision of this service directly by displaying the Google Pay lightbox at the website of the payment recipient (e-store).
+
 {{% /alert %}}
 
 If you wish to offer this method via PayU Web-Checkout, no additional integration effort is required. Contact your Key Account Manager to make the activation request. If you wish to test the payment method prior to activation, you can follow the instructions [here](#testing-for-merchants-with-web-checkout-integration).
@@ -1074,16 +1249,19 @@ Please note that if your integration with PayU is API, you must change the setti
 * [Perform the adaptation of your API integration with PayU](#process-google-pay-transactions-in-payu)
 * [Test the payment method](#test-the-payment-method)
 
- ### API integration of the payment method 
+ ### API Integration of the Payment Method
+
 To integrate the website with the Google Pay wallet, proceed according to the instructions placed at these websites:
 * [API documentation](https://developers.google.com/pay/api/web)
 * [API integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist)
 * [Brand guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines)
 
-##### PayU definitions for the API integration of the payment method
+##### PayU Definitions for the API Integration of the Payment Method
+
 Below you will find relevant information that you must consider for your payments to be processed by PayU once the payment method is integrated:
 
-* ###### Request a payment token for PayU
+* ###### Request a Payment Token for PayU
+
 Google encrypts the information of the card selected by the payer for secure processing, this is carried out by a payment provider. The ```gateway``` parameter in the script should have the constant value of ```payulatam```, and the ```gatewayMerchantId``` should include your PayU account number according to the example below:
 
 ```
@@ -1096,7 +1274,8 @@ const tokenizationSpecification = {
 };
 ```
 
-* ###### Supported payment card networks
+* ###### Supported Payment Networks
+
 Please note that PayU as the processor of Google Pay payments, enables the handling of all types of payment cards issued by the Visa and Mastercard organizations. This implies the following configuration of the Google script:
 
 ```
@@ -1120,7 +1299,8 @@ A sample of Google Pay Token looks like this:
 }
 ```
 
- ### Process Google Pay transactions in PayU
+ ### Process Google Pay Transactions in PayU
+
  The primary function of Google Pay as a digital wallet is to store credit cards to facilitate payment processing. With that in mind, for PayU, the transactions processed by Google Pay will have the same credit card logic except for the following particularities:
 
 * If you are processing transactions of your customers with Google Pay, you should configure the information of the wallet in the parameter ```transaction.digitalWallet```.
@@ -1128,14 +1308,16 @@ A sample of Google Pay Token looks like this:
 * Take into account that for Google Pay transactions inside the parameter ```transaction.creditcard```, you should always send a value for ```transaction.creditcard.name```. Other fields of this parameter are not necessary since Google Pay delivers them inside the token. 
 * Contact your account manager to make the necessary activations to process without cvv as this payment method requires it.
 
-### Test the payment method
+### Test the Payment Method
+
 This section is designed to guide users through the testing process and familiarization with the Google Pay payment method in PayU.  
 
 **Prerequisites (for API and Web Checkout integrations):**
 * Make sure you are logged in your browser with the Gmail account with which you will be testing. 
 * Join the Google group in which the test cards for PayU will be available. The group can be found in the following [Google documentation](https://developers.google.com/pay/api/android/guides/resources/test-card-suite).
 
-#### Testing for merchants with API integration:  
+#### Testing for Merchants with API Integration:
+
 1. Once the changes indicated in the previous sections have been made, use the Token Simulator File to simulate a transaction and obtain a sample of a Google Pay Token. The simulator can be visualized <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/simulator.html" target="_blank">here</a>.
 
 {{% alert title="Note" color="info"%}}
@@ -1149,12 +1331,15 @@ To ensure correct processing, use cards whose name do NOT start with "Test".
  	Your browser does not support the video tag.
 </video>
 
-#### Testing for merchants with Web Checkout integration:  
+#### Testing for Merchants with Web Checkout Integration:  
+
 Access PayU Latam Web Checkout in a [test environment](https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/test/prueba_pago.jsp) and simulate a transaction. 
 
 {{% alert title="Note" color="info"%}}
+
 * To ensure correct processing, use cards whose name do NOT start with "Test".
 * Use the Brazil test credentials for this test. Consult them [here](https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html).
+
 {{% /alert %}}
 
 <video width="630" height="300" controls>
@@ -1163,13 +1348,14 @@ Access PayU Latam Web Checkout in a [test environment](https://sandbox.checkout.
 </video>
 
 #### API Call
+
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
     "language": "es",
@@ -1219,7 +1405,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1254,7 +1440,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
         <language>es</language>
@@ -1304,7 +1490,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
          <code>SUCCESS</code>
@@ -1333,14 +1519,16 @@ Response body:
      </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
 
-You will find the description of the transaction.digitalWallet object and its fields in the section [Variables](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-brazil.html#variables-for-request-and-response).
+You will find the description of the transaction.digitalWallet object and its fields in the section [Parameters](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response).
 
 
-## Submit transaction with PIX
+## Submit Transactions Using PIX
+
 This method lets you process payments using PIX. To integrate with PIX you need to show in your checkout page a QR code so your customer can read it using their smartphone to perform the payment.
 
 In the end, your customer sees a checkout page like this.
@@ -1348,6 +1536,7 @@ In the end, your customer sees a checkout page like this.
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
 ### How does PIX work?
+
 PIX is an online transfer method released in November, 2020 by the Brazilian Central Bank (_Banco Central do Brasil_ - BACEN) which allows you make and receive transfers easily regardless of the bank who issued your account.
 
 Unlike other cash and bank transfer methods, PIX allows you to receive transfers immediately without sharing your account number; at any time, on any day. The funds received using this payment method will appear in your PayU account in a matter of seconds. 
@@ -1362,7 +1551,7 @@ Pix has two parts:
    
 * QR code: this code is read by your customer using their phone and performs the payment.
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -1370,16 +1559,16 @@ Pix has two parts:
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric |2| Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean | | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant | | | This object has the authentication data. | Yes |
+| merchant | Object | | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| transaction | | | This object has the transaction data. | Yes |
-| transaction > order | | | This object has the order data. | Yes |
+| transaction | Object | | This object has the transaction data. | Yes |
+| transaction > order | Object | | This object has the order data. | Yes |
 | transaction > order > accountId | Number | | Identifier of your account. | Yes |
 | transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
 | transaction > order > description | Alphanumeric | Min:1 Max:255 | Description of the order. | Yes |
@@ -1387,7 +1576,7 @@ Pix has two parts:
 | transaction > order > notifyUrl | Alphanumeric | Max:2048 | Confirmation URL of the order. | Yes |
 | transaction > order > partnerId | Alphanumeric | Max:255 | Partner ID in PayU. | No |
 | transaction > order > signature | Alphanumeric | Max:255 | The signature associated to the form. For more information refer [Authentication signature]({{< ref "integrations.html#authentication-signature" >}}). | Yes |
-| transaction > order > shippingAddress | | | Shipping address. | No |
+| transaction > order > shippingAddress | Object | | Shipping address. | No |
 | transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
 | transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
 | transaction > order > shippingAddress > city | Alphanumeric | Max:50 | Address city. | No |
@@ -1395,7 +1584,7 @@ Pix has two parts:
 | transaction > order > shippingAddress > country | Alphanumeric |2| Address country. | No |
 | transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Address Zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | No |
 | transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated to the address. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > order > buyer | | | Buyer information. | Yes |
+| transaction > order > buyer | Object | | Buyer information. | Yes |
 | transaction > order > buyer > merchantBuyerId | Alphanumeric | Max:100 | Buyer ID in your system. | No |
 | transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
 | transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes |
@@ -1410,7 +1599,7 @@ Pix has two parts:
 | transaction > order > buyer > shippingAddress > country | Alphanumeric |2| Buyer's shipping address country in format ISO 3166 alpha-2. | No |
 | transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | No |
 | transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > order > additionalValues > | |64| Amount of the order or its associated values. | Yes |
+| transaction > order > additionalValues > | Object |64| Amount of the order or its associated values. | Yes |
 | transaction > order > additionalValues > TX_VALUE | Alphanumeric |64| Amount of the transaction. | Yes |
 | transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Yes |
 | transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric |3| ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
@@ -1420,11 +1609,11 @@ Pix has two parts:
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric |64| Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric |3| ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer | | | Payer information. | Yes |
+| transaction > payer | Objeto | | Payer information. | Yes |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
 | transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer. | Yes |
-| transaction > payer > billingAddress | | | Billing address. | No |
+| transaction > payer > billingAddress | Object | | Billing address. | No |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
 | transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | No |
@@ -1442,7 +1631,7 @@ Pix has two parts:
 | transaction > paymentCountry | Alphanumeric |2| Set `BR` for Brazil. | Yes |
 | transaction > deviceSessionId | Alphanumeric | Max:255 | Session identifier of the device where the customer performs the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | No |
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
-| transaction > extraParameters | | | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"PARAMETER_NAME": "VALUE"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>PARAMETER_NAME</string>`<br>&emsp;&emsp;`<string>VALUE</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`<br>_Set the respective data type_ | No |
+| transaction > extraParameters | Object | | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"PARAMETER_NAME": "VALUE"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>PARAMETER_NAME</string>`<br>&emsp;&emsp;`<string>VALUE</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`<br>_Set the respective data type_ | No |
 
 
 </details>
@@ -1452,11 +1641,11 @@ Pix has two parts:
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| transactionResponse |  |  | The response data. |
+| transactionResponse | Object |  | The response data. |
 | transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
 | transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. As the payment is performed by the user in their phone, the state for a successful transaction is `PENDING` |
@@ -1468,11 +1657,12 @@ Pix has two parts:
 | transactionResponse > responseCode | Alphanumeric | Max:64 | The response code associated with the status. In this case, for successful transactions is `PENDING_PAYMENT_IN_ENTITY`. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"EXPIRATION_DATE": "1627488070000"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>EXPIRATION_DATE</string>`<br>&emsp;&emsp;`<int>1627488070000</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"EXPIRATION_DATE": "1627488070000"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>EXPIRATION_DATE</string>`<br>&emsp;&emsp;`<int>1627488070000</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
 #### Considerations
+
 * Payments processed through our gateway will be for PayU on behalf of your commerce.
 * If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`).
 * To configure the expiration time of the QR code, contact your sales representative. The maximum time you can request is one day.<br>By default, the expiration time is two (2) hours.
@@ -1490,13 +1680,14 @@ It is recommended to display in your Checkout both the image of the QR code (par
 {{% /alert %}}
 
 ### API call
+
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "pt",
@@ -1563,7 +1754,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
   "code": "SUCCESS",
@@ -1599,7 +1790,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>pt</language>
@@ -1673,7 +1864,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1706,12 +1897,13 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with cash
+## Submit Transactions Using Cash
+
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.
 
 <img src="/assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -1719,16 +1911,16 @@ This method lets you process the payments in cash of your customers. To integrat
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| transaction |  |  | This object has the transaction data. | Yes |
-| transaction > order |  |  | This object has the order data. | Yes |
+| transaction | Object |  | This object has the transaction data. | Yes |
+| transaction > order | Object |  | This object has the order data. | Yes |
 | transaction > order > accountId | Number |  | Identifier of your account. | Yes |
 | transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
 | transaction > order > description | Alphanumeric | Min:1 Max:255 | Description of the order. | Yes |
@@ -1736,7 +1928,7 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > order > notifyUrl | Alphanumeric | Max:2048 | Confirmation URL of the order. | Yes |
 | transaction > order > partnerId | Alphanumeric | Max:255 | Partner ID in PayU. | Yes |
 | transaction > order > signature | Alphanumeric | Max:255 | The signature associated to the form. For more information refer [Authentication signature]({{< ref "integrations.html#authentication-signature" >}}). | Yes |
-| transaction > order > shippingAddress |  |  | Shipping address. | No |
+| transaction > order > shippingAddress | Object |  | Shipping address. | No |
 | transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
 | transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
 | transaction > order > shippingAddress > city | Alphanumeric | Max:50 | Address city. | No |
@@ -1744,7 +1936,7 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > order > shippingAddress > country | Alphanumeric | 2 | Address country. | No |
 | transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Address Zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | No |
 | transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated to the address. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > order > buyer |  |  | Buyer information. | Yes |
+| transaction > order > buyer | Object |  | Buyer information. | Yes |
 | transaction > order > buyer > merchantBuyerId | Alphanumeric | Max:100 | Buyer ID in your system. | No |
 | transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
 | transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes |
@@ -1758,7 +1950,7 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Yes |
 | transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | Yes |
 | transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | Yes |
-| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Yes |
+| transaction > order > additionalValues > | Object | 64 | Amount of the order or its associated values. | Yes |
 | transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. | Yes |
 | transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Yes |
 | transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
@@ -1768,11 +1960,11 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer |  |  | Payer information. This information is optional. | No |
+| transaction > payer | Object |  | Payer information. This information is optional. | No |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
 | transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer. | No |
-| transaction > payer > billingAddress |  |  | Billing address. | No |
+| transaction > payer > billingAddress | Object |  | Billing address. | No |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
 | transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | No |
@@ -1798,11 +1990,11 @@ This method lets you process the payments in cash of your customers. To integrat
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| transactionResponse |  |  | The response data. |
+| transactionResponse | Object |  | The response data. |
 | transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
 | transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. As the payment is performed by the user in a physical office, the state for a successful transaction is `PENDING` |
@@ -1814,11 +2006,12 @@ This method lets you process the payments in cash of your customers. To integrat
 | transactionResponse > responseCode | Alphanumeric | Max:64 | The response code associated with the status. In this case, for successful transactions is `PENDING_TRANSACTION_CONFIRMATION`. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
 #### Considerations
+
 * If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`).
 * The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * The payment is reflected in the next business day.
@@ -1828,14 +2021,15 @@ This method lets you process the payments in cash of your customers. To integrat
    - **EXPIRATION_DATE**: maximum term for the payer to perform the payment.
    - **BAR_CODE**: barcode which lets the payer perform the payment. 
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -1896,7 +2090,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
   "code": "SUCCESS",
@@ -1931,7 +2125,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -1995,7 +2189,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
    <code>SUCCESS</code>
@@ -2029,13 +2223,14 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with bank transfer
+## Submit Transactions Using Bank Transfer
+
 This method lets you process the bank transfer payments of your customers. When using this payment method, the payer performs a bank transfer from their bank account issued in ITAU.<br>
 To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
 
 <img src="/assets/Payments/BankTransferReceiptBR.png" alt="PrintScreen" width="50%">
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -2043,16 +2238,16 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| transaction |  |  | This object has the transaction data. | Yes |
-| transaction > order |  |  | This object has the order data. | Yes |
+| transaction | Object |  | This object has the transaction data. | Yes |
+| transaction > order | Object |  | This object has the order data. | Yes |
 | transaction > order > accountId | Number |  | Identifier of your account. | Yes |
 | transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
 | transaction > order > description | Alphanumeric | Min:1 Max:255 | Description of the order. | Yes |
@@ -2060,7 +2255,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 | transaction > order > notifyUrl | Alphanumeric | Max:2048 | Confirmation URL of the order. | No|
 | transaction > order > partnerId | Alphanumeric | Max:255 | Partner ID in PayU. | No |
 | transaction > order > signature | Alphanumeric | Max:255 | The signature associated to the form. For more information refer [Authentication signature]({{< ref "integrations.html#authentication-signature" >}}). | Yes |
-| transaction > order > shippingAddress |  |  | Shipping address. | No |
+| transaction > order > shippingAddress | Object |  | Shipping address. | No |
 | transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
 | transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
 | transaction > order > shippingAddress > city | Alphanumeric | Max:50 | Address city. | No |
@@ -2068,7 +2263,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 | transaction > order > shippingAddress > country | Alphanumeric | 2 | Address country. | No |
 | transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Address Zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | No |
 | transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated to the address. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > order > buyer |  |  | Buyer information. | Yes |
+| transaction > order > buyer | Object |  | Buyer information. | Yes |
 | transaction > order > buyer > merchantBuyerId | Alphanumeric | Max:100 | Buyer ID in your system. | No |
 | transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
 | transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes |
@@ -2092,11 +2287,11 @@ To integrate with these transactions, you must redirect the customer to the URL 
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer |  |  | Payer information. | No |
+| transaction > payer | Object |  | Payer information. | No |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
 | transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer. | No |
-| transaction > payer > billingAddress |  |  | Billing address. | No |
+| transaction > payer > billingAddress | Object |  | Billing address. | No |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | No |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
 | transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | No |
@@ -2123,11 +2318,11 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| transactionResponse |  |  | The response data. |
+| transactionResponse | Object |  | The response data. |
 | transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
 | transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. As the payment is performed by the user in a physical office, the state for a successful transaction is `PENDING` |
@@ -2139,25 +2334,27 @@ To integrate with these transactions, you must redirect the customer to the URL 
 | transactionResponse > responseCode | Alphanumeric | Max:64 | The response code associated with the status. In this case, for successful transactions is `PENDING_PAYMENT_IN_ENTITY`. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_URL": "https://gateway.payulatam.com/ppp-web-gateway/payment-redirect.zul?prid=1181964158Ya5b4bd5e7c6e4ebY4085cd2deb967f2"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_URL</string>`<br>&emsp;&emsp;`<string>https://gateway.payulatam.com/ppp-web-gateway/payment-redirect.zul?prid=1181964158Ya5b4bd5e7c6e4ebY4085cd2deb967f2</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
-| transactionResponse > additionalInfo |  |  | Additional information associated with the response. This object follows the same structure than `transactionResponse.extraParameters`. |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_URL": "https://gateway.payulatam.com/ppp-web-gateway/payment-redirect.zul?prid=1181964158Ya5b4bd5e7c6e4ebY4085cd2deb967f2"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_URL</string>`<br>&emsp;&emsp;`<string>https://gateway.payulatam.com/ppp-web-gateway/payment-redirect.zul?prid=1181964158Ya5b4bd5e7c6e4ebY4085cd2deb967f2</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > additionalInfo | Object |  | Additional information associated with the response. This object follows the same structure than `transactionResponse.extraParameters`. |
 
 </details>
 
 #### Considerations
+
 * If your commerce does not have a local entity, it is mandatory to send either the CPF (parameter `transaction.[payer|buyer].dniNumber`) or the CNPJ (parameter `transaction.[payer|buyer].cnpj`).
 * The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is four (4) day after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * When the payer selects this payment method, PayU creates an order in _in progress_ state and a transaction in `PENDING` state.
 * In the response body, you can find the receipt generated by PayU and the expiration date.
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -2221,7 +2418,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2263,7 +2460,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -2330,7 +2527,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -2361,22 +2558,23 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available payment methods query
+## Available Payment Methods Query
+
 This method returns a list of the payment methods available in all countries.
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |-|-|-|-|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `GET_PAYMENT_METHODS`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 
@@ -2387,26 +2585,27 @@ This method returns a list of the payment methods available in all countries.
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| paymentMethods |  |  | List of the payment methods. |
-| paymentMethods > paymentMethodComplete |  |  | This object has the information of a payment method. |
+| paymentMethods | Object |  | List of the payment methods. |
+| paymentMethods > paymentMethodComplete | Object |  | This object has the information of a payment method. |
 | paymentMethods > paymentMethodComplete > id | Numeric |  | Payment method identifier. |
 | paymentMethods > paymentMethodComplete > description | Alphanumeric | Max:32 | Payment method name. |
 | paymentMethods > paymentMethodComplete > country | Alphanumeric | 2 | ISO code of the Payment method country. |
 
 </details>
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "test": false,
@@ -2420,7 +2619,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2449,7 +2648,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>en</language>
@@ -2463,7 +2662,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -2487,21 +2686,22 @@ Response body:
 {{< /tabs >}}
 
 ## Ping
+
 The ```PING``` method lets you verify the connection to our platform. 
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory | 
+| Field Name | Format | Size | Description | Mandatory | 
 |-|-|-|-|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `PING`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 
@@ -2512,7 +2712,7 @@ The ```PING``` method lets you verify the connection to our platform.
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. |
@@ -2522,11 +2722,11 @@ The ```PING``` method lets you verify the connection to our platform.
 ### Api call
 The following are the bodies of the request and response of this method.
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="12" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "test": false,
@@ -2540,7 +2740,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2554,7 +2754,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>en</language>
@@ -2568,7 +2768,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>

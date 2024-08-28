@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2024-07-12T01:07:00-05:00" />
+<meta property="article:modified_time" content="2024-07-26T09:39:39-05:00" />
 
 <meta itemprop="name" content="PayU-handled 3DS Authentication">
 <meta itemprop="description" content="PayU-handled 3DS authentication removes the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.  
 ">
-<meta itemprop="dateModified" content="2024-07-12T01:07:00-05:00" />
-<meta itemprop="wordCount" content="488">
+<meta itemprop="dateModified" content="2024-07-26T09:39:39-05:00" />
+<meta itemprop="wordCount" content="487">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="PayU-handled 3DS Authentication"/>
 <meta name="twitter:description" content="PayU-handled 3DS authentication removes the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.  
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4f7710ff2f743e8d278e1c88e6259abb3f3410fc02a886c84ca245028650c58e7d2112ad3faca914e6b5af3f9c452c1624176289230612483ec056243b5c2f6b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b7f186066d5d8aa3be69e8207ff2e0600fd1f58a8c807a7b69f14fa312ada257402c64ffb68cee5d9411c6ec3b035d969ed32ba544fd0203926865eb2591816e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -782,19 +782,15 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#how-to-use-payu-3ds-authentication">How to use PayU 3DS authentication</a>
+    <li><a href="#using-payu-3ds-authentication">Using PayU 3DS Authentication</a>
       <ul>
-        <li><a href="#the-req3dsauthentication-parameter">The <code>req3DSAuthentication</code> parameter</a></li>
+        <li><a href="#the-req3dsauthentication-parameter">The <code>req3DSAuthentication</code> Parameter</a></li>
       </ul>
     </li>
-    <li><a href="#transaction-response-and-authentication-flow">Transaction response and authentication flow</a>
+    <li><a href="#transaction-response-and-authentication-flow">Transaction Response and Authentication Flow</a></li>
+    <li><a href="#after-authentication">After Authentication</a>
       <ul>
-        <li><a href="#response">Response</a></li>
-      </ul>
-    </li>
-    <li><a href="#after-authentication">After authentication</a>
-      <ul>
-        <li><a href="#redirection-after-authentication">Redirection after authentication</a></li>
+        <li><a href="#redirection-after-authentication">Redirection After Authentication</a></li>
       </ul>
     </li>
   </ul>
@@ -856,7 +852,7 @@
 	<h1>PayU-handled 3DS Authentication</h1>
     <div class="lead">PayU-handled 3DS authentication removes the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.</div>
 	       
-	<h2 id="how-to-use-payu-3ds-authentication">How to use PayU 3DS authentication</h2>
+	<h2 id="using-payu-3ds-authentication">Using PayU 3DS Authentication</h2>
 <p>To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called <code>req3DSAuthentication</code> in your payment requests via PayU&rsquo;s Payments API.</p>
 
 
@@ -865,15 +861,15 @@
 3DS authentication for PayU Latam is only available for <strong>Argentina</strong>, <strong>Brazil</strong>, <strong>Colombia</strong>, and <strong>Peru</strong>.
 </div>
 
-<h3 id="the-req3dsauthentication-parameter">The <code>req3DSAuthentication</code> parameter</h3>
+<h3 id="the-req3dsauthentication-parameter">The <code>req3DSAuthentication</code> Parameter</h3>
 <p>This parameter allows you to control whether 3DS authentication is required for each transaction. It accepts two values:</p>
 <ul>
 <li><code>&quot;true&quot;</code>: Enforces 3DS authentication for the transaction.</li>
 <li><code>&quot;false&quot;</code>: Disables 3DS authentication for the transaction.</li>
 </ul>
 <p><strong>If <code>req3DSAuthentication</code> is not included,</strong> PayU will decide whether to perform 3DS authentication based on its own risk assessment.</p>
-<h4 id="request-body">Request body:</h4>
-<p>In the request example below, the <code>req3DSAuthentication</code> is set <code>true</code>:</p>
+<p><strong>Request example:</strong>
+In the request example below, the <code>req3DSAuthentication</code> is set <code>true</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -946,13 +942,13 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="transaction-response-and-authentication-flow">Transaction response and authentication flow</h2>
+</span></span></code></pre></div><h2 id="transaction-response-and-authentication-flow">Transaction Response and Authentication Flow</h2>
 <p>Upon sending a payment request, you will receive a response with a <code>&quot;PENDING&quot;</code> state for the transaction. This response will also include a field within <code>extraParameters</code> called <code>THREEDS_AUTH_REDIRECT_URL</code>.</p>
 <ul>
 <li><strong><code>THREEDS_AUTH_REDIRECT_URL</code>:</strong> This URL should be used to redirect the payer to complete the 3DS authentication process. The authentication process might involve challenges like entering a one-time password (OTP) received on their phone.</li>
 </ul>
-<h3 id="response">Response</h3>
-<p>In the response example below, the merchant redirects the payer to <code>https://merch-prod.payu.com</code>:</p>
+<p><strong>Response example</strong>
+In the response example below, the merchant redirects the payer to <code>https://merch-prod.payu.com</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -986,13 +982,13 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="after-authentication">After authentication</h2>
+</span></span></code></pre></div><h2 id="after-authentication">After Authentication</h2>
 <p>Once the payer completes the 3DS authentication (if required), PayU will receive a notification. The transaction will then be:</p>
 <ul>
 <li><strong>Completed:</strong> If the authentication is successful.</li>
 <li><strong>Declined:</strong> If the authentication fails.</li>
 </ul>
-<h3 id="redirection-after-authentication">Redirection after authentication</h3>
+<h3 id="redirection-after-authentication">Redirection After Authentication</h3>
 <p>Following the payer&rsquo;s redirection from the <code>THREEDS_AUTH_REDIRECT_URL</code>, they will be directed to:</p>
 <ul>
 <li><strong>PayU Checkout transaction status page:</strong> By default, this is the behavior if the merchant hasn&rsquo;t specified a custom return URL.</li>
@@ -1004,9 +1000,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-July 12, 2024:
+July 26, 2024:
 
- <b>Documentation updates (10d1ab52c)</b>
+ <b>Documentation updates (e5a4165f4)</b>
 </div>
 </div>
 

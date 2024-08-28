@@ -29,74 +29,99 @@ In the request example below, the `req3DSAuthentication` is set `true`:
 
 ```JSON
 {
-    "language": "es",
+    "language": "en",
     "command": "SUBMIT_TRANSACTION",
     "merchant": {
-        "apiLogin": "X",
-        "apiKey": "X"
+        "apiLogin": "pRRXKOl8ikMmt9u",
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
     },
     "transaction": {
         "order": {
-            "accountId": "1",
-            "referenceCode": "payment_test_00000001",
-            "description": "payment test",
-            "language": "es",
-            "notifyUrl": "http://www.tes.com/confirmation",
-            "additionalValues": {
-                "TX_VALUE": {
-                    "value": 20000,
-                    "currency": "COP"
+            "language": "en",
+            "signature": "8b9abb9dcae76d331e4493a559e8a76a0a9296e6944d460303d5639d9230c485",
+            "accountId": "512321",
+            "description": "PayULatamAPI|Test|CO|COL",
+            "referenceCode": "REFERENCIA_PRUEBA_12345",
+            "notifyUrl": "https://merchant-mywebhook.com",
+            "buyer": {
+                "merchantBuyerId": "Merchant_Buyer_ID_123",
+                "fullName": "John Doe",
+                "emailAddress": "john.doe@email.com",
+                "contactPhone": "3155555555",
+                "dniType": "CC",
+                "dniNumber": "123456789",
+                "shippingAddress": {
+                    "country": "CO",
+                    "state": "DC",
+                    "city": "Bogotá",
+                    "postalCode": "110111",
+                    "street1": "Calle 100",
+                    "street2": "Cra 9",
+                    "phone": "6011234567"
                 }
             },
-            "buyer": {
-                "merchantBuyerId": "1",
-                "fullName": "Test",
-                "emailAddress": "buyer_test@test.com",
-                "contactPhone": "(11)756312633",
-                "dniNumber": "X",
-                "cnpj": "X",
-                "shippingAddress": {
-                    "street1": "calle 100",
-                    "street2": "5555487",
-                    "city": "Sao paulo",
-                    "state": "SP",
-                    "country": "CO",
-                    "postalCode": "01019-030",
-                    "phone": "(11)756312633"
+            "shippingAddress": {
+                "country": "CO",
+                "state": "DC",
+                "city": "Bogotá",
+                "postalCode": "110111",
+                "street1": "Calle 100",
+                "street2": "Cra 9",
+                "phone": "6011234567"
+            },
+            "additionalValues": {
+                "TX_VALUE": {
+                    "value": "100",
+                    "currency": "COP"
+                },
+                "TX_TAX": {
+                    "value": "0",
+                    "currency": "COP"
+                },
+                "TX_TAX_RETURN_BASE": {
+                    "value": "0",
+                    "currency": "COP"
                 }
             }
         },
         "payer": {
-            "merchantPayerId": "1",
-            "fullName": "First name and second payer name",
-            "emailAddress": "payer_test@test.com",
-            "contactPhone": "7563126",
-            "dniNumber": "5415668464654",
+            "merchantPayerId": "Merchant_Payer_ID_123",
+            "fullName": "John Doe",
+            "emailAddress": "john.doe@email.com",
+            "contactPhone": "3155555555",
+            "dniType": "CC",
+            "dniNumber": "123456789",
             "billingAddress": {
-                "street1": "Av. Isabel La Católica 103-La Victoria",
-                "street2": "125544",
-                "city": "Lima",
-                "state": "Lima y Callao",
-                "country": "PE",
-                "postalCode": "000000",
-                "phone": "7563126"
+                "country": "CO",
+                "state": "DC",
+                "city": "Bogotá",
+                "postalCode": "110111",
+                "street1": "Calle 100",
+                "street2": "Cra 9",
+                "phone": "6011234567"
             }
         },
         "creditCard": {
-            "number": "X",
-            "securityCode": "X",
-            "expirationDate": "X",
-            "name": "APPROVED"
+            "name": "APPROVED",
+            "number": "5570898637920584",
+            "expirationDate": "2025/12",
+            "securityCode": "777",
+            "processWithoutCvv2": false
         },
         "extraParameters": {
-            "INSTALLMENTS_NUMBER": 1
+            "INSTALLMENTS_NUMBER": 1,
+            "RESPONSE_URL": "https://merchant.shoppingresult.com"
         },
-        "req3DSAuthentication": "true",
         "type": "AUTHORIZATION_AND_CAPTURE",
-        "paymentMethod": "VISA",
-        "ipAddress": "127.0.0.1",
-        "integrationMethod": "STANDARD_HTML_v4_0",
-        "source": "WEB"
+        "paymentMethod": "MASTERCARD",
+        "paymentCountry": "CO",
+        "ipAddress": "45.6.10.241",
+        "userAgent": "Mozilla/5.0 (Windows; U; Windows NT 6.0) AppleWebKit/531.2.0 (KHTML, like Gecko) Chrome/21.0.885.0 Safari/531.2.0",
+        "cookie": "sefejihsxeai037qhkwa3jex9",
+        "deviceSessionId": "cb066830a3dcbdaf7234fd230d1959b0c6b3ae3ad5265490d55802a61738b537",
+        "integrationMethod": "POST_API_v4_0",
+        "req3DSAuthentication": "true",
+        "source": "WEB"  
     },
     "test": false
 }
@@ -116,8 +141,8 @@ In the response example below, the merchant redirects the payer to `https://merc
     "code": "SUCCESS",
     "error": null,
     "transactionResponse": {
-        "orderId": 1427471957,
-        "transactionId": "53dc40a4-ef00-4637-9578-941421f6fd7e",
+        "orderId": 3344440141,
+        "transactionId": "968d3f37-25aa-4fc2-86bf-0a2eee091713",
         "state": "PENDING",
         "paymentNetworkResponseCode": null,
         "paymentNetworkResponseErrorMessage": null,
@@ -129,15 +154,15 @@ In the response example below, the merchant redirects the payer to `https://merc
         "responseMessage": null,
         "transactionDate": null,
         "transactionTime": null,
-        "operationDate": 1712909903010,
+        "operationDate": 1723749925205,
         "referenceQuestionnaire": null,
         "extraParameters": {
             "BANK_REFERENCED_CODE": "CREDIT",
-            "THREEDS_AUTH_REDIRECT_URL": "https://merch-prod.payu.com/threeds/?authenticationId=6c38fbd4-e643-49e6-be75-1okhfe02a71"
+            "THREEDS_AUTH_REDIRECT_URL": "https://secure.payu.com/front/threeds/?authenticationId=a27e4aa7-1a24-48d1-a9a6-03f463e048e4"
         },
         "additionalInfo": {
             "paymentNetwork": "CREDIBANCO_V2",
-            "rejectionType": null,
+            "rejectionType": "NONE",
             "responseNetworkMessage": null,
             "travelAgencyAuthorizationCode": null,
             "cardType": "CREDIT",

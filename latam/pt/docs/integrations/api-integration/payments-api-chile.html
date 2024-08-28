@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-chile.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-06-24T16:33:19-05:00" />
+<meta property="article:modified_time" content="2024-07-26T09:39:39-05:00" />
 
 <meta itemprop="name" content="API de pagamentos - Chile">
 <meta itemprop="description" content="A API de pagamentos do Chile permite que sua loja processe diferentes tipos de transações com múltiplas formas de pagamento.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-06-24T16:33:19-05:00" />
-<meta itemprop="wordCount" content="10286">
+<meta itemprop="dateModified" content="2024-07-26T09:39:39-05:00" />
+<meta itemprop="wordCount" content="7751">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de pagamentos - Chile"/>
 <meta name="twitter:description" content="A API de pagamentos do Chile permite que sua loja processe diferentes tipos de transações com múltiplas formas de pagamento.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4f7710ff2f743e8d278e1c88e6259abb3f3410fc02a886c84ca245028650c58e7d2112ad3faca914e6b5af3f9c452c1624176289230612483ec056243b5c2f6b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b7f186066d5d8aa3be69e8207ff2e0600fd1f58a8c807a7b69f14fa312ada257402c64ffb68cee5d9411c6ec3b035d969ed32ba544fd0203926865eb2591816e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -292,13 +292,13 @@
       
       
       
-        <a id="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticação 3DS realizada pela PayU</a>
+        <a id="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticação 3DS Realizada pela PayU</a>
       
       
       
       
       
-        <a id="/pt/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/external-3ds-authentication.html">Autenticação 3DS externa</a>
+        <a id="/pt/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/external-3ds-authentication.html">Autenticação 3DS Externa</a>
       
       
     </li>
@@ -567,7 +567,7 @@
       
       
       
-        <a id="/pt/docs/integrations/api-integration/payments-api-colombia.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-colombiahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-colombia.html">API de pagamentos - Colômbia</a>
+        <a id="/pt/docs/integrations/api-integration/payments-api-colombia.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-colombiahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-colombia.html">API de Pagamentos - Colômbia</a>
       
       
       
@@ -785,15 +785,6 @@
         <li><a href="#charge">Cobrança</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-khipu">Enviar transações usando Khipu</a>
-      <ul>
-        <li><a href="#processo-de-pagamento-khipu">Processo de pagamento Khipu</a></li>
-        <li><a href="#parâmetros-para-solicitação-e-resposta">Parâmetros para solicitação e resposta</a></li>
-        <li><a href="#lista-de-bancos-disponíveis-com-khipu">Lista de bancos disponíveis com Khipu</a></li>
-        <li><a href="#considerações-adicionais-para-integração-com-khipu">Considerações adicionais para integração com Khipu</a></li>
-        <li><a href="#recursos-adicionais">Recursos Adicionais:</a></li>
-      </ul>
-    </li>
     <li><a href="#submit-transactions-using-cash">Enviar transações usando dinheiro</a>
       <ul>
         <li><a href="#parameters-for-request-and-response-1">Parâmetros para solicitação e resposta</a></li>
@@ -893,8 +884,7 @@
 <h2 id="available-methods">Métodos disponíveis</h2>
 <p>A API de pagamentos inclui os seguintes métodos:</p>
 <ul>
-<li><a href="#submit-transactions-using-credit-or-debit-cards">Enviar transações usando cartões de crédito, débito ou pré-pago</a></li>
-<li><a href="../../../../pt/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-khipu">Enviar transações usando Khipu</a></li>
+<li><a href="#submit-transactions-using-credit-or-debit-cards">Enviar transações usando cartões de crédito, débito ou pré-pago</a> <!-- * [Enviar transações usando Khipu](/pt/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-khipu) --></li>
 <li><a href="#submit-transactions-using-cash">Enviar transações usando dinheiro</a></li>
 <li><a href="#submit-transactions-using-debit-and-prepaid-cards">Enviar transações usando cartões de débito e pré-pagos através do WebPay Plus</a></li>
 <li><a href="#available-payment-methods-query">Consulta de métodos de pagamento disponíveis</a></li>
@@ -2399,618 +2389,151 @@ Transações usando fluxos de duas etapas estão disponíveis sob demanda. Conta
 
 
 </div>
-<h2 id="submit-transactions-using-khipu">Enviar transações usando Khipu</h2>
-<p>Khipu é uma solução de pagamento que permite que empresas no Chile aceitem pagamentos diretamente das contas bancárias de seus clientes, sem a necessidade de cartões de crédito ou débito.</p>
-<p><strong>Benefícios para o seu negócio:</strong></p>
-<ul>
-<li><strong>Aumente suas vendas:</strong> Khipu oferece uma experiência de pagamento simples e fluida, o que se traduz em uma maior taxa de conversão e mais vendas.</li>
-<li><strong>Expanda seu alcance:</strong> Alcance um público mais amplo aceitando pagamentos de todos os bancos no Chile, incluindo clientes que não possuem cartão de crédito ou débito.</li>
-<li><strong>Melhore a segurança:</strong> Khipu emprega tecnologias de criptografia e autenticação para proteger as informações de seus clientes e promover transações seguras.</li>
-</ul>
-<h3 id="processo-de-pagamento-khipu">Processo de pagamento Khipu</h3>
-<p>Para integrar o Khipu à sua plataforma de e-commerce, você pode criar um formulário de pagamento e gerar uma experiência do usuário seguindo o fluxo abaixo:</p>
-<ol>
-<li><strong>Seleção de pagamento:</strong> O cliente escolhe Khipu como método de pagamento em seu checkout:</li>
-</ol>
+<!--
+## Enviar transações usando Khipu {#submit-transactions-using-khipu}
+
+Khipu é uma solução de pagamento que permite que empresas no Chile aceitem pagamentos diretamente das contas bancárias de seus clientes, sem a necessidade de cartões de crédito ou débito.
+
+**Benefícios para o seu negócio:**
+
+* **Aumente suas vendas:** Khipu oferece uma experiência de pagamento simples e fluida, o que se traduz em uma maior taxa de conversão e mais vendas.
+* **Expanda seu alcance:** Alcance um público mais amplo aceitando pagamentos de todos os bancos no Chile, incluindo clientes que não possuem cartão de crédito ou débito.
+* **Melhore a segurança:** Khipu emprega tecnologias de criptografia e autenticação para proteger as informações de seus clientes e promover transações seguras.
+
+### Processo de pagamento Khipu
+
+Para integrar o Khipu à sua plataforma de e-commerce, você pode criar um formulário de pagamento e gerar uma experiência do usuário seguindo o fluxo abaixo:
+
+1. **Seleção de pagamento:** O cliente escolhe Khipu como método de pagamento em seu checkout:
+
 <img src="../../../../assets/Payments/KHIPU_PT_01.png" alt="PrintScreen" width="250">
 <p></p>
-<ol start="2">
-<li><strong>Seleção do banco:</strong> O cliente seleciona seu banco preferido.</li>
-</ol>
+
+2. **Seleção do banco:** O cliente seleciona seu banco preferido.
+
 <img src="../../../../assets/Payments/KHIPU_PT_02.png" alt="PrintScreen" width="250">
 <p></p>
-<ol start="3">
-<li><strong>Autenticação segura:</strong> O cliente insere suas credenciais bancárias na plataforma segura do Khipu.</li>
-</ol>
+
+3. **Autenticação segura:** O cliente insere suas credenciais bancárias na plataforma segura do Khipu.
+
 <img src="../../../../assets/Payments/KHIPU_PT_03.png" alt="PrintScreen" width="500">
 <p></p>
-<ol start="4">
-<li><strong>Confirmação de pagamento:</strong> O cliente recebe uma confirmação imediata da transação.</li>
-</ol>
+
+4. **Confirmação de pagamento:** O cliente recebe uma confirmação imediata da transação.
+
 <img src="../../../../assets/Payments/KHIPU_PT_04.png" alt="PrintScreen" width="250">
 <p></p>
-<ol start="5">
-<li><strong>Suporte e recibo:</strong> O sistema envia um recibo detalhado para o endereço de e-mail do cliente.</li>
-</ol>
+
+5. **Suporte e recibo:** O sistema envia um recibo detalhado para o endereço de e-mail do cliente.
+
 <img src="../../../../assets/Payments/KHIPU_PT_05.png" alt="PrintScreen" width="250">
 <p></p>
-<h3 id="parâmetros-para-solicitação-e-resposta">Parâmetros para solicitação e resposta</h3>
+
+### Parâmetros para solicitação e resposta
+
 <details>
 <summary>Solicitação</summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
-<table>
-<thead>
-<tr>
-<th>Nome do campo</th>
-<th>Formato</th>
-<th>Tamanho</th>
-<th>Descrição</th>
-<th>Obrigatório</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>language</td>
-<td>Alfanumérico</td>
-<td>2</td>
-<td>Idioma usado na solicitação, este idioma é usado para exibir as mensagens de erro geradas. <a href="../../../../pt/docs/getting-started/response-codes-and-variables.html#supported-languages">Veja idiomas suportados</a>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>command</td>
-<td>Alfanumérico</td>
-<td>Máx:32</td>
-<td>Definir <code>SUBMIT_TRANSACTION</code>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>merchant</td>
-<td>Objeto</td>
-<td></td>
-<td>Este objeto contém os dados de autenticação.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>merchant &gt; apiLogin</td>
-<td>Alfanumérico</td>
-<td>Mín:12 Máx:32</td>
-<td>Usuário ou login fornecido pelo PayU. <a href="../../../../pt/docs/integrations.html#api-key-and-api-login">Como obter meu API Login</a></td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>merchant &gt; apiKey</td>
-<td>Alfanumérico</td>
-<td>Mín:6 Máx:32</td>
-<td>Senha fornecida pelo PayU. <a href="../../../../pt/docs/integrations.html#api-key-and-api-login">Como obter minha API Key</a></td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction</td>
-<td>Objeto</td>
-<td></td>
-<td>Este objeto contém os dados da transação.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order</td>
-<td>Objeto</td>
-<td></td>
-<td>Este objeto contém os dados do pedido.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; accountId</td>
-<td>Numérico</td>
-<td></td>
-<td>Identificador da sua conta.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; referenceCode</td>
-<td>Alfanumérico</td>
-<td>Mín:1 Máx:255</td>
-<td>Representa o identificador do pedido no seu sistema.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; description</td>
-<td>Alfanumérico</td>
-<td>Mín:1 Máx:255</td>
-<td>Descrição do pedido.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; language</td>
-<td>Alfanumérico</td>
-<td>2</td>
-<td>Idioma usado nos e-mails do comprador e vendedor.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; notifyUrl</td>
-<td>Alfanumérico</td>
-<td>Máx:2048</td>
-<td>URL de confirmação do pedido.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; partnerId</td>
-<td>Alfanumérico</td>
-<td>Máx:255</td>
-<td>ID do parceiro no PayU.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; signature</td>
-<td>Alfanumérico</td>
-<td>Máx:255</td>
-<td>Assinatura associada ao formulário. Para mais informações, consulte <a href="../../../../pt/docs/integrations.html#authentication-signature">Assinatura de autenticação</a>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; additionalValues</td>
-<td>Objeto</td>
-<td>64</td>
-<td>Valor do pedido ou seus valores associados.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE</td>
-<td>Alfanumérico</td>
-<td>64</td>
-<td>Valor da transação.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
-<td>Numérico</td>
-<td>12,2</td>
-<td>Especifica o valor da transação. Este valor não pode incluir decimais.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; currency</td>
-<td>Alfanumérico</td>
-<td>3</td>
-<td>Código ISO da moeda. <a href="../../../../pt/docs/getting-started/response-codes-and-variables.html#accepted-currencies">Veja moedas aceitas</a>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer</td>
-<td>Objeto</td>
-<td></td>
-<td>Informações do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; merchantBuyerId</td>
-<td>Alfanumérico</td>
-<td>Máx:100</td>
-<td>ID do comprador no seu sistema.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; fullName</td>
-<td>Alfanumérico</td>
-<td>Máx:150</td>
-<td>Nome completo do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; emailAddress</td>
-<td>Alfanumérico</td>
-<td>Máx:255</td>
-<td>Endereço de e-mail do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; contactPhone</td>
-<td>Alfanumérico</td>
-<td>Máx:20</td>
-<td>Número de telefone do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; dniNumber</td>
-<td>Alfanumérico</td>
-<td>Máx:20</td>
-<td>Número de identificação do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; shippingAddress</td>
-<td>Objeto</td>
-<td></td>
-<td>Endereço de entrega do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; street1</td>
-<td>Alfanumérico</td>
-<td>Máx:150</td>
-<td>Linha 1 do endereço de entrega do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; city</td>
-<td>Alfanumérico</td>
-<td>Máx:50</td>
-<td>Cidade do endereço de entrega do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; state</td>
-<td>Alfanumérico</td>
-<td>Máx:40</td>
-<td>Estado do endereço de entrega do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; country</td>
-<td>Alfanumérico</td>
-<td>2</td>
-<td>País do endereço de entrega do comprador no formato ISO 3166 alfa-2.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; postalCode</td>
-<td>Numérico</td>
-<td>Máx:20</td>
-<td>Código postal do endereço de entrega do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; phone</td>
-<td>Numérico</td>
-<td>Máx:20</td>
-<td>Número de telefone do endereço de entrega do comprador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; shippingAddress</td>
-<td>Objeto</td>
-<td></td>
-<td>Endereço de entrega.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; shippingAddress &gt; street1</td>
-<td>Alfanumérico</td>
-<td>Máx:100</td>
-<td>Linha 1 do endereço.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; shippingAddress &gt; street2</td>
-<td>Alfanumérico</td>
-<td>Máx:100</td>
-<td>Linha 2 do endereço.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; shippingAddress &gt; city</td>
-<td>Alfanumérico</td>
-<td>Máx:50</td>
-<td>Cidade do endereço.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; shippingAddress &gt; state</td>
-<td>Alfanumérico</td>
-<td>Máx:40</td>
-<td>Estado do endereço.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; shippingAddress &gt; country</td>
-<td>Alfanumérico</td>
-<td>2</td>
-<td>País do endereço.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; shippingAddress &gt; postalCode</td>
-<td>Alfanumérico</td>
-<td>Máx:8</td>
-<td>Código postal do endereço.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; order &gt; shippingAddress &gt; phone</td>
-<td>Alfanumérico</td>
-<td>Máx:11</td>
-<td>Número de telefone associado ao endereço.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; payer</td>
-<td>Objeto</td>
-<td></td>
-<td>Informações do pagador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; emailAddress</td>
-<td>Alfanumérico</td>
-<td>255</td>
-<td>Endereço de e-mail do pagador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; merchantPayerId</td>
-<td>Alfanumérico</td>
-<td>100</td>
-<td>Identificador do pagador no seu sistema.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; fullName</td>
-<td>Alfanumérico</td>
-<td>150</td>
-<td>Nome completo do pagador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; billingAddress</td>
-<td>Objeto</td>
-<td></td>
-<td>Endereço de cobrança.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; billingAddress &gt; street1</td>
-<td>Alfanumérico</td>
-<td>100</td>
-<td>Linha 1 do endereço de cobrança.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; billingAddress &gt; street2</td>
-<td>Alfanumérico</td>
-<td>100</td>
-<td>Linha 2 do endereço de cobrança.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; billingAddress &gt; city</td>
-<td>Alfanumérico</td>
-<td>50</td>
-<td>Cidade do endereço de cobrança.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; billingAddress &gt; state</td>
-<td>Alfanumérico</td>
-<td>40</td>
-<td>Estado do endereço de cobrança.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; billingAddress &gt; country</td>
-<td>Alfanumérico</td>
-<td>2</td>
-<td>País do endereço de cobrança no formato ISO 3166 alfa-2.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; billingAddress &gt; postalCode</td>
-<td>Alfanumérico</td>
-<td>20</td>
-<td>Código postal do endereço de cobrança.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; billingAddress &gt; phone</td>
-<td>Alfanumérico</td>
-<td>20</td>
-<td>Número de telefone do endereço de cobrança.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; birthdate</td>
-<td>Alfanumérico</td>
-<td>10</td>
-<td>Data de nascimento do pagador.</td>
-<td>Não</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; contactPhone</td>
-<td>Alfanumérico</td>
-<td>20</td>
-<td>Número de telefone do pagador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; dniNumber</td>
-<td>Alfanumérico</td>
-<td>20</td>
-<td>Número de identificação do pagador.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; payer &gt; dniType</td>
-<td>Alfanumérico</td>
-<td>2</td>
-<td>Tipo de identificação do pagador. <a href="../../../../pt/docs/getting-started/response-codes-and-variables.html#document-types">Veja tipos de documento</a>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; extraParameters</td>
-<td>Objeto</td>
-<td></td>
-<td>Parâmetros adicionais ou dados associados à solicitação. Para pagamentos por transferência bancária Khipu, isso inclui: a página de resposta do seu comércio (obrigatório), o código do banco (obrigatório) e o nome do banco (opcional). <ul> Em JSON, o parâmetro <code>extraParameters</code> é definido como: <code>&quot;extraParameters&quot;: {&quot;RESPONSE_URL&quot;: &quot;http://www.payu.com/response&quot;, &quot;FINANCIAL_INSTITUTION_CODE&quot;: &quot;Bawdf&quot;, &quot;FINANCIAL_INSTITUTION_NAME&quot;: &quot;DemoBank&quot; }</code> </ul> <ul> Em XML, o parâmetro <code>extraParameters</code> é definido como: <code>&lt;extraParameters&gt; &lt;entry&gt; &lt;string&gt;RESPONSE_URL&lt;/string&gt; &lt;string&gt;http://www.payu.com/response&lt;/string&gt; &lt;/entry&gt; &lt;entry&gt; &lt;string&gt;FINANCIAL_INSTITUTION_CODE&lt;/string&gt; &lt;string&gt;Bawdf&lt;/string&gt; &lt;/entry&gt; &lt;entry&gt; &lt;string&gt;FINANCIAL_INSTITUTION_NAME&lt;/string&gt; &lt;string&gt;DemoBank&lt;/string&gt; &lt;/entry&gt; &lt;/extraParameters&gt;</code></td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; type</td>
-<td>Alfanumérico</td>
-<td>32</td>
-<td>Como esses pagamentos são feitos no site do PSE, a única transação disponível é <code>AUTHORIZATION_AND_CAPTURE</code></td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; paymentMethod</td>
-<td>Alfanumérico</td>
-<td>32</td>
-<td>Selecione um método de pagamento válido para transferência bancária. <a href="../../../../pt/docs/integrations/api-integration/payments-api-chile.html#available-payment-methods-query">Veja métodos de pagamento disponíveis para o Chile</a>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; paymentCountry</td>
-<td>Alfanumérico</td>
-<td>2</td>
-<td>Definir como <code>CL</code> para Chile.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; deviceSessionId</td>
-<td>Alfanumérico</td>
-<td>255</td>
-<td>Identificador da sessão do dispositivo onde o cliente realiza a transação. Para mais informações, consulte <a href="../../../../pt/docs/integrations.html#_devicesessionid_-variable">este tópico</a>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; ipAddress</td>
-<td>Alfanumérico</td>
-<td>39</td>
-<td>Endereço IP do dispositivo onde o cliente realiza a transação.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; cookie</td>
-<td>Alfanumérico</td>
-<td>255</td>
-<td>Cookie armazenado pelo dispositivo onde o cliente realiza a transação.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>transaction &gt; userAgent</td>
-<td>Alfanumérico</td>
-<td>1024</td>
-<td>O user agent do navegador onde o cliente realiza a transação.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>test (JSON) <hr>isTest (XML)</td>
-<td>Booleano</td>
-<td></td>
-<td>Defina como <code>true</code> se a solicitação estiver em modo de teste. Caso contrário, defina como <code>false</code>.</td>
-<td>Sim</td>
-</tr>
-</tbody>
-</table>
+
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
+|---|---|---|---|---|
+| language | Alfanumérico | 2 | Idioma usado na solicitação, este idioma é usado para exibir as mensagens de erro geradas. [Veja idiomas suportados](/pt/docs/getting-started/response-codes-and-variables.html#supported-languages). | Sim |
+| command | Alfanumérico | Máx:32 | Definir `SUBMIT_TRANSACTION`. | Sim |
+| merchant | Objeto |  | Este objeto contém os dados de autenticação. | Sim |
+| merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuário ou login fornecido pelo PayU. [Como obter meu API Login](/pt/docs/integrations.html#api-key-and-api-login) | Sim |
+| merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Senha fornecida pelo PayU. [Como obter minha API Key](/pt/docs/integrations.html#api-key-and-api-login) | Sim |
+| transaction | Objeto | | Este objeto contém os dados da transação. | Sim |
+| transaction > order | Objeto | | Este objeto contém os dados do pedido. | Sim |
+| transaction > order > accountId | Numérico | | Identificador da sua conta. | Sim |
+| transaction > order > referenceCode | Alfanumérico | Mín:1 Máx:255 | Representa o identificador do pedido no seu sistema. | Sim |
+| transaction > order > description | Alfanumérico | Mín:1 Máx:255 | Descrição do pedido. | Sim |
+| transaction > order > language | Alfanumérico | 2 | Idioma usado nos e-mails do comprador e vendedor. | Sim |
+| transaction > order > notifyUrl | Alfanumérico | Máx:2048 | URL de confirmação do pedido. | Não |
+| transaction > order > partnerId | Alfanumérico | Máx:255 | ID do parceiro no PayU. | Não |
+| transaction > order > signature | Alfanumérico | Máx:255 | Assinatura associada ao formulário. Para mais informações, consulte [Assinatura de autenticação](/pt/docs/integrations.html#authentication-signature). | Sim |
+| transaction > order > additionalValues | Objeto | 64 | Valor do pedido ou seus valores associados. | Sim |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Valor da transação. | Sim |
+| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12,2 | Especifica o valor da transação. Este valor não pode incluir decimais. | Sim |
+| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja moedas aceitas](/pt/docs/getting-started/response-codes-and-variables.html#accepted-currencies). | Sim |
+| transaction > order > buyer | Objeto | | Informações do comprador. | Sim |
+| transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | ID do comprador no seu sistema. | Não |
+| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nome completo do comprador. | Sim |
+| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | Endereço de e-mail do comprador. | Sim |
+| transaction > order > buyer > contactPhone | Alfanumérico | Máx:20 | Número de telefone do comprador. | Sim |
+| transaction > order > buyer > dniNumber | Alfanumérico | Máx:20 | Número de identificação do comprador. | Sim |
+| transaction > order > buyer > shippingAddress | Objeto | | Endereço de entrega do comprador. | Sim |
+| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Máx:150 | Linha 1 do endereço de entrega do comprador. | Sim |
+| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Cidade do endereço de entrega do comprador. | Sim |
+| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Estado do endereço de entrega do comprador. | Sim |
+| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País do endereço de entrega do comprador no formato ISO 3166 alfa-2. | Sim |
+| transaction > order > buyer > shippingAddress > postalCode | Numérico | Máx:20 | Código postal do endereço de entrega do comprador. | Sim |
+| transaction > order > buyer > shippingAddress > phone | Numérico | Máx:20 | Número de telefone do endereço de entrega do comprador. | Sim |
+| transaction > order > shippingAddress | Objeto | | Endereço de entrega. | Não |
+| transaction > order > shippingAddress > street1 | Alfanumérico | Máx:100 | Linha 1 do endereço. | Não |
+| transaction > order > shippingAddress > street2 | Alfanumérico | Máx:100 | Linha 2 do endereço. | Não |
+| transaction > order > shippingAddress > city | Alfanumérico | Máx:50 | Cidade do endereço. | Não |
+| transaction > order > shippingAddress > state | Alfanumérico | Máx:40 | Estado do endereço. | Não |
+| transaction > order > shippingAddress > country | Alfanumérico | 2 | País do endereço. | Não |
+| transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Código postal do endereço. | Não |
+| transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de telefone associado ao endereço. | Não |
+| transaction > payer | Objeto | | Informações do pagador. | Sim |
+| transaction > payer > emailAddress | Alfanumérico | 255 | Endereço de e-mail do pagador. | Sim |
+| transaction > payer > merchantPayerId | Alfanumérico | 100 | Identificador do pagador no seu sistema. | Não |
+| transaction > payer > fullName | Alfanumérico | 150 | Nome completo do pagador. | Sim |
+| transaction > payer > billingAddress | Objeto | | Endereço de cobrança. | Sim |
+| transaction > payer > billingAddress > street1 | Alfanumérico | 100 | Linha 1 do endereço de cobrança. | Sim |
+| transaction > payer > billingAddress > street2 | Alfanumérico | 100 | Linha 2 do endereço de cobrança. | Não |
+| transaction > payer > billingAddress > city | Alfanumérico | 50 | Cidade do endereço de cobrança. | Sim |
+| transaction > payer > billingAddress > state | Alfanumérico | 40 | Estado do endereço de cobrança. | Não |
+| transaction > payer > billingAddress > country | Alfanumérico | 2 | País do endereço de cobrança no formato ISO 3166 alfa-2. | Sim |
+| transaction > payer > billingAddress > postalCode | Alfanumérico | 20 | Código postal do endereço de cobrança. | Não |
+| transaction > payer > billingAddress > phone | Alfanumérico | 20 | Número de telefone do endereço de cobrança. | Não |
+| transaction > payer > birthdate | Alfanumérico | 10 | Data de nascimento do pagador. | Não |
+| transaction > payer > contactPhone | Alfanumérico | 20 | Número de telefone do pagador. | Sim |
+| transaction > payer > dniNumber | Alfanumérico | 20 | Número de identificação do pagador. | Sim |
+| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificação do pagador. [Veja tipos de documento](/pt/docs/getting-started/response-codes-and-variables.html#document-types). | Sim |
+| transaction > extraParameters | Objeto | | Parâmetros adicionais ou dados associados à solicitação. Para pagamentos por transferência bancária Khipu, isso inclui: a página de resposta do seu comércio (obrigatório), o código do banco (obrigatório) e o nome do banco (opcional). <ul> Em JSON, o parâmetro `extraParameters` é definido como: `"extraParameters": {"RESPONSE_URL": "http://www.payu.com/response", "FINANCIAL_INSTITUTION_CODE": "Bawdf", "FINANCIAL_INSTITUTION_NAME": "DemoBank" }` </ul> <ul> Em XML, o parâmetro `extraParameters` é definido como: `<extraParameters> <entry> <string>RESPONSE_URL</string> <string>http://www.payu.com/response</string> </entry> <entry> <string>FINANCIAL_INSTITUTION_CODE</string> <string>Bawdf</string> </entry> <entry> <string>FINANCIAL_INSTITUTION_NAME</string> <string>DemoBank</string> </entry> </extraParameters>` | Sim |
+| transaction > type | Alfanumérico | 32 | Como esses pagamentos são feitos no site do PSE, a única transação disponível é `AUTHORIZATION_AND_CAPTURE` | Sim |
+| transaction > paymentMethod | Alfanumérico | 32 | Selecione um método de pagamento válido para transferência bancária. [Veja métodos de pagamento disponíveis para o Chile](/pt/docs/integrations/api-integration/payments-api-chile.html#available-payment-methods-query). | Sim |
+| transaction > paymentCountry | Alfanumérico | 2 | Definir como `CL` para Chile. | Sim |
+| transaction > deviceSessionId | Alfanumérico | 255 | Identificador da sessão do dispositivo onde o cliente realiza a transação. Para mais informações, consulte [este tópico](/pt/docs/integrations.html#_devicesessionid_-variable). | Sim |
+| transaction > ipAddress | Alfanumérico | 39 | Endereço IP do dispositivo onde o cliente realiza a transação. | Sim |
+| transaction > cookie | Alfanumérico | 255 | Cookie armazenado pelo dispositivo onde o cliente realiza a transação. | Sim |
+| transaction > userAgent | Alfanumérico | 1024 | O user agent do navegador onde o cliente realiza a transação. | Sim |
+| test (JSON) <hr>isTest (XML) | Booleano | | Defina como `true` se a solicitação estiver em modo de teste. Caso contrário, defina como `false`. | Sim |
+
 </details>
+
 <details>
 <summary>Resposta</summary>
 <br>
 <div class="variables"></div>
-<table>
-<thead>
-<tr>
-<th>Nome do campo</th>
-<th>Formato</th>
-<th>Tamanho</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>code</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Código de resposta da transação. Valores possíveis são <code>ERROR</code> e <code>SUCCESS</code>.</td>
-</tr>
-<tr>
-<td>error</td>
-<td>Alfanumérico</td>
-<td>Máx: 2048</td>
-<td>Mensagem de erro associada quando o código de resposta é <code>ERROR</code>.</td>
-</tr>
-<tr>
-<td>transactionResponse</td>
-<td>Objeto</td>
-<td></td>
-<td>Dados da resposta.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; orderId</td>
-<td>Numérico</td>
-<td></td>
-<td>ID do pedido gerado ou existente no PayU.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; transactionId</td>
-<td>Alfanumérico</td>
-<td>36</td>
-<td>Identificador da transação no PayU.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; state</td>
-<td>Alfanumérico</td>
-<td>Máx: 32</td>
-<td>Estado da transação. Como o usuário realiza o pagamento em um escritório físico, o estado para uma transação bem-sucedida é <code>PENDING</code>.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; paymentNetworkResponseCode</td>
-<td>Alfanumérico</td>
-<td>Máx: 255</td>
-<td>Código de resposta retornado pela rede financeira.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; paymentNetworkResponseErrorMessage</td>
-<td>Alfanumérico</td>
-<td>Máx: 255</td>
-<td>Mensagem de erro retornada pela rede financeira.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; trazabilityCode</td>
-<td>Alfanumérico</td>
-<td>Máx: 32</td>
-<td>Código de rastreabilidade retornado pela rede financeira.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; authorizationCode</td>
-<td>Alfanumérico</td>
-<td>Máx: 12</td>
-<td>Código de autorização retornado pela rede financeira.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; pendingReason</td>
-<td>Alfanumérico</td>
-<td>Máx: 21</td>
-<td>Código de motivo associado ao estado. Como mencionado em <code>transactionResponse &gt; state</code>, a transação está aguardando pagamento.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; responseCode</td>
-<td>Alfanumérico</td>
-<td>Máx: 64</td>
-<td>Código de resposta associado ao estado. Neste caso, para transações bem-sucedidas, é <code>PENDING_TRANSACTION_CONFIRMATION</code>.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; responseMessage</td>
-<td>Alfanumérico</td>
-<td>Máx: 2048</td>
-<td>Mensagem associada ao código de resposta.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; operationDate</td>
-<td>Data</td>
-<td></td>
-<td>Data em que a resposta foi criada no sistema PayU.</td>
-</tr>
-<tr>
-<td>transactionResponse &gt; extraParameters</td>
-<td>Objeto</td>
-<td></td>
-<td>Parâmetros adicionais ou dados associados à resposta. O <code>BANK_URL</code> é a URL que você deve usar para redirecionar seu pagador ao Khipu. Em JSON, o parâmetro <code>extraParameters</code> segue esta estrutura: <code>&quot;extraParameters&quot;: { &quot;BANK_URL&quot;: &quot;xxxx&quot; }</code> Em XML, o parâmetro <code>extraParameters</code> segue esta estrutura: <code>&lt;extraParameters&gt; &lt;entry&gt; &lt;string&gt;BANK_URL&lt;/string&gt; &lt;string&gt;xxxx&lt;/string&gt; &lt;/entry&gt; &lt;/extraParameters&gt;</code></td>
-</tr>
-</tbody>
-</table>
+
+| Nome do campo | Formato | Tamanho | Descrição |
+|---|---|---|---|
+| code | Alfanumérico | | Código de resposta da transação. Valores possíveis são `ERROR` e `SUCCESS`. |
+| error | Alfanumérico | Máx: 2048 | Mensagem de erro associada quando o código de resposta é `ERROR`. |
+| transactionResponse | Objeto | | Dados da resposta. |
+| transactionResponse > orderId | Numérico | | ID do pedido gerado ou existente no PayU. |
+| transactionResponse > transactionId | Alfanumérico | 36 | Identificador da transação no PayU. |
+| transactionResponse > state | Alfanumérico | Máx: 32 | Estado da transação. Como o usuário realiza o pagamento em um escritório físico, o estado para uma transação bem-sucedida é `PENDING`. |
+| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Máx: 255 | Código de resposta retornado pela rede financeira. |
+| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Máx: 255 | Mensagem de erro retornada pela rede financeira. |
+| transactionResponse > trazabilityCode | Alfanumérico | Máx: 32 | Código de rastreabilidade retornado pela rede financeira. |
+| transactionResponse > authorizationCode | Alfanumérico | Máx: 12 | Código de autorização retornado pela rede financeira. |
+| transactionResponse > pendingReason | Alfanumérico | Máx: 21 | Código de motivo associado ao estado. Como mencionado em `transactionResponse > state`, a transação está aguardando pagamento. |
+| transactionResponse > responseCode | Alfanumérico | Máx: 64 | Código de resposta associado ao estado. Neste caso, para transações bem-sucedidas, é `PENDING_TRANSACTION_CONFIRMATION`. |
+| transactionResponse > responseMessage | Alfanumérico | Máx: 2048 | Mensagem associada ao código de resposta. |
+| transactionResponse > operationDate | Data | | Data em que a resposta foi criada no sistema PayU. |
+| transactionResponse > extraParameters | Objeto | | Parâmetros adicionais ou dados associados à resposta. O `BANK_URL` é a URL que você deve usar para redirecionar seu pagador ao Khipu. Em JSON, o parâmetro `extraParameters` segue esta estrutura: `"extraParameters": { "BANK_URL": "xxxx" }` Em XML, o parâmetro `extraParameters` segue esta estrutura: `<extraParameters> <entry> <string>BANK_URL</string> <string>xxxx</string> </entry> </extraParameters>` |
+
 </details>
-<h4 id="exemplos-de-solicitação-e-resposta">Exemplos de solicitação e resposta</h4>
-<p>Abaixo estão exemplos de solicitação e resposta nos formatos JSON e XML.</p>
+
+#### Exemplos de solicitação e resposta
+Abaixo estão exemplos de solicitação e resposta nos formatos JSON e XML.
+
 
 
 <div class="alert alert-info" role="alert">
@@ -3021,6 +2544,7 @@ Transações usando fluxos de duas etapas estão disponíveis sob demanda. Conta
 <li><code>&quot;FINANCIAL_INSTITUTION_NAME&quot;: &quot;DemoBank&quot;</code></li>
 </ul>
 </div>
+
 
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -3310,162 +2834,53 @@ Transações usando fluxos de duas etapas estão disponíveis sob demanda. Conta
 
 
 </div>
-<h3 id="lista-de-bancos-disponíveis-com-khipu">Lista de bancos disponíveis com Khipu</h3>
-<p>Opcionalmente, com este método, você pode obter a lista de bancos disponíveis para realizar pagamentos usando Khipu:</p>
+
+### Lista de bancos disponíveis com Khipu
+
+Opcionalmente, com este método, você pode obter a lista de bancos disponíveis para realizar pagamentos usando Khipu:
+
 <details>
 <summary>Solicitação</summary>
 <br>
 <div class="variables"></div>
-<table>
-<thead>
-<tr>
-<th>Nome do campo</th>
-<th>Formato</th>
-<th>Tamanho</th>
-<th>Descrição</th>
-<th>Obrigatório</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>language</td>
-<td>Alfanumérico</td>
-<td>2</td>
-<td>Idioma usado na solicitação. Este idioma é usado para exibir as mensagens de erro geradas. <a href="../../../../pt/docs/getting-started/response-codes-and-variables.html#supported-languages">Veja idiomas suportados</a>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>command</td>
-<td>Alfanumérico</td>
-<td>Máx: 32</td>
-<td>Defina como <code>GET_BANKS_LIST</code>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>test (JSON) <hr> isTest (XML)</td>
-<td>Booleano</td>
-<td></td>
-<td>Defina como <code>true</code> se a solicitação estiver em modo de teste. Caso contrário, defina como <code>false</code>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>merchant</td>
-<td>Objeto</td>
-<td></td>
-<td>Este objeto contém dados de autenticação.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>merchant &gt; apiLogin</td>
-<td>Alfanumérico</td>
-<td>Mín: 12 Máx: 32</td>
-<td>Usuário ou login fornecido pelo PayU. <a href="../../../../pt/docs/integrations.html#api-key-and-api-login">Como obter meu API Login</a></td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>merchant &gt; apiKey</td>
-<td>Alfanumérico</td>
-<td>Mín: 6 Máx: 32</td>
-<td>Senha fornecida pelo PayU. <a href="../../../../pt/docs/integrations.html#api-key-and-api-login">Como obter minha API Key</a></td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>bankListInformation</td>
-<td>Objeto</td>
-<td></td>
-<td>Este objeto contém as informações da consulta.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>bankListInformation &gt; paymentMethod</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Defina como <code>KHIPU</code>.</td>
-<td>Sim</td>
-</tr>
-<tr>
-<td>bankListInformation &gt; paymentCountry</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Defina como <code>CL</code>.</td>
-<td>Sim</td>
-</tr>
-</tbody>
-</table>
+
+| Nome do campo | Formato | Tamanho | Descrição | Obrigatório |
+|---|---|---|---|---|
+| language | Alfanumérico | 2 | Idioma usado na solicitação. Este idioma é usado para exibir as mensagens de erro geradas. [Veja idiomas suportados](/pt/docs/getting-started/response-codes-and-variables.html#supported-languages). | Sim |
+| command | Alfanumérico | Máx: 32 | Defina como `GET_BANKS_LIST`. | Sim |
+| test (JSON) <hr> isTest (XML) | Booleano | | Defina como `true` se a solicitação estiver em modo de teste. Caso contrário, defina como `false`. | Sim |
+| merchant | Objeto | | Este objeto contém dados de autenticação. | Sim |
+| merchant > apiLogin | Alfanumérico | Mín: 12 Máx: 32 | Usuário ou login fornecido pelo PayU. [Como obter meu API Login](/pt/docs/integrations.html#api-key-and-api-login) | Sim |
+| merchant > apiKey | Alfanumérico | Mín: 6 Máx: 32 | Senha fornecida pelo PayU. [Como obter minha API Key](/pt/docs/integrations.html#api-key-and-api-login) | Sim |
+| bankListInformation | Objeto | | Este objeto contém as informações da consulta. | Sim |
+| bankListInformation > paymentMethod | Alfanumérico | | Defina como `KHIPU`. | Sim |
+| bankListInformation > paymentCountry | Alfanumérico | | Defina como `CL`. | Sim |
+
 </details>
+
 <details>
 <summary>Resposta</summary>
 <br>
 <div class="variables"></div>
-<table>
-<thead>
-<tr>
-<th>Nome do campo</th>
-<th>Formato</th>
-<th>Tamanho</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>code</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Código de resposta da transação. Os valores possíveis são <code>ERROR</code> e <code>SUCCESS</code>.</td>
-</tr>
-<tr>
-<td>error</td>
-<td>Alfanumérico</td>
-<td>Máx: 2048</td>
-<td>Mensagem de erro associada quando o código de resposta é <code>ERROR</code>.</td>
-</tr>
-<tr>
-<td>banks</td>
-<td>Objeto</td>
-<td></td>
-<td>Lista de bancos disponíveis no Khipu.</td>
-</tr>
-<tr>
-<td>banks &gt; id</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Código a ser enviado no parâmetro extra <code>FINANCIAL_INSTITUTION_CODE</code> da solicitação de pagamento.</td>
-</tr>
-<tr>
-<td>banks &gt; name</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Nome do banco a ser exibido na lista.</td>
-</tr>
-<tr>
-<td>banks &gt; message</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Mensagem com detalhes específicos do banco.</td>
-</tr>
-<tr>
-<td>banks &gt; minAmount</td>
-<td>Numérico</td>
-<td></td>
-<td>Valor mínimo suportado pelo banco.</td>
-</tr>
-<tr>
-<td>banks &gt; type</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Tipo de banco.</td>
-</tr>
-<tr>
-<td>banks &gt; parent</td>
-<td>Alfanumérico</td>
-<td></td>
-<td>Identificador do banco principal. Se um banco tiver seções Pessoal e Empresarial, a seção Pessoal será a principal da seção Empresarial.</td>
-</tr>
-</tbody>
-</table>
+
+| Nome do campo | Formato | Tamanho | Descrição |
+|---|---|---|---|
+| code | Alfanumérico | | Código de resposta da transação. Os valores possíveis são `ERROR` e `SUCCESS`. |
+| error | Alfanumérico | Máx: 2048 | Mensagem de erro associada quando o código de resposta é `ERROR`. |
+| banks | Objeto | | Lista de bancos disponíveis no Khipu. |
+| banks > id | Alfanumérico | | Código a ser enviado no parâmetro extra `FINANCIAL_INSTITUTION_CODE` da solicitação de pagamento. |
+| banks > name | Alfanumérico | | Nome do banco a ser exibido na lista. |
+| banks > message | Alfanumérico | | Mensagem com detalhes específicos do banco. |
+| banks > minAmount | Numérico | | Valor mínimo suportado pelo banco. |
+| banks > type | Alfanumérico | | Tipo de banco. |
+| banks > parent | Alfanumérico | | Identificador do banco principal. Se um banco tiver seções Pessoal e Empresarial, a seção Pessoal será a principal da seção Empresarial. |
+
 </details>
-<h4 id="chamada-de-api">Chamada de API</h4>
-<p>Abaixo estão exemplos de solicitação e resposta nos formatos JSON e XML.</p>
+
+#### Chamada de API
+
+Abaixo estão exemplos de solicitação e resposta nos formatos JSON e XML.
+
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -3611,15 +3026,22 @@ Transações usando fluxos de duas etapas estão disponíveis sob demanda. Conta
 
 
 </div>
-<h3 id="considerações-adicionais-para-integração-com-khipu">Considerações adicionais para integração com Khipu</h3>
-<p><strong>Transparência nos pagamentos:</strong> Pagamentos processados através do gateway Khipu aparecerão no extrato bancário do pagador com o nome <em>PayU Chile SA</em>.</p>
-<p><strong>Limitações de valores:</strong> É importante notar que os bancos associados ao Khipu podem definir limites mínimos ou máximos de valor por transação. Esses limites variam de acordo com cada instituição financeira.</p>
-<p><strong>Políticas de reembolso:</strong> De acordo com as políticas do Khipu, cancelamentos totais, parciais ou de pagamentos não são permitidos uma vez que a transação foi confirmada e processada.</p>
-<p><strong>Disponibilidade do método de pagamento:</strong> Note que o método de pagamento Khipu está disponível apenas para o modelo agregador. Se o seu negócio requer um modelo de pagamento diferente, consulte seu consultor da PayU para explorar outras soluções disponíveis.</p>
-<h3 id="recursos-adicionais">Recursos Adicionais:</h3>
-<ul>
-<li><a href="https://docs.khipu.com/portal/en/payment-logos/">Logos oficiais do Khipu:</a></li>
-</ul>
+
+### Considerações adicionais para integração com Khipu
+
+**Transparência nos pagamentos:** Pagamentos processados através do gateway Khipu aparecerão no extrato bancário do pagador com o nome _PayU Chile SA_.
+
+**Limitações de valores:** É importante notar que os bancos associados ao Khipu podem definir limites mínimos ou máximos de valor por transação. Esses limites variam de acordo com cada instituição financeira.
+
+**Políticas de reembolso:** De acordo com as políticas do Khipu, cancelamentos totais, parciais ou de pagamentos não são permitidos uma vez que a transação foi confirmada e processada.
+
+**Disponibilidade do método de pagamento:** Note que o método de pagamento Khipu está disponível apenas para o modelo agregador. Se o seu negócio requer um modelo de pagamento diferente, consulte seu consultor da PayU para explorar outras soluções disponíveis.
+
+### Recursos Adicionais:
+
+* [Logos oficiais do Khipu:](https://docs.khipu.com/portal/en/payment-logos/)
+
+-->
 <h2 id="submit-transactions-using-cash">Enviar transações usando dinheiro</h2>
 <p>Este método permite processar os pagamentos de seus clientes em dinheiro. Para integrar com transações em dinheiro, você deve redirecionar o cliente para a URL encontrada na resposta do método; your customer selects cash and generates the payment code.</p>
 <img src="../../../../assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
@@ -5940,9 +5362,9 @@ Klap era anteriormente conhecido como MULTICAJA. Você ainda pode ver os element
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-24 de junho de 2024:
+26 de julho de 2024:
 
- <b>Documentation updates (261c98ca4)</b>
+ <b>Documentation updates (e5a4165f4)</b>
 </div>
 </div>
 

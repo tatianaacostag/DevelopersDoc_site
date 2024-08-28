@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;h2 id=&#34;how-to-use-payu-3ds-authentication&#34;&gt;How to use PayU 3DS authentication&lt;/h2&gt;
+        &lt;h2 id=&#34;using-payu-3ds-authentication&#34;&gt;Using PayU 3DS Authentication&lt;/h2&gt;
 &lt;p&gt;To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called &lt;code&gt;req3DSAuthentication&lt;/code&gt; in your payment requests via PayU&amp;rsquo;s Payments API.&lt;/p&gt;
 
 
@@ -32,15 +32,15 @@
 3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.
 &lt;/div&gt;
 
-&lt;h3 id=&#34;the-req3dsauthentication-parameter&#34;&gt;The &lt;code&gt;req3DSAuthentication&lt;/code&gt; parameter&lt;/h3&gt;
+&lt;h3 id=&#34;the-req3dsauthentication-parameter&#34;&gt;The &lt;code&gt;req3DSAuthentication&lt;/code&gt; Parameter&lt;/h3&gt;
 &lt;p&gt;This parameter allows you to control whether 3DS authentication is required for each transaction. It accepts two values:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;&amp;quot;true&amp;quot;&lt;/code&gt;: Enforces 3DS authentication for the transaction.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;&amp;quot;false&amp;quot;&lt;/code&gt;: Disables 3DS authentication for the transaction.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;If &lt;code&gt;req3DSAuthentication&lt;/code&gt; is not included,&lt;/strong&gt; PayU will decide whether to perform 3DS authentication based on its own risk assessment.&lt;/p&gt;
-&lt;h4 id=&#34;request-body&#34;&gt;Request body:&lt;/h4&gt;
-&lt;p&gt;In the request example below, the &lt;code&gt;req3DSAuthentication&lt;/code&gt; is set &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Request example:&lt;/strong&gt;
+In the request example below, the &lt;code&gt;req3DSAuthentication&lt;/code&gt; is set &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUBMIT_TRANSACTION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -113,13 +113,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;transaction-response-and-authentication-flow&#34;&gt;Transaction response and authentication flow&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;transaction-response-and-authentication-flow&#34;&gt;Transaction Response and Authentication Flow&lt;/h2&gt;
 &lt;p&gt;Upon sending a payment request, you will receive a response with a &lt;code&gt;&amp;quot;PENDING&amp;quot;&lt;/code&gt; state for the transaction. This response will also include a field within &lt;code&gt;extraParameters&lt;/code&gt; called &lt;code&gt;THREEDS_AUTH_REDIRECT_URL&lt;/code&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;THREEDS_AUTH_REDIRECT_URL&lt;/code&gt;:&lt;/strong&gt; This URL should be used to redirect the payer to complete the 3DS authentication process. The authentication process might involve challenges like entering a one-time password (OTP) received on their phone.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;response&#34;&gt;Response&lt;/h3&gt;
-&lt;p&gt;In the response example below, the merchant redirects the payer to &lt;code&gt;https://merch-prod.payu.com&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Response example&lt;/strong&gt;
+In the response example below, the merchant redirects the payer to &lt;code&gt;https://merch-prod.payu.com&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -153,13 +153,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;after-authentication&#34;&gt;After authentication&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;after-authentication&#34;&gt;After Authentication&lt;/h2&gt;
 &lt;p&gt;Once the payer completes the 3DS authentication (if required), PayU will receive a notification. The transaction will then be:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Completed:&lt;/strong&gt; If the authentication is successful.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Declined:&lt;/strong&gt; If the authentication fails.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;redirection-after-authentication&#34;&gt;Redirection after authentication&lt;/h3&gt;
+&lt;h3 id=&#34;redirection-after-authentication&#34;&gt;Redirection After Authentication&lt;/h3&gt;
 &lt;p&gt;Following the payer&amp;rsquo;s redirection from the &lt;code&gt;THREEDS_AUTH_REDIRECT_URL&lt;/code&gt;, they will be directed to:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;PayU Checkout transaction status page:&lt;/strong&gt; By default, this is the behavior if the merchant hasn&amp;rsquo;t specified a custom return URL.&lt;/li&gt;
@@ -178,7 +178,7 @@
       <description>
         
         
-        &lt;h2 id=&#34;leveraging-an-external-3ds-authentication&#34;&gt;Leveraging an external 3DS authentication&lt;/h2&gt;
+        &lt;h2 id=&#34;leveraging-an-external-3ds-authentication&#34;&gt;Leveraging an External 3DS Authentication&lt;/h2&gt;
 &lt;p&gt;If you have your own 3DS Authentication service, you can integrate it seamlessly with PayU, this approach is also known as &lt;strong&gt;passthrough&lt;/strong&gt; and lets you manage the authentication process directly with your chosen Merchant Plug-in (MPI) or 3DS Server.&lt;/p&gt;
 
 
@@ -192,18 +192,18 @@
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;how-it-works&#34;&gt;How it works&lt;/h2&gt;
+&lt;h2 id=&#34;how-it-works&#34;&gt;How it Works&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Utilize your existing 3DS service:&lt;/strong&gt; PayU integrates seamlessly with your preferred provider for a smooth workflow.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Handle authentication:&lt;/strong&gt; You manage the communication between your platform and the 3DS service.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Send response to PayU:&lt;/strong&gt; Include the authentication response from your 3DS service within your payment request to PayU.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;important-considerations&#34;&gt;Important considerations&lt;/h3&gt;
+&lt;h3 id=&#34;important-considerations&#34;&gt;Important Considerations&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Independent services:&lt;/strong&gt; Your 3DS service operates independently of PayU&amp;rsquo;s authorization service.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Combined Data Required:&lt;/strong&gt; For successful payment processing, your PayU authorization request must include the authentication response from your 3DS service.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combined data required:&lt;/strong&gt; For successful payment processing, your PayU authorization request must include the authentication response from your 3DS service.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;country-specific-documentation&#34;&gt;Country-specific documentation&lt;/h2&gt;
+&lt;h2 id=&#34;country-specific-documentation&#34;&gt;Country-Specific Documentation&lt;/h2&gt;
 &lt;p&gt;For detailed instructions on including authentication response parameters in your request, refer to the documentation for your processing country:&lt;/p&gt;
 &lt;div style=&#34;display: flex;&#34;&gt;
   &lt;div style=&#34;float: left;width: 50%;text-align: center;&#34;&gt;

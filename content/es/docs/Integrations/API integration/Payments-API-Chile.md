@@ -3,50 +3,60 @@ title: "API de Pagos - Chile"
 linkTitle: "API de Pagos - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  La API de Pagos de Chile le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
+  La API de Pagos para Chile permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo efectivo, tarjetas de crédito, débito o prepagadas, y tarjetas débito o prepagadas a través de WebPay Plus.
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
-Para integrarte con la API de Pagos de Chile, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
+Esta guía muestra cómo aprovechar estos servicios para mejorar la experiencia de pago de tus clientes proporcionando opciones de pago flexibles y seguras adaptadas al mercado local.
 
-{{% alert title="URLs" color="info"%}}
+{{% alert title="Nota" color="info"%}}
+
+Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL según el entorno correspondiente:
 * Pruebas: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Producción: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-## Métodos disponibles {#available-methods}
+## Métodos Disponibles {#available-methods}
+
 La API de pagos incluye los siguiente métodos:
 
-* [Enviar transacciones utilizando tarjeta de crédito, débito o prepago]({{< ref "#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Enviar transacciones utilizando Khipu]({{< ref "#submit-transactions-using-khipu" >}}) -->
-* [Enviar transacciones utilizando efectivo]({{< ref "#submit-transactions-using-cash" >}})
-* [Enviar transacciones utilizando tarjeta débito o prepago a través de WebPay Plus]({{< ref "#submit-transactions-using-debit-and-prepaid-cards" >}})
-* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Enviar Transacciones Utilizando Tarjeta de Crédito, Débito o Prepago]({{< ref "#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Enviar transacciones utilizando Khipu]({{< ref "#submit-transactions-using-khipu" >}}) -->
+* [Enviar Transacciones Utilizando Efectivo]({{< ref "#submit-transactions-using-cash" >}})
+* [Enviar Transacciones Utilizando Tarjeta Débito o Prepago a Través de WebPay Plus]({{< ref "#submit-transactions-using-debit-and-prepaid-cards" >}})
+* [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
+
 Para confirmar el estado de una transacción, puedes utilizar una de las siguientes opciones:
 * Navega a la URL configurada en el parámetro `transaction.notifyUrl` o la opción _**URL de confirmación**_ ubicada en el Módulo PayU en _**Configuración**_ > _**Configuración técnica**_.
 * Utiliza el [API o SDK de consultas]({{< ref "Queries.md" >}}).
+
 {{% /alert %}}
 
-## Enviar transacciones utilizando tarjeta de crédito, débito o prepago {#submit-transactions-using-credit-debit-or-prepaid-cards}
+## Enviar Transacciones Utilizando Tarjeta de Crédito, Débito o Prepago {#submit-transactions-using-credit-debit-or-prepaid-cards}
+
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito, débito o prepago. Para Chile, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Nota" color="info"%}}
+
 Las transacciones utilizando flujos de dos pasos están disponibles bajo demanda. Contacta a tu representante de ventas para más información.
+
 {{% /alert %}}
 
-### Parámetros para la petición y la respuesta {#parameters-for-request-and-response}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response}
 
 <details>
-<summary>Petición</summary>
+<summary>Solicitud</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
@@ -138,7 +148,7 @@ Las transacciones utilizando flujos de dos pasos están disponibles bajo demanda
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -171,13 +181,14 @@ Las transacciones utilizando flujos de dos pasos están disponibles bajo demanda
     * Para habilitar el procesamiento sin CVV, comunícate con tu representante de ventas de PayU. Una vez habilitado, incluye el parámetro `creditCard.processWithoutCvv2` establecido en `true` en las solicitudes y omite el parámetro `creditCard.securityCode`.
 
 ### Autorización {#authorization}
+
 Utiliza este método para realizar el paso de **Autorización** del flujo de dos pasos. En este paso, autorizas el pago pero el monto no se debita hasta que [captures]({{< ref "#capture" >}}) los fondos.<br>Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -264,7 +275,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -299,7 +310,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -392,7 +403,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -423,13 +434,15 @@ Ejemplo de una respuesta:
 {{< /tabs >}}
 
 ### Captura {#capture}
+
 Utiliza este método para realizar el paso de **Captura** del flujo de dos pasos. En este paso, capturas los fondos previamente [Autorizados]({{< ref "#authorization" >}}) para transferirlos a tu cuenta PayU.
 
 #### Consideraciones {#considerations-1}
+
 Ten en cuenta las siguientes consideraciones para la captura:
 * El tiempo máximo para capturar una transacción aprobada es de 7 días. Después de este tiempo, el sistema anula la transacción automáticamente.
 * Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.
-* Solo puedes realizar una captura parcial sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro `transaction.order.TX_VALUE` con su valor (Como se envió durante la Autorización).<br>El monto mínimo es 50 CLP.
+* Puedes realizar capturas parciales sobre un monto autorizado. Para más información, consulta la sección [Captura Parcial]({{< ref "#partial-capture" >}}).
 * No está permitido capturar un monto mayor al previamente autorizado. 
 * Solo se permite capturar transacciones en una cuota.
 
@@ -439,7 +452,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este tipo de 
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -460,7 +473,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -494,7 +507,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -515,7 +528,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -538,19 +551,172 @@ Ejemplo de una respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-### Cobro {#charge}
-Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados.
+### Captura Parcial {#partial-capture}
 
-Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
+Una captura parcial es una operación que permite solicitar el desembolso de un monto menor al autorizado previamente en una transacción.
+
+Esto significa que si inicialmente tu integración autorizó un pago de $100, puedes realizar una captura parcial por un valor de $60, y liberar el monto restante de $40, el cual la integración no podrá capturar posteriormente.
+
+#### Consideraciones {#considerations-2}
+
+* El monto total capturado no puede exceder el monto autorizado originalmente.
+* Cada procesador de pagos y cada país pueden tener reglas o restricciones en cuanto al monto que puedes capturar parcialmente.
+* Debes especificar el valor que deseas capturar parcialmente en el campo `value`, dentro del parámetro `TX_VALUE`, como se muestra en el ejemplo a continuación.
+* El monto mínimo para una captura parcial es de 50 CLP.
+
+Los siguientes son ejemplos de los cuerpos de la solicitud y la respuesta para este tipo de transacción.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
+```JSON
+{
+    "language": "es",
+    "command": "SUBMIT_TRANSACTION",
+    "merchant": {
+        "apiLogin": "pRRXKOl8ikMmt9u",
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+    },
+    "transaction": {
+        "order": {
+            "id": "2152525133"
+        },
+        "additionalValues": {
+            "TX_VALUE": {
+                "value": 50,
+                "currency": "CLP"
+            }
+        },
+        "type": "CAPTURE",
+        "parentTransactionId": "4b6adba7-e43b-45f8-88a6-d290755d6c04"
+    },
+    "test": false
+}
+```
+<br>
+
+Ejemplo de una Respuesta:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 2152543423,
+        "transactionId": "6f523681-1587-4a2d-8a15-605d27f89c26",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "0",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "6f523681-1587-4a2d-8a15-605d27f89c26",
+        "authorizationCode": "NPS-011111",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": "APROBADA - Autorizada",
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1723724052207,
+        "referenceQuestionnaire": null,
+        "extraParameters": null,
+        "additionalInfo": {
+            "paymentNetwork": "NPS_AR",
+            "rejectionType": "NONE",
+            "responseNetworkMessage": null,
+            "travelAgencyAuthorizationCode": null,
+            "cardType": null,
+            "transactionType": "CAPTURE"
+        }
+    }
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```XML
+<request>
+  <language>es</language>
+  <command>SUBMIT_TRANSACTION</command>
+  <merchant>
+    <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+    <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+  </merchant>
+  <transaction>
+    <order>
+      <id>2152525133</id>
+    </order>
+    <additionalValues>
+      <TX_VALUE>
+        <value>50</value>
+        <currency>CLP</currency>
+      </TX_VALUE>
+    </additionalValues>
+    <type>CAPTURE</type>
+    <parentTransactionId>4b6adba7-e43b-45f8-88a6-d290755d6c04</parentTransactionId>
+  </transaction>
+  <test>false</test>
+</request>
+
+```
+<br>
+
+Ejemplo de una Respuesta:
+```XML
+<response>
+  <code>SUCCESS</code>
+  <error />
+  <transactionResponse>
+    <orderId>2152543423</orderId>
+    <transactionId>6f523681-1587-4a2d-8a15-605d27f89c26</transactionId>
+    <state>APPROVED</state>
+    <paymentNetworkResponseCode>0</paymentNetworkResponseCode>
+    <paymentNetworkResponseErrorMessage />
+    <trazabilityCode>6f523681-1587-4a2d-8a15-605d27f89c26</trazabilityCode>
+    <authorizationCode>NPS-011111</authorizationCode>
+    <pendingReason />
+    <responseCode>APPROVED</responseCode>
+    <errorCode />
+    <responseMessage>APROBADA - Autorizada</responseMessage>
+    <transactionDate />
+    <transactionTime />
+    <operationDate>1723724052207</operationDate>
+    <referenceQuestionnaire />
+    <extraParameters />
+    <additionalInfo>
+      <paymentNetwork>NPS_AR</paymentNetwork>
+      <rejectionType>NONE</rejectionType>
+      <responseNetworkMessage />
+      <travelAgencyAuthorizationCode />
+      <cardType />
+      <transactionType>CAPTURE</transactionType>
+    </additionalInfo>
+  </transactionResponse>
+</response>
+
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+### Cobro {#charge}
+
+Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados.
+
+Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
+
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -637,7 +803,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -672,7 +838,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -767,7 +933,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -797,6 +963,7 @@ Ejemplo de una respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
+<!--
 ## Enviar transacciones utilizando Khipu {#submit-transactions-using-khipu}
 
 Khipu es una solución de pago que permite a los comercios de Chile aceptar pagos directamente desde las cuentas bancarias de sus clientes, sin necesidad de tarjetas de crédito o débito.
@@ -807,7 +974,7 @@ Khipu es una solución de pago que permite a los comercios de Chile aceptar pago
 * **Expande tu alcance:** Llega a un público más amplio al aceptar pagos de todos los bancos de Chile, incluyendo clientes que no cuentan con tarjeta de crédito o débito.
 * **Mejora la seguridad:** Khipu emplea tecnologías de cifrado y autenticación para proteger la información de tus clientes y promover transacciones seguras.
 
-<!--
+
 ### Proceso de pago con Khipu
 
 Para integrar Khipu en tu plataforma de comercio electrónico, puedes crear un formulario de pago y generar una experiencia de usuario siguiendo el flujo a continuación:
@@ -837,7 +1004,7 @@ Para integrar Khipu en tu plataforma de comercio electrónico, puedes crear un f
 <img src="/assets/Payments/KHIPU_ES_05.png" alt="PrintScreen" width="250">
 <p></p>
 
-### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-1}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-1}
 
 <details>
 <summary>Solicitud</summary>
@@ -845,7 +1012,7 @@ Para integrar Khipu en tu plataforma de comercio electrónico, puedes crear un f
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|---|
 | language | Alfanumérico | 2 | Idioma utilizado en la solicitud, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico| Máx:32 | Establecer `SUBMIT_TRANSACTION`. | Sí |
@@ -919,7 +1086,7 @@ Para integrar Khipu en tu plataforma de comercio electrónico, puedes crear un f
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |---|---|---|---|
 | code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Máx: 2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -949,11 +1116,11 @@ Para realizar pruebas, puedes utilizar:
 * `"FINANCIAL_INSTITUTION_NAME": "DemoBank"`
 {{% /alert %}}
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
     "language": "es",
@@ -1036,7 +1203,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1071,7 +1238,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
 	<language>es</language>
@@ -1165,7 +1332,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
 	<code>SUCCESS</code>
@@ -1201,7 +1368,7 @@ Opcionalmente, con este método puedes consultar la lista de bancos disponibles 
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|---|
 | language | Alfanumérico | 2 | Idioma utilizado en la solicitud, este idioma se usa para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Máx: 32 | Establecer `GET_BANKS_LIST`. | Sí |
@@ -1220,7 +1387,7 @@ Opcionalmente, con este método puedes consultar la lista de bancos disponibles 
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |---|---|---|---|
 | code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Máx: 2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -1238,11 +1405,11 @@ Opcionalmente, con este método puedes consultar la lista de bancos disponibles 
 
 A continuación, los ejemplos de solicitud y respuesta en formatos JSON y XML.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -1261,7 +1428,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1293,7 +1460,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
     <language>en</language>
@@ -1312,7 +1479,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <bankListResponse>
     <code>SUCCESS</code>
@@ -1355,7 +1522,8 @@ Ejemplo de una respuesta:
 
 -->
 
-## Enviar transacciones utilizando efectivo {#submit-transactions-using-cash}
+## Enviar Transacciones Utilizando Efectivo {#submit-transactions-using-cash}
+
 Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente selecciona efectivo y genera el código de pago.
 
 <img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
@@ -1364,15 +1532,15 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o configuraciones relacionadas con MULTICAJA.
 {{% /alert %}}
 
-### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-2}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-2}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
@@ -1446,11 +1614,11 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -1471,18 +1639,20 @@ Klap se conocía anteriormente como MULTICAJA. Aún puede que veas elementos o c
 </details>
 
 #### Consideraciones {#considerations-2}
+
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete días luego de la fecha actual a las 12:00 pm.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * Debes configurar una URL de respuesta en el parámetro `NETWORK_CALLBACK_URL` dentro de `transaction.extraParameters`; esta URL regresa al usuario a tu página luego de completar el proceso de pago en línea.
 * Debes redirigir al pagador a la página web de Klap webpage (antes Multicaja) para permitirle hacer el pago en efectivo. Esta URL se encuentra en el parámetro `BANK_URL` en la respuesta.
 
 ### Llamado a la API {#api-call-1}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -1561,7 +1731,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1595,7 +1765,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -1680,7 +1850,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1709,15 +1879,17 @@ Ejemplo de una respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones utilizando tarjeta débito o prepago utilizando WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards}
+## Enviar Transacciones Utilizando Tarjeta Débito o Prepago Utilizando WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards}
+
 Este método te permite procesar los pagos con tarjetas débito o prepago de tus clientes. Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un de pago como el siguiente.
 
 <img src="/assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
 
-### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-3}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-3}
 
 <details>
 <summary>Solicitud</summary>
@@ -1725,7 +1897,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
@@ -1805,7 +1977,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -1845,11 +2017,11 @@ Los parámetros anteriores se envían a través del método GET.
 ### Llamado a la API {#api-call-2}
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -1930,7 +2102,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1966,7 +2138,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -2054,7 +2226,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -2086,17 +2258,18 @@ Ejemplo de una respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar métodos de pago disponibles {#available-payment-methods-query}
+## Consultar Métodos de Pago Disponibles {#available-payment-methods-query}
+
 Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
-### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-4}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-4}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `GET_PAYMENT_METHODS`. | Sí |
@@ -2108,11 +2281,11 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -2125,13 +2298,14 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 </details>
 
 ### Llamado a la API {#api-call-3}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "test": false,
@@ -2145,7 +2319,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2174,7 +2348,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>en</language>
@@ -2188,7 +2362,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -2212,16 +2386,17 @@ Ejemplo de una respuesta:
 {{< /tabs >}}
 
 ## Ping
+
 El método `PING` te permite verificar la conexión con nuestra plataforma. 
 
-### Parámetros para la petición y la respuesta {#parameters-for-request-and-response-5}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-5}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `PING`. | Sí |
@@ -2233,11 +2408,11 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
 | code | Alfanumérico |  | Código de respuesta de la transacción. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
@@ -2245,13 +2420,14 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 </details>
 
 ### Llamado a la API {#api-call-4}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "test": false,
@@ -2265,7 +2441,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2279,7 +2455,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>en</language>
@@ -2293,7 +2469,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>

@@ -3,42 +3,51 @@ title: "Payments API - Chile"
 linkTitle: "Payments API - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  Payments API Chile enables your store to process different transaction types with multiple payment methods.
+  The Payments API for Chile allows you to efficiently integrate PayU's payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit, debit, or prepaid cards, and debit or prepaid cards through WebPay Plus.
 weight: 20
 tags: ["subtopic"]
 ---
 <script src="/js/searchcodes.js"></script>
 
-To integrate with Payments API Chile, target your request to the following URLs according to your environment.
+This guide shows you how to leverage these services to enhance your customers' payment experience by providing flexible and secure payment options tailored to the local market.
 
-{{% alert title="URLs" color="info"%}}
-* Test: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
+{{% alert title="Note" color="info"%}}
+
+To integrate the Payments API, direct your requests to the following URLs according to the corresponding environment:
+* Testing: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Production: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-## Available methods
+## Available Methods
+
 Payments API includes the following methods:
 
-* [Submit transactions using credit, debit or prepaid cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Submit transactions using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) -->
-* [Submit transactions using cash]({{< ref "Payments-API-Chile.md#submit-transactions-using-cash" >}})
-* [Submit transactions using debit and prepaid cards through WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transactions-using-debit-and-prepaid-cards" >}})
-* [Available payment methods query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
+* [Submit Transactions Using Credit, Debit or Prepaid Cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Submit transactions using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) -->
+* [Submit Transactions Using Cash]({{< ref "Payments-API-Chile.md#submit-transactions-using-cash" >}})
+* [Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transactions-using-debit-and-prepaid-cards" >}})
+* [Available Payment Methods Query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Chile.md#ping" >}})
 
 {{% alert title="Note" color="info"%}}
+
 To confirm the status of a transaction, you can use one of the following options:
 * Navigate to the the URL set in the `transaction.notifyUrl` parameter or the _**Confirmation URL**_ option located in the PayU Module in _**Settings**_ > _**Technical configuration**_.
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
+
 {{% /alert %}}
 
-## Submit transactions using credit, debit or prepaid cards {#submit-transactions-using-credit-debit-or-prepaid-cards}
+## Submit Transactions Using Credit, Debit or Prepaid Cards {#submit-transactions-using-credit-debit-or-prepaid-cards}
+
 This method lets you process the payments that your customers perform using credit, debit or prepaid cards. For Chile, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Note" color="info"%}}
+
 Transactions using two-step flows are available under demand. Contact your sales representative for more information.
+
 {{% /alert %}}
 
-### Parameters for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -46,7 +55,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -138,7 +147,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -177,7 +186,7 @@ Use this method to perform the **Authorization** step of a two-step flow. In thi
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -264,7 +273,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -299,7 +308,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -392,7 +401,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -423,13 +432,15 @@ Response body:
 {{< /tabs >}}
 
 ### Capture
+
 Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-chile.md#authorization" >}}) to transfer them to your PayU account.
 
 #### Considerations
+
 Take into account the following considerations for capture.
 * The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.
-* Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
-* You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter `transaction.order.TX_VALUE` with its value (as sent during the Authorization).<br>The minimum amount is 50 CLP.
+* Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Consider that the order and transaction ids must meet with a currently authorized transaction.
+* You can perform partial captures on an authorized amount. For more information, see the [Partial Capture]({{< ref "#partial-capture" >}}) section.
 * It is not allowed to capture a higher amount than the amount previously authorized. 
 * Captures are only allowed for transactions in one installment.
 
@@ -439,7 +450,7 @@ The following are the request and response bodies for this transaction type.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -460,7 +471,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -494,7 +505,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -515,7 +526,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -541,12 +552,164 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
+### Partial Capture
+
+A partial capture is an operation that allows you to request the disbursement of an amount less than what was previously authorized in a transaction.
+
+This means that if your integration initially authorized a payment of $100, you can perform a partial capture for $60, and release the remaining $40, which the integration will not be able to capture later.
+
+#### Considerations
+
+* The total amount captured cannot exceed the originally authorized amount.
+* Each payment processor and each country may have rules or restrictions regarding the amount you can capture partially.
+* You must specify the value you wish to partially capture in the `value` field, within the `TX_VALUE` parameter, as shown in the example below.
+* The minimum amount for partial capture is 50 CLP. 
+
+The following are examples of the request and response bodies for this type of transaction.
+
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request Example:
+```JSON
+{
+    "language": "es",
+    "command": "SUBMIT_TRANSACTION",
+    "merchant": {
+        "apiLogin": "pRRXKOl8ikMmt9u",
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+    },
+    "transaction": {
+        "order": {
+            "id": "2152525133"
+        },
+        "additionalValues": {
+            "TX_VALUE": {
+                "value": 50,
+                "currency": "CLP"
+            }
+        },
+        "type": "CAPTURE",
+        "parentTransactionId": "4b6adba7-e43b-45f8-88a6-d290755d6c04"
+    },
+    "test": false
+}
+```
+<br>
+
+Response Example:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 2152543423,
+        "transactionId": "6f523681-1587-4a2d-8a15-605d27f89c26",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "0",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "6f523681-1587-4a2d-8a15-605d27f89c26",
+        "authorizationCode": "NPS-011111",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": "APROBADA - Autorizada",
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1723724052207,
+        "referenceQuestionnaire": null,
+        "extraParameters": null,
+        "additionalInfo": {
+            "paymentNetwork": "NPS_AR",
+            "rejectionType": "NONE",
+            "responseNetworkMessage": null,
+            "travelAgencyAuthorizationCode": null,
+            "cardType": null,
+            "transactionType": "CAPTURE"
+        }
+    }
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request Example:
+```XML
+<request>
+  <language>es</language>
+  <command>SUBMIT_TRANSACTION</command>
+  <merchant>
+    <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+    <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+  </merchant>
+  <transaction>
+    <order>
+      <id>2152525133</id>
+    </order>
+    <additionalValues>
+      <TX_VALUE>
+        <value>50</value>
+        <currency>CLP</currency>
+      </TX_VALUE>
+    </additionalValues>
+    <type>CAPTURE</type>
+    <parentTransactionId>4b6adba7-e43b-45f8-88a6-d290755d6c04</parentTransactionId>
+  </transaction>
+  <test>false</test>
+</request>
+
+```
+<br>
+
+Response Example:
+```XML
+<response>
+  <code>SUCCESS</code>
+  <error />
+  <transactionResponse>
+    <orderId>2152543423</orderId>
+    <transactionId>6f523681-1587-4a2d-8a15-605d27f89c26</transactionId>
+    <state>APPROVED</state>
+    <paymentNetworkResponseCode>0</paymentNetworkResponseCode>
+    <paymentNetworkResponseErrorMessage />
+    <trazabilityCode>6f523681-1587-4a2d-8a15-605d27f89c26</trazabilityCode>
+    <authorizationCode>NPS-011111</authorizationCode>
+    <pendingReason />
+    <responseCode>APPROVED</responseCode>
+    <errorCode />
+    <responseMessage>APROBADA - Autorizada</responseMessage>
+    <transactionDate />
+    <transactionTime />
+    <operationDate>1723724052207</operationDate>
+    <referenceQuestionnaire />
+    <extraParameters />
+    <additionalInfo>
+      <paymentNetwork>NPS_AR</paymentNetwork>
+      <rejectionType>NONE</rejectionType>
+      <responseNetworkMessage />
+      <travelAgencyAuthorizationCode />
+      <cardType />
+      <transactionType>CAPTURE</transactionType>
+    </additionalInfo>
+  </transactionResponse>
+</response>
+
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+
 ### Charge
 Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
 
 The following are the request and response bodies for this transaction type.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -837,7 +1000,7 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 <img src="/assets/Payments/KHIPU_EN_05.png" alt="PrintScreen" width="250">
 <p></p>
 
-### Parameters for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -845,7 +1008,7 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|---|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -919,7 +1082,7 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |---|---|---|---|
 | code | Alphanumeric | | Transaction response code. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max: 2048 | Error message associated when the response code is `ERROR`. |
@@ -949,7 +1112,7 @@ For testing, you can use:
 * `"FINANCIAL_INSTITUTION_NAME": "DemoBank"`
 {{% /alert %}}
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1200,7 +1363,7 @@ Optionally, with this method, you can get the list of banks available for conduc
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|---|
 | language | Alphanumeric | 2 | Language used in the request. This language is used to display the generated error messages. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max: 32 | Set to `GET_BANKS_LIST`. | Yes |
@@ -1219,7 +1382,7 @@ Optionally, with this method, you can get the list of banks available for conduc
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |---|---|---|---|
 | code | Alphanumeric | | Transaction response code. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max: 2048 | Error message associated when the response code is `ERROR`. |
@@ -1237,7 +1400,7 @@ Optionally, with this method, you can get the list of banks available for conduc
 
 Below are examples of request and response in JSON and XML formats.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1353,7 +1516,7 @@ Example of a response:
 
 -->
 
-## Submit transactions using cash
+## Submit Transactions Using Cash
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.
 
 <img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
@@ -1362,7 +1525,7 @@ This method lets you process the payments in cash of your customers. To integrat
 Klap is formerly known as MULTICAJA. You can still see elements or configurations related to MULTICAJA.
 {{% /alert %}}
 
-### Parameters for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -1370,7 +1533,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -1448,7 +1611,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -1469,18 +1632,20 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </details>
 
 #### Considerations
+
 * The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven days after the current date at 12:00 pm.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * You must set a response URL in the parameter `NETWORK_CALLBACK_URL` inside `transaction.extraParameters`; this URL redirects the user back to your page after they finish the online payment procedure.
 * You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the `BANK_URL` parameter in the response.
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -1559,7 +1724,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1593,7 +1758,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -1678,7 +1843,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1710,12 +1875,13 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transactions using debit and prepaid cards through WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards}
+## Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards}
+
 This method lets you process the bank debit and prepaid card payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
 
 <img src="/assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
 
-### Parameters for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -1723,7 +1889,7 @@ This method lets you process the bank debit and prepaid card payments of your cu
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -1803,7 +1969,7 @@ This method lets you process the bank debit and prepaid card payments of your cu
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -1824,6 +1990,7 @@ This method lets you process the bank debit and prepaid card payments of your cu
 </details>
 
 #### Considerations
+
 * If you don't send the `RESPONSE_URL` parameter in `transaction.extraParameters`, the API takes the value from the _**Response URL**_ variable in your PayU Module (_**Settings**_ > _**Technical configuration**_).
 * When you process payments through WebPay plus, you must redirect the customer to the URL found in the `URL_PAYMENT_REDIRECT` extra parameter concatenated with the `TRANSBANK_DIRECT_TOKEN` extra parameter as follows: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
 * If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_PAYMENT_IN_ENTITY`; this is because the payer is redirected to the selected bank to complete the payment.
@@ -1840,14 +2007,15 @@ This method lets you process the bank debit and prepaid card payments of your cu
 
 The variables above are sent via GET.
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -1928,7 +2096,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1964,7 +2132,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -2052,7 +2220,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -2084,17 +2252,18 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available payment methods query
+## Available Payment Methods Query
+
 This method returns a list of the payment methods available in all countries.
 
-### Parameters for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |-|-|-|-|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `GET_PAYMENT_METHODS`. | Yes |
@@ -2110,7 +2279,7 @@ This method returns a list of the payment methods available in all countries.
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -2122,14 +2291,14 @@ This method returns a list of the payment methods available in all countries.
 
 </details>
 
-### API call
+### API Call
 The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request Example:
 ```JSON
 {
    "test": false,
@@ -2143,7 +2312,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2172,7 +2341,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request Example:
 ```XML
 <request>
    <language>en</language>
@@ -2186,7 +2355,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -2210,16 +2379,17 @@ Response example:
 {{< /tabs >}}
 
 ## Ping
+
 The ```PING``` method lets you verify the connection to our platform. 
 
-### Parameters for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |-|-|-|-|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `PING`. | Yes |
@@ -2235,21 +2405,21 @@ The ```PING``` method lets you verify the connection to our platform.
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |-|-|-|-|:-:|
 | code | Alphanumeric |  | The response code of the transaction. | Yes |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. | Yes |
 | transactionResponse |  | Max:2048 | The response of the PING method if an error ocurred. | Yes |
 </details>
 
-### API call
+### API Call
 The following are the examples of the request and response of this method.
 
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request Example:
 ```JSON
 {
    "test": false,
@@ -2263,7 +2433,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2277,7 +2447,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request Example:
 ```XML
 <request>
    <language>en</language>
@@ -2291,7 +2461,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>

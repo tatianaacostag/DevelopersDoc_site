@@ -441,10 +441,9 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 Utiliza este método para realizar el paso de **Captura** del flujo de dos pasos. En este paso, capturas los fondos previamente [Autorizados]({{< ref "payments-api-peru.md#authorization" >}}) para transferirlos a tu cuenta PayU.
 
 #### Consideraciones {#considerations-1}
-Ten en cuenta las siguientes consideraciones para la captura.
-* Puedes realizar capturas parciales sobre un monto autorizado. Para esto, necesitas enviar en la petición el parámetro `transaction.order.TX_VALUE` con su valor (Como se envió durante la Autorización).
-* Para capturas parciales, el mínimo valor a capturar puede ser 10% menor que el valor autorizado.
-* Para capturas parciales, las redes de pago liberan los valores no capturados entre 2 y 10 días para tarjetas locales y 28 días para tarjetas extranjeras.
+Ten en cuenta las siguientes consideraciones para la captura:
+* Puedes realizar capturas parciales sobre un monto autorizado. Para más información, consulta la sección [Captura Parcial]({{< ref "#partial-capture" >}}).
+* Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.
 
 Los siguientes son los cuerpos de la solicitud y la respuesta para este tipo de transacción.
 
@@ -546,12 +545,164 @@ Ejemplo de una respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
+### Captura Parcial {#partial-capture}
+
+Una captura parcial es una operación que permite solicitar el desembolso de un monto menor al autorizado previamente en una transacción.
+
+Esto significa que si inicialmente tu integración autorizó un pago de $100, puedes realizar una captura parcial por un valor de $60, y liberar el monto restante de $40, el cual la integración no podrá capturar posteriormente.
+
+#### Consideraciones {#considerations-2}
+
+* El monto total capturado no puede exceder el monto autorizado originalmente.
+* Cada procesador de pagos y cada país pueden tener reglas o restricciones en cuanto al monto que puedes capturar parcialmente.
+* Debes especificar el valor que deseas capturar parcialmente en el campo `value`, dentro del parámetro `TX_VALUE`, como se muestra en el ejemplo a continuación.
+* El valor mínimo a capturar puede ser 10% menor que el valor autorizado.
+* Las redes de pago liberan los valores no capturados entre 2 y 10 días para tarjetas locales y 28 días para tarjetas extranjeras.
+
+Los siguientes son ejemplos de los cuerpos de la solicitud y la respuesta para este tipo de transacción.
+
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```JSON
+{
+    "language": "es",
+    "command": "SUBMIT_TRANSACTION",
+    "merchant": {
+        "apiLogin": "pRRXKOl8ikMmt9u",
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+    },
+    "transaction": {
+        "order": {
+            "id": "2152525133"
+        },
+        "additionalValues": {
+            "TX_VALUE": {
+                "value": 100,
+                "currency": "PEN"
+            }
+        },
+        "type": "CAPTURE",
+        "parentTransactionId": "4b6adba7-e43b-45f8-88a6-d290755d6c04"
+    },
+    "test": false
+}
+```
+<br>
+
+Ejemplo de una Respuesta:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 2152543423,
+        "transactionId": "6f523681-1587-4a2d-8a15-605d27f89c26",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "0",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "6f523681-1587-4a2d-8a15-605d27f89c26",
+        "authorizationCode": "NPS-011111",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": "APROBADA - Autorizada",
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1723724052207,
+        "referenceQuestionnaire": null,
+        "extraParameters": null,
+        "additionalInfo": {
+            "paymentNetwork": "NPS_AR",
+            "rejectionType": "NONE",
+            "responseNetworkMessage": null,
+            "travelAgencyAuthorizationCode": null,
+            "cardType": null,
+            "transactionType": "CAPTURE"
+        }
+    }
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```XML
+<request>
+  <language>es</language>
+  <command>SUBMIT_TRANSACTION</command>
+  <merchant>
+    <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+    <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+  </merchant>
+  <transaction>
+    <order>
+      <id>2152525133</id>
+    </order>
+    <additionalValues>
+      <TX_VALUE>
+        <value>100</value>
+        <currency>PEN</currency>
+      </TX_VALUE>
+    </additionalValues>
+    <type>CAPTURE</type>
+    <parentTransactionId>4b6adba7-e43b-45f8-88a6-d290755d6c04</parentTransactionId>
+  </transaction>
+  <test>false</test>
+</request>
+
+```
+<br>
+
+Ejemplo de una Respuesta:
+```XML
+<response>
+  <code>SUCCESS</code>
+  <error />
+  <transactionResponse>
+    <orderId>2152543423</orderId>
+    <transactionId>6f523681-1587-4a2d-8a15-605d27f89c26</transactionId>
+    <state>APPROVED</state>
+    <paymentNetworkResponseCode>0</paymentNetworkResponseCode>
+    <paymentNetworkResponseErrorMessage />
+    <trazabilityCode>6f523681-1587-4a2d-8a15-605d27f89c26</trazabilityCode>
+    <authorizationCode>NPS-011111</authorizationCode>
+    <pendingReason />
+    <responseCode>APPROVED</responseCode>
+    <errorCode />
+    <responseMessage>APROBADA - Autorizada</responseMessage>
+    <transactionDate />
+    <transactionTime />
+    <operationDate>1723724052207</operationDate>
+    <referenceQuestionnaire />
+    <extraParameters />
+    <additionalInfo>
+      <paymentNetwork>NPS_AR</paymentNetwork>
+      <rejectionType>NONE</rejectionType>
+      <responseNetworkMessage />
+      <travelAgencyAuthorizationCode />
+      <cardType />
+      <transactionType>CAPTURE</transactionType>
+    </additionalInfo>
+  </transactionResponse>
+</response>
+
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
 ### Cobro {#charge}
 Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados:
 
 Los siguientes son los cuerpos de la solicitud y la respuesta para este tipo de transacción.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -946,7 +1097,7 @@ Una compra a través de Yape puede seguir el flujo descrito a continuación:
 ### Llamado a la API {#api-call}
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1404,7 +1555,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 ### Llamado a la API {#api-call-1}
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método de pago.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1684,7 +1835,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 ### Llamado a la API {#api-call-2}
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.  
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1804,7 +1955,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 ### Llamado a la API {#api-call-3}
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 

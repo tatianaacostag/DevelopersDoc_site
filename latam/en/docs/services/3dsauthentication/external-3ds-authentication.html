@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/services/3dsauthentication/external-3ds-authentication.html" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2024-07-12T01:07:00-05:00" />
+<meta property="article:modified_time" content="2024-07-26T09:39:39-05:00" />
 
 <meta itemprop="name" content="External 3DS Authentication">
 <meta itemprop="description" content="Leverage your existing 3DS service to enhance payment security with PayU&#39;s passthrough integration.
 ">
-<meta itemprop="dateModified" content="2024-07-12T01:07:00-05:00" />
+<meta itemprop="dateModified" content="2024-07-26T09:39:39-05:00" />
 <meta itemprop="wordCount" content="191">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="External 3DS Authentication"/>
 <meta name="twitter:description" content="Leverage your existing 3DS service to enhance payment security with PayU&#39;s passthrough integration.
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4f7710ff2f743e8d278e1c88e6259abb3f3410fc02a886c84ca245028650c58e7d2112ad3faca914e6b5af3f9c452c1624176289230612483ec056243b5c2f6b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b7f186066d5d8aa3be69e8207ff2e0600fd1f58a8c807a7b69f14fa312ada257402c64ffb68cee5d9411c6ec3b035d969ed32ba544fd0203926865eb2591816e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -782,13 +782,13 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#leveraging-an-external-3ds-authentication">Leveraging an external 3DS authentication</a></li>
-    <li><a href="#how-it-works">How it works</a>
+    <li><a href="#leveraging-an-external-3ds-authentication">Leveraging an External 3DS Authentication</a></li>
+    <li><a href="#how-it-works">How it Works</a>
       <ul>
-        <li><a href="#important-considerations">Important considerations</a></li>
+        <li><a href="#important-considerations">Important Considerations</a></li>
       </ul>
     </li>
-    <li><a href="#country-specific-documentation">Country-specific documentation</a></li>
+    <li><a href="#country-specific-documentation">Country-Specific Documentation</a></li>
   </ul>
 </nav>
 
@@ -848,7 +848,7 @@
 	<h1>External 3DS Authentication</h1>
     <div class="lead">Leverage your existing 3DS service to enhance payment security with PayU&rsquo;s passthrough integration.</div>
 	       
-	<h2 id="leveraging-an-external-3ds-authentication">Leveraging an external 3DS authentication</h2>
+	<h2 id="leveraging-an-external-3ds-authentication">Leveraging an External 3DS Authentication</h2>
 <p>If you have your own 3DS Authentication service, you can integrate it seamlessly with PayU, this approach is also known as <strong>passthrough</strong> and lets you manage the authentication process directly with your chosen Merchant Plug-in (MPI) or 3DS Server.</p>
 
 
@@ -862,18 +862,18 @@
 
 </div>
 
-<h2 id="how-it-works">How it works</h2>
+<h2 id="how-it-works">How it Works</h2>
 <ul>
 <li><strong>Utilize your existing 3DS service:</strong> PayU integrates seamlessly with your preferred provider for a smooth workflow.</li>
 <li><strong>Handle authentication:</strong> You manage the communication between your platform and the 3DS service.</li>
 <li><strong>Send response to PayU:</strong> Include the authentication response from your 3DS service within your payment request to PayU.</li>
 </ul>
-<h3 id="important-considerations">Important considerations</h3>
+<h3 id="important-considerations">Important Considerations</h3>
 <ul>
 <li><strong>Independent services:</strong> Your 3DS service operates independently of PayU&rsquo;s authorization service.</li>
-<li><strong>Combined Data Required:</strong> For successful payment processing, your PayU authorization request must include the authentication response from your 3DS service.</li>
+<li><strong>Combined data required:</strong> For successful payment processing, your PayU authorization request must include the authentication response from your 3DS service.</li>
 </ul>
-<h2 id="country-specific-documentation">Country-specific documentation</h2>
+<h2 id="country-specific-documentation">Country-Specific Documentation</h2>
 <p>For detailed instructions on including authentication response parameters in your request, refer to the documentation for your processing country:</p>
 <div style="display: flex;">
   <div style="float: left;width: 50%;text-align: center;">
@@ -896,9 +896,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-July 12, 2024:
+July 26, 2024:
 
- <b>Documentation updates (10d1ab52c)</b>
+ <b>Documentation updates (e5a4165f4)</b>
 </div>
 </div>
 

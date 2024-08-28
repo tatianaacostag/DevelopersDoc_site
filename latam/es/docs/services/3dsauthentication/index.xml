@@ -16,7 +16,7 @@
     
     
     <item>
-      <title>Docs: Autenticación 3DS gestionada por PayU</title>
+      <title>Docs: Autenticación 3DS Gestionada por PayU</title>
       <link>/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</link>
       <pubDate>Mon, 01 Jul 2024 11:32:55 -0500</pubDate>
       
@@ -24,7 +24,7 @@
       <description>
         
         
-        &lt;h2 id=&#34;cómo-usar-la-autenticación-3ds-de-payu&#34;&gt;Cómo usar la autenticación 3DS de PayU&lt;/h2&gt;
+        &lt;h2 id=&#34;usar-la-autenticación-3ds-de-payu&#34;&gt;Usar la Autenticación 3DS de PayU&lt;/h2&gt;
 &lt;p&gt;Para utilizar la autenticación 3DS, los comercios deben estar registrados en este servicio con PayU. Una vez registrado, puedes incluir un nuevo parámetro llamado &lt;code&gt;req3DSAuthentication&lt;/code&gt; en tus solicitudes de pago a través de la API de Pagos de PayU.&lt;/p&gt;
 
 
@@ -40,7 +40,7 @@ La autenticación 3DS para PayU Latam solo está disponible para &lt;strong&gt;A
 &lt;li&gt;&lt;code&gt;&amp;quot;false&amp;quot;&lt;/code&gt;: Deshabilita la autenticación 3DS para la transacción.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Si no se incluye &lt;code&gt;req3DSAuthentication&lt;/code&gt;,&lt;/strong&gt; PayU decidirá si realiza la autenticación 3DS en función de su propia evaluación de riesgos.&lt;/p&gt;
-&lt;h4 id=&#34;cuerpo-de-la-solicitud&#34;&gt;Cuerpo de la solicitud:&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplo de una solicitud:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;En el siguiente ejemplo de solicitud, &lt;code&gt;req3DSAuthentication&lt;/code&gt; se establece en &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -114,12 +114,12 @@ La autenticación 3DS para PayU Latam solo está disponible para &lt;strong&gt;A
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;respuesta-de-la-transacción-y-flujo-de-autenticación&#34;&gt;Respuesta de la transacción y flujo de autenticación&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;respuesta-de-la-transacción-y-flujo-de-autenticación&#34;&gt;Respuesta de la Transacción y Flujo de Autenticación&lt;/h2&gt;
 &lt;p&gt;Una vez que envíes una solicitud de pago, recibirás una respuesta con un estado &lt;code&gt;&amp;quot;PENDING&amp;quot;&lt;/code&gt; para la transacción. Esta respuesta también incluirá un campo dentro de &lt;code&gt;extraParameters&lt;/code&gt; llamado &lt;code&gt;THREEDS_AUTH_REDIRECT_URL&lt;/code&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;THREEDS_AUTH_REDIRECT_URL&lt;/code&gt;:&lt;/strong&gt; Esta URL se debe utilizar para redirigir al pagador para que complete el proceso de autenticación 3DS. El proceso de autenticación puede incluir desafíos como ingresar una contraseña de uso único (OTP) recibida en su teléfono.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;respuesta&#34;&gt;Respuesta&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Ejemplo de una respuesta&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;En el siguiente ejemplo de respuesta, el comercio redirecciona al pagador a &lt;code&gt;https://merch-prod.payu.com&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -154,13 +154,13 @@ La autenticación 3DS para PayU Latam solo está disponible para &lt;strong&gt;A
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;después-de-la-autenticación&#34;&gt;Después de la autenticación&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;después-de-la-autenticación&#34;&gt;Después de la Autenticación&lt;/h2&gt;
 &lt;p&gt;Una vez que el pagador complete la autenticación 3DS (si es necesario), PayU recibirá una notificación. La transacción entonces será:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Completada:&lt;/strong&gt; Si la autenticación es exitosa.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Rechazada:&lt;/strong&gt; Si la autenticación falla.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;redireccionamiento-después-de-la-autenticación&#34;&gt;Redireccionamiento después de la autenticación&lt;/h3&gt;
+&lt;h3 id=&#34;redireccionamiento-después-de-la-autenticación&#34;&gt;Redireccionamiento Después de la Autenticación&lt;/h3&gt;
 &lt;p&gt;Siguiendo la redirección del pagador desde la &lt;code&gt;THREEDS_AUTH_REDIRECT_URL&lt;/code&gt;, se le dirigirá a:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Página de estado de la transacción de PayU Checkout:&lt;/strong&gt; De forma predeterminada, este es el comportamiento si el comercio no ha especificado una URL de retorno personalizada.&lt;/li&gt;
@@ -171,7 +171,7 @@ La autenticación 3DS para PayU Latam solo está disponible para &lt;strong&gt;A
     </item>
     
     <item>
-      <title>Docs: Autenticación 3DS externa</title>
+      <title>Docs: Autenticación 3DS Externa</title>
       <link>/es/docs/services/3dsauthentication/external-3ds-authentication.html</link>
       <pubDate>Mon, 01 Jul 2024 11:32:55 -0500</pubDate>
       
@@ -179,7 +179,7 @@ La autenticación 3DS para PayU Latam solo está disponible para &lt;strong&gt;A
       <description>
         
         
-        &lt;h2 id=&#34;aprovechamiento-de-una-autenticación-3ds-externa&#34;&gt;Aprovechamiento de una autenticación 3DS externa&lt;/h2&gt;
+        &lt;h2 id=&#34;aprovechamiento-de-una-autenticación-3ds-externa&#34;&gt;Aprovechamiento de una Autenticación 3DS Externa&lt;/h2&gt;
 &lt;p&gt;Si tienes tu propio servicio de autenticación 3DS, puedes integrarlo fácilmente con PayU. Este enfoque también se conoce como &lt;strong&gt;passthrough&lt;/strong&gt; y te permite gestionar el proceso de autenticación directamente con tu Merchant Plug-in (MPI) o servidor 3DS elegido.&lt;/p&gt;
 
 
@@ -193,18 +193,18 @@ La autenticación 3DS para PayU Latam solo está disponible para &lt;strong&gt;A
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;cómo-funciona&#34;&gt;Cómo funciona&lt;/h2&gt;
+&lt;h2 id=&#34;cómo-funciona&#34;&gt;Cómo Funciona&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Utiliza tu servicio 3DS existente:&lt;/strong&gt; PayU se integra perfectamente con tu proveedor preferido para un flujo de trabajo fluido.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Gestiona la autenticación:&lt;/strong&gt; Tú manejas la comunicación entre tu plataforma y el servicio 3DS.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Envía la respuesta a PayU:&lt;/strong&gt; Incluye la respuesta de autenticación de tu servicio 3DS dentro de tu solicitud de pago a PayU.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;consideraciones-importantes&#34;&gt;Consideraciones importantes&lt;/h3&gt;
+&lt;h3 id=&#34;consideraciones-importantes&#34;&gt;Consideraciones Importantes&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Servicios independientes:&lt;/strong&gt; Tu servicio 3DS funciona independientemente del servicio de autorización de PayU.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Datos combinados necesarios:&lt;/strong&gt; Para un procesamiento de pago exitoso, tu solicitud de autorización de PayU debe incluir la respuesta de autenticación de tu servicio 3DS.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;documentación-específica-por-país&#34;&gt;Documentación específica por país&lt;/h2&gt;
+&lt;h2 id=&#34;documentación-específica-por-país&#34;&gt;Documentación Específica por País&lt;/h2&gt;
 &lt;p&gt;Para obtener instrucciones detalladas sobre cómo incluir parámetros de respuesta de autenticación en tu solicitud, consulta la documentación de tu país de procesamiento:&lt;/p&gt;
 &lt;div style=&#34;display: flex;&#34;&gt;
   &lt;div style=&#34;float: left;width: 50%;text-align: center;&#34;&gt;

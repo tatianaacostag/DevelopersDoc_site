@@ -107,7 +107,13 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
       <description>
         
         
-        &lt;h2 id=&#34;what-is-3ds&#34;&gt;What is 3DS?&lt;/h2&gt;
+        &lt;p&gt;If you are already familiar with 3DS, check our integration methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;PayU-handled 3DS authentication: &lt;/a&gt;Let PayU manage the authentication process for you.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/en/docs/services/3dsauthentication/external-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;External 3DS authentication: &lt;/a&gt;Integrate your existing 3DS service with PayU.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html&#34; target=&#34;_blank&#34;&gt;PayU HUB 3DS authentication: &lt;/a&gt;If you are integrated via the PayU HUB.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;what-is-3ds&#34;&gt;What is 3DS?&lt;/h2&gt;
 &lt;p&gt;3DS (Three-Domain Secure) is a security protocol that adds an extra layer of verification during online payments. It works by securely communicating with the cardholder&amp;rsquo;s issuing bank to confirm their identity before authorizing the transaction. This significantly reduces the risk of unauthorized card usage and fraud.&lt;/p&gt;
 
 

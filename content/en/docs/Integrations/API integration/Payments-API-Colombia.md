@@ -10,7 +10,7 @@ tags: ["subtopic"]
 
 <script src="/js/searchcodes.js"></script>
 
-This guide shows how to leverage these services to enhance your customers' payment experience by providing flexible and secure payment options tailored to the Colombian market.
+This guide shows how to leverage these services to enhance your customers' payment experience by providing flexible and secure payment options tailored to the local market.
 
 {{% alert title="Note" color="info"%}}
 

@@ -3,18 +3,18 @@ title: "API de Pagos - Colombia"
 linkTitle: "API de Pagos - Colombia"
 date: 2021-05-03T15:48:08-05:00
 description: >
- La API de Pagos para Colombia permite una integración eficiente de las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. Con esta API, los comercios pueden ofrecer diferentes métodos de pago a través de tarjetas de crédito o débito, billeteras digitales, efectivo y transferencias bancarias.
+ La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.
 weight: 20
 tags: ["subtopic"]
 ---
 
 <script src="/js/searchcodes.js"></script>
 
-Esta guía muestra cómo aprovechar estos servicios para mejorar la experiencia de pago de tus clientes proporcionando opciones de pago flexibles y seguras adaptadas al mercado colombiano.
+Esta guía muestra cómo aprovechar estos servicios para mejorar la experiencia de pago de tus clientes proporcionando opciones de pago flexibles y seguras adaptadas al mercado local.
 
 {{% alert title="Nota" color="info"%}}
 
-Para integrarse con la API de Pagos, dirige tus solicitudes a las siguientes URL según el entorno correspondiente:
+Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL según el entorno correspondiente:
 * Pruebas: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Producción: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
 
@@ -22,7 +22,7 @@ Para integrarse con la API de Pagos, dirige tus solicitudes a las siguientes URL
 
 ## Métodos Disponibles {#available-methods}
 
-La API de pagos incluye los siguiente métodos:
+La API de Pagos incluye los siguiente métodos:
 
 * [Enviar Transacciones Utilizando Tarjetas de Crédito o Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
 * [Enviar Transacciones Utilizando Nequi]({{< ref "#submit-transactions-using-nequi" >}})

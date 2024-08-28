@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Payments API - Colombia | PayU Latam</title><meta property="og:title" content="Payments API - Colombia" />
-<meta property="og:description" content="Payments API Colombia lets your shop process different transaction types with multiple payment methods.
+<meta property="og:description" content="The Payments API for Colombia enables seamless integration of PayU&#39;s payment processing capabilities into your online shopping platform. With this API, merchants can offer different payment methods via credit or debit cards, mobile wallets, cash, and bank transfers.  
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-07-08T10:25:14-05:00" />
+<meta property="article:modified_time" content="2024-07-26T09:39:39-05:00" />
 
 <meta itemprop="name" content="Payments API - Colombia">
-<meta itemprop="description" content="Payments API Colombia lets your shop process different transaction types with multiple payment methods.
+<meta itemprop="description" content="The Payments API for Colombia enables seamless integration of PayU&#39;s payment processing capabilities into your online shopping platform. With this API, merchants can offer different payment methods via credit or debit cards, mobile wallets, cash, and bank transfers.  
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-07-08T10:25:14-05:00" />
-<meta itemprop="wordCount" content="10956">
+<meta itemprop="dateModified" content="2024-07-26T09:39:39-05:00" />
+<meta itemprop="wordCount" content="11110">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Colombia"/>
-<meta name="twitter:description" content="Payments API Colombia lets your shop process different transaction types with multiple payment methods.
+<meta name="twitter:description" content="The Payments API for Colombia enables seamless integration of PayU&#39;s payment processing capabilities into your online shopping platform. With this API, merchants can offer different payment methods via credit or debit cards, mobile wallets, cash, and bank transfers.  
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.4f7710ff2f743e8d278e1c88e6259abb3f3410fc02a886c84ca245028650c58e7d2112ad3faca914e6b5af3f9c452c1624176289230612483ec056243b5c2f6b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b7f186066d5d8aa3be69e8207ff2e0600fd1f58a8c807a7b69f14fa312ada257402c64ffb68cee5d9411c6ec3b035d969ed32ba544fd0203926865eb2591816e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -782,50 +782,50 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#available-methods">Available methods</a></li>
-    <li><a href="#submit-transactions-using-credit-or-debit-cards">Submit transactions using credit or debit cards</a>
+    <li><a href="#available-methods">Available Methods</a></li>
+    <li><a href="#submit-transactions-using-credit-or-debit-cards">Submit Transactions Using Credit or Debit Cards</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response">Parameters for request and response</a></li>
-        <li><a href="#api-call">API call</a></li>
+        <li><a href="#parameters-for-request-and-response">Parameters for Request and Response</a></li>
+        <li><a href="#api-call">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-nequi">Submit transactions using Nequi</a>
+    <li><a href="#submit-transactions-using-nequi">Submit Transactions Using Nequi</a>
       <ul>
-        <li><a href="#payment-process-with-nequi">Payment process with Nequi</a></li>
-        <li><a href="#user-experience">User experience</a></li>
-        <li><a href="#parameters-for-request-and-response-1">Parameters for request and response</a></li>
-        <li><a href="#api-call-1">API call</a></li>
+        <li><a href="#payment-process-with-nequi">Payment Process with Nequi</a></li>
+        <li><a href="#user-experience">User Experience</a></li>
+        <li><a href="#parameters-for-request-and-response-1">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-1">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-cash-or-bank-reference">Submit transactions using cash or bank reference</a>
+    <li><a href="#submit-transactions-using-cash-or-bank-reference">Submit Transactions Using Cash or Bank Reference</a>
       <ul>
         <li></li>
-        <li><a href="#parameters-for-request-and-response-2">Parameters for request and response</a></li>
-        <li><a href="#api-call-2">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-2">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-2">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-bank-transfer-pse">Submit transactions using bank transfer (PSE)</a>
+    <li><a href="#submit-transactions-using-bank-transfer-pse">Submit Transactions Using Bank Transfer (PSE)</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-3">Parameters for request and response</a></li>
-        <li><a href="#api-call-3">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-3">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-3">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#bank-list---pse">Bank List - PSE</a>
+    <li><a href="#banks-list---pse">Banks List - PSE</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-4">Parameters for request and response</a></li>
-        <li><a href="#api-call-4">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-4">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-4">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Available payment methods query</a>
+    <li><a href="#available-payment-methods-query">Available Payment Methods Query</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-5">Parameters for request and response</a></li>
-        <li><a href="#api-call-5">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-5">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-5">API Call</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-6">Parameters for request and response</a></li>
-        <li><a href="#api-call-6">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-6">Parameters For Request and Response</a></li>
+        <li><a href="#api-call-6">API Call</a></li>
       </ul>
     </li>
   </ul>
@@ -885,30 +885,30 @@
             
 <div class="td-content">
 	<h1>Payments API - Colombia</h1>
-    <div class="lead">Payments API Colombia lets your shop process different transaction types with multiple payment methods.</div>
+    <div class="lead">The Payments API for Colombia enables seamless integration of PayU&rsquo;s payment processing capabilities into your online shopping platform. With this API, merchants can offer different payment methods via credit or debit cards, mobile wallets, cash, and bank transfers.</div>
 	       
 	<script src="../../../../js/searchcodes.js"></script>
-<p>To integrate with the Payments API for Colombia, direct your requests to the following URLs based on the corresponding environment.</p>
+<p>This guide shows how to leverage these services to enhance your customers&rsquo; payment experience by providing flexible and secure payment options tailored to the Colombian market.</p>
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">URL</h4>
+<h4 class="alert-heading">Note</h4>
+<p>To integrate with the Payments API, direct your requests to the following URLs based on the corresponding environment:</p>
 <ul>
 <li>Test: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 <li>Production: <code>https://api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 </ul>
-
 </div>
 
-<h2 id="available-methods">Available methods</h2>
+<h2 id="available-methods">Available Methods</h2>
 <p>Payments API includes the following methods:</p>
 <ul>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-credit-or-debit-cards">Submit transactions using credit or debit cards</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-nequi">Submit transactions using Nequi</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-cash-or-bank-reference">Submit transactions using cash or bank reference</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-bank-transfer-pse">Submit transactions using bank transfer (PSE)</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#bank-list---pse">Bank List - PSE</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#available-payment-methods-query">Available payment methods query</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-credit-or-debit-cards">Submit Transactions Using Credit or Debit Cards</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-nequi">Submit Transactions Using Nequi</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-cash-or-bank-reference">Submit Transactions Using Cash or Bank Reference</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-bank-transfer-pse">Submit Transactions Using Bank Transfer (PSE)</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#banks-list---pse">Banks List - PSE</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#available-payment-methods-query">Available Payment Methods Query</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#ping">Ping</a></li>
 </ul>
 
@@ -917,12 +917,12 @@
 <h4 class="alert-heading">Note</h4>
 <p>To confirm the status of a transaction, you can use one of the following options:</p>
 <ul>
-<li>Navigate to the the URL set in the <code>transaction.notifyUrl</code> variable or the <em><strong>Confirmation URL</strong></em> option located in the PayU Module in <em><strong>Settings</strong></em> &gt; <em><strong>Technical configuration</strong></em>.</li>
+<li>Navigate to the the URL set in the <code>transaction.notifyUrl</code> variable or the <em><strong>Confirmation URL</strong></em> option located in the Management Panel in <em><strong>Settings</strong></em> &gt; <em><strong>Technical configuration</strong></em>.</li>
 <li>Use the <a href="../../../../en/docs/services/queries.html">Queries API or SDK</a>.</li>
 </ul>
 </div>
 
-<h2 id="submit-transactions-using-credit-or-debit-cards">Submit transactions using credit or debit cards</h2>
+<h2 id="submit-transactions-using-credit-or-debit-cards">Submit Transactions Using Credit or Debit Cards</h2>
 <p>This method allows you to process the payments that your customers conduct using credit or debit cards. For Colombia, you can perform one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../../en/docs/services/payments.html#payment-flows">Payment flows</a>.</p>
 
 
@@ -931,7 +931,7 @@
 Two-step flow is available under request, contact your sales representative.
 </div>
 
-<h3 id="parameters-for-request-and-response">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -940,7 +940,7 @@ Two-step flow is available under request, contact your sales representative.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -1239,7 +1239,7 @@ Two-step flow is available under request, contact your sales representative.
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
 <td>Number</td>
 <td>12, 2</td>
-<td>Specifies the amount of the IVA.<br>If this parameter is not set, PayU applies the current tax value (19%).<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits</td>
+<td>Specifies the amount of the IVA.<br>If this parameter is not set, PayU applies the current tax value (19%).<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
@@ -1253,7 +1253,7 @@ Two-step flow is available under request, contact your sales representative.
 <td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE</td>
 <td>Alphanumeric</td>
 <td>64</td>
-<td>Base value to calculate the IVA.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits</td>
+<td>Base value to calculate the IVA.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
@@ -1286,7 +1286,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transaction &gt; creditCard</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Credit card information. If you process using debit card, do not send this parameter.<br>This object and its parameters are mandatory when the payment is performed using not tokenized credit card.</td>
 <td style="text-align:center">No</td>
@@ -1568,7 +1568,7 @@ Two-step flow is available under request, contact your sales representative.
 <td>transaction &gt; threeDomainSecure &gt; directoryServerTransactionId</td>
 <td>Alphanumeric</td>
 <td>Max:36</td>
-<td>Transaction ID generated by the Directory Server during the Authentication.</td>
+<td>Transaction ID generated by the directory server during the authentication.</td>
 <td style="text-align:center">No</td>
 </tr>
 </tbody>
@@ -1581,7 +1581,7 @@ Two-step flow is available under request, contact your sales representative.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -1736,7 +1736,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 </tbody>
 </table>
-<h3 id="api-call">API call</h3>
+<h3 id="api-call">API Call</h3>
 <p>The following are the examples of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -1783,7 +1783,7 @@ Two-step flow is available under request, contact your sales representative.
 <div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1882,7 +1882,7 @@ Two-step flow is available under request, contact your sales representative.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1931,7 +1931,7 @@ Two-step flow is available under request, contact your sales representative.
 <div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2038,7 +2038,7 @@ Two-step flow is available under request, contact your sales representative.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2073,8 +2073,9 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
+
 </div>
-<h2 id="submit-transactions-using-nequi">Submit transactions using Nequi</h2>
+<h2 id="submit-transactions-using-nequi">Submit Transactions Using Nequi</h2>
 <p>Nequi is a comprehensive platform of financial services that operates through a digital wallet available to millions of users via a mobile application. With Nequi, you can make payments, transfers, top-ups, and withdrawals quickly and securely, all from your personal device.</p>
 <p>In addition to being a convenient tool for individual users, Nequi is also an innovative payment solution for businesses. By accepting payments with Nequi, your business can enjoy a series of significant advantages:</p>
 <ul>
@@ -2088,44 +2089,55 @@ Two-step flow is available under request, contact your sales representative.
 <p><strong>Greater security:</strong> Nequi offers a secure and reliable payment environment, backed by Bancolombia, one of Colombia&rsquo;s largest and most trusted financial institutions. This provides peace of mind to both merchants and customers, as transactions are conducted securely and protected.</p>
 </li>
 </ul>
-<h3 id="payment-process-with-nequi">Payment process with Nequi</h3>
+<h3 id="payment-process-with-nequi">Payment Process with Nequi</h3>
 <p>The payment flow with Nequi is designed to be simple and agile for the user. The process includes 4 steps:</p>
 <ol>
 <li>
-<p><strong>Selection of Payment Method:</strong> The customer, at the time of making the purchase, chooses Nequi as their preferred payment method among the available options.</p>
+<p><strong>Selection of payment method:</strong> The customer, at the time of making the purchase, chooses Nequi as their preferred payment method among the available options.</p>
 </li>
 <li>
-<p><strong>Generation of Push Notification:</strong> Automatically, the system generates a push notification that is sent to the customer&rsquo;s Nequi mobile application.</p>
+<p><strong>Generation of push notification:</strong> Automatically, the system generates a push notification that is sent to the customer&rsquo;s Nequi mobile application.</p>
 </li>
 <li>
-<p><strong>Acceptance of Notification:</strong> The customer receives the notification in their Nequi application and proceeds to accept it to confirm the transaction.</p>
+<p><strong>Acceptance of notification:</strong> The customer receives the notification in their Nequi application and proceeds to accept it to confirm the transaction.</p>
 </li>
 <li>
 <p><strong>Entry of Nequi PIN:</strong> To complete the operation, the customer enters their personal Nequi PIN to authenticate and authorize the payment.</p>
 </li>
 </ol>
-<h3 id="user-experience">User experience</h3>
-<p>In this section, we indicate the necessary elements for the optimal user experience when using Nequi as a payment method:</p>
+<h3 id="user-experience">User Experience</h3>
+<p>This section outlines the necessary elements for an optimal user experience when using Nequi as a payment method:</p>
 <ol>
 <li>Request the buyer&rsquo;s name and email address, for example:</li>
 </ol>
-<p><img src="../../../../assets/Payments/Nequi01EN.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Payments/NEQUI_EN_01.png" alt="PrintScreen" width="420">
+<p></p>
 <ol start="2">
-<li>Present the Nequi payment method and request the phone number associated with the Nequi account, for example:</li>
+<li>Present Nequi as a payment method and request the phone number associated with the Nequi account, for example:</li>
 </ol>
-<p><img src="../../../../assets/Payments/Nequi02EN.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Payments/NEQUI_EN_02.png" alt="PrintScreen" width="420">
+<p></p>
 <ol start="3">
-<li>Display a detailed summary of the payment and the account, for example:</li>
+<li>Provide a detailed summary of the payment.</li>
 </ol>
-<p><img src="../../../../assets/Payments/Nequi03EN.png" alt="PrintScreen"></p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+The image below is an example of PayU&rsquo;s summary page, you can leverage this page by redirecting users to the URL provided in the <code>URL_PAYMENT_RECEIPT_HTML</code> field from the API response, or you can design your own receipt by fetching the data from the corresponding response fields. For more information, refer to the <a href="#parameters-for-request-and-response-1">Parameters for Request and Response</a> section.
+</div>
+
+<img src="../../../../assets/Payments/NEQUI_EN_03.png" alt="PrintScreen" width="500">
+<p></p>
 <ol start="4">
-<li>Highlight the steps to follow to facilitate the payment process for the buyer, for example:</li>
+<li>Outline the steps to follow to facilitate the payment process for the buyer. PayU&rsquo;s summary page already includes these instructions, but if you are creating a customized page, we recommend displaying the steps to complete the process through Nequi. For example:</li>
 </ol>
-<p><img src="../../../../assets/Payments/Nequi04EN.png" alt="PrintScreen"></p>
-<h3 id="parameters-for-request-and-response-1">Parameters for request and response</h3>
+<img src="../../../../assets/Payments/NEQUI_EN_04.png" alt="PrintScreen" width="420">
+<p></p>
+<h3 id="parameters-for-request-and-response-1">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
-<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 <table>
@@ -2727,7 +2739,7 @@ Two-step flow is available under request, contact your sales representative.
 <td>transactionResponse &gt; extraParameters</td>
 <td>Object</td>
 <td></td>
-<td>Additional parameters or data associated with the response. In JSON, the <code>extraParameters</code> parameter follows this structure: <code>&quot;extraParameters&quot;: { &quot;BANK_REFERENCED_CODE&quot;: &quot;CREDIT&quot;}</code><br>In XML, the <code>extraParameters</code> parameter follows this structure: <code>&lt;extraParameters&gt; &lt;entry&gt;  &lt;string&gt;BANK_REFERENCED_CODE&lt;/string&gt;  &lt;string&gt;CREDIT&lt;/string&gt; &lt;/entry&gt;&lt;/extraParameters&gt;</code></td>
+<td>Additional parameters or data associated with the response. <li>In JSON, the <code>extraParameters</code> parameter follows this structure: <code>&quot;extraParameters&quot;: { &quot;URL_PAYMENT_RECEIPT_HTML&quot;: &quot;https:payu.checkout.com&quot;}</code><li>In XML, the <code>extraParameters</code> parameter follows this structure: <code>&lt;extraParameters&gt; &lt;entry&gt;  &lt;string&gt;URL_PAYMENT_RECEIPT_HTML&lt;/string&gt;  &lt;string&gt;https:payu.checkout.com&lt;/string&gt; &lt;/entry&gt;&lt;/extraParameters&gt;</code> <br><strong>Note:</strong> Consider that you can leverage this URL to redirect the user to a PayU page with a summary of the purchase, as seen in <a href="#user-experience">User Experience</a>.</td>
 </tr>
 <tr>
 <td>transactionResponse &gt; additionalInfo</td>
@@ -2738,7 +2750,7 @@ Two-step flow is available under request, contact your sales representative.
 </tbody>
 </table>
 </details>
-<h3 id="api-call-1">API call</h3>
+<h3 id="api-call-1">API Call</h3>
 <p>The following are the request and response bodies for this payment method:</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -2785,7 +2797,7 @@ Two-step flow is available under request, contact your sales representative.
 <div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2868,7 +2880,7 @@ Two-step flow is available under request, contact your sales representative.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2908,7 +2920,7 @@ Two-step flow is available under request, contact your sales representative.
 <div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2996,7 +3008,7 @@ Two-step flow is available under request, contact your sales representative.
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -3019,9 +3031,9 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
+
 </div>
-<h4 id="considerations-1">Considerations</h4>
-<h5 id="supported-phone-number-formats">Supported phone number formats</h5>
+<h4 id="supported-phone-number-formats">Supported Phone Number Formats</h4>
 <p>When using API integrations, transactions may fail when the system receives user phone numbers that:</p>
 <ol>
 <li>Contain whitespace.</li>
@@ -3032,7 +3044,7 @@ Two-step flow is available under request, contact your sales representative.
 <table>
 <thead>
 <tr>
-<th>Phone number format example</th>
+<th>Phone Number Format Example</th>
 <th>Compatibility</th>
 <th>Details</th>
 </tr>
@@ -3124,22 +3136,22 @@ Two-step flow is available under request, contact your sales representative.
 </tbody>
 </table>
 <p>You can check the transaction status through the <a href="../../../../en/docs/integrations/api-integration/queries-api.html">Queries API</a>.</p>
-<h2 id="submit-transactions-using-cash-or-bank-reference">Submit transactions using cash or bank reference</h2>
-<p>This method lets you process the payments of your customers in cash or using a bank reference. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like the followings.</p>
-<h4 id="payments-in-cash">Payments in cash</h4>
+<h2 id="submit-transactions-using-cash-or-bank-reference">Submit Transactions Using Cash or Bank Reference</h2>
+<p>This method allows you to process customer payments in cash or through a bank reference. To integrate this payment method, redirect the customer to the URL provided in the method&rsquo;s response. Your customer will then see a payment receipt as shown below.</p>
+<h4 id="payments-in-cash">Payments in Cash</h4>
 <img src="../../../../assets/Payments/CashReceiptCO.png" alt="PrintScreen" width="75%">
-<h4 id="payments-with-bank-reference">Payments with Bank reference</h4>
+<h4 id="payments-with-bank-reference">Payments with Bank Reference</h4>
 <img src="../../../../assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
-<h3 id="parameters-for-request-and-response-2">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-2">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
-<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -3170,7 +3182,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the authentication data.</td>
 <td style="text-align:center">Yes</td>
@@ -3191,14 +3203,14 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the transaction data.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the order data.</td>
 <td style="text-align:center">Yes</td>
@@ -3254,7 +3266,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Shipping address.</td>
 <td style="text-align:center">No</td>
@@ -3310,7 +3322,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Buyer information.</td>
 <td style="text-align:center">Yes</td>
@@ -3401,7 +3413,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Object</td>
 <td>64</td>
 <td>Amount of the order or its associated values.</td>
 <td style="text-align:center">Yes</td>
@@ -3471,7 +3483,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Payer information.</td>
 <td style="text-align:center">Yes</td>
@@ -3499,7 +3511,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Billing address.</td>
 <td style="text-align:center">Yes</td>
@@ -3626,7 +3638,7 @@ Two-step flow is available under request, contact your sales representative.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -3647,7 +3659,7 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>The response data.</td>
 </tr>
@@ -3719,20 +3731,20 @@ Two-step flow is available under request, contact your sales representative.
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Additional parameters or data associated with the response.<br>In JSON, the <em>extraParameters</em> parameter follows this structure: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;REFERENCE&quot;: &quot;74794&quot;</code><br><code>}</code><br><br>In XML, the <em>extraParameters</em> parameter follows this structure: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;REFERENCE&lt;/string&gt;</code><br>  <code>&lt;int&gt;74794&lt;/int&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
 <tr>
 <td>transactionResponse &gt; additionalInfo</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Additional information associated with the response. This object follows the same structure than <code>transactionResponse.extraParameters</code>.</td>
 </tr>
 </tbody>
 </table>
 </details>
-<h4 id="considerations-2">Considerations</h4>
+<h4 id="considerations-1">Considerations</h4>
 <ul>
 <li>The parameter <code>transaction.expirationDate</code> is not mandatory. If you don&rsquo;t send this parameter, its default value is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.</li>
 <li>For <!--`BALOTO` and --><code>EFECTY</code>, the confirmation of the payment takes 15 minutes. For <code>BANK_REFERENCED</code> and <code>OTHERS_CASH</code> (Su Red), the confirmation is online.</li>
@@ -3754,7 +3766,7 @@ Two-step flow is available under request, contact your sales representative.
 </ul>
 </li>
 </ul>
-<h3 id="api-call-2">API call</h3>
+<h3 id="api-call-2">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -3801,7 +3813,7 @@ Two-step flow is available under request, contact your sales representative.
 <div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -3882,7 +3894,7 @@ Two-step flow is available under request, contact your sales representative.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -3934,7 +3946,7 @@ Two-step flow is available under request, contact your sales representative.
 <div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -4020,7 +4032,7 @@ Two-step flow is available under request, contact your sales representative.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -4064,8 +4076,9 @@ Two-step flow is available under request, contact your sales representative.
 
 
 
+
 </div>
-<h2 id="submit-transactions-using-bank-transfer-pse">Submit transactions using bank transfer (PSE)</h2>
+<h2 id="submit-transactions-using-bank-transfer-pse">Submit Transactions Using Bank Transfer (PSE)</h2>
 <p>This method lets you process the bank transfer payments of your customers. In Colombia, bank transfers are made through PSE, to perform an integration with this payment method, you need to create a Payment form following these steps:</p>
 <ol>
 <li>Include a PSE button making clear that your customer will use <em>Proveedor de Servicios Electrónicos PSE</em>.</li>
@@ -4078,7 +4091,7 @@ Two-step flow is available under request, contact your sales representative.
 <li>PSE</li>
 </ul>
 </li>
-<li>Do no use any of the following names
+<li>Do not use any of the following names:
 <ul>
 <li>Transferencia bancaria</li>
 <li>Débito de cuenta</li>
@@ -4153,16 +4166,16 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <ol start="6">
 <li>You must send the payer identification number in the extra parameter <code>PSE_REFERENCE3</code> in the request.</li>
 </ol>
-<h3 id="parameters-for-request-and-response-3">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-3">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
-<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+<label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4193,7 +4206,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the authentication data.</td>
 <td style="text-align:center">Yes</td>
@@ -4214,14 +4227,14 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the transaction data.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the order data.</td>
 <td style="text-align:center">Yes</td>
@@ -4277,7 +4290,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Shipping address.</td>
 <td style="text-align:center">No</td>
@@ -4333,7 +4346,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Buyer information.</td>
 <td style="text-align:center">Yes</td>
@@ -4424,7 +4437,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Object</td>
 <td>64</td>
 <td>Amount of the order or its associated values.</td>
 <td style="text-align:center">Yes</td>
@@ -4452,7 +4465,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Payer information.</td>
 <td style="text-align:center">Yes</td>
@@ -4480,7 +4493,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Billing address.</td>
 <td style="text-align:center">Yes</td>
@@ -4613,7 +4626,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transaction &gt; extraParameters</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Additional parameters or data associated with the request. <br>For bank transfer payments, this is the response page of your commerce.<br>In JSON, the <em>extraParameters</em> parameter is set as: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;PSE_REFERENCE3&quot;: &quot;123456789&quot;</code><br><code>}</code><br><br>In XML, the <em>extraParameters</em> parameter is set as: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;PSE_REFERENCE3&lt;/string&gt;</code><br>  <code>&lt;string&gt;123456789&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 <td style="text-align:center">No</td>
@@ -4628,7 +4641,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4649,7 +4662,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>The response data.</td>
 </tr>
@@ -4721,14 +4734,14 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>Additional parameters or data associated with the response.<br>In JSON, the <em>extraParameters</em> parameter follows this structure: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;BANK_URL&quot;: &quot;xxxx&quot;</code><br><code>}</code><br><br>In XML, the <em>extraParameters</em> parameter follows this structure: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;BANK_URL&lt;/string&gt;</code><br>  <code>&lt;string&gt;xxxx&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
 </tbody>
 </table>
 </details>
-<h4 id="considerations-3">Considerations</h4>
+<h4 id="considerations-2">Considerations</h4>
 <ul>
 <li>To test PSE bank transfers in the PayU Sandbox environment, see the <a href="../../../../assets/pse-test-guide-v5.pdf">PSE Test Guide (PDF)</a>.</li>
 <li>All the payment process values must be formatted in thousands (i.e., 1,200.00 or 1,200) without exception.</li>
@@ -4771,7 +4784,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 </tbody>
 </table>
-<h3 id="api-call-3">API call</h3>
+<h3 id="api-call-3">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4818,7 +4831,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -4909,7 +4922,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -4959,7 +4972,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -5073,7 +5086,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -5109,10 +5122,11 @@ This field is not mandatory for <em>PSE Avanza</em>.
 
 
 
+
 </div>
-<h2 id="bank-list---pse">Bank List - PSE</h2>
+<h2 id="banks-list---pse">Banks List - PSE</h2>
 <p>This method returns a list of the banks available for <a href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html#submit-transactions-using-bank-transfer-pse">payments using PSE</a>.</p>
-<h3 id="parameters-for-request-and-response-4">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-4">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -5120,7 +5134,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5151,7 +5165,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the authentication data.</td>
 <td style="text-align:center">Yes</td>
@@ -5172,7 +5186,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>bankListInformation</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the information of the query.</td>
 <td style="text-align:center">Yes</td>
@@ -5201,7 +5215,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5222,7 +5236,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>banks</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>List of the banks available in PSE.</td>
 </tr>
@@ -5247,7 +5261,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tbody>
 </table>
 </details>
-<h3 id="api-call-4">API call</h3>
+<h3 id="api-call-4">API Call</h3>
 <p>The following are the examples of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5294,7 +5308,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;GET_BANKS_LIST&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -5309,7 +5323,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -5617,7 +5631,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_BANKS_LIST<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -5632,7 +5646,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/bankListInformation&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;bankListResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;banks&gt;</span>
@@ -5931,10 +5945,11 @@ This field is not mandatory for <em>PSE Avanza</em>.
 
 
 
+
 </div>
-<h2 id="available-payment-methods-query">Available payment methods query</h2>
+<h2 id="available-payment-methods-query">Available Payment Methods Query</h2>
 <p>This method returns a list of the payment methods available in all countries.</p>
-<h3 id="parameters-for-request-and-response-5">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-5">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -5942,7 +5957,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5973,7 +5988,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the authentication data.</td>
 <td style="text-align:center">Yes</td>
@@ -6002,7 +6017,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -6023,13 +6038,13 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>paymentMethods</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>List of the payment methods.</td>
 </tr>
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the information of a payment method.</td>
 </tr>
@@ -6054,7 +6069,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tbody>
 </table>
 </details>
-<h3 id="api-call-5">API call</h3>
+<h3 id="api-call-5">API Call</h3>
 <p>The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6101,7 +6116,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -6112,7 +6127,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -6149,7 +6164,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -6160,7 +6175,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentMethodsResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentMethods&gt;</span>
@@ -6186,10 +6201,11 @@ This field is not mandatory for <em>PSE Avanza</em>.
 
 
 
+
 </div>
 <h2 id="ping">Ping</h2>
 <p>The <code>PING</code> method lets you verify the connection to our platform.</p>
-<h3 id="parameters-for-request-and-response-6">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-6">Parameters For Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -6197,7 +6213,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -6228,7 +6244,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Object</td>
 <td></td>
 <td>This object has the authentication data.</td>
 <td style="text-align:center">Yes</td>
@@ -6257,7 +6273,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -6285,7 +6301,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </tbody>
 </table>
 </details>
-<h3 id="api-call-6">API call</h3>
+<h3 id="api-call-6">API Call</h3>
 <p>The following are the examples of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6332,7 +6348,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -6343,7 +6359,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -6365,7 +6381,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>PING<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -6376,13 +6392,14 @@ This field is not mandatory for <em>PSE Avanza</em>.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
 </span></span></code></pre></div>
 
 </div>
+
 
 
 
@@ -6395,9 +6412,9 @@ This field is not mandatory for <em>PSE Avanza</em>.
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-July 8, 2024:
+July 26, 2024:
 
- <b>Documentation updates (a842982f1)</b>
+ <b>Documentation updates (e5a4165f4)</b>
 </div>
 </div>
 
