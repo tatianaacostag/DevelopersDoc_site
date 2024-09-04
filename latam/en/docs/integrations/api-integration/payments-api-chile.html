@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Payments API - Chile | PayU Latam</title><meta property="og:title" content="Payments API - Chile" />
-<meta property="og:description" content="Payments API Chile enables your store to process different transaction types with multiple payment methods.
+<meta property="og:description" content="The Payments API for Chile allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit, debit, or prepaid cards, and debit or prepaid cards through WebPay Plus.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-chile.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-07-26T09:39:39-05:00" />
+<meta property="article:modified_time" content="2024-08-28T09:47:10-05:00" />
 
 <meta itemprop="name" content="Payments API - Chile">
-<meta itemprop="description" content="Payments API Chile enables your store to process different transaction types with multiple payment methods.
+<meta itemprop="description" content="The Payments API for Chile allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit, debit, or prepaid cards, and debit or prepaid cards through WebPay Plus.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-07-26T09:39:39-05:00" />
-<meta itemprop="wordCount" content="7450">
+<meta itemprop="dateModified" content="2024-08-28T09:47:10-05:00" />
+<meta itemprop="wordCount" content="7767">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Chile"/>
-<meta name="twitter:description" content="Payments API Chile enables your store to process different transaction types with multiple payment methods.
+<meta name="twitter:description" content="The Payments API for Chile allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit, debit, or prepaid cards, and debit or prepaid cards through WebPay Plus.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.b7f186066d5d8aa3be69e8207ff2e0600fd1f58a8c807a7b69f14fa312ada257402c64ffb68cee5d9411c6ec3b035d969ed32ba544fd0203926865eb2591816e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -782,37 +782,38 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#available-methods">Available methods</a></li>
-    <li><a href="#submit-transactions-using-credit-debit-or-prepaid-cards">Submit transactions using credit, debit or prepaid cards</a>
+    <li><a href="#available-methods">Available Methods</a></li>
+    <li><a href="#submit-transactions-using-credit-debit-or-prepaid-cards">Submit Transactions Using Credit, Debit or Prepaid Cards</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response">Parameters for request and response</a></li>
+        <li><a href="#parameters-for-request-and-response">Parameters for Request and Response</a></li>
         <li><a href="#authorization">Authorization</a></li>
         <li><a href="#capture">Capture</a></li>
+        <li><a href="#partial-capture">Partial Capture</a></li>
         <li><a href="#charge">Charge</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-cash">Submit transactions using cash</a>
+    <li><a href="#submit-transactions-using-cash">Submit Transactions Using Cash</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-1">Parameters for request and response</a></li>
-        <li><a href="#api-call">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-1">Parameters for Request and Response</a></li>
+        <li><a href="#api-call">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-debit-and-prepaid-cards">Submit transactions using debit and prepaid cards through WebPay Plus</a>
+    <li><a href="#submit-transactions-using-debit-and-prepaid-cards">Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-2">Parameters for request and response</a></li>
-        <li><a href="#api-call-1">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-2">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-1">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Available payment methods query</a>
+    <li><a href="#available-payment-methods-query">Available Payment Methods Query</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-3">Parameters for request and response</a></li>
-        <li><a href="#api-call-2">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-3">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-2">API Call</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-4">Parameters for request and response</a></li>
-        <li><a href="#api-call-3">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-4">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-3">API Call</a></li>
       </ul>
     </li>
   </ul>
@@ -872,28 +873,28 @@
             
 <div class="td-content">
 	<h1>Payments API - Chile</h1>
-    <div class="lead">Payments API Chile enables your store to process different transaction types with multiple payment methods.</div>
+    <div class="lead">The Payments API for Chile allows you to efficiently integrate PayU&rsquo;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit, debit, or prepaid cards, and debit or prepaid cards through WebPay Plus.</div>
 	       
 	<script src="../../../../js/searchcodes.js"></script>
-<p>To integrate with Payments API Chile, target your request to the following URLs according to your environment.</p>
+<p>This guide shows you how to leverage these services to enhance your customers&rsquo; payment experience by providing flexible and secure payment options tailored to the local market.</p>
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">URLs</h4>
+<h4 class="alert-heading">Note</h4>
+<p>To integrate the Payments API, direct your requests to the following URLs according to the corresponding environment:</p>
 <ul>
-<li>Test: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
+<li>Testing: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 <li>Production: <code>https://api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 </ul>
-
 </div>
 
-<h2 id="available-methods">Available methods</h2>
+<h2 id="available-methods">Available Methods</h2>
 <p>Payments API includes the following methods:</p>
 <ul>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-credit-debit-or-prepaid-cards">Submit transactions using credit, debit or prepaid cards</a> <!-- * [Submit transactions using Khipu](/en/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-khipu) --></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-cash">Submit transactions using cash</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-debit-and-prepaid-cards">Submit transactions using debit and prepaid cards through WebPay Plus</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#available-payment-methods-query">Available payment methods query</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-credit-debit-or-prepaid-cards">Submit Transactions Using Credit, Debit or Prepaid Cards</a> <!-- * [Submit transactions using Khipu](/en/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-khipu) --></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-cash">Submit Transactions Using Cash</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-debit-and-prepaid-cards">Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#available-payment-methods-query">Available Payment Methods Query</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-chile.html#ping">Ping</a></li>
 </ul>
 
@@ -907,7 +908,7 @@
 </ul>
 </div>
 
-<h2 id="submit-transactions-using-credit-debit-or-prepaid-cards">Submit transactions using credit, debit or prepaid cards</h2>
+<h2 id="submit-transactions-using-credit-debit-or-prepaid-cards">Submit Transactions Using Credit, Debit or Prepaid Cards</h2>
 <p>This method lets you process the payments that your customers perform using credit, debit or prepaid cards. For Chile, you can perform the two-step flows (<strong>Authorization</strong>, <strong>Capture</strong>), and one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../../en/docs/services/payments.html#payment-flows">Payment flows</a>.</p>
 
 
@@ -916,7 +917,7 @@
 Transactions using two-step flows are available under demand. Contact your sales representative for more information.
 </div>
 
-<h3 id="parameters-for-request-and-response">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -925,7 +926,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -1517,7 +1518,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -1680,7 +1681,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 <div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1764,7 +1765,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1807,7 +1808,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 <div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1897,7 +1898,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -1937,8 +1938,8 @@ Transactions using two-step flows are available under demand. Contact your sales
 <p>Take into account the following considerations for capture.</p>
 <ul>
 <li>The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.</li>
-<li>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.</li>
-<li>You can perform partial captures over an authorized amount. To do this, you need to send in the request the parameter <code>transaction.order.TX_VALUE</code> with its value (as sent during the Authorization).<br>The minimum amount is 50 CLP.</li>
+<li>Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Consider that the order and transaction ids must meet with a currently authorized transaction.</li>
+<li>You can perform partial captures on an authorized amount. For more information, see the <a href="#partial-capture">Partial Capture</a> section.</li>
 <li>It is not allowed to capture a higher amount than the amount previously authorized.</li>
 <li>Captures are only allowed for transactions in one installment.</li>
 </ul>
@@ -1988,7 +1989,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 <div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2006,7 +2007,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2048,7 +2049,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 <div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2066,7 +2067,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2096,9 +2097,17 @@ Transactions using two-step flows are available under demand. Contact your sales
 
 
 </div>
-<h3 id="charge">Charge</h3>
-<p>Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:</p>
-<p>The following are the request and response bodies for this transaction type.</p>
+<h3 id="partial-capture">Partial Capture</h3>
+<p>A partial capture is an operation that allows you to request the disbursement of an amount less than what was previously authorized in a transaction.</p>
+<p>This means that if your integration initially authorized a payment of $100, you can perform a partial capture for $60, and release the remaining $40, which the integration will not be able to capture later.</p>
+<h4 id="considerations-2">Considerations</h4>
+<ul>
+<li>The total amount captured cannot exceed the originally authorized amount.</li>
+<li>Each payment processor and each country may have rules or restrictions regarding the amount you can capture partially.</li>
+<li>You must specify the value you wish to partially capture in the <code>value</code> field, within the <code>TX_VALUE</code> parameter, as shown in the example below.</li>
+<li>The minimum amount for partial capture is 50 CLP.</li>
+</ul>
+<p>The following are examples of the request and response bodies for this type of transaction.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
 
@@ -2142,6 +2151,189 @@ Transactions using two-step flows are available under demand. Contact your sales
 
 
 <div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2152525133&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;additionalValues&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TX_VALUE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">50</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CLP&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CAPTURE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;parentTransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4b6adba7-e43b-45f8-88a6-d290755d6c04&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transactionResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;orderId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2152543423</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6f523681-1587-4a2d-8a15-605d27f89c26&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseErrorMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;trazabilityCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6f523681-1587-4a2d-8a15-605d27f89c26&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;authorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NPS-011111&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;pendingReason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APROBADA - Autorizada&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionTime&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;operationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1723724052207</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;referenceQuestionnaire&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;additionalInfo&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;paymentNetwork&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NPS_AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;rejectionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NONE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;responseNetworkMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;travelAgencyAuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;cardType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;transactionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CAPTURE&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;transaction&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;order&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;id&gt;</span>2152525133<span style="color:#204a87;font-weight:bold">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/order&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;TX_VALUE&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>50<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>CLP<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;/TX_VALUE&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;type&gt;</span>CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;parentTransactionId&gt;</span>4b6adba7-e43b-45f8-88a6-d290755d6c04<span style="color:#204a87;font-weight:bold">&lt;/parentTransactionId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/transaction&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;test&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/test&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;response&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;error</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;orderId&gt;</span>2152543423<span style="color:#204a87;font-weight:bold">&lt;/orderId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionId&gt;</span>6f523681-1587-4a2d-8a15-605d27f89c26<span style="color:#204a87;font-weight:bold">&lt;/transactionId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentNetworkResponseCode&gt;</span>0<span style="color:#204a87;font-weight:bold">&lt;/paymentNetworkResponseCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentNetworkResponseErrorMessage</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;trazabilityCode&gt;</span>6f523681-1587-4a2d-8a15-605d27f89c26<span style="color:#204a87;font-weight:bold">&lt;/trazabilityCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;authorizationCode&gt;</span>NPS-011111<span style="color:#204a87;font-weight:bold">&lt;/authorizationCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;pendingReason</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;responseCode&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/responseCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;errorCode</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;responseMessage&gt;</span>APROBADA - Autorizada<span style="color:#204a87;font-weight:bold">&lt;/responseMessage&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionDate</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionTime</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;operationDate&gt;</span>1723724052207<span style="color:#204a87;font-weight:bold">&lt;/operationDate&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;referenceQuestionnaire</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;extraParameters</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;additionalInfo&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;paymentNetwork&gt;</span>NPS_AR<span style="color:#204a87;font-weight:bold">&lt;/paymentNetwork&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;rejectionType&gt;</span>NONE<span style="color:#204a87;font-weight:bold">&lt;/rejectionType&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;responseNetworkMessage</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;travelAgencyAuthorizationCode</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;cardType</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;transactionType&gt;</span>CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/transactionType&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/additionalInfo&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/response&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h3 id="charge">Charge</h3>
+<p>Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:</p>
+<p>The following are the request and response bodies for this transaction type.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-4" data-toggle="tab" href="#tab41" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-4" data-toggle="tab" href="#tab42" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="4">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
 <p>Request example:</p>
@@ -2268,7 +2460,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 
 
 
-<div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
 <p>Request example:</p>
@@ -2435,7 +2627,7 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 <img src="../../../../assets/Payments/KHIPU_EN_05.png" alt="PrintScreen" width="250">
 <p></p>
 
-### Parameters for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -2443,7 +2635,7 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|---|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages](/en/docs/getting-started/response-codes-and-variables.html#supported-languages). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -2517,7 +2709,7 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |---|---|---|---|
 | code | Alphanumeric | | Transaction response code. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max: 2048 | Error message associated when the response code is `ERROR`. |
@@ -2565,7 +2757,7 @@ Below are examples of request and response in JSON and XML formats.
 
 		
 
-		<a class="nav-item nav-link active" id="nav-4" data-toggle="tab" href="#tab41" role="tab"
+		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -2577,7 +2769,7 @@ Below are examples of request and response in JSON and XML formats.
 
 		
 
-		<a class="nav-item nav-link" id="nav-4" data-toggle="tab" href="#tab42" role="tab"
+		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -2586,7 +2778,7 @@ Below are examples of request and response in JSON and XML formats.
 	</div>
 </nav>
 
-<div class="tab-content" id="4">
+<div class="tab-content" id="5">
 
 
 
@@ -2595,7 +2787,7 @@ Below are examples of request and response in JSON and XML formats.
 
 
 
-<div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
 <p>Example of a request:</p>
@@ -2717,7 +2909,7 @@ Below are examples of request and response in JSON and XML formats.
 
 
 
-<div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
 <p>Example of request:</p>
@@ -2850,7 +3042,7 @@ Optionally, with this method, you can get the list of banks available for conduc
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|---|
 | language | Alphanumeric | 2 | Language used in the request. This language is used to display the generated error messages. [See supported languages](/en/docs/getting-started/response-codes-and-variables.html#supported-languages). | Yes |
 | command | Alphanumeric | Max: 32 | Set to `GET_BANKS_LIST`. | Yes |
@@ -2869,7 +3061,7 @@ Optionally, with this method, you can get the list of banks available for conduc
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |---|---|---|---|
 | code | Alphanumeric | | Transaction response code. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max: 2048 | Error message associated when the response code is `ERROR`. |
@@ -2899,7 +3091,7 @@ Below are examples of request and response in JSON and XML formats.
 
 		
 
-		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
+		<a class="nav-item nav-link active" id="nav-6" data-toggle="tab" href="#tab61" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -2911,7 +3103,7 @@ Below are examples of request and response in JSON and XML formats.
 
 		
 
-		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
+		<a class="nav-item nav-link" id="nav-6" data-toggle="tab" href="#tab62" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -2920,7 +3112,7 @@ Below are examples of request and response in JSON and XML formats.
 	</div>
 </nav>
 
-<div class="tab-content" id="5">
+<div class="tab-content" id="6">
 
 
 
@@ -2929,7 +3121,7 @@ Below are examples of request and response in JSON and XML formats.
 
 
 
-<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
 <p>Example of a request:</p>
@@ -2983,7 +3175,7 @@ Below are examples of request and response in JSON and XML formats.
 
 
 
-<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
 <p>Example of a request:</p>
@@ -3048,7 +3240,7 @@ Below are examples of request and response in JSON and XML formats.
 * [Official Khipu logos:](https://docs.khipu.com/portal/en/payment-logos/)
 
 -->
-<h2 id="submit-transactions-using-cash">Submit transactions using cash</h2>
+<h2 id="submit-transactions-using-cash">Submit Transactions Using Cash</h2>
 <p>This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.</p>
 <img src="../../../../assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
 
@@ -3058,7 +3250,7 @@ Below are examples of request and response in JSON and XML formats.
 Klap is formerly known as MULTICAJA. You can still see elements or configurations related to MULTICAJA.
 </div>
 
-<h3 id="parameters-for-request-and-response-1">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-1">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -3067,7 +3259,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -3561,7 +3753,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -3661,13 +3853,13 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </tbody>
 </table>
 </details>
-<h4 id="considerations-2">Considerations</h4>
+<h4 id="considerations-3">Considerations</h4>
 <ul>
 <li>The parameter <code>transaction.expirationDate</code> is not mandatory. If you don&rsquo;t send this parameter, its default value is seven days after the current date at 12:00 pm.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.</li>
 <li>You must set a response URL in the parameter <code>NETWORK_CALLBACK_URL</code> inside <code>transaction.extraParameters</code>; this URL redirects the user back to your page after they finish the online payment procedure.</li>
 <li>You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the <code>BANK_URL</code> parameter in the response.</li>
 </ul>
-<h3 id="api-call">API call</h3>
+<h3 id="api-call">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -3681,7 +3873,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		<a class="nav-item nav-link active" id="nav-6" data-toggle="tab" href="#tab61" role="tab"
+		<a class="nav-item nav-link active" id="nav-7" data-toggle="tab" href="#tab71" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -3693,7 +3885,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		<a class="nav-item nav-link" id="nav-6" data-toggle="tab" href="#tab62" role="tab"
+		<a class="nav-item nav-link" id="nav-7" data-toggle="tab" href="#tab72" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -3702,7 +3894,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	</div>
 </nav>
 
-<div class="tab-content" id="6">
+<div class="tab-content" id="7">
 
 
 
@@ -3711,10 +3903,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-<div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -3790,7 +3982,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -3829,10 +4021,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-<div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -3914,7 +4106,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -3950,10 +4142,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 </div>
-<h2 id="submit-transactions-using-debit-and-prepaid-cards">Submit transactions using debit and prepaid cards through WebPay Plus</h2>
+<h2 id="submit-transactions-using-debit-and-prepaid-cards">Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus</h2>
 <p>This method lets you process the bank debit and prepaid card payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.</p>
 <img src="../../../../assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
-<h3 id="parameters-for-request-and-response-2">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-2">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -3962,7 +4154,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4470,7 +4662,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4570,7 +4762,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </tbody>
 </table>
 </details>
-<h4 id="considerations-3">Considerations</h4>
+<h4 id="considerations-4">Considerations</h4>
 <ul>
 <li>If you don&rsquo;t send the <code>RESPONSE_URL</code> parameter in <code>transaction.extraParameters</code>, the API takes the value from the <em><strong>Response URL</strong></em> variable in your PayU Module (<em><strong>Settings</strong></em> &gt; <em><strong>Technical configuration</strong></em>).</li>
 <li>When you process payments through WebPay plus, you must redirect the customer to the URL found in the <code>URL_PAYMENT_REDIRECT</code> extra parameter concatenated with the <code>TRANSBANK_DIRECT_TOKEN</code> extra parameter as follows: <br> <code>URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN</code>.</li>
@@ -4612,7 +4804,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </tbody>
 </table>
 <p>The variables above are sent via GET.</p>
-<h3 id="api-call-1">API call</h3>
+<h3 id="api-call-1">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4626,7 +4818,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		<a class="nav-item nav-link active" id="nav-7" data-toggle="tab" href="#tab71" role="tab"
+		<a class="nav-item nav-link active" id="nav-8" data-toggle="tab" href="#tab81" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -4638,7 +4830,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		<a class="nav-item nav-link" id="nav-7" data-toggle="tab" href="#tab72" role="tab"
+		<a class="nav-item nav-link" id="nav-8" data-toggle="tab" href="#tab82" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -4647,7 +4839,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	</div>
 </nav>
 
-<div class="tab-content" id="7">
+<div class="tab-content" id="8">
 
 
 
@@ -4656,10 +4848,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-<div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab81" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -4737,7 +4929,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -4778,10 +4970,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-<div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab82" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -4865,7 +5057,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -4901,9 +5093,9 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 </div>
-<h2 id="available-payment-methods-query">Available payment methods query</h2>
+<h2 id="available-payment-methods-query">Available Payment Methods Query</h2>
 <p>This method returns a list of the payment methods available in all countries.</p>
-<h3 id="parameters-for-request-and-response-3">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-3">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -4911,7 +5103,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4971,7 +5163,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5023,7 +5215,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </tbody>
 </table>
 </details>
-<h3 id="api-call-2">API call</h3>
+<h3 id="api-call-2">API Call</h3>
 <p>The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5037,7 +5229,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		<a class="nav-item nav-link active" id="nav-8" data-toggle="tab" href="#tab81" role="tab"
+		<a class="nav-item nav-link active" id="nav-9" data-toggle="tab" href="#tab91" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -5049,7 +5241,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		<a class="nav-item nav-link" id="nav-8" data-toggle="tab" href="#tab82" role="tab"
+		<a class="nav-item nav-link" id="nav-9" data-toggle="tab" href="#tab92" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -5058,7 +5250,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	</div>
 </nav>
 
-<div class="tab-content" id="8">
+<div class="tab-content" id="9">
 
 
 
@@ -5067,10 +5259,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-<div class="tab-pane fade show active" id="tab81" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab91" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -5081,7 +5273,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -5115,10 +5307,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-<div class="tab-pane fade" id="tab82" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab92" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -5129,7 +5321,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentMethodsResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentMethods&gt;</span>
@@ -5158,7 +5350,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </div>
 <h2 id="ping">Ping</h2>
 <p>The <code>PING</code> method lets you verify the connection to our platform.</p>
-<h3 id="parameters-for-request-and-response-4">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-4">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -5166,7 +5358,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5226,7 +5418,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5258,7 +5450,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </tbody>
 </table>
 </details>
-<h3 id="api-call-3">API call</h3>
+<h3 id="api-call-3">API Call</h3>
 <p>The following are the examples of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5272,7 +5464,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		<a class="nav-item nav-link active" id="nav-9" data-toggle="tab" href="#tab91" role="tab"
+		<a class="nav-item nav-link active" id="nav-10" data-toggle="tab" href="#tab101" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -5284,7 +5476,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 		
 
-		<a class="nav-item nav-link" id="nav-9" data-toggle="tab" href="#tab92" role="tab"
+		<a class="nav-item nav-link" id="nav-10" data-toggle="tab" href="#tab102" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -5293,7 +5485,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	</div>
 </nav>
 
-<div class="tab-content" id="9">
+<div class="tab-content" id="10">
 
 
 
@@ -5302,10 +5494,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-<div class="tab-pane fade show active" id="tab91" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab101" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -5316,7 +5508,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -5335,10 +5527,10 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 
 
 
-<div class="tab-pane fade" id="tab92" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab102" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request example:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>PING<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -5349,7 +5541,7 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response example:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
@@ -5368,9 +5560,9 @@ Klap is formerly known as MULTICAJA. You can still see elements or configuration
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-July 26, 2024:
+August 28, 2024:
 
- <b>Documentation updates (e5a4165f4)</b>
+ <b>Documentation updates (2892f1bb8)</b>
 </div>
 </div>
 

@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>API de Pagos - Brasil | PayU Latam</title><meta property="og:title" content="API de Pagos - Brasil" />
-<meta property="og:description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
+<meta property="og:description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-07-12T01:07:00-05:00" />
+<meta property="article:modified_time" content="2024-08-28T09:47:10-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Brasil">
-<meta itemprop="description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
+<meta itemprop="description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-07-12T01:07:00-05:00" />
-<meta itemprop="wordCount" content="13199">
+<meta itemprop="dateModified" content="2024-08-28T09:47:10-05:00" />
+<meta itemprop="wordCount" content="13657">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Brasil"/>
-<meta name="twitter:description" content="El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
+<meta name="twitter:description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.b7f186066d5d8aa3be69e8207ff2e0600fd1f58a8c807a7b69f14fa312ada257402c64ffb68cee5d9411c6ec3b035d969ed32ba544fd0203926865eb2591816e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -776,53 +776,54 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#available-methods">Métodos disponibles</a></li>
-    <li><a href="#submit-transaction-with-credit-cards">Enviar transacciones con tarjeta de crédito</a>
+    <li><a href="#available-methods">Métodos Disponibles</a></li>
+    <li><a href="#submit-transactions-using-credit-cards">Enviar Transacciones Utilizando Tarjetas de Crédito</a>
       <ul>
-        <li><a href="#adding-payment-facilitators">Agregar Facilitadores de pago</a></li>
-        <li><a href="#uso-de-tarjetas-tokenizadas">Uso de tarjetas tokenizadas</a></li>
-        <li><a href="#variables-for-request-and-response">Variables para la petición y la respuesta</a></li>
+        <li><a href="#adding-payment-facilitators">Agregar Facilitadores de Pago</a></li>
+        <li><a href="#uso-de-tarjetas-tokenizadas">Uso de Tarjetas Tokenizadas</a></li>
+        <li><a href="#parameters-for-request-and-response">Parámetros para la Solicitud y la Respuesta</a></li>
         <li><a href="#authorization">Autorización</a></li>
         <li><a href="#capture">Captura</a></li>
+        <li><a href="#partial-capture">Captura Parcial</a></li>
         <li><a href="#charge">Cobro</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-google-pay">Enviar transacciones con Google Pay™</a>
+    <li><a href="#submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay™</a>
       <ul>
-        <li><a href="#integración-api-del-medio-de-pago">Integración API del medio de pago</a></li>
-        <li><a href="#procesar-transacciones-google-pay-en-payu">Procesar transacciones Google Pay en PayU</a></li>
-        <li><a href="#probar-el-método-de-pago">Probar el método de pago</a></li>
+        <li><a href="#integración-api-del-medio-de-pago">Integración API del Medio de Pago</a></li>
+        <li><a href="#procesar-transacciones-de-google-pay-en-payu">Procesar Transacciones de Google Pay en PayU</a></li>
+        <li><a href="#probar-el-método-de-pago">Probar el Método de Pago</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-pix">Enviar transacciones con PIX</a>
+    <li><a href="#submit-transactions-using-pix">Enviar Transacciones Utilizando PIX</a>
       <ul>
-        <li><a href="#how-does-pix-work">¿Cómo funciona PIX?</a></li>
-        <li><a href="#variables-for-request-and-response-1">Variables para la petición y la respuesta</a></li>
-        <li><a href="#api-call">Llamado del API</a></li>
+        <li><a href="#how-does-pix-work">¿Cómo Funciona PIX?</a></li>
+        <li><a href="#parameters-for-request-and-response-1">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call">Llamado a la API</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-cash">Enviar transacciones en efectivo</a>
+    <li><a href="#submit-transactions-using-cash">Enviar Transacciones Utilizando Efectivo</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-2">Variables para la petición y la respuesta</a></li>
-        <li><a href="#api-call-1">Llamado del API</a></li>
+        <li><a href="#parameters-for-request-and-response-2">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call-1">Llamado a la API</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</a>
+    <li><a href="#submit-transactions-using-bank-transfer">Enviar Transacciones Utilizando Transferencia Bancaria</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-3">Variables para la petición y la respuesta</a></li>
-        <li><a href="#api-call-2">Llamado del API</a></li>
+        <li><a href="#parameters-for-request-and-response-3">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call-2">Llamado a la API</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a>
+    <li><a href="#available-payment-methods-query">Consultar Métodos de Pago Disponibles</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-4">Variables para la petición y la respuesta</a></li>
-        <li><a href="#api-call-3">Llamado del API</a></li>
+        <li><a href="#parameters-for-request-and-response-4">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call-3">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-5">Variables para la petición y la respuesta</a></li>
-        <li><a href="#api-call-4">Llamado del API</a></li>
+        <li><a href="#parameters-for-request-and-response-5">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call-4">Llamado a la API</a></li>
       </ul>
     </li>
   </ul>
@@ -882,30 +883,30 @@
             
 <div class="td-content">
 	<h1>API de Pagos - Brasil</h1>
-    <div class="lead">El API de Pagos de Brasil le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.</div>
+    <div class="lead">La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.</div>
 	       
 	<script src="../../../../js/searchcodes.js"></script>
-<p>Para integrarte con el API de Pagos de Brasil, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.</p>
+<p>Esta guía muestra cómo aprovechar estos servicios para mejorar la experiencia de pago de tus clientes proporcionando opciones de pago flexibles y seguras adaptadas al mercado local.</p>
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">URL</h4>
+<h4 class="alert-heading">Nota</h4>
+<p>Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL según el entorno correspondiente:</p>
 <ul>
 <li>Pruebas: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 <li>Producción: <code>https://api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 </ul>
-
 </div>
 
-<h2 id="available-methods">Métodos disponibles</h2>
-<p>El API de pagos incluye los siguiente métodos:</p>
+<h2 id="available-methods">Métodos Disponibles</h2>
+<p>La API de Pagos incluye los siguiente métodos:</p>
 <ul>
-<li><a href="#submit-transaction-with-credit-cards">Enviar transacciones con tarjeta de crédito</a></li>
-<li><a href="#submit-transaction-with-google-pay">Enviar transacciones con Google Pay™</a></li>
-<li><a href="#submit-transaction-with-pix">Enviar transacciones con PIX</a></li>
-<li><a href="#submit-transaction-with-cash">Enviar transacciones en efectivo</a></li>
-<li><a href="#submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</a></li>
-<li><a href="#available-payment-methods-query">Consultar métodos de pago disponibles</a></li>
+<li><a href="#submit-transactions-using-credit-or-debit-cards">Enviar Transacciones Utilizando Tarjeta de Crédito</a></li>
+<li><a href="#submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay™</a></li>
+<li><a href="#submit-transactions-using-pix">Enviar Transacciones Utilizando PIX</a></li>
+<li><a href="#submit-transactions-using-cash">Enviar Transacciones Utilizando Efectivo</a></li>
+<li><a href="#submit-transactions-using-bank-transfer">Enviar Transacciones Utilizando Transferencia Bancaria</a></li>
+<li><a href="#available-payment-methods-query">Consultar Métodos de Pago Disponibles</a></li>
 <li><a href="#ping">Ping</a></li>
 </ul>
 
@@ -919,15 +920,15 @@
 </ul>
 </div>
 
-<h2 id="submit-transaction-with-credit-cards">Enviar transacciones con tarjeta de crédito</h2>
+<h2 id="submit-transactions-using-credit-cards">Enviar Transacciones Utilizando Tarjetas de Crédito</h2>
 <p>Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Brasil, puedes realizar los flujos de dos pasos (<strong>Autorización</strong>, <strong>Captura</strong>) y el de un paso (<strong>Cobro</strong>). Para más información, consulta los <a href="../../../../es/docs/services/payments.html#payment-flows">flujos de pago</a>.</p>
-<h3 id="adding-payment-facilitators">Agregar Facilitadores de pago</h3>
+<h3 id="adding-payment-facilitators">Agregar Facilitadores de Pago</h3>
 <p>Los comercios pueden ser considerados como Procesadores de Pago por las franquicias y por el Banco Central. Un procesador de pagos es una entidad legal que tiene el dinero de los subcomercios. En caso de quiebra mercantil y gestión fiscal, el Banco Central de Brasil quiere conocer al beneficiario del negocio.</p>
 <p>Para incluir la información del subcomercio, necesitas agregar en la petición de los flujos de <strong>Autorización</strong> y de <strong>Cobro</strong> utilizando el objeto <code>submerchant</code>.</p>
-<h4 id="what-is-a-payment-facilitator">¿Qué es un facilitador de pago?</h4>
+<h4 id="what-is-a-payment-facilitator">¿Qué es un Facilitador de Pago?</h4>
 <p>Un facilitador de pago es una compañía que ofrece una alternativa a contratar con una organización de pago tradicional asumiendo la responsabilidad del flujo de fondos en una relación comprador-vendedor.</p>
 <p>Muchos comercios escogen trabajar con facilitadores de pago ya que poseen y manejan la cuenta maestra, por lo tanto, asumen el riesgo. Los comercios también escogen un facilitador de pago debido a la simplicidad de configurar una cuenta, esto ocurre típicamente a través de una aplicación corta y una evaluación de lla suscripción.</p>
-<h4 id="what-information-is-required">¿Qué información necesitas?</h4>
+<h4 id="what-information-is-required">¿Qué Información Necesitas?</h4>
 <p>Necesitas enviar la siguiente información:</p>
 <ul>
 <li>Identificación interna del subcomercio (opcional)</li>
@@ -939,7 +940,7 @@
 <li>País del subcomercio (obligatorio)</li>
 </ul>
 <p>Encuentra la descripción de estos campos en la sección <a href="#variables-for-request-and-response">Variables</a>.</p>
-<h3 id="uso-de-tarjetas-tokenizadas">Uso de tarjetas tokenizadas</h3>
+<h3 id="uso-de-tarjetas-tokenizadas">Uso de Tarjetas Tokenizadas</h3>
 <p>PayU admite pagos con su tarjeta tokenizada, lo que le permite realizar pagos regulares con una tarjeta almacenada en un token. Un token de tarjeta de crédito reemplaza la información sensible de una tarjeta de crédito, permitiéndole almacenarla de manera segura de acuerdo con los estándares de seguridad PCI DSS (Payment Card Industry Data Security Standard).</p>
 <p>PayU puede procesar pagos utilizando los siguientes servicios:</p>
 <ul>
@@ -976,7 +977,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link active" id="nav-9" data-toggle="tab" href="#tab91" role="tab"
+		<a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#tab11" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -988,7 +989,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link" id="nav-9" data-toggle="tab" href="#tab92" role="tab"
+		<a class="nav-item nav-link" id="nav-1" data-toggle="tab" href="#tab12" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -997,7 +998,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 	</div>
 </nav>
 
-<div class="tab-content" id="9">
+<div class="tab-content" id="1">
 
 
 
@@ -1006,10 +1007,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade show active" id="tab91" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Cuerpo de la solicitud:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1054,10 +1055,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade" id="tab92" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Cuerpo de la solicitud:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1114,7 +1115,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link active" id="nav-10" data-toggle="tab" href="#tab101" role="tab"
+		<a class="nav-item nav-link active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -1126,7 +1127,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link" id="nav-10" data-toggle="tab" href="#tab102" role="tab"
+		<a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -1135,7 +1136,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 	</div>
 </nav>
 
-<div class="tab-content" id="10">
+<div class="tab-content" id="2">
 
 
 
@@ -1144,10 +1145,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade show active" id="tab101" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Cuerpo de la solicitud:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1193,10 +1194,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade" id="tab102" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Cuerpo de la solicitud:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1239,17 +1240,17 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 </div>
 <br></p>
-<p>Encuentra la descripción del objeto <code>transaction.networkToken</code> y sus parámetros en la sección de <a href="#variables-for-request-and-response">Variables</a>.</p>
-<h3 id="variables-for-request-and-response">Variables para la petición y la respuesta</h3>
+<p>Encuentra la descripción del objeto <code>transaction.networkToken</code> y sus parámetros en la sección de <a href="#parameters-for-request-and-response">Parámetros</a>.</p>
+<h3 id="parameters-for-request-and-response">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -1518,7 +1519,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Objeto</td>
 <td>64</td>
 <td>Monto de la orden y sus valores asociados.</td>
 <td style="text-align:center">Sí</td>
@@ -1588,7 +1589,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </tr>
 <tr>
 <td>transaction &gt; order &gt; submerchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del subcomercio. Si no envías este parámetro, PayU configura tu comercio como subcomercio.</td>
 <td style="text-align:center">No</td>
@@ -1763,7 +1764,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de facturación.</td>
 <td style="text-align:center">No</td>
@@ -1882,7 +1883,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </tr>
 <tr>
 <td>transaction &gt; digitalWallet</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Incluya este parámetro cuando la transacción se realice utilizando una billetera digital. *Al enviar este objeto, todos sus campos son obligatorios.</td>
 <td style="text-align:center">No</td>
@@ -2010,13 +2011,13 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -2135,7 +2136,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#tab11" role="tab"
+		<a class="nav-item nav-link active" id="nav-3" data-toggle="tab" href="#tab31" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -2147,7 +2148,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link" id="nav-1" data-toggle="tab" href="#tab12" role="tab"
+		<a class="nav-item nav-link" id="nav-3" data-toggle="tab" href="#tab32" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -2156,7 +2157,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 	</div>
 </nav>
 
-<div class="tab-content" id="1">
+<div class="tab-content" id="3">
 
 
 
@@ -2165,10 +2166,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2259,7 +2260,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2299,10 +2300,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2396,7 +2397,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2432,10 +2433,11 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 <h3 id="capture">Captura</h3>
 <p>Utiliza este método para realizar el paso de <strong>Captura</strong> del flujo de dos pasos. En este paso, capturas los fondos previamente <a href="#authorization">Autorizados</a> para transferirlos a tu cuenta PayU.</p>
 <h4 id="considerations-1">Consideraciones</h4>
-<p>Ten en cuenta las siguientes consideraciones para la captura.</p>
+<p>Ten en cuenta las siguientes consideraciones para la captura:</p>
 <ul>
-<li>El tiempo máximo para capturar una transacción aprobada es de siete (7) días. Después de este tiempo, la transacción es cancelada.</li>
+<li>El tiempo máximo para capturar una transacción aprobada es de 7 días. Después de este tiempo, la transacción es cancelada.</li>
 <li>Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.</li>
+<li>Puedes realizar capturas parciales sobre un monto autorizado. Para más información, consulta la sección <a href="#partial-capture">Captura Parcial</a>.</li>
 </ul>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.</p>
 <nav>
@@ -2450,7 +2452,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
+		<a class="nav-item nav-link active" id="nav-4" data-toggle="tab" href="#tab41" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -2462,7 +2464,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
+		<a class="nav-item nav-link" id="nav-4" data-toggle="tab" href="#tab42" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -2471,7 +2473,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 	</div>
 </nav>
 
-<div class="tab-content" id="2">
+<div class="tab-content" id="4">
 
 
 
@@ -2480,10 +2482,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2501,7 +2503,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2540,10 +2542,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2561,7 +2563,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2594,6 +2596,196 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 </div>
+<h3 id="partial-capture">Captura Parcial</h3>
+<p>Una captura parcial es una operación que permite solicitar el desembolso de un monto menor al autorizado previamente en una transacción.</p>
+<p>Esto significa que si inicialmente tu integración autorizó un pago de $100, puedes realizar una captura parcial por un valor de $60, y liberar el monto restante de $40, el cual la integración no podrá capturar posteriormente.</p>
+<h4 id="considerations-2">Consideraciones</h4>
+<ul>
+<li>El monto total capturado no puede exceder el monto autorizado originalmente.</li>
+<li>Cada procesador de pagos y cada país pueden tener reglas o restricciones en cuanto al monto que puedes capturar parcialmente.</li>
+<li>Debes especificar el valor que deseas capturar parcialmente en el campo <code>value</code>, dentro del parámetro <code>TX_VALUE</code>, como se muestra en el ejemplo a continuación.</li>
+</ul>
+<p>Los siguientes son ejemplos de los cuerpos de la solicitud y la respuesta para este tipo de transacción.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="5">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Ejemplo de una Solicitud:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2152525133&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;additionalValues&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TX_VALUE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">60</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;BRL&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CAPTURE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;parentTransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4b6adba7-e43b-45f8-88a6-d290755d6c04&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p>Ejemplo de una Respuesta:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transactionResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;orderId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2152543423</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6f523681-1587-4a2d-8a15-605d27f89c26&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseErrorMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;trazabilityCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6f523681-1587-4a2d-8a15-605d27f89c26&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;authorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NPS-011111&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;pendingReason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APROBADA - Autorizada&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionTime&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;operationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1723724052207</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;referenceQuestionnaire&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;additionalInfo&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;paymentNetwork&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NPS_AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;rejectionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NONE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;responseNetworkMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;travelAgencyAuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;cardType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;transactionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CAPTURE&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Ejemplo de una Solicitud:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;transaction&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;order&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;id&gt;</span>2152525133<span style="color:#204a87;font-weight:bold">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/order&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;TX_VALUE&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>60<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>BRL<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;/TX_VALUE&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;type&gt;</span>CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;parentTransactionId&gt;</span>4b6adba7-e43b-45f8-88a6-d290755d6c04<span style="color:#204a87;font-weight:bold">&lt;/parentTransactionId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/transaction&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;test&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/test&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</span></span></code></pre></div><br>
+<p>Ejemplo de una Respuesta:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;response&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;error</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;orderId&gt;</span>2152543423<span style="color:#204a87;font-weight:bold">&lt;/orderId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionId&gt;</span>6f523681-1587-4a2d-8a15-605d27f89c26<span style="color:#204a87;font-weight:bold">&lt;/transactionId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentNetworkResponseCode&gt;</span>0<span style="color:#204a87;font-weight:bold">&lt;/paymentNetworkResponseCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentNetworkResponseErrorMessage</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;trazabilityCode&gt;</span>6f523681-1587-4a2d-8a15-605d27f89c26<span style="color:#204a87;font-weight:bold">&lt;/trazabilityCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;authorizationCode&gt;</span>NPS-011111<span style="color:#204a87;font-weight:bold">&lt;/authorizationCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;pendingReason</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;responseCode&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/responseCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;errorCode</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;responseMessage&gt;</span>APROBADA - Autorizada<span style="color:#204a87;font-weight:bold">&lt;/responseMessage&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionDate</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionTime</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;operationDate&gt;</span>1723724052207<span style="color:#204a87;font-weight:bold">&lt;/operationDate&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;referenceQuestionnaire</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;extraParameters</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;additionalInfo&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;paymentNetwork&gt;</span>NPS_AR<span style="color:#204a87;font-weight:bold">&lt;/paymentNetwork&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;rejectionType&gt;</span>NONE<span style="color:#204a87;font-weight:bold">&lt;/rejectionType&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;responseNetworkMessage</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;travelAgencyAuthorizationCode</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;cardType</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;transactionType&gt;</span>CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/transactionType&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/additionalInfo&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/response&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
 <h3 id="charge">Cobro</h3>
 <p>Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados.</p>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.</p>
@@ -2609,7 +2801,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link active" id="nav-3" data-toggle="tab" href="#tab31" role="tab"
+		<a class="nav-item nav-link active" id="nav-6" data-toggle="tab" href="#tab61" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -2621,7 +2813,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 		
 
-		<a class="nav-item nav-link" id="nav-3" data-toggle="tab" href="#tab32" role="tab"
+		<a class="nav-item nav-link" id="nav-6" data-toggle="tab" href="#tab62" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -2630,7 +2822,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 	</div>
 </nav>
 
-<div class="tab-content" id="3">
+<div class="tab-content" id="6">
 
 
 
@@ -2639,10 +2831,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2733,7 +2925,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2773,10 +2965,10 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 
-<div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2870,7 +3062,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2903,7 +3095,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 </div>
-<h2 id="submit-transaction-with-google-pay">Enviar transacciones con Google Pay™</h2>
+<h2 id="submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay™</h2>
 <p>Google Pay es una billetera digital que permite realizar pagos con tarjeta de forma sencilla y rápida, sin necesidad de introducir los datos de la tarjeta en cada pago. Los datos de la tarjeta son almacenados de forma segura por Google. Este método de pago está disponible para todos los dispositivos (teléfonos móviles y ordenadores), independientemente del sistema operativo y en casi todos los navegadores web.</p>
 <p>En caso de utilizar Google Pay, los comercios deben adherirse a la <a href="https://payments.developers.google.com/terms/aup">Política de uso aceptable</a> de las API de Google Pay y aceptar los términos que definen las <a href="https://payments.developers.google.com/terms/sellertos">Condiciones de servicio de las API de Google Pay</a>.</p>
 
@@ -2920,18 +3112,18 @@ La descripción que figura a continuación se aplica a la prestación de este se
 <li><a href="#procesar-transacciones-google-pay-en-payu">Realizar la adaptación de la integración API con PayU</a></li>
 <li><a href="#probar-el-m%C3%A9todo-de-pago">Probar el método de pago</a></li>
 </ul>
-<h3 id="integración-api-del-medio-de-pago">Integración API del medio de pago</h3>
+<h3 id="integración-api-del-medio-de-pago">Integración API del Medio de Pago</h3>
 <p>Para integrar el sitio web con el monedero Google Pay, procede según las instrucciones que figuran en este sitio web:</p>
 <ul>
 <li><a href="https://developers.google.com/pay/api/web">Documentación de la API</a></li>
 <li><a href="https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist">Lista de chequeo de integración de API</a></li>
 <li><a href="https://developers.google.com/pay/api/web/guides/brand-guidelines">Directrices de la marca</a></li>
 </ul>
-<h5 id="definiciones-de-payu-para-la-integración-api-del-medio-de-pago">Definiciones de PayU para la integración API del medio de pago</h5>
+<h5 id="definiciones-de-payu-para-la-integración-api-del-medio-de-pago">Definiciones de PayU para la Integración API del Medio de Pago</h5>
 <p>A continuación encontrarás información relevante que debes considerar durante la integración del medio de pago para que tus pagos sean procesados por PayU:</p>
 <ul>
 <li>
-<h6 id="solicitar-un-payment-token-para-payu">Solicitar un payment token para PayU</h6>
+<h6 id="solicitar-un-payment-token-para-payu">Solicitar un Payment Token para PayU</h6>
 </li>
 </ul>
 <p>Google encripta la información de la tarjeta seleccionada por el pagador para su procesamiento seguro, esto es realizado por un proveedor de pagos. El parámetro <code>gateway</code> en el script debe tener el valor constante de <code>payulatam</code>, y el <code>gatewayMerchantId</code> debe incluir tu número de cuenta PayU. A continuación un ejemplo:</p>
@@ -2944,7 +3136,7 @@ La descripción que figura a continuación se aplica a la prestación de este se
 };
 </code></pre><ul>
 <li>
-<h6 id="medios-de-pago-soportados">Medios de pago soportados</h6>
+<h6 id="medios-de-pago-soportados">Medios de Pago Soportados</h6>
 </li>
 </ul>
 <p>Ten en cuenta que PayU como procesador de pagos de Google Pay permite el manejo de todo tipo de tarjetas de pago emitidas por las organizaciones Visa y Mastercard. Esto implica la siguiente configuración del script de Google:</p>
@@ -2961,7 +3153,7 @@ const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;, &#34;CRYPTOGRAM_3DS&#34;];
   },
   &#34;signedMessage&#34;:&#34;{\&#34;tag\&#34;:\&#34;TjkIKzIOvCrFvjf7/aeeL8/FZJ3tigaNnerag68hIaw\\u003d\&#34;,\&#34;ephemeralPublicKey\&#34;:\&#34;BLJoTmxP2z7M2N6JmaN786aJcT/L/OJfuJKQdIXcceuBBZ00sf5nm2+snxAJxeJ4HYFTdNH4MOJrH58GNDJ9lJw\\u003d\&#34;,\&#34;encryptedMessage\&#34;:\&#34;mleAf23XkKjj\&#34;}&#34;
 }
-</code></pre><h3 id="procesar-transacciones-google-pay-en-payu">Procesar transacciones Google Pay en PayU</h3>
+</code></pre><h3 id="procesar-transacciones-de-google-pay-en-payu">Procesar Transacciones de Google Pay en PayU</h3>
 <p>La función principal de Google Pay como billetera digital es almacenar tarjetas de crédito para facilitar el procesamiento de pagos. Con eso en mente, para el procesamiento de transacciones de Google Pay en PayU, la lógica a aplicar será la misma que para tarjetas de crédito, excepto por las siguientes particularidades:</p>
 <ul>
 <li>Si estás procesando transacciones de tus clientes con Google Pay, debes configurar la información de la billetera digital en el parámetro <code>transaction.digitalWallet</code>.</li>
@@ -2969,14 +3161,14 @@ const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;, &#34;CRYPTOGRAM_3DS&#34;];
 <li>Ten en cuenta que dentro del parámetro <code>transaction.creditcard</code>, para las transacciones de Google Pay, siempre debes enviar un valor válido para el campo <code>transaction.creditcard.name</code>. Otros campos de este parámetro no son necesarios ya que Google Pay los entrega dentro del Google Pay token.</li>
 <li>Contacta a tu gerente de cuenta para realizar las activaciones necesarias para procesar sin cvv ya que este medio de pago lo requiere.</li>
 </ul>
-<h3 id="probar-el-método-de-pago">Probar el método de pago</h3>
+<h3 id="probar-el-método-de-pago">Probar el Método de Pago</h3>
 <p>Esta sección está diseñada para guiar a los usuarios sobre el proceso de prueba y familiarización con el método de pago Google Pay en PayU.</p>
 <p><strong>Requisitos previos (aplica para la integración API y Web Checkout):</strong></p>
 <ul>
 <li>Asegúrate de haber iniciado sesión en el explorador con la cuenta de Gmail con la que vas a realizar la prueba.</li>
 <li>Únete al grupo de Google en el que estarán disponibles las tarjetas de prueba para PayU. El grupo se encuentra en la siguiente <a href="https://developers.google.com/pay/api/android/guides/resources/test-card-suite">documentación de Google</a>.</li>
 </ul>
-<h4 id="pruebas-para-comercios-con-integración-api">Pruebas para comercios con integración API:</h4>
+<h4 id="pruebas-para-comercios-con-integración-api">Pruebas para Comercios con Integración API:</h4>
 <ol>
 <li>Una vez realizados los cambios indicados en los apartados anteriores, utiliza el Archivo Simulador de Token para simular una transacción y obtener un token de Google Pay de muestra. El simulador puede visualizarse <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/simulator.html" target="_blank">aquí</a>.</li>
 </ol>
@@ -2994,7 +3186,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 	<source src="../../../../assets/GooglePay/API.mp4" type="video/mp4">
  	Your browser does not support the video tag.
 </video>
-<h4 id="pruebas-para-comercios-con-integración-web-checkout">Pruebas para comercios con integración Web Checkout:</h4>
+<h4 id="pruebas-para-comercios-con-integración-web-checkout">Pruebas para Comercios con Integración Web Checkout:</h4>
 <p>Utiliza el Web Checkout en <a href="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/test/prueba_pago.jsp">ambiente de prueba</a> para simular una transacción.</p>
 
 
@@ -3011,7 +3203,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 	<source src="../../../../assets/GooglePay/WebCheckout.mp4" type="video/mp4">
  	Your browser does not support the video tag.
 </video>
-<h4 id="llamado-api">Llamado API</h4>
+<h4 id="llamado-a-la-api">Llamado a la API</h4>
 <p>Los siguientes son ejemplos de los cuerpos de la petición y la respuesta de este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -3025,7 +3217,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 
 		
 
-		<a class="nav-item nav-link active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
+		<a class="nav-item nav-link active" id="nav-7" data-toggle="tab" href="#tab71" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -3037,7 +3229,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 
 		
 
-		<a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
+		<a class="nav-item nav-link" id="nav-7" data-toggle="tab" href="#tab72" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -3046,7 +3238,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 	</div>
 </nav>
 
-<div class="tab-content" id="2">
+<div class="tab-content" id="7">
 
 
 
@@ -3055,10 +3247,10 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 
 
 
-<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -3105,7 +3297,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -3145,10 +3337,10 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 
 
 
-<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -3195,7 +3387,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </span></span><span style="display:flex;"><span>     <span style="color:#204a87;font-weight:bold">&lt;test&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/test&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>     <span style="color:#204a87;font-weight:bold">&lt;error&gt;&lt;/error&gt;</span>
@@ -3231,12 +3423,12 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 
 
 </div>
-<p>Encuentra la descripción del objeto transaction.digitalWallet y sus campos en la sección de <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-brazil.html#variables-for-request-and-response">Variables</a>.</p>
-<h2 id="submit-transaction-with-pix">Enviar transacciones con PIX</h2>
+<p>Encuentra la descripción del objeto transaction.digitalWallet y sus campos en la sección de <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response">Parámetros</a>.</p>
+<h2 id="submit-transactions-using-pix">Enviar Transacciones Utilizando PIX</h2>
 <p>Este método te permite procesar pagos utilizando PIX. Para integrarte con PIX necesitas mostrar un código QR en tu checkout para que tu cliente lo pueda leer con su teléfono inteligente y realizar el pago.</p>
 <p>Al final, tu cliente ve una página de checkout como esta.</p>
 <p><img src="../../../../assets/Payments/PixCheckout.png" alt="PrintScreen"></p>
-<h3 id="how-does-pix-work">¿Cómo funciona PIX?</h3>
+<h3 id="how-does-pix-work">¿Cómo Funciona PIX?</h3>
 <p>PIX es un método de pago de transferencia en línea lanzado en noviembre del 2020 por el Banco Central Brasilero (<em>Banco Central do Brasil</em> - BACEN) que te permite hacer y recibir transferencias sin importar el banco emisor de tu cuenta.</p>
 <p>A diferencia de otros métodos en efectivo o de transferencia, PIX te permite recibir el dinero inmediatamente sin compartir tu número de cuenta; en cualquier hora y en cualquier día. Los fondos recibidos utilizando este método de pago aparecerán en tu cuenta PayU en cuestión de segundos.</p>
 <p>Pix tiene dos partes:</p>
@@ -3254,16 +3446,16 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 <p>Código QR: este código lo lee tu cliente utilizando su teléfono y realiza el pago.</p>
 </li>
 </ul>
-<h3 id="variables-for-request-and-response-1">Variables para la petición y la respuesta</h3>
+<h3 id="parameters-for-request-and-response-1">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -3294,7 +3486,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de autenticación.</td>
 <td style="text-align:center">Sí</td>
@@ -3315,14 +3507,14 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de la transacción.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de la orden.</td>
 <td style="text-align:center">Sí</td>
@@ -3378,7 +3570,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de envío.</td>
 <td style="text-align:center">No</td>
@@ -3434,7 +3626,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del comprador.</td>
 <td style="text-align:center">Sí</td>
@@ -3539,7 +3731,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Objeto</td>
 <td>64</td>
 <td>Monto de la orden y sus valores asociados.</td>
 <td style="text-align:center">Sí</td>
@@ -3609,7 +3801,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del pagador.</td>
 <td style="text-align:center">Sí</td>
@@ -3637,7 +3829,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de facturación.</td>
 <td style="text-align:center">No</td>
@@ -3763,7 +3955,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transaction &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de <em>extraParameters</em> es 64 caracteres.<br>En JSON, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;PARAMETER_NAME&quot;: &quot;VALUE&quot;</code><br><code>}</code><br><br>En XML, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;PARAMETER_NAME&lt;/string&gt;</code><br>  <code>&lt;string&gt;VALUE&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code><br><em>Envía el tipo de datos respectivo</em></td>
 <td style="text-align:center">No</td>
@@ -3772,13 +3964,13 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -3799,7 +3991,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Datos de la respuesta.</td>
 </tr>
@@ -3871,14 +4063,14 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;EXPIRATION_DATE&quot;: &quot;1627488070000&quot;</code><br><code>}</code><br><br>En XML, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;EXPIRATION_DATE&lt;/string&gt;</code><br>  <code>&lt;int&gt;1627488070000&lt;/int&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
 </tbody>
 </table>
 </details>
-<h4 id="considerations-2">Consideraciones</h4>
+<h4 id="considerations-3">Consideraciones</h4>
 <ul>
 <li>Los pagos procesados a través de nuestra pasarela serán para PayU en nombre de tu comercio.</li>
 <li>Si tu comercio no tiene una entidad local, es obligatorio enviar tanto el CPF (parámetro <code>transaction.[payer|buyer].dniNumber</code>) o el CNPJ (parámetro <code>transaction.[payer|buyer].cnpj</code>).</li>
@@ -3902,7 +4094,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro <code>QRCODE_IMAGE_BASE64</code> decodificado) como la cadena del código (parámetro<code> QRCODE_EMV</code>) para evitar deserciones de pago.
 </div>
 
-<h3 id="api-call">Llamado del API</h3>
+<h3 id="api-call">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -3916,7 +4108,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 		
 
-		<a class="nav-item nav-link active" id="nav-4" data-toggle="tab" href="#tab41" role="tab"
+		<a class="nav-item nav-link active" id="nav-8" data-toggle="tab" href="#tab81" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -3928,7 +4120,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 		
 
-		<a class="nav-item nav-link" id="nav-4" data-toggle="tab" href="#tab42" role="tab"
+		<a class="nav-item nav-link" id="nav-8" data-toggle="tab" href="#tab82" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -3937,7 +4129,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 	</div>
 </nav>
 
-<div class="tab-content" id="4">
+<div class="tab-content" id="8">
 
 
 
@@ -3946,10 +4138,10 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 
 
-<div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab81" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pt&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -4013,7 +4205,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -4054,10 +4246,10 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 
 
-<div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab82" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>pt<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -4127,7 +4319,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -4163,19 +4355,19 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 
 </div>
-<h2 id="submit-transaction-with-cash">Enviar transacciones en efectivo</h2>
+<h2 id="submit-transactions-using-cash">Enviar Transacciones Utilizando Efectivo</h2>
 <p>Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un recibo de pago como el siguiente.</p>
 <img src="../../../../assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
-<h3 id="variables-for-request-and-response-2">Variables para la petición y la respuesta</h3>
+<h3 id="parameters-for-request-and-response-2">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -4206,7 +4398,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de autenticación.</td>
 <td style="text-align:center">Sí</td>
@@ -4227,14 +4419,14 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de la transacción.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de la orden.</td>
 <td style="text-align:center">Sí</td>
@@ -4290,7 +4482,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de envío.</td>
 <td style="text-align:center">No</td>
@@ -4346,7 +4538,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del comprador.</td>
 <td style="text-align:center">Sí</td>
@@ -4444,7 +4636,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Objeto</td>
 <td>64</td>
 <td>Monto de la orden y sus valores asociados.</td>
 <td style="text-align:center">Sí</td>
@@ -4514,7 +4706,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del pagador. Esta información es opcional.</td>
 <td style="text-align:center">No</td>
@@ -4542,7 +4734,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de facturación.</td>
 <td style="text-align:center">No</td>
@@ -4670,13 +4862,13 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -4697,7 +4889,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Datos de la respuesta.</td>
 </tr>
@@ -4769,14 +4961,14 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;REFERENCE&quot;: &quot;74794&quot;</code><br><code>}</code><br><br>En XML, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;REFERENCE&lt;/string&gt;</code><br>  <code>&lt;int&gt;74794&lt;/int&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
 </tbody>
 </table>
 </details>
-<h4 id="considerations-3">Consideraciones</h4>
+<h4 id="considerations-4">Consideraciones</h4>
 <ul>
 <li>Si tu comercio no tiene una entidad local, es obligatorio enviar tanto el CPF (parámetro <code>transaction.[payer|buyer].dniNumber</code>) o el CNPJ (parameter <code>transaction.[payer|buyer].cnpj</code>).</li>
 <li>El parámetro <code>transaction.expirationDate</code> no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.</li>
@@ -4790,7 +4982,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </ul>
 </li>
 </ul>
-<h3 id="api-call-1">Llamado del API</h3>
+<h3 id="api-call-1">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4804,7 +4996,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 		
 
-		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
+		<a class="nav-item nav-link active" id="nav-9" data-toggle="tab" href="#tab91" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -4816,7 +5008,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 		
 
-		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
+		<a class="nav-item nav-link" id="nav-9" data-toggle="tab" href="#tab92" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -4825,7 +5017,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 	</div>
 </nav>
 
-<div class="tab-content" id="5">
+<div class="tab-content" id="9">
 
 
 
@@ -4834,10 +5026,10 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 
 
-<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab91" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -4895,7 +5087,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -4935,10 +5127,10 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 
 
-<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab92" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -4999,7 +5191,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -5037,19 +5229,19 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 
 
 </div>
-<h2 id="submit-transaction-with-bank-transfer">Enviar transacciones con transferencia bancaria</h2>
+<h2 id="submit-transactions-using-bank-transfer">Enviar Transacciones Utilizando Transferencia Bancaria</h2>
 <p>Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia desde su cuenta bancaria emitida por ITAU.<br>
 Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL que se encuentra en la respuesta del método.</p>
 <img src="../../../../assets/Payments/BankTransferReceiptBR.png" alt="PrintScreen" width="50%">
-<h3 id="variables-for-request-and-response-3">Variables para la petición y la respuesta</h3>
+<h3 id="parameters-for-request-and-response-3">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -5080,7 +5272,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de autenticación.</td>
 <td style="text-align:center">Sí</td>
@@ -5101,14 +5293,14 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de la transacción.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de la orden.</td>
 <td style="text-align:center">Sí</td>
@@ -5164,7 +5356,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de envío.</td>
 <td style="text-align:center">No</td>
@@ -5220,7 +5412,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del comprador.</td>
 <td style="text-align:center">Sí</td>
@@ -5318,7 +5510,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Objeto</td>
 <td>64</td>
 <td>Monto de la orden y sus valores asociados.</td>
 <td style="text-align:center">Sí</td>
@@ -5388,7 +5580,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información del pagador.</td>
 <td style="text-align:center">No</td>
@@ -5416,7 +5608,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Dirección de facturación.</td>
 <td style="text-align:center">No</td>
@@ -5551,13 +5743,13 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -5578,7 +5770,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Datos de la respuesta.</td>
 </tr>
@@ -5650,27 +5842,27 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;BANK_URL&quot;: &quot;https://gateway.payulatam.com/ppp-web-gateway/payment-redirect.zul?prid=1181964158Ya5b4bd5e7c6e4ebY4085cd2deb967f2&quot;</code><br><code>}</code><br><br>En XML, El parámetro <em>extraParameters</em> sigue esta estructura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;BANK_URL&lt;/string&gt;</code><br>  <code>&lt;string&gt;https://gateway.payulatam.com/ppp-web-gateway/payment-redirect.zul?prid=1181964158Ya5b4bd5e7c6e4ebY4085cd2deb967f2&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
 <tr>
 <td>transactionResponse &gt; additionalInfo</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Información adicional de la respuesta. Este objeto tiene la misma estructura de <code>transactionResponse.extraParameters</code>.</td>
 </tr>
 </tbody>
 </table>
 </details>
-<h4 id="considerations-4">Consideraciones</h4>
+<h4 id="considerations-5">Consideraciones</h4>
 <ul>
 <li>Si tu comercio no tiene una entidad local, es obligatorio enviar tanto el CPF (parámetro <code>transaction.[payer|buyer].dniNumber</code>) o el CNPJ (parameter <code>transaction.[payer|buyer].cnpj</code>).</li>
 <li>El parámetro <code>transaction.expirationDate</code> is not obligatorio. Si no envías este parámetro, su valor por defecto es cuatro (4) días después de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.</li>
 <li>Cuando el pagador selecciona este método de pago, PayU crea una orden en estado <em>in progress</em> y una transacción en estado <code>PENDING</code>.</li>
 <li>En el cuerpo de la respuesta, puedes encontrar el recibo generador por PayU y su fecha de expiración.</li>
 </ul>
-<h3 id="api-call-2">Llamado del API</h3>
+<h3 id="api-call-2">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5684,7 +5876,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 		
 
-		<a class="nav-item nav-link active" id="nav-6" data-toggle="tab" href="#tab61" role="tab"
+		<a class="nav-item nav-link active" id="nav-10" data-toggle="tab" href="#tab101" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -5696,7 +5888,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 		
 
-		<a class="nav-item nav-link" id="nav-6" data-toggle="tab" href="#tab62" role="tab"
+		<a class="nav-item nav-link" id="nav-10" data-toggle="tab" href="#tab102" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -5705,7 +5897,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	</div>
 </nav>
 
-<div class="tab-content" id="6">
+<div class="tab-content" id="10">
 
 
 
@@ -5714,10 +5906,10 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 
-<div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab101" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -5778,7 +5970,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -5825,10 +6017,10 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 
-<div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab102" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -5892,7 +6084,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -5927,17 +6119,17 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 </div>
-<h2 id="available-payment-methods-query">Consultar métodos de pago disponibles</h2>
-<p>Este método retorna la lista de los métodos de pago disponibles en todos los paises.</p>
-<h3 id="variables-for-request-and-response-4">Variables para la petición y la respuesta</h3>
+<h2 id="available-payment-methods-query">Consultar Métodos de Pago Disponibles</h2>
+<p>Este método retorna la lista de los métodos de pago disponibles en todos los países.</p>
+<h3 id="parameters-for-request-and-response-4">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -5968,7 +6160,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de autenticación.</td>
 <td style="text-align:center">Sí</td>
@@ -5991,13 +6183,13 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -6018,13 +6210,13 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>paymentMethods</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Lista de métodos de pago.</td>
 </tr>
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene la información de un método de pago.</td>
 </tr>
@@ -6049,7 +6241,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tbody>
 </table>
 </details>
-<h3 id="api-call-3">Llamado del API</h3>
+<h3 id="api-call-3">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6063,7 +6255,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 		
 
-		<a class="nav-item nav-link active" id="nav-7" data-toggle="tab" href="#tab71" role="tab"
+		<a class="nav-item nav-link active" id="nav-11" data-toggle="tab" href="#tab111" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -6075,7 +6267,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 		
 
-		<a class="nav-item nav-link" id="nav-7" data-toggle="tab" href="#tab72" role="tab"
+		<a class="nav-item nav-link" id="nav-11" data-toggle="tab" href="#tab112" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -6084,7 +6276,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	</div>
 </nav>
 
-<div class="tab-content" id="7">
+<div class="tab-content" id="11">
 
 
 
@@ -6093,10 +6285,10 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 
-<div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab111" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -6107,7 +6299,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -6141,10 +6333,10 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 
-<div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab112" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -6155,7 +6347,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentMethodsResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentMethods&gt;</span>
@@ -6184,15 +6376,15 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </div>
 <h2 id="ping">Ping</h2>
 <p>El método <code>PING</code> te permite verificar la conexión con nuestra plataforma.</p>
-<h3 id="variables-for-request-and-response-5">Variables para la petición y la respuesta</h3>
+<h3 id="parameters-for-request-and-response-5">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -6223,7 +6415,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto tiene los datos de autenticación.</td>
 <td style="text-align:center">Sí</td>
@@ -6246,13 +6438,13 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </table>
 </details>
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 <table>
 <thead>
 <tr>
-<th>Nombre del campo</th>
+<th>Nombre del Campo</th>
 <th>Formato</th>
 <th>Tamaño</th>
 <th>Descripción</th>
@@ -6280,7 +6472,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tbody>
 </table>
 </details>
-<h3 id="api-call-4">Llamado del API</h3>
+<h3 id="api-call-4">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6294,7 +6486,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 		
 
-		<a class="nav-item nav-link active" id="nav-8" data-toggle="tab" href="#tab81" role="tab"
+		<a class="nav-item nav-link active" id="nav-12" data-toggle="tab" href="#tab121" role="tab"
 		   aria-controls="nav-home" aria-selected="true">JSON</a>
 
 		
@@ -6306,7 +6498,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 		
 
-		<a class="nav-item nav-link" id="nav-8" data-toggle="tab" href="#tab82" role="tab"
+		<a class="nav-item nav-link" id="nav-12" data-toggle="tab" href="#tab122" role="tab"
 		   aria-controls="nav-home" aria-selected="false">XML</a>
 
 		
@@ -6315,7 +6507,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	</div>
 </nav>
 
-<div class="tab-content" id="8">
+<div class="tab-content" id="12">
 
 
 
@@ -6324,10 +6516,10 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 
-<div class="tab-pane fade show active" id="tab81" role="tabpanel" aria-labelledby="nav-tabName1">
+<div class="tab-pane fade show active" id="tab121" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -6338,7 +6530,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -6357,10 +6549,10 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 
 
 
-<div class="tab-pane fade" id="tab82" role="tabpanel" aria-labelledby="nav-tabName2">
+<div class="tab-pane fade" id="tab122" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Ejemplo petición:</p>
+<p>Ejemplo de una Solicitud:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>PING<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -6371,7 +6563,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Ejemplo respuesta:</p>
+<p>Ejemplo de una Respuesta:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
@@ -6390,9 +6582,9 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-12 de julio de 2024:
+28 de agosto de 2024:
 
- <b>Documentation updates (10d1ab52c)</b>
+ <b>Documentation updates (2892f1bb8)</b>
 </div>
 </div>
 

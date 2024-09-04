@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>API de Pagos - Colombia | PayU Latam</title><meta property="og:title" content="API de Pagos - Colombia" />
-<meta property="og:description" content="La API de Pagos para Colombia permite una integración eficiente de las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. Con esta API, los comercios pueden ofrecer diferentes métodos de pago a través de tarjetas de crédito o débito, billeteras digitales, efectivo y transferencias bancarias.
+<meta property="og:description" content="La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-07-26T09:39:39-05:00" />
+<meta property="article:modified_time" content="2024-08-28T09:47:10-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Colombia">
-<meta itemprop="description" content="La API de Pagos para Colombia permite una integración eficiente de las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. Con esta API, los comercios pueden ofrecer diferentes métodos de pago a través de tarjetas de crédito o débito, billeteras digitales, efectivo y transferencias bancarias.
+<meta itemprop="description" content="La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-07-26T09:39:39-05:00" />
-<meta itemprop="wordCount" content="11673">
+<meta itemprop="dateModified" content="2024-08-28T09:47:10-05:00" />
+<meta itemprop="wordCount" content="11672">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Colombia"/>
-<meta name="twitter:description" content="La API de Pagos para Colombia permite una integración eficiente de las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. Con esta API, los comercios pueden ofrecer diferentes métodos de pago a través de tarjetas de crédito o débito, billeteras digitales, efectivo y transferencias bancarias.
+<meta name="twitter:description" content="La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.b7f186066d5d8aa3be69e8207ff2e0600fd1f58a8c807a7b69f14fa312ada257402c64ffb68cee5d9411c6ec3b035d969ed32ba544fd0203926865eb2591816e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -879,15 +879,15 @@
             
 <div class="td-content">
 	<h1>API de Pagos - Colombia</h1>
-    <div class="lead">La API de Pagos para Colombia permite una integración eficiente de las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. Con esta API, los comercios pueden ofrecer diferentes métodos de pago a través de tarjetas de crédito o débito, billeteras digitales, efectivo y transferencias bancarias.</div>
+    <div class="lead">La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.</div>
 	       
 	<script src="../../../../js/searchcodes.js"></script>
-<p>Esta guía muestra cómo aprovechar estos servicios para mejorar la experiencia de pago de tus clientes proporcionando opciones de pago flexibles y seguras adaptadas al mercado colombiano.</p>
+<p>Esta guía muestra cómo aprovechar estos servicios para mejorar la experiencia de pago de tus clientes proporcionando opciones de pago flexibles y seguras adaptadas al mercado local.</p>
 
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Nota</h4>
-<p>Para integrarse con la API de Pagos, dirige tus solicitudes a las siguientes URL según el entorno correspondiente:</p>
+<p>Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL según el entorno correspondiente:</p>
 <ul>
 <li>Pruebas: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 <li>Producción: <code>https://api.payulatam.com/payments-api/4.0/service.cgi</code></li>
@@ -895,7 +895,7 @@
 </div>
 
 <h2 id="available-methods">Métodos Disponibles</h2>
-<p>La API de pagos incluye los siguiente métodos:</p>
+<p>La API de Pagos incluye los siguiente métodos:</p>
 <ul>
 <li><a href="#submit-transactions-using-credit-or-debit-cards">Enviar Transacciones Utilizando Tarjetas de Crédito o Débito</a></li>
 <li><a href="#submit-transactions-using-nequi">Enviar Transacciones Utilizando Nequi</a></li>
@@ -6364,9 +6364,9 @@ Este campo no es obligatorio para <em>PSE Avanza</em>.
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-26 de julio de 2024:
+28 de agosto de 2024:
 
- <b>Documentation updates (e5a4165f4)</b>
+ <b>Documentation updates (2892f1bb8)</b>
 </div>
 </div>
 

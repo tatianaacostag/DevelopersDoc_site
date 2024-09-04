@@ -9,10 +9,13 @@ tags: ["subtopic"]
 ---
 
 ## Como Usar a Autenticação 3DS da PayU
+
 Para usar a autenticação 3DS, os lojistas precisam estar registrados para este serviço com a PayU. Uma vez registrado, você pode incluir um novo parâmetro chamado `req3DSAuthentication` em suas solicitações de pagamento por meio da API de Pagamentos da PayU.
 
 {{% alert title="Observação" color="info"%}}
+
 A autenticação 3DS para PayU Latam está disponível apenas para **Argentina**, **Brasil**, **Colômbia** e **Peru**.
+
 {{% /alert %}}
 
 ### Parâmetro `req3DSAuthentication`
@@ -24,7 +27,8 @@ Este parâmetro permite controlar se a autenticação 3DS é necessária para ca
 
 **Se `req3DSAuthentication` não estiver incluído,** a PayU decidirá se deve realizar a autenticação 3DS com base em sua própria avaliação de risco.
 
-**Exemplo de uma Solicitação:**
+#### Exemplo de uma Solicitação
+
 No exemplo de solicitação abaixo, o `req3DSAuthentication` está definido como `true`:
 
 ```JSON
@@ -127,13 +131,57 @@ No exemplo de solicitação abaixo, o `req3DSAuthentication` está definido como
 }
 ```
 
+## Testando a Autenticação 3DS
+
+Para testar o processo de autenticação 3DS, utilize os valores fictícios fornecidos na tabela abaixo. Esses valores são aplicáveis aos diferentes métodos de pagamento disponíveis em cada país:
+
+<table>
+  <tr>
+    <th></th>
+    <th><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</th>
+    <th><img src="/assets/Brasil.png" width="25px"/> &nbsp;Brasil</th>
+    <th><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colômbia</th>
+    <th><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</th>
+  </tr>
+  <tr>
+    <th>Account ID</th>
+    <td>516684</td>
+    <td>516685</td>
+    <td>516686</td>
+    <td>516688</td>
+  </tr>
+  <tr>
+    <th>Merchant ID</th>
+    <td colspan="4" style="text-align: center;">508029</td>
+  </tr>
+  <tr>
+    <th>API Login</th>
+    <td colspan="4" style="text-align: center;">pRRXKOl8ikMmt9u</td>
+  </tr>
+  <tr>
+    <th>API Key</th>
+    <td colspan="4" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
+  </tr>
+  <tr>
+    <th>Public Key</th>
+    <td colspan="4" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
+  </tr>
+</table>
+
+{{% alert title="Nota" color="info"%}} 
+
+Esses IDs de conta são apenas para fins de teste, não os utilize em ambientes de produção. 
+
+{{% /alert %}}
+
 ## Resposta da Transação e Fluxo de Autenticação
 
 Ao enviar uma solicitação de pagamento, você receberá uma resposta com o estado `"PENDING"` para a transação. Essa resposta também incluirá um campo em `extraParameters` chamado `THREEDS_AUTH_REDIRECT_URL`.
 
 * **`THREEDS_AUTH_REDIRECT_URL`:** Essa URL deve ser usada para redirecionar o pagador para concluir o processo de autenticação 3DS. O processo de autenticação pode envolver desafios como inserir uma senha única (OTP) recebida em seu telefone.
 
-**Exemplo de uma resposta**
+#### Exemplo de uma Resposta
+
 No exemplo de resposta abaixo, o lojista redireciona o pagador para `https://merch-prod.payu.com`:
 
 ```JSON

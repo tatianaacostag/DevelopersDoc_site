@@ -1567,6 +1567,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 </details>
 
 ### Llamado a la API {#api-call-1}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
 {{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}

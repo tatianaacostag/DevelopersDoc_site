@@ -31,7 +31,7 @@ Before using Voids and Refunds API, take into account the following consideratio
 * The minimum time to send a refund is 10 minutes after the approval and the maximum is:
    - 87 days for transactions with PIX.
    - 172 days for card transactions.
-* Only one refund per transaction is supported when using PIX.
+* The integration supports multiple partial refunds for PIX.
 * When a refund is approved for transactions with PIX, the payer gets the money immediately. Otherwise, they get the money back in maximum 15 working days.
 
 ### Chile

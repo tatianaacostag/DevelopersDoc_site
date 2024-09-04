@@ -1141,6 +1141,7 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1749,5 +1750,6 @@ Response Example:
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}

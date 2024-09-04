@@ -1,12 +1,13 @@
 ---
-title: "API de pagamentos - Chile"
-linkTitle: "API de pagamentos - Chile"
+title: "API de Pagamentos - Chile"
+linkTitle: "API de Pagamentos - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
   A API de Pagamentos para o Chile permite que você integre de forma eficiente as capacidades de processamento de pagamentos da PayU na sua plataforma de compras online. Por meio dessa API, as lojas podem oferecer aos seus clientes uma ampla variedade de métodos de pagamento, incluindo dinheiro, cartões de crédito, débito ou pré-pagos, e cartões de débito ou pré-pagos através do WebPay Plus.
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
 Este guia mostra como aproveitar esses serviços para melhorar a experiência de pagamento dos seus clientes, oferecendo opções de pagamento flexíveis e seguras adaptadas ao mercado local.
@@ -437,7 +438,7 @@ Exemplo de uma Resposta:
 
 Use este método para executar a etapa **Captura** de um fluxo de duas etapas. Nesta etapa, você captura os fundos [Autorizados]({{< ref "#authorization" >}}) anteriormente para transferi-los para sua conta PayU.
 
-#### Observações {#considerations-1}
+#### Observações {#considerations}
 
 Leve em conta as seguintes informações para captura:
 * O tempo máximo para capturar uma transação aprovada é de sete (7) dias. Após este período, a transação é cancelada automaticamente (auto-void).
@@ -560,7 +561,7 @@ Uma captura parcial é uma operação que permite solicitar o desembolso de um v
 
 Isso significa que, se sua integração inicialmente autorizou um pagamento de $100, você pode realizar uma captura parcial de $60 e liberar os $40 restantes, que a integração não poderá capturar posteriormente.
 
-#### Considerações {#considerations-2}
+#### Considerações {#considerations-1}
 
 * O valor total capturado não pode exceder o valor originalmente autorizado.
 * Cada processador de pagamento e cada país podem ter regras ou restrições em relação ao valor que você pode capturar parcialmente.
@@ -959,6 +960,7 @@ Exemplo de uma Resposta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 

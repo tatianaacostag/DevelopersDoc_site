@@ -1,6 +1,6 @@
 ---
-title: "PayU-handled 3DS Authentication"
-linkTitle: "PayU-handled 3DS Authentication"
+title: "PayU-Handled 3DS Authentication"
+linkTitle: "PayU-Handled 3DS Authentication"
 date: 2024-07-1T11:32:55-05:00
 description: >
   PayU-handled 3DS authentication removes the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.  
@@ -9,10 +9,13 @@ tags: ["subtopic"]
 ---
 
 ## Using PayU 3DS Authentication
+
 To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called `req3DSAuthentication` in your payment requests via PayU's Payments API.
 
 {{% alert title="Note" color="info"%}}
+
 3DS authentication for PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, and **Peru**.
+
 {{% /alert %}}
 
 ### The `req3DSAuthentication` Parameter
@@ -24,7 +27,8 @@ This parameter allows you to control whether 3DS authentication is required for 
 
 **If `req3DSAuthentication` is not included,** PayU will decide whether to perform 3DS authentication based on its own risk assessment.
 
-**Request example:**
+#### Request Example
+
 In the request example below, the `req3DSAuthentication` is set `true`:
 
 ```JSON
@@ -127,13 +131,58 @@ In the request example below, the `req3DSAuthentication` is set `true`:
 }
 ```
 
+## Testing the 3DS Authentication
+
+To test the 3DS authentication process, use the dummy values provided in the table below. These values are applicable across the different payment methods available in each country:
+
+<table>
+  <tr>
+    <th></th>
+    <th><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</th>
+    <th><img src="/assets/Brasil.png" width="25px"/> &nbsp;Brazil</th>
+    <th><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia</th>
+    <th><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</th>
+  </tr>
+  <tr>
+    <th>Account ID</th>
+    <td>516684</td>
+    <td>516685</td>
+    <td>516686</td>
+    <td>516688</td>
+  </tr>  
+  <tr>
+    <th>Merchant ID</th>
+    <td colspan="4" style="text-align: center;">508029</td>
+  </tr>
+  <tr>
+    <th>API Login</th>
+    <td colspan="4" style="text-align: center;">pRRXKOl8ikMmt9u</td>
+  </tr>
+  <tr>
+    <th>API Key</th>
+    <td colspan="4" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
+  </tr>
+  <tr>
+    <th>Public Key</th>
+    <td colspan="4" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
+  </tr>  
+  </tr>
+</table>
+
+{{% alert title="Note" color="info"%}}
+
+These account IDs are for testing purposes only, do not use them in production environments.
+
+{{% /alert %}}
+
 ## Transaction Response and Authentication Flow
 
 Upon sending a payment request, you will receive a response with a `"PENDING"` state for the transaction. This response will also include a field within `extraParameters` called `THREEDS_AUTH_REDIRECT_URL`.
 
 * **`THREEDS_AUTH_REDIRECT_URL`:** This URL should be used to redirect the payer to complete the 3DS authentication process. The authentication process might involve challenges like entering a one-time password (OTP) received on their phone.
 
-**Response example**
+#### Response Example
+
 In the response example below, the merchant redirects the payer to `https://merch-prod.payu.com`:
 
 ```JSON

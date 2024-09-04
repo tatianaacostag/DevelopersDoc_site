@@ -1,9 +1,9 @@
 ---
-title: "Teste sua solução"
-linkTitle: "Teste sua solução"
+title: "Teste Sua Solução"
+linkTitle: "Teste Sua Solução"
 date: 2021-04-06T15:34:20-05:00
 description: >
-  PayU oferece um espaço onde você pode testar sua solução antes de colocar no ar, onde você poderá receber pagamentos e transações reais.
+  Aproveite o ambiente de sandbox da PayU para testar completamente sua solução antes de migrar para o ambiente de produção, onde são realizados pagamentos e transações reais.
 weight: 40
 ---
 <script>
@@ -19,13 +19,19 @@ weight: 40
   }
   window.addEventListener('DOMContentLoaded', openTarget);
 </script>
-Se desejar fazer testes com o PayU, será necessário usar as seguintes credenciais na solicitação, dependendo do país de sua conta:  
+Para conduzir testes com a PayU, use as credenciais fornecidas abaixo em suas solicitações, dependendo do país ao qual sua conta está associada.  
 
 {{< testaccounts/accounts_pt >}}
 
-O ambiente de teste não reproduz dados de sua conta de produção.
+{{% alert title="Notas" color="info"%}}
 
-## Cartões de teste {#test-Cartãos}
+* Consulte a documentação de <a href="https://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">Autenticação 3DS Realizada pela PayU</a> para encontrar as credenciais para testar 3DS.
+* O ambiente de teste não replica os dados da sua conta de produção.
+
+{{% /alert %}}
+
+## Cartões de Teste {#test-Cartãos}
+
 Você pode usar os seguintes cartões para teste:
 
 <details id="argentina">
@@ -178,7 +184,8 @@ Você pode usar os seguintes cartões para teste:
 
 </details>
 
-### Testando estados {#testing-status}
+### Testando Estados {#testing-statuses}
+
 Para testar Pagamentos, você deve enviar a solicitação:
 
 * **Para transações _aprovadas_**: 
@@ -200,7 +207,8 @@ Para testar Pagamentos, você deve enviar a solicitação:
 * Para testar as transferências bancárias PSE (disponíveis na Colômbia) no ambiente PayU Sandbox, consulte o [Guia de teste PSE (PDF - em espanhol)](/assets/pse-test-guide-v5-es.pdf).
 * Para testar cartões no Chile, use os valores de nome do titular do cartão, CVV e data de expiração mostrados no <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true ;">cartões de teste</a>.
 
-## Como importar a coleção {#importing-the-collection}
+## Importando a Coleção {#importing-the-collection}
+
 Clique no botão abaixo para importar nossa coleção no Postman (pode ser necessário atualizar a página se o botão não funcionar para você). Observe que criamos um novo ambiente cada vez que você importa a coleção.
 
 {{< postman/postman_flow_collection >}}
@@ -208,12 +216,14 @@ Clique no botão abaixo para importar nossa coleção no Postman (pode ser neces
 
 Depois de executar a coleção, você precisa definir os parâmetros globais e variáveis de ambiente.
 
-### Setting your Environment Variables {#setting-your-environment-variables}
+### Configurando Suas Variáveis ​​de Ambiente {#setting-your-environment-variables}
+
 Nossa coleção tem um ambiente chamado `PayU API Sandbox`. Recomendamos que você invoque as solicitações de API da coleção apenas em um ambiente Sandbox.
 
 Se você deseja alterar as contas de teste do PayU, configure as variáveis `api_key`, `api_login`, `merchant_id` e `account-[país]`. Você pode deixar todas as outras variáveis inalteradas.
 
-### Como importar variáveis globais {#setting-your-environment-variables}
+### Importando os Globals {#importing-globals}
+
 As variáveis globais são necessárias para processar transações em nosso portal de pagamentos, como moeda, valor da transação, páginas de confirmação e resposta e muito mais.
 
 Importe as variáveis globais da coleção para configurar os valores enviados às solicitações. 
@@ -226,5 +236,6 @@ Importe as variáveis globais da coleção para configurar os valores enviados �
 
 Para alterar o valor de uma transação, atualize o valor para o  `tx_value_[país]` de acordo com o país que você deseja testar.de acordo com o país que você deseja testar.
 
-## Execute as solicitações na ordem correta {#running-the-requests-in-the-correct-order}
+## Execute as Solicitações na Ordem Correta {#running-the-requests-in-the-correct-order}
+
 Observe que a ordem em que você executa as solicitações é importante, pois alguns dos dados retornados por uma solicitação podem ser usados na próxima invocação.

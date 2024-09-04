@@ -1,9 +1,9 @@
 ---
-title: "Probar tu solución"
-linkTitle: "Probar tu solución"
+title: "Probar Tu Solución"
+linkTitle: "Probar Tu Solución"
 date: 2021-04-06T15:34:20-05:00
 description: >
-  PayU tiene un ambiente de sandbox en el cual, puedes probar tu solución antes de moverte al ambiente en vivo, donde puedes recibir pagos reales y transacciones.
+  Aprovecha el entorno de pruebas de PayU para probar a fondo tu solución antes de pasar al entorno en producción, donde se realizan pagos y transacciones reales.
 weight: 40
 ---
 <script>
@@ -19,13 +19,19 @@ weight: 40
   }
   window.addEventListener('DOMContentLoaded', openTarget);
 </script>
-Si deseas hace pruebas con PayU, necesitas utilizar las siguientes credenciales en el request, dependiendo del país de tu cuenta:  
+Para realizar pruebas con PayU, utiliza las credenciales proporcionadas a continuación en tus solicitudes, dependiendo del país con el que tu cuenta está asociada.  
 
 {{< testaccounts/accounts_es >}}
 
-El ambiente de pruebas no replica los datos de tu cuenta de producción.
+{{% alert title="Notas" color="info"%}}
 
-## Tarjetas de prueba {#test-cards}
+* Consulta la documentación de <a href="https://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">Autenticación 3DS Gestionada por PayU</a> para encontrar las credenciales para probar 3DS.
+* El entorno de prueba no replica los datos de tu cuenta de producción.
+
+{{% /alert %}}
+
+## Tarjetas de Prueba {#test-cards}
+
 Puedes utilizar las siguientes tarjetas de prueba:
 
 <details id="argentina">
@@ -178,7 +184,8 @@ Puedes utilizar las siguientes tarjetas de prueba:
 
 </details>
 
-### Probar estados {#testing-status}
+### Probar Estados {#testing-statuses}
+
 Cuando pruebas los Pagos, debes enviar en el request:
 
 * **Para obtener transacciones _aprobadas_**: 
@@ -200,7 +207,8 @@ Cuando pruebas los Pagos, debes enviar en el request:
 * Para probar transferencias bancarias por PSE (Disponible en Colombia) en el ambiente de Sandbox de PayU, consulta la [Guía de pruebas PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
 * Para probar tarjetas en Chile, utiliza los valores de nombre del tarjetahabiente, CVV y fecha de expiración mostrados en las <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">tarjetas de ejemplo</a>.
 
-## Importar la colección {#importing-the-collection}
+## Importar la Colección {#importing-the-collection}
+
 Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona). Ten en cuenta que creamos un ambiente cada vez que importas la colección.
 
 {{< postman/postman_flow_collection >}}
@@ -208,12 +216,14 @@ Haz clic en el siguiente botón para importar nuestra colección en Postman (pue
 
 Luego de ejecutar la colección, necesitas configurar las variables de ambiente y los globales.
 
-### Configurar sus variables de ambiente {#setting-your-environment-variables}
+### Configurar Tus Variables de Ambiente {#setting-your-environment-variables}
+
 Nuestra colección tiene un ambiente llamado `PayU API Sandbox`. Recomendamos que invoques el request del API de la colección únicamente en el ambiente de Sandbox.
 
 Si quieres cambiar las cuentas de prueba de PayU, configura las variables `api_key`, `api_login`, `merchant_id` y `account-[country]`. Puedes dejar las demás variables con sus valores por defecto.
 
-### Importar los globals {#importing-globals}
+### Importar los Globals {#importing-globals}
+
 Los globales (Globals) son las variables que se necesitan para procesar las transacciones en nuestra pasarela de pagos como moneda (_currency_), valor de la transacción (_transaction amount_), página de confirmación (_confirmation page_), página de respuesta (_response pages_) y más.
 
 Importa los globales de la colección para configurar las valores enviados en el requests. 
@@ -226,5 +236,6 @@ Importa los globales de la colección para configurar las valores enviados en el
 
 Para cambiar el monto de la transacción, actualiza el valor de `tx_value_[País]` dependiendo del país donde quieras probar.
 
-## Ejecuta la colección en el orden correcto {#running-the-requests-in-the-correct-order}
+## Ejecuta la Colección en el Orden Correcto {#running-the-requests-in-the-correct-order}
+
 Ten en cuenta que el orden en el que ejecutes los requests es importante, debido a que algunos de los datos retornados por el request pueden ser utilizados en la siguiente invocación. 

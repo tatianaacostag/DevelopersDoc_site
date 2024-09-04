@@ -3,7 +3,7 @@ title: "Test Your Solution"
 linkTitle: "Test Your Solution"
 date: 2021-04-06T15:34:20-05:00
 description: >
-  PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.
+  Leverage PayU's sandbox environment to thoroughly test your solution before transitioning to the live environment, where real payments and transactions take place.
 weight: 40
 ---
 <script>
@@ -19,13 +19,19 @@ weight: 40
   }
   window.addEventListener('DOMContentLoaded', openTarget);
 </script>
-If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:  
+To conduct tests with PayU, use the credentials provided below in your requests, depending on the country your account is associated with.  
 
 {{< testaccounts/accounts >}}
 
-The test environment does not replicate data from your production account.
+{{% alert title="Notes" color="info"%}}
 
-## Test cards
+* Refer to the <a href="https://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">PayU-Handled 3DS Authentication</a> documentation to find the credentials for testing 3DS.
+* The test environment does not replicate data from your production account.
+
+{{% /alert %}}
+
+## Test Cards
+
 You can use the following cards for testing:
 
 <details id="argentina">
@@ -178,7 +184,8 @@ You can use the following cards for testing:
 
 </details>
 
-### Testing status
+### Testing Statuses
+
 When testing Payments, you must send in the request:
 
 * **To get _approved_ transactions**: 
@@ -201,6 +208,7 @@ When testing Payments, you must send in the request:
 * To test cards in Chile, use the cardholder name, CVV and expiration date displayed in the <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">example cards</a>.
 
 ## Importing the Collection
+
 Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work for you). Note that we create a new environment each time you import the collection.
 
 {{< postman/postman_flow_collection >}} <!-- Buscar en la carpeta layouts/shortcodes -->
@@ -208,12 +216,14 @@ Click the button below to import our collection in Postman (you may need to refr
 
 After you run the collection, you need to set the environment variables and the globals.
 
-### Setting your Environment Variables
+### Setting Your Environment Variables
+
 Our collection has one environment named `PayU API Sandbox`. We recommend you invoke the collection’s API requests in a Sandbox environment only.
 
 If you want to change the PayU's testing accounts, configure the `api_key`, `api_login`, `merchant_id` and `account-[country]` variables. You can leave all the other variables unchanged.
 
-### Importing globals
+### Importing Globals
+
 Globals are the variables required to process transactions in our Payment gateway such as currency, transaction amount, confirmation and response pages and more.
 
 Import the globals for the collection to configure the values sent to the requests. 
@@ -227,4 +237,5 @@ Import the globals for the collection to configure the values sent to the reques
 To change the amount of a transaction, update the value for the `tx_value_[Country]` according to the country you want to test.
 
 ## Running the Requests in the Correct Order
+
 Beware that the order in which you run the requests is important, since some of the data returned by one request may be used in the next invocation. 

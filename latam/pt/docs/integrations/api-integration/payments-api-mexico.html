@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-mexico.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-08-28T09:47:10-05:00" />
 
 <meta itemprop="name" content="API de pagamentos - México">
 <meta itemprop="description" content="A API de pagamentos do México permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="9772">
+<meta itemprop="dateModified" content="2024-08-28T09:47:10-05:00" />
+<meta itemprop="wordCount" content="10071">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de pagamentos - México"/>
 <meta name="twitter:description" content="A API de pagamentos do México permite que sua loja processe diferentes tipos de transações com vários métodos de pagamento.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.b7f186066d5d8aa3be69e8207ff2e0600fd1f58a8c807a7b69f14fa312ada257402c64ffb68cee5d9411c6ec3b035d969ed32ba544fd0203926865eb2591816e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -549,13 +549,13 @@
       
       
       
-        <a id="/pt/docs/integrations/api-integration/payments-api-argentina.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-argentina.html">API de pagamentos - Argentina</a>
+        <a id="/pt/docs/integrations/api-integration/payments-api-argentina.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-argentina.html">API de Pagamentos - Argentina</a>
       
       
       
       
       
-        <a id="/pt/docs/integrations/api-integration/payments-api-brazil.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-brazilhtml" href="../../../../pt/docs/integrations/api-integration/payments-api-brazil.html">API de pagamentos - Brasil</a>
+        <a id="/pt/docs/integrations/api-integration/payments-api-brazil.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-brazilhtml" href="../../../../pt/docs/integrations/api-integration/payments-api-brazil.html">API de Pagamentos - Brasil</a>
       
       
       
@@ -782,6 +782,7 @@
         <li><a href="#variables-for-request-and-response">Variáveis para pedido e resposta</a></li>
         <li><a href="#authorization">Autorização</a></li>
         <li><a href="#capture">Captura</a></li>
+        <li><a href="#partial-capture">Partial Capture</a></li>
         <li><a href="#charge">Cobrança</a></li>
       </ul>
     </li>
@@ -957,7 +958,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados de autenticação.</td>
 <td style="text-align:center">Sim</td>
@@ -978,14 +979,14 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados da transação.</td>
 <td style="text-align:center">Sim</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados da ordem.</td>
 <td style="text-align:center">Sim</td>
@@ -1041,7 +1042,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; shippingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Endereço para envio.</td>
 <td style="text-align:center">Não</td>
@@ -1097,7 +1098,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do comprador.</td>
 <td style="text-align:center">Sim</td>
@@ -1188,7 +1189,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Objeto</td>
 <td>64</td>
 <td>Valor da ordem ou seus valores associados.</td>
 <td style="text-align:center">Sim</td>
@@ -1265,7 +1266,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; creditCard</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do cartão de crédito. Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de crédito não tokenizado.</td>
 <td style="text-align:center">Não</td>
@@ -1307,7 +1308,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; debitCard</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do cartão de débito. Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de débito.</td>
 <td style="text-align:center">Não</td>
@@ -1342,7 +1343,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do pagador. Devido à regulamentação tributária, é obrigatório o envio dos parâmetros <code>payer.billingAddress.postalCode</code> e <code>payer.birthdate</code>.</td>
 <td style="text-align:center">Sim</td>
@@ -1370,7 +1371,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Endereço de cobrança.</td>
 <td style="text-align:center">Sim</td>
@@ -1503,7 +1504,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parâmetros ou dados adicionais associados a pedido. O tamanho máximo de cada nome <em>extraParameters</em> é de 64 caracteres.<br>Em JSON, o parâmetro <em>extraParameters</em> segue esta estrutura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;INSTALLMENTS_NUMBER&quot;: 1</code><br><code>}</code><br><br>Em XML, o parâmetro <em>extraParameters</em> segue esta estrutura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;INSTALLMENTS_NUMBER&lt;/string&gt;</code><br>  <code>&lt;string&gt;1&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 <td style="text-align:center">Não</td>
@@ -1542,7 +1543,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Os dados de resposta.</td>
 </tr>
@@ -1608,13 +1609,13 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transactionResponse &gt; extraParameters</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Parâmetros ou dados adicionais associados à resposta. <br>Em JSON, o parâmetro <em>extraParameters</em> segue esta estrutura: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;BANK_REFERENCED_CODE&quot;: &quot;CREDIT&quot;</code><br><code>}</code><br><br>Em XML, o parâmetro <em>extraParameters</em> segue esta estrutura: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;BANK_REFERENCED_CODE&lt;/string&gt;</code><br>  <code>&lt;string&gt;CREDIT&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
 </tr>
 <tr>
 <td>transactionResponse &gt; additionalInfo</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações adicionais associadas à resposta. Este objeto segue a mesma estrutura que <code>transactionResponse.extraParameters</code>.</td>
 </tr>
@@ -1958,7 +1959,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 <ul>
 <li>O tempo máximo para capturar uma transação aprovada é de 30 dias. Após este período, a transação é automaticamente cancelada.</li>
 <li>Apenas os parâmetros exibidos no corpo da solicitação são obrigatórios para invocar uma transação de Captura. Lembre-se de que os IDs da ordem e da transação devem corresponder a uma transação atualmente autorizada.</li>
-<li>Você pode executar capturas parciais sobre um valor autorizado, desde que o valor da captura parcial não exceda o valor autorizado. Para fazer isso, você precisa enviar a solicitação do parâmetro <code>transaction.order.TX_VALUE</code> com seu valor (conforme enviado durante a Autorização).</li>
+<li>You can perform partial captures on an authorized amount. For more information, see the <a href="#partial-capture">Partial Capture</a> section.</li>
 </ul>
 <p>A seguir estão os corpos de pedido e resposta para este tipo de transação.</p>
 <nav>
@@ -2122,6 +2123,196 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/additionalInfo&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/transactionResponse&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h3 id="partial-capture">Partial Capture</h3>
+<p>A partial capture is an operation that allows you to request the disbursement of an amount less than what was previously authorized in a transaction.</p>
+<p>This means that if your integration initially authorized a payment of $100, you can perform a partial capture for $60, and release the remaining $40, which the integration will not be able to capture later.</p>
+<h4 id="considerations-2">Considerations</h4>
+<ul>
+<li>The total amount captured cannot exceed the originally authorized amount.</li>
+<li>Each payment processor and each country may have rules or restrictions regarding the amount you can capture partially.</li>
+<li>You must specify the value you wish to partially capture in the <code>value</code> field, within the <code>TX_VALUE</code> parameter, as shown in the example below.</li>
+</ul>
+<p>The following are examples of the request and response bodies for this type of transaction.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-5" data-toggle="tab" href="#tab51" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-5" data-toggle="tab" href="#tab52" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="5">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2152525133&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;additionalValues&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TX_VALUE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MXN&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CAPTURE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;parentTransactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4b6adba7-e43b-45f8-88a6-d290755d6c04&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transactionResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;orderId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2152543423</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6f523681-1587-4a2d-8a15-605d27f89c26&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseErrorMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;trazabilityCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6f523681-1587-4a2d-8a15-605d27f89c26&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;authorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NPS-011111&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;pendingReason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APROBADA - Autorizada&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionTime&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;operationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1723724052207</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;referenceQuestionnaire&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;additionalInfo&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;paymentNetwork&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NPS_AR&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;rejectionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NONE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;responseNetworkMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;travelAgencyAuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;cardType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;transactionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CAPTURE&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;transaction&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;order&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;id&gt;</span>2152525133<span style="color:#204a87;font-weight:bold">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/order&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;TX_VALUE&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>1000<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>MXN<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;/TX_VALUE&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;type&gt;</span>CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;parentTransactionId&gt;</span>4b6adba7-e43b-45f8-88a6-d290755d6c04<span style="color:#204a87;font-weight:bold">&lt;/parentTransactionId&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/transaction&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;test&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/test&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;response&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;error</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;orderId&gt;</span>2152543423<span style="color:#204a87;font-weight:bold">&lt;/orderId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionId&gt;</span>6f523681-1587-4a2d-8a15-605d27f89c26<span style="color:#204a87;font-weight:bold">&lt;/transactionId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentNetworkResponseCode&gt;</span>0<span style="color:#204a87;font-weight:bold">&lt;/paymentNetworkResponseCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentNetworkResponseErrorMessage</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;trazabilityCode&gt;</span>6f523681-1587-4a2d-8a15-605d27f89c26<span style="color:#204a87;font-weight:bold">&lt;/trazabilityCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;authorizationCode&gt;</span>NPS-011111<span style="color:#204a87;font-weight:bold">&lt;/authorizationCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;pendingReason</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;responseCode&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/responseCode&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;errorCode</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;responseMessage&gt;</span>APROBADA - Autorizada<span style="color:#204a87;font-weight:bold">&lt;/responseMessage&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionDate</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionTime</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;operationDate&gt;</span>1723724052207<span style="color:#204a87;font-weight:bold">&lt;/operationDate&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;referenceQuestionnaire</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;extraParameters</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;additionalInfo&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;paymentNetwork&gt;</span>NPS_AR<span style="color:#204a87;font-weight:bold">&lt;/paymentNetwork&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;rejectionType&gt;</span>NONE<span style="color:#204a87;font-weight:bold">&lt;/rejectionType&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;responseNetworkMessage</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;travelAgencyAuthorizationCode</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;cardType</span> <span style="color:#204a87;font-weight:bold">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;transactionType&gt;</span>CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/transactionType&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/additionalInfo&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&lt;/transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/response&gt;</span>
 </span></span></code></pre></div>
 
 </div>
@@ -2488,7 +2679,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados de autenticação.</td>
 <td style="text-align:center">Sim</td>
@@ -2509,14 +2700,14 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados da transação.</td>
 <td style="text-align:center">Sim</td>
 </tr>
 <tr>
 <td>transaction &gt; order</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados da ordem.</td>
 <td style="text-align:center">Sim</td>
@@ -2628,7 +2819,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; buyer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do comprador.</td>
 <td style="text-align:center">Sim</td>
@@ -2719,7 +2910,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Objeto</td>
 <td>64</td>
 <td>Valor da ordem ou seus valores associados.</td>
 <td style="text-align:center">Sim</td>
@@ -2817,7 +3008,7 @@ Os fluxos de duas etapas são compatíveis apenas com Mastercard e Visa.
 </tr>
 <tr>
 <td>transaction &gt; payer &gt; billingAddress</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Endereço de cobrança.</td>
 <td style="text-align:center">Sim</td>
@@ -5326,14 +5517,14 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 </tr>
 <tr>
 <td>paymentMethods</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Lista dos métodos de pagamento.</td>
 <td style="text-align:center">Sim</td>
 </tr>
 <tr>
 <td>paymentMethods &gt; paymentMethodComplete</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém as informações de um método de pagamento.</td>
 <td style="text-align:center">Sim</td>
@@ -5536,7 +5727,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 </tr>
 <tr>
 <td>merchant</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Este objeto contém os dados de autenticação.</td>
 <td style="text-align:center">Sim</td>
@@ -5586,7 +5777,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td>transactionResponse</td>
+<td></td>
 <td>Máx:2048</td>
 <td>A resposta do método PING caso tenha ocorrido um erro.</td>
 </tr>
@@ -5703,9 +5894,9 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-24 de junho de 2022:
+28 de agosto de 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation updates (2892f1bb8)</b>
 </div>
 </div>
 

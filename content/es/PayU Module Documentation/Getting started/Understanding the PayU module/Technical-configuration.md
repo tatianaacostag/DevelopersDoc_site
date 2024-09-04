@@ -1,56 +1,62 @@
 ---
-title: "Configuración técnica"
-linkTitle: "Configuración técnica"
+title: "Configuración Técnica"
+linkTitle: "Configuración Técnica"
 date: 2021-08-13T12:19:55-05:00
 type: docs
 Description: >
-  Encuentra aquí todos los detalles que te ayudarán a integrar tu página web usando cualquiera de nuestras [integraciones](/es/docs/integrations.html).
+  Esta guía proporciona detalles esenciales para integrar tu sitio web utilizando cualquiera de los [métodos de integración](/es/docs/integrations.html) que ofrecemos.
 weight: 20
 tags: ["subtopic"]
 ---
 
-## Obtener la información técnica {#getting-technical-information}
-Independiente de la [integración]({{< ref "integrations" >}}) que utilices, necesitas las siguientes variables en la petición de los métodos o en sus parámetros.
+## Información Técnica General {#technical-information-overview}
 
-### Merchant y account IDs {#merchant-and-account-ids}
-Estos valores te permiten autenticar tanto a tu comercio (Merchant ID) como a su cuenta (Account ID) cuando utilizas cualquiera de las integraciones para utilizar los servicios que brindamos.
+Independientemente del [método de integración]({{< ref "integrations" >}}) que elijas, ciertos detalles técnicos son necesarios para garantizar una integración exitosa. Este documento describe las variables clave y configuraciones que necesitas ajustar.
 
-Cuando inicias sesión en tu módulo PayU, encuentras ambos valores en el panel izquierdo.
+### Merchant ID y Account ID {#merchant-and-account-ids}
+
+Estos identificadores son cruciales para autenticar tu cuenta de comerciante con PayU. Puedes encontrarlos en el panel izquierdo del sitio de administración después de iniciar sesión.
 
 <img src="/assets/Merchant_Ids_es.png" alt="PrintScreen" width="60%"/>
 
-### API key y API Login {#api-key-and-api-login}
-1. En el módulo PayU, haz clic en _**Configuración**_ y luego selecciona _**Configuración técnica**_.
+### API Key y API Login {#api-key-and-api-login}
+
+1. Inicia sesión en tu Panel de Administración.
+
+2. Navega a _**Configuración**_ y selecciona _**Configuración Técnica**_.
 
 ![PrintScreen](/assets/IntegrationVariables_01_es.png)
 
-2. En esta ventana, encontrarás tanto el API key como el API Login que permiten autenticar a tu comercio durante el proceso de integración.
+3. En el panel derecho, encontrarás tanto la API Key como el API Login, necesarios para autenticar tus transacciones durante la integración.
 
 ![PrintScreen](/assets/IntegrationVariables_02_es.png)
 
 {{% alert title="Advertencia" color="warning"%}}
 
-Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta información asegurada y su uso o distribución se hace bajo tu responsabilidad. 
+Tu llave API y tu API Login son únicos para tu cuenta PayU. Asegúrate de mantener estas credenciales seguras, ya que su mal uso o divulgación no autorizada es tu responsabilidad. 
 
 {{% /alert %}} 
 
-## Configurar la información técnica {#configuring-technical-information} 
-En esta sección podrás configurar propiedades técnicas pertenecientes a cada cuenta activa como:
-* La configuración de URLs para las páginas de Respuesta y Confirmación
-* Habilitar las opciones de envío de correos al comprador y a tu comercio al momento de realizar una venta.
-* Habilitar las notificaciones para el proceso de Disputas.
-* Seleccionar si tus pagos se procesan en modo pruebas o en producción
+## Configurar la Información Técnica {#configuring-technical-information}
 
-Para configurar esta información, haz clic en _**Configuración**_ y luego selecciona _**Configuración técnica**_.
+Puedes personalizar varias configuraciones técnicas para cada cuenta activa, incluyendo:
+
+- URLs para páginas de confirmación y de respuesta.
+- Notificaciones por correo electrónico para compradores y para tu tienda.
+- Notificaciones del proceso de disputas.
+- Selección del modo de prueba o transacciones en producción.
+
+Para configurar esta información, ve a _**Configuración**_ > _**Configuración Técnica**_.
 
 ![PrintScreen](/assets/IntegrationVariables_01_es.png)
 
-En la ventana _**Configuración técnica**_, encuentras dos pestañas de acuerdo a tus necesidades: _**Pagos**_ o _**Disputas**_.
+En la ventana de _**Configuración Técnica**_, encontrarás dos pestañas según tus necesidades: _**Pagos**_ y _**Disputas**_.
 
 ![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_01_es.png)
 
 ### Pagos {#payments}
-En esta pestaña puedes configurar la siguiente información.
+
+En la pestaña _**Pagos**_, puedes configurar lo siguiente:
 
 ![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_02_es.png)
 
@@ -58,14 +64,15 @@ En esta pestaña puedes configurar la siguiente información.
 
 | Parámetro | Descripción |
 |---|---|
-| Tus pagos se procesan | Selecciona si tus transacciones son procesadas _En Producción_ o en _Modo prueba_. Cuando procesas en _Modo prueba_, las transacciones realizadas a través de tu página web o a través de solicitudes de pago son marcadas como de prueba y el pago no es real. |
-| URL de respuesta | Es la página a la cual se redirecciona el comprador una vez finaliza la transacción en PayU, en esta página se muestra el estado de la transacción. |
-| URL de confirmación | Es la página a la cual PayU envía la confirmación del pago a tu sistema. Esto es útil para actualizar inventarios y bases de datos una vez la transacción llegue a su estado final.<br>Esta página no es obligatoria. |
-| Controlar pagos dobles | Al habilitar esta opción, validamos que la referencia de cada pago enviado a nuestro sistema sea única. En caso contrario, podrás enviar una misma referencia para todas tus ventas. |
-| Notificaciones de pagos procesados | Esta opción te permite enviar un correo electrónico al pagador o a ti cuando el pago sea aprobado o rechazado. |
+| Tus pagos se procesan | Elige si tus transacciones se procesan _En Producción_ o _En Modo de Prueba_. Las transacciones procesadas en _Modo de Prueba_ se marcan como pruebas y no son reales. |
+| URL de respuesta | La URL a la que se redirige a los compradores después de completar una transacción. Esta página muestra el estado de la transacción. |
+| URL de confirmación | La URL a la que PayU envía la confirmación del pago a tu sistema. Usa esta URL para actualizar el inventario o las bases de datos cuando una transacción alcanza su estado final. Este parámetro es opcional. |
+| Controlar pagos dobles / Solo para ventas aprobadas | <li><b>Controlar pagos dobles:</b> Si habilitas esta opción, la referencia solo se puede usar una vez, independientemente del resultado de la transacción (aprobada, rechazada, pendiente).</li> <li><b>Solo para ventas aprobadas:</b> Si marcas esta casilla, una referencia se puede reutilizar solo si la transacción anterior fue rechazada. Si la transacción anterior estaba pendiente o aprobada, la referencia no se puede reutilizar.</li> <li><b>Controlar pagos dobles + Solo para ventas aprobadas:</b> Si habilitas ambas funcionalidades, la referencia solo se puede usar una vez (prevalece la regla "Validar referencia única para todos los estados").</li> <li><b>Ambas casillas deshabilitadas:</b> La referencia se puede reutilizar varias veces, independientemente del resultado de la transacción. Ten en cuenta que al tener ambas opciones deshabilitadas, se puede afectar la conciliación ya que la misma referencia podría aparecer varias veces con diferentes estados.</li> <br> <b>Nota:</b><br> Tiempo de reintento: Si necesitas reenviar una referencia, espera una respuesta de PayU o al menos 60 segundos. |
+| Notificaciones de pagos procesados | Habilita las notificaciones por correo electrónico que se envían al comprador o a tu tienda cuando un pago es aprobado o rechazado. |
 
 ### Disputas {#disputes}
-En esta pestaña puedes configurar la siguiente información del proceso de [disputas]({{< ref "Disputes-MP.md" >}}).
+
+En la pestaña _**Disputas**_, puedes configurar los ajustes relacionados con el [proceso de disputas]({{< ref "Disputes-MP.md" >}}).
 
 ![PrintScreen](/assets/TechnicalInformation/TechnicalInformation_03_es.png)
 
@@ -73,11 +80,11 @@ En esta pestaña puedes configurar la siguiente información del proceso de [dis
 
 | Parámetro | Descripción |
 | --- | --- |
-| Correos de notificaciones | Configura las direcciones de correo electrónico para recibir notificaciones cuando se inicie un proceso de disputa. |
-| URL de notificación automática | Si habilitas esta opción, puedes establecer la URL a la que PayU envía la notificación de un proceso de disputa. |
+| Correos de notificaciones | Establece las direcciones de correo electrónico a las que se enviarán notificaciones cuando se inicie una disputa. |
+| URL de notificación automática | Si está habilitado, configura la URL a la que PayU enviará notificaciones sobre los procesos de disputa. |
 
 {{% alert title="Nota" color="info"%}}
 
-No olvides hacer clic en _**Guardar cambios**_ al final de la sección para aplicar los cambios.
+Recuerda hacer clic en el botón _**Guardar cambios**_ para aplicar cualquier actualización que realices.
 
 {{% /alert %}} 

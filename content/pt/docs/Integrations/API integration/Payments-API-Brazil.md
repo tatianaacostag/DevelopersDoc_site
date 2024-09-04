@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
 Este guia mostra como aproveitar esses serviços para melhorar a experiência de pagamento dos seus clientes, oferecendo opções de pagamento flexíveis e seguras adaptadas ao mercado local.
@@ -175,6 +176,7 @@ Exemplo de uma Solicitação:
 {{< /tabs >}}
 
 #### Pagar com Tokens MDES ou VTS
+
 Se você estiver tokenizando os cartões de crédito de seus clientes usando MDES ou VTS, pode configurar as informações do token no parâmetro `transaction.networkToken`, substituindo as informações do cartão de crédito, e definir o parâmetro `creditCard.processWithoutCvv2` como `true`.
 
 Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Entre em contato com seu representante de vendas para habilitar esse recurso.
@@ -325,10 +327,10 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para cálculo do VAT.<br>Se o valor não tiver IVA, envie 0.<br>Este valor pode ter duas casas decimais.  | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica o valor base da transação. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
-| transaction > order > submerchant |  |  | Informações do sub-vendedor. Se você não enviar este parâmetro, o PayU configura seu estabelecimento como sub-vendedor. | Não |
+| transaction > order > submerchant | Objeto |  | Informações do sub-vendedor. Se você não enviar este parâmetro, o PayU configura seu estabelecimento como sub-vendedor. | Não |
 | transaction > order > submerchant > id | Alfanumérico | Máx:15 | ID interno do sub-vendedor, se você usar um para identificá-lo. | Não |
 | transaction > order > submerchant > fullName | Alfanumérico | Máx:150 | Nome completo do sub-vendedor. | Não |
-| transaction > order > submerchant > address |  |  | Endereço do sub-vendedor. Os campos `state`, `country` e `postalCode` são obrigatórios ao enviar este objeto. | Não |
+| transaction > order > submerchant > address | Objeto |  | Endereço do sub-vendedor. Os campos `state`, `country` e `postalCode` são obrigatórios ao enviar este objeto. | Não |
 | transaction > order > submerchant > address > street1 | Alfanumérico | Máx:100 | Endereço: Linha 1. | Não |
 | transaction > order > submerchant > address > street2 | Alfanumérico | Máx:100 | Endereço: Linha 2. | Não |
 | transaction > order > submerchant > address > street3 | Alfanumérico | Máx:100 | Endereço: Linha 3. | Não |
@@ -1533,7 +1535,7 @@ Depois, seu cliente vê uma página de checkout como esta.
 
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
-### Como funciona o PIX? {#how-does-pix-work}
+### Como Funciona o PIX? {#how-does-pix-work}
 
 PIX é um método de transferência online lançado em novembro de 2020 pelo Banco Central do Brasil (BACEN) que permite realizar e receber transferências com facilidade independente do banco que emitiu sua conta.
 
@@ -2774,6 +2776,3 @@ Exemplo de uma Resposta:
 {{< /tab >}}
 {{< /tabs >}}
 
-
-
-[def]: #testes-para-estabelecimentos-com-integracao-web-checkout

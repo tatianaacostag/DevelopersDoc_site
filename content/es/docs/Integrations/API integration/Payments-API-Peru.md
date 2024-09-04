@@ -3,38 +3,46 @@ title: "API de Pagos - Perú"
 linkTitle: "API de Pagos - Perú"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  La API de Pagos de Perú le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
+  La API de Pagos para Perú permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, efectivo, tarjetas de crédito y tarjetas de débito.
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
-Para integrarte con la API de Pagos de Perú, dirige tus solicitudes a las siguientes URL según tu entorno:
+Esta guía muestra cómo aprovechar estos servicios para mejorar la experiencia de pago de tus clientes proporcionando opciones de pago flexibles y seguras adaptadas al mercado local.
 
-{{% alert title="URL" color="info"%}}
+{{% alert title="Nota" color="info"%}}
+
+Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL según el entorno correspondiente:
 * Pruebas: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Producción: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-## Métodos disponibles {#available-methods}
+## Métodos Disponibles {#available-methods}
+
 La API de pagos incluye los siguiente métodos:
 
-* [Enviar transacciones utilizando tarjetas de crédito o débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
-* [Enviar transacciones utilizando Yape]({{< ref "#submit-transactions-using-yape" >}})
-* [Enviar transacciones utilizando efectivo]({{< ref "#submit-transactions-using-cash" >}})
-* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Enviar Transacciones Utilizando Tarjetas de Crédito o Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
+* [Enviar Transacciones Utilizando Yape]({{< ref "#submit-transactions-using-yape" >}})
+* [Enviar Transacciones Utilizando Efectivo]({{< ref "#submit-transactions-using-cash" >}})
+* [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
+
 Para confirmar el estado de una transacción, puedes utilizar una de las siguientes opciones:
 * Navega a la URL configurada en la variable `transaction.notifyUrl` o la opción _**URL de confirmación**_ ubicada en el Módulo PayU en _**Configuración**_ > _**Configuración técnica**_.
 * Utiliza el [API o SDK de consultas]({{< ref "Queries.md" >}}).
+
 {{% /alert %}}
 
-## Enviar transacciones utilizando tarjetas de crédito o débito {#submit-transactions-using-credit-or-debit-cards}
+## Enviar Transacciones Utilizando Tarjetas de Crédito o Débito {#submit-transactions-using-credit-or-debit-cards}
+
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Perú, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
-### Parámetros para la solicitud y la respuesta {#parameters-for-request-and-response}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response}
 
 <details>
 <summary>Solicitud</summary>
@@ -42,7 +50,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
@@ -140,7 +148,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -160,6 +168,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 </details>
 
 #### Consideraciones {#considerations}
+
 * Para pagos con tókenes de tarjetas de crédito, incluye los parámetros `transaction.creditCardTokenId` y `transaction.creditCard.securityCode` (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito . Para más información, consulta el [API de Tokenización]({{< ref "Tokenization-API.md" >}}).
 * Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable `creditCard.processWithoutCvv2` con valor true y elimina la variable `creditCard.securityCode`.
 * En Perú, puedes seleccionar 0 o de 2 a 36 cuotas cuando pagas con tarjeta de crédito. Si seleccionas una (1) cuota, PayU envía cero (0) como valor por defecto.
@@ -167,6 +176,7 @@ Este método te permite procesar pagos realizados por tus clientes utilizando ta
 * La variable `transaction.threeDomainSecure` corresponde a un escenario _passthrough_ donde el comercio realiza la autenticación por su cuenta.
 
 ### Autorización {#authorization}
+
 Utiliza este método para realizar el paso de **Autorización** del flujo de dos pasos. En este paso, autorizas el pago pero el monto no se debita hasta que [captures]({{< ref "payments-api-peru.md#capture" >}}) los fondos.
 
 Los siguientes son los cuerpos de la solicitud y la respuesta para este tipo de transacción.
@@ -175,7 +185,7 @@ Los siguientes son los cuerpos de la solicitud y la respuesta para este tipo de 
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -262,7 +272,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -296,7 +306,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -390,7 +400,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -413,6 +423,7 @@ Ejemplo de una respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -438,9 +449,11 @@ Utilizando _Zero Authorization_, tienes los siguientes beneficios:
 -->
 
 ### Captura {#capture}
+
 Utiliza este método para realizar el paso de **Captura** del flujo de dos pasos. En este paso, capturas los fondos previamente [Autorizados]({{< ref "payments-api-peru.md#authorization" >}}) para transferirlos a tu cuenta PayU.
 
 #### Consideraciones {#considerations-1}
+
 Ten en cuenta las siguientes consideraciones para la captura:
 * Puedes realizar capturas parciales sobre un monto autorizado. Para más información, consulta la sección [Captura Parcial]({{< ref "#partial-capture" >}}).
 * Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.
@@ -451,7 +464,7 @@ Los siguientes son los cuerpos de la solicitud y la respuesta para este tipo de 
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -472,7 +485,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -504,7 +517,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -525,7 +538,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -698,6 +711,7 @@ Ejemplo de una Respuesta:
 {{< /tabs >}}
 
 ### Cobro {#charge}
+
 Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados:
 
 Los siguientes son los cuerpos de la solicitud y la respuesta para este tipo de transacción.
@@ -706,7 +720,7 @@ Los siguientes son los cuerpos de la solicitud y la respuesta para este tipo de 
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -793,7 +807,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -827,7 +841,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -922,7 +936,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -945,29 +959,32 @@ Ejemplo de una respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones utilizando Yape {#submit-transactions-using-yape}
+## Enviar Transacciones Utilizando Yape {#submit-transactions-using-yape}
 
-### Descripción
 Yape es una aplicación móvil creada por el BCP (Banco de Crédito del Perú) que ofrece una billetera digital. La aplicación permite a los usuarios realizar compras en línea, pagar servicios, realizar recargas, retirar fondos, y enviar o recibir dinero de manera rápida y segura. El acceso a esta billetera digital no requiere una cuenta bancaria; solo se necesita el número de celular del pagador.
 
-#### Características y beneficios
+### Características y Beneficios
+
 Facilitar pagos a través de Yape en tu negocio te otorga a ti y a tus clientes valiosos beneficios:
 
 * **Más ventas:** Atrae nuevos clientes y aumenta las ventas gracias a la base de millones de clientes que cuentan con Yape.
 * **Más conveniencia:** Los clientes pueden realizar compras rápidas y fáciles utilizando sus teléfonos móviles.
 * **Más seguridad:** Garantiza transacciones seguras y confiables con el respaldo del BCP.
 
-### Proceso de pago con Yape
+### Proceso de Pago con Yape
 
-#### Requisitos previos
+#### Requisitos Previos
+
 Para realizar pagos, el usuario final necesita 2 componentes:
 * Número de celular
 * OTP (contraseña de un solo uso)
 
-#### Experiencia de usuario
+#### Experiencia de Usuario
+
 Una compra a través de Yape puede seguir el flujo descrito a continuación:
 
 1. El usuario accede al sitio web o aplicación de compras y selecciona el producto que desea adquirir. El sitio web le ofrece al usuario la opción de pagar a través de Yape y le solicita su número de teléfono móvil y un código de aprobación, por ejemplo:
@@ -985,7 +1002,7 @@ Una compra a través de Yape puede seguir el flujo descrito a continuación:
 <img src="/assets/Payments/Yape03ES.png" alt="PrintScreen" width="500">
 <p></p>
 
-### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-1}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-1}
 
 <details>
 <summary>Solicitud</summary>
@@ -993,7 +1010,7 @@ Una compra a través de Yape puede seguir el flujo descrito a continuación:
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la solicitud, usado para mostrar mensajes de error. | Sí |
 | command | Alfanumérico | Máx:32 | Establecer SUBMIT_TRANSACTION. | Sí |
@@ -1073,7 +1090,7 @@ Una compra a través de Yape puede seguir el flujo descrito a continuación:
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |---|---|---|---|
 | code | Alfanumérico | | El código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048  | El mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -1095,13 +1112,14 @@ Una compra a través de Yape puede seguir el flujo descrito a continuación:
 </details>
 
 ### Llamado a la API {#api-call}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
   "language": "es",
@@ -1180,7 +1198,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1211,7 +1229,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -1293,7 +1311,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1313,7 +1331,8 @@ Ejemplo de una respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Consideraciones
+### Consideraciones {#considerations-3}
+
 * Los pagos procesados a través de nuestra pasarela serán realizados a nombre de tu comercio por parte de PayU.
 * El monto máximo que los pagadores pueden procesar con Yape es de 2000 soles acumulados por día.
 * Para consultar un código activo de tu transacción, utiliza la [API de consultas](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/queries-api.html).
@@ -1330,7 +1349,8 @@ Ejemplo de una respuesta:
     2. Configurar la interfaz para aceptar un máximo de 9 dígitos y mostrar un aviso al usuario informándole que el número telefónico ingresado debe constar de 9 dígitos.
     3. Configurar la interfaz para evitar espacios o eliminarlos automáticamente, o mostrar un aviso al usuario indicándole que ingrese el número sin espacios.
 
-### Pruebas en ambiente sandbox 
+### Pruebas en Ambiente Sandbox 
+
 Para probar las transacciones de Yape en el ambiente de Sandbox de PayU, utiliza los siguientes datos:
 
 <table border="1"> 
@@ -1429,12 +1449,13 @@ Para probar las transacciones de Yape en el ambiente de Sandbox de PayU, utiliza
 
 </table>
 
-## Enviar transacciones utilizando efectivo {#submit-transactions-using-cash}
+## Enviar Transacciones Utilizando Efectivo {#submit-transactions-using-cash}
+
 Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta. El cliente puede ver un resumen de la compra como se muestra en el siguiente ejemplo: 
 
 <img src="/assets/Payments/CashReceiptPE.png" alt="PrintScreen" width="400">
 
-### Parámetros para la solicitud y la respuesta {#parameters-for-request-and-response-2}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-2}
 
 <details>
 <summary>Solicitud</summary>
@@ -1442,7 +1463,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
@@ -1519,7 +1540,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -1539,7 +1560,8 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 
 </details>
 
-#### Consideraciones {#considerations-2}
+#### Consideraciones {#considerations-4}
+
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * Para los pagos en efectivo, los siguientes parámetros son obligatorios:
    - `transaction.order.buyer.fullName`
@@ -1553,13 +1575,14 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
 ### Llamado a la API {#api-call-1}
+
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -1635,7 +1658,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1673,7 +1696,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -1753,7 +1776,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1791,20 +1814,22 @@ Ejemplo de una respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar métodos de pago disponibles {#available-payment-methods-query}
+## Consultar Métodos de Pago Disponibles {#available-payment-methods-query}
+
 Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
-### Parámetros para la solicitud y la respuesta {#available-payment-methods-query}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-3}
 
 <details>
 <summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). |
 | command | Alfanumérico | Max:32 | Asigna `GET_PAYMENT_METHODS`. |
@@ -1820,7 +1845,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -1833,13 +1858,14 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 </details>
 
 ### Llamado a la API {#api-call-2}
+
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.  
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "test": false,
@@ -1853,7 +1879,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1882,7 +1908,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>en</language>
@@ -1896,7 +1922,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -1916,20 +1942,22 @@ Ejemplo de una respuesta:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
 ## Ping
+
 El método `PING` te permite verificar la conexión con nuestra plataforma.
 
-### Parámetros para la solicitud y la respuesta {#parameters-for-request-and-response-3}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-4}
 
 <details>
 <summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). |
 | command | Alfanumérico | Max:32 | Asigna `PING`. |
@@ -1945,7 +1973,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
@@ -1953,13 +1981,14 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 </details>
 
 ### Llamado a la API {#api-call-3}
+
 Los siguientes son los cuerpos de la solicitud y la respuesta para este método.
 
 {{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "test": false,
@@ -1973,7 +2002,7 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1987,7 +2016,7 @@ Ejemplo de una respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una solicitud:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>en</language>
@@ -2001,11 +2030,12 @@ Ejemplo de una solicitud:
 ```
 <br>
 
-Ejemplo de una respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}

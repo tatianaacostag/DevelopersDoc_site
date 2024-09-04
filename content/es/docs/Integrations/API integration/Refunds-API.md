@@ -32,7 +32,7 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 * El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es:
    - 87 días para transacciones con PIX o procesadas en Redecard.
    - 172 días para transacciones con tarjeta.
-   * Solo se permite un reembolso por transacción cuando se usa PIX.
+* La integración admite múltiples reembolsos parciales para PIX.
 * Cuando se aprueba un reembolso por transacciones con PIX, el pagador recibe el dinero de inmediato. De lo contrario, lo recuperan en un máximo de 15 días hábiles.
 
 ### Chile

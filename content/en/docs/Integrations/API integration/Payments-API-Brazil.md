@@ -24,7 +24,7 @@ To integrate the Payments API, direct your requests to the following URLs accord
 
 Payments API includes the following methods:
 
-* [Submit Transactions Using Credit Card]({{< ref "Payments-API-Brazil.md#submit-transactions-using-credit-cards" >}}) 
+* [Submit Transactions Using Credit Cards]({{< ref "Payments-API-Brazil.md#submit-transactions-using-credit-cards" >}}) 
 * [Submit Transactions Using Google Pay™]({{< ref "#submit-transactions-using-google-pay" >}})
 * [Submit Transactions Using PIX]({{< ref "Payments-API-Brazil.md#submit-transactions-using-pix" >}})
 * [Submit Transactions Using Cash]({{< ref "Payments-API-Brazil.md#submit-transactions-using-cash" >}})
@@ -40,7 +40,7 @@ To confirm the status of a transaction, you can use one of the following options
 
 {{% /alert %}}
 
-## Submit Transaction Using Credit Cards
+## Submit Transactions Using Credit Cards
 
 This method lets you process the payments performed by your customers using credit cards. For Brazil, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
@@ -1535,7 +1535,7 @@ In the end, your customer sees a checkout page like this.
 
 ![PrintScreen](/assets/Payments/PixCheckout.png)
 
-### How does PIX work?
+### How Does PIX Work?
 
 PIX is an online transfer method released in November, 2020 by the Brazilian Central Bank (_Banco Central do Brasil_ - BACEN) which allows you make and receive transfers easily regardless of the bank who issued your account.
 
@@ -1679,7 +1679,7 @@ Pix has two parts:
 It is recommended to display in your Checkout both the image of the QR code (parameter `QRCODE_IMAGE_BASE64` decoded) and the string of the code (parameter `QRCODE_EMV`) to avoid payment desertions.
 {{% /alert %}}
 
-### API call
+### API Call
 
 The following are the bodies of the request and response of this payment method.
 
@@ -2716,10 +2716,10 @@ The ```PING``` method lets you verify the connection to our platform.
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. |
-| transactionResponse | transactionResponse | Max:2048 | The response of the PING method if an error ocurred. |
+| transactionResponse |  | Max:2048 | The response of the PING method if an error ocurred. |
 </details>
 
-### Api call
+### API Call
 The following are the bodies of the request and response of this method.
 
 {{< tabs tabTotal="2" tabID="12" tabName1="JSON" tabName2="XML" >}}
@@ -2776,4 +2776,3 @@ Response Example:
 ```
 {{< /tab >}}
 {{< /tabs >}}
-

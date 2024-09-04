@@ -1566,6 +1566,7 @@ Este método gera uma lista dos métodos de pagamento disponíveis em todos os p
 </details>
 
 ### Chamada de API {#api-call-1}
+
 A seguir estão os corpos do pedido e resposta deste método. Para fins de exemplo, a solicitação e a resposta aqui mostram dois métodos de pagamento. 
 
 {{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
@@ -1685,7 +1686,7 @@ O método `PING` permite que você confirme a conexão com a nossa plataforma.
 |-|-|-|-|
 | code | Alfanumérico |  | O código de resposta da transação. |
 | error | Alfanumérico | Máx:2048 | A mensagem de erro associada, caso tenha ocorrido um erro. |
-| transactionResponse | transactionResponse | Máx:2048 | A resposta do método PING caso tenha ocorrido um erro. |
+| transactionResponse |  | Máx:2048 | A resposta do método PING caso tenha ocorrido um erro. |
 </details>
 
 ### Chamada de API {#api-call-2}

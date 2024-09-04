@@ -3,51 +3,59 @@ title: "API de Pagos - México"
 linkTitle: "API de Pagos - México"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  El API de Pagos de México le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
+   La API de Pagos para México permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo efectivo, tarjetas de crédito, tarjetas de débito, transferencia bancaria y referencia bancaria.
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
-Para integrarte con el API de Pagos de México, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
+Esta guía muestra cómo aprovechar estos servicios para mejorar la experiencia de pago de tus clientes proporcionando opciones de pago flexibles y seguras adaptadas al mercado local.
 
-{{% alert title="URL" color="info"%}}
+{{% alert title="Nota" color="info"%}}
+
+Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL según el entorno correspondiente:
 * Pruebas: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Producción: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-## Métodos disponibles {#available-methods}
-El API de pagos incluye los siguiente métodos:
+## Métodos Disponibles {#available-methods}
 
-* [Enviar transacciones con tarjeta de crédito o débito]({{< ref "#submit-transaction-with-credit-or-debit-card" >}})
-* [Enviar transacciones en efectivo]({{< ref "#submit-transaction-with-cash" >}})
-* [Enviar transacciones con transferencia bancaria]({{< ref "#submit-transaction-with-bank-transfer" >}})
-* [Enviar transacciones con referencia bancaria]({{< ref "#submit-transaction-with-bank-reference" >}})
-* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
+La API de Pagos incluye los siguiente métodos:
+
+* [Enviar Transacciones Utilizando Tarjetas de Crédito o Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
+* [Enviar Transacciones Utilizando Efectivo]({{< ref "#submit-transactions-using-cash" >}})
+* [Enviar Transacciones Utilizando Transferencia Bancaria]({{< ref "#submit-transactions-using-bank-transfer" >}})
+* [Enviar Transacciones Utilizando Referencia Bancaria]({{< ref "#submit-transactions-using-bank-reference" >}})
+* [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
+
 Para confirmar el estado de una transacción, puedes utilizar una de las siguientes opciones:
 * Navega a la URL configurada en la variable `transaction.notifyUrl` o la opción _**URL de confirmación**_ ubicada en el Módulo PayU en _**Configuración**_ > _**Configuración técnica**_.
 * Utiliza el [API o SDK de consultas]({{< ref "Queries.md" >}}).
+
 {{% /alert %}}
 
-## Enviar transacciones con tarjeta de crédito o débito {#submit-transaction-with-credit-or-debit-card}
+## Enviar Transacciones Utilizando Tarjetas de Crédito o Débito {#submit-transactions-using-credit-or-debit-cards}
+
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para México, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Nota" color="info"%}}
 El flujo de dos pasos solo está soportados para Mastercard y Visa.
 {{% /alert %}}
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
@@ -138,11 +146,11 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
@@ -163,6 +171,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 </details>
 
 #### Consideraciones {#considerations}
+
 * El flujo de dos pasos solo está soportados para Mastercard y Visa.
 * Para pagos con Promociones, envía los parámetros `INSTALLMENTS_NUMBER` y `PROMOTION_ID` con el número de cuotas seleccionado y el ID de la promoción. Consulta el [API de Promociones]({{< ref "Promotions.md" >}}) para más información.
 * Para pagos con Meses Sin Intereses - MSI, envía el extra parámetro `INSTALLMENTS_NUMBER` con el número de meses. Consulta [MSI]({{< ref "Promotions.md#months-without-interests-msi---meses-sin-intereses" >}}) para más información.
@@ -174,13 +183,14 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 * Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable `creditCard.processWithoutCvv2` con valor true y elimina la variable `creditCard.securityCode`.
 
 ### Autorización {#authorization}
+
 Utiliza este método para realizar el paso de **Autorización** del flujo de dos pasos utilizando Mastercard o Visa. En este paso, autorizas el pago pero el monto no se debita hasta que [captures]({{< ref "payments-api-mexico.md#capture" >}}) los fondos.<br>Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -268,7 +278,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -311,7 +321,7 @@ Ejemplo respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -405,7 +415,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -446,9 +456,11 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ### Captura {#capture}
+
 Utiliza este método para realizar el paso de **Captura** del flujo de dos pasos para Mastercard y Visa. En este paso, capturas los fondos previamente [Autorizados]({{< ref "payments-api-mexico.md#authorization" >}}) para transferirlos a tu cuenta PayU.
 
 #### Consideraciones {#considerations-1}
+
 Ten en cuenta las siguientes consideraciones para la captura.
 * El tiempo máximo para capturar una transacción aprobada es de 30 días. Después de este tiempo, la transacción es anulada automáticamente.
 * Para capturar una transacción, solo son obligatorios los parámetros mostrados en el cuerpo de la petición. Ten en cuenta que los IDs de las orden y la transacción deben corresponder a la actualmente autorizada.
@@ -460,7 +472,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este tipo de 
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -481,7 +493,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -523,7 +535,7 @@ Ejemplo respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -544,7 +556,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -730,6 +742,7 @@ Ejemplo de una Respuesta:
 {{< /tabs >}}
 
 ### Cobro {#charge}
+
 Utiliza este método para realizar el flujo de un paso, es decir, un cobro. En este paso, los pasos del flujo de dos pasos son combinados en una única transacción y los fondos son transferidos de la cuenta del cliente a tu cuenta PayU tan pronto sean aprobados:
 
 Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
@@ -738,7 +751,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este tipo de 
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -826,7 +839,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -868,7 +881,7 @@ Ejemplo respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -962,7 +975,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -998,20 +1011,21 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones en efectivo {#submit-transaction-with-cash}
+## Enviar Transacciones Utilizando Efectivo {#submit-transactions-using-cash}
+
 Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un de pago como el siguiente.
 
 <img src="/assets/Payments/CashReceiptMX.png" alt="PrintScreen" width="50%">
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-1}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-1}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
@@ -1084,15 +1098,15 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse |  |  | Datos de la respuesta. |
+| transactionResponse | Objeto |  | Datos de la respuesta. |
 | transactionResponse > orderId | Numérico |  | Identificador generado o existente de la orden en PayU. |
 | transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
 | transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. Como el pago se realiza de forma externa, el estado de una transacción exitosa es `PENDING` |
@@ -1104,12 +1118,13 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_TRANSACTION_CONFIRMATION`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
 | transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
-| transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados a la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
-| transactionResponse > additionalInfo |  |  | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
+| transactionResponse > extraParameters | Objeto |  | Parámetros adicionales o datos asociados a la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > additionalInfo | Objeto |  | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
 
 </details>
 
 #### Consideraciones {#considerations-3}
+
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * Cuando el método de pago es `OXXO`, la confirmación del pago será un día después del mismo. Para otros métodos de pago en efectivo, la confirmación es en línea.
 * El parámetro `transactionResponse.extraParameters` tiene los siguientes parámetros relacionados con la transacción:
@@ -1122,13 +1137,14 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
    - **PAYMENT_WAY_ID**: red financiera del tipo de pago.
 
 ### Llamado del API {#api-call}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -1205,7 +1221,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1252,7 +1268,7 @@ Ejemplo respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -1333,7 +1349,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1381,33 +1397,35 @@ Ejemplo respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones con transferencia bancaria {#submit-transaction-with-bank-transfer}
+## Enviar Transacciones Utilizando Transferencia Bancaria {#submit-transactions-using-bank-transfer}
+
 Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. Cuando utilices este método de pago, el pagador realiza una transferencia bancaria desde su cuenta a una cuenta CLABE de PayU.<br>
 Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.
 
 <img src="/assets/Payments/BankTransferReceiptMX.png" alt="PrintScreen" width="50%">
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-2}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-2}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
 | test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
+| merchant | Objeto |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > order |  |  | Este objeto tiene los datos de la orden. | Sí |
+| transaction | Objeto |  | Este objeto tiene los datos de la transacción. | Sí |
+| transaction > order | Objeto |  | Este objeto tiene los datos de la orden. | Sí |
 | transaction > order > accountId | Numérico |  | Identificador de tu cuenta. | Sí |
 | transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Representa el identificador de la orden en tu sistema. | Sí |
 | transaction > order > description | Alfanumérico | Min:1 Max:255 | Descripción de la orden. | Sí |
@@ -1415,7 +1433,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 | transaction > order > notifyUrl | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No|
 | transaction > order > partnerId | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
 | transaction > order > signature | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
-| transaction > order > shippingAddress |  |  | Dirección de envío. | No |
+| transaction > order > shippingAddress | Objeto |  | Dirección de envío. | No |
 | transaction > order > shippingAddress > street1 | Alfanumérico | Max:100 | Línea de dirección 1. | No |
 | transaction > order > shippingAddress > street2 | Alfanumérico | Max:100 | Línea de dirección 2. | No |
 | transaction > order > shippingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección. | No |
@@ -1423,7 +1441,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 | transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
 | transaction > order > shippingAddress > postalCode | Alfanumérico | Max:8 | Código postal de la dirección. | No |
 | transaction > order > shippingAddress > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
-| transaction > order > buyer |  |  | Información del comprador. | Sí |
+| transaction > order > buyer | Objeto |  | Información del comprador. | Sí |
 | transaction > order > buyer > merchantBuyerId | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
 | transaction > order > buyer > fullName | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
 | transaction > order > buyer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del comprador. | Sí |
@@ -1450,7 +1468,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | Sí |
 | transaction > payer > merchantPayerId | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
 | transaction > payer > fullName | Alfanumérico | Max:150 | Nombre del pagador. | Sí |
-| transaction > payer > billingAddress |  |  | Dirección de facturación. | Sí |
+| transaction > payer > billingAddress | Objeto |  | Dirección de facturación. | Sí |
 | transaction > payer > billingAddress > street1 | Alfanumérico | Max:100 | Línea 1 de la dirección de facturación. | Sí |
 | transaction > payer > billingAddress > street2 | Alfanumérico | Max:100 | Línea 2 de la dirección de facturación. | No |
 | transaction > payer > billingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección de facturación. | Sí |
@@ -1473,15 +1491,15 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse |  |  | Datos de la respuesta. |
+| transactionResponse | Objeto |  | Datos de la respuesta. |
 | transactionResponse > orderId | Numérico |  | Identificador generado o existente de la orden en PayU. |
 | transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
 | transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. Como el pago se realiza de forma externa, el estado de una transacción exitosa es `PENDING` |
@@ -1493,12 +1511,13 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 | transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_PAYMENT_IN_ENTITY`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
 | transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
-| transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados a la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"SPEI_CLABE_ACCOUNT_NUMBER": "646180132800000009"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>SPEI_CLABE_ACCOUNT_NUMBER</string>`<br>&emsp;&emsp;`<string>646180132800000009</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
-| transactionResponse > additionalInfo |  |  | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
+| transactionResponse > extraParameters | Objeto |  | Parámetros adicionales o datos asociados a la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"SPEI_CLABE_ACCOUNT_NUMBER": "646180132800000009"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>SPEI_CLABE_ACCOUNT_NUMBER</string>`<br>&emsp;&emsp;`<string>646180132800000009</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > additionalInfo | Objeto |  | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
 
 </details>
 
-#### Consideraciones {#considerations-3}
+#### Consideraciones {#considerations-4}
+
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * Cuando el pagador selecciona este método de pago, PayU crea una orden en estado _in progress_ y una transacción en estado pendiente (`PENDING`).
 * Para realizar el pago, el pagador debe iniciar sesión en la sucursal virtual de su banco (el banco debe aparecer en la lista de bancos disponibles de SPEI).<br>Primero, el pagador debe registrar la cuenta CLABE de PayU en la sucursal de su banco. Una vez la cuenta CLABE esté activa para realizar transferencias, el pagador debe ingresar en su sucursal virtual, la referencia retornada por PayU en el parámetro `trazabilityCode` y el monto tal y como PayU lo retornó.
@@ -1508,14 +1527,15 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
   - **SPEI_CLABE_ACCOUNT_NUMBER**: es la CLABE interbancaria de PayU, es decir, la cuenta donde se transfiere el monto. El pagador debe registrar esta CLABE como beneficiario en la sucursal de su banco antes de realizar la transferencia.
   - **SPEI_BANK_NAME**: nombre del banco asociado a la cuenta CLABE de PayU. La cuenta beneficiaria está asociada al banco STP y para PayU siempre es el mismo banco.
 
-### Llamado del API {#api-call-1}
+### Llamado a la API {#api-call-1}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -1595,7 +1615,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1642,7 +1662,7 @@ Ejemplo respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -1725,7 +1745,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1775,31 +1795,33 @@ Ejemplo respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar transacciones con referencia bancaria {#submit-transaction-with-bank-reference}
+## Enviar Transacciones Utilizando Referencia Bancaria {#submit-transactions-using-bank-reference}
+
 Este método te permite procesar los pagos realizados por tus clientes por medio de referencia bancaria. Para integrarte con las transacciones con referencia bancaria, debes redirigir a tu cliente a la URL que se encuentra en la respuesta.
 
 <img src="/assets/Payments/BankReferenceReceiptMX.png" alt="PrintScreen" width="50%">
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-3}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-3}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
 | test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
+| merchant | Objeto |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > order |  |  | Este objeto tiene los datos de la orden. | Sí |
+| transaction | Objeto |  | Este objeto tiene los datos de la transacción. | Sí |
+| transaction > order | Objeto |  | Este objeto tiene los datos de la orden. | Sí |
 | transaction > order > accountId | Numérico |  | Identificador de tu cuenta. | Sí |
 | transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Representa el identificador de la orden en tu sistema. | Sí |
 | transaction > order > description | Alfanumérico | Min:1 Max:255 | Descripción de la orden. | Sí |
@@ -1807,7 +1829,7 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
 | transaction > order > notifyUrl | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No|
 | transaction > order > partnerId | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
 | transaction > order > signature | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
-| transaction > order > shippingAddress |  |  | Dirección de envío. | No |
+| transaction > order > shippingAddress | Objeto |  | Dirección de envío. | No |
 | transaction > order > shippingAddress > street1 | Alfanumérico | Max:100 | Línea de dirección 1. | No |
 | transaction > order > shippingAddress > street2 | Alfanumérico | Max:100 | Línea de dirección 2. | No |
 | transaction > order > shippingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección. | No |
@@ -1815,7 +1837,7 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
 | transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
 | transaction > order > shippingAddress > postalCode | Alfanumérico | Max:8 | Código postal de la dirección. | No |
 | transaction > order > shippingAddress > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
-| transaction > order > buyer |  |  | Información del comprador. | Sí |
+| transaction > order > buyer | Objeto |  | Información del comprador. | Sí |
 | transaction > order > buyer > merchantBuyerId | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
 | transaction > order > buyer > fullName | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
 | transaction > order > buyer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del comprador. | Sí |
@@ -1828,7 +1850,7 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
 | transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
 | transaction > order > buyer > shippingAddress > postalCode | Numérico | Max:20 | Código postal de la dirección del comprador. | Sí |
 | transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
-| transaction > order > additionalValues > |  | 64 | Monto de la orden y sus valores asociados. | Sí |
+| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
 | transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
 | transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
@@ -1838,11 +1860,11 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer |  |  | Información del pagador. | Sí |
+| transaction > payer | Objeto |  | Información del pagador. | Sí |
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | Sí |
 | transaction > payer > merchantPayerId | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
 | transaction > payer > fullName | Alfanumérico | Max:150 | Nombre del pagador. | Sí |
-| transaction > payer > billingAddress |  |  | Dirección de facturación. | Sí |
+| transaction > payer > billingAddress | Objeto |  | Dirección de facturación. | Sí |
 | transaction > payer > billingAddress > street1 | Alfanumérico | Max:100 | Línea 1 de la dirección de facturación. | Sí |
 | transaction > payer > billingAddress > street2 | Alfanumérico | Max:100 | Línea 2 de la dirección de facturación. | No |
 | transaction > payer > billingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección de facturación. | Sí |
@@ -1861,15 +1883,15 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse |  |  | Datos de la respuesta. |
+| transactionResponse | Objeto |  | Datos de la respuesta. |
 | transactionResponse > orderId | Numérico |  | Identificador generado o existente de la orden en PayU. |
 | transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
 | transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. Como el pago se realiza de forma externa, el estado de una transacción exitosa es `PENDING` |
@@ -1881,12 +1903,13 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
 | transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_PAYMENT_IN_ENTITY`. |
 | transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
 | transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
-| transactionResponse > extraParameters |  |  | Parámetros adicionales o datos asociados a la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"SPEI_CLABE_ACCOUNT_NUMBER": "646180132800000009"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>SPEI_CLABE_ACCOUNT_NUMBER</string>`<br>&emsp;&emsp;`<string>646180132800000009</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
-| transactionResponse > additionalInfo |  |  | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
+| transactionResponse > extraParameters | Objeto |  | Parámetros adicionales o datos asociados a la respuesta.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"SPEI_CLABE_ACCOUNT_NUMBER": "646180132800000009"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>SPEI_CLABE_ACCOUNT_NUMBER</string>`<br>&emsp;&emsp;`<string>646180132800000009</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > additionalInfo | Objeto |  | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
 
 </details>
 
-#### Consideraciones {#considerations-4}
+#### Consideraciones {#considerations-5}
+
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * El parámetro `transactionResponse.extraParameters` tiene los siguientes parámetros relacionados con la transacción:
    - **REFERENCE**: referencia de pago interna generada por PayU.
@@ -1895,14 +1918,15 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
    - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago con referencia bancaria.
    - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
 
-### Llamado del API {#api-call-2}
+### Llamado a la API {#api-call-2}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "language": "es",
@@ -1979,7 +2003,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2024,7 +2048,7 @@ Ejemplo respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>es</language>
@@ -2104,7 +2128,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -2144,36 +2168,38 @@ Ejemplo respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-## Consultar métodos de pago disponibles {#available-payment-methods-query}
+## Consultar Métodos de Pago Disponibles {#available-payment-methods-query}
+
 Este método retorna la lista de los métodos de pago disponibles en todos los países.
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-4}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-4}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción | Obligatorio | 
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio | 
 |-|-|-|-|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `GET_PAYMENT_METHODS`. | Sí |
 | test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
+| merchant | Objeto |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
 | code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. | Sí |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. | Sí |
@@ -2185,14 +2211,14 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 
 </details>
 
-### Llamado del API {#api-call-3}
+### Llamado a la API {#api-call-3}
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.  
 
 {{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "test": false,
@@ -2206,7 +2232,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2235,7 +2261,7 @@ Ejemplo respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>en</language>
@@ -2249,7 +2275,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -2273,16 +2299,17 @@ Ejemplo respuesta:
 {{< /tabs >}}
 
 ## Ping
+
 El método `PING` te permite verificar la conexión con nuestra plataforma.
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-5}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-5}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción | Obligatorio |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `PING`. | Sí |
@@ -2294,25 +2321,26 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Nombre del campo | Descripción |
+| Nombre del Campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
 | transactionResponse |  | Max:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
-### Llamado del API {#api-call-4}
+### Llamado a la API {#api-call-4}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
 {{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```JSON
 {
    "test": false,
@@ -2326,7 +2354,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2340,7 +2368,7 @@ Ejemplo respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo petición:
+Ejemplo de una Solicitud:
 ```XML
 <request>
    <language>en</language>
@@ -2354,7 +2382,7 @@ Ejemplo petición:
 ```
 <br>
 
-Ejemplo respuesta:
+Ejemplo de una Respuesta:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -2362,4 +2390,3 @@ Ejemplo respuesta:
 ```
 {{< /tab >}}
 {{< /tabs >}}
-

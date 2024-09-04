@@ -3,43 +3,51 @@ title: "Payments API - Mexico"
 linkTitle: "Payments API - Mexico"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  Payments API Mexico lets your shop process different transaction types with multiple payment methods.
+  The Payments API for Mexico allows you to efficiently integrate PayU's payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit cards, debit cards, bank transfers, and bank reference.
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
-To integrate with Payments API Mexico, target your request to the following URLs according to your environment.
+This guide shows you how to leverage these services to enhance your customers' payment experience by providing flexible and secure payment options tailored to the local market.
 
-{{% alert title="URL" color="info"%}}
-* Test: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
+{{% alert title="Note" color="info"%}}
+
+To integrate the Payments API, direct your requests to the following URLs according to the corresponding environment:
+* Testing: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Production: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-## Available methods
+## Available Methods
+
 Payments API includes the following methods:
 
-* [Submit transaction with credit or debit cards]({{< ref "Payments-API-Mexico.md#submit-transaction-with-credit-or-debit-card" >}})
-* [Submit transaction with cash]({{< ref "Payments-API-Mexico.md#submit-transaction-with-cash" >}})
-* [Submit transaction with bank transfer]({{< ref "Payments-API-Mexico.md#submit-transaction-with-bank-transfer" >}})
-* [Submit transaction with bank reference]({{< ref "Payments-API-Mexico.md#submit-transaction-with-bank-reference" >}})
+* [Submit Transactions Using Credit or Debit Cards]({{< ref "Payments-API-Mexico.md#submit-transaction-with-credit-or-debit-card" >}})
+* [Submit Transactions Using Cash]({{< ref "Payments-API-Mexico.md#submit-transaction-with-cash" >}})
+* [Submit Transactions Using Bank Transfer]({{< ref "Payments-API-Mexico.md#submit-transaction-with-bank-transfer" >}})
+* [Submit Transactions Using Bank Reference]({{< ref "Payments-API-Mexico.md#submit-transaction-with-bank-reference" >}})
 * [Available payment methods query]({{< ref "Payments-API-Mexico.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Mexico.md#ping" >}})
 
 {{% alert title="Note" color="info"%}}
+
 To confirm the status of a transaction, you can use one of the following options:
 * Navigate to the the URL set in the `transaction.notifyUrl` variable or the _**Confirmation URL**_ option located in the PayU Module in _**Settings**_ > _**Technical configuration**_.
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
+
 {{% /alert %}}
 
-## Submit transaction with credit or debit card
+## Submit Transactions Using Credit or Debit Cards
+
 This method lets you process the payments performed by your customers using credit or debit cards. For Mexico, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Note" color="info"%}}
 Two-step flows are only supported for Mastercard and Visa.
 {{% /alert %}}
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -47,7 +55,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -142,7 +150,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -163,6 +171,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </details>
 
 #### Considerations
+
 * Two-step flows are only available for Mastercard and Visa.
 * For payments with Promotions, send the extra parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
 * For payments with Months Without Interests (Meses Sin Intereses - MSI), send the extra parameter `INSTALLMENTS_NUMBER` with the number of months. Refer to [MSI]({{< ref "Promotions.md#months-without-interests-msi---meses-sin-intereses" >}}) for more information.
@@ -174,13 +183,14 @@ Two-step flows are only supported for Mastercard and Visa.
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 
 ### Authorization
+
 Use this method to perform the **Authorization** step of a two-step flow using Mastercard or Visa. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-api-mexico.md#capture" >}}) the funds.<br>The following are the request and response bodies for this transaction type.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -268,7 +278,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -311,7 +321,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -405,7 +415,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -442,13 +452,16 @@ Response body:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
 ### Capture
+
 Use this method to perform the **Capture** step of a two-step flow for Mastercard and Visa. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-mexico.md#authorization" >}}) to transfer them to your PayU account.
 
 #### Considerations
+
 Take into account the following considerations for capture.
 * The maximum time to capture an approved transaction is 30 days. After this time, the transaction is auto voided.
 * Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Recall that the order and transaction ids must meet with a currently authorized transaction.
@@ -460,7 +473,7 @@ The following are the request and response bodies for this transaction type.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -481,7 +494,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -523,7 +536,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -544,7 +557,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -576,6 +589,7 @@ Response body:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -730,6 +744,7 @@ Response Example:
 {{< /tabs >}}
 
 ### Charge
+
 Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
 
 The following are the request and response bodies for this transaction type.
@@ -738,7 +753,7 @@ The following are the request and response bodies for this transaction type.
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -826,7 +841,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -868,7 +883,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -962,7 +977,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -998,12 +1013,13 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with cash
+## Submit Transactions Using Cash
+
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.
 
 <img src="/assets/Payments/CashReceiptMX.png" alt="PrintScreen" width="50%">
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -1011,7 +1027,7 @@ This method lets you process the payments in cash of your customers. To integrat
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -1088,7 +1104,7 @@ This method lets you process the payments in cash of your customers. To integrat
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -1110,6 +1126,7 @@ This method lets you process the payments in cash of your customers. To integrat
 </details>
 
 #### Considerations
+
 * The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * When the payment method is `OXXO`, the confirmation of the payment will be one day after the payment. For other cash payment methods, the confirmation is online.
 * The parameter `transactionResponse.extraParameters` has the following parameters related to the transaction:
@@ -1121,14 +1138,15 @@ This method lets you process the payments in cash of your customers. To integrat
    - **URL_PAYMENT_RECEIPT_PDF**: payment receipt in PDF format.
    - **PAYMENT_WAY_ID**: network payment of the payment type.
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this payment method.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -1205,7 +1223,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1252,7 +1270,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -1333,7 +1351,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1381,16 +1399,18 @@ Response body:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with bank transfer
+## Submit Transactions Using Bank Transfer
+
 This method lets you process the bank transfer payments of your customers. When using this payment method, the payer performs a bank transfer from their bank account to a PayU's CLABE account.<br>
 To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
 
 <img src="/assets/Payments/BankTransferReceiptMX.png" alt="PrintScreen" width="50%">
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -1398,7 +1418,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -1477,7 +1497,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -1499,6 +1519,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </details>
 
 #### Considerations
+
 * The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * When the payer selects this payment method, PayU creates an order in _in progress_ state and a transaction in `PENDING` state.
 * To perform the payment, the payer must log in the virtual branch of their bank (The bank must appear in the list of SPEI available banks). <br>First, the payer must register the PayU CLABE account in their bank branch. Once the PayU CLABE account is enabled to perform transfers, the payer must provide the reference returned by PayU in the parameter `trazabilityCode` and the amount as returned by PayU in their virtual branch.
@@ -1508,14 +1529,15 @@ To integrate with these transactions, you must redirect the customer to the URL 
   - **SPEI_CLABE_ACCOUNT_NUMBER**: is the PayU's interbank CLABE, namely, the account where the amount will be transferred. The payer must register this CLABE as beneficiary in their bank branch before performing the transfer.
   - **SPEI_BANK_NAME**: name associated with the PayU CLABE account. The beneficiary account is associated with the STP bank and it's always the same bank for PayU.
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this payment method.
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -1595,7 +1617,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1642,7 +1664,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -1725,7 +1747,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1778,12 +1800,13 @@ Response body:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Submit transaction with bank reference
+## Submit Transactions Using Bank Reference
+
 This method lets you process payments of your customers using bank references. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
 
 <img src="/assets/Payments/BankReferenceReceiptMX.png" alt="PrintScreen" width="50%">
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -1791,7 +1814,7 @@ This method lets you process payments of your customers using bank references. T
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
@@ -1829,7 +1852,7 @@ This method lets you process payments of your customers using bank references. T
 | transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Yes |
 | transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. | Yes |
 | transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. | Yes |
-| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Yes |
+| transaction > order > additionalValues > | Object | 64 | Amount of the order or its associated values. | Yes |
 | transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. | Yes |
 | transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Yes |
 | transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
@@ -1866,7 +1889,7 @@ This method lets you process payments of your customers using bank references. T
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
@@ -1888,6 +1911,7 @@ This method lets you process payments of your customers using bank references. T
 </details>
 
 #### Considerations
+
 * The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven (7) days after the current date.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
 * The parameter `transactionResponse.extraParameters` has the following parameters related to the transaction:
    - **REFERENCE**: internal payment reference generated by PayU.
@@ -1896,14 +1920,15 @@ This method lets you process payments of your customers using bank references. T
    - **URL_PAYMENT_RECEIPT_HTML**: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects bank reference payment. 
    - **URL_PAYMENT_RECEIPT_PDF**: payment receipt in PDF format.
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this payment method.
 
 {{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -1980,7 +2005,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2025,7 +2050,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -2105,7 +2130,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -2145,20 +2170,22 @@ Response body:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
-## Available payment methods query
+## Available Payment Methods Query
+
 This method returns a list of the payment methods available in all countries.
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory | 
+| Field Name | Format | Size | Description | Mandatory | 
 |-|-|-|-|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `GET_PAYMENT_METHODS`. | Yes |
@@ -2174,7 +2201,7 @@ This method returns a list of the payment methods available in all countries.
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |-|-|-|-|:-:|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. | Yes |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. | Yes |
@@ -2186,14 +2213,15 @@ This method returns a list of the payment methods available in all countries.
 
 </details>
 
-### API call
+### API Call
+
 The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
 {{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "test": false,
@@ -2207,7 +2235,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2236,7 +2264,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>en</language>
@@ -2250,7 +2278,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -2274,16 +2302,17 @@ Response body:
 {{< /tabs >}}
 
 ## Ping
+
 The ```PING``` method lets you verify the connection to our platform. 
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |-|-|-|-|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `PING`. | Yes |
@@ -2299,21 +2328,22 @@ The ```PING``` method lets you verify the connection to our platform.
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. |
 | transactionResponse |  | Max:2048 | The response of the PING method if an error ocurred. |
 </details>
 
-### Api call
+### API Call
+
 The following are the bodies of the request and response of this method.
 
 {{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request body:
+Request Example:
 ```JSON
 {
    "test": false,
@@ -2327,7 +2357,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -2341,7 +2371,7 @@ Response body:
 {{< tab tabNum="2" >}}
 <br>
 
-Request body:
+Request Example:
 ```XML
 <request>
    <language>en</language>
@@ -2355,7 +2385,7 @@ Request body:
 ```
 <br>
 
-Response body:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>

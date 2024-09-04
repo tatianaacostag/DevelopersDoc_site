@@ -31,7 +31,7 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é:
    - 87 dias para transações com PIX.
    - 172 dias para transações processadas com cartão.
-* Apenas um reembolso por transação é permitido ao usar o PIX.
+* A integração suporta múltiplos reembolsos parciais para PIX.
 * Quando um reembolso é aprovado para transações PIX, o pagador recebe o dinheiro imediatamente. Caso contrário, o pagador recupera em no máximo 15 dias úteis.
 
 ### Chile
