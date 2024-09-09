@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Technical Configuration | PayU Latam</title><meta property="og:title" content="Technical Configuration" />
-<meta property="og:description" content="Find here all the details that help you to integrate your Website using any of the [integrations](/en/docs/integrations.html) we provide.
+<meta property="og:description" content="This guide provides essential details for integrating your website using any of the [integration methods](/en/docs/integrations.html) we offer.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html" /><meta property="article:section" content="PayU Module Documentation" />
 <meta property="article:published_time" content="2021-08-13T12:19:55-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-09-04T17:00:40-05:00" />
 
 <meta itemprop="name" content="Technical Configuration">
-<meta itemprop="description" content="Find here all the details that help you to integrate your Website using any of the [integrations](/en/docs/integrations.html) we provide.
+<meta itemprop="description" content="This guide provides essential details for integrating your website using any of the [integration methods](/en/docs/integrations.html) we offer.
 "><meta itemprop="datePublished" content="2021-08-13T12:19:55-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="458">
+<meta itemprop="dateModified" content="2024-09-04T17:00:40-05:00" />
+<meta itemprop="wordCount" content="522">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Technical Configuration"/>
-<meta name="twitter:description" content="Find here all the details that help you to integrate your Website using any of the [integrations](/en/docs/integrations.html) we provide.
+<meta name="twitter:description" content="This guide provides essential details for integrating your website using any of the [integration methods](/en/docs/integrations.html) we offer.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.10c81fe88d2699cfae5830d17e4124b5c23ca98e56ef268706a965013ef2be4e6268ce8079aac6cd8a7f4d389f41ba2d77d4ff1cb77f91ff0e8ec3ea231b549e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -460,13 +460,13 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#getting-technical-information">Getting Technical information</a>
+    <li><a href="#technical-information-overview">Technical Information Overview</a>
       <ul>
-        <li><a href="#merchant-and-account-ids">Merchant and account IDs</a></li>
-        <li><a href="#api-key-and-api-login">API key and API Login</a></li>
+        <li><a href="#merchant-and-account-ids">Merchant and Account IDs</a></li>
+        <li><a href="#api-key-and-api-login">API Key and API Login</a></li>
       </ul>
     </li>
-    <li><a href="#configuring-technical-information">Configuring technical information</a>
+    <li><a href="#configuring-technical-information">Configuring Technical Information</a>
       <ul>
         <li><a href="#payments">Payments</a></li>
         <li><a href="#disputes">Disputes</a></li>
@@ -529,44 +529,49 @@
             
 <div class="td-content">
 	<h1>Technical Configuration</h1>
-    <div class="lead">Find here all the details that help you to integrate your Website using any of the <a href="../../../../en/docs/integrations.html">integrations</a> we provide.</div>
+    <div class="lead">This guide provides essential details for integrating your website using any of the <a href="../../../../en/docs/integrations.html">integration methods</a> we offer.</div>
 	       
-	<h2 id="getting-technical-information">Getting Technical information</h2>
-<p>Regardless of the <a href="../../../../en/docs/integrations.html">integration</a> you use, you require the following variables in the request of the methods or in their parameters.</p>
-<h3 id="merchant-and-account-ids">Merchant and account IDs</h3>
-<p>These values allows you to authenticate both your merchant and your account when using any of the integrations to use the services we provide.</p>
-<p>When you log in your PayU module, both values are accessible in the left panel.</p>
+	<h2 id="technical-information-overview">Technical Information Overview</h2>
+<p>No matter which <a href="../../../../en/docs/integrations.html">integration method</a> you choose, certain technical details are required to ensure successful integration. This document outlines the key variables and settings you need to configure.</p>
+<h3 id="merchant-and-account-ids">Merchant and Account IDs</h3>
+<p>These identifiers are crucial for authenticating your merchant account with PayU. You can locate them in the left panel of the management site after logging in.</p>
 <img src="../../../../assets/Merchant_Ids.png" alt="PrintScreen" width="60%"/>
-<h3 id="api-key-and-api-login">API key and API Login</h3>
+<h3 id="api-key-and-api-login">API Key and API Login</h3>
+<p>To find your API key and API login:</p>
 <ol>
-<li>In the PayU module, click <em><strong>Settings</strong></em> and then select <em><strong>Technical configuration</strong></em>.</li>
+<li>
+<p>Log in to your Management Panel.</p>
+</li>
+<li>
+<p>Navigate to <em><strong>Settings</strong></em> and select <em><strong>Technical Configuration</strong></em>.</p>
+</li>
 </ol>
 <p><img src="../../../../assets/IntegrationVariables_01.png" alt="PrintScreen"></p>
-<ol start="2">
-<li>In this window, you find both the API key and API Login which allows you to authenticate you commerce during the integration procedure.</li>
+<ol start="3">
+<li>On the right panel, find both, the API key and API Login, necessary to authenticate your transactions during integration.</li>
 </ol>
 <p><img src="../../../../assets/IntegrationVariables_02.png" alt="PrintScreen"></p>
 
 
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Warning</h4>
-Both keys are unique per commerce in PayU, therefore, you must keep this information secured and their usage or disclosure is under your responsibility.
+Your API key and API login are unique to your PayU account. Ensure that these credentials are kept secure, as their misuse or unauthorized disclosure is your responsibility.
 </div>
 
-<h2 id="configuring-technical-information">Configuring technical information</h2>
-<p>In this section, you can configure the technical properties of each active account, such as:</p>
+<h2 id="configuring-technical-information">Configuring Technical Information</h2>
+<p>You can customize various technical settings for each active account, including:</p>
 <ul>
-<li>URL settings for confirmation and response pages.</li>
-<li>Enable the send e-mails to the buyer and to your store when a sale takes place.</li>
-<li>Enable notifications for Disputes process.</li>
-<li>Select if your payments are processed in test mode or live.</li>
+<li>URLs for confirmation and response pages.</li>
+<li>Email notifications for buyers and your store.</li>
+<li>Dispute process notifications.</li>
+<li>Selection of test mode or live transactions.</li>
 </ul>
-<p>To configure this information, click <em><strong>Settings</strong></em> and then select <em><strong>Technical configuration</strong></em>.</p>
+<p>To configure these settings, go to <em><strong>Settings</strong></em> &gt; <em><strong>Technical Configuration</strong></em>.</p>
 <p><img src="../../../../assets/IntegrationVariables_01.png" alt="PrintScreen"></p>
-<p>In the <em><strong>Technical configuration</strong></em> window, you find two tab according to your needs: <em><strong>Payments</strong></em> or <em><strong>Disputes</strong></em>.</p>
+<p>In the <em><strong>Technical configuration</strong></em> window, you find two tab according to your needs: <em><strong>Payments</strong></em> and <em><strong>Disputes</strong></em>.</p>
 <p><img src="../../../../assets/TechnicalInformation/TechnicalInformation_01.png" alt="PrintScreen"></p>
 <h3 id="payments">Payments</h3>
-<p>In this tab, you can configure the following information.</p>
+<p>In the <em><strong>Payments</strong></em> tab, you can configure the following:</p>
 <p><img src="../../../../assets/TechnicalInformation/TechnicalInformation_02.png" alt="PrintScreen"></p>
 <div class="variables"></div>
 <table>
@@ -579,28 +584,28 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 <tbody>
 <tr>
 <td>Your payments are processed</td>
-<td>Select whether your transactions are processed <em>In Production</em> or <em>In Test mode</em>. When processing <em>In Test mode</em>, the transactions done through your website or through payment requests, are marked as a test and the payment is not real.</td>
+<td>Choose whether your transactions are processed <em>In Production</em> or <em>In Test Mode</em>. Transactions processed in <em>Test Mode</em> are marked as tests and are not real.</td>
 </tr>
 <tr>
 <td>Response URL</td>
-<td>The page to which the buyer is direct once the transaction in PayU ends. This page displays the status of the transaction.</td>
+<td>The URL where buyers are redirected after completing a transaction. This page displays the transaction status.</td>
 </tr>
 <tr>
 <td>Confirmation URL</td>
-<td>The page to which PayU sends the payment confirmation to your system. This is useful when you want to update stocks and database once the transaction reaches its final state.<br>This parameter is not mandatory.</td>
+<td>The URL where PayU sends the payment confirmation to your system. Use this to update inventory or databases when a transaction reaches its final state. This parameter is optional.</td>
 </tr>
 <tr>
-<td>Control duplicate payments</td>
-<td>When enabling this option, We validate that each payment reference sent to our system is unique. Otherwise, you can send the same reference for all your sales.</td>
+<td>Control duplicate payments / Only for approved sales</td>
+<td><li><b>Control duplicate payments:</b> If you enable this option, the reference can only be used once, regardless of the transaction outcome (approved, declined, pending).</li> <li><b>Only for approved sales:</b> If you check this box, a reference can only be reused if the previous transaction was declined. If the previous transaction was pending or approved, the reference cannot be reused.</li> <li><b>Control duplicate payments + Only for approved sales:</b> If you enable both features, the reference can only be used once (the rule &ldquo;Validate unique reference for all statuses&rdquo; takes precedence).</li> <li><b>Both boxes disabled:</b> The reference can be reused multiple times, regardless of the transaction outcome. Note that having both options disabled may affect reconciliation, as the same reference could appear multiple times with different statuses.</li> <br> <b>Note:</b><br> Retry time: If you need to resend a reference, wait for a response from PayU or at least 60 seconds.</td>
 </tr>
 <tr>
 <td>Notifications of processed payments</td>
-<td>This option lets you enable the send of an e-mail to the payer or to you when the payment was approved or rejected.</td>
+<td>Enable email notifications to be sent to the buyer or your store when a payment is approved or rejected.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="disputes">Disputes</h3>
-<p>In this tab, you can configure the following information of the <a href="../../../../en/payu-module-documentation/payu-operations/disputes-mp.html">dispute</a> process.</p>
+<p>In the <em><strong>Disputes</strong></em> tab, you can configure settings related to the <a href="../../../../en/payu-module-documentation/payu-operations/disputes-mp.html">dispute process</a>.</p>
 <p><img src="../../../../assets/TechnicalInformation/TechnicalInformation_03.png" alt="PrintScreen"></p>
 <div class="variables"></div>
 <table>
@@ -613,11 +618,11 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 <tbody>
 <tr>
 <td>Notification e-mails</td>
-<td>Set the e-mail addresses to be notified when a dispute process has been started.</td>
+<td>Set the email addresses to be notified when a dispute is initiated.</td>
 </tr>
 <tr>
 <td>Automatic notification URL</td>
-<td>If you enable this option, you can set the URL to which PayU sends the notification of a dispute process.</td>
+<td>If enabled, set the URL where PayU will send notifications about dispute processes.</td>
 </tr>
 </tbody>
 </table>
@@ -625,7 +630,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Note</h4>
-To apply the changes you made, do not forget to click the <em><strong>Save changes</strong></em> button.
+Remember to click the <em><strong>Save changes</strong></em> button to apply any updates you make.
 </div>
 
 
@@ -634,9 +639,9 @@ To apply the changes you made, do not forget to click the <em><strong>Save chang
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-June 24, 2022:
+September 4, 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation Updates (0b93c153b)</b>
 </div>
 </div>
 

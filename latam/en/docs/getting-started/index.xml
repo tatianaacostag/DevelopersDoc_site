@@ -760,56 +760,61 @@
   }
   window.addEventListener(&#39;DOMContentLoaded&#39;, openTarget);
 &lt;/script&gt;
-&lt;p&gt;If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:&lt;/p&gt;
+&lt;p&gt;To conduct tests with PayU, use the credentials provided below in your requests, depending on the country your account is associated with.&lt;/p&gt;
 &lt;table&gt;
-    &lt;thead&gt;
-    &lt;tr&gt;
-        &lt;th&gt;Merchant ID&lt;/th&gt;
-        &lt;th&gt;API Login&lt;/th&gt;
-        &lt;th&gt;API Key&lt;/th&gt;
-        &lt;th&gt;Public Key&lt;/th&gt;
-        &lt;th&gt;accountId&lt;/th&gt;
-        &lt;th&gt;Country&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-    &lt;tr&gt;
-        &lt;td rowspan=&#34;7&#34;&gt;508029&lt;/td&gt;
-        &lt;td rowspan=&#34;7&#34;&gt;pRRXKOl8ikMmt9u&lt;/td&gt;
-        &lt;td rowspan=&#34;7&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/td&gt;
-        &lt;td rowspan=&#34;7&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/td&gt;
-        &lt;td&gt;512322&lt;/td&gt;
-        &lt;td&gt;Argentina&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;512327&lt;/td&gt;
-        &lt;td&gt;Brazil&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;512325&lt;/td&gt;
-        &lt;td&gt;Chile&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;512321&lt;/td&gt;
-        &lt;td&gt;Colombia&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;512324&lt;/td&gt;
-        &lt;td&gt;Mexico&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;512326&lt;/td&gt;
-        &lt;td&gt;Panama&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;512323&lt;/td&gt;
-        &lt;td&gt;Peru&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;/tbody&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th style=&#34;text-align: center;&#34;&gt;Argentina&lt;br/&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+    &lt;th style=&#34;text-align: center;&#34;&gt;Brazil&lt;br/&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+    &lt;th style=&#34;text-align: center;&#34;&gt;Chile&lt;br/&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+    &lt;th style=&#34;text-align: center;&#34;&gt;Colombia&lt;br/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+    &lt;th style=&#34;text-align: center;&#34;&gt;Mexico&lt;br/&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+    &lt;th style=&#34;text-align: center;&#34;&gt;Panama&lt;br/&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+    &lt;th style=&#34;text-align: center;&#34;&gt;Peru&lt;br/&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Account ID&lt;/th&gt;
+    &lt;td style=&#34;text-align: center;&#34;&gt;512322&lt;/td&gt;
+    &lt;td style=&#34;text-align: center;&#34;&gt;512327&lt;/td&gt;
+    &lt;td style=&#34;text-align: center;&#34;&gt;512325&lt;/td&gt;
+    &lt;td style=&#34;text-align: center;&#34;&gt;512321&lt;/td&gt;
+    &lt;td style=&#34;text-align: center;&#34;&gt;512324&lt;/td&gt;
+    &lt;td style=&#34;text-align: center;&#34;&gt;512326&lt;/td&gt;
+    &lt;td style=&#34;text-align: center;&#34;&gt;512323&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Merchant ID&lt;/th&gt;
+    &lt;td colspan=&#34;7&#34; style=&#34;text-align: center;&#34;&gt;508029&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;API Login&lt;/th&gt;
+    &lt;td colspan=&#34;7&#34; style=&#34;text-align: center;&#34;&gt;pRRXKOl8ikMmt9u&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;API Key&lt;/th&gt;
+    &lt;td colspan=&#34;7&#34; style=&#34;text-align: center;&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Public Key&lt;/th&gt;
+    &lt;td colspan=&#34;7&#34; style=&#34;text-align: center;&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/td&gt;
+  &lt;/tr&gt;  
 &lt;/table&gt;
 
-&lt;p&gt;The test environment does not replicate data from your production account.&lt;/p&gt;
-&lt;h2 id=&#34;test-cards&#34;&gt;Test cards&lt;/h2&gt;
+  
+
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Notes&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication&#34; target=&#34;_blank&#34;&gt;PayU-Handled 3DS Authentication&lt;/a&gt; documentation to find the credentials for testing 3DS.&lt;/li&gt;
+&lt;li&gt;The test environment does not replicate data from your production account.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;test-cards&#34;&gt;Test Cards&lt;/h2&gt;
 &lt;p&gt;You can use the following cards for testing:&lt;/p&gt;
 &lt;details id=&#34;argentina&#34;&gt;
 &lt;summary&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; Argentina&lt;/summary&gt;
@@ -1108,7 +1113,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
-&lt;h3 id=&#34;testing-status&#34;&gt;Testing status&lt;/h3&gt;
+&lt;h3 id=&#34;testing-statuses&#34;&gt;Testing Statuses&lt;/h3&gt;
 &lt;p&gt;When testing Payments, you must send in the request:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;To get &lt;em&gt;approved&lt;/em&gt; transactions&lt;/strong&gt;:
@@ -1155,10 +1160,10 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/script&gt; &lt;!-- Buscar en la carpeta layouts/shortcodes --&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;After you run the collection, you need to set the environment variables and the globals.&lt;/p&gt;
-&lt;h3 id=&#34;setting-your-environment-variables&#34;&gt;Setting your Environment Variables&lt;/h3&gt;
+&lt;h3 id=&#34;setting-your-environment-variables&#34;&gt;Setting Your Environment Variables&lt;/h3&gt;
 &lt;p&gt;Our collection has one environment named &lt;code&gt;PayU API Sandbox&lt;/code&gt;. We recommend you invoke the collection’s API requests in a Sandbox environment only.&lt;/p&gt;
 &lt;p&gt;If you want to change the PayU&amp;rsquo;s testing accounts, configure the &lt;code&gt;api_key&lt;/code&gt;, &lt;code&gt;api_login&lt;/code&gt;, &lt;code&gt;merchant_id&lt;/code&gt; and &lt;code&gt;account-[country]&lt;/code&gt; variables. You can leave all the other variables unchanged.&lt;/p&gt;
-&lt;h3 id=&#34;importing-globals&#34;&gt;Importing globals&lt;/h3&gt;
+&lt;h3 id=&#34;importing-globals&#34;&gt;Importing Globals&lt;/h3&gt;
 &lt;p&gt;Globals are the variables required to process transactions in our Payment gateway such as currency, transaction amount, confirmation and response pages and more.&lt;/p&gt;
 &lt;p&gt;Import the globals for the collection to configure the values sent to the requests.&lt;/p&gt;
 &lt;ol&gt;

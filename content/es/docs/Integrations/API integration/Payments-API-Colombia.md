@@ -106,7 +106,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el IVA.<br>Si la cantidad está exenta de IVA, envía 0.<br>Este valor puede tener dos dígitos decimales  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el valor base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId | | | Incluye este parámetro cuando la transacción se hace con una tarjeta de crédito tokenizada; además, es obligatorio enviar el parámetro `transaction.creditCard.expirationDate`.<br>Para más información, consulte [API de Tokenización]({{< ref "Tokenization-API.md" >}}). | No |
+| transaction > creditCardTokenId | Alfanumérico | | Incluye este parámetro cuando la transacción se hace con una tarjeta de crédito tokenizada; además, es obligatorio enviar el parámetro `transaction.creditCard.expirationDate`.<br>Para más información, consulte [API de Tokenización]({{< ref "Tokenization-API.md" >}}). | No |
 | transaction > creditCard | Objeto | | Información de la tarjeta de crédito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
 | transaction > creditCard > number | Alfanumérico | Min:13 Máx:20 | Número de la tarjeta de crédito. | No |
 | transaction > creditCard > securityCode | Alfanumérico | Min:1 Máx:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
@@ -2652,7 +2652,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 |-|-|-|-|
 | code | Alfanumérico | | Código de respuesta de la transacción. |
 | error | Alfanumérico | Máx:2048 | Mensaje de error asociado si ocurrió un error. |
-| transactionResponse | transactionResponse | Máx:2048 | La respuesta del método PING si ocurrió un error. |
+| transactionResponse | Objeto | Máx:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
 ### Llamado del API {#api-call-6}

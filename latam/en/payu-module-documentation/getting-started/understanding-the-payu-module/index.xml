@@ -206,42 +206,47 @@ After changing any of the user settings, do not forget to click &lt;em&gt;&lt;st
       <description>
         
         
-        &lt;h2 id=&#34;getting-technical-information&#34;&gt;Getting Technical information&lt;/h2&gt;
-&lt;p&gt;Regardless of the &lt;a href=&#34;../../../../en/docs/integrations.html&#34;&gt;integration&lt;/a&gt; you use, you require the following variables in the request of the methods or in their parameters.&lt;/p&gt;
-&lt;h3 id=&#34;merchant-and-account-ids&#34;&gt;Merchant and account IDs&lt;/h3&gt;
-&lt;p&gt;These values allows you to authenticate both your merchant and your account when using any of the integrations to use the services we provide.&lt;/p&gt;
-&lt;p&gt;When you log in your PayU module, both values are accessible in the left panel.&lt;/p&gt;
+        &lt;h2 id=&#34;technical-information-overview&#34;&gt;Technical Information Overview&lt;/h2&gt;
+&lt;p&gt;No matter which &lt;a href=&#34;../../../../en/docs/integrations.html&#34;&gt;integration method&lt;/a&gt; you choose, certain technical details are required to ensure successful integration. This document outlines the key variables and settings you need to configure.&lt;/p&gt;
+&lt;h3 id=&#34;merchant-and-account-ids&#34;&gt;Merchant and Account IDs&lt;/h3&gt;
+&lt;p&gt;These identifiers are crucial for authenticating your merchant account with PayU. You can locate them in the left panel of the management site after logging in.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/Merchant_Ids.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;
-&lt;h3 id=&#34;api-key-and-api-login&#34;&gt;API key and API Login&lt;/h3&gt;
+&lt;h3 id=&#34;api-key-and-api-login&#34;&gt;API Key and API Login&lt;/h3&gt;
+&lt;p&gt;To find your API key and API login:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;In the PayU module, click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; and then select &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Log in to your Management Panel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navigate to &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; and select &lt;em&gt;&lt;strong&gt;Technical Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;In this window, you find both the API key and API Login which allows you to authenticate you commerce during the integration procedure.&lt;/li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;On the right panel, find both, the API key and API Login, necessary to authenticate your transactions during integration.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
-Both keys are unique per commerce in PayU, therefore, you must keep this information secured and their usage or disclosure is under your responsibility.
+Your API key and API login are unique to your PayU account. Ensure that these credentials are kept secure, as their misuse or unauthorized disclosure is your responsibility.
 &lt;/div&gt;
 
-&lt;h2 id=&#34;configuring-technical-information&#34;&gt;Configuring technical information&lt;/h2&gt;
-&lt;p&gt;In this section, you can configure the technical properties of each active account, such as:&lt;/p&gt;
+&lt;h2 id=&#34;configuring-technical-information&#34;&gt;Configuring Technical Information&lt;/h2&gt;
+&lt;p&gt;You can customize various technical settings for each active account, including:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;URL settings for confirmation and response pages.&lt;/li&gt;
-&lt;li&gt;Enable the send e-mails to the buyer and to your store when a sale takes place.&lt;/li&gt;
-&lt;li&gt;Enable notifications for Disputes process.&lt;/li&gt;
-&lt;li&gt;Select if your payments are processed in test mode or live.&lt;/li&gt;
+&lt;li&gt;URLs for confirmation and response pages.&lt;/li&gt;
+&lt;li&gt;Email notifications for buyers and your store.&lt;/li&gt;
+&lt;li&gt;Dispute process notifications.&lt;/li&gt;
+&lt;li&gt;Selection of test mode or live transactions.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;To configure this information, click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; and then select &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To configure these settings, go to &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Technical Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In the &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt; window, you find two tab according to your needs: &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; or &lt;em&gt;&lt;strong&gt;Disputes&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt; window, you find two tab according to your needs: &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; and &lt;em&gt;&lt;strong&gt;Disputes&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;payments&#34;&gt;Payments&lt;/h3&gt;
-&lt;p&gt;In this tab, you can configure the following information.&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt; tab, you can configure the following:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -254,28 +259,28 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Your payments are processed&lt;/td&gt;
-&lt;td&gt;Select whether your transactions are processed &lt;em&gt;In Production&lt;/em&gt; or &lt;em&gt;In Test mode&lt;/em&gt;. When processing &lt;em&gt;In Test mode&lt;/em&gt;, the transactions done through your website or through payment requests, are marked as a test and the payment is not real.&lt;/td&gt;
+&lt;td&gt;Choose whether your transactions are processed &lt;em&gt;In Production&lt;/em&gt; or &lt;em&gt;In Test Mode&lt;/em&gt;. Transactions processed in &lt;em&gt;Test Mode&lt;/em&gt; are marked as tests and are not real.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Response URL&lt;/td&gt;
-&lt;td&gt;The page to which the buyer is direct once the transaction in PayU ends. This page displays the status of the transaction.&lt;/td&gt;
+&lt;td&gt;The URL where buyers are redirected after completing a transaction. This page displays the transaction status.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Confirmation URL&lt;/td&gt;
-&lt;td&gt;The page to which PayU sends the payment confirmation to your system. This is useful when you want to update stocks and database once the transaction reaches its final state.&lt;br&gt;This parameter is not mandatory.&lt;/td&gt;
+&lt;td&gt;The URL where PayU sends the payment confirmation to your system. Use this to update inventory or databases when a transaction reaches its final state. This parameter is optional.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Control duplicate payments&lt;/td&gt;
-&lt;td&gt;When enabling this option, We validate that each payment reference sent to our system is unique. Otherwise, you can send the same reference for all your sales.&lt;/td&gt;
+&lt;td&gt;Control duplicate payments / Only for approved sales&lt;/td&gt;
+&lt;td&gt;&lt;li&gt;&lt;b&gt;Control duplicate payments:&lt;/b&gt; If you enable this option, the reference can only be used once, regardless of the transaction outcome (approved, declined, pending).&lt;/li&gt; &lt;li&gt;&lt;b&gt;Only for approved sales:&lt;/b&gt; If you check this box, a reference can only be reused if the previous transaction was declined. If the previous transaction was pending or approved, the reference cannot be reused.&lt;/li&gt; &lt;li&gt;&lt;b&gt;Control duplicate payments + Only for approved sales:&lt;/b&gt; If you enable both features, the reference can only be used once (the rule &amp;ldquo;Validate unique reference for all statuses&amp;rdquo; takes precedence).&lt;/li&gt; &lt;li&gt;&lt;b&gt;Both boxes disabled:&lt;/b&gt; The reference can be reused multiple times, regardless of the transaction outcome. Note that having both options disabled may affect reconciliation, as the same reference could appear multiple times with different statuses.&lt;/li&gt; &lt;br&gt; &lt;b&gt;Note:&lt;/b&gt;&lt;br&gt; Retry time: If you need to resend a reference, wait for a response from PayU or at least 60 seconds.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Notifications of processed payments&lt;/td&gt;
-&lt;td&gt;This option lets you enable the send of an e-mail to the payer or to you when the payment was approved or rejected.&lt;/td&gt;
+&lt;td&gt;Enable email notifications to be sent to the buyer or your store when a payment is approved or rejected.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;disputes&#34;&gt;Disputes&lt;/h3&gt;
-&lt;p&gt;In this tab, you can configure the following information of the &lt;a href=&#34;../../../../en/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;dispute&lt;/a&gt; process.&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;&lt;strong&gt;Disputes&lt;/strong&gt;&lt;/em&gt; tab, you can configure settings related to the &lt;a href=&#34;../../../../en/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;dispute process&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -288,11 +293,11 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Notification e-mails&lt;/td&gt;
-&lt;td&gt;Set the e-mail addresses to be notified when a dispute process has been started.&lt;/td&gt;
+&lt;td&gt;Set the email addresses to be notified when a dispute is initiated.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Automatic notification URL&lt;/td&gt;
-&lt;td&gt;If you enable this option, you can set the URL to which PayU sends the notification of a dispute process.&lt;/td&gt;
+&lt;td&gt;If enabled, set the URL where PayU will send notifications about dispute processes.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -300,7 +305,7 @@ Both keys are unique per commerce in PayU, therefore, you must keep this informa
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-To apply the changes you made, do not forget to click the &lt;em&gt;&lt;strong&gt;Save changes&lt;/strong&gt;&lt;/em&gt; button.
+Remember to click the &lt;em&gt;&lt;strong&gt;Save changes&lt;/strong&gt;&lt;/em&gt; button to apply any updates you make.
 &lt;/div&gt;
 
 

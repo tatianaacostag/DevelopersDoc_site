@@ -189,7 +189,7 @@ Luego de realizar cualquier cambio, no olvides hacer clic en &lt;em&gt;&lt;stron
     </item>
     
     <item>
-      <title>PayU Module Documentation: Configuración técnica</title>
+      <title>PayU Module Documentation: Configuración Técnica</title>
       <link>/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html</link>
       <pubDate>Fri, 13 Aug 2021 12:19:55 -0500</pubDate>
       
@@ -197,42 +197,46 @@ Luego de realizar cualquier cambio, no olvides hacer clic en &lt;em&gt;&lt;stron
       <description>
         
         
-        &lt;h2 id=&#34;getting-technical-information&#34;&gt;Obtener la información técnica&lt;/h2&gt;
-&lt;p&gt;Independiente de la &lt;a href=&#34;../../../../es/docs/integrations.html&#34;&gt;integración&lt;/a&gt; que utilices, necesitas las siguientes variables en la petición de los métodos o en sus parámetros.&lt;/p&gt;
-&lt;h3 id=&#34;merchant-and-account-ids&#34;&gt;Merchant y account IDs&lt;/h3&gt;
-&lt;p&gt;Estos valores te permiten autenticar tanto a tu comercio (Merchant ID) como a su cuenta (Account ID) cuando utilizas cualquiera de las integraciones para utilizar los servicios que brindamos.&lt;/p&gt;
-&lt;p&gt;Cuando inicias sesión en tu módulo PayU, encuentras ambos valores en el panel izquierdo.&lt;/p&gt;
+        &lt;h2 id=&#34;technical-information-overview&#34;&gt;Información Técnica General&lt;/h2&gt;
+&lt;p&gt;Independientemente del &lt;a href=&#34;../../../../es/docs/integrations.html&#34;&gt;método de integración&lt;/a&gt; que elijas, ciertos detalles técnicos son necesarios para garantizar una integración exitosa. Este documento describe las variables clave y configuraciones que necesitas ajustar.&lt;/p&gt;
+&lt;h3 id=&#34;merchant-and-account-ids&#34;&gt;Merchant ID y Account ID&lt;/h3&gt;
+&lt;p&gt;Estos identificadores son cruciales para autenticar tu cuenta de comerciante con PayU. Puedes encontrarlos en el panel izquierdo del sitio de administración después de iniciar sesión.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/Merchant_Ids_es.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;
-&lt;h3 id=&#34;api-key-and-api-login&#34;&gt;API key y API Login&lt;/h3&gt;
+&lt;h3 id=&#34;api-key-and-api-login&#34;&gt;API Key y API Login&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;En el módulo PayU, haz clic en &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt; y luego selecciona &lt;em&gt;&lt;strong&gt;Configuración técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Inicia sesión en tu Panel de Administración.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navega a &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt; y selecciona &lt;em&gt;&lt;strong&gt;Configuración Técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_01_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;En esta ventana, encontrarás tanto el API key como el API Login que permiten autenticar a tu comercio durante el proceso de integración.&lt;/li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;En el panel derecho, encontrarás tanto la API Key como el API Login, necesarios para autenticar tus transacciones durante la integración.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_02_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Advertencia&lt;/h4&gt;
-Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta información asegurada y su uso o distribución se hace bajo tu responsabilidad.
+Tu llave API y tu API Login son únicos para tu cuenta PayU. Asegúrate de mantener estas credenciales seguras, ya que su mal uso o divulgación no autorizada es tu responsabilidad.
 &lt;/div&gt;
 
-&lt;h2 id=&#34;configuring-technical-information&#34;&gt;Configurar la información técnica&lt;/h2&gt;
-&lt;p&gt;En esta sección podrás configurar propiedades técnicas pertenecientes a cada cuenta activa como:&lt;/p&gt;
+&lt;h2 id=&#34;configuring-technical-information&#34;&gt;Configurar la Información Técnica&lt;/h2&gt;
+&lt;p&gt;Puedes personalizar varias configuraciones técnicas para cada cuenta activa, incluyendo:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;La configuración de URLs para las páginas de Respuesta y Confirmación&lt;/li&gt;
-&lt;li&gt;Habilitar las opciones de envío de correos al comprador y a tu comercio al momento de realizar una venta.&lt;/li&gt;
-&lt;li&gt;Habilitar las notificaciones para el proceso de Disputas.&lt;/li&gt;
-&lt;li&gt;Seleccionar si tus pagos se procesan en modo pruebas o en producción&lt;/li&gt;
+&lt;li&gt;URLs para páginas de confirmación y de respuesta.&lt;/li&gt;
+&lt;li&gt;Notificaciones por correo electrónico para compradores y para tu tienda.&lt;/li&gt;
+&lt;li&gt;Notificaciones del proceso de disputas.&lt;/li&gt;
+&lt;li&gt;Selección del modo de prueba o transacciones en producción.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Para configurar esta información, haz clic en &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt; y luego selecciona &lt;em&gt;&lt;strong&gt;Configuración técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Para configurar esta información, ve a &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuración Técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_01_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;En la ventana &lt;em&gt;&lt;strong&gt;Configuración técnica&lt;/strong&gt;&lt;/em&gt;, encuentras dos pestañas de acuerdo a tus necesidades: &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt; o &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;En la ventana de &lt;em&gt;&lt;strong&gt;Configuración Técnica&lt;/strong&gt;&lt;/em&gt;, encontrarás dos pestañas según tus necesidades: &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt; y &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_01_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;payments&#34;&gt;Pagos&lt;/h3&gt;
-&lt;p&gt;En esta pestaña puedes configurar la siguiente información.&lt;/p&gt;
+&lt;p&gt;En la pestaña &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt;, puedes configurar lo siguiente:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_02_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -245,28 +249,28 @@ Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Tus pagos se procesan&lt;/td&gt;
-&lt;td&gt;Selecciona si tus transacciones son procesadas &lt;em&gt;En Producción&lt;/em&gt; o en &lt;em&gt;Modo prueba&lt;/em&gt;. Cuando procesas en &lt;em&gt;Modo prueba&lt;/em&gt;, las transacciones realizadas a través de tu página web o a través de solicitudes de pago son marcadas como de prueba y el pago no es real.&lt;/td&gt;
+&lt;td&gt;Elige si tus transacciones se procesan &lt;em&gt;En Producción&lt;/em&gt; o &lt;em&gt;En Modo de Prueba&lt;/em&gt;. Las transacciones procesadas en &lt;em&gt;Modo de Prueba&lt;/em&gt; se marcan como pruebas y no son reales.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;URL de respuesta&lt;/td&gt;
-&lt;td&gt;Es la página a la cual se redirecciona el comprador una vez finaliza la transacción en PayU, en esta página se muestra el estado de la transacción.&lt;/td&gt;
+&lt;td&gt;La URL a la que se redirige a los compradores después de completar una transacción. Esta página muestra el estado de la transacción.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;URL de confirmación&lt;/td&gt;
-&lt;td&gt;Es la página a la cual PayU envía la confirmación del pago a tu sistema. Esto es útil para actualizar inventarios y bases de datos una vez la transacción llegue a su estado final.&lt;br&gt;Esta página no es obligatoria.&lt;/td&gt;
+&lt;td&gt;La URL a la que PayU envía la confirmación del pago a tu sistema. Usa esta URL para actualizar el inventario o las bases de datos cuando una transacción alcanza su estado final. Este parámetro es opcional.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Controlar pagos dobles&lt;/td&gt;
-&lt;td&gt;Al habilitar esta opción, validamos que la referencia de cada pago enviado a nuestro sistema sea única. En caso contrario, podrás enviar una misma referencia para todas tus ventas.&lt;/td&gt;
+&lt;td&gt;Controlar pagos dobles / Solo para ventas aprobadas&lt;/td&gt;
+&lt;td&gt;&lt;li&gt;&lt;b&gt;Controlar pagos dobles:&lt;/b&gt; Si habilitas esta opción, la referencia solo se puede usar una vez, independientemente del resultado de la transacción (aprobada, rechazada, pendiente).&lt;/li&gt; &lt;li&gt;&lt;b&gt;Solo para ventas aprobadas:&lt;/b&gt; Si marcas esta casilla, una referencia se puede reutilizar solo si la transacción anterior fue rechazada. Si la transacción anterior estaba pendiente o aprobada, la referencia no se puede reutilizar.&lt;/li&gt; &lt;li&gt;&lt;b&gt;Controlar pagos dobles + Solo para ventas aprobadas:&lt;/b&gt; Si habilitas ambas funcionalidades, la referencia solo se puede usar una vez (prevalece la regla &amp;ldquo;Validar referencia única para todos los estados&amp;rdquo;).&lt;/li&gt; &lt;li&gt;&lt;b&gt;Ambas casillas deshabilitadas:&lt;/b&gt; La referencia se puede reutilizar varias veces, independientemente del resultado de la transacción. Ten en cuenta que al tener ambas opciones deshabilitadas, se puede afectar la conciliación ya que la misma referencia podría aparecer varias veces con diferentes estados.&lt;/li&gt; &lt;br&gt; &lt;b&gt;Nota:&lt;/b&gt;&lt;br&gt; Tiempo de reintento: Si necesitas reenviar una referencia, espera una respuesta de PayU o al menos 60 segundos.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Notificaciones de pagos procesados&lt;/td&gt;
-&lt;td&gt;Esta opción te permite enviar un correo electrónico al pagador o a ti cuando el pago sea aprobado o rechazado.&lt;/td&gt;
+&lt;td&gt;Habilita las notificaciones por correo electrónico que se envían al comprador o a tu tienda cuando un pago es aprobado o rechazado.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id=&#34;disputes&#34;&gt;Disputas&lt;/h3&gt;
-&lt;p&gt;En esta pestaña puedes configurar la siguiente información del proceso de &lt;a href=&#34;../../../../es/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;disputas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;En la pestaña &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt;, puedes configurar los ajustes relacionados con el &lt;a href=&#34;../../../../es/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;proceso de disputas&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_03_es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
@@ -279,11 +283,11 @@ Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Correos de notificaciones&lt;/td&gt;
-&lt;td&gt;Configura las direcciones de correo electrónico para recibir notificaciones cuando se inicie un proceso de disputa.&lt;/td&gt;
+&lt;td&gt;Establece las direcciones de correo electrónico a las que se enviarán notificaciones cuando se inicie una disputa.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;URL de notificación automática&lt;/td&gt;
-&lt;td&gt;Si habilitas esta opción, puedes establecer la URL a la que PayU envía la notificación de un proceso de disputa.&lt;/td&gt;
+&lt;td&gt;Si está habilitado, configura la URL a la que PayU enviará notificaciones sobre los procesos de disputa.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -291,7 +295,7 @@ Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-No olvides hacer clic en &lt;em&gt;&lt;strong&gt;Guardar cambios&lt;/strong&gt;&lt;/em&gt; al final de la sección para aplicar los cambios.
+Recuerda hacer clic en el botón &lt;em&gt;&lt;strong&gt;Guardar cambios&lt;/strong&gt;&lt;/em&gt; para aplicar cualquier actualización que realices.
 &lt;/div&gt;
 
 

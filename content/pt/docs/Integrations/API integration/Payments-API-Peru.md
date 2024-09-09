@@ -22,7 +22,7 @@ Para integrar a API de Pagamentos, direcione suas solicitações para as seguint
 
 ## Métodos Disponíveis {#available-methods}
 
-A API de pagamentos inclui os seguintes métodos:
+A API de Pagamentos inclui os seguintes métodos:
 
 * [Enviar Transações Usando Cartões de Crédito ou Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
 * [Enviar Transações Usando Yape]({{< ref "#submit-transactions-using-yape" >}})
@@ -98,7 +98,7 @@ Este método permite processar os pagamentos efetuados pelos seus clientes com c
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para cálculo do VAT.<br>Se o valor não tiver IVA, envie 0.<br>Este valor pode ter duas casas decimais.  | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica o valor base da transação. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
-| transaction > creditCardTokenId |  |  | Incluir este parâmetro quando a transação for feita com um cartão tokenizado, no lugar das informações do cartão de crédito. Para obter mais informações, consulte [API de tokenização]({{< ref "Tokenization-API.md" >}}) | Não |
+| transaction > creditCardTokenId | Alfanumérico |  | Incluir este parâmetro quando a transação for feita com um cartão tokenizado, no lugar das informações do cartão de crédito. Para obter mais informações, consulte [API de tokenização]({{< ref "Tokenization-API.md" >}}) | Não |
 | transaction > creditCard | Objeto |  | Informações do cartão de crédito. Se você processar usando cartão de débito, não envie este parâmetro.<br>Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de crédito não tokenizado. | Não |
 | transaction > creditCard > number | Alfanumérico | Mín:13 Máx:20 | Número do cartão de crédito. | Não |
 | transaction > creditCard > securityCode | Alfanumérico | Mín:1 Máx:4 | Código de segurança do cartão de crédito (CVC2, CVV2, CID). | Não |
@@ -961,6 +961,7 @@ Exemplo de uma Resposta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1924,7 +1925,7 @@ Exemplo de uma Solicitação:
 ```
 <br>
 
-Exemplo resposta:
+Exemplo de uma Resposta:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -1944,6 +1945,7 @@ Exemplo resposta:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1978,7 +1980,7 @@ O método `PING` permite que você confirme a conexão com a nossa plataforma.
 |-|-|-|-|
 | code | Alfanumérico |  | O código de resposta da transação. |
 | error | Alfanumérico | Máx:2048 | A mensagem de erro associada, caso tenha ocorrido um erro. |
-| transactionResponse |  | Máx:2048 | A resposta do método PING caso tenha ocorrido um erro. |
+| transactionResponse | Objeto | Máx:2048 | A resposta do método PING caso tenha ocorrido um erro. |
 </details>
 
 ### Chamada de API {#api-call-3}

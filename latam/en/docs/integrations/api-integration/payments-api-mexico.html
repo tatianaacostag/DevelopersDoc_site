@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Payments API - Mexico | PayU Latam</title><meta property="og:title" content="Payments API - Mexico" />
-<meta property="og:description" content="Payments API Mexico lets your shop process different transaction types with multiple payment methods.
+<meta property="og:description" content="The Payments API for Mexico allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit cards, debit cards, bank transfers, and bank reference.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-mexico.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-08-28T09:47:10-05:00" />
+<meta property="article:modified_time" content="2024-09-04T17:00:40-05:00" />
 
 <meta itemprop="name" content="Payments API - Mexico">
-<meta itemprop="description" content="Payments API Mexico lets your shop process different transaction types with multiple payment methods.
+<meta itemprop="description" content="The Payments API for Mexico allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit cards, debit cards, bank transfers, and bank reference.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-08-28T09:47:10-05:00" />
-<meta itemprop="wordCount" content="9834">
+<meta itemprop="dateModified" content="2024-09-04T17:00:40-05:00" />
+<meta itemprop="wordCount" content="9862">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Mexico"/>
-<meta name="twitter:description" content="Payments API Mexico lets your shop process different transaction types with multiple payment methods.
+<meta name="twitter:description" content="The Payments API for Mexico allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit cards, debit cards, bank transfers, and bank reference.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.10c81fe88d2699cfae5830d17e4124b5c23ca98e56ef268706a965013ef2be4e6268ce8079aac6cd8a7f4d389f41ba2d77d4ff1cb77f91ff0e8ec3ea231b549e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -292,7 +292,7 @@
       
       
       
-        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-handled 3DS Authentication</a>
+        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-Handled 3DS Authentication</a>
       
       
       
@@ -782,44 +782,44 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#available-methods">Available methods</a></li>
-    <li><a href="#submit-transaction-with-credit-or-debit-card">Submit transaction with credit or debit card</a>
+    <li><a href="#available-methods">Available Methods</a></li>
+    <li><a href="#submit-transactions-using-credit-or-debit-cards">Submit Transactions Using Credit or Debit Cards</a>
       <ul>
-        <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
+        <li><a href="#parameters-for-request-and-response">Parameters for Request and Response</a></li>
         <li><a href="#authorization">Authorization</a></li>
         <li><a href="#capture">Capture</a></li>
         <li><a href="#partial-capture">Partial Capture</a></li>
         <li><a href="#charge">Charge</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-cash">Submit transaction with cash</a>
+    <li><a href="#submit-transactions-using-cash">Submit Transactions Using Cash</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-1">Variables for request and response</a></li>
-        <li><a href="#api-call">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-1">Parameters for Request and Response</a></li>
+        <li><a href="#api-call">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a>
+    <li><a href="#submit-transactions-using-bank-transfer">Submit Transactions Using Bank Transfer</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-2">Variables for request and response</a></li>
-        <li><a href="#api-call-1">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-2">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-1">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transaction-with-bank-reference">Submit transaction with bank reference</a>
+    <li><a href="#submit-transactions-using-bank-reference">Submit Transactions Using Bank Reference</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-3">Variables for request and response</a></li>
-        <li><a href="#api-call-2">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-3">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-2">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Available payment methods query</a>
+    <li><a href="#available-payment-methods-query">Available Payment Methods Query</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-4">Variables for request and response</a></li>
-        <li><a href="#api-call-3">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-4">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-3">API Call</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
-        <li><a href="#variables-for-request-and-response-5">Variables for request and response</a></li>
-        <li><a href="#api-call-4">Api call</a></li>
+        <li><a href="#parameters-for-request-and-response-5">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-4">API Call</a></li>
       </ul>
     </li>
   </ul>
@@ -879,28 +879,28 @@
             
 <div class="td-content">
 	<h1>Payments API - Mexico</h1>
-    <div class="lead">Payments API Mexico lets your shop process different transaction types with multiple payment methods.</div>
+    <div class="lead">The Payments API for Mexico allows you to efficiently integrate PayU&rsquo;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit cards, debit cards, bank transfers, and bank reference.</div>
 	       
 	<script src="../../../../js/searchcodes.js"></script>
-<p>To integrate with Payments API Mexico, target your request to the following URLs according to your environment.</p>
+<p>This guide shows you how to leverage these services to enhance your customers&rsquo; payment experience by providing flexible and secure payment options tailored to the local market.</p>
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">URL</h4>
+<h4 class="alert-heading">Note</h4>
+<p>To integrate the Payments API, direct your requests to the following URLs according to the corresponding environment:</p>
 <ul>
-<li>Test: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
+<li>Testing: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 <li>Production: <code>https://api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 </ul>
-
 </div>
 
-<h2 id="available-methods">Available methods</h2>
+<h2 id="available-methods">Available Methods</h2>
 <p>Payments API includes the following methods:</p>
 <ul>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-credit-or-debit-card">Submit transaction with credit or debit cards</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-cash">Submit transaction with cash</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-bank-transfer">Submit transaction with bank transfer</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-bank-reference">Submit transaction with bank reference</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-credit-or-debit-card">Submit Transactions Using Credit or Debit Cards</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-cash">Submit Transactions Using Cash</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-bank-transfer">Submit Transactions Using Bank Transfer</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#submit-transaction-with-bank-reference">Submit Transactions Using Bank Reference</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#available-payment-methods-query">Available payment methods query</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html#ping">Ping</a></li>
 </ul>
@@ -915,7 +915,7 @@
 </ul>
 </div>
 
-<h2 id="submit-transaction-with-credit-or-debit-card">Submit transaction with credit or debit card</h2>
+<h2 id="submit-transactions-using-credit-or-debit-cards">Submit Transactions Using Credit or Debit Cards</h2>
 <p>This method lets you process the payments performed by your customers using credit or debit cards. For Mexico, you can perform the two-step flows (<strong>Authorization</strong>, <strong>Capture</strong>), and one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../../en/docs/services/payments.html#payment-flows">Payment flows</a>.</p>
 
 
@@ -924,7 +924,7 @@
 Two-step flows are only supported for Mastercard and Visa.
 </div>
 
-<h3 id="variables-for-request-and-response">Variables for request and response</h3>
+<h3 id="parameters-for-request-and-response">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -933,7 +933,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -1528,7 +1528,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -1687,7 +1687,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1772,7 +1772,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1823,7 +1823,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1914,7 +1914,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2013,7 +2013,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2031,7 +2031,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2081,7 +2081,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2099,7 +2099,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2376,7 +2376,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2461,7 +2461,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2511,7 +2511,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2602,7 +2602,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2642,10 +2642,10 @@ Two-step flows are only supported for Mastercard and Visa.
 
 
 </div>
-<h2 id="submit-transaction-with-cash">Submit transaction with cash</h2>
+<h2 id="submit-transactions-using-cash">Submit Transactions Using Cash</h2>
 <p>This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.</p>
 <img src="../../../../assets/Payments/CashReceiptMX.png" alt="PrintScreen" width="50%">
-<h3 id="variables-for-request-and-response-1">Variables for request and response</h3>
+<h3 id="parameters-for-request-and-response-1">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -2654,7 +2654,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -3141,7 +3141,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -3263,7 +3263,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </ul>
 </li>
 </ul>
-<h3 id="api-call">API call</h3>
+<h3 id="api-call">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -3310,7 +3310,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -3384,7 +3384,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -3439,7 +3439,7 @@ Two-step flows are only supported for Mastercard and Visa.
 <div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -3516,7 +3516,7 @@ Two-step flows are only supported for Mastercard and Visa.
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -3571,11 +3571,11 @@ Two-step flows are only supported for Mastercard and Visa.
 
 
 </div>
-<h2 id="submit-transaction-with-bank-transfer">Submit transaction with bank transfer</h2>
+<h2 id="submit-transactions-using-bank-transfer">Submit Transactions Using Bank Transfer</h2>
 <p>This method lets you process the bank transfer payments of your customers. When using this payment method, the payer performs a bank transfer from their bank account to a PayU&rsquo;s CLABE account.<br>
 To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.</p>
 <img src="../../../../assets/Payments/BankTransferReceiptMX.png" alt="PrintScreen" width="50%">
-<h3 id="variables-for-request-and-response-2">Variables for request and response</h3>
+<h3 id="parameters-for-request-and-response-2">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -3584,7 +3584,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4085,7 +4085,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4205,7 +4205,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </ul>
 </li>
 </ul>
-<h3 id="api-call-1">API call</h3>
+<h3 id="api-call-1">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4252,7 +4252,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -4329,7 +4329,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -4384,7 +4384,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -4464,7 +4464,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -4521,10 +4521,10 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 </div>
-<h2 id="submit-transaction-with-bank-reference">Submit transaction with bank reference</h2>
+<h2 id="submit-transactions-using-bank-reference">Submit Transactions Using Bank Reference</h2>
 <p>This method lets you process payments of your customers using bank references. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.</p>
 <img src="../../../../assets/Payments/BankReferenceReceiptMX.png" alt="PrintScreen" width="50%">
-<h3 id="variables-for-request-and-response-3">Variables for request and response</h3>
+<h3 id="parameters-for-request-and-response-3">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -4533,7 +4533,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4795,7 +4795,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </tr>
 <tr>
 <td>transaction &gt; order &gt; additionalValues &gt;</td>
-<td></td>
+<td>Object</td>
 <td>64</td>
 <td>Amount of the order or its associated values.</td>
 <td style="text-align:center">Yes</td>
@@ -5013,7 +5013,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5132,7 +5132,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </ul>
 </li>
 </ul>
-<h3 id="api-call-2">API call</h3>
+<h3 id="api-call-2">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5179,7 +5179,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -5253,7 +5253,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -5306,7 +5306,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -5383,7 +5383,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -5430,9 +5430,9 @@ To integrate with these transactions, you must redirect the customer to the URL 
 
 
 </div>
-<h2 id="available-payment-methods-query">Available payment methods query</h2>
+<h2 id="available-payment-methods-query">Available Payment Methods Query</h2>
 <p>This method returns a list of the payment methods available in all countries.</p>
-<h3 id="variables-for-request-and-response-4">Variables for request and response</h3>
+<h3 id="parameters-for-request-and-response-4">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -5440,7 +5440,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5500,7 +5500,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5560,7 +5560,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </tbody>
 </table>
 </details>
-<h3 id="api-call-3">API call</h3>
+<h3 id="api-call-3">API Call</h3>
 <p>The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5607,7 +5607,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <div class="tab-pane fade show active" id="tab81" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -5618,7 +5618,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -5655,7 +5655,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <div class="tab-pane fade" id="tab82" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -5666,7 +5666,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentMethodsResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentMethods&gt;</span>
@@ -5695,7 +5695,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </div>
 <h2 id="ping">Ping</h2>
 <p>The <code>PING</code> method lets you verify the connection to our platform.</p>
-<h3 id="variables-for-request-and-response-5">Variables for request and response</h3>
+<h3 id="parameters-for-request-and-response-5">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -5703,7 +5703,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5763,7 +5763,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -5791,7 +5791,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </tbody>
 </table>
 </details>
-<h3 id="api-call-4">Api call</h3>
+<h3 id="api-call-4">API Call</h3>
 <p>The following are the bodies of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5838,7 +5838,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <div class="tab-pane fade show active" id="tab91" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -5849,7 +5849,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -5871,7 +5871,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 <div class="tab-pane fade" id="tab92" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Request body:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>PING<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -5882,7 +5882,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Response body:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
@@ -5901,9 +5901,9 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-August 28, 2024:
+September 4, 2024:
 
- <b>Documentation updates (2892f1bb8)</b>
+ <b>Documentation Updates (0b93c153b)</b>
 </div>
 </div>
 

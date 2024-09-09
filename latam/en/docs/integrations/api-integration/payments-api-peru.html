@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Payments API - Peru | PayU Latam</title><meta property="og:title" content="Payments API - Peru" />
-<meta property="og:description" content="Payments API Peru lets your shop process different transaction types with multiple payment methods.
+<meta property="og:description" content="The Payments API for Peru allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, cash, credit cards, and debit cards.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-peru.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-08-28T09:47:10-05:00" />
+<meta property="article:modified_time" content="2024-09-04T17:00:40-05:00" />
 
 <meta itemprop="name" content="Payments API - Peru">
-<meta itemprop="description" content="Payments API Peru lets your shop process different transaction types with multiple payment methods.
+<meta itemprop="description" content="The Payments API for Peru allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, cash, credit cards, and debit cards.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-08-28T09:47:10-05:00" />
-<meta itemprop="wordCount" content="8064">
+<meta itemprop="dateModified" content="2024-09-04T17:00:40-05:00" />
+<meta itemprop="wordCount" content="8034">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Peru"/>
-<meta name="twitter:description" content="Payments API Peru lets your shop process different transaction types with multiple payment methods.
+<meta name="twitter:description" content="The Payments API for Peru allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, cash, credit cards, and debit cards.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.10c81fe88d2699cfae5830d17e4124b5c23ca98e56ef268706a965013ef2be4e6268ce8079aac6cd8a7f4d389f41ba2d77d4ff1cb77f91ff0e8ec3ea231b549e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -292,7 +292,7 @@
       
       
       
-        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-handled 3DS Authentication</a>
+        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-Handled 3DS Authentication</a>
       
       
       
@@ -782,42 +782,42 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#available-methods">Available methods</a></li>
-    <li><a href="#submit-transactions-using-credit-or-debit-cards">Submit transactions using credit or debit cards</a>
+    <li><a href="#available-methods">Available Methods</a></li>
+    <li><a href="#submit-transactions-using-credit-or-debit-cards">Submit Transactions Using Credit or Debit Cards</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response">Parameters for request and response</a></li>
+        <li><a href="#parameters-for-request-and-response">Parameters for Request and Response</a></li>
         <li><a href="#authorization">Authorization</a></li>
         <li><a href="#capture">Capture</a></li>
         <li><a href="#partial-capture">Partial Capture</a></li>
         <li><a href="#charge">Charge</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-yape">Submit transactions using Yape</a>
+    <li><a href="#submit-transactions-using-yape">Submit Transactions Using Yape</a>
       <ul>
-        <li><a href="#description">Description</a></li>
-        <li><a href="#payment-process-with-yape">Payment process with Yape</a></li>
-        <li><a href="#parameters-for-request-and-response-1">Parameters for request and response</a></li>
-        <li><a href="#api-call">API call</a></li>
+        <li><a href="#features-and-benefits">Features and Benefits</a></li>
+        <li><a href="#payment-process-with-yape">Payment Process with Yape</a></li>
+        <li><a href="#parameters-for-request-and-response-1">Parameters for Request and Response</a></li>
+        <li><a href="#api-call">API Call</a></li>
         <li><a href="#considerations-3">Considerations</a></li>
-        <li><a href="#testing-in-sandbox-environment">Testing in sandbox environment</a></li>
+        <li><a href="#testing-in-sandbox-environment">Testing in Sandbox Environment</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-cash">Submit transactions using cash</a>
+    <li><a href="#submit-transactions-using-cash">Submit Transactions Using Cash</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-2">Parameters for request and response</a></li>
-        <li><a href="#api-call-1">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-2">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-1">API Call</a></li>
       </ul>
     </li>
-    <li><a href="#available-payment-methods-query">Available payment methods query</a>
+    <li><a href="#available-payment-methods-query">Available Payment Methods Query</a>
       <ul>
-        <li><a href="#variables-for-request-and-response">Variables for request and response</a></li>
-        <li><a href="#api-call-2">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-3">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-2">API Call</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-3">Parameters for request and response</a></li>
-        <li><a href="#api-call-3">API call</a></li>
+        <li><a href="#parameters-for-request-and-response-4">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-3">API Call</a></li>
       </ul>
     </li>
   </ul>
@@ -877,28 +877,28 @@
             
 <div class="td-content">
 	<h1>Payments API - Peru</h1>
-    <div class="lead">Payments API Peru lets your shop process different transaction types with multiple payment methods.</div>
+    <div class="lead">The Payments API for Peru allows you to efficiently integrate PayU&rsquo;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, cash, credit cards, and debit cards.</div>
 	       
 	<script src="../../../../js/searchcodes.js"></script>
-<p>To integrate with Peru&rsquo;s Payment API, direct your requests to the following URLs based on your environment:</p>
+<p>This guide shows you how to leverage these services to enhance your customers&rsquo; payment experience by providing flexible and secure payment options tailored to the local market.</p>
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">URLs</h4>
+<h4 class="alert-heading">Note</h4>
+<p>To integrate the Payments API, direct your requests to the following URLs according to the corresponding environment:</p>
 <ul>
-<li>Test: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
+<li>Testing: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 <li>Production: <code>https://api.payulatam.com/payments-api/4.0/service.cgi</code></li>
 </ul>
-
 </div>
 
-<h2 id="available-methods">Available methods</h2>
+<h2 id="available-methods">Available Methods</h2>
 <p>Payments API includes the following methods:</p>
 <ul>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#submit-transactions-using-credit-or-debit-cards">Submit transactions using credit or debit cards</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#submit-transactions-using-yape">Submit transactions using Yape</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#submit-transactions-using-cash">Submit transactions using cash</a></li>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#available-payment-methods-query">Available payment methods query</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#submit-transactions-using-credit-or-debit-cards">Submit Transactions Using Credit or Debit Cards</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#submit-transactions-using-yape">Submit Transactions Using Yape</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#submit-transactions-using-cash">Submit Transactions Using Cash</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#available-payment-methods-query">Available Payment Methods Query</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-peru.html#ping">Ping</a></li>
 </ul>
 
@@ -912,9 +912,9 @@
 </ul>
 </div>
 
-<h2 id="submit-transactions-using-credit-or-debit-cards">Submit transactions using credit or debit cards</h2>
+<h2 id="submit-transactions-using-credit-or-debit-cards">Submit Transactions Using Credit or Debit Cards</h2>
 <p>This method lets you process the payments performed by your customers using credit or debit cards. For Peru, you can perform the two-step flows (<strong>Authorization</strong>, <strong>Capture</strong>), and one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../../en/docs/services/payments.html#payment-flows">Payment flows</a>.</p>
-<h3 id="parameters-for-request-and-response">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -923,7 +923,7 @@
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -1557,7 +1557,7 @@
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -1707,7 +1707,7 @@
 <div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -1791,7 +1791,7 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1833,7 +1833,7 @@
 <div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -1923,7 +1923,7 @@
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2034,7 +2034,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2052,7 +2052,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2091,7 +2091,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2109,7 +2109,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2373,7 +2373,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade show active" id="tab41" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -2457,7 +2457,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -2499,7 +2499,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade" id="tab42" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -2589,7 +2589,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -2619,17 +2619,16 @@ Using _Zero Authorization_, you can have the following benefits:
 
 
 </div>
-<h2 id="submit-transactions-using-yape">Submit transactions using Yape</h2>
-<h3 id="description">Description</h3>
+<h2 id="submit-transactions-using-yape">Submit Transactions Using Yape</h2>
 <p>Yape is a mobile application created by the BCP (Banco de Crédito del Perú) that offers a digital wallet. The application allows users to make online purchases, pay for services, top-up, withdraw funds, and send or receive money quickly and securely. Access to this digital wallet does not require a bank account; only the payer&rsquo;s cell phone number is needed.</p>
-<h4 id="features-and-benefits">Features and benefits</h4>
+<h3 id="features-and-benefits">Features and Benefits</h3>
 <p>Enabling payments through Yape in your business provides valuable benefits to you and your customers:</p>
 <ul>
 <li><strong>More sales:</strong> Attract new customers and increase sales thanks to the millions of customers who have Yape.</li>
 <li><strong>More convenience:</strong> Customers can make quick and easy purchases using their mobile phones.</li>
 <li><strong>More security:</strong> Ensure secure and reliable transactions with the backing of BCP.</li>
 </ul>
-<h3 id="payment-process-with-yape">Payment process with Yape</h3>
+<h3 id="payment-process-with-yape">Payment Process with Yape</h3>
 <h4 id="prerequisites">Prerequisites</h4>
 <p>To conduct payments, the end user needs 2 components:</p>
 <ul>
@@ -2653,7 +2652,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </ol>
 <img src="../../../../assets/Payments/Yape03EN.png" alt="PrintScreen" width="500">
 <p></p>
-<h3 id="parameters-for-request-and-response-1">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-1">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -2662,7 +2661,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -3170,7 +3169,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -3276,7 +3275,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tbody>
 </table>
 </details>
-<h3 id="api-call">API call</h3>
+<h3 id="api-call">API Call</h3>
 <p>The following are the request and response bodies for this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -3323,7 +3322,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade show active" id="tab51" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -3399,7 +3398,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -3439,7 +3438,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade" id="tab52" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -3518,7 +3517,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -3573,7 +3572,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </ol>
 </li>
 </ul>
-<h3 id="testing-in-sandbox-environment">Testing in sandbox environment</h3>
+<h3 id="testing-in-sandbox-environment">Testing in Sandbox Environment</h3>
 <p>To test Yape transactions in the PayU Sandbox environment, use the following data:</p>
 <table border="1"> 
 <tr> 
@@ -3658,10 +3657,10 @@ Using _Zero Authorization_, you can have the following benefits:
 <td>Error: incorrect Yape code.</td> 
 </tr>
 </table>
-<h2 id="submit-transactions-using-cash">Submit transactions using cash</h2>
+<h2 id="submit-transactions-using-cash">Submit Transactions Using Cash</h2>
 <p>This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.</p>
 <img src="../../../../assets/Payments/CashReceiptPE.png" alt="PrintScreen" width="400">
-<h3 id="parameters-for-request-and-response-2">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-2">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
@@ -3670,7 +3669,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4157,7 +4156,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4277,7 +4276,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </ul>
 </li>
 </ul>
-<h3 id="api-call-1">API call</h3>
+<h3 id="api-call-1">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4324,7 +4323,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade show active" id="tab61" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -4397,7 +4396,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -4443,7 +4442,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade" id="tab62" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -4519,7 +4518,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
@@ -4564,9 +4563,9 @@ Using _Zero Authorization_, you can have the following benefits:
 
 
 </div>
-<h2 id="available-payment-methods-query">Available payment methods query</h2>
+<h2 id="available-payment-methods-query">Available Payment Methods Query</h2>
 <p>This method returns a list of the payment methods available in all countries.</p>
-<h3 id="variables-for-request-and-response">Variables for request and response</h3>
+<h3 id="parameters-for-request-and-response-3">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -4574,7 +4573,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4627,7 +4626,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4679,7 +4678,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tbody>
 </table>
 </details>
-<h3 id="api-call-2">API call</h3>
+<h3 id="api-call-2">API Call</h3>
 <p>The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4726,7 +4725,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade show active" id="tab71" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -4737,7 +4736,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -4774,7 +4773,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade" id="tab72" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -4785,7 +4784,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentMethodsResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentMethods&gt;</span>
@@ -4814,7 +4813,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </div>
 <h2 id="ping">Ping</h2>
 <p>The <code>PING</code> method lets you verify the connection to our platform.</p>
-<h3 id="parameters-for-request-and-response-3">Parameters for request and response</h3>
+<h3 id="parameters-for-request-and-response-4">Parameters for Request and Response</h3>
 <details>
 <summary>Request</summary>
 <br>
@@ -4822,7 +4821,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4875,7 +4874,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <table>
 <thead>
 <tr>
-<th>Field name</th>
+<th>Field Name</th>
 <th>Format</th>
 <th>Size</th>
 <th>Description</th>
@@ -4903,7 +4902,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </tbody>
 </table>
 </details>
-<h3 id="api-call-3">API call</h3>
+<h3 id="api-call-3">API Call</h3>
 <p>The following are the bodies of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4950,7 +4949,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade show active" id="tab81" role="tabpanel" aria-labelledby="nav-tabName1">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -4961,7 +4960,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -4983,7 +4982,7 @@ Using _Zero Authorization_, you can have the following benefits:
 <div class="tab-pane fade" id="tab82" role="tabpanel" aria-labelledby="nav-tabName2">
 
 	<br>
-<p>Example of a request:</p>
+<p>Request Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>PING<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
@@ -4994,7 +4993,7 @@ Using _Zero Authorization_, you can have the following benefits:
 </span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
 </span></span></code></pre></div><br>
-<p>Example of a response:</p>
+<p>Response Example:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
@@ -5013,9 +5012,9 @@ Using _Zero Authorization_, you can have the following benefits:
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-August 28, 2024:
+September 4, 2024:
 
- <b>Documentation updates (2892f1bb8)</b>
+ <b>Documentation Updates (0b93c153b)</b>
 </div>
 </div>
 

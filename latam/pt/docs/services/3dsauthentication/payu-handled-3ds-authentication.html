@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-07-01T11:32:55-05:00" />
-<meta property="article:modified_time" content="2024-08-28T09:47:10-05:00" />
+<meta property="article:modified_time" content="2024-09-04T17:00:40-05:00" />
 
 <meta itemprop="name" content="Autenticação 3DS Realizada pela PayU">
 <meta itemprop="description" content="A autenticação 3DS realizada pela PayU elimina a necessidade de você gerenciar o processo de integração 3DS. A PayU cuida de tudo, desde a comunicação com o banco emissor até o gerenciamento do fluxo de autenticação.  
 "><meta itemprop="datePublished" content="2024-07-01T11:32:55-05:00" />
-<meta itemprop="dateModified" content="2024-08-28T09:47:10-05:00" />
-<meta itemprop="wordCount" content="571">
+<meta itemprop="dateModified" content="2024-09-04T17:00:40-05:00" />
+<meta itemprop="wordCount" content="643">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Autenticação 3DS Realizada pela PayU"/>
 <meta name="twitter:description" content="A autenticação 3DS realizada pela PayU elimina a necessidade de você gerenciar o processo de integração 3DS. A PayU cuida de tudo, desde a comunicação com o banco emissor até o gerenciamento do fluxo de autenticação.  
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.10c81fe88d2699cfae5830d17e4124b5c23ca98e56ef268706a965013ef2be4e6268ce8079aac6cd8a7f4d389f41ba2d77d4ff1cb77f91ff0e8ec3ea231b549e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -224,7 +224,7 @@
       
       
       
-        <a id="/pt/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedtest-your-solutionhtml" href="../../../../pt/docs/getting-started/test-your-solution.html">Teste sua solução</a>
+        <a id="/pt/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedtest-your-solutionhtml" href="../../../../pt/docs/getting-started/test-your-solution.html">Teste Sua Solução</a>
       
       
       
@@ -561,7 +561,7 @@
       
       
       
-        <a id="/pt/docs/integrations/api-integration/payments-api-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-chilehtml" href="../../../../pt/docs/integrations/api-integration/payments-api-chile.html">API de pagamentos - Chile</a>
+        <a id="/pt/docs/integrations/api-integration/payments-api-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-chilehtml" href="../../../../pt/docs/integrations/api-integration/payments-api-chile.html">API de Pagamentos - Chile</a>
       
       
       
@@ -573,7 +573,7 @@
       
       
       
-        <a id="/pt/docs/integrations/api-integration/payments-api-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-mexicohtml" href="../../../../pt/docs/integrations/api-integration/payments-api-mexico.html">API de pagamentos - México</a>
+        <a id="/pt/docs/integrations/api-integration/payments-api-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-mexicohtml" href="../../../../pt/docs/integrations/api-integration/payments-api-mexico.html">API de Pagamentos - México</a>
       
       
       
@@ -585,7 +585,7 @@
       
       
       
-        <a id="/pt/docs/integrations/api-integration/payments-api-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-peruhtml" href="../../../../pt/docs/integrations/api-integration/payments-api-peru.html">API de pagamentos - Peru</a>
+        <a id="/pt/docs/integrations/api-integration/payments-api-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-peruhtml" href="../../../../pt/docs/integrations/api-integration/payments-api-peru.html">API de Pagamentos - Peru</a>
       
       
       
@@ -781,7 +781,12 @@
         <li><a href="#parâmetro-req3dsauthentication">Parâmetro <code>req3DSAuthentication</code></a></li>
       </ul>
     </li>
-    <li><a href="#resposta-da-transação-e-fluxo-de-autenticação">Resposta da Transação e Fluxo de Autenticação</a></li>
+    <li><a href="#testando-a-autenticação-3ds">Testando a Autenticação 3DS</a></li>
+    <li><a href="#resposta-da-transação-e-fluxo-de-autenticação">Resposta da Transação e Fluxo de Autenticação</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#após-a-autenticação">Após a Autenticação</a></li>
     <li><a href="#redirecionamento-após-a-autenticação">Redirecionamento Após a Autenticação</a></li>
   </ul>
@@ -859,8 +864,8 @@ A autenticação 3DS para PayU Latam está disponível apenas para <strong>Argen
 <li><code>&quot;false&quot;</code>: Desativa a autenticação 3DS para a transação.</li>
 </ul>
 <p><strong>Se <code>req3DSAuthentication</code> não estiver incluído,</strong> a PayU decidirá se deve realizar a autenticação 3DS com base em sua própria avaliação de risco.</p>
-<p><strong>Exemplo de uma Solicitação:</strong>
-No exemplo de solicitação abaixo, o <code>req3DSAuthentication</code> está definido como <code>true</code>:</p>
+<h4 id="exemplo-de-uma-solicitação">Exemplo de uma Solicitação</h4>
+<p>No exemplo de solicitação abaixo, o <code>req3DSAuthentication</code> está definido como <code>true</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
@@ -958,13 +963,54 @@ No exemplo de solicitação abaixo, o <code>req3DSAuthentication</code> está de
 </span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="resposta-da-transação-e-fluxo-de-autenticação">Resposta da Transação e Fluxo de Autenticação</h2>
+</span></span></code></pre></div><h2 id="testando-a-autenticação-3ds">Testando a Autenticação 3DS</h2>
+<p>Para testar o processo de autenticação 3DS, utilize os valores fictícios fornecidos na tabela abaixo. Esses valores são aplicáveis aos diferentes métodos de pagamento disponíveis em cada país:</p>
+<table>
+  <tr>
+    <th></th>
+    <th><img src="../../../../assets/Argentina.png" width="25px"/> &nbsp;Argentina</th>
+    <th><img src="../../../../assets/Brasil.png" width="25px"/> &nbsp;Brasil</th>
+    <th><img src="../../../../assets/Colombia.png" width="25px"/> &nbsp;Colômbia</th>
+    <th><img src="../../../../assets/Peru.png" width="25px"/> &nbsp;Peru</th>
+  </tr>
+  <tr>
+    <th>Account ID</th>
+    <td>516684</td>
+    <td>516685</td>
+    <td>516686</td>
+    <td>516688</td>
+  </tr>
+  <tr>
+    <th>Merchant ID</th>
+    <td colspan="4" style="text-align: center;">508029</td>
+  </tr>
+  <tr>
+    <th>API Login</th>
+    <td colspan="4" style="text-align: center;">pRRXKOl8ikMmt9u</td>
+  </tr>
+  <tr>
+    <th>API Key</th>
+    <td colspan="4" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
+  </tr>
+  <tr>
+    <th>Public Key</th>
+    <td colspan="4" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
+  </tr>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+Esses IDs de conta são apenas para fins de teste, não os utilize em ambientes de produção.
+</div>
+
+<h2 id="resposta-da-transação-e-fluxo-de-autenticação">Resposta da Transação e Fluxo de Autenticação</h2>
 <p>Ao enviar uma solicitação de pagamento, você receberá uma resposta com o estado <code>&quot;PENDING&quot;</code> para a transação. Essa resposta também incluirá um campo em <code>extraParameters</code> chamado <code>THREEDS_AUTH_REDIRECT_URL</code>.</p>
 <ul>
 <li><strong><code>THREEDS_AUTH_REDIRECT_URL</code>:</strong> Essa URL deve ser usada para redirecionar o pagador para concluir o processo de autenticação 3DS. O processo de autenticação pode envolver desafios como inserir uma senha única (OTP) recebida em seu telefone.</li>
 </ul>
-<p><strong>Exemplo de uma resposta</strong>
-No exemplo de resposta abaixo, o lojista redireciona o pagador para <code>https://merch-prod.payu.com</code>:</p>
+<h4 id="exemplo-de-uma-resposta">Exemplo de uma Resposta</h4>
+<p>No exemplo de resposta abaixo, o lojista redireciona o pagador para <code>https://merch-prod.payu.com</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
@@ -1016,9 +1062,9 @@ No exemplo de resposta abaixo, o lojista redireciona o pagador para <code>https:
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-28 de agosto de 2024:
+4 de setembro de 2024:
 
- <b>Documentation updates (2892f1bb8)</b>
+ <b>Documentation Updates (0b93c153b)</b>
 </div>
 </div>
 

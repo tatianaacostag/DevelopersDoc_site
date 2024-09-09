@@ -25,7 +25,7 @@ Para conduzir testes com a PayU, use as credenciais fornecidas abaixo em suas so
 
 {{% alert title="Notas" color="info"%}}
 
-* Consulte a documentação de <a href="https://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">Autenticação 3DS Realizada pela PayU</a> para encontrar as credenciais para testar 3DS.
+* Consulte a documentação de <a href="https://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testando-a-autentica%C3%A7%C3%A3o-3ds" target="_blank">Autenticação 3DS Realizada pela PayU</a> para encontrar as credenciais para testar 3DS.
 * O ambiente de teste não replica os dados da sua conta de produção.
 
 {{% /alert %}}

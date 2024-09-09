@@ -739,7 +739,7 @@
     </item>
     
     <item>
-      <title>Docs: Teste sua solução</title>
+      <title>Docs: Teste Sua Solução</title>
       <link>/pt/docs/getting-started/test-your-solution.html</link>
       <pubDate>Tue, 06 Apr 2021 15:34:20 -0500</pubDate>
       
@@ -760,56 +760,57 @@
   }
   window.addEventListener(&#39;DOMContentLoaded&#39;, openTarget);
 &lt;/script&gt;
-&lt;p&gt;Se desejar fazer testes com o PayU, será necessário usar as seguintes credenciais na solicitação, dependendo do país de sua conta:&lt;/p&gt;
+&lt;p&gt;Para conduzir testes com a PayU, use as credenciais fornecidas abaixo em suas solicitações, dependendo do país ao qual sua conta está associada.&lt;/p&gt;
 &lt;table&gt;
-    &lt;thead&gt;
     &lt;tr&gt;
-        &lt;th&gt;Merchant ID&lt;/th&gt;
-        &lt;th&gt;API Login&lt;/th&gt;
-        &lt;th&gt;API Key&lt;/th&gt;
-        &lt;th&gt;Public Key&lt;/th&gt;
-        &lt;th&gt;accountId&lt;/th&gt;
-        &lt;th&gt;País&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-    &lt;tr&gt;
-        &lt;td rowspan=&#34;7&#34;&gt;508029&lt;/td&gt;
-        &lt;td rowspan=&#34;7&#34;&gt;pRRXKOl8ikMmt9u&lt;/td&gt;
-        &lt;td rowspan=&#34;7&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/td&gt;
-        &lt;td rowspan=&#34;7&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/td&gt;
-        &lt;td&gt;512322&lt;/td&gt;
-        &lt;td&gt;Argentina&lt;/td&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th style=&#34;text-align: center;&#34;&gt;Argentina&lt;br/&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+      &lt;th style=&#34;text-align: center;&#34;&gt;Brasil&lt;br/&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+      &lt;th style=&#34;text-align: center;&#34;&gt;Chile&lt;br/&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+      &lt;th style=&#34;text-align: center;&#34;&gt;Colômbia&lt;br/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+      &lt;th style=&#34;text-align: center;&#34;&gt;México&lt;br/&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+      &lt;th style=&#34;text-align: center;&#34;&gt;Panamá&lt;br/&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
+      &lt;th style=&#34;text-align: center;&#34;&gt;Peru&lt;br/&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt;&lt;/th&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;512327&lt;/td&gt;
-        &lt;td&gt;Brasil&lt;/td&gt;
+      &lt;th&gt;Account ID&lt;/th&gt;
+      &lt;td style=&#34;text-align: center;&#34;&gt;512322&lt;/td&gt;
+      &lt;td style=&#34;text-align: center;&#34;&gt;512327&lt;/td&gt;
+      &lt;td style=&#34;text-align: center;&#34;&gt;512325&lt;/td&gt;
+      &lt;td style=&#34;text-align: center;&#34;&gt;512321&lt;/td&gt;
+      &lt;td style=&#34;text-align: center;&#34;&gt;512324&lt;/td&gt;
+      &lt;td style=&#34;text-align: center;&#34;&gt;512326&lt;/td&gt;
+      &lt;td style=&#34;text-align: center;&#34;&gt;512323&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;512325&lt;/td&gt;
-        &lt;td&gt;Chile&lt;/td&gt;
+      &lt;th&gt;Merchant ID&lt;/th&gt;
+      &lt;td colspan=&#34;7&#34; style=&#34;text-align: center;&#34;&gt;508029&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;512321&lt;/td&gt;
-        &lt;td&gt;Colômbia&lt;/td&gt;
+      &lt;th&gt;API Login&lt;/th&gt;
+      &lt;td colspan=&#34;7&#34; style=&#34;text-align: center;&#34;&gt;pRRXKOl8ikMmt9u&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;512324&lt;/td&gt;
-        &lt;td&gt;México&lt;/td&gt;
+      &lt;th&gt;API Key&lt;/th&gt;
+      &lt;td colspan=&#34;7&#34; style=&#34;text-align: center;&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;512326&lt;/td&gt;
-        &lt;td&gt;Panamá&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;512323&lt;/td&gt;
-        &lt;td&gt;Peru&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;
+      &lt;th&gt;Public Key&lt;/th&gt;
+      &lt;td colspan=&#34;7&#34; style=&#34;text-align: center;&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/td&gt;
+    &lt;/tr&gt;  
+  &lt;/table&gt;
 
-&lt;p&gt;O ambiente de teste não reproduz dados de sua conta de produção.&lt;/p&gt;
-&lt;h2 id=&#34;test-Cartãos&#34;&gt;Cartões de teste&lt;/h2&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Notas&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Consulte a documentação de &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication&#34; target=&#34;_blank&#34;&gt;Autenticação 3DS Realizada pela PayU&lt;/a&gt; para encontrar as credenciais para testar 3DS.&lt;/li&gt;
+&lt;li&gt;O ambiente de teste não replica os dados da sua conta de produção.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;test-Cartãos&#34;&gt;Cartões de Teste&lt;/h2&gt;
 &lt;p&gt;Você pode usar os seguintes cartões para teste:&lt;/p&gt;
 &lt;details id=&#34;argentina&#34;&gt;
 &lt;summary&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; Argentina&lt;/summary&gt;
@@ -1108,7 +1109,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/details&gt;
-&lt;h3 id=&#34;testing-status&#34;&gt;Testando estados&lt;/h3&gt;
+&lt;h3 id=&#34;testing-statuses&#34;&gt;Testando Estados&lt;/h3&gt;
 &lt;p&gt;Para testar Pagamentos, você deve enviar a solicitação:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Para transações &lt;em&gt;aprovadas&lt;/em&gt;&lt;/strong&gt;:
@@ -1138,7 +1139,7 @@
 &lt;li&gt;Para testar as transferências bancárias PSE (disponíveis na Colômbia) no ambiente PayU Sandbox, consulte o &lt;a href=&#34;../../../assets/pse-test-guide-v5-es.pdf&#34;&gt;Guia de teste PSE (PDF - em espanhol)&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para testar cartões no Chile, use os valores de nome do titular do cartão, CVV e data de expiração mostrados no &lt;a href=&#34;#chile&#34; id=&#34;linkcl&#34; onclick=&#34;document.getElementById(&#39;chile&#39;).open = true ;&#34;&gt;cartões de teste&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;importing-the-collection&#34;&gt;Como importar a coleção&lt;/h2&gt;
+&lt;h2 id=&#34;importing-the-collection&#34;&gt;Importando a Coleção&lt;/h2&gt;
 &lt;p&gt;Clique no botão abaixo para importar nossa coleção no Postman (pode ser necessário atualizar a página se o botão não funcionar para você). Observe que criamos um novo ambiente cada vez que você importa a coleção.&lt;/p&gt;
 &lt;p&gt;&lt;div class=&#34;postman-run-button&#34;
 data-postman-action=&#34;collection/import&#34;
@@ -1155,10 +1156,10 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/script&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Depois de executar a coleção, você precisa definir os parâmetros globais e variáveis de ambiente.&lt;/p&gt;
-&lt;h3 id=&#34;setting-your-environment-variables&#34;&gt;Setting your Environment Variables&lt;/h3&gt;
+&lt;h3 id=&#34;setting-your-environment-variables&#34;&gt;Configurando Suas Variáveis ​​de Ambiente&lt;/h3&gt;
 &lt;p&gt;Nossa coleção tem um ambiente chamado &lt;code&gt;PayU API Sandbox&lt;/code&gt;. Recomendamos que você invoque as solicitações de API da coleção apenas em um ambiente Sandbox.&lt;/p&gt;
 &lt;p&gt;Se você deseja alterar as contas de teste do PayU, configure as variáveis &lt;code&gt;api_key&lt;/code&gt;, &lt;code&gt;api_login&lt;/code&gt;, &lt;code&gt;merchant_id&lt;/code&gt; e &lt;code&gt;account-[país]&lt;/code&gt;. Você pode deixar todas as outras variáveis inalteradas.&lt;/p&gt;
-&lt;h3 id=&#34;setting-your-environment-variables&#34;&gt;Como importar variáveis globais&lt;/h3&gt;
+&lt;h3 id=&#34;importing-globals&#34;&gt;Importando os Globals&lt;/h3&gt;
 &lt;p&gt;As variáveis globais são necessárias para processar transações em nosso portal de pagamentos, como moeda, valor da transação, páginas de confirmação e resposta e muito mais.&lt;/p&gt;
 &lt;p&gt;Importe as variáveis globais da coleção para configurar os valores enviados às solicitações.&lt;/p&gt;
 &lt;ol&gt;
@@ -1173,7 +1174,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Para alterar o valor de uma transação, atualize o valor para o  &lt;code&gt;tx_value_[país]&lt;/code&gt; de acordo com o país que você deseja testar.de acordo com o país que você deseja testar.&lt;/p&gt;
-&lt;h2 id=&#34;running-the-requests-in-the-correct-order&#34;&gt;Execute as solicitações na ordem correta&lt;/h2&gt;
+&lt;h2 id=&#34;running-the-requests-in-the-correct-order&#34;&gt;Execute as Solicitações na Ordem Correta&lt;/h2&gt;
 &lt;p&gt;Observe que a ordem em que você executa as solicitações é importante, pois alguns dos dados retornados por uma solicitação podem ser usados na próxima invocação.&lt;/p&gt;
 
       </description>

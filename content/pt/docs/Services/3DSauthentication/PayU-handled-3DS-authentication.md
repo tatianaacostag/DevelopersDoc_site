@@ -14,7 +14,8 @@ Para usar a autenticação 3DS, os lojistas precisam estar registrados para este
 
 {{% alert title="Observação" color="info"%}}
 
-A autenticação 3DS para PayU Latam está disponível apenas para **Argentina**, **Brasil**, **Colômbia** e **Peru**.
+* A autenticação 3DS para PayU Latam está disponível apenas para **Argentina**, **Brasil**, **Colômbia** e **Peru**.
+* * **Redes atualmente suportadas:** Visa e Mastercard
 
 {{% /alert %}}
 

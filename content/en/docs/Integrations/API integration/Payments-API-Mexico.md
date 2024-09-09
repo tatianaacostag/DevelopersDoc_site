@@ -103,7 +103,7 @@ Two-step flows are only supported for Mastercard and Visa.
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | No |
+| transaction > creditCardTokenId | Alphanumeric |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | No |
 | transaction > creditCard | Object |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). | No |
@@ -1010,6 +1010,7 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1797,6 +1798,7 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2298,6 +2300,7 @@ Response Example:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2332,7 +2335,7 @@ The ```PING``` method lets you verify the connection to our platform.
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. |
-| transactionResponse |  | Max:2048 | The response of the PING method if an error ocurred. |
+| transactionResponse | Object | Max:2048 | The response of the PING method if an error ocurred. |
 </details>
 
 ### API Call
@@ -2391,6 +2394,7 @@ Response Example:
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 

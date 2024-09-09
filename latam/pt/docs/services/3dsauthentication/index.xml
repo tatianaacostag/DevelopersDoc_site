@@ -40,8 +40,8 @@ A autenticação 3DS para PayU Latam está disponível apenas para &lt;strong&gt
 &lt;li&gt;&lt;code&gt;&amp;quot;false&amp;quot;&lt;/code&gt;: Desativa a autenticação 3DS para a transação.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Se &lt;code&gt;req3DSAuthentication&lt;/code&gt; não estiver incluído,&lt;/strong&gt; a PayU decidirá se deve realizar a autenticação 3DS com base em sua própria avaliação de risco.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Exemplo de uma Solicitação:&lt;/strong&gt;
-No exemplo de solicitação abaixo, o &lt;code&gt;req3DSAuthentication&lt;/code&gt; está definido como &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
+&lt;h4 id=&#34;exemplo-de-uma-solicitação&#34;&gt;Exemplo de uma Solicitação&lt;/h4&gt;
+&lt;p&gt;No exemplo de solicitação abaixo, o &lt;code&gt;req3DSAuthentication&lt;/code&gt; está definido como &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUBMIT_TRANSACTION&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
@@ -139,13 +139,54 @@ No exemplo de solicitação abaixo, o &lt;code&gt;req3DSAuthentication&lt;/code&
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;resposta-da-transação-e-fluxo-de-autenticação&#34;&gt;Resposta da Transação e Fluxo de Autenticação&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;testando-a-autenticação-3ds&#34;&gt;Testando a Autenticação 3DS&lt;/h2&gt;
+&lt;p&gt;Para testar o processo de autenticação 3DS, utilize os valores fictícios fornecidos na tabela abaixo. Esses valores são aplicáveis aos diferentes métodos de pagamento disponíveis em cada país:&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;Argentina&lt;/th&gt;
+    &lt;th&gt;&lt;img src=&#34;../../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;Brasil&lt;/th&gt;
+    &lt;th&gt;&lt;img src=&#34;../../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;Colômbia&lt;/th&gt;
+    &lt;th&gt;&lt;img src=&#34;../../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;Peru&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Account ID&lt;/th&gt;
+    &lt;td&gt;516684&lt;/td&gt;
+    &lt;td&gt;516685&lt;/td&gt;
+    &lt;td&gt;516686&lt;/td&gt;
+    &lt;td&gt;516688&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Merchant ID&lt;/th&gt;
+    &lt;td colspan=&#34;4&#34; style=&#34;text-align: center;&#34;&gt;508029&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;API Login&lt;/th&gt;
+    &lt;td colspan=&#34;4&#34; style=&#34;text-align: center;&#34;&gt;pRRXKOl8ikMmt9u&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;API Key&lt;/th&gt;
+    &lt;td colspan=&#34;4&#34; style=&#34;text-align: center;&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Public Key&lt;/th&gt;
+    &lt;td colspan=&#34;4&#34; style=&#34;text-align: center;&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Esses IDs de conta são apenas para fins de teste, não os utilize em ambientes de produção.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;resposta-da-transação-e-fluxo-de-autenticação&#34;&gt;Resposta da Transação e Fluxo de Autenticação&lt;/h2&gt;
 &lt;p&gt;Ao enviar uma solicitação de pagamento, você receberá uma resposta com o estado &lt;code&gt;&amp;quot;PENDING&amp;quot;&lt;/code&gt; para a transação. Essa resposta também incluirá um campo em &lt;code&gt;extraParameters&lt;/code&gt; chamado &lt;code&gt;THREEDS_AUTH_REDIRECT_URL&lt;/code&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;THREEDS_AUTH_REDIRECT_URL&lt;/code&gt;:&lt;/strong&gt; Essa URL deve ser usada para redirecionar o pagador para concluir o processo de autenticação 3DS. O processo de autenticação pode envolver desafios como inserir uma senha única (OTP) recebida em seu telefone.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Exemplo de uma resposta&lt;/strong&gt;
-No exemplo de resposta abaixo, o lojista redireciona o pagador para &lt;code&gt;https://merch-prod.payu.com&lt;/code&gt;:&lt;/p&gt;
+&lt;h4 id=&#34;exemplo-de-uma-resposta&#34;&gt;Exemplo de uma Resposta&lt;/h4&gt;
+&lt;p&gt;No exemplo de resposta abaixo, o lojista redireciona o pagador para &lt;code&gt;https://merch-prod.payu.com&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SUCCESS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;error&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;

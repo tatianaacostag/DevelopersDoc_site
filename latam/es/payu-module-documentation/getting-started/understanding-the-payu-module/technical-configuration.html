@@ -21,21 +21,21 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
-<title>Configuración técnica | PayU Latam</title><meta property="og:title" content="Configuración técnica" />
-<meta property="og:description" content="Encuentra aquí todos los detalles que te ayudarán a integrar tu página web usando cualquiera de nuestras [integraciones](/es/docs/integrations.html).
+<title>Configuración Técnica | PayU Latam</title><meta property="og:title" content="Configuración Técnica" />
+<meta property="og:description" content="Esta guía proporciona detalles esenciales para integrar tu sitio web utilizando cualquiera de los [métodos de integración](/es/docs/integrations.html) que ofrecemos.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html" /><meta property="article:section" content="PayU Module Documentation" />
 <meta property="article:published_time" content="2021-08-13T12:19:55-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-09-04T17:00:40-05:00" />
 
-<meta itemprop="name" content="Configuración técnica">
-<meta itemprop="description" content="Encuentra aquí todos los detalles que te ayudarán a integrar tu página web usando cualquiera de nuestras [integraciones](/es/docs/integrations.html).
+<meta itemprop="name" content="Configuración Técnica">
+<meta itemprop="description" content="Esta guía proporciona detalles esenciales para integrar tu sitio web utilizando cualquiera de los [métodos de integración](/es/docs/integrations.html) que ofrecemos.
 "><meta itemprop="datePublished" content="2021-08-13T12:19:55-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="497">
-<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Configuración técnica"/>
-<meta name="twitter:description" content="Encuentra aquí todos los detalles que te ayudarán a integrar tu página web usando cualquiera de nuestras [integraciones](/es/docs/integrations.html).
+<meta itemprop="dateModified" content="2024-09-04T17:00:40-05:00" />
+<meta itemprop="wordCount" content="570">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Configuración Técnica"/>
+<meta name="twitter:description" content="Esta guía proporciona detalles esenciales para integrar tu sitio web utilizando cualquiera de los [métodos de integración](/es/docs/integrations.html) que ofrecemos.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.10c81fe88d2699cfae5830d17e4124b5c23ca98e56ef268706a965013ef2be4e6268ce8079aac6cd8a7f4d389f41ba2d77d4ff1cb77f91ff0e8ec3ea231b549e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -268,7 +268,7 @@
       
       
       
-        <a id="/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-espayu-module-documentationgetting-startedunderstanding-the-payu-moduletechnical-configurationhtml" href="../../../../es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html">Configuración técnica</a>
+        <a id="/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-espayu-module-documentationgetting-startedunderstanding-the-payu-moduletechnical-configurationhtml" href="../../../../es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html">Configuración Técnica</a>
       
       
     </li>
@@ -460,13 +460,13 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#getting-technical-information">Obtener la información técnica</a>
+    <li><a href="#technical-information-overview">Información Técnica General</a>
       <ul>
-        <li><a href="#merchant-and-account-ids">Merchant y account IDs</a></li>
-        <li><a href="#api-key-and-api-login">API key y API Login</a></li>
+        <li><a href="#merchant-and-account-ids">Merchant ID y Account ID</a></li>
+        <li><a href="#api-key-and-api-login">API Key y API Login</a></li>
       </ul>
     </li>
-    <li><a href="#configuring-technical-information">Configurar la información técnica</a>
+    <li><a href="#configuring-technical-information">Configurar la Información Técnica</a>
       <ul>
         <li><a href="#payments">Pagos</a></li>
         <li><a href="#disputes">Disputas</a></li>
@@ -520,7 +520,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="../../../../es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html">Configuración técnica</a>
+	<a href="../../../../es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html">Configuración Técnica</a>
 </li>
 
 	</ol>
@@ -528,45 +528,49 @@
 
             
 <div class="td-content">
-	<h1>Configuración técnica</h1>
-    <div class="lead">Encuentra aquí todos los detalles que te ayudarán a integrar tu página web usando cualquiera de nuestras <a href="../../../../es/docs/integrations.html">integraciones</a>.</div>
+	<h1>Configuración Técnica</h1>
+    <div class="lead">Esta guía proporciona detalles esenciales para integrar tu sitio web utilizando cualquiera de los <a href="../../../../es/docs/integrations.html">métodos de integración</a> que ofrecemos.</div>
 	       
-	<h2 id="getting-technical-information">Obtener la información técnica</h2>
-<p>Independiente de la <a href="../../../../es/docs/integrations.html">integración</a> que utilices, necesitas las siguientes variables en la petición de los métodos o en sus parámetros.</p>
-<h3 id="merchant-and-account-ids">Merchant y account IDs</h3>
-<p>Estos valores te permiten autenticar tanto a tu comercio (Merchant ID) como a su cuenta (Account ID) cuando utilizas cualquiera de las integraciones para utilizar los servicios que brindamos.</p>
-<p>Cuando inicias sesión en tu módulo PayU, encuentras ambos valores en el panel izquierdo.</p>
+	<h2 id="technical-information-overview">Información Técnica General</h2>
+<p>Independientemente del <a href="../../../../es/docs/integrations.html">método de integración</a> que elijas, ciertos detalles técnicos son necesarios para garantizar una integración exitosa. Este documento describe las variables clave y configuraciones que necesitas ajustar.</p>
+<h3 id="merchant-and-account-ids">Merchant ID y Account ID</h3>
+<p>Estos identificadores son cruciales para autenticar tu cuenta de comerciante con PayU. Puedes encontrarlos en el panel izquierdo del sitio de administración después de iniciar sesión.</p>
 <img src="../../../../assets/Merchant_Ids_es.png" alt="PrintScreen" width="60%"/>
-<h3 id="api-key-and-api-login">API key y API Login</h3>
+<h3 id="api-key-and-api-login">API Key y API Login</h3>
 <ol>
-<li>En el módulo PayU, haz clic en <em><strong>Configuración</strong></em> y luego selecciona <em><strong>Configuración técnica</strong></em>.</li>
+<li>
+<p>Inicia sesión en tu Panel de Administración.</p>
+</li>
+<li>
+<p>Navega a <em><strong>Configuración</strong></em> y selecciona <em><strong>Configuración Técnica</strong></em>.</p>
+</li>
 </ol>
 <p><img src="../../../../assets/IntegrationVariables_01_es.png" alt="PrintScreen"></p>
-<ol start="2">
-<li>En esta ventana, encontrarás tanto el API key como el API Login que permiten autenticar a tu comercio durante el proceso de integración.</li>
+<ol start="3">
+<li>En el panel derecho, encontrarás tanto la API Key como el API Login, necesarios para autenticar tus transacciones durante la integración.</li>
 </ol>
 <p><img src="../../../../assets/IntegrationVariables_02_es.png" alt="PrintScreen"></p>
 
 
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Advertencia</h4>
-Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta información asegurada y su uso o distribución se hace bajo tu responsabilidad.
+Tu llave API y tu API Login son únicos para tu cuenta PayU. Asegúrate de mantener estas credenciales seguras, ya que su mal uso o divulgación no autorizada es tu responsabilidad.
 </div>
 
-<h2 id="configuring-technical-information">Configurar la información técnica</h2>
-<p>En esta sección podrás configurar propiedades técnicas pertenecientes a cada cuenta activa como:</p>
+<h2 id="configuring-technical-information">Configurar la Información Técnica</h2>
+<p>Puedes personalizar varias configuraciones técnicas para cada cuenta activa, incluyendo:</p>
 <ul>
-<li>La configuración de URLs para las páginas de Respuesta y Confirmación</li>
-<li>Habilitar las opciones de envío de correos al comprador y a tu comercio al momento de realizar una venta.</li>
-<li>Habilitar las notificaciones para el proceso de Disputas.</li>
-<li>Seleccionar si tus pagos se procesan en modo pruebas o en producción</li>
+<li>URLs para páginas de confirmación y de respuesta.</li>
+<li>Notificaciones por correo electrónico para compradores y para tu tienda.</li>
+<li>Notificaciones del proceso de disputas.</li>
+<li>Selección del modo de prueba o transacciones en producción.</li>
 </ul>
-<p>Para configurar esta información, haz clic en <em><strong>Configuración</strong></em> y luego selecciona <em><strong>Configuración técnica</strong></em>.</p>
+<p>Para configurar esta información, ve a <em><strong>Configuración</strong></em> &gt; <em><strong>Configuración Técnica</strong></em>.</p>
 <p><img src="../../../../assets/IntegrationVariables_01_es.png" alt="PrintScreen"></p>
-<p>En la ventana <em><strong>Configuración técnica</strong></em>, encuentras dos pestañas de acuerdo a tus necesidades: <em><strong>Pagos</strong></em> o <em><strong>Disputas</strong></em>.</p>
+<p>En la ventana de <em><strong>Configuración Técnica</strong></em>, encontrarás dos pestañas según tus necesidades: <em><strong>Pagos</strong></em> y <em><strong>Disputas</strong></em>.</p>
 <p><img src="../../../../assets/TechnicalInformation/TechnicalInformation_01_es.png" alt="PrintScreen"></p>
 <h3 id="payments">Pagos</h3>
-<p>En esta pestaña puedes configurar la siguiente información.</p>
+<p>En la pestaña <em><strong>Pagos</strong></em>, puedes configurar lo siguiente:</p>
 <p><img src="../../../../assets/TechnicalInformation/TechnicalInformation_02_es.png" alt="PrintScreen"></p>
 <div class="variables"></div>
 <table>
@@ -579,28 +583,28 @@ Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta
 <tbody>
 <tr>
 <td>Tus pagos se procesan</td>
-<td>Selecciona si tus transacciones son procesadas <em>En Producción</em> o en <em>Modo prueba</em>. Cuando procesas en <em>Modo prueba</em>, las transacciones realizadas a través de tu página web o a través de solicitudes de pago son marcadas como de prueba y el pago no es real.</td>
+<td>Elige si tus transacciones se procesan <em>En Producción</em> o <em>En Modo de Prueba</em>. Las transacciones procesadas en <em>Modo de Prueba</em> se marcan como pruebas y no son reales.</td>
 </tr>
 <tr>
 <td>URL de respuesta</td>
-<td>Es la página a la cual se redirecciona el comprador una vez finaliza la transacción en PayU, en esta página se muestra el estado de la transacción.</td>
+<td>La URL a la que se redirige a los compradores después de completar una transacción. Esta página muestra el estado de la transacción.</td>
 </tr>
 <tr>
 <td>URL de confirmación</td>
-<td>Es la página a la cual PayU envía la confirmación del pago a tu sistema. Esto es útil para actualizar inventarios y bases de datos una vez la transacción llegue a su estado final.<br>Esta página no es obligatoria.</td>
+<td>La URL a la que PayU envía la confirmación del pago a tu sistema. Usa esta URL para actualizar el inventario o las bases de datos cuando una transacción alcanza su estado final. Este parámetro es opcional.</td>
 </tr>
 <tr>
-<td>Controlar pagos dobles</td>
-<td>Al habilitar esta opción, validamos que la referencia de cada pago enviado a nuestro sistema sea única. En caso contrario, podrás enviar una misma referencia para todas tus ventas.</td>
+<td>Controlar pagos dobles / Solo para ventas aprobadas</td>
+<td><li><b>Controlar pagos dobles:</b> Si habilitas esta opción, la referencia solo se puede usar una vez, independientemente del resultado de la transacción (aprobada, rechazada, pendiente).</li> <li><b>Solo para ventas aprobadas:</b> Si marcas esta casilla, una referencia se puede reutilizar solo si la transacción anterior fue rechazada. Si la transacción anterior estaba pendiente o aprobada, la referencia no se puede reutilizar.</li> <li><b>Controlar pagos dobles + Solo para ventas aprobadas:</b> Si habilitas ambas funcionalidades, la referencia solo se puede usar una vez (prevalece la regla &ldquo;Validar referencia única para todos los estados&rdquo;).</li> <li><b>Ambas casillas deshabilitadas:</b> La referencia se puede reutilizar varias veces, independientemente del resultado de la transacción. Ten en cuenta que al tener ambas opciones deshabilitadas, se puede afectar la conciliación ya que la misma referencia podría aparecer varias veces con diferentes estados.</li> <br> <b>Nota:</b><br> Tiempo de reintento: Si necesitas reenviar una referencia, espera una respuesta de PayU o al menos 60 segundos.</td>
 </tr>
 <tr>
 <td>Notificaciones de pagos procesados</td>
-<td>Esta opción te permite enviar un correo electrónico al pagador o a ti cuando el pago sea aprobado o rechazado.</td>
+<td>Habilita las notificaciones por correo electrónico que se envían al comprador o a tu tienda cuando un pago es aprobado o rechazado.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="disputes">Disputas</h3>
-<p>En esta pestaña puedes configurar la siguiente información del proceso de <a href="../../../../es/payu-module-documentation/payu-operations/disputes-mp.html">disputas</a>.</p>
+<p>En la pestaña <em><strong>Disputas</strong></em>, puedes configurar los ajustes relacionados con el <a href="../../../../es/payu-module-documentation/payu-operations/disputes-mp.html">proceso de disputas</a>.</p>
 <p><img src="../../../../assets/TechnicalInformation/TechnicalInformation_03_es.png" alt="PrintScreen"></p>
 <div class="variables"></div>
 <table>
@@ -613,11 +617,11 @@ Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta
 <tbody>
 <tr>
 <td>Correos de notificaciones</td>
-<td>Configura las direcciones de correo electrónico para recibir notificaciones cuando se inicie un proceso de disputa.</td>
+<td>Establece las direcciones de correo electrónico a las que se enviarán notificaciones cuando se inicie una disputa.</td>
 </tr>
 <tr>
 <td>URL de notificación automática</td>
-<td>Si habilitas esta opción, puedes establecer la URL a la que PayU envía la notificación de un proceso de disputa.</td>
+<td>Si está habilitado, configura la URL a la que PayU enviará notificaciones sobre los procesos de disputa.</td>
 </tr>
 </tbody>
 </table>
@@ -625,7 +629,7 @@ Ambas llaves con únicas por comercio en PayU, por lo tanto, debes mantener esta
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Nota</h4>
-No olvides hacer clic en <em><strong>Guardar cambios</strong></em> al final de la sección para aplicar los cambios.
+Recuerda hacer clic en el botón <em><strong>Guardar cambios</strong></em> para aplicar cualquier actualización que realices.
 </div>
 
 
@@ -634,9 +638,9 @@ No olvides hacer clic en <em><strong>Guardar cambios</strong></em> al final de l
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-24 de junio de 2022:
+4 de septiembre de 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation Updates (0b93c153b)</b>
 </div>
 </div>
 

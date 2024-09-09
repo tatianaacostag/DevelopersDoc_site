@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-08-28T09:47:10-05:00" />
+<meta property="article:modified_time" content="2024-09-04T17:00:40-05:00" />
 
 <meta itemprop="name" content="Payments API - Brazil">
 <meta itemprop="description" content="The Payments API for Brazil allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, electronic transfers, cash, bank transfers, and credit cards.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-08-28T09:47:10-05:00" />
-<meta itemprop="wordCount" content="13016">
+<meta itemprop="dateModified" content="2024-09-04T17:00:40-05:00" />
+<meta itemprop="wordCount" content="13015">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Brazil"/>
 <meta name="twitter:description" content="The Payments API for Brazil allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, electronic transfers, cash, bank transfers, and credit cards.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.10c81fe88d2699cfae5830d17e4124b5c23ca98e56ef268706a965013ef2be4e6268ce8079aac6cd8a7f4d389f41ba2d77d4ff1cb77f91ff0e8ec3ea231b549e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -292,7 +292,7 @@
       
       
       
-        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-handled 3DS Authentication</a>
+        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-Handled 3DS Authentication</a>
       
       
       
@@ -783,7 +783,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#available-methods">Available Methods</a></li>
-    <li><a href="#submit-transaction-using-credit-cards">Submit Transaction Using Credit Cards</a>
+    <li><a href="#submit-transactions-using-credit-cards">Submit Transactions Using Credit Cards</a>
       <ul>
         <li><a href="#adding-payment-facilitators">Adding Payment Facilitators</a></li>
         <li><a href="#using-tokenized-cards">Using Tokenized Cards</a></li>
@@ -803,9 +803,9 @@
     </li>
     <li><a href="#submit-transactions-using-pix">Submit Transactions Using PIX</a>
       <ul>
-        <li><a href="#how-does-pix-work">How does PIX work?</a></li>
+        <li><a href="#how-does-pix-work">How Does PIX Work?</a></li>
         <li><a href="#parameters-for-request-and-response-1">Parameters for Request and Response</a></li>
-        <li><a href="#api-call-1">API call</a></li>
+        <li><a href="#api-call-1">API Call</a></li>
       </ul>
     </li>
     <li><a href="#submit-transactions-using-cash">Submit Transactions Using Cash</a>
@@ -829,7 +829,7 @@
     <li><a href="#ping">Ping</a>
       <ul>
         <li><a href="#parameters-for-request-and-response-5">Parameters for Request and Response</a></li>
-        <li><a href="#api-call-5">Api call</a></li>
+        <li><a href="#api-call-5">API Call</a></li>
       </ul>
     </li>
   </ul>
@@ -907,7 +907,7 @@
 <h2 id="available-methods">Available Methods</h2>
 <p>Payments API includes the following methods:</p>
 <ul>
-<li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transactions-using-credit-cards">Submit Transactions Using Credit Card</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transactions-using-credit-cards">Submit Transactions Using Credit Cards</a></li>
 <li><a href="#submit-transactions-using-google-pay">Submit Transactions Using Google Pay™</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transactions-using-pix">Submit Transactions Using PIX</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transactions-using-cash">Submit Transactions Using Cash</a></li>
@@ -926,7 +926,7 @@
 </ul>
 </div>
 
-<h2 id="submit-transaction-using-credit-cards">Submit Transaction Using Credit Cards</h2>
+<h2 id="submit-transactions-using-credit-cards">Submit Transactions Using Credit Cards</h2>
 <p>This method lets you process the payments performed by your customers using credit cards. For Brazil, you can perform the two-step flows (<strong>Authorization</strong>, <strong>Capture</strong>), and one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../../en/docs/services/payments.html#payment-flows">Payment flows</a>.</p>
 <h3 id="adding-payment-facilitators">Adding Payment Facilitators</h3>
 <p>Merchants can be considered as Payment Processor by franchises and the Central Bank. A payment processor is a legal entity that has money from sub-merchants. In the case of merchant bankruptcy and tax management, the Brazilian Central Bank wants to know the business&rsquo;s beneficiary.</p>
@@ -3434,7 +3434,7 @@ To ensure correct processing, use cards whose name do NOT start with &ldquo;Test
 <p>This method lets you process payments using PIX. To integrate with PIX you need to show in your checkout page a QR code so your customer can read it using their smartphone to perform the payment.</p>
 <p>In the end, your customer sees a checkout page like this.</p>
 <p><img src="../../../../assets/Payments/PixCheckout.png" alt="PrintScreen"></p>
-<h3 id="how-does-pix-work">How does PIX work?</h3>
+<h3 id="how-does-pix-work">How Does PIX Work?</h3>
 <p>PIX is an online transfer method released in November, 2020 by the Brazilian Central Bank (<em>Banco Central do Brasil</em> - BACEN) which allows you make and receive transfers easily regardless of the bank who issued your account.</p>
 <p>Unlike other cash and bank transfer methods, PIX allows you to receive transfers immediately without sharing your account number; at any time, on any day. The funds received using this payment method will appear in your PayU account in a matter of seconds.</p>
 <p>Pix has two parts:</p>
@@ -4100,7 +4100,7 @@ To ensure correct processing, use cards whose name do NOT start with &ldquo;Test
 It is recommended to display in your Checkout both the image of the QR code (parameter <code>QRCODE_IMAGE_BASE64</code> decoded) and the string of the code (parameter <code>QRCODE_EMV</code>) to avoid payment desertions.
 </div>
 
-<h3 id="api-call-1">API call</h3>
+<h3 id="api-call-1">API Call</h3>
 <p>The following are the bodies of the request and response of this payment method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6472,14 +6472,14 @@ To integrate with these transactions, you must redirect the customer to the URL 
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td>transactionResponse</td>
+<td></td>
 <td>Max:2048</td>
 <td>The response of the PING method if an error ocurred.</td>
 </tr>
 </tbody>
 </table>
 </details>
-<h3 id="api-call-5">Api call</h3>
+<h3 id="api-call-5">API Call</h3>
 <p>The following are the bodies of the request and response of this method.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6589,9 +6589,9 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-August 28, 2024:
+September 4, 2024:
 
- <b>Documentation updates (2892f1bb8)</b>
+ <b>Documentation Updates (0b93c153b)</b>
 </div>
 </div>
 

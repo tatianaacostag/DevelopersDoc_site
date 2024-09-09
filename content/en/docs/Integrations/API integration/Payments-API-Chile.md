@@ -7,6 +7,7 @@ description: >
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
 This guide shows you how to leverage these services to enhance your customers' payment experience by providing flexible and secure payment options tailored to the local market.
@@ -103,7 +104,7 @@ Transactions using two-step flows are available under demand. Contact your sales
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | No |
+| transaction > creditCardTokenId | Alphanumeric |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | No |
 | transaction > creditCard | Object |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). | No |
@@ -180,6 +181,7 @@ Transactions using two-step flows are available under demand. Contact your sales
     * To enable processing without CVV, contact your PayU sales representative. Once enabled, include the parameter `creditCard.processWithoutCvv2` set to `true` in your request and omit the `creditCard.securityCode` parameter.
 
 ### Authorization
+
 Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-api-chile.md#capture" >}}) the funds.<br>The following are the request and response bodies for this transaction type.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
@@ -428,6 +430,7 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -549,6 +552,7 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -705,6 +709,7 @@ Response Example:
 
 
 ### Charge
+
 Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
 
 The following are the request and response bodies for this transaction type.
@@ -713,7 +718,7 @@ The following are the request and response bodies for this transaction type.
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -800,7 +805,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -835,7 +840,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -930,7 +935,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -957,11 +962,12 @@ Response example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
 <!--
-## Submit transactions using Khipu
+## Submit Transactions Using Khipu
 
 Khipu is a payment solution that allows businesses in Chile to accept payments directly from their customers' bank accounts, without the need for credit or debit cards.
 
@@ -1102,7 +1108,7 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 
 </details>
 
-#### Request and response examples
+#### Request and Response Examples
 
 Below are examples of request and response in JSON and XML formats.
 
@@ -1116,7 +1122,7 @@ For testing, you can use:
 {{< tab tabNum="1" >}}
 <br>
 
-Example of a request:
+Request Example:
 ```JSON
 {
     "language": "es",
@@ -1199,7 +1205,7 @@ Example of a request:
 ```
 <br>
 
-Example of a response:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1234,7 +1240,7 @@ Example of a response:
 {{< tab tabNum="2" >}}
 <br>
 
-Example of request:
+Request Example:
 ```XML
 <request>
 	<language>es</language>
@@ -1328,7 +1334,7 @@ Example of request:
 ```
 <br>
 
-Example of a response:
+Response Example:
 ```XML
 <paymentResponse>
 	<code>SUCCESS</code>
@@ -1396,7 +1402,7 @@ Optionally, with this method, you can get the list of banks available for conduc
 
 </details>
 
-#### API call
+#### API Call
 
 Below are examples of request and response in JSON and XML formats.
 
@@ -1404,7 +1410,7 @@ Below are examples of request and response in JSON and XML formats.
 {{< tab tabNum="1" >}}
 <br>
 
-Example of a request:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -1422,7 +1428,7 @@ Example of a request:
 ```
 <br>
 
-Example of a response:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -1454,7 +1460,7 @@ Example of a response:
 {{< tab tabNum="2" >}}
 <br>
 
-Example of a request:
+Request Example:
 ```XML
 <request>
     <language>en</language>
@@ -1473,7 +1479,7 @@ Example of a request:
 ```
 <br>
 
-Example of a response:
+Response Example:
 ```XML
 <bankListResponse>
     <code>SUCCESS</code>
@@ -1500,7 +1506,7 @@ Example of a response:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Additional considerations for Khipu integration
+### Additional Considerations for Khipu Integration
 
 **Transparency in payments:** Payments processed through the Khipu gateway will appear on the payer's account statement under the name _PayU Chile SA_.
 
@@ -1517,6 +1523,7 @@ Example of a response:
 -->
 
 ## Submit Transactions Using Cash
+
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.
 
 <img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
@@ -2292,6 +2299,7 @@ This method returns a list of the payment methods available in all countries.
 </details>
 
 ### API Call
+
 The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
 {{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
@@ -2375,6 +2383,7 @@ Response Example:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2409,10 +2418,11 @@ The ```PING``` method lets you verify the connection to our platform.
 |-|-|-|-|:-:|
 | code | Alphanumeric |  | The response code of the transaction. | Yes |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. | Yes |
-| transactionResponse |  | Max:2048 | The response of the PING method if an error ocurred. | Yes |
+| transactionResponse | Object | Max:2048 | The response of the PING method if an error ocurred. | Yes |
 </details>
 
 ### API Call
+
 The following are the examples of the request and response of this method.
 
 {{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
@@ -2467,5 +2477,6 @@ Response Example:
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}

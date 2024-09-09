@@ -103,7 +103,7 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId |  |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada reemplazando la información de la tarjeta de crédito. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}) | No |
+| transaction > creditCardTokenId | Alfanumérico |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada reemplazando la información de la tarjeta de crédito. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}) | No |
 | transaction > creditCard | Objeto |  | Información de la tarjeta de crédito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
 | transaction > creditCard > number | Alfanumérico | Min:13 Max:20 | Número de la tarjeta de crédito. | No |
 | transaction > creditCard > securityCode | Alfanumérico | Min:1 Max:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
@@ -1030,11 +1030,11 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
 | test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
+| merchant | Objeto |  | Este objeto tiene los datos de autenticación. | Sí |
 | merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 | merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > order |  |  | Este objeto tiene los datos de la orden. | Sí |
+| transaction | Objeto |  | Este objeto tiene los datos de la transacción. | Sí |
+| transaction > order | Objeto |  | Este objeto tiene los datos de la orden. | Sí |
 | transaction > order > accountId | Numérico |  | Identificador de tu cuenta. | Sí |
 | transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Representa el identificador de la orden en tu sistema. | Sí |
 | transaction > order > description | Alfanumérico | Min:1 Max:255 | Descripción de la orden. | Sí |
@@ -1042,7 +1042,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > order > notifyUrl | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No |
 | transaction > order > partnerId | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
 | transaction > order > signature | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
-| transaction > order > shippingAddress |  |  | Dirección de envío. | No |
+| transaction > order > shippingAddress | Objeto |  | Dirección de envío. | No |
 | transaction > order > shippingAddress > street1 | Alfanumérico | Max:100 | Línea de dirección 1. | No |
 | transaction > order > shippingAddress > street2 | Alfanumérico | Max:100 | Línea de dirección 2. | No |
 | transaction > order > shippingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección. | No |
@@ -1050,7 +1050,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
 | transaction > order > shippingAddress > postalCode | Alfanumérico | Max:8 | Código postal de la dirección. | No |
 | transaction > order > shippingAddress > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
-| transaction > order > buyer |  |  | Información del comprador. | Sí |
+| transaction > order > buyer | Objeto |  | Información del comprador. | Sí |
 | transaction > order > buyer > merchantBuyerId | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
 | transaction > order > buyer > fullName | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
 | transaction > order > buyer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del comprador. | Sí |
@@ -1063,7 +1063,7 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
 | transaction > order > buyer > shippingAddress > postalCode | Numérico | Max:20 | Código postal de la dirección del comprador. | Sí |
 | transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
-| transaction > order > additionalValues > |  | 64 | Monto de la orden y sus valores asociados. | Sí |
+| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
 | transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
 | transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
@@ -1073,11 +1073,11 @@ Este método te permite procesar los pagos en efectivo de tus clientes. Para int
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer |  |  | Información del pagador. | Sí |
+| transaction > payer | Objeto |  | Información del pagador. | Sí |
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | Sí |
 | transaction > payer > merchantPayerId | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
 | transaction > payer > fullName | Alfanumérico | Max:150 | Nombre del pagador. | Sí |
-| transaction > payer > billingAddress |  |  | Dirección de facturación. | Sí |
+| transaction > payer > billingAddress | Objeto |  | Dirección de facturación. | Sí |
 | transaction > payer > billingAddress > street1 | Alfanumérico | Max:100 | Línea 1 de la dirección de facturación. | Sí |
 | transaction > payer > billingAddress > street2 | Alfanumérico | Max:100 | Línea 2 de la dirección de facturación. | No |
 | transaction > payer > billingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección de facturación. | Sí |
@@ -1454,7 +1454,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 | transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
 | transaction > order > buyer > shippingAddress > postalCode | Numérico | Max:20 | Código postal de la dirección del comprador. | Sí |
 | transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
-| transaction > order > additionalValues > |  | 64 | Monto de la orden y sus valores asociados. | Sí |
+| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
 | transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
 | transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
 | transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
@@ -1464,7 +1464,7 @@ Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente 
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer |  |  | Información del pagador. | Sí |
+| transaction > payer | Objeto |  | Información del pagador. | Sí |
 | transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | Sí |
 | transaction > payer > merchantPayerId | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
 | transaction > payer > fullName | Alfanumérico | Max:150 | Nombre del pagador. | Sí |
@@ -2212,6 +2212,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 </details>
 
 ### Llamado a la API {#api-call-3}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.  
 
 {{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
@@ -2295,6 +2296,7 @@ Ejemplo de una Respuesta:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2329,7 +2331,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
-| transactionResponse |  | Max:2048 | La respuesta del método PING si ocurrió un error. |
+| transactionResponse | Objeto | Max:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
 ### Llamado a la API {#api-call-4}
@@ -2388,5 +2390,6 @@ Ejemplo de una Respuesta:
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}

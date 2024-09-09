@@ -343,7 +343,7 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 | transaction > order > submerchant > address > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. Para Brasil, utiliza el formato `ddd(2)+number(7-9)`. Ejemplo: `(11)756312633`. | No |
 | transaction > order > submerchant > identification | Alfanumérico | Max:14 | Número de identificación del comprador (Para persona jurídica en Brasil). Debes utilizar un algoritmo para validar el CNPJ y debe tener el siguiente formato `XXXXXXXXXXXXXX`. Ejemplo: `32593371000110`. | No |
 | transaction > order > submerchant > identificationType | Alfanumérico | Max:4 | Tipo de identificación of the sub-merchant. The possible values are `cnpj` o `cpf`. | No |
-| transaction > creditCardTokenId |  |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada utilizando la tokenización de PayU reemplazando la información de tu tarjeta de crédito; además, es obligatorio enviar el parámetro `transaction.creditCard.expirationDate`. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}). | No |
+| transaction > creditCardTokenId | Alfanumérico |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada utilizando la tokenización de PayU reemplazando la información de tu tarjeta de crédito; además, es obligatorio enviar el parámetro `transaction.creditCard.expirationDate`. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}). | No |
 | transaction > creditCard | Objeto |  | Información de la tarjeta de crédito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
 | transaction > creditCard > number | Alfanumérico | Min:13 Max:20 | Número de la tarjeta de crédito. | No |
 | transaction > creditCard > securityCode | Alfanumérico | Min:1 Max:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
@@ -1681,7 +1681,9 @@ Pix tiene dos partes:
    - **QRCODE_IMAGE_BASE64**: imagen dl código QR. Este campo es una cadena de caracteres codificada en Base 64.
 
 {{% alert title="Nota" color="info"%}}
+
 Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro `QRCODE_IMAGE_BASE64` decodificado) como la cadena del código (parámetro` QRCODE_EMV`) para evitar deserciones de pago.
+
 {{% /alert %}}
 
 ### Llamado a la API {#api-call}
@@ -1899,6 +1901,7 @@ Ejemplo de una Respuesta:
 </paymentResponse>
 
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2560,6 +2563,7 @@ Ejemplo de una Respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2687,6 +2691,7 @@ Ejemplo de una Respuesta:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2721,7 +2726,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 |-|-|-|-|
 | code | Alfanumérico |  | Código de respuesta de la transacción. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
-| transactionResponse | transactionResponse | Max:2048 | La respuesta del método PING si ocurrió un error. |
+| transactionResponse | Objeto | Max:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
 ### Llamado a la API {#api-call-4}
@@ -2780,6 +2785,6 @@ Ejemplo de una Respuesta:
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
-

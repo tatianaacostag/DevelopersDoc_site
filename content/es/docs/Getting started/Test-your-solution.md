@@ -25,7 +25,7 @@ Para realizar pruebas con PayU, utiliza las credenciales proporcionadas a contin
 
 {{% alert title="Notas" color="info"%}}
 
-* Consulta la documentación de <a href="https://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">Autenticación 3DS Gestionada por PayU</a> para encontrar las credenciales para probar 3DS.
+* Consulta la documentación de <a href="https://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#probar-la-autenticaci%C3%B3n-3ds" target="_blank">Autenticación 3DS Gestionada por PayU</a> para encontrar las credenciales para probar 3DS.
 * El entorno de prueba no replica los datos de tu cuenta de producción.
 
 {{% /alert %}}

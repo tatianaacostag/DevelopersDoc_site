@@ -89,8 +89,10 @@ Para fazer pagamentos usando tokens de cartões de crédito da PayU, inclua o pa
 O exemplo a seguir mostra o corpo da solicitação em um nível alto para um fluxo de um passo. Não inclui os parâmetros da solicitação.
 
 {{% alert title="Nota" color="info"%}}
+
 Para processar um pagamento sem o CVV, você deve definir o parâmetro `creditCard.processWithoutCvv2` como `true` na solicitação de pagamento e omitir o parâmetro `creditCard.securityCode`.<br>
 Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Para habilitar esse recurso, entre em contato com seu representante de vendas.
+
 {{% /alert %}}
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
@@ -341,7 +343,7 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 | transaction > order > submerchant > address > phone | Alfanumérico | Máx:11 | Número de telefone associado ao endereço. Para o Brasil, use o formato `ddd(2)+number(7-9)`. Exemplo: `(11)756312633`. | Não |
 | transaction > order > submerchant > identification | Alfanumérico | Máx:14 | Número de identificação do comprador (para pessoa jurídica no Brasil). Você deve usar um algoritmo para validar o CNPJ, que deve ser definido usando o formato `XXXXXXXXXXXXXX`. Exemplo: `32593371000110`. | Não |
 | transaction > order > submerchant > identificationType | Alfanumérico | Máx:4 | Tipo de identificação of the sub-merchant. The possible values are `cnpj` ou `cpf`. | Não |
-| transaction > creditCardTokenId |  |  | Inclua este parâmetro quando a transação for feita com um cartão tokenizado usando a Tokenização de PayU. Além disso, é obrigatório enviar o parâmetro `transaction.creditCard.expirationDate`.<br>Para obter mais informações, consulte [API de tokenização]({{< ref "Tokenization-API.md" >}}). | Não |
+| transaction > creditCardTokenId | Alfanumérico |  | Inclua este parâmetro quando a transação for feita com um cartão tokenizado usando a Tokenização de PayU. Além disso, é obrigatório enviar o parâmetro `transaction.creditCard.expirationDate`.<br>Para obter mais informações, consulte [API de tokenização]({{< ref "Tokenization-API.md" >}}). | Não |
 | transaction > creditCard | Objeto |  | Informações do cartão de crédito. Este objeto e seus parâmetros são obrigatórios quando o pagamento é realizado com cartão de crédito não tokenizado. | Não |
 | transaction > creditCard > number | Alfanumérico | Mín:13 Máx:20 | Número do cartão de crédito. | Não |
 | transaction > creditCard > securityCode | Alfanumérico | Mín:1 Máx:4 | Código de segurança do cartão de crédito (CVC2, CVV2, CID). | Não |
@@ -686,6 +688,7 @@ Exemplo de uma Resposta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1225,6 +1228,7 @@ Exemplo de uma Resposta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1609,7 +1613,7 @@ O Pix tem duas partes:
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico |64| Valor base para cálculo do VAT.<br>Se o valor não tiver IVA, envie 0.<br>Este valor pode ter duas casas decimais. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica o valor base da transação. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico |3| Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
-| transaction > payer | | | Informações do pagador. | Sim |
+| transaction > payer | Objeto | | Informações do pagador. | Sim |
 | transaction > payer > emailAddress | Alfanumérico | Máx:255 | Endereço de e-mail do pagador. | Não |
 | transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador do pagador em seu sistema. | Não |
 | transaction > payer > fullName | Alfanumérico | Máx:150 | Nome of the payer. | Sim |
@@ -1675,7 +1679,9 @@ O Pix tem duas partes:
    - **QRCODE_IMAGE_BASE64**: imagem do código QR. Esta é uma string codificada em Base64.
 
 {{% alert title="Observação" color="info"%}}
+
 Recomenda-se exibir em seu Checkout a imagem do código QR (parâmetro `QRCODE_IMAGE_BASE64` decodificado) e a string do código (parâmetro` QRCODE_EMV`) para evitar deserções de pagamento.
+
 {{% /alert %}}
 
 ### Chamada de API {#api-call}
@@ -1893,6 +1899,7 @@ Exemplo de uma Resposta:
 </paymentResponse>
 
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1905,7 +1912,7 @@ Este método permite processar os pagamentos de seus clientes em dinheiro. Para 
 ### Parâmetros para Solicitação e Resposta {#parameters-for-request-and-response-2}
 
 <details>
-<summary>Pedido</summary>
+<summary>Solicitação</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
@@ -1959,7 +1966,7 @@ Este método permite processar os pagamentos de seus clientes em dinheiro. Para 
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para cálculo do VAT.<br>Se o valor não tiver IVA, envie 0.<br>Este valor pode ter duas casas decimais.  | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica o valor base da transação. | Não |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
-| transaction > payer |  |  | Informações do pagador. This information is optional. | Não |
+| transaction > payer | Objeto |  | Informações do pagador. This information is optional. | Não |
 | transaction > payer > emailAddress | Alfanumérico | Máx:255 | Endereço de e-mail do pagador. | Não |
 | transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador do pagador em seu sistema. | Não |
 | transaction > payer > fullName | Alfanumérico | Máx:150 | Nome of the payer. | Não |
@@ -2219,6 +2226,7 @@ Exemplo de uma Resposta:
    </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2553,6 +2561,7 @@ Exemplo de uma Resposta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2563,7 +2572,7 @@ Este método gera uma lista dos métodos de pagamento disponíveis em todos os p
 ### Parâmetros para Solicitação e Resposta {#parameters-for-request-and-response-4}
 
 <details>
-<summary>Pedido</summary>
+<summary>Solicitação</summary>
 <br>
 <div class="variables"></div>
 
@@ -2680,6 +2689,7 @@ Exemplo de uma Resposta:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2714,7 +2724,7 @@ O método `PING` permite que você confirme a conexão com a nossa plataforma.
 |-|-|-|-|
 | code | Alfanumérico |  | O código de resposta da transação. |
 | error | Alfanumérico | Máx:2048 | A mensagem de erro associada, caso tenha ocorrido um erro. |
-| transactionResponse | transactionResponse | Máx:2048 | A resposta do método PING caso tenha ocorrido um erro. |
+| transactionResponse | Objeto | Máx:2048 | A resposta do método PING caso tenha ocorrido um erro. |
 </details>
 
 ### Chamada de API {#api-call-4}
@@ -2773,6 +2783,6 @@ Exemplo de uma Resposta:
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
-

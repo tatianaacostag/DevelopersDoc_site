@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Test Your Solution | PayU Latam</title><meta property="og:title" content="Test Your Solution" />
-<meta property="og:description" content="PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.
+<meta property="og:description" content="Leverage PayU&#39;s sandbox environment to thoroughly test your solution before transitioning to the live environment, where real payments and transactions take place.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/getting-started/test-your-solution.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-06T15:34:20-05:00" />
-<meta property="article:modified_time" content="2022-11-21T09:15:08-05:00" />
+<meta property="article:modified_time" content="2024-09-04T17:00:40-05:00" />
 
 <meta itemprop="name" content="Test Your Solution">
-<meta itemprop="description" content="PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.
+<meta itemprop="description" content="Leverage PayU&#39;s sandbox environment to thoroughly test your solution before transitioning to the live environment, where real payments and transactions take place.
 "><meta itemprop="datePublished" content="2021-04-06T15:34:20-05:00" />
-<meta itemprop="dateModified" content="2022-11-21T09:15:08-05:00" />
-<meta itemprop="wordCount" content="793">
+<meta itemprop="dateModified" content="2024-09-04T17:00:40-05:00" />
+<meta itemprop="wordCount" content="805">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Test Your Solution"/>
-<meta name="twitter:description" content="PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.
+<meta name="twitter:description" content="Leverage PayU&#39;s sandbox environment to thoroughly test your solution before transitioning to the live environment, where real payments and transactions take place.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.9a0fc25d8d2f25ed47c36b0c8f21a716ace8ba574293b3c90ba20512cb74b29270af25200318175347415b4104cb72c56364acb1306bb436dc00e69d3732222b.json"
+  data-offline-search-index-json-src="../../../offline-search-index.10c81fe88d2699cfae5830d17e4124b5c23ca98e56ef268706a965013ef2be4e6268ce8079aac6cd8a7f4d389f41ba2d77d4ff1cb77f91ff0e8ec3ea231b549e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -292,7 +292,7 @@
       
       
       
-        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-handled 3DS Authentication</a>
+        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-Handled 3DS Authentication</a>
       
       
       
@@ -782,15 +782,15 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#test-cards">Test cards</a>
+    <li><a href="#test-cards">Test Cards</a>
       <ul>
-        <li><a href="#testing-status">Testing status</a></li>
+        <li><a href="#testing-statuses">Testing Statuses</a></li>
       </ul>
     </li>
     <li><a href="#importing-the-collection">Importing the Collection</a>
       <ul>
-        <li><a href="#setting-your-environment-variables">Setting your Environment Variables</a></li>
-        <li><a href="#importing-globals">Importing globals</a></li>
+        <li><a href="#setting-your-environment-variables">Setting Your Environment Variables</a></li>
+        <li><a href="#importing-globals">Importing Globals</a></li>
       </ul>
     </li>
     <li><a href="#running-the-requests-in-the-correct-order">Running the Requests in the Correct Order</a></li>
@@ -841,7 +841,7 @@
             
 <div class="td-content">
 	<h1>Test Your Solution</h1>
-    <div class="lead">PayU has a sandbox environment in which, you can test your solution before moving to the live environment, where you can receive real payments and transactions.</div>
+    <div class="lead">Leverage PayU&rsquo;s sandbox environment to thoroughly test your solution before transitioning to the live environment, where real payments and transactions take place.</div>
 	       
 	<script>
   function openTarget() {
@@ -856,56 +856,61 @@
   }
   window.addEventListener('DOMContentLoaded', openTarget);
 </script>
-<p>If you want to perform tests through PayU, you need to use the following credentials in the request, depending on the country of your account:</p>
+<p>To conduct tests with PayU, use the credentials provided below in your requests, depending on the country your account is associated with.</p>
 <table>
-    <thead>
-    <tr>
-        <th>Merchant ID</th>
-        <th>API Login</th>
-        <th>API Key</th>
-        <th>Public Key</th>
-        <th>accountId</th>
-        <th>Country</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td rowspan="7">508029</td>
-        <td rowspan="7">pRRXKOl8ikMmt9u</td>
-        <td rowspan="7">4Vj8eK4rloUd272L48hsrarnUA</td>
-        <td rowspan="7">PKaC6H4cEDJD919n705L544kSU</td>
-        <td>512322</td>
-        <td>Argentina</td>
-    </tr>
-    <tr>
-        <td>512327</td>
-        <td>Brazil</td>
-    </tr>
-    <tr>
-        <td>512325</td>
-        <td>Chile</td>
-    </tr>
-    <tr>
-        <td>512321</td>
-        <td>Colombia</td>
-    </tr>
-    <tr>
-        <td>512324</td>
-        <td>Mexico</td>
-    </tr>
-    <tr>
-        <td>512326</td>
-        <td>Panama</td>
-    </tr>
-    <tr>
-        <td>512323</td>
-        <td>Peru</td>
-    </tr>
-    </tbody>
+  <tr>
+    <th></th>
+    <th style="text-align: center;">Argentina<br/><img src="../../../assets/Argentina.png" width="25px"/></th>
+    <th style="text-align: center;">Brazil<br/><img src="../../../assets/Brasil.png" width="25px"/></th>
+    <th style="text-align: center;">Chile<br/><img src="../../../assets/Chile.png" width="25px"/></th>
+    <th style="text-align: center;">Colombia<br/><img src="../../../assets/Colombia.png" width="25px"/></th>
+    <th style="text-align: center;">Mexico<br/><img src="../../../assets/Mexico.png" width="25px"/></th>
+    <th style="text-align: center;">Panama<br/><img src="../../../assets/Panama.png" width="25px"/></th>
+    <th style="text-align: center;">Peru<br/><img src="../../../assets/Peru.png" width="25px"/></th>
+  </tr>
+  <tr>
+    <th>Account ID</th>
+    <td style="text-align: center;">512322</td>
+    <td style="text-align: center;">512327</td>
+    <td style="text-align: center;">512325</td>
+    <td style="text-align: center;">512321</td>
+    <td style="text-align: center;">512324</td>
+    <td style="text-align: center;">512326</td>
+    <td style="text-align: center;">512323</td>
+  </tr>
+  <tr>
+    <th>Merchant ID</th>
+    <td colspan="7" style="text-align: center;">508029</td>
+  </tr>
+  <tr>
+    <th>API Login</th>
+    <td colspan="7" style="text-align: center;">pRRXKOl8ikMmt9u</td>
+  </tr>
+  <tr>
+    <th>API Key</th>
+    <td colspan="7" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
+  </tr>
+  <tr>
+    <th>Public Key</th>
+    <td colspan="7" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
+  </tr>  
 </table>
 
-<p>The test environment does not replicate data from your production account.</p>
-<h2 id="test-cards">Test cards</h2>
+  
+
+
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Notes</h4>
+<ul>
+<li>Refer to the <a href="https://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">PayU-Handled 3DS Authentication</a> documentation to find the credentials for testing 3DS.</li>
+<li>The test environment does not replicate data from your production account.</li>
+</ul>
+
+</div>
+
+<h2 id="test-cards">Test Cards</h2>
 <p>You can use the following cards for testing:</p>
 <details id="argentina">
 <summary><img src="../../../assets/Argentina.png" width="25px"/> Argentina</summary>
@@ -1204,7 +1209,7 @@
 </tbody>
 </table>
 </details>
-<h3 id="testing-status">Testing status</h3>
+<h3 id="testing-statuses">Testing Statuses</h3>
 <p>When testing Payments, you must send in the request:</p>
 <ul>
 <li><strong>To get <em>approved</em> transactions</strong>:
@@ -1251,10 +1256,10 @@ data-postman-param="env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52IiwidmFsdW
 </script> <!-- Buscar en la carpeta layouts/shortcodes -->
 <br></p>
 <p>After you run the collection, you need to set the environment variables and the globals.</p>
-<h3 id="setting-your-environment-variables">Setting your Environment Variables</h3>
+<h3 id="setting-your-environment-variables">Setting Your Environment Variables</h3>
 <p>Our collection has one environment named <code>PayU API Sandbox</code>. We recommend you invoke the collection’s API requests in a Sandbox environment only.</p>
 <p>If you want to change the PayU&rsquo;s testing accounts, configure the <code>api_key</code>, <code>api_login</code>, <code>merchant_id</code> and <code>account-[country]</code> variables. You can leave all the other variables unchanged.</p>
-<h3 id="importing-globals">Importing globals</h3>
+<h3 id="importing-globals">Importing Globals</h3>
 <p>Globals are the variables required to process transactions in our Payment gateway such as currency, transaction amount, confirmation and response pages and more.</p>
 <p>Import the globals for the collection to configure the values sent to the requests.</p>
 <ol>
@@ -1277,9 +1282,9 @@ data-postman-param="env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52IiwidmFsdW
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-November 21, 2022:
+September 4, 2024:
 
- <b>Mexico Mastercard Credit Card Change (733a11702)</b>
+ <b>Documentation Updates (0b93c153b)</b>
 </div>
 </div>
 

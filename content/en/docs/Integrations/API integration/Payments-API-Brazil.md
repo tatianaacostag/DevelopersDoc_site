@@ -89,8 +89,10 @@ To make payments using PayU credit card tokens, include the parameter `transacti
 The following example demonstrates the body of the request at a high level for a one-step flow. It doesn't include request parameters.
 
 {{% alert title="Note" color="info"%}}
+
 To process a payment without the CVV, you must set the parameter `creditCard.processWithoutCvv2` to `true` in the payment request and omit the parameter `creditCard.securityCode`.<br>
 By default, processing credit cards without a security code is not enabled. To enable this feature, please contact your sales representative.
+
 {{% /alert %}}
 
 
@@ -177,6 +179,7 @@ Request Example:
 {{< /tabs >}}
 
 #### Pay with MDES or VTS Tokens
+
 If you are tokenizing your customer's credit cards using MDES or VTS, you can configure the token information in the parameter `transaction.networkToken`, replacing the credit card information, and set the parameter `creditCard.processWithoutCvv2` to `true`.
 
 By default, processing credit cards without a security code is not enabled. Please contact your sales representative to enable this feature.
@@ -341,7 +344,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > order > submerchant > address > phone | Alphanumeric | Max:11 | Phone number associated to the address. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
 | transaction > order > submerchant > identification | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > order > submerchant > identificationType | Alphanumeric | Max:4 | Identification type of the sub-merchant. The possible values are `cnpj` or `cpf`. | No |
-| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card using the PayU Tokenization; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | No |
+| transaction > creditCardTokenId | Alphanumeric |  | Include this parameter when the transaction is done using a tokenized card using the PayU Tokenization; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | No |
 | transaction > creditCard | Object |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). | No |
@@ -686,6 +689,7 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1225,6 +1229,7 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1676,7 +1681,9 @@ Pix has two parts:
    - **QRCODE_IMAGE_BASE64**: image of the QR code. This is a string codified in Base64.
 
 {{% alert title="Note" color="info"%}}
+
 It is recommended to display in your Checkout both the image of the QR code (parameter `QRCODE_IMAGE_BASE64` decoded) and the string of the code (parameter `QRCODE_EMV`) to avoid payment desertions.
+
 {{% /alert %}}
 
 ### API Call
@@ -2277,7 +2284,7 @@ To integrate with these transactions, you must redirect the customer to the URL 
 | transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Yes |
 | transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. For Brazil, use the format `XXXXX-XXX` or `XXXXXXXX`. Example: `09210-710` or `09210710`. | Yes |
 | transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | Yes |
-| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Yes |
+| transaction > order > additionalValues > | Object | 64 | Amount of the order or its associated values. | Yes |
 | transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. | Yes |
 | transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. `10000.00` or `10000`). | Yes |
 | transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
@@ -2555,6 +2562,7 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2716,10 +2724,11 @@ The ```PING``` method lets you verify the connection to our platform.
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. |
-| transactionResponse |  | Max:2048 | The response of the PING method if an error ocurred. |
+| transactionResponse | Object | Max:2048 | The response of the PING method if an error ocurred. |
 </details>
 
 ### API Call
+
 The following are the bodies of the request and response of this method.
 
 {{< tabs tabTotal="2" tabID="12" tabName1="JSON" tabName2="XML" >}}
@@ -2774,5 +2783,6 @@ Response Example:
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}

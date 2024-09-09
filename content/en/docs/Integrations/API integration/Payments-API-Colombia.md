@@ -106,7 +106,7 @@ Two-step flow is available under request, contact your sales representative.
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the IVA.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId | Object | | Include this parameter when the transaction is done using a tokenized card; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | No |
+| transaction > creditCardTokenId | Alphanumeric | | Include this parameter when the transaction is done using a tokenized card; moreover, it is mandatory to also send the parameter `transaction.creditCard.expirationDate`.<br>For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}). | No |
 | transaction > creditCard | Object | | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard | Object | | Credit card information. If you process using debit card, do not send this parameter.<br>This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
@@ -1817,6 +1817,7 @@ Response Example:
 {{< /tabs >}}
 
 ## Banks List - PSE
+
 This method returns a list of the banks available for [payments using PSE]({{< ref "Payments-API-Colombia.md#submit-transactions-using-bank-transfer-pse" >}}). 
 
 ### Parameters for Request and Response {#parameters-for-request-and-response-4}
@@ -1857,6 +1858,7 @@ This method returns a list of the banks available for [payments using PSE]({{< r
 </details>
 
 ### API Call {#api-call-4}
+
 The following are the examples of the request and response of this method.
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
@@ -2657,7 +2659,7 @@ The ```PING``` method lets you verify the connection to our platform.
 |-|-|-|-|
 | code | Alphanumeric | | The response code of the transaction. |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. |
-| transactionResponse | transactionResponse | Max:2048 | The response of the PING method if an error ocurred. |
+| transactionResponse | Object | Max:2048 | The response of the PING method if an error ocurred. |
 </details>
 
 ### API Call {#api-call-6}

@@ -3,36 +3,44 @@ title: "Payments API - Panama"
 linkTitle: "Payments API - Panama"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  Payments API Panama lets your shop process different transaction types with multiple payment methods.
+  The Payments API for Panama allows you to efficiently integrate PayU's payment processing features for credit cards into your online shopping platform.
 weight: 20
 tags: ["subtopic"]
 ---
+
 <script src="/js/searchcodes.js"></script>
 
-To integrate with Payments API Panama, target your request to the following URLs according to your environment.
+This guide shows you how to leverage these services to enhance your customers' payment experience by providing flexible and secure payment options tailored to the local market.
 
-{{% alert title="URL" color="info"%}}
-* Test: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
+{{% alert title="Note" color="info"%}}
+
+To integrate the Payments API, direct your requests to the following URLs according to the corresponding environment:
+* Testing: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Production: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-## Available methods
+## Available Methods
+
 Payments API includes the following methods:
 
-* [Submit transaction with credit card]({{< ref "Payments-API-Panama.md#submit-transaction-with-credit-cards" >}})
-* [Available payment methods query]({{< ref "Payments-API-Panama.md#available-payment-methods-query" >}})
+* [Submit Transactions Using Credit Cards]({{< ref "Payments-API-Panama.md#submit-transactions-using-credit-cards" >}})
+* [Available Payment Methods Query]({{< ref "Payments-API-Panama.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Panama.md#ping" >}})
 
 {{% alert title="Note" color="info"%}}
+
 To confirm the status of a transaction, you can use one of the following options:
 * Navigate to the the URL set in the `transaction.notifyUrl` variable or the _**Confirmation URL**_ option located in the PayU Module in _**Settings**_ > _**Technical configuration**_.
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
+
 {{% /alert %}}
 
-## Submit transaction with credit cards
+## Submit Transactions Using Credit Cards
+
 This method lets you process the payments performed by your customers using credit cards. For Panama, you can perform one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -40,16 +48,16 @@ This method lets you process the payments performed by your customers using cred
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| transaction |  |  | This object has the transaction data. | Yes |
-| transaction > order |  |  | This object has the order data. | Yes |
+| transaction | Object | Object | This object has the transaction data. | Yes |
+| transaction > order | Object |  | This object has the order data. | Yes |
 | transaction > order > accountId | Number |  | Identifier of your account. | Yes |
 | transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
 | transaction > order > description | Alphanumeric | Min:1 Max:255 | Description of the order. | Yes |
@@ -57,7 +65,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > notifyUrl | Alphanumeric | Max:2048 | Confirmation URL of the order. | No |
 | transaction > order > partnerId | Alphanumeric | Max:255 | Partner ID in PayU. | No |
 | transaction > order > signature | Alphanumeric | Max:255 | The signature associated to the form. For more information refer [Authentication signature]({{< ref "integrations.html#authentication-signature" >}}). | Yes |
-| transaction > order > shippingAddress |  |  | Shipping address. | No |
+| transaction > order > shippingAddress | Object |  | Shipping address. | No |
 | transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
 | transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
 | transaction > order > shippingAddress > city | Alphanumeric | Max:50 | Address city. | No |
@@ -65,7 +73,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > shippingAddress > country | Alphanumeric | 2 | Address country. | No |
 | transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Address Zip code. | No |
 | transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated to the address. | No |
-| transaction > order > buyer |  |  | Buyer information. | Yes |
+| transaction > order > buyer | Object |  | Buyer information. | Yes |
 | transaction > order > buyer > merchantBuyerId | Alphanumeric | Max:100 | Buyer ID in your system. | No |
 | transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
 | transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes |
@@ -78,7 +86,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Yes |
 | transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. | Yes |
 | transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. | Yes |
-| transaction > order > additionalValues > |  | 64 | Amount of the order or its associated values. | Yes |
+| transaction > order > additionalValues > | Object | 64 | Amount of the order or its associated values. | Yes |
 | transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. | Yes |
 | transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2 | Specifies the amount of the transaction, this value may have two decimal digits (Ex. 10000.00 or 10000). | Yes |
 | transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
@@ -88,18 +96,18 @@ This method lets you process the payments performed by your customers using cred
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId |  |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | Yes |
-| transaction > creditCard |  |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
+| transaction > creditCardTokenId | Alphanumeric |  | Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}) | Yes |
+| transaction > creditCard | Object |  | Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card. | No |
 | transaction > creditCard > number | Alphanumeric | Min:13 Max:20 | Credit card number. | No |
 | transaction > creditCard > securityCode | Alphanumeric | Min:1 Max:4 | Credit card security code (CVC2, CVV2, CID). | No |
 | transaction > creditCard > expirationDate | Alphanumeric | 7 | Credit card expiration date. Format `YYYY/MM`. | No |
 | transaction > creditCard > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card. | No |
 | transaction > creditCard > processWithoutCvv2 | Boolean | Max:255 | Allows you to process transactions without including the credit card security code. Your commerce requires PayU's authorization before using this feature. | No |
-| transaction > payer |  |  | Payer information. | Yes |
+| transaction > payer | Object |  | Payer information. | Yes |
 | transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | Yes |
 | transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
 | transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `transaction.creditCard.name`. | Yes |
-| transaction > payer > billingAddress |  |  | Billing address. | Yes |
+| transaction > payer > billingAddress | Object |  | Billing address. | Yes |
 | transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | Yes |
 | transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
 | transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | Yes |
@@ -118,7 +126,7 @@ This method lets you process the payments performed by your customers using cred
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
-| transaction > extraParameters |  |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
+| transaction > extraParameters | Object |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
 
 </details>
 
@@ -127,11 +135,11 @@ This method lets you process the payments performed by your customers using cred
 <br>
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| transactionResponse |  |  | The response data. |
+| transactionResponse | Object |  | The response data. |
 | transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
 | transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
 | transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. |
@@ -142,22 +150,24 @@ This method lets you process the payments performed by your customers using cred
 | transactionResponse > authorizationCode | Alphanumeric | Max:12 | The authorization code returned by the financial network. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters |  |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
 #### Considerations
+
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 
-### API call
+### API Call
+
 The following are the examples of the request and response of this payment method.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request Example:
 ```JSON
 {
    "language": "es",
@@ -244,7 +254,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -279,7 +289,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request Example:
 ```XML
 <request>
    <language>es</language>
@@ -372,7 +382,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -397,14 +407,16 @@ Response example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
 
-## Available payment methods query
+## Available Payment Methods Query
+
 This method returns a list of the payment methods available in all countries.
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -416,7 +428,7 @@ This method returns a list of the payment methods available in all countries.
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `GET_PAYMENT_METHODS`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 
@@ -431,22 +443,23 @@ This method returns a list of the payment methods available in all countries.
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
 | error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| paymentMethods |  |  | List of the payment methods. |
-| paymentMethods > paymentMethodComplete |  |  | This object has the information of a payment method. |
+| paymentMethods | Object |  | List of the payment methods. |
+| paymentMethods > paymentMethodComplete | Object |  | This object has the information of a payment method. |
 | paymentMethods > paymentMethodComplete > id | Numeric |  | Payment method identifier. |
 | paymentMethods > paymentMethodComplete > description | Alphanumeric | Max:32 | Payment method name. |
 | paymentMethods > paymentMethodComplete > country | Alphanumeric | 2 | ISO code of the Payment method country. |
 
 </details>
 
-### API call
+### API Call
+
 The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request Example:
 ```JSON
 {
    "test": false,
@@ -460,7 +473,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -489,7 +502,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request Example:
 ```XML
 <request>
    <language>en</language>
@@ -503,7 +516,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -523,13 +536,15 @@ Response example:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
 ## Ping
+
 The ```PING``` method lets you verify the connection to our platform. 
 
-### Variables for request and response
+### Parameters for Request and Response
 
 <details>
 <summary>Request</summary>
@@ -541,7 +556,7 @@ The ```PING``` method lets you verify the connection to our platform.
 | language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `PING`. | Yes |
 | test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
+| merchant | Object |  | This object has the authentication data. | Yes |
 | merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 | merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
 
@@ -556,17 +571,18 @@ The ```PING``` method lets you verify the connection to our platform.
 |-|-|-|-|
 | code | Alphanumeric |  | The response code of the transaction. |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. |
-| transactionResponse | transactionResponse | Max:2048 | The response of the PING method if an error ocurred. |
+| transactionResponse | Object | Max:2048 | The response of the PING method if an error ocurred. |
 </details>
 
-### API call
+### API Call
+
 The following are the examples of the request and response of this method.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Request example:
+Request Example:
 ```JSON
 {
    "test": false,
@@ -580,7 +596,7 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -594,7 +610,7 @@ Response example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request example:
+Request Example:
 ```XML
 <request>
    <language>en</language>
@@ -608,13 +624,12 @@ Request example:
 ```
 <br>
 
-Response example:
+Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
-
-

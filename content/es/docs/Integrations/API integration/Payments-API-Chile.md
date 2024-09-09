@@ -104,7 +104,7 @@ Las transacciones utilizando flujos de dos pasos están disponibles bajo demanda
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
 | transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId |  |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada reemplazando la información de la tarjeta de crédito. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}) | No |
+| transaction > creditCardTokenId | Alfanumérico |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada reemplazando la información de la tarjeta de crédito. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}) | No |
 | transaction > creditCard | Objeto |  | Información de la tarjeta de crédito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
 | transaction > creditCard > number | Alfanumérico | Min:13 Max:20 | Número de la tarjeta débito. | No |
 | transaction > creditCard > securityCode | Alfanumérico | Min:1 Max:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
@@ -430,6 +430,7 @@ Ejemplo de una Respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -1998,6 +1999,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 </details>
 
 #### Consideraciones {#considerations-4}
+
 * Si no envías el parámetro `RESPONSE_URL` en `transaction.extraParameters`, el API toma el valor de la variable _**URL de respuesta**_ en tu Módulo PayU (_**Configuración**_ > _**Configuración técnica**_).
 * Cuando procesas pagos a través de WebPay plus, debes redirigir a tu cliente a la URL que encuentras en el extra parámetro `URL_PAYMENT_REDIRECT` concatenado con el extra parámetro `TRANSBANK_DIRECT_TOKEN` así: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
 * Si la solicitud de pago es exitosa, la transacción queda con estado `PENDING` y responseCode `PENDING_PAYMENT_IN_ENTITY`; esto es debido a que el pagador es redirigido al banco seleccionado para completar el pago.
@@ -2015,6 +2017,7 @@ Este método te permite procesar los pagos con tarjetas débito o prepago de tus
 Los parámetros anteriores se envían a través del método GET.
 
 ### Llamado a la API {#api-call-2}
+
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
 {{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
@@ -2255,6 +2258,7 @@ Ejemplo de una Respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2382,6 +2386,7 @@ Ejemplo de una Respuesta:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -2416,7 +2421,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 |-|-|-|-|:-:|
 | code | Alfanumérico |  | Código de respuesta de la transacción. |
 | error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
-| transactionResponse |  | Max:2048 | La respuesta del método PING si ocurrió un error. |
+| transactionResponse | Objeto | Max:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
 ### Llamado a la API {#api-call-4}
@@ -2475,5 +2480,6 @@ Ejemplo de una Respuesta:
     <code>SUCCESS</code>
 </paymentResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
