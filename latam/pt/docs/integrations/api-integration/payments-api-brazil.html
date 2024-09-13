@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-09-04T17:00:40-05:00" />
+<meta property="article:modified_time" content="2024-09-09T16:32:33-05:00" />
 
 <meta itemprop="name" content="API de Pagamentos - Brasil">
 <meta itemprop="description" content="A API de Pagamentos para o Brasil permite que você integre de forma eficiente as capacidades de processamento de pagamentos da PayU na sua plataforma de compras online. Por meio dessa API, as lojas podem oferecer aos seus clientes uma ampla variedade de métodos de pagamento, incluindo aplicativos móveis, transferência eletrônica, dinheiro, transferência bancária e cartões de crédito.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-09-04T17:00:40-05:00" />
-<meta itemprop="wordCount" content="13529">
+<meta itemprop="dateModified" content="2024-09-09T16:32:33-05:00" />
+<meta itemprop="wordCount" content="13532">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagamentos - Brasil"/>
 <meta name="twitter:description" content="A API de Pagamentos para o Brasil permite que você integre de forma eficiente as capacidades de processamento de pagamentos da PayU na sua plataforma de compras online. Por meio dessa API, as lojas podem oferecer aos seus clientes uma ampla variedade de métodos de pagamento, incluindo aplicativos móveis, transferência eletrônica, dinheiro, transferência bancária e cartões de crédito.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.10c81fe88d2699cfae5830d17e4124b5c23ca98e56ef268706a965013ef2be4e6268ce8079aac6cd8a7f4d389f41ba2d77d4ff1cb77f91ff0e8ec3ea231b549e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.a4c58dcc248939739ab13746fb69432522848bbad3dffd007f3c6d7733886878f58c2082ad15a9fb3da59c1e9e41209dd48fce286747e1b267eee0a343c73d42.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1687,7 +1687,7 @@ Por padrão, o processamento de cartões de crédito sem código de segurança n
 </tr>
 <tr>
 <td>transaction &gt; creditCardTokenId</td>
-<td></td>
+<td>Alfanumérico</td>
 <td></td>
 <td>Inclua este parâmetro quando a transação for feita com um cartão tokenizado usando a Tokenização de PayU. Além disso, é obrigatório enviar o parâmetro <code>transaction.creditCard.expirationDate</code>.<br>Para obter mais informações, consulte <a href="../../../../pt/docs/integrations/api-integration/tokenization-api.html">API de tokenização</a>.</td>
 <td style="text-align:center">Não</td>
@@ -3801,7 +3801,7 @@ Para garantir um processamento correto, ao selecionar os cartões para pagamento
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do pagador.</td>
 <td style="text-align:center">Sim</td>
@@ -4360,7 +4360,7 @@ Recomenda-se exibir em seu Checkout a imagem do código QR (parâmetro <code>QRC
 <img src="../../../../assets/Payments/CashReceiptBR.png" alt="PrintScreen" width="50%">
 <h3 id="parameters-for-request-and-response-2">Parâmetros para Solicitação e Resposta</h3>
 <details>
-<summary>Pedido</summary>
+<summary>Solicitação</summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar apenas campos obrigatórios</label>
 <br>
 <div class="variables"></div>
@@ -4706,7 +4706,7 @@ Recomenda-se exibir em seu Checkout a imagem do código QR (parâmetro <code>QRC
 </tr>
 <tr>
 <td>transaction &gt; payer</td>
-<td></td>
+<td>Objeto</td>
 <td></td>
 <td>Informações do pagador. This information is optional.</td>
 <td style="text-align:center">Não</td>
@@ -6123,7 +6123,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 <p>Este método gera uma lista dos métodos de pagamento disponíveis em todos os países.</p>
 <h3 id="parameters-for-request-and-response-4">Parâmetros para Solicitação e Resposta</h3>
 <details>
-<summary>Pedido</summary>
+<summary>Solicitação</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -6465,7 +6465,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 </tr>
 <tr>
 <td>transactionResponse</td>
-<td>transactionResponse</td>
+<td>Objeto</td>
 <td>Máx:2048</td>
 <td>A resposta do método PING caso tenha ocorrido um erro.</td>
 </tr>
@@ -6582,9 +6582,9 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-4 de setembro de 2024:
+9 de setembro de 2024:
 
- <b>Documentation Updates (0b93c153b)</b>
+ <b>Documentation Updates (74c84013a)</b>
 </div>
 </div>
 

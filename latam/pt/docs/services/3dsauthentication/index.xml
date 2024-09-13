@@ -30,7 +30,15 @@
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
-A autenticação 3DS para PayU Latam está disponível apenas para &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brasil&lt;/strong&gt;, &lt;strong&gt;Colômbia&lt;/strong&gt; e &lt;strong&gt;Peru&lt;/strong&gt;.
+&lt;ul&gt;
+&lt;li&gt;A autenticação 3DS para PayU Latam está disponível apenas para &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brasil&lt;/strong&gt;, &lt;strong&gt;Colômbia&lt;/strong&gt; e &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Redes atualmente suportadas:&lt;/strong&gt; Visa e Mastercard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;/div&gt;
 
 &lt;h3 id=&#34;parâmetro-req3dsauthentication&#34;&gt;Parâmetro &lt;code&gt;req3DSAuthentication&lt;/code&gt;&lt;/h3&gt;

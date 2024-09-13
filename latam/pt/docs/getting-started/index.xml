@@ -804,7 +804,7 @@
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Notas&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Consulte a documentação de &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication&#34; target=&#34;_blank&#34;&gt;Autenticação 3DS Realizada pela PayU&lt;/a&gt; para encontrar as credenciais para testar 3DS.&lt;/li&gt;
+&lt;li&gt;Consulte a documentação de &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testando-a-autentica%C3%A7%C3%A3o-3ds&#34; target=&#34;_blank&#34;&gt;Autenticação 3DS Realizada pela PayU&lt;/a&gt; para encontrar as credenciais para testar 3DS.&lt;/li&gt;
 &lt;li&gt;O ambiente de teste não replica os dados da sua conta de produção.&lt;/li&gt;
 &lt;/ul&gt;
 

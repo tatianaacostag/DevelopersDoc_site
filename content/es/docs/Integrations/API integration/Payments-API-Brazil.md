@@ -1233,7 +1233,6 @@ Ejemplo de una Respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-
 ## Enviar Transacciones Utilizando Google Pay™ {#submit-transactions-using-google-pay}
 
 Google Pay es una billetera digital que permite realizar pagos con tarjeta de forma sencilla y rápida, sin necesidad de introducir los datos de la tarjeta en cada pago. Los datos de la tarjeta son almacenados de forma segura por Google. Este método de pago está disponible para todos los dispositivos (teléfonos móviles y ordenadores), independientemente del sistema operativo y en casi todos los navegadores web.
@@ -1251,7 +1250,6 @@ Si deseas ofrecer este método de pago a través de PayU Web-Checkout, no se req
 Ten en cuenta que si tu integración con PayU es API, debes realizar los ajustes que se describen en esta sección para procesar transacciones de Google Pay: 
 
 * [Realizar la integración API del medio de pago](#integración-api-del-medio-de-pago)
-* [Realizar la adaptación de la integración API con PayU](#procesar-transacciones-google-pay-en-payu)
 * [Probar el método de pago](#probar-el-método-de-pago) 
 
  ### Integración API del Medio de Pago
@@ -1284,7 +1282,7 @@ const tokenizationSpecification = {
 Ten en cuenta que PayU como procesador de pagos de Google Pay permite el manejo de todo tipo de tarjetas de pago emitidas por las organizaciones Visa y Mastercard. Esto implica la siguiente configuración del script de Google:
 
 ```
-const allowedCardNetworks = ["MASTERCARD", "VISA", “ELECTRON”, “MAESTRO];
+const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO"];
 const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
 ```
 

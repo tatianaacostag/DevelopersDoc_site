@@ -989,7 +989,7 @@ width=&amp;#34;125&amp;#34; height=&amp;#34;125&amp;#34;/&amp;gt;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Notas&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Consulta la documentación de &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication&#34; target=&#34;_blank&#34;&gt;Autenticación 3DS Gestionada por PayU&lt;/a&gt; para encontrar las credenciales para probar 3DS.&lt;/li&gt;
+&lt;li&gt;Consulta la documentación de &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#probar-la-autenticaci%C3%B3n-3ds&#34; target=&#34;_blank&#34;&gt;Autenticación 3DS Gestionada por PayU&lt;/a&gt; para encontrar las credenciales para probar 3DS.&lt;/li&gt;
 &lt;li&gt;El entorno de prueba no replica los datos de tu cuenta de producción.&lt;/li&gt;
 &lt;/ul&gt;
 

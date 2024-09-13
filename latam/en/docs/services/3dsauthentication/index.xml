@@ -28,8 +28,16 @@
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.
+&lt;h4 class=&#34;alert-heading&#34;&gt;Notes&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Currently supported networks:&lt;/strong&gt; Visa and Mastercard&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;/div&gt;
 
 &lt;h3 id=&#34;the-req3dsauthentication-parameter&#34;&gt;The &lt;code&gt;req3DSAuthentication&lt;/code&gt; Parameter&lt;/h3&gt;
