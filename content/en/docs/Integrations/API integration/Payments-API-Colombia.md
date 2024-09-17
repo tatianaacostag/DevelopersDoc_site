@@ -28,7 +28,7 @@ Payments API includes the following methods:
 * [Submit Transactions Using Nequi]({{< ref "Payments-API-Colombia.md#submit-transactions-using-nequi" >}})
 * [Submit Transactions Using Cash or Bank Reference]({{< ref "Payments-API-Colombia.md#submit-transactions-using-cash-or-bank-reference" >}})
 * [Submit Transactions Using Bank Transfer (PSE)]({{< ref "Payments-API-Colombia.md#submit-transactions-using-bank-transfer-pse" >}})
-* [Submit Transactions Using Google Pay]({{< ref "Payments-API-Colombia.md#submit-transactions-using-bank-transfer-pse" >}})
+* [Submit Transactions Using Google Pay]({{< ref "Payments-API-Colombia.md#submit-transactions-using-google-pay" >}})
 * [Banks List - PSE]({{< ref "Payments-API-Colombia.md#banks-list---pse" >}})
 * [Available Payment Methods Query]({{< ref "Payments-API-Colombia.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Colombia.md#ping" >}})
