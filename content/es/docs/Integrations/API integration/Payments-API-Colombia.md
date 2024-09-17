@@ -1857,16 +1857,22 @@ const tokenizationSpecification = {
 
 * ###### Medios de Pago Soportados
 
-Ten en cuenta que PayU como procesador de pagos de Google Pay permite el manejo de todo tipo de tarjetas de pago emitidas por las organizaciones Visa, Mastercard y American Express. Ten en cuenta que la disponibilidad de los medios de pago estará sujeta a tu configuración en PayU. Esto implica la siguiente configuración del script de Google:
+PayU procesa pagos de Google Pay para tarjetas American Express, Mastercard y Visa. Para configurar tu script de Google, utiliza estos ajustes:
 
 ```
 const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO", "AMEX"];
 const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
 ```
 
-Como respuesta, Google devolverá el elemento ```PaymentData```, y el campo ```paymentMethodData.tokenizationData.token``` contendrá un Google Pay Token cifrado de forma segura (una cadena de caracteres).
+{{% alert title="Nota" color="info"%}}
 
-A continuación un ejemplo de Google Pay Token:
+La disponibilidad de los métodos de pago depende de tu configuración en PayU.
+
+{{% /alert %}}
+
+Google devolverá un objeto `PaymentData`, y el campo `paymentMethodData.tokenizationData.token` contendrá un token de Google Pay encriptado de forma segura (una cadena de caracteres).
+
+A continuación, un ejemplo de un token de Google Pay:
 
 ```
 {
@@ -1909,7 +1915,6 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 
 <video width="630" height="300" controls>
     <source src="/assets/GooglePay/API.mp4" type="video/mp4">
-    Your browser does not support the video tag.
 </video>
 
 #### Pruebas para Comercios con Integración Web Checkout:

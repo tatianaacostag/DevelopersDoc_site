@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-09-09T16:32:33-05:00" />
+<meta property="article:modified_time" content="2024-09-13T16:43:31-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Brasil">
 <meta itemprop="description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-09-09T16:32:33-05:00" />
-<meta itemprop="wordCount" content="13658">
+<meta itemprop="dateModified" content="2024-09-13T16:43:31-05:00" />
+<meta itemprop="wordCount" content="13649">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Brasil"/>
 <meta name="twitter:description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.a4c58dcc248939739ab13746fb69432522848bbad3dffd007f3c6d7733886878f58c2082ad15a9fb3da59c1e9e41209dd48fce286747e1b267eee0a343c73d42.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.72e935594b1ad004a4b13208f07f4abdff2abd3d9f1252d5ffdaa4f3a04e5987f702db8c94f6e8033588817558ca9bb97d9f0cf482f76bd22f35b5baa107905d.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -3109,7 +3109,6 @@ La descripción que figura a continuación se aplica a la prestación de este se
 <p>Ten en cuenta que si tu integración con PayU es API, debes realizar los ajustes que se describen en esta sección para procesar transacciones de Google Pay:</p>
 <ul>
 <li><a href="#integraci%C3%B3n-api-del-medio-de-pago">Realizar la integración API del medio de pago</a></li>
-<li><a href="#procesar-transacciones-google-pay-en-payu">Realizar la adaptación de la integración API con PayU</a></li>
 <li><a href="#probar-el-m%C3%A9todo-de-pago">Probar el método de pago</a></li>
 </ul>
 <h3 id="integración-api-del-medio-de-pago">Integración API del Medio de Pago</h3>
@@ -3140,7 +3139,7 @@ La descripción que figura a continuación se aplica a la prestación de este se
 </li>
 </ul>
 <p>Ten en cuenta que PayU como procesador de pagos de Google Pay permite el manejo de todo tipo de tarjetas de pago emitidas por las organizaciones Visa y Mastercard. Esto implica la siguiente configuración del script de Google:</p>
-<pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, “ELECTRON”, “MAESTRO];
+<pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, &#34;ELECTRON&#34;, &#34;MAESTRO&#34;];
 const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;, &#34;CRYPTOGRAM_3DS&#34;];
 </code></pre><p>Como respuesta, Google devolverá el elemento <code>PaymentData</code>, y el campo <code>paymentMethodData.tokenizationData.token</code> contendrá un Google Pay Token cifrado de forma segura (una cadena de caracteres).</p>
 <p>A continuación un ejemplo de Google Pay Token:</p>
@@ -6582,9 +6581,9 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-9 de septiembre de 2024:
+13 de septiembre de 2024:
 
- <b>Documentation Updates (74c84013a)</b>
+ <b>Documentation updates (60766faa9)</b>
 </div>
 </div>
 

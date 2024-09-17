@@ -25,7 +25,7 @@ To integrate the Payments API, direct your requests to the following URLs accord
 Payments API includes the following methods:
 
 * [Submit Transactions Using Credit Cards]({{< ref "Payments-API-Brazil.md#submit-transactions-using-credit-cards" >}}) 
-* [Submit Transactions Using Google Pay™]({{< ref "#submit-transactions-using-google-pay" >}})
+* [Submit Transactions Using Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
 * [Submit Transactions Using PIX]({{< ref "Payments-API-Brazil.md#submit-transactions-using-pix" >}})
 * [Submit Transactions Using Cash]({{< ref "Payments-API-Brazil.md#submit-transactions-using-cash" >}})
 * [Submit Transactions Using Bank Transfer]({{< ref "Payments-API-Brazil.md#submit-transactions-using-bank-transfer" >}})
@@ -1234,7 +1234,7 @@ Response Example:
 {{< /tabs >}}
 
 
-## Submit Transactions Using Google Pay™ {#submit-transactions-using-google-pay}
+## Submit Transactions Using Google Pay {#submit-transactions-using-google-pay}
 
 Google Pay is a digital wallet that enables simple and fast card payments, without the need of entering the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), no matter the operating system and in almost all web browsers.
 
@@ -1251,7 +1251,6 @@ If you wish to offer this method via PayU Web-Checkout, no additional integratio
 Please note that if your integration with PayU is API, you must change the settings described in this section to process Google Pay transactions: 
 
 * [Perform API integration of the payment method](#api-integration-of-the-payment-method)
-* [Perform the adaptation of your API integration with PayU](#process-google-pay-transactions-in-payu)
 * [Test the payment method](#test-the-payment-method)
 
  ### API Integration of the Payment Method
@@ -1281,16 +1280,16 @@ const tokenizationSpecification = {
 
 * ###### Supported Payment Networks
 
-Please note that PayU as the processor of Google Pay payments, enables the handling of all types of payment cards issued by the Visa and Mastercard organizations. This implies the following configuration of the Google script:
+PayU processes Google Pay payments for Mastercard and Visa cards. To configure your Google script, use these settings:
 
 ```
-const allowedCardNetworks = ["MASTERCARD", "VISA", “ELECTRON”, “MAESTRO];
+const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO"];
 const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
 ```
 
-In response, Google shall return the ```PaymentData``` item, and the field ```paymentMethodData.tokenizationData.token``` shall contain a safely encrypted Google Pay Token (a string of characters).
+Google will return a `PaymentData` object, and the `paymentMethodData.tokenizationData.token` field will contain a securely encrypted Google Pay Token (a string).
 
-A sample of Google Pay Token looks like this:
+Below, a sample of a Google Pay Token:
 
 ```
 {
@@ -1326,14 +1325,15 @@ This section is designed to guide users through the testing process and familiar
 1. Once the changes indicated in the previous sections have been made, use the Token Simulator File to simulate a transaction and obtain a sample of a Google Pay Token. The simulator can be visualized <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/simulator.html" target="_blank">here</a>.
 
 {{% alert title="Note" color="info"%}}
-To ensure correct processing, use cards whose name do NOT start with "Test". 
+
+To ensure correct processing, use cards whose name do NOT start with "Test".
+
 {{% /alert %}}
 
 2. Use the information on the sample of the Google Pay Token to fill out the PayU Request. Send it to PayU to get proof of an approved transaction. If you have results that are not approved, please review the documentation from the steps above.
 
 <video width="630" height="300" controls>
 	<source src="/assets/GooglePay/API.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
 </video>
 
 #### Testing for Merchants with Web Checkout Integration:  
@@ -1349,7 +1349,6 @@ Access PayU Latam Web Checkout in a [test environment](https://sandbox.checkout.
 
 <video width="630" height="300" controls>
 	<source src="/assets/GooglePay/WebCheckout.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
 </video>
 
 #### API Call
@@ -2690,12 +2689,13 @@ Response Example:
     </paymentMethods>
 </paymentMethodsResponse>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 
 ## Ping
 
-The ```PING``` method lets you verify the connection to our platform. 
+The `PING` method lets you verify the connection to our platform. 
 
 ### Parameters for Request and Response
 

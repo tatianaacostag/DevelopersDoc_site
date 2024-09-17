@@ -15,7 +15,7 @@ To use 3DS authentication, merchants must be registered to this service with Pay
 {{% alert title="Notes" color="info"%}}
 
 * 3DS authentication for PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, and **Peru**.
-* * **Currently supported networks:** Visa and Mastercard
+* **Currently supported networks:** Visa and Mastercard.
 
 {{% /alert %}}
 

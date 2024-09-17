@@ -25,7 +25,7 @@ Para integrar a API de Pagamentos, direcione suas solicitações para as seguint
 A API de Pagamentos inclui os seguintes métodos:
 
 * [Enviar Transações Usando Cartão de Crédito]({{< ref "#submit-transactions-using-credit-cards" >}})
-* [Enviar Transações Usando Google Pay™]({{< ref "#submit-transactions-using-google-pay" >}})
+* [Enviar Transações Usando Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
 * [Enviar Transações Usando PIX]({{< ref "#submit-transaction-with-pix" >}})
 * [Enviar Transações Usando Dinheiro]({{< ref "#submit-transaction-with-cash" >}})
 * [Enviar Transações Usando Transferência Bancária]({{< ref "#submit-transactions-using-bank-transfer" >}})
@@ -1232,7 +1232,7 @@ Exemplo de uma Resposta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Enviar Transações Usando Google Pay™ {#submit-transactions-using-google-pay}
+## Enviar Transações Usando Google Pay {#submit-transactions-using-google-pay}
 
 Google Pay é uma carteira digital que lhe permite efetuar pagamentos com cartão de forma fácil e rápida, sem ter de introduzir os dados do seu cartão para cada pagamento. Os dados do cartão são guardados de forma segura pelo Google. Este método de pagamento está disponível para todos os dispositivos (smartphones e computadores), independentemente do Sistema Operacional e em quase todos os navegadores Web.
 
@@ -1249,7 +1249,6 @@ Se você deseja oferecer esse método via web-checkout da PayU, não é necessá
 Um tema muito importante é que se a sua integração com a PayU for API, você deve efetuar as definições descritas nesta seção para processar as transações com o Google Pay: 
 
 * [Efetuar a integração API do meio de pagamento](#integração-api-do-meio-de-pagamento)
-* [Realizar a adaptação da sua integração API com PayU](#processar-transacções-o-google-pay-com-payu)
 * [Testar o meio de pagamento](#testar-o-meio-de-pagamento)
 
  ### Integração API do Meio de Pagamento 
@@ -1279,14 +1278,14 @@ const tokenizationSpecification = {
 
 * ###### Meios de Pagamento Suportados
 
-Note que a PayU, enquanto processador de pagamentos Google Pay, permite o tratamento de todos os tipos de cartões de pagamento emitidos pelas organizações Visa e MasterCard, isto implica a seguinte configuração do script Google:
+PayU processa pagamentos Google Pay para cartões Mastercard e Visa. Para configurar seu script Google, use estas configurações:
 
 ```
-const allowedCardNetworks = ["MASTERCARD", "VISA", “ELECTRON”, “MAESTRO];
+const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO"];
 const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
 ```
 
-Em resposta, a Google devolverá o elemento ```PaymentData``` e o campo ```paymentMethodData.tokenizationData.token``` conterá um token do Google Pay encriptado de forma segura (uma cadeia de caracteres).
+O Google retornará um objeto `PaymentData` e o campo `paymentMethodData.tokenizationData.token` conterá um token do Google Pay criptografado de forma segura (uma string).
 
 Abaixo encontra-se um exemplo de um Google Pay Token:
 
@@ -1324,14 +1323,15 @@ Esta secção foi concebida para guiar os utilizadores através do processo de t
 1.	Depois de ter efectuado as alterações indicadas nas secções anteriores, utilize o ficheiro de simulação de token para simular uma transação e obter um exemplo de token do Google Pay. O simulador pode ser visualizado <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/simulator.html" target="_blank">aqui</a>. 
 
 {{% alert title="Observação" color="info"%}}
+
 Para garantir um processamento correto, ao selecionar os cartões para pagamento, utilize cartões cujo nome não comece por "Test".
+
 {{% /alert %}}
 
 2. Utilize as informações da amostra do token do Google Pay para completar o pedido da PayU. Envie-o para o PayU e poderá obter prova de uma transação aprovada. Se tiver algum resultado não aprovado, reveja a documentação das etapas acima.
 
 <video width="630" height="300" controls>
-	<source src="/assets/GooglePay/API.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
+	<source src="/assets/GooglePay/API.mp4" type="video/mp4"> 	
 </video>
 
 #### Testes para Estabelecimentos com Integração Web Checkout:
@@ -1346,12 +1346,10 @@ Utilize o checkout PayU no [ambiente de teste](https://sandbox.checkout.payulata
 {{% /alert %}}
 
 <video width="630" height="300" controls>
-	<source src="/assets/GooglePay/WebCheckout.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
+	<source src="/assets/GooglePay/WebCheckout.mp4" type="video/mp4"> 	
 </video>
 
-
-#### Chamada de API
+#### Chamada de API {#api-call}
 
 A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
@@ -1527,11 +1525,10 @@ Exemplo de uma Resposta:
 {{< /tab >}}
 {{< /tabs >}}
 
-
 Você encontrará a descrição do objeto transaction.digitalWallet e dos seus campos na seção [Parâmetros](https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response).
 
 
-## Enviar Transações Usando PIX {#ssubmit-transactions-using-pix}
+## Enviar Transações Usando PIX {#submit-transactions-using-pix}
 
 Este método permite processar pagamentos usando PIX. Para fazer a integração com o PIX, você precisa incluir na página de checkout um código QR que seu cliente possa ler com o smartphone para fazer o pagamento.
 
@@ -1684,7 +1681,7 @@ Recomenda-se exibir em seu Checkout a imagem do código QR (parâmetro `QRCODE_I
 
 {{% /alert %}}
 
-### Chamada de API {#api-call}
+### Chamada de API {#api-call-1}
 
 A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
@@ -2027,7 +2024,7 @@ Este método permite processar os pagamentos de seus clientes em dinheiro. Para 
    - **EXPIRATION_DATE**: prazo máximo para o pagador fazer o pagamento.
    - **BAR_CODE**: código de barras que permite ao pagador efetuar o pagamento. 
 
-### Chamada de API {#api-call-1}
+### Chamada de API {#api-call-2}
 
 A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
@@ -2352,7 +2349,7 @@ Para se integrar a essas transações, você deve redirecionar o cliente para a 
 * Quando o pagador seleciona este método de pagamento, o PayU cria uma ordem no estado _Em andamento_ e uma transação no estado `PENDING`.
 * No corpo da resposta, você encontra o recibo gerado pelo PayU e a data de vencimento.
 
-### Chamada de API {#api-call-2}
+### Chamada de API {#api-call-3}
 
 A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
@@ -2604,7 +2601,7 @@ Este método gera uma lista dos métodos de pagamento disponíveis em todos os p
 
 </details>
 
-### Chamada de API {#api-call-3}
+### Chamada de API {#api-call-4}
 
 A seguir estão os corpos do pedido e resposta deste método. Para fins de exemplo, a solicitação e a resposta aqui mostram dois métodos de pagamento. 
 
@@ -2727,7 +2724,7 @@ O método `PING` permite que você confirme a conexão com a nossa plataforma.
 | transactionResponse | Objeto | Máx:2048 | A resposta do método PING caso tenha ocorrido um erro. |
 </details>
 
-### Chamada de API {#api-call-4}
+### Chamada de API {#api-call-5}
 
 A seguir estão os corpos do pedido e resposta deste método.
 

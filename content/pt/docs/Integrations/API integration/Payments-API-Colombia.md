@@ -13,7 +13,7 @@ Este guia mostra como aproveitar esses serviços para melhorar a experiência de
 
 {{% alert title="Nota" color="info"%}}
 
-Para integrar-se com a API de Pagamentos, direcione suas solicitações para os seguintes URLs com base no ambiente correspondente:
+Para integrar a API de Pagamentos, direcione suas solicitações para as seguintes URLs de acordo com o ambiente correspondente:
 * Teste: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Produção: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
 
@@ -27,6 +27,7 @@ A API de Pagamentos inclui os seguintes métodos:
 * [Enviar Transações Usando Nequi]({{< ref "#submit-transactions-using-nequi" >}})
 * [Enviar Transações Usando Dinheiro ou Referência Bancária]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
 * [Enviar Transações Usando Transferência Bancária (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
+* [Enviar Transações Usando Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
 * [Lista de Bancos - PSE]({{< ref "#banks-list---pse" >}})
 * [Consulta de Métodos de Pagamento Disponíveis]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
@@ -196,7 +197,7 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
 | RC | Certidão de nascimento.  |
 | DE | Documento de identificação de estrangeiro. |
 
-### Chamada para a API {#api-call}
+### Chamada de API {#api-call}
 
 A seguir estão os exemplos de pedido e resposta desta forma de pagamento.
 
@@ -653,7 +654,7 @@ A imagem abaixo é um exemplo da página de resumo do PayU, você pode aproveita
 
 </details>
 
-### Chamada para a API {#api-call-1}
+### Chamada de API {#api-call-1}
 
 Os corpos de solicitação e de resposta para este método de pagamento são os seguintes:
 
@@ -1080,7 +1081,7 @@ Este método permite processar pagamentos de clientes em dinheiro ou através de
    - **BANK_REFERENCED_NAME**: Nome de referência para Bancolombia. Available ao usar `BANK_REFERENCED`.
    - **BANCOLOMBIA_SERVICE_CODE**: código de pagamento para Bancolombia. Available ao usar `BANK_REFERENCED`.
 
-### Chamada para a API {#api-call-2}
+### Chamada de API {#api-call-2}
 
 A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
@@ -1348,7 +1349,7 @@ Exemplo de uma Resposta:
 
 {{< /tabs >}}
 
-## Enviar Transações Usando Transferência Bancária (PSE) {#ubmit-transactions-using-bank-transfer-pse}
+## Enviar Transações Usando Transferência Bancária (PSE) {#submit-transactions-using-bank-transfer-pse}
 
 Este método permite processar os pagamentos de seus clientes por transferência bancária. Na Colômbia, as transferências bancárias são feitas com o PSE, Para fazer uma integração com esta forma de pagamento, é necessário criar um formulário de pagamento seguindo estas etapas:
 
@@ -1520,7 +1521,7 @@ A lista de documentos disponíveis é:
 | 6 | 4 | Transação rejeitada |
 | 12 ou 14 | 9994 ou 25 | Transação pendente, verifique se o débito foi feito no banco. |
 
-### Chamada para a API {#api-call-3}
+### Chamada de API {#api-call-3}
 
 A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
@@ -1816,6 +1817,305 @@ Exemplo de uma Resposta:
 
 {{< /tabs >}}
 
+## Enviar Transações Usando Google Pay {#submit-transactions-using-google-pay}
+
+Google Pay é uma carteira digital que lhe permite efetuar pagamentos com cartão de forma fácil e rápida, sem ter de introduzir os dados do seu cartão para cada pagamento. Os dados do cartão são guardados de forma segura pelo Google. Este método de pagamento está disponível para todos os dispositivos (smartphones e computadores), independentemente do Sistema Operacional e em quase todos os navegadores Web.
+
+Se utilizarem o Google Pay, os comerciantes devem aderir à [Política de Utilização](https://payments.developers.google.com/terms/aup) da API do Google Pay e concordar com os termos que definem os [Termos de serviço da API do Google Pay](https://payments.developers.google.com/terms/sellertos).
+
+{{% alert title="Observação" color="info"%}}
+
+A descrição abaixo aplica-se à prestação deste serviço diretamente através da apresentação do pop-up do Google Pay no site do beneficiário (loja virtual).
+
+{{% /alert %}}
+
+Se você deseja oferecer esse método via web-checkout da PayU, não é necessário nenhum esforço adicional de integração. Entre em contato com o gerente da sua conta para fazer a solicitação de ativação. Se desejar testar o método de pagamento antes da ativação, pode seguir as instruções [aqui](#testes-para-estabelecimentos-com-integração-web-checkout).
+
+Um tema muito importante é que se a sua integração com a PayU for API, você deve efetuar as definições descritas nesta seção para processar as transações com o Google Pay: 
+
+* [Efetuar a integração API do meio de pagamento](#integração-api-do-meio-de-pagamento)
+* [Testar o meio de pagamento](#testar-o-meio-de-pagamento)
+
+ ### Integração API do Meio de Pagamento 
+
+Para integrar o seu site com a carteira Google Pay, proceda de acordo com as instruções apresentadas no link abaixo:
+* [Documentação da API](https://developers.google.com/pay/api/web)
+* [Lista de verificação da integração da API](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist)
+* [Directrizes da marca](https://developers.google.com/pay/api/web/guides/brand-guidelines)
+
+##### Definições PayU para Integração API do Meio de Pagamento
+
+Abaixo encontrará as informações relevantes que deverá seguir durante a integração do meio de pagamento para que os seus pagamentos sejam processados pela PayU:
+
+* ###### Solicitar um Payment Token para a PayU
+
+Google encripta as informações do cartão informado pelo pagador para o processamento seguro por um fornecedor de pagamento. O parâmetro ```gateway``` no script deve ter o valor constante de ```payulatam```, e o ```gatewayMerchantId``` deve incluir o número da sua conta PayU. Aqui está um exemplo:
+
+```
+const tokenizationSpecification = {
+  type: 'PAYMENT_GATEWAY',
+  parameters: {
+    'gateway': 'payulatam',
+    'gatewayMerchantId': 'YOUR_ACCOUNT_ID '
+  }
+};
+```
+
+* ###### Meios de Pagamento Suportados
+
+PayU processa pagamentos Google Pay para cartões American Express, Mastercard e Visa. Para configurar seu script Google, use estas configurações:
+
+```
+const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO", "AMEX"];
+const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
+```
+
+{{% alert title="Observação" color="info"%}}
+
+A disponibilidade dos métodos de pagamento depende das suas configurações no PayU.
+
+{{% /alert %}}
+
+O Google retornará um objeto `PaymentData` e o campo `paymentMethodData.tokenizationData.token` conterá um token do Google Pay criptografado de forma segura (uma string).
+
+Abaixo encontra-se um exemplo de um Google Pay Token:
+
+```
+{
+  "protocolVersion":"ECv2",
+  "signature":"MEUCIG39tbaQPwJe28U+UMsJmxUBUWSkwlOv9Ibohacer+CoAiEA8Wuq3lLUCwLQ06D2kErxaMg3b/oLDFbd2gcFze1zDqU\u003d",
+  "intermediateSigningKey":{
+    "signedKey": "{\"keyExpiration\":\"1542394027316\",\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\\u003d\\u003d\"}",
+    "signatures": ["MEYCIQDcXCoB4fYJF3EolxrE2zB+7THZCfKA7cWxSztKceXTCgIhAN/d5eBgx/1A6qKBdH0IS7/aQ7dO4MuEt26OrLCUxZnl"]
+  },
+  "signedMessage":"{\"tag\":\"TjkIKzIOvCrFvjf7/aeeL8/FZJ3tigaNnerag68hIaw\\u003d\",\"ephemeralPublicKey\":\"BLJoTmxP2z7M2N6JmaN786aJcT/L/OJfuJKQdIXcceuBBZ00sf5nm2+snxAJxeJ4HYFTdNH4MOJrH58GNDJ9lJw\\u003d\",\"encryptedMessage\":\"mleAf23XkKjj\"}"
+}
+```
+
+ ### Processar Transacções do Google Pay com PayU
+
+ A principal função do Google Pay como carteira digital é armazenar cartões de crédito para facilitar o processamento de pagamentos, com isso em mente, para processar transações do Google Pay na PayU a lógica a ser aplicada será a mesma que para cartões de crédito, exceto para as seguintes particularidades:
+
+* Se estiver processando transações para os seus clientes com o Google Pay, é preciso configurar as informações da carteira digital no parâmetro ```transaction.digitalWallet```.
+* No parâmetro ```transaction.digitalWallet```, utilize ```GOOGLE_PAY``` para o campo ```transaction.digitalWallet.type```  e envie o Google Pay token no campo ```transaction.digitalWallet.message```. 
+* Tenha em mente que o parâmetro ```transaction.creditcard``` para transações do Google Pay, deve enviar sempre um valor válido para o campo ```transaction.creditcard.name```. Os outros campos deste parâmetro não são necessários, uma vez que o Google Pay os fornece no token do Google Pay.
+* Por predefinição, o processamento de cartões de crédito sem código de segurança não está ativa. Contate o seu Gestor de Conta da PayU para efetuar as activações necessárias para processar sem cvv, uma vez que este método de pagamento o exige.
+
+### Testar o Meio de Pagamento
+
+Esta secção foi concebida para guiar os utilizadores através do processo de teste e familiarização com o método de pagamento Google Pay na PayU.
+
+**Pré-requisitos (aplicar para integração API e Web Checkout):**
+* Certifique-se de que tem sessão iniciada no seu navegador com a conta Gmail que vai testar.
+* Junte-se ao grupo do Google onde estarão disponíveis os cartões de teste para PayU. O grupo pode ser encontrado na seguinte [documentação do Google](https://developers.google.com/pay/api/android/guides/resources/test-card-suite).
+
+#### Testes para Estabelecimentos com Integração API:
+
+1.	Depois de ter efectuado as alterações indicadas nas secções anteriores, utilize o ficheiro de simulação de token para simular uma transação e obter um exemplo de token do Google Pay. O simulador pode ser visualizado <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/simulator.html" target="_blank">aqui</a>. 
+
+{{% alert title="Observação" color="info"%}}
+
+Para garantir um processamento correto, ao selecionar os cartões para pagamento, utilize cartões cujo nome não comece por "Test".
+
+{{% /alert %}}
+
+2. Utilize as informações da amostra do token do Google Pay para completar o pedido da PayU. Envie-o para o PayU e poderá obter prova de uma transação aprovada. Se tiver algum resultado não aprovado, reveja a documentação das etapas acima.
+
+<video width="630" height="300" controls>
+    <source src="/assets/GooglePay/API.mp4" type="video/mp4">    
+</video>
+
+#### Testes para Estabelecimentos com Integração Web Checkout:
+
+Utilize o checkout PayU no [ambiente de teste](https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/test/prueba_pago.jsp) para simular uma transação. 
+
+{{% alert title="Observação" color="info"%}}
+
+* Para garantir um processamento correto, ao selecionar os cartões para pagamento, utilize cartões cujo nome não comece por "Test".
+* Utilize as credenciais de teste da Colômbia para este teste. Ver credenciais [aqui](https://developers.payulatam.com/latam/pt/docs/getting-started/test-your-solution.html).
+
+{{% /alert %}}
+
+<video width="630" height="300" controls>
+    <source src="/assets/GooglePay/Colombia_WebCheckout.mp4" type="video/mp4">    
+</video>
+
+#### Chamada de API {#api-call-4}
+
+A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
+
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Exemplo de uma Solicitação:
+```JSON
+{
+    "language": "es",
+    "command": "SUBMIT_TRANSACTION",
+    "merchant": {
+        "apiKey": "012345678901",
+        "apiLogin": "012345678901"
+    },
+    "transaction": {
+        "order": {
+            "accountId": "9",
+            "language": "es",
+            "description" : "test",
+            "signature": "{{payu_signature}}",
+            "referenceCode": "{{payu_ref_code}}",
+            "additionalValues": {
+                "TX_VALUE": {
+                    "value": 100,
+                    "currency": "ARS"
+                }
+            }
+        },
+        "payer": {
+            "merchantPayerId": "1",
+            "fullName": "First name and second payer name",
+            "emailAddress": "payer.name@payu.com",
+            "contactPhone": "7563126",
+            "dniNumber": "5415668464654",
+            "dniType": null
+        },
+        "creditCard": {
+            "name": "Kevin Pelaez"
+        },
+        "digitalWallet": {
+            "type" : "GOOGLE_PAY",
+            "message" : "{\"signature\":\"MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\\u003d\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1695147545256\\\"}\",\"signatures\":[\"MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\\u003d\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\\\",\\\"ephemeralPublicKey\\\":\\\"BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\\\u003d\\\",\\\"tag\\\":\\\"NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\\\u003d\\\"}\"}"
+        },
+        "extraParameters": {
+            "INSTALLMENTS_NUMBER": 1
+        },
+        "type": "AUTHORIZATION_AND_CAPTURE",
+        "paymentMethod": "MASTERCARD",
+        "paymentCountry": "BR"
+    },
+    "test": false
+}
+```
+<br>
+
+Exemplo de uma Resposta:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 1400437001,
+        "transactionId": "f0f8c441-43e8-490a-b4f2-c14d2c403175",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "6",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "282856",
+        "authorizationCode": "MOCK-CIELO-1624047897817",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": null,
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1624029898077,
+        "referenceQuestionnaire": null,
+        "extraParameters": {
+            "BANK_REFERENCED_CODE": "CREDIT",
+            "CIELO_TID": "1006993069000509C28A"
+        },
+        "additionalInfo": null
+    }
+} 
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Exemplo de uma Solicitação:
+```XML
+<request>
+        <language>es</language>
+     <command>SUBMIT_TRANSACTION</command>
+     <merchant>
+         <apiKey>012345678901</apiKey>
+         <apiLogin>012345678901</apiLogin>
+     </merchant>
+     <transaction>
+         <order>
+             <accountId>9</accountId>
+             <language>es</language>
+             <description>test</description>
+             <signature>{{payu_signature}}</signature>
+             <referenceCode>{{payu_ref_code}}</referenceCode>
+             <additionalValues>
+                 <TX_VALUE>
+                     <value>100</value>
+                     <currency>ARS</currency>
+                 </TX_VALUE>
+             </additionalValues>
+         </order>
+         <payer>
+             <merchantPayerId>1</merchantPayerId>
+             <fullName>First name and second payer name</fullName>
+             <emailAddress>payer.name@payu.com</emailAddress>
+             <contactPhone>7563126</contactPhone>
+             <dniNumber>5415668464654</dniNumber>
+             <dniType></dniType>
+         </payer>
+         <creditCard>
+             <name>Kevin Pelaez</name>
+         </creditCard>
+         <digitalWallet>
+             <type>GOOGLE_PAY</type>
+             <message>{"signature":"MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\u003d\\u003d\",\"keyExpiration\":\"1695147545256\"}","signatures":["MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\u003d\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\",\"ephemeralPublicKey\":\"BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\u003d\",\"tag\":\"NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\u003d\"}"}</message>
+         </digitalWallet>
+         <extraParameters>
+             <INSTALLMENTS_NUMBER>1</INSTALLMENTS_NUMBER>
+         </extraParameters>
+         <type>AUTHORIZATION_AND_CAPTURE</type>
+         <paymentMethod>MASTERCARD</paymentMethod>
+         <paymentCountry>BR</paymentCountry>
+     </transaction>
+     <test>false</test>
+</request>
+```
+<br>
+
+Exemplo de uma Resposta:
+```XML
+<paymentResponse>
+         <code>SUCCESS</code>
+     <error></error>
+     <transactionResponse>
+         <orderId>1400437001</orderId>
+         <transactionId>f0f8c441-43e8-490a-b4f2-c14d2c403175</transactionId>
+         <state>APPROVED</state>
+         <paymentNetworkResponseCode>6</paymentNetworkResponseCode>
+         <paymentNetworkResponseErrorMessage></paymentNetworkResponseErrorMessage>
+         <trazabilityCode>282856</trazabilityCode>
+         <authorizationCode>MOCK-CIELO-1624047897817</authorizationCode>
+         <pendingReason></pendingReason>
+         <responseCode>APPROVED</responseCode>
+         <errorCode></errorCode>
+         <responseMessage></responseMessage>
+         <transactionDate></transactionDate>
+         <transactionTime></transactionTime>
+         <operationDate>1624029898077</operationDate>
+         <referenceQuestionnaire></referenceQuestionnaire>
+         <extraParameters>
+             <BANK_REFERENCED_CODE>CREDIT</BANK_REFERENCED_CODE>
+             <CIELO_TID>1006993069000509C28A</CIELO_TID>
+         </extraParameters>
+         <additionalInfo></additionalInfo>
+     </transactionResponse>
+</paymentResponse>
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
 ## Lista de Bancos - PSE {#banks-list---pse}
 
 Este método retorna uma lista dos bancos disponíveis para [pagamentos usando PSE]({{< ref "#submit-transactions-using-bank-transfer-pse" >}}). 
@@ -1857,11 +2157,11 @@ Este método retorna uma lista dos bancos disponíveis para [pagamentos usando P
 
 </details>
 
-### Chamada para a API {#api-call-4}
+### Chamada de API {#api-call-5}
 
 A seguir estão os corpos do pedido e resposta deste método.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2538,11 +2838,11 @@ Este método gera uma lista dos métodos de pagamento disponíveis em todos os p
 
 </details>
 
-### Chamada para a API {#api-call-5}
+### Chamada de API {#api-call-6}
 
 A seguir estão os corpos do pedido e resposta deste método. Para fins de exemplo, a solicitação e a resposta aqui mostram dois métodos de pagamento. 
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2662,11 +2962,11 @@ O método `PING` permite que você confirme a conexão com a nossa plataforma.
 | transactionResponse | Objeto | Máx:2048 | A resposta do método PING caso tenha ocorrido um erro. |
 </details>
 
-### Chamada para a API {#api-call-6}
+### Chamada de API {#api-call-7}
 
 A seguir estão os corpos do pedido e resposta deste método.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
