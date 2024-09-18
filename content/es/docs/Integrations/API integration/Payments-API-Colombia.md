@@ -144,6 +144,9 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 | transaction > threeDomainSecure > cavv | Alfanumérico | Máx:28 | Valor de verificación de autenticación del titular de la tarjeta (Cardholder Authentication Verification Value).<br>Código del criptograma utilizado en la autenticación de la transacción codificado en Base 64.<br>Dependiendo de los códigos ECI específicos establecidos por la red, este valor puede ser opcional. | No |
 | transaction > threeDomainSecure > xid | Alfanumérico | Máx:28 | Identificador de la transacción enviado por el MPI codificado en Base 64.<br>Este parámetro es obligatorio cuando `transaction.threeDomainSecure.embedded` is `false` y `transaction.threeDomainSecure.eci` tiene un valor configurado. | No |
 | transaction > threeDomainSecure > directoryServerTransactionId | Alfanumérico | Máx:36 | Identificador de la transacción generador por el servidor de directorio durante la autenticación. | No |
+| transaction > digitalWallet | Objeto |  | Incluya este parámetro cuando la transacción se realice utilizando una billetera digital. *Al enviar este objeto, todos sus campos son obligatorios. | No |
+| transaction > digitalWallet > type | Alfanumérico | ---- | Envía el valor con base en la billetera que se está procesando: GOOGLE_PAY | Si* |
+| transaction > digitalWallet > message | Alfanumérico | ---- | Incluye la información del Google Pay token que Google te devolverá por cada transacción. Para más información consulta [aquí](#definiciones-de-payu-para-la-integración-api-del-medio-de-pago). | Si* |
 
 </details>
 
@@ -2108,6 +2111,10 @@ Ejemplo de una Respuesta:
 
 {{< /tab >}}
 {{< /tabs >}}
+
+<br>
+
+Encuentra la descripción del objeto `transaction.digitalWallet` y sus campos en la sección de [Parámetros](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-colombia.html#parameters-for-request-and-response).
 
 ## Lista de Bancos - PSE {#banks-list---pse}
 

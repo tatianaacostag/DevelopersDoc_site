@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-09-13T16:43:31-05:00" />
+<meta property="article:modified_time" content="2024-09-17T17:03:12-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Brasil">
 <meta itemprop="description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-09-13T16:43:31-05:00" />
-<meta itemprop="wordCount" content="13649">
+<meta itemprop="dateModified" content="2024-09-17T17:03:12-05:00" />
+<meta itemprop="wordCount" content="13616">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Brasil"/>
 <meta name="twitter:description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.72e935594b1ad004a4b13208f07f4abdff2abd3d9f1252d5ffdaa4f3a04e5987f702db8c94f6e8033588817558ca9bb97d9f0cf482f76bd22f35b5baa107905d.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.5c4ce3513393353e706eabfa2fd834cb704b76212640434a79006a0f5d4ceb990b7a11e346506895eaf1c471c917b767e170187b38582cb278c4a0eb635cd9c2.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -788,7 +788,7 @@
         <li><a href="#charge">Cobro</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay™</a>
+    <li><a href="#submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay</a>
       <ul>
         <li><a href="#integración-api-del-medio-de-pago">Integración API del Medio de Pago</a></li>
         <li><a href="#procesar-transacciones-de-google-pay-en-payu">Procesar Transacciones de Google Pay en PayU</a></li>
@@ -799,31 +799,31 @@
       <ul>
         <li><a href="#how-does-pix-work">¿Cómo Funciona PIX?</a></li>
         <li><a href="#parameters-for-request-and-response-1">Parámetros para la Solicitud y la Respuesta</a></li>
-        <li><a href="#api-call">Llamado a la API</a></li>
+        <li><a href="#api-call-1">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#submit-transactions-using-cash">Enviar Transacciones Utilizando Efectivo</a>
       <ul>
         <li><a href="#parameters-for-request-and-response-2">Parámetros para la Solicitud y la Respuesta</a></li>
-        <li><a href="#api-call-1">Llamado a la API</a></li>
+        <li><a href="#api-call-2">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#submit-transactions-using-bank-transfer">Enviar Transacciones Utilizando Transferencia Bancaria</a>
       <ul>
         <li><a href="#parameters-for-request-and-response-3">Parámetros para la Solicitud y la Respuesta</a></li>
-        <li><a href="#api-call-2">Llamado a la API</a></li>
+        <li><a href="#api-call-3">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#available-payment-methods-query">Consultar Métodos de Pago Disponibles</a>
       <ul>
         <li><a href="#parameters-for-request-and-response-4">Parámetros para la Solicitud y la Respuesta</a></li>
-        <li><a href="#api-call-3">Llamado a la API</a></li>
+        <li><a href="#api-call-4">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
         <li><a href="#parameters-for-request-and-response-5">Parámetros para la Solicitud y la Respuesta</a></li>
-        <li><a href="#api-call-4">Llamado a la API</a></li>
+        <li><a href="#api-call-5">Llamado a la API</a></li>
       </ul>
     </li>
   </ul>
@@ -902,7 +902,7 @@
 <p>La API de Pagos incluye los siguiente métodos:</p>
 <ul>
 <li><a href="#submit-transactions-using-credit-or-debit-cards">Enviar Transacciones Utilizando Tarjeta de Crédito</a></li>
-<li><a href="#submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay™</a></li>
+<li><a href="#submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay</a></li>
 <li><a href="#submit-transactions-using-pix">Enviar Transacciones Utilizando PIX</a></li>
 <li><a href="#submit-transactions-using-cash">Enviar Transacciones Utilizando Efectivo</a></li>
 <li><a href="#submit-transactions-using-bank-transfer">Enviar Transacciones Utilizando Transferencia Bancaria</a></li>
@@ -3095,7 +3095,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 
 
 </div>
-<h2 id="submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay™</h2>
+<h2 id="submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay</h2>
 <p>Google Pay es una billetera digital que permite realizar pagos con tarjeta de forma sencilla y rápida, sin necesidad de introducir los datos de la tarjeta en cada pago. Los datos de la tarjeta son almacenados de forma segura por Google. Este método de pago está disponible para todos los dispositivos (teléfonos móviles y ordenadores), independientemente del sistema operativo y en casi todos los navegadores web.</p>
 <p>En caso de utilizar Google Pay, los comercios deben adherirse a la <a href="https://payments.developers.google.com/terms/aup">Política de uso aceptable</a> de las API de Google Pay y aceptar los términos que definen las <a href="https://payments.developers.google.com/terms/sellertos">Condiciones de servicio de las API de Google Pay</a>.</p>
 
@@ -3138,11 +3138,11 @@ La descripción que figura a continuación se aplica a la prestación de este se
 <h6 id="medios-de-pago-soportados">Medios de Pago Soportados</h6>
 </li>
 </ul>
-<p>Ten en cuenta que PayU como procesador de pagos de Google Pay permite el manejo de todo tipo de tarjetas de pago emitidas por las organizaciones Visa y Mastercard. Esto implica la siguiente configuración del script de Google:</p>
+<p>PayU procesa pagos de Google Pay para tarjetas Mastercard y Visa. Para configurar tu script de Google, utiliza estos ajustes:</p>
 <pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, &#34;ELECTRON&#34;, &#34;MAESTRO&#34;];
 const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;, &#34;CRYPTOGRAM_3DS&#34;];
-</code></pre><p>Como respuesta, Google devolverá el elemento <code>PaymentData</code>, y el campo <code>paymentMethodData.tokenizationData.token</code> contendrá un Google Pay Token cifrado de forma segura (una cadena de caracteres).</p>
-<p>A continuación un ejemplo de Google Pay Token:</p>
+</code></pre><p>Google devolverá un objeto <code>PaymentData</code>, y el campo <code>paymentMethodData.tokenizationData.token</code> contendrá un token de Google Pay encriptado de forma segura (una cadena de caracteres).</p>
+<p>A continuación, un ejemplo de un token de Google Pay:</p>
 <pre tabindex="0"><code>{
   &#34;protocolVersion&#34;:&#34;ECv2&#34;,
   &#34;signature&#34;:&#34;MEUCIG39tbaQPwJe28U+UMsJmxUBUWSkwlOv9Ibohacer+CoAiEA8Wuq3lLUCwLQ06D2kErxaMg3b/oLDFbd2gcFze1zDqU\u003d&#34;,
@@ -3182,8 +3182,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 <li>Utiliza la información del token de Google Pay de muestra para completar el request de PayU. Envíala a PayU para obtener prueba de una transacción aprobada. Si tienes algún resultado no aprobado, revisa la documentación de los pasos anteriores.</li>
 </ol>
 <video width="630" height="300" controls>
-	<source src="../../../../assets/GooglePay/API.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
+	<source src="../../../../assets/GooglePay/API.mp4" type="video/mp4"> 	
 </video>
 <h4 id="pruebas-para-comercios-con-integración-web-checkout">Pruebas para Comercios con Integración Web Checkout:</h4>
 <p>Utiliza el Web Checkout en <a href="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/test/prueba_pago.jsp">ambiente de prueba</a> para simular una transacción.</p>
@@ -3199,10 +3198,9 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 </div>
 
 <video width="630" height="300" controls>
-	<source src="../../../../assets/GooglePay/WebCheckout.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
+	<source src="../../../../assets/GooglePay/WebCheckout.mp4" type="video/mp4"> 	
 </video>
-<h4 id="llamado-a-la-api">Llamado a la API</h4>
+<h4 id="api-call">Llamado a la API</h4>
 <p>Los siguientes son ejemplos de los cuerpos de la petición y la respuesta de este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4093,7 +4091,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro <code>QRCODE_IMAGE_BASE64</code> decodificado) como la cadena del código (parámetro<code> QRCODE_EMV</code>) para evitar deserciones de pago.
 </div>
 
-<h3 id="api-call">Llamado a la API</h3>
+<h3 id="api-call-1">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -4981,7 +4979,7 @@ Se recomienda mostrar en tu Checkout tanto la imagen del código QR (parámetro 
 </ul>
 </li>
 </ul>
-<h3 id="api-call-1">Llamado a la API</h3>
+<h3 id="api-call-2">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5861,7 +5859,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 <li>Cuando el pagador selecciona este método de pago, PayU crea una orden en estado <em>in progress</em> y una transacción en estado <code>PENDING</code>.</li>
 <li>En el cuerpo de la respuesta, puedes encontrar el recibo generador por PayU y su fecha de expiración.</li>
 </ul>
-<h3 id="api-call-2">Llamado a la API</h3>
+<h3 id="api-call-3">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6240,7 +6238,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tbody>
 </table>
 </details>
-<h3 id="api-call-3">Llamado a la API</h3>
+<h3 id="api-call-4">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6471,7 +6469,7 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 </tbody>
 </table>
 </details>
-<h3 id="api-call-4">Llamado a la API</h3>
+<h3 id="api-call-5">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6581,9 +6579,9 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-13 de septiembre de 2024:
+17 de septiembre de 2024:
 
- <b>Documentation updates (60766faa9)</b>
+ <b>Documentation updates (329dfb83d)</b>
 </div>
 </div>
 

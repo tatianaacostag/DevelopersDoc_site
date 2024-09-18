@@ -1526,7 +1526,9 @@ Ejemplo de una Respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-Encuentra la descripción del objeto transaction.digitalWallet y sus campos en la sección de [Parámetros](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response).
+<br>
+
+Encuentra la descripción del objeto `transaction.digitalWallet` y sus campos en la sección de [Parámetros](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response).
 
 ## Enviar Transacciones Utilizando PIX {#submit-transactions-using-pix}
 

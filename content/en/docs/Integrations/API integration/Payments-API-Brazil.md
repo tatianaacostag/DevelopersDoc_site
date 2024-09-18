@@ -1527,8 +1527,9 @@ Response Example:
 {{< /tab >}}
 {{< /tabs >}}
 
+<br>
 
-You will find the description of the transaction.digitalWallet object and its fields in the section [Parameters](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response).
+You will find the description of the `transaction.digitalWallet` object and its fields in the section [Parameters](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response).
 
 
 ## Submit Transactions Using PIX

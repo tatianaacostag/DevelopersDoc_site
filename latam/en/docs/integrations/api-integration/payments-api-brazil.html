@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-09-09T16:32:33-05:00" />
+<meta property="article:modified_time" content="2024-09-17T17:03:12-05:00" />
 
 <meta itemprop="name" content="Payments API - Brazil">
 <meta itemprop="description" content="The Payments API for Brazil allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, electronic transfers, cash, bank transfers, and credit cards.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-09-09T16:32:33-05:00" />
-<meta itemprop="wordCount" content="13018">
+<meta itemprop="dateModified" content="2024-09-17T17:03:12-05:00" />
+<meta itemprop="wordCount" content="12970">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Brazil"/>
 <meta name="twitter:description" content="The Payments API for Brazil allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, electronic transfers, cash, bank transfers, and credit cards.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.72e935594b1ad004a4b13208f07f4abdff2abd3d9f1252d5ffdaa4f3a04e5987f702db8c94f6e8033588817558ca9bb97d9f0cf482f76bd22f35b5baa107905d.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.5c4ce3513393353e706eabfa2fd834cb704b76212640434a79006a0f5d4ceb990b7a11e346506895eaf1c471c917b767e170187b38582cb278c4a0eb635cd9c2.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -794,7 +794,7 @@
         <li><a href="#charge">Charge</a></li>
       </ul>
     </li>
-    <li><a href="#submit-transactions-using-google-pay">Submit Transactions Using Google Pay™</a>
+    <li><a href="#submit-transactions-using-google-pay">Submit Transactions Using Google Pay</a>
       <ul>
         <li><a href="#api-integration-of-the-payment-method">API Integration of the Payment Method</a></li>
         <li><a href="#process-google-pay-transactions-in-payu">Process Google Pay Transactions in PayU</a></li>
@@ -908,7 +908,7 @@
 <p>Payments API includes the following methods:</p>
 <ul>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transactions-using-credit-cards">Submit Transactions Using Credit Cards</a></li>
-<li><a href="#submit-transactions-using-google-pay">Submit Transactions Using Google Pay™</a></li>
+<li><a href="#submit-transactions-using-google-pay">Submit Transactions Using Google Pay</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transactions-using-pix">Submit Transactions Using PIX</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transactions-using-cash">Submit Transactions Using Cash</a></li>
 <li><a href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html#submit-transactions-using-bank-transfer">Submit Transactions Using Bank Transfer</a></li>
@@ -3101,7 +3101,7 @@ By default, processing credit cards without a security code is not enabled. To e
 
 
 </div>
-<h2 id="submit-transactions-using-google-pay">Submit Transactions Using Google Pay™</h2>
+<h2 id="submit-transactions-using-google-pay">Submit Transactions Using Google Pay</h2>
 <p>Google Pay is a digital wallet that enables simple and fast card payments, without the need of entering the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), no matter the operating system and in almost all web browsers.</p>
 <p>In case of using Google Pay, the merchants must adhere to the Google Pay APIs <a href="https://payments.developers.google.com/terms/aup">Acceptable Use Policy</a> and accept the terms that <a href="https://payments.developers.google.com/terms/sellertos">Google Pay API Terms of Service</a> defines.</p>
 
@@ -3115,7 +3115,6 @@ The description below applies to provision of this service directly by displayin
 <p>Please note that if your integration with PayU is API, you must change the settings described in this section to process Google Pay transactions:</p>
 <ul>
 <li><a href="#api-integration-of-the-payment-method">Perform API integration of the payment method</a></li>
-<li><a href="#process-google-pay-transactions-in-payu">Perform the adaptation of your API integration with PayU</a></li>
 <li><a href="#test-the-payment-method">Test the payment method</a></li>
 </ul>
 <h3 id="api-integration-of-the-payment-method">API Integration of the Payment Method</h3>
@@ -3145,11 +3144,11 @@ The description below applies to provision of this service directly by displayin
 <h6 id="supported-payment-networks">Supported Payment Networks</h6>
 </li>
 </ul>
-<p>Please note that PayU as the processor of Google Pay payments, enables the handling of all types of payment cards issued by the Visa and Mastercard organizations. This implies the following configuration of the Google script:</p>
-<pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, “ELECTRON”, “MAESTRO];
+<p>PayU processes Google Pay payments for Mastercard and Visa cards. To configure your Google script, use these settings:</p>
+<pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, &#34;ELECTRON&#34;, &#34;MAESTRO&#34;];
 const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;, &#34;CRYPTOGRAM_3DS&#34;];
-</code></pre><p>In response, Google shall return the <code>PaymentData</code> item, and the field <code>paymentMethodData.tokenizationData.token</code> shall contain a safely encrypted Google Pay Token (a string of characters).</p>
-<p>A sample of Google Pay Token looks like this:</p>
+</code></pre><p>Google will return a <code>PaymentData</code> object, and the <code>paymentMethodData.tokenizationData.token</code> field will contain a securely encrypted Google Pay Token (a string).</p>
+<p>Below, a sample of a Google Pay Token:</p>
 <pre tabindex="0"><code>{
   &#34;protocolVersion&#34;:&#34;ECv2&#34;,
   &#34;signature&#34;:&#34;MEUCIG39tbaQPwJe28U+UMsJmxUBUWSkwlOv9Ibohacer+CoAiEA8Wuq3lLUCwLQ06D2kErxaMg3b/oLDFbd2gcFze1zDqU\u003d&#34;,
@@ -3190,7 +3189,6 @@ To ensure correct processing, use cards whose name do NOT start with &ldquo;Test
 </ol>
 <video width="630" height="300" controls>
 	<source src="../../../../assets/GooglePay/API.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
 </video>
 <h4 id="testing-for-merchants-with-web-checkout-integration">Testing for Merchants with Web Checkout Integration:</h4>
 <p>Access PayU Latam Web Checkout in a <a href="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/test/prueba_pago.jsp">test environment</a> and simulate a transaction.</p>
@@ -3207,7 +3205,6 @@ To ensure correct processing, use cards whose name do NOT start with &ldquo;Test
 
 <video width="630" height="300" controls>
 	<source src="../../../../assets/GooglePay/WebCheckout.mp4" type="video/mp4">
- 	Your browser does not support the video tag.
 </video>
 <h4 id="api-call">API Call</h4>
 <p>The following are the bodies of the request and response of this payment method.</p>
@@ -6589,9 +6586,9 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-September 9, 2024:
+September 17, 2024:
 
- <b>Documentation Updates (74c84013a)</b>
+ <b>Documentation updates (329dfb83d)</b>
 </div>
 </div>
 

@@ -31,11 +31,7 @@
 &lt;h4 class=&#34;alert-heading&#34;&gt;Notes&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Currently supported networks:&lt;/strong&gt; Visa and Mastercard&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Currently supported networks:&lt;/strong&gt; Visa and Mastercard.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
