@@ -1869,8 +1869,8 @@ const tokenizationSpecification = {
 PayU processa pagamentos Google Pay para cartões American Express, Mastercard e Visa. Para configurar seu script Google, use estas configurações:
 
 ```
-const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO", "AMEX"];
-const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
+const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO"];
+const allowedCardAuthMethods = ["PAN_ONLY"];
 ```
 
 {{% alert title="Observação" color="info"%}}
@@ -2121,7 +2121,7 @@ Exemplo de uma Resposta:
 
 <br>
 
-Você encontrará a descrição do objeto `transaction.digitalWallet` e dos seus campos na seção [Parâmetros](https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response).
+Você encontrará a descrição do objeto `transaction.digitalWallet` e dos seus campos na seção [Parâmetros](https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-colombia.html#parameters-for-request-and-response).
 
 ## Lista de Bancos - PSE {#banks-list---pse}
 

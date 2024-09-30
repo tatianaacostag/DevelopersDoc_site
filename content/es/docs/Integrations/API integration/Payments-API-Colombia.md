@@ -1860,11 +1860,11 @@ const tokenizationSpecification = {
 
 * ###### Medios de Pago Soportados
 
-PayU procesa pagos de Google Pay para tarjetas American Express, Mastercard y Visa. Para configurar tu script de Google, utiliza estos ajustes:
+PayU procesa pagos de Google Pay para tarjetas Mastercard y Visa. Para configurar tu script de Google, utiliza estos ajustes:
 
 ```
-const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO", "AMEX"];
-const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
+const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO"];
+const allowedCardAuthMethods = ["PAN_ONLY"];
 ```
 
 {{% alert title="Nota" color="info"%}}
@@ -1911,7 +1911,9 @@ Esta sección está diseñada para guiar a los usuarios sobre el proceso de prue
 1.	Una vez realizados los cambios indicados en los apartados anteriores, utiliza el Archivo Simulador de Token para simular una transacción y obtener un token de Google Pay de muestra. El simulador puede visualizarse <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/simulator.html" target="_blank">aquí</a>.
 
 {{% alert title="Nota" color="info"%}}
+
 Para garantizar un procesamiento correcto, al momento de seleccionar las tarjetas para el pago,   utiliza tarjetas cuyo nombre no empiecen por "Test". 
+
 {{% /alert %}}
 
 2. Utiliza la información del token de Google Pay de muestra para completar el request de PayU. Envíala a PayU para obtener prueba de una transacción aprobada. Si tienes algún resultado no aprobado, revisa la documentación de los pasos anteriores.

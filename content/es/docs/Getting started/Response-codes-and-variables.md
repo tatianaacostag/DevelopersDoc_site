@@ -1,6 +1,6 @@
 ---
-title: "Códigos de respuesta y Variables"
-linkTitle: "Códigos de respuesta y Variables"
+title: "Códigos de Respuesta y Variables"
+linkTitle: "Códigos de Respuesta y Variables"
 date: 2021-04-06T15:33:35-05:00
 description:
   En esta sección, encontrarás data relevante usada durante el proceso de integración, como las tablas de variables, lenguajes y monedas permitidas en la plataforma de PayU. 
@@ -11,9 +11,9 @@ weight: 50
 <input type="text" id="searchBox" placeholder=" Busca por nombres, códigos o descripción..." onkeyup="findTables()" >
 <button onclick="document.getElementById('searchBox').value = '';findTables()" class="btn-green">Borrar</button>
 
-## Códigos de respuesta de las transacciones {#response-codes-for-transactions}  
+## Códigos de Respuesta de las Transacciones {#response-codes-for-transactions}  
 
-| Código de respuesta | Descripción |
+| Código de Respuesta | Descripción |
 |-|-|
 | `ERROR` | Error general. |
 | `APPROVED` | La transacción fue aprobada. |
@@ -54,7 +54,7 @@ weight: 50
 | `ERROR_FIXING_AND_REVERSING` | Clínica de transacciones: Código de manejo interno. Sólo aplica para la API de reportes. |
 | `ERROR_FIXING_INCOMPLETE_DATA` | Clínica de transacciones: Código de manejo interno. Sólo aplica para la API de reportes. |
 
-## Códigos de respuesta de la página de respuesta {#response-codes-sent-to-the-response-page}
+## Códigos de Respuesta de la Página de Respuesta {#response-codes-sent-to-the-response-page}
 
 <div class="variables"></div>
 
@@ -110,7 +110,7 @@ weight: 50
 |  |  | 12 (Pendiente) | PENDING_AWAITING_PSE _CONFIRMATION | 9994 | En espera de confirmación de PSE |
 |  |  | 18 (Pendiente) | PENDING_NOTIFYING_ENTITY | 25 | Recibo de pago generado. En espera de pago |
 
-##  Códigos de respuesta de la página de confirmación {#response-codes-sent-to-the-confirmation-page}
+##  Códigos de Respuesta de la Página de Confirmación {#response-codes-sent-to-the-confirmation-page}
 
 <div class="variables"></div>
 
@@ -158,7 +158,7 @@ weight: 50
 |  | PAYMENT_NETWORK_BAD_RESPONSE | 9999 | Error interno |
 | 5 (Expirada) | EXPIRED_TRANSACTION | 20 | Transacción expirada |
 
-## Códigos de los métodos de pago {#codes-of-the-payment-methods}
+## Códigos de los Métodos de Pago {#codes-of-the-payment-methods}
 Los siguientes códigos aplican para `payment_method_type` (Página de confirmación), `payment_method_id` (Página de confirmación) y `polPaymentMethodType` (Página de respuesta).
 
 | Código | lapPaymentMethodType<br>(Página de respuesta) | Descripción                   |
@@ -172,37 +172,41 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 |   10   | BANK_REFERENCED                               | Pago en bancos                |
 |   14   | SPEI                                          | Transferencias bancarias SPEI |
 
-## Comandos aceptados por el API de pagos {#commands-accepted-by-the-payments-api}
+## Comandos Aceptados por la API de Pagos {#commands-accepted-by-the-payments-api}
 
-| Comando               | Descripción                                                                 |
-|-----------------------|-----------------------------------------------------------------------------|
-| `PING`                | Utilizado para realizar ping al servicio.                                   |
-| `SUBMIT_TRANSACTION`  | Utilizado para enviar transacciones de cualquier tipo.                      |
-| `GET_PAYMENT_METHODS` | Utilizado para consultar los métodos de pago disponibles para el comercio.   |
+| Comando               | Descripción                                       |
+|-----------------------|---------------------------------------------------|
+| `PING`                | Utilizado para realizar ping al servicio.                             |
+| `SUBMIT_TRANSACTION`  | Utilizado para enviar transacciones de cualquier tipo.                |
+| `GET_PAYMENT_METHODS` | Utilizado para consultar los métodos de pago disponibles para el comercio. |
 | `GET_BANKS_LIST`      | Utilizado para obtener el listado de bancos para las transacciones con PSE. |
 
-## Comandos aceptados por el API de consultas {#commands-accepted-by-the-query-api}
+## Comandos Aceptados por la API de Consultas {#commands-accepted-by-the-query-api}
 
-| Comando                          | Descripción                                                           |
-|----------------------------------|-----------------------------------------------------------------------|
-| `PING`                           | Utilizado para realizar ping al servicio.                             |
-| `ORDER_DETAIL`                   | Utilizado para consultar una orden utilizado su identificador.        |
+| Comando                          | Descripción                                          |
+|----------------------------------|------------------------------------------------------|
+| `PING`                           | Utilizado para realizar ping al servicio.            |
+| `ORDER_DETAIL`                   | Utilizado para consultar una orden utilizado su identificador. |
 | `ORDER_DETAIL_BY_REFERENCE_CODE` | Utilizado para consultar una orden utilizado su código de referencia. |
-| `TRANSACTION_RESPONSE_DETAIL`    | Utilizado para consultar la respuesta de una transacción.             |
+| `TRANSACTION_RESPONSE_DETAIL`    | Utilizado para consultar la respuesta de una transacción.   |
 
-## Divisas aceptadas {#accepted-currencies}
+## Divisas Aceptadas {#accepted-currencies}
 
-| Moneda   | Descripción        |
-|----------|--------------------|
-| `ARS`    | Peso argentino     |
-| `BRL`    | Real brasileño     |
-| `CLP`    | Peso chileno       |
-| `COP`    | Peso colombiano    |
-| `MXN`    | Peso mexicano      |
-| `PEN`    | Nuevo Sol peruano  |
-| `USD`    | Dólar americano    |
+| Moneda   | Nombre          |
+|----------|----------------------|
+| `ARS`    | Peso argentino       |
+| `BRL`    | Real brasileño       |
+| `CLP`    | Peso chileno         |
+| `COP`    | Peso colombiano      |
+| `CRC`    | Colón costarricense  |
+| `GTQ`    | Quetzal guatemalteco |
+| `HNL`    | Lempira hondureño    |
+| `MXN`    | Peso mexicano        |
+| `PEN`    | Nuevo Sol peruano    |
+| `SVC`    | Colón salvadoreño    |
+| `USD`    | Dólar estadounidense  |
 
-## Estados de la orden {#order-status}
+## Estados de la Orden {#order-status}
 
 | Estado        | Descripción                                                     |
 |---------------|-----------------------------------------------------------------|
@@ -215,18 +219,18 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 | `REFUNDED`    | El último estado de la orden es un reembolso aprobado.          |
 | `CHARGEBACK`  | El último estado de la orden es un Contracargo. Es decir, corresponde a una [Dispute]({{< ref "Disputes.md" >}}) perdida.      |
 
-## Estados de la transacción {#transaction-states}
+## Estados de la Transacción {#transaction-states}
 
-| Estado      | Descripción                                                                                    |
-|-------------|------------------------------------------------------------------------------------------------|
-| `APPROVED`  | Transacción aprobada.                                                                          |
-| `DECLINED`  | Transacción rechazada.                                                                         |
-| `ERROR`     | Error procesando la transacción.                                                               |
-| `EXPIRED`   | Transacción expirada.                                                                          |
-| `PENDING`   | Transacción pendiente o en validación                                                          |
+| Estado      | Descripción                                                                |
+|-------------|----------------------------------------------------------------------------|
+| `APPROVED`  | Transacción aprobada.                                                      |
+| `DECLINED`  | Transacción rechazada.                                                     |
+| `ERROR`     | Error procesando la transacción.                                           |
+| `EXPIRED`   | Transacción expirada.                                                      |
+| `PENDING`   | Transacción pendiente o en validación                                      |
 | `SUBMITTED` | Transacción enviada a la entidad financiera y por algún motivo no terminó su procesamiento.<br>Sólo aplica para la API de reportes.|
 
-## Tipos de transacción {#transaction-types} 
+## Tipos de Transacción {#transaction-types} 
 
 | Tipo                        | Descripción                                                |
 |-----------------------------|------------------------------------------------------------|
@@ -236,19 +240,23 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 | `VOID`                      | Transacción de cancelación de una autorización.            |
 | `REFUND`                    | Transacción de reembolso o cancelación de una captura.     |
 
-## Paises de pago {#processing-countries}
+## Paises de Pago {#processing-countries}
 
-| País      | Descripción |
-|-----------|-------------|
-| `AR`      | Argentina   |
-| `BR`      | Brasil      |
-| `CL`      | Chile       |
-| `CO`      | Colombia    |
-| `MX`      | México      |
-| `PA`      | Panamá      |
-| `PE`      | Perú        |
+| Código del país  | País   |
+|-------|---------------|
+| `AR`  | Argentina     |
+| `BR`  | Brasil        |
+| `CL`  | Chile         |
+| `CO`  | Colombia      |
+| `CR`  | Costa Rica    |
+| `GT`  | Guatemala     |
+| `HN`  | Honduras      |
+| `MX`  | México        |
+| `PA`  | Panamá        |
+| `PE`  | Perú          |
+| `SV`  | El Salvador   |
 
-## Idiomas soportados {#supported-languages}
+## Idiomas Soportados {#supported-languages}
 
 | Código ISO 639 | Idioma     |
 |----------------|------------|
@@ -256,48 +264,48 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 | `es`           | Español    |
 | `pt`           | Portugués  |
 
-## Tipos de documento {#document-types}
+## Tipos de Documento {#document-types}
 
-| ISO  | Descripción                                                                         | País                   |
-|------|-------------------------------------------------------------------------------------|------------------------|
-| CC   | Cédula de ciudadanía.                                                               | Colombia               |
-| CE   | Cédula de extranjería.                                                              | Colombia, Perú         |
-| CEL  | En caso de identificarse a través de la línea del móvil.                            | Colombia               |
-| CEP  | Comprobante Electrónico de Pago.                                                    | México                 |
-| CI   | Cédula de Identidad.                                                                | Argentina, Chile       |
-| CNPJ | Registro Nacional de Personas Jurídicas.                                            | Brasil                 |
-| CPF  | Registro de Personas físicas.                                                       | Brasil                 |
-| CUIL | Código Único de Identificación Laboral.                                             | Argentina              |
-| CUIT | Código Único de Identificación Tributaria.                                          | Argentina              |
-| CURP | Clave Única de Registro de Población.                                               | México                 |
-| DE   | Documento de identificación extranjero.                                             | Perú                   |
-| DL   | Licencia de Conducción.                                                             |                        |
-| DNI  | Documento Nacional de Identidad.                                                    | Argentina, Perú, Chile |
-| DNIE | Documento Nacional de Identidad - Electrónico.                                      | Argentina, Perú, Chile |
-| EIN  | Número de identificación del empleador.                                             | Perú                   |
-| ID   | Identificación.                                                                     |                        |
+| ISO  | Descripción                                | País                   |
+|------|--------------------------------------------|------------------------|
+| CC   | Cédula de ciudadanía.                      | Colombia               |
+| CE   | Cédula de extranjería.                     | Colombia, Perú         |
+| CEL  | En caso de identificarse a través de la línea del móvil.    | Colombia        |
+| CEP  | Comprobante Electrónico de Pago.                      | México                |
+| CI   | Cédula de Identidad.                                  | Argentina, Chile      |
+| CNPJ | Registro Nacional de Personas Jurídicas.              | Brasil                |
+| CPF  | Registro de Personas físicas.                         | Brasil                |
+| CUIL | Código Único de Identificación Laboral.               | Argentina             |
+| CUIT | Código Único de Identificación Tributaria.            | Argentina             |
+| CURP | Clave Única de Registro de Población.                 | México                |
+| DE   | Documento de identificación extranjero.               | Perú                  |
+| DL   | Licencia de Conducción.                               |                       |
+| DNI  | Documento Nacional de Identidad.                      | Argentina, Perú, Chile |
+| DNIE | Documento Nacional de Identidad - Electrónico.        | Argentina, Perú, Chile |
+| EIN  | Número de identificación del empleador.               | Perú                   |
+| ID   | Identificación.                         |                         |
 | IDC  | Identificador único de cliente, para el caso de ID’s únicos de clientes / usuarios de servicios públicos. |  |
-| IFE  | Instituto Federal Electoral.                                                        | México                  |
-| LC   | Libreta Cívica.                                                                     | Argentina              |
-| LE   | Libreta de Enrolamiento.                                                            | Argentina              |
-| NIF  | Número de Identificación Financiera.                                                |                        |
-| NIT  | Número de Identificación Tributaria.                                                | Colombia               |
-| PP   | Pasaporte.                                                                          |                        |
-| RC   | Registro civil de nacimiento.                                                       | Colombia               |
-| RDE  | Tipo de documento RDE.                                                              |                        |
-| RE   | Tipo de documento RE.                                                               |                        |
-| RFC  | Registro Federal de Contribuyentes.                                                 | México                 |
-| RIF  | Registro de Información Fiscal.                                                     |                        |
-| RM   | Registro Mercantil.                                                                 |                        |
-| RMC  | Registro Mercantil Consular.                                                        |                        |
-| RNC  | Registro Nacional de Contribuyentes.                                                |                        |
-| RUC  | Registro Único de Contribuyentes.                                                   | Perú                   |
-| RUN  | Rol Único Nacional.                                                                 | Chile                  |
-| RUT  | Rol Único Tributario.                                                               | Chile                  |
-| SC   | Salvoconducto.                                                                      |                        |
-| SIEM | Sistema de Información Empresarial Mexicano.                                        | México                 |
-| SSN  | Número de Seguridad Social.                                                         |                        |
-| TI   | Tarjeta de Identidad.                                                               | Colombia               |
+| IFE  | Instituto Federal Electoral.            | México                  |
+| LC   | Libreta Cívica.                         | Argentina               |
+| LE   | Libreta de Enrolamiento.                | Argentina               |
+| NIF  | Número de Identificación Financiera.    |                         |
+| NIT  | Número de Identificación Tributaria.    | Colombia                |
+| PP   | Pasaporte.                              |                         |
+| RC   | Registro civil de nacimiento.           | Colombia                |
+| RDE  | Tipo de documento RDE.                  |                         |
+| RE   | Tipo de documento RE.                   |                         |
+| RFC  | Registro Federal de Contribuyentes.     | México                  |
+| RIF  | Registro de Información Fiscal.         |                         |
+| RM   | Registro Mercantil.                     |                         |
+| RMC  | Registro Mercantil Consular.            |                         |
+| RNC  | Registro Nacional de Contribuyentes.    |                         |
+| RUC  | Registro Único de Contribuyentes.       | Perú                    |
+| RUN  | Rol Único Nacional.                     | Chile                   |
+| RUT  | Rol Único Tributario.                   | Chile                   |
+| SC   | Salvoconducto.                          |                         |
+| SIEM | Sistema de Información Empresarial Mexicano.    | México          |
+| SSN  | Número de Seguridad Social.             |                         |
+| TI   | Tarjeta de Identidad.                   | Colombia                |
 
 ## Bancos para Payouts {#banks-for-payouts}
 Envía el valor exacto mostrado en la columna `Código` en la variable `transfers[n].bankAccount.bankCode`. Consulta [Payouts]({{< ref "Payouts-API.md" >}}) para más información.

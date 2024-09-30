@@ -1866,11 +1866,11 @@ const tokenizationSpecification = {
 
 * ###### Supported Payment Networks
 
-PayU processes Google Pay payments for American Express, Mastercard, and Visa cards. To configure your Google script, use these settings:
+PayU processes Google Pay payments for Mastercard and Visa cards. To configure your Google script, use these settings:
 
 ```
-const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO", "AMEX"];
-const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
+const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO"];
+const allowedCardAuthMethods = ["PAN_ONLY"];
 ```
 
 {{% alert title="Note" color="info"%}}

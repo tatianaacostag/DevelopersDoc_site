@@ -11,9 +11,9 @@ weight: 50
 <input type="text" id="searchBox" placeholder=" Pesquise por nomes, códigos ou descrição..." onkeyup="findTables()" >
 <button onclick="document.getElementById('searchBox').value = '';findTables()" class="btn-green">Limpar</button>
 
-## Códigos de resposta para transações {#response-codes-for-transactions}  
+## Códigos de Resposta para Transações {#response-codes-for-transactions}  
 
-| Código de resposta | Descrição |
+| Código de Resposta | Descrição |
 |-|-|
 | `ERROR` | Erro geral. |
 | `APPROVED` | A transação foi aprovada. |
@@ -54,7 +54,7 @@ weight: 50
 | `ERROR_FIXING_AND_REVERSING` | Clínica de transações: código de tratamento interno. Consulta de API. |
 | `ERROR_FIXING_INCOMPLETE_DATA` | Clínica de transações: código de tratamento interno. Consulta de API. |
 
-## Códigos de resposta enviados para a página de confirmação {#response-codes-sent-to-the-response-page}
+## Códigos de Resposta Enviados para a Página de Confirmação {#response-codes-sent-to-the-response-page}
 
 <div class="variables"></div>
 
@@ -110,7 +110,7 @@ weight: 50
 |   |   |  12 (Pendente)  |  PENDING_AWAITING_PSE _CONFIRMATION  | 9994 | Confirmação de PSE pendente |
 |   |   |  18 (Pendente)  |  PENDING_NOTIFYING_ENTITY  | 25 | Recibo de pagamento gerado. Pagamento Pendente |
 
-## Códigos de resposta enviados para a página de confirmação {#response-codes-sent-to-the-confirmation-page}
+## Códigos de Resposta Enviados para a Página de Confirmação {#response-codes-sent-to-the-confirmation-page}
 
 <div class="variables"></div>
 
@@ -158,7 +158,7 @@ weight: 50
 |   |  PAYMENT_NETWORK_BAD_RESPONSE  | 9999 | Erro |
 |  5 (Expirada)  |  EXPIRED_TRANSACTION  | 20 | Transação expirada |
 
-## Códigos dos métodos de pagamento {#codes-of-the-payment-methods}
+## Códigos dos Métodos de Pagamento {#codes-of-the-payment-methods}
 Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmação), `payment_method_id` (Página de confirmação) e `polPaymentMethodType` (Página de resposta).
 
 | Código | lapPaymentMethodType<br>(Página de resposta) | Descrição                     |
@@ -172,37 +172,41 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 |   10   | BANK_REFERENCED                              | Pagamento em bancos           |
 |   14   | SPEI                                         | Transferências bancárias SPEI |
 
-## Comandos aceitos pela API de pagamentos {#commands-accepted-by-the-payments-api}
+## Comandos Aceitos pela API de Pagamentos {#commands-accepted-by-the-payments-api}
 
-| Comando               | Descrição                                                                 |
-|-----------------------|---------------------------------------------------------------------------|
-| `PING`                | Usado no ping do serviço.                                                 |
-| `SUBMIT_TRANSACTION`  | Usado para enviar transações de qualquer tipo.                            |
+| Comando               | Descrição                            |
+|-----------------------|-------------------------------|
+| `PING`                | Usado no ping do serviço.                         |
+| `SUBMIT_TRANSACTION`  | Usado para enviar transações de qualquer tipo.    |
 | `GET_PAYMENT_METHODS` | Usado para consultar os métodos de pagamento disponíveis para o comércio. |
-| `GET_BANKS_LIST`      | Usado para obter a lista de bancos para transações PSE.                   |
+| `GET_BANKS_LIST`      | Usado para obter a lista de bancos para transações PSE.   |
 
 ## Comandos aceitos pela API de consulta {#commands-accepted-by-the-query-api}
 
-| Comando                          | Descrição                                                       |
-|----------------------------------|-----------------------------------------------------------------|
-| `PING`                           | Usado no ping do serviço.                                       |
-| `ORDER_DETAIL`                   | Usado para consultar uma ordem usando seu identificador.        |
+| Comando           | Descrição                |
+|----------------------------------|----------------------------------|
+| `PING`                           | Usado no ping do serviço.                  |
+| `ORDER_DETAIL`                   | Usado para consultar uma ordem usando seu identificador.    |
 | `ORDER_DETAIL_BY_REFERENCE_CODE` | Usado para consultar uma ordem usando seu código de referência. |
-| `TRANSACTION_RESPONSE_DETAIL`    | Usado para verificar a resposta de uma transação.               |
+| `TRANSACTION_RESPONSE_DETAIL`    | Usado para verificar a resposta de uma transação.     |
 
-## Moedas aceitas {#accepted-currencies}
+## Moedas Aceitas {#accepted-currencies}
 
-| Moeda    | Descrição          |
-|----------|--------------------|
-| `ARS`    | Peso argentino     |
-| `BRL`    | Real brasileiro    |
-| `CLP`    | Peso Chileno       |
-| `COP`    | Peso colombiano    |
-| `MXN`    | Peso mexicano      |
-| `PEN`    | Nuevo Sol peruano  |
-| `USD`    | Dólar americano    |
+| Moeda  | Nome            |
+|--------|----------------------|
+| `ARS`  | Peso Argentino       |
+| `BRL`  | Real Brasileiro      |
+| `CLP`  | Peso Chileno         |
+| `COP`  | Peso Colombiano      |
+| `CRC`  | Colón Costarriquenho |
+| `GTQ`  | Quetzal Guatemalteco |
+| `HNL`  | Lempira Hondurenha   |
+| `MXN`  | Peso Mexicano        |
+| `PEN`  | Novo Sol Peruano     |
+| `SVC`  | Colón Salvadorenho   |
+| `USD`  | Dólar Americano      |
 
-## Status da ordem {#order-status}
+## Status da Ordem {#order-status}
 
 | Status        | Descrição                                                       |
 |---------------|-----------------------------------------------------------------|
@@ -215,18 +219,18 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `REFUNDED`    | A última transação da ordem é um reembolso aprovado.            |
 | `CHARGEBACK`  | A última transação da ordem é um estorno. Ou seja, corresponde a uma [Disputa]({{< ref "Disputes.md" >}}) perdida. |
 
-## Transaction states {#transaction-states}
+## Transaction States {#transaction-states}
 
-| Estado       | Descrição                                                                                                   |
-|-------------|-------------------------------------------------------------------------------------------------------------|
-| `APPROVED`  | Transação aprovada                                                                                          |
-| `DECLINED`  | Transação rejeitada                                                                                         |
-| `ERROR`     | Erro ao processar a transação                                                                               |
-| `EXPIRED`   | Transação expirada                                                                                          |
-| `PENDING`   | Transação pendente ou em validação                                                                          |
+| Estado      | Descrição                          |
+|-------------|-------------------------------------|
+| `APPROVED`  | Transação aprovada                                |
+| `DECLINED`  | Transação rejeitada                               |
+| `ERROR`     | Erro ao processar a transação                     |
+| `EXPIRED`   | Transação expirada                                |
+| `PENDING`   | Transação pendente ou em validação                |
 | `SUBMITTED` | Transação enviada para a instituição financeira, mas o processamento não foi concluído.<br>API de consulta. |
 
-## Tipos de transação {#transaction-types} 
+## Tipos de Transação {#transaction-types} 
 
 | Tipo                        | Descrição                                                     |
 |-----------------------------|---------------------------------------------------------------|
@@ -236,19 +240,23 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `VOID`                      | Transação de cancelamento de uma autorização.                 |
 | `REFUND`                    | Transação de reembolso ou cancelamento de uma captura.        |
 
-## Países de processamento {#processing-countries}
+## Países de Processamento {#processing-countries}
 
-| País      | Descrição   |
-|-----------|-------------|
-| `AR`      | Argentina   |
-| `BR`      | Brasil      |
-| `CL`      | Chile       |
-| `CO`      | Colômbia    |
-| `MX`      | México      |
-| `PA`      | Panamá      |
-| `PE`      | Peru        |
+| Código do País | País         |
+|----------------|--------------|
+| `AR`           | Argentina    |
+| `BR`           | Brasil       |
+| `CL`           | Chile        |
+| `CO`           | Colômbia     |
+| `CR`           | Costa Rica   |
+| `GT`           | Guatemala    |
+| `HN`           | Honduras     |
+| `MX`           | México       |
+| `PA`           | Panamá       |
+| `PE`           | Peru         |
+| `SV`           | El Salvador  |
 
-## Idiomas disponíveis {#supported-languages}
+## Idiomas Disponíveis {#supported-languages}
 
 | Código ISO 639 | Idioma    |
 |----------------|-----------|
@@ -256,48 +264,48 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `es`           | Espanhol  |
 | `pt`           | Português |
 
-## Tipos de documentos {#document-types}
+## Tipos de Documentos {#document-types}
 
-| ISO  | Descrição                                                                                | País                   |
-|------|------------------------------------------------------------------------------------------|------------------------|
-| CC   | Cartão de cidadania.                                                                     | Colômbia               |
-| CE   | Cartão de cidadão estrangeiro.                                                           | Colômbia, Peru         |
-| CEL  | Quando identificado pela linha móvel.                                                    | Colômbia               |
-| Código postal  | Recibo de Pagamento Eletrônico                                                           | México                 |
-| CI   | Cartão de identidade.                                                                    | Argentina, Chile       |
-| CNPJ | Registro Nacional de Pessoas Jurídicas                                                   | Brasil                 |
-| CPF  | Registro de Indivíduos                                                                   | Brasil                 |
-| CUIL | Código Único de Identificação de Trabalho                                                | Argentina              |
-| CUIT | Identificação Fiscal Única                                                               | Argentina              |
-| CURP | Código Único de Registro de População                                                    | México                 |
-| DE   | Número de Identificação Estrangeiro                                                      | Peru                   |
-| DL   | Carteira de motorista                                                                    |                        |
-| DNI  | Documento de Identidade Nacional                                                         | Argentina, Peru, Chile |
-| DNIE | Documento de Identidade Nacional - Eletrônico                                            | Argentina, Peru, Chile |
-| EIN  | Número de Identificação do Empregado                                                     | Peru                   |
-| ID   | Identificação                                                                            |                        |
-| IDC  | Identificador único do cliente, em casos com ID único de cliente/ID de conta de serviços |                        |
-| IFE  | Instituto Eleitoral Federal                                                              | México                 |
-| LC   | Caderno Cívico                                                                           | Argentina              |
-| LE   | Inscrição de livro                                                                       | Argentina              |
-| NIF  | Número de identificação fiscal                                                           |                        |
-| NIT  | Número de identificação fiscal                                                           | Colômbia               |
-| PP   | Passaporte.                                                                              |                        |
-| RC   | Certidão de nascimento.                                                                  | Colômbia               |
-| RDE  | Tipo de documento RDE                                                                    |                        |
-| RE   | Tipo de documento RE                                                                     |                        |
-| RFC  | Cadastro de contribuinte federal                                                         | México                 |
-| RIF  | Registro de Informações Fiscais                                                          |                        |
-| RM   | Registro comercial                                                                       |                        |
-| RMC  | Registro Consular                                                                        |                        |
-| RNC  | Registro Nacional de Contribuintes                                                       |                        |
-| RUC  | Registro Único de Contribuinte                                                           | Peru                   |
-| RUN  | Papel Nacional Único                                                                     | Chile                  |
-| RUT  | Papel Tributário Único                                                                   | Chile                  |
-| SC   | Passagem Segura                                                                          |                        |
-| SIEM | Sistema Mexicano de Informação Empresarial                                               | México                 |
-| SSN  | Número de Previdência Social                                                             |                        |
-| TI   | Cartão de identidade.                                                                    | Colômbia               |
+| ISO  | Descrição              | País                   |
+|------|------------------------|------------------------|
+| CC   | Cartão de cidadania.   | Colômbia               |
+| CE   | Cartão de cidadão estrangeiro.           | Colômbia, Peru     |
+| CEL  | Quando identificado pela linha móvel.    | Colômbia           |
+| Código postal  | Recibo de Pagamento Eletrônico | México             |
+| CI   | Cartão de identidade.                    | Argentina, Chile   |
+| CNPJ | Registro Nacional de Pessoas Jurídicas   | Brasil             |
+| CPF  | Registro de Indivíduos                   | Brasil             |
+| CUIL | Código Único de Identificação de Trabalho     | Argentina     |
+| CUIT | Identificação Fiscal Única                    | Argentina     |
+| CURP | Código Único de Registro de População         | México        |
+| DE   | Número de Identificação Estrangeiro           | Peru          |
+| DL   | Carteira de motorista                         |               |
+| DNI  | Documento de Identidade Nacional              | Argentina, Peru, Chile |
+| DNIE | Documento de Identidade Nacional - Eletrônico | Argentina, Peru, Chile |
+| EIN  | Número de Identificação do Empregado          | Peru                   |
+| ID   | Identificação                                 |                        |
+| IDC  | Identificador único do cliente, em casos com ID único de cliente/ID de conta de serviços |                  |
+| IFE  | Instituto Eleitoral Federal                   | México                 |
+| LC   | Caderno Cívico                                | Argentina              |
+| LE   | Inscrição de livro                            | Argentina              |
+| NIF  | Número de identificação fiscal                |                        |
+| NIT  | Número de identificação fiscal                | Colômbia               |
+| PP   | Passaporte.                                   |                        |
+| RC   | Certidão de nascimento.                       | Colômbia               |
+| RDE  | Tipo de documento RDE                         |                        |
+| RE   | Tipo de documento RE                          |                        |
+| RFC  | Cadastro de contribuinte federal              | México                 |
+| RIF  | Registro de Informações Fiscais               |                        |
+| RM   | Registro comercial                            |                        |
+| RMC  | Registro Consular                             |                        |
+| RNC  | Registro Nacional de Contribuintes            |                        |
+| RUC  | Registro Único de Contribuinte                | Peru                   |
+| RUN  | Papel Nacional Único                          | Chile                  |
+| RUT  | Papel Tributário Único                        | Chile                  |
+| SC   | Passagem Segura                               |                        |
+| SIEM | Sistema Mexicano de Informação Empresarial    | México                 |
+| SSN  | Número de Previdência Social                  |                        |
+| TI   | Cartão de identidade.                         | Colômbia               |
 
 ## Bancos para Payouts {#banks-for-payouts}
 Envie o valor exato exibido na coluna `Código` na variável `transfers[n].bankAccount.bankCode`. Consulte [Payouts]({{< ref "Payouts-API.md" >}}) para obter mais informações.

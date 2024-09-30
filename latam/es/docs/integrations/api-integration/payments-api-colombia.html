@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-09-17T17:03:12-05:00" />
+<meta property="article:modified_time" content="2024-09-18T10:59:13-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Colombia">
 <meta itemprop="description" content="La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-09-17T17:03:12-05:00" />
-<meta itemprop="wordCount" content="12815">
+<meta itemprop="dateModified" content="2024-09-18T10:59:13-05:00" />
+<meta itemprop="wordCount" content="12903">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Colombia"/>
 <meta name="twitter:description" content="La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.5c4ce3513393353e706eabfa2fd834cb704b76212640434a79006a0f5d4ceb990b7a11e346506895eaf1c471c917b767e170187b38582cb278c4a0eb635cd9c2.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.5d66d4aa550a3e2b5125561766368a69d18706656aacb8e83d03695da40593d2323eac6aa34abfd31b2a91ba43eef58d218b3dd843fe29e1402a5c071b3cb8c3.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -1531,6 +1531,27 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 <td>Máx:36</td>
 <td>Identificador de la transacción generador por el servidor de directorio durante la autenticación.</td>
 <td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; digitalWallet</td>
+<td>Objeto</td>
+<td></td>
+<td>Incluya este parámetro cuando la transacción se realice utilizando una billetera digital. *Al enviar este objeto, todos sus campos son obligatorios.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; digitalWallet &gt; type</td>
+<td>Alfanumérico</td>
+<td>&mdash;-</td>
+<td>Envía el valor con base en la billetera que se está procesando: GOOGLE_PAY</td>
+<td style="text-align:center">Si*</td>
+</tr>
+<tr>
+<td>transaction &gt; digitalWallet &gt; message</td>
+<td>Alfanumérico</td>
+<td>&mdash;-</td>
+<td>Incluye la información del Google Pay token que Google te devolverá por cada transacción. Para más información consulta <a href="#definiciones-de-payu-para-la-integraci%C3%B3n-api-del-medio-de-pago">aquí</a>.</td>
+<td style="text-align:center">Si*</td>
 </tr>
 </tbody>
 </table>
@@ -5417,6 +5438,8 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 
 
 </div>
+<br>
+<p>Encuentra la descripción del objeto <code>transaction.digitalWallet</code> y sus campos en la sección de <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-colombia.html#parameters-for-request-and-response">Parámetros</a>.</p>
 <h2 id="banks-list---pse">Lista de Bancos - PSE</h2>
 <p>Este método retorna la lista de bancos disponibles para realizar <a href="#submit-transactions-using-bank-transfer-pse">pagos utilizando PSE</a>.</p>
 <h3 id="parameters-for-request-and-response-4">Parámetros para la Solicitud y la Respuesta</h3>
@@ -6705,9 +6728,9 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-17 de septiembre de 2024:
+18 de septiembre de 2024:
 
- <b>Documentation updates (329dfb83d)</b>
+ <b>Documentation Updates (d973af12d)</b>
 </div>
 </div>
 

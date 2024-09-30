@@ -11,9 +11,9 @@ weight: 60
 <input type="text" id="searchBox" placeholder=" Search for names, codes or description..." onkeyup="findTables()" >
 <button onclick="document.getElementById('searchBox').value = '';findTables()" class="btn-green">Clear</button>
 
-## Response codes for transactions
+## Response Codes for Transactions
 
-| Response code | Description |
+| Response Code | Description |
 |-|-|
 | `ERROR` | General error. |
 | `APPROVED` | The transaction was approved. |
@@ -54,7 +54,7 @@ weight: 60
 | `ERROR_FIXING_AND_REVERSING` | Transactions clinic: internal handling code. Query API. |
 | `ERROR_FIXING_INCOMPLETE_DATA` | Transactions clinic: internal handling code. Query API. |
 
-## Response codes sent to the response page
+## Response Codes Sent to the Response Page
 
 <div class="variables"></div>
 
@@ -110,7 +110,7 @@ weight: 60
 |  |  | 12 (Pending) | PENDING_AWAITING_PSE _CONFIRMATION | 9994 | Pending confirmation from PSE |
 |  |  | 18 (Pending) | PENDING_NOTIFYING_ENTITY | 25 | Receipt of payment generated. Pending payment |
 
-##  Response codes sent to the confirmation page
+##  Response Codes Sent to the Confirmation Page
 
 <div class="variables"></div>
 
@@ -158,7 +158,7 @@ weight: 60
 |  | PAYMENT_NETWORK_BAD_RESPONSE | 9999 | Error |
 | 5 (Expired) | EXPIRED_TRANSACTION | 20 | Expired transaction |
 
-## Codes of the payment methods
+## Codes of the Payment Methods
 The following codes applies for `payment_method_type` (Confirmation Page), `payment_method_id` (Confirmation Page), and `polPaymentMethodType` (Response Page).
 
 | Code | lapPaymentMethodType<br>(Response Page) | Description         |
@@ -172,7 +172,7 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 |  10  | BANK_REFERENCED                         | Payment in banks    |
 |  14  | SPEI                                    | SPEI Bank transfers |
 
-## Commands accepted by the Payments API
+## Commands Accepted by the Payments API
 
 | Command               | Description                                              |
 |-----------------------|----------------------------------------------------------|
@@ -181,7 +181,7 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 | `GET_PAYMENT_METHODS` | Used to query the shop’s available payment methods.      |
 | `GET_BANKS_LIST`      | It is used to obtain the bank list for PSE transactions. |
 
-## Commands accepted by the Query API
+## Commands Accepted by the Query API
 
 | Command                          | Description                                      |
 |----------------------------------|--------------------------------------------------|
@@ -190,19 +190,23 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 | `ORDER_DETAIL_BY_REFERENCE_CODE` | Used to query an order using its reference code. |
 | `TRANSACTION_RESPONSE_DETAIL`    | Used to check the response of a transaction.     |
 
-## Accepted currencies
+## Accepted Currencies
 
-| Currency | Description        |
+| Currency | Name        |
 |----------|--------------------|
 | `ARS`    | Argentine Peso     |
 | `BRL`    | Brazilian Real     |
 | `CLP`    | Chilean Peso       |
 | `COP`    | Colombian Peso     |
+| `CRC`    | Costa Rican Colón  |
+| `GTQ`    | Guatemalan Quetzal |
+| `HNL`    | Honduran Lempira   |
 | `MXN`    | Mexican Peso       |
 | `PEN`    | Peruvian Nuevo Sol |
+| `SVC`    | Salvadoran Colón   |
 | `USD`    | US Dollar          |
 
-## Order status
+## Order Status
 
 | Status        | Description                                                     |
 |---------------|-----------------------------------------------------------------|
@@ -215,18 +219,18 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 | `REFUNDED`    | The last transaction of the order is an approved refund.        |
 | `CHARGEBACK`  | The last transaction of the order is a Chargeback. Namely, corresponds to a lost [Dispute]({{< ref "Disputes.md" >}}).       |
 
-## Transaction states
+## Transaction States
 
-| State       | Description                                                                                                 |
-|-------------|-------------------------------------------------------------------------------------------------------------|
-| `APPROVED`  | Approved transaction                                                                                        |
-| `DECLINED`  | Rejected transaction                                                                                        |
-| `ERROR`     | Error processing the transaction                                                                            |
-| `EXPIRED`   | Expired transaction                                                                                         |
-| `PENDING`   | Pending transaction or in validation                                                                        |
+| State       | Description                                                |
+|-------------|------------------------------------------------------------|
+| `APPROVED`  | Approved transaction                                       |
+| `DECLINED`  | Rejected transaction                                       |
+| `ERROR`     | Error processing the transaction                           |
+| `EXPIRED`   | Expired transaction                                        |
+| `PENDING`   | Pending transaction or in validation                       |
 | `SUBMITTED` | Transaction sent to the financial institution but the processing did not finish.<br>query API. |
 
-## Transaction types
+## Transaction Types
 
 | Type                        | Description                                                |
 |-----------------------------|------------------------------------------------------------|
@@ -236,17 +240,21 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 | `VOID`                      | Cancellation transaction of an authorization.              |
 | `REFUND`                    | Refund transaction or cancellation of a capture.           |
 
-## Processing countries
+## Processing Countries
 
-| Country   | Description |
-|-----------|-------------|
-| `AR`      | Argentina   |
-| `BR`      | Brazil      |
-| `CL`      | Chile       |
-| `CO`      | Colombia    |
-| `MX`      | Mexico      |
-| `PA`      | Panama      |
-| `PE`      | Peru        |
+| Country Code | Country   |
+|--------------|---------------|
+| `AR`         | Argentina     |
+| `BR`         | Brazil        |
+| `CL`         | Chile         |
+| `CO`         | Colombia      |
+| `CR`         | Costa Rica    |
+| `GT`         | Guatemala     |
+| `HN`         | Honduras      |
+| `MX`         | Mexico        |
+| `PA`         | Panama        |
+| `PE`         | Peru          |
+| `SV`         | El Salvador   |
 
 ## Supported Languages
 
@@ -256,7 +264,7 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 | `es`           | Spanish    |
 | `pt`           | Portuguese |
 
-## Document types
+## Document Types
 
 | ISO  | Description                                                                         | Country                |
 |------|-------------------------------------------------------------------------------------|------------------------|

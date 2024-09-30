@@ -1284,8 +1284,14 @@ PayU processes Google Pay payments for Mastercard and Visa cards. To configure y
 
 ```
 const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO"];
-const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
+const allowedCardAuthMethods = ["PAN_ONLY"];
 ```
+
+{{% alert title="Note" color="info"%}}
+
+The availability of payment methods depends on your PayU settings.
+
+{{% /alert %}}
 
 Google will return a `PaymentData` object, and the `paymentMethodData.tokenizationData.token` field will contain a securely encrypted Google Pay Token (a string).
 

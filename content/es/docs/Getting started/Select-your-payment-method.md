@@ -71,7 +71,7 @@ PayU en Colombia te permite integrar con la mayoría de los métodos de pago en 
 | ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/efecty.png) | Efecty | EFECTY | Efectivo | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Tarjetas Débito| |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas Débito| |
 | ![Logo](/assets/PaymentMethods/nequi.png) | Nequi | NEQUI | Servicio móvil de pagos | |
 | ![Logo](/assets/PaymentMethods/pse_logo.png) | PSE | PSE | Transferencia Bancaria | PSE le permite a tus clientes pagar utilizando Nequi y Daviplata. |
 | ![Logo](/assets/PaymentMethods/su-red.png) | Su Red | OTHERS_CASH | Efectivo | **Oficinas de pago**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. |
