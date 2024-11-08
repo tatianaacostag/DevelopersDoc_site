@@ -3,7 +3,9 @@ title: "Página de Respuesta"
 linkTitle: "Página de Respuesta"
 date: 2021-03-29T12:15:39-05:00
 description: >
-  La Página de Respuesta es una página obligatoria que te permite mostrar el resultado de la transacción al pagador. Nuestro sistema redirecciona al pagador a esta página una vez la transacción haya sido realizada. La información de los resultados del pago es enviada a tu sistema a través del método HTTP GET. </br>Esta página es invocada para todos los estados de la transacción: aprobada, rechazada, en validación, esperando el pago (para pagos en efectivo), etc.
+  La página de respuesta te permite mostrar el resultado de la transacción al pagador una vez que se haya completado. Aunque esta página no es obligatoria para el flujo transaccional, mejora la experiencia del pagador al redirigirlo de vuelta a tu sitio. Esta página ayuda a completar la experiencia de pago, pero ten en cuenta que el pagador puede cerrar el checkout sin visitarla.
+  
+  La integración puede enviar los datos del resultado del pago mediante el método HTTP GET, y tu plataforma puede invocar la página de respuesta para todos los estados de la transacción, incluyendo aprobado, rechazado, en validación y en espera de pago (para pagos en efectivo).
 
 weight: 20
 tags: ["subtopic"]
@@ -16,21 +18,20 @@ tags: ["subtopic"]
 <script src="/js/signature-generator/signature-generator.js"></script>
 
 ## Consideraciones {#considerations}
-* Algunos proveedores de hosting tienen configuraciones que no permite enviar URLs como valores de parámetros. Por ejemplo: `&merchant_url=http%3A%2F%2Fwww.mitienda.com`
-* Para cuentas de Brasil, no hay redirección a la página de respuesta.
-* No dependas de la página de respuesta para actualizar tu base de datos o ejecutar procesos ya que es posible que el usuario no regrese a la misma; utiliza la página de confirmación.
-* Si quieres mostrar información relacionada con la transacción, te sugerimos mostrar como mínimo lo siguiente: estado, referencia, valor, moneda y fecha.
-* Se recomienda enviar el parámetro `responseUrl` en el formulario de pago o configurarlo en el Módulo PayU; tiene mayor prioridad el enviado como parámetro. Si PayU no encuentra ninguno, el proceso de pago finaliza en el Webcheckout.
+* Algunos proveedores de hosting pueden tener configuraciones que bloqueen el envío de URLs como valores de parámetros. Por ejemplo: `&merchant_url=http%3A%2F%2Fwww.mitienda.com`.
+* Evita depender de la página de respuesta para actualizar tu base de datos o ejecutar procesos, ya que los usuarios no siempre regresan a ella. Usa la página de confirmación para estas operaciones.
+* Si deseas mostrar información relacionada con la transacción, te recomendamos mostrar al menos los siguientes detalles: estado, referencia, valor, moneda y fecha.
+* Se recomienda incluir el parámetro `responseUrl` en el formulario de pago o configurarlo en el Módulo PayU. El valor enviado en el parámetro tiene prioridad. Si la integración no encuentra un `responseUrl`, el proceso de pago finaliza en el webcheckout.
 
 {{% alert title="Importante" color="warning"%}}
-Si deseas que PayU siempre muestra la información de la transacción, no envíes ningún valor en el parámetro `responseUrl` del formulario de pagos y déjalo en blanco en el Módulo PayU. En este caso, el comprador no tendrá la opción de regresar a tu página.
+Si deseas que PayU siempre muestre la información de la transacción, deja el parámetro `responseUrl` en blanco tanto en el formulario de pago como en el Módulo PayU. En este caso, la experiencia de pago no mostrará al comprador la opción de regresar a tu sitio web.
 {{% /alert %}}
 
-## Variables
-Variables enviadas a la Página de respuesta.
+## Parámetros
+A continuación, los parámetros enviados a la página de respuesta.
 
 <details>
-<summary>Variables enviadas a la Página de respuesta</summary>
+<summary>Parámetros enviados a la página de respuesta</summary>
 <br>
 <div class="variables"></div>
 

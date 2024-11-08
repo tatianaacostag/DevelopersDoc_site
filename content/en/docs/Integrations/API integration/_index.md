@@ -15,7 +15,7 @@ Access multiple payment methods (varies per country), including credit cards, ba
 ![API integration](/assets/api1-en.png)
 
 ## Initial settings
-PayU allows you to integrate with the transactional gateway, available payment tools and Queries by developing a HTTPS client to send the transaction information through SSL. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow [PCI DSS’ best practices](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).  
+PayU allows you to integrate with the transactional gateway, available payment tools and Queries by developing a HTTPS client to send the transaction information through SSL. It is critical that sensitive transaction data such as credit card number, expiration date, are not stored. It is recommended to follow <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/pci.html" target="_blank">PCI DSS’ best practices</a> (Payment Card Industry Data Security Standard).  
 
 The transmission of transactions is secured through a TLS (Transport Layer Security) 256-bit connection from the shop's server our payment Gateway. The exchange of messages is done via JSON or XML strings and operations are distinguished by a command that is included in the request. Check out the following JSON and XML examples:  
 

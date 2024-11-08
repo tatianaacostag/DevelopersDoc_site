@@ -2,8 +2,10 @@
 title: "Response Page"
 linkTitle: "Response Page"
 date: 2021-03-29T12:15:39-05:00
-description: >
-  The Response page is a mandatory page and lets you show the result of the transaction to the payer. Our system redirects the payer to this page once the transaction has been performed. The data with the payment results is sent to your system via HTTP GET method.</br>This page is invoked for all the transaction states: approved, rejected, in validation, awaiting payment (for cash), etc.
+description: >  
+  The response page allows you to display the result of the transaction to the payer once it is completed. While this page is not mandatory for the transaction flow, it enhances the payer's experience by redirecting them back to your site. This page helps to complete the payment journey, but consider that the payer may close the checkout without visiting it.
+  
+  The integration can send the payment result data via the HTTP GET method, and your platform can invoke the response page for all transaction states, including approved, rejected, in validation, and awaiting payment (for cash).
 
 weight: 20
 tags: ["subtopic"]
@@ -16,21 +18,20 @@ tags: ["subtopic"]
 <script src="/js/signature-generator/signature-generator.js"></script>
 
 ## Considerations
-* Some hosting providers have settings that do not allow sending URLs as parameter values. Example: `&merchant_url=http%3A%2F%2Fwww.myshop.com`
-* For Brazil accounts, there is no redirection to the response page.
-* Do not depend on the response page to update your database or execute processes, users may not return to it. Use the confirmation page.
-* If you want to display information related to the transaction, we suggest showing at least the following: status, reference value, currency, and date.
-* It is recommended to send the `responseUrl` parameter in the payment form or set PayU Module; it has priority the one sent in the parameter. If PayU does not find any, the payment process ends at the Webcheckout.
+* Some hosting providers may have settings that block sending URLs as parameter values. For example: `&merchant_url=http%3A%2F%2Fwww.myshop.com`.
+* Avoid relying on the response page to update your database or trigger processes, as users may not always return to it. Use the confirmation page for these operations instead.
+* If you want to display transaction-related information, we recommend showing at least the following details: status, reference, value, currency, and date.
+* It is recommended to include the `responseUrl` parameter in the payment form or set it in the PayU Module. The value sent in the parameter takes priority. If the integration does not find a `responseUrl`, the payment process ends at the webcheckout.
 
 {{% alert title="Important" color="warning"%}}
-If you want that PayU always shows the transaction information, do not send any value in the `responseUrl` parameter of the payment form, and leave it blank in PayU Module. In this case, the buyer cannot return to your website.
+If you want PayU to always display the transaction information, leave the `responseUrl` parameter blank both in the payment form and in the PayU Module. In this case, the payment experience will not show the buyer an option to return to your website.
 {{% /alert %}}
 
-## Variables
-Variables sent to the response page.
+## Parameters
+Below, the parameters sent to the response page.
 
 <details>
-<summary>Variables to be sent to the response page</summary>
+<summary>Parameters sent to the response page</summary>
 <br>
 <div class="variables"></div>
 

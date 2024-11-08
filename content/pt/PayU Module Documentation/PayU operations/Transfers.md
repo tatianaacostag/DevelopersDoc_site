@@ -4,32 +4,50 @@ linkTitle: "Transferências"
 date: 2021-09-03T16:42:07-05:00
 type: docs
 Description: >
-  Saiba como receber o dinheiro de sua conta PayU em sua conta bancária. Além disso, aprenda a automatizar as transferências periodicamente ou por valor.
+  Aprenda como transferir fundos da sua conta PayU para sua conta bancária. Além disso, descubra como automatizar transferências com base em cronograma ou valor.
 weight: 20
 ---
 
-No módulo _Transferências_, há opções para transferir os fundos arrecadados em sua conta virtual PayU para sua conta bancária principal cadastrada.
+No módulo _Transferências_, você pode transferir os fundos acumulados em sua conta virtual da PayU para sua conta bancária registrada.
 
 ## Observações {#considerations}
-Lembre-se das seguintes considerações antes de transferir fundos para sua conta bancária.
 
-* Você deve ter suas informações bancárias atualizadas e validadas. Lembre-se que se você solicitou a atualização de sua conta bancária, as transferências que você faz são enviadas para a conta bancária anterior até que nossa equipe de Risco a tenha validado.
-* Como o PayU no Brasil não é uma instituição de pagamento, os fundos arrecadados em sua conta PayU são transferidos para sua conta diariamente gratuitamente. Para verificar o status dessas transferências, use a opção de _**Relatório de transferências**_ (_**Transferências**_ > _**Para conta bancária**_).
-* As três primeiras transferências locais realizadas durante o primeiro mês são gratuitas. A partir da 4ª solicitação de transferência, PayU cobra os seguintes valores:
-  - Colômbia: COP 6.500,00 + IVA (Colômbia)
-  - Peru: PEN 10,00 + IGV (Peru),
-  - Argentina: ARS $ 10,00 + IVA (Argentina),
-  - Chile: CLP 0,00
-  - México: MXN 0,00
-* A primeira transferência leva cinco (5) dias para ser depositada na conta bancária. A área de Risco do PayU exige um valor positivo das vendas na primeira transferência como processo administrativo.
-* A segunda e as seguintes transferências levam no máximo três (3) dias úteis.
-* As transferências podem ser programadas por Quantidade e por Data
+Antes de iniciar uma transferência, revise as seguintes considerações importantes:
 
-{{% alert title="Note" color="warning"%}}
-Os períodos e valores explicados aqui valem apenas para transferências locais (para o mesmo país de operação). Para transferências internacionais, entre em contato com seu representante de vendas.
+* Suas informações bancárias devem estar atualizadas e validadas. Se você solicitou uma atualização da conta bancária, o sistema continuará enviando os fundos para sua conta anterior até que a equipe de Risco da PayU valide a nova conta.
+* Você pode programar transferências com base em um valor específico ou definir uma data para transferências automáticas.
+* No Brasil, como a PayU não é uma instituição de pagamento licenciada, o sistema transfere automaticamente seus fundos para sua conta bancária diariamente e sem custo. Para monitorar essas transferências, utilize a opção _**Relatório de transferências**_ (_**Transferências**_ > _**Para conta bancária**_).
+* A cada mês, as três primeiras transferências locais são gratuitas. A partir da quarta transferência no mês, o PayU aplica uma taxa na maioria dos países. Observe que as transferências internacionais têm uma taxa desde a primeira transação. A tabela abaixo fornece uma visão geral das taxas para transferências locais e internacionais por país.
+
+| País       | Taxa Local        | Taxa Internacional  |
+|------------|-------------------|---------------------|
+| Argentina  | 110,00 ARS        | 753,00 USD         |
+| Brasil     | Nenhuma           | Nenhuma            |
+| Chile      | 2.000,00 CLP      | 50.000,00 CLP      |
+| Colômbia   | 6.500,00 COP      | 30,00 USD          |
+| México     | 10,00 MXN         | 650,00 MXN         |
+| Panamá     | 30,00 USD         | 44,00 USD          |
+| Peru       | 15,00 PEN         | 90,00 USD          |
+
+{{% alert title="Notas" color="info"%}}
+
+* As taxas estão sujeitas a alterações ao longo do tempo. Para obter as informações mais atualizadas ou dúvidas específicas, entre em contato com o representante de vendas do PayU.
+* As transferências internacionais também estão sujeitas a uma taxa FX de 3% (sujeita a negociação) para cobrir os custos de conversão cambial.
+
 {{% /alert %}}
 
-## Permissão necessária {#permission-required}
+* A primeira transferência pode levar até cinco (5) dias para ser depositada em sua conta bancária. Como parte de um processo administrativo, a equipe de Risco do PayU pode solicitar documentação adicional para verificar suas vendas iniciais.
+
+* A segunda e as transferências subsequentes levarão no máximo três (3) dias úteis para serem concluídas. Dias úteis geralmente são de segunda a sexta-feira, excluindo feriados.
+
+{{% alert title="Nota" color="warning"%}}
+
+Os prazos mencionados aplicam-se apenas a transferências locais. Para transferências internacionais, entre em contato com o seu representante de vendas.
+
+{{% /alert %}}
+
+## Permissão Necessária {#permission-required}
+
 Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permissão habilitada:
 
 * _Transferências_ > _Consultar_
@@ -37,7 +55,8 @@ Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permi
 
 Consulte [Perfis e permissões]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 
-## Transferir fundos {#transfer-funds}
+## Transferir Fundos {#transfer-funds}
+
 You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.
 
 1. Faça login em sua conta PayU. No menu esquerdo, expanda o menu _**Transferências**_ e selecione _**Transferências**_.
@@ -58,7 +77,8 @@ You can transfer up to the total amount in your PayU account to the registered b
 
 Assim que o pedido for enviado com sucesso, a transferência fica com status _Em processo_ e você pode vê-lo na seção _**Relatório de transferências realizadas**_ no final do módulo. Além disso, o valor solicitado será debitado de seu saldo.<br>Se as transferências não puderam ser processadas, este valor volta para sua conta e nenhuma taxa é cobrada por esta operação.
 
-## Agendar transferências {#schedule-transfers}
+## Agendar Transferências {#schedule-transfers}
+
 Você pode automatizar as transferências e solicitar um saque de um valor fixo ou periódico.
 
 {{% alert title="Observação" color="info"%}}
@@ -84,10 +104,10 @@ A coluna _opções_ fornece as seguintes ações:
 
 3. Selecione como você deseja agendar a transferência.
 
-* **Programar transferências por frequência**<br>
+* **Programar Transferências por Frequência**<br>
 Esta opção permite que você transfira uma determinada quantia a cada período determinado (dias, semanas ou meses). Para agendar este tipo de transferência, selecione a opção _Frequência_.
 
-* **Programar transferências por saldo disponível**<br>
+* **Programar Transferências por Saldo Disponível**<br>
 Esta opção permite que você transfira uma determinada quantia sempre que o saldo atingir um determinado valor. Para agendar este tipo de transferência, selecione a opção _Saldo disponível_.
 
 Forneça as seguintes opções.

@@ -1,9 +1,9 @@
 ---
-title: "Formulario de pago"
-linkTitle: "Formulario de pago"
+title: "Formulario de Pago"
+linkTitle: "Formulario de Pago"
 date: 2021-03-29T12:15:27-05:00
 description: >
-  Con este formulario HTML, puedes enviar los datos de la transacción a nuestra pasarela de pago junto con la información de la compra. Envía los datos utilizando el método HTTP POST.
+  En esta sección, aprenderás a enviar datos de transacción al gateway de pagos de PayU. Este documento proporciona la información necesaria para crear un formulario HTML con los detalles de la transacción y enviarlo a nuestro sistema mediante el método HTTP POST.
 
 weight: 10
 tags: ["subtopic"]
@@ -16,20 +16,20 @@ tags: ["subtopic"]
 <script src="/js/signature-generator/signature-generator.js"></script>
 <script src="/js/searchcodes.js"></script>
 
-En este artículo, encuentras cómo enviar la información de una transacción a la pasarela de pagos de PayU. Para esto, debes generar un formulario HTML con los datos de la transacción utilizando el método HTTP POST y apuntando a nuestro sistema.
-
 ## Consideraciones {#considerations}
-* Asegúrate de tener los valores correctos de las variables `merchantId`, `accountId` y `apiKey`.
-* Utiliza diferentes referencias de pago por cada pago.
-* No incluyas espacios en los valores de los parámetros.
-* No incluyas valores con más de dos cifras decimales.
-* No incluyas caracteres especiales en el parámetro `referenceCode`.
 
-## Variables
-Puedes incluir las siguientes variables en el Formulario de pago.
+* Asegúrate de tener el `merchantId`, `accountId` y `apiKey` correctos.
+* Usa un código de referencia de pago único para cada transacción.
+* Evita incluir espacios en los valores de los parámetros.
+* Limita los valores decimales a dos cifras.
+* Excluye caracteres especiales en el parámetro `referenceCode`.
+
+## Parameters {#parameters}
+
+Puedes incluir los siguientes parámetros en el formulario de pago.
 
 <details>
-<summary>Variables en el Formulario de pago</summary>
+<summary>Parámetros en el formulario de pago</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -66,9 +66,9 @@ Puedes incluir las siguientes variables en el Formulario de pago.
 | billingCountry | Alfanumérico | 2 | Código ISO del país asociado con la dirección de facturación. | No |
 | shippingCountry | Alfanumérico | 2 | Código ISO del país de entrega de lla mercancía.<br><sup>\*</sup> Obligatorio si tu tienda envía el producto.<br>[Ver los paises de pago]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | Sí* |
 | buyerEmail | Alfanumérico | 255 | Campo que contiene el correo electrónico del comprador para notificar el resultado de la transacción por medio de correo electrónico. Se recomienda validar que se haya ingresado este campo en el formulario. | Sí |
-| telephone | Alfanumérico | 50 | Teléfono de residencia del comprador. | Sí |
-| officeTelephone | Alfanumérico | 50 | Teléfono diurno del comprador. | No |
-| mobilePhone | Alfanumérico | 50 | Número del móvil del comprador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito y será el número de teléfono de contacto. | No |
+| telephone | Alfanumérico | 20 | Teléfono de residencia del comprador. | Sí |
+| officeTelephone | Alfanumérico | 20 | Teléfono diurno del comprador. | No |
+| mobilePhone | Alfanumérico | 20 | Número del móvil del comprador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito y será el número de teléfono de contacto. | No |
 | buyerFullName | Alfanumérico | 150 | Nombre completo del comprador. | Sí |
 | paymentMethods | Alfanumérico | 255 | Lista de métodos de pago habilitados en el proceso de pago.<br>Esta lista debe estar separada por comas y sin espacios en blanco. Por ejemplo: `VISA,MASTERCARD`.<br>Puedes incluir cuotas para los métodos de pago añadiéndolas mediante guiones. Ejemplo: `VISA-1-3,MASTERCARD-3-5-9`.<br>[Consulta los métodos de pago disponibles para tu país en la columna` parámetro de método de pago`]({{< ref "select-your-payment-method.html" >}}). | No | 
 | administrativeFee | Numérico | 10,2 | Valor de la tarifa administrativa. | - |
@@ -88,11 +88,14 @@ Puedes incluir las siguientes variables en el Formulario de pago.
 
 </details>
 
-### Consideraciones en las variables {#considerations-in-variables}
-* El campo `tax` es el valor de impuesto al valor agregado y el campo `taxReturnBase` es el valor base para calcular el impuesto. Si tu producto es exento de impuesto, asigna `0` a ambas variables (`tax=0`, `taxReturnBase=0`).
-* Si algunos elementos tiene impuesto y en otros no aplica, debes realizar el siguiente cálculo para saber cómo enviar los valores a la plataforma de pagos.
+### Consideraciones para los Parámetros {#parameters-considerations}
 
-| Producto | Campo taxReturnBase | Campo tax          | Valor   |
+* El parámetro `tax` representa el IVA, aplicable en ciertos países, mientras que `taxReturnBase`  es el monto base para calcular el IVA. Si tu producto está exento de impuestos, establece ambas variables en `0`  (`tax=0`, `taxReturnBase=0`).
+* Cuando algunos productos tienen impuestos y otros no, calcula y establece los valores como se muestra en la tabla a continuación para asegurar un envío preciso a la plataforma de pagos.
+
+#### Ejemplo de Cálculo de IVA:
+
+| Producto | `taxReturnBase`     | `tax`              | Valor   |
 |----------|---------------------|--------------------|---------|
 | A        | 84.033              | 15.966 (19%)       | 100.000 |
 | B        | 181.818             | 18.181 (10%)       | 200.000 |
@@ -100,13 +103,14 @@ Puedes incluir las siguientes variables en el Formulario de pago.
 | Total    | 268.851             | 34.147             | 450.000 |
 
 {{% alert title="Importante" color="warning"%}}
-La sumatoria de los campos Tax y taxReturnBase no puede ser mayor que el valor total de cada producto.
+La suma de `tax` y `taxReturnBase` no debe exceder el valor total de cada producto.
 {{% /alert %}}
 
-* Para comercios registrados en Colombia que pertenezcan al _Régimen común_, si no envías el impuesto, PayU lo calcula automáticamente utilizando el 19%. Para comercios que pertenecen al _Régimen simplificado_, si no envías el impuesto, PayU asigna cero (0) automáticamente al valor del impuesto.
+* Para comercios registrados en Colombia bajo el _Régimen Común_, si no envías `tax`, PayU lo calcula automáticamente utilizando el 19%. Para comercios bajo el _Régimen Simplificado_, si no envías `tax`, PayU asigna cero (0) automáticamente al valor del impuesto.
 
-## Ejemplo del formulario {#form-example}
-El siguiente es un ejemplo de un formulario de pago básico utilizando únicamente los campos obligatorios y apuntando el request al ambiente de sandbox (modo pruebas).
+## Ejemplo de Campos HTML {#html-fields-example}
+
+A continuación, se muestra un ejemplo de los campos obligatorios para un formulario de pago en formato HTML, apuntando la solicitud al entorno sandbox (modo de prueba).
 
 ```HTML
  <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
@@ -144,13 +148,34 @@ Pruebas: https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/
 Producción: https://checkout.payulatam.com/ppp-web-gateway-payu/
 ```
 
-## Firma para el formulario de pago {#signature-for-payment-form}
+## Ejemplo de Formulario de Pago
+
+Este ejemplo de formulario de pago dinámico está diseñado para realizar pruebas en nuestro entorno sandbox. Ofrece una visión de los campos y características que puedes incorporar en tus propios formularios de pago. A continuación, se presenta un resumen de sus características clave:
+
+* **Generación de Firma de Transacción:** El formulario calcula una cadena de firma utilizando la clave API de PayU LATAM, el ID del comercio y varios datos ingresados por el usuario, como el método de pago y la información bancaria. Esta firma se encripta con un algoritmo especificado (MD5, SHA o SHA256) para asegurar las transacciones. Para más detalles, consulta [Firma para Formulario de Pago]({{< ref "Payment-form.md#signature-for-payment-form" >}}).
+
+* **Diligenciamiento Dinámico del Formulario:** Según el país y la cuenta seleccionados, el formulario completa automáticamente varios campos, como tipos de documentos, información de facturación (por ejemplo, ciudad, estado, código postal) e información del pagador. Esto permite que el formulario se ajuste a los requisitos específicos de cada región (por ejemplo, CPF para Brasil o CUIT para Argentina).
+
+* **Gestión de Visibilidad:** Se incluyen varias funciones para mostrar u ocultar campos dinámicamente según el tipo de cuenta seleccionado. Esto es especialmente útil para manejar casos específicos como bancos PSE en Colombia o campos adicionales para aerolíneas y agencias de viajes.
+
+* **Gestión de Información de Envío:** El formulario permite que el usuario utilice la información de facturación como dirección de envío o especifique detalles de envío separados. Si el usuario no selecciona una opción de envío alternativa, se utiliza la información de facturación de forma predeterminada.
+
+* **Listeners de Eventos y Envío del Formulario:** La página puede utilizar listeners de eventos para actualizar campos del formulario cuando cambian ciertos valores de entrada (por ejemplo, el ID de cuenta) y asegura que el proceso de envío del formulario respete la información ingresada por el usuario, con opciones de respaldo (por ejemplo, usar la información de facturación si no se selecciona una opción de envío).
+
+<div>
+{{< paymentform/webcheckout_es_html >}}
+</div>
+
+<br>
+<br>
+
+## Firma para el Formulario de Pago {#signature-for-payment-form}
+
 La firma es un método para validar los pagos realizados a través de la plataforma asegurando su autenticidad. Consiste en un string encriptado utilizando  `MD5`, `SHA1` o `SHA256`. El string creado es así:
 
 ```HTML
 "ApiKey~merchantId~referenceCode~amount~currency".
 ```
-<br>
 
 {{% alert title="Nota" color="info"%}}
 Si tu formulario de pago incluye las variables `paymentMethods`, `iin` o `pseBanks`, debes concatenarlas en dicho orden:
@@ -200,7 +225,11 @@ Encriptada utilizando `SHA256`:
 "af3899a22336b79db46006491d15813158826f944599bf3bf601e2327f898022"
 ```
 
-### Compara tu firma {#compare-your-signature}
+<br>
+
+### Genera una Firma {#generate-a-signature}
+
+Esta calculadora te permite generar la firma utilizando alguno de los métodos de cifrado disponibles.
 
 <!-- Generador de firmas pagina de respuesta -->
 <div id="blue-box">
@@ -247,5 +276,3 @@ Encriptada utilizando `SHA256`:
 </span>
 </div>
 <!-- Fin del generador de firmas pagina de respuesta-->
-
-Esta calculadora te permite generar la firma utilizando alguno de los métodos de cifrado disponibles.

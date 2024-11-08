@@ -15,7 +15,7 @@ Você pode acessar vários métodos de pagamento (varia por país), incluindo ca
 ![API integration](/assets/api1-pt.png)
 
 ## Configurações iniciais {#initial-settings}
-PayU permite que você integre com o portal de transações, ferramentas de pagamento disponíveis e Consultas, programando um cliente HTTPS para enviar as informações da transação através de SSL. É fundamental que os dados confidenciais da transação, como número do cartão de crédito e data de validade, não sejam armazenados. Recomenda-se seguir as [Melhores práticas do PCI DSS](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).  
+PayU permite que você integre com o portal de transações, ferramentas de pagamento disponíveis e Consultas, programando um cliente HTTPS para enviar as informações da transação através de SSL. É fundamental que os dados confidenciais da transação, como número do cartão de crédito e data de validade, não sejam armazenados. Recomenda-se seguir as <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/pci.html" target="_blank">melhores práticas do PCI DSS</a> (Payment Card Industry Data Security Standard).  
 
 A transmissão das transações é protegida através de uma conexão TLS (Transport Layer Security) de 256 bits do servidor da loja nosso portal de pagamento. A troca de mensagens é feita por meio de strings JSON ou XML e as operações são diferenciadas por um comando incluído na solicitação. Confira os seguintes exemplos de JSON e XML:
 

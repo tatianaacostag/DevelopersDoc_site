@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-09-18T10:59:13-05:00" />
+<meta property="article:modified_time" content="2024-09-30T16:40:51-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Brasil">
 <meta itemprop="description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-09-18T10:59:13-05:00" />
-<meta itemprop="wordCount" content="13616">
+<meta itemprop="dateModified" content="2024-09-30T16:40:51-05:00" />
+<meta itemprop="wordCount" content="13629">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Brasil"/>
 <meta name="twitter:description" content="La API de Pagos para Brasil permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo aplicaciones móviles, transferencia electrónica, efectivo, tranferencia bancaria y tarjetas de crédito.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.5d66d4aa550a3e2b5125561766368a69d18706656aacb8e83d03695da40593d2323eac6aa34abfd31b2a91ba43eef58d218b3dd843fe29e1402a5c071b3cb8c3.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -236,7 +236,7 @@
       
       
       
-        <a id="/es/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedresponse-codes-and-variableshtml" href="../../../../es/docs/getting-started/response-codes-and-variables.html">Códigos de respuesta y Variables</a>
+        <a id="/es/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedresponse-codes-and-variableshtml" href="../../../../es/docs/getting-started/response-codes-and-variables.html">Códigos de Respuesta y Variables</a>
       
       
     </li>
@@ -3140,8 +3140,15 @@ La descripción que figura a continuación se aplica a la prestación de este se
 </ul>
 <p>PayU procesa pagos de Google Pay para tarjetas Mastercard y Visa. Para configurar tu script de Google, utiliza estos ajustes:</p>
 <pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, &#34;ELECTRON&#34;, &#34;MAESTRO&#34;];
-const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;, &#34;CRYPTOGRAM_3DS&#34;];
-</code></pre><p>Google devolverá un objeto <code>PaymentData</code>, y el campo <code>paymentMethodData.tokenizationData.token</code> contendrá un token de Google Pay encriptado de forma segura (una cadena de caracteres).</p>
+const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;];
+</code></pre>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+La disponibilidad de los métodos de pago depende de tu configuración en PayU.
+</div>
+
+<p>Google devolverá un objeto <code>PaymentData</code>, y el campo <code>paymentMethodData.tokenizationData.token</code> contendrá un token de Google Pay encriptado de forma segura (una cadena de caracteres).</p>
 <p>A continuación, un ejemplo de un token de Google Pay:</p>
 <pre tabindex="0"><code>{
   &#34;protocolVersion&#34;:&#34;ECv2&#34;,
@@ -6580,9 +6587,9 @@ Para integrarte con estas transacciones, debes redirigir a tu cliente a la URL q
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-18 de septiembre de 2024:
+30 de septiembre de 2024:
 
- <b>Documentation Updates (d973af12d)</b>
+ <b>Documentation Updates (a1e8dbe3c)</b>
 </div>
 </div>
 

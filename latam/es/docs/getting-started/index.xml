@@ -513,7 +513,7 @@
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
 &lt;td&gt;Mastercard&lt;/td&gt;
-&lt;td&gt;MASTERCARD_DEBIT&lt;/td&gt;
+&lt;td&gt;MASTERCARD&lt;/td&gt;
 &lt;td&gt;Tarjetas Débito&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -1586,7 +1586,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
     </item>
     
     <item>
-      <title>Docs: Códigos de respuesta y Variables</title>
+      <title>Docs: Códigos de Respuesta y Variables</title>
       <link>/es/docs/getting-started/response-codes-and-variables.html</link>
       <pubDate>Tue, 06 Apr 2021 15:33:35 -0500</pubDate>
       
@@ -1597,11 +1597,11 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
         &lt;script src=&#34;../../../js/searchcodes.js&#34;&gt;&lt;/script&gt;
 &lt;input type=&#34;text&#34; id=&#34;searchBox&#34; placeholder=&#34; Busca por nombres, códigos o descripción...&#34; onkeyup=&#34;findTables()&#34; &gt;
 &lt;button onclick=&#34;document.getElementById(&#39;searchBox&#39;).value = &#39;&#39;;findTables()&#34; class=&#34;btn-green&#34;&gt;Borrar&lt;/button&gt;
-&lt;h2 id=&#34;response-codes-for-transactions&#34;&gt;Códigos de respuesta de las transacciones&lt;/h2&gt;
+&lt;h2 id=&#34;response-codes-for-transactions&#34;&gt;Códigos de Respuesta de las Transacciones&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Código de respuesta&lt;/th&gt;
+&lt;th&gt;Código de Respuesta&lt;/th&gt;
 &lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -1760,7 +1760,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;response-codes-sent-to-the-response-page&#34;&gt;Códigos de respuesta de la página de respuesta&lt;/h2&gt;
+&lt;h2 id=&#34;response-codes-sent-to-the-response-page&#34;&gt;Códigos de Respuesta de la Página de Respuesta&lt;/h2&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -2168,7 +2168,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;response-codes-sent-to-the-confirmation-page&#34;&gt;Códigos de respuesta de la página de confirmación&lt;/h2&gt;
+&lt;h2 id=&#34;response-codes-sent-to-the-confirmation-page&#34;&gt;Códigos de Respuesta de la Página de Confirmación&lt;/h2&gt;
 &lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -2428,7 +2428,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;codes-of-the-payment-methods&#34;&gt;Códigos de los métodos de pago&lt;/h2&gt;
+&lt;h2 id=&#34;codes-of-the-payment-methods&#34;&gt;Códigos de los Métodos de Pago&lt;/h2&gt;
 &lt;p&gt;Los siguientes códigos aplican para &lt;code&gt;payment_method_type&lt;/code&gt; (Página de confirmación), &lt;code&gt;payment_method_id&lt;/code&gt; (Página de confirmación) y &lt;code&gt;polPaymentMethodType&lt;/code&gt; (Página de respuesta).&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -2481,7 +2481,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;commands-accepted-by-the-payments-api&#34;&gt;Comandos aceptados por el API de pagos&lt;/h2&gt;
+&lt;h2 id=&#34;commands-accepted-by-the-payments-api&#34;&gt;Comandos Aceptados por la API de Pagos&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2508,7 +2508,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;commands-accepted-by-the-query-api&#34;&gt;Comandos aceptados por el API de consultas&lt;/h2&gt;
+&lt;h2 id=&#34;commands-accepted-by-the-query-api&#34;&gt;Comandos Aceptados por la API de Consultas&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2535,12 +2535,12 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;accepted-currencies&#34;&gt;Divisas aceptadas&lt;/h2&gt;
+&lt;h2 id=&#34;accepted-currencies&#34;&gt;Divisas Aceptadas&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Moneda&lt;/th&gt;
-&lt;th&gt;Descripción&lt;/th&gt;
+&lt;th&gt;Nombre&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -2561,6 +2561,18 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;td&gt;Peso colombiano&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CRC&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Colón costarricense&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GTQ&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Quetzal guatemalteco&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;HNL&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Lempira hondureño&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;MXN&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Peso mexicano&lt;/td&gt;
 &lt;/tr&gt;
@@ -2569,12 +2581,16 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;td&gt;Nuevo Sol peruano&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SVC&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Colón salvadoreño&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;USD&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Dólar americano&lt;/td&gt;
+&lt;td&gt;Dólar estadounidense&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;order-status&#34;&gt;Estados de la orden&lt;/h2&gt;
+&lt;h2 id=&#34;order-status&#34;&gt;Estados de la Orden&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2617,7 +2633,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;transaction-states&#34;&gt;Estados de la transacción&lt;/h2&gt;
+&lt;h2 id=&#34;transaction-states&#34;&gt;Estados de la Transacción&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2652,7 +2668,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;transaction-types&#34;&gt;Tipos de transacción&lt;/h2&gt;
+&lt;h2 id=&#34;transaction-types&#34;&gt;Tipos de Transacción&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2683,12 +2699,12 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;processing-countries&#34;&gt;Paises de pago&lt;/h2&gt;
+&lt;h2 id=&#34;processing-countries&#34;&gt;Paises de Pago&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
+&lt;th&gt;Código del país&lt;/th&gt;
 &lt;th&gt;País&lt;/th&gt;
-&lt;th&gt;Descripción&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -2709,6 +2725,18 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;td&gt;Colombia&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CR&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Costa Rica&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;GT&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Guatemala&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;HN&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Honduras&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;MX&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;México&lt;/td&gt;
 &lt;/tr&gt;
@@ -2720,9 +2748,13 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;td&gt;&lt;code&gt;PE&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;Perú&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SV&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;El Salvador&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;supported-languages&#34;&gt;Idiomas soportados&lt;/h2&gt;
+&lt;h2 id=&#34;supported-languages&#34;&gt;Idiomas Soportados&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2745,7 +2777,7 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;document-types&#34;&gt;Tipos de documento&lt;/h2&gt;
+&lt;h2 id=&#34;document-types&#34;&gt;Tipos de Documento&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;

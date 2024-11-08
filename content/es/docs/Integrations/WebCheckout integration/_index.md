@@ -3,7 +3,7 @@ title: "Integración WebCheckout"
 linkTitle: "Integración WebCheckout"
 date: 2021-03-29T11:52:52-05:00
 description: >
-  La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pado en nuestra pasarela de pagos (WebCheckout).
+  La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pago en nuestra pasarela de pagos (WebCheckout).
 weight: 10
 tags: ["parenttopic"]
 ---

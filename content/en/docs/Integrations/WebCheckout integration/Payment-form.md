@@ -3,7 +3,7 @@ title: "Payment Form"
 linkTitle: "Payment Form"
 date: 2021-03-29T12:15:27-05:00
 description: >
-  With this HTML form, you can send the transaction request to our payment gateway along with the purchase information. Send the request using the HTTP POST method.
+  In this section, you'll learn how to send transaction data to the PayU payment gateway. This document provides the information needed to create an HTML form with the required transaction details and submit it to our system using the HTTP POST method.
 
 weight: 10
 tags: ["subtopic"]
@@ -16,20 +16,20 @@ tags: ["subtopic"]
 <script src="/js/signature-generator/signature-generator.js"></script>
 <script src="/js/searchcodes.js"></script>
 
-In this topic, you find how to send data from one transaction to the PayU payment gateway. To do so, You must generate an HTML form with the transaction data using the HTTP POST method and pointing it to our system.
-
 ## Considerations
-* Make sure you have the right `merchantId`, `accountId`, and `apiKey`.
-* Use a different payment reference per payment.
-* Do not include spaces in parameter values.
-* Do not include values with more than two decimal places.
-* Do not include special characters in the `referenceCode` parameter.
 
-## Variables
-The following variables can be included in the Payment form.
+* Ensure you have the correct `merchantId`, `accountId`, and `apiKey`.
+* Use a unique payment reference for each transaction.
+* Avoid including spaces in parameter values.
+* Limit decimal values to two places.
+* Exclude special characters from the `referenceCode` parameter.
+
+## Parameters
+
+You can include the following parameters in the payment form.
 
 <details>
-<summary>Variables in the payment form</summary>
+<summary>Parameters in the payment form</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
@@ -66,9 +66,9 @@ The following variables can be included in the Payment form.
 | billingCountry | Alphanumeric | 2 | The ISO country code associated with the billing address. | No | 
 | shippingCountry | Alphanumeric | 2 | The delivery ISO country code for the merchandise.<br><sup>\*</sup> Mandatory if your shop ships the product.<br>[See processing countries]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | Yes* | 
 | buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the result of the transaction by e-mail. It is recommended to validate if this field has been provided in the form. | Yes | 
-| telephone | Alphanumeric | 50 | The buyer’s residence phone. | Yes | 
-| officeTelephone | Alphanumeric | 50 | The buyer’s daytime phone. | No | 
-| mobilePhone | Alphanumeric | 50 | The buyer’s cell phone number. This value will be taken to fill out the credit card form and will be the contact telephone number. | No | 
+| telephone | Alphanumeric | 20 | The buyer’s residence phone. | Yes | 
+| officeTelephone | Alphanumeric | 20 | The buyer’s daytime phone. | No | 
+| mobilePhone | Alphanumeric | 20 | The buyer’s cell phone number. This value will be taken to fill out the credit card form and will be the contact telephone number. | No | 
 | buyerFullName | Alphanumeric | 150 | The buyer’s full name. | Yes | 
 | paymentMethods | Alphanumeric | 255 | List of payment methods enabled in the payment process.<br>This list must be separated by comma and without blanks. For example: `VISA,MASTERCARD`.<br>You can include installments for the payment methods adding them using hyphens. Example: `VISA-1-3,MASTERCARD-3-5-9`.<br>[See the available Payment Methods for your country in the column `paymentMethod parameter`]({{< ref "select-your-payment-method.html" >}}). | No | 
 | administrativeFee | Number | 10,2 | Amount of the administrative fee. | No | 
@@ -87,11 +87,14 @@ The following variables can be included in the Payment form.
 | pseBanks | Alphanumeric | 255 | List of bank codes enabled in the payment process through PSE.<br>This list must be separated by comma and without blanks. | No | 
 </details>
 
-### Considerations in variables
-* The `tax` is the VAT that may be used in some countries and the `taxReturnBase` is the base value to calculate the VAT. If your product is tax exempt, assign both variables to `0` (`tax=0`, `taxReturnBase=0`).
-* If some elements have the tax and it does not apply to others, you must perform the following calculation to find out how to send the values to the payment platform.
+### Parameters Considerations
 
-| Product | taxReturnBase | tax          | Amount  |
+* The `tax` parameter represents VAT, applicable in certain countries, while `taxReturnBase` is the base amount to calculate the VAT. If your product is tax-exempt, set both variables to `0` (`tax=0`, `taxReturnBase=0`).
+* When some products are taxed, while others are not, calculate and set values as shown in the table below to ensure accurate submission to the payment platform.
+
+#### VAT Calculation Example:
+
+| Product | `taxReturnBase` | `tax`          | Amount  |
 |---------|---------------|--------------|---------|
 | A       | 84.033        | 15.966 (19%) | 100.000 |
 | B       | 181.818       | 18.181 (10%) | 200.000 |
@@ -99,13 +102,14 @@ The following variables can be included in the Payment form.
 | Total   | 268.851       | 34.147       | 450.000 |
 
 {{% alert title="Important" color="warning"%}}
-Tax + taxReturnBase cannot be greater than the Total Value of each product.
+The sum of `tax` + `taxReturnBase` must not exceed the total value of each product.
 {{% /alert %}}
 
-* For businesses registered in Colombia that belong to the program _Régimen común_, if you don't send the tax, PayU automatically calculates the tax using 19%. If your business belongs to the program _Régimen simplificado_, if you don't send the tax, PayU automatically assigns the value as zero (0).
+* For businesses in Colombia registered under the _Régimen Común_, if `tax` is not provided, PayU automatically calculates it at 19%. For businesses under the _Régimen Simplificado_, if `tax` is not specified, PayU assigns a value of zero (0).
 
-## Form example
-The following is an example of a basic Payment form using only the mandatory fields and pointing the request to the sandbox environment (test mode).
+## HTML Fields Example
+
+The following is an example of the mandatory fields for a payment form in HTML format, pointing the request to the sandbox environment (test mode).
 
 ```HTML
  <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
@@ -143,7 +147,29 @@ Test: https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/
 Production: https://checkout.payulatam.com/ppp-web-gateway-payu/
 ```
 
-## Signature for Payment form
+## Payment Form Example
+
+This dynamic payment form example is designed for testing in our sandbox environment. It offers a glimpse into the potential fields and features you can incorporate into your own payment forms. Below is an overview of its key features:
+
+* **Transaction Signature Generation:** The form calculates a signature string using the PayU LATAM API key, merchant ID, and various user inputs such as payment method and bank information. This signature is hashed using a specified algorithm (MD5, SHA, or SHA256) to ensure secure transactions. For more details, refer to [Signature for Payment Form]({{< ref "Payment-form.md#signature-for-payment-form" >}})
+
+* **Dynamic Form Population:** Based on the selected country and account, the form populates various fields such as document types, billing information (e.g., city, state, zip code), and payer information. This allows the form to adjust for region-specific data requirements (e.g., CPF for Brazil or CUIT for Argentina).
+
+* **Visibility Management:** Several functions are included to dynamically show or hide fields based on the type of account selected. This is particularly useful for handling specific cases like PSE banks in Colombia or additional fields for airlines and travel agencies.
+
+* **Shipping Information Handling:** The form allows the user to either use the billing information as the shipping address or specify separate shipping details. If the user doesn't select an alternate shipping option, the billing information is used by default.
+
+* **Event Listeners and Form Submission:** The page can use event listeners to update form fields when certain input values (e.g., account ID) change and ensures the form submission process respects user input, with fallback options in place (e.g., using billing info if no shipping option is selected).
+
+<div>
+{{< paymentform/webcheckout_en_html >}}
+</div>
+
+<br>
+<br>
+
+## Signature for Payment Form
+
 The signature is a method to validate payments made through the platform and ensuring its authenticity. It consists of a string encrypted using `MD5`, `SHA1`, or `SHA256`. The string is created as follows:
 
 ```HTML
@@ -151,7 +177,7 @@ The signature is a method to validate payments made through the platform and ens
 ```
 
 {{% alert title="Note" color="info"%}}
-If your Payment form includes the variables `paymentMethods`, `iin`, or `pseBanks`, you must concatenate them in such order:
+If your payment form includes the variables `paymentMethods`, `iin`, or `pseBanks`, you must concatenate them in such order:
 
 ```HTML
 "ApiKey~merchantId~referenceCode~amount~currency~paymentMethods~iin~pseBanks"
@@ -197,8 +223,11 @@ Encrypted using `SHA256`:
 ```HTML
 "af3899a22336b79db46006491d15813158826f944599bf3bf601e2327f898022"
 ```
+<br>
 
-### Compare your signature
+### Generate a Signature
+
+This calculator lets you generate the signature using any of the available encryption methods.
 
 <!-- Signature generator -->
 <div id="blue-box">
@@ -245,5 +274,3 @@ Encrypted using `SHA256`:
 </span>
 </div>
 <!-- End of signature generator -->
-
-This calculator lets you generate the signature using any of the available encryption methods.

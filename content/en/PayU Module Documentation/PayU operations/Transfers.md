@@ -4,32 +4,49 @@ linkTitle: "Transfers"
 date: 2021-09-03T16:42:07-05:00
 type: docs
 Description: >
-  Learn how to receive the money from your PayU account on your Bank account. Additionally, learn how to automate transfers periodically or by amount.
+  Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.
 weight: 20
 ---
 
-In the _Transfers_ module, you can find the options to transfer the funds collected in your virtual PayU account to your main bank account registered.
+In the _Transfers_ module, you can transfer the funds collected in your virtual PayU account to your registered bank account.
 
 ## Considerations
-Keep in mind the following considerations before transferring funds to your bank account.
 
-* You must have your bank information updated and validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.
-* As PayU in Brazil is not a payment institution, the funds collected in your PayU account are transferred to your bank account daily for free. To check the status of these transfers, use the _**Daily payouts**_ option (_**Transfers**_ > _**Daily Transfers**_).
-* The first three local transfers performed during the first month are free. Since the 4th transfer request, PayU charges the following values:
-  - Colombia: 6.500,00 COP + VAT (Colombia)
-  - Peru: 10,00 PEN + IGV (Peru),
-  - Argentina: $ 10,00 ARS+ IVA (Argentina),
-  - Chile: 0,00 CLP
-  - Mexico: 0,00 MXN
-* The first transfer takes five (5) days to deposit in the bank account. The Risk area of PayU requests a livelihood of sales in the first transfer as an administrative process.
-* The second, and the following transfers take maximum three (3) business days.
-* The transfers can be programed by Amount and by Date
+Before initiating a transfer, review the following important considerations:
 
-{{% alert title="Note" color="warning"%}}
-The times and amounts explained here apply only for local transfer (into the same operation country) for international transfers, contact your sales representative.
+* Your bank information must be up to date and validated. If you've requested a bank account update, the system will continue sending the funds to your previous account until the PayU Risk team has validated the new account.
+* You can schedule transfers based on a specific amount or set a date for automated transfers.
+* Each month, the first three local transfers are free of charge. Starting from the fourth transfer in a month, PayU applies a fee in most countries. Note that international transfers incur a fee from the very first transaction. The table below provides an overview of the fees for local and international transfers by country.
+
+| Country    | Local Fee         | International Fee  |
+|------------|-------------------|--------------------|
+| Argentina  | 110.00 ARS        | 753.00 USD         |
+| Brazil     | None              | None               |
+| Chile      | 2,000.00 CLP      | 50,000.00 CLP      |
+| Colombia   | 6,500.00 COP      | 30.00 USD          |
+| Mexico     | 10.00 MXN         | 650.00 MXN         |
+| Panama     | 30.00 USD         | 44.00 USD          |
+| Peru       | 15.00 PEN         | 90.00 USD          |
+
+{{% alert title="Notes" color="info"%}}
+
+* Fees are subject to change over time. For the most current information or specific questions, please contact your PayU sales representative.
+* International transfers are also subject to a 3% FX fee (subject to negotiation) to cover currency exchange rate costs.
+* In Brazil, as PayU is not a licensed payment institution, the system automatically transfers your funds to your bank account daily at no cost. To monitor these transfers, use the _**Daily payouts**_ option (_**Transfers**_ > _**Daily Transfers**_).
+
 {{% /alert %}}
 
-## Permission required
+* The first transfer may take up to five (5) days to be deposited in your bank account. As part of an administrative process, the PayU Risk team may request additional documentation to verify your initial sales.
+* The second and subsequent transfers will take a maximum of three (3) business days to complete. Business days are typically Monday to Friday, excluding public holidays.
+
+{{% alert title="Note" color="warning"%}}
+
+The times mentioned apply only to local transfers. For international transfers, please contact your sales representative.
+
+{{% /alert %}}
+
+## Permission Required
+
 To have access to this module, you need to have a profile with the following permission enabled:
 
 * _Transfers_ > _Review_
@@ -37,7 +54,8 @@ To have access to this module, you need to have a profile with the following per
 
 Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.md" >}}) for more information.
 
-## Transfer funds
+## Transfer Funds
+
 You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.
 
 1. Log into your PayU account. In the left menu, expand the _**Transfers**_ menu and select _**Transfers**_.
@@ -58,7 +76,8 @@ You can transfer up to the total amount in your PayU account to the registered b
 
 As soon as the request has been successfully sent the transfer is in _In progess_ status and you can see it in the _**Created transfers report**_ section at the end of the module; also, the amount requested is debited from your balance.<br>If the transfers could not be processed, this amount backs to your account and no fee is charged for this operation.
 
-## Schedule transfers
+## Schedule Transfers
+
 You can automate the transfers and request the a withdrawal given a fixed amount or each certain time.
 
 {{% alert title="Note" color="info"%}}
@@ -84,20 +103,20 @@ The _options_ column provides the following actions:
 
 3. Select how you want to schedule the transfer.
 
-* **Schedule transfers by periodicity**<br>
+* **Schedule Transfers by Periodicity**<br>
 This option lets you transfer a given amount every certain time (days, weeks, or months). To schedule this type of transfers, select the option _Periodicity_.
 
-* **Schedule transfers by balance available**<br>
+* **Schedule Transfers by Available Balance**<br>
 This option lets you transfer a given amount every time the balance reaches a specific value. To schedule this type of transfers, select the option _Balance available_.
 
 Provide the following options.
 
-| Option                        | Description                                                                       |
-|-------------------------------|-----------------------------------------------------------------------------------|
-| Make a withdrawal each        | Select the periodicity of the transfers you want to schedule. This option is available for transfers scheduled by periodicity.<br><br>![PrintScreen](/assets/Transfers/Transfers_07.png) |
+| Option | Description |
+|-|-|
+| Make a withdrawal each | Select the periodicity of the transfers you want to schedule. This option is available for transfers scheduled by periodicity.<br><br>![PrintScreen](/assets/Transfers/Transfers_07.png) |
 | Select the amount to withdraw | Select the amount you want to transfer, you can select the total available balance or a fixed value.<br><br>![PrintScreen](/assets/Transfers/Transfers_08.png) |
-| Amount to withdraw            | Select the amount you want to transfer. This field appears when you select the option _Configure value_. |
-| Start my transfers on         | Select the starting date for the schedule. In this date, the first transfer is scheduled.<br><br>![PrintScreen](/assets/Transfers/Transfers_09.png) |
-| Description                   | Provide a meaningful description for your transfer. |
+| Amount to withdraw | Select the amount you want to transfer. This field appears when you select the option _Configure value_. |
+| Start my transfers on | Select the starting date for the schedule. In this date, the first transfer is scheduled.<br><br>![PrintScreen](/assets/Transfers/Transfers_09.png) |
+| Description | Provide a meaningful description for your transfer. |
 
 4. When finish, click _**Schedule Transfer**_.

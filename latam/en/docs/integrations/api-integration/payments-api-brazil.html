@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-brazil.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-09-18T10:59:13-05:00" />
+<meta property="article:modified_time" content="2024-09-30T16:40:51-05:00" />
 
 <meta itemprop="name" content="Payments API - Brazil">
 <meta itemprop="description" content="The Payments API for Brazil allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, electronic transfers, cash, bank transfers, and credit cards.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-09-18T10:59:13-05:00" />
-<meta itemprop="wordCount" content="12970">
+<meta itemprop="dateModified" content="2024-09-30T16:40:51-05:00" />
+<meta itemprop="wordCount" content="12980">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Brazil"/>
 <meta name="twitter:description" content="The Payments API for Brazil allows you to efficiently integrate PayU&#39;s payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including mobile applications, electronic transfers, cash, bank transfers, and credit cards.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.5d66d4aa550a3e2b5125561766368a69d18706656aacb8e83d03695da40593d2323eac6aa34abfd31b2a91ba43eef58d218b3dd843fe29e1402a5c071b3cb8c3.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -3146,8 +3146,15 @@ The description below applies to provision of this service directly by displayin
 </ul>
 <p>PayU processes Google Pay payments for Mastercard and Visa cards. To configure your Google script, use these settings:</p>
 <pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, &#34;ELECTRON&#34;, &#34;MAESTRO&#34;];
-const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;, &#34;CRYPTOGRAM_3DS&#34;];
-</code></pre><p>Google will return a <code>PaymentData</code> object, and the <code>paymentMethodData.tokenizationData.token</code> field will contain a securely encrypted Google Pay Token (a string).</p>
+const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;];
+</code></pre>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+The availability of payment methods depends on your PayU settings.
+</div>
+
+<p>Google will return a <code>PaymentData</code> object, and the <code>paymentMethodData.tokenizationData.token</code> field will contain a securely encrypted Google Pay Token (a string).</p>
 <p>Below, a sample of a Google Pay Token:</p>
 <pre tabindex="0"><code>{
   &#34;protocolVersion&#34;:&#34;ECv2&#34;,
@@ -6587,9 +6594,9 @@ To integrate with these transactions, you must redirect the customer to the URL 
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-September 18, 2024:
+September 30, 2024:
 
- <b>Documentation Updates (d973af12d)</b>
+ <b>Documentation Updates (a1e8dbe3c)</b>
 </div>
 </div>
 

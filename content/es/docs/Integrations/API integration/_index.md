@@ -15,7 +15,7 @@ Accede a múltiples métodos de pago (varía por país) incluyendo tarjetas de c
 ![API integration](/assets/api1-es.png)
 
 ## Configuraciones iniciales {#initial-settings}
-PayU te permite integrarte con la pasarela de pagos transaccional, las herramientas de pago disponibles y las consultas desarrollando un cliente HTTPS para enviar la información de la transacción a través de SSL. Es muy importante que los datos sensibles de la transacción como el número de la tarjeta de crédito, la fecha de expiración de la misma y demás, no sean almacenados. Recomendamos que sigas las [mejores prácticas de PCI DSS](https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf) (Payment Card Industry Data Security Standard).  
+PayU te permite integrarte con la pasarela de pagos transaccional, las herramientas de pago disponibles y las consultas desarrollando un cliente HTTPS para enviar la información de la transacción a través de SSL. Es muy importante que los datos sensibles de la transacción como el número de la tarjeta de crédito, la fecha de expiración de la misma y demás, no sean almacenados. Recomendamos que sigas las <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/pci.html" target="_blank">mejores prácticas de PCI DSS</a> (Payment Card Industry Data Security Standard).  
 
 la transmisión de las transacciones se asegurada a través de una conexión TLS (Transport Layer Security) de 256 bits desde el servidor de tu tienda hasta nuestra pasarela de pagos. El intercambio de mensajes se hace a través de cadenas JSON o XML y las operaciones se distinguen por un comando que se incluye en la petición. Observa los siguientes ejemplos JSON y XML:  
 

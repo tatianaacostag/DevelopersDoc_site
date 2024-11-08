@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/api-integration/payments-api-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-09-18T10:59:13-05:00" />
+<meta property="article:modified_time" content="2024-09-30T16:40:51-05:00" />
 
 <meta itemprop="name" content="API de Pagamentos - Colômbia">
 <meta itemprop="description" content="A API de Pagamentos para a Colômbia permite a integração eficiente das capacidades de processamento de pagamentos da PayU em sua plataforma de compras online. Com esta API, as lojas podem oferecer diferentes métodos de pagamento por meio de cartões de crédito ou débito, carteiras digitais, dinheiro e transferências bancárias.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-09-18T10:59:13-05:00" />
-<meta itemprop="wordCount" content="12759">
+<meta itemprop="dateModified" content="2024-09-30T16:40:51-05:00" />
+<meta itemprop="wordCount" content="12757">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagamentos - Colômbia"/>
 <meta name="twitter:description" content="A API de Pagamentos para a Colômbia permite a integração eficiente das capacidades de processamento de pagamentos da PayU em sua plataforma de compras online. Com esta API, as lojas podem oferecer diferentes métodos de pagamento por meio de cartões de crédito ou débito, carteiras digitais, dinheiro e transferências bancárias.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.5d66d4aa550a3e2b5125561766368a69d18706656aacb8e83d03695da40593d2323eac6aa34abfd31b2a91ba43eef58d218b3dd843fe29e1402a5c071b3cb8c3.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -5185,8 +5185,8 @@ A descrição abaixo aplica-se à prestação deste serviço diretamente atravé
 </li>
 </ul>
 <p>PayU processa pagamentos Google Pay para cartões American Express, Mastercard e Visa. Para configurar seu script Google, use estas configurações:</p>
-<pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, &#34;ELECTRON&#34;, &#34;MAESTRO&#34;, &#34;AMEX&#34;];
-const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;, &#34;CRYPTOGRAM_3DS&#34;];
+<pre tabindex="0"><code>const allowedCardNetworks = [&#34;MASTERCARD&#34;, &#34;VISA&#34;, &#34;ELECTRON&#34;, &#34;MAESTRO&#34;];
+const allowedCardAuthMethods = [&#34;PAN_ONLY&#34;];
 </code></pre>
 
 <div class="alert alert-info" role="alert">
@@ -5474,7 +5474,7 @@ Para garantir um processamento correto, ao selecionar os cartões para pagamento
 
 </div>
 <br>
-<p>Você encontrará a descrição do objeto <code>transaction.digitalWallet</code> e dos seus campos na seção <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-brazil.html#parameters-for-request-and-response">Parâmetros</a>.</p>
+<p>Você encontrará a descrição do objeto <code>transaction.digitalWallet</code> e dos seus campos na seção <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-colombia.html#parameters-for-request-and-response">Parâmetros</a>.</p>
 <h2 id="banks-list---pse">Lista de Bancos - PSE</h2>
 <p>Este método retorna uma lista dos bancos disponíveis para <a href="#submit-transactions-using-bank-transfer-pse">pagamentos usando PSE</a>.</p>
 <h3 id="parameters-for-request-and-response-4">Parâmetros para Solicitação e Resposta</h3>
@@ -6763,9 +6763,9 @@ Para garantir um processamento correto, ao selecionar os cartões para pagamento
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-18 de setembro de 2024:
+30 de setembro de 2024:
 
- <b>Documentation Updates (d973af12d)</b>
+ <b>Documentation Updates (a1e8dbe3c)</b>
 </div>
 </div>
 
