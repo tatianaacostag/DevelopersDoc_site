@@ -10,12 +10,13 @@ tags: ["subtopic"]
 
 ## Usar la Autenticación 3DS de PayU
 
-Para utilizar la autenticación 3DS, los comercios deben estar registrados en este servicio con PayU. Una vez registrado, puedes incluir un nuevo parámetro llamado `req3DSAuthentication` en tus solicitudes de pago a través de la API de Pagos de PayU.
+Para habilitar la autenticación 3DS, los comercios deben estar registrados en este servicio con PayU. Una vez registrado, puedes incluir un nuevo parámetro llamado `req3DSAuthentication` en tus solicitudes de pago a través de la API de Pagos de PayU.
 
 {{% alert title="Nota" color="info"%}}
 
-* La autenticación 3DS para PayU Latam solo está disponible para **Argentina**, **Brasil**, **Colombia** y **Perú**.
-* **Redes compatibles actualmente:** Visa y Mastercard.
+* La autenticación 3DS con PayU Latam solo está disponible para **Argentina**, **Brasil**, **Colombia** y **Perú**.
+* Esta funcionalidad requiere una integración API y no está disponible para la integración Webcheckout.
+* **Redes compatibles:** Visa y Mastercard.
 
 {{% /alert %}}
 

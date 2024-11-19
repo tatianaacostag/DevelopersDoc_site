@@ -22,20 +22,23 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Response Page | PayU Latam</title><meta property="og:title" content="Response Page" />
-<meta property="og:description" content="The Response page is a mandatory page and lets you show the result of the transaction to the payer. Our system redirects the payer to this page once the transaction has been performed. The data with the payment results is sent to your system via HTTP GET method.&lt;/br&gt;This page is invoked for all the transaction states: approved, rejected, in validation, awaiting payment (for cash), etc.
+<meta property="og:description" content="The response page allows you to display the result of the transaction to the payer once it is completed. While this page is not mandatory for the transaction flow, it enhances the payer&#39;s experience by redirecting them back to your site. This page helps to complete the payment journey, but consider that the payer may close the checkout without visiting it.
+The integration can send the payment result data via the HTTP GET method, and your platform can invoke the response page for all transaction states, including approved, rejected, in validation, and awaiting payment (for cash).
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/webcheckout-integration/response-page.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T12:15:39-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-11-08T11:23:44-05:00" />
 
 <meta itemprop="name" content="Response Page">
-<meta itemprop="description" content="The Response page is a mandatory page and lets you show the result of the transaction to the payer. Our system redirects the payer to this page once the transaction has been performed. The data with the payment results is sent to your system via HTTP GET method.&lt;/br&gt;This page is invoked for all the transaction states: approved, rejected, in validation, awaiting payment (for cash), etc.
+<meta itemprop="description" content="The response page allows you to display the result of the transaction to the payer once it is completed. While this page is not mandatory for the transaction flow, it enhances the payer&#39;s experience by redirecting them back to your site. This page helps to complete the payment journey, but consider that the payer may close the checkout without visiting it.
+The integration can send the payment result data via the HTTP GET method, and your platform can invoke the response page for all transaction states, including approved, rejected, in validation, and awaiting payment (for cash).
 "><meta itemprop="datePublished" content="2021-03-29T12:15:39-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="1405">
+<meta itemprop="dateModified" content="2024-11-08T11:23:44-05:00" />
+<meta itemprop="wordCount" content="1404">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Response Page"/>
-<meta name="twitter:description" content="The Response page is a mandatory page and lets you show the result of the transaction to the payer. Our system redirects the payer to this page once the transaction has been performed. The data with the payment results is sent to your system via HTTP GET method.&lt;/br&gt;This page is invoked for all the transaction states: approved, rejected, in validation, awaiting payment (for cash), etc.
+<meta name="twitter:description" content="The response page allows you to display the result of the transaction to the payer once it is completed. While this page is not mandatory for the transaction flow, it enhances the payer&#39;s experience by redirecting them back to your site. This page helps to complete the payment journey, but consider that the payer may close the checkout without visiting it.
+The integration can send the payment result data via the HTTP GET method, and your platform can invoke the response page for all transaction states, including approved, rejected, in validation, and awaiting payment (for cash).
 "/>
 
 
@@ -140,7 +143,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -555,6 +558,12 @@
       
       
       
+        <a id="/en/docs/integrations/api-integration/pci.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpcihtml" href="../../../../en/docs/integrations/api-integration/pci.html">PCI Security and Compliance Guide</a>
+      
+      
+      
+      
+      
         <a id="/en/docs/integrations/api-integration/payments-api-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../en/docs/integrations/api-integration/payments-api-argentina.html">Payments API - Argentina</a>
       
       
@@ -783,7 +792,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#considerations">Considerations</a></li>
-    <li><a href="#variables">Variables</a></li>
+    <li><a href="#parameters">Parameters</a></li>
     <li><a href="#integrate-the-response-page">Integrate the response page</a></li>
     <li><a href="#signature-validation">Signature validation</a>
       <ul>
@@ -847,7 +856,8 @@
             
 <div class="td-content">
 	<h1>Response Page</h1>
-    <div class="lead">The Response page is a mandatory page and lets you show the result of the transaction to the payer. Our system redirects the payer to this page once the transaction has been performed. The data with the payment results is sent to your system via HTTP GET method.</br>This page is invoked for all the transaction states: approved, rejected, in validation, awaiting payment (for cash), etc.</div>
+    <div class="lead">The response page allows you to display the result of the transaction to the payer once it is completed. While this page is not mandatory for the transaction flow, it enhances the payer&rsquo;s experience by redirecting them back to your site. This page helps to complete the payment journey, but consider that the payer may close the checkout without visiting it.
+The integration can send the payment result data via the HTTP GET method, and your platform can invoke the response page for all transaction states, including approved, rejected, in validation, and awaiting payment (for cash).</div>
 	       
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
@@ -857,23 +867,22 @@
 <script src="../../../../js/signature-generator/signature-generator.js"></script>
 <h2 id="considerations">Considerations</h2>
 <ul>
-<li>Some hosting providers have settings that do not allow sending URLs as parameter values. Example: <code>&amp;merchant_url=http%3A%2F%2Fwww.myshop.com</code></li>
-<li>For Brazil accounts, there is no redirection to the response page.</li>
-<li>Do not depend on the response page to update your database or execute processes, users may not return to it. Use the confirmation page.</li>
-<li>If you want to display information related to the transaction, we suggest showing at least the following: status, reference value, currency, and date.</li>
-<li>It is recommended to send the <code>responseUrl</code> parameter in the payment form or set PayU Module; it has priority the one sent in the parameter. If PayU does not find any, the payment process ends at the Webcheckout.</li>
+<li>Some hosting providers may have settings that block sending URLs as parameter values. For example: <code>&amp;merchant_url=http%3A%2F%2Fwww.myshop.com</code>.</li>
+<li>Avoid relying on the response page to update your database or trigger processes, as users may not always return to it. Use the confirmation page for these operations instead.</li>
+<li>If you want to display transaction-related information, we recommend showing at least the following details: status, reference, value, currency, and date.</li>
+<li>It is recommended to include the <code>responseUrl</code> parameter in the payment form or set it in the PayU Module. The value sent in the parameter takes priority. If the integration does not find a <code>responseUrl</code>, the payment process ends at the webcheckout.</li>
 </ul>
 
 
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Important</h4>
-If you want that PayU always shows the transaction information, do not send any value in the <code>responseUrl</code> parameter of the payment form, and leave it blank in PayU Module. In this case, the buyer cannot return to your website.
+If you want PayU to always display the transaction information, leave the <code>responseUrl</code> parameter blank both in the payment form and in the PayU Module. In this case, the payment experience will not show the buyer an option to return to your website.
 </div>
 
-<h2 id="variables">Variables</h2>
-<p>Variables sent to the response page.</p>
+<h2 id="parameters">Parameters</h2>
+<p>Below, the parameters sent to the response page.</p>
 <details>
-<summary>Variables to be sent to the response page</summary>
+<summary>Parameters sent to the response page</summary>
 <br>
 <div class="variables"></div>
 <table>
@@ -1441,9 +1450,9 @@ signature = 779f163be9347a691bcdb25064644795
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-June 24, 2022:
+November 8, 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation updates (cb34649dc)</b>
 </div>
 </div>
 

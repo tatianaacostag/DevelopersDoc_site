@@ -29,6 +29,7 @@ La API de Pagos incluye los siguiente métodos:
 * [Enviar Transacciones Utilizando Efectivo o Referencia Bancaria]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
 * [Enviar Transacciones Utilizando Transferencia Bancaria (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
 * [Enviar Transacciones Utilizando Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
+* [Procesar Pagos como Aerolínea o Agencia de Viajes]({{< ref "#process-payments-as-an-airline-or-travel-agency" >}})
 * [Lista de Bancos - PSE]({{< ref "#banks-list---pse" >}})
 * [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
@@ -2118,6 +2119,701 @@ Ejemplo de una Respuesta:
 
 Encuentra la descripción del objeto `transaction.digitalWallet` y sus campos en la sección de [Parámetros](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-colombia.html#parameters-for-request-and-response).
 
+## Procesar Pagos como Aerolínea o Agencia de Viajes {#process-payments-as-an-airline-or-travel-agency}
+
+Esta sección está diseñada para facilitar la integración de los servicios de PayU, específicamente adaptados a las necesidades de aerolíneas y agencias de viajes en Colombia.
+
+### Consideraciones:
+
+* Disponible exclusivamente en Colombia para transacciones en moneda COP.
+* Permite el procesamiento de pagos mediante el modelo TSP/Gateway.
+* Requiere el registro de códigos IATA con los adquirentes.
+* Soporta pagos con tarjeta de crédito o débito, incluyendo AMEX, DINERS, MASTERCARD y VISA.
+* Admite la dispersión de fondos, permitiendo que las agencias de viajes y aerolíneas reciban sus pagos dentro de la misma transacción.
+* Requiere un procesamiento en un solo paso: el sistema transfiere los fondos de la cuenta del cliente a tu banco adquirente tan pronto como se autoriza el pago.
+
+### Consideraciones para la Integración:
+
+Esta integración permite a las aerolíneas y agencias de viajes en Colombia optimizar los procesos de pago, proporcionando información esencial con cada transacción para apoyar la identificación y distribución precisa de los fondos. Además, el envío de detalles específicos de la transacción puede calificarlos para la exención del impuesto 4 x 1000 (confirma con tu banco adquirente).
+
+**Pasos para la Integración:** 
+
+1. Obtén la lista de aerolíneas disponibles.
+2. Envía la transacción a través de la API de Pagos de PayU.
+3. Incluye la información del Passenger Name Record (PNR) (opcional).
+
+| **Funcionalidad** | **Aerolíneas** | **Agencias de Viajes** |
+|-|-|-|
+| **Inclusión de Tarifas** | Las aerolíneas pueden enviar su ID de aerolínea, junto con tarifas aeroportuarias y otros impuestos asociados. | Las agencias de viajes pueden enviar sus tarifas de transacción junto con tarifas de aerolíneas, tarifas aeroportuarias, tarifas administrativas y otros cargos. |
+| **Identificación** | Los adquirentes pueden identificar específicamente la aerolínea mediante el ID de aerolínea para una distribución dirigida. | Permite al adquirente identificar tanto a la agencia de viajes como a la aerolínea para una distribución precisa de fondos. |
+| **Elegibilidad para la Exención del Impuesto 4 x 1000** | Las aerolíneas colombianas pueden calificar si proporcionan su ID de aerolínea e información de tarifas relevante. | Las agencias de viajes colombianas pueden calificar si proporcionan detalles completos de la transacción. |
+
+### Obtener la Lista de Aerolíneas Disponibles
+
+Para integrarse con PayU, tanto las agencias de viajes como las aerolíneas necesitan obtener los códigos de aerolíneas elegibles para la recolección de pagos y enviarlos a través de la API de Pagos. Esto se puede hacer consultando el sistema de PayU para obtener la lista de aerolíneas disponibles y sus respectivos códigos. El endpoint para obtener los códigos de aerolíneas es el mismo para ambos tipos de comerciantes, aunque el uso específico puede diferir:
+
+- **Aerolíneas**:
+  - Las aerolíneas obtienen y envían sus propios códigos para habilitar una identificación precisa y posibles beneficios fiscales.
+  - Al proporcionar el código de aerolínea, aseguran transacciones optimizadas para sus tarifas y cargos asociados.
+
+- **Agencias de Viajes**:
+  - Las agencias obtienen el código de aerolínea asociado con cada pago para garantizar la correcta asignación de tarifas e impuestos.
+  - Esta integración ayuda a identificar la aerolínea involucrada en la transacción para una distribución adecuada de fondos.
+
+Para obtener la lista, utiliza los siguientes endpoints según tu entorno:
+
+- **Sandbox**: `https://sandbox.api.payulatam.com/payments-api/rest/v4.3/payments/airline`
+- **Producción**: `https://api.payulatam.com/payments-api/rest/v4.3/payments/airline`
+
+| **Parámetro de Consulta** | **Descripción** |
+|-|-|
+| `accountID` | Código de identificación asignado por PayU Latam a la cuenta. |
+
+| **Parámetro de Cabecera** | **Descripción** |
+|-|-|
+| `Authorization` | Valor del encabezado de autenticación para realizar una solicitud válida. |
+
+Ejemplo de código en JavaScript para generar el encabezado de autenticación:
+
+```javascript
+var contentToSign = "pRRXKOl8ikMmt9u" + ":" + "4Vj8eK4rloUd272L48hsrarnUA";
+var base64 = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(contentToSign));
+var authenticationHeader = "Basic " + base64.toString();
+```
+
+{{% alert title="Nota" color="info"%}}
+
+Aunque es poco probable que cambien los códigos de aerolíneas, existe una posibilidad. Recomendamos usar la consulta para almacenar tu código de aerolínea y utilizarlo en pagos con nuestra API de Pagos.
+
+{{% /alert %}}
+
+| Parámetro de Consulta | Descripción |
+|-|-|
+| airlines | Array de aerolíneas. | 
+| airlines > code | Código de la aerolínea. |
+| airlines > description | Descripción de la aerolínea. |
+
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una respuesta:
+```JSON
+{
+  "airlines": [
+    {
+      "code": "81",
+      "description": "AVIA MARKETING LTDA NAL Nacional"
+    },
+    .
+    .
+    .
+    {
+      "code": "65",
+      "description": "OCEANAIR LINHAS AEREAS S.A Nacional"
+    }
+  ]
+}
+```
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una respuesta:
+```XML
+<com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
+ <airlines>
+ <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ <code>80</code>
+ <description>AVIATUR S.A. BOG Internacional</description>
+ </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ .
+ .
+ .
+ <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ <code>87</code>
+ <description>LAN AIRLINES Nacional</description>
+ </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ </airlines>
+</com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+### Enviar Transacciones como una Aerolínea
+
+Para completar una solicitud de transacción exitosa, debes incluir los parámetros específicos para aerolíneas, además de los parámetros estándar para [pagos con tarjeta de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). Opcionalmente, también puedes incluir [datos del PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}). Usa el código de aerolínea obtenido del endpoint anterior e incluye las tarifas aeroportuarias y los impuestos que aplican.
+
+<details>
+<summary>Solicitud</summary>
+<br>
+<div class="variables"></div>
+
+| **Campo** | **Tipo** | **Tamaño** | **Descripción** | **Ejemplo** |
+|-|-|-|-|-|
+| transaction > order > airlineCode | Alfanumérico | 4 | Código de la aerolínea. | 29 |
+| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12,2 | Monto total de la transacción. Puede contener hasta dos decimales. | 119000 |
+| transaction > order > additionalValues > TX_TAX > value | Numérico | 12,2 | Valor del IVA. Si no se especifica, el sistema aplica una tasa del 19% por defecto en Colombia. Usa 0 para artículos exentos de IVA. | 19000 |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12,2 | Valor base para el cálculo del IVA. Configura en 0 si el producto o servicio está exento de IVA. | 100000 |
+| transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value | Numérico | 12,2 | Tarifas aeroportuarias y otros impuestos aplicables. | 25000 |
+
+</details>
+
+#### Llamada a la API
+
+A continuación, se presentan ejemplos de una solicitud para este método.
+
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```JSON
+{
+  ...
+  "transaction": {
+    "order": {
+      ...
+      "airlineCode": "29",
+      "additionalValues": {
+        "TX_VALUE": {
+          "value": 119000,
+          "currency": "COP"
+        },
+        "TX_TAX": {
+          "value": 19000,
+          "currency": "COP"
+        },
+        "TX_TAX_RETURN_BASE": {
+          "value": 100000,
+          "currency": "COP"
+        },
+        "TX_ADDITIONAL_VALUE": {
+          "value": 25000,
+          "currency": "COP"
+        }
+      }
+    },
+    "creditCard": {
+      ...
+    },
+    "extraParameters": {
+      ...
+    },
+    "pnr": {
+      ...
+    }
+  }
+}
+```
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}} 
+<br>
+
+Ejemplo de una Solicitud:
+```XML
+<request>
+  ...
+  <transaction>
+    <order>
+      ...
+      <airlineCode>29</airlineCode>
+      <additionalValues>
+        <entry>
+          <string>TX_VALUE</string>
+          <additionalValue>
+            <value>119000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_TAX</string>
+          <additionalValue>
+            <value>19000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_TAX_RETURN_BASE</string>
+          <additionalValue>
+            <value>100000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_ADDITIONAL_VALUE</string>
+          <additionalValue>
+            <value>25000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+      </additionalValues>
+    </order>
+    <payer>
+      ...
+    </payer>
+    <creditCard>
+      ...
+    </creditCard>
+    <extraParameters>
+      ...
+    </extraParameters>
+    ...
+    <pnr>
+      ...
+    </pnr>
+  </transaction>
+</request>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+### Enviar Transacciones como una Agencia de Viajes
+
+Para completar una solicitud de transacción exitosa, debes incluir los parámetros específicos para agencias de viajes, además de los parámetros estándar para [pagos con tarjeta de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). Opcionalmente, también puedes incluir [datos del PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}). Usa el código de aerolínea obtenido del endpoint anterior e incluye las tarifas aeroportuarias y los impuestos que aplican.
+
+<details>
+<summary>Solicitud</summary>
+<br>
+<div class="variables"></div>
+
+| **Campo** | **Tipo** | **Tamaño** | **Descripción** | **Ejemplo** |
+|-|-|-|-|-|
+| transaction > order > airlineCode | Alfanumérico | 4 | Código de la aerolínea. | 29 |
+| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12,2 | Monto total de la transacción. Puede contener dos decimales (por ejemplo, 10000.00 o 10000). | 119000 |
+| transaction > order > additionalValues > TX_TAX > value | Numérico | 12,2 | Valor del IVA de la transacción. Si no se especifica, el sistema aplica automáticamente una tasa del 19% en Colombia. Si está exento de IVA, configura en 0. | 19000 |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12,2 | Valor base para calcular el IVA. Si está exento de IVA, asigna 0 a esta variable. | 100000 |
+| transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value | Numérico | 12,2 | Tarifas aeroportuarias y otros impuestos. | 25000 |
+| transaction > order > additionalValues > TX_ADMINISTRATIVE_FEE > value | Numérico | 12,2 | Monto de la tarifa administrativa de la agencia de viajes. | 5950 |
+| transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE > value | Numérico | 12,2 | Impuesto de la tarifa administrativa de la agencia de viajes. | 950 |
+| transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE > value | Numérico | 12,2 | Valor base para calcular el impuesto de la tarifa administrativa de la agencia de viajes. | 5000 |
+
+</details>
+
+#### Llamada a la API
+
+A continuación, se presentan ejemplos de una solicitud para este método.
+
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```JSON
+{
+  ...
+  "transaction": {
+    "order": {
+      ...
+      "airlineCode": "29",
+      "additionalValues": {
+        "TX_VALUE": {
+          "value": 119000,
+          "currency": "COP"
+        },
+        "TX_TAX": {
+          "value": 19000,
+          "currency": "COP"
+        },
+        "TX_TAX_RETURN_BASE": {
+          "value": 100000,
+          "currency": "COP"
+        },
+        "TX_ADDITIONAL_VALUE": {
+          "value": 25000,
+          "currency": "COP"
+        },
+        "TX_ADMINISTRATIVE_FEE": {
+          "value": 5950,
+          "currency": "COP"
+        },
+        "TX_TAX_ADMINISTRATIVE_FEE": {
+          "value": 950,
+          "currency": "COP"
+        },
+        "TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE": {
+          "value": 5000,
+          "currency": "COP"
+        }
+      }
+    },
+    "creditCard": {
+      ...
+    },
+    "extraParameters": {
+      ...
+    },
+    "pnr": {
+      ...
+    }
+  }
+}
+```
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}} 
+<br>
+
+Ejemplo de una Solicitud:
+```XML
+<request>
+  ...
+  <transaction>
+    <order>
+      ...
+      <airlineCode>29</airlineCode>
+      <additionalValues>
+        <entry>
+          <string>TX_VALUE</string>
+          <additionalValue>
+            <value>119000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_TAX</string>
+          <additionalValue>
+            <value>19000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_TAX_RETURN_BASE</string>
+          <additionalValue>
+            <value>100000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_ADDITIONAL_VALUE</string>
+          <additionalValue>
+            <value>25000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_ADMINISTRATIVE_FEE</string>
+          <additionalValue>
+            <value>5950</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_TAX_ADMINISTRATIVE_FEE</string>
+          <additionalValue>
+            <value>950</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+        <entry>
+          <string>TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE</string>
+          <additionalValue>
+            <value>5000</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+      </additionalValues>
+    </order>
+    <payer>
+      ...
+    </payer>
+    <creditCard>
+      ...
+    </creditCard>
+    <extraParameters>
+      ...
+    </extraParameters>
+    ...
+    <pnr>
+      ...
+    </pnr>
+  </transaction>
+</request>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+### Incluir Información de Registro de Nombre del Pasajero (Opcional) {#include-passenger-name-record-information-optional}
+
+Además de los detalles de la transacción proporcionados previamente, la API permite incluir datos del Passenger Name Record (PNR). Esta funcionalidad es particularmente útil al utilizar las herramientas antifraude de PayU para mejorar el análisis de riesgo de las transacciones, adaptándose a las actividades específicas de su negocio.
+
+Los siguientes parámetros están relacionados con los datos PNR y son opcionales. Están disponibles en todos los países de América Latina donde opera PayU. Estos campos no son suficientes por sí solos para completar una solicitud de transacción, pero son complementarios para casos de uso específicos.
+
+<details>
+<summary>Solicitud</summary>
+<br>
+<div class="variables"></div>
+
+| **Campo** | **Tipo** | **Tamaño** | **Descripción** | **Ejemplo** |
+|-|-|-|-|-|
+| transaction > pnr > id | alfanumérico | 32 | ID del registro de nombre del pasajero (PNR). | `PNR123456` |
+| transaction > pnr > reservationAgent > id | alfanumérico | 32 | ID del agente de reservas. | `AGENT123` |
+| transaction > pnr > reservationAgent > firstName | alfanumérico | 255 | Nombre(s) del agente de reservas. | `John` |
+| transaction > pnr > reservationAgent > lastName | alfanumérico | 255 | Apellido(s) del agente de reservas. | `Doe` |
+| transaction > pnr > reservationAgent > email | alfanumérico | 255 | Correo electrónico del agente de reservas. | `agent@example.com` |
+| transaction > pnr > reservationAgent > officePhoneNumber | alfanumérico | 50 | Teléfono de oficina del agente de reservas.| `+573001234567` |
+| transaction > pnr > reservationOffice > id | alfanumérico | 9 | ID de la oficina de reservas.| `OFFICE123`|
+| transaction > pnr > reservationOffice > country | alfanumérico | 2 | País de la oficina de reservas (Código ISO). | `CO` |
+| transaction > pnr > saleOffice > id | alfanumérico | 9 | ID de la oficina de ventas. | `SALEOFF123`                |
+| transaction > pnr > saleOffice > country | alfanumérico | 2 | País de la oficina de ventas (Código ISO). | `US` |
+| transaction > pnr > passengers[] > id | alfanumérico | 32 | ID del pasajero. | `PASS12345` |
+| transaction > pnr > passengers[] > country | alfanumérico | 2 | País del pasajero (Código ISO). | `AR`                        |
+| transaction > pnr > passengers[] > level | alfanumérico | 32 | Nivel del pasajero. | `GOLD`                      |
+| transaction > pnr > passengers[] > firstName | alfanumérico | 255 | Nombre(s) del pasajero. | `Maria`                     |
+| transaction > pnr > passengers[] > lastName | alfanumérico | 255 | Apellido(s) del pasajero. | `Gonzalez` |
+| transaction > pnr > passengers[] > documentType | numérico | 2 | Tipo de documento (ver valores a continuación). | `5` |
+| transaction > pnr > passengers[] > documentNumber | alfanumérico | 50 | Número de documento del pasajero. | `P12345678` |
+| transaction > pnr > passengers[] > email | alfanumérico | 255 | Dirección de correo electrónico del pasajero. | `passenger@example.com` |
+| transaction > pnr > passengers[] > officePhoneNumber | alfanumérico | 50 | Teléfono de oficina del pasajero. | `+573008765432`             |
+| transaction > pnr > passengers[] > homePhoneNumber | alfanumérico | 50 | Teléfono de casa del pasajero. | `+573002345678`             |
+| transaction > pnr > passengers[] > mobilePhoneNumber | alfanumérico | 50 | Teléfono móvil del pasajero. | `+573001234567` |
+| transaction > pnr > passengers[] > address > country | alfanumérico | 2 | País de la dirección del pasajero (Código ISO). | `BR` |
+| transaction > pnr > passengers[] > address > city | alfanumérico | 65 | Ciudad de la dirección del pasajero. | `São Paulo` |
+| transaction > pnr > passengers[] > address > street | alfanumérico | 255 | Dirección (calle) del pasajero. | `Rua das Flores, 123` |
+| transaction > pnr > itinerary[] > departureDate | alfanumérico | 19 | Fecha de salida en formato UTC. | `2022-01-01T23:59:59` |
+| transaction > pnr > itinerary[] > arrivalDate | alfanumérico | 19 | Fecha de llegada en formato UTC. | `2022-01-02T23:59:59` |
+| transaction > pnr > itinerary[] > flightNumber | alfanumérico | 12 | Número de vuelo. | `FL1234` |
+| transaction > pnr > itinerary[] > origin | alfanumérico | 8 | Origen. | `BOG` |
+| transaction > pnr > itinerary[] > destination | alfanumérico | 8 | Destino. | `MIA` |
+| transaction > pnr > itinerary[] > travelClass | alfanumérico | 2 | Clase de viaje en el segmento de reserva. | `Y` |
+| transaction > pnr > itinerary[] > ticketType | alfanumérico | 50 | Tipo de boleto. | `E-TICKET` |
+
+</details>
+
+{{% alert title="Nota" color="info"%}}
+
+Al usar el formato XML, los parámetros del itinerario aparecen bajo `transaction > pnr > itinerary > segment` con la misma estructura pero ajustados en anidamiento.
+
+{{% /alert %}}
+
+#### Llamada a la API
+
+A continuación, se presentan ejemplos de una solicitud para este método.
+
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```JSON
+{
+  "transaction": {
+    "order": {
+      ...
+    },
+    "creditCard": {
+      ...
+    },
+    "extraParameters": {
+      ...
+    },
+    "pnr": {
+      "id": "abc123",
+      "reservationAgent": {
+        "id": "def456",
+        "firstName": "CO",
+        "lastName": "CO",
+        "email": "first.last@example.org",
+        "officePhoneNumber": "123456789"
+      },
+      "reservationOffice": {
+        "id": "ghi789",
+        "country": "CO"
+      },
+      "saleOffice": {
+        "id": "jkl012",
+        "country": "CO"
+      },
+      "passengers": [
+        {
+          "id": "mno345",
+          "country": "CO",
+          "level": "1",
+          "firstName": "Firts Name",
+          "lastName": "Last Name",
+          "documentType": 0,
+          "documentNumber": "987654321",
+          "email": "first.last@example.com",
+          "officePhoneNumber": "234567891",
+          "homePhoneNumber": "345678912",
+          "mobilePhoneNumber": "456789123",
+          "address": {
+            "country": "CO",
+            "city": "Bogota D.C.",
+            "street": "Calle 1 # 2 - 3"
+          }
+        },
+        {
+          "id": "mno346",
+          "country": "CO",
+          "level": "1",
+          "firstName": "Firts Name",
+          "lastName": "Last Name",
+          "documentType": 0,
+          "documentNumber": "55545151515",
+          "email": "first.last@example.com",
+          "officePhoneNumber": "336259",
+          "homePhoneNumber": "2156668",
+          "mobilePhoneNumber": "3001234123",
+          "address": {
+            "country": "CO",
+            "city": "Bogota D.C.",
+            "street": "Calle 3 # 2 - 1"
+          }
+        }
+      ],
+      "itinerary": [
+        {
+          "departureDate": "2022-01-01T23:59:59",
+          "arrivalDate": "2025-01-01T23:59:59",
+          "flightNumber": "PQR345",
+          "origin": "BOGOTA",
+          "destination": "MADRID",
+          "travelClass": "BU",
+          "ticketType": "RT"
+        },
+        {
+          "departureDate": "2022-01-01T23:59:59",
+          "arrivalDate": "2025-01-01T23:59:59",
+          "flightNumber": "ARF2525",
+          "origin": "MADRID",
+          "destination": "LONDRES",
+          "travelClass": "EC",
+          "ticketType": "RT"
+        }
+      ]
+    }
+  }
+}
+
+
+```
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```XML
+<request>
+  ...
+  <transaction>
+    <order>
+      ...
+    </order>
+    <payer>
+      ...
+    </payer>
+    <creditCard>
+      ...
+    </creditCard>
+    <extraParameters>
+      ...
+    </extraParameters>
+    <pnr>
+      <id>abc123</id>
+      <reservationAgent>
+        <id>def456</id>
+        <firstName>First Name</firstName>
+        <lastName>Last Name</lastName>
+        <email>first.last@example.org</email>
+        <officePhoneNumber>123456789</officePhoneNumber>
+      </reservationAgent>
+      <reservationOffice>
+        <id>ghi789</id>
+        <country>CO</country>
+      </reservationOffice>
+      <saleOffice>
+        <id>jkl012</id>
+        <country>CO</country>
+      </saleOffice>
+      <passengers>
+        <!-- Passenger 1 -->
+        <passenger>
+          <id>mno345</id>
+          <country>CO</country>
+          <level>1</level>
+          <firstName>First Name</firstName>
+          <lastName>Last Name</lastName>
+          <documentType>0</documentType>
+          <documentNumber>987654321</documentNumber>
+          <email>first.last@example.com</email>
+          <officePhoneNumber>234567891</officePhoneNumber>
+          <homePhoneNumber>345678912</homePhoneNumber>
+          <mobilePhoneNumber>456789123</mobilePhoneNumber>
+          <address>
+            <country>CO</country>
+            <city>Bogota D.C.</city>
+            <street>Calle 1 # 2 - 3</street>
+          </address>
+        </passenger>
+        <!-- Passenger 2 -->
+        <passenger>
+          <id>mno346</id>
+          <country>CO</country>
+          <level>1</level>
+          <firstName>First Name</firstName>
+          <lastName>Last Name</lastName>
+          <documentType>0</documentType>
+          <documentNumber>55545151515</documentNumber>
+          <email>first.last@example.com</email>
+          <officePhoneNumber>336259</officePhoneNumber>
+          <homePhoneNumber>2156668</homePhoneNumber>
+          <mobilePhoneNumber>3001234123</mobilePhoneNumber>
+          <address>
+            <country>CO</country>
+            <city>Bogota D.C.</city>
+            <street>Calle 3 # 2 - 1</street>
+          </address>
+        </passenger>
+      </passengers>
+      <itinerary>
+        <!-- Flight Journey 1 -->
+        <segment>
+          <departureDate>2022-01-01T23:59:59</departureDate>
+          <arrivalDate>2025-01-01T23:59:59</arrivalDate>
+          <flightNumber>PQR345</flightNumber>
+          <origin>BOGOTA</origin>
+          <destination>MADRID</destination>
+          <travelClass>U</travelClass>
+        </segment>
+        <!-- Flight Journey 2 -->
+        <segment>
+          <departureDate>2022-01-01T23:59:59</departureDate>
+          <arrivalDate>2025-01-01T23:59:59</arrivalDate>
+          <flightNumber>ARF2525</flightNumber>
+          <origin>MADRID</origin>
+          <destination>LONDRES</destination>
+          <travelClass>EC</travelClass>
+        </segment>
+      </itinerary>
+    </pnr>
+    <isTest>false</isTest>
+  </transaction>
+</request>
+
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
 ## Lista de Bancos - PSE {#banks-list---pse}
 
 Este método retorna la lista de bancos disponibles para realizar [pagos utilizando PSE]({{< ref "#submit-transactions-using-bank-transfer-pse" >}}). 
@@ -2163,7 +2859,7 @@ Este método retorna la lista de bancos disponibles para realizar [pagos utiliza
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2844,7 +3540,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2968,7 +3664,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="12" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 

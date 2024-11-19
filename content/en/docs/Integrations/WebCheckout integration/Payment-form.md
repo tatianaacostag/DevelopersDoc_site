@@ -66,18 +66,18 @@ You can include the following parameters in the payment form.
 | billingCountry | Alphanumeric | 2 | The ISO country code associated with the billing address. | No | 
 | shippingCountry | Alphanumeric | 2 | The delivery ISO country code for the merchandise.<br><sup>\*</sup> Mandatory if your shop ships the product.<br>[See processing countries]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | Yes* | 
 | buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the result of the transaction by e-mail. It is recommended to validate if this field has been provided in the form. | Yes | 
-| telephone | Alphanumeric | 20 | The buyer’s residence phone. | Yes | 
-| officeTelephone | Alphanumeric | 20 | The buyer’s daytime phone. | No | 
-| mobilePhone | Alphanumeric | 20 | The buyer’s cell phone number. This value will be taken to fill out the credit card form and will be the contact telephone number. | No | 
+| telephone | Alphanumeric | Max. 20 | The buyer’s residence phone. | Yes | 
+| officeTelephone | Alphanumeric | Max. 20 | The buyer’s daytime phone. | No | 
+| mobilePhone | Alphanumeric | Max. 20 | The buyer’s cell phone number. This value will be taken to fill out the credit card form and will be the contact telephone number. | No | 
 | buyerFullName | Alphanumeric | 150 | The buyer’s full name. | Yes | 
 | paymentMethods | Alphanumeric | 255 | List of payment methods enabled in the payment process.<br>This list must be separated by comma and without blanks. For example: `VISA,MASTERCARD`.<br>You can include installments for the payment methods adding them using hyphens. Example: `VISA-1-3,MASTERCARD-3-5-9`.<br>[See the available Payment Methods for your country in the column `paymentMethod parameter`]({{< ref "select-your-payment-method.html" >}}). | No | 
 | administrativeFee | Number | 10,2 | Amount of the administrative fee. | No | 
 | taxAdministrativeFee | Number | 10,2 | Amount of tax of the administrative fee. | No | 
 | taxAdministrativeFeeReturnBase | Number | 10,2 | Base value to calculate the tax of the administrative fee. | No | 
 | payerEmail | Alphanumeric | 255 | The payer’s e-mail. | Yes | 
-| payerPhone | Alphanumeric | 20 | The payer’s phone number. | Yes | 
-| payerOfficePhone | Alphanumeric | 20 | The payer’s workplace phone number. | No | 
-| payerMobilePhone | Alphanumeric | 20 | The payer’s mobile phone number. | No | 
+| payerPhone | Alphanumeric | Max. 20 | The payer’s phone number. | Yes | 
+| payerOfficePhone | Alphanumeric | Max. 20 | The payer’s workplace phone number. | No | 
+| payerMobilePhone | Alphanumeric | Max. 20 | The payer’s mobile phone number. | No | 
 | expirationDate | Alphanumeric | 19 | Expiration date of the transactions for Cash payments. Format: `YYYY-MM-DD HH:mm:ss`.<br>This value must be lower than the default number of days for the cash payment (15 days for Argentina and 7 days for the other countries). | - | 
 | payerFullName | Alphanumeric | 50 | The payer’s name. This value will be taken to fill out the credit card form. | Yes | 
 | payerDocument | Alphanumeric | 25 | The buyer’s identification number. This value will be taken to fill out the credit card form. | Yes | 
@@ -162,7 +162,7 @@ This dynamic payment form example is designed for testing in our sandbox environ
 * **Event Listeners and Form Submission:** The page can use event listeners to update form fields when certain input values (e.g., account ID) change and ensures the form submission process respects user input, with fallback options in place (e.g., using billing info if no shipping option is selected).
 
 <div>
-{{< paymentform/webcheckout_en_html >}}
+{{< paymentform/webcheckout_en >}}
 </div>
 
 <br>

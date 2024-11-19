@@ -66,18 +66,18 @@ Puedes incluir los siguientes parámetros en el formulario de pago.
 | billingCountry | Alfanumérico | 2 | Código ISO del país asociado con la dirección de facturación. | No |
 | shippingCountry | Alfanumérico | 2 | Código ISO del país de entrega de lla mercancía.<br><sup>\*</sup> Obligatorio si tu tienda envía el producto.<br>[Ver los paises de pago]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | Sí* |
 | buyerEmail | Alfanumérico | 255 | Campo que contiene el correo electrónico del comprador para notificar el resultado de la transacción por medio de correo electrónico. Se recomienda validar que se haya ingresado este campo en el formulario. | Sí |
-| telephone | Alfanumérico | 20 | Teléfono de residencia del comprador. | Sí |
-| officeTelephone | Alfanumérico | 20 | Teléfono diurno del comprador. | No |
-| mobilePhone | Alfanumérico | 20 | Número del móvil del comprador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito y será el número de teléfono de contacto. | No |
+| telephone | Alfanumérico | Máx. 20 | Teléfono de residencia del comprador. | Sí |
+| officeTelephone | Alfanumérico | Máx. 20 | Teléfono diurno del comprador. | No |
+| mobilePhone | Alfanumérico | Máx. 20 | Número del móvil del comprador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito y será el número de teléfono de contacto. | No |
 | buyerFullName | Alfanumérico | 150 | Nombre completo del comprador. | Sí |
 | paymentMethods | Alfanumérico | 255 | Lista de métodos de pago habilitados en el proceso de pago.<br>Esta lista debe estar separada por comas y sin espacios en blanco. Por ejemplo: `VISA,MASTERCARD`.<br>Puedes incluir cuotas para los métodos de pago añadiéndolas mediante guiones. Ejemplo: `VISA-1-3,MASTERCARD-3-5-9`.<br>[Consulta los métodos de pago disponibles para tu país en la columna` parámetro de método de pago`]({{< ref "select-your-payment-method.html" >}}). | No | 
 | administrativeFee | Numérico | 10,2 | Valor de la tarifa administrativa. | - |
 | taxAdministrativeFee | Numérico | 10,2 | Valor del impuesto de la tarifa administrativa. | - |
 | taxAdministrativeFeeReturnBase | Numérico | 10,2 | Valor base para calcular el impuesto de la tarifa administrativa. | - |
 | payerEmail | Alfanumérico | 255 | Dirección de correo electrónico del pagador. | Sí |
-| payerPhone | Alfanumérico | 20 | Número de teléfono del pagador. | Sí |
-| payerOfficePhone | Alfanumérico | 20 | Número de teléfono de oficina del pagador. | No |
-| payerMobilePhone | Alfanumérico | 20 | Número de teléfono móvil del pagador. | No |
+| payerPhone | Alfanumérico | Máx. 20 | Número de teléfono del pagador. | Sí |
+| payerOfficePhone | Alfanumérico | Máx. 20 | Número de teléfono de oficina del pagador. | No |
+| payerMobilePhone | Alfanumérico | Máx. 20 | Número de teléfono móvil del pagador. | No |
 | expirationDate | #N/A | 19 | Fecha de vencimiento de las transacciones para pagos en efectivo. Formato: `YYYY-MM-DD HH:mm:ss`.<br>Este valor debe ser menor que el número de días predeterminado para el pago en efectivo (15 días para Argentina y 7 días para el resto de países). | - |
 | payerFullName | Alfanumérico | 50 | Nombre del pagador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito. | Sí |
 | payerDocument | Alfanumérico | 25 | Número de identificación del pagador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito. | Sí |
@@ -163,7 +163,7 @@ Este ejemplo de formulario de pago dinámico está diseñado para realizar prueb
 * **Listeners de Eventos y Envío del Formulario:** La página puede utilizar listeners de eventos para actualizar campos del formulario cuando cambian ciertos valores de entrada (por ejemplo, el ID de cuenta) y asegura que el proceso de envío del formulario respete la información ingresada por el usuario, con opciones de respaldo (por ejemplo, usar la información de facturación si no se selecciona una opción de envío).
 
 <div>
-{{< paymentform/webcheckout_es_html >}}
+{{< paymentform/webcheckout_es >}}
 </div>
 
 <br>

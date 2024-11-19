@@ -66,18 +66,18 @@ Você pode incluir os seguintes parâmetros no formulário de pagamento.
 | billingCountry | Alfanumérico | 2 | Código ISO do país associado ao endereço de cobrança. | Não | 
 | shippingCountry | Alfanumérico | 2 | O código ISO do país associado ao endereço de entrega da mercadoria.<br><sup>\*</sup> Obrigatório se sua loja enviar o produto.<br>[Veja os países de processamento]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | Sim* | 
 | buyerEmail | Alfanumérico | 255 | Campo que contém o e-mail do comprador para notificar o resultado da transação por e-mail. Recomenda-se validar se este campo foi fornecido no formulário. | Sim | 
-| telephone | Alfanumérico | 20 | O telefone residencial do comprador. | Sim | 
-| officeTelephone | Alfanumérico | 20 | O telefone do comprador em horário comercial. | Não | 
-| mobilePhone | Alfanumérico | 20 | O número do celular do comprador. Este valor será usado para preencher o formulário do cartão de crédito e será o telefone de contato. | Não | 
+| telephone | Alfanumérico | Máx. 20 | O telefone residencial do comprador. | Sim | 
+| officeTelephone | Alfanumérico | Máx. 20 | O telefone do comprador em horário comercial. | Não | 
+| mobilePhone | Alfanumérico | Máx. 20 | O número do celular do comprador. Este valor será usado para preencher o formulário do cartão de crédito e será o telefone de contato. | Não | 
 | buyerFullName | Alfanumérico | 150 | O nome completo do comprador. | Sim | 
 | paymentMethods | Alfanumérico | 255 | Lista das formas de pagamento habilitadas no processo de pagamento.<br>Esta lista deve ser separada por vírgula e sem espaços em branco. Por exemplo: `VISA,MASTERCARD`.<br>YVocê pode incluir parcelas para as formas de pagamento adicionando-as usando hifens. Exemplo: `VISA-1-3,MASTERCARD-3-5-9`.<br>[Veja os métodos de pagamento disponíveis para seu país na coluna `Parâmetro paymentMethod`]({{< ref "select-your-payment-method.html" >}}). | Não | 
 | administrativeFee | Número | 10,2 | Valor da taxa administrativa. | Não | 
 | taxAdministrativeFee | Número | 10,2 | Valor do imposto da taxa administrativa. | Não | 
 | taxAdministrativeFeeReturnBase | Número | 10,2 | Valor base para cálculo do imposto da taxa administrativa. | Não | 
 | payerEmail | Alfanumérico | 255 | E-mail do pagador. | Sim | 
-| payerPhone | Alfanumérico | 20 | Número de telefone do pagador. | Sim | 
-| payerOfficePhone | Alfanumérico | 20 | Número de telefone do local de trabalho do pagador. | Não | 
-| payerMobilePhone | Alfanumérico | 20 | Número do celular do pagador. | Não | 
+| payerPhone | Alfanumérico | Máx. 20 | Número de telefone do pagador. | Sim | 
+| payerOfficePhone | Alfanumérico | Máx. 20 | Número de telefone do local de trabalho do pagador. | Não | 
+| payerMobilePhone | Alfanumérico | Máx. 20 | Número do celular do pagador. | Não | 
 | expirationDate | Alfanumérico | 19 | Prazo de validade das transações de pagamentos da Dinheiro. Formato:  `YYYY-MM-DD HH:mm:ss`.<br>Este valor deve ser inferior ao número padrão de dias para o pagamento à vista (15 dias para a Argentina e 7 dias para os demais países). | - | 
 | payerFullName | Alfanumérico | 50 | O nome do pagador. Este valor será usado para preencher o formulário do cartão de crédito. | Sim | 
 | payerDocument | Alfanumérico | 25 | O número de identificação do comprador. Este valor será usado para preencher o formulário do cartão de crédito. | Sim | 
@@ -162,7 +162,7 @@ Este exemplo de formulário de pagamento dinâmico é projetado para testes em n
 * **Ouvintes de Eventos e Envio de Formulário:** A página pode usar ouvintes de eventos para atualizar os campos do formulário quando certos valores de entrada (por exemplo, ID da conta) mudam e garante que o processo de envio do formulário respeite as entradas do usuário, com opções alternativas configuradas (por exemplo, uso das informações de cobrança se nenhuma opção de envio for selecionada).
 
 <div>
-{{< paymentform/webcheckout_en_html >}}
+{{< paymentform/webcheckout_en >}}
 </div>
 
 <br>

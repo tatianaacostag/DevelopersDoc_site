@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Transfers | PayU Latam</title><meta property="og:title" content="Transfers" />
-<meta property="og:description" content="Learn how to receive the money from your PayU account on your Bank account. Additionally, learn how to automate transfers periodically or by amount.
+<meta property="og:description" content="Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/payu-module-documentation/payu-operations/transfers.html" /><meta property="article:section" content="PayU Module Documentation" />
 <meta property="article:published_time" content="2021-09-03T16:42:07-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-11-08T11:23:44-05:00" />
 
 <meta itemprop="name" content="Transfers">
-<meta itemprop="description" content="Learn how to receive the money from your PayU account on your Bank account. Additionally, learn how to automate transfers periodically or by amount.
+<meta itemprop="description" content="Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.
 "><meta itemprop="datePublished" content="2021-09-03T16:42:07-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="807">
+<meta itemprop="dateModified" content="2024-11-08T11:23:44-05:00" />
+<meta itemprop="wordCount" content="896">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Transfers"/>
-<meta name="twitter:description" content="Learn how to receive the money from your PayU account on your Bank account. Additionally, learn how to automate transfers periodically or by amount.
+<meta name="twitter:description" content="Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -461,9 +461,9 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#considerations">Considerations</a></li>
-    <li><a href="#permission-required">Permission required</a></li>
-    <li><a href="#transfer-funds">Transfer funds</a></li>
-    <li><a href="#schedule-transfers">Schedule transfers</a></li>
+    <li><a href="#permission-required">Permission Required</a></li>
+    <li><a href="#transfer-funds">Transfer Funds</a></li>
+    <li><a href="#schedule-transfers">Schedule Transfers</a></li>
   </ul>
 </nav>
 
@@ -511,42 +511,93 @@
             
 <div class="td-content">
 	<h1>Transfers</h1>
-    <div class="lead">Learn how to receive the money from your PayU account on your Bank account. Additionally, learn how to automate transfers periodically or by amount.</div>
+    <div class="lead">Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.</div>
 	       
-	<p>In the <em>Transfers</em> module, you can find the options to transfer the funds collected in your virtual PayU account to your main bank account registered.</p>
+	<p>In the <em>Transfers</em> module, you can transfer the funds collected in your virtual PayU account to your registered bank account.</p>
 <h2 id="considerations">Considerations</h2>
-<p>Keep in mind the following considerations before transferring funds to your bank account.</p>
+<p>Before initiating a transfer, review the following important considerations:</p>
 <ul>
-<li>You must have your bank information updated and validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.</li>
-<li>As PayU in Brazil is not a payment institution, the funds collected in your PayU account are transferred to your bank account daily for free. To check the status of these transfers, use the <em><strong>Daily payouts</strong></em> option (<em><strong>Transfers</strong></em> &gt; <em><strong>Daily Transfers</strong></em>).</li>
-<li>The first three local transfers performed during the first month are free. Since the 4th transfer request, PayU charges the following values:
-<ul>
-<li>Colombia: 6.500,00 COP + VAT (Colombia)</li>
-<li>Peru: 10,00 PEN + IGV (Peru),</li>
-<li>Argentina: $ 10,00 ARS+ IVA (Argentina),</li>
-<li>Chile: 0,00 CLP</li>
-<li>Mexico: 0,00 MXN</li>
+<li>Your bank information must be up to date and validated. If you&rsquo;ve requested a bank account update, the system will continue sending the funds to your previous account until the PayU Risk team has validated the new account.</li>
+<li>You can schedule transfers based on a specific amount or set a date for automated transfers.</li>
+<li>Each month, the first three local transfers are free of charge. Starting from the fourth transfer in a month, PayU applies a fee in most countries. Note that international transfers incur a fee from the very first transaction. The table below provides an overview of the fees for local and international transfers by country.</li>
 </ul>
-</li>
-<li>The first transfer takes five (5) days to deposit in the bank account. The Risk area of PayU requests a livelihood of sales in the first transfer as an administrative process.</li>
-<li>The second, and the following transfers take maximum three (3) business days.</li>
-<li>The transfers can be programed by Amount and by Date</li>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Local Fee</th>
+<th>International Fee</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Argentina</td>
+<td>110.00 ARS</td>
+<td>753.00 USD</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Chile</td>
+<td>2,000.00 CLP</td>
+<td>50,000.00 CLP</td>
+</tr>
+<tr>
+<td>Colombia</td>
+<td>6,500.00 COP</td>
+<td>30.00 USD</td>
+</tr>
+<tr>
+<td>Mexico</td>
+<td>10.00 MXN</td>
+<td>650.00 MXN</td>
+</tr>
+<tr>
+<td>Panama</td>
+<td>30.00 USD</td>
+<td>44.00 USD</td>
+</tr>
+<tr>
+<td>Peru</td>
+<td>15.00 PEN</td>
+<td>90.00 USD</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Notes</h4>
+<ul>
+<li>Fees are subject to change over time. For the most current information or specific questions, please contact your PayU sales representative.</li>
+<li>International transfers are also subject to a 3% FX fee (subject to negotiation) to cover currency exchange rate costs.</li>
+<li>In Brazil, as PayU is not a licensed payment institution, the system automatically transfers your funds to your bank account daily at no cost. To monitor these transfers, use the <em><strong>Daily payouts</strong></em> option (<em><strong>Transfers</strong></em> &gt; <em><strong>Daily Transfers</strong></em>).</li>
+</ul>
+
+</div>
+
+<ul>
+<li>The first transfer may take up to five (5) days to be deposited in your bank account. As part of an administrative process, the PayU Risk team may request additional documentation to verify your initial sales.</li>
+<li>The second and subsequent transfers will take a maximum of three (3) business days to complete. Business days are typically Monday to Friday, excluding public holidays.</li>
 </ul>
 
 
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Note</h4>
-The times and amounts explained here apply only for local transfer (into the same operation country) for international transfers, contact your sales representative.
+The times mentioned apply only to local transfers. For international transfers, please contact your sales representative.
 </div>
 
-<h2 id="permission-required">Permission required</h2>
+<h2 id="permission-required">Permission Required</h2>
 <p>To have access to this module, you need to have a profile with the following permission enabled:</p>
 <ul>
 <li><em>Transfers</em> &gt; <em>Review</em></li>
 <li><em>Transfers</em> &gt; <em>Manage</em><br>This permission allows you to perform transfers.</li>
 </ul>
 <p>Refer to <a href="../../../en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html">Profiles and Permissions</a> for more information.</p>
-<h2 id="transfer-funds">Transfer funds</h2>
+<h2 id="transfer-funds">Transfer Funds</h2>
 <p>You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.</p>
 <ol>
 <li>Log into your PayU account. In the left menu, expand the <em><strong>Transfers</strong></em> menu and select <em><strong>Transfers</strong></em>.</li>
@@ -565,7 +616,7 @@ The times and amounts explained here apply only for local transfer (into the sam
 </ol>
 <p><img src="../../../assets/Transfers/Transfers_04.png" alt="PrintScreen" width="50%"/><br></p>
 <p>As soon as the request has been successfully sent the transfer is in <em>In progess</em> status and you can see it in the <em><strong>Created transfers report</strong></em> section at the end of the module; also, the amount requested is debited from your balance.<br>If the transfers could not be processed, this amount backs to your account and no fee is charged for this operation.</p>
-<h2 id="schedule-transfers">Schedule transfers</h2>
+<h2 id="schedule-transfers">Schedule Transfers</h2>
 <p>You can automate the transfers and request the a withdrawal given a fixed amount or each certain time.</p>
 
 
@@ -603,11 +654,11 @@ The times and amounts explained here apply only for local transfer (into the sam
 </ol>
 <ul>
 <li>
-<p><strong>Schedule transfers by periodicity</strong><br>
+<p><strong>Schedule Transfers by Periodicity</strong><br>
 This option lets you transfer a given amount every certain time (days, weeks, or months). To schedule this type of transfers, select the option <em>Periodicity</em>.</p>
 </li>
 <li>
-<p><strong>Schedule transfers by balance available</strong><br>
+<p><strong>Schedule Transfers by Available Balance</strong><br>
 This option lets you transfer a given amount every time the balance reaches a specific value. To schedule this type of transfers, select the option <em>Balance available</em>.</p>
 </li>
 </ul>
@@ -651,9 +702,9 @@ This option lets you transfer a given amount every time the balance reaches a sp
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-June 24, 2022:
+November 8, 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation updates (cb34649dc)</b>
 </div>
 </div>
 

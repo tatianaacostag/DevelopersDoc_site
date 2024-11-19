@@ -75,40 +75,91 @@ Review &lt;a href=&#34;../../../en/docs/integrations.html&#34;&gt;Integrations&l
       <description>
         
         
-        &lt;p&gt;In the &lt;em&gt;Transfers&lt;/em&gt; module, you can find the options to transfer the funds collected in your virtual PayU account to your main bank account registered.&lt;/p&gt;
+        &lt;p&gt;In the &lt;em&gt;Transfers&lt;/em&gt; module, you can transfer the funds collected in your virtual PayU account to your registered bank account.&lt;/p&gt;
 &lt;h2 id=&#34;considerations&#34;&gt;Considerations&lt;/h2&gt;
-&lt;p&gt;Keep in mind the following considerations before transferring funds to your bank account.&lt;/p&gt;
+&lt;p&gt;Before initiating a transfer, review the following important considerations:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;You must have your bank information updated and validated. Take into account that if you have requested the update of your bank account, the transfers you make are sent to the former bank account until our Risk team have validated it.&lt;/li&gt;
-&lt;li&gt;As PayU in Brazil is not a payment institution, the funds collected in your PayU account are transferred to your bank account daily for free. To check the status of these transfers, use the &lt;em&gt;&lt;strong&gt;Daily payouts&lt;/strong&gt;&lt;/em&gt; option (&lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Daily Transfers&lt;/strong&gt;&lt;/em&gt;).&lt;/li&gt;
-&lt;li&gt;The first three local transfers performed during the first month are free. Since the 4th transfer request, PayU charges the following values:
-&lt;ul&gt;
-&lt;li&gt;Colombia: 6.500,00 COP + VAT (Colombia)&lt;/li&gt;
-&lt;li&gt;Peru: 10,00 PEN + IGV (Peru),&lt;/li&gt;
-&lt;li&gt;Argentina: $ 10,00 ARS+ IVA (Argentina),&lt;/li&gt;
-&lt;li&gt;Chile: 0,00 CLP&lt;/li&gt;
-&lt;li&gt;Mexico: 0,00 MXN&lt;/li&gt;
+&lt;li&gt;Your bank information must be up to date and validated. If you&amp;rsquo;ve requested a bank account update, the system will continue sending the funds to your previous account until the PayU Risk team has validated the new account.&lt;/li&gt;
+&lt;li&gt;You can schedule transfers based on a specific amount or set a date for automated transfers.&lt;/li&gt;
+&lt;li&gt;Each month, the first three local transfers are free of charge. Starting from the fourth transfer in a month, PayU applies a fee in most countries. Note that international transfers incur a fee from the very first transaction. The table below provides an overview of the fees for local and international transfers by country.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;The first transfer takes five (5) days to deposit in the bank account. The Risk area of PayU requests a livelihood of sales in the first transfer as an administrative process.&lt;/li&gt;
-&lt;li&gt;The second, and the following transfers take maximum three (3) business days.&lt;/li&gt;
-&lt;li&gt;The transfers can be programed by Amount and by Date&lt;/li&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Country&lt;/th&gt;
+&lt;th&gt;Local Fee&lt;/th&gt;
+&lt;th&gt;International Fee&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Argentina&lt;/td&gt;
+&lt;td&gt;110.00 ARS&lt;/td&gt;
+&lt;td&gt;753.00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brazil&lt;/td&gt;
+&lt;td&gt;None&lt;/td&gt;
+&lt;td&gt;None&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chile&lt;/td&gt;
+&lt;td&gt;2,000.00 CLP&lt;/td&gt;
+&lt;td&gt;50,000.00 CLP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Colombia&lt;/td&gt;
+&lt;td&gt;6,500.00 COP&lt;/td&gt;
+&lt;td&gt;30.00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mexico&lt;/td&gt;
+&lt;td&gt;10.00 MXN&lt;/td&gt;
+&lt;td&gt;650.00 MXN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Panama&lt;/td&gt;
+&lt;td&gt;30.00 USD&lt;/td&gt;
+&lt;td&gt;44.00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Peru&lt;/td&gt;
+&lt;td&gt;15.00 PEN&lt;/td&gt;
+&lt;td&gt;90.00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Notes&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Fees are subject to change over time. For the most current information or specific questions, please contact your PayU sales representative.&lt;/li&gt;
+&lt;li&gt;International transfers are also subject to a 3% FX fee (subject to negotiation) to cover currency exchange rate costs.&lt;/li&gt;
+&lt;li&gt;In Brazil, as PayU is not a licensed payment institution, the system automatically transfers your funds to your bank account daily at no cost. To monitor these transfers, use the &lt;em&gt;&lt;strong&gt;Daily payouts&lt;/strong&gt;&lt;/em&gt; option (&lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Daily Transfers&lt;/strong&gt;&lt;/em&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The first transfer may take up to five (5) days to be deposited in your bank account. As part of an administrative process, the PayU Risk team may request additional documentation to verify your initial sales.&lt;/li&gt;
+&lt;li&gt;The second and subsequent transfers will take a maximum of three (3) business days to complete. Business days are typically Monday to Friday, excluding public holidays.&lt;/li&gt;
 &lt;/ul&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-The times and amounts explained here apply only for local transfer (into the same operation country) for international transfers, contact your sales representative.
+The times mentioned apply only to local transfers. For international transfers, please contact your sales representative.
 &lt;/div&gt;
 
-&lt;h2 id=&#34;permission-required&#34;&gt;Permission required&lt;/h2&gt;
+&lt;h2 id=&#34;permission-required&#34;&gt;Permission Required&lt;/h2&gt;
 &lt;p&gt;To have access to this module, you need to have a profile with the following permission enabled:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Transfers&lt;/em&gt; &amp;gt; &lt;em&gt;Review&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Transfers&lt;/em&gt; &amp;gt; &lt;em&gt;Manage&lt;/em&gt;&lt;br&gt;This permission allows you to perform transfers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Refer to &lt;a href=&#34;../../../en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Profiles and Permissions&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;h2 id=&#34;transfer-funds&#34;&gt;Transfer funds&lt;/h2&gt;
+&lt;h2 id=&#34;transfer-funds&#34;&gt;Transfer Funds&lt;/h2&gt;
 &lt;p&gt;You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Log into your PayU account. In the left menu, expand the &lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt; menu and select &lt;em&gt;&lt;strong&gt;Transfers&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
@@ -127,7 +178,7 @@ The times and amounts explained here apply only for local transfer (into the sam
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_04.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;As soon as the request has been successfully sent the transfer is in &lt;em&gt;In progess&lt;/em&gt; status and you can see it in the &lt;em&gt;&lt;strong&gt;Created transfers report&lt;/strong&gt;&lt;/em&gt; section at the end of the module; also, the amount requested is debited from your balance.&lt;br&gt;If the transfers could not be processed, this amount backs to your account and no fee is charged for this operation.&lt;/p&gt;
-&lt;h2 id=&#34;schedule-transfers&#34;&gt;Schedule transfers&lt;/h2&gt;
+&lt;h2 id=&#34;schedule-transfers&#34;&gt;Schedule Transfers&lt;/h2&gt;
 &lt;p&gt;You can automate the transfers and request the a withdrawal given a fixed amount or each certain time.&lt;/p&gt;
 
 
@@ -165,11 +216,11 @@ The times and amounts explained here apply only for local transfer (into the sam
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Schedule transfers by periodicity&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Schedule Transfers by Periodicity&lt;/strong&gt;&lt;br&gt;
 This option lets you transfer a given amount every certain time (days, weeks, or months). To schedule this type of transfers, select the option &lt;em&gt;Periodicity&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Schedule transfers by balance available&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Schedule Transfers by Available Balance&lt;/strong&gt;&lt;br&gt;
 This option lets you transfer a given amount every time the balance reaches a specific value. To schedule this type of transfers, select the option &lt;em&gt;Balance available&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

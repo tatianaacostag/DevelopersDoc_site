@@ -136,7 +136,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -502,7 +502,7 @@
       
       
       
-        <a id="/pt/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../pt/docs/integrations/webcheckout-integration/payment-form.html">Formulário de pagamento</a>
+        <a id="/pt/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../pt/docs/integrations/webcheckout-integration/payment-form.html">Formulário de Pagamento</a>
       
       
       
@@ -540,6 +540,12 @@
   <ul class="side-main">
     <li class="" id="ptdocsintegrationsapi-integrationhtml">
       
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/pci.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpcihtml" href="../../../pt/docs/integrations/api-integration/pci.html">Guia de Segurança e Conformidade PCI</a>
       
       
       
@@ -889,10 +895,12 @@ O responsável pela integração da sua loja com o nosso portal de pagamento (We
             
                 <div class="entry">
                     <h5>
-                        <a href="../../../pt/docs/integrations/webcheckout-integration/payment-form.html">Formulário de pagamento</a>
+                        <a href="../../../pt/docs/integrations/webcheckout-integration/payment-form.html">Formulário de Pagamento</a>
                     </h5>
-                    <p>Com este formulário HTML, você pode enviar a solicitação de transação para nosso portal de pagamento junto com as informações de compra. Envie a solicitação usando o método HTTP POST.</p>
+                    <p>Nesta seção, você aprenderá como enviar dados de transação para o gateway de pagamento da PayU. Este documento fornece as informações necessárias para criar um formulário HTML com os detalhes exigidos da transação e enviá-lo para o nosso sistema usando o método HTTP POST.</p>
                 </div>
+            
+        
             
         
             
@@ -928,7 +936,8 @@ O responsável pela integração da sua loja com o nosso portal de pagamento (We
                     <h5>
                         <a href="../../../pt/docs/integrations/webcheckout-integration/response-page.html">Página de resposta</a>
                     </h5>
-                    <p>A página Resposta é uma página obrigatória e permite mostrar o resultado da transação ao pagador. Nosso sistema redireciona o pagador para esta página assim que a transação for realizada. Os dados com os resultados do pagamento são enviados ao seu sistema com o método HTTP GET.</br>Esta página é invocada para todos os estados da transação: aprovada, rejeitada, em validação, aguardando pagamento (dinheiro) etc.</p>
+                    <p>A página de resposta permite exibir o resultado da transação para o pagador assim que ela for concluída. Embora esta página não seja obrigatória para o fluxo da transação, ela melhora a experiência do pagador ao redirecioná-lo de volta para o seu site. Essa página ajuda a completar a experiência de pagamento, mas considere que o pagador pode fechar o checkout sem acessá-la.
+A integração pode enviar os dados do resultado do pagamento via método HTTP GET, e a sua plataforma pode invocar a página de resposta para todos os estados da transação, incluindo aprovado, rejeitado, em validação e aguardando pagamento (para pagamentos em dinheiro).</p>
                 </div>
             
         

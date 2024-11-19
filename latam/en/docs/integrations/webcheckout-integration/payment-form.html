@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Payment Form | PayU Latam</title><meta property="og:title" content="Payment Form" />
-<meta property="og:description" content="With this HTML form, you can send the transaction request to our payment gateway along with the purchase information. Send the request using the HTTP POST method.
+<meta property="og:description" content="In this section, you&#39;ll learn how to send transaction data to the PayU payment gateway. This document provides the information needed to create an HTML form with the required transaction details and submit it to our system using the HTTP POST method.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/webcheckout-integration/payment-form.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T12:15:27-05:00" />
-<meta property="article:modified_time" content="2023-01-13T15:27:14-05:00" />
+<meta property="article:modified_time" content="2024-11-08T11:23:44-05:00" />
 
 <meta itemprop="name" content="Payment Form">
-<meta itemprop="description" content="With this HTML form, you can send the transaction request to our payment gateway along with the purchase information. Send the request using the HTTP POST method.
+<meta itemprop="description" content="In this section, you&#39;ll learn how to send transaction data to the PayU payment gateway. This document provides the information needed to create an HTML form with the required transaction details and submit it to our system using the HTTP POST method.
 "><meta itemprop="datePublished" content="2021-03-29T12:15:27-05:00" />
-<meta itemprop="dateModified" content="2023-01-13T15:27:14-05:00" />
-<meta itemprop="wordCount" content="1413">
+<meta itemprop="dateModified" content="2024-11-08T11:23:44-05:00" />
+<meta itemprop="wordCount" content="2002">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payment Form"/>
-<meta name="twitter:description" content="With this HTML form, you can send the transaction request to our payment gateway along with the purchase information. Send the request using the HTTP POST method.
+<meta name="twitter:description" content="In this section, you&#39;ll learn how to send transaction data to the PayU payment gateway. This document provides the information needed to create an HTML form with the required transaction details and submit it to our system using the HTTP POST method.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -555,6 +555,12 @@
       
       
       
+        <a id="/en/docs/integrations/api-integration/pci.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpcihtml" href="../../../../en/docs/integrations/api-integration/pci.html">PCI Security and Compliance Guide</a>
+      
+      
+      
+      
+      
         <a id="/en/docs/integrations/api-integration/payments-api-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../en/docs/integrations/api-integration/payments-api-argentina.html">Payments API - Argentina</a>
       
       
@@ -783,15 +789,16 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#considerations">Considerations</a></li>
-    <li><a href="#variables">Variables</a>
+    <li><a href="#parameters">Parameters</a>
       <ul>
-        <li><a href="#considerations-in-variables">Considerations in variables</a></li>
+        <li><a href="#parameters-considerations">Parameters Considerations</a></li>
       </ul>
     </li>
-    <li><a href="#form-example">Form example</a></li>
-    <li><a href="#signature-for-payment-form">Signature for Payment form</a>
+    <li><a href="#html-fields-example">HTML Fields Example</a></li>
+    <li><a href="#payment-form-example">Payment Form Example</a></li>
+    <li><a href="#signature-for-payment-form">Signature for Payment Form</a>
       <ul>
-        <li><a href="#compare-your-signature">Compare your signature</a></li>
+        <li><a href="#generate-a-signature">Generate a Signature</a></li>
       </ul>
     </li>
   </ul>
@@ -851,7 +858,7 @@
             
 <div class="td-content">
 	<h1>Payment Form</h1>
-    <div class="lead">With this HTML form, you can send the transaction request to our payment gateway along with the purchase information. Send the request using the HTTP POST method.</div>
+    <div class="lead">In this section, you&rsquo;ll learn how to send transaction data to the PayU payment gateway. This document provides the information needed to create an HTML form with the required transaction details and submit it to our system using the HTTP POST method.</div>
 	       
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
@@ -860,19 +867,18 @@
 <script src="../../../../js/signature-generator/sha256.js"></script>
 <script src="../../../../js/signature-generator/signature-generator.js"></script>
 <script src="../../../../js/searchcodes.js"></script>
-<p>In this topic, you find how to send data from one transaction to the PayU payment gateway. To do so, You must generate an HTML form with the transaction data using the HTTP POST method and pointing it to our system.</p>
 <h2 id="considerations">Considerations</h2>
 <ul>
-<li>Make sure you have the right <code>merchantId</code>, <code>accountId</code>, and <code>apiKey</code>.</li>
-<li>Use a different payment reference per payment.</li>
-<li>Do not include spaces in parameter values.</li>
-<li>Do not include values with more than two decimal places.</li>
-<li>Do not include special characters in the <code>referenceCode</code> parameter.</li>
+<li>Ensure you have the correct <code>merchantId</code>, <code>accountId</code>, and <code>apiKey</code>.</li>
+<li>Use a unique payment reference for each transaction.</li>
+<li>Avoid including spaces in parameter values.</li>
+<li>Limit decimal values to two places.</li>
+<li>Exclude special characters from the <code>referenceCode</code> parameter.</li>
 </ul>
-<h2 id="variables">Variables</h2>
-<p>The following variables can be included in the Payment form.</p>
+<h2 id="parameters">Parameters</h2>
+<p>You can include the following parameters in the payment form.</p>
 <details>
-<summary>Variables in the payment form</summary>
+<summary>Parameters in the payment form</summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
 <br>
 <div class="variables"></div>
@@ -1100,21 +1106,21 @@
 <tr>
 <td>telephone</td>
 <td>Alphanumeric</td>
-<td>50</td>
+<td>20</td>
 <td>The buyer’s residence phone.</td>
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
 <td>officeTelephone</td>
 <td>Alphanumeric</td>
-<td>50</td>
+<td>20</td>
 <td>The buyer’s daytime phone.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>mobilePhone</td>
 <td>Alphanumeric</td>
-<td>50</td>
+<td>20</td>
 <td>The buyer’s cell phone number. This value will be taken to fill out the credit card form and will be the contact telephone number.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1233,17 +1239,18 @@
 </tbody>
 </table>
 </details>
-<h3 id="considerations-in-variables">Considerations in variables</h3>
+<h3 id="parameters-considerations">Parameters Considerations</h3>
 <ul>
-<li>The <code>tax</code> is the VAT that may be used in some countries and the <code>taxReturnBase</code> is the base value to calculate the VAT. If your product is tax exempt, assign both variables to <code>0</code> (<code>tax=0</code>, <code>taxReturnBase=0</code>).</li>
-<li>If some elements have the tax and it does not apply to others, you must perform the following calculation to find out how to send the values to the payment platform.</li>
+<li>The <code>tax</code> parameter represents VAT, applicable in certain countries, while <code>taxReturnBase</code> is the base amount to calculate the VAT. If your product is tax-exempt, set both variables to <code>0</code> (<code>tax=0</code>, <code>taxReturnBase=0</code>).</li>
+<li>When some products are taxed, while others are not, calculate and set values as shown in the table below to ensure accurate submission to the payment platform.</li>
 </ul>
+<h4 id="vat-calculation-example">VAT Calculation Example:</h4>
 <table>
 <thead>
 <tr>
 <th>Product</th>
-<th>taxReturnBase</th>
-<th>tax</th>
+<th><code>taxReturnBase</code></th>
+<th><code>tax</code></th>
 <th>Amount</th>
 </tr>
 </thead>
@@ -1278,14 +1285,14 @@
 
 <div class="alert alert-warning" role="alert">
 <h4 class="alert-heading">Important</h4>
-Tax + taxReturnBase cannot be greater than the Total Value of each product.
+The sum of <code>tax</code> + <code>taxReturnBase</code> must not exceed the total value of each product.
 </div>
 
 <ul>
-<li>For businesses registered in Colombia that belong to the program <em>Régimen común</em>, if you don&rsquo;t send the tax, PayU automatically calculates the tax using 19%. If your business belongs to the program <em>Régimen simplificado</em>, if you don&rsquo;t send the tax, PayU automatically assigns the value as zero (0).</li>
+<li>For businesses in Colombia registered under the <em>Régimen Común</em>, if <code>tax</code> is not provided, PayU automatically calculates it at 19%. For businesses under the <em>Régimen Simplificado</em>, if <code>tax</code> is not specified, PayU assigns a value of zero (0).</li>
 </ul>
-<h2 id="form-example">Form example</h2>
-<p>The following is an example of a basic Payment form using only the mandatory fields and pointing the request to the sandbox environment (test mode).</p>
+<h2 id="html-fields-example">HTML Fields Example</h2>
+<p>The following is an example of the mandatory fields for a payment form in HTML format, pointing the request to the sandbox environment (test mode).</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">form</span> <span style="color:#c4a000">method</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;post&#34;</span> <span style="color:#c4a000">action</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;merchantId&#34;</span>      <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span>  <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;508029&#34;</span>   <span style="color:#000;font-weight:bold">&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;accountId&#34;</span>       <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span>  <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;512321&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>
@@ -1311,14 +1318,1298 @@ Tax + taxReturnBase cannot be greater than the Total Value of each product.
 <p>The URL configured in <code>action</code> depends on the environment:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>Test: https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/
 </span></span><span style="display:flex;"><span>Production: https://checkout.payulatam.com/ppp-web-gateway-payu/
-</span></span></code></pre></div><h2 id="signature-for-payment-form">Signature for Payment form</h2>
+</span></span></code></pre></div><h2 id="payment-form-example">Payment Form Example</h2>
+<p>This dynamic payment form example is designed for testing in our sandbox environment. It offers a glimpse into the potential fields and features you can incorporate into your own payment forms. Below is an overview of its key features:</p>
+<ul>
+<li>
+<p><strong>Transaction Signature Generation:</strong> The form calculates a signature string using the PayU LATAM API key, merchant ID, and various user inputs such as payment method and bank information. This signature is hashed using a specified algorithm (MD5, SHA, or SHA256) to ensure secure transactions. For more details, refer to <a href="../../../../en/docs/integrations/webcheckout-integration/payment-form.html#signature-for-payment-form">Signature for Payment Form</a></p>
+</li>
+<li>
+<p><strong>Dynamic Form Population:</strong> Based on the selected country and account, the form populates various fields such as document types, billing information (e.g., city, state, zip code), and payer information. This allows the form to adjust for region-specific data requirements (e.g., CPF for Brazil or CUIT for Argentina).</p>
+</li>
+<li>
+<p><strong>Visibility Management:</strong> Several functions are included to dynamically show or hide fields based on the type of account selected. This is particularly useful for handling specific cases like PSE banks in Colombia or additional fields for airlines and travel agencies.</p>
+</li>
+<li>
+<p><strong>Shipping Information Handling:</strong> The form allows the user to either use the billing information as the shipping address or specify separate shipping details. If the user doesn&rsquo;t select an alternate shipping option, the billing information is used by default.</p>
+</li>
+<li>
+<p><strong>Event Listeners and Form Submission:</strong> The page can use event listeners to update form fields when certain input values (e.g., account ID) change and ensures the form submission process respects user input, with fallback options in place (e.g., using billing info if no shipping option is selected).</p>
+</li>
+</ul>
+<div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>PayU LATAM WebCheckout</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+
+
+<body>
+  
+  <div class="panel">
+    
+    <div>
+      <h2>Payment Form Example</h2>
+    </div>
+    <div>
+      <hr class="solid">
+    </div>
+    <div>
+      <div class="form-container">
+
+        
+        <form id="webcheckout-form" method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
+
+          
+          <div class="expansion-panel">
+            <div class="expansion-panel-header" onclick="togglePanel(this)">
+              <label class="label">Click here to generate random information.</label>
+
+            </div>
+
+            <div class="expansion-panel-content">
+
+              <p class="subtitle">
+                Please select an account ID, enter any additional details you want to test, and then click on the "Generate Random Information" button.
+                <br><br>
+                Remember, these fields should be hidden from the user.
+              </p>
+
+              
+              <div class="form-row">
+                <label for="lng">lng</label>
+                <select id="lng" name="lng" type="text" class="field">
+                  <option value="">Select the language: es, pt, or en.</option>
+                  <option value="es">Español</option>
+                  <option value="pt">Português</option>
+                  <option value="en">English</option>
+                </select>
+              </div>
+
+              
+              <div class="form-row">
+                <label for="merchantId">merchantId</label>
+                <input id="merchantId" name="merchantId" type="text" class="field" value="508029" readonly>
+              </div>
+
+              
+              <div class="form-row">
+                <label for="accountId">accountId</label>
+                <select id="accountId" name="accountId" class="field">
+                  <option value="512322">Account ID for Argentina: 512322</option>
+                  <option value="516684">Account ID for Argentina with 3DS: 516684</option>
+                  <option value="512327">Account ID for Brazil: 512327</option>
+                  <option value="516685">Account ID for Brazil with 3DS: 516685</option>
+                  <option value="512325">Account ID for Chile: 512325</option>
+                  <option value="512321">Account ID for Colombia: 512321</option>
+                  <option value="516686">Account ID for Colombia with 3DS: 516686</option>
+                  <option value="513128">Account ID for Colombian Airlines: 513128</option>
+                  <option value="512548">Account ID for Travel Agencies in Colombia: 512548</option>
+                  
+                  <option value="512324">Account ID for Mexico: 512324</option>
+                  <option value="512326">Account ID for Panama: 512326</option>
+                  <option value="512323">Account ID for Peru: 512323</option>
+                  <option value="516688">Account ID for Peru with 3DS: 516688</option>
+                </select>
+              </div>
+
+              
+              <div class="form-row">
+                <label for="algorithmSignature">algorithmSignature</label>
+                <select id="algorithmSignature" name="algorithmSignature" class="field">
+                  <option value="SHA256">SHA256</option>
+                  <option value="SHA">SHA</option>
+                  <option value="MD5">MD5</option>
+                </select>
+              </div>
+
+              
+              <div class="form-row">
+                <label for="signature">signature</label>
+                <input id="signature" name="signature" type="text" class="field" placeholder="Transaction signature">
+              </div>
+
+              
+              <div class="form-row">
+                <label for="sourceUrl">sourceUrl</label>
+                <input id="sourceUrl" name="sourceUrl" type="url" class="field"
+                  placeholder="The URL where the payment button is located.">
+              </div>
+
+              <div class="form-row">
+                <label for="responseUrl">responseUrl</label>
+                <input id="responseUrl" name="responseUrl" type="url" class="field"
+                  placeholder="The URL to return the customer to your site.">
+              </div>
+
+              <div class="form-row">
+                <label for="confirmationUrl">confirmationUrl</label>
+                <input id="confirmationUrl" name="confirmationUrl" type="url" class="field"
+                  placeholder="Your webhook URL.">
+              </div>
+
+              <div class="form-row">
+                <label for="approvedResponseUrl">approvedResponseUrl</label>
+                <input id="approvedResponseUrl" name="approvedResponseUrl" type="url" class="field"
+                  placeholder="Optional. The URL to redirect the customer to your site after the transaction is approved.">
+              </div>
+
+              <div class="form-row">
+                <label for="pendingResponseUrl">pendingResponseUrl</label>
+                <input id="pendingResponseUrl" name="pendingResponseUrl" type="url" class="field"
+                  placeholder="Optional. The URL to redirect the customer to your site when the transaction is pending.">
+              </div>
+
+              <div class="form-row">
+                <label for="declinedResponseUrl">declinedResponseUrl</label>
+                <input id="declinedResponseUrl" name="declinedResponseUrl" type="url" class="field"
+                  placeholder="Optional. The URL to redirect the customer to your site after the transaction is declined.">
+              </div>
+
+              <div class="form-row">
+                <label for="expirationDate">expirationDate</label>
+                <input id="expirationDate" name="expirationDate" type="text" class="field"
+                  placeholder="Expiration date for cash payments. Format: YYYY-MM-DD HH:mm:ss.">
+              </div>
+
+              <div class="form-row" style="position: relative;">
+                <label for="paymentMethods">paymentMethods
+                  <span class="info-icon" onclick="showTooltip('tooltip1')">&#9432;</span>
+                </label>
+                <div id="tooltip1" class="tooltip" style="display: none;">
+                  When the user accesses the payment link, only the specified payment methods will be available for
+                  selection. <a
+                    href="https://developers.payulatam.com/latam/en/docs/getting-started/select-your-payment-method.html"
+                    target="_blank" style="color: blue; text-decoration: underline;">Click here</a> to view the valid
+                  payment methods.
+                </div>
+                <input id="paymentMethods" name="paymentMethods" type="text" class="field"
+                  placeholder="For example, VISA,MASTERCARD or including installments VISA-1-3,MASTERCARD-3-6-9">
+              </div>
+
+              <div class="form-row" style="position: relative;">
+                <label for="selectedPaymentMethod">selectedPaymentMethod
+                  <span class="info-icon" onclick="showTooltip('tooltip2')">&#9432;</span>
+                </label>
+                <div id="tooltip2" class="tooltip" style="display: none;">
+                  When the user accesses the payment link, the specified payment method will already be preselected.
+                </div>
+                <input id="selectedPaymentMethod" name="selectedPaymentMethod" type="text" class="field"
+                  placeholder="For example, MASTERCARD, automatically preselect the payment method option">
+              </div>
+
+              <div class="form-row" style="position: relative;">
+                <label for="paymentMethodsDescription">paymentMethodsDescription
+                  <span class="info-icon" onclick="showTooltip('tooltip3')">&#9432;</span>
+                </label>
+                <div id="tooltip3" class="tooltip" style="display: none;">
+                  The value entered will appear in the Query API response at:
+                  result.payload.transactions.extraParameters.PAYMENT_METHODS_DESCRIPTION
+                </div>
+                <input id="paymentMethodsDescription" name="paymentMethodsDescription" type="text" class="field"
+                  placeholder="Enter a description for the payment methods">
+              </div>
+
+              <div class="form-row">
+                <label for="iin">iin</label>
+                <input id="iin" name="iin" type="text" class="field"
+                  placeholder="List of supported BINs, e.g., 555555,411111">
+              </div>
+
+              <div class="form-row" id="pseBanks-field">
+                <label for="pseBanks">pseBanks</label>
+                <input id="pseBanks" name="pseBanks" type="text" class="field"
+                  placeholder="Colombian PSE bank codes separated by commas, e.g., 1022 for BANCO UNION COLOMBIANO">
+              </div>
+
+              <div class="form-row">
+                <label for="partnerId">partnerId</label>
+                <input id="partnerId" name="partnerId" type="text" class="field"
+                  placeholder="Optional. Enter the partner name, e.g., ZOOZ">
+              </div>
+
+              <div class="form-row" style="position: relative;">
+                <label for="template">template
+                  <span class="info-icon" onclick="showTooltip('tooltip4')">&#9432;</span>
+                </label>
+                <div id="tooltip4" class="tooltip" style="display: none;">
+                  The entered value will appear in the Query API response at:
+                  result.payload.transactions.extraParameters.TEMPLATE
+                </div>
+                <input id="template" name="template" type="text" class="field" placeholder="Template">
+              </div>
+
+              <div class="form-row">
+                <label for="extra1">extra1</label>
+                <input id="extra1" name="extra1" type="text" class="field"
+                  placeholder="Additional field to send information about the purchase.">
+              </div>
+
+              <div class="form-row">
+                <label for="extra2">extra2</label>
+                <input id="extra2" name="extra2" type="text" class="field"
+                  placeholder="Additional field to send information about the purchase.">
+              </div>
+
+              <div class="form-row">
+                <label for="extra3">extra3</label>
+                <input id="extra3" name="extra3" type="text" class="field"
+                  placeholder="Additional field to send information about the purchase.">
+              </div>
+
+              <div class="form-row">
+                <label for="extra4">extra4</label>
+                <input id="extra4" name="extra4" type="text" class="field"
+                  placeholder="Additional field to send information about the purchase.">
+              </div>
+
+              <div class="form-row">
+                <label for="displayShippingInformation">displayShippingInformation</label>
+                <select id="displayShippingInformation" name="displayShippingInformation" class="field">
+                  <option value="">Request shipping information.</option>
+                  <option value="1">Set to 1 to enable.</option>
+                  <option value="0">Set to 0 to disable.</option>
+                </select>
+              </div>
+
+              <div class="form-row" style="position: relative;">
+                <label for="additionalDeliveryDays">additionalDeliveryDays
+                  <span class="info-icon" onclick="showTooltip('tooltip5')">&#9432;</span>
+                </label>
+                <div id="tooltip5" class="tooltip" style="display: none;">
+                  The entered value will appear in the Query API response at:
+                  result.payload.transactions.extraParameters.ADDITIONAL_DELIVERY_DAYS
+                </div>
+                <input id="additionalDeliveryDays" name="additionalDeliveryDays" type="text" class="field"
+                  placeholder="Additional delivery days for the order.">
+              </div>
+
+              <div class="form-row" style="position: relative;">
+                <label for="buyerCommentsLabel">buyerCommentsLabel
+                  <span class="info-icon" onclick="showTooltip('tooltip6')">&#9432;</span>
+                </label>
+                <div id="tooltip6" class="tooltip" style="display: none;">
+                  The entered value will appear in the Query API response at:
+                  result.payload.transactions.extraParameters.BUYER_COMMENTS_LABEL
+                </div>
+                <input id="buyerCommentsLabel" name="buyerCommentsLabel" type="text" class="field"
+                  placeholder="Buyer comments">
+              </div>
+
+              
+
+              <div class="form-row">
+                <label for="test">test</label>
+                <select id="test" name="test" class="field">
+                  <option value="">Select test mode.</option>
+                  <option value="1">Set to 1 for test mode</option>
+                  <option value="0">Set to 0 for production mode</option>
+                </select>
+              </div>
+
+              <div id="message" class="message"></div>
+
+              
+              <button type="button" id="generate-random-info-button" class="btn-secondary">Generate Random Information</button>
+
+            </div>
+
+          </div>
+
+          <div>
+            <hr class="solid">
+          </div>
+
+          
+
+          <div id="payment-info">
+            <label class="label">Order Summary</label>
+
+            <div class="form-row">
+              <label for="description">description</label>
+              <input id="description" name="description" type="text" class="field" placeholder="Order description">
+            </div>
+
+            <div class="form-row">
+              <label for="referenceCode">referenceCode</label>
+              <input id="referenceCode" name="referenceCode" type="text" class="field"
+                placeholder="Order reconciliation ID">
+            </div>
+
+            <div class="form-row">
+              <label for="amount">amount</label>
+              <input id="amount" name="amount" type="text" class="field" placeholder="Total order amount">
+            </div>
+
+            <div class="form-row">
+              <label for="tax">tax</label>
+              <input id="tax" name="tax" type="text" class="field" placeholder="Order tax amount">
+            </div>
+
+            <div class="form-row">
+              <label for="taxReturnBase">taxReturnBase</label>
+              <input id="taxReturnBase" name="taxReturnBase" class="field" type="text"
+                placeholder="Order subtotal amount">
+            </div>
+
+            <div class="form-row" style="position: relative;">
+              <label for="discount">discount
+                <span class="info-icon" onclick="showTooltip('tooltip7')">&#9432;</span>
+              </label>
+              <div id="tooltip7" class="tooltip" style="display: none;">
+                The entered value will appear in the Query API response at:
+                result.payload.transactions.extraParameters.DISCOUNT
+              </div>
+              <input id="discount" name="discount" type="text" class="field"
+                placeholder="Optional. Order discount amount">
+            </div>
+
+            <div class="form-row">
+              <label for="currency">currency</label>
+              <select id="currency" name="currency" class="field">
+                <option value="ARS">ARS</option>
+                <option value="BRL">BRL</option>
+                <option value="CLP">CLP</option>
+                <option value="COP">COP</option>
+                
+                <option value="MXN">MXN</option>
+                <option value="PEN">PEN</option>
+                <option value="USD">USD</option>
+              </select>
+            </div>
+
+                        
+                        <div class="form-row" id="airline-field">
+                          <label for="airline">airline</label>
+                          <input id="airline" name="airline" type="text" class="field"
+                            placeholder="Enter the airline code, e.g., 29 for AVIANCA Nacional">
+                        </div>
+            
+                        <div class="form-row" id="additionalValue-field">
+                          <label for="additionalValue">additionalValue</label>
+                          <input id="additionalValue" name="additionalValue" type="text" class="field"
+                            placeholder="Enter airport fees and taxes">
+                        </div>
+            
+                        
+                        <div class="form-row" id="administrativeFee-field">
+                          <label for="administrativeFee">administrativeFee</label>
+                          <input id="administrativeFee" name="administrativeFee" type="text" class="field"
+                            placeholder="Enter the administrative fee">
+                        </div>
+            
+                        <div class="form-row" id="taxAdministrativeFee-field">
+                          <label for="taxAdministrativeFee">taxAdministrativeFee</label>
+                          <input id="taxAdministrativeFee" name="taxAdministrativeFee" type="text" class="field"
+                            placeholder="Enter the tax on the administrative fee">
+                        </div>
+            
+                        <div class="form-row" id="taxAdministrativeFeeReturnBase-field">
+                          <label for="taxAdministrativeFeeReturnBase">taxAdministrativeFeeReturnBase</label>
+                          <input id="taxAdministrativeFeeReturnBase" name="taxAdministrativeFeeReturnBase" type="text" class="field"
+                            placeholder="Enter the tax return base for the administrative fee">
+                        </div>
+            
+                        <div>
+                          <label class="label">Billing Information</label>
+          
+                        
+                        
+                        <div class="form-row">
+                          <label for="payerFullName">payerFullName</label>
+                          <input id="payerFullName" name="payerFullName" type="text" class="field"
+                            placeholder="Payer's full name">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="payerEmail">payerEmail</label>
+                          <input id="payerEmail" name="payerEmail" type="email" class="field"
+                            placeholder="Payer's email address">
+                        </div>
+                        
+                        <div class="form-row" style="position: relative;">
+                          <label for="payerOfficePhone">payerOfficePhone
+                            <span class="info-icon" onclick="showTooltip('tooltip8')">&#9432;</span>
+                          </label>
+                          <div id="tooltip8" class="tooltip" style="display: none;">
+                            This is the payer's primary phone number.
+                          </div>
+                          <input id="payerOfficePhone" name="payerOfficePhone" type="text" class="field"
+                            placeholder="Payer's contact phone number">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="payerPhone">payerPhone</label>
+                          <input id="payerPhone" name="payerPhone" type="tel" class="field"
+                            placeholder="Payer's phone number">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="payerMobilePhone">payerMobilePhone</label>
+                          <input id="payerMobilePhone" name="payerMobilePhone" type="tel" class="field"
+                            placeholder="Payer's mobile phone number">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="payerDocumentType">payerDocumentType</label>
+                          <input id="payerDocumentType" name="payerDocumentType" type="text" class="field"
+                            placeholder="Payer's document type">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="payerDocument">payerDocument</label>
+                          <input id="payerDocument" name="payerDocument" type="text" class="field"
+                            placeholder="Payer's document number">
+                        </div>              
+
+                        <div class="form-row">
+                          <label for="billingCountry">billingCountry</label>
+                          <input id="billingCountry" name="billingCountry" type="text" class="field"
+                            placeholder="Payer's billing country, e.g. AR, BR, CL, CO, CR, SV, GT, HN, MX, PA, PE.">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="payerState">payerState</label>
+                          <input id="payerState" name="payerState" type="text" class="field"
+                            placeholder="Payer's billing state in ISO 3166 code, e.g. set SP for São Paulo (BR) or set AR-C for Buenos Aires (AR).">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="billingCity">billingCity</label>
+                          <input id="billingCity" name="billingCity" type="text" class="field"
+                            placeholder="Payer's billing city">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="billingAddress">billingAddress</label>
+                          <input id="billingAddress" name="billingAddress" type="text" class="field"
+                            placeholder="Payer's billing address">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="billingAddress2">billingAddress2</label>
+                          <input id="billingAddress2" name="billingAddress2" type="text" class="field"
+                            placeholder="Payer's billing address 2">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="billingAddress3">billingAddress3</label>
+                          <input id="billingAddress3" name="billingAddress3" type="text" class="field"
+                            placeholder="Payer's billing address 3">
+                        </div>
+                        
+                        <div class="form-row">
+                          <label for="zipCode">zipCode</label>
+                          <input id="zipCode" name="zipCode" type="text" class="field" placeholder="Payer's postal code">
+                        </div>
+            </div>
+
+            <div></div>
+
+            <label class="label">Shipping Information</label>
+
+            
+
+<div class="checkbox-address">
+  <input type="radio" id="shipping-option1" name="shipping-option" onclick="useBillingInformation()" checked>
+  <label for="shipping-option1">Use billing information</label>
+</div>
+
+<div class="checkbox-address">
+  <input type="radio" id="shipping-option2" name="shipping-option" onclick="toggleShippingAddress()">
+  <label for="shipping-option2">Different from billing information?</label>
+</div>
+
+<div class="checkbox-address">
+  <input type="radio" id="shipping-option3" name="shipping-option" onclick="setEmptyShippingInformation()">
+  <label for="shipping-option3">The order does not have shipping information</label>
+</div>
+
+<div id="shipping-information">
+  <div class="form-row">
+    <label for="buyerFullName">buyerFullName</label>
+    <input id="buyerFullName" name="buyerFullName" type="text" class="field"
+      placeholder="Buyer's full name">
+  </div>
+
+  <div class="form-row">
+    <label for="buyerEmail">buyerEmail</label>
+    <input id="buyerEmail" name="buyerEmail" type="email" class="field"
+      placeholder="Buyer's email">
+  </div>
+
+  <div class="form-row">
+    <label for="buyerDocumentType">buyerDocumentType</label>
+    <input id="buyerDocumentType" name="buyerDocumentType" type="text" class="field"
+      placeholder="Buyer's document type">
+  </div>
+
+  <div class="form-row">
+    <label for="buyerDocument">buyerDocument</label>
+    <input id="buyerDocument" name="buyerDocument" type="text" class="field"
+      placeholder="Buyer's document number">
+  </div>
+
+  <div class="form-row" style="position: relative;">
+    <label for="officeTelephone">officeTelephone
+      <span class="info-icon" onclick="showTooltip('tooltip9')">&#9432;</span>
+    </label>
+    <div id="tooltip9" class="tooltip" style="display: none;">
+      This is the buyer's main phone number.
+    </div>
+    <input id="officeTelephone" name="officeTelephone" type="text" class="field"
+      placeholder="Buyer's contact phone number">
+  </div>
+
+  <div class="form-row">
+    <label for="telephone">telephone</label>
+    <input id="telephone" name="telephone" type="tel" class="field" placeholder="Buyer's phone">
+  </div>
+
+  <div class="form-row">
+    <label for="mobilePhone">mobilePhone</label>
+    <input id="mobilePhone" name="mobilePhone" type="tel" class="field"
+      placeholder="Buyer's mobile phone number">
+  </div>
+
+  <div class="form-row">
+    <label for="shippingCountry">shippingCountry</label>
+    <input id="shippingCountry" name="shippingCountry" type="text" class="field"
+      placeholder="Buyer's shipping country, e.g. AR, BR, CL, CO, CR, SV, GT, HN, MX, PA, PE.">
+  </div>
+
+  <div class="form-row">
+    <label for="shippingState">shippingState</label>
+    <input id="shippingState" name="shippingState" type="text" class="field"
+      placeholder="Buyer's shipping state in ISO 3166 code, e.g. set SP for São Paulo (BR) or set AR-C for Buenos Aires (AR).">
+  </div>
+
+  <div class="form-row">
+    <label for="shippingCity">shippingCity</label>
+    <input id="shippingCity" name="shippingCity" type="text" class="field"
+      placeholder="Buyer's shipping city">
+  </div>
+
+  <div class="form-row">
+    <label for="shippingAddress">shippingAddress</label>
+    <input id="shippingAddress" name="shippingAddress" type="text" class="field"
+      placeholder="Buyer's shipping address">
+  </div>
+
+  <div class="form-row">
+    <label for="shippingAddress2">shippingAddress2</label>
+    <input id="shippingAddress2" name="shippingAddress2" type="text" class="field"
+      placeholder="Buyer's shipping address 2">
+  </div>
+
+  <div class="form-row">
+    <label for="shippingAddress3">shippingAddress3</label>
+    <input id="shippingAddress3" name="shippingAddress3" type="text" class="field"
+      placeholder="Buyer's shipping address 3">
+  </div>
+
+  <div class="form-row">
+    <label for="payerShippingPostalCode">payerShippingPostalCode</label>
+    <input id="payerShippingPostalCode" name="payerShippingPostalCode" type="text" class="field"
+      placeholder="Buyer's postal code">
+  </div>
+</div>
+
+
+<div>
+  <input class="btn" name="Submit" type="submit" value="Pay with PayU">
+</div>
+</form>
+</div>
+</div>
+</div>
+</body>
+
+
+<script>
+
+  const accountIdCountry = {
+    "512322": "AR", 
+    "516684": "AR", 
+    "512327": "BR", 
+    "516685": "BR", 
+    "512325": "CL", 
+    "512321": "CO", 
+    "516686": "CO", 
+    "513128": "CO", 
+    "512548": "CO", 
+    "516677": "CR", 
+    "516678": "SV", 
+    "516679": "GT", 
+    "516680": "HN", 
+    "512324": "MX", 
+    "512326": "PA", 
+    "512323": "PE", 
+    "516688": "PE"  
+  };
+
+  const countryNames = {
+    "AR": "Argentina",
+    "BR": "Brazil",
+    "CL": "Chile",
+    "CO": "Colombia",
+    "CR": "Costa Rica",
+    "SV": "El Salvador",
+    "GT": "Guatemala",
+    "HN": "Honduras",
+    "MX": "Mexico",
+    "PA": "Panama",
+    "PE": "Peru"
+  };
+
+  const countryCurrency = {
+    "AR": "ARS",
+    "BR": "BRL",
+    "CL": "CLP",
+    "CO": "COP",
+    "CR": "CRC",
+    "SV": "USD",
+    "GT": "GTQ",
+    "HN": "HNL",
+    "MX": "MXN",
+    "PA": "USD",
+    "PE": "PEN"
+  };
+
+  const documentTypes = [
+    { iso: "CC", description: "Citizenship card", country: "Colombia" },
+    { iso: "CE", description: "Foreign citizenship card", country: "Colombia, Peru" },
+    { iso: "CEL", description: "When identified by the mobile line", country: "Colombia" },
+    { iso: "CEP", description: "Electronic Payment Receipt", country: "Mexico" },
+    { iso: "CI", description: "Identity Card", country: "Argentina, Chile" },
+    { iso: "CNPJ", description: "National Register of Legal Entities", country: "Brazil" },
+    { iso: "CPF", description: "Registration of Individuals", country: "Brazil" },
+    { iso: "CUIL", description: "Unique Labor Identification Code", country: "Argentina" },
+    { iso: "CUIT", description: "Single Tax identification", country: "Argentina" },
+    { iso: "CURP", description: "Unique Population Registry Code", country: "Mexico" },
+    { iso: "DE", description: "Foreign Identification Number", country: "Peru" },
+    { iso: "DNI", description: "National Identity Document", country: "Argentina, Peru, Chile" },
+    { iso: "DNIE", description: "National Identity Document - Electronic", country: "Argentina, Peru, Chile" },
+    { iso: "EIN", description: "Employer Identification Number", country: "Peru" },
+    { iso: "IFE", description: "Federal Electoral Institute", country: "Mexico" },
+    { iso: "LC", description: "Civic Notebook", country: "Argentina" },
+    { iso: "LE", description: "Book enlistment", country: "Argentina" },
+    { iso: "NIT", description: "Tax identification number", country: "Colombia" },
+    { iso: "RC", description: "Birth certificate", country: "Colombia" },
+    { iso: "RFC", description: "Federal taxpayer registry", country: "Mexico" },
+    { iso: "RUC", description: "Unique Taxpayer Registration", country: "Peru" },
+    { iso: "RUN", description: "Unique National Role", country: "Chile" },
+    { iso: "RUT", description: "Unique Tributary Role", country: "Chile" },
+    { iso: "SIEM", description: "Mexican Business Information System", country: "Mexico" },
+    { iso: "TI", description: "Identity Card", country: "Colombia" }
+  ];
+
+  
+  function togglePanel(header) {
+    const panel = header.parentElement;
+    panel.classList.toggle('active');
+  }
+
+  
+  function showTooltip(tooltipId) {
+    var tooltip = document.getElementById(tooltipId);
+    if (tooltip.style.display === "none" || tooltip.style.display === "") {
+      tooltip.style.display = "inline-flex";
+    } else {
+      tooltip.style.display = "none";
+    }
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('shipping-information').style.display = 'none';
+  });
+
+  
+  function useBillingInformation() {
+    document.getElementById('shipping-information').style.display = 'none';
+
+    document.getElementById('buyerFullName').value = document.getElementById('payerFullName').value;
+    document.getElementById('buyerEmail').value = document.getElementById('payerEmail').value;
+    document.getElementById('buyerDocumentType').value = document.getElementById('payerDocumentType').value;
+    document.getElementById('buyerDocument').value = document.getElementById('payerDocument').value;
+    document.getElementById('officeTelephone').value = document.getElementById('payerOfficePhone').value;
+    document.getElementById('telephone').value = document.getElementById('payerPhone').value;
+    document.getElementById('mobilePhone').value = document.getElementById('payerMobilePhone').value;
+    document.getElementById('shippingCountry').value = document.getElementById('billingCountry').value;
+    document.getElementById('shippingState').value = document.getElementById('payerState').value;
+    document.getElementById('shippingCity').value = document.getElementById('billingCity').value;
+    document.getElementById('shippingAddress').value = document.getElementById('billingAddress').value;
+    document.getElementById('shippingAddress2').value = document.getElementById('billingAddress2').value;
+    document.getElementById('shippingAddress3').value = document.getElementById('billingAddress3').value;
+    document.getElementById('payerShippingPostalCode').value = document.getElementById('zipCode').value;
+  }
+
+  
+  function toggleShippingAddress() {
+    document.getElementById('shipping-information').style.display = 'block';
+  }
+
+  
+  function setEmptyShippingInformation() {
+    document.getElementById('shipping-information').style.display = 'none';
+
+    document.getElementById('buyerFullName').value = '';
+    document.getElementById('buyerEmail').value = '';
+    document.getElementById('buyerDocumentType').value = '';
+    document.getElementById('buyerDocument').value = '';
+    document.getElementById('officeTelephone').value = '';
+    document.getElementById('telephone').value = '';
+    document.getElementById('mobilePhone').value = '';
+    document.getElementById('shippingCountry').value = '';
+    document.getElementById('shippingState').value = '';
+    document.getElementById('shippingCity').value = '';
+    document.getElementById('shippingAddress').value = '';
+    document.getElementById('shippingAddress2').value = '';
+    document.getElementById('shippingAddress3').value = '';
+    document.getElementById('payerShippingPostalCode').value = '';
+  }
+
+  
+  
+  document.getElementById('generate-random-info-button').addEventListener('click', function (event) {
+    event.preventDefault();
+    generateRandomInfo();
+  });
+
+  
+  function generateSignature(signatureString, hashType) {
+    let hashFunction;
+    switch (hashType) {
+      case "MD5":
+        hashFunction = CryptoJS.MD5;
+        break;
+      case "SHA":
+        hashFunction = CryptoJS.SHA1;
+        break;
+      case "SHA256":
+        hashFunction = CryptoJS.SHA256;
+        break;
+      default:
+        console.log("Invalid hash type");
+        return null;
+    }
+    return hashFunction(signatureString).toString();
+  }
+
+  
+  function getFormattedDate() {
+    let date = new Date();
+    date.setDate(date.getDate() + 1); 
+
+    let year = date.getFullYear();
+    let month = String(date.getMonth() + 1).padStart(2, '0'); 
+    let day = String(date.getDate()).padStart(2, '0');
+    let hours = String(date.getHours()).padStart(2, '0');
+    let minutes = String(date.getMinutes()).padStart(2, '0');
+    let seconds = String(date.getSeconds()).padStart(2, '0');
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  }
+
+  
+  function showMessage(message, color) {
+    document.getElementById("message").textContent = message.toString();
+    document.getElementById("message").style.color = color;
+  }
+
+  
+  function generateRandomInfo() {
+
+    const accountId = document.getElementById('accountId').value;
+    const countryCode = accountIdCountry[accountId];
+    const countryName = countryNames[countryCode];
+    const currency = countryCurrency[countryCode];
+
+    
+    const amount = (Math.random() * 10000 + 1).toFixed(2);
+
+    
+    const taxRate = 0.19; 
+    const taxReturnBase = (amount / (1 + taxRate)).toFixed(2);
+    const tax = (amount - taxReturnBase).toFixed(2);
+
+    
+    const description = 'Order description for ' + countryName;
+    const now = new Date();
+    const localDate = now.toLocaleDateString();
+    const localTime = now.toLocaleTimeString();
+    const referenceCode = 'REF' + Math.floor(Math.random() * 1000000) + ' ' + localDate + ' ' + localTime;
+
+    
+    const countryDocuments = documentTypes.filter(doc => doc.country.includes(countryName) || doc.country.includes('Other'));
+
+    
+    let randomDoc;
+    if (countryDocuments.length > 0) {
+      randomDoc = countryDocuments[Math.floor(Math.random() * countryDocuments.length)];
+    } else {
+      randomDoc = { iso: "PP", description: "Passport", country: "Other" };
+    }
+
+  
+
+  
+  if (document.getElementById('lng').value !== 'en') {
+    
+    if (countryCode === 'BR') {
+      document.getElementById('lng').value = 'pt';
+    } else {
+      document.getElementById('lng').value = 'es';
+    }
+  }
+
+  
+  document.getElementById('description').value = description;
+  document.getElementById('referenceCode').value = referenceCode;
+  document.getElementById('taxReturnBase').value = taxReturnBase;
+  document.getElementById('tax').value = tax;
+  document.getElementById('amount').value = amount;
+  document.getElementById('currency').value = currency;
+
+  
+  document.getElementById('payerFullName').value = 'APPROVED';
+  document.getElementById('payerEmail').value = 'pruebas@payulatam.com';
+  document.getElementById('payerOfficePhone').value = '3001234567';
+  document.getElementById('payerPhone').value = '1234567';
+  document.getElementById('payerMobilePhone').value = '1234567';
+  document.getElementById('payerDocumentType').value = randomDoc.iso;
+
+  let payerDocumentValue = '1234567890'; 
+
+  if (countryCode === 'BR') {
+    if (randomDoc.iso === 'CPF') {
+      payerDocumentValue = '811.807.405-64';
+    } else if (randomDoc.iso === 'CNPJ') {
+      payerDocumentValue = '32593371000110';
+    }
+  } else if (countryCode === 'AR') {
+    if (randomDoc.iso === 'CUIL' || randomDoc.iso === 'CUIT') {
+      payerDocumentValue = '23-35523036-8';
+    }
+  }
+
+  document.getElementById('payerDocument').value = payerDocumentValue;
+  document.getElementById('billingCountry').value = countryCode;
+
+  let paymentCityValue = 'City in ' + countryName; 
+  let billingStateValue = ''; 
+
+  if (countryCode === 'AR') {
+    paymentCityValue = 'Ciudad Autónoma de Buenos Aires';
+    billingStateValue = 'AR-C';
+  } else if (countryCode === 'BR') {
+    paymentCityValue = 'São Paulo';
+    billingStateValue = 'SP';
+  } else if (countryCode === 'CL') {
+    paymentCityValue = 'Santiago';
+    billingStateValue = 'CL-RM';
+  } else if (countryCode === 'CO') {
+    paymentCityValue = 'Bogotá';
+    billingStateValue = 'CO-DC';
+  } else if (countryCode === 'CR') {
+    paymentCityValue = 'San José';
+    billingStateValue = 'CR-SJ';
+  } else if (countryCode === 'SV') {
+    paymentCityValue = 'San Salvador';
+    billingStateValue = 'SV-SS';
+  } else if (countryCode === 'GT') {
+    paymentCityValue = 'Guatemala City';
+    billingStateValue = 'GT-GU';
+  } else if (countryCode === 'HN') {
+    paymentCityValue = 'Tegucigalpa';
+    billingStateValue = 'HN-FM';
+  } else if (countryCode === 'MX') {
+    paymentCityValue = 'Mexico City';
+    billingStateValue = 'MX-CMX';
+  } else if (countryCode === 'PA') {
+    paymentCityValue = 'Panama City';
+    billingStateValue = 'PA-8';
+  } else if (countryCode === 'PE') {
+    paymentCityValue = 'Lima';
+    billingStateValue = 'PE-LMA';
+  }
+
+  document.getElementById('billingCity').value = paymentCityValue;
+  document.getElementById('payerState').value = billingStateValue;
+  document.getElementById('billingAddress').value = 'Calle 123';
+  document.getElementById('billingAddress2').value = '98-76';
+  document.getElementById('billingAddress3').value = 'Apartment 1001';
+
+  let paymentZipCode = '123456'; 
+
+  if (countryCode === 'AR') {
+    paymentZipCode = 'C1000AAA'; 
+  } else if (countryCode === 'BR') {
+    paymentZipCode = '04578910'; 
+  } else if (countryCode === 'CL') {
+    paymentZipCode = '8320000'; 
+  } else if (countryCode === 'CO') {
+    paymentZipCode = '110111'; 
+  } else if (countryCode === 'CR') {
+    paymentZipCode = '10101'; 
+  } else if (countryCode === 'SV') {
+    paymentZipCode = '1101'; 
+  } else if (countryCode === 'GT') {
+    paymentZipCode = '01001'; 
+  } else if (countryCode === 'HN') {
+    paymentZipCode = '11101'; 
+  } else if (countryCode === 'MX') {
+    paymentZipCode = '06000'; 
+  } else if (countryCode === 'PA') {
+    paymentZipCode = '0801'; 
+  } else if (countryCode === 'PE') {
+    paymentZipCode = '15001'; 
+  }
+
+  document.getElementById('zipCode').value = paymentZipCode;
+
+
+const apiKey = '4Vj8eK4rloUd272L48hsrarnUA'; 
+const merchantId = document.getElementById('merchantId').value;
+const paymentMethods = document.getElementById('paymentMethods').value;
+const iin = document.getElementById('iin').value;
+const pseBanks = document.getElementById('pseBanks').value;
+
+
+let signatureString = apiKey + '~' + merchantId + '~' + referenceCode + '~' + amount + '~' + currency;
+
+
+if (paymentMethods && paymentMethods.trim() !== '') {
+  signatureString += '~' + paymentMethods;
+}
+
+
+if (iin && iin.trim() !== '') {
+  signatureString += '~' + iin;
+}
+
+
+if (pseBanks && pseBanks.trim() !== '') {
+  signatureString += '~' + pseBanks;
+}
+
+
+showMessage('Signature string: ' + signatureString, "black");
+
+
+const algorithmHash = document.getElementById('algorithmSignature').value;
+const signatureHash = generateSignature(signatureString, algorithmHash);
+
+document.getElementById('signature').value = signatureHash;
+
+
+document.getElementById('sourceUrl').value = 'https://www.yoursite.com/';
+document.getElementById('responseUrl').value = 'https://www.yoursite.com/response';
+document.getElementById('confirmationUrl').value = 'https://www.yoursite.com/confirmation';
+
+let cashVoucherExpDate = getFormattedDate();
+document.getElementById('expirationDate').value = cashVoucherExpDate;
+
+document.getElementById('test').value = '0';
+
+}
+
+function updatePseBanksVisibility() {
+  var accountId = document.getElementById('accountId').value;
+  var pseBanksAccountIds = ['512321', '516686', '513128', '512548'];
+  if (pseBanksAccountIds.includes(accountId)) {
+    document.getElementById('pseBanks-field').style.display = 'flex';
+  } else {
+    document.getElementById('pseBanks-field').style.display = 'none';
+  }
+}
+
+function updateAirlinesAndTravelAgenciesFieldsVisibility() {
+  var accountId = document.getElementById('accountId').value;
+
+  
+  var airlineAdditionalAccountIds = ['513128', '512548'];
+  var administrativeFeeAccountIds = ['512548'];
+
+  
+  if (airlineAdditionalAccountIds.includes(accountId)) {
+    document.getElementById('airline-field').style.display = 'flex';
+    document.getElementById('additionalValue-field').style.display = 'flex';
+  } else {
+    document.getElementById('airline-field').style.display = 'none';
+    document.getElementById('additionalValue-field').style.display = 'none';
+  }
+
+  
+  if (administrativeFeeAccountIds.includes(accountId)) {
+    document.getElementById('administrativeFee-field').style.display = 'flex';
+    document.getElementById('taxAdministrativeFee-field').style.display = 'flex';
+    document.getElementById('taxAdministrativeFeeReturnBase-field').style.display = 'flex';
+  } else {
+    document.getElementById('administrativeFee-field').style.display = 'none';
+    document.getElementById('taxAdministrativeFee-field').style.display = 'none';
+    document.getElementById('taxAdministrativeFeeReturnBase-field').style.display = 'none';
+  }
+}
+
+document.getElementById('accountId').addEventListener('change', function () {
+  updatePseBanksVisibility();
+  updateAirlinesAndTravelAgenciesFieldsVisibility();
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById('shipping-information').style.display = 'none';
+
+  
+  document.getElementById('shipping-option2').checked = false;
+  document.getElementById('shipping-option3').checked = false;
+
+  
+  updatePseBanksVisibility();
+  
+  updateAirlinesAndTravelAgenciesFieldsVisibility();
+});
+
+function handleFormSubmit(event) {
+  
+  if (!document.getElementById('shipping-option2').checked && !document.getElementById('shipping-option3').checked) {
+    useBillingInformation();
+  }
+  
+}
+
+</script>
+
+
+<style>
+  
+  hr.solid {
+    border-top: 3px solid #bbb;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  .panel {
+    margin: 0 auto;
+    max-width: 1100px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: block;
+    width: 80%;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    place-content: center;
+  }
+
+  .expansion-panel {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+  }
+
+  .expansion-panel-header {
+    background-color: #f5f5f5;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .expansion-panel-content {
+    padding: 10px;
+    display: none;
+    border-top: 1px solid #ccc;
+  }
+
+  .expansion-panel.active .expansion-panel-content {
+    display: block;
+  }
+
+  .info-icon {
+    cursor: pointer;
+    margin-left: 5px;
+    position: relative;
+  }
+
+  .tooltip {
+    display: none;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    margin-top: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    word-wrap: break-word;
+
+  }
+
+  .info-icon:hover+.tooltip {
+    display: block;
+  }
+
+  .label {
+    display: flex;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    justify-content: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    align-items: center;
+  }
+
+  .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .form-row label {
+    width: 250px;
+    text-align: left;
+    margin-right: 10px;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+
+  .field {
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-size: 13px;
+    width: 80%;
+    text-align: left;
+    justify-content: space-between;
+    border: 2px solid #d9d9d9;
+    color: #333;
+    border: 1px solid #ddd;
+    background-color: #fbfbfd;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    word-break: break-word;
+    font-family: Quicksand, Open Sans, Segoe UI, sans-serif;
+    opacity: 1;
+  }
+
+  ::placeholder {
+    color: rgb(155, 172, 200);
+    opacity: 1;
+    line-height: 1.5;
+    font-family: sans-serif;
+  }
+
+  .checkbox-address {
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-top: -0.25em;
+    position: relative;
+    padding: 10px;
+    word-break: break-word;
+    font-family: Quicksand, Open Sans, Segoe UI, sans-serif;
+    opacity: 1;
+  }
+
+  .btn {
+    background: #a5c312;
+    width: -webkit-fill-available;
+    color: #fff;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 1em;
+  }
+
+  .btn:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: none;
+  }
+
+  .btn-secondary {
+    background: #6d7278;
+    width: -webkit-fill-available;
+    color: #fff;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 1em;
+  }
+
+  .btn-secondary:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: none;
+  }
+
+  #pseBanks-field {
+    display: none;
+  }
+
+  #airline-field,
+  #additionalValue-field,
+  #administrativeFee-field,
+  #taxAdministrativeFee-field,
+  #taxAdministrativeFeeReturnBase-field {
+    display: none;
+  }
+
+  .message {
+    contain: paint;
+    text-align: center;
+    overflow-wrap: break-word;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+</style>
+
+</html>
+</div>
+<br>
+<br>
+<h2 id="signature-for-payment-form">Signature for Payment Form</h2>
 <p>The signature is a method to validate payments made through the platform and ensuring its authenticity. It consists of a string encrypted using <code>MD5</code>, <code>SHA1</code>, or <code>SHA256</code>. The string is created as follows:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&#34;ApiKey~merchantId~referenceCode~amount~currency&#34;
 </span></span></code></pre></div>
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Note</h4>
-<p>If your Payment form includes the variables <code>paymentMethods</code>, <code>iin</code>, or <code>pseBanks</code>, you must concatenate them in such order:</p>
+<p>If your payment form includes the variables <code>paymentMethods</code>, <code>iin</code>, or <code>pseBanks</code>, you must concatenate them in such order:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&#34;ApiKey~merchantId~referenceCode~amount~currency~paymentMethods~iin~pseBanks&#34;
 </span></span></code></pre></div>
 </div>
@@ -1343,7 +2634,9 @@ Tax + taxReturnBase cannot be greater than the Total Value of each product.
 </span></span></code></pre></div><br>
 <p>Encrypted using <code>SHA256</code>:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&#34;af3899a22336b79db46006491d15813158826f944599bf3bf601e2327f898022&#34;
-</span></span></code></pre></div><h3 id="compare-your-signature">Compare your signature</h3>
+</span></span></code></pre></div><br>
+<h3 id="generate-a-signature">Generate a Signature</h3>
+<p>This calculator lets you generate the signature using any of the available encryption methods.</p>
 <!-- Signature generator -->
 <div id="blue-box">
 <span class="grey-text-13">
@@ -1388,16 +2681,15 @@ Tax + taxReturnBase cannot be greater than the Total Value of each product.
 </span>
 </div>
 <!-- End of signature generator -->
-<p>This calculator lets you generate the signature using any of the available encryption methods.</p>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-January 13, 2023:
+November 8, 2024:
 
- <b>Updates in PSE Avanza (47f9156e4)</b>
+ <b>Documentation updates (cb34649dc)</b>
 </div>
 </div>
 

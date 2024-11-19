@@ -23,7 +23,25 @@ Na página de confirmação, você deve capturar os dados que deseja armazenar n
 * Se estiver usando HTTPS, você deve ter um certificado válido.
 * O formato da sua página de confirmação deve ser `x-www-form-urlencoded`.
 * Não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` na sua página de confirmação.
-* PayU reporta a página de confirmação quando a transação tem um status conclusivo, por exemplo, quando aprovada, rejeitada ou expirada. Se uma transação estiver em andamento (aguardando pagamento ou análise), PayU não reporta nada até que a transação tenha um status conclusivo
+* PayU reporta a página de confirmação quando a transação tem um status conclusivo, por exemplo, quando aprovada, rejeitada ou expirada. Se uma transação estiver em andamento (aguardando pagamento ou análise), PayU não reporta nada até que a transação tenha um status conclusivo.
+
+## Lista de IPs Permitidos para os Servidores da PayU Latam
+
+Para garantir uma comunicação fluida entre o seu servidor e os servidores da PayU Latam, é necessário adicionar nossos endereços IP à lista de permissões. Isso é especialmente importante se o seu servidor estiver protegido por um firewall. Todas as solicitações de webhook e comunicações dos servidores da PayU se originarão nos endereços IP listados abaixo.
+
+**Ambiente de Produção**
+
+* 198.61.156.98
+* 190.216.203.233
+* 34.233.144.154
+
+**Ambiente de Sandbox**
+
+* 50.56.9.170
+* 74.205.10.14
+* 54.158.171.129
+
+Ao permitir esses endereços na sua lista de permissões, você garante que as solicitações e notificações da PayU sejam recebidas corretamente.
  
 ## Variáveis enviadas com a página de confirmação {#variables-sent-with-the-confirmation-page}
 

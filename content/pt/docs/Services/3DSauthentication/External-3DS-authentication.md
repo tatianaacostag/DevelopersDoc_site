@@ -13,7 +13,7 @@ Se você possui seu próprio serviço de autenticação 3DS, pode integrá-lo pe
 
 {{% alert title="Observações" color="info"%}}
 * A autenticação 3DS para PayU Latam está disponível apenas para **Argentina**, **Brasil**, **Colômbia** e **Peru**.
-* Atualmente, o passthrough para autenticadores 3DS externos está disponível para integrações de API com a plataforma PayU Latam. Entre em contato com o seu representante de vendas para obter detalhes.
+* Esse recurso requer uma integração via API e não está disponível para integração com Webcheckout.
 * **Redes atualmente suportadas:** Visa e Mastercard
 {{% /alert %}}
 

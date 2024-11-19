@@ -75,40 +75,91 @@ Revisa &lt;a href=&#34;../../../es/docs/integrations.html&#34;&gt;Integraciones&
       <description>
         
         
-        &lt;p&gt;En el módulo de &lt;em&gt;Transferencias&lt;/em&gt;, puede encontrar las opciones para transferir los fondos recaudados en tu cuenta PayU virtual a tu cuenta bancaria principal registrada.&lt;/p&gt;
+        &lt;p&gt;En el módulo de &lt;em&gt;Transferencias&lt;/em&gt;, puedes transferir los fondos recaudados en tu cuenta virtual de PayU a tu cuenta bancaria registrada.&lt;/p&gt;
 &lt;h2 id=&#34;considerations&#34;&gt;Consideraciones&lt;/h2&gt;
-&lt;p&gt;Ten en cuenta las siguientes consideraciones antes de transferir fondos a tu cuenta bancaria.&lt;/p&gt;
+&lt;p&gt;Antes de iniciar una transferencia, revisa las siguientes consideraciones importantes:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Debes tener tu información bancaria actualizada y validada. Ten en cuenta que si has solicitado la actualización de tu cuenta bancaria, las transferencias que realices se envían a la cuenta bancaria anterior hasta que nuestro equipo de Riesgos la haya validado.&lt;/li&gt;
-&lt;li&gt;Como PayU en Brasil no es una institución de pago, los fondos recaudados en tu cuenta PayU se transfieren a tu cuenta bancaria diariamente de forma gratuita. Para consultar el estado de estas transferencias, utiliza la opción &lt;em&gt;&lt;strong&gt;Transferencias diarias&lt;/strong&gt;&lt;/em&gt; (&lt;em&gt;&lt;strong&gt;Transferencias&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Transferencias diarias&lt;/strong&gt;&lt;/em&gt;).&lt;/li&gt;
-&lt;li&gt;Las tres primeras transferencias locales realizadas durante el primer mes son gratuitas. Desde la cuarta solicitud de transferencia, PayU cobra los siguientes valores:
-&lt;ul&gt;
-&lt;li&gt;Colombia: 6.500,00 COP + VAT (Colombia)&lt;/li&gt;
-&lt;li&gt;Perú: 10,00 PEN + IGV (Perú),&lt;/li&gt;
-&lt;li&gt;Argentina: $ 10,00 ARS+ IVA (Argentina),&lt;/li&gt;
-&lt;li&gt;Chile: 0,00 CLP&lt;/li&gt;
-&lt;li&gt;México: 0,00 MXN&lt;/li&gt;
+&lt;li&gt;Tu información bancaria debe estar actualizada y validada. Si has solicitado una actualización de tu cuenta bancaria, el sistema seguirá enviando los fondos a tu cuenta anterior hasta que el equipo de Riesgo de PayU haya validado la nueva cuenta.&lt;/li&gt;
+&lt;li&gt;Puedes programar transferencias según un monto específico o establecer una fecha para realizar transferencias automáticas.&lt;/li&gt;
+&lt;li&gt;Cada mes, las primeras tres transferencias locales son gratuitas. A partir de la cuarta transferencia en un mes, PayU aplica una tarifa en la mayoría de los países. Ten en cuenta que las transferencias internacionales tienen una tarifa desde la primera transacción. La siguiente tabla ofrece una descripción general de las tarifas para transferencias locales e internacionales por país:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;La primera transferencia demora cinco (5) días en depositarse en la cuenta bancaria. El área de Riesgo de PayU solicita un sustento de las ventas en la primera transferencia como proceso administrativo.&lt;/li&gt;
-&lt;li&gt;La segunda y las siguientes transferencias toman un máximo de tres (3) días hábiles.&lt;/li&gt;
-&lt;li&gt;Las transferencias se pueden programar por Monto y por Fecha&lt;/li&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;País&lt;/th&gt;
+&lt;th&gt;Tarifa Local&lt;/th&gt;
+&lt;th&gt;Tarifa Internacional&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Argentina&lt;/td&gt;
+&lt;td&gt;110,00 ARS&lt;/td&gt;
+&lt;td&gt;753,00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brasil&lt;/td&gt;
+&lt;td&gt;Ninguna&lt;/td&gt;
+&lt;td&gt;Ninguna&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chile&lt;/td&gt;
+&lt;td&gt;2.000,00 CLP&lt;/td&gt;
+&lt;td&gt;50.000,00 CLP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Colombia&lt;/td&gt;
+&lt;td&gt;6.500,00 COP&lt;/td&gt;
+&lt;td&gt;30,00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;México&lt;/td&gt;
+&lt;td&gt;10,00 MXN&lt;/td&gt;
+&lt;td&gt;650,00 MXN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Panamá&lt;/td&gt;
+&lt;td&gt;30,00 USD&lt;/td&gt;
+&lt;td&gt;44,00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Perú&lt;/td&gt;
+&lt;td&gt;15,00 PEN&lt;/td&gt;
+&lt;td&gt;90,00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Notas&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Las tarifas están sujetas a cambios con el tiempo. Para obtener la información más actualizada o aclarar dudas específicas, por favor contacta a tu representante de ventas de PayU.&lt;/li&gt;
+&lt;li&gt;Las transferencias internacionales también están sujetas a una tarifa FX del 3% (sujeta a negociación) para cubrir los costos de cambio de divisas.&lt;/li&gt;
+&lt;li&gt;En Brasil, dado que PayU no es una institución de pagos, el sistema transfiere automáticamente tus fondos a tu cuenta bancaria diariamente y sin costo. Para monitorear estas transferencias, usa la opción &lt;em&gt;&lt;strong&gt;Transferencias diarias&lt;/strong&gt;&lt;/em&gt; (&lt;em&gt;&lt;strong&gt;Transferencias&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Transferencias diarias&lt;/strong&gt;&lt;/em&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;La primera transferencia puede tardar hasta cinco (5) días en depositarse en tu cuenta bancaria. Como parte de un proceso administrativo, el equipo de Riesgo de PayU puede solicitar documentación adicional para verificar tus primeras ventas.&lt;/li&gt;
+&lt;li&gt;La segunda transferencia y las siguientes tomarán un máximo de tres (3) días hábiles para completarse. Los días hábiles son habitualmente de lunes a viernes, excluyendo los días festivos.&lt;/li&gt;
 &lt;/ul&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-Los tiempos y montos explicados aquí aplican solo para transferencias locales (al mismo país de operación) para transferencias internacionales, comunícate con tu representante de ventas.
+Los tiempos mencionados aplican solo para transferencias locales. Para transferencias internacionales, por favor contacta a tu representante de ventas.
 &lt;/div&gt;
 
-&lt;h2 id=&#34;permission-required&#34;&gt;Permisos requeridos&lt;/h2&gt;
+&lt;h2 id=&#34;permission-required&#34;&gt;Permisos Requeridos&lt;/h2&gt;
 &lt;p&gt;Para tener acceso a este módulo, necesitas un perfil con los siguientes permisos activos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Transferencias&lt;/em&gt; &amp;gt; &lt;em&gt;Consultar&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Transferencias&lt;/em&gt; &amp;gt; &lt;em&gt;Administrar&lt;/em&gt;&lt;br&gt;Este permiso te permite realizar transferencias.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Consulta &lt;a href=&#34;../../../es/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfiles y Permisos&lt;/a&gt; para más información.&lt;/p&gt;
-&lt;h2 id=&#34;transfer-funds&#34;&gt;Transferir fondos&lt;/h2&gt;
+&lt;h2 id=&#34;transfer-funds&#34;&gt;Transferir Fondos&lt;/h2&gt;
 &lt;p&gt;Puedes transferir hasta el monto total en tu cuenta PayU al banco registrado. Sigue estos pasos para realizar una transferencia.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Inicia sesión en tu cuenta PayU. En el menú de la izquierda, expande el menú &lt;em&gt;&lt;strong&gt;Transferencias&lt;/strong&gt;&lt;/em&gt; y selecciona &lt;em&gt;&lt;strong&gt;Transferencias&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
@@ -127,7 +178,7 @@ Los tiempos y montos explicados aquí aplican solo para transferencias locales (
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_04_es.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Tan pronto como la solicitud ha sido enviada con éxito, la transferencia está en estado &lt;em&gt;En proceso&lt;/em&gt; y puedes verla en la sección &lt;em&gt;&lt;strong&gt;Reporte de transferencias realizadas&lt;/strong&gt;&lt;/em&gt; al final del módulo; Además, la cantidad solicitada se debita de tu saldo.&lt;br&gt;Si las transferencias no pudieron ser procesadas, esta cantidad se regresa a tu cuenta y no se cobra ninguna tarifa por esta operación.&lt;/p&gt;
-&lt;h2 id=&#34;schedule-transfers&#34;&gt;Programar transferencias&lt;/h2&gt;
+&lt;h2 id=&#34;schedule-transfers&#34;&gt;Programar Transferencias&lt;/h2&gt;
 &lt;p&gt;Puedes automatizar las transferencias y solicitar el retiro dado un monto fijo o cada cierto tiempo.&lt;/p&gt;
 
 
@@ -165,11 +216,11 @@ Los tiempos y montos explicados aquí aplican solo para transferencias locales (
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Programar transferencias por periodicidad&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Programar Transferencias por Periodicidad&lt;/strong&gt;&lt;br&gt;
 Esta opción te permite transferir una cantidad determinada cada cierto tiempo (días, semanas o meses). Para programar este tipo de transferencias, selecciona la opción &lt;em&gt;Periodicidad&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Programar transferencias por saldo disponible&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Programar Transferencias por Saldo Disponible&lt;/strong&gt;&lt;br&gt;
 Esta opción te permite transferir una cantidad determinada cada vez que el saldo alcanza un valor específico. Para programar este tipo de transferencias, selecciona la opción &lt;em&gt;Saldo disponible&lt;/em&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

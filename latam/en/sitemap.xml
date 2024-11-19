@@ -403,7 +403,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/webcheckout-integration/payment-form.html</loc>
-    <lastmod>2023-01-13T15:27:14-05:00</lastmod>
+    <lastmod>2024-11-08T11:23:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -482,6 +482,26 @@
                 href="/en/docs/tools/shopping-cart-plugins/bigcommerce.html"
                 />
   </url><url>
+    <loc>/en/docs/integrations/api-integration/pci.html</loc>
+    <lastmod>2024-11-08T11:23:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/integrations/api-integration/pci.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/integrations/api-integration/pci.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/integrations/api-integration/pci.html"
+                />
+  </url><url>
     <loc>/en/deprecated/merchant-panel.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -523,7 +543,7 @@
                 />
   </url><url>
     <loc>/en/payu-module-documentation/payu-operations/transfers.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-11-08T11:23:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -823,7 +843,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/webcheckout-integration/response-page.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2024-11-08T11:23:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -863,7 +883,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration.html</loc>
-    <lastmod>2024-01-26T15:57:39-05:00</lastmod>
+    <lastmod>2024-11-08T11:23:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -903,7 +923,7 @@
                 />
   </url><url>
     <loc>/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html</loc>
-    <lastmod>2024-09-17T17:03:12-05:00</lastmod>
+    <lastmod>2024-11-08T11:23:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1888,7 +1908,7 @@
                 />
   </url><url>
     <loc>/en/tags/subtopic.html</loc>
-    <lastmod>2024-09-30T16:40:51-05:00</lastmod>
+    <lastmod>2024-11-08T11:23:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1908,7 +1928,7 @@
                 />
   </url><url>
     <loc>/en/tags/parenttopic.html</loc>
-    <lastmod>2024-07-26T09:39:39-05:00</lastmod>
+    <lastmod>2024-11-08T11:23:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link

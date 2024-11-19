@@ -1,5 +1,5 @@
 ---
-title: "Página de confirmación"
+title: "Página de Confirmación"
 date: 2021-03-29T12:15:57-05:00
 description: >
   Esta página te permite obtener confirmaciones de sistema relacionadas con los resultados de la transacción. Puedes actualizar tus inventarios, órdenes o bases de datos. Está página no es visible para el cliente y su objetivo es permitir la comunicación entre sistemas. Los datos se envía a través del método HTTP POST. </br>Si el pagador genera reintentos de pago durante el proceso, se genera una página de confirmación por cada transacción. Esta página es invocada por transacciones aprobadas o rechazadas.
@@ -24,6 +24,25 @@ En la página de confirmación, debes capturar los datos que desear guardar en l
 * El formato de tu página de confirmación debe ser `x-www-form-urlencoded`.
 * No utilices certificados de seguridad de curva elíptica o aquellos que cuenten con la suite de encriptación `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` en tu página de confirmación.
 * PayU reporta la página de confirmación una vez la transacción tenga un estado final, ed decir, cuando se aprueba, se rechaza o se vence. Si una transacción está en proceso (esperando pago o análisis), PayU no reporta hasta que la transacción tenga un estado final.
+
+## Lista Blanca de Direcciones IP para los Servidores de PayU Latam
+
+Para asegurar una comunicación fluida entre tu servidor y los servidores de PayU Latam, es necesario incluir nuestras direcciones IP en tu lista blanca. Esto es especialmente importante si tu servidor está protegido por un firewall. Todas las solicitudes de webhook y la comunicación desde los servidores de PayU se originarán en las direcciones IP que se detallan a continuación.
+
+**Entorno de producción**
+
+* 198.61.156.98
+* 190.216.203.233
+* 34.233.144.154
+
+**Entorno de pruebas (Sandbox)**
+
+* 50.56.9.170
+* 74.205.10.14
+* 54.158.171.129
+
+Al incluir estas direcciones en tu lista blanca, aseguras que las solicitudes y notificaciones de PayU se reciban correctamente.
+
  
 ## Variables enviadas con la página de confirmación {#variables-sent-with-the-confirmation-page}
 

@@ -23,15 +23,15 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Integración WebCheckout | PayU Latam</title><meta property="og:title" content="Integración WebCheckout" />
-<meta property="og:description" content="La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pado en nuestra pasarela de pagos (WebCheckout).
+<meta property="og:description" content="La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pago en nuestra pasarela de pagos (WebCheckout).
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/es/docs/integrations/webcheckout-integration.html" />
 
 <meta itemprop="name" content="Integración WebCheckout">
-<meta itemprop="description" content="La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pado en nuestra pasarela de pagos (WebCheckout).
+<meta itemprop="description" content="La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pago en nuestra pasarela de pagos (WebCheckout).
 "><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Integración WebCheckout"/>
-<meta name="twitter:description" content="La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pado en nuestra pasarela de pagos (WebCheckout).
+<meta name="twitter:description" content="La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pago en nuestra pasarela de pagos (WebCheckout).
 "/>
 
 
@@ -136,7 +136,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -502,7 +502,7 @@
       
       
       
-        <a id="/es/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../es/docs/integrations/webcheckout-integration/payment-form.html">Formulario de pago</a>
+        <a id="/es/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../es/docs/integrations/webcheckout-integration/payment-form.html">Formulario de Pago</a>
       
       
       
@@ -540,6 +540,12 @@
   <ul class="side-main">
     <li class="" id="esdocsintegrationsapi-integrationhtml">
       
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/pci.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpcihtml" href="../../../es/docs/integrations/api-integration/pci.html">Guía de Seguridad y Cumplimiento PCI</a>
       
       
       
@@ -822,7 +828,7 @@
             
 <div class="td-content">
 	<h1>Integración WebCheckout</h1>
-        <div class="lead">La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pado en nuestra pasarela de pagos (WebCheckout).</div>
+        <div class="lead">La Integración WebCheckout le permite a tus clientes seleccionar los ítems que desean comprar en tu tienda y realizar el pago en nuestra pasarela de pagos (WebCheckout).</div>
 	
 	<p><img src="../../../assets/Checkout1-es.png" alt="WebCheckout integration"></p>
 <p>Puedes incluir el logo de tu compañía en nuestra pasarela enviándolo a través del método HTTP POST.</p>
@@ -889,10 +895,12 @@ La persona encargada de la integración de tu tienda con nuestra pasarela de pag
             
                 <div class="entry">
                     <h5>
-                        <a href="../../../es/docs/integrations/webcheckout-integration/payment-form.html">Formulario de pago</a>
+                        <a href="../../../es/docs/integrations/webcheckout-integration/payment-form.html">Formulario de Pago</a>
                     </h5>
-                    <p>Con este formulario HTML, puedes enviar los datos de la transacción a nuestra pasarela de pago junto con la información de la compra. Envía los datos utilizando el método HTTP POST.</p>
+                    <p>En esta sección, aprenderás a enviar datos de transacción al gateway de pagos de PayU. Este documento proporciona la información necesaria para crear un formulario HTML con los detalles de la transacción y enviarlo a nuestro sistema mediante el método HTTP POST.</p>
                 </div>
+            
+        
             
         
             
@@ -928,7 +936,8 @@ La persona encargada de la integración de tu tienda con nuestra pasarela de pag
                     <h5>
                         <a href="../../../es/docs/integrations/webcheckout-integration/response-page.html">Página de Respuesta</a>
                     </h5>
-                    <p>La Página de Respuesta es una página obligatoria que te permite mostrar el resultado de la transacción al pagador. Nuestro sistema redirecciona al pagador a esta página una vez la transacción haya sido realizada. La información de los resultados del pago es enviada a tu sistema a través del método HTTP GET. </br>Esta página es invocada para todos los estados de la transacción: aprobada, rechazada, en validación, esperando el pago (para pagos en efectivo), etc.</p>
+                    <p>La página de respuesta te permite mostrar el resultado de la transacción al pagador una vez que se haya completado. Aunque esta página no es obligatoria para el flujo transaccional, mejora la experiencia del pagador al redirigirlo de vuelta a tu sitio. Esta página ayuda a completar la experiencia de pago, pero ten en cuenta que el pagador puede cerrar el checkout sin visitarla.
+La integración puede enviar los datos del resultado del pago mediante el método HTTP GET, y tu plataforma puede invocar la página de respuesta para todos los estados de la transacción, incluyendo aprobado, rechazado, en validación y en espera de pago (para pagos en efectivo).</p>
                 </div>
             
         
@@ -1028,9 +1037,9 @@ La persona encargada de la integración de tu tienda con nuestra pasarela de pag
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-24 de junio de 2022:
+8 de noviembre de 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation updates (cb34649dc)</b>
 </div>
 </div>
 

@@ -25,6 +25,24 @@ In the confirmation page, you must capture the data you want to store in the dat
 * Do not use security certificates elliptic curve or those who have the suite of encryption `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` on your confirmation page.
 * PayU reports the confirmation page once the transaction has a final status for example, when approved, rejected or expired. If a transaction is in progress (waiting for payment or analysis), PayU does not report until the transaction has a final status.
  
+## Whitelist of IP Addresses for PayU Latam Servers
+
+To ensure seamless communication between your server and PayU Latam servers, it is necessary to whitelist our IP addresses. This is especially important if your server is protected by a firewall. All webhook requests and communication from PayU servers will originate from the IP addresses listed below.
+
+**Production Environment**
+
+* 198.61.156.98
+* 190.216.203.233
+* 34.233.144.154
+
+**Sandbox Environment**
+
+* 50.56.9.170
+* 74.205.10.14
+* 54.158.171.129
+
+By whitelisting these addresses, you can ensure that requests and notifications from PayU are properly received.
+
 ## Variables sent with the confirmation page
 
 <details>

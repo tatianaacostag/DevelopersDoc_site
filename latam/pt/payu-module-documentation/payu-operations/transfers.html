@@ -22,20 +22,20 @@
 <link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
 
 <title>Transferências | PayU Latam</title><meta property="og:title" content="Transferências" />
-<meta property="og:description" content="Saiba como receber o dinheiro de sua conta PayU em sua conta bancária. Além disso, aprenda a automatizar as transferências periodicamente ou por valor.
+<meta property="og:description" content="Aprenda como transferir fundos da sua conta PayU para sua conta bancária. Além disso, descubra como automatizar transferências com base em cronograma ou valor.
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/payu-module-documentation/payu-operations/transfers.html" /><meta property="article:section" content="PayU Module Documentation" />
 <meta property="article:published_time" content="2021-09-03T16:42:07-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-11-08T11:23:44-05:00" />
 
 <meta itemprop="name" content="Transferências">
-<meta itemprop="description" content="Saiba como receber o dinheiro de sua conta PayU em sua conta bancária. Além disso, aprenda a automatizar as transferências periodicamente ou por valor.
+<meta itemprop="description" content="Aprenda como transferir fundos da sua conta PayU para sua conta bancária. Além disso, descubra como automatizar transferências com base em cronograma ou valor.
 "><meta itemprop="datePublished" content="2021-09-03T16:42:07-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="804">
+<meta itemprop="dateModified" content="2024-11-08T11:23:44-05:00" />
+<meta itemprop="wordCount" content="909">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Transferências"/>
-<meta name="twitter:description" content="Saiba como receber o dinheiro de sua conta PayU em sua conta bancária. Além disso, aprenda a automatizar as transferências periodicamente ou por valor.
+<meta name="twitter:description" content="Aprenda como transferir fundos da sua conta PayU para sua conta bancária. Além disso, descubra como automatizar transferências com base em cronograma ou valor.
 "/>
 
 
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.a16d1a60c09c08431f37293c34a32f87a62b99fab45cd75e6062674b0d1626a3a269d2b47a735f2521840a9d23607f4e8c608525a192af9ae286137c021ec385.json"
+  data-offline-search-index-json-src="../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -461,9 +461,9 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#considerations">Observações</a></li>
-    <li><a href="#permission-required">Permissão necessária</a></li>
-    <li><a href="#transfer-funds">Transferir fundos</a></li>
-    <li><a href="#schedule-transfers">Agendar transferências</a></li>
+    <li><a href="#permission-required">Permissão Necessária</a></li>
+    <li><a href="#transfer-funds">Transferir Fundos</a></li>
+    <li><a href="#schedule-transfers">Agendar Transferências</a></li>
   </ul>
 </nav>
 
@@ -511,42 +511,97 @@
             
 <div class="td-content">
 	<h1>Transferências</h1>
-    <div class="lead">Saiba como receber o dinheiro de sua conta PayU em sua conta bancária. Além disso, aprenda a automatizar as transferências periodicamente ou por valor.</div>
+    <div class="lead">Aprenda como transferir fundos da sua conta PayU para sua conta bancária. Além disso, descubra como automatizar transferências com base em cronograma ou valor.</div>
 	       
-	<p>No módulo <em>Transferências</em>, há opções para transferir os fundos arrecadados em sua conta virtual PayU para sua conta bancária principal cadastrada.</p>
+	<p>No módulo <em>Transferências</em>, você pode transferir os fundos acumulados em sua conta virtual da PayU para sua conta bancária registrada.</p>
 <h2 id="considerations">Observações</h2>
-<p>Lembre-se das seguintes considerações antes de transferir fundos para sua conta bancária.</p>
+<p>Antes de iniciar uma transferência, revise as seguintes considerações importantes:</p>
 <ul>
-<li>Você deve ter suas informações bancárias atualizadas e validadas. Lembre-se que se você solicitou a atualização de sua conta bancária, as transferências que você faz são enviadas para a conta bancária anterior até que nossa equipe de Risco a tenha validado.</li>
-<li>Como o PayU no Brasil não é uma instituição de pagamento, os fundos arrecadados em sua conta PayU são transferidos para sua conta diariamente gratuitamente. Para verificar o status dessas transferências, use a opção de <em><strong>Relatório de transferências</strong></em> (<em><strong>Transferências</strong></em> &gt; <em><strong>Para conta bancária</strong></em>).</li>
-<li>As três primeiras transferências locais realizadas durante o primeiro mês são gratuitas. A partir da 4ª solicitação de transferência, PayU cobra os seguintes valores:
-<ul>
-<li>Colômbia: COP 6.500,00 + IVA (Colômbia)</li>
-<li>Peru: PEN 10,00 + IGV (Peru),</li>
-<li>Argentina: ARS $ 10,00 + IVA (Argentina),</li>
-<li>Chile: CLP 0,00</li>
-<li>México: MXN 0,00</li>
+<li>Suas informações bancárias devem estar atualizadas e validadas. Se você solicitou uma atualização da conta bancária, o sistema continuará enviando os fundos para sua conta anterior até que a equipe de Risco da PayU valide a nova conta.</li>
+<li>Você pode programar transferências com base em um valor específico ou definir uma data para transferências automáticas.</li>
+<li>No Brasil, como a PayU não é uma instituição de pagamento licenciada, o sistema transfere automaticamente seus fundos para sua conta bancária diariamente e sem custo. Para monitorar essas transferências, utilize a opção <em><strong>Relatório de transferências</strong></em> (<em><strong>Transferências</strong></em> &gt; <em><strong>Para conta bancária</strong></em>).</li>
+<li>A cada mês, as três primeiras transferências locais são gratuitas. A partir da quarta transferência no mês, o PayU aplica uma taxa na maioria dos países. Observe que as transferências internacionais têm uma taxa desde a primeira transação. A tabela abaixo fornece uma visão geral das taxas para transferências locais e internacionais por país.</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>País</th>
+<th>Taxa Local</th>
+<th>Taxa Internacional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Argentina</td>
+<td>110,00 ARS</td>
+<td>753,00 USD</td>
+</tr>
+<tr>
+<td>Brasil</td>
+<td>Nenhuma</td>
+<td>Nenhuma</td>
+</tr>
+<tr>
+<td>Chile</td>
+<td>2.000,00 CLP</td>
+<td>50.000,00 CLP</td>
+</tr>
+<tr>
+<td>Colômbia</td>
+<td>6.500,00 COP</td>
+<td>30,00 USD</td>
+</tr>
+<tr>
+<td>México</td>
+<td>10,00 MXN</td>
+<td>650,00 MXN</td>
+</tr>
+<tr>
+<td>Panamá</td>
+<td>30,00 USD</td>
+<td>44,00 USD</td>
+</tr>
+<tr>
+<td>Peru</td>
+<td>15,00 PEN</td>
+<td>90,00 USD</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Notas</h4>
+<ul>
+<li>As taxas estão sujeitas a alterações ao longo do tempo. Para obter as informações mais atualizadas ou dúvidas específicas, entre em contato com o representante de vendas do PayU.</li>
+<li>As transferências internacionais também estão sujeitas a uma taxa FX de 3% (sujeita a negociação) para cobrir os custos de conversão cambial.</li>
+</ul>
+
+</div>
+
+<ul>
+<li>
+<p>A primeira transferência pode levar até cinco (5) dias para ser depositada em sua conta bancária. Como parte de um processo administrativo, a equipe de Risco do PayU pode solicitar documentação adicional para verificar suas vendas iniciais.</p>
 </li>
-<li>A primeira transferência leva cinco (5) dias para ser depositada na conta bancária. A área de Risco do PayU exige um valor positivo das vendas na primeira transferência como processo administrativo.</li>
-<li>A segunda e as seguintes transferências levam no máximo três (3) dias úteis.</li>
-<li>As transferências podem ser programadas por Quantidade e por Data</li>
+<li>
+<p>A segunda e as transferências subsequentes levarão no máximo três (3) dias úteis para serem concluídas. Dias úteis geralmente são de segunda a sexta-feira, excluindo feriados.</p>
+</li>
 </ul>
 
 
 <div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">Note</h4>
-Os períodos e valores explicados aqui valem apenas para transferências locais (para o mesmo país de operação). Para transferências internacionais, entre em contato com seu representante de vendas.
+<h4 class="alert-heading">Nota</h4>
+Os prazos mencionados aplicam-se apenas a transferências locais. Para transferências internacionais, entre em contato com o seu representante de vendas.
 </div>
 
-<h2 id="permission-required">Permissão necessária</h2>
+<h2 id="permission-required">Permissão Necessária</h2>
 <p>Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permissão habilitada:</p>
 <ul>
 <li><em>Transferências</em> &gt; <em>Consultar</em></li>
 <li><em>Transferências</em> &gt; <em>Gerenciar</em><br>Com esta permissão você pode executar transferências.</li>
 </ul>
 <p>Consulte <a href="../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html">Perfis e permissões</a> para obter mais informações.</p>
-<h2 id="transfer-funds">Transferir fundos</h2>
+<h2 id="transfer-funds">Transferir Fundos</h2>
 <p>You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.</p>
 <ol>
 <li>Faça login em sua conta PayU. No menu esquerdo, expanda o menu <em><strong>Transferências</strong></em> e selecione <em><strong>Transferências</strong></em>.</li>
@@ -565,7 +620,7 @@ Os períodos e valores explicados aqui valem apenas para transferências locais 
 </ol>
 <p><img src="../../../assets/Transfers/Transfers_04_pt.png" alt="PrintScreen" width="50%"/><br></p>
 <p>Assim que o pedido for enviado com sucesso, a transferência fica com status <em>Em processo</em> e você pode vê-lo na seção <em><strong>Relatório de transferências realizadas</strong></em> no final do módulo. Além disso, o valor solicitado será debitado de seu saldo.<br>Se as transferências não puderam ser processadas, este valor volta para sua conta e nenhuma taxa é cobrada por esta operação.</p>
-<h2 id="schedule-transfers">Agendar transferências</h2>
+<h2 id="schedule-transfers">Agendar Transferências</h2>
 <p>Você pode automatizar as transferências e solicitar um saque de um valor fixo ou periódico.</p>
 
 
@@ -603,11 +658,11 @@ Os períodos e valores explicados aqui valem apenas para transferências locais 
 </ol>
 <ul>
 <li>
-<p><strong>Programar transferências por frequência</strong><br>
+<p><strong>Programar Transferências por Frequência</strong><br>
 Esta opção permite que você transfira uma determinada quantia a cada período determinado (dias, semanas ou meses). Para agendar este tipo de transferência, selecione a opção <em>Frequência</em>.</p>
 </li>
 <li>
-<p><strong>Programar transferências por saldo disponível</strong><br>
+<p><strong>Programar Transferências por Saldo Disponível</strong><br>
 Esta opção permite que você transfira uma determinada quantia sempre que o saldo atingir um determinado valor. Para agendar este tipo de transferência, selecione a opção <em>Saldo disponível</em>.</p>
 </li>
 </ul>
@@ -651,9 +706,9 @@ Esta opção permite que você transfira uma determinada quantia sempre que o sa
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-24 de junho de 2022:
+8 de novembro de 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation updates (cb34649dc)</b>
 </div>
 </div>
 
