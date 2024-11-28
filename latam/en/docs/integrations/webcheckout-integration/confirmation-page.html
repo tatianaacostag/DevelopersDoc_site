@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/webcheckout-integration/confirmation-page.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T12:15:57-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-11-19T16:23:02-05:00" />
 
 <meta itemprop="name" content="Confirmation Page">
 <meta itemprop="description" content="This page allows you to get system confirmations related with the transaction results. You can update your system&#39;s inventories, orders, or databases. This page is not visible to the customer and its goal is to enable communication between systems. The data is sent via the HTTP POST method. &lt;/br&gt;If the payer generates payment retries during the payment process, a confirmation page is generated for each transaction. This page is invoked for approved and rejected states.
 "><meta itemprop="datePublished" content="2021-03-29T12:15:57-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="1368">
+<meta itemprop="dateModified" content="2024-11-19T16:23:02-05:00" />
+<meta itemprop="wordCount" content="1449">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Confirmation Page"/>
 <meta name="twitter:description" content="This page allows you to get system confirmations related with the transaction results. You can update your system&#39;s inventories, orders, or databases. This page is not visible to the customer and its goal is to enable communication between systems. The data is sent via the HTTP POST method. &lt;/br&gt;If the payer generates payment retries during the payment process, a confirmation page is generated for each transaction. This page is invoked for approved and rejected states.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -789,6 +789,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#considerations">Considerations</a></li>
+    <li><a href="#whitelist-of-ip-addresses-for-payu-latam-servers">Whitelist of IP Addresses for PayU Latam Servers</a></li>
     <li><a href="#variables-sent-with-the-confirmation-page">Variables sent with the confirmation page</a></li>
     <li><a href="#post-example-send-to-the-confirmation-page">POST example send to the confirmation page</a></li>
     <li><a href="#signature-validation">Signature validation</a>
@@ -873,6 +874,21 @@
 <li>Do not use security certificates elliptic curve or those who have the suite of encryption <code>TLS_ECDHE_ECDSA_WITH_RC4_128_SHA</code> on your confirmation page.</li>
 <li>PayU reports the confirmation page once the transaction has a final status for example, when approved, rejected or expired. If a transaction is in progress (waiting for payment or analysis), PayU does not report until the transaction has a final status.</li>
 </ul>
+<h2 id="whitelist-of-ip-addresses-for-payu-latam-servers">Whitelist of IP Addresses for PayU Latam Servers</h2>
+<p>To ensure seamless communication between your server and PayU Latam servers, it is necessary to whitelist our IP addresses. This is especially important if your server is protected by a firewall. All webhook requests and communication from PayU servers will originate from the IP addresses listed below.</p>
+<p><strong>Production Environment</strong></p>
+<ul>
+<li>198.61.156.98</li>
+<li>190.216.203.233</li>
+<li>34.233.144.154</li>
+</ul>
+<p><strong>Sandbox Environment</strong></p>
+<ul>
+<li>50.56.9.170</li>
+<li>74.205.10.14</li>
+<li>54.158.171.129</li>
+</ul>
+<p>By whitelisting these addresses, you can ensure that requests and notifications from PayU are properly received.</p>
 <h2 id="variables-sent-with-the-confirmation-page">Variables sent with the confirmation page</h2>
 <details>
 <summary>Variables in the confirmation page</summary>
@@ -1408,9 +1424,9 @@ state_pol=4
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-June 24, 2022:
+November 19, 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation Updates (d11bd98ea)</b>
 </div>
 </div>
 

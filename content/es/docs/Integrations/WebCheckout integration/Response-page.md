@@ -41,14 +41,15 @@ A continuación, los parámetros enviados a la página de respuesta.
 | transactionState |  Numérico | 2 | Indica el estado de la transacción en el sistema.<br>[Ver los estados de la transacción en la columna respectiva]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
 | risk | Decimal (#.00) | — | Riesgo asociado con la transacción. Los posibles valores están entre 0 y 1.<br>Entre mayor sea el valor, mayor es el riesgo.<br>Formato `###.00`. | — |
 | polResponseCode |  Alfanumérico | 64 | Código de respuesta.<br>[Ver los códigos de respuesta en la columna respectiva]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
+| polTransactionState | Numérico | 2 | Toma el valor del `pol Transaction State`.<br>[Ver los códigos de respuesta en la columna respectiva]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
 | referenceCode |  Alfanumérico | 255 | Referencia de la venta o la orden. Debe ser única por cada transacción enviada al sistema. | — |
 | reference_pol |  Alfanumérico | 255 | Referencia o número de transacción generado por PayU. | — |
 | signature |  Alfanumérico | 255 | Firma digital creada por cada transacción. | — |
 | polPaymentMethod |  Alfanumérico | 255 | Identificador interno utilizado por los métodos de pago. | — |
 | polPaymentMethodType |  Numérico | 2 | Método de pago utilizado.<br>[Ver los códigos de los métodos de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). | — |
 | installmentsNumber |  Numérico | 2 | Número de cuotas en las cuales se difirió el pago con tarjeta crédito. | — |
-| TX_VALUE |  Numérico | 14,2 | Valor total de la transacción. Puede contener dos dígitos decimales. Por ejemplo 10000.00 o 10000. | — |
-| TX_TAX |  Numérico | 14,2 | Valor del IVA de la transacción, si no se envió IVA, el sistema aplica el 19% automáticamente.<br>Puede contener dos dígitos decimales. Por ejemplo 19000.00.<br>En caso de que no tenga IVA, debe enviarse 0. | — |
+| TX_VALUE |  Numérico | 14.2 | Valor total de la transacción. Puede contener dos dígitos decimales. Por ejemplo 10000.00 o 10000. | — |
+| TX_TAX |  Numérico | 14.2 | Valor del IVA de la transacción, si no se envió IVA, el sistema aplica el 19% automáticamente.<br>Puede contener dos dígitos decimales. Por ejemplo 19000.00.<br>En caso de que no tenga IVA, debe enviarse 0. | — |
 | buyerEmail |  Alfanumérico | 255 | Campo que contiene el correo electrónico del comprador para notificar el resultado de la transacción. Se recomienda validarlo cuando se toma este valor del formulario. | — |
 | processingDate |  Fecha (AAAA-MM-DD HH:mm:ss) | — | Fecha en la que se realizó la transacción. | — |
 | currency |  Alfanumérico | 3 | Moneda respectiva en la que se hace el pago. El proceso de conciliación se realiza en pesos colombianos a la tasa representativa del día. | — |

@@ -1,5 +1,5 @@
 ---
-title: "Página de confirmação"
+title: "Página de Confirmação"
 date: 2021-03-29T12:15:57-05:00
 description: >
   Esta página permite obter confirmações do sistema relacionadas com os resultados da transação. Você pode atualizar os inventários, ordens ou bancos de dados do seu sistema. Esta página não é visível para o cliente e seu objetivo é permitir a comunicação entre sistemas. Os dados são enviados por método HTTP POST.</br>ISe o pagador gerar novas tentativas de pagamento durante o processo de pagamento, uma página de confirmação será gerada para cada transação. Esta página é invocada para estados aprovados e rejeitados.
@@ -64,9 +64,9 @@ Ao permitir esses endereços na sua lista de permissões, você garante que as s
 | payment_method | Numérico | — | O identificador interno do método de pagamento usado.<br>[Veja os códigos dos métodos de pagamento]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
 | payment_method_type | Numérico | — | O tipo de método de pagamento usado para pagar. |
 | installments_number | Numérico | — | Quantidade de parcelas em que o pagamento com cartão de crédito foi programado. |
-| value | Numérico | 14,2 | Valor total da transação. Ele pode conter dois dígitos decimais. Por exemplo, 10000.00 ou 10000 |
-| tax | Numérico | 14,2 | Valor do IVA da transação. Se for enviado IVA zero, o sistema aplicará automaticamente 19%. Ele pode conter dois dígitos decimais. Por exemplo: 19000.00. Caso você não tenha IVA, deve preencher 0. |
-| additional_value | Numérico | 14,2 | Valor Adicional Não Comissionado. |
+| value | Numérico | 14.2 | Valor total da transação. Ele pode conter dois dígitos decimais. Por exemplo, 10000.00 ou 10000 |
+| tax | Numérico | 14.2 | Valor do IVA da transação. Se for enviado IVA zero, o sistema aplicará automaticamente 19%. Ele pode conter dois dígitos decimais. Por exemplo: 19000.00. Caso você não tenha IVA, deve preencher 0. |
+| additional_value | Numérico | 14.2 | Valor Adicional Não Comissionado. |
 | transaction_date | Date(YYYY-MM-DD HH:mm:ss) | — | A data em que a transação foi feita. |
 | currency | Alfanumérico | 3 | A moeda em que o pagamento é feito.<br>[Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
 | email_buyer | Alfanumérico | 255 | Campo que contém o endereço de e-mail do comprador para notificar o resultado da transação. Recomenda-se validar quando os dados são extraídos de um formulário. |

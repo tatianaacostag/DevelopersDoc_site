@@ -65,9 +65,9 @@ Al incluir estas direcciones en tu lista blanca, aseguras que las solicitudes y 
 | payment_method | Numérico | — | Identificador interno utilizado por los métodos de pago.<br>[Ver los códigos de los métodos de pago]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
 | payment_method_type | Numérico | — | Método de pago utilizado. |
 | installments_number | Numérico | — | Número de cuotas en las cuales se difirió el pago con tarjeta crédito. |
-| value | Numérico | 14,2 | Valor total de la transacción. Puede contener dos dígitos decimales. Por ejemplo 10000.00 o 10000.|
-| tax | Numérico | 14,2 | Valor del IVA de la transacción, si no se envió IVA, el sistema aplica el 19% automáticamente. Puede contener dos dígitos decimales. Por ejemplo 19000.00. En caso de que no tenga IVA, debe enviarse 0. |
-| additional_value | Numérico | 14,2 | 	Valor Adicional no comisionable. |
+| value | Numérico | 14.2 | Valor total de la transacción. Puede contener dos dígitos decimales. Por ejemplo 10000.00 o 10000.|
+| tax | Numérico | 14.2 | Valor del IVA de la transacción, si no se envió IVA, el sistema aplica el 19% automáticamente. Puede contener dos dígitos decimales. Por ejemplo 19000.00. En caso de que no tenga IVA, debe enviarse 0. |
+| additional_value | Numérico | 14.2 | 	Valor Adicional no comisionable. |
 | transaction_date | Fecha (AAAA-MM-DD HH:mm:ss) | — | Fecha en la que se realizó la transacción. |
 | currency | Alfanumérico | 3 | Moneda respectiva en la que se hace el pago.<br>[Ver las monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
 | email_buyer | Alfanumérico | 255 | Campo que contiene el correo electrónico del comprador para notificar el resultado de la transacción. Se recomienda validarlo cuando se toma este valor del formulario. |

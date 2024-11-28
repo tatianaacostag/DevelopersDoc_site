@@ -9,7 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 
-<!-- Contenido del formulario de PayU LATAM Webcheckou t -->
+<!-- Contenido del formulario de PayU LATAM Webcheckout -->
 
 <body>
   <!-- Contenedor principal para el formulario de PayU LATAM WebCheckout -->
@@ -30,17 +30,42 @@
           <!-- Sección de selección de cuenta y generación de firma -->
           <div class="expansion-panel">
             <div class="expansion-panel-header" onclick="togglePanel(this)">
-              <label class="clickable-label">Haz clic aquí para generar información aleatoria.</label>
+              <label class="clickable-label">Haz clic aquí para iniciar la prueba</label>
 
             </div>
 
             <div class="expansion-panel-content">
 
-              <p class="instruction">
-                Por favor, selecciona un ID de cuenta, ingresa los detalles adicionales que quieras probar y luego haz clic en el botón "Generar Información Aleatoria".
-                <br><br>
-                Recuerda, estos campos deben estar ocultos para el usuario.
-              </p>
+              <div class="instruction-container">
+                <div class="instruction-button-container">
+                  <p class="instruction">1. Selecciona un id de cuenta en el campo accountId de acuerdo con el país donde deseas realizar pruebas.</p>
+                </div>
+                <div class="instruction-button-container">
+                  <p class="instruction">2. Haz clic en el botón:</p>
+                  <button type="button" id="generate-random-info-button" style="inline-size: 250px;">Generar Información Aleatoria</button>
+                </div>
+
+                <div class="instruction-button-container">
+                  <p class="instruction">
+                    3. Haz clic en el botón <span class="info-icon"
+                      onclick="showTooltip('tooltipSignature')">&#9432;</span> :
+                  <div id="tooltipSignature" class="tooltip">
+                    Recuerda que puedes editar o agregar campos adicionales según sea necesario. Si modificas o ingresas valores en los campos *paymentMethods*, *iin* o *pseBanks* después de haber generado una firma, será necesario generarla.
+                  </div>
+                  </p>
+                  <button type="submit" id="generate-signature-hash-button" value="Generar hash de firma"
+                    style="inline-size: 250px;">Generar Hash de Firma</button>
+                </div>
+
+                <div id="message" class="message"></div>
+
+                <div class="instruction-button-container">
+                  <p class="instruction">4. Haz clic en el botón:</p>
+                  <button type="submit" value="Pagar con PayU" style="inline-size: 250px;">Pagar con PayU</button>
+                </div>
+              </div>
+
+              <br></br>
 
               <!-- Selección de idioma -->
               <div class="form-row">
@@ -118,6 +143,7 @@
                   placeholder="La URL de tu webhook.">
               </div>
 
+              <!-- 
               <div class="form-row">
                 <label for="approvedResponseUrl">approvedResponseUrl</label>
                 <input id="approvedResponseUrl" name="approvedResponseUrl" type="url" class="field"
@@ -135,6 +161,7 @@
                 <input id="declinedResponseUrl" name="declinedResponseUrl" type="url" class="field"
                   placeholder="Opcional. La URL para redirigir al cliente a tu sitio después de que la transacción sea rechazada.">
               </div>
+              -->
 
               <div class="form-row">
                 <label for="expirationDate">expirationDate</label>
@@ -148,8 +175,9 @@
                 </label>
                 <div id="tooltip1" class="tooltip" style="display: none;">
                   <p>
-                  Cuando el usuario accede al enlace de pago, solo estarán disponibles los métodos de pago especificados para su selección. <a href="https://developers.payulatam.com/latam/es/docs/getting-started/select-your-payment-method.html"
-                    target="_blank" style="color: blue; text-decoration: underline;">Haz clic aquí</a> para ver los métodos de pago válidos.
+                    Cuando el usuario accede al enlace de pago, solo estarán disponibles los métodos de pago especificados para su selección. <a
+                      href="https://developers.payulatam.com/latam/es/docs/getting-started/select-your-payment-method.html"
+                      target="_blank" style="color: blue; text-decoration: underline;">Haz clic aquí</a> para ver los métodos de pago válidos.
                   </p>
                 </div>
                 <input id="paymentMethods" name="paymentMethods" type="text" class="field"
@@ -253,6 +281,15 @@
                   placeholder="Días adicionales para la entrega del pedido.">
               </div>
 
+              <div class="form-row">
+                <label for="displayBuyerComments">displayBuyerComments</label>
+                <select id="displayBuyerComments" name="displayBuyerComments" class="field">
+                  <option value="">Seleccionar para mostrar comentarios al comprador.</option>
+                  <option value="1">Establecer en 1 para habilitar.</option>
+                  <option value="0">Establecer en 0 para habilitar.</option>
+                </select>
+              </div>
+
               <div class="form-row" style="position: relative;">
                 <label for="buyerCommentsLabel">buyerCommentsLabel
                   <span class="info-icon" onclick="showTooltip('tooltip6')">&#9432;</span>
@@ -265,7 +302,6 @@
                   placeholder="Comentarios del comprador">
               </div>
 
-              <!-- 
               <div class="form-row">
                 <label for="isCashOnDeliveryApply">isCashOnDeliveryApply</label>
                 <select id="isCashOnDeliveryApply" name="isCashOnDeliveryApply" class="field">
@@ -274,7 +310,6 @@
                   <option value="0">Establecer en 0 para habilitar.</option>
                 </select>
               </div>
-              -->
 
               <div class="form-row">
                 <label for="test">test</label>
@@ -285,12 +320,7 @@
                 </select>
               </div>
 
-              <div id="message" class="message"></div>
-
-              <!-- Botón para generar información aleatoria -->
-              <button type="button" id="generate-random-info-button" class="btn-secondary">Generar Información Aleatoria</button>
-
-              </div>
+            </div>
 
           </div>
 
@@ -335,7 +365,8 @@
                 <span class="info-icon" onclick="showTooltip('tooltip7')">&#9432;</span>
               </label>
               <div id="tooltip7" class="tooltip" style="display: none;">
-                El valor ingresado aparecerá en la respuesta de la API de Consulta en: result.payload.transactions.extraParameters.DISCOUNT
+                El valor ingresado aparecerá en la respuesta de la API de Consulta en:
+                result.payload.transactions.extraParameters.DISCOUNT
               </div>
               <input id="discount" name="discount" type="text" class="field"
                 placeholder="Opcional. Monto del descuento del pedido">
@@ -711,32 +742,32 @@
 
     // If the tooltip is already open, close it and remove the listener
     if (tooltip.classList.contains("show")) {
-        tooltip.classList.remove("show");
-        document.removeEventListener('click', handleOutsideClick);
+      tooltip.classList.remove("show");
+      document.removeEventListener('click', handleOutsideClick);
     } else {
-        // Hide any other open tooltips
-        const openTooltips = document.querySelectorAll('.tooltip.show');
-        openTooltips.forEach(openTooltip => openTooltip.classList.remove('show'));
+      // Hide any other open tooltips
+      const openTooltips = document.querySelectorAll('.tooltip.show');
+      openTooltips.forEach(openTooltip => openTooltip.classList.remove('show'));
 
-        // Show the clicked tooltip
-        tooltip.classList.add("show");
+      // Show the clicked tooltip
+      tooltip.classList.add("show");
 
-        // Add a click event listener to hide tooltips when clicking outside
-        setTimeout(() => {
-            document.addEventListener('click', handleOutsideClick);
-        });
+      // Add a click event listener to hide tooltips when clicking outside
+      setTimeout(() => {
+        document.addEventListener('click', handleOutsideClick);
+      });
     }
 
     // Function to handle clicks outside the tooltip
     function handleOutsideClick(event) {
-        // Check if the click target is outside the tooltip and its associated icon
-        const isClickInside = tooltip.contains(event.target) || event.target.classList.contains('info-icon');
-        if (!isClickInside) {
-            tooltip.classList.remove("show");
-            document.removeEventListener('click', handleOutsideClick);
-        }
+      // Check if the click target is outside the tooltip and its associated icon
+      const isClickInside = tooltip.contains(event.target) || event.target.classList.contains('info-icon');
+      if (!isClickInside) {
+        tooltip.classList.remove("show");
+        document.removeEventListener('click', handleOutsideClick);
+      }
     }
-}
+  }
 
   // Ocultar la sección de información de envío cuando la página se cargue inicialmente
   document.addEventListener("DOMContentLoaded", function () {
@@ -795,8 +826,17 @@
     generateRandomInfo();
   });
 
+  // Agregar un evento de clic al botón "Generar hash de firma" 
+  // que previene el envío del formulario y llama a la función para generar la firma y el hash de la firma
+  document.getElementById('generate-signature-hash-button').addEventListener('click', function (event) {
+    event.preventDefault();
+    const messageDiv = document.getElementById('message');
+    messageDiv.style.display = 'block';
+    generateSignature()
+  });
+
   // Generar firma de la transacción
-  function generateSignature(signatureString, hashType) {
+  function generateSignatureHash(signatureString, hashType) {
     let hashFunction;
     switch (hashType) {
       case "MD5":
@@ -813,6 +853,48 @@
         return null;
     }
     return hashFunction(signatureString).toString();
+  }
+
+  function generateSignature() {
+
+    // Datos para generar la firma
+    const apiKey = '4Vj8eK4rloUd272L48hsrarnUA'; // PayU LATAM API key
+    const merchantId = document.getElementById('merchantId').value;
+    const referenceCode = document.getElementById('referenceCode').value
+    const amount = document.getElementById('amount').value
+    const currency = document.getElementById('currency').value
+
+    // Calcular la cadena de firma
+    let signatureString = apiKey + '~' + merchantId + '~' + referenceCode + '~' + amount + '~' + currency;
+
+    // Validación de ingreso de datos adicionales para generar la firma
+    const paymentMethods = document.getElementById('paymentMethods').value;
+    const iin = document.getElementById('iin').value;
+    const pseBanks = document.getElementById('pseBanks').value;
+
+    // Agregar paymentMethods a la firma, si el usuario ingreso medios de pago.
+    if (paymentMethods && paymentMethods.trim() !== '') {
+      signatureString += '~' + paymentMethods;
+    }
+
+    // Agregar iin a la firma, si el usuario ingreso números de bin.
+    if (iin && iin.trim() !== '') {
+      signatureString += '~' + iin;
+    }
+
+    // Agregar pseBanks a la firma, si el usuario ingreso códigos de bancos de PSE en CO.
+    if (pseBanks && pseBanks.trim() !== '') {
+      signatureString += '~' + pseBanks;
+    }
+
+    // Mostrar la cadena de firma solo con fines ilustrativos
+    showMessage('Firma: ' + signatureString, "black");
+
+    // Generar el hash de la firma usando MD5 (según la documentación de PayU)
+    const algorithmHash = document.getElementById('algorithmSignature').value;
+    const signatureHash = generateSignatureHash(signatureString, algorithmHash);
+
+    document.getElementById('signature').value = signatureHash;
   }
 
   // Fecha de expiración para pagos en efectivo
@@ -987,45 +1069,6 @@
 
     document.getElementById('zipCode').value = paymentZipCode;
 
-    // Información Adicional
-    const apiKey = '4Vj8eK4rloUd272L48hsrarnUA'; // PayU LATAM API key
-    const merchantId = document.getElementById('merchantId').value;
-    const paymentMethods = document.getElementById('paymentMethods').value;
-    const iin = document.getElementById('iin').value;
-    const pseBanks = document.getElementById('pseBanks').value;
-
-    // Calcular la cadena de firma
-    let signatureString = apiKey + '~' + merchantId + '~' + referenceCode + '~' + amount + '~' + currency;
-
-    // Agregar paymentMethods a la firma, si el usuario ingreso medios de pago.
-    if (paymentMethods && paymentMethods.trim() !== '') {
-      signatureString += '~' + paymentMethods;
-    }
-
-    // Agregar iin a la firma, si el usuario ingreso números de bin.
-    if (iin && iin.trim() !== '') {
-      signatureString += '~' + iin;
-    }
-
-    // Agregar pseBanks a la firma, si el usuario ingreso códigos de bancos de PSE en CO.
-    if (pseBanks && pseBanks.trim() !== '') {
-      signatureString += '~' + pseBanks;
-    }
-
-    // Mostrar la cadena de firma solo con fines ilustrativos
-    showMessage('Signature string: ' + signatureString, "black");
-
-    // Generar el hash de la firma usando MD5 (según la documentación de PayU)
-    const algorithmHash = document.getElementById('algorithmSignature').value;
-    const signatureHash = generateSignature(signatureString, algorithmHash);
-
-    document.getElementById('signature').value = signatureHash;
-
-    // Colocando página de respuesta y webhook por defecto
-    document.getElementById('sourceUrl').value = 'https://www.yoursite.com/';
-    document.getElementById('responseUrl').value = 'https://www.yoursite.com/response';
-    document.getElementById('confirmationUrl').value = 'https://www.yoursite.com/confirmation';
-
     let cashVoucherExpDate = getFormattedDate();
     document.getElementById('expirationDate').value = cashVoucherExpDate;
 
@@ -1087,7 +1130,7 @@
     // Actualizar la visibilidad de bancos PSE
     updatePseBanksVisibility();
     // Actualizar los campos de aerolíneas y agencias de viajes
-    updateAirlinesAndTravelAgenciesFieldsVisibility
+    updateAirlinesAndTravelAgenciesFieldsVisibility();
   });
 
   function handleFormSubmit(event) {
@@ -1098,15 +1141,54 @@
     // El formulario continuará enviándose normalmente
   }
 
-
 </script>
 
 <!-- Estilo de la página -->
 <style>
+  .instruction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Espaciado entre cada opción */
+    max-width: -webkit-fill-available;
+    /* Mantiene un ancho adaptable */
+  }
+
+  .instruction-button-container {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    /* Espaciado entre elementos */
+    position: relative;
+  }
+
   .instruction {
-  color: orangered !important;
-  font-weight: bold !important;
-  text-align: center !important;
+    color: #050505 !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    flex: 1;
+    /* Asegura que el texto ocupe el espacio restante */
+  }
+
+  .instruction-button-container button {
+    background-color: #a5c312;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 3px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    inline-size: 245px;
+    /* Tamaño fijo para los botones */
+  }
+
+  .hover-effect {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .expansion-panel-header:hover,
+  .instruction-button-container button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 
   hr.solid {
@@ -1139,7 +1221,7 @@
   }
 
   .expansion-panel-header {
-    background-color: #f5f5f5;
+    background-color: #a6c307;
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
@@ -1159,6 +1241,7 @@
     cursor: pointer;
     margin-left: 5px;
     position: relative;
+    align-content: center;
   }
 
   .tooltip {
@@ -1174,12 +1257,11 @@
     margin-top: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    word-wrap: break-word;    
-
+    word-wrap: break-word;
   }
 
   .tooltip.show {
-    display: inline-flex !important; 
+    display: inline-flex !important;
   }
 
   .info-icon:hover+.tooltip {
@@ -1208,7 +1290,7 @@
     font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #333;
+    color: #ffffff;
     align-items: center;
     cursor: pointer;
   }
@@ -1223,7 +1305,7 @@
     margin-right: 10px;
     min-width: 150px;
   }
-  
+
   .form-row .field {
     flex: 1;
     padding: 5px;
@@ -1298,28 +1380,6 @@
     transition: none;
   }
 
-  .btn-secondary {
-    background: #6d7278;
-    width: -webkit-fill-available;
-    color: #fff;
-    display: block;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 1em;
-  }
-
-  .btn-secondary:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .btn-secondary:active {
-    transform: translateY(2px);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    transition: none;
-  }
-
   #pseBanks-field {
     display: none;
   }
@@ -1333,6 +1393,7 @@
   }
 
   .message {
+    display: none;
     contain: paint;
     text-align: center;
     overflow-wrap: break-word;

@@ -1,6 +1,6 @@
 ---
-title: "Página de resposta"
-linkTitle: "Página de resposta"
+title: "Página de Resposta"
+linkTitle: "Página de Resposta"
 date: 2021-03-29T12:15:39-05:00
 description: >
   A página de resposta permite exibir o resultado da transação para o pagador assim que ela for concluída. Embora esta página não seja obrigatória para o fluxo da transação, ela melhora a experiência do pagador ao redirecioná-lo de volta para o seu site. Essa página ajuda a completar a experiência de pagamento, mas considere que o pagador pode fechar o checkout sem acessá-la.
@@ -41,14 +41,15 @@ Abaixo, os parâmetros enviados para a página de resposta.
 | transactionState | Numérico | 2 | Indica o status da transação no sistema.<br>[Veja os estados da transação na coluna fornecida.]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
 | risk | Decimal (#.00) | — | Risco associado à transação. Valores entre 0 e 1.<br>Quanto maior o valor, maior o risco.<br>Formato `###.00`. | — |
 | polResponseCode | Alfanumérico | 64 | Código de resposta.<br>[Veja os códigos de resposta na coluna fornecida]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
+| polTransactionState | Numérico | 2 | Obtém o valor do `pol Transaction State`<br>[Veja os códigos de resposta na coluna fornecida]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-response-page" >}}). | — |
 | referenceCode | Alfanumérico | 255 | Referência da venda ou ordem. Deve ser exclusivo para cada transação enviada ao sistema. | — |
 | reference_pol | Alfanumérico | 255 | Número de referência ou transação gerado pelo PayU. | — |
 | signature | Alfanumérico | 255 | Assinatura digital criada para cada uma das transações. | — |
 | polPaymentMethod | Alfanumérico | 255 | Identificador interno dos métodos de pagamento usados. | — |
 | polPaymentMethodType | Numérico | 2 | O tipo de método de pagamento usado para o pagamento.<br>[Veja os códigos dos métodos de pagamento]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). | — |
 | installmentsNumber | Numérico | 2 | Quantidade de parcelas em que o pagamento com cartão de crédito foi programado. | — |
-| TX_VALUE | Numérico | 14,2 | Valor total da transação. Ele pode conter dois dígitos decimais. Por exemplo 10000.00 ou 10000 | — |
-| TX_TAX | Numérico | 14,2 | Valor do IVA da transação, se o IVA não for enviado, o sistema aplica 19% automaticamente.<br>Ele pode conter dois dígitos decimais, por exemplo 19000.00.<br>Caso você não tenha IVA, deve preencher 0. | — |
+| TX_VALUE | Numérico | 14.2 | Valor total da transação. Ele pode conter dois dígitos decimais. Por exemplo 10000.00 ou 10000 | — |
+| TX_TAX | Numérico | 14.2 | Valor do IVA da transação, se o IVA não for enviado, o sistema aplica 19% automaticamente.<br>Ele pode conter dois dígitos decimais, por exemplo 19000.00.<br>Caso você não tenha IVA, deve preencher 0. | — |
 | buyerEmail | Alfanumérico | 255 | Campo que contém o e-mail do comprador para notificar o resultado da transação. Recomenda-se validá-lo quando os dados forem extraídos de um formulário | — |
 | processingDate | Date (YYYY-MM-DD HH:mm:ss) | — | A data em que a transação foi feita. | — |
 | currency | Alfanumérico | 3 | A respectiva moeda na qual o pagamento é feito. O processo de reconciliação é realizado em pesos na taxa representativa do dia. | — |

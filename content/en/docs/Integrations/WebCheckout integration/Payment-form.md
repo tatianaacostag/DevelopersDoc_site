@@ -42,10 +42,10 @@ You can include the following parameters in the payment form.
 | description | Alphanumeric | 255 | Sale’s description. | Yes | 
 | currency | Alphanumeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in Colombian pesos at the representative rate of the day.<br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes | 
 | amount | Number | 10 | Total amount of the transaction. It can contain two decimal digits. Example 10000.00 or 10000. | Yes | 
-| tax | Number | 10,2 | Value of the VAT of the transaction.<br>In Colombia, if no VAT is sent, the system applies 19% automatically. It can contain two decimal digits, for example 19000.00.<br>If the product or service is VAT exempt, assign `0` to this variable. | Yes | 
-| discount | Number | 10,2 | Discount value applied to the sale. | No | 
-| taxReturnBase | Number | 10,2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0` to this variable. | Yes | 
-| additionalValue | Number | 10,2 | Additional value of the sale. | No | 
+| tax | Number | 10.2 | Value of the VAT of the transaction.<br>In Colombia, if no VAT is sent, the system applies 19% automatically. It can contain two decimal digits, for example 19000.00.<br>If the product or service is VAT exempt, assign `0` to this variable. | Yes | 
+| discount | Number | 10.2 | Discount value applied to the sale. | No | 
+| taxReturnBase | Number | 10.2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0` to this variable. | Yes | 
+| additionalValue | Number | 10.2 | Additional value of the sale. | No | 
 | signature | Alphanumeric | 255 | Digital signature created for each transaction. Refer to [Signature for Payment form]({{< ref "payment-form.md#signature-for-payment-form" >}}) to learn how to generate it. | Yes | 
 | algorithmSignature | Alphanumeric | 255 | Encryption algorithm of the digital signature (`signature` field). The three available algorithms are: `MD5`, `SHA` and `SHA256`. | No | 
 | test | Number | 1 | Indicates whether the transaction is in test or production mode. Set `1` for test and `0` for production. | No | 
@@ -71,9 +71,9 @@ You can include the following parameters in the payment form.
 | mobilePhone | Alphanumeric | Max. 20 | The buyer’s cell phone number. This value will be taken to fill out the credit card form and will be the contact telephone number. | No | 
 | buyerFullName | Alphanumeric | 150 | The buyer’s full name. | Yes | 
 | paymentMethods | Alphanumeric | 255 | List of payment methods enabled in the payment process.<br>This list must be separated by comma and without blanks. For example: `VISA,MASTERCARD`.<br>You can include installments for the payment methods adding them using hyphens. Example: `VISA-1-3,MASTERCARD-3-5-9`.<br>[See the available Payment Methods for your country in the column `paymentMethod parameter`]({{< ref "select-your-payment-method.html" >}}). | No | 
-| administrativeFee | Number | 10,2 | Amount of the administrative fee. | No | 
-| taxAdministrativeFee | Number | 10,2 | Amount of tax of the administrative fee. | No | 
-| taxAdministrativeFeeReturnBase | Number | 10,2 | Base value to calculate the tax of the administrative fee. | No | 
+| administrativeFee | Number | 10.2 | Amount of the administrative fee. | No | 
+| taxAdministrativeFee | Number | 10.2 | Amount of tax of the administrative fee. | No | 
+| taxAdministrativeFeeReturnBase | Number | 10.2 | Base value to calculate the tax of the administrative fee. | No | 
 | payerEmail | Alphanumeric | 255 | The payer’s e-mail. | Yes | 
 | payerPhone | Alphanumeric | Max. 20 | The payer’s phone number. | Yes | 
 | payerOfficePhone | Alphanumeric | Max. 20 | The payer’s workplace phone number. | No | 

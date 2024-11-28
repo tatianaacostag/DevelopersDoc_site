@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2024-11-08T11:23:44-05:00" />
+<meta property="article:modified_time" content="2024-11-19T16:23:02-05:00" />
 
 <meta itemprop="name" content="PayU-Handled 3DS Authentication">
 <meta itemprop="description" content="PayU-handled 3DS authentication prevents the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.  
 ">
-<meta itemprop="dateModified" content="2024-11-08T11:23:44-05:00" />
-<meta itemprop="wordCount" content="781">
+<meta itemprop="dateModified" content="2024-11-19T16:23:02-05:00" />
+<meta itemprop="wordCount" content="793">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="PayU-Handled 3DS Authentication"/>
 <meta name="twitter:description" content="PayU-handled 3DS authentication prevents the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.  
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -864,14 +864,15 @@
     <div class="lead">PayU-handled 3DS authentication prevents the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.</div>
 	       
 	<h2 id="using-payu-3ds-authentication">Using PayU 3DS Authentication</h2>
-<p>To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called <code>req3DSAuthentication</code> in your payment requests via PayU&rsquo;s Payments API.</p>
+<p>To enable 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can add a new parameter called <code>req3DSAuthentication</code> in your payment requests via PayU&rsquo;s Payments API.</p>
 
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Notes</h4>
 <ul>
-<li>3DS authentication for PayU Latam is only available for <strong>Argentina</strong>, <strong>Brazil</strong>, <strong>Colombia</strong>, and <strong>Peru</strong>.</li>
-<li><strong>Currently supported networks:</strong> Visa and Mastercard.</li>
+<li>3DS authentication with PayU Latam is only available for <strong>Argentina</strong>, <strong>Brazil</strong>, <strong>Colombia</strong>, and <strong>Peru</strong>.</li>
+<li>This feature requires an API integration and is not available for Webcheckout integration.</li>
+<li><strong>Supported networks:</strong> Visa and Mastercard.</li>
 </ul>
 
 </div>
@@ -1358,9 +1359,9 @@ These account IDs are for testing purposes only, do not use them in production e
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-November 8, 2024:
+November 19, 2024:
 
- <b>Documentation updates (cb34649dc)</b>
+ <b>Documentation Updates (d11bd98ea)</b>
 </div>
 </div>
 

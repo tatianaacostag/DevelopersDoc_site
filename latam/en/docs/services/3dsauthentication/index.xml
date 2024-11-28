@@ -24,14 +24,15 @@
         
         
         &lt;h2 id=&#34;using-payu-3ds-authentication&#34;&gt;Using PayU 3DS Authentication&lt;/h2&gt;
-&lt;p&gt;To use 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can include a new parameter called &lt;code&gt;req3DSAuthentication&lt;/code&gt; in your payment requests via PayU&amp;rsquo;s Payments API.&lt;/p&gt;
+&lt;p&gt;To enable 3DS authentication, merchants must be registered to this service with PayU. Once registered, you can add a new parameter called &lt;code&gt;req3DSAuthentication&lt;/code&gt; in your payment requests via PayU&amp;rsquo;s Payments API.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Notes&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Currently supported networks:&lt;/strong&gt; Visa and Mastercard.&lt;/li&gt;
+&lt;li&gt;3DS authentication with PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;This feature requires an API integration and is not available for Webcheckout integration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Supported networks:&lt;/strong&gt; Visa and Mastercard.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -533,8 +534,8 @@ These account IDs are for testing purposes only, do not use them in production e
 &lt;h4 class=&#34;alert-heading&#34;&gt;Notes&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;3DS authentication for PayU Latam is only available for &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brazil&lt;/strong&gt;, &lt;strong&gt;Colombia&lt;/strong&gt;, and &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Passthrough for external 3DS authenticators is currently available for API integrations with the PayU Latam platform. Contact your sales representative for details.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Currently supported networks:&lt;/strong&gt; Visa and Mastercard&lt;/li&gt;
+&lt;li&gt;This feature requires an API integration and is not available for Webcheckout integration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Supported networks:&lt;/strong&gt; Visa and Mastercard&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;

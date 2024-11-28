@@ -30,17 +30,42 @@
           <!-- Account selection and signature generation section -->
           <div class="expansion-panel">
             <div class="expansion-panel-header" onclick="togglePanel(this)">
-              <label class="clickable-label">Click here to generate random information.</label>
+              <label class="clickable-label">Click here to start the test</label>
 
             </div>
 
             <div class="expansion-panel-content">
 
-              <p class="instruction">
-                Please select an account ID, enter any additional details you want to test, and then click the "Generate Random Information" button.
-                <br><br>
-                Remember, these fields should be hidden from the user.
-              </p>
+              <div class="instruction-container">
+                <div class="instruction-button-container">
+                  <p class="instruction">1. Select a value from the accountId field according to the country where you want to run the tests.</p>
+                </div>
+                <div class="instruction-button-container">
+                  <p class="instruction">2. Click the button:</p>
+                  <button type="button" id="generate-random-info-button" style="inline-size: 250px;">Generate Random Information</button>
+                </div>
+
+                <div class="instruction-button-container">
+                  <p class="instruction">
+                    3. Click the button: <span class="info-icon"
+                      onclick="showTooltip('tooltipSignature')">&#9432;</span> :
+                  <div id="tooltipSignature" class="tooltip">
+                    Remember that you can edit or add additional fields as needed. If you modify or enter values in the paymentMethods, iin, or pseBanks fields after generating a signature, it will be necessary to generate it again.
+                  </div>
+                  </p>
+                  <button type="submit" id="generate-signature-hash-button" value="Generar hash de firma"
+                    style="inline-size: 250px;">Generate Signature Hash</button>
+                </div>
+
+                <div id="message" class="message"></div>
+
+                <div class="instruction-button-container">
+                  <p class="instruction">4. Click the button:</p>
+                  <button type="submit" value="Pagar con PayU" style="inline-size: 250px;">Pagar con PayU</button>
+                </div>
+              </div>
+
+              <br></br>
 
               <!-- Language selection -->
               <div class="form-row">
@@ -118,23 +143,25 @@
                   placeholder="Your webhook URL.">
               </div>
 
+              <!-- 
               <div class="form-row">
                 <label for="approvedResponseUrl">approvedResponseUrl</label>
                 <input id="approvedResponseUrl" name="approvedResponseUrl" type="url" class="field"
-                  placeholder="Optional. The URL to redirect the customer to your site after the transaction is approved.">
+                  placeholder="Opcional. La URL para redirigir al cliente a tu sitio después de que la transacción sea aprobada.">
               </div>
 
               <div class="form-row">
                 <label for="pendingResponseUrl">pendingResponseUrl</label>
                 <input id="pendingResponseUrl" name="pendingResponseUrl" type="url" class="field"
-                  placeholder="Optional. The URL to redirect the customer to your site when the transaction is pending.">
+                  placeholder="Opcional. La URL para redirigir al cliente a tu sitio cuando la transacción esté pendiente.">
               </div>
 
               <div class="form-row">
                 <label for="declinedResponseUrl">declinedResponseUrl</label>
                 <input id="declinedResponseUrl" name="declinedResponseUrl" type="url" class="field"
-                  placeholder="Optional. The URL to redirect the customer to your site after the transaction is declined.">
+                  placeholder="Opcional. La URL para redirigir al cliente a tu sitio después de que la transacción sea rechazada.">
               </div>
+              -->
 
               <div class="form-row">
                 <label for="expirationDate">expirationDate</label>
@@ -252,6 +279,15 @@
                 <input id="additionalDeliveryDays" name="additionalDeliveryDays" type="text" class="field"
                   placeholder="Additional days for order delivery.">
               </div>
+             
+              <div class="form-row">
+                <label for="displayBuyerComments">displayBuyerComments</label>
+                <select id="displayBuyerComments" name="displayBuyerComments" class="field">
+                  <option value="">Select to show comments to the buyer.</option>
+                  <option value="1">Set to 1 to enable.</option>
+                  <option value="0">Set to 0 to disable.</option>
+                </select>
+              </div>
 
               <div class="form-row" style="position: relative;">
                 <label for="buyerCommentsLabel">buyerCommentsLabel
@@ -265,7 +301,6 @@
                   placeholder="Buyer comments">
               </div>
 
-              <!-- 
               <div class="form-row">
                 <label for="isCashOnDeliveryApply">isCashOnDeliveryApply</label>
                 <select id="isCashOnDeliveryApply" name="isCashOnDeliveryApply" class="field">
@@ -274,7 +309,6 @@
                   <option value="0">Set to 0 to enable.</option>
                 </select>
               </div>
-              -->
 
               <div class="form-row">
                 <label for="test">test</label>
@@ -283,14 +317,9 @@
                   <option value="1">Set to 1 for testing</option>
                   <option value="0">Set to 0 for production.</option>
                 </select>
-              </div>
+              </div>   
 
-              <div id="message" class="message"></div>
-
-              <!-- Button to generate random information -->
-              <button type="button" id="generate-random-info-button" class="btn-secondary">Generate Random Information</button>
-
-              </div>
+            </div>
 
           </div>
 
@@ -795,6 +824,15 @@ document.getElementById('generate-random-info-button').addEventListener('click',
   generateRandomInfo();
 });
 
+  // Agregar un evento de clic al botón "Generar hash de firma" 
+  // que previene el envío del formulario y llama a la función para generar la firma y el hash de la firma
+  document.getElementById('generate-signature-hash-button').addEventListener('click', function (event) {
+    event.preventDefault();
+    const messageDiv = document.getElementById('message');
+    messageDiv.style.display = 'block';
+    generateSignature()
+  });
+
 // Generate the transaction signature
 function generateSignature(signatureString, hashType) {
   let hashFunction;
@@ -813,6 +851,48 @@ function generateSignature(signatureString, hashType) {
       return null;
   }
   return hashFunction(signatureString).toString();
+}
+
+function generateSignature() {
+
+// Datos para generar la firma
+const apiKey = '4Vj8eK4rloUd272L48hsrarnUA'; // PayU LATAM API key
+const merchantId = document.getElementById('merchantId').value;
+const referenceCode = document.getElementById('referenceCode').value
+const amount = document.getElementById('amount').value
+const currency = document.getElementById('currency').value
+
+// Calcular la cadena de firma
+let signatureString = apiKey + '~' + merchantId + '~' + referenceCode + '~' + amount + '~' + currency;
+
+// Validación de ingreso de datos adicionales para generar la firma
+const paymentMethods = document.getElementById('paymentMethods').value;
+const iin = document.getElementById('iin').value;
+const pseBanks = document.getElementById('pseBanks').value;
+
+// Agregar paymentMethods a la firma, si el usuario ingreso medios de pago.
+if (paymentMethods && paymentMethods.trim() !== '') {
+  signatureString += '~' + paymentMethods;
+}
+
+// Agregar iin a la firma, si el usuario ingreso números de bin.
+if (iin && iin.trim() !== '') {
+  signatureString += '~' + iin;
+}
+
+// Agregar pseBanks a la firma, si el usuario ingreso códigos de bancos de PSE en CO.
+if (pseBanks && pseBanks.trim() !== '') {
+  signatureString += '~' + pseBanks;
+}
+
+// Mostrar la cadena de firma solo con fines ilustrativos
+showMessage('Signature: ' + signatureString, "black");
+
+// Generar el hash de la firma usando MD5 (según la documentación de PayU)
+const algorithmHash = document.getElementById('algorithmSignature').value;
+const signatureHash = generateSignatureHash(signatureString, algorithmHash);
+
+document.getElementById('signature').value = signatureHash;
 }
 
 // Expiration date for cash payments
@@ -986,45 +1066,6 @@ if (countryCode === 'AR') {
 
 document.getElementById('zipCode').value = paymentZipCode;
 
-// Additional Information
-const apiKey = '4Vj8eK4rloUd272L48hsrarnUA'; // PayU LATAM API key
-const merchantId = document.getElementById('merchantId').value;
-const paymentMethods = document.getElementById('paymentMethods').value;
-const iin = document.getElementById('iin').value;
-const pseBanks = document.getElementById('pseBanks').value;
-
-// Calculate the signature string
-let signatureString = apiKey + '~' + merchantId + '~' + referenceCode + '~' + amount + '~' + currency;
-
-// Add paymentMethods to the signature if the user entered payment methods
-if (paymentMethods && paymentMethods.trim() !== '') {
-  signatureString += '~' + paymentMethods;
-}
-
-// Add iin to the signature if the user entered bin numbers
-if (iin && iin.trim() !== '') {
-  signatureString += '~' + iin;
-}
-
-// Add pseBanks to the signature if the user entered PSE bank codes in CO
-if (pseBanks && pseBanks.trim() !== '') {
-  signatureString += '~' + pseBanks;
-}
-
-// Show the signature string for illustrative purposes
-showMessage('Signature string: ' + signatureString, "black");
-
-// Generate the hash of the signature using MD5 (according to PayU's documentation)
-const algorithmHash = document.getElementById('algorithmSignature').value;
-const signatureHash = generateSignature(signatureString, algorithmHash);
-
-document.getElementById('signature').value = signatureHash;
-
-// Set default response page and webhook URLs
-document.getElementById('sourceUrl').value = 'https://www.yoursite.com/';
-document.getElementById('responseUrl').value = 'https://www.yoursite.com/response';
-document.getElementById('confirmationUrl').value = 'https://www.yoursite.com/confirmation';
-
 let cashVoucherExpDate = getFormattedDate();
 document.getElementById('expirationDate').value = cashVoucherExpDate;
 
@@ -1033,77 +1074,118 @@ document.getElementById('test').value = '0';
 }
 
 function updatePseBanksVisibility() {
-  var accountId = document.getElementById('accountId').value;
-  var pseBanksAccountIds = ['512321', '516686', '513128', '512548'];
-  if (pseBanksAccountIds.includes(accountId)) {
-    document.getElementById('pseBanks-field').style.display = 'flex';
-  } else {
-    document.getElementById('pseBanks-field').style.display = 'none';
-  }
+var accountId = document.getElementById('accountId').value;
+var pseBanksAccountIds = ['512321', '516686', '513128', '512548'];
+if (pseBanksAccountIds.includes(accountId)) {
+  document.getElementById('pseBanks-field').style.display = 'flex';
+} else {
+  document.getElementById('pseBanks-field').style.display = 'none';
 }
+}
+
 function updateAirlinesAndTravelAgenciesFieldsVisibility() {
-  var accountId = document.getElementById('accountId').value;
+var accountId = document.getElementById('accountId').value;
 
-  // Account ID arrays for each case
-  var airlineAdditionalAccountIds = ['513128', '512548'];
-  var administrativeFeeAccountIds = ['512548'];
+// Arrays de accountIds para cada caso
+var airlineAdditionalAccountIds = ['513128', '512548'];
+var administrativeFeeAccountIds = ['512548'];
 
-  // Show/Hide fields for airlines
-  if (airlineAdditionalAccountIds.includes(accountId)) {
-    document.getElementById('airline-field').style.display = 'flex';
-    document.getElementById('additionalValue-field').style.display = 'flex';
-  } else {
-    document.getElementById('airline-field').style.display = 'none';
-    document.getElementById('additionalValue-field').style.display = 'none';
-  }
+// Mostrar/Ocultar campos para aerolíneas
+if (airlineAdditionalAccountIds.includes(accountId)) {
+  document.getElementById('airline-field').style.display = 'flex';
+  document.getElementById('additionalValue-field').style.display = 'flex';
+} else {
+  document.getElementById('airline-field').style.display = 'none';
+  document.getElementById('additionalValue-field').style.display = 'none';
+}
 
-  // Show/Hide fields for travel agencies
-  if (administrativeFeeAccountIds.includes(accountId)) {
-    document.getElementById('administrativeFee-field').style.display = 'flex';
-    document.getElementById('taxAdministrativeFee-field').style.display = 'flex';
-    document.getElementById('taxAdministrativeFeeReturnBase-field').style.display = 'flex';
-  } else {
-    document.getElementById('administrativeFee-field').style.display = 'none';
-    document.getElementById('taxAdministrativeFee-field').style.display = 'none';
-    document.getElementById('taxAdministrativeFeeReturnBase-field').style.display = 'none';
-  }
+// Mostrar/Ocultar campos para agencias de viajes
+if (administrativeFeeAccountIds.includes(accountId)) {
+  document.getElementById('administrativeFee-field').style.display = 'flex';
+  document.getElementById('taxAdministrativeFee-field').style.display = 'flex';
+  document.getElementById('taxAdministrativeFeeReturnBase-field').style.display = 'flex';
+} else {
+  document.getElementById('administrativeFee-field').style.display = 'none';
+  document.getElementById('taxAdministrativeFee-field').style.display = 'none';
+  document.getElementById('taxAdministrativeFeeReturnBase-field').style.display = 'none';
+}
 }
 
 document.getElementById('accountId').addEventListener('change', function () {
-  updatePseBanksVisibility();
-  updateAirlinesAndTravelAgenciesFieldsVisibility();
+updatePseBanksVisibility();
+updateAirlinesAndTravelAgenciesFieldsVisibility();
 });
 
-// Initialization when the page loads
+// Inicialización cuando la página se carga
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById('shipping-information').style.display = 'none';
+document.getElementById('shipping-information').style.display = 'none';
 
-  // Uncheck the radio buttons when the page loads
-  document.getElementById('shipping-option2').checked = false;
-  document.getElementById('shipping-option3').checked = false;
+// Desmarcar los botones de opción cuando la página se cargue
+document.getElementById('shipping-option2').checked = false;
+document.getElementById('shipping-option3').checked = false;
 
-  // Update PSE bank visibility
-  updatePseBanksVisibility();
-  // Update airlines and travel agencies fields visibility
-  updateAirlinesAndTravelAgenciesFieldsVisibility();
+// Actualizar la visibilidad de bancos PSE
+updatePseBanksVisibility();
+// Actualizar los campos de aerolíneas y agencias de viajes
+updateAirlinesAndTravelAgenciesFieldsVisibility();
 });
 
 function handleFormSubmit(event) {
-  // If the user has not selected a different option, execute useBillingInformation()
-  if (!document.getElementById('shipping-option2').checked && !document.getElementById('shipping-option3').checked) {
-    useBillingInformation();
-  }
-  // The form will continue to be submitted normally
+// Si el usuario no ha seleccionado una opción diferente, ejecutamos useBillingInformation()
+if (!document.getElementById('shipping-option2').checked && !document.getElementById('shipping-option3').checked) {
+  useBillingInformation();
+}
+// El formulario continuará enviándose normalmente
 }
   
 </script>
 
-<!-- Page style -->
+<!-- Estilo de la página -->
 <style>
+  .instruction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Espaciado entre cada opción */
+    max-width: -webkit-fill-available;
+    /* Mantiene un ancho adaptable */
+  }
+
+  .instruction-button-container {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    /* Espaciado entre elementos */
+    position: relative;
+  }
+
   .instruction {
-  color: orangered !important;
-  font-weight: bold !important;
-  text-align: center !important;
+    color: #050505 !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    flex: 1;
+    /* Asegura que el texto ocupe el espacio restante */
+  }
+
+  .instruction-button-container button {
+    background-color: #a5c312;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 3px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    inline-size: 245px;
+    /* Tamaño fijo para los botones */
+  }
+
+  .hover-effect {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .expansion-panel-header:hover,
+  .instruction-button-container button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 
   hr.solid {
@@ -1136,7 +1218,7 @@ function handleFormSubmit(event) {
   }
 
   .expansion-panel-header {
-    background-color: #f5f5f5;
+    background-color: #a6c307;
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
@@ -1156,6 +1238,7 @@ function handleFormSubmit(event) {
     cursor: pointer;
     margin-left: 5px;
     position: relative;
+    align-content: center;
   }
 
   .tooltip {
@@ -1171,12 +1254,11 @@ function handleFormSubmit(event) {
     margin-top: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    word-wrap: break-word;    
-
+    word-wrap: break-word;
   }
 
   .tooltip.show {
-    display: inline-flex !important; 
+    display: inline-flex !important;
   }
 
   .info-icon:hover+.tooltip {
@@ -1205,7 +1287,7 @@ function handleFormSubmit(event) {
     font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #333;
+    color: #ffffff;
     align-items: center;
     cursor: pointer;
   }
@@ -1220,7 +1302,7 @@ function handleFormSubmit(event) {
     margin-right: 10px;
     min-width: 150px;
   }
-  
+
   .form-row .field {
     flex: 1;
     padding: 5px;
@@ -1295,28 +1377,6 @@ function handleFormSubmit(event) {
     transition: none;
   }
 
-  .btn-secondary {
-    background: #6d7278;
-    width: -webkit-fill-available;
-    color: #fff;
-    display: block;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 1em;
-  }
-
-  .btn-secondary:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .btn-secondary:active {
-    transform: translateY(2px);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    transition: none;
-  }
-
   #pseBanks-field {
     display: none;
   }
@@ -1330,6 +1390,7 @@ function handleFormSubmit(event) {
   }
 
   .message {
+    display: none;
     contain: paint;
     text-align: center;
     overflow-wrap: break-word;

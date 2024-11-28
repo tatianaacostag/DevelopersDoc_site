@@ -2148,6 +2148,12 @@ Esta integración permite a las aerolíneas y agencias de viajes en Colombia opt
 | **Identificación** | Los adquirentes pueden identificar específicamente la aerolínea mediante el ID de aerolínea para una distribución dirigida. | Permite al adquirente identificar tanto a la agencia de viajes como a la aerolínea para una distribución precisa de fondos. |
 | **Elegibilidad para la Exención del Impuesto 4 x 1000** | Las aerolíneas colombianas pueden calificar si proporcionan su ID de aerolínea e información de tarifas relevante. | Las agencias de viajes colombianas pueden calificar si proporcionan detalles completos de la transacción. |
 
+{{% alert title="Nota" color="info"%}}
+
+Verifica con tu banco adquirente si tu negocio cumple con los requisitos para la exención del impuesto 4 x 1000. La elegibilidad depende de la información proporcionada en cada transacción y de la normativa vigente.
+
+{{% /alert %}}
+
 ### Obtener la Lista de Aerolíneas Disponibles
 
 Para integrarse con PayU, tanto las agencias de viajes como las aerolíneas necesitan obtener los códigos de aerolíneas elegibles para la recolección de pagos y enviarlos a través de la API de Pagos. Esto se puede hacer consultando el sistema de PayU para obtener la lista de aerolíneas disponibles y sus respectivos códigos. El endpoint para obtener los códigos de aerolíneas es el mismo para ambos tipos de comerciantes, aunque el uso específico puede diferir:

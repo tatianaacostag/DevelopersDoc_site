@@ -270,21 +270,21 @@
 &lt;tr&gt;
 &lt;td&gt;telephone&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Máx. 20&lt;/td&gt;
 &lt;td&gt;O telefone residencial do comprador.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;officeTelephone&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Máx. 20&lt;/td&gt;
 &lt;td&gt;O telefone do comprador em horário comercial.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;mobilePhone&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Máx. 20&lt;/td&gt;
 &lt;td&gt;O número do celular do comprador. Este valor será usado para preencher o formulário do cartão de crédito e será o telefone de contato.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -333,21 +333,21 @@
 &lt;tr&gt;
 &lt;td&gt;payerPhone&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Máx. 20&lt;/td&gt;
 &lt;td&gt;Número de telefone do pagador.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;payerOfficePhone&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Máx. 20&lt;/td&gt;
 &lt;td&gt;Número de telefone do local de trabalho do pagador.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;payerMobilePhone&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
-&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;Máx. 20&lt;/td&gt;
 &lt;td&gt;Número do celular do pagador.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -521,7 +521,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
     
     &lt;div&gt;
       &lt;h2&gt;Payment Form Example&lt;/h2&gt;
-    &lt;/div&gt;
+    &lt;/div&gt;    
     &lt;div&gt;
       &lt;hr class=&#34;solid&#34;&gt;
     &lt;/div&gt;
@@ -534,14 +534,14 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
           
           &lt;div class=&#34;expansion-panel&#34;&gt;
             &lt;div class=&#34;expansion-panel-header&#34; onclick=&#34;togglePanel(this)&#34;&gt;
-              &lt;label class=&#34;label&#34;&gt;Click here to generate random information.&lt;/label&gt;
+              &lt;label class=&#34;clickable-label&#34;&gt;Click here to generate random information.&lt;/label&gt;
 
             &lt;/div&gt;
 
             &lt;div class=&#34;expansion-panel-content&#34;&gt;
 
-              &lt;p class=&#34;subtitle&#34;&gt;
-                Please select an account ID, enter any additional details you want to test, and then click on the &#34;Generate Random Information&#34; button.
+              &lt;p class=&#34;instruction&#34;&gt;
+                Please select an account ID, enter any additional details you want to test, and then click the &#34;Generate Random Information&#34; button.
                 &lt;br&gt;&lt;br&gt;
                 Remember, these fields should be hidden from the user.
               &lt;/p&gt;
@@ -551,8 +551,8 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                 &lt;label for=&#34;lng&#34;&gt;lng&lt;/label&gt;
                 &lt;select id=&#34;lng&#34; name=&#34;lng&#34; type=&#34;text&#34; class=&#34;field&#34;&gt;
                   &lt;option value=&#34;&#34;&gt;Select the language: es, pt, or en.&lt;/option&gt;
-                  &lt;option value=&#34;es&#34;&gt;Español&lt;/option&gt;
-                  &lt;option value=&#34;pt&#34;&gt;Português&lt;/option&gt;
+                  &lt;option value=&#34;es&#34;&gt;Spanish&lt;/option&gt;
+                  &lt;option value=&#34;pt&#34;&gt;Portuguese&lt;/option&gt;
                   &lt;option value=&#34;en&#34;&gt;English&lt;/option&gt;
                 &lt;/select&gt;
               &lt;/div&gt;
@@ -645,17 +645,16 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
 
               &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
                 &lt;label for=&#34;paymentMethods&#34;&gt;paymentMethods
-                  &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip1&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
+                    &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip1&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
                 &lt;/label&gt;
                 &lt;div id=&#34;tooltip1&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
-                  When the user accesses the payment link, only the specified payment methods will be available for
-                  selection. &lt;a
-                    href=&#34;https://developers.payulatam.com/latam/en/docs/getting-started/select-your-payment-method.html&#34;
-                    target=&#34;_blank&#34; style=&#34;color: blue; text-decoration: underline;&#34;&gt;Click here&lt;/a&gt; to view the valid
-                  payment methods.
+                  &lt;p&gt;
+                    When the user accesses the payment link, only the specified payment methods will be available for selection. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/getting-started/select-your-payment-method.html&#34;
+                       target=&#34;_blank&#34; style=&#34;color: blue; text-decoration: underline;&#34;&gt;Click here&lt;/a&gt; to view the valid payment methods.
+                   &lt;/p&gt;    
                 &lt;/div&gt;
                 &lt;input id=&#34;paymentMethods&#34; name=&#34;paymentMethods&#34; type=&#34;text&#34; class=&#34;field&#34;
-                  placeholder=&#34;For example, VISA,MASTERCARD or including installments VISA-1-3,MASTERCARD-3-6-9&#34;&gt;
+                       placeholder=&#34;For example, VISA,MASTERCARD or including installments VISA-1-3,MASTERCARD-3-6-9&#34;&gt;
               &lt;/div&gt;
 
               &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
@@ -666,7 +665,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   When the user accesses the payment link, the specified payment method will already be preselected.
                 &lt;/div&gt;
                 &lt;input id=&#34;selectedPaymentMethod&#34; name=&#34;selectedPaymentMethod&#34; type=&#34;text&#34; class=&#34;field&#34;
-                  placeholder=&#34;For example, MASTERCARD, automatically preselect the payment method option&#34;&gt;
+                  placeholder=&#34;For example, by choosing MASTERCARD, this option will automatically be preselected as payment method&#34;&gt;
               &lt;/div&gt;
 
               &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
@@ -674,7 +673,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip3&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
                 &lt;/label&gt;
                 &lt;div id=&#34;tooltip3&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
-                  The value entered will appear in the Query API response at:
+                  The entered value will appear in the API Query response in:
                   result.payload.transactions.extraParameters.PAYMENT_METHODS_DESCRIPTION
                 &lt;/div&gt;
                 &lt;input id=&#34;paymentMethodsDescription&#34; name=&#34;paymentMethodsDescription&#34; type=&#34;text&#34; class=&#34;field&#34;
@@ -684,19 +683,19 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
               &lt;div class=&#34;form-row&#34;&gt;
                 &lt;label for=&#34;iin&#34;&gt;iin&lt;/label&gt;
                 &lt;input id=&#34;iin&#34; name=&#34;iin&#34; type=&#34;text&#34; class=&#34;field&#34;
-                  placeholder=&#34;List of supported BINs, e.g., 555555,411111&#34;&gt;
+                  placeholder=&#34;List of accepted BINs, e.g., 555555,411111&#34;&gt;
               &lt;/div&gt;
 
               &lt;div class=&#34;form-row&#34; id=&#34;pseBanks-field&#34;&gt;
                 &lt;label for=&#34;pseBanks&#34;&gt;pseBanks&lt;/label&gt;
                 &lt;input id=&#34;pseBanks&#34; name=&#34;pseBanks&#34; type=&#34;text&#34; class=&#34;field&#34;
-                  placeholder=&#34;Colombian PSE bank codes separated by commas, e.g., 1022 for BANCO UNION COLOMBIANO&#34;&gt;
+                  placeholder=&#34;Codes for Colombian PSE banks separated by commas, e.g., 1022 for BANCO UNION COLOMBIANO&#34;&gt;
               &lt;/div&gt;
 
               &lt;div class=&#34;form-row&#34;&gt;
                 &lt;label for=&#34;partnerId&#34;&gt;partnerId&lt;/label&gt;
                 &lt;input id=&#34;partnerId&#34; name=&#34;partnerId&#34; type=&#34;text&#34; class=&#34;field&#34;
-                  placeholder=&#34;Optional. Enter the partner name, e.g., ZOOZ&#34;&gt;
+                  placeholder=&#34;Optional. Enter the partner&#39;s name, e.g., ZOOZ&#34;&gt;
               &lt;/div&gt;
 
               &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
@@ -704,7 +703,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip4&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
                 &lt;/label&gt;
                 &lt;div id=&#34;tooltip4&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
-                  The entered value will appear in the Query API response at:
+                  The entered value will appear in the API Query response in:
                   result.payload.transactions.extraParameters.TEMPLATE
                 &lt;/div&gt;
                 &lt;input id=&#34;template&#34; name=&#34;template&#34; type=&#34;text&#34; class=&#34;field&#34; placeholder=&#34;Template&#34;&gt;
@@ -748,11 +747,11 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip5&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
                 &lt;/label&gt;
                 &lt;div id=&#34;tooltip5&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
-                  The entered value will appear in the Query API response at:
+                  The entered value will appear in the API Query response in:
                   result.payload.transactions.extraParameters.ADDITIONAL_DELIVERY_DAYS
                 &lt;/div&gt;
                 &lt;input id=&#34;additionalDeliveryDays&#34; name=&#34;additionalDeliveryDays&#34; type=&#34;text&#34; class=&#34;field&#34;
-                  placeholder=&#34;Additional delivery days for the order.&#34;&gt;
+                  placeholder=&#34;Additional days for order delivery.&#34;&gt;
               &lt;/div&gt;
 
               &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
@@ -760,7 +759,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip6&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
                 &lt;/label&gt;
                 &lt;div id=&#34;tooltip6&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
-                  The entered value will appear in the Query API response at:
+                  The entered value will appear in the API Query response in:
                   result.payload.transactions.extraParameters.BUYER_COMMENTS_LABEL
                 &lt;/div&gt;
                 &lt;input id=&#34;buyerCommentsLabel&#34; name=&#34;buyerCommentsLabel&#34; type=&#34;text&#34; class=&#34;field&#34;
@@ -773,8 +772,8 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                 &lt;label for=&#34;test&#34;&gt;test&lt;/label&gt;
                 &lt;select id=&#34;test&#34; name=&#34;test&#34; class=&#34;field&#34;&gt;
                   &lt;option value=&#34;&#34;&gt;Select test mode.&lt;/option&gt;
-                  &lt;option value=&#34;1&#34;&gt;Set to 1 for test mode&lt;/option&gt;
-                  &lt;option value=&#34;0&#34;&gt;Set to 0 for production mode&lt;/option&gt;
+                  &lt;option value=&#34;1&#34;&gt;Set to 1 for testing&lt;/option&gt;
+                  &lt;option value=&#34;0&#34;&gt;Set to 0 for production.&lt;/option&gt;
                 &lt;/select&gt;
               &lt;/div&gt;
 
@@ -783,7 +782,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
               
               &lt;button type=&#34;button&#34; id=&#34;generate-random-info-button&#34; class=&#34;btn-secondary&#34;&gt;Generate Random Information&lt;/button&gt;
 
-            &lt;/div&gt;
+              &lt;/div&gt;
 
           &lt;/div&gt;
 
@@ -828,8 +827,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                 &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip7&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
               &lt;/label&gt;
               &lt;div id=&#34;tooltip7&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
-                The entered value will appear in the Query API response at:
-                result.payload.transactions.extraParameters.DISCOUNT
+                The entered value will appear in the API Query response in: result.payload.transactions.extraParameters.DISCOUNT
               &lt;/div&gt;
               &lt;input id=&#34;discount&#34; name=&#34;discount&#34; type=&#34;text&#34; class=&#34;field&#34;
                 placeholder=&#34;Optional. Order discount amount&#34;&gt;
@@ -849,596 +847,633 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
               &lt;/select&gt;
             &lt;/div&gt;
 
-                        
-                        &lt;div class=&#34;form-row&#34; id=&#34;airline-field&#34;&gt;
-                          &lt;label for=&#34;airline&#34;&gt;airline&lt;/label&gt;
-                          &lt;input id=&#34;airline&#34; name=&#34;airline&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Enter the airline code, e.g., 29 for AVIANCA Nacional&#34;&gt;
-                        &lt;/div&gt;
             
-                        &lt;div class=&#34;form-row&#34; id=&#34;additionalValue-field&#34;&gt;
-                          &lt;label for=&#34;additionalValue&#34;&gt;additionalValue&lt;/label&gt;
-                          &lt;input id=&#34;additionalValue&#34; name=&#34;additionalValue&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Enter airport fees and taxes&#34;&gt;
-                        &lt;/div&gt;
-            
-                        
-                        &lt;div class=&#34;form-row&#34; id=&#34;administrativeFee-field&#34;&gt;
-                          &lt;label for=&#34;administrativeFee&#34;&gt;administrativeFee&lt;/label&gt;
-                          &lt;input id=&#34;administrativeFee&#34; name=&#34;administrativeFee&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Enter the administrative fee&#34;&gt;
-                        &lt;/div&gt;
-            
-                        &lt;div class=&#34;form-row&#34; id=&#34;taxAdministrativeFee-field&#34;&gt;
-                          &lt;label for=&#34;taxAdministrativeFee&#34;&gt;taxAdministrativeFee&lt;/label&gt;
-                          &lt;input id=&#34;taxAdministrativeFee&#34; name=&#34;taxAdministrativeFee&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Enter the tax on the administrative fee&#34;&gt;
-                        &lt;/div&gt;
-            
-                        &lt;div class=&#34;form-row&#34; id=&#34;taxAdministrativeFeeReturnBase-field&#34;&gt;
-                          &lt;label for=&#34;taxAdministrativeFeeReturnBase&#34;&gt;taxAdministrativeFeeReturnBase&lt;/label&gt;
-                          &lt;input id=&#34;taxAdministrativeFeeReturnBase&#34; name=&#34;taxAdministrativeFeeReturnBase&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Enter the tax return base for the administrative fee&#34;&gt;
-                        &lt;/div&gt;
-            
-                        &lt;div&gt;
-                          &lt;label class=&#34;label&#34;&gt;Billing Information&lt;/label&gt;
-          
-                        
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;payerFullName&#34;&gt;payerFullName&lt;/label&gt;
-                          &lt;input id=&#34;payerFullName&#34; name=&#34;payerFullName&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s full name&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;payerEmail&#34;&gt;payerEmail&lt;/label&gt;
-                          &lt;input id=&#34;payerEmail&#34; name=&#34;payerEmail&#34; type=&#34;email&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s email address&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
-                          &lt;label for=&#34;payerOfficePhone&#34;&gt;payerOfficePhone
-                            &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip8&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
-                          &lt;/label&gt;
-                          &lt;div id=&#34;tooltip8&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
-                            This is the payer&#39;s primary phone number.
-                          &lt;/div&gt;
-                          &lt;input id=&#34;payerOfficePhone&#34; name=&#34;payerOfficePhone&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s contact phone number&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;payerPhone&#34;&gt;payerPhone&lt;/label&gt;
-                          &lt;input id=&#34;payerPhone&#34; name=&#34;payerPhone&#34; type=&#34;tel&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s phone number&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;payerMobilePhone&#34;&gt;payerMobilePhone&lt;/label&gt;
-                          &lt;input id=&#34;payerMobilePhone&#34; name=&#34;payerMobilePhone&#34; type=&#34;tel&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s mobile phone number&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;payerDocumentType&#34;&gt;payerDocumentType&lt;/label&gt;
-                          &lt;input id=&#34;payerDocumentType&#34; name=&#34;payerDocumentType&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s document type&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;payerDocument&#34;&gt;payerDocument&lt;/label&gt;
-                          &lt;input id=&#34;payerDocument&#34; name=&#34;payerDocument&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s document number&#34;&gt;
-                        &lt;/div&gt;              
-
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;billingCountry&#34;&gt;billingCountry&lt;/label&gt;
-                          &lt;input id=&#34;billingCountry&#34; name=&#34;billingCountry&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s billing country, e.g. AR, BR, CL, CO, CR, SV, GT, HN, MX, PA, PE.&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;payerState&#34;&gt;payerState&lt;/label&gt;
-                          &lt;input id=&#34;payerState&#34; name=&#34;payerState&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s billing state in ISO 3166 code, e.g. set SP for São Paulo (BR) or set AR-C for Buenos Aires (AR).&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;billingCity&#34;&gt;billingCity&lt;/label&gt;
-                          &lt;input id=&#34;billingCity&#34; name=&#34;billingCity&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s billing city&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;billingAddress&#34;&gt;billingAddress&lt;/label&gt;
-                          &lt;input id=&#34;billingAddress&#34; name=&#34;billingAddress&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s billing address&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;billingAddress2&#34;&gt;billingAddress2&lt;/label&gt;
-                          &lt;input id=&#34;billingAddress2&#34; name=&#34;billingAddress2&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s billing address 2&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;billingAddress3&#34;&gt;billingAddress3&lt;/label&gt;
-                          &lt;input id=&#34;billingAddress3&#34; name=&#34;billingAddress3&#34; type=&#34;text&#34; class=&#34;field&#34;
-                            placeholder=&#34;Payer&#39;s billing address 3&#34;&gt;
-                        &lt;/div&gt;
-                        
-                        &lt;div class=&#34;form-row&#34;&gt;
-                          &lt;label for=&#34;zipCode&#34;&gt;zipCode&lt;/label&gt;
-                          &lt;input id=&#34;zipCode&#34; name=&#34;zipCode&#34; type=&#34;text&#34; class=&#34;field&#34; placeholder=&#34;Payer&#39;s postal code&#34;&gt;
-                        &lt;/div&gt;
+            &lt;div class=&#34;form-row&#34; id=&#34;airline-field&#34;&gt;
+              &lt;label for=&#34;airline&#34;&gt;airline&lt;/label&gt;
+              &lt;input id=&#34;airline&#34; name=&#34;airline&#34; type=&#34;text&#34; class=&#34;field&#34;
+                placeholder=&#34;Enter the airline code, e.g., 29 for AVIANCA National&#34;&gt;
             &lt;/div&gt;
 
-            &lt;div&gt;&lt;/div&gt;
-
-            &lt;label class=&#34;label&#34;&gt;Shipping Information&lt;/label&gt;
+            &lt;div class=&#34;form-row&#34; id=&#34;additionalValue-field&#34;&gt;
+              &lt;label for=&#34;additionalValue&#34;&gt;additionalValue&lt;/label&gt;
+              &lt;input id=&#34;additionalValue&#34; name=&#34;additionalValue&#34; type=&#34;text&#34; class=&#34;field&#34;
+                placeholder=&#34;Enter airport fees and taxes&#34;&gt;
+            &lt;/div&gt;
 
             
+            &lt;div class=&#34;form-row&#34; id=&#34;administrativeFee-field&#34;&gt;
+              &lt;label for=&#34;administrativeFee&#34;&gt;administrativeFee&lt;/label&gt;
+              &lt;input id=&#34;administrativeFee&#34; name=&#34;administrativeFee&#34; type=&#34;text&#34; class=&#34;field&#34;
+                placeholder=&#34;Enter the administrative fee&#34;&gt;
+            &lt;/div&gt;
 
-&lt;div class=&#34;checkbox-address&#34;&gt;
-  &lt;input type=&#34;radio&#34; id=&#34;shipping-option1&#34; name=&#34;shipping-option&#34; onclick=&#34;useBillingInformation()&#34; checked&gt;
-  &lt;label for=&#34;shipping-option1&#34;&gt;Use billing information&lt;/label&gt;
-&lt;/div&gt;
+            &lt;div class=&#34;form-row&#34; id=&#34;taxAdministrativeFee-field&#34;&gt;
+              &lt;label for=&#34;taxAdministrativeFee&#34;&gt;taxAdministrativeFee&lt;/label&gt;
+              &lt;input id=&#34;taxAdministrativeFee&#34; name=&#34;taxAdministrativeFee&#34; type=&#34;text&#34; class=&#34;field&#34;
+                placeholder=&#34;Enter the tax on the administrative fee&#34;&gt;
+            &lt;/div&gt;
 
-&lt;div class=&#34;checkbox-address&#34;&gt;
-  &lt;input type=&#34;radio&#34; id=&#34;shipping-option2&#34; name=&#34;shipping-option&#34; onclick=&#34;toggleShippingAddress()&#34;&gt;
-  &lt;label for=&#34;shipping-option2&#34;&gt;Different from billing information?&lt;/label&gt;
-&lt;/div&gt;
+            &lt;div class=&#34;form-row&#34; id=&#34;taxAdministrativeFeeReturnBase-field&#34;&gt;
+              &lt;label for=&#34;taxAdministrativeFeeReturnBase&#34;&gt;taxAdministrativeFeeReturnBase&lt;/label&gt;
+              &lt;input id=&#34;taxAdministrativeFeeReturnBase&#34; name=&#34;taxAdministrativeFeeReturnBase&#34; type=&#34;text&#34; class=&#34;field&#34;
+                placeholder=&#34;Enter the tax return base for the administrative fee&#34;&gt;
+            &lt;/div&gt;
 
-&lt;div class=&#34;checkbox-address&#34;&gt;
-  &lt;input type=&#34;radio&#34; id=&#34;shipping-option3&#34; name=&#34;shipping-option&#34; onclick=&#34;setEmptyShippingInformation()&#34;&gt;
-  &lt;label for=&#34;shipping-option3&#34;&gt;The order does not have shipping information&lt;/label&gt;
-&lt;/div&gt;
+            &lt;div&gt;
 
-&lt;div id=&#34;shipping-information&#34;&gt;
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;buyerFullName&#34;&gt;buyerFullName&lt;/label&gt;
-    &lt;input id=&#34;buyerFullName&#34; name=&#34;buyerFullName&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s full name&#34;&gt;
-  &lt;/div&gt;
+              &lt;label class=&#34;label&#34;&gt;Billing Information&lt;/label&gt;
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;buyerEmail&#34;&gt;buyerEmail&lt;/label&gt;
-    &lt;input id=&#34;buyerEmail&#34; name=&#34;buyerEmail&#34; type=&#34;email&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s email&#34;&gt;
-  &lt;/div&gt;
+              
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;buyerDocumentType&#34;&gt;buyerDocumentType&lt;/label&gt;
-    &lt;input id=&#34;buyerDocumentType&#34; name=&#34;buyerDocumentType&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s document type&#34;&gt;
-  &lt;/div&gt;
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;payerFullName&#34;&gt;payerFullName&lt;/label&gt;
+                &lt;input id=&#34;payerFullName&#34; name=&#34;payerFullName&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s full name&#34;&gt;
+              &lt;/div&gt;
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;buyerDocument&#34;&gt;buyerDocument&lt;/label&gt;
-    &lt;input id=&#34;buyerDocument&#34; name=&#34;buyerDocument&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s document number&#34;&gt;
-  &lt;/div&gt;
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;payerEmail&#34;&gt;payerEmail&lt;/label&gt;
+                &lt;input id=&#34;payerEmail&#34; name=&#34;payerEmail&#34; type=&#34;email&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s email address&#34;&gt;
+              &lt;/div&gt;
 
-  &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
-    &lt;label for=&#34;officeTelephone&#34;&gt;officeTelephone
-      &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip9&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
-    &lt;/label&gt;
-    &lt;div id=&#34;tooltip9&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
-      This is the buyer&#39;s main phone number.
-    &lt;/div&gt;
-    &lt;input id=&#34;officeTelephone&#34; name=&#34;officeTelephone&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s contact phone number&#34;&gt;
-  &lt;/div&gt;
+              &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
+                &lt;label for=&#34;payerOfficePhone&#34;&gt;payerOfficePhone
+                  &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip8&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;div id=&#34;tooltip8&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
+                  This is the payer&#39;s primary contact number.
+                &lt;/div&gt;
+                &lt;input id=&#34;payerOfficePhone&#34; name=&#34;payerOfficePhone&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s office phone number&#34;&gt;
+              &lt;/div&gt;
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;telephone&#34;&gt;telephone&lt;/label&gt;
-    &lt;input id=&#34;telephone&#34; name=&#34;telephone&#34; type=&#34;tel&#34; class=&#34;field&#34; placeholder=&#34;Buyer&#39;s phone&#34;&gt;
-  &lt;/div&gt;
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;payerPhone&#34;&gt;payerPhone&lt;/label&gt;
+                &lt;input id=&#34;payerPhone&#34; name=&#34;payerPhone&#34; type=&#34;tel&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s phone number&#34;&gt;
+              &lt;/div&gt;
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;mobilePhone&#34;&gt;mobilePhone&lt;/label&gt;
-    &lt;input id=&#34;mobilePhone&#34; name=&#34;mobilePhone&#34; type=&#34;tel&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s mobile phone number&#34;&gt;
-  &lt;/div&gt;
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;payerMobilePhone&#34;&gt;payerMobilePhone&lt;/label&gt;
+                &lt;input id=&#34;payerMobilePhone&#34; name=&#34;payerMobilePhone&#34; type=&#34;tel&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s mobile phone number&#34;&gt;
+              &lt;/div&gt;
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;shippingCountry&#34;&gt;shippingCountry&lt;/label&gt;
-    &lt;input id=&#34;shippingCountry&#34; name=&#34;shippingCountry&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s shipping country, e.g. AR, BR, CL, CO, CR, SV, GT, HN, MX, PA, PE.&#34;&gt;
-  &lt;/div&gt;
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;payerDocumentType&#34;&gt;payerDocumentType&lt;/label&gt;
+                &lt;input id=&#34;payerDocumentType&#34; name=&#34;payerDocumentType&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s document type&#34;&gt;
+              &lt;/div&gt;
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;shippingState&#34;&gt;shippingState&lt;/label&gt;
-    &lt;input id=&#34;shippingState&#34; name=&#34;shippingState&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s shipping state in ISO 3166 code, e.g. set SP for São Paulo (BR) or set AR-C for Buenos Aires (AR).&#34;&gt;
-  &lt;/div&gt;
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;payerDocument&#34;&gt;payerDocument&lt;/label&gt;
+                &lt;input id=&#34;payerDocument&#34; name=&#34;payerDocument&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s document number&#34;&gt;
+              &lt;/div&gt;
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;shippingCity&#34;&gt;shippingCity&lt;/label&gt;
-    &lt;input id=&#34;shippingCity&#34; name=&#34;shippingCity&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s shipping city&#34;&gt;
-  &lt;/div&gt;
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;billingCountry&#34;&gt;billingCountry&lt;/label&gt;
+                &lt;input id=&#34;billingCountry&#34; name=&#34;billingCountry&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s billing country, e.g., AR, BR, CL, CO, CR, SV, GT, HN, MX, PA, PE.&#34;&gt;
+              &lt;/div&gt;
 
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;shippingAddress&#34;&gt;shippingAddress&lt;/label&gt;
-    &lt;input id=&#34;shippingAddress&#34; name=&#34;shippingAddress&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s shipping address&#34;&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;shippingAddress2&#34;&gt;shippingAddress2&lt;/label&gt;
-    &lt;input id=&#34;shippingAddress2&#34; name=&#34;shippingAddress2&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s shipping address 2&#34;&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;shippingAddress3&#34;&gt;shippingAddress3&lt;/label&gt;
-    &lt;input id=&#34;shippingAddress3&#34; name=&#34;shippingAddress3&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s shipping address 3&#34;&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&#34;form-row&#34;&gt;
-    &lt;label for=&#34;payerShippingPostalCode&#34;&gt;payerShippingPostalCode&lt;/label&gt;
-    &lt;input id=&#34;payerShippingPostalCode&#34; name=&#34;payerShippingPostalCode&#34; type=&#34;text&#34; class=&#34;field&#34;
-      placeholder=&#34;Buyer&#39;s postal code&#34;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div&gt;
-  &lt;input class=&#34;btn&#34; name=&#34;Submit&#34; type=&#34;submit&#34; value=&#34;Pay with PayU&#34;&gt;
-&lt;/div&gt;
-&lt;/form&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-
-
-&lt;script&gt;
-
-  const accountIdCountry = {
-    &#34;512322&#34;: &#34;AR&#34;, 
-    &#34;516684&#34;: &#34;AR&#34;, 
-    &#34;512327&#34;: &#34;BR&#34;, 
-    &#34;516685&#34;: &#34;BR&#34;, 
-    &#34;512325&#34;: &#34;CL&#34;, 
-    &#34;512321&#34;: &#34;CO&#34;, 
-    &#34;516686&#34;: &#34;CO&#34;, 
-    &#34;513128&#34;: &#34;CO&#34;, 
-    &#34;512548&#34;: &#34;CO&#34;, 
-    &#34;516677&#34;: &#34;CR&#34;, 
-    &#34;516678&#34;: &#34;SV&#34;, 
-    &#34;516679&#34;: &#34;GT&#34;, 
-    &#34;516680&#34;: &#34;HN&#34;, 
-    &#34;512324&#34;: &#34;MX&#34;, 
-    &#34;512326&#34;: &#34;PA&#34;, 
-    &#34;512323&#34;: &#34;PE&#34;, 
-    &#34;516688&#34;: &#34;PE&#34;  
-  };
-
-  const countryNames = {
-    &#34;AR&#34;: &#34;Argentina&#34;,
-    &#34;BR&#34;: &#34;Brazil&#34;,
-    &#34;CL&#34;: &#34;Chile&#34;,
-    &#34;CO&#34;: &#34;Colombia&#34;,
-    &#34;CR&#34;: &#34;Costa Rica&#34;,
-    &#34;SV&#34;: &#34;El Salvador&#34;,
-    &#34;GT&#34;: &#34;Guatemala&#34;,
-    &#34;HN&#34;: &#34;Honduras&#34;,
-    &#34;MX&#34;: &#34;Mexico&#34;,
-    &#34;PA&#34;: &#34;Panama&#34;,
-    &#34;PE&#34;: &#34;Peru&#34;
-  };
-
-  const countryCurrency = {
-    &#34;AR&#34;: &#34;ARS&#34;,
-    &#34;BR&#34;: &#34;BRL&#34;,
-    &#34;CL&#34;: &#34;CLP&#34;,
-    &#34;CO&#34;: &#34;COP&#34;,
-    &#34;CR&#34;: &#34;CRC&#34;,
-    &#34;SV&#34;: &#34;USD&#34;,
-    &#34;GT&#34;: &#34;GTQ&#34;,
-    &#34;HN&#34;: &#34;HNL&#34;,
-    &#34;MX&#34;: &#34;MXN&#34;,
-    &#34;PA&#34;: &#34;USD&#34;,
-    &#34;PE&#34;: &#34;PEN&#34;
-  };
-
-  const documentTypes = [
-    { iso: &#34;CC&#34;, description: &#34;Citizenship card&#34;, country: &#34;Colombia&#34; },
-    { iso: &#34;CE&#34;, description: &#34;Foreign citizenship card&#34;, country: &#34;Colombia, Peru&#34; },
-    { iso: &#34;CEL&#34;, description: &#34;When identified by the mobile line&#34;, country: &#34;Colombia&#34; },
-    { iso: &#34;CEP&#34;, description: &#34;Electronic Payment Receipt&#34;, country: &#34;Mexico&#34; },
-    { iso: &#34;CI&#34;, description: &#34;Identity Card&#34;, country: &#34;Argentina, Chile&#34; },
-    { iso: &#34;CNPJ&#34;, description: &#34;National Register of Legal Entities&#34;, country: &#34;Brazil&#34; },
-    { iso: &#34;CPF&#34;, description: &#34;Registration of Individuals&#34;, country: &#34;Brazil&#34; },
-    { iso: &#34;CUIL&#34;, description: &#34;Unique Labor Identification Code&#34;, country: &#34;Argentina&#34; },
-    { iso: &#34;CUIT&#34;, description: &#34;Single Tax identification&#34;, country: &#34;Argentina&#34; },
-    { iso: &#34;CURP&#34;, description: &#34;Unique Population Registry Code&#34;, country: &#34;Mexico&#34; },
-    { iso: &#34;DE&#34;, description: &#34;Foreign Identification Number&#34;, country: &#34;Peru&#34; },
-    { iso: &#34;DNI&#34;, description: &#34;National Identity Document&#34;, country: &#34;Argentina, Peru, Chile&#34; },
-    { iso: &#34;DNIE&#34;, description: &#34;National Identity Document - Electronic&#34;, country: &#34;Argentina, Peru, Chile&#34; },
-    { iso: &#34;EIN&#34;, description: &#34;Employer Identification Number&#34;, country: &#34;Peru&#34; },
-    { iso: &#34;IFE&#34;, description: &#34;Federal Electoral Institute&#34;, country: &#34;Mexico&#34; },
-    { iso: &#34;LC&#34;, description: &#34;Civic Notebook&#34;, country: &#34;Argentina&#34; },
-    { iso: &#34;LE&#34;, description: &#34;Book enlistment&#34;, country: &#34;Argentina&#34; },
-    { iso: &#34;NIT&#34;, description: &#34;Tax identification number&#34;, country: &#34;Colombia&#34; },
-    { iso: &#34;RC&#34;, description: &#34;Birth certificate&#34;, country: &#34;Colombia&#34; },
-    { iso: &#34;RFC&#34;, description: &#34;Federal taxpayer registry&#34;, country: &#34;Mexico&#34; },
-    { iso: &#34;RUC&#34;, description: &#34;Unique Taxpayer Registration&#34;, country: &#34;Peru&#34; },
-    { iso: &#34;RUN&#34;, description: &#34;Unique National Role&#34;, country: &#34;Chile&#34; },
-    { iso: &#34;RUT&#34;, description: &#34;Unique Tributary Role&#34;, country: &#34;Chile&#34; },
-    { iso: &#34;SIEM&#34;, description: &#34;Mexican Business Information System&#34;, country: &#34;Mexico&#34; },
-    { iso: &#34;TI&#34;, description: &#34;Identity Card&#34;, country: &#34;Colombia&#34; }
-  ];
-
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;payerState&#34;&gt;payerState&lt;/label&gt;
+                &lt;input id=&#34;payerState&#34; name=&#34;payerState&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s billing state in ISO 3166 code, e.g., set SP for São Paulo (BR) or set AR-C for Buenos Aires (AR).&#34;&gt;
+              &lt;/div&gt;
   
-  function togglePanel(header) {
-    const panel = header.parentElement;
-    panel.classList.toggle(&#39;active&#39;);
-  }
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;billingCity&#34;&gt;billingCity&lt;/label&gt;
+                &lt;input id=&#34;billingCity&#34; name=&#34;billingCity&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s billing city&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;billingAddress&#34;&gt;billingAddress&lt;/label&gt;
+                &lt;input id=&#34;billingAddress&#34; name=&#34;billingAddress&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s billing address&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;billingAddress2&#34;&gt;billingAddress2&lt;/label&gt;
+                &lt;input id=&#34;billingAddress2&#34; name=&#34;billingAddress2&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s billing address 2&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;billingAddress3&#34;&gt;billingAddress3&lt;/label&gt;
+                &lt;input id=&#34;billingAddress3&#34; name=&#34;billingAddress3&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Payer&#39;s billing address 3&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;zipCode&#34;&gt;zipCode&lt;/label&gt;
+                &lt;input id=&#34;zipCode&#34; name=&#34;zipCode&#34; type=&#34;text&#34; class=&#34;field&#34; placeholder=&#34;Payer&#39;s zip code&#34;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+  
+            &lt;div&gt;&lt;/div&gt;
+  
+            &lt;label class=&#34;label&#34;&gt;Shipping Information&lt;/label&gt;
+  
+            
+  
+            &lt;div class=&#34;checkbox-address&#34;&gt;
+              &lt;input type=&#34;radio&#34; id=&#34;shipping-option1&#34; name=&#34;shipping-option&#34; onclick=&#34;useBillingInformation()&#34;
+                checked&gt;
+              &lt;label for=&#34;shipping-option1&#34;&gt;Use billing information&lt;/label&gt;
+            &lt;/div&gt;
+  
+            &lt;div class=&#34;checkbox-address&#34;&gt;
+              &lt;input type=&#34;radio&#34; id=&#34;shipping-option2&#34; name=&#34;shipping-option&#34; onclick=&#34;toggleShippingAddress()&#34;&gt;
+              &lt;label for=&#34;shipping-option2&#34;&gt;Different from billing information?&lt;/label&gt;
+            &lt;/div&gt;
+  
+            &lt;div class=&#34;checkbox-address&#34;&gt;
+              &lt;input type=&#34;radio&#34; id=&#34;shipping-option3&#34; name=&#34;shipping-option&#34; onclick=&#34;setEmptyShippingInformation()&#34;&gt;
+              &lt;label for=&#34;shipping-option3&#34;&gt;No shipping information for this order&lt;/label&gt;
+            &lt;/div&gt;
+  
+            &lt;div id=&#34;shipping-information&#34;&gt;
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;buyerFullName&#34;&gt;buyerFullName&lt;/label&gt;
+                &lt;input id=&#34;buyerFullName&#34; name=&#34;buyerFullName&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s full name&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;buyerEmail&#34;&gt;buyerEmail&lt;/label&gt;
+                &lt;input id=&#34;buyerEmail&#34; name=&#34;buyerEmail&#34; type=&#34;email&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s email address&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;buyerDocumentType&#34;&gt;buyerDocumentType&lt;/label&gt;
+                &lt;input id=&#34;buyerDocumentType&#34; name=&#34;buyerDocumentType&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s document type&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;buyerDocument&#34;&gt;buyerDocument&lt;/label&gt;
+                &lt;input id=&#34;buyerDocument&#34; name=&#34;buyerDocument&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s document number&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
+                &lt;label for=&#34;officeTelephone&#34;&gt;officeTelephone
+                  &lt;span class=&#34;info-icon&#34; onclick=&#34;showTooltip(&#39;tooltip9&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt;
+                &lt;/label&gt;
+                &lt;div id=&#34;tooltip9&#34; class=&#34;tooltip&#34; style=&#34;display: none;&#34;&gt;
+                  This is the buyer&#39;s primary contact number.
+                &lt;/div&gt;
+                &lt;input id=&#34;officeTelephone&#34; name=&#34;officeTelephone&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s office phone number&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;telephone&#34;&gt;telephone&lt;/label&gt;
+                &lt;input id=&#34;telephone&#34; name=&#34;telephone&#34; type=&#34;tel&#34; class=&#34;field&#34; placeholder=&#34;Buyer&#39;s phone number&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;mobilePhone&#34;&gt;mobilePhone&lt;/label&gt;
+                &lt;input id=&#34;mobilePhone&#34; name=&#34;mobilePhone&#34; type=&#34;tel&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s mobile phone number&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;shippingCountry&#34;&gt;shippingCountry&lt;/label&gt;
+                &lt;input id=&#34;shippingCountry&#34; name=&#34;shippingCountry&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s shipping country, e.g., AR, BR, CL, CO, CR, SV, GT, HN, MX, PA, PE.&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;shippingState&#34;&gt;shippingState&lt;/label&gt;
+                &lt;input id=&#34;shippingState&#34; name=&#34;shippingState&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s shipping state in ISO 3166 code, e.g., set SP for São Paulo (BR) or set AR-C for Buenos Aires (AR).&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;shippingCity&#34;&gt;shippingCity&lt;/label&gt;
+                &lt;input id=&#34;shippingCity&#34; name=&#34;shippingCity&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s shipping city&#34;&gt;
+              &lt;/div&gt;
+ 
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;shippingAddress&#34;&gt;shippingAddress&lt;/label&gt;
+                &lt;input id=&#34;shippingAddress&#34; name=&#34;shippingAddress&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s shipping address&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;shippingAddress2&#34;&gt;shippingAddress2&lt;/label&gt;
+                &lt;input id=&#34;shippingAddress2&#34; name=&#34;shippingAddress2&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s shipping address 2&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;shippingAddress3&#34;&gt;shippingAddress3&lt;/label&gt;
+                &lt;input id=&#34;shippingAddress3&#34; name=&#34;shippingAddress3&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s shipping address 3&#34;&gt;
+              &lt;/div&gt;
+  
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;payerShippingPostalCode&#34;&gt;payerShippingPostalCode&lt;/label&gt;
+                &lt;input id=&#34;payerShippingPostalCode&#34; name=&#34;payerShippingPostalCode&#34; type=&#34;text&#34; class=&#34;field&#34;
+                  placeholder=&#34;Buyer&#39;s shipping postal code&#34;&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+  
+            
+            &lt;div&gt;
+              &lt;input class=&#34;btn&#34; name=&#34;Submit&#34; type=&#34;submit&#34; value=&#34;Pay with PayU&#34;&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt; 
+&lt;/body&gt;
+  
+  
+  &lt;script&gt;
+  
+    const accountIdCountry = {
+      &#34;512322&#34;: &#34;AR&#34;, 
+      &#34;516684&#34;: &#34;AR&#34;, 
+      &#34;512327&#34;: &#34;BR&#34;, 
+      &#34;516685&#34;: &#34;BR&#34;, 
+      &#34;512325&#34;: &#34;CL&#34;, 
+      &#34;512321&#34;: &#34;CO&#34;, 
+      &#34;516686&#34;: &#34;CO&#34;, 
+      &#34;513128&#34;: &#34;CO&#34;, 
+      &#34;512548&#34;: &#34;CO&#34;, 
+      &#34;516677&#34;: &#34;CR&#34;, 
+      &#34;516678&#34;: &#34;SV&#34;, 
+      &#34;516679&#34;: &#34;GT&#34;, 
+      &#34;516680&#34;: &#34;HN&#34;, 
+      &#34;512324&#34;: &#34;MX&#34;, 
+      &#34;512326&#34;: &#34;PA&#34;, 
+      &#34;512323&#34;: &#34;PE&#34;, 
+      &#34;516688&#34;: &#34;PE&#34;  
+    };
+  
+    const countryNames = {
+      &#34;AR&#34;: &#34;Argentina&#34;,
+      &#34;BR&#34;: &#34;Brazil&#34;,
+      &#34;CL&#34;: &#34;Chile&#34;,
+      &#34;CO&#34;: &#34;Colombia&#34;,
+      &#34;CR&#34;: &#34;Costa Rica&#34;,
+      &#34;SV&#34;: &#34;El Salvador&#34;,
+      &#34;GT&#34;: &#34;Guatemala&#34;,
+      &#34;HN&#34;: &#34;Honduras&#34;,
+      &#34;MX&#34;: &#34;Mexico&#34;,
+      &#34;PA&#34;: &#34;Panama&#34;,
+      &#34;PE&#34;: &#34;Peru&#34;
+    };
+  
+    const countryCurrency = {
+      &#34;AR&#34;: &#34;ARS&#34;,
+      &#34;BR&#34;: &#34;BRL&#34;,
+      &#34;CL&#34;: &#34;CLP&#34;,
+      &#34;CO&#34;: &#34;COP&#34;,
+      &#34;CR&#34;: &#34;CRC&#34;,
+      &#34;SV&#34;: &#34;USD&#34;,
+      &#34;GT&#34;: &#34;GTQ&#34;,
+      &#34;HN&#34;: &#34;HNL&#34;,
+      &#34;MX&#34;: &#34;MXN&#34;,
+      &#34;PA&#34;: &#34;USD&#34;,
+      &#34;PE&#34;: &#34;PEN&#34;
+    };
+  
+   const documentTypes = [
+  { iso: &#34;CC&#34;, description: &#34;Citizenship card&#34;, country: &#34;Colombia&#34; },
+  { iso: &#34;CE&#34;, description: &#34;Foreign citizenship card&#34;, country: &#34;Colombia, Peru&#34; },
+  { iso: &#34;CEL&#34;, description: &#34;When identified by the mobile line&#34;, country: &#34;Colombia&#34; },
+  { iso: &#34;CEP&#34;, description: &#34;Electronic Payment Receipt&#34;, country: &#34;Mexico&#34; },
+  { iso: &#34;CI&#34;, description: &#34;Identity Card&#34;, country: &#34;Argentina, Chile&#34; },
+  { iso: &#34;CNPJ&#34;, description: &#34;National Register of Legal Entities&#34;, country: &#34;Brazil&#34; },
+  { iso: &#34;CPF&#34;, description: &#34;Registration of Individuals&#34;, country: &#34;Brazil&#34; },
+  { iso: &#34;CUIL&#34;, description: &#34;Unique Labor Identification Code&#34;, country: &#34;Argentina&#34; },
+  { iso: &#34;CUIT&#34;, description: &#34;Single Tax identification&#34;, country: &#34;Argentina&#34; },
+  { iso: &#34;CURP&#34;, description: &#34;Unique Population Registry Code&#34;, country: &#34;Mexico&#34; },
+  { iso: &#34;DE&#34;, description: &#34;Foreign Identification Number&#34;, country: &#34;Peru&#34; },
+  
+  { iso: &#34;DNI&#34;, description: &#34;National Identity Document&#34;, country: &#34;Argentina, Peru, Chile&#34; },
+  { iso: &#34;DNIE&#34;, description: &#34;National Identity Document - Electronic&#34;, country: &#34;Argentina, Peru, Chile&#34; },
+  { iso: &#34;EIN&#34;, description: &#34;Employer Identification Number&#34;, country: &#34;Peru&#34; },
+  
+  
+  { iso: &#34;IFE&#34;, description: &#34;Federal Electoral Institute&#34;, country: &#34;Mexico&#34; },
+  { iso: &#34;LC&#34;, description: &#34;Civic Notebook&#34;, country: &#34;Argentina&#34; },
+  { iso: &#34;LE&#34;, description: &#34;Book enlistment&#34;, country: &#34;Argentina&#34; },
+  
+  { iso: &#34;NIT&#34;, description: &#34;Tax identification number&#34;, country: &#34;Colombia&#34; },
+  
+  { iso: &#34;RC&#34;, description: &#34;Birth certificate&#34;, country: &#34;Colombia&#34; },
+  
+  
+  { iso: &#34;RFC&#34;, description: &#34;Federal taxpayer registry&#34;, country: &#34;Mexico&#34; },
+  
+  
+  
+  
+  { iso: &#34;RUC&#34;, description: &#34;Unique Taxpayer Registration&#34;, country: &#34;Peru&#34; },
+  { iso: &#34;RUN&#34;, description: &#34;Unique National Role&#34;, country: &#34;Chile&#34; },
+  { iso: &#34;RUT&#34;, description: &#34;Unique Tributary Role&#34;, country: &#34;Chile&#34; },
+  
+  { iso: &#34;SIEM&#34;, description: &#34;Mexican Business Information System&#34;, country: &#34;Mexico&#34; },
+  
+  { iso: &#34;TI&#34;, description: &#34;Identity Card&#34;, country: &#34;Colombia&#34; }
+];
+
+
+function togglePanel(header) {
+  const panel = header.parentElement;
+  panel.classList.toggle(&#39;active&#39;);
+}
 
   
   function showTooltip(tooltipId) {
-    var tooltip = document.getElementById(tooltipId);
-    if (tooltip.style.display === &#34;none&#34; || tooltip.style.display === &#34;&#34;) {
-      tooltip.style.display = &#34;inline-flex&#34;;
+    const tooltip = document.getElementById(tooltipId);
+
+    
+    if (tooltip.classList.contains(&#34;show&#34;)) {
+        tooltip.classList.remove(&#34;show&#34;);
+        document.removeEventListener(&#39;click&#39;, handleOutsideClick);
     } else {
-      tooltip.style.display = &#34;none&#34;;
-    }
-  }
+        
+        const openTooltips = document.querySelectorAll(&#39;.tooltip.show&#39;);
+        openTooltips.forEach(openTooltip =&gt; openTooltip.classList.remove(&#39;show&#39;));
 
-  
-  document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
-    document.getElementById(&#39;shipping-information&#39;).style.display = &#39;none&#39;;
-  });
+        
+        tooltip.classList.add(&#34;show&#34;);
 
-  
-  function useBillingInformation() {
-    document.getElementById(&#39;shipping-information&#39;).style.display = &#39;none&#39;;
-
-    document.getElementById(&#39;buyerFullName&#39;).value = document.getElementById(&#39;payerFullName&#39;).value;
-    document.getElementById(&#39;buyerEmail&#39;).value = document.getElementById(&#39;payerEmail&#39;).value;
-    document.getElementById(&#39;buyerDocumentType&#39;).value = document.getElementById(&#39;payerDocumentType&#39;).value;
-    document.getElementById(&#39;buyerDocument&#39;).value = document.getElementById(&#39;payerDocument&#39;).value;
-    document.getElementById(&#39;officeTelephone&#39;).value = document.getElementById(&#39;payerOfficePhone&#39;).value;
-    document.getElementById(&#39;telephone&#39;).value = document.getElementById(&#39;payerPhone&#39;).value;
-    document.getElementById(&#39;mobilePhone&#39;).value = document.getElementById(&#39;payerMobilePhone&#39;).value;
-    document.getElementById(&#39;shippingCountry&#39;).value = document.getElementById(&#39;billingCountry&#39;).value;
-    document.getElementById(&#39;shippingState&#39;).value = document.getElementById(&#39;payerState&#39;).value;
-    document.getElementById(&#39;shippingCity&#39;).value = document.getElementById(&#39;billingCity&#39;).value;
-    document.getElementById(&#39;shippingAddress&#39;).value = document.getElementById(&#39;billingAddress&#39;).value;
-    document.getElementById(&#39;shippingAddress2&#39;).value = document.getElementById(&#39;billingAddress2&#39;).value;
-    document.getElementById(&#39;shippingAddress3&#39;).value = document.getElementById(&#39;billingAddress3&#39;).value;
-    document.getElementById(&#39;payerShippingPostalCode&#39;).value = document.getElementById(&#39;zipCode&#39;).value;
-  }
-
-  
-  function toggleShippingAddress() {
-    document.getElementById(&#39;shipping-information&#39;).style.display = &#39;block&#39;;
-  }
-
-  
-  function setEmptyShippingInformation() {
-    document.getElementById(&#39;shipping-information&#39;).style.display = &#39;none&#39;;
-
-    document.getElementById(&#39;buyerFullName&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;buyerEmail&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;buyerDocumentType&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;buyerDocument&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;officeTelephone&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;telephone&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;mobilePhone&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;shippingCountry&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;shippingState&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;shippingCity&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;shippingAddress&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;shippingAddress2&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;shippingAddress3&#39;).value = &#39;&#39;;
-    document.getElementById(&#39;payerShippingPostalCode&#39;).value = &#39;&#39;;
-  }
-
-  
-  
-  document.getElementById(&#39;generate-random-info-button&#39;).addEventListener(&#39;click&#39;, function (event) {
-    event.preventDefault();
-    generateRandomInfo();
-  });
-
-  
-  function generateSignature(signatureString, hashType) {
-    let hashFunction;
-    switch (hashType) {
-      case &#34;MD5&#34;:
-        hashFunction = CryptoJS.MD5;
-        break;
-      case &#34;SHA&#34;:
-        hashFunction = CryptoJS.SHA1;
-        break;
-      case &#34;SHA256&#34;:
-        hashFunction = CryptoJS.SHA256;
-        break;
-      default:
-        console.log(&#34;Invalid hash type&#34;);
-        return null;
-    }
-    return hashFunction(signatureString).toString();
-  }
-
-  
-  function getFormattedDate() {
-    let date = new Date();
-    date.setDate(date.getDate() + 1); 
-
-    let year = date.getFullYear();
-    let month = String(date.getMonth() + 1).padStart(2, &#39;0&#39;); 
-    let day = String(date.getDate()).padStart(2, &#39;0&#39;);
-    let hours = String(date.getHours()).padStart(2, &#39;0&#39;);
-    let minutes = String(date.getMinutes()).padStart(2, &#39;0&#39;);
-    let seconds = String(date.getSeconds()).padStart(2, &#39;0&#39;);
-
-    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-  }
-
-  
-  function showMessage(message, color) {
-    document.getElementById(&#34;message&#34;).textContent = message.toString();
-    document.getElementById(&#34;message&#34;).style.color = color;
-  }
-
-  
-  function generateRandomInfo() {
-
-    const accountId = document.getElementById(&#39;accountId&#39;).value;
-    const countryCode = accountIdCountry[accountId];
-    const countryName = countryNames[countryCode];
-    const currency = countryCurrency[countryCode];
-
-    
-    const amount = (Math.random() * 10000 + 1).toFixed(2);
-
-    
-    const taxRate = 0.19; 
-    const taxReturnBase = (amount / (1 + taxRate)).toFixed(2);
-    const tax = (amount - taxReturnBase).toFixed(2);
-
-    
-    const description = &#39;Order description for &#39; + countryName;
-    const now = new Date();
-    const localDate = now.toLocaleDateString();
-    const localTime = now.toLocaleTimeString();
-    const referenceCode = &#39;REF&#39; + Math.floor(Math.random() * 1000000) + &#39; &#39; + localDate + &#39; &#39; + localTime;
-
-    
-    const countryDocuments = documentTypes.filter(doc =&gt; doc.country.includes(countryName) || doc.country.includes(&#39;Other&#39;));
-
-    
-    let randomDoc;
-    if (countryDocuments.length &gt; 0) {
-      randomDoc = countryDocuments[Math.floor(Math.random() * countryDocuments.length)];
-    } else {
-      randomDoc = { iso: &#34;PP&#34;, description: &#34;Passport&#34;, country: &#34;Other&#34; };
+        
+        setTimeout(() =&gt; {
+            document.addEventListener(&#39;click&#39;, handleOutsideClick);
+        });
     }
 
-  
-
-  
-  if (document.getElementById(&#39;lng&#39;).value !== &#39;en&#39;) {
     
-    if (countryCode === &#39;BR&#39;) {
-      document.getElementById(&#39;lng&#39;).value = &#39;pt&#39;;
-    } else {
-      document.getElementById(&#39;lng&#39;).value = &#39;es&#39;;
+    function handleOutsideClick(event) {
+        
+        const isClickInside = tooltip.contains(event.target) || event.target.classList.contains(&#39;info-icon&#39;);
+        if (!isClickInside) {
+            tooltip.classList.remove(&#34;show&#34;);
+            document.removeEventListener(&#39;click&#39;, handleOutsideClick);
+        }
     }
+}
+
+
+document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+  document.getElementById(&#39;shipping-information&#39;).style.display = &#39;none&#39;;
+});
+
+
+function useBillingInformation() {
+  document.getElementById(&#39;shipping-information&#39;).style.display = &#39;none&#39;;
+
+  document.getElementById(&#39;buyerFullName&#39;).value = document.getElementById(&#39;payerFullName&#39;).value;
+  document.getElementById(&#39;buyerEmail&#39;).value = document.getElementById(&#39;payerEmail&#39;).value;
+  document.getElementById(&#39;buyerDocumentType&#39;).value = document.getElementById(&#39;payerDocumentType&#39;).value;
+  document.getElementById(&#39;buyerDocument&#39;).value = document.getElementById(&#39;payerDocument&#39;).value;
+  document.getElementById(&#39;officeTelephone&#39;).value = document.getElementById(&#39;payerOfficePhone&#39;).value;
+  document.getElementById(&#39;telephone&#39;).value = document.getElementById(&#39;payerPhone&#39;).value;
+  document.getElementById(&#39;mobilePhone&#39;).value = document.getElementById(&#39;payerMobilePhone&#39;).value;
+  document.getElementById(&#39;shippingCountry&#39;).value = document.getElementById(&#39;billingCountry&#39;).value;
+  document.getElementById(&#39;shippingState&#39;).value = document.getElementById(&#39;payerState&#39;).value;
+  document.getElementById(&#39;shippingCity&#39;).value = document.getElementById(&#39;billingCity&#39;).value;
+  document.getElementById(&#39;shippingAddress&#39;).value = document.getElementById(&#39;billingAddress&#39;).value;
+  document.getElementById(&#39;shippingAddress2&#39;).value = document.getElementById(&#39;billingAddress2&#39;).value;
+  document.getElementById(&#39;shippingAddress3&#39;).value = document.getElementById(&#39;billingAddress3&#39;).value;
+  document.getElementById(&#39;payerShippingPostalCode&#39;).value = document.getElementById(&#39;zipCode&#39;).value;
+}
+
+
+function toggleShippingAddress() {
+  document.getElementById(&#39;shipping-information&#39;).style.display = &#39;block&#39;;
+}
+
+
+function setEmptyShippingInformation() {
+  document.getElementById(&#39;shipping-information&#39;).style.display = &#39;none&#39;;
+
+  document.getElementById(&#39;buyerFullName&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;buyerEmail&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;buyerDocumentType&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;buyerDocument&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;officeTelephone&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;telephone&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;mobilePhone&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;shippingCountry&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;shippingState&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;shippingCity&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;shippingAddress&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;shippingAddress2&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;shippingAddress3&#39;).value = &#39;&#39;;
+  document.getElementById(&#39;payerShippingPostalCode&#39;).value = &#39;&#39;;
+}
+
+
+
+document.getElementById(&#39;generate-random-info-button&#39;).addEventListener(&#39;click&#39;, function (event) {
+  event.preventDefault();
+  generateRandomInfo();
+});
+
+
+function generateSignature(signatureString, hashType) {
+  let hashFunction;
+  switch (hashType) {
+    case &#34;MD5&#34;:
+      hashFunction = CryptoJS.MD5;
+      break;
+    case &#34;SHA&#34;:
+      hashFunction = CryptoJS.SHA1;
+      break;
+    case &#34;SHA256&#34;:
+      hashFunction = CryptoJS.SHA256;
+      break;
+    default:
+      console.log(&#34;Invalid hash type&#34;);
+      return null;
   }
+  return hashFunction(signatureString).toString();
+}
+
+
+function getFormattedDate() {
+  let date = new Date();
+  date.setDate(date.getDate() + 1); 
+
+  let year = date.getFullYear();
+  let month = String(date.getMonth() + 1).padStart(2, &#39;0&#39;); 
+  let day = String(date.getDate()).padStart(2, &#39;0&#39;);
+  let hours = String(date.getHours()).padStart(2, &#39;0&#39;);
+  let minutes = String(date.getMinutes()).padStart(2, &#39;0&#39;);
+  let seconds = String(date.getSeconds()).padStart(2, &#39;0&#39;);
+
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+
+function showMessage(message, color) {
+  document.getElementById(&#34;message&#34;).textContent = message.toString();
+  document.getElementById(&#34;message&#34;).style.color = color;
+}
+
+
+function generateRandomInfo() {
+
+  const accountId = document.getElementById(&#39;accountId&#39;).value;
+  const countryCode = accountIdCountry[accountId];
+  const countryName = countryNames[countryCode];
+  const currency = countryCurrency[countryCode];
 
   
-  document.getElementById(&#39;description&#39;).value = description;
-  document.getElementById(&#39;referenceCode&#39;).value = referenceCode;
-  document.getElementById(&#39;taxReturnBase&#39;).value = taxReturnBase;
-  document.getElementById(&#39;tax&#39;).value = tax;
-  document.getElementById(&#39;amount&#39;).value = amount;
-  document.getElementById(&#39;currency&#39;).value = currency;
+  const amount = (Math.random() * 10000 + 1).toFixed(2);
 
   
-  document.getElementById(&#39;payerFullName&#39;).value = &#39;APPROVED&#39;;
-  document.getElementById(&#39;payerEmail&#39;).value = &#39;pruebas@payulatam.com&#39;;
-  document.getElementById(&#39;payerOfficePhone&#39;).value = &#39;3001234567&#39;;
-  document.getElementById(&#39;payerPhone&#39;).value = &#39;1234567&#39;;
-  document.getElementById(&#39;payerMobilePhone&#39;).value = &#39;1234567&#39;;
-  document.getElementById(&#39;payerDocumentType&#39;).value = randomDoc.iso;
+  const taxRate = 0.19; 
+  const taxReturnBase = (amount / (1 + taxRate)).toFixed(2);
+  const tax = (amount - taxReturnBase).toFixed(2);
 
-  let payerDocumentValue = &#39;1234567890&#39;; 
+  
+  const description = &#39;Order description for &#39; + countryName;
+  const now = new Date();
+  const localDate = now.toLocaleDateString();
+  const localTime = now.toLocaleTimeString();
+  const referenceCode = &#39;REF&#39; + Math.floor(Math.random() * 1000000) + &#39; &#39; + localDate + &#39; &#39; + localTime;
 
+ 
+const countryDocuments = documentTypes.filter(doc =&gt; doc.country.includes(countryName) || doc.country.includes(&#39;Other&#39;));
+
+
+let randomDoc;
+if (countryDocuments.length &gt; 0) {
+  randomDoc = countryDocuments[Math.floor(Math.random() * countryDocuments.length)];
+} else {
+  randomDoc = { iso: &#34;PP&#34;, description: &#34;Passport&#34;, country: &#34;Other&#34; };
+}
+
+
+
+
+if (document.getElementById(&#39;lng&#39;).value !== &#39;en&#39;) {
+  
   if (countryCode === &#39;BR&#39;) {
-    if (randomDoc.iso === &#39;CPF&#39;) {
-      payerDocumentValue = &#39;811.807.405-64&#39;;
-    } else if (randomDoc.iso === &#39;CNPJ&#39;) {
-      payerDocumentValue = &#39;32593371000110&#39;;
-    }
-  } else if (countryCode === &#39;AR&#39;) {
-    if (randomDoc.iso === &#39;CUIL&#39; || randomDoc.iso === &#39;CUIT&#39;) {
-      payerDocumentValue = &#39;23-35523036-8&#39;;
-    }
+    document.getElementById(&#39;lng&#39;).value = &#39;pt&#39;;
+  } else {
+    document.getElementById(&#39;lng&#39;).value = &#39;es&#39;;
   }
+}
 
-  document.getElementById(&#39;payerDocument&#39;).value = payerDocumentValue;
-  document.getElementById(&#39;billingCountry&#39;).value = countryCode;
 
-  let paymentCityValue = &#39;City in &#39; + countryName; 
-  let billingStateValue = &#39;&#39;; 
+document.getElementById(&#39;description&#39;).value = description;
+document.getElementById(&#39;referenceCode&#39;).value = referenceCode;
+document.getElementById(&#39;taxReturnBase&#39;).value = taxReturnBase;
+document.getElementById(&#39;tax&#39;).value = tax;
+document.getElementById(&#39;amount&#39;).value = amount;
+document.getElementById(&#39;currency&#39;).value = currency;
 
-  if (countryCode === &#39;AR&#39;) {
-    paymentCityValue = &#39;Ciudad Autónoma de Buenos Aires&#39;;
-    billingStateValue = &#39;AR-C&#39;;
-  } else if (countryCode === &#39;BR&#39;) {
-    paymentCityValue = &#39;São Paulo&#39;;
-    billingStateValue = &#39;SP&#39;;
-  } else if (countryCode === &#39;CL&#39;) {
-    paymentCityValue = &#39;Santiago&#39;;
-    billingStateValue = &#39;CL-RM&#39;;
-  } else if (countryCode === &#39;CO&#39;) {
-    paymentCityValue = &#39;Bogotá&#39;;
-    billingStateValue = &#39;CO-DC&#39;;
-  } else if (countryCode === &#39;CR&#39;) {
-    paymentCityValue = &#39;San José&#39;;
-    billingStateValue = &#39;CR-SJ&#39;;
-  } else if (countryCode === &#39;SV&#39;) {
-    paymentCityValue = &#39;San Salvador&#39;;
-    billingStateValue = &#39;SV-SS&#39;;
-  } else if (countryCode === &#39;GT&#39;) {
-    paymentCityValue = &#39;Guatemala City&#39;;
-    billingStateValue = &#39;GT-GU&#39;;
-  } else if (countryCode === &#39;HN&#39;) {
-    paymentCityValue = &#39;Tegucigalpa&#39;;
-    billingStateValue = &#39;HN-FM&#39;;
-  } else if (countryCode === &#39;MX&#39;) {
-    paymentCityValue = &#39;Mexico City&#39;;
-    billingStateValue = &#39;MX-CMX&#39;;
-  } else if (countryCode === &#39;PA&#39;) {
-    paymentCityValue = &#39;Panama City&#39;;
-    billingStateValue = &#39;PA-8&#39;;
-  } else if (countryCode === &#39;PE&#39;) {
-    paymentCityValue = &#39;Lima&#39;;
-    billingStateValue = &#39;PE-LMA&#39;;
+
+document.getElementById(&#39;payerFullName&#39;).value = &#39;APPROVED&#39;;
+document.getElementById(&#39;payerEmail&#39;).value = &#39;pruebas@payulatam.com&#39;;
+document.getElementById(&#39;payerOfficePhone&#39;).value = &#39;3001234567&#39;;
+document.getElementById(&#39;payerPhone&#39;).value = &#39;1234567&#39;;
+document.getElementById(&#39;payerMobilePhone&#39;).value = &#39;1234567&#39;;
+document.getElementById(&#39;payerDocumentType&#39;).value = randomDoc.iso;
+
+let payerDocumentValue = &#39;1234567890&#39;; 
+
+if (countryCode === &#39;BR&#39;) {
+  if (randomDoc.iso === &#39;CPF&#39;) {
+    payerDocumentValue = &#39;811.807.405-64&#39;;
+  } else if (randomDoc.iso === &#39;CNPJ&#39;) {
+    payerDocumentValue = &#39;32593371000110&#39;;
   }
-
-  document.getElementById(&#39;billingCity&#39;).value = paymentCityValue;
-  document.getElementById(&#39;payerState&#39;).value = billingStateValue;
-  document.getElementById(&#39;billingAddress&#39;).value = &#39;Calle 123&#39;;
-  document.getElementById(&#39;billingAddress2&#39;).value = &#39;98-76&#39;;
-  document.getElementById(&#39;billingAddress3&#39;).value = &#39;Apartment 1001&#39;;
-
-  let paymentZipCode = &#39;123456&#39;; 
-
-  if (countryCode === &#39;AR&#39;) {
-    paymentZipCode = &#39;C1000AAA&#39;; 
-  } else if (countryCode === &#39;BR&#39;) {
-    paymentZipCode = &#39;04578910&#39;; 
-  } else if (countryCode === &#39;CL&#39;) {
-    paymentZipCode = &#39;8320000&#39;; 
-  } else if (countryCode === &#39;CO&#39;) {
-    paymentZipCode = &#39;110111&#39;; 
-  } else if (countryCode === &#39;CR&#39;) {
-    paymentZipCode = &#39;10101&#39;; 
-  } else if (countryCode === &#39;SV&#39;) {
-    paymentZipCode = &#39;1101&#39;; 
-  } else if (countryCode === &#39;GT&#39;) {
-    paymentZipCode = &#39;01001&#39;; 
-  } else if (countryCode === &#39;HN&#39;) {
-    paymentZipCode = &#39;11101&#39;; 
-  } else if (countryCode === &#39;MX&#39;) {
-    paymentZipCode = &#39;06000&#39;; 
-  } else if (countryCode === &#39;PA&#39;) {
-    paymentZipCode = &#39;0801&#39;; 
-  } else if (countryCode === &#39;PE&#39;) {
-    paymentZipCode = &#39;15001&#39;; 
+} else if (countryCode === &#39;AR&#39;) {
+  if (randomDoc.iso === &#39;CUIL&#39; || randomDoc.iso === &#39;CUIT&#39;) {
+    payerDocumentValue = &#39;23-35523036-8&#39;;
   }
+}
 
-  document.getElementById(&#39;zipCode&#39;).value = paymentZipCode;
+document.getElementById(&#39;payerDocument&#39;).value = payerDocumentValue;
+document.getElementById(&#39;billingCountry&#39;).value = countryCode;
+
+let paymentCityValue = &#39;City in &#39; + countryName; 
+let billingStateValue = &#39;&#39;; 
+
+if (countryCode === &#39;AR&#39;) {
+  paymentCityValue = &#39;Ciudad Autónoma de Buenos Aires&#39;;
+  billingStateValue = &#39;AR-C&#39;;
+} else if (countryCode === &#39;BR&#39;) {
+  paymentCityValue = &#39;São Paulo&#39;;
+  billingStateValue = &#39;SP&#39;;
+} else if (countryCode === &#39;CL&#39;) {
+  paymentCityValue = &#39;Santiago&#39;;
+  billingStateValue = &#39;CL-RM&#39;;
+} else if (countryCode === &#39;CO&#39;) {
+  paymentCityValue = &#39;Bogotá&#39;;
+  billingStateValue = &#39;CO-DC&#39;;
+} else if (countryCode === &#39;CR&#39;) {
+  paymentCityValue = &#39;San José&#39;;
+  billingStateValue = &#39;CR-SJ&#39;;
+} else if (countryCode === &#39;SV&#39;) {
+  paymentCityValue = &#39;San Salvador&#39;;
+  billingStateValue = &#39;SV-SS&#39;;
+} else if (countryCode === &#39;GT&#39;) {
+  paymentCityValue = &#39;Guatemala City&#39;;
+  billingStateValue = &#39;GT-GU&#39;;
+} else if (countryCode === &#39;HN&#39;) {
+  paymentCityValue = &#39;Tegucigalpa&#39;;
+  billingStateValue = &#39;HN-FM&#39;;
+} else if (countryCode === &#39;MX&#39;) {
+  paymentCityValue = &#39;Mexico City&#39;;
+  billingStateValue = &#39;MX-CMX&#39;;
+} else if (countryCode === &#39;PA&#39;) {
+  paymentCityValue = &#39;Panama City&#39;;
+  billingStateValue = &#39;PA-8&#39;;
+} else if (countryCode === &#39;PE&#39;) {
+  paymentCityValue = &#39;Lima&#39;;
+  billingStateValue = &#39;PE-LMA&#39;;
+}
+document.getElementById(&#39;billingCity&#39;).value = paymentCityValue;
+document.getElementById(&#39;payerState&#39;).value = billingStateValue;
+document.getElementById(&#39;billingAddress&#39;).value = &#39;Street 123&#39;;
+document.getElementById(&#39;billingAddress2&#39;).value = &#39;98-76&#39;;
+document.getElementById(&#39;billingAddress3&#39;).value = &#39;Apartment 1001&#39;;
+
+let paymentZipCode = &#39;123456&#39;; 
+
+if (countryCode === &#39;AR&#39;) {
+  paymentZipCode = &#39;C1000AAA&#39;; 
+} else if (countryCode === &#39;BR&#39;) {
+  paymentZipCode = &#39;04578910&#39;; 
+} else if (countryCode === &#39;CL&#39;) {
+  paymentZipCode = &#39;8320000&#39;; 
+} else if (countryCode === &#39;CO&#39;) {
+  paymentZipCode = &#39;110111&#39;; 
+} else if (countryCode === &#39;CR&#39;) {
+  paymentZipCode = &#39;10101&#39;; 
+} else if (countryCode === &#39;SV&#39;) {
+  paymentZipCode = &#39;1101&#39;; 
+} else if (countryCode === &#39;GT&#39;) {
+  paymentZipCode = &#39;01001&#39;; 
+} else if (countryCode === &#39;HN&#39;) {
+  paymentZipCode = &#39;11101&#39;; 
+} else if (countryCode === &#39;MX&#39;) {
+  paymentZipCode = &#39;06000&#39;; 
+} else if (countryCode === &#39;PA&#39;) {
+  paymentZipCode = &#39;0801&#39;; 
+} else if (countryCode === &#39;PE&#39;) {
+  paymentZipCode = &#39;15001&#39;; 
+}
+
+document.getElementById(&#39;zipCode&#39;).value = paymentZipCode;
 
 
 const apiKey = &#39;4Vj8eK4rloUd272L48hsrarnUA&#39;; 
@@ -1495,7 +1530,6 @@ function updatePseBanksVisibility() {
     document.getElementById(&#39;pseBanks-field&#39;).style.display = &#39;none&#39;;
   }
 }
-
 function updateAirlinesAndTravelAgenciesFieldsVisibility() {
   var accountId = document.getElementById(&#39;accountId&#39;).value;
 
@@ -1550,12 +1584,17 @@ function handleFormSubmit(event) {
   }
   
 }
-
+  
 &lt;/script&gt;
 
 
 &lt;style&gt;
-  
+  .instruction {
+  color: orangered !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  }
+
   hr.solid {
     border-top: 3px solid #bbb;
     margin-bottom: 1em;
@@ -1579,6 +1618,10 @@ function handleFormSubmit(event) {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin: 10px 0;
+  }
+
+  .expansion-panel-header:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   .expansion-panel-header {
@@ -1606,7 +1649,7 @@ function handleFormSubmit(event) {
 
   .tooltip {
     display: none;
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.98);
     border: 2px solid #ccc;
     padding: 10px;
     position: absolute;
@@ -1615,10 +1658,14 @@ function handleFormSubmit(event) {
     z-index: 100;
     width: 100%;
     margin-top: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    word-wrap: break-word;
+    word-wrap: break-word;    
 
+  }
+
+  .tooltip.show {
+    display: inline-flex !important; 
   }
 
   .info-icon:hover+.tooltip {
@@ -1638,6 +1685,20 @@ function handleFormSubmit(event) {
     align-items: center;
   }
 
+  .clickable-label {
+    display: flex;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    justify-content: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    align-items: center;
+    cursor: pointer;
+  }
+
   .form-row {
     display: flex;
     align-items: center;
@@ -1645,9 +1706,13 @@ function handleFormSubmit(event) {
   }
 
   .form-row label {
-    width: 250px;
-    text-align: left;
     margin-right: 10px;
+    min-width: 150px;
+  }
+  
+  .form-row .field {
+    flex: 1;
+    padding: 5px;
   }
 
   .form-container {
@@ -2471,8 +2536,23 @@ signature = 779f163be9347a691bcdb25064644795
 &lt;li&gt;Se estiver usando HTTPS, você deve ter um certificado válido.&lt;/li&gt;
 &lt;li&gt;O formato da sua página de confirmação deve ser &lt;code&gt;x-www-form-urlencoded&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia &lt;code&gt;TLS_ECDHE_ECDSA_WITH_RC4_128_SHA&lt;/code&gt; na sua página de confirmação.&lt;/li&gt;
-&lt;li&gt;PayU reporta a página de confirmação quando a transação tem um status conclusivo, por exemplo, quando aprovada, rejeitada ou expirada. Se uma transação estiver em andamento (aguardando pagamento ou análise), PayU não reporta nada até que a transação tenha um status conclusivo&lt;/li&gt;
+&lt;li&gt;PayU reporta a página de confirmação quando a transação tem um status conclusivo, por exemplo, quando aprovada, rejeitada ou expirada. Se uma transação estiver em andamento (aguardando pagamento ou análise), PayU não reporta nada até que a transação tenha um status conclusivo.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;lista-de-ips-permitidos-para-os-servidores-da-payu-latam&#34;&gt;Lista de IPs Permitidos para os Servidores da PayU Latam&lt;/h2&gt;
+&lt;p&gt;Para garantir uma comunicação fluida entre o seu servidor e os servidores da PayU Latam, é necessário adicionar nossos endereços IP à lista de permissões. Isso é especialmente importante se o seu servidor estiver protegido por um firewall. Todas as solicitações de webhook e comunicações dos servidores da PayU se originarão nos endereços IP listados abaixo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ambiente de Produção&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;198.61.156.98&lt;/li&gt;
+&lt;li&gt;190.216.203.233&lt;/li&gt;
+&lt;li&gt;34.233.144.154&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Ambiente de Sandbox&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;50.56.9.170&lt;/li&gt;
+&lt;li&gt;74.205.10.14&lt;/li&gt;
+&lt;li&gt;54.158.171.129&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ao permitir esses endereços na sua lista de permissões, você garante que as solicitações e notificações da PayU sejam recebidas corretamente.&lt;/p&gt;
 &lt;h2 id=&#34;variables-sent-with-the-confirmation-page&#34;&gt;Variáveis enviadas com a página de confirmação&lt;/h2&gt;
 &lt;details&gt;
 &lt;summary&gt;Variáveis na página de confirmação&lt;/summary&gt;

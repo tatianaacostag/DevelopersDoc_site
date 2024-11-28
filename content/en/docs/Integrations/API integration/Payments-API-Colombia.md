@@ -2152,6 +2152,12 @@ This integration enables airlines and travel agencies in Colombia to streamline 
 | **Identification** | Acquirers can identify the airline specifically through the airline ID for targeted distribution. | Enables the acquirer to identify both the travel agency and the airline for accurate funds distribution. |
 | **4 x 1000 Tax Exemption Eligibility** | Colombian airlines may qualify if they provide their airline ID and relevant fee information. | Colombian travel agencies may qualify if they provide comprehensive transaction details.|
 
+{{% alert title="Note" color="info"%}}
+
+Check with your acquiring bank whether your business meets the requirements for the 4 x 1000 tax exemption. Eligibility depends on the information provided in each transaction and current regulations.
+
+{{% /alert %}}
+
 ### Retrieve the List of Available Airlines
 
 To integrate with PayU, both travel agencies and airlines need to retrieve the airline codes eligible for payment collection and send them through the Payments API. This can be done by querying the PayU system to obtain the list of available airlines and their respective codes. The endpoint for retrieving airline codes is the same for both types of merchants, though the specific use may differ:
@@ -2261,10 +2267,10 @@ To complete a successful transaction request, you must include the specific para
 | **Field** | **Type** | **Size** | **Description** | **Example** |
 |-|-|-|-|-|
 | transaction > order > airlineCode | Alphanumeric | 4 | Airline code. | 29 |
-| transaction > order > additionalValues > TX_VALUE > value | Number | 12,2 | Total transaction amount. Can contain up to two decimal places. | 119000 |
-| transaction > order > additionalValues > TX_TAX > value | Number | 12,2 | VAT value. If unspecified, the system applies a 19% rate by default in Colombia. Use 0 for VAT-exempt items. | 19000 |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12,2 | Base value for VAT calculation. Set to 0 if the product or service is VAT-exempt. | 100000 |
-| transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value | Number | 12,2 | Airport fares and other applicable taxes. | 25000 |
+| transaction > order > additionalValues > TX_VALUE > value | Number | 12.2 | Total transaction amount. Can contain up to two decimal places. | 119000 |
+| transaction > order > additionalValues > TX_TAX > value | Number | 12.2 | VAT value. If unspecified, the system applies a 19% rate by default in Colombia. Use 0 for VAT-exempt items. | 19000 |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12.2 | Base value for VAT calculation. Set to 0 if the product or service is VAT-exempt. | 100000 |
+| transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value | Number | 12.2 | Airport fares and other applicable taxes. | 25000 |
 
 </details>
 
@@ -2394,13 +2400,13 @@ To complete a successful transaction request, you must include the specific para
 | **Field** | **Type** | **Size** | **Description** | **Example** |
 |-|-|-|-|-|
 | transaction > order > airlineCode | alphanumeric | 4 | Airline code. | 29 |
-| transaction > order > additionalValues > TX_VALUE > value | number | 12,2 | Total amount of the transaction. It can contain two decimal digits (e.g., 10000.00 or 10000). | 119000 |
-| transaction > order > additionalValues > TX_TAX > value | number | 12,2 | VAT value of the transaction. If not specified, the system automatically applies a 19% rate in Colombia. If VAT-exempt, set to 0. | 19000 |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | number | 12,2 | Base value to calculate the VAT. If VAT-exempt, assign 0 to this variable. | 100000 |
-| transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value | number | 12,2 | Airport fares and other taxes. | 25000 |
-| transaction > order > additionalValues > TX_ADMINISTRATIVE_FEE > value | number | 12,2 | Amount of the travel agency administrative fee. | 5950 |
-| transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE > value | number | 12,2 | Amount of the travel agency administrative fee tax. | 950 |
-| transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE > value | number | 12,2 | Base value to calculate the travel agency administrative fee tax. | 5000 |
+| transaction > order > additionalValues > TX_VALUE > value | number | 12.2 | Total amount of the transaction. It can contain two decimal digits (e.g., 10000.00 or 10000). | 119000 |
+| transaction > order > additionalValues > TX_TAX > value | number | 12.2 | VAT value of the transaction. If not specified, the system automatically applies a 19% rate in Colombia. If VAT-exempt, set to 0. | 19000 |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | number | 12.2 | Base value to calculate the VAT. If VAT-exempt, assign 0 to this variable. | 100000 |
+| transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value | number | 12.2 | Airport fares and other taxes. | 25000 |
+| transaction > order > additionalValues > TX_ADMINISTRATIVE_FEE > value | number | 12.2 | Amount of the travel agency administrative fee. | 5950 |
+| transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE > value | number | 12.2 | Amount of the travel agency administrative fee tax. | 950 |
+| transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE > value | number | 12.2 | Base value to calculate the travel agency administrative fee tax. | 5000 |
 
 </details>
 

@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-07-01T11:32:55-05:00" />
-<meta property="article:modified_time" content="2024-11-08T11:23:44-05:00" />
+<meta property="article:modified_time" content="2024-11-19T16:23:02-05:00" />
 
 <meta itemprop="name" content="Autenticación 3DS Gestionada por PayU">
 <meta itemprop="description" content="La autenticación 3DS gestionada por PayU evita la necesidad de que administres el proceso de integración 3DS. PayU se encarga de todo, desde la comunicación con el banco emisor hasta la gestión del flujo de autenticación.
 "><meta itemprop="datePublished" content="2024-07-01T11:32:55-05:00" />
-<meta itemprop="dateModified" content="2024-11-08T11:23:44-05:00" />
-<meta itemprop="wordCount" content="839">
+<meta itemprop="dateModified" content="2024-11-19T16:23:02-05:00" />
+<meta itemprop="wordCount" content="852">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Autenticación 3DS Gestionada por PayU"/>
 <meta name="twitter:description" content="La autenticación 3DS gestionada por PayU evita la necesidad de que administres el proceso de integración 3DS. PayU se encarga de todo, desde la comunicación con el banco emisor hasta la gestión del flujo de autenticación.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -518,7 +518,7 @@
       
       
       
-        <a id="/es/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../es/docs/integrations/webcheckout-integration/confirmation-page.html">Página de confirmación</a>
+        <a id="/es/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../es/docs/integrations/webcheckout-integration/confirmation-page.html">Página de Confirmación</a>
       
       
     </li>
@@ -858,14 +858,15 @@
     <div class="lead">La autenticación 3DS gestionada por PayU evita la necesidad de que administres el proceso de integración 3DS. PayU se encarga de todo, desde la comunicación con el banco emisor hasta la gestión del flujo de autenticación.</div>
 	       
 	<h2 id="usar-la-autenticación-3ds-de-payu">Usar la Autenticación 3DS de PayU</h2>
-<p>Para utilizar la autenticación 3DS, los comercios deben estar registrados en este servicio con PayU. Una vez registrado, puedes incluir un nuevo parámetro llamado <code>req3DSAuthentication</code> en tus solicitudes de pago a través de la API de Pagos de PayU.</p>
+<p>Para habilitar la autenticación 3DS, los comercios deben estar registrados en este servicio con PayU. Una vez registrado, puedes incluir un nuevo parámetro llamado <code>req3DSAuthentication</code> en tus solicitudes de pago a través de la API de Pagos de PayU.</p>
 
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Nota</h4>
 <ul>
-<li>La autenticación 3DS para PayU Latam solo está disponible para <strong>Argentina</strong>, <strong>Brasil</strong>, <strong>Colombia</strong> y <strong>Perú</strong>.</li>
-<li><strong>Redes compatibles actualmente:</strong> Visa y Mastercard.</li>
+<li>La autenticación 3DS con PayU Latam solo está disponible para <strong>Argentina</strong>, <strong>Brasil</strong>, <strong>Colombia</strong> y <strong>Perú</strong>.</li>
+<li>Esta funcionalidad requiere una integración API y no está disponible para la integración Webcheckout.</li>
+<li><strong>Redes compatibles:</strong> Visa y Mastercard.</li>
 </ul>
 
 </div>
@@ -1351,9 +1352,9 @@ Estos IDs de cuenta son solo para fines de prueba; no los utilices en entornos d
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-8 de noviembre de 2024:
+19 de noviembre de 2024:
 
- <b>Documentation updates (cb34649dc)</b>
+ <b>Documentation Updates (d11bd98ea)</b>
 </div>
 </div>
 

@@ -2152,6 +2152,12 @@ Esta integração permite que companhias aéreas e agências de viagens na Colô
 | **Identificação** | Os adquirentes podem identificar a companhia aérea especificamente através do ID da companhia aérea para uma distribuição direcionada. | Permite que o adquirente identifique tanto a agência de viagens quanto a companhia aérea para distribuição precisa de fundos. |
 | **Elegibilidade para Isenção do Imposto 4 x 1000** | Companhias aéreas colombianas podem se qualificar se fornecerem seu ID de companhia aérea e informações relevantes sobre taxas. | Agências de viagens colombianas podem se qualificar se fornecerem detalhes abrangentes da transação. |
 
+{{% alert title="Nota" color="info"%}}
+
+Consulte o seu banco adquirente para verificar se o seu negócio atende aos requisitos para a isenção do imposto 4 x 1000. A elegibilidade depende das informações fornecidas em cada transação e das regulamentações vigentes.
+
+{{% /alert %}}
+
 ### Recuperar a Lista de Companhias Aéreas Disponíveis
 
 Para integrar-se ao PayU, tanto agências de viagens quanto companhias aéreas precisam recuperar os códigos das companhias aéreas elegíveis para a coleta de pagamentos e enviá-los através da API de Pagamentos. Isso pode ser feito consultando o sistema PayU para obter a lista de companhias aéreas disponíveis e seus respectivos códigos. O endpoint para recuperar códigos de companhias aéreas é o mesmo para ambos os tipos de comerciantes, embora o uso específico possa variar:

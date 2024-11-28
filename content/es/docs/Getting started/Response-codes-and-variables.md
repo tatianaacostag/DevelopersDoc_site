@@ -192,19 +192,19 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 
 ## Divisas Aceptadas {#accepted-currencies}
 
-| Moneda   | Nombre          |
-|----------|----------------------|
-| `ARS`    | Peso argentino       |
-| `BRL`    | Real brasileño       |
-| `CLP`    | Peso chileno         |
-| `COP`    | Peso colombiano      |
-| `CRC`    | Colón costarricense  |
-| `GTQ`    | Quetzal guatemalteco |
-| `HNL`    | Lempira hondureño    |
-| `MXN`    | Peso mexicano        |
-| `PEN`    | Nuevo Sol peruano    |
-| `SVC`    | Colón salvadoreño    |
-| `USD`    | Dólar estadounidense  |
+| Moneda   | Nombre de la Moneda   | Decimales Aceptados (Tarjetas) | Decimales Aceptados (Transferencias Bancarias) | Decimales Aceptados (Efectivo, Billeteras Digitales, Referencias Bancarias) |
+|----------|-----------------------|:-----------------------------:|:---------------------------------------------:|:-------------------------------------:|
+| `ARS`    | Peso Argentino        | 2                             | -                                             | 0                           |
+| `BRL`    | Real Brasileño        | 2                             | 2                                             | 0                           |
+| `CLP`    | Peso Chileno          | 0                             | 0                                             | -                           |
+| `COP`    | Peso Colombiano       | 2                             | 2                                             | 0                           |
+| `CRC`    | Colón Costarricense   | 2                             | -                                             | -                           |
+| `GTQ`    | Quetzal Guatemalteco  | 2                             | -                                             | -                           |
+| `HNL`    | Lempira Hondureña     | 2                             | -                                             | -                           |
+| `MXN`    | Peso Mexicano         | 2                             | 2                                             | 0                           |
+| `PEN`    | Sol Peruano           | 2                             | -                                             | 0                           |
+| `SVC`    | Colón Salvadoreño     | 2                             | -                                             | -                           |
+| `USD`    | Dólar Estadounidense  | 2                             | 2                                             | 0                           |
 
 ## Estados de la Orden {#order-status}
 

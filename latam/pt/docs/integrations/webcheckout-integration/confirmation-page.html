@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/integrations/webcheckout-integration/confirmation-page.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T12:15:57-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2024-11-19T16:23:02-05:00" />
 
 <meta itemprop="name" content="Página de confirmação">
 <meta itemprop="description" content="Esta página permite obter confirmações do sistema relacionadas com os resultados da transação. Você pode atualizar os inventários, ordens ou bancos de dados do seu sistema. Esta página não é visível para o cliente e seu objetivo é permitir a comunicação entre sistemas. Os dados são enviados por método HTTP POST.&lt;/br&gt;ISe o pagador gerar novas tentativas de pagamento durante o processo de pagamento, uma página de confirmação será gerada para cada transação. Esta página é invocada para estados aprovados e rejeitados.
 "><meta itemprop="datePublished" content="2021-03-29T12:15:57-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="1385">
+<meta itemprop="dateModified" content="2024-11-19T16:23:02-05:00" />
+<meta itemprop="wordCount" content="1484">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Página de confirmação"/>
 <meta name="twitter:description" content="Esta página permite obter confirmações do sistema relacionadas com os resultados da transação. Você pode atualizar os inventários, ordens ou bancos de dados do seu sistema. Esta página não é visível para o cliente e seu objetivo é permitir a comunicação entre sistemas. Os dados são enviados por método HTTP POST.&lt;/br&gt;ISe o pagador gerar novas tentativas de pagamento durante o processo de pagamento, uma página de confirmação será gerada para cada transação. Esta página é invocada para estados aprovados e rejeitados.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.d03a14323f5f17009b0fcdb3b344b93361ee609dc2829454d4bd77c5c58b9ca1bdbec7524e35170c27ab2526798834bdddeaa725ba4cf9472567b881198b776e.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -783,6 +783,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#considerations">Observações</a></li>
+    <li><a href="#lista-de-ips-permitidos-para-os-servidores-da-payu-latam">Lista de IPs Permitidos para os Servidores da PayU Latam</a></li>
     <li><a href="#variables-sent-with-the-confirmation-page">Variáveis enviadas com a página de confirmação</a></li>
     <li><a href="#post-example-send-to-the-confirmation-page">Exemplo de POST enviado para a página de confirmação</a></li>
     <li><a href="#signature-validation">Validação de assinatura</a>
@@ -865,8 +866,23 @@
 <li>Se estiver usando HTTPS, você deve ter um certificado válido.</li>
 <li>O formato da sua página de confirmação deve ser <code>x-www-form-urlencoded</code>.</li>
 <li>Não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia <code>TLS_ECDHE_ECDSA_WITH_RC4_128_SHA</code> na sua página de confirmação.</li>
-<li>PayU reporta a página de confirmação quando a transação tem um status conclusivo, por exemplo, quando aprovada, rejeitada ou expirada. Se uma transação estiver em andamento (aguardando pagamento ou análise), PayU não reporta nada até que a transação tenha um status conclusivo</li>
+<li>PayU reporta a página de confirmação quando a transação tem um status conclusivo, por exemplo, quando aprovada, rejeitada ou expirada. Se uma transação estiver em andamento (aguardando pagamento ou análise), PayU não reporta nada até que a transação tenha um status conclusivo.</li>
 </ul>
+<h2 id="lista-de-ips-permitidos-para-os-servidores-da-payu-latam">Lista de IPs Permitidos para os Servidores da PayU Latam</h2>
+<p>Para garantir uma comunicação fluida entre o seu servidor e os servidores da PayU Latam, é necessário adicionar nossos endereços IP à lista de permissões. Isso é especialmente importante se o seu servidor estiver protegido por um firewall. Todas as solicitações de webhook e comunicações dos servidores da PayU se originarão nos endereços IP listados abaixo.</p>
+<p><strong>Ambiente de Produção</strong></p>
+<ul>
+<li>198.61.156.98</li>
+<li>190.216.203.233</li>
+<li>34.233.144.154</li>
+</ul>
+<p><strong>Ambiente de Sandbox</strong></p>
+<ul>
+<li>50.56.9.170</li>
+<li>74.205.10.14</li>
+<li>54.158.171.129</li>
+</ul>
+<p>Ao permitir esses endereços na sua lista de permissões, você garante que as solicitações e notificações da PayU sejam recebidas corretamente.</p>
 <h2 id="variables-sent-with-the-confirmation-page">Variáveis enviadas com a página de confirmação</h2>
 <details>
 <summary>Variáveis na página de confirmação</summary>
@@ -1402,9 +1418,9 @@ state_pol=4
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-24 de junho de 2022:
+19 de novembro de 2024:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation Updates (d11bd98ea)</b>
 </div>
 </div>
 

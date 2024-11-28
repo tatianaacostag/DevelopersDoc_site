@@ -1,5 +1,6 @@
 ---
 title: "Confirmation Page"
+linkTitle: "Confirmation Page"
 date: 2021-03-29T12:15:57-05:00
 description: >
   This page allows you to get system confirmations related with the transaction results. You can update your system's inventories, orders, or databases. This page is not visible to the customer and its goal is to enable communication between systems. The data is sent via the HTTP POST method. </br>If the payer generates payment retries during the payment process, a confirmation page is generated for each transaction. This page is invoked for approved and rejected states.
@@ -64,9 +65,9 @@ By whitelisting these addresses, you can ensure that requests and notifications 
 | payment_method | Numeric | — | The internal identifier of the payment method used.<br>[See the codes of the payment methods]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
 | payment_method_type | Numeric | — | The payment method type used for the payment. |
 | installments_number | Numeric | — | Number of installments in which the credit card payment was deferred. |
-| value | Numeric | 14,2 | Total amount of the transaction. It can contain two decimal digits. For example, 10000.00 or 10000 |
-| tax | Numeric | 14,2 | VAT value of the transaction, if VAT zero is sent the system will automatically apply the 19%. It can contain two decimal digits. For example: 19000.00. In case you have no VAT you should fill out 0. |
-| additional_value | Numeric | 14,2 | Non commissionaire Additional Value. |
+| value | Numeric | 14.2 | Total amount of the transaction. It can contain two decimal digits. For example, 10000.00 or 10000 |
+| tax | Numeric | 14.2 | VAT value of the transaction, if VAT zero is sent the system will automatically apply the 19%. It can contain two decimal digits. For example: 19000.00. In case you have no VAT you should fill out 0. |
+| additional_value | Numeric | 14.2 | Non commissionaire Additional Value. |
 | transaction_date | Date(YYYY-MM-DD HH:mm:ss) | — | The date the transaction was made. |
 | currency | Alphanumeric | 3 | The currency in which the payment is made.<br>[See the accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
 | email_buyer | Alphanumeric | 255 | Field that contains the buyer’s e-mail address to notify the transaction’s result. It's recommended to validate it when the data is taken from a form. |

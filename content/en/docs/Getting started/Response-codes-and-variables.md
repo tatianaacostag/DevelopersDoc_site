@@ -192,19 +192,19 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 
 ## Accepted Currencies
 
-| Currency | Name        |
-|----------|--------------------|
-| `ARS`    | Argentine Peso     |
-| `BRL`    | Brazilian Real     |
-| `CLP`    | Chilean Peso       |
-| `COP`    | Colombian Peso     |
-| `CRC`    | Costa Rican Colón  |
-| `GTQ`    | Guatemalan Quetzal |
-| `HNL`    | Honduran Lempira   |
-| `MXN`    | Mexican Peso       |
-| `PEN`    | Peruvian Nuevo Sol |
-| `SVC`    | Salvadoran Colón   |
-| `USD`    | US Dollar          |
+| Currency | Currency Name       | Accepted Decimals (Cards) | Accepted Decimals (Bank Transfers) | Accepted Decimals (Cash, Digital Wallets, Bank References) |
+|----------|---------------------|:---------------------------:|:-----------------------------------: |:--------------------------:|
+| `ARS`    | Argentine Peso      | 2                           | -                                    |0                          |
+| `BRL`    | Brazilian Real      | 2                           | 2                                    |0                          |
+| `CLP`    | Chilean Peso        | 0                           | 0                                    |-                          |
+| `COP`    | Colombian Peso      | 2                           | 2                                    |0                          |
+| `CRC`    | Costa Rican Colón   | 2                           | -                                    |-                          |
+| `GTQ`    | Guatemalan Quetzal  | 2                           | -                                    |-                          |
+| `HNL`    | Honduran Lempira    | 2                           | -                                    |-                          |
+| `MXN`    | Mexican Peso        | 2                           | 2                                    |0                          |
+| `PEN`    | Peruvian Sol        | 2                           | -                                    |0                          |
+| `SVC`    | Salvadoran Colón    | 2                           | -                                    |-                          |
+| `USD`    | US Dollar           | 2                           | 2                                    |0                          |
 
 ## Order Status
 

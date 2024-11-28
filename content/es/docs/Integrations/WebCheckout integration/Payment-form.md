@@ -42,10 +42,10 @@ Puedes incluir los siguientes parámetros en el formulario de pago.
 | description | Alfanumérico | 255 | Descripción de la venta. | Sí |
 | currency | Alfanumérico | 3 | Moneda respectiva en la que se hace el pago. El proceso de conciliación se realiza en pesos colombianos a la tasa representativa del día.<br>[Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
 | amount | Numérico | 10 | Valor total de la transacción. Puede tener dos cifras decimales. Ejemplo 10000.00 o 10000. | Sí |
-| tax | Numérico | 10,2 | Valor del impuesto al valor agregado de la transacción.<br>En Colombia, si no se envía el IVA. el sistema aplica automáticamente el 19%. Puede tener dos dígitos decimales, por ejemplo 19000.00.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne `0` a esta variable. | Sí |
-| discount | Numérico| 10,2 | Valor del descuento sobre la venta. | No |
-| taxReturnBase | Numérico | 10,2 | Valor base para la devolución de impuestos.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne `0` a esta variable. | Sí |
-| additionalValue | Numérico | 10,2 | Valor adicional no comisionable de la venta. | No |
+| tax | Numérico | 10.2 | Valor del impuesto al valor agregado de la transacción.<br>En Colombia, si no se envía el IVA. el sistema aplica automáticamente el 19%. Puede tener dos dígitos decimales, por ejemplo 19000.00.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne `0` a esta variable. | Sí |
+| discount | Numérico| 10.2 | Valor del descuento sobre la venta. | No |
+| taxReturnBase | Numérico | 10.2 | Valor base para la devolución de impuestos.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne `0` a esta variable. | Sí |
+| additionalValue | Numérico | 10.2 | Valor adicional no comisionable de la venta. | No |
 | signature | Alfanumérico | 255 | Firma digital creada por cada transacción. Consulta [Firma para el formulario de pago]({{< ref "payment-form.md#signature-for-payment-form" >}}) para aprender a generarla. | Sí |
 | algorithmSignature | Alfanumérico | 255 | Algoritmo de encriptación de la firma digital (campo `signature`). Los tres algoritmos disponibles son: `MD5`, `SHA` y `SHA256`. | No |
 | test | Numérico | 1 | Indica si la transacción es en modo pruebas o en producción. Asigna `1` para pruebas y `0` para producción. | No |
@@ -71,9 +71,9 @@ Puedes incluir los siguientes parámetros en el formulario de pago.
 | mobilePhone | Alfanumérico | Máx. 20 | Número del móvil del comprador. Este valor será utilizado para diligenciar el formulario de la tarjeta de crédito y será el número de teléfono de contacto. | No |
 | buyerFullName | Alfanumérico | 150 | Nombre completo del comprador. | Sí |
 | paymentMethods | Alfanumérico | 255 | Lista de métodos de pago habilitados en el proceso de pago.<br>Esta lista debe estar separada por comas y sin espacios en blanco. Por ejemplo: `VISA,MASTERCARD`.<br>Puedes incluir cuotas para los métodos de pago añadiéndolas mediante guiones. Ejemplo: `VISA-1-3,MASTERCARD-3-5-9`.<br>[Consulta los métodos de pago disponibles para tu país en la columna` parámetro de método de pago`]({{< ref "select-your-payment-method.html" >}}). | No | 
-| administrativeFee | Numérico | 10,2 | Valor de la tarifa administrativa. | - |
-| taxAdministrativeFee | Numérico | 10,2 | Valor del impuesto de la tarifa administrativa. | - |
-| taxAdministrativeFeeReturnBase | Numérico | 10,2 | Valor base para calcular el impuesto de la tarifa administrativa. | - |
+| administrativeFee | Numérico | 10.2 | Valor de la tarifa administrativa. | - |
+| taxAdministrativeFee | Numérico | 10.2 | Valor del impuesto de la tarifa administrativa. | - |
+| taxAdministrativeFeeReturnBase | Numérico | 10.2 | Valor base para calcular el impuesto de la tarifa administrativa. | - |
 | payerEmail | Alfanumérico | 255 | Dirección de correo electrónico del pagador. | Sí |
 | payerPhone | Alfanumérico | Máx. 20 | Número de teléfono del pagador. | Sí |
 | payerOfficePhone | Alfanumérico | Máx. 20 | Número de teléfono de oficina del pagador. | No |
