@@ -54,14 +54,14 @@ Você pode usar os seguintes cartões para teste:
 <details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brasil</summary>
 
-| Cartão                           | Número                              |
-|----------------------------------|-------------------------------------|
-| **Cartão de Crédito AMEX**       | 376611000000000                     |
-| **Cartão de Crédito DINERS**     | 36213800000009                      |
-| **Cartão de Crédito ELO**        | 5067310000000002                    |
-| **Cartão de Crédito HIPERCARD**  | 6062825624254001                    |
-| **Cartão de Crédito MASTERCARD** | 5123740000000002                    |
-| **Cartão de Crédito VISA**       | 4422120000000008 - 4984460000000008 |
+| Cartão                     | Número                                   | Data de Expiração  | CVV  |
+|----------------------------|------------------------------------------|--------------------|------|
+| **Cartão de Crédito AMEX**       | 371341553758128                        | 2035/01           | 1234 |
+| **Cartão de Crédito DINERS**     | 36490101441625                         | 2035/01           | 123  |
+| **Cartão de Crédito ELO**        | 4389351648020055  <br> 4389358876174389 | 2035/01           | 123  |
+| **Cartão de Crédito HIPERCARD**  | 6062825624254001                       | 2035/01           | 123  |
+| **Cartão de Crédito MASTERCARD** | 5448280000000007 <br> 2223020000000005 <br> 2223000250000004 | 2035/01 | 123  |
+| **Cartão de Crédito VISA**       | 4235647728025682  <br> 4895370010000005 | 2035/01           | 123  |
 
 </details>
 <details id="chile">
@@ -184,28 +184,34 @@ Você pode usar os seguintes cartões para teste:
 
 </details>
 
-### Testando Estados {#testing-statuses}
+### Testando Status {#testing-statuses}
 
-Para testar Pagamentos, você deve enviar a solicitação:
+Ao testar pagamentos, certifique-se de incluir os seguintes valores na requisição de acordo com o status desejado:
 
-* **Para transações _aprovadas_**: 
-  - Envie o valor `APPROVED` em nome do titular do cartão.
-  - Definir **777** no CVV do cartão (para AMEX, use **7777**).
-  - O parâmetro `test` e a descrição também definem o estado. Se não funcionar com `test` definido como _false_, altere seu valor para _true_.
-  - Envie o mês de vencimento do cartão menor que `6` e o ​​ano deve ser `2023` ou maior. Exemplo: `05/2025`.
-* **Para transações _rejeitadas_**: 
-  - Envie o valor `REJECTED` em nome do titular do cartão.
-  - Definir **666** no CVV do cartão (para AMEX, use **6666**).
-  - O parâmetro `test` e a descrição também definem o estado. Se não funcionar com `test` definido como _false_, altere seu valor para _true_.
-  - Envie o mês de vencimento do cartão maior que `6` e o ​​ano deve ser `2023` ou maior. Exemplo: `07/2027`.
-<!--* **Para transações _pendentes_**: 
-  - Envie o valor `PENDING` em nome do titular do cartão.
-  - Definir **777** no CVV do cartão (para AMEX, use **7777**).
+* **Para obter transações _aprovadas_**: 
+  - Inclua `APPROVED` no nome do titular do cartão.
+  - Use **777** como o CVV do cartão (para AMEX, use **7777**).
+  - O parâmetro `test` e a descrição também influenciam o status. Se não funcionar com `test` configurado como _false_, altere o valor para _true_.
+  - Ao inserir a data de validade do cartão, certifique-se de que o mês seja **menor** que `6` e que o ano seja posterior ao ano atual. Por exemplo: `05/202_`.
+<p>
+
+* **Para obter transações _recusadas_**: 
+  - Inclua `REJECTED` no nome do titular do cartão.
+  - Use **666** como o CVV do cartão (para AMEX, use **666**).
+  - O parâmetro `test` e a descrição também influenciam o status. Se não funcionar com `test` configurado como _false_, altere o valor para _true_.
+  - Ao inserir a data de validade do cartão, certifique-se de que o mês seja **maior** que `6` e que o ano seja posterior ao ano atual. Por exemplo: `07/202_`.
+
+<!--* **Para obter transações _pendentes_**: 
+  - Envie `PENDING` no nome do titular do cartão.
+  - Envie **777** como o CVV do cartão (para AMEX, use **7777**).
   - Envie o parâmetro `test` como _true_.
-  - Nas informações de comprador e pagador, atribua o endereço de e-mail `manual-review-hub@email.com`.-->
-* Para o número do cartão, é preciso inserir um número válido, correspondente à franquia enviada na solicitação. Você pode usar um gerador de cartão online para fins de teste ou usar um dos cartões mencionados anteriormente que estejam disponíveis para o seu país.
-* Para testar as transferências bancárias PSE (disponíveis na Colômbia) no ambiente PayU Sandbox, consulte o [Guia de teste PSE (PDF - em espanhol)](/assets/pse-test-guide-v5-es.pdf).
-* Para testar cartões no Chile, use os valores de nome do titular do cartão, CVV e data de expiração mostrados no <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true ;">cartões de teste</a>.
+  - Na informação do comprador e do pagador, insira o e-mail `manual-review-hub@email.com`.-->
+
+* **Para o número do cartão**, use um número válido que corresponda à bandeira enviada na requisição. Você pode usar um gerador online de cartões de crédito ou selecionar um dos cartões para seu país mencionados anteriormente.
+
+* **Para testar transferências bancárias via PSE** (disponível na Colômbia) no ambiente Sandbox da PayU, consulte o [Guia de Testes PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
+
+* **Para testar cartões no Chile**, use os valores de nome do titular, CVV e data de validade mostrados nas <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">cartões de exemplo</a>.
 
 ## Importando a Coleção {#importing-the-collection}
 

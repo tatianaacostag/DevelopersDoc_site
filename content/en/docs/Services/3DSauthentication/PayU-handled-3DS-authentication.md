@@ -1,7 +1,7 @@
 ---
 title: "PayU-Handled 3DS Authentication"
 linkTitle: "PayU-Handled 3DS Authentication"
-date: 2024-07-1T11:32:55-05:00
+date: 2024-07-01T11:32:55-05:00
 description: >
   PayU-handled 3DS authentication prevents the need for you to manage the 3DS integration process. PayU takes care of everything, from communicating with the issuing bank to handling the authentication flow.  
 weight: 21

@@ -1,7 +1,7 @@
 ---
 title: "3DS Authentication"
 linkTitle: "3DS Authentication"
-date: 2024-07-1T11:32:55-05:00
+date: 2024-07-01T11:32:55-05:00
 description: >
   This section explains 3DS authentication and how to leverage it for enhanced security in your PayU payment processing.  
 weight: 20

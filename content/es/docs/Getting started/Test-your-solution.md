@@ -54,14 +54,14 @@ Puedes utilizar las siguientes tarjetas de prueba:
 <details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brasil</summary>
 
-| Tarjeta                           | Número                              |
-|-----------------------------------|-------------------------------------|
-| **Tarjeta de Crédito AMEX**       | 376611000000000                     |
-| **Tarjeta de Crédito DINERS**     | 36213800000009                      |
-| **Tarjeta de Crédito ELO**        | 5067310000000002                    |
-| **Tarjeta de Crédito HIPERCARD**  | 6062825624254001                    |
-| **Tarjeta de Crédito MASTERCARD** | 5123740000000002                    |
-| **Tarjeta de Crédito VISA**       | 4422120000000008 - 4984460000000008 |
+| Tarjeta                   | Número                                   | Fecha de Expiración | CVV  |
+|---------------------------|------------------------------------------|---------------------|------|
+| **Tarjeta de Crédito AMEX**       | 371341553758128 | 2035/01 | 1234 |
+| **Tarjeta de Crédito DINERS**     | 36490101441625 | 2035/01 | 123  |
+| **Tarjeta de Crédito ELO**        | 4389351648020055  <br> 4389358876174389 | 2035/01 | 123  |
+| **Tarjeta de Crédito HIPERCARD**  | 6062825624254001 | 2035/01 | 123  |
+| **Tarjeta de Crédito MASTERCARD** | 5448280000000007 <br> 2223020000000005 <br> 2223000250000004 | 2035/01 | 123  |
+| **Tarjeta de Crédito VISA**       | 4235647728025682 <br> 4895370010000005 | 2035/01 | 123  |
 
 </details>
 <details id="chile">
@@ -186,26 +186,33 @@ Puedes utilizar las siguientes tarjetas de prueba:
 
 ### Probar Estados {#testing-statuses}
 
-Cuando pruebas los Pagos, debes enviar en el request:
+Cuando realices pruebas de pagos, asegúrate de enviar en el request los siguientes valores según el estado deseado:
 
 * **Para obtener transacciones _aprobadas_**: 
-  - Envía `APPROVED` en el nombre del tarjetahabiente.
-  - Envía **777** en el CVV de la tarjeta (para AMEX, utiliza **7777**).
-  - El parámetro `test` y la descripción también definen el estado. Si no funciona con `test` asignado como _false_, cambia su valor a _true_.
-  - Envía el mes de la expiración de la tarjeta menor a `6` y el año debe ser `2023` o mayor. Ejemplo: `05/2025`.
+  - Incluye `APPROVED` en el nombre del tarjetahabiente.
+  - Utiliza **777** como el CVV de la tarjeta (para AMEX, utiliza **7777**).
+  - El parámetro `test` y la descripción también influyen en el estado. Si no funciona con `test` configurado como _false_, cambia su valor a _true_.
+  - Al ingresar la fecha de expiración de la tarjeta, asegúrate de que el mes sea **menor** a `6` y el año sea posterior al año actual. Por ejemplo: `05/202_`.
+<p>
+
 * **Para obtener transacciones _declinadas_**: 
-  - Envía `REJECTED` en el nombre del tarjetahabiente.
-  - Envía **666** en el CVV de la tarjeta (para AMEX, utiliza **666**).
-  - El parámetro `test` y la descripción también definen el estado. Si no funciona con `test` asignado como _false_, cambia su valor a _true_.
-  - Envía el mes de la expiración de la tarjeta mayor a `6` y el año debe ser `2023` o mayor. Ejemplo: `07/2027`.
+  - Incluye `REJECTED` en el nombre del tarjetahabiente.
+  - Utiliza **666** como el CVV de la tarjeta (para AMEX, utiliza **666**).
+  - El parámetro `test` y la descripción también influyen en el estado. Si no funciona con `test` configurado como _false_, cambia su valor a _true_.
+  - Al ingresar la fecha de expiración de la tarjeta, asegúrate de que el mes sea **mayor** a `6` y el año sea posterior al año actual. Por ejemplo: `07/202_`.
+
 <!--* **Para obtener transacciones _pendientes_**: 
   - Envía `PENDING` en el nombre del tarjetahabiente.
   - Envía **777** en el CVV de la tarjeta (para AMEX, utiliza **7777**).
   - Envía el parámetro `test` como _true_.
   - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-review-hub@email.com`.-->
-* Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia enviada en el request. Puedes utilizar un generador en línea de tarjetas de crédito o una de las  correspondientes a tu país mencionadas anteriormente.
-* Para probar transferencias bancarias por PSE (Disponible en Colombia) en el ambiente de Sandbox de PayU, consulta la [Guía de pruebas PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
-* Para probar tarjetas en Chile, utiliza los valores de nombre del tarjetahabiente, CVV y fecha de expiración mostrados en las <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">tarjetas de ejemplo</a>.
+
+* **Para el número de la tarjeta**, utiliza uno válido que corresponda a la franquicia enviada en el request. Puedes usar un generador en línea de tarjetas de crédito o seleccionar una de las tarjetas correspondientes a tu país mencionadas anteriormente.
+
+* **Para probar transferencias bancarias por PSE** (disponible en Colombia) en el ambiente Sandbox de PayU, consulta la [Guía de pruebas PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
+
+* **Para probar tarjetas en Chile**, utiliza los valores de nombre del tarjetahabiente, CVV y fecha de expiración indicados en las <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">tarjetas de ejemplo</a>.
+
 
 ## Importar la Colección {#importing-the-collection}
 

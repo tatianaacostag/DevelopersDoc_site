@@ -54,14 +54,14 @@ You can use the following cards for testing:
 <details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brazil</summary>
 
-| Card                       | Number                              |
-|----------------------------|-------------------------------------|
-| **AMEX Credit Card**       | 376611000000000                     |
-| **DINERS Credit Card**     | 36213800000009                      |
-| **ELO Credit Card**        | 5067310000000002                    |
-| **HIPERCARD Credit Card**  | 6062825624254001                    |
-| **MASTERCARD Credit Card** | 5123740000000002                    |
-| **VISA Credit Card**       | 4422120000000008 - 4984460000000008 |
+| Card                       | Number               | Expiration Date | CVV  |
+|----------------------------|----------------------|-----------------|------|
+| **AMEX Credit Card**       | 371341553758128      | 2035/01        | 1234 |
+| **DINERS Credit Card**     | 36490101441625       | 2035/01        | 123  |
+| **ELO Credit Card**        | 4389351648020055  <br> 4389358876174389 | 2035/01 | 123 |
+| **HIPERCARD Credit Card**  | 6062825624254001     | 2035/01        | 123  |
+| **MASTERCARD Credit Card** | 5448280000000007 <br> 2223020000000005 <br> 2223000250000004 | 2035/01 | 123  |
+| **VISA Credit Card**       | 4235647728025682  <br> 4895370010000005  | 2035/01        | 123  |
 
 </details>
 <details id="chile">
@@ -184,28 +184,35 @@ You can use the following cards for testing:
 
 </details>
 
-### Testing Statuses
+### Testing Statuses {#testing-statuses}
 
-When testing Payments, you must send in the request:
+When testing payments, make sure to include the following values in the request according to the desired status:
 
-* **To get _approved_ transactions**: 
-  - Send `APPROVED` in the name of the cardholder.
-  - Send **777** in the CVV of the card (for AMEX, use **7777**).
-  - The `test` parameter and the description also define the state. If it doesn't work with `test` set as _false_, change its value to _true_.
-  - Send the month of the expiration date of the card less than `6` and the year must be `2023` or higher. Example: `05/2025`.
-* **To get _declined_ transactions**: 
-  - Send `REJECTED` in the name of the cardholder.
-  - Send **666** in the CVV of the card (for AMEX, use **6666**).
-  - The `test` parameter and the description also define the state. If it doesn't work with `test` set as _false_, change its value to _true_.
-  - Send the month of the expiration date of the card higher than `6` and the year must be `2023` or higher. Example: `07/2027`.
+* **To obtain _approved_ transactions**: 
+  - Include `APPROVED` in the cardholder's name.
+  - Use **777** as the card's CVV (for AMEX, use **7777**).
+  - The `test` parameter and the description also influence the status. If it does not work with `test` set to _false_, change its value to _true_.
+  - When entering the card's expiration date, ensure the month is **less than** `6` and the year is later than the current year. For example: `05/202_`.
+<p>
+
+* **To obtain _declined_ transactions**: 
+  - Include `REJECTED` in the cardholder's name.
+  - Use **666** as the card's CVV (for AMEX, use **666**).
+  - The `test` parameter and the description also influence the status. If it does not work with `test` set to _false_, change its value to _true_.
+  - When entering the card's expiration date, ensure the month is **greater than** `6` and the year is later than the current year. For example: `07/202_`.
+
 <!--* **To get _pending_ transactions**: 
   - Send `PENDING` in the name of the cardholder.
   - Send **777** in the CVV of the card (for AMEX, use **7777**).
   - Send the `test` parameter as _true_.
   - In the buyer and payer information, set the email as `manual-review-hub@email.com`.-->
-* For the card number you must enter a valid number, corresponding to the franchise sent in the request. You can use an online card generator for testing purposes or use one of the cards available for your country mentioned before.
-* To test PSE bank transfers (Available in Colombia) in the PayU Sandbox environment, see the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5.pdf).
-* To test cards in Chile, use the cardholder name, CVV and expiration date displayed in the <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">example cards</a>.
+
+* **For the card number**, use a valid number corresponding to the brand sent in the request. You can use an online credit card generator or select one of the cards for your country mentioned earlier.
+
+* **To test bank transfers through PSE** (available in Colombia) in the PayU Sandbox environment, refer to the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5-es.pdf).
+
+* **To test cards in Chile**, use the cardholder name, CVV, and expiration date values shown in the <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">example cards</a>.
+
 
 ## Importing the Collection
 

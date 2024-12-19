@@ -61,7 +61,7 @@
 
                 <div class="instruction-button-container">
                   <p class="instruction">4. Click the button:</p>
-                  <button type="submit" value="Pagar con PayU" style="inline-size: 250px;">Pagar con PayU</button>
+                  <button type="submit" value="Pagar con PayU" style="inline-size: 250px;">Pay with PayU</button>
                 </div>
               </div>
 
@@ -93,7 +93,7 @@
                   <option value="512327">Account ID for Brazil: 512327</option>
                   <option value="516685">Account ID for Brazil with 3DS: 516685</option>
                   <option value="512325">Account ID for Chile: 512325</option>
-                  <option value="512321">Account ID for Colombia: 512321</option>
+                  <option value="512321" selected>Account ID for Colombia: 512321</option>
                   <option value="516686">Account ID for Colombia with 3DS: 516686</option>
                   <option value="513128">Account ID for Colombian Airlines: 513128</option>
                   <option value="512548">Account ID for Travel Agencies in Colombia: 512548</option>
@@ -834,7 +834,7 @@ document.getElementById('generate-random-info-button').addEventListener('click',
   });
 
 // Generate the transaction signature
-function generateSignature(signatureString, hashType) {
+function generateSignatureHash(signatureString, hashType) {
   let hashFunction;
   switch (hashType) {
     case "MD5":
