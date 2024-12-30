@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/getting-started/test-your-solution.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-06T15:34:20-05:00" />
-<meta property="article:modified_time" content="2024-09-09T16:32:33-05:00" />
+<meta property="article:modified_time" content="2024-12-19T16:46:19-05:00" />
 
 <meta itemprop="name" content="Probar Tu Solución">
 <meta itemprop="description" content="Aprovecha el entorno de pruebas de PayU para probar a fondo tu solución antes de pasar al entorno en producción, donde se realizan pagos y transacciones reales.
 "><meta itemprop="datePublished" content="2021-04-06T15:34:20-05:00" />
-<meta itemprop="dateModified" content="2024-09-09T16:32:33-05:00" />
-<meta itemprop="wordCount" content="880">
+<meta itemprop="dateModified" content="2024-12-19T16:46:19-05:00" />
+<meta itemprop="wordCount" content="923">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Probar Tu Solución"/>
 <meta name="twitter:description" content="Aprovecha el entorno de pruebas de PayU para probar a fondo tu solución antes de pasar al entorno en producción, donde se realizan pagos y transacciones reales.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
+  data-offline-search-index-json-src="../../../offline-search-index.21b9d6aaa5d6f25a30369fab40fe4c24c46f5ce1468d1d0b2590fc68678be64eacb84ac41483d69e4d91feb1083e72fc46adb43bf63cae6e4dd50ca2b58a0c18.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -449,8 +449,33 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/tools/disputes.html" href="../../../es/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocstoolsdisputeshtml">
       
-        <a id="/es/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocstoolsdisputeshtml" href="../../../es/docs/tools/disputes.html">Disputas</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsdisputesdisputes-webhookhtml" href="../../../es/docs/tools/disputes/disputes-webhook.html">Webhook de Disputas</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -519,6 +544,12 @@
       
       
         <a id="/es/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../es/docs/integrations/webcheckout-integration/confirmation-page.html">Página de Confirmación</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Aerolíneas y Agencias de Viaje - Colombia</a>
       
       
     </li>
@@ -968,32 +999,46 @@
 <tr>
 <th>Tarjeta</th>
 <th>Número</th>
+<th>Fecha de Expiración</th>
+<th>CVV</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Tarjeta de Crédito AMEX</strong></td>
-<td>376611000000000</td>
+<td>371341553758128</td>
+<td>2035/01</td>
+<td>1234</td>
 </tr>
 <tr>
 <td><strong>Tarjeta de Crédito DINERS</strong></td>
-<td>36213800000009</td>
+<td>36490101441625</td>
+<td>2035/01</td>
+<td>123</td>
 </tr>
 <tr>
 <td><strong>Tarjeta de Crédito ELO</strong></td>
-<td>5067310000000002</td>
+<td>4389351648020055  <br> 4389358876174389</td>
+<td>2035/01</td>
+<td>123</td>
 </tr>
 <tr>
 <td><strong>Tarjeta de Crédito HIPERCARD</strong></td>
 <td>6062825624254001</td>
+<td>2035/01</td>
+<td>123</td>
 </tr>
 <tr>
 <td><strong>Tarjeta de Crédito MASTERCARD</strong></td>
-<td>5123740000000002</td>
+<td>5448280000000007 <br> 2223020000000005 <br> 2223000250000004</td>
+<td>2035/01</td>
+<td>123</td>
 </tr>
 <tr>
 <td><strong>Tarjeta de Crédito VISA</strong></td>
-<td>4422120000000008 - 4984460000000008</td>
+<td>4235647728025682 <br> 4895370010000005</td>
+<td>2035/01</td>
+<td>123</td>
 </tr>
 </tbody>
 </table>
@@ -1206,22 +1251,25 @@
 </table>
 </details>
 <h3 id="testing-statuses">Probar Estados</h3>
-<p>Cuando pruebas los Pagos, debes enviar en el request:</p>
+<p>Cuando realices pruebas de pagos, asegúrate de enviar en el request los siguientes valores según el estado deseado:</p>
 <ul>
 <li><strong>Para obtener transacciones <em>aprobadas</em></strong>:
 <ul>
-<li>Envía <code>APPROVED</code> en el nombre del tarjetahabiente.</li>
-<li>Envía <strong>777</strong> en el CVV de la tarjeta (para AMEX, utiliza <strong>7777</strong>).</li>
-<li>El parámetro <code>test</code> y la descripción también definen el estado. Si no funciona con <code>test</code> asignado como <em>false</em>, cambia su valor a <em>true</em>.</li>
-<li>Envía el mes de la expiración de la tarjeta menor a <code>6</code> y el año debe ser <code>2023</code> o mayor. Ejemplo: <code>05/2025</code>.</li>
+<li>Incluye <code>APPROVED</code> en el nombre del tarjetahabiente.</li>
+<li>Utiliza <strong>777</strong> como el CVV de la tarjeta (para AMEX, utiliza <strong>7777</strong>).</li>
+<li>El parámetro <code>test</code> y la descripción también influyen en el estado. Si no funciona con <code>test</code> configurado como <em>false</em>, cambia su valor a <em>true</em>.</li>
+<li>Al ingresar la fecha de expiración de la tarjeta, asegúrate de que el mes sea <strong>menor</strong> a <code>6</code> y el año sea posterior al año actual. Por ejemplo: <code>05/202_</code>.</li>
 </ul>
 </li>
+</ul>
+<p>
+<ul>
 <li><strong>Para obtener transacciones <em>declinadas</em></strong>:
 <ul>
-<li>Envía <code>REJECTED</code> en el nombre del tarjetahabiente.</li>
-<li>Envía <strong>666</strong> en el CVV de la tarjeta (para AMEX, utiliza <strong>666</strong>).</li>
-<li>El parámetro <code>test</code> y la descripción también definen el estado. Si no funciona con <code>test</code> asignado como <em>false</em>, cambia su valor a <em>true</em>.</li>
-<li>Envía el mes de la expiración de la tarjeta mayor a <code>6</code> y el año debe ser <code>2023</code> o mayor. Ejemplo: <code>07/2027</code>.</li>
+<li>Incluye <code>REJECTED</code> en el nombre del tarjetahabiente.</li>
+<li>Utiliza <strong>666</strong> como el CVV de la tarjeta (para AMEX, utiliza <strong>666</strong>).</li>
+<li>El parámetro <code>test</code> y la descripción también influyen en el estado. Si no funciona con <code>test</code> configurado como <em>false</em>, cambia su valor a <em>true</em>.</li>
+<li>Al ingresar la fecha de expiración de la tarjeta, asegúrate de que el mes sea <strong>mayor</strong> a <code>6</code> y el año sea posterior al año actual. Por ejemplo: <code>07/202_</code>.</li>
 </ul>
 </li>
 </ul>
@@ -1231,9 +1279,15 @@
   - Envía el parámetro `test` como _true_.
   - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-review-hub@email.com`.-->
 <ul>
-<li>Para el número de la tarjeta, utiliza un número válido que corresponda a la franquicia enviada en el request. Puedes utilizar un generador en línea de tarjetas de crédito o una de las  correspondientes a tu país mencionadas anteriormente.</li>
-<li>Para probar transferencias bancarias por PSE (Disponible en Colombia) en el ambiente de Sandbox de PayU, consulta la <a href="../../../assets/pse-test-guide-v5-es.pdf">Guía de pruebas PSE (PDF)</a>.</li>
-<li>Para probar tarjetas en Chile, utiliza los valores de nombre del tarjetahabiente, CVV y fecha de expiración mostrados en las <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">tarjetas de ejemplo</a>.</li>
+<li>
+<p><strong>Para el número de la tarjeta</strong>, utiliza uno válido que corresponda a la franquicia enviada en el request. Puedes usar un generador en línea de tarjetas de crédito o seleccionar una de las tarjetas correspondientes a tu país mencionadas anteriormente.</p>
+</li>
+<li>
+<p><strong>Para probar transferencias bancarias por PSE</strong> (disponible en Colombia) en el ambiente Sandbox de PayU, consulta la <a href="../../../assets/pse-test-guide-v5-es.pdf">Guía de pruebas PSE (PDF)</a>.</p>
+</li>
+<li>
+<p><strong>Para probar tarjetas en Chile</strong>, utiliza los valores de nombre del tarjetahabiente, CVV y fecha de expiración indicados en las <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">tarjetas de ejemplo</a>.</p>
+</li>
 </ul>
 <h2 id="importing-the-collection">Importar la Colección</h2>
 <p>Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona). Ten en cuenta que creamos un ambiente cada vez que importas la colección.</p>
@@ -1278,9 +1332,9 @@ data-postman-param="env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52IiwidmFsdW
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-9 de septiembre de 2024:
+19 de diciembre de 2024:
 
- <b>Documentation Updates (74c84013a)</b>
+ <b>Documentation Updates (3fe71946e)</b>
 </div>
 </div>
 

@@ -28,14 +28,14 @@ La integración puede enviar los datos del resultado del pago mediante el métod
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/webcheckout-integration/response-page.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T12:15:39-05:00" />
-<meta property="article:modified_time" content="2024-11-08T11:23:44-05:00" />
+<meta property="article:modified_time" content="2024-11-28T15:55:32-05:00" />
 
 <meta itemprop="name" content="Página de Respuesta">
 <meta itemprop="description" content="La página de respuesta te permite mostrar el resultado de la transacción al pagador una vez que se haya completado. Aunque esta página no es obligatoria para el flujo transaccional, mejora la experiencia del pagador al redirigirlo de vuelta a tu sitio. Esta página ayuda a completar la experiencia de pago, pero ten en cuenta que el pagador puede cerrar el checkout sin visitarla.
 La integración puede enviar los datos del resultado del pago mediante el método HTTP GET, y tu plataforma puede invocar la página de respuesta para todos los estados de la transacción, incluyendo aprobado, rechazado, en validación y en espera de pago (para pagos en efectivo).
 "><meta itemprop="datePublished" content="2021-03-29T12:15:39-05:00" />
-<meta itemprop="dateModified" content="2024-11-08T11:23:44-05:00" />
-<meta itemprop="wordCount" content="1475">
+<meta itemprop="dateModified" content="2024-11-28T15:55:32-05:00" />
+<meta itemprop="wordCount" content="1495">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Página de Respuesta"/>
 <meta name="twitter:description" content="La página de respuesta te permite mostrar el resultado de la transacción al pagador una vez que se haya completado. Aunque esta página no es obligatoria para el flujo transaccional, mejora la experiencia del pagador al redirigirlo de vuelta a tu sitio. Esta página ayuda a completar la experiencia de pago, pero ten en cuenta que el pagador puede cerrar el checkout sin visitarla.
 La integración puede enviar los datos del resultado del pago mediante el método HTTP GET, y tu plataforma puede invocar la página de respuesta para todos los estados de la transacción, incluyendo aprobado, rechazado, en validación y en espera de pago (para pagos en efectivo).
@@ -143,7 +143,7 @@ La integración puede enviar los datos del resultado del pago mediante el métod
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.21b9d6aaa5d6f25a30369fab40fe4c24c46f5ce1468d1d0b2590fc68678be64eacb84ac41483d69e4d91feb1083e72fc46adb43bf63cae6e4dd50ca2b58a0c18.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -452,8 +452,33 @@ La integración puede enviar los datos del resultado del pago mediante el métod
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/tools/disputes.html" href="../../../../es/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocstoolsdisputeshtml">
       
-        <a id="/es/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocstoolsdisputeshtml" href="../../../../es/docs/tools/disputes.html">Disputas</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsdisputesdisputes-webhookhtml" href="../../../../es/docs/tools/disputes/disputes-webhook.html">Webhook de Disputas</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -522,6 +547,12 @@ La integración puede enviar los datos del resultado del pago mediante el métod
       
       
         <a id="/es/docs/integrations/webcheckout-integration/confirmation-page.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../es/docs/integrations/webcheckout-integration/confirmation-page.html">Página de Confirmación</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../../es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Aerolíneas y Agencias de Viaje - Colombia</a>
       
       
     </li>
@@ -919,6 +950,13 @@ Si deseas que PayU siempre muestre la información de la transacción, deja el p
 <td style="text-align:center">—</td>
 </tr>
 <tr>
+<td>polTransactionState</td>
+<td>Numérico</td>
+<td>2</td>
+<td>Toma el valor del <code>pol Transaction State</code>.<br><a href="../../../../es/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-response-page">Ver los códigos de respuesta en la columna respectiva</a>.</td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
 <td>referenceCode</td>
 <td>Alfanumérico</td>
 <td>255</td>
@@ -963,14 +1001,14 @@ Si deseas que PayU siempre muestre la información de la transacción, deja el p
 <tr>
 <td>TX_VALUE</td>
 <td>Numérico</td>
-<td>14,2</td>
+<td>14.2</td>
 <td>Valor total de la transacción. Puede contener dos dígitos decimales. Por ejemplo 10000.00 o 10000.</td>
 <td style="text-align:center">—</td>
 </tr>
 <tr>
 <td>TX_TAX</td>
 <td>Numérico</td>
-<td>14,2</td>
+<td>14.2</td>
 <td>Valor del IVA de la transacción, si no se envió IVA, el sistema aplica el 19% automáticamente.<br>Puede contener dos dígitos decimales. Por ejemplo 19000.00.<br>En caso de que no tenga IVA, debe enviarse 0.</td>
 <td style="text-align:center">—</td>
 </tr>
@@ -1444,9 +1482,9 @@ signature = 779f163be9347a691bcdb25064644795
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-8 de noviembre de 2024:
+28 de noviembre de 2024:
 
- <b>Documentation updates (cb34649dc)</b>
+ <b>Documentation Updates (d002e8d69)</b>
 </div>
 </div>
 

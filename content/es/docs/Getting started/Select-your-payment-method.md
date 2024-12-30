@@ -70,6 +70,7 @@ PayU en Colombia te permite integrar con la mayoría de los métodos de pago en 
 | ![Logo](/assets/PaymentMethods/davivienda.png) | Davivienda | BANK_REFERENCED | Referencia Bancaria | |
 | ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/efecty.png) | Efecty | EFECTY | Efectivo | |
+| ![Logo](/assets/PaymentMethods/google_pay.png) | Google Pay | GOOGLE_PAY | Servicio móvil de pagos | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas Débito| |
 | ![Logo](/assets/PaymentMethods/nequi.png) | Nequi | NEQUI | Servicio móvil de pagos | |

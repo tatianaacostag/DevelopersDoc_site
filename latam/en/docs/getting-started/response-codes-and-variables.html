@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/getting-started/response-codes-and-variables.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-06T15:33:35-05:00" />
-<meta property="article:modified_time" content="2024-09-30T16:40:51-05:00" />
+<meta property="article:modified_time" content="2024-11-28T15:55:32-05:00" />
 
 <meta itemprop="name" content="Response Codes and Variables">
 <meta itemprop="description" content="In this section, you find relevant data used during the integration process, such as the variable tables, languages, and currencies admitted in the PayU’s platform."><meta itemprop="datePublished" content="2021-04-06T15:33:35-05:00" />
-<meta itemprop="dateModified" content="2024-09-30T16:40:51-05:00" />
-<meta itemprop="wordCount" content="1740">
+<meta itemprop="dateModified" content="2024-11-28T15:55:32-05:00" />
+<meta itemprop="wordCount" content="1787">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Response Codes and Variables"/>
 <meta name="twitter:description" content="In this section, you find relevant data used during the integration process, such as the variable tables, languages, and currencies admitted in the PayU’s platform."/>
 
@@ -137,7 +137,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
+  data-offline-search-index-json-src="../../../offline-search-index.21b9d6aaa5d6f25a30369fab40fe4c24c46f5ce1468d1d0b2590fc68678be64eacb84ac41483d69e4d91feb1083e72fc46adb43bf63cae6e4dd50ca2b58a0c18.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -452,8 +452,33 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/tools/disputes.html" href="../../../en/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputes</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolsdisputeshtml">
       
-        <a id="/en/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolsdisputeshtml" href="../../../en/docs/tools/disputes.html">Disputes</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsdisputesdisputes-webhookhtml" href="../../../en/docs/tools/disputes/disputes-webhook.html">Disputes Webhook</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -522,6 +547,12 @@
       
       
         <a id="/en/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../en/docs/integrations/webcheckout-integration/confirmation-page.html">Confirmation Page</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../en/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Airlines and Travel Agencies - Colombia</a>
       
       
     </li>
@@ -1798,53 +1829,89 @@
 <thead>
 <tr>
 <th>Currency</th>
-<th>Name</th>
+<th>Currency Name</th>
+<th style="text-align:center">Accepted Decimals (Cards)</th>
+<th style="text-align:center">Accepted Decimals (Bank Transfers)</th>
+<th style="text-align:center">Accepted Decimals (Cash, Digital Wallets, Bank References)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>ARS</code></td>
 <td>Argentine Peso</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>BRL</code></td>
 <td>Brazilian Real</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>CLP</code></td>
 <td>Chilean Peso</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>COP</code></td>
 <td>Colombian Peso</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>CRC</code></td>
 <td>Costa Rican Colón</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>GTQ</code></td>
 <td>Guatemalan Quetzal</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>HNL</code></td>
 <td>Honduran Lempira</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>MXN</code></td>
 <td>Mexican Peso</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>PEN</code></td>
-<td>Peruvian Nuevo Sol</td>
+<td>Peruvian Sol</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>SVC</code></td>
 <td>Salvadoran Colón</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>USD</code></td>
 <td>US Dollar</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
 </tr>
 </tbody>
 </table>
@@ -2480,9 +2547,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-September 30, 2024:
+November 28, 2024:
 
- <b>Documentation Updates (a1e8dbe3c)</b>
+ <b>Documentation Updates (d002e8d69)</b>
 </div>
 </div>
 

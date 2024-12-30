@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/webcheckout-integration/payment-form.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-29T12:15:27-05:00" />
-<meta property="article:modified_time" content="2024-11-19T16:23:02-05:00" />
+<meta property="article:modified_time" content="2024-11-28T15:55:32-05:00" />
 
 <meta itemprop="name" content="Formulario de Pago">
 <meta itemprop="description" content="En esta sección, aprenderás a enviar datos de transacción al gateway de pagos de PayU. Este documento proporciona la información necesaria para crear un formulario HTML con los detalles de la transacción y enviarlo a nuestro sistema mediante el método HTTP POST.
 "><meta itemprop="datePublished" content="2021-03-29T12:15:27-05:00" />
-<meta itemprop="dateModified" content="2024-11-19T16:23:02-05:00" />
-<meta itemprop="wordCount" content="2198">
+<meta itemprop="dateModified" content="2024-11-28T15:55:32-05:00" />
+<meta itemprop="wordCount" content="2273">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Formulario de Pago"/>
 <meta name="twitter:description" content="En esta sección, aprenderás a enviar datos de transacción al gateway de pagos de PayU. Este documento proporciona la información necesaria para crear un formulario HTML con los detalles de la transacción y enviarlo a nuestro sistema mediante el método HTTP POST.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.21b9d6aaa5d6f25a30369fab40fe4c24c46f5ce1468d1d0b2590fc68678be64eacb84ac41483d69e4d91feb1083e72fc46adb43bf63cae6e4dd50ca2b58a0c18.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -449,8 +449,33 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/tools/disputes.html" href="../../../../es/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocstoolsdisputeshtml">
       
-        <a id="/es/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocstoolsdisputeshtml" href="../../../../es/docs/tools/disputes.html">Disputas</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsdisputesdisputes-webhookhtml" href="../../../../es/docs/tools/disputes/disputes-webhook.html">Webhook de Disputas</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -519,6 +544,12 @@
       
       
         <a id="/es/docs/integrations/webcheckout-integration/confirmation-page.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../es/docs/integrations/webcheckout-integration/confirmation-page.html">Página de Confirmación</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../../es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Aerolíneas y Agencias de Viaje - Colombia</a>
       
       
     </li>
@@ -932,28 +963,28 @@
 <tr>
 <td>tax</td>
 <td>Numérico</td>
-<td>10,2</td>
+<td>10.2</td>
 <td>Valor del impuesto al valor agregado de la transacción.<br>En Colombia, si no se envía el IVA. el sistema aplica automáticamente el 19%. Puede tener dos dígitos decimales, por ejemplo 19000.00.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne <code>0</code> a esta variable.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
 <td>discount</td>
 <td>Numérico</td>
-<td>10,2</td>
+<td>10.2</td>
 <td>Valor del descuento sobre la venta.</td>
 <td style="text-align:center">No</td>
 </tr>
 <tr>
 <td>taxReturnBase</td>
 <td>Numérico</td>
-<td>10,2</td>
+<td>10.2</td>
 <td>Valor base para la devolución de impuestos.<br>Si el producto o servicio es exento de impuesto al valor agregado, asigne <code>0</code> a esta variable.</td>
 <td style="text-align:center">Sí</td>
 </tr>
 <tr>
 <td>additionalValue</td>
 <td>Numérico</td>
-<td>10,2</td>
+<td>10.2</td>
 <td>Valor adicional no comisionable de la venta.</td>
 <td style="text-align:center">No</td>
 </tr>
@@ -1135,21 +1166,21 @@
 <tr>
 <td>administrativeFee</td>
 <td>Numérico</td>
-<td>10,2</td>
+<td>10.2</td>
 <td>Valor de la tarifa administrativa.</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
 <td>taxAdministrativeFee</td>
 <td>Numérico</td>
-<td>10,2</td>
+<td>10.2</td>
 <td>Valor del impuesto de la tarifa administrativa.</td>
 <td style="text-align:center">-</td>
 </tr>
 <tr>
 <td>taxAdministrativeFeeReturnBase</td>
 <td>Numérico</td>
-<td>10,2</td>
+<td>10.2</td>
 <td>Valor base para calcular el impuesto de la tarifa administrativa.</td>
 <td style="text-align:center">-</td>
 </tr>
@@ -1364,17 +1395,42 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
           
           <div class="expansion-panel">
             <div class="expansion-panel-header" onclick="togglePanel(this)">
-              <label class="clickable-label">Haz clic aquí para generar información aleatoria.</label>
+              <label class="clickable-label">Haz clic aquí para iniciar la prueba</label>
 
             </div>
 
             <div class="expansion-panel-content">
 
-              <p class="instruction">
-                Por favor, selecciona un ID de cuenta, ingresa los detalles adicionales que quieras probar y luego haz clic en el botón "Generar Información Aleatoria".
-                <br><br>
-                Recuerda, estos campos deben estar ocultos para el usuario.
-              </p>
+              <div class="instruction-container">
+                <div class="instruction-button-container">
+                  <p class="instruction">1. Selecciona un id de cuenta en el campo accountId de acuerdo con el país donde deseas realizar pruebas.</p>
+                </div>
+                <div class="instruction-button-container">
+                  <p class="instruction">2. Haz clic en el botón:</p>
+                  <button type="button" id="generate-random-info-button" style="inline-size: 250px;">Generar Información Aleatoria</button>
+                </div>
+
+                <div class="instruction-button-container">
+                  <p class="instruction">
+                    3. Haz clic en el botón <span class="info-icon"
+                      onclick="showTooltip('tooltipSignature')">&#9432;</span> :
+                  <div id="tooltipSignature" class="tooltip">
+                    Recuerda que puedes editar o agregar campos adicionales según sea necesario. Si modificas o ingresas valores en los campos *paymentMethods*, *iin* o *pseBanks* después de haber generado una firma, será necesario generarla.
+                  </div>
+                  </p>
+                  <button type="submit" id="generate-signature-hash-button" value="Generar hash de firma"
+                    style="inline-size: 250px;">Generar Hash de Firma</button>
+                </div>
+
+                <div id="message" class="message"></div>
+
+                <div class="instruction-button-container">
+                  <p class="instruction">4. Haz clic en el botón:</p>
+                  <button type="submit" value="Pagar con PayU" style="inline-size: 250px;">Pagar con PayU</button>
+                </div>
+              </div>
+
+              <br></br>
 
               
               <div class="form-row">
@@ -1402,7 +1458,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
                   <option value="512327">ID de Cuenta para Brasil: 512327</option>
                   <option value="516685">ID de Cuenta para Brasil con 3DS: 516685</option>
                   <option value="512325">ID de Cuenta para Chile: 512325</option>
-                  <option value="512321">ID de Cuenta para Colombia: 512321</option>
+                  <option value="512321" selected>ID de Cuenta para Colombia: 512321</option>
                   <option value="516686">ID de Cuenta para Colombia con 3DS: 516686</option>
                   <option value="513128">ID de Cuenta para Aerolíneas Colombianas: 513128</option>
                   <option value="512548">ID de Cuenta para Agencias de Viajes en Colombia: 512548</option>
@@ -1449,23 +1505,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
                   placeholder="La URL de tu webhook.">
               </div>
 
-              <div class="form-row">
-                <label for="approvedResponseUrl">approvedResponseUrl</label>
-                <input id="approvedResponseUrl" name="approvedResponseUrl" type="url" class="field"
-                  placeholder="Opcional. La URL para redirigir al cliente a tu sitio después de que la transacción sea aprobada.">
-              </div>
-
-              <div class="form-row">
-                <label for="pendingResponseUrl">pendingResponseUrl</label>
-                <input id="pendingResponseUrl" name="pendingResponseUrl" type="url" class="field"
-                  placeholder="Opcional. La URL para redirigir al cliente a tu sitio cuando la transacción esté pendiente.">
-              </div>
-
-              <div class="form-row">
-                <label for="declinedResponseUrl">declinedResponseUrl</label>
-                <input id="declinedResponseUrl" name="declinedResponseUrl" type="url" class="field"
-                  placeholder="Opcional. La URL para redirigir al cliente a tu sitio después de que la transacción sea rechazada.">
-              </div>
+              
 
               <div class="form-row">
                 <label for="expirationDate">expirationDate</label>
@@ -1479,8 +1519,9 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
                 </label>
                 <div id="tooltip1" class="tooltip" style="display: none;">
                   <p>
-                  Cuando el usuario accede al enlace de pago, solo estarán disponibles los métodos de pago especificados para su selección. <a href="https://developers.payulatam.com/latam/es/docs/getting-started/select-your-payment-method.html"
-                    target="_blank" style="color: blue; text-decoration: underline;">Haz clic aquí</a> para ver los métodos de pago válidos.
+                    Cuando el usuario accede al enlace de pago, solo estarán disponibles los métodos de pago especificados para su selección. <a
+                      href="https://developers.payulatam.com/latam/es/docs/getting-started/select-your-payment-method.html"
+                      target="_blank" style="color: blue; text-decoration: underline;">Haz clic aquí</a> para ver los métodos de pago válidos.
                   </p>
                 </div>
                 <input id="paymentMethods" name="paymentMethods" type="text" class="field"
@@ -1584,6 +1625,15 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
                   placeholder="Días adicionales para la entrega del pedido.">
               </div>
 
+              <div class="form-row">
+                <label for="displayBuyerComments">displayBuyerComments</label>
+                <select id="displayBuyerComments" name="displayBuyerComments" class="field">
+                  <option value="">Seleccionar para mostrar comentarios al comprador.</option>
+                  <option value="1">Establecer en 1 para habilitar.</option>
+                  <option value="0">Establecer en 0 para habilitar.</option>
+                </select>
+              </div>
+
               <div class="form-row" style="position: relative;">
                 <label for="buyerCommentsLabel">buyerCommentsLabel
                   <span class="info-icon" onclick="showTooltip('tooltip6')">&#9432;</span>
@@ -1596,7 +1646,14 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
                   placeholder="Comentarios del comprador">
               </div>
 
-              
+              <div class="form-row">
+                <label for="isCashOnDeliveryApply">isCashOnDeliveryApply</label>
+                <select id="isCashOnDeliveryApply" name="isCashOnDeliveryApply" class="field">
+                  <option value="">Seleccionar para pago contra entrega.</option>
+                  <option value="1">Establecer en 1 para habilitar.</option>
+                  <option value="0">Establecer en 0 para habilitar.</option>
+                </select>
+              </div>
 
               <div class="form-row">
                 <label for="test">test</label>
@@ -1607,12 +1664,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
                 </select>
               </div>
 
-              <div id="message" class="message"></div>
-
-              
-              <button type="button" id="generate-random-info-button" class="btn-secondary">Generar Información Aleatoria</button>
-
-              </div>
+            </div>
 
           </div>
 
@@ -1657,7 +1709,8 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
                 <span class="info-icon" onclick="showTooltip('tooltip7')">&#9432;</span>
               </label>
               <div id="tooltip7" class="tooltip" style="display: none;">
-                El valor ingresado aparecerá en la respuesta de la API de Consulta en: result.payload.transactions.extraParameters.DISCOUNT
+                El valor ingresado aparecerá en la respuesta de la API de Consulta en:
+                result.payload.transactions.extraParameters.DISCOUNT
               </div>
               <input id="discount" name="discount" type="text" class="field"
                 placeholder="Opcional. Monto del descuento del pedido">
@@ -2030,32 +2083,32 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
 
     
     if (tooltip.classList.contains("show")) {
-        tooltip.classList.remove("show");
-        document.removeEventListener('click', handleOutsideClick);
+      tooltip.classList.remove("show");
+      document.removeEventListener('click', handleOutsideClick);
     } else {
-        
-        const openTooltips = document.querySelectorAll('.tooltip.show');
-        openTooltips.forEach(openTooltip => openTooltip.classList.remove('show'));
+      
+      const openTooltips = document.querySelectorAll('.tooltip.show');
+      openTooltips.forEach(openTooltip => openTooltip.classList.remove('show'));
 
-        
-        tooltip.classList.add("show");
+      
+      tooltip.classList.add("show");
 
-        
-        setTimeout(() => {
-            document.addEventListener('click', handleOutsideClick);
-        });
+      
+      setTimeout(() => {
+        document.addEventListener('click', handleOutsideClick);
+      });
     }
 
     
     function handleOutsideClick(event) {
-        
-        const isClickInside = tooltip.contains(event.target) || event.target.classList.contains('info-icon');
-        if (!isClickInside) {
-            tooltip.classList.remove("show");
-            document.removeEventListener('click', handleOutsideClick);
-        }
+      
+      const isClickInside = tooltip.contains(event.target) || event.target.classList.contains('info-icon');
+      if (!isClickInside) {
+        tooltip.classList.remove("show");
+        document.removeEventListener('click', handleOutsideClick);
+      }
     }
-}
+  }
 
   
   document.addEventListener("DOMContentLoaded", function () {
@@ -2115,7 +2168,16 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
   });
 
   
-  function generateSignature(signatureString, hashType) {
+  
+  document.getElementById('generate-signature-hash-button').addEventListener('click', function (event) {
+    event.preventDefault();
+    const messageDiv = document.getElementById('message');
+    messageDiv.style.display = 'block';
+    generateSignature()
+  });
+
+  
+  function generateSignatureHash(signatureString, hashType) {
     let hashFunction;
     switch (hashType) {
       case "MD5":
@@ -2132,6 +2194,48 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
         return null;
     }
     return hashFunction(signatureString).toString();
+  }
+
+  function generateSignature() {
+
+    
+    const apiKey = '4Vj8eK4rloUd272L48hsrarnUA'; 
+    const merchantId = document.getElementById('merchantId').value;
+    const referenceCode = document.getElementById('referenceCode').value
+    const amount = document.getElementById('amount').value
+    const currency = document.getElementById('currency').value
+
+    
+    let signatureString = apiKey + '~' + merchantId + '~' + referenceCode + '~' + amount + '~' + currency;
+
+    
+    const paymentMethods = document.getElementById('paymentMethods').value;
+    const iin = document.getElementById('iin').value;
+    const pseBanks = document.getElementById('pseBanks').value;
+
+    
+    if (paymentMethods && paymentMethods.trim() !== '') {
+      signatureString += '~' + paymentMethods;
+    }
+
+    
+    if (iin && iin.trim() !== '') {
+      signatureString += '~' + iin;
+    }
+
+    
+    if (pseBanks && pseBanks.trim() !== '') {
+      signatureString += '~' + pseBanks;
+    }
+
+    
+    showMessage('Firma: ' + signatureString, "black");
+
+    
+    const algorithmHash = document.getElementById('algorithmSignature').value;
+    const signatureHash = generateSignatureHash(signatureString, algorithmHash);
+
+    document.getElementById('signature').value = signatureHash;
   }
 
   
@@ -2306,45 +2410,6 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
 
     document.getElementById('zipCode').value = paymentZipCode;
 
-    
-    const apiKey = '4Vj8eK4rloUd272L48hsrarnUA'; 
-    const merchantId = document.getElementById('merchantId').value;
-    const paymentMethods = document.getElementById('paymentMethods').value;
-    const iin = document.getElementById('iin').value;
-    const pseBanks = document.getElementById('pseBanks').value;
-
-    
-    let signatureString = apiKey + '~' + merchantId + '~' + referenceCode + '~' + amount + '~' + currency;
-
-    
-    if (paymentMethods && paymentMethods.trim() !== '') {
-      signatureString += '~' + paymentMethods;
-    }
-
-    
-    if (iin && iin.trim() !== '') {
-      signatureString += '~' + iin;
-    }
-
-    
-    if (pseBanks && pseBanks.trim() !== '') {
-      signatureString += '~' + pseBanks;
-    }
-
-    
-    showMessage('Signature string: ' + signatureString, "black");
-
-    
-    const algorithmHash = document.getElementById('algorithmSignature').value;
-    const signatureHash = generateSignature(signatureString, algorithmHash);
-
-    document.getElementById('signature').value = signatureHash;
-
-    
-    document.getElementById('sourceUrl').value = 'https://www.yoursite.com/';
-    document.getElementById('responseUrl').value = 'https://www.yoursite.com/response';
-    document.getElementById('confirmationUrl').value = 'https://www.yoursite.com/confirmation';
-
     let cashVoucherExpDate = getFormattedDate();
     document.getElementById('expirationDate').value = cashVoucherExpDate;
 
@@ -2406,7 +2471,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
     
     updatePseBanksVisibility();
     
-    updateAirlinesAndTravelAgenciesFieldsVisibility
+    updateAirlinesAndTravelAgenciesFieldsVisibility();
   });
 
   function handleFormSubmit(event) {
@@ -2417,15 +2482,54 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
     
   }
 
-
 </script>
 
 
 <style>
+  .instruction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+     
+    max-width: -webkit-fill-available;
+     
+  }
+
+  .instruction-button-container {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+     
+    position: relative;
+  }
+
   .instruction {
-  color: orangered !important;
-  font-weight: bold !important;
-  text-align: center !important;
+    color: #050505 !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    flex: 1;
+     
+  }
+
+  .instruction-button-container button {
+    background-color: #a5c312;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 3px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    inline-size: 245px;
+     
+  }
+
+  .hover-effect {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .expansion-panel-header:hover,
+  .instruction-button-container button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 
   hr.solid {
@@ -2458,7 +2562,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
   }
 
   .expansion-panel-header {
-    background-color: #f5f5f5;
+    background-color: #a6c307;
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
@@ -2478,6 +2582,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
     cursor: pointer;
     margin-left: 5px;
     position: relative;
+    align-content: center;
   }
 
   .tooltip {
@@ -2493,12 +2598,11 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
     margin-top: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    word-wrap: break-word;    
-
+    word-wrap: break-word;
   }
 
   .tooltip.show {
-    display: inline-flex !important; 
+    display: inline-flex !important;
   }
 
   .info-icon:hover+.tooltip {
@@ -2527,7 +2631,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
     font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #333;
+    color: #ffffff;
     align-items: center;
     cursor: pointer;
   }
@@ -2542,7 +2646,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
     margin-right: 10px;
     min-width: 150px;
   }
-  
+
   .form-row .field {
     flex: 1;
     padding: 5px;
@@ -2617,28 +2721,6 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
     transition: none;
   }
 
-  .btn-secondary {
-    background: #6d7278;
-    width: -webkit-fill-available;
-    color: #fff;
-    display: block;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 1em;
-  }
-
-  .btn-secondary:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .btn-secondary:active {
-    transform: translateY(2px);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    transition: none;
-  }
-
   #pseBanks-field {
     display: none;
   }
@@ -2652,6 +2734,7 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
   }
 
   .message {
+    display: none;
     contain: paint;
     text-align: center;
     overflow-wrap: break-word;
@@ -2749,9 +2832,9 @@ La suma de <code>tax</code> y <code>taxReturnBase</code> no debe exceder el valo
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-19 de noviembre de 2024:
+28 de noviembre de 2024:
 
- <b>Documentation Updates (d11bd98ea)</b>
+ <b>Documentation Updates (d002e8d69)</b>
 </div>
 </div>
 

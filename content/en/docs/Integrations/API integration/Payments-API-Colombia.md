@@ -28,6 +28,7 @@ Payments API includes the following methods:
 * [Submit Transactions Using Nequi]({{< ref "Payments-API-Colombia.md#submit-transactions-using-nequi" >}})
 * [Submit Transactions Using Cash or Bank Reference]({{< ref "Payments-API-Colombia.md#submit-transactions-using-cash-or-bank-reference" >}})
 * [Submit Transactions Using Bank Transfer (PSE)]({{< ref "Payments-API-Colombia.md#submit-transactions-using-bank-transfer-pse" >}})
+* [Submit Transactions Using Bancolombia Button]({{< ref "#submit-transactions-using-bancolombia-button" >}})
 * [Submit Transactions Using Google Pay]({{< ref "Payments-API-Colombia.md#submit-transactions-using-google-pay" >}})
 * [Process Payments as an Airline or Travel Agency]({{< ref "#process-payments-as-an-airline-or-travel-agency" >}}) 
 * [Banks List - PSE]({{< ref "Payments-API-Colombia.md#banks-list---pse" >}})
@@ -203,7 +204,7 @@ Two-step flow is available under request, contact your sales representative.
 | RC | Birth certificate. |
 | DE | Foreign identification document. |
 
-### API Call
+### API Call {#api-call}
 
 The following are the examples of the request and response of this payment method.
 
@@ -660,7 +661,7 @@ The image below is an example of PayU's summary page, you can leverage this page
 
 </details>
 
-### API Call 
+### API Call {#api-call-1}
 
 The following are the request and response bodies for this payment method:
 
@@ -925,17 +926,19 @@ To prevent errors caused by incompatible phone number formats, we recommend impl
 
 * Interface example:
 
-![PrintScreen](/assets/Payments/Nequi05EN.png)
+<img src="/assets/Payments/Nequi05EN.png" alt="PrintScreen" width="600">
+<p></p>
 
 2. Configure error messages to display when a user enters a phone number with less than 10 digits or more than 10 digits (excluding the country code, which is +57 for Colombia).
 
 * **A)** Example of an interface displaying automatically generated spaces when the user has entered fewer than 10 digits:
 
-![PrintScreen](/assets/Payments/Nequi06EN.png)
+<img src="/assets/Payments/Nequi06EN.png" alt="PrintScreen" width="600">
+<p></p>
 
 * **B)** Example of an interface without spaces when the user has entered more than 10 digits:
 
-![PrintScreen](/assets/Payments/Nequi07EN.png)
+<img src="/assets/Payments/Nequi07EN.png" alt="PrintScreen" width="600">
 
 #### Sandbox Environment Testing
 
@@ -1086,7 +1089,7 @@ This method allows you to process customer payments in cash or through a bank re
    - **BANK_REFERENCED_NAME**: Reference name for Bancolombia. Available when using `BANK_REFERENCED`.
    - **BANCOLOMBIA_SERVICE_CODE**: payment code for Bancolombia. Available when using `BANK_REFERENCED`.
 
-### API Call 
+### API Call {#api-call-2}
 
 The following are the bodies of the request and response of this payment method.
 
@@ -1525,7 +1528,7 @@ The list of available documents is:
 | 6 | 4 | Rejected transaction |
 | 12 or 14 | 9994 or 25 | Pending transaction, please check if the debit was made in the bank. |
 
-### API Call
+### API Call {#api-call-3}
 
 The following are the bodies of the request and response of this payment method.
 
@@ -1821,6 +1824,152 @@ Response Example:
 
 {{< /tabs >}}
 
+## Submit Transactions Using Bancolombia Button {#submit-transactions-using-bancolombia-button}
+
+The Bancolombia Payments Button is an online payment solution that allows users to perform transactions quickly and securely through their Bancolombia account. This tool is available to millions of users and enables payments to be completed directly from the merchant's website, redirecting the user to a secure platform provided by the bank.
+
+### Benefits of the Bancolombia Button
+
+In addition to being a convenient option for users, the Bancolombia Payments Button represents an innovative alternative for merchants. By integrating this option into your payment platform through PayU, your business can gain the following benefits:
+
+* **Increased sales:** Reach more customers who prefer digital payment methods supported by Bancolombia, contributing to a higher number of completed transactions and improved customer retention.
+
+* **Greater convenience:** Offer a fast and versatile payment experience, allowing users to make payments directly from their bank account without needing physical cards or cash.
+
+* **Enhanced security:** Enable transactions protected by Bancolombia's advanced security systems, one of Colombia's most trusted financial institutions.
+
+Integrating the Bancolombia Payments Button not only improves the shopping experience for your customers but also strengthens your business with a payment method aligned with local market preferences.
+
+### Payment Process with the Bancolombia Button
+
+The payment process is designed to be simple and secure. Follow these steps to complete a transaction:
+
+1. Select the payment method at checkout.
+
+<img src="/assets/Payments/en_botonbancolombia_1.png" alt="PrintScreen" width="650">
+<p></p>
+
+2. Accept the terms and conditions and click **_Pay_**.
+
+<img src="/assets/Payments/en_botonbancolombia_2.png" alt="PrintScreen" width="650">
+<p></p>
+
+3. The integration will redirect you to Bancolombia's transactional site to complete the payment.
+
+### Parameters for Request and Response {#parameters-for-request-and-response-4}
+
+This API allows managing purchase intentions, obtaining a unique transfer code, and generating the payment experience. The integration needs to consume a REST service from the bank using a **Client Secret** and a **Client ID**, which will be provided to the user via confidential email.
+
+<details>
+<summary>Request</summary>
+<div class="variables"></div>
+
+| **Field** | **Definition** | **Type** | **Max Length** | **Example** | **Remarks** |
+|-|-|-|-|-|-|
+| commerceTransferButtonId | Unique identifier of the transfer button. | String | 50 | `"h4ShG3NER1C"` | Provided during the linking process. |
+| transferReference | Unique code assigned by the merchant to identify the transaction. | String | 48 | `"reference0123"` | Defined by the merchant. |
+| transferDescription | Description of the transfer, associated with the product, service, or invoice. | String | 225 | `"Online purchase"` | |
+| transferAmount | Total amount of the transaction to be debited from the paying customer. | Double | 15 | `23450.33` | In testing, the maximum amount is $1,000,000 COP and the minimum is $1,000 COP. |
+| commerceUrl | Redirection URL for the customer after completing the transfer. | String | 225 | `"https://gateway.com/payment/route?commerce=onlinepurchase"` | |
+| confirmationURL | Confirmation URL used to notify the merchant of the transaction completion. | String | 500 | `"https://espagos-api-dev.cloud.net/callback"` | This functionality is mandatory. |
+
+</details>
+
+### API Call {#api-call-4}
+
+Below are the request and response bodies for this payment method.
+
+Request Example:
+```JSON
+{
+  "data": [
+    {
+      "commerceTransferButtonId": "h4ShG3NER1C",
+      "transferReference": "1002348899557697899",
+      "transferDescription": "Online purchase",
+      "transferAmount": 3458.33,
+      "commerceUrl": "https://gateway.com/payment/route?commerce=onlinepurchase",
+      "confirmationURL": "https://espagos-api-dev.cloud.net/callback"
+    }
+  ]
+}
+```
+<br>
+
+Example of a Response:
+```JSON
+{
+  "meta": {
+    "messageId": "269d2d0f-6c87-4515-87f7-e3f11ca976d6",
+    "_version": "1.0",
+    "_requestDate": "2020-10-19T00:00:24.422Z",
+    "_clientRequest": "29fa65a1-0227-40cd-9efc-6beaff247614"
+  },
+  "data": [
+    {
+      "header": {
+        "type": "Transference",
+        "id": "_24iReQwXEI"
+      },
+      "transferCode": "_24iReQwXEI",
+      "redirectURL": "https://sandbox-boton-dev.apps.ambientescb.com/web/transfer-gateway/checkout/_24iReQwXEI"
+    }
+  ]
+}
+```
+
+### Technical Conditions
+
+* **Conditions for the `transferReference` field:**
+Must have a maximum of 48 numeric characters and must not include special characters.
+
+* **Callback service exposure:**
+Implementing the callback is mandatory to receive real-time notifications about the final status of the transaction. The notification URL must be provided by the beneficiary user and will be used to send the final transaction status. The system will attempt up to 3 notifications, with 30-second intervals between each attempt.
+
+#### Callback Response Structure
+
+<details>
+<summary>Response</summary>
+<div class="variables"></div>
+
+| **Field** | **Definition** | **Type** | **Max. Length** | **Example** |
+|-|-|-|-|-|
+| transferVoucher | Transaction voucher number. | String | 50 | `"TRGQx8jMgCEG"` |
+| transferAmount | Total transaction amount. | Double | 15 | `1000.00` |
+| transferStateDescription  | Description of the transaction status result. | String | 225 | `"Invalid account"` |
+| sign | Signature used to validate the integrity of the generated request. | String | 128 | `"b6f7bc914b69824df799db0ad7c9bb26"` |
+| requestDate | Date and time the order was registered. | DateTime | 23 | `"2020-11-25T09:14:22.697-0500"` |
+| transferState | Current transaction status. | String | 20 | `"rejected"`, `"approved"`, `"pending"`    |
+| transferDate | Date and time the transaction was approved or rejected. | DateTime | 20 | `"2020-11-10T08:04:54.0000500"` |
+| transferCode | Unique identifier of the transfer. | String | 50 | `"_oXsTE8kNo9"` |
+| transferReference | Transaction reference code assigned by the merchant. | String | 48 | `"Reference05013418"` |
+| commerceTransferButtonId  | Unique identifier of the merchant's transfer button (HASH). | String | 50 | `"h4ShG3NER1C"` |
+
+</details>
+<br>
+
+Example of a Response:
+```JSON
+{
+  "data": {
+    "commerceTransferButtonId": "hA5hg3NER1c",
+    "transferReference": "test201123",
+    "transferDescription": "Online purchase",
+    "transferAmount": 23458.33,
+    "commerceUrl": "https://www.commerce.com",
+    "confirmationURL": "https://pagos-api-dev.cloud.net/callback"
+  }
+}
+```
+
+### Technical Conditions for Callback Usage
+
+* **API key for callback:**
+Notifications must be authenticated using an API Key, previously provided by the bank.
+
+* **Service exposure:**
+The merchant must expose a service capable of receiving the structure described in the callback response.
+
 ## Submit Transactions Using Google Pay {#submit-transactions-using-google-pay}
 
 Google Pay is a digital wallet that enables simple and fast card payments, without the need of entering the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), no matter the operating system and in almost all web browsers.
@@ -1944,7 +2093,7 @@ Access PayU Latam Web Checkout in a [test environment](https://sandbox.checkout.
     <source src="/assets/GooglePay/Colombia_WebCheckout.mp4" type="video/mp4">    
 </video>
 
-#### API Call
+#### API Call {#api-call-5}
 
 The following are the bodies of the request and response of this payment method.
 
@@ -2274,7 +2423,7 @@ To complete a successful transaction request, you must include the specific para
 
 </details>
 
-#### API Call
+#### API Call {#api-call-6}
 
 The following are examples of the request for this method.
 
@@ -2410,7 +2559,7 @@ To complete a successful transaction request, you must include the specific para
 
 </details>
 
-#### API Call
+#### API Call {#api-call-7}
 
 The following are examples of the request for this method.
 
@@ -2610,7 +2759,7 @@ When using XML format, itinerary parameters appear under `transaction > pnr > it
 
 {{% /alert %}}
 
-#### API Call
+#### API Call {#api-call-8}
 
 The following are examples of the request for this method.
 
@@ -2865,7 +3014,7 @@ This method returns a list of the banks available for [payments using PSE]({{< r
 
 </details>
 
-### API Call
+### API Call {#api-call-9}
 
 The following are the examples of the request and response of this method.
 
@@ -3546,7 +3695,7 @@ This method returns a list of the payment methods available in all countries.
 
 </details>
 
-### API Call
+### API Call {#api-call-10}
 
 The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
@@ -3670,7 +3819,7 @@ The ```PING``` method lets you verify the connection to our platform.
 | transactionResponse | Object | Max:2048 | The response of the PING method if an error ocurred. |
 </details>
 
-### API Call
+### API Call {#api-call-11}
 
 The following are the examples of the request and response of this method.
 

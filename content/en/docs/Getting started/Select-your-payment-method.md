@@ -71,6 +71,7 @@ PayU in Colombia allows you to integrate with most of the cash payments methods 
 | ![Logo](/assets/PaymentMethods/davivienda.png) | Davivienda | BANK_REFERENCED | Bank Reference | |
 | ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Credit Cards | |
 | ![Logo](/assets/PaymentMethods/efecty.png) | Efecty | EFECTY | Cash | |
+| ![Logo](/assets/PaymentMethods/google_pay.png) | Google Pay | GOOGLE_PAY | Mobile payment service | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Credit Cards | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Debit Cards | |
 | ![Logo](/assets/PaymentMethods/nequi.png) | Nequi | NEQUI | Mobile payment service | |

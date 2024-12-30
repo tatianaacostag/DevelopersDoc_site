@@ -102,28 +102,28 @@
 &lt;tr&gt;
 &lt;td&gt;tax&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;10,2&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
 &lt;td&gt;Valor do IVA da transação.&lt;br&gt;Na Colômbia, se nenhum IVA for enviado, o sistema aplica 19% automaticamente. Ele pode conter dois dígitos decimais, por exemplo 19000.00.&lt;br&gt;Se o produto ou serviço for isento de IVA, atribua &lt;code&gt;0&lt;/code&gt; a esta variável.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;discount&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;10,2&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
 &lt;td&gt;Discount value applied to the sale.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;taxReturnBase&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;10,2&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
 &lt;td&gt;Valor base para cálculo do VAT.&lt;br&gt;Se o produto ou serviço for isento de IVA, atribua &lt;code&gt;0&lt;/code&gt; a esta variável.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;additionalValue&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;10,2&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
 &lt;td&gt;Valor adicional da venda.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -305,21 +305,21 @@
 &lt;tr&gt;
 &lt;td&gt;administrativeFee&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;10,2&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
 &lt;td&gt;Valor da taxa administrativa.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;taxAdministrativeFee&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;10,2&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
 &lt;td&gt;Valor do imposto da taxa administrativa.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;taxAdministrativeFeeReturnBase&lt;/td&gt;
 &lt;td&gt;Número&lt;/td&gt;
-&lt;td&gt;10,2&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
 &lt;td&gt;Valor base para cálculo do imposto da taxa administrativa.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
 &lt;/tr&gt;
@@ -534,17 +534,42 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
           
           &lt;div class=&#34;expansion-panel&#34;&gt;
             &lt;div class=&#34;expansion-panel-header&#34; onclick=&#34;togglePanel(this)&#34;&gt;
-              &lt;label class=&#34;clickable-label&#34;&gt;Click here to generate random information.&lt;/label&gt;
+              &lt;label class=&#34;clickable-label&#34;&gt;Click here to start the test&lt;/label&gt;
 
             &lt;/div&gt;
 
             &lt;div class=&#34;expansion-panel-content&#34;&gt;
 
-              &lt;p class=&#34;instruction&#34;&gt;
-                Please select an account ID, enter any additional details you want to test, and then click the &#34;Generate Random Information&#34; button.
-                &lt;br&gt;&lt;br&gt;
-                Remember, these fields should be hidden from the user.
-              &lt;/p&gt;
+              &lt;div class=&#34;instruction-container&#34;&gt;
+                &lt;div class=&#34;instruction-button-container&#34;&gt;
+                  &lt;p class=&#34;instruction&#34;&gt;1. Select a value from the accountId field according to the country where you want to run the tests.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;instruction-button-container&#34;&gt;
+                  &lt;p class=&#34;instruction&#34;&gt;2. Click the button:&lt;/p&gt;
+                  &lt;button type=&#34;button&#34; id=&#34;generate-random-info-button&#34; style=&#34;inline-size: 250px;&#34;&gt;Generate Random Information&lt;/button&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&#34;instruction-button-container&#34;&gt;
+                  &lt;p class=&#34;instruction&#34;&gt;
+                    3. Click the button: &lt;span class=&#34;info-icon&#34;
+                      onclick=&#34;showTooltip(&#39;tooltipSignature&#39;)&#34;&gt;&amp;#9432;&lt;/span&gt; :
+                  &lt;div id=&#34;tooltipSignature&#34; class=&#34;tooltip&#34;&gt;
+                    Remember that you can edit or add additional fields as needed. If you modify or enter values in the paymentMethods, iin, or pseBanks fields after generating a signature, it will be necessary to generate it again.
+                  &lt;/div&gt;
+                  &lt;/p&gt;
+                  &lt;button type=&#34;submit&#34; id=&#34;generate-signature-hash-button&#34; value=&#34;Generar hash de firma&#34;
+                    style=&#34;inline-size: 250px;&#34;&gt;Generate Signature Hash&lt;/button&gt;
+                &lt;/div&gt;
+
+                &lt;div id=&#34;message&#34; class=&#34;message&#34;&gt;&lt;/div&gt;
+
+                &lt;div class=&#34;instruction-button-container&#34;&gt;
+                  &lt;p class=&#34;instruction&#34;&gt;4. Click the button:&lt;/p&gt;
+                  &lt;button type=&#34;submit&#34; value=&#34;Pagar con PayU&#34; style=&#34;inline-size: 250px;&#34;&gt;Pay with PayU&lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;br&gt;&lt;/br&gt;
 
               
               &lt;div class=&#34;form-row&#34;&gt;
@@ -572,7 +597,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   &lt;option value=&#34;512327&#34;&gt;Account ID for Brazil: 512327&lt;/option&gt;
                   &lt;option value=&#34;516685&#34;&gt;Account ID for Brazil with 3DS: 516685&lt;/option&gt;
                   &lt;option value=&#34;512325&#34;&gt;Account ID for Chile: 512325&lt;/option&gt;
-                  &lt;option value=&#34;512321&#34;&gt;Account ID for Colombia: 512321&lt;/option&gt;
+                  &lt;option value=&#34;512321&#34; selected&gt;Account ID for Colombia: 512321&lt;/option&gt;
                   &lt;option value=&#34;516686&#34;&gt;Account ID for Colombia with 3DS: 516686&lt;/option&gt;
                   &lt;option value=&#34;513128&#34;&gt;Account ID for Colombian Airlines: 513128&lt;/option&gt;
                   &lt;option value=&#34;512548&#34;&gt;Account ID for Travel Agencies in Colombia: 512548&lt;/option&gt;
@@ -619,23 +644,7 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   placeholder=&#34;Your webhook URL.&#34;&gt;
               &lt;/div&gt;
 
-              &lt;div class=&#34;form-row&#34;&gt;
-                &lt;label for=&#34;approvedResponseUrl&#34;&gt;approvedResponseUrl&lt;/label&gt;
-                &lt;input id=&#34;approvedResponseUrl&#34; name=&#34;approvedResponseUrl&#34; type=&#34;url&#34; class=&#34;field&#34;
-                  placeholder=&#34;Optional. The URL to redirect the customer to your site after the transaction is approved.&#34;&gt;
-              &lt;/div&gt;
-
-              &lt;div class=&#34;form-row&#34;&gt;
-                &lt;label for=&#34;pendingResponseUrl&#34;&gt;pendingResponseUrl&lt;/label&gt;
-                &lt;input id=&#34;pendingResponseUrl&#34; name=&#34;pendingResponseUrl&#34; type=&#34;url&#34; class=&#34;field&#34;
-                  placeholder=&#34;Optional. The URL to redirect the customer to your site when the transaction is pending.&#34;&gt;
-              &lt;/div&gt;
-
-              &lt;div class=&#34;form-row&#34;&gt;
-                &lt;label for=&#34;declinedResponseUrl&#34;&gt;declinedResponseUrl&lt;/label&gt;
-                &lt;input id=&#34;declinedResponseUrl&#34; name=&#34;declinedResponseUrl&#34; type=&#34;url&#34; class=&#34;field&#34;
-                  placeholder=&#34;Optional. The URL to redirect the customer to your site after the transaction is declined.&#34;&gt;
-              &lt;/div&gt;
+              
 
               &lt;div class=&#34;form-row&#34;&gt;
                 &lt;label for=&#34;expirationDate&#34;&gt;expirationDate&lt;/label&gt;
@@ -753,6 +762,15 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                 &lt;input id=&#34;additionalDeliveryDays&#34; name=&#34;additionalDeliveryDays&#34; type=&#34;text&#34; class=&#34;field&#34;
                   placeholder=&#34;Additional days for order delivery.&#34;&gt;
               &lt;/div&gt;
+             
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;displayBuyerComments&#34;&gt;displayBuyerComments&lt;/label&gt;
+                &lt;select id=&#34;displayBuyerComments&#34; name=&#34;displayBuyerComments&#34; class=&#34;field&#34;&gt;
+                  &lt;option value=&#34;&#34;&gt;Select to show comments to the buyer.&lt;/option&gt;
+                  &lt;option value=&#34;1&#34;&gt;Set to 1 to enable.&lt;/option&gt;
+                  &lt;option value=&#34;0&#34;&gt;Set to 0 to disable.&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
 
               &lt;div class=&#34;form-row&#34; style=&#34;position: relative;&#34;&gt;
                 &lt;label for=&#34;buyerCommentsLabel&#34;&gt;buyerCommentsLabel
@@ -766,7 +784,14 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   placeholder=&#34;Buyer comments&#34;&gt;
               &lt;/div&gt;
 
-              
+              &lt;div class=&#34;form-row&#34;&gt;
+                &lt;label for=&#34;isCashOnDeliveryApply&#34;&gt;isCashOnDeliveryApply&lt;/label&gt;
+                &lt;select id=&#34;isCashOnDeliveryApply&#34; name=&#34;isCashOnDeliveryApply&#34; class=&#34;field&#34;&gt;
+                  &lt;option value=&#34;&#34;&gt;Select for cash on delivery.&lt;/option&gt;
+                  &lt;option value=&#34;1&#34;&gt;Set to 1 to enable.&lt;/option&gt;
+                  &lt;option value=&#34;0&#34;&gt;Set to 0 to enable.&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
 
               &lt;div class=&#34;form-row&#34;&gt;
                 &lt;label for=&#34;test&#34;&gt;test&lt;/label&gt;
@@ -775,14 +800,9 @@ A soma de &lt;code&gt;tax&lt;/code&gt; + &lt;code&gt;taxReturnBase&lt;/code&gt; 
                   &lt;option value=&#34;1&#34;&gt;Set to 1 for testing&lt;/option&gt;
                   &lt;option value=&#34;0&#34;&gt;Set to 0 for production.&lt;/option&gt;
                 &lt;/select&gt;
-              &lt;/div&gt;
+              &lt;/div&gt;   
 
-              &lt;div id=&#34;message&#34; class=&#34;message&#34;&gt;&lt;/div&gt;
-
-              
-              &lt;button type=&#34;button&#34; id=&#34;generate-random-info-button&#34; class=&#34;btn-secondary&#34;&gt;Generate Random Information&lt;/button&gt;
-
-              &lt;/div&gt;
+            &lt;/div&gt;
 
           &lt;/div&gt;
 
@@ -1284,8 +1304,17 @@ document.getElementById(&#39;generate-random-info-button&#39;).addEventListener(
   generateRandomInfo();
 });
 
+  
+  
+  document.getElementById(&#39;generate-signature-hash-button&#39;).addEventListener(&#39;click&#39;, function (event) {
+    event.preventDefault();
+    const messageDiv = document.getElementById(&#39;message&#39;);
+    messageDiv.style.display = &#39;block&#39;;
+    generateSignature()
+  });
 
-function generateSignature(signatureString, hashType) {
+
+function generateSignatureHash(signatureString, hashType) {
   let hashFunction;
   switch (hashType) {
     case &#34;MD5&#34;:
@@ -1302,6 +1331,48 @@ function generateSignature(signatureString, hashType) {
       return null;
   }
   return hashFunction(signatureString).toString();
+}
+
+function generateSignature() {
+
+
+const apiKey = &#39;4Vj8eK4rloUd272L48hsrarnUA&#39;; 
+const merchantId = document.getElementById(&#39;merchantId&#39;).value;
+const referenceCode = document.getElementById(&#39;referenceCode&#39;).value
+const amount = document.getElementById(&#39;amount&#39;).value
+const currency = document.getElementById(&#39;currency&#39;).value
+
+
+let signatureString = apiKey + &#39;~&#39; + merchantId + &#39;~&#39; + referenceCode + &#39;~&#39; + amount + &#39;~&#39; + currency;
+
+
+const paymentMethods = document.getElementById(&#39;paymentMethods&#39;).value;
+const iin = document.getElementById(&#39;iin&#39;).value;
+const pseBanks = document.getElementById(&#39;pseBanks&#39;).value;
+
+
+if (paymentMethods &amp;&amp; paymentMethods.trim() !== &#39;&#39;) {
+  signatureString += &#39;~&#39; + paymentMethods;
+}
+
+
+if (iin &amp;&amp; iin.trim() !== &#39;&#39;) {
+  signatureString += &#39;~&#39; + iin;
+}
+
+
+if (pseBanks &amp;&amp; pseBanks.trim() !== &#39;&#39;) {
+  signatureString += &#39;~&#39; + pseBanks;
+}
+
+
+showMessage(&#39;Signature: &#39; + signatureString, &#34;black&#34;);
+
+
+const algorithmHash = document.getElementById(&#39;algorithmSignature&#39;).value;
+const signatureHash = generateSignatureHash(signatureString, algorithmHash);
+
+document.getElementById(&#39;signature&#39;).value = signatureHash;
 }
 
 
@@ -1475,45 +1546,6 @@ if (countryCode === &#39;AR&#39;) {
 
 document.getElementById(&#39;zipCode&#39;).value = paymentZipCode;
 
-
-const apiKey = &#39;4Vj8eK4rloUd272L48hsrarnUA&#39;; 
-const merchantId = document.getElementById(&#39;merchantId&#39;).value;
-const paymentMethods = document.getElementById(&#39;paymentMethods&#39;).value;
-const iin = document.getElementById(&#39;iin&#39;).value;
-const pseBanks = document.getElementById(&#39;pseBanks&#39;).value;
-
-
-let signatureString = apiKey + &#39;~&#39; + merchantId + &#39;~&#39; + referenceCode + &#39;~&#39; + amount + &#39;~&#39; + currency;
-
-
-if (paymentMethods &amp;&amp; paymentMethods.trim() !== &#39;&#39;) {
-  signatureString += &#39;~&#39; + paymentMethods;
-}
-
-
-if (iin &amp;&amp; iin.trim() !== &#39;&#39;) {
-  signatureString += &#39;~&#39; + iin;
-}
-
-
-if (pseBanks &amp;&amp; pseBanks.trim() !== &#39;&#39;) {
-  signatureString += &#39;~&#39; + pseBanks;
-}
-
-
-showMessage(&#39;Signature string: &#39; + signatureString, &#34;black&#34;);
-
-
-const algorithmHash = document.getElementById(&#39;algorithmSignature&#39;).value;
-const signatureHash = generateSignature(signatureString, algorithmHash);
-
-document.getElementById(&#39;signature&#39;).value = signatureHash;
-
-
-document.getElementById(&#39;sourceUrl&#39;).value = &#39;https://www.yoursite.com/&#39;;
-document.getElementById(&#39;responseUrl&#39;).value = &#39;https://www.yoursite.com/response&#39;;
-document.getElementById(&#39;confirmationUrl&#39;).value = &#39;https://www.yoursite.com/confirmation&#39;;
-
 let cashVoucherExpDate = getFormattedDate();
 document.getElementById(&#39;expirationDate&#39;).value = cashVoucherExpDate;
 
@@ -1522,77 +1554,118 @@ document.getElementById(&#39;test&#39;).value = &#39;0&#39;;
 }
 
 function updatePseBanksVisibility() {
-  var accountId = document.getElementById(&#39;accountId&#39;).value;
-  var pseBanksAccountIds = [&#39;512321&#39;, &#39;516686&#39;, &#39;513128&#39;, &#39;512548&#39;];
-  if (pseBanksAccountIds.includes(accountId)) {
-    document.getElementById(&#39;pseBanks-field&#39;).style.display = &#39;flex&#39;;
-  } else {
-    document.getElementById(&#39;pseBanks-field&#39;).style.display = &#39;none&#39;;
-  }
+var accountId = document.getElementById(&#39;accountId&#39;).value;
+var pseBanksAccountIds = [&#39;512321&#39;, &#39;516686&#39;, &#39;513128&#39;, &#39;512548&#39;];
+if (pseBanksAccountIds.includes(accountId)) {
+  document.getElementById(&#39;pseBanks-field&#39;).style.display = &#39;flex&#39;;
+} else {
+  document.getElementById(&#39;pseBanks-field&#39;).style.display = &#39;none&#39;;
 }
+}
+
 function updateAirlinesAndTravelAgenciesFieldsVisibility() {
-  var accountId = document.getElementById(&#39;accountId&#39;).value;
+var accountId = document.getElementById(&#39;accountId&#39;).value;
 
-  
-  var airlineAdditionalAccountIds = [&#39;513128&#39;, &#39;512548&#39;];
-  var administrativeFeeAccountIds = [&#39;512548&#39;];
 
-  
-  if (airlineAdditionalAccountIds.includes(accountId)) {
-    document.getElementById(&#39;airline-field&#39;).style.display = &#39;flex&#39;;
-    document.getElementById(&#39;additionalValue-field&#39;).style.display = &#39;flex&#39;;
-  } else {
-    document.getElementById(&#39;airline-field&#39;).style.display = &#39;none&#39;;
-    document.getElementById(&#39;additionalValue-field&#39;).style.display = &#39;none&#39;;
-  }
+var airlineAdditionalAccountIds = [&#39;513128&#39;, &#39;512548&#39;];
+var administrativeFeeAccountIds = [&#39;512548&#39;];
 
-  
-  if (administrativeFeeAccountIds.includes(accountId)) {
-    document.getElementById(&#39;administrativeFee-field&#39;).style.display = &#39;flex&#39;;
-    document.getElementById(&#39;taxAdministrativeFee-field&#39;).style.display = &#39;flex&#39;;
-    document.getElementById(&#39;taxAdministrativeFeeReturnBase-field&#39;).style.display = &#39;flex&#39;;
-  } else {
-    document.getElementById(&#39;administrativeFee-field&#39;).style.display = &#39;none&#39;;
-    document.getElementById(&#39;taxAdministrativeFee-field&#39;).style.display = &#39;none&#39;;
-    document.getElementById(&#39;taxAdministrativeFeeReturnBase-field&#39;).style.display = &#39;none&#39;;
-  }
+
+if (airlineAdditionalAccountIds.includes(accountId)) {
+  document.getElementById(&#39;airline-field&#39;).style.display = &#39;flex&#39;;
+  document.getElementById(&#39;additionalValue-field&#39;).style.display = &#39;flex&#39;;
+} else {
+  document.getElementById(&#39;airline-field&#39;).style.display = &#39;none&#39;;
+  document.getElementById(&#39;additionalValue-field&#39;).style.display = &#39;none&#39;;
+}
+
+
+if (administrativeFeeAccountIds.includes(accountId)) {
+  document.getElementById(&#39;administrativeFee-field&#39;).style.display = &#39;flex&#39;;
+  document.getElementById(&#39;taxAdministrativeFee-field&#39;).style.display = &#39;flex&#39;;
+  document.getElementById(&#39;taxAdministrativeFeeReturnBase-field&#39;).style.display = &#39;flex&#39;;
+} else {
+  document.getElementById(&#39;administrativeFee-field&#39;).style.display = &#39;none&#39;;
+  document.getElementById(&#39;taxAdministrativeFee-field&#39;).style.display = &#39;none&#39;;
+  document.getElementById(&#39;taxAdministrativeFeeReturnBase-field&#39;).style.display = &#39;none&#39;;
+}
 }
 
 document.getElementById(&#39;accountId&#39;).addEventListener(&#39;change&#39;, function () {
-  updatePseBanksVisibility();
-  updateAirlinesAndTravelAgenciesFieldsVisibility();
+updatePseBanksVisibility();
+updateAirlinesAndTravelAgenciesFieldsVisibility();
 });
 
 
 document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
-  document.getElementById(&#39;shipping-information&#39;).style.display = &#39;none&#39;;
+document.getElementById(&#39;shipping-information&#39;).style.display = &#39;none&#39;;
 
-  
-  document.getElementById(&#39;shipping-option2&#39;).checked = false;
-  document.getElementById(&#39;shipping-option3&#39;).checked = false;
 
-  
-  updatePseBanksVisibility();
-  
-  updateAirlinesAndTravelAgenciesFieldsVisibility();
+document.getElementById(&#39;shipping-option2&#39;).checked = false;
+document.getElementById(&#39;shipping-option3&#39;).checked = false;
+
+
+updatePseBanksVisibility();
+
+updateAirlinesAndTravelAgenciesFieldsVisibility();
 });
 
 function handleFormSubmit(event) {
-  
-  if (!document.getElementById(&#39;shipping-option2&#39;).checked &amp;&amp; !document.getElementById(&#39;shipping-option3&#39;).checked) {
-    useBillingInformation();
-  }
-  
+
+if (!document.getElementById(&#39;shipping-option2&#39;).checked &amp;&amp; !document.getElementById(&#39;shipping-option3&#39;).checked) {
+  useBillingInformation();
+}
+
 }
   
 &lt;/script&gt;
 
 
 &lt;style&gt;
+  .instruction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+     
+    max-width: -webkit-fill-available;
+     
+  }
+
+  .instruction-button-container {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+     
+    position: relative;
+  }
+
   .instruction {
-  color: orangered !important;
-  font-weight: bold !important;
-  text-align: center !important;
+    color: #050505 !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    flex: 1;
+     
+  }
+
+  .instruction-button-container button {
+    background-color: #a5c312;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 3px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    inline-size: 245px;
+     
+  }
+
+  .hover-effect {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .expansion-panel-header:hover,
+  .instruction-button-container button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 
   hr.solid {
@@ -1625,7 +1698,7 @@ function handleFormSubmit(event) {
   }
 
   .expansion-panel-header {
-    background-color: #f5f5f5;
+    background-color: #a6c307;
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
@@ -1645,6 +1718,7 @@ function handleFormSubmit(event) {
     cursor: pointer;
     margin-left: 5px;
     position: relative;
+    align-content: center;
   }
 
   .tooltip {
@@ -1660,12 +1734,11 @@ function handleFormSubmit(event) {
     margin-top: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    word-wrap: break-word;    
-
+    word-wrap: break-word;
   }
 
   .tooltip.show {
-    display: inline-flex !important; 
+    display: inline-flex !important;
   }
 
   .info-icon:hover+.tooltip {
@@ -1694,7 +1767,7 @@ function handleFormSubmit(event) {
     font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #333;
+    color: #ffffff;
     align-items: center;
     cursor: pointer;
   }
@@ -1709,7 +1782,7 @@ function handleFormSubmit(event) {
     margin-right: 10px;
     min-width: 150px;
   }
-  
+
   .form-row .field {
     flex: 1;
     padding: 5px;
@@ -1784,28 +1857,6 @@ function handleFormSubmit(event) {
     transition: none;
   }
 
-  .btn-secondary {
-    background: #6d7278;
-    width: -webkit-fill-available;
-    color: #fff;
-    display: block;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding: 1em;
-  }
-
-  .btn-secondary:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .btn-secondary:active {
-    transform: translateY(2px);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    transition: none;
-  }
-
   #pseBanks-field {
     display: none;
   }
@@ -1819,6 +1870,7 @@ function handleFormSubmit(event) {
   }
 
   .message {
+    display: none;
     contain: paint;
     text-align: center;
     overflow-wrap: break-word;
@@ -1915,7 +1967,7 @@ function handleFormSubmit(event) {
     </item>
     
     <item>
-      <title>Docs: Página de resposta</title>
+      <title>Docs: Página de Resposta</title>
       <link>/pt/docs/integrations/webcheckout-integration/response-page.html</link>
       <pubDate>Mon, 29 Mar 2021 12:15:39 -0500</pubDate>
       
@@ -1989,6 +2041,13 @@ Se você deseja que o PayU sempre exiba as informações da transação, deixe o
 &lt;td style=&#34;text-align:center&#34;&gt;—&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;polTransactionState&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Obtém o valor do &lt;code&gt;pol Transaction State&lt;/code&gt;&lt;br&gt;&lt;a href=&#34;../../../../pt/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-response-page&#34;&gt;Veja os códigos de resposta na coluna fornecida&lt;/a&gt;.&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;—&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;referenceCode&lt;/td&gt;
 &lt;td&gt;Alfanumérico&lt;/td&gt;
 &lt;td&gt;255&lt;/td&gt;
@@ -2033,14 +2092,14 @@ Se você deseja que o PayU sempre exiba as informações da transação, deixe o
 &lt;tr&gt;
 &lt;td&gt;TX_VALUE&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;14,2&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
 &lt;td&gt;Valor total da transação. Ele pode conter dois dígitos decimais. Por exemplo 10000.00 ou 10000&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;—&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;TX_TAX&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;14,2&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
 &lt;td&gt;Valor do IVA da transação, se o IVA não for enviado, o sistema aplica 19% automaticamente.&lt;br&gt;Ele pode conter dois dígitos decimais, por exemplo 19000.00.&lt;br&gt;Caso você não tenha IVA, deve preencher 0.&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;—&lt;/td&gt;
 &lt;/tr&gt;
@@ -2513,7 +2572,7 @@ signature = 779f163be9347a691bcdb25064644795
     </item>
     
     <item>
-      <title>Docs: Página de confirmação</title>
+      <title>Docs: Página de Confirmação</title>
       <link>/pt/docs/integrations/webcheckout-integration/confirmation-page.html</link>
       <pubDate>Mon, 29 Mar 2021 12:15:57 -0500</pubDate>
       
@@ -2643,19 +2702,19 @@ signature = 779f163be9347a691bcdb25064644795
 &lt;tr&gt;
 &lt;td&gt;value&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;14,2&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
 &lt;td&gt;Valor total da transação. Ele pode conter dois dígitos decimais. Por exemplo, 10000.00 ou 10000&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;tax&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;14,2&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
 &lt;td&gt;Valor do IVA da transação. Se for enviado IVA zero, o sistema aplicará automaticamente 19%. Ele pode conter dois dígitos decimais. Por exemplo: 19000.00. Caso você não tenha IVA, deve preencher 0.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;additional_value&lt;/td&gt;
 &lt;td&gt;Numérico&lt;/td&gt;
-&lt;td&gt;14,2&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
 &lt;td&gt;Valor Adicional Não Comissionado.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -3083,6 +3142,411 @@ transaction_id=01cfdce8-68d5-4a4c-aabf-d89370a0b92f
 state_pol=4
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Observe que se uma dessas chamadas para a página de confirmação indicar que uma referência de pagamento (&lt;code&gt;reference_sale&lt;/code&gt;) foi aprovada, você pode ter certeza de que não receberá nenhum relatório para a mesma referência.&lt;/p&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Companhias Aéreas e Agências de Viagem - Colômbia</title>
+      <link>/pt/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html</link>
+      <pubDate>Tue, 26 Nov 2024 12:15:57 -0500</pubDate>
+      
+      <guid>/pt/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;considerações&#34;&gt;Considerações:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Disponível exclusivamente na Colômbia para transações em moeda COP.&lt;/li&gt;
+&lt;li&gt;Permite o processamento de pagamentos por meio do modelo TSP/Gateway.&lt;/li&gt;
+&lt;li&gt;Requer o registro de códigos IATA junto aos adquirentes.&lt;/li&gt;
+&lt;li&gt;Suporta pagamentos com cartões de crédito ou débito, incluindo Amex, Diners, Mastercard e Visa.&lt;/li&gt;
+&lt;li&gt;Permite dispersão de fundos, possibilitando que agências de viagem e companhias aéreas recebam seus pagamentos na mesma transação.&lt;/li&gt;
+&lt;li&gt;Requer processamento em uma única etapa: o sistema transfere os fundos da conta do cliente para o banco adquirente assim que o pagamento é autorizado.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;funcionalidades-da-integração&#34;&gt;Funcionalidades da Integração:&lt;/h2&gt;
+&lt;p&gt;Essa integração simplifica o processo de pagamento para companhias aéreas e agências de viagem na Colômbia, permitindo que elas enviem informações essenciais com cada transação para identificação precisa e distribuição de fundos. Além disso, o envio de detalhes específicos da transação pode qualificá-lo para isenção do imposto de 4 x 1000 (confirme com o banco adquirente).&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Funcionalidade&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Companhias Aéreas&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Agências de Viagem&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Inclusão de Taxas&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;As companhias aéreas podem enviar seu ID, junto com tarifas aeroportuárias e outros impostos associados.&lt;/td&gt;
+&lt;td&gt;As agências podem incluir suas taxas de transação, taxas aéreas, tarifas aeroportuárias, administrativas e outros encargos.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Identificação&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Os adquirentes podem identificar a companhia aérea especificamente através do ID para distribuição direcionada.&lt;/td&gt;
+&lt;td&gt;Permite que o adquirente identifique tanto a agência de viagem quanto a companhia aérea para uma distribuição precisa de fundos.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Elegibilidade para Isenção do Imposto de 4 x 1000&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Companhias aéreas na Colômbia podem se qualificar se fornecerem seu ID e as informações relevantes sobre as taxas.&lt;/td&gt;
+&lt;td&gt;Agências de viagem na Colômbia podem se qualificar se fornecerem detalhes abrangentes da transação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Verifique com seu banco adquirente se sua empresa atende aos requisitos para a isenção do imposto de 4 x 1000. A elegibilidade depende das informações fornecidas em cada transação e das regulamentações vigentes.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;etapas-de-integração&#34;&gt;Etapas de Integração&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Obtenha a lista de companhias aéreas disponíveis.&lt;/li&gt;
+&lt;li&gt;Crie o formulário WebCheckout, incluindo o código da companhia aérea e tarifas e impostos aeroportuários.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;1-obtenha-a-lista-de-companhias-aéreas-disponíveis&#34;&gt;1) Obtenha a Lista de Companhias Aéreas Disponíveis&lt;/h3&gt;
+&lt;p&gt;Para integrar-se à PayU, companhias aéreas e agências de viagem precisam obter a lista de códigos válidos de companhias aéreas para cobrança e incluí-los no WebCheckout. Isso pode ser feito consultando o sistema da PayU para obter uma lista das companhias aéreas disponíveis e seus códigos correspondentes. O endpoint para recuperação dos códigos é o mesmo para ambos os tipos de comerciantes, embora o uso possa variar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Companhias Aéreas&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Obtêm e enviam seus próprios códigos para habilitar identificação precisa e possíveis benefícios fiscais.&lt;/li&gt;
+&lt;li&gt;Fornecendo o código, garantem transações otimizadas para suas taxas e encargos associados.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Agências de Viagem&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Obtêm o código da companhia aérea associado a cada pagamento para garantir a alocação correta de taxas e impostos.&lt;/li&gt;
+&lt;li&gt;Essa integração ajuda a identificar a companhia aérea envolvida na transação para distribuição adequada dos fundos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;etapas-para-obter-a-lista&#34;&gt;Etapas para Obter a Lista&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Utilize os seguintes endpoints conforme o ambiente:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sandbox&lt;/strong&gt;: &lt;code&gt;https://sandbox.api.payulatam.com/payments-api/rest/v4.3/payments/airline&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Produção&lt;/strong&gt;: &lt;code&gt;https://api.payulatam.com/payments-api/rest/v4.3/payments/airline&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Inclua o seguinte parâmetro de consulta na solicitação:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Parâmetro de Consulta&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Descrição&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;accountID&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;O identificador único atribuído pela PayU Latam à sua conta de comerciante.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Inclua o seguinte cabeçalho para autenticação:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Parâmetro de Cabeçalho&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Descrição&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Authorization&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Valor do cabeçalho de autenticação para realizar uma solicitação &lt;code&gt;get&lt;/code&gt; válida.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Exemplo de código em JavaScript para gerar o cabeçalho de autenticação:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;contentToSign&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pRRXKOl8ikMmt9u&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;4Vj8eK4rloUd272L48hsrarnUA&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;base64&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CryptoJS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;enc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Base64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;stringify&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;CryptoJS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;enc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Utf8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;contentToSign&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;authenticationHeader&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Basic &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;base64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Os códigos de companhias aéreas são geralmente estáveis, mas podem mudar ocasionalmente. Recomendamos consultar a API periodicamente para garantir precisão.
+&lt;/div&gt;
+
+&lt;h4 id=&#34;exemplo-de-uma-resposta&#34;&gt;Exemplo de uma Resposta:&lt;/h4&gt;
+&lt;p&gt;A resposta será um payload JSON ou XML contendo um array de companhias aéreas com seus respectivos códigos e descrições.&lt;/p&gt;
+&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;airlines&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;81&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;AVIA MARKETING LTDA NAL Nacional&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a40000&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a40000&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a40000&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;code&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;65&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;OCEANAIR LINHAS AEREAS S.A Nacional&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;airlines&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;80&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;AVIATUR S.A. BOG Internacional&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;code&amp;gt;&lt;/span&gt;87&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;LAN AIRLINES Nacional&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/airlines&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;/div&gt;
+&lt;h3 id=&#34;2-crie-o-formulário-webcheckout&#34;&gt;2) Crie o Formulário WebCheckout&lt;/h3&gt;
+&lt;p&gt;Esta etapa envolve redirecionar seus clientes para a página de pagamento segura da PayU, onde eles podem escolher o método de pagamento preferido e concluir a compra. Para isso, basta adicionar o código da companhia aérea obtido na etapa anterior, juntamente com taxas aeroportuárias e impostos, como campos ocultos no formulário de pagamento.&lt;/p&gt;
+&lt;h4 id=&#34;formulário-de-pagamento-para-companhias-aéreas&#34;&gt;Formulário de Pagamento para Companhias Aéreas&lt;/h4&gt;
+&lt;p&gt;Inclua os parâmetros específicos para companhias aéreas, além dos parâmetros padrão para o &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations/webcheckout-integration/payment-form.html&#34; target=&#34;_blank&#34;&gt;formulário de pagamento&lt;/a&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Tamanho&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;th&gt;Exemplo&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;airline&lt;/td&gt;
+&lt;td&gt;Alfanumérico&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Código da companhia aérea&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;amount&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor total da transação. Pode conter duas casas decimais. Exemplo: 10000.00 ou 10000.&lt;/td&gt;
+&lt;td&gt;119000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tax&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor do IVA da transação. Na Colômbia, se o IVA não for especificado, o sistema aplica 19%. Este valor pode incluir duas casas decimais, como 19000.00. Se o produto ou serviço for isento de IVA, atribua 0 a esta variável.&lt;/td&gt;
+&lt;td&gt;19000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taxReturnBase&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor base para calcular o IVA. Se o produto ou serviço for isento de IVA, atribua 0 a esta variável.&lt;/td&gt;
+&lt;td&gt;100000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;additionalValue&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Taxas aeroportuárias e outros impostos.&lt;/td&gt;
+&lt;td&gt;25000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;exemplo-de-formulário-webcheckout&#34;&gt;Exemplo de Formulário WebCheckout&lt;/h5&gt;
+&lt;p&gt;Abaixo, um exemplo do formulário WebCheckout:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;form&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;method&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;post&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;action&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;merchantId&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;508029&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;accountId&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;513128&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Flight 12345&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;referenceCode&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PNR-123&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;airline&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;29&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;amount&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;119000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;tax&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;19000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;taxReturnBase&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;100000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;additionalValue&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;25000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;algorithmSignature&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SHA256&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;signature&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;b94d73892255c4f53af4282e3a5b6551526a922f1fcf1412fafa6bdf8bbe32f0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;buyerEmail&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pruebas@payulatam.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;responseUrl&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://www.mysite.com/response-page&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;confirmationUrl&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://www.mysite.com/confirmation-page&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Submit&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;submit&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Send&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;form&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;formulário-de-pagamento-para-agências-de-viagens&#34;&gt;Formulário de Pagamento para Agências de Viagens&lt;/h4&gt;
+&lt;p&gt;Inclua os parâmetros específicos para agências de viagens, além dos parâmetros padrão para o &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations/webcheckout-integration/payment-form.html&#34; target=&#34;_blank&#34;&gt;formulário de pagamento&lt;/a&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th&gt;Tamanho&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;th&gt;Exemplo&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;airline&lt;/td&gt;
+&lt;td&gt;Alfanumérico&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Código da companhia aérea&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;amount&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor total da transação. Pode conter duas casas decimais.&lt;/td&gt;
+&lt;td&gt;119000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tax&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor do IVA da transação. Na Colômbia, se o IVA não for especificado, o sistema aplica 19%. Este valor pode incluir duas casas decimais, como 19000.00. Se o produto ou serviço for isento de IVA, atribua 0 a esta variável.&lt;/td&gt;
+&lt;td&gt;19000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taxReturnBase&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor base para calcular o IVA. Se o produto ou serviço for isento de IVA, atribua 0 a esta variável.&lt;/td&gt;
+&lt;td&gt;100000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;additionalValue&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Taxas aeroportuárias e outros impostos da companhia aérea.&lt;/td&gt;
+&lt;td&gt;25000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;administrativeFee&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor da taxa administrativa da agência de viagens.&lt;/td&gt;
+&lt;td&gt;5950&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taxAdministrativeFee&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor do imposto sobre a taxa administrativa da agência de viagens.&lt;/td&gt;
+&lt;td&gt;950&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;taxAdministrativeFeeReturnBase&lt;/td&gt;
+&lt;td&gt;Numérico&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;Valor base para calcular o imposto da taxa administrativa.&lt;/td&gt;
+&lt;td&gt;5000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;exemplo-de-formulário-webcheckout-1&#34;&gt;Exemplo de Formulário WebCheckout&lt;/h5&gt;
+&lt;p&gt;Abaixo, um exemplo do formulário WebCheckout:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;form&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;method&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;post&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;action&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;merchantId&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;508029&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;accountId&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;513128&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Flight 12345&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;referenceCode&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;PNR-123&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;airline&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;29&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;amount&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;119000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;tax&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;19000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;taxReturnBase&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;100000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;additionalValue&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;25000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;administrativeFee&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;5950&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;taxAdministrativeFee&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;950&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;taxAdministrativeFeeReturnBase&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;5000&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;currency&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;COP&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;algorithmSignature&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;SHA256&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;signature&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;b94d73892255c4f53af4282e3a5b6551526a922f1fcf1412fafa6bdf8bbe32f0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;buyerEmail&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;pruebas@payulatam.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;responseUrl&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://www.mysite.com/response-page&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;confirmationUrl&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;http://www.mysite.com/confirmation-page&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Submit&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;submit&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#c4a000&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Send&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;form&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

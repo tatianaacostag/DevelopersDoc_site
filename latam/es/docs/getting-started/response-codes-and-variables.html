@@ -26,12 +26,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/getting-started/response-codes-and-variables.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-04-06T15:33:35-05:00" />
-<meta property="article:modified_time" content="2024-09-30T16:40:51-05:00" />
+<meta property="article:modified_time" content="2024-11-28T15:55:32-05:00" />
 
 <meta itemprop="name" content="Códigos de Respuesta y Variables">
 <meta itemprop="description" content="En esta sección, encontrarás data relevante usada durante el proceso de integración, como las tablas de variables, lenguajes y monedas permitidas en la plataforma de PayU."><meta itemprop="datePublished" content="2021-04-06T15:33:35-05:00" />
-<meta itemprop="dateModified" content="2024-09-30T16:40:51-05:00" />
-<meta itemprop="wordCount" content="1920">
+<meta itemprop="dateModified" content="2024-11-28T15:55:32-05:00" />
+<meta itemprop="wordCount" content="1969">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Códigos de Respuesta y Variables"/>
 <meta name="twitter:description" content="En esta sección, encontrarás data relevante usada durante el proceso de integración, como las tablas de variables, lenguajes y monedas permitidas en la plataforma de PayU."/>
 
@@ -137,7 +137,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.027df0843fe222628bdd4e96753b573d76a1babfcc7f11f422e789863f501708295f929333d8989c7cc4de142138278dad341950acb58fadd39e69b57a57ab05.json"
+  data-offline-search-index-json-src="../../../offline-search-index.21b9d6aaa5d6f25a30369fab40fe4c24c46f5ce1468d1d0b2590fc68678be64eacb84ac41483d69e4d91feb1083e72fc46adb43bf63cae6e4dd50ca2b58a0c18.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -446,8 +446,33 @@
       
       
       
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/tools/disputes.html" href="../../../es/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocstoolsdisputeshtml">
       
-        <a id="/es/docs/tools/disputes.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocstoolsdisputeshtml" href="../../../es/docs/tools/disputes.html">Disputas</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsdisputesdisputes-webhookhtml" href="../../../es/docs/tools/disputes/disputes-webhook.html">Webhook de Disputas</a>
+      
+      
+    </li>
+  </ul>
+  
+
       
       
       
@@ -516,6 +541,12 @@
       
       
         <a id="/es/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../es/docs/integrations/webcheckout-integration/confirmation-page.html">Página de Confirmación</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Aerolíneas y Agencias de Viaje - Colombia</a>
       
       
     </li>
@@ -1792,53 +1823,89 @@
 <thead>
 <tr>
 <th>Moneda</th>
-<th>Nombre</th>
+<th>Nombre de la Moneda</th>
+<th style="text-align:center">Decimales Aceptados (Tarjetas)</th>
+<th style="text-align:center">Decimales Aceptados (Transferencias Bancarias)</th>
+<th style="text-align:center">Decimales Aceptados (Efectivo, Billeteras Digitales, Referencias Bancarias)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>ARS</code></td>
-<td>Peso argentino</td>
+<td>Peso Argentino</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>BRL</code></td>
-<td>Real brasileño</td>
+<td>Real Brasileño</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>CLP</code></td>
-<td>Peso chileno</td>
+<td>Peso Chileno</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>COP</code></td>
-<td>Peso colombiano</td>
+<td>Peso Colombiano</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>CRC</code></td>
-<td>Colón costarricense</td>
+<td>Colón Costarricense</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>GTQ</code></td>
-<td>Quetzal guatemalteco</td>
+<td>Quetzal Guatemalteco</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>HNL</code></td>
-<td>Lempira hondureño</td>
+<td>Lempira Hondureña</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>MXN</code></td>
-<td>Peso mexicano</td>
+<td>Peso Mexicano</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>PEN</code></td>
-<td>Nuevo Sol peruano</td>
+<td>Sol Peruano</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">0</td>
 </tr>
 <tr>
 <td><code>SVC</code></td>
-<td>Colón salvadoreño</td>
+<td>Colón Salvadoreño</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
 </tr>
 <tr>
 <td><code>USD</code></td>
-<td>Dólar estadounidense</td>
+<td>Dólar Estadounidense</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
 </tr>
 </tbody>
 </table>
@@ -2474,9 +2541,9 @@
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-30 de septiembre de 2024:
+28 de noviembre de 2024:
 
- <b>Documentation Updates (a1e8dbe3c)</b>
+ <b>Documentation Updates (d002e8d69)</b>
 </div>
 </div>
 

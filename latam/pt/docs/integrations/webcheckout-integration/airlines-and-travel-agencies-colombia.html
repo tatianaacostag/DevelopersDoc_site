@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="../../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Companhias Aéreas e Agências de Viagem - Colômbia | PayU Latam</title><meta property="og:title" content="Companhias Aéreas e Agências de Viagem - Colômbia" />
+<meta property="og:description" content="Este documento explica como companhias aéreas e agências de viagem na Colômbia podem usar a integração WebCheckout para processar pagamentos de forma segura e eficiente. Caso você tenha uma integração via API, consulte [API de Pagamentos para companhias aéreas e agências de viagem](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-colombia.html#process-payments-as-an-airline-or-travel-agency).
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/pt/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2024-11-26T12:15:57-05:00" />
+<meta property="article:modified_time" content="2024-11-28T15:55:32-05:00" />
+
+<meta itemprop="name" content="Companhias Aéreas e Agências de Viagem - Colômbia">
+<meta itemprop="description" content="Este documento explica como companhias aéreas e agências de viagem na Colômbia podem usar a integração WebCheckout para processar pagamentos de forma segura e eficiente. Caso você tenha uma integração via API, consulte [API de Pagamentos para companhias aéreas e agências de viagem](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-colombia.html#process-payments-as-an-airline-or-travel-agency).
+"><meta itemprop="datePublished" content="2024-11-26T12:15:57-05:00" />
+<meta itemprop="dateModified" content="2024-11-28T15:55:32-05:00" />
+<meta itemprop="wordCount" content="1188">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Companhias Aéreas e Agências de Viagem - Colômbia"/>
+<meta name="twitter:description" content="Este documento explica como companhias aéreas e agências de viagem na Colômbia podem usar a integração WebCheckout para processar pagamentos de forma segura e eficiente. Caso você tenha uma integração via API, consulte [API de Pagamentos para companhias aéreas e agências de viagem](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-colombia.html#process-payments-as-an-airline-or-travel-agency).
+"/>
+
+
+
+
+
+<link rel="preload" href="../../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" as="style">
+<link href="../../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" rel="stylesheet" integrity="">
+
+
+<link href="../../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../pt/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/PayULatam.png"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../pt/docs.html" ><span class="active">Pagamentos Online</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../pt/payu-module-documentation.html" ><span>Guia do Módulo PayU</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Português
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../../en/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Buscar no site…"
+  aria-label="Buscar no site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.21b9d6aaa5d6f25a30369fab40fe4c24c46f5ce1468d1d0b2590fc68678be64eacb84ac41483d69e4d91feb1083e72fc46adb43bf63cae6e4dd50ca2b58a0c18.json"
+  data-offline-search-base-href="../../../../"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Português
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../../en/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs.html" href="../../../../pt/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Início</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/getting-started.html" href="../../../../pt/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Para começar</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedcreate-an-accounthtml" href="../../../../pt/docs/getting-started/create-an-account.html">Criando uma Conta PayU</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/select-your-integration.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedselect-your-integrationhtml" href="../../../../pt/docs/getting-started/select-your-integration.html">Selecione sua integração</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/select-your-payment-method.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedselect-your-payment-methodhtml" href="../../../../pt/docs/getting-started/select-your-payment-method.html">Selecione seu método de pagamento</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedtest-your-solutionhtml" href="../../../../pt/docs/getting-started/test-your-solution.html">Teste Sua Solução</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/deploy-to-production.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-starteddeploy-to-productionhtml" href="../../../../pt/docs/getting-started/deploy-to-production.html">Implementar na produção</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsgetting-startedresponse-codes-and-variableshtml" href="../../../../pt/docs/getting-started/response-codes-and-variables.html">Códigos e variáveis de resposta</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/services.html" href="../../../../pt/docs/services.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Serviços</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsserviceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/payments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicespaymentshtml" href="../../../../pt/docs/services/payments.html">Pagamentos</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/services/3dsauthentication.html" href="../../../../pt/docs/services/3dsauthentication.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Autenticação 3DS</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsservices3dsauthenticationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticação 3DS Realizada pela PayU</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../pt/docs/services/3dsauthentication/external-3ds-authentication.html">Autenticação 3DS Externa</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/queries.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicesquerieshtml" href="../../../../pt/docs/services/queries.html">Consultas para transações</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicestokenizationhtml" href="../../../../pt/docs/services/tokenization.html">Tokenização</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/promotions.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicespromotionshtml" href="../../../../pt/docs/services/promotions.html">Parcelas e promoções - Argentina e México</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicesrefundshtml" href="../../../../pt/docs/services/refunds.html">Cancelamentos e Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/services/payouts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocsservicespayoutshtml" href="../../../../pt/docs/services/payouts.html">Payouts - Colômbia</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/tools.html" href="../../../../pt/docs/tools.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Ferramentas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocstoolshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/payment-request.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocstoolspayment-requesthtml" href="../../../../pt/docs/tools/payment-request.html">Solicitação de pagamento</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/tools/shopping-cart-plugins.html" href="../../../../pt/docs/tools/shopping-cart-plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Plugins do carrinho de compras</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocstoolsshopping-cart-pluginshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/vtex.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsvtexhtml" href="../../../../pt/docs/tools/shopping-cart-plugins/vtex.html">VTEX</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/shopify.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsshopifyhtml" href="../../../../pt/docs/tools/shopping-cart-plugins/shopify.html">Shopify</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/bigcommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsbigcommercehtml" href="../../../../pt/docs/tools/shopping-cart-plugins/bigcommerce.html">BigCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/drupal.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsdrupalhtml" href="../../../../pt/docs/tools/shopping-cart-plugins/drupal.html">Drupal</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/virtuemart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsvirtuemarthtml" href="../../../../pt/docs/tools/shopping-cart-plugins/virtuemart.html">VirtueMart</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/woocommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginswoocommercehtml" href="../../../../pt/docs/tools/shopping-cart-plugins/woocommerce.html">WooCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/oscommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsoscommercehtml" href="../../../../pt/docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/shopping-cart-plugins/opencart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsshopping-cart-pluginsopencarthtml" href="../../../../pt/docs/tools/shopping-cart-plugins/opencart.html">OpenCart</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/payu-module.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocstoolspayu-modulehtml" href="../../../../pt/docs/tools/payu-module.html">Módulo PayU</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/tools/disputes.html" href="../../../../pt/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocstoolsdisputeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocstoolsdisputesdisputes-webhookhtml" href="../../../../pt/docs/tools/disputes/disputes-webhook.html">Webhook de Disputas</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/pt/docs/tools/payment-coupons.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-ptdocstoolspayment-couponshtml" href="../../../../pt/docs/tools/payment-coupons.html">Cupons de pagamento</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/integrations.html" href="../../../../pt/docs/integrations.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Integrações</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsintegrationshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/integrations/webcheckout-integration.html" href="../../../../pt/docs/integrations/webcheckout-integration.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Integração Webcheckout</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsintegrationswebcheckout-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/webcheckout-integration/payment-form.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../../pt/docs/integrations/webcheckout-integration/payment-form.html">Formulário de Pagamento</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/webcheckout-integration/response-page.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationresponse-pagehtml" href="../../../../pt/docs/integrations/webcheckout-integration/response-page.html">Página de Resposta</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/webcheckout-integration/confirmation-page.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../pt/docs/integrations/webcheckout-integration/confirmation-page.html">Página de Confirmação</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-ptdocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../../pt/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Companhias Aéreas e Agências de Viagem - Colômbia</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/integrations/api-integration.html" href="../../../../pt/docs/integrations/api-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Integração API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsintegrationsapi-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/pci.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpcihtml" href="../../../../pt/docs/integrations/api-integration/pci.html">Guia de Segurança e Conformidade PCI</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-argentina.html">API de Pagamentos - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-brazilhtml" href="../../../../pt/docs/integrations/api-integration/payments-api-brazil.html">API de Pagamentos - Brasil</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-chilehtml" href="../../../../pt/docs/integrations/api-integration/payments-api-chile.html">API de Pagamentos - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-colombiahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-colombia.html">API de Pagamentos - Colômbia</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-mexicohtml" href="../../../../pt/docs/integrations/api-integration/payments-api-mexico.html">API de Pagamentos - México</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-panama.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-panamahtml" href="../../../../pt/docs/integrations/api-integration/payments-api-panama.html">API de pagamentos - Panamá</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payments-api-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayments-api-peruhtml" href="../../../../pt/docs/integrations/api-integration/payments-api-peru.html">API de Pagamentos - Peru</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/queries-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationqueries-apihtml" href="../../../../pt/docs/integrations/api-integration/queries-api.html">API de Consultas</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/tokenization-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationtokenization-apihtml" href="../../../../pt/docs/integrations/api-integration/tokenization-api.html">API de Tokenização</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/promotions-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpromotions-apihtml" href="../../../../pt/docs/integrations/api-integration/promotions-api.html">API de promoções</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/refunds-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationrefunds-apihtml" href="../../../../pt/docs/integrations/api-integration/refunds-api.html">API de Cancelamentos e Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationpayouts-apihtml" href="../../../../pt/docs/integrations/api-integration/payouts-api.html">API de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/api-integration/simulator.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationsapi-integrationsimulatorhtml" href="../../../../pt/docs/integrations/api-integration/simulator.html">Token Simulator</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/pt/docs/integrations/sdk-integration.html" href="../../../../pt/docs/integrations/sdk-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Integração SDK</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsintegrationssdk-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-argentina.html">SDK de Pagamentos - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-brazilhtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-brazil.html">SDK de Pagamentos - Brasil</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-chilehtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-chile.html">SDK de Pagamentos - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-colombiahtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-colombia.html">SDK de Pagamentos - Colômbia</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-mexicohtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-mexico.html">SDK de Pagamentos - México</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/payments-sdk-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationpayments-sdk-peruhtml" href="../../../../pt/docs/integrations/sdk-integration/payments-sdk-peru.html">SDK de Pagamentos - Peru</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/queriessdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationqueriessdkhtml" href="../../../../pt/docs/integrations/sdk-integration/queriessdk.html">SDK de Consultas</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/tokenizationsdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationtokenizationsdkhtml" href="../../../../pt/docs/integrations/sdk-integration/tokenizationsdk.html">SDK de Tokenização</a>
+      
+      
+      
+      
+      
+        <a id="/pt/docs/integrations/sdk-integration/refundssdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-ptdocsintegrationssdk-integrationrefundssdkhtml" href="../../../../pt/docs/integrations/sdk-integration/refundssdk.html">SDK de Cancelamentos e Reembolsos</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/pt/docs/server-status.html" href="../../../../pt/docs/server-status.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Status do servidor</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="ptdocsserver-statushtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p>Nesta página</p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#considerações">Considerações:</a></li>
+    <li><a href="#funcionalidades-da-integração">Funcionalidades da Integração:</a></li>
+    <li><a href="#etapas-de-integração">Etapas de Integração</a>
+      <ul>
+        <li><a href="#1-obtenha-a-lista-de-companhias-aéreas-disponíveis">1) Obtenha a Lista de Companhias Aéreas Disponíveis</a></li>
+        <li><a href="#2-crie-o-formulário-webcheckout">2) Crie o Formulário WebCheckout</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../pt/docs.html">Início</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../pt/docs/integrations.html">Integrações</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../pt/docs/integrations/webcheckout-integration.html">Integração Webcheckout</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../pt/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Companhias Aéreas e Agências de Viagem - Colômbia</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Companhias Aéreas e Agências de Viagem - Colômbia</h1>
+    <div class="lead">Este documento explica como companhias aéreas e agências de viagem na Colômbia podem usar a integração WebCheckout para processar pagamentos de forma segura e eficiente. Caso você tenha uma integração via API, consulte <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-colombia.html#process-payments-as-an-airline-or-travel-agency">API de Pagamentos para companhias aéreas e agências de viagem</a>.</div>
+	       
+	<h2 id="considerações">Considerações:</h2>
+<ul>
+<li>Disponível exclusivamente na Colômbia para transações em moeda COP.</li>
+<li>Permite o processamento de pagamentos por meio do modelo TSP/Gateway.</li>
+<li>Requer o registro de códigos IATA junto aos adquirentes.</li>
+<li>Suporta pagamentos com cartões de crédito ou débito, incluindo Amex, Diners, Mastercard e Visa.</li>
+<li>Permite dispersão de fundos, possibilitando que agências de viagem e companhias aéreas recebam seus pagamentos na mesma transação.</li>
+<li>Requer processamento em uma única etapa: o sistema transfere os fundos da conta do cliente para o banco adquirente assim que o pagamento é autorizado.</li>
+</ul>
+<h2 id="funcionalidades-da-integração">Funcionalidades da Integração:</h2>
+<p>Essa integração simplifica o processo de pagamento para companhias aéreas e agências de viagem na Colômbia, permitindo que elas enviem informações essenciais com cada transação para identificação precisa e distribuição de fundos. Além disso, o envio de detalhes específicos da transação pode qualificá-lo para isenção do imposto de 4 x 1000 (confirme com o banco adquirente).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Funcionalidade</strong></th>
+<th><strong>Companhias Aéreas</strong></th>
+<th><strong>Agências de Viagem</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inclusão de Taxas</strong></td>
+<td>As companhias aéreas podem enviar seu ID, junto com tarifas aeroportuárias e outros impostos associados.</td>
+<td>As agências podem incluir suas taxas de transação, taxas aéreas, tarifas aeroportuárias, administrativas e outros encargos.</td>
+</tr>
+<tr>
+<td><strong>Identificação</strong></td>
+<td>Os adquirentes podem identificar a companhia aérea especificamente através do ID para distribuição direcionada.</td>
+<td>Permite que o adquirente identifique tanto a agência de viagem quanto a companhia aérea para uma distribuição precisa de fundos.</td>
+</tr>
+<tr>
+<td><strong>Elegibilidade para Isenção do Imposto de 4 x 1000</strong></td>
+<td>Companhias aéreas na Colômbia podem se qualificar se fornecerem seu ID e as informações relevantes sobre as taxas.</td>
+<td>Agências de viagem na Colômbia podem se qualificar se fornecerem detalhes abrangentes da transação.</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+Verifique com seu banco adquirente se sua empresa atende aos requisitos para a isenção do imposto de 4 x 1000. A elegibilidade depende das informações fornecidas em cada transação e das regulamentações vigentes.
+</div>
+
+<h2 id="etapas-de-integração">Etapas de Integração</h2>
+<ol>
+<li>Obtenha a lista de companhias aéreas disponíveis.</li>
+<li>Crie o formulário WebCheckout, incluindo o código da companhia aérea e tarifas e impostos aeroportuários.</li>
+</ol>
+<h3 id="1-obtenha-a-lista-de-companhias-aéreas-disponíveis">1) Obtenha a Lista de Companhias Aéreas Disponíveis</h3>
+<p>Para integrar-se à PayU, companhias aéreas e agências de viagem precisam obter a lista de códigos válidos de companhias aéreas para cobrança e incluí-los no WebCheckout. Isso pode ser feito consultando o sistema da PayU para obter uma lista das companhias aéreas disponíveis e seus códigos correspondentes. O endpoint para recuperação dos códigos é o mesmo para ambos os tipos de comerciantes, embora o uso possa variar:</p>
+<ul>
+<li>
+<p><strong>Companhias Aéreas</strong>:</p>
+<ul>
+<li>Obtêm e enviam seus próprios códigos para habilitar identificação precisa e possíveis benefícios fiscais.</li>
+<li>Fornecendo o código, garantem transações otimizadas para suas taxas e encargos associados.</li>
+</ul>
+</li>
+<li>
+<p><strong>Agências de Viagem</strong>:</p>
+<ul>
+<li>Obtêm o código da companhia aérea associado a cada pagamento para garantir a alocação correta de taxas e impostos.</li>
+<li>Essa integração ajuda a identificar a companhia aérea envolvida na transação para distribuição adequada dos fundos.</li>
+</ul>
+</li>
+</ul>
+<h4 id="etapas-para-obter-a-lista">Etapas para Obter a Lista</h4>
+<ol>
+<li>Utilize os seguintes endpoints conforme o ambiente:</li>
+</ol>
+<ul>
+<li><strong>Sandbox</strong>: <code>https://sandbox.api.payulatam.com/payments-api/rest/v4.3/payments/airline</code></li>
+<li><strong>Produção</strong>: <code>https://api.payulatam.com/payments-api/rest/v4.3/payments/airline</code></li>
+</ul>
+<ol start="2">
+<li>Inclua o seguinte parâmetro de consulta na solicitação:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>Parâmetro de Consulta</strong></th>
+<th><strong>Descrição</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountID</code></td>
+<td>O identificador único atribuído pela PayU Latam à sua conta de comerciante.</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>Inclua o seguinte cabeçalho para autenticação:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>Parâmetro de Cabeçalho</strong></th>
+<th><strong>Descrição</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td>Valor do cabeçalho de autenticação para realizar uma solicitação <code>get</code> válida.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplo de código em JavaScript para gerar o cabeçalho de autenticação:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">contentToSign</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;:&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">base64</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">CryptoJS</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">enc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Base64</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">stringify</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">CryptoJS</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">enc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Utf8</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parse</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">contentToSign</span><span style="color:#000;font-weight:bold">));</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">authenticationHeader</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Basic &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">base64</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">toString</span><span style="color:#000;font-weight:bold">();</span>
+</span></span></code></pre></div>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+Os códigos de companhias aéreas são geralmente estáveis, mas podem mudar ocasionalmente. Recomendamos consultar a API periodicamente para garantir precisão.
+</div>
+
+<h4 id="exemplo-de-uma-resposta">Exemplo de uma Resposta:</h4>
+<p>A resposta será um payload JSON ou XML contendo um array de companhias aéreas com seus respectivos códigos e descrições.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#tab11" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-1" data-toggle="tab" href="#tab12" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="1">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;airlines&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;81&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AVIA MARKETING LTDA NAL Nacional&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a40000">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a40000">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a40000">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;65&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;OCEANAIR LINHAS AEREAS S.A Nacional&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;airlines&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>80<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>AVIATUR S.A. BOG Internacional<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;/com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines&gt;</span>
+</span></span><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>87<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>LAN AIRLINES Nacional<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;/com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#204a87;font-weight:bold">&lt;/airlines&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+</div>
+<h3 id="2-crie-o-formulário-webcheckout">2) Crie o Formulário WebCheckout</h3>
+<p>Esta etapa envolve redirecionar seus clientes para a página de pagamento segura da PayU, onde eles podem escolher o método de pagamento preferido e concluir a compra. Para isso, basta adicionar o código da companhia aérea obtido na etapa anterior, juntamente com taxas aeroportuárias e impostos, como campos ocultos no formulário de pagamento.</p>
+<h4 id="formulário-de-pagamento-para-companhias-aéreas">Formulário de Pagamento para Companhias Aéreas</h4>
+<p>Inclua os parâmetros específicos para companhias aéreas, além dos parâmetros padrão para o <a href="https://developers.payulatam.com/latam/pt/docs/integrations/webcheckout-integration/payment-form.html" target="_blank">formulário de pagamento</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Tamanho</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>airline</td>
+<td>Alfanumérico</td>
+<td>4</td>
+<td>Código da companhia aérea</td>
+<td>29</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor total da transação. Pode conter duas casas decimais. Exemplo: 10000.00 ou 10000.</td>
+<td>119000</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor do IVA da transação. Na Colômbia, se o IVA não for especificado, o sistema aplica 19%. Este valor pode incluir duas casas decimais, como 19000.00. Se o produto ou serviço for isento de IVA, atribua 0 a esta variável.</td>
+<td>19000</td>
+</tr>
+<tr>
+<td>taxReturnBase</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor base para calcular o IVA. Se o produto ou serviço for isento de IVA, atribua 0 a esta variável.</td>
+<td>100000</td>
+</tr>
+<tr>
+<td>additionalValue</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Taxas aeroportuárias e outros impostos.</td>
+<td>25000</td>
+</tr>
+</tbody>
+</table>
+<h5 id="exemplo-de-formulário-webcheckout">Exemplo de Formulário WebCheckout</h5>
+<p>Abaixo, um exemplo do formulário WebCheckout:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">form</span> <span style="color:#c4a000">method</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;post&#34;</span> <span style="color:#c4a000">action</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;merchantId&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;508029&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;accountId&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;513128&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;description&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;Flight 12345&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;referenceCode&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;PNR-123&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;airline&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;29&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;amount&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;119000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;tax&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;19000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;taxReturnBase&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;100000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;additionalValue&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;25000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;currency&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;COP&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;algorithmSignature&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;SHA256&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;signature&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;b94d73892255c4f53af4282e3a5b6551526a922f1fcf1412fafa6bdf8bbe32f0&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;buyerEmail&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;pruebas@payulatam.com&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;responseUrl&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://www.mysite.com/response-page&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;confirmationUrl&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://www.mysite.com/confirmation-page&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;test&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;Submit&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;submit&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;Send&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">form</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><h4 id="formulário-de-pagamento-para-agências-de-viagens">Formulário de Pagamento para Agências de Viagens</h4>
+<p>Inclua os parâmetros específicos para agências de viagens, além dos parâmetros padrão para o <a href="https://developers.payulatam.com/latam/pt/docs/integrations/webcheckout-integration/payment-form.html" target="_blank">formulário de pagamento</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Tamanho</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>airline</td>
+<td>Alfanumérico</td>
+<td>4</td>
+<td>Código da companhia aérea</td>
+<td>29</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor total da transação. Pode conter duas casas decimais.</td>
+<td>119000</td>
+</tr>
+<tr>
+<td>tax</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor do IVA da transação. Na Colômbia, se o IVA não for especificado, o sistema aplica 19%. Este valor pode incluir duas casas decimais, como 19000.00. Se o produto ou serviço for isento de IVA, atribua 0 a esta variável.</td>
+<td>19000</td>
+</tr>
+<tr>
+<td>taxReturnBase</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor base para calcular o IVA. Se o produto ou serviço for isento de IVA, atribua 0 a esta variável.</td>
+<td>100000</td>
+</tr>
+<tr>
+<td>additionalValue</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Taxas aeroportuárias e outros impostos da companhia aérea.</td>
+<td>25000</td>
+</tr>
+<tr>
+<td>administrativeFee</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor da taxa administrativa da agência de viagens.</td>
+<td>5950</td>
+</tr>
+<tr>
+<td>taxAdministrativeFee</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor do imposto sobre a taxa administrativa da agência de viagens.</td>
+<td>950</td>
+</tr>
+<tr>
+<td>taxAdministrativeFeeReturnBase</td>
+<td>Numérico</td>
+<td>10.2</td>
+<td>Valor base para calcular o imposto da taxa administrativa.</td>
+<td>5000</td>
+</tr>
+</tbody>
+</table>
+<h5 id="exemplo-de-formulário-webcheckout-1">Exemplo de Formulário WebCheckout</h5>
+<p>Abaixo, um exemplo do formulário WebCheckout:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">form</span> <span style="color:#c4a000">method</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;post&#34;</span> <span style="color:#c4a000">action</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;merchantId&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;508029&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;accountId&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;513128&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;description&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;Flight 12345&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;referenceCode&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;PNR-123&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;airline&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;29&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;amount&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;119000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;tax&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;19000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;taxReturnBase&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;100000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;additionalValue&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;25000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;administrativeFee&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;5950&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;taxAdministrativeFee&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;950&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;taxAdministrativeFeeReturnBase&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;5000&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;currency&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;COP&#34;</span> <span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;algorithmSignature&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;SHA256&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;signature&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;b94d73892255c4f53af4282e3a5b6551526a922f1fcf1412fafa6bdf8bbe32f0&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;buyerEmail&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;pruebas@payulatam.com&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;responseUrl&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://www.mysite.com/response-page&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;confirmationUrl&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://www.mysite.com/confirmation-page&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;test&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;hidden&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">input</span> <span style="color:#c4a000">name</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;Submit&#34;</span> <span style="color:#c4a000">type</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;submit&#34;</span> <span style="color:#c4a000">value</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;Send&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">form</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div>
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+Última modificação
+
+28 de novembro de 2024:
+
+ <b>Documentation Updates (d002e8d69)</b>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

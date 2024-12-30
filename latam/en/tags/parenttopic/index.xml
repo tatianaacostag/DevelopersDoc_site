@@ -5,7 +5,7 @@
     <description>Recent content in parenttopic on PayU Latam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Sep 2021 13:38:28 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2024 11:32:55 -0500</lastBuildDate>
     
 	  <atom:link href="/en/tags/parenttopic/index.xml" rel="self" type="application/rss+xml" />
     
@@ -101,7 +101,7 @@ The person in charge of integrating your shop with our Payment gateway (WebCheck
     <item>
       <title>Docs: 3DS Authentication</title>
       <link>/en/docs/services/3dsauthentication.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jul 2024 11:32:55 -0500</pubDate>
       
       <guid>/en/docs/services/3dsauthentication.html</guid>
       <description>
@@ -920,6 +920,180 @@ From version 1.2.X, it is needed to add the certificate of the Payu&amp;rsquo;s 
 &lt;li&gt;It is important to validate the length and numbers of credit cards by franchise, together with the security codes.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;available-features&#34;&gt;Available features&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Disputes</title>
+      <link>/en/docs/tools/disputes.html</link>
+      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
+      
+      <guid>/en/docs/tools/disputes.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;what-is-a-dispute&#34;&gt;What is a Dispute?&lt;/h2&gt;
+&lt;p&gt;Your buyers can present a claim to their card issuing bank. The bank sends us a dispute notification to determine the validity of the purchase, and we create the dispute in our system. After we create the dispute, we notify you through the PayU Module.&lt;/p&gt;
+&lt;p&gt;The dispute freezes the total amount of the sale in your PayU account.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_en.png&#34; alt=&#34;Concepts&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;why-a-dispute-happens&#34;&gt;Why a dispute happens?&lt;/h2&gt;
+&lt;p&gt;A buyer can claim to their card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.&lt;br&gt;
+The reasons for starting a dispute process may vary, some of them are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fraud&lt;/strong&gt;: disputes are classified as fraud when an unauthorized person makes purchases with a credit card. These type of dispute can happen if the card was lost or stolen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not acknowledging payment&lt;/strong&gt;: the brand or shop name which appears in the credit card statement is not recognized by the cardholder.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Product not delivered&lt;/strong&gt;: the cardholder states that they don&amp;rsquo;t received the product or service covered by the charges made to the credit card.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Product not acceptable&lt;/strong&gt;: the cardholder claims not to have received the product or service under the expected conditions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Duplicate&lt;/strong&gt;: the cardholder indicates that the charge made for the purchase of a product or service was applied more than once to their credit card.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Amount does not match&lt;/strong&gt;: the charge to the credit card does not match with the value of the purchase.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not reported by the entity&lt;/strong&gt;: the bank or processing network initiates a dispute process without a specific reason.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Not all the financial entities use the same mechanisms to notify a dispute; therefore, PayU cannot guarantee that you can always know the reasons of the dispute.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Attention&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Recall that PayU acts as an intermediary to let your commerce provide evidence in the dispute process between you and the bank entity. PayU has no interference on the result of the dispute, this decision depends on the issuing bank.&lt;/li&gt;
+&lt;li&gt;Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance; therefore, you cannot transfer funds from this balance to your bank account until the dispute is resolved.&lt;/li&gt;
+&lt;li&gt;Your customers may claim a transaction up to &lt;strong&gt;120 days&lt;/strong&gt; after the transaction date for local cards and &lt;strong&gt;180 days&lt;/strong&gt; for international cards. These date are defined by the card franchises.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;how-does-the-disputes-process-works-in-payu&#34;&gt;How does the disputes process works in PayU?&lt;/h2&gt;
+&lt;p&gt;The disputes process follows a simple flow:&lt;/p&gt;
+&lt;h3 id=&#34;1-dispute-notification&#34;&gt;1. Dispute notification&lt;/h3&gt;
+&lt;p&gt;When a bank or a processing network notifies PayU about the start of a dispute process due to a claim of your customer, you can consult all the information related to it in the &lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Disputes module&lt;/a&gt; of the PayU Module.&lt;/p&gt;
+&lt;p&gt;If you have configured the notification e-mails in your &lt;a href=&#34;../../../en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#disputes&#34;&gt;PayU module&lt;/a&gt;, you also receive the dispute information vía e-mail. Furthermore, when you have enabled the &lt;em&gt;&lt;strong&gt;Automatic notification URL&lt;/strong&gt;&lt;/em&gt;, we also send a &lt;code&gt;POST&lt;/code&gt; notification. This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.&lt;/p&gt;
+&lt;p&gt;You can configure the URL where we make the notification in the PayU module. Log in to &lt;a href=&#34;payu.com&#34;&gt;PayU.com&lt;/a&gt; and click the login option located at the top of the page. Alternatively, you can log in to &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Click &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt; and then select &lt;em&gt;&lt;strong&gt;Technical configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/IntegrationVariables_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this window, go to &lt;em&gt;&lt;strong&gt;Disputes&lt;/strong&gt;&lt;/em&gt; tab and define the dispute notification url and enable the notification box in the &lt;em&gt;&lt;strong&gt;Automatic notification URL&lt;/strong&gt;&lt;/em&gt; field.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Once you configured this, you automatically receive a POST with all the information of the started dispute process. Furthermore, You also receive a notification POST each time the dispute process has an update, so you can be aware of the progress and completion of this process.&lt;/p&gt;
+&lt;h3 id=&#34;2-query-through-the-payu-module&#34;&gt;2. Query through the PayU module&lt;/h3&gt;
+&lt;p&gt;You can view and manage your dispute processes from your PayU module, in the &lt;em&gt;&lt;strong&gt;Dispute&lt;/strong&gt;&lt;/em&gt; option inside the &lt;em&gt;&lt;strong&gt;Transactions&lt;/strong&gt;&lt;/em&gt; menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Disputes/Disputes_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-provide-evidence&#34;&gt;3. Provide evidence&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s important to always respond a dispute by providing evidence before the &lt;a href=&#34;../../../en/docs/tools/disputes.html#maximum-days-to-provide-evidence&#34;&gt;deadline stipulated by the bank or the processing network&lt;/a&gt;. After the deadline date, you cannot upload the corresponding evidence for a dispute.&lt;/p&gt;
+&lt;p&gt;To learn how to upload evidence to resolve the dispute, refer to the &lt;a href=&#34;../../../en/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;PayU module&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;what-information-can-be-useful&#34;&gt;What information can be useful?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Full information of your customer (full name, identification number, e-mail, shipping address, visible credit card number, etc.)&lt;/li&gt;
+&lt;li&gt;Proof of delivery of the product or service signed by the cardholder.&lt;/li&gt;
+&lt;li&gt;Bill of sale of the product or service.&lt;/li&gt;
+&lt;li&gt;Acceptance letter of the payment signed by the cardholder attaching their identification document.&lt;/li&gt;
+&lt;li&gt;Cancellation and refund policy.&lt;/li&gt;
+&lt;li&gt;Acceptance of terms and conditions.&lt;/li&gt;
+&lt;li&gt;Transactional history of your customer (if any).&lt;/li&gt;
+&lt;li&gt;Other supports that validate the purchase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;maximum-days-to-provide-evidence&#34;&gt;Maximum days to provide evidence&lt;/h4&gt;
+&lt;p&gt;Recall that the maximum days to provide evidence for each country are:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Country&lt;/th&gt;
+&lt;th&gt;Days to provide evidence&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Argentina&lt;/td&gt;
+&lt;td&gt;5 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brazil&lt;/td&gt;
+&lt;td&gt;12 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chile&lt;/td&gt;
+&lt;td&gt;5 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Colombia&lt;/td&gt;
+&lt;td&gt;2 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mexico&lt;/td&gt;
+&lt;td&gt;12 calendar days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Panama&lt;/td&gt;
+&lt;td&gt;8 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Peru&lt;/td&gt;
+&lt;td&gt;6 working days&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;4-final-decision-on-dispute-status&#34;&gt;4. Final decision on dispute status&lt;/h3&gt;
+&lt;p&gt;Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refunded. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.&lt;/p&gt;
+&lt;p&gt;When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.&lt;/p&gt;
+&lt;h2 id=&#34;dispute-states&#34;&gt;Dispute states&lt;/h2&gt;
+&lt;p&gt;When a dispute is reported, a dispute entity for the associated transaction is created. The dispute status changes according to the step where the dispute is within the course of the process.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;State&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Notified&lt;/td&gt;
+&lt;td&gt;When the dispute process begins, you must upload the evidence for the dispute.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;On Payment Network Review&lt;/td&gt;
+&lt;td&gt;When the shop provides evidence for a dispute through the PayU module and the dispute is reviewed by the bank or network.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Documents not provided&lt;/td&gt;
+&lt;td&gt;The deadline date to provide evidence has been reached and the commerce did not provide any documentation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lost&lt;/td&gt;
+&lt;td&gt;The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Won&lt;/td&gt;
+&lt;td&gt;The dispute process is resolved in favor of the shop, there are no deductions of any kind.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Expired&lt;/td&gt;
+&lt;td&gt;After past 120 days without a response from the bank, the amount is set to available for the merchant.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Refunded&lt;/td&gt;
+&lt;td&gt;This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Below is a diagram illustrating the flow for handling payment disputes:&lt;/p&gt;
+&lt;div&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Disputes&lt;/title&gt;
+&lt;meta charset=&#34;utf-8&#34;/&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;div class=&#34;mxgraph&#34; style=&#34;max-width:100%;border:1px solid transparent;&#34; data-mxgraph=&#34;{&amp;quot;highlight&amp;quot;:&amp;quot;#0000ff&amp;quot;,&amp;quot;nav&amp;quot;:true,&amp;quot;resize&amp;quot;:true,&amp;quot;toolbar&amp;quot;:&amp;quot;zoom layers tags lightbox&amp;quot;,&amp;quot;edit&amp;quot;:&amp;quot;_blank&amp;quot;,&amp;quot;xml&amp;quot;:&amp;quot;&amp;lt;mxfile host=\&amp;quot;app.diagrams.net\&amp;quot; agent=\&amp;quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\&amp;quot; version=\&amp;quot;24.9.2\&amp;quot;&amp;gt;\n  &amp;lt;diagram name=\&amp;quot;Page-1\&amp;quot; id=\&amp;quot;Q7fAwdDV4ESacsW7LS1n\&amp;quot;&amp;gt;\n    &amp;lt;mxGraphModel dx=\&amp;quot;1434\&amp;quot; dy=\&amp;quot;738\&amp;quot; grid=\&amp;quot;1\&amp;quot; gridSize=\&amp;quot;10\&amp;quot; guides=\&amp;quot;1\&amp;quot; tooltips=\&amp;quot;1\&amp;quot; connect=\&amp;quot;1\&amp;quot; arrows=\&amp;quot;1\&amp;quot; fold=\&amp;quot;1\&amp;quot; page=\&amp;quot;1\&amp;quot; pageScale=\&amp;quot;1\&amp;quot; pageWidth=\&amp;quot;850\&amp;quot; pageHeight=\&amp;quot;1100\&amp;quot; math=\&amp;quot;0\&amp;quot; shadow=\&amp;quot;0\&amp;quot;&amp;gt;\n      &amp;lt;root&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;0\&amp;quot; /&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;1\&amp;quot; parent=\&amp;quot;0\&amp;quot; /&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-3\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-2\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;\n            &amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;160\&amp;quot; as=\&amp;quot;sourcePoint\&amp;quot; /&amp;gt;\n          &amp;lt;/mxGeometry&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-5\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-2\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-2\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Captured&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;320\&amp;quot; y=\&amp;quot;180\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-7\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=#BCD245;endArrow=none;endFill=0;strokeWidth=2;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-6\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-16\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-12\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;disputeStatus: NOTIFIED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;320\&amp;quot; y=\&amp;quot;270\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-6\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Remains as Captured&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;120\&amp;quot; y=\&amp;quot;270\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-10\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;strokeWidth=2;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-8\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-9\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-24\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-8\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-8\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;disputeStatus:&amp;amp;amp;nbsp;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;ON REVIEW&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;440\&amp;quot; y=\&amp;quot;381\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-9\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Remains as Captured&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;640\&amp;quot; y=\&amp;quot;381\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-20\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=#BCD245;strokeWidth=2;endArrow=none;endFill=0;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-12\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-18\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-12\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;disputeStatus: DOCUMENTS NOT PRESENTED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;200\&amp;quot; y=\&amp;quot;381\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;79\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-15\&amp;quot; value=\&amp;quot;&amp;amp;lt;span style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot;&amp;amp;gt;A dispute notification comes from the bank&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/span&amp;amp;gt;\&amp;quot; style=\&amp;quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#BCD245;fillColor=#BCD245;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;332.5\&amp;quot; y=\&amp;quot;64\&amp;quot; width=\&amp;quot;95\&amp;quot; height=\&amp;quot;95\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-17\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.558;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-8\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-18\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Remains as Captured&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;20\&amp;quot; y=\&amp;quot;390.5\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-23\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-22\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-29\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-25\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;\n            &amp;lt;Array as=\&amp;quot;points\&amp;quot;&amp;gt;\n              &amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;600\&amp;quot; /&amp;gt;\n              &amp;lt;mxPoint x=\&amp;quot;300\&amp;quot; y=\&amp;quot;600\&amp;quot; /&amp;gt;\n            &amp;lt;/Array&amp;gt;\n          &amp;lt;/mxGeometry&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-30\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-26\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;\n            &amp;lt;Array as=\&amp;quot;points\&amp;quot;&amp;gt;\n              &amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;600\&amp;quot; /&amp;gt;\n              &amp;lt;mxPoint x=\&amp;quot;100\&amp;quot; y=\&amp;quot;600\&amp;quot; /&amp;gt;\n            &amp;lt;/Array&amp;gt;\n          &amp;lt;/mxGeometry&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-31\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-27\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;\n            &amp;lt;Array as=\&amp;quot;points\&amp;quot;&amp;gt;\n              &amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;600\&amp;quot; /&amp;gt;\n              &amp;lt;mxPoint x=\&amp;quot;500\&amp;quot; y=\&amp;quot;600\&amp;quot; /&amp;gt;\n            &amp;lt;/Array&amp;gt;\n          &amp;lt;/mxGeometry&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-32\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-28\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;\n            &amp;lt;Array as=\&amp;quot;points\&amp;quot;&amp;gt;\n              &amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;600\&amp;quot; /&amp;gt;\n              &amp;lt;mxPoint x=\&amp;quot;700\&amp;quot; y=\&amp;quot;600\&amp;quot; /&amp;gt;\n            &amp;lt;/Array&amp;gt;\n          &amp;lt;/mxGeometry&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;disputeStatus:&amp;amp;amp;nbsp;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;ON PAYMENT NETWORK REVIEW&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;320\&amp;quot; y=\&amp;quot;481\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;80\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-22\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Remains as Captured&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;520\&amp;quot; y=\&amp;quot;490\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-35\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-25\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-33\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-25\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;EXPIRED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;240\&amp;quot; y=\&amp;quot;661\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;39\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-36\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-26\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-34\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-26\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;WON&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;40\&amp;quot; y=\&amp;quot;640\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;40\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-38\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BCD245;dashed=1;strokeWidth=2;endArrow=none;endFill=0;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-27\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-37\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-27\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;LOST&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;440\&amp;quot; y=\&amp;quot;681\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;39\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-40\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; edge=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-28\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-39\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-28\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;REFUNDED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;640\&amp;quot; y=\&amp;quot;701\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;39\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-33\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Remains as Captured&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;240\&amp;quot; y=\&amp;quot;743\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-34\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Remains as Captured&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;40\&amp;quot; y=\&amp;quot;722\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-37\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus:&amp;amp;amp;nbsp;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;Chargeback&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#FF8000;strokeWidth=2;fillColor=#FF8000;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;440\&amp;quot; y=\&amp;quot;762\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n        &amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-39\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Refunded&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#004C99;strokeWidth=2;fillColor=#004C99;\&amp;quot; vertex=\&amp;quot;1\&amp;quot; parent=\&amp;quot;1\&amp;quot;&amp;gt;\n          &amp;lt;mxGeometry x=\&amp;quot;640\&amp;quot; y=\&amp;quot;782\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot; /&amp;gt;\n        &amp;lt;/mxCell&amp;gt;\n      &amp;lt;/root&amp;gt;\n    &amp;lt;/mxGraphModel&amp;gt;\n  &amp;lt;/diagram&amp;gt;\n&amp;lt;/mxfile&amp;gt;\n&amp;quot;}&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://viewer.diagrams.net/js/viewer-static.min.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;anti-fraud-tips-for-your-business&#34;&gt;Anti-fraud tips for your business&lt;/h2&gt;
+&lt;p&gt;Fight against the digital fraud it&amp;rsquo;s our duty!. Take into account the following tips:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Be wary of an increase in purchases or service requests higher than expected due to the nature of your business.&lt;/li&gt;
+&lt;li&gt;Be suspicious of purchases made with higher amounts than the average you receive in your commerce.&lt;/li&gt;
+&lt;li&gt;Verify if you have a higher purchase volume form a single client or requested to the same address.&lt;/li&gt;
+&lt;/ol&gt;
 
       </description>
     </item>

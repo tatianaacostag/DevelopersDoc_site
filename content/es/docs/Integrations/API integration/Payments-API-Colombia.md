@@ -28,6 +28,7 @@ La API de Pagos incluye los siguiente métodos:
 * [Enviar Transacciones Utilizando Nequi]({{< ref "#submit-transactions-using-nequi" >}})
 * [Enviar Transacciones Utilizando Efectivo o Referencia Bancaria]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
 * [Enviar Transacciones Utilizando Transferencia Bancaria (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
+* [Enviar Transacciones Utilizando Botón Bancolombia]({{< ref "#submit-transactions-using-bancolombia-button" >}})
 * [Enviar Transacciones Utilizando Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
 * [Procesar Pagos como Aerolínea o Agencia de Viajes]({{< ref "#process-payments-as-an-airline-or-travel-agency" >}})
 * [Lista de Bancos - PSE]({{< ref "#banks-list---pse" >}})
@@ -550,7 +551,7 @@ La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes
 
 <details>
 <summary>Solicitud</summary>
-<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -919,17 +920,19 @@ Para prevenir errores causados por formatos de números telefónicos incompatibl
 
 * Ejemplo de la interfaz:
 
-![PrintScreen](/assets/Payments/Nequi05ES.png)
+<img src="/assets/Payments/Nequi05ES.png" alt="PrintScreen" width="600">
+<p></p>
 
 2. Configura mensajes de error para que se muestren cuando un usuario ingrese un número de teléfono con menos de 10 dígitos o más de 10 dígitos (excluyendo el código de país, que es +57 para Colombia).
 
 * **A)** Ejemplo de una interfaz con espacios generados automáticamente donde el usuario no ha ingresado 10 dígitos:
 
-![PrintScreen](/assets/Payments/Nequi06ES.png)
+<img src="/assets/Payments/Nequi06ES.png" alt="PrintScreen" width="600">
+<p></p>
 
 * **B)** Ejemplo de una interfaz sin espacios donde el usuario ha ingresado más de 10 dígitos:
 
-![PrintScreen](/assets/Payments/Nequi07ES.png)
+<img src="/assets/Payments/Nequi07ES.png" alt="PrintScreen" width="600">
  
 #### Pruebas en Ambiente Sandbox {#sanbox-environment-testing}
 
@@ -1815,6 +1818,152 @@ Ejemplo de una Respuesta:
 
 {{< /tabs >}}
 
+## Enviar Transacciones Utilizando Botón Bancolombia {#submit-transactions-using-bancolombia-button}
+
+El Botón de Pagos Bancolombia es una solución de pagos en línea que facilita a los usuarios realizar transacciones de forma rápida y segura a través de su cuenta en Bancolombia. Esta herramienta está disponible para millones de usuarios y permite completar pagos directamente desde el sitio web del comercio, redirigiendo al usuario a una plataforma segura proporcionada por el banco.
+
+### Beneficios del Botón Bancolombia
+
+Además de ser una opción cómoda para los usuarios, el Botón de Pagos Bancolombia representa una alternativa innovadora para los comercios. Al integrar esta opción en tu plataforma de pagos a través de PayU, tu negocio puede obtener los siguientes beneficios: 
+
+* **Incremento en las ventas:** Alcanza más clientes que prefieren métodos de pago digitales respaldados por Bancolombia, lo que contribuye a un mayor número de transacciones completadas y una mejor retención de clientes.
+
+* **Mayor comodidad:** Ofrece una experiencia de pago ágil y versátil, permitiendo a los usuarios efectuar pagos directamente desde su cuenta bancaria sin necesidad de tarjetas físicas o efectivo. 
+
+* **Seguridad reforzada:** Facilita transacciones protegidas por los sistemas de seguridad avanzados de Bancolombia, una de las instituciones financieras más confiables de Colombia. 
+
+Al integrar el Botón de Pagos Bancolombia, no solo mejoras la experiencia de compra para tus clientes, sino que también fortaleces tu negocio con un método de pago alineado a las preferencias del mercado local.
+
+### Proceso de Pago con el Botón Bancolombia
+
+El proceso de pago está diseñado para ser simple y seguro. Sigue estos pasos para completar una transacción:
+
+1. Selecciona el método de pago en el checkout.
+
+<img src="/assets/Payments/es_botonbancolombia_1.png" alt="PrintScreen" width="650">
+<p></p>
+
+2. Acepta los términos y condiciones y haz clic en **_Pagar_**.
+
+<img src="/assets/Payments/es_botonbancolombia_2.png" alt="PrintScreen" width="650">
+<p></p>
+
+3. La integración te redirigirá al sitio transaccional de Bancolombia para completar el pago.
+
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-4}
+
+Esta API permite gestionar la intención de compra, obtener un código único de transferencia y generar la experiencia de pago. La integración necesita consumir un servicio REST del banco utilizando un **Client Secret** y un **Client ID**, que serán entregados al usuario por correo confidencial.
+
+<details>
+<summary>Solicitud</summary>
+<div class="variables"></div>
+
+| **Campo** | **Definición** | **Tipo** | **Longitud Máx.** | **Ejemplo** | **Observación** |
+|-|-|-|-|-|-|
+| commerceTransferButtonId | Identificador único del botón de transferencia. | String | 50 | `"h4ShG3NER1C"` | Entregado durante el proceso de vinculación. |
+| transferReference | Código único asignado por el comercio para identificar la transacción. | String | 48 | `"referencia0123"` | Definido por el comercio. |
+| transferDescription | Descripción de la transferencia, asociada al producto, servicio o factura. | String | 225 | transferDescription: `"Compra online"` | |
+| transferAmount | Monto total de la transacción que será debitado al cliente pagador. | Double | 15 | `23450.33` | En pruebas, el monto máximo es $1.000.000 COP y el mínimo $1.000 COP. |
+| commerceUrl | URL de redirección para el cliente tras completar la transferencia. | String | 225 | `"https://gateway.com/payment/route?commerce=compraonline"` | |
+| confirmationURL | URL de confirmación utilizada para notificar al comercio la finalización de la transacción. | String | 500 | `"https://espagos-api-dev.cloud.net/callback"` | Esta funcionalidad es obligatoria. |
+
+</details>
+
+### Llamado a la API {#api-call-4}
+
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
+
+Ejemplo de una Solicitud:
+```JSON
+{
+  "data": [
+    {
+      "commerceTransferButtonId": "h4ShG3NER1C",
+      "transferReference": "1002348899557697899",
+      "transferDescription": "Compra online",
+      "transferAmount": 3458.33,
+      "commerceUrl": "https://gateway.com/payment/route?commerce=compraonline",
+      "confirmationURL": "https://espagos-api-dev.cloud.net/callback"
+    }
+  ]
+}
+```
+<br>
+
+Ejemplo de una Respuesta:
+```JSON
+{
+  "meta": {
+    "messageId": "269d2d0f-6c87-4515-87f7-e3f11ca976d6",
+    "_version": "1.0",
+    "_requestDate": "2020-10-19T00:00:24.422Z",
+    "_clientRequest": "29fa65a1-0227-40cd-9efc-6beaff247614"
+  },
+  "data": [
+    {
+      "header": {
+        "type": "Transference",
+        "id": "_24iReQwXEI"
+      },
+      "transferCode": "_24iReQwXEI",
+      "redirectURL": "https://sandbox-boton-dev.apps.ambientescb.com/web/transfer-gateway/checkout/_24iReQwXEI"
+    }
+  ]
+}
+```
+
+### Condiciones Técnicas
+
+* **Condiciones para el campo `transferReference`:**
+Debe tener un máximo de 48 caracteres numéricos y no incluir caracteres especiales.
+
+* **Exposición del servicio de callback:** 
+Es obligatorio implementar el callback para recibir notificaciones en tiempo real sobre el estado final de la transacción. La URL de notificación debe ser proporcionada por el usuario beneficiario y será utilizada para enviar el estado final de la transacción. El sistema intentará notificar hasta 3 veces, con intervalos de 30 segundos entre cada intento.
+
+#### Estructura de la Respuesta del Callback
+
+<details>
+<summary>Respuesta</summary>
+<div class="variables"></div>
+
+| **Campo** | **Definición** | **Tipo** | **Longitud Máx.** | **Ejemplo** |
+|-|-|-|-|-|
+| transferVoucher | Número de comprobante de la transacción. | String | 50 | `"TRGQx8jMgCEG"` |
+| transferAmount | Monto total de la transacción. | Double | 15 | `1000.00` |
+| transferStateDescription  | Descripción del resultado del estado de la transacción. | String | 225 | `"Invalid account"` |
+| sign | Firma utilizada para validar la integridad de la solicitud generada. | String | 128 | `"b6f7bc914b69824df799db0ad7c9bb26"` |
+| requestDate | Fecha y hora en que se registró la orden. | DateTime | 23 | `"2020-11-25T09:14:22.697-0500"` |
+| transferState | Estado actual de la transacción. | String | 20 | `"rejected"`, `"approved"`, `"pending"`    |
+| transferDate | Fecha y hora en que se aprobó o rechazó la transacción. | DateTime | 20 | `"2020-11-10T08:04:54.0000500"` |
+| transferCode | Identificador único de la transferencia. | String | 50 | `"_oXsTE8kNo9"` |
+| transferReference | Código de referencia de la transacción asignado por el comercio. | String | 48 | `"Referencia05013418"` |
+| commerceTransferButtonId  | Identificador único del botón de transferencia del comercio (HASH). | String | 50 | `"h4ShG3NER1C"` |
+
+</details>
+<br>
+
+Ejemplo de una Respuesta:
+```JSON
+{
+  "data": {
+    "commerceTransferButtonId": "hA5hg3NER1c",
+    "transferReference": "prueba201123",
+    "transferDescription": "Compra online",
+    "transferAmount": 23458.33,
+    "commerceUrl": "https://www.commerce.com",
+    "confirmationURL": "https://pagos-api-dev.cloud.net/callback"
+  }
+}
+```
+
+### Condiciones Técnicas para el Uso del Callback
+
+* **API key para el callback:**
+Es necesario autenticar las notificaciones mediante una API Key, proporcionada previamente por el banco.
+
+* **Exposición del servicio:**
+El comercio debe exponer un servicio capaz de recibir la estructura descrita en la respuesta del callback.
+
 ## Enviar Transacciones Utilizando Google Pay {#submit-transactions-using-google-pay}
 
 Google Pay es una billetera digital que permite realizar pagos con tarjeta de forma sencilla y rápida, sin necesidad de introducir los datos de la tarjeta en cada pago. Los datos de la tarjeta son almacenados de forma segura por Google. Este método de pago está disponible para todos los dispositivos (teléfonos móviles y ordenadores), independientemente del sistema operativo y en casi todos los navegadores web.
@@ -1938,7 +2087,7 @@ Utiliza el Web Checkout en [ambiente de prueba](https://sandbox.checkout.payulat
     <source src="/assets/GooglePay/Colombia_WebCheckout.mp4" type="video/mp4">    
 </video>
 
-### Llamado a la API {#api-call-4}
+### Llamado a la API {#api-call-5}
 
 Los siguientes son ejemplos de los cuerpos de la petición y la respuesta de este método de pago.
 
@@ -2270,7 +2419,7 @@ Para completar una solicitud de transacción exitosa, debes incluir los parámet
 
 </details>
 
-#### Llamada a la API
+#### Llamado a la API {#api-call-6}
 
 A continuación, se presentan ejemplos de una solicitud para este método.
 
@@ -2406,7 +2555,7 @@ Para completar una solicitud de transacción exitosa, debes incluir los parámet
 
 </details>
 
-#### Llamada a la API
+#### Llamado a la API {#api-call-7}
 
 A continuación, se presentan ejemplos de una solicitud para este método.
 
@@ -2606,7 +2755,7 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo `transactio
 
 {{% /alert %}}
 
-#### Llamada a la API
+#### Llamado a la API {#api-call-8}
 
 A continuación, se presentan ejemplos de una solicitud para este método.
 
@@ -2824,7 +2973,7 @@ Ejemplo de una Solicitud:
 
 Este método retorna la lista de bancos disponibles para realizar [pagos utilizando PSE]({{< ref "#submit-transactions-using-bank-transfer-pse" >}}). 
 
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-4}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-5}
 
 <details>
 <summary>Solicitud</summary>
@@ -2861,7 +3010,7 @@ Este método retorna la lista de bancos disponibles para realizar [pagos utiliza
 
 </details>
 
-### Llamado a la API {#api-call-5}
+### Llamado a la API {#api-call-9}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
@@ -3507,7 +3656,7 @@ Ejemplo de una Respuesta:
 
 Este método retorna la lista de los métodos de pago disponibles en todos los paises.
 
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-5}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-6}
 
 <details>
 <summary>Solicitud</summary>
@@ -3542,7 +3691,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 
 </details>
 
-### Llamado a la API {#api-call-6}
+### Llamado a la API {#api-call-10}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
@@ -3636,7 +3785,7 @@ Ejemplo de una Respuesta:
 
 El método `PING` te permite verificar la conexión con nuestra plataforma. 
 
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-6}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-7}
 
 <details>
 <summary>Solicitud</summary>
@@ -3666,7 +3815,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 | transactionResponse | Objeto | Máx:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
-### Llamado a la API {#api-call-7}
+### Llamado a la API {#api-call-11}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
