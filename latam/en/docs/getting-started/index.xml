@@ -505,6 +505,13 @@
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/google_pay.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
+&lt;td&gt;Google Pay&lt;/td&gt;
+&lt;td&gt;GOOGLE_PAY&lt;/td&gt;
+&lt;td&gt;Mobile payment service&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/PaymentMethods/master.png&#34; alt=&#34;Logo&#34;&gt;&lt;/td&gt;
 &lt;td&gt;Mastercard&lt;/td&gt;
 &lt;td&gt;MASTERCARD&lt;/td&gt;

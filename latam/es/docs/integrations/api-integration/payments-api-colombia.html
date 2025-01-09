@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/integrations/api-integration/payments-api-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2024-11-28T15:55:32-05:00" />
+<meta property="article:modified_time" content="2024-12-29T22:18:51-05:00" />
 
 <meta itemprop="name" content="API de Pagos - Colombia">
 <meta itemprop="description" content="La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2024-11-28T15:55:32-05:00" />
-<meta itemprop="wordCount" content="15307">
+<meta itemprop="dateModified" content="2024-12-29T22:18:51-05:00" />
+<meta itemprop="wordCount" content="16128">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="API de Pagos - Colombia"/>
 <meta name="twitter:description" content="La API de Pagos para Colombia permite integrar de manera eficiente las capacidades de procesamiento de pagos de PayU con tu plataforma de compras en línea. A través de esta API, los comercios pueden ofrecer a sus clientes una amplia variedad de métodos de pago, incluyendo tarjetas de crédito, tarjetas de débito, billeteras digitales, efectivo y transferencias bancarias.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.21b9d6aaa5d6f25a30369fab40fe4c24c46f5ce1468d1d0b2590fc68678be64eacb84ac41483d69e4d91feb1083e72fc46adb43bf63cae6e4dd50ca2b58a0c18.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.b709c4e094ea301490c666ee018ce04d0fa93160fb475227539286ba210768718e730f7a7f133eaf02acb81b14c2fe8a4aebfe5c9541251214b91d6d14af5d12.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -841,12 +841,22 @@
         <li><a href="#api-call-3">Llamado a la API</a></li>
       </ul>
     </li>
+    <li><a href="#submit-transactions-using-bancolombia-button">Enviar Transacciones Utilizando Botón Bancolombia</a>
+      <ul>
+        <li><a href="#beneficios-del-botón-bancolombia">Beneficios del Botón Bancolombia</a></li>
+        <li><a href="#proceso-de-pago-con-el-botón-bancolombia">Proceso de Pago con el Botón Bancolombia</a></li>
+        <li><a href="#parameters-for-request-and-response-4">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call-4">Llamado a la API</a></li>
+        <li><a href="#condiciones-técnicas">Condiciones Técnicas</a></li>
+        <li><a href="#condiciones-técnicas-para-el-uso-del-callback">Condiciones Técnicas para el Uso del Callback</a></li>
+      </ul>
+    </li>
     <li><a href="#submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay</a>
       <ul>
         <li><a href="#integración-api-del-medio-de-pago">Integración API del Medio de Pago</a></li>
         <li><a href="#procesar-transacciones-de-google-pay-en-payu">Procesar Transacciones de Google Pay en PayU</a></li>
         <li><a href="#probar-el-método-de-pago">Probar el Método de Pago</a></li>
-        <li><a href="#api-call-4">Llamado a la API</a></li>
+        <li><a href="#api-call-5">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#process-payments-as-an-airline-or-travel-agency">Procesar Pagos como Aerolínea o Agencia de Viajes</a>
@@ -861,20 +871,20 @@
     </li>
     <li><a href="#banks-list---pse">Lista de Bancos - PSE</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-4">Parámetros para la Solicitud y la Respuesta</a></li>
-        <li><a href="#api-call-5">Llamado a la API</a></li>
+        <li><a href="#parameters-for-request-and-response-5">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call-9">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#available-payment-methods-query">Consultar Métodos de Pago Disponibles</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-5">Parámetros para la Solicitud y la Respuesta</a></li>
-        <li><a href="#api-call-6">Llamado a la API</a></li>
+        <li><a href="#parameters-for-request-and-response-6">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call-10">Llamado a la API</a></li>
       </ul>
     </li>
     <li><a href="#ping">Ping</a>
       <ul>
-        <li><a href="#parameters-for-request-and-response-6">Parámetros para la Solicitud y la Respuesta</a></li>
-        <li><a href="#api-call-7">Llamado a la API</a></li>
+        <li><a href="#parameters-for-request-and-response-7">Parámetros para la Solicitud y la Respuesta</a></li>
+        <li><a href="#api-call-11">Llamado a la API</a></li>
       </ul>
     </li>
   </ul>
@@ -956,6 +966,7 @@
 <li><a href="#submit-transactions-using-nequi">Enviar Transacciones Utilizando Nequi</a></li>
 <li><a href="#submit-transactions-using-cash-or-bank-reference">Enviar Transacciones Utilizando Efectivo o Referencia Bancaria</a></li>
 <li><a href="#submit-transactions-using-bank-transfer-pse">Enviar Transacciones Utilizando Transferencia Bancaria (PSE)</a></li>
+<li><a href="#submit-transactions-using-bancolombia-button">Enviar Transacciones Utilizando Botón Bancolombia</a></li>
 <li><a href="#submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay</a></li>
 <li><a href="#process-payments-as-an-airline-or-travel-agency">Procesar Pagos como Aerolínea o Agencia de Viajes</a></li>
 <li><a href="#banks-list---pse">Lista de Bancos - PSE</a></li>
@@ -2167,7 +2178,7 @@ La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes
 <h3 id="parameters-for-request-and-response-1">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
 <summary>Solicitud</summary>
-<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
 <table>
@@ -3110,18 +3121,20 @@ La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes
 <ul>
 <li>Ejemplo de la interfaz:</li>
 </ul>
-<p><img src="../../../../assets/Payments/Nequi05ES.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Payments/Nequi05ES.png" alt="PrintScreen" width="600">
+<p></p>
 <ol start="2">
 <li>Configura mensajes de error para que se muestren cuando un usuario ingrese un número de teléfono con menos de 10 dígitos o más de 10 dígitos (excluyendo el código de país, que es +57 para Colombia).</li>
 </ol>
 <ul>
 <li><strong>A)</strong> Ejemplo de una interfaz con espacios generados automáticamente donde el usuario no ha ingresado 10 dígitos:</li>
 </ul>
-<p><img src="../../../../assets/Payments/Nequi06ES.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Payments/Nequi06ES.png" alt="PrintScreen" width="600">
+<p></p>
 <ul>
 <li><strong>B)</strong> Ejemplo de una interfaz sin espacios donde el usuario ha ingresado más de 10 dígitos:</li>
 </ul>
-<p><img src="../../../../assets/Payments/Nequi07ES.png" alt="PrintScreen"></p>
+<img src="../../../../assets/Payments/Nequi07ES.png" alt="PrintScreen" width="600">
 <h4 id="sanbox-environment-testing">Pruebas en Ambiente Sandbox</h4>
 <p>Para probar las transacciones de Nequi en el ambiente Sandbox de PayU, utiliza los siguientes datos:</p>
 <table>
@@ -5154,6 +5167,262 @@ Este campo no es obligatorio para <em>PSE Avanza</em>.
 
 
 </div>
+<h2 id="submit-transactions-using-bancolombia-button">Enviar Transacciones Utilizando Botón Bancolombia</h2>
+<p>El Botón de Pagos Bancolombia es una solución de pagos en línea que facilita a los usuarios realizar transacciones de forma rápida y segura a través de su cuenta en Bancolombia. Esta herramienta está disponible para millones de usuarios y permite completar pagos directamente desde el sitio web del comercio, redirigiendo al usuario a una plataforma segura proporcionada por el banco.</p>
+<h3 id="beneficios-del-botón-bancolombia">Beneficios del Botón Bancolombia</h3>
+<p>Además de ser una opción cómoda para los usuarios, el Botón de Pagos Bancolombia representa una alternativa innovadora para los comercios. Al integrar esta opción en tu plataforma de pagos a través de PayU, tu negocio puede obtener los siguientes beneficios:</p>
+<ul>
+<li>
+<p><strong>Incremento en las ventas:</strong> Alcanza más clientes que prefieren métodos de pago digitales respaldados por Bancolombia, lo que contribuye a un mayor número de transacciones completadas y una mejor retención de clientes.</p>
+</li>
+<li>
+<p><strong>Mayor comodidad:</strong> Ofrece una experiencia de pago ágil y versátil, permitiendo a los usuarios efectuar pagos directamente desde su cuenta bancaria sin necesidad de tarjetas físicas o efectivo.</p>
+</li>
+<li>
+<p><strong>Seguridad reforzada:</strong> Facilita transacciones protegidas por los sistemas de seguridad avanzados de Bancolombia, una de las instituciones financieras más confiables de Colombia.</p>
+</li>
+</ul>
+<p>Al integrar el Botón de Pagos Bancolombia, no solo mejoras la experiencia de compra para tus clientes, sino que también fortaleces tu negocio con un método de pago alineado a las preferencias del mercado local.</p>
+<h3 id="proceso-de-pago-con-el-botón-bancolombia">Proceso de Pago con el Botón Bancolombia</h3>
+<p>El proceso de pago está diseñado para ser simple y seguro. Sigue estos pasos para completar una transacción:</p>
+<ol>
+<li>Selecciona el método de pago en el checkout.</li>
+</ol>
+<img src="../../../../assets/Payments/es_botonbancolombia_1.png" alt="PrintScreen" width="650">
+<p></p>
+<ol start="2">
+<li>Acepta los términos y condiciones y haz clic en <strong><em>Pagar</em></strong>.</li>
+</ol>
+<img src="../../../../assets/Payments/es_botonbancolombia_2.png" alt="PrintScreen" width="650">
+<p></p>
+<ol start="3">
+<li>La integración te redirigirá al sitio transaccional de Bancolombia para completar el pago.</li>
+</ol>
+<h3 id="parameters-for-request-and-response-4">Parámetros para la Solicitud y la Respuesta</h3>
+<p>Esta API permite gestionar la intención de compra, obtener un código único de transferencia y generar la experiencia de pago. La integración necesita consumir un servicio REST del banco utilizando un <strong>Client Secret</strong> y un <strong>Client ID</strong>, que serán entregados al usuario por correo confidencial.</p>
+<details>
+<summary>Solicitud</summary>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th><strong>Campo</strong></th>
+<th><strong>Definición</strong></th>
+<th><strong>Tipo</strong></th>
+<th><strong>Longitud Máx.</strong></th>
+<th><strong>Ejemplo</strong></th>
+<th><strong>Observación</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>commerceTransferButtonId</td>
+<td>Identificador único del botón de transferencia.</td>
+<td>String</td>
+<td>50</td>
+<td><code>&quot;h4ShG3NER1C&quot;</code></td>
+<td>Entregado durante el proceso de vinculación.</td>
+</tr>
+<tr>
+<td>transferReference</td>
+<td>Código único asignado por el comercio para identificar la transacción.</td>
+<td>String</td>
+<td>48</td>
+<td><code>&quot;referencia0123&quot;</code></td>
+<td>Definido por el comercio.</td>
+</tr>
+<tr>
+<td>transferDescription</td>
+<td>Descripción de la transferencia, asociada al producto, servicio o factura.</td>
+<td>String</td>
+<td>225</td>
+<td>transferDescription: <code>&quot;Compra online&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>transferAmount</td>
+<td>Monto total de la transacción que será debitado al cliente pagador.</td>
+<td>Double</td>
+<td>15</td>
+<td><code>23450.33</code></td>
+<td>En pruebas, el monto máximo es $1.000.000 COP y el mínimo $1.000 COP.</td>
+</tr>
+<tr>
+<td>commerceUrl</td>
+<td>URL de redirección para el cliente tras completar la transferencia.</td>
+<td>String</td>
+<td>225</td>
+<td><code>&quot;https://gateway.com/payment/route?commerce=compraonline&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>confirmationURL</td>
+<td>URL de confirmación utilizada para notificar al comercio la finalización de la transacción.</td>
+<td>String</td>
+<td>500</td>
+<td><code>&quot;https://espagos-api-dev.cloud.net/callback&quot;</code></td>
+<td>Esta funcionalidad es obligatoria.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="api-call-4">Llamado a la API</h3>
+<p>Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.</p>
+<p>Ejemplo de una Solicitud:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;commerceTransferButtonId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;h4ShG3NER1C&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;transferReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1002348899557697899&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;transferDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Compra online&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;transferAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3458.33</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;commerceUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://gateway.com/payment/route?commerce=compraonline&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;confirmationURL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://espagos-api-dev.cloud.net/callback&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p>Ejemplo de una Respuesta:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;meta&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;messageId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;269d2d0f-6c87-4515-87f7-e3f11ca976d6&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;_version&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1.0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;_requestDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2020-10-19T00:00:24.422Z&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;_clientRequest&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;29fa65a1-0227-40cd-9efc-6beaff247614&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;header&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Transference&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;_24iReQwXEI&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;transferCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;_24iReQwXEI&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;redirectURL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://sandbox-boton-dev.apps.ambientescb.com/web/transfer-gateway/checkout/_24iReQwXEI&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="condiciones-técnicas">Condiciones Técnicas</h3>
+<ul>
+<li>
+<p><strong>Condiciones para el campo <code>transferReference</code>:</strong>
+Debe tener un máximo de 48 caracteres numéricos y no incluir caracteres especiales.</p>
+</li>
+<li>
+<p><strong>Exposición del servicio de callback:</strong>
+Es obligatorio implementar el callback para recibir notificaciones en tiempo real sobre el estado final de la transacción. La URL de notificación debe ser proporcionada por el usuario beneficiario y será utilizada para enviar el estado final de la transacción. El sistema intentará notificar hasta 3 veces, con intervalos de 30 segundos entre cada intento.</p>
+</li>
+</ul>
+<h4 id="estructura-de-la-respuesta-del-callback">Estructura de la Respuesta del Callback</h4>
+<details>
+<summary>Respuesta</summary>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th><strong>Campo</strong></th>
+<th><strong>Definición</strong></th>
+<th><strong>Tipo</strong></th>
+<th><strong>Longitud Máx.</strong></th>
+<th><strong>Ejemplo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transferVoucher</td>
+<td>Número de comprobante de la transacción.</td>
+<td>String</td>
+<td>50</td>
+<td><code>&quot;TRGQx8jMgCEG&quot;</code></td>
+</tr>
+<tr>
+<td>transferAmount</td>
+<td>Monto total de la transacción.</td>
+<td>Double</td>
+<td>15</td>
+<td><code>1000.00</code></td>
+</tr>
+<tr>
+<td>transferStateDescription</td>
+<td>Descripción del resultado del estado de la transacción.</td>
+<td>String</td>
+<td>225</td>
+<td><code>&quot;Invalid account&quot;</code></td>
+</tr>
+<tr>
+<td>sign</td>
+<td>Firma utilizada para validar la integridad de la solicitud generada.</td>
+<td>String</td>
+<td>128</td>
+<td><code>&quot;b6f7bc914b69824df799db0ad7c9bb26&quot;</code></td>
+</tr>
+<tr>
+<td>requestDate</td>
+<td>Fecha y hora en que se registró la orden.</td>
+<td>DateTime</td>
+<td>23</td>
+<td><code>&quot;2020-11-25T09:14:22.697-0500&quot;</code></td>
+</tr>
+<tr>
+<td>transferState</td>
+<td>Estado actual de la transacción.</td>
+<td>String</td>
+<td>20</td>
+<td><code>&quot;rejected&quot;</code>, <code>&quot;approved&quot;</code>, <code>&quot;pending&quot;</code></td>
+</tr>
+<tr>
+<td>transferDate</td>
+<td>Fecha y hora en que se aprobó o rechazó la transacción.</td>
+<td>DateTime</td>
+<td>20</td>
+<td><code>&quot;2020-11-10T08:04:54.0000500&quot;</code></td>
+</tr>
+<tr>
+<td>transferCode</td>
+<td>Identificador único de la transferencia.</td>
+<td>String</td>
+<td>50</td>
+<td><code>&quot;_oXsTE8kNo9&quot;</code></td>
+</tr>
+<tr>
+<td>transferReference</td>
+<td>Código de referencia de la transacción asignado por el comercio.</td>
+<td>String</td>
+<td>48</td>
+<td><code>&quot;Referencia05013418&quot;</code></td>
+</tr>
+<tr>
+<td>commerceTransferButtonId</td>
+<td>Identificador único del botón de transferencia del comercio (HASH).</td>
+<td>String</td>
+<td>50</td>
+<td><code>&quot;h4ShG3NER1C&quot;</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<br>
+<p>Ejemplo de una Respuesta:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">&#34;data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;commerceTransferButtonId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;hA5hg3NER1c&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transferReference&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;prueba201123&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transferDescription&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Compra online&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transferAmount&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">23458.33</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;commerceUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://www.commerce.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;confirmationURL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://pagos-api-dev.cloud.net/callback&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="condiciones-técnicas-para-el-uso-del-callback">Condiciones Técnicas para el Uso del Callback</h3>
+<ul>
+<li>
+<p><strong>API key para el callback:</strong>
+Es necesario autenticar las notificaciones mediante una API Key, proporcionada previamente por el banco.</p>
+</li>
+<li>
+<p><strong>Exposición del servicio:</strong>
+El comercio debe exponer un servicio capaz de recibir la estructura descrita en la respuesta del callback.</p>
+</li>
+</ul>
 <h2 id="submit-transactions-using-google-pay">Enviar Transacciones Utilizando Google Pay</h2>
 <p>Google Pay es una billetera digital que permite realizar pagos con tarjeta de forma sencilla y rápida, sin necesidad de introducir los datos de la tarjeta en cada pago. Los datos de la tarjeta son almacenados de forma segura por Google. Este método de pago está disponible para todos los dispositivos (teléfonos móviles y ordenadores), independientemente del sistema operativo y en casi todos los navegadores web.</p>
 <p>En caso de utilizar Google Pay, los comercios deben adherirse a la <a href="https://payments.developers.google.com/terms/aup">Política de uso aceptable</a> de las API de Google Pay y aceptar los términos que definen las <a href="https://payments.developers.google.com/terms/sellertos">Condiciones de servicio de las API de Google Pay</a>.</p>
@@ -5266,7 +5535,7 @@ Para garantizar un procesamiento correcto, al momento de seleccionar las tarjeta
 <video width="630" height="300" controls>
     <source src="../../../../assets/GooglePay/Colombia_WebCheckout.mp4" type="video/mp4">    
 </video>
-<h3 id="api-call-4">Llamado a la API</h3>
+<h3 id="api-call-5">Llamado a la API</h3>
 <p>Los siguientes son ejemplos de los cuerpos de la petición y la respuesta de este método de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -5782,7 +6051,7 @@ Aunque es poco probable que cambien los códigos de aerolíneas, existe una posi
 </tbody>
 </table>
 </details>
-<h4 id="llamada-a-la-api">Llamada a la API</h4>
+<h4 id="api-call-6">Llamado a la API</h4>
 <p>A continuación, se presentan ejemplos de una solicitud para este método.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6021,7 +6290,7 @@ Aunque es poco probable que cambien los códigos de aerolíneas, existe una posi
 </tbody>
 </table>
 </details>
-<h4 id="llamada-a-la-api-1">Llamada a la API</h4>
+<h4 id="api-call-7">Llamado a la API</h4>
 <p>A continuación, se presentan ejemplos de una solicitud para este método.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6462,7 +6731,7 @@ Aunque es poco probable que cambien los códigos de aerolíneas, existe una posi
 Al usar el formato XML, los parámetros del itinerario aparecen bajo <code>transaction &gt; pnr &gt; itinerary &gt; segment</code> con la misma estructura pero ajustados en anidamiento.
 </div>
 
-<h4 id="llamada-a-la-api-2">Llamada a la API</h4>
+<h4 id="api-call-8">Llamado a la API</h4>
 <p>A continuación, se presentan ejemplos de una solicitud para este método.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -6724,7 +6993,7 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo <code>trans
 </div>
 <h2 id="banks-list---pse">Lista de Bancos - PSE</h2>
 <p>Este método retorna la lista de bancos disponibles para realizar <a href="#submit-transactions-using-bank-transfer-pse">pagos utilizando PSE</a>.</p>
-<h3 id="parameters-for-request-and-response-4">Parámetros para la Solicitud y la Respuesta</h3>
+<h3 id="parameters-for-request-and-response-5">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
 <summary>Solicitud</summary>
 <br>
@@ -6859,7 +7128,7 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo <code>trans
 </tbody>
 </table>
 </details>
-<h3 id="api-call-5">Llamado a la API</h3>
+<h3 id="api-call-9">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -7547,7 +7816,7 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo <code>trans
 </div>
 <h2 id="available-payment-methods-query">Consultar Métodos de Pago Disponibles</h2>
 <p>Este método retorna la lista de los métodos de pago disponibles en todos los paises.</p>
-<h3 id="parameters-for-request-and-response-5">Parámetros para la Solicitud y la Respuesta</h3>
+<h3 id="parameters-for-request-and-response-6">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
 <summary>Solicitud</summary>
 <br>
@@ -7667,7 +7936,7 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo <code>trans
 </tbody>
 </table>
 </details>
-<h3 id="api-call-6">Llamado a la API</h3>
+<h3 id="api-call-10">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -7803,7 +8072,7 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo <code>trans
 </div>
 <h2 id="ping">Ping</h2>
 <p>El método <code>PING</code> te permite verificar la conexión con nuestra plataforma.</p>
-<h3 id="parameters-for-request-and-response-6">Parámetros para la Solicitud y la Respuesta</h3>
+<h3 id="parameters-for-request-and-response-7">Parámetros para la Solicitud y la Respuesta</h3>
 <details>
 <summary>Solicitud</summary>
 <br>
@@ -7899,7 +8168,7 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo <code>trans
 </tbody>
 </table>
 </details>
-<h3 id="api-call-7">Llamado a la API</h3>
+<h3 id="api-call-11">Llamado a la API</h3>
 <p>Los siguientes son los cuerpos de la petición y la respuesta para este método.</p>
 <nav>
 	<div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -8010,9 +8279,9 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo <code>trans
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-28 de noviembre de 2024:
+29 de diciembre de 2024:
 
- <b>Documentation Updates (d002e8d69)</b>
+ <b>Documentation Updates (d467bc941)</b>
 </div>
 </div>
 

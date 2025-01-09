@@ -25,13 +25,11 @@ Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL segú
 La API de Pagos incluye los siguiente métodos:
 
 * [Enviar Transacciones Utilizando Tarjetas de Crédito o Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
-* [Enviar Transacciones Utilizando Nequi]({{< ref "#submit-transactions-using-nequi" >}})
-* [Enviar Transacciones Utilizando Efectivo o Referencia Bancaria]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
 * [Enviar Transacciones Utilizando Transferencia Bancaria (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
-* [Enviar Transacciones Utilizando Botón Bancolombia]({{< ref "#submit-transactions-using-bancolombia-button" >}})
 * [Enviar Transacciones Utilizando Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
+* [Enviar Transacciones Utilizando Nequi]({{< ref "#submit-transactions-using-nequi" >}})<!-- * [Enviar Transacciones Utilizando Botón Bancolombia]({{< ref "#submit-transactions-using-bancolombia-button" >}}) -->
+* [Enviar Transacciones Utilizando Efectivo o Referencia Bancaria]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
 * [Procesar Pagos como Aerolínea o Agencia de Viajes]({{< ref "#process-payments-as-an-airline-or-travel-agency" >}})
-* [Lista de Bancos - PSE]({{< ref "#banks-list---pse" >}})
 * [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
@@ -493,865 +491,6 @@ Ejemplo de una Respuesta:
 
 {{< /tabs >}}
 
-## Enviar Transacciones Utilizando Nequi {#submit-transactions-using-nequi}
-
-Nequi es una plataforma integral de servicios financieros que funciona por medio de una billetera digital disponible para millones de usuarios a través de una aplicación móvil. Con Nequi, puedes realizar pagos, transferencias, recargas y retiros de dinero de manera rápida y segura, todo desde tu dispositivo personal.
-
-Además de ser una herramienta conveniente para usuarios individuales, Nequi también es una solución de pagos innovadora para comercios. Al aceptar pagos con Nequi, tu negocio puede disfrutar de una serie de ventajas significativas:
-
-* **Aumento de las ventas:** Al ofrecer Nequi como opción de pago, tu negocio puede atraer a nuevos clientes que prefieren realizar transacciones digitales. Esto puede traducirse en un aumento de las ventas y una mayor fidelización de clientes.
-
-* **Mayor conveniencia:** Al permitir que tus clientes paguen con Nequi, estás proporcionando una experiencia de compra más versátil y rápida. Los clientes pueden realizar sus pagos de forma instantánea utilizando sus teléfonos móviles, sin necesidad de efectivo o tarjetas físicas.
-
-* **Mayor seguridad:** Nequi ofrece un entorno de pago seguro y confiable, respaldado por Bancolombia, una de las instituciones financieras más grandes y confiables de Colombia. Esto brinda tranquilidad tanto a los comercios como a los clientes, ya que las transacciones se realizan de manera segura y protegida.
-
-### Proceso de Pago con Nequi {#payment-process-with-nequi}
-
-El flujo de pago con Nequi está diseñado para ser sencillo y ágil para el usuario. El proceso incluye 4 pasos:
-
-1. **Selección del medio de pago:** El cliente, al momento de efectuar la compra, elige Nequi como su medio de pago preferido entre las opciones disponibles.
-
-2. **Generación de notificación push:** Automáticamente, el sistema genera una notificación push que se envía a la aplicación móvil de Nequi del cliente.
-
-3. **Aceptación de la notificación:** El cliente recibe la notificación en su aplicación Nequi y procede a aceptarla para confirmar la transacción.
-
-4. **Ingreso del PIN de Nequi:** Para finalizar la operación, el cliente ingresa su PIN personal de Nequi para autenticar y autorizar el pago.
-
-### Experiencia de Usuario {#user-experience}
-
-Esta sección describe los elementos necesarios para una experiencia óptima del usuario al usar Nequi como método de pago:
-
-1. Solicita el nombre y correo electrónico del comprador, por ejemplo:
-
-<img src="/assets/Payments/NEQUI_ES_01.png" alt="PrintScreen" width="420">
-<p></p>
-
-2. Presenta Nequi como método de pago y solicita el número de teléfono asociado con la cuenta de Nequi, por ejemplo:
-
-<img src="/assets/Payments/NEQUI_ES_02.png" alt="PrintScreen" width="420">
-<p></p>
-
-3. Proporciona un resumen detallado del pago. 
-
-{{% alert title="Nota" color="info"%}}
-
-La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes aprovechar esta página redirigiendo a los usuarios a la URL proporcionada en el campo `URL_PAYMENT_RECEIPT_HTML` de la respuesta de la API, o puedes diseñar tu propio recibo extrayendo los datos de los campos correspondientes de la respuesta. Para más información, consulta la sección de [Parámetros para Solicitud y Respuesta]({{< ref "#parameters-for-request-and-response-1" >}}).
-
-{{% /alert %}}
-
-<img src="/assets/Payments/NEQUI_ES_03.png" alt="PrintScreen" width="500">
-<p></p>
-
-4. Describe los pasos a seguir para facilitar el proceso de pago para el comprador. La página de resumen de PayU ya incluye estas instrucciones, pero si estás creando una página personalizada, recomendamos mostrar los pasos para completar el proceso a través de Nequi. Por ejemplo:
-
-<img src="/assets/Payments/NEQUI_ES_04.png" alt="PrintScreen" width="420">
-<p></p>
-
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-1}
-
-<details>
-<summary>Solicitud</summary>
-<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
-<br>
-<div class="variables"></div>
-
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
-|-|-|-|-|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la solicitud, este idioma se utiliza para mostrar los mensajes de error generados. [Consulta los idiomas admitidos]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Máx:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Booleano | | Asigna `true` si la solicitud está en modo de prueba. De lo contrario, asigna `false`. | Sí |
-| merchant | Objeto | | Este objeto contiene los datos de autenticación.  | Sí  |
-| merchant > apiLogin | Alfanumérico | Min:12 Máx:32 | Nombre de usuario o login proporcionado por PayU. | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Máx:32 | Contraseña proporcionada por PayU. | Sí |
-| transaction | Objeto | | Este objeto contiene los datos de la transacción. | Sí |
-| transaction > order | Objeto | | Este objeto contiene los datos de la orden. | Sí |
-| transaction > order > accountId | Número | | Identificador de tu cuenta. | Sí |
-| transaction > order > referenceCode | Alfanumérico | Min:1 Máx:255 | Representa el identificador de la orden en tu sistema. | Sí |
-| transaction > order > description | Alfanumérico | Min:1 Máx:255 | Descripción de la orden. | Sí |
-| transaction > order > language | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
-| transaction > order > notifyUrl | Alfanumérico | Máx:2048 | URL de confirmación de la orden. | No |
-| transaction > order > partnerId | Alfanumérico | Máx:255 | ID de socio en PayU. | No |
-| transaction > order > signature | Alfanumérico | Máx:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
-| transaction > order > shippingAddress | Objeto | | Dirección de envío. | No |
-| transaction > order > shippingAddress > street1 | Alfanumérico | Máx:100 | Línea de dirección 1. | No |
-| transaction > order > shippingAddress > street2 | Alfanumérico | Máx:100 | Línea de dirección 2. | No |
-| transaction > order > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección. | No |
-| transaction > order > shippingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección. | No |
-| transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
-| transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Código postal de la dirección. | No |
-| transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de teléfono asociado con la dirección. | No |
-| transaction > order > buyer | Objeto | | Información del comprador. | Sí |
-| transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | ID del comprador en tu sistema. | No |
-| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nombre completo del comprador. | Sí |
-| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del comprador. | Sí |
-| transaction > order > buyer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del comprador. | Sí |
-| transaction > order > buyer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del comprador. | Sí |
-| transaction > order > buyer > shippingAddress | Objeto | | Dirección de envío del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Máx:150 | Línea 1 de la dirección de envío del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de envío del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección de envío del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección de envío del comprador en formato ISO 3166 alfa-2. | Sí |
-| transaction > order > buyer > shippingAddress > postalCode | Número | Máx:20 | Código postal de la dirección de envío del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > phone | Número | Máx:20 | Número de teléfono de la dirección de envío del comprador. | Sí |
-| transaction > order > additionalValues > | Alfanumérico | 64 | Monto de la orden y sus valores asociados. | Sí |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
-| transaction > order > additionalValues > TX_VALUE > value | Número | 12, 2 | Especifica el monto de la transacción. Este monto no puede incluir decimales. | Sí |
-| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Consulta las monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del Impuesto al Valor Agregado (IVA). | Sí |
-| transaction > order > additionalValues > TX_TAX > value | Número | 12, 2 | Especifica el monto del IVA. Si este parámetro no está configurado, PayU aplica el valor de impuesto actual (19%). Si el monto no tiene IVA, envía 0. Este valor puede tener dos dígitos decimales. | No |
-| transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO de la moneda. [Consulta las monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el IVA. Si el monto no tiene IVA, envía 0. Este valor puede tener dos dígitos decimales. | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica el monto base de la transacción. | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Consulta las monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer | Objeto | | Información del pagador. | Sí |
-| transaction > payer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del pagador. | Sí |
-| transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador del pagador en tu sistema. | No |
-| transaction > payer > fullName | Alfanumérico | Máx:150 | Nombre del pagador. | Sí |
-| transaction > payer > billingAddress | Objeto | | Dirección de facturación. | Sí |
-| transaction > payer > billingAddress > street1 | Alfanumérico | Máx:100 | Línea 1 de la dirección de facturación. | Sí |
-| transaction > payer > billingAddress > street2 | Alfanumérico | Máx:100 | Línea 2 de la dirección de facturación. | No |
-| transaction > payer > billingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de facturación. | Sí |
-| transaction > payer > billingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección de facturación. | No |
-| transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 alfa-2. | Sí |
-| transaction > payer > billingAddress > postalCode | Alfanumérico | Máx:20 | Código postal de la dirección de facturación. | No |
-| transaction > payer > billingAddress > phone | Alfanumérico | Máx:20 | Número de teléfono de la dirección de facturación. | No |
-| transaction > payer > birthdate | Alfanumérico | Máx:10 | Fecha de nacimiento del pagador. | No |
-| transaction > payer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del pagador. Este es el número que se utilizará para pagar en Nequi. | Sí |
-| transaction > payer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del comprador. | Sí |
-| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Consulta los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}).. | No |
-| transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con la transacción. Para Colombia, asigna `AUTHORIZATION_AND_CAPTURE`. | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Asigna `NEQUI` para el Método de Pago Nequi. | Sí |
-| transaction > paymentCountry | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí  |
-| transaction > deviceSessionId | Alfanumérico | Máx:255 | Identificador de sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [esta sección]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
-| transaction > ipAddress | Alfanumérico | Máx:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
-| transaction > cookie | Alfanumérico | Máx:255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
-| transaction > userAgent | Alfanumérico | Máx:1024 | El agente de usuario del navegador donde el cliente realiza la transacción. | Sí |
-
-</details>
-
-<details>
-<summary>Respuesta</summary>
-<br>
-<div class="variables"></div>
-
-| Nombre del Campo | Formato | Tamaño | Descripción |
-|-|-|-|-|
-| code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
-| error | Alfanumérico | Máx:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse | Objeto | | Datos de la respuesta. |
-| transactionResponse > orderId | Número | | Identificador de orden generado o existente en PayU. |
-| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
-| transactionResponse > state | Alfanumérico | Máx:32 | Estado de la transacción. |
-| transactionResponse > responseCode | Alfanumérico | Máx:64 | Código de respuesta asociado con el estado. |
-| transactionResponse > pendingReason | Alfanumérico | Máx:64 | Razón pendiente de la transacción. |
-| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Máx:255 | Código de respuesta devuelto por la red financiera. |
-| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Máx:255  | Mensaje de error devuelto por la red financiera. |
-| transactionResponse > trazabilityCode | Alfanumérico | Máx:32 | Código de trazabilidad devuelto por la red financiera. |
-| transactionResponse > authorizationCode | Alfanumérico | Máx:12 | Código de autorización devuelto por la red financiera. |
-| transactionResponse > responseMessage | Alfanumérico | Máx:2048 | Mensaje asociado con el código de respuesta. |
-| transactionResponse > operationDate | Fecha | | Fecha de creación de la respuesta en el sistema de PayU. |
-| transactionResponse > extraParameters | Objeto | | Parámetros adicionales o datos asociados con la respuesta. <li>En JSON, el parámetro `extraParameters` sigue esta estructura: `"extraParameters": { "URL_PAYMENT_RECEIPT_HTML": "https:payu.checkout.com"}`<li>En XML, el parámetro `extraParameters` sigue esta estructura: `<extraParameters> <entry>  <string>URL_PAYMENT_RECEIPT_HTML</string>  <string>https:payu.checkout.com</string> </entry></extraParameters>` <br>**Nota:** Considera que puedes aprovechar esta URL para redirigir al usuario a una página de PayU con un resumen de la compra, como se muestra en [Experiencia de Usuario]({{< ref "#user-experience" >}}). |
-| transactionResponse > additionalInfo | Objeto | | Información adicional asociada con la respuesta. Este objeto sigue la misma estructura que `transactionResponse.extraParameters`. |
-
-</details>
-
-### Llamado a la API {#api-call-1}
-
-Los siguientes son los cuerpos de la petición y la respuesta para este método de pago:
-
-{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-Ejemplo de una Solicitud:
-```JSON
-{
-   "language": "es",
-   "command": "SUBMIT_TRANSACTION",
-   "merchant": {
-      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
-      "apiLogin": "pRRXKOl8ikMmt9u"
-   },
-   "transaction": {
-      "order": {
-         "accountId": "512321",
-         "referenceCode": "PRODUCT_TEST_2024-01-18T19:59:43.229Z",
-         "description": "Payment test description",
-         "language": "es",
-         "signature": "1d6c33aed575c4974ad5c0be7c6a1c87",
-         "notifyUrl": "http://www.payu.com/notify",
-         "additionalValues": {
-            "TX_VALUE": {
-               "value": 65000,
-               "currency": "COP"
-            },
-            "TX_TAX": {
-               "value": 10378,
-               "currency": "COP"
-            },
-            "TX_TAX_RETURN_BASE": {
-               "value": 54622,
-               "currency": "COP"
-            }
-         },
-         "buyer": {
-            "merchantBuyerId": "1",
-            "fullName": "First name and second buyer name",
-            "emailAddress": "buyer_test@test.com",
-            "contactPhone": "57 3007777777",
-            "dniNumber": "123456789",
-            "shippingAddress": {
-               "street1": "Cr 23 No. 53-50",
-               "street2": "5555487",
-               "city": "Bogotá",
-               "state": "Bogotá D.C.",
-               "country": "CO",
-               "postalCode": "000000",
-               "phone": "57 3007777777"
-            }
-         },
-         "shippingAddress": {
-            "street1": "Cr 23 No. 53-50",
-            "street2": "5555487",
-            "city": "Bogotá",
-            "state": "Bogotá D.C.",
-            "country": "CO",
-            "postalCode": "0000000",
-            "phone": "7563126"
-         }
-      },
-      "payer": {
-         "merchantPayerId": "1",
-         "fullName": "First name and second payer name",
-         "emailAddress": "payer_test@test.com",
-         "contactPhone": "57 3007777777",
-         "dniNumber": "5415668464654",
-         "billingAddress": {
-            "street1": "Cr 23 No. 53-50",
-            "street2": "125544",
-            "city": "Bogotá",
-            "state": "Bogotá D.C.",
-            "country": "CO",
-            "postalCode": "000000",
-            "phone": "57 3007777777"
-         }
-      },
-      "type": "AUTHORIZATION_AND_CAPTURE",
-      "paymentMethod": "NEQUI",
-      "paymentCountry": "CO",
-      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
-      "ipAddress": "127.0.0.1",
-      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
-      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
-   },
-   "test": false
-}
-
-```
-<br>
-
-Ejemplo de una Respuesta:
-```JSON
-{
-    "code": "SUCCESS",
-    "error": null,
-    "transactionResponse": {
-        "orderId": 2151135729,
-        "transactionId": "fe667b48-e685-40b3-8863-9a0cd8257860",
-        "state": "PENDING",
-        "paymentNetworkResponseCode": "0",
-        "paymentNetworkResponseErrorMessage": null,
-        "trazabilityCode": "3ba38ac9-3d68-48ef-bf86-b6c121404162",
-        "authorizationCode": null,
-        "pendingReason": "AWAITING_PAYMENT_IN_ENTITY",
-        "responseCode": "PENDING_PAYMENT_IN_ENTITY",
-        "errorCode": null,
-        "responseMessage": "SUCCESS",
-        "transactionDate": null,
-        "transactionTime": null,
-        "operationDate": 1705670262058,
-        "referenceQuestionnaire": null,
-        "extraParameters": null,
-        "additionalInfo": null
-    }
-}
-
-```
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-<br>
-
-Ejemplo de una Solicitud:
-```XML
-<request>
-  <language>es</language>
-  <command>SUBMIT_TRANSACTION</command>
-  <merchant>
-    <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
-    <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
-  </merchant>
-  <transaction>
-    <order>
-      <accountId>512321</accountId>
-      <referenceCode>PRODUCT_TEST_2024-01-18T19:59:43.229Z</referenceCode>
-      <description>Payment test description</description>
-      <language>es</language>
-      <signature>1d6c33aed575c4974ad5c0be7c6a1c87</signature>
-      <notifyUrl>http://www.payu.com/notify</notifyUrl>
-      <additionalValues>
-        <entry>
-          <string>TX_VALUE</string>
-          <additionalValue>
-            <value>65000</value>
-            <currency>COP</currency>
-          </additionalValue>
-          <string>TX_TAX</string>
-          <additionalValue>
-            <value>10378</value>
-            <currency>COP</currency>
-          </additionalValue>
-          <string>TX_TAX_RETURN_BASE</string>
-          <additionalValue>
-            <value>54622</value>
-            <currency>COP</currency>
-          </additionalValue>
-        </entry>
-      </additionalValues>
-      <buyer>
-        <merchantBuyerId>1</merchantBuyerId>
-        <fullName>First name and second buyer name</fullName>
-        <emailAddress>buyer_test@test.com</emailAddress>
-        <contactPhone>57 3007777777</contactPhone>
-        <dniNumber>123456789</dniNumber>
-        <shippingAddress>
-          <street1>Cr 23 No. 53-50</street1>
-          <street2>5555487</street2>
-          <city>Bogotá</city>
-          <state>Bogotá D.C.</state>
-          <country>CO</country>
-          <postalCode>000000</postalCode>
-          <phone>57 3007777777</phone>
-        </shippingAddress>
-      </buyer>
-      <shippingAddress>
-        <street1>Cr 23 No. 53-50</street1>
-        <street2>5555487</street2>
-        <city>Bogot√°</city>
-        <state>Bogot√° D.C.</state>
-        <country>CO</country>
-        <postalCode>0000000</postalCode>
-        <phone>7563126</phone>
-      </shippingAddress>
-    </order>
-    <payer>
-      <merchantPayerId>1</merchantPayerId>
-      <fullName>First name and second payer name</fullName>
-      <emailAddress>payer_test@test.com</emailAddress>
-      <contactPhone>57 3007777777</contactPhone>
-      <dniNumber>5415668464654</dniNumber>
-      <billingAddress>
-        <street1>Cr 23 No. 53-50</street1>
-        <street2>125544</street2>
-        <city>Bogotá</city>
-        <state>Bogotá D.C.</state>
-        <country>CO</country>
-        <postalCode>000000</postalCode>
-        <phone>57 3007777777</phone>
-      </billingAddress>
-    </payer>
-    <type>AUTHORIZATION_AND_CAPTURE</type>
-    <paymentMethod>NEQUI</paymentMethod>
-    <paymentCountry>CO</paymentCountry>
-    <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
-    <ipAddress>127.0.0.1</ipAddress>
-    <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
-    <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
-  </transaction>
-  <isTest>false</isTest>
-</request>
-```
-<br>
-
-Ejemplo de una Respuesta:
-```XML
-<paymentResponse>
-    <code>SUCCESS</code>
-    <transactionResponse>
-        <orderId>2151135729</orderId>
-        <transactionId>fe667b48-e685-40b3-8863-9a0cd8257860</transactionId>
-        <state>PENDING</state>
-        <paymentNetworkResponseCode>0</paymentNetworkResponseCode>
-        <trazabilityCode>3ba38ac9-3d68-48ef-bf86-b6c121404162</trazabilityCode>
-        <pendingReason>AWAITING_PAYMENT_IN_ENTITY</pendingReason>
-        <responseCode>PENDING_PAYMENT_IN_ENTITY</responseCode>
-        <responseMessage>SUCCESS</responseMessage>
-        <operationDate>2024-01-19T08:17:42</operationDate>
-    </transactionResponse>
-</paymentResponse>
-```
-
-{{< /tab >}}
-
-{{< /tabs >}}
-
-#### Formatos de Números de Teléfono Admitidos {#supported-phone-number-formats}
-
-Al utilizar integraciones API, las transacciones pueden fallar cuando el sistema recibe números de teléfono de usuario que:
-
-1. Contienen espacios en blanco.
-2. No están separados del código del país.
-3. Contienen más o menos de 10 dígitos (sin contar el código del país).
-
-Actualmente, la integración no proporciona un mecanismo para corregir automáticamente el formato del número de teléfono que el usuario ingresa. La tabla a continuación muestra ejemplos de formatos de números de teléfono y su compatibilidad con la integración:
-
-| Ejemplo de Formato de Número de Teléfono | Compatibilidad | Detalles |
-| - | - | - |
-| 57 3007777777 | Formato compatible | El código de país (57) está separado del número telefónico. |
-| 3007777777 | Formato compatible | El número telefónico no tiene espacios y tiene 10 dígitos. |
-| 573007777777 | Formato incompatible | El número telefónico y el código de país (57) no están separados. |
-| 57 300 7777777 | Formato incompatible | El número telefónico tiene espacios. |
-
-**Recomendaciones**
-
-Para prevenir errores causados por formatos de números telefónicos incompatibles, te recomendamos implementar las siguientes características en la experiencia de usuario:
-
-1. Implementa una interfaz que automáticamente cree espacios separadores en el número de teléfono móvil mientras el usuario lo ingresa, haciendo que el número sea más fácil de leer y reduciendo la probabilidad de errores de entrada manual. Asegúrate de que estos espacios sean visibles a nivel de la interfaz mientras configuras tu sistema para eliminarlos a nivel de backend.
-
-* Ejemplo de la interfaz:
-
-<img src="/assets/Payments/Nequi05ES.png" alt="PrintScreen" width="600">
-<p></p>
-
-2. Configura mensajes de error para que se muestren cuando un usuario ingrese un número de teléfono con menos de 10 dígitos o más de 10 dígitos (excluyendo el código de país, que es +57 para Colombia).
-
-* **A)** Ejemplo de una interfaz con espacios generados automáticamente donde el usuario no ha ingresado 10 dígitos:
-
-<img src="/assets/Payments/Nequi06ES.png" alt="PrintScreen" width="600">
-<p></p>
-
-* **B)** Ejemplo de una interfaz sin espacios donde el usuario ha ingresado más de 10 dígitos:
-
-<img src="/assets/Payments/Nequi07ES.png" alt="PrintScreen" width="600">
- 
-#### Pruebas en Ambiente Sandbox {#sanbox-environment-testing}
-
-Para probar las transacciones de Nequi en el ambiente Sandbox de PayU, utiliza los siguientes datos:
-
-| Número de teléfono | Comportamiento de la autorización | Comportamiento de la consulta <br>(Aprox. 5 minutos después de la autorización) |
-|-|-|-|
-| 3006666666 | Transaction rejected - Client not found on database | N/A |
-| 3007777777 | Transaction pending | Transaction approved |
-| 3007777776 | Transaction pending | Transaction declined |
-| 3007777775 | Transaction pending | Transaction pending |
-| 3007777774 | Transaction pending | Transaction failed |
-| 3007777772 | Transaction pending | Transaction expired |
-
-Puedes consultar el estado de la transacción a través de la [API de Consultas]({{< ref "queries-api.html" >}}). 
-
-## Enviar Transacciones Utilizando Efectivo o Referencia Bancaria {#submit-transactions-using-cash-or-bank-reference}
-
-Este método te permite procesar pagos de los clientes en efectivo o a través de una referencia bancaria. Para integrar este método de pago, redirige al cliente a la URL proporcionada en la respuesta del método. Tu cliente verá entonces un recibo de pago como se muestra a continuación.
-
-#### Pagos en Efectivo {#payments-in-cash}
-
-<img src="/assets/Payments/CashReceiptCO.png" alt="PrintScreen" width="75%">
-
-#### Pagos con Referencia Bancaria {#payments-with-bank-reference}
-
-<img src="/assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
-
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-2}
-
-<details>
-<summary>Solicitud</summary>
-<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
-<br>
-<div class="variables"></div>
-
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
-|-|-|-|-|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Máx:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Booleano | | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant | Objeto | | Este objeto tiene los datos de autenticación. | Sí |
-| merchant > apiLogin | Alfanumérico | Min:12 Máx:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Máx:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| transaction | Objeto | | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > order | Objeto | | Este objeto tiene los datos de la orden. | Sí |
-| transaction > order > accountId | Numérico |  | Identificador de tu cuenta. | Sí |
-| transaction > order > referenceCode | Alfanumérico | Min:1 Máx:255 | Representa el identificador de la orden en tu sistema. | Sí |
-| transaction > order > description | Alfanumérico | Min:1 Máx:255 | Descripción de la orden. | Sí |
-| transaction > order > language | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
-| transaction > order > notifyUrl | Alfanumérico | Máx:2048 | URL de confirmación de la orden. | No |
-| transaction > order > partnerId | Alfanumérico | Máx:255 | ID de aliado dentro de PayUID de aliado dentro de PayU. | No |
-| transaction > order > signature | Alfanumérico | Máx:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
-| transaction > order > shippingAddress | Objeto | | Dirección de envío. | No |
-| transaction > order > shippingAddress > street1 | Alfanumérico | Máx:100 | Línea de dirección 1. | No |
-| transaction > order > shippingAddress > street2 | Alfanumérico | Máx:100 | Línea de dirección 2. | No |
-| transaction > order > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección. | No |
-| transaction > order > shippingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección. | No |
-| transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
-| transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Código postal de la dirección. | No |
-| transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de teléfono asociado con la dirección. | No |
-| transaction > order > buyer | Objeto | | Información del comprador. | Sí |
-| transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | Identificador del comprador en tu sistema. | No |
-| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nombre del comprador. | Sí |
-| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del comprador. | Sí |
-| transaction > order > buyer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del comprador. | Sí |
-| transaction > order > buyer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del comprador. | Sí |
-| transaction > order > buyer > shippingAddress | Objeto |  | Dirección de envío del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Máx:150 | Línea de dirección 1 del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección del comprador. | Sí | 
-| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
-| transaction > order > buyer > shippingAddress > postalCode | Numérico | Máx:20 | Código postal de la dirección del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > phone | Numérico | Máx:20 | Número de teléfono de la dirección del comprador. | Sí |
-| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
-| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor no puede tener decimales. | Sí |
-| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
-| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del IVA (Impuesto al Valor Agregado). | Sí |
-| transaction > order > additionalValues > TX_TAX > value | Numérico | 12, 2 | Especifica el monto del IVA.<br>Si no se envía este parámetro, PayU aplica el impuesto actual (19%).<br>Si la cantidad está exenta de IVA, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
-| transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el IVA.<br>Si la cantidad está exenta de IVA, envía 0.<br>Este valor puede tener dos dígitos decimales  | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el valor base de la transacción. | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer | Objeto |  | Información del pagador. | Sí |
-| transaction > payer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del pagador. | Sí |
-| transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador del pagador en tu sistema. | No |
-| transaction > payer > fullName | Alfanumérico | Máx:150 | Nombre del pagador. | Sí |
-| transaction > payer > billingAddress | Objeto | | Dirección de facturación. | Sí |
-| transaction > payer > billingAddress > street1 | Alfanumérico | Máx:100 | Línea 1 de la dirección de facturación. | Sí |
-| transaction > payer > billingAddress > street2 | Alfanumérico | Máx:100 | Línea 2 de la dirección de facturación. | No |
-| transaction > payer > billingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de facturación. | Sí |
-| transaction > payer > billingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección de facturación. | Sí |
-| transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | Sí |
-| transaction > payer > billingAddress > postalCode | Alfanumérico | Máx:20 | Código postal de la dirección de facturación. | No |
-| transaction > payer > billingAddress > phone | Alfanumérico | Máx:20 | Número de teléfono de la dirección de facturación. | No |
-| transaction > payer > birthdate | Alfanumérico | Máx:10 | Fecha de nacimiento del pagador. | No |
-| transaction > payer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del pagador. | Sí |
-| transaction > payer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del pagador. | Sí |
-| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un método de pago en efectivo o de referencia bancaria válido. [Ver los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
-| transaction > paymentCountry | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí |
-| transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
-| transaction > ipAddress | Alfanumérico | Máx:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
-
-</details>
-
-<details>
-<summary>Respuesta</summary>
-<br>
-<div class="variables"></div>
-
-| Nombre del Campo | Formato | Tamaño | Descripción |
-|-|-|-|-|
-| code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
-| error | Alfanumérico | Máx:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse | Objeto | | Datos de la respuesta. |
-| transactionResponse > orderId | Numérico | | Identificador generado o existente de la orden en PayU. |
-| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
-| transactionResponse > state | Alfanumérico | Máx:32 | Estado de la transacción. Como el pago se realiza de forma externa, el estado de una transacción exitosa es `PENDING` |
-| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Máx:255 | Código de respuesta retornado por la red bancaria. |
-| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Máx:255 | Mensaje de error retornado por la red bancaria. |
-| transactionResponse > trazabilityCode | Alfanumérico | Máx:32 | Código de trazabilidad retornado por la red bancaria. |
-| transactionResponse > authorizationCode | Alfanumérico | Máx:12 | Código de autorización retornado por la red bancaria. |
-| transactionResponse > pendingReason | Alfanumérico | Máx:21 | Código de la razón asociada con el estado, como se mencionó en  `transactionResponse > state`, la transacción está en espera del pago. |
-| transactionResponse > responseCode | Alfanumérico | Máx:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_TRANSACTION_CONFIRMATION`. |
-| transactionResponse > responseMessage | Alfanumérico | Máx:2048 | Mensaje asociado con el código de respuesta. |
-| transactionResponse > operationDate | Fecha | | Fecha de creación de la respuesta en el sistema de PayU. |
-| transactionResponse > extraParameters | Objeto | | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
-| transactionResponse > additionalInfo | Objeto | | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
-
-</details>
-
-#### Consideraciones {#considerations-1}
-
-* El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
-* Para <!--`BALOTO` y -->`EFECTY`, la confirmación del pago tarda 15 minutos. Para `BANK_REFERENCED` y `OTHERS_CASH` (Su Red), la confirmación es en línea.
-* Los valores mínimos de máximos para pagos en <!--`BALOTO`, -->`EFECTY` y `OTHERS_CASH` (Su Red) son:
-   <!-- - `BALOTO` > Min: $3.000 COP - Max: $1.000.000 COP-->
-   - `EFECTY` > Min: $20.000 COP - Máx: $6.000.000 COP
-   - `OTHERS_CASH` (Su Red) > Min: $1.000 COP - Máx: $4.000.000 COP
-* El parámetro `transactionResponse.extraParameters` tiene los siguientes parámetros relacionados con la transacción:
-   - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.   
-   - **REFERENCE**: referencia de pago interna generada por PayU.
-   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
-   - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
-   - **BANCO_BOGOTA_SERVICE_CODE**: código de pago para Banco de Bogotá. Disponible cuando utilices `BANK_REFERENCED`.
-   - **BANK_REFERENCED_NAME**: nombre de la referencia para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
-   - **BANCOLOMBIA_SERVICE_CODE**: código de pago para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
-
-### Llamado a la API {#api-call-2}
-
-Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
-
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-Ejemplo de una Solicitud:
-```JSON
-{
-   "language": "es",
-   "command": "SUBMIT_TRANSACTION",
-   "merchant": {
-      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
-      "apiLogin": "pRRXKOl8ikMmt9u"
-   },
-   "transaction": {
-      "order": {
-         "accountId": "512321",
-         "referenceCode": "PRODUCT_TEST_2021-06-23T19:59:43.229Z",
-         "description": "Payment test description",
-         "language": "es",
-         "signature": "1d6c33aed575c4974ad5c0be7c6a1c87",
-         "notifyUrl": "http://www.payu.com/notify",
-         "additionalValues": {
-            "TX_VALUE": {
-               "value": 65000,
-               "currency": "COP"
-         },
-            "TX_TAX": {
-               "value": 10378,
-               "currency": "COP"
-         },
-            "TX_TAX_RETURN_BASE": {
-               "value": 54622,
-               "currency": "COP"
-         }
-         },
-         "buyer": {
-            "merchantBuyerId": "1",
-            "fullName": "First name and second buyer name",
-            "emailAddress": "buyer_test@test.com",
-            "contactPhone": "7563126",
-            "dniNumber": "123456789",
-            "shippingAddress": {
-               "street1": "Cr 23 No. 53-50",
-               "street2": "5555487",
-               "city": "Bogotá",
-               "state": "Bogotá D.C.",
-               "country": "CO",
-               "postalCode": "000000",
-               "phone": "7563126"
-            }
-         },
-         "shippingAddress": {
-            "street1": "Cr 23 No. 53-50",
-            "street2": "5555487",
-            "city": "Bogotá",
-            "state": "Bogotá D.C.",
-            "country": "CO",
-            "postalCode": "0000000",
-            "phone": "7563126"
-         }
-      },
-      "payer": {
-         "merchantPayerId": "1",
-         "fullName": "First name and second payer name",
-         "emailAddress": "payer_test@test.com",
-         "contactPhone": "7563126",
-         "dniNumber": "5415668464654",
-         "billingAddress": {
-            "street1": "Cr 23 No. 53-50",
-            "street2": "125544",
-            "city": "Bogotá",
-            "state": "Bogotá D.C.",
-            "country": "CO",
-            "postalCode": "000000",
-            "phone": "7563126"
-         }
-      },
-      "type": "AUTHORIZATION_AND_CAPTURE",
-      "paymentMethod": "EFECTY",
-      "expirationDate": "2021-06-24T20:58:35.804",
-      "paymentCountry": "CO",
-      "ipAddress": "127.0.0.1"
-   },
-   "test": false
-}
-```
-<br>
-
-Ejemplo de una Respuesta:
-```JSON
-{
-    "code": "SUCCESS",
-    "error": null,
-    "transactionResponse": {
-        "orderId": 1400449740,
-        "transactionId": "f3531b6a-3e30-4a8b-8a69-d4a5bd2a3377",
-        "state": "PENDING",
-        "paymentNetworkResponseCode": null,
-        "paymentNetworkResponseErrorMessage": null,
-        "trazabilityCode": "f3531b6a-3e30-4a8b-8a69-d4a5bd2a3377",
-        "authorizationCode": null,
-        "pendingReason": "AWAITING_NOTIFICATION",
-        "responseCode": "PENDING_TRANSACTION_CONFIRMATION",
-        "errorCode": null,
-        "responseMessage": null,
-        "transactionDate": null,
-        "transactionTime": null,
-        "operationDate": 1624463917065,
-        "referenceQuestionnaire": null,
-        "extraParameters": {
-            "EXPIRATION_DATE": 1624568315804,
-            "REFERENCE": 1400449740,
-            "URL_PAYMENT_RECEIPT_PDF": "https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/receipt?vid=1400449740Yf3531b6a3e304a8Y30f3f7b4598eb19",
-            "URL_PAYMENT_RECEIPT_HTML": "https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/app/v2?vid=1400449740Yf3531b6a3e304a8Y30f3f7b4598eb19"
-        },
-        "additionalInfo": {
-            "paymentNetwork": "EFECTY",
-            "rejectionType": "NONE",
-            "responseNetworkMessage": null,
-            "travelAgencyAuthorizationCode": null,
-            "cardType": null,
-            "transactionType": "AUTHORIZATION_AND_CAPTURE"
-        }
-    }
-}
-```
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-<br>
-
-Ejemplo de una Solicitud:
-```XML
-<request>
-   <language>es</language>
-   <command>SUBMIT_TRANSACTION</command>
-   <merchant>
-      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
-      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
-   </merchant>
-   <transaction>
-      <order>
-         <accountId>512321</accountId>
-         <referenceCode>PRODUCT_TEST_2021-06-23T19:59:43.229Z</referenceCode>
-         <description>Payment test description</description>
-         <language>es</language>
-         <signature>1d6c33aed575c4974ad5c0be7c6a1c87</signature>
-         <notifyUrl>http://www.payu.com/notify</notifyUrl>
-         <additionalValues>
-            <entry>
-               <string>TX_VALUE</string>
-               <additionalValue>
-                  <value>65000</value>
-                  <currency>COP</currency>
-               </additionalValue>
-               <string>TX_TAX</string>
-               <additionalValue>
-                  <value>10378</value>
-                  <currency>COP</currency>
-               </additionalValue>
-               <string>TX_TAX_RETURN_BASE</string>
-               <additionalValue>
-                  <value>54622</value>
-                  <currency>COP</currency>
-               </additionalValue>
-            </entry>
-         </additionalValues>
-         <buyer>
-            <merchantBuyerId>1</merchantBuyerId>
-            <fullName>First name and second buyer name</fullName>
-            <emailAddress>buyer_test@test.com</emailAddress>
-            <contactPhone>7563126</contactPhone>
-            <dniNumber>123456789</dniNumber>
-            <shippingAddress>
-               <street1>Cr 23 No. 53-50</street1>
-               <street2>5555487</street2>
-               <city>Bogotá</city>
-               <state>Bogotá D.C.</state>
-               <country>CO</country>
-               <postalCode>000000</postalCode>
-               <phone>7563126</phone>
-            </shippingAddress>
-         </buyer>
-         <shippingAddress>
-            <street1>Cr 23 No. 53-50</street1>
-            <street2>5555487</street2>
-            <city>Bogotá</city>
-            <state>Bogotá D.C.</state>
-            <country>CO</country>
-            <postalCode>0000000</postalCode>
-            <phone>7563126</phone>
-         </shippingAddress>
-      </order>
-      <payer>
-         <merchantPayerId>1</merchantPayerId>
-         <fullName>First name and second payer name</fullName>
-         <emailAddress>payer_test@test.com</emailAddress>
-         <contactPhone>7563126</contactPhone>
-         <dniNumber>5415668464654</dniNumber>
-         <billingAddress>
-            <street1>Cr 23 No. 53-50</street1>
-            <street2>5555487</street2>
-            <city>Bogotá</city>
-            <state>Bogotá D.C.</state>
-            <country>CO</country>
-            <postalCode>000000</postalCode>
-            <phone>7563126</phone>
-         </billingAddress>
-      </payer>
-      <type>AUTHORIZATION_AND_CAPTURE</type>
-      <paymentMethod>EFECTY</paymentMethod>
-      <expirationDate>2021-06-24T20:58:35.804</expirationDate>
-      <paymentCountry>CO</paymentCountry>
-      <ipAddress>127.0.0.1</ipAddress>
-   </transaction>
-   <isTest>false</isTest>
-</request>
-```
-<br>
-
-Ejemplo de una Respuesta:
-```XML
-<paymentResponse>
-    <code>SUCCESS</code>
-    <transactionResponse>
-        <orderId>1400449797</orderId>
-        <transactionId>0b41f4d0-4486-4acf-ab5e-d757e35d994d</transactionId>
-        <state>PENDING</state>
-        <trazabilityCode>0b41f4d0-4486-4acf-ab5e-d757e35d994d</trazabilityCode>
-        <pendingReason>AWAITING_NOTIFICATION</pendingReason>
-        <responseCode>PENDING_TRANSACTION_CONFIRMATION</responseCode>
-        <operationDate>2021-06-23T11:20:03</operationDate>
-        <extraParameters>
-            <entry>
-                <string>EXPIRATION_DATE</string>
-                <date>2021-06-30T23:59:59</date>
-            </entry>
-            <entry>
-                <string>REFERENCE</string>
-                <int>1400449797</int>
-            </entry>
-            <entry>
-                <string>URL_PAYMENT_RECEIPT_PDF</string>
-                <string>https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/receipt?vid=1400449797Y0b41f4d044864acY3e5f14fc8ef00e8</string>
-            </entry>
-            <entry>
-                <string>URL_PAYMENT_RECEIPT_HTML</string>
-                <string>https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/app/v2?vid=1400449797Y0b41f4d044864acY3e5f14fc8ef00e8</string>
-            </entry>
-        </extraParameters>
-        <additionalInfo>
-            <paymentNetwork>EFECTY</paymentNetwork>
-            <rejectionType>NONE</rejectionType>
-            <transactionType>AUTHORIZATION_AND_CAPTURE</transactionType>
-        </additionalInfo>
-    </transactionResponse>
-</paymentResponse>
-```
-
-{{< /tab >}}
-
-{{< /tabs >}}
-
 ## Enviar Transacciones Utilizando Transferencia Bancaria (PSE) {#submit-transactions-using-bank-transfer-pse}
 
 Este método te permite procesar los pagos realizados por tus clientes por medio de transferencia bancaria. En Colombia, las transferencias bancarias se hacen a través de PSE, para integrarte con este método de pago, necesitas crear un formulario de pago siguiendo estos pasos:
@@ -1366,7 +505,7 @@ Este método te permite procesar los pagos realizados por tus clientes por medio
     - Débito de cuenta
     - Tarjeta débito
 
-2. Consulta la lista de bancos disponibles para mostrarla al pagador. Para consultar la lista de bancos, consulta [este método]({{< ref "#banks-list---pse" >}}).<br>Debes actualizar la lista de bancos en tu sistema por lo menos una vez al día.
+2. Consulta la lista de bancos disponibles para mostrarla al pagador. Para consultar la lista de bancos, consulta [este método]({{< ref "#banks-list-for-pse" >}}).<br>Debes actualizar la lista de bancos en tu sistema por lo menos una vez al día.
 
 3. Muestra la lista de bancos tal y como se muestra a continuación:
 
@@ -1402,7 +541,7 @@ La lista de documentos disponibles es:
 
 6. Debes enviar el número de identificación del pagador en el extra parámetro `PSE_REFERENCE3` de la petición.
 
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-3}
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-1}
 
 <details>
 <summary>Solicitud</summary>
@@ -1818,74 +957,69 @@ Ejemplo de una Respuesta:
 
 {{< /tabs >}}
 
-## Enviar Transacciones Utilizando Botón Bancolombia {#submit-transactions-using-bancolombia-button}
+### Lista de Bancos para PSE {#banks-list-for-pse}
 
-El Botón de Pagos Bancolombia es una solución de pagos en línea que facilita a los usuarios realizar transacciones de forma rápida y segura a través de su cuenta en Bancolombia. Esta herramienta está disponible para millones de usuarios y permite completar pagos directamente desde el sitio web del comercio, redirigiendo al usuario a una plataforma segura proporcionada por el banco.
+Este método retorna la lista de bancos disponibles para realizar [pagos utilizando PSE]({{< ref "#submit-transactions-using-bank-transfer-pse" >}}). 
 
-### Beneficios del Botón Bancolombia
-
-Además de ser una opción cómoda para los usuarios, el Botón de Pagos Bancolombia representa una alternativa innovadora para los comercios. Al integrar esta opción en tu plataforma de pagos a través de PayU, tu negocio puede obtener los siguientes beneficios: 
-
-* **Incremento en las ventas:** Alcanza más clientes que prefieren métodos de pago digitales respaldados por Bancolombia, lo que contribuye a un mayor número de transacciones completadas y una mejor retención de clientes.
-
-* **Mayor comodidad:** Ofrece una experiencia de pago ágil y versátil, permitiendo a los usuarios efectuar pagos directamente desde su cuenta bancaria sin necesidad de tarjetas físicas o efectivo. 
-
-* **Seguridad reforzada:** Facilita transacciones protegidas por los sistemas de seguridad avanzados de Bancolombia, una de las instituciones financieras más confiables de Colombia. 
-
-Al integrar el Botón de Pagos Bancolombia, no solo mejoras la experiencia de compra para tus clientes, sino que también fortaleces tu negocio con un método de pago alineado a las preferencias del mercado local.
-
-### Proceso de Pago con el Botón Bancolombia
-
-El proceso de pago está diseñado para ser simple y seguro. Sigue estos pasos para completar una transacción:
-
-1. Selecciona el método de pago en el checkout.
-
-<img src="/assets/Payments/es_botonbancolombia_1.png" alt="PrintScreen" width="650">
-<p></p>
-
-2. Acepta los términos y condiciones y haz clic en **_Pagar_**.
-
-<img src="/assets/Payments/es_botonbancolombia_2.png" alt="PrintScreen" width="650">
-<p></p>
-
-3. La integración te redirigirá al sitio transaccional de Bancolombia para completar el pago.
-
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-4}
-
-Esta API permite gestionar la intención de compra, obtener un código único de transferencia y generar la experiencia de pago. La integración necesita consumir un servicio REST del banco utilizando un **Client Secret** y un **Client ID**, que serán entregados al usuario por correo confidencial.
+#### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-2}
 
 <details>
 <summary>Solicitud</summary>
+<br>
 <div class="variables"></div>
 
-| **Campo** | **Definición** | **Tipo** | **Longitud Máx.** | **Ejemplo** | **Observación** |
-|-|-|-|-|-|-|
-| commerceTransferButtonId | Identificador único del botón de transferencia. | String | 50 | `"h4ShG3NER1C"` | Entregado durante el proceso de vinculación. |
-| transferReference | Código único asignado por el comercio para identificar la transacción. | String | 48 | `"referencia0123"` | Definido por el comercio. |
-| transferDescription | Descripción de la transferencia, asociada al producto, servicio o factura. | String | 225 | transferDescription: `"Compra online"` | |
-| transferAmount | Monto total de la transacción que será debitado al cliente pagador. | Double | 15 | `23450.33` | En pruebas, el monto máximo es $1.000.000 COP y el mínimo $1.000 COP. |
-| commerceUrl | URL de redirección para el cliente tras completar la transferencia. | String | 225 | `"https://gateway.com/payment/route?commerce=compraonline"` | |
-| confirmationURL | URL de confirmación utilizada para notificar al comercio la finalización de la transacción. | String | 500 | `"https://espagos-api-dev.cloud.net/callback"` | Esta funcionalidad es obligatoria. |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+|-|-|-|-|:-:|
+| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| command | Alfanumérico | Máx:32 | Asigna `GET_BANKS_LIST`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano | | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| merchant | Objeto | | Este objeto tiene los datos de autenticación. | Sí |
+| merchant > apiLogin | Alfanumérico | Min:12 Máx:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| merchant > apiKey | Alfanumérico | Min:6 Máx:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| bankListInformation | Objeto | | Este objeto tiene la información de la consulta. | Sí |
+| bankListInformation > paymentMethod | Alfanumérico | | Asigna `PSE`. | Sí |
+| bankListInformation > paymentCountry | Alfanumérico | | Asigna `CO`. | Sí |
 
 </details>
 
-### Llamado a la API {#api-call-4}
+<details>
+<summary>Respuesta</summary>
+<br>
+<div class="variables"></div>
 
-Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
+| Nombre del Campo | Formato | Tamaño | Descripción |
+|-|-|-|-|
+| code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
+| banks | Objeto | | Lista de bancos disponibles en PSE. |
+| banks > id | Numérico | | Identificador interno del banco. |
+| banks > description | Alfanumérico | | Nombre del banco para ser mostrado en la lista. |
+| banks > pseCode | Alfanumérico | | Código para enviar en el extra parámetro `FINANCIAL_INSTITUTION_CODE` de la solicitud de pago. |
+
+</details>
+
+#### Llamado a la API {#api-call-9}
+
+Los siguientes son los cuerpos de la petición y la respuesta para este método.
+
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
 
 Ejemplo de una Solicitud:
 ```JSON
 {
-  "data": [
-    {
-      "commerceTransferButtonId": "h4ShG3NER1C",
-      "transferReference": "1002348899557697899",
-      "transferDescription": "Compra online",
-      "transferAmount": 3458.33,
-      "commerceUrl": "https://gateway.com/payment/route?commerce=compraonline",
-      "confirmationURL": "https://espagos-api-dev.cloud.net/callback"
-    }
-  ]
+   "language": "es",
+   "command": "GET_BANKS_LIST",
+   "merchant": {
+      "apiLogin": "pRRXKOl8ikMmt9u",
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+   },
+   "test": false,
+   "bankListInformation": {
+      "paymentMethod": "PSE",
+      "paymentCountry": "CO"
+   }
 }
 ```
 <br>
@@ -1893,76 +1027,618 @@ Ejemplo de una Solicitud:
 Ejemplo de una Respuesta:
 ```JSON
 {
-  "meta": {
-    "messageId": "269d2d0f-6c87-4515-87f7-e3f11ca976d6",
-    "_version": "1.0",
-    "_requestDate": "2020-10-19T00:00:24.422Z",
-    "_clientRequest": "29fa65a1-0227-40cd-9efc-6beaff247614"
-  },
-  "data": [
-    {
-      "header": {
-        "type": "Transference",
-        "id": "_24iReQwXEI"
-      },
-      "transferCode": "_24iReQwXEI",
-      "redirectURL": "https://sandbox-boton-dev.apps.ambientescb.com/web/transfer-gateway/checkout/_24iReQwXEI"
-    }
-  ]
+    "code": "SUCCESS",
+    "error": null,
+    "banks": [
+        {
+            "id": "34e6e912-a395-4d31-9599-9baa176c1a61",
+            "description": "A continuación seleccione su banco",
+            "pseCode": "0"
+        },
+        {
+            "id": "033aec11-e068-4252-8043-237144be9233",
+            "description": "BAN.CO",
+            "pseCode": "1552"
+        },
+        {
+            "id": "a720cb4c-6549-4932-83be-6d72b3eb0016",
+            "description": "BANCAMIA",
+            "pseCode": "1059"
+        },
+        {
+            "id": "d9280852-47a5-4e99-94ac-3d7648ba79a3",
+            "description": "BANCO AGRARIO",
+            "pseCode": "1040"
+        },
+        {
+            "id": "ff216e8a-28ba-4bf6-9935-b94dfdfd96a0",
+            "description": "BANCO AGRARIO DESARROLLO",
+            "pseCode": "1081"
+        },
+        {
+            "id": "5073154e-efd4-4870-9315-abb926e87519",
+            "description": "BANCO AGRARIO QA DEFECTOS",
+            "pseCode": "1080"
+        },
+        {
+            "id": "6e61a91d-58bf-46ec-aa09-1f44974dda7e",
+            "description": "BANCO CAJA SOCIAL",
+            "pseCode": "10322"
+        },
+        {
+            "id": "e062711e-6bbd-4a13-819a-d60084f9c6fa",
+            "description": "BANCO CAJA SOCIAL DESARROLLO",
+            "pseCode": "1032"
+        },
+        {
+            "id": "a9b5cc17-b0ae-4708-9835-586a0bef95df",
+            "description": "BANCO COMERCIAL AVVILLAS S.A.",
+            "pseCode": "1052"
+        },
+        {
+            "id": "c5c97dfe-6101-453f-bcd4-691f4b329a3c",
+            "description": "BANCO COOMEVA S.A. - BANCOOMEVA",
+            "pseCode": "1061"
+        },
+        {
+            "id": "7a2e8d04-e8c8-404b-8e49-d5d37c107a12",
+            "description": "BANCO COOPERATIVO COOPCENTRAL",
+            "pseCode": "1066"
+        },
+        {
+            "id": "197fe0af-f658-4fe0-ad1b-952e174de549",
+            "description": "BANCO CREDIFINANCIERA",
+            "pseCode": "1058"
+        },
+        {
+            "id": "b1de44f1-cede-4aca-9d3f-3313d5cc0c63",
+            "description": "BANCO DAVIVIENDA",
+            "pseCode": "1051"
+        },
+        {
+            "id": "7a10219e-04a7-4c31-b747-54ded27c7f07",
+            "description": "BANCO DAVIVIENDA Desarrollo",
+            "pseCode": "10512"
+        },
+        {
+            "id": "ed06f40e-a1b9-4e48-8851-bffb4cda0480",
+            "description": "BANCO DE BOGOTA",
+            "pseCode": "1039"
+        },
+        {
+            "id": "4592a13b-6334-4fba-8402-9d006b599fa8",
+            "description": "BANCO DE BOGOTA DESARROLLO 2013",
+            "pseCode": "1001"
+        },
+        {
+            "id": "55f59084-cd3b-47d2-a420-6442cdb9e4b1",
+            "description": "BANCO DE OCCIDENTE",
+            "pseCode": "1023"
+        },
+        {
+            "id": "8e134fca-4fde-44e6-b012-55e8f2d338ca",
+            "description": "BANCO FALABELLA",
+            "pseCode": "1062"
+        },
+        {
+            "id": "8eb03abf-5608-419b-8d2c-9d90b8ab6b88",
+            "description": "BANCO GNB COLOMBIA (ANTES HSBC)",
+            "pseCode": "1010"
+        },
+        {
+            "id": "283e0068-749f-43f1-a2e5-340910f41af3",
+            "description": "BANCO GNB SUDAMERIS",
+            "pseCode": "1012"
+        },
+        {
+            "id": "8b0bf5e7-394d-4f7e-a467-e4d21d04c9fb",
+            "description": "BANCO PICHINCHA S.A.",
+            "pseCode": "1060"
+        },
+        {
+            "id": "beeb494a-4ce5-41b4-b497-0756f0b6a6d9",
+            "description": "BANCO POPULAR",
+            "pseCode": "1002"
+        },
+        {
+            "id": "a5a4b740-1644-4627-ae2a-41b13ffc7c5e",
+            "description": "BANCO PRODUCTOS POR SEPARADO",
+            "pseCode": "1203"
+        },
+        {
+            "id": "47e747ef-c817-4be6-9eff-b6b16f50d001",
+            "description": "Banco PSE",
+            "pseCode": "1101"
+        },
+        {
+            "id": "589939d7-06d1-4933-a101-8bb29b801d76",
+            "description": "BANCO SANTANDER COLOMBIA",
+            "pseCode": "1065"
+        },
+        {
+            "id": "fcdaa98e-99ce-4e76-a504-1e053a05e773",
+            "description": "BANCO SERFINANZA",
+            "pseCode": "1069"
+        },
+        {
+            "id": "201608c6-81de-436f-967a-2ec7c212c100",
+            "description": "BANCO TEQUENDAMA",
+            "pseCode": "1035"
+        },
+        {
+            "id": "a8f33ba3-0053-464a-afbe-9add7c63fbc3",
+            "description": "Banco union Colombia Credito",
+            "pseCode": "1004"
+        },
+        {
+            "id": "5dfa1b2c-64bd-4e8c-9fad-585337cfd4ff",
+            "description": "BANCO UNION COLOMBIANO",
+            "pseCode": "1022"
+        },
+        {
+            "id": "56e306ef-6011-4f41-9640-b98449d6a6be",
+            "description": "BANCO UNION COLOMBIANO FD2",
+            "pseCode": "1005"
+        },
+        {
+            "id": "bc883c0d-3610-4a88-96ca-2e2baa1dd2e5",
+            "description": "Banco Web Service ACH",
+            "pseCode": "1055"
+        },
+        {
+            "id": "4e97e580-fc92-47ea-af4f-7b3b3ddffff8",
+            "description": "Banco Web Service ACH WSE 3.0",
+            "pseCode": "1055"
+        },
+        {
+            "id": "931f6bfb-283e-4721-bb86-4a7484bfd28e",
+            "description": "BANCOLOMBIA DATAPOWER",
+            "pseCode": "10072"
+        },
+        {
+            "id": "1285de9c-8d47-49f7-b00a-e87882e2a3f9",
+            "description": "BANCOLOMBIA DESARROLLO",
+            "pseCode": "10071"
+        },
+        {
+            "id": "451f0e5f-5db4-4f55-a1fc-b38e06526e04",
+            "description": "BANCOLOMBIA QA",
+            "pseCode": "1007"
+        },
+        {
+            "id": "448e00ec-c479-497d-9a35-0dfbbf462f72",
+            "description": "BANKA",
+            "pseCode": "1077"
+        },
+        {
+            "id": "5f3a7adb-b283-4ca3-bee9-741f1306a03d",
+            "description": "BBVA COLOMBIA S.A.",
+            "pseCode": "1013"
+        },
+        {
+            "id": "cd4286fa-850a-4b34-96d1-f71d6a79f44a",
+            "description": "BBVA DESARROLLO",
+            "pseCode": "1513"
+        },
+        {
+            "id": "10e9b7b6-7a5f-4d5b-8d7f-4b2020f43f93",
+            "description": "CITIBANK COLOMBIA S.A.",
+            "pseCode": "1009"
+        },
+        {
+            "id": "77f0988f-cf45-4931-bbcd-984e07e0fc51",
+            "description": "COLTEFINANCIERA",
+            "pseCode": "1370"
+        },
+        {
+            "id": "48c81f6a-e0f1-4c1d-ab9b-9915726e3596",
+            "description": "CONFIAR COOPERATIVA FINANCIERA",
+            "pseCode": "1292"
+        },
+        {
+            "id": "8694df26-5ccd-45c0-b5b7-2b995c47f81a",
+            "description": "COOPERATIVA FINANCIERA COTRAFA",
+            "pseCode": "1289"
+        },
+        {
+            "id": "1c222feb-2b58-408c-a495-ade06b6825c0",
+            "description": "COOPERATIVA FINANCIERA DE ANTIOQUIA",
+            "pseCode": "1283"
+        },
+        {
+            "id": "70a18a09-38f2-4f62-aba6-9ad28c30c966",
+            "description": "CREDIFIANCIERA",
+            "pseCode": "1558"
+        },
+        {
+            "id": "3f8b3126-8aa3-4438-8a6c-1d544184f2d7",
+            "description": "DALE",
+            "pseCode": "1097"
+        },
+        {
+            "id": "a953078b-5e22-42ea-9301-954558e8f463",
+            "description": "DAVIPLATA",
+            "pseCode": "1551"
+        },
+        {
+            "id": "2ad780ba-a1e8-4cb9-9150-670429aae092",
+            "description": "GIROS Y FINANZAS COMPAÑIA DE FINANCIAMIENTO S.A",
+            "pseCode": "1303"
+        },
+        {
+            "id": "c0bfb716-a098-40f6-84b5-1972a4846506",
+            "description": "IRIS",
+            "pseCode": "1637"
+        },
+        {
+            "id": "7e1efd88-4f88-4e21-a972-28b526b27da5",
+            "description": "ITAU",
+            "pseCode": "1006"
+        },
+        {
+            "id": "26c9a2df-6b4f-4309-9137-3692d9bb9f82",
+            "description": "MOVII S.A",
+            "pseCode": "1801"
+        },
+        {
+            "id": "d9b48a70-6068-4116-a345-154381e5d953",
+            "description": "NEQUI CERTIFICACION",
+            "pseCode": "1508"
+        },
+        {
+            "id": "60199dc5-7d38-49c6-92a5-b839dc0087d2",
+            "description": "prueba restriccion",
+            "pseCode": "9988"
+        },
+        {
+            "id": "be467299-d90a-407e-86d3-01e30ade1e06",
+            "description": "Prueba Steve",
+            "pseCode": "121212"
+        },
+        {
+            "id": "201acc05-4c4f-49dc-9be6-3261a6ce4a3c",
+            "description": "RAPPIPAY",
+            "pseCode": "1151"
+        },
+        {
+            "id": "7602e001-6199-48bc-9ee3-466f8eb2e422",
+            "description": "SCOTIABANK COLPATRIA DESARROLLO",
+            "pseCode": "1019"
+        },
+        {
+            "id": "9bb638a0-4c3f-41d2-8811-f8cdd29b0db2",
+            "description": "SCOTIABANK COLPATRIA UAT",
+            "pseCode": "1078"
+        },
+        {
+            "id": "086547b5-313b-42c7-acef-93d0f76b1dd5",
+            "description": "SEIVY – GM FINANCIAL",
+            "pseCode": "1305"
+        }
+    ]
 }
 ```
 
-### Condiciones Técnicas
+{{< /tab >}}
 
-* **Condiciones para el campo `transferReference`:**
-Debe tener un máximo de 48 caracteres numéricos y no incluir caracteres especiales.
+{{< tab tabNum="2" >}}
+<br>
 
-* **Exposición del servicio de callback:** 
-Es obligatorio implementar el callback para recibir notificaciones en tiempo real sobre el estado final de la transacción. La URL de notificación debe ser proporcionada por el usuario beneficiario y será utilizada para enviar el estado final de la transacción. El sistema intentará notificar hasta 3 veces, con intervalos de 30 segundos entre cada intento.
-
-#### Estructura de la Respuesta del Callback
-
-<details>
-<summary>Respuesta</summary>
-<div class="variables"></div>
-
-| **Campo** | **Definición** | **Tipo** | **Longitud Máx.** | **Ejemplo** |
-|-|-|-|-|-|
-| transferVoucher | Número de comprobante de la transacción. | String | 50 | `"TRGQx8jMgCEG"` |
-| transferAmount | Monto total de la transacción. | Double | 15 | `1000.00` |
-| transferStateDescription  | Descripción del resultado del estado de la transacción. | String | 225 | `"Invalid account"` |
-| sign | Firma utilizada para validar la integridad de la solicitud generada. | String | 128 | `"b6f7bc914b69824df799db0ad7c9bb26"` |
-| requestDate | Fecha y hora en que se registró la orden. | DateTime | 23 | `"2020-11-25T09:14:22.697-0500"` |
-| transferState | Estado actual de la transacción. | String | 20 | `"rejected"`, `"approved"`, `"pending"`    |
-| transferDate | Fecha y hora en que se aprobó o rechazó la transacción. | DateTime | 20 | `"2020-11-10T08:04:54.0000500"` |
-| transferCode | Identificador único de la transferencia. | String | 50 | `"_oXsTE8kNo9"` |
-| transferReference | Código de referencia de la transacción asignado por el comercio. | String | 48 | `"Referencia05013418"` |
-| commerceTransferButtonId  | Identificador único del botón de transferencia del comercio (HASH). | String | 50 | `"h4ShG3NER1C"` |
-
-</details>
+Ejemplo de una Solicitud:
+```XML
+<request>
+    <language>en</language>
+    <command>GET_BANKS_LIST</command>
+    <merchant>
+        apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+        <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+    </merchant>
+    <isTest>false</isTest>
+    <bankListInformation>
+        <paymentMethod>PSE</paymentMethod>
+        <paymentCountry>CO</paymentCountry>
+    </bankListInformation>
+</request>
+```
 <br>
 
 Ejemplo de una Respuesta:
-```JSON
-{
-  "data": {
-    "commerceTransferButtonId": "hA5hg3NER1c",
-    "transferReference": "prueba201123",
-    "transferDescription": "Compra online",
-    "transferAmount": 23458.33,
-    "commerceUrl": "https://www.commerce.com",
-    "confirmationURL": "https://pagos-api-dev.cloud.net/callback"
-  }
-}
+```XML
+<bankListResponse>
+    <code>SUCCESS</code>
+    <banks>
+        <bank>
+            <id>34e6e912-a395-4d31-9599-9baa176c1a61</id>
+            <description>A continuación seleccione su banco</description>
+            <pseCode>0</pseCode>
+        </bank>
+        <bank>
+            <id>033aec11-e068-4252-8043-237144be9233</id>
+            <description>BAN.CO</description>
+            <pseCode>1552</pseCode>
+        </bank>
+        <bank>
+            <id>a720cb4c-6549-4932-83be-6d72b3eb0016</id>
+            <description>BANCAMIA</description>
+            <pseCode>1059</pseCode>
+        </bank>
+        <bank>
+            <id>d9280852-47a5-4e99-94ac-3d7648ba79a3</id>
+            <description>BANCO AGRARIO</description>
+            <pseCode>1040</pseCode>
+        </bank>
+        <bank>
+            <id>ff216e8a-28ba-4bf6-9935-b94dfdfd96a0</id>
+            <description>BANCO AGRARIO DESARROLLO</description>
+            <pseCode>1081</pseCode>
+        </bank>
+        <bank>
+            <id>5073154e-efd4-4870-9315-abb926e87519</id>
+            <description>BANCO AGRARIO QA DEFECTOS</description>
+            <pseCode>1080</pseCode>
+        </bank>
+        <bank>
+            <id>6e61a91d-58bf-46ec-aa09-1f44974dda7e</id>
+            <description>BANCO CAJA SOCIAL</description>
+            <pseCode>10322</pseCode>
+        </bank>
+        <bank>
+            <id>e062711e-6bbd-4a13-819a-d60084f9c6fa</id>
+            <description>BANCO CAJA SOCIAL DESARROLLO</description>
+            <pseCode>1032</pseCode>
+        </bank>
+        <bank>
+            <id>a9b5cc17-b0ae-4708-9835-586a0bef95df</id>
+            <description>BANCO COMERCIAL AVVILLAS S.A.</description>
+            <pseCode>1052</pseCode>
+        </bank>
+        <bank>
+            <id>c5c97dfe-6101-453f-bcd4-691f4b329a3c</id>
+            <description>BANCO COOMEVA S.A. - BANCOOMEVA</description>
+            <pseCode>1061</pseCode>
+        </bank>
+        <bank>
+            <id>7a2e8d04-e8c8-404b-8e49-d5d37c107a12</id>
+            <description>BANCO COOPERATIVO COOPCENTRAL</description>
+            <pseCode>1066</pseCode>
+        </bank>
+        <bank>
+            <id>197fe0af-f658-4fe0-ad1b-952e174de549</id>
+            <description>BANCO CREDIFINANCIERA</description>
+            <pseCode>1058</pseCode>
+        </bank>
+        <bank>
+            <id>b1de44f1-cede-4aca-9d3f-3313d5cc0c63</id>
+            <description>BANCO DAVIVIENDA</description>
+            <pseCode>1051</pseCode>
+        </bank>
+        <bank>
+            <id>7a10219e-04a7-4c31-b747-54ded27c7f07</id>
+            <description>BANCO DAVIVIENDA Desarrollo</description>
+            <pseCode>10512</pseCode>
+        </bank>
+        <bank>
+            <id>ed06f40e-a1b9-4e48-8851-bffb4cda0480</id>
+            <description>BANCO DE BOGOTA</description>
+            <pseCode>1039</pseCode>
+        </bank>
+        <bank>
+            <id>4592a13b-6334-4fba-8402-9d006b599fa8</id>
+            <description>BANCO DE BOGOTA DESARROLLO 2013</description>
+            <pseCode>1001</pseCode>
+        </bank>
+        <bank>
+            <id>55f59084-cd3b-47d2-a420-6442cdb9e4b1</id>
+            <description>BANCO DE OCCIDENTE</description>
+            <pseCode>1023</pseCode>
+        </bank>
+        <bank>
+            <id>8e134fca-4fde-44e6-b012-55e8f2d338ca</id>
+            <description>BANCO FALABELLA</description>
+            <pseCode>1062</pseCode>
+        </bank>
+        <bank>
+            <id>8eb03abf-5608-419b-8d2c-9d90b8ab6b88</id>
+            <description>BANCO GNB COLOMBIA (ANTES HSBC)</description>
+            <pseCode>1010</pseCode>
+        </bank>
+        <bank>
+            <id>283e0068-749f-43f1-a2e5-340910f41af3</id>
+            <description>BANCO GNB SUDAMERIS</description>
+            <pseCode>1012</pseCode>
+        </bank>
+        <bank>
+            <id>8b0bf5e7-394d-4f7e-a467-e4d21d04c9fb</id>
+            <description>BANCO PICHINCHA S.A.</description>
+            <pseCode>1060</pseCode>
+        </bank>
+        <bank>
+            <id>beeb494a-4ce5-41b4-b497-0756f0b6a6d9</id>
+            <description>BANCO POPULAR</description>
+            <pseCode>1002</pseCode>
+        </bank>
+        <bank>
+            <id>a5a4b740-1644-4627-ae2a-41b13ffc7c5e</id>
+            <description>BANCO PRODUCTOS POR SEPARADO</description>
+            <pseCode>1203</pseCode>
+        </bank>
+        <bank>
+            <id>47e747ef-c817-4be6-9eff-b6b16f50d001</id>
+            <description>Banco PSE</description>
+            <pseCode>1101</pseCode>
+        </bank>
+        <bank>
+            <id>589939d7-06d1-4933-a101-8bb29b801d76</id>
+            <description>BANCO SANTANDER COLOMBIA</description>
+            <pseCode>1065</pseCode>
+        </bank>
+        <bank>
+            <id>fcdaa98e-99ce-4e76-a504-1e053a05e773</id>
+            <description>BANCO SERFINANZA</description>
+            <pseCode>1069</pseCode>
+        </bank>
+        <bank>
+            <id>201608c6-81de-436f-967a-2ec7c212c100</id>
+            <description>BANCO TEQUENDAMA</description>
+            <pseCode>1035</pseCode>
+        </bank>
+        <bank>
+            <id>a8f33ba3-0053-464a-afbe-9add7c63fbc3</id>
+            <description>Banco union Colombia Credito</description>
+            <pseCode>1004</pseCode>
+        </bank>
+        <bank>
+            <id>5dfa1b2c-64bd-4e8c-9fad-585337cfd4ff</id>
+            <description>BANCO UNION COLOMBIANO</description>
+            <pseCode>1022</pseCode>
+        </bank>
+        <bank>
+            <id>56e306ef-6011-4f41-9640-b98449d6a6be</id>
+            <description>BANCO UNION COLOMBIANO FD2</description>
+            <pseCode>1005</pseCode>
+        </bank>
+        <bank>
+            <id>bc883c0d-3610-4a88-96ca-2e2baa1dd2e5</id>
+            <description>Banco Web Service ACH</description>
+            <pseCode>1055</pseCode>
+        </bank>
+        <bank>
+            <id>4e97e580-fc92-47ea-af4f-7b3b3ddffff8</id>
+            <description>Banco Web Service ACH WSE 3.0</description>
+            <pseCode>1055</pseCode>
+        </bank>
+        <bank>
+            <id>931f6bfb-283e-4721-bb86-4a7484bfd28e</id>
+            <description>BANCOLOMBIA DATAPOWER</description>
+            <pseCode>10072</pseCode>
+        </bank>
+        <bank>
+            <id>1285de9c-8d47-49f7-b00a-e87882e2a3f9</id>
+            <description>BANCOLOMBIA DESARROLLO</description>
+            <pseCode>10071</pseCode>
+        </bank>
+        <bank>
+            <id>451f0e5f-5db4-4f55-a1fc-b38e06526e04</id>
+            <description>BANCOLOMBIA QA</description>
+            <pseCode>1007</pseCode>
+        </bank>
+        <bank>
+            <id>448e00ec-c479-497d-9a35-0dfbbf462f72</id>
+            <description>BANKA</description>
+            <pseCode>1077</pseCode>
+        </bank>
+        <bank>
+            <id>5f3a7adb-b283-4ca3-bee9-741f1306a03d</id>
+            <description>BBVA COLOMBIA S.A.</description>
+            <pseCode>1013</pseCode>
+        </bank>
+        <bank>
+            <id>cd4286fa-850a-4b34-96d1-f71d6a79f44a</id>
+            <description>BBVA DESARROLLO</description>
+            <pseCode>1513</pseCode>
+        </bank>
+        <bank>
+            <id>10e9b7b6-7a5f-4d5b-8d7f-4b2020f43f93</id>
+            <description>CITIBANK COLOMBIA S.A.</description>
+            <pseCode>1009</pseCode>
+        </bank>
+        <bank>
+            <id>77f0988f-cf45-4931-bbcd-984e07e0fc51</id>
+            <description>COLTEFINANCIERA</description>
+            <pseCode>1370</pseCode>
+        </bank>
+        <bank>
+            <id>48c81f6a-e0f1-4c1d-ab9b-9915726e3596</id>
+            <description>CONFIAR COOPERATIVA FINANCIERA</description>
+            <pseCode>1292</pseCode>
+        </bank>
+        <bank>
+            <id>8694df26-5ccd-45c0-b5b7-2b995c47f81a</id>
+            <description>COOPERATIVA FINANCIERA COTRAFA</description>
+            <pseCode>1289</pseCode>
+        </bank>
+        <bank>
+            <id>1c222feb-2b58-408c-a495-ade06b6825c0</id>
+            <description>COOPERATIVA FINANCIERA DE ANTIOQUIA</description>
+            <pseCode>1283</pseCode>
+        </bank>
+        <bank>
+            <id>70a18a09-38f2-4f62-aba6-9ad28c30c966</id>
+            <description>CREDIFIANCIERA</description>
+            <pseCode>1558</pseCode>
+        </bank>
+        <bank>
+            <id>3f8b3126-8aa3-4438-8a6c-1d544184f2d7</id>
+            <description>DALE</description>
+            <pseCode>1097</pseCode>
+        </bank>
+        <bank>
+            <id>a953078b-5e22-42ea-9301-954558e8f463</id>
+            <description>DAVIPLATA</description>
+            <pseCode>1551</pseCode>
+        </bank>
+        <bank>
+            <id>2ad780ba-a1e8-4cb9-9150-670429aae092</id>
+            <description>GIROS Y FINANZAS COMPAÑIA DE FINANCIAMIENTO S.A</description>
+            <pseCode>1303</pseCode>
+        </bank>
+        <bank>
+            <id>c0bfb716-a098-40f6-84b5-1972a4846506</id>
+            <description>IRIS</description>
+            <pseCode>1637</pseCode>
+        </bank>
+        <bank>
+            <id>7e1efd88-4f88-4e21-a972-28b526b27da5</id>
+            <description>ITAU</description>
+            <pseCode>1006</pseCode>
+        </bank>
+        <bank>
+            <id>26c9a2df-6b4f-4309-9137-3692d9bb9f82</id>
+            <description>MOVII S.A</description>
+            <pseCode>1801</pseCode>
+        </bank>
+        <bank>
+            <id>d9b48a70-6068-4116-a345-154381e5d953</id>
+            <description>NEQUI CERTIFICACION</description>
+            <pseCode>1508</pseCode>
+        </bank>
+        <bank>
+            <id>60199dc5-7d38-49c6-92a5-b839dc0087d2</id>
+            <description>prueba restriccion</description>
+            <pseCode>9988</pseCode>
+        </bank>
+        <bank>
+            <id>be467299-d90a-407e-86d3-01e30ade1e06</id>
+            <description>Prueba Steve</description>
+            <pseCode>121212</pseCode>
+        </bank>
+        <bank>
+            <id>201acc05-4c4f-49dc-9be6-3261a6ce4a3c</id>
+            <description>RAPPIPAY</description>
+            <pseCode>1151</pseCode>
+        </bank>
+        <bank>
+            <id>7602e001-6199-48bc-9ee3-466f8eb2e422</id>
+            <description>SCOTIABANK COLPATRIA DESARROLLO</description>
+            <pseCode>1019</pseCode>
+        </bank>
+        <bank>
+            <id>9bb638a0-4c3f-41d2-8811-f8cdd29b0db2</id>
+            <description>SCOTIABANK COLPATRIA UAT</description>
+            <pseCode>1078</pseCode>
+        </bank>
+        <bank>
+            <id>086547b5-313b-42c7-acef-93d0f76b1dd5</id>
+            <description>SEIVY – GM FINANCIAL</description>
+            <pseCode>1305</pseCode>
+        </bank>
+    </banks>
+</bankListResponse>
 ```
 
-### Condiciones Técnicas para el Uso del Callback
+{{< /tab >}}
 
-* **API key para el callback:**
-Es necesario autenticar las notificaciones mediante una API Key, proporcionada previamente por el banco.
-
-* **Exposición del servicio:**
-El comercio debe exponer un servicio capaz de recibir la estructura descrita en la respuesta del callback.
+{{< /tabs >}}
 
 ## Enviar Transacciones Utilizando Google Pay {#submit-transactions-using-google-pay}
 
@@ -2267,6 +1943,1011 @@ Ejemplo de una Respuesta:
 <br>
 
 Encuentra la descripción del objeto `transaction.digitalWallet` y sus campos en la sección de [Parámetros](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-colombia.html#parameters-for-request-and-response).
+
+## Enviar Transacciones Utilizando Nequi {#submit-transactions-using-nequi}
+
+Nequi es una plataforma integral de servicios financieros que funciona por medio de una billetera digital disponible para millones de usuarios a través de una aplicación móvil. Con Nequi, puedes realizar pagos, transferencias, recargas y retiros de dinero de manera rápida y segura, todo desde tu dispositivo personal.
+
+Además de ser una herramienta conveniente para usuarios individuales, Nequi también es una solución de pagos innovadora para comercios. Al aceptar pagos con Nequi, tu negocio puede disfrutar de una serie de ventajas significativas:
+
+* **Aumento de las ventas:** Al ofrecer Nequi como opción de pago, tu negocio puede atraer a nuevos clientes que prefieren realizar transacciones digitales. Esto puede traducirse en un aumento de las ventas y una mayor fidelización de clientes.
+
+* **Mayor conveniencia:** Al permitir que tus clientes paguen con Nequi, estás proporcionando una experiencia de compra más versátil y rápida. Los clientes pueden realizar sus pagos de forma instantánea utilizando sus teléfonos móviles, sin necesidad de efectivo o tarjetas físicas.
+
+* **Mayor seguridad:** Nequi ofrece un entorno de pago seguro y confiable, respaldado por Bancolombia, una de las instituciones financieras más grandes y confiables de Colombia. Esto brinda tranquilidad tanto a los comercios como a los clientes, ya que las transacciones se realizan de manera segura y protegida.
+
+### Proceso de Pago con Nequi {#payment-process-with-nequi}
+
+El flujo de pago con Nequi está diseñado para ser sencillo y ágil para el usuario. El proceso incluye 4 pasos:
+
+1. **Selección del medio de pago:** El cliente, al momento de efectuar la compra, elige Nequi como su medio de pago preferido entre las opciones disponibles.
+
+2. **Generación de notificación push:** Automáticamente, el sistema genera una notificación push que se envía a la aplicación móvil de Nequi del cliente.
+
+3. **Aceptación de la notificación:** El cliente recibe la notificación en su aplicación Nequi y procede a aceptarla para confirmar la transacción.
+
+4. **Ingreso del PIN de Nequi:** Para finalizar la operación, el cliente ingresa su PIN personal de Nequi para autenticar y autorizar el pago.
+
+### Experiencia de Usuario {#user-experience}
+
+Esta sección describe los elementos necesarios para una experiencia óptima del usuario al usar Nequi como método de pago:
+
+1. Solicita el nombre y correo electrónico del comprador, por ejemplo:
+
+<img src="/assets/Payments/NEQUI_ES_01.png" alt="PrintScreen" width="420">
+<p></p>
+
+2. Presenta Nequi como método de pago y solicita el número de teléfono asociado con la cuenta de Nequi, por ejemplo:
+
+<img src="/assets/Payments/NEQUI_ES_02.png" alt="PrintScreen" width="420">
+<p></p>
+
+3. Proporciona un resumen detallado del pago. 
+
+{{% alert title="Nota" color="info"%}}
+
+La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes aprovechar esta página redirigiendo a los usuarios a la URL proporcionada en el campo `URL_PAYMENT_RECEIPT_HTML` de la respuesta de la API, o puedes diseñar tu propio recibo extrayendo los datos de los campos correspondientes de la respuesta. Para más información, consulta la sección de [Parámetros para Solicitud y Respuesta]({{< ref "#parameters-for-request-and-response-1" >}}).
+
+{{% /alert %}}
+
+<img src="/assets/Payments/NEQUI_ES_03.png" alt="PrintScreen" width="500">
+<p></p>
+
+4. Describe los pasos a seguir para facilitar el proceso de pago para el comprador. La página de resumen de PayU ya incluye estas instrucciones, pero si estás creando una página personalizada, recomendamos mostrar los pasos para completar el proceso a través de Nequi. Por ejemplo:
+
+<img src="/assets/Payments/NEQUI_ES_04.png" alt="PrintScreen" width="420">
+<p></p>
+
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-3}
+
+<details>
+<summary>Solicitud</summary>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
+<br>
+<div class="variables"></div>
+
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+|-|-|-|-|:-:|
+| language | Alfanumérico | 2 | Idioma utilizado en la solicitud, este idioma se utiliza para mostrar los mensajes de error generados. [Consulta los idiomas admitidos]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| command | Alfanumérico | Máx:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano | | Asigna `true` si la solicitud está en modo de prueba. De lo contrario, asigna `false`. | Sí |
+| merchant | Objeto | | Este objeto contiene los datos de autenticación.  | Sí  |
+| merchant > apiLogin | Alfanumérico | Min:12 Máx:32 | Nombre de usuario o login proporcionado por PayU. | Sí |
+| merchant > apiKey | Alfanumérico | Min:6 Máx:32 | Contraseña proporcionada por PayU. | Sí |
+| transaction | Objeto | | Este objeto contiene los datos de la transacción. | Sí |
+| transaction > order | Objeto | | Este objeto contiene los datos de la orden. | Sí |
+| transaction > order > accountId | Número | | Identificador de tu cuenta. | Sí |
+| transaction > order > referenceCode | Alfanumérico | Min:1 Máx:255 | Representa el identificador de la orden en tu sistema. | Sí |
+| transaction > order > description | Alfanumérico | Min:1 Máx:255 | Descripción de la orden. | Sí |
+| transaction > order > language | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
+| transaction > order > notifyUrl | Alfanumérico | Máx:2048 | URL de confirmación de la orden. | No |
+| transaction > order > partnerId | Alfanumérico | Máx:255 | ID de socio en PayU. | No |
+| transaction > order > signature | Alfanumérico | Máx:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
+| transaction > order > shippingAddress | Objeto | | Dirección de envío. | No |
+| transaction > order > shippingAddress > street1 | Alfanumérico | Máx:100 | Línea de dirección 1. | No |
+| transaction > order > shippingAddress > street2 | Alfanumérico | Máx:100 | Línea de dirección 2. | No |
+| transaction > order > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección. | No |
+| transaction > order > shippingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección. | No |
+| transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
+| transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Código postal de la dirección. | No |
+| transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de teléfono asociado con la dirección. | No |
+| transaction > order > buyer | Objeto | | Información del comprador. | Sí |
+| transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | ID del comprador en tu sistema. | No |
+| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nombre completo del comprador. | Sí |
+| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del comprador. | Sí |
+| transaction > order > buyer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del comprador. | Sí |
+| transaction > order > buyer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del comprador. | Sí |
+| transaction > order > buyer > shippingAddress | Objeto | | Dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Máx:150 | Línea 1 de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección de envío del comprador en formato ISO 3166 alfa-2. | Sí |
+| transaction > order > buyer > shippingAddress > postalCode | Número | Máx:20 | Código postal de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > phone | Número | Máx:20 | Número de teléfono de la dirección de envío del comprador. | Sí |
+| transaction > order > additionalValues > | Alfanumérico | 64 | Monto de la orden y sus valores asociados. | Sí |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
+| transaction > order > additionalValues > TX_VALUE > value | Número | 12, 2 | Especifica el monto de la transacción. Este monto no puede incluir decimales. | Sí |
+| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Consulta las monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del Impuesto al Valor Agregado (IVA). | Sí |
+| transaction > order > additionalValues > TX_TAX > value | Número | 12, 2 | Especifica el monto del IVA. Si este parámetro no está configurado, PayU aplica el valor de impuesto actual (19%). Si el monto no tiene IVA, envía 0. Este valor puede tener dos dígitos decimales. | No |
+| transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO de la moneda. [Consulta las monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el IVA. Si el monto no tiene IVA, envía 0. Este valor puede tener dos dígitos decimales. | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Número | 12, 2 | Especifica el monto base de la transacción. | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Consulta las monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > payer | Objeto | | Información del pagador. | Sí |
+| transaction > payer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del pagador. | Sí |
+| transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador del pagador en tu sistema. | No |
+| transaction > payer > fullName | Alfanumérico | Máx:150 | Nombre del pagador. | Sí |
+| transaction > payer > billingAddress | Objeto | | Dirección de facturación. | Sí |
+| transaction > payer > billingAddress > street1 | Alfanumérico | Máx:100 | Línea 1 de la dirección de facturación. | Sí |
+| transaction > payer > billingAddress > street2 | Alfanumérico | Máx:100 | Línea 2 de la dirección de facturación. | No |
+| transaction > payer > billingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de facturación. | Sí |
+| transaction > payer > billingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección de facturación. | No |
+| transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 alfa-2. | Sí |
+| transaction > payer > billingAddress > postalCode | Alfanumérico | Máx:20 | Código postal de la dirección de facturación. | No |
+| transaction > payer > billingAddress > phone | Alfanumérico | Máx:20 | Número de teléfono de la dirección de facturación. | No |
+| transaction > payer > birthdate | Alfanumérico | Máx:10 | Fecha de nacimiento del pagador. | No |
+| transaction > payer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del pagador. Este es el número que se utilizará para pagar en Nequi. | Sí |
+| transaction > payer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del comprador. | Sí |
+| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del comprador. [Consulta los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}).. | No |
+| transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con la transacción. Para Colombia, asigna `AUTHORIZATION_AND_CAPTURE`. | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Asigna `NEQUI` para el Método de Pago Nequi. | Sí |
+| transaction > paymentCountry | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí  |
+| transaction > deviceSessionId | Alfanumérico | Máx:255 | Identificador de sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [esta sección]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
+| transaction > ipAddress | Alfanumérico | Máx:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
+| transaction > cookie | Alfanumérico | Máx:255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
+| transaction > userAgent | Alfanumérico | Máx:1024 | El agente de usuario del navegador donde el cliente realiza la transacción. | Sí |
+
+</details>
+
+<details>
+<summary>Respuesta</summary>
+<br>
+<div class="variables"></div>
+
+| Nombre del Campo | Formato | Tamaño | Descripción |
+|-|-|-|-|
+| code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
+| transactionResponse | Objeto | | Datos de la respuesta. |
+| transactionResponse > orderId | Número | | Identificador de orden generado o existente en PayU. |
+| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
+| transactionResponse > state | Alfanumérico | Máx:32 | Estado de la transacción. |
+| transactionResponse > responseCode | Alfanumérico | Máx:64 | Código de respuesta asociado con el estado. |
+| transactionResponse > pendingReason | Alfanumérico | Máx:64 | Razón pendiente de la transacción. |
+| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Máx:255 | Código de respuesta devuelto por la red financiera. |
+| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Máx:255  | Mensaje de error devuelto por la red financiera. |
+| transactionResponse > trazabilityCode | Alfanumérico | Máx:32 | Código de trazabilidad devuelto por la red financiera. |
+| transactionResponse > authorizationCode | Alfanumérico | Máx:12 | Código de autorización devuelto por la red financiera. |
+| transactionResponse > responseMessage | Alfanumérico | Máx:2048 | Mensaje asociado con el código de respuesta. |
+| transactionResponse > operationDate | Fecha | | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > extraParameters | Objeto | | Parámetros adicionales o datos asociados con la respuesta. <li>En JSON, el parámetro `extraParameters` sigue esta estructura: `"extraParameters": { "URL_PAYMENT_RECEIPT_HTML": "https:payu.checkout.com"}`<li>En XML, el parámetro `extraParameters` sigue esta estructura: `<extraParameters> <entry>  <string>URL_PAYMENT_RECEIPT_HTML</string>  <string>https:payu.checkout.com</string> </entry></extraParameters>` <br>**Nota:** Considera que puedes aprovechar esta URL para redirigir al usuario a una página de PayU con un resumen de la compra, como se muestra en [Experiencia de Usuario]({{< ref "#user-experience" >}}). |
+| transactionResponse > additionalInfo | Objeto | | Información adicional asociada con la respuesta. Este objeto sigue la misma estructura que `transactionResponse.extraParameters`. |
+
+</details>
+
+### Llamado a la API {#api-call-1}
+
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago:
+
+{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "accountId": "512321",
+         "referenceCode": "PRODUCT_TEST_2024-01-18T19:59:43.229Z",
+         "description": "Payment test description",
+         "language": "es",
+         "signature": "1d6c33aed575c4974ad5c0be7c6a1c87",
+         "notifyUrl": "http://www.payu.com/notify",
+         "additionalValues": {
+            "TX_VALUE": {
+               "value": 65000,
+               "currency": "COP"
+            },
+            "TX_TAX": {
+               "value": 10378,
+               "currency": "COP"
+            },
+            "TX_TAX_RETURN_BASE": {
+               "value": 54622,
+               "currency": "COP"
+            }
+         },
+         "buyer": {
+            "merchantBuyerId": "1",
+            "fullName": "First name and second buyer name",
+            "emailAddress": "buyer_test@test.com",
+            "contactPhone": "57 3007777777",
+            "dniNumber": "123456789",
+            "shippingAddress": {
+               "street1": "Cr 23 No. 53-50",
+               "street2": "5555487",
+               "city": "Bogotá",
+               "state": "Bogotá D.C.",
+               "country": "CO",
+               "postalCode": "000000",
+               "phone": "57 3007777777"
+            }
+         },
+         "shippingAddress": {
+            "street1": "Cr 23 No. 53-50",
+            "street2": "5555487",
+            "city": "Bogotá",
+            "state": "Bogotá D.C.",
+            "country": "CO",
+            "postalCode": "0000000",
+            "phone": "7563126"
+         }
+      },
+      "payer": {
+         "merchantPayerId": "1",
+         "fullName": "First name and second payer name",
+         "emailAddress": "payer_test@test.com",
+         "contactPhone": "57 3007777777",
+         "dniNumber": "5415668464654",
+         "billingAddress": {
+            "street1": "Cr 23 No. 53-50",
+            "street2": "125544",
+            "city": "Bogotá",
+            "state": "Bogotá D.C.",
+            "country": "CO",
+            "postalCode": "000000",
+            "phone": "57 3007777777"
+         }
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "NEQUI",
+      "paymentCountry": "CO",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": false
+}
+
+```
+<br>
+
+Ejemplo de una Respuesta:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 2151135729,
+        "transactionId": "fe667b48-e685-40b3-8863-9a0cd8257860",
+        "state": "PENDING",
+        "paymentNetworkResponseCode": "0",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "3ba38ac9-3d68-48ef-bf86-b6c121404162",
+        "authorizationCode": null,
+        "pendingReason": "AWAITING_PAYMENT_IN_ENTITY",
+        "responseCode": "PENDING_PAYMENT_IN_ENTITY",
+        "errorCode": null,
+        "responseMessage": "SUCCESS",
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1705670262058,
+        "referenceQuestionnaire": null,
+        "extraParameters": null,
+        "additionalInfo": null
+    }
+}
+
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```XML
+<request>
+  <language>es</language>
+  <command>SUBMIT_TRANSACTION</command>
+  <merchant>
+    <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+    <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+  </merchant>
+  <transaction>
+    <order>
+      <accountId>512321</accountId>
+      <referenceCode>PRODUCT_TEST_2024-01-18T19:59:43.229Z</referenceCode>
+      <description>Payment test description</description>
+      <language>es</language>
+      <signature>1d6c33aed575c4974ad5c0be7c6a1c87</signature>
+      <notifyUrl>http://www.payu.com/notify</notifyUrl>
+      <additionalValues>
+        <entry>
+          <string>TX_VALUE</string>
+          <additionalValue>
+            <value>65000</value>
+            <currency>COP</currency>
+          </additionalValue>
+          <string>TX_TAX</string>
+          <additionalValue>
+            <value>10378</value>
+            <currency>COP</currency>
+          </additionalValue>
+          <string>TX_TAX_RETURN_BASE</string>
+          <additionalValue>
+            <value>54622</value>
+            <currency>COP</currency>
+          </additionalValue>
+        </entry>
+      </additionalValues>
+      <buyer>
+        <merchantBuyerId>1</merchantBuyerId>
+        <fullName>First name and second buyer name</fullName>
+        <emailAddress>buyer_test@test.com</emailAddress>
+        <contactPhone>57 3007777777</contactPhone>
+        <dniNumber>123456789</dniNumber>
+        <shippingAddress>
+          <street1>Cr 23 No. 53-50</street1>
+          <street2>5555487</street2>
+          <city>Bogotá</city>
+          <state>Bogotá D.C.</state>
+          <country>CO</country>
+          <postalCode>000000</postalCode>
+          <phone>57 3007777777</phone>
+        </shippingAddress>
+      </buyer>
+      <shippingAddress>
+        <street1>Cr 23 No. 53-50</street1>
+        <street2>5555487</street2>
+        <city>Bogot√°</city>
+        <state>Bogot√° D.C.</state>
+        <country>CO</country>
+        <postalCode>0000000</postalCode>
+        <phone>7563126</phone>
+      </shippingAddress>
+    </order>
+    <payer>
+      <merchantPayerId>1</merchantPayerId>
+      <fullName>First name and second payer name</fullName>
+      <emailAddress>payer_test@test.com</emailAddress>
+      <contactPhone>57 3007777777</contactPhone>
+      <dniNumber>5415668464654</dniNumber>
+      <billingAddress>
+        <street1>Cr 23 No. 53-50</street1>
+        <street2>125544</street2>
+        <city>Bogotá</city>
+        <state>Bogotá D.C.</state>
+        <country>CO</country>
+        <postalCode>000000</postalCode>
+        <phone>57 3007777777</phone>
+      </billingAddress>
+    </payer>
+    <type>AUTHORIZATION_AND_CAPTURE</type>
+    <paymentMethod>NEQUI</paymentMethod>
+    <paymentCountry>CO</paymentCountry>
+    <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+    <ipAddress>127.0.0.1</ipAddress>
+    <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+    <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+  </transaction>
+  <isTest>false</isTest>
+</request>
+```
+<br>
+
+Ejemplo de una Respuesta:
+```XML
+<paymentResponse>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>2151135729</orderId>
+        <transactionId>fe667b48-e685-40b3-8863-9a0cd8257860</transactionId>
+        <state>PENDING</state>
+        <paymentNetworkResponseCode>0</paymentNetworkResponseCode>
+        <trazabilityCode>3ba38ac9-3d68-48ef-bf86-b6c121404162</trazabilityCode>
+        <pendingReason>AWAITING_PAYMENT_IN_ENTITY</pendingReason>
+        <responseCode>PENDING_PAYMENT_IN_ENTITY</responseCode>
+        <responseMessage>SUCCESS</responseMessage>
+        <operationDate>2024-01-19T08:17:42</operationDate>
+    </transactionResponse>
+</paymentResponse>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+#### Formatos de Números de Teléfono Admitidos {#supported-phone-number-formats}
+
+Al utilizar integraciones API, las transacciones pueden fallar cuando el sistema recibe números de teléfono de usuario que:
+
+1. Contienen espacios en blanco.
+2. No están separados del código del país.
+3. Contienen más o menos de 10 dígitos (sin contar el código del país).
+
+Actualmente, la integración no proporciona un mecanismo para corregir automáticamente el formato del número de teléfono que el usuario ingresa. La tabla a continuación muestra ejemplos de formatos de números de teléfono y su compatibilidad con la integración:
+
+| Ejemplo de Formato de Número de Teléfono | Compatibilidad | Detalles |
+| - | - | - |
+| 57 3007777777 | Formato compatible | El código de país (57) está separado del número telefónico. |
+| 3007777777 | Formato compatible | El número telefónico no tiene espacios y tiene 10 dígitos. |
+| 573007777777 | Formato incompatible | El número telefónico y el código de país (57) no están separados. |
+| 57 300 7777777 | Formato incompatible | El número telefónico tiene espacios. |
+
+**Recomendaciones**
+
+Para prevenir errores causados por formatos de números telefónicos incompatibles, te recomendamos implementar las siguientes características en la experiencia de usuario:
+
+1. Implementa una interfaz que automáticamente cree espacios separadores en el número de teléfono móvil mientras el usuario lo ingresa, haciendo que el número sea más fácil de leer y reduciendo la probabilidad de errores de entrada manual. Asegúrate de que estos espacios sean visibles a nivel de la interfaz mientras configuras tu sistema para eliminarlos a nivel de backend.
+
+* Ejemplo de la interfaz:
+
+<img src="/assets/Payments/Nequi05ES.png" alt="PrintScreen" width="600">
+<p></p>
+
+2. Configura mensajes de error para que se muestren cuando un usuario ingrese un número de teléfono con menos de 10 dígitos o más de 10 dígitos (excluyendo el código de país, que es +57 para Colombia).
+
+* **A)** Ejemplo de una interfaz con espacios generados automáticamente donde el usuario no ha ingresado 10 dígitos:
+
+<img src="/assets/Payments/Nequi06ES.png" alt="PrintScreen" width="600">
+<p></p>
+
+* **B)** Ejemplo de una interfaz sin espacios donde el usuario ha ingresado más de 10 dígitos:
+
+<img src="/assets/Payments/Nequi07ES.png" alt="PrintScreen" width="600">
+ 
+#### Pruebas en Ambiente Sandbox {#sanbox-environment-testing}
+
+Para probar las transacciones de Nequi en el ambiente Sandbox de PayU, utiliza los siguientes datos:
+
+| Número de teléfono | Comportamiento de la autorización | Comportamiento de la consulta <br>(Aprox. 5 minutos después de la autorización) |
+|-|-|-|
+| 3006666666 | Transaction rejected - Client not found on database | N/A |
+| 3007777777 | Transaction pending | Transaction approved |
+| 3007777776 | Transaction pending | Transaction declined |
+| 3007777775 | Transaction pending | Transaction pending |
+| 3007777774 | Transaction pending | Transaction failed |
+| 3007777772 | Transaction pending | Transaction expired |
+
+Puedes consultar el estado de la transacción a través de la [API de Consultas]({{< ref "queries-api.html" >}}). 
+
+<!--## Enviar Transacciones Utilizando Botón Bancolombia {#submit-transactions-using-bancolombia-button}
+
+El Botón de Pagos Bancolombia es una solución de pagos en línea que facilita a los usuarios realizar transacciones de forma rápida y segura a través de su cuenta en Bancolombia. Esta herramienta está disponible para millones de usuarios y permite completar pagos directamente desde el sitio web del comercio, redirigiendo al usuario a una plataforma segura proporcionada por el banco.
+
+### Beneficios del Botón Bancolombia
+
+Además de ser una opción cómoda para los usuarios, el Botón de Pagos Bancolombia representa una alternativa innovadora para los comercios. Al integrar esta opción en tu plataforma de pagos a través de PayU, tu negocio puede obtener los siguientes beneficios: 
+
+* **Incremento en las ventas:** Alcanza más clientes que prefieren métodos de pago digitales respaldados por Bancolombia, lo que contribuye a un mayor número de transacciones completadas y una mejor retención de clientes.
+
+* **Mayor comodidad:** Ofrece una experiencia de pago ágil y versátil, permitiendo a los usuarios efectuar pagos directamente desde su cuenta bancaria sin necesidad de tarjetas físicas o efectivo. 
+
+* **Seguridad reforzada:** Facilita transacciones protegidas por los sistemas de seguridad avanzados de Bancolombia, una de las instituciones financieras más confiables de Colombia. 
+
+Al integrar el Botón de Pagos Bancolombia, no solo mejoras la experiencia de compra para tus clientes, sino que también fortaleces tu negocio con un método de pago alineado a las preferencias del mercado local.
+
+### Proceso de Pago con el Botón Bancolombia
+
+El proceso de pago está diseñado para ser simple y seguro. Sigue estos pasos para completar una transacción:
+
+1. Selecciona el método de pago en el checkout.
+
+<img src="/assets/Payments/es_botonbancolombia_1.png" alt="PrintScreen" width="650">
+<p></p>
+
+2. Acepta los términos y condiciones y haz clic en **_Pagar_**.
+
+<img src="/assets/Payments/es_botonbancolombia_2.png" alt="PrintScreen" width="650">
+<p></p>
+
+3. La integración te redirigirá al sitio transaccional de Bancolombia para completar el pago.
+
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-4}
+
+Esta API permite gestionar la intención de compra, obtener un código único de transferencia y generar la experiencia de pago. La integración necesita consumir un servicio REST del banco utilizando un **Client Secret** y un **Client ID**, que serán entregados al usuario por correo confidencial.
+
+<details>
+<summary>Solicitud</summary>
+<div class="variables"></div>
+
+| **Campo** | **Definición** | **Tipo** | **Longitud Máx.** | **Ejemplo** | **Observación** |
+|-|-|-|-|-|-|
+| commerceTransferButtonId | Identificador único del botón de transferencia. | String | 50 | `"h4ShG3NER1C"` | Entregado durante el proceso de vinculación. |
+| transferReference | Código único asignado por el comercio para identificar la transacción. | String | 48 | `"referencia0123"` | Definido por el comercio. |
+| transferDescription | Descripción de la transferencia, asociada al producto, servicio o factura. | String | 225 | transferDescription: `"Compra online"` | |
+| transferAmount | Monto total de la transacción que será debitado al cliente pagador. | Double | 15 | `23450.33` | En pruebas, el monto máximo es $1.000.000 COP y el mínimo $1.000 COP. |
+| commerceUrl | URL de redirección para el cliente tras completar la transferencia. | String | 225 | `"https://gateway.com/payment/route?commerce=compraonline"` | |
+| confirmationURL | URL de confirmación utilizada para notificar al comercio la finalización de la transacción. | String | 500 | `"https://espagos-api-dev.cloud.net/callback"` | Esta funcionalidad es obligatoria. |
+
+</details>
+
+### Llamado a la API {#api-call-4}
+
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
+
+Ejemplo de una Solicitud:
+```JSON
+{
+  "data": [
+    {
+      "commerceTransferButtonId": "h4ShG3NER1C",
+      "transferReference": "1002348899557697899",
+      "transferDescription": "Compra online",
+      "transferAmount": 3458.33,
+      "commerceUrl": "https://gateway.com/payment/route?commerce=compraonline",
+      "confirmationURL": "https://espagos-api-dev.cloud.net/callback"
+    }
+  ]
+}
+```
+<br>
+
+Ejemplo de una Respuesta:
+```JSON
+{
+  "meta": {
+    "messageId": "269d2d0f-6c87-4515-87f7-e3f11ca976d6",
+    "_version": "1.0",
+    "_requestDate": "2020-10-19T00:00:24.422Z",
+    "_clientRequest": "29fa65a1-0227-40cd-9efc-6beaff247614"
+  },
+  "data": [
+    {
+      "header": {
+        "type": "Transference",
+        "id": "_24iReQwXEI"
+      },
+      "transferCode": "_24iReQwXEI",
+      "redirectURL": "https://sandbox-boton-dev.apps.ambientescb.com/web/transfer-gateway/checkout/_24iReQwXEI"
+    }
+  ]
+}
+```
+
+### Condiciones Técnicas
+
+* **Condiciones para el campo `transferReference`:**
+Debe tener un máximo de 48 caracteres numéricos y no incluir caracteres especiales.
+
+* **Exposición del servicio de callback:** 
+Es obligatorio implementar el callback para recibir notificaciones en tiempo real sobre el estado final de la transacción. La URL de notificación debe ser proporcionada por el usuario beneficiario y será utilizada para enviar el estado final de la transacción. El sistema intentará notificar hasta 3 veces, con intervalos de 30 segundos entre cada intento.
+
+#### Estructura de la Respuesta del Callback
+
+<details>
+<summary>Respuesta</summary>
+<div class="variables"></div>
+
+| **Campo** | **Definición** | **Tipo** | **Longitud Máx.** | **Ejemplo** |
+|-|-|-|-|-|
+| transferVoucher | Número de comprobante de la transacción. | String | 50 | `"TRGQx8jMgCEG"` |
+| transferAmount | Monto total de la transacción. | Double | 15 | `1000.00` |
+| transferStateDescription  | Descripción del resultado del estado de la transacción. | String | 225 | `"Invalid account"` |
+| sign | Firma utilizada para validar la integridad de la solicitud generada. | String | 128 | `"b6f7bc914b69824df799db0ad7c9bb26"` |
+| requestDate | Fecha y hora en que se registró la orden. | DateTime | 23 | `"2020-11-25T09:14:22.697-0500"` |
+| transferState | Estado actual de la transacción. | String | 20 | `"rejected"`, `"approved"`, `"pending"`    |
+| transferDate | Fecha y hora en que se aprobó o rechazó la transacción. | DateTime | 20 | `"2020-11-10T08:04:54.0000500"` |
+| transferCode | Identificador único de la transferencia. | String | 50 | `"_oXsTE8kNo9"` |
+| transferReference | Código de referencia de la transacción asignado por el comercio. | String | 48 | `"Referencia05013418"` |
+| commerceTransferButtonId  | Identificador único del botón de transferencia del comercio (HASH). | String | 50 | `"h4ShG3NER1C"` |
+
+</details>
+<br>
+
+Ejemplo de una Respuesta:
+```JSON
+{
+  "data": {
+    "commerceTransferButtonId": "hA5hg3NER1c",
+    "transferReference": "prueba201123",
+    "transferDescription": "Compra online",
+    "transferAmount": 23458.33,
+    "commerceUrl": "https://www.commerce.com",
+    "confirmationURL": "https://pagos-api-dev.cloud.net/callback"
+  }
+}
+```
+
+### Condiciones Técnicas para el Uso del Callback
+
+* **API key para el callback:**
+Es necesario autenticar las notificaciones mediante una API Key, proporcionada previamente por el banco.
+
+* **Exposición del servicio:**
+El comercio debe exponer un servicio capaz de recibir la estructura descrita en la respuesta del callback.-->
+
+## Enviar Transacciones Utilizando Efectivo o Referencia Bancaria {#submit-transactions-using-cash-or-bank-reference}
+
+Este método te permite procesar pagos de los clientes en efectivo o a través de una referencia bancaria. Para integrar este método de pago, redirige al cliente a la URL proporcionada en la respuesta del método. Tu cliente verá entonces un recibo de pago como se muestra a continuación.
+
+#### Pagos en Efectivo {#payments-in-cash}
+
+<img src="/assets/Payments/CashReceiptCO.png" alt="PrintScreen" width="75%">
+
+#### Pagos con Referencia Bancaria {#payments-with-bank-reference}
+
+<img src="/assets/Payments/BankReferenceReceiptCO.png" alt="PrintScreen" width="75%">
+
+### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-5}
+
+<details>
+<summary>Solicitud</summary>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
+<br>
+<div class="variables"></div>
+
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+|-|-|-|-|:-:|
+| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| command | Alfanumérico | Máx:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano | | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| merchant | Objeto | | Este objeto tiene los datos de autenticación. | Sí |
+| merchant > apiLogin | Alfanumérico | Min:12 Máx:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| merchant > apiKey | Alfanumérico | Min:6 Máx:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| transaction | Objeto | | Este objeto tiene los datos de la transacción. | Sí |
+| transaction > order | Objeto | | Este objeto tiene los datos de la orden. | Sí |
+| transaction > order > accountId | Numérico |  | Identificador de tu cuenta. | Sí |
+| transaction > order > referenceCode | Alfanumérico | Min:1 Máx:255 | Representa el identificador de la orden en tu sistema. | Sí |
+| transaction > order > description | Alfanumérico | Min:1 Máx:255 | Descripción de la orden. | Sí |
+| transaction > order > language | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
+| transaction > order > notifyUrl | Alfanumérico | Máx:2048 | URL de confirmación de la orden. | No |
+| transaction > order > partnerId | Alfanumérico | Máx:255 | ID de aliado dentro de PayUID de aliado dentro de PayU. | No |
+| transaction > order > signature | Alfanumérico | Máx:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
+| transaction > order > shippingAddress | Objeto | | Dirección de envío. | No |
+| transaction > order > shippingAddress > street1 | Alfanumérico | Máx:100 | Línea de dirección 1. | No |
+| transaction > order > shippingAddress > street2 | Alfanumérico | Máx:100 | Línea de dirección 2. | No |
+| transaction > order > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección. | No |
+| transaction > order > shippingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección. | No |
+| transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
+| transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Código postal de la dirección. | No |
+| transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de teléfono asociado con la dirección. | No |
+| transaction > order > buyer | Objeto | | Información del comprador. | Sí |
+| transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | Identificador del comprador en tu sistema. | No |
+| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nombre del comprador. | Sí |
+| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del comprador. | Sí |
+| transaction > order > buyer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del comprador. | Sí |
+| transaction > order > buyer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del comprador. | Sí |
+| transaction > order > buyer > shippingAddress | Objeto |  | Dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Máx:150 | Línea de dirección 1 del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección del comprador. | Sí | 
+| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
+| transaction > order > buyer > shippingAddress > postalCode | Numérico | Máx:20 | Código postal de la dirección del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > phone | Numérico | Máx:20 | Número de teléfono de la dirección del comprador. | Sí |
+| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
+| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor no puede tener decimales. | Sí |
+| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
+| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del IVA (Impuesto al Valor Agregado). | Sí |
+| transaction > order > additionalValues > TX_TAX > value | Numérico | 12, 2 | Especifica el monto del IVA.<br>Si no se envía este parámetro, PayU aplica el impuesto actual (19%).<br>Si la cantidad está exenta de IVA, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
+| transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el IVA.<br>Si la cantidad está exenta de IVA, envía 0.<br>Este valor puede tener dos dígitos decimales  | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el valor base de la transacción. | No |
+| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > payer | Objeto |  | Información del pagador. | Sí |
+| transaction > payer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del pagador. | Sí |
+| transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador del pagador en tu sistema. | No |
+| transaction > payer > fullName | Alfanumérico | Máx:150 | Nombre del pagador. | Sí |
+| transaction > payer > billingAddress | Objeto | | Dirección de facturación. | Sí |
+| transaction > payer > billingAddress > street1 | Alfanumérico | Máx:100 | Línea 1 de la dirección de facturación. | Sí |
+| transaction > payer > billingAddress > street2 | Alfanumérico | Máx:100 | Línea 2 de la dirección de facturación. | No |
+| transaction > payer > billingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de facturación. | Sí |
+| transaction > payer > billingAddress > state | Alfanumérico | Máx:40 | Departamento de la dirección de facturación. | Sí |
+| transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | Sí |
+| transaction > payer > billingAddress > postalCode | Alfanumérico | Máx:20 | Código postal de la dirección de facturación. | No |
+| transaction > payer > billingAddress > phone | Alfanumérico | Máx:20 | Número de teléfono de la dirección de facturación. | No |
+| transaction > payer > birthdate | Alfanumérico | Máx:10 | Fecha de nacimiento del pagador. | No |
+| transaction > payer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del pagador. | Sí |
+| transaction > payer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del pagador. | Sí |
+| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, la única transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Seleccione un método de pago en efectivo o de referencia bancaria válido. [Ver los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
+| transaction > paymentCountry | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí |
+| transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
+| transaction > ipAddress | Alfanumérico | Máx:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
+
+</details>
+
+<details>
+<summary>Respuesta</summary>
+<br>
+<div class="variables"></div>
+
+| Nombre del Campo | Formato | Tamaño | Descripción |
+|-|-|-|-|
+| code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
+| transactionResponse | Objeto | | Datos de la respuesta. |
+| transactionResponse > orderId | Numérico | | Identificador generado o existente de la orden en PayU. |
+| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
+| transactionResponse > state | Alfanumérico | Máx:32 | Estado de la transacción. Como el pago se realiza de forma externa, el estado de una transacción exitosa es `PENDING` |
+| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Máx:255 | Código de respuesta retornado por la red bancaria. |
+| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Máx:255 | Mensaje de error retornado por la red bancaria. |
+| transactionResponse > trazabilityCode | Alfanumérico | Máx:32 | Código de trazabilidad retornado por la red bancaria. |
+| transactionResponse > authorizationCode | Alfanumérico | Máx:12 | Código de autorización retornado por la red bancaria. |
+| transactionResponse > pendingReason | Alfanumérico | Máx:21 | Código de la razón asociada con el estado, como se mencionó en  `transactionResponse > state`, la transacción está en espera del pago. |
+| transactionResponse > responseCode | Alfanumérico | Máx:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_TRANSACTION_CONFIRMATION`. |
+| transactionResponse > responseMessage | Alfanumérico | Máx:2048 | Mensaje asociado con el código de respuesta. |
+| transactionResponse > operationDate | Fecha | | Fecha de creación de la respuesta en el sistema de PayU. |
+| transactionResponse > extraParameters | Objeto | | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > additionalInfo | Objeto | | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
+
+</details>
+
+#### Consideraciones {#considerations-1}
+
+* El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
+* Para <!--`BALOTO` y -->`EFECTY`, la confirmación del pago tarda 15 minutos. Para `BANK_REFERENCED` y `OTHERS_CASH` (Su Red), la confirmación es en línea.
+* Los valores mínimos de máximos para pagos en <!--`BALOTO`, -->`EFECTY` y `OTHERS_CASH` (Su Red) son:
+   <!-- - `BALOTO` > Min: $3.000 COP - Max: $1.000.000 COP-->
+   - `EFECTY` > Min: $20.000 COP - Máx: $6.000.000 COP
+   - `OTHERS_CASH` (Su Red) > Min: $1.000 COP - Máx: $4.000.000 COP
+* El parámetro `transactionResponse.extraParameters` tiene los siguientes parámetros relacionados con la transacción:
+   - **EXPIRATION_DATE**: fecha máxima en la que el pagador puede realizar el pago.   
+   - **REFERENCE**: referencia de pago interna generada por PayU.
+   - **URL_PAYMENT_RECEIPT_HTML**: recibo de pago en formato HTML. Aquí es donde debe redirigir el pago cuando el pagador selecciona un método de pago en efectivo. 
+   - **URL_PAYMENT_RECEIPT_PDF**: recibo de pago en formato PDF.
+   - **BANCO_BOGOTA_SERVICE_CODE**: código de pago para Banco de Bogotá. Disponible cuando utilices `BANK_REFERENCED`.
+   - **BANK_REFERENCED_NAME**: nombre de la referencia para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
+   - **BANCOLOMBIA_SERVICE_CODE**: código de pago para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
+
+### Llamado a la API {#api-call-2}
+
+Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
+
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```JSON
+{
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "accountId": "512321",
+         "referenceCode": "PRODUCT_TEST_2021-06-23T19:59:43.229Z",
+         "description": "Payment test description",
+         "language": "es",
+         "signature": "1d6c33aed575c4974ad5c0be7c6a1c87",
+         "notifyUrl": "http://www.payu.com/notify",
+         "additionalValues": {
+            "TX_VALUE": {
+               "value": 65000,
+               "currency": "COP"
+         },
+            "TX_TAX": {
+               "value": 10378,
+               "currency": "COP"
+         },
+            "TX_TAX_RETURN_BASE": {
+               "value": 54622,
+               "currency": "COP"
+         }
+         },
+         "buyer": {
+            "merchantBuyerId": "1",
+            "fullName": "First name and second buyer name",
+            "emailAddress": "buyer_test@test.com",
+            "contactPhone": "7563126",
+            "dniNumber": "123456789",
+            "shippingAddress": {
+               "street1": "Cr 23 No. 53-50",
+               "street2": "5555487",
+               "city": "Bogotá",
+               "state": "Bogotá D.C.",
+               "country": "CO",
+               "postalCode": "000000",
+               "phone": "7563126"
+            }
+         },
+         "shippingAddress": {
+            "street1": "Cr 23 No. 53-50",
+            "street2": "5555487",
+            "city": "Bogotá",
+            "state": "Bogotá D.C.",
+            "country": "CO",
+            "postalCode": "0000000",
+            "phone": "7563126"
+         }
+      },
+      "payer": {
+         "merchantPayerId": "1",
+         "fullName": "First name and second payer name",
+         "emailAddress": "payer_test@test.com",
+         "contactPhone": "7563126",
+         "dniNumber": "5415668464654",
+         "billingAddress": {
+            "street1": "Cr 23 No. 53-50",
+            "street2": "125544",
+            "city": "Bogotá",
+            "state": "Bogotá D.C.",
+            "country": "CO",
+            "postalCode": "000000",
+            "phone": "7563126"
+         }
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "EFECTY",
+      "expirationDate": "2021-06-24T20:58:35.804",
+      "paymentCountry": "CO",
+      "ipAddress": "127.0.0.1"
+   },
+   "test": false
+}
+```
+<br>
+
+Ejemplo de una Respuesta:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 1400449740,
+        "transactionId": "f3531b6a-3e30-4a8b-8a69-d4a5bd2a3377",
+        "state": "PENDING",
+        "paymentNetworkResponseCode": null,
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "f3531b6a-3e30-4a8b-8a69-d4a5bd2a3377",
+        "authorizationCode": null,
+        "pendingReason": "AWAITING_NOTIFICATION",
+        "responseCode": "PENDING_TRANSACTION_CONFIRMATION",
+        "errorCode": null,
+        "responseMessage": null,
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1624463917065,
+        "referenceQuestionnaire": null,
+        "extraParameters": {
+            "EXPIRATION_DATE": 1624568315804,
+            "REFERENCE": 1400449740,
+            "URL_PAYMENT_RECEIPT_PDF": "https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/receipt?vid=1400449740Yf3531b6a3e304a8Y30f3f7b4598eb19",
+            "URL_PAYMENT_RECEIPT_HTML": "https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/app/v2?vid=1400449740Yf3531b6a3e304a8Y30f3f7b4598eb19"
+        },
+        "additionalInfo": {
+            "paymentNetwork": "EFECTY",
+            "rejectionType": "NONE",
+            "responseNetworkMessage": null,
+            "travelAgencyAuthorizationCode": null,
+            "cardType": null,
+            "transactionType": "AUTHORIZATION_AND_CAPTURE"
+        }
+    }
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <accountId>512321</accountId>
+         <referenceCode>PRODUCT_TEST_2021-06-23T19:59:43.229Z</referenceCode>
+         <description>Payment test description</description>
+         <language>es</language>
+         <signature>1d6c33aed575c4974ad5c0be7c6a1c87</signature>
+         <notifyUrl>http://www.payu.com/notify</notifyUrl>
+         <additionalValues>
+            <entry>
+               <string>TX_VALUE</string>
+               <additionalValue>
+                  <value>65000</value>
+                  <currency>COP</currency>
+               </additionalValue>
+               <string>TX_TAX</string>
+               <additionalValue>
+                  <value>10378</value>
+                  <currency>COP</currency>
+               </additionalValue>
+               <string>TX_TAX_RETURN_BASE</string>
+               <additionalValue>
+                  <value>54622</value>
+                  <currency>COP</currency>
+               </additionalValue>
+            </entry>
+         </additionalValues>
+         <buyer>
+            <merchantBuyerId>1</merchantBuyerId>
+            <fullName>First name and second buyer name</fullName>
+            <emailAddress>buyer_test@test.com</emailAddress>
+            <contactPhone>7563126</contactPhone>
+            <dniNumber>123456789</dniNumber>
+            <shippingAddress>
+               <street1>Cr 23 No. 53-50</street1>
+               <street2>5555487</street2>
+               <city>Bogotá</city>
+               <state>Bogotá D.C.</state>
+               <country>CO</country>
+               <postalCode>000000</postalCode>
+               <phone>7563126</phone>
+            </shippingAddress>
+         </buyer>
+         <shippingAddress>
+            <street1>Cr 23 No. 53-50</street1>
+            <street2>5555487</street2>
+            <city>Bogotá</city>
+            <state>Bogotá D.C.</state>
+            <country>CO</country>
+            <postalCode>0000000</postalCode>
+            <phone>7563126</phone>
+         </shippingAddress>
+      </order>
+      <payer>
+         <merchantPayerId>1</merchantPayerId>
+         <fullName>First name and second payer name</fullName>
+         <emailAddress>payer_test@test.com</emailAddress>
+         <contactPhone>7563126</contactPhone>
+         <dniNumber>5415668464654</dniNumber>
+         <billingAddress>
+            <street1>Cr 23 No. 53-50</street1>
+            <street2>5555487</street2>
+            <city>Bogotá</city>
+            <state>Bogotá D.C.</state>
+            <country>CO</country>
+            <postalCode>000000</postalCode>
+            <phone>7563126</phone>
+         </billingAddress>
+      </payer>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>EFECTY</paymentMethod>
+      <expirationDate>2021-06-24T20:58:35.804</expirationDate>
+      <paymentCountry>CO</paymentCountry>
+      <ipAddress>127.0.0.1</ipAddress>
+   </transaction>
+   <isTest>false</isTest>
+</request>
+```
+<br>
+
+Ejemplo de una Respuesta:
+```XML
+<paymentResponse>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>1400449797</orderId>
+        <transactionId>0b41f4d0-4486-4acf-ab5e-d757e35d994d</transactionId>
+        <state>PENDING</state>
+        <trazabilityCode>0b41f4d0-4486-4acf-ab5e-d757e35d994d</trazabilityCode>
+        <pendingReason>AWAITING_NOTIFICATION</pendingReason>
+        <responseCode>PENDING_TRANSACTION_CONFIRMATION</responseCode>
+        <operationDate>2021-06-23T11:20:03</operationDate>
+        <extraParameters>
+            <entry>
+                <string>EXPIRATION_DATE</string>
+                <date>2021-06-30T23:59:59</date>
+            </entry>
+            <entry>
+                <string>REFERENCE</string>
+                <int>1400449797</int>
+            </entry>
+            <entry>
+                <string>URL_PAYMENT_RECEIPT_PDF</string>
+                <string>https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/receipt?vid=1400449797Y0b41f4d044864acY3e5f14fc8ef00e8</string>
+            </entry>
+            <entry>
+                <string>URL_PAYMENT_RECEIPT_HTML</string>
+                <string>https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/app/v2?vid=1400449797Y0b41f4d044864acY3e5f14fc8ef00e8</string>
+            </entry>
+        </extraParameters>
+        <additionalInfo>
+            <paymentNetwork>EFECTY</paymentNetwork>
+            <rejectionType>NONE</rejectionType>
+            <transactionType>AUTHORIZATION_AND_CAPTURE</transactionType>
+        </additionalInfo>
+    </transactionResponse>
+</paymentResponse>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
 
 ## Procesar Pagos como Aerolínea o Agencia de Viajes {#process-payments-as-an-airline-or-travel-agency}
 
@@ -2969,688 +3650,6 @@ Ejemplo de una Solicitud:
 
 {{< /tabs >}}
 
-## Lista de Bancos - PSE {#banks-list---pse}
-
-Este método retorna la lista de bancos disponibles para realizar [pagos utilizando PSE]({{< ref "#submit-transactions-using-bank-transfer-pse" >}}). 
-
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-5}
-
-<details>
-<summary>Solicitud</summary>
-<br>
-<div class="variables"></div>
-
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
-|-|-|-|-|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Máx:32 | Asigna `GET_BANKS_LIST`. | Sí |
-| test (JSON)<hr>isTest (XML) | Booleano | | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant | Objeto | | Este objeto tiene los datos de autenticación. | Sí |
-| merchant > apiLogin | Alfanumérico | Min:12 Máx:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Máx:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| bankListInformation | Objeto | | Este objeto tiene la información de la consulta. | Sí |
-| bankListInformation > paymentMethod | Alfanumérico | | Asigna `PSE`. | Sí |
-| bankListInformation > paymentCountry | Alfanumérico | | Asigna `CO`. | Sí |
-
-</details>
-
-<details>
-<summary>Respuesta</summary>
-<br>
-<div class="variables"></div>
-
-| Nombre del Campo | Formato | Tamaño | Descripción |
-|-|-|-|-|
-| code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
-| error | Alfanumérico | Máx:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| banks | Objeto | | Lista de bancos disponibles en PSE. |
-| banks > id | Numérico | | Identificador interno del banco. |
-| banks > description | Alfanumérico | | Nombre del banco para ser mostrado en la lista. |
-| banks > pseCode | Alfanumérico | | Código para enviar en el extra parámetro `FINANCIAL_INSTITUTION_CODE` de la solicitud de pago. |
-
-</details>
-
-### Llamado a la API {#api-call-9}
-
-Los siguientes son los cuerpos de la petición y la respuesta para este método.
-
-{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-Ejemplo de una Solicitud:
-```JSON
-{
-   "language": "es",
-   "command": "GET_BANKS_LIST",
-   "merchant": {
-      "apiLogin": "pRRXKOl8ikMmt9u",
-      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
-   },
-   "test": false,
-   "bankListInformation": {
-      "paymentMethod": "PSE",
-      "paymentCountry": "CO"
-   }
-}
-```
-<br>
-
-Ejemplo de una Respuesta:
-```JSON
-{
-    "code": "SUCCESS",
-    "error": null,
-    "banks": [
-        {
-            "id": "34e6e912-a395-4d31-9599-9baa176c1a61",
-            "description": "A continuación seleccione su banco",
-            "pseCode": "0"
-        },
-        {
-            "id": "033aec11-e068-4252-8043-237144be9233",
-            "description": "BAN.CO",
-            "pseCode": "1552"
-        },
-        {
-            "id": "a720cb4c-6549-4932-83be-6d72b3eb0016",
-            "description": "BANCAMIA",
-            "pseCode": "1059"
-        },
-        {
-            "id": "d9280852-47a5-4e99-94ac-3d7648ba79a3",
-            "description": "BANCO AGRARIO",
-            "pseCode": "1040"
-        },
-        {
-            "id": "ff216e8a-28ba-4bf6-9935-b94dfdfd96a0",
-            "description": "BANCO AGRARIO DESARROLLO",
-            "pseCode": "1081"
-        },
-        {
-            "id": "5073154e-efd4-4870-9315-abb926e87519",
-            "description": "BANCO AGRARIO QA DEFECTOS",
-            "pseCode": "1080"
-        },
-        {
-            "id": "6e61a91d-58bf-46ec-aa09-1f44974dda7e",
-            "description": "BANCO CAJA SOCIAL",
-            "pseCode": "10322"
-        },
-        {
-            "id": "e062711e-6bbd-4a13-819a-d60084f9c6fa",
-            "description": "BANCO CAJA SOCIAL DESARROLLO",
-            "pseCode": "1032"
-        },
-        {
-            "id": "a9b5cc17-b0ae-4708-9835-586a0bef95df",
-            "description": "BANCO COMERCIAL AVVILLAS S.A.",
-            "pseCode": "1052"
-        },
-        {
-            "id": "c5c97dfe-6101-453f-bcd4-691f4b329a3c",
-            "description": "BANCO COOMEVA S.A. - BANCOOMEVA",
-            "pseCode": "1061"
-        },
-        {
-            "id": "7a2e8d04-e8c8-404b-8e49-d5d37c107a12",
-            "description": "BANCO COOPERATIVO COOPCENTRAL",
-            "pseCode": "1066"
-        },
-        {
-            "id": "197fe0af-f658-4fe0-ad1b-952e174de549",
-            "description": "BANCO CREDIFINANCIERA",
-            "pseCode": "1058"
-        },
-        {
-            "id": "b1de44f1-cede-4aca-9d3f-3313d5cc0c63",
-            "description": "BANCO DAVIVIENDA",
-            "pseCode": "1051"
-        },
-        {
-            "id": "7a10219e-04a7-4c31-b747-54ded27c7f07",
-            "description": "BANCO DAVIVIENDA Desarrollo",
-            "pseCode": "10512"
-        },
-        {
-            "id": "ed06f40e-a1b9-4e48-8851-bffb4cda0480",
-            "description": "BANCO DE BOGOTA",
-            "pseCode": "1039"
-        },
-        {
-            "id": "4592a13b-6334-4fba-8402-9d006b599fa8",
-            "description": "BANCO DE BOGOTA DESARROLLO 2013",
-            "pseCode": "1001"
-        },
-        {
-            "id": "55f59084-cd3b-47d2-a420-6442cdb9e4b1",
-            "description": "BANCO DE OCCIDENTE",
-            "pseCode": "1023"
-        },
-        {
-            "id": "8e134fca-4fde-44e6-b012-55e8f2d338ca",
-            "description": "BANCO FALABELLA",
-            "pseCode": "1062"
-        },
-        {
-            "id": "8eb03abf-5608-419b-8d2c-9d90b8ab6b88",
-            "description": "BANCO GNB COLOMBIA (ANTES HSBC)",
-            "pseCode": "1010"
-        },
-        {
-            "id": "283e0068-749f-43f1-a2e5-340910f41af3",
-            "description": "BANCO GNB SUDAMERIS",
-            "pseCode": "1012"
-        },
-        {
-            "id": "8b0bf5e7-394d-4f7e-a467-e4d21d04c9fb",
-            "description": "BANCO PICHINCHA S.A.",
-            "pseCode": "1060"
-        },
-        {
-            "id": "beeb494a-4ce5-41b4-b497-0756f0b6a6d9",
-            "description": "BANCO POPULAR",
-            "pseCode": "1002"
-        },
-        {
-            "id": "a5a4b740-1644-4627-ae2a-41b13ffc7c5e",
-            "description": "BANCO PRODUCTOS POR SEPARADO",
-            "pseCode": "1203"
-        },
-        {
-            "id": "47e747ef-c817-4be6-9eff-b6b16f50d001",
-            "description": "Banco PSE",
-            "pseCode": "1101"
-        },
-        {
-            "id": "589939d7-06d1-4933-a101-8bb29b801d76",
-            "description": "BANCO SANTANDER COLOMBIA",
-            "pseCode": "1065"
-        },
-        {
-            "id": "fcdaa98e-99ce-4e76-a504-1e053a05e773",
-            "description": "BANCO SERFINANZA",
-            "pseCode": "1069"
-        },
-        {
-            "id": "201608c6-81de-436f-967a-2ec7c212c100",
-            "description": "BANCO TEQUENDAMA",
-            "pseCode": "1035"
-        },
-        {
-            "id": "a8f33ba3-0053-464a-afbe-9add7c63fbc3",
-            "description": "Banco union Colombia Credito",
-            "pseCode": "1004"
-        },
-        {
-            "id": "5dfa1b2c-64bd-4e8c-9fad-585337cfd4ff",
-            "description": "BANCO UNION COLOMBIANO",
-            "pseCode": "1022"
-        },
-        {
-            "id": "56e306ef-6011-4f41-9640-b98449d6a6be",
-            "description": "BANCO UNION COLOMBIANO FD2",
-            "pseCode": "1005"
-        },
-        {
-            "id": "bc883c0d-3610-4a88-96ca-2e2baa1dd2e5",
-            "description": "Banco Web Service ACH",
-            "pseCode": "1055"
-        },
-        {
-            "id": "4e97e580-fc92-47ea-af4f-7b3b3ddffff8",
-            "description": "Banco Web Service ACH WSE 3.0",
-            "pseCode": "1055"
-        },
-        {
-            "id": "931f6bfb-283e-4721-bb86-4a7484bfd28e",
-            "description": "BANCOLOMBIA DATAPOWER",
-            "pseCode": "10072"
-        },
-        {
-            "id": "1285de9c-8d47-49f7-b00a-e87882e2a3f9",
-            "description": "BANCOLOMBIA DESARROLLO",
-            "pseCode": "10071"
-        },
-        {
-            "id": "451f0e5f-5db4-4f55-a1fc-b38e06526e04",
-            "description": "BANCOLOMBIA QA",
-            "pseCode": "1007"
-        },
-        {
-            "id": "448e00ec-c479-497d-9a35-0dfbbf462f72",
-            "description": "BANKA",
-            "pseCode": "1077"
-        },
-        {
-            "id": "5f3a7adb-b283-4ca3-bee9-741f1306a03d",
-            "description": "BBVA COLOMBIA S.A.",
-            "pseCode": "1013"
-        },
-        {
-            "id": "cd4286fa-850a-4b34-96d1-f71d6a79f44a",
-            "description": "BBVA DESARROLLO",
-            "pseCode": "1513"
-        },
-        {
-            "id": "10e9b7b6-7a5f-4d5b-8d7f-4b2020f43f93",
-            "description": "CITIBANK COLOMBIA S.A.",
-            "pseCode": "1009"
-        },
-        {
-            "id": "77f0988f-cf45-4931-bbcd-984e07e0fc51",
-            "description": "COLTEFINANCIERA",
-            "pseCode": "1370"
-        },
-        {
-            "id": "48c81f6a-e0f1-4c1d-ab9b-9915726e3596",
-            "description": "CONFIAR COOPERATIVA FINANCIERA",
-            "pseCode": "1292"
-        },
-        {
-            "id": "8694df26-5ccd-45c0-b5b7-2b995c47f81a",
-            "description": "COOPERATIVA FINANCIERA COTRAFA",
-            "pseCode": "1289"
-        },
-        {
-            "id": "1c222feb-2b58-408c-a495-ade06b6825c0",
-            "description": "COOPERATIVA FINANCIERA DE ANTIOQUIA",
-            "pseCode": "1283"
-        },
-        {
-            "id": "70a18a09-38f2-4f62-aba6-9ad28c30c966",
-            "description": "CREDIFIANCIERA",
-            "pseCode": "1558"
-        },
-        {
-            "id": "3f8b3126-8aa3-4438-8a6c-1d544184f2d7",
-            "description": "DALE",
-            "pseCode": "1097"
-        },
-        {
-            "id": "a953078b-5e22-42ea-9301-954558e8f463",
-            "description": "DAVIPLATA",
-            "pseCode": "1551"
-        },
-        {
-            "id": "2ad780ba-a1e8-4cb9-9150-670429aae092",
-            "description": "GIROS Y FINANZAS COMPAÑIA DE FINANCIAMIENTO S.A",
-            "pseCode": "1303"
-        },
-        {
-            "id": "c0bfb716-a098-40f6-84b5-1972a4846506",
-            "description": "IRIS",
-            "pseCode": "1637"
-        },
-        {
-            "id": "7e1efd88-4f88-4e21-a972-28b526b27da5",
-            "description": "ITAU",
-            "pseCode": "1006"
-        },
-        {
-            "id": "26c9a2df-6b4f-4309-9137-3692d9bb9f82",
-            "description": "MOVII S.A",
-            "pseCode": "1801"
-        },
-        {
-            "id": "d9b48a70-6068-4116-a345-154381e5d953",
-            "description": "NEQUI CERTIFICACION",
-            "pseCode": "1508"
-        },
-        {
-            "id": "60199dc5-7d38-49c6-92a5-b839dc0087d2",
-            "description": "prueba restriccion",
-            "pseCode": "9988"
-        },
-        {
-            "id": "be467299-d90a-407e-86d3-01e30ade1e06",
-            "description": "Prueba Steve",
-            "pseCode": "121212"
-        },
-        {
-            "id": "201acc05-4c4f-49dc-9be6-3261a6ce4a3c",
-            "description": "RAPPIPAY",
-            "pseCode": "1151"
-        },
-        {
-            "id": "7602e001-6199-48bc-9ee3-466f8eb2e422",
-            "description": "SCOTIABANK COLPATRIA DESARROLLO",
-            "pseCode": "1019"
-        },
-        {
-            "id": "9bb638a0-4c3f-41d2-8811-f8cdd29b0db2",
-            "description": "SCOTIABANK COLPATRIA UAT",
-            "pseCode": "1078"
-        },
-        {
-            "id": "086547b5-313b-42c7-acef-93d0f76b1dd5",
-            "description": "SEIVY – GM FINANCIAL",
-            "pseCode": "1305"
-        }
-    ]
-}
-```
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-<br>
-
-Ejemplo de una Solicitud:
-```XML
-<request>
-    <language>en</language>
-    <command>GET_BANKS_LIST</command>
-    <merchant>
-        apiLogin>pRRXKOl8ikMmt9u</apiLogin>
-        <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
-    </merchant>
-    <isTest>false</isTest>
-    <bankListInformation>
-        <paymentMethod>PSE</paymentMethod>
-        <paymentCountry>CO</paymentCountry>
-    </bankListInformation>
-</request>
-```
-<br>
-
-Ejemplo de una Respuesta:
-```XML
-<bankListResponse>
-    <code>SUCCESS</code>
-    <banks>
-        <bank>
-            <id>34e6e912-a395-4d31-9599-9baa176c1a61</id>
-            <description>A continuación seleccione su banco</description>
-            <pseCode>0</pseCode>
-        </bank>
-        <bank>
-            <id>033aec11-e068-4252-8043-237144be9233</id>
-            <description>BAN.CO</description>
-            <pseCode>1552</pseCode>
-        </bank>
-        <bank>
-            <id>a720cb4c-6549-4932-83be-6d72b3eb0016</id>
-            <description>BANCAMIA</description>
-            <pseCode>1059</pseCode>
-        </bank>
-        <bank>
-            <id>d9280852-47a5-4e99-94ac-3d7648ba79a3</id>
-            <description>BANCO AGRARIO</description>
-            <pseCode>1040</pseCode>
-        </bank>
-        <bank>
-            <id>ff216e8a-28ba-4bf6-9935-b94dfdfd96a0</id>
-            <description>BANCO AGRARIO DESARROLLO</description>
-            <pseCode>1081</pseCode>
-        </bank>
-        <bank>
-            <id>5073154e-efd4-4870-9315-abb926e87519</id>
-            <description>BANCO AGRARIO QA DEFECTOS</description>
-            <pseCode>1080</pseCode>
-        </bank>
-        <bank>
-            <id>6e61a91d-58bf-46ec-aa09-1f44974dda7e</id>
-            <description>BANCO CAJA SOCIAL</description>
-            <pseCode>10322</pseCode>
-        </bank>
-        <bank>
-            <id>e062711e-6bbd-4a13-819a-d60084f9c6fa</id>
-            <description>BANCO CAJA SOCIAL DESARROLLO</description>
-            <pseCode>1032</pseCode>
-        </bank>
-        <bank>
-            <id>a9b5cc17-b0ae-4708-9835-586a0bef95df</id>
-            <description>BANCO COMERCIAL AVVILLAS S.A.</description>
-            <pseCode>1052</pseCode>
-        </bank>
-        <bank>
-            <id>c5c97dfe-6101-453f-bcd4-691f4b329a3c</id>
-            <description>BANCO COOMEVA S.A. - BANCOOMEVA</description>
-            <pseCode>1061</pseCode>
-        </bank>
-        <bank>
-            <id>7a2e8d04-e8c8-404b-8e49-d5d37c107a12</id>
-            <description>BANCO COOPERATIVO COOPCENTRAL</description>
-            <pseCode>1066</pseCode>
-        </bank>
-        <bank>
-            <id>197fe0af-f658-4fe0-ad1b-952e174de549</id>
-            <description>BANCO CREDIFINANCIERA</description>
-            <pseCode>1058</pseCode>
-        </bank>
-        <bank>
-            <id>b1de44f1-cede-4aca-9d3f-3313d5cc0c63</id>
-            <description>BANCO DAVIVIENDA</description>
-            <pseCode>1051</pseCode>
-        </bank>
-        <bank>
-            <id>7a10219e-04a7-4c31-b747-54ded27c7f07</id>
-            <description>BANCO DAVIVIENDA Desarrollo</description>
-            <pseCode>10512</pseCode>
-        </bank>
-        <bank>
-            <id>ed06f40e-a1b9-4e48-8851-bffb4cda0480</id>
-            <description>BANCO DE BOGOTA</description>
-            <pseCode>1039</pseCode>
-        </bank>
-        <bank>
-            <id>4592a13b-6334-4fba-8402-9d006b599fa8</id>
-            <description>BANCO DE BOGOTA DESARROLLO 2013</description>
-            <pseCode>1001</pseCode>
-        </bank>
-        <bank>
-            <id>55f59084-cd3b-47d2-a420-6442cdb9e4b1</id>
-            <description>BANCO DE OCCIDENTE</description>
-            <pseCode>1023</pseCode>
-        </bank>
-        <bank>
-            <id>8e134fca-4fde-44e6-b012-55e8f2d338ca</id>
-            <description>BANCO FALABELLA</description>
-            <pseCode>1062</pseCode>
-        </bank>
-        <bank>
-            <id>8eb03abf-5608-419b-8d2c-9d90b8ab6b88</id>
-            <description>BANCO GNB COLOMBIA (ANTES HSBC)</description>
-            <pseCode>1010</pseCode>
-        </bank>
-        <bank>
-            <id>283e0068-749f-43f1-a2e5-340910f41af3</id>
-            <description>BANCO GNB SUDAMERIS</description>
-            <pseCode>1012</pseCode>
-        </bank>
-        <bank>
-            <id>8b0bf5e7-394d-4f7e-a467-e4d21d04c9fb</id>
-            <description>BANCO PICHINCHA S.A.</description>
-            <pseCode>1060</pseCode>
-        </bank>
-        <bank>
-            <id>beeb494a-4ce5-41b4-b497-0756f0b6a6d9</id>
-            <description>BANCO POPULAR</description>
-            <pseCode>1002</pseCode>
-        </bank>
-        <bank>
-            <id>a5a4b740-1644-4627-ae2a-41b13ffc7c5e</id>
-            <description>BANCO PRODUCTOS POR SEPARADO</description>
-            <pseCode>1203</pseCode>
-        </bank>
-        <bank>
-            <id>47e747ef-c817-4be6-9eff-b6b16f50d001</id>
-            <description>Banco PSE</description>
-            <pseCode>1101</pseCode>
-        </bank>
-        <bank>
-            <id>589939d7-06d1-4933-a101-8bb29b801d76</id>
-            <description>BANCO SANTANDER COLOMBIA</description>
-            <pseCode>1065</pseCode>
-        </bank>
-        <bank>
-            <id>fcdaa98e-99ce-4e76-a504-1e053a05e773</id>
-            <description>BANCO SERFINANZA</description>
-            <pseCode>1069</pseCode>
-        </bank>
-        <bank>
-            <id>201608c6-81de-436f-967a-2ec7c212c100</id>
-            <description>BANCO TEQUENDAMA</description>
-            <pseCode>1035</pseCode>
-        </bank>
-        <bank>
-            <id>a8f33ba3-0053-464a-afbe-9add7c63fbc3</id>
-            <description>Banco union Colombia Credito</description>
-            <pseCode>1004</pseCode>
-        </bank>
-        <bank>
-            <id>5dfa1b2c-64bd-4e8c-9fad-585337cfd4ff</id>
-            <description>BANCO UNION COLOMBIANO</description>
-            <pseCode>1022</pseCode>
-        </bank>
-        <bank>
-            <id>56e306ef-6011-4f41-9640-b98449d6a6be</id>
-            <description>BANCO UNION COLOMBIANO FD2</description>
-            <pseCode>1005</pseCode>
-        </bank>
-        <bank>
-            <id>bc883c0d-3610-4a88-96ca-2e2baa1dd2e5</id>
-            <description>Banco Web Service ACH</description>
-            <pseCode>1055</pseCode>
-        </bank>
-        <bank>
-            <id>4e97e580-fc92-47ea-af4f-7b3b3ddffff8</id>
-            <description>Banco Web Service ACH WSE 3.0</description>
-            <pseCode>1055</pseCode>
-        </bank>
-        <bank>
-            <id>931f6bfb-283e-4721-bb86-4a7484bfd28e</id>
-            <description>BANCOLOMBIA DATAPOWER</description>
-            <pseCode>10072</pseCode>
-        </bank>
-        <bank>
-            <id>1285de9c-8d47-49f7-b00a-e87882e2a3f9</id>
-            <description>BANCOLOMBIA DESARROLLO</description>
-            <pseCode>10071</pseCode>
-        </bank>
-        <bank>
-            <id>451f0e5f-5db4-4f55-a1fc-b38e06526e04</id>
-            <description>BANCOLOMBIA QA</description>
-            <pseCode>1007</pseCode>
-        </bank>
-        <bank>
-            <id>448e00ec-c479-497d-9a35-0dfbbf462f72</id>
-            <description>BANKA</description>
-            <pseCode>1077</pseCode>
-        </bank>
-        <bank>
-            <id>5f3a7adb-b283-4ca3-bee9-741f1306a03d</id>
-            <description>BBVA COLOMBIA S.A.</description>
-            <pseCode>1013</pseCode>
-        </bank>
-        <bank>
-            <id>cd4286fa-850a-4b34-96d1-f71d6a79f44a</id>
-            <description>BBVA DESARROLLO</description>
-            <pseCode>1513</pseCode>
-        </bank>
-        <bank>
-            <id>10e9b7b6-7a5f-4d5b-8d7f-4b2020f43f93</id>
-            <description>CITIBANK COLOMBIA S.A.</description>
-            <pseCode>1009</pseCode>
-        </bank>
-        <bank>
-            <id>77f0988f-cf45-4931-bbcd-984e07e0fc51</id>
-            <description>COLTEFINANCIERA</description>
-            <pseCode>1370</pseCode>
-        </bank>
-        <bank>
-            <id>48c81f6a-e0f1-4c1d-ab9b-9915726e3596</id>
-            <description>CONFIAR COOPERATIVA FINANCIERA</description>
-            <pseCode>1292</pseCode>
-        </bank>
-        <bank>
-            <id>8694df26-5ccd-45c0-b5b7-2b995c47f81a</id>
-            <description>COOPERATIVA FINANCIERA COTRAFA</description>
-            <pseCode>1289</pseCode>
-        </bank>
-        <bank>
-            <id>1c222feb-2b58-408c-a495-ade06b6825c0</id>
-            <description>COOPERATIVA FINANCIERA DE ANTIOQUIA</description>
-            <pseCode>1283</pseCode>
-        </bank>
-        <bank>
-            <id>70a18a09-38f2-4f62-aba6-9ad28c30c966</id>
-            <description>CREDIFIANCIERA</description>
-            <pseCode>1558</pseCode>
-        </bank>
-        <bank>
-            <id>3f8b3126-8aa3-4438-8a6c-1d544184f2d7</id>
-            <description>DALE</description>
-            <pseCode>1097</pseCode>
-        </bank>
-        <bank>
-            <id>a953078b-5e22-42ea-9301-954558e8f463</id>
-            <description>DAVIPLATA</description>
-            <pseCode>1551</pseCode>
-        </bank>
-        <bank>
-            <id>2ad780ba-a1e8-4cb9-9150-670429aae092</id>
-            <description>GIROS Y FINANZAS COMPAÑIA DE FINANCIAMIENTO S.A</description>
-            <pseCode>1303</pseCode>
-        </bank>
-        <bank>
-            <id>c0bfb716-a098-40f6-84b5-1972a4846506</id>
-            <description>IRIS</description>
-            <pseCode>1637</pseCode>
-        </bank>
-        <bank>
-            <id>7e1efd88-4f88-4e21-a972-28b526b27da5</id>
-            <description>ITAU</description>
-            <pseCode>1006</pseCode>
-        </bank>
-        <bank>
-            <id>26c9a2df-6b4f-4309-9137-3692d9bb9f82</id>
-            <description>MOVII S.A</description>
-            <pseCode>1801</pseCode>
-        </bank>
-        <bank>
-            <id>d9b48a70-6068-4116-a345-154381e5d953</id>
-            <description>NEQUI CERTIFICACION</description>
-            <pseCode>1508</pseCode>
-        </bank>
-        <bank>
-            <id>60199dc5-7d38-49c6-92a5-b839dc0087d2</id>
-            <description>prueba restriccion</description>
-            <pseCode>9988</pseCode>
-        </bank>
-        <bank>
-            <id>be467299-d90a-407e-86d3-01e30ade1e06</id>
-            <description>Prueba Steve</description>
-            <pseCode>121212</pseCode>
-        </bank>
-        <bank>
-            <id>201acc05-4c4f-49dc-9be6-3261a6ce4a3c</id>
-            <description>RAPPIPAY</description>
-            <pseCode>1151</pseCode>
-        </bank>
-        <bank>
-            <id>7602e001-6199-48bc-9ee3-466f8eb2e422</id>
-            <description>SCOTIABANK COLPATRIA DESARROLLO</description>
-            <pseCode>1019</pseCode>
-        </bank>
-        <bank>
-            <id>9bb638a0-4c3f-41d2-8811-f8cdd29b0db2</id>
-            <description>SCOTIABANK COLPATRIA UAT</description>
-            <pseCode>1078</pseCode>
-        </bank>
-        <bank>
-            <id>086547b5-313b-42c7-acef-93d0f76b1dd5</id>
-            <description>SEIVY – GM FINANCIAL</description>
-            <pseCode>1305</pseCode>
-        </bank>
-    </banks>
-</bankListResponse>
-```
-
-{{< /tab >}}
-
-{{< /tabs >}}
 
 ## Consultar Métodos de Pago Disponibles {#available-payment-methods-query}
 
