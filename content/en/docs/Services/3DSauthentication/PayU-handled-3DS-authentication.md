@@ -14,7 +14,7 @@ To enable 3DS authentication, merchants must be registered to this service with 
 
 {{% alert title="Notes" color="info"%}}
 
-* 3DS authentication with PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, and **Peru**.
+* 3DS authentication with PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, **Mexico**, and **Peru**.
 * This feature requires an API integration and is not available for Webcheckout integration. 
 * **Supported networks:** Visa and Mastercard.
 
@@ -265,6 +265,7 @@ To test the 3DS authentication process, use the dummy values provided in the tab
     <th><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</th>
     <th><img src="/assets/Brasil.png" width="25px"/> &nbsp;Brazil</th>
     <th><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia</th>
+    <th><img src="/assets/Mexico.png" width="25px"/> &nbsp;Mexico</th>
     <th><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</th>
   </tr>
   <tr>
@@ -272,23 +273,24 @@ To test the 3DS authentication process, use the dummy values provided in the tab
     <td>516684</td>
     <td>516685</td>
     <td>516686</td>
+    <td>516687</td>
     <td>516688</td>
   </tr>  
   <tr>
     <th>Merchant ID</th>
-    <td colspan="4" style="text-align: center;">508029</td>
+    <td colspan="5" style="text-align: center;">508029</td>
   </tr>
   <tr>
     <th>API Login</th>
-    <td colspan="4" style="text-align: center;">pRRXKOl8ikMmt9u</td>
+    <td colspan="5" style="text-align: center;">pRRXKOl8ikMmt9u</td>
   </tr>
   <tr>
     <th>API Key</th>
-    <td colspan="4" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
+    <td colspan="5" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
   </tr>
   <tr>
     <th>Public Key</th>
-    <td colspan="4" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
+    <td colspan="5" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
   </tr>  
   </tr>
 </table>
@@ -400,6 +402,5 @@ Once the payer completes the 3DS authentication (if required), PayU will receive
 
 Following the payer's redirection from the `THREEDS_AUTH_REDIRECT_URL`, they will be directed to:
 
-* **PayU Checkout transaction status page:** By default, this is the behavior if the merchant hasn't specified a custom return URL.
+* **PayU Checkout transaction status page:** By default, this is the behavior if the merchant hasn't specified a custom return URL.  
 * **Merchant's custom return URL:** If provided, the payer will be redirected to the merchant's designated page after authentication.
-

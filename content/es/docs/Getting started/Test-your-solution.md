@@ -155,9 +155,9 @@ Puedes utilizar las siguientes tarjetas de prueba:
 | Tarjeta                           | Número                               |
 |-----------------------------------|--------------------------------------|
 | **Tarjeta de Crédito AMEX**       | 376675000000005                      |
-| **Tarjeta de Crédito MASTERCARD** | 5491380000000001                     |
-| **Tarjeta Débito MASTERCARD**     | 5256780000000007                     |
-| **Tarjeta de Crédito VISA**       | 4268070000000002                     |
+| **Tarjeta de Crédito MASTERCARD** | 5491380000000001 - 5204740000002745  |
+| **Tarjeta Débito MASTERCARD**     | 5256780000000007 - 5579220000000012  |
+| **Tarjeta de Crédito VISA**       | 4268070000000002 - 4931580001642617 - 4147463011110059 - 4147463011110083 - 4265880000000007 |
 | **Tarjeta Débito VISA**           | 4415490000000004                     |
 
 </details>

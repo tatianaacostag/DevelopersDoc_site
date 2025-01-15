@@ -1,5 +1,6 @@
 ---
 title: "Select Your Integration"
+linkTitle: "Select Your Integration"
 date: 2021-04-06T16:59:57-05:00
 Description: >
   Select how your store will be integrated with PayU services or tools.

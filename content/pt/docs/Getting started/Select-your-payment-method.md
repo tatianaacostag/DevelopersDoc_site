@@ -67,6 +67,7 @@ PayU na Colômbia permite a integração com a maioria dos métodos de pagamento
 | ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá | BANK_REFERENCED | Referência bancária | |
 | ![Logo](/assets/PaymentMethods/bancolombia.png) | Bancolombia | BANK_REFERENCED | Referência bancária | |
+| ![Logo](/assets/PaymentMethods/bancolombiabutton.png) | Botão Bancolombia | BANCOLOMBIA_BUTTON | Transferência bancária | |
 | ![Logo](/assets/PaymentMethods/codensa.png) | Codensa | CODENSA | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/davivienda.png) | Davivienda | BANK_REFERENCED | Referência bancária | |
 | ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Cartões de crédito | |

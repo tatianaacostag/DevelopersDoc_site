@@ -63,21 +63,22 @@ PayU en Colombia te permite integrar con la mayoría de los métodos de pago en 
 
 |  | Medio de Pago | Parámetro paymentMethod | Tipo | Comentarios |
 |:-:|---|---|---|---|
-| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Tarjetas de Crédito | |
-| ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá | BANK_REFERENCED | Referencia Bancaria | |
-| ![Logo](/assets/PaymentMethods/bancolombia.png) | Bancolombia | BANK_REFERENCED | Referencia Bancaria | |
-| ![Logo](/assets/PaymentMethods/codensa.png) | Codensa | CODENSA | Tarjetas de Crédito | |
-| ![Logo](/assets/PaymentMethods/davivienda.png) | Davivienda | BANK_REFERENCED | Referencia Bancaria | |
-| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Tarjetas de Crédito | |
+| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Tarjeta de crédito | |
+| ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá | BANK_REFERENCED | Referencia bancaria | |
+| ![Logo](/assets/PaymentMethods/bancolombia.png) | Bancolombia | BANK_REFERENCED | Referencia bancaria | |
+| ![Logo](/assets/PaymentMethods/bancolombiabutton.png) | Botón Bancolombia | BANCOLOMBIA_BUTTON | Transferencia bancaria | |
+| ![Logo](/assets/PaymentMethods/codensa.png) | Codensa | CODENSA | Tarjeta de crédito | |
+| ![Logo](/assets/PaymentMethods/davivienda.png) | Davivienda | BANK_REFERENCED | Referencia bancaria | |
+| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Tarjeta de crédito | |
 | ![Logo](/assets/PaymentMethods/efecty.png) | Efecty | EFECTY | Efectivo | |
 | ![Logo](/assets/PaymentMethods/google_pay.png) | Google Pay | GOOGLE_PAY | Servicio móvil de pagos | |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas Débito| |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjeta de crédito | |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjeta de débito| |
 | ![Logo](/assets/PaymentMethods/nequi.png) | Nequi | NEQUI | Servicio móvil de pagos | |
-| ![Logo](/assets/PaymentMethods/pse_logo.png) | PSE | PSE | Transferencia Bancaria | PSE le permite a tus clientes pagar utilizando Nequi y Daviplata. |
+| ![Logo](/assets/PaymentMethods/pse_logo.png) | PSE | PSE | Transferencia bancaria | PSE le permite a tus clientes pagar utilizando Nequi y Daviplata. |
 | ![Logo](/assets/PaymentMethods/su-red.png) | Su Red | OTHERS_CASH | Efectivo | **Oficinas de pago**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. |
-| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
-| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas Débito| |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de crédito | |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas de débito| |
 <!--| ![Logo](/assets/PaymentMethods/viabaloto.png) | Baloto | BALOTO | Efectivo | |-->
 
 ## <img src="/assets/Mexico.png" width="25px"/> México {#Mexico}

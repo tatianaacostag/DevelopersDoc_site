@@ -14,7 +14,7 @@ Para habilitar la autenticación 3DS, los comercios deben estar registrados en e
 
 {{% alert title="Nota" color="info"%}}
 
-* La autenticación 3DS con PayU Latam solo está disponible para **Argentina**, **Brasil**, **Colombia** y **Perú**.
+* La autenticación 3DS con PayU Latam solo está disponible para **Argentina**, **Brasil**, **Colombia**, **México** y **Perú**.
 * Esta funcionalidad requiere una integración API y no está disponible para la integración Webcheckout.
 * **Redes compatibles:** Visa y Mastercard.
 
@@ -265,6 +265,7 @@ Para probar el proceso de autenticación 3DS, utiliza los valores ficticios prop
     <th><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</th>
     <th><img src="/assets/Brasil.png" width="25px"/> &nbsp;Brasil</th>
     <th><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia</th>
+    <th><img src="/assets/Mexico.png" width="25px"/> &nbsp;México</th>
     <th><img src="/assets/Peru.png" width="25px"/> &nbsp;Perú</th>
   </tr>
   <tr>
@@ -272,23 +273,24 @@ Para probar el proceso de autenticación 3DS, utiliza los valores ficticios prop
     <td>516684</td>
     <td>516685</td>
     <td>516686</td>
+    <td>516687</td>
     <td>516688</td>
   </tr>
   <tr>
     <th>Merchant ID</th>
-    <td colspan="4" style="text-align: center;">508029</td>
+    <td colspan="5" style="text-align: center;">508029</td>
   </tr>
   <tr>
     <th>API Login</th>
-    <td colspan="4" style="text-align: center;">pRRXKOl8ikMmt9u</td>
+    <td colspan="5" style="text-align: center;">pRRXKOl8ikMmt9u</td>
   </tr>
   <tr>
     <th>API Key</th>
-    <td colspan="4" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
+    <td colspan="5" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
   </tr>
   <tr>
     <th>Public Key</th>
-    <td colspan="4" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
+    <td colspan="5" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
   </tr>
 </table>
 

@@ -64,21 +64,22 @@ PayU in Colombia allows you to integrate with most of the cash payments methods 
 
 | | Payment Method | paymentMethod parameter | Type | Comments |
 |:---:|---|---|---|---|
-| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Credit Cards | |
-| ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá | BANK_REFERENCED | Bank Reference | |
-| ![Logo](/assets/PaymentMethods/bancolombia.png) | Bancolombia | BANK_REFERENCED | Bank Reference | |
-| ![Logo](/assets/PaymentMethods/codensa.png) | Codensa | CODENSA | Credit Cards | |
-| ![Logo](/assets/PaymentMethods/davivienda.png) | Davivienda | BANK_REFERENCED | Bank Reference | |
-| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Credit Cards | |
+| ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Credit card | |
+| ![Logo](/assets/PaymentMethods/banco-de-bogota.png) | Banco de Bogotá | BANK_REFERENCED | Bank reference | |
+| ![Logo](/assets/PaymentMethods/bancolombia.png) | Bancolombia | BANK_REFERENCED | Bank reference | |
+| ![Logo](/assets/PaymentMethods/bancolombiabutton.png) | Bancolombia Button | BANCOLOMBIA_BUTTON | Bank transfer | |
+| ![Logo](/assets/PaymentMethods/codensa.png) | Codensa | CODENSA | Credit card | |
+| ![Logo](/assets/PaymentMethods/davivienda.png) | Davivienda | BANK_REFERENCED | Bank reference | |
+| ![Logo](/assets/PaymentMethods/diners.png) | Diners | DINERS | Credit card | |
 | ![Logo](/assets/PaymentMethods/efecty.png) | Efecty | EFECTY | Cash | |
 | ![Logo](/assets/PaymentMethods/google_pay.png) | Google Pay | GOOGLE_PAY | Mobile payment service | |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Credit Cards | |
-| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Debit Cards | |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Credit card | |
+| ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Debit cards | |
 | ![Logo](/assets/PaymentMethods/nequi.png) | Nequi | NEQUI | Mobile payment service | |
-| ![Logo](/assets/PaymentMethods/pse_logo.png) | PSE | PSE | Bank Transfer | PSE lets your customers pay using Nequi and Daviplata. |
+| ![Logo](/assets/PaymentMethods/pse_logo.png) | PSE | PSE | Bank transfer | PSE lets your customers pay using Nequi and Daviplata. |
 | ![Logo](/assets/PaymentMethods/su-red.png) | Su Red | OTHERS_CASH | Cash | **Payment offices**: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER. |
-| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Credit Cards | |
-| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Debit Cards | |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Credit card | |
+| ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Debit card | |
 
 ## <img src="/assets/Mexico.png" width="25px"/> Mexico {#Mexico}
 For Mexico, we support both MSI, and Installments and Promotions, refer to this [article]({{< ref "Promotions.md" >}}) for more information.

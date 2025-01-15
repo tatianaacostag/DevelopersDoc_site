@@ -27,7 +27,8 @@ La API de Pagos incluye los siguiente métodos:
 * [Enviar Transacciones Utilizando Tarjetas de Crédito o Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
 * [Enviar Transacciones Utilizando Transferencia Bancaria (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
 * [Enviar Transacciones Utilizando Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
-* [Enviar Transacciones Utilizando Nequi]({{< ref "#submit-transactions-using-nequi" >}})<!-- * [Enviar Transacciones Utilizando Botón Bancolombia]({{< ref "#submit-transactions-using-bancolombia-button" >}}) -->
+* [Enviar Transacciones Utilizando Nequi]({{< ref "#submit-transactions-using-nequi" >}})
+* [Enviar Transacciones Utilizando Botón Bancolombia]({{< ref "#submit-transactions-using-bancolombia-button" >}})
 * [Enviar Transacciones Utilizando Efectivo o Referencia Bancaria]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
 * [Procesar Pagos como Aerolínea o Agencia de Viajes]({{< ref "#process-payments-as-an-airline-or-travel-agency" >}})
 * [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
@@ -545,7 +546,7 @@ La lista de documentos disponibles es:
 
 <details>
 <summary>Solicitud</summary>
-<label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
+<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -643,7 +644,7 @@ La lista de documentos disponibles es:
 
 </details>
 
-#### Consideraciones {#considerations-2}
+#### Consideraciones {#considerations-1}
 
 * Para probar las transferencias bancarias PSE en el ambiente de Sandbox de PayU, consulta la [Guía de pruebas de PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
 * Todos los valores de pago deben estar formateados en miles sin excepción (p.ej., 1,200.00 o 1,200).
@@ -661,11 +662,11 @@ La lista de documentos disponibles es:
 | 6 | 4 | Transacción rechazada |
 | 12 o 14 | 9994 o 25 | Transacción pendiente, por favor revisar si el débito fue realizado en el banco. |
 
-### Llamado a la API {#api-call-3}
+### Llamado a la API {#api-call-1}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -998,11 +999,11 @@ Este método retorna la lista de bancos disponibles para realizar [pagos utiliza
 
 </details>
 
-#### Llamado a la API {#api-call-9}
+#### Llamado a la API {#api-call-2}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
-{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1763,12 +1764,12 @@ Utiliza el Web Checkout en [ambiente de prueba](https://sandbox.checkout.payulat
     <source src="/assets/GooglePay/Colombia_WebCheckout.mp4" type="video/mp4">    
 </video>
 
-### Llamado a la API {#api-call-5}
+### Llamado a la API {#api-call-3}
 
 Los siguientes son ejemplos de los cuerpos de la petición y la respuesta de este método de pago.
 
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2002,7 +2003,7 @@ La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes
 
 <details>
 <summary>Solicitud</summary>
-<label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -2106,11 +2107,11 @@ La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes
 
 </details>
 
-### Llamado a la API {#api-call-1}
+### Llamado a la API {#api-call-4}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago:
 
-{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2400,7 +2401,7 @@ Para probar las transacciones de Nequi en el ambiente Sandbox de PayU, utiliza l
 
 Puedes consultar el estado de la transacción a través de la [API de Consultas]({{< ref "queries-api.html" >}}). 
 
-<!--## Enviar Transacciones Utilizando Botón Bancolombia {#submit-transactions-using-bancolombia-button}
+## Enviar Transacciones Utilizando Botón Bancolombia {#submit-transactions-using-bancolombia-button}
 
 El Botón de Pagos Bancolombia es una solución de pagos en línea que facilita a los usuarios realizar transacciones de forma rápida y segura a través de su cuenta en Bancolombia. Esta herramienta está disponible para millones de usuarios y permite completar pagos directamente desde el sitio web del comercio, redirigiendo al usuario a una plataforma segura proporcionada por el banco.
 
@@ -2434,117 +2435,332 @@ El proceso de pago está diseñado para ser simple y seguro. Sigue estos pasos p
 
 ### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-4}
 
-Esta API permite gestionar la intención de compra, obtener un código único de transferencia y generar la experiencia de pago. La integración necesita consumir un servicio REST del banco utilizando un **Client Secret** y un **Client ID**, que serán entregados al usuario por correo confidencial.
-
 <details>
 <summary>Solicitud</summary>
+<label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
+<br>
 <div class="variables"></div>
 
-| **Campo** | **Definición** | **Tipo** | **Longitud Máx.** | **Ejemplo** | **Observación** |
-|-|-|-|-|-|-|
-| commerceTransferButtonId | Identificador único del botón de transferencia. | String | 50 | `"h4ShG3NER1C"` | Entregado durante el proceso de vinculación. |
-| transferReference | Código único asignado por el comercio para identificar la transacción. | String | 48 | `"referencia0123"` | Definido por el comercio. |
-| transferDescription | Descripción de la transferencia, asociada al producto, servicio o factura. | String | 225 | transferDescription: `"Compra online"` | |
-| transferAmount | Monto total de la transacción que será debitado al cliente pagador. | Double | 15 | `23450.33` | En pruebas, el monto máximo es $1.000.000 COP y el mínimo $1.000 COP. |
-| commerceUrl | URL de redirección para el cliente tras completar la transferencia. | String | 225 | `"https://gateway.com/payment/route?commerce=compraonline"` | |
-| confirmationURL | URL de confirmación utilizada para notificar al comercio la finalización de la transacción. | String | 500 | `"https://espagos-api-dev.cloud.net/callback"` | Esta funcionalidad es obligatoria. |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+|-|-|-|-|:-:|
+| language | Alfanumérico | 2 | Idioma utilizado en la solicitud. Este idioma se usa para mostrar los mensajes de error generados. [Ver idiomas compatibles]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| command | Alfanumérico | Máx:32 | Establece `SUBMIT_TRANSACTION`. | Sí |
+| test (JSON)<hr>isTest (XML) | Booleano | | Establece `true` si la solicitud está en modo de prueba. De lo contrario, establece `false`. | Sí |
+| merchant | Objeto | | Este objeto contiene los datos de autenticación. | Sí |
+| merchant > apiLogin | Alfanumérico | Mín:12 Máx:32 | Usuario o login proporcionado por PayU. [¿Cómo obtengo mi API Login?]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| merchant > apiKey | Alfanumérico | Mín:6 Máx:32 | Contraseña proporcionada por PayU. [¿Cómo obtengo mi API Key?]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| transaction | Objeto | | Este objeto contiene los datos de la transacción. | Sí |
+| transaction > order | Objeto | | Este objeto contiene los datos de la orden. | Sí |
+| transaction > order > accountId | Numérico | | Identificador de tu cuenta. | Sí |
+| transaction > order > referenceCode | Alfanumérico | Mín:1 Máx:255 | Representa el identificador de la orden en tu sistema. | Sí |
+| transaction > order > description | Alfanumérico | Mín:1 Máx:255 | Descripción de la orden. | Sí |
+| transaction > order > language | Alfanumérico | 2 | Idioma utilizado en los correos enviados al comprador y al vendedor. | Sí |
+| transaction > order > notifyUrl | Alfanumérico | Máx:2048 | URL de confirmación de la orden. | No |
+| transaction > order > partnerId | Alfanumérico | Máx:255 | ID del socio en PayU. | No |
+| transaction > order > signature | Alfanumérico | Máx:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
+| transaction > order > shippingAddress | Objeto | | Dirección de envío. | No |
+| transaction > order > shippingAddress > street1 | Alfanumérico | Máx:100 | Dirección Línea 1. | No |
+| transaction > order > shippingAddress > street2 | Alfanumérico | Máx:100 | Dirección Línea 2. | No |
+| transaction > order > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección. | No |
+| transaction > order > shippingAddress > state | Alfanumérico | Máx:40 | Estado de la dirección. | No |
+| transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
+| transaction > order > shippingAddress > postalCode | Alfanumérico | Máx:8 | Código postal de la dirección. | No |
+| transaction > order > shippingAddress > phone | Alfanumérico | Máx:11 | Número de teléfono asociado a la dirección. | No |
+| transaction > order > buyer | Objeto | | Información del comprador. | Sí |
+| transaction > order > buyer > merchantBuyerId | Alfanumérico | Máx:100 | ID del comprador en tu sistema. | No |
+| transaction > order > buyer > fullName | Alfanumérico | Máx:150 | Nombre completo del comprador. | Sí |
+| transaction > order > buyer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del comprador. | Sí |
+| transaction > order > buyer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del comprador. | Sí |
+| transaction > order > buyer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del comprador. | Sí |
+| transaction > order > buyer > shippingAddress | Alfanumérico | | Dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Máx:150 | Dirección de envío Línea 1 del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > state | Alfanumérico | Máx:40 | Estado de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección de envío del comprador en formato ISO 3166 alfa-2. | Sí |
+| transaction > order > buyer > shippingAddress > postalCode | Numérico | Máx:20 | Código postal de la dirección de envío del comprador. | Sí |
+| transaction > order > buyer > shippingAddress > phone | Numérico | Máx:20 | Número de teléfono de la dirección de envío del comprador. | Sí |
+| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
+| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
+| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción. Este monto no puede incluir decimales. | Sí |
+| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| transaction > payer | Objeto | | Información del pagador. | Sí |
+| transaction > payer > emailAddress | Alfanumérico | Máx:255 | Correo electrónico del pagador. | Sí |
+| transaction > payer > merchantPayerId | Alfanumérico | Máx:100 | Identificador del pagador en tu sistema. | No |
+| transaction > payer > fullName | Alfanumérico | Máx:150 | Nombre del pagador, que debe coincidir con el nombre enviado en el parámetro `transaction.creditCard.name`. | Sí |
+| transaction > payer > billingAddress | Objeto | | Dirección de facturación. | Sí |
+| transaction > payer > billingAddress > street1 | Alfanumérico | Máx:100 | Dirección de facturación Línea 1. | Sí |
+| transaction > payer > billingAddress > street2 | Alfanumérico | Máx:100 | Dirección de facturación Línea 2. | No |
+| transaction > payer > billingAddress > city | Alfanumérico | Máx:50 | Ciudad de la dirección de facturación. | Sí |
+| transaction > payer > billingAddress > state | Alfanumérico | Máx:40 | Estado de la dirección de facturación. | No |
+| transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 alfa-2. | Sí |
+| transaction > payer > billingAddress > postalCode | Alfanumérico | Máx:20 | Código postal de la dirección de facturación. | No |
+| transaction > payer > billingAddress > phone | Alfanumérico | Máx:20 | Número de teléfono de la dirección de facturación. | No |
+| transaction > payer > birthdate | Alfanumérico | Máx:10 | Fecha de nacimiento del pagador. | No |
+| transaction > payer > contactPhone | Alfanumérico | Máx:20 | Número de teléfono del pagador. | Sí |
+| transaction > payer > dniNumber | Alfanumérico | Máx:20 | Número de identificación del pagador. | Sí |
+| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver tipos de documento]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| transaction > type | Alfanumérico | 32 | Establece este valor según la transacción. Para Colombia, establece `AUTHORIZATION_AND_CAPTURE`. | Sí |
+| transaction > paymentMethod | Alfanumérico | 32 | Establece `BANCOLOMBIA_BUTTON`. [Ver los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
+| transaction > paymentCountry | Alfanumérico | 2 | Establece `CO` para Colombia. | Sí |
+| transaction > deviceSessionId | Alfanumérico | Máx:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este tema]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
+| transaction > ipAddress | Alfanumérico | Máx:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
+| transaction > cookie | Alfanumérico | Máx:255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
+| transaction > userAgent | Alfanumérico | Máx:1024 | User agent del navegador donde el cliente realiza la transacción. | Sí |
+| transaction > extraParameters | Objeto | | Parámetros adicionales o datos asociados con la solicitud. El tamaño máximo de cada nombre en _extraParameters_ es de 64 caracteres.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` | No |
 
 </details>
 
-### Llamado a la API {#api-call-4}
+<details>
+<summary>Respuesta</summary>
+<br>
+<div class="variables"></div>
+
+| Nombre del Campo | Formato | Tamaño | Descripción |
+|-|-|-|-|
+| code | Alfanumérico | | El código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| error | Alfanumérico | Máx:2048 | El mensaje de error devuelto cuando el código de respuesta es `ERROR`. |
+| transactionResponse | Objeto | | El objeto principal que contiene los datos de la respuesta. |
+| transactionResponse > orderId | Numérico | | El identificador de pedido generado o existente en PayU. |
+| transactionResponse > transactionId | Alfanumérico | 36 | El identificador de la transacción en PayU. |
+| transactionResponse > state | Alfanumérico | Máx:32 | El estado de la transacción. Para pagos realizados en oficinas físicas, el estado de una transacción exitosa es `PENDING`. |
+| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Máx:255 | El código de respuesta devuelto por la red financiera. |
+| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Máx:255 | El mensaje de error devuelto por la red financiera. |
+| transactionResponse > trazabilityCode | Alfanumérico | Máx:32 | El código de trazabilidad devuelto por la red financiera. |
+| transactionResponse > authorizationCode | Alfanumérico | Máx:12 | El código de autorización proporcionado por la red financiera. |
+| transactionResponse > pendingReason | Alfanumérico | Máx:21 | El código de motivo asociado al estado. Para transacciones con estado `PENDING`, esto indica que la transacción está pendiente de pago. |
+| transactionResponse > responseCode | Alfanumérico | Máx:64 | El código de respuesta asociado al estado de la transacción. Para transacciones exitosas, este es `PENDING_TRANSACTION_CONFIRMATION`. |
+| transactionResponse > responseMessage | Alfanumérico | Máx:2048 | Un mensaje asociado al código de respuesta. |
+| transactionResponse > operationDate | Fecha | | La fecha de creación de la respuesta dentro del sistema de PayU. |
+| transactionResponse > extraParameters | Objeto | | Parámetros o datos adicionales relacionados con la respuesta. <br><b>Nota:</b> El campo `BANK_URL` dentro de `extraParameters` proporciona la URL para redirigir a su pagador a Bancolombia. |
+
+</details>
+
+### Llamado a la API {#api-call-5}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
+
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
 
 Ejemplo de una Solicitud:
 ```JSON
 {
-  "data": [
-    {
-      "commerceTransferButtonId": "h4ShG3NER1C",
-      "transferReference": "1002348899557697899",
-      "transferDescription": "Compra online",
-      "transferAmount": 3458.33,
-      "commerceUrl": "https://gateway.com/payment/route?commerce=compraonline",
-      "confirmationURL": "https://espagos-api-dev.cloud.net/callback"
-    }
-  ]
-}
-```
-<br>
-
-Ejemplo de una Respuesta:
-```JSON
-{
-  "meta": {
-    "messageId": "269d2d0f-6c87-4515-87f7-e3f11ca976d6",
-    "_version": "1.0",
-    "_requestDate": "2020-10-19T00:00:24.422Z",
-    "_clientRequest": "29fa65a1-0227-40cd-9efc-6beaff247614"
-  },
-  "data": [
-    {
-      "header": {
-        "type": "Transference",
-        "id": "_24iReQwXEI"
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
+      "apiLogin": "pRRXKOl8ikMmt9u"
+   },
+   "transaction": {
+      "order": {
+         "accountId": "512321",
+         "referenceCode": "{{reference_code}}",
+         "description": "Bancolombia Button Test",
+         "language": "es",
+         "signature": "{{signature}}",
+         "notifyUrl": "http://confirmation-page.com",
+         "additionalValues": {
+            "TX_VALUE": {
+               "value": 10000,
+               "currency": "COP"
+         }
+         },
+         "buyer": {
+            "merchantBuyerId": "1",
+            "fullName": "First name and second buyer  name",
+            "emailAddress": "buyer_test@test.com",
+            "contactPhone": "7563126",
+            "dniNumber": "5415668464654",
+            "shippingAddress": {
+               "street1": "calle 100",
+               "street2": "5555487",
+               "city": "Medellin",
+               "state": "Antioquia",
+               "country": "CO",
+               "postalCode": "000000",
+               "phone": "7563126"
+            }
+         },
+         "shippingAddress": {
+            "street1": "calle 100",
+            "street2": "5555487",
+            "city": "Medellin",
+            "state": "Antioquia",
+            "country": "CO",
+            "postalCode": "0000000",
+            "phone": "7563126"
+         }
       },
-      "transferCode": "_24iReQwXEI",
-      "redirectURL": "https://sandbox-boton-dev.apps.ambientescb.com/web/transfer-gateway/checkout/_24iReQwXEI"
-    }
-  ]
+      "payer": {
+         "merchantPayerId": "1",
+         "fullName": "First name and second payer name",
+         "emailAddress": "payer_test@test.com",
+         "contactPhone": "7563126",
+         "dniNumber": "5415668464654",
+         "billingAddress": {
+            "street1": "calle 93",
+            "street2": "125544",
+            "city": "Bogota",
+            "state": "Bogota DC",
+            "country": "CO",
+            "postalCode": "000000",
+            "phone": "7563126"
+         }
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "BANCOLOMBIA_BUTTON",
+      "paymentCountry": "CO",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": false
 }
 ```
-
-### Condiciones Técnicas
-
-* **Condiciones para el campo `transferReference`:**
-Debe tener un máximo de 48 caracteres numéricos y no incluir caracteres especiales.
-
-* **Exposición del servicio de callback:** 
-Es obligatorio implementar el callback para recibir notificaciones en tiempo real sobre el estado final de la transacción. La URL de notificación debe ser proporcionada por el usuario beneficiario y será utilizada para enviar el estado final de la transacción. El sistema intentará notificar hasta 3 veces, con intervalos de 30 segundos entre cada intento.
-
-#### Estructura de la Respuesta del Callback
-
-<details>
-<summary>Respuesta</summary>
-<div class="variables"></div>
-
-| **Campo** | **Definición** | **Tipo** | **Longitud Máx.** | **Ejemplo** |
-|-|-|-|-|-|
-| transferVoucher | Número de comprobante de la transacción. | String | 50 | `"TRGQx8jMgCEG"` |
-| transferAmount | Monto total de la transacción. | Double | 15 | `1000.00` |
-| transferStateDescription  | Descripción del resultado del estado de la transacción. | String | 225 | `"Invalid account"` |
-| sign | Firma utilizada para validar la integridad de la solicitud generada. | String | 128 | `"b6f7bc914b69824df799db0ad7c9bb26"` |
-| requestDate | Fecha y hora en que se registró la orden. | DateTime | 23 | `"2020-11-25T09:14:22.697-0500"` |
-| transferState | Estado actual de la transacción. | String | 20 | `"rejected"`, `"approved"`, `"pending"`    |
-| transferDate | Fecha y hora en que se aprobó o rechazó la transacción. | DateTime | 20 | `"2020-11-10T08:04:54.0000500"` |
-| transferCode | Identificador único de la transferencia. | String | 50 | `"_oXsTE8kNo9"` |
-| transferReference | Código de referencia de la transacción asignado por el comercio. | String | 48 | `"Referencia05013418"` |
-| commerceTransferButtonId  | Identificador único del botón de transferencia del comercio (HASH). | String | 50 | `"h4ShG3NER1C"` |
-
-</details>
 <br>
 
 Ejemplo de una Respuesta:
 ```JSON
 {
-  "data": {
-    "commerceTransferButtonId": "hA5hg3NER1c",
-    "transferReference": "prueba201123",
-    "transferDescription": "Compra online",
-    "transferAmount": 23458.33,
-    "commerceUrl": "https://www.commerce.com",
-    "confirmationURL": "https://pagos-api-dev.cloud.net/callback"
-  }
+    "code": "SUCCESS",
+    "transactionResponse": {
+        "orderId": 2153602509,
+        "transactionId": "32c884cd-7d33-4922-a834-b6e1fa1863ba",
+        "state": "PENDING",
+        "trazabilityCode": "_016oemmSIw",
+        "pendingReason": "AWAITING_NOTIFICATION",
+        "responseCode": "PENDING_TRANSACTION_CONFIRMATION",
+        "operationDate": 1736339747784,
+        "extraParameters": {
+            "BANK_URL": "https://sandbox-boton-ou-dev.apps.ambientesbc.com/web/transfer-gateway/checkout/_016oemmSIw"
+        },
+        "additionalInfo": {
+            "paymentNetwork": "BANCOLOMBIA_BUTTON",
+            "rejectionType": "NONE",
+            "transactionType": "AUTHORIZATION_AND_CAPTURE"
+        }
+    }
 }
 ```
 
-### Condiciones Técnicas para el Uso del Callback
+{{< /tab >}}
 
-* **API key para el callback:**
-Es necesario autenticar las notificaciones mediante una API Key, proporcionada previamente por el banco.
+{{< tab tabNum="2" >}}
+<br>
 
-* **Exposición del servicio:**
-El comercio debe exponer un servicio capaz de recibir la estructura descrita en la respuesta del callback.-->
+Ejemplo de una Solicitud:
+```XML
+<request>
+   <language>es</language>
+   <command>SUBMIT_TRANSACTION</command>
+   <merchant>
+      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+   </merchant>
+   <transaction>
+      <order>
+         <accountId>512321</accountId>
+         <referenceCode>{{reference_code}}</referenceCode>
+         <description>Bancolombia Button Test</description>
+         <language>es</language>
+         <signature>{{signature}}</signature>
+         <notifyUrl>http://confirmation-page.com</notifyUrl>
+         <additionalValues>
+            <TX_VALUE>
+               <value>10000</value>
+               <currency>COP</currency>
+            </TX_VALUE>
+         </additionalValues>
+         <buyer>
+            <merchantBuyerId>1</merchantBuyerId>
+            <fullName>First name and second buyer name</fullName>
+            <emailAddress>buyer_test@test.com</emailAddress>
+            <contactPhone>7563126</contactPhone>
+            <dniNumber>5415668464654</dniNumber>
+            <shippingAddress>
+               <street1>calle 100</street1>
+               <street2>5555487</street2>
+               <city>Medellin</city>
+               <state>Antioquia</state>
+               <country>CO</country>
+               <postalCode>000000</postalCode>
+               <phone>7563126</phone>
+            </shippingAddress>
+         </buyer>
+         <shippingAddress>
+            <street1>calle 100</street1>
+            <street2>5555487</street2>
+            <city>Medellin</city>
+            <state>Antioquia</state>
+            <country>CO</country>
+            <postalCode>0000000</postalCode>
+            <phone>7563126</phone>
+         </shippingAddress>
+      </order>
+      <payer>
+         <merchantPayerId>1</merchantPayerId>
+         <fullName>First name and second payer name</fullName>
+         <emailAddress>payer_test@test.com</emailAddress>
+         <contactPhone>7563126</contactPhone>
+         <dniNumber>5415668464654</dniNumber>
+         <billingAddress>
+            <street1>calle 93</street1>
+            <street2>125544</street2>
+            <city>Bogota</city>
+            <state>Bogota DC</state>
+            <country>CO</country>
+            <postalCode>000000</postalCode>
+            <phone>7563126</phone>
+         </billingAddress>
+      </payer>
+      <type>AUTHORIZATION_AND_CAPTURE</type>
+      <paymentMethod>BANCOLOMBIA_BUTTON</paymentMethod>
+      <paymentCountry>CO</paymentCountry>
+      <deviceSessionId>vghs6tvkcle931686k1900o6e1</deviceSessionId>
+      <ipAddress>127.0.0.1</ipAddress>
+      <cookie>pt1t38347bs6jc9ruv2ecpv7o2</cookie>
+      <userAgent>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0</userAgent>
+   </transaction>
+   <test>false</test>
+</request>
+```
+<br>
+
+Ejemplo de una Respuesta:
+```XML
+<response>
+    <code>SUCCESS</code>
+    <transactionResponse>
+        <orderId>2153602509</orderId>
+        <transactionId>32c884cd-7d33-4922-a834-b6e1fa1863ba</transactionId>
+        <state>PENDING</state>
+        <trazabilityCode>_016oemmSIw</trazabilityCode>
+        <pendingReason>AWAITING_NOTIFICATION</pendingReason>
+        <responseCode>PENDING_TRANSACTION_CONFIRMATION</responseCode>
+        <operationDate>1736339747784</operationDate>
+        <extraParameters>
+            <BANK_URL>https://sandbox-boton-ou-dev.apps.ambientesbc.com/web/transfer-gateway/checkout/_016oemmSIw</BANK_URL>
+        </extraParameters>
+        <additionalInfo>
+            <paymentNetwork>BANCOLOMBIA_BUTTON</paymentNetwork>
+            <rejectionType>NONE</rejectionType>
+            <transactionType>AUTHORIZATION_AND_CAPTURE</transactionType>
+        </additionalInfo>
+    </transactionResponse>
+</response>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+#### Consideraciones {#considerations-2}
+
+- Para probar tu integración en el ambiente de sandbox, puedes usar cualquier número para las credenciales de Bancolombia.  
+- Si la solicitud de pago es exitosa, el estado de la transacción será `PENDING` y el `responseCode` será `PENDING_TRANSACTION_CONFIRMATION`. Esto ocurre porque el pagador es redirigido a la plataforma del banco para completar el pago. Debes redirigir al pagador a la URL proporcionada en el parámetro adicional `BANK_URL`.  
+- El pagador tiene veinte (20) minutos para completar la transacción en el sitio de Bancolombia. Si no se completa dentro de este tiempo, la transacción será rechazada, y el código de respuesta será `EXPIRED`.  
 
 ## Enviar Transacciones Utilizando Efectivo o Referencia Bancaria {#submit-transactions-using-cash-or-bank-reference}
 
@@ -2562,7 +2778,7 @@ Este método te permite procesar pagos de los clientes en efectivo o a través d
 
 <details>
 <summary>Solicitud</summary>
-<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
+<label for="table5" class="showMandatory"><input type="checkbox" id="table5" name="table5" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
@@ -2664,7 +2880,7 @@ Este método te permite procesar pagos de los clientes en efectivo o a través d
 
 </details>
 
-#### Consideraciones {#considerations-1}
+#### Consideraciones {#considerations-3}
 
 * El parámetro `transaction.expirationDate` no es obligatorio. Si no envías este parámetro, su valor por defecto es siete (7) días luego de la fecha actual.<br>Si envías una fecha posterior a dicho número de días, PayU ignorará este valor y asignará el valor por defecto.
 * Para <!--`BALOTO` y -->`EFECTY`, la confirmación del pago tarda 15 minutos. Para `BANK_REFERENCED` y `OTHERS_CASH` (Su Red), la confirmación es en línea.
@@ -2681,11 +2897,11 @@ Este método te permite procesar pagos de los clientes en efectivo o a través d
    - **BANK_REFERENCED_NAME**: nombre de la referencia para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
    - **BANCOLOMBIA_SERVICE_CODE**: código de pago para Bancolombia. Disponible cuando utilices `BANK_REFERENCED`.
 
-### Llamado a la API {#api-call-2}
+### Llamado a la API {#api-call-6}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método de pago.
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2953,7 +3169,7 @@ Ejemplo de una Respuesta:
 
 Esta sección está diseñada para facilitar la integración de los servicios de PayU, específicamente adaptados a las necesidades de aerolíneas y agencias de viajes en Colombia.
 
-### Consideraciones:
+### Consideraciones {#considerations-4}
 
 * Disponible exclusivamente en Colombia para transacciones en moneda COP.
 * Permite el procesamiento de pagos mediante el modelo TSP/Gateway.
@@ -3029,7 +3245,7 @@ Aunque es poco probable que cambien los códigos de aerolíneas, existe una posi
 | airlines > code | Código de la aerolínea. |
 | airlines > description | Descripción de la aerolínea. |
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -3100,11 +3316,11 @@ Para completar una solicitud de transacción exitosa, debes incluir los parámet
 
 </details>
 
-#### Llamado a la API {#api-call-6}
+#### Llamado a la API {#api-call-7}
 
 A continuación, se presentan ejemplos de una solicitud para este método.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -3236,11 +3452,11 @@ Para completar una solicitud de transacción exitosa, debes incluir los parámet
 
 </details>
 
-#### Llamado a la API {#api-call-7}
+#### Llamado a la API {#api-call-8}
 
 A continuación, se presentan ejemplos de una solicitud para este método.
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -3436,11 +3652,11 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo `transactio
 
 {{% /alert %}}
 
-#### Llamado a la API {#api-call-8}
+#### Llamado a la API {#api-call-9}
 
 A continuación, se presentan ejemplos de una solicitud para este método.
 
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -3694,7 +3910,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
-{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="12" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -3818,7 +4034,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
-{{< tabs tabTotal="2" tabID="12" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="13" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
