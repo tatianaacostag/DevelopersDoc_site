@@ -262,20 +262,20 @@ To test the 3DS authentication process, use the dummy values provided in the tab
 <table>
   <tr>
     <th></th>
-    <th><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</th>
-    <th><img src="/assets/Brasil.png" width="25px"/> &nbsp;Brazil</th>
-    <th><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia</th>
-    <th><img src="/assets/Mexico.png" width="25px"/> &nbsp;Mexico</th>
-    <th><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</th>
+    <th style="text-align: center;">Argentina<br/><img src="/assets/Argentina.png" width="25px"/></th>
+    <th style="text-align: center;">Brazil<br/><img src="/assets/Brasil.png" width="25px"/></th>
+    <th style="text-align: center;">Colombia<br/><img src="/assets/Colombia.png" width="25px"/></th>
+    <th style="text-align: center;">Mexico<br/><img src="/assets/Mexico.png" width="25px"/></th>
+    <th style="text-align: center;">Peru<br/><img src="/assets/Peru.png" width="25px"/></th>
   </tr>
   <tr>
     <th>Account ID</th>
-    <td>516684</td>
-    <td>516685</td>
-    <td>516686</td>
-    <td>516687</td>
-    <td>516688</td>
-  </tr>  
+    <td style="text-align: center;">516684</td>
+    <td style="text-align: center;">516685</td>
+    <td style="text-align: center;">516686</td>
+    <td style="text-align: center;">516687</td>
+    <td style="text-align: center;">516688</td>
+  </tr>
   <tr>
     <th>Merchant ID</th>
     <td colspan="5" style="text-align: center;">508029</td>
@@ -291,7 +291,6 @@ To test the 3DS authentication process, use the dummy values provided in the tab
   <tr>
     <th>Public Key</th>
     <td colspan="5" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
-  </tr>  
   </tr>
 </table>
 
@@ -306,6 +305,10 @@ These account IDs are for testing purposes only, do not use them in production e
 Upon sending a payment request, you will receive a response with a `"PENDING"` state for the transaction. This response will also include a field within `extraParameters` called `THREEDS_AUTH_REDIRECT_URL`.
 
 * **`THREEDS_AUTH_REDIRECT_URL`:** This URL should be used to redirect the payer to complete the 3DS authentication process. The authentication process might involve challenges like entering a one-time password (OTP) received on their phone.
+
+The diagram below illustrates the end-to-end process of a transaction using PayU 3DS authentication, highlighting key steps such as request submission, authentication, and response handling.
+
+{{< 3dsAuth/3dsflow >}}
 
 #### Response Example
 
@@ -393,7 +396,7 @@ Response Example:
 
 ## After Authentication
 
-Once the payer completes the 3DS authentication (if required), PayU will receive a notification. The transaction will then be:
+As shown in the diagram from the section above, once the payer completes the 3DS authentication (if required), PayU will receive a notification. The transaction will then be:
 
 * **Completed:** If the authentication is successful.
 * **Declined:** If the authentication fails.

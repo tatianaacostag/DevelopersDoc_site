@@ -25,7 +25,9 @@ De volta ao exemplo do aplicativo de transporte, assim que o serviço for conclu
 
 {{% alert title="Observação" color="info"%}}
 
-O fluxo em duas etapas não está disponível no Panamá. Na Colômbia e no Chile, este fluxo está disponível somente sob solicitação, entre em contato com seu representante de vendas.
+* O fluxo em duas etapas não está disponível no Panamá. Na Colômbia e no Chile, este fluxo está disponível somente sob solicitação, entre em contato com seu representante de vendas.
+
+* Na implementação do fluxo de pagamento em dois passos, é obrigatório que, após enviar uma transação do tipo **Authorization**, o comerciante conclua o processo enviando uma operação do tipo **Capture** ou **Void**. Isso garante a conclusão correta do fluxo transacional.
 
 {{% /alert %}}
 

@@ -25,7 +25,9 @@ Back in the transportation app example, once your service has finished, the apps
 
 {{% alert title="Note" color="info"%}}
 
-Two-step flow is not supported for Panama. For Colombia and Chile, this flow is available under request only, contact your sales representative.
+* Two-step flow is not supported for Panama. For Colombia and Chile, this flow is available under request only, contact your sales representative.
+
+* In the implementation of the two-step payment flow, it is mandatory that, after submitting a transaction of type **Authorization**, the merchant completes the process by sending an operation of type **Capture** or **Void**. This ensures the correct completion of the transaction flow.
 
 {{% /alert %}}
 

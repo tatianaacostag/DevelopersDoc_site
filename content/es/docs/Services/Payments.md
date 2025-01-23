@@ -23,9 +23,11 @@ Por ejemplo, cuando utilizas aplicaciones de transporte, luego de solicitar el s
   - _**Captura**_: Esta operación termina la transacción autorizada, es decir, en este punto la cuenta hace débito a la tarjeta.</br>
 De nuevo en el ejemplo de la aplicación de transporte, una vez el servicio haya finalizado, la aplicación cobra el monto total y termina la transacción.
 
-{{% alert title="Nota" color="info"%}}
+{{% alert title="Notas" color="info"%}}
 
-El flujo de dos pasos no está soportado para Panamá. Para Colombia y Chile, este flujo está disponible únicamente bajo solicitud, contacta a tu representante de ventas.
+* El flujo de dos pasos no está soportado para Panamá. Para Colombia y Chile, este flujo está disponible únicamente bajo solicitud, contacta a tu representante de ventas.
+
+* En la implementación del flujo de pago en dos pasos, es obligatorio que, tras enviar una transacción de tipo **Autorización**, el comercio complete el proceso enviando una operación de tipo **Captura** o **Void**. Esto garantiza la finalización correcta del flujo transaccional.
 
 {{% /alert %}}
 

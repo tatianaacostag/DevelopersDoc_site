@@ -31,7 +31,7 @@
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Notas&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;A autenticação 3DS para PayU Latam está disponível apenas para &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brasil&lt;/strong&gt;, &lt;strong&gt;Colômbia&lt;/strong&gt; e &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;A autenticação 3DS para PayU Latam está disponível apenas para &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brasil&lt;/strong&gt;, &lt;strong&gt;Colômbia&lt;/strong&gt;, &lt;strong&gt;México&lt;/strong&gt; e &lt;strong&gt;Peru&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;Esse recurso requer uma integração via API e não está disponível para integração com Webcheckout.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Redes suportadas:&lt;/strong&gt; Visa e Mastercard.&lt;/li&gt;
 &lt;/ul&gt;
@@ -329,6 +329,7 @@
     &lt;th&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;Argentina&lt;/th&gt;
     &lt;th&gt;&lt;img src=&#34;../../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;Brasil&lt;/th&gt;
     &lt;th&gt;&lt;img src=&#34;../../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;Colômbia&lt;/th&gt;
+    &lt;th&gt;&lt;img src=&#34;../../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;México&lt;/th&gt;
     &lt;th&gt;&lt;img src=&#34;../../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; &amp;nbsp;Peru&lt;/th&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
@@ -336,23 +337,24 @@
     &lt;td&gt;516684&lt;/td&gt;
     &lt;td&gt;516685&lt;/td&gt;
     &lt;td&gt;516686&lt;/td&gt;
+    &lt;td&gt;516687&lt;/td&gt;
     &lt;td&gt;516688&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;th&gt;Merchant ID&lt;/th&gt;
-    &lt;td colspan=&#34;4&#34; style=&#34;text-align: center;&#34;&gt;508029&lt;/td&gt;
+    &lt;td colspan=&#34;5&#34; style=&#34;text-align: center;&#34;&gt;508029&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;th&gt;API Login&lt;/th&gt;
-    &lt;td colspan=&#34;4&#34; style=&#34;text-align: center;&#34;&gt;pRRXKOl8ikMmt9u&lt;/td&gt;
+    &lt;td colspan=&#34;5&#34; style=&#34;text-align: center;&#34;&gt;pRRXKOl8ikMmt9u&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;th&gt;API Key&lt;/th&gt;
-    &lt;td colspan=&#34;4&#34; style=&#34;text-align: center;&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/td&gt;
+    &lt;td colspan=&#34;5&#34; style=&#34;text-align: center;&#34;&gt;4Vj8eK4rloUd272L48hsrarnUA&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
     &lt;th&gt;Public Key&lt;/th&gt;
-    &lt;td colspan=&#34;4&#34; style=&#34;text-align: center;&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/td&gt;
+    &lt;td colspan=&#34;5&#34; style=&#34;text-align: center;&#34;&gt;PKaC6H4cEDJD919n705L544kSU&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 

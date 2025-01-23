@@ -3,118 +3,117 @@ title: "Disputes"
 linkTitle: "Disputes"
 date: 2021-04-12T08:34:58-05:00
 description: >
-  Find all the information about the dispute module. This tool found in your PayU module, allows you to manage the dispute processes generated in your PayU account.
+   This section provides an overview of the disputes mechanism within PayU. 
 weight: 60
 tags: ["parenttopic"]
 ---
 
-## What is a Dispute?
-Your buyers can present a claim to their card issuing bank. The bank sends us a dispute notification to determine the validity of the purchase, and we create the dispute in our system. After we create the dispute, we notify you through the PayU Module.
+* For detailed instructions on handling disputes through your PayU account's Management Panel, refer to the <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/disputes-mp.html" target="_blank">Disputes Module</a> documentation. 
 
-The dispute freezes the total amount of the sale in your PayU account.
+* For technical information about the notifications system, refer to the <a href="https://developers.payulatam.com/latam/es/docs/tools/disputes/disputes-webhook.html" target="_blank">Disputes Webhook</a> documentation.
 
-![Concepts](/assets/Disputes/Disputes_en.png)
+## Overview of Disputes
 
-## Why a dispute happens?
-A buyer can claim to their card issuer bank reporting that they have not received a product, the product is deficient, or it does not meet the expected characteristics. The buyer also can disclaim the purchase of their credit card invoice.<br>
-The reasons for starting a dispute process may vary, some of them are:
-* **Fraud**: disputes are classified as fraud when an unauthorized person makes purchases with a credit card. These type of dispute can happen if the card was lost or stolen.
-* **Not acknowledging payment**: the brand or shop name which appears in the credit card statement is not recognized by the cardholder.
-* **Product not delivered**: the cardholder states that they don't received the product or service covered by the charges made to the credit card.
-* **Product not acceptable**: the cardholder claims not to have received the product or service under the expected conditions.
-* **Duplicate**: the cardholder indicates that the charge made for the purchase of a product or service was applied more than once to their credit card.
-* **Amount does not match**: the charge to the credit card does not match with the value of the purchase.
-* **Not reported by the entity**: the bank or processing network initiates a dispute process without a specific reason.
+Disputes arise when buyers file claims with their card-issuing banks regarding transactions. The bank notifies PayU of the dispute, and we create a corresponding record in our system. Afterward, we notify you based on the notification method you chose.
 
-Not all the financial entities use the same mechanisms to notify a dispute; therefore, PayU cannot guarantee that you can always know the reasons of the dispute.
+The following diagram illustrates the flow of the disputes process in PayU, outlining each step from notification to resolution.
+<br>
 
-{{% alert title="Attention" color="warning"%}}
+{{< disputes/disputes_flow >}}
 
-* Recall that PayU acts as an intermediary to let your commerce provide evidence in the dispute process between you and the bank entity. PayU has no interference on the result of the dispute, this decision depends on the issuing bank.
-* Once a transaction is part of a dispute, the associated amount becomes part of the frozen balance; therefore, you cannot transfer funds from this balance to your bank account until the dispute is resolved.
-* Your customers may claim a transaction up to **120 days** after the transaction date for local cards and **180 days** for international cards. These date are defined by the card franchises.
+### Common Reasons for Disputes
+
+Buyers may dispute transactions for various reasons, including non-receipt of goods, defective products, or unauthorized charges. Here are the typical dispute reasons:  
+
+- **Fraud**: Transactions made without authorization, often due to a lost or stolen card.  
+- **Unrecognized Payment**: The cardholder does not recognize the merchant’s name on their statement.  
+- **Product Not Delivered**: The product or service was not received.  
+- **Unsatisfactory Product**: The product or service did not meet expectations.  
+- **Duplicate Charges**: The cardholder was charged multiple times for the same transaction.  
+- **Amount Mismatch**: The charge does not match the purchase value.  
+- **Unspecified**: Disputes initiated by banks without a clear reason.  
+
+{{% alert title="Important" color="warning"%}}
+
+* Notification methods for disputes vary between financial entities, PayU cannot guarantee that entities will always provide reasons.
+* PayU acts solely as an intermediary to help merchants submit evidence in disputes. The final decision lies with the issuing bank.
+* Disputed amounts are frozen and unavailable for transfer until resolution.
+* Buyers may dispute transactions within **120 days** for local cards and **180 days** for international cards.
 
 {{% /alert %}} 
 
-## How does the disputes process works in PayU?
-The disputes process follows a simple flow:
+## Managing Disputes with PayU
 
-### 1. Dispute notification
-When a bank or a processing network notifies PayU about the start of a dispute process due to a claim of your customer, you can consult all the information related to it in the [Disputes module]({{< ref"Disputes-MP.md" >}}) of the PayU Module.
+The disputes process follows a structured flow, which you can manage directly through the Management Panel in your PayU account. For more details, refer to the <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/disputes-mp.html" target="_blank">Disputes Module</a>.
 
-If you have configured the notification e-mails in your [PayU module]({{< ref "Technical-configuration.md#disputes" >}}), you also receive the dispute information vía e-mail. Furthermore, when you have enabled the _**Automatic notification URL**_, we also send a `POST` notification. This way, you can automate your dispute management processes to minimize the risk of a possible chargeback.
+### 1. Dispute Notification
 
-You can configure the URL where we make the notification in the PayU module. Log in to [PayU.com](payu.com) and click the login option located at the top of the page. Alternatively, you can log in to https://merchants.payulatam.com/.
+PayU will notify you based on the notification method that you configured in the Disputes module, where you can also check the dispute's details.
 
-Click _**Settings**_ and then select _**Technical configuration**_.
+### 2. Dispute Details Review
 
-![PrintScreen](/assets/IntegrationVariables_01.png)
+Use the Management Panel to view and manage your ongoing disputes.
 
-In this window, go to _**Disputes**_ tab and define the dispute notification url and enable the notification box in the _**Automatic notification URL**_ field.
+### 3. Evidence Submission
 
-![PrintScreen](/assets/Disputes/Disputes_01.png)
+Respond to disputes by submitting the required evidence through the Disputes module before the deadline set by the bank or processing network. After the deadline, you won't be able to upload evidence for that dispute.
 
-Once you configured this, you automatically receive a POST with all the information of the started dispute process. Furthermore, You also receive a notification POST each time the dispute process has an update, so you can be aware of the progress and completion of this process.
+#### Useful Evidence
 
-### 2. Query through the PayU module
-You can view and manage your dispute processes from your PayU module, in the _**Dispute**_ option inside the _**Transactions**_ menu.
+- Customer details (name, ID, email, shipping address, card number, etc.).  
+- Proof of delivery signed by the cardholder.  
+- Sales receipts or invoices.  
+- Acceptance of terms, conditions, or payments signed by the cardholder.  
+- Refund and cancellation policies.  
+- Transactional history.  
+- Any other supporting documents. 
 
-![PrintScreen](/assets/Disputes/Disputes_02.png)
+#### Deadlines for Submitting Evidence
 
-### 3. Provide evidence
-It's important to always respond a dispute by providing evidence before the [deadline stipulated by the bank or the processing network]({{< ref"disputes.md#maximum-days-to-provide-evidence" >}}). After the deadline date, you cannot upload the corresponding evidence for a dispute.
+The maximum days for evidence submission vary by country: 
 
-To learn how to upload evidence to resolve the dispute, refer to the [PayU module]({{< ref"Disputes-MP.md" >}}).
+| Country   | Days to Submit Evidence  |
+|-----------|--------------------------|
+| Argentina | 5 working days           |
+| Brazil    | 12 working days          |
+| Chile     | 5 working days           |
+| Colombia  | 2 working days           |
+| Mexico    | 12 calendar days         |
+| Panama    | 8 working days           |
+| Peru      | 6 working days           |
 
-#### What information can be useful?
-* Full information of your customer (full name, identification number, e-mail, shipping address, visible credit card number, etc.)
-* Proof of delivery of the product or service signed by the cardholder.
-* Bill of sale of the product or service.
-* Acceptance letter of the payment signed by the cardholder attaching their identification document.
-* Cancellation and refund policy.
-* Acceptance of terms and conditions.
-* Transactional history of your customer (if any).
-* Other supports that validate the purchase.
+### 4. Resolution and Final Decision
 
-#### Maximum days to provide evidence
-Recall that the maximum days to provide evidence for each country are: 
+Once you submit the evidence, our integration forwards it to the bank or processing network for review. Outcomes may include:  
+- **Won**: The banking entity resolves the dispute in your favor, with no deductions.  
+- **Lost**: The banking entity issues a chargeback, and associated costs may apply.  
+- **Refunded**: You voluntarily refund the buyer.
 
-| Country   | Days to provide evidence  |
-|-----------|---------------------------|
-| Argentina | 5 working days            |
-| Brazil    | 12 working days           |
-| Chile     | 5 working days            |
-| Colombia  | 2 working days            |
-| Mexico    | 12 calendar days          |
-| Panama    | 8 working days            |
-| Peru      | 6 working days            |
+Your PayU account's Management Panel will update the dispute status based on the resolution and the system will notify you.
 
-### 4. Final decision on dispute status
-Once the evidence is provided, we send the documents to the issuing bank or the network that processed the transaction, which oversees the resolution of the case. The result of dispute can be: won (without chargeback), lost (chargeback) or refunded. In the case of refunds, the shop makes the return to the buyer and the bank does not create the chargeback.
+## Dispute States
 
-When the bank announces the dispute’s outcome, the case is automatically updated in the administrative module and PayU sends a POST to the configured URL with information of the final result.
+Each dispute follows a series of states throughout the process:
 
-## Dispute states
-When a dispute is reported, a dispute entity for the associated transaction is created. The dispute status changes according to the step where the dispute is within the course of the process.
+| State                   | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Notified**            | Initial state where evidence must be submitted.                            |
+| **Under Review**        | Evidence is being reviewed by the bank or network.                         |
+| **No Evidence Provided**| The merchant missed the deadline for submitting evidence.                  |
+| **Lost**                | The dispute was resolved in favor of the buyer, resulting in a chargeback. |
+| **Won**                 | The dispute was resolved in favor of the merchant.                         |
+| **Expired**             | After 120 days without a bank response, funds are released.                |
+| **Refunded**            | The merchant authorized a refund, avoiding a chargeback.                   |
 
-| State | Description |
-|-|-|
-| Notified | When the dispute process begins, you must upload the evidence for the dispute. |
-| On Payment Network Review | When the shop provides evidence for a dispute through the PayU module and the dispute is reviewed by the bank or network. |
-| Documents not provided | The deadline date to provide evidence has been reached and the commerce did not provide any documentation. |
-| Lost | The transaction is reversed from the virtual shopping account and may incur in a chargeback management cost. |
-| Won | The dispute process is resolved in favor of the shop, there are no deductions of any kind. |
-| Expired | After past 120 days without a response from the bank, the amount is set to available for the merchant. |
-| Refunded | This process occurs when the shop authorizes to reverse the operation in self-determination, this prevents the shop from having to pay a chargeback transaction and it is replaced by a refund. |
-
-Below is a diagram illustrating the flow for handling payment disputes:
+Below is a diagram illustrating the dispute resolution process:
 
 <div>
 {{< disputes/Disputes_EN >}}
 </div>
 
-## Anti-fraud tips for your business
-Fight against the digital fraud it's our duty!. Take into account the following tips:
-1. Be wary of an increase in purchases or service requests higher than expected due to the nature of your business.
-2. Be suspicious of purchases made with higher amounts than the average you receive in your commerce.
-3. Verify if you have a higher purchase volume form a single client or requested to the same address.
+## Anti-Fraud Tips
+
+Protect your business from fraud by following these tips:
+1. Monitor sudden increases in purchase volumes or unusually high transaction amounts.  
+2. Watch for multiple purchases from a single customer or to the same address.  
+3. Implement strict verification processes for large or unusual transactions.

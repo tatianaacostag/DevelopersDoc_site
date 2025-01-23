@@ -3,15 +3,15 @@ title: "Disputes"
 date: 2021-09-03T16:42:19-05:00
 type: docs
 Description: >
-  Learn how to manage the Dispute process requested by your customers. This includes, see the disputes created, provide the evidence to resolve a dispute or refund the amount paid by the customer.
+  Learn how to manage the Dispute process requested by your customers. This includes, configuring the notifications method, see the disputes created, provide the evidence to resolve a dispute or refund the amount paid by the customer. For more information on how the disputes mechanism works within PayU, refer to the <a href="https://developers.payulatam.com/latam/es/docs/tools/disputes.html" target="_blank">Disputes</a> documentation.
 weight: 40
 ---
 
-![Concepts](/assets/Disputes/Disputes.png)
+The following diagram illustrates the flow of the disputes process in PayU, outlining each step from notification to resolution.
 
-{{% alert title="Note" color="info"%}}
-For introductory terms about a dispute refer to this [article]({{< ref "disputes.md" >}}).
-{{% /alert %}}
+<br>
+
+{{< disputes/disputes_flow >}}
 
 ## Permission required
 To have access to this module, you need to have a profile with the following permission enabled:
@@ -31,6 +31,23 @@ Refer to [Profiles and Permissions]({{< ref"Profile-and-permissions-management.m
 It is important to reply to a dispute by providing evidence before the deadline stipulated by the bank. After the deadline, it is not possible to upload the corresponding evidence for a dispute and the amount may be debited from your account.
 
 For more information about the deadlines defined, refer to [maximum days to provide evidence]({{< ref "disputes.md#maximum-days-to-provide-evidence" >}}).
+
+## Getting notifications about disputes
+
+There are 2 methods for you to receive notifications on disputes:
+
+- **Email Notifications**: Enable email alerts for dispute updates.  
+- **Automatic Notifications**: Configure a URL in the _**Technical Configuration**_ section of the Management Panel to receive dispute updates via `POST`.
+
+To enable automatic notifications, follow the steps below:
+
+![PrintScreen](/assets/IntegrationVariables_01.png)
+
+In this window, go to _**Disputes**_ tab and define the dispute notification url and enable the notification box in the _**Automatic notification URL**_ field.
+
+![PrintScreen](/assets/Disputes/Disputes_01.png)
+
+Once you configured this, you automatically receive a POST with all the information of the started dispute process. Furthermore, You also receive a notification POST each time the dispute process has an update, so you can be aware of the progress and completion of this process.
 
 ## How to resolve disputes?
 A dispute begins when a buyer does not know a charge made to their credit card. Once the bank is notified, the formal process begins to determine the validity of the purchase.

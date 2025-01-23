@@ -262,19 +262,19 @@ Para testar o processo de autenticação 3DS, utilize os valores fictícios forn
 <table>
   <tr>
     <th></th>
-    <th><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</th>
-    <th><img src="/assets/Brasil.png" width="25px"/> &nbsp;Brasil</th>
-    <th><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colômbia</th>
-    <th><img src="/assets/Mexico.png" width="25px"/> &nbsp;México</th>
-    <th><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</th>
+    <th style="text-align: center;">Argentina<br/><img src="/assets/Argentina.png" width="25px"/></th>
+    <th style="text-align: center;">Brasil<br/><img src="/assets/Brasil.png" width="25px"/></th>
+    <th style="text-align: center;">Colômbia<br/><img src="/assets/Colombia.png" width="25px"/></th>
+    <th style="text-align: center;">México<br/><img src="/assets/Mexico.png" width="25px"/></th>
+    <th style="text-align: center;">Peru<br/><img src="/assets/Peru.png" width="25px"/></th>
   </tr>
   <tr>
     <th>Account ID</th>
-    <td>516684</td>
-    <td>516685</td>
-    <td>516686</td>
-    <td>516687</td>
-    <td>516688</td>
+    <td style="text-align: center;">516684</td>
+    <td style="text-align: center;">516685</td>
+    <td style="text-align: center;">516686</td>
+    <td style="text-align: center;">516687</td>
+    <td style="text-align: center;">516688</td>
   </tr>
   <tr>
     <th>Merchant ID</th>
@@ -305,6 +305,10 @@ Esses IDs de conta são apenas para fins de teste, não os utilize em ambientes 
 Ao enviar uma solicitação de pagamento, você receberá uma resposta com o estado `"PENDING"` para a transação. Essa resposta também incluirá um campo em `extraParameters` chamado `THREEDS_AUTH_REDIRECT_URL`.
 
 * **`THREEDS_AUTH_REDIRECT_URL`:** Essa URL deve ser usada para redirecionar o pagador para concluir o processo de autenticação 3DS. O processo de autenticação pode envolver desafios como inserir uma senha única (OTP) recebida em seu telefone.
+
+O diagrama abaixo ilustra o processo completo de uma transação utilizando a autenticação 3DS da PayU, destacando etapas-chave como envio da solicitação, autenticação e gerenciamento da resposta.
+
+{{< 3dsAuth/3dsflow_pt >}}
 
 #### Exemplo de uma Resposta
 
@@ -392,12 +396,12 @@ Exemplo de uma Resposta:
 
 ## Após a Autenticação
 
-Depois que o pagador conclui a autenticação 3DS (se necessário), a PayU receberá uma notificação. A transação será então:
+Conforme mostrado no diagrama da seção acima, assim que o pagador concluir a autenticação 3DS (se necessário), a PayU receberá uma notificação. A transação será então:
 
 * **Concluída:** Se a autenticação for bem-sucedida.
 * **Recusada:** Se a autenticação falhar.
 
-## Redirecionamento Após a Autenticação
+### Redirecionamento Após a Autenticação
 
 Após o redirecionamento do pagador da `THREEDS_AUTH_REDIRECT_URL`, ele será direcionado para:
 
