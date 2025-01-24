@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/services/payments.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-25T14:28:20-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2025-01-23T15:54:20-05:00" />
 
 <meta itemprop="name" content="Payments">
 <meta itemprop="description" content="Payments feature lets your shop process different transaction types with multiple payment methods.
 "><meta itemprop="datePublished" content="2021-03-25T14:28:20-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="359">
+<meta itemprop="dateModified" content="2025-01-23T15:54:20-05:00" />
+<meta itemprop="wordCount" content="401">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments"/>
 <meta name="twitter:description" content="Payments feature lets your shop process different transaction types with multiple payment methods.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6c70235416e7f130d8afa77e41f2109aea4a8c47241dc5afdbf56602ce4f7ffc29a597f17e568425064797905864108ac13cc15b91ec4def10ea1874f641a8ad.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a55ead6593e59fd874fb365944baa031021dfbf4f0a664c9c3a4181447acb0518552b497c69de080d1c1fe66c4f635f3fd6fcc23a750bcfb6bf41cf80aa9917b.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -899,7 +899,15 @@ Back in the transportation app example, once your service has finished, the apps
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">Note</h4>
-Two-step flow is not supported for Panama. For Colombia and Chile, this flow is available under request only, contact your sales representative.
+<ul>
+<li>
+<p>Two-step flow is not supported for Panama. For Colombia and Chile, this flow is available under request only, contact your sales representative.</p>
+</li>
+<li>
+<p>In the implementation of the two-step payment flow, it is mandatory that, after submitting a transaction of type <strong>Authorization</strong>, the merchant completes the process by sending an operation of type <strong>Capture</strong> or <strong>Void</strong>. This ensures the correct completion of the transaction flow.</p>
+</li>
+</ul>
+
 </div>
 
 <h3 id="payment-methods">Payment methods</h3>
@@ -995,9 +1003,9 @@ Refer to <a href="../../../en/docs/getting-started/select-your-payment-method.ht
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-June 24, 2022:
+January 23, 2025:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation Updates (02e6e6678)</b>
 </div>
 </div>
 

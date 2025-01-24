@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2024-07-01T11:32:55-05:00" />
-<meta property="article:modified_time" content="2025-01-15T16:34:07-05:00" />
+<meta property="article:modified_time" content="2025-01-23T15:54:20-05:00" />
 
 <meta itemprop="name" content="Autenticação 3DS Realizada pela PayU">
 <meta itemprop="description" content="A autenticação 3DS realizada pela PayU elimina a necessidade de você gerenciar o processo de integração 3DS. A PayU cuida de tudo, desde a comunicação com o banco emissor até o gerenciamento do fluxo de autenticação.  
 "><meta itemprop="datePublished" content="2024-07-01T11:32:55-05:00" />
-<meta itemprop="dateModified" content="2025-01-15T16:34:07-05:00" />
-<meta itemprop="wordCount" content="839">
+<meta itemprop="dateModified" content="2025-01-23T15:54:20-05:00" />
+<meta itemprop="wordCount" content="876">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Autenticação 3DS Realizada pela PayU"/>
 <meta name="twitter:description" content="A autenticação 3DS realizada pela PayU elimina a necessidade de você gerenciar o processo de integração 3DS. A PayU cuida de tudo, desde a comunicação com o banco emissor até o gerenciamento do fluxo de autenticação.  
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar no site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.6c70235416e7f130d8afa77e41f2109aea4a8c47241dc5afdbf56602ce4f7ffc29a597f17e568425064797905864108ac13cc15b91ec4def10ea1874f641a8ad.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.a55ead6593e59fd874fb365944baa031021dfbf4f0a664c9c3a4181447acb0518552b497c69de080d1c1fe66c4f635f3fd6fcc23a750bcfb6bf41cf80aa9917b.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -824,8 +824,11 @@
         <li></li>
       </ul>
     </li>
-    <li><a href="#após-a-autenticação">Após a Autenticação</a></li>
-    <li><a href="#redirecionamento-após-a-autenticação">Redirecionamento Após a Autenticação</a></li>
+    <li><a href="#após-a-autenticação">Após a Autenticação</a>
+      <ul>
+        <li><a href="#redirecionamento-após-a-autenticação">Redirecionamento Após a Autenticação</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1187,19 +1190,19 @@
 <table>
   <tr>
     <th></th>
-    <th><img src="../../../../assets/Argentina.png" width="25px"/> &nbsp;Argentina</th>
-    <th><img src="../../../../assets/Brasil.png" width="25px"/> &nbsp;Brasil</th>
-    <th><img src="../../../../assets/Colombia.png" width="25px"/> &nbsp;Colômbia</th>
-    <th><img src="../../../../assets/Mexico.png" width="25px"/> &nbsp;México</th>
-    <th><img src="../../../../assets/Peru.png" width="25px"/> &nbsp;Peru</th>
+    <th style="text-align: center;">Argentina<br/><img src="../../../../assets/Argentina.png" width="25px"/></th>
+    <th style="text-align: center;">Brasil<br/><img src="../../../../assets/Brasil.png" width="25px"/></th>
+    <th style="text-align: center;">Colômbia<br/><img src="../../../../assets/Colombia.png" width="25px"/></th>
+    <th style="text-align: center;">México<br/><img src="../../../../assets/Mexico.png" width="25px"/></th>
+    <th style="text-align: center;">Peru<br/><img src="../../../../assets/Peru.png" width="25px"/></th>
   </tr>
   <tr>
     <th>Account ID</th>
-    <td>516684</td>
-    <td>516685</td>
-    <td>516686</td>
-    <td>516687</td>
-    <td>516688</td>
+    <td style="text-align: center;">516684</td>
+    <td style="text-align: center;">516685</td>
+    <td style="text-align: center;">516686</td>
+    <td style="text-align: center;">516687</td>
+    <td style="text-align: center;">516688</td>
   </tr>
   <tr>
     <th>Merchant ID</th>
@@ -1230,6 +1233,18 @@ Esses IDs de conta são apenas para fins de teste, não os utilize em ambientes 
 <ul>
 <li><strong><code>THREEDS_AUTH_REDIRECT_URL</code>:</strong> Essa URL deve ser usada para redirecionar o pagador para concluir o processo de autenticação 3DS. O processo de autenticação pode envolver desafios como inserir uma senha única (OTP) recebida em seu telefone.</li>
 </ul>
+<p>O diagrama abaixo ilustra o processo completo de uma transação utilizando a autenticação 3DS da PayU, destacando etapas-chave como envio da solicitação, autenticação e gerenciamento da resposta.</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>3dsflow_pt</title>
+<meta charset="utf-8"/>
+</head>
+<body><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;dark-mode&quot;:&quot;auto&quot;,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\&quot; version=\&quot;26.0.6\&quot;&gt;\n  &lt;diagram name=\&quot;Page-1\&quot; id=\&quot;Q7fAwdDV4ESacsW7LS1n\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;738\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;850\&quot; pageHeight=\&quot;1100\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-3\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-15\&quot; target=\&quot;YcNsE4wuTBjSfJi-bFuw-2\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;380\&quot; y=\&quot;160\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-5\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-2\&quot; target=\&quot;YcNsE4wuTBjSfJi-bFuw-4\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-2\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;A PayU processa a transação e solicita autenticação (ex.: desafio 3DS).&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;280\&quot; y=\&quot;180\&quot; width=\&quot;200\&quot; height=\&quot;100\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-4\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;A integração verifica se o comerciante definiu uma&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Lucida Console&amp;quot;&amp;gt;RESPONSE_URL&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;.&amp;lt;/font&amp;gt;&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;270\&quot; y=\&quot;320\&quot; width=\&quot;220\&quot; height=\&quot;95\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-10\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#BCD245;endArrow=none;endFill=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-18\&quot; target=\&quot;YcNsE4wuTBjSfJi-bFuw-4\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;260\&quot; y=\&quot;497\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;110\&quot; y=\&quot;460\&quot; /&gt;\n              &lt;mxPoint x=\&quot;380\&quot; y=\&quot;460\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-15\&quot; value=\&quot;&amp;lt;div&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 16px;&amp;quot;&amp;gt;O usuário inicia um pagamento no site do comerciante.&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#BCD245;fillColor=#BCD245;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;320\&quot; y=\&quot;20\&quot; width=\&quot;127.5\&quot; height=\&quot;127.5\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-18\&quot; value=\&quot;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Lucida Console&amp;quot;&amp;gt;RESPONSE_URL&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/font&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: Arial, sans-serif; font-size: 16px;&amp;quot;&amp;gt;está definida:&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;br style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt;O usuário é redirecionado de volta ao site do comerciante após a autenticação&amp;lt;/font&amp;gt;&amp;lt;span style=&amp;quot;font-family: Arial, sans-serif; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 16px; background-color: transparent;&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;10\&quot; y=\&quot;500\&quot; width=\&quot;200\&quot; height=\&quot;150\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-4\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BCD245;endArrow=none;endFill=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;\&quot; parent=\&quot;1\&quot; source=\&quot;iZpOtUYKphx9t9l1RsEH-5\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;500\&quot; y=\&quot;497\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;380\&quot; y=\&quot;420\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;650\&quot; y=\&quot;460\&quot; /&gt;\n              &lt;mxPoint x=\&quot;380\&quot; y=\&quot;460\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-5\&quot; value=\&quot;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Lucida Console&amp;quot;&amp;gt;RESPONSE_URL&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/font&amp;gt;não está definida&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;:&amp;lt;/font&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;br style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt;O usuário é redirecionado para a página padrão de status da transação da PayU&amp;lt;span style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;550\&quot; y=\&quot;500\&quot; width=\&quot;200\&quot; height=\&quot;150\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-7\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;&amp;amp;nbsp;O comerciante exibe o resultado do pagamento ao usuário em seu site.&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;150\&quot; y=\&quot;704\&quot; width=\&quot;210\&quot; height=\&quot;95\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-10\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-18\&quot; target=\&quot;iZpOtUYKphx9t9l1RsEH-7\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;230\&quot; y=\&quot;640\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;229\&quot; y=\&quot;688\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;110\&quot; y=\&quot;680\&quot; /&gt;\n              &lt;mxPoint x=\&quot;255\&quot; y=\&quot;680\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-11\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;O usuário visualiza o resultado da transação na página de status da PayU.&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;400\&quot; y=\&quot;704\&quot; width=\&quot;210\&quot; height=\&quot;95\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-12\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\&quot; parent=\&quot;1\&quot; source=\&quot;iZpOtUYKphx9t9l1RsEH-5\&quot; target=\&quot;iZpOtUYKphx9t9l1RsEH-11\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;730\&quot; y=\&quot;640\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;729\&quot; y=\&quot;688\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;650\&quot; y=\&quot;680\&quot; /&gt;\n              &lt;mxPoint x=\&quot;505\&quot; y=\&quot;680\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-13\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Lucida Console&amp;quot;&amp;gt;notifyUrl&amp;lt;/font&amp;gt;&amp;lt;span style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;strong style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt; &amp;lt;/strong&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;Simultaneamente ao redirecionamento, a integração envia um webhook para o servidor do comerciante com o status final da transação (aprovada ou rejeitada).&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;265\&quot; y=\&quot;500\&quot; width=\&quot;230\&quot; height=\&quot;150\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-16\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-18\&quot; target=\&quot;iZpOtUYKphx9t9l1RsEH-13\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;240\&quot; y=\&quot;728\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;540\&quot; y=\&quot;641\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;250\&quot; y=\&quot;574\&quot; /&gt;\n              &lt;mxPoint x=\&quot;250\&quot; y=\&quot;574\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-17\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;strokeWidth=2;startArrow=none;startFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; parent=\&quot;1\&quot; source=\&quot;iZpOtUYKphx9t9l1RsEH-13\&quot; target=\&quot;iZpOtUYKphx9t9l1RsEH-5\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;505\&quot; y=\&quot;670\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;585\&quot; y=\&quot;672\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;510\&quot; y=\&quot;574\&quot; /&gt;\n              &lt;mxPoint x=\&quot;555\&quot; y=\&quot;574\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
 <h4 id="exemplo-de-uma-resposta">Exemplo de uma Resposta</h4>
 <p>No exemplo de resposta abaixo, o lojista redireciona o pagador para <code>https://merch-prod.payu.com</code>:</p>
 <nav>
@@ -1365,12 +1380,12 @@ Esses IDs de conta são apenas para fins de teste, não os utilize em ambientes 
 
 </div>
 <h2 id="após-a-autenticação">Após a Autenticação</h2>
-<p>Depois que o pagador conclui a autenticação 3DS (se necessário), a PayU receberá uma notificação. A transação será então:</p>
+<p>Conforme mostrado no diagrama da seção acima, assim que o pagador concluir a autenticação 3DS (se necessário), a PayU receberá uma notificação. A transação será então:</p>
 <ul>
 <li><strong>Concluída:</strong> Se a autenticação for bem-sucedida.</li>
 <li><strong>Recusada:</strong> Se a autenticação falhar.</li>
 </ul>
-<h2 id="redirecionamento-após-a-autenticação">Redirecionamento Após a Autenticação</h2>
+<h3 id="redirecionamento-após-a-autenticação">Redirecionamento Após a Autenticação</h3>
 <p>Após o redirecionamento do pagador da <code>THREEDS_AUTH_REDIRECT_URL</code>, ele será direcionado para:</p>
 <ul>
 <li><strong>Página de status da transação do Checkout PayU:</strong> Por padrão, esse é o comportamento se o lojista não tiver especificado uma URL de retorno personalizada.</li>
@@ -1382,9 +1397,9 @@ Esses IDs de conta são apenas para fins de teste, não os utilize em ambientes 
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificação
 
-15 de janeiro de 2025:
+23 de janeiro de 2025:
 
- <b>Documentation updates (b9184a07d)</b>
+ <b>Documentation Updates (02e6e6678)</b>
 </div>
 </div>
 

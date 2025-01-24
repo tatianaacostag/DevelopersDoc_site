@@ -48,8 +48,16 @@ De nuevo en el ejemplo de la aplicación de transporte, una vez el servicio haya
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-El flujo de dos pasos no está soportado para Panamá. Para Colombia y Chile, este flujo está disponible únicamente bajo solicitud, contacta a tu representante de ventas.
+&lt;h4 class=&#34;alert-heading&#34;&gt;Notas&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;El flujo de dos pasos no está soportado para Panamá. Para Colombia y Chile, este flujo está disponible únicamente bajo solicitud, contacta a tu representante de ventas.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;En la implementación del flujo de pago en dos pasos, es obligatorio que, tras enviar una transacción de tipo &lt;strong&gt;Autorización&lt;/strong&gt;, el comercio complete el proceso enviando una operación de tipo &lt;strong&gt;Captura&lt;/strong&gt; o &lt;strong&gt;Void&lt;/strong&gt;. Esto garantiza la finalización correcta del flujo transaccional.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;/div&gt;
 
 &lt;h3 id=&#34;payment-methods&#34;&gt;Métodos de pago&lt;/h3&gt;

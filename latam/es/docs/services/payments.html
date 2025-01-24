@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/docs/services/payments.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-03-25T14:28:20-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2025-01-23T15:54:20-05:00" />
 
 <meta itemprop="name" content="Pagos">
 <meta itemprop="description" content="La funcionalidad de Pagos le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "><meta itemprop="datePublished" content="2021-03-25T14:28:20-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="377">
+<meta itemprop="dateModified" content="2025-01-23T15:54:20-05:00" />
+<meta itemprop="wordCount" content="418">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Pagos"/>
 <meta name="twitter:description" content="La funcionalidad de Pagos le permite a tu tienda procesar diferentes tipos de transacciones con múltiples métodos de pago.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.6c70235416e7f130d8afa77e41f2109aea4a8c47241dc5afdbf56602ce4f7ffc29a597f17e568425064797905864108ac13cc15b91ec4def10ea1874f641a8ad.json"
+  data-offline-search-index-json-src="../../../offline-search-index.a55ead6593e59fd874fb365944baa031021dfbf4f0a664c9c3a4181447acb0518552b497c69de080d1c1fe66c4f635f3fd6fcc23a750bcfb6bf41cf80aa9917b.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -892,8 +892,16 @@ De nuevo en el ejemplo de la aplicación de transporte, una vez el servicio haya
 
 
 <div class="alert alert-info" role="alert">
-<h4 class="alert-heading">Nota</h4>
-El flujo de dos pasos no está soportado para Panamá. Para Colombia y Chile, este flujo está disponible únicamente bajo solicitud, contacta a tu representante de ventas.
+<h4 class="alert-heading">Notas</h4>
+<ul>
+<li>
+<p>El flujo de dos pasos no está soportado para Panamá. Para Colombia y Chile, este flujo está disponible únicamente bajo solicitud, contacta a tu representante de ventas.</p>
+</li>
+<li>
+<p>En la implementación del flujo de pago en dos pasos, es obligatorio que, tras enviar una transacción de tipo <strong>Autorización</strong>, el comercio complete el proceso enviando una operación de tipo <strong>Captura</strong> o <strong>Void</strong>. Esto garantiza la finalización correcta del flujo transaccional.</p>
+</li>
+</ul>
+
 </div>
 
 <h3 id="payment-methods">Métodos de pago</h3>
@@ -989,9 +997,9 @@ Consulta <a href="../../../es/docs/getting-started/select-your-payment-method.ht
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-24 de junio de 2022:
+23 de enero de 2025:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation Updates (02e6e6678)</b>
 </div>
 </div>
 
