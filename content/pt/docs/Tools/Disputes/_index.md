@@ -3,118 +3,117 @@ title: "Disputas"
 linkTitle: "Disputas"
 date: 2021-04-12T08:34:58-05:00
 description: >
-  Encontre todas as informações sobre o módulo de disputas. Esta ferramenta, disponível no seu Módulo PayU, permite gerir os processos de disputa gerados na sua conta PayU.
+  Esta seção fornece uma visão geral do mecanismo de disputas no PayU.
 weight: 60
 tags: ["parenttopic"]
 ---
 
-## O que é uma disputa? {#what-is-a-dispute}
-Seus compradores podem apresentar uma reclamação ao banco emissor do cartão. O banco nos envia uma notificação de disputa para determinar a validade da compra e nós criamos a disputa em nosso sistema. Após a criação, notificamos você através do Módulo PayU.
+* Para instruções detalhadas sobre como lidar com disputas no Painel de Gerenciamento da sua conta PayU, consulte a documentação do <a href="https://developers.payulatam.com/latam/pt/payu-module-documentation/payu-operations/disputes-mp.html" target="_blank">Módulo de Disputas</a>.
 
-Esta disputa congelou o valor total da venda em sua conta PayU.
+* Para informações técnicas sobre o sistema de notificações, consulte a documentação do <a href="https://developers.payulatam.com/latam/pt/docs/tools/disputes/disputes-webhook.html" target="_blank">Webhook de Disputas</a>.
 
-![Concepts](/assets/Disputes/Disputes_pt.png)
+## Visão Geral das Disputas
 
-## Por que acontece uma disputa? {#why-a-dispute-happens}
-Um comprador pode reclamar ao banco emissor do cartão informando que não recebeu um produto, que o produto é deficiente ou não atende às características esperadas. O comprador também pode negar a compra da fatura do cartão de crédito.<br>
-Os motivos para iniciar um processo de disputa podem variar, alguns deles são:
-* **Fraude**: as disputas são classificadas como fraude quando uma pessoa não autorizada faz compras com cartão de crédito. Esse tipo de disputa pode acontecer se o cartão for perdido ou roubado.
-* **Não reconhecimento do pagamento**: a marca ou nome da loja que aparece no extrato do cartão de crédito não é reconhecida pelo titular do cartão.
-* **Produto não entregue**: o titular do cartão afirma não ter recebido o produto ou serviço coberto pelas cobranças efetuadas no cartão de crédito.
-* **Produto não aceitável**: o titular do cartão alega não ter recebido o produto ou serviço nas condições esperadas.
-* **Duplicado**: o titular do cartão indica que a cobrança realizada pela compra de um produto ou serviço foi feita mais de uma vez no cartão de crédito.
-* **Quantidade não corresponde**: a cobrança no cartão de crédito não coincide com o valor da compra.
-* **Não reportado pela entidade**: o banco ou rede de processamento inicia um processo de disputa sem um motivo específico.
+As disputas ocorrem quando compradores registram reclamações com os bancos emissores de seus cartões sobre transações. O banco notifica o PayU sobre a disputa, e criamos um registro correspondente em nosso sistema. Em seguida, notificamos você com base no método de notificação escolhido.
 
-Nem todas as entidades financeiras usam os mesmos mecanismos para notificar uma disputa; portanto, PayU não pode garantir que você sempre saberá os motivos da disputa.
+O diagrama a seguir ilustra o fluxo do processo de disputas no PayU, detalhando cada etapa desde a notificação até a resolução.
+<br>
 
-{{% alert title="Atenção" color="warning"%}}
+{{< disputes/disputes_flow_pt >}}
 
-* Lembre-se de que PayU atua como um intermediário para permitir que sua loja forneça evidências no processo de disputa entre você e a entidade bancária. O PayU não interfere no resultado da disputa, a decisão depende do banco emissor.
-* Uma vez que uma transação é parte de uma disputa, o valor associado torna-se parte do saldo congelado; portanto, você não pode transferir fundos desse saldo para sua conta bancária até que a disputa seja resolvida.
-* Seus clientes podem reclamar uma transação até **120 dias** após a data da transação para cartões locais e **180 dias** para cartões internacionais. Essas datas são definidas pelas franquias de cartões.
+### Motivos Comuns para Disputas
+
+Os compradores podem contestar transações por diversos motivos, incluindo o não recebimento de mercadorias, produtos defeituosos ou cobranças não autorizadas. Aqui estão os motivos típicos de disputas:  
+
+- **Fraude**: Transações realizadas sem autorização, geralmente devido a um cartão perdido ou roubado.  
+- **Pagamento Não Reconhecido**: O titular do cartão não reconhece o nome do comerciante no extrato.  
+- **Produto Não Entregue**: O produto ou serviço não foi recebido.  
+- **Produto Insatisfatório**: O produto ou serviço não atendeu às expectativas.  
+- **Cobranças Duplicadas**: O titular do cartão foi cobrado várias vezes pela mesma transação.  
+- **Divergência de Valor**: O valor cobrado não corresponde ao valor da compra.  
+- **Não Especificado**: Disputas iniciadas pelos bancos sem um motivo claro.  
+
+{{% alert title="Importante" color="warning"%}}
+
+* Os métodos de notificação para disputas variam entre as entidades financeiras; o PayU não pode garantir que as entidades sempre fornecerão os motivos.
+* O PayU atua apenas como intermediário para ajudar os comerciantes a apresentar evidências em disputas. A decisão final cabe ao banco emissor.
+* Os valores em disputa são congelados e indisponíveis para transferência até a resolução.
+* Os compradores podem contestar transações dentro de **120 dias** para cartões locais e **180 dias** para cartões internacionais.
 
 {{% /alert %}} 
 
-## Como funciona o processo de disputas no PayU? {#how-does-the-disputes-process-works-in-payu}
-O processo de disputas segue um fluxo simples:
+## Gerenciando Disputas com o PayU
 
-### 1. Notificação de uma disputa {#1-dispute-notification}
-Quando um banco ou uma rede de processamento notifica o PayU sobre uma disputa, você pode consultar todas as informações relacionadas a ele no [Módulo Disputas]({{< ref"Disputes-MP.md" >}}) do Módulo PayU.
+O processo de disputas segue um fluxo estruturado, que pode ser gerenciado diretamente pelo Painel de Gerenciamento em sua conta PayU. Para mais detalhes, consulte o <a href="https://developers.payulatam.com/latam/pt/payu-module-documentation/payu-operations/disputes-mp.html" target="_blank">Módulo de Disputas</a>.
 
-Se configurou os e-mails de notificação no seu [Módulo PayU]({{< ref "Technical-configuration.md#disputes" >}}), também receberá a informação da disputa através do e-mail. Além disso, quando você habilita o URL de notificação automática, também enviamos uma notificação `POST`. Dessa forma, você pode automatizar seus processos de gerenciamento de disputas para minimizar o risco de um possível estorno.
+### 1. Notificação de Disputa
 
-Você pode configurar a URL onde fazemos a notificação no módulo PayU. Faça login em [PayU.com](payu.com) e clique na opção de login localizada na parte superior da página. Se preferir, você pode fazer login https://merchants.payulatam.com/.
+O PayU notificará você com base no método de notificação configurado no módulo de Disputas, onde você também poderá verificar os detalhes da disputa.
 
-Clique _**Configuração**_ e selecione _**Configuração técnica**_.
+### 2. Revisão dos Detalhes da Disputa
 
-![PrintScreen](/assets/IntegrationVariables_01_pt.png)
+Utilize o Painel de Gerenciamento para visualizar e gerenciar suas disputas em andamento.
 
-Nesta janela, acesse a guia _**Disputas**_ e defina a URL de notificação de disputa. Habilite a caixa de notificação no campo _**Automatic notification URL**_.
+### 3. Apresentação de Evidências
 
-![PrintScreen](/assets/Disputes/Disputes_01_pt.png)
+Responda às disputas enviando as evidências necessárias através do módulo de Disputas antes do prazo estabelecido pelo banco ou pela rede de processamento. Após o prazo, não será possível enviar evidências para essa disputa.
 
-Depois de configurar isso, você receberá automaticamente um POST com todas as informações do processo de disputa iniciado. Além disso, você também receberá uma notificação POST cada vez que o processo de disputa tiver uma atualização, para que possa estar ciente do andamento e da conclusão desse processo.
+#### Evidências Úteis
 
-### 2. Consulta através do módulo PayU {#2-query-through-the-payu-module}
-Você pode visualizar e gerenciar seus processos de disputa a partir de seu módulo PayU, na opção _**Disputas**_ no menu _**Transações**_.
+- Detalhes do cliente (nome, ID, e-mail, endereço de entrega, número do cartão, etc.).  
+- Comprovante de entrega assinado pelo titular do cartão.  
+- Recibos de venda ou faturas.  
+- Aceitação de termos, condições ou pagamentos assinados pelo titular do cartão.  
+- Políticas de reembolso e cancelamento.  
+- Histórico transacional.  
+- Outros documentos de suporte. 
 
-![PrintScreen](/assets/Disputes/Disputes_02_pt.png)
+#### Prazos para Envio de Evidências
 
-### 3. Fornecer evidências {#3-provide-evidence}
-É importante sempre responder a uma disputa fornecendo evidências antes do [prazo estipulado pelo banco]({{< ref"disputes.md#maximum-days-to-provide-evidence" >}}). Após a data limite, você não pode carregar as evidências correspondentes a uma disputa.
+Os dias máximos para envio de evidências variam por país: 
 
-Para saber como fazer upload de evidências para resolver a disputa, consulte o [Módulo PayU]({{< ref"Disputes-MP.md" >}}).
+| País       | Dias para Enviar Evidências |
+|------------|-----------------------------|
+| Argentina  | 5 dias úteis                |
+| Brasil     | 12 dias úteis               |
+| Chile      | 5 dias úteis                |
+| Colômbia   | 2 dias úteis                |
+| México     | 12 dias corridos            |
+| Panamá     | 8 dias úteis                |
+| Peru       | 6 dias úteis                |
 
-#### Que informações podem ser úteis? {#what-information-can-be-useful}
-* Informações completas do seu cliente (nome completo, número de identificação, e-mail, endereço de entrega, número de cartão de crédito visível etc.)
-* Comprovante de entrega do produto ou serviço assinado pelo titular do cartão.
-* Nota fiscal de venda do produto ou serviço.
-* Carta de aceitação do pagamento assinada pelo titular do cartão, anexando o documento de identificação.
-* Política de cancelamento e reembolso.
-* Aceitação dos termos e condições.
-* Histórico de transações de seu cliente (se houver).
-* Outros suportes que validam a compra.
+### 4. Resolução e Decisão Final
 
-#### Maximum days to provide evidence {#maximum-days-to-provide-evidence}
-Recall that the máximo days to provide evidence for each country são: 
+Após enviar as evidências, nossa integração as encaminha para o banco ou rede de processamento para análise. Os resultados podem incluir:  
+- **Ganhou**: A entidade bancária resolve a disputa a seu favor, sem deduções.  
+- **Perdeu**: A entidade bancária emite um chargeback, e custos associados podem ser aplicados.  
+- **Reembolsado**: Você reembolsa voluntariamente o comprador.
 
-| País      | Dias para fornecer evidências  |
-|-----------|--------------------------------|
-| Argentina | 5 dias úteis                   |
-| Brasil    | 12 dias úteis                  |
-| Chile     | 5 dias úteis                   |
-| Colômbia  | 2 dias úteis                   |
-| México    | 12 dias corridos               |
-| Panama    | 8 dias úteis                   |
-| Peru      | 6 dias úteis                   |
+O Painel de Gerenciamento da sua conta PayU atualizará o status da disputa com base na resolução, e o sistema notificará você.
 
-### 4. Decisão final sobre o status da disputa {#4-final-decision-on-dispute-status}
-Uma vez apresentada a prova, enviamos os documentos ao banco emissor ou à rede que processou a transação, que supervisiona a resolução do caso. O resultado da disputa pode ser: ganho (sem estorno), perdido (estorno) ou reembolsado. No caso de devolução, a loja faz a devolução ao comprador e o banco não efetua o estorno.
+## Estados da Disputa
 
-Quando o banco anuncia o resultado da disputa, o caso é atualizado automaticamente no módulo administrativo e o PayU envia um POST para a URL configurada com a informação do resultado.
+Cada disputa segue uma série de estados ao longo do processo:
 
-## Estados de disputa {#dispute-states}
-Quando uma disputa é relatada, é criada uma entidade de disputa para a transação associada. O status da disputa muda de acordo com a etapa em que a disputa está no decorrer do processo.
+| Estado                    | Descrição                                                                 |
+|---------------------------|---------------------------------------------------------------------------|
+| **Notificado**            | Estado inicial, onde as evidências devem ser enviadas.                   |
+| **Em Análise**            | As evidências estão sendo analisadas pelo banco ou rede.                 |
+| **Sem Evidências Enviadas**| O comerciante perdeu o prazo para envio das evidências.                  |
+| **Perdeu**                | A disputa foi resolvida a favor do comprador, resultando em um chargeback. |
+| **Ganhou**                | A disputa foi resolvida a favor do comerciante.                          |
+| **Expirado**              | Após 120 dias sem resposta do banco, os fundos são liberados.            |
+| **Reembolsado**           | O comerciante autorizou um reembolso, evitando um chargeback.            |
 
-| Estado | Descrição |
-|---|---|
-| Notificada | Quando o processo de disputa começar, você deve carregar as evidências da disputa. |
-| Na avaliação da rede de pagamentos | Quando a loja fornece evidências de uma disputa por meio do módulo PayU, a disputa é analisada pelo banco ou rede. |
-| Documentos não apresentados | Quando o prazo para apresentação de documentos expira e o comércio não fornece nenhuma evidência. |
-| Perda | A transação é revertida da conta de compras virtual e pode incorrer em um custo de gerenciamento de estorno. |
-| Ganho | O processo de disputa é resolvido a favor da loja, não havendo deduções de qualquer espécie. |
-| Expirada | Após 120 dias sem resposta do banco, o valor é definido como disponível para o vendedor. |
-| Devolvida | Este processo ocorre quando a loja autoriza a reversão da operação, evitando que a loja tenha que pagar uma transação de estorno, que é substituída por um reembolso. |
-
-Abaixo está um diagrama ilustrando o fluxo para o tratamento de disputas de pagamento:
+Abaixo está um diagrama ilustrando o processo de resolução de disputas:
 
 <div>
 {{< disputes/Disputes_PT >}}
 </div>
 
-## Dicas antifraude para o seu negócio {#anti-fraud-tips-for-your-business}
-Combater a fraude digital é nosso dever! Lembre-se das seguintes dicas:
-1. Cuidado com um aumento nas compras ou solicitações de serviço maior do que o esperado, dada a natureza do seu negócio.
-2. Desconfie de compras feitas com valores superiores à média que você recebe em sua loja.
-3. Verifique se você recebe um volume maior de compras de um único cliente ou solicitadas no mesmo endereço.
+## Dicas Antifraude
+
+Proteja seu negócio contra fraudes seguindo estas dicas:
+1. Monitore aumentos súbitos no volume de compras ou valores de transações incomuns.  
+2. Observe múltiplas compras de um único cliente ou para o mesmo endereço.  
+3. Implemente processos rigorosos de verificação para transações grandes ou incomuns.
