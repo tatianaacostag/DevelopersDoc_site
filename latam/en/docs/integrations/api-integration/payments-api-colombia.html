@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-colombia.html" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
-<meta property="article:modified_time" content="2025-01-24T16:19:29-05:00" />
+<meta property="article:modified_time" content="2025-01-27T16:27:52-05:00" />
 
 <meta itemprop="name" content="Payments API - Colombia">
 <meta itemprop="description" content="The Payments API for Colombia enables seamless integration of PayU&#39;s payment processing capabilities into your online shopping platform. With this API, merchants can offer different payment methods via credit or debit cards, mobile wallets, cash, and bank transfers.  
 "><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
-<meta itemprop="dateModified" content="2025-01-24T16:19:29-05:00" />
+<meta itemprop="dateModified" content="2025-01-27T16:27:52-05:00" />
 <meta itemprop="wordCount" content="16365">
 <meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Colombia"/>
 <meta name="twitter:description" content="The Payments API for Colombia enables seamless integration of PayU&#39;s payment processing capabilities into your online shopping platform. With this API, merchants can offer different payment methods via credit or debit cards, mobile wallets, cash, and bank transfers.  
@@ -140,7 +140,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../../offline-search-index.ce529355479110c5937393213849e3749e509dcc92d44ed297b4aa424f352d7857020c52ff749888b5ce90f24a5828f941b6a13f31b7e3c6d9b144440ab55703.json"
+  data-offline-search-index-json-src="../../../../offline-search-index.529746f3a2d2dac557ad3402984531986aaba9cc965adef389b3fc097ecb49912c96a77a47109eabe6db73d1e24a62ace2b38e46d744e08b6b87c203d07ff37e.json"
   data-offline-search-base-href="../../../../"
 >
 
@@ -2706,7 +2706,7 @@ This field is not mandatory for <em>PSE Avanza</em>.
 <td>Object</td>
 <td></td>
 <td>Additional parameters or data associated with the request. <br>For bank transfer payments, this is your merchant&rsquo;s response page.<br>In JSON, the <em>extraParameters</em> parameter is assigned as: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;RESPONSE_URL&quot;: &quot;http://www....&quot;,</code><br> <code>&quot;PSE_REFERENCE1&quot;: &quot;example_value&quot;</code>,<br> <code>&quot;FINANCIAL_INSTITUTION_CODE&quot;: &quot;XXXX&quot;</code>,<br> <code>&quot;USER_TYPE&quot;: &quot;N&quot;</code>,<br> <code>&quot;PSE_REFERENCE2&quot;: &quot;example_value&quot;</code>,<br> <code>&quot;PSE_REFERENCE3&quot;: &quot;123456789&quot;</code><br><code>}</code><br><br><span style="color: #A6C307;">Note:</span> Keep in mind that for the <code>&quot;USER_TYPE&quot;</code> field, the allowed values are: <li> <code>&quot;N&quot;</code> for <strong>natural person</strong> <li> <code>&quot;J&quot;</code> for <strong>legal entity</strong>.<br><br>In XML, the <em>extraParameters</em> parameter is assigned as: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;RESPONSE_URL&lt;/string&gt;</code><br>  <code>&lt;string&gt;http://www....&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;PSE_REFERENCE1&lt;/string&gt;</code><br>  <code>&lt;string&gt;example_value&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br> <code>&lt;entry&gt;</code> <code>&lt;string&gt;FINANCIAL_INSTITUTION_CODE&lt;/string&gt;</code><br>  <code>&lt;string&gt;XXXX&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;USER_TYPE&lt;/string&gt;</code><br>  <code>&lt;string&gt;N&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;PSE_REFERENCE2&lt;/string&gt;</code><br>  <code>&lt;string&gt;example_value&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;PSE_REFERENCE3&lt;/string&gt;</code><br>  <code>&lt;string&gt;123456789&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code><br><br><span style="color: #A6C307;">Note:</span> Keep in mind that for the <code>&lt;string&gt;USER_TYPE&lt;/string&gt;</code> field, the allowed values are: <li> <code>&lt;string&gt;N&lt;/string&gt;</code>: for <strong>natural person</strong>. <li> <code>&lt;string&gt;J&lt;/string&gt;</code>: for <strong>legal entity</strong>.</td>
-<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
 </tr>
 </tbody>
 </table>
@@ -8939,9 +8939,9 @@ When using XML format, itinerary parameters appear under <code>transaction &gt; 
 	<div class="text-muted mt-5 pt-3 border-top">
 Last modified
 
-January 24, 2025:
+January 27, 2025:
 
- <b>Documentation Updates (c13bd3fba)</b>
+ <b>Documentation Updates (d6cbd7efc)</b>
 </div>
 </div>
 

@@ -36,55 +36,73 @@ You can include the following parameters in the payment form.
 
 | Field | Type | Size | Description | Mandatory |
 |-|-|-|-|:-:|
-| merchantId | Number | 12 | ID number of your shop in PayU’s system, you will find this number in the account creation e-mail. | Yes | 
-| referenceCode | Alphanumeric | 255 | Reference of the sale or order. It must be unique for each transaction that is sent to the system. Usually, this is a way to identify the requests sent to the payment gateway. | Yes | 
-| accountId | Number | 6 | ID of the user account for each country associated with the shop. This variable is used to display the available payment methods for this country. | Yes | 
-| description | Alphanumeric | 255 | Sale’s description. | Yes | 
-| currency | Alphanumeric | 3 | The respective currency in which the payment is made. The reconciliation process is performed in Colombian pesos at the representative rate of the day.<br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes | 
-| amount | Number | 10 | Total amount of the transaction. It can contain two decimal digits. Example 10000.00 or 10000. | Yes | 
-| tax | Number | 10.2 | Value of the VAT of the transaction.<br>In Colombia, if no VAT is sent, the system applies 19% automatically. It can contain two decimal digits, for example 19000.00.<br>If the product or service is VAT exempt, assign `0` to this variable. | Yes | 
-| discount | Number | 10.2 | Discount value applied to the sale. | No | 
-| taxReturnBase | Number | 10.2 | Base value to calculate the VAT.<br>If the product or service is VAT exempt, assign `0` to this variable. | Yes | 
-| additionalValue | Number | 10.2 | Additional value of the sale. | No | 
-| signature | Alphanumeric | 255 | Digital signature created for each transaction. Refer to [Signature for Payment form]({{< ref "payment-form.md#signature-for-payment-form" >}}) to learn how to generate it. | Yes | 
-| algorithmSignature | Alphanumeric | 255 | Encryption algorithm of the digital signature (`signature` field). The three available algorithms are: `MD5`, `SHA` and `SHA256`. | No | 
-| test | Number | 1 | Indicates whether the transaction is in test or production mode. Set `1` for test and `0` for production. | No | 
-| lng | Alphanumeric | 3 | Language in which the payment gateway is wished to be displayed.<br>[See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | No | 
-| extra1 | Alphanumeric | 255 | Additional field to send information about the purchase. | No | 
-| extra2 | Alphanumeric | 255 | Additional field to send information about the purchase. | No | 
-| extra3 | Alphanumeric | 255 | Additional field to send information about the purchase. | No | 
-| template | Alphanumeric | 255 | Template for the payment page. | No | 
-| responseUrl | Alphanumeric | 255 | The URL of the response page. | No | 
-| confirmationUrl | Alphanumeric | 255 | The URL of the confirmation page. | No | 
-| sourceUrl | Alphanumeric | 255 | Source URL of the merchant transactions. This is where the payment button is located. | No | 
-| airline | Alphanumeric | 4 | Airline code. | No | 
-| billingAddress | Alphanumeric | 255 | The correspondence address. | No | 
-| shippingAddress | Alphanumeric | 255 | The delivery address of the merchandise.<br><sup>\*</sup> Mandatory if your shop ships the product. | Yes* | 
-| billingCity | Alphanumeric | 50 | City associated with the billing address. | No | 
-| shippingCity | Alphanumeric | 50 | The delivery City of the merchandise<br><sup>\*</sup> Mandatory if your shop ships the product. | Yes* | 
-| zipCode | Alphanumeric | 20 | Postal code. | No | 
-| billingCountry | Alphanumeric | 2 | The ISO country code associated with the billing address. | No | 
-| shippingCountry | Alphanumeric | 2 | The delivery ISO country code for the merchandise.<br><sup>\*</sup> Mandatory if your shop ships the product.<br>[See processing countries]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | Yes* | 
-| buyerEmail | Alphanumeric | 255 | Field that contains the buyer’s e-mail to notify the result of the transaction by e-mail. It is recommended to validate if this field has been provided in the form. | Yes | 
-| telephone | Alphanumeric | Max. 20 | The buyer’s residence phone. | Yes | 
-| officeTelephone | Alphanumeric | Max. 20 | The buyer’s daytime phone. | No | 
-| mobilePhone | Alphanumeric | Max. 20 | The buyer’s cell phone number. This value will be taken to fill out the credit card form and will be the contact telephone number. | No | 
-| buyerFullName | Alphanumeric | 150 | The buyer’s full name. | Yes | 
-| paymentMethods | Alphanumeric | 255 | List of payment methods enabled in the payment process.<br>This list must be separated by comma and without blanks. For example: `VISA,MASTERCARD`.<br>You can include installments for the payment methods adding them using hyphens. Example: `VISA-1-3,MASTERCARD-3-5-9`.<br>[See the available Payment Methods for your country in the column `paymentMethod parameter`]({{< ref "select-your-payment-method.html" >}}). | No | 
-| administrativeFee | Number | 10.2 | Amount of the administrative fee. | No | 
-| taxAdministrativeFee | Number | 10.2 | Amount of tax of the administrative fee. | No | 
-| taxAdministrativeFeeReturnBase | Number | 10.2 | Base value to calculate the tax of the administrative fee. | No | 
-| payerEmail | Alphanumeric | 255 | The payer’s e-mail. | Yes | 
-| payerPhone | Alphanumeric | Max. 20 | The payer’s phone number. | Yes | 
-| payerOfficePhone | Alphanumeric | Max. 20 | The payer’s workplace phone number. | No | 
-| payerMobilePhone | Alphanumeric | Max. 20 | The payer’s mobile phone number. | No | 
-| expirationDate | Alphanumeric | 19 | Expiration date of the transactions for Cash payments. Format: `YYYY-MM-DD HH:mm:ss`.<br>This value must be lower than the default number of days for the cash payment (15 days for Argentina and 7 days for the other countries). | - | 
-| payerFullName | Alphanumeric | 50 | The payer’s name. This value will be taken to fill out the credit card form. | Yes | 
-| payerDocument | Alphanumeric | 25 | The buyer’s identification number. This value will be taken to fill out the credit card form. | Yes | 
-| payerDocumentType | Alphanumeric | 25 | The buyer’s identification number. This value will be taken to fill out the credit card form. | Yes | 
-| iin | Alphanumeric | 2048 | List of Bins admitted during the payment process (separated by comma).<br>_This parameter can only be used by merchants that validate signature._ | No | 
-| paymentMethodsDescription | Alphanumeric | 255 | Description of the payment methods and Bins admitted during the payment process. | No | 
-| pseBanks | Alphanumeric | 255 | List of bank codes enabled in the payment process through PSE.<br>This list must be separated by comma and without blanks. | No | 
+| lng | Alphanumeric | 3 | The language for the payment gateway. <br>[See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | No |
+| merchantId | Number | 12 | The unique ID number assigned to your shop in PayU's system. You can find this number in the account creation email. | Yes |
+| accountId | Number | 6 | The ID associated with the user account in each country. It determines the available payment methods for the corresponding country. | Yes |
+| algorithmSignature | Alphanumeric | 255 | The encryption algorithm used for the digital signature (`signature` field). Available options: `MD5`, `SHA`, or `SHA256`. | No |
+| signature | Alphanumeric | 255 | A digital signature for the transaction. Refer to [Signature for Payment Form]({{< ref "payment-form.md#signature-for-payment-form" >}}) for instructions. | Yes |
+| sourceUrl | Alphanumeric | 255 | The source URL where the merchant's payment button is located. | No |
+| responseUrl | Alphanumeric | 255 | The URL for the response page. | No |
+| confirmationUrl | Alphanumeric | 255 | The URL for the confirmation page. | No |
+| expirationDate | Alphanumeric | 19 | The expiration date for Cash payments in the format `YYYY-MM-DD HH:mm:ss`. Must be within the allowed range for cash payments (15 days for Argentina, 7 days for others). | - |
+| paymentMethods | Alphanumeric | 255 | The list of payment methods enabled for the transaction. <br>This list must be separated by comma and without blanks, for example: `VISA,MASTERCARD`.<br> You can include installments using hyphens, for example: `VISA-1-3,MASTERCARD-3-5-9`. <br>[See the available Payment Methods for your country in the column `paymentMethod parameter`]({{< ref "select-your-payment-method.html" >}}). | No |
+| selectedPaymentMethod | Alphanumeric | 255 | A preselected payment method when the user accesses the payment link. | No |
+| paymentMethodsDescription | Alphanumeric | 255 | A description of the accepted payment methods and Bins for the transaction. | No |
+| iin | Alphanumeric | 2048 | A list of Bins admitted during the payment process, separated by commas. _Only merchants validating signatures can use this parameter._ | No |
+| pseBanks | Alphanumeric | 255 | A list of bank codes enabled for payments through PSE. | No |
+| partnerId | Alphanumeric | 255 | An optional field to specify the partner's name (e.g., ZOOZ). | No |
+| template | Alphanumeric | 255 | The template to be used for the payment page. | No |
+| extra1 | Alphanumeric | 255 | Additional field to send extra information about the purchase. | No |
+| extra2 | Alphanumeric | 255 | Additional field to send extra information about the purchase. | No |
+| extra3 | Alphanumeric | 255 | Additional field to send extra information about the purchase. | No |
+| extra4 | Alphanumeric | 255 | Additional field to send extra information about the purchase. | No |
+| displayShippingInformation | Number | 1 | Set to `1` to request shipping information, or `0` to disable it. | No |
+| additionalDeliveryDays | Number | 5 | Additional days for order delivery, which will appear in the API query response as `result.payload.transactions.extraParameters.ADDITIONAL_DELIVERY_DAYS`. | No |
+| displayBuyerComments | Number | 1 | Set to `1` to enable buyer comments, or `0` to disable it. This appears in the API response as `result.payload.transactions.extraParameters.DISPLAY_BUYER_COMMENTS`. | No |
+| buyerCommentsLabel | Alphanumeric | 255 | The label for buyer comments, appearing in the API response as `result.payload.transactions.extraParameters.BUYER_COMMENTS_LABEL`. | No |
+| isCashOnDeliveryApply | Number | 1 | Set to `1` to enable cash on delivery for the transaction, or `0` to disable it. | No |
+| test | Number | 1 | Indicates whether the transaction is in test mode (`1`) or production mode (`0`). | No |
+| description | Alphanumeric | 255 | A description of the sale. | Yes |
+| referenceCode | Alphanumeric | 255 | A unique reference for the sale or order. It must be unique for each transaction sent to the system, typically used for tracking requests. | Yes |
+| amount | Number | 10 | The total amount for the transaction, which can include two decimal digits. E.g., 10000.00 or 10000. | Yes |
+| tax | Number | 10.2 | The VAT value for the transaction. In Colombia, if no VAT is provided, the system applies 19% automatically. If VAT is exempt, set to `0`. | Yes |
+| taxReturnBase | Number | 10.2 | The base value used to calculate the VAT. If the product is VAT exempt, set to `0`. | Yes |
+| administrativeFee | Number | 10.2 | The administrative fee for the transaction. | No |
+| taxAdministrativeFee | Number | 10.2 | The tax applied to the administrative fee. | No |
+| taxAdministrativeFeeReturnBase | Number | 10.2 | The base value for calculating the tax of the administrative fee. | No |
+| discount | Number | 10.2 | The discount applied to the sale. | No |
+| currency | Alphanumeric | 3 | The currency used for the payment. In colombia, reconciliations are done in Colombian pesos at the representative rate of the day. <br>[See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
+| airline | Alphanumeric | 4 | The airline code for airline transactions. | No |
+| additionalValue | Number | 10.2 | Any additional value added to the sale. | No |
+| payerFullName | Alphanumeric | 50 | The payer's full name, used to fill out the credit card form. | Yes |
+| payerEmail | Alphanumeric | 255 | The email address of the payer. | Yes |
+| payerOfficePhone | Alphanumeric | Max. 20 | The workplace phone number of the payer. | No |
+| payerPhone | Alphanumeric | Max. 20 | The phone number of the payer. | Yes |
+| payerMobilePhone | Alphanumeric | Max. 20 | The mobile phone number of the payer. | No |
+| payerDocumentType | Alphanumeric | 25 | The type of identification document used by the payer. Examples: `CC`, `DNI`. `NIT`, `Passport`. | Yes |
+| payerDocument | Alphanumeric | 25 | The payer's identification number, used to fill out the credit card form. | Yes |
+| billingCountry | Alphanumeric | 2 | The ISO country code for the billing address. | No |
+| payerState | Alphanumeric | N/A | The payer's billing state in ISO 3166 code (e.g., SP for São Paulo, AR-C for Buenos Aires). | No |
+| billingCity | Alphanumeric | 50 | The city associated with the billing address. | No |
+| billingAddress | Alphanumeric | 255 | The billing address for the transaction. | No |
+| billingAddress2 | Alphanumeric | 255 | The secondary address line for the payer's billing address. | No |
+| billingAddress3 | Alphanumeric | 255 | The tertiary address line for the payer's billing address. | No |
+| zipCode | Alphanumeric | 20 | The postal code for the billing or shipping address. | No |
+| buyerFullName | Alphanumeric | 150 | The full name of the buyer. | Yes |
+| buyerEmail | Alphanumeric | 255 | The buyer's email address, used for transaction notifications. | Yes |
+| buyerDocumentType | Alphanumeric | 25 | The type of identification document used by the buyer. Examples: Examples: `CC`, `DNI`. `NIT`, `Passport`. | Yes |
+| buyerDocument | Alphanumeric | 25 | The buyer's identification number. | Yes |
+| officeTelephone | Alphanumeric | Max. 20 | The buyer's daytime phone number. | No |
+| telephone | Alphanumeric | Max. 20 | The buyer's residence phone number. | Yes |
+| mobilePhone | Alphanumeric | Max. 20 | The buyer's cell phone number, used to fill out the credit card form and as the contact phone. | No |
+| shippingCountry | Alphanumeric | 2 | The ISO country code for the shipping address. <br><sup>*</sup>Mandatory if the shop ships the product. <br>[See processing countries]({{< ref "response-codes-and-variables.html#processing-countries" >}}). | Yes* |
+| shippingState | Alphanumeric | N/A | The buyer's shipping state in ISO 3166 code (e.g., SP for São Paulo, AR-C for Buenos Aires). | No |
+| shippingCity | Alphanumeric | 50 | The city to which the merchant will deliver the product or service. <br><sup>*</sup>Mandatory if the shop ships the product. | Yes* |
+| shippingAddress | Alphanumeric | 255 | The address to which the merchant will deliver the product or service. <br><sup>*</sup>Mandatory if the shop ships the product. | Yes* |
+| shippingAddress2 | Alphanumeric | 255 | The secondary address line for the buyer's shipping address. | No |
+| shippingAddress3 | Alphanumeric | 255 | The tertiary address line for the buyer's shipping address. | No |
+| payerShippingPostalCode | Alphanumeric | N/A | The buyer's shipping postal code. | No |
+
 </details>
 
 ### Parameters Considerations
