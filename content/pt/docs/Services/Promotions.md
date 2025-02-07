@@ -1,41 +1,79 @@
 ---
-title: "Parcelas e promoções - Argentina e México"
-linkTitle: "Parcelas e promoções - Argentina e México"
+title: "Parcelamentos e Promoções"
+linkTitle: "Parcelamentos e Promoções"
 date: 2021-03-26T14:02:05-05:00
 description: >
-    O recurso de promoções permite que você consulte as promoções válidas, seus custos associados, características e outras informações relevantes disponíveis para seus clientes. A API de promoções está disponível somente na Argentina e no México.
-weight: 50
+    Com Parcelamentos e Promoções, você pode oferecer aos seus clientes a opção de comprar produtos em várias parcelas com uma taxa de juros reduzida. Independentemente do número de parcelas escolhido pelo seu cliente, você receberá o valor total da compra, menos a taxa de comissão acordada com a PayU.
+weight: 40
 ---
 
-## O que são Parcelas e Promoções {#what-are-installments-and-promotions}
-Com Parcelas e Promoções, você pode oferecer ao seu cliente a possibilidade de adquirir seus produtos pagando um determinado número de parcelas com uma taxa de juros reduzida. Seja qual for a quantidade de parcelas selecionadas pelo seu cliente, você receberá o valor total da compra, descontada a comissão determinada com o PayU.
+Este documento fornece uma visão geral deste serviço. Para detalhes técnicos e de implementação, consulte a documentação da <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/promotions-api.html" target="_blank">API de Promoções</a>.
 
-Para configurar Parcelas e Promoções com base nos contratos que você possui com entidades bancárias, entre em contato com seu representante de vendas.
+A API de Promoções está disponível nos seguintes países:
+
+<table style="width: 50%; min-width: 300px; border-collapse: collapse;">
+    <tr>
+        <th style="width: 40%; text-align: left;">País</th>
+        <th style="width: 30%; text-align: center;">Promoções</th>
+        <th style="width: 30%; text-align: center;">Meses Sem Juros (MSI)</th>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colômbia</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Mexico.png" width="25px"/> &nbsp;México</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+    </tr>
+</table>
 
 {{% alert title="Observação" color="info"%}}
-No México, você pode usar [Meses sem juros (MSI - Meses sin intereses)]({{< ref"Promotions.mdl#months-without-interests-msi---meses-sin-intereses" >}})
+
+Para configurar Parcelamentos e Promoções com base nos seus acordos com as entidades bancárias, entre em contato com seu representante de vendas.
+
 {{% /alert %}}
 
-## Como funciona Parcelas e Promoções no PayU {#how-does-installments-and-promotions-works-in-payu}
-Para usar as promoções, é necessário primeiro consultar as promoções disponíveis para a sua loja. Em seguida, selecione a promoção que mais se adapta às suas necessidades. Por fim, envie a solicitação de pagamento juntamente com o ID da promoção selecionada e o número de parcelas.
+## Como Funcionam os Parcelamentos e Promoções na PayU
 
-A sequência de eventos a seguir explica melhor o fluxo de promoções.
+Para usar as promoções, siga estes passos:
+1. Consulte as promoções disponíveis para sua loja.
+2. Selecione a promoção que melhor se adapta às suas necessidades.
+3. Envie a solicitação de pagamento, incluindo o ID da promoção selecionada e o número de parcelas.
 
-![Promotions Flow](/assets/Promotions/PromotionsFlow_pt.png)
+O diagrama a seguir ilustra o processo de promoções:
 
-## Meses sem juros (MSI - Meses sin intereses) {#months-without-interests-msi---meses-sin-intereses}
-Meses sem juros (conhecido no México como _Meses sin intereses_) permite oferecer aos seus clientes a possibilidade de pagar em um determinado número de parcelas sem juros (3, 6, 9, 12 ou 18). Ao contrário do modelo de promoções, ao usar o MSI não é necessário consultar o ID da promoção.
+![Fluxo de Promoções](/assets/Promotions/PromotionsFlow_pt.png)
 
-Para solicitar o MSI, entre em contato com seu representante de vendas.
+## Meses Sem Juros (MSI - Meses sin Intereses)
+
+O MSI no México permite que os clientes paguem em um número específico de parcelas sem juros (3, 6, 9, 12 ou 18). Ao contrário do modelo de promoções padrão, o MSI não exige a consulta de um ID de promoção.
+
+Os valores mínimos de compra exigidos para o MSI dependem do plano de parcelamento selecionado:
+
+* 3 parcelas > $300 MXN
+* 6 parcelas > $600 MXN
+* 9 parcelas > $900 MXN
+* 12 parcelas > $1200 MXN
+* 18 parcelas > $1800 MXN
 
 {{% alert title="Observação" color="info"%}}
-Os valores mínimos para MSI dependem do número de parcelas selecionadas:
-* 3 > $300 MXN
-* 6 > $600 MXN
-* 9 > $900 MXN
-* 12 > $1200 MXN
-* 18 > $1800 MXN
+
+Para habilitar o MSI, entre em contato com seu representante de vendas.
+
 {{% /alert %}}
 
-## O que acontece agora? {#whats-next}
-A integração com este recurso pode ser realizada usando o [API de promoções]({{< ref "Promotions-API" >}}). Para saber como se integrar com o MSI, consulte esta [seção]({{< ref "Promotions-API#msi" >}}).
+## Próximos Passos
+
+Integre este recurso usando a [API de Promoções]({{< ref "Promotions-API" >}}). Para detalhes de integração do MSI, consulte esta [seção]({{< ref "Promotions-API#msi" >}}).

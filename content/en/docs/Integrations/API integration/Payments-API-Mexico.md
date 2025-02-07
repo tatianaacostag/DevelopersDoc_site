@@ -24,11 +24,11 @@ To integrate the Payments API, direct your requests to the following URLs accord
 
 Payments API includes the following methods:
 
-* [Submit Transactions Using Credit or Debit Cards]({{< ref "Payments-API-Mexico.md#submit-transaction-with-credit-or-debit-card" >}})
-* [Submit Transactions Using Cash]({{< ref "Payments-API-Mexico.md#submit-transaction-with-cash" >}})
-* [Submit Transactions Using Bank Transfer]({{< ref "Payments-API-Mexico.md#submit-transaction-with-bank-transfer" >}})
-* [Submit Transactions Using Bank Reference]({{< ref "Payments-API-Mexico.md#submit-transaction-with-bank-reference" >}})
-* [Available payment methods query]({{< ref "Payments-API-Mexico.md#available-payment-methods-query" >}})
+* [Submit Transactions Using Credit or Debit Cards]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}})
+* [Submit Transactions Using Cash]({{< ref "Payments-API-Mexico.md#submit-transactions-using-cash" >}})
+* [Submit Transactions Using Bank Transfer]({{< ref "Payments-API-Mexico.md#submit-transactions-using-bank-transfer" >}})
+* [Submit Transactions Using Bank Reference]({{< ref "Payments-API-Mexico.md#submit-transactions-using-bank-reference" >}})
+* [Available Payment Methods Query]({{< ref "Payments-API-Mexico.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Mexico.md#ping" >}})
 
 {{% alert title="Note" color="info"%}}

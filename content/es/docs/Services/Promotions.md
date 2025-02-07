@@ -1,42 +1,80 @@
 ---
-title: "Cuotas y Promociones - Argentina y México"
-linkTitle: "Cuotas y Promociones - Argentina y México"
+title: "Cuotas y Promociones"
+linkTitle: "Cuotas y Promociones"
 date: 2021-03-26T14:02:05-05:00
 description: >
-    La funcionalidad de Promociones te permite consultar las promociones válidas junto con su costo asociado, características y demás información relevante que esté disponible para tus clientes. El API de Promociones aplica solo para Argentina y México.
-weight: 50
+    Con Cuotas y Promociones, puedes ofrecer a tus clientes la opción de comprar productos en múltiples cuotas con una tasa de interés reducida. Independientemente del número de cuotas que elija tu cliente, recibirás el monto total de la compra menos la comisión acordada con PayU. 
+weight: 40
 ---
 
-## ¿Qué son Cuotas y Promociones? {#what-are-installments-and-promotions}
-Con Cuotas y Promociones, puedes ofrecer a tus clientes la posibilidad de comprar tus productos pagando con un determinado número de cuotas con una tasa de interés reducida. Independiente del número de cuantas que seleccione tu cliente, recibirás el monto total de la compra menos la comisión que hayas acordado con PayU.
+Este documento ofrece una descripción general de este servicio. Para detalles técnicos y de implementación, consulta la documentación de la <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/promotions-api.html" target="_blank">API de Promociones </a>.
 
-Para realizar la configuración de Cuotas y Promociones basado en los acuerdos que tengas con las entidades bancarias, contacta a tu representante de ventas.
+La API de Promociones está disponible en los siguientes países:
+
+<table style="width: 50%; min-width: 300px; border-collapse: collapse;">
+    <tr>
+        <th style="width: 40%; text-align: left;">País</th>
+        <th style="width: 30%; text-align: center;">Promociones</th>
+        <th style="width: 30%; text-align: center;">MSI (Meses sin Intereses)</th>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Mexico.png" width="25px"/> &nbsp;México</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Peru.png" width="25px"/> &nbsp;Perú</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+    </tr>
+</table>
 
 {{% alert title="Nota" color="info"%}}
-Para México, puedes utilizar [Meses sin intereses (MSI)]({{< ref "Promotions.mdl#months-without-interests-msi---meses-sin-intereses" >}}).
+
+Para configurar las Cuotas y Promociones según tus acuerdos con las entidades bancarias, contacta a tu representante de ventas.
+
 {{% /alert %}}
 
-## ¿Cómo funcionan Cuotas y Promociones en PayU? {#how-does-installments-and-promotions-works-in-payu}
-Para utilizar promociones, primero necesitas consultar las promociones disponibles para tu tienda; luego, seleccionar la que se ajuste mejor a tus necesidades y finalmente, enviar la solicitud de pago junto con el ID de la promoción y el número de cuotas.
+## Cómo Funcionan las Cuotas y Promociones en PayU
 
-La siguiente secuencia de eventos explica mejor el flujo de promociones.
+Para usar las promociones, sigue estos pasos:
+1. Consulta las promociones disponibles para tu tienda.
+2. Selecciona la promoción que mejor se adapte a tus necesidades.
+3. Envía la solicitud de pago, incluyendo el ID de la promoción seleccionada y el número de cuotas.
 
-![Promotions Flow](/assets/Promotions/PromotionsFlow_es.png)
+El siguiente diagrama ilustra el proceso de promociones:
 
-## Meses sin intereses - MSI {#months-without-interests-msi---meses-sin-intereses}
-Meses sin intereses te permite ofrecer a tus clientes la posibilidad de pagar en un número de cuotas libres de intereses (3, 6, 9, 12 o 18). A diferencia del modelo de Promociones, cuando utilizas MSI no necesitas consultar el ID de la promoción.
+![Flujo de Promociones](/assets/Promotions/PromotionsFlow_es.png)
 
-Para solicitar el uso de MSI, contacta a tu representante de ventas.
+## MSI (Meses sin Intereses)
+
+MSI en México permite a los clientes pagar en un número específico de cuotas sin intereses (3, 6, 9, 12 o 18). A diferencia del modelo estándar de promociones, MSI no requiere la consulta de un ID de promoción.
+
+Los montos mínimos de compra requeridos para MSI dependen del plan de cuotas seleccionado:
+
+* 3 cuotas > $300 MXN
+* 6 cuotas > $600 MXN
+* 9 cuotas > $900 MXN
+* 12 cuotas > $1200 MXN
+* 18 cuotas > $1800 MXN
 
 {{% alert title="Nota" color="info"%}}
-Los valores mínimos para MSI dependen del número de cuotas seleccionado:
-* 3 > $300 MXN
-* 6 > $600 MXN
-* 9 > $900 MXN
-* 12 > $1200 MXN
-* 18 > $1800 MXN
+
+Para habilitar MSI, contacta a tu representante de ventas.
+
 {{% /alert %}}
 
-## ¿Qué sigue? {#whats-next}
-La integración con esta funcionalidad puede realizarse utilizando el [API de Promociones]({{< ref "Promotions-API" >}}). Para saber cómo integrarse con MSI, consulta esta [sección]({{< ref "Promotions-API#msi" >}}).
+## Próximos Pasos
+
+Puedes integrar esta función utilizando la [API de Promociones]({{< ref "Promotions-API" >}}). Para detalles sobre la integración de MSI, consulta esta [sección]({{< ref "Promotions-API#msi" >}}).
 

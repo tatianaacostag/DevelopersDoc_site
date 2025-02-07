@@ -1,27 +1,64 @@
 ---
-title: "API de Promociones para Argentina y México"
+title: "API de Promociones"
 linkTitle: "API de Promociones"
 date: 2021-06-29T12:38:41-05:00
 description: >
-    Te permite consultar las promociones vigentes junto con sus costos asociados, características e información adicional relevante para tus clientes. El API de API de Promociones aplica únicamente para Argentina y México (MSI - Meses Sin Intereses).
+    La API de Promociones te permite consultar las promociones disponibles, incluyendo sus costos asociados, características y otros detalles relevantes para tus clientes.
 weight: 50
 tags: ["subtopic"]
 ---
 
-Estas secciones explican cómo integrarte utilizando [Promociones]({{< ref"#promotions" >}}) o [MSI]({{< ref "#msi" >}}) (Solo disponible para México).
+La API de Promociones está disponible en los siguientes países:
+
+<table style="width: 50%; min-width: 300px; border-collapse: collapse;">
+    <tr>
+        <th style="width: 40%; text-align: left;">País</th>
+        <th style="width: 30%; text-align: center;">Promociones</th>
+        <th style="width: 30%; text-align: center;">MSI (Meses sin Intereses)</th>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Mexico.png" width="25px"/> &nbsp;México</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Peru.png" width="25px"/> &nbsp;Perú</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+    </tr>
+</table>
+
+{{% alert title="Nota" color="info"%}}
+
+Para configurar las Cuotas y Promociones según tus acuerdos con las entidades bancarias, contacta a tu representante de ventas.
+
+{{% /alert %}}
 
 ## Promociones {#promotions}
-Esta funcionalidad te permite consultar vía API, las promociones vigentes, sus características e información adicional que quieres presentarle a tus clientes.
 
-Una Promoción tiene el método de pago, los días de la semana en los que aplica, la lista de bancos y la fecha de inicio y final en la que aplica la promoción.
+La funcionalidad de Promociones te permite consultar promociones activas a través de la API, recuperar sus detalles y presentarlas a los clientes.
+
+Una promoción incluye los métodos de pago aplicables, los días de la semana elegibles, una lista de bancos participantes y las fechas de inicio y fin de validez.
 
 ### Autenticación para Promociones {#authentication-for-promotions}
-Para promociones, necesitar autenticar y autorizar las peticiones recibidas por tu servidor, utilizando un mecanismo basado en HMAC. Para autenticarte, necesitas saber tu `MerchantPublicKey`, puedes obtener esta información en el Módulo PayU (**_Configuración_** > **_Configuración técnica_** > **_Llave pública_**).
+
+Para autenticar las solicitudes a la API, debes utilizar un mecanismo basado en HMAC. Necesitas tu `MerchantPublicKey`, que se encuentra en tu Panel de Administración de PayU en **_Configuración_** > **_Configuración Técnica_** > **_Clave Pública_**.
 
 ![PrintScreen](/assets/Promotions/PublicKey_es.png)
 
-### Configurar la autenticación {#configuring-the-authentication}
-Debes incluir los encabezados `Authorization` y `Date`. El encabezado `Authorization` tiene esta estructura:
+### Configurar la Autenticación {#configuring-the-authentication}
+
+Incluye los encabezados `Authorization` y `Date`. El encabezado `Authorization` sigue esta estructura:
 
 ```java
 "Hmac" + " " + MerchantPublicKey + ":" + Signature
@@ -45,17 +82,18 @@ URI
 
 {{% alert title="Nota" color="info"%}}
 
-Es obligatorio incluir tres saltos de línea (`\n`) luego de `HTTP-Verb`
+Es obligatorio incluir tres saltos de línea (`\n`) luego de `HTTP-Verb`.
 
 {{% /alert %}}
+
+#### Ejemplo: Generar el Encabezado de Autenticación 
 
 Los siguientes ejemplos muestran cómo crear el encabezado de Autenticación utilizando los siguientes valores de prueba:
 
 **ContentToSign**:
 ```java
 GET 
-    
-
+ 
 Fri, 28 Apr 2017 18:32:01 GMT
 /payments-api/rest/v4.9/pricing
 ```
@@ -73,7 +111,7 @@ PKaC6H4cEDJD919n705L544kSU
 ```
 <br>
 
-Encripta el `ContentToSign` utilizando `MerchantApiKey` como frase de contraseña. Luego, concatena el resultado con el `MerchantPublicKey` como se explicó anteriormente, el resultado es:
+Encripta el `ContentToSign` utilizando `MerchantApiKey` como frase de contraseña. Luego, concatena el resultado con el `MerchantPublicKey` como se muestra a continuación:
 
 **Authorization**
 ```java
@@ -89,79 +127,83 @@ Mon, 11 May 2015 21:14:41 GMT
 ```
 <br>
 
-Debido a algunas restricciones en clientes REST, también puedes enviar el encabezado `x-hmac-date` para cumplir con requerimientos de seguridad, este encabezado sigue el mismo formato utilizado en `Date`:
+Si las restricciones del cliente REST impiden el uso de `Date`, puedes enviar alternativamente `x-hmac-date` utilizando el mismo formato:
 
 **x-hmac-date**
 ```java
 Mon, 11 May 2015 21:14:41 GMT
 ```
 
-### Consultar la promociones disponibles {#consult-available-promotions}
-Para consultar las promociones disponibles con el API de promociones, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
+### Consultar las Promociones Disponibles {#querying-available-promotions}
 
-{{% alert title="URL" color="info"%}}
+Para obtener las promociones, envía una solicitud `GET` a la URL correspondiente según el entorno.
+
+{{% alert title="Endpoints de la API" color="info"%}}
+
 * Pruebas: ```GET https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing```
 * Producción: ```GET https://api.payulatam.com/payments-api/rest/v4.9/pricing```
+
 {{% /alert %}}
 
-Como este es un servicio RESTful, recomendamos no validar el esquema.
-Si no validas el esquema, la integración so se verá afectada y solo necesitarás hacer ajustes menores para implementar nuevas funcionalidades cuando se actualice el Servicio Web.
+Dado que este es un servicio RESTful, recomendamos enfáticamente no aplicar una validación estricta del esquema. Evitar la validación del esquema garantiza una integración sin inconvenientes y minimiza los cambios cuando se actualiza el servicio web.
 
-#### Variables para la petición y la respuesta {#variables-for-request-and-response}
+#### Parámetros para la Solicitud y la Respuesta {parameters-for-request-and-response}
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Parámetros de la Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Parámetro     | Descripción                                                              | Obligatorio |
-|---------------|--------------------------------------------------------------------------|:-----------:|
-| accountId     | Identifier of your account.                                              |      Sí     |
-| currency      | Currency of your account                                                 |      No     |
-| amount        | Amount of the purchase                                                   |      Sí     |
-| paymentMethod | Send this method if you want to filter the Promotions by Payment method. |      No     |
+| Parámetro | Descripción | Obligatorio |
+|-|-|:-:|
+| accountId | Identificador único de tu cuenta. | Sí |
+| currency | Moneda asociada a tu cuenta. | No |
+| amount | Monto total de la compra. | Sí |
+| paymentMethod | Parámetro opcional para filtrar promociones por método de pago. |      No |
 
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Parámetros de la Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo  | Formato | Tamaño | Descripción |
+| Nombre del Campo | Tipo | Tamaño | Descripción |
 |-|-|-|-|
-| promotion > id | Entero |  | Identificador de la promoción en la plataforma de PayU. |
+| promotion > id | Integer |  | Identificador único de la promoción en la plataforma PayU. |
 | promotion > title | String | 50 | Título de la promoción. |
-| promotion > termsAndConditions | String | 250 | Términos y condiciones que aplican a la promoción. |
+| promotion > termsAndConditions | String | 250 | Términos y condiciones aplicables a la promoción. |
 | promotion > paymentMethod | String |  | Nombre del método de pago disponible para la promoción. |
-| promotion > subFranchise | String |  | Nombre de la submarca/subfranquicia de un método de pago dado. |
-| promotion > banks | Lista |  | Lista de los bancos donde aplica la promoción. |
-| promotion > iins | Lista |  | Lista de los IIN/BINES de los bancos donde aplica la promoción. |
-| promotion > days | Lista |  | Lista de los días donde aplica la promoción. |
-| promotion > startDate | Fecha y hora |  | Fecha en la que empieza la promoción. |
-| promotion > endDate | Fecha y hora |  | Fecha en la que finaliza la promoción. |
-| paymentMethodFee | Lista |  | Descripción del costo asumido por el comercio de acuerdo con el método de pago. |
+| promotion > subFranchise | String |  | Nombre de la sub-marca/sub-franquicia del método de pago. |
+| promotion > banks | List |  | Lista de bancos donde aplica la promoción. |
+| promotion > iins | List |  | Lista de números IIN/BIN bancarios donde aplica la promoción. |
+| promotion > days | List |  | Lista de días en los que aplica la promoción. |
+| promotion > startDate | Datetime |  | Fecha de inicio de la promoción. |
+| promotion > endDate | Datetime |  | Fecha de finalización de la promoción. |
+| paymentMethodFee | List |  | Descripción de los costos asumidos por el comercio según el método de pago. |
 | paymentMethodFee > paymentMethodFeeDetail.paymentMethod | String |  | Nombre del método de pago. |
-| paymentMethodFeeDetail > pricingFees |  |  | Objeto que contiene todos los Pricing para un método de pago y cuota o un conjunto de cuotas (para el caso de países que tienen rango de cuotas). |
-| paymentMethodFeeDetail > pricingFees > fee > installments | String |  | Cuota(1) o un conjunto de cuotas (1 - 36, para el caso de países que tienen rango de cuotas). |
-| paymentMethodFeeDetail > pricingFees > fee > pricing |  |  | Contiene los valores de Pricing por defecto para la transacción. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail |  |  | Contiene los valores de intereses y comisiones que se aplicarán al pagador. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail > commission | Decimal |  | Total de comisiones a aplicar al pagador, incluye comisiones e impuestos sobre comisiones si aplica. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail > interests | Decimal |  | Total de intereses a aplicar al pagador, incluye intereses e impuestos sobre intereses si aplica. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail > total | Decimal |  | El total del valor a pagar por el pagador por concepto de comisiones e intereses. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > merchantDetail > commission | Merchant Detail |  | Total de comisiones a aplicar al comercio, incluye Comisiones e Impuestos sobre comisiones si aplica. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > merchantDetail > interests | Decimal |  | Total de intereses a aplicar al comercio, incluye intereses e Impuestos sobre intereses si aplica. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > merchantDetail > total | Decimal |  | Total del valor a pagar por el comercio por concepto de comisiones e intereses. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > totalValue | Decimal |  | Total del pago, es el valor enviado por el comercio más las comisiones e intereses que correspondan al pagador. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > totalIncomeTransaction | Decimal |  | Ingreso total de la transacción. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > additionalInfo |  |  | Información de la Tasa de interés efectiva anual (TEA) aplicada y el Costo financiero total (CFT).<br>Esta información solo está disponible para Argentina. |
- | paymentMethodFeeDetail > pricingFees > fee > pricing > additionalInfo > cft | Decimal |  | Costo financiero total. |  
- | paymentMethodFeeDetail > pricingFees > fee > pricing > additionalInfo > tea | Decimal |  | Tasa de interés efectiva anual aplicada. |  
-
+| paymentMethodFeeDetail > pricingFees | Object |  | Contiene detalles de precios para métodos de pago y planes de cuotas. |
+| paymentMethodFeeDetail > pricingFees > fee > installments | String |  | Cuota única (1) o un rango de cuotas (1-36 para países aplicables). |
+| paymentMethodFeeDetail > pricingFees > fee > pricing | Object |  | Valores de precios predeterminados para la transacción. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail | Object |  | Desglose de intereses y tarifas aplicadas al pagador. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail > commission | Decimal |  | Tarifas totales, incluidos impuestos aplicables, cobradas al pagador. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail > interests | Decimal |  | Intereses totales, incluidos impuestos aplicables, cobrados al pagador. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > payerDetail > total | Decimal |  | Monto total que debe pagar el pagador, incluidos tarifas e intereses. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > merchantDetail | Object |  | Desglose de intereses y tarifas aplicadas al comercio. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > merchantDetail > commission | Decimal |  | Tarifas totales, incluidos impuestos aplicables, cobradas al comercio. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > merchantDetail > interests | Decimal |  | Intereses totales, incluidos impuestos aplicables, cobrados al comercio. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > merchantDetail > total | Decimal |  | Monto total que el comercio debe pagar debido a tarifas e intereses. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > totalValue | Decimal |  | Valor total del pago, incluidos tarifas e intereses. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > totalIncomeTransaction | Decimal |  | Ingreso total generado por la transacción. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > additionalInfo | Object |  | Incluye información sobre la Tasa Efectiva Anual (TEA) y el Costo Financiero Total (CFT). Disponible para Argentina. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > additionalInfo > cft | Decimal |  | Costo Financiero Total (CFT) aplicado. |
+| paymentMethodFeeDetail > pricingFees > fee > pricing > additionalInfo > tea | Decimal |  | Tasa Efectiva Anual (TEA) aplicada. |
+ 
 </details>
 
-#### Llamado del API {#api-call}
-Para consultar las promociones disponibles, envía la petición así:
+#### Llamado a la API {#api-call}
+
+Para obtener las promociones disponibles, envía una solicitud `GET` con el siguiente formato:
 
 ```JAVA
 GET
@@ -169,14 +211,20 @@ https://{env-api}.payulatam.com/payments-api/rest/v4.9/pricing?accountId={accoun
 ```
 <br>
 
- El valor de la variable `{env-api}` mostrado es `sandbox.api` para pruebas y `api` para producción. Además, el parámetro `paymentMethod` es opcional si quieres filtrar por un método de pago dado. Ejemplo:
+ La variable `{env-api}` debe configurarse de la siguiente manera:
+ - `sandbox.api` para pruebas 
+ - `api` para producción
+ 
+ El parámetro `paymentMethod` es opcional y puede utilizarse para filtrar promociones por un método de pago específico.
+ 
+**Ejemplo de una Solicitud:**
 
 ```JAVA
 GET https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=512322&currency=ARS&amount=1000
 ```
 <br>
 
-Ejemplo respuesta:
+**Ejemplo de una Respuesta:**
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1031,14 +1079,15 @@ Ejemplo respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Realizar una transacción con Promociones {#execute-a-transaction-with-promotions}
-Una vez hayas seleccionado la promoción, necesitas incluir su ID y el número de cuotas como un extra parámetro:
+### Realizar una Transacción con Promociones {#execute-a-transaction-with-promotions}
+
+Una vez que hayas seleccionado una promoción, incluye el `PROMOTION_ID` y el `INSTALLMENTS_NUMBER` como parámetros adicionales en tu solicitud:
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
-    "INSTALLMENTS_NUMBER": (Número de cuotas),
+    "INSTALLMENTS_NUMBER": (número de cuotas),
     "PROMOTION_ID": (ID de la promoción seleccionada)
 }
 ```
@@ -1062,30 +1111,42 @@ Una vez hayas seleccionado la promoción, necesitas incluir su ID y el número d
 {{< /tabs >}}
 <br>
 
-Para saber cómo incluir estos extra parámetros, consulta el API de pagos para [Argentina]({{< ref "Payments-API-Argentina.md#submit-transaction-with-credit-or-debit-card" >}}) y [México]({{< ref "Payments-API-Mexico.md#submit-transaction-with-credit-or-debit-card" >}}).
+{{% alert title="Nota" color="info"%}}
+
+Para más detalles sobre la inclusión de estos parámetros adicionales, consulta la documentación correspondiente de la API de Pagos para tu país:
+
+* [Argentina]({{< ref "Payments-API-Argentina.md#submit-transactions-using-credit-or-debit-cards" >}})  
+* [Colombia]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}})  
+* [México]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}})  
+* [Perú]({{< ref "Payments-API-Peru.md#submit-transactions-using-credit-or-debit-cards" >}})  
+
+{{% /alert %}}
 
 ## MSI - Meses Sin Intereses {#msi}
-Si tu cuenta está en México, puedes ofrecerle a tus clientes la opción de pagar en un determinado número de cuotas sin intereses. Si quiere habilitar esta funcionalidad, contacta a tu representante de ventas.
+
+Para cuentas en México, puedes ofrecer a los clientes la opción de pagar en un número fijo de cuotas sin interés. Para habilitar esta función, contacta a tu representante de ventas.
 
 ### Consideraciones {#considerations}
-* Los números de cuotas soportadas son 3, 6, 9, 12 o 18.
-* Los valores mínimo de MSI dependen del número de cuotas seleccionadas:
-    - 3 > $300 MXN
-    - 6 > $600 MXN
-    - 9 > $900 MXN
-    - 12 > $1200 MXN
-    - 18 > $1800 MXN
-* Los bancos disponibles para MSI son: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander y Bancomer.
-* Cuando utilices MSI, muestra siempre la frase **"PAGOS DIFERIDOS"** durante el proceso de pago.
 
-### Variables para MSI {#variables-for-msi} 
-Para utilizar MSI, necesitas incluir el número de meses como un extra parámetro:
+* Opciones de cuotas disponibles: 3, 6, 9, 12 o 18 meses.  
+* Montos mínimos de compra requeridos para MSI:  
+    - 3 meses → $300 MXN  
+    - 6 meses → $600 MXN  
+    - 9 meses → $900 MXN  
+    - 12 meses → $1200 MXN  
+    - 18 meses → $1800 MXN  
+* MSI está disponible con los siguientes bancos: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJÍO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander y Bancomer.  
+* Al utilizar MSI, siempre muestra la frase **"PAGOS DIFERIDOS"** durante el proceso de pago.
+
+### Parámetros de Solicitud para MSI 
+
+Para aplicar MSI, incluye el número de meses en el campo `extraParameters`:
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
-    "INSTALLMENTS_NUMBER": (Número de meses)
+    "INSTALLMENTS_NUMBER": (número de meses)
 }
 ```
 
@@ -1104,4 +1165,4 @@ Para utilizar MSI, necesitas incluir el número de meses como un extra parámetr
 {{< /tabs >}}
 <br>
 
-Para saber cómo incluir estos extra parámetros, consulta el [API de pagos de México]({{< ref "Payments-API-Mexico.md#submit-transaction-with-credit-or-debit-card" >}}).
+Para más detalles sobre el uso de MSI, consulta la [API de Pagos de México]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-card" >}}).

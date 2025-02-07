@@ -3,7 +3,7 @@ title: "Disputes"
 date: 2021-09-03T16:42:19-05:00
 type: docs
 Description: >
-  Learn how to manage the dispute process for your customers, including configuring notification methods, reviewing disputes, providing evidence, or initiating refunds. For more details on how the disputes mechanism works within PayU, refer to the <a href="https://developers.payulatam.com/latam/es/docs/tools/disputes.html" target="_blank">Disputes</a> documentation.
+  Learn how to manage the dispute process for your customers, including configuring notification methods, reviewing disputes, providing evidence, or initiating refunds. For more details on how the disputes mechanism works within PayU, refer to the <a href="https://developers.payulatam.com/latam/en/docs/tools/disputes.html" target="_blank">Disputes</a> documentation.
 weight: 40
 ---
 
@@ -31,7 +31,7 @@ Responding to disputes promptly is critical to protect your business:
 
 You must provide evidence before the deadline set by the bank. Missing the deadline may result in the amount being debited from your account.
 
-For information on deadlines, refer to [Maximum Days to Provide Evidence]({{< ref "disputes.md#maximum-days-to-provide-evidence" >}}).
+For information on deadlines, refer to [Deadlines for Submitting Evidence]({{< ref "disputes.md#deadlines-for-submitting-evidence" >}}).
 
 ## Receiving Dispute Notifications
 
@@ -44,13 +44,13 @@ You can receive dispute notifications through two methods:
 
 1. Log into the PayU Management Panel, navigate to _**Settings**_, and select _**Technical Configuration**_.
 
-![Technical Configuration](/assets/IntegrationVariables_01.png)
+<img src="/assets/IntegrationVariables_01.png" alt="Tech config" width="80%" style="display: block; margin: auto;" />
+<br>
 
 2. In the _**Disputes**_ tab, enter the email addresses for receiving notifications or enable the automatic notification URL, then specify the domain where you want our API to send `POST` updates. Once you have enabled one or both notification methods, click on _**Save changes**_.
 
-![Dispute Notifications](/assets/Disputes/Disputes_01.png)
-
-After setup, you will receive `POST` notifications with details about the dispute process and updates on its status.
+<img src="/assets/Disputes/Disputes_01.png" alt="Dispute Details" width="80%" style="display: block; margin: auto;" />
+<br>
 
 ## Resolving Disputes
 
@@ -66,31 +66,36 @@ If you have the cardholder’s contact information, reach out to resolve the iss
 
 2. Log into your PayU account, expand the _**Transactions**_ menu, and select _**Disputes**_.
 
-![Disputes Menu](/assets/Disputes/Disputes_02.png)
+<img src="/assets/Disputes/Disputes_02.png" alt="Dispute Details" width="80%" style="display: block; margin: auto;" />
+<br>
 
 3. In the _**Disputes**_ module, locate the dispute. Use filters if needed.
 
-![Dispute Filters](/assets/Disputes/Disputes_03.png)
+<img src="/assets/Disputes/Disputes_03.png" alt="Dispute Details" width="80%" style="display: block; margin: auto;" />
+<br>
 
 4. Review the dispute details on the right panel and click _**Resolve Dispute**_.
 
-<img src="/assets/Disputes/Disputes_04.png" alt="Dispute Details" width="60%"/>
+<img src="/assets/Disputes/Disputes_04.png" alt="Dispute Details" width="40%" style="display: block; margin: auto;" />
+<br>
 
 5. In the pop-up window, review the reason for the dispute and the deadline for submitting evidence. Click _**Attach File**_ to upload your evidence.
 
-<img src="/assets/Disputes/Disputes_05.png" alt="Attach Evidence" width="60%"/>
+<img src="/assets/Disputes/Disputes_05.png" alt="Dispute Details" width="40%" style="display: block; margin: auto;" />
 
 {{% alert title="Note" color="info"%}}
-If you accept the dispute, you can initiate a [Refund]({{< ref "Refunds-MP.md" >}}) by clicking _**Or Refund This Value**_.
+If you accept the dispute, you can initiate a [Refund]({{< ref "Refunds-MP.md" >}}) by clicking _**Or refund this value**_.
 {{% /alert %}}
 
 6. Upload evidence (PDF files under 10MB) and click _**Save Evidence**_. Once saved, click _**Send for Review**_.
 
-<img src="/assets/Disputes/Disputes_06.png" alt="Save Evidence" width="60%"/>
+<img src="/assets/Disputes/Disputes_06.png" alt="Dispute Details" width="40%" style="display: block; margin: auto;" />
+<br>
 
 7. A confirmation window will appear once your evidence is submitted.
 
-<img src="/assets/Disputes/Disputes_07.png" alt="Evidence Submission Confirmation" width="60%"/>
+<img src="/assets/Disputes/Disputes_07.png" alt="Dispute Details" width="40%" style="display: block; margin: auto;" />
+<br>
 
 8. PayU forwards the evidence to the issuing bank or network. The case outcome may be:
 
