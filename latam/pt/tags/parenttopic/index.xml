@@ -1,0 +1,1114 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – parenttopic</title>
+    <link>/pt/tags/parenttopic.html</link>
+    <description>Recent content in parenttopic on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Mon, 01 Jul 2024 11:32:55 -0500</lastBuildDate>
+    
+	  <atom:link href="/pt/tags/parenttopic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>PayU Module Documentation: Log In</title>
+      <link>/pt/payu-module-documentation/getting-started/log-in.html</link>
+      <pubDate>Tue, 28 Sep 2021 13:38:28 -0500</pubDate>
+      
+      <guid>/pt/payu-module-documentation/getting-started/log-in.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Follow the next steps to log in your PayU account.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Acesse &lt;a href=&#34;https://www.payu.com&#34;&gt;www.payu.com&lt;/a&gt;. No canto superior direito, você encontra a opção de fazer login.&lt;br&gt;Alternativamente, você pode ir diretamente &lt;a href=&#34;https://merchants.payulatam.com/&#34;&gt;https://merchants.payulatam.com/&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login1_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Faça login em sua conta PayU usando as credenciais que enviamos para seu e-mail cadastrado.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login3_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Se o seu usuário puder acessar mais de um comércio, clique nele para acessar. Caso contrário, você será redirecionado para seu comércio.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login4_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Assim que você fizer login, você pode usar todas as opções disponíveis para administrar sua conta PayU.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Login2_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Integração Webcheckout</title>
+      <link>/pt/docs/integrations/webcheckout-integration.html</link>
+      <pubDate>Mon, 29 Mar 2021 11:52:52 -0500</pubDate>
+      
+      <guid>/pt/docs/integrations/webcheckout-integration.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;../../../assets/Checkout1-pt.png&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Você pode incluir o logotipo da sua empresa em nosso portal de pagamento, enviando-o via método HTTP POST.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+O responsável pela integração da sua loja com o nosso portal de pagamento (WebCheckout) deve ter bons conhecimentos de integração com linguagens de programação dinâmicas como PHP ou Java.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;how-does-the-webcheckout-integration-work&#34;&gt;Como funciona a Integração WebCheckout?&lt;/h2&gt;
+&lt;p&gt;O procedimento para permitir que seus clientes paguem usando os serviços PayU é simples.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Seu cliente navega em seu site e seleciona os produtos ou serviços que deseja adquirir. Seu sistema atualiza o valor da compra e envia para o nosso sistema o formulário de pagamento com as informações da compra.&lt;br&gt;Seu sistema deve enviar esta informação via &lt;code&gt;HTTP POST&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso1-pt.jpg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Para o processo de pagamento, seu cliente é redirecionado para nosso Checkout, onde ele pode selecionar o método de pagamento.&lt;br&gt;PayU disponibiliza muitos métodos de pagamento que se adaptam às necessidades dos seus clientes de acordo com o país onde você processa a compra, &lt;a href=&#34;../../../pt/docs/getting-started/select-your-payment-method.html&#34;&gt;veja os métodos de pagamento disponíveis&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso2-pt.jpg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;PayU processa a transação e mostra o resultado em nossa página de resposta&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso3-pt.jpg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Quando seu cliente volta para sua página após o processo de pagamento, PayU redireciona para sua página de resposta e envia os resultados da transação via &lt;code&gt;HTTP GET&lt;/code&gt;. Você precisa processar a resposta e mostrar suas informações ao cliente.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso4-pt.jpg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Em paralelo, PayU notifica o status da transação para a página de confirmação via &lt;code&gt;HTTP POST&lt;/code&gt;. Além disso, PayU notifica a você e seu cliente o resultado da transação via e-mail.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/paso5-pt.jpg&#34; alt=&#34;WebCheckout integration&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Observações&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;A programação da sua página deve ser &lt;code&gt;UTF-8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;A página WebCheckout não deve ser incluída em um iframe&lt;/li&gt;
+&lt;li&gt;Não mascare a URL durante o processo de checkout&lt;/li&gt;
+&lt;li&gt;Não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia &lt;code&gt;TLS_ECDHE_ECDSA_WITH_RC4_128_SHA&lt;/code&gt; na sua página de confirmação.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;integration-components&#34;&gt;Componentes de integração&lt;/h2&gt;
+&lt;p&gt;Consulte as seções a seguir para saber como fazer a Integração WebCheckout.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Autenticação 3DS</title>
+      <link>/pt/docs/services/3dsauthentication.html</link>
+      <pubDate>Mon, 01 Jul 2024 11:32:55 -0500</pubDate>
+      
+      <guid>/pt/docs/services/3dsauthentication.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Se você já conhece o 3DS, verifique nossos métodos de integração:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;Autenticação 3DS realizada pela PayU: &lt;/a&gt;Deixe a PayU gerenciar o processo de autenticação para você.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/external-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;Autenticação 3DS externa: &lt;/a&gt;Integre seu serviço 3DS existente com a PayU.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.paymentsos.com/docs/flows-and-operations/three-d-secure-two.html&#34; target=&#34;_blank&#34;&gt;Autenticação 3DS do PayU HUB: &lt;/a&gt;Se a sua integração for através do PayU HUB.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;o-que-é-3ds&#34;&gt;O que é 3DS?&lt;/h2&gt;
+&lt;p&gt;3DS (Three-Domain Secure) é um protocolo de segurança que adiciona uma camada extra de verificação durante pagamentos online. Ele funciona se comunicando com segurança com o banco emissor do cartão do titular do cartão para confirmar sua identidade antes de autorizar a transação. Isso reduz significativamente o risco de uso não autorizado do cartão e fraude.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+A autenticação 3DS para PayU Latam está disponível apenas para &lt;strong&gt;Argentina&lt;/strong&gt;, &lt;strong&gt;Brasil&lt;/strong&gt;, &lt;strong&gt;Colômbia&lt;/strong&gt; e &lt;strong&gt;Peru&lt;/strong&gt;.
+&lt;/div&gt;
+
+&lt;p&gt;O diagrama abaixo descreve o fluxo do protocolo:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/3DS/3DS_FLOW_PT.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Abaixo, um exemplo do processo de autenticação:&lt;/p&gt;
+&lt;div class=&#34;infographicDiv&#34; align=&#34;center&#34;&gt;
+    &lt;div class=&#34;DivGray&#34;&gt;
+      &lt;p align=&#34;center&#34;&gt;João compra um celular em uma loja de comércio eletrônico usando seu computador pessoal.&lt;/p&gt;
+      &lt;div class=&#34;img1&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_1_en.png&#34;/&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;DivWhite&#34;&gt;
+      &lt;p align=&#34;center&#34;&gt;&lt;b&gt;A loja de celulares, integrada ao serviço de autenticação da PayU&lt;/b&gt;, quer verificar se João está fazendo a compra. Eles enviam a transação para autenticação.&lt;/p&gt;
+      &lt;div class=&#34;img2&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_2_en.png&#34;/&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;DivGray longDiv&#34;&gt;
+      &lt;p align=&#34;center&#34;&gt;Através da comunicação 3DS, o emissor recebe a solicitação de autenticação e começa a revisar os dados compartilhados.&lt;/p&gt;
+      &lt;div class=&#34;img3&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_3_en.png&#34;/&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;DivWhite Div4&#34;&gt;
+      &lt;p align=&#34;center&#34;&gt;O emissor autentica João com sucesso. Como o risco era baixo, a autenticação foi silenciosa, sem contatá-lo.&lt;/p&gt;
+      &lt;hr style=&#34;border: 1px solid #ACC629;&#34;&gt;
+      &lt;p align=&#34;center&#34;&gt;Para transações de alto risco, João pode receber um desafio simples, como um OTP enviado para o seu telefone.&lt;/p&gt;
+      &lt;div class=&#34;img4&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_4_en.png&#34;/&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;DivGray lastDiv&#34;&gt;
+      &lt;p align=&#34;center&#34;&gt;João recebe a confirmação de sua compra e, posteriormente, recebe o celular em casa.&lt;/p&gt;
+      &lt;div class=&#34;img5&#34;&gt;
+        &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;../../../assets/3DS/3DS_step_5_en.png&#34;/&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;h2 id=&#34;benefícios-da-autenticação-3ds&#34;&gt;Benefícios da Autenticação 3DS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Maior segurança e redução de fraude:&lt;/strong&gt; Ao verificar a identidade do titular do cartão, o 3DS ajuda a prevenir transações fraudulentas. Além disso, em caso de estorno fraudulento, a responsabilidade geralmente muda para o banco emissor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Experiência do usuário aprimorada:&lt;/strong&gt; As implementações modernas do 3DS garantem um processo de autenticação fluido com interrupção mínima para a experiência de compra do usuário.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Conformidade regulatória:&lt;/strong&gt; O 3DS segue os padrões e regulamentações &lt;a href=&#34;https://www.emvco.com/emv-technologies/3d-secure/&#34; target=&#34;_blank&#34;&gt;EMVCo&lt;/a&gt; em muitos mercados, garantindo a conformidade para comerciantes e processadores de pagamento.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;aproveitando-o-3ds-com-a-payu&#34;&gt;Aproveitando o 3DS com a PayU&lt;/h2&gt;
+&lt;p&gt;A PayU Latam oferece 2 opções para integrar a autenticação 3DS ao seu processamento de pagamento:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;Autenticação 3DS realizada pela PayU:&lt;/a&gt; Se você não possui seu próprio serviço 3DS, a PayU pode gerenciar o processo de autenticação em seu nome.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/external-3ds-authentication.html&#34; target=&#34;_blank&#34;&gt;Autenticação 3DS externa:&lt;/a&gt; Este método permite que você aproveite o seu provedor de serviços 3DS existente. Você cuidará do processo de autenticação e enviará a resposta diretamente para a PayU dentro da solicitação de pagamento.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Escolha a opção que melhor se adapta à sua infraestrutura e preferências existentes.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Integração API</title>
+      <link>/pt/docs/integrations/api-integration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pt/docs/integrations/api-integration.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Você pode conectar sua loja online à plataforma PayU e o processo de checkout será feito em seu site. Para integrar esta opção, você deve ter uma conta PayU Business e habilidades de programação avançadas.&lt;/p&gt;
+&lt;p&gt;Você pode acessar vários métodos de pagamento (varia por país), incluindo cartões de crédito, transferências bancárias e pagamentos em dinheiro.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/api1-pt.png&#34; alt=&#34;API integration&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;initial-settings&#34;&gt;Configurações iniciais&lt;/h2&gt;
+&lt;p&gt;PayU permite que você integre com o portal de transações, ferramentas de pagamento disponíveis e Consultas, programando um cliente HTTPS para enviar as informações da transação através de SSL. É fundamental que os dados confidenciais da transação, como número do cartão de crédito e data de validade, não sejam armazenados. Recomenda-se seguir as &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/pci.html&#34; target=&#34;_blank&#34;&gt;melhores práticas do PCI DSS&lt;/a&gt; (Payment Card Industry Data Security Standard).&lt;/p&gt;
+&lt;p&gt;A transmissão das transações é protegida através de uma conexão TLS (Transport Layer Security) de 256 bits do servidor da loja nosso portal de pagamento. A troca de mensagens é feita por meio de strings JSON ou XML e as operações são diferenciadas por um comando incluído na solicitação. Confira os seguintes exemplos de JSON e XML:&lt;/p&gt;
+&lt;p&gt;&lt;nav&gt;
+	&lt;div class=&#34;nav nav-tabs&#34; id=&#34;nav-tab&#34; role=&#34;tablist&#34;&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link active&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab11&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;true&#34;&gt;JSON&lt;/a&gt;
+
+		
+		
+
+		
+		
+		
+
+		
+
+		&lt;a class=&#34;nav-item nav-link&#34; id=&#34;nav-1&#34; data-toggle=&#34;tab&#34; href=&#34;#tab12&#34; role=&#34;tab&#34;
+		   aria-controls=&#34;nav-home&#34; aria-selected=&#34;false&#34;&gt;XML&lt;/a&gt;
+
+		
+		
+
+	&lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;div class=&#34;tab-content&#34; id=&#34;1&#34;&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade show active&#34; id=&#34;tab11&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName1&#34;&gt;
+
+	&lt;br&gt;
+POST /payments-api/4.0/service.cgi HTTP/1.1&lt;br&gt;
+Host: sandbox.api.payulatam.com&lt;br&gt;
+Content-Tipo: application/json; charset=utf-8&lt;br&gt;
+Accept: application/json&lt;br&gt;
+Content-Length: length
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JSON&#34; data-lang=&#34;JSON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;GET_PAYMENT_METHODS&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;merchant&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiLogin&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;apiKey&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxxx&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;tab-pane fade&#34; id=&#34;tab12&#34; role=&#34;tabpanel&#34; aria-labelledby=&#34;nav-tabName2&#34;&gt;
+
+	&lt;br&gt;
+POST /payments-api/4.0/service.cgi HTTP/1.1&lt;br&gt;
+Host: sandbox.api.payulatam.com&lt;br&gt;
+Content-Tipo: application/json; charset=utf-8&lt;br&gt;
+Accept: application/xml&lt;br&gt;
+Content-Length: length&lt;br&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-XML&#34; data-lang=&#34;XML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;request&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;language&amp;gt;&lt;/span&gt;en&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/language&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;command&amp;gt;&lt;/span&gt;GET_PAYMENT_METHODS&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;merchant&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiLogin&amp;gt;&lt;/span&gt;xxxxxxxxxxxxx&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiLogin&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;apiKey&amp;gt;&lt;/span&gt;xxxxxxxxxxxxx&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/apiKey&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/merchant&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;isTest&amp;gt;&lt;/span&gt;false&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/isTest&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;lt;/request&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+
+&lt;/div&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Você pode definir o idioma que deseja usar na solicitação por meio dos cabeçalhos HTTP &lt;code&gt;Content-type&lt;/code&gt; e &lt;code&gt;Accept&lt;/code&gt;. Você pode usar todas as combinações possíveis:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;CONTENT-TYPE&lt;/th&gt;
+&lt;th&gt;ACCEPT&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;application/xml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/xml&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;application/xml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;application/json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;application/xml&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Observações&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Você deve ter uma conta PayU ativa.&lt;/li&gt;
+&lt;li&gt;Você deve instalar um certificado SSL válido em seu servidor e seu site deve ser capaz de fazer conexões SSL. Por isso, a máquina virtual deve ter extensões de segurança adequadas.&lt;/li&gt;
+&lt;li&gt;Temporariamente, não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia TLS_ECDHE_ECDSA_WITH_RC4_128_SHA em suas ordens de pagamento.&lt;/li&gt;
+&lt;li&gt;Você deve ter CGI ou linguagens de servidor como Java, C #, VB, PHP etc.&lt;/li&gt;
+&lt;li&gt;Você deve ser capaz de armazenar suas credenciais de autenticação (API Key e API Login) com segurança.&lt;/li&gt;
+&lt;li&gt;A codificação das mensagens deve ser  &lt;code&gt;UTF-8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;As datas devem ter formato &lt;code&gt;yyyy-MM-ddTHH:mm:ss&lt;/code&gt;, o formato da hora é 24 horas. Exemplo: &lt;code&gt;2015-08-22T21:35:12&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Normalmente a conexão garante tempos de resposta de três segundos em média. Se houver uma situação incomum, o tempo máximo de resposta é de um minuto. É altamente recomendável que você defina &lt;em&gt;timeouts&lt;/em&gt; quando se conectar com PayU.&lt;/li&gt;
+&lt;li&gt;É importante validar a duração e o número dos cartões de crédito por franquia, juntamente com os códigos de segurança.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;available-features&#34;&gt;Recursos disponíveis&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Conheça o Módulo PayU</title>
+      <link>/pt/payu-module-documentation/getting-started/understanding-the-payu-module.html</link>
+      <pubDate>Tue, 17 Aug 2021 14:47:21 -0500</pubDate>
+      
+      <guid>/pt/payu-module-documentation/getting-started/understanding-the-payu-module.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;p&gt;Antes de explicar como o módulo PayU é organizado, você precisa do seguinte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ter um usuário no módulo PayU. Aprenda a criar um &lt;a href=&#34;../../../pt/docs/getting-started/create-an-account.html&#34;&gt;aqui&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Ter lido e entendido os &lt;a href=&#34;../../../en/payu-module-documentation.html#payu-module-concepts&#34;&gt;conceitos do Módulo PayU&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;payu-module-web-application&#34;&gt;Módulo PayU web application&lt;/h2&gt;
+&lt;p&gt;O módulo PayU é dividido em quatro grupos principais:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#1-account-options&#34;&gt;Opções de conta&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-settings-and-user-options&#34;&gt;Configurações e opções do usuário&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#3-main-panel&#34;&gt;Painel principal&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#4-rodapé&#34;&gt;Rodapé&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+As opções apresentadas neste artigo dependem do perfil que você tem para acessar cada conta.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;1-account-options&#34;&gt;1. Opções de conta&lt;/h3&gt;
+&lt;p&gt;Este painel contém as opções necessárias para gerenciar as contas associadas ao comércio atual. Neste painel, você encontra as seguintes opções:&lt;/p&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Opção&lt;/th&gt;
+&lt;th&gt;Sub-opção&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Disponível em&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Número de identificação da sua loja no sistema PayU. Este ID é necessário quando você deseja usar &lt;a href=&#34;../../../pt/docs/integrations.html&#34;&gt;Integrações&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Conta&lt;/td&gt;
+&lt;td&gt;Informação da conta&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Exibe o nome e o ID da conta selecionada.&lt;br&gt;Essa opção também permite que você altere a conta e execute operações relacionadas a ela. Clique no símbolo &lt;strong&gt;▾&lt;/strong&gt; para encontrar essas opções ou trocar de conta.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_02_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Dados do meu negócio&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Mostra a localização e os principais dados de contato da sua empresa. Além disso, esta opção mostra as pessoas associadas à sua empresa.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Dados da suas vendas&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Mostra as informações de como você vende, o que vende, o logotipo da sua loja, informações de entrega, como você oferece seus produtos ou serviços e como seus clientes podem entrar em contato com você.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Dados bancários&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Mostra a conta bancária e o banco intermediário para onde você deseja transferir os fundos arrecadados para esta conta.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Contas criadas&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Mostra a lista de contas disponíveis em sua loja.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Saldo disponível&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Exibe o saldo disponível na conta selecionada.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Home&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Exibe a página de boas-vindas do módulo PayU. Para obter mais informações, consulte a página &lt;a href=&#34;#home-page&#34;&gt;Home&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Transações&lt;/td&gt;
+&lt;td&gt;Relatório de Vendas&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Revise os detalhes dos pagamentos recebidos, incluindo os métodos de pagamento mais usados e clientes frequentes. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/reports/sales-report.html&#34;&gt;Relatório de Vendas&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Disputas&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Gerencie os processos de disputas gerados em sua conta PayU. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;Disputas&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Extrato&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite que você entenda o fluxo de dinheiro em sua conta, as cobranças aplicadas e as taxas e impostos relacionados. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/reports/financial-statement.html&#34;&gt;Extrato&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Certificado de retenção&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Baixe seu Certificado de Retenção de acordo com o período de solicitado. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/reports/withholding-certificate.html&#34;&gt;Certificado de retenção&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Transferências&lt;/td&gt;
+&lt;td&gt;Transferências&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite que você envie os fundos coletados em sua conta PayU para sua conta bancária. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/transfers.html&#34;&gt;Transferências&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Programar transferência&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite criar transferências em frequência diária, semanal e mensal. Além disso, você pode configurar transferências personalizadas conforme necessário. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/transfers.html#schedule-transfers&#34;&gt;Programar transferência&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Para conta bancária&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Como o PayU no Brasil não é uma instituição de pagamento, os fundos arrecadados em sua conta são transferidos para sua conta diariamente. Por meio desse relatório, é possível saber o status das transferências diárias.&lt;br&gt;Este relatório está disponível apenas para contas do Brasil e possui as mesmas colunas e opções do &lt;a href=&#34;../../../pt/payu-module-documentation/reports/transfer-report.html&#34;&gt;Relatório de transferências&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Editar dados bancários&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite solicitar a alteração da conta bancária e do banco intermediário para onde deseja transferir os fundos arrecadados para esta conta. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html#request-the-change-of-your-bank-account&#34;&gt;Atualizar minhas informações&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Venda com a PayU&lt;/td&gt;
+&lt;td&gt;Venda na internet&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite criar solicitações de pagamento para que você possa cobrar de seus clientes sem ter um site. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/docs/tools/payment-request.html&#34;&gt;Solicitação de pagamento&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Cobranças em dinheiro&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite que você gere cupons de pagamento ou cartões de cobrança&lt;sup&gt;*&lt;/sup&gt; com as informações necessárias para permitir que seus clientes efetuem pagamentos em dinheiro quantas vezes forem necessárias nos pontos de pagamento disponíveis. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/docs/tools/payment-coupons.html&#34;&gt;Cupons de pagamento&lt;/a&gt;.&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Os cartões de cobrança estão disponíveis apenas na Argentina&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Ver os links criados&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite que você encontre e gerencie as informações de &lt;em&gt;link de cobrança&lt;/em&gt; (Solicitação de pagamento) e &lt;em&gt;Cupons de pagamento&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt; que você criou em sua conta.&lt;br&gt;&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Cupons de pagamento estão disponíveis apenas na Argentina e na Colômbia&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-settings-and-user-options&#34;&gt;2. Configurações e opções do usuário&lt;/h3&gt;
+&lt;p&gt;Este painel contém as opções necessárias para gerenciar seu comércio e seu usuário.&lt;/p&gt;
+&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_03_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;
+&lt;h4 id=&#34;merchant-settings&#34;&gt;Configurações do comércio&lt;/h4&gt;
+&lt;p&gt;Esta opção permite gerenciar usuários, permissões, perfis e a configuração técnica de sua loja. Ao clicar no botão &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt;, você pode acessar as seguintes opções:&lt;/p&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Opção&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Available in&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Gestão de usuários&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite que você conceda acesso aos membros de sua equipe para que eles possam receber pagamentos online ou verificar informações sobre seus pagamentos. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/user-management.html&#34;&gt;Gestão de usuários&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Perfis e permissões&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Permite criar perfis personalizados com permissões específicas.&lt;br&gt;Nesta seção, você também pode consultar a permissão padrão incluída no Módulo PayU. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Gerenciamento de perfis e permissões&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Configuração técnica&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;20px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Nesta opção, você encontra as variáveis necessárias para integrar o PayU ao seu site. Além disso, você pode configurar as notificações de pagamentos processados e os Disputas. Para obter mais informações, consulte &lt;a href=&#34;../../../pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34;&gt;Configuração técnica&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;user-settings&#34;&gt;Configurações do Usuário&lt;/h4&gt;
+&lt;p&gt;Esta opção permite que você gerencie seu perfil. Na visualização principal desta opção, você encontra o seu e-mail, o seu perfil atual no módulo PayU (para a conta atual) e o Id da conta; clique no símbolo &lt;strong&gt;▾&lt;/strong&gt; para exibir as configurações de usuário disponíveis.&lt;/p&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Opção&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Mudar comércio&lt;/td&gt;
+&lt;td&gt;Esta opção está disponível quando seu usuário está inscrito em mais de um comércio.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Meu perfil&lt;/td&gt;
+&lt;td&gt;Nesta opção, você pode configurar suas preferências e atualizar sua senha.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Encerrar sessão&lt;/td&gt;
+&lt;td&gt;Esta opção fecha a sessão do usuário ativo.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;3-main-panel&#34;&gt;3. Painel principal&lt;/h3&gt;
+&lt;p&gt;Este painel carrega a opção selecionada no painel esquerdo ou na opção no topo. A página &lt;em&gt;&lt;strong&gt;Home&lt;/strong&gt;&lt;/em&gt; é selecionada por padrão, por isso carrega assim que você faz login no módulo PayU.&lt;/p&gt;
+&lt;p&gt;Para definir uma opção conforme exibida por padrão, clique no menu de três pontos no canto superior esquerdo do painel e selecione &lt;em&gt;&lt;strong&gt;Definir como página inicial&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_04_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;
+&lt;h4 id=&#34;home-page&#34;&gt;Página Home&lt;/h4&gt;
+&lt;p&gt;A página Homo é o ponto de partida do painel do Vendedor. Ela mostra os atalhos para fazer vendas online, controlar suas finanças, transferir fundos, aprender sobre e-commerce e deixar comentários.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/MerchantPanel/MerchantPanel_05_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Nesta página, você também pode fazer um tour com o botão &lt;em&gt;&lt;strong&gt;Tour virtual&lt;/strong&gt;&lt;/em&gt;. Este botão mostra as principais opções de gerenciamento de sua conta.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Algumas opções estão conectadas às permissões configuradas para seu usuário.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;4-footer&#34;&gt;4. Rodapé&lt;/h3&gt;
+&lt;p&gt;O rodapé apresenta o número de telefone para contato e o link para os &lt;em&gt;&lt;strong&gt;Termos e Condições&lt;/strong&gt;&lt;/em&gt; de acordo com o país de processamento.&lt;/p&gt;
+&lt;p&gt;A seguir estão os números de telefone e horários de contato:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; (+5411) 598 42132&amp;gt; Seg - Sex 09:00 - 22:00 (UTC -3: 00)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; (+5511) 4130 5311&amp;gt; Seg - Sex 9h às 18h / Sáb 9h às 15h - Fuso Horário de Brasília (UTC -3: 00)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; (+562) 258-13949&amp;gt; Seg - Sex 8:00 - 21:00 hora chilena&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; (+57) 601 654 0721&amp;gt; Seg - Sex 7:00 - 20:00 hora colombiana (UTC -5: 00)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; (+5255) 474 11439&amp;gt; Seg - Sex, 7:00 - 20:00, hora CDMX&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; (+507) 836 5577&amp;gt; Seg - Sex, 7:00 - 20:00, hora colombiana (UTC -5: 00)&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; (+511) 708 5381&amp;gt; Seg - Sex 7:00 - 20:00 hora peruana (UTC -5: 00)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Plugins do carrinho de compras</title>
+      <link>/pt/docs/tools/shopping-cart-plugins.html</link>
+      <pubDate>Wed, 07 Apr 2021 09:27:04 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;pre-integrated-solutions&#34;&gt;Soluções pré-integradas&lt;/h2&gt;
+&lt;p&gt;Algumas lojas online já estão integradas ao PayU. Você só precisa ativar a opção PayU como sua plataforma de pagamento.&lt;/p&gt;
+&lt;p&gt;Soluções disponíveis:&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+    &lt;div class=&#34;row&#34;&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://www.tiendanube.com/blog/como-cobrar-online-con-dinero-mail-by-payu/&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/tiendanube.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/vtex.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/vtex.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://addons.prestashop.com/en/payment-card-wallet/6631-payu-latam.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/prestashop.svg&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #353535;border: 3px solid #353535;&#34;&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/shopify.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/shopify.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://jumpseller.com/support/payu/&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/jumpseller.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://ayuda.alegra.com/es/recibe-los-pagos-de-tus-facturas-de-venta-desde-alegra-colombia-con-payu&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/alegra.webp&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #00b19d;;border: 3px solid #00b19d;;&#34;&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/bigcommerce.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/BigCommerceLogo.webp&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; style=&#34;cursor:default;box-shadow:initial&#34;&gt;
+        &lt;h4 class=&#34;navblock-title&#34;&gt;&lt;/h4&gt;
+        &lt;p&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Alguns dos links acima podem aparecer em espanhol ou em inglês.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;plugins-for-modules&#34;&gt;Plugins para módulos&lt;/h2&gt;
+&lt;p&gt;Se você usa um carrinho de compras open source, baixe e use os plugins que desenvolvemos para facilitar o processo de integração com o sistema de pagamento.&lt;/p&gt;
+&lt;p&gt;Plug-ins disponíveis:&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34; align=&#34;center&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/drupal.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;      
+    &lt;/div&gt;    
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/virtuemart.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/vm-logo-220.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/woocommerce.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/woocommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/oscommerce.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/oscommerce.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/opencart.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/opencart.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
+    &lt;/div&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;h3 id=&#34;plugin-files&#34;&gt;Arquivos de plug-in&lt;/h3&gt;
+&lt;p&gt;Encontre a versão mais recente do plug-in na tabela a seguir&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+       &lt;tr&gt;
+          &lt;th width=&#34;20%&#34;&gt;Carrinho de compras&lt;/th&gt;
+          &lt;th&gt;Plug-in&lt;/th&gt;
+          &lt;th&gt;Observações&lt;/th&gt;
+       &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;       
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/drupal.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/commerce_payulatam_1.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Você precisa de &lt;a href=&#34;https://www.drupal.org/project/commerce_kickstart&#34; target=&#34;_blank&#34;&gt;Drupal Commerce Kickstart 7.xx&lt;/a&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/vm-logo-220.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;VirtueMart v2+&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart2.6.7.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;hr&gt;VirtueMart v3.0.6&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart3.0.6.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Você precisa do Joomla 2.5 com MySQL 5.1 ou superior.&lt;hr style=&#34;margin-top:2.5rem;margin-bottom: 2.5rem;&#34;&gt;Você precisa das versões do Joomla 3.3.6, 2.5.28 ou 2.5.27.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/woocommerce.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/woocommerce-payu-latam-2.1.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Você precisa:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;WordPress 3.8 ou superior.&lt;/li&gt;&lt;li&gt;WooCommerce versão 2.0 ou superior instalado no site WordPress.&lt;/ul&gt;&lt;/li&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/oscommerce.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-oscommerce.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Disponível para a versão 2.3.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;tr&gt;
+          &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/opencart.png&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;Versão 1.5.5.1 ou 1.5.6.4&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;hr&gt;Versão 2.0.x.x a 2.1.x.x&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart-2.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+          &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;/td&gt;
+       &lt;/tr&gt;
+    &lt;/tbody&gt;
+ &lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Integração SDK</title>
+      <link>/pt/docs/integrations/sdk-integration.html</link>
+      <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/pt/docs/integrations/sdk-integration.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Assim como qualquer integração de API, você pode personalizar seu checkout de acordo com as necessidades de sua loja e o cliente permanece em seu site durante o processo de compra e pagamento. Para integrar esta opção, você deve ter uma conta PayU Business e habilidades de programação avançadas.&lt;/p&gt;
+&lt;p&gt;Você pode acessar vários métodos de pagamento (varia por país), incluindo cartões de crédito, transferências bancárias e pagamentos em dinheiro.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/api1-pt.png&#34; alt=&#34;API integration&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;initial-settings&#34;&gt;Configurações iniciais&lt;/h2&gt;
+&lt;p&gt;PayU permite que você integre com o portal de transações, ferramentas de pagamento disponíveis e Consultas através da programação de um site em Java ou PHP. É fundamental que os dados confidenciais da transação, como número do cartão de crédito e data de validade, não sejam armazenados. Recomenda-se seguir as &lt;a href=&#34;https://www.pcisecuritystandards.org/documents/PCI_DSS_V2.0_Best_Practices_for_Maintaining_PCI_DSS_Compliance.pdf&#34;&gt;Melhores práticas do PCI DSS&lt;/a&gt; (Payment Card Industry Data Security Standard).&lt;/p&gt;
+&lt;h3 id=&#34;java&#34;&gt;Java&lt;/h3&gt;
+&lt;p&gt;Para se integrar com a API, o SDK depende da biblioteca do Apache &lt;code&gt;HttpClient&lt;/code&gt; que também depende das bibliotecas &lt;code&gt;HttpCore&lt;/code&gt;, &lt;code&gt;CommonsLoggin&lt;/code&gt; e &lt;code&gt;CommonsCodec&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Em geral, você precisa das seguintes bibliotecas em seu classpath:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.4.1&#34;&gt;HttpClient-4.4.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore/4.4.4&#34;&gt;HttpCore-4.4.4.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/commons-logging/commons-logging/1.1.1&#34;&gt;Commons-loggin-1.1.1.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/commons-codec/commons-codec/1.6&#34;&gt;Commons-codec-1.6.jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.5&#34;&gt;Commons-lang3-3.5.jar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/sdk/java/payu-java-sdk-1.5.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Faça download do SDK Java 1.5.0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Antes de realizar qualquer operação com o SDK, você precisa atribuir alguns valores à classe &lt;code&gt;PayU&lt;/code&gt;, que se aplica a todas as operações do SDK e deve ser configurada com os dados da sua loja. A tabela a seguir mostra os valores que você precisa configurar.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parâmetro name&lt;/th&gt;
+&lt;th&gt;Tamanho&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Obrigatório&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;language&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Language&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td&gt;O idioma usado para mensagens de erro no sistema e nos e-mails que são enviados ao comprador e ao vendedor. Atualmente é compatível com en  &lt;code&gt;en&lt;/code&gt; (inglês), &lt;code&gt;es&lt;/code&gt; (Spanish) and &lt;code&gt;pt&lt;/code&gt; (português).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;isTest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td&gt;Atribuir &lt;code&gt;true&lt;/code&gt; se for um pedido de teste. Caso contrário, atribua &lt;code&gt;false&lt;/code&gt;. Dependendo do tipo de transação ou operação, o comportamento pode variar de acordo com o valor deste campo.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;apiLogin&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Mín:12 Máx:32&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td&gt;Sua API Login. &lt;a href=&#34;../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Como faço para obter minha API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;apiKey&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Mín:6 Máx:32&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td&gt;Sua API key. &lt;a href=&#34;../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Como faço para obter minha API key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;merchantId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td&gt;O identificador do vendedor, é usado para gerar as assinaturas para verificar as transações de pagamento. &lt;br&gt;Este parâmetro é obrigatório quando you want to check the transaction, unless you send the signature.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;paymentsUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Mín:1&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td&gt;A URL da página para a qual você enviará as solicitações relacionadas a pagamentos. Por padrão, este parâmetro leva a URL de produção.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;reportsUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Mín:1&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td&gt;A URL da página para onde você enviará as solicitações relacionadas aos relatórios. Por padrão, este parâmetro leva a URL de produção.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Exemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;apiKey&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Insira aqui sua API key&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;apiLogin&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Insira aqui sua API Login&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Language&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;en&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Insira o idioma aqui&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;isTest&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// atribua true se você estiver no modo de teste&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LoggerUtil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setLogLevel&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Level&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Inclua-o apenas se desejar ver o rastreamento completo do log. Caso contrário, você pode removê-lo.&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PaymentUrl&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.payulatam.com/payments-api/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Inclua se quiser testar em um servidor de pagamento específico e atribuir sua URL.&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;reportsUrl&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://api.payulatam.com/reports-api/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Inclua se quiser testar em um servidor de relatório específico e atribuir sua URL.&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Para executar as operações fornecidas pelo SDK do PayU, deve-se enviar ao método um mapa de parâmetros como argumento. Este mapa contém todas as informações necessárias para processar uma transação. Exemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-JAVA&#34; data-lang=&#34;JAVA&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;Map&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HashMap&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PARAMETERS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;TRANSACTION_ID&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;transactionId&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameters&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;put&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;PARAMETERS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;ORDER_ID&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;orderId&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;());&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Para facilitar o uso, você encontra um conjunto de constantes na interface &lt;code&gt;PayU.PARAMETERS&lt;/code&gt;, que contém os nomes dos parâmetros usados nos métodos SDK.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+A partir da versão 1.2.X, é necessário adicionar o certificado da API de pagamentos do PayU (&lt;a href=&#34;https://api.payulatam.com/payments-api/&#34;&gt;https://api.payulatam.com/payments-api/&lt;/a&gt;) na pasta da chave Java. Esta pasta está localizada no caminho &lt;em&gt;&lt;strong&gt;[Java-Installation-Folder]/jdk/jre/lib/security/cacerts&lt;/strong&gt;&lt;/em&gt;.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;php&#34;&gt;PHP&lt;/h3&gt;
+&lt;p&gt;Para integração com a API, o SDK pode ser executado em máquinas com versão PHP maior ou igual a 5.2.1. Além disso, as seguintes extensões PHP são necessárias em seu servidor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;curl&lt;/li&gt;
+&lt;li&gt;xml&lt;/li&gt;
+&lt;li&gt;mbstring&lt;/li&gt;
+&lt;li&gt;json&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/blob/master/sdk/php/payu-php-sdk-4.5.8.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Faça download do SDK PHP 4.5.8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para ter acesso aos recursos do SDK, você precisa incluir a classe &lt;code&gt;PayU&lt;/code&gt; localizada em &lt;em&gt;&lt;strong&gt;[PayU-php-sdk-Path]/lib/PayU.php&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;require_once&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;[PayU-php-sdk-Path]/lib/PayU.php&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;..&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;Antes de realizar qualquer operação com o SDK, você precisa atribuir alguns valores à classe &lt;code&gt;PayU&lt;/code&gt;, que se aplica a todas as operações do SDK e deve ser configurada com os dados da sua loja. A tabela a seguir mostra os valores que você precisa configurar.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parâmetro name&lt;/th&gt;
+&lt;th&gt;Tamanho&lt;/th&gt;
+&lt;th&gt;Tipo&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Obrigatório&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$language&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Language&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td&gt;O idioma usado para mensagens de erro no sistema e nos e-mails que são enviados ao comprador e ao vendedor. Atualmente é compatível com en  en (inglês), es (Spanish) and pt (português).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$isTest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td&gt;Atribuir &lt;code&gt;true&lt;/code&gt; se for um pedido de teste. Caso contrário, atribua &lt;code&gt;false&lt;/code&gt;. Dependendo do tipo de transação ou operação, o comportamento pode variar de acordo com o valor deste campo.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$apiLogin&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Mín:12 Máx:32&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td&gt;Seu API Login. &lt;a href=&#34;../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Como faço para obter minha API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$apiKey&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Mín:6 Máx:32&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Sim&lt;/td&gt;
+&lt;td&gt;Sua API key. &lt;a href=&#34;../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Como faço para obter minha API key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;PayU::$merchantId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;Não&lt;/td&gt;
+&lt;td&gt;O identificador do vendedor, é usado para gerar as assinaturas para verificar as transações de pagamento. &lt;br&gt;Este parâmetro é obrigatório quando you want to check the transaction, unless you send the signature.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Exemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$apiKey&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Insira aqui sua API key
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$apiLogin&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Insira aqui sua API Login
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$merchantId&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Insira seu Merchant Id aqui
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$language&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SupportedLanguages&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;ES&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Insira o idioma aqui
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PayU&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$isTest&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// atribua true se você estiver no modo de teste
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;..&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;lém disso, você precisa configurar a API para redirecionar as solicitações usando a classe  &lt;code&gt;Environment&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;php&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Payments URL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setPaymentsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Reports URL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Environment&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;setReportsCustomUrl&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://sandbox.api.payulatam.com/reports-api/4.0/service.cgi&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;..&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;considerations&#34;&gt;Observações&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Você deve ter uma conta PayU ativa.&lt;/li&gt;
+&lt;li&gt;Você deve instalar um certificado SSL válido em seu servidor e seu site deve ser capaz de fazer conexões SSL. Por isso, a máquina virtual deve ter extensões de segurança adequadas.&lt;/li&gt;
+&lt;li&gt;Temporariamente, não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia &lt;code&gt;TLS_ECDHE_ECDSA_WITH_RC4_128_SHA&lt;/code&gt; em seus ordems de pagamento.&lt;/li&gt;
+&lt;li&gt;Você deve ter CGI ou linguagens de servidor como Java, C #, VB, PHP, etc.&lt;/li&gt;
+&lt;li&gt;Você deve ser capaz de armazenar suas credenciais de autenticação (API Key e API Login) com segurança.&lt;/li&gt;
+&lt;li&gt;A codificação das mensagens deve ser &lt;code&gt;UTF-8&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;As datas devem ter formato &lt;code&gt;yyyy-MM-ddTHH:mm:ss&lt;/code&gt;, o formato da hora é 24 horas. Exemplo: &lt;code&gt;2015-08-22T21:35:12&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Normalmente a conexão garante tempos de resposta de três segundos em média. Se houver uma situação incomum, o tempo máximo de resposta é de um minuto. É altamente recomendável que você defina timeouts quando se conectar com PayU.&lt;/li&gt;
+&lt;li&gt;É importante validar a duração e o número dos cartões de crédito por franquia, juntamente com os códigos de segurança.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;available-features&#34;&gt;Recursos disponíveis&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Disputas</title>
+      <link>/pt/docs/tools/disputes.html</link>
+      <pubDate>Mon, 12 Apr 2021 08:34:58 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/disputes.html</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Para instruções detalhadas sobre como lidar com disputas no Painel de Gerenciamento da sua conta PayU, consulte a documentação do &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/payu-operations/disputes-mp.html&#34; target=&#34;_blank&#34;&gt;Módulo de Disputas&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Para informações técnicas sobre o sistema de notificações, consulte a documentação do &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/tools/disputes/disputes-webhook.html&#34; target=&#34;_blank&#34;&gt;Webhook de Disputas&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;visão-geral-das-disputas&#34;&gt;Visão Geral das Disputas&lt;/h2&gt;
+&lt;p&gt;As disputas ocorrem quando compradores registram reclamações com os bancos emissores de seus cartões sobre transações. O banco notifica o PayU sobre a disputa, e criamos um registro correspondente em nosso sistema. Em seguida, notificamos você com base no método de notificação escolhido.&lt;/p&gt;
+&lt;p&gt;O diagrama a seguir ilustra o fluxo do processo de disputas no PayU, detalhando cada etapa desde a notificação até a resolução.
+&lt;br&gt;&lt;/p&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;disputes_flow_pt.html&lt;/title&gt;
+&lt;meta charset=&#34;utf-8&#34;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;mxgraph&#34; style=&#34;max-width:100%;border:1px solid transparent;&#34; data-mxgraph=&#34;{&amp;quot;highlight&amp;quot;:&amp;quot;#0000ff&amp;quot;,&amp;quot;nav&amp;quot;:true,&amp;quot;resize&amp;quot;:true,&amp;quot;xml&amp;quot;:&amp;quot;&amp;lt;mxfile host=\&amp;quot;app.diagrams.net\&amp;quot; agent=\&amp;quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36\&amp;quot; version=\&amp;quot;26.0.10\&amp;quot;&amp;gt;&amp;lt;diagram name=\&amp;quot;Page-1\&amp;quot; id=\&amp;quot;CsmPBH-f9B92SmGsYFgC\&amp;quot;&amp;gt;&amp;lt;mxGraphModel dx=\&amp;quot;1434\&amp;quot; dy=\&amp;quot;-362\&amp;quot; grid=\&amp;quot;1\&amp;quot; gridSize=\&amp;quot;10\&amp;quot; guides=\&amp;quot;1\&amp;quot; tooltips=\&amp;quot;1\&amp;quot; connect=\&amp;quot;1\&amp;quot; arrows=\&amp;quot;1\&amp;quot; fold=\&amp;quot;1\&amp;quot; page=\&amp;quot;1\&amp;quot; pageScale=\&amp;quot;1\&amp;quot; pageWidth=\&amp;quot;850\&amp;quot; pageHeight=\&amp;quot;1100\&amp;quot; math=\&amp;quot;0\&amp;quot; shadow=\&amp;quot;0\&amp;quot;&amp;gt;&amp;lt;root&amp;gt;&amp;lt;mxCell id=\&amp;quot;0\&amp;quot;/&amp;gt;&amp;lt;mxCell id=\&amp;quot;1\&amp;quot; parent=\&amp;quot;0\&amp;quot;/&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-37\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=2;strokeColor=#737300;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;160\&amp;quot; y=\&amp;quot;1720\&amp;quot; width=\&amp;quot;900\&amp;quot; height=\&amp;quot;150\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-38\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=2;strokeColor=#4D4D4D;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;160\&amp;quot; y=\&amp;quot;1870\&amp;quot; width=\&amp;quot;900\&amp;quot; height=\&amp;quot;150\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-39\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;rounded=0;whiteSpace=wrap;html=1;fontColor=#002B16;fillColor=#FFFFFF;strokeWidth=2;strokeColor=#006634;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;160\&amp;quot; y=\&amp;quot;2020\&amp;quot; width=\&amp;quot;900\&amp;quot; height=\&amp;quot;150\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-40\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=#021A2A;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;160\&amp;quot; y=\&amp;quot;2170\&amp;quot; width=\&amp;quot;900\&amp;quot; height=\&amp;quot;150\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-42\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.cashier;html=1;pointerEvents=1;fillColor=#4D4D4D;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;75.43\&amp;quot; y=\&amp;quot;1927\&amp;quot; width=\&amp;quot;18.63\&amp;quot; height=\&amp;quot;19\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-43\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4A4A00;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;53.5\&amp;quot; y=\&amp;quot;1767\&amp;quot; width=\&amp;quot;53\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-44\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcwkwAE0dFG7eCNOgAAAAAElFTkSuQmCC;fontColor=#021A2A;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;29\&amp;quot; y=\&amp;quot;2037.75\&amp;quot; width=\&amp;quot;111.5\&amp;quot; height=\&amp;quot;111.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-45\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.present;html=1;pointerEvents=1;fillColor=#021A2A;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;46.75\&amp;quot; y=\&amp;quot;2277\&amp;quot; width=\&amp;quot;18\&amp;quot; height=\&amp;quot;22.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-46\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.bank;html=1;pointerEvents=1;fillColor=#021A2A;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;70.25\&amp;quot; y=\&amp;quot;2236\&amp;quot; width=\&amp;quot;61\&amp;quot; height=\&amp;quot;63.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-47\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.coat_check;html=1;pointerEvents=1;fillColor=#021A2A;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;14.75\&amp;quot; y=\&amp;quot;2252\&amp;quot; width=\&amp;quot;35\&amp;quot; height=\&amp;quot;22.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-48\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.transportation.airplane_7;html=1;pointerEvents=1;fillColor=#021A2A;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;39.75\&amp;quot; y=\&amp;quot;2222\&amp;quot; width=\&amp;quot;45\&amp;quot; height=\&amp;quot;31.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-56\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-49\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-50\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-49\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;1. &amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Registra uma reclamação no banco referente a uma cobrança feita em seu cartão de crédito.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#737300;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;170\&amp;quot; y=\&amp;quot;1740\&amp;quot; width=\&amp;quot;160\&amp;quot; height=\&amp;quot;110\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-57\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-50\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-51\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-50\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;2. &amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Notifica o PayU sobre a reclamação.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#4D4D4D;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;283\&amp;quot; y=\&amp;quot;1900\&amp;quot; width=\&amp;quot;107\&amp;quot; height=\&amp;quot;90\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-58\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-51\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-52\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-51\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;3. &amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Informa o comerciante sobre a disputa, fornecendo detalhes e um prazo para o envio dos documentos de suporte.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#006634;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;370\&amp;quot; y=\&amp;quot;2040\&amp;quot; width=\&amp;quot;180\&amp;quot; height=\&amp;quot;110\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-59\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-52\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-55\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-52\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;4. &amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Reúne todas as evidências relevantes e entra em contato com o comprador para entender o motivo da reclamação.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#021A2A;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;500\&amp;quot; y=\&amp;quot;2180\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;130\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-61\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-53\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-54\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-53\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;6.&amp;amp;amp;nbsp;&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Envia os documentos de suporte para a entidade bancária.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#006634;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;780\&amp;quot; y=\&amp;quot;2040\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;98.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-54\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;7.&amp;amp;amp;nbsp;&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Analisa as evidências e determina se um chargeback é justificável.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#4D4D4D;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;860\&amp;quot; y=\&amp;quot;1881.5\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;110\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-60\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-55\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-53\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-55\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;5.&amp;amp;amp;nbsp;&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Faz o upload das evidências no Painel de Gestão&amp;amp;amp;nbsp; da PayU para avaliação.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#021A2A;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;680\&amp;quot; y=\&amp;quot;2190\&amp;quot; width=\&amp;quot;130\&amp;quot; height=\&amp;quot;110\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-62\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#4d4d4d&amp;amp;quot; style=&amp;amp;quot;font-size: 16px;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;Entidade bancária&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;13\&amp;quot; y=\&amp;quot;1880\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;50\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-63\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 16px;&amp;amp;quot; color=&amp;amp;quot;#4a4a00&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;Cliente final&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;10\&amp;quot; y=\&amp;quot;1725\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;50\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-64\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#021a2a&amp;amp;quot; style=&amp;amp;quot;font-size: 16px;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;Comerciante&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;13\&amp;quot; y=\&amp;quot;2180\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;50\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-65\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;background-color: initial; font-size: 13px;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;Nota:&amp;amp;lt;/b&amp;amp;gt;&amp;amp;amp;nbsp; O comerciante pode solicitar à PayU que realize um reembolso. Assim que a PayU inicia o reembolso, a disputa é encerrada automaticamente.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#021A2A;align=center;strokeWidth=2;fillColor=#021A2A;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;867\&amp;quot; y=\&amp;quot;2180\&amp;quot; width=\&amp;quot;175\&amp;quot; height=\&amp;quot;130\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;_RsPmHh8OhWLy5dULe4P-1\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.museum;html=1;pointerEvents=1;fillColor=#4D4D4D;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;54.620000000000005\&amp;quot; y=\&amp;quot;1948.5\&amp;quot; width=\&amp;quot;60.25\&amp;quot; height=\&amp;quot;64.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;/root&amp;gt;&amp;lt;/mxGraphModel&amp;gt;&amp;lt;/diagram&amp;gt;&amp;lt;/mxfile&amp;gt;&amp;quot;,&amp;quot;toolbar&amp;quot;:&amp;quot;pages zoom layers lightbox&amp;quot;,&amp;quot;page&amp;quot;:0}&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://app.diagrams.net/js/viewer-static.min.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;h3 id=&#34;motivos-comuns-para-disputas&#34;&gt;Motivos Comuns para Disputas&lt;/h3&gt;
+&lt;p&gt;Os compradores podem contestar transações por diversos motivos, incluindo o não recebimento de mercadorias, produtos defeituosos ou cobranças não autorizadas. Aqui estão os motivos típicos de disputas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Fraude&lt;/strong&gt;: Transações realizadas sem autorização, geralmente devido a um cartão perdido ou roubado.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pagamento Não Reconhecido&lt;/strong&gt;: O titular do cartão não reconhece o nome do comerciante no extrato.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Produto Não Entregue&lt;/strong&gt;: O produto ou serviço não foi recebido.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Produto Insatisfatório&lt;/strong&gt;: O produto ou serviço não atendeu às expectativas.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cobranças Duplicadas&lt;/strong&gt;: O titular do cartão foi cobrado várias vezes pela mesma transação.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Divergência de Valor&lt;/strong&gt;: O valor cobrado não corresponde ao valor da compra.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Não Especificado&lt;/strong&gt;: Disputas iniciadas pelos bancos sem um motivo claro.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Os métodos de notificação para disputas variam entre as entidades financeiras; o PayU não pode garantir que as entidades sempre fornecerão os motivos.&lt;/li&gt;
+&lt;li&gt;O PayU atua apenas como intermediário para ajudar os comerciantes a apresentar evidências em disputas. A decisão final cabe ao banco emissor.&lt;/li&gt;
+&lt;li&gt;Os valores em disputa são congelados e indisponíveis para transferência até a resolução.&lt;/li&gt;
+&lt;li&gt;Os compradores podem contestar transações dentro de &lt;strong&gt;120 dias&lt;/strong&gt; para cartões locais e &lt;strong&gt;180 dias&lt;/strong&gt; para cartões internacionais.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;gerenciando-disputas-com-o-payu&#34;&gt;Gerenciando Disputas com o PayU&lt;/h2&gt;
+&lt;p&gt;O processo de disputas segue um fluxo estruturado, que pode ser gerenciado diretamente pelo Painel de Gerenciamento em sua conta PayU. Para mais detalhes, consulte o &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/payu-operations/disputes-mp.html&#34; target=&#34;_blank&#34;&gt;Módulo de Disputas&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;1-notificação-de-disputa&#34;&gt;1. Notificação de Disputa&lt;/h3&gt;
+&lt;p&gt;O PayU notificará você com base no método de notificação configurado no módulo de Disputas, onde você também poderá verificar os detalhes da disputa.&lt;/p&gt;
+&lt;h3 id=&#34;2-revisão-dos-detalhes-da-disputa&#34;&gt;2. Revisão dos Detalhes da Disputa&lt;/h3&gt;
+&lt;p&gt;Utilize o Painel de Gerenciamento para visualizar e gerenciar suas disputas em andamento.&lt;/p&gt;
+&lt;h3 id=&#34;3-apresentação-de-evidências&#34;&gt;3. Apresentação de Evidências&lt;/h3&gt;
+&lt;p&gt;Responda às disputas enviando as evidências necessárias através do módulo de Disputas antes do prazo estabelecido pelo banco ou pela rede de processamento. Após o prazo, não será possível enviar evidências para essa disputa.&lt;/p&gt;
+&lt;h4 id=&#34;evidências-úteis&#34;&gt;Evidências Úteis&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Detalhes do cliente (nome, ID, e-mail, endereço de entrega, número do cartão, etc.).&lt;/li&gt;
+&lt;li&gt;Comprovante de entrega assinado pelo titular do cartão.&lt;/li&gt;
+&lt;li&gt;Recibos de venda ou faturas.&lt;/li&gt;
+&lt;li&gt;Aceitação de termos, condições ou pagamentos assinados pelo titular do cartão.&lt;/li&gt;
+&lt;li&gt;Políticas de reembolso e cancelamento.&lt;/li&gt;
+&lt;li&gt;Histórico transacional.&lt;/li&gt;
+&lt;li&gt;Outros documentos de suporte.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;prazos-para-envio-de-evidências&#34;&gt;Prazos para Envio de Evidências&lt;/h4&gt;
+&lt;p&gt;Os dias máximos para envio de evidências variam por país:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;País&lt;/th&gt;
+&lt;th&gt;Dias para Enviar Evidências&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Argentina&lt;/td&gt;
+&lt;td&gt;5 dias úteis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brasil&lt;/td&gt;
+&lt;td&gt;12 dias úteis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chile&lt;/td&gt;
+&lt;td&gt;5 dias úteis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Colômbia&lt;/td&gt;
+&lt;td&gt;2 dias úteis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;México&lt;/td&gt;
+&lt;td&gt;12 dias corridos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Panamá&lt;/td&gt;
+&lt;td&gt;8 dias úteis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Peru&lt;/td&gt;
+&lt;td&gt;6 dias úteis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;4-resolução-e-decisão-final&#34;&gt;4. Resolução e Decisão Final&lt;/h3&gt;
+&lt;p&gt;Após enviar as evidências, nossa integração as encaminha para o banco ou rede de processamento para análise. Os resultados podem incluir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ganhou&lt;/strong&gt;: A entidade bancária resolve a disputa a seu favor, sem deduções.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Perdeu&lt;/strong&gt;: A entidade bancária emite um chargeback, e custos associados podem ser aplicados.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reembolsado&lt;/strong&gt;: Você reembolsa voluntariamente o comprador.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;O Painel de Gerenciamento da sua conta PayU atualizará o status da disputa com base na resolução, e o sistema notificará você.&lt;/p&gt;
+&lt;h2 id=&#34;estados-da-disputa&#34;&gt;Estados da Disputa&lt;/h2&gt;
+&lt;p&gt;Cada disputa segue uma série de estados ao longo do processo:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Estado&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Notificado&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Estado inicial, onde as evidências devem ser enviadas.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Em Análise&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;As evidências estão sendo analisadas pelo banco ou rede.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Sem Evidências Enviadas&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;O comerciante perdeu o prazo para envio das evidências.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Perdeu&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;A disputa foi resolvida a favor do comprador, resultando em um chargeback.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Ganhou&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;A disputa foi resolvida a favor do comerciante.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Expirado&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Após 120 dias sem resposta do banco, os fundos são liberados.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Reembolsado&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;O comerciante autorizou um reembolso, evitando um chargeback.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Abaixo está um diagrama ilustrando o processo de resolução de disputas:&lt;/p&gt;
+&lt;div&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Disputes_ENPT.html&lt;/title&gt;
+&lt;meta charset=&#34;utf-8&#34;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;mxgraph&#34; style=&#34;max-width:100%;border:1px solid transparent;&#34; data-mxgraph=&#34;{&amp;quot;highlight&amp;quot;:&amp;quot;#0000ff&amp;quot;,&amp;quot;nav&amp;quot;:true,&amp;quot;resize&amp;quot;:true,&amp;quot;xml&amp;quot;:&amp;quot;&amp;lt;mxfile host=\&amp;quot;app.diagrams.net\&amp;quot; agent=\&amp;quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36\&amp;quot; version=\&amp;quot;26.0.10\&amp;quot;&amp;gt;&amp;lt;diagram name=\&amp;quot;Page-1\&amp;quot; id=\&amp;quot;Q7fAwdDV4ESacsW7LS1n\&amp;quot;&amp;gt;&amp;lt;mxGraphModel dx=\&amp;quot;1674\&amp;quot; dy=\&amp;quot;788\&amp;quot; grid=\&amp;quot;1\&amp;quot; gridSize=\&amp;quot;10\&amp;quot; guides=\&amp;quot;1\&amp;quot; tooltips=\&amp;quot;1\&amp;quot; connect=\&amp;quot;1\&amp;quot; arrows=\&amp;quot;1\&amp;quot; fold=\&amp;quot;1\&amp;quot; page=\&amp;quot;1\&amp;quot; pageScale=\&amp;quot;1\&amp;quot; pageWidth=\&amp;quot;850\&amp;quot; pageHeight=\&amp;quot;1100\&amp;quot; math=\&amp;quot;0\&amp;quot; shadow=\&amp;quot;0\&amp;quot;&amp;gt;&amp;lt;root&amp;gt;&amp;lt;mxCell id=\&amp;quot;0\&amp;quot;/&amp;gt;&amp;lt;mxCell id=\&amp;quot;1\&amp;quot; parent=\&amp;quot;0\&amp;quot;/&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-3\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;&amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;160\&amp;quot; as=\&amp;quot;sourcePoint\&amp;quot;/&amp;gt;&amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;180\&amp;quot; as=\&amp;quot;targetPoint\&amp;quot;/&amp;gt;&amp;lt;/mxGeometry&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-7\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=#BCD245;endArrow=none;endFill=0;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-6\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-16\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-12\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;disputeStatus: NOTIFIED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;320\&amp;quot; y=\&amp;quot;270\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-6\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Permanece como CAPTURED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;120\&amp;quot; y=\&amp;quot;270\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-10\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-8\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-9\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-24\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-8\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-8\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;disputeStatus:&amp;amp;amp;nbsp;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;ON REVIEW&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;440\&amp;quot; y=\&amp;quot;381\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-9\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Permanece como&amp;amp;amp;nbsp;CAPTURED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;640\&amp;quot; y=\&amp;quot;381\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-20\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=#BCD245;strokeWidth=2;endArrow=none;endFill=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-12\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-18\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-12\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;disputeStatus: DOCUMENTS NOT PRESENTED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;200\&amp;quot; y=\&amp;quot;381\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;79\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;UQptcBAezxxv-sp8HUl6-2\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeWidth=2;strokeColor=#BCD245;endArrow=none;endFill=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-15\&amp;quot; target=\&amp;quot;UQptcBAezxxv-sp8HUl6-1\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-15\&amp;quot; value=\&amp;quot;&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color: rgb(255, 255, 255); font-size: 14px; background-color: transparent;&amp;amp;quot;&amp;amp;gt;Uma notificação de disputa vem do banco&amp;amp;lt;/span&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#BCD245;fillColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;330\&amp;quot; y=\&amp;quot;144\&amp;quot; width=\&amp;quot;100\&amp;quot; height=\&amp;quot;100\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-17\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.558;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-4\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-8\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-18\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Permanece como&amp;amp;amp;nbsp;CAPTURED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;42\&amp;quot; y=\&amp;quot;390.5\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-23\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-22\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-29\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-25\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;&amp;lt;Array as=\&amp;quot;points\&amp;quot;&amp;gt;&amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;600\&amp;quot;/&amp;gt;&amp;lt;mxPoint x=\&amp;quot;300\&amp;quot; y=\&amp;quot;600\&amp;quot;/&amp;gt;&amp;lt;/Array&amp;gt;&amp;lt;/mxGeometry&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-30\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-26\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;&amp;lt;Array as=\&amp;quot;points\&amp;quot;&amp;gt;&amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;600\&amp;quot;/&amp;gt;&amp;lt;mxPoint x=\&amp;quot;100\&amp;quot; y=\&amp;quot;600\&amp;quot;/&amp;gt;&amp;lt;/Array&amp;gt;&amp;lt;/mxGeometry&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-31\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-27\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;&amp;lt;Array as=\&amp;quot;points\&amp;quot;&amp;gt;&amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;600\&amp;quot;/&amp;gt;&amp;lt;mxPoint x=\&amp;quot;500\&amp;quot; y=\&amp;quot;600\&amp;quot;/&amp;gt;&amp;lt;/Array&amp;gt;&amp;lt;/mxGeometry&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-32\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-28\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;&amp;gt;&amp;lt;Array as=\&amp;quot;points\&amp;quot;&amp;gt;&amp;lt;mxPoint x=\&amp;quot;380\&amp;quot; y=\&amp;quot;600\&amp;quot;/&amp;gt;&amp;lt;mxPoint x=\&amp;quot;700\&amp;quot; y=\&amp;quot;600\&amp;quot;/&amp;gt;&amp;lt;/Array&amp;gt;&amp;lt;/mxGeometry&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-21\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;disputeStatus:&amp;amp;amp;nbsp;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;ON PAYMENT NETWORK REVIEW&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;320\&amp;quot; y=\&amp;quot;481\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;80\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-22\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Permanece como&amp;amp;amp;nbsp;CAPTURED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;520\&amp;quot; y=\&amp;quot;490\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-35\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-25\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-33\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-25\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;EXPIRED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;240\&amp;quot; y=\&amp;quot;661\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;39\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-36\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-26\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-34\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-26\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;WON&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;40\&amp;quot; y=\&amp;quot;640\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;40\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-38\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BCD245;dashed=1;strokeWidth=2;endArrow=none;endFill=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-27\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-37\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-27\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;LOST&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;440\&amp;quot; y=\&amp;quot;681\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;39\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-40\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;strokeWidth=2;strokeColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-28\&amp;quot; target=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-39\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-28\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;REFUNDED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;640\&amp;quot; y=\&amp;quot;701\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;39\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-33\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Permanece como&amp;amp;amp;nbsp;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;span style=&amp;amp;quot;color: rgb(255, 255, 255); font-size: 14px;&amp;amp;quot;&amp;amp;gt;CAPTURED&amp;amp;lt;/span&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;240\&amp;quot; y=\&amp;quot;743\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-34\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: Permanece como&amp;amp;amp;nbsp;CAPTURED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;40\&amp;quot; y=\&amp;quot;722\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-37\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus:&amp;amp;amp;nbsp;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;div&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;CHARGEBACK&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#FF8000;strokeWidth=2;fillColor=#FF8000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;440\&amp;quot; y=\&amp;quot;762\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;YcNsE4wuTBjSfJi-bFuw-39\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: REFUNDED&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#004C99;strokeWidth=2;fillColor=#004C99;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;640\&amp;quot; y=\&amp;quot;782\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;UQptcBAezxxv-sp8HUl6-1\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;orderStatus: &amp;amp;lt;font face=&amp;amp;quot;Helvetica&amp;amp;quot;&amp;amp;gt;CAPTURED&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;482\&amp;quot; y=\&amp;quot;174\&amp;quot; width=\&amp;quot;100\&amp;quot; height=\&amp;quot;40\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;/root&amp;gt;&amp;lt;/mxGraphModel&amp;gt;&amp;lt;/diagram&amp;gt;&amp;lt;/mxfile&amp;gt;&amp;quot;,&amp;quot;toolbar&amp;quot;:&amp;quot;pages zoom layers lightbox&amp;quot;,&amp;quot;page&amp;quot;:0}&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://app.diagrams.net/js/viewer-static.min.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;/div&gt;
+&lt;h2 id=&#34;dicas-antifraude&#34;&gt;Dicas Antifraude&lt;/h2&gt;
+&lt;p&gt;Proteja seu negócio contra fraudes seguindo estas dicas:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Monitore aumentos súbitos no volume de compras ou valores de transações incomuns.&lt;/li&gt;
+&lt;li&gt;Observe múltiplas compras de um único cliente ou para o mesmo endereço.&lt;/li&gt;
+&lt;li&gt;Implemente processos rigorosos de verificação para transações grandes ou incomuns.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

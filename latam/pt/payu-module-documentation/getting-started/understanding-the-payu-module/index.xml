@@ -1,0 +1,306 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – Conheça o Módulo PayU</title>
+    <link>/pt/payu-module-documentation/getting-started/understanding-the-payu-module.html</link>
+    <description>Recent content in Conheça o Módulo PayU on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Tue, 17 Aug 2021 14:47:21 -0500</lastBuildDate>
+    
+	  <atom:link href="/pt/payu-module-documentation/getting-started/understanding-the-payu-module/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>PayU Module Documentation: Atualizar minhas informações</title>
+      <link>/pt/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html</link>
+      <pubDate>Thu, 22 Jul 2021 15:30:25 -0500</pubDate>
+      
+      <guid>/pt/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+&lt;p&gt;Uma vez que sua conta tenha sido validada e ativada, suas informações de contato, negócios e vendas não podem ser atualizadas usando o módulo PayU. Se você precisar atualizar essas informações, entre em contato com&lt;/p&gt;
+&lt;div style=&#34;display: flex;&#34;&gt;
+  &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.ar@payu.com&#34;&gt;comercios.ar@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.br@payu.com&#34;&gt;comercios.br@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.cl@payu.com&#34;&gt;comercios.cl@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.co@payu.com&#34;&gt;comercios.co@payu.com&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;float: left;width: 50%;&#34;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.mx@payu.com&#34;&gt;comercios.mx@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.pa@payu.com&#34;&gt;comercios.pa@payu.com&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&#34;../../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt; &lt;a href=&#34;comercios.pe@payu.com&#34;&gt;comercios.pe@payu.com&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;change-password&#34;&gt;Mudar senha&lt;/h2&gt;
+&lt;p&gt;Siga estas etapas para alterar sua senha atual.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;No canto superior direito, clique no símbolo &lt;strong&gt;▾&lt;/strong&gt; ao lado do seu endereço de e-mail para exibir as configurações de usuário disponíveis.&lt;br&gt;Clique em &lt;em&gt;&lt;strong&gt;Meu perfil&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Na tela &lt;em&gt;&lt;strong&gt;Meu perfil&lt;/strong&gt;&lt;/em&gt;, clique em &lt;em&gt;&lt;strong&gt;Mudar senha&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_02_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;O painel &lt;em&gt;&lt;strong&gt;Mudar senha&lt;/strong&gt;&lt;/em&gt; aparece. Você deve inserir aqui a senha atual e a nova senha duas vezes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_03_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Assim que terminar, clique em &lt;em&gt;&lt;strong&gt;Salvar alterações&lt;/strong&gt;&lt;/em&gt; no rodapé da seção. Para descartar a alteração de sua senha, clique em &lt;em&gt;&lt;strong&gt;Descartar alterações&lt;/strong&gt;&lt;/em&gt; para fechar o painel &lt;em&gt;&lt;strong&gt;Mudar senha&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;update-your-user-preferences&#34;&gt;Atualize suas preferências de usuário&lt;/h2&gt;
+&lt;p&gt;Nesta seção, você pode alterar as configurações de visualização das informações exibidas em seu módulo, como formato de data, fuso horário de seu país, formato de moeda e idioma.&lt;/p&gt;
+&lt;p&gt;Para isso, clique no símbolo &lt;strong&gt;▾&lt;/strong&gt; ao lado do seu endereço de e-mail para exibir as configurações de usuário disponíveis. Clique em &lt;em&gt;&lt;strong&gt;Meu perfil&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Na tela &lt;em&gt;&lt;strong&gt;Meu perfil&lt;/strong&gt;&lt;/em&gt; localize o painel &lt;em&gt;&lt;strong&gt;Preferências&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_04_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Na parte superior do painel, há um exemplo da data e hora atuais do fuso selecionado no formato de sua escolha.&lt;/p&gt;
+&lt;h3 id=&#34;date-format&#34;&gt;Formato de data&lt;/h3&gt;
+&lt;p&gt;Altere o formato em que deseja exibir as datas em seu Módulo PayU.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_05_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Você pode usar qualquer um dos seguintes formatos:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Formato&lt;/th&gt;
+&lt;th&gt;Exemplo&lt;br&gt;&lt;em&gt;24 de agosto de 2021&lt;/em&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;dd/mm/aaaa&lt;/td&gt;
+&lt;td&gt;24/08/2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mm/dd/aaaa&lt;/td&gt;
+&lt;td&gt;08/24/2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;aaaa/mm/dd&lt;/td&gt;
+&lt;td&gt;2021/08/24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;aaaa/mmm/dd&lt;/td&gt;
+&lt;td&gt;2021/Ago/24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dd-mm-aaaa&lt;/td&gt;
+&lt;td&gt;24-08-2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mm-dd-aaaa&lt;/td&gt;
+&lt;td&gt;08-24-2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;aaaa-mm-dd&lt;/td&gt;
+&lt;td&gt;2021-08-24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;aaaa-mmm-dd&lt;/td&gt;
+&lt;td&gt;2021-Ago-24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;time-zone&#34;&gt;Fuso horário&lt;/h3&gt;
+&lt;p&gt;Altere o fuso horário do país no qual deseja exibir as informações da transação.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_06_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;
+&lt;h3 id=&#34;currency-format&#34;&gt;Formato de moeda&lt;/h3&gt;
+&lt;p&gt;Altere o formato dos valores monetários mostrados em seu módulo PayU.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_07_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;
+&lt;h3 id=&#34;language&#34;&gt;Idioma&lt;/h3&gt;
+&lt;p&gt;Altere o idioma do seu módulo PayU.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/UserPreferences/UserPreferences_08_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;40%&#34;/&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Depois de alterar qualquer uma das configurações do usuário, não se esqueça de clicar em &lt;em&gt;&lt;strong&gt;Salvar alterações&lt;/strong&gt;&lt;/em&gt; no rodapé da seção.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;change-your-logo&#34;&gt;Mudar o seu logotipo&lt;/h2&gt;
+&lt;p&gt;No módulo PayU, você pode fazer o upload do logotipo de sua loja para que apareça em nosso Web checkout.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Logo/Logo_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Para fazer upload ou atualizar seu logotipo, siga estas etapas.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Nas opções de conta, expanda a conta atual usando o símbolo▾. Em seguida, selecione &lt;em&gt;&lt;strong&gt;Dados de vendas&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Logo/Logo_02_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;30%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Na janela &lt;em&gt;&lt;strong&gt;Dados da suas vendas&lt;/strong&gt;&lt;/em&gt;, encontre o campo &lt;em&gt;Merchant logo&lt;/em&gt;.&lt;br&gt;Se você ainda não fez o upload de um logotipo, clique no link &lt;em&gt;&lt;strong&gt;Escolha o seu logotipo&lt;/strong&gt;&lt;/em&gt;. Caso contrário, use o link &lt;em&gt;&lt;strong&gt;Mudar o logo&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Logo/Logo_03_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;
+&lt;img src=&#34;../../../../assets/Logo/Logo_04_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;O painel de upload aparecerá. Localize a imagem do seu logotipo em seu computador.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;O tamanho máximo permitido para o seu logotipo é 350x90 pixels. Se a imagem selecionada for maior que esse tamanho, você pode recortá-la usando o painel de upload. Este painel também oferece opções para ampliar ou girar a imagem.&lt;br&gt;Quando terminar, clique &lt;em&gt;&lt;strong&gt;Salvar&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/Logo/Logo_05_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;
+&lt;h2 id=&#34;request-the-change-of-your-bank-account&#34;&gt;Solicitar a alteração da sua conta bancária&lt;/h2&gt;
+&lt;p&gt;Assim que sua conta for verificada por nossa equipe de riscos, você pode solicitar a atualização de suas informações bancárias. Por motivos de segurança, a atualização das informações bancárias deve ser verificada novamente, assim como quando você cria a conta.&lt;/p&gt;
+&lt;p&gt;Para solicitar a atualização da sua conta bancária, expanda a opção &lt;em&gt;&lt;strong&gt;Transferências&lt;/strong&gt;&lt;/em&gt; no menu esquerdo. Então, selecione &lt;em&gt;&lt;strong&gt;Editar dados bancários&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A opção &lt;em&gt;&lt;strong&gt;Dados bancários&lt;/strong&gt;&lt;/em&gt; abre. Clique no link &lt;em&gt;&lt;strong&gt;Editar&lt;/strong&gt;&lt;/em&gt; para habilitar os campos da conta bancária.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_02_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Forneça as informações relacionadas à sua conta bancária, como: país, banco, número da conta etc&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_03_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Considerations&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;As informações disponíveis dependem do país de sua conta.&lt;/li&gt;
+&lt;li&gt;Se a conta bancária for estrangeira, você deve fornecer as informações do &lt;strong&gt;Banco intermediário&lt;/strong&gt; como nome, &lt;em&gt;Código ABA&lt;/em&gt; e &lt;em&gt;Código Swift&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Junto com as informações fornecidas, você precisa anexar uma certificação&lt;sup&gt;*&lt;/sup&gt; emitida por seu banco para comprovar a veracidade e autenticidade das informações.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;Dependiendo de su país, es posible que deba adjuntar más documentos.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_04_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Quando terminar, clique em &lt;em&gt;&lt;strong&gt;Salvar alterações&lt;/strong&gt;&lt;/em&gt;. Quando as informações são enviadas, você é questionado sobre o resultado da operação.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_05.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Além disso, você recebe um e-mail informando a solicitação e fornecendo o número do ticket.&lt;/p&gt;
+&lt;p&gt;O procedimento de validação da sua conta leva até dois dias úteis. Enquanto isso, as informações que você fornece são carregadas no painel &lt;strong&gt;&lt;em&gt;Conta bancária em análise&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/BankInformation/BankInformation_06_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Assim que as informações de sua conta bancária forem validadas por nossa equipe de Risco, você poderá transferir para ela os fundos arrecadados em sua conta PayU. Enquanto a nova conta está em validação, as transferências que você faz são enviadas para a conta bancária anterior.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Configuração Técnica</title>
+      <link>/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html</link>
+      <pubDate>Fri, 13 Aug 2021 12:19:55 -0500</pubDate>
+      
+      <guid>/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;technical-information-overview&#34;&gt;Visão Geral da Informação Técnica&lt;/h2&gt;
+&lt;p&gt;Não importa qual &lt;a href=&#34;../../../../pt/docs/integrations.html&#34;&gt;método de integração&lt;/a&gt; você escolha, certos detalhes técnicos são necessários para garantir uma integração bem-sucedida. Este documento descreve as variáveis e configurações chave que você precisa configurar.&lt;/p&gt;
+&lt;h3 id=&#34;merchant-and-account-ids&#34;&gt;Merchant ID e Account IDs&lt;/h3&gt;
+&lt;p&gt;Esses identificadores são cruciais para autenticar sua conta de comerciante com a PayU. Você pode encontrá-los no painel esquerdo do site de gestão após fazer login.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Merchant_Ids_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;60%&#34;/&gt;
+&lt;h3 id=&#34;api-key-and-api-login&#34;&gt;API Key e API Login&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login no seu Painel de Gestão.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navegue até &lt;em&gt;&lt;strong&gt;Configurações&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Configuração Técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;No painel direito, encontre tanto a chave API quanto o login API, necessários para autenticar suas transações durante a integração.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_02_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Aviso&lt;/h4&gt;
+Sua chave API e login API são únicos para sua conta PayU. Certifique-se de que essas credenciais sejam mantidas em segurança, pois o uso indevido ou divulgação não autorizada é de sua responsabilidade.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;configuring-technical-information&#34;&gt;Configurando a Informação Técnica&lt;/h2&gt;
+&lt;p&gt;Você pode personalizar várias configurações técnicas para cada conta ativa, incluindo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;URLs para páginas de confirmação e resposta.&lt;/li&gt;
+&lt;li&gt;Notificações por e-mail para compradores e para sua loja.&lt;/li&gt;
+&lt;li&gt;Notificações do processo de disputa.&lt;/li&gt;
+&lt;li&gt;Seleção do modo de teste ou transações ao vivo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para configurar essas informações, vá para &lt;em&gt;&lt;strong&gt;Configurações&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuração Técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/IntegrationVariables_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Na janela de &lt;em&gt;&lt;strong&gt;Configuração Técnica&lt;/strong&gt;&lt;/em&gt;, você encontrará duas abas conforme suas necessidades: &lt;em&gt;&lt;strong&gt;Pagamentos&lt;/strong&gt;&lt;/em&gt; e &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;payments&#34;&gt;Pagamentos&lt;/h3&gt;
+&lt;p&gt;Na aba &lt;em&gt;&lt;strong&gt;Pagamentos&lt;/strong&gt;&lt;/em&gt;, você pode configurar o seguinte:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_02_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parâmetro&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Seus pagamentos serão processados&lt;/td&gt;
+&lt;td&gt;Escolha se suas transações serão processadas &lt;em&gt;Em Produção&lt;/em&gt; ou &lt;em&gt;Em Modo de Teste&lt;/em&gt;. Transações processadas em &lt;em&gt;Modo de Teste&lt;/em&gt; são marcadas como testes e não são reais.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;URL de resposta&lt;/td&gt;
+&lt;td&gt;A URL para onde os compradores são redirecionados após concluir uma transação. Esta página exibe o status da transação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;URL de confirmação&lt;/td&gt;
+&lt;td&gt;A URL para onde a PayU envia a confirmação do pagamento para o seu sistema. Use esta URL para atualizar o inventário ou bancos de dados quando uma transação atingir seu estado final. Este parâmetro é opcional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Controlar pagamentos duplicados / Somente para vendas aprovadas&lt;/td&gt;
+&lt;td&gt;&lt;li&gt;&lt;b&gt;Controlar pagamentos duplicados:&lt;/b&gt; Se você habilitar esta opção, a referência só pode ser usada uma vez, independentemente do resultado da transação (aprovada, rejeitada, pendente).&lt;/li&gt; &lt;li&gt;&lt;b&gt;Apenas para vendas aprovadas:&lt;/b&gt; Se você marcar esta caixa, uma referência só poderá ser reutilizada se a transação anterior tiver sido rejeitada. Se a transação anterior estava pendente ou aprovada, a referência não poderá ser reutilizada.&lt;/li&gt; &lt;li&gt;&lt;b&gt;Controlar pagamentos duplicados + Apenas para vendas aprovadas:&lt;/b&gt; Se você habilitar ambas as funções, a referência só poderá ser usada uma vez (a regra &amp;ldquo;Validar referência única para todos os status&amp;rdquo; prevalece).&lt;/li&gt; &lt;li&gt;&lt;b&gt;Ambas as caixas desativadas:&lt;/b&gt; A referência pode ser reutilizada várias vezes, independentemente do resultado da transação. Observe que ter ambas as opções desativadas pode afetar a reconciliação, pois a mesma referência pode aparecer várias vezes com diferentes status.&lt;/li&gt; &lt;br&gt; &lt;b&gt;Nota:&lt;/b&gt;&lt;br&gt; Tempo de reenvio: Se você precisar reenviar uma referência, aguarde uma resposta da PayU ou pelo menos 60 segundos.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Notificações de pagamentos processados&lt;/td&gt;
+&lt;td&gt;Habilite notificações por e-mail a serem enviadas ao comprador ou à sua loja quando um pagamento for aprovado ou rejeitado.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;disputes&#34;&gt;Disputas&lt;/h3&gt;
+&lt;p&gt;Na aba &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt;, você pode configurar as configurações relacionadas ao &lt;a href=&#34;../../../../pt/payu-module-documentation/payu-operations/disputes-mp.html&#34;&gt;processo de disputas&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/TechnicalInformation/TechnicalInformation_03_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;variables&#34;&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parâmetro&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Emails de notificação&lt;/td&gt;
+&lt;td&gt;Defina os endereços de e-mail a serem notificados quando uma disputa for iniciada.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;URL automatica de notificação&lt;/td&gt;
+&lt;td&gt;Se habilitado, configure a URL para onde a PayU enviará notificações sobre processos de disputa.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Lembre-se de clicar no botão &lt;em&gt;&lt;strong&gt;Salvar alterações&lt;/strong&gt;&lt;/em&gt; para aplicar as atualizações que você fizer.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

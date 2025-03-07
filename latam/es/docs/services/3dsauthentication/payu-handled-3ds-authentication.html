@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="../../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Autenticación 3DS Gestionada por PayU | PayU Latam</title><meta property="og:title" content="Autenticación 3DS Gestionada por PayU" />
+<meta property="og:description" content="La autenticación 3DS gestionada por PayU evita la necesidad de que administres el proceso de integración 3DS. PayU se encarga de todo, desde la comunicación con el banco emisor hasta la gestión del flujo de autenticación.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2024-07-01T11:32:55-05:00" />
+<meta property="article:modified_time" content="2025-01-23T15:54:20-05:00" />
+
+<meta itemprop="name" content="Autenticación 3DS Gestionada por PayU">
+<meta itemprop="description" content="La autenticación 3DS gestionada por PayU evita la necesidad de que administres el proceso de integración 3DS. PayU se encarga de todo, desde la comunicación con el banco emisor hasta la gestión del flujo de autenticación.
+"><meta itemprop="datePublished" content="2024-07-01T11:32:55-05:00" />
+<meta itemprop="dateModified" content="2025-01-23T15:54:20-05:00" />
+<meta itemprop="wordCount" content="901">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Autenticación 3DS Gestionada por PayU"/>
+<meta name="twitter:description" content="La autenticación 3DS gestionada por PayU evita la necesidad de que administres el proceso de integración 3DS. PayU se encarga de todo, desde la comunicación con el banco emisor hasta la gestión del flujo de autenticación.
+"/>
+
+
+
+
+
+<link rel="preload" href="../../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" as="style">
+<link href="../../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" rel="stylesheet" integrity="">
+
+
+<link href="../../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../es/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/PayULatam.png"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../es/docs.html" ><span class="active">Pagos en línea</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../es/payu-module-documentation.html" ><span>Módulo PayU</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">English</a>
+	
+	<a class="dropdown-item" href="../../../../pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Português</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Buscar en este sitio…"
+  aria-label="Buscar en este sitio…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.58ca37196671d7055250eb1b63b33065865cf3fbb3aed75b33ce1cf2672ed5e953203bc741995d7507ef15fac873194b7ef13510d8b45ec8de6d72a421b9c11b.json"
+  data-offline-search-base-href="../../../../"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Español
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">English</a>
+	
+	<a class="dropdown-item" href="../../../../pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Português</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs.html" href="../../../../es/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Inicio</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/getting-started.html" href="../../../../es/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Empezando...</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedcreate-an-accounthtml" href="../../../../es/docs/getting-started/create-an-account.html">Crear una Cuenta de PayU</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/select-your-integration.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedselect-your-integrationhtml" href="../../../../es/docs/getting-started/select-your-integration.html">Seleccionar tu integración</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/select-your-payment-method.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedselect-your-payment-methodhtml" href="../../../../es/docs/getting-started/select-your-payment-method.html">Seleccionar tu medio de Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedtest-your-solutionhtml" href="../../../../es/docs/getting-started/test-your-solution.html">Probar Tu Solución</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/deploy-to-production.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-starteddeploy-to-productionhtml" href="../../../../es/docs/getting-started/deploy-to-production.html">Desplegar a Producción</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsgetting-startedresponse-codes-and-variableshtml" href="../../../../es/docs/getting-started/response-codes-and-variables.html">Códigos de Respuesta y Variables</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/services.html" href="../../../../es/docs/services.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Servicios</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsserviceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/payments.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespaymentshtml" href="../../../../es/docs/services/payments.html">Pagos</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/services/3dsauthentication.html" href="../../../../es/docs/services/3dsauthentication.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">Autenticación 3DS</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsservices3dsauthenticationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-esdocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticación 3DS Gestionada por PayU</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/3dsauthentication/external-3ds-authentication.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../es/docs/services/3dsauthentication/external-3ds-authentication.html">Autenticación 3DS Externa</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/queries.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicesquerieshtml" href="../../../../es/docs/services/queries.html">Consulta de transacciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/promotions.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespromotionshtml" href="../../../../es/docs/services/promotions.html">Cuotas y Promociones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/tokenization.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicestokenizationhtml" href="../../../../es/docs/services/tokenization.html">Tokenización</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/refunds.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicesrefundshtml" href="../../../../es/docs/services/refunds.html">Anulaciones y Reembolsos</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/services/payouts.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocsservicespayoutshtml" href="../../../../es/docs/services/payouts.html">Payouts - Colombia</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/tools.html" href="../../../../es/docs/tools.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Herramientas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocstoolshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/payment-request.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocstoolspayment-requesthtml" href="../../../../es/docs/tools/payment-request.html">Solicitud de pago</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/tools/shopping-cart-plugins.html" href="../../../../es/docs/tools/shopping-cart-plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Plugins para Carritos de compra</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocstoolsshopping-cart-pluginshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/shopping-cart-plugins/vtex.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsvtexhtml" href="../../../../es/docs/tools/shopping-cart-plugins/vtex.html">VTEX</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/shopping-cart-plugins/shopify.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsshopifyhtml" href="../../../../es/docs/tools/shopping-cart-plugins/shopify.html">Shopify</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/shopping-cart-plugins/bigcommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsbigcommercehtml" href="../../../../es/docs/tools/shopping-cart-plugins/bigcommerce.html">BigCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/shopping-cart-plugins/drupal.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsdrupalhtml" href="../../../../es/docs/tools/shopping-cart-plugins/drupal.html">Drupal</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/shopping-cart-plugins/virtuemart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsvirtuemarthtml" href="../../../../es/docs/tools/shopping-cart-plugins/virtuemart.html">VirtueMart</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/shopping-cart-plugins/woocommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginswoocommercehtml" href="../../../../es/docs/tools/shopping-cart-plugins/woocommerce.html">WooCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/shopping-cart-plugins/oscommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsoscommercehtml" href="../../../../es/docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/shopping-cart-plugins/opencart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsshopping-cart-pluginsopencarthtml" href="../../../../es/docs/tools/shopping-cart-plugins/opencart.html">OpenCart</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/payu-module.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocstoolspayu-modulehtml" href="../../../../es/docs/tools/payu-module.html">Módulo PayU</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/tools/disputes.html" href="../../../../es/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputas</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocstoolsdisputeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocstoolsdisputesdisputes-webhookhtml" href="../../../../es/docs/tools/disputes/disputes-webhook.html">Webhook de Disputas</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/es/docs/tools/payment-coupons.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-esdocstoolspayment-couponshtml" href="../../../../es/docs/tools/payment-coupons.html">Cupones de pago</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/integrations.html" href="../../../../es/docs/integrations.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Integraciones</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsintegrationshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/integrations/webcheckout-integration.html" href="../../../../es/docs/integrations/webcheckout-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Integración WebCheckout</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsintegrationswebcheckout-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../../es/docs/integrations/webcheckout-integration/payment-form.html">Formulario de Pago</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/webcheckout-integration/response-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationresponse-pagehtml" href="../../../../es/docs/integrations/webcheckout-integration/response-page.html">Página de Respuesta</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../es/docs/integrations/webcheckout-integration/confirmation-page.html">Página de Confirmación</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../../es/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Aerolíneas y Agencias de Viaje - Colombia</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/integrations/api-integration.html" href="../../../../es/docs/integrations/api-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Integración API</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsintegrationsapi-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/pci.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpcihtml" href="../../../../es/docs/integrations/api-integration/pci.html">Guía de Seguridad y Cumplimiento PCI</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/payments-api-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../es/docs/integrations/api-integration/payments-api-argentina.html">API de Pagos - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/payments-api-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayments-api-brazilhtml" href="../../../../es/docs/integrations/api-integration/payments-api-brazil.html">API de Pagos - Brasil</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/payments-api-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayments-api-chilehtml" href="../../../../es/docs/integrations/api-integration/payments-api-chile.html">API de Pagos - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/payments-api-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayments-api-colombiahtml" href="../../../../es/docs/integrations/api-integration/payments-api-colombia.html">API de Pagos - Colombia</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/payments-api-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayments-api-mexicohtml" href="../../../../es/docs/integrations/api-integration/payments-api-mexico.html">API de Pagos - México</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/payments-api-panama.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayments-api-panamahtml" href="../../../../es/docs/integrations/api-integration/payments-api-panama.html">API de Pagos - Panamá</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/payments-api-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayments-api-peruhtml" href="../../../../es/docs/integrations/api-integration/payments-api-peru.html">API de Pagos - Perú</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/queries-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationqueries-apihtml" href="../../../../es/docs/integrations/api-integration/queries-api.html">API de Consultas</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/tokenization-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationtokenization-apihtml" href="../../../../es/docs/integrations/api-integration/tokenization-api.html">API de Tokenización</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/promotions-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpromotions-apihtml" href="../../../../es/docs/integrations/api-integration/promotions-api.html">API de Promociones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/refunds-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationrefunds-apihtml" href="../../../../es/docs/integrations/api-integration/refunds-api.html">API de Reembolsos y Anulaciones</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/payouts-api.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationpayouts-apihtml" href="../../../../es/docs/integrations/api-integration/payouts-api.html">API de Payouts</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/api-integration/simulator.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationsapi-integrationsimulatorhtml" href="../../../../es/docs/integrations/api-integration/simulator.html">Token Simulator</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/es/docs/integrations/sdk-integration.html" href="../../../../es/docs/integrations/sdk-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Integración SDK</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsintegrationssdk-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/payments-sdk-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../../es/docs/integrations/sdk-integration/payments-sdk-argentina.html">SDK de Pagos - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/payments-sdk-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationpayments-sdk-brazilhtml" href="../../../../es/docs/integrations/sdk-integration/payments-sdk-brazil.html">SDK de Pagos - Brasil</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/payments-sdk-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationpayments-sdk-chilehtml" href="../../../../es/docs/integrations/sdk-integration/payments-sdk-chile.html">SDK de Pagos - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/payments-sdk-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationpayments-sdk-colombiahtml" href="../../../../es/docs/integrations/sdk-integration/payments-sdk-colombia.html">SDK de Pagos - Colombia</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/payments-sdk-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationpayments-sdk-mexicohtml" href="../../../../es/docs/integrations/sdk-integration/payments-sdk-mexico.html">SDK de Pagos - México</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/payments-sdk-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationpayments-sdk-peruhtml" href="../../../../es/docs/integrations/sdk-integration/payments-sdk-peru.html">SDK de Pagos - Perú</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/queriessdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationqueriessdkhtml" href="../../../../es/docs/integrations/sdk-integration/queriessdk.html">SDK de Consultas</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/tokenizationsdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationtokenizationsdkhtml" href="../../../../es/docs/integrations/sdk-integration/tokenizationsdk.html">SDK de Tokenización</a>
+      
+      
+      
+      
+      
+        <a id="/es/docs/integrations/sdk-integration/refundssdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-esdocsintegrationssdk-integrationrefundssdkhtml" href="../../../../es/docs/integrations/sdk-integration/refundssdk.html">SDK de Reembolsos y Anulaciones</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/es/docs/server-status.html" href="../../../../es/docs/server-status.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Estado de nuestros servicios</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="esdocsserver-statushtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p>En esta página</p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#usar-la-autenticación-3ds-de-payu">Usar la Autenticación 3DS de PayU</a>
+      <ul>
+        <li><a href="#parámetro-req3dsauthentication">Parámetro <code>req3DSAuthentication</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#probar-la-autenticación-3ds">Probar la Autenticación 3DS</a></li>
+    <li><a href="#respuesta-de-la-transacción-y-flujo-de-autenticación">Respuesta de la Transacción y Flujo de Autenticación</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#después-de-la-autenticación">Después de la Autenticación</a>
+      <ul>
+        <li><a href="#redireccionamiento-después-de-la-autenticación">Redireccionamiento Después de la Autenticación</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs.html">Inicio</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs/services.html">Servicios</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../es/docs/services/3dsauthentication.html">Autenticación 3DS</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">Autenticación 3DS Gestionada por PayU</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Autenticación 3DS Gestionada por PayU</h1>
+    <div class="lead">La autenticación 3DS gestionada por PayU evita la necesidad de que administres el proceso de integración 3DS. PayU se encarga de todo, desde la comunicación con el banco emisor hasta la gestión del flujo de autenticación.</div>
+	       
+	<h2 id="usar-la-autenticación-3ds-de-payu">Usar la Autenticación 3DS de PayU</h2>
+<p>Para habilitar la autenticación 3DS, los comercios deben estar registrados en este servicio con PayU. Una vez registrado, puedes incluir un nuevo parámetro llamado <code>req3DSAuthentication</code> en tus solicitudes de pago a través de la API de Pagos de PayU.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+<ul>
+<li>La autenticación 3DS con PayU Latam solo está disponible para <strong>Argentina</strong>, <strong>Brasil</strong>, <strong>Colombia</strong>, <strong>México</strong> y <strong>Perú</strong>.</li>
+<li>Esta funcionalidad requiere una integración API y no está disponible para la integración Webcheckout.</li>
+<li><strong>Redes compatibles:</strong> Visa y Mastercard.</li>
+</ul>
+
+</div>
+
+<h3 id="parámetro-req3dsauthentication">Parámetro <code>req3DSAuthentication</code></h3>
+<p>Este parámetro te permite controlar si la autenticación 3DS es necesaria para cada transacción. Acepta dos valores:</p>
+<ul>
+<li><code>&quot;true&quot;</code>: Habilita la autenticación 3DS para la transacción.</li>
+<li><code>&quot;false&quot;</code>: Deshabilita la autenticación 3DS para la transacción.</li>
+</ul>
+<p><strong>Si no se incluye <code>req3DSAuthentication</code>,</strong> PayU decidirá si realiza la autenticación 3DS en función de su propia evaluación de riesgos.</p>
+<h4 id="ejemplo-de-una-solicitud">Ejemplo de una Solicitud</h4>
+<p>En el siguiente ejemplo de solicitud, <code>req3DSAuthentication</code> se establece en <code>true</code>:</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#tab11" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-1" data-toggle="tab" href="#tab12" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="1">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Ejemplo de una Solicitud:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;signature&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;8b9abb9dcae76d331e4493a559e8a76a0a9296e6944d460303d5639d9230c485&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;accountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;512321&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PayULatamAPI|Test|CO|COL&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;referenceCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;REFERENCIA_PRUEBA_12345&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;notifyUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://merchant-mywebhook.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;buyer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;merchantBuyerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Merchant_Buyer_ID_123&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;John Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;emailAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;john.doe@email.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;contactPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;3155555555&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;dniType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;dniNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;shippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DC&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Bogotá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;110111&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Calle 100&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cra 9&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6011234567&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;shippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DC&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Bogotá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;110111&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Calle 100&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cra 9&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6011234567&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;additionalValues&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;TX_VALUE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;100&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COP&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;TX_TAX&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COP&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;TX_TAX_RETURN_BASE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;COP&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;payer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantPayerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Merchant_Payer_ID_123&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;John Doe&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;emailAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;john.doe@email.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;contactPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;3155555555&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;dniType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CC&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;dniNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;billingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;DC&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Bogotá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;110111&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Calle 100&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Cra 9&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;6011234567&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;creditCard&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5570898637920584&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;expirationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2025/12&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;securityCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;777&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;processWithoutCvv2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;INSTALLMENTS_NUMBER&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;RESPONSE_URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://merchant.shoppingresult.com&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AUTHORIZATION_AND_CAPTURE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MASTERCARD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentCountry&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CO&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;ipAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;45.6.10.241&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;userAgent&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mozilla/5.0 (Windows; U; Windows NT 6.0) AppleWebKit/531.2.0 (KHTML, like Gecko) Chrome/21.0.885.0 Safari/531.2.0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;cookie&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;sefejihsxeai037qhkwa3jex9&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;deviceSessionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;cb066830a3dcbdaf7234fd230d1959b0c6b3ae3ad5265490d55802a61738b537&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;integrationMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;POST_API_v4_0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;req3DSAuthentication&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;source&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;WEB&#34;</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Ejemplo de una Solicitud:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transaction&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;type&gt;</span>AUTHORIZATION_AND_CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;paymentMethod&gt;</span>MASTERCARD<span style="color:#204a87;font-weight:bold">&lt;/paymentMethod&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;paymentCountry&gt;</span>CO<span style="color:#204a87;font-weight:bold">&lt;/paymentCountry&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;ipAddress&gt;</span>247.123.24.168<span style="color:#204a87;font-weight:bold">&lt;/ipAddress&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;userAgent&gt;</span>Mozilla/5.0 (Windows NT 5.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0.7<span style="color:#204a87;font-weight:bold">&lt;/userAgent&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;cookie&gt;</span>gp8pv8673fia31cevhcrakbwt<span style="color:#204a87;font-weight:bold">&lt;/cookie&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;deviceSessionId&gt;</span>901129f3909f8ca8bdacc67199a29a15edfc3a059b76d7fecf601bb5343847f8<span style="color:#204a87;font-weight:bold">&lt;/deviceSessionId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;req3DSAuthentication&gt;</span>true<span style="color:#204a87;font-weight:bold">&lt;/req3DSAuthentication&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;extraParameters&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>INSTALLMENTS_NUMBER<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>1<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>RESPONSE_URL<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>https://www.yoursite.com/response-page<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/extraParameters&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;order&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;signature&gt;</span>cfe3eaeb7af1bd6e9e4cb7d50f8f0afb6b9452fc0936d879d1942e78fe8d03f3<span style="color:#204a87;font-weight:bold">&lt;/signature&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;accountId&gt;</span>516686<span style="color:#204a87;font-weight:bold">&lt;/accountId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>PayULatam|Test|CO|COP|OneStep|WithCVV2|Untokenized<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;referenceCode&gt;</span>Postman|UniqueReference|10/24/2024, 2:09:07 PM<span style="color:#204a87;font-weight:bold">&lt;/referenceCode&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;notifyUrl&gt;</span>https://www.yoursite.com/confirmation-page<span style="color:#204a87;font-weight:bold">&lt;/notifyUrl&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>TX_VALUE<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;additionalValue&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>5629338<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>COP<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;/additionalValue&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>TX_TAX<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;additionalValue&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>898802<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>COP<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;/additionalValue&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>TX_TAX_RETURN_BASE<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;additionalValue&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>4730536<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>COP<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;/additionalValue&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;buyer&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;merchantBuyerId&gt;</span>Merchant_Buyer_ID_91<span style="color:#204a87;font-weight:bold">&lt;/merchantBuyerId&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>May Wehner<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;emailAddress&gt;</span>Leslie_Armstrong3@example.com<span style="color:#204a87;font-weight:bold">&lt;/emailAddress&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;contactPhone&gt;</span>3185555555<span style="color:#204a87;font-weight:bold">&lt;/contactPhone&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;dniType&gt;</span>CC<span style="color:#204a87;font-weight:bold">&lt;/dniType&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;dniNumber&gt;</span>1337727983<span style="color:#204a87;font-weight:bold">&lt;/dniNumber&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;shippingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>CO<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>DC<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>Bogotá<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>110111<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>93357 Damian Ports<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>786 Jordyn Spurs<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>6016540721<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;/shippingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/buyer&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;shippingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>CO<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>DC<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>Bogotá<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>110111<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>988 Steve Burg<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>48419 Schimmel Springs<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>6016540721<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/shippingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/order&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;payer&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;merchantPayerId&gt;</span>Merchant_Payer_ID_80<span style="color:#204a87;font-weight:bold">&lt;/merchantPayerId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>Marguerite Koss<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;emailAddress&gt;</span>Lelia.Trantow@example.org<span style="color:#204a87;font-weight:bold">&lt;/emailAddress&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;contactPhone&gt;</span>3155555555<span style="color:#204a87;font-weight:bold">&lt;/contactPhone&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;dniType&gt;</span>CC<span style="color:#204a87;font-weight:bold">&lt;/dniType&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;dniNumber&gt;</span>9589714725<span style="color:#204a87;font-weight:bold">&lt;/dniNumber&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;billingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>CO<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>DC<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>Bogotá<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>110111<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>46217 Nikolaus Mills<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>28333 Webster Islands<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>6016540721<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/billingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/payer&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;creditCard&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;name&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;number&gt;</span>5570898637920584<span style="color:#204a87;font-weight:bold">&lt;/number&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;expirationDate&gt;</span>2025/02<span style="color:#204a87;font-weight:bold">&lt;/expirationDate&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;securityCode&gt;</span>777<span style="color:#204a87;font-weight:bold">&lt;/securityCode&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/creditCard&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/transaction&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h2 id="probar-la-autenticación-3ds">Probar la Autenticación 3DS</h2>
+<p>Para probar el proceso de autenticación 3DS, utiliza los valores ficticios proporcionados en la tabla a continuación. Estos valores son aplicables a los diferentes métodos de pago disponibles en cada país:</p>
+<table>
+  <tr>
+    <th></th>
+    <th style="text-align: center;">Argentina<br/><img src="../../../../assets/Argentina.png" width="25px"/></th>
+    <th style="text-align: center;">Brasil<br/><img src="../../../../assets/Brasil.png" width="25px"/></th>
+    <th style="text-align: center;">Colombia<br/><img src="../../../../assets/Colombia.png" width="25px"/></th>
+    <th style="text-align: center;">México<br/><img src="../../../../assets/Mexico.png" width="25px"/></th>
+    <th style="text-align: center;">Perú<br/><img src="../../../../assets/Peru.png" width="25px"/></th>
+  </tr>
+  <tr>
+    <th>Account ID</th>
+    <td style="text-align: center;">516684</td>
+    <td style="text-align: center;">516685</td>
+    <td style="text-align: center;">516686</td>
+    <td style="text-align: center;">516687</td>
+    <td style="text-align: center;">516688</td>
+  </tr>
+  <tr>
+    <th>Merchant ID</th>
+    <td colspan="5" style="text-align: center;">508029</td>
+  </tr>
+  <tr>
+    <th>API Login</th>
+    <td colspan="5" style="text-align: center;">pRRXKOl8ikMmt9u</td>
+  </tr>
+  <tr>
+    <th>API Key</th>
+    <td colspan="5" style="text-align: center;">4Vj8eK4rloUd272L48hsrarnUA</td>
+  </tr>
+  <tr>
+    <th>Public Key</th>
+    <td colspan="5" style="text-align: center;">PKaC6H4cEDJD919n705L544kSU</td>
+  </tr>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Nota</h4>
+Estos IDs de cuenta son solo para fines de prueba; no los utilices en entornos de producción.
+</div>
+
+<h2 id="respuesta-de-la-transacción-y-flujo-de-autenticación">Respuesta de la Transacción y Flujo de Autenticación</h2>
+<p>Una vez que envíes una solicitud de pago, recibirás una respuesta con un estado <code>&quot;PENDING&quot;</code> para la transacción. Esta respuesta también incluirá un campo dentro de <code>extraParameters</code> llamado <code>THREEDS_AUTH_REDIRECT_URL</code>.</p>
+<ul>
+<li><strong><code>THREEDS_AUTH_REDIRECT_URL</code>:</strong> Esta URL se debe utilizar para redirigir al pagador para que complete el proceso de autenticación 3DS. El proceso de autenticación puede incluir desafíos como ingresar una contraseña de uso único (OTP) recibida en su teléfono.</li>
+</ul>
+<p>El siguiente diagrama ilustra el proceso completo de una transacción utilizando la autenticación 3DS de PayU, destacando pasos clave como el envío de la solicitud, la autenticación y la gestión de la respuesta.</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>3dsflow_es</title>
+<meta charset="utf-8"/>
+</head>
+<body><div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;dark-mode&quot;:&quot;auto&quot;,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\&quot; version=\&quot;26.0.6\&quot;&gt;\n  &lt;diagram name=\&quot;Page-1\&quot; id=\&quot;Q7fAwdDV4ESacsW7LS1n\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;1434\&quot; dy=\&quot;738\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;850\&quot; pageHeight=\&quot;1100\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-3\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-15\&quot; target=\&quot;YcNsE4wuTBjSfJi-bFuw-2\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;380\&quot; y=\&quot;160\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-5\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-2\&quot; target=\&quot;YcNsE4wuTBjSfJi-bFuw-4\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-2\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;PayU procesa la transacción y solicita autenticación (por ejemplo, un desafío 3DS).&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;280\&quot; y=\&quot;180\&quot; width=\&quot;200\&quot; height=\&quot;100\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-4\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;La integración verifica si el comercio ha definido una&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Lucida Console&amp;quot;&amp;gt;RESPONSE_URL&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;.&amp;lt;/font&amp;gt;&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;270\&quot; y=\&quot;320\&quot; width=\&quot;220\&quot; height=\&quot;95\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-10\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#BCD245;endArrow=none;endFill=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-18\&quot; target=\&quot;YcNsE4wuTBjSfJi-bFuw-4\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;260\&quot; y=\&quot;497\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;110\&quot; y=\&quot;460\&quot; /&gt;\n              &lt;mxPoint x=\&quot;380\&quot; y=\&quot;460\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-15\&quot; value=\&quot;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;br&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;El usuario inicia un pago en el sitio web del comercio.&amp;lt;/font&amp;gt;\&quot; style=\&quot;ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#BCD245;fillColor=#BCD245;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;320\&quot; y=\&quot;20\&quot; width=\&quot;127.5\&quot; height=\&quot;127.5\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;YcNsE4wuTBjSfJi-bFuw-18\&quot; value=\&quot;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Lucida Console&amp;quot;&amp;gt;RESPONSE_URL&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;&amp;amp;nbsp;&amp;lt;/font&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: Arial, sans-serif; font-size: 16px;&amp;quot;&amp;gt;está definida:&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;br style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt;El usuario es redirigido de vuelta al sitio web del comercio después de la autenticación&amp;lt;/font&amp;gt;&amp;lt;span style=&amp;quot;font-family: Arial, sans-serif; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 16px; background-color: transparent;&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;10\&quot; y=\&quot;500\&quot; width=\&quot;200\&quot; height=\&quot;150\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-4\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BCD245;endArrow=none;endFill=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;\&quot; parent=\&quot;1\&quot; source=\&quot;iZpOtUYKphx9t9l1RsEH-5\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;500\&quot; y=\&quot;497\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;380\&quot; y=\&quot;420\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;650\&quot; y=\&quot;460\&quot; /&gt;\n              &lt;mxPoint x=\&quot;380\&quot; y=\&quot;460\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-5\&quot; value=\&quot;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Lucida Console&amp;quot;&amp;gt;RESPONSE_URL&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Arial, sans-serif&amp;quot;&amp;gt;&amp;amp;nbsp;no está definida:&amp;lt;/font&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;div&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;br style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt;El usuario es redirigido a la página predeterminada de estado de la transacción de PayU&amp;lt;span style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt;.&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;550\&quot; y=\&quot;500\&quot; width=\&quot;200\&quot; height=\&quot;150\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-7\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;&amp;amp;nbsp;El comercio muestra el resultado del pago al usuario en su sitio web.&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;150\&quot; y=\&quot;704\&quot; width=\&quot;210\&quot; height=\&quot;95\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-10\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-18\&quot; target=\&quot;iZpOtUYKphx9t9l1RsEH-7\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;230\&quot; y=\&quot;640\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;229\&quot; y=\&quot;688\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;110\&quot; y=\&quot;680\&quot; /&gt;\n              &lt;mxPoint x=\&quot;255\&quot; y=\&quot;680\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-11\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot;&amp;gt;El usuario visualiza el resultado de la transacción en la página de estado de PayU.&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;400\&quot; y=\&quot;704\&quot; width=\&quot;210\&quot; height=\&quot;95\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-12\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;\&quot; parent=\&quot;1\&quot; source=\&quot;iZpOtUYKphx9t9l1RsEH-5\&quot; target=\&quot;iZpOtUYKphx9t9l1RsEH-11\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;730\&quot; y=\&quot;640\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;729\&quot; y=\&quot;688\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;650\&quot; y=\&quot;680\&quot; /&gt;\n              &lt;mxPoint x=\&quot;505\&quot; y=\&quot;680\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-13\&quot; value=\&quot;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;&amp;lt;font style=&amp;quot;&amp;quot; face=&amp;quot;Lucida Console&amp;quot;&amp;gt;notifyUrl&amp;lt;/font&amp;gt;&amp;lt;span style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt;&amp;lt;strong style=&amp;quot;font-family: Arial, sans-serif;&amp;quot;&amp;gt; &amp;lt;/strong&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;font style=&amp;quot;font-size: 16px;&amp;quot; color=&amp;quot;#ffffff&amp;quot;&amp;gt;Simultáneamente con la redirección, la integración envía un webhook al servidor del comercio con el estado final de la transacción (aprobada o rechazada).&amp;lt;/font&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;265\&quot; y=\&quot;500\&quot; width=\&quot;230\&quot; height=\&quot;150\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-16\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;\&quot; parent=\&quot;1\&quot; source=\&quot;YcNsE4wuTBjSfJi-bFuw-18\&quot; target=\&quot;iZpOtUYKphx9t9l1RsEH-13\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;240\&quot; y=\&quot;728\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;540\&quot; y=\&quot;641\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;250\&quot; y=\&quot;574\&quot; /&gt;\n              &lt;mxPoint x=\&quot;250\&quot; y=\&quot;574\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;iZpOtUYKphx9t9l1RsEH-17\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;strokeWidth=2;startArrow=none;startFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;\&quot; parent=\&quot;1\&quot; source=\&quot;iZpOtUYKphx9t9l1RsEH-13\&quot; target=\&quot;iZpOtUYKphx9t9l1RsEH-5\&quot; edge=\&quot;1\&quot;&gt;\n          &lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;505\&quot; y=\&quot;670\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;585\&quot; y=\&quot;672\&quot; as=\&quot;targetPoint\&quot; /&gt;\n            &lt;Array as=\&quot;points\&quot;&gt;\n              &lt;mxPoint x=\&quot;510\&quot; y=\&quot;574\&quot; /&gt;\n              &lt;mxPoint x=\&quot;555\&quot; y=\&quot;574\&quot; /&gt;\n            &lt;/Array&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
+<h4 id="ejemplo-de-una-respuesta">Ejemplo de una Respuesta</h4>
+<p>En el siguiente ejemplo de respuesta, el comercio redirecciona al pagador a <code>https://merch-prod.payu.com</code>:</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="2">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Ejemplo de una Respuesta:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transactionResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;orderId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">3344440141</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;968d3f37-25aa-4fc2-86bf-0a2eee091713&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PENDING&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseErrorMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;trazabilityCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;authorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;pendingReason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AWAITING_THREEDS_CALLBACK&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PENDING_THREEDS_CALLBACK&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionTime&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;operationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1723749925205</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;referenceQuestionnaire&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;BANK_REFERENCED_CODE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CREDIT&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;THREEDS_AUTH_REDIRECT_URL&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;https://merch-prod.payu.com&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;additionalInfo&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;paymentNetwork&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CREDIBANCO_V2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;rejectionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;NONE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;responseNetworkMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;travelAgencyAuthorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;cardType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CREDIT&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;transactionType&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AUTHORIZATION_AND_CAPTURE&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Ejemplo de una Respuesta:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;orderId&gt;</span>2153050798<span style="color:#204a87;font-weight:bold">&lt;/orderId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;transactionId&gt;</span>722480e5-276e-409d-ae9e-376b801ed725<span style="color:#204a87;font-weight:bold">&lt;/transactionId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>PENDING<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;pendingReason&gt;</span>AWAITING_THREEDS_CALLBACK<span style="color:#204a87;font-weight:bold">&lt;/pendingReason&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;responseCode&gt;</span>PENDING_THREEDS_CALLBACK<span style="color:#204a87;font-weight:bold">&lt;/responseCode&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;operationDate&gt;</span>2024-10-24T09:09:10<span style="color:#204a87;font-weight:bold">&lt;/operationDate&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;extraParameters&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>BANK_REFERENCED_CODE<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>CREDIT<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>THREEDS_AUTH_REDIRECT_URL<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>https://merch-prod.payu.com<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/extraParameters&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;additionalInfo&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;paymentNetwork&gt;</span>REDEBAN<span style="color:#204a87;font-weight:bold">&lt;/paymentNetwork&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;rejectionType&gt;</span>NONE<span style="color:#204a87;font-weight:bold">&lt;/rejectionType&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;cardType&gt;</span>CREDIT<span style="color:#204a87;font-weight:bold">&lt;/cardType&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;transactionType&gt;</span>AUTHORIZATION_AND_CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/transactionType&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/additionalInfo&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h2 id="después-de-la-autenticación">Después de la Autenticación</h2>
+<p>Como se muestra en el diagrama de la sección anterior, una vez que el pagador complete la autenticación 3DS (si es necesario), PayU recibirá una notificación. La transacción entonces será:</p>
+<ul>
+<li><strong>Completada:</strong> Si la autenticación es exitosa.</li>
+<li><strong>Rechazada:</strong> Si la autenticación falla.</li>
+</ul>
+<h3 id="redireccionamiento-después-de-la-autenticación">Redireccionamiento Después de la Autenticación</h3>
+<p>Siguiendo la redirección del pagador desde la <code>THREEDS_AUTH_REDIRECT_URL</code>, se le dirigirá a:</p>
+<ul>
+<li><strong>Página de estado de la transacción de PayU Checkout:</strong> De forma predeterminada, este es el comportamiento si el comercio no ha especificado una URL de retorno personalizada.</li>
+<li><strong>URL de retorno personalizada del comercio:</strong> Si se proporciona, el pagador será redirigido a la página designada por el comercio después de la autenticación.</li>
+</ul>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+Última modificación
+
+23 de enero de 2025:
+
+ <b>Documentation Updates (02e6e6678)</b>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

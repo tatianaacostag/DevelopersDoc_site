@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Transfers | PayU Latam</title><meta property="og:title" content="Transfers" />
+<meta property="og:description" content="Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/payu-module-documentation/payu-operations/transfers.html" /><meta property="article:section" content="PayU Module Documentation" />
+<meta property="article:published_time" content="2021-09-03T16:42:07-05:00" />
+<meta property="article:modified_time" content="2024-11-08T11:23:44-05:00" />
+
+<meta itemprop="name" content="Transfers">
+<meta itemprop="description" content="Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.
+"><meta itemprop="datePublished" content="2021-09-03T16:42:07-05:00" />
+<meta itemprop="dateModified" content="2024-11-08T11:23:44-05:00" />
+<meta itemprop="wordCount" content="896">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Transfers"/>
+<meta name="twitter:description" content="Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.
+"/>
+
+
+
+
+
+<link rel="preload" href="../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" as="style">
+<link href="../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" rel="stylesheet" integrity="">
+
+
+<link href="../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../assets/PayULatam.png"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../en/docs.html" ><span>Online payments</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../en/payu-module-documentation.html" ><span class="active">PayU Module guide</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payu-module-documentation/payu-operations/transfers.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../pt/payu-module-documentation/payu-operations/transfers.html">Português</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../offline-search-index.58ca37196671d7055250eb1b63b33065865cf3fbb3aed75b33ce1cf2672ed5e953203bc741995d7507ef15fac873194b7ef13510d8b45ec8de6d72a421b9c11b.json"
+  data-offline-search-base-href="../../../"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../es/payu-module-documentation/payu-operations/transfers.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../pt/payu-module-documentation/payu-operations/transfers.html">Português</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payu-module-documentation.html" href="../../../en/payu-module-documentation.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Home</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayu-module-documentationhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payu-module-documentation/getting-started.html" href="../../../en/payu-module-documentation/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting Started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayu-module-documentationgetting-startedhtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/payu-module-documentation/getting-started/log-in.html" href="../../../en/payu-module-documentation/getting-started/log-in.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Log In</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayu-module-documentationgetting-startedlog-inhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/getting-started/log-in/google-accounts.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-enpayu-module-documentationgetting-startedlog-ingoogle-accountshtml" href="../../../en/payu-module-documentation/getting-started/log-in/google-accounts.html">Log in using Google Accounts</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/getting-started/password-recovery.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationgetting-startedpassword-recoveryhtml" href="../../../en/payu-module-documentation/getting-started/password-recovery.html">Password Recovery</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/payu-module-documentation/getting-started/understanding-the-payu-module.html" href="../../../en/payu-module-documentation/getting-started/understanding-the-payu-module.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Getting to know the PayU module</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayu-module-documentationgetting-startedunderstanding-the-payu-modulehtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-enpayu-module-documentationgetting-startedunderstanding-the-payu-moduleupdate-my-informationhtml" href="../../../en/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html">Update my information</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-enpayu-module-documentationgetting-startedunderstanding-the-payu-moduletechnical-configurationhtml" href="../../../en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html">Technical Configuration</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payu-module-documentation/user-and-profile-management.html" href="../../../en/payu-module-documentation/user-and-profile-management.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">User &amp; Profile management</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayu-module-documentationuser-and-profile-managementhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/user-and-profile-management/user-management.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationuser-and-profile-managementuser-managementhtml" href="../../../en/payu-module-documentation/user-and-profile-management/user-management.html">User Management</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationuser-and-profile-managementprofile-and-permissions-managementhtml" href="../../../en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html">Profile and Permissions Management</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payu-module-documentation/payu-operations.html" href="../../../en/payu-module-documentation/payu-operations.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__section ">PayU Operations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayu-module-documentationpayu-operationshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/payu-operations/sell-with-payu.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationpayu-operationssell-with-payuhtml" href="../../../en/payu-module-documentation/payu-operations/sell-with-payu.html">Sell With PayU</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/payu-operations/transfers.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active " id="m-enpayu-module-documentationpayu-operationstransfershtml" href="../../../en/payu-module-documentation/payu-operations/transfers.html">Transfers</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/payu-operations/refunds-mp.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationpayu-operationsrefunds-mphtml" href="../../../en/payu-module-documentation/payu-operations/refunds-mp.html">Refunds</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/payu-operations/disputes-mp.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationpayu-operationsdisputes-mphtml" href="../../../en/payu-module-documentation/payu-operations/disputes-mp.html">Disputes</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/payu-module-documentation/reports.html" href="../../../en/payu-module-documentation/reports.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Reports</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="enpayu-module-documentationreportshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/reports/sales-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationreportssales-reporthtml" href="../../../en/payu-module-documentation/reports/sales-report.html">Sales Report</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/reports/transfer-report.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationreportstransfer-reporthtml" href="../../../en/payu-module-documentation/reports/transfer-report.html">Transfer Report</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/reports/financial-statement.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationreportsfinancial-statementhtml" href="../../../en/payu-module-documentation/reports/financial-statement.html">Financial Statement</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/reports/withholding-certificate.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationreportswithholding-certificatehtml" href="../../../en/payu-module-documentation/reports/withholding-certificate.html">Withholding Certificate</a>
+      
+      
+      
+      
+      
+        <a id="/en/payu-module-documentation/reports/operation-reports.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-enpayu-module-documentationreportsoperation-reportshtml" href="../../../en/payu-module-documentation/reports/operation-reports.html">Operation reports</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p>On this page</p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#considerations">Considerations</a></li>
+    <li><a href="#permission-required">Permission Required</a></li>
+    <li><a href="#transfer-funds">Transfer Funds</a></li>
+    <li><a href="#schedule-transfers">Schedule Transfers</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payu-module-documentation.html">Home</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../en/payu-module-documentation/payu-operations.html">PayU Operations</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../en/payu-module-documentation/payu-operations/transfers.html">Transfers</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Transfers</h1>
+    <div class="lead">Learn how to transfer funds from your PayU account to your bank account. Additionally, discover how to automate transfers based on schedule or amount.</div>
+	       
+	<p>In the <em>Transfers</em> module, you can transfer the funds collected in your virtual PayU account to your registered bank account.</p>
+<h2 id="considerations">Considerations</h2>
+<p>Before initiating a transfer, review the following important considerations:</p>
+<ul>
+<li>Your bank information must be up to date and validated. If you&rsquo;ve requested a bank account update, the system will continue sending the funds to your previous account until the PayU Risk team has validated the new account.</li>
+<li>You can schedule transfers based on a specific amount or set a date for automated transfers.</li>
+<li>Each month, the first three local transfers are free of charge. Starting from the fourth transfer in a month, PayU applies a fee in most countries. Note that international transfers incur a fee from the very first transaction. The table below provides an overview of the fees for local and international transfers by country.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Local Fee</th>
+<th>International Fee</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Argentina</td>
+<td>110.00 ARS</td>
+<td>753.00 USD</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Chile</td>
+<td>2,000.00 CLP</td>
+<td>50,000.00 CLP</td>
+</tr>
+<tr>
+<td>Colombia</td>
+<td>6,500.00 COP</td>
+<td>30.00 USD</td>
+</tr>
+<tr>
+<td>Mexico</td>
+<td>10.00 MXN</td>
+<td>650.00 MXN</td>
+</tr>
+<tr>
+<td>Panama</td>
+<td>30.00 USD</td>
+<td>44.00 USD</td>
+</tr>
+<tr>
+<td>Peru</td>
+<td>15.00 PEN</td>
+<td>90.00 USD</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Notes</h4>
+<ul>
+<li>Fees are subject to change over time. For the most current information or specific questions, please contact your PayU sales representative.</li>
+<li>International transfers are also subject to a 3% FX fee (subject to negotiation) to cover currency exchange rate costs.</li>
+<li>In Brazil, as PayU is not a licensed payment institution, the system automatically transfers your funds to your bank account daily at no cost. To monitor these transfers, use the <em><strong>Daily payouts</strong></em> option (<em><strong>Transfers</strong></em> &gt; <em><strong>Daily Transfers</strong></em>).</li>
+</ul>
+
+</div>
+
+<ul>
+<li>The first transfer may take up to five (5) days to be deposited in your bank account. As part of an administrative process, the PayU Risk team may request additional documentation to verify your initial sales.</li>
+<li>The second and subsequent transfers will take a maximum of three (3) business days to complete. Business days are typically Monday to Friday, excluding public holidays.</li>
+</ul>
+
+
+<div class="alert alert-warning" role="alert">
+<h4 class="alert-heading">Note</h4>
+The times mentioned apply only to local transfers. For international transfers, please contact your sales representative.
+</div>
+
+<h2 id="permission-required">Permission Required</h2>
+<p>To have access to this module, you need to have a profile with the following permission enabled:</p>
+<ul>
+<li><em>Transfers</em> &gt; <em>Review</em></li>
+<li><em>Transfers</em> &gt; <em>Manage</em><br>This permission allows you to perform transfers.</li>
+</ul>
+<p>Refer to <a href="../../../en/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html">Profiles and Permissions</a> for more information.</p>
+<h2 id="transfer-funds">Transfer Funds</h2>
+<p>You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.</p>
+<ol>
+<li>Log into your PayU account. In the left menu, expand the <em><strong>Transfers</strong></em> menu and select <em><strong>Transfers</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/Transfers/Transfers_01.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>Complete the value to transfer or select the <em><strong>Transfer all available balance</strong></em> option. In the right panel, the value entered is updated; furthermore, this panel shows how many free transfers you have until the end of the month.<br>If you don&rsquo;t have free transactions, this panel also displayed the value of the transaction along with the taxes.</li>
+</ol>
+<p><img src="../../../assets/Transfers/Transfers_02.png" alt="PrintScreen"></p>
+<ol start="3">
+<li>Click <em><strong>Request transfer</strong></em>. A confirmation window appears to confirm the amount to be transferred, the value to be debit from your account, and the target account.<br>Click <em><strong>OK</strong></em> to confirm it or <em><strong>Reject</strong></em> to discard it.</li>
+</ol>
+<p><img src="../../../assets/Transfers/Transfers_03.png" alt="PrintScreen" width="50%"/><br></p>
+<ol start="4">
+<li>The result of the operation appears. Take into account the number of days to reflect the money in the target account.</li>
+</ol>
+<p><img src="../../../assets/Transfers/Transfers_04.png" alt="PrintScreen" width="50%"/><br></p>
+<p>As soon as the request has been successfully sent the transfer is in <em>In progess</em> status and you can see it in the <em><strong>Created transfers report</strong></em> section at the end of the module; also, the amount requested is debited from your balance.<br>If the transfers could not be processed, this amount backs to your account and no fee is charged for this operation.</p>
+<h2 id="schedule-transfers">Schedule Transfers</h2>
+<p>You can automate the transfers and request the a withdrawal given a fixed amount or each certain time.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+<ul>
+<li><img src="../../../assets/Brasil.png" width="20px"/> <em><strong>Schedule transfer</strong></em> is not available for Brazil.</li>
+<li>When scheduling transfers, you must have the enough funds by the time when the transfer is executed.</li>
+</ul>
+
+</div>
+
+<p>To schedule a transfer, follow these steps.</p>
+<ol>
+<li>Log into your PayU account. In the left menu, expand the <em><strong>Transfers</strong></em> menu and select <em><strong>Schedule transfer</strong></em>.</li>
+</ol>
+<p><img src="../../../assets/Transfers/Transfers_05.png" alt="PrintScreen"></p>
+<ol start="2">
+<li>The <em><strong>Schedule Transfers</strong></em> module opens, here you can see all the scheduled transfers you have configured. Click <em><strong>Schedule Transfer</strong></em> to set up a new schedule.</li>
+</ol>
+<p><img src="../../../assets/Transfers/Transfers_06.png" alt="PrintScreen"></p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Options</h4>
+<p>The <em>options</em> column provides the following actions:</p>
+<ul>
+<li>Edit (<img src="../../../assets/Transfers/Transfers_10.png" width="2%" style="vertical-align: top;"/>): allows you to change the configuration of the schedule.</li>
+<li>Delete (<img src="../../../assets/Transfers/Transfers_11.png" width="2%" style="vertical-align: top;"/>): allows you to deactivate the schedule. Once the schedule is removed, no automatic transfers can be created.</li>
+</ul>
+</div>
+
+<ol start="3">
+<li>Select how you want to schedule the transfer.</li>
+</ol>
+<ul>
+<li>
+<p><strong>Schedule Transfers by Periodicity</strong><br>
+This option lets you transfer a given amount every certain time (days, weeks, or months). To schedule this type of transfers, select the option <em>Periodicity</em>.</p>
+</li>
+<li>
+<p><strong>Schedule Transfers by Available Balance</strong><br>
+This option lets you transfer a given amount every time the balance reaches a specific value. To schedule this type of transfers, select the option <em>Balance available</em>.</p>
+</li>
+</ul>
+<p>Provide the following options.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make a withdrawal each</td>
+<td>Select the periodicity of the transfers you want to schedule. This option is available for transfers scheduled by periodicity.<br><br><img src="../../../assets/Transfers/Transfers_07.png" alt="PrintScreen"></td>
+</tr>
+<tr>
+<td>Select the amount to withdraw</td>
+<td>Select the amount you want to transfer, you can select the total available balance or a fixed value.<br><br><img src="../../../assets/Transfers/Transfers_08.png" alt="PrintScreen"></td>
+</tr>
+<tr>
+<td>Amount to withdraw</td>
+<td>Select the amount you want to transfer. This field appears when you select the option <em>Configure value</em>.</td>
+</tr>
+<tr>
+<td>Start my transfers on</td>
+<td>Select the starting date for the schedule. In this date, the first transfer is scheduled.<br><br><img src="../../../assets/Transfers/Transfers_09.png" alt="PrintScreen"></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Provide a meaningful description for your transfer.</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>When finish, click <em><strong>Schedule Transfer</strong></em>.</li>
+</ol>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+Last modified
+
+November 8, 2024:
+
+ <b>Documentation updates (cb34649dc)</b>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../js/scrollspy.js"></script>
+<script src="../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

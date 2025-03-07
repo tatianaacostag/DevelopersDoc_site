@@ -44,7 +44,7 @@ To ensure seamless communication between your server and PayU Latam servers, it 
 
 By whitelisting these addresses, you can ensure that requests and notifications from PayU are properly received.
 
-## Variables sent with the confirmation page
+## Parameters sent with the confirmation page
 
 <details>
 <summary>Variables in the confirmation page</summary>

@@ -54,7 +54,7 @@ weight: 50
 | `ERROR_FIXING_AND_REVERSING` | Clínica de transações: código de tratamento interno. Consulta de API. |
 | `ERROR_FIXING_INCOMPLETE_DATA` | Clínica de transações: código de tratamento interno. Consulta de API. |
 
-## Códigos de Resposta Enviados para a Página de Confirmação {#response-codes-sent-to-the-response-page}
+## Códigos de Resposta Enviados para a Página de Resposta {#response-codes-sent-to-the-response-page}
 
 <div class="variables"></div>
 

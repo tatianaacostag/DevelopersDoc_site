@@ -1,0 +1,2388 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="../../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>Payments API - Panama | PayU Latam</title><meta property="og:title" content="Payments API - Panama" />
+<meta property="og:description" content="The Payments API for Panama allows you to efficiently integrate PayU&#39;s payment processing features for credit cards into your online shopping platform.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/docs/integrations/api-integration/payments-api-panama.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-05-03T15:48:08-05:00" />
+<meta property="article:modified_time" content="2024-09-09T16:32:33-05:00" />
+
+<meta itemprop="name" content="Payments API - Panama">
+<meta itemprop="description" content="The Payments API for Panama allows you to efficiently integrate PayU&#39;s payment processing features for credit cards into your online shopping platform.
+"><meta itemprop="datePublished" content="2021-05-03T15:48:08-05:00" />
+<meta itemprop="dateModified" content="2024-09-09T16:32:33-05:00" />
+<meta itemprop="wordCount" content="2633">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Payments API - Panama"/>
+<meta name="twitter:description" content="The Payments API for Panama allows you to efficiently integrate PayU&#39;s payment processing features for credit cards into your online shopping platform.
+"/>
+
+
+
+
+
+<link rel="preload" href="../../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" as="style">
+<link href="../../../../scss/main.min.ef62609cb28bd0eb8dcc19e1264124a7df42da7f80a39498c342a061e862536a.css" rel="stylesheet" integrity="">
+
+
+<link href="../../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/PayULatam.png"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../en/docs.html" ><span class="active">Online payments</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../en/payu-module-documentation.html" ><span>PayU Module guide</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/integrations/api-integration/payments-api-panama.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../../pt/docs/integrations/api-integration/payments-api-panama.html">Português</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.58ca37196671d7055250eb1b63b33065865cf3fbb3aed75b33ce1cf2672ed5e953203bc741995d7507ef15fac873194b7ef13510d8b45ec8de6d72a421b9c11b.json"
+  data-offline-search-base-href="../../../../"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/integrations/api-integration/payments-api-panama.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../../pt/docs/integrations/api-integration/payments-api-panama.html">Português</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs.html" href="../../../../en/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Home</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/getting-started.html" href="../../../../en/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting Started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedcreate-an-accounthtml" href="../../../../en/docs/getting-started/create-an-account.html">Creating a PayU Account</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/select-your-integration.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedselect-your-integrationhtml" href="../../../../en/docs/getting-started/select-your-integration.html">Select Your Integration</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/select-your-payment-method.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedselect-your-payment-methodhtml" href="../../../../en/docs/getting-started/select-your-payment-method.html">Select Your Payment Method</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedtest-your-solutionhtml" href="../../../../en/docs/getting-started/test-your-solution.html">Test Your Solution</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/deploy-to-production.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-starteddeploy-to-productionhtml" href="../../../../en/docs/getting-started/deploy-to-production.html">Deploy to Production</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedresponse-codes-and-variableshtml" href="../../../../en/docs/getting-started/response-codes-and-variables.html">Response Codes and Variables</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/services.html" href="../../../../en/docs/services.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Services</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsserviceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/payments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicespaymentshtml" href="../../../../en/docs/services/payments.html">Payments</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/services/3dsauthentication.html" href="../../../../en/docs/services/3dsauthentication.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">3DS Authentication</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsservices3dsauthenticationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-Handled 3DS Authentication</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/external-3ds-authentication.html">External 3DS Authentication</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/queries.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicesquerieshtml" href="../../../../en/docs/services/queries.html">Queries for Transactions</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/promotions.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicespromotionshtml" href="../../../../en/docs/services/promotions.html">Installments and Promotions</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicestokenizationhtml" href="../../../../en/docs/services/tokenization.html">Tokenization</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicesrefundshtml" href="../../../../en/docs/services/refunds.html">Voids and Refunds</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/networktokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicesnetworktokenizationhtml" href="../../../../en/docs/services/networktokenization.html">Network Tokenization</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/payouts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicespayoutshtml" href="../../../../en/docs/services/payouts.html">Payouts - Colombia</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/tools.html" href="../../../../en/docs/tools.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Tools</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/payment-request.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayment-requesthtml" href="../../../../en/docs/tools/payment-request.html">Payment Request</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/tools/shopping-cart-plugins.html" href="../../../../en/docs/tools/shopping-cart-plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Shopping Cart Plugins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolsshopping-cart-pluginshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/vtex.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsvtexhtml" href="../../../../en/docs/tools/shopping-cart-plugins/vtex.html">VTEX</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/shopify.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsshopifyhtml" href="../../../../en/docs/tools/shopping-cart-plugins/shopify.html">Shopify</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/bigcommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsbigcommercehtml" href="../../../../en/docs/tools/shopping-cart-plugins/bigcommerce.html">BigCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/drupal.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsdrupalhtml" href="../../../../en/docs/tools/shopping-cart-plugins/drupal.html">Drupal</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/virtuemart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsvirtuemarthtml" href="../../../../en/docs/tools/shopping-cart-plugins/virtuemart.html">VirtueMart</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/woocommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginswoocommercehtml" href="../../../../en/docs/tools/shopping-cart-plugins/woocommerce.html">WooCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/oscommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsoscommercehtml" href="../../../../en/docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/opencart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsopencarthtml" href="../../../../en/docs/tools/shopping-cart-plugins/opencart.html">OpenCart</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/payu-module.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayu-modulehtml" href="../../../../en/docs/tools/payu-module.html">PayU Module</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/tools/disputes.html" href="../../../../en/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputes</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolsdisputeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsdisputesdisputes-webhookhtml" href="../../../../en/docs/tools/disputes/disputes-webhook.html">Disputes Webhook</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/payment-coupons.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayment-couponshtml" href="../../../../en/docs/tools/payment-coupons.html">Payment Coupons</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/integrations.html" href="../../../../en/docs/integrations.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Integrations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/webcheckout-integration.html" href="../../../../en/docs/integrations/webcheckout-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">WebCheckout Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationswebcheckout-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../../en/docs/integrations/webcheckout-integration/payment-form.html">Payment Form</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/response-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationresponse-pagehtml" href="../../../../en/docs/integrations/webcheckout-integration/response-page.html">Response Page</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../en/docs/integrations/webcheckout-integration/confirmation-page.html">Confirmation Page</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../../en/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Airlines and Travel Agencies - Colombia</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/api-integration.html" href="../../../../en/docs/integrations/api-integration.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">API Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationsapi-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/pci.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpcihtml" href="../../../../en/docs/integrations/api-integration/pci.html">PCI Security and Compliance Guide</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-argentina.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../en/docs/integrations/api-integration/payments-api-argentina.html">Payments API - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-brazil.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-brazilhtml" href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html">Payments API - Brazil</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-chile.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-chilehtml" href="../../../../en/docs/integrations/api-integration/payments-api-chile.html">Payments API - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-colombia.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-colombiahtml" href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html">Payments API - Colombia</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-mexico.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-mexicohtml" href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html">Payments API - Mexico</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-panama.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-panamahtml" href="../../../../en/docs/integrations/api-integration/payments-api-panama.html">Payments API - Panama</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-peru.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-peruhtml" href="../../../../en/docs/integrations/api-integration/payments-api-peru.html">Payments API - Peru</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/queries-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationqueries-apihtml" href="../../../../en/docs/integrations/api-integration/queries-api.html">Queries API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/tokenization-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationtokenization-apihtml" href="../../../../en/docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/promotions-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpromotions-apihtml" href="../../../../en/docs/integrations/api-integration/promotions-api.html">Promotions API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/refunds-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationrefunds-apihtml" href="../../../../en/docs/integrations/api-integration/refunds-api.html">Voids and Refunds API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payouts-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayouts-apihtml" href="../../../../en/docs/integrations/api-integration/payouts-api.html">Payouts API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/simulator.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationsimulatorhtml" href="../../../../en/docs/integrations/api-integration/simulator.html">Token Simulator</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/sdk-integration.html" href="../../../../en/docs/integrations/sdk-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">SDK Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationssdk-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-argentina.html">Payments SDK - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-brazilhtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-brazil.html">Payments SDK - Brazil</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-chilehtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-chile.html">Payments SDK - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-colombiahtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-colombia.html">Payments SDK - Colombia</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-mexicohtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-mexico.html">Payments SDK - Mexico</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-peruhtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-peru.html">Payments SDK - Peru</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/queriessdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationqueriessdkhtml" href="../../../../en/docs/integrations/sdk-integration/queriessdk.html">Queries SDK</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/tokenizationsdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationtokenizationsdkhtml" href="../../../../en/docs/integrations/sdk-integration/tokenizationsdk.html">Tokenization SDK</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/refundssdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationrefundssdkhtml" href="../../../../en/docs/integrations/sdk-integration/refundssdk.html">Voids and Refunds SDK</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/server-status.html" href="../../../../en/docs/server-status.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Server Status</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsserver-statushtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p>On this page</p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#available-methods">Available Methods</a></li>
+    <li><a href="#submit-transactions-using-credit-cards">Submit Transactions Using Credit Cards</a>
+      <ul>
+        <li><a href="#parameters-for-request-and-response">Parameters for Request and Response</a></li>
+        <li><a href="#api-call">API Call</a></li>
+      </ul>
+    </li>
+    <li><a href="#available-payment-methods-query">Available Payment Methods Query</a>
+      <ul>
+        <li><a href="#parameters-for-request-and-response-1">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-1">API Call</a></li>
+      </ul>
+    </li>
+    <li><a href="#ping">Ping</a>
+      <ul>
+        <li><a href="#parameters-for-request-and-response-2">Parameters for Request and Response</a></li>
+        <li><a href="#api-call-2">API Call</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs.html">Home</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs/integrations.html">Integrations</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs/integrations/api-integration.html">API Integration</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../en/docs/integrations/api-integration/payments-api-panama.html">Payments API - Panama</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Payments API - Panama</h1>
+    <div class="lead">The Payments API for Panama allows you to efficiently integrate PayU&rsquo;s payment processing features for credit cards into your online shopping platform.</div>
+	       
+	<script src="../../../../js/searchcodes.js"></script>
+<p>This guide shows you how to leverage these services to enhance your customers&rsquo; payment experience by providing flexible and secure payment options tailored to the local market.</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+<p>To integrate the Payments API, direct your requests to the following URLs according to the corresponding environment:</p>
+<ul>
+<li>Testing: <code>https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi</code></li>
+<li>Production: <code>https://api.payulatam.com/payments-api/4.0/service.cgi</code></li>
+</ul>
+</div>
+
+<h2 id="available-methods">Available Methods</h2>
+<p>Payments API includes the following methods:</p>
+<ul>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-panama.html#submit-transactions-using-credit-cards">Submit Transactions Using Credit Cards</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-panama.html#available-payment-methods-query">Available Payment Methods Query</a></li>
+<li><a href="../../../../en/docs/integrations/api-integration/payments-api-panama.html#ping">Ping</a></li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+<p>To confirm the status of a transaction, you can use one of the following options:</p>
+<ul>
+<li>Navigate to the the URL set in the <code>transaction.notifyUrl</code> variable or the <em><strong>Confirmation URL</strong></em> option located in the PayU Module in <em><strong>Settings</strong></em> &gt; <em><strong>Technical configuration</strong></em>.</li>
+<li>Use the <a href="../../../../en/docs/services/queries.html">Queries API or SDK</a>.</li>
+</ul>
+</div>
+
+<h2 id="submit-transactions-using-credit-cards">Submit Transactions Using Credit Cards</h2>
+<p>This method lets you process the payments performed by your customers using credit cards. For Panama, you can perform one-step flows (<strong>Charge</strong>). For more information, refer to <a href="../../../../en/docs/services/payments.html#payment-flows">Payment flows</a>.</p>
+<h3 id="parameters-for-request-and-response">Parameters for Request and Response</h3>
+<details>
+<summary>Request</summary>
+<label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Language used in the request, this language is used to display the error messages generated. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#supported-languages">See supported languages</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Set <code>SUBMIT_TRANSACTION</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>test (JSON)<hr>isTest (XML)</td>
+<td>Boolean</td>
+<td></td>
+<td>Set <code>true</code> if the request is in test mode. Otherwise, set <code>false</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant</td>
+<td>Object</td>
+<td></td>
+<td>This object has the authentication data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiLogin</td>
+<td>Alphanumeric</td>
+<td>Min:12 Max:32</td>
+<td>User or login provided by PayU. <a href="../../../../en/docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiKey</td>
+<td>Alphanumeric</td>
+<td>Min:6 Max:32</td>
+<td>Password provided by PayU. <a href="../../../../en/docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction</td>
+<td>Object</td>
+<td>Object</td>
+<td>This object has the transaction data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order</td>
+<td>Object</td>
+<td></td>
+<td>This object has the order data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; accountId</td>
+<td>Number</td>
+<td></td>
+<td>Identifier of your account.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; referenceCode</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:255</td>
+<td>Represents the identifier of the order in your system.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; description</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:255</td>
+<td>Description of the order.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; language</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Language used in emails sent to the buyer and the seller.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; notifyUrl</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>Confirmation URL of the order.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; partnerId</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Partner ID in PayU.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; signature</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>The signature associated to the form. For more information refer <a href="../../../../en/docs/integrations.html#authentication-signature">Authentication signature</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress</td>
+<td>Object</td>
+<td></td>
+<td>Shipping address.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; street1</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Address Line 1.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; street2</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Address Line 2.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; city</td>
+<td>Alphanumeric</td>
+<td>Max:50</td>
+<td>Address city.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:40</td>
+<td>Address State.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Address country.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; postalCode</td>
+<td>Alphanumeric</td>
+<td>Max:8</td>
+<td>Address Zip code.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; shippingAddress &gt; phone</td>
+<td>Alphanumeric</td>
+<td>Max:11</td>
+<td>Phone number associated to the address.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer</td>
+<td>Object</td>
+<td></td>
+<td>Buyer information.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; merchantBuyerId</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Buyer ID in your system.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; fullName</td>
+<td>Alphanumeric</td>
+<td>Max:150</td>
+<td>Full name of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; emailAddress</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>E-mail of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; contactPhone</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Phone number of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; dniNumber</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Identification number of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Shipping address of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; street1</td>
+<td>Alphanumeric</td>
+<td>Max:150</td>
+<td>Buyer&rsquo;s shipping address Line 1.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; city</td>
+<td>Alphanumeric</td>
+<td>Max:50</td>
+<td>Buyer&rsquo;s shipping address city.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:40</td>
+<td>Buyer&rsquo;s shipping address state.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Buyer&rsquo;s shipping address country in format ISO 3166 alpha-2.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; postalCode</td>
+<td>Number</td>
+<td>Max:20</td>
+<td>Buyer&rsquo;s shipping address zip code.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; buyer &gt; shippingAddress &gt; phone</td>
+<td>Number</td>
+<td>Max:20</td>
+<td>Buyer&rsquo;s shipping address phone number.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt;</td>
+<td>Object</td>
+<td>64</td>
+<td>Amount of the order or its associated values.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE</td>
+<td>Alphanumeric</td>
+<td>64</td>
+<td>Amount of the transaction.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; value</td>
+<td>Number</td>
+<td>12, 2</td>
+<td>Specifies the amount of the transaction, this value may have two decimal digits (Ex. 10000.00 or 10000).</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_VALUE &gt; currency</td>
+<td>Alphanumeric</td>
+<td>3</td>
+<td>ISO code of the currency. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#accepted-currencies">See accepted currencies</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX</td>
+<td>Alphanumeric</td>
+<td>64</td>
+<td>Amount of the Value Added Tax (VAT).</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; value</td>
+<td>Number</td>
+<td>12, 2</td>
+<td>Specifies the amount of the VAT.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX &gt; currency</td>
+<td>Alphanumeric</td>
+<td>3</td>
+<td>ISO code of the currency. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#accepted-currencies">See accepted currencies</a>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE</td>
+<td>Alphanumeric</td>
+<td>64</td>
+<td>Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; value</td>
+<td>Number</td>
+<td>12, 2</td>
+<td>Specifies the base amount of the transaction.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; order &gt; additionalValues &gt; TX_TAX_RETURN_BASE &gt; currency</td>
+<td>Alphanumeric</td>
+<td>3</td>
+<td>ISO code of the currency. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#accepted-currencies">See accepted currencies</a>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCardTokenId</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>Include this parameter when the transaction is done using a tokenized card replacing the information of the credit card. For more information, refer to <a href="../../../../en/docs/integrations/api-integration/tokenization-api.html">Tokenization API</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard</td>
+<td>Object</td>
+<td></td>
+<td>Credit card information. This object and its parameters are mandatory when the payment is performed using not tokenized credit card.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; number</td>
+<td>Alphanumeric</td>
+<td>Min:13 Max:20</td>
+<td>Credit card number.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; securityCode</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:4</td>
+<td>Credit card security code (CVC2, CVV2, CID).</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; expirationDate</td>
+<td>Alphanumeric</td>
+<td>7</td>
+<td>Credit card expiration date. Format <code>YYYY/MM</code>.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; name</td>
+<td>Alphanumeric</td>
+<td>Min:1 Max:255</td>
+<td>Holder&rsquo;s name displayed in the credit card.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; creditCard &gt; processWithoutCvv2</td>
+<td>Boolean</td>
+<td>Max:255</td>
+<td>Allows you to process transactions without including the credit card security code. Your commerce requires PayU&rsquo;s authorization before using this feature.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer</td>
+<td>Object</td>
+<td></td>
+<td>Payer information.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; emailAddress</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Payer e-mail address.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; merchantPayerId</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Identifier of the payer in your system.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; fullName</td>
+<td>Alphanumeric</td>
+<td>Max:150</td>
+<td>Name of the payer which must meet the name sent in the parameter <code>transaction.creditCard.name</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress</td>
+<td>Object</td>
+<td></td>
+<td>Billing address.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; street1</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Billing Address Line 1.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; street2</td>
+<td>Alphanumeric</td>
+<td>Max:100</td>
+<td>Billing Address Line 2.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; city</td>
+<td>Alphanumeric</td>
+<td>Max:50</td>
+<td>Billing address city.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:40</td>
+<td>Billing address state.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Billing address country in format ISO 3166 Alpha-2.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; postalCode</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Billing address zip code.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; billingAddress &gt; phone</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Billing address phone number.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; birthdate</td>
+<td>Alphanumeric</td>
+<td>Max:10</td>
+<td>Buyer&rsquo;s date of birth.</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; contactPhone</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Buyer&rsquo;s phone number.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; dniNumber</td>
+<td>Alphanumeric</td>
+<td>Max:20</td>
+<td>Identification number of the buyer.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; payer &gt; dniType</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Identification type of the buyer. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#document-types">See Document types</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; type</td>
+<td>Alphanumeric</td>
+<td>32</td>
+<td>Set this value according to the transaction. For Panama, set <code>AUTHORIZATION_AND_CAPTURE</code></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; paymentMethod</td>
+<td>Alphanumeric</td>
+<td>32</td>
+<td>Select a valid Credit card Payment Method. <a href="../../../../en/docs/getting-started/select-your-payment-method.html#panama">See the available Payment Methods for Panama</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; paymentCountry</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Set <code>PA</code> for Panama.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; deviceSessionId</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Session identifier of the device where the customer performs the transaction. For more information, refer to <a href="../../../../en/docs/integrations.html#_devicesessionid_-variable">this topic</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; ipAddress</td>
+<td>Alphanumeric</td>
+<td>Max:39</td>
+<td>IP address of the device where the customer performs the transaction.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; cookie</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>Cookie stored by the device where the customer performs the transaction.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; userAgent</td>
+<td>Alphanumeric</td>
+<td>Max:1024</td>
+<td>The User agent of the browser where the customer performs the transaction.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>transaction &gt; extraParameters</td>
+<td>Object</td>
+<td></td>
+<td>Additional parameters or data associated with the request. The maximum size of each <em>extraParameters</em> name is 64 characters.<br>In JSON, the <em>extraParameters</em> parameter follows this structure: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;INSTALLMENTS_NUMBER&quot;: 1</code><br><code>}</code><br><br>In XML, the <em>extraParameters</em> parameter follows this structure: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;INSTALLMENTS_NUMBER&lt;/string&gt;</code><br>  <code>&lt;string&gt;1&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
+<td style="text-align:center">No</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>The response code of the transaction. Possible values are <code>ERROR</code> and <code>SUCCESS</code>.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>The error message associated when the response code is <code>ERROR</code>.</td>
+</tr>
+<tr>
+<td>transactionResponse</td>
+<td>Object</td>
+<td></td>
+<td>The response data.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; orderId</td>
+<td>Number</td>
+<td></td>
+<td>The generated or existing order Id in PayU.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; transactionId</td>
+<td>Alphanumeric</td>
+<td>36</td>
+<td>The identifier of the transaction in PayU.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; state</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>The status of the transaction.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; responseCode</td>
+<td>Alphanumeric</td>
+<td>Max:64</td>
+<td>The response code associated with the status.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; paymentNetworkResponseCode</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>The response code returned by the financial network.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; paymentNetworkResponseErrorMessage</td>
+<td>Alphanumeric</td>
+<td>Max:255</td>
+<td>The error message returned by the financial network.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; trazabilityCode</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>The traceability code returned by the financial network.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; authorizationCode</td>
+<td>Alphanumeric</td>
+<td>Max:12</td>
+<td>The authorization code returned by the financial network.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; responseMessage</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>Message associated with the response code.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; operationDate</td>
+<td>Date</td>
+<td></td>
+<td>Creation date of the response in the PayU´s system.</td>
+</tr>
+<tr>
+<td>transactionResponse &gt; extraParameters</td>
+<td>Object</td>
+<td></td>
+<td>Additional parameters or data associated with the response. <br>In JSON, the <em>extraParameters</em> parameter follows this structure: <br><code>&quot;extraParameters&quot;: {</code><br> <code>&quot;BANK_REFERENCED_CODE&quot;: &quot;CREDIT&quot;</code><br><code>}</code><br><br>In XML, the <em>extraParameters</em> parameter follows this structure: <br><code>&lt;extraParameters&gt;</code><br> <code>&lt;entry&gt;</code><br>  <code>&lt;string&gt;BANK_REFERENCED_CODE&lt;/string&gt;</code><br>  <code>&lt;string&gt;CREDIT&lt;/string&gt;</code><br> <code>&lt;/entry&gt;</code><br><code>&lt;/extraParameters&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h4 id="considerations">Considerations</h4>
+<ul>
+<li>For payments with credit card tokens, include the parameters <code>transaction.creditCardTokenId</code> and <code>transaction.creditCard.securityCode</code> (if you process with security code) replacing the information of the credit card. For more information, refer to <a href="../../../../en/docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>.</li>
+<li>By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable <code>creditCard.processWithoutCvv2</code> as true and remove the variable <code>creditCard.securityCode</code>.</li>
+</ul>
+<h3 id="api-call">API Call</h3>
+<p>The following are the examples of the request and response of this payment method.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#tab11" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-1" data-toggle="tab" href="#tab12" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="1">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab11" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUBMIT_TRANSACTION&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;transaction&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;order&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;accountId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;512326&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;referenceCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PRODUCT_TEST_2021-06-21T21:28:14.962Z&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Payment test description&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;es&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;signature&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;782997f7981288b6ea411709188ff926&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;notifyUrl&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;http://www.payu.com/notify&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;additionalValues&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;TX_VALUE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;value&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;currency&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;USD&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;buyer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;merchantBuyerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;First name and second buyer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;emailAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;buyer_test@test.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;contactPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;dniNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;123456789&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;shippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Via Jose A. Arango, Juan Diaz&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Panamá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Panamá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;shippingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Via Jose A. Arango, Juan Diaz&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5555487&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Panamá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Panamá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;0000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;payer&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;merchantPayerId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;fullName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;First name and second payer name&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;emailAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;payer_test@test.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;contactPhone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;dniNumber&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;5415668464654&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;billingAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;street1&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Via Jose A. Arango, Juan Diaz&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;street2&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;125544&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;city&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Panamá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Panamá&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;postalCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;phone&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;7563126&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;creditCard&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;number&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4037997623271984&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;securityCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;321&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;expirationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;2030/12&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;name&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&#34;INSTALLMENTS_NUMBER&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;AUTHORIZATION_AND_CAPTURE&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;paymentMethod&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;paymentCountry&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;deviceSessionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;vghs6tvkcle931686k1900o6e1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;ipAddress&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;127.0.0.1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;cookie&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pt1t38347bs6jc9ruv2ecpv7o2&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;userAgent&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transactionResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;orderId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">857804178</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionId&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;299f50c4-d7d9-4f24-a4fc-1454ff26d5c4&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;state&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;paymentNetworkResponseErrorMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;trazabilityCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;00000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;authorizationCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;00000000&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;pendingReason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;APPROVED&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;errorCode&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;responseMessage&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;transactionTime&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;operationDate&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1624311390098</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;referenceQuestionnaire&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;extraParameters&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;BANK_REFERENCED_CODE&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;CREDIT&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;PAYMENT_WAY_ID&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&#34;additionalInfo&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab12" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>SUBMIT_TRANSACTION<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;transaction&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;order&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;accountId&gt;</span>512326<span style="color:#204a87;font-weight:bold">&lt;/accountId&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;referenceCode&gt;</span>PRODUCT_TEST_2021-06-21T21:28:14.962Z<span style="color:#204a87;font-weight:bold">&lt;/referenceCode&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>Payment test description<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>es<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;signature&gt;</span>782997f7981288b6ea411709188ff926<span style="color:#204a87;font-weight:bold">&lt;/signature&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;notifyUrl&gt;</span>http://www.payu.com/notify<span style="color:#204a87;font-weight:bold">&lt;/notifyUrl&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>TX_VALUE<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;additionalValue&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#204a87;font-weight:bold">&lt;value&gt;</span>100<span style="color:#204a87;font-weight:bold">&lt;/value&gt;</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#204a87;font-weight:bold">&lt;currency&gt;</span>USD<span style="color:#204a87;font-weight:bold">&lt;/currency&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;/additionalValue&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;/additionalValues&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;buyer&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;merchantBuyerId&gt;</span>1<span style="color:#204a87;font-weight:bold">&lt;/merchantBuyerId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>First name and second buyer name<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;emailAddress&gt;</span>buyer_test@test.com<span style="color:#204a87;font-weight:bold">&lt;/emailAddress&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;contactPhone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/contactPhone&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;dniNumber&gt;</span>123456789<span style="color:#204a87;font-weight:bold">&lt;/dniNumber&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;shippingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Via Jose A. Arango, Juan Diaz<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>Panamá<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Panamá<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>PA<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
+</span></span><span style="display:flex;"><span>               <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/shippingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;/buyer&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;shippingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Via Jose A. Arango, Juan Diaz<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>Panamá<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Panamá<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>PA<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>0000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;/shippingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;/order&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;payer&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;merchantPayerId&gt;</span>1<span style="color:#204a87;font-weight:bold">&lt;/merchantPayerId&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;fullName&gt;</span>First name and second payer name<span style="color:#204a87;font-weight:bold">&lt;/fullName&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;emailAddress&gt;</span>payer_test@test.com<span style="color:#204a87;font-weight:bold">&lt;/emailAddress&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;contactPhone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/contactPhone&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;dniNumber&gt;</span>5415668464654<span style="color:#204a87;font-weight:bold">&lt;/dniNumber&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;billingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;street1&gt;</span>Via Jose A. Arango, Juan Diaz<span style="color:#204a87;font-weight:bold">&lt;/street1&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;street2&gt;</span>5555487<span style="color:#204a87;font-weight:bold">&lt;/street2&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;city&gt;</span>Panamá<span style="color:#204a87;font-weight:bold">&lt;/city&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>Panamá<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>PA<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;postalCode&gt;</span>000000<span style="color:#204a87;font-weight:bold">&lt;/postalCode&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;phone&gt;</span>7563126<span style="color:#204a87;font-weight:bold">&lt;/phone&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;/billingAddress&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;/payer&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;creditCard&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;number&gt;</span>4037997623271984<span style="color:#204a87;font-weight:bold">&lt;/number&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;securityCode&gt;</span>321<span style="color:#204a87;font-weight:bold">&lt;/securityCode&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;expirationDate&gt;</span>2030/12<span style="color:#204a87;font-weight:bold">&lt;/expirationDate&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;name&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/name&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;/creditCard&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;extraParameters&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>INSTALLMENTS_NUMBER<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>1<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;/extraParameters&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;type&gt;</span>AUTHORIZATION_AND_CAPTURE<span style="color:#204a87;font-weight:bold">&lt;/type&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;paymentMethod&gt;</span>VISA<span style="color:#204a87;font-weight:bold">&lt;/paymentMethod&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;paymentCountry&gt;</span>PA<span style="color:#204a87;font-weight:bold">&lt;/paymentCountry&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;deviceSessionId&gt;</span>vghs6tvkcle931686k1900o6e1<span style="color:#204a87;font-weight:bold">&lt;/deviceSessionId&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;ipAddress&gt;</span>127.0.0.1<span style="color:#204a87;font-weight:bold">&lt;/ipAddress&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;cookie&gt;</span>pt1t38347bs6jc9ruv2ecpv7o2<span style="color:#204a87;font-weight:bold">&lt;/cookie&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;userAgent&gt;</span>Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0<span style="color:#204a87;font-weight:bold">&lt;/userAgent&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;/transaction&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>true<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;orderId&gt;</span>857804176<span style="color:#204a87;font-weight:bold">&lt;/orderId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;transactionId&gt;</span>69de6de1-9e18-45ae-8429-866bb3b47822<span style="color:#204a87;font-weight:bold">&lt;/transactionId&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;state&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/state&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;trazabilityCode&gt;</span>00000000<span style="color:#204a87;font-weight:bold">&lt;/trazabilityCode&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;authorizationCode&gt;</span>00000000<span style="color:#204a87;font-weight:bold">&lt;/authorizationCode&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;responseCode&gt;</span>APPROVED<span style="color:#204a87;font-weight:bold">&lt;/responseCode&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;operationDate&gt;</span>2021-06-21T16:35:06<span style="color:#204a87;font-weight:bold">&lt;/operationDate&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;extraParameters&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>BANK_REFERENCED_CODE<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>CREDIT<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;entry&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>PAYMENT_WAY_ID<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#204a87;font-weight:bold">&lt;string&gt;</span>4<span style="color:#204a87;font-weight:bold">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;/entry&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/extraParameters&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/transactionResponse&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h2 id="available-payment-methods-query">Available Payment Methods Query</h2>
+<p>This method returns a list of the payment methods available in all countries.</p>
+<h3 id="parameters-for-request-and-response-1">Parameters for Request and Response</h3>
+<details>
+<summary>Request</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Language used in the request, this language is used to display the error messages generated. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#supported-languages">See supported languages</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Set <code>GET_PAYMENT_METHODS</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>test (JSON)<hr>isTest (XML)</td>
+<td>Boolean</td>
+<td></td>
+<td>Set <code>true</code> if the request is in test mode. Otherwise, set <code>false</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant</td>
+<td>Object</td>
+<td></td>
+<td>This object has the authentication data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiLogin</td>
+<td>Alphanumeric</td>
+<td>Min:12 Max:32</td>
+<td>User or login provided by PayU. <a href="../../../../en/docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiKey</td>
+<td>Alphanumeric</td>
+<td>Min:6 Max:32</td>
+<td>Password provided by PayU. <a href="../../../../en/docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>The response code of the transaction. Possible values are <code>ERROR</code> and <code>SUCCESS</code>.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>The error message associated when the response code is <code>ERROR</code>.</td>
+</tr>
+<tr>
+<td>paymentMethods</td>
+<td>Object</td>
+<td></td>
+<td>List of the payment methods.</td>
+</tr>
+<tr>
+<td>paymentMethods &gt; paymentMethodComplete</td>
+<td>Object</td>
+<td></td>
+<td>This object has the information of a payment method.</td>
+</tr>
+<tr>
+<td>paymentMethods &gt; paymentMethodComplete &gt; id</td>
+<td>Numeric</td>
+<td></td>
+<td>Payment method identifier.</td>
+</tr>
+<tr>
+<td>paymentMethods &gt; paymentMethodComplete &gt; description</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Payment method name.</td>
+</tr>
+<tr>
+<td>paymentMethods &gt; paymentMethodComplete &gt; country</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>ISO code of the Payment method country.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="api-call-1">API Call</h3>
+<p>The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-2" data-toggle="tab" href="#tab21" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#tab22" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="2">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;GET_PAYMENT_METHODS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;paymentMethods&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;450&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;VISA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;id&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;451&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;description&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;MASTERCARD&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;country&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PA&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;enabled&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&#34;reason&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>GET_PAYMENT_METHODS<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentMethodsResponse&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;paymentMethods&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;paymentMethodComplete&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;id&gt;</span>450<span style="color:#204a87;font-weight:bold">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>VISA<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>PA<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;enabled&gt;</span>true<span style="color:#204a87;font-weight:bold">&lt;/enabled&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/paymentMethodComplete&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;paymentMethodComplete&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;id&gt;</span>451<span style="color:#204a87;font-weight:bold">&lt;/id&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;description&gt;</span>MASTERCARD<span style="color:#204a87;font-weight:bold">&lt;/description&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;country&gt;</span>PA<span style="color:#204a87;font-weight:bold">&lt;/country&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#204a87;font-weight:bold">&lt;enabled&gt;</span>true<span style="color:#204a87;font-weight:bold">&lt;/enabled&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">&lt;/paymentMethodComplete&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;/paymentMethods&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentMethodsResponse&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+<h2 id="ping">Ping</h2>
+<p>The <code>PING</code> method lets you verify the connection to our platform.</p>
+<h3 id="parameters-for-request-and-response-2">Parameters for Request and Response</h3>
+<details>
+<summary>Request</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+<th style="text-align:center">Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td>Alphanumeric</td>
+<td>2</td>
+<td>Language used in the request, this language is used to display the error messages generated. <a href="../../../../en/docs/getting-started/response-codes-and-variables.html#supported-languages">See supported languages</a>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Alphanumeric</td>
+<td>Max:32</td>
+<td>Set <code>PING</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>test (JSON)<hr>isTest (XML)</td>
+<td>Boolean</td>
+<td></td>
+<td>Set <code>true</code> if the request is in test mode. Otherwise, set <code>false</code>.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant</td>
+<td>Object</td>
+<td></td>
+<td>This object has the authentication data.</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiLogin</td>
+<td>Alphanumeric</td>
+<td>Min:12 Max:32</td>
+<td>User or login provided by PayU. <a href="../../../../en/docs/integrations.html#api-key-and-api-login">How do I get my API Login</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>merchant &gt; apiKey</td>
+<td>Alphanumeric</td>
+<td>Min:6 Max:32</td>
+<td>Password provided by PayU. <a href="../../../../en/docs/integrations.html#api-key-and-api-login">How do I get my API Key</a></td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>Response</summary>
+<br>
+<div class="variables"></div>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Format</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Alphanumeric</td>
+<td></td>
+<td>The response code of the transaction.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Alphanumeric</td>
+<td>Max:2048</td>
+<td>The error message associated if an error ocurred.</td>
+</tr>
+<tr>
+<td>transactionResponse</td>
+<td>Object</td>
+<td>Max:2048</td>
+<td>The response of the PING method if an error ocurred.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="api-call-2">API Call</h3>
+<p>The following are the examples of the request and response of this method.</p>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link active" id="nav-3" data-toggle="tab" href="#tab31" role="tab"
+		   aria-controls="nav-home" aria-selected="true">JSON</a>
+
+		
+		
+
+		
+		
+		
+
+		
+
+		<a class="nav-item nav-link" id="nav-3" data-toggle="tab" href="#tab32" role="tab"
+		   aria-controls="nav-home" aria-selected="false">XML</a>
+
+		
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="3">
+
+
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="tab31" role="tabpanel" aria-labelledby="nav-tabName1">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;test&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;language&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;command&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;PING&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&#34;merchant&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;apiLogin&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;pRRXKOl8ikMmt9u&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&#34;apiKey&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;4Vj8eK4rloUd272L48hsrarnUA&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;SUCCESS&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;error&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&#34;transactionResponse&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">null</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="tab-pane fade" id="tab32" role="tabpanel" aria-labelledby="nav-tabName2">
+
+	<br>
+<p>Request Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;request&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;language&gt;</span>en<span style="color:#204a87;font-weight:bold">&lt;/language&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;command&gt;</span>PING<span style="color:#204a87;font-weight:bold">&lt;/command&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;merchant&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;apiLogin&gt;</span>pRRXKOl8ikMmt9u<span style="color:#204a87;font-weight:bold">&lt;/apiLogin&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">&lt;apiKey&gt;</span>4Vj8eK4rloUd272L48hsrarnUA<span style="color:#204a87;font-weight:bold">&lt;/apiKey&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;/merchant&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#204a87;font-weight:bold">&lt;isTest&gt;</span>false<span style="color:#204a87;font-weight:bold">&lt;/isTest&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/request&gt;</span>
+</span></span></code></pre></div><br>
+<p>Response Example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;paymentResponse&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">&lt;code&gt;</span>SUCCESS<span style="color:#204a87;font-weight:bold">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">&lt;/paymentResponse&gt;</span>
+</span></span></code></pre></div>
+
+</div>
+
+
+
+
+
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+Last modified
+
+September 9, 2024:
+
+ <b>Documentation Updates (74c84013a)</b>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

@@ -3,35 +3,43 @@ title: "Autenticação 3DS Realizada pela PayU"
 linkTitle: "Autenticação 3DS Realizada pela PayU"
 date: 2024-07-01T11:32:55-05:00
 description: >
-  A autenticação 3DS realizada pela PayU elimina a necessidade de você gerenciar o processo de integração 3DS. A PayU cuida de tudo, desde a comunicação com o banco emissor até o gerenciamento do fluxo de autenticação.  
+  A autenticação 3DS realizada pela PayU evita que você precise gerenciar o processo de integração 3DS. A PayU cuida de tudo, desde a comunicação com o banco emissor até o gerenciamento do fluxo de autenticação.  
 weight: 21
 tags: ["subtopic"]
 ---
 
-## Utilizando a Autenticação 3DS do PayU
-
-Para habilitar a autenticação 3DS, os comerciantes devem estar registrados nesse serviço com o PayU. Após o registro, você pode adicionar um novo parâmetro chamado `req3DSAuthentication` em suas solicitações de pagamento por meio da API de Pagamentos da PayU.
+Para habilitar a autenticação 3DS, entre em contato com seu representante PayU ou suporte técnico. Uma vez habilitada, inclua o parâmetro `req3DSAuthentication` nas suas solicitações de pagamento usando a API de Pagamentos da PayU.
 
 {{% alert title="Notas" color="info"%}}
 
-* A autenticação 3DS para PayU Latam está disponível apenas para **Argentina**, **Brasil**, **Colômbia**, **México** e **Peru**.
-* Esse recurso requer uma integração via API e não está disponível para integração com Webcheckout.
+* A autenticação 3DS com a PayU Latam está disponível apenas na **Argentina**, **Brasil**, **Colômbia**, **México** e **Peru**.
+* Se você utiliza uma <a href="https://developers.payulatam.com/latam/pt/docs/integrations/webcheckout-integration.html" target="_blank">integração WebCheckout</a>, entre em contato com seu representante da PayU ou com o suporte técnico para confirmar se a autenticação 3DS está disponível para suas transações.
 * **Redes suportadas:** Visa e Mastercard.
 
 {{% /alert %}}
 
 ### Parâmetro `req3DSAuthentication`
 
-Este parâmetro permite controlar se a autenticação 3DS é necessária para cada transação. Ele aceita dois valores:
+Este parâmetro permite especificar se uma transação requer autenticação 3DS. O parâmetro suporta os seguintes valores:
 
-* `"true"`: Impõe a autenticação 3DS para a transação.
+* `"true"`: Exige autenticação 3DS para a transação.
 * `"false"`: Desativa a autenticação 3DS para a transação.
 
-**Se `req3DSAuthentication` não estiver incluído,** a PayU decidirá se deve realizar a autenticação 3DS com base em sua própria avaliação de risco.
+**Se sua solicitação não incluir `req3DSAuthentication`,** o motor de risco da PayU determinará se a transação requer autenticação 3DS com base na sua avaliação de risco.
+
+#### Parâmetros para Autenticação 3DS
+
+A tabela abaixo descreve os principais parâmetros associados à autenticação 3DS. Para uma lista completa de parâmetros aplicáveis a transações com cartão de crédito ou débito, consulte a <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration.html" target="_blank">documentação da API de Pagamentos</a> do seu país.
+
+| Nome do Campo | Formato | Tamanho | Descrição |
+|-|-|-|-|
+| `transaction > req3DSAuthentication` | Booleano | 4-5 caracteres | Especifica se a autenticação 3DS é exigida (`true` ou `false`). Se omitido, o motor de risco da PayU decide se a autenticação é necessária. |
+| `transaction > order > notifyUrl` | Alfanumérico | Até 255 caracteres | URL de webhook que sua integração utiliza para receber o status final da transação (por exemplo, aprovada ou rejeitada) da PayU. Para uma lista detalhada de possíveis status, consulte a <a href="https://developers.payulatam.com/latam/pt/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" target="_blank">documentação de códigos de resposta</a>. |
+| `transaction > extraParameters > RESPONSE_URL` | Alfanumérico | Até 255 caracteres | URL para onde a integração redireciona o usuário após a autenticação, geralmente o site do comerciante. Se omitido, a integração redireciona o usuário para a página padrão de status de transação da PayU. Para uma lista detalhada de possíveis status, consulte a <a href="https://developers.payulatam.com/latam/pt/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-response-page" target="_blank">documentação de códigos de resposta</a>. |
 
 #### Exemplo de uma Solicitação
 
-No exemplo de solicitação abaixo, o `req3DSAuthentication` está definido como `true`:
+No exemplo de solicitação a seguir, `req3DSAuthentication` está definido como `true` para exigir autenticação 3DS:
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -145,7 +153,6 @@ Exemplo de uma Solicitação:
 Exemplo de uma Solicitação:
 ```XML
 <request>
-    <isTest>false</isTest>
     <language>en</language>
     <command>SUBMIT_TRANSACTION</command>
     <merchant>
@@ -153,65 +160,28 @@ Exemplo de uma Solicitação:
         <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
     </merchant>
     <transaction>
-        <type>AUTHORIZATION_AND_CAPTURE</type>
-        <paymentMethod>MASTERCARD</paymentMethod>
-        <paymentCountry>CO</paymentCountry>
-        <ipAddress>247.123.24.168</ipAddress>
-        <userAgent>Mozilla/5.0 (Windows NT 5.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0.7</userAgent>
-        <cookie>gp8pv8673fia31cevhcrakbwt</cookie>
-        <deviceSessionId>901129f3909f8ca8bdacc67199a29a15edfc3a059b76d7fecf601bb5343847f8</deviceSessionId>
-        <req3DSAuthentication>true</req3DSAuthentication>
-        <extraParameters>
-            <entry>
-                <string>INSTALLMENTS_NUMBER</string>
-                <string>1</string>
-            </entry>
-            <entry>
-                <string>RESPONSE_URL</string>
-                <string>https://www.yoursite.com/response-page</string>
-            </entry>
-        </extraParameters>
         <order>
-            <language>es</language>
-            <signature>cfe3eaeb7af1bd6e9e4cb7d50f8f0afb6b9452fc0936d879d1942e78fe8d03f3</signature>
-            <accountId>516686</accountId>
-            <description>PayULatam|Test|CO|COP|OneStep|WithCVV2|Untokenized</description>
-            <referenceCode>Postman|UniqueReference|10/24/2024, 2:09:07 PM</referenceCode>
-            <notifyUrl>https://www.yoursite.com/confirmation-page</notifyUrl>
-            <additionalValues>
-                <entry>
-                    <string>TX_VALUE</string>
-                    <additionalValue>
-                        <value>5629338</value>
-                        <currency>COP</currency>
-                    </additionalValue>
-                    <string>TX_TAX</string>
-                    <additionalValue>
-                        <value>898802</value>
-                        <currency>COP</currency>
-                    </additionalValue>
-                    <string>TX_TAX_RETURN_BASE</string>
-                    <additionalValue>
-                        <value>4730536</value>
-                        <currency>COP</currency>
-                    </additionalValue>
-                </entry>
-            </additionalValues>
+            <language>en</language>
+            <signature>8b9abb9dcae76d331e4493a559e8a76a0a9296e6944d460303d5639d9230c485</signature>
+            <accountId>512321</accountId>
+            <description>PayULatamAPI|Test|CO|COL</description>
+            <referenceCode>REFERENCIA_PRUEBA_12345</referenceCode>
+            <notifyUrl>https://merchant-mywebhook.com</notifyUrl>
             <buyer>
-                <merchantBuyerId>Merchant_Buyer_ID_91</merchantBuyerId>
-                <fullName>May Wehner</fullName>
-                <emailAddress>Leslie_Armstrong3@example.com</emailAddress>
-                <contactPhone>3185555555</contactPhone>
+                <merchantBuyerId>Merchant_Buyer_ID_123</merchantBuyerId>
+                <fullName>John Doe</fullName>
+                <emailAddress>john.doe@email.com</emailAddress>
+                <contactPhone>3155555555</contactPhone>
                 <dniType>CC</dniType>
-                <dniNumber>1337727983</dniNumber>
+                <dniNumber>123456789</dniNumber>
                 <shippingAddress>
                     <country>CO</country>
                     <state>DC</state>
                     <city>Bogotá</city>
                     <postalCode>110111</postalCode>
-                    <street1>93357 Damian Ports</street1>
-                    <street2>786 Jordyn Spurs</street2>
-                    <phone>6016540721</phone>
+                    <street1>Calle 100</street1>
+                    <street2>Cra 9</street2>
+                    <phone>6011234567</phone>
                 </shippingAddress>
             </buyer>
             <shippingAddress>
@@ -219,35 +189,65 @@ Exemplo de uma Solicitação:
                 <state>DC</state>
                 <city>Bogotá</city>
                 <postalCode>110111</postalCode>
-                <street1>988 Steve Burg</street1>
-                <street2>48419 Schimmel Springs</street2>
-                <phone>6016540721</phone>
+                <street1>Calle 100</street1>
+                <street2>Cra 9</street2>
+                <phone>6011234567</phone>
             </shippingAddress>
+            <additionalValues>
+                <TX_VALUE>
+                    <value>100</value>
+                    <currency>COP</currency>
+                </TX_VALUE>
+                <TX_TAX>
+                    <value>0</value>
+                    <currency>COP</currency>
+                </TX_TAX>
+                <TX_TAX_RETURN_BASE>
+                    <value>0</value>
+                    <currency>COP</currency>
+                </TX_TAX_RETURN_BASE>
+            </additionalValues>
         </order>
         <payer>
-            <merchantPayerId>Merchant_Payer_ID_80</merchantPayerId>
-            <fullName>Marguerite Koss</fullName>
-            <emailAddress>Lelia.Trantow@example.org</emailAddress>
+            <merchantPayerId>Merchant_Payer_ID_123</merchantPayerId>
+            <fullName>John Doe</fullName>
+            <emailAddress>john.doe@email.com</emailAddress>
             <contactPhone>3155555555</contactPhone>
             <dniType>CC</dniType>
-            <dniNumber>9589714725</dniNumber>
+            <dniNumber>123456789</dniNumber>
             <billingAddress>
                 <country>CO</country>
                 <state>DC</state>
                 <city>Bogotá</city>
                 <postalCode>110111</postalCode>
-                <street1>46217 Nikolaus Mills</street1>
-                <street2>28333 Webster Islands</street2>
-                <phone>6016540721</phone>
+                <street1>Calle 100</street1>
+                <street2>Cra 9</street2>
+                <phone>6011234567</phone>
             </billingAddress>
         </payer>
         <creditCard>
             <name>APPROVED</name>
             <number>5570898637920584</number>
-            <expirationDate>2025/02</expirationDate>
+            <expirationDate>2025/12</expirationDate>
             <securityCode>777</securityCode>
+            <processWithoutCvv2>false</processWithoutCvv2>
         </creditCard>
+        <extraParameters>
+            <INSTALLMENTS_NUMBER>1</INSTALLMENTS_NUMBER>
+            <RESPONSE_URL>https://merchant.shoppingresult.com</RESPONSE_URL>
+        </extraParameters>
+        <type>AUTHORIZATION_AND_CAPTURE</type>
+        <paymentMethod>MASTERCARD</paymentMethod>
+        <paymentCountry>CO</paymentCountry>
+        <ipAddress>45.6.10.241</ipAddress>
+        <userAgent>Mozilla/5.0 (Windows; U; Windows NT 6.0) AppleWebKit/531.2.0 (KHTML, like Gecko) Chrome/21.0.885.0 Safari/531.2.0</userAgent>
+        <cookie>sefejihsxeai037qhkwa3jex9</cookie>
+        <deviceSessionId>cb066830a3dcbdaf7234fd230d1959b0c6b3ae3ad5265490d55802a61738b537</deviceSessionId>
+        <integrationMethod>POST_API_v4_0</integrationMethod>
+        <req3DSAuthentication>true</req3DSAuthentication>
+        <source>WEB</source>
     </transaction>
+    <test>false</test>
 </request>
 
 ```

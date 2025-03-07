@@ -3,277 +3,333 @@ title: "VTEX"
 linkTitle: "VTEX"
 date: 2021-05-25T10:30:35-05:00
 description:
-  This article shows you the procedure to enable PayU on your VTEX website. 
+  This guide explains how to integrate PayU with your VTEX website. 
 weight: 5
 tags: ["subtopic"]
 ---
 
-VTEX is an enterprise digital commerce platform that allows you to create an online store with out-of-the-box capabilities fast. For more information, refer to official [VTEX webpage](https://vtex.com/).
+VTEX is an enterprise digital commerce platform that enables you to quickly create an online store with built-in capabilities. For more information, visit the official <a href="https://vtex.com" target="_blank">VTEX website</a>
 
 ## Prerequisites
-* You need an active account in PayU Latam.
-* You need an active account in PaymentsOS. If you don't have an account, click [here](https://control.paymentsos.com/signup) to create one.<br>All the merchants that require to integrate PayU with VTEX **must** have a PaymentsOS account in productive/live mode.
-* You require a VTEX account with sufficient rights and permissions to access the VTEX administrative panel. This account must have two-factor authentication enabled.
 
-{{% alert title="Note" color="info"%}}
-After the account is created, it will be set to test mode by default. To activate the account in productive/live mode, you must submit a request by contacting your account manager.
+* An active PayU Latam account.
+* An active PayU Enterprise (PaymentsOS) account. If you don’t have an account, click <a href="https://control.paymentsos.com/signup" target="_blank">here</a> to create one. The account must be set to production/live mode. For details on how to enable it, refer to [Activating Your PayU Enterprise Account](#activating-your-payu-enterprise-account-live-mode).
+* A VTEX account with sufficient rights and permissions to access the VTEX administrative panel. This account must have two-factor authentication enabled.
 
-Please ensure that your request includes the following information: 
-* Merchant ID of your LATAM account (refer to this [link](https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids) for its location).
-* PaymentsOS accountID, which you can find in the PaymentsOS control panel, as follows:
+## Availability by Country and Payment Methods
 
-![PrintScreen](/assets/VTEX/VTEX_30.png)
-{{% /alert %}}
+The table below outlines VTEX’s availability by country and the supported payment methods:
 
-## Configuration procedure
-To configure the payment methods in VTEX that our gateway processes, follow the steps below, which include 2 stages. Before proceeding, ensure you have met the prerequisites mentioned above.
+| Country | Credit Cards | Cash Payments | Other Methods |
+|-|-|-|-|
+| <img src="/assets/Argentina.png" width="20px"/> &nbsp;Argentina &nbsp; | Credit cards | Cash payments | - |
+| <img src="/assets/Brasil.png" width="20px"/> &nbsp;Brazil | AMEX, MasterCard, Visa | Boleto Bancário | - |
+| <img src="/assets/Colombia.png" width="20px"/> &nbsp;Colombia &nbsp; | AMEX, Codensa, Diners, MasterCard, Visa | Efecty, Su Red, bank reference | PSE |
+| <img src="/assets/Chile.png" width="20px"/> &nbsp;Chile | Credit cards | Cash payments | - |
+| <img src="/assets/Mexico.png" width="20px"/> &nbsp;Mexico | Credit cards | Cash payments | SPEI |
+| <img src="/assets/Peru.png" width="20px"/> &nbsp;Peru | AMEX, MasterCard, Visa | - | - |
 
-### 1. Configure your PaymentsOS account
-Integration of PayU Latam with VTEX occurs via PaymentsOS as a middleware. The initial step involves configuring the following items within PaymentsOS for your account:
+## Activating Your PayU Enterprise Account (Live Mode)
 
-* Provider configuration.
-* Business unit.
-* WebHook.
+By default, newly created accounts are set to test mode. To activate your account for live transactions, contact your account manager and submit a request.
 
-You can configure the items using one of the following options:
-* [Configure the account using Postman]({{< ref "#configure-the-account-using-postman" >}}).
-* [Configure the account manually using PaymentsOS dashboard]({{< ref "#configure-the-account-manually-using-paymentsos-dashboard" >}}).
+**Your request should include the following information:**
 
-#### Configure the account using Postman
+* **Merchant ID:** Locate your LATAM account’s Merchant ID. For details on how to find it, refer to the <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids" target="_blank">PayU Management Panel documentation</a>.
+* **Account ID:** You can find your Account ID in the PayU Enterprise control panel, as shown in the image below:
+<br>
+
+![PrintScreen](/assets/VTEX/vtex01.png)
+
+## Configuring Your PayU Enterprise Account
+
+To configure payment methods in VTEX for processing through our gateway, follow the steps below. The configuration consists of two stages. Before proceeding, ensure that you have met the prerequisites listed above.
+
+### 1. Initial Setup
+
+The integration of PayU Latam with VTEX is facilitated through PaymentsOS as middleware. The first step is to configure the following components within your PayU Enterprise account:
+
+* Provider configuration
+* Business unit
+* Webhook
+
+You can configure these components using one of the following methods:
+* [Configuring the account using Postman]({{< ref "#configuring-the-account-using-postman" >}}).
+* [Configuring the account manually using PayU Enterprise dashboard]({{< ref "#configuring-the-account-manually-using-payu-enterprise-dashboard" >}}).
+
+#### Configuring the Account Using Postman
+
 Follow these steps to configure your account using Postman:
 
-1. Click the button below to import our collection in Postman (you may need to refresh the page if the button does not work).
+1. Click the button below to import our Postman collection (refresh the page if the button does not work).
 
 {{< postman/postman_vtex2024 >}}
 <br>
 
-2. After you run the collection, you need to set the globals. Download the globals file <a href="/assets/globals/VTEX Hub.postman_globals.json" download>here</a>.
+2. After importing the collection, set the global variables. Download the globals file <a href="/assets/globals/VTEX Hub.postman_globals.json" download>here</a>.
 
-3. In the Postman collection, click _**Import**_ next to your workspace name and locate the json file recently downloaded.
+3. In Postman, click _**Import**_ next to your workspace name and select the downloaded JSON file.
 
-4. When finish, click _**Import**_.
+4. Click _**Import**_ to finalize the process.
 
-5. It is mandatory to run the collection methods in the order displayed. First, click the `POST` method called `1. Login` and go to _**Body**_ tab.
+5. Run the collection methods in the displayed order. First, select the `POST` method called `1. Login`, then navigate to the _**Body**_ tab.
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_01.png)
 
-6. Provide the _**email**_ and _**password**_ of your PaymentsOS account. Then, click _**Send**_.
+6. Enter your **email** and **password** for your PayU Enterprise account, then click _**Send**_. If the login is successful, the authentication data will be set for the next method.
 
-7. If the login was successful, the authentication data is set for the second method.<br>Click the `GET` method `2. Retrieve PayU Latam ID`.
+7. Click the `GET` method `2. Retrieve PayU Latam ID`.
 
-8. In the top right corner, click the eye icon and locate the `env` parameter. Then, click the pencil icon and set `test` if you are processing in the test environment and `live` otherwise.
+8. In the top-right corner, click the eye icon to locate the `env` parameter. Click the pencil icon and set it to `test` for the test environment or `live` for production.
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_02.png)
 
-9. Once configured, click _**Send**_.
+9. Click _**Send**_ to proceed.
 
-10. Click the `POST` method `3. Create Provider Configuration`, this method creates the _**Provider Configuration**_ in PaymentsOS. Then, go to _**Body**_ tab. 
+10. Next, configure the provider. Select the `POST` method `3. Create Provider Configuration` and navigate to the _**Body**_ tab. 
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_03.png)
 
-Provide the following information:
+Fill in the following details:
 
 | Parameter | Description |
 |---|---|
-| name | Provide a to the _**Provider Configuration**_. |
-| description | Provide a meaningful description for the _**Provider Configuration**_.<br>This value is optional. |
-| configuration_data.apiLogin | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| name | Name of the _**Provider Configuration**_. |
+| description | Meaningful description (optional). |
+| configuration_data.apiLogin | Username or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | configuration_data.apiKey | Unique key of your commerce. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| configuration_data.accountId | ID of the PayU account according to the country where you want to sell. |
-| configuration_data.merchantId | ID of your commerce in PayU Latam. |
-| configuration_data.paymentCountry | Processing country in format ISO 3166 Alpha-3. |
-| configuration_data.partnerID | PayU identifier. Enter `ZOOZ_VTEX_V2` as the value. |
-| configuration_data.cashRedirect | Send `True` to ensure proper order flow with cash payment methods in VTEX. <br> **Note:** This configuration is important for all merchants that process cash payments with VTEX. |
+| configuration_data.accountId | ID of the PayU account for the target country. |
+| configuration_data.merchantId | Merchant ID in PayU Latam. |
+| configuration_data.paymentCountry | Processing country in ISO 3166 Alpha-3 format. |
+| configuration_data.partnerID | PayU identifier. Enter `ZOOZ_VTEX_V2`. |
+| configuration_data.cashRedirect | Set to `true` to ensure proper order flow with cash payments in VTEX. |
 
 {{% alert title="Note" color="info"%}}
-The parameter `provider_id` is  automatically set by the response of the method `2. Retrieve PayU Latam ID`. Do not change this value.
+
+The `provider_id` parameter is automatically assigned by the response from method `2. Retrieve PayU Latam ID`. Do not modify this value.
+
 {{% /alert %}}  
 
-11. Click the `POST` method `4. Create Business Unit` this method creates the _**Business Unit**_ in PaymentsOS. Then, go to _**Body**_ tab. 
+11. Configure the Business Unit by selecting the `POST` method `4. Create Business Unit`, then navigating to the _**Body**_ tab. 
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_04.png)
 
-Provide the following information:
+Fill in the following details:
 
 | Parameter | Description |
 |---|---|
-| id | Identifier of the _**Business Unit**_. This id must be in lowercase and without blank spaces.<br>_Make sure you have provided the correct value for the id as this cannot be updated later_. |
-| description | Provide a meaningful description for the _**Business Unit**_.<br>This value is optional. |
+| id | Identifier of the Business Unit (lowercase, no spaces). This value cannot be changed later. |
+| description | Meaningful description (optional). |
 
 {{% alert title="Note" color="info"%}}
-The parameter `default_processor` is  automatically set by the response of the method `3. Create Provider Configuration`. Do not change this value.
+
+ The `default_processor` parameter is automatically assigned by the response from method `3. Create Provider Configuration`. Do not modify this value.
+
 {{% /alert %}}  
  
-12. Click the `POST` method `5. Create Webhook` this method creates the _**WebHook**_ in PaymentsOS. This WebHook is the confirmation URL that will receive the notifications sent by VTEX when a transaction changes its state.<br>Then, go to _**Body**_ tab.
+12. Create the Webhook by selecting the `POST` method `5. Create Webhook`, then navigating to the _**Body**_ tab.
+
+{{% alert title="Note" color="info"%}}
+
+The webhook serves as the confirmation URL that receives notifications from VTEX when a transaction changes status.
+
+{{% /alert %}}
 
 ![PrintScreen](/assets/VTEX/Postman/VTEX_Postman_05.png)
 
-Set the `endpoint` parameter with the following values according to your environment.
+Set the `endpoint` parameter based on your environment:
 * Test: ```https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
 * Live: ```https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
 
-Leave the other parameters with their default value.
+Leave all other parameters at their default values.
 
-At this point, your PaymentsOS account has been configured as a middleware, the next step is the [configuration of the VTEX provider]({{< ref "#2-configure-the-vtex-provider" >}}).
+At this point, your PayU Enterprise account using PaymentsOS is configured. The next step is [Configuring the VTEX Provider]({{< ref "#2-configuring-the-vtex-provider" >}}).
 
-#### Configure the account manually using PaymentsOS dashboard
-Follow these steps to configure your account using PaymentsOS dashboard.
+#### Configuring the Account Manually Using PayU Enterprise Dashboard
 
-1. Create the Provider configuration.<br>
-In the PaymentsOS dashboard, expand the _**Account**_ menu, then select _**Services**_.
+Follow these steps to configure your account using PayU Enterprise dashboard.
 
-![PrintScreen](/assets/VTEX/VTEX_01.png)
+1. **Create the Provider Configuration**
 
-Use the _**Search**_ field in the _**Create a new Provider configuration**_ section and enter _PayU_ to find the _PayU Latam_ provider.
+<span style="color: #A6C307; font-weight: bold;">1.1</span> In the PayU Enterprise dashboard, expand the _**Configurations**_ menu and select _**Providers**_.
 
-![PrintScreen](/assets/VTEX/VTEX_02.png)
+![PrintScreen](/assets/VTEX/vtex02.png)
 
-Provide the following information for the _**Provider Configuration**_:
+<span style="color: #A6C307; font-weight: bold;">1.2</span>  Click the module corresponding to the country or division for which you want to configure the provider.
 
-| Parameter | Description |
+Fill in the following fields for the _**Provider Configuration**_:
+
+| Field | Description |
 |---|---|
-| Configuration Name | Provide a name to the _**Provider Configuration**_. |
-| Description | Provide a meaningful description for the _**Provider Configuration**_.<br>This value is optional. |
-| apiLogin | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| apiKey| Unique key of your commerce. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| accountId | ID of the PayU account according to the country where you want to sell. |
-| merchantId | ID of your commerce in PayU Latam. |
-| paymentCountry | Processing country in format ISO 3166 Alpha-3. |
-| cashRedirect | Select `True` to ensure the correct order flow with cash payment methods in VTEX. <br> **Note:** This configuration is important for all merchants that process cash payments with VTEX. |
+| Configuration Name |  Enter a name for the _**Provider Configuration**_. |
+| Description | Provide a meaningful description (optional). |
+| apiLogin | The user or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| apiKey| The unique key of your commerce. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| accountId | The ID of the PayU account based on the country where you operate. |
+| merchantId | The ID of your commerce in PayU Latam. |
+| paymentCountry | The processing country in ISO 3166 Alpha-3 format. |
+| cashRedirect | Select `true` to ensure the correct order flow for cash payments in VTEX.<br> **Note:** This configuration is essential for merchants processing cash payments with VTEX. |
 
-Once done, click _**Create**_.
+<span style="color: #A6C307; font-weight: bold;">1.3</span> Click _**Create**_.
 
-![PrintScreen](/assets/VTEX/VTEX34EN.png)
+<img src="/assets/VTEX/vtex03.png" alt="PrintScreen" style="width: 450px; height: auto;">
+<br>
 
-2. Create the Business Unit.<br>
-Back in the PaymentsOS dashboard, expand the _**Account**_ menu, then select _**Business Units**_.
+2. **Create the Business Unit**
 
-![PrintScreen](/assets/VTEX/VTEX_04.png)
+<span style="color: #A6C307; font-weight: bold;">2.1</span> Back in the dashboard, expand the _**Configurations**_ menu and select _**Business Units**_.
 
-Click the _**Create Business Unit**_ button and provide the following information:
+<img src="/assets/VTEX/vtex04.png" alt="PrintScreen" style="width: 400px; height: auto;">
+<br>
 
-| Parameter | Description |
+<span style="color: #A6C307; font-weight: bold;">2.2</span> Click _**Create Business Unit**_ and complete the following fields:
+<br>
+
+| Field | Description |
 |---|---|
-| Business Unit Name | Name of the _**Business Unit**_. This name must be in lowercase and without blank spaces.<br>_Make sure you have provided the correct name as this cannot be updated later_. |
-| description | Provide a meaningful description for the _**Business Unit**_.<br>This value is optional. |
+| Business Unit Name | The name of the _**Business Unit**_. It must be in lowercase and contain no spaces.<br> _This value cannot be changed later, so ensure accuracy._ |
+| Description | Provide a meaningful description (optional). |
 
-In the _**Choose a default Provider for this Business Unit**_ section, select the _**Provider Configuration**_ created in the last step.<br>When finish, click _**Create**_.
+<span style="color: #A6C307; font-weight: bold;">2.3</span>  In the _**Choose a Default Provider for This Business Unit**_ section, select the _**Provider Configuration**_ created in Step 1. Once done, click _**Create**_.
 
-![PrintScreen](/assets/VTEX/VTEX_05.png)
+<img src="/assets/VTEX/vtex05.png" alt="PrintScreen" style="width: 700px; height: auto;">
+<br>
 
-3. Create the Webhook. This WebHook is the confirmation URL that will receive the notifications sent by VTEX when a transaction changes its state.<br>
-
-Back in the PaymentsOS dashboard, expand the _**Account**_ menu, then select _**Webhooks**_.
-
-![PrintScreen](/assets/VTEX/VTEX_06.png)
-
-Click the _**Create a Webhook Endpoint**_ button and provide the URL according to your environment:
-* Test: ```https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
-* Live: ```https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
-
-In the _**Payment Events Alert**_ table, enable the _**Update**_ event for _**Authorization**_ and _**Charge**_. Furthermore, select in the _**Associated Business Units**_ combo the _**Business Unit**_ created in the last step.<br>When finish, click _**Create**_.
-
-![PrintScreen](/assets/VTEX/VTEX_07.png)
-
-At this point, your PaymentsOS account has been configured as a middleware, the next step is the [configuration of the VTEX provider]({{< ref "#2-configure-the-vtex-provider" >}}).
-
-### 2. Configure the VTEX provider
-Once you have configured your PaymentsOS account, the next step is the configuration of the VTEX provider per each payment method. For this step, it is mandatory that you have a valid user to access the VTEX admin.
-
-#### Configure the Gateway affiliation
-Before configuring the _**Gateway affiliation**_, make sure you have configured FingerPrint for PayU. To do so, refer to this [article](https://help.vtex.com/en/tutorial/configurar-fingerprint-para-payu).
-
-1. In the VTEX admin, expand the _**Payments**_ menu inside _**Transactions**_ group. Then, select _**Settings**_.
-
-![PrintScreen](/assets/VTEX/VTEX_08.png)
-
-2. Before configuring the Payment conditions, you must create a new provider. In the left panel, select _**Store Settings > Providers > New Provider**_:
-
-![PrintScreen](/assets/VTEX/VTEX35EN.png)
-
-3. Locate _PayU_, and select _**PayUv2**_:
-
-![PrintScreen](/assets/VTEX/VTEX36EN.png)
-
-{{% alert title="Important" color="warning"%}}
-Make sure you have selected the _**PayUv2**_ connector, the procedure explained in this guide applies specifically to this connector.
-{{% /alert %}}  
-
-4. In the connector configuration, you must install the connector by clicking the _**Install app**_ button. Then, provide the following information for the connector.
-
-![PrintScreen](/assets/VTEX/VTEX33ES.png)
+3. **Create the Webhook**
 
 {{% alert title="Note" color="info"%}}
-The information of the connector can be obtained either:
-* Using the Postman collection.<br>Run the **Retrieve Authentication Keys** method setting the global parameter `env` as `test` or `live` according to your processing environment.
-* Using the PaymentsOS dashboard.<br>Go to _**Account**_ > _**Business Units**_ and select the Business unit you create in the [previous]({{< ref "#1-configure-your-paymentsos-account" >}}) step. Recall that you must use the select at the top to choose the processing environment.<br>Some values are hidden by default, click the eye icon to display them.
+
+The webhook serves as the confirmation URL that receives notifications from VTEX when a transaction changes status.
+
+{{% /alert %}}
+
+<span style="color: #A6C307; font-weight: bold;">3.1</span> Back in the dashboard, expand the _**Configurations**_ menu and select _**Webhooks**_.
+
+<img src="/assets/VTEX/vtex06.png" alt="PrintScreen" style="width: 400px; height: auto;">
+<br>
+
+<span style="color: #A6C307; font-weight: bold;">3.2</span>  Click _**Create a Webhook Endpoint**_ and enter the appropriate URL based on your environment:
+
+* Test: ```https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
+* Live: ```https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook```
+
+<span style="color: #A6C307; font-weight: bold;">3.3</span> In the _**Payment Event Alerts**_ table, enable the _**Update**_ slider for _**Authorization**_ and _**Charge**_. Then, in the _**Associated Business Units**_ field, enter the _**Business Unit**_ created in the previous step. Finally, click _**Create**_.
+
+<img src="/assets/VTEX/vtex07.png" alt="PrintScreen" style="width: 600px; height: auto;">
+<br>
+
+At this point, your PayU Enterprise account using PaymentsOS is fully configured. The next step is [configuring the VTEX provider]({{< ref "#2-configuring-the-vtex-provider" >}}).
+
+### 2. Configuring the VTEX Provider
+
+Once you have configured your PayU Enterprise account, the next step is to configure the VTEX provider for each payment method. To proceed, you must have a valid user account to access the VTEX admin.
+
+#### Creating a New Provider
+
+{{% alert title="Note" color="info"%}}
+
+Before creating the new provider, make sure you have configured fingerprint for PayU. To do so, refer to this [guide](https://help.vtex.com/en/tutorial/configurar-fingerprint-para-payu).
+
+{{% /alert %}}
+
+1. In the left panel, select _**Store Settings > Providers > New Provider**_:
+
+![PrintScreen](/assets/VTEX/vtex08.png)
+
+2. Locate _PayU_, and select _**PayUv2**_:
+
+![PrintScreen](/assets/VTEX/vtex09.png)
+
+{{% alert title="Important" color="warning"%}}
+
+Ensure you select the _**PayUv2**_ connector, as this guide applies specifically to this version.
+
+{{% /alert %}}  
+
+3. In the connector configuration, install the connector by clicking the _**Install app**_ button. Then, complete the following fields:
+
+![PrintScreen](/assets/VTEX/vtex10.png)
+
+{{% alert title="Note" color="info"%}}
+
+Connector information can be obtained from either:
+* **Postman collection:** Run the **Retrieve Authentication Keys** method, setting the global parameter `env` to `test` or `live`, depending on your processing environment.
+* **PayU Enterprise dashboard:** Navigate to _**Account**_ > _**Business Units**_, and select the Business Unit created in [Configuring Your PayU Enterprise Account]({{< ref "#configuring-your-payu-enterprise-account" >}}). Use the selector at the top to choose the processing environment.<br>Some values are hidden by default; click the eye icon to reveal them.
+
 {{% /alert %}} 
 
 | Field | Description |
 |---|---|
-| Affiliation name | Name you want to set to identify the _**Gateway affiliation**_. |
-| Environment selector | Choose the environment where you want to create the transactions.<br>According to the selection you make here, you must provide the other parameters selecting the same environment in PaymentsOS. |
+| Affiliation name | The name used to identify the _**Gateway affiliation**_. |
+| Environment selector | Select the environment for processing transactions.<br>Ensure that all parameters match the selected environment in PayU Enterprise. |
 | Application Key | App ID of the _**Business Unit**_. |
 | Application Token | Private API Key of the _**Business Unit**_. |
-| Payment capture | Select how you want to perform the settlement (charge) in your affiliation.<br><ul style="margin-bottom: initial;"><li>For one-step flow, select `Automatic capture immediately after payment authorization`.</li><li>For two-step flow, select `Deactivated: Not automatically captured` to execute the settlement once you invoice the order.</li><li>Select `Scheduled: Schedules the automatic capture` to configure a time in hours to automatically capture the order.</li></ul><br>For more information about this parameter, refer to [Custom Auto Capture Feature](https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature) in the developers documentation.<br>The default value for this option is seven (7) days after the approval. |
-| Scheduled time frame in hours for automatic capture | This field appears when selecting `Scheduled: Schedules the automatic capture` as the Payment capture method; select the automatic capture time frame you want to configure according to your own configuration. This value must be integer, thus, no decimals are permitted. |
-| Tipo Autorizacion | Choose if your payment transactions are executed in using one-step or two-step flow.<br><ul style="margin-bottom: initial;"><li>For one-step flow, select `Autorizacion y Captura`.</li><li>For two-step flow, select `Pre-Autorizacion`.</li></ul><br>Refer to the following [link]({{< ref "payments.md#payment-flows" >}}) to learn more about the Payment flows. |
+| Payment capture | Choose how to settle (charge) payments:<br><ul style="margin-bottom: initial;"><li>For a one-step flow, select `Automatic capture immediately after payment authorization`.</li><li>For a two-step flow, select `Deactivated: Not automatically captured` to settle payments upon invoicing.</li><li>To schedule automatic capture, select `Scheduled: Schedules the automatic capture`, and define a capture timeframe in hours.</li></ul><br>For more details, refer to [Custom Auto Capture Feature](https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature).<br>The default auto-capture timeframe is seven (7) days after approval. |
+| Scheduled time frame in hours for automatic capture | Available when `Scheduled: Schedules the automatic capture` is selected. Define the automatic capture timeframe (integer values only; no decimals allowed). |
+| Tipo Autorizacion | Choose between one-step and two-step payment flows:<br><ul style="margin-bottom: initial;"><li>For a one-step flow, select `Autorización y Captura`.</li><li>For a two-step flow, select `Pre-Autorización`.</li></ul><br>Refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}) for more information. |
 | Public Key | Public API Key of the _**Business Unit**_. |
-| Idioma | Select the language in which you want the system to issue the orders, the supported languages are:<br><ul style="margin-bottom: initial;"><li>Spanish</li><li>English</li><li>Portuguese</li></ul> |
-| Expiración pago (días) | Refers to the number of days you wish to customize for cash payments. <br> **Important:** This value must match the value configured in the payment method in the  _**Promissory note validity**_ field explained in the [Configure cash payment methods]({{< ref "#configure-cash-payment-methods" >}}) section of this documentation. |
-| Enable payout split and send payment recipients? | Select `No` for this field. |
+| Idioma | Select the language for order issuance. Supported languages:<br><ul style="margin-bottom: initial;"><li>Spanish</li><li>English</li><li>Portuguese</li></ul> |
+| Expiración pago (días) | Defines the validity period for cash payments.<br>**Important:** This value must match the _**Promissory note validity**_ field in the [Configure cash payment methods]({{< ref "#configuring-cash-payment-methods" >}}) section. |
+| Enable payout split and send payment recipients? | Select `No`. |
 
-Once done, click _**Save**_.
+4. Click _**Save**_ to complete the setup.
 
-#### Configure Payment methods
-Configure the payment methods to be displayed on the website for checkout. [Consult our available Payment methods]({{< ref "Select-your-payment-method.md" >}}).
+#### Configuring Payment Methods
 
-{{% alert title="Important" color="warning"%}}
-* PIX is not available for Brazil using VTEX.
-* Changes to payment conditions can take up to 10 minutes to apply to the checkout flow.
-{{% /alert %}}
-
-##### Configure credit or debit cards.
-According to your [processing country]({{< ref "Select-your-payment-method.md" >}}), you can configure the affiliation you create to use credit or debit cards<sup>*</sup>. Follow the instructions below to add this payment method to your VTEX shop.
-
-<sup>*</sup> _Debit cards usage depends on your processing country._
+Configure the payment methods that will be displayed on the website during checkout. [View the available payment methods]({{< ref "Select-your-payment-method.md" >}}).
 
 {{% alert title="Important" color="warning"%}}
-Click [here](#configure-co-branded-or-private-labels-cards) if you want to know how to configure Co-branded or Private labels cards 
+
+* PIX is not available for Brazil when using VTEX.
+* Changes to payment conditions may take up to 10 minutes to reflect in the checkout flow.
+
 {{% /alert %}}
 
-1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_), select the _**Payment conditions**_ tab and click the plus icon.
+##### Configuring Credit or Debit Cards
 
-![PrintScreen](/assets/VTEX/VTEX_12.png)
+Depending on your [processing country]({{< ref "Select-your-payment-method.md" >}}), you can configure the affiliation you created to use credit or debit cards<sup>*</sup>. Follow the steps below to add this payment method to your VTEX store.
 
-2. Select the Payment method you want to include. Payments methods are grouped by their type.<br>For the sake of our example, we select _**American Express**_ in the Credit Card section.
+<sup>*</sup> _The availability of debit cards depends on your processing country._
 
-![PrintScreen](/assets/VTEX/VTEX_13.png)
+{{% alert title="Important" color="warning"%}}
 
-3. Provide the following information.
-* **Rule Name (to help you quickly identify)**: provide a meaningful name for the payment condition next to the payment method you selected.
-* **Status**: set the status of the payment condition. You can only have **one** active payment condition per payment method.
-* **Process with affiliation**: select the gateway affiliation configured before.
-* **Prepaid in full or in installments?**: select _**Prepaid in full**_<sup>\*</sup>.
+Click [here](#configuring-co-branded-or-private-label-cards) to learn how to configure Co-branded or Private Label cards. 
 
-![PrintScreen](/assets/VTEX/VTEX_14.png)
+{{% /alert %}}
 
-4. Click _**Save**_. When the payment condition has been created, it is listed in the _**Payment conditions**_ tab.
+1. In the left panel, select _**Transactions**_ > _**Payments**_ > _**Settings**_. Select the _**Payment Conditions**_ tab and click the plus icon.
 
-![PrintScreen](/assets/VTEX/VTEX_15.png)
+![PrintScreen](/assets/VTEX/vtex11.png)
 
-##### Configure Co-branded or Private labels cards.
-Co-branded and Private label cards are credit cards issued by an store or brand which can be issued in partnership with a network such as AMEX, VISA, MasterCard, etc. Follow the instructions below to add this payment method to your VTEX shop.
+2. Select the payment method you want to add. Payment methods are grouped by type.<br>For this example, we select _**American Express**_ under the Credit Card section.
 
-1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_), go to _**Custom payments**_ tab.
+![PrintScreen](/assets/VTEX/vtex12.png)
 
-![PrintScreen](/assets/VTEX/VTEX_26.png)
+3. Provide the following details:
+* **Rule Name (to help you quickly identify)**: Enter a descriptive name for the payment condition.
+* **Status**: Set the payment condition's status. You can have **only one** active payment condition per payment method.
+* **Process with affiliation**: Select the previously configured gateway affiliation.
+* **Prepaid in full or in installments?**: Select _**Prepaid in full**_.
 
-2. In this tab, you have five (5) available space to configure both Co-branded and Private label cards. In this example, we will set up the Colombian card Codensa which is a Private label card.<br>Click in any of the available boxes in the _**Private labels**_ section.
+![PrintScreen](/assets/VTEX/vtex13.png)
 
-![PrintScreen](/assets/VTEX/VTEX_27.png)
+4. Click _**Save**_. The new payment condition will now be listed in the _**Payment Conditions**_ tab.
 
-3. Provide the following data of the card using the case displayed.
+![PrintScreen](/assets/VTEX/vtex14.png)
+
+##### Configuring Co-Branded or Private Label Cards
+
+Co-branded and private label cards are credit cards issued by a store or brand, sometimes in partnership with networks like AMEX, VISA, or MasterCard. Follow these steps to add this payment method to your VTEX store.
+
+1. In the left panel, select _**Transactions**_ > _**Payments**_ > _**Settings**_. Select the _**Custom Payments**_ tab.
+
+![PrintScreen](/assets/VTEX/vtex15.png)
+
+2. The _Custom Payments_ tab provides five (5) slots for configuring co-branded and private label cards. In this example, we configure the Colombian card Codensa, which is a private label card.<br>Click any available box in the _**Private Labels**_ section.
+
+![PrintScreen](/assets/VTEX/vtex16.png)
+
+3. Enter the following card details, maintaining the exact formatting:
 
 * **Name**: `Codensa`.
 * **Description**: `Codensa`
@@ -281,12 +337,14 @@ Co-branded and Private label cards are credit cards issued by an store or brand 
 * **Acquirer payment code**: `codensa`
 
 {{% alert title="Note" color="info"%}}
-For _Co-branded_ cards, you also need to select the card brand.
+
+ For _co-branded_ cards, you must also select the card brand.
+
 {{% /alert %}}
 
-<img src="/assets/VTEX/VTEX_28.png" alt="PrintScreen" width="60%"/><br>
+<img src="/assets/VTEX/vtex17.png" alt="PrintScreen" width="700px"/><br>
 
-The remaining values can be left as default. Use the following values to configure Co-branded and Private label cards.
+ Use the table below to configure co-branded and private label cards, you can leave the remaining values with their default input.
 
 | Country | Name | Description | BIN ranges | Acquirer payment code |
 |:-:|---|---|---|---|
@@ -297,136 +355,175 @@ The remaining values can be left as default. Use the following values to configu
 | <img src="/assets/Argentina.png" width="25px"/> | Shopping | Shopping | `603488` | shopping |
 | <img src="/assets/Colombia.png" width="25px"/> | Codensa | Codensa | `590712-590712` | codensa |
 
-For more information about how to configure [Co-branded](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-cobranded--jrkLK41IjuquUmyKUi86Q) and [Private label](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-bandeira-propria--428FgVdSGQUeAOoogkaIw4) cards, refer to the VTEX Help Center.
+For more details on configuring [co-branded](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-cobranded--jrkLK41IjuquUmyKUi86Q) and [private label](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-bandeira-propria--428FgVdSGQUeAOoogkaIw4) cards, visit the VTEX Help Center.
 
-4. Click _**Save**_. When the custom payment has been created, you are redirected to the option to create a new _**Payment conditions**_. This payment condition is created as explained in [Configure credit or debit cards](#configure-credit-or-debit-cards) section.
+4. Click _**Save**_. After creating the custom payment, you will be redirected to the option for creating a _**Payment Condition**_. Follow the instructions in the [Configuring Credit or Debit Cards](#configuring-credit-or-debit-cards) section to complete this step.
 
-##### Configure cash payment methods.
-As cash payments require that your customer pays in physical offices, you can configure this payment method in VTEX as promissory notes (Notes payables). 
+##### Configuring Cash Payment Methods
+
+Since cash payments require customers to pay at physical locations, you can configure this payment method in VTEX as promissory notes (Notes Payables). 
 
 {{% alert title="Note" color="info"%}}
-For _Boleto bancario_ in Brazil, this procedure it is not required, just locate and configure this payment method as a Payment condition.
+
+For _Boleto Bancário_ in Brazil, this procedure is not required. Simply locate and configure this payment method as a payment condition.
+
 {{% /alert %}}
 
-When you configure a cash payment method, your customers are redirected to the PayU's checkout so they can download the payment voucher and pay it in the respective physical office. Follow the instructions below to add this payment method to your VTEX shop.
+When you configure a cash payment method, customers are redirected to PayU's checkout, where they can download the payment voucher and pay it at the corresponding physical location. Follow the instructions below to add this payment method to your VTEX shop.
 
-1. In the Settings option (_**Transactions**_ > _**Payments**_ > _**Settings**_), go to _**Custom payments**_ tab.
+1. In the left panel, select _**Transactions**_ > _**Payments**_ > _**Settings**_. Select the _**Custom Payments**_ tab.
 
-![PrintScreen](/assets/VTEX/VTEX_26.png)
+![PrintScreen](/assets/VTEX/vtex15.png)
 
-2. In this tab, you have five (5) available space to configure Cash payments. In this example, we will set up `OXXO`, a Mexican cash payment method.<br>Click in any of the available boxes in the _**Notes payables**_ section.
+2. In this tab, you have five (5) available slots to configure cash payment methods. In this example, we will set up OXXO, a Mexican cash payment method.<br>Click any available box in the _**Notes Payables**_ section.
 
-![PrintScreen](/assets/VTEX/VTEX_29.png)
+![PrintScreen](/assets/VTEX/vtex18.png)
 
-3. Provide the following data for the cash payment.
+3. Provide the following information:
 
-* **Name**: In this parameter, you need to use the value displayed [here]({{< ref "select-your-payment-method.html" >}}) in the column `paymentMethod parameter`. For the sake of our example, set `OXXO`.
-* **Description**: Provide the description you want to show when the customer selects this payment method. This parameter is optional.
-* **Notes payable expiration date**: provide the number of days before the cash payment expires. By default, this value is assigned to 7 days. Keep in mind that, to avoid processing problems, this value must match the value selected in the _**Payment expiration (days)**_ field that you configured in the VTEX affiliation.
+* **Name**: Use the value listed [here]({{< ref "select-your-payment-method.html" >}}) in the `paymentMethod parameter` column. For this example, enter `OXXO`.
+   * **Description**: Enter a description to display when the customer selects this payment method (optional).
+   * **Notes Payable Expiration Date**: Specify the number of days before the cash payment expires. The default is 7 days. Ensure this value matches the _**Payment Expiration (days)**_ setting configured in the VTEX affiliation to prevent processing issues.
 
-Leave the other parameters with their default values. 
+Leave the remaining fields with their default values. 
 
-4. Click _**Save**_. When the custom payment has been created, you are redirected to the option to create a new _**Payment conditions**_. This payment condition is created as explained in [Configure credit or debit cards](#configure-credit-or-debit-cards) section.
+4. Click _**Save**_. Once the custom payment is created, you will be redirected to set up a new _**Payment Condition**_. Follow the instructions in the [Configuring Credit or Debit Cards](#configuring-credit-or-debit-cards) section.
 
-##### Configure PSE
+##### Configuring PSE
+
 **Prerequisites:**
-*	This payment method only applies to merchants that have processing in Colombia.
-*	To offer PSE as a payment method, you must first make sure to install the **PSE App developed by VTEX**. If you have not already done so, go to **Account Settings > Applications > App Store** and search for **Banks for PSE**. <br>In case you cannot find the App in the store, you can request its installation from the VTEX team through a ticket at [VTEX Support](https://help.vtex.com/en/support).
-* In case you have a VTEX Legacy integration, please note that VTEX must perform an additional configuration for you to set up the payment method. Contact your VTEX agent or request help through [VTEX Support](https://help.vtex.com/en/support).
+*	This payment method is only available for merchants processing in Colombia.
+* To offer PSE as a payment method, you must install the **PSE App developed by VTEX**. If you haven't done so, go to **Account Settings > Applications > App Store** and search for **Banks for PSE**. <br>If the app is unavailable in the store, you can request its installation from the VTEX team by submitting a ticket at [VTEX Support](https://help.vtex.com/en/support).
+* If you are using a VTEX Legacy integration, VTEX must perform an additional configuration before you can set up this payment method. Contact your VTEX representative or request assistance via [VTEX Support](https://help.vtex.com/en/support).
 
 {{% alert title="Note" color="info"%}} 
-You can complement this section review with the information available at VTEX sites: [PSE general information](https://help.vtex.com/en/announcements/pse-medio-de-pago-para-clientes-en-colombia--4T22CHOcEV3Nb2RtkJZOFB), [Setting up payments in VTEX with PSE](https://help.vtex.com/en/tutorial/configurar-pago-con-pse--7dRChubn7TqdEyWrHQEQp6),  [Banks for PSE app](https://apps.vtex.com/vtexlatam-banks-for-pse/p).  
+
+For additional information, refer to the following VTEX resources:
+- [PSE General Information](https://help.vtex.com/en/announcements/pse-medio-de-pago-para-clientes-en-colombia--4T22CHOcEV3Nb2RtkJZOFB)
+- [Setting Up PSE Payments in VTEX](https://help.vtex.com/en/tutorial/configurar-pago-con-pse--7dRChubn7TqdEyWrHQEQp6)
+- [Banks for PSE App](https://apps.vtex.com/vtexlatam-banks-for-pse/p)  
+
 {{% /alert %}}
 
-1. To configure PSE, access the administration panel of your VTEX platform and navigate to **Store Settings > Payments > Settings > Payment Conditions**. Then, proceed as follows:
-*	Click on the _+_ button.
-*	Under the _Other_ category, locate _PSE_.
-*	Fill out the fields displayed on the screen:
-    -	Enter a descriptive name for the rule to identify this payment method.
-    -	Choose the affiliation configured to process payments with PayUV2 from the _Process with affiliation_ dropdown menu.
-    -	Activate the payment condition in the _Status_ field.
-    -	Click _Save_ to apply the settings.
+1. To configure PSE, access the VTEX administration panel and navigate to _**Store Settings > Payments > Settings > Payment Conditions**_. Then, follow these steps:
 
-<video width="630" height="300" controls>
-	<source src="/assets/VTEX/Videos/Video01.mp4" type="video/mp4"> 	
-</video>
+&nbsp; <span style="color: #A6C307; font-weight: bold;">1.1</span> Click the _+_ button.
 
-<br>
-</br>
+&nbsp; <span style="color: #A6C307; font-weight: bold;">1.2</span> Under the _Other_ category, locate _PSE_.
 
-2. Configure the Banks for PSE app with your PayU credentials. To do so, follow these steps:
+&nbsp; <span style="color: #A6C307; font-weight: bold;">1.3</span> Complete the following fields:
 
-*	Login to the administration panel of your VTEX platform and access **Apps > Installed apps > Banks for PSE**.
-*	Complete the form and click _Save_.
+&nbsp;&nbsp;&nbsp; <span style="color: #A6C307; font-weight: bold;">•</span> **Rule Name**: Enter a descriptive name to identify this payment method. <br>
+&nbsp;&nbsp;&nbsp; <span style="color: #A6C307; font-weight: bold;">•</span> **Process with Affiliation**: Select the gateway affiliation configured to process payments with PayUV2. <br>
+&nbsp;&nbsp;&nbsp; <span style="color: #A6C307; font-weight: bold;">•</span> **Status**: Activate the payment condition.
+
+&nbsp; <span style="color: #A6C307; font-weight: bold;">1.4</span> Click _**Save**_ to apply the settings.
+
+   <video width="630" height="300" controls>
+      <source src="/assets/VTEX/Videos/Video01.mp4" type="video/mp4">  
+   </video>
+
+<p>
+
+2. Configure the Banks for PSE app with your PayU credentials by following these steps:
+
+&nbsp; <span style="color: #A6C307; font-weight: bold;">2.1</span> Log in to the VTEX administration panel and go to _**Apps > Installed Apps > Banks for PSE**_.
+
+&nbsp; <span style="color: #A6C307; font-weight: bold;">2.2</span> Complete the form and click _**Save**_.
 
 | Field | Description |
 |---|---|
-| Connector Used to process the PSE: | Select _PayUv2_ from the dropdown list. |
-| Application Code | **Business Unit** Private API Key. Remember that this data can be found in the PaymentsOS Control Panel as explained [above](https://developers.payulatam.com/latam/en/docs/tools/shopping-cart-plugins/vtex.html#configure-the-gateway-affiliation). <br> **Note:** This field is equivalent to the _Application Token_ of the VTEX affiliation. |
-| Application Key | ID of the **Business Unit application**. Remember that this data can be found in the PaymentsOS Control Panel as explained [above](https://developers.payulatam.com/latam/en/docs/tools/shopping-cart-plugins/vtex.html#configure-the-gateway-affiliation). <br> **Note:** This field is equivalent to the _Application Key_ of the VTEX affiliation. |
+| **Connector Used to Process the PSE** | Select _PayUv2_ from the dropdown list. |
+| **Application Code** | Enter the **Business Unit** Private API Key. This information is available in the PayU Enterprise Control Panel, as explained [here](https://developers.payulatam.com/latam/en/docs/tools/shopping-cart-plugins/vtex.html#configure-the-gateway-affiliation). <br> **Note:** This field corresponds to the _Application Token_ of the VTEX affiliation. |
+| **Application Key** | Enter the ID of the **Business Unit Application**. This information is available in the PayU Enterprise Control Panel, as explained [here](https://developers.payulatam.com/latam/en/docs/tools/shopping-cart-plugins/vtex.html#configure-the-gateway-affiliation). <br> **Note:** This field corresponds to the _Application Key_ of the VTEX affiliation. |
 
-* Once you complete the configuration, you can perform transactions in a productive environment with PSE.
+<img src="/assets/VTEX/vtex19.png" alt="PrintScreen" width="500px"/><br>
 
-![PrintScreen](/assets/VTEX/VTEX_31.png)
+* Once the configuration is complete, you can process transactions in a production environment with PSE.
 
 {{% alert title="Important" color="warning"%}}
-To test PSE (using PSE in Sandbox environment), ensure that your VTEX membership is in test mode and that you have an additional VTEX configuration specific to PSE. For further guidance, please reach out to your implementing agency or [VTEX Support](https://help.vtex.com/en/support). 
+
+To test PSE in a sandbox environment, ensure that your VTEX affiliation is in test mode and that you have an additional VTEX configuration specific to PSE. For further guidance, contact your implementation agency or [VTEX Support](https://help.vtex.com/en/support). 
+
 {{% /alert %}}
 
-## Testing the integration
-Once you have configured the Payment conditions for your payment methods, it is strongly recommended to test your integration before starting to receive real transactions.
+## Testing the Integration
 
-**Prerequisites for successful testing:**
-*	Make sure your PaymentsOS account is in `TEST` mode.
-*	Check that the _**Environment Selector**_ in your _**VTEX Gateway Affiliation**_ is in `TEST` mode.
-*	Be sure to use the appropriate credentials for the test environment when you are setting up the _**VTEX Gateway Affiliation**_. Remember that you can find the test credentials [here](https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html). 
-*	Remember that once you perform your tests, you must modify the above points with the production information (PaymentsOS account, environment selector in VTEX affiliation, and Credentials configured in VTEX affiliation).
+Once you have configured the payment conditions for your payment methods, it is strongly recommended to test your integration before processing real transactions.
 
-1. In the VTEX admin, click _**VISIT STORE**_ at the top panel.
+### Prerequisites for Successful Testing:
 
-![PrintScreen](/assets/VTEX/VTEX_16.png)
+* Ensure your PayU Enterprise account is in `TEST` mode.
+* Verify that the _**Environment Selector**_ in your _**VTEX Gateway Affiliation**_ is set to `TEST` mode.
+* Use the appropriate test credentials when setting up the _**VTEX Gateway Affiliation**_. You can find the test credentials [here](https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html).
+* After completing your tests, update the configuration with production information, including your PayU Enterprise account, environment selector in VTEX affiliation, and credentials.
 
-2. The store configured for your VTEX account opens. Select any product and click purchase.
+### Steps to Perform a Test Transaction
 
-![PrintScreen](/assets/VTEX/VTEX_17.png)
+1. In the VTEX admin panel, click _**VISIT STORE**_ in the top menu.
 
-3. In the shopping cart, click the place order button. 
+   ![PrintScreen](/assets/VTEX/vtex20.png)
 
-![PrintScreen](/assets/VTEX/VTEX_18.png)
+2. The store configured for your VTEX account opens. Select any product and proceed to purchase.
 
-4. In the payment section, the payment methods appears grouped by their type. Select the one you want to test and enter the test data, find [here]({{< ref "Test-your-solution.md#test-cards" >}}) some test card numbers and information to test status.<br>
-Finally, click in Complete purchase
+   ![PrintScreen](/assets/VTEX/vtex21.png)
 
-![PrintScreen](/assets/VTEX/VTEX_19.png)
+3. In the shopping cart, click the _**Place Order**_ button.
 
-Once the purchase has been approved you can check it in:
-* VTEX Admin: _**Payments**_ > _**Transactions**_.
+   ![PrintScreen](/assets/VTEX/vtex22.png)
 
-![PrintScreen](/assets/VTEX/VTEX_20.png)
+4. In the payment section, the available payment methods appear grouped by type. Select the one you want to test and enter the test data. You can find test card numbers and relevant information [here]({{< ref "Test-your-solution.md#test-cards" >}}).  
+   Finally, click _**Complete Purchase**_.
 
-* PaymentsOS dashboard: _**Payments**_ > _**Search**_.<br><br>![PrintScreen](/assets/VTEX/VTEX_21.png)<br>The parameter _**External Transaction ID**_ inside the _**Transaction Activity**_ is the Order ID in PayU.  
+   ![PrintScreen](/assets/VTEX/vtex23.png)
 
-* PayU Module: in the [_**Sales Report**_]({{< ref "Sales-report.md" >}}) module.
+### Verifying the Transaction
 
-![PrintScreen](/assets/VTEX/VTEX_22.png)
+Once the purchase is approved, you can verify the transaction in the following locations:
 
-* [Queries API]({{< ref "Queries.md" >}}) using the parameter _**External Transaction ID**_ as OrderID.
+* **VTEX Admin**: Navigate to _**Payments**_ > _**Transactions**_.
 
-### Testing two-step flows
-When you have configured your _**Gateway affiliation**_ to process transactions in two-step flows, the funds authorized in the credit card are not settled until you explicitly request the settlement. To request the settlement, you need to invoice the order.
+   ![PrintScreen](/assets/VTEX/vtex24.png)
 
-To invoice an order, locate the transaction in the VTEX Admin (**Payments**_ > _**Transactions**_) and click it. Then, click the _**Order**_ button at the top right corner.
+* **PayU Enterprise Dashboard**: Go to _**Payments**_ > _**Search**_.
 
-![PrintScreen](/assets/VTEX/VTEX_23.png)
+   ![PrintScreen](/assets/VTEX/vtex25.png)  
+   
+   {{% alert title="Note" color="info"%}}
 
-Scroll down to the Package section, and click _**Invoice package**_.
+   The parameter _**External Transaction ID**_ within _**Transaction Activity**_ corresponds to the Order ID in PayU.
 
-![PrintScreen](/assets/VTEX/VTEX_24.png)
+   {{%/ alert %}}
 
-Provide the information of the invoice and click _**Send Invoice**_ at the end of the panel. Once the invoice is sent to the customer, the amount authorized is charged fom the customer's card.
+* **PayU Management Panel**: Check the transaction in the [_**Sales Report**_]({{< ref "Sales-report.md" >}}) module.
 
-![PrintScreen](/assets/VTEX/VTEX_25.png)
+   ![PrintScreen](/assets/VTEX/vtex26.png)
+
+* **[Queries API]({{< ref "Queries.md" >}})**: Use the _**External Transaction ID**_ as the `OrderID` parameter.
+
+## Testing Two-Step Flows
+
+If your _**Gateway Affiliation**_ is configured to process transactions using a two-step flow, the funds authorized on the credit card are not settled until you explicitly request the settlement. To complete the settlement, you must invoice the order.
+
+### Steps to Invoice an Order
+
+1. Locate the transaction in **VTEX Admin** under _**Payments**_ > _**Transactions**_, and click on it.  
+   Then, click the _**Order**_ button at the top right corner.
+
+   ![PrintScreen](/assets/VTEX/vtex27.png)
+
+2. Scroll down to the _**Package**_ section and click _**Invoice Package**_.
+
+   ![PrintScreen](/assets/VTEX/vtex28.png)
+
+3. Enter the invoice details and click _**Send Invoice**_.  
+   Once the invoice is sent to the customer, the authorized amount is charged from the customer's card.
+
+   ![PrintScreen](/assets/VTEX/vtex29.png)
 
 {{% alert title="Note" color="info"%}}
-An authorized order can be cancelled using the _**Cancel order**_ button in the Order information. When cancelling the order, PayU send a _void_ transaction which is record both in the Hub and PayU Latam.
+
+An authorized order can be canceled using the _**Cancel Order**_ button in the order details.  
+When an order is canceled, PayU sends a _void_ transaction, which is recorded in both the Hub and PayU Latam.
+
 {{% /alert %}}

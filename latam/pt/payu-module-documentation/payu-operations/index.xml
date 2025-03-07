@@ -1,0 +1,607 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – Operações PayU</title>
+    <link>/pt/payu-module-documentation/payu-operations.html</link>
+    <description>Recent content in Operações PayU on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Fri, 03 Sep 2021 16:16:41 -0500</lastBuildDate>
+    
+	  <atom:link href="/pt/payu-module-documentation/payu-operations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>PayU Module Documentation: Vender com PayU</title>
+      <link>/pt/payu-module-documentation/payu-operations/sell-with-payu.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:44:19 -0500</pubDate>
+      
+      <guid>/pt/payu-module-documentation/payu-operations/sell-with-payu.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Atualmente, o e-commerce deixou de ser tabu. Antes, as pessoas pensavam que vender online exigia um alto conhecimento técnico e habilidades de programação.&lt;/p&gt;
+&lt;p&gt;Porém, além do conhecimento, o fundamental é ter os melhores aliados e, principalmente, usar as melhores estratégias que possibilitem o crescimento do seu produto.&lt;/p&gt;
+&lt;p&gt;PayU oferece o melhor portal de pagamentos para ajudar sua loja a vender online, mesmo que você não tenha um site.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-sell-using-payu&#34;&gt;Como vender usando PayU?&lt;/h2&gt;
+&lt;p&gt;No Módulo PayU, você tem as ferramentas para começar a vender online de forma rápida e fácil, mesmo se não tiver um site.&lt;/p&gt;
+&lt;p&gt;Para vender com PayU, basta ter uma conta ativa no Módulo PayU e configurar a ferramenta para receber pagamentos.&lt;/p&gt;
+&lt;h2 id=&#34;what-tools-are-available&#34;&gt;Quais ferramentas estão disponíveis?&lt;/h2&gt;
+&lt;p&gt;Existem duas opções para criar pagamentos usando o Módulo PayU:&lt;/p&gt;
+&lt;div class=&#34;container overview-topic&#34;&gt;
+  &lt;div class=&#34;row&#34;&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-request.html&#39;&#34; style=&#34;position:relative;&#34;&gt; 
+      &lt;p&gt;&lt;img src=&#34;../../../assets/money-digital-device.svg&#34; alt=&#34;SellIcons&#34;&gt;&lt;/p&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Solicitação de pagamento&lt;/h4&gt;
+      &lt;p style=&#34;padding-bottom: 60pt;&#34;&gt;Gere solicitações de pagamento que podem ser compartilhadas por e-mail, chats, redes sociais ou incluídas como um botão em seu site (se você tiver um).&lt;/p&gt;
+      &lt;div style=&#34;position:absolute;bottom: 4%;right: 5%;left: 5%;&#34;&gt;
+        &lt;p&gt;&lt;img src=&#34;../../../assets/World.png&#34; width=&#34;30px&#34;/&gt;&lt;/p&gt;
+        &lt;a&gt;Saiba mais sobre solicitação de pagamento&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;col-sm-4 getting-started&#34; onclick=&#34;location.href=&#39;../../../en/docs/tools/payment-coupons.html&#39;&#34;&gt; 
+      &lt;p&gt;&lt;img src=&#34;../../../assets/payments.svg&#34; alt=&#34;SellIcons&#34;&gt;&lt;/p&gt;
+      &lt;h4 class=&#34;navblock-title&#34;&gt;Cupons de pagamento&lt;/h4&gt;
+      &lt;p style=&#34;padding-bottom: 60pt;&#34;&gt;Gere cupons de pagamento e cartões de cobrança com as informações necessárias para que seus clientes façam pagamentos em dinheiro quantas vezes forem necessárias nos pontos de pagamento disponíveis.&lt;/p&gt;
+      &lt;div style=&#34;position:absolute;bottom: 4%;right: 5%;;left: 5%;&#34;&gt;
+        &lt;p&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;30px&#34;/&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;30px&#34;/&gt;&lt;/p&gt;
+        &lt;a&gt;Saiba mais sobre cupons de pagamento&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Consulte &lt;a href=&#34;../../../pt/docs/integrations.html&#34;&gt;Integrações&lt;/a&gt; se você já tem site e quer integrar os serviços PayU.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Transferências</title>
+      <link>/pt/payu-module-documentation/payu-operations/transfers.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:42:07 -0500</pubDate>
+      
+      <guid>/pt/payu-module-documentation/payu-operations/transfers.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;No módulo &lt;em&gt;Transferências&lt;/em&gt;, você pode transferir os fundos acumulados em sua conta virtual da PayU para sua conta bancária registrada.&lt;/p&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Observações&lt;/h2&gt;
+&lt;p&gt;Antes de iniciar uma transferência, revise as seguintes considerações importantes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Suas informações bancárias devem estar atualizadas e validadas. Se você solicitou uma atualização da conta bancária, o sistema continuará enviando os fundos para sua conta anterior até que a equipe de Risco da PayU valide a nova conta.&lt;/li&gt;
+&lt;li&gt;Você pode programar transferências com base em um valor específico ou definir uma data para transferências automáticas.&lt;/li&gt;
+&lt;li&gt;No Brasil, como a PayU não é uma instituição de pagamento licenciada, o sistema transfere automaticamente seus fundos para sua conta bancária diariamente e sem custo. Para monitorar essas transferências, utilize a opção &lt;em&gt;&lt;strong&gt;Relatório de transferências&lt;/strong&gt;&lt;/em&gt; (&lt;em&gt;&lt;strong&gt;Transferências&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Para conta bancária&lt;/strong&gt;&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;A cada mês, as três primeiras transferências locais são gratuitas. A partir da quarta transferência no mês, o PayU aplica uma taxa na maioria dos países. Observe que as transferências internacionais têm uma taxa desde a primeira transação. A tabela abaixo fornece uma visão geral das taxas para transferências locais e internacionais por país.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;País&lt;/th&gt;
+&lt;th&gt;Taxa Local&lt;/th&gt;
+&lt;th&gt;Taxa Internacional&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Argentina&lt;/td&gt;
+&lt;td&gt;110,00 ARS&lt;/td&gt;
+&lt;td&gt;753,00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brasil&lt;/td&gt;
+&lt;td&gt;Nenhuma&lt;/td&gt;
+&lt;td&gt;Nenhuma&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chile&lt;/td&gt;
+&lt;td&gt;2.000,00 CLP&lt;/td&gt;
+&lt;td&gt;50.000,00 CLP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Colômbia&lt;/td&gt;
+&lt;td&gt;6.500,00 COP&lt;/td&gt;
+&lt;td&gt;30,00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;México&lt;/td&gt;
+&lt;td&gt;10,00 MXN&lt;/td&gt;
+&lt;td&gt;650,00 MXN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Panamá&lt;/td&gt;
+&lt;td&gt;30,00 USD&lt;/td&gt;
+&lt;td&gt;44,00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Peru&lt;/td&gt;
+&lt;td&gt;15,00 PEN&lt;/td&gt;
+&lt;td&gt;90,00 USD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Notas&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;As taxas estão sujeitas a alterações ao longo do tempo. Para obter as informações mais atualizadas ou dúvidas específicas, entre em contato com o representante de vendas do PayU.&lt;/li&gt;
+&lt;li&gt;As transferências internacionais também estão sujeitas a uma taxa FX de 3% (sujeita a negociação) para cobrir os custos de conversão cambial.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A primeira transferência pode levar até cinco (5) dias para ser depositada em sua conta bancária. Como parte de um processo administrativo, a equipe de Risco do PayU pode solicitar documentação adicional para verificar suas vendas iniciais.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A segunda e as transferências subsequentes levarão no máximo três (3) dias úteis para serem concluídas. Dias úteis geralmente são de segunda a sexta-feira, excluindo feriados.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Os prazos mencionados aplicam-se apenas a transferências locais. Para transferências internacionais, entre em contato com o seu representante de vendas.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;permission-required&#34;&gt;Permissão Necessária&lt;/h2&gt;
+&lt;p&gt;Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permissão habilitada:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Transferências&lt;/em&gt; &amp;gt; &lt;em&gt;Consultar&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Transferências&lt;/em&gt; &amp;gt; &lt;em&gt;Gerenciar&lt;/em&gt;&lt;br&gt;Com esta permissão você pode executar transferências.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfis e permissões&lt;/a&gt; para obter mais informações.&lt;/p&gt;
+&lt;h2 id=&#34;transfer-funds&#34;&gt;Transferir Fundos&lt;/h2&gt;
+&lt;p&gt;You can transfer up to the total amount in your PayU account to the registered bank. Follow these steps to perform a transfer.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Faça login em sua conta PayU. No menu esquerdo, expanda o menu &lt;em&gt;&lt;strong&gt;Transferências&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Transferências&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_01_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Complete o valor para transferir ou selecione a opção  &lt;em&gt;&lt;strong&gt;Transferir o saldo total disponível&lt;/strong&gt;&lt;/em&gt;. No painel direito, o valor inserido será atualizado. Este painel também mostra quantas transferências gratuitas você tem até o final do mês.&lt;br&gt;Se você não tem transações gratuitas, este painel também exibe o valor ou a transação junto com os impostos.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_02_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Clique em &lt;em&gt;&lt;strong&gt;Solicitar transferência&lt;/strong&gt;&lt;/em&gt;. Uma janela de confirmação aparece para confirmar o valor a ser transferido, o valor a ser debitado de sua conta e a conta de destino.&lt;br&gt;Clique em &lt;em&gt;&lt;strong&gt;OK&lt;/strong&gt;&lt;/em&gt; para confirmar ou &lt;em&gt;&lt;strong&gt;Cancelar&lt;/strong&gt;&lt;/em&gt; para descartar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_03_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;O resultado da operação aparecerá. Observe o número de dias para que o dinheiro chegue na conta de destino.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_04_pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Assim que o pedido for enviado com sucesso, a transferência fica com status &lt;em&gt;Em processo&lt;/em&gt; e você pode vê-lo na seção &lt;em&gt;&lt;strong&gt;Relatório de transferências realizadas&lt;/strong&gt;&lt;/em&gt; no final do módulo. Além disso, o valor solicitado será debitado de seu saldo.&lt;br&gt;Se as transferências não puderam ser processadas, este valor volta para sua conta e nenhuma taxa é cobrada por esta operação.&lt;/p&gt;
+&lt;h2 id=&#34;schedule-transfers&#34;&gt;Agendar Transferências&lt;/h2&gt;
+&lt;p&gt;Você pode automatizar as transferências e solicitar um saque de um valor fixo ou periódico.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;20px&#34;/&gt; &lt;em&gt;&lt;strong&gt;Programar transferência&lt;/strong&gt;&lt;/em&gt; não está disponível no Brasil.&lt;/li&gt;
+&lt;li&gt;Ao programar transferências, você deve ter fundos suficientes quando a transferência for executada.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Para agendar uma transferência, siga estas etapas.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Faça login em sua conta PayU. No menu esquerdo, expanda o menu &lt;em&gt;&lt;strong&gt;Transferências&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Programar transferência&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_05_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;O módulo &lt;em&gt;&lt;strong&gt;Agendamento de transferências&lt;/strong&gt;&lt;/em&gt; abrirá, Aqui você pode ver todas as transferências agendadas que você configurou. Clique em &lt;em&gt;&lt;strong&gt;Programar transferência&lt;/strong&gt;&lt;/em&gt; para configurar uma nova programação.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_06_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Opções&lt;/h4&gt;
+&lt;p&gt;A coluna &lt;em&gt;opções&lt;/em&gt; fornece as seguintes ações:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Editar (&lt;img src=&#34;../../../assets/Transfers/Transfers_10.png&#34; width=&#34;2%&#34; style=&#34;vertical-align: top;&#34;/&gt;): permite que você altere a configuração da programação.&lt;/li&gt;
+&lt;li&gt;Excluir (&lt;img src=&#34;../../../assets/Transfers/Transfers_11.png&#34; width=&#34;2%&#34; style=&#34;vertical-align: top;&#34;/&gt;): permite que você desative a programação. Depois que a programação é removida, nenhuma transferência automática pode ser criada.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Selecione como você deseja agendar a transferência.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Programar Transferências por Frequência&lt;/strong&gt;&lt;br&gt;
+Esta opção permite que você transfira uma determinada quantia a cada período determinado (dias, semanas ou meses). Para agendar este tipo de transferência, selecione a opção &lt;em&gt;Frequência&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Programar Transferências por Saldo Disponível&lt;/strong&gt;&lt;br&gt;
+Esta opção permite que você transfira uma determinada quantia sempre que o saldo atingir um determinado valor. Para agendar este tipo de transferência, selecione a opção &lt;em&gt;Saldo disponível&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Forneça as seguintes opções.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Opção&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Realizar retirada de maneira&lt;/td&gt;
+&lt;td&gt;Selecione a frequência das transferências que deseja agendar. Esta opção está disponível para transferências programadas por frequência.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_07_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Selecione o valor que deseja retirar&lt;/td&gt;
+&lt;td&gt;Selecione o valor que deseja transferir, que pode ser o saldo total disponível ou um valor fixo.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_08_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Insira o valor a retirar&lt;/td&gt;
+&lt;td&gt;Selecione o valor que deseja transferir. Este campo aparece quando você seleciona a opção &lt;em&gt;Configurar valor&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Iniciar minhas transferências a partir de&lt;/td&gt;
+&lt;td&gt;Selecione a data de início da programação. Nesta data, está agendada a primeira transferência.&lt;br&gt;&lt;br&gt;&lt;img src=&#34;../../../assets/Transfers/Transfers_09_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Descrição&lt;/td&gt;
+&lt;td&gt;Forneça uma descrição significativa para sua transferência.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Quando terminar, clique em &lt;em&gt;&lt;strong&gt;Programar transferência&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Reembolsos</title>
+      <link>/pt/payu-module-documentation/payu-operations/refunds-mp.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:41:53 -0500</pubDate>
+      
+      <guid>/pt/payu-module-documentation/payu-operations/refunds-mp.html</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Se você fizer um reembolso por este painel, ele só será atualizado no Módulo PayU. Se precisar controlar e registrar os reembolsos em seu sistema de reembolsos, você deve usar a &lt;a href=&#34;../../../pt/docs/services/refunds.html&#34;&gt;API de reembolsos&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;what-is-a-refund&#34;&gt;O que é um reembolso?&lt;/h2&gt;
+&lt;p&gt;Um reembolso é a ação de devolver voluntariamente o dinheiro pago por um cliente quando qualquer uma das seguintes situações acontecer:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;O produto ou serviço entregue não atendeu às expectativas do cliente e ele o devolveu.&lt;/li&gt;
+&lt;li&gt;O produto está esgotado e o lojista não consegue entregar o produto ao cliente.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;refund-procedure&#34;&gt;Procedimento de reembolso&lt;/h2&gt;
+&lt;p&gt;Reembolsos estão sujeitos a análise e aprovação de nossa equipe. O procedimento para solicitar reembolsos é explicado abaixo:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Quando um reembolso é solicitado por seu cliente, você precisa solicitá-lo usando o módulo PayU. Você só precisa identificar a ordem e fornecer um motivo para o reembolso.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Depois de enviar a solicitação, PayU a analisa e ela é aprovada ou rejeitada em &lt;strong&gt;1&lt;/strong&gt; a &lt;strong&gt;3&lt;/strong&gt; dias úteis.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;refund-states&#34;&gt;Estados de reembolso&lt;/h3&gt;
+&lt;p&gt;Um reembolso pode estar em um dos três estados a seguir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Em devolução&lt;/strong&gt;: a solicitação foi enviada a PayU para aprovação e está em aprovação.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aprovada&lt;/strong&gt;: a solicitação foi aprovada por um agente de atendimento ao cliente do PayU.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recusada&lt;/strong&gt;: a solicitação não atende às políticas definidas pelo PayU e foi rejeitada por um agente.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;permission-required&#34;&gt;Permissão necessária&lt;/h2&gt;
+&lt;p&gt;Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permissão habilitada:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Reembolsos e chargeback&lt;/em&gt; &amp;gt; &lt;em&gt;Listar Reembolsos&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Reembolsos e chargeback&lt;/em&gt; &amp;gt; &lt;em&gt;Gerenciar Reembolsos&lt;/em&gt;&lt;br&gt;Esta permissão autoriza que você faça reembolsos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfis e permissões&lt;/a&gt; para obter mais informações.&lt;/p&gt;
+&lt;h2 id=&#34;considerations&#34;&gt;Observações&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Reembolsos estão disponíveis apenas para transações pagas com cartão.&lt;/li&gt;
+&lt;li&gt;Você pode tentar novamente a ordem de reembolso se ele foi recusado anteriormente.&lt;/li&gt;
+&lt;li&gt;Assim que você faz a solicitação, o valor da transação passa a fazer parte do Saldo Congelado de sua conta PayU até que seja processado.&lt;/li&gt;
+&lt;li&gt;No &lt;strong&gt;Chile&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Reembolsos para &lt;a href=&#34;../../../pt/docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-debit-and-prepaid-cards&#34;&gt;transações processadas por WebPay Plus&lt;/a&gt; não estão disponíveis.&lt;/li&gt;
+&lt;li&gt;Para transações com cartões pré-pagos não processadas pelo WebPay Plus, os reembolsos solicitados na primeira hora após a cobrança podem ser aprovados ou rejeitados pela rede financeira. Após a primeira hora, todos os reembolsos de transações com cartões pré-pagos são rejeitados.&lt;/li&gt;
+&lt;li&gt;Se o reembolso for rejeitado, o PayU mostra o &lt;a href=&#34;../../../pt/docs/getting-started/response-codes-and-variables.html#response-codes-for-transactions&#34;&gt;código de erro&lt;/a&gt; gerado pela rede.&lt;/li&gt;
+&lt;li&gt;Reembolsos parciais para transações parceladas são recebidos online, mas PayU os processa manualmente devido a restrições do adquirente.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Na &lt;strong&gt;Colômbia&lt;/strong&gt;, reembolsos parciais não estão disponíveis para cartões de crédito internacionais.&lt;/li&gt;
+&lt;li&gt;No &lt;strong&gt;Peru&lt;/strong&gt;, reembolsos parciais são aceitos para transações sem prestações. Lembre-se de que as transações com uma parcela são consideradas sem parcelas. Reembolsos parciais com visanet devem ser enviados após um dia.&lt;/li&gt;
+&lt;li&gt;Se sua solicitação de reembolso for aprovada, o valor será devolvido ao titular do cartão.&lt;/li&gt;
+&lt;li&gt;Se sua solicitação de reembolso for recusada, o valor será liberado do Saldo Congelado e retornará ao Saldo Disponível em sua conta PayU.&lt;/li&gt;
+&lt;li&gt;Assim que o reembolso for aprovado, isso será refletido no cartão de crédito do pagador quando o banco o efetivar.&lt;/li&gt;
+&lt;li&gt;Para verificar o status da sua solicitação de reembolso, você pode consultá-lo clicando na venda no Painel do comércio.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;refunds-per-country&#34;&gt;Reembolsos por país&lt;/h2&gt;
+&lt;p&gt;Observe as seguintes considerações por país antes de solicitar reembolsos.&lt;/p&gt;
+&lt;p&gt;&lt;table style=&#34;table-layout: fixed;&#34;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th rowspan=&#34;2&#34;&gt;&lt;/th&gt;
+        &lt;th colspan=&#34;2&#34; style=&#34;vertical-align: middle; text-align: center;&#34;&gt;Houa de enviar o reembolso&lt;/th&gt;
+        &lt;th rowspan=&#34;2&#34; style=&#34;vertical-align: middle; text-align: center;&#34;&gt;Valou mínimo&lt;/th&gt;
+        &lt;th colspan=&#34;2&#34; style=&#34;vertical-align: middle; text-align: center;&#34;&gt;Quanto tempo o cliente levará para receber o dinheiro de volta?&lt;/th&gt;
+        &lt;th rowspan=&#34;2&#34; style=&#34;vertical-align: middle; text-align: center;&#34;&gt;Aceita reembolsos parciais?&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th style=&#34;text-align: center;&#34;&gt;Mín.&lt;/th&gt;
+        &lt;th style=&#34;text-align: center;&#34;&gt;Máx.&lt;/th&gt;
+        &lt;th style=&#34;text-align: center;&#34;&gt;Mín.&lt;/th&gt;
+        &lt;th style=&#34;text-align: center;&#34;&gt;Máx.&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;357 dias&lt;/li&gt;&lt;li&gt;180 dias (Reembolsos parciais)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;30 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Brasil.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;10 minutos&lt;/li&gt;&lt;li&gt;1 dia (Reembolsos parciais)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;li&gt;82 ou 172 dias para cartões*&lt;/li&gt;&lt;li&gt;87 dias para Pix&lt;/li&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;15 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Chile.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;90 ou 327 dias*&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 CLP&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;8 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;20 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;357 dias&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;100 COP&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;30 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;text-align: center;&#34;&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Mexico.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;40 ou 175 dias*&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;30 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Panama.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;357 dias&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;-&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;1 dia útil&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;8 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;X&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;img src=&#34;../../../assets/Peru.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;10 minutos&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;357 dias&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;1 USD&lt;/li&gt;&lt;li&gt;1 PEN&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;15 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;25 dias úteis&lt;/td&gt;
+        &lt;td style=&#34;vertical-align: middle; text-align: center;&#34;&gt;✓&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;sup&gt;*&lt;/sup&gt;&lt;em&gt;Depende da rede.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-to-request-a-refund&#34;&gt;Como solicitar um reembolso?&lt;/h2&gt;
+&lt;p&gt;Para solicitar um reembolso, a transação deve ser aprovada e sem nenhum processo de disputa pendente. Siga as próximas etapas para solicitar.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Faça login em sua conta PayU. No menu esquerdo, expanda o menu &lt;em&gt;&lt;strong&gt;Transações&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Relatório de Vendas&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;O &lt;a href=&#34;../../../pt/payu-module-documentation/reports/sales-report.html&#34;&gt;Relatório de Vendas&lt;/a&gt; abrirá. Localize a transação que deseja reembolsar e clique nela.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Os detalhes da transação aparecem à direita da tela. Clique no botão &lt;em&gt;&lt;strong&gt;Reembolsar pagamento&lt;/strong&gt;&lt;/em&gt; no final do painel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_06.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Se você precisar solicitar um reembolso parcial, marque a opção &lt;em&gt;&lt;strong&gt;Reembolsar um parte do dinheiro&lt;/strong&gt;&lt;/em&gt; e forneça o valor solicitado.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_08.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Forneça o motivo para solicitar o reembolso (parcial ou total) e clique em &lt;em&gt;&lt;strong&gt;Reembolso&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_07.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;O resumo da solicitação aparecerá. Enquanto PayU processa o reembolso, o valor do reembolso fica congelado em sua conta. Se a solicitação for aprovada, o valor reembolsado será devolvido ao cliente pelo meio de pagamento utilizado.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_09.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Assim que a solicitação for aprovada, o status aparecerá na venda.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_10.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;getting-the-refund-confirmation&#34;&gt;Obtenha a confirmação do reembolso&lt;/h2&gt;
+&lt;p&gt;Quando o reembolso for aprovado, você poderá gerar um recibo ou enviar o recibo ao pagador. Para isso, siga as instruções dependendo da operação que deseja realizar.&lt;/p&gt;
+&lt;h3 id=&#34;generate-the-refund-recipt&#34;&gt;Gere o recibo de reembolso&lt;/h3&gt;
+&lt;p&gt;Para gerar o recibo de reembolso, localize a venda reembolsada e clique no botão de impressão localizado no canto superior direito do painel de detalhes da transação.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;As opções de impressão do seu navegador são abertas, aqui você pode imprimir fisicamente ou salvá-lo em formato PDF. A imagem a seguir corresponde às opções de impressão do Google Chrome.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_pt_12.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Advertencia&lt;/h4&gt;
+A opção &lt;em&gt;Salvar como PDF&lt;/em&gt; depende do seu navegador. Se o seu navegador não suportar esta opção, você só poderá imprimi-la usando uma impressora.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;send-the-refund-confirmation-to-the-payer&#34;&gt;Envie o recibo de reembolso para o pagador&lt;/h3&gt;
+&lt;p&gt;Junto com a funcionalidade de impressão, você também pode enviar um e-mail de confirmação ao pagador informando o resultado do reembolso. Essa opção está localizada na seção &lt;em&gt;&lt;strong&gt;Ações&lt;/strong&gt;&lt;/em&gt; na parte inferior do painel de detalhes da transação.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_es_13.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Depois de clicar neste botão, o pagador recebe um e-mail com os detalhes do reembolso.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../assets/Refunds/Refunds_en_14.png&#34; alt=&#34;PrintScreen&#34; width=&#34;50%&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Você pode habilitar o envio automático da confirmação de reembolso ao pagador. Para obter mais detalhes sobre esta opção, consulte seu representante de vendas.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>PayU Module Documentation: Disputas</title>
+      <link>/pt/payu-module-documentation/payu-operations/disputes-mp.html</link>
+      <pubDate>Fri, 03 Sep 2021 16:42:19 -0500</pubDate>
+      
+      <guid>/pt/payu-module-documentation/payu-operations/disputes-mp.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;O diagrama a seguir ilustra o fluxo do processo de disputas na PayU, destacando cada etapa, desde a notificação até a resolução:&lt;/p&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;disputes_flow_pt.html&lt;/title&gt;
+&lt;meta charset=&#34;utf-8&#34;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;mxgraph&#34; style=&#34;max-width:100%;border:1px solid transparent;&#34; data-mxgraph=&#34;{&amp;quot;highlight&amp;quot;:&amp;quot;#0000ff&amp;quot;,&amp;quot;nav&amp;quot;:true,&amp;quot;resize&amp;quot;:true,&amp;quot;xml&amp;quot;:&amp;quot;&amp;lt;mxfile host=\&amp;quot;app.diagrams.net\&amp;quot; agent=\&amp;quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36\&amp;quot; version=\&amp;quot;26.0.10\&amp;quot;&amp;gt;&amp;lt;diagram name=\&amp;quot;Page-1\&amp;quot; id=\&amp;quot;CsmPBH-f9B92SmGsYFgC\&amp;quot;&amp;gt;&amp;lt;mxGraphModel dx=\&amp;quot;1434\&amp;quot; dy=\&amp;quot;-362\&amp;quot; grid=\&amp;quot;1\&amp;quot; gridSize=\&amp;quot;10\&amp;quot; guides=\&amp;quot;1\&amp;quot; tooltips=\&amp;quot;1\&amp;quot; connect=\&amp;quot;1\&amp;quot; arrows=\&amp;quot;1\&amp;quot; fold=\&amp;quot;1\&amp;quot; page=\&amp;quot;1\&amp;quot; pageScale=\&amp;quot;1\&amp;quot; pageWidth=\&amp;quot;850\&amp;quot; pageHeight=\&amp;quot;1100\&amp;quot; math=\&amp;quot;0\&amp;quot; shadow=\&amp;quot;0\&amp;quot;&amp;gt;&amp;lt;root&amp;gt;&amp;lt;mxCell id=\&amp;quot;0\&amp;quot;/&amp;gt;&amp;lt;mxCell id=\&amp;quot;1\&amp;quot; parent=\&amp;quot;0\&amp;quot;/&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-37\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=2;strokeColor=#737300;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;160\&amp;quot; y=\&amp;quot;1720\&amp;quot; width=\&amp;quot;900\&amp;quot; height=\&amp;quot;150\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-38\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=2;strokeColor=#4D4D4D;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;160\&amp;quot; y=\&amp;quot;1870\&amp;quot; width=\&amp;quot;900\&amp;quot; height=\&amp;quot;150\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-39\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;rounded=0;whiteSpace=wrap;html=1;fontColor=#002B16;fillColor=#FFFFFF;strokeWidth=2;strokeColor=#006634;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;160\&amp;quot; y=\&amp;quot;2020\&amp;quot; width=\&amp;quot;900\&amp;quot; height=\&amp;quot;150\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-40\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=#021A2A;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;160\&amp;quot; y=\&amp;quot;2170\&amp;quot; width=\&amp;quot;900\&amp;quot; height=\&amp;quot;150\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-42\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.cashier;html=1;pointerEvents=1;fillColor=#4D4D4D;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;75.43\&amp;quot; y=\&amp;quot;1927\&amp;quot; width=\&amp;quot;18.63\&amp;quot; height=\&amp;quot;19\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-43\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4A4A00;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;53.5\&amp;quot; y=\&amp;quot;1767\&amp;quot; width=\&amp;quot;53\&amp;quot; height=\&amp;quot;60\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-44\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcwkwAE0dFG7eCNOgAAAAAElFTkSuQmCC;fontColor=#021A2A;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;29\&amp;quot; y=\&amp;quot;2037.75\&amp;quot; width=\&amp;quot;111.5\&amp;quot; height=\&amp;quot;111.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-45\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.present;html=1;pointerEvents=1;fillColor=#021A2A;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;46.75\&amp;quot; y=\&amp;quot;2277\&amp;quot; width=\&amp;quot;18\&amp;quot; height=\&amp;quot;22.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-46\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.bank;html=1;pointerEvents=1;fillColor=#021A2A;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;70.25\&amp;quot; y=\&amp;quot;2236\&amp;quot; width=\&amp;quot;61\&amp;quot; height=\&amp;quot;63.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-47\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.coat_check;html=1;pointerEvents=1;fillColor=#021A2A;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;14.75\&amp;quot; y=\&amp;quot;2252\&amp;quot; width=\&amp;quot;35\&amp;quot; height=\&amp;quot;22.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-48\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.transportation.airplane_7;html=1;pointerEvents=1;fillColor=#021A2A;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;39.75\&amp;quot; y=\&amp;quot;2222\&amp;quot; width=\&amp;quot;45\&amp;quot; height=\&amp;quot;31.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-56\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-49\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-50\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-49\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;1. &amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Registra uma reclamação no banco referente a uma cobrança feita em seu cartão de crédito.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#737300;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;170\&amp;quot; y=\&amp;quot;1740\&amp;quot; width=\&amp;quot;160\&amp;quot; height=\&amp;quot;110\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-57\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-50\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-51\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-50\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;2. &amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Notifica o PayU sobre a reclamação.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#4D4D4D;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;283\&amp;quot; y=\&amp;quot;1900\&amp;quot; width=\&amp;quot;107\&amp;quot; height=\&amp;quot;90\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-58\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-51\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-52\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-51\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;3. &amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Informa o comerciante sobre a disputa, fornecendo detalhes e um prazo para o envio dos documentos de suporte.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#006634;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;370\&amp;quot; y=\&amp;quot;2040\&amp;quot; width=\&amp;quot;180\&amp;quot; height=\&amp;quot;110\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-59\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-52\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-55\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-52\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;4. &amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Reúne todas as evidências relevantes e entra em contato com o comprador para entender o motivo da reclamação.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#021A2A;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;500\&amp;quot; y=\&amp;quot;2180\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;130\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-61\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-53\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-54\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-53\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;6.&amp;amp;amp;nbsp;&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Envia os documentos de suporte para a entidade bancária.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#006634;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;780\&amp;quot; y=\&amp;quot;2040\&amp;quot; width=\&amp;quot;120\&amp;quot; height=\&amp;quot;98.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-54\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;7.&amp;amp;amp;nbsp;&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Analisa as evidências e determina se um chargeback é justificável.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#4D4D4D;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;860\&amp;quot; y=\&amp;quot;1881.5\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;110\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-60\&amp;quot; style=\&amp;quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#000000;\&amp;quot; parent=\&amp;quot;1\&amp;quot; source=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-55\&amp;quot; target=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-53\&amp;quot; edge=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry relative=\&amp;quot;1\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-55\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;font-size: 14px;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;background-color: initial;&amp;amp;quot;&amp;amp;gt;5.&amp;amp;amp;nbsp;&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;background-color: initial;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;Faz o upload das evidências no Painel de Gestão&amp;amp;amp;nbsp; da PayU para avaliação.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#021A2A;align=center;strokeWidth=2;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;680\&amp;quot; y=\&amp;quot;2190\&amp;quot; width=\&amp;quot;130\&amp;quot; height=\&amp;quot;110\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-62\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#4d4d4d&amp;amp;quot; style=&amp;amp;quot;font-size: 16px;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;Entidade bancária&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;13\&amp;quot; y=\&amp;quot;1880\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;50\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-63\&amp;quot; value=\&amp;quot;&amp;amp;lt;font style=&amp;amp;quot;font-size: 16px;&amp;amp;quot; color=&amp;amp;quot;#4a4a00&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;Cliente final&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;10\&amp;quot; y=\&amp;quot;1725\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;50\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-64\&amp;quot; value=\&amp;quot;&amp;amp;lt;font color=&amp;amp;quot;#021a2a&amp;amp;quot; style=&amp;amp;quot;font-size: 16px;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;Comerciante&amp;amp;lt;/b&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;\&amp;quot; style=\&amp;quot;text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;13\&amp;quot; y=\&amp;quot;2180\&amp;quot; width=\&amp;quot;140\&amp;quot; height=\&amp;quot;50\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;SG5-l9VlsHMVnAUvjhoY-65\&amp;quot; value=\&amp;quot;&amp;amp;lt;div style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;font color=&amp;amp;quot;#ffffff&amp;amp;quot; style=&amp;amp;quot;background-color: initial; font-size: 13px;&amp;amp;quot; data-font-src=&amp;amp;quot;https://fonts.googleapis.com/css?family=Open+Sans&amp;amp;quot; face=&amp;amp;quot;Open Sans&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;b style=&amp;amp;quot;&amp;amp;quot;&amp;amp;gt;Nota:&amp;amp;lt;/b&amp;amp;gt;&amp;amp;amp;nbsp; O comerciante pode solicitar à PayU que realize um reembolso. Assim que a PayU inicia o reembolso, a disputa é encerrada automaticamente.&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/font&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;\&amp;quot; style=\&amp;quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#021A2A;align=center;strokeWidth=2;fillColor=#021A2A;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;867\&amp;quot; y=\&amp;quot;2180\&amp;quot; width=\&amp;quot;175\&amp;quot; height=\&amp;quot;130\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;mxCell id=\&amp;quot;_RsPmHh8OhWLy5dULe4P-1\&amp;quot; value=\&amp;quot;\&amp;quot; style=\&amp;quot;shape=mxgraph.signs.travel.museum;html=1;pointerEvents=1;fillColor=#4D4D4D;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;\&amp;quot; parent=\&amp;quot;1\&amp;quot; vertex=\&amp;quot;1\&amp;quot;&amp;gt;&amp;lt;mxGeometry x=\&amp;quot;54.620000000000005\&amp;quot; y=\&amp;quot;1948.5\&amp;quot; width=\&amp;quot;60.25\&amp;quot; height=\&amp;quot;64.5\&amp;quot; as=\&amp;quot;geometry\&amp;quot;/&amp;gt;&amp;lt;/mxCell&amp;gt;&amp;lt;/root&amp;gt;&amp;lt;/mxGraphModel&amp;gt;&amp;lt;/diagram&amp;gt;&amp;lt;/mxfile&amp;gt;&amp;quot;,&amp;quot;toolbar&amp;quot;:&amp;quot;pages zoom layers lightbox&amp;quot;,&amp;quot;page&amp;quot;:0}&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://app.diagrams.net/js/viewer-static.min.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;h2 id=&#34;permissões-necessárias&#34;&gt;Permissões Necessárias&lt;/h2&gt;
+&lt;p&gt;Para acessar este módulo, seu perfil deve ter as seguintes permissões habilitadas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Relatórios&lt;/em&gt; &amp;gt; &lt;em&gt;Reembolsos e disputas&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Relatórios&lt;/em&gt; &amp;gt; &lt;em&gt;Resolver disputas com compradores (gerenciar estornos)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/user-and-profile-management/profile-and-permissions-management.html&#34;&gt;Perfis e Permissões&lt;/a&gt; para obter mais detalhes.&lt;/p&gt;
+&lt;h2 id=&#34;por-que-é-importante-responder-a-uma-disputa&#34;&gt;Por Que É Importante Responder a uma Disputa?&lt;/h2&gt;
+&lt;p&gt;Responder às disputas prontamente é fundamental para proteger sua empresa:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Evite prejudicar a confiança com os clientes.&lt;/li&gt;
+&lt;li&gt;Evite que fundos sejam deduzidos de sua conta.&lt;/li&gt;
+&lt;li&gt;Mitigue o risco de aumento dos fundos de reserva impostos pela área de risco.&lt;/li&gt;
+&lt;li&gt;Preserve sua pontuação de código PayU com as redes de pagamento.&lt;/li&gt;
+&lt;li&gt;Garanta que os valores contestados não sejam congelados por períodos prolongados.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Você deve fornecer evidências antes do prazo estabelecido pelo banco. Perder o prazo pode resultar na cobrança do valor em sua conta.&lt;/p&gt;
+&lt;p&gt;Para obter informações sobre prazos, consulte &lt;a href=&#34;../../../pt/docs/tools/disputes.html#prazos-para-envio-de-evidências&#34;&gt;Prazos para Envio de Evidências&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;recebendo-notificações-de-disputa&#34;&gt;Recebendo Notificações de Disputa&lt;/h2&gt;
+&lt;p&gt;Você pode receber notificações de disputa por meio de dois métodos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Notificações por E-mail&lt;/strong&gt;: Receba atualizações diretamente por e-mail.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Notificações Automáticas&lt;/strong&gt;: Configure um URL na seção &lt;em&gt;&lt;strong&gt;Configuração Técnica&lt;/strong&gt;&lt;/em&gt; do Painel de Gerenciamento para receber atualizações de disputa via &lt;code&gt;POST&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;etapas-para-habilitar-notificações&#34;&gt;Etapas para Habilitar Notificações&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Faça login no Painel de Gerenciamento do PayU, navegue até &lt;em&gt;&lt;strong&gt;Configuração&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Configuração técnica&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../assets/IntegrationVariables_01_pt.png&#34; alt=&#34;Configuração Técnica&#34; width=&#34;80%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Na guia &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt;, insira os endereços de e-mail para receber notificações ou habilite o URL de notificação automática e especifique o domínio para o qual deseja que nossa API envie atualizações &lt;code&gt;POST&lt;/code&gt;. Depois de habilitar um ou ambos os métodos de notificação, clique em &lt;em&gt;&lt;strong&gt;Salvar alterações&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../assets/Disputes/Disputes_01_pt.png&#34; alt=&#34;Detalhes da Disputa&#34; width=&#34;80%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;resolvendo-disputas&#34;&gt;Resolvendo Disputas&lt;/h2&gt;
+&lt;p&gt;As disputas ocorrem quando os compradores contestam cobranças em seus cartões de crédito. O banco notifica o PayU e o processo formal começa a validar a transação.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Dica&lt;/h4&gt;
+Se você tiver as informações de contato do titular do cartão, entre em contato para resolver o problema. Se a disputa decorrer de confusão (por exemplo, cobranças não reconhecidas), peça ao comprador que entre em contato com seu banco e retire a reclamação. Essa abordagem geralmente resolve disputas a seu favor.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;etapas-para-resolver-disputas&#34;&gt;Etapas para Resolver Disputas&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Quando notificado sobre uma disputa, configure seu e-mail ou URL para receber atualizações. Consulte &lt;a href=&#34;../../../pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#disputes&#34;&gt;Configurações Técnicas&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login em sua conta PayU, expanda o menu &lt;em&gt;&lt;strong&gt;Transações&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../assets/Disputes/Disputes_02_pt.png&#34; alt=&#34;Detalhes da Disputa&#34; width=&#34;80%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;br&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;No módulo &lt;em&gt;&lt;strong&gt;Disputas&lt;/strong&gt;&lt;/em&gt;, localize a disputa. Use filtros, se necessário.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../assets/Disputes/Disputes_03_pt.png&#34; alt=&#34;Detalhes da Disputa&#34; width=&#34;80%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;br&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Revise os detalhes da disputa no painel direito e clique em &lt;em&gt;&lt;strong&gt;Resolver um chargeback&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../assets/Disputes/Disputes_04_pt.png&#34; alt=&#34;Detalhes da Disputa&#34; width=&#34;40%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;br&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Na janela pop-up, revise o motivo da disputa e o prazo para envio de evidências. Clique em &lt;em&gt;&lt;strong&gt;Anexar arquivo&lt;/strong&gt;&lt;/em&gt; para enviar suas evidências.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../assets/Disputes/Disputes_05_pt.png&#34; alt=&#34;Detalhes da Disputa&#34; width=&#34;40%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Se você aceitar a disputa, poderá iniciar um &lt;a href=&#34;../../../pt/payu-module-documentation/payu-operations/refunds-mp.html&#34;&gt;Reembolso&lt;/a&gt; clicando em &lt;em&gt;&lt;strong&gt;Ou devolva o valor&lt;/strong&gt;&lt;/em&gt;.
+&lt;/div&gt;
+
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Envie evidências (arquivos PDF com menos de 10 MB) e clique em &lt;em&gt;&lt;strong&gt;Salvar evidência&lt;/strong&gt;&lt;/em&gt;. Depois de salvo, clique em &lt;em&gt;&lt;strong&gt;Enviar para revisão&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../assets/Disputes/Disputes_06_pt.png&#34; alt=&#34;Detalhes da Disputa&#34; width=&#34;40%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;br&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Uma janela de confirmação aparecerá assim que suas evidências forem enviadas.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../assets/Disputes/Disputes_07_pt.png&#34; alt=&#34;Detalhes da Disputa&#34; width=&#34;40%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;br&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;O PayU encaminha as evidências para o banco emissor ou rede. O resultado do caso pode ser:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ganho&lt;/strong&gt;: A disputa é resolvida a seu favor (sem estorno).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Perdido&lt;/strong&gt;: A disputa resulta em um estorno.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reembolsado&lt;/strong&gt;: Você reembolsou voluntariamente o comprador, evitando um estorno.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Consulte &lt;a href=&#34;../../../pt/docs/tools/disputes.html#estados-da-disputa&#34;&gt;Estados de Disputa&lt;/a&gt; para obter informações detalhadas sobre os статусы de disputa.&lt;/p&gt;
+&lt;h2 id=&#34;considerações-finais&#34;&gt;Considerações Finais&lt;/h2&gt;
+&lt;p&gt;Quando a entidade financeira comunica a resolução, o status da disputa é atualizado automaticamente no Painel de Gerenciamento. Certifique-se de monitorar as notificações de disputa e responder prontamente para minimizar riscos e perdas potenciais.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
