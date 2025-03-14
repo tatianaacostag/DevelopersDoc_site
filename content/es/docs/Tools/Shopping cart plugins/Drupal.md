@@ -4,7 +4,7 @@ linkTitle: "Drupal"
 date: 2021-05-26T08:38:45-05:00
 description:
   Este artículo te muestra el procedimiento para habilitar PayU en tu sitio web de Drupal.
-weight: 30
+weight: 4
 tags: ["subtopic"]
 ---
 

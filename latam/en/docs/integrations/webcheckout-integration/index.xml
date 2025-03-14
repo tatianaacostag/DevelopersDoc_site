@@ -2731,7 +2731,7 @@ signature = 779f163be9347a691bcdb25064644795
 &lt;li&gt;54.158.171.129&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;By whitelisting these addresses, you can ensure that requests and notifications from PayU are properly received.&lt;/p&gt;
-&lt;h2 id=&#34;variables-sent-with-the-confirmation-page&#34;&gt;Variables sent with the confirmation page&lt;/h2&gt;
+&lt;h2 id=&#34;parameters-sent-with-the-confirmation-page&#34;&gt;Parameters sent with the confirmation page&lt;/h2&gt;
 &lt;details&gt;
 &lt;summary&gt;Variables in the confirmation page&lt;/summary&gt;
 &lt;br&gt;

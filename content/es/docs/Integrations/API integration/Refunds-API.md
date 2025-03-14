@@ -38,7 +38,7 @@ Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguient
 ### Chile
 * Debido a restricciones de la red, se pueden autorizar anulaciones dentro de las tres primeras horas luego de la autorización. Si no se acepta la anulación o no se envía una captura luego de siete (7) días, la transacción se anula automáticamente.
 * El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 327 días. Si la transacción fue procesada con KLAP, el tiempo máximo es 172 días.
-* No se soportan reembolsos para [transacciones procesadas con WebPay Plus]({{< ref "Payments-API-chile.md#submit-transaction-with-debit-y-prepaid-cards" >}}).
+* Los reembolsos están disponibles para transacciones procesadas a través de [WebPay Plus o Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).
 * Para transacciones con tarjetas prepago que no sean procesadas a través de WebPay Plus, los Reembolsos solicitados luego de la primero hora del cobro pueden ser aprobados o rechazados por la red financiera. Luego de esta hora, se rechazan todos los reembolsos para transacciones realizadas con tarjetas prepago.
 * Si se rechaza el reembolso, PayU muestra el [código de error]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}) generado por la red.
 * No se soportan reembolsos con decimales.

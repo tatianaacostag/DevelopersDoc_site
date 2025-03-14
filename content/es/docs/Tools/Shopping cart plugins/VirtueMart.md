@@ -4,7 +4,7 @@ linkTitle: "VirtueMart"
 date: 2021-05-26T08:39:05-05:00
 description:
   Este artículo te muestra el procedimiento para habilitar PayU en tu sitio web de VirtueMart.
-weight: 40
+weight: 5
 tags: ["subtopic"]
 ---
 

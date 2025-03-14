@@ -37,7 +37,7 @@ Antes de usar a API de Cancelamentos e Reembolsos, Leve em conta as seguintes in
 ### Chile
 * Devido a restrições de rede, o cancelamento pode ser autorizado nas primeiras três horas após a autorização. Se nenhum cancelamento ou reembolso for enviado após de 7 dias, a transação será cancelada automaticamente (auto-void).
 * O tempo mínimo para enviar um reembolso é de 10 minutos após a aprovação e o máximo é 327 dias. Se a transação foi processada com o KLAP, o tempo máximo é de 172 dias.
-* Reembolsos para [transações processadas por WebPay Plus]({{< ref "Payments-API-chile.md#submit-transaction-with-debit-and-prepaid-cards" >}}) não estão disponíveis.
+* Reembolsos estão disponíveis para transações processadas através do [WebPay Plus ou Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).
 * Para transações com cartões pré-pagos não processadas pelo WebPay Plus, os reembolsos solicitados na primeira hora após a cobrança podem ser aprovados ou rejeitados pela rede financeira. Após a primeira hora, todos os reembolsos de transações com cartões pré-pagos são rejeitados.
 * Se o reembolso for rejeitado, o PayU mostra o [código de erro]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}) gerado pela rede.
 * Reembolsos com casas decimais não são aceitos.

@@ -4,7 +4,7 @@ linkTitle: "Shopify"
 date: 2021-05-25T10:30:35-05:00
 description:
   Esta guía detalla los pasos para habilitar PayU en tu sitio web de Shopify. 
-weight: 10
+weight: 2
 tags: ["subtopic"]
 ---
 

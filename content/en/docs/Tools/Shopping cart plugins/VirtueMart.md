@@ -4,7 +4,7 @@ linkTitle: "VirtueMart"
 date: 2021-05-26T08:39:05-05:00
 description:
   This article shows you the procedure to enable PayU on your VirtueMart website.
-weight: 40
+weight: 5
 tags: ["subtopic"]
 ---
 

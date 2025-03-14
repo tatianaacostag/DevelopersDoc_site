@@ -4,7 +4,7 @@ linkTitle: "osCommerce"
 date: 2021-05-26T08:39:47-05:00
 description:
   Este artigo mostra o procedimento para habilitar PayU em seu site osCommerce.
-weight: 60
+weight: 7
 tags: ["subtopic"]
 ---
 

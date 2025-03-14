@@ -4,7 +4,7 @@ linkTitle: "VTEX"
 date: 2021-05-25T10:30:35-05:00
 description:
   Este guia explica como integrar a PayU ao seu site VTEX.
-weight: 5
+weight: 1
 tags: ["subtopic"]
 ---
 

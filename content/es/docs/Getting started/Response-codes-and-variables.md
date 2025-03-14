@@ -109,6 +109,7 @@ weight: 50
 |  |  | 10 (Pendiente) | PENDING_SENT_TO_FINANCIAL _ENTITY | 29 |   |
 |  |  | 12 (Pendiente) | PENDING_AWAITING_PSE _CONFIRMATION | 9994 | En espera de confirmación de PSE |
 |  |  | 18 (Pendiente) | PENDING_NOTIFYING_ENTITY | 25 | Recibo de pago generado. En espera de pago |
+| DECLINED | 6 | 6 | THREEDS_REJECTED | 23 | Transacción rechazada debido a un fallo en la autenticación 3D |
 
 ##  Códigos de Respuesta de la Página de Confirmación {#response-codes-sent-to-the-confirmation-page}
 

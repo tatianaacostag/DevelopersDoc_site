@@ -4,7 +4,7 @@ linkTitle: "Shopify"
 date: 2021-05-25T10:30:35-05:00
 description:
   This guide outlines the steps to enable PayU on your Shopify website. 
-weight: 10
+weight: 2
 tags: ["subtopic"]
 ---
 

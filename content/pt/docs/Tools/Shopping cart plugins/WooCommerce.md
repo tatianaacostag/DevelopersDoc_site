@@ -4,7 +4,7 @@ linkTitle: "WooCommerce"
 date: 2021-05-26T08:40:03-05:00
 description:
   Este artigo mostra o procedimento para habilitar PayU em seu site WooCommerce.
-weight: 50
+weight: 6
 tags: ["subtopic"]
 ---
 
