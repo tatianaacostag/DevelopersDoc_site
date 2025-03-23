@@ -58,7 +58,7 @@ A _provider_ stores your payment-processing credentials. Follow these steps to c
 |---|---|
 | Configuration Name | Enter a name for the provider configuration. |
 | Description | Provide an optional description. |
-| apiLogin | User or login provided by PayU. [Get API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| apiLogin | Username or login provided by PayU. [Get API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | apiKey | Unique key of your commerce. [Get API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | accountId | PayU account ID based on your operating country. |
 | merchantId | Your commerce ID in PayU Latam. |

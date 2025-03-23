@@ -2203,6 +2203,14 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;td&gt;25&lt;/td&gt;
 &lt;td&gt;Recibo de pago generado. En espera de pago&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DECLINED&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;THREEDS_REJECTED&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;Transacción rechazada debido a un fallo en la autenticación 3D&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;response-codes-sent-to-the-confirmation-page&#34;&gt;Códigos de Respuesta de la Página de Confirmación&lt;/h2&gt;

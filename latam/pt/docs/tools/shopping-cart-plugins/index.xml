@@ -927,195 +927,191 @@ Se precisar emitir um reembolso total ou parcial, você pode gerenciá-lo direta
     </item>
     
     <item>
-      <title>Docs: BigCommerce</title>
-      <link>/pt/docs/tools/shopping-cart-plugins/bigcommerce.html</link>
-      <pubDate>Thu, 27 Apr 2023 10:30:35 -0500</pubDate>
+      <title>Docs: Omnibees</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/omnibees.html</link>
+      <pubDate>Mon, 10 Mar 2025 10:30:35 -0500</pubDate>
       
-      <guid>/pt/docs/tools/shopping-cart-plugins/bigcommerce.html</guid>
+      <guid>/pt/docs/tools/shopping-cart-plugins/omnibees.html</guid>
       <description>
         
         
-        &lt;p&gt;BigCommerce é uma plataforma robusta de e-commerce projetada para ajudar você a configurar e gerenciar uma loja online rapidamente, oferecendo uma variedade de recursos prontos para uso para uma experiência perfeita. Para mais informações, visite o &lt;a href=&#34;https://www.bigcommerce.com/press&#34; target=&#34;_blank&#34;&gt;site oficial do BigCommerce&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
-&lt;p&gt;Antes de iniciar a integração, certifique-se de ter o seguinte:&lt;/p&gt;
+        &lt;p&gt;O Omnibees é uma plataforma de distribuição e gerenciamento de hotéis que fornece tecnologia para que os hotéis gerenciem reservas e otimizem a receita em vários canais de vendas. Para mais informações, visite o &lt;a href=&#34;https://omnibees.com&#34; target=&#34;_blank&#34;&gt;site oficial do Omnibees&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;p&gt;Antes de integrar o PayU com o Omnibees, certifique-se de ter o seguinte:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Uma conta PayU Latam&lt;/li&gt;
-&lt;li&gt;Uma conta BigCommerce&lt;/li&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;conta PayU Latam ativa&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://control.paymentsos.com/signup&#34; target=&#34;_blank&#34;&gt;conta PayU Enterprise (PaymentsOS) ativa&lt;/a&gt; no modo de produção/ao vivo (veja os detalhes de ativação abaixo).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;installing-the-extension&#34;&gt;Instalando a Extensão&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Acesse o BigCommerce Marketplace, selecione &lt;strong&gt;My Apps&lt;/strong&gt;, localize a extensão do PayU e clique em &lt;strong&gt;Install&lt;/strong&gt; para iniciar a instalação.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce1.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Marque a caixa de seleção e clique em &lt;strong&gt;Confirm&lt;/strong&gt; para continuar com a instalação.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce2.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Após a instalação, a interface do aplicativo aparecerá conforme abaixo.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce3.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;h2 id=&#34;configuração-de-métodos-de-pagamento&#34;&gt;Configuração de Métodos de Pagamento&lt;/h2&gt;
-&lt;p&gt;Configure e personalize os métodos de pagamento para sua página de checkout. Consulte nossos &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/select-your-payment-method.html&#34; target=&#34;_blank&#34;&gt;métodos de pagamento disponíveis&lt;/a&gt;.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Após a instalação, ative a opção &lt;strong&gt;Enable PayU Latam&lt;/strong&gt; para integrar o aplicativo à sua loja BigCommerce.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce4.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Personalize o título para a opção de pagamento com cartão (por exemplo, &lt;em&gt;Pagar com Cartão&lt;/em&gt;). Este título será visível para os usuários na página de checkout.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce5.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Escolha o formato de exibição das opções de pagamento com cartão disponíveis no checkout:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&#34;ativando-sua-conta-payu-enterprise-modo-ao-vivo&#34;&gt;Ativando sua Conta PayU Enterprise (Modo ao vivo)&lt;/h2&gt;
+&lt;p&gt;Por padrão, novas contas são configuradas no modo de teste. Para habilitar transações ao vivo, entre em contato com seu gerente de conta e envie uma solicitação com os seguintes detalhes:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Exibir &lt;em&gt;Powered by PayU Latam&lt;/em&gt; e o logotipo no formulário de pagamento.&lt;/li&gt;
-&lt;li&gt;Exibir os logotipos dos cartões de crédito na página de checkout.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Merchant ID:&lt;/strong&gt; Localize o Merchant ID da sua conta LATAM no &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids&#34; target=&#34;_blank&#34;&gt;Painel de Gerenciamento do PayU&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Account ID:&lt;/strong&gt; Encontre seu Account ID no painel de controle do PayU Enterprise clicando no seu nome de usuário no canto superior direito.
+&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce6.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
-Para habilitar métodos de pagamento alternativos (dinheiro e transferências bancárias), selecione &lt;strong&gt;Enable Web Checkout (APM)&lt;/strong&gt;.
-&lt;/div&gt;
-
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Adicione um provedor para um país específico do PayU Latam clicando em &lt;strong&gt;Add Provider&lt;/strong&gt;. Ative ou desative cada provedor usando o botão na coluna &lt;strong&gt;Status&lt;/strong&gt; e atualize suas credenciais clicando no botão &lt;strong&gt;Edit&lt;/strong&gt;.&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex01pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;integrando-o-payu-com-o-omnibees&#34;&gt;Integrando o PayU com o Omnibees&lt;/h2&gt;
+&lt;p&gt;A integração consiste em duas etapas principais:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Configurando sua conta PayU Enterprise&lt;/li&gt;
+&lt;li&gt;Entrando em contato com o Omnibees para habilitar a integração&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce7.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;Além disso, escolha o modo &lt;strong&gt;Test&lt;/strong&gt; ou &lt;strong&gt;Live&lt;/strong&gt; para cada provedor na opção &lt;strong&gt;Onboard Setup&lt;/strong&gt;.&lt;/p&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce8.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Campos Obrigatórios para Adicionar um Novo Provedor:&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1-configurando-sua-conta-payu-enterprise&#34;&gt;1. Configurando sua Conta PayU Enterprise&lt;/h3&gt;
+&lt;p&gt;O PayU Enterprise opera através do PaymentsOS, que atua como middleware entre o PayU Latam e o Omnibees. A configuração inclui os seguintes componentes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Configuração do provedor&lt;/li&gt;
+&lt;li&gt;Configuração da unidade de negócios&lt;/li&gt;
+&lt;li&gt;Criação de webhook&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;11-configurando-um-provedor&#34;&gt;1.1 Configurando um Provedor&lt;/h4&gt;
+&lt;p&gt;Um &lt;em&gt;provedor&lt;/em&gt; armazena suas credenciais de processamento de pagamento. Siga estas etapas para configurar um:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;No painel do PayU Enterprise, navegue até &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Providers&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Clique no módulo correspondente ao país ou divisão que você está configurando.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Preencha os seguintes campos:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parâmetro&lt;/th&gt;
+&lt;th&gt;Campo&lt;/th&gt;
 &lt;th&gt;Descrição&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Select Payu Latam country&lt;/td&gt;
-&lt;td&gt;Escolha o país que você deseja configurar.&lt;/td&gt;
+&lt;td&gt;Configuration Name&lt;/td&gt;
+&lt;td&gt;Insira um nome para a configuração do provedor.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;API Login&lt;/td&gt;
-&lt;td&gt;Usuário ou login fornecido pela PayU. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Como obter meu Login da API&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Forneça uma descrição opcional.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;API Key&lt;/td&gt;
-&lt;td&gt;Chave exclusiva que a PayU atribuiu à sua loja. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Como obter minha Chave da API&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;apiLogin&lt;/td&gt;
+&lt;td&gt;Usuário ou login fornecido pelo PayU. &lt;a href=&#34;../../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Obter API Login&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Public Key&lt;/td&gt;
-&lt;td&gt;Chave exclusiva que a PayU atribuiu à sua loja. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Como obter minha Chave Pública&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;apiKey&lt;/td&gt;
+&lt;td&gt;Chave exclusiva do seu comércio. &lt;a href=&#34;../../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Obter API Key&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Account ID&lt;/td&gt;
-&lt;td&gt;ID da conta PayU para o país selecionado.&lt;/td&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;Account ID do PayU com base no seu país de operação.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Merchant ID&lt;/td&gt;
-&lt;td&gt;ID do seu comércio na PayU Latam.&lt;/td&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Seu ID de comércio no PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paymentCountry&lt;/td&gt;
+&lt;td&gt;País de processamento no formato ISO 3166 Alpha-3.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;multicapture&lt;/td&gt;
+&lt;td&gt;Selecione &lt;strong&gt;None&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cashRedirect&lt;/td&gt;
+&lt;td&gt;Selecione &lt;strong&gt;None&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Selecione o fluxo de transação:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;Para habilitar um fluxo de uma etapa, selecione &lt;strong&gt;Capture on Order Placed&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Para habilitar um fluxo de duas etapas, selecione &lt;strong&gt;Capture on Shipment&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce9.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;O fluxo de duas etapas se aplica apenas a pagamentos com cartão (sujeito à disponibilidade em cada país); outros métodos de pagamento exigem autorização e captura em uma única etapa. Consulte a &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/services/payments.html#payment-flows&#34; target=&#34;_blank&#34;&gt;documentação sobre fluxo de pagamentos&lt;/a&gt; para mais detalhes.&lt;/li&gt;
-&lt;li&gt;As opções de múltiplas lojas aparecerão abaixo da seção de opções de pagamento.
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce10.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;gerenciamento-de-pedidos-e-reembolsos&#34;&gt;Gerenciamento de Pedidos e Reembolsos&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Para gerenciar os pedidos, clique no botão &lt;strong&gt;Order Dashboard&lt;/strong&gt; no canto superior direito.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;O &lt;strong&gt;Order Dashboard&lt;/strong&gt; fornece uma visão geral dos status de pagamento de todos os pedidos.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce12.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Para processar um reembolso, clique no botão &lt;strong&gt;Refund&lt;/strong&gt; na coluna &lt;strong&gt;Actions&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce13.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Os reembolsos estão disponíveis apenas para transações com cartão.&lt;/li&gt;
-&lt;li&gt;Consulte o &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/payu-operations/refunds-mp.html&#34; target=&#34;_blank&#34;&gt;documento de reembolsos&lt;/a&gt; para obter detalhes específicos por país.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;testando-a-integração&#34;&gt;Testando a Integração&lt;/h2&gt;
-&lt;p&gt;Teste sua integração com credenciais de teste antes de iniciar transações ao vivo.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Faça login na sua loja, selecione um produto para teste e prossiga para o checkout. Certifique-se de que o país de envio corresponde ao destino.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce14.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Selecione o método de pagamento desejado.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Cartão:&lt;/strong&gt; Insira os detalhes do cartão e clique em &lt;strong&gt;Pay By Card&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce15.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-Você pode personalizar o título da opção de pagamento com cartão, conforme explicado em &lt;a href=&#34;#configura%C3%A7%C3%A3o-de-m%C3%A9todos-de-pagamento&#34;&gt;Configuração dos Métodos de Pagamento&lt;/a&gt;.
+&lt;p&gt;Se você estiver usando versões mais antigas do Módulo Administrativo do PayU, encontre as informações da sua conta em &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Technical Information&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/omnibees/omnibees1.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
 &lt;/div&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Pagar via Web Checkout:&lt;/strong&gt; Para outros métodos, selecione &lt;strong&gt;Pay by Web Checkout&lt;/strong&gt; e conclua o pagamento.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce16.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Após a aprovação, verifique a compra em:&lt;/li&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees2.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 450px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;12-criando-uma-unidade-de-negócios&#34;&gt;1.2 Criando uma Unidade de Negócios&lt;/h4&gt;
+&lt;p&gt;Uma &lt;em&gt;unidade de negócios&lt;/em&gt; vincula a configuração do provedor com as credenciais da API do PayU Enterprise para processar transações. Siga estas etapas:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;No painel, vá para &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Business Units&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex04.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Create Business Unit&lt;/strong&gt; e insira:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Business Unit Name&lt;/td&gt;
+&lt;td&gt;Deve estar em minúsculas e não conter espaços. &lt;strong&gt;Este valor não pode ser alterado posteriormente, portanto, garanta a precisão.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Descrição opcional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Na seção &lt;strong&gt;Choose a Default Provider for This Business Unit&lt;/strong&gt;, selecione o provedor criado na Etapa 1.1 e clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees3.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 700px; height: auto;&#34;&gt;
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+&lt;p&gt;Você pode clicar na guia da unidade de negócios para recuperar os seguintes detalhes necessários para a integração do Omnibees: &lt;strong&gt;App ID&lt;/strong&gt;, &lt;strong&gt;Public API key&lt;/strong&gt; e &lt;strong&gt;Private API key&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees4.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 450px; height: auto;&#34;&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;13-criando-um-webhook&#34;&gt;1.3 Criando um Webhook&lt;/h4&gt;
+&lt;p&gt;O webhook recebe notificações do Omnibees quando o status de uma transação muda. Siga estas etapas:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;No painel, navegue até &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Webhooks&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex06.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Create a Webhook Endpoint&lt;/strong&gt; e insira:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://paymentgateways.omnibees.com/PayUWebhookService.ashx
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Habilite &lt;strong&gt;Update&lt;/strong&gt; e &lt;strong&gt;Create&lt;/strong&gt; para o evento &lt;strong&gt;Charge&lt;/strong&gt; em &lt;strong&gt;Payment Event Alerts&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Atribua o webhook à unidade de negócios criada anteriormente e selecione a versão mais recente do webhook.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees5.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 600px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-entrando-em-contato-com-o-omnibees-para-habilitar-a-integração&#34;&gt;2. Entrando em Contato com o Omnibees para Habilitar a Integração&lt;/h2&gt;
+&lt;p&gt;Depois que os componentes do PayU Enterprise estiverem configurados, envie um e-mail para &lt;strong&gt;&lt;a href=&#34;mailto:servicedesk@omnibees.com&#34;&gt;servicedesk@omnibees.com&lt;/a&gt;&lt;/strong&gt; para solicitar a ativação. Inclua os seguintes detalhes:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;BigCommerce Order Dashboard:&lt;/strong&gt; Acesse &lt;strong&gt;PayU Latam &amp;gt; Order Dashboard&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;App ID&lt;/li&gt;
+&lt;li&gt;Public API key&lt;/li&gt;
+&lt;li&gt;Private API key&lt;/li&gt;
+&lt;li&gt;Unidade de negócios (opcional)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Painel de Gerenciamento PayU:&lt;/strong&gt; Verifique no &lt;strong&gt;módulo de Relatório de Vendas&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce17.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&#34;suporte&#34;&gt;Suporte&lt;/h2&gt;
-&lt;p&gt;Para problemas técnicos ou dúvidas sobre esta extensão, entre em contato com nossa equipe de suporte pelo e-mail &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; ou visite &lt;a href=&#34;https://colombia.payu.com/pt/contact-us//&#34; target=&#34;_blank&#34;&gt;nosso site&lt;/a&gt;. Ao entrar em contato com o suporte, inclua os detalhes da extensão no assunto do e-mail e forneça um resumo conciso do problema no corpo da mensagem.&lt;/p&gt;
+&lt;h2 id=&#34;gerenciamento-de-usuários-no-payu-enterprise&#34;&gt;Gerenciamento de Usuários no PayU Enterprise&lt;/h2&gt;
+&lt;p&gt;O PayU Enterprise permite acesso de usuário baseado em função para unidades de negócios. Para obter detalhes sobre o gerenciamento de usuários e permissões, consulte a &lt;a href=&#34;https://developers.paymentsos.com/docs/features/control-center.html#user-management&#34; target=&#34;_blank&#34;&gt;documentação do PayU Enterprise&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
@@ -1743,6 +1739,95 @@ Siga o próximo procedimento para instalar o plugin em seu site.&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;Finalmente, salve as alterações. Nesta etapa seus clientes podem pagar com PayU Latam quando fizerem o checkout com o carrinho de compras do OpenCart.&lt;/li&gt;
 &lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PrestaShop</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/prestashop.html</link>
+      <pubDate>Mon, 10 Mar 2025 10:30:35 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/prestashop.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;PrestaShop é uma plataforma de e-commerce de código aberto que permite que empresas criem e personalizem lojas online com total controle sobre design e funcionalidade. É autohospedada e altamente extensível por meio de módulos e temas. Para mais informações, visite o &lt;a href=&#34;https://prestashop.com&#34; target=&#34;_blank&#34;&gt;site oficial do PrestaShop&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;p&gt;Antes de integrar o PayU ao PrestaShop, certifique-se de ter o seguinte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;conta ativa do PayU Latam&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Seu site deve estar rodando o PrestaShop na versão 1.4 a 1.6.&lt;/li&gt;
+&lt;li&gt;O plugin do PayU para PrestaShop, disponível para download &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/tools/shopping-cart-plugins.html#plugin-files&#34; target=&#34;_blank&#34;&gt;aqui&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+As versões 1.7 e superiores do PrestaShop não são compatíveis com o plugin do PayU.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;integração-do-plugin-do-payu-nos-módulos-do-prestashop&#34;&gt;Integração do Plugin do PayU nos Módulos do PrestaShop&lt;/h2&gt;
+&lt;p&gt;Para usar os serviços do PayU no seu site PrestaShop, é necessário instalar o plugin do PayU como um módulo. Siga os passos abaixo:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Acesse o painel de administração do PrestaShop.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navegue até &lt;strong&gt;Modules and Services &amp;gt; Modules and Services&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Add a new module&lt;/strong&gt; no canto superior direito.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Choose a file&lt;/strong&gt;, selecione o arquivo ZIP do plugin do PayU para PrestaShop no seu computador e depois clique em &lt;strong&gt;Upload this module&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/prestashop/prestashop1.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;O módulo do PayU agora aparecerá na lista de módulos. Clique em &lt;strong&gt;Install&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Na lista de módulos, localize o módulo do PayU e clique em &lt;strong&gt;Configure&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Preencha os seguintes campos obrigatórios:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;ID do seu comércio no PayU Latam. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34; target=&#34;_blank&#34;&gt;Ver meu Merchant ID&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account ID&lt;/td&gt;
+&lt;td&gt;ID da conta do PayU baseado no seu país de operação. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34; target=&#34;_blank&#34;&gt;Ver meu Account ID&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API Key&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Ver minha API Key&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Ative o &lt;strong&gt;Test Mode&lt;/strong&gt; para realizar transações com dados simulados.
+&lt;/div&gt;
+
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Save&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Agora, os serviços do PayU estão integrados com sucesso ao seu site PrestaShop.&lt;/p&gt;
 
       </description>
     </item>

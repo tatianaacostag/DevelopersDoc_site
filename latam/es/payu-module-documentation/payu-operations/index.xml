@@ -315,7 +315,7 @@ Si realizas un reembolso a través de este panel, este solo se actualiza en el M
 &lt;li&gt;Una vez hagas la solicitud, el monto de la transacción se convierte en parte del Saldo Congelado de tu cuenta de PayU hasta que sea procesado.&lt;/li&gt;
 &lt;li&gt;En &lt;strong&gt;Chile&lt;/strong&gt;:
 &lt;ul&gt;
-&lt;li&gt;No se soportan reembolsos para &lt;a href=&#34;../../../es/docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-debit-and-prepaid-cards&#34;&gt;transacciones procesadas con WebPay Plus&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Los reembolsos están disponibles para transacciones procesadas a través de &lt;a href=&#34;../../../es/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-debit-and-prepaid-cards&#34;&gt;WebPay Plus o Redcompra&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para transacciones con tarjetas prepago que no sean procesadas a través de WebPay Plus, los Reembolsos solicitados luego de la primero hora del cobro pueden ser aprobados o rechazados por la red financiera. Luego de esta hora, se rechazan todos los reembolsos para transacciones realizadas con tarjetas prepago.&lt;/li&gt;
 &lt;li&gt;ISi se rechaza el reembolso, PayU muestra el &lt;a href=&#34;../../../es/docs/getting-started/response-codes-and-variables.html#response-codes-for-transactions&#34;&gt;código de error&lt;/a&gt; generado por la red.&lt;/li&gt;
 &lt;li&gt;Los reembolsos parciales para transacciones que utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.&lt;/li&gt;

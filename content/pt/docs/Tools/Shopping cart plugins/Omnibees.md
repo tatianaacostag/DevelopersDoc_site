@@ -58,9 +58,9 @@ Um _provedor_ armazena suas credenciais de processamento de pagamento. Siga esta
 |---|---|
 | Configuration Name | Insira um nome para a configuração do provedor. |
 | Description | Forneça uma descrição opcional. |
-| apiLogin | Usuário ou login fornecido pelo PayU. [Obter API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| apiKey | Chave exclusiva do seu comércio. [Obter API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| accountId | Account ID do PayU com base no seu país de operação. |
+| apiLogin | Nome de usuário ou login fornecido pelo PayU. [Obter API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| apiKey | Chave única do seu comércio. [Obter API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| accountId | ID da conta PayU com base no seu país de operação. |
 | merchantId | Seu ID de comércio no PayU Latam. |
 | paymentCountry | País de processamento no formato ISO 3166 Alpha-3. |
 | multicapture | Selecione **None**. |

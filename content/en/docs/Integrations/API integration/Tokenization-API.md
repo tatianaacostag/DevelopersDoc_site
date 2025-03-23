@@ -3,83 +3,98 @@ title: "Tokenization API"
 linkTitle: "Tokenization API"
 date: 2021-06-24T10:31:30-05:00
 description: >
-  Tokenization API allows you to safely store the data of your customers' credit cards through the creation of a token. This token lets you make regular charges or implement the 1 Click payment feature, following PCI DSS (Payment Card Industry Data Security Standard) security standards to handle credit card data.
+  The Tokenization API enables you to securely store your customers' credit card data by generating a token. This token allows you to process recurring payments or implement the 1-Click payment feature while adhering to PCI DSS (Payment Card Industry Data Security Standard) requirements for handling credit card information.
 weight: 40
 tags: ["subtopic"]
 ---
 
 Tokenization feature is available under customized commercial agreements. For more information, contact your sales representative.
 
-To integrate with Tokenization API, target your request to the following URLs according to your environment.
+{{% alert title="Note" color="info"%}}
 
-{{% alert title="URL" color="info"%}}
+To integrate with the Tokenization API, send your requests to the following URLs based on your environment:
+
 * Test: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Production: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-## Available methods
-Tokenization API includes methods to register and remove tokens, and methods to query tokens.
+## Available Methods
 
-* [Individual credit card registration]({{< ref "Tokenization-API.md#individual-credit-card-registration" >}})
-* [Massive credit card registration]({{< ref "Tokenization-API.md#massive-credit-card-registration" >}})
-* [Individual token removal]({{< ref "Tokenization-API.md#individual-token-removal" >}})
-* [Massive token removal]({{< ref "Tokenization-API.md#massive-token-removal" >}})
-* [Query tokens]({{< ref "Tokenization-API.md#query-tokens" >}})
+The Tokenization API includes methods to register and remove tokens, query them, and process payments using tokenized credit cards.
 
-## Individual credit card registration
-Using this feature, you can register the information of a customer's credit card and get a token. 
+* [Individual Credit Card Registration]({{< ref "Tokenization-API.md#individual-credit-card-registration" >}})
+* [Massive Credit Card Registration]({{< ref "Tokenization-API.md#massive-credit-card-registration" >}})
+* [Individual Token Removal]({{< ref "Tokenization-API.md#individual-token-removal" >}})
+* [Massive Token Removal]({{< ref "Tokenization-API.md#massive-token-removal" >}})
+* [Query Tokens]({{< ref "Tokenization-API.md#query-tokens" >}})
+* [Payments Using Tokenization]({{< ref "Tokenization-API.md#payments-using-tokenization" >}})
 
-### Variables for request and response
+## Individual Credit Card Registration
+
+This feature allows you to register a customer's credit card information and generate a token.
+
+### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
-| command | Alphanumeric | Max:32 | Set `CREATE_TOKEN`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
-| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| creditCardToken |  |  | Information of the credit card to be tokenized. | Yes |
-| creditCardToken > payerId | Alphanumeric | | Internal id of the credit card holder. | Yes |
-| creditCardToken > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card. | Yes |
-| creditCardToken > identificationNumber | Alphanumeric | Max:20 | Identification number of the credit card holder. | Yes |
-| creditCardToken > paymentMethod | Alphanumeric | 32 | Select a valid Credit card Payment Method. [See the available Payment Methods]({{< ref "select-your-payment-method.html" >}}). | Yes |
+| language | Alphanumeric | 2 | Language used in the request. This determines the language of error messages. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
+| command | Alphanumeric | Max:32 | Set to `CREATE_TOKEN`. | Yes |
+| merchant | Object |  | Object containing authentication data. | Yes |
+| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | PayU provides this username or login. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| merchant > apiKey | Alphanumeric | Min:6 Max:32 | PayU provides this password. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| creditCardToken | Object |  | Object containing credit card details for tokenization. | Yes |
+| creditCardToken > payerId | Alphanumeric | | Internal ID of the credit card holder. | Yes |
+| creditCardToken > name | Alphanumeric | Min:1 Max:255 | Name of the cardholder as displayed on the credit card. | Yes |
+| creditCardToken > identificationNumber | Alphanumeric | Max:20 | Identification number of the cardholder. | Yes |
+| creditCardToken > paymentMethod | Alphanumeric | 32 | Valid credit card payment method. [See the available Payment Methods]({{< ref "select-your-payment-method.html" >}}). | Yes |
 | creditCardToken > number | Alphanumeric | Min:13 Max:20 | Credit card number. | Yes |
-| creditCardToken > expirationDate | Alphanumeric | 7 | Credit card expiration date. Format `YYYY/MM`. | Yes |
+| creditCardToken > expirationDate | Alphanumeric | 7 | Expiration date in `YYYY/MM` format. | Yes |
 
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
-| code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
-| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| creditCardToken |  |  | Information of the Tokenized credit card. |
-| creditCardToken > creditCardTokenId | Alphanumeric | | Token generated through the information of the credit card. |
-| creditCardToken > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card as sent in the request. |
-| creditCardToken > payerId | Alphanumeric | | Internal id of the credit card holder as sent in the request. |
-| creditCardToken > identificationNumber | Alphanumeric | Max:20 | Identification number of the credit card holder as sent in the request. |
+| code | Alphanumeric |  | Transaction response: `ERROR` or `SUCCESS`. |
+| error | Alphanumeric | Max:2048 | Error message returned when the transaction code is `ERROR`. |
+| creditCardToken | Object |  | Object containing tokenized credit card details. |
+| creditCardToken > creditCardTokenId | Alphanumeric | | Token generated from the credit card details. |
+| creditCardToken > name | Alphanumeric | Min:1 Max:255 | Cardholder name as sent in the request. |
+| creditCardToken > payerId | Alphanumeric | | Internal ID of the cardholder as sent in the request. |
+| creditCardToken > identificationNumber | Alphanumeric | Max:20 | Identification number of the cardholder as sent in the request. |
 | creditCardToken > paymentMethod | Alphanumeric | 32 | Franchise of the tokenized credit card as sent in the request. |
-| creditCardToken > maskedNumber | Alphanumeric | Min:13 Max:20 | Masked credit card number. The masked used displays the first six digits and the last four digits of the credit card. |
+| creditCardToken > maskedNumber | Alphanumeric | Min:13 Max:20 | Masked credit card number displaying the first six and last four digits. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### API Call
+
+The following examples show request and response bodies.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -98,9 +113,11 @@ Request body:
    }
 }
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -123,9 +140,11 @@ Response body:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -144,9 +163,11 @@ Request body:
    </creditCardToken>
 </request>
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```XML
 <creditCardTokenResponse>
     <code>SUCCESS</code>
@@ -160,63 +181,83 @@ Response body:
     </creditCardToken>
 </creditCardTokenResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
-## Massive credit card registration
-Using this feature, you can register the information of several credit cards stored in a _**.csv**_ file and get a token per each card. 
+## Massive Credit Card Registration
+
+This feature allows you to register multiple credit cards stored in a .csv file and generate a token for each card. 
 
 ### Considerations
-* Each record of the file must have the following structure and order separated by commas:
+
+* Each record in the file must follow the specified structure and order, with fields separated by commas:
     - Payer ID
     - Full name
     - Credit card number
     - Expiration date
     - Franchise
     - Identification number
-* The file must not have header.
-* The file must be codifies using UTF-8. You need to implement a functionality to codify the content and send the codified string in the `contentFile` parameter.
-* The file cannot have more than 10.000 records.<br><br>![PrintScreen](/assets/massiveTokenization.jpeg) 
+* The file must not contain a header.
+* The file must be encoded using UTF-8. You need to implement a function to encode the content and send the encoded string in the `contentFile` parameter.
+* The file cannot contain more than 10,000 records.
 
-### Variables for request and response
+<br>
+
+**Example:**
+
+![PrintScreen](/assets/massiveTokenization.jpeg) 
+
+### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
-| command | Alphanumeric | Max:32 | Set `CREATE_BATCH_TOKENS`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
-| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| contentFile | Alphanumeric |  | Codified string in Base64 with the information of the credit cards as explained before. | Yes |
+| language | Alphanumeric | 2 | Language used in the request. This determines the language of error messages. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
+| command | Alphanumeric | Max:32 | Set to `CREATE_BATCH_TOKENS`. | Yes |
+| merchant | Object |  | Object containing authentication data. | Yes |
+| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | PayU provides this username or login. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| merchant > apiKey | Alphanumeric | Min:6 Max:32 | PayU provides this password. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| contentFile | Alphanumeric |  | Base64-encoded string containing the credit card information as described above. | Yes |
 
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
-| code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
-| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| id |  |  | Identification of the procedure. |
+| code | Alphanumeric |  | Transaction response: `ERROR` or `SUCCESS`. |
+| error | Alphanumeric | Max:2048 | Error message returned when the transaction code is `ERROR`. |
+| id | Alphanumeric |  | Identifier for the process. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### API Call
+
+The following examples show request and response bodies.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -228,9 +269,11 @@ Request body:
    "contentFile": "MDAxLE1hcnkgS2VsbGVyLDQwMjQwMDcxMzU0MTI2ODAsMjAyNC8wMSxWSVNBLDEyMzQ1NgowMDIsTWFyayBCcm93biw1MTA0ODQyNTA1ODE2MTcwLDIwMjMvMDUsTUFTVEVSQ0FSRCw3ODkwMTI="
 }
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -242,9 +285,11 @@ Response body:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -256,68 +301,83 @@ Request body:
    <contentFile>MDAxLE1hcnkgS2VsbGVyLDQwMjQwMDcxMzU0MTI2ODAsMjAyNC8wMSxWSVNBLDEyMzQ1NgowMDIsTWFyayBCcm93biw1MTA0ODQyNTA1ODE2MTcwLDIwMjMvMDUsTUFTVEVSQ0FSRCw3ODkwMTI=</contentFile>
 </request>
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```XML
 <creditCardTokenBatchResponse>
    <code>SUCCESS</code>
    <id>b721abbc-a9cf-44c6-99ba-91393de2b5d6</id>
 </creditCardTokenBatchResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
-## Individual token removal
-Using this feature, you can remove the token previously registered. 
+## Individual Token Removal
 
-### Variables for request and response
+This feature allows you to remove a previously registered token. 
+
+### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
-| command | Alphanumeric | Max:32 | Set `REMOVE_TOKEN`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
-| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| removeCreditCardToken |  |  | Information of token to be removed. | Yes |
-| removeCreditCardToken > payerId | Alphanumeric | | Internal id of the credit card holder. | Yes |
-| removeCreditCardToken > creditCardTokenId | Alphanumeric | | Token of the credit card to be removed. | Yes |
+| language | Alphanumeric | 2 | Language used in the request. This determines the language of error messages. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
+| command | Alphanumeric | Max:32 | Set to `REMOVE_TOKEN`. | Yes |
+| merchant | Object |  | Object containing authentication data. | Yes |
+| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | PayU provides this username or login. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| merchant > apiKey | Alphanumeric | Min:6 Max:32 | PayU provides this password. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| removeCreditCardToken | Object |  | Information of token to remove. | Yes |
+| removeCreditCardToken > payerId | Alphanumeric | | Internal ID of the cardholder as sent in the request. | Yes |
+| removeCreditCardToken > creditCardTokenId | Alphanumeric | | Token ID of the credit card to remove. | Yes |
 
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
-| code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
-| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| creditCardToken |  |  | Information of the Token removed. |
-| creditCardToken > creditCardTokenId | Alphanumeric | | Token of the credit card as sent in the request. |
-| creditCardToken > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card. |
-| creditCardToken > payerId | Alphanumeric | | Internal id of the credit card holder. |
-| creditCardToken > identificationNumber | Alphanumeric | Max:20 | Identification number of the credit card holder. |
-| creditCardToken > paymentMethod | Alphanumeric | 32 | Franchise of the tokenized credit card. |
-| creditCardToken > maskedNumber | Alphanumeric | Min:13 Max:20 | Masked credit card number. The masked used displays the first six digits and the last four digits of the credit card. |
+| code | Alphanumeric |  | Transaction response: `ERROR` or `SUCCESS`. |
+| error | Alphanumeric | Max:2048 | Error message returned when the transaction code is `ERROR`. |
+| creditCardToken | Object |  | Details of the removed token. |
+| creditCardToken > creditCardTokenId | Alphanumeric | | Token ID of the credit card, as sent in the request. |
+| creditCardToken > name | Alphanumeric | Min:1 Max:255 | Cardholder name as sent in the request. |
+| creditCardToken > payerId | Alphanumeric | | Internal ID of the cardholder as sent in the request. |
+| creditCardToken > identificationNumber | Alphanumeric | Max:20 | Identification number of the cardholder as sent in the request. |
+| creditCardToken > paymentMethod | Alphanumeric | 32 | Franchise of the tokenized credit card as sent in the request. |
+| creditCardToken > maskedNumber | Alphanumeric | Min:13 Max:20 | Masked credit card number displaying the first six and last four digits. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### API Call
+
+The following examples show request and response bodies.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -332,9 +392,11 @@ Request body:
    }
 }
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -357,9 +419,11 @@ Response body:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -373,11 +437,12 @@ Request body:
       <creditCardTokenId>46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3</creditCardTokenId>4
    </removeCreditCardToken>
 </request>
-
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```XML
 <creditCardTokenResponse>
     <code>SUCCESS</code>
@@ -391,59 +456,79 @@ Response body:
     </creditCardToken>
 </creditCardTokenResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
-## Massive token removal
-Using this feature, you can remove the tokens stored in a _**.csv**_ file. 
+## Massive Token Removal
+
+This feature allows you to remove tokens stored in a .csv file. 
 
 ### Considerations
-* Each record of the file must have the following structure and order separated by commas:
+
+* Each record in the file must follow this structure and order, separated by commas:
     - Payer ID
-    - Token.
-* The file must not have header.
-* The file must be codifies using UTF-8. You need to implement a functionality to codify the content and send the codified string in the `contentFile` parameter.
-* The file cannot have more than 10.000 records.<br><br>![PrintScreen](/assets/massiveDeletion.png) 
+    - Token
+* The file must not have a header.
+* The file must be encoded in UTF-8. You need to implement functionality to encode the content and send the encoded string in the `contentFile` parameter.
+* The file cannot contain more than 10,000 records.
 
-### Variables for request and response
+<br>
+
+**Example:**
+
+![PrintScreen](/assets/massiveDeletion.png) 
+
+### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
-| command | Alphanumeric | Max:32 | Set `REMOVE_BATCH_TOKENS`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
-| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| contentFile | Alphanumeric |  | Codified string in Base64 with the information of the tokens to be removed. | Yes |
+| language | Alphanumeric | 2 | Language used in the request. This determines the language of error messages. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
+| command | Alphanumeric | Max:32 | Set to `REMOVE_BATCH_TOKENS`. | Yes |
+| merchant | Object |  | Object containing authentication data. | Yes |
+| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | PayU provides this username or login. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| merchant > apiKey | Alphanumeric | Min:6 Max:32 | PayU provides this password. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| contentFile | Alphanumeric |  | Base64-encoded string containing the tokens to remove. | Yes |
 
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
-| code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
-| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| id |  |  | Identification of the procedure. |
+| code | Alphanumeric |  | Transaction response: `ERROR` or `SUCCESS`. |
+| error | Alphanumeric | Max:2048 | Error message returned when the transaction code is `ERROR`. |
+| id | Alphanumeric |  | Identifier for the process. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### API Call
+
+The following examples show request and response bodies.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -455,9 +540,11 @@ Request body:
    "contentFile": "UGF5ZXJJZDEsYWQ4NGQ2NzEtYjZiOC00YjEyLWFkNTktZmYxZDJhNjQ0M2NhDQpQYXllcklkMiw0ZGYxNjMwYy03MDkyLTRhNjgtODE3MC0yYzI2YzZjOTUyMDg="
 }
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -469,9 +556,11 @@ Response body:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -483,70 +572,301 @@ Request body:
    <contentFile>UGF5ZXJJZDEsYWQ4NGQ2NzEtYjZiOC00YjEyLWFkNTktZmYxZDJhNjQ0M2NhDQpQYXllcklkMiw0ZGYxNjMwYy03MDkyLTRhNjgtODE3MC0yYzI2YzZjOTUyMDg=</contentFile>
 </request>
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```XML
 <creditCardTokenBatchResponse>
    <code>SUCCESS</code>
    <id>2562625d-9e4c-450a-b979-031feb033952</id>
 </creditCardTokenBatchResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
-## Query tokens
-Using this feature, you can get the information of tokenized credit cards, you can perform the query by the token number or by a date range. 
+## Query Tokens
 
-### Variables for request and response
+Using this feature, you can retrieve information about tokenized credit cards. You can query using:
+
+* **Token ID:** Retrieve details of a specific tokenized credit card.
+* **Payer ID:** Retrieve all tokenized credit cards associated with a payer.
+* **Date range:** Retrieve all tokenized credit cards created within a specific period.
+
+### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
+| language | Alphanumeric | 2 | Language used in the request. This language is used to display error messages. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | command | Alphanumeric | Max:32 | Set `GET_TOKENS`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
-| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| creditCardTokenInformation |  |  | Parameters of the query. | Yes |
-| creditCardTokenInformation > creditCardTokenId | Alphanumeric | | Token of the card to consult. This parameter is mandatory when you want to query by Token Id. | No |
-| creditCardTokenInformation > startDate | Alphanumeric | 23 | Start date of the query when you want to query by date range. This parameter is mandatory when you want to query by date rage.<br>Format `YYYY-MM-DDTHH:MM:SS`, for example `2021-06-12T16:07:11`. | No |
-| creditCardTokenInformation > endDate | Alphanumeric | 23 | End date of the query when you want to query by date range. This parameter is mandatory when you want to query by date rage.<br>Format `YYYY-MM-DDTHH:MM:SS`, for example `2021-06-12T16:07:11`. | No |
+| merchant | Object |  | Object containing authentication data. | Yes |
+| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | PayU provides this username or login. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| merchant > apiKey | Alphanumeric | Min:6 Max:32 | PayU provides this password. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| creditCardTokenInformation | Object |  | Parameters of the query. | Yes |
+| creditCardTokenInformation > creditCardTokenId | Alphanumeric | | Token ID of the credit card to retrieve. **Mandatory when querying by Token ID.** | No |
+| creditCardTokenInformation > payerId | Alphanumeric | | Unique identifier of the payer. **Mandatory when querying by Payer ID.** | No |
+| creditCardTokenInformation > startDate | Alphanumeric | 23 | Start date for queries by date range. **Mandatory when querying by date range.** Format: `YYYY-MM-DDTHH:MM:SS`, e.g., `2021-06-12T16:07:11`. | No |
+| creditCardTokenInformation > endDate | Alphanumeric | 23 | End date for queries by date range. **Mandatory when querying by date range.** Format: `YYYY-MM-DDTHH:MM:SS`, e.g., `2021-06-12T16:07:11`. | No |
 
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
-| code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
-| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| creditCardTokenList |  |  | Information of the Tokenized credit cards. |
-| creditCardTokenList > creditCardTokenId | Alphanumeric | | Token generated through the information of the credit card. |
-| creditCardTokenList > name | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the credit card as sent in the request. |
-| creditCardTokenList > payerId | Alphanumeric | | Internal id of the credit card holder as sent in the request. |
-| creditCardTokenList > identificationNumber | Alphanumeric | Max:20 | Identification number of the credit card holder as sent in the request. |
-| creditCardTokenList > paymentMethod | Alphanumeric | 32 | Franchise of the tokenized credit card as sent in the request. |
+| code | Alphanumeric |  | Transaction response: `ERROR` or `SUCCESS`. |
+| error | Alphanumeric | Max:2048 | Error message returned when the transaction code is `ERROR`. |
+| creditCardTokenList | Object |  | List of tokenized credit cards matching the query. |
+| creditCardTokenList > creditCardTokenId | Alphanumeric | | Token generated for the credit card. |
+| creditCardTokenList > name | Alphanumeric | Min:1 Max:255 | Cardholder’s name as provided in the request. |
+| creditCardTokenList > payerId | Alphanumeric | | Unique identifier of the payer. |
+| creditCardTokenList > identificationNumber | Alphanumeric | Max:20 | Identification number of the credit card holder. |
+| creditCardTokenList > paymentMethod | Alphanumeric | 32 | Credit card franchise (e.g., VISA, AMEX, MASTERCARD). |
 | creditCardTokenList > creationDate | Alphanumeric | 19 | Date when the credit card was tokenized. |
-| creditCardTokenList > maskedNumber | Alphanumeric | Min:13 Max:20 | Masked credit card number. The masked used displays the first six digits and the last four digits of the credit card. |
+| creditCardTokenList > maskedNumber | Alphanumeric | Min:13 Max:20 | Masked credit card number, showing the first six and last four digits. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method. The following example queries the tokenized cards by date range, if you want to query by using the token Id, just send the parameter `creditCardTokenInformation.creditCardTokenId`.
+### API Call
+
+The following examples show request and response bodies.
+
+#### Query by Token ID
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
+```JSON
+{
+    "language": "en",
+    "command": "GET_TOKENS",
+    "merchant": {
+        "apiLogin": "pRRXKOl8ikMmt9u",
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+    },
+    "creditCardTokenInformation": {
+        "creditCardTokenId": "ad29f82a-31eb-43e9-8768-081c5f4cbaf0"
+    }
+}
+```
+
+<br>
+
+**Response Example:**
+
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "creditCardTokenList": [
+        {
+            "creditCardTokenId": "ad29f82a-31eb-43e9-8768-081c5f4cbaf0",
+            "name": "APPROVED",
+            "payerId": "Merchant_Payer_ID_644",
+            "identificationNumber": "298928707",
+            "paymentMethod": "AMEX",
+            "creationDate": "2025-03-14T11:10:13",
+            "maskedNumber": "377813*****0001"
+        }
+    ]
+}
+```
+
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+
+<br>
+
+**Request Example:**
+
+```XML
+<request>
+    <language>en</language>
+    <command>GET_TOKENS</command>
+    <merchant>
+        <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+        <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+    </merchant>
+    <creditCardTokenInformation>
+        <creditCardTokenId>ad29f82a-31eb-43e9-8768-081c5f4cbaf0</creditCardTokenId>
+    </creditCardTokenInformation>
+</request>
+```
+<br>
+
+**Response Example:**
+
+```XML
+<response>
+    <code>SUCCESS</code>
+    <error></error>
+    <creditCardTokenList>
+        <creditCardToken>
+            <creditCardTokenId>ad29f82a-31eb-43e9-8768-081c5f4cbaf0</creditCardTokenId>
+            <name>APPROVED</name>
+            <payerId>Merchant_Payer_ID_644</payerId>
+            <identificationNumber>298928707</identificationNumber>
+            <paymentMethod>AMEX</paymentMethod>
+            <creationDate>2025-03-14T11:10:13</creationDate>
+            <maskedNumber>377813*****0001</maskedNumber>
+        </creditCardToken>
+    </creditCardTokenList>
+</response>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+#### Query by Payer ID
+
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+
+{{< tab tabNum="1" >}}
+
+<br>
+
+**Request Example:**
+
+```JSON
+{
+    "language": "en",
+    "command": "GET_TOKENS",
+    "merchant": {
+        "apiLogin": "pRRXKOl8ikMmt9u",
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+    },
+    "creditCardTokenInformation": {
+        "payerId": "Merchant_Payer_ID_644"
+    }
+}
+```
+
+<br>
+
+**Response Example:**
+
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "creditCardTokenList": [
+        {
+            "creditCardTokenId": "ad29f82a-31eb-43e9-8768-081c5f4cbaf0",
+            "name": "APPROVED",
+            "payerId": "Merchant_Payer_ID_644",
+            "identificationNumber": "298928707",
+            "paymentMethod": "AMEX",
+            "creationDate": "2025-03-14T11:10:13",
+            "maskedNumber": "377813*****0001"
+        },
+        {
+            "creditCardTokenId": "e84d9ea2-e9df-44c3-98e4-5970e346ac11",
+            "name": "APPROVED",
+            "payerId": "Merchant_Payer_ID_644",
+            "identificationNumber": "3401859948",
+            "paymentMethod": "MASTERCARD",
+            "creationDate": "2025-03-14T11:24:27",
+            "maskedNumber": "547130******0003"
+        }
+    ]
+}
+```
+
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+
+<br>
+
+**Request Example:**
+
+```XML
+<request>
+    <language>en</language>
+    <command>GET_TOKENS</command>
+    <merchant>
+        <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+        <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+    </merchant>
+    <creditCardTokenInformation>
+        <payerId>Merchant_Payer_ID_644</payerId>
+    </creditCardTokenInformation>
+</request>
+```
+
+<br>
+
+**Response Example:**
+
+```XML
+<response>
+    <code>SUCCESS</code>
+    <error/>
+    <creditCardTokenList>
+        <creditCardToken>
+            <creditCardTokenId>ad29f82a-31eb-43e9-8768-081c5f4cbaf0</creditCardTokenId>
+            <name>APPROVED</name>
+            <payerId>Merchant_Payer_ID_644</payerId>
+            <identificationNumber>298928707</identificationNumber>
+            <paymentMethod>AMEX</paymentMethod>
+            <creationDate>2025-03-14T11:10:13</creationDate>
+            <maskedNumber>377813*****0001</maskedNumber>
+        </creditCardToken>
+        <creditCardToken>
+            <creditCardTokenId>e84d9ea2-e9df-44c3-98e4-5970e346ac11</creditCardTokenId>
+            <name>APPROVED</name>
+            <payerId>Merchant_Payer_ID_644</payerId>
+            <identificationNumber>3401859948</identificationNumber>
+            <paymentMethod>MASTERCARD</paymentMethod>
+            <creationDate>2025-03-14T11:24:27</creationDate>
+            <maskedNumber>547130******0003</maskedNumber>
+        </creditCardToken>
+    </creditCardTokenList>
+</response>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+#### Query by Date Range
+
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+
+{{< tab tabNum="1" >}}
+
+<br>
+
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -561,9 +881,11 @@ Request body:
    }
 }
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -608,13 +930,16 @@ Response body:
     ]
 }
 ```
+<br>
 
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -629,9 +954,11 @@ Request body:
    </creditCardTokenInformation>
 </request>
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```XML
 <creditCardTokenListResponse>
     <code>SUCCESS</code>
@@ -664,22 +991,34 @@ Response body:
     </creditCardTokenList>
 </creditCardTokenListResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
-## Payments using Tokenization
-For payments with credit card tokens, include the parameter `transaction.creditCardTokenId` replacing the information of the credit card. The following example shows the body of the request in a high level for a one-step flow, the details of the request are not provided.
+## Payments Using Tokenization
+
+To process payments using credit card tokens, include the `transaction.creditCardTokenId` parameter instead of the full credit card details. The examples below provide a high-level view of a one-step payment request.
 
 {{% alert title="Note" color="info"%}}
-To process without CVV is necessary to send the parameter `creditCard.processWithoutCvv2` as true in the payment request and remove the parameter `creditCard.securityCode`.<br>
-By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative.
+
+To process payments without a CVV, set the `creditCard.processWithoutCvv2` parameter to `true` in the payment request and omit the `creditCard.securityCode` parameter.<br>
+By default, processing payments without a CVV is disabled. To enable this feature, contact your sales representative.
+
 {{% /alert%}}
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+### API Call
+
+The following examples show the request bodies.
+
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -690,17 +1029,17 @@ Request body:
    },
    "transaction": {
       "order": {
-         "Information of the order":""
+         "Order information":""
       },
       "payer": {
-         "Information of the payer":""
+         "Payer information":""
       },
       "creditCardTokenId": "46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3",
       "creditCard": {
          "securityCode": "123"
       },
       "extraParameters": {
-         "Extra parameters of the request":""
+         "Additional request parameters":""
       },
       "type": "AUTHORIZATION_AND_CAPTURE",
       "paymentMethod": "Card franchise", 
@@ -713,12 +1052,15 @@ Request body:
    "test": true
 }
 ```
+
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -729,17 +1071,17 @@ Request body:
    </merchant>
    <transaction>
       <order>
-         <!-- Information of the order -->
+         <!-- Order information -->
       </order>
       <payer>
-         <!-- Information of the payer -->
+         <!-- Payer information -->
       </payer>
       <creditCardTokenId>46b7f03e-1b3b-4ce8-ad90-fe1a482f76c3</creditCardTokenId>
       <creditCard>
          <securityCode>321</securityCode>
       </creditCard>
       <extraParameters>
-         <!-- Extra parameters of the request -->
+         <!-- Additional request parameters -->
       </extraParameters>
       <type>AUTHORIZATION_AND_CAPTURE</type>
       <paymentMethod>{Card franchise}</paymentMethod>
@@ -753,91 +1095,116 @@ Request body:
 </request>
 
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
+
 <br>
 
-For specific details about how to perform payments, refer to the respective article according to the processing country.
+For detailed information on processing payments, refer to the respective documentation based on the processing country.
 
-<div style="display: flex;">
-  <div style="float: left;width: 50%;">
-      <img src="/assets/Argentina.png" width="25px"/> <a href="{{< ref "Payments-API-Argentina.md" >}}">Argentina</a><br>
-      <img src="/assets/Brasil.png" width="25px"/> <a href="{{< ref "Payments-API-Brazil.md" >}}">Brazil</a><br>
-      <img src="/assets/Chile.png" width="25px"/> <a href="{{< ref "Payments-API-Chile.md" >}}">Chile</a><br>
-      <img src="/assets/Colombia.png" width="25px"/> <a href="{{< ref "Payments-API-Colombia.md" >}}">Colombia</a>
-    </ul>
+<div style="display: flex; justify-content: space-between; max-width: 600px;">
+  <div style="width: 45%;">
+      <p><img src="/assets/Argentina.png" width="25px" style="margin-right: 10px; vertical-align: middle;"/> 
+         <a href="{{< ref "Payments-API-Argentina.md" >}}">Argentina</a></p>
+      <p><img src="/assets/Brasil.png" width="25px" style="margin-right: 10px; vertical-align: middle;"/> 
+         <a href="{{< ref "Payments-API-Brazil.md" >}}">Brazil</a></p>
+      <p><img src="/assets/Chile.png" width="25px" style="margin-right: 10px; vertical-align: middle;"/> 
+         <a href="{{< ref "Payments-API-Chile.md" >}}">Chile</a></p>
+      <p><img src="/assets/Colombia.png" width="25px" style="margin-right: 10px; vertical-align: middle;"/> 
+         <a href="{{< ref "Payments-API-Colombia.md" >}}">Colombia</a></p>
   </div>
-  <div style="float: left;width: 50%;">
-    <ul>
-      <img src="/assets/Mexico.png" width="25px"/> <a href="{{< ref "Payments-API-Mexico.md" >}}">Mexico</a><br>
-      <img src="/assets/Panama.png" width="25px"/> <a href="{{< ref "Payments-API-Panama.md" >}}">Panama</a><br>
-      <img src="/assets/Peru.png" width="25px"/> <a href="{{< ref "Payments-API-Peru.md" >}}">Peru</a>
-    </ul>
+  <div style="width: 45%;">
+      <p><img src="/assets/Mexico.png" width="25px" style="margin-right: 10px; vertical-align: middle;"/> 
+         <a href="{{< ref "Payments-API-Mexico.md" >}}">Mexico</a></p>
+      <p><img src="/assets/Panama.png" width="25px" style="margin-right: 10px; vertical-align: middle;"/> 
+         <a href="{{< ref "Payments-API-Panama.md" >}}">Panama</a></p>
+      <p><img src="/assets/Peru.png" width="25px" style="margin-right: 10px; vertical-align: middle;"/> 
+         <a href="{{< ref "Payments-API-Peru.md" >}}">Peru</a></p>
   </div>
 </div>
 
 <br>
 
-### Multiple payments with tokenization
-Using this feature, you can perform payments using several tokens stored in a _**.csv**_ file. 
+### Multiple Payments with Tokenization
+
+This feature allows you to process multiple payments using stored tokens from a .csv file.
 
 ### Considerations
-* Each record of the file must have the following structure and order separated by commas:
-    - Account Id, identifier of your PayU account.
-    - Credit card token
-    - Credit card security code
-    - Number of installments
-    - Sale reference
-    - Sale description
-    - Buyer's e-mail
-    - ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}})
-    - Total amount including taxes
-    - Base value of reimbursement
-    - Additional value
-    - Language used in emails sent to the buyer and the seller. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}})
-* The file must not have header.
-* The file must be codifies using UTF-8. You need to implement a functionality to codify the content and send the codified string in the `contentFile` parameter.
-* The file cannot have more than 10.000 records.<br><br>![PrintScreen](/assets/massivePaymentTokenization.png) 
 
-### Variables for request and response
+* Each record in the file must follow the specified structure and order, with values separated by commas:
+    - Account ID – The identifier of your PayU account.
+    - Credit Card Token
+    - Credit Card Security Code
+    - Number of Installments
+    - Sale Reference
+    - Sale Description
+    - Buyer’s Email
+    - Currency ISO Code – [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}).
+    - Total Amount (including taxes)
+    - Base Value for Reimbursement
+    - Additional Value
+    - Email Language – Language used in emails sent to the buyer and seller. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}).
+* The file must not include a header.
+* The file must be encoded in UTF-8. You need to implement a functionality to encode the content and send the encoded string in the `contentFile` parameter.
+* The file cannot contain more than 10,000 records.
+
+<br>
+
+**Example:**
+
+![PrintScreen](/assets/massivePaymentTokenization.png) 
+
+### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description | Mandatory |
+| Field Name | Format | Size | Description | Mandatory |
 |---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
-| command | Alphanumeric | Max:32 | Set `PROCESS_BATCH_TRANSACTIONS_TOKEN`. | Yes |
-| merchant |  |  | This object has the authentication data. | Yes |
-| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| contentFile | Alphanumeric |  | Codified string in Base64 with the information of the credit cards as explained before. | Yes |
+| language | Alphanumeric | 2 | Language used in the request. This determines the language of error messages. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
+| command | Alphanumeric | Max:32 | Set to `PROCESS_BATCH_TRANSACTIONS_TOKEN`. | Yes |
+| merchant | Object |  | Object containing authentication data. | Yes |
+| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | PayU provides this username or login. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| merchant > apiKey | Alphanumeric | Min:6 Max:32 | PayU provides this password. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
+| contentFile | Alphanumeric |  | Base64-encoded string containing credit card information. | Yes |
 
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Field name | Format | Size | Description |
+| Field Name | Format | Size | Description |
 |-|-|-|-|
-| code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
-| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| id |  |  | Identification of the procedure. |
+| code | Alphanumeric |  | Transaction response: `ERROR` or `SUCCESS`. |
+| error | Alphanumeric | Max:2048 | Error message returned when the transaction code is `ERROR`. |
+| id | Alphanumeric |  | Identifier for the process. |
 
 </details>
 
-### Api call
-The following are the bodies of the request and response of this method.
+### API Call
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+The following examples show request and response bodies.
+
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -849,9 +1216,11 @@ Request body:
    "contentFile": "NTAwNTM4LGVhMDIwZTU5LWQ5NWEtNDk1ZC04OTAzLTM0ZTg0M2ZkN2ZlYywxMzIsMSxTYWxlLTA0LFN1YnNjcmlwdGlvbiBmZWUsdXNlcjFAbWFpbC5jb20sQ09QLDEwMDAwLDAsMCwwLGVzCjUwMDUzOCxlYWQwYTA5MC0xOGRjLTQxYWQtOTQzMS1hYjM0MmFmODU0YTIsMTM1LDEsU2FsZS0wNSxTdWJzY3JpcHRpb24gZmVlLHVzZXIyQG1haWwuY29tLENPUCwxMTAwMCwwLDAsMCxlcw=="
 }
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -863,9 +1232,11 @@ Response body:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request body:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -877,14 +1248,18 @@ Request body:
    <contentFile>NTAwNTM4LGVhMDIwZTU5LWQ5NWEtNDk1ZC04OTAzLTM0ZTg0M2ZkN2ZlYywxMzIsMSxTYWxlLTA0LFN1YnNjcmlwdGlvbiBmZWUsdXNlcjFAbWFpbC5jb20sQ09QLDEwMDAwLDAsMCwwLGVzCjUwMDUzOCxlYWQwYTA5MC0xOGRjLTQxYWQtOTQzMS1hYjM0MmFmODU0YTIsMTM1LDEsU2FsZS0wNSxTdWJzY3JpcHRpb24gZmVlLHVzZXIyQG1haWwuY29tLENPUCwxMTAwMCwwLDAsMCxlcw=</contentFile>
 </request>
 ```
+
 <br>
 
-Response body:
+**Response Example:**
+
 ```XML
 <creditCardTokenBatchResponse>
    <code>SUCCESS</code>
    <id>b721abbc-a9cf-44c6-99ba-91393de2b5d6</id>
 </creditCardTokenBatchResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}

@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/en/docs/tools/shopping-cart-plugins/vtex.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/vtex.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/vtex.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/vtex.html"
+                />
+  </url><url>
     <loc>/en/docs/getting-started.html</loc>
     <lastmod>2024-06-13T16:24:33-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -20,6 +40,26 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/getting-started.html"
+                />
+  </url><url>
+    <loc>/en/docs/tools/shopping-cart-plugins/shopify.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/shopify.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/shopify.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/shopify.html"
                 />
   </url><url>
     <loc>/en/docs/services.html</loc>
@@ -42,6 +82,26 @@
                 href="/en/docs/services.html"
                 />
   </url><url>
+    <loc>/en/docs/tools/shopping-cart-plugins/omnibees.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/omnibees.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/omnibees.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/omnibees.html"
+                />
+  </url><url>
     <loc>/en/docs/tools.html</loc>
     <lastmod>2024-06-13T16:24:33-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -60,6 +120,26 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/tools.html"
+                />
+  </url><url>
+    <loc>/en/docs/tools/shopping-cart-plugins/drupal.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/drupal.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/drupal.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/drupal.html"
                 />
   </url><url>
     <loc>/en/docs/integrations.html</loc>
@@ -82,24 +162,24 @@
                 href="/en/docs/integrations.html"
                 />
   </url><url>
-    <loc>/en/docs/tools/shopping-cart-plugins/vtex.html</loc>
-    <lastmod>2025-03-06T19:05:04-05:00</lastmod>
+    <loc>/en/docs/tools/shopping-cart-plugins/virtuemart.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/vtex.html"
+                href="/es/docs/tools/shopping-cart-plugins/virtuemart.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/vtex.html"
+                href="/pt/docs/tools/shopping-cart-plugins/virtuemart.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/vtex.html"
+                href="/en/docs/tools/shopping-cart-plugins/virtuemart.html"
                 />
   </url><url>
     <loc>/en/docs/server-status.html</loc>
@@ -120,6 +200,86 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/server-status.html"
+                />
+  </url><url>
+    <loc>/en/docs/tools/shopping-cart-plugins/woocommerce.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/woocommerce.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/woocommerce.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/woocommerce.html"
+                />
+  </url><url>
+    <loc>/en/docs/tools/shopping-cart-plugins/oscommerce.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/oscommerce.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/oscommerce.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/oscommerce.html"
+                />
+  </url><url>
+    <loc>/en/docs/tools/shopping-cart-plugins/opencart.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/opencart.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/opencart.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/opencart.html"
+                />
+  </url><url>
+    <loc>/en/docs/tools/shopping-cart-plugins/prestashop.html</loc>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="/es/docs/tools/shopping-cart-plugins/prestashop.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/pt/docs/tools/shopping-cart-plugins/prestashop.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/tools/shopping-cart-plugins/prestashop.html"
                 />
   </url><url>
     <loc>/en/payu-module-documentation/getting-started/log-in/google-accounts.html</loc>
@@ -302,26 +462,6 @@
                 href="/en/payu-module-documentation/getting-started/understanding-the-payu-module/update-my-information.html"
                 />
   </url><url>
-    <loc>/en/docs/tools/shopping-cart-plugins/shopify.html</loc>
-    <lastmod>2024-04-25T14:12:17-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/shopify.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/shopify.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/shopify.html"
-                />
-  </url><url>
     <loc>/en/docs/integrations/sdk-integration/payments-sdk-argentina.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -462,26 +602,6 @@
                 href="/en/docs/services/payments.html"
                 />
   </url><url>
-    <loc>/en/docs/tools/shopping-cart-plugins/bigcommerce.html</loc>
-    <lastmod>2025-03-06T19:05:04-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/bigcommerce.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/bigcommerce.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/bigcommerce.html"
-                />
-  </url><url>
     <loc>/en/docs/integrations/api-integration/pci.html</loc>
     <lastmod>2024-11-08T11:23:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -583,7 +703,7 @@
                 />
   </url><url>
     <loc>/en/payu-module-documentation/payu-operations/refunds-mp.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1142,26 +1262,6 @@
                 href="/en/payu-module-documentation/getting-started/understanding-the-payu-module.html"
                 />
   </url><url>
-    <loc>/en/docs/tools/shopping-cart-plugins/drupal.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/drupal.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/drupal.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/drupal.html"
-                />
-  </url><url>
     <loc>/en/docs/integrations/sdk-integration/payments-sdk-chile.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -1382,26 +1482,6 @@
                 href="/en/docs/integrations/api-integration/tokenization-api.html"
                 />
   </url><url>
-    <loc>/en/docs/tools/shopping-cart-plugins/virtuemart.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/virtuemart.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/virtuemart.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/virtuemart.html"
-                />
-  </url><url>
     <loc>/en/docs/integrations/sdk-integration/payments-sdk-colombia.html</loc>
     <lastmod>2022-06-24T10:20:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -1563,7 +1643,7 @@
                 />
   </url><url>
     <loc>/en/docs/integrations/api-integration/refunds-api.html</loc>
-    <lastmod>2024-09-04T17:00:40-05:00</lastmod>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1580,26 +1660,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/api-integration/refunds-api.html"
-                />
-  </url><url>
-    <loc>/en/docs/tools/shopping-cart-plugins/woocommerce.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/woocommerce.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/woocommerce.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/woocommerce.html"
                 />
   </url><url>
     <loc>/en/docs/integrations/sdk-integration/payments-sdk-mexico.html</loc>
@@ -1682,26 +1742,6 @@
                 href="/en/docs/integrations/api-integration/payouts-api.html"
                 />
   </url><url>
-    <loc>/en/docs/tools/shopping-cart-plugins/oscommerce.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/oscommerce.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/oscommerce.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/oscommerce.html"
-                />
-  </url><url>
     <loc>/en/docs/tools/disputes.html</loc>
     <lastmod>2025-01-23T15:54:20-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -1723,7 +1763,7 @@
                 />
   </url><url>
     <loc>/en/docs/getting-started/response-codes-and-variables.html</loc>
-    <lastmod>2024-11-28T15:55:32-05:00</lastmod>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -1820,26 +1860,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/docs/integrations/sdk-integration/payments-sdk-peru.html"
-                />
-  </url><url>
-    <loc>/en/docs/tools/shopping-cart-plugins/opencart.html</loc>
-    <lastmod>2022-06-24T10:20:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="/es/docs/tools/shopping-cart-plugins/opencart.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/pt/docs/tools/shopping-cart-plugins/opencart.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tools/shopping-cart-plugins/opencart.html"
                 />
   </url><url>
     <loc>/en/docs/tools/payment-coupons.html</loc>
@@ -1948,7 +1968,7 @@
                 />
   </url><url>
     <loc>/en/tags/subtopic.html</loc>
-    <lastmod>2025-03-06T19:05:04-05:00</lastmod>
+    <lastmod>2025-03-14T11:20:37-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link

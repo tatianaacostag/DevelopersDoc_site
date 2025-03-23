@@ -319,7 +319,7 @@ Se você fizer um reembolso por este painel, ele só será atualizado no Módulo
 &lt;li&gt;Assim que você faz a solicitação, o valor da transação passa a fazer parte do Saldo Congelado de sua conta PayU até que seja processado.&lt;/li&gt;
 &lt;li&gt;No &lt;strong&gt;Chile&lt;/strong&gt;:
 &lt;ul&gt;
-&lt;li&gt;Reembolsos para &lt;a href=&#34;../../../pt/docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-debit-and-prepaid-cards&#34;&gt;transações processadas por WebPay Plus&lt;/a&gt; não estão disponíveis.&lt;/li&gt;
+&lt;li&gt;Reembolsos estão disponíveis para transações processadas através do &lt;a href=&#34;../../../pt/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-debit-and-prepaid-cards&#34;&gt;WebPay Plus ou Redcompra&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Para transações com cartões pré-pagos não processadas pelo WebPay Plus, os reembolsos solicitados na primeira hora após a cobrança podem ser aprovados ou rejeitados pela rede financeira. Após a primeira hora, todos os reembolsos de transações com cartões pré-pagos são rejeitados.&lt;/li&gt;
 &lt;li&gt;Se o reembolso for rejeitado, o PayU mostra o &lt;a href=&#34;../../../pt/docs/getting-started/response-codes-and-variables.html#response-codes-for-transactions&#34;&gt;código de erro&lt;/a&gt; gerado pela rede.&lt;/li&gt;
 &lt;li&gt;Reembolsos parciais para transações parceladas são recebidos online, mas PayU os processa manualmente devido a restrições do adquirente.&lt;/li&gt;

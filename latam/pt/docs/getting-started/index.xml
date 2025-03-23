@@ -2018,6 +2018,14 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;td&gt;25&lt;/td&gt;
 &lt;td&gt;Recibo de pagamento gerado. Pagamento Pendente&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DECLINED&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;THREEDS_REJECTED&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;Transação recusada devido a uma falha na autenticação 3DS&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;response-codes-sent-to-the-confirmation-page&#34;&gt;Códigos de Resposta Enviados para a Página de Confirmação&lt;/h2&gt;

@@ -611,7 +611,7 @@ Algumas opções estão conectadas às permissões configuradas para seu usuári
         &lt;img src=&#34;../../../assets/ShoppingCartLogos/tiendanube.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
       &lt;/div&gt;
       &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/vtex.html&#39;&#34;&gt;
-        &lt;img src=&#34;../../../assets/ShoppingCartLogos/vtex.svg&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/vtex.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
       &lt;/div&gt;
       &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://support.wix.com/en/article/connecting-payu-as-a-payment-provider&#39;&#34;&gt;
         &lt;img src=&#34;../../../assets/ShoppingCartLogos/wix.png&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
@@ -624,16 +624,18 @@ Algumas opções estão conectadas às permissões configuradas para seu usuári
       &lt;/div&gt;
       &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;https://ayuda.alegra.com/es/recibe-los-pagos-de-tus-facturas-de-venta-desde-alegra-colombia-con-payu&#39;&#34;&gt;
         &lt;img src=&#34;../../../assets/ShoppingCartLogos/alegra.webp&#34; alt=&#34;ShoppingCartLogos&#34; style=&#34;background-color: #00b19d;;border: 3px solid #00b19d;;&#34;&gt;
-      &lt;/div&gt;
-      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/bigcommerce.html&#39;&#34;&gt;
-        &lt;img src=&#34;../../../assets/ShoppingCartLogos/BigCommerceLogo.webp&#34; alt=&#34;ShoppingCartLogos&#34; &gt;
-      &lt;/div&gt;
+      &lt;/div&gt;      
+      &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/omnibees.html&#39;&#34;&gt;
+        &lt;img src=&#34;../../../assets/ShoppingCartLogos/omnibees.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
+      &lt;/div&gt;       
       &lt;div class=&#34;col-sm-4 shopping-carts&#34; style=&#34;cursor:default;box-shadow:initial&#34;&gt;
         &lt;h4 class=&#34;navblock-title&#34;&gt;&lt;/h4&gt;
         &lt;p&gt;&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
+
+
   
 
 
@@ -662,11 +664,26 @@ Alguns dos links acima podem aparecer em espanhol ou em inglês.
     &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/opencart.html&#39;&#34;&gt;
       &lt;img src=&#34;../../../assets/ShoppingCartLogos/opencart.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
     &lt;/div&gt;
-    
+    &lt;div class=&#34;col-sm-4 shopping-carts&#34; onclick=&#34;location.href=&#39;./shopping-cart-plugins/prestashop.html&#39;&#34;&gt;
+      &lt;img src=&#34;../../../assets/ShoppingCartLogos/prestashop.png&#34; alt=&#34;ShoppingCartLogos&#34;&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;style&gt;
+  .shopping-carts {
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 10px;  
+  }
 
+  .shopping-carts:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;  
+  }
+&lt;/style&gt;
+
+    
 
 &lt;h3 id=&#34;plugin-files&#34;&gt;Arquivos de plug-in&lt;/h3&gt;
 &lt;p&gt;Encontre a versão mais recente do plug-in na tabela a seguir&lt;/p&gt;
@@ -704,6 +721,11 @@ Alguns dos links acima podem aparecer em espanhol ou em inglês.
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;Versão 1.5.5.1 ou 1.5.6.4&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;hr&gt;Versão 2.0.x.x a 2.1.x.x&lt;br&gt;&lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart-2.0.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
           &lt;td style=&#34;vertical-align: middle;&#34;&gt;&lt;/td&gt;
        &lt;/tr&gt;
+       &lt;tr&gt;
+         &lt;td width=&#34;20%&#34; style=&#34;vertical-align: middle;&#34;&gt;&lt;img src=&#34;../../../assets/ShoppingCartLogos/prestashop.png&#34;&gt;&lt;/td&gt;
+         &lt;td style=&#34;vertical-align: middle;&#34;&gt;Versão 2.1.2&lt;br&gt;&lt;a href=&#34;../../../assets/Prestashopv2.1.2PayULatam.zip&#34; target=&#34;_blank&#34; class=&#34;payu-btn-green&#34;&gt;Baixar&lt;/a&gt;&lt;/td&gt;
+         &lt;td style=&#34;vertical-align: middle;&#34;&gt;Você precisa da versão 1.4 a 1.6 do PrestaShop.&lt;/td&gt;
+      &lt;/tr&gt;
     &lt;/tbody&gt;
  &lt;/table&gt;
 

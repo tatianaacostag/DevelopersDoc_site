@@ -58,9 +58,9 @@ Un _proveedor_ almacena tus credenciales de procesamiento de pagos. Sigue estos 
 |---|---|
 | Configuration Name | Ingresa un nombre para la configuración del proveedor. |
 | Description | Proporciona una descripción opcional. |
-| apiLogin | Usuario o inicio de sesión proporcionado por PayU. [Obtener API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
+| apiLogin | Nombre de usuario o login proporcionado por PayU. [Obtener API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) |
 | apiKey | Clave única de tu comercio. [Obtener API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) |
-| accountId | Account ID de PayU basado en tu país de operación. |
+| accountId | ID de la cuenta de PayU basado en tu país de operación. |
 | merchantId | Tu ID de comercio en PayU Latam. |
 | paymentCountry | País de procesamiento en formato ISO 3166 Alpha-3. |
 | multicapture | Selecciona **None**. |

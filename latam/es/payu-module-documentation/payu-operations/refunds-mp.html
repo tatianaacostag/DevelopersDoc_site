@@ -27,13 +27,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/es/payu-module-documentation/payu-operations/refunds-mp.html" /><meta property="article:section" content="PayU Module Documentation" />
 <meta property="article:published_time" content="2021-09-03T16:41:53-05:00" />
-<meta property="article:modified_time" content="2022-06-24T10:20:44-05:00" />
+<meta property="article:modified_time" content="2025-03-14T11:20:37-05:00" />
 
 <meta itemprop="name" content="Reembolsos">
 <meta itemprop="description" content="Aprende cómo hacer reembolsos de transacciones desde el módulo PayU. Un reembolso se realiza cuando una tienda decide voluntariamente regresar el dinero al cliente.
 "><meta itemprop="datePublished" content="2021-09-03T16:41:53-05:00" />
-<meta itemprop="dateModified" content="2022-06-24T10:20:44-05:00" />
-<meta itemprop="wordCount" content="1050">
+<meta itemprop="dateModified" content="2025-03-14T11:20:37-05:00" />
+<meta itemprop="wordCount" content="1054">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Reembolsos"/>
 <meta name="twitter:description" content="Aprende cómo hacer reembolsos de transacciones desde el módulo PayU. Un reembolso se realiza cuando una tienda decide voluntariamente regresar el dinero al cliente.
 "/>
@@ -140,7 +140,7 @@
   aria-label="Buscar en este sitio…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../../offline-search-index.87ba6e26e4a35951cd2af0e1be4e3799d8098de04a82ebdee2c9a8dd86a0287f46989a489205e77bd75595342ac9e87532837b4edabced353219e5db20a94866.json"
+  data-offline-search-index-json-src="../../../offline-search-index.2c4c18978df296bb7a57c44b76436ec70479fa444b00364c6152dcaec0f26263ac3d6537bbd2d718aaf81e744dadc792948b91d2f89cbffbfa16e6e19ad75ec6.json"
   data-offline-search-base-href="../../../"
 >
 
@@ -569,7 +569,7 @@ Si realizas un reembolso a través de este panel, este solo se actualiza en el M
 <li>Una vez hagas la solicitud, el monto de la transacción se convierte en parte del Saldo Congelado de tu cuenta de PayU hasta que sea procesado.</li>
 <li>En <strong>Chile</strong>:
 <ul>
-<li>No se soportan reembolsos para <a href="../../../es/docs/integrations/api-integration/payments-api-chile.html#submit-transaction-with-debit-and-prepaid-cards">transacciones procesadas con WebPay Plus</a>.</li>
+<li>Los reembolsos están disponibles para transacciones procesadas a través de <a href="../../../es/docs/integrations/api-integration/payments-api-chile.html#submit-transactions-using-debit-and-prepaid-cards">WebPay Plus o Redcompra</a>.</li>
 <li>Para transacciones con tarjetas prepago que no sean procesadas a través de WebPay Plus, los Reembolsos solicitados luego de la primero hora del cobro pueden ser aprobados o rechazados por la red financiera. Luego de esta hora, se rechazan todos los reembolsos para transacciones realizadas con tarjetas prepago.</li>
 <li>ISi se rechaza el reembolso, PayU muestra el <a href="../../../es/docs/getting-started/response-codes-and-variables.html#response-codes-for-transactions">código de error</a> generado por la red.</li>
 <li>Los reembolsos parciales para transacciones que utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.</li>
@@ -729,9 +729,9 @@ Puedes habilitar el envío automático de la confirmación de reembolso al pagad
 	<div class="text-muted mt-5 pt-3 border-top">
 Última modificación
 
-24 de junio de 2022:
+14 de marzo de 2025:
 
- <b>clon issue (d73e43fe5)</b>
+ <b>Documentation updates (6c5b59812)</b>
 </div>
 </div>
 

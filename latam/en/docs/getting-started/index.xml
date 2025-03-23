@@ -2022,6 +2022,14 @@ data-postman-param=&#34;env%5BPayU%20API%20-%20Sandbox%5D=W3sia2V5IjoiZW52Iiwidm
 &lt;td&gt;25&lt;/td&gt;
 &lt;td&gt;Receipt of payment generated. Pending payment&lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DECLINED&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;THREEDS_REJECTED&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;Transaction rejected due to 3DS authentication failure&lt;/td&gt;
+&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;response-codes-sent-to-the-confirmation-page&#34;&gt;Response Codes Sent to the Confirmation Page&lt;/h2&gt;

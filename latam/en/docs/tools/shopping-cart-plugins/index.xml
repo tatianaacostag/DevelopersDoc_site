@@ -927,197 +927,191 @@ If you need to issue a full or partial refund, you can manage it directly from y
     </item>
     
     <item>
-      <title>Docs: BigCommerce</title>
-      <link>/en/docs/tools/shopping-cart-plugins/bigcommerce.html</link>
-      <pubDate>Thu, 27 Apr 2023 10:30:35 -0500</pubDate>
+      <title>Docs: Omnibees</title>
+      <link>/en/docs/tools/shopping-cart-plugins/omnibees.html</link>
+      <pubDate>Mon, 10 Mar 2025 10:30:35 -0500</pubDate>
       
-      <guid>/en/docs/tools/shopping-cart-plugins/bigcommerce.html</guid>
+      <guid>/en/docs/tools/shopping-cart-plugins/omnibees.html</guid>
       <description>
         
         
-        &lt;p&gt;BigCommerce is a robust e-commerce platform designed to help you set up and manage an online store quickly, offering a range of ready-to-use features for a seamless experience. For more information, visit the &lt;a href=&#34;https://www.bigcommerce.com/press&#34; target=&#34;_blank&#34;&gt;official BigCommerce website&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;Omnibees is a hotel distribution and management platform that provides technology for hotels to manage reservations and optimize revenue across multiple sales channels. For more information, visit the official &lt;a href=&#34;https://omnibees.com&#34; target=&#34;_blank&#34;&gt;Omnibees website&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;Before starting the integration, make sure you have the following:&lt;/p&gt;
+&lt;p&gt;Before integrating PayU with Omnibees, ensure you have the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A PayU Latam account&lt;/li&gt;
-&lt;li&gt;A BigCommerce account&lt;/li&gt;
+&lt;li&gt;An active &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;PayU Latam account&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;An active &lt;a href=&#34;https://control.paymentsos.com/signup&#34; target=&#34;_blank&#34;&gt;PayU Enterprise (PaymentsOS) account&lt;/a&gt; in production/live mode (see activation details below).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;installing-the-extension&#34;&gt;Installing the Extension&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Go to the BigCommerce Marketplace, select &lt;strong&gt;My Apps&lt;/strong&gt;, locate the PayU extension, and click &lt;strong&gt;Install&lt;/strong&gt; to begin the installation.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce1.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Tick the checkbox and click &lt;strong&gt;Confirm&lt;/strong&gt; to proceed with the installation.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce2.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;After installation, the app interface will appear as follows.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce3.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;h2 id=&#34;payment-methods-configuration&#34;&gt;Payment Methods Configuration&lt;/h2&gt;
-&lt;p&gt;Configure and customize payment methods for your checkout page. Refer to our &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/getting-started/select-your-payment-method.html&#34; target=&#34;_blank&#34;&gt;available payment methods&lt;/a&gt;.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;After installation, toggle the &lt;strong&gt;Enable PayU Latam&lt;/strong&gt; slider to integrate the app with your BigCommerce store.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce4.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Personalize the title for the card payment option (e.g., &lt;em&gt;Pay by Card&lt;/em&gt;). This title will be visible to users on the checkout page.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce5.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Choose the display format for available card payment options during checkout:
+&lt;h2 id=&#34;activating-your-payu-enterprise-account-live-mode&#34;&gt;Activating Your PayU Enterprise Account (Live Mode)&lt;/h2&gt;
+&lt;p&gt;By default, new accounts are set to test mode. To enable live transactions, contact your account manager and submit a request with the following details:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Display &lt;em&gt;Powered by PayU Latam&lt;/em&gt; and the logo on the payment form.&lt;/li&gt;
-&lt;li&gt;Display credit card logos on the checkout page.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Merchant ID:&lt;/strong&gt; Locate your LATAM account’s Merchant ID in the &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids&#34; target=&#34;_blank&#34;&gt;PayU Management Panel&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Account ID:&lt;/strong&gt; Find your Account ID in the PayU Enterprise control panel by clicking your username in the upper-right corner.
+&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;integrating-payu-with-omnibees&#34;&gt;Integrating PayU with Omnibees&lt;/h2&gt;
+&lt;p&gt;Integration consists of two main steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Configuring your PayU Enterprise account&lt;/li&gt;
+&lt;li&gt;Contacting Omnibees to enable the integration&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;1-configuring-your-payu-enterprise-account&#34;&gt;1. Configuring Your PayU Enterprise Account&lt;/h3&gt;
+&lt;p&gt;PayU Enterprise operates through PaymentsOS, which acts as middleware between PayU Latam and Omnibees. Configuration includes the following components:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provider configuration&lt;/li&gt;
+&lt;li&gt;Business unit setup&lt;/li&gt;
+&lt;li&gt;Webhook creation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;11-configuring-a-provider&#34;&gt;1.1 Configuring a Provider&lt;/h4&gt;
+&lt;p&gt;A &lt;em&gt;provider&lt;/em&gt; stores your payment-processing credentials. Follow these steps to configure one:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the PayU Enterprise dashboard, navigate to &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Providers&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Click the module corresponding to the country or division you are configuring.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Complete the following fields:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce6.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
-To enable alternative payment methods (cash and bank transfers), select &lt;strong&gt;Enable Web Checkout (APM)&lt;/strong&gt;.
-&lt;/div&gt;
-
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Add a provider for a specific PayU Latam country by clicking &lt;strong&gt;Add Provider&lt;/strong&gt;. Enable or disable each provider using the button on the &lt;strong&gt;Status&lt;/strong&gt; column, and update their credentials using the &lt;strong&gt;Edit&lt;/strong&gt; button.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce7.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;Additionally, choose &lt;strong&gt;Test&lt;/strong&gt; or &lt;strong&gt;Live&lt;/strong&gt; mode for each provider in the &lt;strong&gt;Onboard Setup&lt;/strong&gt;.&lt;/p&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce8.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Mandatory Fields for Adding a New Provider:&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Field&lt;/th&gt;
 &lt;th&gt;Description&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Select Payu Latam country&lt;/td&gt;
-&lt;td&gt;Choose the country you want to configure.&lt;/td&gt;
+&lt;td&gt;Configuration Name&lt;/td&gt;
+&lt;td&gt;Enter a name for the provider configuration.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;API Login&lt;/td&gt;
-&lt;td&gt;User or login that PayU provides you. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;How do I get my API Login&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Provide an optional description.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;API Key&lt;/td&gt;
-&lt;td&gt;Unique key that PayU assigned to your store. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;How do I get my API Key&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;apiLogin&lt;/td&gt;
+&lt;td&gt;User or login provided by PayU. &lt;a href=&#34;../../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;Get API Login&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Public Key&lt;/td&gt;
-&lt;td&gt;Unique key that PayU assigned to your store. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;How do I get my Public Key&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;apiKey&lt;/td&gt;
+&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;../../../../en/docs/integrations.html#api-key-and-api-login&#34;&gt;Get API Key&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Account ID&lt;/td&gt;
-&lt;td&gt;ID of the PayU account for the selected country.&lt;/td&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;PayU account ID based on your operating country.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Merchant ID&lt;/td&gt;
-&lt;td&gt;ID of your commerce in PayU Latam.&lt;/td&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Your commerce ID in PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paymentCountry&lt;/td&gt;
+&lt;td&gt;Processing country in ISO 3166 Alpha-3 format.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;multicapture&lt;/td&gt;
+&lt;td&gt;Select &lt;strong&gt;None&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cashRedirect&lt;/td&gt;
+&lt;td&gt;Select &lt;strong&gt;None&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Select the transaction flow:
-&lt;ul&gt;
-&lt;li&gt;To enable a one-step flow, select &lt;strong&gt;Capture on Order Placed&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;To enable a two-step flow, select &lt;strong&gt;Capture on Shipment&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce9.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;The two-step flow applies only to card payments (subject to availability in each country), other payment methods require authorization and capture in a single step. Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/services/payments.html#payment-flows&#34; target=&#34;_blank&#34;&gt;Payments flow documentation&lt;/a&gt; for more details.&lt;/li&gt;
-&lt;li&gt;Multi-store options will appear below the payment options section.
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce10.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;order-management-and-refunds&#34;&gt;Order Management and Refunds&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;To manage the orders, click the &lt;strong&gt;Order Dashboard&lt;/strong&gt; button in the upper-right corner.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;The Order Dashboard provides an overview of payment statuses for all orders.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce12.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;To process a refund, click the &lt;strong&gt;Refund&lt;/strong&gt; button in the &lt;strong&gt;Actions&lt;/strong&gt; column.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce13.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500&#34;&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Refunds are available only for card transactions.&lt;/li&gt;
-&lt;li&gt;Refer to the &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/payu-operations/refunds-mp.html&#34; target=&#34;_blank&#34;&gt;refunds document&lt;/a&gt; for country-specific details.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;h2 id=&#34;testing-the-integration&#34;&gt;Testing the Integration&lt;/h2&gt;
-&lt;p&gt;Test your integration with test credentials before initiating live transactions.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Log in to your store, select a product for testing, and proceed to checkout. Ensure the shipping country matches the destination.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce14.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Select the desired payment method.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Card:&lt;/strong&gt; Enter card details and click &lt;strong&gt;Pay By Card&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce15.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
-You can customize the card payment option title as explained in &lt;a href=&#34;#payment-methods-configuration&#34;&gt;Payments Methods Configuration&lt;/a&gt;.
+&lt;p&gt;If you are using older versions of PayU&amp;rsquo;s Administrative Module, find your account information under &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Technical Information&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/omnibees/omnibees1.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
 &lt;/div&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Pay by Web Checkout:&lt;/strong&gt; For other methods, select &lt;strong&gt;Pay by Web Checkout&lt;/strong&gt; and complete the payment.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce16.png&#34; alt=&#34;PrintScreen&#34; width=&#34;400&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Upon approval, verify the purchase in:&lt;/li&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Click &lt;strong&gt;Create&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees2.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 450px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;12-creating-a-business-unit&#34;&gt;1.2 Creating a Business Unit&lt;/h4&gt;
+&lt;p&gt;A &lt;em&gt;business unit&lt;/em&gt; links the provider configuration with PayU Enterprise API credentials for processing transactions. Follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the dashboard, go to &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Business Units&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex04.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Click &lt;strong&gt;Create Business Unit&lt;/strong&gt; and enter:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Business Unit Name&lt;/td&gt;
+&lt;td&gt;Must be lowercase and contain no spaces. &lt;strong&gt;This value cannot be changed later, so ensure accuracy.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Optional description.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;In the &lt;strong&gt;Choose a Default Provider for This Business Unit&lt;/strong&gt; section, select the provider created in Step 1.1, then click &lt;strong&gt;Create&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees3.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 700px; height: auto;&#34;&gt;
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+&lt;p&gt;You can click on the business unit tab to retrieve the following details necessary for Omnibees integration: &lt;strong&gt;App ID&lt;/strong&gt;, &lt;strong&gt;Public API key&lt;/strong&gt;, and &lt;strong&gt;Private API key&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees4.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 450px; height: auto;&#34;&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;13-creating-a-webhook&#34;&gt;1.3 Creating a Webhook&lt;/h4&gt;
+&lt;p&gt;The webhook receives notifications from Omnibees when a transaction changes status. Follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In the dashboard, navigate to &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Webhooks&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex06.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;strong&gt;Create a Webhook Endpoint&lt;/strong&gt; and enter:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://paymentgateways.omnibees.com/PayUWebhookService.ashx
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable &lt;strong&gt;Update&lt;/strong&gt; and &lt;strong&gt;Create&lt;/strong&gt; for the &lt;strong&gt;Charge&lt;/strong&gt; event under &lt;strong&gt;Payment Event Alerts&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Assign the webhook to the previously created business unit and select the latest webhook version.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees5.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 600px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-contacting-omnibees-to-enable-the-integration&#34;&gt;2. Contacting Omnibees to Enable the Integration&lt;/h2&gt;
+&lt;p&gt;Once the PayU Enterprise components are configured, email &lt;strong&gt;&lt;a href=&#34;mailto:servicedesk@omnibees.com&#34;&gt;servicedesk@omnibees.com&lt;/a&gt;&lt;/strong&gt; to request activation. Include the following details:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;BigCommerce Order Dashboard:&lt;/strong&gt; Navigate to &lt;strong&gt;PayU Latam &amp;gt; Order Dashboard&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;App ID&lt;/li&gt;
+&lt;li&gt;Public API key&lt;/li&gt;
+&lt;li&gt;Private API key&lt;/li&gt;
+&lt;li&gt;Business unit (optional)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce11.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;PayU Management Panel:&lt;/strong&gt; View in the &lt;strong&gt;Sales Report module&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;../../../../assets/BigCommerce/Bigcommerce17.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700&#34;&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;h2 id=&#34;support&#34;&gt;Support&lt;/h2&gt;
-&lt;p&gt;For technical issues or queries regarding this extension, contact our support team at &lt;strong&gt;&lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;&lt;/strong&gt; or visit &lt;a href=&#34;https://colombia.payu.com/en/contact-us//&#34; target=&#34;_blank&#34;&gt;our website&lt;/a&gt;.  When contacting support, include the extension details in the email subject line and provide a concise summary of the issue in the body.&lt;/p&gt;
+&lt;h2 id=&#34;user-management-in-payu-enterprise&#34;&gt;User Management in PayU Enterprise&lt;/h2&gt;
+&lt;p&gt;PayU Enterprise allows role-based user access for business units. For details on managing users and permissions, refer to the &lt;a href=&#34;https://developers.paymentsos.com/docs/features/control-center.html#user-management&#34; target=&#34;_blank&#34;&gt;PayU Enterprise documentation&lt;/a&gt;.&lt;/p&gt;
 
       </description>
     </item>
@@ -1747,6 +1741,95 @@ Then, upload the folders &lt;strong&gt;admin&lt;/strong&gt; and &lt;strong&gt;ca
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;Finally, save the changes. At this point, your customers can pay with PayU Latam when they do the checkout in the OpenCart&amp;rsquo;s shopping cart.&lt;/li&gt;
 &lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PrestaShop</title>
+      <link>/en/docs/tools/shopping-cart-plugins/prestashop.html</link>
+      <pubDate>Mon, 10 Mar 2025 10:30:35 -0500</pubDate>
+      
+      <guid>/en/docs/tools/shopping-cart-plugins/prestashop.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;PrestaShop is an open-source e-commerce platform that allows businesses to create and customize online stores with full control over design and functionality. It is self-hosted and highly extensible through modules and themes. For more information, visit the &lt;a href=&#34;https://prestashop.com&#34; target=&#34;_blank&#34;&gt;official PrestaShop website&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Before integrating PayU with PrestaShop, ensure you have the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;An active &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;PayU Latam account&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Your website must be running PrestaShop version 1.4 to 1.6.&lt;/li&gt;
+&lt;li&gt;PayU&amp;rsquo;s plugin for PrestaShop, available for download &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/tools/shopping-cart-plugins.html#plugin-files&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Important&lt;/h4&gt;
+PrestaShop version 1.7 and later are not compatible with PayU&amp;rsquo;s plugin.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;integrating-payus-plugin-into-prestashop-modules&#34;&gt;Integrating PayU&amp;rsquo;s Plugin into PrestaShop Modules&lt;/h2&gt;
+&lt;p&gt;To use PayU&amp;rsquo;s services on your PrestaShop site, you must install the PayU plugin as a module. Follow the steps below:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Log in to the PrestaShop administration panel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navigate to &lt;strong&gt;Modules and Services &amp;gt; Modules and Services&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;strong&gt;Add a new module&lt;/strong&gt; in the upper-right corner.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;strong&gt;Choose a file&lt;/strong&gt;, select the PayU PrestaShop plugin ZIP file from your computer, and then click &lt;strong&gt;Upload this module&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/prestashop/prestashop1.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;The PayU module will now appear in the module list. Click &lt;strong&gt;Install&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In the module list, locate the PayU module and click &lt;strong&gt;Configure&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Complete the required fields, including:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Field&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;Your commerce ID in PayU Latam. &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34; target=&#34;_blank&#34;&gt;See my Merchant ID&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account ID&lt;/td&gt;
+&lt;td&gt;PayU account ID based on your operating country. &lt;a href=&#34;https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34; target=&#34;_blank&#34;&gt;See my Account ID&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API Key&lt;/td&gt;
+&lt;td&gt;Unique key of your commerce. &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;See my API Key&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+Enable the &lt;strong&gt;Test Mode&lt;/strong&gt; to perform transactions using dummy data.
+&lt;/div&gt;
+
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Click &lt;strong&gt;Save&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now, PayU services are successfully integrated with your PrestaShop site.&lt;/p&gt;
 
       </description>
     </item>
