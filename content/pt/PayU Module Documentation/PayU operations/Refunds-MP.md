@@ -39,24 +39,62 @@ Para ter acesso a este módulo, você precisa ter um perfil com a seguinte permi
 
 Consulte [Perfis e permissões]({{< ref"Profile-and-permissions-management.md" >}}) para obter mais informações.
 
-## Observações {#considerations}
-* Reembolsos estão disponíveis apenas para transações pagas com cartão.
-* Você pode tentar novamente a ordem de reembolso se ele foi recusado anteriormente.
-* Assim que você faz a solicitação, o valor da transação passa a fazer parte do Saldo Congelado de sua conta PayU até que seja processado.
-* No **Chile**:
-  - Reembolsos estão disponíveis para transações processadas através do [WebPay Plus ou Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).
-  - Para transações com cartões pré-pagos não processadas pelo WebPay Plus, os reembolsos solicitados na primeira hora após a cobrança podem ser aprovados ou rejeitados pela rede financeira. Após a primeira hora, todos os reembolsos de transações com cartões pré-pagos são rejeitados.
-  - Se o reembolso for rejeitado, o PayU mostra o [código de erro]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}) gerado pela rede.
-  - Reembolsos parciais para transações parceladas são recebidos online, mas PayU os processa manualmente devido a restrições do adquirente.
-* Na **Colômbia**, reembolsos parciais não estão disponíveis para cartões de crédito internacionais.
-* No **Peru**, reembolsos parciais são aceitos para transações sem prestações. Lembre-se de que as transações com uma parcela são consideradas sem parcelas. Reembolsos parciais com visanet devem ser enviados após um dia.
-* Se sua solicitação de reembolso for aprovada, o valor será devolvido ao titular do cartão.
-* Se sua solicitação de reembolso for recusada, o valor será liberado do Saldo Congelado e retornará ao Saldo Disponível em sua conta PayU.
-* Assim que o reembolso for aprovado, isso será refletido no cartão de crédito do pagador quando o banco o efetivar.
-* Para verificar o status da sua solicitação de reembolso, você pode consultá-lo clicando na venda no Painel do comércio. 
+## Considerações por país
 
-## Reembolsos por país {#refunds-per-country}
-Observe as seguintes considerações por país antes de solicitar reembolsos.
+Antes de solicitar um reembolso, leve em conta as seguintes considerações específicas por país.
+
+### Argentina
+- Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até **357 dias** após a transação.
+- Reembolsos com valores decimais **não são suportados**.
+- Uma vez aprovado o reembolso, o pagador recebe os fundos **dentro de 30 dias úteis**.
+
+### Brasil
+- Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até:
+  - **87 dias** para transações realizadas com PIX.
+  - **172 dias** para transações com cartão.
+- Múltiplos **reembolsos parciais** são suportados para transações com PIX.
+- Uma vez aprovado:
+  - Reembolsos para **transações PIX** são processados **imediatamente**.
+  - Reembolsos para **outros meios de pagamento** podem levar até **15 dias úteis**.
+
+### Chile
+- Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até **327 dias**.
+- Reembolsos estão disponíveis para transações processadas por [WebPay Plus ou Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).
+- Para **transações com cartão pré-pago não processadas pelo WebPay Plus**:
+  - Reembolsos solicitados **na primeira hora** podem ser **aprovados ou rejeitados** pela rede financeira.
+  - Reembolsos solicitados **após a primeira hora** são **automaticamente rejeitados**.
+- Se um reembolso for rejeitado, a PayU exibirá o [código de erro]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}) correspondente.
+- Reembolsos com valores decimais **não são suportados**.
+- Uma vez aprovado o reembolso, o pagador recebe os fundos **dentro de 8 a 20 dias úteis**.
+- **Reembolsos parciais** para transações com **parcelamento** são recebidos online, mas processados manualmente devido a restrições do adquirente.
+- O valor mínimo para reembolso é **10 CLP**.
+
+### Colômbia
+- Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até **357 dias**.
+- O valor mínimo para reembolso é **100 COP**.
+- Se um pedido de reembolso **não for enviado no mesmo dia** da captura da transação (**antes das 21h UTC-5**), ele será **processado manualmente**, em vez de ser tentado online.
+- Uma vez aprovado o reembolso, o pagador recebe os fundos **dentro de 30 dias úteis**.
+- **Reembolsos parciais não estão disponíveis** para cartões de crédito internacionais.
+
+### México
+- Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até:
+  - **175 dias** para a maioria das transações.
+  - **40 dias** se processadas pelo **Bancomer**.
+- Uma vez aprovado o reembolso, o pagador recebe os fundos **dentro de 30 dias úteis**.
+- Reembolsos com valores decimais **não são suportados**.
+
+### Panamá
+- Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até **357 dias**.
+- Uma vez aprovado o reembolso, o pagador recebe os fundos **dentro de 8 dias úteis**.
+
+### Peru
+- Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até **357 dias**.
+- **Reembolsos parciais** são suportados para transações **sem parcelamento** (incluindo transações com uma única parcela).
+- **Reembolsos parciais com Visanet** devem ser enviados **pelo menos um dia após a transação**.
+- Uma vez aprovado o reembolso, o pagador recebe os fundos **dentro de 15 a 25 dias úteis**.
+- O valor mínimo para reembolso é **1 USD ou 1 PEN**.
+
+### Prazos de reembolso e políticas por país
 
 {{< overview/refunds_pt >}}
 <sup>*</sup>_Depende da rede._

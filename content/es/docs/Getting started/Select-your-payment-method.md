@@ -51,10 +51,11 @@ La siguiente sección muestra los métodos de pago disponibles por país y brind
 | ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Tarjetas Débito| |
-| ![Logo](/assets/PaymentMethods/multicaja.png) | Klap (Antes Multicaja) | MULTICAJA | Efectivo | |
 | ![Logo](/assets/PaymentMethods/red-compra.png) | Redcompra | TRANSBANK_DEBIT | Tarjetas Débito y prepago | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Tarjetas de Crédito | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Tarjetas Débito| |
+
+<!--| ![Logo](/assets/PaymentMethods/multicaja.png) | Klap (Antes Multicaja) | MULTICAJA | Efectivo | |-->
 
 ## <img src="/assets/Colombia.png" width="25px"/> Colombia {#Colombia}
 PayU en Colombia te permite integrar con la mayoría de los métodos de pago en efectivo del país. Además, soportamos Codensa y Falabella.

@@ -24,8 +24,7 @@ To integrate the Payments API, direct your requests to the following URLs accord
 
 Payments API includes the following methods:
 
-* [Submit Transactions Using Credit, Debit or Prepaid Cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Submit transactions using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) -->
-* [Submit Transactions Using Cash]({{< ref "Payments-API-Chile.md#submit-transactions-using-cash" >}})
+* [Submit Transactions Using Credit, Debit or Prepaid Cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Submit transactions using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) [Submit Transactions Using Cash]({{< ref "Payments-API-Chile.md#submit-transactions-using-cash" >}}) -->
 * [Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transactions-using-debit-and-prepaid-cards" >}})
 * [Available Payment Methods Query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Chile.md#ping" >}})
@@ -1520,8 +1519,6 @@ Response Example:
 
 * [Official Khipu logos:](https://docs.khipu.com/portal/en/payment-logos/)
 
--->
-
 ## Submit Transactions Using Cash
 
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.
@@ -1881,6 +1878,8 @@ Response Example:
 ```
 {{< /tab >}}
 {{< /tabs >}}
+
+-->
 
 ## Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards}
 

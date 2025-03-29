@@ -51,11 +51,11 @@ A seção a seguir mostra os métodos de pagamento disponíveis por país e forn
 | ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Cartões de crédito | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Cartões de débito | |
-| ![Logo](/assets/PaymentMethods/multicaja.png)| Klap (FKA Multicaja) | MULTICAJA | Dinheiro | |
 | ![Logo](/assets/PaymentMethods/red-compra.png) | Redcompra | TRANSBANK_DEBIT | Debit and Prepaid Cards | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Cartões de crédito| |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Cartões de débito | |
-<!--| ![Logo](/assets/PaymentMethods/viabaloto.png) | Baloto | BALOTO | Dinheiro | |-->
+
+<!--| ![Logo](/assets/PaymentMethods/multicaja.png)| Klap (FKA Multicaja) | MULTICAJA | Dinheiro | |-->
 
 ## <img src="/assets/Colombia.png" width="25px"/> Colômbia {#Colombia}
 PayU na Colômbia permite a integração com a maioria dos métodos de pagamento em dinheiro do país. Além disso, trabalhamos com Codensa e Falabella

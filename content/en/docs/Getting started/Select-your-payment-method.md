@@ -51,11 +51,11 @@ The following section shows the payment methods supported per country and provid
 | ![Logo](/assets/PaymentMethods/american.png) | American Express | AMEX | Credit Cards | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD | Credit Cards | |
 | ![Logo](/assets/PaymentMethods/master.png) | Mastercard | MASTERCARD_DEBIT | Debit Cards | |
-| ![Logo](/assets/PaymentMethods/multicaja.png) | Klap (FKA Multicaja) | MULTICAJA | Cash | |
 | ![Logo](/assets/PaymentMethods/red-compra.png) | Redcompra | TRANSBANK_DEBIT | Debit and Prepaid Cards | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA | Credit Cards | |
 | ![Logo](/assets/PaymentMethods/visa.png) | VISA | VISA_DEBIT | Debit Cards | |
-<!--| ![Logo](/assets/PaymentMethods/viabaloto.png) | Baloto | BALOTO | Cash | |-->
+
+<!--| ![Logo](/assets/PaymentMethods/multicaja.png) | Klap (FKA Multicaja) | MULTICAJA | Cash | |-->
 
 ## <img src="/assets/Colombia.png" width="25px"/> Colombia {#Colombia}
 PayU in Colombia allows you to integrate with most of the cash payments methods in Colombia. Furthermore, we support Codensa and Falabella.

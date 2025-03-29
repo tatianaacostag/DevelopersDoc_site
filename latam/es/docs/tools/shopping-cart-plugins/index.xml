@@ -24,11 +24,11 @@
       <description>
         
         
-        &lt;p&gt;VTEX es una plataforma de comercio digital empresarial que te permite crear rápidamente una tienda en línea con funcionalidades integradas. Para más información, visita el sitio web oficial de &lt;a href=&#34;https://vtex.com&#34; target=&#34;_blank&#34;&gt;VTEX&lt;/a&gt;.&lt;/p&gt;
+        &lt;p&gt;VTEX es una plataforma de comercio digital empresarial que te permite crear rápidamente una tienda en línea con funcionalidades integradas. Para más información, visita el &lt;a href=&#34;https://vtex.com&#34; target=&#34;_blank&#34;&gt;sitio web oficial de VTEX&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Requisitos previos&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Una cuenta activa de PayU Latam.&lt;/li&gt;
-&lt;li&gt;Una cuenta activa de PayU Enterprise (PaymentsOS). Si no tienes una cuenta, haz clic &lt;a href=&#34;https://control.paymentsos.com/signup&#34; target=&#34;_blank&#34;&gt;aquí&lt;/a&gt; para crear una. La cuenta debe estar configurada en modo producción/en vivo. Para más detalles sobre cómo habilitarla, consulta &lt;a href=&#34;#activating-your-payu-enterprise-account-live-mode&#34;&gt;Activación de tu cuenta PayU Enterprise&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Una &lt;a href=&#34;https://developers.payulatam.com/latam/es/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;cuenta activa de PayU Latam&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Una &lt;a href=&#34;https://control.paymentsos.com/signup&#34; target=&#34;_blank&#34;&gt;cuenta activa de PayU Enterprise (PaymentsOS)&lt;/a&gt; en modo de producción/en vivo. Para más detalles sobre cómo habilitarla, consulta &lt;a href=&#34;#activating-your-payu-enterprise-account-live-mode&#34;&gt;Activación de tu cuenta PayU Enterprise&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Una cuenta de VTEX con los permisos y derechos suficientes para acceder al panel administrativo de VTEX. Esta cuenta debe tener autenticación de dos factores habilitada.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;availability-by-country-and-payment-methods&#34;&gt;Disponibilidad por País y Métodos de Pago&lt;/h2&gt;
@@ -82,18 +82,17 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;activating-your-payu-enterprise-account-live-mode&#34;&gt;Activación de tu Cuenta PayU Enterprise (Modo Live)&lt;/h2&gt;
-&lt;p&gt;Por defecto, las cuentas recién creadas están configuradas en modo de prueba. Para activar tu cuenta y procesar transacciones en vivo, contacta a tu gerente de cuenta y envía una solicitud.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tu solicitud debe incluir la siguiente información:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Por defecto, las cuentas nuevas se configuran en modo de prueba. Para habilitar las transacciones en vivo, contacta a tu gerente de cuenta y envía una solicitud con los siguientes detalles:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Merchant ID:&lt;/strong&gt; Ubica el Merchant ID de tu cuenta LATAM. Para más detalles sobre cómo encontrarlo, consulta la &lt;a href=&#34;https://developers.payulatam.com/latam/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids&#34; target=&#34;_blank&#34;&gt;documentación del Panel de Gestión de PayU&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Account ID:&lt;/strong&gt; Puedes encontrar tu Account ID en el panel de control de PayU Enterprise, como se muestra en la imagen a continuación:
+&lt;li&gt;&lt;strong&gt;Merchant ID:&lt;/strong&gt; Localiza el Merchant ID de tu cuenta LATAM en el &lt;a href=&#34;https://developers.payulatam.com/latam/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids&#34; target=&#34;_blank&#34;&gt;Panel de Gestión de PayU&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Account ID:&lt;/strong&gt; Encuentra tu Account ID en el panel de control de PayU Enterprise haciendo clic en tu nombre de usuario en la esquina superior derecha.
 &lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex01es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;configuring-your-payu-enterprise-account&#34;&gt;Configuración de tu Cuenta PayU Enterprise&lt;/h2&gt;
 &lt;p&gt;Para configurar los métodos de pago en VTEX y procesarlos a través de nuestra pasarela, sigue los pasos a continuación. La configuración consta de dos etapas. Antes de continuar, asegúrate de haber cumplido con los requisitos previos mencionados anteriormente.&lt;/p&gt;
 &lt;h3 id=&#34;1-initial-setup&#34;&gt;1. Configuración Inicial&lt;/h3&gt;
-&lt;p&gt;La integración de PayU Latam con VTEX se realiza a través de PaymentsOS como middleware. El primer paso es configurar los siguientes componentes dentro de tu cuenta PayU Enterprise:&lt;/p&gt;
+&lt;p&gt;PayU Enterprise opera a través de PaymentsOS, que actúa como middleware entre PayU Latam y VTEX. El primer paso es configurar los siguientes componentes dentro de tu cuenta PayU Enterprise:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Configuración del proveedor&lt;/li&gt;
 &lt;li&gt;Unidad de negocio&lt;/li&gt;
@@ -129,19 +128,19 @@ data-postman-collection-url=&#34;entityId=32817672-5295ab7d-32e5-4563-89f7-62c6a
 &lt;p&gt;Después de importar la colección, configura las variables globales. Descarga el archivo de variables globales &lt;a href=&#34;../../../../assets/globals/VTEX Hub.postman_globals.json&#34; download&gt;aquí&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;En Postman, haz clic en &lt;em&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/em&gt; junto al nombre de tu espacio de trabajo y selecciona el archivo JSON descargado.&lt;/p&gt;
+&lt;p&gt;En Postman, haz clic en &lt;strong&gt;Import&lt;/strong&gt; junto al nombre de tu espacio de trabajo y selecciona el archivo JSON descargado.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Haz clic en &lt;em&gt;&lt;strong&gt;Import&lt;/strong&gt;&lt;/em&gt; para finalizar el proceso.&lt;/p&gt;
+&lt;p&gt;Haz clic en &lt;strong&gt;Import&lt;/strong&gt; para finalizar el proceso.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Ejecuta los métodos de la colección en el orden indicado. Primero, selecciona el método &lt;code&gt;POST&lt;/code&gt; llamado &lt;code&gt;1. Login&lt;/code&gt; y navega a la pestaña &lt;em&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Ejecuta los métodos de la colección en el orden indicado. Primero, selecciona el método &lt;code&gt;POST&lt;/code&gt; llamado &lt;code&gt;1. Login&lt;/code&gt; y navega a la pestaña &lt;strong&gt;Body&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Ingresa tu &lt;strong&gt;correo electrónico&lt;/strong&gt; y &lt;strong&gt;contraseña&lt;/strong&gt; de tu cuenta PayU Enterprise, luego haz clic en &lt;em&gt;&lt;strong&gt;Send&lt;/strong&gt;&lt;/em&gt;. Si el inicio de sesión es exitoso, los datos de autenticación se establecerán para el siguiente método.&lt;/p&gt;
+&lt;p&gt;Ingresa el correo electrónico y contraseña de tu cuenta PayU Enterprise, luego haz clic en &lt;strong&gt;Send&lt;/strong&gt;. Si el inicio de sesión es exitoso, los datos de autenticación se establecerán para el siguiente método.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Haz clic en el método &lt;code&gt;GET&lt;/code&gt; &lt;code&gt;2. Retrieve PayU Latam ID&lt;/code&gt;.&lt;/p&gt;
@@ -153,10 +152,10 @@ data-postman-collection-url=&#34;entityId=32817672-5295ab7d-32e5-4563-89f7-62c6a
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;9&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Haz clic en &lt;em&gt;&lt;strong&gt;Send&lt;/strong&gt;&lt;/em&gt; para continuar.&lt;/p&gt;
+&lt;p&gt;Haz clic en &lt;strong&gt;Send&lt;/strong&gt; para continuar.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Luego, configura el proveedor. Selecciona el método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;3. Create Provider Configuration&lt;/code&gt; y navega a la pestaña &lt;em&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Luego, configura el &lt;em&gt;proveedor&lt;/em&gt;, el cual almacena tus credenciales de procesamiento de pagos. Selecciona el método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;3. Create Provider Configuration&lt;/code&gt; y navega a la pestaña &lt;strong&gt;Body&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
@@ -171,11 +170,11 @@ data-postman-collection-url=&#34;entityId=32817672-5295ab7d-32e5-4563-89f7-62c6a
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;name&lt;/td&gt;
-&lt;td&gt;Nombre de la &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Ingresa un nombre para la configuración del proveedor.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;description&lt;/td&gt;
-&lt;td&gt;Descripción significativa (opcional).&lt;/td&gt;
+&lt;td&gt;Proporciona una descripción opcional.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;configuration_data.apiLogin&lt;/td&gt;
@@ -187,11 +186,11 @@ data-postman-collection-url=&#34;entityId=32817672-5295ab7d-32e5-4563-89f7-62c6a
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;configuration_data.accountId&lt;/td&gt;
-&lt;td&gt;ID de la cuenta PayU para el país de destino.&lt;/td&gt;
+&lt;td&gt;ID de la cuenta de PayU basado en tu país de operación.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;configuration_data.merchantId&lt;/td&gt;
-&lt;td&gt;Merchant ID en PayU Latam.&lt;/td&gt;
+&lt;td&gt;Tu ID de comercio en PayU Latam.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;configuration_data.paymentCountry&lt;/td&gt;
@@ -215,7 +214,7 @@ El parámetro &lt;code&gt;provider_id&lt;/code&gt; se asigna automáticamente en
 &lt;/div&gt;
 
 &lt;ol start=&#34;11&#34;&gt;
-&lt;li&gt;Configura la Unidad de Negocio seleccionando el método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;4. Create Business Unit&lt;/code&gt; y navegando a la pestaña &lt;em&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Configura una &lt;em&gt;unidad de negocio&lt;/em&gt;, la cual vincula la configuración del proveedor con las credenciales de la API de PayU Enterprise para procesar transacciones. Selecciona el método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;4. Create Business Unit&lt;/code&gt; y navegando a la pestaña &lt;strong&gt;Body&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Completa los siguientes datos:&lt;/p&gt;
@@ -229,11 +228,11 @@ El parámetro &lt;code&gt;provider_id&lt;/code&gt; se asigna automáticamente en
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;id&lt;/td&gt;
-&lt;td&gt;Identificador de la Unidad de Negocio (en minúsculas y sin espacios). Este valor no se puede cambiar posteriormente.&lt;/td&gt;
+&lt;td&gt;Identificador de la unidad de negocio (en minúsculas y sin espacios). &lt;strong&gt;Este valor no se puede cambiar más tarde, así que asegúrate de que sea preciso.&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;description&lt;/td&gt;
-&lt;td&gt;Descripción significativa (opcional).&lt;/td&gt;
+&lt;td&gt;Descripción opcional.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -245,15 +244,8 @@ El parámetro &lt;code&gt;default_processor&lt;/code&gt; se asigna automáticame
 &lt;/div&gt;
 
 &lt;ol start=&#34;12&#34;&gt;
-&lt;li&gt;Crea el Webhook seleccionando el método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;5. Create Webhook&lt;/code&gt; y navegando a la pestaña &lt;em&gt;&lt;strong&gt;Body&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Crea el Webhook, el cual recibe las notificaciones de VTEX cuando una transacción cambia de estado. Selecciona el método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;5. Create Webhook&lt;/code&gt; y navega a la pestaña &lt;strong&gt;Body&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-El webhook funciona como la URL de confirmación que recibe notificaciones de VTEX cuando una transacción cambia de estado.
-&lt;/div&gt;
-
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Configura el parámetro &lt;code&gt;endpoint&lt;/code&gt; según tu entorno:&lt;/p&gt;
 &lt;ul&gt;
@@ -267,10 +259,11 @@ El webhook funciona como la URL de confirmación que recibe notificaciones de VT
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Crear la Configuración del Proveedor&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.1&lt;/span&gt; En el panel de PayU Enterprise, expande el menú &lt;em&gt;&lt;strong&gt;Configurations&lt;/strong&gt;&lt;/em&gt; y selecciona &lt;em&gt;&lt;strong&gt;Providers&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Un &lt;em&gt;proveedor&lt;/em&gt; almacena tus credenciales de procesamiento de pagos. Sigue estos pasos para configurar uno:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.1&lt;/span&gt; En el panel de control de PayU Enterprise, navega a &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Providers&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.2&lt;/span&gt; Haz clic en el módulo correspondiente al país o división para el cual deseas configurar el proveedor.&lt;/p&gt;
-&lt;p&gt;Completa los siguientes campos para la &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.2&lt;/span&gt; Haz clic en el módulo correspondiente al país o división que estás configurando.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.3&lt;/span&gt; Completa los siguientes campos:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -281,31 +274,31 @@ El webhook funciona como la URL de confirmación que recibe notificaciones de VT
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Configuration Name&lt;/td&gt;
-&lt;td&gt;Ingresa un nombre para la &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Ingresa un nombre para la configuración del proveedor.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Description&lt;/td&gt;
-&lt;td&gt;Proporciona una descripción significativa (opcional).&lt;/td&gt;
+&lt;td&gt;Proporciona una descripción opcional.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;apiLogin&lt;/td&gt;
-&lt;td&gt;El usuario o login proporcionado por PayU. &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;¿Cómo obtengo mi API Login?&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Nombre de usuario o login proporcionado por PayU. &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;¿Cómo obtengo mi API Login?&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;apiKey&lt;/td&gt;
-&lt;td&gt;La clave única de tu comercio. &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;¿Cómo obtengo mi API Key?&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Clave única de tu comercio. &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;¿Cómo obtengo mi API Key?&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;accountId&lt;/td&gt;
-&lt;td&gt;El ID de la cuenta PayU según el país donde operas.&lt;/td&gt;
+&lt;td&gt;ID de la cuenta de PayU basado en tu país de operación.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;merchantId&lt;/td&gt;
-&lt;td&gt;El ID de tu comercio en PayU Latam.&lt;/td&gt;
+&lt;td&gt;Tu ID de comercio en PayU Latam.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;paymentCountry&lt;/td&gt;
-&lt;td&gt;El país de procesamiento en formato ISO 3166 Alpha-3.&lt;/td&gt;
+&lt;td&gt;País de procesamiento en formato ISO 3166 Alpha-3.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;cashRedirect&lt;/td&gt;
@@ -313,16 +306,17 @@ El webhook funciona como la URL de confirmación que recibe notificaciones de VT
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.3&lt;/span&gt; Haz clic en &lt;em&gt;&lt;strong&gt;Create&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.4&lt;/span&gt; Haz clic en &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/VTEX/vtex03.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 450px; height: auto;&#34;&gt;
 &lt;br&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Crear la Unidad de Negocio&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.1&lt;/span&gt; Regresa al panel, expande el menú &lt;em&gt;&lt;strong&gt;Configurations&lt;/strong&gt;&lt;/em&gt; y selecciona &lt;em&gt;&lt;strong&gt;Business Units&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Una &lt;em&gt;unidad de negocio&lt;/em&gt; vincula la configuración del proveedor con las credenciales de la API de PayU Enterprise para procesar transacciones. Sigue estos pasos:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.1&lt;/span&gt; En el panel de control, ve a &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Business Units&lt;/strong&gt;.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/VTEX/vtex04.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.2&lt;/span&gt; Haz clic en &lt;em&gt;&lt;strong&gt;Create Business Unit&lt;/strong&gt;&lt;/em&gt; y completa los siguientes campos:
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.2&lt;/span&gt; Haz clic en &lt;strong&gt;Create Business Unit&lt;/strong&gt; e ingresa:
 &lt;br&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -334,39 +328,33 @@ El webhook funciona como la URL de confirmación que recibe notificaciones de VT
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Business Unit Name&lt;/td&gt;
-&lt;td&gt;Nombre de la &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;. Debe estar en minúsculas y no contener espacios.&lt;br&gt; &lt;em&gt;Este valor no se puede cambiar posteriormente, así que asegúrate de que sea correcto.&lt;/em&gt;&lt;/td&gt;
+&lt;td&gt;Debe estar en minúsculas y no contener espacios. &lt;strong&gt;Este valor no se puede cambiar más tarde, así que asegúrate de que sea preciso.&lt;/strong&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Description&lt;/td&gt;
-&lt;td&gt;Proporciona una descripción significativa (opcional).&lt;/td&gt;
+&lt;td&gt;Descripción opcional.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.3&lt;/span&gt; En la sección &lt;em&gt;&lt;strong&gt;Choose a Default Provider for This Business Unit&lt;/strong&gt;&lt;/em&gt;, selecciona la &lt;em&gt;&lt;strong&gt;Provider Configuration&lt;/strong&gt;&lt;/em&gt; creada en el Paso 1. Luego, haz clic en &lt;em&gt;&lt;strong&gt;Create&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.3&lt;/span&gt; En la sección &lt;strong&gt;Choose a Default Provider for This Business Unit&lt;/strong&gt;, selecciona la &lt;strong&gt;Provider Configuration&lt;/strong&gt; creada en el Paso 1. Luego, haz clic en &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/VTEX/vtex05.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 700px; height: auto;&#34;&gt;
 &lt;br&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Crear el Webhook&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-El webhook funciona como la URL de confirmación que recibe notificaciones de VTEX cuando una transacción cambia de estado.
-&lt;/div&gt;
-
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.1&lt;/span&gt; Regresa al panel, expande el menú &lt;em&gt;&lt;strong&gt;Configurations&lt;/strong&gt;&lt;/em&gt; y selecciona &lt;em&gt;&lt;strong&gt;Webhooks&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;El webhook recibe notificaciones de VTEX cuando el estado de una transacción cambia. Sigue estos pasos:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.1&lt;/span&gt; En el panel de control, navega a &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Webhooks&lt;/strong&gt;.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/VTEX/vtex06.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.2&lt;/span&gt; Haz clic en &lt;em&gt;&lt;strong&gt;Create a Webhook Endpoint&lt;/strong&gt;&lt;/em&gt; e ingresa la URL correspondiente a tu entorno:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.2&lt;/span&gt; Haz clic en &lt;strong&gt;Create a Webhook Endpoint&lt;/strong&gt; e ingresa la URL correspondiente a tu entorno:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Pruebas: &lt;code&gt;https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Producción: &lt;code&gt;https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.3&lt;/span&gt; En la tabla &lt;em&gt;&lt;strong&gt;Payment Event Alerts&lt;/strong&gt;&lt;/em&gt;, activa el control deslizante &lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;&lt;/em&gt; para &lt;em&gt;&lt;strong&gt;Authorization&lt;/strong&gt;&lt;/em&gt; y &lt;em&gt;&lt;strong&gt;Charge&lt;/strong&gt;&lt;/em&gt;. Luego, en el campo &lt;em&gt;&lt;strong&gt;Associated Business Units&lt;/strong&gt;&lt;/em&gt;, ingresa la &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt; creada en el paso anterior. Finalmente, haz clic en &lt;em&gt;&lt;strong&gt;Create&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.3&lt;/span&gt; En la tabla &lt;strong&gt;Payment Event Alerts&lt;/strong&gt;, activa el control deslizante &lt;strong&gt;Update&lt;/strong&gt; para &lt;strong&gt;Authorization&lt;/strong&gt; y &lt;strong&gt;Charge&lt;/strong&gt;. Luego, en el campo &lt;strong&gt;Associated Business Units&lt;/strong&gt;, ingresa la &lt;strong&gt;Business Unit&lt;/strong&gt; creada en el paso anterior. Finalmente, haz clic en &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
 &lt;img src=&#34;../../../../assets/VTEX/vtex07.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 600px; height: auto;&#34;&gt;
 &lt;br&gt;
-&lt;p&gt;En este punto, tu cuenta PayU Enterprise con PaymentsOS está completamente configurada. El siguiente paso es &lt;a href=&#34;#2-configuring-the-vtex-provider&#34;&gt;Configurar el Proveedor en VTEX&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;En este punto, tu cuenta PayU Enterprise con PaymentsOS está completamente configurada. El siguiente paso es &lt;a href=&#34;#2-configuring-the-vtex-provider&#34;&gt;configurar el proveedor en VTEX&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;2-configuring-the-vtex-provider&#34;&gt;2. Configuración del Proveedor en VTEX&lt;/h3&gt;
 &lt;p&gt;Una vez que hayas configurado tu cuenta de PayU Enterprise, el siguiente paso es configurar el proveedor de VTEX para cada método de pago. Para continuar, debes tener una cuenta de usuario válida para acceder al administrador de VTEX.&lt;/p&gt;
 &lt;h4 id=&#34;crear-un-nuevo-proveedor&#34;&gt;Crear un Nuevo Proveedor&lt;/h4&gt;
@@ -378,22 +366,22 @@ Antes de crear el nuevo proveedor, asegúrate de haber configurado el fingerprin
 &lt;/div&gt;
 
 &lt;ol&gt;
-&lt;li&gt;En el panel izquierdo, selecciona &lt;em&gt;&lt;strong&gt;Configuración de la tienda &amp;gt; Proveedores &amp;gt; Nuevo proveedor&lt;/strong&gt;&lt;/em&gt;:&lt;/li&gt;
+&lt;li&gt;En el panel izquierdo, selecciona &lt;strong&gt;Configuración de la tienda &amp;gt; Proveedores &amp;gt; Nuevo proveedor&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex08es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Ubica &lt;em&gt;PayU&lt;/em&gt; y selecciona &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&gt;&lt;/em&gt;:&lt;/li&gt;
+&lt;li&gt;Ubica &lt;strong&gt;PayU&lt;/strong&gt; y selecciona &lt;strong&gt;PayUv2&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex09es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
-Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&gt;&lt;/em&gt;, ya que esta guía aplica específicamente a esta versión.
+Asegúrate de seleccionar el conector &lt;strong&gt;PayUv2&lt;/strong&gt;, ya que esta guía aplica específicamente a esta versión.
 &lt;/div&gt;
 
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;En la configuración del conector, instala el conector haciendo clic en el botón &lt;em&gt;&lt;strong&gt;Instalar aplicación&lt;/strong&gt;&lt;/em&gt;. Luego, completa los siguientes campos:&lt;/li&gt;
+&lt;li&gt;En la configuración del conector, instala el conector haciendo clic en el botón &lt;strong&gt;Instalar aplicación&lt;/strong&gt;. Luego, completa los siguientes campos:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex10.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
@@ -403,7 +391,7 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;p&gt;La información del conector se puede obtener de dos maneras:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Colección de Postman:&lt;/strong&gt; Ejecuta el método &lt;strong&gt;Retrieve Authentication Keys&lt;/strong&gt;, configurando el parámetro global &lt;code&gt;env&lt;/code&gt; como &lt;code&gt;test&lt;/code&gt; o &lt;code&gt;live&lt;/code&gt;, dependiendo de tu entorno de procesamiento.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Panel de PayU Enterprise:&lt;/strong&gt; Navega a &lt;em&gt;&lt;strong&gt;Account&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Business Units&lt;/strong&gt;&lt;/em&gt; y selecciona la Unidad de Negocio creada en &lt;a href=&#34;#configuring-your-payu-enterprise-account&#34;&gt;Configuración de tu Cuenta PayU Enterprise&lt;/a&gt;. Usa el selector en la parte superior para elegir el entorno de procesamiento.&lt;br&gt;Algunos valores están ocultos por defecto; haz clic en el icono de ojo para revelarlos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Panel de PayU Enterprise:&lt;/strong&gt; Navega a &lt;strong&gt;Account &amp;gt; Business Units&lt;/strong&gt; y selecciona la Unidad de Negocio creada en &lt;a href=&#34;#configuring-your-payu-enterprise-account&#34;&gt;Configuración de tu Cuenta PayU Enterprise&lt;/a&gt;. Usa el selector en la parte superior para elegir el entorno de procesamiento.&lt;br&gt;Algunos valores están ocultos por defecto; haz clic en el icono de ojo para revelarlos.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 
@@ -417,7 +405,7 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Affiliation name&lt;/td&gt;
-&lt;td&gt;Nombre utilizado para identificar la &lt;em&gt;&lt;strong&gt;Gateway affiliation&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Nombre utilizado para identificar la &lt;strong&gt;Gateway affiliation&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Environment selector&lt;/td&gt;
@@ -425,11 +413,11 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Application Key&lt;/td&gt;
-&lt;td&gt;App ID de la &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;App ID de la &lt;strong&gt;Business Unit&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Application Token&lt;/td&gt;
-&lt;td&gt;Clave privada de API de la &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Clave privada de API de la &lt;strong&gt;Business Unit&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Payment capture&lt;/td&gt;
@@ -445,7 +433,7 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Public Key&lt;/td&gt;
-&lt;td&gt;Clave pública de API de la &lt;em&gt;&lt;strong&gt;Business Unit&lt;/strong&gt;&lt;/em&gt;.&lt;/td&gt;
+&lt;td&gt;Clave pública de API de la &lt;strong&gt;Business Unit&lt;/strong&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Idioma&lt;/td&gt;
@@ -453,7 +441,7 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Expiración pago (días)&lt;/td&gt;
-&lt;td&gt;Define el período de validez para pagos en efectivo.&lt;br&gt;&lt;strong&gt;Importante:&lt;/strong&gt; Este valor debe coincidir con el campo &lt;em&gt;&lt;strong&gt;Promissory note validity&lt;/strong&gt;&lt;/em&gt; en la sección &lt;a href=&#34;#configuring-cash-payment-methods&#34;&gt;Configurar métodos de pago en efectivo&lt;/a&gt;.&lt;/td&gt;
+&lt;td&gt;Define el período de validez para pagos en efectivo.&lt;br&gt;&lt;strong&gt;Importante:&lt;/strong&gt; Este valor debe coincidir con el campo &lt;strong&gt;Promissory note validity&lt;/strong&gt; en la sección &lt;a href=&#34;#configuring-cash-payment-methods&#34;&gt;Configurar métodos de pago en efectivo&lt;/a&gt;.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Enable payout split and send payment recipients?&lt;/td&gt;
@@ -462,7 +450,7 @@ Asegúrate de seleccionar el conector &lt;em&gt;&lt;strong&gt;PayUv2&lt;/strong&
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Haz clic en &lt;em&gt;&lt;strong&gt;Guardar&lt;/strong&gt;&lt;/em&gt; para completar la configuración.&lt;/li&gt;
+&lt;li&gt;Haz clic en &lt;strong&gt;Guardar&lt;/strong&gt; para completar la configuración.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;configuring-payment-methods&#34;&gt;Configuración de Métodos de Pago&lt;/h4&gt;
 &lt;p&gt;Configura los métodos de pago que se mostrarán en el sitio web durante el proceso de pago. &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;Consulta los métodos de pago disponibles&lt;/a&gt;.&lt;/p&gt;
@@ -488,11 +476,11 @@ Haz clic &lt;a href=&#34;#configuring-co-branded-or-private-label-cards&#34;&gt;
 &lt;/div&gt;
 
 &lt;ol&gt;
-&lt;li&gt;En el panel izquierdo, ve a &lt;em&gt;&lt;strong&gt;Transacciones&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt;. Selecciona la pestaña &lt;em&gt;&lt;strong&gt;Condiciones de pago&lt;/strong&gt;&lt;/em&gt; y haz clic en el icono de suma.&lt;/li&gt;
+&lt;li&gt;En el panel izquierdo, ve a &lt;strong&gt;Transacciones &amp;gt; Pagos &amp;gt; Configuración&lt;/strong&gt;. Selecciona la pestaña &lt;strong&gt;Condiciones de pago&lt;/strong&gt; y haz clic en el icono de suma.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex11es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Selecciona el método de pago que deseas agregar. Los métodos de pago están agrupados por tipo.&lt;br&gt;Para este ejemplo, seleccionamos &lt;em&gt;&lt;strong&gt;American Express&lt;/strong&gt;&lt;/em&gt; en la sección de Tarjeta de Crédito.&lt;/li&gt;
+&lt;li&gt;Selecciona el método de pago que deseas agregar. Los métodos de pago están agrupados por tipo.&lt;br&gt;Para este ejemplo, seleccionamos &lt;strong&gt;American Express&lt;/strong&gt; en la sección de &lt;strong&gt;Tarjeta de Crédito&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex12es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
@@ -502,21 +490,21 @@ Haz clic &lt;a href=&#34;#configuring-co-branded-or-private-label-cards&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Nombre de la regla (para identificarla rápidamente)&lt;/strong&gt;: Ingresa un nombre descriptivo para la condición de pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: Configura el estado de la condición de pago. Solo puedes tener &lt;strong&gt;una&lt;/strong&gt; condición de pago activa por método de pago.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Procesar con afiliación&lt;/strong&gt;: Selecciona la afiliación de gateway previamente configurada.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;¿Pago al contado o en cuotas?&lt;/strong&gt;: Selecciona &lt;em&gt;&lt;strong&gt;Al contado&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;¿Pago al contado o en cuotas?&lt;/strong&gt;: Selecciona &lt;strong&gt;Al contado&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex13es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Haz clic en &lt;em&gt;&lt;strong&gt;Guardar&lt;/strong&gt;&lt;/em&gt;. La nueva condición ahora aparecerá en la pestaña &lt;em&gt;&lt;strong&gt;Condiciones de pago&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Haz clic en &lt;strong&gt;Guardar&lt;/strong&gt;. La nueva condición ahora aparecerá en la pestaña &lt;strong&gt;Condiciones de pago&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex14es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;h5 id=&#34;configuring-co-branded-or-private-label-cards&#34;&gt;Configuración de Tarjetas Co-Branded o Private Label&lt;/h5&gt;
 &lt;p&gt;Las tarjetas co-branded y private label son tarjetas de crédito emitidas por una tienda o marca, a veces en asociación con redes como AMEX, VISA o MasterCard. Sigue estos pasos para agregar este método de pago a tu tienda VTEX.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;En el panel izquierdo, selecciona &lt;em&gt;&lt;strong&gt;Transacciones&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Configuración&lt;/strong&gt;&lt;/em&gt;. Selecciona la pestaña &lt;em&gt;&lt;strong&gt;Pagos personalizados&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;En el panel izquierdo, selecciona &lt;strong&gt;Transacciones &amp;gt; Pagos &amp;gt; Configuración&lt;/strong&gt;. Selecciona la pestaña &lt;strong&gt;Pagos personalizados&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex15es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;La pestaña &lt;em&gt;Pagos personalizados&lt;/em&gt; proporciona cinco (5) espacios para configurar tarjetas co-branded y private label. En este ejemplo, configuramos la tarjeta colombiana Codensa, que es una tarjeta private label.&lt;br&gt;Haz clic en cualquier cuadro disponible en la sección &lt;em&gt;&lt;strong&gt;Tarjeta de tienda (red propia)&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;La pestaña &lt;strong&gt;Pagos personalizados&lt;/strong&gt; proporciona cinco (5) espacios para configurar tarjetas co-branded y private label. En este ejemplo, configuramos la tarjeta colombiana Codensa, que es una tarjeta private label.&lt;br&gt;Haz clic en cualquier cuadro disponible en la sección &lt;strong&gt;Tarjeta de tienda (red propia)&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex16es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
@@ -594,7 +582,7 @@ Para tarjetas &lt;em&gt;co-branded&lt;/em&gt;, también debes seleccionar la mar
 &lt;/table&gt;
 &lt;p&gt;Para más detalles sobre la configuración de tarjetas &lt;a href=&#34;https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-cobranded--jrkLK41IjuquUmyKUi86Q&#34;&gt;co-branded&lt;/a&gt; y &lt;a href=&#34;https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-bandeira-propria--428FgVdSGQUeAOoogkaIw4&#34;&gt;private label&lt;/a&gt;, visita el Centro de Ayuda de VTEX.&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Haz clic en &lt;em&gt;&lt;strong&gt;Guardar&lt;/strong&gt;&lt;/em&gt;. Después de crear el pago personalizado, serás redirigido a la opción para crear una &lt;em&gt;&lt;strong&gt;Condición de pago&lt;/strong&gt;&lt;/em&gt;. Sigue las instrucciones en la sección &lt;a href=&#34;#configuring-credit-or-debit-cards&#34;&gt;Configuración de Tarjetas de Crédito o Débito&lt;/a&gt; para completar este paso.&lt;/li&gt;
+&lt;li&gt;Haz clic en &lt;strong&gt;Guardar&lt;/strong&gt;. Después de crear el pago personalizado, serás redirigido a la opción para crear una &lt;strong&gt;Condición de pago&lt;/strong&gt;. Sigue las instrucciones en la sección &lt;a href=&#34;#configuring-credit-or-debit-cards&#34;&gt;Configuración de Tarjetas de Crédito o Débito&lt;/a&gt; para completar este paso.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;configuring-cash-payment-methods&#34;&gt;Configuración de Métodos de Pago en Efectivo&lt;/h5&gt;
 &lt;p&gt;Dado que los pagos en efectivo requieren que los clientes realicen el pago en ubicaciones físicas, puedes configurar este método de pago en VTEX como notas promisorias (&lt;em&gt;Notes Payables&lt;/em&gt;).&lt;/p&gt;
@@ -607,11 +595,11 @@ Para &lt;em&gt;Boleto Bancário&lt;/em&gt; en Brasil, este procedimiento no es n
 
 &lt;p&gt;Cuando configuras un método de pago en efectivo, los clientes son redirigidos al checkout de PayU, donde pueden descargar el comprobante de pago y realizarlo en la ubicación física correspondiente. Sigue las instrucciones a continuación para agregar este método de pago a tu tienda VTEX.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;En el panel izquierdo, selecciona &lt;em&gt;&lt;strong&gt;Transacciones &amp;gt; Pagos &amp;gt; Configuración&lt;/strong&gt;&lt;/em&gt;. Selecciona la pestaña &lt;em&gt;&lt;strong&gt;Pagos personalizados&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;En el panel izquierdo, selecciona &lt;strong&gt;Transacciones &amp;gt; Pagos &amp;gt; Configuración&lt;/strong&gt;. Selecciona la pestaña &lt;strong&gt;Pagos personalizados&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex15es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;En esta pestaña, tienes cinco (5) espacios disponibles para configurar métodos de pago en efectivo. En este ejemplo, configuraremos OXXO, un método de pago en efectivo en México.&lt;br&gt;Haz clic en cualquier cuadro disponible en la sección &lt;em&gt;&lt;strong&gt;Pagarés&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;En esta pestaña, tienes cinco (5) espacios disponibles para configurar métodos de pago en efectivo. En este ejemplo, configuraremos OXXO, un método de pago en efectivo en México.&lt;br&gt;Haz clic en cualquier cuadro disponible en la sección &lt;strong&gt;Pagarés&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex18es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
@@ -621,19 +609,19 @@ Para &lt;em&gt;Boleto Bancário&lt;/em&gt; en Brasil, este procedimiento no es n
 &lt;li&gt;&lt;strong&gt;Nombre&lt;/strong&gt;: Usa el valor listado &lt;a href=&#34;../../../../es/docs/getting-started/select-your-payment-method.html&#34;&gt;aquí&lt;/a&gt; en la columna del parámetro &lt;code&gt;paymentMethod&lt;/code&gt;. Para este ejemplo, ingresa &lt;code&gt;OXXO&lt;/code&gt;.
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Descripción&lt;/strong&gt;: Ingresa una descripción que se mostrará cuando el cliente seleccione este método de pago (opcional).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Fecha de vencimiento de la nota promisoria&lt;/strong&gt;: Especifica el número de días antes de que expire el pago en efectivo. El valor predeterminado es de 7 días. Asegúrate de que este valor coincida con la configuración &lt;em&gt;&lt;strong&gt;Expiración pago (días)&lt;/strong&gt;&lt;/em&gt; en la afiliación de VTEX para evitar problemas de procesamiento.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fecha de vencimiento de la nota promisoria&lt;/strong&gt;: Especifica el número de días antes de que expire el pago en efectivo. El valor predeterminado es de 7 días. Asegúrate de que este valor coincida con la configuración &lt;strong&gt;Expiración pago (días)&lt;/strong&gt; en la afiliación de VTEX para evitar problemas de procesamiento.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Deja los demás campos con sus valores predeterminados.&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Haz clic en &lt;em&gt;&lt;strong&gt;Guardar&lt;/strong&gt;&lt;/em&gt;. Una vez creado el pago personalizado, serás redirigido para configurar una nueva &lt;em&gt;&lt;strong&gt;Condición de pago&lt;/strong&gt;&lt;/em&gt;. Sigue las instrucciones en la sección &lt;a href=&#34;#configuring-credit-or-debit-cards&#34;&gt;Configuración de Tarjetas de Crédito o Débito&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Haz clic en &lt;strong&gt;Guardar&lt;/strong&gt;. Una vez creado el pago personalizado, serás redirigido para configurar una nueva &lt;strong&gt;Condición de pago&lt;/strong&gt;. Sigue las instrucciones en la sección &lt;a href=&#34;#configuring-credit-or-debit-cards&#34;&gt;Configuración de Tarjetas de Crédito o Débito&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;configuring-pse&#34;&gt;Configuración de PSE&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;Requisitos previos:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Este método de pago solo está disponible para comercios que procesan en Colombia.&lt;/li&gt;
-&lt;li&gt;Para ofrecer PSE como método de pago, debes instalar la &lt;strong&gt;aplicación PSE desarrollada por VTEX&lt;/strong&gt;. Si aún no lo has hecho, ve a &lt;em&gt;&lt;strong&gt;Configuración de la cuenta &amp;gt; Apps &amp;gt; App Store&lt;/strong&gt;&lt;/em&gt; y busca &lt;em&gt;&lt;strong&gt;Banks for PSE&lt;/strong&gt;&lt;/em&gt;. &lt;br&gt;Si la aplicación no está disponible en la tienda, puedes solicitar su instalación al equipo de VTEX enviando un ticket en &lt;a href=&#34;https://help.vtex.com/en/support&#34;&gt;VTEX Support&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Para ofrecer PSE como método de pago, debes instalar la &lt;strong&gt;aplicación PSE desarrollada por VTEX&lt;/strong&gt;. Si aún no lo has hecho, ve a &lt;strong&gt;Configuración de la cuenta &amp;gt; Apps &amp;gt; App Store&lt;/strong&gt; y busca &lt;strong&gt;Banks for PSE&lt;/strong&gt;. &lt;br&gt;Si la aplicación no está disponible en la tienda, puedes solicitar su instalación al equipo de VTEX enviando un ticket en &lt;a href=&#34;https://help.vtex.com/en/support&#34;&gt;VTEX Support&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Si utilizas una integración VTEX Legacy, VTEX debe realizar una configuración adicional antes de que puedas configurar este método de pago. Contacta a tu representante de VTEX o solicita asistencia a través de &lt;a href=&#34;https://help.vtex.com/en/support&#34;&gt;VTEX Support&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -649,15 +637,15 @@ Para &lt;em&gt;Boleto Bancário&lt;/em&gt; en Brasil, este procedimiento no es n
 &lt;/div&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Para configurar PSE, accede al panel de administración de VTEX y navega a &lt;em&gt;&lt;strong&gt;Configuración de la tienda &amp;gt; Pagos &amp;gt; Configuración &amp;gt; Condiciones de pago&lt;/strong&gt;&lt;/em&gt;. Luego, sigue estos pasos:&lt;/li&gt;
+&lt;li&gt;Para configurar PSE, accede al panel de administración de VTEX y navega a &lt;strong&gt;Configuración de la tienda &amp;gt; Pagos &amp;gt; Configuración &amp;gt; Condiciones de pago&lt;/strong&gt;. Luego, sigue estos pasos:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.1&lt;/span&gt; Haz clic en el botón &lt;em&gt;+&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.2&lt;/span&gt; En la categoría &lt;em&gt;Otros&lt;/em&gt;, localiza &lt;em&gt;PSE&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.1&lt;/span&gt; Haz clic en el botón &lt;strong&gt;+&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.2&lt;/span&gt; En la categoría &lt;strong&gt;Otros&lt;/strong&gt;, localiza &lt;strong&gt;PSE&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.3&lt;/span&gt; Completa los siguientes campos:&lt;/p&gt;
 &lt;p&gt;    &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;•&lt;/span&gt; &lt;strong&gt;Nombre de la regla&lt;/strong&gt;: Ingresa un nombre descriptivo para identificar este método de pago. &lt;br&gt;
     &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;•&lt;/span&gt; &lt;strong&gt;Procesar con afiliación&lt;/strong&gt;: Selecciona la afiliación de gateway configurada para procesar pagos con PayUV2. &lt;br&gt;
     &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;•&lt;/span&gt; &lt;strong&gt;Estado&lt;/strong&gt;: Activa la condición de pago.&lt;/p&gt;
-&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.4&lt;/span&gt; Haz clic en &lt;em&gt;&lt;strong&gt;Guardar&lt;/strong&gt;&lt;/em&gt; para aplicar la configuración.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.4&lt;/span&gt; Haz clic en &lt;strong&gt;Guardar&lt;/strong&gt; para aplicar la configuración.&lt;/p&gt;
    &lt;video width=&#34;630&#34; height=&#34;300&#34; controls&gt;
       &lt;source src=&#34;../../../../assets/VTEX/Videos/Video01.mp4&#34; type=&#34;video/mp4&#34;&gt;  
    &lt;/video&gt;
@@ -665,8 +653,8 @@ Para &lt;em&gt;Boleto Bancário&lt;/em&gt; en Brasil, este procedimiento no es n
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Configura la aplicación Banks for PSE con tus credenciales de PayU siguiendo estos pasos:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.1&lt;/span&gt; Inicia sesión en el panel de administración de VTEX y ve a &lt;em&gt;&lt;strong&gt;Apps &amp;gt; Apps instaladas &amp;gt; Banks for PSE&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.2&lt;/span&gt; Completa el formulario y haz clic en &lt;em&gt;&lt;strong&gt;Guardar&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.1&lt;/span&gt; Inicia sesión en el panel de administración de VTEX y ve a &lt;strong&gt;Apps &amp;gt; Apps instaladas &amp;gt; Banks for PSE&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.2&lt;/span&gt; Completa el formulario y haz clic en &lt;strong&gt;Guardar&lt;/strong&gt;.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -677,7 +665,7 @@ Para &lt;em&gt;Boleto Bancário&lt;/em&gt; en Brasil, este procedimiento no es n
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Conector utilizado para procesar PSE&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Selecciona &lt;em&gt;PayUv2&lt;/em&gt; en la lista desplegable.&lt;/td&gt;
+&lt;td&gt;Selecciona &lt;strong&gt;PayUv2&lt;/strong&gt; en la lista desplegable.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;Código de aplicación&lt;/strong&gt;&lt;/td&gt;
@@ -705,14 +693,14 @@ Para probar PSE en un entorno sandbox, asegúrate de que tu afiliación en VTEX 
 &lt;h3 id=&#34;requisitos-previos-para-una-prueba-exitosa&#34;&gt;Requisitos Previos para una Prueba Exitosa:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Asegúrate de que tu cuenta de PayU Enterprise esté en modo &lt;code&gt;TEST&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Verifica que el &lt;em&gt;&lt;strong&gt;Selector de Entorno&lt;/strong&gt;&lt;/em&gt; en tu &lt;em&gt;&lt;strong&gt;Afiliación de Gateway en VTEX&lt;/strong&gt;&lt;/em&gt; esté configurado en modo &lt;code&gt;TEST&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Usa las credenciales de prueba adecuadas al configurar la &lt;em&gt;&lt;strong&gt;Afiliación de Gateway en VTEX&lt;/strong&gt;&lt;/em&gt;. Puedes encontrar las credenciales de prueba &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html&#34;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Verifica que el &lt;strong&gt;Selector de Entorno&lt;/strong&gt; en tu &lt;strong&gt;Afiliación de Gateway en VTEX&lt;/strong&gt; esté configurado en modo &lt;code&gt;TEST&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Usa las credenciales de prueba adecuadas al configurar la &lt;strong&gt;Afiliación de Gateway en VTEX&lt;/strong&gt;. Puedes encontrar las credenciales de prueba &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html&#34;&gt;aquí&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Una vez finalizadas las pruebas, actualiza la configuración con la información de producción, incluyendo tu cuenta de PayU Enterprise, el selector de entorno en la afiliación de VTEX y las credenciales.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;pasos-para-realizar-una-transacción-de-prueba&#34;&gt;Pasos para Realizar una Transacción de Prueba&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;En el panel de administración de VTEX, haz clic en &lt;em&gt;&lt;strong&gt;Visite la tienda&lt;/strong&gt;&lt;/em&gt; en el menú superior.&lt;/p&gt;
+&lt;p&gt;En el panel de administración de VTEX, haz clic en &lt;strong&gt;Visite la tienda&lt;/strong&gt; en el menú superior.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex20es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -720,12 +708,12 @@ Para probar PSE en un entorno sandbox, asegúrate de que tu afiliación en VTEX 
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex21.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;En el carrito de compras, haz clic en el botón &lt;em&gt;&lt;strong&gt;Realizar Pedido&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;En el carrito de compras, haz clic en el botón &lt;strong&gt;Realizar Pedido&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex22.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;En la sección de pago, los métodos de pago disponibles aparecerán agrupados por tipo. Selecciona el que deseas probar e ingresa los datos de prueba. Puedes encontrar los números de tarjeta de prueba y la información relevante &lt;a href=&#34;../../../../es/docs/getting-started/test-your-solution.html#test-cards&#34;&gt;aquí&lt;/a&gt;.&lt;br&gt;
-Finalmente, haz clic en &lt;em&gt;&lt;strong&gt;Finalizar Compra&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+Finalmente, haz clic en &lt;strong&gt;Finalizar Compra&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex23.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -733,43 +721,43 @@ Finalmente, haz clic en &lt;em&gt;&lt;strong&gt;Finalizar Compra&lt;/strong&gt;&
 &lt;p&gt;Una vez aprobada la compra, puedes verificar la transacción en los siguientes lugares:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Administrador de VTEX&lt;/strong&gt;: Selecciona &lt;em&gt;&lt;strong&gt;Transacciones &amp;gt; Pagos &amp;gt; Transacciones&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Administrador de VTEX&lt;/strong&gt;: Selecciona &lt;strong&gt;Transacciones &amp;gt; Pagos &amp;gt; Transacciones&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex24es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Panel de control de PayU Enterprise&lt;/strong&gt;: Ve a &lt;em&gt;&lt;strong&gt;Pagos&lt;/strong&gt;&lt;/em&gt; &amp;gt; &lt;em&gt;&lt;strong&gt;Buscar&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Panel de control de PayU Enterprise&lt;/strong&gt;: Ve a &lt;strong&gt;Pagos &amp;gt; Buscar&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex25es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-El parámetro &lt;em&gt;&lt;strong&gt;ID Externo de Transacción&lt;/strong&gt;&lt;/em&gt; dentro de &lt;em&gt;&lt;strong&gt;Actividad de la Transacción&lt;/strong&gt;&lt;/em&gt; corresponde al ID de la orden en PayU.
+El parámetro &lt;strong&gt;ID Externo de Transacción&lt;/strong&gt; dentro de &lt;strong&gt;Actividad de la Transacción&lt;/strong&gt; corresponde al ID de la orden en PayU.
 &lt;/div&gt;
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Panel de gestión de PayU&lt;/strong&gt;: Revisa la transacción en el módulo &lt;a href=&#34;../../../../es/payu-module-documentation/reports/sales-report.html&#34;&gt;&lt;em&gt;&lt;strong&gt;Reporte de Ventas&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Panel de gestión de PayU&lt;/strong&gt;: Revisa la transacción en el módulo &lt;a href=&#34;../../../../es/payu-module-documentation/reports/sales-report.html&#34;&gt;&lt;strong&gt;Reporte de Ventas&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex26.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../../../es/docs/services/queries.html&#34;&gt;API de Consultas&lt;/a&gt;&lt;/strong&gt;: Usa el &lt;em&gt;&lt;strong&gt;External Transaction ID&lt;/strong&gt;&lt;/em&gt; como parámetro &lt;code&gt;OrderID&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../../../es/docs/services/queries.html&#34;&gt;API de Consultas&lt;/a&gt;&lt;/strong&gt;: Usa el &lt;strong&gt;External Transaction ID&lt;/strong&gt; como parámetro &lt;code&gt;OrderID&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;prueba-de-flujos-en-dos-pasos&#34;&gt;Prueba de Flujos en Dos Pasos&lt;/h2&gt;
-&lt;p&gt;Si tu &lt;em&gt;&lt;strong&gt;Afiliación de Gateway&lt;/strong&gt;&lt;/em&gt; está configurada para procesar transacciones mediante un flujo en dos pasos, los fondos autorizados en la tarjeta de crédito no se liquidan hasta que solicites explícitamente la liquidación. Para completar la liquidación, debes facturar el pedido.&lt;/p&gt;
+&lt;p&gt;Si tu &lt;strong&gt;Afiliación de Gateway&lt;/strong&gt; está configurada para procesar transacciones mediante un flujo en dos pasos, los fondos autorizados en la tarjeta de crédito no se liquidan hasta que solicites explícitamente la liquidación. Para completar la liquidación, debes facturar el pedido.&lt;/p&gt;
 &lt;h3 id=&#34;pasos-para-facturar-un-pedido&#34;&gt;Pasos para Facturar un Pedido&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Ubica la transacción en el &lt;strong&gt;Administrador de VTEX&lt;/strong&gt; en &lt;em&gt;&lt;strong&gt;Transacciones &amp;gt; Pagos &amp;gt; Transacciones&lt;/strong&gt;&lt;/em&gt; y haz clic en ella.&lt;br&gt;
-Luego, haz clic en el botón &lt;em&gt;&lt;strong&gt;Pedido&lt;/strong&gt;&lt;/em&gt; en la esquina superior derecha.&lt;/p&gt;
+&lt;p&gt;Ubica la transacción en el &lt;strong&gt;Administrador de VTEX&lt;/strong&gt; en &lt;strong&gt;Transacciones &amp;gt; Pagos &amp;gt; Transacciones&lt;/strong&gt; y haz clic en ella.&lt;br&gt;
+Luego, haz clic en el botón &lt;strong&gt;Pedido&lt;/strong&gt; en la esquina superior derecha.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex27es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Desplázate hacia abajo hasta la sección &lt;em&gt;&lt;strong&gt;Paquete&lt;/strong&gt;&lt;/em&gt; y haz clic en &lt;em&gt;&lt;strong&gt;Facturar paquete&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Desplázate hacia abajo hasta la sección &lt;strong&gt;Paquete&lt;/strong&gt; y haz clic en &lt;strong&gt;Facturar paquete&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex28es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Ingresa los detalles de la factura y haz clic en &lt;em&gt;&lt;strong&gt;Enviar factura&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;
+&lt;p&gt;Ingresa los detalles de la factura y haz clic en &lt;strong&gt;Enviar factura&lt;/strong&gt;.&lt;br&gt;
 Una vez enviada la factura al cliente, el monto autorizado se cobra en la tarjeta del cliente.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex29es.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -778,8 +766,8 @@ Una vez enviada la factura al cliente, el monto autorizado se cobra en la tarjet
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
-Un pedido autorizado puede cancelarse usando el botón &lt;em&gt;&lt;strong&gt;Cancelar pedido&lt;/strong&gt;&lt;/em&gt; en los detalles del pedido.&lt;br&gt;
-Cuando un pedido se cancela, PayU envía una transacción de &lt;em&gt;void&lt;/em&gt;, que se registra tanto en el Hub como en PayU Latam.
+Un pedido autorizado puede cancelarse usando el botón &lt;strong&gt;Cancelar pedido&lt;/strong&gt; en los detalles del pedido.&lt;br&gt;
+Cuando un pedido se cancela, PayU envía una transacción de &lt;em&gt;void&lt;/em&gt;, que se registra tanto en PayU Enterprise como en PayU Latam.
 &lt;/div&gt;
 
 
@@ -995,7 +983,7 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;apiLogin&lt;/td&gt;
-&lt;td&gt;Usuario o inicio de sesión proporcionado por PayU. &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;Obtener API Login&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Nombre de usuario o login proporcionado por PayU. &lt;a href=&#34;../../../../es/docs/integrations.html#api-key-and-api-login&#34;&gt;Obtener API Login&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;apiKey&lt;/td&gt;
@@ -1003,7 +991,7 @@ Recuerda que si requieres realizar un reembolso total o parcial, podrás gestion
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;accountId&lt;/td&gt;
-&lt;td&gt;Account ID de PayU basado en tu país de operación.&lt;/td&gt;
+&lt;td&gt;ID de la cuenta de PayU basado en tu país de operación.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;merchantId&lt;/td&gt;

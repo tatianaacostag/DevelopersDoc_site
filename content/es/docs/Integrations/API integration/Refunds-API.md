@@ -1,140 +1,169 @@
 ---
-title: "API de Reembolsos y Anulaciones"
-linkTitle: "API de Reembolsos y Anulaciones"
+title: "API de Anulaciones y Reembolsos"
+linkTitle: "API de Anulaciones y Reembolsos"
 date: 2021-06-25T09:24:50-05:00
 description: >
-  Esta funcionalidad te permite solicitar la cancelación o el reembolso de transacciones autorizadas o cobradas. Puedes crear la solicitud utilizando los métodos de reembolso (_Refund_) o de cancelación (_Void_) de acuerdo con el estado de la transacción.
- 
+  La API de Anulaciones y Reembolsos permite cancelar o reembolsar transacciones que han sido autorizadas o cobradas. Dependiendo del estado de la transacción, puedes enviar una solicitud utilizando los métodos `Void` o `Refund`.
 weight: 50
 tags: ["subtopic"]
 ---
 
-Para integrarte con el API de Reembolsos y Anulaciones, apunta tus peticiones a las siguientes URLs de acuerdo con tu ambiente.
+{{% alert title="Nota" color="info"%}}
 
-{{% alert title="URL" color="info"%}}
+Para integrarte con la API de Anulaciones y Reembolsos, dirige tus solicitudes a la URL del entorno correspondiente:
+
 * Pruebas: ```https://sandbox.api.payulatam.com/payments-api/4.0/service.cgi```
 * Producción: ```https://api.payulatam.com/payments-api/4.0/service.cgi```
+
 {{% /alert %}}
 
-Si necesitas entender los conceptos y leer más consideraciones sobre Reembolsos y Anulaciones, consulta [este artículo]({{< ref "Refunds.md" >}}).
+Para comprender mejor las anulaciones y reembolsos, incluidos los conceptos clave y consideraciones, consulta [este documento]({{< ref "Refunds.md" >}}).
 
-## Consideraciones por país {#considerations-per-country}
-Antes de utilizar el API de Reembolsos y Anulaciones, ten en cuenta las siguientes consideraciones.
+## Consideraciones por País
+
+Antes de usar la API de Anulaciones y Reembolsos, ten en cuenta las siguientes consideraciones específicas por país.
 
 ### Argentina
-* El tiempo máximo para enviar una anulación es 14 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
-* No se soportan reembolsos con decimales.
-* Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 30 días hábiles.
 
-### Brasil {#brazil}  
-* El tiempo máximo para enviar una anulación es siete (7) días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se cancela.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es:
-   - 87 días para transacciones con PIX o procesadas en Redecard.
-   - 172 días para transacciones con tarjeta.
-* La integración admite múltiples reembolsos parciales para PIX.
-* Cuando se aprueba un reembolso por transacciones con PIX, el pagador recibe el dinero de inmediato. De lo contrario, lo recuperan en un máximo de 15 días hábiles.
+- Una solicitud de anulación debe enviarse dentro de los **14 días**; de lo contrario, la transacción se anula automáticamente.
+- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días** después de la transacción.
+- Los reembolsos con montos decimales **no están soportados**.
+- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
+
+### Brasil
+
+- Una solicitud de anulación debe enviarse dentro de **7 días**; de lo contrario, la transacción se cancela.
+- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta:
+  - **87 días** para transacciones con PIX.
+  - **172 días** para transacciones con tarjeta.
+- Se admiten **reembolsos parciales múltiples** para transacciones con PIX.
+- Una vez aprobados:
+  - Los reembolsos de **transacciones con PIX** se procesan **de inmediato**.
+  - Los reembolsos de **otros métodos de pago** tardan hasta **15 días hábiles**.
 
 ### Chile
-* Debido a restricciones de la red, se pueden autorizar anulaciones dentro de las tres primeras horas luego de la autorización. Si no se acepta la anulación o no se envía una captura luego de siete (7) días, la transacción se anula automáticamente.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 327 días. Si la transacción fue procesada con KLAP, el tiempo máximo es 172 días.
-* Los reembolsos están disponibles para transacciones procesadas a través de [WebPay Plus o Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).
-* Para transacciones con tarjetas prepago que no sean procesadas a través de WebPay Plus, los Reembolsos solicitados luego de la primero hora del cobro pueden ser aprobados o rechazados por la red financiera. Luego de esta hora, se rechazan todos los reembolsos para transacciones realizadas con tarjetas prepago.
-* Si se rechaza el reembolso, PayU muestra el [código de error]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}) generado por la red.
-* No se soportan reembolsos con decimales.
-* Cuando se aprueba un reembolso, el pagador obtiene su dinero en 8 a 20 días hábiles.
-* Los reembolsos parciales para transacciones que utilizan cuotas se reciben en línea pero son procesados de forma manual debido a restricciones de la red adquirente.
-* El valor mínimo para enviar un Reembolso es 10 CLP.
+
+- Debido a restricciones de la red, una **solicitud de anulación** solo puede autorizarse **dentro de las 3 horas posteriores a la transacción**. Si la anulación no es aceptada o no se envía la captura dentro de **7 días**, la transacción se anula automáticamente.
+- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **327 días**.
+- Los reembolsos están disponibles para transacciones procesadas a través de [WebPay Plus o Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).
+- Para **transacciones con tarjeta prepago no procesadas por WebPay Plus**:
+  - Los reembolsos solicitados **dentro de la primera hora** pueden ser **aprobados o rechazados** por la red financiera.
+  - Los reembolsos solicitados **después de la primera hora** son **rechazados automáticamente**.
+- Si un reembolso es rechazado, PayU muestra el [código de error correspondiente]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}).
+- Los reembolsos con montos decimales **no están soportados**.
+- Una vez aprobado un reembolso, el pagador recibe los fondos **entre 8 y 20 días hábiles**.
+- Los **reembolsos parciales** en transacciones con **cuotas** se reciben en línea pero se procesan manualmente debido a restricciones del adquirente.
+- El monto mínimo para un reembolso es **10 CLP**.
 
 ### Colombia
-* No se soportan Anulaciones (voids).
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
-* El valor mínimo para enviar un reembolso es 100 COP.
-* Si no se envía el reembolso el mismo día en el que la transacción fue capturada (antes de las 9 pm UTC-5) el reembolso va inmediatamente  un proceso manual sin enviar un intento en línea.
-* Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 30 días hábiles.
-* No se soportan reembolsos parciales para tarjetas de crédito internacionales.
 
-### México {#mexico}
-* El tiempo mínimo para enviar una anulación (Void) es 10 minutos luego de la autorización y el máximo es 30 días. Si la transacción se hizo con American Express, el tiempo máximo es siete (7) días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 175 días. Si la transacción fue procesada por Bancomer, el tiempo máximo es 40 días.
-* Cuando se aprueba un reembolso, el pagador obtiene su dinero en 30 días hábiles.
-* No se soportan reembolsos con decimales.
+- **Las anulaciones no están soportadas**.
+- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días**.
+- El monto mínimo para un reembolso es **100 COP**.
+- Si una solicitud de reembolso **no se envía el mismo día** de la captura de la transacción (**antes de las 9 PM UTC-5**), se **procesa manualmente** en lugar de intentarse en línea.
+- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
+- **Los reembolsos parciales no están disponibles** para tarjetas de crédito internacionales.
 
-### Panamá {#panama}
-* No se soportan Anulaciones (voids).
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
-* Cuando se aprueba el reembolso, el pagador obtiene su dinero en máximo 8 días hábiles.
+### México
 
-### Perú {#peru}
-* Los días máximos para enviar una autorización son: 
-    - Visa: 21 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se captura automáticamente.
-    - Mastercard: 28 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se captura automáticamente.
-    - American Express: 30 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
-    - Diners: 11 días. Si no se envía una anulación o una captura luego de este tiempo, la transacción se anula automáticamente.
-* El tiempo mínimo para enviar un reembolso es 10 minutos luego de la aprobación y el máximo es 357 días.
-* Se soportan reembolsos parciales para transacciones sin cuotas. Ten en cuenta que las transacciones en una cuota son consideradas como sin cuotas.
-* Los Reembolsos parciales con visanet deben enviarse un día después.
-* Cuando se aprueba un reembolso, el pagador obtiene su dinero en 15 to 25 días hábiles.
-* La cantidad mínima para enviar un Reembolso es 1 USD o 1 PEN.
+- Una solicitud de anulación debe enviarse **al menos 10 minutos después de la autorización** y hasta:
+  - **30 días** para la mayoría de las transacciones.
+  - **7 días** para transacciones con **American Express**.
+  - Si no se envía una anulación o captura dentro del período establecido, la transacción se anula automáticamente.
+- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta:
+  - **175 días** para la mayoría de las transacciones.
+  - **40 días** si son procesadas por **Bancomer**.
+- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
+- Los reembolsos con montos decimales **no están soportados**.
 
-## Anulación (Void) {#void}
-Le método `VOID` cancela una transacción previamente autorizada. La anulación es un procedimiento automático, tan pronto envías la petición de `VOID`, no sigue ningún flujo de aprobación y la transacción no se cobra al tarjetahabiente.
+### Panamá
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response}
+- **Las anulaciones no están soportadas**.
+- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días**.
+- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 8 días hábiles**.
+
+### Perú
+
+- El tiempo máximo para anular una autorización depende de la red de pagos:
+  - **Visa**: **21 días** → Si no se envía una anulación o captura, la transacción se **auto-captura**.
+  - **Mastercard**: **28 días** → Si no se envía una anulación o captura, la transacción se **auto-captura**.
+  - **American Express**: **30 días** → Si no se envía una anulación o captura, la transacción se **auto-anula**.
+  - **Diners**: **11 días** → Si no se envía una anulación o captura, la transacción se **auto-anula**.
+- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días**.
+- Se admiten **reembolsos parciales** para transacciones **sin cuotas** (incluidas las de una sola cuota).
+- Los **reembolsos parciales con Visanet** deben enviarse **al menos un día después de la transacción**.
+- Una vez aprobado un reembolso, el pagador recibe los fondos **entre 15 y 25 días hábiles**.
+- El monto mínimo para un reembolso es **1 USD o 1 PEN**.
+
+## Anulación
+
+El método `VOID` cancela una transacción previamente autorizada. Este es un **proceso automático**—tan pronto como se envía la solicitud `VOID`, no sigue un flujo de aprobación y la transacción **no se carga** al titular de la tarjeta.
+
+### Parámetros para la Solicitud y Respuesta
 
 <details>
-<summary>Petición (Request)</summary>
+
+<summary>Solicitud</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
-|---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-y-api-login" >}}) | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-y-api-login" >}}) | Sí |
-| transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > order |  |  | Este objeto tiene los datos de la orden. | Sí |
-| transaction > order > id | Numérico |  | Identificador de la orden a ser anulada. | Sí |
-| transaction > type | Alfanumérico | 32 | Asigna `VOID` para realizar una anulación de una transacción autorizada. | Sí |
-| transaction > reason | Alfanumérico |  | Entrega la razón para anular una transacción autorizada. | No |
-| transaction > parentTransactionId | Alfanumérico | 36 | Identificador de la transacción a anular. | Sí |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+|------------------|---------|--------|-------------|:-----------:|
+| `language` | Alfanumérico | 2 | Idioma utilizado en la solicitud. Esto determina el idioma de los mensajes de error. [Ver idiomas compatibles]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| `command` | Alfanumérico | Máx: 32 | Debe establecerse en `SUBMIT_TRANSACTION`. | Sí |
+| `test` (JSON)<br>`isTest` (XML) | Booleano | — | Establezca en `true` para modo de prueba; de lo contrario, `false`. | Sí |
+| `merchant` | Objeto | — | Contiene los datos de autenticación. | Sí |
+| `merchant > apiLogin` | Alfanumérico | Mín: 12, Máx: 32 | Usuario o login proporcionado por PayU. [Cómo obtener API Login]({{< ref "integrations.html#api-key-and-api-login" >}}). | Sí |
+| `merchant > apiKey` | Alfanumérico | Mín: 6, Máx: 32 | Contraseña proporcionada por PayU. [Cómo obtener API Key]({{< ref "integrations.html#api-key-and-api-login" >}}). | Sí |
+| `transaction` | Objeto | — | Contiene los datos de la transacción. | Sí |
+| `transaction > order` | Objeto | — | Contiene los detalles de la orden. | Sí |
+| `transaction > order > id` | Numérico | — | ID de la orden que se va a anular. | Sí |
+| `transaction > type` | Alfanumérico | 32 | Establezca en `VOID` para cancelar una transacción autorizada. | Sí |
+| `transaction > reason` | Alfanumérico | — | Motivo de la anulación de la transacción. | No |
+| `transaction > parentTransactionId` | Alfanumérico | 36 | ID de la transacción que se va a anular. | Sí |
 
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+
+<summary>Respuesta</summary>
+
 <br>
+
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
-|-|-|-|-|
-| code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse |  |  | Datos de la respuesta. |
-| transactionResponse > orderId | Numérico |  | Identificador de la orden generado o existente en PayU. |
-| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
-| transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. |
-| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Max:255 | Código de respuesta retornado por la red bancaria. |
-| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Max:255 | Mensaje de error retornado por la red bancaria. |
-| transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
-| transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
-| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado al estado. |
-| transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Fecha |  | Fecha de creación en el sistema de PayU. |
+| Nombre del Campo | Formato | Tamaño | Descripción |
+|------------------|---------|--------|-------------|
+| `code` | Alfanumérico | — | Código de respuesta de la transacción. Valores posibles: `ERROR`, `SUCCESS`. |
+| `error` | Alfanumérico | Máx: 2048 | Mensaje de error cuando el código de respuesta es `ERROR`. |
+| `transactionResponse` | Objeto | — | Contiene los detalles de la respuesta. |
+| `transactionResponse > orderId` | Numérico | — | ID de la orden generada o existente en PayU. |
+| `transactionResponse > transactionId` | Alfanumérico | 36 | ID de la transacción en PayU. |
+| `transactionResponse > state` | Alfanumérico | Máx: 32 | Estado de la transacción. |
+| `transactionResponse > paymentNetworkResponseCode` | Alfanumérico | Máx: 255 | Código de respuesta de la red financiera. |
+| `transactionResponse > paymentNetworkResponseErrorMessage` | Alfanumérico | Máx: 255 | Mensaje de error de la red financiera. |
+| `transactionResponse > trazabilityCode` | Alfanumérico | Máx: 32 | Código de trazabilidad de la red financiera. |
+| `transactionResponse > authorizationCode` | Alfanumérico | Máx: 12 | Código de autorización de la red financiera. |
+| `transactionResponse > responseCode` | Alfanumérico | Máx: 64 | Código de respuesta relacionado con el estado de la transacción. |
+| `transactionResponse > responseMessage` | Alfanumérico | Máx: 2048 | Mensaje relacionado con el código de respuesta. |
+| `transactionResponse > operationDate` | Fecha | — | Fecha en la que se generó la respuesta en el sistema de PayU. |
 
 </details>
 
-### Llamado del API {#api-call}
-Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
+### Llamada a la API
+
+Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este tipo de transacción.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Ejemplo petición:
+**Ejemplo de una Solicitud:**
+
 ```JSON
 {
    "language": "es",
@@ -154,9 +183,11 @@ Ejemplo petición:
    "test": false
 }
 ```
+
 <br>
 
-Ejemplo respuesta:
+**Ejemplo de una Respuesta:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -186,9 +217,11 @@ Ejemplo respuesta:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Ejemplo petición:
+**Ejemplo de una Solicitud:**
+
 ```XML
 <request>
    <language>es</language>
@@ -207,9 +240,11 @@ Ejemplo petición:
    <isTest>false</isTest>
 </request>
 ```
+
 <br>
 
-Ejemplo respuesta:
+**Ejemplo de una Respuesta:**
+
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -226,73 +261,80 @@ Ejemplo respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
-## Reembolsos (Refunds) {#refunds}  
-Un reembolso se solicita cuando una tienda decide voluntariamente regresar el dinero al cliente debido a razones de insatisfacción o cuando la tienda no tiene suficiente inventario del producto comprado. El método `REFUND` solicita el reverso de una transacción previamente capturada.
+## Reembolsos
 
-Los reembolsos pueden ser solicitados por la cantidad total o parcial (`PARTIAL REFUND`).
+Un reembolso se emite cuando un comerciante devuelve voluntariamente el pago al comprador. Esto puede ocurrir debido a **insatisfacción del cliente** o cuando el producto está **agotado**. El método `REFUND` revierte una transacción previamente capturada.
 
-### Variables para la petición y la respuesta {#variables-for-request-and-response-1}
+Los reembolsos pueden emitirse por el **monto total** o como un **reembolso parcial** (`PARTIAL_REFUND`).
+
+### Parámetros para la Solicitud y Respuesta
 
 <details>
-<summary>Petición (Request)</summary>
+<summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
-|---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant |  |  | Este objeto tiene los datos de autenticación. | Sí |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-y-api-login" >}}) | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-y-api-login" >}}) | Sí |
-| transaction |  |  | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > additionalValues > |  | 64 | Monto del reembolso parcial. Este parámetro y sus valores son obligatorios cuando se realiza un reembolso parcial. | No |
-| transaction > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. Obligatorio para reembolsos parciales | No |
-| transaction > additionalValues > TX_VALUE > value | Numérico | 19 | Especifica el monto de la transacción. Obligatorio para reembolsos parciales | No |
-| transaction > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). Obligatorio para reembolsos parciales | No |
-| transaction > order |  |  | Este objeto tiene los datos de la orden. | Sí |
-| transaction > order > id | Numérico |  | Identificador de la orden que será reembolsada. | Sí |
-| transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción requerido:<br><ul style="margin-bottom: initial;"><li>`REFUND`</li><li>`PARTIAL_REFUND` para reembolsos parciales (si se soportan).</li></ul> | Sí |
-| transaction > reason | Alfanumérico |  | Entrega la razón para reembolsar una transacción autorizada. | No |
-| transaction > parentTransactionId | Alfanumérico | 36 | Identificador de la transacción a reembolsar. | Sí |
+| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+|------------------|---------|--------|-------------|:-----------:|
+| `language` | Alfanumérico | 2 | Idioma utilizado en la solicitud. Esto determina el idioma de los mensajes de error. [Ver idiomas compatibles]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| `command` | Alfanumérico | Máx: 32 | Debe establecerse en `SUBMIT_TRANSACTION`. | Sí |
+| `test` (JSON)<br>`isTest` (XML) | Booleano | — | Establezca en `true` para modo de prueba; de lo contrario, `false`. | Sí |
+| `merchant` | Objeto | — | Contiene los datos de autenticación. | Sí |
+| `merchant > apiLogin` | Alfanumérico | Mín: 12, Máx: 32 | Usuario o login proporcionado por PayU. [Cómo obtener API Login]({{< ref "integrations.html#api-key-and-api-login" >}}). | Sí |
+| `merchant > apiKey` | Alfanumérico | Mín: 6, Máx: 32 | Contraseña proporcionada por PayU. [Cómo obtener API Key]({{< ref "integrations.html#api-key-and-api-login" >}}). | Sí |
+| `transaction` | Objeto | — | Contiene los datos de la transacción. | Sí |
+| `transaction > additionalValues` | Objeto | — | Especifica el monto para un reembolso parcial. **Requerido para reembolsos parciales**. | No |
+| `transaction > additionalValues > TX_VALUE` | Objeto | — | Contiene los detalles del monto de la transacción. **Requerido para reembolsos parciales**. | No |
+| `transaction > additionalValues > TX_VALUE > value` | Numérico | Máx: 19 | Monto a reembolsar. **Requerido para reembolsos parciales**. | No |
+| `transaction > additionalValues > TX_VALUE > currency` | Alfanumérico | 3 | Código de moneda ISO. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). **Requerido para reembolsos parciales**. | No |
+| `transaction > order` | Objeto | — | Contiene los detalles de la orden. | Sí |
+| `transaction > order > id` | Numérico | — | ID de la orden a reembolsar. | Sí |
+| `transaction > type` | Alfanumérico | 32 | Especifica el tipo de reembolso:<br>- `REFUND` para reembolsos totales.<br>- `PARTIAL_REFUND` para reembolsos parciales (si es compatible). | Sí |
+| `transaction > reason` | Alfanumérico | — | Motivo del reembolso. | No |
+| `transaction > parentTransactionId` | Alfanumérico | 36 | ID de la transacción original que se está reembolsando. | Sí |
 
 </details>
 
 <details>
-<summary>Respuesta (Response)</summary>
+<summary>Respuesta</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del campo | Formato | Tamaño | Descripción |
-|-|-|-|-|
-| code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse |  |  | Datos de la respuesta. |
-| transactionResponse > orderId | Numérico |  | Identificador de la orden generado o existente en PayU. |
-| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
-| transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. |
-| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Max:255 | Código de respuesta retornado por la red bancaria. |
-| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Max:255 | Mensaje de error retornado por la red bancaria. |
-| transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
-| transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
-| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado al estado. |
-| transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Fecha |  | Fecha de creación en el sistema de PayU. |
+| Nombre del Campo | Formato | Tamaño | Descripción |
+|------------------|---------|--------|-------------|
+| `code` | Alfanumérico | — | Código de respuesta de la transacción. Valores posibles: `ERROR`, `SUCCESS`. |
+| `error` | Alfanumérico | Máx: 2048 | Mensaje de error cuando el código de respuesta es `ERROR`. |
+| `transactionResponse` | Objeto | — | Contiene los detalles de la respuesta. |
+| `transactionResponse > orderId` | Numérico | — | ID de la orden generada o existente en PayU. |
+| `transactionResponse > transactionId` | Alfanumérico | 36 | ID de la transacción en PayU. |
+| `transactionResponse > state` | Alfanumérico | Máx: 32 | Estado de la transacción. |
+| `transactionResponse > paymentNetworkResponseCode` | Alfanumérico | Máx: 255 | Código de respuesta de la red financiera. |
+| `transactionResponse > paymentNetworkResponseErrorMessage` | Alfanumérico | Máx: 255 | Mensaje de error de la red financiera. |
+| `transactionResponse > trazabilityCode` | Alfanumérico | Máx: 32 | Código de trazabilidad de la red financiera. |
+| `transactionResponse > authorizationCode` | Alfanumérico | Máx: 12 | Código de autorización de la red financiera. |
+| `transactionResponse > responseCode` | Alfanumérico | Máx: 64 | Código de respuesta asociado con el estado de la transacción. |
+| `transactionResponse > responseMessage` | Alfanumérico | Máx: 2048 | Mensaje asociado con el código de respuesta. |
+| `transactionResponse > operationDate` | Fecha | — | Fecha en la que se generó la respuesta en el sistema de PayU. |
 
 </details>
 
-### Llamado del API {#api-call-1}
-Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.
+### Llamada a la API
+
+Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este tipo de transacción.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Ejemplo petición (Refund):
+**Ejemplo de una Solicitud de Reembolso:**
+
 ```JSON
 {
    "language": "es",
@@ -312,9 +354,11 @@ Ejemplo petición (Refund):
    "test": false
 }
 ```
+
 <br>
 
-Ejemplo petición (Partial Refund):
+**Ejemplo de una Solicitud de Reembolso Parcial:**
+
 ```JSON
 {  
    "command":"SUBMIT_TRANSACTION",
@@ -339,9 +383,11 @@ Ejemplo petición (Partial Refund):
    }
 }
 ```
+
 <br>
 
-Ejemplo respuesta:
+**Ejemplo de una Respuesta:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -371,9 +417,11 @@ Ejemplo respuesta:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Ejemplo petición (Refund):
+**Ejemplo de una Solicitud de Reembolso:**
+
 ```XML
 <request>
    <language>es</language>
@@ -395,11 +443,12 @@ Ejemplo petición (Refund):
 ```
 <br>
 
-Ejemplo petición (Partial refund):
+**Ejemplo de una Solicitud de Reembolso Parcial:**
+
 ```XML
 <request>
-   <language>es</language>
    <command>SUBMIT_TRANSACTION</command>
+   <language>es</language>
    <merchant>
       <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
       <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
@@ -409,24 +458,25 @@ Ejemplo petición (Partial refund):
          <entry>
             <string>TX_VALUE</string>
             <additionalValue>
-               <value>100</value>
+               <value>950</value>
                <currency>ARS</currency>
             </additionalValue>
          </entry>
       </additionalValues>
       <order>
-         <id>1400462691</id>
+         <id>1400462690</id>
       </order>
-      <type>REFUND</type>
-      <reason>Razón para solicitar el reembolso de la transacción.</reason>
-      <parentTransactionId>976d0411-8d0f-46e7-b5fe-515dad9a41ee</parentTransactionId>
+      <parentTransactionId>0486359b-a048-4b6b-9b72-af584e710e64</parentTransactionId>
+      <reason>Reason for requesting the refund or cancellation of the transaction</reason>
+      <type>PARTIAL_REFUND</type>
    </transaction>
-   <isTest>false</isTest>
 </request>
 ```
+
 <br>
 
-Ejemplo respuesta:
+**Ejemplo de una Respuesta:**
+
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -439,31 +489,45 @@ Ejemplo respuesta:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
-### Consultar los estados de los Reembolsos {#query-the-refund-status} 
-Como mencionamos anteriormente, la solicitud de reembolso tarda entre 1 y 3 días en ser procesada y aprobada o rechazada. Si deseas saber el estado de un reembolso, tienes dos opciones:
+### Consultar el Estado del Reembolso
 
-#### Verificar el estado en el Módulo PayU {#check-status-through-the-payu-module}
-1. Ingresa a tu cuenta PayU. En el panel izquierdo, expande el menú _**Transacciones**_ y selecciona la opción _**Reporte de ventas**_.
+Como se mencionó anteriormente, las solicitudes de reembolso pasan por un proceso de aprobación en el que PayU tarda entre 1 y 3 días en procesarlas y aprobarlas o rechazarlas. Puedes verificar el estado de un reembolso utilizando uno de los siguientes métodos:
 
-![PrintScreen](/assets/Refunds/Refunds_es_01.png)
+#### Consultar el Estado a través del Panel de Administración de PayU
 
-2. Utiliza el campo _**Filtrar mis ventas**_ para encontrar la orden utilizando su ID y el ID de la transacción.
+1. Inicia sesión en tu cuenta del módulo de PayU. En el panel izquierdo, expande el menú **Transacciones** y selecciona **Reporte de Ventas**.
 
-<img src="/assets/Refunds/Refunds_es_02.png" alt="PrintScreen" width="50%"/><br>
+   ![PrintScreen](/assets/Refunds/Refunds_es_01.png)
 
-3. La columna estado muestra si el reembolso a sido aprobado o rechazado; si no ha sido aprobado, esta columna muestra que se ha solicitado un reembolso.
+2. Usa el campo **Filtrar mis ventas** para buscar la orden utilizando el ID de la orden o el ID de la transacción.
 
-![PrintScreen](/assets/Refunds/Refunds_es_03.png)
+   <img src="/assets/Refunds/Refunds_es_02.png" alt="PrintScreen" width="50%"/><br>
 
-#### Verificar el estado utilizando consultas {#check-status-using-queries}
-Puedes consultar el estado de un reembolso utilizando el [API de consultas]({{< ref "Queries-API.md" >}}). En la petición de la consulta, necesitas enviar el id de la orden.
+3. La columna **Estado** indica si el reembolso ha sido aprobado, rechazado o si está pendiente.
 
-Cuando consultas una orden, el sistema retorna su última transacción.
+   ![PrintScreen](/assets/Refunds/Refunds_es_03.png)
 
-Hay tres posibles estados en la respuesta de tu solicitud:
-* **Solicitud no resuelta**: si la solicitud no ha sido resuelta, la orden que aparece en la consulta está en estado `CAPTURED` (parámetro `result.payload.status` en la respuesta), el primer tipo de transacción es `AUTHORIZATION_AND_CAPTURE` (parámetro `result.transactions.type` en la respuesta) y el primer estado de la transacción es `APPROVED` (primer parámetro `result.transactions.transactionResponse.state` en la respuesta).
-* **Aprobada**: si la solicitud de reembolso ha sido aprobada por un agente de servicio de PayU, la orden que aparece en la consulta está en estado `REFUNDED` (parámetro `result.payload.status` en la respuesta), el primer tipo de transacción es `REFUND` (parámetro `result.transactions.type` en la respuesta) y el primer estado de la transacción es `APPROVED` (primer parámetro `result.transactions.transactionResponse.state` en la respuesta).
-* **Declinada**: si la solicitud de reembolso ha sido declinada por un agente de servicio de PayU, la orden que aparece en la consulta está en estado `CAPTURED` (parámetro `result.payload.status` en la respuesta), el primer tipo de transacción es `REFUND` (parámetro `result.transactions.type` en la respuesta) y el primer estado de la transacción es `DECLINED` (primer parámetro `result.transactions.transactionResponse.state` en la respuesta).
+#### Consultar el Estado a través de la API de Consultas
+
+También puedes verificar el estado del reembolso utilizando la [API de Consultas]({{< ref "Queries-API.md" >}}). Para hacerlo, envía una solicitud que contenga el **ID de la orden**.
+
+Al consultar una orden, el sistema devuelve la última transacción asociada con ella.
+
+La respuesta puede indicar uno de los tres posibles estados:
+
+- **Solicitud No Resuelta**: Si la solicitud de reembolso aún está en revisión, la orden aparece con el estado `CAPTURED` (`result.payload.status` en la respuesta).  
+  - El primer tipo de transacción es `AUTHORIZATION_AND_CAPTURE` (`result.transactions.type` en la respuesta).  
+  - El primer estado de la transacción es `APPROVED` (`result.transactions.transactionResponse.state` en la respuesta).
+
+- **Aprobado**: Si la solicitud de reembolso es aprobada por un agente de servicio al cliente de PayU, la orden aparece con el estado `REFUNDED` (`result.payload.status` en la respuesta).  
+  - El primer tipo de transacción es `REFUND` (`result.transactions.type` en la respuesta).  
+  - El primer estado de la transacción es `APPROVED` (`result.transactions.transactionResponse.state` en la respuesta).
+
+- **Rechazado**: Si la solicitud de reembolso es rechazada por un agente de servicio al cliente de PayU, la orden aparece con el estado `CAPTURED` (`result.payload.status` en la respuesta).  
+  - El primer tipo de transacción es `REFUND` (`result.transactions.type` en la respuesta).  
+  - El primer estado de la transacción es `DECLINED` (`result.transactions.transactionResponse.state` en la respuesta).

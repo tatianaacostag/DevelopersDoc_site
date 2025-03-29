@@ -25,8 +25,7 @@ Para integrar a API de Pagamentos, direcione suas solicitações para as seguint
 
 A API de Pagamentos inclui os seguintes métodos:
 
-* [Enviar Transações Usando Cartões de Crédito, Débito ou Pré-pago]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}}) <!-- * [Enviar transações usando Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) -->
-* [Enviar Transações Usando Dinheiro]({{< ref "#submit-transactions-using-cash" >}})
+* [Enviar Transações Usando Cartões de Crédito, Débito ou Pré-pago]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}}) <!-- * [Enviar transações usando Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) [Enviar Transações Usando Dinheiro]({{< ref "#submit-transactions-using-cash" >}}) -->
 * [Enviar Transações Usando Cartões de Débito e Pré-Pagos através do WebPay Plus]({{< ref "#submit-transactions-using-debit-and-prepaid-cards" >}})
 * [Consulta de Métodos de Pagamento Disponíveis]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
@@ -1517,8 +1516,6 @@ Exemplo de uma Resposta:
 
 * [Logos oficiais do Khipu:](https://docs.khipu.com/portal/en/payment-logos/)
 
--->
-
 ## Enviar Transações Usando Dinheiro {#submit-transactions-using-cash}
 
 Este método permite processar os pagamentos de seus clientes em dinheiro. Para integrar com transações em dinheiro, você deve redirecionar o cliente para a URL encontrada na resposta do método; your customer selects cash and generates the payment code.
@@ -1881,6 +1878,8 @@ Exemplo de uma Resposta:
 
 {{< /tab >}}
 {{< /tabs >}}
+
+-->
 
 ## Enviar Transações Usando Cartões de Débito e Pré-Pagos Através do WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards}
 

@@ -24,8 +24,7 @@ Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL segú
 
 La API de pagos incluye los siguiente métodos:
 
-* [Enviar Transacciones Utilizando Tarjeta de Crédito, Débito o Prepago]({{< ref "#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Enviar transacciones utilizando Khipu]({{< ref "#submit-transactions-using-khipu" >}}) -->
-* [Enviar Transacciones Utilizando Efectivo]({{< ref "#submit-transactions-using-cash" >}})
+* [Enviar Transacciones Utilizando Tarjeta de Crédito, Débito o Prepago]({{< ref "#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Enviar transacciones utilizando Khipu]({{< ref "#submit-transactions-using-khipu" >}}) [Enviar Transacciones Utilizando Efectivo]({{< ref "#submit-transactions-using-cash" >}}) -->
 * [Enviar Transacciones Utilizando Tarjeta Débito o Prepago a Través de WebPay Plus]({{< ref "#submit-transactions-using-debit-and-prepaid-cards" >}})
 * [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
@@ -1521,8 +1520,6 @@ Ejemplo de una Respuesta:
 
 * [Logos oficiales de Khipu:](https://docs.khipu.com/portal/en/payment-logos/)
 
--->
-
 ## Enviar Transacciones Utilizando Efectivo {#submit-transactions-using-cash}
 
 Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente selecciona efectivo y genera el código de pago.
@@ -1883,6 +1880,8 @@ Ejemplo de una Respuesta:
 
 {{< /tab >}}
 {{< /tabs >}}
+
+-->
 
 ## Enviar Transacciones Utilizando Tarjeta Débito o Prepago Utilizando WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards}
 
