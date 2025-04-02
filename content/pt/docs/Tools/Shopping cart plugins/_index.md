@@ -1,34 +1,31 @@
 ---
-title: "Plugins do carrinho de compras"
-linkTitle: "Plugins do carrinho de compras"
+title: "Integrações e Plugins para E-Commerce"
+linkTitle: "Integrações e Plugins para E-Commerce"
 date: 2021-04-07T09:27:04-05:00
 Description: >
-  Esta ferramenta permite que você integre sua solução de carrinho de compras com qualquer um de nossos plug-ins disponíveis.
+  Esta seção fornece as ferramentas e recursos necessários para integrar o PayU com diversas plataformas de e-commerce e soluções de carrinho de compras. Seja utilizando uma plataforma pré-integrada ou instalando um plugin, aqui você encontrará as etapas necessárias para iniciar uma integração eficiente e sem complicações.
 weight: 30
 tags: ["parenttopic"]
 ---
 
-## Soluções pré-integradas {#pre-integrated-solutions}
-Algumas lojas online já estão integradas ao PayU. Você só precisa ativar a opção PayU como sua plataforma de pagamento.
+## Soluções Pré-Integradas
 
-Soluções disponíveis:
+Muitas plataformas de e-commerce já estão integradas com o PayU. Para ativar o PayU como seu provedor de pagamentos, basta clicar no módulo correspondente à sua plataforma abaixo. Você será redirecionado para o site da plataforma com as instruções de integração ou para a nossa página personalizada com um guia passo a passo.
+
+### Plataformas de E-Commerce Disponíveis:
 
 {{< shoppingcarts/preintegrated >}}
 
-{{% alert title="Observação" color="info"%}}
+## Plugins para Plataformas de E-Commerce
 
-Alguns dos links acima podem aparecer em espanhol ou em inglês.
+Se você utiliza uma plataforma de e-commerce de código aberto, clique no módulo correspondente abaixo e siga as instruções para instalar o plugin de integração com o PayU. Todos os plugins também estão disponíveis para download na seção [Arquivos dos Plugins](#plugin-files) abaixo.
 
-{{% /alert %}}  
-
-## Plugins para módulos {#plugins-for-modules}
-Se você usa um carrinho de compras open source, baixe e use os plugins que desenvolvemos para facilitar o processo de integração com o sistema de pagamento.
-
-Plug-ins disponíveis:
+### Plataformas de E-Commerce que Requerem Plugins:
 
 {{< shoppingcarts/plugins >}}
 
-### Arquivos de plug-in {#plugin-files}
-Encontre a versão mais recente do plug-in na tabela a seguir
+### Arquivos dos Plugins
+
+Encontre abaixo a versão mais recente de cada plugin:
 
 {{< shoppingcarts/pluginsdownload-pt >}}

@@ -53,6 +53,7 @@ weight: 60
 | `NOT_FIXED_FOR_ERROR_STATE` | Transactions clinic: internal handling code. Query API. |
 | `ERROR_FIXING_AND_REVERSING` | Transactions clinic: internal handling code. Query API. |
 | `ERROR_FIXING_INCOMPLETE_DATA` | Transactions clinic: internal handling code. Query API. |
+| `THREEDS_REJECTED` | The transaction was rejected due to 3DS authentication failure. |
 
 ## Response Codes Sent to the Response Page
 
@@ -157,7 +158,7 @@ weight: 60
 |  | ERROR_FIXING_AND_REVERSING | 9999 | Error |
 |  | ERROR_FIXING_INCOMPLETE_DATA | 9999 | Error |
 |  | PAYMENT_NETWORK_BAD_RESPONSE | 9999 | Error |
-| 5 (Expired) | EXPIRED_TRANSACTION | 20 | Expired transaction |
+| 5 (Expired) | EXPIRED_TRANSACTION | 20 | Expired transaction. This can occur if the 3DS authentication process is not completed within the required time. |
 
 ## Codes of the Payment Methods
 The following codes applies for `payment_method_type` (Confirmation Page), `payment_method_id` (Confirmation Page), and `polPaymentMethodType` (Response Page).

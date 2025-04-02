@@ -53,6 +53,7 @@ weight: 50
 | `NOT_FIXED_FOR_ERROR_STATE` | Clínica de transações: código de tratamento interno. Consulta de API. |
 | `ERROR_FIXING_AND_REVERSING` | Clínica de transações: código de tratamento interno. Consulta de API. |
 | `ERROR_FIXING_INCOMPLETE_DATA` | Clínica de transações: código de tratamento interno. Consulta de API. |
+| `THREEDS_REJECTED` | A transação foi rejeitada devido a uma falha na autenticação 3DS. |
 
 ## Códigos de Resposta Enviados para a Página de Resposta {#response-codes-sent-to-the-response-page}
 
@@ -157,7 +158,7 @@ weight: 50
 |   |  ERROR_FIXING_AND_REVERSING  | 9999 | Erro |
 |   |  ERROR_FIXING_INCOMPLETE_DATA  | 9999 | Erro |
 |   |  PAYMENT_NETWORK_BAD_RESPONSE  | 9999 | Erro |
-|  5 (Expirada)  |  EXPIRED_TRANSACTION  | 20 | Transação expirada |
+|  5 (Expirada)  |  EXPIRED_TRANSACTION  | 20 | Transação expirada. Isso pode ocorrer se o processo de autenticação 3DS não for concluído dentro do tempo exigido. |
 
 ## Códigos dos Métodos de Pagamento {#codes-of-the-payment-methods}
 Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmação), `payment_method_id` (Página de confirmação) e `polPaymentMethodType` (Página de resposta).
