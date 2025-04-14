@@ -137,7 +137,7 @@ Deja todos los demás parámetros con sus valores predeterminados.
 
 En este punto, tu cuenta PayU Enterprise con PaymentsOS está configurada. El siguiente paso es [Configurar el Proveedor en VTEX]({{< ref "#2-configuring-the-vtex-provider" >}}).
 
-#### Configuración Manual de la Cuenta Usando el Panel de PayU Enterprise {#configuring-the-account-manually-using-payu-enterprise-dashboard}
+#### Configuración de la Cuenta Usando el Panel de PayU Enterprise {#configuring-the-account-using-payu-enterprise-dashboard}
 
 Sigue estos pasos para configurar tu cuenta utilizando el panel de PayU Enterprise.
 
@@ -224,7 +224,7 @@ Antes de crear el nuevo proveedor, asegúrate de haber configurado el fingerprin
 
 {{% /alert %}}
 
-1. En el panel izquierdo, selecciona **Configuración de la tienda > Proveedores > Nuevo proveedor**:
+1. Inicia sesión en el panel de administración de VTEX y ve a **Configuración de la tienda > Proveedores > Nuevo proveedor**:
 
 ![PrintScreen](/assets/VTEX/vtex08es.png)
 
@@ -289,15 +289,17 @@ Haz clic [aquí](#configuring-co-branded-or-private-label-cards) para aprender a
 
 {{% /alert %}}
 
-1. En el panel izquierdo, ve a **Transacciones > Pagos > Configuración**. Selecciona la pestaña **Condiciones de pago** y haz clic en el icono de suma.
+1. Inicia sesión en el panel de administración de VTEX y ve a **Transacciones > Pagos > Configuración**. 
+
+2. Selecciona la pestaña **Condiciones de pago** y haz clic en el icono de suma.
 
 ![PrintScreen](/assets/VTEX/vtex11es.png)
 
-2. Selecciona el método de pago que deseas agregar. Los métodos de pago están agrupados por tipo.<br>Para este ejemplo, seleccionamos **American Express** en la sección de **Tarjeta de Crédito**.
+3. Selecciona el método de pago que deseas agregar. Los métodos de pago están agrupados por tipo.<br>Para este ejemplo, seleccionamos **American Express** en la sección de **Tarjeta de Crédito**.
 
 ![PrintScreen](/assets/VTEX/vtex12es.png)
 
-3. Proporciona los siguientes detalles:
+4. Proporciona los siguientes detalles:
 * **Nombre de la regla (para identificarla rápidamente)**: Ingresa un nombre descriptivo para la condición de pago.
 * **Status**: Configura el estado de la condición de pago. Solo puedes tener **una** condición de pago activa por método de pago.
 * **Procesar con afiliación**: Selecciona la afiliación de gateway previamente configurada.
@@ -305,7 +307,7 @@ Haz clic [aquí](#configuring-co-branded-or-private-label-cards) para aprender a
 
 ![PrintScreen](/assets/VTEX/vtex13es.png)
 
-4. Haz clic en **Guardar**. La nueva condición ahora aparecerá en la pestaña **Condiciones de pago**.
+5. Haz clic en **Guardar**. La nueva condición ahora aparecerá en la pestaña **Condiciones de pago**.
 
 ![PrintScreen](/assets/VTEX/vtex14es.png)
 
@@ -313,15 +315,17 @@ Haz clic [aquí](#configuring-co-branded-or-private-label-cards) para aprender a
 
 Las tarjetas co-branded y private label son tarjetas de crédito emitidas por una tienda o marca, a veces en asociación con redes como AMEX, VISA o MasterCard. Sigue estos pasos para agregar este método de pago a tu tienda VTEX.
 
-1. En el panel izquierdo, selecciona **Transacciones > Pagos > Configuración**. Selecciona la pestaña **Pagos personalizados**.
+1. Inicia sesión en el panel de administración de VTEX y ve a **Transacciones > Pagos > Configuración**. 
+
+2. Selecciona la pestaña **Pagos personalizados**.
 
 ![PrintScreen](/assets/VTEX/vtex15es.png)
 
-2. La pestaña **Pagos personalizados** proporciona cinco (5) espacios para configurar tarjetas co-branded y private label. En este ejemplo, configuramos la tarjeta colombiana Codensa, que es una tarjeta private label.<br>Haz clic en cualquier cuadro disponible en la sección **Tarjeta de tienda (red propia)**.
+3. La pestaña **Pagos personalizados** proporciona cinco (5) espacios para configurar tarjetas co-branded y private label. En este ejemplo, configuramos la tarjeta colombiana Codensa, que es una tarjeta private label.<br>Haz clic en cualquier cuadro disponible en la sección **Tarjeta de tienda (red propia)**.
 
 ![PrintScreen](/assets/VTEX/vtex16es.png)
 
-3. Ingresa los siguientes detalles de la tarjeta, manteniendo el formato exacto:
+4. Ingresa los siguientes detalles de la tarjeta, manteniendo el formato exacto:
 
 * **Nombre**: `Codensa`
 * **Descripción**: `Codensa`
@@ -349,7 +353,47 @@ Las tarjetas co-branded y private label son tarjetas de crédito emitidas por un
 
 Para más detalles sobre la configuración de tarjetas [co-branded](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-cobranded--jrkLK41IjuquUmyKUi86Q) y [private label](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-bandeira-propria--428FgVdSGQUeAOoogkaIw4), visita el Centro de Ayuda de VTEX.
 
-4. Haz clic en **Guardar**. Después de crear el pago personalizado, serás redirigido a la opción para crear una **Condición de pago**. Sigue las instrucciones en la sección [Configuración de Tarjetas de Crédito o Débito](#configuring-credit-or-debit-cards) para completar este paso.
+5. Haz clic en **Guardar**. Después de crear el pago personalizado, serás redirigido a la opción para crear una **Condición de pago**. Sigue las instrucciones en la sección [Configuración de Tarjetas de Crédito o Débito](#configuring-credit-or-debit-cards) para completar este paso.
+
+<!--
+
+##### Configuración de Google Pay {#configuring-google-pay}
+
+Google Pay es una billetera digital que permite a los clientes completar transacciones de forma rápida y segura utilizando las tarjetas guardadas en sus cuentas de Google. Integrar Google Pay en tu tienda VTEX a través de PayU ayuda a mejorar la experiencia de compra, reducir la fricción en el proceso de pago y aumentar las tasas de conversión.
+
+{{% alert title="Nota" color="info"%}}
+
+Cuando los clientes pagan con Google Pay, PayU procesa la transacción como un pago estándar con tarjeta de crédito o débito, según el tipo de tarjeta. No se aplican tarifas adicionales más allá de las que ya se hayan acordado.
+
+{{% /alert %}}
+
+**Requisitos previos:**
+
+* Asegúrate de que Google Pay esté activo en tu cuenta de PayU. Contacta a tu ejecutivo de cuenta de PayU o envía un correo electrónico a [tecnico.co@payu.com](mailto:tecnico.co@payu.com) si tienes preguntas sobre este requisito, mencionando que eres un comercio de VTEX solicitando Google Pay.
+* Los pagos con tarjeta deben estar habilitados en tu configuración de VTEX.
+* PayU debe estar configurado como el proveedor de pagos para las transacciones con tarjeta de crédito en tu tienda VTEX.
+
+**Paso a Paso:**
+
+1. Inicia sesión en el panel de administración de VTEX y ve a **Configuración de la tienda > Carteras digitales**.
+
+2. Busca la opción de Google Pay y activa el control deslizante.
+
+3. Cuando se te solicite, confirma la activación haciendo clic en **Activar**.
+
+<video width="640" height="480" controls>
+
+<source src="/assets/VTEX/Videos/video02es.mp4" >  
+
+</video>
+
+<p>
+
+Una vez activado, Google Pay estará disponible como opción de pago en el checkout de tu tienda. Puede tardar hasta 10 minutos en aparecer como método de pago.
+
+Para más información y buenas prácticas, consulta la guía oficial de VTEX sobre cómo habilitar billeteras digitales en el <a href="https://help.vtex.com/en/tracks/digital-wallet-e-wallet" target="_blank">Centro de ayuda de VTEX</a>.
+
+-->
 
 ##### Configuración de Métodos de Pago en Efectivo {#configuring-cash-payment-methods}
 
@@ -363,15 +407,19 @@ Para _Boleto Bancário_ en Brasil, este procedimiento no es necesario. Simplemen
 
 Cuando configuras un método de pago en efectivo, los clientes son redirigidos al checkout de PayU, donde pueden descargar el comprobante de pago y realizarlo en la ubicación física correspondiente. Sigue las instrucciones a continuación para agregar este método de pago a tu tienda VTEX.
 
-1. En el panel izquierdo, selecciona **Transacciones > Pagos > Configuración**. Selecciona la pestaña **Pagos personalizados**.
+**Paso a Paso:**
+
+1. Inicia sesión en el panel de administración de VTEX y ve a **Transacciones > Pagos > Configuración**.
+
+2. Selecciona la pestaña **Pagos personalizados**.
 
 ![PrintScreen](/assets/VTEX/vtex15es.png)
 
-2. En esta pestaña, tienes cinco (5) espacios disponibles para configurar métodos de pago en efectivo. En este ejemplo, configuraremos OXXO, un método de pago en efectivo en México.<br>Haz clic en cualquier cuadro disponible en la sección **Pagarés**.
+3. En esta pestaña, tienes cinco (5) espacios disponibles para configurar métodos de pago en efectivo. En este ejemplo, configuraremos OXXO, un método de pago en efectivo en México.<br>Haz clic en cualquier cuadro disponible en la sección **Pagarés**.
 
 ![PrintScreen](/assets/VTEX/vtex18es.png)
 
-3. Proporciona la siguiente información:
+4. Proporciona la siguiente información:
 
 * **Nombre**: Usa el valor listado [aquí]({{< ref "select-your-payment-method.html" >}}) en la columna del parámetro `paymentMethod`. Para este ejemplo, ingresa `OXXO`.
    * **Descripción**: Ingresa una descripción que se mostrará cuando el cliente seleccione este método de pago (opcional).
@@ -379,7 +427,7 @@ Cuando configuras un método de pago en efectivo, los clientes son redirigidos a
 
 Deja los demás campos con sus valores predeterminados.
 
-4. Haz clic en **Guardar**. Una vez creado el pago personalizado, serás redirigido para configurar una nueva **Condición de pago**. Sigue las instrucciones en la sección [Configuración de Tarjetas de Crédito o Débito](#configuring-credit-or-debit-cards).
+5. Haz clic en **Guardar**. Una vez creado el pago personalizado, serás redirigido para configurar una nueva **Condición de pago**. Sigue las instrucciones en la sección [Configuración de Tarjetas de Crédito o Débito](#configuring-credit-or-debit-cards).
 
 ##### Configuración de PSE {#configuring-pse}
 
@@ -397,7 +445,9 @@ Para obtener más información, consulta los siguientes recursos de VTEX:
 
 {{% /alert %}}
 
-1. Para configurar PSE, accede al panel de administración de VTEX y navega a **Configuración de la tienda > Pagos > Configuración > Condiciones de pago**. Luego, sigue estos pasos:
+**Paso a Paso:**
+
+1. Inicia sesión en el panel de administración de VTEX y ve a **Configuración de la tienda > Pagos > Configuración > Condiciones de pago**. Luego, sigue estos pasos:
 
 &nbsp; <span style="color: #A6C307; font-weight: bold;">1.1</span> Haz clic en el botón **+**.
 
@@ -452,7 +502,7 @@ Una vez que hayas configurado las condiciones de pago para tus métodos de pago,
 
 ### Pasos para Realizar una Transacción de Prueba
 
-1. En el panel de administración de VTEX, haz clic en **Visite la tienda** en el menú superior.
+1. Inicia sesión en el panel de administración de VTEX y haz clic en **Visite la tienda** en el menú superior.
 
    ![PrintScreen](/assets/VTEX/vtex20es.png)
 

@@ -54,14 +54,16 @@ Você pode usar os seguintes cartões para teste:
 <details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brasil</summary>
 
-| Cartão                     | Número                                   | Data de Expiração  | CVV  |
-|----------------------------|------------------------------------------|--------------------|------|
+| Cartão                     | Número                                   | Data de Expiração  | CVV  | Nome do Titular |
+|----------------------------|------------------------------------------|--------------------|------|-----|
 | **Cartão de Crédito AMEX**       | 371341553758128                        | 2035/01           | 1234 |
 | **Cartão de Crédito DINERS**     | 36490101441625                         | 2035/01           | 123  |
 | **Cartão de Crédito ELO**        | 4389351648020055  <br> 4389358876174389 | 2035/01           | 123  |
 | **Cartão de Crédito HIPERCARD**  | 6062825624254001                       | 2035/01           | 123  |
 | **Cartão de Crédito MASTERCARD** | 5448280000000007 <br> 2223020000000005 <br> 2223000250000004 | 2035/01 | 123  |
+| **Cartão de Débito MASTERCARD** | 5211588675821084                         | 01/2035          | 777 ou 666 | APPROVED ou DECLINED |
 | **Cartão de Crédito VISA**       | 4235647728025682  <br> 4895370010000005 | 2035/01           | 123  |
+| **Cartão de Débito VISA**        | 4245757666349685                         | 01/2035          | 777 ou 666 | APPROVED ou DECLINED |
 
 </details>
 <details id="chile">

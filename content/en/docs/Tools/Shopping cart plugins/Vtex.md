@@ -118,7 +118,7 @@ Fill in the following details:
 
 | Parameter | Description |
 |---|---|
-| id | Identifier of the business unit (lowercase, no spaces). **This value cannot be changed later, so ensure accuracy.**. |
+| id | Identifier of the business unit (lowercase, no spaces). **This value cannot be changed later, so ensure accuracy.** |
 | description | Optional description. |
 
 {{% alert title="Note" color="info"%}}
@@ -139,7 +139,7 @@ Leave all other parameters at their default values.
 
 At this point, your PayU Enterprise account using PaymentsOS is configured. The next step is [Configuring the VTEX Provider]({{< ref "#2-configuring-the-vtex-provider" >}}).
 
-#### Configuring the Account Manually Using PayU Enterprise Dashboard
+#### Configuring the Account Using PayU Enterprise Dashboard
 
 Follow these steps to configure your account using PayU Enterprise dashboard.
 
@@ -226,7 +226,7 @@ Before creating the new provider, make sure you have configured fingerprint for 
 
 {{% /alert %}}
 
-1. In the left panel, select **Store Settings > Providers > New Provider**:
+1. Log in to the VTEX administration panel and go to **Store Settings > Providers > New Provider**:
 
 ![PrintScreen](/assets/VTEX/vtex08.png)
 
@@ -291,15 +291,17 @@ Click [here](#configuring-co-branded-or-private-label-cards) to learn how to con
 
 {{% /alert %}}
 
-1. In the left panel, select **Transactions > Payments > Settings**. Select the **Payment Conditions** tab and click the plus icon.
+1. Log in to the VTEX administration panel and go to **Transactions > Payments > Settings**. 
+
+2. Select the **Payment Conditions** tab and click the plus icon.
 
 ![PrintScreen](/assets/VTEX/vtex11.png)
 
-2. Select the payment method you want to add. Payment methods are grouped by type.<br>For this example, we select **American Express** under the **Credit Card** section.
+3. Select the payment method you want to add. Payment methods are grouped by type.<br>For this example, we select **American Express** under the **Credit Card** section.
 
 ![PrintScreen](/assets/VTEX/vtex12.png)
 
-3. Provide the following details:
+4. Provide the following details:
 * **Rule Name (to help you quickly identify)**: Enter a descriptive name for the payment condition.
 * **Status**: Set the payment condition's status. You can have **only one** active payment condition per payment method.
 * **Process with affiliation**: Select the previously configured gateway affiliation.
@@ -307,7 +309,7 @@ Click [here](#configuring-co-branded-or-private-label-cards) to learn how to con
 
 ![PrintScreen](/assets/VTEX/vtex13.png)
 
-4. Click **Save**. The new payment condition will now be listed in the **Payment Conditions** tab.
+5. Click **Save**. The new payment condition will now be listed in the **Payment Conditions** tab.
 
 ![PrintScreen](/assets/VTEX/vtex14.png)
 
@@ -315,15 +317,17 @@ Click [here](#configuring-co-branded-or-private-label-cards) to learn how to con
 
 Co-branded and private label cards are credit cards issued by a store or brand, sometimes in partnership with networks like AMEX, VISA, or MasterCard. Follow these steps to add this payment method to your VTEX store.
 
-1. In the left panel, select **Transactions > Payments > Settings**. Select the **Custom Payments** tab.
+1. Log in to the VTEX administration panel and go to **Transactions > Payments > Settings**. 
+
+2. Select the **Custom Payments** tab.
 
 ![PrintScreen](/assets/VTEX/vtex15.png)
 
-2. The **Custom Payments** tab provides five (5) slots for configuring co-branded and private label cards. In this example, we configure the Colombian card Codensa, which is a private label card.<br>Click any available box in the **Private Labels** section.
+3. The **Custom Payments** tab provides five (5) slots for configuring co-branded and private label cards. In this example, we configure the Colombian card Codensa, which is a private label card.<br>Click any available box in the **Private Labels** section.
 
 ![PrintScreen](/assets/VTEX/vtex16.png)
 
-3. Enter the following card details, maintaining the exact formatting:
+4. Enter the following card details, maintaining the exact formatting:
 
 * **Name**: `Codensa`.
 * **Description**: `Codensa`
@@ -351,7 +355,47 @@ Co-branded and private label cards are credit cards issued by a store or brand, 
 
 For more details on configuring [co-branded](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-cobranded--jrkLK41IjuquUmyKUi86Q) and [private label](https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-bandeira-propria--428FgVdSGQUeAOoogkaIw4) cards, visit the VTEX Help Center.
 
-4. Click **Save**. After creating the custom payment, you will be redirected to the option for creating a **Payment Condition**. Follow the instructions in the [Configuring Credit or Debit Cards](#configuring-credit-or-debit-cards) section to complete this step.
+5. Click **Save**. After creating the custom payment, you will be redirected to the option for creating a **Payment Condition**. Follow the instructions in the [Configuring Credit or Debit Cards](#configuring-credit-or-debit-cards) section to complete this step.
+
+<!--
+
+##### Configuring Google Pay
+
+Google Pay is a digital wallet that enables customers to complete transactions quickly and securely using cards saved in their Google accounts. Integrating Google Pay into your VTEX store via PayU helps enhance the shopping experience, reduce checkout friction, and boost conversion rates.
+
+{{% alert title="Note" color="info"%}}
+
+When customers pay using Google Pay, PayU processes the transaction as a standard credit or debit card payment, depending on the card type. No additional fees apply beyond those already agreed upon.
+
+{{% /alert %}}
+
+**Prerequisites:**
+
+* Ensure Google Pay is active in your PayU account. Contact your PayU account executive or email [tecnico.co@payu.com](mailto:tecnico.co@payu.com) if you have questions about this requirement, mentioning that you are a VTEX merchant requesting Google Pay.
+* Card payments must be enabled in your VTEX configuration.
+* PayU must be configured as the payment provider for your credit card transactions in your VTEX store.
+
+**Step by Step:**
+
+1. Log in to the VTEX administration panel and go to **Store Settings > Digital Wallets**.
+
+2. Find the Google Pay option and toggle the slider to enable it.
+
+3. When prompted, confirm the activation by clicking **Activate**.
+
+<video width="640" height="480" controls>
+
+<source src="/assets/VTEX/Videos/video02.mp4" >  
+
+</video>
+
+<p>
+
+Once activated, Google Pay will be available as a payment option at your store’s checkout. It may take up to 10 minutes for the payment method to appear.
+
+For more information and best practices, refer to VTEX’s official guide on enabling digital wallets on the  <a href="https://help.vtex.com/en/tracks/digital-wallet-e-wallet" target="_blank">VTEX Help Center</a>.
+
+-->
 
 ##### Configuring Cash Payment Methods
 
@@ -365,15 +409,19 @@ For _Boleto Bancário_ in Brazil, this procedure is not required. Simply locate 
 
 When you configure a cash payment method, customers are redirected to PayU's checkout, where they can download the payment voucher and pay it at the corresponding physical location. Follow the instructions below to add this payment method to your VTEX shop.
 
-1. In the left panel, select **Transactions > Payments > Settings**. Select the **Custom Payments** tab.
+**Step by Step:**
+
+1. Log in to the VTEX administration panel and go to **Transactions > Payments > Settings**. 
+
+2. Select the **Custom Payments** tab.
 
 ![PrintScreen](/assets/VTEX/vtex15.png)
 
-2. In this tab, you have five (5) available slots to configure cash payment methods. In this example, we will set up OXXO, a Mexican cash payment method.<br>Click any available box in the **Notes Payables** section.
+3. In this tab, you have five (5) available slots to configure cash payment methods. In this example, we will set up OXXO, a Mexican cash payment method.<br>Click any available box in the **Notes Payables** section.
 
 ![PrintScreen](/assets/VTEX/vtex18.png)
 
-3. Provide the following information:
+4. Provide the following information:
 
 * **Name**: Use the value listed [here]({{< ref "select-your-payment-method.html" >}}) in the `paymentMethod parameter` column. For this example, enter `OXXO`.
    * **Description**: Enter a description to display when the customer selects this payment method (optional).
@@ -381,7 +429,7 @@ When you configure a cash payment method, customers are redirected to PayU's che
 
 Leave the remaining fields with their default values. 
 
-4. Click **Save**. Once the custom payment is created, you will be redirected to set up a new **Payment Condition**. Follow the instructions in the [Configuring Credit or Debit Cards](#configuring-credit-or-debit-cards) section.
+5. Click **Save**. Once the custom payment is created, you will be redirected to set up a new **Payment Condition**. Follow the instructions in the [Configuring Credit or Debit Cards](#configuring-credit-or-debit-cards) section.
 
 ##### Configuring PSE
 
@@ -399,7 +447,9 @@ For additional information, refer to the following VTEX resources:
 
 {{% /alert %}}
 
-1. To configure PSE, access the VTEX administration panel and navigate to **Store Settings > Payments > Settings > Payment Conditions**. Then, follow these steps:
+**Step by Step:**
+
+1. Log in to the VTEX administration panel and go to **Store Settings > Payments > Settings > Payment Conditions**. Then, follow these steps:
 
 &nbsp; <span style="color: #A6C307; font-weight: bold;">1.1</span> Click the **+** button.
 
@@ -454,7 +504,7 @@ Once you have configured the payment conditions for your payment methods, it is 
 
 ### Steps to Perform a Test Transaction
 
-1. In the VTEX admin panel, click **VISIT STORE** in the top menu.
+1. Log in to the VTEX administration panel and click **VISIT STORE** in the top menu.
 
    ![PrintScreen](/assets/VTEX/vtex20.png)
 

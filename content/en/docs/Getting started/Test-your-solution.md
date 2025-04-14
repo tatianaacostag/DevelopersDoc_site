@@ -54,14 +54,16 @@ You can use the following cards for testing:
 <details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brazil</summary>
 
-| Card                       | Number               | Expiration Date | CVV  |
-|----------------------------|----------------------|-----------------|------|
-| **AMEX Credit Card**       | 371341553758128      | 2035/01        | 1234 |
-| **DINERS Credit Card**     | 36490101441625       | 2035/01        | 123  |
-| **ELO Credit Card**        | 4389351648020055  <br> 4389358876174389 | 2035/01 | 123 |
-| **HIPERCARD Credit Card**  | 6062825624254001     | 2035/01        | 123  |
-| **MASTERCARD Credit Card** | 5448280000000007 <br> 2223020000000005 <br> 2223000250000004 | 2035/01 | 123  |
-| **VISA Credit Card**       | 4235647728025682  <br> 4895370010000005  | 2035/01        | 123  |
+| Card                       | Number               | Expiration Date | CVV  | Cardholder |
+|----------------------------|----------------------|-----------------|------|------|
+| **AMEX Credit Card**       | 371341553758128      | 2035/01        | 1234 | |
+| **DINERS Credit Card**     | 36490101441625       | 2035/01        | 123  | |
+| **ELO Credit Card**        | 4389351648020055  <br> 4389358876174389 | 2035/01 | 123 | |
+| **HIPERCARD Credit Card**  | 6062825624254001     | 2035/01        | 123  | |
+| **MASTERCARD Credit Card** | 5448280000000007 <br> 2223020000000005 <br> 2223000250000004 | 2035/01 | 123  | |
+| **MASTERCARD Debit Card** | 5211588675821084 | 2035/01 | 777 or 666  | APPROVED or DECLINED |
+| **VISA Credit Card**       | 4235647728025682  <br> 4895370010000005  | 2035/01 | 123 | |
+| **VISA Debit Card** | 4245757666349685 | 2035/01 | 777 or 666  | APPROVED or DECLINED |
 
 </details>
 <details id="chile">

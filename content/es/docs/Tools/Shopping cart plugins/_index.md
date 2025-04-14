@@ -3,7 +3,7 @@ title: "Integraciones y Plugins para Comercio Electrónico"
 linkTitle: "Integraciones y Plugins para Comercio Electrónico"
 date: 2021-04-07T09:27:04-05:00
 Description: >
-  Esta guía proporciona las herramientas y recursos necesarios para integrar PayU con diversas plataformas de comercio electrónico y soluciones de carrito de compras. Ya sea que utilices una plataforma preintegrada o necesites instalar un plugin, aquí encontrarás los pasos necesarios para lograr una integración fluida.
+  Esta sección proporciona las herramientas y recursos necesarios para integrar PayU con diversas plataformas de comercio electrónico y soluciones de carrito de compras. Ya sea que utilices una plataforma preintegrada o necesites instalar un plugin, aquí encontrarás los pasos necesarios para lograr una integración fluida.
 weight: 30
 tags: ["parenttopic"]
 ---

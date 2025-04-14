@@ -158,7 +158,7 @@ weight: 50
 |   |  ERROR_FIXING_AND_REVERSING  | 9999 | Erro |
 |   |  ERROR_FIXING_INCOMPLETE_DATA  | 9999 | Erro |
 |   |  PAYMENT_NETWORK_BAD_RESPONSE  | 9999 | Erro |
-|  5 (Expirada)  |  EXPIRED_TRANSACTION  | 20 | Transação expirada. Isso pode ocorrer se o processo de autenticação 3DS não for concluído dentro do tempo exigido. |
+|  5 (Expirada)  |  EXPIRED_TRANSACTION  | 20 | A transação excedeu o tempo limite. A integração pode retornar essa resposta para alguns métodos de pagamento alternativos que possuem processos com restrição de tempo. No caso de transações com cartão, isso também pode ocorrer se o usuário não concluir o processo de autenticação 3DS antes que a sessão expire. |
 
 ## Códigos dos Métodos de Pagamento {#codes-of-the-payment-methods}
 Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmação), `payment_method_id` (Página de confirmação) e `polPaymentMethodType` (Página de resposta).

@@ -54,14 +54,16 @@ Puedes utilizar las siguientes tarjetas de prueba:
 <details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> Brasil</summary>
 
-| Tarjeta                   | Número                                   | Fecha de Expiración | CVV  |
-|---------------------------|------------------------------------------|---------------------|------|
+| Tarjeta                   | Número                                   | Fecha de Expiración | CVV  | Tarjetahabiente |
+|---------------------------|------------------------------------------|---------------------|------|---|
 | **Tarjeta de Crédito AMEX**       | 371341553758128 | 2035/01 | 1234 |
 | **Tarjeta de Crédito DINERS**     | 36490101441625 | 2035/01 | 123  |
 | **Tarjeta de Crédito ELO**        | 4389351648020055  <br> 4389358876174389 | 2035/01 | 123  |
 | **Tarjeta de Crédito HIPERCARD**  | 6062825624254001 | 2035/01 | 123  |
 | **Tarjeta de Crédito MASTERCARD** | 5448280000000007 <br> 2223020000000005 <br> 2223000250000004 | 2035/01 | 123  |
+| **Tarjeta de Débito MASTERCARD** | 5211588675821084 | 2035/01 | 777 o 666  | APPROVED o DECLINED |
 | **Tarjeta de Crédito VISA**       | 4235647728025682 <br> 4895370010000005 | 2035/01 | 123  |
+| **Tarjeta de Débito VISA** | 4245757666349685 | 2035/01 | 777 o 666  | APPROVED o DECLINED |
 
 </details>
 <details id="chile">

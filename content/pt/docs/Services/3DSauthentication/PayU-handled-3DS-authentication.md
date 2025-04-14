@@ -300,15 +300,11 @@ Esses IDs de conta são apenas para fins de teste, não os utilize em ambientes 
 
 {{% /alert %}}
 
-## Resposta da Transação e Fluxo de Autenticação
+## Resposta da Transação
 
 Ao enviar uma solicitação de pagamento, você receberá uma resposta com o estado `"PENDING"` para a transação. Essa resposta também incluirá um campo em `extraParameters` chamado `THREEDS_AUTH_REDIRECT_URL`.
 
 * **`THREEDS_AUTH_REDIRECT_URL`:** Essa URL deve ser usada para redirecionar o pagador para concluir o processo de autenticação 3DS. O processo de autenticação pode envolver desafios como inserir uma senha única (OTP) recebida em seu telefone.
-
-O diagrama abaixo ilustra o processo completo de uma transação utilizando a autenticação 3DS da PayU, destacando etapas-chave como envio da solicitação, autenticação e gerenciamento da resposta.
-
-{{< 3dsAuth/3dsflow_pt >}}
 
 #### Exemplo de uma Resposta
 
@@ -394,9 +390,15 @@ Exemplo de uma Resposta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Após a Autenticação
+## Fluxo de Autenticação
 
-Conforme mostrado no diagrama da seção acima, assim que o pagador concluir a autenticação 3DS (se necessário), a PayU receberá uma notificação. A transação será então:
+O diagrama abaixo ilustra o processo completo de uma transação utilizando a autenticação 3DS da PayU, destacando etapas-chave como envio da solicitação, autenticação e gerenciamento da resposta.
+
+{{< 3dsAuth/3dsflow_pt >}}
+
+<br>
+
+Conforme mostrado no diagrama, assim que o pagador concluir a autenticação 3DS (se necessário), a PayU receberá uma notificação. A transação será então:
 
 * **Concluída:** Se a autenticação for bem-sucedida.
 * **Recusada:** Se a autenticação falhar.

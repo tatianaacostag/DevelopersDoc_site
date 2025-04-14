@@ -39,7 +39,7 @@ weight: 60
 | `EXCEEDED_AMOUNT` | The transaction exceeds the amount set by the bank. |
 | `NOT_ACCEPTED_TRANSACTION` | The transaction was not accepted by the bank for some reason. |
 | `ERROR_CONVERTING_TRANSACTION_AMOUNTS` | An error occurred converting the amounts to the payment currency. |
-| `EXPIRED_TRANSACTION` | The transaction expired. |
+| `EXPIRED_TRANSACTION` | The transaction timed out. |
 | `PENDING_TRANSACTION_REVIEW` | The transaction was stopped and must be revised, this can occur because of security filters. |
 | `PENDING_TRANSACTION_CONFIRMATION`| The transaction is subject to confirmation. |
 | `PENDING_TRANSACTION_TRANSMISSION` | The transaction is subject to be transmitted to the financial network. This usually applies to transactions with cash payment means. |
@@ -101,7 +101,7 @@ weight: 60
 |  |  |  | PAYMENT_NETWORK_ BAD_RESPONSE | 9999 | Internal error |
 |  |  |  | PAYMENT_NETWORK_ NO_CONNECTION | 9996 | Unable to communicate with the financial institution |
 |  |  |  | PAYMENT_NETWORK_ NO_RESPONSE | 9996 | No response from the financial institution |
-| EXPIRED | 5 (Expired) | 5 (Expired) | EXPIRED_TRANSACTION | 20 | Transaction expired |
+| EXPIRED | 5 (Expired) | 5 (Expired) | EXPIRED_TRANSACTION | 20 | Transaction timed out |
 | PENDING | 7 (Pending) | 7 (Pending) | PENDING_TRANSACTION_ REVIEW | 15 | Transaction is pending approval |
 |  |  | 14 (Pending) | PENDING_TRANSACTION_ CONFIRMATION | 25 | Receipt of payment generated. Pending payment |
 |  |  | 7 (Pending) | PENDING_TRANSACTION_ TRANSMISSION | 9998 | Not permitted transaction |
@@ -158,7 +158,7 @@ weight: 60
 |  | ERROR_FIXING_AND_REVERSING | 9999 | Error |
 |  | ERROR_FIXING_INCOMPLETE_DATA | 9999 | Error |
 |  | PAYMENT_NETWORK_BAD_RESPONSE | 9999 | Error |
-| 5 (Expired) | EXPIRED_TRANSACTION | 20 | Expired transaction. This can occur if the 3DS authentication process is not completed within the required time. |
+| 5 (Expired) | EXPIRED_TRANSACTION | 20 | The transaction timed out. The integration may return this response for some alternative payment methods that have time-sensitive processes. For card transactions, it can also occur if the user fails to complete the 3DS authentication process before the session expires. |
 
 ## Codes of the Payment Methods
 The following codes applies for `payment_method_type` (Confirmation Page), `payment_method_id` (Confirmation Page), and `polPaymentMethodType` (Response Page).
