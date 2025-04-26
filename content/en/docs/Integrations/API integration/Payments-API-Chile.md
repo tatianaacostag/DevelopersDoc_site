@@ -3,7 +3,7 @@ title: "Payments API - Chile"
 linkTitle: "Payments API - Chile"
 date: 2021-05-03T15:48:08-05:00
 description: >
-  The Payments API for Chile allows you to efficiently integrate PayU's payment processing features into your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, including cash, credit, debit, or prepaid cards, and debit or prepaid cards through WebPay Plus.
+  The Payments API for Chile allows you to efficiently integrate PayU's payment processing capabilities with your online shopping platform. Through this API, businesses can offer their customers a wide variety of payment methods, such as credit, debit, or prepaid cards; bank transfers via Khipu; or debit or prepaid cards through WebPay Plus.
 weight: 20
 tags: ["subtopic"]
 ---
@@ -24,35 +24,41 @@ To integrate the Payments API, direct your requests to the following URLs accord
 
 Payments API includes the following methods:
 
-* [Submit Transactions Using Credit, Debit or Prepaid Cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) <!-- * [Submit transactions using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}}) [Submit Transactions Using Cash]({{< ref "Payments-API-Chile.md#submit-transactions-using-cash" >}}) -->
-* [Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transactions-using-debit-and-prepaid-cards" >}})
+* [Submit Transactions Using Credit, Debit or Prepaid Cards]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}})
+* [Submit Transactions Using Khipu]({{< ref "Payments-API-Chile.md#submit-transactions-using-khipu" >}})
+* [Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus]({{< ref "Payments-API-Chile.md#submit-transactions-using-debit-and-prepaid-cards-through-webpay-plus" >}})
 * [Available Payment Methods Query]({{< ref "Payments-API-Chile.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Chile.md#ping" >}})
 
 {{% alert title="Note" color="info"%}}
 
 To confirm the status of a transaction, you can use one of the following options:
-* Navigate to the the URL set in the `transaction.notifyUrl` parameter or the _**Confirmation URL**_ option located in the PayU Module in _**Settings**_ > _**Technical configuration**_.
+* Monitor the URL specified in the `transaction.notifyUrl` parameter.
+* Check the **Confirmation URL** configured in the PayU Management Panel under **Settings** > **Technical configuration**.
 * Use the [Queries API or SDK]({{< ref "Queries.md" >}}).
 
 {{% /alert %}}
 
 ## Submit Transactions Using Credit, Debit or Prepaid Cards {#submit-transactions-using-credit-debit-or-prepaid-cards}
 
-This method lets you process the payments that your customers perform using credit, debit or prepaid cards. For Chile, you can perform the two-step flows (**Authorization**, **Capture**), and one-step flows (**Charge**). For more information, refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}).
+This method lets you process payments that your customers conduct using credit, debit or prepaid cards. For Chile, you can implement the two-step flow (**Authorization**, **Capture**), or the one-step flow (**Charge**). For more information, refer to [Payment Flows]({{< ref "payments.md#payment-flows" >}}).
 
 {{% alert title="Note" color="info"%}}
 
-Transactions using two-step flows are available under demand. Contact your sales representative for more information.
+Two-step flow is available upon request. Contact your sales representative for more information.
 
 {{% /alert %}}
 
 ### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description | Mandatory |
@@ -143,8 +149,11 @@ Transactions using two-step flows are available under demand. Contact your sales
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description |
@@ -169,25 +178,32 @@ Transactions using two-step flows are available under demand. Contact your sales
 #### Considerations
 
 * **Credit Card Tokens:** When using credit card tokens for payments, include the following parameters:
-    * `transaction.creditCardTokenId:` Identifies the stored credit card token.
-    * `transaction.creditCard.securityCode` (Optional): The card's security code (CVV) if required for your processing. For more information on creating and using tokens, refer to the [Tokenization API]({{< ref "Tokenization-API.md" >}}).
-* **Currency:** Transactions must be submitted in Chilean Pesos (CLP) with whole numbers only. **Decimals are not allowed**.
-* **Two-Step Flows (Authorization & Capture):**
-    * Currently available for single installment payments only. The integration will automatically reject transactions with multiple installments.
-    * Two-step flow functionality requires prior activation. Please contact your PayU sales representative for more information and activation.
+  * `transaction.creditCardTokenId:` The identifier of the stored credit card token.
+  * `transaction.creditCard.securityCode` (Optional): The card's security code (CVV), if required by your processing configuration. For more details on creating and using tokens, refer to the [Tokenization API]({{< ref "Tokenization-API.md" >}}).
+* **Currency:** Transactions must be submitted in Chilean Pesos (CLP) using whole numbers only. **Decimal values are not accepted**.
+* **Two-Step Flow (Authorization & Capture):**
+  * To enable this functionality, please contact your PayU sales representative.
+  * Currently supported only for single-installment payments. The integration will automatically reject transactions with multiple installments. 
 * **Security Code (CVV):**
-    * By default, processing credit cards without the security code (CVV) is not enabled.
-    * To enable processing without CVV, contact your PayU sales representative. Once enabled, include the parameter `creditCard.processWithoutCvv2` set to `true` in your request and omit the `creditCard.securityCode` parameter.
+  * By default, processing credit card transactions without the CVV is disabled.
+  * To enable CVV-less processing, contact your PayU sales representative. Once enabled, set the `creditCard.processWithoutCvv2` parameter to `true` and omit the `creditCard.securityCode` parameter in your request.
 
 ### Authorization
 
-Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-api-chile.md#capture" >}}) the funds.<br>The following are the request and response bodies for this transaction type.
+Use this method to perform the **Authorization** step of a two-step flow. In this step, you authorize the payment but the amount is not debited until you [capture]({{< ref "payments-api-chile.md#capture" >}}) the funds.
+
+#### Request and Response Examples
+
+Below are examples of request and response bodies in JSON and XML formats.
 
 {{< tabs tabTotal="2" tabID="1" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -272,9 +288,11 @@ Request Example:
    "test": false
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -307,9 +325,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -400,9 +420,11 @@ Request Example:
    <isTest>false</isTest>
 </request>
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -431,28 +453,34 @@ Response Example:
 ```
 
 {{< /tab >}}
+
 {{< /tabs >}}
 
 ### Capture
 
-Use this method to perform the **Capture** step of a two-step flow. In this step, you capture the funds previously [Authorized]({{< ref "payments-api-chile.md#authorization" >}}) to transfer them to your PayU account.
+Use this method to perform the **Capture** step in a two-step payment flow. In this step, you capture funds that were previously [authorized]({{< ref "payments-api-chile.md#authorization" >}}) to transfer them to your PayU account.
 
 #### Considerations
 
-Take into account the following considerations for capture.
-* The maximum time to capture an approved transaction is 7 days. After this time, the transaction is auto-voided.
-* Only the parameters displayed in the request body are mandatory to invoke a Capture transaction. Consider that the order and transaction ids must meet with a currently authorized transaction.
-* You can perform partial captures on an authorized amount. For more information, see the [Partial Capture]({{< ref "#partial-capture" >}}) section.
-* It is not allowed to capture a higher amount than the amount previously authorized. 
-* Captures are only allowed for transactions in one installment.
+Keep the following in mind when using the Capture method:
+* Merchants must capture approved transactions within 7 days. After this period, the system will automatically void the transaction.
+* Only the parameters shown in the request body are required to initiate a Capture. Ensure the order and transaction IDs correspond to an active authorization.
+* The integration supports partial captures. For more information, see the [Partial Capture]({{< ref "#partial-capture" >}}) section.
+* Merchants cannot capture an amount greater than what was originally authorized. 
+* Captures are only allowed for transactions with a single installment.
 
-The following are the request and response bodies for this transaction type.
+#### Request and Response Examples
+
+Below are examples of request and response bodies in JSON and XML formats.
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -471,9 +499,11 @@ Request Example:
    "test": false
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -505,9 +535,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -526,9 +558,11 @@ Request Example:
    <isTest>false</isTest>
 </request>
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -553,6 +587,7 @@ Response Example:
 ```
 
 {{< /tab >}}
+
 {{< /tabs >}}
 
 ### Partial Capture
@@ -568,13 +603,18 @@ This means that if your integration initially authorized a payment of $100, you 
 * You must specify the value you wish to partially capture in the `value` field, within the `TX_VALUE` parameter, as shown in the example below.
 * The minimum amount for partial capture is 50 CLP. 
 
-The following are examples of the request and response bodies for this type of transaction.
+#### Request and Response Examples
+
+Below are examples of request and response bodies in JSON and XML formats.
 
 {{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
     "language": "es",
@@ -599,9 +639,11 @@ Request Example:
     "test": false
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -638,9 +680,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
   <language>es</language>
@@ -666,9 +710,11 @@ Request Example:
 </request>
 
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <response>
   <code>SUCCESS</code>
@@ -704,20 +750,26 @@ Response Example:
 ```
 
 {{< /tab >}}
+
 {{< /tabs >}}
 
 
 ### Charge
 
-Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved:
+Use this method to perform a one-step flow, namely a charge. In this step, both steps of the two-step flow are combined in a single transaction and the funds are transferred from the customers account to your PayU account once they have been approved.
 
-The following are the request and response bodies for this transaction type.
+#### Request and Response Examples
+
+Below are examples of request and response bodies in JSON and XML formats.
 
 {{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -802,9 +854,11 @@ Request Example:
    "test": false
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -837,9 +891,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -929,12 +985,12 @@ Request Example:
    </transaction>
    <isTest>false</isTest>
 </request>
-
-
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -963,54 +1019,63 @@ Response Example:
 ```
 
 {{< /tab >}}
+
 {{< /tabs >}}
 
-<!--
 ## Submit Transactions Using Khipu
 
 Khipu is a payment solution that allows businesses in Chile to accept payments directly from their customers' bank accounts, without the need for credit or debit cards.
 
-**Benefits for your business:**
+**Benefits for Your Business:**
 
-* **Increase your sales:** Khipu offers a smooth and simple payment experience, which translates into a higher conversion rate and more sales.
-* **Expand your reach:** Reach a wider audience by accepting payments from all banks in Chile, including customers who do not have a credit or debit card.
-* **Improve security:** Khipu employs encryption and authentication technologies to protect your customers' information and promote secure transactions.
+* **Increase Your Sales:** Khipu offers a smooth and simple payment experience, which translates into a higher conversion rate and more sales.
+* **Expand Your Reach:** Reach a wider audience by accepting payments from all banks in Chile, including customers who do not have a credit or debit card.
+* **Improve Security:** Khipu employs encryption and authentication technologies to protect your customers' information and promote secure transactions.
 
-### Khipu payment process
+### Khipu Payment Process
 
 To integrate Khipu into your e-commerce platform, you can create a payment form and generate a user experience following the flow below:
 
-1. **Payment selection:** The customer chooses Khipu as the payment method in your checkout:
+1. **Payment Selection:** The customer chooses Khipu as the payment method in your checkout:
 
 <img src="/assets/Payments/KHIPU_EN_01.png" alt="PrintScreen" width="250">
+
 <p></p>
 
-2. **Bank selection:** The customer selects their preferred bank.
+2. **Bank Selection:** The customer selects their preferred bank.
 
 <img src="/assets/Payments/KHIPU_EN_02.png" alt="PrintScreen" width="250">
+
 <p></p>
 
-3. **Secure authentication:** The customer enters their bank credentials on Khipu's secure platform.
+3. **Secure Authentication:** The customer enters their bank credentials on Khipu's secure platform.
 
 <img src="/assets/Payments/KHIPU_EN_03.png" alt="PrintScreen" width="500">
+
 <p></p>
 
-4. **Payment confirmation:** The customer receives an immediate transaction confirmation.
+4. **Payment Confirmation:** The customer receives an immediate transaction confirmation.
 
 <img src="/assets/Payments/KHIPU_EN_04.png" alt="PrintScreen" width="250">
+
 <p></p>
 
-5. **Support and receipt:** The system sends a detailed receipt to the customer's email address.
+5. **Support and Receipt:** The system sends a detailed receipt to the customer's email address.
 
 <img src="/assets/Payments/KHIPU_EN_05.png" alt="PrintScreen" width="250">
+
 <p></p>
 
 ### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description | Mandatory |
@@ -1083,8 +1148,11 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description |
@@ -1107,21 +1175,26 @@ To integrate Khipu into your e-commerce platform, you can create a payment form 
 
 </details>
 
-#### Request and Response Examples
+### Request and Response Examples
 
-Below are examples of request and response in JSON and XML formats.
+Below are examples of request and response bodies in JSON and XML formats.
 
 {{% alert title="Note" color="info"%}}
+
 For testing, you can use:
 * `"FINANCIAL_INSTITUTION_CODE": "Bawdf"`
 * `"FINANCIAL_INSTITUTION_NAME": "DemoBank"`
+
 {{% /alert %}}
 
 {{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
     "language": "es",
@@ -1202,9 +1275,11 @@ Request Example:
     "test": false
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -1237,9 +1312,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
 	<language>es</language>
@@ -1331,9 +1408,11 @@ Request Example:
 </request>
 
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <paymentResponse>
 	<code>SUCCESS</code>
@@ -1357,15 +1436,21 @@ Response Example:
 	</transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
-### List of available banks with Khipu
+### List of Available Banks with Khipu
+
 Optionally, with this method, you can get the list of banks available for conducting payments using Khipu:
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description | Mandatory |
@@ -1383,8 +1468,11 @@ Optionally, with this method, you can get the list of banks available for conduc
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description |
@@ -1401,15 +1489,18 @@ Optionally, with this method, you can get the list of banks available for conduc
 
 </details>
 
-#### API Call
+#### Request and Response Examples
 
-Below are examples of request and response in JSON and XML formats.
+Below are examples of request and response bodies in JSON and XML formats.
 
 {{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -1425,9 +1516,11 @@ Request Example:
    }
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -1457,9 +1550,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
     <language>en</language>
@@ -1476,9 +1571,11 @@ Request Example:
 </request>
 
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <bankListResponse>
     <code>SUCCESS</code>
@@ -1502,397 +1599,41 @@ Response Example:
     </banks>
 </bankListResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
 ### Additional Considerations for Khipu Integration
 
-**Transparency in payments:** Payments processed through the Khipu gateway will appear on the payer's account statement under the name _PayU Chile SA_.
+**Transparency in Payments:** Payments processed through the Khipu gateway will appear on the payer's account statement under the name _PayU Chile SA_.
 
-**Amount limitations:** It is important to note that banks associated with Khipu may set minimum or maximum amount limits per transaction. These limits vary according to each financial institution.
+**Amount Limitations:** It is important to note that banks associated with Khipu may set minimum or maximum amount limits per transaction. These limits vary according to each financial institution.
 
-**Refund policies:** According to Khipu's policies, total, partial, or payment cancellations are not allowed once the transaction has been confirmed and processed.
+**Refund Policies:** According to Khipu's policies, total, partial, or payment cancellations are not allowed once the transaction has been confirmed and processed.
 
-**Payment method availability:** Note that the Khipu payment method is only available for the aggregator model. If your business requires a different payment model, consult your PayU advisor to explore other available solutions.
+**Payment Method Availability:** Note that the Khipu payment method is only available for the aggregator model. If your business requires a different payment model, consult your PayU advisor to explore other available solutions.
 
-### Additional Resources:
+### Additional Resources
 
 * [Official Khipu logos:](https://docs.khipu.com/portal/en/payment-logos/)
 
-## Submit Transactions Using Cash
+## Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards-through-webpay-plus}
 
-This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer selects cash and generates the payment code.
-
-<img src="/assets/Payments/CashReceiptCL.png" alt="PrintScreen" width="50%">
-
-{{% alert title="Note" color="info"%}}
-Klap is formerly known as MULTICAJA. You can still see elements or configurations related to MULTICAJA.
-{{% /alert %}}
-
-### Parameters for Request and Response
-
-<details>
-<summary>Request</summary>
-<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
-<br>
-<div class="variables"></div>
-
-| Field Name | Format | Size | Description | Mandatory |
-|---|---|---|---|:-:|
-| language | Alphanumeric | 2 | Language used in the request, this language is used to display the error messages generated. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
-| command | Alphanumeric | Max:32 | Set `SUBMIT_TRANSACTION`. | Yes |
-| test (JSON)<hr>isTest (XML) | Boolean |  | Set `true` if the request is in test mode. Otherwise, set `false`. | Yes |
-| merchant | Object |  | This object has the authentication data. | Yes |
-| merchant > apiLogin | Alphanumeric | Min:12 Max:32 | User or login provided by PayU. [How do I get my API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| merchant > apiKey | Alphanumeric | Min:6 Max:32 | Password provided by PayU. [How do I get my API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Yes |
-| transaction | Object |  | This object has the transaction data. | Yes |
-| transaction > order | Object |  | This object has the order data. | Yes |
-| transaction > order > accountId | Number |  | Identifier of your account. | Yes |
-| transaction > order > referenceCode | Alphanumeric | Min:1 Max:255 | Represents the identifier of the order in your system. | Yes |
-| transaction > order > description | Alphanumeric | Min:1 Max:255 | Description of the order. | Yes |
-| transaction > order > language | Alphanumeric | 2 | Language used in emails sent to the buyer and the seller. | Yes |
-| transaction > order > notifyUrl | Alphanumeric | Max:2048 | Confirmation URL of the order. | No |
-| transaction > order > partnerId | Alphanumeric | Max:255 | Partner ID in PayU. | No |
-| transaction > order > signature | Alphanumeric | Max:255 | The signature associated to the form. For more information refer [Authentication signature]({{< ref "integrations.html#authentication-signature" >}}). | Yes |
-| transaction > order > shippingAddress | Object |  | Shipping address. | No |
-| transaction > order > shippingAddress > street1 | Alphanumeric | Max:100 | Address Line 1. | No |
-| transaction > order > shippingAddress > street2 | Alphanumeric | Max:100 | Address Line 2. | No |
-| transaction > order > shippingAddress > city | Alphanumeric | Max:50 | Address city. | No |
-| transaction > order > shippingAddress > state | Alphanumeric | Max:40 | Address State. | No |
-| transaction > order > shippingAddress > country | Alphanumeric | 2 | Address country. | No |
-| transaction > order > shippingAddress > postalCode | Alphanumeric | Max:8 | Address Zip code. | No |
-| transaction > order > shippingAddress > phone | Alphanumeric | Max:11 | Phone number associated to the address. | No |
-| transaction > order > buyer | Object |  | Buyer information. | Yes |
-| transaction > order > buyer > merchantBuyerId | Alphanumeric | Max:100 | Buyer ID in your system. | No |
-| transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
-| transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes |
-| transaction > order > buyer > contactPhone | Alphanumeric | Max:20 | Phone number of the buyer. | Yes |
-| transaction > order > buyer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
-| transaction > order > buyer > shippingAddress | Alphanumeric |  | Shipping address of the buyer. | Yes |
-| transaction > order > buyer > shippingAddress > street1 | Alphanumeric | Max:150 | Buyer's shipping address Line 1. | Yes |
-| transaction > order > buyer > shippingAddress > city | Alphanumeric | Max:50 | Buyer's shipping address city. | Yes |
-| transaction > order > buyer > shippingAddress > state | Alphanumeric | Max:40 | Buyer's shipping address state. | Yes |
-| transaction > order > buyer > shippingAddress > country | Alphanumeric | 2 | Buyer's shipping address country in format ISO 3166 alpha-2. | Yes |
-| transaction > order > buyer > shippingAddress > postalCode | Number | Max:20 | Buyer's shipping address zip code. | Yes |
-| transaction > order > buyer > shippingAddress > phone | Number | Max:20 | Buyer's shipping address phone number. | Yes |
-| transaction > order > additionalValues > | Object | 64 | Amount of the order or its associated values. | Yes |
-| transaction > order > additionalValues > TX_VALUE | Alphanumeric | 64 | Amount of the transaction. | Yes |
-| transaction > order > additionalValues > TX_VALUE > value | Number | 12, 2 | Specifies the amount of the transaction. This amount cannot include decimals. | Yes |
-| transaction > order > additionalValues > TX_VALUE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Yes |
-| transaction > order > additionalValues > TX_TAX | Alphanumeric | 64 | Amount of the Value Added Tax (VAT). | Yes |
-| transaction > order > additionalValues > TX_TAX > value | Number | 12, 2 | Specifies the amount of the VAT.  | No |
-| transaction > order > additionalValues > TX_TAX > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Number | 12, 2 | Specifies the base amount of the transaction. | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer | Object |  | Payer information. | Yes |
-| transaction > payer > emailAddress | Alphanumeric | Max:255 | Payer e-mail address. | Yes |
-| transaction > payer > merchantPayerId | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
-| transaction > payer > fullName | Alphanumeric | Max:150 | Name of the payer. | Yes |
-| transaction > payer > billingAddress | Object |  | Billing address. | Yes |
-| transaction > payer > billingAddress > street1 | Alphanumeric | Max:100 | Billing Address Line 1. | Yes |
-| transaction > payer > billingAddress > street2 | Alphanumeric | Max:100 | Billing Address Line 2. | No |
-| transaction > payer > billingAddress > city | Alphanumeric | Max:50 | Billing address city. | Yes |
-| transaction > payer > billingAddress > state | Alphanumeric | Max:40 | Billing address state. | No |
-| transaction > payer > billingAddress > country | Alphanumeric | 2 | Billing address country in format ISO 3166 Alpha-2. | Yes |
-| transaction > payer > billingAddress > postalCode | Alphanumeric | Max:20 | Billing address zip code. | No |
-| transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. | No |
-| transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
-| transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. | Yes |
-| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
-| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
-| transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method in cash. [See the available Payment Methods for Chile]({{< ref "select-your-payment-method.html#Chile" >}}). | Yes |
-| transaction > paymentCountry | Alphanumeric | 2 | Set `CL` for Chile. | Yes |
-| transaction > expirationDate | Alphanumeric | 23 | Maximum date and time that the payer has to make the payment. Format `YYYY-MM-DDTHH:MM:SS`, for example `2021-06-12T16:07:11.586`. | No |
-| transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
-| transaction > extraParameters | Object |  | Additional parameters or data associated with the request. For cash payments, you need to include the response URL to redirect your customers back when they complete their payment.<br>In JSON, the _extraParameters_ parameter is set as: <br>`"extraParameters": {`<br>&emsp;`"NETWORK_CALLBACK_URL": "http://www.test.com/response"`<br>`}`<br><br>In XML, the _extraParameters_ parameter is set as: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>NETWORK_CALLBACK_URL</string>`<br>&emsp;&emsp;`<string>http://www.test.com/response</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` | No |
-
-</details>
-
-<details>
-<summary>Response</summary>
-<br>
-<div class="variables"></div>
-
-| Field Name | Format | Size | Description |
-|-|-|-|-|
-| code | Alphanumeric |  | The response code of the transaction. Possible values are `ERROR` and `SUCCESS`. |
-| error | Alphanumeric | Max:2048 | The error message associated when the response code is `ERROR`. |
-| transactionResponse | Object |  | The response data. |
-| transactionResponse > orderId | Number |  | The generated or existing order Id in PayU. |
-| transactionResponse > transactionId | Alphanumeric | 36 | The identifier of the transaction in PayU. |
-| transactionResponse > state | Alphanumeric | Max:32 | The status of the transaction. As the payment is performed by the user in a physical office, the state for a successful transaction is `PENDING` |
-| transactionResponse > paymentNetworkResponseCode | Alphanumeric | Max:255 | The response code returned by the financial network. |
-| transactionResponse > paymentNetworkResponseErrorMessage | Alphanumeric | Max:255 | The error message returned by the financial network. |
-| transactionResponse > trazabilityCode | Alphanumeric | Max:32 | The traceability code returned by the financial network. |
-| transactionResponse > authorizationCode | Alphanumeric | Max:12 | The authorization code returned by the financial network. |
-| transactionResponse > pendingReason | Alphanumeric | Max:21 | The reason code associated with the status, as mentioned in `transactionResponse > state`, the transaction is waiting for the payment. |
-| transactionResponse > responseCode | Alphanumeric | Max:64 | The response code associated with the status. In this case, for successful transactions is `PENDING_TRANSACTION_CONFIRMATION`. |
-| transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
-| transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters | Object |  | For cash payments, `extraParameters` has a single element with the URL to which you must redirect your customer.<br>In JSON, the _extraParameters_ parameter is: <br>`"extraParameters": {`<br>&emsp;`"BANK_URL": "https://www.multicaja.cl/bdp/order.xhtml?id=123456789012345"`<br>`}`<br><br>In XML, the _extraParameters_ parameter is: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_URL</string>`<br>&emsp;&emsp;`<string>https://www.multicaja.cl/bdp/order.xhtml?id=123456789012345</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
-
-</details>
-
-#### Considerations
-
-* The parameter `transaction.expirationDate` is not mandatory. If you don't send this parameter, its default value is seven days after the current date at 12:00 pm.<br>If you send a date later than the default number of days, PayU will ignore this value and the expiration will be set as default.
-* You must set a response URL in the parameter `NETWORK_CALLBACK_URL` inside `transaction.extraParameters`; this URL redirects the user back to your page after they finish the online payment procedure.
-* You must redirect the payer to the Klap webpage (fka as Multicaja) to let them perform the cash payment. This URL is found in the `BANK_URL` parameter in the response.
-
-### API Call
-
-The following are the bodies of the request and response of this payment method.
-
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-Request Example:
-```JSON
-{
-   "language": "es",
-   "command": "SUBMIT_TRANSACTION",
-   "merchant": {
-      "apiKey": "4Vj8eK4rloUd272L48hsrarnUA",
-      "apiLogin": "pRRXKOl8ikMmt9u"
-   },
-   "transaction": {
-      "order": {
-         "accountId": "512325",
-         "referenceCode": "PRODUCT_TEST_2021-06-15T20:35:48.975Z",
-         "description": "Payment test description",
-         "language": "es",
-         "signature": "75ae7a887dfd759894c57eb1bc5a4288",
-         "notifyUrl": "http://www.payu.com/notify",
-         "additionalValues": {
-            "TX_VALUE": {
-               "value": 10000,
-               "currency": "CLP"
-         }
-         },
-         "buyer": {
-            "merchantBuyerId": "1",
-            "fullName": "First name and second buyer  name",
-            "emailAddress": "buyer_test@test.com",
-            "contactPhone": "7563126",
-            "dniNumber": "5415668464654",
-            "shippingAddress": {
-               "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
-               "street2": "5555487",
-               "city": "RM",
-               "state": "Talagante",
-               "country": "CL",
-               "postalCode": "000000",
-               "phone": "7563126"
-            }
-         },
-         "shippingAddress": {
-            "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
-            "street2": "5555487",
-            "city": "RM",
-            "state": "Talagante",
-            "country": "CL",
-            "postalCode": "0000000",
-            "phone": "7563126"
-         }
-      },
-      "payer": {
-         "merchantPayerId": "1",
-         "fullName": "First name and second payer name",
-         "emailAddress": "payer_test@test.com",
-         "contactPhone": "7563126",
-         "dniNumber": "5415668464654",
-         "billingAddress": {
-            "street1": "Autopista Del Sol, 0 - Km.43 Costado Sur",
-            "street2": "125544",
-            "city": "RM",
-            "state": "Talagante",   
-            "country": "CL",
-            "postalCode": "000000",
-            "phone": "7563126"
-         }
-      },
-       "extraParameters": {
-         "NETWORK_CALLBACK_URL": "http://domain.com/backup_cart/response.php"
-      },
-	  "type": "AUTHORIZATION_AND_CAPTURE",
-      "paymentMethod": "MULTICAJA",
-      "expirationDate": "2021-06-18T20:00:03.105",
-      "paymentCountry": "CL",
-      "ipAddress": "127.0.0.1"
-   },
-   "test": false
-}
-```
-<br>
-
-Response Example:
-```JSON
-{
-    "code": "SUCCESS",
-    "error": null,
-    "transactionResponse": {
-        "orderId": 857794995,
-        "transactionId": "f468aa69-82e0-410e-9cc2-3cabba0f970d",
-        "state": "PENDING",
-        "paymentNetworkResponseCode": null,
-        "paymentNetworkResponseErrorMessage": null,
-        "trazabilityCode": "462623325642199",
-        "authorizationCode": null,
-        "pendingReason": "AWAITING_NOTIFICATION",
-        "responseCode": "PENDING_TRANSACTION_CONFIRMATION",
-        "errorCode": null,
-        "responseMessage": null,
-        "transactionDate": null,
-        "transactionTime": null,
-        "operationDate": null,
-        "referenceQuestionnaire": null,
-        "extraParameters": {
-            "BANK_URL": "https://apidev.mcdesaqa.cl/bdp/order.xhtml?id=462623325642199"
-        },
-        "additionalInfo": null
-    }
-}
-```
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-<br>
-
-Request Example:
-```XML
-<request>
-   <language>es</language>
-   <command>SUBMIT_TRANSACTION</command>
-   <merchant>
-      <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
-      <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
-   </merchant>
-   <transaction>
-      <order>
-         <accountId>512325</accountId>
-         <referenceCode>PRODUCT_TEST_2021-06-15T20:35:48.975Z</referenceCode>
-         <description>Payment test description</description>
-         <language>es</language>
-         <signature>75ae7a887dfd759894c57eb1bc5a4288</signature>
-         <notifyUrl>http://www.payu.com/notify</notifyUrl>
-         <additionalValues>
-            <entry>
-               <string>TX_VALUE</string>
-               <additionalValue>
-                  <value>10000</value>
-                  <currency>CLP</currency>
-               </additionalValue>
-            </entry>
-         </additionalValues>
-         <buyer>
-            <merchantBuyerId>1</merchantBuyerId>
-            <fullName>First name and second buyer name</fullName>
-            <emailAddress>buyer_test@test.com</emailAddress>
-            <contactPhone>7563126</contactPhone>
-            <dniNumber>5415668464654</dniNumber>
-            <shippingAddress>
-               <street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
-               <street2>5555487</street2>
-               <city>RM</city>
-               <state>Talagante</state>
-               <country>CL</country>
-               <postalCode>000000</postalCode>
-               <phone>7563126</phone>
-            </shippingAddress>
-         </buyer>
-         <shippingAddress>
-            <street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
-            <street2>5555487</street2>
-            <city>RM</city>
-            <state>Talagante</state>
-            <country>CL</country>
-            <postalCode>0000000</postalCode>
-            <phone>7563126</phone>
-         </shippingAddress>
-      </order>
-      <payer>
-         <merchantPayerId>1</merchantPayerId>
-         <fullName>First name and second payer name</fullName>
-         <emailAddress>payer_test@test.com</emailAddress>
-         <contactPhone>7563126</contactPhone>
-         <dniNumber>5415668464654</dniNumber>
-         <billingAddress>
-            <street1>Autopista Del Sol, 0 - Km.43 Costado Sur</street1>
-            <street2>5555487</street2>
-            <city>RM</city>
-            <state>Talagante</state>
-            <country>CL</country>
-            <postalCode>000000</postalCode>
-            <phone>7563126</phone>
-         </billingAddress>
-      </payer>
-      <extraParameters>
-         <entry>
-            <string>NETWORK_CALLBACK_URL</string>
-            <string>http://domain.com/backup_cart/response.php</string>
-         </entry>
-      </extraParameters>
-      <type>AUTHORIZATION_AND_CAPTURE</type>
-      <paymentMethod>MULTICAJA</paymentMethod>
-      <paymentCountry>CL</paymentCountry>
-      <expirationDate>2021-06-18T20:00:03.105</expirationDate>
-      <ipAddress>127.0.0.1</ipAddress>
-   </transaction>
-   <isTest>false</isTest>
-</request>
-```
-<br>
-
-Response Example:
-```XML
-<paymentResponse>
-    <code>SUCCESS</code>
-    <transactionResponse>
-        <orderId>1400432986</orderId>
-        <transactionId>71a72319-f143-4359-8cb9-bc44a21d2b25</transactionId>
-        <state>PENDING</state>
-        <trazabilityCode>a0d9d7d6-000a-4777-af78-e33917a30fd8</trazabilityCode>
-        <pendingReason>AWAITING_PAYMENT_IN_ENTITY</pendingReason>
-        <responseCode>PENDING_PAYMENT_IN_ENTITY</responseCode>
-        <operationDate>2021-06-16T12:22:28</operationDate>
-        <extraParameters>
-            <entry>
-                <string>EXPIRATION_DATE</string>
-                <date>2021-06-16T17:42:53</date>
-            </entry>
-            <entry>
-                <string>URL_PAYMENT_REDIRECT</string>
-                <string>https://webpay3gint.transbank.cl/webpayserver/initTransaction</string>
-            </entry>
-            <entry>
-                <string>TRANSBANK_DIRECT_TOKEN</string>
-                <string>01abbca6da54f4e4ef9eb37fb9cacf72fdcc52797f6a9ca20377bc59eb0d2706</string>
-            </entry>
-        </extraParameters>
-    </transactionResponse>
-</paymentResponse>
-```
-{{< /tab >}}
-{{< /tabs >}}
-
--->
-
-## Submit Transactions Using Debit and Prepaid Cards Through WebPay Plus {#submit-transactions-using-debit-and-prepaid-cards}
-
-This method lets you process the bank debit and prepaid card payments of your customers. To integrate with these transactions, you must redirect the customer to the URL found in the response of the method.
+This method allows you to process payments using your customers' debit or prepaid cards. To integrate these transactions, you must redirect your customer to the URL included in the response; there, the customer will see a payment page like the one below.
 
 <img src="/assets/Payments/BankTransferReceiptCL.png" alt="PrintScreen" width="50%">
 
 ### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
-<label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+
+<label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Show mandatory fields only</label>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description | Mandatory |
@@ -1971,8 +1712,11 @@ This method lets you process the bank debit and prepaid card payments of your cu
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description |
@@ -1997,31 +1741,32 @@ This method lets you process the bank debit and prepaid card payments of your cu
 
 #### Considerations
 
-* If you don't send the `RESPONSE_URL` parameter in `transaction.extraParameters`, the API takes the value from the _**Response URL**_ variable in your PayU Module (_**Settings**_ > _**Technical configuration**_).
-* When you process payments through WebPay plus, you must redirect the customer to the URL found in the `URL_PAYMENT_REDIRECT` extra parameter concatenated with the `TRANSBANK_DIRECT_TOKEN` extra parameter as follows: <br> `URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
-* If the payment request is successful, the transaction has state `PENDING` and responseCode `PENDING_PAYMENT_IN_ENTITY`; this is because the payer is redirected to the selected bank to complete the payment.
-* The response page must have the following variables:
+* If you do not include the `RESPONSE_URL` parameter within the `transaction.extraParameters`, the API will retrieve the value from the **Response URL** variable located in your PayU Administration Panel under **Settings** > **Technical configuration**.
+* When processing payments via WebPay Plus, you must redirect the customer to the URL obtained by concatenating the `URL_PAYMENT_REDIRECT` extra parameter with the `TRANSBANK_DIRECT_TOKEN` extra parameter, as follows: `<br> URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
+* Upon a successful payment request, the transaction will have a `PENDING` status and a `PENDING_PAYMENT_IN_ENTITY` `responseCode`. This is because the integration redirects the payer to the selected bank to finalize the payment.
+* The response page must contain the following variables, which are transmitted via `GET` method:
 
-| Variable          | Description                                                   |
-|-------------------|---------------------------------------------------------------|
-| transactionState  | State of the transaction.                                     |
-| reference_pol     | Reference code to identify a transaction in PayU.             |
-| TX_VALUE          | Transaction amount.                                           |
-| authorizationCode | Authorization code of the transaction.                        |
-| processingDate    | Transaction date.                                             |
-| cc_number         | Visible number of the card used in the transaction.           |
+    | Variable            | Description                                                     |
+    | :------------------ | :-------------------------------------------------------------- |
+    | `transactionState`  | Current status of the transaction.                          |
+    | `reference_pol`     | Unique reference code for identifying the transaction within PayU. |
+    | `TX_VALUE`          | Total amount of the transaction.                            |
+    | `authorizationCode` | Authorization code provided for the transaction.            |
+    | `processingDate`    | Date on which the integration processed the transaction.|
+    | `cc_number`         | Visible digits of the credit card used for the transaction. |
 
-The variables above are sent via GET.
+### Request and Response Examples
 
-### API Call
+Below are examples of request and response bodies in JSON and XML formats.
 
-The following are the bodies of the request and response of this payment method.
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
    "language": "es",
@@ -2100,9 +1845,11 @@ Request Example:
    "test": false
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -2136,9 +1883,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
    <language>es</language>
@@ -2224,9 +1973,11 @@ Request Example:
 </request>
 
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -2255,7 +2006,9 @@ Response Example:
     </transactionResponse>
 </paymentResponse>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 
 ## Available Payment Methods Query
@@ -2265,8 +2018,11 @@ This method returns a list of the payment methods available in all countries.
 ### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description | Mandatory |
@@ -2281,8 +2037,11 @@ This method returns a list of the payment methods available in all countries.
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description |
@@ -2297,15 +2056,18 @@ This method returns a list of the payment methods available in all countries.
 
 </details>
 
-### API Call
+### Request and Response Examples
 
-The following are the examples of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
+Below are examples of request and response bodies in JSON and XML formats. For illustrative purposes, the response shown includes two payment methods. 
 
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
    "test": false,
@@ -2317,9 +2079,11 @@ Request Example:
    }
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -2346,9 +2110,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
    <language>en</language>
@@ -2360,9 +2126,11 @@ Request Example:
    <isTest>false</isTest>
 </request>
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -2384,6 +2152,7 @@ Response Example:
 ```
 
 {{< /tab >}}
+
 {{< /tabs >}}
 
 ## Ping
@@ -2393,8 +2162,11 @@ The ```PING``` method lets you verify the connection to our platform.
 ### Parameters for Request and Response
 
 <details>
+
 <summary>Request</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description | Mandatory |
@@ -2409,8 +2181,11 @@ The ```PING``` method lets you verify the connection to our platform.
 </details>
 
 <details>
+
 <summary>Response</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description | Mandatory |
@@ -2418,17 +2193,21 @@ The ```PING``` method lets you verify the connection to our platform.
 | code | Alphanumeric |  | The response code of the transaction. | Yes |
 | error | Alphanumeric | Max:2048 | The error message associated if an error ocurred. | Yes |
 | transactionResponse | Object | Max:2048 | The response of the PING method if an error ocurred. | Yes |
+
 </details>
 
-### API Call
+### Request and Response Examples
 
-The following are the examples of the request and response of this method.
+Below are examples of request and response bodies in JSON and XML formats.
 
-{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+
 {{< tab tabNum="1" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```JSON
 {
    "test": false,
@@ -2440,9 +2219,11 @@ Request Example:
    }
 }
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```JSON
 {
     "code": "SUCCESS",
@@ -2454,9 +2235,11 @@ Response Example:
 {{< /tab >}}
 
 {{< tab tabNum="2" >}}
+
 <br>
 
-Request Example:
+**Request Example:**
+
 ```XML
 <request>
    <language>en</language>
@@ -2468,9 +2251,11 @@ Request Example:
    <isTest>false</isTest>
 </request>
 ```
+
 <br>
 
-Response Example:
+**Response Example:**
+
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -2478,4 +2263,5 @@ Response Example:
 ```
 
 {{< /tab >}}
+
 {{< /tabs >}}
