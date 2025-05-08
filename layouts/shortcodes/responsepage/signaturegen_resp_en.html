@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Response Signature Generator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Signature Generator for Response Page</title>  
   <style>
     #grey-box {
       border: 1px solid #ccc;
@@ -12,17 +11,11 @@
       margin-bottom: 15px;
       background-color: #f9f9f9;
       border-radius: 5px;
-    }
-
-    .grey-text-13 {
-      font-size: 13px;
-      color: #555;
-    }
+    }  
 
     .green-text-13 {
       font-size: 13px;
-      color: #A6C307;
-      font-weight: bold;
+      color: #A6C307;      
     }
 
     .form_control {
@@ -45,12 +38,14 @@
     }
 
     #signature_form_response_page table td {
-      padding: 2px 6px;
-      vertical-align: middle !important;
+      padding: 6px;
+      vertical-align: middle;
     }
 
     #signature_form_response_page table td:first-child {
-      padding-right: 5px;
+      width: 120px;
+      font-weight: bold;
+      color: #0b0909d2;
     }
 
     #signature_generate_response_page,
@@ -61,17 +56,14 @@
       color: white;
       cursor: pointer;
       font-size: 14px;
-      margin-right: 10px;
     }
 
     #signature_generate_response_page {
       background-color: #6b9e0dd8;
-      margin-left: 6px;
     }
 
     #signature_generate_again_response_page {
       background-color: #007bff;
-      margin-left: 6px;
     }
 
     #signature_generate_response_page:hover,
@@ -88,49 +80,42 @@
       vertical-align: bottom !important;
     }
 
-    #signature_merchantId_response_page {
-      width: 90px !important;
-    }
-
-    #signature_amount_response_page {
-      width: 75px !important;
-    }
-
     #signature_apikey_response_page {
       width: 180px !important;
     }
-    
-    #signature_algorithm_response_page,
-    #signature_state_pol_response_page,
+
+    #signature_merchantId_response_page {
+      width: 100px;
+    }
+
     #signature_currency_response_page {
+      width: 80px !important;
+      line-height: normal !important;
+      vertical-align: top !important;
+    }
+
+    #signature_state_pol_response_page {
       width: 120px !important;
+    }
+
+    #signature_amount_response_page {
+      width: 80px !important;
+    }
+
+    #signature_algorithm_response_page,
+    #signature_currency_response_page,
+    #signature_state_pol_response_page {
       height: 36px;
       line-height: 36px;
       padding: 0 8px;
       font-size: 13px;
     }
-
-    .form_control::placeholder {
-      color: #aaa !important;
-      font-family: 'Roboto';
-    }
-
-    #signature_form_response_page table tr:last-child td {
-    padding-left: 4px;
-    padding-right: 4px;
-    }
-
-    #signature_form_response_page table tr:last-child td:first-child {
-    white-space: nowrap;
-    padding-right: 4px;
-    width: 1%;
-    }
   </style>
 </head>
 <body>
   <div id="grey-box">
-    <span class="grey-text-13">
-      <div>
+    <div class="grey-text-13">
+      <div id="div_generador">
         <form method="POST" id="signature_form_response_page">
           <table>
             <tr>
@@ -150,21 +135,53 @@
                 <input
                   type="text"
                   id="signature_hmac_key_response_page"
-                  name="signature_hmac_key_response_page"
+                  name="signature_hmac_key"
                   class="form_control"
                   placeholder="Enter HMAC key"
                   maxlength="64"
                 />
               </td>
-            </tr>
+            </tr>            
             <tr>
               <td colspan="2">
                 <br />
                 <span class="calc_text">(</span>
-                <input class="form_control" type="text" id="signature_apikey_response_page" name="signature_apikey_response_page" placeholder="API key" maxlength="26"> ~
-                <input class="form_control number" type="text" id="signature_merchantId_response_page" name="signature_merchantId_response_page" placeholder="Merchant ID" maxlength="7"> ~
-                <input class="form_control" type="text" id="signature_referenceCode_response_page" name="signature_referenceCode_response_page" placeholder="Reference" maxlength="255"> ~
-                <input class="form_control number" type="text" id="signature_amount_response_page" name="signature_amount_response_page" placeholder="Amount" maxlength="14"> ~
+                <input
+                  class="form_control"
+                  type="text"
+                  id="signature_apikey_response_page"
+                  name="signature_apikey_response_page"
+                  placeholder="API key"
+                  maxlength="26"
+                />
+                ~
+                <input
+                  class="form_control number"
+                  type="text"
+                  id="signature_merchantId_response_page"
+                  name="signature_merchantId_response_page"
+                  placeholder="Merchant ID"
+                  maxlength="7"
+                />
+                ~
+                <input
+                  class="form_control"
+                  type="text"
+                  id="signature_referenceCode_response_page"
+                  name="signature_referenceCode_response_page"
+                  placeholder="Reference"
+                  maxlength="255"
+                />
+                ~
+                <input
+                  class="form_control number"
+                  type="text"
+                  id="signature_amount_response_page"
+                  name="signature_amount_response_page"
+                  placeholder="Amount"
+                  maxlength="14"
+                />
+                ~
                 <select id="signature_currency_response_page" class="calc_selector form_control">
                   <option value="USD">USD</option>
                   <option value="COP">COP</option>
@@ -173,7 +190,8 @@
                   <option value="PEN">PEN</option>
                   <option value="BRL">BRL</option>
                   <option value="CLP">CLP</option>
-                </select> ~
+                </select>
+                ~
                 <select id="signature_state_pol_response_page" class="calc_selector form_control">
                   <option value="4">4 (Approved)</option>
                   <option value="6">6 (Declined)</option>
@@ -185,32 +203,40 @@
                 <br /><br />
               </td>
             </tr>
-          </table>
-          <br>
-          <div id="signature_button_container_response_page">
-            <input type="button" name="signature_generate_response_page" id="signature_generate_response_page" value="Generate signature" >
-            <input type="button" name="signature_generate_again_response_page" id="signature_generate_again_response_page" value="Generate new signature" >
-        </div>
-          <br>
-          <table>
             <tr>
-              <td><span class="green-text-13"><b>Result:</b></span></td>
-              <td><input class="form_control" id="signature_generated_response_page" name="signature_generated_response_page" value="" readonly /></td>
+              <td colspan="2">
+                <input
+                  type="button"
+                  name="signature_generate_response_page"
+                  id="signature_generate_response_page"
+                  value="Generate signature"
+                />
+                <input
+                  type="button"
+                  name="signature_generate_again_response_page"
+                  id="signature_generate_again_response_page"
+                  value="Generate new signature"
+                />
+              </td>
             </tr>
+            <tr id="signature_result_row_response_page">
+                <td colspan="2" style="padding-top: 10px;">
+                  <label for="signature_generated" class="green-text-13" style="margin-right: 8px;"><b>Result:</b></label>
+                  <input
+                    class="form_control"
+                    id="signature_generated_response_page"
+                    name="signature_generated_response_page"
+                    value=""
+                    readonly
+                    style="vertical-align: middle;"
+                  />
+                </td>
+              </tr>    
           </table>
         </form>
       </div>
-    </span>
+    </div>
   </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-  <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-  <script src="/js/signature-generator/md5.js"></script>
-  <script src="/js/signature-generator/sha1.js"></script>
-  <script src="/js/signature-generator/sha256.js"></script>
-  <script src="/js/signature-generator/signature-generator.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -222,8 +248,25 @@
       }
 
       algorithmSelect.addEventListener('change', toggleHmacKeyVisibility);
-      toggleHmacKeyVisibility();
+      toggleHmacKeyVisibility(); // Initialize on load
     });
   </script>
+
+<!-- jQuery library (must come first) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- jQuery Validation plugin -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+
+<!-- CryptoJS libraries -->
+<script src="/js/signature-generator/md5.js"></script>
+<script src="/js/signature-generator/sha1.js"></script>
+<script src="/js/signature-generator/sha256.js"></script>
+<script src="/js/signature-generator/hmac-sha256.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+<!-- Custom logic (depends on all above) -->
+<script src="/js/signature-generator/signature-generator-resp.js"></script>
 </body>
 </html>

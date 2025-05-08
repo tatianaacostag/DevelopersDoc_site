@@ -413,20 +413,6 @@ highlight-wrapper {
     letter-spacing: 0em !important;
 }
 
-#signature_amount_response_page{
-    width:11%;
-    color: #000 !important;
-    font-weight: 100 !important;
-    letter-spacing: 0em !important;
-}
-
-#signature_amount_confirmation_page{
-    width:11%;
-    color: #000 !important;
-    font-weight: 100 !important;
-    letter-spacing: 0em !important;
-}
-
 #signature_currency{
     max-width: 11%;
 }
@@ -597,7 +583,6 @@ highlight-wrapper {
     min-width: 120px;
     padding: 7px 30px;
     border: solid;
-    visibility: visible !important;
 }
 
 #signature_generate_again_confirmation_page{
@@ -613,7 +598,6 @@ highlight-wrapper {
     min-width: 120px;
     padding: 7px 30px;
     border: solid;
-    visibility: visible !important;
 }
 
 #signature_generate:hover{
@@ -622,6 +606,14 @@ highlight-wrapper {
 }
 
 #signature_generate_again {
+    visibility: hidden;
+}
+
+#signature_generate_again_response_page {
+    visibility: hidden;
+}
+
+#signature_generate_again_confirmation_page {
     visibility: hidden;
 }
 
