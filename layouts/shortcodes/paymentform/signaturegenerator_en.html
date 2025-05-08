@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signature Generator</title>
+  <style>
+    #grey-box {
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+
+    .green-text-13 {
+      font-size: 13px;
+      color: #A6C307;
+    }    
+
+    .form_control {
+      width: 350px;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+
+    .calc_text {
+      font-size: 13px;
+      color: #333;
+    }
+
+    #signature_form table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #signature_form table td {
+      padding: 6px;      
+      vertical-align: middle;
+    }
+
+    #signature_form table td:first-child {
+      width: 120px;
+      font-weight: bold;
+      color: #0b0909d2;
+    }
+
+    #signature_generate,
+    #signature_generate_again {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #signature_generate {
+      background-color: #6b9e0dd8;
+    }
+
+    #signature_generate_again {
+      background-color: #007bff;
+    }
+
+    #signature_generate:hover,
+    #signature_generate_again:hover {
+      opacity: 0.9;
+    }
+
+    #hmac_key_row td:first-child {
+      padding-top: 13px;
+    }
+
+    #signature_algorithm.calc_selector.form_control {
+    width: 750px !important;
+    vertical-align: bottom !important;
+    }
+
+    #signature_apikey {
+    width: 180px !important;
+    }
+
+    #signature_merchantId {
+    width: 120px;
+    }
+
+    #signature_currency {
+    width: 90px !important;    
+    line-height: normal !important;
+    vertical-align: top !important;    
+    }
+
+    #signature_algorithm,
+    #signature_currency {
+    height: 36px; 
+    line-height: 36px; 
+    padding: 0 8px;
+    font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div id="grey-box">
+    <div class="grey-text-13">
+      <div id="div_generador">
+        <form method="POST" id="signature_form">
+          <table>
+            <tr>
+              <td><span class="green-text-13"><b>Algorithm:</b></span></td>
+              <td>
+                <select id="signature_algorithm" class="calc_selector form_control">
+                  <option value="md5">MD5</option>
+                  <option value="sha1">SHA1</option>
+                  <option value="sha256">SHA256</option>
+                  <option value="hmac-sha256">HMAC-SHA256</option>
+                </select>
+              </td>
+            </tr>
+            <tr id="hmac_key_row" style="display: none;">
+              <td><label for="signature_hmac_key" class="green-text-13"><b>Secret key:</b></label></td>
+              <td>
+                <input
+                  type="text"
+                  id="signature_hmac_key"
+                  name="signature_hmac_key"
+                  class="form_control"
+                  placeholder="Enter HMAC key"
+                  maxlength="64"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <br />
+                <span class="calc_text">(</span>
+                <input
+                  class="form_control"
+                  type="text"
+                  id="signature_apikey"
+                  name="signature_apikey"
+                  placeholder="API key"
+                  maxlength="26"
+                />
+                ~
+                <input
+                  class="form_control number"
+                  type="text"
+                  id="signature_merchantId"
+                  name="signature_merchantId"
+                  placeholder="Merchant ID"
+                  maxlength="7"
+                />
+                ~
+                <input
+                  class="form_control"
+                  type="text"
+                  id="signature_referenceCode"
+                  name="signature_referenceCode"
+                  placeholder="Reference"
+                  maxlength="255"
+                />
+                ~
+                <input
+                  class="form_control number"
+                  type="text"
+                  id="signature_amount"
+                  name="signature_amount"
+                  placeholder="Amount"
+                  maxlength="14"
+                />
+                ~
+                <select id="signature_currency" class="calc_selector form_control">
+                  <option value="USD">USD</option>
+                  <option value="COP">COP</option>
+                  <option value="MXN">MXN</option>
+                  <option value="ARS">ARS</option>
+                  <option value="PEN">PEN</option>
+                  <option value="BRL">BRL</option>
+                  <option value="CLP">CLP</option>
+                </select>
+                <span class="calc_text">)</span>
+                <br /><br />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input
+                  type="button"
+                  name="signature_generate"
+                  id="signature_generate"
+                  value="Generate signature"
+                />
+                <input
+                  type="button"
+                  name="signature_generate_again"
+                  id="signature_generate_again"
+                  value="Generate new signature"
+                />
+              </td>
+            </tr>
+            <tr id="signature_result_row">
+              <td colspan="2" style="padding-top: 10px;">
+                <label for="signature_generated" class="green-text-13" style="margin-right: 8px;"><b>Result:</b></label>
+                <input
+                  class="form_control"
+                  id="signature_generated"
+                  name="signature_generated"
+                  value=""
+                  readonly
+                  style="vertical-align: middle;"
+                />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const algorithmSelect = document.getElementById('signature_algorithm');
+      const hmacKeyRow = document.getElementById('hmac_key_row');
+
+      function toggleHmacKeyVisibility() {
+        hmacKeyRow.style.display = algorithmSelect.value === 'hmac-sha256' ? '' : 'none';
+      }
+
+      algorithmSelect.addEventListener('change', toggleHmacKeyVisibility);
+      toggleHmacKeyVisibility(); // Initialize on load
+    });
+  </script>
+
+<!-- jQuery library (must come first) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- jQuery Validation plugin -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+
+<!-- CryptoJS libraries -->
+<script src="/js/signature-generator/md5.js"></script>
+<script src="/js/signature-generator/sha1.js"></script>
+<script src="/js/signature-generator/sha256.js"></script>
+<script src="/js/signature-generator/hmac-sha256.js"></script>
+
+<!-- Custom logic (depends on all above) -->
+<script src="/js/signature-generator/signature-generator-form.js"></script>
+</body>
+</html>

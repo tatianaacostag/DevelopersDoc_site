@@ -16,7 +16,7 @@
   <div class="panel">
     <!-- Título y descripción del formulario -->
     <div>
-      <h2>Ejemplo de Formulario de Pago</h2>
+      <h2></h2>
     </div>
     <div>
       <hr class="solid">
@@ -109,12 +109,18 @@
               </div>
 
               <!-- Selección de algoritmo de firma -->
-              <div class="form-row">
-                <label for="algorithmSignature">algorithmSignature</label>
+              <div class="form-row" style="position: relative;">
+                <label for="algorithmSignature">algorithmSignature
+                  <span class="info-icon" onclick="showTooltip('tooltipAlgorithmSignature')">&#9432;</span>
+                </label>
+                <div id="tooltipAlgorithmSignature" class="tooltip" style="display: none;">
+                  Para el propósito de este ejemplo, el cifrado HMAC-SHA256 en este formulario utiliza la misma clave API como clave secreta. <b>En un entorno de producción, puedes usar tu clave secreta.</b>
+                </div>
                 <select id="algorithmSignature" name="algorithmSignature" class="field">
                   <option value="SHA256">SHA256</option>
                   <option value="SHA">SHA</option>
                   <option value="MD5">MD5</option>
+                  <option value="HMAC-SHA256">HMAC-SHA256</option>
                 </select>
               </div>
 
@@ -837,23 +843,28 @@
 
   // Generar firma de la transacción
   function generateSignatureHash(signatureString, hashType) {
-    let hashFunction;
-    switch (hashType) {
-      case "MD5":
-        hashFunction = CryptoJS.MD5;
-        break;
-      case "SHA":
-        hashFunction = CryptoJS.SHA1;
-        break;
-      case "SHA256":
-        hashFunction = CryptoJS.SHA256;
-        break;
-      default:
-        console.log("Invalid hash type");
-        return null;
-    }
-    return hashFunction(signatureString).toString();
+  let hashFunction;
+  let hmacKey = '4Vj8eK4rloUd272L48hsrarnUA'; // Replace with your actual HMAC secret key
+
+  switch (hashType) {
+    case "MD5":
+      hashFunction = CryptoJS.MD5;
+      break;
+    case "SHA":
+      hashFunction = CryptoJS.SHA1;
+      break;
+    case "SHA256":
+      hashFunction = CryptoJS.SHA256;
+      break;
+    case "HMAC-SHA256":
+        hashFunction = CryptoJS.HmacSHA256;
+        return hashFunction(signatureString, hmacKey).toString(); // Pass the key
+    default:
+      console.log("Invalid hash type");
+      return null;
   }
+  return hashFunction(signatureString).toString(); //For other hash types
+}
 
   function generateSignature() {
 

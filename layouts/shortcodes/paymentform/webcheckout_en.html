@@ -16,7 +16,7 @@
   <div class="panel">
     <!-- Form title and description -->
     <div>
-      <h2>Payment Form Example</h2>
+      <h2></h2>
     </div>    
     <div>
       <hr class="solid">
@@ -109,12 +109,18 @@
               </div>
 
               <!-- Signature algorithm selection -->
-              <div class="form-row">
-                <label for="algorithmSignature">algorithmSignature</label>
+              <div class="form-row" style="position: relative;">
+                <label for="algorithmSignature">algorithmSignature
+                  <span class="info-icon" onclick="showTooltip('tooltipAlgorithmSignature')">&#9432;</span>
+                </label>
+                <div id="tooltipAlgorithmSignature" class="tooltip" style="display: none;">
+                  For example purposes, HMAC-SHA256 encryption in this form uses the same API key as the secret key. <b>You can use your secret key in a production environment.</b>
+                </div>
                 <select id="algorithmSignature" name="algorithmSignature" class="field">
                   <option value="SHA256">SHA256</option>
                   <option value="SHA">SHA</option>
                   <option value="MD5">MD5</option>
+                  <option value="HMAC-SHA256">HMAC-SHA256</option>
                 </select>
               </div>
 
@@ -836,6 +842,8 @@ document.getElementById('generate-random-info-button').addEventListener('click',
 // Generate the transaction signature
 function generateSignatureHash(signatureString, hashType) {
   let hashFunction;
+  let hmacKey = '4Vj8eK4rloUd272L48hsrarnUA'; // Replace with your actual HMAC secret key
+
   switch (hashType) {
     case "MD5":
       hashFunction = CryptoJS.MD5;
@@ -846,11 +854,14 @@ function generateSignatureHash(signatureString, hashType) {
     case "SHA256":
       hashFunction = CryptoJS.SHA256;
       break;
+    case "HMAC-SHA256":
+        hashFunction = CryptoJS.HmacSHA256;
+        return hashFunction(signatureString, hmacKey).toString(); // Pass the key
     default:
       console.log("Invalid hash type");
       return null;
   }
-  return hashFunction(signatureString).toString();
+  return hashFunction(signatureString).toString(); //For other hash types
 }
 
 function generateSignature() {

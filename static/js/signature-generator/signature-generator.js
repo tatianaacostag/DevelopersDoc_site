@@ -1,192 +1,155 @@
-$(document).ready(function() {
+$(document).ready(function () {
+    // Hide all "Generate again" buttons initially
+    $('[id^="signature_generate_again"]').hide();
 
-    function generar(id) {       
-               
-        //console.log("id del apikey" + $('#'+id).children().children('signature_apikey').value);
-               
-        console.log("generar func " + " " + id);
-        
-        if (id == "signature_form")
-        {   
-            var algoritmo = String(document.getElementById('signature_algorithm').value);
-            var apikey = document.getElementById('signature_apikey').value;
-            var merchanId = document.getElementById('signature_merchanId').value;
-            var referenceCode = document.getElementById('signature_referenceCode').value;
-            var amount = document.getElementById('signature_amount').value;
-            var currency = document.getElementById('signature_currency').value;
-            
-            switch(algoritmo)
-            {                
-                case "md5":                    
-                    var signature = String(CryptoJS.MD5(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency));
-                    break;
-                
-                case "sha1":                    
-                    var signature = String(CryptoJS.SHA1(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency));
-                    break;             
-                 
-                case "sha256":           
-                    var signature = String(CryptoJS.SHA256(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency));
-                    break;                    
-            }
-            
-            document.getElementById('signature_generated').value = signature;
-            console.log(algoritmo);
-            console.log(signature);
-            document.getElementById("signature_generate").style.display = "none"; // Se deshabilita el botón con id "generar"
-            document.getElementById("signature_generate_again").style.visibility = "visible"; // Se habilita el boton con id "generarnuevo"
+    function generar(formId) {
+        console.log("Generating signature for form: " + formId);
+
+        let algorithm, apikey, merchantId, referenceCode, amount, currency, hmacKey = '', signatureString = '', statePol = '';
+        const suffix = formId.replace("signature_form_", "");
+
+        switch (formId) {
+            case "signature_form":
+                algorithm = $('#signature_algorithm').val();
+                apikey = $('#signature_apikey').val();
+                merchantId = $('#signature_merchantId').val();
+                referenceCode = $('#signature_referenceCode').val();
+                amount = $('#signature_amount').val();
+                currency = $('#signature_currency').val();
+                hmacKey = $('#signature_hmac_key').val() || '';
+                signatureString = `${apikey}~${merchantId}~${referenceCode}~${amount}~${currency}`;
+                break;
+
+            case "signature_form_response_page":
+                algorithm = $('#signature_algorithm_response_page').val();
+                apikey = $('#signature_apikey_response_page').val();
+                merchantId = $('#signature_merchantId_response_page').val();
+                referenceCode = $('#signature_referenceCode_response_page').val();
+                amount = $('#signature_amount_response_page').val();
+                currency = $('#signature_currency_response_page').val();
+                statePol = $('#signature_state_pol_response_page').val();
+                hmacKey = $('#signature_hmac_key_response_page').val() || '';
+                signatureString = `${apikey}~${merchantId}~${referenceCode}~${amount}~${currency}~${statePol}`;
+                break;
+
+            case "signature_form_confirmation_page":
+                algorithm = $('#signature_algorithm_confirmation_page').val();
+                apikey = $('#signature_apikey_confirmation_page').val();
+                merchantId = $('#signature_merchantId_confirmation_page').val();
+                referenceCode = $('#signature_referenceCode_confirmation_page').val();
+                amount = $('#signature_amount_confirmation_page').val();
+                currency = $('#signature_currency_confirmation_page').val();
+                statePol = $('#signature_state_pol_confirmation_page').val();
+                hmacKey = $('#signature_hmac_key_confirmation_page').val() || '';
+
+                if (algorithm === "hmac-sha256" && navigator.userAgent.includes("Chrome")) {
+                    setTimeout(() => {
+                        const delayedString = `${apikey}~${merchantId}~${referenceCode}~${amount}~${currency}~${statePol}`;
+                        generateSignature(algorithm, delayedString, hmacKey, "confirmation_page");
+                    }, 50);
+                    return;
+                } else {
+                    signatureString = `${apikey}~${merchantId}~${referenceCode}~${amount}~${currency}~${statePol}`;
+                }
+                break;
+
+            default:
+                console.error("Unknown form ID: " + formId);
+                return;
         }
-        
-        else if (id == "signature_form_response_page")
-        {
-            var algoritmo = String(document.getElementById('signature_algorithm_response_page').value);
-            var apikey = document.getElementById('signature_apikey_response_page').value;
-            var merchanId = document.getElementById('signature_merchanId_response_page').value;
-            var referenceCode = document.getElementById('signature_referenceCode_response_page').value;
-            var amount = document.getElementById('signature_amount_response_page').value;
-            var currency = document.getElementById('signature_currency_response_page').value;            
-            var transactionState = document.getElementById('signature_transaction_state_response_page').value;            
-            
-            switch(algoritmo)
-            {                
-                case "md5":
-                    var signature = String(CryptoJS.MD5(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency + "~" + transactionState));
-                    break;
-                
-                case "sha1":                    
-                    var signature = String(CryptoJS.SHA1(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency + "~" + transactionState));
-                    break;             
-                 
-                case "sha256":           
-                    var signature = String(CryptoJS.SHA256(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency + "~" + transactionState));
-                    break;                    
-            }
-            
-            document.getElementById('signature_generated_response_page').value = signature;
-            console.log(algoritmo);
-            console.log(signature);
-            document.getElementById("signature_generate_response_page").style.display = "none"; // Se deshabilita el botón con id "generar"
-            document.getElementById("signature_generate_again_response_page").style.visibility = "visible"; // Se habilita el boton con id "generarnuevo"
-        }
-        
-        else
-        {
-            var algoritmo = String(document.getElementById('signature_algorithm_confirmation_page').value);
-            var apikey = document.getElementById('signature_apikey_confirmation_page').value;
-            var merchanId = document.getElementById('signature_merchanId_confirmation_page').value;
-            var referenceCode = document.getElementById('signature_referenceCode_confirmation_page').value;
-            var amount = document.getElementById('signature_amount_confirmation_page').value;
-            var currency = document.getElementById('signature_currency_confirmation_page').value;            
-            var statePol = document.getElementById('signature_state_pol_confirmation_page').value;
-            
-            switch(algoritmo)
-            {                
-                case "md5":
-                    var signature = String(CryptoJS.MD5(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency + "~" + statePol));
-                    break;
-                
-                case "sha1":                    
-                    var signature = String(CryptoJS.SHA1(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency + "~" + statePol));
-                    break;             
-                 
-                case "sha256":           
-                    var signature = String(CryptoJS.SHA256(apikey + "~" + merchanId + "~" + referenceCode + "~" + amount + "~" + currency + "~" + statePol));
-                    break;                    
-            }
-            
-            document.getElementById('signature_generated_confirmation_page').value = signature;
-            console.log(algoritmo);
-            console.log(signature);
-            document.getElementById("signature_generate_confirmation_page").style.display = "none"; // Se deshabilita el botón con id "generar"
-            document.getElementById("signature_generate_again_confirmation_page").style.visibility = "visible"; // Se habilita el boton con id "generarnuevo"
-        }
+
+        generateSignature(algorithm, signatureString, hmacKey, suffix);
     }
 
-    // Función para ejecutar  la función generar() del formulario de datos
-    $('#signature_generate').click(function(){   
-        if ($('#signature_form').valid()) 
-        {
-            var id = $(this).parent().attr('id');
-            console.log(id);
-            generar(id);
-        }         
-        else 
-        {
-            console.log("notvalid")
+    function generateSignature(algorithm, signatureString, key, suffix) {
+        let signature;
+
+        switch (algorithm) {
+            case "md5":
+                signature = CryptoJS.MD5(signatureString).toString();
+                break;
+            case "sha1":
+                signature = CryptoJS.SHA1(signatureString).toString();
+                break;
+            case "sha256":
+                signature = CryptoJS.SHA256(signatureString).toString();
+                break;
+            case "hmac-sha256":
+                const defaultKey = $(`#signature_apikey${suffix ? "_" + suffix : ''}`).val();
+                signature = CryptoJS.HmacSHA256(signatureString, key || defaultKey).toString();
+                break;
+            default:
+                console.error("Unknown algorithm: " + algorithm);
+                return;
+        }
+
+        const outputField = suffix ? `#signature_generated_${suffix}` : '#signature_generated';
+        const generateBtn = suffix ? `#signature_generate_${suffix}` : '#signature_generate';
+        const generateAgainBtn = suffix ? `#signature_generate_again_${suffix}` : '#signature_generate_again';
+
+        $(outputField).val(signature);
+        $(generateBtn).hide();
+        $(generateAgainBtn).show();
+
+        console.log(`Algorithm: ${algorithm}`);
+        console.log(`Signature: ${signature}`);
+    }
+
+    // Form validation rules
+    $('#signature_form').validate({
+        rules: {
+            signature_apikey: { required: true },
+            signature_merchantId: { required: true },
+            signature_referenceCode: { required: true },
+            signature_amount: { required: true, number: true },
+            signature_currency: { required: true }
         }
     });
 
-    // Función para volver a ejecutar  la función generar() del formulario de datos
-    $("#signature_generate_again").click(function() {
-        if ($('#signature_form').valid()) 
-        {
-            var id = $(this).parent().attr('id');
-            console.log(id);
-            generar(id);
-
-        } 
-        else
-        {
-            console.log("notvalid")
-        }
-    });
-    
-    // Función para ejecutar  la función generar() de la pagina de respuesta
-    $('#signature_generate_response_page').click(function(){   
-        if ($('#signature_form_response_page').valid()) 
-        {
-            var id = $(this).parent().attr('id');
-            console.log(id);
-            generar(id);
-        }         
-        else 
-        {
-            console.log("notvalid")
+    $('#signature_form_response_page').validate({
+        rules: {
+            signature_apikey_response_page: { required: true },
+            signature_merchantId_response_page: { required: true },
+            signature_referenceCode_response_page: { required: true },
+            signature_amount_response_page: { required: true, number: true },
+            signature_currency_response_page: { required: true },
+            signature_state_pol_response_page: { required: true }
         }
     });
 
-    // Función para volver a ejecutar  la función generar() de la pagina de respuesta
-    $("#signature_generate_again_response_page").click(function() {
-        if ($('#signature_form_response_page').valid()) 
-        {
-            var id = $(this).parent().attr('id');
-            console.log(id);
-            generar(id);
-
-        } 
-        else
-        {
-            console.log("notvalid")
-        }
-    });  
-    
-    // Función para ejecutar  la función generar() de la pagina de confirmación
-    $('#signature_generate_confirmation_page').click(function(){   
-        if ($('#signature_form_confirmation_page').valid()) 
-        {
-            var id = $(this).parent().attr('id');
-            console.log(id);
-            generar(id);
-        }         
-        else 
-        {
-            console.log("notvalid")
+    $('#signature_form_confirmation_page').validate({
+        rules: {
+            signature_apikey_confirmation_page: { required: true },
+            signature_merchantId_confirmation_page: { required: true },
+            signature_referenceCode_confirmation_page: { required: true },
+            signature_amount_confirmation_page: { required: true, number: true },
+            signature_currency_confirmation_page: { required: true },
+            signature_state_pol_confirmation_page: { required: true }
         }
     });
 
-    // Función para volver a ejecutar  la función generar() de la pagina de confirmación
-    $("#signature_generate_again_confirmation_page").click(function() {
-        if ($('#signature_form_confirmation_page').valid()) 
-        {
-            var id = $(this).parent().attr('id');
-            console.log(id);
-            generar(id);
+    // Event handlers
+    $('#signature_generate').click(() => {
+        if ($('#signature_form').valid()) generar("signature_form");
+    });
 
-        } 
-        else
-        {
-            console.log("notvalid")
-        }
-    });  
-   
+    $('#signature_generate_again').click(() => {
+        if ($('#signature_form').valid()) generar("signature_form");
+    });
+
+    $('#signature_generate_response_page').click(() => {
+        if ($('#signature_form_response_page').valid()) generar("signature_form_response_page");
+    });
+
+    $('#signature_generate_again_response_page').click(() => {
+        if ($('#signature_form_response_page').valid()) generar("signature_form_response_page");
+    });
+
+    $('#signature_generate_confirmation_page').click(() => {
+        if ($('#signature_form_confirmation_page').valid()) generar("signature_form_confirmation_page");
+    });
+
+    $('#signature_generate_again_confirmation_page').click(() => {
+        if ($('#signature_form_confirmation_page').valid()) generar("signature_form_confirmation_page");
+    });
 });

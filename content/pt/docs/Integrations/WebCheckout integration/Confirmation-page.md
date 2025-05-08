@@ -1,120 +1,122 @@
 ---
 title: "Página de Confirmação"
+linkTitle: "Página de Confirmação"
 date: 2021-03-29T12:15:57-05:00
 description: >
-  Esta página permite obter confirmações do sistema relacionadas com os resultados da transação. Você pode atualizar os inventários, ordens ou bancos de dados do seu sistema. Esta página não é visível para o cliente e seu objetivo é permitir a comunicação entre sistemas. Os dados são enviados por método HTTP POST.</br>ISe o pagador gerar novas tentativas de pagamento durante o processo de pagamento, uma página de confirmação será gerada para cada transação. Esta página é invocada para estados aprovados e rejeitados.
+  A página de confirmação facilita a comunicação entre sistemas, permitindo que você receba os resultados das transações e atualize seus estoques, pedidos ou bases de dados.
 weight: 30
 tags: ["subtopic"]
 ---
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
-<script src="/js/signature-generator/md5.js"></script>
-<script src="/js/signature-generator/sha1.js"></script>
-<script src="/js/signature-generator/sha256.js"></script>
-<script src="/js/signature-generator/signature-generator.js"></script>
 
-A página de confirmação permite que você atualize os bancos de dados em seu sistema, portanto não deve incluir código HTML, pois não é visível para o comprador. Esta página é opcional; quando uma transação é concluída (ou seja, quando aprovada, rejeitada ou cancelada) nossa plataforma envia as variáveis com o método HTTP POST.
+Esta página, invisível para os clientes, recebe dados via HTTP POST. É importante notar que, caso o pagador realize tentativas de pagamento, uma confirmação será gerada para cada transação, independentemente de ter sido aprovada ou rejeitada.
 
-Na página de confirmação, você deve capturar os dados que deseja armazenar no banco de dados. Essa captura depende da linguagem de programação que você usa.
+Como essa página é destinada exclusivamente à atualização do sistema e não é voltada ao cliente, ela não deve conter nenhum código HTML. Embora sua implementação seja opcional, ela é altamente recomendada para garantir que seu sistema reflita corretamente os resultados das transações.
 
-## Observações {#considerations}
-* Se o seu site for restrito com _basic access authentication_ ou semelhante, desative-o para a URL de confirmação.
-* O IP associado à URL de confirmação deve ser público; não use URL acessível pela intranet ou localhost.
-* Se estiver usando HTTPS, você deve ter um certificado válido.
-* O formato da sua página de confirmação deve ser `x-www-form-urlencoded`.
-* Não use certificados de segurança de curva elíptica ou que tenham o pacote de criptografia `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` na sua página de confirmação.
-* PayU reporta a página de confirmação quando a transação tem um status conclusivo, por exemplo, quando aprovada, rejeitada ou expirada. Se uma transação estiver em andamento (aguardando pagamento ou análise), PayU não reporta nada até que a transação tenha um status conclusivo.
+Ao finalizar uma transação (seja aprovada, rejeitada ou cancelada), nossa plataforma envia as variáveis relevantes para a URL da sua página de confirmação usando o método HTTP POST. Assim, é necessário implementar lógica do lado do servidor para capturar e processar esses dados de acordo com a linguagem de programação utilizada.
 
-## Lista de IPs Permitidos para os Servidores da PayU Latam
+## Considerações {#considerations}
 
-Para garantir uma comunicação fluida entre o seu servidor e os servidores da PayU Latam, é necessário adicionar nossos endereços IP à lista de permissões. Isso é especialmente importante se o seu servidor estiver protegido por um firewall. Todas as solicitações de webhook e comunicações dos servidores da PayU se originarão nos endereços IP listados abaixo.
+* **Desabilitar autenticação:** Caso seu site utilize autenticação básica de acesso ou medidas de segurança similares, certifique-se de desabilitá-las para a URL da página de confirmação, permitindo o acesso por parte da PayU.
+* **Endereço IP público:** O endereço IP associado à URL da sua página de confirmação deve ser público. Evite usar URLs acessíveis apenas por intranet ou localhost.
+* **Certificado HTTPS válido:** Se você estiver usando HTTPS para sua página de confirmação, é obrigatório utilizar um certificado SSL/TLS válido.
+* **Tipo de conteúdo:** A página de confirmação deve estar configurada para processar dados no formato `x-www-form-urlencoded`.
+* **Evitar certas configurações de segurança:** Não utilize certificados de segurança de curva elíptica nem a suíte de criptografia `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` para sua página de confirmação.
+* **Envio de status final da transação:** A PayU acionará a página de confirmação apenas quando uma transação alcançar um status final (por exemplo, aprovada, rejeitada ou expirada). Não serão enviados relatórios para transações ainda em andamento (aguardando pagamento ou análise).
 
-**Ambiente de Produção**
+## Lista de IPs permitidos para os servidores da PayU {#whitelist-of-ip-addresses-for-payu-servers}
+
+Para garantir que seu servidor receba as solicitações e notificações da PayU Latam, é necessário permitir nossos endereços IP. Isso é especialmente importante se seu servidor estiver protegido por um firewall. Todas as requisições webhook e comunicações provenientes dos servidores da PayU terão origem nos IPs listados abaixo.
+
+**Ambiente de produção**
 
 * 198.61.156.98
 * 190.216.203.233
 * 34.233.144.154
 
-**Ambiente de Sandbox**
+**Ambiente de sandbox**
 
 * 50.56.9.170
 * 74.205.10.14
 * 54.158.171.129
-
-Ao permitir esses endereços na sua lista de permissões, você garante que as solicitações e notificações da PayU sejam recebidas corretamente.
  
-## Variáveis enviadas com a página de confirmação {#variables-sent-with-the-confirmation-page}
+## Parâmetros {#parameters}
+
+A página de confirmação transmite os seguintes parâmetros via HTTP POST para o seu servidor:
 
 <details>
-<summary>Variáveis na página de confirmação</summary>
+
+<summary>Parâmetros</summary>
+
 <br>
+
 <div class="variables"></div>
 
 | Campo | Tipo | Tamanho | Descrição |
-|-|-|-|-|
-| merchant_id | Numérico | 12 | O número de identificação do vendedor no sistema PayU, você encontra este número no e-mail de criação de conta. |
-| state_pol | Alfanumérico | 32 | Indica o status da transação no sistema.<br>[Veja o status da transação na coluna fornecida]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
-| risk | Decimal (#.00) | — | Risco associado à transação. Valores entre 0 e 1.<br>Quanto maior o valor, maior o risco.<br>Formato `###.00`. |
-| response_code_pol | Alfanumérico | 255 | Código de resposta do PayU.<br>[Veja os códigos de resposta na coluna fornecida]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
-| reference_sale | Alfanumérico | 255 | Referência da venda ou ordem. Deve ser exclusiva para cada transação enviada ao sistema. |
-| reference_pol | Alfanumérico | 255 | O número de referência ou transação gerado pelo PayU. |
-| sign | Alfanumérico | 255 | Assinatura digital criada para cada uma das transações. |
-| extra1 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. |
-| extra2 | Alfanumérico | 255 | Campo adicional para envio de informações sobre a compra. |
-| payment_method | Numérico | — | O identificador interno do método de pagamento usado.<br>[Veja os códigos dos métodos de pagamento]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
-| payment_method_type | Numérico | — | O tipo de método de pagamento usado para pagar. |
-| installments_number | Numérico | — | Quantidade de parcelas em que o pagamento com cartão de crédito foi programado. |
-| value | Numérico | 14.2 | Valor total da transação. Ele pode conter dois dígitos decimais. Por exemplo, 10000.00 ou 10000 |
-| tax | Numérico | 14.2 | Valor do IVA da transação. Se for enviado IVA zero, o sistema aplicará automaticamente 19%. Ele pode conter dois dígitos decimais. Por exemplo: 19000.00. Caso você não tenha IVA, deve preencher 0. |
-| additional_value | Numérico | 14.2 | Valor Adicional Não Comissionado. |
-| transaction_date | Date(YYYY-MM-DD HH:mm:ss) | — | A data em que a transação foi feita. |
-| currency | Alfanumérico | 3 | A moeda em que o pagamento é feito.<br>[Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
-| email_buyer | Alfanumérico | 255 | Campo que contém o endereço de e-mail do comprador para notificar o resultado da transação. Recomenda-se validar quando os dados são extraídos de um formulário. |
-| cus | Alfanumérico | 64 | O CUS (unique tracking code) é a referência do pagamento dentro do Banco, válido apenas para pagamentos com PSE. |
-| pse_bank | Alfanumérico | 255 | O nome do banco, válido apenas para pagamentos com PSE. |
-| test | Boolean (true, false) | — | Variável para identificar se a operação foi um teste. |
-| description | Alfanumérico | 255 | Descrição da venda. |
-| billing_address | Alfanumérico | 255 | O endereço de cobrança |
-| shipping_address | Alfanumérico | 50 | O endereço de entrega da mercadoria. |
-| phone | Alfanumérico | 20 | O telefone residencial do comprador. |
-| office_phone | Alfanumérico | 20 |O telefone do comprador em horário comercial. |
-| account_number_ach | Alfanumérico | 36 | O identificador da transação. |
-| account_type_ach | Alfanumérico | 36 | O identificador da transação. |
-| administrative_fee | Decimal (#.00) | — | Valor da taxa administrativa | 
-| administrative_fee_base | Decimal (#.00) | — | Valor base da taxa administrativa |
-| administrative_fee_tax | Decimal (#.00) | — | Valor do imposto da taxa administrativa |
-| airline_code | Alfanumérico | 4 | Código da companhia aérea |
-| attempts | Numérico | — | Número de tentativas de envio da confirmação. |
-| authorization_code | Alfanumérico | 12 | Código de autorização de venda |
-| bank_id | Alfanumérico | 255 | Identificador do banco |
-| billing_city | Alfanumérico | 255 | Cidade de cobrança. |
-| billing_country | Alfanumérico | 2 | O código ISO do país associado ao endereço de cobrança. |
-| commision_pol | Decimal (#.00) | — | Valor da comissão. |
-| commision_pol_currency | Alfanumérico | 3 | Moeda da comissão |
-| customer_number | Numérico | — | Número do cliente. |
-| date | Date (YYYY-MM-DD HH:mm:ss) | — |Data da operação. |
-| error_code_bank | Alfanumérico | 255 | | error_code_bank | Alfanumérico | 255 | Código de erro do banco. |
-| error_message_bank | Alfanumérico | 255 | Mensagem de erro do banco |
-| exchange_rate | Decimal (#.00) | — | Valor da taxa de câmbio. |
-| ip | Alfanumérico | 39 | O endereço IP a partir do qual a transação foi feita. |
-| nickname_buyer | Alfanumérico | 150 | Nome abreviado do comprador. |
-| nickname_seller | Alfanumérico | 150 | Nome abreviado do vendedor. |
-| payment_method_id | Numérico | — | Identificador dos métodos de pagamento.<br>[Veja os códigos dos métodos de pagamento]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
-| payment_request_state | Alfanumérico | 32 | Status da solicitação de pagamento. |
-| pse_reference1 | Alfanumérico | 255 | Nº de referência 1 para pagamentos PSE. |
-| pse_reference2 | Alfanumérico | 255 | Nº de referência 2 para pagamentos PSE. |
-| pse_reference3 | Alfanumérico | 255 | Nº de referência 3 para pagamentos PSE. |
-| response_message_pol | Alfanumérico | 255 | Mensagem de resposta de PayU.<br>[Veja as mensagens de resposta na coluna disponível]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
-| shipping_city | Alfanumérico | 50 | A cidade onde a mercadoria é entregue. |
-| shipping_country | Alfanumérico | 2 | O código ISO associado ao país onde a mercadoria é entregue. |
-| transaction_bank_id | Alfanumérico | 255 | ID da transação no sistema do banco. |
-| transaction_id | Alfanumérico | 36 | Identificador da transação. |
-| payment_method_name | Alfa Numérico | 255 | Método de pagamento utilizado, por exemplo VISA. |
+|---|---|---|---|
+| `merchant_id`         | Numérico     | 12     | Seu ID de Comerciante no sistema da PayU. Pode ser encontrado no e-mail de criação da conta. |
+| `state_pol`           | Alfanumérico | 32     | Status da transação no sistema da PayU. [Veja os status de transação]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
+| `risk`                | Decimal      | —      | Pontuação de risco associada à transação, variando de 0 a 1. Um valor mais alto indica maior risco. Formato: `###.00`. |
+| `response_code_pol`   | Alfanumérico | 255    | Código interno de resposta da PayU para a transação. [Veja os códigos de resposta]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
+| `reference_sale`      | Alfanumérico | 255    | Sua referência única para a venda ou pedido. Deve ser distinta para cada transação enviada à PayU. |
+| `reference_pol`       | Alfanumérico | 255    | Referência única ou número de transação gerado pela PayU. |
+| `sign`                | Alfanumérico | 255    | Assinatura digital gerada pela PayU para esta transação específica, usada para validar a integridade dos dados. |
+| `extra1`              | Alfanumérico | 255    | Campo adicional para enviar informações complementares sobre a compra. |
+| `extra2`              | Alfanumérico | 255    | Campo adicional para enviar informações complementares sobre a compra. |
+| `payment_method`      | Numérico     | —      | Identificador interno da PayU para o método de pagamento utilizado. [Veja os códigos de métodos de pagamento]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
+| `payment_method_type` | Numérico     | —      | Tipo geral de método de pagamento utilizado (ex: cartão de crédito, transferência bancária). |
+| `installments_number` | Numérico     | —      | Número de parcelas escolhidas pelo comprador para pagamentos com cartão de crédito. |
+| `value`               | Numérico     | 14.2   | Valor total da transação, com até duas casas decimais (ex: 10000.00 ou 10000). |
+| `tax`                 | Numérico     | 14.2   | Valor do imposto (IVA) da transação. Aceita até duas casas decimais (ex: 19000.00). Use 0 se não houver imposto. <p><b>Nota:</b> Para transações na Colômbia, se for enviado valor zero, a PayU aplicará automaticamente o IVA padrão de 19%. |
+| `additional_value`    | Numérico     | 14.2   | Valor adicional que não faz parte do cálculo da comissão. |
+| `transaction_date`    | Data         | —      | Data e hora da transação (AAAA-MM-DD HH:mm:ss). |
+| `currency`            | Alfanumérico | 3      | Código da moeda na qual o pagamento foi realizado. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). |
+| `email_buyer`         | Alfanumérico | 255    | E-mail do comprador, usado para notificações sobre o resultado da transação. Recomenda-se validar este e-mail caso seja fornecido via formulário. |
+| `cus`                 | Alfanumérico | 64     | Código de Rastreamento Único, uma referência de pagamento dentro do banco, aplicável apenas para pagamentos PSE (transferência eletrônica na Colômbia). |
+| `pse_bank`            | Alfanumérico | 255    | Nome do banco utilizado para pagamentos via PSE. |
+| `test`                | Booleano     | —      | Indicador de teste, mostra se a transação foi um teste (true) ou uma transação real (false). |
+| `description`         | Alfanumérico | 255    | Descrição dos itens ou serviços adquiridos na venda. |
+| `billing_address`     | Alfanumérico | 255    | Endereço de cobrança do comprador. |
+| `shipping_address`    | Alfanumérico | 50     | Endereço de entrega da mercadoria. |
+| `phone`               | Alfanumérico | 20     | Número de telefone residencial do comprador. |
+| `office_phone`        | Alfanumérico | 20     | Número de telefone comercial do comprador. |
+| `account_number_ach`  | Alfanumérico | 36     | Identificador para transações ACH. |
+| `account_type_ach`    | Alfanumérico | 36     | Tipo de conta utilizada em transações ACH. |
+| `administrative_fee`  | Decimal      | —      | Valor da taxa administrativa associada à transação. |
+| `administrative_fee_base`| Decimal   | —      | Valor base utilizado para o cálculo da taxa administrativa. |
+| `administrative_fee_tax`| Decimal    | —      | Valor do imposto aplicado à taxa administrativa. |
+| `airline_code`        | Alfanumérico | 4      | Código da companhia aérea, se aplicável. |
+| `attempts`            | Numérico     | —      | Número de tentativas da PayU de enviar a confirmação ao seu servidor. |
+| `authorization_code`  | Alfanumérico | 12     | Código de autorização fornecido pelo banco emissor para a venda. |
+| `bank_id`             | Alfanumérico | 255    | Identificador do banco envolvido na transação. |
+| `billing_city`        | Alfanumérico | 255    | Cidade do endereço de cobrança do comprador. |
+| `billing_country`     | Alfanumérico | 2      | Código ISO 3166-1 alpha-2 do país do endereço de cobrança (ex: CO, US). |
+| `commision_pol`       | Decimal      | —      | Valor da comissão cobrada pela PayU. |
+| `commision_pol_currency`| Alfanumérico | 3    | Código da moeda da comissão. |
+| `customer_number`     | Numérico     | —      | Identificador do cliente, se fornecido. |
+| `date`                | Data         | —      | Data e hora da operação (AAAA-MM-DD HH:mm:ss). |
+| `error_code_bank`     | Alfanumérico | 255    | Código de erro retornado pelo banco, se houver. |
+| `error_message_bank`  | Alfanumérico | 255    | Mensagem de erro retornada pelo banco, se houver. |
+| `exchange_rate`       | Decimal      | —      | Taxa de câmbio utilizada na transação, se aplicável. |
+| `ip`                  | Alfanumérico | 39     | Endereço IP de onde o comprador iniciou a transação. |
+| `nickname_buyer`      | Alfanumérico | 150    | Identificador ou apelido curto do comprador, se disponível. |
+| `nickname_seller`     | Alfanumérico | 150    | Identificador ou apelido curto do vendedor (sua empresa), se disponível. |
+| `payment_method_id`   | Numérico     | —      | Outro identificador do método de pagamento utilizado. [Veja os códigos de métodos de pagamento]({{< ref "response-codes-and-variables.html#codes-of-the-payment-methods" >}}). |
+| `payment_request_state`| Alfanumérico | 32    | Estado atual da solicitação de pagamento no sistema da PayU. |
+| `pse_reference1`      | Alfanumérico | 255    | Informação de referência adicional para pagamentos PSE. |
+| `pse_reference2`      | Alfanumérico | 255    | Informação adicional complementar para pagamentos PSE. |
+| `pse_reference3`      | Alfanumérico | 255    | Informação de referência adicional extra para pagamentos PSE. |
+| `response_message_pol`| Alfanumérico | 255    | Mensagem legível da PayU referente à transação. [Veja as mensagens de resposta]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
+| `shipping_city`       | Alfanumérico | 50     | Cidade para onde a mercadoria será entregue. |
+| `shipping_country`    | Alfanumérico | 2      | Código ISO 3166-1 alpha-2 do país de destino da entrega (ex: CO, US). |
+| `transaction_bank_id` | Alfanumérico | 255    | Identificador único atribuído à transação pelo banco. |
+| `transaction_id`      | Alfanumérico | 36     | Identificador único da PayU para esta tentativa específica de transação. |
+| `payment_method_name` | Alfanumérico | 255    | Nome do método de pagamento utilizado (ex: VISA, MASTERCARD, PSE). |
 
 </details>
 
-## Exemplo de POST enviado para a página de confirmação {#post-example-send-to-the-confirmation-page}
-A seguir, veja um exemplo básico das variáveis enviadas para a página de resposta via POST:
+## Exemplo de requisição POST para a página de confirmação {#post-request-example-for-the-confirmation-page}
+
+O exemplo a seguir mostra como nosso sistema envia os parâmetros para sua página de confirmação usando uma requisição HTTP POST:
 
 ```HTML
 response_code_pol=5
@@ -176,118 +178,63 @@ pse_reference3=
 pse_reference2=
 ```
 
-## Validação de assinatura {#signature-validation}
-A validação da assinatura permite confirmar a integridade dos dados. Você deve gerar a assinatura com a informação da página de confirmação e compará-la com a informação do parâmetro assinatura.
+## Validação da assinatura {#signature-validation}
 
-Para validar a assinatura na página de confirmação, você deve considerar:
+A validação da assinatura garante a integridade dos dados recebidos na sua página de confirmação. Você deve gerar a assinatura utilizando os parâmetros fornecidos pela PayU e compará-la com o parâmetro `sign` enviado na requisição HTTP POST.
 
-* Se a segunda casa decimal for zero, o `new_value` para gerar a assinatura deve ter uma casa decimal. Exemplo (`150.00` -> `150.0`).
-* Se a segunda casa decimal não for zero, o `new_value` to generate para gerar a assinatura deve manter os mesmos dois decimais. Exemplo (`150.26` -> `150.26`).
-* Obtenha os parâmetros para gerar a assinatura (`merchant_id`, `reference_sale`, `value`, `currency` e `state_pol`) na página de confirmação, e não de seu banco de dados. 
-* Você deve armazenar sua ApiKey com segurança.
-* Crie a assinatura da seguinte forma:
+### Considerações importantes {#important-considerations}
 
-```HTML
-"ApiKey~merchant_id~reference_sale~new_value~currency~state_pol"
-```
-<br>
+* Se o segundo decimal do valor (`value`) for zero, formate o `new_value` com **uma casa decimal** (ex.: `150.00` → `150.0`).
+* Se o segundo decimal **não** for zero, mantenha duas casas decimais no `new_value` (ex.: `150.25` → `150.25`).
+* Sempre utilize os valores recebidos na página de confirmação (`merchant_id`, `reference_sale`, `value`, `currency` e `state_pol`) para gerar a assinatura. **Não** use os valores armazenados em sua própria base de dados.
+* Armazene sua chave de API com segurança.
+* Construa a string da assinatura no seguinte formato:
 
-Exemplo
+<p>
 
-**Com uma casa decimal**
+    apiKey~merchant_id~reference_sale~new_value~currency~state_pol
 
-```
-Sua apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
-Parâmetros obtidos na página de confirmação
-- merchant_id = 508029
-- reference_sale = TestPayU04
-- value = 150.00
-- currency = USD
-- state_pol = 6
+### Exemplos de assinatura
 
-A assinatura é gerada da seguinte maneira: 
-MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU04~150.0~USD~6) = b607a2c2fa100e0947b206d41864fb86
+Os exemplos a seguir ilustram como gerar uma assinatura, neste caso utilizando HMAC-SHA256.
 
-sign = b607a2c2fa100e0947b206d41864fb86
-```
+#### Assinatura com uma casa decimal
 
-**With two decimals**
+Use este exemplo quando o segundo decimal do `value` for `0`. Neste caso, formate o valor com apenas uma casa decimal.
 
-```
-Sua apiKey: 4Vj8eK4rloUd272L48hsrarnUA 
-Parâmetros obtidos na página de confirmação:
-- merchant_id = 508029
-- reference_sale = TestPayU05
-- value = 150.26
-- currency = USD
-- state_pol = 4
+| **Item** | **Valor** |
+|----------|-----------|
+| Parâmetros da string | `apiKey: 4Vj8eK4rloUd272L48hsrarnUA` <br> `merchant_id: 508029` <br> `reference_sale: PayUTest01` <br> `value: 150.00` <br> `currency: USD` <br> `state_pol: 4` |
+| String de entrada (formatada) | `4Vj8eK4rloUd272L48hsrarnUA~508029~PayUTest01~150.0~USD~4` |
+| Chave secreta (aplicável apenas a HMAC-SHA256) | `test123` |
+| `sign` gerado | `65fb2b3452572784e23e7d6480359fd2507c54dd285ca3c4dceffb8764cfb66f` |
 
-A assinatura é gerada da seguinte maneira: 
-MD5(4Vj8eK4rloUd272L48hsrarnUA~508029~TestPayU05~150.26~USD~4) = 1d95778a651e11a0ab93c2169a519cd6
+#### Assinatura com duas casas decimais
 
-sign = 1d95778a651e11a0ab93c2169a519cd6 
-```
+Use o exemplo a seguir quando o segundo decimal do `value` **não** for `0`. Formate o valor com duas casas decimais.
 
-### Compare a sua assinatura {#compare-your-signature}
+| **Item** | **Valor** |
+|----------|-----------|
+| Parâmetros da string | `apiKey: 4Vj8eK4rloUd272L48hsrarnUA` <br> `merchant_id: 508029` <br> `reference_sale: PayUTest01` <br> `value: 150.25` <br> `currency: USD` <br> `state_pol: 4` |
+| String de entrada (formatada) | `4Vj8eK4rloUd272L48hsrarnUA~508029~PayUTest01~150.25~USD~4` |
+| Chave secreta (aplicável apenas a HMAC-SHA256) | `test123` |
+| `sign` gerado | `7770a7933b90570a078fcacce1790eb13079cdf8f8a6e900b79f4f5eb96b8024` |
 
-<!-- Signature generator - confirmation page -->
-<div id="blue-box">
-<span class="grey-text-13">
+### Valide sua assinatura {#validate-your-signature}
+
+Use este gerador para criar uma assinatura com qualquer um dos métodos de criptografia disponíveis. Esta funcionalidade ajuda você a verificar o valor do `sign` que a PayU envia para sua página de confirmação.
+
 <div>
-<form method="POST" id="signature_form_confirmation_page" >
-    <table>
-        <span class="blue-text-13"><b>Algoritmo: &nbsp;</b></span>
-        <select id = "signature_algorithm_confirmation_page" class="calc_selector form_control">
-            <option  value="md5">MD5</option>
-            <option  value="sha1">SHA1</option>
-            <option  value="sha256">SHA256</option>
-        </select>
-        <br>
-        <br>
-        <span class="calc_text">&nbsp;(</span>
-        <input class="form_control" type="text"  id ="signature_apikey_confirmation_page" name = "signature_apikey_confirmation_page" placeholder="ApiKey" maxlength="26"> ~
-        <input class="form_control number" type="text"  id ="signature_merchanId_confirmation_page" name = "signature_merchanId_confirmation_page" placeholder="MerchantId" maxlength="7"> ~
-        <input class="form_control" type="text"  id ="signature_referenceCode_confirmation_page" name = "signature_referenceCode_confirmation_page" placeholder="Referência" maxlength="255"> ~
-        <input class="form_control  number" type="text" id ="signature_amount_confirmation_page" name = "signature_amount_confirmation_page" placeholder="Valor" maxlength="14"> ~
-        <select id = "signature_currency_confirmation_page" class="calc_selector form_control" >
-            <option  value="USD">USD</option>
-            <option  value="COP">COP</option>
-            <option  value="MXN">MXN</option>
-            <option  value="ARS">ARS</option>
-            <option  value="PEN">PEN</option>
-            <option  value="BRL">BRL</option>
-            <option  value="CLP">CLP</option>
-        </select> ~
-        <select id = "signature_state_pol_confirmation_page" class="calc_selector form_control" >
-            <option  value="4">4 (Aprovada)</option>
-            <option  value="6">6 (Rejeitada)</option>
-            <option  value="5">5 (Expirada)</option>
-        </select>
-        <span class="calc_text">)</span>
-        <br>
-        <br>
-        <br>
-        <span class="blue-text-13"><b>Resultado:&nbsp;</b></span><input class="form_control" id ="signature_generated_confirmation_page" name = "signature_generated_confirmation_page" value = ""  readonly />
-    </table>
-    <br>
-    <table width="50%"  border="0" cellspacing="2" cellpadding="2">
-        <input type="button" name="signature_generate_confirmation_page" id="signature_generate_confirmation_page" value="Gerar assinatura" >
-        <input type="button" name="signature_generate_again_confirmation_page" id="signature_generate_again_confirmation_page" value="Gerar nova assinatura" >
-    </table>
-</form>
+{{< confirmationpage/signaturegen_conf_en >}}
 </div>
-</span>
-</div>
-<!-- End of signature generator - confirmation page -->
 
-Esta calculadora permite gerar a assinatura usando qualquer um dos métodos de criptografia disponíveis.
+## Novas tentativas de pagamento {#payment-retries}
 
-## Payment retries {#payment-retries}
-Quando uma transação é rejeitada, o pagador tem a opção de repetir o pagamento usando o mesmo método ou outro. Lembre-se que a cada tentativa, PayU faz uma chamada para a página de confirmação com o status da transação correspondente.
+Quando uma transação é rejeitada, o pagador tem a opção de tentar novamente o pagamento utilizando o mesmo ou um método de pagamento diferente. Lembre-se de que, para cada tentativa, a PayU envia uma requisição para a página de confirmação com o respectivo status da transação.
 
-Cada uma dessas chamadas é feita com a mesma referência de pagamento (`reference_sale`), o mesmo identificador de ordem (`reference_pol`), mas com identificador de transação diferente (`transaction_id`). Portanto, você pode receber várias chamadas na página de confirmação da mesma venda.
+Cada uma dessas requisições utiliza a mesma referência de pagamento (`reference_sale`) e o mesmo identificador de pedido (`reference_pol`), mas inclui um identificador de transação (`transaction_id`) diferente. Como resultado, você pode receber múltiplas chamadas à página de confirmação para a mesma venda.
 
-Abaixo, você encontra um exemplo de uma tentativa rejeitada e a nova tentativa aprovada:
+Abaixo está um exemplo mostrando uma tentativa rejeitada seguida de uma nova tentativa aprovada:
 
 ````
 reference_sale=2015-05-27 13:04:37
@@ -301,4 +248,8 @@ transaction_id=01cfdce8-68d5-4a4c-aabf-d89370a0b92f
 state_pol=4
 ````
 
-Observe que se uma dessas chamadas para a página de confirmação indicar que uma referência de pagamento (`reference_sale`) foi aprovada, você pode ter certeza de que não receberá nenhum relatório para a mesma referência.
+{{% alert title="Observação" color="info"%}}
+
+Se qualquer uma das requisições à página de confirmação indicar que uma referência de pagamento (`reference_sale`) foi aprovada, você pode ter certeza de que nenhum outro relatório será enviado para essa mesma referência.
+
+{{% /alert %}}

@@ -355,8 +355,6 @@ Para más detalles sobre la configuración de tarjetas [co-branded](https://help
 
 5. Haz clic en **Guardar**. Después de crear el pago personalizado, serás redirigido a la opción para crear una **Condición de pago**. Sigue las instrucciones en la sección [Configuración de Tarjetas de Crédito o Débito](#configuring-credit-or-debit-cards) para completar este paso.
 
-<!--
-
 ##### Configuración de Google Pay {#configuring-google-pay}
 
 Google Pay es una billetera digital que permite a los clientes completar transacciones de forma rápida y segura utilizando las tarjetas guardadas en sus cuentas de Google. Integrar Google Pay en tu tienda VTEX a través de PayU ayuda a mejorar la experiencia de compra, reducir la fricción en el proceso de pago y aumentar las tasas de conversión.
@@ -392,8 +390,6 @@ Cuando los clientes pagan con Google Pay, PayU procesa la transacción como un p
 Una vez activado, Google Pay estará disponible como opción de pago en el checkout de tu tienda. Puede tardar hasta 10 minutos en aparecer como método de pago.
 
 Para más información y buenas prácticas, consulta la guía oficial de VTEX sobre cómo habilitar billeteras digitales en el <a href="https://help.vtex.com/en/tracks/digital-wallet-e-wallet" target="_blank">Centro de ayuda de VTEX</a>.
-
--->
 
 ##### Configuración de Métodos de Pago en Efectivo {#configuring-cash-payment-methods}
 

@@ -597,6 +597,7 @@ highlight-wrapper {
     min-width: 120px;
     padding: 7px 30px;
     border: solid;
+    visibility: visible !important;
 }
 
 #signature_generate_again_confirmation_page{
@@ -612,23 +613,16 @@ highlight-wrapper {
     min-width: 120px;
     padding: 7px 30px;
     border: solid;
-}
-
-#signature_generate_again{
-    visibility: hidden;
-}
-
-#signature_generate_again_response_page{
-    visibility: hidden;
-}
-
- #signature_generate_again_confirmation_page{
-    visibility: hidden;
+    visibility: visible !important;
 }
 
 #signature_generate:hover{
     background: #438f29;
     color: white;
+}
+
+#signature_generate_again {
+    visibility: hidden;
 }
 
 #signature_generate_response_page:hover{

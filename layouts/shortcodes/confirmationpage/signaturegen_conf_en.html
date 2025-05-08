@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Confirmation Signature Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        #grey-box {
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .grey-text-13 {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .green-text-13 {
+            font-size: 13px;
+            color: #A6C307;
+            font-weight: bold;
+        }
+
+        .form_control {
+            width: 350px;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .calc_text {
+            font-size: 13px;
+            color: #333;
+        }
+
+        #signature_form_confirmation_page table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #signature_form_confirmation_page table td {
+            padding: 2px 6px;
+            vertical-align: middle !important;            
+        }
+
+        #signature_form_confirmation_page table td:first-child {
+            padding-right: 5px;
+        }
+
+        #signature_generate_confirmation_page,
+        #signature_generate_again_confirmation_page {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        #signature_generate_confirmation_page {
+            background-color: #6b9e0dd8;
+            margin-left: 6px;
+        }
+
+        #signature_generate_again_confirmation_page {
+            background-color: #007bff;
+            margin-left: 6px;
+        }
+
+        #signature_generate_confirmation_page:hover,
+        #signature_generate_again_confirmation_page:hover {
+            opacity: 0.9;
+        }
+
+        #hmac_key_row_confirmation_page td:first-child {
+            padding-top: 13px; /* Add padding to the label like in the payment form */
+        }
+
+        #signature_algorithm_confirmation_page.calc_selector.form_control {
+            width: 750px !important;
+            vertical-align: bottom !important;
+        }
+
+        #signature_merchantId_confirmation_page {
+            width: 90px !important;
+        }
+
+        #signature_amount_confirmation_page {
+            width: 75px !important;
+        }
+
+        #signature_apikey_confirmation_page {
+            width: 180px !important;
+        }
+
+        #signature_state_pol_confirmation_page {
+          width: 120px !important;
+        }
+
+        #signature_currency_confirmation_page {
+          width: 75px !important;
+        }
+
+        #signature_algorithm_confirmation_page,
+        #signature_currency_confirmation_page,
+        #signature_state_pol_confirmation_page {
+            height: 36px;
+            line-height: 36px;
+            padding: 0 8px;
+            font-size: 13px;
+        }
+
+        #signature_form_confirmation_page table tr:last-child td {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+
+        #signature_form_confirmation_page table tr:last-child td:first-child {
+            white-space: nowrap;
+            padding-right: 4px;
+            width: 1%;
+        }
+
+        .form_control::placeholder {
+            color: #aaa !important;
+            font-family: 'Roboto';
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="grey-box">
+        <span class="grey-text-13">
+            <div>
+                <form method="POST" id="signature_form_confirmation_page">
+                    <table>
+                        <tr>
+                            <td><span class="green-text-13"><b>Algorithm:</b></span></td>
+                            <td>
+                                <select id="signature_algorithm_confirmation_page" class="calc_selector form_control">
+                                    <option value="md5">MD5</option>
+                                    <option value="sha1">SHA1</option>
+                                    <option value="sha256">SHA256</option>
+                                    <option value="hmac-sha256">HMAC-SHA256</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="hmac_key_row_confirmation_page" style="display: none;">
+                          <td><label for="signature_hmac_key_confirmation_page" class="green-text-13"><b>Secret key:</b></label></td>
+                          <td>
+                              <input
+                                  type="text"
+                                  id="signature_hmac_key_confirmation_page"
+                                  name="signature_hmac_key_confirmation_page"
+                                  class="form_control"
+                                  placeholder="Enter HMAC key"
+                                  maxlength="64"
+                              />
+                          </td>
+                      </tr>
+                        <tr>
+                            <td colspan="2">
+                                <br />
+                                <span class="calc_text">(</span>
+                                <input class="form_control" type="text" id="signature_apikey_confirmation_page" name="signature_apikey_confirmation_page" placeholder="API key" maxlength="26"> ~
+                                <input class="form_control number" type="text" id="signature_merchantId_confirmation_page" name="signature_merchantId_confirmation_page" placeholder="Merchant ID" maxlength="7"> ~
+                                <input class="form_control" type="text" id="signature_referenceCode_confirmation_page" name="signature_referenceCode_confirmation_page" placeholder="Reference" maxlength="255"> ~
+                                <input class="form_control number" type="text" id="signature_amount_confirmation_page" name="signature_amount_confirmation_page" placeholder="Amount" maxlength="14"> ~
+                                <select id="signature_currency_confirmation_page" class="calc_selector form_control" >
+                                    <option value="USD">USD</option>
+                                    <option value="COP">COP</option>
+                                    <option value="MXN">MXN</option>
+                                    <option value="ARS">ARS</option>
+                                    <option value="PEN">PEN</option>
+                                    <option value="BRL">BRL</option>
+                                    <option value="CLP">CLP</option>
+                                </select> ~
+                                <select id="signature_state_pol_confirmation_page" class="calc_selector form_control" >
+                                    <option value="4">4 (Approved)</option>
+                                    <option value="6">6 (Declined)</option>
+                                    <option value="5">5 (Expired)</option>
+                                </select>
+                                <span class="calc_text">)</span>
+                                <br /><br />
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div>
+                        <input type="button" name="signature_generate_confirmation_page" id="signature_generate_confirmation_page" value="Generate signature" >
+                        <input type="button" name="signature_generate_again_confirmation_page" id="signature_generate_again_confirmation_page" value="Generate new signature" >
+                    </div>
+                    <br>
+                    <table>
+                        <tr>
+                            <td><span class="green-text-13"><b>Result:</b></span></td>
+                            <td><input class="form_control" id="signature_generated_confirmation_page" name="signature_generated_confirmation_page" value="" readonly /></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </span>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="/js/signature-generator/md5.js"></script>
+    <script src="/js/signature-generator/sha1.js"></script>
+    <script src="/js/signature-generator/sha256.js"></script>   
+    <script src="/js/signature-generator/signature-generator.js"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const algorithmSelect = document.getElementById('signature_algorithm_confirmation_page');
+          const hmacKeyRow = document.getElementById('hmac_key_row_confirmation_page');
+  
+          function toggleHmacKeyVisibility() {
+              hmacKeyRow.style.display = algorithmSelect.value === 'hmac-sha256' ? '' : 'none';
+          }
+  
+          algorithmSelect.addEventListener('change', toggleHmacKeyVisibility);
+          toggleHmacKeyVisibility(); // Initialize on load
+      });
+    </script>
+
+</body>
+</html>
