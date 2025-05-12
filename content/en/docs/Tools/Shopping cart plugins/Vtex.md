@@ -25,11 +25,11 @@ The table below outlines VTEX’s availability by country and the supported paym
 | Country | Credit Cards | Cash Payments | Other Methods |
 |-|-|-|-|
 | <img src="/assets/Argentina.png" width="20px"/> &nbsp;Argentina &nbsp; | Credit cards | Cash payments | - |
-| <img src="/assets/Brasil.png" width="20px"/> &nbsp;Brazil | AMEX, MasterCard, Visa | Boleto Bancário | - |
-| <img src="/assets/Colombia.png" width="20px"/> &nbsp;Colombia &nbsp; | AMEX, Codensa, Diners, MasterCard, Visa | Efecty, Su Red, bank reference | PSE |
+| <img src="/assets/Brasil.png" width="20px"/> &nbsp;Brazil | AMEX, MasterCard, Visa, Google Pay | Boleto Bancário | - |
+| <img src="/assets/Colombia.png" width="20px"/> &nbsp;Colombia &nbsp; | AMEX, Codensa, Diners, MasterCard, Visa, Google Pay | Efecty, Su Red, bank reference | PSE, Nequi |
 | <img src="/assets/Chile.png" width="20px"/> &nbsp;Chile | Credit cards | Cash payments | - |
 | <img src="/assets/Mexico.png" width="20px"/> &nbsp;Mexico | Credit cards | Cash payments | SPEI |
-| <img src="/assets/Peru.png" width="20px"/> &nbsp;Peru | AMEX, MasterCard, Visa | - | - |
+| <img src="/assets/Peru.png" width="20px"/> &nbsp;Peru | AMEX, MasterCard, Visa | - | Yape |
 
 ## Activating Your PayU Enterprise Account (Live Mode)
 
@@ -254,17 +254,17 @@ Connector information can be obtained from either:
 
 | Field | Description |
 |---|---|
-| Affiliation name | The name used to identify the **Gateway affiliation**. |
-| Environment selector | Select the environment for processing transactions.<br>Ensure that all parameters match the selected environment in PayU Enterprise. |
-| Application Key | App ID of the **Business Unit**. |
-| Application Token | Private API Key of the **Business Unit**. |
-| Payment capture | Choose how to settle (charge) payments:<br><ul style="margin-bottom: initial;"><li>For a one-step flow, select `Automatic capture immediately after payment authorization`.</li><li>For a two-step flow, select `Deactivated: Not automatically captured` to settle payments upon invoicing.</li><li>To schedule automatic capture, select `Scheduled: Schedules the automatic capture`, and define a capture timeframe in hours.</li></ul><br>For more details, refer to [Custom Auto Capture Feature](https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature).<br>The default auto-capture timeframe is seven (7) days after approval. |
-| Scheduled time frame in hours for automatic capture | Available when `Scheduled: Schedules the automatic capture` is selected. Define the automatic capture timeframe (integer values only; no decimals allowed). |
+| App key | App ID of the **Business Unit**. |
+| App token | Private API key of the **Business Unit**. |
+| Name | Name used to identify the **Gateway affiliation**. |
+| Enable test mode | Check this box to perform test transactions. |
+| Automatic settlement | Choose how to settle (charge) payments:<br><ul style="margin-bottom: initial;"><li>For a one-step flow, select `Automatic capture immediately after payment authorization`.</li><li>For a two-step flow, select `Deactivated: Not automatically captured` to settle payments upon invoicing.</li><li>To schedule automatic capture, select `Scheduled: Schedules the automatic capture`, and define a capture timeframe in hours.</li></ul><br>For more details, refer to [Custom Auto Capture Feature](https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature).<br>The default auto-capture timeframe is seven (7) days after approval. |
+| Enable payout split and send payment recipients? | Select `No`. |
 | Tipo Autorizacion | Choose between one-step and two-step payment flows:<br><ul style="margin-bottom: initial;"><li>For a one-step flow, select `Autorización y Captura`.</li><li>For a two-step flow, select `Pre-Autorización`.</li></ul><br>Refer to [Payment flows]({{< ref "payments.md#payment-flows" >}}) for more information. |
-| Public Key | Public API Key of the **Business Unit**. |
+| Tipo de devolución | Determines how the refund is processed when a return is initiated from VTEX:<br><ul style="margin-bottom: initial;"><li>Select `Automático siempre que sea posible` to request the refund automatically through PayU, processed by the card issuer. This option applies only to card payments.</li><li>Select `Manual a cargo del comercio` to handle the refund manually using alternative methods (e.g., cash, store credit, or product exchanges).</li></ul><br> |
+| Public Key | Public API key of the **Business Unit**. |
 | Idioma | Select the language for order issuance. Supported languages:<br><ul style="margin-bottom: initial;"><li>Spanish</li><li>English</li><li>Portuguese</li></ul> |
 | Expiración pago (días) | Defines the validity period for cash payments.<br>**Important:** This value must match the **Promissory note validity** field in the [Configure cash payment methods]({{< ref "#configuring-cash-payment-methods" >}}) section. |
-| Enable payout split and send payment recipients? | Select `No`. |
 
 4. Click **Save** to complete the setup.
 
@@ -393,17 +393,18 @@ Once activated, Google Pay will be available as a payment option at your store�
 
 For more information and best practices, refer to VTEX’s official guide on enabling digital wallets on the  <a href="https://help.vtex.com/en/tracks/digital-wallet-e-wallet" target="_blank">VTEX Help Center</a>.
 
-##### Configuring Cash Payment Methods
+##### Configuring Cash Payment Methods and Wallets
 
 Since cash payments require customers to pay at physical locations, you can configure this payment method in VTEX as promissory notes (Notes Payables). 
 
-{{% alert title="Note" color="info"%}}
-
-For _Boleto Bancário_ in Brazil, this procedure is not required. Simply locate and configure this payment method as a payment condition.
-
-{{% /alert %}}
-
 When you configure a cash payment method, customers are redirected to PayU's checkout, where they can download the payment voucher and pay it at the corresponding physical location. Follow the instructions below to add this payment method to your VTEX shop.
+
+**Considerations:**
+
+* Ensure that all payment methods and digital wallets you intend to configure are enabled in your PayU account, and that **their names exactly match the ones registered with PayU**. Mismatched or inactive methods will cause transaction errors. If you need assistance enabling specific payment methods or wallets, <a href="https://colombia.support.payu.com/s/?language=en_US" target="_blank" rel="noopener noreferrer">contact us</a>.
+* To enable **Yape** as a payment method in Peru, ensure your VTEX store is built with VTEX IO or Faststore, and that the following app is installed: <a href="https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup" target="_blank" rel="noopener noreferrer">
+  Yape Payment App for PayU V2</a>
+* For **Boleto Bancário** in Brazil, this procedure is not required. Simply locate and configure this payment method as a payment condition.
 
 **Step by Step:**
 
@@ -422,6 +423,12 @@ When you configure a cash payment method, customers are redirected to PayU's che
 * **Name**: Use the value listed [here]({{< ref "select-your-payment-method.html" >}}) in the `paymentMethod parameter` column. For this example, enter `OXXO`.
    * **Description**: Enter a description to display when the customer selects this payment method (optional).
    * **Notes Payable Expiration Date**: Specify the number of days before the cash payment expires. The default is 7 days. Ensure this value matches the **Payment Expiration (days)** setting configured in the VTEX affiliation to prevent processing issues.
+
+    {{% alert title="Note" color="info"%}} 
+
+For Yape or Nequi, make sure to enter the **Name** in uppercase letters exactly as follows: `YAPE`, `NEQUI`.
+
+{{% /alert %}}
 
 Leave the remaining fields with their default values. 
 
