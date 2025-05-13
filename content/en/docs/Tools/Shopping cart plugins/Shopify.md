@@ -43,13 +43,24 @@ Take into account the following provisions when managing orders in Shopify:
 <img src="/assets/Shopify/Shopify03EN.png" alt="PrintScreen" width="700">
 <p></p>
 
-3. Choose the desired environment for the app installation—either the Test Environment or the Production Environment. Then, input your Merchant ID and Account ID and select **Save** to confirm. 
+3. Choose the environment for the app installation—Test or Production—based on your intended usage:
+
+* Use the **Test Environment** if you're running test transactions with sandbox credentials.
+* Use the **Production Environment** only if you're ready to process real payments with live credentials.
+
+{{% alert title="Important" color="warning"%}}
+
+Ensure that you do not use test credentials in the production environment, or vice versa. This may result in errors or failed transactions.
+
+{{% /alert %}}
+
+After selecting the correct environment, input your **Merchant ID** and **Account ID**, then click **Save** to confirm.
 
 <img src="/assets/Shopify/Shopify04EN.png" alt="PrintScreen" width="500">
 <p></p>
 
 {{% alert title="Note" color="info"%}}
-* Find your production environment credentials by logging into your PayU administrative module, where you can locate the Merchant ID and Account ID in the top left corner of the module.
+* Find your production environment credentials by logging into your PayU administrative panel, where you can locate the **Merchant ID** and **Account ID** in the top left corner of the module.
 
 <img src="/assets/Shopify/Shopify05EN.png" alt="PrintScreen" width="240">
 <p></p>

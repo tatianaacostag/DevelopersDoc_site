@@ -43,7 +43,18 @@ Ten en cuenta las siguientes disposiciones al gestionar órdenes en Shopify:
 <img src="/assets/Shopify/Shopify03ES.png" alt="PrintScreen" width="700">
 <p></p>
 
-3. Elige el entorno deseado para la instalación de la aplicación: ya sea el Entorno de Pruebas (Test Environment) o el Entorno de Producción (Production Environment). Luego, ingresa tu Merchant ID y Account ID, y selecciona **Save** para confirmar.
+3. Elige el entorno para la instalación de la aplicación — Pruebas o Producción — según el uso que le vayas a dar:
+
+* Usa el **Entorno de Pruebas (Test Environment)** si vas a realizar transacciones de prueba con credenciales de sandbox.
+* Usa el **Entorno de Producción (Production Environment)** solo si estás listo para procesar pagos reales con credenciales activas.
+
+{{% alert title="Importante" color="warning"%}}
+
+Asegúrate de no usar credenciales de prueba en el entorno de producción, ni viceversa. Esto puede generar errores o transacciones fallidas.
+
+{{% /alert %}}
+
+Después de seleccionar el entorno correcto, ingresa tu **Merchant ID** y **Account ID**, y haz clic en **Guardar** para confirmar.
 
 <img src="/assets/Shopify/Shopify04EN.png" alt="PrintScreen" width="500">
 <p></p>

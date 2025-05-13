@@ -188,26 +188,25 @@ Você pode usar os seguintes cartões para teste:
 
 ### Testando Status {#testing-statuses}
 
-Ao testar pagamentos, certifique-se de incluir os seguintes valores na requisição de acordo com o status desejado:
+Ao testar pagamentos, use os seguintes valores na sua requisição conforme o status que deseja simular:
 
-* **Para obter transações _aprovadas_**: 
+* **Para simular transações _aprovadas_**:
   - Inclua `APPROVED` no nome do titular do cartão.
-  - Use **777** como o CVV do cartão (para AMEX, use **7777**).
-  - O parâmetro `test` e a descrição também influenciam o status. Se não funcionar com `test` configurado como _false_, altere o valor para _true_.
-  - Ao inserir a data de validade do cartão, certifique-se de que o mês seja **menor** que `6` e que o ano seja posterior ao ano atual. Por exemplo: `05/202_`.
-<p>
+  - Use **777** como o CVV do cartão (para cartões AMEX, use **7777**).
+  - O parâmetro `test` e a descrição da transação também podem influenciar o resultado. Se não funcionar com `test` definido como _false_, tente definir como _true_.
+  - Para a data de validade do cartão, use um mês **menor que** `6` e um ano posterior ao atual (exemplo: `05/202_`).
 
-* **Para obter transações _recusadas_**: 
+* **Para simular transações _recusadas_**:
   - Inclua `REJECTED` no nome do titular do cartão.
-  - Use **666** como o CVV do cartão (para AMEX, use **666**).
-  - O parâmetro `test` e a descrição também influenciam o status. Se não funcionar com `test` configurado como _false_, altere o valor para _true_.
-  - Ao inserir a data de validade do cartão, certifique-se de que o mês seja **maior** que `6` e que o ano seja posterior ao ano atual. Por exemplo: `07/202_`.
+  - Use **666** como o CVV do cartão (para cartões AMEX, use **666**).
+  - O parâmetro `test` e a descrição da transação também podem influenciar o resultado. Se não funcionar com `test` definido como _false_, tente definir como _true_.
+  - Para a data de validade do cartão, use um mês **maior que** `6` e um ano posterior ao atual (exemplo: `07/202_`).
 
-<!--* **Para obter transações _pendentes_**: 
-  - Envie `PENDING` no nome do titular do cartão.
-  - Envie **777** como o CVV do cartão (para AMEX, use **7777**).
-  - Envie o parâmetro `test` como _true_.
-  - Na informação do comprador e do pagador, insira o e-mail `manual-review-hub@email.com`.-->
+* **Para simular transações _pendentes_**:
+  - Inclua `PENDING` no nome do titular do cartão.
+  - Use **777** como o CVV do cartão (para cartões AMEX, use **7777**).
+  - Defina o parâmetro `test` como _true_.
+  - Nas informações do comprador e do pagador, use o e-mail `manual-review-hub@email.com`.
 
 * **Para o número do cartão**, use um número válido que corresponda à bandeira enviada na requisição. Você pode usar um gerador online de cartões de crédito ou selecionar um dos cartões para seu país mencionados anteriormente.
 

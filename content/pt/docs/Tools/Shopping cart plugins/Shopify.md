@@ -43,7 +43,18 @@ Tenha em mente as seguintes disposições ao gerenciar pedidos no Shopify:
 <img src="/assets/Shopify/Shopify03PT.png" alt="PrintScreen" width="700">
 <p></p>
 
-3. Escolha o ambiente desejado para a instalação da aplicação: Ambiente de Teste (Test Environment) ou Ambiente de Produção (Production Environment). Em seguida, insira seu Merchant ID e Account ID e selecione **Save** para confirmar.
+3. Escolha o ambiente para a instalação do aplicativo — Teste ou Produção — com base no uso desejado:
+
+* Use o **Ambiente de Teste** se estiver realizando transações de teste com credenciais sandbox.
+* Use o **Ambiente de Produção** apenas se estiver pronto para processar pagamentos reais com credenciais ativas.
+
+{{% alert title="Importante" color="warning"%}}
+
+Certifique-se de não usar credenciais de teste no ambiente de produção, ou vice-versa. Isso pode resultar em erros ou falhas nas transações.
+
+{{% /alert %}}
+
+Após selecionar o ambiente correto, insira seu **Merchant ID** e **Account ID**, e clique em **Salvar** para confirmar.
 
 <img src="/assets/Shopify/Shopify04EN.png" alt="PrintScreen" width="500">
 <p></p>

@@ -188,26 +188,25 @@ Puedes utilizar las siguientes tarjetas de prueba:
 
 ### Probar Estados {#testing-statuses}
 
-Cuando realices pruebas de pagos, asegúrate de enviar en el request los siguientes valores según el estado deseado:
+Al probar pagos, utiliza los siguientes valores en tu solicitud según el estado que desees simular:
 
-* **Para obtener transacciones _aprobadas_**: 
-  - Incluye `APPROVED` en el nombre del tarjetahabiente.
-  - Utiliza **777** como el CVV de la tarjeta (para AMEX, utiliza **7777**).
-  - El parámetro `test` y la descripción también influyen en el estado. Si no funciona con `test` configurado como _false_, cambia su valor a _true_.
-  - Al ingresar la fecha de expiración de la tarjeta, asegúrate de que el mes sea **menor** a `6` y el año sea posterior al año actual. Por ejemplo: `05/202_`.
-<p>
+* **Para simular transacciones _aprobadas_**:
+  - Incluye `APPROVED` en el nombre del titular de la tarjeta.
+  - Usa **777** como el CVV de la tarjeta (para tarjetas AMEX, usa **7777**).
+  - El parámetro `test` y la descripción de la transacción también pueden influir en el resultado. Si no funciona con `test` en _false_, intenta configurarlo en _true_.
+  - Para la fecha de vencimiento de la tarjeta, usa un mes **menor que** `6` y un año posterior al actual (por ejemplo, `05/202_`).
 
-* **Para obtener transacciones _declinadas_**: 
-  - Incluye `REJECTED` en el nombre del tarjetahabiente.
-  - Utiliza **666** como el CVV de la tarjeta (para AMEX, utiliza **666**).
-  - El parámetro `test` y la descripción también influyen en el estado. Si no funciona con `test` configurado como _false_, cambia su valor a _true_.
-  - Al ingresar la fecha de expiración de la tarjeta, asegúrate de que el mes sea **mayor** a `6` y el año sea posterior al año actual. Por ejemplo: `07/202_`.
+* **Para simular transacciones _rechazadas_**:
+  - Incluye `REJECTED` en el nombre del titular de la tarjeta.
+  - Usa **666** como el CVV de la tarjeta (para tarjetas AMEX, usa **666**).
+  - El parámetro `test` y la descripción de la transacción también pueden influir en el resultado. Si no funciona con `test` en _false_, intenta configurarlo en _true_.
+  - Para la fecha de vencimiento de la tarjeta, usa un mes **mayor que** `6` y un año posterior al actual (por ejemplo, `07/202_`).
 
-<!--* **Para obtener transacciones _pendientes_**: 
-  - Envía `PENDING` en el nombre del tarjetahabiente.
-  - Envía **777** en el CVV de la tarjeta (para AMEX, utiliza **7777**).
-  - Envía el parámetro `test` como _true_.
-  - En la información del comprador y el pagador, asigna la dirección de correo electrónico `manual-review-hub@email.com`.-->
+* **Para simular transacciones _pendientes_**:
+  - Incluye `PENDING` en el nombre del titular de la tarjeta.
+  - Usa **777** como el CVV de la tarjeta (para tarjetas AMEX, usa **7777**).
+  - Configura el parámetro `test` en _true_.
+  - En la información del comprador y del pagador, utiliza la dirección de correo electrónico `manual-review-hub@email.com`.
 
 * **Para el número de la tarjeta**, utiliza uno válido que corresponda a la franquicia enviada en el request. Puedes usar un generador en línea de tarjetas de crédito o seleccionar una de las tarjetas correspondientes a tu país mencionadas anteriormente.
 
