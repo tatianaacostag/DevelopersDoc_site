@@ -145,6 +145,9 @@ Two-step flow is available under request, contact your sales representative.
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
 | transaction > extraParameters | Object | | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
+| transaction > extraParameters > EXTRA1 | Alphanumeric | Max:255 | Additional field to send extra information about the purchase. | No |
+| transaction > extraParameters > EXTRA2 | Alphanumeric | Max:255 | Additional field to send extra information about the purchase. | No |
+| transaction > extraParameters > EXTRA3 | Alphanumeric | Max:255 | Additional field to send extra information about the purchase. | No |
 | transaction > threeDomainSecure | Object | | This object contains the information of 3DS 2.0. | No |
 | transaction > threeDomainSecure > embedded | Boolean | | Set `true` if you want to use and embedded MPI for the Authorization process. By default, this value is set as `false`. | No |
 | transaction > threeDomainSecure > eci | Number | Max:2 | Electronic Commerce Indicator.<br>Value returned by the directory servers showing the authentication attempt.<br>This parameter is mandatory when `transaction.threeDomainSecure.embedded` is `false` and `transaction.threeDomainSecure.xid` has been set. | No |
