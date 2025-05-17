@@ -69,7 +69,9 @@ Antes de solicitar un reembolso, ten en cuenta las siguientes consideraciones es
 - Los reembolsos con montos decimales **no están soportados**.
 - Una vez aprobado un reembolso, el pagador recibe los fondos **entre 8 y 20 días hábiles**.
 - Los **reembolsos parciales** en transacciones con **cuotas** se reciben en línea pero se procesan manualmente debido a restricciones del adquirente.
-- El monto mínimo para un reembolso es **10 CLP**.
+- El monto mínimo para realizar un reembolso depende de la red adquirente:
+    - **Más de 10 CLP** para transacciones procesadas por la red **TRANSBANK**.
+    - **Más de 50 CLP** para transacciones procesadas por la red **KLAP**.
 
 ### Colombia
 

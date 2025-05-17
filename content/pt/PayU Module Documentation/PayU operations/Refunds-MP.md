@@ -67,7 +67,9 @@ Antes de solicitar um reembolso, leve em conta as seguintes considerações espe
 - Reembolsos com valores decimais **não são suportados**.
 - Uma vez aprovado o reembolso, o pagador recebe os fundos **dentro de 8 a 20 dias úteis**.
 - **Reembolsos parciais** para transações com **parcelamento** são recebidos online, mas processados manualmente devido a restrições do adquirente.
-- O valor mínimo para reembolso é **10 CLP**.
+- O valor mínimo para realizar um reembolso depende da rede adquirente:
+    - **Mais de 10 CLP** para transações processadas pela rede **TRANSBANK**.
+    - **Mais de 50 CLP** para transações processadas pela rede **KLAP**.
 
 ### Colômbia
 - Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até **357 dias**.

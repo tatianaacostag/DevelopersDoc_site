@@ -53,7 +53,9 @@ Before using the Voids and Refunds API, keep the following country-specific cons
 - Refunds with decimal amounts are **not supported**.
 - Once a refund is approved, the payer receives the funds **within 8 to 20 working days**.
 - **Partial refunds** for transactions with **installments** are received online but processed manually due to acquirer restrictions.
-- The minimum refund amount is **10 CLP**.
+- The minimum refund amount depends on the acquiring network:
+    - **More than 10 CLP** for transactions processed by the **TRANSBANK** network.
+    - **More than 50 CLP** for transactions processed by the **KLAP** network.
 
 ### Colombia
 

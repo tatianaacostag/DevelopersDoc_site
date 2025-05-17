@@ -236,17 +236,17 @@ Antes de criar o novo provedor, certifique-se de ter configurado o fingerprint p
 
 {{% alert title="Importante" color="warning"%}}
 
-Certifique-se de selecionar o conector **PayUv2**, pois este guia se aplica especificamente a essa versão.
+Certifique-se de selecionar **PayUv2**, pois este guia se aplica especificamente a essa versão.
 
 {{% /alert %}}  
 
-3. Na configuração do conector, instale-o clicando no botão **Instalar aplicativo**. Em seguida, preencha os seguintes campos:
+3. Preencha o seguinte formulário:
 
 ![PrintScreen](/assets/VTEX/vtex10.png)
 
 {{% alert title="Nota" color="info"%}}
 
-As informações do conector podem ser obtidas por meio de:
+As informações do provedor podem ser obtidas a partir de:
 * **Coleção do Postman:** Execute o método **Retrieve Authentication Keys**, configurando o parâmetro global `env` como `test` ou `live`, dependendo do ambiente de processamento.
 * **Painel PayU Enterprise:** Navegue até **Account > Business Units** e selecione a Unidade de Negócio criada em [Configurando sua Conta PayU Enterprise]({{< ref "#configuring-your-payu-enterprise-account" >}}). Use o seletor no topo para escolher o ambiente de processamento.<br>Alguns valores estão ocultos por padrão; clique no ícone de olho para revelá-los.
 

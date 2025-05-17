@@ -53,7 +53,9 @@ Antes de usar a API de Anulações e Reembolsos, leve em conta as seguintes cons
 - Reembolsos com valores decimais **não são suportados**.
 - Após a aprovação do reembolso, o pagador recebe os fundos **dentro de 8 a 20 dias úteis**.
 - **Reembolsos parciais** para transações com **parcelamento** são recebidos online, mas processados manualmente devido a restrições do adquirente.
-- O valor mínimo para reembolso é **10 CLP**.
+- O valor mínimo para realizar um reembolso depende da rede adquirente:
+    - **Mais de 10 CLP** para transações processadas pela rede **TRANSBANK**.
+    - **Mais de 50 CLP** para transações processadas pela rede **KLAP**.
 
 ### Colômbia
 

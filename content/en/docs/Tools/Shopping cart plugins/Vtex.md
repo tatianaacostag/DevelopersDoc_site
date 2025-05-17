@@ -236,17 +236,17 @@ Before creating the new provider, make sure you have configured fingerprint for 
 
 {{% alert title="Important" color="warning"%}}
 
-Ensure you select the **PayUv2** connector, as this guide applies specifically to this version.
+Ensure you select **PayUv2**, as this guide applies specifically to this version.
 
 {{% /alert %}}  
 
-3. In the connector configuration, install the connector by clicking the **Install app** button. Then, complete the following fields:
+3. Complete the following form:
 
 ![PrintScreen](/assets/VTEX/vtex10.png)
 
 {{% alert title="Note" color="info"%}}
 
-Connector information can be obtained from either:
+Provider information can be obtained from either:
 * **Postman collection:** Run the **Retrieve Authentication Keys** method, setting the global parameter `env` to `test` or `live`, depending on your processing environment.
 * **PayU Enterprise dashboard:** Navigate to **Account > Business Units**, and select the Business Unit created in [Configuring Your PayU Enterprise Account]({{< ref "#configuring-your-payu-enterprise-account" >}}). Use the selector at the top to choose the processing environment.<br>Some values are hidden by default; click the eye icon to reveal them.
 
