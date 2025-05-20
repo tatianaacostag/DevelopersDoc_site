@@ -8,11 +8,15 @@ weight: 2
 tags: ["subtopic"]
 ---
 
+Shopify is a commerce platform that allows you to easily create and manage your online store with powerful built-in tools. For more information, visit the official <a href="https://www.shopify.com" target="_blank">Shopify website</a>.
+
 ## Prerequisites
-* An active PayU Latam account.
+
+* An active <a href="https://developers.payulatam.com/latam/en/docs/getting-started/create-an-account.html" target="_blank">PayU Latam account</a>.
 * A valid Shopify plan. Note that Checkout functionality is not available with trial plans. You can explore Shopify's plans and pricing <a href="https://www.shopify.com/pricing" target="_blank">here</a>.
 
-## Order management in Shopify
+## Order Management in Shopify
+
 Take into account the following provisions when managing orders in Shopify:
 * **All orders:** Includes orders with the following 2 statuses:
     * **Approved:** Orders that are paid in full or partially.
@@ -25,22 +29,25 @@ Take into account the following provisions when managing orders in Shopify:
     <span style="color: #A6C307;font-weight: bold;">3.2.</span> Credit card payments that enter validation due to anti-fraud protection rules.
 
 {{% alert title="Note" color="info"%}}
+
 * Shopify **DOES NOT** reserve inventory for any of the above scenarios. 
 * For processes considered as _abandoned checkout_, the system only generates orders once the transaction reaches an _Approved_ status.
+
 {{% /alert %}}
 
-## Setting up PayU as payment gateway
+## Setting up PayU as Payment Gateway
+
 1. Log in to your Shopify account and download the PayU Latam v2 app from the app store by clicking <a href="https://apps.shopify.com/payu-latam-v2?locale=en" target="_blank">here</a> and selecting **Install**.
  
-<img src="/assets/Shopify/Shopify01EN.png" alt="PrintScreen" width="700">
+<img src="/assets/Shopify/Shopify01EN.png" alt="PrintScreen" width="550">
 <p></p>
 
 2. Select the store where you want to install the app, you'll be redirected to the installation page, click on **Install**.
 
-<img src="/assets/Shopify/Shopify02EN.png" alt="PrintScreen" width="700">
+<img src="/assets/Shopify/Shopify02EN.png" alt="PrintScreen" width="550">
 <p></p>
 
-<img src="/assets/Shopify/Shopify03EN.png" alt="PrintScreen" width="700">
+<img src="/assets/Shopify/Shopify03EN.png" alt="PrintScreen" width="550">
 <p></p>
 
 3. Choose the environment for the app installation—Test or Production—based on your intended usage:
@@ -50,47 +57,38 @@ Take into account the following provisions when managing orders in Shopify:
 
 {{% alert title="Important" color="warning"%}}
 
-Ensure that you do not use test credentials in the production environment, or vice versa. This may result in errors or failed transactions.
+* Ensure that you do not use test credentials in the production environment, or vice versa. This may result in errors or failed transactions.
+* Find your production environment credentials by logging into your <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids" target="_blank">PayU Management Panel</a>, where you can locate the **Merchant ID** and **Account ID**.
+* Find the test environment credentials <a href="https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html" target="_blank">here</a>.
+* You can also check or change your credentials in your Shopify account settings.
+* You need an Account ID per store in Shopify.
 
 {{% /alert %}}
 
 After selecting the correct environment, input your **Merchant ID** and **Account ID**, then click **Save** to confirm.
 
-<img src="/assets/Shopify/Shopify04EN.png" alt="PrintScreen" width="500">
+<img src="/assets/Shopify/Shopify04EN.png" alt="PrintScreen" width="450">
 <p></p>
-
-{{% alert title="Note" color="info"%}}
-* Find your production environment credentials by logging into your PayU administrative panel, where you can locate the **Merchant ID** and **Account ID** in the top left corner of the module.
-
-<img src="/assets/Shopify/Shopify05EN.png" alt="PrintScreen" width="240">
-<p></p>
-
-* Find the test environment credentials <a href="https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html" target="_blank">here</a>.
-* You can check or change your credentials in your Shopify account settings.   
-{{% /alert %}}
-
-{{% alert title="Important" color="warning"%}}
-You need an Account ID per store in Shopify.
-{{% /alert %}}
 
 4. You will be redirected to the Payments page, to enable the app, click on the **Activate** button located in the bottom right corner.
 
-<img src="/assets/Shopify/Shopify06EN.png" alt="PrintScreen" width="700">
+<img src="/assets/Shopify/Shopify06EN.png" alt="PrintScreen" width="600">
 <p></p>
 
 {{% alert title="Important" color="warning"%}}
+
 * For your information, you'll see various payment methods. To proceed, you must select at least one of them, this won't alter the payment methods available in the PayU Web Checkout.
 * Test mode: within the same _Payments_ section, you'll find the option to use test mode, allowing you to conduct tests in the Sandbox environment.
 * We recommend that you use the test environment in a controlled manner, preferably during off-peak hours, as transactions processed in test mode do not result in real payments and the production environment remains disabled.
 * To disable test mode, uncheck the box:
 
-<img src="/assets/Shopify/Shopify07EN.png" alt="PrintScreen" width="700">
+<img src="/assets/Shopify/Shopify07EN.png" alt="PrintScreen" width="600">
 
 {{% /alert %}}
 
-5. Access your <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module.html" target="_blank">PayU Module</a>, navigate to the **Settings** section, and click on **Technical Settings**. Enable the option called **Control duplicate payments (Validate unique reference)** to prevent issues during payment processing. 
+5. Access your <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module.html" target="_blank">PayU Management Panel</a>, navigate to the **Settings** section, and click on **Technical Settings**. Enable the option called **Control duplicate payments (Validate unique reference)** to prevent issues during payment processing. 
 
-<img src="/assets/Shopify/Shopify08EN.png" alt="PrintScreen" width="700">
+<img src="/assets/Shopify/Shopify08EN.png" alt="PrintScreen" width="600">
 <p></p>
 
 6. From now on, PayU is set up as your payment processor, enabling you to kickstart your sales. With PayU's Web Checkout, your customers can make purchases using various payment methods including cash, credit cards, and bank transfers, tailored to the country in which you're conducting business.
