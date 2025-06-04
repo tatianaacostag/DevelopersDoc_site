@@ -268,6 +268,117 @@ As informações do provedor podem ser obtidas a partir de:
 
 4. Clique em **Salvar** para concluir a configuração.
 
+#### Configurando Capturas em um Fluxo de Duas Etapas
+
+Esta seção explica como capturar pedidos autorizados no VTEX V2 usando um fluxo de pagamento em duas etapas (autorização seguida de captura). Inclui um guia passo a passo para capturar o valor total ou parcial de um pedido.
+
+##### Pré-requisitos
+
+Antes de capturar pedidos, certifique-se de que as seguintes configurações estejam corretas:
+
+* **Configuração da Conta PayU:** Sua conta PayU deve estar habilitada para [processamento em duas etapas]({{< ref "payments.md#payment-flows" >}}). Para mais informações sobre como ativar esse fluxo de pagamento, entre em contato com seu representante de vendas da PayU.
+* **Afiliação de Pagamento na VTEX (PayUv2):** A afiliação do provedor PayUv2 na VTEX deve estar configurada para o processamento em duas etapas, que envolve **autorização** seguida de **liquidação** (captura).
+    * **Liquidação automática:** Definida como `Desativado`.
+    * **Tipo de autorização:** Definido como `Pré-autorização`.
+
+<p>
+
+<img src="/assets/VTEX/vtex30.png" alt="PrintScreen" style="width: 500px;">
+
+<p>
+
+{{% alert title="Observação" color="info"%}}
+
+Se você não pretende capturar valores menores ou maiores do que o valor originalmente autorizado, pode ativar a **Liquidação automática** para capturar o pedido imediatamente após a autorização ou agendar a captura definindo um intervalo de tempo em horas.
+
+{{% /alert %}}
+
+* **Condição de Pagamento:** Verifique se a condição de pagamento relevante está habilitada com a afiliação PayUv2.
+
+<img src="/assets/VTEX/vtex31.png" alt="PrintScreen" style="width: 400px;">
+
+##### Iniciando uma Captura
+
+Quando um pedido tiver uma **autorização aprovada**, siga estes passos no seu painel da VTEX:
+
+1.  **Acesse o Pedido:** Abra o painel administrativo da VTEX e selecione o pedido autorizado.
+2.  **Atualize o Status do Pedido:**
+    * Se o status do pedido estiver como "Janela de cancelamento", clique no botão "**Pronto para manuseio**" para atualizá-lo.
+    * Em seguida, atualize o pedido usando a opção "**Iniciar manuseio**".
+
+Após completar essas etapas, o status do pedido mudará para "**Em manuseio**", indicando que está pronto para ser capturado. Você poderá então capturar o valor total ou um valor modificado (menor ou maior).
+
+##### Capturando o Valor Total
+
+Para capturar o **valor total autorizado**:
+
+1.  Selecione a opção **Nota fiscal** no pedido.
+
+<img src="/assets/VTEX/vtex32.png" alt="PrintScreen" style="width: 650px;">
+
+<br>
+
+2.  Escolha **Enviar nota fiscal única**.
+3.  Insira o **número da nota fiscal** na seção de detalhes.
+4.  Clique em **Salvar nota fiscal**.
+
+Ao concluir, o processo de liquidação será finalizado e o valor total autorizado do pedido será capturado.
+
+##### Capturando um Valor Menor ou Maior
+
+A VTEX oferece duas maneiras de capturar um valor diferente da autorização original:
+
+**A) Alterando os Itens do Pedido**
+
+Esse método permite ajustar os itens do pedido para refletir o valor desejado para captura.
+
+1.  Acesse a seção **faturamento pendente** dentro do pedido.
+
+<img src="/assets/VTEX/vtex33.png" alt="PrintScreen" style="width: 500px;">
+
+<br>
+
+2.  Selecione a opção **Alterar itens**.
+3.  **Ajuste os Itens:**
+    * Para capturar um **valor menor**, reduza a quantidade de itens existentes ou remova-os.
+    * Para capturar um **valor maior**, aumente a quantidade de itens ou adicione novos.
+4.  **Finalize a Captura:**
+    * Após modificar os itens, selecione a opção **Nota fiscal** no pedido.
+    * Escolha **Enviar nota fiscal única**.
+    * Insira o **número da nota fiscal** nos detalhes.
+    * Clique em **Salvar nota fiscal**.
+
+Essa ação completará a liquidação e a integração capturará o valor modificado.
+
+**B) Alterando o Valor Final do Pedido**
+
+Esse método permite ajustar diretamente o valor total do pedido.
+
+1.  Acesse o pedido e selecione a opção **Alterar valor final**.
+
+<img src="/assets/VTEX/vtex34.png" alt="PrintScreen" style="width: 350px;">
+
+<br>
+
+2.  **Ajuste o Valor:**
+    * Para capturar um **valor menor**, insira o valor que deseja descontar do total.
+    * Para capturar um **valor maior**, insira o valor pelo qual deseja aumentar o pedido.
+3.  **Finalize a Captura:**
+    * Após modificar o valor, selecione a opção **Nota fiscal** no pedido.
+    * Escolha **Enviar nota fiscal única**.
+    * Insira o **número da nota fiscal** nos detalhes.
+    * Clique em **Salvar nota fiscal**.
+
+Isso concluirá a liquidação na VTEX.
+
+##### Entendendo as Transações da PayU após a Captura
+
+Veja como as transações aparecerão na PayU com base nas suas ações de captura:
+
+* **Captura do Valor Total (Sem Ajuste):** Se você não ajustou o valor do pedido, verá duas transações na PayU: uma **autorização** e uma **captura** do valor total.
+* **Captura de Valor Menor:** Se você ajustou o pedido para capturar um valor menor, verá duas transações na PayU: uma **autorização** e uma **captura parcial**.
+* **Captura de Valor Maior:** Se o valor capturado for maior, verá quatro transações: a **autorização inicial** e sua **captura**, além de uma **autorização adicional** para o valor excedente e sua respectiva **captura**.
+
 #### Configurando Métodos de Pagamento {#configuring-payment-methods}
 
 Configure os métodos de pagamento que serão exibidos no site durante o checkout. [Veja os métodos de pagamento disponíveis]({{< ref "Select-your-payment-method.md" >}}).

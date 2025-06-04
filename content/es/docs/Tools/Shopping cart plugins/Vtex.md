@@ -266,6 +266,117 @@ La información del proveedor se puede obtener de dos maneras:
 
 4. Haz clic en **Guardar** para completar la configuración.
 
+#### Configuración de Capturas en un Flujo de Dos Pasos
+
+Esta sección explica cómo capturar órdenes autorizadas en VTEX V2 usando un flujo de pago en dos pasos (autorización seguida de captura). Incluye una guía paso a paso para capturar el monto total o parcial de una orden.
+
+##### Requisitos Previos
+
+Antes de poder capturar órdenes, asegúrate de que se cumplan las siguientes configuraciones:
+
+* **Configuración de la Cuenta PayU:** Tu cuenta PayU debe estar habilitada para el [procesamiento en dos pasos]({{< ref "payments.md#payment-flows" >}}). Para más información sobre cómo habilitar este flujo de pago, contacta a tu representante de ventas de PayU.
+* **Afiliación de Pago en VTEX (PayUv2):** La afiliación del proveedor de pagos PayUv2 en VTEX debe estar configurada para procesamiento en dos pasos, lo cual implica **autorización** seguida de **liquidación** (captura).
+    * **Liquidación automática:** Establecida en `Deshabilitado`.
+    * **Tipo de autorización:** Establecida en `Pre-Autorización`.
+
+<p>
+
+<img src="/assets/VTEX/vtex30.png" alt="PrintScreen" style="width: 500px;">
+
+<p>
+
+{{% alert title="Nota" color="info"%}}
+
+Si no planeas capturar montos menores o mayores que la autorización original, puedes habilitar la **Liquidación automática** para capturar la orden inmediatamente después de la autorización, o programar la captura definiendo un plazo en horas.
+
+{{% /alert %}}
+
+* **Condición de Pago:** Asegúrate de que la condición de pago relevante esté habilitada con la afiliación PayUv2.
+
+<img src="/assets/VTEX/vtex31.png" alt="PrintScreen" style="width: 400px;">
+
+##### Iniciar una Captura
+
+Una vez que una orden tenga una **autorización aprobada**, sigue estos pasos en tu panel de administración de VTEX:
+
+1.  **Accede a la Orden:** Abre tu panel de administración de VTEX y selecciona la orden autorizada.
+2.  **Actualiza el Estado de la Orden:**
+    * Si el estado de la orden es "Ventana de cancelación", haz clic en el botón "**Listo para gestionar**" para actualizarlo.
+    * Luego, actualiza la orden usando la opción "**Iniciar gestión**".
+
+Después de completar estos pasos, el estado de la orden cambiará a "**En gestión**", lo que indica que está lista para ser capturada. Luego podrás capturar el monto total o un monto modificado (menor o mayor).
+
+##### Capturar el Monto Total
+
+Para capturar el **monto total autorizado**:
+
+1.  Selecciona la opción **Factura** en la orden.
+
+<img src="/assets/VTEX/vtex32.png" alt="PrintScreen" style="width: 650px;">
+
+<br>
+
+2.  Elige **Enviar factura única**.
+3.  Ingresa el **número de factura** en la sección de detalles.
+4.  Haz clic en **Guardar factura**.
+
+Una vez completado, el proceso de liquidación finalizará y se capturará el monto total autorizado de la orden.
+
+##### Capturar un Monto Menor o Mayor
+
+VTEX ofrece dos métodos para capturar un monto diferente al autorizado originalmente:
+
+**A) Cambiar los Ítems de la Orden**
+
+Este método te permite ajustar los ítems de la orden para reflejar el monto de captura deseado.
+
+1.  Navega a **facturación pendiente** dentro de la orden.
+
+<img src="/assets/VTEX/vtex33.png" alt="PrintScreen" style="width: 500px;">
+
+<br>
+
+2.  Selecciona la opción **Cambiar ítems**.
+3.  **Ajusta los Ítems:**
+    * Para capturar un **monto menor**, reduce la cantidad de ítems existentes o elimínalos.
+    * Para capturar un **monto mayor**, aumenta la cantidad de ítems o agrega nuevos.
+4.  **Finaliza la Captura:**
+    * Después de modificar los ítems, selecciona la opción **Factura** en la orden.
+    * Elige **Enviar factura única**.
+    * Ingresa el **número de factura** en los detalles.
+    * Haz clic en **Guardar factura**.
+
+Esta acción completará la liquidación y la integración capturará el monto modificado.
+
+**B) Cambiar el Monto Final de la Orden**
+
+Este método permite ajustar directamente el valor total de la orden.
+
+1.  Ve a la orden y selecciona la opción **Cambiar monto final**.
+
+<img src="/assets/VTEX/vtex34.png" alt="PrintScreen" style="width: 350px;">
+
+<br>
+
+2.  **Ajusta el Monto:**
+    * Para capturar un **monto menor**, ingresa el valor que deseas descontar del total.
+    * Para capturar un **monto mayor**, ingresa el valor con el que deseas aumentar la orden.
+3.  **Finaliza la Captura:**
+    * Después de modificar el monto, selecciona la opción **Factura** en la orden.
+    * Elige **Enviar factura única**.
+    * Ingresa el **número de factura** en los detalles.
+    * Haz clic en **Guardar factura**.
+
+Esto completará la liquidación en VTEX.
+
+##### Comprendiendo las Transacciones en PayU después de la Captura
+
+Así se mostrarán las transacciones en PayU según las acciones de captura que realices:
+
+* **Captura del Monto Total (Sin Ajustes):** Si no ajustaste el valor de la orden, verás dos transacciones en PayU: una **autorización** y una **captura** por el valor total.
+* **Captura de un Monto Menor:** Si ajustaste la orden para capturar un monto menor, verás dos transacciones en PayU: una **autorización** y una **captura parcial**.
+* **Captura de un Monto Mayor:** Si el monto capturado es mayor, verás cuatro transacciones: la **autorización inicial** y su **captura**, más una **autorización adicional** por el monto excedente y su respectiva **captura**.
+
 #### Configuración de Métodos de Pago {#configuring-payment-methods}
 
 Configura los métodos de pago que se mostrarán en el sitio web durante el proceso de pago. [Consulta los métodos de pago disponibles]({{< ref "Select-your-payment-method.md" >}}).

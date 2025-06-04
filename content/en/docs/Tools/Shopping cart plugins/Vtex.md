@@ -268,6 +268,117 @@ Provider information can be obtained from either:
 
 4. Click **Save** to complete the setup.
 
+#### Configuring Captures in a Two-Step Flow
+
+This section explains how to capture authorized orders in VTEX V2 using a two-step payment flow (authorization followed by capture). It includes a step-by-step guide for capturing either the full or a partial amount of an order.
+
+##### Prerequisites
+
+Before you can capture orders, ensure the following settings are in place:
+
+* **PayU Account Configuration:** Your PayU account must be enabled for [two-step processing]({{< ref "payments.md#payment-flows" >}}). For more information on how to enable this payment flow, contact your PayU sales representative.
+* **VTEX Payment Affiliation (PayUv2):** The PayUv2 provider payment affiliation in VTEX must be configured for two-step processing, which involves **authorization** followed by **settlement** (capture).
+    * **Automatic settlement:** Set to `Disabled`.
+    * **Authorization type:** Set to `Pre-Authorization`.
+
+<p>
+
+<img src="/assets/VTEX/vtex30.png" alt="PrintScreen" style="width: 500px;">
+
+<p>
+
+{{% alert title="Note" color="info"%}}
+
+If you don't intend to capture amounts that are lower or higher than the original authorization, you can enable **Automatic settlement** to capture the order immediately after authorization, or schedule the capture by defining a timeframe in hours.
+
+{{% /alert %}}
+
+* **Payment Condition:** Ensure the relevant payment condition is enabled with the PayUv2 affiliation.
+
+<img src="/assets/VTEX/vtex31.png" alt="PrintScreen" style="width: 400px;">
+
+##### Initiating a Capture
+
+Once an order has an **approved authorization**, follow these steps in your VTEX Admin:
+
+1.  **Access the Order:** Open your VTEX Admin panel and select the authorized order.
+2.  **Update Order Status:**
+    * If the order's status is "Cancellation window," click the "**Ready for handling**" button to update it.
+    * Next, update the order using the "**Start handling**" option.
+
+After completing these steps, the order's status will change to "**Handling**," indicating it's ready for capture. You can then capture the full amount, or a modified (lower or higher) amount.
+
+##### Capturing the Full Amount
+
+To capture the **entire authorized amount**:
+
+1.  Select the **Invoice** option on the order.
+
+<img src="/assets/VTEX/vtex32.png" alt="PrintScreen" style="width: 650px;">
+
+<br>
+
+2.  Choose **Send single invoice**.
+3.  Enter the **invoice number** in the details section.
+4.  Click **Save invoice**.
+
+Upon completion, the settlement process will finalize, and the full authorized order amount will be captured.
+
+##### Capturing a Lower or Higher Amount
+
+VTEX offers two methods to capture an amount different from the original authorization:
+
+**A) Changing Order Items**
+
+This method allows you to adjust the items in the order to reflect the desired capture amount.
+
+1.  Navigate to **pending invoicing** within the order.
+
+<img src="/assets/VTEX/vtex33.png" alt="PrintScreen" style="width: 500px;">
+
+<br>
+
+2.  Select the **Change items** option.
+3.  **Adjust Items:**
+    * To capture a **lower amount**, decrease the number of existing items or remove them.
+    * To capture a **higher amount**, increase the number of items or add new ones.
+4.  **Finalize Capture:**
+    * After modifying the items, select the **Invoice** option on the order.
+    * Choose **Send single invoice**.
+    * Enter the **invoice number** in the details.
+    * Click **Save invoice**.
+
+This action will complete the settlement, and the integration will capture the modified amount.
+
+**B) Changing the Final Order Amount**
+
+This method allows for a direct adjustment of the order's total value.
+
+1.  Go to the order and select the **Change final amount** option.
+
+<img src="/assets/VTEX/vtex34.png" alt="PrintScreen" style="width: 350px;">
+
+<br>
+
+2.  **Adjust Amount:**
+    * To capture a **lower amount**, enter the value you wish to discount from the total.
+    * To capture a **higher amount**, enter the value by which you want to increase the order.
+3.  **Finalize Capture:**
+    * After modifying the amount, select the **Invoice** option on the order.
+    * Choose **Send single invoice**.
+    * Enter the **invoice number** in the details.
+    * Click **Save invoice**.
+
+This will complete the settlement in VTEX.
+
+##### Understanding PayU Transactions after Capture
+
+Here's how transactions will appear in PayU based on your capture actions:
+
+* **Full Amount Capture (No Adjustment):** If you did not adjust the order value, you will see two transactions in PayU: an **authorization** and a **capture** for the total value.
+* **Lower Amount Capture:** If you adjusted the order to capture a lower amount, you will see two transactions in PayU: an **authorization** and a **partial capture**.
+* **Higher Amount Capture:** If the captured amount is higher, you will see four transactions: the **initial authorization** and its **capture**, plus an **additional authorization** for the excess amount and its respective **capture**.
+
 #### Configuring Payment Methods
 
 Configure the payment methods that will be displayed on the website during checkout. [View the available payment methods]({{< ref "Select-your-payment-method.md" >}}).
